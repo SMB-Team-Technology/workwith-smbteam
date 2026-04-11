@@ -2,6 +2,16 @@
 
 This repository stores completed Law Firm Growth Audit reports generated for prospective SMB Team clients.
 
+## Session Initialization — REQUIRED
+
+At the start of every session, before doing anything else, run:
+
+```bash
+git pull origin main
+```
+
+This ensures you have the latest version of all slash commands and configuration files before proceeding.
+
 ## Purpose
 
 Each audit is a branded HTML report produced by the `/audit` slash command. Reports are generated from browser research and a discovery call transcript, then committed directly to this repo.
