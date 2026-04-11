@@ -1,0 +1,1060 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Law Firm Growth Audit — Law Offices of J. Douglas Angel</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Montserrat:wght@600;700;800&display=swap" rel="stylesheet" />
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body { font-family: 'Inter', sans-serif; font-size: 14px; color: #1A1A1A; background: #fff; }
+  h1, h2, h3, h4 { font-family: 'Montserrat', sans-serif; }
+
+  /* COLOR VARIABLES */
+  :root {
+    --navy: #052A46;
+    --green: #75BB1C;
+    --yellow: #FFE300;
+    --amber: #F5A623;
+    --red: #D9000D;
+    --gray: #F5F5F5;
+    --white: #FFFFFF;
+    --text: #1A1A1A;
+    --link: #0066CC;
+    --visited: #551A8B;
+  }
+
+  /* SECTION HEADERS */
+  .section-header {
+    background: var(--navy);
+    color: var(--white);
+    padding: 22px 36px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 22px;
+    font-weight: 700;
+    width: 100%;
+    display: block;
+  }
+  .section-header .sub {
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    color: #ccc;
+    margin-top: 4px;
+  }
+  .subsection-header {
+    background: var(--navy);
+    color: var(--white);
+    padding: 14px 28px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 17px;
+    font-weight: 700;
+    width: 100%;
+    display: block;
+    margin: 28px 0 14px 0;
+    border-left: 5px solid var(--green);
+  }
+
+  /* SECTION WRAPPERS */
+  .section { padding: 36px; max-width: 960px; margin: 0 auto; }
+  .section-full { padding: 0; }
+
+  /* COVER */
+  #cover {
+    background: var(--navy);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 60px 36px 0 36px;
+    page-break-after: always;
+    position: relative;
+  }
+  #cover .logo { max-width: 280px; margin-bottom: 48px; }
+  #cover .report-title { font-family: 'Montserrat', sans-serif; font-size: 38px; font-weight: 800; color: #fff; text-align: center; margin-bottom: 16px; }
+  #cover .firm-name { font-family: 'Montserrat', sans-serif; font-size: 28px; font-weight: 700; color: var(--yellow); text-align: center; margin-bottom: 48px; }
+  #cover .accent-stripe { width: 100%; background: var(--yellow); height: 6px; margin-bottom: 32px; }
+  #cover .meta { text-align: center; color: #fff; font-family: 'Inter', sans-serif; font-size: 14px; line-height: 2; }
+  #cover .meta .confidential { font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: var(--yellow); margin-top: 8px; }
+
+  /* TOC */
+  #toc { background: var(--gray); }
+  #toc .toc-inner { max-width: 960px; margin: 0 auto; padding: 36px; }
+  #toc h2 { font-family: 'Montserrat', sans-serif; color: var(--navy); font-size: 24px; margin-bottom: 24px; }
+  .toc-category { font-family: 'Montserrat', sans-serif; color: var(--navy); font-size: 15px; font-weight: 700; margin: 18px 0 6px 0; }
+  .toc-list { list-style: none; padding: 0; margin: 0 0 8px 16px; }
+  .toc-list li { margin: 5px 0; }
+  .toc-list a, #toc a { color: var(--link); text-decoration: none; font-size: 14px; }
+  .toc-list a:visited { color: var(--visited); }
+  .toc-list a:hover { text-decoration: underline; }
+
+  /* BACK TO TOP */
+  .back-to-top { text-align: right; margin: 28px 0 0 0; }
+  .back-to-top a {
+    display: inline-block;
+    background: var(--navy);
+    color: var(--yellow);
+    font-family: 'Montserrat', sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    padding: 8px 20px;
+    border-radius: 4px;
+    text-decoration: none;
+    transition: background 0.2s, color 0.2s;
+  }
+  .back-to-top a:hover { background: var(--green); color: #fff; }
+
+  /* FULL WIDTH IMAGES */
+  .full-img { width: 100%; height: auto; display: block; }
+
+  /* TRAFFIC LIGHT LEGEND */
+  .tl-legend { background: var(--gray); padding: 16px 24px; border-radius: 6px; display: flex; gap: 28px; flex-wrap: wrap; margin: 20px 0; align-items: center; }
+  .tl-item { display: flex; align-items: center; gap: 8px; font-size: 13px; }
+  .tl-circle { width: 18px; height: 18px; border-radius: 50%; flex-shrink: 0; }
+  .tl-red { background: var(--red); }
+  .tl-amber { background: var(--amber); }
+  .tl-green { background: var(--green); }
+
+  /* PILLAR HEALTH CARDS */
+  .pillar-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin: 24px 0; }
+  @media (max-width: 640px) { .pillar-grid { grid-template-columns: 1fr; } }
+  .pillar-card { border-radius: 8px; overflow: hidden; border: 1px solid #ddd; }
+  .pillar-card-header { background: var(--navy); color: #fff; padding: 14px 18px; font-family: 'Montserrat', sans-serif; font-size: 16px; font-weight: 700; display: flex; align-items: center; gap: 12px; }
+  .pillar-tl { width: 22px; height: 22px; border-radius: 50%; flex-shrink: 0; }
+  .pillar-card-body { padding: 16px 18px; background: #fff; }
+  .pillar-card-body ul { padding-left: 18px; margin: 8px 0; }
+  .pillar-card-body li { margin: 6px 0; font-size: 13px; line-height: 1.5; }
+  .pillar-card-body .italic-closing { font-style: italic; font-size: 12px; color: #555; margin-top: 10px; border-top: 1px solid #eee; padding-top: 8px; }
+
+  /* COMPETITIVE URGENCY SCORE */
+  .urgency-card { background: var(--navy); color: #fff; border-radius: 8px; padding: 28px 32px; margin: 28px 0; }
+  .urgency-score-num { font-family: 'Montserrat', sans-serif; font-size: 64px; font-weight: 800; color: var(--yellow); line-height: 1; margin-bottom: 12px; }
+  .urgency-label { font-size: 13px; color: #aaa; margin-bottom: 16px; }
+  .urgency-bar-wrap { position: relative; height: 16px; border-radius: 8px; background: linear-gradient(to right, var(--green) 0%, var(--green) 40%, var(--amber) 40%, var(--amber) 70%, var(--red) 70%, var(--red) 100%); margin-bottom: 8px; }
+  .urgency-bar-marker { position: absolute; top: -4px; width: 24px; height: 24px; border-radius: 50%; background: #fff; border: 3px solid var(--yellow); transform: translateX(-50%); }
+  .urgency-scale { display: flex; justify-content: space-between; font-size: 11px; color: #aaa; margin-bottom: 20px; }
+  .urgency-competitors { margin-top: 12px; }
+  .urgency-competitor { margin: 10px 0; font-size: 13px; }
+  .urgency-competitor .comp-name { color: var(--yellow); font-weight: 700; }
+
+  /* MISSED OPPORTUNITY CARD */
+  .opp-card { background: #fff; border: 1px solid #ddd; border-left: 5px solid var(--green); border-radius: 4px; padding: 16px 20px; margin: 14px 0; }
+  .opp-card h4 { font-family: 'Montserrat', sans-serif; color: var(--navy); font-size: 14px; margin-bottom: 8px; }
+  .opp-card p, .opp-card li { font-size: 13px; line-height: 1.6; }
+  .opp-card ul { padding-left: 18px; margin: 6px 0; }
+  .opp-pill { display: inline-block; font-size: 11px; font-weight: 700; font-family: 'Montserrat', sans-serif; padding: 3px 10px; border-radius: 20px; margin-top: 8px; }
+  .pill-quick { background: var(--green); color: #fff; }
+  .pill-long { background: var(--amber); color: #fff; }
+  .pill-pillar { background: var(--navy); color: #fff; margin-left: 6px; }
+
+  /* QUOTE CALLOUT */
+  .quote-callout { background: var(--gray); border-left: 4px solid var(--navy); padding: 12px 18px; margin: 10px 0; font-style: italic; font-size: 13px; border-radius: 0 4px 4px 0; }
+
+  /* COMPETITOR INSET */
+  .competitor-inset { background: var(--gray); border-left: 4px solid var(--navy); padding: 12px 18px; margin: 10px 0; border-radius: 0 4px 4px 0; font-size: 13px; }
+  .competitor-inset strong { color: var(--navy); }
+
+  /* GENERAL */
+  ul.bullets { padding-left: 20px; margin: 10px 0; }
+  ul.bullets li { margin: 7px 0; font-size: 14px; line-height: 1.6; }
+  .bold { font-weight: 700; }
+  .navy-box { background: var(--navy); color: #fff; padding: 20px 24px; border-radius: 6px; margin: 16px 0; font-size: 14px; line-height: 1.7; }
+  .italic-sub { font-style: italic; color: #555; font-size: 13px; margin-top: 12px; }
+  .green-banner { background: var(--green); color: #fff; font-family: 'Montserrat', sans-serif; font-size: 22px; font-weight: 800; text-align: center; padding: 24px 36px; width: 100%; display: block; }
+  .stage-card { background: var(--gray); border-radius: 6px; padding: 16px 20px; margin: 10px 0; }
+  .stage-card h4 { font-family: 'Montserrat', sans-serif; color: var(--navy); font-size: 15px; margin-bottom: 8px; }
+  .stage-card ul { padding-left: 18px; }
+  .stage-card li { font-size: 13px; margin: 5px 0; line-height: 1.5; }
+
+  /* NEXT STEPS */
+  .next-card { background: var(--gray); border-radius: 6px; padding: 18px 22px; margin: 14px 0; border-left: 5px solid var(--navy); }
+  .next-card h4 { font-family: 'Montserrat', sans-serif; color: var(--navy); font-size: 15px; margin-bottom: 8px; }
+
+  /* PLACEHOLDER */
+  .placeholder-box { background: var(--navy); color: #fff; border-radius: 6px; padding: 28px 32px; margin: 28px 0; text-align: center; }
+  .placeholder-box h3 { font-family: 'Montserrat', sans-serif; font-size: 20px; margin-bottom: 12px; color: var(--yellow); }
+  .placeholder-box p { font-size: 14px; line-height: 1.7; }
+
+  /* GROWTH JOURNEY */
+  .journey-card { background: #fff; border: 1px solid #ddd; border-top: 5px solid var(--navy); border-radius: 6px; padding: 18px 22px; margin: 14px 0; }
+  .journey-card.current { border-top-color: var(--amber); }
+  .journey-card h4 { font-family: 'Montserrat', sans-serif; color: var(--navy); font-size: 16px; margin-bottom: 10px; }
+  .journey-card ul { padding-left: 18px; }
+  .journey-card li { font-size: 13px; margin: 6px 0; line-height: 1.5; }
+  .current-badge { display: inline-block; background: var(--amber); color: #fff; font-family: 'Montserrat', sans-serif; font-size: 11px; font-weight: 700; padding: 2px 10px; border-radius: 20px; margin-left: 10px; vertical-align: middle; }
+</style>
+</head>
+<body>
+
+<!-- ============================================================ -->
+<!-- COVER PAGE                                                    -->
+<!-- ============================================================ -->
+<div id="cover">
+  <img class="logo" src="https://www.dropbox.com/scl/fi/9ytno9l0ipl9w9x4l0qg6/SMB-Logo-H-White.png?rlkey=y13ywjp9poyihu8zus42tx6wq&st=rfo0lufv&raw=1" alt="SMB Team Logo" />
+  <div class="report-title">Law Firm Growth Audit</div>
+  <div class="firm-name">Law Offices of J. Douglas Angel</div>
+  <div class="accent-stripe"></div>
+  <div class="meta">
+    <div>Prepared for: Law Offices of J. Douglas Angel</div>
+    <div>Prepared by: Eli Gill | SMB Team</div>
+    <div>Date: April 11, 2026</div>
+    <div class="confidential">Confidential</div>
+  </div>
+  <div style="height: 60px;"></div>
+</div>
+
+<!-- ============================================================ -->
+<!-- TABLE OF CONTENTS                                             -->
+<!-- ============================================================ -->
+<div id="toc">
+  <div class="toc-inner">
+    <h2>Table of Contents</h2>
+
+    <div class="toc-category">Your Firm at a Glance</div>
+    <ul class="toc-list">
+      <li><a href="#firm-overview">Current Status — Law Offices of J. Douglas Angel</a></li>
+      <li><a href="#about-smb">About SMB Team</a></li>
+      <li><a href="#about-smb">The Law Firm Growth Acceleration Model</a></li>
+    </ul>
+
+    <div class="toc-category">Your Growth Health Assessment</div>
+    <ul class="toc-list">
+      <li><a href="#growth-health">Growth Health Scorecard</a></li>
+      <li><a href="#urgency-score">Competitive Urgency Score</a></li>
+    </ul>
+
+    <div class="toc-category">Lead Generation</div>
+    <ul class="toc-list">
+      <li><a href="#website-audit">Website Audit</a></li>
+      <li><a href="#local-seo">Local SEO</a></li>
+      <li><a href="#google-ads">Google Ads</a></li>
+      <li><a href="#local-service-ads">Local Service Ads</a></li>
+      <li><a href="#meta-ads">Facebook &amp; Meta Ads</a></li>
+      <li><a href="#missed-opps">Missed Opportunities</a></li>
+    </ul>
+
+    <div class="toc-category">Intake</div>
+    <ul class="toc-list">
+      <li><a href="#intake-assessment">Intake Assessment</a></li>
+      <li><a href="#website-intake">Website Contact Forms &amp; Live Chat</a></li>
+    </ul>
+
+    <div class="toc-category">Self-Managing Team</div>
+    <ul class="toc-list">
+      <li><a href="#team-assessment">Team Assessment</a></li>
+    </ul>
+
+    <div class="toc-category">Profit</div>
+    <ul class="toc-list">
+      <li><a href="#profit-assessment">Profit Plan Assessment</a></li>
+    </ul>
+
+    <div class="toc-category">Your Growth Journey</div>
+    <ul class="toc-list">
+      <li><a href="#growth-stage">Growth Stage Assessment</a></li>
+      <li><a href="#growth-path">Your Path to Law Firm Owner</a></li>
+    </ul>
+
+    <div class="toc-category">Your Next Steps</div>
+    <ul class="toc-list">
+      <li><a href="#what-we-found">What We Found</a></li>
+      <li><a href="#competitive-reality">The Competitive Reality</a></li>
+      <li><a href="#what-we-recommend">What We Recommend</a></li>
+      <li><a href="#fastest-path">The Fastest Path Forward</a></li>
+    </ul>
+  </div>
+</div>
+
+<!-- ============================================================ -->
+<!-- FIRM AT A GLANCE                                              -->
+<!-- ============================================================ -->
+<div id="firm-overview">
+  <div class="section-header">Here Is Where Law Offices of J. Douglas Angel Stands Today.</div>
+  <div class="section">
+
+    <!-- Firm Summary -->
+    <p style="font-size:14px;line-height:1.8;margin-bottom:20px;">
+      The Law Offices of J. Douglas Angel is a boutique family law firm in Munster, Indiana, led by one of the most credentialed family law attorneys in the state — a 50-year practitioner, AAML Fellow, and 19-time Indiana Super Lawyer. The firm operates as a selective, referral-driven practice with 1–10 staff members and has built a strong reputation on quality over volume. The single most important finding: despite credentials that far outpace every local competitor, the firm is nearly invisible online — and competitors with weaker resumes are capturing more leads every day.
+    </p>
+
+    <!-- Growth Stage Image — Stage 3: Solo Practitioner -->
+    <img class="full-img" src="https://www.dropbox.com/scl/fi/3d243mphsenx3vqnp9aas/LLS-Solo-Practitioner.png?rlkey=mgwovpkf3ntzx2wm856oyvn7s&st=5kasghsj&raw=1" alt="Lawyer Legacy Staircase — Solo Practitioner" style="max-width:100%;height:auto;margin:20px 0;" />
+
+    <!-- Stage Definitions -->
+    <p style="font-style:italic;font-size:13px;color:#555;margin-bottom:14px;">
+      The Lawyer Legacy Staircase shows the six stages every law firm owner moves through on the path from solo practitioner to true law firm owner — and where your firm stands today.
+    </p>
+
+    <div class="stage-card">
+      <h4>Stage 3 — Solo Practitioner <span style="color:var(--amber);font-family:'Inter',sans-serif;font-weight:400;font-size:13px;">(Your Current Stage)</span></h4>
+      <ul>
+        <li>You own your firm, but you are the firm</li>
+        <li>If you stop working, revenue stops</li>
+        <li>This is where most law firm owners start — and where too many stay</li>
+      </ul>
+    </div>
+
+    <div class="stage-card" style="margin-top:10px;">
+      <h4>Stage 4 — Small Business Manager</h4>
+      <ul>
+        <li>You have at least one system generating leads beyond referrals</li>
+        <li>You have a small team but are still in the middle of everything</li>
+        <li>You are building the foundation for real growth</li>
+      </ul>
+    </div>
+
+    <div class="stage-card" style="margin-top:10px;">
+      <h4>Stage 5 — Law Firm CEO</h4>
+      <ul>
+        <li>Multiple lead sources are running and a trained team handles intake</li>
+        <li>Managers are in place and you are working on the business more than in it</li>
+        <li>Real freedom is starting to emerge</li>
+      </ul>
+    </div>
+
+    <div class="stage-card" style="margin-top:10px;">
+      <h4>Stage 6 — Law Firm Owner</h4>
+      <ul>
+        <li>The firm runs without you</li>
+        <li>Your income is no longer tied to your personal hours</li>
+        <li>This is where true freedom and true wealth become possible</li>
+      </ul>
+    </div>
+
+    <!-- Overall Growth Stage Assessment -->
+    <h3 style="font-family:'Montserrat',sans-serif;color:var(--navy);font-size:18px;margin:28px 0 6px 0;">Overall Growth Stage Assessment</h3>
+    <p style="font-family:'Inter',sans-serif;font-size:13px;color:#888;margin-bottom:12px;">Law Offices of J. Douglas Angel</p>
+
+    <div class="navy-box">
+      The Law Offices of J. Douglas Angel is operating at Stage 3 — a firm that runs on the attorney's personal reputation, a tight referral network, and 50 years of earned trust. The single biggest limiter right now is lead generation: without a digital system that works while the attorney is working on cases, the firm's growth ceiling is the attorney's personal bandwidth. Closing that gap is the fastest path to a more profitable, more predictable practice.
+    </div>
+    <p class="italic-sub">Every law firm owner starts this journey somewhere. The question is not where you are — it is how fast you can move forward.</p>
+
+    <div class="back-to-top"><a href="#toc">↑ Back to Top</a></div>
+  </div>
+</div>
+
+<!-- ============================================================ -->
+<!-- ABOUT SMB TEAM                                                -->
+<!-- ============================================================ -->
+<div id="about-smb">
+  <div class="section-header">The Law Firm Growth Acceleration Model</div>
+
+  <div class="green-banner">We help law firm owners get more profit, more personal freedom, and outstanding results for their clients.</div>
+
+  <div class="section">
+    <p style="font-size:14px;line-height:1.8;margin-bottom:20px;">
+      SMB Team has worked with hundreds of law firms and built a proven framework for helping law firm owners get three things at once — more profit, more personal freedom, and outstanding results for their clients. The framework is called the Law Firm Growth Acceleration Model. It is built on four pillars that every law firm must master to grow.
+    </p>
+
+    <img class="full-img" src="https://www.dropbox.com/scl/fi/ffkzpv2f3rdjfzwq997e1/Law-Firm-Growth-Acceleration-Model.png?rlkey=665o52gt2va8pg4nb0epdc8hv&st=1iucj2m5&raw=1" alt="Law Firm Growth Acceleration Model" style="max-width:100%;height:auto;display:block;margin:20px auto;" />
+
+    <ul class="bullets" style="margin-top:20px;">
+      <li><strong>Lead Generation</strong> — a steady source of new clients that does not depend on referrals. The firm controls where its next client comes from.</li>
+      <li><strong>Intake</strong> — a system that turns leads into signed clients without the owner doing it themselves. Speed and follow-up win cases before they are even filed.</li>
+      <li><strong>Self-Managing Team</strong> — a team that runs the firm without the owner in every decision. Until this exists, the owner cannot have more free time — no matter how much revenue grows.</li>
+      <li><strong>Profit Plan</strong> — a clear picture of what comes in, what goes out, and what the owner keeps. Revenue is vanity. Profit is sanity.</li>
+    </ul>
+
+    <p style="font-size:14px;line-height:1.8;margin-top:20px;">
+      When all four pillars work together, the result is a firm that grows on its own, runs without the owner doing everything, and produces real profit — giving the attorney the income, the freedom, and the impact they set out to create.
+    </p>
+
+    <div class="back-to-top"><a href="#toc">↑ Back to Top</a></div>
+  </div>
+</div>
+
+<!-- ============================================================ -->
+<!-- GROWTH HEALTH ASSESSMENT                                      -->
+<!-- ============================================================ -->
+<div id="growth-health">
+  <div class="section-header">Your Growth Health Assessment<div class="sub">Law Offices of J. Douglas Angel</div></div>
+  <div class="section">
+
+    <!-- Traffic Light Legend -->
+    <div class="tl-legend">
+      <div class="tl-item"><div class="tl-circle tl-red"></div><span><strong>Red — Critical Priority:</strong> This area is broken or absent and is actively costing the firm clients, revenue, or freedom.</span></div>
+      <div class="tl-item"><div class="tl-circle tl-amber"></div><span><strong>Amber — In Progress:</strong> This area is partially functioning but has significant gaps limiting growth.</span></div>
+      <div class="tl-item"><div class="tl-circle tl-green"></div><span><strong>Green — On Track:</strong> This area is functioning well and may need optimization but is not a crisis.</span></div>
+    </div>
+
+    <!-- Pillar Health Scorecard — 2x2 Grid -->
+    <div class="pillar-grid">
+
+      <!-- Lead Generation — RED -->
+      <div class="pillar-card">
+        <div class="pillar-card-header">
+          <div class="pillar-tl" style="background:var(--red);"></div>
+          Lead Generation
+        </div>
+        <div class="pillar-card-body">
+          <ul>
+            <li>No paid advertising detected — no Google Ads, no LSA, no Meta ads</li>
+            <li>No blog and only 7 pages indexed by Google — severely limiting organic reach</li>
+            <li>Competitors with weaker credentials are outranking this firm purely on digital volume</li>
+          </ul>
+          <p class="italic-closing">Every day without a lead generation system is a day the firm's growth depends entirely on who happens to call — and that limits what this practice can become.</p>
+        </div>
+      </div>
+
+      <!-- Intake — AMBER -->
+      <div class="pillar-card">
+        <div class="pillar-card-header">
+          <div class="pillar-tl" style="background:var(--amber);"></div>
+          Intake
+        </div>
+        <div class="pillar-card-body">
+          <ul>
+            <li>Only a basic contact form on the website — no live chat, no online scheduling</li>
+            <li>No after-hours coverage visible — prospects who search at night hit a dead end</li>
+            <li>No CRM or lead tracking system detected to follow up with leads who don't convert on first contact</li>
+          </ul>
+          <p class="italic-closing">A firm this credentialed deserves an intake system that converts every qualified lead — not just the ones who happen to call during business hours.</p>
+        </div>
+      </div>
+
+      <!-- Self-Managing Team — AMBER -->
+      <div class="pillar-card">
+        <div class="pillar-card-header">
+          <div class="pillar-tl" style="background:var(--amber);"></div>
+          Self-Managing Team
+        </div>
+        <div class="pillar-card-body">
+          <ul>
+            <li>Small staff of 1–10 with attorney as the primary face, rainmaker, and service provider</li>
+            <li>Selective case approach indicates the attorney's time is the firm's main constraint</li>
+            <li>No evidence of a team structure that operates independently of the attorney</li>
+          </ul>
+          <p class="italic-closing">Until the team can run without the attorney in every decision, growth will always be capped by one person's available hours.</p>
+        </div>
+      </div>
+
+      <!-- Profit — AMBER -->
+      <div class="pillar-card">
+        <div class="pillar-card-header">
+          <div class="pillar-tl" style="background:var(--amber);"></div>
+          Profit
+        </div>
+        <div class="pillar-card-body">
+          <ul>
+            <li>High-asset divorce cases represent strong per-case revenue — a positive foundation</li>
+            <li>No visibility into marketing ROI — zero paid advertising means no data on client acquisition cost</li>
+            <li>Without a profit plan, revenue growth does not automatically mean more money in the attorney's pocket</li>
+          </ul>
+          <p class="italic-closing">The credentials and case quality are there. A clear profit plan turns good revenue into predictable, growing personal income.</p>
+        </div>
+      </div>
+
+    </div><!-- end pillar-grid -->
+
+    <!-- Competitive Urgency Score -->
+    <div class="urgency-card" id="urgency-score">
+      <div style="font-family:'Montserrat',sans-serif;font-size:18px;font-weight:700;color:#fff;margin-bottom:8px;">Competitive Urgency Score</div>
+      <div class="urgency-score-num">7 / 10</div>
+      <div class="urgency-label">High Urgency — Competitors are dominating multiple channels while this firm remains largely off the digital map.</div>
+
+      <div class="urgency-bar-wrap">
+        <div class="urgency-bar-marker" style="left: 70%;"></div>
+      </div>
+      <div class="urgency-scale">
+        <span>1–3 = Low Urgency</span>
+        <span>4–6 = Moderate</span>
+        <span>7–10 = High Urgency</span>
+      </div>
+
+      <div class="urgency-competitors">
+        <div class="urgency-competitor">
+          <span class="comp-name">EZLaw.pro (Elizabeth Rizos Zougras)</span><br/>
+          Ranking at or near the top of organic results for "family law attorney Munster Indiana" and "divorce lawyer Lake County Indiana." Exclusive family law focus, dedicated site, and active digital marketing investment — capturing the organic leads that belong to the most credentialed attorney in the market.
+        </div>
+        <div class="urgency-competitor">
+          <span class="comp-name">Padove Law (Burton A. Padove)</span><br/>
+          15 five-star Avvo reviews, active on multiple directories, and a strong multi-platform presence. Review volume advantage is directly suppressing Angel Law Firm's local pack rankings despite a fraction of Angel's credentials.
+        </div>
+        <div class="urgency-competitor">
+          <span class="comp-name">Arshad, Pangere &amp; Warring, LLP</span><br/>
+          26 five-star reviews across all platforms. Multi-attorney firm in Merrillville. Actively generating reviews and building Google authority — making them an increasingly difficult local pack opponent.
+        </div>
+      </div>
+    </div>
+
+    <div class="back-to-top"><a href="#toc">↑ Back to Top</a></div>
+  </div>
+</div>
+
+<!-- ============================================================ -->
+<!-- LEAD GENERATION                                               -->
+<!-- ============================================================ -->
+<div id="lead-generation">
+  <img class="full-img" src="https://www.dropbox.com/scl/fi/vne0wcswovu3nwjibgjya/Lead-Generation.png?rlkey=enb7lthrbylgma7qoofstb799&st=nw3f9i8c&raw=1" alt="Lead Generation" />
+  <div class="section">
+    <p style="font-size:14px;line-height:1.8;margin-bottom:20px;">
+      The Law Offices of J. Douglas Angel currently generates new clients almost entirely through word-of-mouth and referrals — a model that works until it doesn't. Competitors with far weaker credentials are outranking this firm on Google, running paid ads, and capturing the high-value divorce leads that should be going to the most experienced family law attorney in Munster.
+    </p>
+
+    <!-- WEBSITE AUDIT -->
+    <div class="subsection-header" id="website-audit">Website Audit</div>
+
+    <h4 style="font-family:'Montserrat',sans-serif;color:var(--navy);font-size:14px;margin:16px 0 8px;">Design &amp; First Impression</h4>
+    <ul class="bullets">
+      <li>The site title reads "Northwestern Indiana Family Law Attorney | Law Offices of J. Douglas Angel" — descriptive but not emotionally compelling or differentiated.</li>
+      <li>No bold headline or problem-aware value proposition detected above the fold. Visitors landing on the site do not immediately see a reason to choose this firm over any other.</li>
+      <li>No prominent CTA button (e.g., "Schedule Your Free Consultation") confirmed above the fold.</li>
+      <li>The overall design is functional but not conversion-optimized — it presents credentials but does not drive action.</li>
+    </ul>
+
+    <h4 style="font-family:'Montserrat',sans-serif;color:var(--navy);font-size:14px;margin:16px 0 8px;">Mobile Responsiveness</h4>
+    <ul class="bullets">
+      <li>Mobile responsiveness status is unconfirmed from available data — but the site's age and structure suggest it may not be fully optimized.</li>
+      <li>More than 60% of legal searches happen on mobile. A site that does not work well on mobile is losing most of its potential leads before they ever read a single credential.</li>
+    </ul>
+
+    <h4 style="font-family:'Montserrat',sans-serif;color:var(--navy);font-size:14px;margin:16px 0 8px;">Page Speed</h4>
+    <ul class="bullets">
+      <li>Direct PageSpeed scores could not be retrieved — the site blocks automated tools. A manual check at <strong>pagespeed.web.dev</strong> is recommended.</li>
+      <li>Based on the site's hosting profile and lack of confirmed CDN or caching tools, mobile scores in the <strong>30–55 range</strong> would not be surprising — a range that directly hurts both rankings and lead conversion.</li>
+    </ul>
+
+    <h4 style="font-family:'Montserrat',sans-serif;color:var(--navy);font-size:14px;margin:16px 0 8px;">Practice Area Pages</h4>
+    <ul class="bullets">
+      <li>The site covers a solid breadth of practice areas: Divorce, High-Asset Divorce, Child Custody, Child Support, Parenting Time, Paternity, Prenuptial Agreements, Alimony, Mediation, Father's Rights, Domestic Violence, Adoption, Business Owner Divorce, QDRO, and Appellate Proceedings.</li>
+      <li><strong>Critical gap:</strong> No pages specifically targeting high-net-worth divorce, business valuation in divorce, or asset protection language — despite the firm's stated specialty in high-asset cases. This is a missed SEO and positioning opportunity.</li>
+    </ul>
+    <div class="competitor-inset">
+      <strong>Competitor Check:</strong> EZLaw.pro (Elizabeth Rizos Zougras) has a dedicated, SEO-optimized site focused exclusively on family law, ranking at or near the top of organic results for "family law attorney Munster Indiana." Their focused content strategy is capturing the same high-asset clients Angel Law Firm is best positioned to serve.
+    </div>
+
+    <h4 style="font-family:'Montserrat',sans-serif;color:var(--navy);font-size:14px;margin:16px 0 8px;">Attorney Bio &amp; Trust Signals</h4>
+    <ul class="bullets">
+      <li>J. Douglas Angel's credentials are exceptional: <strong>AAML Fellow</strong> (fewer than 1,650 nationwide), <strong>19 consecutive Indiana Super Lawyer selections</strong>, <strong>Best Lawyers in America</strong> (multiple years), former Lake Circuit Court judge, Certified Family Law Mediator.</li>
+      <li><strong>The AAML Fellow designation is massively undermarketed.</strong> It is more exclusive than Super Lawyers or Best Lawyers and is not being used as a primary differentiator in any visible digital content.</li>
+      <li>No video testimonials, no client review widget embedded from Google or Avvo, no Martindale-Hubbell AV Preeminent badge displayed prominently.</li>
+      <li><strong>Avvo rating: 6.9/10 ("Good")</strong> — low for someone with this credential set, driven primarily by low review volume rather than any quality issue.</li>
+    </ul>
+
+    <h4 style="font-family:'Montserrat',sans-serif;color:var(--navy);font-size:14px;margin:16px 0 8px;" id="website-intake">Live Chat, Contact Forms &amp; Scheduling</h4>
+    <ul class="bullets">
+      <li>A basic contact form exists on the site — the only digital intake mechanism confirmed.</li>
+      <li><strong>No live chat widget detected</strong> (no Smith.ai, Intercom, Drift, or equivalent).</li>
+      <li><strong>No online scheduling tool</strong> (no Calendly, Clio Grow, or similar).</li>
+      <li>Legal consumers search at night and on weekends. A visitor who cannot get an immediate response will move to the next firm. These findings are addressed further in the Intake section.</li>
+    </ul>
+
+    <h4 style="font-family:'Montserrat',sans-serif;color:var(--navy);font-size:14px;margin:16px 0 8px;">Blog &amp; Content</h4>
+    <ul class="bullets">
+      <li><strong>No active blog confirmed.</strong> Google has indexed only 7 pages on this site — critically low for a firm that has been live for many years.</li>
+      <li>Competitor sites with active blogs regularly index 50–150+ pages and capture significantly more long-tail search traffic.</li>
+    </ul>
+
+    <h4 style="font-family:'Montserrat',sans-serif;color:var(--navy);font-size:14px;margin:16px 0 8px;">Video</h4>
+    <ul class="bullets">
+      <li><strong>No video content detected</strong> on the site or social media. Attorney introduction videos are one of the highest-converting trust signals in legal marketing — and this is entirely absent.</li>
+    </ul>
+
+    <h4 style="font-family:'Montserrat',sans-serif;color:var(--navy);font-size:14px;margin:16px 0 8px;">Technical Issues</h4>
+    <ul class="bullets">
+      <li><strong>HTTP 403 errors</strong> — the site blocks certain bots and may be blocking some search engine crawlers, creating indexation risk.</li>
+      <li><strong>Two phone numbers in circulation:</strong> 219-961-2166 and 219-836-3133 — a NAP inconsistency that actively suppresses local SEO performance.</li>
+      <li><strong>Legacy .shtml URL</strong> still indexed alongside the new URL structure — duplicate content risk and broken redirect issue.</li>
+      <li><strong>Only 7 pages indexed</strong> out of an estimated 15-page site — Google may not be seeing the full site.</li>
+    </ul>
+
+    <!-- LOCAL SEO -->
+    <div class="subsection-header" id="local-seo">Local SEO</div>
+
+    <h4 style="font-family:'Montserrat',sans-serif;color:var(--navy);font-size:14px;margin:16px 0 8px;">Google Business Profile</h4>
+    <ul class="bullets">
+      <li>An active GBP listing exists for the firm.</li>
+      <li><strong>Review volume is critically low</strong> across all platforms — the primary driver of local pack exclusion. Avvo shows 1 client review. Google review count unconfirmed but consistent with overall low review volume.</li>
+      <li>No evidence of active Google Posts, Q&amp;A activity, or consistent photo uploads.</li>
+      <li>The Avvo Client's Choice Award 2025 suggests some level of client satisfaction exists — but the volume of published reviews does not reflect it.</li>
+    </ul>
+    <div class="competitor-inset">
+      <strong>Competitor Comparison:</strong>
+      <ul style="margin-top:8px;padding-left:16px;">
+        <li><strong>Padove Law:</strong> 15 five-star Avvo reviews — outranking Angel in directories purely on volume</li>
+        <li><strong>Arshad, Pangere &amp; Warring:</strong> 26 five-star reviews across all platforms — building Google authority aggressively</li>
+        <li><strong>EZLaw.pro:</strong> Active Facebook page with 100% recommendation rate — signals consistent client satisfaction and digital engagement</li>
+      </ul>
+    </div>
+
+    <h4 style="font-family:'Montserrat',sans-serif;color:var(--navy);font-size:14px;margin:16px 0 8px;">Local Pack Visibility</h4>
+    <ul class="bullets">
+      <li>Angel Law Firm is <strong>not confirmed in the local 3-pack</strong> for "family law attorney Munster Indiana" or "divorce lawyer Munster Indiana." Low review volume is the structural cause.</li>
+      <li>Firms holding 3-pack positions: most likely Padove Law, EZLaw.pro, and Arshad, Pangere &amp; Warring — all with stronger review profiles.</li>
+    </ul>
+
+    <h4 style="font-family:'Montserrat',sans-serif;color:var(--navy);font-size:14px;margin:16px 0 8px;">Organic Rankings</h4>
+    <ul class="bullets">
+      <li>The family law overview page does appear in organic results for "family law attorney Munster Indiana" — a positive signal that organic SEO is partially working.</li>
+      <li>EZLaw.pro ranks at or near the top of organic results for these same queries — outperforming a firm with objectively superior credentials.</li>
+      <li>No geo-targeted landing pages for surrounding cities (Hammond, Highland, Dyer, Schererville, Merrillville) were detected — a significant organic expansion gap.</li>
+    </ul>
+
+    <h4 style="font-family:'Montserrat',sans-serif;color:var(--navy);font-size:14px;margin:16px 0 8px;">Directory Listings &amp; NAP Consistency</h4>
+    <ul class="bullets">
+      <li>Listed on: Avvo, Super Lawyers, FindLaw, Justia, LawInfo, Martindale-Hubbell, Yelp.</li>
+      <li><strong>NAP issue:</strong> Two different phone numbers appear across listings (219-961-2166 vs. 219-836-3133). This inconsistency is a confirmed local SEO suppressor.</li>
+      <li><strong>Firm name inconsistency:</strong> "Law Offices" vs. "Law Office" (plural vs. singular) appears across different listings — creates citation mismatches.</li>
+    </ul>
+
+    <!-- GOOGLE ADS -->
+    <div class="subsection-header" id="google-ads">Google Ads</div>
+
+    <h4 style="font-family:'Montserrat',sans-serif;color:var(--navy);font-size:14px;margin:16px 0 8px;">Ad Presence</h4>
+    <ul class="bullets">
+      <li><strong>No Google Ads campaigns detected</strong> for Law Offices of J. Douglas Angel. The firm is not capturing any paid search traffic for family law or divorce-related queries in the Munster/Lake County market.</li>
+      <li>The firm either does not appear to be running search ads for these terms, may not be configured to show for observed queries, or may be absent entirely from this channel.</li>
+    </ul>
+
+    <h4 style="font-family:'Montserrat',sans-serif;color:var(--navy);font-size:14px;margin:16px 0 8px;">Competitor Ad Landscape</h4>
+    <ul class="bullets">
+      <li><strong>EZLaw.pro</strong> — appears at or near the top for organic and potentially paid results for primary keywords; most digitally invested competitor in the market.</li>
+      <li>The Northwest Indiana family law market is moderate-competition — Google Ads CPCs are estimated at <strong>$15–$40 per click</strong> for core terms, making this a cost-effective channel compared to Chicago suburbs.</li>
+      <li>No other confirmed PPC advertisers detected — this is a relatively open paid search landscape, which makes entry timing favorable right now.</li>
+    </ul>
+
+    <h4 style="font-family:'Montserrat',sans-serif;color:var(--navy);font-size:14px;margin:16px 0 8px;">The Opportunity</h4>
+    <ul class="bullets">
+      <li><strong>Core keywords:</strong> "divorce lawyer Munster Indiana," "family law attorney Lake County Indiana," "high asset divorce attorney Indiana," "child custody lawyer Munster"</li>
+      <li><strong>Case-type keywords:</strong> "business owner divorce Indiana," "QDRO attorney Northwest Indiana," "contested divorce attorney Lake County"</li>
+      <li><strong>Competitor name targeting:</strong> Ads triggered when prospects search competitors' names — a proven tactic in legal markets</li>
+      <li><strong>Surrounding city terms:</strong> "divorce attorney Highland IN," "family law attorney Dyer IN," "divorce lawyer Schererville Indiana"</li>
+      <li><strong>Non-obvious high-value terms:</strong> "divorce attorney near me," "how to protect assets in divorce Indiana," "what is a QDRO," "certified divorce mediator Indiana"</li>
+      <li><strong>Urgency terms:</strong> "divorce lawyer consultation today," "emergency custody order Indiana," "divorce filing Lake County"</li>
+      <li>At $15–$40 CPC and a high-asset case average value of $10,000+, even modest paid search investment delivers exceptional ROI for this firm.</li>
+    </ul>
+
+    <!-- LOCAL SERVICE ADS -->
+    <div class="subsection-header" id="local-service-ads">Local Service Ads</div>
+
+    <h4 style="font-family:'Montserrat',sans-serif;color:var(--navy);font-size:14px;margin:16px 0 8px;">LSA Presence</h4>
+    <ul class="bullets">
+      <li><strong>No LSA presence detected</strong> for Law Offices of J. Douglas Angel. The firm does not appear to be enrolled in the Google Screened / Local Services Ads program.</li>
+      <li>This means the firm is surrendering the single highest-visibility position on every Google search in the market — the spot that appears above all organic results and standard ads.</li>
+    </ul>
+
+    <h4 style="font-family:'Montserrat',sans-serif;color:var(--navy);font-size:14px;margin:16px 0 8px;">Competitor LSA Landscape</h4>
+    <ul class="bullets">
+      <li><strong>EZLaw.pro</strong> — most likely holding an LSA position based on overall digital investment level.</li>
+      <li><strong>Padove Law</strong> and <strong>Arshad, Pangere &amp; Warring</strong> — LSA status unconfirmed but both have the review volume to qualify for Google Screened status.</li>
+      <li>Any competitor holding the LSA spot is receiving <strong>pay-per-lead, not pay-per-click</strong> traffic — the firm only pays when a real prospect makes direct contact.</li>
+    </ul>
+
+    <h4 style="font-family:'Montserrat',sans-serif;color:var(--navy);font-size:14px;margin:16px 0 8px;">The Opportunity</h4>
+    <ul class="bullets">
+      <li>LSAs appear above everything else on Google — above organic results, above standard ads. For a firm with J. Douglas Angel's credentials, a Google Screened badge would be an instant credibility signal to every prospective client.</li>
+      <li>Getting to 15+ Google reviews unlocks full LSA eligibility and positions the firm at position #1 for every relevant search in the market.</li>
+      <li>Pay-per-lead pricing means the firm only pays for real prospects who call directly — no wasted ad spend on browsers or researchers.</li>
+    </ul>
+
+    <!-- META ADS -->
+    <div class="subsection-header" id="meta-ads">Facebook &amp; Meta Ads</div>
+
+    <h4 style="font-family:'Montserrat',sans-serif;color:var(--navy);font-size:14px;margin:16px 0 8px;">Ad Presence</h4>
+    <ul class="bullets">
+      <li><strong>No active Meta ads detected</strong> for Law Offices of J. Douglas Angel in the Meta Ads Library.</li>
+      <li>The firm's Facebook page exists with 176 likes — but there is no evidence of paid promotion or active content marketing.</li>
+    </ul>
+
+    <h4 style="font-family:'Montserrat',sans-serif;color:var(--navy);font-size:14px;margin:16px 0 8px;">Competitor Ad Landscape</h4>
+    <ul class="bullets">
+      <li><strong>EZLaw.pro</strong> — active Facebook presence and likely running or testing Meta ads based on digital investment level.</li>
+      <li><strong>Robert A. Plantz &amp; Associates</strong> — active Facebook page with 12 reviews and 100% recommendation rate; building social proof.</li>
+      <li>The Northwest Indiana family law market has relatively low Meta ad saturation — making entry now cost-effective before competition increases.</li>
+    </ul>
+
+    <h4 style="font-family:'Montserrat',sans-serif;color:var(--navy);font-size:14px;margin:16px 0 8px;">The Opportunity</h4>
+    <ul class="bullets">
+      <li><strong>Retargeting:</strong> Serve ads to people who visited the website but didn't contact the firm — keep the firm top of mind while prospects are still deciding.</li>
+      <li><strong>Video ads:</strong> A 60-second attorney introduction video from J. Douglas Angel — mentioning the AAML Fellow credential and 50 years of experience — would be extraordinarily compelling to high-asset divorce prospects on Facebook.</li>
+      <li><strong>Life event targeting:</strong> Meta allows targeting by relationship status changes and major life events — reaching people at the exact moment they need a family law attorney.</li>
+      <li><strong>Income &amp; demographic targeting:</strong> High-asset divorce clients are concentrated in 45–65 age demographics with high household incomes — a Facebook-strong demographic.</li>
+      <li><strong>Educational content ads:</strong> "What to Know Before Filing for Divorce in Indiana" — drives traffic, builds trust, and captures leads before they call anyone.</li>
+    </ul>
+
+    <!-- MISSED OPPORTUNITIES -->
+    <div class="subsection-header" id="missed-opps">Missed Opportunities</div>
+
+    <div class="opp-card">
+      <h4>Review Generation System</h4>
+      <ul>
+        <li><strong>What is missing:</strong> A systematic process to request Google and Avvo reviews from satisfied clients after case resolution.</li>
+        <li><strong>Why it matters:</strong> Review volume is the #1 factor in local pack rankings. With 1 Avvo review and an unconfirmed but likely single-digit Google count, the firm is structurally excluded from the 3-pack — regardless of credentials.</li>
+        <li><strong>Who is doing it better:</strong> Arshad, Pangere &amp; Warring has 26 five-star reviews across platforms. Padove Law has 15 five-star Avvo reviews. Both are weaker attorneys with stronger online visibility.</li>
+        <li><strong>The opportunity:</strong> 15–20 Google reviews would unlock full LSA eligibility and likely restore 3-pack placement — putting the most credentialed family law attorney in the area at the top of every local search.</li>
+      </ul>
+      <span class="opp-pill pill-quick">Quick Win</span><span class="opp-pill pill-pillar">Lead Generation</span>
+    </div>
+
+    <div class="opp-card">
+      <h4>Google Local Service Ads (LSA) Enrollment</h4>
+      <ul>
+        <li><strong>What is missing:</strong> LSA profile — the pay-per-lead ad format that places the firm above all organic and paid results on Google.</li>
+        <li><strong>Why it matters:</strong> Every day without an LSA listing is a day competitors capture the first call from every high-value prospect searching for family law in Munster.</li>
+        <li><strong>The opportunity:</strong> A Google Screened badge paired with J. Douglas Angel's credentials creates an instant competitive moat at the top of search results.</li>
+      </ul>
+      <span class="opp-pill pill-quick">Quick Win</span><span class="opp-pill pill-pillar">Lead Generation</span>
+    </div>
+
+    <div class="opp-card">
+      <h4>Blog &amp; Content Marketing</h4>
+      <ul>
+        <li><strong>What is missing:</strong> A blog with regular, keyword-targeted articles on Indiana divorce law, child custody, high-asset divorce, and related topics.</li>
+        <li><strong>Why it matters:</strong> Google currently indexes only 7 pages on this site. Competitors with 50–150 indexed pages are capturing all the long-tail search traffic from people researching their legal situation — people who are actively in the market for a family law attorney.</li>
+        <li><strong>The opportunity:</strong> 12 blog posts per year targeting specific search terms (e.g., "how are assets divided in divorce in Indiana," "QDRO attorney Lake County") could double or triple organic traffic within 12 months.</li>
+      </ul>
+      <span class="opp-pill pill-long">Long-Term Play</span><span class="opp-pill pill-pillar">Lead Generation</span>
+    </div>
+
+    <div class="opp-card">
+      <h4>AAML Fellow Credential as Primary Differentiator</h4>
+      <ul>
+        <li><strong>What is missing:</strong> Prominent marketing of the Fellow, American Academy of Matrimonial Lawyers designation across all digital channels.</li>
+        <li><strong>Why it matters:</strong> Fewer than 1,650 attorneys in the entire country hold this designation. No other family law attorney in the Munster/Lake County market is an AAML Fellow. This is a defensible, permanent competitive advantage — and it is almost invisible online.</li>
+        <li><strong>The opportunity:</strong> Leading every ad, every page header, and every social post with "AAML Fellow" positions this firm in a category of one in this market.</li>
+      </ul>
+      <span class="opp-pill pill-quick">Quick Win</span><span class="opp-pill pill-pillar">Lead Generation</span>
+    </div>
+
+    <div class="opp-card">
+      <h4>Geo-Targeted Landing Pages</h4>
+      <ul>
+        <li><strong>What is missing:</strong> Dedicated landing pages for surrounding communities: Hammond, Highland, Dyer, Schererville, Merrillville, Lowell, Crown Point.</li>
+        <li><strong>Why it matters:</strong> People search "divorce lawyer [their city]" — not just "divorce lawyer Munster." Without city-specific pages, the firm is invisible to everyone outside of a direct Munster search.</li>
+        <li><strong>The opportunity:</strong> Each geo page captures a new keyword cluster and opens a new channel of organic leads from across Lake County.</li>
+      </ul>
+      <span class="opp-pill pill-long">Long-Term Play</span><span class="opp-pill pill-pillar">Lead Generation</span>
+    </div>
+
+    <div class="opp-card">
+      <h4>NAP Cleanup &amp; Directory Consistency</h4>
+      <ul>
+        <li><strong>What is missing:</strong> A consistent Name, Address, Phone Number across all directories and the website itself.</li>
+        <li><strong>Why it matters:</strong> Two phone numbers (219-961-2166 and 219-836-3133) and a firm name inconsistency ("Law Office" vs. "Law Offices") are active local SEO suppressors. Google reduces trust in listings with mismatched citations.</li>
+        <li><strong>The opportunity:</strong> Fixing NAP across Avvo, FindLaw, Justia, Yelp, LawInfo, and Martindale is a low-cost, high-impact local SEO improvement.</li>
+      </ul>
+      <span class="opp-pill pill-quick">Quick Win</span><span class="opp-pill pill-pillar">Lead Generation</span>
+    </div>
+
+    <div class="back-to-top"><a href="#toc">↑ Back to Top</a></div>
+  </div>
+</div>
+
+<!-- ============================================================ -->
+<!-- INTAKE                                                        -->
+<!-- ============================================================ -->
+<div id="intake">
+  <img class="full-img" src="https://www.dropbox.com/scl/fi/lmohhz14wgbeucpflf02m/Intake.png?rlkey=jwomjz9j8vqi7kmjubxexoyvh&st=sgtebwjp&raw=1" alt="Intake" />
+  <div class="section">
+    <p style="font-size:14px;line-height:1.8;margin-bottom:20px;">
+      The Law Offices of J. Douglas Angel currently relies on phone calls and a basic contact form as its only intake mechanisms — leaving after-hours and weekend prospects without any way to connect. Fixing intake means converting more of the leads the firm is already generating — without spending another dollar on marketing.
+    </p>
+
+    <div class="subsection-header" id="intake-assessment">
+      Intake Assessment &nbsp;<span style="display:inline-block;width:16px;height:16px;border-radius:50%;background:var(--amber);vertical-align:middle;"></span>
+    </div>
+
+    <ul class="bullets">
+      <li>The firm's only digital contact method is a basic contact form — no live chat, no scheduling link, no text option.</li>
+      <li>Prospective clients searching for a divorce attorney at 9 PM on a Sunday — when the emotional urgency is highest — have no way to reach this firm and get a response.</li>
+      <li>No CRM or lead-tracking system detected. Without one, there is no way to follow up with leads who submitted a form but were never converted, or who called but didn't book.</li>
+    </ul>
+
+    <div class="quote-callout">
+      "Legal consumers expect immediate responses. Studies show that the first attorney to respond wins the client in more than 50% of cases — regardless of credentials or price."
+    </div>
+
+    <ul class="bullets">
+      <li>A competitor with a live chat widget and 24/7 answering service will convert the same prospect that this firm's voicemail sent away.</li>
+      <li>Every unbooked consultation is revenue already paid for — through years of reputation building and referral relationships — that simply didn't get captured.</li>
+      <li><strong>Fixing intake converts more money from the leads the firm already has</strong> — before spending a single additional dollar on advertising.</li>
+    </ul>
+
+    <div class="subsection-header" id="website-intake">Website Contact Forms &amp; Live Chat</div>
+    <p style="font-size:13px;color:#555;margin-bottom:10px;font-style:italic;">These findings are also referenced in the Website Audit section.</p>
+    <ul class="bullets">
+      <li>A basic contact form exists on the site — placement is not confirmed above the fold, which reduces conversion rates significantly.</li>
+      <li><strong>No live chat widget</strong> detected (Smith.ai, Intercom, Drift, or similar). Live chat for law firms is proven to increase lead capture by 30–50% compared to forms alone.</li>
+      <li><strong>No after-hours coverage</strong> — prospects who arrive outside business hours leave without a path to connect. These are often the highest-intent leads, reaching out at the moment a difficult situation becomes urgent.</li>
+      <li>Contact forms that are buried below the fold or require multiple fields reduce conversion. The form should be visible, short, and accompanied by a phone number and chat option at every point in the site.</li>
+    </ul>
+
+    <div class="back-to-top"><a href="#toc">↑ Back to Top</a></div>
+  </div>
+</div>
+
+<!-- ============================================================ -->
+<!-- SELF-MANAGING TEAM                                            -->
+<!-- ============================================================ -->
+<div id="team">
+  <img class="full-img" src="https://www.dropbox.com/scl/fi/r6o7um1xcdd490t9807vd/Self-Managing-Team.png?rlkey=ywamsca6rpb34l1iasysyk10w&st=dm86b0kz&raw=1" alt="Self-Managing Team" />
+  <div class="section">
+    <p style="font-size:14px;line-height:1.8;margin-bottom:20px;">
+      The Law Offices of J. Douglas Angel operates with a small team of 1–10 staff, where the attorney is the center of gravity for every case, every client relationship, and every key decision. Until this changes, the owner cannot have more free time — no matter how much revenue grows.
+    </p>
+
+    <div class="subsection-header" id="team-assessment">
+      Team Assessment &nbsp;<span style="display:inline-block;width:16px;height:16px;border-radius:50%;background:var(--amber);vertical-align:middle;"></span>
+    </div>
+
+    <ul class="bullets">
+      <li>The firm operates as a boutique, with the attorney as its primary differentiator — which is a strength in quality but a ceiling for growth.</li>
+      <li>The selective case approach — taking fewer cases to provide deeper preparation — signals that the attorney's personal time is the firm's most constrained resource.</li>
+      <li>No evidence of a team structure where staff can manage intake, handle client communications, or make operational decisions without the attorney's involvement.</li>
+    </ul>
+
+    <div class="quote-callout">
+      "When the attorney is the intake coordinator, the case manager, and the rainmaker — there is no room left to build the business."
+    </div>
+
+    <ul class="bullets">
+      <li>A self-managing team means someone else answers the phone, follows up with leads, handles scheduling, and manages client communication — freeing the attorney to focus on high-value casework and business development.</li>
+      <li>As the firm adds marketing and generates more leads, the team must be ready to handle the increased volume — or the growth creates more chaos, not more income.</li>
+      <li><strong>Until the team can operate without the attorney in every decision, there is a hard ceiling on how much this firm can grow — and on how much freedom the attorney can ever have.</strong></li>
+    </ul>
+
+    <div class="back-to-top"><a href="#toc">↑ Back to Top</a></div>
+  </div>
+</div>
+
+<!-- ============================================================ -->
+<!-- PROFIT                                                        -->
+<!-- ============================================================ -->
+<div id="profit">
+  <img class="full-img" src="https://www.dropbox.com/scl/fi/rh2dxdoqsf7tqastam640/Profits.png?rlkey=kss013g0ov5jnuzcoklog7awr&st=iog622wf&raw=1" alt="Profit" />
+  <div class="section">
+    <p style="font-size:14px;line-height:1.8;margin-bottom:20px;">
+      The Law Offices of J. Douglas Angel has a strong foundation for profitability — high-asset divorce cases carry above-average case values, and a selective intake approach limits low-margin work. Revenue is vanity, profit is sanity. Until there is a clear profit plan, the owner cannot know whether their growth is making them wealthier — or just busier.
+    </p>
+
+    <div class="subsection-header" id="profit-assessment">
+      Profit Plan Assessment &nbsp;<span style="display:inline-block;width:16px;height:16px;border-radius:50%;background:var(--amber);vertical-align:middle;"></span>
+    </div>
+
+    <ul class="bullets">
+      <li>High-asset divorce and business-owner divorce cases represent significant per-case revenue — a built-in profit advantage over general family law practitioners.</li>
+      <li>Without paid advertising or any tracked digital marketing, there is no data on client acquisition cost — making it impossible to measure marketing ROI or make informed investment decisions.</li>
+      <li>No visibility into monthly financial reporting, budget tracking, or profit margin analysis was detected. Without these, revenue growth does not automatically mean more money in the attorney's bank account each month.</li>
+    </ul>
+
+    <div class="quote-callout">
+      "A busy practice is not the same as a profitable practice. Knowing your numbers is what separates one from the other."
+    </div>
+
+    <ul class="bullets">
+      <li>As marketing investment begins and lead volume grows, a profit plan becomes essential — to know which cases are most profitable, what the firm can afford to spend on ads, and what the attorney should personally take home each month.</li>
+      <li>A clear profit plan connects every business decision back to the attorney's personal financial goals — not just firm revenue, but actual wealth-building.</li>
+    </ul>
+
+    <div class="back-to-top"><a href="#toc">↑ Back to Top</a></div>
+  </div>
+</div>
+
+<!-- ============================================================ -->
+<!-- GROWTH JOURNEY                                                -->
+<!-- ============================================================ -->
+<div id="growth-journey">
+  <div class="section-header">Your Growth Journey</div>
+  <div class="section">
+
+    <div class="subsection-header" id="growth-stage">Growth Stage Assessment</div>
+    <p style="font-size:14px;line-height:1.8;margin-bottom:16px;">
+      The Law Offices of J. Douglas Angel is at <strong>Stage 3 — Solo Practitioner</strong>. The firm runs on the attorney's personal reputation and a decades-long referral network. The day-to-day reality is a highly skilled attorney who is also the firm's only consistent source of new clients, the primary service provider on every case, and the center of gravity for all decisions. The most urgent limiter right now is lead generation — without a system that works independently of the attorney's personal activity, growth is capped by one person's capacity. Closing this gap is the direct path to more revenue, more predictability, and eventually, more freedom.
+    </p>
+
+    <div class="subsection-header" id="growth-path">Your Path to Law Firm Owner</div>
+
+    <!-- Stage 3 — Current -->
+    <div class="journey-card current">
+      <h4>Stage 3 — Solo Practitioner <span class="current-badge">You Are Here</span></h4>
+      <ul>
+        <li>The firm runs on referrals and personal reputation — not a system</li>
+        <li>New client flow is unpredictable and entirely dependent on the attorney's activity</li>
+        <li>The attorney handles or closely oversees every case, every client relationship, and every key decision</li>
+        <li><strong>What has to change:</strong> Build the first reliable, digital lead generation system — so leads arrive consistently whether or not the attorney is personally visible that week</li>
+        <li><strong>What you gain:</strong> Predictable revenue, the ability to be selective with cases, and the first step toward a firm that doesn't depend entirely on you</li>
+      </ul>
+    </div>
+
+    <!-- Stage 4 -->
+    <div class="journey-card">
+      <h4>Stage 4 — Small Business Manager</h4>
+      <ul>
+        <li>At least one digital lead generation system (Google Ads, LSA, or SEO) is running and producing results</li>
+        <li>An intake system is in place — staff handles first contact, follow-up, and consultation scheduling</li>
+        <li>The attorney is still closely involved but beginning to delegate operational tasks to the team</li>
+        <li><strong>What has to change:</strong> Train the team to run intake and client communication without the attorney in the middle; implement a profit plan to track case economics</li>
+        <li><strong>What you gain:</strong> More revenue from the same hours, less time spent on tasks the team can handle, and the beginning of real predictability</li>
+        <li><strong>SMB Team support:</strong> Full Service Marketing + Elite Coaching to build the system and the skills simultaneously</li>
+      </ul>
+    </div>
+
+    <!-- Stage 5 -->
+    <div class="journey-card">
+      <h4>Stage 5 — Law Firm CEO</h4>
+      <ul>
+        <li>Multiple lead generation channels are running (SEO, paid search, LSA, Meta ads)</li>
+        <li>A trained intake team converts leads without the attorney's involvement</li>
+        <li>A leadership structure exists — the attorney works on high-value cases and business strategy, not daily operations</li>
+        <li><strong>What has to change:</strong> Add operational leadership (COO-level support) to manage the team and implement systems at scale</li>
+        <li><strong>What you gain:</strong> The ability to take time off, step back from daily operations, and focus entirely on the work — and the life — that matters most</li>
+        <li><strong>SMB Team support:</strong> Fractional COO Advisor added to build the leadership layer that sustains growth without the attorney's constant presence</li>
+      </ul>
+    </div>
+
+    <!-- Stage 6 -->
+    <div class="journey-card">
+      <h4>Stage 6 — Law Firm Owner</h4>
+      <ul>
+        <li>The firm runs without daily owner involvement — revenue is predictable, the team is self-directing, and the attorney is involved by choice</li>
+        <li>Marketing is omnipresent across search, social, and awareness channels</li>
+        <li>Profit is planned, not discovered — the attorney knows exactly what they will take home each month</li>
+        <li><strong>What you gain:</strong> True financial freedom, true time freedom, and a firm with real enterprise value — one that could be scaled, sold, or passed on</li>
+        <li><strong>SMB Team support:</strong> Full ecosystem — Full Service Marketing, Master's Circle, Fractional COO, Fractional CFO — everything working together</li>
+      </ul>
+    </div>
+
+    <div class="back-to-top"><a href="#toc">↑ Back to Top</a></div>
+  </div>
+</div>
+
+<!-- ============================================================ -->
+<!-- NEXT STEPS                                                    -->
+<!-- ============================================================ -->
+<div id="next-steps">
+  <div class="section-header">Your Next Steps</div>
+  <div class="section">
+
+    <!-- What We Found -->
+    <div class="subsection-header" id="what-we-found">What We Found</div>
+    <p style="font-size:14px;line-height:1.8;margin-bottom:16px;">
+      The Law Offices of J. Douglas Angel holds credentials that no competitor in the Munster/Lake County market can match — AAML Fellow, 50 years of practice, 19 consecutive Super Lawyer selections, former Lake Circuit Court judge — yet the firm is nearly invisible online, generates leads almost entirely through referrals, and lacks the digital systems that less credentialed competitors are using to capture every new client in this market. The most critical gaps are lead generation (no paid advertising, no LSA, minimal online reviews) and intake (no live chat, no after-hours coverage, no CRM) — together, these mean the firm is both failing to attract and failing to capture the clients it has already earned the right to serve.
+    </p>
+
+    <!-- Competitive Reality -->
+    <div class="subsection-header" id="competitive-reality">The Competitive Reality</div>
+    <p style="font-size:14px;line-height:1.8;margin-bottom:14px;">Three competitors are widening the gap right now, each from a different direction:</p>
+
+    <div class="next-card">
+      <h4>EZLaw.pro — Dominating Organic Search</h4>
+      <ul class="bullets" style="margin-top:8px;">
+        <li>Ranking at or near the top of organic results for "family law attorney Munster Indiana" and "divorce lawyer Lake County Indiana"</li>
+        <li>A dedicated, SEO-optimized site and active digital marketing strategy are capturing the organic leads that belong to the most credentialed attorney in the market</li>
+        <li>Every day without a content and SEO strategy, this gap widens</li>
+      </ul>
+    </div>
+
+    <div class="next-card">
+      <h4>Padove Law — Winning on Reviews</h4>
+      <ul class="bullets" style="margin-top:8px;">
+        <li>15 five-star Avvo reviews and active multi-platform directory presence</li>
+        <li>Higher review volume = higher local pack rankings, regardless of credentials</li>
+        <li>Every month without a review generation system is a month Padove Law's lead advantage compounds</li>
+      </ul>
+    </div>
+
+    <div class="next-card">
+      <h4>Arshad, Pangere &amp; Warring — Building Google Authority</h4>
+      <ul class="bullets" style="margin-top:8px;">
+        <li>26 five-star reviews across all platforms and growing — building the Google authority that drives 3-pack placement</li>
+        <li>A multi-attorney firm that can scale intake and case volume in ways a solo practitioner cannot without systems</li>
+        <li>If this firm reaches LSA before Angel Law Firm enrolls, they lock down the top position with a structural advantage</li>
+      </ul>
+    </div>
+
+    <!-- What We Recommend -->
+    <div class="subsection-header" id="what-we-recommend">What We Recommend</div>
+
+    <div class="opp-card">
+      <h4>Launch a Review Generation System — Immediately</h4>
+      <ul>
+        <li>Build a simple, consistent process to request Google reviews from every satisfied client at case close</li>
+        <li>Target: 15–20 Google reviews within 90 days to unlock full LSA eligibility and restore 3-pack competitiveness</li>
+        <li>This is the single highest-leverage action available right now — it costs almost nothing and unlocks multiple other growth channels</li>
+      </ul>
+      <span class="opp-pill pill-quick">Quick Win</span><span class="opp-pill pill-pillar">Lead Generation</span>
+    </div>
+
+    <div class="opp-card">
+      <h4>Enroll in Google Local Service Ads (LSA)</h4>
+      <ul>
+        <li>Get Google Screened and place the firm at the literal top of every relevant search in the Munster/Lake County market</li>
+        <li>Pay-per-lead pricing means the firm only pays for real prospects — not for browsers, researchers, or clicks that don't convert</li>
+        <li>Combined with the AAML Fellow credential and 50 years of experience, a Google Screened badge creates an instant competitive moat</li>
+      </ul>
+      <span class="opp-pill pill-quick">Quick Win</span><span class="opp-pill pill-pillar">Lead Generation</span>
+    </div>
+
+    <div class="opp-card">
+      <h4>Add Live Chat &amp; After-Hours Coverage</h4>
+      <ul>
+        <li>Install a live chat tool (e.g., Smith.ai) on the website — staffed 24/7 so prospects who arrive at night or on weekends get an immediate response</li>
+        <li>Legal consumers who can't reach an attorney in the first few minutes move to the next firm on their list</li>
+        <li>This converts more value from every lead the firm already generates — without increasing ad spend</li>
+      </ul>
+      <span class="opp-pill pill-quick">Quick Win</span><span class="opp-pill pill-pillar">Intake</span>
+    </div>
+
+    <div class="opp-card">
+      <h4>Launch Google Paid Search Ads</h4>
+      <ul>
+        <li>Target high-intent keywords: "divorce lawyer Munster Indiana," "high asset divorce attorney Lake County," "family law attorney near me"</li>
+        <li>At $15–$40 CPC in a moderate-competition market, paid search delivers high-value clients at a fraction of Chicago-area costs</li>
+        <li>Start with $3,000–$5,000/month — scale based on measured conversion data</li>
+      </ul>
+      <span class="opp-pill pill-quick">Quick Win</span><span class="opp-pill pill-pillar">Lead Generation</span>
+    </div>
+
+    <div class="opp-card">
+      <h4>Fix NAP Inconsistencies Across Directories</h4>
+      <ul>
+        <li>Standardize the firm name ("Law Offices of J. Douglas Angel") and phone number (219-961-2166) across Avvo, FindLaw, Justia, Yelp, LawInfo, and Martindale</li>
+        <li>Audit and redirect the legacy .shtml URL to eliminate duplicate content</li>
+        <li>These technical fixes directly improve local pack rankings — low cost, measurable impact</li>
+      </ul>
+      <span class="opp-pill pill-quick">Quick Win</span><span class="opp-pill pill-pillar">Lead Generation</span>
+    </div>
+
+    <div class="opp-card">
+      <h4>Build a Profit-Aware Business Model</h4>
+      <ul>
+        <li>Implement monthly financial reporting: revenue, expenses, client acquisition cost, and owner draw — tracked and visible</li>
+        <li>As marketing investment increases, knowing the ROI of each channel determines where to spend more and where to cut</li>
+        <li>A clear profit plan connects every business decision to a specific financial outcome for the attorney personally</li>
+      </ul>
+      <span class="opp-pill pill-long">Long-Term Play</span><span class="opp-pill pill-pillar">Profit</span>
+    </div>
+
+    <div class="opp-card">
+      <h4>Build a Blog &amp; Content Engine</h4>
+      <ul>
+        <li>Publish 1–2 articles per month targeting high-value search terms: "how to protect business assets in divorce," "QDRO attorney Indiana," "high net worth divorce lawyer Lake County"</li>
+        <li>Currently only 7 pages indexed — consistent content can 10x the firm's organic footprint within 12 months</li>
+        <li>Positions the attorney as the definitive expert in high-asset family law in Northwest Indiana</li>
+      </ul>
+      <span class="opp-pill pill-long">Long-Term Play</span><span class="opp-pill pill-pillar">Lead Generation</span>
+    </div>
+
+    <!-- Fastest Path Forward -->
+    <div class="subsection-header" id="fastest-path">The Fastest Path Forward</div>
+
+    <p style="font-size:14px;line-height:1.8;margin-bottom:20px;">
+      We help boutique family law firms led by elite attorneys — who have built everything on reputation and results — finally build a firm that generates consistent, qualified leads so they can grow their revenue, work on the cases they love, and stop depending on whoever happens to call next.
+    </p>
+
+    <div class="placeholder-box">
+      <h3>Package Recommendation — To Be Completed</h3>
+      <p>
+        This section will be completed by <strong>Eli Gill</strong> prior to delivery. It will include the full package recommendation, recommended monthly investment, 90-day action plan, three-phase growth roadmap, and investment summary — all tailored specifically to the Law Offices of J. Douglas Angel and connected to the firm's growth goals.
+      </p>
+    </div>
+
+    <div class="back-to-top"><a href="#toc">↑ Back to Top</a></div>
+  </div>
+</div>
+
+</body>
+</html>
