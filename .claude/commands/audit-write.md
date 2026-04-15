@@ -231,25 +231,45 @@ Verify both `[friendly-name]/index.html` and `[friendly-name]/audit_styles.css` 
 
 ## FINAL CHECK
 
-Scan `[friendly-name]/index.html` and confirm:
-- No `<!-- FILL: -->` placeholder text remains anywhere
-- No `<style>` blocks or `style=""` attributes exist anywhere
-- All 11 sections are present
-- All image URLs are unmodified
-- `<link rel="stylesheet" href="audit_styles.css">` is present with the href exactly as shown
-- `audit_styles.css` is present in `[friendly-name]/`
+Run these bash commands. Do not read `index.html` directly — the file is large and will cause a timeout.
 
-Fix anything that fails before committing.
+```bash
+# Check for unfilled placeholders (must return 0)
+grep -c "FILL:" "[friendly-name]/index.html" || true
+
+# Check for inline styles or style blocks (must return 0)
+grep -cE '<style|style="' "[friendly-name]/index.html" || true
+
+# Confirm stylesheet link is present
+grep -c 'href="audit_styles.css"' "[friendly-name]/index.html" || true
+
+# Confirm CSS file exists and is not empty
+wc -c "[friendly-name]/audit_styles.css"
+
+# Confirm index.html is not empty
+wc -l "[friendly-name]/index.html"
+```
+
+If placeholder count > 0 or style count > 0, read only the specific lines flagged:
+```bash
+grep -n "FILL:" "[friendly-name]/index.html"
+grep -nE '<style|style="' "[friendly-name]/index.html"
+```
+
+Fix any issues found, then commit.
 
 ---
 
 ## COMMIT AND PUSH TO MAIN
 
+Do not read the git diff output. Run these commands and report only the commit hash from the final line.
+
 ```bash
 git checkout main
 git add "[friendly-name]/"
 git commit -m "Add growth audit: [Firm Name] ([Date])"
-git push origin main
+GIT_TERMINAL_PROMPT=0 git push origin main
+git log -1 --format="%H %s"
 ```
 
-Always commit directly to main — never create a branch. Confirm push succeeded and report the commit hash.
+Always commit directly to main — never create a branch. Report the commit hash from the last command. Done.
