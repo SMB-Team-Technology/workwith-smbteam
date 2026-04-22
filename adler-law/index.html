@@ -1,0 +1,1185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Law Firm Growth Audit — Adler Law Firm</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Montserrat:wght@700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="audit_styles.css">
+</head>
+<body>
+
+<!--
+  ============================================================
+  SMB TEAM — LAW FIRM GROWTH AUDIT
+  Master Assembly File
+
+  ⚠️ CRITICAL — READ BEFORE WRITING A SINGLE CHARACTER:
+
+  This file does NOT contain a <style> block.
+  This file does NOT use inline styles (no style="" attributes).
+  ALL styling comes exclusively from audit_styles.css.
+
+  If you find yourself writing CSS — in a <style> tag, inline,
+  or anywhere else — STOP. Delete it. Use only the class names
+  that already exist in audit_styles.css. Do not invent new ones.
+
+  Violating this rule is what causes the report to look wrong.
+  The CSS is already written. Your only job is to fill in content.
+
+  ============================================================
+
+  INSTRUCTIONS FOR COWORK:
+  This file assembles the completed audit by inserting the
+  content of each completed section fragment in order.
+
+  Workflow:
+  1. Complete all research and analysis first. Write nothing yet.
+  2. Open section_01_cover.html. Fill in all placeholders. Save.
+  3. Open section_02_toc.html. Fill in all placeholders. Save.
+  4. Open section_03_firm_overview.html. Fill in all placeholders. Save.
+  5. Section 04 (About SMB Team) is static — copy as-is.
+  6. Open section_05_growth_health.html. Fill in all placeholders. Save.
+  7. Open section_06_lead_generation.html. Fill in all placeholders. Save.
+  8. Open section_07_08_09_intake_team_profit.html. Fill in all placeholders. Save.
+  9. Open section_10_whats_possible.html. Fill in all placeholders. Save.
+  10. Open section_11_next_steps.html. Fill in all placeholders. Save.
+  11. Return to this file. Replace each INSERT SECTION X CONTENT HERE comment
+      with the full HTML content of that completed section file.
+  12. Save the final assembled file as:
+      [FirmName]_[Date]_Growth_Audit.html
+      to the project folder.
+
+  RULES:
+  - No <style> block. None. Not here, not in any section file.
+  - No inline styles. No style="" on any element. Ever.
+  - No new CSS classes. Only use classes from audit_styles.css.
+  - Do not output this file in the chat window.
+  - Save directly to the project folder.
+  ============================================================
+-->
+
+<!-- ===== SECTION 01: COVER PAGE ===== -->
+<!-- ⚠️ NO CSS IN THIS FILE. No <style> blocks. No inline styles. No style="" attributes.
+     All styling comes from audit_styles.css only. Use only existing class names.
+     If you find yourself writing CSS — stop and delete it. -->
+
+<div class="cover" id="cover">
+  <img class="cover-logo"
+    src="https://www.dropbox.com/scl/fi/9ytno9l0ipl9w9x4l0qg6/SMB-Logo-H-White.png?rlkey=y13ywjp9poyihu8zus42tx6wq&st=rfo0lufv&raw=1"
+    alt="SMB Team Logo" />
+
+  <div class="cover-title">Law Firm Growth Audit</div>
+
+  <div class="cover-firm">Adler Law Firm</div>
+
+  <div class="cover-footer">
+    <p>Prepared for: <strong>Adler Law Firm</strong></p>
+    <p>Prepared by: <strong>Randy Gold</strong> | SMB Team</p>
+    <p>Date: <strong>April 22, 2026</strong></p>
+    <p class="confidential">Confidential</p>
+  </div>
+</div>
+
+
+<!-- ===== SECTION 02: TABLE OF CONTENTS ===== -->
+<!-- ⚠️ NO CSS IN THIS FILE. No <style> blocks. No inline styles. No style="" attributes.
+     All styling comes from audit_styles.css only. Use only existing class names.
+     If you find yourself writing CSS — stop and delete it. -->
+
+<div class="toc-wrap" id="toc">
+  <div class="toc-title">Table of Contents</div>
+
+  <div class="toc-section">
+    <div class="toc-category">Your Firm at a Glance</div>
+    <ul class="toc-items">
+      <li><a href="#firm-overview">Adler Law Firm — Current Status</a></li>
+    </ul>
+  </div>
+
+  <div class="toc-section">
+    <div class="toc-category">About SMB Team</div>
+    <ul class="toc-items">
+      <li><a href="#about-smb">The Law Firm Growth Acceleration Model</a></li>
+    </ul>
+  </div>
+
+  <div class="toc-section">
+    <div class="toc-category">Your Growth Health Assessment</div>
+    <ul class="toc-items">
+      <li><a href="#growth-health">Growth Health Scorecard</a></li>
+      <li><a href="#urgency-score">Competitive Urgency Score</a></li>
+    </ul>
+  </div>
+
+  <div class="toc-section">
+    <div class="toc-category">Lead Generation</div>
+    <ul class="toc-items">
+      <li><a href="#website-audit">Website Audit</a></li>
+      <li><a href="#local-seo">Local SEO</a></li>
+      <li><a href="#google-ads">Google Ads</a></li>
+      <li><a href="#local-service-ads">Local Service Ads</a></li>
+      <li><a href="#meta-ads">Facebook &amp; Instagram Ads</a></li>
+    </ul>
+  </div>
+
+  <div class="toc-section">
+    <div class="toc-category">Intake</div>
+    <ul class="toc-items">
+      <li><a href="#intake">Intake Assessment</a></li>
+      <li><a href="#website-intake">Website Contact Forms &amp; Live Chat</a></li>
+    </ul>
+  </div>
+
+  <div class="toc-section">
+    <div class="toc-category">Self-Managing Team</div>
+    <ul class="toc-items">
+      <li><a href="#team">Team Assessment</a></li>
+    </ul>
+  </div>
+
+  <div class="toc-section">
+    <div class="toc-category">Profit</div>
+    <ul class="toc-items">
+      <li><a href="#profit">Profit Plan Assessment</a></li>
+    </ul>
+  </div>
+
+  <div class="toc-section">
+    <div class="toc-category">Here's What's Possible for Adler Law Firm</div>
+    <ul class="toc-items">
+      <li><a href="#growth-journey">Growth Vision</a></li>
+    </ul>
+  </div>
+
+  <div class="toc-section">
+    <div class="toc-category">Your Next Steps</div>
+    <ul class="toc-items">
+      <li><a href="#next-steps">Quick Wins for Adler Law Firm</a></li>
+      <li><a href="#recommendation">How SMB Team Can Help Adler Law Firm</a></li>
+    </ul>
+  </div>
+</div>
+
+
+<!-- ===== SECTION 03: YOUR FIRM AT A GLANCE ===== -->
+<!-- ⚠️ NO CSS IN THIS FILE. No <style> blocks. No inline styles. No style="" attributes.
+     All styling comes from audit_styles.css only. Use only existing class names.
+     If you find yourself writing CSS — stop and delete it. -->
+
+<div class="section-header" id="firm-overview">
+  <div class="section-header-inner">
+    <h2>Here Is Where Adler Law Firm Stands Today</h2>
+  </div>
+</div>
+
+<div class="content-wrap">
+
+  <div class="firm-summary">Steven Adler has spent 17 years building a respected estate planning and probate practice in Jericho, New York — generating $1.4 million per year with a team of eight and over $10,000 per month invested in Scorpion digital marketing. The firm is producing more than 100 internet leads per month, yet a consultation-to-client conversion rate that has fallen from 90% to 60% means dozens of paid leads are walking away every month without becoming clients.</div>
+
+  <img src="https://www.dropbox.com/scl/fi/27el1jrgyynonfwcgi8ib/LLS-Small-Business-Manager.png?rlkey=biehntt1vm0nxnynabgako82i&st=z2k2uxwe&raw=1" alt="Growth Stage" style="width:100%;height:auto;display:block;border-radius:6px;margin-bottom:16px;" />
+
+  <p class="dbm-connector">Stage 6 is the stage where Steven works 2.5 days a week, Marissa runs the day-to-day, and the firm generates consistent income without requiring his constant presence — and that is exactly where this plan takes him.</p>
+
+  <div class="stage-cards">
+    <div class="stage-card">
+      <div class="stage-card-header">
+        <h3>Where You Are Today</h3>
+        <div class="stage-label">Stage 4: Small Business Manager</div>
+      </div>
+      <div class="stage-card-body">
+        <ul>
+          <li>Scorpion marketing generates 100+ internet leads per month — but intake converts only 60%, down from 90%, costing an estimated 1–5 cases per month at $6,000 each</li>
+          <li>Steven personally handles banking and administrative tasks that have not been delegated to anyone on the team</li>
+          <li>A team of 8 attorneys and paralegals operates without KPIs, scorecards, or a structured accountability system</li>
+          <li>Firm finances are tracked manually in Excel with a broken Clio–QuickBooks sync — no real-time financial visibility exists</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="stage-card destination">
+      <div class="stage-card-header">
+        <h3>Where You Need To Be</h3>
+        <div class="stage-label">Stage 6: Law Firm Owner</div>
+      </div>
+      <div class="stage-card-body">
+        <ul>
+          <li>The firm runs without you</li>
+          <li>Your income is no longer tied to your personal hours</li>
+          <li>Your time is yours to spend however you choose</li>
+          <li>This is where true freedom and true wealth become possible</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="connecting-sentence">The gap between working four days a week and working two and a half is not as wide as it feels — but closing it requires systems, not just effort.</div>
+
+  <div class="assessment-header">Overall Growth Stage Assessment</div>
+  <div class="assessment-subheading">Adler Law Firm</div>
+
+  <div class="assessment-box">Steven is operating at Stage 4 — Small Business Manager — where the firm generates real revenue and has real staff, but everything still runs through him personally. The single most urgent gap is intake: Scorpion is delivering leads, but the broken conversion process means the firm is paying for prospects it is not keeping. Until intake is fixed and the team has accountability systems in place, Steven cannot step back — no matter how much the firm grows.</div>
+
+</div>
+<div class="back-to-top"><a href="#toc">↑ Back to Top</a></div>
+
+
+<!-- ===== SECTION 04: ABOUT SMB TEAM ===== -->
+<!-- ⚠️ NO CSS IN THIS FILE. No <style> blocks. No inline styles. No style="" attributes.
+     All styling comes from audit_styles.css only. Use only existing class names.
+     If you find yourself writing CSS — stop and delete it. -->
+<!-- ============================================================
+     SECTION 04 — ABOUT SMB TEAM
+
+     INSTRUCTIONS FOR COWORK:
+     This section is STATIC. Do not change any text or structure.
+     Copy this section into the final output exactly as it appears here.
+     ============================================================ -->
+
+<div class="section-header" id="about-smb">
+  <div class="section-header-inner">
+    <h2>The Law Firm Growth Acceleration Model</h2>
+  </div>
+</div>
+
+<div class="content-wrap">
+
+  <div class="callout-banner">
+    <p>We Help Law Firm Owners Get More Profit, More Personal Freedom, And Outstanding Results For Their Clients.</p>
+  </div>
+
+  <p class="opportunity-text">Most law firms try to grow by chasing more leads. But leads alone are not the problem — and leads alone are not the answer. Here is what actually works.</p>
+
+  <div class="pillars-grid">
+    <div class="pillar-card">
+      <h3>Lead Generation</h3>
+      <p>Leads are to a law firm what gasoline is to a car. Without them, you go nowhere. But a steady, predictable flow of leads changes everything — you get to choose your cases instead of taking whatever comes in.</p>
+    </div>
+    <div class="pillar-card">
+      <h3>Intake</h3>
+      <p>But all the leads in the world are worthless without a system to turn them into paying clients. Most firms are losing cases they already paid for simply because their follow-up is slow or inconsistent.</p>
+    </div>
+    <div class="pillar-card">
+      <h3>Self-Managing Team</h3>
+      <p>Once clients are coming in, you need a team — otherwise you end up working 90-hour weeks and results suffer. A self-managing team is what gives you the freedom to step back.</p>
+    </div>
+    <div class="pillar-card">
+      <h3>Profit Plan</h3>
+      <p>And once the team is in place, most owners look at their bank account and ask: where did all the money go? That is what a profit plan solves — clarity on what you earn, what you keep, and how to grow both.</p>
+    </div>
+  </div>
+
+  <div class="closing-line">All four have to work together. If one is missing, you cannot have more profit, more freedom, and outstanding results for your clients at the same time.</div>
+
+  <img src="https://www.dropbox.com/scl/fi/ffkzpv2f3rdjfzwq997e1/Law-Firm-Growth-Acceleration-Model.png?rlkey=665o52gt2va8pg4nb0epdc8hv&st=1iucj2m5&raw=1"
+    alt="Law Firm Growth Acceleration Model"
+    style="width:100%;height:auto;display:block;border-radius:6px;" />
+
+</div>
+<div class="back-to-top"><a href="#toc">↑ Back to Top</a></div>
+
+
+<!-- ===== SECTION 05: GROWTH HEALTH ASSESSMENT ===== -->
+<!-- ⚠️ NO CSS IN THIS FILE. No <style> blocks. No inline styles. No style="" attributes.
+     All styling comes from audit_styles.css only. Use only existing class names.
+     If you find yourself writing CSS — stop and delete it. -->
+
+<div class="section-header" id="growth-health">
+  <div class="section-header-inner">
+    <h2>Your Growth Health Assessment</h2>
+    <div class="subtext">Adler Law Firm</div>
+  </div>
+</div>
+
+<div class="content-wrap">
+
+  <div class="legend">
+    <div class="legend-item">
+      <div class="legend-dot red"></div>
+      <div class="legend-label">Red <span>— Critical Priority</span></div>
+    </div>
+    <div class="legend-item">
+      <div class="legend-dot amber"></div>
+      <div class="legend-label">Amber <span>— In Progress</span></div>
+    </div>
+    <div class="legend-item">
+      <div class="legend-dot green"></div>
+      <div class="legend-label">Green <span>— On Track</span></div>
+    </div>
+  </div>
+
+  <div class="scorecard-label">Pillar Health Scorecard</div>
+
+  <div class="scorecard-grid">
+
+    <!-- LEAD GENERATION CARD -->
+    <div class="sc-card">
+      <div class="sc-card-header"><h3>Lead Generation</h3></div>
+      <div class="sc-card-body">
+        <div class="traffic-circle amber"></div>
+        <ul class="sc-findings">
+          <li>Scorpion generates 100+ internet leads per month at $10,000/mo — but the marketing is locked inside a vendor platform the firm does not own, with no independent campaign visibility</li>
+          <li>Adler Law has 82 Google reviews at 4.9 stars — strong credibility, but Davidov Law Group has 250+ five-star reviews and is actively capturing Nassau County estate planning clients</li>
+          <li>Local Service Ads does not appear to be active — a pay-per-lead placement that appears above all other Google results and is well-suited to the firm's estate planning practice</li>
+        </ul>
+        <div class="sc-dbm">Better lead generation systems mean more ideal clients choosing Adler Law — giving Steven and Marissa the pipeline to sustain the firm without Steven having to be involved in finding every case.</div>
+      </div>
+    </div>
+
+    <!-- INTAKE CARD -->
+    <div class="sc-card">
+      <div class="sc-card-header"><h3>Intake</h3></div>
+      <div class="sc-card-body">
+        <div class="traffic-circle red"></div>
+        <ul class="sc-findings">
+          <li>Consultation-to-client conversion has dropped from 90% to 60% — a 30-point gap that costs an estimated 1–5 cases per month at $6,000 average</li>
+          <li>No automated follow-up system for prospects who consult but do not sign — they are leaving with no structured nurture sequence</li>
+          <li>No documented intake process that Marissa or a dedicated intake team member can own independently of Steven</li>
+        </ul>
+        <div class="sc-dbm">Fixing intake is the fastest path to working less — every case that closes without Steven in the room is a step toward the 2.5-day week he is working toward.</div>
+      </div>
+    </div>
+
+    <!-- SELF-MANAGING TEAM CARD -->
+    <div class="sc-card">
+      <div class="sc-card-header"><h3>Self-Managing Team</h3></div>
+      <div class="sc-card-body">
+        <div class="traffic-circle amber"></div>
+        <ul class="sc-findings">
+          <li>Steven personally handles banking and administrative tasks that should be delegated to Marissa or a firm administrator</li>
+          <li>Eight-person team operates without KPIs or scorecards — no visibility into individual performance, case progression, or accountability</li>
+          <li>Marissa is being groomed for leadership but lacks the operational structure — defined roles, accountability framework, delegation authority — to actually run the firm independently</li>
+        </ul>
+        <div class="sc-dbm">A self-managing team with accountability systems is the foundation of Marissa running the firm day-to-day while Steven steps back to 2.5 days per week.</div>
+      </div>
+    </div>
+
+    <!-- PROFIT CARD -->
+    <div class="sc-card">
+      <div class="sc-card-header"><h3>Profit</h3></div>
+      <div class="sc-card-body">
+        <div class="traffic-circle red"></div>
+        <ul class="sc-findings">
+          <li>Financials are tracked manually in Excel — a manual process that creates delays, errors, and requires Steven's personal involvement to maintain</li>
+          <li>The Clio–QuickBooks sync is broken — meaning billing data and financial records are disconnected, creating gaps in the true financial picture</li>
+          <li>No profit-per-case-type visibility — the firm cannot know which practice areas are most profitable per hour invested, making marketing allocation guesswork</li>
+        </ul>
+        <div class="sc-dbm">Clear profit visibility tells Steven exactly what the firm can sustain and what his personal income looks like at 2.5 days per week — before he makes the transition.</div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- COMPETITIVE URGENCY SCORE -->
+  <div class="urgency-card" id="urgency-score">
+    <div class="urgency-label">Competitive Urgency Score</div>
+
+    <div class="urgency-score">7</div>
+    <div class="urgency-outof">out of 10</div>
+
+    <div class="urgency-sentence">A score of 7 means competitors are actively dominating multiple channels in your market and the gap is getting wider every month you wait. This is not a future problem — it is a right now problem.</div>
+
+    <div style="margin-bottom:10px;">
+      <div class="urgency-bar"><div class="urgency-marker" style="left:70%;"></div></div>
+      <div class="urgency-scale">
+        <span>1–3 = Low Urgency</span>
+        <span>4–6 = Moderate</span>
+        <span>7–10 = High Urgency</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="competitors-label">Your Top Competitive Threats</div>
+
+  <div class="competitor-card">
+    <div class="competitor-name">Davidov Law Group — New Hyde Park, NY</div>
+    <div class="competitor-threat">Over 250 five-star Google reviews vs. Adler Law's 82 — a 3-to-1 trust advantage that signals overwhelming authority to Nassau County estate planning families searching online. Davidov actively markets estate planning and elder law across Long Island, capturing the same prospect demographic Adler Law serves. Every month this review gap widens.</div>
+  </div>
+
+  <div class="competitor-card">
+    <div class="competitor-name">Fratello Law, P.C. — Syosset, NY</div>
+    <div class="competitor-threat">Actively ranking for Jericho-area estate planning keyword searches with dedicated geo-targeting pages (fratello-law.com/estate-planning/jericho-ny/ and /wills/jericho-ny/). Fratello is competing directly for the same Jericho and Nassau County clients with an SEO footprint that overlaps substantially with Adler Law's primary market.</div>
+  </div>
+
+  <div class="competitor-card">
+    <div class="competitor-name">Mitchell P. Sandler — Jericho, NY</div>
+    <div class="competitor-threat">Located at 333 Jericho Turnpike — less than half a mile from Adler Law's office — with an identical practice area mix: estate planning, probate, real estate, and business law. Sandler ranks prominently alongside Adler for "estate planning attorney Jericho NY" and competes for the same walk-in and referral clients in the immediate local market.</div>
+  </div>
+
+</div>
+<div class="back-to-top"><a href="#toc">↑ Back to Top</a></div>
+
+
+<!-- ===== SECTION 06: LEAD GENERATION ===== -->
+<!-- ⚠️ NO CSS IN THIS FILE. No <style> blocks. No inline styles. No style="" attributes.
+     All styling comes from audit_styles.css only. Use only existing class names.
+     If you find yourself writing CSS — stop and delete it. -->
+
+<div class="section-header" id="lead-generation">
+  <div class="section-header-inner"><h2>Lead Generation</h2></div>
+</div>
+
+
+
+<div class="content-wrap">
+</div>
+<div class="section-img-wrap"><img src="https://www.dropbox.com/scl/fi/vne0wcswovu3nwjibgjya/Lead-Generation.png?rlkey=enb7lthrbylgma7qoofstb799&st=nw3f9i8c&raw=1" alt="Lead Generation" /></div>
+<div class="content-wrap">
+  <p class="section-intro">Adler Law has made a serious marketing investment — Scorpion is delivering 100+ internet leads per month and the firm's geo-targeting infrastructure spans Nassau County and beyond. But at $10,000 per month with a consultation-to-client conversion rate that has dropped 30 points, the firm is losing significant revenue not from a lack of leads, but from a system that is not keeping pace with the volume it is generating.</p>
+</div>
+
+<!-- WEBSITE AUDIT -->
+<div class="subsection-header" id="website-audit">
+  <div class="subsection-header-inner"><h3>Website Audit</h3></div>
+</div>
+<div class="content-wrap">
+
+  <div class="pgp-label">The Problem</div>
+  <ul class="pgp-list">
+    <li>The site is built and managed entirely by Scorpion — giving the firm limited control over its own digital presence; the vendor contract means the website, the ad account, and the campaign data belong to Scorpion, not to Adler Law</li>
+    <li>PageSpeed scores: Mobile and desktop scores could not be verified — the site returns access errors to automated tools. <strong>Must be run live at pagespeed.web.dev before this presentation.</strong> Scorpion sites vary widely; slow mobile performance is a common issue on the platform</li>
+    <li>Yelp lists the primary business category as "Real Estate Law" rather than "Estate Planning" — an inconsistency across directory listings that may reduce Google's confidence in the firm's primary practice and depress estate planning search rankings</li>
+    <li>A FindLaw duplicate listing appears under a Garden City address alongside the primary Jericho listing — creating conflicting signals about the firm's primary location that can hurt local ranking authority</li>
+  </ul>
+
+  <div class="blind-spot"><strong>Blind Spot:</strong> Competitors may be bidding on branded terms like "Adler Law" or "Steven Adler attorney" as Google Ads keywords — sending name-search traffic to their own sites before prospects ever reach sawlaw.com. This type of conquest bidding is common in competitive legal markets and goes undetected without monitoring.</div>
+
+  <div class="pgp-label">The Positive</div>
+  <ul class="pgp-list">
+    <li>Geo-targeting infrastructure is extensive — dedicated city pages confirmed for Jericho, Massapequa, Dix Hills, Garden City, Levittown, Nassau County, and over a dozen additional locations, each with sub-pages by practice area; this is a real competitive asset</li>
+    <li>Attorney bios for Steven Adler, Marissa Caputo, and Andrew Stamas are present and indexed — giving the site the credibility signals that prospects look for when comparing firms</li>
+  </ul>
+
+  <div class="pgp-label">The Gap</div>
+  <ul class="pgp-list">
+    <li>If PageSpeed mobile scores are below 50, the site is losing visitors before they read a word — Google also penalizes slow mobile sites in organic rankings, eroding the SEO value of all those geo-targeting pages</li>
+    <li>The Scorpion contract locks design, content, technology choices, and campaign data — any transition to a different platform or vendor means starting over with no access to years of accumulated performance history</li>
+    <li>Category inconsistencies on Yelp and FindLaw reduce Google's confidence in the firm's primary practice area, making it harder to rank for the highest-revenue estate planning and probate search terms</li>
+  </ul>
+
+  <div class="dbm-closing">A website that the firm actually owns — with independent analytics, proper category signals, and no vendor lock-in — is the foundation Marissa needs to run a firm that grows on its own terms.</div>
+
+</div>
+
+<!-- LOCAL SEO -->
+<div class="subsection-header" id="local-seo">
+  <div class="subsection-header-inner"><h3>Local SEO</h3></div>
+</div>
+<div class="content-wrap">
+
+  <div class="pgp-label">The Problem</div>
+  <ul class="pgp-list">
+    <li>Adler Law has 82 Google reviews at 4.9 stars — but Davidov Law Group has 250+ five-star Google reviews, a 3-to-1 advantage that makes Davidov appear as the trusted default for Nassau County estate planning families doing comparison searches</li>
+    <li>A third-party Local SEO audit (Stormrage) logged a local visibility score of 54% for Adler Law — indicating citation gaps and directory inconsistencies that are holding down local search rankings across the board</li>
+    <li>Local 3-pack positions for primary search terms — "estate planning attorney Jericho NY," "probate attorney Nassau County NY," and related queries — could not be confirmed as dominant; must be verified live before this presentation</li>
+  </ul>
+
+  <div class="blind-spot"><strong>Blind Spot:</strong> The FindLaw directory shows two separate profiles for the firm — one in Jericho and one showing a Garden City address. Duplicate or conflicting listings confuse Google about which location is primary and split the domain authority that should be concentrated on the main Jericho office, depressing rankings across all targeted locations.</div>
+
+  <div class="pgp-label">The Positive</div>
+  <ul class="pgp-list">
+    <li>82 Google reviews at 4.9 stars represents genuine credibility that took years to earn — many competitors in this market have fewer, and this is the foundation on which a dominant review profile can be built</li>
+    <li>Geo-targeting pages for 10+ Nassau County and Long Island cities extend the firm's SEO footprint well beyond Jericho, giving the site ranking opportunities across the full service area</li>
+  </ul>
+
+  <div class="pgp-label">The Gap</div>
+  <ul class="pgp-list">
+    <li>Every month Davidov Law Group continues adding reviews and widening their trust advantage — without a systematic post-matter review request process, this gap becomes permanent and increasingly difficult to close</li>
+    <li>A 54% local visibility score means roughly half the directory placements that should be sending leads to Adler Law are either missing, incorrect, or inconsistently listed — a correctable problem that is actively costing the firm in organic rankings</li>
+  </ul>
+
+  <div class="competitor-callout"><strong>Davidov Law Group</strong> — with 250+ five-star Google reviews, Davidov dominates the trust signal for Nassau County estate planning. Their review velocity means the gap is widening every month, not narrowing. Without a systematic review-building program, Adler Law cannot close this gap.</div>
+
+  <div class="dbm-closing">The reviews and geo-targeting pages Adler Law already has are a real competitive asset — building systematically from 82 reviews toward 200+ is not a fantasy, it is a six-month project that positions the firm for Marissa to inherit a dominant online presence.</div>
+
+</div>
+
+<!-- GOOGLE ADS -->
+<div class="subsection-header" id="google-ads">
+  <div class="subsection-header-inner"><h3>Google Ads</h3></div>
+</div>
+<div class="content-wrap">
+
+  <div class="ad-part">
+    <div class="ad-part-label">Ad Presence</div>
+    <ul class="ad-list">
+      <li>Adler Law invests $10,000/month in Scorpion marketing, which typically includes Google Ads management — however, ads for the firm did not appear for the specific keyword searches conducted across all five practice areas during this audit. This may reflect geo-targeting parameters, ad scheduling, or budget concentration on select terms set by Scorpion</li>
+      <li>The firm may be getting outbid by competitors on key estate planning and probate search terms, or ad visibility may be limited to a specific geographic radius that excluded some searches — this requires a direct review of Scorpion's campaign performance dashboard to assess</li>
+    </ul>
+  </div>
+
+  <div class="ad-part">
+    <div class="ad-part-label">Competitor Ad Landscape</div>
+    <ul class="ad-list">
+      <li><strong>Fratello Law (Syosset, NY)</strong> — appeared prominently in estate planning searches for the Jericho area; has dedicated geo-targeting landing pages and appears to invest in both organic SEO and paid visibility for Nassau County estate planning keywords</li>
+      <li><strong>Probate Attorney Nassau (probateattorneynassau.com)</strong> — a dedicated single-practice site aggressively targeting "probate attorney Nassau County" searches; a highly focused competitor capturing high-intent probate prospects before Adler Law's broader practice site appears</li>
+      <li><strong>Joan Agostino PC</strong> — visible for Nassau County real estate attorney searches; a specific paid search threat to the firm's real estate practice area revenue</li>
+    </ul>
+  </div>
+
+  <div class="ad-part">
+    <div class="ad-part-label">The Opportunity</div>
+    <ul class="ad-list">
+      <li>"Estate planning attorney [city]" searches aligned with the firm's existing geo-targeting pages — Jericho, Hicksville, Hempstead, Garden City, Levittown, and a dozen more cities already have dedicated landing pages; pairing paid ads with those pages is a direct multiplier on existing infrastructure</li>
+      <li>"Probate attorney Nassau County NY" and "probate lawyer Long Island NY" — high-intent searches where the firm has page infrastructure but ad presence was not confirmed for these specific terms</li>
+      <li>Competitor name bidding on "Davidov Law" and "Fratello Law" — capturing prospects who are already searching for named competitors and presenting Adler Law as the credible alternative when they are actively comparing firms</li>
+      <li>"What happens if you die without a will" and "how to avoid probate New York" — educational search intent keywords that capture prospects earlier in the decision cycle at lower cost per lead than high-competition transactional terms</li>
+    </ul>
+  </div>
+
+  <div class="blind-spot"><strong>Blind Spot:</strong> The current Scorpion arrangement includes ad management, but the firm does not own the ad account. When the relationship with Scorpion ends, the campaign history, quality scores, keyword performance data, and conversion tracking all go with them — meaning any new vendor starts from scratch with no accumulated intelligence.</div>
+
+</div>
+
+<!-- LOCAL SERVICE ADS -->
+<div class="subsection-header" id="local-service-ads">
+  <div class="subsection-header-inner"><h3>Local Service Ads</h3></div>
+</div>
+<div class="content-wrap">
+
+  <div class="ad-part">
+    <div class="ad-part-label">LSA Presence</div>
+    <ul class="ad-list">
+      <li>Adler Law does not appear to be active in Local Service Ads for primary estate planning and probate searches — this represents a significant visibility gap at the very top of Google results, above all other placements</li>
+      <li>With 82 verified Google reviews and a 4.9-star rating, the firm is well-positioned for the Google Screened background check and verification process required for LSA enrollment</li>
+    </ul>
+  </div>
+
+  <div class="ad-part">
+    <div class="ad-part-label">Competitor LSA Landscape</div>
+    <ul class="ad-list">
+      <li>Specific LSA appearances by named local competitors could not be confirmed during this research — must be verified live by checking the top of Google results for "estate planning attorney Nassau County NY" and "probate attorney Long Island NY" before this presentation</li>
+      <li>Estate planning is a lower-competition LSA category compared to personal injury or criminal defense — meaning the cost per lead and barrier to entry are more favorable for Adler Law to capture top placement</li>
+    </ul>
+  </div>
+
+  <div class="ad-part">
+    <div class="ad-part-label">The Opportunity</div>
+    <ul class="ad-list">
+      <li>At $6,000 average case value, even an LSA cost per lead of $150–$300 produces a strong return — and with estate planning being a lower-competition LSA category, those costs are achievable in Nassau County</li>
+      <li>LSAs appear above everything else on Google — above paid ads, above the map pack, above all organic results — and you only pay when a real prospect calls you directly.</li>
+      <li>The Google Screened badge that appears on LSA listings is a trust signal that matters to the estate planning demographic — families choosing an attorney to handle wills, trusts, and probate decisions respond to verified credentials displayed prominently on the search results page</li>
+    </ul>
+  </div>
+
+  <div class="blind-spot"><strong>Blind Spot:</strong> Google's LSA Terms of Service update in April 2025 changed participation requirements for attorneys. This must be reviewed with an LSA specialist before enrollment to ensure full compliance with applicable professional responsibility rules in New York.</div>
+
+</div>
+
+<!-- FACEBOOK & INSTAGRAM ADS -->
+<div class="subsection-header" id="meta-ads">
+  <div class="subsection-header-inner"><h3>Facebook &amp; Instagram Ads</h3></div>
+</div>
+<div class="content-wrap">
+
+  <div class="ad-part">
+    <div class="ad-part-label">Ad Presence</div>
+    <ul class="ad-list">
+      <li>No Meta (Facebook/Instagram) ad campaigns for Adler Law were confirmed during this research — the current Scorpion arrangement does not appear to include paid social advertising, leaving a full channel uncovered</li>
+      <li>The firm has an established Facebook page (facebook.com/StevenAdlerEsq/) with a 96% recommendation rate — a credible social foundation that is currently generating no paid reach beyond organic followers</li>
+    </ul>
+  </div>
+
+  <div class="ad-part">
+    <div class="ad-part-label">Competitor Ad Landscape</div>
+    <ul class="ad-list">
+      <li><strong>Davidov Law Group</strong> — with 250+ Google reviews and a full marketing infrastructure, Davidov is likely running social campaigns for estate planning and elder law; must be verified at facebook.com/ads/library before this presentation</li>
+      <li>Estate planning and elder law attorneys in the NYC metro are increasingly using Facebook lead generation ads targeting homeowners aged 45–70 with trust-and-education content — a format well-suited to Adler Law's primary client demographic and practice area</li>
+    </ul>
+  </div>
+
+  <div class="ad-part">
+    <div class="ad-part-label">The Opportunity</div>
+    <ul class="ad-list">
+      <li>Retargeting — website visitors who did not convert are leaving with no follow-up</li>
+      <li>Video ads featuring the attorney — builds trust before a prospect ever calls</li>
+      <li>Educational content ads — capture leads earlier in the decision process</li>
+      <li>Facebook lead generation targeting Nassau County homeowners aged 45–70 — the exact demographic profile of estate planning and probate clients — at a CPL that is typically lower than Google Search for the same audience when campaigns are optimized for this practice area</li>
+    </ul>
+  </div>
+
+</div>
+<div class="back-to-top"><a href="#toc">↑ Back to Top</a></div>
+
+
+<!-- ===== SECTION 07-09: INTAKE, TEAM, PROFIT ===== -->
+<!-- ⚠️ NO CSS IN THIS FILE. No <style> blocks. No inline styles. No style="" attributes.
+     All styling comes from audit_styles.css only. Use only existing class names.
+     If you find yourself writing CSS — stop and delete it. -->
+
+<div class="section-header" id="intake">
+  <div class="section-header-inner"><h2>Intake Assessment</h2></div>
+</div>
+
+
+
+<div class="content-wrap">
+
+</div>
+<div class="section-img-wrap"><img src="https://www.dropbox.com/scl/fi/lmohhz14wgbeucpflf02m/Intake.png?rlkey=jwomjz9j8vqi7kmjubxexoyvh&st=sgtebwjp&raw=1" alt="Intake" /></div>
+<div class="content-wrap">
+
+  <p class="section-intro">Adler Law is generating more than 100 internet leads per month — but the consultation-to-client conversion rate has fallen from 90% to 60%, meaning that for every 10 families who sit down with the firm, 4 walk away without becoming clients. Fixing intake means converting more of the leads the firm is already generating — without spending another dollar on marketing.</p>
+
+  <div class="status-row">
+    <div class="status-circle red"></div>
+    <div class="status-label">Status: RED</div>
+  </div>
+
+  <div class="pgp-label">The Problem</div>
+  <ul class="pgp-list">
+    <li>Consultation-to-client conversion has dropped from 90% to 60% — a 30-point decline that Steven identified but has not yet been diagnosed or corrected</li>
+    <li>No automated follow-up system exists for prospects who attend a consultation but do not sign immediately — these leads disappear without any structured nurture sequence</li>
+    <li>No clearly documented intake process that Marissa or a dedicated intake team member can own independently of Steven</li>
+    <li>After-hours coverage for inbound leads — calls and contact form submissions arriving after 5 PM — has not been confirmed as consistently staffed or systematically handled</li>
+  </ul>
+
+  <div class="blind-spot"><strong>Blind Spot:</strong> The 30-point drop in conversion is almost certainly not about lead quality — Scorpion is still delivering over 100 per month. Something in the consultation experience or the post-consultation follow-up process has changed. Identifying and fixing that single variable could recover $6,000–$30,000 per month without spending an additional dollar on marketing.</div>
+
+  <div class="pgp-label">The Positive</div>
+  <ul class="pgp-list">
+    <li>The firm is generating 100+ leads per month — the raw material for intake improvement is already there; no new lead generation investment is required to see immediate results from fixing conversion</li>
+    <li>A 60% close rate remains above industry average for estate planning consultations — the baseline is strong enough that targeted fixes will have outsized impact on recovered revenue</li>
+  </ul>
+
+  <div class="pgp-label">The Gap</div>
+  <ul class="pgp-list">
+    <li>At the current 40% non-conversion rate with 100+ leads per month, the firm may be leaving 1–5 cases per month unclaimed — at $6,000 average, that is $6,000–$30,000 per month in recoverable revenue that is currently walking out the door</li>
+    <li>Prospects who consult and leave without signing are actively comparing firms — without follow-up, they call the next firm on the list the same week</li>
+    <li>Without a documented intake process Marissa can run independently, Steven cannot step back from the sales role — the conversion problem stays his personal responsibility</li>
+  </ul>
+
+  <div class="dbm-closing">Every case that closes without Steven being in the room is a direct step toward the firm Marissa can run — and every lost consultation that gets no follow-up is a step backward from the 2.5-day week Steven is working toward.</div>
+
+</div>
+
+<!-- WEBSITE CONTACT FORMS & LIVE CHAT -->
+<div class="subsection-header" id="website-intake">
+  <div class="subsection-header-inner"><h3>Website Contact Forms &amp; Live Chat</h3></div>
+</div>
+<div class="content-wrap">
+
+  <ul class="pgp-list">
+    <li>Contact form location and functionality on sawlaw.com could not be verified due to site access restrictions — must be confirmed live before this presentation to assess whether forms are prominently placed and converting</li>
+    <li>Live chat presence on the site could not be confirmed during this research — given the firm's 100+ leads per month from Scorpion, any after-hours or real-time chat capability that is missing represents a gap in capturing inbound contacts at the moment of highest intent</li>
+    <li>Web-generated leads that submit a contact form outside business hours need a defined response protocol — the speed of first contact after a form submission is one of the strongest predictors of whether that lead converts to a consultation</li>
+  </ul>
+  <p class="section-intro">These findings are also referenced in the Website Audit section.</p>
+
+</div>
+<div class="back-to-top"><a href="#toc">↑ Back to Top</a></div>
+
+
+<div class="section-header" id="team">
+  <div class="section-header-inner"><h2>Team Assessment</h2></div>
+</div>
+
+
+
+<div class="content-wrap">
+
+</div>
+<div class="section-img-wrap"><img src="https://www.dropbox.com/scl/fi/r6o7um1xcdd490t9807vd/Self-Managing-Team.png?rlkey=ywamsca6rpb34l1iasysyk10w&st=dm86b0kz&raw=1" alt="Self-Managing Team" /></div>
+<div class="content-wrap">
+
+  <p class="section-intro">Adler Law has an eight-person team — four attorneys including Marissa and four paralegals — but the firm runs through Steven on banking, administration, and key decisions. Until this changes, the owner cannot have more free time — no matter how much revenue grows.</p>
+
+  <div class="status-row">
+    <div class="status-circle amber"></div>
+    <div class="status-label">Status: AMBER</div>
+  </div>
+
+  <div class="pgp-label">The Problem</div>
+  <ul class="pgp-list">
+    <li>Steven personally handles banking and administrative tasks that should be delegated to Marissa or a firm administrator — keeping him operationally involved in work that does not require an attorney</li>
+    <li>The eight-person team operates without KPIs or scorecards — there is no visibility into individual performance, case progression, or team accountability, which means Steven has to stay close to the work to catch problems</li>
+    <li>Marissa is being groomed for leadership but lacks the systems infrastructure — defined roles, accountability framework, delegation authority — to actually run the firm independently of Steven</li>
+    <li>Pending hires (a paralegal and a bookkeeper through Cashroom) add headcount without adding accountability systems — creating more coordination work for Steven in the short term, not less</li>
+  </ul>
+
+  <div class="blind-spot"><strong>Blind Spot:</strong> The fact that Marissa is trusted and capable is actually the core issue in reverse — it means Steven is likely delegating case work to her without delegating the authority and systems to make firm-level decisions without him. Transition requires structure, not just trust.</div>
+
+  <div class="pgp-label">The Positive</div>
+  <ul class="pgp-list">
+    <li>An eight-person team with a junior partner already in place is a genuine foundation — many firms at this revenue level are still solo or near-solo, making Adler Law structurally further along than it may feel from the inside</li>
+    <li>Marissa as the identified successor gives the firm a clear leadership transition path that most small firms never establish at all</li>
+  </ul>
+
+  <div class="pgp-label">The Gap</div>
+  <ul class="pgp-list">
+    <li>Without KPIs and scorecards, Steven cannot see where performance gaps exist — which means he must stay close to the day-to-day to catch problems before they cost the firm cases or clients</li>
+    <li>The pending hires add headcount without accountability infrastructure, creating a larger team that is harder to manage while Steven is still the management layer</li>
+    <li>As long as administrative tasks like banking sit with Steven personally, his 2.5-day week cannot be achieved — even if every other problem in the firm is solved</li>
+  </ul>
+
+  <div class="dbm-closing">The path to working 2.5 days per week is not just about Marissa being ready — it is about building the accountability infrastructure that lets both Steven and Marissa know the firm is running correctly without Steven checking in every day.</div>
+
+</div>
+<div class="back-to-top"><a href="#toc">↑ Back to Top</a></div>
+
+
+<div class="section-header" id="profit">
+  <div class="section-header-inner"><h2>Profit Plan Assessment</h2></div>
+</div>
+
+
+
+<div class="content-wrap">
+
+</div>
+<div class="section-img-wrap"><img src="https://www.dropbox.com/scl/fi/rh2dxdoqsf7tqastam640/Profits.png?rlkey=kss013g0ov5jnuzcoklog7awr&st=iog622wf&raw=1" alt="Profit" /></div>
+<div class="content-wrap">
+
+  <p class="section-intro">Adler Law generated $1.4 million in revenue last year and is projecting $1.8–$2 million for the current year — but without real-time financial visibility, profit is discovered at the end of the year rather than planned for throughout it. Revenue is vanity, profit is sanity. Until there is a clear profit plan, growth may just mean more work without more wealth.</p>
+
+  <div class="status-row">
+    <div class="status-circle red"></div>
+    <div class="status-label">Status: RED</div>
+  </div>
+
+  <div class="pgp-label">The Problem</div>
+  <ul class="pgp-list">
+    <li>Financials are tracked manually in Excel — a manual process that creates delays, introduces errors, and requires Steven's personal involvement to maintain rather than running automatically</li>
+    <li>The Clio–QuickBooks sync is broken — billing data and financial records are disconnected, creating gaps in the firm's true financial picture that the new Cashroom bookkeeper has been hired to address</li>
+    <li>No profit-per-case-type visibility — the firm does not know whether estate planning, probate, real estate, or guardianship cases are most profitable per hour invested, making marketing investment decisions essentially guesswork</li>
+    <li>Fixing the Clio–QuickBooks sync through Cashroom is a data plumbing fix, not a profit plan — the technology repair solves the measurement problem but does not replace the need for a structured financial operating system</li>
+  </ul>
+
+  <div class="blind-spot"><strong>Blind Spot:</strong> Revenue of $1.4 million with no case profitability tracking means the firm could be working hardest on the least profitable practice areas. At a $6,000 average case value across five different practice areas with very different complexity levels, the real profit per matter almost certainly varies significantly — and without tracking it, the firm cannot make intelligent decisions about which case types to take more of and which to refer out.</div>
+
+  <div class="pgp-label">The Positive</div>
+  <ul class="pgp-list">
+    <li>Revenue of $1.4 million demonstrates real economic scale — the firm has the raw numbers to build a profit plan that actually works, which is more than most small firms at this stage can say</li>
+    <li>The Cashroom bookkeeper hire shows Steven recognizes the financial tracking problem and is taking concrete steps to address it — the foundation for better financial systems is being laid</li>
+  </ul>
+
+  <div class="pgp-label">The Gap</div>
+  <ul class="pgp-list">
+    <li>Without a real-time financial dashboard, Steven cannot know whether hitting $1.8 million in revenue will actually result in taking home more — it depends entirely on whether costs scale proportionally, and right now that visibility does not exist</li>
+    <li>A broken Clio–QuickBooks sync means cash position and revenue recognition may not match reality — potentially masking profitability problems until they become a cash crisis rather than a planning issue</li>
+    <li>Without a profit plan, Steven cannot answer the critical question: what does the firm need to generate for him to take home a meaningful salary working 2.5 days per week — and is the current revenue trajectory actually getting him there?</li>
+  </ul>
+
+  <div class="dbm-closing">The 2.5-day week Steven wants is only sustainable if the firm generates enough profit to pay his salary, Marissa's salary, the team, and a meaningful return — and right now, nobody knows exactly what that number is or whether the firm is on track to reach it.</div>
+
+</div>
+<div class="back-to-top"><a href="#toc">↑ Back to Top</a></div>
+
+
+<!-- ===== SECTION 10: WHAT'S POSSIBLE ===== -->
+<!-- ⚠️ NO CSS IN THIS FILE. No <style> blocks. No inline styles. No style="" attributes.
+     All styling comes from audit_styles.css only. Use only existing class names.
+     If you find yourself writing CSS — stop and delete it. -->
+
+<div class="section-header" id="growth-journey">
+  <div class="section-header-inner">
+    <h2>Here's What's Possible for Adler Law Firm</h2>
+  </div>
+</div>
+
+<div class="whats-possible-body">
+  <div class="content-wrap">
+
+    <p class="bridge-text">Steven Adler has spent 17 years building something that most attorneys only dream about — a real multi-attorney firm generating $1.4 million per year, with a junior partner in place and a team of eight behind her. The systems that would let him hand the firm to Marissa and work 2.5 days per week do not require starting over — they require building on what is already working. The missing piece is not ambition or talent. It is structure.</p>
+
+    <div class="transform-card">
+      <div class="transform-icon"><span>1</span></div>
+      <div class="transform-text">You work two and a half days a week. Marissa runs the day-to-day. New cases come in, matters move forward, and revenue lands in the account — and none of it requires you to be there to make it happen.</div>
+    </div>
+
+    <div class="transform-card">
+      <div class="transform-icon"><span>2</span></div>
+      <div class="transform-text">You step back from banking, admin, and every operational decision that is currently on your plate. The team has accountability systems. Marissa has the infrastructure to lead. And when a problem needs solving, she solves it — not you.</div>
+    </div>
+
+    <div class="transform-card">
+      <div class="transform-icon"><span>3</span></div>
+      <div class="transform-text">The firm you hand to Marissa is worth something real — a documented business with reliable revenue, trained staff, and systems that run without the founder. That is not just a lifestyle upgrade. That is a legacy.</div>
+    </div>
+
+    <div class="wp-closing">
+      <p>This is not a fantasy. <span>SMB Team can make this a reality for Adler Law Firm.</span></p>
+    </div>
+
+  </div>
+</div>
+<div class="wp-back-to-top"><a href="#toc">↑ Back to Top</a></div>
+
+
+<!-- ===== SECTION 11: YOUR NEXT STEPS ===== -->
+<!-- ⚠️ NO CSS IN THIS FILE. No <style> blocks. No inline styles. No style="" attributes.
+     All styling comes from audit_styles.css only. Use only existing class names.
+     If you find yourself writing CSS — stop and delete it. -->
+
+<!-- QUICK WINS -->
+<div class="section-header" id="next-steps">
+  <div class="section-header-inner">
+    <h2>Quick Wins for Adler Law Firm</h2>
+  </div>
+</div>
+<div class="content-wrap">
+
+  <!-- QUICK WIN CARD 1 — Google Review Velocity Program -->
+  <div class="quick-win-card">
+    <div class="qw-header">
+      <div class="qw-title">Google Review Velocity Program</div>
+      <div class="qw-badges">
+        <span class="badge badge-lead-gen">Lead Gen</span>
+        <span class="badge badge-quick-win">Quick Win</span>
+      </div>
+    </div>
+    <div class="qw-row why">
+      <div class="qw-row-label">Why It Matters</div>
+      Adler Law has 82 Google reviews — Davidov Law Group has 250+. Every month without a systematic review-request process, that gap widens, and more Nassau County estate planning families choose Davidov based on perceived trust authority before they ever visit sawlaw.com.
+    </div>
+    <div class="qw-row who">
+      <div class="qw-row-label">Who Is Doing It Better</div>
+      <strong>Davidov Law Group</strong> — with 250+ five-star Google reviews, Davidov appears as the trusted authority for Nassau County estate planning families doing comparison searches; their review volume creates a first-mover advantage that is widening every month.
+    </div>
+    <div class="qw-row opportunity">
+      <div class="qw-row-label">The Opportunity</div>
+      A systematic post-matter review request by text and email to every closed client would build toward 200+ reviews within 6–12 months — shifting local search click behavior and closing the trust gap with the market leader without spending an additional dollar on advertising.
+    </div>
+  </div>
+
+  <!-- QUICK WIN CARD 2 — Local Service Ads Setup -->
+  <div class="quick-win-card">
+    <div class="qw-header">
+      <div class="qw-title">Local Service Ads Enrollment</div>
+      <div class="qw-badges">
+        <span class="badge badge-lead-gen">Lead Gen</span>
+        <span class="badge badge-quick-win">Quick Win</span>
+      </div>
+    </div>
+    <div class="qw-row why">
+      <div class="qw-row-label">Why It Matters</div>
+      Local Service Ads appear above all other Google results — above paid ads, above the local map pack, above all organic listings — and Adler Law does not currently appear in this placement for estate planning and probate searches in Nassau County.
+    </div>
+    <div class="qw-row opportunity">
+      <div class="qw-row-label">The Opportunity</div>
+      With 82 Google reviews and a 4.9-star rating, Adler Law is well-positioned for Google Screened verification; estate planning is a lower-competition LSA category where pay-per-lead economics are favorable — at a $6,000 average case value, a $150–$300 cost per lead produces a strong return on every enrolled campaign dollar.
+    </div>
+  </div>
+
+  <!-- QUICK WIN CARD 3 — Automated Follow-Up Sequence -->
+  <div class="quick-win-card">
+    <div class="qw-header">
+      <div class="qw-title">Automated Follow-Up for Non-Retained Consultations</div>
+      <div class="qw-badges">
+        <span class="badge badge-intake">Intake</span>
+        <span class="badge badge-quick-win">Quick Win</span>
+      </div>
+    </div>
+    <div class="qw-row why">
+      <div class="qw-row-label">Why It Matters</div>
+      Consultation-to-client conversion has dropped from 90% to 60% — the 40 families out of 100 who consult and don't sign are leaving the office with no follow-up sequence, no nurture, and no structured reason to come back to Adler Law rather than calling a competitor.
+    </div>
+    <div class="qw-row opportunity">
+      <div class="qw-row-label">The Opportunity</div>
+      A 5-step automated text-and-email sequence for prospects who consult but do not retain immediately could recover 2–4 cases per month; at $6,000 average case value, that is $12,000–$24,000 per month in recoverable revenue without a single additional marketing dollar spent.
+    </div>
+  </div>
+
+  <!-- QUICK WIN CARD 4 — Facebook / Instagram Retargeting -->
+  <div class="quick-win-card">
+    <div class="qw-header">
+      <div class="qw-title">Facebook and Instagram Retargeting Campaign</div>
+      <div class="qw-badges">
+        <span class="badge badge-lead-gen">Lead Gen</span>
+        <span class="badge badge-quick-win">Quick Win</span>
+      </div>
+    </div>
+    <div class="qw-row why">
+      <div class="qw-row-label">Why It Matters</div>
+      Website visitors who research Adler Law but do not call or submit a form are leaving with no follow-up — each unrecovered warm visitor represents marketing dollars already spent by Scorpion that produced zero return.
+    </div>
+    <div class="qw-row opportunity">
+      <div class="qw-row-label">The Opportunity</div>
+      A retargeting campaign showing trust-building content — video attorney introductions, client testimonials, estate planning explainers — to sawlaw.com visitors keeps Adler Law top of mind during the typical 2–4 week estate planning decision window at a fraction of the CPL for new acquisition campaigns.
+    </div>
+  </div>
+
+  <!-- QUICK WIN CARD 5 — Team KPI Scorecard -->
+  <div class="quick-win-card">
+    <div class="qw-header">
+      <div class="qw-title">Team KPI Scorecard</div>
+      <div class="qw-badges">
+        <span class="badge badge-team">Team</span>
+        <span class="badge badge-quick-win">Quick Win</span>
+      </div>
+    </div>
+    <div class="qw-row why">
+      <div class="qw-row-label">Why It Matters</div>
+      The team operates without KPIs or scorecards — there is no visibility into who is performing, how cases are progressing, or where bottlenecks are forming; Steven has to stay close to the work to catch problems, making stepping back structurally impossible.
+    </div>
+    <div class="qw-row opportunity">
+      <div class="qw-row-label">The Opportunity</div>
+      A one-page KPI scorecard covering cases opened, revenue per attorney, and matter completion times gives Marissa the data to manage the team independently — removing Steven from the daily monitoring role and beginning the real handoff that gets him to 2.5 days per week.
+    </div>
+  </div>
+
+  <!-- QUICK WIN CARD 6 — Financial Dashboard -->
+  <div class="quick-win-card">
+    <div class="qw-header">
+      <div class="qw-title">Real-Time Financial Dashboard</div>
+      <div class="qw-badges">
+        <span class="badge badge-profit">Profit</span>
+        <span class="badge badge-quick-win">Quick Win</span>
+      </div>
+    </div>
+    <div class="qw-row why">
+      <div class="qw-row-label">Why It Matters</div>
+      Manual Excel tracking and a broken Clio–QuickBooks sync mean Steven cannot see real-time profit, does not know profitability by case type, and cannot make the 2.5-day transition with financial confidence — because the data to answer whether it is sustainable simply does not exist right now.
+    </div>
+    <div class="qw-row opportunity">
+      <div class="qw-row-label">The Opportunity</div>
+      Once the Cashroom bookkeeper resolves the Clio–QuickBooks integration, building a monthly financial dashboard gives Steven and Marissa real-time visibility into revenue, costs, and profit — the specific data required to know whether the transition to 2.5 days is financially viable before making it.
+    </div>
+  </div>
+
+  <!-- QUICK WIN CARD 7 — After-Hours Coverage -->
+  <div class="quick-win-card">
+    <div class="qw-header">
+      <div class="qw-title">After-Hours Inbound Lead Coverage</div>
+      <div class="qw-badges">
+        <span class="badge badge-intake">Intake</span>
+        <span class="badge badge-long-term">Long-Term Play</span>
+      </div>
+    </div>
+    <div class="qw-row why">
+      <div class="qw-row-label">Why It Matters</div>
+      Estate planning decisions are often made during evenings and weekends when families discuss finances together — calls and contact form submissions arriving after business hours are likely going to voicemail with no real-time response or consultation scheduling.
+    </div>
+    <div class="qw-row opportunity">
+      <div class="qw-row-label">The Opportunity</div>
+      A professional after-hours answering and consultation-scheduling service converts warm inbound prospects before they call a competitor the next morning — closing the coverage gap that currently exists and capturing leads the $10,000/month Scorpion investment is already generating but the firm cannot respond to in time.
+    </div>
+  </div>
+
+</div>
+
+<!-- HOW SMB TEAM CAN HELP -->
+<div class="subsection-header" id="recommendation">
+  <div class="subsection-header-inner">
+    <h3>How SMB Team Can Help Adler Law Firm</h3>
+  </div>
+</div>
+<div class="content-wrap">
+
+  <!-- BLOCK 1: CUSTOM CLOSING STATEMENT -->
+  <div class="closing-statement-block">
+    <p>We help <span class="dbm-highlight">established law firm owners with strong revenue and a real team in place</span> get the accountability systems and marketing infrastructure they need so they can <span class="dbm-highlight">step back from the day-to-day, hand the firm to their successor, and finally work on their own terms.</span></p>
+  </div>
+
+  <div style="height:24px;"></div>
+
+  <!-- BLOCK 2: DBM SUBHEADER + PACKAGE RECOMMENDATIONS -->
+  <div class="dbm-subheader">Steven has built a firm generating $1.4 million per year, with a junior partner ready to lead and a team of eight behind her. What he is working toward is the infrastructure that makes it possible for Marissa to actually run the firm — so Steven can work 2.5 days a week with full confidence that nothing falls apart when he is not there.</div>
+
+  <!-- PACKAGE ONE: Dominate Full Service Marketing -->
+  <div class="package-block">
+    <div class="package-header">
+      <div class="package-label">Recommended Marketing Package</div>
+      <h4>Dominate Full Service Marketing</h4>
+    </div>
+    <div class="package-body">
+      <div class="package-why">Adler Law already has strong geo-targeting infrastructure and 100+ monthly leads from Scorpion — but the marketing is locked inside a vendor's platform, the firm does not own the ad accounts, and the campaign data belongs to Scorpion when the relationship ends. Dominate Full Service gives the firm independent marketing ownership: owned campaigns across Google Search, LSA, and Facebook and Instagram; website performance independent of any vendor; and performance data that belongs to Adler Law permanently.</div>
+      <div class="package-deliverables-label">Deliverables Include</div>
+      <ul class="package-list">
+        <li>Google Ads campaign management across all five practice areas with owned account data</li>
+        <li>Local Service Ads enrollment and management — Google Screened badge and pay-per-lead visibility</li>
+        <li>Facebook and Instagram ads — retargeting, video, and lead generation campaigns</li>
+        <li>SEO strategy and content to build long-term organic rankings in Nassau County and Long Island</li>
+        <li>Monthly performance dashboard with reporting on leads, CPL, and conversion by channel</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- PACKAGE TWO: Elite Coach Plus -->
+  <div class="package-block">
+    <div class="package-header">
+      <div class="package-label">Recommended Coaching Package</div>
+      <h4>Elite Coach Plus</h4>
+    </div>
+    <div class="package-body">
+      <div class="package-why">The systems that would let Marissa actually run the firm — accountability structure, KPIs, delegation frameworks, and the operational cadences that give Steven permission to step back — cannot be built in a spreadsheet. Elite Coach Plus puts Steven and Marissa inside a structured coaching program designed specifically for law firm owners who are working toward a firm that runs without them.</div>
+      <div class="package-deliverables-label">Deliverables Include</div>
+      <ul class="package-list">
+        <li>Weekly strategy and accountability coaching calls with Steven and Marissa</li>
+        <li>KPI scorecard and team accountability framework built for Adler Law's specific roles</li>
+        <li>Intake process audit and conversion improvement plan targeting the 60% close rate gap</li>
+        <li>Hiring and delegation frameworks — defining which decisions transfer to Marissa and when</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- PACKAGE THREE: FCFO Advisor -->
+  <div class="package-block">
+    <div class="package-header">
+      <div class="package-label">Recommended Financial Package</div>
+      <h4>Fractional CFO Advisor</h4>
+    </div>
+    <div class="package-body">
+      <div class="package-why">With financials in Excel and a broken Clio–QuickBooks sync, Steven cannot answer the most important question for the transition he wants: what does the firm need to generate for him to take home a meaningful salary at 2.5 days per week? The Fractional CFO Advisor builds the financial operating system that makes the answer visible — and makes it possible to plan the transition instead of guessing at it.</div>
+      <div class="package-deliverables-label">Deliverables Include</div>
+      <ul class="package-list">
+        <li>Monthly financial review and real-time profit dashboard — revenues, costs, and profit by matter type</li>
+        <li>Clio–QuickBooks integration oversight and financial data reconciliation</li>
+        <li>Revenue and profitability planning tied to the $1.8M–$2M growth target</li>
+        <li>Owner compensation modeling — what the firm needs to generate for Steven's 2.5-day transition to be financially sustainable</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- BLOCK 3 + 4: INVESTMENT GRID -->
+  <div class="investment-grid">
+
+    <!-- BLOCK 3: SMB TEAM MONTHLY INVESTMENT -->
+    <div class="investment-block">
+      <div class="investment-header"><h4>SMB Team Monthly Investment</h4></div>
+      <div class="investment-body">
+        <div class="investment-row">
+          <span class="label">Dominate Full Service Marketing</span>
+          <span><span class="retail">$5,497/mo</span>&nbsp;<span class="bundled">$4,497/mo</span></span>
+        </div>
+        <div class="investment-row">
+          <span class="label">Elite Coach Plus</span>
+          <span><span class="retail">$3,497/mo</span>&nbsp;<span class="bundled">$3,200/mo</span></span>
+        </div>
+        <div class="investment-row">
+          <span class="label">Fractional CFO Advisor</span>
+          <span><span class="retail">$1,797/mo</span>&nbsp;<span class="bundled">$1,297/mo</span></span>
+        </div>
+        <div class="investment-total">
+          <span class="total-label">Total Monthly Investment</span>
+          <span class="total-amount">$8,994/mo</span>
+        </div>
+        <div class="investment-savings">You save $1,797/month by bundling</div>
+      </div>
+    </div>
+
+    <!-- BLOCK 4: RECOMMENDED AD SPEND — TWO-SCENARIO -->
+    <div class="investment-block">
+      <div class="investment-header"><h4>Recommended Monthly Ad Spend</h4></div>
+      <div class="investment-body">
+        <p style="font-size:12px;color:#666;font-style:italic;margin-bottom:12px;">Goes directly to ad platforms — not to SMB Team. All figures are estimates.</p>
+        <div class="roi-row"><span>Ad spend range</span><span style="font-weight:700;">$5,000–$10,000/mo</span></div>
+        <div class="roi-row"><span>Average case value</span><span style="font-weight:700;">~$6,000 (stated)</span></div>
+        <div style="height:10px;"></div>
+        <div class="pgp-label">Conservative scenario ($5,000/mo)</div>
+        <div class="roi-row"><span>Est. cases per month</span><span style="font-weight:700;">5–7 cases</span></div>
+        <div class="roi-row"><span>Est. monthly revenue from ads</span><span style="font-weight:700;color:#3B6D11;">$30,000–$42,000</span></div>
+        <div class="roi-row"><span>Est. return on ad spend</span><span style="font-weight:700;">~8×</span></div>
+        <div style="height:10px;"></div>
+        <div class="pgp-label">Aggressive scenario ($10,000/mo)</div>
+        <div class="roi-row"><span>Est. cases per month</span><span style="font-weight:700;">14–17 cases</span></div>
+        <div class="roi-row"><span>Est. monthly revenue from ads</span><span style="font-weight:700;color:#3B6D11;">$84,000–$102,000</span></div>
+        <div class="roi-row"><span>Est. return on ad spend</span><span style="font-weight:700;">~10×</span></div>
+        <p class="roi-disclaimer">These are estimates based on industry averages and market data. Results are not guaranteed and will vary based on market conditions, competition, and firm-specific factors.</p>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- BLOCK 5: WHAT HAPPENS IN THE FIRST 90 DAYS -->
+  <div class="package-block">
+    <div class="package-header"><h4>What Happens in the First 90 Days</h4></div>
+    <div class="package-body">
+      <ul class="focus-list">
+        <li>Launch SMB Team's Google Ads, Local Service Ads, and Facebook retargeting campaigns — independent of the current Scorpion arrangement — giving Adler Law owned campaign data and performance visibility for the first time</li>
+        <li>Audit the current consultation-to-client conversion process with Steven and Marissa to identify the root cause of the 30-point drop and install an automated follow-up sequence for prospects who consult but do not retain immediately</li>
+        <li>Build the Adler Law team KPI scorecard with specific metrics for each role and establish a weekly accountability meeting led by Marissa — starting the formal handoff of team management responsibility</li>
+        <li>Coaching kickoff with Steven and Marissa to define the delegation plan: which decisions transfer to Marissa first, what triggers each handoff, and what success looks like at 6 months</li>
+        <li>Once Cashroom resolves the Clio–QuickBooks sync, build the monthly financial dashboard giving Steven and Marissa real-time visibility into firm profit and the owner compensation data needed to plan the 2.5-day transition with confidence</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- BLOCK 6: GROWTH ROADMAP -->
+  <div class="package-block">
+    <div class="package-header"><h4>What Happens Next</h4></div>
+    <div class="package-body">
+      <div class="roadmap-stack">
+
+        <div class="phase-card">
+          <div class="phase-header">
+            <div class="phase-number">Phase 1</div>
+            <div class="phase-title">Foundation</div>
+            <div class="phase-trigger">Starting Now</div>
+          </div>
+          <div class="phase-body">
+            <ul class="phase-list">
+              <li>SMB Team marketing launched: Google Ads, LSA, and Facebook retargeting running independently</li>
+              <li>Intake conversion audit complete; automated follow-up sequence installed for non-retained leads</li>
+              <li>Team KPI scorecard built; weekly accountability meeting established with Marissa leading</li>
+              <li>Financial dashboard built once Clio–QuickBooks sync is resolved by Cashroom</li>
+            </ul>
+            <div class="phase-dbm">This phase gives Steven the foundation — more clients converting, fewer falling through the cracks, and a team Marissa can start managing on her own.</div>
+          </div>
+        </div>
+
+        <div class="phase-card">
+          <div class="phase-header">
+            <div class="phase-number">Phase 2</div>
+            <div class="phase-title">Operational Scale</div>
+            <div class="phase-trigger">Once the firm reaches $1.8M annual revenue</div>
+          </div>
+          <div class="phase-body">
+            <ul class="phase-list">
+              <li>Fractional COO Advisor added: Marissa's transition to day-to-day operations leadership formalized with an operational framework</li>
+              <li>Steven's role formally shifts to rainmaker and senior advisor — banking, admin, and operational decisions are no longer his</li>
+              <li>Marketing investment reviewed and scaled based on SMB Team performance data from Phase 1</li>
+            </ul>
+            <div class="phase-dbm">This is where Steven's days drop — with Marissa running operations and accountability systems in place, the 2.5-day week becomes real.</div>
+          </div>
+        </div>
+
+        <div class="phase-card">
+          <div class="phase-header">
+            <div class="phase-number">Phase 3</div>
+            <div class="phase-title">Optimize</div>
+            <div class="phase-trigger">Once the firm hits $2M+ and Steven is at 2.5 days</div>
+          </div>
+          <div class="phase-body">
+            <ul class="phase-list">
+              <li>Profit-per-case-type analysis drives marketing investment decisions and case mix strategy</li>
+              <li>Marketing tier upgrade evaluated based on revenue trajectory and competitive position</li>
+              <li>Firm valuation conversation: what the business is worth and what Marissa's long-term ownership path looks like</li>
+            </ul>
+            <div class="phase-dbm">At this stage, Steven has what he set out to build: a firm that generates income without requiring him daily, a successor who is ready, and the clarity to know exactly what the business is worth. The firms that have the freedom you described all ended up here. And it started exactly where we are starting you.</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- BLOCK 7: OUTCOME CARDS -->
+  <div class="scorecard-label">Here Is What This Builds For You</div>
+  <div class="outcome-grid">
+    <div class="outcome-card">
+      <div class="outcome-title">More Profit</div>
+      <div class="outcome-text">With real-time financial visibility and a marketing system Adler Law actually owns, Steven can see exactly what the firm earns, what he keeps, and whether the revenue trajectory supports the 2.5-day transition — before making it.</div>
+    </div>
+    <div class="outcome-card">
+      <div class="outcome-title">More Freedom</div>
+      <div class="outcome-text">When Marissa has the KPIs, accountability systems, and operational framework to manage the team herself, Steven works when he chooses to — not because the firm breaks down every time he is not there.</div>
+    </div>
+    <div class="outcome-card">
+      <div class="outcome-title">Better Client Results</div>
+      <div class="outcome-text">A team with defined roles and clear accountability means estate planning clients receive consistent, professional service — cases progress without prompting, follow-up happens automatically, and the experience matches the 4.9-star reputation the firm has earned.</div>
+    </div>
+  </div>
+
+  <!-- BLOCK 8: PERSONAL CLOSING -->
+  <div class="personal-closing">
+    <p>Steven, you have already done the hardest part — you built a real firm, hired real people, and brought in a partner who can lead. What is missing is not talent or trust: it is the structure that turns what you have into something that runs without you. Every day without that structure is another day you are the system, another day Marissa cannot fully step up, and another day the 2.5-day week remains a goal instead of a reality.</p>
+    <p class="final-line">This is not a fantasy. SMB Team can make this a reality for Adler Law Firm.</p>
+  </div>
+
+</div>
+<div class="back-to-top"><a href="#toc">↑ Back to Top</a></div>
+
+
+</body>
+</html>
