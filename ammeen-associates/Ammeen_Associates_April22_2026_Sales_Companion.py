@@ -195,7 +195,7 @@ story.append(bd("Clients start finding James on Google instead of only through r
 story.append(bd("Firm becomes visible for the three searches that matter: commercial litigation, estate planning, and creditor bankruptcy in Indianapolis."))
 story.append(bd("Every marketing dollar tracked — ends the guesswork on LegalMatch and every future channel."))
 
-story.append(Paragraph("<b>Full Service Marketing — Starter  |  $1,847/mo bundled</b>", S["subsection"]))
+story.append(Paragraph("<b>Full Service Marketing — Starter  |  $4,847/mo bundled</b>", S["subsection"]))
 story.append(b("Revenue ~$550K places firm in Starter tier; Google Ads + LSA + Meta cover all three practice areas."))
 story.append(b("Website rebuild required: avalawin.com 4–6 years old, no practice-area pages, three firm names hurting local SEO."))
 story.append(b("Ad cap $3,000/mo appropriate now; tier upgrade planned at $800K+."))
@@ -242,8 +242,8 @@ story.append(Paragraph("<i>Case value is a blended estimate ($4,000) using pract
 
 story.append(Paragraph("<b>How the range was calculated:</b>", S["subsection"]))
 story.append(b("<b>Conservative:</b> Channel minimums — commercial litigation PPC $1,500 + estate planning LSA $500 + meta retargeting $500 = $2,500."))
-story.append(b("<b>Aggressive:</b> $1M goal x 20% / 12 = $16,667; Tier 3 Indianapolis x 1.15 = $19,167; minus $1,847 mgmt fee = $17,320; capped at Starter tier maximum $3,000."))
-story.append(b("At $3,000 ad spend + $3,047 management fees: total SMB spend $6,047 = ~13.2% of current monthly revenue. Under the 35% cap."))
+story.append(b("<b>Aggressive:</b> $1M goal x 20% / 12 = $16,667; Tier 3 Indianapolis x 1.15 = $19,167; minus $4,847 mgmt fee = $14,320; capped at Starter tier maximum $3,000."))
+story.append(b("At $3,000 ad spend + $6,047 management fees: total SMB spend $9,047 = ~19.7% of current monthly revenue. Under the 35% cap."))
 
 story.append(thin_rule())
 
@@ -260,7 +260,7 @@ story.append(Paragraph('"I need to fix intake before I spend money on marketing.
 story.append(Paragraph("Intake and marketing launch together — the script, cadence, and Gene's role are built in the first 90 days of coaching before ads ramp up.", S["objection_a"]))
 
 story.append(Paragraph('"This seems expensive for a firm our size."', S["objection_q"]))
-story.append(Paragraph("$3,047/month in management fees is less than 7% of current monthly revenue. At 2 new cases/month at $4K, ads alone more than cover the full SMB investment.", S["objection_a"]))
+story.append(Paragraph("$6,047/month in management fees is ~13% of current monthly revenue — well under the 35% threshold. At 2 new cases/month at $4K, ad revenue alone covers the full SMB investment.", S["objection_a"]))
 
 story.append(thin_rule())
 
@@ -269,9 +269,9 @@ story.append(Paragraph("Investment At A Glance", S["section"]))
 
 price_data = [
     [Paragraph("<b>Full Service Marketing — Starter</b>", S["price_main"]),
-     Paragraph("$1,847/mo", S["price_main"])],
+     Paragraph("$4,847/mo", S["price_main"])],
     [Paragraph("Website rebuild, Google Ads, LSA, Meta retargeting — all three practice areas.", S["price_detail"]),
-     Paragraph("<strike>$2,697</strike> stand alone", S["price_detail"])],
+     Paragraph("<strike>$5,697</strike> stand alone", S["price_detail"])],
     [Paragraph("<b>Elite Coach Plus</b>", S["price_main"]),
      Paragraph("$1,200/mo", S["price_main"])],
     [Paragraph("Coaching, accountability, Gene's partnership path, intake system, revenue dashboard.", S["price_detail"]),
@@ -294,7 +294,7 @@ pt.setStyle(TableStyle([
 ]))
 story.append(pt)
 story.append(Paragraph(
-    "Total: $3,047/mo + $2,500–$3,000 ad spend  |  Save $2,147/mo by bundling  |  12.2%–13.2% of revenue (under 35% cap)",
+    "Total: $6,047/mo + $2,500–$3,000 ad spend  |  Save $2,147/mo by bundling  |  18.5%–19.7% of revenue (under 35% cap)",
     S["savings"]))
 
 # ── Build ──
