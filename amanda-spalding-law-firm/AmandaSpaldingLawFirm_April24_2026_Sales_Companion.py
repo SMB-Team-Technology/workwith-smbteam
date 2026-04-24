@@ -196,7 +196,7 @@ story.append(Paragraph("<b>What it does for her:</b>", S["subsection"]))
 story.append(bd("Turns on predictable lead flow from Google — cases arriving from search, not just referrals."))
 story.append(bd("Puts the firm in the top paid position before any competitor activates LSA — first-mover at the lowest CPL this market will ever see."))
 
-story.append(Paragraph("<b>Essentials Full Service Marketing  |  $1,397/mo bundled</b>", S["subsection"]))
+story.append(Paragraph("<b>Essentials Full Service Marketing  |  $3,397/mo bundled</b>", S["subsection"]))
 story.append(b("Revenue ~$350K/year places the firm in the Essentials tier ($250K–$400K)."))
 story.append(b("No local competitor running LSA or paid search for estate planning/probate — window is open."))
 story.append(b("22 Google reviews at ~4.1 stars meets LSA review threshold — no review phase required before activation."))
@@ -232,8 +232,8 @@ story.append(bd("Generates estate planning and probate leads from Google while A
 story.append(bd("Every case that closes from a digital lead goes directly toward the November campaign fund and January cushion."))
 
 story.append(Paragraph("<b>Recommended Ad Spend Range:</b>", S["subsection"]))
-story.append(b("<b>Conservative:</b> $1,000/mo — LSA only; minimum viable for rural KY estate planning; fits within $5K all-in budget."))
-story.append(b("<b>Aggressive:</b> $1,500/mo — LSA + Google Search across Bullitt, Nelson, Spencer, and Hardin counties."))
+story.append(b("<b>Conservative:</b> $1,000/mo — LSA only; minimum viable for rural KY estate planning; total all-in $5,997/mo."))
+story.append(b("<b>Aggressive:</b> $1,500/mo — LSA + Google Search across Bullitt, Nelson, Spencer, and Hardin counties; total all-in $6,497/mo."))
 
 story.append(Paragraph("<b>Estimated Return on Investment:</b>", S["subsection"]))
 story.append(b("<b>Conservative:</b> Est. 2–3 cases x $2,750 avg = $5,500–$8,250/mo vs. $1,000 spend = ~5.5x return (est.)."))
@@ -241,9 +241,9 @@ story.append(b("<b>Aggressive:</b> Est. 4–5 cases x $2,750 avg = $11,000–$13
 story.append(Paragraph("<i>Estimates based on rural KY market data and 15% close rate from the call. Case value ($2,750 avg) from transcript. Not guaranteed.</i>", S["disclaimer"]))
 
 story.append(Paragraph("<b>How the range was calculated:</b>", S["subsection"]))
-story.append(b("<b>Conservative:</b> Estate Planning LSA minimum $1,000 — LSA only to match the $5K all-in budget."))
-story.append(b("<b>Aggressive:</b> $1,500 ads + $2,997 management = $4,497/mo total — within the $5K stated budget."))
-story.append(b("At aggressive: $4,497/mo = 15.4% of monthly revenue ($29,167). Well under the 35% cap."))
+story.append(b("<b>Conservative:</b> Estate Planning LSA minimum $1,000 — LSA only. Total $4,997 management + $1,000 ads = $5,997/mo."))
+story.append(b("<b>Aggressive:</b> $1,500 ads + $4,997 management = $6,497/mo total — 22.3% of monthly revenue."))
+story.append(b("At aggressive: $6,497/mo = 22.3% of monthly revenue ($29,167). Under the 35% cap."))
 
 story.append(thin_rule())
 
@@ -251,7 +251,7 @@ story.append(thin_rule())
 story.append(Paragraph("If She Pushes Back", S["section"]))
 
 story.append(Paragraph('"I only have about $5,000 total to work with."', S["objection_q"]))
-story.append(Paragraph("Full package at aggressive is $4,497/mo ($2,997 management + $1,500 ads) — within budget. At conservative, $3,997/mo total.", S["objection_a"]))
+story.append(Paragraph("Full package is $4,997/mo management + $1,000–$1,500/mo ads = $5,997–$6,497/mo total. This exceeds the $5K stated budget — Dan needs to walk Amanda through the ROI case: every dollar into ads projects 5–7x return, and 6 months of results fund the campaign.", S["objection_a"]))
 
 story.append(Paragraph('"Will clients still come to me if they know I\'m running for judge?"', S["objection_q"]))
 story.append(Paragraph("Digital leads come from search intent, not community loyalty. No competitor is running paid ads in this market — the channel is wide open regardless.", S["objection_a"]))
@@ -266,7 +266,7 @@ story.append(Paragraph("Investment At A Glance", S["section"]))
 
 price_data = [
     [Paragraph("<b>Essentials Full Service Marketing</b>", S["price_main"]),
-     Paragraph("$1,397/mo", S["price_main"])],
+     Paragraph("$3,397/mo", S["price_main"])],
     [Paragraph("GBP optimization, LSA, Google Ads, website restoration, directory cleanup.", S["price_detail"]),
      Paragraph("Bundled only", S["price_detail"])],
     [Paragraph("<b>Elite Coach</b>", S["price_main"]),
@@ -291,7 +291,7 @@ pt.setStyle(TableStyle([
 ]))
 story.append(pt)
 story.append(Paragraph(
-    "Total: $2,997/mo management + $1,000–$1,500/mo ad spend  |  13.7%–15.4% of monthly revenue  |  Under 35% cap",
+    "Total: $4,997/mo management + $1,000–$1,500/mo ad spend  |  20.6%–22.3% of monthly revenue  |  Under 35% cap",
     S["savings"]))
 
 # ── Build ──
