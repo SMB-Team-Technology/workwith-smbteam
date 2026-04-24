@@ -272,7 +272,7 @@ price_data = [
     [Paragraph("<b>Elite Coach</b>", S["price_main"]),
      Paragraph("$2,600/mo", S["price_main"])],
     [Paragraph("Bi-weekly coaching, mastermind access, intake scripting, sprint revenue plan.", S["price_detail"]),
-     Paragraph("Stand alone $1,497", S["price_detail"])],
+     Paragraph("Stand alone $3,497", S["price_detail"])],
     [Paragraph("<b>Recommended Ad Spend</b>", S["price_main"]),
      Paragraph("$1,000–$1,500/mo", S["price_main"])],
     [Paragraph("Goes to Google LSA and Google Ads — not to SMB Team.", S["price_detail"]),
