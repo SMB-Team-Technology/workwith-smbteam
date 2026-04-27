@@ -970,3 +970,349 @@ If truly critical data is missing and cannot be estimated, flag it in the resear
 ## END OF SCOPING GUIDE
 
 This guide is referenced by the SMB Team Audit Agent System Prompt during Part Three — Package Recommendation Logic. All calculations and recommendations produced by this guide feed into the section files as specified in Part Four of the system prompt.
+
+---
+
+<a id="14-numeric-reference"></a>
+## 14. NUMERIC QUICK-REFERENCE — MACHINE-READABLE VALUES
+
+This section mirrors every key numeric value from the guide above in a clean, unambiguous format: no dollar signs, no commas, no abbreviated units, no mixed-format ranges. All monetary values are in USD. Monthly fees are per month. Ranges use explicit LOW and HIGH columns. Use this section as the authoritative source for all arithmetic — refer to the prose sections above only for context and eligibility logic.
+
+### Marketing Package Monthly Fees (Bundled and Stand-Alone, USD/month)
+
+| Package | Bundled | Stand-Alone | Savings |
+|---|---|---|---|
+| Full Service Marketing Essentials | 3397 | — | — |
+| Full Service Marketing Starter | 4847 | 5697 | 850 |
+| Full Service Marketing Growth | 7397 | 8997 | 1600 |
+| Full Service Marketing Dominate | 10497 | 12497 | 2000 |
+| Full Service Marketing Platinum | 15997 | 18997 | 3000 |
+| LSA + PPC Essentials | 1497 | — | — |
+| LSA + Social Essentials | 1497 | — | — |
+| Web + SEO Essentials | 1497 | — | — |
+| Web + SEO + LSA Essentials | 2797 | — | — |
+| LSA + PPC Starter | 1997 | — | — |
+| LSA + PPC + Social Starter | 2497 | — | — |
+| Web + SEO Starter | 3497 | — | — |
+| LSA + PPC + Social Growth | 3497 | — | — |
+| Web + SEO Growth | 4897 | — | — |
+| LSA + PPC + Social Dominate | 5000 | — | — |
+| Web + SEO Dominate | 6597 | — | — |
+| LSA + PPC + Social Platinum | 7497 | — | — |
+| Web + SEO Platinum | 9597 | — | — |
+
+### Marketing Tier — Ad Spend Caps (USD/month)
+
+| Marketing Tier and Sub-Package | Max Ad Spend |
+|---|---|
+| Essentials Full Service | 7500 |
+| Essentials LSA+PPC or LSA+Social | 5000 |
+| Starter Full Service | 25000 |
+| Starter LSA+PPC | 20000 |
+| Starter LSA+PPC+Social | 25000 |
+| Growth | 50000 |
+| Dominate | 75000 |
+| Platinum | 150000 |
+
+### Revenue Tier — Default Marketing Package Selection (USD/year)
+
+| Revenue Low | Revenue High | Default Tier | Full Service Bundled Monthly |
+|---|---|---|---|
+| 250000 | 400000 | Essentials | 3397 |
+| 400000 | 1000000 | Starter | 4847 |
+| 1000000 | 3000000 | Growth | 7397 |
+| 1000000 | — | Dominate (aggressive goals) | 10497 |
+| 3000000 | — | Platinum | 15997 |
+
+### Revenue Eligibility Thresholds (USD/year)
+
+| Rule | Threshold |
+|---|---|
+| Essentials removed at or above | 1000000 |
+| Dominate and Platinum removed below | 1000000 |
+| Under this revenue — must verify 4 months of funds | 250000 |
+| FCOO and FCFO products removed below | 500000 |
+| Master's Circle removed below | 1000000 |
+| FCFO Advisor minimum revenue | 400000 |
+| FCFO Director minimum revenue | 1000000 |
+| FCFO Partner minimum revenue | 3000000 |
+| Minimum MRR — never recommend below | 3497 |
+| Tier upgrade overage fee percentage | 10 |
+
+### Non-Marketing Package Monthly Fees (Bundled and Stand-Alone, USD/month)
+
+| Package | Bundled | Stand-Alone | Savings |
+|---|---|---|---|
+| Elite Coach | 2600 | 3497 | 897 |
+| Elite Coach Plus | 3200 | 3497 | 297 |
+| Elite Coach + FCOO Advisor | 5694 | — | — |
+| Master's Circle | 4600 | 4997 | 397 |
+| Master's Circle + FCOO Advisor | 6694 | — | — |
+| Master's Circle + FCOO Director | 8394 | — | — |
+| Master's Circle + FCOO Partner | 12394 | — | — |
+| FCOO Advisor | 3297 | 3797 | 500 |
+| FCOO Director | 4997 | 5797 | 800 |
+| FCOO Partner | 8997 | 9997 | 1000 |
+| FCFO Advisor | 3297 | 3797 | 500 |
+| FCFO Director | 4997 | 5797 | 800 |
+| FCFO Partner | 8997 | 9997 | 1000 |
+| LSA Add-On (coaching-only clients) | 900 | — | — |
+
+### Non-Marketing Package — Revenue and Team Eligibility (USD/year)
+
+| Revenue Low | Revenue High | Team Size | Recommended Package | Bundled Monthly |
+|---|---|---|---|---|
+| 250000 | 400000 | any | Elite Coach | 2600 |
+| 400000 | 1000000 | any | Elite Coach Plus | 3200 |
+| 400000 | 1000000 | growing | Elite Coach + FCOO Advisor | 5694 |
+| 1000000 | — | under 5 | Elite Coach Plus | 3200 |
+| 1000000 | — | under 5 | FCOO Advisor | 3297 |
+| 1000000 | — | 5+ with dedicated staff | Master's Circle | 4600 |
+| 1000000 | — | 5+ with dedicated staff | Master's Circle + FCOO Advisor | 6694 |
+| 1000000 | — | 5+ established leaders | FCOO Director | 4997 |
+| 2000000 | — | 5+ with dedicated staff | Master's Circle + FCOO Director | 8394 |
+| 3000000 | — | large team | FCOO Partner | 8997 |
+| 3000000 | — | large established team | Master's Circle + FCOO Partner | 12394 |
+
+### Bookkeeping Fees (Bundled, USD/month)
+
+| Level | Revenue Low | Revenue High | Bundled Monthly | Setup Fee |
+|---|---|---|---|---|
+| Level 1 | 0 | 999999 | 1697 | 1500 |
+| Level 2 | 1000000 | 2999999 | 2197 | 2000 |
+| Level 3 | 3000000 | 3999999 | 3497 | 2500 |
+| Level 4 | 4000000 | — | Custom | Custom |
+
+### Geographic Multipliers
+
+| Tier | DMA Population Low | DMA Population High | Multiplier |
+|---|---|---|---|
+| Tier 1 Mega Markets | 5000000 | — | 1.5 |
+| Tier 2 Primary High-Density | 2500000 | 4999999 | 1.3 |
+| Tier 3 Strategic Growth | 1500000 | 2499999 | 1.15 |
+| Tier 4 Significant Regional | 600000 | 1499999 | 1.0 |
+| Tier 5 Sub-Regional Rural | 0 | 599999 | 0.85 |
+
+### Spanish Campaign Modifiers (added on top of geo multiplier)
+
+| Practice Area | Modifier |
+|---|---|
+| MVA / Personal Injury | 0.50 |
+| All other practice areas | 0.33 |
+
+### Practice Area Default Case Values (USD, use only when not provided by client)
+
+| Practice Area | Case Value Low | Case Value High |
+|---|---|---|
+| Personal Injury (general) | 5000 | 8000 |
+| Car Accidents / MVA | 5000 | 10000 |
+| Truck Accidents | 15000 | 50000 |
+| Criminal Defense | 3000 | 5000 |
+| Family Law | 3000 | 5000 |
+| Estate Planning | 1500 | 3000 |
+| Immigration | 3000 | 6000 |
+| Bankruptcy | 1500 | 3000 |
+| Business Law | 3000 | 7000 |
+| Disability | 2000 | 5000 |
+
+### Channel Minimums by Practice Area (USD/month)
+
+| Practice Area | Google PPC Min | PMax/YouTube Min | LSA Min | Meta Retargeting Min | Meta Lead Gen Min |
+|---|---|---|---|---|---|
+| MVA (Car/Truck) | 10000 | 1000 | 2000 | 1500 | 6000 |
+| Accident/Injury (General) | 6000 | 1000 | 2000 | 1200 | 5500 |
+| Criminal Defense | 5500 | 500 | 2000 | 1200 | 4500 |
+| Bankruptcy | 4500 | 500 | 2000 | 1200 | 3500 |
+| Family Law | 3500 | 500 | 2000 | 1200 | 3500 |
+| Estate Planning | 3500 | 500 | 2000 | 1200 | 3500 |
+| Business Law | 3500 | 500 | 2000 | 1200 | 3500 |
+| Immigration | 3000 | 500 | 2000 | 1200 | 3000 |
+| Other (Niche) | 3000 | 500 | 2000 | 1200 | 3000 |
+
+### Practice Area Ad Spend Hard Floors by Competitiveness (USD/month)
+
+| Condition | Minimum Ad Spend |
+|---|---|
+| Personal Injury + Low competitiveness | 5500 |
+| Personal Injury + Medium competitiveness | 7500 |
+| Personal Injury + High competitiveness | 10000 |
+| Criminal Defense + High competitiveness | 5000 |
+| Any paid ads package (absolute minimum) | 3000 |
+| All 3 primary channels PPC + LSA + Meta (typical minimum) | 8000 |
+
+### CPL Benchmarks — Internal Averages (USD, rolling 90-day, updated 4/14/2026)
+
+| Practice Area | LSA Avg | Google Search Avg | Meta Retarget Avg | Meta Cold Avg |
+|---|---|---|---|---|
+| Accident & Injury | 207 | 627 | 95 | 174 |
+| Criminal Defense | 137 | 153 | 64 | 90 |
+| Disability | 72 | 77 | — | — |
+| Estate Planning | 54 | 118 | 93 | 43 |
+| Family Law | 66 | 88 | 51 | 61 |
+| Immigration | 55 | 83 | 56 | 61 |
+| Business Law | 109 | 95 | — | — |
+| Bankruptcy | 92 | 78 | — | — |
+
+### CPL Benchmarks — Client-Facing Ranges (USD, use these in audit output)
+
+| Practice Area | Google Search Low | Google Search High | LSA Low | LSA High | Meta Retarget Low | Meta Retarget High | Meta Cold Low | Meta Cold High |
+|---|---|---|---|---|---|---|---|---|
+| Accident & Injury | 630 | 780 | 210 | 260 | 80 | 100 | 150 | 190 |
+| Criminal Defense | 155 | 205 | 140 | 180 | 50 | 70 | 80 | 100 |
+| Bankruptcy | 80 | 100 | 90 | 120 | 60 | 80 | 70 | 90 |
+| Business Law | 100 | 120 | 110 | 140 | 60 | 80 | 70 | 90 |
+| Estate Planning | 120 | 150 | 55 | 75 | 45 | 60 | 45 | 65 |
+| Family Law | 90 | 110 | 70 | 90 | 50 | 65 | 75 | 95 |
+| Immigration | 85 | 110 | 55 | 75 | 50 | 65 | 65 | 85 |
+
+### Meta Benchmarks — Lead Gen (USD)
+
+| Practice Area | Client-Facing CPL Low | Client-Facing CPL High | Internal Avg CPL | Avg Ad Spend |
+|---|---|---|---|---|
+| Personal Injury | 200 | 300 | 107 | 6144 |
+| Family Law | 75 | 125 | 58 | 3084 |
+| Criminal Defense | 100 | 200 | 108 | 2732 |
+| General Law | 75 | 150 | 96 | 3918 |
+| Immigration | 40 | 80 | 67 | 2770 |
+| Estate Planning | 75 | 125 | 26 | 4228 |
+
+### Meta Benchmarks — Retargeting (USD)
+
+| Practice Area | Client-Facing CPL Low | Client-Facing CPL High | Internal Avg CPL |
+|---|---|---|---|
+| Personal Injury | 200 | 300 | 97 |
+| Family Law | 75 | 150 | 33 |
+| Criminal Defense | 75 | 150 | 53 |
+| General Law | 50 | 100 | 50 |
+| Immigration | 25 | 75 | 56 |
+| Estate Planning | 50 | 100 | 50 |
+
+### PPC Lead Projections — Non-PI Practice Areas (USD CPC, leads at each spend level)
+
+**Low Conversion Tier (10% conversion rate):**
+
+| Practice Area | CPC | Leads at 2000 Spend | Leads at 5000 Spend |
+|---|---|---|---|
+| Criminal | 30 | 7 | 17 |
+| Disability | 10.65 | 19 | 47 |
+| Estate Planning | 19.45 | 10 | 26 |
+| Family | 10 | 20 | 50 |
+| Immigration | 6.72 | 30 | 74 |
+
+**Mid Conversion Tier (15% conversion rate):**
+
+| Practice Area | CPC | Leads at 3000 Spend | Leads at 6500 Spend |
+|---|---|---|---|
+| Criminal | 39.95 | 11 | 24 |
+| Disability | 10.65 | 42 | 92 |
+| Estate Planning | 19.45 | 23 | 50 |
+| Family | 17.83 | 25 | 55 |
+| Immigration | 6.72 | 67 | 145 |
+
+**High Conversion Tier (20% conversion rate):**
+
+| Practice Area | CPC | Leads at 3500 Spend | Leads at 10000 Spend |
+|---|---|---|---|
+| Criminal | 45 | 16 | 44 |
+| Disability | 10.65 | 66 | 188 |
+| Estate Planning | 19.45 | 36 | 103 |
+| Family | 17.83 | 39 | 112 |
+| Immigration | 15 | 47 | 133 |
+
+### PPC Lead Projections — Personal Injury Small Market (USD CPC, leads at each spend level)
+
+| Niche | CPC | Leads at 10000 Spend | Leads at 20000 Spend | Leads at 50000 Spend |
+|---|---|---|---|---|
+| Accident/Injury General | 100 | 11 | 22 | 55 |
+| Car Accidents | 94.76 | 12 | 23 | 58 |
+| Motorcycle Accidents | 150 | 7 | 13 | 33 |
+| Truck Accidents | 150 | 7 | 13 | 33 |
+| Slip & Fall | 100 | 10 | 20 | 50 |
+| Wrongful Death | 100 | 10 | 20 | 50 |
+
+### PPC Lead Projections — Personal Injury Mid Market (USD CPC, leads at each spend level)
+
+| Niche | CPC | Leads at 8000 Spend | Leads at 20000 Spend | Leads at 30000 Spend |
+|---|---|---|---|---|
+| Accident/Injury General | 150 | 8 | 20 | 30 |
+| Car Accidents | 200 | 4 | 11 | 17 |
+| Motorcycle Accidents | 200 | 4 | 11 | 17 |
+| Truck Accidents | 200 | 4 | 11 | 17 |
+| Slip & Fall | 150 | 8 | 20 | 30 |
+| Wrongful Death | 150 | 8 | 20 | 30 |
+
+### PPC Lead Projections — Personal Injury Large Market (USD CPC, leads at each spend level)
+
+| Niche | CPC | Leads at 10000 Spend | Leads at 20000 Spend | Leads at 50000 Spend |
+|---|---|---|---|---|
+| Accident/Injury General | 300 | 5 | 10 | 25 |
+| Car Accidents | 325 | 5 | 9 | 23 |
+| Motorcycle Accidents | 250 | 8 | 16 | 40 |
+| Truck Accidents | 250 | 8 | 16 | 40 |
+| Slip & Fall | 200 | 10 | 20 | 50 |
+| Wrongful Death | 200 | 10 | 20 | 50 |
+
+### Meta Lead Gen Projections — Small Geography (USD CPL, leads at each spend level)
+
+| Practice Area | CPL | Leads at 1200 Spend | Leads at 3000 Spend | Leads at 5000 Spend |
+|---|---|---|---|---|
+| Personal Injury | 175 | 7 | 17 | 29 |
+| Family Law | 60 | 20 | 50 | 83 |
+| Criminal Defense | 100 | 12 | 30 | 50 |
+| Business Law | 100 | 12 | 30 | 50 |
+| Immigration | 50 | 24 | 60 | 100 |
+| Estate Planning | 60 | 20 | 50 | 83 |
+
+### Meta Lead Gen Projections — Mid Geography (USD CPL, leads at each spend level)
+
+| Practice Area | CPL | Leads at 1500 Spend | Leads at 3000 Spend | Leads at 6300 Spend |
+|---|---|---|---|---|
+| Personal Injury | 200 | 8 | 15 | 32 |
+| Family Law | 75 | 20 | 40 | 84 |
+| Criminal Defense | 150 | 10 | 20 | 42 |
+| Business Law | 100 | 15 | 30 | 63 |
+| Immigration | 50 | 30 | 60 | 126 |
+| Estate Planning | 75 | 20 | 40 | 84 |
+
+### Meta Lead Gen Projections — Large Geography (USD CPL, leads at each spend level)
+
+| Practice Area | CPL | Leads at 1500 Spend | Leads at 2400 Spend | Leads at 3000 Spend |
+|---|---|---|---|---|
+| Personal Injury | 300 | 5 | 8 | 10 |
+| Family Law | 100 | 15 | 24 | 30 |
+| Criminal Defense | 200 | 8 | 12 | 15 |
+| Business Law | 150 | 10 | 16 | 20 |
+| Immigration | 50 | 30 | 48 | 60 |
+| Estate Planning | 75 | 20 | 32 | 40 |
+
+### YouTube / PMax Estimates (USD spend → impressions)
+
+| Monthly Spend | CPM Low | CPM High | Impressions Low | Impressions High |
+|---|---|---|---|---|
+| 500 | 7 | 10 | 50000 | 71000 |
+| 1500 | 7 | 10 | 150000 | 214000 |
+| 2500 | 7 | 10 | 250000 | 357000 |
+| 5000 | 7 | 10 | 500000 | 714000 |
+
+### Escalation Flags — Numeric Triggers (USD)
+
+| Flag | Threshold |
+|---|---|
+| Revenue requiring scoping approval below | 300000 |
+| Marketing MRR requiring scoping approval above | 10000 |
+| Monthly ad spend requiring scoping approval above | 25000 |
+| Upgrade MRR increase requiring additional approval | 5000 |
+| Ad spend requiring paid ads team review below | 3000 |
+
+### Default Rates and Percentages
+
+| Parameter | Value |
+|---|---|
+| Annual marketing budget as percentage of revenue goal | 20 |
+| 35% cap — max total monthly spend as percentage of monthly revenue | 35 |
+| Default close rate if not stated in transcript | 15 |
+| Blended CPL cushion percentage for conservative projections | 20 |
+| Overage fee percentage on ad spend above tier cap | 10 |
+| Default revenue goal multiplier if not stated | 2 |
+| Spanish modifier — MVA/PI (percentage of total ad spend added) | 50 |
+| Spanish modifier — all other practice areas (percentage added) | 33 |
