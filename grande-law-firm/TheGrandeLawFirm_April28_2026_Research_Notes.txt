@@ -1,0 +1,377 @@
+THE GRANDE LAW FIRM — LAW FIRM GROWTH AUDIT RESEARCH NOTES
+Sales Rep: Dan Bryant
+Date: April 28, 2026
+Prepared for: /audit-write pass
+Research Method: Web search + directory verification + transcript extraction
+Note: Firm website (thegrandelawfirm.com) blocks direct WebFetch (403). All website observations are from search index data, cached content, and transcript confirmation. PageSpeed tool returned 429 rate-limit errors during research — scores must be run manually at pagespeed.web.dev before /audit-write.
+
+================================================================================
+STEP 1 — WEBSITE RESEARCH
+================================================================================
+
+- Website URL confirmed live: YES (indexed in Google, appears in search results April 2026; blocks direct access with 403)
+- Website platform: WordPress (confirmed per transcript)
+- Last redesign: Newly redesigned (per transcript — described as "strong design" with fresh build)
+- Mobile responsive: Likely yes (modern WordPress site, newly designed; not visually confirmed due to 403)
+- Homepage headline: "Immigration and Family Law in California | The Grande Law Firm" (from Google index title tag)
+- CTA above fold: NOT CONFIRMED — per transcript, firm is missing a prominent click-to-call phone in the header (identified as a quick-win fix during the call)
+- Contact form location: Not confirmed from search results
+- Live chat present: Not confirmed
+- Attorney bio page: YES — "Meet Cynthia Grande" page confirmed at /meet-cynthia-grande/
+- Video present: Not confirmed
+- Blog/Newsroom: YES — Newsroom section confirmed at /newsroom/ (last post date not confirmed)
+- Spanish language toggle: YES — confirmed per transcript ("Spanish toggle exists")
+- Phone: (310) 713-2334
+- Torrance address: 3812 Sepulveda Blvd, Suite 220, Torrance, CA 90505
+- San Bruno address: 532 San Mateo Ave, San Bruno, CA
+- Email: info@thegrandelawfirm.com
+
+KEY WEBSITE GAPS (from transcript, confirmed as action items):
+  - No prominent click-to-call phone in top-right header
+  - No NAP + embedded map in footer
+  - Homepage title/H1 not yet aligned to "Immigration Attorney in Torrance, CA"
+  - No geo-optimized page titles for each practice area (English + Spanish)
+  - Spanish toggle present but not prominently positioned
+
+Geo-targeted pages confirmed in sitemap:
+  - /torrance-immigration-lawyer/
+  - /los-angeles-immigration-lawyer/
+  - /immigration-attorneys-torrance/
+  - /immigration-attorneys-carson/
+  - /bankruptcy-attorneys-torrance/
+  - /services/naturalization/
+  - /services/bankruptcy-faqs/
+  - /testimonials/
+  - /newsroom/
+  - /meet-cynthia-grande/
+  - /about/
+  - /sitemap/
+
+PageSpeed mobile score: UNABLE TO CONFIRM — API returned 429 rate-limit errors during research. MUST RUN MANUALLY at pagespeed.web.dev before writing audit report.
+PageSpeed desktop score: UNABLE TO CONFIRM — same issue. MUST RUN MANUALLY at pagespeed.web.dev before writing audit report.
+
+
+================================================================================
+STEP 2 — GOOGLE BUSINESS PROFILE
+================================================================================
+
+- GBP found: YES (confirmed discussed during discovery call)
+- Star rating: NOT CONFIRMED via web research — must verify directly in Google Maps
+- Total review count: NOT CONFIRMED via web research — must verify directly in Google Maps
+  NOTE: Yelp Torrance listing shows 11 reviews (Updated April 2026). Facebook shows 14 reviews at 100% recommendation. Google count is separate and unconfirmed.
+- Most recent review date: Not confirmed
+- Primary category: Changed DURING CALL from "Lawyer" to "Immigration Attorney" (confirmed per transcript — done live with Cynthia)
+- Recommended secondary categories: Family Law Attorney; Bankruptcy Attorney (discussed on call)
+- Photos: Not confirmed active/inactive from search results
+- Posts: Not confirmed active/inactive from search results
+- GBP Services section: Not yet updated with detailed descriptions per transcript action items
+
+
+================================================================================
+STEP 3 — LOCAL 3-PACK SEARCHES
+================================================================================
+
+NOTE: Direct Google Maps search results are not accessible via web search. Results below are based on directory listings and search index data. Specific 3-pack rankings must be confirmed by searching Google directly from Torrance, CA geolocation.
+
+Practice Area 1: IMMIGRATION (Family-Based / Green Card / Naturalization)
+
+- Search 1 "immigration attorney Torrance CA":
+  Firm appears: NOT CONFIRMED — GBP only recently changed to "Immigration Attorney" category
+  Competitors likely in pack (based on directory data):
+    Law Office of Sharon Abaud — 187 aggregated reviews (4.7 stars via Birdeye)
+    Law Office of Marie Michaud — 29 Yelp reviews; 25 years Torrance presence
+    Ruttle Law (Michael Ruttle) — 20 Avvo reviews; Super Lawyers designation
+
+- Search 2 "family immigration attorney Torrance":
+  Firm appears: NOT CONFIRMED
+  Competitors likely in pack:
+    Minas Law (Arthur Minas) — 25 Avvo reviews (all 5-star); 3620 Pacific Coast Hwy, Torrance
+    Law Office of Marie Michaud — 2215 Torrance Blvd, Torrance
+    The Grande Law Firm — potential if GBP now updated to Immigration Attorney category
+
+- Search 3 "immigration attorney near me" (from Torrance/South Bay):
+  Firm appears: NOT CONFIRMED
+  Competitors likely in pack:
+    Law Office of Sharon Abaud — highest review volume in market
+    Carl Shusterman Immigration Lawyer — 21250 Hawthorne Blvd, Torrance; 400+ Avvo reviews
+    Ruttle Law — 22939 Hawthorne Blvd, Torrance
+
+Practice Area 2: BANKRUPTCY (Chapter 7 / Chapter 13)
+
+- Search 1 "bankruptcy attorney Torrance CA":
+  Firm appears: NOT CONFIRMED
+  Competitors likely in pack:
+    MacLean Chung Law Firm — Torrance office; BBB A+ rated; 99% success rate claim
+    Tang & Associates — top-rated in directories
+    Law Offices of Joseph L Pittera — Torrance-based
+
+- Search 2 "chapter 7 bankruptcy attorney Torrance":
+  Firm appears: NOT CONFIRMED
+  Competitors likely in pack:
+    MacLean Chung Law Firm
+    South Bay Bankruptcy Attorney (Sam Benevento) — 25+ years experience
+    Oak Tree Law — Torrance office
+
+- Search 3 "bankruptcy lawyer near me" (from Torrance):
+  Firm appears: NOT CONFIRMED
+  Note: Bankruptcy is secondary (15%) for Grande Law Firm; competition from specialists will be stiff
+
+
+================================================================================
+STEP 4 — COMPETITOR REVIEW COUNTS
+================================================================================
+
+NOTE: Google review counts were not directly accessible via web search for most firms. Numbers below are from Birdeye, Yelp, Avvo, or other directories as specified. Google Map counts must be verified directly.
+
+IMMIGRATION COMPETITORS (Torrance market):
+
+- Law Office of Sharon Abaud
+  Address: 23720 Arlington Ave UNIT 2, Torrance, CA 90501
+  Birdeye (aggregated): 187 reviews — 4.7 stars
+  Yelp: 5 stars (limited count)
+  Avvo: Client's Choice Award (significant 4+ star reviews)
+  Chamber of Commerce: 53 reviews — 4.9 stars
+  NOTE: Sharon Abaud is the dominant competitor by review volume. Strong Spanish-language presence ("Abogada Sharon"). Website: abaudlegal.com. Serves English and Spanish speakers. This is the primary competitive threat for family immigration leads.
+
+- Carl Shusterman Immigration Lawyer
+  Address: 21250 Hawthorne Blvd, Suite 500, Torrance, CA 90503
+  Avvo: 400+ reviews (5-star)
+  Yelp: 32 reviews (Torrance location — Updated March 2026)
+  Recognition: Super Lawyers 2004–2025; former INS Trial Attorney; 40+ years experience
+  NOTE: Primarily employment/business immigration focus (employer-sponsored). Less overlap with family immigration ICP but has dominant SEO presence in Torrance.
+
+- Law Office of Marie Michaud
+  Address: 2215 Torrance Blvd, Suite 201, Torrance, CA 90501
+  Phone: (310) 328-3500
+  Yelp: 29 reviews
+  Experience: 25 years; own office in Torrance since 2004; Spanish + French speaker
+  NOTE: Spanish speaker; established local Torrance presence since 2004; significant SEO equity from longevity; family immigration focused; competes directly with Grande Law Firm's ICP.
+
+- Ruttle Law (Michael Ruttle)
+  Address: 22939 Hawthorne Blvd, Suite 302, Torrance, CA 90505
+  Avvo: 20 reviews (18 five-star)
+  Facebook: 7 reviews (100% recommendation)
+  Recognition: Super Lawyers Rising Stars 2018–2023
+  NOTE: Serves South Bay including Torrance, Gardena, Long Beach; broad immigration focus.
+
+- Minas Law (Arthur Minas)
+  Address: 3620 Pacific Coast Hwy, Suite 100, Torrance, CA 90505
+  Avvo: 25 reviews (all 5-star)
+  Recognition: Multilingual — English, Spanish, Armenian
+  NOTE: Family-based immigration specialty; strong review profile; competes on multilingual service.
+
+- Law Offices of Jim Kahng
+  Address: 3424 W Carson St, Suite 440, Torrance, CA 90503
+  Yelp: 10 reviews (Updated April 2026)
+  Experience: 18+ years exclusively U.S. immigration law
+  Recognition: "10 Best Immigration Attorney in California" 2017 (American Institute of Legal Counsel)
+
+BANKRUPTCY COMPETITORS (Torrance market):
+
+- MacLean Chung Law Firm
+  Torrance office exists; Birdeye for Torrance: 4 reviews; Burbank location Yelp: 55 reviews
+  BBB: Accredited A+ rated; claims 99% success rate; 3,000+ clients; 30 combined years experience
+  NOTE: Multi-location firm; most Yelp reviews are at Burbank office.
+
+- Tang & Associates
+  Top-rated bankruptcy firm in Torrance directories; family-run; handles Chapter 7/11/13
+
+- South Bay Bankruptcy Attorney (Sam Benevento)
+  25+ years experience; South Bay-focused; strong name recognition in local directories
+
+- Oak Tree Law
+  Torrance office; handles complex bankruptcy cases
+
+NOTE: Because bankruptcy is only ~15% of the Grande Law Firm's practice, detailed bankruptcy competitor audit is less critical than immigration.
+
+
+================================================================================
+STEP 5 — DIRECTORY LISTINGS
+================================================================================
+
+Confirmed listings:
+
+- Yelp (Torrance): 11 reviews — Updated April 2026 — Categories: Bankruptcy Law (primary listed category)
+  NOTE: Primary category on Yelp may show "Bankruptcy Law" — should be updated to lead with Immigration Law
+- Yelp (San Bruno): Listed at 532 San Mateo Ave, San Bruno — Updated December 2025 — review count not confirmed
+- Avvo: Cynthia Grande profile confirmed — Torrance, CA 90505 — no disciplinary history — rating not confirmed from search
+- Justia: Confirmed listing (lawyers.justia.com/lawyer/cynthia-grande-1531349)
+- AILA (American Immigration Lawyers Association): Confirmed member (ailalawyer.com)
+- Martindale: Confirmed listing
+- AttorneyAtLaw.com: Confirmed listing
+- Facebook: Active — 14 reviews, 100% recommendation — page at facebook.com/grandelawfirm/
+- Instagram: Active — @grandelawfirm
+- LinkedIn: Active — Cynthia Grande personal profile
+- Wheree: Listed (Updated December 2025)
+- State Bar of California: Confirmed active — Cynthia appointed to CA State Bar Board of Trustees by Assembly Speaker Rivas
+
+NAP CONSISTENCY:
+- Torrance: 3812 Sepulveda Blvd, Suite 220, Torrance, CA 90505 — consistent across Yelp, AILA, directories
+- San Bruno: 532 San Mateo Ave, San Bruno, CA — confirmed on Yelp
+- Phone: (310) 713-2334 — consistent across directories
+- NOTE: Footer NAP + embedded map is missing from website per transcript (confirmed action item)
+
+Geo-targeting landing pages:
+- Has /torrance-immigration-lawyer/ — YES
+- Has /los-angeles-immigration-lawyer/ — YES
+- Has /immigration-attorneys-carson/ — YES
+- Has /bankruptcy-attorneys-torrance/ — YES
+- MISSING: Compton, South Gate, Huntington Park, Gardena, Hawthorne, Carson (for Spanish-speaking ICP)
+- MISSING: San Bruno / Bay Area geo pages (secondary market)
+
+
+================================================================================
+STEP 6 — GOOGLE ADS
+================================================================================
+
+Practice Area 1: IMMIGRATION (family-based, Torrance/South Bay)
+
+- The Grande Law Firm ads observed: NOT OBSERVED — confirmed per transcript that no paid ads are currently running (Cynthia stated "ready to explore advertising now")
+- Named local competitor ads:
+  Law Office of Sharon Abaud — not directly confirmed running PPC but has aggressive web presence including separate domain (abaudlegal.com); strong digital footprint suggests possible ad investment
+  Carl Shusterman — national digital presence with dedicated Torrance page; likely running brand and keyword ads given scale
+  Marie Michaud — maintains two separate websites (mariemichaudimmigrationlaw.com and immigrationlawtorrance.com and torranceimmigrationlaw.com) — three domains targeting same Torrance market; likely running SEO/possible PPC
+
+Practice Area 2: BANKRUPTCY (Torrance)
+
+- The Grande Law Firm ads observed: NOT OBSERVED (no paid ads currently per transcript)
+- Named local competitor ads:
+  MacLean Chung Law Firm — prominent paid presence with "$925 Bankruptcy" pricing page targeting Torrance keywords; likely running PPC
+  Oak Tree Law — has dedicated /torrance-bankruptcy-attorney/ page suggesting active Torrance keyword targeting
+
+NOTE: Specific Google Ads SERP screenshots are not available through web search. Actual ad copy and presence must be confirmed by searching Google directly for "immigration attorney Torrance CA" and "bankruptcy attorney Torrance CA."
+
+
+================================================================================
+STEP 7 — LOCAL SERVICE ADS (LSA)
+================================================================================
+
+- The Grande Law Firm appears in LSA: NOT OBSERVED — no LSA active per transcript context (no paid advertising currently running)
+- Google Screened status: NOT OBSERVED — not active
+- LSA review count: N/A (not active)
+
+Named local competitors likely in LSA (based on market presence and directory data):
+  - Law Office of Sharon Abaud — high review volume and strong local presence suggests LSA eligibility and likely activation; cannot confirm from search
+  - Carl Shusterman — significant Torrance presence; likely LSA eligible; specific activation not confirmed
+  - Marie Michaud — long-standing Torrance practice; LSA not confirmed
+
+Market context: Immigration LSAs in this market run approximately $55/lead per transcript discussion. LSA is available for immigration attorneys and allows 11 job types within the immigration category. Google Screened badge consolidation occurred October 2025.
+
+
+================================================================================
+STEP 8 — META ADS (FACEBOOK/INSTAGRAM)
+================================================================================
+
+- The Grande Law Firm has active Meta ads: NOT OBSERVED — no paid ads currently running per transcript; Facebook Ads Library tool blocked WebFetch access during research
+- The Grande Law Firm Facebook page: Confirmed active at facebook.com/grandelawfirm — 14 reviews, 100% recommendation
+- The Grande Law Firm Instagram: Confirmed active at @grandelawfirm
+
+Named local competitor Meta ads:
+  - Law Office of Sharon Abaud (facebook.com/abogadasharon) — active Facebook page confirmed; Spanish-language content visible online ("Abogada Sharon"); ad status not confirmed from search but strong social presence suggests active investment
+  - Ruttle Law (facebook.com/ruttlelaw) — active Facebook page confirmed; 7 reviews; ad status not confirmed
+
+NOTE: Facebook Ads Library (facebook.com/ads/library) was inaccessible via WebFetch (403 error). Meta Ads status for all competitors must be verified manually by visiting ads.facebook.com/ads/library and searching each firm name.
+
+
+================================================================================
+STEP 9 — TRANSCRIPT EXTRACTION
+================================================================================
+
+- Practice areas confirmed: ~85% family-based immigration (family petitions, green cards, naturalization, humanitarian/U visas); ~15% bankruptcy (Chapter 7 and Chapter 13) and other
+- Current lead sources: Primarily referrals; some organic Google; no paid advertising of any kind currently running
+- Ads ever run: NO — Cynthia has never run paid ads; expressed readiness to start immediately; SMB Team walked her through channel options (LSA, Google PPC, Meta) for the first time during this call
+- Team size: Cynthia Grande (CEO/owner; largely out of day-to-day legal work); 3-person intake team (1 lead rep + 2 additional reps); legal assistants/case managers handle most case work; of counsel (just returned from maternity leave; transitioning to associate next month)
+- Annual revenue (2025): ~$1.08M (stated on call)
+- Revenue goal (2026): $1.5M (~50% YoY growth — stated on call)
+- Average case value: Overall ~$3,500; family immigration specifically ~$5,000
+- Current close rate: Intake lead rep ~58% consult set/close; two other intake reps ~22% each; Cynthia closes ~45% of her own consults; of counsel insufficient data (just returned from leave)
+- Lead funnel (last 6 months): 486 total leads → ~385 qualified → 299 booked → 245 completed → 96 new clients; overall lead-to-client conversion ~20%
+- Number of locations: 2 — Torrance, CA (primary); San Bruno, CA (secondary/SF Bay Area)
+- Tech stack: Lawmatics (CRM); Clio (case management); CallRail (call tracking; integrated with Lawmatics); WordPress website (in-house designer)
+- Consult policy: Immigration = paid consult ($100/25 minutes, by phone); Bankruptcy = free consult
+- Collections: ~92% collected on payment plans; AR not flagged as problematic
+- Spanish campaign needed: YES — Spanish-first campaigns; primary ICP is working-class, Spanish-speaking families in Compton, South Gate, and Huntington Park
+- Dominant buying motive (DBM): Build a firm that operates without her daily involvement so she can function fully as CEO/entrepreneur — she is already positioned as CEO but gets pulled back into ops during staffing disruptions (associate departure; of counsel on leave). The real driver is freedom from operational dependency: she wants the firm to run predictably whether she is in it or not. Growth to $1.5M is the vehicle; autonomy and scalability are the destination.
+- Any profitability claims made by prospect: NONE STATED
+- Case type/practice area claims (exact from call context): "85% family-based immigration"; "15% bankruptcy/other"; 2,300+ families helped (from website copy); paid consults at $100/25 minutes for immigration
+- Pain points (from transcript):
+  1. Lead volume decline started ~5 months ago; current run rate similar to last year, jeopardizing 2026 goal
+  2. Intake conversion inconsistency: two intake reps at ~22% vs. lead at 58% — dragging overall yield
+  3. Website not optimized for local SEO (missing phone CTA, NAP/map, geo-targeted titles/H1s)
+  4. GBP primary category was "Lawyer" — diluting immigration relevance (fixed during call)
+  5. Market/messaging shifts in immigration causing demand volatility; messaging needs update
+  6. Geographic mismatch: Torrance office may not be in the center of working-class Spanish-speaking ICP; Compton/South Gate/Huntington Park ICP vs. Torrance location
+  7. Occasional staffing disruptions force Cynthia back into operations
+
+
+================================================================================
+STEP 10 — COMPETITIVE URGENCY SCORE
+================================================================================
+
+Score: 6 / 10
+
+Rationale:
+The Torrance immigration market has a clear leader (Sharon Abaud with 187+ aggregated reviews and strong Spanish presence) and several well-established, long-tenured competitors with significant review equity (Shusterman, Michaud, Ruttle). None of The Grande Law Firm's direct family immigration competitors appear to be running comprehensive multi-channel paid campaigns specifically targeting the Spanish-speaking working-class ICP in Compton/South Gate/Huntington Park — which is the firm's core opportunity. However, Sharon Abaud's established Spanish-language brand and review dominance, combined with the firm's current invisibility in paid channels, means meaningful ground is being ceded every month.
+
+Named specific competitor threats:
+
+1. Law Office of Sharon Abaud (abaudlegal.com) — Highest review volume in the Torrance immigration market (187 Birdeye, 53 Chamber of Commerce at 4.9 stars). Spanish-language brand ("Abogada Sharon") directly targets the same ICP. Has multiple active web presences and likely is capturing the same referral-adjacent organic leads that Grande is getting. If Sharon activates or expands paid campaigns, she will take significant share.
+
+2. Carl Shusterman Immigration Lawyer — Dominant SEO presence with 40+ years in market, 400+ Avvo reviews, Super Lawyers 2004–2025. Three dedicated Torrance domain assets create near-unassailable organic presence for broad immigration searches. Different ICP (mostly employer/employment immigration) but bleeds into family cases.
+
+3. Law Office of Marie Michaud — 25 years of local Torrance SEO equity, Spanish speaker, three separate domain properties all targeting Torrance immigration keywords. Consumers searching for "immigration attorney Torrance" will encounter Marie Michaud before they find The Grande Law Firm until local SEO fixes are made.
+
+Dynamic urgency statement:
+"A score of 6 means competitors have meaningful advantages in one or more areas and are pulling ahead. You are not invisible yet — but the window to close the gap is narrowing. Every month without action is a month they extend their lead."
+
+================================================================================
+PASS 2 — VERIFICATION CHECKLIST
+================================================================================
+
+[ ] NOTE: PageSpeed scores NOT confirmed — tool rate-limited; must run manually before audit-write
+[ ] NOTE: Google review count and star rating for Grande Law Firm NOT confirmed — must verify in Google Maps
+[ ] NOTE: Current 3-pack positions NOT confirmed — must verify by searching Google from Torrance location
+[ ] NOTE: Competitor Google review counts — Birdeye/Yelp/Avvo numbers used where Google unavailable
+[ ] NOTE: Google Ads SERP — direct search could not be captured; must verify manually
+[ ] NOTE: LSA presence — could not confirm competitors; must verify manually
+[ ] NOTE: Facebook Ads Library — blocked; must verify manually at ads.facebook.com/ads/library
+[x] Competitor names are all specific named local firms — no generic categories used
+[x] No statement that firm is "not running ads" — phrased as "no ads observed" and "does not appear to be running"
+[x] No profitability claims inserted — only transcript-stated data
+[x] DBM recorded (clear inference from call context)
+[x] Revenue goal recorded: $1.5M 2026
+[x] Close rate recorded: 58% (lead) / 22% (two reps) / 45% (Cynthia)
+[x] Average case value recorded: ~$3,500 overall; ~$5,000 family immigration
+[x] NAP confirmed for both locations
+[x] Practice areas confirmed from transcript
+[x] Spanish campaign need confirmed from transcript
+
+================================================================================
+SUMMARY FOR /AUDIT-WRITE
+================================================================================
+
+Firm: The Grande Law Firm
+Owner: Cynthia Grande
+URL: thegrandelawfirm.com
+Friendly name folder: grande-law-firm
+Locations: Torrance CA (primary) + San Bruno CA (secondary)
+Primary practice: Family-based immigration (~85%)
+Secondary practice: Bankruptcy (~15%)
+Revenue 2025: ~$1.08M
+Revenue goal 2026: $1.5M
+Avg case value: ~$3,500 overall; ~$5,000 immigration
+Lead-to-client: ~20%
+ICP: Working-class Spanish-speaking families; Compton, South Gate, Huntington Park
+Spanish campaign: Yes — Spanish-first
+Tech stack: Lawmatics, Clio, CallRail, WordPress
+DBM: Freedom from operational dependency; firm that runs without her; CEO not operator
+Top competitor: Law Office of Sharon Abaud (Torrance) — 187 aggregated reviews, 4.7 stars, strong Spanish brand
+Competitive urgency: 6/10
+Ready for ads: YES — immediately; LSA + Google PPC + Meta recommended
+Key quick wins: GBP category fixed (done on call); website phone CTA + NAP/map in footer; geo H1s; Spanish ad campaigns; intake coaching for two underperforming reps
+
+ACTIONS REQUIRED BEFORE /AUDIT-WRITE:
+1. Run PageSpeed Insights manually at pagespeed.web.dev for thegrandelawfirm.com — record mobile and desktop scores
+2. Look up Grande Law Firm on Google Maps to get star rating and review count
+3. Run Google searches for "immigration attorney Torrance CA" and "bankruptcy attorney Torrance CA" to capture 3-pack and any visible ads
+4. Check Facebook Ads Library (ads.facebook.com/ads/library) for Grande Law Firm and Sharon Abaud
