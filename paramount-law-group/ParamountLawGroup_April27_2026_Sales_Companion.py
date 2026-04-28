@@ -195,7 +195,7 @@ story.append(bd("Creates inbound case flow from estates/probate/guardianship/cor
 story.append(bd("Builds the online footprint a buyer will evaluate — GBP, reviews, website, content — directly supporting the exit goal."))
 story.append(bd("Makes Donna's CBA Elder Law Chair credentials visible online — a competitive moat no Calgary competitor can match."))
 
-story.append(Paragraph("<b>Full Service Marketing — Growth Tier  |  $3,397/mo bundled</b>", S["subsection"]))
+story.append(Paragraph("<b>Full Service Marketing — Growth Tier  |  $7,397/mo bundled</b>", S["subsection"]))
 story.append(b("Revenue: $1.2M billed / $800k collected. Growth tier appropriate for $1M+ billing firm with aggressive collection target."))
 story.append(b("All practice areas (estates, probate, guardianship, corporate) eligible for Ads/LSA — no PI or criminal restrictions."))
 story.append(b("Website rebuild required: no practice area pages, no CTA above fold, no SEO content — full service is the right entry point."))
@@ -211,7 +211,7 @@ story.append(bd("Frees 8-10 hrs/week from HR — worth $218k-$273k/yr at her $52
 story.append(bd("Builds KPIs and SOPs that make the Mexico trip and Tue-Thu schedule structurally possible, not aspirational."))
 story.append(bd("Creates a self-managing team a buyer pays a premium for — directly increasing exit valuation."))
 
-story.append(Paragraph("<b>Fractional COO Advisor  |  $2,297/mo bundled</b>", S["subsection"]))
+story.append(Paragraph("<b>Fractional COO Advisor  |  $3,297/mo bundled</b>", S["subsection"]))
 story.append(b("Dan's call notes list Fractional COO as Option B — this is exactly what Donna and Tim were evaluating."))
 story.append(b("Tim is in place as an ops ally — FCOO works with Tim to build systems, not replace him."))
 story.append(b("The $218k/yr HR time-loss is the most concrete ROI anchor from the call — FCOO directly addresses it."))
@@ -244,7 +244,7 @@ story.append(Paragraph("<i>All figures are estimates using blended case value ~$
 story.append(Paragraph("<b>How the range was calculated:</b>", S["subsection"]))
 story.append(b("<b>Conservative:</b> Estate Planning PPC $1,500 + LSA $1,000 + Corporate PPC $800 + Meta retargeting $200 = $3,500."))
 story.append(b("<b>Aggressive:</b> $1.2M target x 20% / 12 = $20,000. Calgary Tier 3 (1.15x) = $23,000. Minus $3,397 fee = $19,603. Capped at Growth tier max of $7,000; using $6,500 under cap."))
-story.append(b("Total SMB spend at aggressive: $5,694 + $6,500 = $12,194/mo = 15.2% of $800k collected revenue. Well under the 35% cap."))
+story.append(b("Total SMB spend at aggressive: $10,694 + $6,500 = $17,194/mo = 21.5% of $800k collected revenue. Well under the 35% cap."))
 
 story.append(thin_rule())
 
@@ -267,13 +267,13 @@ story.append(Paragraph("Investment At A Glance", S["section"]))
 
 price_data = [
     [Paragraph("<b>Full Service Marketing — Growth Tier</b>", S["price_main"]),
-     Paragraph("$3,397/mo", S["price_main"])],
+     Paragraph("$7,397/mo", S["price_main"])],
     [Paragraph("Website rebuild + local SEO + Google Ads + LSA + Meta Ads.", S["price_detail"]),
-     Paragraph("<strike>$3,997</strike> stand alone", S["price_detail"])],
+     Paragraph("<strike>$7,997</strike> stand alone", S["price_detail"])],
     [Paragraph("<b>Fractional COO Advisor</b>", S["price_main"]),
-     Paragraph("$2,297/mo", S["price_main"])],
+     Paragraph("$3,297/mo", S["price_main"])],
     [Paragraph("Weekly 1:1, KPIs by role, SOP build, accountability cadence.", S["price_detail"]),
-     Paragraph("<strike>$2,797</strike> stand alone", S["price_detail"])],
+     Paragraph("<strike>$3,797</strike> stand alone", S["price_detail"])],
     [Paragraph("<b>Recommended Ad Spend</b>", S["price_main"]),
      Paragraph("$3,500–$6,500/mo", S["price_main"])],
     [Paragraph("Goes to Google, LSA, and Meta — not to SMB Team.", S["price_detail"]),
@@ -292,7 +292,7 @@ pt.setStyle(TableStyle([
 ]))
 story.append(pt)
 story.append(Paragraph(
-    "Total: $5,694/mo + $3,500–$6,500 ad spend  |  Save $1,100/mo by bundling  |  11.5%–15.2% of collected revenue (under 35% cap)",
+    "Total: $10,694/mo + $3,500–$6,500 ad spend  |  Save $1,100/mo by bundling  |  17.8%–21.5% of collected revenue (under 35% cap)",
     S["savings"]))
 
 # ── Build ──
