@@ -217,7 +217,7 @@ story.append(bd("Adam gets a paid marketing engine that brings in lemon law and 
 story.append(bd("Competitors like Kahn &amp; Associates stop having the paid search field to themselves."))
 story.append(bd("The firm's 4.9-star reputation starts showing up where active buyers search — at the top of Google."))
 
-story.append(Paragraph("<b>Full Service Marketing — Starter  |  $5,847/mo bundled</b>", S["subsection"]))
+story.append(Paragraph("<b>Full Service Marketing — Starter  |  $4,847/mo bundled</b>", S["subsection"]))
 story.append(b("Revenue of $600K+ places the firm in the $400K–$1M Starter tier."))
 story.append(b("Detroit metro is a Tier 2 market (1.3x multiplier) — competitive enough to justify paid search entry now."))
 story.append(b("Zero paid advertising currently running — full opportunity gap across Google, LSA, and Meta."))
@@ -267,7 +267,7 @@ story.append(Paragraph("<i>All figures are estimates. Not guaranteed.</i>", S["d
 story.append(Paragraph("<b>How the range was calculated:</b>", S["subsection"]))
 story.append(b("<b>Conservative:</b> Consumer protection minimums: Google PPC $2,500 + LSA $2,000 = $4,500."))
 story.append(b("<b>Aggressive:</b> $900K target x 20% ÷ 12 = $15,000 x 1.3 (Tier 2) = $19,500. Capped at Starter limit of $5,000."))
-story.append(b("Total at aggressive: $9,047 + $5,000 = $14,047/mo = 18.7% of $900K/12. Well under the 35% cap."))
+story.append(b("Total at aggressive: $8,047 + $5,000 = $13,047/mo = 17.4% of $900K/12. Well under the 35% cap."))
 
 story.append(thin_rule())
 
@@ -278,7 +278,7 @@ story.append(Paragraph('"I need to get more organized before I hire anyone."', S
 story.append(Paragraph("This is the most common reason solo attorneys never hire. The systems don't come first — they develop after. Coaching through the first hire is exactly what Elite Coach Plus is built for. Adam has 138 Google reviews vs. Kahn's 542+ and zero paid advertising — getting organized while competitors grow is not a neutral choice.", S["objection_a"]))
 
 story.append(Paragraph('"The monthly investment feels high right now."', S["objection_q"]))
-story.append(Paragraph("At 2 cases/month from conservative ad spend, the firm generates ~$10,000 in new revenue — more than covering the $9,047 monthly fee. The question is not whether Adam can afford it; it is whether he can afford to keep letting competitors capture cases he is not reaching.", S["objection_a"]))
+story.append(Paragraph("At 2 cases/month from conservative ad spend, the firm generates ~$10,000 in new revenue — more than covering the $8,047 monthly fee. The question is not whether Adam can afford it; it is whether he can afford to keep letting competitors capture cases he is not reaching.", S["objection_a"]))
 
 story.append(Paragraph('"I looked at working with SMB Team before and didn\'t move forward."', S["objection_q"]))
 story.append(Paragraph("That hesitation was noted on this call — and it was about the management burden of hiring, not about the program itself. Elite Coach Plus is specifically designed to address that fear with a structured roadmap. The 2-week test drive offer removes the risk of commitment entirely.", S["objection_a"]))
@@ -290,7 +290,7 @@ story.append(Paragraph("Investment At A Glance", S["section"]))
 
 price_data = [
     [Paragraph("<b>Full Service Marketing — Starter</b>", S["price_main"]),
-     Paragraph("$5,847/mo", S["price_main"])],
+     Paragraph("$4,847/mo", S["price_main"])],
     [Paragraph("Managed Google Ads, LSA, local SEO, Meta — Detroit metro.", S["price_detail"]),
      Paragraph("<strike>$6,697</strike> stand alone", S["price_detail"])],
     [Paragraph("<b>Elite Coach Plus</b>", S["price_main"]),
@@ -315,7 +315,7 @@ pt.setStyle(TableStyle([
 ]))
 story.append(pt)
 story.append(Paragraph(
-    "Total: $9,047/mo + $4,500–$5,000 ad spend  |  Save $1,147/mo by bundling  |  18.7% of revenue at aggressive (under 35% cap)",
+    "Total: $8,047/mo + $4,500–$5,000 ad spend  |  Save $2,147/mo by bundling  |  17.4% of revenue at aggressive (under 35% cap)",
     S["savings"]))
 
 # ── Build ──
