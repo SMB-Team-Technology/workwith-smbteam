@@ -1,0 +1,1237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Law Firm Growth Audit — Blancarte Law</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Montserrat:wght@700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="audit_styles.css">
+<!-- HubSpot Analytics -->
+<script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/4570385.js"></script>
+</head>
+<body>
+
+<!--
+  ============================================================
+  SMB TEAM — LAW FIRM GROWTH AUDIT
+  Master Assembly File
+
+  ⚠️ CRITICAL — READ BEFORE WRITING A SINGLE CHARACTER:
+
+  This file does NOT contain a <style> block.
+  This file does NOT use inline styles (no style="" attributes).
+  ALL styling comes exclusively from audit_styles.css.
+
+  If you find yourself writing CSS — in a <style> tag, inline,
+  or anywhere else — STOP. Delete it. Use only the class names
+  that already exist in audit_styles.css. Do not invent new ones.
+
+  Violating this rule is what causes the report to look wrong.
+  The CSS is already written. Your only job is to fill in content.
+
+  ============================================================
+
+  INSTRUCTIONS FOR COWORK:
+  This file assembles the completed audit by inserting the
+  content of each completed section fragment in order.
+
+  Workflow:
+  1. Complete all research and analysis first. Write nothing yet.
+  2. Open section_01_cover.html. Fill in all placeholders. Save.
+  3. Open section_02_toc.html. Fill in all placeholders. Save.
+  4. Open section_03_firm_overview.html. Fill in all placeholders. Save.
+  5. Section 04 (About SMB Team) is static — copy as-is.
+  6. Open section_05_growth_health.html. Fill in all placeholders. Save.
+  7. Open section_06_lead_generation.html. Fill in all placeholders. Save.
+  8. Open section_07_08_09_intake_team_profit.html. Fill in all placeholders. Save.
+  9. Open section_10_whats_possible.html. Fill in all placeholders. Save.
+  10. Open section_11_next_steps.html. Fill in all placeholders. Save.
+  11. Return to this file. Replace each INSERT SECTION X CONTENT HERE comment
+      with the full HTML content of that completed section file.
+  12. Save the final assembled file as:
+      [FirmName]_[Date]_Growth_Audit.html
+      to the project folder.
+
+  RULES:
+  - No <style> block. None. Not here, not in any section file.
+  - No inline styles. No style="" on any element. Ever.
+  - No new CSS classes. Only use classes from audit_styles.css.
+  - Do not output this file in the chat window.
+  - Save directly to the project folder.
+  ============================================================
+-->
+
+<!-- ===== SECTION 01: COVER PAGE ===== -->
+<!-- ⚠️ NO CSS IN THIS FILE. No <style> blocks. No inline styles. No style="" attributes.
+     All styling comes from audit_styles.css only. Use only existing class names.
+     If you find yourself writing CSS — stop and delete it. -->
+<!-- ============================================================
+     SECTION 01 — COVER PAGE
+
+     INSTRUCTIONS FOR COWORK:
+     Replace every placeholder below with real data.
+     Do not add any inline styles.
+     Do not change any class names.
+     Only replace the text inside the tags.
+     ============================================================ -->
+
+<div class="cover" id="cover">
+  <img class="cover-logo"
+    src="https://www.dropbox.com/scl/fi/9ytno9l0ipl9w9x4l0qg6/SMB-Logo-H-White.png?rlkey=y13ywjp9poyihu8zus42tx6wq&st=rfo0lufv&raw=1"
+    alt="SMB Team Logo" />
+
+  <div class="cover-title">Law Firm Growth Audit</div>
+
+  <!-- FILL: FIRM_NAME — The full legal name of the law firm exactly as provided -->
+  <div class="cover-firm">Blancarte Law</div>
+
+  <div class="cover-footer">
+    <!-- FILL: FIRM_NAME — same as above -->
+    <p>Prepared for: <strong>Blancarte Law</strong></p>
+    <!-- FILL: SALES_REP_NAME — First and last name of the SMB Team sales rep -->
+    <p>Prepared by: <strong>Randy Gold</strong> | SMB Team</p>
+    <!-- FILL: AUDIT_DATE — Format: Month DD, YYYY (e.g. April 13, 2026) -->
+    <p>Date: <strong>April 29, 2026</strong></p>
+    <p class="confidential">Confidential</p>
+  </div>
+</div>
+
+
+<!-- ===== SECTION 02: TABLE OF CONTENTS ===== -->
+<!-- ⚠️ NO CSS IN THIS FILE. No <style> blocks. No inline styles. No style="" attributes.
+     All styling comes from audit_styles.css only. Use only existing class names.
+     If you find yourself writing CSS — stop and delete it. -->
+<!-- ============================================================
+     SECTION 02 — TABLE OF CONTENTS
+
+     INSTRUCTIONS FOR COWORK:
+     Replace every instance of FIRM NAME HERE with the firm's name.
+     Do not change any anchor href values — they must match section IDs exactly.
+     Do not add or remove any TOC entries.
+     Do not add any inline styles.
+     ============================================================ -->
+
+<div class="toc-wrap" id="toc">
+  <div class="toc-title">Table of Contents</div>
+
+  <div class="toc-section">
+    <div class="toc-category">Your Firm at a Glance</div>
+    <ul class="toc-items">
+      <!-- FILL: FIRM_NAME — firm name in the link text only, not the href -->
+      <li><a href="#firm-overview">Blancarte Law — Current Status</a></li>
+    </ul>
+  </div>
+
+  <div class="toc-section">
+    <div class="toc-category">About SMB Team</div>
+    <ul class="toc-items">
+      <li><a href="#about-smb">The Law Firm Growth Acceleration Model</a></li>
+    </ul>
+  </div>
+
+  <div class="toc-section">
+    <div class="toc-category">Your Growth Health Assessment</div>
+    <ul class="toc-items">
+      <li><a href="#growth-health">Growth Health Scorecard</a></li>
+      <li><a href="#urgency-score">Competitive Urgency Score</a></li>
+    </ul>
+  </div>
+
+  <div class="toc-section">
+    <div class="toc-category">Lead Generation</div>
+    <ul class="toc-items">
+      <li><a href="#website-audit">Website Audit</a></li>
+      <li><a href="#local-seo">Local SEO</a></li>
+      <li><a href="#google-ads">Google Ads</a></li>
+      <li><a href="#local-service-ads">Local Service Ads</a></li>
+      <li><a href="#meta-ads">Facebook &amp; Instagram Ads</a></li>
+    </ul>
+  </div>
+
+  <div class="toc-section">
+    <div class="toc-category">Intake</div>
+    <ul class="toc-items">
+      <li><a href="#intake">Intake Assessment</a></li>
+      <li><a href="#website-intake">Website Contact Forms &amp; Live Chat</a></li>
+    </ul>
+  </div>
+
+  <div class="toc-section">
+    <div class="toc-category">Self-Managing Team</div>
+    <ul class="toc-items">
+      <li><a href="#team">Team Assessment</a></li>
+    </ul>
+  </div>
+
+  <div class="toc-section">
+    <div class="toc-category">Profit</div>
+    <ul class="toc-items">
+      <li><a href="#profit">Profit Plan Assessment</a></li>
+    </ul>
+  </div>
+
+  <div class="toc-section">
+    <!-- FILL: FIRM_NAME — firm name in the category label -->
+    <div class="toc-category">Here's What's Possible for Blancarte Law</div>
+    <ul class="toc-items">
+      <li><a href="#growth-journey">Growth Vision</a></li>
+    </ul>
+  </div>
+
+  <div class="toc-section">
+    <!-- FILL: FIRM_NAME — firm name in both link texts below -->
+    <div class="toc-category">Your Next Steps</div>
+    <ul class="toc-items">
+      <li><a href="#next-steps">Quick Wins for Blancarte Law</a></li>
+      <li><a href="#recommendation">How SMB Team Can Help Blancarte Law</a></li>
+    </ul>
+  </div>
+</div>
+
+
+<!-- ===== SECTION 03: YOUR FIRM AT A GLANCE ===== -->
+<!-- ⚠️ NO CSS IN THIS FILE. No <style> blocks. No inline styles. No style="" attributes.
+     All styling comes from audit_styles.css only. Use only existing class names.
+     If you find yourself writing CSS — stop and delete it. -->
+<!-- ============================================================
+     SECTION 03 — YOUR FIRM AT A GLANCE
+     ============================================================ -->
+
+<div class="section-header" id="firm-overview">
+  <div class="section-header-inner">
+    <h2>Here Is Where Blancarte Law Stands Today</h2>
+  </div>
+</div>
+
+<div class="content-wrap">
+
+  <div class="firm-summary">Blancarte Law is a downtown Los Angeles immigration and criminal defense firm run by partners Jesse and James Blancarte, serving immigrant families with bilingual legal services and generating approximately $1 million in annual revenue — supported by operations manager Patricia Parker and a small paralegal team. The firm has reached a growth ceiling: almost all new clients come from a single nonprofit referral source, the website is essentially a blank business card with no content or conversion capability, and the firm has zero visible reviews across every platform checked. Despite having real capacity and a capable team structure, Blancarte Law is invisible online in one of the most competitive immigration markets in the country — and the systems needed to change that are not yet in place.</div>
+
+  <!-- Stage 4: Small Business Manager -->
+  <img src="https://www.dropbox.com/scl/fi/27el1jrgyynonfwcgi8ib/LLS-Small-Business-Manager.png?rlkey=biehntt1vm0nxnynabgako82i&st=z2k2uxwe&raw=1" alt="Growth Stage" style="width:100%;height:auto;display:block;border-radius:6px;margin-bottom:16px;" />
+
+  <p class="dbm-connector">Stage 6 is the stage where Jesse and James can take real time off — vacations, weekends, court days cleared — and the firm keeps running without them. That is exactly where this plan is designed to take them.</p>
+
+  <div class="stage-cards">
+    <div class="stage-card">
+      <div class="stage-card-header">
+        <h3>Where You Are Today</h3>
+        <div class="stage-label">Stage 4: Small Business Manager</div>
+      </div>
+      <div class="stage-card-body">
+        <ul>
+          <li>Growth depends entirely on a single nonprofit referral source — when it slows, revenue slows</li>
+          <li>No reviews on any platform — the firm is invisible to anyone searching for an immigration attorney online</li>
+          <li>Attorneys pulled into non-attorney tasks; cannot take time off without creating service gaps</li>
+          <li>Month-to-month financial trends require manual effort to access — decisions are reactive rather than planned</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="stage-card destination">
+      <div class="stage-card-header">
+        <h3>Where You Need To Be</h3>
+        <div class="stage-label">Stage 6: Law Firm Owner</div>
+      </div>
+      <div class="stage-card-body">
+        <ul>
+          <li>The firm runs without you</li>
+          <li>Your income is no longer tied to your personal hours</li>
+          <li>Your time is yours to spend however you choose</li>
+          <li>This is where true freedom and true wealth become possible</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="connecting-sentence">The gap between where Blancarte Law stands today and where Jesse and James want to be is not as wide as it feels — but closing it requires a plan, and this is that plan.</div>
+
+  <div class="assessment-header">Overall Growth Stage Assessment</div>
+  <div class="assessment-subheading">Blancarte Law</div>
+
+  <div class="assessment-box">Blancarte Law is operating at Stage 4 — a Small Business Manager stage where a real team exists but the systems needed to run without the owners are not yet in place. The single most urgent gap is the complete absence of a digital presence: zero reviews, no paid ads, and no SEO visibility mean the firm is invisible to the immigrant families actively searching for an attorney right now. Competitors on the same street are running multi-channel campaigns and collecting hundreds of reviews while Blancarte Law's growth depends entirely on the goodwill of a single nonprofit. Until a predictable, independent marketing engine is built — one that generates leads without requiring anyone's personal relationships — the $1.8M annual revenue goal Jesse and James are working toward will remain out of reach.</div>
+
+</div>
+<div class="back-to-top"><a href="#toc">↑ Back to Top</a></div>
+
+
+<!-- ===== SECTION 04: ABOUT SMB TEAM ===== -->
+<!-- ⚠️ NO CSS IN THIS FILE. No <style> blocks. No inline styles. No style="" attributes.
+     All styling comes from audit_styles.css only. Use only existing class names.
+     If you find yourself writing CSS — stop and delete it. -->
+<!-- ============================================================
+     SECTION 04 — ABOUT SMB TEAM
+
+     INSTRUCTIONS FOR COWORK:
+     This section is STATIC. Do not change any text or structure.
+     Copy this section into the final output exactly as it appears here.
+     ============================================================ -->
+
+<div class="section-header" id="about-smb">
+  <div class="section-header-inner">
+    <h2>The Law Firm Growth Acceleration Model</h2>
+  </div>
+</div>
+
+<div class="content-wrap">
+
+  <div class="callout-banner">
+    <p>We Help Law Firm Owners Get More Profit, More Personal Freedom, And Outstanding Results For Their Clients.</p>
+  </div>
+
+  <p class="opportunity-text">Most law firms try to grow by chasing more leads. But leads alone are not the problem — and leads alone are not the answer. Here is what actually works.</p>
+
+  <div class="pillars-grid">
+    <div class="pillar-card">
+      <h3>Lead Generation</h3>
+      <p>Leads are to a law firm what gasoline is to a car. Without them, you go nowhere. But a steady, predictable flow of leads changes everything — you get to choose your cases instead of taking whatever comes in.</p>
+    </div>
+    <div class="pillar-card">
+      <h3>Intake</h3>
+      <p>But all the leads in the world are worthless without a system to turn them into paying clients. Most firms are losing cases they already paid for simply because their follow-up is slow or inconsistent.</p>
+    </div>
+    <div class="pillar-card">
+      <h3>Self-Managing Team</h3>
+      <p>Once clients are coming in, you need a team — otherwise you end up working 90-hour weeks and results suffer. A self-managing team is what gives you the freedom to step back.</p>
+    </div>
+    <div class="pillar-card">
+      <h3>Profit Plan</h3>
+      <p>And once the team is in place, most owners look at their bank account and ask: where did all the money go? That is what a profit plan solves — clarity on what you earn, what you keep, and how to grow both.</p>
+    </div>
+  </div>
+
+  <div class="closing-line">All four have to work together. If one is missing, you cannot have more profit, more freedom, and outstanding results for your clients at the same time.</div>
+
+  <img src="https://www.dropbox.com/scl/fi/ffkzpv2f3rdjfzwq997e1/Law-Firm-Growth-Acceleration-Model.png?rlkey=665o52gt2va8pg4nb0epdc8hv&st=1iucj2m5&raw=1"
+    alt="Law Firm Growth Acceleration Model"
+    style="width:100%;height:auto;display:block;border-radius:6px;" />
+
+</div>
+<div class="back-to-top"><a href="#toc">↑ Back to Top</a></div>
+
+
+<!-- ===== SECTION 05: GROWTH HEALTH ASSESSMENT ===== -->
+<!-- ⚠️ NO CSS IN THIS FILE. No <style> blocks. No inline styles. No style="" attributes.
+     All styling comes from audit_styles.css only. Use only existing class names.
+     If you find yourself writing CSS — stop and delete it. -->
+<!-- ============================================================
+     SECTION 05 — YOUR GROWTH HEALTH ASSESSMENT
+     ============================================================ -->
+
+<div class="section-header" id="growth-health">
+  <div class="section-header-inner">
+    <h2>Your Growth Health Assessment</h2>
+    <div class="subtext">Blancarte Law</div>
+  </div>
+</div>
+
+<div class="content-wrap">
+
+  <div class="legend">
+    <div class="legend-item">
+      <div class="legend-dot red"></div>
+      <div class="legend-label">Red <span>— Critical Priority</span></div>
+    </div>
+    <div class="legend-item">
+      <div class="legend-dot amber"></div>
+      <div class="legend-label">Amber <span>— In Progress</span></div>
+    </div>
+    <div class="legend-item">
+      <div class="legend-dot green"></div>
+      <div class="legend-label">Green <span>— On Track</span></div>
+    </div>
+  </div>
+
+  <div class="scorecard-label">Pillar Health Scorecard</div>
+
+  <div class="scorecard-grid">
+
+    <!-- LEAD GENERATION CARD -->
+    <div class="sc-card">
+      <div class="sc-card-header"><h3>Lead Generation</h3></div>
+      <div class="sc-card-body">
+        <div class="traffic-circle red"></div>
+        <ul class="sc-findings">
+          <li>100% of new clients come from a single nonprofit referral source — no marketing backup exists</li>
+          <li>Not visible in any Google search for immigration or criminal defense in Los Angeles</li>
+          <li>Zero reviews on any platform — no digital credibility to convert online searchers into callers</li>
+        </ul>
+        <div class="sc-dbm">Without a predictable lead system, Jesse and James will always depend on what others choose to send them — and that dependency is what keeps them working in the firm instead of stepping back from it.</div>
+      </div>
+    </div>
+
+    <!-- INTAKE CARD -->
+    <div class="sc-card">
+      <div class="sc-card-header"><h3>Intake</h3></div>
+      <div class="sc-card-body">
+        <div class="traffic-circle amber"></div>
+        <ul class="sc-findings">
+          <li>Existing call vendor in place but leads fall through the cracks with inconsistent follow-up</li>
+          <li>After-hours and weekend coverage gaps mean calls outside business hours are not reliably captured</li>
+          <li>CRM is in place but not optimized to track conversion rates or identify leakage points</li>
+        </ul>
+        <div class="sc-dbm">Every lead that falls through the cracks is a case already paid for and lost — tightening intake multiplies the value of every marketing dollar spent before a single new lead is generated.</div>
+      </div>
+    </div>
+
+    <!-- SELF-MANAGING TEAM CARD -->
+    <div class="sc-card">
+      <div class="sc-card-header"><h3>Self-Managing Team</h3></div>
+      <div class="sc-card-body">
+        <div class="traffic-circle amber"></div>
+        <ul class="sc-findings">
+          <li>Attorneys serve as operational bottlenecks — court days and casework create gaps only they can fill</li>
+          <li>No KPIs, scorecards, or accountability cadence to identify top performers or delegate effectively</li>
+          <li>Neither attorney can reliably take time off without the firm stalling</li>
+        </ul>
+        <div class="sc-dbm">A firm that runs when the owners are present but stalls when they are not is a job, not a business — and Jesse and James need it to become a business before they can have their time back.</div>
+      </div>
+    </div>
+
+    <!-- PROFIT CARD -->
+    <div class="sc-card">
+      <div class="sc-card-header"><h3>Profit</h3></div>
+      <div class="sc-card-body">
+        <div class="traffic-circle amber"></div>
+        <ul class="sc-findings">
+          <li>James handles bookkeeping internally — reporting is accurate but not forward-looking or strategic</li>
+          <li>Month-to-month and year-over-year trends require manual effort to compile and review</li>
+          <li>Profit is trending slightly down from prior periods despite available capacity — the cause is not pinpointed</li>
+        </ul>
+        <div class="sc-dbm">Without knowing what each case type costs and returns, it is impossible to make the hiring, marketing, and pricing decisions that turn $1M in revenue into $1.8M in revenue — and real wealth for Jesse and James.</div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- COMPETITIVE URGENCY SCORE -->
+  <div class="urgency-card" id="urgency-score">
+    <div class="urgency-label">Competitive Urgency Score</div>
+    <div class="urgency-score">8</div>
+    <div class="urgency-outof">out of 10</div>
+    <div class="urgency-sentence">A score of 8 means competitors are actively dominating multiple channels in your market and the gap is getting wider every month you wait. This is not a future problem — it is a right now problem.</div>
+
+    <div style="margin-bottom:10px;">
+      <div class="urgency-bar"><div class="urgency-marker" style="left:80%;"></div></div>
+      <div class="urgency-scale">
+        <span>1–3 = Low Urgency</span>
+        <span>4–6 = Moderate</span>
+        <span>7–10 = High Urgency</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="competitors-label">Your Top Competitive Threats</div>
+
+  <div class="competitor-card">
+    <div class="competitor-name">Goldstein Immigration Lawyers — 611 Wilshire Blvd, Los Angeles (4 blocks away)</div>
+    <div class="competitor-threat">4.8 stars, 585 Google reviews. Located in the same Wilshire corridor as Blancarte Law, running active paid search campaigns, and documented to have doubled client intake via Google PPC. Active on 7 social platforms — Facebook, Instagram, YouTube, TikTok, Pinterest, Snapchat, and LinkedIn. They are capturing the immigrant family leads that Blancarte Law cannot reach because it has no digital presence.</div>
+  </div>
+
+  <div class="competitor-card">
+    <div class="competitor-name">Manduley &amp; Camisassa — Los Angeles Immigration Attorneys</div>
+    <div class="competitor-threat">5.0 stars, 376 Google reviews. Consistently ranking at the top of Los Angeles immigration search results with a dedicated bilingual website. Active on Facebook with Spanish-language content targeting the exact same immigrant family audience that Blancarte Law serves — but cannot currently reach digitally.</div>
+  </div>
+
+  <div class="competitor-card">
+    <div class="competitor-name">Law Offices of Gihan L. Thomas — Los Angeles</div>
+    <div class="competitor-threat">4.9 stars, 961 Google reviews — the most-reviewed immigration firm in Los Angeles. This is the benchmark that prospective clients compare against when deciding which attorney to trust. With zero reviews, Blancarte Law cannot compete for the trust of anyone who searches before calling.</div>
+  </div>
+
+</div>
+<div class="back-to-top"><a href="#toc">↑ Back to Top</a></div>
+
+
+<!-- ===== SECTION 06: LEAD GENERATION ===== -->
+<!-- ⚠️ NO CSS IN THIS FILE. No <style> blocks. No inline styles. No style="" attributes.
+     All styling comes from audit_styles.css only. Use only existing class names.
+     If you find yourself writing CSS — stop and delete it. -->
+<!-- ============================================================
+     SECTION 06 — LEAD GENERATION
+     ============================================================ -->
+
+<div class="section-header" id="lead-generation">
+  <div class="section-header-inner"><h2>Lead Generation</h2></div>
+</div>
+
+
+
+<div class="content-wrap">
+</div>
+<div class="section-img-wrap"><img src="https://www.dropbox.com/scl/fi/vne0wcswovu3nwjibgjya/Lead-Generation.png?rlkey=enb7lthrbylgma7qoofstb799&st=nw3f9i8c&raw=1" alt="Lead Generation" /></div>
+<div class="content-wrap">
+  <p class="section-intro">Blancarte Law currently generates almost all of its new clients through a single nonprofit referral source — a single point of failure with no marketing backup, no digital visibility, and no predictable growth engine. In one of the most competitive immigration law markets in the country, the firm does not appear in any Google search, runs no observed paid ads, and has zero online reviews to convert the prospects it cannot reach through referrals.</p>
+</div>
+
+<!-- WEBSITE AUDIT -->
+<div class="subsection-header" id="website-audit">
+  <div class="subsection-header-inner"><h3>Website Audit</h3></div>
+</div>
+<div class="content-wrap">
+
+  <div class="pgp-label">The Problem</div>
+  <ul class="pgp-list">
+    <li>The current blancartelaw.com is essentially a blank digital business card — phone number and address only, with no practice area descriptions, no attorney bios, no testimonials, no contact form, and no content of any kind</li>
+    <li>PageSpeed scores: could not be retrieved during automated research (tool requires JavaScript execution) — manual check required at pagespeed.web.dev before launch</li>
+    <li>No above-the-fold CTA beyond a phone number — visitors who do not call immediately have no other path to become a lead</li>
+    <li>No blog, no FAQ, no practice area landing pages — the site has zero SEO value and cannot rank for any search term in any practice area</li>
+  </ul>
+
+  <div class="blind-spot"><strong>Blind Spot:</strong> Competitors in the same Wilshire corridor — including Goldstein Immigration Lawyers 4 blocks away — are running paid search ads that capture visitors searching by location or practice area. These are prospects who may have called Blancarte Law if the firm had any digital presence to be found.</div>
+
+  <div class="pgp-label">The Positive</div>
+  <ul class="pgp-list">
+    <li>A new website is actively in development (blancarte.wondermedia.dev) — the firm recognizes the gap and has taken the first step toward fixing it</li>
+  </ul>
+
+  <div class="pgp-label">The Gap</div>
+  <ul class="pgp-list">
+    <li>Every visitor who lands on the current site and finds no information leaves immediately and calls a competitor instead — the site is producing zero leads</li>
+    <li>With no practice area pages, the site cannot rank organically for any immigration or criminal defense keyword — the firm is missing every organic search lead in its market</li>
+    <li>No effective paid advertising is possible without a proper landing page — the marketing engine cannot be turned on until the website is ready to receive traffic</li>
+  </ul>
+
+  <div class="dbm-closing">A website that converts visitors into consultations is not optional — it is the foundation every other marketing channel builds on, and right now Blancarte Law does not have one. The new site in development needs to launch alongside the marketing activation to maximize its impact.</div>
+
+</div>
+
+<!-- LOCAL SEO -->
+<div class="subsection-header" id="local-seo">
+  <div class="subsection-header-inner"><h3>Local SEO</h3></div>
+</div>
+<div class="content-wrap">
+
+  <div class="pgp-label">The Problem</div>
+  <ul class="pgp-list">
+    <li>Zero verified reviews across every platform checked — Avvo, Yellow Pages, Martindale, and Lawyer.com all show "not yet reviewed" or "be the first to review"</li>
+    <li>Not visible in the local 3-pack for any tested immigration or criminal defense search in Los Angeles — the firm is absent from every local search result</li>
+    <li>At least 3 different addresses (915 Wilshire Ste 700, 600 Wilshire Ste 500, 600 Wilshire) and 3 different phone numbers ((213) 342-6622, (310) 205-9922, 213-629-7030) are listed across directories — NAP inconsistencies are actively suppressing local rankings</li>
+  </ul>
+
+  <div class="blind-spot"><strong>Blind Spot:</strong> Google uses NAP (Name, Address, Phone) consistency across the web as a core signal for local search rankings. With conflicting listings on Avvo, Yellow Pages, and Lawyer.com, Google cannot confidently match the firm to a single verified location — which means it deprioritizes the firm in local results. This is fixable at zero cost and should be corrected before any other local SEO work begins.</div>
+
+  <div class="pgp-label">The Positive</div>
+  <ul class="pgp-list">
+    <li>The firm is indexed on Avvo, FindLaw, Justia, LawInfo, and several other directories — a baseline directory presence exists that can be corrected and built upon rather than started from scratch</li>
+  </ul>
+
+  <div class="pgp-label">The Gap</div>
+  <ul class="pgp-list">
+    <li>With 0 reviews, Blancarte Law cannot compete in local pack rankings where every top immigration competitor has hundreds to nearly a thousand reviews</li>
+    <li>NAP inconsistencies must be corrected across all directories before any local SEO investment will produce meaningful results</li>
+  </ul>
+
+  <div class="competitor-callout"><strong>Goldstein Immigration Lawyers</strong> — located 4 blocks away at 611 Wilshire Blvd — appears consistently in top local results for immigration attorney searches in downtown Los Angeles, backed by 585 Google reviews, a fully optimized Google Business Profile, and active content marketing across 7 platforms. Their local SEO foundation is years ahead of where Blancarte Law stands today.</div>
+
+  <div class="dbm-closing">Every month without an active review generation system is another month competitors extend their lead in local rankings — and every position they hold is a case that could have gone to Blancarte Law instead.</div>
+
+</div>
+
+<!-- GOOGLE ADS -->
+<div class="subsection-header" id="google-ads">
+  <div class="subsection-header-inner"><h3>Google Ads</h3></div>
+</div>
+<div class="content-wrap">
+
+  <div class="ad-part">
+    <div class="ad-part-label">Ad Presence</div>
+    <ul class="ad-list">
+      <li>Blancarte Law does not appear to be running Google Ads for immigration or criminal defense searches in Los Angeles — no ads were observed for any tested keyword. The firm may not be configured to run ads for these terms, or may be getting outbid by competitors with established Quality Scores and larger budgets.</li>
+      <li>With no existing website content or landing pages, launching ads immediately would require the new website to be ready first — making the site rebuild the critical path item before paid traffic can be turned on.</li>
+    </ul>
+  </div>
+
+  <div class="ad-part">
+    <div class="ad-part-label">Competitor Ad Landscape</div>
+    <ul class="ad-list">
+      <li><strong>Goldstein Immigration Lawyers</strong> — active paid search advertiser targeting immigration keywords in Los Angeles; a published case study documents how PPC campaigns directly doubled their client intake. They are bidding on the same keywords Blancarte Law should own.</li>
+      <li><strong>Camisassa Law Group</strong> — prominently appearing in paid and organic results for "immigration lawyer Los Angeles" and "immigration attorney Los Angeles CA" with a dedicated, conversion-optimized bilingual website built to capture and convert paid traffic.</li>
+    </ul>
+  </div>
+
+  <div class="ad-part">
+    <div class="ad-part-label">The Opportunity</div>
+    <ul class="ad-list">
+      <li>High-intent primary keywords: "immigration attorney Los Angeles," "deportation defense attorney Los Angeles," "green card attorney downtown LA" — these are the searches from people who need an attorney right now</li>
+      <li>Criminal defense keywords: "criminal defense attorney downtown Los Angeles," "DUI attorney Los Angeles 90017," "criminal lawyer Wilshire Blvd" — targeting the secondary practice area in the firm's immediate geographic corridor</li>
+      <li>Spanish-language campaigns: "abogado de inmigración Los Angeles," "abogado defensa criminal Los Angeles," "consulta de inmigración gratis" — reaching Blancarte Law's core bilingual immigrant audience at lower CPCs than English-only keywords</li>
+      <li>Competitor conquest: running ads on searches for well-known local competitors captures their research traffic at the moment a prospect is actively comparing attorneys</li>
+    </ul>
+  </div>
+
+  <div class="blind-spot"><strong>Blind Spot:</strong> Immigration CPCs in Los Angeles range from $15–$45+ per click and the market is actively contested. Every day without a Google Ads campaign is a day that high-intent leads — people actively searching for an immigration attorney right now — are going to Goldstein, Camisassa, and the other firms that are already spending. These are not future clients; they are today's clients.</div>
+
+</div>
+
+<!-- LOCAL SERVICE ADS -->
+<div class="subsection-header" id="local-service-ads">
+  <div class="subsection-header-inner"><h3>Local Service Ads</h3></div>
+</div>
+<div class="content-wrap">
+
+  <div class="ad-part">
+    <div class="ad-part-label">LSA Presence</div>
+    <ul class="ad-list">
+      <li>Blancarte Law does not appear in Local Service Ads for any immigration or criminal defense searches tested in Los Angeles — the firm is not observed as Google Screened and has no LSA presence for any tested keyword.</li>
+      <li>LSA qualification requires background check, license verification, and a minimum number of Google reviews — building the review base is the prerequisite step before LSA can be launched.</li>
+    </ul>
+  </div>
+
+  <div class="ad-part">
+    <div class="ad-part-label">Competitor LSA Landscape</div>
+    <ul class="ad-list">
+      <li><strong>Goldstein Immigration Lawyers</strong> — well-positioned for LSA with 585 Google reviews and an active advertising presence; their review volume gives them a strong advantage in the LSA ranking algorithm</li>
+      <li><strong>Manduley &amp; Camisassa</strong> — bilingual firm with 376 Google reviews and consistent local search presence; actively visible in immigration searches where LSA ads appear</li>
+    </ul>
+  </div>
+
+  <div class="ad-part">
+    <div class="ad-part-label">The Opportunity</div>
+    <ul class="ad-list">
+      <li>LSA ads appear above everything else on Google — above paid search ads, above the map pack, above all organic results — and you only pay when a real prospect calls you directly, not per click</li>
+      <li>Building the review base needed for LSA qualification creates a compounding asset: reviews improve LSA ranking, local pack ranking, and organic credibility simultaneously — every review does triple duty</li>
+      <li>Getting Google Screened instantly positions Blancarte Law as a verified, trusted firm at the very top of every immigration and criminal defense search — a trust signal that compensates for the firm's current lack of review history while it is being built</li>
+    </ul>
+  </div>
+
+</div>
+
+<!-- FACEBOOK & INSTAGRAM ADS -->
+<div class="subsection-header" id="meta-ads">
+  <div class="subsection-header-inner"><h3>Facebook &amp; Instagram Ads</h3></div>
+</div>
+<div class="content-wrap">
+
+  <div class="ad-part">
+    <div class="ad-part-label">Ad Presence</div>
+    <ul class="ad-list">
+      <li>No active Meta ads for Blancarte Law were found through research, and the firm does not appear to have a Facebook business page. Whether this means no ads are currently configured or ads are simply not reaching our search parameters is unknown — but no Meta ad presence was observed.</li>
+      <li>For an immigration firm serving a predominantly Spanish-speaking immigrant community in Los Angeles, the absence of Facebook and Instagram presence is a significant missed opportunity: Meta platforms are the primary social channel for many first-generation immigrant families.</li>
+    </ul>
+  </div>
+
+  <div class="ad-part">
+    <div class="ad-part-label">Competitor Ad Landscape</div>
+    <ul class="ad-list">
+      <li><strong>Goldstein Immigration Lawyers</strong> — 60,000+ Facebook followers with 3,500+ people actively engaging with their content monthly; active on 7 social platforms including TikTok and Instagram; running consistent content and community engagement that keeps the firm top-of-mind for prospective clients before they ever need an attorney</li>
+      <li><strong>Manduley &amp; Camisassa</strong> — active bilingual Facebook presence (Abogados de Inmigración en Los Angeles) targeting Los Angeles's Spanish-speaking immigrant community with Spanish-language content that speaks directly to the same families Blancarte Law serves</li>
+    </ul>
+  </div>
+
+  <div class="ad-part">
+    <div class="ad-part-label">The Opportunity</div>
+    <ul class="ad-list">
+      <li>Retargeting — website visitors who did not convert are leaving with no follow-up; once the new site launches, retargeting recaptures that warm audience at a fraction of the cost of new lead generation</li>
+      <li>Video ads featuring Jesse or James — attorney-led video content builds the personal trust that immigration clients need before they make the call, especially in a community that values relationship and referral</li>
+      <li>Educational content ads — "Know your rights" and immigration process explainer content captures leads earlier in the decision process and positions Blancarte Law as the trusted authority before a prospect compares attorneys</li>
+      <li>Spanish-language Facebook and Instagram campaigns targeting LA's Hispanic immigrant community — the firm's bilingual capability is a genuine competitive advantage that Meta's language and audience targeting can turn into a direct lead pipeline</li>
+    </ul>
+  </div>
+
+</div>
+<div class="back-to-top"><a href="#toc">↑ Back to Top</a></div>
+
+
+<!-- ===== SECTION 07-09: INTAKE, TEAM, PROFIT ===== -->
+<!-- ⚠️ NO CSS IN THIS FILE. No <style> blocks. No inline styles. No style="" attributes.
+     All styling comes from audit_styles.css only. Use only existing class names.
+     If you find yourself writing CSS — stop and delete it. -->
+<!-- ============================================================
+     SECTION 07 — INTAKE ASSESSMENT
+     ============================================================ -->
+
+<div class="section-header" id="intake">
+  <div class="section-header-inner"><h2>Intake Assessment</h2></div>
+</div>
+
+
+
+<div class="content-wrap">
+
+</div>
+<div class="section-img-wrap"><img src="https://www.dropbox.com/scl/fi/lmohhz14wgbeucpflf02m/Intake.png?rlkey=jwomjz9j8vqi7kmjubxexoyvh&st=sgtebwjp&raw=1" alt="Intake" /></div>
+<div class="content-wrap">
+
+  <p class="section-intro">Blancarte Law has an existing intake vendor and CRM in place, but the call made clear that leads are falling through the cracks — inconsistent follow-up, after-hours coverage gaps, and an unoptimized qualification process are costing the firm cases it has already earned the right to sign. Fixing intake means converting more of the leads the firm is already generating — without spending another dollar on marketing.</p>
+
+  <div class="status-row">
+    <div class="status-circle amber"></div>
+    <div class="status-label">Status: AMBER</div>
+  </div>
+
+  <div class="pgp-label">The Problem</div>
+  <ul class="pgp-list">
+    <li>Leads fall through the cracks — the current intake vendor is in place but consistent follow-up is not happening, and some prospects are not being worked before they call someone else</li>
+    <li>After-hours and weekend coverage gaps mean calls outside business hours are not reliably captured — an immigration family in crisis does not wait until Monday</li>
+    <li>No documented qualification criteria — intake is not consistently identifying and prioritizing the highest-value case types, and attorneys cannot quickly gauge lead quality without personally intervening</li>
+    <li>CRM is in place but not optimized to track lead-to-sign conversion rates, follow-up cadence, or intake team performance — the data exists but is not being used as a management tool</li>
+  </ul>
+
+  <div class="blind-spot"><strong>Blind Spot:</strong> Having a call vendor answer the phone is not the same as having an intake system that converts. The question is not whether calls are being answered — it is what percentage of callers are becoming signed clients, and whether the follow-up process catches every prospect who did not sign on the first call. Without that data, the firm cannot know how much revenue is leaving through the intake gap every month.</div>
+
+  <div class="pgp-label">The Positive</div>
+  <ul class="pgp-list">
+    <li>An existing call vendor and CRM are already in place — the infrastructure exists and can be upgraded or replaced rather than built from scratch</li>
+  </ul>
+
+  <div class="pgp-label">The Gap</div>
+  <ul class="pgp-list">
+    <li>At a 15% default close rate, improving follow-up consistency by even 5 percentage points would generate approximately 3 additional cases per month from the existing lead volume — without a single additional marketing dollar</li>
+    <li>Without recorded call monitoring and conversion data, it is impossible to know how many viable cases are being lost before they reach an attorney — the leak is invisible</li>
+    <li>Patricia is positioned to own intake improvement but lacks the performance scorecard and data tools to hold the intake team accountable at a glance</li>
+  </ul>
+
+  <div class="dbm-closing">Every case that falls through the cracks is a client who needed help, went somewhere else, and will never come back — tightening this process is how Blancarte Law converts its existing leads into the revenue growth Jesse and James are aiming for.</div>
+
+</div>
+
+<!-- WEBSITE CONTACT FORMS & LIVE CHAT -->
+<div class="subsection-header" id="website-intake">
+  <div class="subsection-header-inner"><h3>Website Contact Forms &amp; Live Chat</h3></div>
+</div>
+<div class="content-wrap">
+
+  <ul class="pgp-list">
+    <li>The current website has no contact form, no inquiry form, and no conversion path for visitors who do not call directly — anyone arriving outside business hours has no way to initiate contact</li>
+    <li>This creates a complete capture gap for every website visitor who is not ready to call immediately — which is the majority of first-time visitors to any law firm website</li>
+    <li>The new website in development (blancarte.wondermedia.dev) must include a prominent, above-the-fold contact form with a clear CTA to capture both daytime and after-hours inquiries from day one</li>
+  </ul>
+  <p class="section-intro">These findings are also referenced in the Website Audit section.</p>
+
+</div>
+<div class="back-to-top"><a href="#toc">↑ Back to Top</a></div>
+
+
+<!-- ============================================================
+     SECTION 08 — SELF-MANAGING TEAM
+     ============================================================ -->
+
+<div class="section-header" id="team">
+  <div class="section-header-inner"><h2>Team Assessment</h2></div>
+</div>
+
+
+
+<div class="content-wrap">
+
+</div>
+<div class="section-img-wrap"><img src="https://www.dropbox.com/scl/fi/r6o7um1xcdd490t9807vd/Self-Managing-Team.png?rlkey=ywamsca6rpb34l1iasysyk10w&st=dm86b0kz&raw=1" alt="Self-Managing Team" /></div>
+<div class="content-wrap">
+
+  <p class="section-intro">Jesse and James Blancarte are the operational core of a firm that has a capable supporting team in Patricia and the paralegals — but without KPIs, scorecards, or a documented accountability structure, the attorneys remain the default answer to every problem in the firm. Until this changes, the owner cannot have more free time — no matter how much revenue grows.</p>
+
+  <div class="status-row">
+    <div class="status-circle amber"></div>
+    <div class="status-label">Status: AMBER</div>
+  </div>
+
+  <div class="pgp-label">The Problem</div>
+  <ul class="pgp-list">
+    <li>No KPIs, scorecards, or performance accountability system for attorneys, paralegals, or intake staff — there is no way to see at a glance who the A, B, and C performers are</li>
+    <li>Court days and casework pull both attorneys away from firm management simultaneously — and when that happens, intake slows, decisions stall, and the team defaults to waiting</li>
+    <li>Paralegals are not consistently doing paralegal work — attorneys are handling tasks below their billing level, which compresses margins and limits capacity for new cases</li>
+    <li>No defined process for what happens when both attorneys are unavailable — operations bottleneck at the top of the org chart rather than being handled by the team below</li>
+  </ul>
+
+  <div class="blind-spot"><strong>Blind Spot:</strong> Without a scorecard system, there is no way to distinguish A, B, and C performers on the team. The result is that high performers are not being rewarded and retained — and low performers are not being identified and coached. When performance is invisible, the attorneys become the default quality control check for everything, which is exactly the bottleneck they described on the call.</div>
+
+  <div class="pgp-label">The Positive</div>
+  <ul class="pgp-list">
+    <li>Patricia Parker is in place as operations manager — a genuine organizational asset who can own the accountability system and team management once the KPI structure is defined and handed to her</li>
+  </ul>
+
+  <div class="pgp-label">The Gap</div>
+  <ul class="pgp-list">
+    <li>Without scorecards, there is no baseline against which to measure improvement — and no tool for Patricia to use when holding the team accountable without routing every issue back to Jesse or James</li>
+    <li>Jesse and James cannot take a week off without service delivery depending on their personal availability — the firm does not yet run without them</li>
+    <li>Growth without a team management structure means more revenue produces more chaos, not more freedom — scaling the client load without scaling the accountability infrastructure will make the bottleneck worse, not better</li>
+  </ul>
+
+  <div class="dbm-closing">The firm Jesse and James described — one where they can step back, take time off, and trust their team to deliver — requires an accountability structure that does not yet exist. Building it is not optional; it is the prerequisite for everything else on this plan.</div>
+
+</div>
+<div class="back-to-top"><a href="#toc">↑ Back to Top</a></div>
+
+
+<!-- ============================================================
+     SECTION 09 — PROFIT PLAN ASSESSMENT
+     ============================================================ -->
+
+<div class="section-header" id="profit">
+  <div class="section-header-inner"><h2>Profit Plan Assessment</h2></div>
+</div>
+
+
+
+<div class="content-wrap">
+
+</div>
+<div class="section-img-wrap"><img src="https://www.dropbox.com/scl/fi/rh2dxdoqsf7tqastam640/Profits.png?rlkey=kss013g0ov5jnuzcoklog7awr&st=iog622wf&raw=1" alt="Profit" /></div>
+<div class="content-wrap">
+
+  <p class="section-intro">James Blancarte is handling the firm's bookkeeping internally while also practicing law — a situation that works at $1M in revenue but creates a visibility ceiling that prevents the forward-looking financial decisions needed to reach $1.8M. Revenue is vanity, profit is sanity. Until there is a clear profit plan, growth may just mean more work without more wealth.</p>
+
+  <div class="status-row">
+    <div class="status-circle amber"></div>
+    <div class="status-label">Status: AMBER</div>
+  </div>
+
+  <div class="pgp-label">The Problem</div>
+  <ul class="pgp-list">
+    <li>James serves as both attorney and bookkeeper — financial reporting is accurate but slow, and there is no external advisor providing forward-looking guidance on hiring, marketing ROI, or cash flow forecasting</li>
+    <li>Month-to-month and year-over-year trends are not immediately accessible — compiling them requires manual effort, which means they are reviewed infrequently or in reaction to a problem rather than proactively</li>
+    <li>No case type profitability tracking — it is unknown whether immigration, criminal defense, or any subcategory of work generates the best margin per attorney hour</li>
+    <li>Profit is trending slightly down from prior periods despite available capacity — and without a financial model, the cause cannot be isolated or corrected</li>
+  </ul>
+
+  <div class="blind-spot"><strong>Blind Spot:</strong> Without tracking profitability by case type, the firm may be allocating significant attorney time to case types that return less margin per hour than others. Immigration cases range from quick naturalization matters to complex multi-year deportation defenses — understanding which types drive the best return is what makes every hiring decision, every marketing spend, and every intake priority smarter.</div>
+
+  <div class="pgp-label">The Positive</div>
+  <ul class="pgp-list">
+    <li>James tracks expenses closely and the firm can run reports — the raw data exists and does not need to be rebuilt, just organized into a forward-looking financial operating system</li>
+  </ul>
+
+  <div class="pgp-label">The Gap</div>
+  <ul class="pgp-list">
+    <li>Hiring and marketing decisions made without a financial model risk scaling costs before scaling revenue — the difference between profitable growth and a cash-flow crisis is a budget</li>
+    <li>Without month-to-month trend visibility, it is impossible to know whether growth initiatives are actually improving profit margins — or just increasing the top line while compressing take-home pay</li>
+    <li>No budgeting or forecasting means the $150K/month revenue milestone Jesse and James described is aspirational rather than planned — a target without a roadmap is just a wish</li>
+  </ul>
+
+  <div class="dbm-closing">The path from $1M to $1.8M per year requires a financial operating system that tells Jesse and James exactly what to spend, when to hire, and which cases to prioritize — without it, growth is a guess, and every wrong guess costs them time they cannot get back.</div>
+
+</div>
+<div class="back-to-top"><a href="#toc">↑ Back to Top</a></div>
+
+
+<!-- ===== SECTION 10: WHAT'S POSSIBLE ===== -->
+<!-- ⚠️ NO CSS IN THIS FILE. No <style> blocks. No inline styles. No style="" attributes.
+     All styling comes from audit_styles.css only. Use only existing class names.
+     If you find yourself writing CSS — stop and delete it. -->
+<!-- ============================================================
+     SECTION 10 — WHAT'S POSSIBLE FOR BLANCARTE LAW
+     ============================================================ -->
+
+<div class="section-header" id="growth-journey">
+  <div class="section-header-inner">
+    <h2>Here's What's Possible for Blancarte Law</h2>
+  </div>
+</div>
+
+<div class="whats-possible-body">
+  <div class="content-wrap">
+
+    <p class="bridge-text">Jesse and James Blancarte built a real law practice from the ground up in one of the most competitive markets in the country — $1 million in annual revenue from word of mouth and referrals alone is not luck, it is skill and dedication and the trust of the community they serve. What they have built is not the problem. What is missing is the system that takes everything they have already earned and turns it into a firm that gives them their lives back — one where a vacation is possible, a court day does not create a crisis, and growth is planned instead of hoped for. That system is what this plan delivers.</p>
+
+    <div class="transform-card">
+      <div class="transform-icon"><span>1</span></div>
+      <div class="transform-text">Jesse and James take two full weeks off — court calendar cleared, phones covered, intake running — and come back to a firm that kept moving without a single call asking them to intervene</div>
+    </div>
+
+    <div class="transform-card">
+      <div class="transform-icon"><span>2</span></div>
+      <div class="transform-text">Revenue reaches $150,000 a month and it is tracked, forecasted, and planned — not discovered at year end — because a financial dashboard shows exactly what is coming in, what is going out, and what needs to happen next</div>
+    </div>
+
+    <div class="transform-card">
+      <div class="transform-icon"><span>3</span></div>
+      <div class="transform-text">Paralegals are doing paralegal work, Patricia owns the day-to-day, intake converts around the clock in English and Spanish, and Jesse and James focus on the cases they choose — not the ones they are stuck with because no one else can handle them</div>
+    </div>
+
+    <div class="wp-closing">
+      <p>This is not a fantasy. <span>SMB Team can make this a reality for Blancarte Law.</span></p>
+    </div>
+
+  </div>
+</div>
+<div class="wp-back-to-top"><a href="#toc">↑ Back to Top</a></div>
+
+
+<!-- ===== SECTION 11: YOUR NEXT STEPS ===== -->
+<!-- ⚠️ NO CSS IN THIS FILE. No <style> blocks. No inline styles. No style="" attributes.
+     All styling comes from audit_styles.css only. Use only existing class names.
+     If you find yourself writing CSS — stop and delete it. -->
+<!-- ============================================================
+     SECTION 11 — YOUR NEXT STEPS
+     ============================================================ -->
+
+<!-- QUICK WINS -->
+<div class="section-header" id="next-steps">
+  <div class="section-header-inner">
+    <h2>Quick Wins for Blancarte Law</h2>
+  </div>
+</div>
+<div class="content-wrap">
+
+  <!-- QUICK WIN CARD 1 — Lead Gen / Quick Win -->
+  <div class="quick-win-card">
+    <div class="qw-header">
+      <div class="qw-title">Launch Google Ads for Immigration Keywords</div>
+      <div class="qw-badges">
+        <span class="badge badge-lead-gen">Lead Gen</span>
+        <span class="badge badge-quick-win">Quick Win</span>
+      </div>
+    </div>
+    <div class="qw-row why">
+      <div class="qw-row-label">Why It Matters</div>
+      Blancarte Law generates zero leads from digital channels — every day without Google Ads is another day's worth of high-intent immigration prospects going to competitors who are already paying to show up first.
+    </div>
+    <div class="qw-row who">
+      <div class="qw-row-label">Who Is Doing It Better</div>
+      <strong>Goldstein Immigration Lawyers</strong> — running active paid search campaigns targeting downtown Los Angeles immigration keywords, with a published case study documenting how PPC directly doubled their client intake.
+    </div>
+    <div class="qw-row opportunity">
+      <div class="qw-row-label">The Opportunity</div>
+      Capturing just 5 additional qualified signed cases per month from paid search adds over $22,000 in monthly revenue using capacity the firm already has — the new website launch is the trigger that activates this channel.
+    </div>
+  </div>
+
+  <!-- QUICK WIN CARD 2 — Lead Gen / Quick Win (no competitor) -->
+  <div class="quick-win-card">
+    <div class="qw-header">
+      <div class="qw-title">Correct NAP Inconsistencies Across All Directories</div>
+      <div class="qw-badges">
+        <span class="badge badge-lead-gen">Lead Gen</span>
+        <span class="badge badge-quick-win">Quick Win</span>
+      </div>
+    </div>
+    <div class="qw-row why">
+      <div class="qw-row-label">Why It Matters</div>
+      Three different addresses and three different phone numbers are listed across Avvo, Yellow Pages, and Lawyer.com — Google uses NAP consistency as a local ranking signal, and these contradictions are actively suppressing the firm's visibility in every local search.
+    </div>
+    <div class="qw-row opportunity">
+      <div class="qw-row-label">The Opportunity</div>
+      Correcting all directory listings to match the firm's official address (915 Wilshire Blvd., Ste 700) and phone ((213) 342-6622) is a zero-cost action that immediately improves local SEO rankings — and is the prerequisite before any other local marketing investment will produce results.
+    </div>
+  </div>
+
+  <!-- QUICK WIN CARD 3 — Intake / Quick Win -->
+  <div class="quick-win-card">
+    <div class="qw-header">
+      <div class="qw-title">Upgrade to 24/7 Bilingual Intake Coverage</div>
+      <div class="qw-badges">
+        <span class="badge badge-intake">Intake</span>
+        <span class="badge badge-quick-win">Quick Win</span>
+      </div>
+    </div>
+    <div class="qw-row why">
+      <div class="qw-row-label">Why It Matters</div>
+      After-hours and weekend calls from immigrant families facing urgent legal situations are not being reliably captured — an immigration client in crisis does not wait until Monday morning to find an attorney.
+    </div>
+    <div class="qw-row opportunity">
+      <div class="qw-row-label">The Opportunity</div>
+      Attorney Assistant (the SMB Team intake partner that current client Sanger already uses) provides 24/7 bilingual coverage, recorded calls, and a qualification portal — converting after-hours inquiries into signed cases instead of missed opportunities and giving Patricia real data to manage intake performance.
+    </div>
+  </div>
+
+  <!-- QUICK WIN CARD 4 — Team / Quick Win -->
+  <div class="quick-win-card">
+    <div class="qw-header">
+      <div class="qw-title">Implement KPI Scorecards for Every Role</div>
+      <div class="qw-badges">
+        <span class="badge badge-team">Team</span>
+        <span class="badge badge-quick-win">Quick Win</span>
+      </div>
+    </div>
+    <div class="qw-row why">
+      <div class="qw-row-label">Why It Matters</div>
+      Without measurable performance benchmarks, there is no way to hold intake staff, paralegals, or the operations function accountable — and the attorneys remain the default quality check for everything, which is the exact bottleneck they described on the call.
+    </div>
+    <div class="qw-row opportunity">
+      <div class="qw-row-label">The Opportunity</div>
+      A simple monthly scorecard for each role — 3 to 5 key metrics per position — gives Patricia the management tools to hold the team accountable without routing every performance issue back to Jesse or James, and makes it possible to identify top performers and gaps at a glance.
+    </div>
+  </div>
+
+  <!-- QUICK WIN CARD 5 — Profit / Quick Win -->
+  <div class="quick-win-card">
+    <div class="qw-header">
+      <div class="qw-title">Set Up Monthly Financial Dashboard</div>
+      <div class="qw-badges">
+        <span class="badge badge-profit">Profit</span>
+        <span class="badge badge-quick-win">Quick Win</span>
+      </div>
+    </div>
+    <div class="qw-row why">
+      <div class="qw-row-label">Why It Matters</div>
+      James tracking expenses manually provides accuracy but not speed or foresight — month-to-month trends and year-over-year comparisons require manual effort, which means financial decisions are reactive rather than planned.
+    </div>
+    <div class="qw-row opportunity">
+      <div class="qw-row-label">The Opportunity</div>
+      A monthly dashboard tracking revenue by case type, cost per acquired case, and profit margins gives Jesse and James the visibility to make data-driven hiring and marketing decisions — turning the $150K/month goal from an aspiration into a tracked milestone.
+    </div>
+  </div>
+
+  <!-- QUICK WIN CARD 6 — Lead Gen / Long-Term -->
+  <div class="quick-win-card">
+    <div class="qw-header">
+      <div class="qw-title">Build a Consistent Google Review Generation System</div>
+      <div class="qw-badges">
+        <span class="badge badge-lead-gen">Lead Gen</span>
+        <span class="badge badge-long-term">Long-Term Play</span>
+      </div>
+    </div>
+    <div class="qw-row why">
+      <div class="qw-row-label">Why It Matters</div>
+      With zero visible reviews across every platform, Blancarte Law cannot compete in local pack rankings or qualify for Local Service Ads — both of which require review volume to rank, and both of which appear above everything else on Google.
+    </div>
+    <div class="qw-row who">
+      <div class="qw-row-label">Who Is Doing It Better</div>
+      <strong>Law Offices of Gihan L. Thomas</strong> — 961 Google reviews at 4.9 stars, the most-reviewed immigration firm in Los Angeles and the benchmark prospective clients compare against when choosing an attorney.
+    </div>
+    <div class="qw-row opportunity">
+      <div class="qw-row-label">The Opportunity</div>
+      A structured post-case review request process — automated text and email follow-up after each matter closes — can generate 10 to 15 reviews per month from the firm's existing satisfied clients, building the foundation needed for local pack ranking and LSA qualification over the next 6 to 12 months.
+    </div>
+  </div>
+
+  <!-- QUICK WIN CARD 7 — Lead Gen / Long-Term -->
+  <div class="quick-win-card">
+    <div class="qw-header">
+      <div class="qw-title">Launch Spanish-Language Meta Ads Campaign</div>
+      <div class="qw-badges">
+        <span class="badge badge-lead-gen">Lead Gen</span>
+        <span class="badge badge-long-term">Long-Term Play</span>
+      </div>
+    </div>
+    <div class="qw-row why">
+      <div class="qw-row-label">Why It Matters</div>
+      Immigration law in Los Angeles is predominantly served by Spanish-speaking clients — and the firm's bilingual capability is an underutilized competitive advantage that currently produces zero marketing value.
+    </div>
+    <div class="qw-row who">
+      <div class="qw-row-label">Who Is Doing It Better</div>
+      <strong>Manduley &amp; Camisassa</strong> — actively running bilingual Facebook content and ads targeting Los Angeles's Spanish-speaking immigrant community with 376 Google reviews and consistent local search dominance.
+    </div>
+    <div class="qw-row opportunity">
+      <div class="qw-row-label">The Opportunity</div>
+      Spanish-language Facebook and Instagram campaigns targeting LA's Hispanic immigrant community reach the most cost-effective segment of the firm's target audience — often before they start comparing attorneys on Google — and at CPLs typically lower than English-language search ads.
+    </div>
+  </div>
+
+  <!-- QUICK WIN CARD 8 — Intake / Long-Term -->
+  <div class="quick-win-card">
+    <div class="qw-header">
+      <div class="qw-title">Build Documented Intake Qualification Script</div>
+      <div class="qw-badges">
+        <span class="badge badge-intake">Intake</span>
+        <span class="badge badge-long-term">Long-Term Play</span>
+      </div>
+    </div>
+    <div class="qw-row why">
+      <div class="qw-row-label">Why It Matters</div>
+      Without defined qualification criteria, lead quality assessment is inconsistent and dependent on whoever happens to answer the call — which means high-value cases can be mishandled and attorney time is spent triaging intake that a trained team member should own.
+    </div>
+    <div class="qw-row opportunity">
+      <div class="qw-row-label">The Opportunity</div>
+      A documented intake qualification script — built around case type, urgency, and likelihood of retaining — gives the intake team a clear decision framework, gives Patricia a quality control tool, and reduces the number of cases that need an attorney's attention before the consultation is even scheduled.
+    </div>
+  </div>
+
+</div>
+
+<!-- HOW SMB TEAM CAN HELP -->
+<div class="subsection-header" id="recommendation">
+  <div class="subsection-header-inner">
+    <h3>How SMB Team Can Help Blancarte Law</h3>
+  </div>
+</div>
+<div class="content-wrap">
+
+  <!-- BLOCK 1: CUSTOM CLOSING STATEMENT -->
+  <div class="closing-statement-block">
+    <p>We help <span class="dbm-highlight">immigration and criminal defense law firms</span> get a predictable, multi-channel client flow so they can <span class="dbm-highlight">step back from the day-to-day and finally lead their firms instead of running them.</span></p>
+  </div>
+
+  <div style="height:24px;"></div>
+
+  <!-- BLOCK 2: DBM SUBHEADER + PACKAGE RECOMMENDATIONS -->
+  <div class="dbm-subheader">Jesse and James Blancarte want to build a firm where they can take real vacations without disruption, trust their team to deliver without daily supervision, and focus on the cases they choose rather than the ones they are stuck with — that goal requires a complete marketing and accountability infrastructure, and that is exactly what this plan delivers.</div>
+
+  <!-- Package 1: Full Service Growth Marketing -->
+  <div class="package-block">
+    <div class="package-header">
+      <div class="package-label">Recommended Marketing Package</div>
+      <h4>Full Service Marketing — Growth</h4>
+    </div>
+    <div class="package-body">
+      <div class="package-why">Blancarte Law has no digital presence, no paid ads, no reviews, and no website that converts visitors — the Growth package builds every layer of the marketing stack simultaneously so that when the new site launches, leads start flowing immediately from Google Ads, LSA, Meta, and organic search. This is not a single-channel fix; it is the complete engine the firm needs to generate $150,000 a month in revenue reliably.</div>
+      <div class="package-deliverables-label">Deliverables Include</div>
+      <ul class="package-list">
+        <li>Custom website design, build, and launch (immigration and criminal defense practice area pages, attorney bios, bilingual content, contact forms)</li>
+        <li>Google Ads management — immigration and criminal defense campaigns including Spanish-language keywords</li>
+        <li>Local Service Ads setup, Google Screened qualification support, and ongoing LSA management</li>
+        <li>Facebook and Instagram ad campaigns — English and Spanish-language targeting for LA's immigrant community</li>
+        <li>Google Business Profile optimization and review generation system</li>
+        <li>Monthly performance reporting with cost per lead, cost per signed case, and channel-by-channel ROI</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Package 2: Elite Coach Plus -->
+  <div class="package-block">
+    <div class="package-header">
+      <div class="package-label">Recommended Coaching Package</div>
+      <h4>Elite Coach Plus</h4>
+    </div>
+    <div class="package-body">
+      <div class="package-why">Marketing without accountability is just spending money — Elite Coach Plus installs the operating system that makes the growth stick. It builds the KPI scorecards, intake performance tracking, and financial review cadence that give Jesse and James visibility into whether the firm is growing toward their goals, and gives Patricia the tools to manage the team without routing every issue back to the attorneys.</div>
+      <div class="package-deliverables-label">Deliverables Include</div>
+      <ul class="package-list">
+        <li>Weekly group coaching sessions with SMB Team's law firm growth coaches</li>
+        <li>Custom KPI scorecard design for intake, paralegal, and operations roles</li>
+        <li>Intake and team accountability framework — Patricia owns operations, attorneys own strategy</li>
+        <li>Monthly financial review and forecasting support — tracking toward the $150K/month milestone</li>
+        <li>Growth strategy sessions with ongoing plan refinement as the firm scales</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- BLOCK 3 + 4: INVESTMENT GRID -->
+  <div class="investment-grid">
+
+    <!-- BLOCK 3: SMB TEAM MONTHLY INVESTMENT -->
+    <div class="investment-block">
+      <div class="investment-header"><h4>SMB Team Monthly Investment</h4></div>
+      <div class="investment-body">
+        <div class="investment-row">
+          <span class="label">Full Service Marketing — Growth</span>
+          <span><span class="retail">$4,997/mo</span>&nbsp;<span class="bundled">$3,397/mo</span></span>
+        </div>
+        <div class="investment-row">
+          <span class="label">Elite Coach Plus</span>
+          <span><span class="retail">$3,497/mo</span>&nbsp;<span class="bundled">$2,200/mo</span></span>
+        </div>
+        <div class="investment-total">
+          <span class="total-label">Total Monthly Investment</span>
+          <span class="total-amount">$5,597/mo</span>
+        </div>
+        <div class="investment-savings">You save $2,897/month by bundling</div>
+      </div>
+    </div>
+
+    <!-- BLOCK 4: RECOMMENDED AD SPEND -->
+    <div class="investment-block">
+      <div class="investment-header"><h4>Recommended Monthly Ad Spend</h4></div>
+      <div class="investment-body">
+        <p style="font-size:12px;color:#666;font-style:italic;margin-bottom:12px;">Goes directly to ad platforms — not to SMB Team.</p>
+        <div class="roi-row"><span>Recommended ad spend range</span><span style="font-weight:700;">$5,500–$8,000/mo</span></div>
+        <div class="roi-row"><span>Estimated avg case value</span><span style="font-weight:700;">$4,500</span></div>
+        <div class="roi-row" style="height:8px;"></div>
+        <div class="roi-row"><span><strong>Conservative scenario</strong></span><span></span></div>
+        <div class="roi-row"><span>Est. cases per month</span><span style="font-weight:700;">7 cases</span></div>
+        <div class="roi-row"><span>Est. monthly revenue from ads</span><span style="font-weight:700;color:#3B6D11;">$31,500</span></div>
+        <div class="roi-row"><span>Est. return on ad spend</span><span style="font-weight:700;">5.7x</span></div>
+        <div class="roi-row" style="height:8px;"></div>
+        <div class="roi-row"><span><strong>Aggressive scenario</strong></span><span></span></div>
+        <div class="roi-row"><span>Est. cases per month</span><span style="font-weight:700;">12 cases</span></div>
+        <div class="roi-row"><span>Est. monthly revenue from ads</span><span style="font-weight:700;color:#3B6D11;">$54,000</span></div>
+        <div class="roi-row"><span>Est. return on ad spend</span><span style="font-weight:700;">6.75x</span></div>
+        <p class="roi-disclaimer">These are estimates based on immigration practice area averages and Los Angeles market data. Average case value uses the immigration practice area default ($4,500) as no figure was stated on the call. Results are not guaranteed and will vary based on market conditions, competition, and firm-specific factors.</p>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- BLOCK 5: WHAT HAPPENS IN THE FIRST 90 DAYS -->
+  <div class="package-block">
+    <div class="package-header"><h4>What Happens in the First 90 Days</h4></div>
+    <div class="package-body">
+      <ul class="focus-list">
+        <li>Google Ads campaigns for immigration and criminal defense launched within 14 days of the new website going live — high-intent leads start flowing before the 90 days are up</li>
+        <li>All directory NAP inconsistencies corrected across Avvo, Yellow Pages, Lawyer.com, and other directories; Google Business Profile fully optimized</li>
+        <li>Review request system activated — automated text and email follow-up goes to every recently closed case; first reviews begin coming in within weeks</li>
+        <li>Attorney Assistant intro completed, pricing compared to current vendor, and intake decision made — 24/7 bilingual coverage in place before the next wave of ad traffic arrives</li>
+        <li>KPI scorecards built for intake, paralegal, and operations roles; coaching kickoff completed with Jesse, James, and Patricia; first monthly accountability cadence established</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- BLOCK 6: GROWTH ROADMAP -->
+  <div class="package-block">
+    <div class="package-header"><h4>What Happens Next</h4></div>
+    <div class="package-body">
+      <div class="roadmap-stack">
+
+        <div class="phase-card">
+          <div class="phase-header">
+            <div class="phase-number">Phase 1</div>
+            <div class="phase-title">Foundation</div>
+            <div class="phase-trigger">Starting Now</div>
+          </div>
+          <div class="phase-body">
+            <ul class="phase-list">
+              <li>Full Service Growth Marketing and Elite Coach Plus activated</li>
+              <li>New website launched with practice area pages, attorney bios, and contact forms</li>
+              <li>Google Ads, LSA, and Spanish-language Meta campaigns running</li>
+              <li>KPI scorecards installed for every role; Patricia empowered to manage day-to-day accountability</li>
+              <li>Review generation system running; GBP optimized; NAP corrected across all directories</li>
+            </ul>
+            <div class="phase-dbm">Phase 1 gives Jesse and James the marketing engine and team infrastructure they need to stop being the answer to every question — so they can start working on the firm instead of in it.</div>
+          </div>
+        </div>
+
+        <div class="phase-card">
+          <div class="phase-header">
+            <div class="phase-number">Phase 2</div>
+            <div class="phase-title">Operational Scale</div>
+            <div class="phase-trigger">Once the firm reaches $120,000/month consistently</div>
+          </div>
+          <div class="phase-body">
+            <ul class="phase-list">
+              <li>Add FCOO Advisor ($1,297/mo bundled) to upgrade Patricia's management capability with professional operational support</li>
+              <li>Documented SOPs for every key role — the firm can onboard new team members without attorney involvement</li>
+              <li>Hiring plan activated to add paralegal or intake capacity to support increased case volume</li>
+            </ul>
+            <div class="phase-dbm">Phase 2 is where Jesse and James stop managing the firm and start leading it — Patricia handles the day-to-day, and the attorneys focus on the cases they choose.</div>
+          </div>
+        </div>
+
+        <div class="phase-card">
+          <div class="phase-header">
+            <div class="phase-number">Phase 3</div>
+            <div class="phase-title">Optimize</div>
+            <div class="phase-trigger">Once the firm reaches the $150,000/month interim goal</div>
+          </div>
+          <div class="phase-body">
+            <ul class="phase-list">
+              <li>Add Fractional CFO Advisor ($1,297/mo bundled) for monthly financial reporting, case profitability analysis, and budgeting toward the next revenue tier</li>
+              <li>Upgrade marketing to Dominate tier to accelerate growth beyond $1.8M toward $3M+</li>
+              <li>Revenue, profit, and capacity targets set for the next 12 months with full financial visibility</li>
+            </ul>
+            <div class="phase-dbm">Phase 3 is where the firm runs whether Jesse and James are in the office or not — real vacations, real freedom, and a firm with real enterprise value.</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- BLOCK 7: OUTCOME CARDS -->
+  <div class="scorecard-label">Here Is What This Builds For You</div>
+  <div class="outcome-grid">
+    <div class="outcome-card">
+      <div class="outcome-title">More Profit</div>
+      <div class="outcome-text">With a financial dashboard tracking case profitability and a marketing engine generating consistent leads, profit becomes planned — not discovered at year end. Jesse and James will finally be able to answer the question they asked on the call: where did the money go?</div>
+    </div>
+    <div class="outcome-card">
+      <div class="outcome-title">More Freedom</div>
+      <div class="outcome-text">When the firm has a 24/7 intake system, a review-generating marketing machine, a team running on scorecards, and a coaching structure holding everyone accountable — Jesse and James can take a real vacation for the first time without the firm needing them to be there.</div>
+    </div>
+    <div class="outcome-card">
+      <div class="outcome-title">Better Client Results</div>
+      <div class="outcome-text">Immigrant families facing legal crises need an attorney who is reachable, responsive, and trustworthy. A 24/7 bilingual intake system, a Google-reviewed firm, and a properly staffed team means Blancarte Law serves more of the community it was built to help — and earns the online reputation that proves it.</div>
+    </div>
+  </div>
+
+  <!-- BLOCK 8: PERSONAL CLOSING -->
+  <div class="personal-closing">
+    <p>Jesse and James, you built a real law practice from the ground up in one of the most demanding markets in the country — a million dollars in annual revenue from referrals and community trust alone is not an accident, it is evidence that you are genuinely good at what you do and that your clients know it. The reason growth has stalled is not a lack of skill or work ethic. It is the absence of a system designed to run while you are focused on the law. The marketing is not there yet. The visibility is not there yet. The infrastructure to let you step back is not there yet. But none of that is permanent — it is buildable, and it is exactly what this plan builds.</p>
+    <p class="final-line">This is not a fantasy. SMB Team can make this a reality for Blancarte Law.</p>
+  </div>
+
+</div>
+<div class="back-to-top"><a href="#toc">↑ Back to Top</a></div>
+
+
+</body>
+</html>
