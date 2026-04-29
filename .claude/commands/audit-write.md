@@ -137,7 +137,7 @@ Fill and save `[friendly-name]/sections/section_11_next_steps.html` with the com
 - All quick win cards (minimum 6 across all four pillars). Delete the "Who Is Doing It Better" row on any card where no named competitor was identified.
 - Block 1: custom closing statement (formula: "We help [audience] get [external desire] so they can [DBM].")
 - Block 2: DBM subheader + package block(s) with deliverables. Each package block must include a package-label div identifying the package type.
-- Block 3: investment rows with retail (stand-alone) and bundled prices pulled from your workings file. Total monthly investment row. Savings callout. Use ONLY the prices from the approved tables — never deviate.
+- Block 3: investment rows with retail (stand-alone) and bundled prices pulled from your workings file. Total monthly investment row. Savings callout. Use ONLY the prices from the approved tables — never deviate. Each row represents one service category (e.g. "Full Service Marketing Starter", "Elite Coach Plus") — never break a category into sub-component line items or show individual pricing within a service category.
 - Block 4: recommended ad spend table. **DO NOT change the HTML structure.** Only replace the placeholder dollar amounts, case counts, and return multiples. Structure: ad spend range row → case value row → spacer → "Conservative scenario" header + 3 rows (cases, revenue, return) → spacer → "Aggressive scenario" header + 3 rows → disclaimer.
 
 Leave blocks 5–8 with their original template placeholder text for now. Save the file.
@@ -184,8 +184,8 @@ Complete this entire section before starting Step I.
 - No dedicated ops, marketing, or intake team member → hide all Master's Circle options.
 
 **General:**
-- Minimum MRR: $3,497/month — never recommend below this.
-- Always include at least one marketing package and one non-marketing package.
+- Minimum MRR: $2,497/month — never recommend below this.
+- Default to recommending both a marketing package and a non-marketing package. A single-product recommendation is acceptable only when the transcript clearly shows the firm's needs are best served by one service category — do not force a second product that does not fit.
 - Total SMB spend (management fees + ad spend) must not exceed 35% of monthly revenue.
 
 ---
@@ -215,7 +215,7 @@ Essentials $N/A | Starter $5,697 | Growth $8,997 | Dominate $12,497 | Platinum $
 
 ### SELECT NON-MARKETING PACKAGE
 
-Every recommendation must include at least one non-marketing package.
+Non-marketing packages are the default recommendation alongside marketing. Recommend one when it genuinely fits the firm's stage and needs.
 
 | Revenue | Team | Recommended | Bundled Price |
 |---|---|---|---|
@@ -232,6 +232,8 @@ Every recommendation must include at least one non-marketing package.
 **Add Fractional CFO Advisor ($3,297/mo bundled)** if: owner mentions profit problems, revenue growing but not taking home more, no financial visibility, doesn't know acquisition cost. Min revenue $400K.
 
 **Stand-alone prices:** Elite Coach $3,497 | Elite Coach Plus $3,497 | Master's Circle $4,997 | FCOO Advisor $3,797 | FCOO Director $5,797 | FCFO Advisor $3,797
+
+**Fractional packages (FCOO and FCFO) now include Elite Coach group deliverables.** When recommending any fractional package in Block 2, the deliverables list must include: weekly group coaching sessions, practice area masterminds, virtual access to quarterly workshops, and one annual in-person workshop. These are included in the fractional price — do not list them as a separate charge.
 
 ---
 
