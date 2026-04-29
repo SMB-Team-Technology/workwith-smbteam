@@ -112,13 +112,50 @@ Fill all three sections in order — Intake, Team, Profit. For each: intro sente
 Fill: firm name (twice), bridge text connecting current reality to transformation, three transformation cards tied specifically to this owner's DBM. Save to `[friendly-name]/sections/section_10_whats_possible.html`.
 
 **STEP I — section_11_next_steps.html**
-Apply all package eligibility and calculation logic below BEFORE filling this section.
 
-Fill: firm name (three times), minimum 6 quick win cards across all four pillars, then all 8 recommendation blocks per the FILL: comments. Key rules:
-- Block 4: **DO NOT change the HTML structure.** It is pre-built with two grouped scenarios (Conservative and Aggressive). Only replace the placeholder dollar amounts, case counts, and return multiples. The structure is: ad spend range row → case value row → spacer → "Conservative scenario" header + 3 rows (cases, revenue, return) → spacer → "Aggressive scenario" header + 3 rows → disclaimer.
-- Block 5: Lead with launching ads first, then website work. Include coaching kickoff. Never mention live chat. Never mention CRM setup.
+This section is large and must be completed in three sub-steps to avoid API timeouts. Complete and save after each sub-step before continuing.
 
-Save to `[friendly-name]/sections/section_11_next_steps.html`.
+Apply all package eligibility and calculation logic (below) BEFORE starting Step I-a.
+
+**STEP I-a — Write workings file**
+Compute and save `[friendly-name]/sections/section_11_workings.txt` containing:
+- Selected marketing package name, bundled price, stand-alone price, savings
+- Selected non-marketing package(s) name, bundled price, stand-alone price, savings
+- Total monthly investment (sum of bundled prices)
+- Total savings (sum of all stand-alone minus bundled)
+- Conservative ad spend amount and full ROI projection (leads, cases, revenue, return multiple)
+- Aggressive ad spend amount and full ROI projection (leads, cases, revenue, return multiple)
+- DBM statement for Block 1
+- List of 6+ quick win opportunities identified (pillar, title, why, competitor if any, opportunity)
+- First 90 days bullet points (3–5)
+
+Save the workings file. Do not proceed until it is saved.
+
+**STEP I-b — Write section 11 first half**
+Fill and save `[friendly-name]/sections/section_11_next_steps.html` with the complete file structure. In this sub-step, fill ONLY:
+- Firm name (all three occurrences)
+- All quick win cards (minimum 6 across all four pillars). Delete the "Who Is Doing It Better" row on any card where no named competitor was identified.
+- Block 1: custom closing statement (formula: "We help [audience] get [external desire] so they can [DBM].")
+- Block 2: DBM subheader + package block(s) with deliverables. Each package block must include a package-label div identifying the package type.
+- Block 3: investment rows with retail (stand-alone) and bundled prices pulled from your workings file. Total monthly investment row. Savings callout. Use ONLY the prices from the approved tables — never deviate.
+- Block 4: recommended ad spend table. **DO NOT change the HTML structure.** Only replace the placeholder dollar amounts, case counts, and return multiples. Structure: ad spend range row → case value row → spacer → "Conservative scenario" header + 3 rows (cases, revenue, return) → spacer → "Aggressive scenario" header + 3 rows → disclaimer.
+
+Leave blocks 5–8 with their original template placeholder text for now. Save the file.
+
+**STEP I-c — Complete section 11 second half**
+Edit `[friendly-name]/sections/section_11_next_steps.html` to fill in blocks 5–8:
+- Block 5: first 90 days action bullets. Lead with launching ads first, then website work. Include coaching kickoff. Never mention live chat. Never mention CRM setup.
+- Block 6: three phase roadmap cards with dynamic milestone triggers and DBM sentences.
+- Block 7: three outcome cards (More Profit, More Freedom, Better Client Results), each tied to this owner's DBM.
+- Block 8: personal closing paragraph (2–3 italic sentences) + final line with firm name.
+
+Save (edit) the file. Verify no FILL: placeholders remain.
+
+---
+
+## PRICE INTEGRITY — CRITICAL
+
+The prices in the tables below are the ONLY approved prices. Do not estimate, round, interpolate, or use any number not listed here. Every dollar figure in the client report must come from one of the two pricing tables below. The example numbers in HTML template comments are illustrative only — do not use them as actual prices.
 
 ---
 

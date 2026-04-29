@@ -437,6 +437,10 @@ PART THREE — PACKAGE RECOMMENDATION LOGIC
 
 Use this logic to build the recommendation section of the report.
 
+PRICE INTEGRITY — CRITICAL
+
+The prices below are the ONLY approved prices. Do not estimate, interpolate, round, or use any price not listed here. Do not use example numbers from template comments as actual prices — those are illustrative only. Every dollar amount that appears in the client report must come from the tables in Steps 11.2 and 11.3.
+
 STEP 11.1 — DETERMINE PACKAGE ELIGIBILITY
 
 Apply these rules before recommending anything. Any hidden package must not appear anywhere in the report.
@@ -463,18 +467,35 @@ General Rules:
 
 STEP 11.2 — SELECT THE MARKETING PACKAGE
 
-- $250K–$400K revenue: Essentials Full Service Marketing ($1,497–$3,397/month) — unless hidden by practice area rules, then move to Starter
-- $400K–$1M revenue: Full Service Marketing Starter ($4,847/month)
-- $1M–$3M revenue: Full Service Marketing Growth ($7,397/month)
-- $1M+ with aggressive growth goals: Full Service Marketing Dominate ($10,897/month)
-- $3M+ revenue: Full Service Marketing Platinum ($18,397/month)
+Use the bundled price in the report. Use the stand-alone price ONLY to calculate savings in Block 3 (savings = stand-alone minus bundled). Never use any other numbers.
+
+| Revenue | Tier | Bundled Price | Stand-Alone Price | Ad Spend Cap |
+|---|---|---|---|---|
+| $250K–$400K | Essentials | $3,397/mo | N/A | $7,500 |
+| $400K–$1M | Starter | $4,847/mo | $5,697/mo | $25,000 |
+| $1M–$3M | Growth | $7,397/mo | $8,997/mo | $50,000 |
+| $1M+ aggressive goals | Dominate | $10,497/mo | $12,497/mo | $75,000 |
+| $3M+ | Platinum | $15,997/mo | $18,997/mo | $150,000 |
+
+Unless hidden by practice area rules, use the tier that matches the firm's revenue. If goals are aggressive or calculated ad spend exceeds the lower tier's cap, move to the higher tier.
 
 STEP 11.3 — SELECT THE NON-MARKETING PACKAGE
 
-- $250K–$1M revenue: Elite Coach ($2,600/month) or Elite Coach Plus ($3,200/month)
-- $1M+ with operational complexity: Fractional COO Advisor ($3,297/month) bundled with Elite Coach or Master's Circle
-- $1M+ with financial challenges: Fractional CFO Advisor ($3,297/month)
-- $1M+, 5+ team members, dedicated staff: Master's Circle ($4,600/month)
+Use the bundled price in the report. Use the stand-alone price ONLY to calculate savings in Block 3.
+
+| Revenue / Team | Recommended | Bundled Price | Stand-Alone Price |
+|---|---|---|---|
+| $250K–$400K, any team | Elite Coach | $2,600/mo | $3,497/mo |
+| $400K–$1M, any team | Elite Coach Plus | $3,200/mo | $3,497/mo |
+| $400K–$1M, growing team | Elite Coach Plus + FCOO Advisor | $5,694/mo | N/A |
+| $1M+, under 5 staff | Elite Coach Plus | $3,200/mo | $3,497/mo |
+| $1M+, under 5, operational focus | FCOO Advisor | $3,297/mo | $3,797/mo |
+| $1M+, 5+ with dedicated staff | Master's Circle | $4,600/mo | $4,997/mo |
+| $1M+, 5+ with dedicated staff + ops | Master's Circle + FCOO Advisor | $6,694/mo | N/A |
+| $2M+, 5+ with dedicated staff | Master's Circle + FCOO Director | $8,394/mo | N/A |
+| $3M+, large team | Master's Circle + FCOO Partner | $12,394/mo | N/A |
+
+Add Fractional CFO Advisor ($3,297/mo bundled, $3,797/mo stand-alone) if: owner mentions profit problems, revenue growing but not taking home more, no financial visibility, or no awareness of acquisition cost. Minimum revenue $400K.
 
 STEP 11.4 — RECOMMEND AD SPEND
 
@@ -568,16 +589,39 @@ Fill in: firm name (twice), bridge text, three transformation cards tied to this
 Save the file.
 
 STEP I — section_11_next_steps.html
-Fill in: firm name (three times), minimum 6 quick win cards across all four pillars (delete "Who Is Doing It Better" row on any card where no named competitor exists), then all 8 recommendation blocks in order:
-Block 1 — custom closing statement using the DBM formula
-Block 2 — DBM subheader and package blocks with deliverables. Each package block must include a package-label above the package name identifying what type it is — e.g. "Recommended Marketing Package", "Recommended Coaching Package". Use plain descriptive language matching the package type.
-Block 3 — investment rows with retail and bundled prices, total monthly investment row, and savings callout. Savings = sum of (retail minus bundled) for EVERY package combined. Example: if Marketing retail is $5,247 and bundled is $4,847 that saves $400; if Coaching retail is $3,000 and bundled is $2,600 that saves $400; total savings = $800/month. Never show only one package's savings as the total. Always show the total bundled investment.
-Block 4 — ad spend amount, estimated case value, estimated cases, estimated revenue (all labeled as estimates)
-Block 5 — first 90 days action bullets. These must directly reflect the packages recommended above and prioritize the fastest path to ROI. Always lead with launching the recommended ads first, then website work. Never mention live chat — SMB Team does not offer this service. Never mention CRM setup — SMB Team does not manage the client's CRM. Do include coaching kickoff and initial systems work as part of the coaching package deliverables. Every bullet must connect to something SMB Team actually delivers.
-Block 6 — three phase cards with dynamic milestone triggers and DBM sentences
-Block 7 — three outcome cards tied to DBM
-Block 8 — personal closing paragraph and final line with firm name
-Save the file.
+
+This section must be completed in three sub-steps to avoid API timeouts. Save after each sub-step before continuing.
+
+STEP I-a — Write workings file
+Compute and save [friendly-name]/sections/section_11_workings.txt (or the equivalent project path) containing:
+- Selected marketing package name, bundled price, stand-alone price, savings
+- Selected non-marketing package(s) name, bundled price, stand-alone price, savings
+- Total monthly investment (sum of bundled prices)
+- Total savings (sum of all stand-alone minus bundled)
+- Conservative ad spend and full ROI projection (leads, cases, revenue, return)
+- Aggressive ad spend and full ROI projection (leads, cases, revenue, return)
+- DBM statement for Block 1
+- List of 6+ quick win opportunities (pillar, title, why, competitor if any, opportunity)
+- First 90 days bullets (3–5)
+Save the file before continuing.
+
+STEP I-b — Write section 11 first half
+Fill and save section_11_next_steps.html with the complete file structure. In this sub-step, fill ONLY:
+- Firm name (all three occurrences)
+- All quick win cards (minimum 6 across all four pillars). Delete the "Who Is Doing It Better" row on any card where no named competitor was identified.
+- Block 1 — custom closing statement using the DBM formula: "We help [audience] get [external desire] so they can [DBM]."
+- Block 2 — DBM subheader and package blocks with deliverables. Each package block must include a package-label above the package name identifying what type it is — e.g. "Recommended Marketing Package", "Recommended Coaching Package". Use plain descriptive language matching the package type.
+- Block 3 — investment rows with retail (stand-alone) and bundled prices pulled from the workings file. Total monthly investment row. Savings callout. Use ONLY the prices from Steps 11.2 and 11.3 — never deviate. Retail price = stand-alone price. Savings = sum of (retail minus bundled) for every package. Never show only one package's savings as the total.
+- Block 4 — recommended ad spend table. Do NOT change the HTML structure. Only replace placeholder dollar amounts, case counts, and return multiples. Structure: ad spend range row → case value row → spacer → "Conservative scenario" header + 3 rows (cases, revenue, return) → spacer → "Aggressive scenario" header + 3 rows → disclaimer. All figures labeled as estimates.
+Leave blocks 5–8 with their original template placeholder text. Save the file.
+
+STEP I-c — Complete section 11 second half
+Edit section_11_next_steps.html to fill in blocks 5–8:
+- Block 5 — first 90 days action bullets. Always lead with launching ads first, then website work. Include coaching kickoff. Never mention live chat. Never mention CRM setup. Every bullet must connect to something SMB Team actually delivers.
+- Block 6 — three phase cards with dynamic milestone triggers and DBM sentences.
+- Block 7 — three outcome cards tied to DBM (More Profit, More Freedom, Better Client Results).
+- Block 8 — personal closing paragraph (empathetic, specific to this owner) and final line with firm name.
+Save the file. Verify no FILL: placeholders remain.
 
 STEP J — ASSEMBLE THE FINAL OUTPUT
 Open Design Files/audit_master_assembly.html.
