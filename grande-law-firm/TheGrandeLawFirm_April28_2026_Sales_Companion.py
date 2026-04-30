@@ -154,7 +154,7 @@ snap = [
      Paragraph("~$1.08M (2025)", S["snap_value"]),
      Paragraph("5+ members", S["snap_value"]),
      Paragraph("Stage 4", S["snap_value"]),
-     Paragraph("20% avg; lead rep 58%; 2 reps 22%", S["snap_value"]),
+     Paragraph("20% avg; lead rep 58%; legacy rep 22%; newer hire matches/exceeds lead rep", S["snap_value"]),
      Paragraph("Torrance + San Bruno, CA", S["snap_value"])],
 ]
 t1 = Table(snap, colWidths=[1.15*inch, 1.2*inch, 0.8*inch, 0.7*inch, 0.7*inch, 1.15*inch])
@@ -173,18 +173,18 @@ story.append(Paragraph("Cynthia wants a firm that keeps growing whether she is i
 
 story.append(quote_block("About five months ago our leads started declining — we were at a similar run rate to last year and that worries me for 2026."))
 story.append(Spacer(1, 1))
-story.append(quote_block("My lead intake rep converts around 58% but my other two are around 22%. I know that gap is costing us."))
+story.append(quote_block("My lead intake rep converts around 58% but one of my other reps is around 22%. I know that gap is costing us."))
 story.append(Spacer(1, 2))
 
 story.append(Paragraph("<b>What she wants:</b>", S["subsection"]))
-story.append(bd("<b>Lead predictability.</b> A system that generates immigration cases monthly — not dependent on her network."))
-story.append(bd("<b>Intake consistency.</b> All three reps converting at the same level so revenue does not depend on who answers."))
-story.append(bd("<b>CEO freedom.</b> Step away without a staffing disruption pulling her back into operations."))
+story.append(bd("<b>Lead predictability.</b> A system generating immigration cases monthly — not dependent on her network."))
+story.append(bd("<b>CEO freedom.</b> Months away (new baby, parents' Europe trip) without the firm missing a beat."))
+story.append(bd("<b>$5–6M by year three</b> at 30% net — as true CEO with an ops director, not as a managing attorney."))
 
 story.append(Paragraph("<b>What is stopping her:</b>", S["subsection"]))
-story.append(b("<b>No paid ads ever.</b> All leads come from referrals or organic — and volume is declining."))
-story.append(b("<b>Intake gap.</b> Two reps at 22% vs. lead rep's 58% — no script or follow-up sequence in place."))
-story.append(b("<b>No ops layer.</b> Staffing changes escalate to Cynthia; firm has no buffer between reps and owner."))
+story.append(b("<b>No paid ads ever.</b> All leads from referrals or organic — volume declining five months running."))
+story.append(b("<b>Intake gap.</b> Legacy rep at 22% vs. 58% standard — no script or accountability structure in place."))
+story.append(b("<b>Current coaching overlap.</b> Committed to HTM through August; cautious about stacking commitments."))
 
 story.append(thin_rule())
 
@@ -224,17 +224,17 @@ story.append(thin_rule())
 # ── Why This Ad Spend ──
 story.append(Paragraph("Why This Ad Spend", S["section"]))
 story.append(Paragraph("<b>What it does for her:</b>", S["subsection"]))
-story.append(bd("Conservative ($3K): 4–6 immigration cases/mo at ~$4,500 avg = $18K–$27K revenue vs. $3K spend (~7–9x)."))
-story.append(bd("Aggressive ($5K): 8–11 cases/mo at ~$4,500 avg = $36K–$49K revenue vs. $5K spend (~7–10x)."))
+story.append(bd("Conservative ($7K): ~14 cases/mo at ~$3,500–$5,000 = $49K–$70K revenue vs. $7K spend (~7–10x)."))
+story.append(bd("Aggressive ($14K): ~28–34 cases/mo at ~$3,500–$5,000 = $98K–$119K revenue vs. $14K spend (~7–9x)."))
 
-story.append(Paragraph("<b>Recommended Ad Spend Range:</b>", S["subsection"]))
-story.append(b("<b>Conservative $3,000/mo:</b> Spanish PPC $1,500 + LSA $1,000 + Meta retargeting $500."))
-story.append(b("<b>Aggressive $5,000/mo:</b> Growth tier max; full Spanish + English PPC, LSA, and Meta lead gen."))
+story.append(Paragraph("<b>Recommended Ad Spend Range ($7,000–$14,000/mo):</b>", S["subsection"]))
+story.append(b("<b>Conservative $7,000/mo:</b> LSA $1,000 + Spanish PPC $3,000 + English PPC $2,000 + Meta retargeting $1,000."))
+story.append(b("<b>Aggressive $14,000/mo:</b> LSA $2,000 + Spanish PPC $5,000 + English PPC $4,000 + Meta lead gen $3,000."))
 
 story.append(Paragraph("<b>How the range was calculated:</b>", S["subsection"]))
-story.append(b("<b>Conservative:</b> Immigration channel minimums — Spanish PPC + LSA + Meta retargeting = $3,000."))
-story.append(b("<b>Aggressive:</b> Growth tier cap $5,000. 20% rule on $1.5M goal = $25K x 1.5 (LA Tier 1) x 1.33 (Spanish) = $49.9K theoretical; starting at $5K to build proven ROI first."))
-story.append(b("Total at aggressive: $4,597 fee + $5,000 ads = $9,597/mo = 10.7% of monthly revenue. Well under 35% cap."))
+story.append(b("<b>Confirmed on April 29 call:</b> Cynthia's target is $7K–$14K/mo to add ~14 cases/month."))
+story.append(b("CPL benchmarks confirmed: LSA ~$55; PPC English ~$100; PPC Spanish ~$100–$125; social ~$50."))
+story.append(b("At aggressive: $10,597 fee + $14,000 ads = $24,597/mo = 27.3% of revenue. Under 35% cap."))
 story.append(Paragraph("<i>All projections are estimates. Not guaranteed.</i>", S["disclaimer"]))
 
 story.append(thin_rule())
@@ -248,8 +248,11 @@ story.append(Paragraph("Lead volume has been declining for five months. To hit $
 story.append(Paragraph('"What if advertising does not work for immigration?"', S["objection_q"]))
 story.append(Paragraph("LSA for immigration pays only when a prospect calls — approximately $55/lead in this market. Spanish-language PPC in Compton and South Gate is underpriced because competitors are not running it. The question is who moves first.", S["objection_a"]))
 
-story.append(Paragraph('"I need to fix intake before I add more leads."', S["objection_q"]))
-story.append(Paragraph("Intake training launches in week one of coaching — the two packages run together. The 36-point conversion gap can close in 60 days. Bringing two reps from 22% to 40%+ adds an estimated $100K+ annually at zero additional spend.", S["objection_a"]))
+story.append(Paragraph('"I already have a coaching commitment through August — I don\'t want to overlap."', S["objection_q"]))
+story.append(Paragraph("Marketing launches now regardless — the firm cannot afford five more months of declining leads. Coaching can be structured to align with August completion or begin immediately on operational accountability only. These are separate tracks.", S["objection_a"]))
+
+story.append(Paragraph('"I\'ve heard horror stories about auto-renew billing and not owning the assets."', S["objection_q"]))
+story.append(Paragraph("SMB Team does not auto-renew. Clients sign and renew intentionally. All ad accounts, website assets, and data belong to the firm — not to us. We confirmed this directly on the April 29 call; Cynthia left satisfied on asset ownership.", S["objection_a"]))
 
 story.append(thin_rule())
 
@@ -266,7 +269,7 @@ price_data = [
     [Paragraph("Weekly coaching, intake scripting + training, KPI dashboards, ops design.", S["price_detail"]),
      Paragraph("<strike>$3,497</strike> stand alone", S["price_detail"])],
     [Paragraph("<b>Recommended Ad Spend</b>", S["price_main"]),
-     Paragraph("$3,000–$5,000/mo", S["price_main"])],
+     Paragraph("$7,000–$14,000/mo", S["price_main"])],
     [Paragraph("Goes to Google, LSA, and Meta — not to SMB Team.", S["price_detail"]),
      Paragraph("", S["price_detail"])],
 ]
@@ -283,7 +286,7 @@ pt.setStyle(TableStyle([
 ]))
 story.append(pt)
 story.append(Paragraph(
-    "Total: $10,597/mo + $3,000–$5,000 ad spend  |  Save $897/mo by bundling  |  15.1%–17.3% of revenue (under 35% cap)",
+    "Total: $10,597/mo + $7,000–$14,000 ad spend  |  Save $897/mo by bundling  |  19.6%–27.3% of revenue (under 35% cap)",
     S["savings"]))
 
 # ── Build ──
