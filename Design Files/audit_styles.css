@@ -8,7 +8,7 @@
 
 /* ===== RESET & BASE ===== */
 * { margin: 0; padding: 0; box-sizing: border-box; }
-html { scroll-behavior: smooth; }
+html { scroll-behavior: smooth; scroll-snap-type: y proximity; }
 body { background: #ffffff; font-family: 'Inter', sans-serif; font-size: 14px; color: #1A1A1A; line-height: 1.6; }
 
 /* ===== GLOBAL IMAGE CONSTRAINT ===== */
@@ -16,7 +16,7 @@ img { max-width: 100%; height: auto; display: block; }
 body > img { max-width: 900px; margin: 24px auto 0 !important; padding: 0 40px; box-sizing: border-box; display: block !important; }
 
 /* ===== GLOBAL SECTION HEADER ===== */
-.section-header { width: 100%; background: #052A46; padding: 20px 0 28px; }
+.section-header { width: 100%; background: #052A46; padding: 20px 0 28px; scroll-snap-align: start; }
 .section-header-inner { max-width: 900px; margin: 0 auto; padding: 0 40px; }
 .section-header h2 { font-family: 'Montserrat', sans-serif; font-size: 22px; font-weight: 800; color: #ffffff; margin: 0; }
 .section-header .subtext { font-size: 14px; color: rgba(255,255,255,0.7); margin-top: 4px; font-style: italic; }
@@ -37,7 +37,7 @@ body > img { max-width: 900px; margin: 24px auto 0 !important; padding: 0 40px; 
 .back-to-top a:hover { background: #75BB1C; color: #ffffff; }
 
 /* ===== COVER PAGE ===== */
-.cover { background: #052A46; min-height: 100vh; display: flex; flex-direction: column; align-items: center; padding: 60px 40px 0; }
+.cover { background: #052A46; min-height: 100vh; display: flex; flex-direction: column; align-items: center; padding: 60px 40px 0; scroll-snap-align: start; }
 .cover-logo { width: 200px; margin-bottom: 48px; }
 .cover-title { font-family: 'Montserrat', sans-serif; font-size: 42px; font-weight: 800; color: #ffffff; text-align: center; margin-bottom: 16px; }
 .cover-firm { font-family: 'Montserrat', sans-serif; font-size: 28px; font-weight: 800; color: #FFE300; text-align: center; margin-bottom: 24px; }
@@ -46,7 +46,7 @@ body > img { max-width: 900px; margin: 24px auto 0 !important; padding: 0 40px; 
 .cover-footer .confidential { font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: rgba(255,255,255,0.6); font-weight: 700; margin-top: 8px; }
 
 /* ===== TABLE OF CONTENTS ===== */
-.toc-wrap { max-width: 900px; margin: 60px auto 0; padding: 0 40px 60px; }
+.toc-wrap { max-width: 900px; margin: 60px auto 0; padding: 0 40px 60px; scroll-snap-align: start; }
 .toc-title { font-family: 'Montserrat', sans-serif; font-size: 28px; font-weight: 800; color: #052A46; margin-bottom: 32px; }
 .toc-section { margin-bottom: 24px; }
 .toc-category { font-family: 'Montserrat', sans-serif; font-size: 14px; font-weight: 700; color: #052A46; margin-bottom: 8px; padding-bottom: 6px; border-bottom: 2px solid #052A46; }
@@ -254,6 +254,41 @@ body > img { max-width: 900px; margin: 24px auto 0 !important; padding: 0 40px; 
 
 /* ===== SECTION DIVIDER ===== */
 .section-divider { border: none; border-top: 1px solid #E0E0E0; margin: 0; }
+
+/* ===== EXECUTIVE SUMMARY ===== */
+.exec-summary { min-height: 100vh; background: #F5F5F5; display: flex; flex-direction: column; scroll-snap-align: start; }
+.exec-summary-header { background: #052A46; padding: 24px 40px; }
+.exec-summary-header-inner { max-width: 900px; margin: 0 auto; }
+.exec-summary-title { font-family: 'Montserrat', sans-serif; font-size: 22px; font-weight: 800; color: #FFE300; margin: 0; }
+.exec-summary-firm { font-size: 14px; color: rgba(255,255,255,0.75); margin-top: 4px; }
+.exec-summary-body { max-width: 900px; margin: 0 auto; padding: 28px 40px 32px; flex: 1; display: flex; flex-direction: column; gap: 20px; }
+.exec-meta-row { display: flex; align-items: stretch; gap: 20px; }
+.exec-urgency { background: #052A46; border-radius: 4px; padding: 20px 28px; text-align: center; flex-shrink: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; }
+.exec-urgency-number { font-family: 'Montserrat', sans-serif; font-size: 56px; font-weight: 800; color: #FFE300; line-height: 1; }
+.exec-urgency-label { font-size: 11px; font-weight: 700; color: rgba(255,255,255,0.65); text-transform: uppercase; letter-spacing: 1px; margin-top: 6px; }
+.exec-pillars { flex: 1; background: #ffffff; border-radius: 4px; padding: 18px 20px; }
+.exec-pillars-label { font-family: 'Montserrat', sans-serif; font-size: 11px; font-weight: 700; color: #888; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 14px; }
+.exec-pillar-row { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
+.exec-pillar-item { display: flex; flex-direction: column; align-items: center; gap: 8px; }
+.exec-pillar-circle { width: 40px; height: 40px; border-radius: 50%; }
+.exec-pillar-circle.red { background: #D9000D; }
+.exec-pillar-circle.amber { background: #F5A623; }
+.exec-pillar-circle.green { background: #75BB1C; }
+.exec-pillar-name { font-family: 'Montserrat', sans-serif; font-size: 11px; font-weight: 700; color: #052A46; text-align: center; }
+.exec-content-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+.exec-block { background: #ffffff; border-radius: 4px; padding: 20px; border-left: 4px solid #052A46; }
+.exec-block-title { font-family: 'Montserrat', sans-serif; font-size: 11px; font-weight: 700; color: #888; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 12px; }
+.exec-findings-list { list-style: none; padding: 0; }
+.exec-findings-list li { font-size: 13px; color: #1A1A1A; padding: 5px 0 5px 16px; border-bottom: 1px solid rgba(0,0,0,0.06); position: relative; }
+.exec-findings-list li:last-child { border-bottom: none; }
+.exec-findings-list li::before { content: '→'; position: absolute; left: 0; color: #75BB1C; font-weight: 700; }
+.exec-investment-row { display: flex; justify-content: space-between; align-items: center; padding: 7px 0; border-bottom: 1px solid rgba(0,0,0,0.06); font-size: 13px; color: #444; }
+.exec-investment-row:last-child { border-bottom: none; }
+.exec-investment-value { font-weight: 700; color: #052A46; }
+.exec-investment-total { display: flex; justify-content: space-between; align-items: center; padding: 8px 0 0; margin-top: 4px; border-top: 2px solid #052A46; font-size: 14px; font-weight: 700; color: #052A46; }
+.exec-closing { background: #052A46; border-radius: 4px; padding: 20px 28px; }
+.exec-closing p { font-family: 'Montserrat', sans-serif; font-size: 17px; font-weight: 800; color: #ffffff; text-align: center; line-height: 1.5; }
+.exec-closing p span { color: #75BB1C; }
 
 /* ===== PRINT ===== */
 @media print {

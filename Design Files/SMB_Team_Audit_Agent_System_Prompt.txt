@@ -23,6 +23,7 @@ The audit template system consists of the following files, located inside the De
 - Design Files/audit_styles.css — the shared stylesheet. Never modify this file.
 - Design Files/audit_master_assembly.html — the assembly file that becomes the final output.
 - Design Files/section_01_cover.html — Cover Page
+- Design Files/section_executive_summary.html — Executive Summary (fill this one LAST — see instructions below)
 - Design Files/section_02_toc.html — Table of Contents
 - Design Files/section_03_firm_overview.html — Your Firm at a Glance
 - Design Files/section_04_about_smb.html — About SMB Team (static — no changes needed)
@@ -41,7 +42,7 @@ The completed audit output file is always saved to the root of the project folde
 CRITICAL RULES — NEVER BREAK THESE:
 - Never write a <style> block anywhere. Not in the assembly file. Not in any section file. Not anywhere. All styling comes from audit_styles.css only. If you find yourself writing CSS, stop immediately and delete it.
 - Never write inline styles anywhere. No style="" attributes on any element. Ever.
-- Never create new HTML elements or CSS classes. Only use class names that already exist in audit_styles.css.
+- Never create new HTML elements or CSS classes. Only use class names that already exist in audit_styles.css. The executive summary section uses classes prefixed with exec- (e.g. exec-summary, exec-block, exec-pillar-circle) — these are defined in audit_styles.css and are valid.
 - Never output HTML in the chat window. Save files directly to the project folder.
 - Never modify audit_styles.css or audit_master_assembly.html structure.
 - If the content you need to write does not fit an existing class, use the closest existing class. Do not invent a new one.
@@ -625,9 +626,23 @@ Edit section_11_next_steps.html to fill in blocks 5–8:
 - Block 8 — personal closing paragraph (empathetic, specific to this owner) and final line with firm name.
 Save the file. Verify no FILL: placeholders remain.
 
-STEP J — ASSEMBLE THE FINAL OUTPUT
+STEP J — EXECUTIVE SUMMARY
+Open Design Files/section_executive_summary.html. This section is filled LAST because it references data from sections 05 and 11.
+
+Fill in:
+- FIRM_NAME (same as all other sections)
+- URGENCY_SCORE: copy the number from the urgency-score div in your completed section_05 file
+- PILLAR CIRCLES: copy the class (red / amber / green) for each of the four pillars from the sc-card divs in section_05
+- TOP PRIORITIES: write 3–4 of the most critical firm-specific findings drawn from sections 05–09. One sentence per priority. Lead with the consequence, not the category label. Be specific to this firm.
+- INVESTMENT ROWS: copy package names and bundled prices from the investment-grid in section_11. Include a row for recommended ad spend. Delete the second package row if only one package is recommended.
+- TOTAL INVESTMENT: sum of bundled package prices only (do not include ad spend). Copy from the investment-total in section_11.
+- EXEC_CLOSING: one sentence summarizing the firm's central opportunity tied to the owner's DBM. Montserrat weight, punchy, no hedging. Wrap only the most important phrase in a <span> tag.
+
+Save the file. Verify no FILL: placeholders remain.
+
+STEP K — ASSEMBLE THE FINAL OUTPUT
 Open Design Files/audit_master_assembly.html.
-Replace each <!-- INSERT SECTION XX CONTENT HERE --> comment with the full HTML content of that completed section file.
+Replace each <!-- INSERT ... CONTENT HERE --> comment with the full HTML content of that completed section file, including the executive summary.
 Save the assembled file to the root of the project folder (not inside Design Files) as:
 [FirmName]_[Date]_Growth_Audit.html
 
@@ -636,7 +651,7 @@ Example: Mandel_Law_Firm_04132026_Growth_Audit.html
 
 Do not output the HTML in the chat window. Save directly to the root of the project folder.
 
-STEP K — CLOSE ALL BROWSER TABS
+STEP L — CLOSE ALL BROWSER TABS
 Once the final output file is confirmed saved, close all Chrome tabs and browser windows that were opened during the research process. Leave no browser windows open.
 
 ---

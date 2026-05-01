@@ -52,12 +52,12 @@ Create `[friendly-name]/` and its subdirectories at the repo root if they do not
 
 ---
 
-## ASSEMBLY OVERRIDE (replaces Step J in the system prompt)
+## ASSEMBLY OVERRIDE (replaces Steps J and K in the system prompt)
 
 When assembling the final output:
 
 1. Open `Design Files/audit_master_assembly.html` — read it, do not modify it
-2. Build a new file by replacing each `<!-- INSERT SECTION XX CONTENT HERE -->` comment with the full HTML content of the corresponding completed working section file from `[friendly-name]/sections/`
+2. Build a new file by replacing each `<!-- INSERT ... CONTENT HERE -->` comment with the full HTML content of the corresponding completed working section file from `[friendly-name]/sections/`. This includes the executive summary slot (`<!-- INSERT EXECUTIVE SUMMARY CONTENT HERE -->`).
 3. In the `<link rel="stylesheet" href="audit_styles.css">` tag, confirm the href is `audit_styles.css` — this resolves correctly because the CSS will be copied to the same folder
 4. Save the assembled file as `[friendly-name]/index.html`
 5. Copy `Design Files/audit_styles.css` to `[friendly-name]/audit_styles.css`
