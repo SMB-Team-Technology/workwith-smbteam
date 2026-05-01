@@ -185,7 +185,7 @@ story.append(thin_rule())
 
 # ── Why This Marketing Package ──
 story.append(Paragraph("Why This Marketing Package", S["section"]))
-story.append(Paragraph("<b>Full Service Marketing — Platinum  |  $6,997/mo bundled</b>", S["subsection"]))
+story.append(Paragraph("<b>Full Service Marketing — Platinum  |  $15,997/mo bundled</b>", S["subsection"]))
 story.append(b("$4M revenue in Tier 1 LA market — Platinum is the appropriate tier. Replaces the $10K SEO-only plan with a full multi-channel system delivering leads in 30 days, not 12 months."))
 story.append(b("PI hard floor $9,000/mo ad spend; Platinum cap $30,000/mo. $8M by 2027 requires full-tier marketing."))
 story.append(b("AI optimization included — critical given 10/100 AI visibility score found in pre-call research."))
@@ -194,7 +194,7 @@ story.append(thin_rule())
 
 # ── Why This Coaching Package ──
 story.append(Paragraph("Why This Coaching / Operations Package", S["section"]))
-story.append(Paragraph("<b>Master's Circle + FCOO Director  |  $6,394/mo bundled</b>", S["subsection"]))
+story.append(Paragraph("<b>Master's Circle + FCOO Director  |  $8,394/mo bundled</b>", S["subsection"]))
 story.append(b("FCOO Director directly addresses Simon's daily check-approval bottleneck — first deliverable is removing him from that process."))
 story.append(b("19 of 20 paralegals were poor hires — hiring system, onboarding protocol, and KPI scorecards are defined FCOO deliverables."))
 story.append(b("Peer coaching with PI owners at the same revenue stage who have already built self-managing firms."))
@@ -240,13 +240,13 @@ story.append(Paragraph("Investment At A Glance", S["section"]))
 
 price_data = [
     [Paragraph("<b>Full Service Marketing — Platinum</b>", S["price_main"]),
-     Paragraph("$6,997/mo", S["price_main"])],
+     Paragraph("$15,997/mo", S["price_main"])],
     [Paragraph("Google Ads, LSA, Meta, SEO, AI optimization, GBP, review generation.", S["price_detail"]),
-     Paragraph("<strike>$8,997</strike> stand alone", S["price_detail"])],
+     Paragraph("<strike>$17,997</strike> stand alone", S["price_detail"])],
     [Paragraph("<b>Master's Circle + FCOO Director</b>", S["price_main"]),
-     Paragraph("$6,394/mo", S["price_main"])],
+     Paragraph("$8,394/mo", S["price_main"])],
     [Paragraph("Fractional COO, KPI scorecards, hiring system, intake training, group coaching.", S["price_detail"]),
-     Paragraph("<strike>$9,794</strike> stand alone", S["price_detail"])],
+     Paragraph("<strike>$11,794</strike> stand alone", S["price_detail"])],
     [Paragraph("<b>Recommended Ad Spend</b>", S["price_main"]),
      Paragraph("$12,000–$30,000/mo", S["price_main"])],
     [Paragraph("Goes to Google, LSA, and Meta — not to SMB Team.", S["price_detail"]),
@@ -265,7 +265,7 @@ pt.setStyle(TableStyle([
 ]))
 story.append(pt)
 story.append(Paragraph(
-    "Total: $13,391/mo + $12,000–$30,000 ad spend  |  Save $5,400/mo by bundling  |  13.0%–13.0% of revenue (under 35% cap)",
+    "Total: $24,391/mo + $12,000–$30,000 ad spend  |  Save $5,400/mo by bundling  |  under 35% of revenue cap",
     S["savings"]))
 
 # ── Build ──
