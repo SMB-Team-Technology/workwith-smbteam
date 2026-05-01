@@ -2,10 +2,22 @@
 
 Fill in all section templates, assemble the final HTML report, generate the Sales Companion PDF, and push to GitHub. Run this after `/audit-research` completes.
 
+Optionally append `--with-pptx` to also generate the 3-slide proposal PowerPoint after the HTML report is complete (calls `/audit-pptx` automatically).
+
 ## How to invoke
 
 ```
 /audit-write
+Firm Name: [Full legal name of the firm]
+Friendly Name: [same value used in /audit-research, e.g. angel-law]
+Sales Rep: [rep's full name]
+Date: [same date used in /audit-research — Month DD, YYYY]
+```
+
+Or with PowerPoint output:
+
+```
+/audit-write --with-pptx
 Firm Name: [Full legal name of the firm]
 Friendly Name: [same value used in /audit-research, e.g. angel-law]
 Sales Rep: [rep's full name]
@@ -450,7 +462,13 @@ GIT_TERMINAL_PROMPT=0 git push origin main
 git log -1 --format="%H %s"
 ```
 
-Always commit directly to main — never create a branch. Report the commit hash. Done.
+Always commit directly to main — never create a branch. Report the commit hash.
+
+---
+
+## OPTIONAL: --with-pptx
+
+If the user invoked `/audit-write --with-pptx`, run `/audit-pptx` after the commit above completes. Pass the same Firm Name, Friendly Name, Sales Rep, and Date. The PPTX will be committed to main in a separate commit by the `/audit-pptx` skill.
 
 
 IMPORTANT NOTE:
