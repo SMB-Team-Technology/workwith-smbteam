@@ -1,0 +1,1287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- FILL: FIRM_NAME in the title tag -->
+<title>Law Firm Growth Audit — Larson Law</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Montserrat:wght@700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="audit_styles.css">
+<!-- HubSpot Analytics -->
+<script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/4570385.js"></script>
+</head>
+<body>
+
+<!--
+  ============================================================
+  SMB TEAM — LAW FIRM GROWTH AUDIT
+  Master Assembly File
+
+  ⚠️ CRITICAL — READ BEFORE WRITING A SINGLE CHARACTER:
+
+  This file does NOT contain a <style> block.
+  This file does NOT use inline styles (no style="" attributes).
+  ALL styling comes exclusively from audit_styles.css.
+
+  If you find yourself writing CSS — in a <style> tag, inline,
+  or anywhere else — STOP. Delete it. Use only the class names
+  that already exist in audit_styles.css. Do not invent new ones.
+
+  Violating this rule is what causes the report to look wrong.
+  The CSS is already written. Your only job is to fill in content.
+
+  ============================================================
+
+  INSTRUCTIONS FOR COWORK:
+  This file assembles the completed audit by inserting the
+  content of each completed section fragment in order.
+
+  Workflow:
+  1. Complete all research and analysis first. Write nothing yet.
+  2. Open section_01_cover.html. Fill in all placeholders. Save.
+  3. Open section_02_toc.html. Fill in all placeholders. Save.
+  4. Open section_03_firm_overview.html. Fill in all placeholders. Save.
+  5. Section 04 (About SMB Team) is static — copy as-is.
+  6. Open section_05_growth_health.html. Fill in all placeholders. Save.
+  7. Open section_06_lead_generation.html. Fill in all placeholders. Save.
+  8. Open section_07_08_09_intake_team_profit.html. Fill in all placeholders. Save.
+  9. Open section_10_whats_possible.html. Fill in all placeholders. Save.
+  10. Open section_11_next_steps.html. Fill in all placeholders. Save.
+  11. Open section_executive_summary.html. Fill in all placeholders using
+      completed data from sections 05 and 11. Save. (Fill this one last.)
+  12. Return to this file. Replace each INSERT ... CONTENT HERE comment
+      with the full HTML content of that completed section file.
+  13. Save the final assembled file as:
+      [FirmName]_[Date]_Growth_Audit.html
+      to the project folder.
+
+  RULES:
+  - No <style> block. None. Not here, not in any section file.
+  - No inline styles. No style="" on any element. Ever.
+  - No new CSS classes. Only use classes from audit_styles.css.
+  - Do not output this file in the chat window.
+  - Save directly to the project folder.
+  ============================================================
+-->
+
+<!-- ===== SECTION 01: COVER PAGE ===== -->
+<!-- ⚠️ NO CSS IN THIS FILE. No <style> blocks. No inline styles. No style="" attributes.
+     All styling comes from audit_styles.css only. Use only existing class names.
+     If you find yourself writing CSS — stop and delete it. -->
+
+<div class="cover" id="cover">
+  <img class="cover-logo"
+    src="https://www.dropbox.com/scl/fi/9ytno9l0ipl9w9x4l0qg6/SMB-Logo-H-White.png?rlkey=y13ywjp9poyihu8zus42tx6wq&st=rfo0lufv&raw=1"
+    alt="SMB Team Logo" />
+
+  <div class="cover-title">Law Firm Growth Audit</div>
+
+  <div class="cover-firm">Larson Law</div>
+
+  <div class="cover-footer">
+    <p>Prepared for: <strong>Larson Law</strong></p>
+    <p>Prepared by: <strong>Jonathan Farace</strong> | SMB Team</p>
+    <p>Date: <strong>May 05, 2026</strong></p>
+    <p class="confidential">Confidential</p>
+  </div>
+</div>
+
+
+<!-- ===== EXECUTIVE SUMMARY ===== -->
+<!-- ⚠️ NO CSS IN THIS FILE. No <style> blocks. No inline styles. No style="" attributes.
+     All styling comes from audit_styles.css only. Use only existing class names.
+     If you find yourself writing CSS — stop and delete it. -->
+
+<div class="exec-summary" id="executive-summary">
+  <div class="exec-summary-header">
+    <div class="exec-summary-header-inner">
+      <div class="exec-summary-title">Executive Summary</div>
+      <div class="exec-summary-firm">Larson Law</div>
+    </div>
+  </div>
+
+  <div class="exec-summary-body">
+
+    <div class="exec-meta-row">
+
+      <div class="exec-urgency">
+        <div class="exec-urgency-number">7</div>
+        <div class="exec-urgency-label">Urgency Score</div>
+      </div>
+
+      <div class="exec-pillars">
+        <div class="exec-pillars-label">Pillar Health at a Glance</div>
+        <div class="exec-pillar-row">
+
+          <div class="exec-pillar-item">
+            <div class="exec-pillar-circle red"></div>
+            <div class="exec-pillar-name">Lead Gen</div>
+          </div>
+
+          <div class="exec-pillar-item">
+            <div class="exec-pillar-circle red"></div>
+            <div class="exec-pillar-name">Intake</div>
+          </div>
+
+          <div class="exec-pillar-item">
+            <div class="exec-pillar-circle amber"></div>
+            <div class="exec-pillar-name">Team</div>
+          </div>
+
+          <div class="exec-pillar-item">
+            <div class="exec-pillar-circle amber"></div>
+            <div class="exec-pillar-name">Profit</div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+
+    <div class="exec-content-grid">
+
+      <!-- TOP PRIORITIES -->
+      <div class="exec-block">
+        <div class="exec-block-title">Top Priorities</div>
+        <ul class="exec-findings-list">
+          <li>With near-zero Google reviews and no local 3-pack presence, every PI case that begins with an online search goes to Kramer Law Group, Siegfried &amp; Jensen, or Parker &amp; McConkie before Larson Law's name ever appears — a structural revenue leak that grows wider every month without action.</li>
+          <li>Adam must personally sign every new client under Utah Bar rules, the office closes at 5pm, and there is no defined follow-up system for leads who do not sign immediately — meaning the intake bottleneck will cap signed case volume regardless of how much marketing spend increases.</li>
+          <li>Revenue has been flat at $1.1M for five years and the average case fee has declined from $13K to $11K this year — growth in case volume without a profit plan risks producing more work without more financial security.</li>
+          <li>As the sole licensed attorney and sole decision-maker, Adam is the bottleneck for every function that matters — and without a second attorney, documented processes, or a management layer, the CEO role he described cannot become real no matter how many leads come in.</li>
+        </ul>
+      </div>
+
+      <!-- RECOMMENDED INVESTMENT SNAPSHOT -->
+      <div class="exec-block">
+        <div class="exec-block-title">Recommended Investment</div>
+
+        <div class="exec-investment-row">
+          <span>Full Service Marketing — Growth</span>
+          <span class="exec-investment-value">$5,397/mo</span>
+        </div>
+
+        <div class="exec-investment-row">
+          <span>Elite Coach Plus</span>
+          <span class="exec-investment-value">$3,200/mo</span>
+        </div>
+
+        <div class="exec-investment-row">
+          <span>Recommended Ad Spend</span>
+          <span class="exec-investment-value">$12,000–$20,000/mo</span>
+        </div>
+
+        <div class="exec-investment-total">
+          <span>Total SMB Team Investment</span>
+          <span>$8,597/mo</span>
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="exec-closing">
+      <p><span>The referral network that built Larson Law cannot double it — but a controlled marketing system, a Google presence, and the right coaching can.</span></p>
+    </div>
+
+  </div>
+</div>
+
+
+<!-- ===== SECTION 02: TABLE OF CONTENTS ===== -->
+<!-- ⚠️ NO CSS IN THIS FILE. No <style> blocks. No inline styles. No style="" attributes.
+     All styling comes from audit_styles.css only. Use only existing class names.
+     If you find yourself writing CSS — stop and delete it. -->
+
+<div class="toc-wrap" id="toc">
+  <div class="toc-title">Table of Contents</div>
+
+  <div class="toc-section">
+    <div class="toc-category">Your Firm at a Glance</div>
+    <ul class="toc-items">
+      <li><a href="#firm-overview">Larson Law — Current Status</a></li>
+    </ul>
+  </div>
+
+  <div class="toc-section">
+    <div class="toc-category">About SMB Team</div>
+    <ul class="toc-items">
+      <li><a href="#about-smb">The Law Firm Growth Acceleration Model</a></li>
+    </ul>
+  </div>
+
+  <div class="toc-section">
+    <div class="toc-category">Your Growth Health Assessment</div>
+    <ul class="toc-items">
+      <li><a href="#growth-health">Growth Health Scorecard</a></li>
+      <li><a href="#urgency-score">Competitive Urgency Score</a></li>
+    </ul>
+  </div>
+
+  <div class="toc-section">
+    <div class="toc-category">Lead Generation</div>
+    <ul class="toc-items">
+      <li><a href="#website-audit">Website Audit</a></li>
+      <li><a href="#local-seo">Local SEO</a></li>
+      <li><a href="#google-ads">Google Ads</a></li>
+      <li><a href="#local-service-ads">Local Service Ads</a></li>
+      <li><a href="#meta-ads">Facebook &amp; Instagram Ads</a></li>
+    </ul>
+  </div>
+
+  <div class="toc-section">
+    <div class="toc-category">Intake</div>
+    <ul class="toc-items">
+      <li><a href="#intake">Intake Assessment</a></li>
+      <li><a href="#website-intake">Website Contact Forms &amp; Live Chat</a></li>
+    </ul>
+  </div>
+
+  <div class="toc-section">
+    <div class="toc-category">Self-Managing Team</div>
+    <ul class="toc-items">
+      <li><a href="#team">Team Assessment</a></li>
+    </ul>
+  </div>
+
+  <div class="toc-section">
+    <div class="toc-category">Profit</div>
+    <ul class="toc-items">
+      <li><a href="#profit">Profit Plan Assessment</a></li>
+    </ul>
+  </div>
+
+  <div class="toc-section">
+    <div class="toc-category">Here's What's Possible for Larson Law</div>
+    <ul class="toc-items">
+      <li><a href="#growth-journey">Growth Vision</a></li>
+    </ul>
+  </div>
+
+  <div class="toc-section">
+    <div class="toc-category">Your Next Steps</div>
+    <ul class="toc-items">
+      <li><a href="#next-steps">Quick Wins for Larson Law</a></li>
+      <li><a href="#recommendation">How SMB Team Can Help Larson Law</a></li>
+    </ul>
+  </div>
+</div>
+
+
+<!-- ===== SECTION 03: YOUR FIRM AT A GLANCE ===== -->
+<!-- ⚠️ NO CSS IN THIS FILE. No <style> blocks. No inline styles. No style="" attributes.
+     All styling comes from audit_styles.css only. Use only existing class names.
+     If you find yourself writing CSS — stop and delete it. -->
+
+<div class="section-header" id="firm-overview">
+  <div class="section-header-inner">
+    <h2>Here Is Where Larson Law Stands Today</h2>
+  </div>
+</div>
+
+<div class="content-wrap">
+
+  <div class="firm-summary">Larson Law is a South Jordan, Utah personal injury firm with nearly four decades of history, now under the sole leadership of Adam Larson following his father's retirement in March 2026. Built almost entirely on referrals, the firm generates approximately $1.1 million per year with no predictable marketing system, no Google Ads presence, and a near-zero Google review footprint — while competitors with 300 to 1,500+ Google reviews actively capture every PI case that begins with an online search.</div>
+
+  <img src="https://www.dropbox.com/scl/fi/3d243mphsenx3vqnp9aas/LLS-Solo-Practitioner.png?rlkey=mgwovpkf3ntzx2wm856oyvn7s&st=5kasghsj&raw=1" alt="Growth Stage" />
+
+  <p class="dbm-connector">Stage 6 is where the firm runs without you at every client signing, your income is no longer tied to your personal availability, and the financial security you have been working toward finally becomes real — and that is exactly where this is taking you.</p>
+
+  <div class="stage-cards">
+    <div class="stage-card">
+      <div class="stage-card-header">
+        <h3>Where You Are Today</h3>
+        <div class="stage-label">Stage 3: Solo Practitioner</div>
+      </div>
+      <div class="stage-card-body">
+        <ul>
+          <li>Revenue flat at ~$1.1M/year for five consecutive years — driven entirely by unpredictable referral flow</li>
+          <li>Adam personally signs every new client — a structural bottleneck that caps the firm's case volume</li>
+          <li>95–98% of cases come from referrals with no controlled marketing system and no measurable online presence</li>
+          <li>Current marketing spend of ~$2–3K/month on FindLaw and social posting produces no tracked results</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="stage-card destination">
+      <div class="stage-card-header">
+        <h3>Where You Need To Be</h3>
+        <div class="stage-label">Stage 6: Law Firm Owner</div>
+      </div>
+      <div class="stage-card-body">
+        <ul>
+          <li>The firm runs without you</li>
+          <li>Your income is no longer tied to your personal hours</li>
+          <li>Your time is yours to spend however you choose</li>
+          <li>This is where true freedom and true wealth become possible</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="connecting-sentence">The gap between where you are and where you want to be is a systems gap, not a talent gap — you have already proven you can run a great personal injury firm; now it is time to build one that grows without requiring you at every step.</div>
+
+  <div class="assessment-header">Overall Growth Stage Assessment</div>
+  <div class="assessment-subheading">Larson Law</div>
+
+  <div class="assessment-box">Adam Larson is operating at Stage 3 — a Solo Practitioner who just inherited full ownership of a well-respected firm but has not yet built the systems needed to make it grow. The single most urgent gap is the complete absence of any predictable lead generation: the firm is 95–98% referral-dependent in a market where Kramer Law Group, Siegfried &amp; Jensen, and Parker &amp; McConkie are running full-channel digital campaigns with 300 to 1,500+ Google reviews backing them up. Until Adam replaces unpredictable referral flow with a controlled marketing system — and simultaneously fixes the intake bottleneck that prevents him from stepping away — the $2.2M growth goal and the CEO role he has described will remain out of reach.</div>
+
+</div>
+<div class="back-to-top"><a href="#toc">↑ Back to Top</a></div>
+
+
+<!-- ===== SECTION 04: ABOUT SMB TEAM ===== -->
+<!-- ⚠️ NO CSS IN THIS FILE. No <style> blocks. No inline styles. No style="" attributes.
+     All styling comes from audit_styles.css only. Use only existing class names.
+     If you find yourself writing CSS — stop and delete it. -->
+<!-- ============================================================
+     SECTION 04 — ABOUT SMB TEAM
+     
+     INSTRUCTIONS FOR COWORK:
+     This section is STATIC. Do not change any text or structure.
+     Copy this section into the final output exactly as it appears here.
+     ============================================================ -->
+
+<div class="section-header" id="about-smb">
+  <div class="section-header-inner">
+    <h2>The Law Firm Growth Acceleration Model</h2>
+  </div>
+</div>
+
+<div class="content-wrap">
+
+  <div class="callout-banner">
+    <p>We Help Law Firm Owners Get More Profit, More Personal Freedom, And Outstanding Results For Their Clients.</p>
+  </div>
+
+  <p class="opportunity-text">Most law firms try to grow by chasing more leads. But leads alone are not the problem — and leads alone are not the answer. Here is what actually works.</p>
+
+  <div class="pillars-grid">
+    <div class="pillar-card">
+      <h3>Lead Generation</h3>
+      <p>Leads are to a law firm what gasoline is to a car. Without them, you go nowhere. But a steady, predictable flow of leads changes everything — you get to choose your cases instead of taking whatever comes in.</p>
+    </div>
+    <div class="pillar-card">
+      <h3>Intake</h3>
+      <p>But all the leads in the world are worthless without a system to turn them into paying clients. Most firms are losing cases they already paid for simply because their follow-up is slow or inconsistent.</p>
+    </div>
+    <div class="pillar-card">
+      <h3>Self-Managing Team</h3>
+      <p>Once clients are coming in, you need a team — otherwise you end up working 90-hour weeks and results suffer. A self-managing team is what gives you the freedom to step back.</p>
+    </div>
+    <div class="pillar-card">
+      <h3>Profit Plan</h3>
+      <p>And once the team is in place, most owners look at their bank account and ask: where did all the money go? That is what a profit plan solves — clarity on what you earn, what you keep, and how to grow both.</p>
+    </div>
+  </div>
+
+  <div class="closing-line">All four have to work together. If one is missing, you cannot have more profit, more freedom, and outstanding results for your clients at the same time.</div>
+
+  <img src="https://www.dropbox.com/scl/fi/ffkzpv2f3rdjfzwq997e1/Law-Firm-Growth-Acceleration-Model.png?rlkey=665o52gt2va8pg4nb0epdc8hv&st=1iucj2m5&raw=1"
+    alt="Law Firm Growth Acceleration Model"
+    style="width:100%;height:auto;display:block;border-radius:6px;" />
+
+</div>
+<div class="back-to-top"><a href="#toc">↑ Back to Top</a></div>
+
+
+<!-- ===== SECTION 05: GROWTH HEALTH ASSESSMENT ===== -->
+<!-- ⚠️ NO CSS IN THIS FILE. No <style> blocks. No inline styles. No style="" attributes.
+     All styling comes from audit_styles.css only. Use only existing class names.
+     If you find yourself writing CSS — stop and delete it. -->
+
+<div class="section-header" id="growth-health">
+  <div class="section-header-inner">
+    <h2>Your Growth Health Assessment</h2>
+    <div class="subtext">Larson Law</div>
+  </div>
+</div>
+
+<div class="content-wrap">
+
+  <div class="legend">
+    <div class="legend-item">
+      <div class="legend-dot red"></div>
+      <div class="legend-label">Red <span>— Critical Priority</span></div>
+    </div>
+    <div class="legend-item">
+      <div class="legend-dot amber"></div>
+      <div class="legend-label">Amber <span>— In Progress</span></div>
+    </div>
+    <div class="legend-item">
+      <div class="legend-dot green"></div>
+      <div class="legend-label">Green <span>— On Track</span></div>
+    </div>
+  </div>
+
+  <div class="scorecard-label">Pillar Health Scorecard</div>
+
+  <div class="scorecard-grid">
+
+    <!-- LEAD GENERATION CARD -->
+    <div class="sc-card">
+      <div class="sc-card-header"><h3>Lead Generation</h3></div>
+      <div class="sc-card-body">
+        <div class="traffic-circle red"></div>
+        <ul class="sc-findings">
+          <li>95–98% of cases come from referrals — no controlled marketing system exists</li>
+          <li>Near-zero Google reviews means the firm is invisible in local 3-pack searches for any PI keyword</li>
+          <li>$2–3K/month in FindLaw and social posting produces no measurable return</li>
+        </ul>
+        <div class="sc-dbm">Without a predictable lead source, Adam's income will remain hostage to referral volatility — and the CEO role he is building toward will remain out of reach.</div>
+      </div>
+    </div>
+
+    <!-- INTAKE CARD -->
+    <div class="sc-card">
+      <div class="sc-card-header"><h3>Intake</h3></div>
+      <div class="sc-card-body">
+        <div class="traffic-circle red"></div>
+        <ul class="sc-findings">
+          <li>Adam must personally sign every new client — a Utah State Bar requirement that creates a hard cap on signed cases per month</li>
+          <li>No after-hours coverage — cases calling after 5pm or on weekends go uncaptured</li>
+          <li>No defined intake system or follow-up sequence for leads who do not sign immediately</li>
+        </ul>
+        <div class="sc-dbm">Every hour Adam spends personally signing clients is an hour he cannot spend building the systems that would let him step back.</div>
+      </div>
+    </div>
+
+    <!-- SELF-MANAGING TEAM CARD -->
+    <div class="sc-card">
+      <div class="sc-card-header"><h3>Self-Managing Team</h3></div>
+      <div class="sc-card-body">
+        <div class="traffic-circle amber"></div>
+        <ul class="sc-findings">
+          <li>Adam is now the sole owner, sole attorney, and sole decision-maker — every key function runs through him</li>
+          <li>Support staff handle ~60 active cases but cannot sign new clients or represent the firm independently</li>
+          <li>No second attorney, no management layer, and no documented processes to support a transition to CEO</li>
+        </ul>
+        <div class="sc-dbm">A firm that cannot run without Adam at every step cannot give Adam the time and freedom he has described.</div>
+      </div>
+    </div>
+
+    <!-- PROFIT CARD -->
+    <div class="sc-card">
+      <div class="sc-card-header"><h3>Profit</h3></div>
+      <div class="sc-card-body">
+        <div class="traffic-circle amber"></div>
+        <ul class="sc-findings">
+          <li>Revenue has been flat at ~$1.1M for five years — growth has stalled while costs continue</li>
+          <li>Average case fee has declined from ~$13K to ~$11K this year — a trend that erodes margin without growth</li>
+          <li>Marketing spend of $2–3K/month on directories produces no measurable return — invisible cost of stagnation</li>
+        </ul>
+        <div class="sc-dbm">Growing revenue without growing profit is just growing the grind — Adam needs a profit plan alongside his growth plan to reach the financial security he described.</div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- COMPETITIVE URGENCY SCORE -->
+  <div class="urgency-card" id="urgency-score">
+    <div class="urgency-label">Competitive Urgency Score</div>
+
+    <div class="urgency-score">7</div>
+    <div class="urgency-outof">out of 10</div>
+
+    <div class="urgency-sentence">A score of 7 means competitors are actively dominating multiple channels in your market and the gap is getting wider every month you wait. This is not a future problem — it is a right now problem.</div>
+
+    <div style="margin-bottom:10px;">
+      <div class="urgency-bar"><div class="urgency-marker" style="left:70%;"></div></div>
+      <div class="urgency-scale">
+        <span>1–3 = Low Urgency</span>
+        <span>4–6 = Moderate</span>
+        <span>7–10 = High Urgency</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="competitors-label">Your Top Competitive Threats</div>
+
+  <div class="competitor-card">
+    <div class="competitor-name">Kramer Law Group — West Jordan (8 miles from your office)</div>
+    <div class="competitor-threat">300+ Google reviews at 4.9 stars, active PPC campaigns, and direct coverage of the South Jordan and West Jordan PI market. Every car accident victim in your area who searches online before calling a referral is a potential Kramer case — not a Larson Law case.</div>
+  </div>
+
+  <div class="competitor-card">
+    <div class="competitor-name">Siegfried &amp; Jensen — Salt Lake City</div>
+    <div class="competitor-threat">~1,558 Google reviews at 4.8 stars, TV advertising, Google Ads, Meta Ads, and a $1.2B+ recovery record used as a brand weapon. Any PI prospect who searches broadly for a Utah attorney finds Siegfried &amp; Jensen first, last, and everywhere in between — before they ever know Larson Law exists.</div>
+  </div>
+
+  <div class="competitor-card">
+    <div class="competitor-name">The Garner Law Firm — South Jordan (same city, same practice area)</div>
+    <div class="competitor-threat">A direct South Jordan PI competitor already holding a 5.0-star Google Maps rating while Larson Law's review count is near zero. If Garner Law launches paid ads or secures an LSA placement, they could own the South Jordan PI 3-pack entirely before Larson Law enters the digital space at all.</div>
+  </div>
+
+</div>
+<div class="back-to-top"><a href="#toc">↑ Back to Top</a></div>
+
+
+<!-- ===== SECTION 06: LEAD GENERATION ===== -->
+<!-- ⚠️ NO CSS IN THIS FILE. No <style> blocks. No inline styles. No style="" attributes.
+     All styling comes from audit_styles.css only. Use only existing class names.
+     If you find yourself writing CSS — stop and delete it. -->
+
+<div class="section-header" id="lead-generation">
+  <div class="section-header-inner"><h2>Lead Generation</h2></div>
+</div>
+
+<div class="content-wrap">
+</div>
+<div class="section-img-wrap"><img src="https://www.dropbox.com/scl/fi/vne0wcswovu3nwjibgjya/Lead-Generation.png?rlkey=enb7lthrbylgma7qoofstb799&st=nw3f9i8c&raw=1" alt="Lead Generation" /></div>
+<div class="content-wrap">
+  <p class="section-intro">Larson Law has built a respected personal injury practice in South Jordan on nearly four decades of referrals — but with 95 to 98 percent of cases coming from referrals and no controlled marketing system in place, the firm's revenue has been flat for five consecutive years while competitors with full digital campaigns capture every case that begins with a Google search.</p>
+</div>
+
+<!-- WEBSITE AUDIT -->
+<div class="subsection-header" id="website-audit">
+  <div class="subsection-header-inner"><h3>Website Audit</h3></div>
+</div>
+<div class="content-wrap">
+
+  <div class="pgp-label">The Problem</div>
+  <ul class="pgp-list">
+    <li>Website larsonlawutah.com was confirmed live through directory data, but the site's bot-protection configuration prevented direct access — homepage headline, CTA placement, and load performance could not be confirmed during this audit</li>
+    <li>PageSpeed scores could not be retrieved — the site blocked all PageSpeed analysis tools; a manual test at pagespeed.web.dev is strongly recommended before Friday's call to understand mobile load performance</li>
+    <li>No geo-targeting landing pages observed for surrounding cities (Draper, Riverton, Herriman, Sandy, Murray, West Jordan) — every PI search with a city modifier returns competitors instead of Larson Law</li>
+    <li>No Spanish-language pages observed — a significant missed opportunity in Salt Lake County's growing Hispanic market</li>
+  </ul>
+
+  <div class="blind-spot"><strong>Blind Spot:</strong> A site that blocks research tools may also be inadvertently blocking Google's crawlers — if the site's bot-protection affects Googlebot, it could be silently suppressing organic rankings without any visible error or warning in Search Console.</div>
+
+  <div class="pgp-label">The Positive</div>
+  <ul class="pgp-list">
+    <li>The site is indexed and confirmed live — multiple pages (practice areas, team, contact, resources) appear in Google's search index</li>
+    <li>Attorney bio pages exist (larsonlawutah.com/team) — a credibility signal that many competing PI firms omit entirely</li>
+  </ul>
+
+  <div class="pgp-label">The Gap</div>
+  <ul class="pgp-list">
+    <li>Without confirmed PageSpeed scores, there is no way to know whether mobile visitors — the primary channel for PI searches — are bouncing before the site fully loads</li>
+    <li>Without geo-targeting pages, Larson Law is invisible for searches like "personal injury attorney Draper UT" and "car accident lawyer Riverton Utah" — searches that go to Parker &amp; McConkie and Kramer Law Group every day</li>
+    <li>Without a confirmed above-fold CTA and contact form, every paid traffic dollar invested sends visitors to a site that may not capture them</li>
+  </ul>
+
+  <div class="dbm-closing">A website that cannot be found, measured, or confirmed to convert is not an asset — it is a barrier between Adam and the CEO role and financial security he is building toward.</div>
+
+</div>
+
+<!-- LOCAL SEO -->
+<div class="subsection-header" id="local-seo">
+  <div class="subsection-header-inner"><h3>Local SEO</h3></div>
+</div>
+<div class="content-wrap">
+
+  <div class="pgp-label">The Problem</div>
+  <ul class="pgp-list">
+    <li>Google Business Profile review count appears near-zero — Wheree.com, a Google data aggregator, shows no reviews indexed for Larson Law, placing the firm at the bottom of local ranking signals for any PI keyword</li>
+    <li>Larson Law does not appear in the local 3-pack for "personal injury lawyer South Jordan Utah," "car accident attorney South Jordan Utah," or any broader Utah PI search observed during this audit</li>
+    <li>No geo-targeting landing pages for Draper, Riverton, Herriman, Sandy, Murray, or West Jordan — leaving all city-specific PI searches to better-positioned competitors</li>
+  </ul>
+
+  <div class="blind-spot"><strong>Blind Spot:</strong> The local 3-pack is effectively a review competition in high-value PI markets — and with near-zero Google reviews, Larson Law is starting that competition from last place while Kramer Law Group (300+ reviews) and Parker &amp; McConkie (1,000+ reviews) are already at the finish line. There is no amount of ad spend that replaces this signal.</div>
+
+  <div class="pgp-label">The Positive</div>
+  <ul class="pgp-list">
+    <li>NAP (name, address, phone) is consistent across FindLaw, Yelp, Lawyers.com, Martindale, and other directories — a clean citation foundation to build on once the review campaign launches</li>
+  </ul>
+
+  <div class="pgp-label">The Gap</div>
+  <ul class="pgp-list">
+    <li>Without Google reviews, the GBP cannot rank competitively — every PI case that starts with a Google search goes to a competitor regardless of how good the underlying website is</li>
+    <li>The Garner Law Firm, a direct South Jordan PI competitor, is newer to the market but already holds a 5.0-star Google Maps rating — without an aggressive review campaign, Larson Law risks being permanently outranked by a younger firm in their own city</li>
+  </ul>
+
+  <div class="competitor-callout"><strong>Kramer Law Group</strong> — 300+ Google reviews at 4.9 stars, 8 miles away in West Jordan, actively capturing the same South Jordan metro PI market through local SEO dominance and paid search.</div>
+
+  <div class="dbm-closing">Building to 200+ Google reviews is not a vanity exercise — it is the single most important prerequisite for everything else: 3-pack rankings, LSA eligibility, and the online credibility that converts a first-time visitor into a signed case.</div>
+
+</div>
+
+<!-- GOOGLE ADS -->
+<div class="subsection-header" id="google-ads">
+  <div class="subsection-header-inner"><h3>Google Ads</h3></div>
+</div>
+<div class="content-wrap">
+
+  <div class="ad-part">
+    <div class="ad-part-label">Ad Presence</div>
+    <ul class="ad-list">
+      <li>Larson Law does not appear to be running Google search ads for "personal injury South Jordan Utah," "car accident attorney South Jordan Utah," or "personal injury lawyer Utah" — the firm may not have campaigns configured for these terms, or may be getting outbid by the major regional firms that dominate paid results in this market</li>
+      <li>Current marketing spend of ~$2–3K/month is allocated to FindLaw directory listings and social posting — not paid search, which is where the highest-intent PI prospects are looking</li>
+    </ul>
+  </div>
+
+  <div class="ad-part">
+    <div class="ad-part-label">Competitor Ad Landscape</div>
+    <ul class="ad-list">
+      <li><strong>Siegfried &amp; Jensen</strong> — almost certainly running paid search for all primary PI keywords in Salt Lake County; their "$1.2B+ recovered" messaging and massive review base give them a quality score advantage that raises CPCs for everyone in the market</li>
+      <li><strong>Parker &amp; McConkie</strong> — running paid ads across Utah PI keywords from four office locations; "40+ years of experience" and 1,000+ five-star reviews are their ad messaging anchors</li>
+      <li><strong>Kramer Law Group</strong> — active PPC targeting West Jordan truck and car accident keywords, capturing the same South Jordan metro audience</li>
+    </ul>
+  </div>
+
+  <div class="ad-part">
+    <div class="ad-part-label">The Opportunity</div>
+    <ul class="ad-list">
+      <li>"Personal injury attorney South Jordan" and "car accident lawyer South Jordan" — high-intent, geographically specific terms with lower CPCs than broad Salt Lake City keywords; Larson Law's local address is a quality score advantage here</li>
+      <li>"Catastrophic injury attorney Utah" — a specific practice area term where Larson Law has documented experience and where competition is less saturated</li>
+      <li>Surrounding city terms — "personal injury attorney Draper," "car accident lawyer Herriman," "Riverton UT injury attorney" — represent untapped geographic reach at manageable CPCs</li>
+      <li>Spanish-language PI keywords in the Salt Lake County market — a largely underserved paid search segment where Larson Law could capture cases at lower cost per lead than English-language campaigns</li>
+    </ul>
+  </div>
+
+  <div class="blind-spot"><strong>Blind Spot:</strong> Adam's own stated CAC target of ~$2,500 per signed case means that at $12,500/month in ad spend, the firm adds 5 signed cases — $55,000 in expected revenue from a $12,500 investment. That same amount is currently going to FindLaw and social posting with no measurable return.</div>
+
+</div>
+
+<!-- LOCAL SERVICE ADS -->
+<div class="subsection-header" id="local-service-ads">
+  <div class="subsection-header-inner"><h3>Local Service Ads</h3></div>
+</div>
+<div class="content-wrap">
+
+  <div class="ad-part">
+    <div class="ad-part-label">LSA Presence</div>
+    <ul class="ad-list">
+      <li>Larson Law does not appear to be running Local Service Ads for personal injury searches — no Google Screened badge was observed for the firm during this audit</li>
+      <li>LSA eligibility is tied in part to Google review count — the same review gap that limits organic rankings also limits LSA access and quality score</li>
+    </ul>
+  </div>
+
+  <div class="ad-part">
+    <div class="ad-part-label">Competitor LSA Landscape</div>
+    <ul class="ad-list">
+      <li><strong>Siegfried &amp; Jensen</strong> — given their review volume (~1,558 reviews at 4.8 stars) and marketing investment, LSA participation is highly probable; they have the review count to achieve and maintain top LSA positioning</li>
+      <li><strong>Parker &amp; McConkie</strong> — 1,000+ five-star reviews across four locations make them a natural LSA market leader; their review advantage translates directly into LSA ranking priority</li>
+    </ul>
+  </div>
+
+  <div class="ad-part">
+    <div class="ad-part-label">The Opportunity</div>
+    <ul class="ad-list">
+      <li>Getting Google Screened is a one-time verification process — once earned, Larson Law would appear above all organic results, above the map pack, and above all standard Google Ads for PI searches in South Jordan</li>
+      <li>LSAs appear above everything else on Google — above paid ads, above the map pack, above all organic results — and you only pay when a real prospect calls you directly.</li>
+      <li>As the review campaign builds toward 200+ Google reviews, LSA eligibility and ranking quality both improve — making the review campaign the first and most critical step to unlocking this channel entirely</li>
+    </ul>
+  </div>
+
+</div>
+
+<!-- FACEBOOK & INSTAGRAM ADS -->
+<div class="subsection-header" id="meta-ads">
+  <div class="subsection-header-inner"><h3>Facebook &amp; Instagram Ads</h3></div>
+</div>
+<div class="content-wrap">
+
+  <div class="ad-part">
+    <div class="ad-part-label">Ad Presence</div>
+    <ul class="ad-list">
+      <li>No active Meta ads from Larson Law were found in the Facebook Ads Library — the firm has 604 Facebook followers and 24 Facebook reviews from organic activity, but paid social advertising does not appear to be running</li>
+      <li>Current social media spend is going toward organic posting only, which reaches an existing audience of 604 followers — not the new accident victims who are searching for representation right now</li>
+    </ul>
+  </div>
+
+  <div class="ad-part">
+    <div class="ad-part-label">Competitor Ad Landscape</div>
+    <ul class="ad-list">
+      <li><strong>Siegfried &amp; Jensen</strong> — running Meta ads with major Utah brand presence; multiple ad formats and sustained campaigns reach PI prospects across Facebook and Instagram before they ever run a Google search</li>
+      <li><strong>Kramer Law Group</strong> — active on Facebook with a digital-first presence; likely running Meta retargeting given their 300+ review base and systematic marketing approach</li>
+    </ul>
+  </div>
+
+  <div class="ad-part">
+    <div class="ad-part-label">The Opportunity</div>
+    <ul class="ad-list">
+      <li>Retargeting — website visitors who did not convert are leaving with no follow-up</li>
+      <li>Video ads featuring the attorney — builds trust before a prospect ever calls; Adam's youth, energy, and 12 years of experience are differentiators against older competition</li>
+      <li>Educational content ads — capture leads earlier in the decision process (what to do after a car accident in South Jordan)</li>
+      <li>Spanish-language Meta ads targeting Salt Lake County's Hispanic community — a PI audience that is underserved by most competitors and reachable at lower CPL than English-language campaigns</li>
+    </ul>
+  </div>
+
+</div>
+<div class="back-to-top"><a href="#toc">↑ Back to Top</a></div>
+
+
+<!-- ===== SECTION 07-09: INTAKE, TEAM, PROFIT ===== -->
+<!-- ⚠️ NO CSS IN THIS FILE. No <style> blocks. No inline styles. No style="" attributes.
+     All styling comes from audit_styles.css only. Use only existing class names.
+     If you find yourself writing CSS — stop and delete it. -->
+
+<div class="section-header" id="intake">
+  <div class="section-header-inner"><h2>Intake Assessment</h2></div>
+</div>
+
+
+
+<div class="content-wrap">
+
+</div>
+<div class="section-img-wrap"><img src="https://www.dropbox.com/scl/fi/lmohhz14wgbeucpflf02m/Intake.png?rlkey=jwomjz9j8vqi7kmjubxexoyvh&st=sgtebwjp&raw=1" alt="Intake" /></div>
+<div class="content-wrap">
+
+  <p class="section-intro">Larson Law's intake is entirely dependent on Adam — every new client must be personally signed by him as required by the Utah State Bar, with no after-hours coverage and no defined follow-up system for leads who don't sign immediately. Fixing intake means converting more of the leads the firm is already generating — without spending another dollar on marketing.</p>
+
+  <div class="status-row">
+    <div class="status-circle red"></div>
+    <div class="status-label">Status: RED</div>
+  </div>
+
+  <div class="pgp-label">The Problem</div>
+  <ul class="pgp-list">
+    <li>Adam must personally sign every new client — a Utah State Bar requirement that creates a hard ceiling on how many cases the firm can take in any given month, regardless of how many leads come in</li>
+    <li>No after-hours intake coverage — the office closes at 5pm Monday through Thursday and at 3pm on Fridays, meaning any accident victim who calls outside those hours gets no response and is likely to call a competitor before morning</li>
+    <li>No defined intake system or structured follow-up sequence for leads who do not sign on the first call — prospects who need more time to decide have no process keeping them engaged</li>
+    <li>No intake tracking or lead management system — there is no way to know how many leads contacted the firm this month, how many signed, and how many were lost and why</li>
+  </ul>
+
+  <div class="blind-spot"><strong>Blind Spot:</strong> The personal signature requirement feels like a compliance constraint, but it is also an operational design choice — many PI firms solve this with a hybrid model where trained intake staff qualify and close leads, with the attorney signing same-day via a streamlined review process rather than being the first point of contact on every call. There may be more flexibility in how Adam fulfills this requirement than he currently believes.</div>
+
+  <div class="pgp-label">The Positive</div>
+  <ul class="pgp-list">
+    <li>Adam's personal involvement in every client engagement means new clients feel heard and cared for from the first interaction — a trust signal that referral-based clients especially notice</li>
+    <li>The 6–8 month case cycle and consistent referral base mean the firm has a predictable rhythm even without a formal intake process — this rhythm becomes a foundation to build on rather than something to replace</li>
+  </ul>
+
+  <div class="pgp-label">The Gap</div>
+  <ul class="pgp-list">
+    <li>Every hour Adam spends as the first point of contact on intake calls is an hour he cannot spend in the CEO role — as marketing drives more inbound leads, the intake bottleneck becomes the firm's limiting constraint, not the lead volume</li>
+    <li>After-hours leads are the highest-intent prospects in personal injury — accident victims call immediately after an accident, not the next business day; without coverage, these calls go directly to Kramer Law Group and Siegfried &amp; Jensen</li>
+    <li>Without a follow-up sequence, leads who do not sign on day one are effectively abandoned — in a practice area where the decision cycle can span days, this is a systematic revenue leak with no current way to measure or stop it</li>
+  </ul>
+
+  <div class="dbm-closing">Adam described wanting to step out of the day-to-day and operate as a CEO — but as long as every signed case requires his personal involvement at intake, that transition cannot happen. Intake is not just a revenue problem; it is the structural barrier between where he is now and the freedom he is building toward.</div>
+
+</div>
+
+<!-- WEBSITE CONTACT FORMS & LIVE CHAT -->
+<div class="subsection-header" id="website-intake">
+  <div class="subsection-header-inner"><h3>Website Contact Forms &amp; Live Chat</h3></div>
+</div>
+<div class="content-wrap">
+
+  <ul class="pgp-list">
+    <li>Website contact form availability could not be confirmed — the site's bot-protection configuration blocked direct access during this audit; it is unknown whether a contact form exists above the fold or requires visitors to navigate to a separate page</li>
+    <li>No live chat widget was observed from external access — if the site has no live chat or callback option, after-hours website visitors have no way to request contact and are likely leaving for competitors who do</li>
+    <li>Without a confirmed above-fold CTA, every dollar spent on paid traffic is sending visitors to a site that may not be designed to capture them — this makes intake the bottleneck even before a lead reaches the phone</li>
+  </ul>
+  <p class="section-intro">These findings are also referenced in the Website Audit section.</p>
+
+</div>
+<div class="back-to-top"><a href="#toc">↑ Back to Top</a></div>
+
+
+<div class="section-header" id="team">
+  <div class="section-header-inner"><h2>Team Assessment</h2></div>
+</div>
+
+
+
+<div class="content-wrap">
+
+</div>
+<div class="section-img-wrap"><img src="https://www.dropbox.com/scl/fi/r6o7um1xcdd490t9807vd/Self-Managing-Team.png?rlkey=ywamsca6rpb34l1iasysyk10w&st=dm86b0kz&raw=1" alt="Self-Managing Team" /></div>
+<div class="content-wrap">
+
+  <p class="section-intro">With Bryan Larson's retirement in March 2026, Adam became the sole owner, sole licensed attorney, and sole decision-maker of the firm — a role that places him at the center of every function that matters, from case strategy to client signing to firm direction. Until this changes, the owner cannot have more free time — no matter how much revenue grows.</p>
+
+  <div class="status-row">
+    <div class="status-circle amber"></div>
+    <div class="status-label">Status: AMBER</div>
+  </div>
+
+  <div class="pgp-label">The Problem</div>
+  <ul class="pgp-list">
+    <li>Adam is now the sole owner and sole licensed attorney — every case that requires an attorney's judgment, every client signing, and every strategic decision flows through him personally</li>
+    <li>Support staff handle approximately 60 active cases, but cannot sign new clients, provide legal counsel, or represent the firm independently — the team handles execution, not authority</li>
+    <li>No second attorney, no management layer, and no documented processes — if Adam is unavailable for any reason, the firm does not have a defined way to keep operating at full capacity</li>
+    <li>No infrastructure for the CEO role Adam has described — stepping back from operations requires systems, documented processes, and people who can make decisions without him, none of which currently exist</li>
+  </ul>
+
+  <div class="blind-spot"><strong>Blind Spot:</strong> The five-year revenue plateau is not primarily a marketing problem — it is a capacity problem. When the owner is the bottleneck for every signed case, growth in leads does not translate to growth in signed cases. Until the intake and team constraints are resolved, more marketing spend produces more leads that cannot be converted at scale.</div>
+
+  <div class="pgp-label">The Positive</div>
+  <ul class="pgp-list">
+    <li>Support staff are actively managing approximately 60 active cases — the team has meaningful operational capacity and frees Adam from case administration even if not from attorney-level decisions</li>
+    <li>Adam has demonstrated he can run the firm independently following his father's retirement — the transition to sole ownership has not disrupted operations, which shows operational stability to build from</li>
+  </ul>
+
+  <div class="pgp-label">The Gap</div>
+  <ul class="pgp-list">
+    <li>Without a second attorney, case capacity is hard-capped by Adam's hours — every additional signed case is another file that requires his direct involvement, which is not a path to the CEO role he described</li>
+    <li>Without documented processes and a management layer, the firm cannot train toward independence — staff can only do what they have been personally shown, and there is no system for passing that knowledge down without Adam in the room</li>
+    <li>Without a path to stepping back from operations, Adam's income remains permanently tied to his personal hours — the freedom and financial security he described require a firm that runs without him, and that firm does not yet exist</li>
+  </ul>
+
+  <div class="dbm-closing">Adam has spent twelve years building a firm that clients trust and a reputation that earns referrals — the next phase is building a firm that grows and operates without requiring him at every step. That is not a talent problem. It is a systems and structure problem that can be solved.</div>
+
+</div>
+<div class="back-to-top"><a href="#toc">↑ Back to Top</a></div>
+
+
+<div class="section-header" id="profit">
+  <div class="section-header-inner"><h2>Profit Plan Assessment</h2></div>
+</div>
+
+
+
+<div class="content-wrap">
+
+</div>
+<div class="section-img-wrap"><img src="https://www.dropbox.com/scl/fi/rh2dxdoqsf7tqastam640/Profits.png?rlkey=kss013g0ov5jnuzcoklog7awr&st=iog622wf&raw=1" alt="Profit" /></div>
+<div class="content-wrap">
+
+  <p class="section-intro">Larson Law generates approximately $1.1 million per year, but revenue has been flat for five consecutive years — and with average case fees declining from $13,000 to $11,000 this year, the firm is earning less per case while costs continue to rise. Revenue is vanity, profit is sanity. Until there is a clear profit plan, growth may just mean more work without more wealth.</p>
+
+  <div class="status-row">
+    <div class="status-circle amber"></div>
+    <div class="status-label">Status: AMBER</div>
+  </div>
+
+  <div class="pgp-label">The Problem</div>
+  <ul class="pgp-list">
+    <li>Revenue has been flat at approximately $1.1 million for five consecutive years — the firm has not grown, and inflation and rising costs mean the real value of that revenue is declining each year</li>
+    <li>Average case fee has dropped from approximately $13,000 to approximately $11,000 this year — a trend that erodes margin case by case without any visible warning signal unless someone is tracking it</li>
+    <li>Marketing spend of $2–3K/month on FindLaw directory listings and social posting produces no tracked results — the firm is spending money with no measurement, no attribution, and no way to know what, if anything, it is returning</li>
+    <li>The need to consider a line of credit to fund marketing investment suggests limited financial reserves — a firm generating $1.1M per year that needs external financing to invest in growth likely has a profit margin and reserve problem that growth alone will not solve</li>
+  </ul>
+
+  <div class="blind-spot"><strong>Blind Spot:</strong> Declining average case value is a margin problem that marketing cannot fix. If the mix of cases is shifting toward lower-value matters — or if settlement outcomes are declining — doubling revenue while the average case fee continues to fall means running harder just to stay even. Understanding why the average dropped by $2,000 per case this year is one of the most important financial questions the firm needs to answer before scaling.</div>
+
+  <div class="pgp-label">The Positive</div>
+  <ul class="pgp-list">
+    <li>Adam knows his key numbers — revenue, average case value, case cycle time, and active case count — which gives him a baseline that many solo practitioners do not have and a foundation to build financial planning from</li>
+    <li>The 6–8 month case cycle is relatively short for personal injury, which creates a faster cash flow cycle than firms handling multi-year litigation — this is a structural profit advantage worth protecting and optimizing</li>
+  </ul>
+
+  <div class="pgp-label">The Gap</div>
+  <ul class="pgp-list">
+    <li>Without a profit plan that accounts for the declining average case fee, growth in case volume may not produce proportional growth in take-home income — more cases at $11K is not the same as more cases at $13K, and the gap compounds at scale</li>
+    <li>Without marketing attribution, the firm cannot distinguish between spend that produces cases and spend that produces nothing — the $2–3K/month going to FindLaw may be dead weight, but there is currently no data to confirm or redirect it</li>
+    <li>Without financial reserves, the firm has limited ability to invest aggressively in marketing during the months where it would make the most difference — a line of credit can bridge the gap, but only if the underlying profit model can service the investment</li>
+  </ul>
+
+  <div class="dbm-closing">Growing revenue without growing profit is just growing the grind — Adam has described wanting financial security, the ability to retire comfortably, and the freedom that comes from a firm that runs itself. None of those outcomes are possible without a clear profit plan running alongside the growth plan.</div>
+
+</div>
+<div class="back-to-top"><a href="#toc">↑ Back to Top</a></div>
+
+
+<!-- ===== SECTION 10: WHAT'S POSSIBLE ===== -->
+<!-- ⚠️ NO CSS IN THIS FILE. No <style> blocks. No inline styles. No style="" attributes.
+     All styling comes from audit_styles.css only. Use only existing class names.
+     If you find yourself writing CSS — stop and delete it. -->
+
+<div class="section-header" id="growth-journey">
+  <div class="section-header-inner">
+    <h2>Here's What's Possible for Larson Law</h2>
+  </div>
+</div>
+
+<div class="whats-possible-body">
+  <div class="content-wrap">
+
+    <p class="bridge-text">Adam Larson has spent twelve years building a personal injury practice on a foundation of trust, results, and referrals — and he has just taken full ownership of a firm with nearly four decades of reputation behind it. The question is not whether he has earned the right to grow. It is whether the systems he builds from here will give him the freedom and financial security he described, or whether the next decade looks exactly like the last five years. It does not have to. The gap between where Larson Law is today and where it can be is a systems gap — and systems can be built.</p>
+
+    <div class="transform-card">
+      <div class="transform-icon"><span>1</span></div>
+      <div class="transform-text">Adam steps into the CEO role he described — the firm has a trained intake team handling first contact, a second attorney managing cases, and a full digital marketing system generating 8 to 12 new signed cases every month without Adam being involved in any of it. His income does not depend on how many calls he personally took this week.</div>
+    </div>
+
+    <div class="transform-card">
+      <div class="transform-icon"><span>2</span></div>
+      <div class="transform-text">Larson Law reaches $2.2 million per year — revenue has doubled, average case value has been stabilized, and the firm's Google presence means that every accident victim in South Jordan who searches online finds Larson Law before they find Kramer, Siegfried, or anyone else. The phone rings because of systems, not because of luck.</div>
+    </div>
+
+    <div class="transform-card">
+      <div class="transform-icon"><span>3</span></div>
+      <div class="transform-text">Adam has the time and financial security he set out to build — he can take a vacation and the firm keeps running, he can be present for his family without checking his phone, and he has built something with real value that gives him options: keep growing, bring on a partner, or sell the firm on his terms when he is ready. The freedom he described is not a distant goal — it is a specific destination with a clear path to get there.</div>
+    </div>
+
+    <div class="wp-closing">
+      <p>This is not a fantasy. <span>SMB Team can make this a reality for Larson Law.</span></p>
+    </div>
+
+  </div>
+</div>
+<div class="wp-back-to-top"><a href="#toc">↑ Back to Top</a></div>
+
+
+<!-- ===== SECTION 11: YOUR NEXT STEPS ===== -->
+<!-- ⚠️ NO CSS IN THIS FILE. No <style> blocks. No inline styles. No style="" attributes.
+     All styling comes from audit_styles.css only. Use only existing class names.
+     If you find yourself writing CSS — stop and delete it. -->
+
+<!-- QUICK WINS -->
+<div class="section-header" id="next-steps">
+  <div class="section-header-inner">
+    <h2>Quick Wins for Larson Law</h2>
+  </div>
+</div>
+<div class="content-wrap">
+
+  <!-- QUICK WIN CARD 1 — Lead Gen: Review Campaign -->
+  <div class="quick-win-card">
+    <div class="qw-header">
+      <div class="qw-title">Launch Google Business Profile Review Campaign</div>
+      <div class="qw-badges">
+        <span class="badge badge-lead-gen">Lead Gen</span>
+        <span class="badge badge-quick-win">Quick Win</span>
+      </div>
+    </div>
+    <div class="qw-row why">
+      <div class="qw-row-label">Why It Matters</div>
+      Near-zero Google reviews means Larson Law cannot rank in the local 3-pack for any personal injury keyword — every PI case that begins with a Google search goes to a competitor before Larson Law's name ever appears.
+    </div>
+    <div class="qw-row who">
+      <div class="qw-row-label">Who Is Doing It Better</div>
+      <strong>Kramer Law Group</strong> — has systematically built 300+ Google reviews at 4.9 stars from every closed case, giving them dominant 3-pack positioning across the entire South Jordan and West Jordan PI market.
+    </div>
+    <div class="qw-row opportunity">
+      <div class="qw-row-label">The Opportunity</div>
+      A structured review request to every closed case in the last 24 months — via text, email, and a simple follow-up sequence — can generate 50+ Google reviews within 90 days. At 200+ reviews, Larson Law becomes competitive for 3-pack placement and LSA eligibility across the South Jordan metro area.
+    </div>
+  </div>
+
+  <!-- QUICK WIN CARD 2 — Lead Gen: LSA -->
+  <div class="quick-win-card">
+    <div class="qw-header">
+      <div class="qw-title">Apply for Google Local Service Ads (Google Screened)</div>
+      <div class="qw-badges">
+        <span class="badge badge-lead-gen">Lead Gen</span>
+        <span class="badge badge-quick-win">Quick Win</span>
+      </div>
+    </div>
+    <div class="qw-row why">
+      <div class="qw-row-label">Why It Matters</div>
+      Local Service Ads appear above all paid search results, above the map pack, and above all organic listings — the highest-visibility position in Google for PI searches, and Larson Law currently has no presence there at all.
+    </div>
+    <div class="qw-row who">
+      <div class="qw-row-label">Who Is Doing It Better</div>
+      <strong>Siegfried &amp; Jensen</strong> and <strong>Parker &amp; McConkie</strong> — with 1,558 and 1,000+ Google reviews respectively, both firms almost certainly hold top LSA positions and capture the highest-intent PI prospects before Larson Law's website ever loads.
+    </div>
+    <div class="qw-row opportunity">
+      <div class="qw-row-label">The Opportunity</div>
+      Completing the Google Screened background check and verification process is a one-time investment that unlocks the top position on Google for every PI search in South Jordan — and you only pay when a real prospect calls you directly, not per click.
+    </div>
+  </div>
+
+  <!-- QUICK WIN CARD 3 — Intake: 24/7 Coverage -->
+  <div class="quick-win-card">
+    <div class="qw-header">
+      <div class="qw-title">Implement 24/7 Attorney Coverage Solution</div>
+      <div class="qw-badges">
+        <span class="badge badge-intake">Intake</span>
+        <span class="badge badge-quick-win">Quick Win</span>
+      </div>
+    </div>
+    <div class="qw-row why">
+      <div class="qw-row-label">Why It Matters</div>
+      Car accident victims call attorneys within hours of an accident — often on evenings and weekends. With the office closing at 5pm on weekdays and 3pm on Fridays, every after-hours call from a PI prospect currently goes to a competitor with 24/7 coverage.
+    </div>
+    <div class="qw-row opportunity">
+      <div class="qw-row-label">The Opportunity</div>
+      A 24/7 attorney intake solution captures evening and weekend cases that are currently lost entirely — compliant with Utah State Bar requirements — and means that the marketing investment Larson Law makes in paid ads does not stop working when Adam goes home for the night.
+    </div>
+  </div>
+
+  <!-- QUICK WIN CARD 4 — Lead Gen: Google PPC -->
+  <div class="quick-win-card">
+    <div class="qw-header">
+      <div class="qw-title">Launch Google PPC Campaign for PI Keywords</div>
+      <div class="qw-badges">
+        <span class="badge badge-lead-gen">Lead Gen</span>
+        <span class="badge badge-long-term">Long-Term Play</span>
+      </div>
+    </div>
+    <div class="qw-row why">
+      <div class="qw-row-label">Why It Matters</div>
+      Larson Law does not appear to be running paid search ads for any PI keyword while Kramer Law Group, Siegfried &amp; Jensen, and Parker &amp; McConkie capture every high-intent online PI prospect in the South Jordan market every single day.
+    </div>
+    <div class="qw-row who">
+      <div class="qw-row-label">Who Is Doing It Better</div>
+      <strong>Siegfried &amp; Jensen</strong> — spending heavily on PI keywords with "$1.2B+ recovered" ad messaging and a massive review base that gives them a quality score advantage, driving up CPCs for every competitor in the Salt Lake County market.
+    </div>
+    <div class="qw-row opportunity">
+      <div class="qw-row-label">The Opportunity</div>
+      South Jordan-specific terms like "personal injury attorney South Jordan" and "car accident lawyer South Jordan" carry significantly lower CPCs than broad Salt Lake City keywords — and Larson Law's local address is a quality score advantage. These terms give Larson Law a cost-efficient entry into paid search before expanding to the broader metro.
+    </div>
+  </div>
+
+  <!-- QUICK WIN CARD 5 — Profit: ROI Tracking -->
+  <div class="quick-win-card">
+    <div class="qw-header">
+      <div class="qw-title">Install Marketing ROI Tracking and Case Acquisition Cost System</div>
+      <div class="qw-badges">
+        <span class="badge badge-profit">Profit</span>
+        <span class="badge badge-quick-win">Quick Win</span>
+      </div>
+    </div>
+    <div class="qw-row why">
+      <div class="qw-row-label">Why It Matters</div>
+      $2–3K per month is currently going to FindLaw and social posting with no tracked results — there is no way to know whether this spend produces any cases at all, and no mechanism to reallocate it to something that does.
+    </div>
+    <div class="qw-row opportunity">
+      <div class="qw-row-label">The Opportunity</div>
+      Installing call tracking, UTM parameters, and a simple case source attribution system converts marketing spend from an invisible cost into a measurable investment — making it possible to identify what produces cases and cut what does not, immediately improving profit margin without growing revenue.
+    </div>
+  </div>
+
+  <!-- QUICK WIN CARD 6 — Lead Gen: City Landing Pages -->
+  <div class="quick-win-card">
+    <div class="qw-header">
+      <div class="qw-title">Build City Landing Pages for South Jordan Metro Area</div>
+      <div class="qw-badges">
+        <span class="badge badge-lead-gen">Lead Gen</span>
+        <span class="badge badge-long-term">Long-Term Play</span>
+      </div>
+    </div>
+    <div class="qw-row why">
+      <div class="qw-row-label">Why It Matters</div>
+      Every PI search with a city modifier — "personal injury attorney Draper," "car accident lawyer Herriman," "Riverton UT injury attorney" — currently returns competitors rather than Larson Law, despite the firm being geographically closer to these cities than many of those competitors.
+    </div>
+    <div class="qw-row who">
+      <div class="qw-row-label">Who Is Doing It Better</div>
+      <strong>Parker &amp; McConkie</strong> — city-specific landing pages across Utah capture every local search modifier in the Salt Lake metro, giving them organic visibility in markets where Larson Law's name never appears.
+    </div>
+    <div class="qw-row opportunity">
+      <div class="qw-row-label">The Opportunity</div>
+      Five to eight geo-targeted landing pages for Draper, Riverton, Herriman, Sandy, Murray, and West Jordan unlock an entirely new tier of organic search traffic within 90 to 180 days — cases that are currently going to competitors by default.
+    </div>
+  </div>
+
+  <!-- QUICK WIN CARD 7 — Team: Second Attorney Path -->
+  <div class="quick-win-card">
+    <div class="qw-header">
+      <div class="qw-title">Build a Documented Growth Plan and Second Attorney Hire Path</div>
+      <div class="qw-badges">
+        <span class="badge badge-team">Team</span>
+        <span class="badge badge-long-term">Long-Term Play</span>
+      </div>
+    </div>
+    <div class="qw-row why">
+      <div class="qw-row-label">Why It Matters</div>
+      Adam is the only licensed attorney and the only signing authority in the firm — every new case requires his personal involvement, which means case volume is permanently capped by his available hours regardless of how much marketing spend increases.
+    </div>
+    <div class="qw-row opportunity">
+      <div class="qw-row-label">The Opportunity</div>
+      Paid marketing creates the consistent case volume that justifies and funds a second attorney hire — and a documented growth plan creates a structured path from sole practitioner to law firm CEO, including the intake, process, and management infrastructure needed to make the transition real rather than theoretical.
+    </div>
+  </div>
+
+  <!-- QUICK WIN CARD 8 — Intake: Spanish Campaign -->
+  <div class="quick-win-card">
+    <div class="qw-header">
+      <div class="qw-title">Launch Spanish-Language PI Intake Campaign</div>
+      <div class="qw-badges">
+        <span class="badge badge-intake">Intake</span>
+        <span class="badge badge-long-term">Long-Term Play</span>
+      </div>
+    </div>
+    <div class="qw-row why">
+      <div class="qw-row-label">Why It Matters</div>
+      Spanish-speaking accident victims in Salt Lake County represent a significant and growing PI market that is substantially underserved by most competing firms — and Spanish-language PI keywords carry lower CPCs than English-language equivalents in this market.
+    </div>
+    <div class="qw-row opportunity">
+      <div class="qw-row-label">The Opportunity</div>
+      Spanish-language Google and Meta ads paired with a bilingual intake process creates a case acquisition channel that most South Jordan competitors cannot immediately replicate — giving Larson Law a differentiated market position and a source of new signed cases at lower cost per lead than the English-language competitive market.
+    </div>
+  </div>
+
+</div>
+
+<!-- HOW SMB TEAM CAN HELP -->
+<div class="subsection-header" id="recommendation">
+  <div class="subsection-header-inner">
+    <h3>How SMB Team Can Help Larson Law</h3>
+  </div>
+</div>
+<div class="content-wrap">
+
+  <!-- BLOCK 1: CUSTOM CLOSING STATEMENT -->
+  <div class="closing-statement-block">
+    <p>We help <span class="dbm-highlight">personal injury attorneys who are trapped in the day-to-day</span> get a predictable flow of high-value cases so they can <span class="dbm-highlight">step into the CEO role, build a firm that runs without them, and finally secure the financial future they have been building toward.</span></p>
+  </div>
+
+  <div style="height:24px;"></div>
+
+  <!-- BLOCK 2: DBM SUBHEADER + PACKAGE RECOMMENDATIONS -->
+  <div class="dbm-subheader">Adam has spent twelve years earning the right to lead a firm that generates real financial security — now it is time to build the systems that turn that potential into reality, with a firm that grows predictably, signs cases consistently, and eventually runs without him at every step.</div>
+
+  <div class="package-block">
+    <div class="package-header">
+      <div class="package-label">Recommended Marketing Package</div>
+      <h4>Full Service Marketing — Growth</h4>
+    </div>
+    <div class="package-body">
+      <div class="package-why">Larson Law needs a controlled, predictable lead generation system to replace referral volatility — the Growth tier gives Adam a full-channel digital presence including Google Ads, LSA, and Meta, with a dedicated team managing every campaign so he is not the one running the marketing. This is how the firm breaks through five years of flat revenue and builds toward the $2.2M goal.</div>
+      <div class="package-deliverables-label">Deliverables Include</div>
+      <ul class="package-list">
+        <li>Google Pay-Per-Click campaigns targeting South Jordan, Draper, Riverton, Herriman, Sandy, and Murray PI keywords</li>
+        <li>Local Service Ads setup and Google Screened verification to achieve above-everything placement on PI searches</li>
+        <li>Facebook and Instagram advertising including retargeting for website visitors and lead generation campaigns</li>
+        <li>Google Business Profile optimization and review campaign launch to build toward 200+ reviews and 3-pack eligibility</li>
+        <li>Dedicated account manager, monthly performance reporting, and ongoing campaign optimization</li>
+        <li>Website and landing page strategy to ensure paid traffic converts — including geo-targeted city pages for the South Jordan metro</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="package-block">
+    <div class="package-header">
+      <div class="package-label">Recommended Coaching Package</div>
+      <h4>Elite Coach Plus</h4>
+    </div>
+    <div class="package-body">
+      <div class="package-why">Marketing alone will not make Adam a CEO — he needs a structured plan for transitioning from solo practitioner to firm owner, including intake systems, a second attorney hire roadmap, and the business planning framework to build financial security alongside revenue growth. Elite Coach Plus gives Adam weekly access to a coach who has helped attorneys make exactly this transition.</div>
+      <div class="package-deliverables-label">Deliverables Include</div>
+      <ul class="package-list">
+        <li>Weekly group coaching sessions with law firm growth specialists focused on CEO-transition strategy</li>
+        <li>Practice area masterminds with other PI attorneys navigating the same scaling challenges</li>
+        <li>Business planning framework — revenue goals, profit targets, hiring plan, and 12-month milestone map</li>
+        <li>Intake documentation and process design — building the systems needed to eventually step back from every client signing</li>
+        <li>Virtual access to quarterly growth workshops and one annual in-person workshop</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- BLOCK 3 + 4: INVESTMENT GRID -->
+  <div class="investment-grid">
+
+    <!-- BLOCK 3: SMB TEAM MONTHLY INVESTMENT -->
+    <div class="investment-block">
+      <div class="investment-header"><h4>SMB Team Monthly Investment</h4></div>
+      <div class="investment-body">
+        <div class="investment-row">
+          <span class="label">Full Service Marketing — Growth</span>
+          <span><span class="retail">$5,997/mo</span>&nbsp;<span class="bundled">$5,397/mo</span></span>
+        </div>
+        <div class="investment-row">
+          <span class="label">Elite Coach Plus</span>
+          <span><span class="retail">$3,497/mo</span>&nbsp;<span class="bundled">$3,200/mo</span></span>
+        </div>
+        <div class="investment-total">
+          <span class="total-label">Total Monthly Investment</span>
+          <span class="total-amount">$8,597/mo</span>
+        </div>
+        <div class="investment-savings">You save $897/month by bundling</div>
+      </div>
+    </div>
+
+    <!-- BLOCK 4: RECOMMENDED AD SPEND -->
+    <div class="investment-block">
+      <div class="investment-header"><h4>Recommended Monthly Ad Spend</h4></div>
+      <div class="investment-body">
+        <p style="font-size:12px;color:#666;font-style:italic;margin-bottom:12px;">Goes directly to ad platforms — not to SMB Team.</p>
+        <div class="roi-row"><span>Recommended ad spend</span><span style="font-weight:700;">$12,000–$20,000/mo</span></div>
+        <div class="roi-row"><span>Estimated case value</span><span style="font-weight:700;">$11,000</span></div>
+        <div class="roi-row"><span>Est. cases per month</span><span style="font-weight:700;">6–9 cases</span></div>
+        <div class="roi-row"><span>Est. monthly revenue from ads</span><span style="font-weight:700;color:#3B6D11;">$66,000–$99,000</span></div>
+        <p class="roi-disclaimer">These are estimates based on industry averages and market data. Results are not guaranteed and will vary based on market conditions, competition, and firm-specific factors.</p>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- BLOCK 5: WHAT HAPPENS IN THE FIRST 90 DAYS -->
+  <div class="package-block">
+    <div class="package-header"><h4>What Happens in the First 90 Days</h4></div>
+    <div class="package-body">
+      <ul class="focus-list">
+        <li>Google Ads and Local Service Ads campaigns go live — Larson Law begins appearing in paid results for South Jordan PI keywords within 2 to 3 weeks, generating the first paid leads before the end of month one</li>
+        <li>Complete the Google Screened background check and verification process to unlock LSA above-everything placement for personal injury searches in South Jordan</li>
+        <li>Kick off the systematic Google review campaign — contact all closed cases from the last 24 months with a structured text and email sequence, with a goal of 50+ reviews in the first 90 days</li>
+        <li>Implement 24/7 attorney intake coverage — begin capturing evening and weekend cases that are currently lost, so the marketing investment does not go dark when the office closes</li>
+        <li>Elite Coach Plus coaching kickoff — CEO transition plan documented, intake process mapped, 12-month revenue and hiring milestone map completed, and first 90-day goals set with accountability structure in place</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- BLOCK 6: GROWTH ROADMAP -->
+  <div class="package-block">
+    <div class="package-header"><h4>What Happens Next</h4></div>
+    <div class="package-body">
+      <div class="roadmap-stack">
+
+        <div class="phase-card">
+          <div class="phase-header">
+            <div class="phase-number">Phase 1</div>
+            <div class="phase-title">Foundation</div>
+            <div class="phase-trigger">Starting Now</div>
+          </div>
+          <div class="phase-body">
+            <ul class="phase-list">
+              <li>Full Service Marketing Growth launched — Google Ads, LSA, Meta campaigns, and review campaign all running simultaneously</li>
+              <li>Elite Coach Plus kickoff — business plan, intake documentation, and CEO transition roadmap complete</li>
+              <li>24/7 attorney intake coverage implemented — evening and weekend cases captured from day one</li>
+              <li>First 10 to 15 paid leads in the pipeline within 30 days; first signed cases from digital within 60 days</li>
+            </ul>
+            <div class="phase-dbm">This is when Adam stops being invisible online and starts building the case pipeline that gives him real options — not hoping referrals keep coming in.</div>
+          </div>
+        </div>
+
+        <div class="phase-card">
+          <div class="phase-header">
+            <div class="phase-number">Phase 2</div>
+            <div class="phase-title">Operational Scale</div>
+            <div class="phase-trigger">Once the firm hits 10+ signed cases per month consistently</div>
+          </div>
+          <div class="phase-body">
+            <ul class="phase-list">
+              <li>Add FCOO Advisor — bring in operational structure, accountability systems, and management infrastructure to support a growing team</li>
+              <li>Second attorney hire — expand signing capacity beyond Adam's personal hours and raise the ceiling on case volume</li>
+              <li>Spanish-language campaign launch across Google and Meta — capture the underserved Salt Lake County Hispanic PI market at lower CPL</li>
+            </ul>
+            <div class="phase-dbm">This is when Adam can begin to step back from intake and operations — because there is a team and a system in place that does not need him at every step.</div>
+          </div>
+        </div>
+
+        <div class="phase-card">
+          <div class="phase-header">
+            <div class="phase-number">Phase 3</div>
+            <div class="phase-title">Optimize</div>
+            <div class="phase-trigger">Once the firm hits $1.5M+ in annual revenue</div>
+          </div>
+          <div class="phase-body">
+            <ul class="phase-list">
+              <li>Add FCFO Advisor — full financial visibility, profit planning, and reserve strategy tied to the revenue and freedom goals Adam described</li>
+              <li>Marketing tier upgrade to Dominate — expanded ad spend budget and full city landing page build for the entire South Jordan metro</li>
+              <li>CEO transition complete — Adam is leading the firm strategically, not operationally, and the financial security he has been building toward is real</li>
+            </ul>
+            <div class="phase-dbm">This is the destination Adam described — a firm that runs itself, income that is not tied to his personal hours, and the financial security that gives his family real options.</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- BLOCK 7: OUTCOME CARDS -->
+  <div class="scorecard-label">Here Is What This Builds For You</div>
+  <div class="outcome-grid">
+    <div class="outcome-card">
+      <div class="outcome-title">More Profit</div>
+      <div class="outcome-text">Revenue doubles from $1.1M to $2.2M with a clear profit plan that tracks margins, measures marketing ROI, and builds the financial reserves that give Adam real security — not just revenue that disappears into overhead and untracked spend.</div>
+    </div>
+    <div class="outcome-card">
+      <div class="outcome-title">More Freedom</div>
+      <div class="outcome-text">Adam steps into the CEO role he described — the firm signs new cases, runs operations, and generates revenue whether he is in the office or not. His time becomes his to spend, not something the firm claims by default.</div>
+    </div>
+    <div class="outcome-card">
+      <div class="outcome-title">Better Client Results</div>
+      <div class="outcome-text">With a predictable lead system, after-hours coverage, and an intake process that responds to prospects immediately, Larson Law captures the right clients faster — and clients who are represented sooner get better outcomes from their cases.</div>
+    </div>
+  </div>
+
+  <!-- BLOCK 8: PERSONAL CLOSING -->
+  <div class="personal-closing">
+    <p><em>Adam, you inherited something rare — nearly four decades of reputation in a city where trust is the currency that gets cases signed. What you have built, and what your father built before you, is not in question. What this audit is about is making sure the next twelve years do not look like the last five — flat revenue, referral dependency, and the creeping sense that growth is always just out of reach.</em></p>
+    <p><em>You have already done the hard part. You know your numbers, you know your market, and you know exactly what you want the firm to become. The systems that turn that into reality are not complicated — they are just not built yet. That is what we do.</em></p>
+    <p class="final-line">This is not a fantasy. SMB Team can make this a reality for Larson Law.</p>
+  </div>
+
+</div>
+<div class="back-to-top"><a href="#toc">↑ Back to Top</a></div>
+
+
+</body>
+</html>
