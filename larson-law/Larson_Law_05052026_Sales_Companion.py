@@ -149,7 +149,7 @@ story.append(Paragraph("<b>What it does for him:</b>", S["subsection"]))
 story.append(bd("Replaces referral dependency with controlled lead flow — signed cases every month, not just when referrals come in."))
 story.append(bd("Builds the Google presence (reviews, 3-pack, LSA) that competitors use to dominate every online PI search."))
 
-story.append(Paragraph("<b>Full Service Marketing — Growth  |  $5,397/mo bundled</b>", S["subsection"]))
+story.append(Paragraph("<b>Full Service Marketing — Growth  |  $7,397/mo bundled</b>", S["subsection"]))
 story.append(b("PI firm: Essentials eliminated. $1M+ revenue: Growth band ($1M–$3M) is correct tier."))
 story.append(b("Aggressive 2x revenue goal with line-of-credit funding — Growth more responsible than Dominate as entry."))
 story.append(b("Path to Dominate upgrade at $1.5M+ when ad spend justifies the tier move."))
@@ -189,8 +189,8 @@ story.append(Paragraph("<i>All figures are estimates. Not guaranteed.</i>", S["d
 
 story.append(Paragraph("<b>How calculated:</b>", S["subsection"]))
 story.append(b("<b>Conservative:</b> PI/MVA high-comp minimums: PPC $5K + LSA $2K + Meta Retargeting $1.5K + Meta Cold $3.5K = $12K."))
-story.append(b("<b>Aggressive:</b> $2.2M goal x 20% / 12 = $36,667. Tier 3 (x1.15) = $42,167. Minus $5,397 fee = $36,770. Capped at $20K."))
-story.append(b("Total at aggressive: $28,597/mo = ~31.2% of $1.1M revenue. Under the 35% cap."))
+story.append(b("<b>Aggressive:</b> $2.2M goal x 20% / 12 = $36,667. Tier 3 (x1.15) = $42,167. Minus $7,397 fee = $34,770. Capped at $20K."))
+story.append(b("Total at aggressive: $30,597/mo = ~33.4% of $1.1M revenue. Under the 35% cap."))
 
 story.append(thin_rule())
 
@@ -211,9 +211,9 @@ story.append(Paragraph("Investment At A Glance", S["section"]))
 
 price_data = [
     [Paragraph("<b>Full Service Marketing — Growth</b>", S["price_main"]),
-     Paragraph("$5,397/mo", S["price_main"])],
+     Paragraph("$7,397/mo", S["price_main"])],
     [Paragraph("Google Ads, LSA, Meta Ads, GBP optimization, review campaign, city landing pages.", S["price_detail"]),
-     Paragraph("<strike>$5,997</strike> stand alone", S["price_detail"])],
+     Paragraph("<strike>$7,997</strike> stand alone", S["price_detail"])],
     [Paragraph("<b>Elite Coach Plus</b>", S["price_main"]),
      Paragraph("$3,200/mo", S["price_main"])],
     [Paragraph("Weekly coaching, masterminds, CEO transition plan, quarterly + annual workshops.", S["price_detail"]),
@@ -236,7 +236,7 @@ pt.setStyle(TableStyle([
 ]))
 story.append(pt)
 story.append(Paragraph(
-    "Total: $8,597/mo + $12,000–$20,000 ad spend  |  Save $897/mo by bundling  |  28.2%–31.2% of revenue (under 35% cap)",
+    "Total: $10,597/mo + $12,000–$20,000 ad spend  |  Save $897/mo by bundling  |  24.6%–33.4% of revenue (under 35% cap)",
     S["savings"]))
 
 doc.build(story, onFirstPage=add_page_elements, onLaterPages=add_page_elements)
