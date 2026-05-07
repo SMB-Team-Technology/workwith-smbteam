@@ -1,0 +1,1283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- FILL: FIRM_NAME in the title tag -->
+<title>Law Firm Growth Audit — Beacon Legacy Group</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Montserrat:wght@700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="audit_styles.css">
+<!-- HubSpot Analytics -->
+<script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/4570385.js"></script>
+</head>
+<body>
+
+<!--
+  ============================================================
+  SMB TEAM — LAW FIRM GROWTH AUDIT
+  Master Assembly File
+
+  ⚠️ CRITICAL — READ BEFORE WRITING A SINGLE CHARACTER:
+
+  This file does NOT contain a <style> block.
+  This file does NOT use inline styles (no style="" attributes).
+  ALL styling comes exclusively from audit_styles.css.
+
+  If you find yourself writing CSS — in a <style> tag, inline,
+  or anywhere else — STOP. Delete it. Use only the class names
+  that already exist in audit_styles.css. Do not invent new ones.
+
+  Violating this rule is what causes the report to look wrong.
+  The CSS is already written. Your only job is to fill in content.
+
+  ============================================================
+
+  INSTRUCTIONS FOR COWORK:
+  This file assembles the completed audit by inserting the
+  content of each completed section fragment in order.
+
+  Workflow:
+  1. Complete all research and analysis first. Write nothing yet.
+  2. Open section_01_cover.html. Fill in all placeholders. Save.
+  3. Open section_02_toc.html. Fill in all placeholders. Save.
+  4. Open section_03_firm_overview.html. Fill in all placeholders. Save.
+  5. Section 04 (About SMB Team) is static — copy as-is.
+  6. Open section_05_growth_health.html. Fill in all placeholders. Save.
+  7. Open section_06_lead_generation.html. Fill in all placeholders. Save.
+  8. Open section_07_08_09_intake_team_profit.html. Fill in all placeholders. Save.
+  9. Open section_10_whats_possible.html. Fill in all placeholders. Save.
+  10. Open section_11_next_steps.html. Fill in all placeholders. Save.
+  11. Open section_executive_summary.html. Fill in all placeholders using
+      completed data from sections 05 and 11. Save. (Fill this one last.)
+  12. Return to this file. Replace each INSERT ... CONTENT HERE comment
+      with the full HTML content of that completed section file.
+  13. Save the final assembled file as:
+      [FirmName]_[Date]_Growth_Audit.html
+      to the project folder.
+
+  RULES:
+  - No <style> block. None. Not here, not in any section file.
+  - No inline styles. No style="" on any element. Ever.
+  - No new CSS classes. Only use classes from audit_styles.css.
+  - Do not output this file in the chat window.
+  - Save directly to the project folder.
+  ============================================================
+-->
+
+<!-- ===== SECTION 01: COVER PAGE ===== -->
+<!-- ⚠️ NO CSS IN THIS FILE. No <style> blocks. No inline styles. No style="" attributes.
+     All styling comes from audit_styles.css only. Use only existing class names.
+     If you find yourself writing CSS — stop and delete it. -->
+
+<div class="cover" id="cover">
+  <img class="cover-logo"
+    src="https://www.dropbox.com/scl/fi/9ytno9l0ipl9w9x4l0qg6/SMB-Logo-H-White.png?rlkey=y13ywjp9poyihu8zus42tx6wq&st=rfo0lufv&raw=1"
+    alt="SMB Team Logo" />
+
+  <div class="cover-title">Law Firm Growth Audit</div>
+
+  <div class="cover-firm">Beacon Legacy Group</div>
+
+  <div class="cover-footer">
+    <p>Prepared for: <strong>Beacon Legacy Group</strong></p>
+    <p>Prepared by: <strong>Dan Bryant</strong> | SMB Team</p>
+    <p>Date: <strong>May 07, 2026</strong></p>
+    <p class="confidential">Confidential</p>
+  </div>
+</div>
+
+
+<!-- ===== EXECUTIVE SUMMARY ===== -->
+<!-- ⚠️ NO CSS IN THIS FILE. No <style> blocks. No inline styles. No style="" attributes.
+     All styling comes from audit_styles.css only. Use only existing class names.
+     If you find yourself writing CSS — stop and delete it. -->
+
+<div class="exec-summary" id="executive-summary">
+  <div class="exec-summary-header">
+    <div class="exec-summary-header-inner">
+      <div class="exec-summary-title">Executive Summary</div>
+      <div class="exec-summary-firm">Beacon Legacy Group</div>
+    </div>
+  </div>
+
+  <div class="exec-summary-body">
+
+    <div class="exec-meta-row">
+
+      <div class="exec-urgency">
+        <div class="exec-urgency-number">5</div>
+        <div class="exec-urgency-label">Urgency Score</div>
+      </div>
+
+      <div class="exec-pillars">
+        <div class="exec-pillars-label">Pillar Health at a Glance</div>
+        <div class="exec-pillar-row">
+
+          <div class="exec-pillar-item">
+            <div class="exec-pillar-circle amber"></div>
+            <div class="exec-pillar-name">Lead Gen</div>
+          </div>
+
+          <div class="exec-pillar-item">
+            <div class="exec-pillar-circle amber"></div>
+            <div class="exec-pillar-name">Intake</div>
+          </div>
+
+          <div class="exec-pillar-item">
+            <div class="exec-pillar-circle amber"></div>
+            <div class="exec-pillar-name">Team</div>
+          </div>
+
+          <div class="exec-pillar-item">
+            <div class="exec-pillar-circle amber"></div>
+            <div class="exec-pillar-name">Profit</div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+
+    <div class="exec-content-grid">
+
+      <!-- TOP PRIORITIES -->
+      <div class="exec-block">
+        <div class="exec-block-title">Top Priorities</div>
+        <ul class="exec-findings-list">
+          <li>Crossville and Mt. Juliet are generating zero digital leads right now — every estate planning search in those markets is sending families to Cumberland Legacy Law and Vanderpool Law while Beacon Legacy Group's offices sit invisible without LSA coverage, local SEO, or reviews.</li>
+          <li>The seminar channel has declined for 12 consecutive months and costs over $10,000/month — without a digital replacement pipeline being built in parallel, a continued decline puts the firm's primary revenue engine at serious risk.</li>
+          <li>Both attorney-owners are personally on the seminar circuit, managing three locations, and making every strategic call — the firm cannot grow faster than their personal bandwidth, and their bandwidth is already at capacity.</li>
+          <li>Combined marketing and coaching spend exceeds $18,000/month with no per-channel ROI attribution — without knowing which channels are generating closed cases, every budget decision is a guess and margin compression will continue.</li>
+        </ul>
+      </div>
+
+      <!-- RECOMMENDED INVESTMENT SNAPSHOT -->
+      <div class="exec-block">
+        <div class="exec-block-title">Recommended Investment</div>
+
+        <div class="exec-investment-row">
+          <span>Full Service Marketing Growth</span>
+          <span class="exec-investment-value">$4,397/mo</span>
+        </div>
+
+        <div class="exec-investment-row">
+          <span>Master's Circle</span>
+          <span class="exec-investment-value">$2,600/mo</span>
+        </div>
+
+        <div class="exec-investment-row">
+          <span>Recommended Ad Spend</span>
+          <span class="exec-investment-value">$5,000/mo</span>
+        </div>
+
+        <div class="exec-investment-total">
+          <span>Total SMB Team Investment</span>
+          <span>$6,997/mo</span>
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="exec-closing">
+      <p><span>Beacon Legacy Group has the reputation, the team depth, and the market position to dominate estate planning across three Tennessee markets</span> — what it does not have yet is the digital infrastructure that makes all of that work without Tyler and Victoria personally driving every lead.</p>
+    </div>
+
+  </div>
+</div>
+
+
+<!-- ===== SECTION 02: TABLE OF CONTENTS ===== -->
+<!-- ⚠️ NO CSS IN THIS FILE. No <style> blocks. No inline styles. No style="" attributes.
+     All styling comes from audit_styles.css only. Use only existing class names.
+     If you find yourself writing CSS — stop and delete it. -->
+
+<div class="toc-wrap" id="toc">
+  <div class="toc-title">Table of Contents</div>
+
+  <div class="toc-section">
+    <div class="toc-category">Your Firm at a Glance</div>
+    <ul class="toc-items">
+      <li><a href="#firm-overview">Beacon Legacy Group — Current Status</a></li>
+    </ul>
+  </div>
+
+  <div class="toc-section">
+    <div class="toc-category">About SMB Team</div>
+    <ul class="toc-items">
+      <li><a href="#about-smb">The Law Firm Growth Acceleration Model</a></li>
+    </ul>
+  </div>
+
+  <div class="toc-section">
+    <div class="toc-category">Your Growth Health Assessment</div>
+    <ul class="toc-items">
+      <li><a href="#growth-health">Growth Health Scorecard</a></li>
+      <li><a href="#urgency-score">Competitive Urgency Score</a></li>
+    </ul>
+  </div>
+
+  <div class="toc-section">
+    <div class="toc-category">Lead Generation</div>
+    <ul class="toc-items">
+      <li><a href="#website-audit">Website Audit</a></li>
+      <li><a href="#local-seo">Local SEO</a></li>
+      <li><a href="#google-ads">Google Ads</a></li>
+      <li><a href="#local-service-ads">Local Service Ads</a></li>
+      <li><a href="#meta-ads">Facebook &amp; Instagram Ads</a></li>
+    </ul>
+  </div>
+
+  <div class="toc-section">
+    <div class="toc-category">Intake</div>
+    <ul class="toc-items">
+      <li><a href="#intake">Intake Assessment</a></li>
+      <li><a href="#website-intake">Website Contact Forms &amp; Live Chat</a></li>
+    </ul>
+  </div>
+
+  <div class="toc-section">
+    <div class="toc-category">Self-Managing Team</div>
+    <ul class="toc-items">
+      <li><a href="#team">Team Assessment</a></li>
+    </ul>
+  </div>
+
+  <div class="toc-section">
+    <div class="toc-category">Profit</div>
+    <ul class="toc-items">
+      <li><a href="#profit">Profit Plan Assessment</a></li>
+    </ul>
+  </div>
+
+  <div class="toc-section">
+    <div class="toc-category">Here's What's Possible for Beacon Legacy Group</div>
+    <ul class="toc-items">
+      <li><a href="#growth-journey">Growth Vision</a></li>
+    </ul>
+  </div>
+
+  <div class="toc-section">
+    <div class="toc-category">Your Next Steps</div>
+    <ul class="toc-items">
+      <li><a href="#next-steps">Quick Wins for Beacon Legacy Group</a></li>
+      <li><a href="#recommendation">How SMB Team Can Help Beacon Legacy Group</a></li>
+    </ul>
+  </div>
+</div>
+
+
+<!-- ===== SECTION 03: YOUR FIRM AT A GLANCE ===== -->
+<!-- ⚠️ NO CSS IN THIS FILE. No <style> blocks. No inline styles. No style="" attributes.
+     All styling comes from audit_styles.css only. Use only existing class names.
+     If you find yourself writing CSS — stop and delete it. -->
+
+<div class="section-header" id="firm-overview">
+  <div class="section-header-inner">
+    <h2>Here Is Where Beacon Legacy Group Stands Today</h2>
+  </div>
+</div>
+
+<div class="content-wrap">
+
+  <div class="firm-summary">Tyler and Victoria Lannom co-founded Beacon Legacy Group as one of Tennessee's most specialized estate planning and elder law firms — now operating out of three locations in Cookeville, Crossville, and a newly launched Mt. Juliet office, with roughly $1.4M in 2024 gross revenue and a 9-person team behind them. The most important finding from this audit: the firm has an extraordinary Cookeville reputation — roughly 200 Google reviews at 5.0 stars — but almost no digital infrastructure to match it across the two newer locations, and a primary lead gen channel (seminars) that has been declining in performance for 12 months.</div>
+
+  <!-- Stage 4: Small Business Manager -->
+  <img src="https://www.dropbox.com/scl/fi/27el1jrgyynonfwcgi8ib/LLS-Small-Business-Manager.png?rlkey=biehntt1vm0nxnynabgako82i&st=z2k2uxwe&raw=1" alt="Growth Stage" style="width:100%;height:auto;display:block;border-radius:6px;margin-bottom:16px;" />
+
+  <p class="dbm-connector">Stage 6 is where Beacon Legacy Group needs to be — where all three locations are generating consistent, predictable inbound leads without Tyler and Victoria having to be on a stage every weekend to keep the revenue coming in.</p>
+
+  <div class="stage-cards">
+    <div class="stage-card">
+      <div class="stage-card-header">
+        <h3>Where You Are Today</h3>
+        <div class="stage-label">Stage 4: Small Business Manager</div>
+      </div>
+      <div class="stage-card-body">
+        <ul>
+          <li>Seminar events are the primary — and declining — lead source, with ROAS dropping over the last 12 months</li>
+          <li>Three-office footprint has no corresponding SEO silos, and only Cookeville has an active (just-launched) LSA</li>
+          <li>Both attorney-owners are still personally running the seminar circuit while managing a growing 3-location operation</li>
+          <li>Revenue is flat year-over-year despite team growth, signaling that the current channel cannot scale to the $2–3M goal</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="stage-card destination">
+      <div class="stage-card-header">
+        <h3>Where You Need To Be</h3>
+        <div class="stage-label">Stage 6: Law Firm Owner</div>
+      </div>
+      <div class="stage-card-body">
+        <ul>
+          <li>The firm runs without you</li>
+          <li>Your income is no longer tied to your personal hours</li>
+          <li>Your time is yours to spend however you choose</li>
+          <li>This is where true freedom and true wealth become possible</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="connecting-sentence">The gap is not about the quality of your work — roughly 200 Cookeville reviews at 5.0 stars prove your clients love what you do — the gap is about building the digital systems that make all three locations produce leads whether or not you are in the room.</div>
+
+  <div class="assessment-header">Overall Growth Stage Assessment</div>
+  <div class="assessment-subheading">Beacon Legacy Group</div>
+
+  <div class="assessment-box">Beacon Legacy Group is operating at Stage 4 — a well-built small business with a strong Cookeville reputation and a capable team, but still dependent on a single energy-intensive lead channel that is actively declining. The most urgent growth constraint is the absence of a multi-location digital presence: two of three offices are essentially invisible on Google, with no LSAs, no location-specific SEO, and near-zero review counts outside Cookeville. Until the firm builds a predictable digital lead engine across all three markets, reaching the $2–3M revenue goal Tyler described means running more and bigger seminars — the exact grind this audit is designed to replace.</div>
+
+</div>
+<div class="back-to-top"><a href="#toc">↑ Back to Top</a></div>
+
+
+<!-- ===== SECTION 04: ABOUT SMB TEAM ===== -->
+<!-- ⚠️ NO CSS IN THIS FILE. No <style> blocks. No inline styles. No style="" attributes.
+     All styling comes from audit_styles.css only. Use only existing class names.
+     If you find yourself writing CSS — stop and delete it. -->
+<!-- ============================================================
+     SECTION 04 — ABOUT SMB TEAM
+     
+     INSTRUCTIONS FOR COWORK:
+     This section is STATIC. Do not change any text or structure.
+     Copy this section into the final output exactly as it appears here.
+     ============================================================ -->
+
+<div class="section-header" id="about-smb">
+  <div class="section-header-inner">
+    <h2>The Law Firm Growth Acceleration Model</h2>
+  </div>
+</div>
+
+<div class="content-wrap">
+
+  <div class="callout-banner">
+    <p>We Help Law Firm Owners Get More Profit, More Personal Freedom, And Outstanding Results For Their Clients.</p>
+  </div>
+
+  <p class="opportunity-text">Most law firms try to grow by chasing more leads. But leads alone are not the problem — and leads alone are not the answer. Here is what actually works.</p>
+
+  <div class="pillars-grid">
+    <div class="pillar-card">
+      <h3>Lead Generation</h3>
+      <p>Leads are to a law firm what gasoline is to a car. Without them, you go nowhere. But a steady, predictable flow of leads changes everything — you get to choose your cases instead of taking whatever comes in.</p>
+    </div>
+    <div class="pillar-card">
+      <h3>Intake</h3>
+      <p>But all the leads in the world are worthless without a system to turn them into paying clients. Most firms are losing cases they already paid for simply because their follow-up is slow or inconsistent.</p>
+    </div>
+    <div class="pillar-card">
+      <h3>Self-Managing Team</h3>
+      <p>Once clients are coming in, you need a team — otherwise you end up working 90-hour weeks and results suffer. A self-managing team is what gives you the freedom to step back.</p>
+    </div>
+    <div class="pillar-card">
+      <h3>Profit Plan</h3>
+      <p>And once the team is in place, most owners look at their bank account and ask: where did all the money go? That is what a profit plan solves — clarity on what you earn, what you keep, and how to grow both.</p>
+    </div>
+  </div>
+
+  <div class="closing-line">All four have to work together. If one is missing, you cannot have more profit, more freedom, and outstanding results for your clients at the same time.</div>
+
+  <img src="https://www.dropbox.com/scl/fi/ffkzpv2f3rdjfzwq997e1/Law-Firm-Growth-Acceleration-Model.png?rlkey=665o52gt2va8pg4nb0epdc8hv&st=1iucj2m5&raw=1"
+    alt="Law Firm Growth Acceleration Model"
+    style="width:100%;height:auto;display:block;border-radius:6px;" />
+
+</div>
+<div class="back-to-top"><a href="#toc">↑ Back to Top</a></div>
+
+
+<!-- ===== SECTION 05: GROWTH HEALTH ASSESSMENT ===== -->
+<!-- ⚠️ NO CSS IN THIS FILE. No <style> blocks. No inline styles. No style="" attributes.
+     All styling comes from audit_styles.css only. Use only existing class names.
+     If you find yourself writing CSS — stop and delete it. -->
+
+<div class="section-header" id="growth-health">
+  <div class="section-header-inner">
+    <h2>Your Growth Health Assessment</h2>
+    <div class="subtext">Beacon Legacy Group</div>
+  </div>
+</div>
+
+<div class="content-wrap">
+
+  <div class="legend">
+    <div class="legend-item">
+      <div class="legend-dot red"></div>
+      <div class="legend-label">Red <span>— Critical Priority</span></div>
+    </div>
+    <div class="legend-item">
+      <div class="legend-dot amber"></div>
+      <div class="legend-label">Amber <span>— In Progress</span></div>
+    </div>
+    <div class="legend-item">
+      <div class="legend-dot green"></div>
+      <div class="legend-label">Green <span>— On Track</span></div>
+    </div>
+  </div>
+
+  <div class="scorecard-label">Pillar Health Scorecard</div>
+
+  <div class="scorecard-grid">
+
+    <!-- LEAD GENERATION CARD -->
+    <div class="sc-card">
+      <div class="sc-card-header"><h3>Lead Generation</h3></div>
+      <div class="sc-card-body">
+        <div class="traffic-circle amber"></div>
+        <ul class="sc-findings">
+          <li>Seminar/Meta channel generates ~$30k/month but performance has declined for 12 consecutive months — the primary engine is losing pressure</li>
+          <li>Only Cookeville has a live (just-launched) LSA; Crossville and Mt. Juliet have no paid digital presence at all</li>
+          <li>No Google PPC running; probate/conservatorship — a confirmed low-competition whitespace — has zero paid coverage across all three markets</li>
+        </ul>
+        <div class="sc-dbm">Every month without a multi-channel digital lead engine is another month Tyler and Victoria have to be on a stage to keep revenue flowing.</div>
+      </div>
+    </div>
+
+    <!-- INTAKE CARD -->
+    <div class="sc-card">
+      <div class="sc-card-header"><h3>Intake</h3></div>
+      <div class="sc-card-body">
+        <div class="traffic-circle amber"></div>
+        <ul class="sc-findings">
+          <li>Dedicated Client Engagement Specialists (Hannah Hydrick and June Ashby) handle intake — leads are not falling on the attorneys directly</li>
+          <li>Contact form is buried behind a click — not visible on the homepage for visitors ready to act immediately</li>
+          <li>No after-hours intake process confirmed; high-ticket prospects ($7k–$11k) who search after business hours may be lost to competitors with better contact accessibility</li>
+        </ul>
+        <div class="sc-dbm">Strong intake is what turns the new digital leads into actual revenue — without it, every dollar spent on ads is partially wasted.</div>
+      </div>
+    </div>
+
+    <!-- SELF-MANAGING TEAM CARD -->
+    <div class="sc-card">
+      <div class="sc-card-header"><h3>Self-Managing Team</h3></div>
+      <div class="sc-card-body">
+        <div class="traffic-circle amber"></div>
+        <ul class="sc-findings">
+          <li>Nine-person team with defined roles across three offices — more structure than most firms at this revenue level</li>
+          <li>Both attorney-owners are still personally running the seminar circuit, managing multi-location operations, and handling strategic decisions — neither can fully step back</li>
+          <li>LSA was being managed DIY; talent pool in Cookeville (college-town market) was noted as a hiring constraint for digital-skilled roles</li>
+        </ul>
+        <div class="sc-dbm">The team is built — but without systems that run without the owners' direct involvement, the freedom Tyler wants cannot happen regardless of how much revenue grows.</div>
+      </div>
+    </div>
+
+    <!-- PROFIT CARD -->
+    <div class="sc-card">
+      <div class="sc-card-header"><h3>Profit</h3></div>
+      <div class="sc-card-body">
+        <div class="traffic-circle amber"></div>
+        <ul class="sc-findings">
+          <li>Revenue is visible at $1.4M but has been flat year-over-year despite adding a third office and growing the team</li>
+          <li>Combined marketing and coaching spend exceeds $18k/month — without per-channel ROI visibility, reallocating to higher-performing channels requires guesswork</li>
+          <li>No mention of profit planning tools or per-location profitability tracking — a multi-location firm at $1.4M needs margin clarity by market, not just total revenue</li>
+        </ul>
+        <div class="sc-dbm">Growing to $2–3M means nothing if the cost of getting there eats the margin — profit planning is what separates revenue growth from actual wealth.</div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- COMPETITIVE URGENCY SCORE -->
+  <div class="urgency-card" id="urgency-score">
+    <div class="urgency-label">Competitive Urgency Score</div>
+    <div class="urgency-score">5</div>
+    <div class="urgency-outof">out of 10</div>
+    <div class="urgency-sentence">A score of 5 means competitors have meaningful advantages in one or more areas and are pulling ahead. You are not invisible yet — but the window to close the gap is narrowing. Every month without action is a month they extend their lead.</div>
+    <div style="margin-bottom:10px;">
+      <div class="urgency-bar"><div class="urgency-marker" style="left:50%;"></div></div>
+      <div class="urgency-scale">
+        <span>1–3 = Low Urgency</span>
+        <span>4–6 = Moderate</span>
+        <span>7–10 = High Urgency</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="competitors-label">Your Top Competitive Threats</div>
+
+  <div class="competitor-card">
+    <div class="competitor-name">Cumberland Legacy Law — Crossville, TN</div>
+    <div class="competitor-threat">Nina Whitehurst brings 30+ years of experience, an Avvo 9.9 rating, NAELA membership, and an ElderLawAnswers listing that makes her the go-to elder law and estate planning specialist in Cumberland County — all built before Beacon Legacy Group's Crossville office had a single Google review. Your Crossville office is 1–1.5 years old with lagging reviews and no location-specific SEO. She has the market credibility; you have the momentum — but only if you move now.</div>
+  </div>
+
+  <div class="competitor-card">
+    <div class="competitor-name">Vanderpool Law — Mount Juliet / Wilson County</div>
+    <div class="competitor-threat">Jim Vanderpool has 138 five-star Google reviews, 25 years of experience, and a dedicated estate planning landing page specifically targeting Mount Juliet — all in place before Beacon Legacy Group's Mt. Juliet office held its first consultation. Your new office has zero LSA coverage, zero location-specific SEO, and zero local reviews. Vanderpool is already showing up where your newest market needs to find you.</div>
+  </div>
+
+  <div class="competitor-card">
+    <div class="competitor-name">Waters Law, PLLC — Cookeville, TN</div>
+    <div class="competitor-threat">Ashley Waters runs a boutique estate planning and elder law practice in Cookeville — the same niche as Beacon Legacy Group — and is building review authority at 4.9 stars with 66 Google reviews. While BLG leads Cookeville handily right now, Waters Law is a focused, growing competitor targeting the same high-value clients. If BLG's review velocity stalls and its SEO depth stays thin, Waters Law is positioned to chip away at the home market while BLG's attention is on building Crossville and Mt. Juliet.</div>
+  </div>
+
+</div>
+<div class="back-to-top"><a href="#toc">↑ Back to Top</a></div>
+
+
+<!-- ===== SECTION 06: LEAD GENERATION ===== -->
+<!-- ⚠️ NO CSS IN THIS FILE. No <style> blocks. No inline styles. No style="" attributes.
+     All styling comes from audit_styles.css only. Use only existing class names.
+     If you find yourself writing CSS — stop and delete it. -->
+
+<div class="section-header" id="lead-generation">
+  <div class="section-header-inner"><h2>Lead Generation</h2></div>
+</div>
+
+<div class="content-wrap">
+</div>
+<div class="section-img-wrap"><img src="https://www.dropbox.com/scl/fi/vne0wcswovu3nwjibgjya/Lead-Generation.png?rlkey=enb7lthrbylgma7qoofstb799&st=nw3f9i8c&raw=1" alt="Lead Generation" /></div>
+<div class="content-wrap">
+  <p class="section-intro">Beacon Legacy Group has built a dominant Cookeville reputation through live seminars, but that single channel is declining — and across all three locations, the firm has almost no digital lead infrastructure generating inbound estate planning and probate clients outside the event calendar.</p>
+</div>
+
+<!-- WEBSITE AUDIT -->
+<div class="subsection-header" id="website-audit">
+  <div class="subsection-header-inner"><h3>Website Audit</h3></div>
+</div>
+<div class="content-wrap">
+
+  <div class="pgp-label">The Problem</div>
+  <ul class="pgp-list">
+    <li>Homepage title tag reads "Estate Planning Attorney in Cookeville, TN" — the firm's two other markets (Crossville and Mt. Juliet) are entirely absent from the site's primary SEO signal</li>
+    <li>No location-specific content silos exist for Crossville or Mt. Juliet — no dedicated practice area pages by location, meaning Google cannot rank the firm for estate planning or elder law searches in those markets</li>
+    <li>The estate planning practice page H1 reads "Establish Your Legacy" — a branding phrase, not a keyword-matched heading for the searches the firm needs to rank for</li>
+    <li>The Initial Consultation page (/initial-consultation/) has a confirmed broken video embed and minimal page content — one of the most important conversion pages on the site is sending warm prospects to a dead end</li>
+    <li>PageSpeed scores: Manual verification required at pagespeed.web.dev before presenting — automated tools were unable to retrieve scores at time of report generation</li>
+    <li>Contact form is buried — accessible only via "Start Now" button or "Connect" link, not visible above the fold; no schema markup detected across key pages; duplicate navigation menus appear twice in page markup</li>
+  </ul>
+
+  <div class="blind-spot"><strong>Blind Spot:</strong> The legacy email address info@lannomlaw.com still appears on third-party directories from the firm's earlier branding as "Lannom Law." When Google indexes inconsistent business information across the web, it erodes trust in the GBP listing — which directly affects map pack rankings. This needs to be cleaned before extending GBP hours to 24/7.</div>
+
+  <div class="pgp-label">The Positive</div>
+  <ul class="pgp-list">
+    <li>The website has a modern design with 2024-era updates, professional photography, and all three attorney and staff bios — a strong first impression for referred visitors and seminar attendees who look the firm up</li>
+    <li>The site is mobile-responsive with a clean navigation structure, and the Meta Pixel is installed — remarketing audiences can be activated immediately without a site rebuild</li>
+  </ul>
+
+  <div class="pgp-label">The Gap</div>
+  <ul class="pgp-list">
+    <li>Without location-specific SEO architecture, every Crossville and Mt. Juliet prospect searching Google for estate planning finds competitors — not Beacon Legacy Group — regardless of how good the attorneys are</li>
+    <li>The broken Initial Consultation page is a silent revenue leak: prospects who have already decided to explore the firm arrive at the site, find a broken experience, and leave without converting</li>
+    <li>Until the homepage title structure, practice area H1s, and content depth reflect three markets, the firm's SEO ceiling is limited to Cookeville alone</li>
+  </ul>
+
+  <div class="dbm-closing">A rebuilt, multi-location website is what transforms the firm's online presence from a Cookeville-only brochure into a statewide lead engine that works around the clock — without Tyler or Victoria having to be in a seminar room.</div>
+
+</div>
+
+<!-- LOCAL SEO -->
+<div class="subsection-header" id="local-seo">
+  <div class="subsection-header-inner"><h3>Local SEO</h3></div>
+</div>
+<div class="content-wrap">
+
+  <div class="pgp-label">The Problem</div>
+  <ul class="pgp-list">
+    <li>Cookeville GBP: approximately 200 reviews at 5.0 stars — the highest review count of any estate planning firm in the Cookeville market — but the Crossville and Mt. Juliet GBP profiles have near-zero reviews and thin content, making both satellite offices functionally invisible in local search</li>
+    <li>No location-specific content on the website to signal to Google which services are offered at which physical location — without these signals, the Crossville and Mt. Juliet offices cannot rank in their local map packs</li>
+    <li>Directory presence has NAP inconsistencies: legacy email (info@lannomlaw.com) still appears on third-party profiles from the Lannom Law rebrand; Yelp and FindLaw listings not confirmed for Cookeville, creating citation gaps that weaken local ranking signals</li>
+    <li>The GBP hours expansion Tyler mentioned (extending to 24/7 visibility) cannot be done cleanly until the NAP inconsistencies are resolved — changing hours on a profile with conflicting directory data can trigger GBP trust issues</li>
+  </ul>
+
+  <div class="blind-spot"><strong>Blind Spot:</strong> Beacon Legacy Group's Cookeville GBP already leads the estate planning market — but that lead only matters for Cookeville searches. For a firm trying to grow across three markets, the two lagging profiles are not just underperforming: they are actively costing the firm revenue in Crossville and Mt. Juliet that is currently going to competitors who are indexed and showing up.</div>
+
+  <div class="pgp-label">The Positive</div>
+  <ul class="pgp-list">
+    <li>The Cookeville GBP is the strongest in the local estate planning market — roughly 200 reviews at 5.0 stars means BLG is the review authority in its home market, which is a major SEO and trust asset that competitors cannot match quickly</li>
+  </ul>
+
+  <div class="pgp-label">The Gap</div>
+  <ul class="pgp-list">
+    <li>Every week the Crossville and Mt. Juliet profiles sit with thin reviews and no location SEO, Cumberland Legacy Law in Crossville and Vanderpool Law in Mt. Juliet are the results families find when they search for estate planning help in those markets</li>
+    <li>Without a structured review velocity program across all three locations, the firm's extraordinary Cookeville reputation cannot be replicated in the satellite markets at the pace the $2–3M goal requires</li>
+  </ul>
+
+  <div class="competitor-callout"><strong>Vanderpool Law</strong> — operates from Franklin, TN but has built a dedicated landing page (vanderpoollaw.com/estate-planning-attorney-mount-juliet-tn) with 138 five-star Google reviews actively targeting the Wilson County market where Beacon Legacy Group's new Mt. Juliet office just opened. BLG has the physical presence; Vanderpool currently has the digital authority.</div>
+
+  <div class="dbm-closing">Three offices with dominant local SEO across all three markets means estate planning families in Cookeville, Crossville, and Mt. Juliet find Beacon Legacy Group when they need help — not only when a seminar is scheduled.</div>
+
+</div>
+
+<!-- GOOGLE ADS -->
+<div class="subsection-header" id="google-ads">
+  <div class="subsection-header-inner"><h3>Google Ads</h3></div>
+</div>
+<div class="content-wrap">
+
+  <div class="ad-part">
+    <div class="ad-part-label">Ad Presence</div>
+    <ul class="ad-list">
+      <li>Beacon Legacy Group does not appear to be running Google search ads for estate planning, elder law, or probate in Cookeville, Crossville, or Mt. Juliet — confirmed on the call as "minimal/no PPC running." The firm may have been outbid on some searches or simply not configured for Google paid search yet.</li>
+      <li>Tyler confirmed on the call that he observes "very low competition" in his markets for PPC, and that probate in particular appears to be an essentially uncontested paid search opportunity — meaning competitors are not actively claiming this space either.</li>
+    </ul>
+  </div>
+
+  <div class="ad-part">
+    <div class="ad-part-label">Competitor Ad Landscape</div>
+    <ul class="ad-list">
+      <li><strong>Crabtree &amp; Patterson (Cookeville)</strong> — Probate-focused firm serving Putnam, Cumberland, and surrounding counties; not confirmed running Google Ads but represents the most direct competitor for probate/conservatorship PPC keywords if the firm enters that space</li>
+      <li><strong>Vanderpool Law (Wilson County)</strong> — Has dedicated estate planning landing pages for Mt. Juliet; unclear if running PPC but the page infrastructure suggests active SEO investment that could extend to paid search</li>
+    </ul>
+  </div>
+
+  <div class="ad-part">
+    <div class="ad-part-label">The Opportunity</div>
+    <ul class="ad-list">
+      <li>Probate and conservatorship PPC — Tyler confirmed this is a near-empty paid search landscape in Middle Tennessee; a focused campaign at even $1,500–$2,000/month would capture the highest-intent probate queries in the state with minimal competition</li>
+      <li>Estate planning PPC for Crossville and Mt. Juliet — neither office has any paid digital coverage, and both markets have low-to-moderate PPC competition; targeted campaigns for each office location would immediately generate local leads that organic SEO will take months to build</li>
+      <li>Remarketing — the Meta Pixel is already installed on the site, meaning Display and YouTube remarketing can be activated immediately to stay in front of website visitors who do not convert on first visit (the "omnipresence" strategy Tyler mentioned on the call)</li>
+      <li>Income and age targeting for estate planning PPC — Google allows demographic targeting by estimated household income and age; narrowing PPC to 45+ audiences in higher-income ZIP codes filters for the $7k–$11k estate planning buyer and reduces wasted spend on clicks from non-buyers</li>
+    </ul>
+  </div>
+
+  <div class="blind-spot"><strong>Blind Spot:</strong> Because PPC competition is low right now in these markets, the cost-per-lead for probate and estate planning keywords is significantly lower than in larger metros. That pricing window will not stay open indefinitely — as other firms discover the same whitespace, CPL will rise. The first firm to establish conversion-optimized campaigns in this territory sets the anchor that future competitors have to outbid.</div>
+
+</div>
+
+<!-- LOCAL SERVICE ADS -->
+<div class="subsection-header" id="local-service-ads">
+  <div class="subsection-header-inner"><h3>Local Service Ads</h3></div>
+</div>
+<div class="content-wrap">
+
+  <div class="ad-part">
+    <div class="ad-part-label">LSA Presence</div>
+    <ul class="ad-list">
+      <li>Cookeville LSA was activated approximately one month ago per Tyler's statement on the call — the profile is live but still new, with limited review velocity and no partner API optimization in place; Victoria Lannom's photo has not yet been added to the LSA profile</li>
+      <li>Crossville and Mt. Juliet LSAs are not live — Tyler noted these are set up DIY but not yet activated; both markets are missing from the highest-placement paid channel on Google entirely</li>
+    </ul>
+  </div>
+
+  <div class="ad-part">
+    <div class="ad-part-label">Competitor LSA Landscape</div>
+    <ul class="ad-list">
+      <li><strong>Waters Law, PLLC (Cookeville)</strong> — boutique estate planning and elder law focus with 66 Google reviews at 4.9 stars; well-positioned to compete for Cookeville LSA placements as BLG's new LSA ramps up</li>
+      <li><strong>Cumberland Legacy Law (Crossville)</strong> — NAELA-listed elder law specialist; credentialed profile that could qualify for Google Screened in Crossville once LSA competition in that market activates</li>
+    </ul>
+  </div>
+
+  <div class="ad-part">
+    <div class="ad-part-label">The Opportunity</div>
+    <ul class="ad-list">
+      <li>Activating LSAs for Crossville and Mt. Juliet immediately captures the top placement on Google for estate planning searches in those markets — above paid ads, above the map pack, and above all organic results — with no current competition from other established firms in LSA</li>
+      <li>LSAs appear above everything else on Google — above paid ads, above the map pack, above all organic results — and you only pay when a real prospect calls you directly.</li>
+      <li>With approximately 200 Cookeville reviews at 5.0 stars, Beacon Legacy Group has the review authority to become one of the highest-rated LSA profiles in Middle Tennessee; connecting that review count to the partner API creates a quality signal that filters for serious high-intent estate planning prospects and maximizes responsiveness scores across all three profiles</li>
+    </ul>
+  </div>
+
+</div>
+
+<!-- FACEBOOK & INSTAGRAM ADS -->
+<div class="subsection-header" id="meta-ads">
+  <div class="subsection-header-inner"><h3>Facebook &amp; Instagram Ads</h3></div>
+</div>
+<div class="content-wrap">
+
+  <div class="ad-part">
+    <div class="ad-part-label">Ad Presence</div>
+    <ul class="ad-list">
+      <li>Beacon Legacy Group's seminar agency is currently running Meta/Facebook ads for live estate planning events — spending approximately $7,000–$8,000 per month in ad spend plus a $2,500 agency fee (~$10,000 total monthly), generating an average of approximately $30,000 in seminar revenue per month (2.2x ROAS), with performance declining over the last 12 months</li>
+      <li>No evergreen Meta ads, remarketing ads, or direct-to-consult Meta campaigns are active outside the seminar funnel — the Meta Pixel is installed on the website but no retargeting audiences are being activated</li>
+    </ul>
+  </div>
+
+  <div class="ad-part">
+    <div class="ad-part-label">Competitor Ad Landscape</div>
+    <ul class="ad-list">
+      <li><strong>Waters Law, PLLC (Cookeville)</strong> — active Facebook page with 1,439 likes; no active paid Meta ads confirmed in research, meaning BLG's seminar Meta presence is currently unchallenged in the Cookeville estate planning space on social</li>
+      <li><strong>Cumberland Legacy Law (Crossville)</strong> — no active Meta ads observed in research; the Crossville estate planning social advertising market does not appear to have an active paid competitor</li>
+    </ul>
+  </div>
+
+  <div class="ad-part">
+    <div class="ad-part-label">The Opportunity</div>
+    <ul class="ad-list">
+      <li>Retargeting — website visitors who did not convert are leaving with no follow-up</li>
+      <li>Video ads featuring the attorney — builds trust before a prospect ever calls</li>
+      <li>Educational content ads — capture leads earlier in the decision process</li>
+      <li>Seminar audience retargeting — the firm already has a warm audience of seminar attendees and past webinar registrants; a retargeting campaign targeting this audience with estate planning educational content and direct-to-consult CTAs would extend the value of the seminar spend without requiring additional live events</li>
+    </ul>
+  </div>
+
+</div>
+<div class="back-to-top"><a href="#toc">↑ Back to Top</a></div>
+
+
+<!-- ===== SECTION 07-09: INTAKE, TEAM, PROFIT ===== -->
+<!-- ⚠️ NO CSS IN THIS FILE. No <style> blocks. No inline styles. No style="" attributes.
+     All styling comes from audit_styles.css only. Use only existing class names.
+     If you find yourself writing CSS — stop and delete it. -->
+
+<div class="section-header" id="intake">
+  <div class="section-header-inner"><h2>Intake Assessment</h2></div>
+</div>
+
+<div class="content-wrap">
+</div>
+<div class="section-img-wrap"><img src="https://www.dropbox.com/scl/fi/lmohhz14wgbeucpflf02m/Intake.png?rlkey=jwomjz9j8vqi7kmjubxexoyvh&st=sgtebwjp&raw=1" alt="Intake" /></div>
+<div class="content-wrap">
+
+  <p class="section-intro">Beacon Legacy Group has dedicated intake staff in Hannah Hydrick and June Ashby — which puts it ahead of many firms at this revenue level — but the intake process is largely built around a seminar funnel that pre-qualifies leads before they hit the office, not an inbound digital system that converts cold prospects into consultations at $7k–$11k price points. Fixing intake means converting more of the leads the firm is already generating — without spending another dollar on marketing.</p>
+
+  <div class="status-row">
+    <div class="status-circle amber"></div>
+    <div class="status-label">Status: AMBER</div>
+  </div>
+
+  <div class="pgp-label">The Problem</div>
+  <ul class="pgp-list">
+    <li>The intake process is built around seminar attendees who arrive warm and already educated — it has not been pressure-tested against cold inbound digital leads who search Google, find the firm, and call or submit a form with no prior relationship</li>
+    <li>The contact form is buried behind a button click — a prospect arriving from a Google search or LSA who is ready to act must navigate to find any contact mechanism, and friction at this stage loses high-value leads before intake staff ever see them</li>
+    <li>No confirmed after-hours coverage for inbound calls or web form submissions — estate planning prospects often research attorneys in evenings and on weekends; a lead who cannot reach anyone and gets voicemail is very likely to call the next firm on the list</li>
+    <li>With a three-location expansion underway, intake workflows optimized for one-location volume may not scale cleanly to handle leads from all three markets without dedicated tracking of which location, channel, and source generated each consultation</li>
+  </ul>
+
+  <div class="blind-spot"><strong>Blind Spot:</strong> Because the seminar funnel pre-selects and pre-educates prospects, the firm may not fully see how it performs with genuinely cold inbound leads. A prospect who finds Beacon Legacy Group through a Google search or LSA call has no prior exposure to Tyler or Victoria — converting them requires a faster response, a stronger intake script, and a clearer path to scheduling than a seminar attendee who already attended an event and trusts the firm.</div>
+
+  <div class="pgp-label">The Positive</div>
+  <ul class="pgp-list">
+    <li>Having dedicated Client Engagement Specialists (Hannah Hydrick and June Ashby) handling intake means attorney time is not consumed by initial prospect calls — a real structural advantage over solo practitioners competing in the same space</li>
+  </ul>
+
+  <div class="pgp-label">The Gap</div>
+  <ul class="pgp-list">
+    <li>Every high-intent estate planning prospect who lands on the website after hours, cannot reach a person, and moves on to another firm represents a $7k–$11k missed opportunity — at the firm's case value, even one missed case per month is $84k–$132k in annualized lost revenue</li>
+    <li>Without lead source tracking by channel and location, it is impossible to know whether Crossville or Mt. Juliet digital leads are being followed up consistently or falling through the cracks of a process built for Cookeville seminar volume</li>
+    <li>A digital lead generation expansion without a corresponding intake upgrade is the fastest way to spend more on marketing while returning the same closing rate — the two must be built together</li>
+  </ul>
+
+  <div class="dbm-closing">Fixing intake means converting more of the leads the firm is already generating — without spending another dollar on marketing.</div>
+
+</div>
+
+<!-- WEBSITE CONTACT FORMS & LIVE CHAT -->
+<div class="subsection-header" id="website-intake">
+  <div class="subsection-header-inner"><h3>Website Contact Forms &amp; Live Chat</h3></div>
+</div>
+<div class="content-wrap">
+
+  <ul class="pgp-list">
+    <li>The primary contact form is not visible on the homepage without clicking — it requires navigating to a separate page or clicking "Start Now"; for inbound digital prospects who have arrived with intent, this added friction measurably reduces form submission rates</li>
+    <li>The Initial Consultation page (/initial-consultation/) — the most logical destination for a prospect ready to take action — has a broken video embed and minimal text content, making it one of the weakest conversion points on the site rather than one of the strongest</li>
+    <li>No live chat widget is present; for a high-ticket estate planning firm, a real-time scheduling widget or contact form embedded directly on high-traffic practice area pages would capture after-hours intent without requiring a live person to respond immediately</li>
+  </ul>
+  <p class="section-intro">These findings are also referenced in the Website Audit section.</p>
+
+</div>
+<div class="back-to-top"><a href="#toc">↑ Back to Top</a></div>
+
+
+<!-- SECTION 08 — SELF-MANAGING TEAM -->
+
+<div class="section-header" id="team">
+  <div class="section-header-inner"><h2>Team Assessment</h2></div>
+</div>
+
+<div class="content-wrap">
+</div>
+<div class="section-img-wrap"><img src="https://www.dropbox.com/scl/fi/r6o7um1xcdd490t9807vd/Self-Managing-Team.png?rlkey=ywamsca6rpb34l1iasysyk10w&st=dm86b0kz&raw=1" alt="Self-Managing Team" /></div>
+<div class="content-wrap">
+
+  <p class="section-intro">Beacon Legacy Group has more team structure than most firms at its revenue stage — nine people across three locations with defined roles in client engagement, paralegal work, and operations — but both attorney-owners are still personally running the seminar circuit, managing multi-location logistics, and making the strategic calls that keep the business moving. Until this changes, the owner cannot have more free time — no matter how much revenue grows.</p>
+
+  <div class="status-row">
+    <div class="status-circle amber"></div>
+    <div class="status-label">Status: AMBER</div>
+  </div>
+
+  <div class="quote-box">"College-town talent pool lacks required skills."</div>
+
+  <div class="pgp-label">The Problem</div>
+  <ul class="pgp-list">
+    <li>Tyler and Victoria are both practicing attorneys who are personally present in the seminar circuit — the most energy-intensive lead gen activity in the firm — while simultaneously managing operations across three physical offices; neither owner has a clear path to stepping back right now</li>
+    <li>The LSA profile was managed DIY until now, meaning owner time (or untracked staff time) was going toward a task that should be systematized and delegated; without a dedicated digital marketing coordinator, that pattern will repeat as more digital channels come online</li>
+    <li>Tyler noted on the call that the college-town (Cookeville) talent pool lacks the digital marketing skills the firm needs — without the ability to hire locally for digital roles, the firm risks being permanently dependent on external vendors without internal accountability</li>
+    <li>With a third office in Mt. Juliet just launching, the operational load on both attorney-owners is at its peak; scaling to $2–3M while personally managing a new location start-up is not sustainable without a leadership layer between the owners and the day-to-day</li>
+  </ul>
+
+  <div class="blind-spot"><strong>Blind Spot:</strong> The nine-person team that exists today was built to support the seminar model — event operations, estate planning paralegal work, and client engagement for pre-qualified seminar leads. When digital marketing generates a different type of inbound lead (colder, earlier in the decision process, different questions), the intake and team process needs to evolve in parallel. A team structure optimized for seminars may create friction for the digital leads the firm is about to start generating.</div>
+
+  <div class="pgp-label">The Positive</div>
+  <ul class="pgp-list">
+    <li>Nine confirmed team members with defined, non-attorney roles means the firm already has the organizational depth that most practices do not build until much higher revenue levels — Beacon Legacy Group is ahead of the curve structurally</li>
+    <li>A dedicated "Director of First Impressions" (Candy Wheat) and Events &amp; Operations Assistant (Absael Cortes) signal that Tyler has invested in team roles beyond billable work, which is the foundation for a self-managing operation</li>
+  </ul>
+
+  <div class="pgp-label">The Gap</div>
+  <ul class="pgp-list">
+    <li>As long as both attorney-owners remain the only people who can run a seminar, make the strategic decisions, and manage new office launches simultaneously, the firm cannot grow faster than their personal bandwidth — and their bandwidth is already stretched across three locations</li>
+    <li>Without a designated internal owner for digital marketing performance (GBP management, review velocity, LSA responsiveness), those responsibilities will fall back on the attorneys or remain chronically underprioritized</li>
+    <li>The non-attorney day-to-day SMB liaison that Tyler mentioned needs a clearly defined scope and the tools to track performance across all three locations — without that accountability layer, multi-location digital execution will stay fragmented</li>
+  </ul>
+
+  <div class="dbm-closing">Until the team can run the seminar logistics, manage the digital channels, and onboard clients without Tyler and Victoria personally owning each of those systems, the firm that runs itself cannot exist — regardless of how much revenue it generates.</div>
+
+</div>
+<div class="back-to-top"><a href="#toc">↑ Back to Top</a></div>
+
+
+<!-- SECTION 09 — PROFIT PLAN ASSESSMENT -->
+
+<div class="section-header" id="profit">
+  <div class="section-header-inner"><h2>Profit Plan Assessment</h2></div>
+</div>
+
+<div class="content-wrap">
+</div>
+<div class="section-img-wrap"><img src="https://www.dropbox.com/scl/fi/rh2dxdoqsf7tqastam640/Profits.png?rlkey=kss013g0ov5jnuzcoklog7awr&st=iog622wf&raw=1" alt="Profit" /></div>
+<div class="content-wrap">
+
+  <p class="section-intro">At $1.4M in 2024 gross revenue, Beacon Legacy Group has real scale — but revenue has been flat year-over-year despite adding a third office and growing the team, and marketing spend now exceeds $18,000 per month across multiple vendors with no single view of ROI by channel. Revenue is vanity, profit is sanity. Until there is a clear profit plan, growth may just mean more work without more wealth.</p>
+
+  <div class="status-row">
+    <div class="status-circle amber"></div>
+    <div class="status-label">Status: AMBER</div>
+  </div>
+
+  <div class="quote-box">"2024 gross ≈$1.4M; 2025 run-rate similar month over month."</div>
+
+  <div class="pgp-label">The Problem</div>
+  <ul class="pgp-list">
+    <li>Revenue is flat at $1.4M even as the firm opened a second satellite office and grew its team — fixed costs have increased while top-line revenue has not, which means margins are compressing in real terms</li>
+    <li>Combined marketing spend across the seminar agency (~$10k/month), SMB AI/avatar program (~$5k+/month), and Frank's coaching (~$3k+/month) exceeds $18,000/month; without per-channel revenue attribution, it is impossible to know which of these is actually driving closed cases</li>
+    <li>The seminar channel's ROAS has declined for 12 consecutive months but remains the primary revenue driver — the firm is investing the most in the channel that is performing the worst, partly because there is no alternative channel built to replace it yet</li>
+    <li>No mention of per-location profitability tracking — as a three-location firm, Cookeville likely subsidizes the newer offices; without that clarity, it is impossible to know the real return on opening Crossville and Mt. Juliet</li>
+  </ul>
+
+  <div class="pgp-label">The Positive</div>
+  <ul class="pgp-list">
+    <li>Tyler is actively tracking revenue and marketing spend at a high level — he knows gross revenue ($1.4M), the seminar channel's ROAS (2.2x average), and the rough monthly cost of each vendor relationship, which is a better financial awareness baseline than most firms at this stage</li>
+  </ul>
+
+  <div class="pgp-label">The Gap</div>
+  <ul class="pgp-list">
+    <li>If the seminar channel continues its 12-month ROAS decline without a replacement pipeline in place, the firm faces a revenue cliff — flat growth today can become contraction if the primary channel deteriorates further without digital substitution</li>
+    <li>Adding a third office, launching LSAs, and beginning Google PPC all require upfront investment before the revenue appears — without a profit plan that maps those investments against expected cash flow, the growth period between now and $2M could create more financial stress than clarity</li>
+    <li>Every dollar spent on a vendor or channel that cannot be attributed to closed cases is a dollar not working for the firm's growth — the path to $2–3M requires financial visibility by channel and by location, not just total gross revenue</li>
+  </ul>
+
+  <div class="dbm-closing">A clear profit plan is what turns the $2–3M goal from a number on a whiteboard into a funded, predictable path — so Tyler and Victoria know exactly how to get there and exactly what it should cost them to do it.</div>
+
+</div>
+<div class="back-to-top"><a href="#toc">↑ Back to Top</a></div>
+
+
+<!-- ===== SECTION 10: WHAT'S POSSIBLE ===== -->
+<!-- ⚠️ NO CSS IN THIS FILE. No <style> blocks. No inline styles. No style="" attributes.
+     All styling comes from audit_styles.css only. Use only existing class names.
+     If you find yourself writing CSS — stop and delete it. -->
+
+<div class="section-header" id="growth-journey">
+  <div class="section-header-inner">
+    <h2>Here's What's Possible for Beacon Legacy Group</h2>
+  </div>
+</div>
+
+<div class="whats-possible-body">
+  <div class="content-wrap">
+
+    <p class="bridge-text">Tyler and Victoria have already done the hard part — they built a respected, specialized firm with real team depth, real market credibility, and a reputation in Cookeville that no competitor can touch. What they have not built yet is the system that makes all of that work without them personally driving it. That is the next chapter. And it is closer than it feels right now.</p>
+
+    <div class="transform-card">
+      <div class="transform-icon"><span>1</span></div>
+      <div class="transform-text">You wake up on a Monday and three offices are generating consultation requests from Google — without a seminar scheduled, without an event to plan, and without you on a stage over the weekend to make it happen.</div>
+    </div>
+
+    <div class="transform-card">
+      <div class="transform-icon"><span>2</span></div>
+      <div class="transform-text">Cookeville, Crossville, and Mt. Juliet each show up in the local map pack for estate planning, elder law, and probate — and your review count in all three markets is so dominant that competitors cannot catch up, because the system that builds reviews is running automatically after every closed client.</div>
+    </div>
+
+    <div class="transform-card">
+      <div class="transform-icon"><span>3</span></div>
+      <div class="transform-text">You are managing a $2–3M firm where the marketing runs, the leads come in, the team handles intake, and the attorneys focus entirely on the estate planning and elder law work they were trained to do — not on calendaring the next seminar or DIY-managing a Google profile.</div>
+    </div>
+
+    <div class="wp-closing">
+      <p>This is not a fantasy. <span>SMB Team can make this a reality for Beacon Legacy Group.</span></p>
+    </div>
+
+  </div>
+</div>
+<div class="wp-back-to-top"><a href="#toc">↑ Back to Top</a></div>
+
+
+<!-- ===== SECTION 11: YOUR NEXT STEPS ===== -->
+<!-- ⚠️ NO CSS IN THIS FILE. No <style> blocks. No inline styles. No style="" attributes.
+     All styling comes from audit_styles.css only. Use only existing class names.
+     If you find yourself writing CSS — stop and delete it. -->
+
+<!-- QUICK WINS -->
+<div class="section-header" id="next-steps">
+  <div class="section-header-inner">
+    <h2>Quick Wins for Beacon Legacy Group</h2>
+  </div>
+</div>
+<div class="content-wrap">
+
+  <!-- QUICK WIN CARD 1 — Lead Gen / Quick Win -->
+  <div class="quick-win-card">
+    <div class="qw-header">
+      <div class="qw-title">Activate LSAs for Crossville and Mt. Juliet</div>
+      <div class="qw-badges">
+        <span class="badge badge-lead-gen">Lead Gen</span>
+        <span class="badge badge-quick-win">Quick Win</span>
+      </div>
+    </div>
+    <div class="qw-row why">
+      <div class="qw-row-label">Why It Matters</div>
+      Only Cookeville has an active LSA — and it was just turned on last month. Crossville and Mt. Juliet offices are completely absent from the highest-placement paid channel on Google. Every estate planning search in those markets returns competitors, not Beacon Legacy Group.
+    </div>
+    <div class="qw-row who">
+      <div class="qw-row-label">Who Is Doing It Better</div>
+      <strong>Waters Law, PLLC</strong> — established Cookeville estate planning presence with 66 Google reviews at 4.9 stars and the positioning to become the dominant LSA competitor if BLG's Cookeville LSA does not build responsiveness and review velocity quickly.
+    </div>
+    <div class="qw-row opportunity">
+      <div class="qw-row-label">The Opportunity</div>
+      Activating all three LSA profiles with professional management, responsiveness optimization, and partner API oversight means the firm becomes visible at the very top of Google across all three markets simultaneously — and you pay only when a real prospect contacts you directly.
+    </div>
+  </div>
+
+  <!-- QUICK WIN CARD 2 — Lead Gen / Quick Win -->
+  <div class="quick-win-card">
+    <div class="qw-header">
+      <div class="qw-title">Probate and Conservatorship PPC Whitespace Campaign</div>
+      <div class="qw-badges">
+        <span class="badge badge-lead-gen">Lead Gen</span>
+        <span class="badge badge-quick-win">Quick Win</span>
+      </div>
+    </div>
+    <div class="qw-row why">
+      <div class="qw-row-label">Why It Matters</div>
+      Tyler confirmed on the call that probate and conservatorship PPC is essentially uncontested in these markets. Every day without a campaign running is free territory being left for whoever claims it first. Low competition means low cost-per-lead right now — that window will not stay open.
+    </div>
+    <div class="qw-row opportunity">
+      <div class="qw-row-label">The Opportunity</div>
+      A targeted probate/conservatorship PPC campaign at even $1,500–$2,000/month captures the highest-intent legal buyers in Middle Tennessee at CPLs far below what larger metros charge — and a statewide LSA/PPC strategy for probate extends the firm's reach beyond any single market.
+    </div>
+  </div>
+
+  <!-- QUICK WIN CARD 3 — Lead Gen / Quick Win -->
+  <div class="quick-win-card">
+    <div class="qw-header">
+      <div class="qw-title">Repair Broken Initial Consultation Page</div>
+      <div class="qw-badges">
+        <span class="badge badge-lead-gen">Lead Gen</span>
+        <span class="badge badge-quick-win">Quick Win</span>
+      </div>
+    </div>
+    <div class="qw-row why">
+      <div class="qw-row-label">Why It Matters</div>
+      The /initial-consultation/ page has a confirmed broken video and minimal usable content. This is the page a prospect visits when they are actively ready to schedule — and it is currently sending them to a dead end. At a $7k–$11k case value, one lost prospect per month from this page is $84k–$132k in annualized missed revenue.
+    </div>
+    <div class="qw-row who">
+      <div class="qw-row-label">Who Is Doing It Better</div>
+      <strong>Waters Law, PLLC</strong> — clean, professionally maintained website with no broken media or thin conversion pages; presents a consistently polished first impression to inbound digital prospects.
+    </div>
+    <div class="qw-row opportunity">
+      <div class="qw-row-label">The Opportunity</div>
+      Rebuilding this page with working video, meaningful content about the consultation process, and a clear scheduling CTA removes one of the most immediate conversion barriers on the site — with no additional ad spend required to see the result.
+    </div>
+  </div>
+
+  <!-- QUICK WIN CARD 4 — Lead Gen / Quick Win -->
+  <div class="quick-win-card">
+    <div class="qw-header">
+      <div class="qw-title">Google Business Profile Review Velocity for Crossville and Mt. Juliet</div>
+      <div class="qw-badges">
+        <span class="badge badge-lead-gen">Lead Gen</span>
+        <span class="badge badge-quick-win">Quick Win</span>
+      </div>
+    </div>
+    <div class="qw-row why">
+      <div class="qw-row-label">Why It Matters</div>
+      Cookeville's ~200 reviews at 5.0 stars lead the entire market. But Crossville and Mt. Juliet profiles have near-zero review counts — Google Maps ranks profiles by review authority, and both satellite offices are effectively invisible to local search right now.
+    </div>
+    <div class="qw-row who">
+      <div class="qw-row-label">Who Is Doing It Better</div>
+      <strong>Cumberland Legacy Law (Nina Whitehurst)</strong> — 30+ years of credentialed practice in Crossville with established online profiles and NAELA membership; her presence in Crossville elder law is entrenched. Every month without reviews in Crossville extends her advantage.
+    </div>
+    <div class="qw-row opportunity">
+      <div class="qw-row-label">The Opportunity</div>
+      A structured review request program after every seminar attendee, consult, and closed client at the Crossville and Mt. Juliet locations could generate 5–15 new reviews per month per office — building the local authority both profiles need to rank within 90–120 days.
+    </div>
+  </div>
+
+  <!-- QUICK WIN CARD 5 — Lead Gen / Long-Term Play -->
+  <div class="quick-win-card">
+    <div class="qw-header">
+      <div class="qw-title">Three-Location SEO Silo Buildout</div>
+      <div class="qw-badges">
+        <span class="badge badge-lead-gen">Lead Gen</span>
+        <span class="badge badge-long-term">Long-Term Play</span>
+      </div>
+    </div>
+    <div class="qw-row why">
+      <div class="qw-row-label">Why It Matters</div>
+      The website only targets Cookeville. Google cannot rank the firm for estate planning or elder law searches in Crossville or Mt. Juliet because no location-specific content exists for those markets. Without this, digital lead gen for two of three offices cannot happen — no matter how good the SEO fundamentals are everywhere else.
+    </div>
+    <div class="qw-row who">
+      <div class="qw-row-label">Who Is Doing It Better</div>
+      <strong>Vanderpool Law</strong> — built a dedicated Mt. Juliet estate planning landing page actively targeting Wilson County estate planning clients, with 138 five-star reviews reinforcing the listing. Beacon Legacy Group has the physical office; Vanderpool currently owns the Google real estate.
+    </div>
+    <div class="qw-row opportunity">
+      <div class="qw-row-label">The Opportunity</div>
+      Dedicated content silos for estate planning, elder law, probate, and special needs planning at each of the three locations would position Beacon Legacy Group to dominate map pack results across all three Tennessee markets — the "expand coverage for miles" goal Tyler articulated on the call.
+    </div>
+  </div>
+
+  <!-- QUICK WIN CARD 6 — Intake / Quick Win -->
+  <div class="quick-win-card">
+    <div class="qw-header">
+      <div class="qw-title">Post-Seminar and Post-Consult Review Request Workflow</div>
+      <div class="qw-badges">
+        <span class="badge badge-intake">Intake</span>
+        <span class="badge badge-quick-win">Quick Win</span>
+      </div>
+    </div>
+    <div class="qw-row why">
+      <div class="qw-row-label">Why It Matters</div>
+      Every seminar attendee and every closed client is a warm contact who has already experienced the firm's value. Without a structured, automated ask, review requests go unsent and review velocity stalls — especially in the newer Crossville and Mt. Juliet markets that need reviews most urgently.
+    </div>
+    <div class="qw-row opportunity">
+      <div class="qw-row-label">The Opportunity</div>
+      A simple two-step text-and-email review request sequence sent within 24–48 hours of every seminar and every closed case could generate 10–20 new reviews per month across all three locations combined — with zero additional marketing spend required.
+    </div>
+  </div>
+
+  <!-- QUICK WIN CARD 7 — Team / Long-Term Play -->
+  <div class="quick-win-card">
+    <div class="qw-header">
+      <div class="qw-title">Designate Internal Digital Marketing Coordinator</div>
+      <div class="qw-badges">
+        <span class="badge badge-team">Team</span>
+        <span class="badge badge-long-term">Long-Term Play</span>
+      </div>
+    </div>
+    <div class="qw-row why">
+      <div class="qw-row-label">Why It Matters</div>
+      Tyler noted the college-town talent pool lacks digital marketing skills and that neither owner has the bandwidth to personally oversee GBP management, review velocity, and LSA performance across three offices. Without an internal owner for this function, it defaults back to the attorneys or falls through the cracks.
+    </div>
+    <div class="qw-row opportunity">
+      <div class="qw-row-label">The Opportunity</div>
+      Hiring or training a dedicated digital coordinator — whether from outside the Cookeville market or by upskilling an existing team member — creates the internal accountability layer that allows the multi-location digital strategy to run without requiring Tyler or Victoria to manage it directly.
+    </div>
+  </div>
+
+  <!-- QUICK WIN CARD 8 — Profit / Quick Win -->
+  <div class="quick-win-card">
+    <div class="qw-header">
+      <div class="qw-title">Marketing Channel ROI Attribution Dashboard</div>
+      <div class="qw-badges">
+        <span class="badge badge-profit">Profit</span>
+        <span class="badge badge-quick-win">Quick Win</span>
+      </div>
+    </div>
+    <div class="qw-row why">
+      <div class="qw-row-label">Why It Matters</div>
+      The firm currently spends $18,000+/month across three separate vendor relationships (seminar agency, SMB AI, and coaching) without a single unified view of which channel is generating which cases and revenue. Reallocating spend to higher-performing channels requires knowing which ones are performing.
+    </div>
+    <div class="qw-row opportunity">
+      <div class="qw-row-label">The Opportunity</div>
+      Building a simple monthly attribution report — cases and revenue by source, by location — takes less than two hours to set up and creates the financial clarity needed to confidently redirect spend from the declining seminar channel toward the digital channels being built. This is what makes every future marketing decision data-driven instead of a guess.
+    </div>
+  </div>
+
+</div>
+
+<!-- HOW SMB TEAM CAN HELP -->
+<div class="subsection-header" id="recommendation">
+  <div class="subsection-header-inner">
+    <h3>How SMB Team Can Help Beacon Legacy Group</h3>
+  </div>
+</div>
+<div class="content-wrap">
+
+  <!-- BLOCK 1: CUSTOM CLOSING STATEMENT -->
+  <div class="closing-statement-block">
+    <p>We help <span class="dbm-highlight">estate planning and elder law firms with multi-location ambitions</span> get a predictable, multi-channel digital presence so they can <span class="dbm-highlight">step off the seminar circuit and let the firm generate consistent revenue for them.</span></p>
+  </div>
+
+  <div style="height:24px;"></div>
+
+  <!-- BLOCK 2: DBM SUBHEADER + PACKAGE RECOMMENDATIONS -->
+  <div class="dbm-subheader">Tyler and Victoria built Beacon Legacy Group to serve Tennessee families at the highest level of estate planning and elder law expertise — now the goal is building the systems so those families find the firm without Tyler and Victoria having to be in the room to bring them in. That is the transition this plan is designed to make.</div>
+
+  <!-- PACKAGE ONE: Full Service Marketing Growth -->
+  <div class="package-block">
+    <div class="package-header">
+      <div class="package-label">Recommended Marketing Package</div>
+      <h4>Full Service Marketing — Growth</h4>
+    </div>
+    <div class="package-body">
+      <div class="package-why">Beacon Legacy Group's three-location growth strategy requires a coordinated, multi-location digital presence — not just one active channel. The Growth package rebuilds the website with location-specific SEO silos for all three offices, activates and manages LSAs across all three GBP profiles, and launches targeted probate and estate planning PPC campaigns. This is the infrastructure that makes Cookeville, Crossville, and Mt. Juliet all visible on Google — at the same time, with the same professionalism.</div>
+      <div class="package-deliverables-label">Deliverables Include</div>
+      <ul class="package-list">
+        <li>Full website rebuild with location-specific SEO architecture for Cookeville, Crossville, and Mt. Juliet</li>
+        <li>LSA management across all three Google Business Profiles with partner API responsiveness optimization and review velocity program</li>
+        <li>Targeted probate, conservatorship, and estate planning PPC campaigns with demographic targeting (age, income) for high-value estate planning prospects</li>
+        <li>Directory and NAP cleanup across all relevant directories; GBP hours alignment and optimization across all three profiles</li>
+        <li>Monthly performance reporting and quarterly strategy sessions with a dedicated SMB account team</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- PACKAGE TWO: Master's Circle -->
+  <div class="package-block">
+    <div class="package-header">
+      <div class="package-label">Recommended Coaching Package</div>
+      <h4>Master's Circle</h4>
+    </div>
+    <div class="package-body">
+      <div class="package-why">Tyler and Victoria are navigating a three-location expansion, a declining seminar channel, and a vendor consolidation decision — all at the same time. The Master's Circle connects them with peer law firm owners at similar revenue levels, provides the structured accountability to execute the digital transition without losing momentum, and delivers the strategic coaching layer that helps the firm move from seminar-dependent to systems-driven without the owners having to figure it out alone.</div>
+      <div class="package-deliverables-label">Deliverables Include</div>
+      <ul class="package-list">
+        <li>Weekly group coaching sessions with high-growth law firm owners at similar revenue stages</li>
+        <li>Practice area masterminds — estate planning and elder law-specific strategic sessions</li>
+        <li>Virtual access to quarterly workshops covering marketing, intake, team, and profit planning</li>
+        <li>One annual in-person workshop with the full SMB community</li>
+        <li>90-day accountability roadmap customized to Beacon Legacy Group's three-location digital transition</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- BLOCK 3 + 4: INVESTMENT GRID -->
+  <div class="investment-grid">
+
+    <!-- BLOCK 3: SMB TEAM MONTHLY INVESTMENT -->
+    <div class="investment-block">
+      <div class="investment-header"><h4>SMB Team Monthly Investment</h4></div>
+      <div class="investment-body">
+        <div class="investment-row">
+          <span class="label">Full Service Marketing Growth</span>
+          <span><span class="retail">$4,997/mo</span>&nbsp;<span class="bundled">$4,397/mo</span></span>
+        </div>
+        <div class="investment-row">
+          <span class="label">Master's Circle</span>
+          <span><span class="retail">$3,997/mo</span>&nbsp;<span class="bundled">$2,600/mo</span></span>
+        </div>
+        <div class="investment-total">
+          <span class="total-label">Total Monthly Investment</span>
+          <span class="total-amount">$6,997/mo</span>
+        </div>
+        <div class="investment-savings">You save $1,997/month by bundling</div>
+      </div>
+    </div>
+
+    <!-- BLOCK 4: RECOMMENDED AD SPEND -->
+    <div class="investment-block">
+      <div class="investment-header"><h4>Recommended Monthly Ad Spend</h4></div>
+      <div class="investment-body">
+        <p style="font-size:12px;color:#666;font-style:italic;margin-bottom:12px;">Goes directly to ad platforms — not to SMB Team.</p>
+        <div class="roi-row"><span>Recommended ad spend</span><span style="font-weight:700;">$5,000/mo</span></div>
+        <div class="roi-row"><span>Estimated case value</span><span style="font-weight:700;">$9,000</span></div>
+        <div class="roi-row"><span>Est. cases per month</span><span style="font-weight:700;">3–5 cases</span></div>
+        <div class="roi-row"><span>Est. monthly revenue from ads</span><span style="font-weight:700;color:#3B6D11;">$27,000–$45,000</span></div>
+        <p class="roi-disclaimer">These are estimates based on industry averages and market data. Results are not guaranteed and will vary based on market conditions, competition, and firm-specific factors. Case value based on Tyler's stated range of $7,000–$11,000 per estate plan. Close rate defaulted to 15%.</p>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- BLOCK 5: WHAT HAPPENS IN THE FIRST 90 DAYS -->
+  <div class="package-block">
+    <div class="package-header"><h4>What Happens in the First 90 Days</h4></div>
+    <div class="package-body">
+      <ul class="focus-list">
+        <li>Launch LSAs for Crossville and Mt. Juliet; optimize Cookeville LSA with partner API for responsiveness monitoring; add Victoria Lannom's photo to all three LSA profiles and begin review velocity program across all locations</li>
+        <li>Launch targeted probate and conservatorship PPC campaign to capture whitespace keyword traffic in Middle Tennessee at low CPL — first-mover advantage while the market is uncrowded</li>
+        <li>Rebuild the Initial Consultation page with working video, consultation process content, and a clear scheduling CTA; fix all duplicate navigation and schema markup issues identified in the site audit</li>
+        <li>Complete directory NAP audit and cleanup — remove all legacy info@lannomlaw.com references and align GBP name, address, phone, and hours across all three profiles and all major directories before extending to 24/7 visibility</li>
+        <li>Master's Circle coaching kickoff — establish 90-day accountability plan for the digital transition, define the internal team liaison role and SMB reporting cadence, and begin multi-location SEO silo keyword research for Crossville and Mt. Juliet</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- BLOCK 6: GROWTH ROADMAP -->
+  <div class="package-block">
+    <div class="package-header"><h4>What Happens Next</h4></div>
+    <div class="package-body">
+      <div class="roadmap-stack">
+
+        <div class="phase-card">
+          <div class="phase-header">
+            <div class="phase-number">Phase 1</div>
+            <div class="phase-title">Foundation</div>
+            <div class="phase-trigger">Starting Now</div>
+          </div>
+          <div class="phase-body">
+            <ul class="phase-list">
+              <li>Full Service Marketing Growth + Master's Circle coaching activated simultaneously</li>
+              <li>LSAs live across all three offices; Cookeville, Crossville, and Mt. Juliet all visible at the top of Google for estate planning and probate searches</li>
+              <li>Probate/conservatorship PPC campaign live and capturing first-mover whitespace leads</li>
+              <li>Website rebuilt with location-specific SEO silos and all broken content repaired; review velocity program running post-seminar and post-consult at all three locations</li>
+            </ul>
+            <div class="phase-dbm">Phase 1 is what breaks the dependence on seminars as the only revenue driver — by the end of this phase, inbound digital leads are arriving without Tyler or Victoria having to schedule an event to generate them.</div>
+          </div>
+        </div>
+
+        <div class="phase-card">
+          <div class="phase-header">
+            <div class="phase-number">Phase 2</div>
+            <div class="phase-title">Operational Scale</div>
+            <div class="phase-trigger">Once the firm crosses $1.8M in annual revenue</div>
+          </div>
+          <div class="phase-body">
+            <ul class="phase-list">
+              <li>Add FCOO Advisor ($2,297/mo) to build scalable operational infrastructure across three offices — standardize intake, team accountability, and multi-location management so growth does not require more owner time</li>
+              <li>Expand PPC to include estate planning and elder law keywords across all three markets, not just probate — more budget, more channels, more inbound volume</li>
+              <li>Build referral network with financial advisors, CPAs, and senior care facilities in Cookeville, Crossville, and Wilson County to add a systematic referral channel alongside digital</li>
+            </ul>
+            <div class="phase-dbm">Phase 2 is when the firm stops running on Tyler and Victoria's personal energy — systems, processes, and an operational leadership layer make multi-location growth sustainable without the owners being the bottleneck.</div>
+          </div>
+        </div>
+
+        <div class="phase-card">
+          <div class="phase-header">
+            <div class="phase-number">Phase 3</div>
+            <div class="phase-title">Optimize</div>
+            <div class="phase-trigger">Once the firm crosses $2.5M and Crossville and Mt. Juliet each have 50+ Google reviews</div>
+          </div>
+          <div class="phase-body">
+            <ul class="phase-list">
+              <li>Add FCFO Advisor ($2,297/mo) for profitability-by-location analysis, marketing attribution clarity, and financial planning toward the $3M milestone</li>
+              <li>Launch evergreen social content program across all platforms to complement the seminar channel — sustainable social presence without the event calendar dependency</li>
+              <li>Evaluate seminar agency consolidation — with digital channels fully matured, the firm has the data to decide whether seminars remain a net positive ROI channel or whether those dollars are better deployed in digital</li>
+            </ul>
+            <div class="phase-dbm">Phase 3 is when Beacon Legacy Group becomes the self-managing, predictably profitable firm Tyler described — three dominant markets, clear financial visibility, and a business that works whether or not the owners are in it every day.</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- BLOCK 7: OUTCOME CARDS -->
+  <div class="scorecard-label">Here Is What This Builds For You</div>
+  <div class="outcome-grid">
+    <div class="outcome-card">
+      <div class="outcome-title">More Profit</div>
+      <div class="outcome-text">Predictable digital leads across all three locations replace the unpredictable seminar cycle — so Tyler can see months ahead, invest with confidence, and know what the firm will generate before the calendar month even starts.</div>
+    </div>
+    <div class="outcome-card">
+      <div class="outcome-title">More Freedom</div>
+      <div class="outcome-text">When Cookeville, Crossville, and Mt. Juliet are all generating consistent inbound consultations from Google, Tyler and Victoria step off the seminar circuit and get their weekends back — the firm earns while they rest.</div>
+    </div>
+    <div class="outcome-card">
+      <div class="outcome-title">Better Client Results</div>
+      <div class="outcome-text">Tennessee families who urgently need estate planning and elder law guidance can find Beacon Legacy Group the moment they search — not only when a seminar happens to be scheduled in their area that month.</div>
+    </div>
+  </div>
+
+  <!-- BLOCK 8: PERSONAL CLOSING -->
+  <div class="personal-closing">
+    <p>You have built something most attorneys never achieve — a specialized, well-reviewed, multi-location firm with a team that shows up every day and clients who trust you completely. What you are describing when you talk about reaching $2–3M is not more of the same. It is a different kind of firm — one that runs without you on a stage every weekend to keep the revenue coming. That is exactly what this plan is designed to build.</p>
+    <p>The seminar circuit showed you what demand looks like. The digital infrastructure we are describing is how you capture that demand without the grind — across all three markets, every day, whether or not there is an event on the calendar.</p>
+    <p class="final-line">This is not a fantasy. SMB Team can make this a reality for Beacon Legacy Group.</p>
+  </div>
+
+</div>
+<div class="back-to-top"><a href="#toc">↑ Back to Top</a></div>
+
+
+</body>
+</html>
