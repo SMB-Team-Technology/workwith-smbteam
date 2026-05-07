@@ -139,10 +139,10 @@ story.append(Paragraph("<b>What it does for him:</b>", S["subsection"]))
 story.append(bd("Paid leads come in from LSA and PPC while Adam focuses on consults — the pipeline fills without him sourcing every case."))
 story.append(bd("GBP, landing page, and SEO compound over 6-12 months to generate free organic cases in parallel with paid."))
 
-story.append(Paragraph("<b>Full Service Marketing Essentials  |  $2,397/mo bundled</b>", S["subsection"]))
+story.append(Paragraph("<b>Full Service Marketing Essentials  |  $3,397/mo bundled</b>", S["subsection"]))
 story.append(b("At $125K/yr ($10,417/mo), Essentials is the correct tier. Stand-alone: N/A — this is the entry bundled offering."))
-story.append(b("Includes LSA + PPC, GBP optimization, probate landing page, SEO, FAQ schema, blog, and monthly reporting."))
-story.append(b("Essentials ad spend cap: $1,500/mo. Recommended $1,000-$1,200 stays within cap and within 35% total spend rule."))
+story.append(b("Includes GBP optimization, probate landing page, SEO, FAQ schema, blog, reporting, and LSA/PPC setup for Phase 2 activation."))
+story.append(b("35% cap: $3,397 = 32.6% of $10,417 — within cap. Remaining $248/mo is below min ad spend; paid ads launch in Phase 2."))
 
 story.append(thin_rule())
 
@@ -151,9 +151,9 @@ story.append(Paragraph("<b>What it does for him:</b>", S["subsection"]))
 story.append(bd("Teaches Adam to delegate the initial consultation — the change that unlocks every growth milestone above $250K."))
 story.append(bd("Builds the leadership structure (SOPs, hiring playbook, accountability) needed for multi-market expansion."))
 
-story.append(Paragraph("<b>Elite Coach  |  $1,600/mo bundled (Phase 2 only)</b>", S["subsection"]))
-story.append(b("Excluded from Phase 1: $2,397 + $1,600 = $3,997 = 38.4% of $10,417 — exceeds 35% cap before ad spend."))
-story.append(b("At $250K revenue ($20,833/mo): $3,997 total = 19.2% — well under cap. Saves $1,897/mo vs. $3,497 stand-alone."))
+story.append(Paragraph("<b>Elite Coach  |  $2,600/mo bundled (Phase 2 only)</b>", S["subsection"]))
+story.append(b("Excluded from Phase 1: $3,397 + $2,600 = $5,997 = 57.6% of $10,417 — far over 35% cap."))
+story.append(b("At $250K revenue ($20,833/mo): $5,997 = 28.8% — within cap. Saves $897/mo vs. $3,497 stand-alone."))
 
 
 # ══════════════════════════════════════════════════════════
@@ -164,16 +164,16 @@ story.append(PageBreak())
 story.append(Paragraph("Shingleton Law — Sales Companion (continued)", S["title"]))
 story.append(thin_rule())
 
-story.append(Paragraph("Why This Ad Spend", S["section"]))
+story.append(Paragraph("Why This Ad Spend (Phase 2 — launches at $250K revenue)", S["section"]))
 story.append(Paragraph("<b>What it does for him:</b>", S["subsection"]))
-story.append(bd("<b>Conservative $1,000/mo:</b> Projected 4-5 probate cases at $5K avg = ~$20K monthly revenue — 20x return on ad spend."))
-story.append(bd("<b>Aggressive $1,200/mo:</b> Projected 8-9 cases = ~$40K monthly revenue — 33x return and pace to hit $250K in under 12 months."))
+story.append(bd("<b>Conservative $1,000/mo:</b> 4-5 probate cases at $5K avg = ~$20K/mo revenue — 20x return. Total Phase 2 spend = 33.6% of $20,833 — within cap."))
+story.append(bd("<b>Aggressive $1,200/mo:</b> 8-9 cases = ~$40K/mo revenue — 33x return. Total Phase 2 spend = 34.6% of $20,833 — within cap."))
 
 story.append(Paragraph("<b>How it was calculated:</b>", S["subsection"]))
 story.append(b("<b>Conservative:</b> Estate planning blended CPL $175 + 20% cushion = $200. $1K / $200 = 5 leads x 90% close = 4-5 cases."))
 story.append(b("<b>Aggressive:</b> ($75 + $175) / 2 = $125 blended. $1.2K / $125 = 9-10 leads x 90% close = 8 cases."))
 story.append(b("Practice area minimums exceed budget ($3,200 total) — LSA-first prioritization required; flag for paid ads team."))
-story.append(b("Total Phase 1: $2,397 + $1,000-$1,200 ad spend = $3,397-$3,597 = 32.6-34.5% of revenue (under 35% cap)."))
+story.append(b("Phase 1 cap: $3,397 mgmt = 32.6% of $10,417 — within cap. $248 remaining is below $1K min; ads launch Phase 2."))
 story.append(Paragraph("<i>All ROI figures are estimates. Not guaranteed.</i>", S["disclaimer"]))
 
 story.append(thin_rule())
@@ -187,18 +187,18 @@ story.append(Paragraph('"My close rate is 90% — isn\'t that enough?"', S["obje
 story.append(Paragraph("A 90% close rate is the firm's strongest asset and the audit confirms it. The gap is not the close — it is the leads. Shingleton Law does not appear in the local 3-pack for any probate keyword and runs no paid ads. Barrington Law (5.0 stars / 32 Avvo reviews) and Bespoke Estate Law (geo-targeted Hampstead landing pages) are already taking the cases Adam never hears about.", S["objection_a"]))
 
 story.append(Paragraph('"The budget feels tight with the 35% cap."', S["objection_q"]))
-story.append(Paragraph("The math was built around the cap. Essentials at $2,397 + $1,000 ad spend = $3,397 = 32.6% of $10,417. At aggressive $1,200 ad spend, total = $3,597 = 34.5% — still within cap. Elite Coach adds in Phase 2 once revenue hits $250K/year, when the same $3,997 total drops to 19.2% of the new monthly revenue.", S["objection_a"]))
+story.append(Paragraph("Essentials at $3,397 = 32.6% of $10,417/mo — within cap as a management fee. The remaining $248/mo is below the ad spend minimum, so paid ads launch in Phase 2 at $250K revenue. At that point $5,997 management fees = 28.8% of $20,833, and the 35% cap allows $1,000-$1,294 for ads alongside both packages.", S["objection_a"]))
 
 story.append(thin_rule())
 
 story.append(Paragraph("Investment At A Glance", S["section"]))
 price_data = [
     [Paragraph("<b>Full Service Marketing Essentials</b>", S["price_main"]),
-     Paragraph("$2,397/mo", S["price_main"])],
-    [Paragraph("LSA + PPC, GBP, SEO, probate landing page, FAQ schema, blog, reporting.", S["price_detail"]),
+     Paragraph("$3,397/mo", S["price_main"])],
+    [Paragraph("GBP, SEO, probate landing page, FAQ schema, blog, reporting, LSA/PPC setup.", S["price_detail"]),
      Paragraph("Stand-alone: N/A", S["price_detail"])],
     [Paragraph("<b>Elite Coach (Phase 2 — unlocks at $250K/yr)</b>", S["price_main"]),
-     Paragraph("$1,600/mo", S["price_main"])],
+     Paragraph("$2,600/mo", S["price_main"])],
     [Paragraph("Weekly coaching, practice area masterminds, quarterly workshops, annual in-person event.", S["price_detail"]),
      Paragraph("<strike>$3,497</strike> stand-alone", S["price_detail"])],
     [Paragraph("<b>Recommended Ad Spend</b>", S["price_main"]),
@@ -217,7 +217,7 @@ pt.setStyle(TableStyle([
 ]))
 story.append(pt)
 story.append(Paragraph(
-    "Phase 1: $2,397/mo + $1,000-$1,200 ad spend (32.6-34.5% of revenue)  |  Phase 2 adds Elite Coach: saves $1,897/mo bundled",
+    "Phase 1: $3,397/mo management only (32.6% of revenue — no ad spend within Phase 1 cap)  |  Phase 2 adds Elite Coach ($2,600) + ads $1,000-$1,200  |  Elite Coach saves $897/mo bundled",
     S["savings"]))
 
 doc.build(story, onFirstPage=add_page_elements, onLaterPages=add_page_elements)
