@@ -151,10 +151,10 @@ story.append(bd("<b>Full attribution.</b> She will know cost per case by channel
 story.append(bd("<b>Closes the review gap.</b> Managed review generation closes 466-review deficit with Allmand, month by month."))
 story.append(bd("<b>Spanish-language campaigns.</b> Two bilingual attorneys + Houston 45% Hispanic = virtually uncontested segment."))
 
-story.append(Paragraph("<b>Full Service Marketing — Platinum  |  $5,997/mo bundled</b>", S["subsection"]))
-story.append(b("Revenue $3M+ → Platinum tier; Houston = Tier 1 requiring full-spectrum approach."))
+story.append(Paragraph("<b>Full Service Marketing — Growth  |  $7,397/mo bundled</b>", S["subsection"]))
+story.append(b("Full Service Marketing Growth; Houston = Tier 1 requiring full-spectrum approach."))
 story.append(b("Includes PPC, LSA, Meta, review generation, Spanish campaigns, and citation cleanup."))
-story.append(b("Retail $9,997/mo; bundled at $5,997 = $4,000/mo savings."))
+story.append(b("Stand-alone $8,997/mo; bundled at $7,397 = $1,600/mo savings."))
 
 story.append(thin_rule())
 
@@ -207,17 +207,17 @@ story.append(Paragraph('"Allmand has a head start — can we catch up?"', S["obj
 story.append(Paragraph("They've been in Houston 6 months. You've been here 40 years. You have board certification and a bilingual team they can't replicate. The gap is in marketing infrastructure — not credibility. We build the infrastructure.", S["objection_a"]))
 
 story.append(Paragraph('"$14k/month is a lot."', S["objection_q"]))
-story.append(Paragraph("At conservative ($10k ad spend), the model projects $105–120k/month in revenue. Total engagement = $24,391/mo = 9.8% of monthly revenue. Well under the 35% cap.", S["objection_a"]))
+story.append(Paragraph("At conservative ($10k ad spend), the model projects $105–120k/month in revenue. Total engagement = $25,791/mo = 10.3% of monthly revenue. Well under the 35% cap.", S["objection_a"]))
 
 story.append(thin_rule())
 
 story.append(Paragraph("Investment At A Glance", S["section"]))
 
 price_data = [
-    [Paragraph("<b>Full Service Marketing — Platinum</b>", S["price_main"]),
-     Paragraph("$5,997/mo", S["price_main"])],
+    [Paragraph("<b>Full Service Marketing — Growth</b>", S["price_main"]),
+     Paragraph("$7,397/mo", S["price_main"])],
     [Paragraph("PPC, LSA, Meta, review generation, Spanish campaigns, attribution.", S["price_detail"]),
-     Paragraph("<strike>$9,997</strike> stand alone", S["price_detail"])],
+     Paragraph("<strike>$8,997</strike> stand alone", S["price_detail"])],
     [Paragraph("<b>Master's Circle + FCOO Director</b>", S["price_main"]),
      Paragraph("$8,394/mo", S["price_main"])],
     [Paragraph("Intake script, KPI accountability, ops leadership, coaching + workshops.", S["price_detail"]),
@@ -240,7 +240,7 @@ pt.setStyle(TableStyle([
 ]))
 story.append(pt)
 story.append(Paragraph(
-    "Total: $14,391/mo + $10,000–$20,000 ad spend  |  Save $4,000/mo by bundling  |  9.8%–13.8% of revenue (under 35% cap)",
+    "Total: $15,791/mo + $10,000–$20,000 ad spend  |  Save $1,600/mo by bundling  |  10.3%–14.3% of revenue (under 35% cap)",
     S["savings"]))
 
 doc.build(story, onFirstPage=add_page_elements, onLaterPages=add_page_elements)
