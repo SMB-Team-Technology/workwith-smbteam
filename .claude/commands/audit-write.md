@@ -129,6 +129,23 @@ This section is large and must be completed in three sub-steps to avoid API time
 
 Apply all package eligibility and calculation logic (below) BEFORE starting Step I-a.
 
+**MANDATORY PRICE LOOKUP — COMPLETE THIS BEFORE STEP I-a**
+
+Do not rely on memory for any price. Scroll to the SELECT MARKETING PACKAGE and SELECT NON-MARKETING PACKAGE tables in this command file and read the exact dollar amounts. Then write them out explicitly in this format before proceeding:
+
+- Marketing package selected: [name]
+  - Bundled price (from table): $X,XXX/mo
+  - Stand-alone price (from table): $X,XXX/mo
+  - Savings (stand-alone minus bundled): $X,XXX/mo
+- Non-marketing package selected: [name]
+  - Bundled price (from table): $X,XXX/mo
+  - Stand-alone price (from table): $X,XXX/mo
+  - Savings (stand-alone minus bundled): $X,XXX/mo
+- Total monthly investment (sum of bundled prices): $X,XXX/mo
+- Total savings (sum of all savings): $X,XXX/mo
+
+If any price you are about to write is not an exact match to a value in those tables, stop. Go back to the table and find the correct number. Do not round, interpolate, or estimate. Do not proceed to Step I-a until these lookups are confirmed character-by-character against the tables in this file.
+
 **STEP I-a — Write workings file**
 Compute and save `[friendly-name]/sections/section_11_workings.txt` containing:
 - Selected marketing package name, bundled price, stand-alone price, savings

@@ -1,6 +1,6 @@
 # SMB Team — Audit Research (Pass 1)
 
-Run all browser research for a Law Firm Growth Audit and save a verified research notes file. Does not generate any HTML. Run this first, then run `/audit-write` when complete.
+Run all browser research for a Growth, Profit, and Freedom Roadmap and save a verified research notes file. Does not generate any HTML. Run this first, then run `/audit-write` when complete.
 
 ## How to invoke
 

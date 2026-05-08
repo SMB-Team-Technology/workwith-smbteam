@@ -1,7 +1,7 @@
 """
 Audit PowerPoint Template — SMB Team
 ======================================
-Generates a 3-slide proposal PPTX from the Law Firm Growth Audit.
+Generates a 3-slide proposal PPTX from the Growth, Profit, and Freedom Roadmap.
 Uses python-pptx. Do not modify the layout engine below the FILL section.
 Only replace the # FILL: placeholders with audit-specific content.
 
