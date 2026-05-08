@@ -182,10 +182,10 @@ story.append(thin_rule())
 
 # ── Why This Coaching Package ──
 story.append(Paragraph("Why This Coaching Package", S["section"]))
-story.append(Paragraph("<b>Elite Coach Plus  |  $2,200/mo bundled  (save $1,297/mo)</b>", S["subsection"]))
+story.append(Paragraph("<b>Elite Coach Plus  |  $3,200/mo bundled  (save $297/mo)</b>", S["subsection"]))
 story.append(bd("<b>Builds the CEO, not just the lawyer.</b> Transitions Wilson from Chief Everything Officer to firm leader — systems that run without him."))
 story.append(bd("<b>Delegation that sticks.</b> Coaching builds the accountability frameworks so his paralegal, associate, and legal assistant operate independently."))
-story.append(bd("<b>Right tier for this firm.</b> $400K–$1M revenue band, growing team, owner-level bottleneck — Elite Coach Plus is the match. Stand-alone $3,497/mo; bundled at $2,200/mo."))
+story.append(bd("<b>Right tier for this firm.</b> $400K–$1M revenue band, growing team, owner-level bottleneck — Elite Coach Plus is the match. Stand-alone $3,497/mo; bundled at $3,200/mo."))
 
 story.append(thin_rule())
 
@@ -237,7 +237,7 @@ story.append(Paragraph("Investment At A Glance", S["section"]))
 
 price_data = [
     [Paragraph("<b>Elite Coach Plus</b>", S["price_main"]),
-     Paragraph("$2,200/mo", S["price_main"])],
+     Paragraph("$3,200/mo", S["price_main"])],
     [Paragraph("One-on-one coaching, weekly group sessions, masterminds, quarterly workshops, annual in-person.", S["price_detail"]),
      Paragraph("<strike>$3,497</strike> stand alone", S["price_detail"])],
     [Paragraph("<b>FCFO Advisor</b>", S["price_main"]),
@@ -262,7 +262,7 @@ pt.setStyle(TableStyle([
 ]))
 story.append(pt)
 story.append(Paragraph(
-    "Total: $4,497/mo SMB Team fees + $5,000–$8,000 ad spend (Phase 2)  |  Save $1,797/mo by bundling  |  SMB fees = 11% of revenue (well under 35% cap)",
+    "Total: $5,497/mo SMB Team fees + $5,000–$8,000 ad spend (Phase 2)  |  Save $797/mo by bundling  |  SMB fees = 13% of revenue (well under 35% cap)",
     S["savings"]))
 
 # ── Build ──
