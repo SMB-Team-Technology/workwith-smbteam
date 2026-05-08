@@ -194,7 +194,7 @@ story.append(Paragraph("<b>What it does for him:</b>", S["subsection"]))
 story.append(bd("Puts Saltiel at the top of Google in English and Spanish — capturing clients competitors can't reach."))
 story.append(bd("Builds bilingual paid lead flow for the first time — predictable, not algorithm-dependent."))
 
-story.append(Paragraph("<b>Full Service Marketing — Platinum  |  $4,997/mo bundled</b>", S["subsection"]))
+story.append(Paragraph("<b>Full Service Marketing — Platinum  |  $15,997/mo bundled</b>", S["subsection"]))
 story.append(b("$3–5M revenue, $6M goal, bilingual Miami market — Platinum is the correct tier."))
 story.append(b("First-time advertiser: full EN+ES infrastructure needed from scratch; lower tiers are underpowered."))
 story.append(b("Miami = Tier 2 (1.3×); Spanish multiplier (1.33×); conservative spend lands at $5,000/mo within cap."))
@@ -208,7 +208,7 @@ story.append(Paragraph("<b>What it does for him:</b>", S["subsection"]))
 story.append(bd("Removes Moises as the bottleneck — delegation frameworks, documented close process, team accountability."))
 story.append(bd("Installs financial visibility: CAC tracking, margin analysis, profit planning toward $6M."))
 
-story.append(Paragraph("<b>Master's Circle + FCOO Director  |  $4,394/mo bundled</b>", S["subsection"]))
+story.append(Paragraph("<b>Master's Circle + FCOO Director  |  $12,394/mo bundled</b>", S["subsection"]))
 story.append(b("$3–5M revenue, 5+ defined-role team — Master's Circle + FCOO Director row applies."))
 story.append(b("Moises is sole closer; FCOO Director builds the infrastructure to delegate that role."))
 story.append(b("No CAC or profit plan exists; peer group has already solved the problems he faces now."))
@@ -242,8 +242,8 @@ story.append(Paragraph("If He Pushes Back", S["section"]))
 story.append(Paragraph('"We\'ve always been organic-first — never run paid ads."', S["objection_q"]))
 story.append(Paragraph("Trembly is confirmed running Google Ads for your exact keywords right now — showing above your organic listings. Every month without paid extends their lead. Organic rankings are also not protected from algorithm changes.", S["objection_a"]))
 
-story.append(Paragraph('"The fees feel like a lot before ad spend."', S["objection_q"]))
-story.append(Paragraph("At 11% conversion the firm is leaving ~$740K/mo in potential revenue unconverted from leads it already has. Activating Clio Grow alone is projected to add 7–8 clients/month at zero additional ad cost. The math justifies the investment.", S["objection_a"]))
+story.append(Paragraph('"$28K/month feels like a significant commitment."', S["objection_q"]))
+story.append(Paragraph("At 11% conversion the firm is leaving ~$740K/mo in potential revenue unconverted from leads it already has. Activating Clio Grow alone is projected to add 7–8 clients/month at zero additional ad cost — at $10K avg case value that's $70–80K/mo in recovered revenue.", S["objection_a"]))
 
 story.append(Paragraph('"We have Clio Grow — isn\'t intake handled?"', S["objection_q"]))
 story.append(Paragraph("Clio Grow is installed but automation is not activated. 83 leads/month at 11% close means the tool exists but is not doing the work. This engagement turns it on and adds structure on top.", S["objection_a"]))
@@ -258,13 +258,13 @@ story.append(Paragraph("Investment At A Glance", S["section"]))
 
 price_data = [
     [Paragraph("<b>Full Service Marketing — Platinum</b>", S["price_main"]),
-     Paragraph("$4,997/mo", S["price_main"])],
+     Paragraph("$15,997/mo", S["price_main"])],
     [Paragraph("Bilingual paid search (EN+ES), LSA, Meta Ads, SEO, landing pages, reporting.", S["price_detail"]),
-     Paragraph("<strike>$7,997</strike> stand alone", S["price_detail"])],
+     Paragraph("<strike>$18,997</strike> stand alone", S["price_detail"])],
     [Paragraph("<b>Master's Circle + FCOO Director</b>", S["price_main"]),
-     Paragraph("$4,394/mo", S["price_main"])],
+     Paragraph("$12,394/mo", S["price_main"])],
     [Paragraph("Fractional COO Director, group coaching, masterminds, quarterly workshops, 1 annual in-person.", S["price_detail"]),
-     Paragraph("<strike>$7,794</strike> stand alone", S["price_detail"])],
+     Paragraph("", S["price_detail"])],
     [Paragraph("<b>Recommended Ad Spend</b>", S["price_main"]),
      Paragraph("$5,000–$10,000/mo", S["price_main"])],
     [Paragraph("Goes to Google, LSA, and Meta — not to SMB Team.", S["price_detail"]),
@@ -283,7 +283,7 @@ pt.setStyle(TableStyle([
 ]))
 story.append(pt)
 story.append(Paragraph(
-    "Total: $9,391/mo + $5,000–$10,000 ad spend  |  Save $6,400/mo by bundling  |  1.2%–7.8% of revenue (well under 35% cap)",
+    "Total: $28,391/mo + $5,000–$10,000 ad spend  |  Save $3,000/mo on marketing package  |  well under 35% of revenue cap",
     S["savings"]))
 
 # ── Build ──
