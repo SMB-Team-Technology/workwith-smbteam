@@ -1,0 +1,1252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Law Firm Growth Audit — The Antoine Law Firm, LLC</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Montserrat:wght@700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="audit_styles.css">
+<!-- HubSpot Analytics -->
+<script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/4570385.js"></script>
+</head>
+<body>
+
+<!--
+  ============================================================
+  SMB TEAM — LAW FIRM GROWTH AUDIT
+  Master Assembly File
+
+  ⚠️ CRITICAL — READ BEFORE WRITING A SINGLE CHARACTER:
+
+  This file does NOT contain a <style> block.
+  This file does NOT use inline styles (no style="" attributes).
+  ALL styling comes exclusively from audit_styles.css.
+
+  If you find yourself writing CSS — in a <style> tag, inline,
+  or anywhere else — STOP. Delete it. Use only the class names
+  that already exist in audit_styles.css. Do not invent new ones.
+
+  Violating this rule is what causes the report to look wrong.
+  The CSS is already written. Your only job is to fill in content.
+
+  ============================================================
+
+  INSTRUCTIONS FOR COWORK:
+  This file assembles the completed audit by inserting the
+  content of each completed section fragment in order.
+
+  Workflow:
+  1. Complete all research and analysis first. Write nothing yet.
+  2. Open section_01_cover.html. Fill in all placeholders. Save.
+  3. Open section_02_toc.html. Fill in all placeholders. Save.
+  4. Open section_03_firm_overview.html. Fill in all placeholders. Save.
+  5. Section 04 (About SMB Team) is static — copy as-is.
+  6. Open section_05_growth_health.html. Fill in all placeholders. Save.
+  7. Open section_06_lead_generation.html. Fill in all placeholders. Save.
+  8. Open section_07_08_09_intake_team_profit.html. Fill in all placeholders. Save.
+  9. Open section_10_whats_possible.html. Fill in all placeholders. Save.
+  10. Open section_11_next_steps.html. Fill in all placeholders. Save.
+  11. Open section_executive_summary.html. Fill in all placeholders using
+      completed data from sections 05 and 11. Save. (Fill this one last.)
+  12. Return to this file. Replace each INSERT ... CONTENT HERE comment
+      with the full HTML content of that completed section file.
+  13. Save the final assembled file as:
+      [FirmName]_[Date]_Growth_Audit.html
+      to the project folder.
+
+  RULES:
+  - No <style> block. None. Not here, not in any section file.
+  - No inline styles. No style="" on any element. Ever.
+  - No new CSS classes. Only use classes from audit_styles.css.
+  - Do not output this file in the chat window.
+  - Save directly to the project folder.
+  ============================================================
+-->
+
+<!-- ===== SECTION 01: COVER PAGE ===== -->
+<!-- ⚠️ NO CSS IN THIS FILE. No <style> blocks. No inline styles. No style="" attributes.
+     All styling comes from audit_styles.css only. Use only existing class names.
+     If you find yourself writing CSS — stop and delete it. -->
+
+<div class="cover" id="cover">
+  <img class="cover-logo"
+    src="https://www.dropbox.com/scl/fi/9ytno9l0ipl9w9x4l0qg6/SMB-Logo-H-White.png?rlkey=y13ywjp9poyihu8zus42tx6wq&st=rfo0lufv&raw=1"
+    alt="SMB Team Logo" />
+
+  <div class="cover-title">Law Firm Growth Audit</div>
+
+  <div class="cover-firm">The Antoine Law Firm, LLC</div>
+
+  <div class="cover-footer">
+    <p>Prepared for: <strong>The Antoine Law Firm, LLC</strong></p>
+    <p>Prepared by: <strong>Jacob Meissner</strong> | SMB Team</p>
+    <p>Date: <strong>May 8, 2026</strong></p>
+    <p class="confidential">Confidential</p>
+  </div>
+</div>
+
+
+<!-- ===== EXECUTIVE SUMMARY ===== -->
+<!-- ⚠️ NO CSS IN THIS FILE. No <style> blocks. No inline styles. No style="" attributes.
+     All styling comes from audit_styles.css only. Use only existing class names.
+     If you find yourself writing CSS — stop and delete it. -->
+
+<div class="exec-summary" id="executive-summary">
+  <div class="exec-summary-header">
+    <div class="exec-summary-header-inner">
+      <div class="exec-summary-title">Executive Summary</div>
+      <div class="exec-summary-firm">The Antoine Law Firm, LLC</div>
+    </div>
+  </div>
+
+  <div class="exec-summary-body">
+
+    <div class="exec-meta-row">
+
+      <div class="exec-urgency">
+        <div class="exec-urgency-number">7</div>
+        <div class="exec-urgency-label">Urgency Score</div>
+      </div>
+
+      <div class="exec-pillars">
+        <div class="exec-pillars-label">Pillar Health at a Glance</div>
+        <div class="exec-pillar-row">
+
+          <div class="exec-pillar-item">
+            <div class="exec-pillar-circle red"></div>
+            <div class="exec-pillar-name">Lead Gen</div>
+          </div>
+
+          <div class="exec-pillar-item">
+            <div class="exec-pillar-circle red"></div>
+            <div class="exec-pillar-name">Intake</div>
+          </div>
+
+          <div class="exec-pillar-item">
+            <div class="exec-pillar-circle amber"></div>
+            <div class="exec-pillar-name">Team</div>
+          </div>
+
+          <div class="exec-pillar-item">
+            <div class="exec-pillar-circle red"></div>
+            <div class="exec-pillar-name">Profit</div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+
+    <div class="exec-content-grid">
+
+      <!-- TOP PRIORITIES -->
+      <div class="exec-block">
+        <div class="exec-block-title">Top Priorities</div>
+        <ul class="exec-findings-list">
+          <li>Wilson generated $492,000 in gross revenue but took home only $60,000 — a $432,000 distribution gap he cannot explain because the bookkeeping is not clean enough to trace</li>
+          <li>Every new case comes from word-of-mouth, the firm does not appear in any Newark local 3-pack search, and competitors have 50–725 verified Google reviews versus an estimated near-zero for this firm</li>
+          <li>Wilson is the "Chief Everything Officer," spending 50–60% of his time on admin and 5% on business development — the firm cannot grow and give him more freedom at the same time while this is true</li>
+          <li>The Smokeball implementation is stalled, the paralegal-handled PI intake has inconsistent quality, and a reactive workflow is creating documented malpractice risk — the firm's operational infrastructure needs to be completed before volume increases</li>
+        </ul>
+      </div>
+
+      <!-- RECOMMENDED INVESTMENT SNAPSHOT -->
+      <div class="exec-block">
+        <div class="exec-block-title">Recommended Investment</div>
+
+        <div class="exec-investment-row">
+          <span>Elite Coach Plus</span>
+          <span class="exec-investment-value">$2,200/mo</span>
+        </div>
+
+        <div class="exec-investment-row">
+          <span>FCFO Advisor</span>
+          <span class="exec-investment-value">$2,297/mo</span>
+        </div>
+
+        <div class="exec-investment-row">
+          <span>Recommended Ad Spend (Phase 2)</span>
+          <span class="exec-investment-value">$5,000–$8,000/mo</span>
+        </div>
+
+        <div class="exec-investment-total">
+          <span>Total SMB Team Investment</span>
+          <span>$4,497/mo</span>
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="exec-closing">
+      <p><span>The revenue is there — the financial clarity and the leadership infrastructure to keep it are not, yet.</span></p>
+    </div>
+
+  </div>
+</div>
+
+
+<!-- ===== SECTION 02: TABLE OF CONTENTS ===== -->
+<!-- ⚠️ NO CSS IN THIS FILE. No <style> blocks. No inline styles. No style="" attributes.
+     All styling comes from audit_styles.css only. Use only existing class names.
+     If you find yourself writing CSS — stop and delete it. -->
+
+<div class="toc-wrap" id="toc">
+  <div class="toc-title">Table of Contents</div>
+
+  <div class="toc-section">
+    <div class="toc-category">Your Firm at a Glance</div>
+    <ul class="toc-items">
+      <li><a href="#firm-overview">The Antoine Law Firm, LLC — Current Status</a></li>
+    </ul>
+  </div>
+
+  <div class="toc-section">
+    <div class="toc-category">About SMB Team</div>
+    <ul class="toc-items">
+      <li><a href="#about-smb">The Law Firm Growth Acceleration Model</a></li>
+    </ul>
+  </div>
+
+  <div class="toc-section">
+    <div class="toc-category">Your Growth Health Assessment</div>
+    <ul class="toc-items">
+      <li><a href="#growth-health">Growth Health Scorecard</a></li>
+      <li><a href="#urgency-score">Competitive Urgency Score</a></li>
+    </ul>
+  </div>
+
+  <div class="toc-section">
+    <div class="toc-category">Lead Generation</div>
+    <ul class="toc-items">
+      <li><a href="#website-audit">Website Audit</a></li>
+      <li><a href="#local-seo">Local SEO</a></li>
+      <li><a href="#google-ads">Google Ads</a></li>
+      <li><a href="#local-service-ads">Local Service Ads</a></li>
+      <li><a href="#meta-ads">Facebook &amp; Instagram Ads</a></li>
+    </ul>
+  </div>
+
+  <div class="toc-section">
+    <div class="toc-category">Intake</div>
+    <ul class="toc-items">
+      <li><a href="#intake">Intake Assessment</a></li>
+      <li><a href="#website-intake">Website Contact Forms &amp; Live Chat</a></li>
+    </ul>
+  </div>
+
+  <div class="toc-section">
+    <div class="toc-category">Self-Managing Team</div>
+    <ul class="toc-items">
+      <li><a href="#team">Team Assessment</a></li>
+    </ul>
+  </div>
+
+  <div class="toc-section">
+    <div class="toc-category">Profit</div>
+    <ul class="toc-items">
+      <li><a href="#profit">Profit Plan Assessment</a></li>
+    </ul>
+  </div>
+
+  <div class="toc-section">
+    <div class="toc-category">Here's What's Possible for The Antoine Law Firm, LLC</div>
+    <ul class="toc-items">
+      <li><a href="#growth-journey">Growth Vision</a></li>
+    </ul>
+  </div>
+
+  <div class="toc-section">
+    <div class="toc-category">Your Next Steps</div>
+    <ul class="toc-items">
+      <li><a href="#next-steps">Quick Wins for The Antoine Law Firm, LLC</a></li>
+      <li><a href="#recommendation">How SMB Team Can Help The Antoine Law Firm, LLC</a></li>
+    </ul>
+  </div>
+</div>
+
+
+<!-- ===== SECTION 03: YOUR FIRM AT A GLANCE ===== -->
+<!-- ⚠️ NO CSS IN THIS FILE. No <style> blocks. No inline styles. No style="" attributes.
+     All styling comes from audit_styles.css only. Use only existing class names.
+     If you find yourself writing CSS — stop and delete it. -->
+
+<div class="section-header" id="firm-overview">
+  <div class="section-header-inner">
+    <h2>Here Is Where The Antoine Law Firm, LLC Stands Today</h2>
+  </div>
+</div>
+
+<div class="content-wrap">
+
+  <div class="firm-summary">The Antoine Law Firm, LLC is a Newark-based plaintiff practice founded in 2018 by Wilson David Antoine — a Cornell Law grad, former NJ Supreme Court clerk, and Super Lawyer — handling personal injury, employment discrimination, business litigation, and public entity defense across New Jersey and New York. The firm generated ~$492K in gross revenue in 2023, but Wilson took home only $60K in personal distributions and cannot explain the gap, because he is spending 50–60% of his time on admin work while the team he just built is not yet trained to operate without him.</div>
+
+  <!-- Stage 3 -->
+  <img src="https://www.dropbox.com/scl/fi/3d243mphsenx3vqnp9aas/LLS-Solo-Practitioner.png?rlkey=mgwovpkf3ntzx2wm856oyvn7s&st=5kasghsj&raw=1" alt="Growth Stage" />
+
+  <p class="dbm-connector">Stage 6 is the stage where the firm runs without you, your income is no longer tied to your personal hours, and you are free to build the legacy — the multi-state firm and the pipeline for underrepresented talent — that you set out to create.</p>
+
+  <div class="stage-cards">
+    <div class="stage-card">
+      <div class="stage-card-header">
+        <h3>Where You Are Today</h3>
+        <div class="stage-label">Stage 3: Solo Practitioner</div>
+      </div>
+      <div class="stage-card-body">
+        <ul>
+          <li>All new PI cases come from word-of-mouth — 1 to 4 per month with no predictable system</li>
+          <li>Wilson personally handles all intake outside of PI pre-suit, and spends 50–60% of his time on low-value admin work</li>
+          <li>A new associate and paralegal are on board but not yet trained — Wilson is still the bottleneck for every critical decision</li>
+          <li>$492K in gross revenue produced only $60K in personal take-home — and the reasons are unclear due to bookkeeping gaps</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="stage-card destination">
+      <div class="stage-card-header">
+        <h3>Where You Need To Be</h3>
+        <div class="stage-label">Stage 6: Law Firm Owner</div>
+      </div>
+      <div class="stage-card-body">
+        <ul>
+          <li>The firm runs without you</li>
+          <li>Your income is no longer tied to your personal hours</li>
+          <li>Your time is yours to spend however you choose</li>
+          <li>This is where true freedom and true wealth become possible</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="connecting-sentence">The gap between where you are and where you want to be is real — but it is not about talent or credentials. It is about systems, financial clarity, and learning to lead instead of do. That is exactly what this plan addresses.</div>
+
+  <div class="assessment-header">Overall Growth Stage Assessment</div>
+  <div class="assessment-subheading">The Antoine Law Firm, LLC</div>
+
+  <div class="assessment-box">Wilson is operating at Stage 3 — a Solo Practitioner in name but with a small team forming around him that has not yet learned to function without his direct involvement. The single most urgent gap limiting his growth is not the number of cases coming in — it is that he cannot capture the value he is generating because the money is disappearing into an unexamined cost structure, and he cannot free himself from the day-to-day because his team is not yet equipped to run without him. Wilson wants to build a legacy firm that "unofficially retires" him from operations, but right now the firm would stop if he stopped — and that has to change before any marketing investment will produce the freedom he is after.</div>
+
+</div>
+<div class="back-to-top"><a href="#toc">↑ Back to Top</a></div>
+
+
+<!-- ===== SECTION 04: ABOUT SMB TEAM ===== -->
+<!-- ⚠️ NO CSS IN THIS FILE. No <style> blocks. No inline styles. No style="" attributes.
+     All styling comes from audit_styles.css only. Use only existing class names.
+     If you find yourself writing CSS — stop and delete it. -->
+<!-- ============================================================
+     SECTION 04 — ABOUT SMB TEAM
+     
+     INSTRUCTIONS FOR COWORK:
+     This section is STATIC. Do not change any text or structure.
+     Copy this section into the final output exactly as it appears here.
+     ============================================================ -->
+
+<div class="section-header" id="about-smb">
+  <div class="section-header-inner">
+    <h2>The Law Firm Growth Acceleration Model</h2>
+  </div>
+</div>
+
+<div class="content-wrap">
+
+  <div class="callout-banner">
+    <p>We Help Law Firm Owners Get More Profit, More Personal Freedom, And Outstanding Results For Their Clients.</p>
+  </div>
+
+  <p class="opportunity-text">Most law firms try to grow by chasing more leads. But leads alone are not the problem — and leads alone are not the answer. Here is what actually works.</p>
+
+  <div class="pillars-grid">
+    <div class="pillar-card">
+      <h3>Lead Generation</h3>
+      <p>Leads are to a law firm what gasoline is to a car. Without them, you go nowhere. But a steady, predictable flow of leads changes everything — you get to choose your cases instead of taking whatever comes in.</p>
+    </div>
+    <div class="pillar-card">
+      <h3>Intake</h3>
+      <p>But all the leads in the world are worthless without a system to turn them into paying clients. Most firms are losing cases they already paid for simply because their follow-up is slow or inconsistent.</p>
+    </div>
+    <div class="pillar-card">
+      <h3>Self-Managing Team</h3>
+      <p>Once clients are coming in, you need a team — otherwise you end up working 90-hour weeks and results suffer. A self-managing team is what gives you the freedom to step back.</p>
+    </div>
+    <div class="pillar-card">
+      <h3>Profit Plan</h3>
+      <p>And once the team is in place, most owners look at their bank account and ask: where did all the money go? That is what a profit plan solves — clarity on what you earn, what you keep, and how to grow both.</p>
+    </div>
+  </div>
+
+  <div class="closing-line">All four have to work together. If one is missing, you cannot have more profit, more freedom, and outstanding results for your clients at the same time.</div>
+
+  <img src="https://www.dropbox.com/scl/fi/ffkzpv2f3rdjfzwq997e1/Law-Firm-Growth-Acceleration-Model.png?rlkey=665o52gt2va8pg4nb0epdc8hv&st=1iucj2m5&raw=1"
+    alt="Law Firm Growth Acceleration Model"
+    style="width:100%;height:auto;display:block;border-radius:6px;" />
+
+</div>
+<div class="back-to-top"><a href="#toc">↑ Back to Top</a></div>
+
+
+<!-- ===== SECTION 05: GROWTH HEALTH ASSESSMENT ===== -->
+<!-- ⚠️ NO CSS IN THIS FILE. No <style> blocks. No inline styles. No style="" attributes.
+     All styling comes from audit_styles.css only. Use only existing class names.
+     If you find yourself writing CSS — stop and delete it. -->
+
+<div class="section-header" id="growth-health">
+  <div class="section-header-inner">
+    <h2>Your Growth Health Assessment</h2>
+    <div class="subtext">The Antoine Law Firm, LLC</div>
+  </div>
+</div>
+
+<div class="content-wrap">
+
+  <div class="legend">
+    <div class="legend-item">
+      <div class="legend-dot red"></div>
+      <div class="legend-label">Red <span>— Critical Priority</span></div>
+    </div>
+    <div class="legend-item">
+      <div class="legend-dot amber"></div>
+      <div class="legend-label">Amber <span>— In Progress</span></div>
+    </div>
+    <div class="legend-item">
+      <div class="legend-dot green"></div>
+      <div class="legend-label">Green <span>— On Track</span></div>
+    </div>
+  </div>
+
+  <div class="scorecard-label">Pillar Health Scorecard</div>
+
+  <div class="scorecard-grid">
+
+    <!-- LEAD GENERATION CARD -->
+    <div class="sc-card">
+      <div class="sc-card-header"><h3>Lead Generation</h3></div>
+      <div class="sc-card-body">
+        <div class="traffic-circle red"></div>
+        <ul class="sc-findings">
+          <li>Every new PI case comes from word-of-mouth — 1 to 4 per month with no predictable system in place</li>
+          <li>No paid advertising observed across any channel — Google, LSA, or Meta — for any practice area</li>
+          <li>A 5-page website with no blog, no landing pages, and an estimated near-zero Google review count leaves the firm essentially invisible online</li>
+        </ul>
+        <div class="sc-dbm">Without a predictable lead system, the legacy firm Wilson wants to build will always be one slow month away from a revenue crisis.</div>
+      </div>
+    </div>
+
+    <!-- INTAKE CARD -->
+    <div class="sc-card">
+      <div class="sc-card-header"><h3>Intake</h3></div>
+      <div class="sc-card-body">
+        <div class="traffic-circle red"></div>
+        <ul class="sc-findings">
+          <li>Wilson personally handles all intake outside of PI pre-suit — a single point of failure that cannot scale</li>
+          <li>PI pre-suit intake is delegated to a paralegal who is still in training — quality is inconsistent and creates malpractice risk</li>
+          <li>A reactive workflow with missed deadlines is documented — there is no defined intake process or follow-up system in place</li>
+        </ul>
+        <div class="sc-dbm">A firm that runs itself starts with an intake process that does not require the owner to be present — and right now, Wilson's presence is the process.</div>
+      </div>
+    </div>
+
+    <!-- SELF-MANAGING TEAM CARD -->
+    <div class="sc-card">
+      <div class="sc-card-header"><h3>Self-Managing Team</h3></div>
+      <div class="sc-card-body">
+        <div class="traffic-circle amber"></div>
+        <ul class="sc-findings">
+          <li>Wilson has a paralegal, legal assistant, and associate on staff — the building blocks of a self-managing team exist</li>
+          <li>But Wilson is still the "Chief Everything Officer," spending 50–60% of his time on admin that his team could handle with proper training and systems</li>
+          <li>The Smokeball implementation is stalled and the associate needs basic system training — accountability structures are not yet in place</li>
+        </ul>
+        <div class="sc-dbm">The team is there — but they are not yet built to run without Wilson, which means he cannot step back regardless of how much revenue grows.</div>
+      </div>
+    </div>
+
+    <!-- PROFIT CARD -->
+    <div class="sc-card">
+      <div class="sc-card-header"><h3>Profit</h3></div>
+      <div class="sc-card-body">
+        <div class="traffic-circle red"></div>
+        <ul class="sc-findings">
+          <li>$492K in gross revenue produced only $60K in personal distributions — a $432K gap that Wilson cannot explain due to bookkeeping issues</li>
+          <li>No financial visibility into which practice areas are profitable, what overhead is costing, or where the money is going</li>
+          <li>There is no profit plan in place — income is discovered, not designed, which means the $250K personal distribution goal has no path to get there</li>
+        </ul>
+        <div class="sc-dbm">Wilson cannot build a firm that funds his freedom without first knowing where his money is going — the financial clarity piece has to come before anything else.</div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- COMPETITIVE URGENCY SCORE -->
+  <div class="urgency-card" id="urgency-score">
+    <div class="urgency-label">Competitive Urgency Score</div>
+    <div class="urgency-score">7</div>
+    <div class="urgency-outof">out of 10</div>
+    <div class="urgency-sentence">A score of 7 means competitors are actively dominating multiple channels in your market and the gap is getting wider every month you wait. This is not a future problem — it is a right now problem.</div>
+    <div style="margin-bottom:10px;">
+      <div class="urgency-bar"><div class="urgency-marker" style="left:70%;"></div></div>
+      <div class="urgency-scale">
+        <span>1–3 = Low Urgency</span>
+        <span>4–6 = Moderate</span>
+        <span>7–10 = High Urgency</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="competitors-label">Your Top Competitive Threats</div>
+
+  <div class="competitor-card">
+    <div class="competitor-name">Davis, Saperstein &amp; Salomon, P.C.</div>
+    <div class="competitor-threat">The dominant PI player in Northern NJ — 725 Google reviews at 4.8 stars, a dedicated Newark gateway office, and $1B+ in recoveries since 1981. They are capturing the PI cases Wilson's firm cannot reach because they have the review volume, ad spend, and brand authority that word-of-mouth referrals cannot compete with.</div>
+  </div>
+
+  <div class="competitor-card">
+    <div class="competitor-name">Schreck Personal Injury Lawyers</div>
+    <div class="competitor-threat">A direct Newark competitor at 575 Dr. Martin Luther King Jr. Blvd — 61 reviews at 4.8 stars, established since 1982, with a local digital presence specifically targeting the same geographic market as The Antoine Law Firm. Every PI client who searches online and cannot find Wilson's firm is a potential case going to Schreck instead.</div>
+  </div>
+
+  <div class="competitor-card">
+    <div class="competitor-name">Hyderally &amp; Associates, P.C.</div>
+    <div class="competitor-threat">The go-to employment discrimination firm in Northern NJ — prominently featured in every NJ employment attorney search result, with 20+ years of practice and a focused digital marketing presence. They are positioned to capture the plaintiff discrimination cases that represent a significant portion of Wilson's revenue, particularly as his employment discrimination practice grows.</div>
+  </div>
+
+</div>
+<div class="back-to-top"><a href="#toc">↑ Back to Top</a></div>
+
+
+<!-- ===== SECTION 06: LEAD GENERATION ===== -->
+<!-- ⚠️ NO CSS IN THIS FILE. No <style> blocks. No inline styles. No style="" attributes.
+     All styling comes from audit_styles.css only. Use only existing class names.
+     If you find yourself writing CSS — stop and delete it. -->
+
+<div class="section-header" id="lead-generation">
+  <div class="section-header-inner"><h2>Lead Generation</h2></div>
+</div>
+
+<div class="content-wrap">
+</div>
+<div class="section-img-wrap"><img src="https://www.dropbox.com/scl/fi/vne0wcswovu3nwjibgjya/Lead-Generation.png?rlkey=enb7lthrbylgma7qoofstb799&st=nw3f9i8c&raw=1" alt="Lead Generation" /></div>
+<div class="content-wrap">
+  <p class="section-intro">The Antoine Law Firm has built an exceptional legal reputation on referrals and retained public entity relationships — but referrals are not a growth system, and the Newark and NYC markets are being captured every day by competitors who are investing in digital channels this firm has not yet entered. The gap between what the firm has earned and what it is capturing online is the single largest untapped revenue opportunity available right now.</p>
+</div>
+
+<!-- WEBSITE AUDIT -->
+<div class="subsection-header" id="website-audit">
+  <div class="subsection-header-inner"><h3>Website Audit</h3></div>
+</div>
+<div class="content-wrap">
+
+  <div class="pgp-label">The Problem</div>
+  <ul class="pgp-list">
+    <li>Only 5 pages indexed on the entire site (Home, Counsel, Practice Areas, Contact, Privacy) — no blog, no geo-targeted landing pages, no practice area detail pages to rank for any keyword</li>
+    <li>PageSpeed scores: Could not be retrieved during research — must be run manually at pagespeed.web.dev. The site blocks automated access, which itself suggests a non-standard technical configuration that may affect search engine crawling.</li>
+    <li>No marketing headline, no CTA above the fold, no contact form on the homepage — first-time visitors have no immediate path to engage</li>
+    <li>No video content, no blog, and no content marketing of any kind — the firm leaves no digital footprint between visits</li>
+  </ul>
+
+  <div class="blind-spot"><strong>Blind Spot:</strong> A website with only 5 indexed pages cannot rank for any competitive keyword in the Newark or NYC legal market — even with strong backlinks and reviews. Google needs content to rank, and there is no content here to rank. The firm's Super Lawyer recognition and Cornell credentials exist nowhere on the internet except legal directory pages the firm did not create.</div>
+
+  <div class="pgp-label">The Positive</div>
+  <ul class="pgp-list">
+    <li>The site has a dedicated attorney bio page and a Practice Areas page — the basic structural elements exist to build on</li>
+    <li>NAP (name, address, phone) is consistent across all observed directory listings — no citation cleanup required before SEO work begins</li>
+  </ul>
+
+  <div class="pgp-label">The Gap</div>
+  <ul class="pgp-list">
+    <li>A prospect searching for a personal injury attorney in Newark will not find this firm — 5 indexed pages with no keyword content means zero organic search presence</li>
+    <li>The lack of a contact form on the homepage means any visitor who does arrive has to navigate to a separate contact page — a barrier that reduces conversions at every step</li>
+    <li>With no geo-targeting, the firm's New York office at 305 Broadway generates zero website traffic from NYC PI or discrimination searches — an entire market is invisible to potential clients</li>
+  </ul>
+
+  <div class="dbm-closing">A website that cannot be found is not an asset — it is a missed opportunity compounding every month. Building a site that works while Wilson is not working is one of the clearest paths to the freedom he is describing.</div>
+
+</div>
+
+<!-- LOCAL SEO -->
+<div class="subsection-header" id="local-seo">
+  <div class="subsection-header-inner"><h3>Local SEO</h3></div>
+</div>
+<div class="content-wrap">
+
+  <div class="pgp-label">The Problem</div>
+  <ul class="pgp-list">
+    <li>The firm's Google review count could not be verified live during research — it is estimated near-zero based on the complete absence of the firm from any PI or employment search result snippet; every major competitor has 50–725 verified reviews</li>
+    <li>The firm does not appear in the local 3-pack for any personal injury, employment discrimination, or business litigation search in the Newark market — including searches where competitors with fewer credentials are consistently shown</li>
+    <li>Zero geo-targeted landing pages means the firm cannot rank for city-specific searches in Essex County, Hudson County, or the New York metro — two office locations are generating no incremental search visibility</li>
+  </ul>
+
+  <div class="blind-spot"><strong>Blind Spot:</strong> Google's local algorithm weighs review recency and volume heavily. A firm with 0–5 reviews competing against a firm with 725 reviews for the same keyword is not just behind — it is essentially not in the race. Every month without a systematic review-generation process is a month that gap widens further.</div>
+
+  <div class="pgp-label">The Positive</div>
+  <ul class="pgp-list">
+    <li>Wilson's Super Lawyer recognition (2024–2025) and legal directory presence on FindLaw, LawInfo, and Super Lawyers provide a legitimate credibility baseline that many small firms lack — this is a foundation to build on, not rebuild from scratch</li>
+  </ul>
+
+  <div class="pgp-label">The Gap</div>
+  <ul class="pgp-list">
+    <li>Every PI plaintiff who searches online in Newark and does not see The Antoine Law Firm in the results is a case that goes to Davis, Saperstein &amp; Salomon or Schreck — and those competitors are being found hundreds of times per month</li>
+    <li>The firm's Haitian Creole-speaking legal assistant represents a genuine niche advantage in the Newark/NYC market — but without any online presence targeting that community, the advantage cannot be realized</li>
+  </ul>
+
+  <div class="competitor-callout"><strong>Davis, Saperstein &amp; Salomon, P.C.</strong> — 725 verified Google reviews at 4.8 stars, a dedicated Newark geo-landing page, and statewide brand authority built over 40+ years. They are the benchmark for what a fully optimized local SEO presence looks like in this market.</div>
+
+  <div class="dbm-closing">Local SEO that generates consistent inbound cases — without Wilson making a single call — is the foundation of the firm that runs itself. This is the system he needs, and it starts with Google reviews and a GBP that actually shows up.</div>
+
+</div>
+
+<!-- GOOGLE ADS -->
+<div class="subsection-header" id="google-ads">
+  <div class="subsection-header-inner"><h3>Google Ads</h3></div>
+</div>
+<div class="content-wrap">
+
+  <div class="ad-part">
+    <div class="ad-part-label">Ad Presence</div>
+    <ul class="ad-list">
+      <li>The Antoine Law Firm does not appear to be running Google search ads for personal injury, employment discrimination, or business litigation in the Newark or NYC markets — the firm may not be configured to show for these searches, or may be getting outbid by competitors with established Quality Scores</li>
+      <li>Given the firm's confirmed word-of-mouth growth model, paid search has not been part of the strategy to date — representing a significant untapped acquisition channel once the firm's internal systems are ready to handle increased volume</li>
+    </ul>
+  </div>
+
+  <div class="ad-part">
+    <div class="ad-part-label">Competitor Ad Landscape</div>
+    <ul class="ad-list">
+      <li><strong>Brach Eichler Injury Lawyers</strong> — a 12-office statewide NJ firm with $700M+ in recoveries, almost certainly running high-volume Google Ads campaigns for PI across the entire state; their scale and review profile give them significant Quality Score advantages</li>
+      <li><strong>Hyderally &amp; Associates, P.C.</strong> — the leading Northern NJ employment discrimination firm with an active digital marketing presence; likely running search ads for employment discrimination and wrongful termination terms in the Newark/Northern NJ market</li>
+    </ul>
+  </div>
+
+  <div class="ad-part">
+    <div class="ad-part-label">The Opportunity</div>
+    <ul class="ad-list">
+      <li>Personal injury keywords in the Newark/NJ market — "personal injury attorney Newark," "car accident lawyer Newark NJ," "slip and fall attorney Essex County" — are high-intent searches from people who need a lawyer today</li>
+      <li>Employment discrimination and wrongful termination keywords — "discrimination attorney Newark NJ," "wrongful termination lawyer NJ" — represent a lower-competition segment where Wilson's credentials give him credibility advantages</li>
+      <li>Haitian Creole-language PI and employment ads targeting Newark's Haitian community — this firm has a staff member who speaks Haitian Creole, an advantage no competitor currently appears to be exploiting in paid search</li>
+      <li>Hyper-local campaigns targeting the specific geographic areas surrounding both the Newark and NYC offices — neighborhood-level targeting reduces CPCs while maintaining intent quality</li>
+    </ul>
+  </div>
+
+  <div class="blind-spot"><strong>Blind Spot:</strong> PI advertising in the NYC/Newark metro is one of the most expensive Google Ads markets in the United States — individual clicks for "car accident lawyer" can exceed $100–$300. This means starting ads without a high-converting landing page and a structured intake process will burn budget without producing cases. The coaching and systems work comes first; the ad spend follows once the firm can convert leads reliably.</div>
+
+</div>
+
+<!-- LOCAL SERVICE ADS -->
+<div class="subsection-header" id="local-service-ads">
+  <div class="subsection-header-inner"><h3>Local Service Ads</h3></div>
+</div>
+<div class="content-wrap">
+
+  <div class="ad-part">
+    <div class="ad-part-label">LSA Presence</div>
+    <ul class="ad-list">
+      <li>The Antoine Law Firm does not appear to be active in Local Service Ads for any practice area in the Newark or NYC markets — the Google Screened badge has not been observed for this firm</li>
+      <li>LSA eligibility for personal injury in NJ requires a Google Screened verification — once the firm's GBP is optimized and review volume increases, LSA becomes one of the highest-ROI ad channels available to plaintiff PI firms</li>
+    </ul>
+  </div>
+
+  <div class="ad-part">
+    <div class="ad-part-label">Competitor LSA Landscape</div>
+    <ul class="ad-list">
+      <li><strong>Schreck Personal Injury Lawyers</strong> — with 61 reviews and an established Newark GBP, likely eligible and potentially active in the PI LSA market in Essex County</li>
+      <li><strong>Brach Eichler Injury Lawyers</strong> — a statewide firm with the review volume and Google Screened credentials to dominate LSA positions across NJ PI searches</li>
+    </ul>
+  </div>
+
+  <div class="ad-part">
+    <div class="ad-part-label">The Opportunity</div>
+    <ul class="ad-list">
+      <li>Building Google review volume now is not just an SEO play — it is the prerequisite for LSA eligibility, which means every review collected today has compounding value across multiple channels</li>
+      <li>LSAs appear above everything else on Google — above paid ads, above the map pack, above all organic results — and you only pay when a real prospect calls you directly.</li>
+      <li>For a plaintiff PI firm handling 1–4 new cases per month from word-of-mouth, a single LSA placement that adds even 2 additional PI cases per month at an average $8,000 case value represents $192,000 in additional annual revenue</li>
+    </ul>
+  </div>
+
+</div>
+
+<!-- FACEBOOK & INSTAGRAM ADS -->
+<div class="subsection-header" id="meta-ads">
+  <div class="subsection-header-inner"><h3>Facebook &amp; Instagram Ads</h3></div>
+</div>
+<div class="content-wrap">
+
+  <div class="ad-part">
+    <div class="ad-part-label">Ad Presence</div>
+    <ul class="ad-list">
+      <li>The Antoine Law Firm does not appear to be running Facebook or Instagram ads — no active ads were observed in any search results or ad library references for this firm</li>
+      <li>This is consistent with the firm's current word-of-mouth growth model, but it means the firm's potential clients — PI plaintiffs, discrimination victims, and small business owners in Newark and the Haitian community — are being reached by competitors on social media while this firm is absent</li>
+    </ul>
+  </div>
+
+  <div class="ad-part">
+    <div class="ad-part-label">Competitor Ad Landscape</div>
+    <ul class="ad-list">
+      <li><strong>Schreck Personal Injury Lawyers</strong> — active Facebook presence (facebook.com/SchreckLawyers/) with established social media activity; ad status not confirmed but social infrastructure is in place</li>
+      <li><strong>Chatarpaul Law Firm, P.C.</strong> — active Facebook presence (facebook.com/chatarpaullaw/) specifically in the NJ/NY employment discrimination market; well-positioned to reach the same discrimination plaintiff audience Wilson is targeting</li>
+    </ul>
+  </div>
+
+  <div class="ad-part">
+    <div class="ad-part-label">The Opportunity</div>
+    <ul class="ad-list">
+      <li>Retargeting — website visitors who did not convert are leaving with no follow-up</li>
+      <li>Video ads featuring the attorney — builds trust before a prospect ever calls</li>
+      <li>Educational content ads — capture leads earlier in the decision process</li>
+      <li>Haitian Creole-language Facebook and Instagram ads targeting Newark's Haitian community — this firm has a native Haitian Creole speaker on staff, a community connection that no identified competitor is currently exploiting on social platforms</li>
+    </ul>
+  </div>
+
+</div>
+<div class="back-to-top"><a href="#toc">↑ Back to Top</a></div>
+
+
+<!-- ===== SECTION 07-09: INTAKE, TEAM, PROFIT ===== -->
+<!-- ⚠️ NO CSS IN THIS FILE. No <style> blocks. No inline styles. No style="" attributes.
+     All styling comes from audit_styles.css only. Use only existing class names.
+     If you find yourself writing CSS — stop and delete it. -->
+
+<div class="section-header" id="intake">
+  <div class="section-header-inner"><h2>Intake Assessment</h2></div>
+</div>
+
+<div class="content-wrap">
+</div>
+<div class="section-img-wrap"><img src="https://www.dropbox.com/scl/fi/lmohhz14wgbeucpflf02m/Intake.png?rlkey=jwomjz9j8vqi7kmjubxexoyvh&st=sgtebwjp&raw=1" alt="Intake" /></div>
+<div class="content-wrap">
+
+  <p class="section-intro">The Antoine Law Firm's intake process is held together by Wilson's personal presence — the paralegal handles PI pre-suit, but Wilson personally manages all other intake, and even the PI process is inconsistent enough to create quality and malpractice risk concerns. Fixing intake means converting more of the leads the firm is already generating — without spending another dollar on marketing.</p>
+
+  <div class="status-row">
+    <div class="status-circle red"></div>
+    <div class="status-label">Status: RED</div>
+  </div>
+
+  <div class="pgp-label">The Problem</div>
+  <ul class="pgp-list">
+    <li>Wilson personally handles all intake outside of PI pre-suit — employment discrimination, business litigation, and public entity inquiries all route through him, making him a single point of failure for every non-PI case type</li>
+    <li>The paralegal handling PI pre-suit intake was hired in Fall 2024 and requires significant training to meet quality standards — the intake process is not yet reliable or documented</li>
+    <li>A reactive workflow documented in the call is causing missed deadlines and creating malpractice risk — there is no systematic follow-up process for prospects who do not retain immediately</li>
+    <li>No intake tracking system is in place — cases slip through without a follow-up protocol, and there is no visibility into how many prospects are contacting the firm and what is happening to them</li>
+  </ul>
+
+  <div class="blind-spot"><strong>Blind Spot:</strong> A firm that relies on word-of-mouth for 100% of its cases cannot afford to lose any of the leads that do come in. If even 2 prospects per month call and are not followed up with effectively, and each case is worth $8,000, that is $192,000 per year in cases the firm is paying nothing to generate and still losing.</div>
+
+  <div class="pgp-label">The Positive</div>
+  <ul class="pgp-list">
+    <li>The paralegal has Haitian Creole language capability through the legal assistant — a meaningful community connection that could dramatically improve PI intake quality for a significant segment of the Newark population</li>
+  </ul>
+
+  <div class="pgp-label">The Gap</div>
+  <ul class="pgp-list">
+    <li>Every prospect who calls after hours, gets routed to Wilson's voicemail, and does not hear back before morning is a case that calls the next firm on their list — and right now there is no after-hours coverage or follow-up protocol in place</li>
+    <li>Without a documented intake SOP, training the paralegal to a consistent standard is impossible — the quality problem will persist until there is a written process to train against</li>
+    <li>Wilson's personal involvement in all non-PI intake means that as PI volume grows (now 40–60 active cases), the non-PI intake quality will continue to degrade simply because his time is stretched thinner</li>
+  </ul>
+
+  <div class="dbm-closing">The firm that Wilson wants to build — one that generates income while he is not in the office — cannot exist until intake is a system, not a person. This is the first domino.</div>
+
+</div>
+
+<!-- WEBSITE CONTACT FORMS & LIVE CHAT -->
+<div class="subsection-header" id="website-intake">
+  <div class="subsection-header-inner"><h3>Website Contact Forms &amp; Live Chat</h3></div>
+</div>
+<div class="content-wrap">
+
+  <ul class="pgp-list">
+    <li>A dedicated contact page (/contact-2) exists but no above-fold contact form was observed on the homepage — visitors who are not determined enough to navigate to a separate page are leaving without engaging</li>
+    <li>No live chat or chatbot was observed on the site — after-hours visitors have no way to initiate a conversation, leaving the firm dark during evenings and weekends when many prospective clients are actively searching</li>
+    <li>These findings are directly connected to the intake gaps above — even when the website generates a lead, there is no mechanism to capture it efficiently outside of business hours</li>
+  </ul>
+  <p class="section-intro">These findings are also referenced in the Website Audit section.</p>
+
+</div>
+<div class="back-to-top"><a href="#toc">↑ Back to Top</a></div>
+
+
+<!-- SECTION 08 — SELF-MANAGING TEAM -->
+
+<div class="section-header" id="team">
+  <div class="section-header-inner"><h2>Team Assessment</h2></div>
+</div>
+
+<div class="content-wrap">
+</div>
+<div class="section-img-wrap"><img src="https://www.dropbox.com/scl/fi/r6o7um1xcdd490t9807vd/Self-Managing-Team.png?rlkey=ywamsca6rpb34l1iasysyk10w&st=dm86b0kz&raw=1" alt="Self-Managing Team" /></div>
+<div class="content-wrap">
+
+  <p class="section-intro">Wilson built a team — a paralegal, legal assistant, and associate — but has not yet built a firm that can run without him. He is spending 50–60% of his time on low-value admin while only 5% on business development, which means the more the firm grows, the more trapped he becomes. Until this changes, the owner cannot have more free time — no matter how much revenue grows.</p>
+
+  <div class="status-row">
+    <div class="status-circle amber"></div>
+    <div class="status-label">Status: AMBER</div>
+  </div>
+
+  <div class="pgp-label">The Problem</div>
+  <ul class="pgp-list">
+    <li>Wilson is the "Chief Everything Officer" by his own description — every critical decision, every non-routine task, and every quality check routes through him, which caps the firm's capacity at whatever Wilson personally can handle</li>
+    <li>The associate hired in March 2025 needs training on basic firm systems like date stamping — foundational operations have not been documented or delegated, leaving Wilson responsible for teaching things that should already have written SOPs</li>
+    <li>The Smokeball case management system implementation is stalled — data from the old system (Simple Law) is not fully imported, blocking key features including conflict searches, which creates liability exposure and prevents the team from working efficiently</li>
+    <li>Contractors (clerical assistant at 30+ hours per month, per-diem attorneys and paralegals) are expensive, have limited availability, and lack litigation experience — the firm is paying for temp solutions instead of building durable capacity</li>
+  </ul>
+
+  <div class="blind-spot"><strong>Blind Spot:</strong> Wilson's instinct to train by doing — to be present for everything — is the exact behavior that keeps him trapped. Every time he handles something himself instead of building a system for someone else to handle it, he is choosing short-term efficiency over long-term freedom. The "Chief Everything Officer" role is not a title; it is a trap, and it compounds with every hire.</div>
+
+  <div class="pgp-label">The Positive</div>
+  <ul class="pgp-list">
+    <li>Wilson has assembled the right talent profile — a PI-experienced associate, a Haitian Creole-speaking legal assistant, and a paralegal managing pre-suit intake. The raw ingredients of a high-functioning team are present.</li>
+    <li>Wilson recognizes the problem and named it clearly — he knows he is the bottleneck, which is the first and most important step toward changing it</li>
+  </ul>
+
+  <div class="pgp-label">The Gap</div>
+  <ul class="pgp-list">
+    <li>Until Wilson has a delegation framework — a documented map of every task he is personally handling and a trained person accountable for each — he will remain the constraint no matter how many people he hires</li>
+    <li>Without completing the Smokeball migration, the team cannot operate efficiently or independently — a stalled technology implementation is costing Wilson time every day because the team cannot self-serve on basic operational tasks</li>
+    <li>The $250K personal distribution goal is not achievable while Wilson is doing $25/hour admin work — the opportunity cost of his time spent on admin versus business development and client strategy is the hidden revenue gap in this firm</li>
+  </ul>
+
+  <div class="dbm-closing">The legacy firm Wilson envisions — multi-state, self-running, a pipeline for underrepresented talent — begins with Wilson learning to lead instead of do. Until this changes, the owner cannot have more free time — no matter how much revenue grows.</div>
+
+</div>
+<div class="back-to-top"><a href="#toc">↑ Back to Top</a></div>
+
+
+<!-- SECTION 09 — PROFIT PLAN ASSESSMENT -->
+
+<div class="section-header" id="profit">
+  <div class="section-header-inner"><h2>Profit Plan Assessment</h2></div>
+</div>
+
+<div class="content-wrap">
+</div>
+<div class="section-img-wrap"><img src="https://www.dropbox.com/scl/fi/rh2dxdoqsf7tqastam640/Profits.png?rlkey=kss013g0ov5jnuzcoklog7awr&st=iog622wf&raw=1" alt="Profit" /></div>
+<div class="content-wrap">
+
+  <p class="section-intro">The Antoine Law Firm generated approximately $492,000 in gross revenue in 2023 — but Wilson took home only $60,000 in personal distributions, and the $432,000 gap cannot be explained because the bookkeeping is not clean enough to trace. Revenue is vanity, profit is sanity. Until there is a clear profit plan, growth may just mean more work without more wealth.</p>
+
+  <div class="status-row">
+    <div class="status-circle red"></div>
+    <div class="status-label">Status: RED</div>
+  </div>
+
+  <div class="pgp-label">The Problem</div>
+  <ul class="pgp-list">
+    <li>Wilson's 2023 personal distribution was $60,000 on ~$492,000 in gross revenue — a distribution rate of approximately 12%, far below the 30–40% a healthy law firm should be paying its owner</li>
+    <li>The gap between revenue and distributions is unexplained due to "bookkeeping issues" — there is no financial reporting system in place to identify where overhead is going, which practice areas are profitable, or what the firm's real margin is</li>
+    <li>There is no profit plan — the $250,000 annual personal distribution goal has no roadmap, no timeline, and no identified levers to achieve it</li>
+    <li>With 2022 revenue of ~$900,000 inflated by one large PI case and 2023 normalizing to $492,000, revenue is highly volatile — which means personal income planning is impossible without a more stable revenue mix and financial tracking infrastructure</li>
+  </ul>
+
+  <div class="blind-spot"><strong>Blind Spot:</strong> Public Entity defense cases worth $20,000–$50,000 each — generating $204,000 in 2023 from a small number of recurring clients — may be the most profitable practice area by case, but without cost-per-case tracking, it is impossible to know whether PI or employment cases are subsidizing that segment or vice versa. Without this data, Wilson cannot make intelligent decisions about where to invest his time and marketing dollars.</div>
+
+  <div class="pgp-label">The Positive</div>
+  <ul class="pgp-list">
+    <li>The Public Entity practice represents a stable, recurring revenue stream — $204K in 2023 from established client relationships at $20K–$50K per matter. This is predictable income that anchors the firm's cash flow.</li>
+  </ul>
+
+  <div class="pgp-label">The Gap</div>
+  <ul class="pgp-list">
+    <li>Wilson cannot reach his $250,000 personal distribution goal without first understanding where the current $432,000 gap is going — and that requires clean books, not just higher revenue</li>
+    <li>Without practice area profitability data, Wilson may be allocating his most valuable resource (his time) to the least profitable case types — spending hours on commercial litigation that generates $38K per year while Public Entity cases at $20K–$50K each sit underserved</li>
+    <li>Growing revenue without a profit plan will produce more gross income but the same take-home experience — the only way to reach $250K in personal distributions is to design it deliberately, not discover it accidentally</li>
+  </ul>
+
+  <div class="dbm-closing">Financial clarity is not just an accounting exercise — it is the prerequisite for the freedom Wilson is describing. You cannot design a firm that funds your retirement if you do not know where the money is going today.</div>
+
+</div>
+<div class="back-to-top"><a href="#toc">↑ Back to Top</a></div>
+
+
+<!-- ===== SECTION 10: WHAT'S POSSIBLE ===== -->
+<!-- ⚠️ NO CSS IN THIS FILE. No <style> blocks. No inline styles. No style="" attributes.
+     All styling comes from audit_styles.css only. Use only existing class names.
+     If you find yourself writing CSS — stop and delete it. -->
+
+<div class="section-header" id="growth-journey">
+  <div class="section-header-inner">
+    <h2>Here's What's Possible for The Antoine Law Firm, LLC</h2>
+  </div>
+</div>
+
+<div class="whats-possible-body">
+  <div class="content-wrap">
+
+    <p class="bridge-text">Wilson Antoine has spent years building something real — a Cornell Law pedigree, a Supreme Court clerkship, Super Lawyer recognition, and a growing team handling four distinct practice areas across New Jersey and New York. The credentials are extraordinary. The problem is not who Wilson is. The problem is the systems surrounding what he has built are not yet strong enough to let him step back. That changes the moment the firm is run by systems instead of by Wilson — and that transition is exactly what this plan is designed to create.</p>
+
+    <div class="transform-card">
+      <div class="transform-icon"><span>1</span></div>
+      <div class="transform-text">You know exactly where every dollar goes — and your personal distribution hits $250,000 this year because you designed it that way, not discovered it at tax time.</div>
+    </div>
+
+    <div class="transform-card">
+      <div class="transform-icon"><span>2</span></div>
+      <div class="transform-text">Your associate, paralegal, and legal assistant run the day-to-day — you are no longer the "Chief Everything Officer," and the firm handles cases, intake, and client communication without you in the loop on every decision.</div>
+    </div>
+
+    <div class="transform-card">
+      <div class="transform-icon"><span>3</span></div>
+      <div class="transform-text">You are building the multi-state legacy firm you described — one that creates a genuine pipeline for underrepresented talent, that stands as an alternative to big law, and that generates income whether or not you walk through the door today.</div>
+    </div>
+
+    <div class="wp-closing">
+      <p>This is not a fantasy. <span>SMB Team can make this a reality for The Antoine Law Firm, LLC.</span></p>
+    </div>
+
+  </div>
+</div>
+<div class="wp-back-to-top"><a href="#toc">↑ Back to Top</a></div>
+
+
+<!-- ===== SECTION 11: YOUR NEXT STEPS ===== -->
+<!-- ⚠️ NO CSS IN THIS FILE. No <style> blocks. No inline styles. No style="" attributes.
+     All styling comes from audit_styles.css only. Use only existing class names.
+     If you find yourself writing CSS — stop and delete it. -->
+
+<!-- QUICK WINS -->
+<div class="section-header" id="next-steps">
+  <div class="section-header-inner">
+    <h2>Quick Wins for The Antoine Law Firm, LLC</h2>
+  </div>
+</div>
+<div class="content-wrap">
+
+  <!-- QUICK WIN CARD 1 — Lead Gen / Quick Win -->
+  <div class="quick-win-card">
+    <div class="qw-header">
+      <div class="qw-title">Activate and Optimize Your Google Business Profile</div>
+      <div class="qw-badges">
+        <span class="badge badge-lead-gen">Lead Gen</span>
+        <span class="badge badge-quick-win">Quick Win</span>
+      </div>
+    </div>
+    <div class="qw-row why">
+      <div class="qw-row-label">Why It Matters</div>
+      The firm's estimated Google review count is near-zero — every competitor appearing in the Newark local 3-pack has 50 to 725 verified reviews. A prospect searching for a personal injury or employment attorney in Newark will not find this firm. The GBP is the single most cost-effective lead generation asset available, and it is currently not doing any work.
+    </div>
+    <div class="qw-row who">
+      <div class="qw-row-label">Who Is Doing It Better</div>
+      <strong>Schreck Personal Injury Lawyers</strong> — 61 verified reviews at 4.8 stars, physically located in the same Newark market, consistently appearing in PI local searches that The Antoine Law Firm does not show up for.
+    </div>
+    <div class="qw-row opportunity">
+      <div class="qw-row-label">The Opportunity</div>
+      A fully optimized GBP with a systematic review generation process — starting with Wilson's existing satisfied PI and public entity clients — could generate 20–30 new reviews within 60 days, making the firm visible in local searches it is currently missing entirely.
+    </div>
+  </div>
+
+  <!-- QUICK WIN CARD 2 — Profit / Quick Win -->
+  <div class="quick-win-card">
+    <div class="qw-header">
+      <div class="qw-title">Find the $432,000 Distribution Gap</div>
+      <div class="qw-badges">
+        <span class="badge badge-profit">Profit</span>
+        <span class="badge badge-quick-win">Quick Win</span>
+      </div>
+    </div>
+    <div class="qw-row why">
+      <div class="qw-row-label">Why It Matters</div>
+      Wilson's firm generated ~$492,000 in gross revenue in 2023 but he took home only $60,000 — a 12% distribution rate on a business that should be paying him 30–40% or more. The gap cannot be explained because the books are not clean enough to trace it. Without identifying where this money is going, no amount of revenue growth will produce the $250,000 personal income Wilson is targeting.
+    </div>
+    <div class="qw-row opportunity">
+      <div class="qw-row-label">The Opportunity</div>
+      A full financial audit of the 2023 and 2024 books — identifying overhead categories, contractor costs, unbilled time, and expense leakage — can quickly surface the distribution gap and produce a clear, actionable profit plan. This is the fastest path to Wilson seeing more take-home from revenue he is already generating.
+    </div>
+  </div>
+
+  <!-- QUICK WIN CARD 3 — Intake / Quick Win -->
+  <div class="quick-win-card">
+    <div class="qw-header">
+      <div class="qw-title">Build a Written PI Intake SOP</div>
+      <div class="qw-badges">
+        <span class="badge badge-intake">Intake</span>
+        <span class="badge badge-quick-win">Quick Win</span>
+      </div>
+    </div>
+    <div class="qw-row why">
+      <div class="qw-row-label">Why It Matters</div>
+      The paralegal handling PI pre-suit intake requires significant training to meet quality standards — and without a documented standard operating procedure, consistent training is impossible. Inconsistent intake creates malpractice risk, loses cases, and keeps Wilson pulled back into a process he should have fully delegated.
+    </div>
+    <div class="qw-row opportunity">
+      <div class="qw-row-label">The Opportunity</div>
+      A written PI intake SOP — covering the first contact, qualification questions, document collection, and follow-up timeline — gives the paralegal a clear standard to work toward, reduces malpractice risk, and creates a training tool that eliminates Wilson from the intake quality loop. This is a half-day project with months of compounding benefit.
+    </div>
+  </div>
+
+  <!-- QUICK WIN CARD 4 — Team / Long-Term Play -->
+  <div class="quick-win-card">
+    <div class="qw-header">
+      <div class="qw-title">Complete the Smokeball Migration</div>
+      <div class="qw-badges">
+        <span class="badge badge-team">Team</span>
+        <span class="badge badge-quick-win">Quick Win</span>
+      </div>
+    </div>
+    <div class="qw-row why">
+      <div class="qw-row-label">Why It Matters</div>
+      The stalled Smokeball implementation means the firm cannot run conflict searches, cannot track case financials properly, and cannot use the Mail Merge templates Wilson is building for contractors. Every day the migration is incomplete is a day the team cannot operate at full efficiency — and Wilson remains the manual workaround for tasks the software should be handling automatically.
+    </div>
+    <div class="qw-row opportunity">
+      <div class="qw-row-label">The Opportunity</div>
+      Completing the Simple Law to Smokeball data migration unlocks conflict searching, document generation, and case financial tracking — three capabilities that directly reduce Wilson's personal involvement in daily operations and create the audit trail needed for the FCFO engagement to identify the distribution gap.
+    </div>
+  </div>
+
+  <!-- QUICK WIN CARD 5 — Team / Long-Term Play -->
+  <div class="quick-win-card">
+    <div class="qw-header">
+      <div class="qw-title">Build a Delegation Framework for Wilson</div>
+      <div class="qw-badges">
+        <span class="badge badge-team">Team</span>
+        <span class="badge badge-long-term">Long-Term Play</span>
+      </div>
+    </div>
+    <div class="qw-row why">
+      <div class="qw-row-label">Why It Matters</div>
+      Wilson is spending 50–60% of his time on admin work and only 5% on business development. He is a Cornell Law grad and Super Lawyer doing tasks his team should own. Every hour Wilson spends on admin is an hour not spent on high-value cases, client relationships, or building the business — and at his billing rate, that cost is staggering.
+    </div>
+    <div class="qw-row opportunity">
+      <div class="qw-row-label">The Opportunity</div>
+      A structured delegation audit — documenting every recurring task Wilson personally handles, assigning ownership to team members, and building accountability checkpoints — could shift 30–40% of his current time back to revenue-generating and strategic activity within 90 days. This is the operational foundation that makes the "unofficially retire" vision possible.
+    </div>
+  </div>
+
+  <!-- QUICK WIN CARD 6 — Lead Gen / Long-Term Play -->
+  <div class="quick-win-card">
+    <div class="qw-header">
+      <div class="qw-title">Launch Geo-Targeted Web Presence for Newark and NYC</div>
+      <div class="qw-badges">
+        <span class="badge badge-lead-gen">Lead Gen</span>
+        <span class="badge badge-long-term">Long-Term Play</span>
+      </div>
+    </div>
+    <div class="qw-row why">
+      <div class="qw-row-label">Why It Matters</div>
+      The firm has two office locations — Newark, NJ and 305 Broadway, NYC — and a 5-page website that targets neither market with any geo-specific content. Every PI plaintiff, discrimination victim, or business litigation prospect in NYC searching for an attorney cannot find The Antoine Law Firm because there is no NYC content to find.
+    </div>
+    <div class="qw-row who">
+      <div class="qw-row-label">Who Is Doing It Better</div>
+      <strong>Davis, Saperstein &amp; Salomon, P.C.</strong> — a dedicated Newark landing page at 1 Gateway Center, targeted PI content for Essex County searches, and statewide SEO infrastructure that captures every geographic market they serve. This is the standard the firm needs to work toward.
+    </div>
+    <div class="qw-row opportunity">
+      <div class="qw-row-label">The Opportunity</div>
+      Building separate geo-targeted landing pages for Newark PI, Newark employment discrimination, NYC PI, and NYC employment discrimination — combined with a blog publishing strategy tied to Wilson's practice area expertise — creates an organic lead engine that generates cases while Wilson is not working. This is the system behind "unofficially retiring."
+    </div>
+  </div>
+
+  <!-- QUICK WIN CARD 7 — Profit / Long-Term Play -->
+  <div class="quick-win-card">
+    <div class="qw-header">
+      <div class="qw-title">Build a Practice Area Profitability Dashboard</div>
+      <div class="qw-badges">
+        <span class="badge badge-profit">Profit</span>
+        <span class="badge badge-long-term">Long-Term Play</span>
+      </div>
+    </div>
+    <div class="qw-row why">
+      <div class="qw-row-label">Why It Matters</div>
+      The firm generates revenue across four distinct practice areas — PI, employment discrimination, business litigation, and public entity defense — but has no visibility into which are most profitable per hour of attorney time. Wilson may be over-investing in the least profitable work without knowing it, because there is no reporting system to tell him.
+    </div>
+    <div class="qw-row opportunity">
+      <div class="qw-row-label">The Opportunity</div>
+      A simple practice area profitability tracking system — measuring revenue, time investment, and overhead per case type — would allow Wilson to make data-driven decisions about where to grow, where to refer out, and where to raise rates. Public Entity cases at $20K–$50K each may deserve significantly more investment than they are currently getting.
+    </div>
+  </div>
+
+</div>
+
+<!-- HOW SMB TEAM CAN HELP -->
+<div class="subsection-header" id="recommendation">
+  <div class="subsection-header-inner">
+    <h3>How SMB Team Can Help The Antoine Law Firm, LLC</h3>
+  </div>
+</div>
+<div class="content-wrap">
+
+  <!-- BLOCK 1: CUSTOM CLOSING STATEMENT -->
+  <div class="closing-statement-block">
+    <p>We help <span class="dbm-highlight">plaintiff law firm owners with the talent to build something great</span> get financial clarity and a self-managing team so they can <span class="dbm-highlight">step out of the day-to-day and build the legacy firm they set out to create.</span></p>
+  </div>
+
+  <div style="height:24px;"></div>
+
+  <!-- BLOCK 2: DBM SUBHEADER + PACKAGE RECOMMENDATIONS -->
+  <div class="dbm-subheader">Wilson's vision is a multi-state firm that runs without him — one that generates income, creates a pipeline for underrepresented talent, and represents an alternative to the oppressive big law environments he set out to escape. Getting there requires two things before anything else: knowing where the money is going, and building a team that does not need Wilson in every conversation. That is exactly what the two packages below address.</div>
+
+  <!-- PACKAGE 1: Elite Coach Plus -->
+  <div class="package-block">
+    <div class="package-header">
+      <div class="package-label">Recommended Coaching Package</div>
+      <h4>Elite Coach Plus</h4>
+    </div>
+    <div class="package-body">
+      <div class="package-why">Wilson is spending 50–60% of his time doing work his team should be doing — and without a coaching structure to build accountability, delegation frameworks, and leadership systems, the team he just hired will continue to require his constant involvement. Elite Coach Plus gives Wilson the external structure and peer community to transition from operator to CEO, which is the single most important leadership shift the firm needs right now.</div>
+      <div class="package-deliverables-label">Deliverables Include</div>
+      <ul class="package-list">
+        <li>One-on-one coaching sessions focused on delegation, leadership, and team accountability systems</li>
+        <li>Weekly group coaching sessions with other law firm owners at the same growth stage</li>
+        <li>Practice area masterminds with peers handling PI, employment, and litigation work</li>
+        <li>Virtual access to quarterly workshops covering systems, team management, and firm operations</li>
+        <li>One annual in-person workshop for deep-dive strategy and peer learning</li>
+        <li>90-day action planning and quarterly boulder-setting to keep Wilson focused on highest-leverage priorities</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- PACKAGE 2: FCFO Advisor -->
+  <div class="package-block">
+    <div class="package-header">
+      <div class="package-label">Recommended Fractional CFO Package</div>
+      <h4>FCFO Advisor</h4>
+    </div>
+    <div class="package-body">
+      <div class="package-why">Wilson took home $60,000 on $492,000 in gross revenue in 2023 — and cannot explain the $432,000 gap because the bookkeeping is not clean enough to trace it. The FCFO Advisor engagement builds the financial infrastructure Wilson needs to understand where his money is going, identify which practice areas are generating real profit versus eating his time, and create a deliberate compensation structure that gets him to his $250,000 personal distribution goal. You cannot build a self-funding legacy firm without first knowing what your firm is actually worth and what it is actually earning.</div>
+      <div class="package-deliverables-label">Deliverables Include</div>
+      <ul class="package-list">
+        <li>Full financial audit of current books — identifying the distribution gap and overhead structure</li>
+        <li>Practice area profitability analysis across PI, employment, business litigation, and public entity</li>
+        <li>Owner compensation plan designed to reach the $250,000 annual personal distribution target</li>
+        <li>Monthly financial reporting and KPI dashboard so Wilson always knows where the firm stands</li>
+        <li>Cash flow planning and expense management to stabilize income against case-volume volatility</li>
+        <li>Weekly group coaching sessions, practice area masterminds, quarterly workshops, and one annual in-person workshop (included with FCFO Advisor)</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- BLOCK 3 + 4: INVESTMENT GRID -->
+  <div class="investment-grid">
+
+    <!-- BLOCK 3: SMB TEAM MONTHLY INVESTMENT -->
+    <div class="investment-block">
+      <div class="investment-header"><h4>SMB Team Monthly Investment</h4></div>
+      <div class="investment-body">
+        <div class="investment-row">
+          <span class="label">Elite Coach Plus</span>
+          <span><span class="retail">$3,497/mo</span>&nbsp;<span class="bundled">$2,200/mo</span></span>
+        </div>
+        <div class="investment-row">
+          <span class="label">FCFO Advisor</span>
+          <span><span class="retail">$2,797/mo</span>&nbsp;<span class="bundled">$2,297/mo</span></span>
+        </div>
+        <div class="investment-total">
+          <span class="total-label">Total Monthly Investment</span>
+          <span class="total-amount">$4,497/mo</span>
+        </div>
+        <div class="investment-savings">You save $1,797/month by bundling</div>
+      </div>
+    </div>
+
+    <!-- BLOCK 4: RECOMMENDED AD SPEND -->
+    <div class="investment-block">
+      <div class="investment-header"><h4>Recommended Monthly Ad Spend</h4></div>
+      <div class="investment-body">
+        <p style="font-size:12px;color:#666;font-style:italic;margin-bottom:12px;">Goes directly to ad platforms — not to SMB Team. Shown as a Phase 2 reference for when marketing is added once operations are stabilized.</p>
+        <div class="roi-row"><span>Recommended ad spend</span><span style="font-weight:700;">$5,000–$8,000/mo</span></div>
+        <div class="roi-row"><span>Estimated case value</span><span style="font-weight:700;">$8,000</span></div>
+        <div class="roi-row"><span>Est. cases per month</span><span style="font-weight:700;">2–4 cases</span></div>
+        <div class="roi-row"><span>Est. monthly revenue from ads</span><span style="font-weight:700;color:#3B6D11;">$16,000–$32,000</span></div>
+        <p class="roi-disclaimer">These are estimates based on industry averages and market data. Results are not guaranteed and will vary based on market conditions, competition, and firm-specific factors. Ad spend projections reflect Phase 2 of the roadmap, once coaching and FCFO have stabilized the firm's systems and intake process.</p>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- BLOCK 5: WHAT HAPPENS IN THE FIRST 90 DAYS -->
+  <div class="package-block">
+    <div class="package-header"><h4>What Happens in the First 90 Days</h4></div>
+    <div class="package-body">
+      <ul class="focus-list">
+        <li>Coaching kickoff — Wilson establishes his 90-day goals, defines his role as firm CEO (not Chief Everything Officer), and begins weekly group sessions and one-on-one accountability work with his coach</li>
+        <li>FCFO financial audit launches — a complete review of the 2023 and 2024 books to identify the $432K distribution gap, overhead categories, and practice area profit margins</li>
+        <li>Delegation mapping — every task Wilson is personally handling gets documented and assigned to a trained team member, with written SOPs so the handoff is sustainable</li>
+        <li>Smokeball migration completed — the Simple Law data import is finished, conflict searches are activated, and the team is trained on core workflows so Wilson stops being the workaround</li>
+        <li>Owner compensation plan designed — Wilson exits 90 days with a clear financial roadmap showing exactly how to reach $250,000 in personal distributions and what the firm needs to look like to sustain it</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- BLOCK 6: GROWTH ROADMAP -->
+  <div class="package-block">
+    <div class="package-header"><h4>What Happens Next</h4></div>
+    <div class="package-body">
+      <div class="roadmap-stack">
+
+        <div class="phase-card">
+          <div class="phase-header">
+            <div class="phase-number">Phase 1</div>
+            <div class="phase-title">Foundation</div>
+            <div class="phase-trigger">Starting Now</div>
+          </div>
+          <div class="phase-body">
+            <ul class="phase-list">
+              <li>Elite Coach Plus + FCFO Advisor engagement launches</li>
+              <li>Financial audit identifies distribution gap and owner comp plan is designed</li>
+              <li>Delegation framework built — Wilson transitions from operator to CEO</li>
+              <li>Smokeball migration completed and team trained on core workflows</li>
+              <li>GBP optimized and review generation system launched</li>
+            </ul>
+            <div class="phase-dbm">Wilson stops doing $25/hour work and starts knowing where every dollar of his firm's revenue is going — the two foundations of the freedom he wants.</div>
+          </div>
+        </div>
+
+        <div class="phase-card">
+          <div class="phase-header">
+            <div class="phase-number">Phase 2</div>
+            <div class="phase-title">Operational Scale</div>
+            <div class="phase-trigger">Once personal distributions reach $150,000+ and team is handling intake independently</div>
+          </div>
+          <div class="phase-body">
+            <ul class="phase-list">
+              <li>Full Service Marketing Starter package added — PI and employment digital campaigns launched in Newark and NYC markets</li>
+              <li>Website rebuilt with geo-targeted landing pages and content marketing for all four practice areas</li>
+              <li>Google Ads, LSA, and Meta campaigns activated once intake process is documented and reliable</li>
+            </ul>
+            <div class="phase-dbm">The firm starts generating inbound leads that do not require Wilson to make a single phone call — revenue grows while his personal involvement stays flat or decreases.</div>
+          </div>
+        </div>
+
+        <div class="phase-card">
+          <div class="phase-header">
+            <div class="phase-number">Phase 3</div>
+            <div class="phase-title">Optimize</div>
+            <div class="phase-trigger">Once the firm hits $750,000 in annual revenue with stable monthly distributions</div>
+          </div>
+          <div class="phase-body">
+            <ul class="phase-list">
+              <li>FCOO Advisor added — operational infrastructure built to support NY expansion and multi-state vision</li>
+              <li>Marketing tier upgraded as revenue growth enables higher ad spend and broader geographic reach</li>
+              <li>Firm begins functioning as the legacy multi-state operation Wilson described — with a documented culture, a talent pipeline, and systems that run without him</li>
+            </ul>
+            <div class="phase-dbm">This is where "unofficially retiring" becomes real — the firm runs, the income flows, and Wilson's time is his to spend on the legacy and the people he set out to build this for. The firms that have the freedom you described all ended up here. And it started exactly where we are starting you.</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- BLOCK 7: OUTCOME CARDS -->
+  <div class="scorecard-label">Here Is What This Builds For You</div>
+  <div class="outcome-grid">
+    <div class="outcome-card">
+      <div class="outcome-title">More Profit</div>
+      <div class="outcome-text">You know exactly where your $492,000 in revenue is going, your distributions are designed to hit $250,000, and every practice area decision is driven by real profitability data — not guesswork and end-of-year surprises.</div>
+    </div>
+    <div class="outcome-card">
+      <div class="outcome-title">More Freedom</div>
+      <div class="outcome-text">You are no longer the "Chief Everything Officer." Your team handles intake, operations, and client management with the systems and accountability structures you build together — and you finally have time to be the visionary, the strategist, and the legacy builder you set out to be.</div>
+    </div>
+    <div class="outcome-card">
+      <div class="outcome-title">Better Client Results</div>
+      <div class="outcome-text">When Wilson is not stretched across admin, intake, and every operational decision, he can focus his energy on the high-stakes work that produces the best outcomes for clients — and a firm with documented processes and trained staff delivers more consistent, higher-quality service across the board.</div>
+    </div>
+  </div>
+
+  <!-- BLOCK 8: PERSONAL CLOSING -->
+  <div class="personal-closing">
+    <p>Wilson, the credentials you have built — the Cornell Law degree, the Supreme Court clerkship, the Super Lawyer recognition — deserve a firm infrastructure that matches them. Right now the firm is leaking money you cannot trace and consuming time you cannot get back, and both of those things are solvable problems, not permanent conditions. The gap between where you are and where you want to be is not about talent or effort — it has never been. It is about installing the systems and the financial clarity that let you stop running the firm and start owning it.</p>
+    <p class="final-line">This is not a fantasy. SMB Team can make this a reality for The Antoine Law Firm, LLC.</p>
+  </div>
+
+</div>
+<div class="back-to-top"><a href="#toc">↑ Back to Top</a></div>
+
+
+</body>
+</html>

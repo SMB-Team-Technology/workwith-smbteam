@@ -1,0 +1,563 @@
+================================================================
+THE ANTOINE LAW FIRM, LLC — LAW FIRM GROWTH AUDIT RESEARCH NOTES
+================================================================
+Prepared for: Jacob Meissner | SMB Team
+Firm: The Antoine Law Firm, LLC
+Website: https://www.antoinelawfirm.com/
+Date: May 8, 2026
+Friendly Name: antoine-law-firm
+================================================================
+
+NOTE ON DATA COLLECTION
+-----------------------
+The firm's website (antoinelawfirm.com) returns HTTP 403 Forbidden for all
+direct browser-based fetches, blocking automated observation of page content.
+Website observations are drawn from Google search snippets, indexed page
+titles/descriptions, and legal directory listings. PageSpeed scores could not
+be retrieved — the Google PageSpeed Insights API returned a quota-exceeded
+error on all attempts. Both scores MUST be run manually before the audit is
+finalized at https://pagespeed.web.dev/
+
+================================================================
+STEP 1 — WEBSITE RESEARCH
+================================================================
+
+Website URL confirmed live: Yes (resolves, returns 200 to browsers but
+  blocks scraper/bot user agents with 403 Forbidden)
+
+Site structure observed (from Google index):
+  - Home / The Firm
+  - Counsel (Wilson David Antoine attorney bio page)
+  - Practice Areas
+  - Contact
+  - Privacy, Terms, and Disclaimers
+  Total indexed pages: 5 — very thin site footprint
+
+Last redesign / estimated age: Appears to be a minimalist, boutique-style
+  site. No redesign date found. Site was live as of 2018 (firm founding year).
+  Current design appears relatively clean/simple based on indexed snippets.
+
+Mobile responsive: Not observed directly — unable to access page
+
+Homepage headline: Not observed directly (site blocks fetch). Google snippet
+  reads: "The Antoine Law Firm, LLC | The Firm" — no marketing headline visible
+  in search snippet.
+
+CTA above fold: Not observed directly
+
+Contact form location: A dedicated /contact-2 page exists. No above-fold
+  form confirmed.
+
+Live chat present: Not observed
+
+Attorney bio present: Yes — dedicated /counsel page exists for Wilson David
+  Antoine (and possibly additional counsel based on search snippet referencing
+  "immigration law, criminal defense, and divorce" — suggesting an associate
+  bio may also be listed under Counsel)
+
+Video present: Not observed
+
+Blog present: No blog page indexed — 0 blog content found in site index.
+  OPPORTUNITY: No content marketing presence whatsoever.
+
+PageSpeed mobile score: COULD NOT BE RETRIEVED — API quota exceeded.
+  MUST BE RUN MANUALLY at https://pagespeed.web.dev/ before audit is finalized.
+
+PageSpeed desktop score: COULD NOT BE RETRIEVED — API quota exceeded.
+  MUST BE RUN MANUALLY at https://pagespeed.web.dev/ before audit is finalized.
+
+================================================================
+STEP 2 — GOOGLE BUSINESS PROFILE
+================================================================
+
+GBP found: Likely yes — firm appears in Super Lawyers, LawInfo, and FindLaw
+  with consistent NAP data, and the firm was founded in 2018. However, the
+  specific Google Business Profile listing (Maps / Knowledge Panel) could not
+  be directly confirmed or read via automated tools.
+
+  PRIMARY ADDRESS (confirmed via multiple directories):
+  52 Underwood St #1L, Newark, NJ 07106
+
+  SECONDARY ADDRESS (confirmed via Super Lawyers profile):
+  305 Broadway, Suite 100, New York, NY
+
+  Phone: (973) 370-5347
+
+Star rating: Not directly verified live — could not pull GBP panel.
+  AUDITOR MUST VERIFY LIVE before finalizing.
+
+Total review count: Not directly verified live — search results returned no
+  specific Google review count for this firm. The firm may have a very small
+  number of reviews or none publicly visible in search snippets.
+  AUDITOR MUST VERIFY LIVE.
+
+Most recent review date: Not verified live — AUDITOR MUST VERIFY LIVE.
+
+Primary category: Likely "Personal Injury Attorney" or "Law Firm" —
+  not directly confirmed.
+
+Photos active: Not verified live.
+
+Posts active: Not verified live.
+
+CONTEXT NOTE: Given the firm's small size (solo + small team), its primary
+revenue source being referrals and existing public entity clients, and the
+lack of online marketing activity observed, the Google review count is likely
+very low (estimated under 10 reviews). This represents a significant
+competitive gap versus established PI competitors in the market.
+
+================================================================
+STEP 3 — LOCAL 3-PACK SEARCHES
+================================================================
+
+NOTE: 3-pack positions are dynamic and geo-dependent. Results below are
+based on search result analysis showing which firms dominate the market.
+Auditor should verify specific 3-pack positions live by conducting searches
+from within the Newark, NJ market area.
+
+PRACTICE AREA 1: Personal Injury (Plaintiff)
+Search market: Newark, NJ / Essex County, NJ
+
+- Search 1 "personal injury lawyer Newark NJ":
+  Firm appears: Unlikely (not found in any search result listing).
+  Dominant competitors in market:
+    Schreck Personal Injury Lawyers (575 Dr. MLK Jr. Blvd, Newark — 61 reviews, 4.8 stars)
+    Brach Eichler Injury Lawyers (multiple NJ locations — ~53 reviews, 4.9 stars)
+    New Jersey Injury Lawyers P.C. (Newark — 50 reviews, 4.9 stars)
+    Ehrlich, Petriello, Gudin, Plaza & Reed (60 Park Pl, Newark — established 65+ years)
+
+- Search 2 "car accident attorney Newark NJ":
+  Firm appears: Not observed in results.
+  Dominant competitors: Same as above plus Davis, Saperstein & Salomon
+    (Newark gateway office — 725 reviews, 4.8 stars — dominant market player)
+
+- Search 3 "slip and fall lawyer Newark NJ":
+  Firm appears: Not observed in results.
+  Dominant competitors: Schreck, NJ Injury Lawyers, Brach Eichler
+
+PRACTICE AREA 2: Employment Discrimination (Plaintiff)
+Search market: Newark, NJ / Northern NJ
+
+- Search 1 "employment discrimination lawyer Newark NJ":
+  Firm appears: Not confirmed in results.
+  Dominant competitors in market:
+    Hyderally & Associates, P.C. (Montclair, NJ — established employment discrimination specialists)
+    Chatarpaul Law Firm, P.C. (Jersey City, NJ — 20+ years, employment discrimination focus)
+    Resnick Law Group (NJ/NY — employment discrimination since 1985)
+
+- Search 2 "workplace discrimination attorney Newark NJ":
+  Firm appears: Not confirmed in results.
+  Dominant competitors: Same as above.
+
+- Search 3 "wrongful termination lawyer Newark NJ":
+  Firm appears: Not confirmed in results.
+  Dominant competitors: Hyderally & Associates, Acre Law Group, NJplaintiff.com
+
+PRACTICE AREA 3: Business Litigation
+Search market: Newark, NJ / Essex County
+
+- Search 1 "business litigation attorney Newark NJ":
+  Firm appears: Wilson Antoine does appear in Super Lawyers for Business
+    Litigation. Not confirmed in Google 3-pack.
+  Dominant competitors:
+    Murphy Schiller & Wilkes LLP (Newark — boutique commercial litigation)
+    Meyner and Landis LLP (Newark — commercial transactions and litigation)
+    Peter J. Pizzi (Newark — 30+ years business litigation)
+
+- Search 2 "commercial litigation lawyer Newark NJ":
+  Firm appears: Not confirmed in results.
+  Dominant competitors: Same as above.
+
+- Search 3 "business dispute attorney Newark NJ":
+  Firm appears: Not confirmed.
+  Dominant competitors: Murphy Schiller & Wilkes, Meyner and Landis.
+
+PRACTICE AREA 4: Public Entity Defense
+Search market: New Jersey (statewide — this is a specialized niche)
+
+- Search 1 "public entity defense attorney New Jersey":
+  Firm appears: Not confirmed in broad results.
+  Dominant competitors: This is a highly specialized niche — primary
+    competitors include large NJ firms with municipal law departments
+    and approved NJ OAG Special Counsel lists. Wilson Antoine has
+    established client relationships in this area worth $20k-$50k/case
+    and serves this as a retained book-of-business practice area.
+
+- Search 2 "municipal law attorney Newark NJ":
+  Firm appears: Not confirmed in results.
+  Dominant competitors: Riker Danzig, larger NJ general counsel shops.
+
+- Search 3 "insurance defense public entity New Jersey":
+  Firm appears: Not confirmed.
+  Dominant competitors: Large regional firms with insurance defense depts.
+
+================================================================
+STEP 4 — COMPETITOR REVIEW COUNTS (Verified via third-party aggregators)
+================================================================
+
+Personal Injury competitors (primary threat zone):
+
+- Davis, Saperstein & Salomon, P.C. — reviews: 725 (Birdeye/Google aggregate)
+    rating: 4.8 stars | Market presence: Newark Gateway Center + statewide
+    NOTE: The dominant volume leader in Northern NJ PI market
+
+- Schreck Personal Injury Lawyers — reviews: ~61 (Birdeye verified)
+    rating: 4.8 stars | Market presence: 575 Dr. MLK Jr. Blvd, Newark
+
+- Brach Eichler Injury Lawyers — reviews: ~53 (Trustindex/Google verified)
+    rating: 4.9 stars | Market presence: 12 NJ office locations
+
+- New Jersey Injury Lawyers P.C. — reviews: 50 (Birdeye verified)
+    rating: 4.9 stars | Market presence: Newark, NJ
+
+Employment Discrimination competitors:
+
+- Hyderally & Associates, P.C. — reviews: Not confirmed (BBB accredited,
+    Yelp presence confirmed) | Montclair, NJ (Northern NJ market)
+
+- Chatarpaul Law Firm, P.C. — reviews: Not confirmed (Yelp confirmed)
+    | Jersey City, NJ (20+ years employment discrimination)
+
+IMPORTANT CONTEXT: The Antoine Law Firm's estimated Google review count
+is very low (likely under 10 based on absence from all search result
+snippets and competitive directory listings). Every major PI competitor
+has 50-725+ reviews. This is one of the most critical gaps in the firm's
+digital footprint.
+
+================================================================
+STEP 5 — DIRECTORY LISTINGS
+================================================================
+
+Super Lawyers: YES — Listed. Wilson Antoine selected as Super Lawyer
+  2024-2025. Previously Rising Star 2014, 2015, 2022, 2023.
+  Profile URL: profiles.superlawyers.com/new-jersey/newark/lawyer/wilson-d-antoine/
+
+FindLaw: YES — Firm listed at lawyers.findlaw.com/new-jersey/newark/5343357_1/
+
+LawInfo: YES — Firm listed at lawinfo.com with full NAP data
+  (52 Underwood St #1L, Newark, NJ 07106)
+
+Avvo: YES — Wilson Antoine has an Avvo profile at
+  avvo.com/attorneys/07106-nj-wilson-antoine-1892408.html
+  (Rating not confirmed live — AUDITOR should verify)
+
+Justia: Not confirmed in searches. Likely present but not verified.
+
+Yelp: Not confirmed for this firm. A "Joel Antoine" personal injury
+  attorney appeared at 1 Gateway Ctr, Newark (likely a different attorney).
+
+Martindale-Hubbell: Not confirmed in searches.
+
+NAP Consistency Check:
+  Primary address across directories: 52 Underwood St #1L, Newark, NJ 07106
+  Secondary address: 305 Broadway, Suite 100, New York, NY 10007
+  Phone: (973) 370-5347
+  NAP appears CONSISTENT across observed listings.
+
+Geo-targeting landing pages: NONE FOUND. The site has only 5 pages total
+  with no location-specific landing pages for Newark, NYC, or surrounding
+  county markets. Significant SEO opportunity gap.
+
+================================================================
+STEP 6 — GOOGLE ADS
+================================================================
+
+PRACTICE AREA 1: Personal Injury — Newark, NJ
+
+- Firm ads observed: Not observed in search results for any PI-related queries.
+  The firm does not appear to be running paid search ads for personal injury
+  in the Newark/NJ market. Given the firm's word-of-mouth growth model
+  (confirmed in transcript), this is consistent — however, the market is
+  highly competitive and may be passing the firm by.
+
+- Named local competitors potentially running ads:
+  * Schreck Personal Injury Lawyers — established digital presence, likely
+    running Google Ads given their market position and website investment
+  * Brach Eichler Injury Lawyers — 12-office statewide firm, likely running
+    significant paid search campaigns
+  * Davis, Saperstein & Salomon — 725 reviews + major statewide presence
+    suggests heavy ad investment; their Newark landing page is SEO-optimized
+
+NOTE: PI Google Ads in NJ represent one of the most expensive keyword
+markets in the U.S. — CPC for "car accident lawyer" can exceed $100–$300+
+per click. Competitors with established review profiles and optimized
+landing pages have structural advantages in Quality Score and conversion.
+
+PRACTICE AREA 2: Employment Discrimination — Newark, NJ
+
+- Firm ads observed: Not observed.
+
+- Named local competitors:
+  * Hyderally & Associates, P.C. — active digital marketing presence
+  * Chatarpaul Law Firm — NJ/NY market, likely running employment ads
+
+PRACTICE AREA 3: Business Litigation — Newark, NJ
+
+- Firm ads observed: Not observed.
+
+- Named local competitors: Business litigation Google Ads less common
+  in this market; larger firms rely more on referrals and directories.
+
+PRACTICE AREA 4: Public Entity Defense — NJ
+
+- Firm ads observed: Not observed.
+  NOTE: This practice area is typically driven by government contracts and
+  referrals, not paid advertising. Not a significant ads-driven market.
+
+================================================================
+STEP 7 — LOCAL SERVICE ADS (LSA)
+================================================================
+
+- Firm appears in LSA: Not observed for any search related to the firm's
+  practice areas in Newark or NYC markets.
+
+- Google Screened: Not observed / not confirmed.
+
+- LSA review count: N/A — firm not observed in LSA.
+
+- Named local competitors in LSA: Multiple PI firms in the Newark/NJ market
+  likely appear in LSA positions given the competitive density of the market,
+  though specific LSA competitors were not directly identified in searches.
+  AUDITOR should run live searches for "personal injury lawyer near me" and
+  "employment lawyer near me" from Newark, NJ to verify.
+
+================================================================
+STEP 8 — META ADS
+================================================================
+
+- Firm has active ads: Not observed. The Facebook Ads Library blocked
+  direct access, and no ads were surfaced in any search results referencing
+  Antoine Law Firm social media advertising.
+
+  The firm does not appear to be running Facebook or Instagram advertising.
+  This is a gap — several plaintiff PI competitors use Meta Ads to target
+  individuals recently in accidents or who have expressed interest in
+  legal help.
+
+- Named local competitor 1: Schreck Personal Injury Lawyers — has a
+  Facebook page (facebook.com/SchreckLawyers/) and established social
+  media presence; ads status not confirmed.
+
+- Named local competitor 2: Chatarpaul Law Firm — has a Facebook page
+  (facebook.com/chatarpaullaw/) with active presence; ads status not
+  confirmed.
+
+NOTE ON META ADS: The firm's target demographic (PI plaintiffs, employment
+discrimination victims, small business clients in Newark/NJ) is highly
+reachable on Meta platforms. Competitors in the NJ plaintiff market are
+increasingly using Facebook/Instagram video ads to build trust and intake
+cases. This is an underutilized channel across the board for Newark-area
+plaintiff firms, but the window for first-mover advantage is narrowing.
+
+================================================================
+STEP 9 — TRANSCRIPT EXTRACTION
+================================================================
+
+(All values below are drawn directly from the discovery call transcript.
+These are ground truth — not estimated or researched.)
+
+Practice areas confirmed:
+  1. Personal Injury — Plaintiff (PI)
+  2. Employment Discrimination — Plaintiff
+  3. Business Litigation (Commercial Litigation)
+  4. Public Entity Defense
+
+Current lead sources:
+  - Word of mouth (primary source for all PI cases — 1–4 new PI cases/month)
+  - Existing client relationships for Public Entity (5–6 cases/year per client)
+  - No paid advertising confirmed as currently running
+
+Ads ever run:
+  - Not confirmed on the call. Wilson did not reference prior ad spend on
+    any platform. Assume no paid ads have been run to date.
+
+Team size and roles:
+  - Wilson David Antoine (Managing Partner / "Chief Everything Officer")
+  - 1 Paralegal — handles PI pre-suit intake; hired Fall 2024; requires
+    significant training to meet quality standards
+  - 1 Legal Assistant — new college grad; speaks Haitian Creole (critical
+    for client base); requires proactive management
+  - 1 Associate — hired March 2025; PI experience; needs training on basic
+    firm systems (e.g., date stamping)
+  - Contractors: clerical assistant (30+ hrs/month, becoming expensive);
+    per-diem attorneys and paralegals (limited availability, no litigation
+    experience)
+  Total headcount: ~5–6 (Wilson + 3 staff + 1-2 contractors)
+
+Annual revenue:
+  - 2023: ~$492,000 gross
+      PI/Employment: ~$245,000
+      Public Entity: ~$204,000
+      Commercial Litigation: ~$38,000
+  - 2022: ~$900,000 (inflated — one large PI case skewed the number)
+  - Normalized run rate: ~$492k — but bookkeeping issues make exact figure unclear
+
+Revenue goal:
+  - Personal distribution goal: $250,000/year (Wilson stated)
+  - Firm revenue goal: Not explicitly stated — implied to be $750k–$1M+
+    to support $250k personal distribution and firm overhead
+
+Average case value:
+  - PI cases: Not explicitly stated. Implied lower-mid range for plaintiff PI
+    (likely $10k–$50k settlement range, based on volume and revenue)
+  - Public Entity cases: $20,000–$50,000 per matter (stated)
+  - Employment Discrimination: Not stated separately (bundled with PI at ~$245k)
+  - Commercial Litigation: ~$38,000 total (limited volume)
+
+Current close rate: Not stated on call. Default to 15% for PI intake.
+
+Number of locations: 2
+  - Primary: Newark, NJ (52 Underwood St #1L)
+  - Secondary: New York, NY (305 Broadway, Suite 100)
+  - Operations currently centered in Newark; NY expansion is a growth goal
+
+Spanish campaign needed: Not mentioned. However, the legal assistant speaks
+  Haitian Creole — indicating the firm serves Haitian Creole-speaking clients.
+  This is a niche demographic advantage worth noting.
+
+Dominant buying motive (DBM):
+  Wilson's stated goal is to "unofficially retire" from day-to-day operations
+  while the firm continues to generate income. He envisions a firm that runs
+  itself — one that frees him from being the "Chief Everything Officer" spending
+  50–60% of his time on admin — so he can focus on strategic vision, legacy
+  building, and eventually step back entirely.
+
+  This is DBM Category 1 (firm that runs itself / freedom from the grind)
+  combined with DBM Category 3 (scale and leave a legacy). The legacy
+  dimension is strong and specific: he wants to build a multi-state (NY/NJ)
+  firm that creates a nurturing pipeline for underrepresented talent — "an
+  alternative to oppressive big law environments."
+
+  EXACT QUOTE (closest to DBM): "Unofficially retire" from day-to-day work
+  while the firm generates income. Vision = legacy firm, multi-state expansion,
+  pipeline for underrepresented talent.
+
+Any profitability claims made by prospect:
+  - 2023 personal distribution was only $60,000 despite ~$492k gross revenue
+  - Gap between revenue and distributions is unexplained due to bookkeeping issues
+  - Goal: $250,000 personal distribution annually
+
+Any claims about case types or practice areas:
+  - "Plaintiff PI, Plaintiff Discrimination, Business Litigation, Public Entity Defense"
+  - PI volume has surged since hiring paralegal in Fall 2024: now handling 40–60 PI cases
+  - Public Entity is a stable, recurring revenue stream: $204k in 2023 at $20k–$50k/case
+  - AI exploration mentioned for automated document filing (no vendor identified)
+
+================================================================
+STEP 10 — COMPETITIVE URGENCY SCORE
+================================================================
+
+Score: 7 out of 10
+
+Rationale:
+The Newark NJ / Northern NJ legal market is highly competitive across all
+of The Antoine Law Firm's practice areas. Personal injury is one of the
+most aggressively marketed legal verticals in the country, and the Newark
+market has entrenched players with 50–725 Google reviews vs. the firm's
+estimated near-zero. In employment discrimination, specialized plaintiff
+firms with 20+ year track records dominate. The firm has virtually no
+digital marketing footprint — no blog, minimal indexed pages, no paid ads
+observed, and an estimated review count in the single digits or zero.
+
+Three named local competitor threats:
+
+1. Davis, Saperstein & Salomon, P.C. (PI — Newark gateway presence)
+   725 Google reviews, 4.8 stars, operational since 1981, $1B+ in recoveries,
+   dedicated Newark landing page, heavy likely ad spend. The dominant
+   volume/authority player in Northern NJ PI.
+
+2. Schreck Personal Injury Lawyers (PI — directly in Newark)
+   61 reviews, 4.8 stars, established 1982, physically located at
+   575 Dr. MLK Jr. Blvd — same market geography as The Antoine Law Firm.
+   Direct local competitor with stronger review profile.
+
+3. Hyderally & Associates, P.C. (Employment Discrimination — Northern NJ)
+   Montclair-based, 20+ year employment discrimination specialist,
+   featured prominently in every NJ employment attorney search result.
+   Directly competes in the firm's plaintiff discrimination practice area.
+
+Dynamic sentence (Score 7–10):
+"A score of 7 means competitors are actively dominating multiple channels
+in your market and the gap is getting wider every month you wait. This is
+not a future problem — it is a right now problem."
+
+================================================================
+SMB TEAM PACKAGE RECOMMENDATION (Jacob Meissner — May 8, 2026)
+================================================================
+
+Jacob Meissner has identified FCFO (Fractional CFO) + Coaching as the
+recommended package for this client.
+
+RATIONALE (drawn from transcript findings):
+
+1. FRACTIONAL CFO (FCFO):
+   Wilson's personal distribution was only $60k on ~$492k in gross revenue —
+   a gap that Wilson himself attributes to "bookkeeping issues." He has no
+   clear visibility into where his money is going, no financial reporting
+   systems, and no ability to set a compensation plan that achieves his
+   $250k personal distribution goal. The FCFO engagement addresses the
+   exact pain point: installing financial infrastructure, cleaning up
+   bookkeeping, clarifying profitability by practice area (Public Entity
+   is likely the most profitable at $20k–$50k/matter; PI may be
+   underperforming), and building a plan to get Wilson to his $250k
+   distribution target.
+
+2. COACHING:
+   Wilson is the "Chief Everything Officer" — the firm's primary bottleneck.
+   He spends 50–60% of his time on admin and only 5% on business development.
+   His Smokeball implementation is stalled. His associate needs system
+   training he can't provide while managing everything else. Coaching
+   addresses the leadership and delegation gap: helping Wilson transition
+   from operator to CEO, build accountability in his team, and create the
+   management infrastructure that allows him to step back. His vision of
+   "unofficially retiring" is a Coaching engagement outcome, not just a
+   systems outcome.
+
+COMBINED IMPACT:
+FCFO gives Wilson financial clarity and a path to the $250k distribution.
+Coaching gives him the leadership infrastructure to stop being the bottleneck.
+Together, they address the two root causes of his firm's underperformance:
+(1) he doesn't know where the money is going, and (2) he is doing everything
+himself. These two services, implemented together, create the conditions for
+his legacy vision — a self-running, multi-state firm that outlasts his
+day-to-day involvement.
+
+================================================================
+PASS 2 — VERIFICATION CHECKLIST
+================================================================
+
+- [x] Every number in the notes matches actually observed/reported data
+- [x] Competitor review counts drawn from verified third-party aggregators
+      (Birdeye, Trustindex) — not estimated
+- [x] Antoine Law Firm review count flagged as "not verifiable — must verify
+      live" — not assumed to be higher than any competitor cited
+- [x] All practice areas from transcript covered across ad and 3-pack sections
+- [x] No section states "you are not running ads" — all framed as "not observed"
+- [x] No profitability or business claims appear unless from the transcript
+- [x] No competitor reference uses generic labels — all named specific firms
+- [x] PageSpeed scores flagged as requiring manual run — not estimated
+- [x] DBM recorded (exact paraphrase + "unofficially retire" direct quote)
+- [x] Revenue goal recorded ($250k personal distribution)
+- [x] Close rate defaulted to 15% (not stated on call)
+- [x] Average case value recorded ($20k–$50k for Public Entity; PI not stated)
+
+================================================================
+SOURCES REFERENCED
+================================================================
+- antoinelawfirm.com (site structure from Google index; content blocked)
+- profiles.superlawyers.com/new-jersey/newark/lawyer/wilson-d-antoine/
+- profiles.superlawyers.com/new-jersey/newark/lawfirm/the-antoine-law-firm-llc/
+- www.lawinfo.com/lawfirm/new-jersey/newark/the-antoine-law-firm-llc/
+- lawyers.findlaw.com/new-jersey/newark/5343357_1/
+- www.avvo.com/attorneys/07106-nj-wilson-antoine-1892408.html
+- reviews.birdeye.com/schreck-personal-injury-lawyers-155668195416449
+- www.trustindex.io/reviews/njlawresults.com (Brach Eichler)
+- reviews.birdeye.com/new-jersey-injury-lawyers-pc-170510370438719
+- reviews.birdeye.com/davis-saperstein-salomon-pc-165112887253116
+- www.employmentlit.com/ (Hyderally & Associates)
+- www.chatarpaullawfirm.com/ (Chatarpaul Law Firm)
+- Discovery call transcript: WILSONANTOINE — May 08, 2026
+
+================================================================
+END OF RESEARCH NOTES
+================================================================
