@@ -1,6 +1,6 @@
-# SMB Team — Law Firm Growth Audit
+# SMB Team — Growth, Profit, and Freedom Roadmap
 
-Run a full Law Firm Growth Audit for a prospective client, assemble the branded HTML report from design templates, and push it to GitHub.
+Run a full Growth, Profit, and Freedom Roadmap for a prospective client, assemble the branded HTML report from design templates, and push it to GitHub.
 
 ## How to invoke
 
