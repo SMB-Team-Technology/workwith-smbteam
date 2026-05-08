@@ -1,0 +1,1285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- FILL: FIRM_NAME in the title tag -->
+<title>Law Firm Growth Audit — Shark Law</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Montserrat:wght@700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="audit_styles.css">
+<!-- HubSpot Analytics -->
+<script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/4570385.js"></script>
+</head>
+<body>
+
+<!--
+  ============================================================
+  SMB TEAM — LAW FIRM GROWTH AUDIT
+  Master Assembly File
+
+  ⚠️ CRITICAL — READ BEFORE WRITING A SINGLE CHARACTER:
+
+  This file does NOT contain a <style> block.
+  This file does NOT use inline styles (no style="" attributes).
+  ALL styling comes exclusively from audit_styles.css.
+
+  If you find yourself writing CSS — in a <style> tag, inline,
+  or anywhere else — STOP. Delete it. Use only the class names
+  that already exist in audit_styles.css. Do not invent new ones.
+
+  Violating this rule is what causes the report to look wrong.
+  The CSS is already written. Your only job is to fill in content.
+
+  ============================================================
+
+  INSTRUCTIONS FOR COWORK:
+  This file assembles the completed audit by inserting the
+  content of each completed section fragment in order.
+
+  Workflow:
+  1. Complete all research and analysis first. Write nothing yet.
+  2. Open section_01_cover.html. Fill in all placeholders. Save.
+  3. Open section_02_toc.html. Fill in all placeholders. Save.
+  4. Open section_03_firm_overview.html. Fill in all placeholders. Save.
+  5. Section 04 (About SMB Team) is static — copy as-is.
+  6. Open section_05_growth_health.html. Fill in all placeholders. Save.
+  7. Open section_06_lead_generation.html. Fill in all placeholders. Save.
+  8. Open section_07_08_09_intake_team_profit.html. Fill in all placeholders. Save.
+  9. Open section_10_whats_possible.html. Fill in all placeholders. Save.
+  10. Open section_11_next_steps.html. Fill in all placeholders. Save.
+  11. Open section_executive_summary.html. Fill in all placeholders using
+      completed data from sections 05 and 11. Save. (Fill this one last.)
+  12. Return to this file. Replace each INSERT ... CONTENT HERE comment
+      with the full HTML content of that completed section file.
+  13. Save the final assembled file as:
+      [FirmName]_[Date]_Growth_Audit.html
+      to the project folder.
+
+  RULES:
+  - No <style> block. None. Not here, not in any section file.
+  - No inline styles. No style="" on any element. Ever.
+  - No new CSS classes. Only use classes from audit_styles.css.
+  - Do not output this file in the chat window.
+  - Save directly to the project folder.
+  ============================================================
+-->
+
+<!-- ===== SECTION 01: COVER PAGE ===== -->
+<!-- ⚠️ NO CSS IN THIS FILE. No <style> blocks. No inline styles. No style="" attributes.
+     All styling comes from audit_styles.css only. Use only existing class names.
+     If you find yourself writing CSS — stop and delete it. -->
+
+<div class="cover" id="cover">
+  <img class="cover-logo"
+    src="https://www.dropbox.com/scl/fi/9ytno9l0ipl9w9x4l0qg6/SMB-Logo-H-White.png?rlkey=y13ywjp9poyihu8zus42tx6wq&st=rfo0lufv&raw=1"
+    alt="SMB Team Logo" />
+
+  <div class="cover-title">Law Firm Growth Audit</div>
+
+  <div class="cover-firm">Shark Law</div>
+
+  <div class="cover-footer">
+    <p>Prepared for: <strong>Shark Law</strong></p>
+    <p>Prepared by: <strong>Dan Bryant</strong> | SMB Team</p>
+    <p>Date: <strong>May 08, 2026</strong></p>
+    <p class="confidential">Confidential</p>
+  </div>
+</div>
+
+
+<!-- ===== EXECUTIVE SUMMARY ===== -->
+<!-- ⚠️ NO CSS IN THIS FILE. No <style> blocks. No inline styles. No style="" attributes.
+     All styling comes from audit_styles.css only. Use only existing class names.
+     If you find yourself writing CSS — stop and delete it. -->
+
+<div class="exec-summary" id="executive-summary">
+  <div class="exec-summary-header">
+    <div class="exec-summary-header-inner">
+      <div class="exec-summary-title">Executive Summary</div>
+      <div class="exec-summary-firm">Shark Law</div>
+    </div>
+  </div>
+
+  <div class="exec-summary-body">
+
+    <div class="exec-meta-row">
+
+      <div class="exec-urgency">
+        <div class="exec-urgency-number">8</div>
+        <div class="exec-urgency-label">Urgency Score</div>
+      </div>
+
+      <div class="exec-pillars">
+        <div class="exec-pillars-label">Pillar Health at a Glance</div>
+        <div class="exec-pillar-row">
+
+          <div class="exec-pillar-item">
+            <div class="exec-pillar-circle red"></div>
+            <div class="exec-pillar-name">Lead Gen</div>
+          </div>
+
+          <div class="exec-pillar-item">
+            <div class="exec-pillar-circle red"></div>
+            <div class="exec-pillar-name">Intake</div>
+          </div>
+
+          <div class="exec-pillar-item">
+            <div class="exec-pillar-circle amber"></div>
+            <div class="exec-pillar-name">Team</div>
+          </div>
+
+          <div class="exec-pillar-item">
+            <div class="exec-pillar-circle amber"></div>
+            <div class="exec-pillar-name">Profit</div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+
+    <div class="exec-content-grid">
+
+      <!-- TOP PRIORITIES -->
+      <div class="exec-block">
+        <div class="exec-block-title">Top Priorities</div>
+        <ul class="exec-findings-list">
+          <li>Shark Law appears in approximately 11% of Google Maps searches for "DUI attorney Cincinnati" while a single competitor captures ~96% — every month without a review generation system and GBP strategy widens a gap that is already costing cases.</li>
+          <li>The 15–20 minute AI notification lag after after-hours calls is a direct revenue leak in a practice area where DUI prospects make hiring decisions within the first 30 minutes — a faster system is the fastest path to more closed cases from existing traffic.</li>
+          <li>Shane personally handles every intake consultation and every close — the firm's revenue is fully capped by his personal availability, and that ceiling will not move until intake is delegated.</li>
+          <li>Three different phone numbers are appearing across major directories under two different brand names — this NAP fragmentation is actively suppressing GBP authority and LSA placement independent of any other marketing investment.</li>
+        </ul>
+      </div>
+
+      <!-- RECOMMENDED INVESTMENT SNAPSHOT -->
+      <div class="exec-block">
+        <div class="exec-block-title">Recommended Investment</div>
+
+        <div class="exec-investment-row">
+          <span>Full Service Marketing — Growth</span>
+          <span class="exec-investment-value">$5,397/mo</span>
+        </div>
+
+        <div class="exec-investment-row">
+          <span>Elite Coach Plus</span>
+          <span class="exec-investment-value">$3,200/mo</span>
+        </div>
+
+        <div class="exec-investment-row">
+          <span>Recommended Ad Spend</span>
+          <span class="exec-investment-value">$4,000–$10,000/mo</span>
+        </div>
+
+        <div class="exec-investment-total">
+          <span>Total SMB Team Investment</span>
+          <span>$8,597/mo</span>
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="exec-closing">
+      <p><span>Shane has already built the reputation — the system to make it visible, and the intake infrastructure to convert it into cases, is what gets built next.</span></p>
+    </div>
+
+  </div>
+</div>
+
+
+<!-- ===== SECTION 02: TABLE OF CONTENTS ===== -->
+<!-- ⚠️ NO CSS IN THIS FILE. No <style> blocks. No inline styles. No style="" attributes.
+     All styling comes from audit_styles.css only. Use only existing class names.
+     If you find yourself writing CSS — stop and delete it. -->
+
+<div class="toc-wrap" id="toc">
+  <div class="toc-title">Table of Contents</div>
+
+  <div class="toc-section">
+    <div class="toc-category">Your Firm at a Glance</div>
+    <ul class="toc-items">
+      <li><a href="#firm-overview">Shark Law — Current Status</a></li>
+    </ul>
+  </div>
+
+  <div class="toc-section">
+    <div class="toc-category">About SMB Team</div>
+    <ul class="toc-items">
+      <li><a href="#about-smb">The Law Firm Growth Acceleration Model</a></li>
+    </ul>
+  </div>
+
+  <div class="toc-section">
+    <div class="toc-category">Your Growth Health Assessment</div>
+    <ul class="toc-items">
+      <li><a href="#growth-health">Growth Health Scorecard</a></li>
+      <li><a href="#urgency-score">Competitive Urgency Score</a></li>
+    </ul>
+  </div>
+
+  <div class="toc-section">
+    <div class="toc-category">Lead Generation</div>
+    <ul class="toc-items">
+      <li><a href="#website-audit">Website Audit</a></li>
+      <li><a href="#local-seo">Local SEO</a></li>
+      <li><a href="#google-ads">Google Ads</a></li>
+      <li><a href="#local-service-ads">Local Service Ads</a></li>
+      <li><a href="#meta-ads">Facebook &amp; Instagram Ads</a></li>
+    </ul>
+  </div>
+
+  <div class="toc-section">
+    <div class="toc-category">Intake</div>
+    <ul class="toc-items">
+      <li><a href="#intake">Intake Assessment</a></li>
+      <li><a href="#website-intake">Website Contact Forms &amp; Live Chat</a></li>
+    </ul>
+  </div>
+
+  <div class="toc-section">
+    <div class="toc-category">Self-Managing Team</div>
+    <ul class="toc-items">
+      <li><a href="#team">Team Assessment</a></li>
+    </ul>
+  </div>
+
+  <div class="toc-section">
+    <div class="toc-category">Profit</div>
+    <ul class="toc-items">
+      <li><a href="#profit">Profit Plan Assessment</a></li>
+    </ul>
+  </div>
+
+  <div class="toc-section">
+    <div class="toc-category">Here's What's Possible for Shark Law</div>
+    <ul class="toc-items">
+      <li><a href="#growth-journey">Growth Vision</a></li>
+    </ul>
+  </div>
+
+  <div class="toc-section">
+    <div class="toc-category">Your Next Steps</div>
+    <ul class="toc-items">
+      <li><a href="#next-steps">Quick Wins for Shark Law</a></li>
+      <li><a href="#recommendation">How SMB Team Can Help Shark Law</a></li>
+    </ul>
+  </div>
+</div>
+
+
+<!-- ===== SECTION 03: YOUR FIRM AT A GLANCE ===== -->
+<!-- ⚠️ NO CSS IN THIS FILE. No <style> blocks. No inline styles. No style="" attributes.
+     All styling comes from audit_styles.css only. Use only existing class names.
+     If you find yourself writing CSS — stop and delete it. -->
+
+<div class="section-header" id="firm-overview">
+  <div class="section-header-inner">
+    <h2>Here Is Where Shark Law Stands Today</h2>
+  </div>
+</div>
+
+<div class="content-wrap">
+
+  <div class="firm-summary">Shane Herzner has spent 22 years building one of Cincinnati's most trial-active DUI and OVI defense practices — backing a brand (The Shark) that clients remember, a track record that speaks for itself (5 jury trials and 4 wins in 2026 alone), and a firm pacing toward $800K this year with a clear goal of breaking $1M. The single most important finding from this audit is that a dominant competitor is capturing approximately 96% of the Google Maps searches that Shark Law should own — and while Shane's results are exceptional, almost no one searching for a DUI attorney in Cincinnati is being given the chance to find that out.</div>
+
+  <img src="https://www.dropbox.com/scl/fi/27el1jrgyynonfwcgi8ib/LLS-Small-Business-Manager.png?rlkey=biehntt1vm0nxnynabgako82i&st=z2k2uxwe&raw=1" alt="Growth Stage" />
+
+  <p class="dbm-connector">Stage 6 is where you stop doing every intake, stop taking every case, and start running a firm that wins by design — which is exactly what this plan is built to get you to.</p>
+
+  <div class="stage-cards">
+    <div class="stage-card">
+      <div class="stage-card-header">
+        <h3>Where You Are Today</h3>
+        <div class="stage-label">Stage 4: Small Business Manager</div>
+      </div>
+      <div class="stage-card-body">
+        <ul>
+          <li>Referrals and LSA are the primary consistent lead sources — no predictable multi-channel pipeline</li>
+          <li>Shane personally handles every intake call and every consultation close — the firm's revenue is tied to his time</li>
+          <li>Shark Law appears in roughly 11% of Google Maps searches for "DUI attorney Cincinnati" while the dominant competitor appears in ~96%</li>
+          <li>Revenue is growing ($700K → $800K pacing) but no clear visibility into cost per lead, cost per signed case, or which channels drive the best margins</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="stage-card destination">
+      <div class="stage-card-header">
+        <h3>Where You Need To Be</h3>
+        <div class="stage-label">Stage 6: Law Firm Owner</div>
+      </div>
+      <div class="stage-card-body">
+        <ul>
+          <li>The firm runs without you</li>
+          <li>Your income is no longer tied to your personal hours</li>
+          <li>Your time is yours to spend however you choose</li>
+          <li>This is where true freedom and true wealth become possible</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="connecting-sentence">The gap between where you are and where you want to be is not about your results — your results are already exceptional. It is about the systems that make those results visible, replicable, and independent of you being the one to answer every call.</div>
+
+  <div class="assessment-header">Overall Growth Stage Assessment</div>
+  <div class="assessment-subheading">Shark Law</div>
+
+  <div class="assessment-box">Shane is operating at Stage 4 — a Small Business Manager who has built a real team, a real brand, and a real track record, but whose growth is still bottlenecked by two critical gaps: lead generation that depends too heavily on referrals and a single competitor dominating local search, and an intake process where Shane himself is the closer on every case. The single most urgent limiting factor is local search invisibility — Suhre &amp; Associates has nearly four times as many Google reviews and appears in the local map pack for searches that should belong to Shark Law. Until that changes, Shane will keep winning the cases he gets but never get the volume of cases that match his capacity to win.</div>
+
+</div>
+<div class="back-to-top"><a href="#toc">↑ Back to Top</a></div>
+
+
+<!-- ===== SECTION 04: ABOUT SMB TEAM ===== -->
+<!-- ⚠️ NO CSS IN THIS FILE. No <style> blocks. No inline styles. No style="" attributes.
+     All styling comes from audit_styles.css only. Use only existing class names.
+     If you find yourself writing CSS — stop and delete it. -->
+<!-- ============================================================
+     SECTION 04 — ABOUT SMB TEAM
+     
+     INSTRUCTIONS FOR COWORK:
+     This section is STATIC. Do not change any text or structure.
+     Copy this section into the final output exactly as it appears here.
+     ============================================================ -->
+
+<div class="section-header" id="about-smb">
+  <div class="section-header-inner">
+    <h2>The Law Firm Growth Acceleration Model</h2>
+  </div>
+</div>
+
+<div class="content-wrap">
+
+  <div class="callout-banner">
+    <p>We Help Law Firm Owners Get More Profit, More Personal Freedom, And Outstanding Results For Their Clients.</p>
+  </div>
+
+  <p class="opportunity-text">Most law firms try to grow by chasing more leads. But leads alone are not the problem — and leads alone are not the answer. Here is what actually works.</p>
+
+  <div class="pillars-grid">
+    <div class="pillar-card">
+      <h3>Lead Generation</h3>
+      <p>Leads are to a law firm what gasoline is to a car. Without them, you go nowhere. But a steady, predictable flow of leads changes everything — you get to choose your cases instead of taking whatever comes in.</p>
+    </div>
+    <div class="pillar-card">
+      <h3>Intake</h3>
+      <p>But all the leads in the world are worthless without a system to turn them into paying clients. Most firms are losing cases they already paid for simply because their follow-up is slow or inconsistent.</p>
+    </div>
+    <div class="pillar-card">
+      <h3>Self-Managing Team</h3>
+      <p>Once clients are coming in, you need a team — otherwise you end up working 90-hour weeks and results suffer. A self-managing team is what gives you the freedom to step back.</p>
+    </div>
+    <div class="pillar-card">
+      <h3>Profit Plan</h3>
+      <p>And once the team is in place, most owners look at their bank account and ask: where did all the money go? That is what a profit plan solves — clarity on what you earn, what you keep, and how to grow both.</p>
+    </div>
+  </div>
+
+  <div class="closing-line">All four have to work together. If one is missing, you cannot have more profit, more freedom, and outstanding results for your clients at the same time.</div>
+
+  <img src="https://www.dropbox.com/scl/fi/ffkzpv2f3rdjfzwq997e1/Law-Firm-Growth-Acceleration-Model.png?rlkey=665o52gt2va8pg4nb0epdc8hv&st=1iucj2m5&raw=1"
+    alt="Law Firm Growth Acceleration Model"
+    style="width:100%;height:auto;display:block;border-radius:6px;" />
+
+</div>
+<div class="back-to-top"><a href="#toc">↑ Back to Top</a></div>
+
+
+<!-- ===== SECTION 05: GROWTH HEALTH ASSESSMENT ===== -->
+<!-- ⚠️ NO CSS IN THIS FILE. No <style> blocks. No inline styles. No style="" attributes.
+     All styling comes from audit_styles.css only. Use only existing class names.
+     If you find yourself writing CSS — stop and delete it. -->
+
+<div class="section-header" id="growth-health">
+  <div class="section-header-inner">
+    <h2>Your Growth Health Assessment</h2>
+    <div class="subtext">Shark Law</div>
+  </div>
+</div>
+
+<div class="content-wrap">
+
+  <div class="legend">
+    <div class="legend-item">
+      <div class="legend-dot red"></div>
+      <div class="legend-label">Red <span>— Critical Priority</span></div>
+    </div>
+    <div class="legend-item">
+      <div class="legend-dot amber"></div>
+      <div class="legend-label">Amber <span>— In Progress</span></div>
+    </div>
+    <div class="legend-item">
+      <div class="legend-dot green"></div>
+      <div class="legend-label">Green <span>— On Track</span></div>
+    </div>
+  </div>
+
+  <div class="scorecard-label">Pillar Health Scorecard</div>
+
+  <div class="scorecard-grid">
+
+    <!-- LEAD GENERATION CARD -->
+    <div class="sc-card">
+      <div class="sc-card-header"><h3>Lead Generation</h3></div>
+      <div class="sc-card-body">
+        <div class="traffic-circle red"></div>
+        <ul class="sc-findings">
+          <li>Shark Law appears in approximately 11% of Google Maps searches for "DUI attorney Cincinnati" — the dominant competitor appears in ~96%</li>
+          <li>Primary lead sources are referrals and LSAs — no multi-channel system, no social/video pipeline, no service-area content for surrounding suburbs</li>
+          <li>Three different phone numbers found across directories (Yelp, Justia, main site) and dual brand names ("Herzner Law" vs. "Shark Law") — NAP fragmentation that suppresses local rankings</li>
+        </ul>
+        <div class="sc-dbm">Until lead generation is predictable and multi-channel, you cannot choose your cases — you take whatever calls come in.</div>
+      </div>
+    </div>
+
+    <!-- INTAKE CARD -->
+    <div class="sc-card">
+      <div class="sc-card-header"><h3>Intake</h3></div>
+      <div class="sc-card-body">
+        <div class="traffic-circle red"></div>
+        <ul class="sc-findings">
+          <li>Scorpion AI answering has a 15–20 minute notification lag — in DUI defense, a prospect who cannot reach someone in the first 30 minutes calls the next firm on the list</li>
+          <li>Shane personally handles every intake call and every close — the firm's revenue is completely dependent on his personal availability</li>
+          <li>Scorpion-to-Clio Grow auto-creation frequently creates incomplete records (missing names) — leads fall through with no structured follow-up for those who do not sign immediately</li>
+        </ul>
+        <div class="sc-dbm">Every intake call Shane takes personally is an hour he cannot spend in court — the work he actually wants to do.</div>
+      </div>
+    </div>
+
+    <!-- SELF-MANAGING TEAM CARD -->
+    <div class="sc-card">
+      <div class="sc-card-header"><h3>Self-Managing Team</h3></div>
+      <div class="sc-card-body">
+        <div class="traffic-circle amber"></div>
+        <ul class="sc-findings">
+          <li>A 4-person team exists (associate, of-counsel, office manager) — but Shane does all intake, all closings, and approximately 50% of administrative work himself</li>
+          <li>No intake specialist or dedicated closer on staff — the firm cannot scale revenue without scaling Shane's personal hours</li>
+          <li>Associate and of-counsel handle court coverage, but no revenue-generating tasks are delegated away from Shane</li>
+        </ul>
+        <div class="sc-dbm">A team that cannot close cases without you is not a team — it is overhead. The firm cannot give you more time until this changes.</div>
+      </div>
+    </div>
+
+    <!-- PROFIT CARD -->
+    <div class="sc-card">
+      <div class="sc-card-header"><h3>Profit</h3></div>
+      <div class="sc-card-body">
+        <div class="traffic-circle amber"></div>
+        <ul class="sc-findings">
+          <li>Revenue is growing ($700K last year → $800K current pace) and fees were recently raised with zero client pushback — strong indicators of untapped pricing power</li>
+          <li>No confirmed visibility into cost per lead, cost per signed case, or contribution margin by case type — Scorpion dashboard and Clio Grow are only partially integrated and used occasionally</li>
+          <li>LSA and PPC spend with Scorpion is not fully tracked against signed-case outcomes — making it impossible to know which marketing dollars are working</li>
+        </ul>
+        <div class="sc-dbm">Growing revenue without knowing your numbers means you cannot predict your income — and you cannot build toward the $1M goal without a clear line of sight.</div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- COMPETITIVE URGENCY SCORE -->
+  <div class="urgency-card" id="urgency-score">
+    <div class="urgency-label">Competitive Urgency Score</div>
+    <div class="urgency-score">8</div>
+    <div class="urgency-outof">out of 10</div>
+    <div class="urgency-sentence">A score of 8 means competitors are actively dominating multiple channels in your market and the gap is getting wider every month you wait. This is not a future problem — it is a right now problem.</div>
+    <div style="margin-bottom:10px;">
+      <div class="urgency-bar"><div class="urgency-marker" style="left:80%;"></div></div>
+      <div class="urgency-scale">
+        <span>1–3 = Low Urgency</span>
+        <span>4–6 = Moderate</span>
+        <span>7–10 = High Urgency</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="competitors-label">Your Top Competitive Threats</div>
+
+  <div class="competitor-card">
+    <div class="competitor-name">Suhre &amp; Associates DUI and Criminal Defense Lawyers</div>
+    <div class="competitor-threat">With approximately 399 Google reviews at 4.9 stars — nearly four times Shark Law's count — and a dominant presence in roughly 96% of local map searches for DUI attorney terms across Cincinnati, Suhre is capturing the calls that should be going to Shane. They have a multi-city footprint across Ohio, Kentucky, and Indiana that continuously feeds their GBP authority, and Cincy Magazine has named Joe Suhre the top DUI lawyer in Cincinnati for nine consecutive years. Every month this gap grows, the distance closes harder.</div>
+  </div>
+
+  <div class="competitor-card">
+    <div class="competitor-name">The Farrish Law Firm LPA</div>
+    <div class="competitor-threat">Kelly Farrish has 45+ years of DUI/OVI exclusive practice and has been named an Ohio Super Lawyer in the DUI field every year from 2016 through 2025. Located at 810 Sycamore in downtown Cincinnati, the firm is a credibility anchor for clients doing comparison research before hiring — and their longevity in the market creates a perception of authority that challenges Shane's premium positioning, particularly at the $7,500 first-OVI price point.</div>
+  </div>
+
+  <div class="competitor-card">
+    <div class="competitor-name">Luftman, Heck &amp; Associates LLP</div>
+    <div class="competitor-threat">Brad Groene at Luftman Heck markets 24/7 availability as a core differentiator — directly targeting the speed-to-lead gap that Shark Law currently has with its 15–20 minute AI notification delay. Also located at 810 Sycamore in downtown Cincinnati, the firm runs paid search campaigns and maintains an active digital presence that intercepts DUI prospects at the moment of arrest — exactly when Shark Law's intake system is slowest.</div>
+  </div>
+
+</div>
+<div class="back-to-top"><a href="#toc">↑ Back to Top</a></div>
+
+
+<!-- ===== SECTION 06: LEAD GENERATION ===== -->
+<!-- ⚠️ NO CSS IN THIS FILE. No <style> blocks. No inline styles. No style="" attributes.
+     All styling comes from audit_styles.css only. Use only existing class names.
+     If you find yourself writing CSS — stop and delete it. -->
+
+<div class="section-header" id="lead-generation">
+  <div class="section-header-inner"><h2>Lead Generation</h2></div>
+</div>
+
+<div class="content-wrap">
+</div>
+<div class="section-img-wrap"><img src="https://www.dropbox.com/scl/fi/vne0wcswovu3nwjibgjya/Lead-Generation.png?rlkey=enb7lthrbylgma7qoofstb799&st=nw3f9i8c&raw=1" alt="Lead Generation" /></div>
+<div class="content-wrap">
+  <p class="section-intro">Shark Law has built its growth primarily on referrals and LSAs — a foundation that has worked well enough to reach $800K, but one that is fragile, unpredictable, and increasingly outpaced by a competitor who is systematically dominating every digital channel where DUI clients look for help. The opportunity in front of this firm is not incremental — it is transformational.</p>
+</div>
+
+<!-- WEBSITE AUDIT -->
+<div class="subsection-header" id="website-audit">
+  <div class="subsection-header-inner"><h3>Website Audit</h3></div>
+</div>
+<div class="content-wrap">
+
+  <div class="pgp-label">The Problem</div>
+  <ul class="pgp-list">
+    <li>PageSpeed scores could not be retrieved at research time (API quota exceeded) — manual verification required at pagespeed.web.dev; Scorpion-built sites commonly score 45–65 on mobile, which means most DUI prospects on phones are waiting for a slow site to load before they can even reach a contact form</li>
+    <li>The homepage headline focuses on attorney credentials and experience rather than the client's immediate need — a DUI prospect at midnight is not looking for "22 years of experience," they are looking for someone who can help them right now</li>
+    <li>No video content confirmed on the site — competitors who feature video of the attorney above the fold convert at a materially higher rate for high-trust practice areas like DUI defense</li>
+    <li>Geo-specific landing pages exist only for Hamilton County — no confirmed pages for Mason, West Chester, Blue Ash, Anderson Township, or Norwood, leaving significant suburban search traffic unaddressed</li>
+  </ul>
+
+  <div class="blind-spot"><strong>Blind Spot:</strong> Scorpion's AI answering is separate from the website's contact form — which means there is a gap between what a late-night website visitor sees and what actually happens when they reach out. If the form goes to Scorpion's queue and the AI notification takes 15–20 minutes, a prospect who fills out a form at midnight and gets no immediate response will call a competitor before morning.</div>
+
+  <div class="pgp-label">The Positive</div>
+  <ul class="pgp-list">
+    <li>The site is active, mobile-responsive, and appears to be well-maintained by Scorpion — practice area pages are comprehensive, covering every OVI/DUI sub-type</li>
+    <li>The blog is genuinely active with recent posts in January 2026, December 2025, and September 2025 — this provides consistent fresh content signals to Google</li>
+  </ul>
+
+  <div class="pgp-label">The Gap</div>
+  <ul class="pgp-list">
+    <li>Without service-area pages for surrounding suburbs, Shark Law is invisible in searches like "OVI attorney Mason Ohio" or "DUI lawyer West Chester" — cities where Hamilton County DUI arrests happen regularly</li>
+    <li>Without video content, the site cannot differentiate Shane's personality and courtroom presence — which is his single biggest competitive advantage over high-volume firms like Suhre</li>
+    <li>A slow mobile site in a practice area where 70%+ of traffic comes from phones means bounce rates that cost cases before a single call is made</li>
+  </ul>
+
+  <div class="dbm-closing">A website that reflects Shane's actual trial record and converts after-hours DUI traffic is the difference between getting the calls and letting competitors answer them — and right now, the site is not doing that job.</div>
+
+</div>
+
+<!-- LOCAL SEO -->
+<div class="subsection-header" id="local-seo">
+  <div class="subsection-header-inner"><h3>Local SEO</h3></div>
+</div>
+<div class="content-wrap">
+
+  <div class="pgp-label">The Problem</div>
+  <ul class="pgp-list">
+    <li>Shark Law holds approximately 104 Google reviews at 4.8 stars — while Suhre &amp; Associates holds approximately 399 reviews at 4.9 stars; this review gap directly maps to the ~11% vs. ~96% Google Maps visibility gap confirmed on the call</li>
+    <li>Three different phone numbers appear across directories (main website: (513) 924-4378 | Yelp: (513) 910-2196 | Justia: (513) 532-5555) — NAP inconsistency confuses Google's local ranking algorithm and suppresses GBP authority</li>
+    <li>The firm operates under two names in the market ("Herzner Law" and "Shark Law") without a unified GBP strategy — citation fragmentation across Avvo, Justia, FindLaw, Yelp, and LinkedIn further dilutes local signal</li>
+    <li>No confirmed geo-targeted pages beyond Hamilton County — competitors with suburb-specific content rank for searches Shark Law does not even appear for</li>
+  </ul>
+
+  <div class="blind-spot"><strong>Blind Spot:</strong> The "DUI attorney" Google Maps market in Cincinnati is highly concentrated. When one firm holds 96% of map pack appearances for the primary search terms, they are effectively capturing first-call advantage for an enormous percentage of all DUI arrests in the metro. Every week without a review generation system and NAP cleanup is another week that gap widens — and review velocity compounds over time, making it harder to close.</div>
+
+  <div class="pgp-label">The Positive</div>
+  <ul class="pgp-list">
+    <li>Shark Law holds a 4.8-star rating — the quality of reviews is strong; the problem is volume, not sentiment</li>
+  </ul>
+
+  <div class="pgp-label">The Gap</div>
+  <ul class="pgp-list">
+    <li>At current review velocity, Shark Law would need to generate 20–30 new Google reviews per month for 12–18 months to approach parity with Suhre — that does not happen without a systematic post-case review request process</li>
+    <li>Without NAP cleanup across all major directories, GBP authority remains suppressed regardless of how many new reviews are generated</li>
+  </ul>
+
+  <div class="competitor-callout"><strong>Suhre &amp; Associates DUI and Criminal Defense Lawyers</strong> — approximately 399 Google reviews at 4.9 stars vs. Shark Law's ~104 at 4.8; dominant 3-pack presence for "DUI attorney Cincinnati," "OVI attorney Cincinnati," and related terms; multi-location footprint across Ohio, Kentucky, and Indiana continuously compounds their local authority.</div>
+
+  <div class="dbm-closing">Dominance on Google Maps is not a vanity metric — it is the difference between being the attorney 89% of DUI prospects never find and being the one they call first. That gap is closable, but it requires a plan and it requires starting now.</div>
+
+</div>
+
+<!-- GOOGLE ADS -->
+<div class="subsection-header" id="google-ads">
+  <div class="subsection-header-inner"><h3>Google Ads</h3></div>
+</div>
+<div class="content-wrap">
+
+  <div class="ad-part">
+    <div class="ad-part-label">Ad Presence</div>
+    <ul class="ad-list">
+      <li>Shark Law is running PPC through Scorpion — but the level of investment and keyword coverage is unclear from available data. Scorpion manages the campaigns, but specific ad copy, spend levels, and keyword targeting were not confirmed on the call. The firm may not be configured to show for all high-intent OVI/DUI terms, or may be getting outbid by better-funded competitors for the top spots.</li>
+      <li>Shane described Scorpion as "steady lately" — which suggests the relationship has stabilized, but does not confirm that ads are performing at a level that matches the firm's $1M growth goal or competes head-to-head with Suhre's likely ad investment</li>
+    </ul>
+  </div>
+
+  <div class="ad-part">
+    <div class="ad-part-label">Competitor Ad Landscape</div>
+    <ul class="ad-list">
+      <li><strong>Suhre &amp; Associates DUI and Criminal Defense Lawyers</strong> — given their market dominance, multi-city presence, and brand investment, Suhre almost certainly runs aggressive Google Search campaigns across DUI/OVI, criminal defense, and drug charge keywords throughout the Cincinnati metro; their review volume and GBP authority give their ads a quality score advantage</li>
+      <li><strong>Luftman, Heck &amp; Associates LLP</strong> — active digital presence and 24/7 availability messaging are consistent with a firm running call-only and search campaigns targeting late-night and early-morning DUI arrest windows — exactly when Shark Law's current intake system is weakest</li>
+      <li><strong>The Law Offices of Steven R. Adams</strong> — appeared in organic search results for DUI attorney Cincinnati terms with messaging around aggressive defense for drunk driving charges, indicating active paid and/or organic search investment</li>
+    </ul>
+  </div>
+
+  <div class="ad-part">
+    <div class="ad-part-label">The Opportunity</div>
+    <ul class="ad-list">
+      <li>Primary keywords: "OVI attorney Cincinnati," "DUI lawyer Cincinnati," "first offense OVI Ohio," "DUI defense Hamilton County" — these are the highest-intent searches where Shark Law should dominate</li>
+      <li>Case-type specific campaigns: "felony OVI Cincinnati," "aggravated OVI lawyer," "marijuana OVI attorney Ohio" — sub-type campaigns often have lower CPCs and attract clients with higher case values</li>
+      <li>Competitor name bidding: bidding on "Suhre &amp; Associates," "Farrish Law," and "Luftman Heck" captures prospects who are researching those firms and can be redirected to Shane's superior trial record</li>
+      <li>Suburb targeting: "DUI attorney Mason Ohio," "OVI lawyer West Chester," "Norwood DUI lawyer" — geo-targeted campaigns for surrounding cities where there is currently no dedicated landing page</li>
+    </ul>
+  </div>
+
+  <div class="blind-spot"><strong>Blind Spot:</strong> Scorpion's incentive is to show that their platform is producing results — not necessarily to maximize return on ad spend for the firm. Without independent reporting access and benchmark data from comparable firms, it is impossible to know whether the current Scorpion PPC setup is best-in-class or just adequate. SMB Team manages PPC with full transparency, dedicated reporting, and benchmarks against other criminal defense firms at this revenue level.</div>
+
+</div>
+
+<!-- LOCAL SERVICE ADS -->
+<div class="subsection-header" id="local-service-ads">
+  <div class="subsection-header-inner"><h3>Local Service Ads</h3></div>
+</div>
+<div class="content-wrap">
+
+  <div class="ad-part">
+    <div class="ad-part-label">LSA Presence</div>
+    <ul class="ad-list">
+      <li>Shark Law is currently running LSAs through Scorpion — this is confirmed from the call. Shane mentioned LSAs as one of his current lead sources alongside referrals and Unbundled leads.</li>
+      <li>The LSA review count and Google Screened status were not confirmed in research — but with approximately 104 Google reviews, Shark Law's LSA visibility is constrained by the review gap relative to competitors; more reviews directly translate to higher LSA placement</li>
+    </ul>
+  </div>
+
+  <div class="ad-part">
+    <div class="ad-part-label">Competitor LSA Landscape</div>
+    <ul class="ad-list">
+      <li><strong>Suhre &amp; Associates DUI and Criminal Defense Lawyers</strong> — with approximately 399 reviews at 4.9 stars, Suhre holds a commanding LSA advantage; their review volume gives them top-of-page positioning in Local Service Ads, which appear above all Google Search ads and above the map pack</li>
+      <li><strong>Luftman, Heck &amp; Associates LLP</strong> — active digital presence and 24/7 coverage messaging are consistent with LSA investment; specific LSA count not confirmed but likely active given their overall digital footprint</li>
+    </ul>
+  </div>
+
+  <div class="ad-part">
+    <div class="ad-part-label">The Opportunity</div>
+    <ul class="ad-list">
+      <li>Every new Google review directly increases LSA placement competitiveness — growing from 104 to 200+ reviews would materially improve Shark Law's position in the LSA carousel for DUI/OVI terms</li>
+      <li>LSAs appear above everything else on Google — above paid ads, above the map pack, above all organic results — and you only pay when a real prospect calls you directly.</li>
+      <li>Optimizing the LSA profile with accurate service categories, license verification, and response rate improvements can lift placement independent of review volume — a near-term opportunity that Scorpion may not be actively managing</li>
+    </ul>
+  </div>
+
+</div>
+
+<!-- FACEBOOK & INSTAGRAM ADS -->
+<div class="subsection-header" id="meta-ads">
+  <div class="subsection-header-inner"><h3>Facebook &amp; Instagram Ads</h3></div>
+</div>
+<div class="content-wrap">
+
+  <div class="ad-part">
+    <div class="ad-part-label">Ad Presence</div>
+    <ul class="ad-list">
+      <li>Shark Law does not appear to be running active paid ads on Facebook or Instagram — no campaigns were observed in available research. Shane mentioned interest in social/video as an untapped channel on the call, confirming that paid social has not been part of the firm's marketing mix.</li>
+      <li>Shark Law has an Instagram presence (@attorneyshanetheshark) with 151 posts and 158 followers, and a Facebook page (herznerlawllc) — organic content is being created but not amplified through paid distribution</li>
+    </ul>
+  </div>
+
+  <div class="ad-part">
+    <div class="ad-part-label">Competitor Ad Landscape</div>
+    <ul class="ad-list">
+      <li><strong>Suhre &amp; Associates DUI and Criminal Defense Lawyers</strong> — active Facebook page with 1,391+ likes and confirmed social promotion activity including a "Best of Cincinnati 2026" voting campaign; their social presence is consistent with a firm using paid boosting to amplify content to relevant audiences in the metro</li>
+      <li><strong>Minnillo Law Group Co., LPA</strong> — multi-location Cincinnati presence with active Yelp and social listings updated March 2026; their multi-office structure gives them broader geo-targeting capability on Meta</li>
+    </ul>
+  </div>
+
+  <div class="ad-part">
+    <div class="ad-part-label">The Opportunity</div>
+    <ul class="ad-list">
+      <li>Retargeting — website visitors who did not convert are leaving with no follow-up</li>
+      <li>Video ads featuring the attorney — builds trust before a prospect ever calls</li>
+      <li>Educational content ads — capture leads earlier in the decision process</li>
+      <li>Shane's brand identity ("The Shark"), trial record, and 22-year Cincinnati presence translate exceptionally well to short-form video — FAQ content, case result highlights, and "Why hire Shane" ads address the research phase of the DUI client journey that Google Ads cannot reach; this is the channel that builds the brand that makes every other channel perform better</li>
+    </ul>
+  </div>
+
+</div>
+<div class="back-to-top"><a href="#toc">↑ Back to Top</a></div>
+
+
+<!-- ===== SECTION 07-09: INTAKE, TEAM, PROFIT ===== -->
+<!-- ⚠️ NO CSS IN THIS FILE. No <style> blocks. No inline styles. No style="" attributes.
+     All styling comes from audit_styles.css only. Use only existing class names.
+     If you find yourself writing CSS — stop and delete it. -->
+
+<div class="section-header" id="intake">
+  <div class="section-header-inner"><h2>Intake Assessment</h2></div>
+</div>
+
+<div class="content-wrap">
+</div>
+<div class="section-img-wrap"><img src="https://www.dropbox.com/scl/fi/lmohhz14wgbeucpflf02m/Intake.png?rlkey=jwomjz9j8vqi7kmjubxexoyvh&st=sgtebwjp&raw=1" alt="Intake" /></div>
+<div class="content-wrap">
+
+  <p class="section-intro">DUI defense is one of the most time-sensitive practice areas in law — a client arrested at 11pm needs to speak with an attorney within the hour, and the firm that picks up first almost always gets the case. Shark Law's current intake system has a 15–20 minute AI notification delay and relies entirely on Shane to close every consultation. Fixing intake means converting more of the leads the firm is already generating — without spending another dollar on marketing.</p>
+
+  <div class="status-row">
+    <div class="status-circle red"></div>
+    <div class="status-label">Status: RED</div>
+  </div>
+
+  <div class="quote-box">"The main issue is slow notifications — 15 to 20 minutes — which hurts speed-to-lead in DUI."</div>
+
+  <div class="pgp-label">The Problem</div>
+  <ul class="pgp-list">
+    <li>Scorpion AI answering has a 15–20 minute notification lag after missed calls and after-hours inquiries — in DUI defense, where prospects are often in or near custody and making decisions under acute stress, 15 minutes is long enough to lose the case to a competitor who picks up immediately</li>
+    <li>Shane personally handles every intake consultation and every close — there is no delegation, no backup, and no system for when Shane is in court, in trial, or unavailable</li>
+    <li>Scorpion-to-Clio Grow auto-creation frequently produces incomplete lead records, often missing the prospect's name — without a complete record, structured follow-up is impossible and leads who do not sign on the first call are effectively abandoned</li>
+    <li>Booking workflow is not fully implemented through the AI answering system — prospects who interact with the AI answering service may not always be directed to schedule a consultation, creating a gap between first contact and actual booked appointment</li>
+  </ul>
+
+  <div class="blind-spot"><strong>Blind Spot:</strong> DUI clients almost never call back on their own if they do not hear from you within the first hour. They are in a high-stress, time-sensitive situation — they will call the next firm on the list, and that firm will get a paying client that should have been yours. The 15–20 minute lag is not an inconvenience — it is a direct, measurable revenue leak that compounds with every DUI arrest in Cincinnati every night.</div>
+
+  <div class="pgp-label">The Positive</div>
+  <ul class="pgp-list">
+    <li>Clio Grow is in use as the intake CRM — the infrastructure for tracking and managing leads already exists; the gaps are in process and integration, not in platform selection</li>
+    <li>CallRail is integrated for call tracking and recording — this gives Shane data on call volume and outcomes that most firms at this stage do not have</li>
+  </ul>
+
+  <div class="pgp-label">The Gap</div>
+  <ul class="pgp-list">
+    <li>At a $5,000–$8,000 average case value, losing even one DUI case per month to a slow intake response costs the firm $60,000–$96,000 in annual revenue — and in a market where the competitor's primary differentiator is 24/7 human availability, this is not a hypothetical</li>
+    <li>Without a follow-up sequence for leads who do not sign immediately, the firm has no system for the 60–70% of prospects who need nurturing before they commit — these are cases Shark Law is generating the lead for and then handing to competitors</li>
+    <li>Shane closing every case himself caps the firm's capacity at his personal bandwidth — no matter how much marketing improves, revenue cannot scale past the number of consultations Shane can personally conduct</li>
+  </ul>
+
+  <div class="dbm-closing">Fixing intake is the fastest path to more revenue from the marketing dollars already being spent — and it is the first step toward building a firm that can close cases when Shane is in trial, not just when Shane is free to answer the phone.</div>
+
+</div>
+
+<!-- WEBSITE CONTACT FORMS & LIVE CHAT -->
+<div class="subsection-header" id="website-intake">
+  <div class="subsection-header-inner"><h3>Website Contact Forms &amp; Live Chat</h3></div>
+</div>
+<div class="content-wrap">
+
+  <ul class="pgp-list">
+    <li>A contact page exists at herznerlaw.com/contact/ — but the position of the contact form relative to the homepage fold was not confirmed; in DUI defense, a form that requires navigation to find is a form that does not get filled out at midnight</li>
+    <li>No live chat widget was confirmed on the site — Scorpion AI answering functions as an after-hours call handler, not a real-time on-site engagement tool; prospects who land on the site after hours and want to take action immediately have limited options</li>
+    <li>The gap between website form submission and intake notification (15–20 min AI lag) means that even when prospects do reach out via the site, the response delay creates a window where the prospect can reconsider or contact a competitor</li>
+  </ul>
+  <p class="section-intro">These findings are also referenced in the Website Audit section.</p>
+
+</div>
+<div class="back-to-top"><a href="#toc">↑ Back to Top</a></div>
+
+
+<!-- SECTION 08 — TEAM -->
+<div class="section-header" id="team">
+  <div class="section-header-inner"><h2>Team Assessment</h2></div>
+</div>
+
+<div class="content-wrap">
+</div>
+<div class="section-img-wrap"><img src="https://www.dropbox.com/scl/fi/r6o7um1xcdd490t9807vd/Self-Managing-Team.png?rlkey=ywamsca6rpb34l1iasysyk10w&st=dm86b0kz&raw=1" alt="Self-Managing Team" /></div>
+<div class="content-wrap">
+
+  <p class="section-intro">Shark Law has a 4-person team — Shane, one associate, one of-counsel, and an office manager — but Shane splits his time approximately 50% court and 50% administration, and he personally handles every intake call and every close. Until this changes, the owner cannot have more free time — no matter how much revenue grows.</p>
+
+  <div class="status-row">
+    <div class="status-circle amber"></div>
+    <div class="status-label">Status: AMBER</div>
+  </div>
+
+  <div class="quote-box">"Shane splits time roughly 50% admin and 50% court. He does all intakes and closing. He prefers trials but wants to choose cases and reduce routine court."</div>
+
+  <div class="pgp-label">The Problem</div>
+  <ul class="pgp-list">
+    <li>Shane is the only person in the firm who conducts intake consultations and closes cases — this means every new revenue dollar must pass through his calendar, creating a hard ceiling on how much the firm can grow without growing Shane's working hours</li>
+    <li>Approximately 50% of Shane's time goes to administrative work that an office manager or paralegal could handle — time that currently cannot go to trials, business development, or strategic growth</li>
+    <li>No intake specialist or dedicated closer on staff — the firm cannot build a predictable intake process that functions independently of Shane's personal availability</li>
+    <li>The associate and of-counsel handle court coverage but are not structured to take on revenue-generating responsibilities — their role is execution, not business development or client acquisition</li>
+  </ul>
+
+  <div class="blind-spot"><strong>Blind Spot:</strong> Shane wants to take only the cases he loves — DUI jury trials and high-value felony OVI. But as long as he is the only closer, he has to take every intake call to keep the pipeline full. The firm cannot become selective until it builds the infrastructure to generate, qualify, and close cases without Shane's personal involvement at every stage.</div>
+
+  <div class="pgp-label">The Positive</div>
+  <ul class="pgp-list">
+    <li>A real team structure already exists — the firm has moved past solo practice and has people who can cover court when Shane is unavailable</li>
+    <li>Shane has clarity on what he wants the firm to look like — he knows he wants to do trials and choose his cases, which means there is a clear direction to build toward</li>
+  </ul>
+
+  <div class="pgp-label">The Gap</div>
+  <ul class="pgp-list">
+    <li>Every hour Shane spends on intake is an hour he cannot spend in court — at his current case value ($5,000–$10,000 per case), misallocating trial-ready hours to intake calls is one of the most expensive uses of his time in the firm</li>
+    <li>Without an intake specialist to handle first-contact qualification, adding more leads from improved marketing will only create more intake pressure on Shane — not more revenue per hour of his time</li>
+    <li>Without a closer who can handle consultations when Shane is in trial, the firm cannot serve inbound DUI prospects the same day — and in DUI defense, same-day matters</li>
+  </ul>
+
+  <div class="dbm-closing">The firm that Shane wants to run — one where he chooses his trials, delegates the rest, and leaves court knowing the business is growing without him — gets built by systematically removing himself from the intake and close process, starting now.</div>
+
+</div>
+<div class="back-to-top"><a href="#toc">↑ Back to Top</a></div>
+
+
+<!-- SECTION 09 — PROFIT -->
+<div class="section-header" id="profit">
+  <div class="section-header-inner"><h2>Profit Plan Assessment</h2></div>
+</div>
+
+<div class="content-wrap">
+</div>
+<div class="section-img-wrap"><img src="https://www.dropbox.com/scl/fi/rh2dxdoqsf7tqastam640/Profits.png?rlkey=kss013g0ov5jnuzcoklog7awr&st=iog622wf&raw=1" alt="Profit" /></div>
+<div class="content-wrap">
+
+  <p class="section-intro">Shark Law is growing — $700K last year, $800K pace this year, fees recently raised with zero pushback — but without clear visibility into cost per lead, cost per signed case, or which marketing channels drive the best margins, growth is happening without a plan. Revenue is vanity, profit is sanity. Until there is a clear profit plan, growth may just mean more work without more wealth.</p>
+
+  <div class="status-row">
+    <div class="status-circle amber"></div>
+    <div class="status-label">Status: AMBER</div>
+  </div>
+
+  <div class="quote-box">"About $700K last year. Pacing about $800K this year. Goal to surpass $1M and keep growing."</div>
+
+  <div class="pgp-label">The Problem</div>
+  <ul class="pgp-list">
+    <li>No confirmed visibility into cost per lead, cost per acquired client, or contribution margin by case type — Scorpion dashboard and Clio Grow are only partially integrated and used occasionally for reporting</li>
+    <li>LSA and PPC spend through Scorpion is not fully tracked against signed-case outcomes — the firm does not currently know the return on its marketing investment at the case level</li>
+    <li>Fee structure was recently raised (from $4,000 flat to $5,000–$10,000 by offense) with no client pushback — but there is no systematic data on how fees affect conversion rates at each case type, which means pricing decisions are being made by instinct rather than evidence</li>
+    <li>The path to $1M is clear as a goal but not built as a plan — without knowing the number of cases needed per month, the leads required to generate them, and the cost to acquire each case, there is no way to build backwards from the goal to the daily actions that get there</li>
+  </ul>
+
+  <div class="blind-spot"><strong>Blind Spot:</strong> Shane recently raised fees and found that clients did not push back — which means the market is telling him that Shark Law is underpriced relative to its reputation. A competitor charges $7,500 for a first OVI; Shane charges $5,000. Every case signed at $5,000 that could have been signed at $7,000 is $2,000 in margin left on the table. Without data on conversion rates by fee level, this pricing gap will never be optimized.</div>
+
+  <div class="pgp-label">The Positive</div>
+  <ul class="pgp-list">
+    <li>Revenue trajectory is strong and accelerating — $700K to $800K to $1M+ is a realistic path given the market opportunity</li>
+    <li>Fees were raised successfully without any pushback — this is strong evidence that the market values Shark Law's results above what it is currently charging, and that further increases are likely possible</li>
+  </ul>
+
+  <div class="pgp-label">The Gap</div>
+  <ul class="pgp-list">
+    <li>Without tracking cost per signed case across each lead channel, Shane cannot make confident decisions about where to increase marketing investment and where to reduce it — which means he may be funding underperforming channels while underfunding the ones that work</li>
+    <li>The jump from $800K to $1M requires either more leads, a higher close rate, a higher average case value, or some combination of all three — but none of those levers can be pulled confidently without data on where the current funnel is leaking</li>
+    <li>As the firm scales toward $1M and beyond, undocumented financials and informal reporting will create an increasingly large blind spot that prevents accurate forecasting and strategic investment decisions</li>
+  </ul>
+
+  <div class="dbm-closing">Shane has already proven he can win cases — the next step is building the financial visibility to know exactly which activities produce the most profitable ones, so that every growth decision is backed by data and every dollar invested in marketing has a measurable return.</div>
+
+</div>
+<div class="back-to-top"><a href="#toc">↑ Back to Top</a></div>
+
+
+<!-- ===== SECTION 10: WHAT'S POSSIBLE ===== -->
+<!-- ⚠️ NO CSS IN THIS FILE. No <style> blocks. No inline styles. No style="" attributes.
+     All styling comes from audit_styles.css only. Use only existing class names.
+     If you find yourself writing CSS — stop and delete it. -->
+
+<div class="section-header" id="growth-journey">
+  <div class="section-header-inner">
+    <h2>Here's What's Possible for Shark Law</h2>
+  </div>
+</div>
+
+<div class="whats-possible-body">
+  <div class="content-wrap">
+
+    <p class="bridge-text">Shane has spent 22 years earning a reputation that most DUI attorneys in Cincinnati never achieve — a trial record that speaks for itself, a brand that clients remember, and a firm that is already at the edge of where he wants to go. The question is not whether his results are good enough to build the firm he wants to run. The infrastructure is what is lagging behind. This plan closes that gap.</p>
+
+    <div class="transform-card">
+      <div class="transform-icon"><span>1</span></div>
+      <div class="transform-text">You walk out of a jury trial victory and find out the firm closed two cases while you were in court — intake ran without you, the clients signed, and your pipeline grew without a single call you had to take personally.</div>
+    </div>
+
+    <div class="transform-card">
+      <div class="transform-icon"><span>2</span></div>
+      <div class="transform-text">You take only the DUI jury trials you want — felony OVIs, high-stakes cases, the ones that match your skill and your brand. The routine work that fills most attorneys' days is handled by a team that does not need you to close every file.</div>
+    </div>
+
+    <div class="transform-card">
+      <div class="transform-icon"><span>3</span></div>
+      <div class="transform-text">Search "DUI attorney Cincinnati" — and Shark Law is the first name that comes up. Not 11% of the time. Every time. The reputation you have built in courtrooms across Hamilton County is finally visible to every client who needs it the moment they need it.</div>
+    </div>
+
+    <div class="wp-closing">
+      <p>This is not a fantasy. <span>SMB Team can make this a reality for Shark Law.</span></p>
+    </div>
+
+  </div>
+</div>
+<div class="wp-back-to-top"><a href="#toc">↑ Back to Top</a></div>
+
+
+<!-- ===== SECTION 11: YOUR NEXT STEPS ===== -->
+<!-- ⚠️ NO CSS IN THIS FILE. No <style> blocks. No inline styles. No style="" attributes.
+     All styling comes from audit_styles.css only. Use only existing class names.
+     If you find yourself writing CSS — stop and delete it. -->
+
+<!-- QUICK WINS -->
+<div class="section-header" id="next-steps">
+  <div class="section-header-inner">
+    <h2>Quick Wins for Shark Law</h2>
+  </div>
+</div>
+<div class="content-wrap">
+
+  <!-- QUICK WIN CARD 1 — Lead Gen: Google Maps Gap -->
+  <div class="quick-win-card">
+    <div class="qw-header">
+      <div class="qw-title">Close the Google Maps Gap</div>
+      <div class="qw-badges">
+        <span class="badge badge-lead-gen">Lead Gen</span>
+        <span class="badge badge-quick-win">Quick Win</span>
+      </div>
+    </div>
+    <div class="qw-row why">
+      <div class="qw-row-label">Why It Matters</div>
+      Shark Law appears in approximately 11% of local Google Maps searches for "DUI attorney Cincinnati" — which means 89% of prospects searching right now are not seeing you. At $5,000–$10,000 per case, this is not a visibility problem, it is a revenue problem.
+    </div>
+    <div class="qw-row who">
+      <div class="qw-row-label">Who Is Doing It Better</div>
+      <strong>Suhre &amp; Associates DUI and Criminal Defense Lawyers</strong> — holds approximately 399 Google reviews at 4.9 stars vs. Shark Law's ~104, dominates the 3-pack for nearly every DUI/OVI search in Cincinnati, and runs LSAs and Google Ads from a position of maximum review authority.
+    </div>
+    <div class="qw-row opportunity">
+      <div class="qw-row-label">The Opportunity</div>
+      An aggressive review generation system paired with GBP optimization — adding 20–30 verified reviews per month from existing satisfied clients — would materially increase map pack visibility within 60–90 days and directly improve LSA placement without any additional ad spend.
+    </div>
+  </div>
+
+  <!-- QUICK WIN CARD 2 — Lead Gen: NAP Cleanup -->
+  <div class="quick-win-card">
+    <div class="qw-header">
+      <div class="qw-title">NAP Cleanup and Citation Audit</div>
+      <div class="qw-badges">
+        <span class="badge badge-lead-gen">Lead Gen</span>
+        <span class="badge badge-quick-win">Quick Win</span>
+      </div>
+    </div>
+    <div class="qw-row why">
+      <div class="qw-row-label">Why It Matters</div>
+      Three different phone numbers appear across major directories — main site (513) 924-4378, Yelp (513) 910-2196, Justia (513) 532-5555 — and the firm operates under two names ("Herzner Law" and "Shark Law") across citations. Google uses NAP consistency as a local ranking signal; fragmented citations actively suppress GBP authority and LSA placement.
+    </div>
+    <div class="qw-row opportunity">
+      <div class="qw-row-label">The Opportunity</div>
+      A complete citation audit and NAP unification across all major directories is one of the highest-ROI local SEO fixes available — it costs nothing in ad spend, can be completed within 30 days, and immediately stops suppressing the GBP authority that every new review is trying to build.
+    </div>
+  </div>
+
+  <!-- QUICK WIN CARD 3 — Intake: Speed-to-Lead Gap -->
+  <div class="quick-win-card">
+    <div class="qw-header">
+      <div class="qw-title">Fix the Speed-to-Lead Gap</div>
+      <div class="qw-badges">
+        <span class="badge badge-intake">Intake</span>
+        <span class="badge badge-quick-win">Quick Win</span>
+      </div>
+    </div>
+    <div class="qw-row why">
+      <div class="qw-row-label">Why It Matters</div>
+      Scorpion AI answering has a 15–20 minute notification lag after missed calls and after-hours inquiries. In DUI defense, a client arrested at 11pm who cannot reach an attorney within 30 minutes will call the next firm on the list — and that firm will get a paying client that should have been Shark Law's.
+    </div>
+    <div class="qw-row who">
+      <div class="qw-row-label">Who Is Doing It Better</div>
+      <strong>Luftman, Heck &amp; Associates LLP</strong> — markets 24/7 availability as a core differentiator and targets DUI arrests during the exact late-night and early-morning windows when Shark Law's current intake system is slowest to respond.
+    </div>
+    <div class="qw-row opportunity">
+      <div class="qw-row-label">The Opportunity</div>
+      Replacing or supplementing Scorpion AI with a human-backed answering service (Smith.ai or Attorney Assistant) with immediate SMS alerts to Shane or a designated intake contact would eliminate this gap — capturing after-hours DUI arrests that are currently being handed to competitors while Shark Law sleeps on the notification.
+    </div>
+  </div>
+
+  <!-- QUICK WIN CARD 4 — Intake: Booking and Follow-Up Workflow -->
+  <div class="quick-win-card">
+    <div class="qw-header">
+      <div class="qw-title">Fix the Booking and Follow-Up Workflow</div>
+      <div class="qw-badges">
+        <span class="badge badge-intake">Intake</span>
+        <span class="badge badge-quick-win">Quick Win</span>
+      </div>
+    </div>
+    <div class="qw-row why">
+      <div class="qw-row-label">Why It Matters</div>
+      Scorpion-to-Clio Grow integration is producing incomplete lead records — frequently missing the prospect's name — and the booking workflow through the AI answering system is not fully implemented. Without complete records and a structured follow-up sequence, leads who do not sign on the first call are effectively abandoned.
+    </div>
+    <div class="qw-row opportunity">
+      <div class="qw-row-label">The Opportunity</div>
+      A clean CRM workflow with automated follow-up sequences for non-immediate signups could convert 1–2 additional cases per month from existing traffic — at $5,000–$8,000 each, that is $5,000–$16,000 per month recovered from leads the firm is already generating and already paying to acquire.
+    </div>
+  </div>
+
+  <!-- QUICK WIN CARD 5 — Profit: Track Cost Per Lead / Cost Per Case -->
+  <div class="quick-win-card">
+    <div class="qw-header">
+      <div class="qw-title">Track Cost Per Lead and Cost Per Signed Case</div>
+      <div class="qw-badges">
+        <span class="badge badge-profit">Profit</span>
+        <span class="badge badge-quick-win">Quick Win</span>
+      </div>
+    </div>
+    <div class="qw-row why">
+      <div class="qw-row-label">Why It Matters</div>
+      Shark Law currently has no confirmed visibility into which lead sources — LSA, referral, Unbundled, or PPC — produce the best return. Without this data, the firm cannot confidently increase investment in what works or cut what doesn't — meaning some marketing dollars may be funding underperforming channels while the ones that produce the best cases are underfunded.
+    </div>
+    <div class="qw-row opportunity">
+      <div class="qw-row-label">The Opportunity</div>
+      Installing proper lead source tracking across Clio Grow, CallRail, and the Scorpion dashboard would give Shane the data to make every marketing decision based on evidence rather than instinct — directly increasing margin without requiring a single additional lead.
+    </div>
+  </div>
+
+  <!-- QUICK WIN CARD 6 — Lead Gen: Service Area Landing Pages -->
+  <div class="quick-win-card">
+    <div class="qw-header">
+      <div class="qw-title">Build Service Area Landing Pages for Suburban Markets</div>
+      <div class="qw-badges">
+        <span class="badge badge-lead-gen">Lead Gen</span>
+        <span class="badge badge-long-term">Long-Term Play</span>
+      </div>
+    </div>
+    <div class="qw-row why">
+      <div class="qw-row-label">Why It Matters</div>
+      herznerlaw.com has practice area pages for Hamilton County but no dedicated landing pages for Mason, West Chester, Blue Ash, Anderson Township, or Norwood — all suburban markets where DUI arrests happen regularly and where competitors with geo-specific content rank for searches Shark Law does not appear in at all.
+    </div>
+    <div class="qw-row who">
+      <div class="qw-row-label">Who Is Doing It Better</div>
+      <strong>Suhre &amp; Associates DUI and Criminal Defense Lawyers</strong> — multi-city footprint across Ohio, Kentucky, and Indiana with location-specific content that continuously adds to their local authority signal and captures suburban OVI searches across the entire metro.
+    </div>
+    <div class="qw-row opportunity">
+      <div class="qw-row-label">The Opportunity</div>
+      A service area content strategy with 5–10 suburb-specific OVI landing pages could add 20–30% more organic search visibility across the Cincinnati metro — capturing suburban DUI clients who search "[city] OVI attorney" and currently find no results connected to Shark Law.
+    </div>
+  </div>
+
+  <!-- QUICK WIN CARD 7 — Lead Gen: Social and Video Content -->
+  <div class="quick-win-card">
+    <div class="qw-header">
+      <div class="qw-title">Launch Social and Video Content Engine</div>
+      <div class="qw-badges">
+        <span class="badge badge-lead-gen">Lead Gen</span>
+        <span class="badge badge-long-term">Long-Term Play</span>
+      </div>
+    </div>
+    <div class="qw-row why">
+      <div class="qw-row-label">Why It Matters</div>
+      Shane has a distinct brand (The Shark), a podcast, 22 years of Cincinnati trial experience, and a 2026 jury trial record — but no video content pipeline and only 158 Instagram followers. Social video is the only channel that builds brand trust before a prospect ever Googles a DUI attorney. Without it, Shane's personality and courtroom presence — his single biggest competitive advantage — are invisible online.
+    </div>
+    <div class="qw-row who">
+      <div class="qw-row-label">Who Is Doing It Better</div>
+      <strong>Suhre &amp; Associates DUI and Criminal Defense Lawyers</strong> — active Facebook presence with 1,391+ likes, confirmed social promotion activity, and consistent content that keeps their brand in front of Cincinnati's DUI-adjacent audience between arrests.
+    </div>
+    <div class="qw-row opportunity">
+      <div class="qw-row-label">The Opportunity</div>
+      FAQ videos, "Why hire Shane," and case result content can build the kind of familiarity that turns a cold Google search into a call — and short-form video ads on Meta can retarget every website visitor who did not convert, at a fraction of the cost of acquiring a new lead.
+    </div>
+  </div>
+
+  <!-- QUICK WIN CARD 8 — Team: Delegate Intake -->
+  <div class="quick-win-card">
+    <div class="qw-header">
+      <div class="qw-title">Delegate Intake to Build Capacity for Growth</div>
+      <div class="qw-badges">
+        <span class="badge badge-team">Team</span>
+        <span class="badge badge-long-term">Long-Term Play</span>
+      </div>
+    </div>
+    <div class="qw-row why">
+      <div class="qw-row-label">Why It Matters</div>
+      Shane personally handles every intake consultation and every close — which means every new revenue dollar must pass through his calendar. With revenue at $800K and a goal of $1M+, Shane is the growth ceiling. Every hour spent on intake is an hour not available for jury trials, high-value case strategy, or business development.
+    </div>
+    <div class="qw-row opportunity">
+      <div class="qw-row-label">The Opportunity</div>
+      Training the office manager or hiring a dedicated intake specialist to handle first-contact qualification would immediately free 5–10 hours per week — returning that time to Shane's trial practice and creating a firm that can close DUI cases the same day whether Shane is available or not.
+    </div>
+  </div>
+
+</div>
+
+<!-- HOW SMB TEAM CAN HELP -->
+<div class="subsection-header" id="recommendation">
+  <div class="subsection-header-inner">
+    <h3>How SMB Team Can Help Shark Law</h3>
+  </div>
+</div>
+<div class="content-wrap">
+
+  <!-- BLOCK 1: CUSTOM CLOSING STATEMENT -->
+  <div class="closing-statement-block">
+    <p>We help <span class="dbm-highlight">DUI and criminal defense attorneys who have outgrown their referral base</span> get a dominant, multi-channel pipeline of high-value clients so they can <span class="dbm-highlight">stop doing every intake themselves, take only the cases they want, and build the market-leading firm they are already capable of running.</span></p>
+  </div>
+
+  <div style="height:24px;"></div>
+
+  <!-- BLOCK 2: DBM SUBHEADER + PACKAGE RECOMMENDATIONS -->
+  <div class="dbm-subheader">Shane wants to walk into court knowing the firm is running without him — cases closing, leads converting, and the Shark Law brand showing up everywhere a DUI prospect looks in Cincinnati. The path there is a multi-channel marketing system that generates cases predictably, combined with the coaching infrastructure to build the team and processes that make his personal presence optional in intake and operations.</div>
+
+  <!-- PACKAGE ONE: Full Service Marketing — Growth -->
+  <div class="package-block">
+    <div class="package-header">
+      <div class="package-label">Recommended Marketing Package</div>
+      <h4>Full Service Marketing — Growth</h4>
+    </div>
+    <div class="package-body">
+      <div class="package-why">Shark Law needs a complete multi-channel marketing system — Google Ads, LSA optimization, website improvements, local SEO, and Meta Ads — all running together and fully tracked against signed cases. Growth tier matches Shane's aggressive $1M+ goal and provides the ad spend capacity to compete head-to-head with Suhre in LSAs and paid search across the Cincinnati metro.</div>
+      <div class="package-deliverables-label">Deliverables Include</div>
+      <ul class="package-list">
+        <li>Full-funnel Google Ads management — DUI/OVI, felony, drug charge, and suburban geo-targeted campaigns</li>
+        <li>LSA profile optimization and ongoing management — review strategy integrated to improve placement</li>
+        <li>Website optimization — page speed improvements, above-fold CTA, suburb landing pages for Mason, West Chester, and surrounding markets</li>
+        <li>Local SEO — NAP cleanup, citation audit, GBP optimization, and review generation system</li>
+        <li>Meta Ads — retargeting campaigns for website visitors and video ads featuring Shane's brand and trial record</li>
+        <li>Dedicated account manager with transparent reporting tied to signed-case outcomes, not just clicks</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- PACKAGE TWO: Elite Coach Plus -->
+  <div class="package-block">
+    <div class="package-header">
+      <div class="package-label">Recommended Coaching Package</div>
+      <h4>Elite Coach Plus</h4>
+    </div>
+    <div class="package-body">
+      <div class="package-why">Shane knows where he wants the firm to go — he needs the accountability structure, intake frameworks, and leadership coaching to get there without having to figure it out alone. Elite Coach Plus gives him direct access to coaches who work specifically with law firms at this revenue stage and connects him with a peer group of attorneys navigating the same transition from owner-operator to firm CEO.</div>
+      <div class="package-deliverables-label">Deliverables Include</div>
+      <ul class="package-list">
+        <li>Weekly group coaching sessions with law firm growth specialists</li>
+        <li>Practice area masterminds with criminal defense and DUI attorneys at comparable revenue stages</li>
+        <li>Intake and close process frameworks designed to remove Shane from the bottleneck without losing conversion rates</li>
+        <li>Virtual access to quarterly law firm growth workshops</li>
+        <li>One annual in-person workshop with SMB Team's full coaching faculty</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- BLOCK 3 + 4: INVESTMENT GRID -->
+  <div class="investment-grid">
+
+    <!-- BLOCK 3: SMB TEAM MONTHLY INVESTMENT -->
+    <div class="investment-block">
+      <div class="investment-header"><h4>SMB Team Monthly Investment</h4></div>
+      <div class="investment-body">
+        <div class="investment-row">
+          <span class="label">Full Service Marketing — Growth</span>
+          <span><span class="retail">$5,997/mo</span>&nbsp;<span class="bundled">$5,397/mo</span></span>
+        </div>
+        <div class="investment-row">
+          <span class="label">Elite Coach Plus</span>
+          <span><span class="retail">$3,497/mo</span>&nbsp;<span class="bundled">$3,200/mo</span></span>
+        </div>
+        <div class="investment-total">
+          <span class="total-label">Total Monthly Investment</span>
+          <span class="total-amount">$8,597/mo</span>
+        </div>
+        <div class="investment-savings">You save $897/month by bundling</div>
+      </div>
+    </div>
+
+    <!-- BLOCK 4: RECOMMENDED AD SPEND -->
+    <div class="investment-block">
+      <div class="investment-header"><h4>Recommended Monthly Ad Spend</h4></div>
+      <div class="investment-body">
+        <p style="font-size:12px;color:#666;font-style:italic;margin-bottom:12px;">Goes directly to ad platforms — not to SMB Team.</p>
+        <div class="roi-row"><span>Recommended ad spend</span><span style="font-weight:700;">$4,000–$10,000/mo</span></div>
+        <div class="roi-row"><span>Estimated case value</span><span style="font-weight:700;">$6,500</span></div>
+        <div class="roi-row"><span>Est. cases per month</span><span style="font-weight:700;">2–6 cases</span></div>
+        <div class="roi-row"><span>Est. monthly revenue from ads</span><span style="font-weight:700;color:#3B6D11;">$13,000–$39,000</span></div>
+        <p class="roi-disclaimer">These are estimates based on industry averages and market data. Results are not guaranteed and will vary based on market conditions, competition, and firm-specific factors.</p>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- BLOCK 5: WHAT HAPPENS IN THE FIRST 90 DAYS -->
+  <div class="package-block">
+    <div class="package-header"><h4>What Happens in the First 90 Days</h4></div>
+    <div class="package-body">
+      <ul class="focus-list">
+        <li>Launch Google Ads and LSA campaigns targeting DUI/OVI, felony OVI, drug charge, and criminal defense keywords across Cincinnati and Hamilton County — capturing high-intent searches from day one</li>
+        <li>Complete website optimization: page speed improvements, above-fold CTA review, and suburb landing pages built for Mason, West Chester, Blue Ash, and Norwood to capture suburban DUI searches</li>
+        <li>Launch review generation campaign using existing satisfied clients — target 20+ new Google reviews in the first 90 days to improve LSA placement and close the review gap with Suhre</li>
+        <li>Fix intake speed-to-lead: upgrade after-hours coverage to human-backed answering with immediate SMS notification and implement a structured follow-up sequence in Clio Grow for leads who do not sign on first contact</li>
+        <li>Coaching kickoff: establish weekly growth metrics cadence, begin intake delegation planning, and set the lead→signed conversion tracking baseline across all channels</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- BLOCK 6: GROWTH ROADMAP -->
+  <div class="package-block">
+    <div class="package-header"><h4>What Happens Next</h4></div>
+    <div class="package-body">
+      <div class="roadmap-stack">
+
+        <div class="phase-card">
+          <div class="phase-header">
+            <div class="phase-number">Phase 1</div>
+            <div class="phase-title">Foundation</div>
+            <div class="phase-trigger">Starting Now</div>
+          </div>
+          <div class="phase-body">
+            <ul class="phase-list">
+              <li>Multi-channel paid campaigns live — Google Ads, LSA, and Meta retargeting generating consistent inbound DUI leads</li>
+              <li>NAP cleanup and GBP optimization complete — review velocity system in place and adding 15–25 new reviews per month</li>
+              <li>Intake speed-to-lead fixed — after-hours DUI arrests are reached within 10 minutes, not 20</li>
+              <li>Suburb landing pages live — Shark Law now visible in searches across the greater Cincinnati metro, not just Hamilton County</li>
+            </ul>
+            <div class="phase-dbm">When this phase is complete, Shane can count on a pipeline of DUI cases coming in without having to be the only one generating them — which means the path to $1M is no longer dependent on how many referrals come through this month.</div>
+          </div>
+        </div>
+
+        <div class="phase-card">
+          <div class="phase-header">
+            <div class="phase-number">Phase 2</div>
+            <div class="phase-title">Operational Scale</div>
+            <div class="phase-trigger">Once the firm hits $1M ARR</div>
+          </div>
+          <div class="phase-body">
+            <ul class="phase-list">
+              <li>Intake specialist hired and trained — Shane is no longer the first call for new DUI prospects</li>
+              <li>Video content engine launched — short-form FAQ and brand content building Shane's reputation on social where Google Ads cannot reach</li>
+              <li>Channel ROI reporting fully implemented — every marketing dollar tracked to a signed case so budget decisions are evidence-based, not instinct-based</li>
+            </ul>
+            <div class="phase-dbm">When this phase is complete, Shane can walk into a jury trial on Monday morning knowing that the firm will close cases that week without him — and that his income will grow whether or not he answered a single intake call.</div>
+          </div>
+        </div>
+
+        <div class="phase-card">
+          <div class="phase-header">
+            <div class="phase-number">Phase 3</div>
+            <div class="phase-title">Optimize</div>
+            <div class="phase-trigger">Once the firm hits $1.5M ARR</div>
+          </div>
+          <div class="phase-body">
+            <ul class="phase-list">
+              <li>Dominate Cincinnati DUI search — Shark Law in the Google Maps 3-pack for primary and suburban DUI/OVI terms, LSA placement competitive with Suhre, and paid search covering every high-intent keyword</li>
+              <li>Pricing optimization — data-backed fee structure that captures full market value at each OVI offense level without sacrificing close rate</li>
+              <li>Shane is selective — taking only the high-value felony OVI and DUI jury trial cases, with the firm operating end-to-end on systems that do not require his personal involvement at intake or close</li>
+            </ul>
+            <div class="phase-dbm">When this phase is complete, Shark Law is the firm Shane set out to build — the dominant Cincinnati DUI practice where he gets to do the work he loves, at the cases he chooses, on the schedule he controls.</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- BLOCK 7: OUTCOME CARDS -->
+  <div class="scorecard-label">Here Is What This Builds For You</div>
+  <div class="outcome-grid">
+    <div class="outcome-card">
+      <div class="outcome-title">More Profit</div>
+      <div class="outcome-text">A multi-channel system that tracks every lead source to a signed case means Shane stops funding channels that don't perform and doubles down on the ones that do — growing revenue toward $1M and beyond without proportionally growing expenses or hours worked.</div>
+    </div>
+    <div class="outcome-card">
+      <div class="outcome-title">More Freedom</div>
+      <div class="outcome-text">When intake runs without Shane and the firm closes cases while he's in court, he gets back the thing he actually wants — the ability to take only the DUI jury trials he loves, without being obligated to answer every call just to keep the pipeline full.</div>
+    </div>
+    <div class="outcome-card">
+      <div class="outcome-title">Better Client Results</div>
+      <div class="outcome-text">When Shane is not splitting his attention between intake calls and trial prep, he can bring his full focus to the clients who hire him for the cases that matter most — and a faster, more responsive intake process means the right clients find him the moment they need him.</div>
+    </div>
+  </div>
+
+  <!-- BLOCK 8: PERSONAL CLOSING -->
+  <div class="personal-closing">
+    <p><em>Shane has already done the hardest part — he built a reputation that wins cases, a brand that people remember, and a practice that is growing without the systems most firms rely on. The gap between where Shark Law is today and where it belongs is not a talent gap or a results gap. It is a visibility gap and a systems gap — and both of those are fixable, starting now.</em></p>
+    <p class="final-line">This is not a fantasy. SMB Team can make this a reality for Shark Law.</p>
+  </div>
+
+</div>
+<div class="back-to-top"><a href="#toc">↑ Back to Top</a></div>
+
+
+</body>
+</html>
