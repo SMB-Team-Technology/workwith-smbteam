@@ -191,10 +191,10 @@ story.append(thin_rule())
 
 # ── Why This FCFO Package ──
 story.append(Paragraph("Why This FCFO Package", S["section"]))
-story.append(Paragraph("<b>FCFO Advisor  |  $2,297/mo bundled  (save $500/mo)</b>", S["subsection"]))
+story.append(Paragraph("<b>FCFO Advisor  |  $3,297/mo bundled  (save $500/mo)</b>", S["subsection"]))
 story.append(bd("<b>Closes the $432K gap.</b> Financial audit finds where the money goes and builds a comp plan targeting $250K personal distribution."))
 story.append(bd("<b>Turns income from discovered to designed.</b> Monthly reporting so Wilson always knows where the firm stands — no more end-of-year surprises."))
-story.append(bd("<b>All eligibility criteria met.</b> Revenue $492K clears the $400K floor. Jacob confirmed FCFO as a specific fit. $60K on $492K (12% take-home) is the signal. Stand-alone $2,797/mo; bundled at $2,297/mo."))
+story.append(bd("<b>All eligibility criteria met.</b> Revenue $492K clears the $400K floor. Jacob confirmed FCFO as a specific fit. $60K on $492K (12% take-home) is the signal. Stand-alone $3,797/mo; bundled at $3,297/mo."))
 
 
 # ══════════════════════════════════════════════════════════
@@ -241,9 +241,9 @@ price_data = [
     [Paragraph("One-on-one coaching, weekly group sessions, masterminds, quarterly workshops, annual in-person.", S["price_detail"]),
      Paragraph("<strike>$3,497</strike> stand alone", S["price_detail"])],
     [Paragraph("<b>FCFO Advisor</b>", S["price_main"]),
-     Paragraph("$2,297/mo", S["price_main"])],
+     Paragraph("$3,297/mo", S["price_main"])],
     [Paragraph("Financial audit, practice area profitability, owner comp plan, monthly reporting. Includes Elite Coach group deliverables.", S["price_detail"]),
-     Paragraph("<strike>$2,797</strike> stand alone", S["price_detail"])],
+     Paragraph("<strike>$3,797</strike> stand alone", S["price_detail"])],
     [Paragraph("<b>Recommended Ad Spend (Phase 2)</b>", S["price_main"]),
      Paragraph("$5,000–$8,000/mo", S["price_main"])],
     [Paragraph("Goes to Google, LSA, and Meta — not to SMB Team. Requires scoping approval for PI in NYC metro.", S["price_detail"]),
@@ -262,7 +262,7 @@ pt.setStyle(TableStyle([
 ]))
 story.append(pt)
 story.append(Paragraph(
-    "Total: $5,497/mo SMB Team fees + $5,000–$8,000 ad spend (Phase 2)  |  Save $797/mo by bundling  |  SMB fees = 13% of revenue (well under 35% cap)",
+    "Total: $6,497/mo SMB Team fees + $5,000–$8,000 ad spend (Phase 2)  |  Save $797/mo by bundling  |  SMB fees = 16% of revenue (well under 35% cap)",
     S["savings"]))
 
 # ── Build ──
