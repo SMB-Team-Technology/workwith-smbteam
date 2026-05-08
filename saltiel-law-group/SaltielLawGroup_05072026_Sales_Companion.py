@@ -170,24 +170,20 @@ story.append(Paragraph("Moises wants to build a firm that reaches $6M and runs o
 story.append(quote_block("We have 83 leads and we're getting 9 clients... our close rate is probably around 11%... we know there's a problem there."))
 story.append(Spacer(1, 1))
 story.append(quote_block("Moises is the one doing all the consultations... he's the one closing every client."))
-story.append(Spacer(1, 1))
-story.append(quote_block("78% of our clientele is Latin or Spanish-speaking... we have a bilingual website, English and Spanish."))
 story.append(Spacer(1, 2))
 
 story.append(Paragraph("<b>What he wants:</b>", S["subsection"]))
-story.append(bd("<b>Revenue to $6M.</b> He has a specific goal and a current gap — this is a number he is actively tracking."))
-story.append(bd("<b>Intake that runs without him.</b> He cannot scale past his personal hours if he closes every client personally."))
-story.append(bd("<b>Paid lead gen in both languages.</b> Organic is working but vulnerable — he wants a system that generates bilingual leads reliably."))
-story.append(bd("<b>A firm that doesn't need him at the center.</b> The goal is ownership, not just employment."))
+story.append(bd("<b>Revenue to $6M.</b> Specific goal, current gap — actively tracking it."))
+story.append(bd("<b>Intake without him.</b> Can't scale past his personal hours closing every client."))
+story.append(bd("<b>Bilingual paid lead gen.</b> Organic is vulnerable; needs a reliable bilingual system."))
 
 story.append(Spacer(1, 2))
 
 story.append(Paragraph("<b>What is stopping him:</b>", S["subsection"]))
-story.append(b("<b>No paid infrastructure.</b> The firm has never run ads — zero paid data, no benchmarks, no campaigns running while competitors spend monthly."))
-story.append(b("<b>11% intake conversion.</b> 74 leads per month are walking out the door; fixing this is faster ROI than any marketing spend."))
-story.append(b("<b>No closing delegation.</b> The consultation and close process lives in Moises's head — undocumented, undelegatable."))
-story.append(b("<b>No acquisition cost data.</b> Cannot make confident scaling decisions without knowing what each new client costs to acquire."))
-story.append(b("<b>Competitors moving fast.</b> Trembly confirmed running Google Ads; EPGD has 342+ reviews and dominant content authority."))
+story.append(b("<b>No paid infrastructure.</b> Never run ads — zero data, no campaigns while competitors spend monthly."))
+story.append(b("<b>11% conversion.</b> 74 leads/month walking out; faster ROI than any new marketing spend."))
+story.append(b("<b>No delegation.</b> Close process lives in Moises's head — undocumented, untrainable."))
+story.append(b("<b>Competitors ahead.</b> Trembly confirmed on Google Ads; EPGD has 342+ reviews and content authority."))
 
 story.append(thin_rule())
 
@@ -195,15 +191,13 @@ story.append(thin_rule())
 story.append(Paragraph("Why This Marketing Package", S["section"]))
 
 story.append(Paragraph("<b>What it does for him:</b>", S["subsection"]))
-story.append(bd("Puts Saltiel at the top of Google in English and Spanish — above organic, above the map pack — capturing the exact clients competitors are missing."))
-story.append(bd("Generates bilingual paid leads on a consistent, predictable cadence for the first time in the firm's history."))
-story.append(bd("Builds the review and LSA presence needed to compete with EPGD and Trembly on every Google surface."))
+story.append(bd("Puts Saltiel at the top of Google in English and Spanish — capturing clients competitors can't reach."))
+story.append(bd("Builds bilingual paid lead flow for the first time — predictable, not algorithm-dependent."))
 
 story.append(Paragraph("<b>Full Service Marketing — Platinum  |  $4,997/mo bundled</b>", S["subsection"]))
-story.append(b("Revenue $3–5M with a $6M goal and aggressive bilingual market — Platinum is the correct tier."))
-story.append(b("First-time advertiser: needs full infrastructure built from scratch in both English and Spanish simultaneously."))
-story.append(b("Spanish campaign multiplier (1.33x) brings conservative ad spend to $5,000/mo — within Platinum cap."))
-story.append(b("Miami is Tier 2 geo market (1.3x multiplier) — Starter or Growth tiers would be underpowered for this market."))
+story.append(b("$3–5M revenue, $6M goal, bilingual Miami market — Platinum is the correct tier."))
+story.append(b("First-time advertiser: full EN+ES infrastructure needed from scratch; lower tiers are underpowered."))
+story.append(b("Miami = Tier 2 (1.3×); Spanish multiplier (1.33×); conservative spend lands at $5,000/mo within cap."))
 
 story.append(thin_rule())
 
@@ -211,15 +205,13 @@ story.append(thin_rule())
 story.append(Paragraph("Why This Coaching Package", S["section"]))
 
 story.append(Paragraph("<b>What it does for him:</b>", S["subsection"]))
-story.append(bd("Gives Moises the peer group, accountability, and fractional COO support needed to delegate intake and stop being the firm's revenue ceiling."))
-story.append(bd("Builds the operational structure — documented processes, team accountability, hiring frameworks — that makes scaling to $6M possible without adding chaos."))
-story.append(bd("Provides financial operations oversight so Moises knows his acquisition costs, margins, and take-home as he scales — not after the fact."))
+story.append(bd("Removes Moises as the bottleneck — delegation frameworks, documented close process, team accountability."))
+story.append(bd("Installs financial visibility: CAC tracking, margin analysis, profit planning toward $6M."))
 
 story.append(Paragraph("<b>Master's Circle + FCOO Director  |  $4,394/mo bundled</b>", S["subsection"]))
-story.append(b("Revenue $3–5M, 5+ team members with defined roles — Master's Circle + FCOO Director row applies."))
-story.append(b("Moises is the sole closer — FCOO Director builds the delegation infrastructure and closes that gap."))
-story.append(b("No profit plan or CAC tracking exists — FCOO Director installs financial visibility immediately."))
-story.append(b("Master's Circle peer group gives Moises access to owners who have already solved the exact problems he is facing."))
+story.append(b("$3–5M revenue, 5+ defined-role team — Master's Circle + FCOO Director row applies."))
+story.append(b("Moises is sole closer; FCOO Director builds the infrastructure to delegate that role."))
+story.append(b("No CAC or profit plan exists; peer group has already solved the problems he faces now."))
 
 
 # ══════════════════════════════════════════════════════════
@@ -234,39 +226,30 @@ story.append(thin_rule())
 story.append(Paragraph("Why This Ad Spend", S["section"]))
 
 story.append(Paragraph("<b>What it does for him:</b>", S["subsection"]))
-story.append(bd("Creates the first paid lead generation system in the firm's history — English and Spanish, paid search and LSA, running 24/7 without Hector manually driving each lead."))
-story.append(bd("Generates an estimated 22–44 additional qualified leads per month, layered on top of existing organic volume."))
+story.append(bd("First paid system in firm history — EN+ES search and LSA generating ~22–44 leads/mo on top of organic."))
 
-story.append(Paragraph("<b>Recommended Ad Spend Range:</b>", S["subsection"]))
-story.append(b("<b>Conservative:</b> $5,000/mo — minimum viable bilingual paid presence across Google Search, LSA, and Meta retargeting."))
-story.append(b("<b>Aggressive:</b> $10,000/mo — full bilingual paid lead generation at Platinum tier cap."))
-
-story.append(Paragraph("<b>Estimated Return on Investment:</b>", S["subsection"]))
-story.append(b("<b>Conservative:</b> 4–5 cases x $10K avg value = ~$45K/mo vs. $5K spend = ~9x ROAS (~3x on total SMB investment)."))
-story.append(b("<b>Aggressive:</b> 8–9 cases x $10K avg value = ~$85K/mo vs. $10K spend = ~8.5x ROAS (~4x on total SMB investment)."))
-story.append(Paragraph("<i>All figures are estimates based on industry averages. Not guaranteed.</i>", S["disclaimer"]))
-
-story.append(Paragraph("<b>How the range was calculated:</b>", S["subsection"]))
-story.append(b("<b>Conservative:</b> Business Law minimums: PPC $1,500 + LSA $1,000 + Meta $700 = $3,200 x 1.33 bilingual = $4,256 → $5,000."))
-story.append(b("<b>Aggressive:</b> $6M goal x 20% / 12 = $100K budget. Minus $4,997 fee = $95K available — exceeds Platinum cap of $15K. Capped at $10,000."))
-story.append(b("Total spend at aggressive: $9,391 + $10,000 = $19,391/mo = 7.8% of current revenue — well under 35% cap."))
+story.append(Paragraph("<b>Range: $5,000–$10,000/mo (estimates — not guaranteed)</b>", S["subsection"]))
+story.append(b("<b>Conservative $5K:</b> 4–5 cases × $10K = ~$45K/mo | ~9× ROAS | ~3× total SMB investment."))
+story.append(b("<b>Aggressive $10K:</b> 8–9 cases × $10K = ~$85K/mo | ~8.5× ROAS | ~4× total SMB investment."))
+story.append(b("<b>Calc:</b> Biz Law minimums × 1.33 bilingual = $5K conservative. $6M×20%÷12 = $100K → capped at $10K."))
+story.append(b("Total at aggressive: $19,391/mo = 7.8% of revenue — well under 35% cap."))
 
 story.append(thin_rule())
 
 # ── If He Pushes Back ──
 story.append(Paragraph("If He Pushes Back", S["section"]))
 
-story.append(Paragraph('"We\'ve always been organic-first — we\'ve never run paid ads."', S["objection_q"]))
-story.append(Paragraph("Organic built the firm to $3–5M, which is a real achievement. But Trembly is confirmed running Google Ads for your exact keywords right now, and they are showing up above your organic listings. Every month without paid is a month they extend that lead — and your organic rankings are not protected from algorithm changes.", S["objection_a"]))
+story.append(Paragraph('"We\'ve always been organic-first — never run paid ads."', S["objection_q"]))
+story.append(Paragraph("Trembly is confirmed running Google Ads for your exact keywords right now — showing above your organic listings. Every month without paid extends their lead. Organic rankings are also not protected from algorithm changes.", S["objection_a"]))
 
-story.append(Paragraph('"The budget feels like a lot — almost $10K in management fees before ad spend."', S["objection_q"]))
-story.append(Paragraph("At 11% conversion, the firm is leaving roughly $740K/mo in potential revenue unconverted from leads it already has. The intake work alone — activating Clio Grow automation and adding scheduling — is expected to add 7–8 clients/month without any new ad spend. The question is not whether the investment is large; it is whether the return justifies it — and the math says it does.", S["objection_a"]))
+story.append(Paragraph('"The fees feel like a lot before ad spend."', S["objection_q"]))
+story.append(Paragraph("At 11% conversion the firm is leaving ~$740K/mo in potential revenue unconverted from leads it already has. Activating Clio Grow alone is projected to add 7–8 clients/month at zero additional ad cost. The math justifies the investment.", S["objection_a"]))
 
-story.append(Paragraph('"We already have Clio Grow — isn\'t our intake fine?"', S["objection_q"]))
-story.append(Paragraph("Clio Grow is in place but the automation features are not activated. The firm is at 11% conversion with 83 leads/month — the tool exists, but it is not doing the work. This engagement activates what is already paid for and layers a structured follow-up system on top of it.", S["objection_a"]))
+story.append(Paragraph('"We have Clio Grow — isn\'t intake handled?"', S["objection_q"]))
+story.append(Paragraph("Clio Grow is installed but automation is not activated. 83 leads/month at 11% close means the tool exists but is not doing the work. This engagement turns it on and adds structure on top.", S["objection_a"]))
 
-story.append(Paragraph('"Can we just start with marketing and skip the coaching package?"', S["objection_q"]))
-story.append(Paragraph("Marketing will generate more leads — but Moises is already the bottleneck on converting the 83 leads he has at 11%. More leads into a broken intake system will not produce the results he is expecting. The two packages are designed to work together: marketing fills the top of the funnel, coaching and FCOO fixes conversion and operations below it.", S["objection_a"]))
+story.append(Paragraph('"Can we do marketing only and skip coaching?"', S["objection_q"]))
+story.append(Paragraph("More leads into a broken intake system won't produce the expected results — Moises is already the bottleneck at 11% on 83 existing leads. Marketing fills the funnel; coaching and FCOO fixes what happens after the lead arrives.", S["objection_a"]))
 
 story.append(thin_rule())
 
