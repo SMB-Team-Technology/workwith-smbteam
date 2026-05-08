@@ -196,7 +196,7 @@ story.append(bd("DUI clients searching Google find Shark Law first — closing t
 story.append(bd("A consistent multi-channel pipeline means Shane's calendar fills with inbound DUI leads, not just whoever called a referral source this month."))
 story.append(bd("Full attribution reporting ties every marketing dollar to signed cases — so Shane can make confident budget decisions based on evidence, not instinct."))
 
-story.append(Paragraph("<b>Full Service Marketing — Growth  |  $5,397/mo bundled</b>", S["subsection"]))
+story.append(Paragraph("<b>Full Service Marketing — Growth  |  $7,397/mo bundled</b>", S["subsection"]))
 story.append(b("Criminal Defense in a high-competitiveness market — Essentials tier excluded; Growth required."))
 story.append(b("Aggressive $1M+ goal: 20% rule yields $11,270 ad spend — exceeds Starter $5,000 cap; Growth tier required."))
 story.append(b("Growth tier provides $10,000 ad spend capacity to run Google Ads, LSA, and Meta simultaneously across Cincinnati metro."))
@@ -267,9 +267,9 @@ story.append(Paragraph("Investment At A Glance", S["section"]))
 
 price_data = [
     [Paragraph("<b>Full Service Marketing — Growth</b>", S["price_main"]),
-     Paragraph("$5,397/mo", S["price_main"])],
+     Paragraph("$7,397/mo", S["price_main"])],
     [Paragraph("Google Ads, LSA, website, local SEO, Meta Ads, reporting.", S["price_detail"]),
-     Paragraph("<strike>$5,997</strike> stand alone", S["price_detail"])],
+     Paragraph("<strike>$8,997</strike> stand alone", S["price_detail"])],
     [Paragraph("<b>Elite Coach Plus</b>", S["price_main"]),
      Paragraph("$3,200/mo", S["price_main"])],
     [Paragraph("Weekly coaching, criminal defense mastermind, quarterly workshops.", S["price_detail"]),
@@ -292,7 +292,7 @@ pt.setStyle(TableStyle([
 ]))
 story.append(pt)
 story.append(Paragraph(
-    "Total: $8,597/mo + $4,000–$10,000 ad spend  |  Save $897/mo by bundling  |  12.8%–27.9% of revenue (under 35% cap)",
+    "Total: $10,597/mo + $4,000–$10,000 ad spend  |  Save $1,897/mo by bundling  |  15.9%–30.9% of revenue (under 35% cap)",
     S["savings"]))
 
 # ── Build ──
