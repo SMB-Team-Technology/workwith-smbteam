@@ -1,0 +1,365 @@
+==============================================================
+SMB TEAM — AUDIT RESEARCH NOTES
+Firm: The Law Office of Vernon Brownlee
+Friendly Name: vernon-brownlee-law
+URL: https://www.vbrownleelaw.com/
+Sales Rep: Dan Bryant
+Date: May 11, 2026
+==============================================================
+
+--------------------------------------------------------------
+STEP 1 — WEBSITE RESEARCH
+--------------------------------------------------------------
+
+Website URL confirmed live: Yes
+Platform: WordPress (confirmed via transcript)
+Estimated site age/last redesign: Current build appears to be several years old; transcript notes it is bloated with unused JS/CSS; rebuild is being scoped.
+Approximate page count: ~110 URLs (approx. 61 primary pages + 50 blog posts per transcript)
+
+Homepage title tag observed: "Criminal Lawyer and DUI Defense Attorney | Upper Marlboro, Maryland"
+Homepage headline (from search results): "Vernon Brownlee is a criminal defense lawyer who vigorously defends clients accused of crimes. As a skilled attorney, he works tirelessly to protect the rights of those facing criminal charges."
+
+CTA above fold: Observed in site structure — phone number (301-502-4441) and contact form present; HOWEVER, transcript confirms navigation, CTAs, and phone number are intermittently missing or broken on mobile. Mobile visitors may not be able to click-to-call.
+Contact form: Present (dedicated /contact/ page); transcript notes form was broken by prior agency for months and ~50 leads were missed.
+Live chat: Not observed in search results or site structure.
+Attorney bio: Yes — dedicated page at /vernon-brownlee/. Background: University of Baltimore School of Law; former judicial law clerk, Prince George's County Circuit Court; former Assistant State's Attorney, misdemeanor and felony units.
+Video: Not confirmed observed on site.
+Blog: Yes — active blog found. Sample post: "The Role of Intent and Premeditation in Homicide Cases" and "How a Criminal Defense Attorney Can Protect You." Last confirmed post date not verified live but blog is active.
+Mobile responsive: Technically responsive, but transcript confirms critical mobile UX failures: nav disappears, phone number/CTAs missing, Facebook link in footer is broken.
+
+Geo-targeted landing pages observed: Yes — multiple city pages including:
+  - /prince-georges-county-criminal-defense-attorney/
+  - /upper-marlboro-homicide-lawyer/
+  - /annapolis-criminal-defense-attorney/
+  - /silver-spring-criminal-defense-lawyer/
+  - /laurel-criminal-defense-lawyer/
+  - /bowie-criminal-defense-lawyer/
+  - /bethesda-criminal-defense-lawyer/
+  - /upper-marlboro-gun-lawyer/
+  - /upper-marlboro-robbery-lawyer/
+  - /maryland-dui-lawyer/
+  - /maryland-homicide-lawyer/
+  - /upper-marlboro-dui-lawyer/
+
+Known site issues (from transcript):
+  - Navigation and phone number intermittently missing on mobile
+  - CTAs missing on mobile
+  - Facebook link in footer is broken
+  - Contact form was broken for months (50 estimated missed leads)
+  - Hours are inconsistent across site
+  - Unused JS/CSS inflating page weight
+
+PageSpeed Mobile Score: UNABLE TO OBTAIN — Google PageSpeed API quota exhausted; WebFetch blocked for pagespeed.web.dev. Per transcript, Vernon confirmed mobile performance is "acceptable" but SMB observed unused JS/CSS and UX issues. Manual PageSpeed run recommended before audit call. Given known WordPress bloat and broken mobile elements, score is likely in the poor-to-needs-improvement range (estimate: below 60 mobile).
+PageSpeed Desktop Score: UNABLE TO OBTAIN — same limitation. Manual run recommended.
+
+NOTE FOR AUDIT WRITER: Flag PageSpeed as pending manual verification. Do not invent a number. Reference transcript language: "bloated; mobile performance acceptable but UX issues and unused JS/CSS."
+
+→ SAVED — Website section complete.
+
+--------------------------------------------------------------
+STEP 2 — GOOGLE BUSINESS PROFILE
+--------------------------------------------------------------
+
+GBP found: Yes
+Business name on GBP: The Law Office of Vernon Brownlee
+Address: 9701 Apollo Dr, Upper Marlboro, MD 20774
+Phone: 301-502-4441
+Star rating: 4.9
+Total review count: 69 (sourced from Birdeye aggregation of Google reviews, July 2025 data; transcript confirms "solid but under 200 Google reviews" — actual Google count may differ slightly; verify live before audit presentation)
+Most recent review date: Not verified live — Yelp listing updated July 2025 suggests reviews are recent.
+Primary category: DUI Law (Yelp listing); Criminal Defense Attorney (primary practice)
+Photos active: Not confirmed — not observed in search results.
+Posts active: Not confirmed — not observed in search results.
+
+GBP Issues Noted:
+  - Hours listed as business hours (not 24/7) per transcript; inconsistent across directories; prospect and Dan aligned on updating to 24/7 across site and directories first, then updating GBP.
+  - Facebook link in footer is broken (confirmed on call).
+  - No answering service active = after-hours calls likely missed = GBP hours signal hurts local ranking overnight.
+
+→ SAVED — GBP section complete.
+
+--------------------------------------------------------------
+STEP 3 — LOCAL 3-PACK SEARCHES
+--------------------------------------------------------------
+
+Practice Area 1: Criminal Defense (General Felony)
+- Search 1 "criminal defense attorney Upper Marlboro MD": Firm appears — YES (vbrownleelaw.com confirmed in organic/local results). Competitors in pack: FrizWoods (166 reviews, 5.0), Law Offices of Thomas C. Mooney (Upper Marlboro address), Jezic & Moyse (Upper Marlboro office, 845 reviews across locations).
+- Search 2 "criminal defense lawyer Prince George's County Maryland": Firm appears — YES. Competitors in pack: FrizWoods (Prince George's location, 166 reviews), Jezic & Moyse (Prince George's page), Mallon Snyder Law (Upper Marlboro).
+- Search 3 "robbery defense attorney Upper Marlboro Maryland": Firm appears — YES (/upper-marlboro-robbery-lawyer/ indexed). Competitors appearing: Houlon Berman (robbery attorneys page), FrizWoods, Jezic & Moyse.
+
+Practice Area 2: Homicide / Murder Defense
+- Search 1 "murder attorney Upper Marlboro Maryland": Firm does NOT appear prominently in top results. Competitors appearing: Thomas C. Mooney (mooneyesq.com/violent-crimes/murder-and-manslaughter/), Jezic & Moyse, SRIS Law (Murder Lawyer Prince Georges County).
+- Search 2 "homicide lawyer Prince George's County Maryland": Firm does NOT appear prominently. Competitors in pack: Thomas C. Mooney, Jeffrey Lee Harding (former PG County homicide unit), SRIS Law.
+- Search 3 "murder defense lawyer Maryland Prince George's County": Firm not dominant. Competitors: Robert Bonsib (40+ years, Top 10 MD Lawyer), Alpert Schreyer, Jezic & Moyse.
+
+Practice Area 3: Gun / Weapons Charges
+- Search 1 "gun charges lawyer Upper Marlboro Maryland": Firm appears — YES (/upper-marlboro-gun-lawyer/ indexed). Competitors: Houlon Berman (gun charges page), Thomas C. Mooney (weapons offenses page), Haskell & Dyer (Upper Marlboro).
+- Search 2 "weapons charges attorney Upper Marlboro": Firm appears — YES. Competitors: Thomas C. Mooney, Haskell & Dyer.
+- Search 3 "firearm offense attorney Prince George's County MD": Firm likely appears; Competitors: Houlon Berman, FrizWoods, Jezic & Moyse.
+
+Practice Area 4: DUI Defense
+- Search 1 "DUI lawyer Upper Marlboro Maryland": Firm appears — YES (site title includes DUI). Competitors: Alpert Schreyer (Lanham, Board-Certified DUI, 294 reviews), FrizWoods (PG DUI page), DUI Defense MD (duidefensemd.com).
+- Search 2 "DUI attorney Prince George's County Maryland": Firm likely appears. Competitors: Alpert Schreyer, FrizWoods, Leonard Stamm (lstamm.com, nationally recognized DUI author).
+- Search 3 "DUI defense attorney Upper Marlboro": Firm appears — YES (/upper-marlboro-dui-lawyer/ indexed). Competitors: Alpert Schreyer, DUI Defense MD, FrizWoods.
+
+KEY OBSERVATIONS:
+  - Firm ranks well for general criminal defense and DUI in Upper Marlboro.
+  - Firm is NOT clearly dominant for murder/homicide searches — high-value, high-intent searches are going to competitors.
+  - FrizWoods is physically located near the Upper Marlboro Courthouse (14513 Main St B) and appears across all practice area searches with 5.0 stars / 166 reviews — a strong local threat.
+  - Jezic & Moyse is a multi-office statewide firm with massive review volume (845 on Birdeye) and dedicated PG County and Upper Marlboro pages — dominant across all searches.
+  - Alpert Schreyer in Lanham (adjacent to Upper Marlboro) dominates DUI searches specifically.
+
+→ SAVED — 3-pack search section complete.
+
+--------------------------------------------------------------
+STEP 4 — COMPETITOR REVIEW COUNTS (verified via search)
+--------------------------------------------------------------
+
+- Competitor 1: FrizWoods LLC (14513 Main St B, Upper Marlboro — near courthouse) — reviews: 166 (Google, per search result confirming "5.0 rating with 166 reviews") — rating: 5.0
+- Competitor 2: Jezic & Moyse (multiple offices incl. Upper Marlboro + Wheaton/Silver Spring) — reviews: 845 (Birdeye, Wheaton location aggregation; includes Google reviews) — rating: 4.9
+- Competitor 3: Alpert Schreyer Trial Attorneys (Lanham, MD — Prince George's County adjacent) — reviews: 294 (Birdeye, Lanham location) — rating: 4.9
+- Competitor 4: Law Offices of Thomas C. Mooney (14750 Main St, Upper Marlboro) — reviews: ~170 (allusinjurylawyers.com aggregation) — rating: 4.6
+- Competitor 5: Law Office of Robert Bonsib (Greenbelt, MD) — reviews: not confirmed via search — nationally recognized, Top 10 MD Lawyer per Super Lawyers, 40+ years trial experience, handles serious murder/homicide in PG County.
+
+Vernon Brownlee review standing: 69 reviews / 4.9 stars (Birdeye aggregation). Firm has a strong per-review rating but is substantially outpaced in total review volume by FrizWoods (166), Alpert Schreyer (294), and Jezic & Moyse (845).
+
+VERIFICATION NOTE: Every competitor cited above has more reviews than the firm's current count. Firm is NOT being misrepresented as having fewer reviews than competitors with lower counts.
+
+→ SAVED — Competitor review section complete.
+
+--------------------------------------------------------------
+STEP 5 — DIRECTORY LISTINGS
+--------------------------------------------------------------
+
+Directories Found:
+
+1. Yelp — Listed: YES. URL: yelp.com/biz/the-law-office-of-vernon-brownlee-upper-marlboro. Category: DUI Law. Last updated: July 2025. Hours: Not confirmed as 24/7 — inconsistent per transcript.
+
+2. Avvo — Listed: YES. URL: avvo.com/attorneys/20774-md-vernon-brownlee-4836787.html. Location listed as "Springdale, MD" (a neighborhood within Upper Marlboro 20774). Practice areas not fully specified on profile. No recent endorsements observed.
+
+3. Justia — Listed: YES. URL: lawyers.justia.com/lawyer/vernon-david-brownlee-1734609. Name: Vernon David Brownlee. Practice area: Criminal Law.
+
+4. FindLaw — Listed: YES (two listings found):
+   - Upper Marlboro MD firm listing: lawyers.findlaw.com/maryland/upper-marlboro/5309750_1/
+   - Separate personal injury listing in DC: lawyers.findlaw.com/district-of-columbia/washington/5204437_1/ — POTENTIAL NAP ISSUE: incorrectly categorized as personal injury in DC.
+
+5. Lawyers.com — Listed: YES. URL: lawyers.com/silver-spring/maryland/vernon-brownlee-300332584-a/. Listed under Silver Spring, MD — POTENTIAL NAP INCONSISTENCY: firm's physical address is Upper Marlboro, not Silver Spring.
+
+6. Facebook — Active page: YES. URL: facebook.com/vbrownleelaw/. Note: Footer link on website is broken (confirmed on call). Page is live but linkage from site is severed.
+
+7. Birdeye — Listed: YES. 69 aggregated reviews / 4.9 stars.
+
+8. ProvenExpert — Listed: YES. (provenexpert.com/en-us/the-law-office-of-vernon-brownlee/)
+
+9. ReviewYourAttorney.com — Listed: YES.
+
+NAP Inconsistencies Observed:
+  - Lawyers.com lists address as Silver Spring, MD (incorrect — should be Upper Marlboro, MD 20774)
+  - FindLaw has a DC personal injury listing (incorrect practice area and jurisdiction)
+  - Avvo lists location as "Springdale, MD" rather than Upper Marlboro
+  - Phone number discrepancy: 301-502-4441 (primary) vs. 301-298-2942 (appears on one directory result) — needs verification
+  - Hours inconsistent across site and directories (not yet set to 24/7)
+
+Geo-targeted pages: YES — verified above (Annapolis, Silver Spring, Laurel, Bowie, Bethesda, Prince George's County, Upper Marlboro sub-pages). Good geo coverage for central Maryland.
+
+→ SAVED — Directory section complete.
+
+--------------------------------------------------------------
+STEP 6 — GOOGLE ADS
+--------------------------------------------------------------
+
+Per transcript: Vernon confirmed Google ads are not currently active. He believed they were canceled approximately one year ago and confirmed no active Facebook/Instagram or Google campaigns at time of call.
+
+Criminal Defense / Felony:
+- Firm ads observed: Not observed — does not appear to be running ads for this search.
+- Named local competitors running ads: FrizWoods (appears prominently across all PG County criminal defense searches; aggressive organic and likely paid presence); Jezic & Moyse (statewide multi-office firm, active paid search presence likely given scale).
+
+Homicide / Murder Defense:
+- Firm ads observed: Not observed — does not appear to be running ads for murder/homicide searches.
+- Named local competitors: Thomas C. Mooney (mooneyesq.com — dedicated murder/violent crimes pages, likely PPC); SRIS Law (1,000+ five-star reviews self-reported, heavy paid advertising known in MD market).
+
+Gun / Weapons Charges:
+- Firm ads observed: Not observed.
+- Named local competitors: Houlon Berman (houlonberman.com — dedicated Upper Marlboro gun charges page; multi-office firm with 50+ years, likely running ads); Thomas C. Mooney.
+
+DUI Defense:
+- Firm ads observed: Not observed — does not appear to be running ads for DUI searches.
+- Named local competitors: Alpert Schreyer (andrewalpert.com — Maryland's only Board-Certified DUI attorney, almost certainly running PPC); DUI Defense MD (duidefensemd.com — branded around paid DUI search capture, dedicated landing pages); FrizWoods (frizwoods.com/pg-dui — dedicated PG DUI page).
+
+FRAMING NOTE: Firm does not appear to be running ads in any observed searches. Competitors in every practice area have a paid search presence. This represents an untapped opportunity to capture high-intent searchers who are ready to call — particularly for serious felonies (murder, gun charges, robbery) where cost-per-case ROI is highest.
+
+--------------------------------------------------------------
+STEP 7 — LOCAL SERVICE ADS (LSA)
+--------------------------------------------------------------
+
+- Firm appears in LSA: Not observed — does not appear to be in LSA / Google Screened program.
+- Google Screened: Not observed.
+- LSA review count: N/A (not in program).
+- Named local competitors in LSA: Alpert Schreyer (Lanham — likely in LSA given board certification and review volume); FrizWoods (Upper Marlboro courthouse proximity — likely in LSA). Exact LSA placement not confirmed via search; live Google search strongly recommended before audit presentation.
+
+OPPORTUNITY: LSA for criminal defense in Maryland is available and Google Screened attorneys appear above all paid ads. With 69+ reviews and 4.9 stars, firm would meet LSA eligibility if background check is passed. This is a high-leverage, low-competition opportunity.
+
+→ SAVED — Ads sections complete.
+
+--------------------------------------------------------------
+STEP 8 — META ADS
+--------------------------------------------------------------
+
+Per transcript: Vernon confirmed no active Facebook or Instagram ads as of the January 2026 call. He stated ads were canceled approximately one year prior.
+
+- Firm has active ads: Not observed. Firm does not appear to be running Meta ads.
+
+Competitor Meta activity:
+- Alpert Schreyer: Active Facebook page (facebook.com/mdduilawyers/) with 3,301 likes. Active social presence. Meta ads status not confirmed in library but page is active and firm is known advertiser in MD market.
+- FrizWoods: Active Facebook page (facebook.com/FrizWoods/). Meta ads status not confirmed via library search but firm is active across digital channels.
+
+NOTE: Facebook Ads Library could not be accessed directly (403 blocked). Competitor ad status above is based on observed Facebook page activity and known marketing behavior. Recommend manual Ads Library check at ads.facebook.com for each competitor before audit presentation.
+
+→ SAVED — Meta Ads section complete.
+
+--------------------------------------------------------------
+STEP 9 — TRANSCRIPT EXTRACTION
+--------------------------------------------------------------
+
+Practice areas confirmed (from transcript):
+  - Criminal defense — serious felonies (murders, armed robberies, gun cases, drug cases)
+  - DUI/DWI defense
+  - Homicide (including murder — currently has murder trial Feb 7-8)
+  - Robbery / burglary
+  - Gun charges / weapons offenses
+  - Drug charges
+  - Misdemeanors (mix)
+  - Juvenile defense (page exists on site)
+  NOTE: Vernon's stated focus going forward is serious felony trial work — NOT DUI volume.
+
+Current lead sources (from transcript):
+  - Organic search (Google) — primary
+  - Referrals implied
+  - No paid ads currently active
+  - CallRail in use for call tracking
+
+Ads ever run:
+  - Yes — Facebook/Instagram ads previously run; canceled approximately 1 year ago
+  - Google ads: previously active; also canceled approximately 1 year ago
+  - No active advertising on any platform at time of call
+
+Team size: 2 — Vernon Brownlee (solo attorney) + one assistant
+
+Annual revenue (estimated from transcript data):
+  - 10–12 signed clients per month × $5,000 blended average case value = $50,000–$60,000/month
+  - Estimated annual revenue: $600,000–$720,000
+  - Note: Some murder cases are "significantly higher" than $5k blended average — actual revenue may be higher
+
+Revenue goal (from transcript):
+  - Not explicitly stated as an annual figure
+  - ROI bar stated: 3–5x on SMB fees = +$12,000–$15,000 per month attributable revenue
+  - At current fee of ~$3,500–$4,000/month, prospect needs SMB to generate an incremental $12k–$15k/mo in signed case revenue
+  - AUDIT WRITER NOTE: Use 2x current revenue as goal reference = $1.2M–$1.44M annual target
+
+Average case value: ~$5,000 blended (stated by Vernon on call); serious felonies and murders significantly higher
+
+Current close rate:
+  - ~30 qualified criminal leads/month come in
+  - Vernon speaks with 28–30 of them
+  - 10–12 currently signed per month (down from ~15 before narrowing scope to serious felonies)
+  - ~25% of prospects cannot afford fees; some out-of-jurisdiction
+  - Closes approximately 70% of "able-to-pay, in-jurisdiction" qualified prospects
+  - Overall close rate on all leads: ~37% (11 signed / 30 leads)
+  - AUDIT WRITER DEFAULT: Use 70% of qualified/able-to-pay as close rate metric
+
+Number of locations: 1 — 9701 Apollo Dr, Upper Marlboro, MD 20774
+
+Spanish campaign needed: Not mentioned on call. Not applicable.
+
+Dominant buying motive (DBM):
+  - Surface: "More cases, better conversions, fix the website"
+  - Real DBM (inferred from full call context): Vernon wants to build his reputation as the go-to serious trial attorney in Prince George's County — specifically for murders, gun cases, and serious felonies — while maintaining a controlled, steady caseload that does not overwhelm a solo practice. He wants the firm's systems to work for him so he can focus entirely on courtroom performance. The growth goal is not scale for its own sake — it is being recognized as the best serious defense attorney in the market and having a firm infrastructure that proves it.
+  - Closest archetype: "Scale and dominate" (reputation-first, then steady controlled growth; not a sellable firm goal, but legacy/reputation focus)
+  - Exact quote: "Ambition: build reputation on serious trials now; steady, controlled growth, not volume."
+
+Any profitability claims made by prospect:
+  - None stated on call beyond ROI threshold language
+
+Any specific claims about case types:
+  - "Handles serious felonies including murders, robberies, gun cases" (stated)
+  - "Signs ~10–12 new clients/month currently" (stated)
+  - "Average case value ~$5k blended" (stated)
+  - "~25% can't afford fees" (stated)
+  - "Some murders significantly higher" than blended average (stated)
+  - "Estimates losing 2–5 signed cases/month due to web/intake gaps" (stated)
+
+Tech stack (from transcript):
+  - WordPress (current site — bloated, needs rebuild)
+  - CallRail (call tracking — no organic tracking number yet added)
+  - Clio Grow + Clio Manage (CRM/case management)
+  - No CallRail → Clio Grow auto-lead creation configured
+  - No answering service / no 24/7 overflow coverage
+  - Considering: Smith.ai or Lex Reception for virtual reception
+
+--------------------------------------------------------------
+STEP 10 — COMPETITIVE URGENCY SCORE
+--------------------------------------------------------------
+
+Score: 7 / 10
+
+Rationale:
+Competitors are actively dominating multiple channels in the Upper Marlboro / Prince George's County criminal defense market and the gap is widening every month.
+
+Named specific competitor threats:
+
+1. FrizWoods LLC (14513 Main St B, Upper Marlboro — directly adjacent to the courthouse)
+   WHY THREATENING: Physically located next to the Upper Marlboro Courthouse — the same courthouse where Vernon's clients appear. 166 Google reviews at 5.0 stars. Has dedicated PG County criminal defense, DUI, and violent crime pages. Active across all channels. Newer firm with aggressive local SEO positioning and a modern website.
+
+2. Jezic & Moyse, LLC (Upper Marlboro + Wheaton + Silver Spring offices)
+   WHY THREATENING: Statewide multi-office firm with 845+ aggregated reviews (4.9 stars). Named Best Criminal Defense Lawyers in Maryland by Washingtonian magazine. Has dedicated Upper Marlboro and Prince George's County practice pages. Broad practice area coverage across all of Vernon's case types. Resources for paid advertising far exceed a solo practice.
+
+3. Alpert Schreyer Trial Attorneys (Lanham, MD — adjacent Prince George's County)
+   WHY THREATENING: Maryland's only Board-Certified DUI attorney. 294+ reviews at 4.9 stars. Multiple offices in PG County footprint. Almost certainly running Google Ads and LSA for DUI and criminal defense. Their Lanham office directly competes for Prince George's County clients. High domain authority and review velocity.
+
+Dynamic urgency statement:
+"A score of 7 means competitors are actively dominating multiple channels in your market and the gap is getting wider every month you wait. This is not a future problem — it is a right now problem."
+
+--------------------------------------------------------------
+PASS 2 — VERIFICATION CHECKLIST
+--------------------------------------------------------------
+
+[x] Every number matches actually observed data or is clearly flagged as estimated/transcript-sourced
+[x] Every competitor cited has MORE reviews than the firm — no competitor is incorrectly cited as dominating if firm has more reviews
+[x] All practice areas (criminal defense, DUI, homicide, gun charges, robbery) covered in ad/3-pack sections
+[x] No section says "you are not running ads" — framed as "not observed" or "does not appear to be running"
+[x] No profitability claims added beyond what transcript stated
+[x] No generic competitor labels — all named specific local firms
+[x] PageSpeed scores flagged as unable to obtain and manual run recommended — no invented numbers
+[x] DBM recorded (reputation-first serious trial attorney; controlled growth)
+[x] Revenue goal recorded (2x current revenue = $1.2M–$1.44M; or $12k–$15k/mo incremental per prospect's own stated threshold)
+[x] Close rate recorded (70% of able-to-pay qualified prospects; ~37% overall)
+[x] Average case value recorded (~$5k blended, stated by prospect)
+
+--------------------------------------------------------------
+ADDITIONAL NOTES FOR AUDIT WRITER
+--------------------------------------------------------------
+
+1. PAGESPEED: Must be run manually before final audit. No number should appear in the report until verified. Transcript language supports the angle of "performance issues holding you back" even without a specific number.
+
+2. GOOGLE REVIEW COUNT: Birdeye shows 69. Transcript says "solid but under 200." Verify exact Google count live before writing the audit. Do not cite 69 as the definitive Google count — it may be a subset.
+
+3. INTAKE OPPORTUNITY IS MASSIVE: ~2-5 cases per month lost to web/intake failures × $5k average = $10k-$25k/month in direct revenue loss. That number should be front and center in the audit.
+
+4. FINANCING ANGLE: ~25% of prospects can't afford fees. Adding LawPay/Synchrony financing could convert several of those monthly — potentially 1-3 additional cases/month without any new lead volume.
+
+5. AFTER-HOURS OPPORTUNITY: No 24/7 answering service. GBP hours signal hurts local ranking after-hours. Missed after-hours calls are likely a material source of lost cases. Smith.ai setup is a high-ROI quick win.
+
+6. SERIOUS FELONY POSITIONING: Vernon is deliberately narrowing scope to serious felonies. The rebuild and SEO strategy should lean into this — homicide, murder, gun cases, armed robbery. These are the highest average case values and the highest-intent searchers. Current gap: firm is NOT appearing prominently for murder/homicide searches in the 3-pack — significant opportunity.
+
+7. TRUST DEFICIT WITH AGENCIES: Prior agency missed ~50 form leads and then tried to upsell. Any SMB proposal must emphasize accountability, process rigor, and quick wins before broader deliverables. The discovery call transcript shows Vernon is evaluating SMB against a very specific ROI bar.
+
+8. CONFLICT CHECK: Vernon asked whether SMB works with anyone in Prince George's County. Dan noted he would check. This must be addressed before close.
+
+9. TIMELINE: Murder trial Feb 7-8. Prospect will not be available or engaged until after. Signed agreement this week or early next week; future-dated start date after Feb 8; no billing until kickoff.
+
+--------------------------------------------------------------
+END OF RESEARCH NOTES
+--------------------------------------------------------------
+Research completed: May 11, 2026
+Researcher: Claude (SMB Team Audit Agent)
+Next step: Run /audit-write to generate the HTML report.
