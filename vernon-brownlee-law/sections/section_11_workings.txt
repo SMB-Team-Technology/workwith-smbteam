@@ -1,0 +1,167 @@
+==============================================================
+SECTION 11 WORKINGS — The Law Office of Vernon Brownlee
+May 11, 2026 | Sales Rep: Dan Bryant
+==============================================================
+
+MANDATORY PRICE LOOKUP (character-for-character from pricing tables)
+--------------------------------------------------------------
+Marketing package selected: Full Service Marketing Starter
+  Revenue band: $400K–$1M
+  Bundled price:      $4,847/mo
+  Stand-alone price:  $5,697/mo
+  Savings:            $  850/mo
+
+Non-marketing package selected: Elite Coach Plus
+  Revenue band: $400K–$1M, Any team
+  Bundled price:      $2,200/mo
+  Stand-alone price:  $3,497/mo
+  Savings:            $1,297/mo
+
+Total monthly investment (sum of bundled prices): $7,047/mo
+Total savings (sum of all savings): $2,147/mo
+
+ELIGIBILITY CHECKS PASSED
+--------------------------------------------------------------
+- Revenue ~$600K–$720K → $400K–$1M band → Starter tier ✓
+- Criminal Defense + High competitiveness → All Essentials hidden → Starter minimum ✓
+- Website rebuild needed (broken mobile UX, bloated WP, 5+ years old) → Full Service required ✓
+- Revenue under $1M → Master's Circle, Dominate, Platinum hidden ✓
+- Team under 5 → Master's Circle hidden ✓
+- Revenue over $500K → Fractional packages NOT auto-hidden (but small team of 2 = Elite Coach Plus only, not FCOO yet) ✓
+- Total spend check: $7,047 fees + $5,000 ad spend = $12,047 / $55,000 monthly revenue = 21.9% (well under 35% cap) ✓
+
+AD SPEND CALCULATION
+--------------------------------------------------------------
+Geographic tier: DC Metro = Tier 1 (Upper Marlboro/Prince George's County is within DC Metro)
+Tier 1 multiplier: 1.5x
+Spanish campaign: Not applicable
+
+Criminal Defense + High Competitiveness hard floor: $5,000/mo
+
+Conservative scenario (sum of channel minimums):
+  Google PPC min:       $2,500
+  LSA min:              $1,000
+  Meta Retargeting min: $1,200
+  Meta Lead Gen min:    $  500
+  Sum:                  $5,200 → rounded to $5,000 (meets hard floor)
+
+Aggressive scenario (20% rule):
+  Revenue goal: 2x current = $1.3M annual / 12 = $108,333/mo
+  20% rule: $108,333 × 20% = $21,667
+  × Tier 1 multiplier (1.5x) = $32,500 total marketing budget
+  Minus management fee: $32,500 - $4,847 = $27,653 available ad spend
+  → Exceeds Starter tier cap of $5,000
+  → Note: At this revenue level ($600K–$720K), revenue is under $1M so
+    Growth/Dominate tiers are not available; aggressive capped at $5,000 (Starter cap)
+
+RECOMMENDED AD SPEND: $5,000/mo (conservative and aggressive both capped at Starter tier)
+Note for rep: When firm reaches $1M revenue, upgrade to Growth tier unlocks $10,000 ad spend cap
+and opens the full aggressive scenario.
+
+ROI PROJECTIONS
+--------------------------------------------------------------
+CPL estimates used (DC Metro, Criminal Defense, serious felony focus):
+  Google PPC (felony-focused): ~$250/lead (high-intent, serious felony targeting)
+  LSA: ~$125/lead (pay-per-call, pre-qualified)
+  Meta retargeting: ~$165/lead
+
+Conservative scenario ($5,000 ad spend, 20% CPL cushion applied):
+  Allocation: $3,000 Google PPC + $1,000 LSA + $1,000 Meta retargeting
+  Raw leads:  $3,000/$250 = 12 + $1,000/$125 = 8 + $1,000/$165 = 6 = 26 leads
+  With 20% conservative cushion: 26 × 0.80 = 21 qualified leads
+  Close rate on paid leads: 25% (lower than Vernon's organic 70% of qual/able-to-pay;
+    paid leads require qualification step before Vernon's close rate applies)
+  Cases: 21 × 0.25 = 5 cases/month (rounded from 5.25)
+  Revenue: 5 × $5,000 = $25,000
+  Return: $25,000 / $5,000 = 5x
+
+Aggressive scenario ($5,000 ad spend, no cushion):
+  Raw leads: 26 (same allocation, no cushion)
+  Close rate: 30% (slightly higher as targeting optimizes)
+  Cases: 26 × 0.30 = 8 cases/month (rounded from 7.8)
+  Revenue: 8 × $5,000 = $40,000
+  Return: $40,000 / $5,000 = 8x
+
+ROI BLOCK 4 DISPLAY VALUES:
+  Ad spend range: $5,000/mo
+  Estimated case value: $5,000 (blended; stated by Vernon)
+  Conservative: 5 cases → $25,000/mo → 5x return
+  Aggressive: 8 cases → $40,000/mo → 8x return
+
+DBM STATEMENT FOR BLOCK 1
+--------------------------------------------------------------
+"We help solo criminal defense attorneys in competitive markets get a steady flow of
+serious felony cases so they can build the trial reputation they've earned — and stop
+losing cases they never even knew about."
+
+QUICK WIN OPPORTUNITIES (6+ identified)
+--------------------------------------------------------------
+1. Pillar: Lead Gen | Quick Win
+   Title: Fix Mobile Navigation, Phone Number, and CTAs
+   Why: Every mobile visitor who can't find the phone number leaves without calling.
+   Competitor: FrizWoods LLC — persistent mobile CTA, modern mobile site.
+   Opportunity: A single day of fixes begins recovering cases tomorrow.
+
+2. Pillar: Intake | Quick Win
+   Title: Verify and Repair Contact Form
+   Why: Prior agency let form break for months; ~50 leads went unanswered.
+   Competitor: N/A
+   Opportunity: Confirm submissions reach inbox; add immediate text/email autoresponse.
+
+3. Pillar: Intake | Quick Win
+   Title: Connect CallRail to Clio Grow + Add Organic Tracking Number
+   Why: Calls not auto-creating leads in Clio; manual follow-up inconsistent.
+   Competitor: N/A
+   Opportunity: API integration ensures no inbound lead is ever lost.
+
+4. Pillar: Intake | Quick Win
+   Title: Activate 24/7 After-Hours Answering + Update Hours to 24/7
+   Why: After-hours calls missed; GBP hours signal suppresses local ranking overnight.
+   Competitor: FrizWoods LLC — courts the exact same clients after-hours.
+   Opportunity: Smith.ai + 24/7 hours unification could recover 2–3 cases/month immediately.
+
+5. Pillar: Lead Gen | Quick Win
+   Title: Fix Broken Facebook Link and Correct Directory NAP Inconsistencies
+   Why: NAP inconsistencies (Lawyers.com Silver Spring, FindLaw DC, Avvo Springdale)
+        suppress Google local rankings.
+   Competitor: N/A
+   Opportunity: Cleanup reinforces local SEO trust signals Google relies on for pack rankings.
+
+6. Pillar: Profit | Quick Win
+   Title: Add Client Financing Options to Website and Intake Script
+   Why: ~25% of qualified leads (7–8/month) leave because they can't afford fees.
+   Competitor: N/A
+   Opportunity: LawPay/Synchrony could convert 2–3 of those monthly = +$10K–$15K/mo.
+
+7. Pillar: Lead Gen | Long-Term Play
+   Title: Launch Targeted Google Ads for Serious Felony Searches
+   Why: Firm not appearing for murder/homicide PPC searches; competitors capturing
+        the most urgent, highest-value clicks.
+   Competitor: Alpert Schreyer — running PPC for criminal defense/DUI in PG County.
+   Opportunity: Felony-focused PPC campaign with negative keywords aligns with Vernon's
+   stated serious felony positioning goal.
+
+8. Pillar: Lead Gen | Long-Term Play
+   Title: Accelerate Google Review Velocity
+   Why: 69 reviews vs. FrizWoods 166, Alpert Schreyer 294, Jezic & Moyse 845.
+        Review gap is the #1 visible credibility gap in local pack results.
+   Competitor: Jezic & Moyse — 845 aggregated reviews overwhelming the local pack.
+   Opportunity: Systematic post-verdict review request program could add 10–15/month,
+   closing gap with FrizWoods within 6 months.
+
+FIRST 90 DAYS
+--------------------------------------------------------------
+1. Immediate site stabilization: restore mobile nav, phone number, CTAs; verify contact
+   form; fix broken Facebook footer link (within first 30 days, before full rebuild).
+2. Activate 24/7 overflow answering (Smith.ai or Lex Reception) and connect CallRail to
+   Clio Grow API — intake automation live within 45 days.
+3. SMB Team takes over hosting, hardens WordPress installation, and begins full website
+   rebuild targeting serious felony case types with Core Web Vitals and legal schema.
+4. Launch targeted Google Ads for murder, gun charges, armed robbery, and serious felony
+   searches with comprehensive negative keyword list excluding DUI, misdemeanor, traffic.
+5. Kickoff with Elite Coach Plus group coaching — strategy session to align the growth
+   plan with Vernon's serious felony reputation-building goals.
+
+==============================================================
+END OF WORKINGS
+==============================================================
