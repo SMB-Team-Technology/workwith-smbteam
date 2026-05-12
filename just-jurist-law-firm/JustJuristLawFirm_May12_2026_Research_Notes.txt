@@ -31,9 +31,9 @@ Office address on site: 7550 NW 25th Street, Suite 253, Miami, FL 33122
 Social media present: LinkedIn (linkedin.com/company/just-jurist-law-firm-pllc) and Instagram (@justjuristlawfirm) — no Facebook confirmed on site
 Main menu items: What's Included, About, Meet The Team, Book a Consult, Contact, Client Login, Make Payment
 
-PageSpeed mobile score: NOT RETRIEVABLE — Google PageSpeed API returned HTTP 429 (rate limited) during both research attempts; score could not be verified
+PageSpeed mobile score: NOT RETRIEVABLE — Google PageSpeed API returned HTTP 429 (rate limited) across all attempts on May 12, 2026; score could not be verified
 PageSpeed desktop score: NOT RETRIEVABLE — same reason; score could not be verified
-Note: Site runs on Clio Grow (hosted platform); PageSpeed scores for Clio-hosted sites vary widely; actual scores must be run at pagespeed.web.dev before the audit report is written
+Note: Site runs on Clio Grow (hosted platform); PageSpeed scores for Clio-hosted sites vary widely. Actual scores MUST be run manually at pagespeed.web.dev before /audit-write is executed. This is the only outstanding data gap before the audit write pass.
 
 ================================================================
 STEP 2 — GOOGLE BUSINESS PROFILE
@@ -110,15 +110,16 @@ HOA / Condo Association Law — Miami:
 
 1. Cueto Law Group (cuetolawgroup.com)
    - Location: 4000 Ponce de Leon Blvd, Coral Gables, FL 33146
-   - Google reviews: 169 (verified via Birdeye — Google source)
-   - Rating: 4.5 stars
-   - Notes: Broad business/international firm with HOA/condo as a featured practice; represents both associations and individual owners; 26 years in business; bilingual; strong SEO content investment
+   - Google reviews: 121 (verified live May 12, 2026 via Google search result aggregate)
+   - Rating: 4.9 stars
+   - NOTE ON DISCREPANCY: Earlier research pass cited 169 reviews / 4.5 stars via Birdeye aggregate (may include multi-platform roll-up); live Google-specific data shows 121 / 4.9. Use 121/4.9 as the verified Google figure.
+   - Notes: Broad business/international firm with HOA/condo as a featured practice; represents both associations and individual owners; 26 years in business; bilingual; strong SEO content investment; Yelp listing updated April 2026
 
 2. Association Law Group — ALG (algpl.com)
    - Location: 1200 Brickell Ave, Miami, FL 33131
-   - Google reviews: 31 (verified via Birdeye — Google source)
-   - Rating: 2.9 stars
-   - Notes: Dominant market share — 250+ HOA/condo association clients, $250M+ collected, 20+ attorneys; managing partner Ben Solomon; HOWEVER their 2.9-star rating is a direct vulnerability and positioning opportunity for Just Jurist
+   - Google reviews: 31 (confirmed live May 12, 2026 — Birdeye Google source + Google search aggregate; consistent across both checks)
+   - Rating: 2.9 stars (confirmed)
+   - Notes: Dominant market share — 250+ HOA/condo association clients (added 100+ new associations in March 2026), $250M+ collected, 20+ attorneys; managing partner Ben Solomon; firm grew significantly in March 2026 with 9 new attorneys and 12 staff; HOWEVER their 2.9-star rating is a direct vulnerability — reviewers cite impossible to reach, phones not answered; direct positioning opportunity for Just Jurist as the responsive, high-trust boutique alternative; Yelp listing updated March 2026
 
 3. Albert E. Acuña, P.A. (albertacunalaw.com)
    - Location: 782 NW 42nd Avenue, Suite 343, Miami, FL 33126
@@ -265,7 +266,7 @@ Rationale:
 
 Top 3 Named Local Competitor Threats:
 
-1. Cueto Law Group — 169 Google reviews, 4.5 stars, Coral Gables; HOA/condo law prominently featured; strong SEO content investment; represents both associations and individual owners; well-funded, multi-practice firm pulling in HOA clients from the same Miami market
+1. Cueto Law Group — 121 Google reviews, 4.9 stars, Coral Gables; HOA/condo law prominently featured; strong SEO content investment; represents both associations and individual owners; well-funded, multi-practice firm pulling in HOA clients from the same Miami market
 
 2. Association Law Group (ALG) — Miami's dominant HOA/condo law firm (250+ communities, $250M+ collected, 20+ attorneys); however, only 31 Google reviews at a damaging 2.9 stars — their poor reputation is a direct positioning opportunity for Just Jurist as the high-trust boutique alternative
 
@@ -344,8 +345,18 @@ PASS 2 — VERIFICATION CHECKLIST
 [x] Close rate: Not stated — defaulted to 15%
 [x] Average case value: Not stated — noted as HOA retainer model; flag for next call
 
+LIVE VERIFICATION PASS — May 12, 2026 (updated):
+  - ALG: 31 reviews / 2.9 stars — CONFIRMED (Birdeye + Google aggregate, consistent)
+  - Cueto Law Group: UPDATED to 121 reviews / 4.9 stars (Google-specific live data); prior Birdeye aggregate cited 169/4.5 (multi-platform rollup); Google figure used going forward
+  - Albert E. Acuña, P.A.: Google review count unconfirmed from direct scrape; Martindale AV Preeminent confirmed; Super Lawyers Rising Star confirmed; HOA/condo collections specialist confirmed
+  - Just Jurist GBP: No reviews surfaced across multiple search approaches — GBP effectively unclaimed or invisible (confirmed)
+  - Association Law Group March 2026 expansion: Added 9 attorneys, 12 staff, 100+ new associations (confirmed via search)
+  - ALG Yelp: Listed, updated March 2026
+  - Cueto Law Group Yelp: Listed, updated April 2026
+
 ACTION REQUIRED BEFORE AUDIT WRITE:
   - Run PageSpeed at pagespeed.web.dev for https://justjuristlawfirm.com/ (mobile + desktop) and add actual scores to this file before running /audit-write
+  - All other data points verified and ready
 
 ================================================================
 SOURCES
