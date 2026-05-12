@@ -90,9 +90,9 @@ def quote_block(text):
     return t
 
 
-# ══════════════════════════════════════════════════════════
+# ════════════════════════════════════════════════════════
 # PAGE 1
-# ══════════════════════════════════════════════════════════
+# ════════════════════════════════════════════════════════
 story = []
 
 story.append(Paragraph("Beacon Legacy Group", S["title"]))
@@ -127,20 +127,20 @@ story.append(Spacer(1, 3))
 story.append(Paragraph("Dominant Buying Motive: FREEDOM FROM THE SEMINAR CIRCUIT", S["section"]))
 story.append(Paragraph("Tyler wants a firm that generates consistent inbound leads automatically — so he can step off the stage and lead the business instead of running it.", S["subsection"]))
 
-story.append(quote_block("Energy intensive — that's the seminar model right now."))
+story.append(quote_block("Energy intensive — that’s the seminar model right now."))
 story.append(Spacer(1, 1))
-story.append(quote_block("Goal to reach $2–3M by diversifying channels. Can't keep doing it this way."))
+story.append(quote_block("Goal to reach $2–3M by diversifying channels. Can’t keep doing it this way."))
 story.append(Spacer(1, 2))
 
 story.append(Paragraph("<b>What he wants:</b>", S["subsection"]))
 story.append(bd("<b>Digital leads that replace the stage.</b> Every seminar costs a weekend — he wants Google to do that work."))
 story.append(bd("<b>All three offices generating inbound.</b> Crossville and Mt. Juliet are digitally dark; he wants them as productive as Cookeville."))
-story.append(bd("<b>Revenue that doesn't swing month to month.</b> Seminar swings $30k–$60k; he wants predictability."))
+story.append(bd("<b>Revenue that doesn’t swing month to month.</b> Seminar swings $30k–$60k; he wants predictability."))
 
 story.append(Paragraph("<b>What is stopping him:</b>", S["subsection"]))
 story.append(b("<b>No multi-location digital infrastructure.</b> Crossville and Mt. Juliet have zero LSA, zero local SEO, near-zero reviews."))
 story.append(b("<b>Seminar declining 12 consecutive months.</b> Primary revenue engine losing pressure with no replacement yet."))
-story.append(b("<b>$18k+/mo in fragmented vendor spend.</b> No per-channel ROI — can't know what's working."))
+story.append(b("<b>$18k+/mo in fragmented vendor spend.</b> No per-channel ROI — can’t know what’s working."))
 story.append(b("<b>Both owners on the seminar circuit.</b> No one else can run it, so neither attorney can step back."))
 
 story.append(thin_rule())
@@ -150,7 +150,7 @@ story.append(Paragraph("<b>What it does for him:</b>", S["subsection"]))
 story.append(bd("Replaces seminar-dependent revenue with three digital pipelines generating estate planning leads across all three markets around the clock."))
 story.append(bd("Activates the probate/conservatorship PPC whitespace Tyler confirmed is uncontested — capturing high-intent Middle Tennessee searches before a competitor claims it."))
 
-story.append(Paragraph("<b>Full Service Marketing Growth  |  $4,397/mo bundled</b>", S["subsection"]))
+story.append(Paragraph("<b>Full Service Marketing Growth  |  $7,397/mo</b>", S["subsection"]))
 story.append(b("Revenue $1.4M — Growth tier is correct for $1M–$3M; Essentials is ineligible above $1M."))
 story.append(b("Three locations with no location-specific SEO require full-service (not ads-only) to build multi-location web and local search infrastructure."))
 story.append(b("Meta Pixel already installed — retargeting audiences activate immediately within the package."))
@@ -162,15 +162,14 @@ story.append(Paragraph("<b>What it does for him:</b>", S["subsection"]))
 story.append(bd("Connects Tyler with $1M+ firm owners who have already solved the seminar-to-digital transition — the shortcut, not the learning curve."))
 story.append(bd("Gives the non-attorney SMB liaison a structured accountability framework so Tyler gains visibility without personal micromanagement."))
 
-story.append(Paragraph("<b>Master's Circle  |  $2,600/mo bundled</b>", S["subsection"]))
-story.append(b("Eligibility met: $1.4M revenue, 9 staff, dedicated non-attorney roles in place."))
-story.append(b("Bundled price saves $1,397/mo vs. stand-alone ($3,997) — strongest savings conversation in the proposal."))
+story.append(Paragraph("<b>Master’s Circle  |  $4,600/mo</b>", S["subsection"]))
+story.append(b("Eligibility met: $1.4M revenue, 9 staff, dedicated non-attorney roles in place — Master’s Circle is the correct coaching tier."))
 story.append(b("Includes weekly group coaching, masterminds, quarterly virtual workshops, and annual in-person workshop."))
 
 
-# ══════════════════════════════════════════════════════════
+# ════════════════════════════════════════════════════════
 # PAGE 2
-# ══════════════════════════════════════════════════════════
+# ════════════════════════════════════════════════════════
 story.append(PageBreak())
 
 story.append(Paragraph("Beacon Legacy Group — Sales Companion (continued)", S["title"]))
@@ -183,13 +182,13 @@ story.append(bd("At $5k/mo recommended spend, estimated return is 3–5 cases/mo
 
 story.append(Paragraph("<b>Recommended Ad Spend Range:</b>", S["subsection"]))
 story.append(b("<b>Conservative:</b> $3,500/mo — Estate Planning minimums: PPC $1,500 + LSA $1,000 + Meta Retargeting $1,000."))
-story.append(b("<b>Aggressive:</b> $8,000/mo — $2.5M goal x 20% ÷ 12 = $41,667. Tier 5 (0.85x), capped at Growth tier $10k; $8k used given Tyler's stated preference for measured scaling."))
+story.append(b("<b>Aggressive:</b> $8,000/mo — $2.5M goal x 20% ÷ 12 = $41,667. Tier 5 (0.85x), capped at Growth tier $10k; $8k used given Tyler’s stated preference for measured scaling."))
 
 story.append(Paragraph("<b>Estimated ROI:</b>", S["subsection"]))
 story.append(b("<b>Conservative ($3,500):</b> ~23 leads x 15% = ~3 cases x $9,000 = $27,000/mo — 7.7x return."))
 story.append(b("<b>Aggressive ($8,000):</b> ~53 leads x 15% = ~8 cases x $9,000 = $72,000/mo — 9x return."))
 story.append(Paragraph("<i>All figures are estimates based on blended estate planning CPL benchmarks. Not guaranteed.</i>", S["disclaimer"]))
-story.append(b("Total at $5k/mo: $5k ad + $4,397 mgmt + $2,600 coaching = $11,997/mo = 10.3% of revenue. Well under 35% cap."))
+story.append(b("Total at $5k/mo: $5k ad + $7,397 mgmt + $4,600 coaching = $16,997/mo = 14.6% of revenue. Well under 35% cap."))
 
 story.append(thin_rule())
 
@@ -202,7 +201,7 @@ story.append(Paragraph('"The seminar still generates $30k/month — why change i
 story.append(Paragraph("The seminar has declined 12 consecutive months at a 2.2x ROAS. The question is whether the digital replacement is built before the seminar stalls, not after. Waiting makes the transition more expensive.", S["objection_a"]))
 
 story.append(Paragraph('"Vanderpool Law already has 138 reviews in Mt. Juliet — are we behind?"', S["objection_q"]))
-story.append(Paragraph("Vanderpool operates from Franklin with a landing page; BLG has a physical office. Physical presence + SMB digital execution beats a remote competitor's page. BLG can close the review gap in 6–9 months with a review velocity program.", S["objection_a"]))
+story.append(Paragraph("Vanderpool operates from Franklin with a landing page; BLG has a physical office. Physical presence + SMB digital execution beats a remote competitor’s page. BLG can close the review gap in 6–9 months with a review velocity program.", S["objection_a"]))
 
 story.append(thin_rule())
 
@@ -210,13 +209,13 @@ story.append(Paragraph("Investment At A Glance", S["section"]))
 
 price_data = [
     [Paragraph("<b>Full Service Marketing Growth</b>", S["price_main"]),
-     Paragraph("$4,397/mo", S["price_main"])],
+     Paragraph("$7,397/mo", S["price_main"])],
     [Paragraph("Multi-location SEO, LSA mgmt, PPC, Meta retargeting, website rebuild.", S["price_detail"]),
-     Paragraph("<strike>$4,997</strike> stand alone", S["price_detail"])],
-    [Paragraph("<b>Master's Circle</b>", S["price_main"]),
-     Paragraph("$2,600/mo", S["price_main"])],
+     Paragraph("", S["price_detail"])],
+    [Paragraph("<b>Master’s Circle</b>", S["price_main"]),
+     Paragraph("$4,600/mo", S["price_main"])],
     [Paragraph("Weekly group coaching, masterminds, quarterly workshops, annual in-person.", S["price_detail"]),
-     Paragraph("<strike>$3,997</strike> stand alone", S["price_detail"])],
+     Paragraph("", S["price_detail"])],
     [Paragraph("<b>Recommended Ad Spend</b>", S["price_main"]),
      Paragraph("$3,500–$8,000/mo", S["price_main"])],
     [Paragraph("Goes to Google, LSA, and Meta — not to SMB Team.", S["price_detail"]),
@@ -235,7 +234,7 @@ pt.setStyle(TableStyle([
 ]))
 story.append(pt)
 story.append(Paragraph(
-    "Total: $6,997/mo + $3,500–$8,000 ad spend  |  Save $1,997/mo by bundling  |  10.3%–12.8% of revenue (under 35% cap)",
+    "Total: $11,997/mo + $3,500–$8,000 ad spend  |  14.6%–17.1% of revenue (well under 35% cap)",
     S["savings"]))
 
 doc.build(story, onFirstPage=add_page_elements, onLaterPages=add_page_elements)
