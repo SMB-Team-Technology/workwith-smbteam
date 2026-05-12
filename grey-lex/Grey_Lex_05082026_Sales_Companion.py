@@ -205,13 +205,13 @@ story.append(thin_rule())
 story.append(Paragraph("Why This Coaching Package", S["section"]))
 
 story.append(Paragraph("<b>What it does for him:</b>", S["subsection"]))
-story.append(bd("Gives Clay the management frameworks to step into the manager role — not just describe it."))
+story.append(bd("Gives Clay management frameworks and direct-access coaching to build his operating system faster — not just describe it."))
 story.append(bd("Hiring playbooks for a Ch. 13 attorney and VA — so adding people doesn't require designing roles from scratch."))
 
-story.append(Paragraph("<b>Elite Coach  |  $1,600/mo bundled</b>", S["subsection"]))
+story.append(Paragraph("<b>Elite Coach Plus  |  $2,200/mo bundled</b>", S["subsection"]))
 story.append(b("Clay doing own bookkeeping in QuickBooks — no dashboards, no KPIs, no cost-per-lead visibility."))
 story.append(b("No management infrastructure — no org chart, no accountability cadence."))
-story.append(b("MBA mindset is in place; operational implementation and peer accountability are not."))
+story.append(b("MBA mindset is in place; operational implementation and direct coaching support are not."))
 
 
 # ══════════════════════════════════════════════════════════
@@ -255,10 +255,10 @@ price_data = [
      Paragraph("$4,847/mo", S["price_main"])],
     [Paragraph("Always-on PPC, LSA, local SEO, website rebuild, Meta retargeting.", S["price_detail"]),
      Paragraph("$4,697 stand alone", S["price_detail"])],
-    [Paragraph("<b>Elite Coach</b>", S["price_main"]),
-     Paragraph("$1,600/mo", S["price_main"])],
-    [Paragraph("Weekly group coaching, practice masterminds, hiring frameworks, quarterly workshops.", S["price_detail"]),
-     Paragraph("$1,497 stand alone", S["price_detail"])],
+    [Paragraph("<b>Elite Coach Plus</b>", S["price_main"]),
+     Paragraph("$2,200/mo", S["price_main"])],
+    [Paragraph("Weekly group coaching, direct-access coaching, hiring frameworks, masterminds, quarterly workshops.", S["price_detail"]),
+     Paragraph("<strike>$2,497</strike> stand alone", S["price_detail"])],
     [Paragraph("<b>Recommended Ad Spend</b>", S["price_main"]),
      Paragraph("$3,000–$5,000/mo", S["price_main"])],
     [Paragraph("Goes to Google, LSA, and Meta — not to SMB Team.", S["price_detail"]),
@@ -277,7 +277,7 @@ pt.setStyle(TableStyle([
 ]))
 story.append(pt)
 story.append(Paragraph(
-    "Total SMB fees: $6,447/mo + $3,000–$5,000 ad spend  |  28.3%–34.3% of projected $400k revenue (under 35% cap)",
+    "Total SMB fees: $7,047/mo + $3,000–$5,000 ad spend  |  Save $297/mo by bundling  |  30.2%–36.1% of projected $400k revenue",
     S["savings"]))
 
 # ── Build ──
