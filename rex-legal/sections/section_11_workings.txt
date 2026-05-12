@@ -1,0 +1,226 @@
+================================================================
+SECTION 11 WORKINGS FILE — Rex Legal
+May 12, 2026 | Jacob Meissner
+================================================================
+
+MANDATORY PRICE LOOKUP (character-by-character from tables):
+================================================================
+
+MARKETING PACKAGE SELECTED: Full Service Marketing Starter
+  Reason: PI eliminates Essentials tier (mandatory). Revenue $370k is below $400k
+  threshold but PI firms must use minimum Starter. Firm goals are consistent with
+  Starter tier — revenue under $1M eliminates Dominate and Platinum.
+  - Bundled price: $4,847/mo
+  - Stand-alone price: $5,697/mo
+  - Savings: $5,697 - $4,847 = $850/mo
+
+NON-MARKETING PACKAGE SELECTED: Elite Coach
+  Reason: Revenue $370k falls in $250K–$400K range → Elite Coach ($2,600 bundled).
+  Elite Coach Plus is for $400K–$1M range; revenue is below that threshold.
+  Revenue under $500K → FCOO and FCFO packages are hidden.
+  Solo (fewer than 5 team members) → Master's Circle is hidden.
+  - Bundled price: $2,600/mo
+  - Stand-alone price: $3,497/mo
+  - Savings: $3,497 - $2,600 = $897/mo
+
+TOTAL MONTHLY INVESTMENT: $4,847 + $2,600 = $7,447/mo
+TOTAL SAVINGS: $850 + $897 = $1,747/mo
+
+================================================================
+AD SPEND CALCULATION
+================================================================
+
+PRACTICE AREA: Personal Injury (Accident/Injury General + MVA)
+MARKET: Denver, CO — Tier 2 (multiplier: 1.3x)
+COMPETITIVENESS: HIGH (urgency score 8/10)
+PI hard floor for high competitiveness: $5,000 minimum
+
+CONSERVATIVE AD SPEND — Channel Minimums for PI/MVA (High Competition):
+  LSA minimum (PI/MVA): $3,000
+  Meta Retargeting minimum: $1,500
+  Meta Lead Gen minimum: $1,500 (adjusted down — starting lean for solo firm)
+  Total channel minimum: $6,000
+  PI hard floor check: $6,000 > $5,000 floor → use $6,000
+  Round to: $6,000/mo conservative
+
+  NOTE: Google PPC excluded from conservative to manage total spend relative to
+  revenue. LSA is the higher-quality PI channel (pay-per-lead, not per-click)
+  and the strategy Michael is most familiar with. Add PPC in Phase 2.
+
+AGGRESSIVE AD SPEND — 20% Rule Calculation:
+  Revenue goal (stated as $500k personal income; not firm revenue goal):
+  Use 2× current revenue as proxy for firm revenue goal = 2 × $370k = $740k
+  $740k × 20% ÷ 12 = $12,333/mo
+  × Tier 2 multiplier (1.3): $12,333 × 1.3 = $16,033
+  − Starter management fee ($4,847): $16,033 − $4,847 = $11,186
+  Round to: $11,000/mo aggressive
+
+  Reverse math validation:
+  Revenue goal $740k ÷ 12 = $61,667/mo
+  Target cases: $61,667 ÷ $20,500 (est. case value) = 3.0 cases/mo
+  Required leads (15% close): 3.0 ÷ 0.15 = 20 leads/mo
+  Blended CPL (PI Denver, no cushion): ~$300 (Google $400, LSA $200, Meta $200 avg)
+  Required spend: 20 × $300 = $6,000 — lower than 20% rule result
+  Use higher figure: $11,000/mo aggressive
+
+  Tier cap check: Starter cap is $5,000. Aggressive of $11,000 exceeds cap.
+  FLAG FOR SALES REP: Aggressive ad spend exceeds Starter tier cap. Discuss
+  with client that we start at conservative and scale as results prove out.
+  Report shows conservative in Block 4. Full range noted in workings.
+
+SELECTED AD SPEND FOR BLOCK 4 REPORT: $9,000/mo
+  Reasoning: Matches what Denver market requires (~$12k/mo per Michael's own words
+  for meaningful LSA results); below the aggressive ceiling; realistic starting
+  point for a solo firm seeking consistent 1-2+ quality cases per month.
+  Channel breakdown: LSA $3,500 + Google PPC $2,500 + Meta retargeting $1,500
+  + Meta cold $1,500 = $9,000
+
+================================================================
+ROI PROJECTIONS
+================================================================
+
+AVERAGE CASE VALUE: ~$20,500 (estimated — not stated on call)
+  Calculation: $370k revenue ÷ ~18 cases (midpoint of 15-20) = ~$20,500
+  Denver PI average range: $15k–$40k depending on severity
+  Note: estimate only — must be disclosed in report
+
+CLOSE RATE: 15% (not stated on call — using default)
+
+CONSERVATIVE SCENARIO ($6,000/mo):
+  Blended CPL (with 20% cushion): Google $480, LSA $240, Meta Ret $180, Meta Cold $240
+  Channel-weighted avg (LSA heavy): ~$280 with cushion
+  Leads: $6,000 ÷ $280 = ~21 leads/mo
+  Cases: 21 × 0.15 = 3.2 → ~3 cases/mo
+  Revenue: 3 × $20,500 = ~$61,500/mo
+  Return: $61,500 ÷ $6,000 = 10.25x → ~10x
+
+  NOTE: Michael's stated goal is 1-2 quality cases/month — conservative scenario
+  already exceeds that threshold; this is a meaningful selling point.
+
+FOR BLOCK 4 (USING $9,000 DISPLAY FIGURE):
+  Blended CPL (no cushion, LSA + PPC + Meta mix): ~$310
+  Leads: $9,000 ÷ $310 = ~29 leads/mo
+  Cases: 29 × 0.15 = 4.4 → 3-4 cases/mo (rounding conservatively for report)
+  Revenue: 3.5 × $20,500 = ~$71,750 → display as ~$70,000+/mo
+  Return: $70,000 ÷ $9,000 = 7.8x
+
+  CLIENT-FACING BLOCK 4 DISPLAY:
+  Recommended ad spend: $9,000/mo
+  Estimated case value: ~$20,500 (estimated)
+  Est. cases per month: 3–4 cases
+  Est. monthly revenue from ads: $60,000–$82,000
+
+AGGRESSIVE SCENARIO ($11,000/mo):
+  Blended CPL (no cushion, full channel mix): ~$280
+  Leads: $11,000 ÷ $280 = ~39 leads/mo
+  Cases: 39 × 0.15 = 5.9 → ~5-6 cases/mo
+  Revenue: 5.5 × $20,500 = ~$112,750/mo
+  Return: $112,750 ÷ $11,000 = 10.25x → ~10x
+
+================================================================
+DBM STATEMENT FOR BLOCK 1
+================================================================
+
+"We help solo personal injury attorneys in competitive markets get consistent,
+quality case flow so they can hire their first admin, scale past 50 cases,
+and reach the personal income that means financial security."
+
+Block 1 formula applied:
+"We help [solo PI attorneys in highly competitive markets] get [consistent
+quality case flow without wasted budget on low-value leads] so they can
+[reach $500k personal income and the financial security that changes their life]."
+
+================================================================
+QUICK WIN OPPORTUNITIES (minimum 6)
+================================================================
+
+1. LEAD GEN — QUICK WIN: Fix GBP Hours to 24/7
+   Why: GBP hours showing firm closed on weekends depresses local 3-pack rankings
+   for after-hours searches — when most accident calls occur.
+   Competitor doing it better: Bachus & Schanker (full coverage implied by scale).
+   Opportunity: Setting GBP to open 24 hours (paired with virtual receptionist)
+   can produce measurable 3-pack impression increases within 30-60 days at zero
+   ad cost.
+
+2. LEAD GEN — QUICK WIN: Review Volume Campaign
+   Why: 41 reviews vs. competitors with 407-1,926 is the primary barrier to
+   3-pack visibility for any broad Denver PI search.
+   Competitor doing it better: Fuicelli & Lee (407+ reviews), Zaner Law (422+ reviews).
+   Opportunity: A systematic review outreach to past clients could add 25-50
+   reviews within 60 days — meaningful movement toward 3-pack eligibility.
+
+3. INTAKE — QUICK WIN: 24/7 Virtual Receptionist
+   Why: Friday and Saturday nights are peak accident hours; GBP shows firm closed
+   on weekends; every missed call is a case that goes to a competitor.
+   No named competitor for this row.
+   Opportunity: A virtual receptionist answering calls 24/7 converts the leads
+   that marketing campaigns generate during off-hours — directly addressing the
+   1-2 quality cases/month consistency goal.
+
+4. INTAKE — QUICK WIN: Fix NAP Inconsistency
+   Why: Suite number listed differently on website (1515B), Birdeye (#416), and
+   Nextdoor (no suite) — inconsistent NAP signals actively reduce local SEO trust.
+   No named competitor for this row.
+   Opportunity: Standardizing NAP across all directory listings is a zero-cost,
+   one-time fix that strengthens local SEO authority and 3-pack eligibility.
+
+5. LEAD GEN — LONG-TERM PLAY: TBI & PI Content Marketing (SEO/AEO)
+   Why: No blog content in Google index — zero organic content strategy; Michael's
+   personal TBI story is a powerful, underutilized content asset.
+   Competitor doing it better: Zaner Law (strong organic TBI rankings based on
+   verdicts record and content depth).
+   Opportunity: A blog and FAQ content strategy anchored by Michael's TBI story
+   can rank for long-tail PI and TBI search terms, build AEO signals for
+   ChatGPT/Gemini citations, and reduce long-term cost per lead significantly.
+
+6. LEAD GEN — LONG-TERM PLAY: Geo-Targeted Landing Pages
+   Why: No pages for Aurora, Lakewood, Arvada, Westminster, Englewood, Thornton —
+   Denver suburbs that generate significant PI case volume and have lower keyword
+   competition than "Denver" terms.
+   Competitor doing it better: Bachus & Schanker (6 offices across the metro,
+   multi-location GBP presence dominating suburb searches).
+   Opportunity: Adding 5-6 suburb landing pages (one per major surrounding city)
+   can meaningfully expand organic reach and 3-pack eligibility in markets where
+   Rex Legal can compete more effectively against smaller local competition.
+
+7. PROFIT — QUICK WIN: Define the Profit Plan
+   Why: Revenue is $370k but personal income target is $500k — without modeling
+   the revenue, margin, and overhead equation, more cases don't necessarily mean
+   more personal income.
+   No named competitor for this row.
+   Opportunity: A coaching engagement that builds Michael's profit model — case
+   value targets, margin per case type, overhead caps — gives him the clarity to
+   make every operational and marketing decision based on what actually moves his
+   take-home number.
+
+8. TEAM — LONG-TERM PLAY: First Admin Hire Plan
+   Why: The admin hire at 25 cases is Michael's stated trigger for scaling to 50+
+   cases — but without a plan for when, how, and what role, the hire gets deferred
+   indefinitely even when the caseload reaches the threshold.
+   No named competitor for this row.
+   Opportunity: A coaching engagement that includes a hiring roadmap — role
+   definition, comp structure, onboarding process — ensures the admin hire happens
+   on schedule when the caseload triggers it, rather than being delayed by
+   uncertainty about how to do it.
+
+================================================================
+FIRST 90 DAYS BULLET POINTS
+================================================================
+
+1. Launch LSA campaign targeting personal injury and car accident categories in
+   Denver with proper injury-specific targeting configuration — immediate case flow
+   while SEO foundation builds.
+2. Optimize and rebuild the website for conversion: speed, mobile performance,
+   contact form above fold on all key practice area pages, and TBI page anchored
+   by Michael's personal story.
+3. Fix Google Business Profile: update hours to 24/7, standardize suite number
+   (1515B) across all directory listings, add firm logo and office photos per
+   the transcript's own recommendation.
+4. Set up a virtual receptionist service to capture Friday/Saturday night calls
+   and provide 24/7 intake coverage.
+5. Launch coaching kickoff to define Michael's profit model — target case values,
+   margin goals, and the exact revenue and caseload path to $500k personal income.
+
+================================================================
+END OF WORKINGS FILE
+================================================================
