@@ -256,7 +256,7 @@ price_data = [
     [Paragraph("Always-on PPC, LSA, local SEO, website rebuild, Meta retargeting.", S["price_detail"]),
      Paragraph("$4,697 stand alone", S["price_detail"])],
     [Paragraph("<b>Elite Coach Plus</b>", S["price_main"]),
-     Paragraph("$2,200/mo", S["price_main"])],
+     Paragraph("$3,200/mo", S["price_main"])],
     [Paragraph("Weekly group coaching, direct-access coaching, hiring frameworks, masterminds, quarterly workshops.", S["price_detail"]),
      Paragraph("<strike>$3,497</strike> stand alone", S["price_detail"])],
     [Paragraph("<b>Recommended Ad Spend</b>", S["price_main"]),
@@ -277,7 +277,7 @@ pt.setStyle(TableStyle([
 ]))
 story.append(pt)
 story.append(Paragraph(
-    "Total SMB fees: $7,047/mo + $3,000–$5,000 ad spend  |  Save $1,297/mo by bundling  |  30.2%–36.1% of projected $400k revenue",
+    "Total SMB fees: $8,047/mo + $3,000–$5,000 ad spend  |  Save $297/mo by bundling  |  33.1%–39.1% of projected $400k revenue",
     S["savings"]))
 
 # ── Build ──
