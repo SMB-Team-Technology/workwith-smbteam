@@ -152,7 +152,7 @@ story.append(Paragraph("<b>What it does for him:</b>", S["subsection"]))
 story.append(bd("Restores 3-pack visibility in 19124 and NE Philadelphia — putting the firm back in front of prospects actively searching for a PI attorney in Gary's market."))
 story.append(bd("WordPress rebuild removes the 2-year platform barrier that has blocked every SEO agency from working with the site."))
 
-story.append(Paragraph("<b>Full Service Marketing — Starter  |  $1,847/mo bundled</b>", S["subsection"]))
+story.append(Paragraph("<b>Full Service Marketing — Starter  |  $4,847/mo bundled</b>", S["subsection"]))
 story.append(b("PI in Philadelphia (Tier 1) — minimum Starter tier; Essentials is ineligible for personal injury."))
 story.append(b("Website rebuild required: Foster Web blocks all SEO agency access — WordPress is the prerequisite for every other growth action."))
 story.append(b("Revenue $700K–$800K maps to Starter band ($400K–$1M); Growth tier available at $1M+."))
@@ -171,7 +171,7 @@ story.append(Paragraph("<b>What it does for him:</b>", S["subsection"]))
 story.append(bd("Builds the transition playbook that gives Gary confidence to step back and gives Brian a documented path to the lead attorney role."))
 story.append(bd("Provides weekly accountability during the 12 months that determine whether November 2026 becomes a real handoff or a moving target."))
 
-story.append(Paragraph("<b>Elite Coach Plus  |  $2,200/mo bundled</b>", S["subsection"]))
+story.append(Paragraph("<b>Elite Coach Plus  |  $3,200/mo bundled</b>", S["subsection"]))
 story.append(b("Revenue $700K–$800K maps to Elite Coach Plus ($400K–$1M); Master's Circle requires $1M+."))
 story.append(b("High-stakes transition with defined November deadline — weekly coaching cadence provides the structure the handoff requires."))
 story.append(b("Includes: weekly group coaching, PI masterminds, quarterly workshops (virtual), one annual in-person workshop."))
@@ -184,9 +184,9 @@ story.append(bd("Generates qualified PI leads in NE Philadelphia during the 6-mo
 
 story.append(Paragraph("<b>Recommended Ad Spend Range:</b>", S["subsection"]))
 story.append(b("<b>Conservative: $5,000/mo</b> — PI high-competition hard floor; equals the Starter tier cap. ~3 cases x $8K = $24K/mo = 4.8x return on ad spend."))
-story.append(b("<b>Aggressive: $17,000/mo</b> — capped at 33.7% of revenue (under 35% ceiling). ~5 cases x $8K = $40K/mo = 2.4x return on ad spend."))
+story.append(b("<b>Aggressive: $13,000/mo</b> — capped at 33.7% of revenue (under 35% ceiling). ~4 cases x $8K = $32K/mo = 2.5x return on ad spend."))
 story.append(Paragraph("<i>All figures are estimates based on Philadelphia PI market benchmarks. Not guaranteed.</i>", S["disclaimer"]))
-story.append(b("<b>How calculated:</b> Revenue goal ($1.15M) x 20% / 12 x Tier 1 (1.5x) = $28,800; capped at 35% rule: $21,875 total minus $4,047 fee = $17,828 max ad spend."))
+story.append(b("<b>How calculated:</b> Revenue goal ($1.15M) x 20% / 12 x Tier 1 (1.5x) = $28,800; capped at 35% rule: $21,875 total minus $8,047 fee = $13,828 max ad spend."))
 
 story.append(thin_rule())
 
@@ -207,15 +207,15 @@ story.append(Paragraph("Investment At A Glance", S["section"]))
 
 price_data = [
     [Paragraph("<b>Full Service Marketing — Starter</b>", S["price_main"]),
-     Paragraph("$1,847/mo", S["price_main"])],
+     Paragraph("$4,847/mo", S["price_main"])],
     [Paragraph("WordPress rebuild, NE Philadelphia local SEO, GBP optimization, monthly lead tracking.", S["price_detail"]),
-     Paragraph("<strike>$2,697</strike> stand alone", S["price_detail"])],
+     Paragraph("<strike>$5,697</strike> stand alone", S["price_detail"])],
     [Paragraph("<b>Elite Coach Plus</b>", S["price_main"]),
-     Paragraph("$2,200/mo", S["price_main"])],
+     Paragraph("$3,200/mo", S["price_main"])],
     [Paragraph("Weekly coaching, PI masterminds, quarterly workshops (virtual), one annual in-person.", S["price_detail"]),
-     Paragraph("<strike>$2,497</strike> stand alone", S["price_detail"])],
+     Paragraph("<strike>$3,497</strike> stand alone", S["price_detail"])],
     [Paragraph("<b>Recommended Ad Spend</b>", S["price_main"]),
-     Paragraph("$5,000–$17,000/mo", S["price_main"])],
+     Paragraph("$5,000–$13,000/mo", S["price_main"])],
     [Paragraph("Goes to Google, LSA, and Meta — not to SMB Team.", S["price_detail"]),
      Paragraph("", S["price_detail"])],
 ]
@@ -232,7 +232,7 @@ pt.setStyle(TableStyle([
 ]))
 story.append(pt)
 story.append(Paragraph(
-    "Total: $4,047/mo + $5,000–$17,000 ad spend  |  Save $1,147/mo by bundling  |  14.5%–33.7% of revenue (under 35% cap)",
+    "Total: $8,047/mo + $5,000–$13,000 ad spend  |  Save $1,147/mo by bundling  |  20.9%–33.7% of revenue (under 35% cap)",
     S["savings"]))
 
 doc.build(story, onFirstPage=add_page_elements, onLaterPages=add_page_elements)
