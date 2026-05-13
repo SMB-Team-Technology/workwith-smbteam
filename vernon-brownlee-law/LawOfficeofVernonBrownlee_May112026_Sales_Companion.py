@@ -1,4 +1,7 @@
-"""\nSales Companion PDF — The Law Office of Vernon Brownlee\nSales Rep: Dan Bryant | Date: May 11, 2026\n"""
+"""
+Sales Companion PDF — The Law Office of Vernon Brownlee
+Sales Rep: Dan Bryant | Date: May 11, 2026
+"""
 
 from reportlab.lib.pagesizes import letter
 from reportlab.lib.units import inch
@@ -149,7 +152,7 @@ story.append(b("$5,000/mo ad spend meets Criminal Defense + High competitiveness
 
 story.append(Spacer(1, 2))
 
-story.append(Paragraph("<b>Elite Coach Plus  |  $2,200/mo bundled</b>", S["subsection"]))
+story.append(Paragraph("<b>Elite Coach Plus  |  $3,200/mo bundled</b>", S["subsection"]))
 story.append(bd("Intake delegation framework lets Vernon be present in trial — new inquiries handled without him as single point of failure."))
 story.append(bd("Monthly profit plan in Clio Manage turns $600K+ in revenue into planned income, not a year-end surprise."))
 story.append(b("Under $1M revenue; mentions profit concern and no financial visibility — Elite Coach Plus use case; fractional packages not eligible."))
@@ -181,10 +184,10 @@ story.append(Paragraph('"I\'ve already spent money on agencies and it didn\'t wo
 story.append(Paragraph("No attribution framework meant there was no way to know what was working. SMB provides full lead-to-signed-case attribution. The agency gap was accountability, not marketing.", S["objection_a"]))
 
 story.append(Paragraph('"I need 3–5x ROI to justify this."', S["objection_q"]))
-story.append(Paragraph("Conservative scenario: 5 cases x $5K = $25K vs. $7,047 SMB fees = 3.5x on management fees. Aggressive = 5.7x. His own threshold is inside the conservative case.", S["objection_a"]))
+story.append(Paragraph("Conservative scenario: 5 cases x $5K = $25K vs. $8,047 SMB fees = 3.1x on management fees. Aggressive = 5.0x. His own threshold is inside the conservative case.", S["objection_a"]))
 
 story.append(Paragraph('"Can I afford this right now?"', S["objection_q"]))
-story.append(Paragraph("$7,047/mo = 14.1% of ~$50K/mo revenue. The 35% cap allows up to $17,500/mo at this revenue level — he is at less than half the sustainable investment ceiling.", S["objection_a"]))
+story.append(Paragraph("$8,047/mo = 16.1% of ~$50K/mo revenue. The 35% cap allows up to $17,500/mo at this revenue level — he is at less than half the sustainable investment ceiling.", S["objection_a"]))
 
 story.append(Paragraph('"The website and intake need to be fixed first before I invest in ads."', S["objection_q"]))
 story.append(Paragraph("The Starter package fixes both simultaneously — ads launch in week 1 while the rebuild runs in parallel. Waiting means another month of high-intent searchers going to FrizWoods and Jezic &amp; Moyse.", S["objection_a"]))
@@ -199,7 +202,7 @@ price_data = [
     [Paragraph("Website rebuild, Google Ads, LSA, local SEO, Meta retargeting.", S["price_detail"]),
      Paragraph("<strike>$5,697</strike> stand alone", S["price_detail"])],
     [Paragraph("<b>Elite Coach Plus</b>", S["price_main"]),
-     Paragraph("$2,200/mo", S["price_main"])],
+     Paragraph("$3,200/mo", S["price_main"])],
     [Paragraph("Weekly group coaching, intake framework, profit plan, quarterly workshops.", S["price_detail"]),
      Paragraph("<strike>$3,497</strike> stand alone", S["price_detail"])],
     [Paragraph("<b>Recommended Ad Spend</b>", S["price_main"]),
@@ -220,7 +223,7 @@ pt.setStyle(TableStyle([
 ]))
 story.append(pt)
 story.append(Paragraph(
-    "Total: $7,047/mo SMB fees + $5,000/mo ad spend  |  Save $2,147/mo by bundling  |  24.1% of revenue (under 35% cap)",
+    "Total: $8,047/mo SMB fees + $5,000/mo ad spend  |  Save $1,147/mo by bundling  |  16.1% of revenue (under 35% cap)",
     S["savings"]))
 
 doc.build(story, onFirstPage=add_page_elements, onLaterPages=add_page_elements)
