@@ -1,32 +1,10 @@
 name: Audit Research (Pass 1)
 
 on:
-  workflow_dispatch:
-    inputs:
-      firm_name:
-        description: "Firm Name (full legal name)"
-        required: true
-        type: string
-      friendly_name:
-        description: "Friendly Name (lowercase-hyphenated, e.g. angel-law)"
-        required: true
-        type: string
-      url:
-        description: "Firm website URL"
-        required: true
-        type: string
-      sales_rep:
-        description: "Sales Rep (full name)"
-        required: true
-        type: string
-      date:
-        description: "Date (Month DD, YYYY — e.g. April 13, 2026)"
-        required: true
-        type: string
-      transcript:
-        description: "Discovery call transcript (paste full text, or write 'none')"
-        required: true
-        type: string
+  push:
+    branches: [main]
+    paths:
+      - 'triggers/audit-research/*.json'
 
 jobs:
   audit-research:
@@ -41,21 +19,30 @@ jobs:
           ref: main
           fetch-depth: 0
 
+      - name: Identify trigger file
+        id: find_trigger
+        run: |
+          TRIGGER_FILE=$(git diff-tree --no-commit-id -r --name-only ${{ github.sha }} \
+            | grep '^triggers/audit-research/.*\.json$' | head -1)
+          echo "path=$TRIGGER_FILE" >> $GITHUB_OUTPUT
+
       - name: Run audit research via Claude
         uses: anthropics/claude-code-action@v1
         with:
           anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
           prompt: |
-            You are running Pass 1 of the SMB Team Growth Audit pipeline. Follow the instructions in `.claude/commands/audit-research.md` exactly.
+            You are running Pass 1 of the SMB Team Growth Audit pipeline.
 
-            Here are the inputs for this run:
+            Read the trigger file at `${{ steps.find_trigger.outputs.path }}` — it is a JSON
+            file containing all inputs for this run: firm_name, friendly_name, url, sales_rep,
+            date, and transcript. Extract those values first.
 
-            Firm Name: ${{ github.event.inputs.firm_name }}
-            Friendly Name: ${{ github.event.inputs.friendly_name }}
-            URL: ${{ github.event.inputs.url }}
-            Sales Rep: ${{ github.event.inputs.sales_rep }}
-            Date: ${{ github.event.inputs.date }}
-            Transcript:
-            ${{ github.event.inputs.transcript }}
+            If the transcript field contains the word "FAKE" or the URL does not resolve,
+            this is a test run with a fictional firm. In that case, generate realistic but
+            entirely fabricated research data for every step — invent plausible PageSpeed
+            scores, review counts, competitor names, ad observations, etc. Do not skip any
+            section or leave any field blank.
 
-            Start by reading `.claude/commands/audit-research.md` in full, then execute every step in order. Save progress after each major section. When complete, commit the research notes file to main and report the commit hash.
+            Then read `.claude/commands/audit-research.md` in full and execute every step in
+            order using the extracted inputs. Save progress after each major section. When
+            complete, commit the research notes file to main and report the commit hash.
