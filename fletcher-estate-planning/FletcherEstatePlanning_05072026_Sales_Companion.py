@@ -199,7 +199,7 @@ story.append(thin_rule())
 
 # ── Why This Coaching Package ──
 story.append(Paragraph("Why This Coaching Package", S["section"]))
-story.append(Paragraph("<b>Elite Coach Plus  |  $2,200/mo bundled</b>", S["subsection"]))
+story.append(Paragraph("<b>Elite Coach Plus  |  $3,200/mo bundled</b>", S["subsection"]))
 story.append(b("Revenue $400K–$1M with a growing but thin team maps directly to Elite Coach Plus tier."))
 story.append(b("Jim explicitly needs intake systems, no-show reduction, and profit visibility — all core Elite Coach Plus deliverables."))
 story.append(b("No dedicated ops function yet — Elite Coach Plus builds the business operating framework before fractional roles are needed."))
@@ -217,10 +217,10 @@ story.append(thin_rule())
 # ── Why This Ad Spend ──
 story.append(Paragraph("Why This Ad Spend", S["section"]))
 
-story.append(Paragraph("<b>Recommended Range: $2,500 (conservative) – $5,000 (aggressive)/mo</b>", S["subsection"]))
-story.append(b("<b>Conservative ($2,500):</b> Estate Planning minimums — PPC $1,500 + LSA $1,000. Est. 7 cases x $3,000 = $21,000/mo — 8.4x return."))
-story.append(b("<b>Aggressive ($5,000):</b> Starter tier cap. $840K goal x 20% / 12 x 1.5 (Tier 1 Atlanta) = $21,000 — capped at $5,000. Est. 18 cases x $3,000 = $54,000/mo — 10.8x return."))
-story.append(b("Total at aggressive: $7,047 + $5,000 = $12,047/mo = 17.2% of $840K goal revenue. Well under 35% cap."))
+story.append(Paragraph("<b>Recommended Range: $2,400 (conservative) – $4,000 (aggressive)/mo</b>", S["subsection"]))
+story.append(b("<b>Conservative ($2,400):</b> Estate Planning minimums — PPC $1,500 + LSA $900. Est. 7 cases x $3,000 = $21,000/mo — 8.75x return."))
+story.append(b("<b>Aggressive ($4,000):</b> Capped at 35% of current monthly revenue. $8,047 fees + $4,000 ads = $12,047 = 34.4% of $35,000/mo. Est. 12 cases x $3,000 = $36,000/mo — 9.0x return."))
+story.append(b("Total at aggressive: $8,047 + $4,000 = $12,047/mo = 34.4% of current revenue. Under the 35% cap."))
 story.append(Paragraph("<i>All ROI figures are estimates based on industry averages. Not guaranteed.</i>", S["disclaimer"]))
 
 story.append(thin_rule())
@@ -235,7 +235,7 @@ story.append(Paragraph('"I\'m not sure I\'m ready to spend on advertising."', S[
 story.append(Paragraph("At 79% close rate and $3,000/case, one new client from ads covers an entire month of conservative ad spend. Perigon is running active PPC. Slowik entered the market in April 2026. Every month of delay is a month they build paid visibility Jim cannot easily overcome later.", S["objection_a"]))
 
 story.append(Paragraph('"The total investment feels high right now."', S["objection_q"]))
-story.append(Paragraph("At conservative ad spend, total SMB cost is $9,547/mo — 27% of current monthly revenue. The first 3–4 new clients from ads typically offset management fees within 30 days at Jim's case value and close rate.", S["objection_a"]))
+story.append(Paragraph("At conservative ad spend, total SMB cost is $10,447/mo — 29.8% of current monthly revenue. The first 3–4 new clients from ads typically offset management fees within 30 days at Jim's case value and close rate.", S["objection_a"]))
 
 story.append(thin_rule())
 
@@ -248,11 +248,11 @@ price_data = [
     [Paragraph("Google Ads + LSA + Local SEO + Meta Ads — full management included.", S["price_detail"]),
      Paragraph("<strike>$5,697</strike> stand alone", S["price_detail"])],
     [Paragraph("<b>Elite Coach Plus</b>", S["price_main"]),
-     Paragraph("$2,200/mo", S["price_main"])],
-    [Paragraph("Weekly group coaching + masterminds + quarterly workshops + intake systems.", S["price_detail"]),
+     Paragraph("$3,200/mo", S["price_main"])],
+    [Paragraph("Bi-weekly 1:1 coaching + group sessions + masterminds + quarterly workshops.", S["price_detail"]),
      Paragraph("<strike>$3,497</strike> stand alone", S["price_detail"])],
     [Paragraph("<b>Recommended Ad Spend</b>", S["price_main"]),
-     Paragraph("$2,500–$5,000/mo", S["price_main"])],
+     Paragraph("$2,400–$4,000/mo", S["price_main"])],
     [Paragraph("Goes directly to Google, LSA, and Meta — not to SMB Team.", S["price_detail"]),
      Paragraph("", S["price_detail"])],
 ]
@@ -269,7 +269,7 @@ pt.setStyle(TableStyle([
 ]))
 story.append(pt)
 story.append(Paragraph(
-    "Total: $7,047/mo + $2,500–$5,000 ad spend  |  Save $2,147/mo by bundling  |  27%–34% of revenue (under 35% cap)",
+    "Total: $8,047/mo + $2,400–$4,000 ad spend  |  Save $1,147/mo by bundling  |  29.8%–34.4% of revenue (under 35% cap)",
     S["savings"]))
 
 # ── Build ──
