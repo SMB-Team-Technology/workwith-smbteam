@@ -242,7 +242,7 @@ story.append(b("<b>Aggressive:</b> ~12 cases x $8,375 = ~$100,000/mo vs. $20,000
 story.append(Paragraph("<i>All figures are estimates based on industry CPL benchmarks and 15% default close rate. Not guaranteed.</i>", S["disclaimer"]))
 
 story.append(Paragraph("<b>How the range was calculated:</b>", S["subsection"]))
-story.append(b("<b>Conservative:</b> PI high-comp minimums: PPC $5,000 x2 markets + LSA $1,000 x2 + Meta $1,500 = ~$13,500; rounded to $12,000."))
+story.append(b("<b>Conservative:</b> PI high-comp minimums: PPC $5,000 x2 markets + LSA $900 x2 + Meta $1,500 = ~$13,300; rounded to $12,000."))
 story.append(b("<b>Aggressive:</b> $2.5M goal x 20% / 12 = $41,667; Houston Tier 1 weighting applied; rounded to $20,000 available."))
 story.append(b("Aggressive total: $10,597 fees + $20,000 ads = $30,597 = 24.5% of monthly revenue. Under the 35% cap."))
 

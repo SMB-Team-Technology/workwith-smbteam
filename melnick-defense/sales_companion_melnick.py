@@ -236,7 +236,7 @@ story.append(b("<b>Conservative:</b> ~2 cases x $4,000 ACV = $8,000/mo vs. $3,00
 story.append(b("<b>Aggressive:</b> ~4 cases x $4,000 ACV = $16,000/mo vs. $4,500 spend = 3.6x return."))
 story.append(Paragraph("<i>ACV = $4,000 (DUI/misdemeanor LA default). Close rate = 15% (default). All figures are estimates. Not guaranteed.</i>", S["disclaimer"]))
 
-story.append(b("<b>How calculated:</b> Criminal Defense High minimums: PPC $1,500 + LSA $1,000 + Meta $500 = $3,000 conservative. Aggressive: $600K goal x 20% ÷ 12 x Tier 1 (1.5x) − fee = $10,153; capped at $4,500."))
+story.append(b("<b>How calculated:</b> Criminal Defense High minimums: PPC $1,500 + LSA $900 + Meta $600 = $3,000 conservative. Aggressive: $600K goal x 20% ÷ 12 x Tier 1 (1.5x) − fee = $10,153; capped at $4,500."))
 story.append(b("At $400K revenue: $7,447 + $3,000 = $10,447 = 31.3% of monthly revenue — within 35% cap. Verify actual revenue on April 29 call."))
 
 story.append(thin_rule())

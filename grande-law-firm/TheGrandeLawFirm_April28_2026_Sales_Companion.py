@@ -228,7 +228,7 @@ story.append(bd("Conservative ($7K): ~14 cases/mo at ~$3,500–$5,000 = $49K–$
 story.append(bd("Aggressive ($14K): ~28–34 cases/mo at ~$3,500–$5,000 = $98K–$119K revenue vs. $14K spend (~7–9x)."))
 
 story.append(Paragraph("<b>Recommended Ad Spend Range ($7,000–$14,000/mo):</b>", S["subsection"]))
-story.append(b("<b>Conservative $7,000/mo:</b> LSA $1,000 + Spanish PPC $3,000 + English PPC $2,000 + Meta retargeting $1,000."))
+story.append(b("<b>Conservative $7,000/mo:</b> LSA $900 + Spanish PPC $3,000 + English PPC $2,000 + Meta retargeting $1,100."))
 story.append(b("<b>Aggressive $14,000/mo:</b> LSA $2,000 + Spanish PPC $5,000 + English PPC $4,000 + Meta lead gen $3,000."))
 
 story.append(Paragraph("<b>How the range was calculated:</b>", S["subsection"]))

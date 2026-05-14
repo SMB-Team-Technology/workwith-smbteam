@@ -212,7 +212,7 @@ story.append(bd("Fixes the consultation-to-hire gap — a structured intake fram
 story.append(bd("Installs the KPI accountability and team operating system that lets Alex step back on a documented 2029 timeline."))
 story.append(bd("FCFO Advisor delivers financial clarity across both firms — so Alex knows what he earns, keeps, and needs to target."))
 
-story.append(Paragraph("<b>Elite Coach Plus  |  $2,200/mo bundled</b>", S["subsection"]))
+story.append(Paragraph("<b>Elite Coach Plus  |  $3,200/mo bundled</b>", S["subsection"]))
 story.append(b("$400K+ revenue and $250K W-2 goal require Elite Coach Plus — Elite Coach alone is insufficient."))
 story.append(b("FCFO Advisor ($1,297/mo bundled) added alongside: profit volatility across two firms, no financial visibility into per-case margins."))
 
@@ -242,7 +242,7 @@ story.append(b("<b>Aggressive:</b> 8 cases x $4K avg = $32K/mo vs. $4K spend = 8
 story.append(Paragraph("<i>Estimates only. Assumes intake improvements are implemented. Not guaranteed.</i>", S["disclaimer"]))
 
 story.append(Paragraph("<b>How the range was calculated:</b>", S["subsection"]))
-story.append(b("<b>Conservative:</b> PPC $2,000 + LSA $1,000 = $3,000. Blended CPL $200 (+20% cushion) = 15 leads x 80% improved close = 5 cases."))
+story.append(b("<b>Conservative:</b> PPC $2,000 + LSA $900 = $2,900. Blended CPL $200 (+20% cushion) = 15 leads x 80% improved close = 5 cases."))
 story.append(b("<b>Aggressive:</b> 20% rule x Tier 5 (0.85x) yields $7,486 — capped at Starter limit of $4,000. Total: $11,344/mo = 17.0% of revenue."))
 
 story.append(thin_rule())
@@ -270,7 +270,7 @@ price_data = [
     [Paragraph("PPC, LSA, Local SEO, Google Business Profile management.", S["price_detail"]),
      Paragraph("<strike>$4,697</strike> stand alone", S["price_detail"])],
     [Paragraph("<b>Elite Coach Plus</b>", S["price_main"]),
-     Paragraph("$2,200/mo", S["price_main"])],
+     Paragraph("$3,200/mo", S["price_main"])],
     [Paragraph("Intake system, KPI dashboard, team accountability, conversion coaching.", S["price_detail"]),
      Paragraph("<strike>$3,497</strike> stand alone", S["price_detail"])],
     [Paragraph("<b>FCFO Advisor</b>", S["price_main"]),
@@ -296,7 +296,7 @@ pt.setStyle(TableStyle([
 ]))
 story.append(pt)
 story.append(Paragraph(
-    "Total: $7,344/mo + $3,000–$4,000 ad spend  |  Save $3,647/mo by bundling  |  15.5%–17.0% of revenue (under 35% cap)",
+    "Total: $8,344/mo + $2,900–$4,000 ad spend  |  Save $2,647/mo by bundling  |  16.1%–17.5% of revenue (under 35% cap)",
     S["savings"]))
 
 # ── Build ──

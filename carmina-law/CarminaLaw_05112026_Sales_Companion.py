@@ -227,11 +227,11 @@ story.append(bd("Generates 6–9 signed immigration cases per month — family p
 story.append(bd("Spanish-language campaigns reach immigrant families searching in their native language, where CPC is lower and Carmina's fluency is an unmatched conversion advantage."))
 
 story.append(Paragraph("<b>Recommended Ad Spend Range:</b>", S["subsection"]))
-story.append(b("<b>Conservative:</b> $4,200/mo — Google PPC $2,000 + LSA $1,000 + Meta Lead Gen $1,000 + Meta Retargeting $200."))
+story.append(b("<b>Conservative:</b> $4,100/mo — Google PPC $2,000 + LSA $900 + Meta Lead Gen $1,000 + Meta Retargeting $200."))
 story.append(b("<b>Aggressive:</b> $5,000/mo — Starter cap; Spanish modifier drives need for full budget allocation."))
 
 story.append(Paragraph("<b>Estimated Return on Investment:</b>", S["subsection"]))
-story.append(b("<b>Conservative ($4,200/mo):</b> ~41 leads x 15% close = 6 cases x $3,000 = $18,000/mo vs. $4,200 spend = 4.3x return."))
+story.append(b("<b>Conservative ($4,100/mo):</b> ~41 leads x 15% close = 6 cases x $3,000 = $18,000/mo vs. $4,100 spend = 4.4x return."))
 story.append(b("<b>Aggressive ($5,000/mo):</b> ~61 leads x 15% close = 9 cases x $3,000 = $27,000/mo vs. $5,000 spend = 5.4x return."))
 story.append(Paragraph("<i>All figures are estimates. Not guaranteed.</i>", S["disclaimer"]))
 
@@ -267,7 +267,7 @@ price_data = [
     [Paragraph("Weekly coaching, Immigration Mastermind, hiring templates, KPI frameworks, 90-day roadmap, annual workshop.", S["price_detail"]),
      Paragraph("<strike>$3,497</strike> stand alone", S["price_detail"])],
     [Paragraph("<b>Recommended Ad Spend</b>", S["price_main"]),
-     Paragraph("$4,200–$5,000/mo", S["price_main"])],
+     Paragraph("$4,100–$5,000/mo", S["price_main"])],
     [Paragraph("Goes to Google, LSA, and Meta — not to SMB Team.", S["price_detail"]),
      Paragraph("", S["price_detail"])],
 ]
@@ -284,7 +284,7 @@ pt.setStyle(TableStyle([
 ]))
 story.append(pt)
 story.append(Paragraph(
-    "Total: $7,447/mo + $4,200–$5,000 ad spend  |  Save $1,747/mo by bundling  |  27.2% of goal revenue (under 35% cap)",
+    "Total: $7,447/mo + $4,100–$5,000 ad spend  |  Save $1,747/mo by bundling  |  27.2% of goal revenue (under 35% cap)",
     S["savings"]))
 
 # ── Build ──

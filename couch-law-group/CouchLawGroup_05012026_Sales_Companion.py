@@ -239,16 +239,16 @@ story.append(bd("Activates a predictable lead pipeline in a market where no loca
 story.append(bd("Converts the wide-open Cashiers/Highlands digital landscape into paying civil litigation and injury cases before larger statewide firms claim the territory."))
 
 story.append(Paragraph("<b>Recommended Ad Spend Range:</b>", S["subsection"]))
-story.append(b("<b>Conservative:</b> $2,500/mo — PI hard floor (low competitiveness, Tier 5 rural); Google PPC $1,500 + LSA $1,000."))
+story.append(b("<b>Conservative:</b> $2,400/mo — PI hard floor (low competitiveness, Tier 5 rural); Google PPC $1,500 + LSA $900."))
 story.append(b("<b>Aggressive:</b> $4,000/mo — adds Meta retargeting; elevated to accelerate Y1 growth goals."))
 
 story.append(Paragraph("<b>Estimated Return on Investment:</b>", S["subsection"]))
-story.append(b("<b>Conservative:</b> ~3 cases x $5,000 avg = $15,000/mo revenue vs $2,500 spend = 6.0x return. (Est. only.)"))
+story.append(b("<b>Conservative:</b> ~3 cases x $5,000 avg = $15,000/mo revenue vs $2,400 spend = 6.3x return. (Est. only.)"))
 story.append(b("<b>Aggressive:</b> ~5 cases x $5,000 avg = $25,000/mo revenue vs $4,000 spend = 6.3x return. (Est. only.)"))
 story.append(Paragraph("<i>Case value uses practice area default ($5,000). Close rate 80% (prospect-stated). All figures are estimates. Not guaranteed.</i>", S["disclaimer"]))
 
 story.append(Paragraph("<b>How the range was calculated:</b>", S["subsection"]))
-story.append(b("<b>Conservative:</b> PI low-competitiveness channel minimums: Google PPC $1,500 + LSA $1,000 = $2,500."))
+story.append(b("<b>Conservative:</b> PI low-competitiveness channel minimums: Google PPC $1,500 + LSA $900 = $2,400."))
 story.append(b("<b>Aggressive:</b> Reverse math: $300K goal ÷ 12 = $25K/mo target. 5 cases ÷ 80% = 6.25 leads. x $400 blended CPL (Tier 5) = $2,500. Elevated to $4,000 to fund Meta retargeting layer."))
 story.append(b("<b>35% rule note:</b> At conservative, total SMB spend = $9,947/mo vs ~$26,667/mo run rate = 37.3%. Marginally over cap on a 3-week revenue sample — flag for scoping review; expect ratio to improve as revenue scales."))
 
@@ -281,7 +281,7 @@ price_data = [
     [Paragraph("Weekly group coaching, practice area masterminds, quarterly workshops, annual in-person.", S["price_detail"]),
      Paragraph("<strike>$3,497</strike> stand alone", S["price_detail"])],
     [Paragraph("<b>Recommended Ad Spend</b>", S["price_main"]),
-     Paragraph("$2,500–$4,000/mo", S["price_main"])],
+     Paragraph("$2,400–$4,000/mo", S["price_main"])],
     [Paragraph("Goes to Google, LSA, and Meta — not to SMB Team.", S["price_detail"]),
      Paragraph("", S["price_detail"])],
 ]
@@ -298,7 +298,7 @@ pt.setStyle(TableStyle([
 ]))
 story.append(pt)
 story.append(Paragraph(
-    "Total: $7,447/mo + $2,500–$4,000 ad spend  |  Save $1,747/mo by bundling  |  35% rule: marginally over on 3-wk sample — flag for scoping review",
+    "Total: $7,447/mo + $2,400–$4,000 ad spend  |  Save $1,747/mo by bundling  |  35% rule: marginally over on 3-wk sample — flag for scoping review",
     S["savings"]))
 
 # ── Build ──

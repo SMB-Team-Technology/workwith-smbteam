@@ -248,7 +248,7 @@ story.append(b("<b>Aggressive:</b> ~17 cases x $6,000 = $102,000/mo vs. $10,000 
 story.append(Paragraph("<i>All figures are estimates. Not guaranteed.</i>", S["disclaimer"]))
 
 story.append(Paragraph("<b>How the range was calculated:</b>", S["subsection"]))
-story.append(b("<b>Conservative:</b> Estate Planning: PPC $1,500 + LSA $1,000 + Meta $700; Probate: PPC $1,500 + LSA $500 = ~$5,200 (rounded to $5,000)."))
+story.append(b("<b>Conservative:</b> Estate Planning: PPC $1,500 + LSA $900 + Meta $700; Probate: PPC $1,500 + LSA $500 = ~$5,100 (rounded to $5,000)."))
 story.append(b("<b>Aggressive:</b> $2M goal x 20% / 12 = $33,333; x Tier 2 (1.3x) = $43,333; minus $4,497 fee = $38,836; capped at $10,000 (Dominate tier cap)."))
 story.append(b("At aggressive ($18,994 total): 16.3% of monthly revenue — well under the 35% cap."))
 

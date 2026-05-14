@@ -213,7 +213,7 @@ story.append(Paragraph("<b>What it does for him:</b>", S["subsection"]))
 story.append(bd("Mastermind with HOA law firm owners who have already built autonomous firms — Pablo learns from peers who solved his exact problem."))
 story.append(bd("Weekly coaching delivers the delegation frameworks and hiring protocols to build a team that runs without him."))
 
-story.append(Paragraph("<b>Elite Coach Plus  |  $2,200/mo bundled</b>", S["subsection"]))
+story.append(Paragraph("<b>Elite Coach Plus  |  $3,200/mo bundled</b>", S["subsection"]))
 story.append(b("Revenue $400K-$600K, team of 3: Elite Coach Plus is the correct tier."))
 story.append(b("Master's Circle and FCOO excluded: team under 5, revenue under $1M."))
 story.append(b("Pablo asked specifically about mastermind access — this is the right product."))
@@ -236,18 +236,18 @@ story.append(bd("Inbound association leads arrive through Google — Pablo's per
 story.append(bd("At even conservative ROI (5x), a $2,500 ad spend generates ~$13,500/mo in new retainer value — funding his first team hire within months."))
 
 story.append(Paragraph("<b>Recommended Ad Spend Range:</b>", S["subsection"]))
-story.append(b("<b>Conservative:</b> $2,500/mo — Google PPC $1,500 + LSA $1,000 (Business Law channel minimums as HOA/condo proxy)."))
+story.append(b("<b>Conservative:</b> $2,400/mo — Google PPC $1,500 + LSA $900 (Business Law channel minimums as HOA/condo proxy)."))
 story.append(b("<b>Aggressive:</b> $5,000/mo — Starter tier cap; 20% rule on $1M revenue goal yields $18,820 but is capped at tier maximum."))
 
 story.append(Paragraph("<b>Estimated Return on Investment:</b>", S["subsection"]))
-story.append(b("<b>Conservative ($2,500/mo):</b> ~10 leads x 15% close x $9K retainer value = ~$13,500/mo vs $2,500 spend = 5.4x return."))
+story.append(b("<b>Conservative ($2,400/mo):</b> ~10 leads x 15% close x $9K retainer value = ~$13,500/mo vs $2,400 spend = 5.6x return."))
 story.append(b("<b>Aggressive ($5,000/mo):</b> ~25 leads x 15% close x $9K retainer value = ~$34,000/mo vs $5,000 spend = 6.8x return."))
 story.append(Paragraph("<i>All figures are estimates. Not guaranteed. Case value = first-year HOA general counsel retainer ($750/mo x 12).</i>", S["disclaimer"]))
 
 story.append(Paragraph("<b>How the range was calculated:</b>", S["subsection"]))
-story.append(b("<b>Conservative:</b> HOA/condo law (Business Law proxy): PPC $1,500 + LSA $1,000 = $2,500."))
+story.append(b("<b>Conservative:</b> HOA/condo law (Business Law proxy): PPC $1,500 + LSA $900 = $2,400."))
 story.append(b("<b>Aggressive:</b> $1.0M target x 20% / 12 = $16,667. Miami Tier 2 (1.3x) = $21,667. Minus $2,847 fee = $18,820. Capped at Starter tier limit of $5,000."))
-story.append(b("Total SMB spend at conservative: ($5,047 + $2,500) / $41,667 = 18.1% of monthly revenue. Well under 35% cap."))
+story.append(b("Total SMB spend at conservative: ($6,047 + $2,400) / $41,667 = 20.2% of monthly revenue. Well under 35% cap."))
 
 story.append(thin_rule())
 
@@ -277,9 +277,9 @@ price_data = [
     [Paragraph("Google Ads, GBP, LSA, website CRO, review generation, monthly reporting.", S["price_detail"]),
      Paragraph("<strike>$4,697</strike> stand alone", S["price_detail"])],
     [Paragraph("<b>Elite Coach Plus</b>", S["price_main"]),
-     Paragraph("$2,200/mo", S["price_main"])],
+     Paragraph("$3,200/mo", S["price_main"])],
     [Paragraph("Weekly group coaching, HOA/probate mastermind, quarterly workshops, hiring frameworks.", S["price_detail"]),
-     Paragraph("<strike>$2,497</strike> stand alone", S["price_detail"])],
+     Paragraph("<strike>$3,497</strike> stand alone", S["price_detail"])],
     [Paragraph("<b>Recommended Ad Spend</b>", S["price_main"]),
      Paragraph("$2,500–$5,000/mo", S["price_main"])],
     [Paragraph("Goes to Google, LSA, and Meta — not to SMB Team.", S["price_detail"]),
@@ -298,7 +298,7 @@ pt.setStyle(TableStyle([
 ]))
 story.append(pt)
 story.append(Paragraph(
-    "Total: $5,047/mo + $2,500–$5,000 ad spend  |  Save $2,147/mo by bundling  |  18.1%–24.1% of est. revenue (under 35% cap)",
+    "Total: $6,047/mo + $2,400–$5,000 ad spend  |  Save $2,147/mo by bundling  |  20.2%–26.8% of est. revenue (under 35% cap)",
     S["savings"]))
 
 # ── Build ──

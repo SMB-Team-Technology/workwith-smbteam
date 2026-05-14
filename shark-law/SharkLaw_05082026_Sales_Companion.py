@@ -242,7 +242,7 @@ story.append(b("<b>Aggressive:</b> ~6 cases x $6,500 = $39,000/mo vs. $10,000 sp
 story.append(Paragraph("<i>All figures are estimates based on industry CPL benchmarks and 15% close rate. Not guaranteed.</i>", S["disclaimer"]))
 
 story.append(Paragraph("<b>How the range was calculated:</b>", S["subsection"]))
-story.append(b("<b>Conservative:</b> Criminal Defense minimums: PPC $2,000 + LSA $1,000 + Meta Retargeting $700 + Meta Lead Gen $300 = $4,000."))
+story.append(b("<b>Conservative:</b> Criminal Defense minimums: PPC $2,000 + LSA $900 + Meta Retargeting $800 + Meta Lead Gen $300 = $4,000."))
 story.append(b("<b>Aggressive:</b> $1M target x 20% ÷ 12 = $16,667. Tier 4 (1.0x) = $16,667. Minus $5,397 fee = $11,270. Capped at Growth tier $10,000."))
 story.append(b("Total at aggressive: $5,397 + $3,200 + $10,000 = $18,597/mo = 27.9% of revenue. Under 35% cap."))
 

@@ -221,7 +221,7 @@ story.append(Paragraph("Why This Ad Spend", S["section"]))
 story.append(bd("Converts high-intent MA LTC, license denial, and self-defense searchers — cases that never find Jason through referrals."))
 story.append(bd("Conservative: 2 cases/month from $3,000 spend = $7,000 new monthly revenue (2.3x). Aggressive: 4 cases at $5,000 = $14,000 (2.8x)."))
 story.append(b("<b>Conservative $3,000/mo:</b> Google Ads only; meets Criminal Defense (high comp) minimum. Within Starter cap and 35% revenue check (33.1%)."))
-story.append(b("<b>Aggressive $5,000/mo:</b> Adds LSA ($1,000) + Meta retargeting ($1,000). Exceeds Starter cap — discuss 10% overage or upgrade."))
+story.append(b("<b>Aggressive $5,000/mo:</b> Adds LSA ($900) + Meta retargeting ($1,100). Exceeds Starter cap — discuss 10% overage or upgrade."))
 story.append(Paragraph("<i>Estimates only. Case value uses practice area default ($3,500); not confirmed on call.</i>", S["disclaimer"]))
 
 story.append(thin_rule())

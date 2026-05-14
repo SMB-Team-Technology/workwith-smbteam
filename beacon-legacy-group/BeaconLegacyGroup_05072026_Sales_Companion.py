@@ -181,7 +181,7 @@ story.append(bd("Launches paid coverage in LSA, probate PPC, and Meta retargetin
 story.append(bd("At $5k/mo recommended spend, estimated return is 3–5 cases/month x $9k avg = $27k–$45k vs. $5k spend = 5.4x–9x ROAS."))
 
 story.append(Paragraph("<b>Recommended Ad Spend Range:</b>", S["subsection"]))
-story.append(b("<b>Conservative:</b> $3,500/mo — Estate Planning minimums: PPC $1,500 + LSA $1,000 + Meta Retargeting $1,000."))
+story.append(b("<b>Conservative:</b> $3,500/mo — Estate Planning minimums: PPC $1,500 + LSA $900 + Meta Retargeting $1,100."))
 story.append(b("<b>Aggressive:</b> $8,000/mo — $2.5M goal x 20% ÷ 12 = $41,667. Tier 5 (0.85x), capped at Growth tier $10k; $8k used given Tyler’s stated preference for measured scaling."))
 
 story.append(Paragraph("<b>Estimated ROI:</b>", S["subsection"]))

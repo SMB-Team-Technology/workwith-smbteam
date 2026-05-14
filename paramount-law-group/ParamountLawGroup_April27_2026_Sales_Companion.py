@@ -242,7 +242,7 @@ story.append(b("<b>Aggressive:</b> ~15 cases x $3,500 avg = ~$52,500/mo vs. $6,5
 story.append(Paragraph("<i>All figures are estimates using blended case value ~$3,500 (estates/corporate mix) and 15% close rate. Not guaranteed.</i>", S["disclaimer"]))
 
 story.append(Paragraph("<b>How the range was calculated:</b>", S["subsection"]))
-story.append(b("<b>Conservative:</b> Estate Planning PPC $1,500 + LSA $1,000 + Corporate PPC $800 + Meta retargeting $200 = $3,500."))
+story.append(b("<b>Conservative:</b> Estate Planning PPC $1,500 + LSA $900 + Corporate PPC $800 + Meta retargeting $300 = $3,500."))
 story.append(b("<b>Aggressive:</b> $1.2M target x 20% / 12 = $20,000. Calgary Tier 3 (1.15x) = $23,000. Minus $3,397 fee = $19,603. Capped at Growth tier max of $7,000; using $6,500 under cap."))
 story.append(b("Total SMB spend at aggressive: $10,694 + $6,500 = $17,194/mo = 21.5% of $800k collected revenue. Well under the 35% cap."))
 

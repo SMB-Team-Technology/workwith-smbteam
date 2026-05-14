@@ -275,7 +275,7 @@ price_data = [
     [Paragraph("<b>Elite Coach Plus</b>", S["price_main"]),
      Paragraph("$1,200/mo", S["price_main"])],
     [Paragraph("Coaching, accountability, Gene's partnership path, intake system, revenue dashboard.", S["price_detail"]),
-     Paragraph("<strike>$2,497</strike> stand alone", S["price_detail"])],
+     Paragraph("<strike>$3,497</strike> stand alone", S["price_detail"])],
     [Paragraph("<b>Recommended Ad Spend</b>", S["price_main"]),
      Paragraph("$2,500–$3,000/mo", S["price_main"])],
     [Paragraph("Goes to Google, LSA, and Meta — not to SMB Team.", S["price_detail"]),
@@ -294,7 +294,7 @@ pt.setStyle(TableStyle([
 ]))
 story.append(pt)
 story.append(Paragraph(
-    "Total: $6,047/mo + $2,500–$3,000 ad spend  |  Save $2,147/mo by bundling  |  18.5%–19.7% of revenue (under 35% cap)",
+    "Total: $6,047/mo + $2,500–$3,000 ad spend  |  Save $3,147/mo by bundling  |  18.5%–19.7% of revenue (under 35% cap)",
     S["savings"]))
 
 # ── Build ──

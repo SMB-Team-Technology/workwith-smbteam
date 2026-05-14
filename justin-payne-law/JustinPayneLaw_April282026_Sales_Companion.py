@@ -240,16 +240,16 @@ story.append(bd("Creates a case pipeline independent of referrals — the founda
 story.append(bd("Positions Justin as the visible local option for Brevard County civil litigation before competitors claim those spots."))
 
 story.append(Paragraph("<b>Recommended Ad Spend Range:</b>", S["subsection"]))
-story.append(b("<b>Conservative:</b> $2,500/mo — Google PPC $1,500 + LSA $1,000. At Starter cap; first-mover positioning established."))
+story.append(b("<b>Conservative:</b> $2,400/mo — Google PPC $1,500 + LSA $900. First-mover positioning established."))
 story.append(b("<b>Aggressive:</b> $4,500/mo — expanded PPC + LSA + Meta retargeting. Total SMB spend = 34.1% of revenue (under 35% cap)."))
 
 story.append(Paragraph("<b>Estimated Return on Investment:</b>", S["subsection"]))
-story.append(b("<b>Conservative:</b> ~2-3 cases x $8,500 = ~$21K-$25K/mo vs. $2,500 spend = ~8-10x return (est.)."))
+story.append(b("<b>Conservative:</b> ~2-3 cases x $8,500 = ~$21K-$25K/mo vs. $2,400 spend = ~8-10x return (est.)."))
 story.append(b("<b>Aggressive:</b> ~5-6 cases x $8,500 = ~$42K-$51K/mo vs. $4,500 spend = ~9-11x return (est.)."))
 story.append(Paragraph("<i>All figures are estimates. Average case value is a default (not stated by prospect). Not guaranteed.</i>", S["disclaimer"]))
 
 story.append(Paragraph("<b>How the range was calculated:</b>", S["subsection"]))
-story.append(b("<b>Conservative:</b> Business/civil litigation minimums: PPC $1,500 + LSA $1,000 = $2,500 (at Starter cap)."))
+story.append(b("<b>Conservative:</b> Business/civil litigation minimums: PPC $1,500 + LSA $900 = $2,400."))
 story.append(b("<b>Aggressive:</b> $700K goal x 20% / 12 = $11,667. Tier 4 (1.0x) = $11,667. Minus $3,847 fee = $7,820 > cap; capped at $4,500 to stay under 35% revenue limit."))
 story.append(b("Total at aggressive: $5,447 fees + $4,500 ads = $9,947/mo = 34.1% of monthly revenue. Under the 35% cap."))
 
@@ -285,7 +285,7 @@ price_data = [
     [Paragraph("Bi-weekly coaching, intake design, team structure, KPI tracking, pivot evaluation.", S["price_detail"]),
      Paragraph("<strike>$2,497</strike> stand alone", S["price_detail"])],
     [Paragraph("<b>Recommended Ad Spend</b>", S["price_main"]),
-     Paragraph("$2,500–$4,500/mo", S["price_main"])],
+     Paragraph("$2,400–$4,500/mo", S["price_main"])],
     [Paragraph("Goes to Google, LSA, and Meta — not to SMB Team.", S["price_detail"]),
      Paragraph("", S["price_detail"])],
 ]
@@ -302,7 +302,7 @@ pt.setStyle(TableStyle([
 ]))
 story.append(pt)
 story.append(Paragraph(
-    "Total: $5,447/mo + $2,500–$4,500 ad spend  |  Save $1,747/mo by bundling  |  27.2%–34.1% of revenue (under 35% cap)",
+    "Total: $5,447/mo + $2,400–$4,500 ad spend  |  Save $1,747/mo by bundling  |  26.8%–34.1% of revenue (under 35% cap)",
     S["savings"]))
 
 # ── Build ──
