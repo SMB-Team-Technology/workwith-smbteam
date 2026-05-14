@@ -1,0 +1,56 @@
+name: Audit Write (Pass 2)
+
+on:
+  workflow_dispatch:
+    inputs:
+      firm_name:
+        description: "Firm Name (full legal name — must match Pass 1 exactly)"
+        required: true
+        type: string
+      friendly_name:
+        description: "Friendly Name (same value used in Pass 1, e.g. angel-law)"
+        required: true
+        type: string
+      sales_rep:
+        description: "Sales Rep (full name)"
+        required: true
+        type: string
+      date:
+        description: "Date (same date used in Pass 1 — Month DD, YYYY)"
+        required: true
+        type: string
+      with_pptx:
+        description: "Also generate the 3-slide proposal PowerPoint (Pass 3)"
+        required: false
+        default: false
+        type: boolean
+
+jobs:
+  audit-write:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+
+      - name: Run audit write via Claude
+        uses: anthropics/claude-code-action@v1
+        with:
+          anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
+          prompt: |
+            You are running Pass 2 of the SMB Team Growth Audit pipeline. Follow the instructions in `.claude/commands/audit-write.md` exactly.
+
+            Here are the inputs for this run:
+
+            Firm Name: ${{ github.event.inputs.firm_name }}
+            Friendly Name: ${{ github.event.inputs.friendly_name }}
+            Sales Rep: ${{ github.event.inputs.sales_rep }}
+            Date: ${{ github.event.inputs.date }}
+            With PowerPoint: ${{ github.event.inputs.with_pptx }}
+
+            Start by reading `.claude/commands/audit-write.md` in full. Then read the research notes file at `${{ github.event.inputs.friendly_name }}/` and `Design Files/audit_styles.css`. Execute every step in order, saving each section before moving to the next. When complete, assemble the final HTML, generate the Sales Companion PDF, and commit everything to main. If "With PowerPoint" is true, also run Pass 3 per the --with-pptx instructions at the end of audit-write.md. Report the commit hash when done.

@@ -1,0 +1,61 @@
+name: Audit Research (Pass 1)
+
+on:
+  workflow_dispatch:
+    inputs:
+      firm_name:
+        description: "Firm Name (full legal name)"
+        required: true
+        type: string
+      friendly_name:
+        description: "Friendly Name (lowercase-hyphenated, e.g. angel-law)"
+        required: true
+        type: string
+      url:
+        description: "Firm website URL"
+        required: true
+        type: string
+      sales_rep:
+        description: "Sales Rep (full name)"
+        required: true
+        type: string
+      date:
+        description: "Date (Month DD, YYYY — e.g. April 13, 2026)"
+        required: true
+        type: string
+      transcript:
+        description: "Discovery call transcript (paste full text, or write 'none')"
+        required: true
+        type: string
+
+jobs:
+  audit-research:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+
+      - name: Run audit research via Claude
+        uses: anthropics/claude-code-action@v1
+        with:
+          anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
+          prompt: |
+            You are running Pass 1 of the SMB Team Growth Audit pipeline. Follow the instructions in `.claude/commands/audit-research.md` exactly.
+
+            Here are the inputs for this run:
+
+            Firm Name: ${{ github.event.inputs.firm_name }}
+            Friendly Name: ${{ github.event.inputs.friendly_name }}
+            URL: ${{ github.event.inputs.url }}
+            Sales Rep: ${{ github.event.inputs.sales_rep }}
+            Date: ${{ github.event.inputs.date }}
+            Transcript:
+            ${{ github.event.inputs.transcript }}
+
+            Start by reading `.claude/commands/audit-research.md` in full, then execute every step in order. Save progress after each major section. When complete, commit the research notes file to main and report the commit hash.
