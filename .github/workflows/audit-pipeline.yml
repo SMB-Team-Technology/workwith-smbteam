@@ -1,15 +1,15 @@
-name: Audit Write (Pass 2 + 3, standalone)
+name: Audit Pipeline (Pass 1 → Pass 2 → Pass 3)
 
 on:
   push:
     branches: [main]
     paths:
-      - 'triggers/audit-write/*.json'
+      - 'triggers/audit-research/*.json'
 
 jobs:
-  audit-write:
+  run-pipeline:
     runs-on: ubuntu-latest
-    timeout-minutes: 120
+    timeout-minutes: 180
     permissions:
       contents: write
 
@@ -36,20 +36,41 @@ jobs:
         id: inputs
         run: |
           TRIGGER_FILE=$(git diff-tree --no-commit-id -r --name-only "${{ github.sha }}" \
-            | grep '^triggers/audit-write/.*\.json$' | head -1)
-          echo "trigger_file=$TRIGGER_FILE"                              >> "$GITHUB_OUTPUT"
-          echo "firm_name=$(jq -r '.firm_name' "$TRIGGER_FILE")"        >> "$GITHUB_OUTPUT"
+            | grep '^triggers/audit-research/.*\.json$' | head -1)
+          echo "trigger_file=$TRIGGER_FILE" >> "$GITHUB_OUTPUT"
+          echo "firm_name=$(jq -r '.firm_name' "$TRIGGER_FILE")"   >> "$GITHUB_OUTPUT"
           echo "friendly_name=$(jq -r '.friendly_name' "$TRIGGER_FILE")" >> "$GITHUB_OUTPUT"
-          echo "sales_rep=$(jq -r '.sales_rep' "$TRIGGER_FILE")"        >> "$GITHUB_OUTPUT"
-          echo "date=$(jq -r '.date' "$TRIGGER_FILE")"                  >> "$GITHUB_OUTPUT"
-          echo "with_pptx=$(jq -r '.with_pptx' "$TRIGGER_FILE")"       >> "$GITHUB_OUTPUT"
+          echo "sales_rep=$(jq -r '.sales_rep' "$TRIGGER_FILE")"   >> "$GITHUB_OUTPUT"
+          echo "date=$(jq -r '.date' "$TRIGGER_FILE")"             >> "$GITHUB_OUTPUT"
 
       - name: Configure git
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
 
-      - name: Run audit write
+      - name: Pass 1 — Audit Research
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: |
+          TRIGGER_FILE="${{ steps.inputs.outputs.trigger_file }}"
+          claude --dangerously-skip-permissions -p "
+            You are running Pass 1 of the SMB Team Growth Audit pipeline.
+
+            Read the trigger file at \`$TRIGGER_FILE\` — it is a JSON file containing
+            firm_name, friendly_name, url, sales_rep, date, and transcript.
+            Extract those values first.
+
+            This is a test run with a fictional firm. Generate realistic but entirely
+            fabricated research data for every step — invent plausible PageSpeed scores,
+            review counts, competitor names, ad observations, and all other data points.
+            Do not attempt to visit real websites. Do not leave any section blank.
+
+            Read \`.claude/commands/audit-research.md\` in full and execute every step in
+            order. Save progress after each major section. Commit the research notes file
+            to main and report the commit hash when complete.
+          "
+
+      - name: Pass 2 + 3 — Audit Write (with PPTX)
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
         run: |
@@ -57,7 +78,6 @@ jobs:
           FRIENDLY_NAME="${{ steps.inputs.outputs.friendly_name }}"
           SALES_REP="${{ steps.inputs.outputs.sales_rep }}"
           DATE="${{ steps.inputs.outputs.date }}"
-          WITH_PPTX="${{ steps.inputs.outputs.with_pptx }}"
           claude --dangerously-skip-permissions -p "
             You are running Pass 2 of the SMB Team Growth Audit pipeline.
 
@@ -69,6 +89,7 @@ jobs:
             Read \`.claude/commands/audit-write.md\` in full. Read the research notes file
             and \`Design Files/audit_styles.css\`. Execute every step in order, saving each
             section before moving to the next. Assemble the final HTML report, generate
-            the Sales Companion PDF, and commit everything to main. If with_pptx is
-            $WITH_PPTX (true), also run Pass 3. Report the commit hash when done.
+            the Sales Companion PDF, and commit everything to main. Then run Pass 3 per
+            the --with-pptx instructions at the end of audit-write.md. Report the commit
+            hash when done.
           "
