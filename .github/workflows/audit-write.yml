@@ -58,7 +58,7 @@ jobs:
           SALES_REP="${{ steps.inputs.outputs.sales_rep }}"
           DATE="${{ steps.inputs.outputs.date }}"
           WITH_PPTX="${{ steps.inputs.outputs.with_pptx }}"
-          claude --dangerously-skip-permissions -p "
+          claude --model claude-sonnet-4-6 --dangerously-skip-permissions -p "
             You are running Pass 2 of the SMB Team Growth Audit pipeline.
 
             Firm Name: $FIRM_NAME
