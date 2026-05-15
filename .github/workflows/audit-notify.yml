@@ -23,10 +23,15 @@ jobs:
         run: |
           TRIGGER_FILE=$(git diff-tree --no-commit-id -r --name-only "${{ github.sha }}" \
             | grep '^triggers/audit-notify/.*\.json$' | head -1)
-          echo "firm_name=$(jq -r '.firm_name' "$TRIGGER_FILE")"         >> "$GITHUB_OUTPUT"
-          echo "friendly_name=$(jq -r '.friendly_name' "$TRIGGER_FILE")" >> "$GITHUB_OUTPUT"
-          echo "sales_rep=$(jq -r '.sales_rep' "$TRIGGER_FILE")"         >> "$GITHUB_OUTPUT"
-          echo "test_only=$(jq -r '.test_only // "true"' "$TRIGGER_FILE")" >> "$GITHUB_OUTPUT"
+          if [ -z "$TRIGGER_FILE" ]; then
+            # Fallback: pick the most recently modified notify trigger file
+            TRIGGER_FILE=$(ls -t triggers/audit-notify/*.json 2>/dev/null | head -1)
+          fi
+          echo "Using trigger file: $TRIGGER_FILE"
+          echo "firm_name=$(jq -r '.firm_name' "$TRIGGER_FILE")"           >> "$GITHUB_OUTPUT"
+          echo "friendly_name=$(jq -r '.friendly_name' "$TRIGGER_FILE")"   >> "$GITHUB_OUTPUT"
+          echo "sales_rep=$(jq -r '.sales_rep' "$TRIGGER_FILE")"           >> "$GITHUB_OUTPUT"
+          echo "test_only=$(jq -r '.test_only' "$TRIGGER_FILE")"           >> "$GITHUB_OUTPUT"
           echo "closer_email=$(jq -r '.closer_email // ""' "$TRIGGER_FILE")" >> "$GITHUB_OUTPUT"
 
       - name: Send email with PDF + PPTX attachments
@@ -50,7 +55,8 @@ jobs:
           firm_name      = os.environ["FIRM_NAME"]
           friendly_name  = os.environ["FRIENDLY_NAME"]
           sales_rep      = os.environ["SALES_REP"]
-          test_only      = os.environ.get("TEST_ONLY", "true").lower() == "true"
+          # Safe default: anything other than the explicit string "false" = test mode
+          test_only      = os.environ.get("TEST_ONLY", "true").lower() != "false"
           closer_email   = os.environ.get("CLOSER_EMAIL", "")
           eli            = "eli.gill@smbteam.com"
 
