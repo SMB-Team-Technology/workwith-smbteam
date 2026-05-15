@@ -60,10 +60,10 @@ jobs:
             firm_name, friendly_name, url, sales_rep, date, and transcript.
             Extract those values first.
 
-            This is a test run with a fictional firm. Generate realistic but entirely
-            fabricated research data for every step — invent plausible PageSpeed scores,
-            review counts, competitor names, ad observations, and all other data points.
-            Do not attempt to visit real websites. Do not leave any section blank.
+            The trigger file contains a transcript field with the discovery call notes.
+            Use that as ground truth per the TRANSCRIPT-FIRST RULE in the command file.
+            If the URL resolves, browse it live. If not (fictional/test firm), fabricate
+            realistic research data for all steps. Do not leave any section blank.
 
             Read \`.claude/commands/audit-research.md\` in full and execute every step in
             order. Save progress after each major section. Commit the research notes file
@@ -93,3 +93,76 @@ jobs:
             the --with-pptx instructions at the end of audit-write.md. Report the commit
             hash when done.
           "
+
+      # -----------------------------------------------------------------------
+      # STEP 5 — Write back to HubSpot  [STUBBED — not live yet]
+      # -----------------------------------------------------------------------
+      # Once the audit is published (e.g. via GitHub Pages at
+      # https://smb-team-technology.github.io/workwith-smbteam/{friendly_name}/),
+      # this step updates three custom HubSpot contact properties:
+      #   workwith_page_url     — URL to the HTML audit report
+      #   proposal_deck_url     — URL to the .pptx file
+      #   sales_cheat_sheet_url — URL to the Sales Companion PDF
+      #
+      # Prerequisites before enabling:
+      #   1. Create the three custom properties in HubSpot
+      #      (Contacts → Properties → Create property, type = Single-line text)
+      #   2. Add HUBSPOT_TOKEN to GitHub secrets
+      #   3. Decide on public URL scheme (GitHub Pages, S3, etc.)
+      #   4. Remove the `if: false` line below
+      - name: "[STUB] Step 5 — Write audit URLs back to HubSpot"
+        if: false
+        env:
+          HUBSPOT_TOKEN: ${{ secrets.HUBSPOT_TOKEN }}
+        run: |
+          FRIENDLY_NAME="${{ steps.inputs.outputs.friendly_name }}"
+          TRIGGER_FILE="${{ steps.inputs.outputs.trigger_file }}"
+          CONTACT_ID=$(jq -r '.hubspot_contact_id // empty' "$TRIGGER_FILE")
+          BASE_URL="https://smb-team-technology.github.io/workwith-smbteam"
+          FIRM_NAME="${{ steps.inputs.outputs.firm_name }}"
+          DATE="${{ steps.inputs.outputs.date }}"
+          SAFE_DATE=$(echo "$DATE" | tr ' ,' '--')
+
+          if [ -z "$CONTACT_ID" ]; then
+            echo "No hubspot_contact_id in trigger file — skipping HubSpot writeback."
+            exit 0
+          fi
+
+          curl -s -X PATCH \
+            "https://api.hubapi.com/crm/v3/objects/contacts/$CONTACT_ID" \
+            -H "Authorization: Bearer $HUBSPOT_TOKEN" \
+            -H "Content-Type: application/json" \
+            -d "{
+              \"properties\": {
+                \"workwith_page_url\":     \"$BASE_URL/$FRIENDLY_NAME/\",
+                \"proposal_deck_url\":     \"$BASE_URL/$FRIENDLY_NAME/${FIRM_NAME// /_}_${SAFE_DATE}_Proposal.pptx\",
+                \"sales_cheat_sheet_url\": \"$BASE_URL/$FRIENDLY_NAME/${FIRM_NAME// /_}_${SAFE_DATE}_Sales_Companion.pdf\"
+              }
+            }"
+          echo "HubSpot contact $CONTACT_ID updated with audit URLs."
+
+      # -----------------------------------------------------------------------
+      # STEP 6 — Notify sales rep  [STUBBED — not live yet]
+      # -----------------------------------------------------------------------
+      # Recommended approach: trigger a HubSpot automation workflow instead of
+      # sending email directly from GitHub Actions. When Step 5 populates
+      # workwith_page_url, a HubSpot workflow can:
+      #   - Send an internal notification email to the contact owner
+      #   - Enroll the contact in a proposal follow-up sequence
+      #
+      # Alternative: use SendGrid or similar if you want GitHub to send directly.
+      # Add SENDGRID_API_KEY to secrets and implement below.
+      #
+      # Remove `if: false` to enable.
+      - name: "[STUB] Step 6 — Notify sales rep"
+        if: false
+        run: |
+          SALES_REP="${{ steps.inputs.outputs.sales_rep }}"
+          FIRM_NAME="${{ steps.inputs.outputs.firm_name }}"
+          FRIENDLY_NAME="${{ steps.inputs.outputs.friendly_name }}"
+          echo "TODO: Send email to $SALES_REP notifying that the audit for $FIRM_NAME is ready."
+          echo "Audit URL: https://smb-team-technology.github.io/workwith-smbteam/$FRIENDLY_NAME/"
+          # curl -s -X POST https://api.sendgrid.com/v3/mail/send \
+          #   -H "Authorization: Bearer $SENDGRID_API_KEY" \
+          #   -H "Content-Type: application/json" \
+          #   -d "{ ... }"
