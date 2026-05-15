@@ -1,0 +1,64 @@
+name: Audit HubSpot Writeback (Step 5 only)
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'triggers/audit-hubspot/*.json'
+
+jobs:
+  hubspot-writeback:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          ref: main
+
+      - name: Find trigger file and parse inputs
+        id: inputs
+        run: |
+          TRIGGER_FILE=$(git diff-tree --no-commit-id -r --name-only "${{ github.sha }}" \
+            | grep '^triggers/audit-hubspot/.*\.json$' | head -1)
+          if [ -z "$TRIGGER_FILE" ]; then
+            TRIGGER_FILE=$(ls -t triggers/audit-hubspot/*.json 2>/dev/null | head -1)
+          fi
+          echo "Using trigger file: $TRIGGER_FILE"
+          FRIENDLY=$(jq -r '.friendly_name' "$TRIGGER_FILE")
+          CONTACT_ID=$(jq -r '.hubspot_contact_id' "$TRIGGER_FILE")
+          # URL can be explicit in trigger file, or derived from friendly_name
+          URL=$(jq -r '.workwith_url // "https://workwith.smbteam.com/\($friendly)"' \
+            --arg friendly "$FRIENDLY" "$TRIGGER_FILE")
+          echo "friendly_name=$FRIENDLY"  >> "$GITHUB_OUTPUT"
+          echo "contact_id=$CONTACT_ID"   >> "$GITHUB_OUTPUT"
+          echo "workwith_url=$URL"        >> "$GITHUB_OUTPUT"
+
+      - name: Write roadmap URL to HubSpot contact
+        env:
+          HUBSPOT_TOKEN: ${{ secrets.HUBSPOT_TOKEN }}
+        run: |
+          CONTACT_ID="${{ steps.inputs.outputs.contact_id }}"
+          URL="${{ steps.inputs.outputs.workwith_url }}"
+
+          echo "Writing to contact $CONTACT_ID: $URL"
+
+          RESPONSE=$(curl -s -w "\n%{http_code}" -X PATCH \
+            "https://api.hubapi.com/crm/v3/objects/contacts/$CONTACT_ID" \
+            -H "Authorization: Bearer $HUBSPOT_TOKEN" \
+            -H "Content-Type: application/json" \
+            -d "{\"properties\": {\"growth_profit_and_freedom_roadmap\": \"$URL\"}}")
+
+          HTTP_CODE=$(echo "$RESPONSE" | tail -1)
+          BODY=$(echo "$RESPONSE" | head -1)
+
+          echo "Response ($HTTP_CODE): $BODY"
+
+          if [ "$HTTP_CODE" != "200" ]; then
+            echo "ERROR: HubSpot returned $HTTP_CODE"
+            exit 1
+          fi
+
+          echo "Done — growth_profit_and_freedom_roadmap set to $URL on contact $CONTACT_ID"

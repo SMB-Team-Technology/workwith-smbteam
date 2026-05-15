@@ -128,18 +128,13 @@ jobs:
             exit 0
           fi
 
+          WORKWITH_URL="https://workwith.smbteam.com/$FRIENDLY_NAME"
           curl -s -X PATCH \
             "https://api.hubapi.com/crm/v3/objects/contacts/$CONTACT_ID" \
             -H "Authorization: Bearer $HUBSPOT_TOKEN" \
             -H "Content-Type: application/json" \
-            -d "{
-              \"properties\": {
-                \"workwith_page_url\":     \"$BASE_URL/$FRIENDLY_NAME/\",
-                \"proposal_deck_url\":     \"$BASE_URL/$FRIENDLY_NAME/${FIRM_NAME// /_}_${SAFE_DATE}_Proposal.pptx\",
-                \"sales_cheat_sheet_url\": \"$BASE_URL/$FRIENDLY_NAME/${FIRM_NAME// /_}_${SAFE_DATE}_Sales_Companion.pdf\"
-              }
-            }"
-          echo "HubSpot contact $CONTACT_ID updated with audit URLs."
+            -d "{\"properties\": {\"growth_profit_and_freedom_roadmap\": \"$WORKWITH_URL\"}}"
+          echo "HubSpot contact $CONTACT_ID: growth_profit_and_freedom_roadmap = $WORKWITH_URL"
 
       # -----------------------------------------------------------------------
       # STEP 6 — Email the closer with PDF + PPTX attachments
