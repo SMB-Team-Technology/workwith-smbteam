@@ -142,27 +142,93 @@ jobs:
           echo "HubSpot contact $CONTACT_ID updated with audit URLs."
 
       # -----------------------------------------------------------------------
-      # STEP 6 — Notify sales rep  [STUBBED — not live yet]
+      # STEP 6 — Email the closer with PDF + PPTX attachments
       # -----------------------------------------------------------------------
-      # Recommended approach: trigger a HubSpot automation workflow instead of
-      # sending email directly from GitHub Actions. When Step 5 populates
-      # workwith_page_url, a HubSpot workflow can:
-      #   - Send an internal notification email to the contact owner
-      #   - Enroll the contact in a proposal follow-up sequence
-      #
-      # Alternative: use SendGrid or similar if you want GitHub to send directly.
-      # Add SENDGRID_API_KEY to secrets and implement below.
-      #
-      # Remove `if: false` to enable.
-      - name: "[STUB] Step 6 — Notify sales rep"
-        if: false
+      # TEST MODE (current): sends only to eli.gill@smbteam.com
+      # PRODUCTION: set TEST_EMAIL_ONLY to false — email goes to the closer
+      #             with eli CC'd. Requires sales rep email in trigger file.
+      - name: Step 6 — Email closer with audit attachments
+        env:
+          GMAIL_USER: ${{ secrets.GMAIL_USER }}
+          GMAIL_APP_PASSWORD: ${{ secrets.GMAIL_APP_PASSWORD }}
+          FIRM_NAME: ${{ steps.inputs.outputs.firm_name }}
+          FRIENDLY_NAME: ${{ steps.inputs.outputs.friendly_name }}
+          SALES_REP: ${{ steps.inputs.outputs.sales_rep }}
+          TEST_EMAIL_ONLY: "true"
         run: |
-          SALES_REP="${{ steps.inputs.outputs.sales_rep }}"
-          FIRM_NAME="${{ steps.inputs.outputs.firm_name }}"
-          FRIENDLY_NAME="${{ steps.inputs.outputs.friendly_name }}"
-          echo "TODO: Send email to $SALES_REP notifying that the audit for $FIRM_NAME is ready."
-          echo "Audit URL: https://smb-team-technology.github.io/workwith-smbteam/$FRIENDLY_NAME/"
-          # curl -s -X POST https://api.sendgrid.com/v3/mail/send \
-          #   -H "Authorization: Bearer $SENDGRID_API_KEY" \
-          #   -H "Content-Type: application/json" \
-          #   -d "{ ... }"
+          python3 - << 'PYEOF'
+          import smtplib, os, glob, sys
+          from email.mime.multipart import MIMEMultipart
+          from email.mime.text import MIMEText
+          from email.mime.application import MIMEApplication
+
+          gmail_user     = os.environ["GMAIL_USER"]
+          gmail_password = os.environ["GMAIL_APP_PASSWORD"]
+          firm_name      = os.environ["FIRM_NAME"]
+          friendly_name  = os.environ["FRIENDLY_NAME"]
+          sales_rep      = os.environ["SALES_REP"]
+          test_only      = os.environ.get("TEST_EMAIL_ONLY", "true").lower() == "true"
+
+          # --- Recipients ---
+          # TEST MODE: send only to eli for verification
+          # PRODUCTION: flip TEST_EMAIL_ONLY to false and populate closer_email
+          # in the trigger file; add it to steps.inputs.outputs above.
+          eli = "eli.gill@smbteam.com"
+          if test_only:
+              to_addr = eli
+              cc_addrs = []
+              print(f"TEST MODE: sending only to {eli}")
+          else:
+              closer_email = os.environ.get("CLOSER_EMAIL", "")
+              if not closer_email:
+                  print("ERROR: CLOSER_EMAIL not set and TEST_EMAIL_ONLY is false.")
+                  sys.exit(1)
+              to_addr  = closer_email
+              cc_addrs = [eli]
+
+          # --- Find attachments ---
+          pdf_files  = glob.glob(f"{friendly_name}/*_Sales_Companion.pdf")
+          pptx_files = glob.glob(f"{friendly_name}/*_Proposal.pptx")
+          attachments = pdf_files + pptx_files
+
+          if not attachments:
+              print(f"WARNING: No PDF or PPTX found in {friendly_name}/. Sending without attachments.")
+
+          # --- Build message ---
+          msg = MIMEMultipart()
+          msg["From"]    = gmail_user
+          msg["To"]      = to_addr
+          if cc_addrs:
+              msg["Cc"]  = ", ".join(cc_addrs)
+          msg["Subject"] = f"Growth, Profit, and Freedom Roadmap ready for {firm_name}"
+
+          body = f"""Hi {sales_rep},
+
+The Growth, Profit, and Freedom Roadmap for {firm_name} is ready ahead of your proposal call.
+
+Attached you'll find:
+  • Proposal Deck (PowerPoint) — share this on screen during the call
+  • Sales Companion (PDF) — your seller-only cheat sheet, not for the client
+
+Let the team know if you need any changes before the call.
+
+SMB Team
+"""
+          msg.attach(MIMEText(body, "plain"))
+
+          for filepath in attachments:
+              with open(filepath, "rb") as f:
+                  part = MIMEApplication(f.read(), Name=os.path.basename(filepath))
+              part["Content-Disposition"] = f'attachment; filename="{os.path.basename(filepath)}"'
+              msg.attach(part)
+              print(f"Attached: {filepath}")
+
+          # --- Send ---
+          all_recipients = [to_addr] + cc_addrs
+          with smtplib.SMTP("smtp.gmail.com", 587) as server:
+              server.starttls()
+              server.login(gmail_user, gmail_password)
+              server.sendmail(gmail_user, all_recipients, msg.as_string())
+
+          print(f"Email sent to {to_addr}" + (f" (CC: {', '.join(cc_addrs)})" if cc_addrs else ""))
+          PYEOF
