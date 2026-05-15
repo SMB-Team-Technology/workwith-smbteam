@@ -202,18 +202,20 @@ jobs:
               msg["Cc"]  = ", ".join(cc_addrs)
           msg["Subject"] = f"Growth, Profit, and Freedom Roadmap ready for {firm_name}"
 
-          body = f"""Hi {sales_rep},
-
-The Growth, Profit, and Freedom Roadmap for {firm_name} is ready ahead of your proposal call.
-
-Attached you'll find:
-  • Proposal Deck (PowerPoint) — share this on screen during the call
-  • Sales Companion (PDF) — your seller-only cheat sheet, not for the client
-
-Let the team know if you need any changes before the call.
-
-SMB Team
-"""
+          body = "\n".join([
+              f"Hi {sales_rep},",
+              "",
+              f"The Growth, Profit, and Freedom Roadmap for {firm_name} is ready ahead of your proposal call.",
+              "",
+              "Attached you'll find:",
+              "  - Proposal Deck (PowerPoint) — share this on screen during the call",
+              "  - Sales Companion (PDF) — your seller-only cheat sheet, not for the client",
+              "",
+              "Let the team know if you need any changes before the call.",
+              "",
+              "SMB Team",
+              "",
+          ])
           msg.attach(MIMEText(body, "plain"))
 
           for filepath in attachments:
