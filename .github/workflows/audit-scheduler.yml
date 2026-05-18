@@ -1,9 +1,10 @@
 name: Audit Scheduler (Daily Proposal Call Check)
 
 on:
-  schedule:
-    # 9 AM ET weekdays (14:00 UTC)
-    - cron: '0 14 * * 1-5'
+  # Scheduler paused — filter was too broad (caught all recently-modified contacts
+  # with any upcoming activity). Re-enable once HubSpot trigger property is set up.
+  # schedule:
+  #   - cron: '0 14 * * 1-5'
   workflow_dispatch:
     inputs:
       lookback_hours:
