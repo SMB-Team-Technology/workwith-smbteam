@@ -1,16 +1,14 @@
 name: Audit Scheduler (Daily Proposal Call Check)
 
 on:
-  # Scheduler paused — filter was too broad (caught all recently-modified contacts
-  # with any upcoming activity). Re-enable once HubSpot trigger property is set up.
-  # schedule:
-  #   - cron: '0 14 * * 1-5'
+  schedule:
+    - cron: '0 14 * * 1-5'  # 9 AM ET weekdays
   workflow_dispatch:
     inputs:
-      lookback_hours:
-        description: "How many hours back to check for new bookings (default: 48)"
+      lookahead_days:
+        description: "How many days ahead to look for proposal calls (default: 7)"
         required: false
-        default: "48"
+        default: "7"
         type: string
 
 jobs:
@@ -36,7 +34,7 @@ jobs:
         env:
           HUBSPOT_TOKEN: ${{ secrets.HUBSPOT_TOKEN }}
           FATHOM_API_KEY: ${{ secrets.FATHOM_API_KEY }}
-          LOOKBACK_HOURS: ${{ github.event.inputs.lookback_hours || '48' }}
+          LOOKAHEAD_DAYS: ${{ github.event.inputs.lookahead_days || '7' }}
         run: node scripts/check-proposal-bookings.mjs
 
       - name: Commit and push any new trigger files

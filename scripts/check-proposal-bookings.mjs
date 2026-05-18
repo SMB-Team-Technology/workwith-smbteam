@@ -1,24 +1,24 @@
 /**
  * check-proposal-bookings.mjs
  *
- * Runs daily via audit-scheduler.yml. Queries HubSpot for contacts where a
- * closer recently booked a Proposal Call, fetches the Fathom discovery call
- * transcript for each, and writes a trigger JSON to triggers/audit-research/
- * so the audit-pipeline.yml workflow fires automatically.
+ * Runs daily via audit-scheduler.yml. Queries HubSpot for contacts where
+ * proposal_call_date is set and falls within the next LOOKAHEAD_DAYS days,
+ * fetches the Fathom discovery call transcript for each, and writes a trigger
+ * JSON to triggers/audit-research/ so the audit-pipeline.yml workflow fires.
  *
  * Required secrets:
  *   HUBSPOT_TOKEN   — HubSpot private app token (Settings → Integrations → Private Apps)
  *   FATHOM_API_KEY  — Fathom API key (fathom.video → Settings → API)
  *
  * Optional:
- *   LOOKBACK_HOURS  — How far back to look for new bookings (default: 48)
+ *   LOOKAHEAD_DAYS  — How many days ahead to look for proposal calls (default: 7)
  */
 
 import { writeFileSync, readFileSync, existsSync, mkdirSync } from 'fs';
 
 const HUBSPOT_TOKEN  = process.env.HUBSPOT_TOKEN;
 const FATHOM_API_KEY = process.env.FATHOM_API_KEY;
-const LOOKBACK_HOURS = parseInt(process.env.LOOKBACK_HOURS || '48', 10);
+const LOOKAHEAD_DAYS = parseInt(process.env.LOOKAHEAD_DAYS || '7', 10);
 
 if (!HUBSPOT_TOKEN) {
   console.error('ERROR: HUBSPOT_TOKEN secret is not set.');
@@ -49,34 +49,26 @@ function formatDate(date) {
 // ---------------------------------------------------------------------------
 
 /**
- * Find contacts where a proposal call was recently booked.
- *
- * Detection logic: contacts modified in the last LOOKBACK_HOURS that have an
- * upcoming `notes_next_activity_date`. This catches the "closer just booked a
- * proposal call" event without needing a custom HubSpot property.
- *
- * IMPROVEMENT OPTION: Create a HubSpot workflow that sets a custom property
- * `proposal_call_booked_at` (datetime) when a "Law Firm Proposal Review"
- * meeting is booked. Then filter on that property here instead. That removes
- * false positives from other types of activity.
+ * Find contacts where proposal_call_date is set and falls within the next
+ * LOOKAHEAD_DAYS days. HubSpot datetime filters use millisecond timestamps.
  */
 async function findProposalBookings() {
-  const since = new Date(Date.now() - LOOKBACK_HOURS * 60 * 60 * 1000).toISOString();
-  const now   = new Date().toISOString();
+  const nowMs       = Date.now();
+  const lookaheadMs = nowMs + LOOKAHEAD_DAYS * 24 * 60 * 60 * 1000;
 
   const body = {
     filterGroups: [{
       filters: [
-        { propertyName: 'lastmodifieddate',       operator: 'GTE', value: since },
-        { propertyName: 'notes_next_activity_date', operator: 'GTE', value: now  },
+        { propertyName: 'proposal_call_date', operator: 'GTE', value: String(nowMs) },
+        { propertyName: 'proposal_call_date', operator: 'LTE', value: String(lookaheadMs) },
       ]
     }],
     properties: [
       'firstname', 'lastname', 'email', 'phone', 'company', 'website',
       'city', 'state', 'country', 'hubspot_owner_id',
-      'notes_next_activity_date', 'lifecyclestage', 'hs_lead_status',
+      'proposal_call_date', 'lifecyclestage', 'hs_lead_status',
     ],
-    sorts: [{ propertyName: 'lastmodifieddate', propertyOrder: 'DESCENDING' }],
+    sorts: [{ propertyName: 'proposal_call_date', propertyOrder: 'ASCENDING' }],
     limit: 50,
   };
 
@@ -125,7 +117,6 @@ async function getFathomTranscript(email, contactName) {
     return `No transcript available. FATHOM_API_KEY secret is not configured.`;
   }
 
-  // Search recordings where this person was an invitee
   const searchUrl = `https://fathom.video/api/v1/calls?invitee_email=${encodeURIComponent(email)}&per_page=10&sort=created_at:desc`;
   const res = await fetch(searchUrl, {
     headers: {
@@ -147,8 +138,7 @@ async function getFathomTranscript(email, contactName) {
     return `No Fathom transcript found for ${contactName} (${email}).`;
   }
 
-  // Use the most recent call's summary
-  const latest    = calls[0];
+  const latest     = calls[0];
   const summaryRes = await fetch(`https://fathom.video/api/v1/calls/${latest.id}/summary`, {
     headers: {
       'Authorization': `Bearer ${FATHOM_API_KEY}`,
@@ -163,7 +153,7 @@ async function getFathomTranscript(email, contactName) {
   const summary = await summaryRes.json();
   const text    = summary.summary || summary.text || summary.content || JSON.stringify(summary);
   console.log(`  Found Fathom transcript: "${latest.title || latest.id}" (${latest.created_at || ''})`);
-  return text.slice(0, 8000); // cap at ~8k chars — the full summary is what matters
+  return text.slice(0, 8000);
 }
 
 // ---------------------------------------------------------------------------
@@ -171,13 +161,13 @@ async function getFathomTranscript(email, contactName) {
 // ---------------------------------------------------------------------------
 
 async function main() {
-  console.log(`\n=== Audit Scheduler: checking last ${LOOKBACK_HOURS}h for proposal bookings ===\n`);
+  console.log(`\n=== Audit Scheduler: contacts with proposal_call_date in next ${LOOKAHEAD_DAYS} days ===\n`);
 
   const contacts = await findProposalBookings();
-  console.log(`HubSpot returned ${contacts.length} contact(s) with upcoming activity.\n`);
+  console.log(`HubSpot returned ${contacts.length} contact(s).\n`);
 
   if (!contacts.length) {
-    console.log('No new proposal bookings. Exiting.');
+    console.log('No upcoming proposal calls found. Exiting.');
     return;
   }
 
@@ -187,15 +177,16 @@ async function main() {
   let triggered = 0;
 
   for (const contact of contacts) {
-    const p           = contact.properties;
-    const contactName = `${p.firstname || ''} ${p.lastname || ''}`.trim();
-    const firmName    = p.company || contactName;
+    const p            = contact.properties;
+    const contactName  = `${p.firstname || ''} ${p.lastname || ''}`.trim();
+    const firmName     = p.company || contactName;
     const friendlyName = toFriendlyName(firmName);
-    const triggerPath = `triggers/audit-research/${friendlyName}.json`;
+    const triggerPath  = `triggers/audit-research/${friendlyName}.json`;
 
-    console.log(`Processing: ${contactName} — ${firmName}`);
+    console.log(`Processing: ${contactName} — ${firmName} (proposal call: ${p.proposal_call_date})`);
 
-    // Skip if already triggered today for this firm
+    // Skip if already triggered today — avoids re-running the audit daily
+    // for the same upcoming call until the call date passes.
     if (existsSync(triggerPath)) {
       try {
         const existing = JSON.parse(readFileSync(triggerPath, 'utf8'));
@@ -203,7 +194,7 @@ async function main() {
           console.log(`  Already triggered today — skipping.\n`);
           continue;
         }
-      } catch (_) { /* file exists but is malformed — overwrite */ }
+      } catch (_) { /* malformed file — overwrite */ }
     }
 
     const salesRep   = await getOwnerName(p.hubspot_owner_id);
@@ -213,12 +204,12 @@ async function main() {
     const triggerData = {
       firm_name:          firmName,
       friendly_name:      friendlyName,
-      url:                p.website || `https://${firmName.toLowerCase().replace(/\s+/g, '')}.com`,
+      url:                p.website || '',
       sales_rep:          salesRep,
       date:               auditDate,
       hubspot_contact_id: contact.id,
       contact_email:      p.email,
-      proposal_call_date: p.notes_next_activity_date || null,
+      proposal_call_date: p.proposal_call_date || null,
       _triggered_date:    today,
       transcript,
     };
