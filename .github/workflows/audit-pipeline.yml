@@ -95,33 +95,15 @@ jobs:
           "
 
       # -----------------------------------------------------------------------
-      # STEP 5 — Write back to HubSpot  [STUBBED — not live yet]
+      # STEP 5 — Write back to HubSpot
       # -----------------------------------------------------------------------
-      # Once the audit is published (e.g. via GitHub Pages at
-      # https://smb-team-technology.github.io/workwith-smbteam/{friendly_name}/),
-      # this step updates three custom HubSpot contact properties:
-      #   workwith_page_url     — URL to the HTML audit report
-      #   proposal_deck_url     — URL to the .pptx file
-      #   sales_cheat_sheet_url — URL to the Sales Companion PDF
-      #
-      # Prerequisites before enabling:
-      #   1. Create the three custom properties in HubSpot
-      #      (Contacts → Properties → Create property, type = Single-line text)
-      #   2. Add HUBSPOT_TOKEN to GitHub secrets
-      #   3. Decide on public URL scheme (GitHub Pages, S3, etc.)
-      #   4. Remove the `if: false` line below
-      - name: "[STUB] Step 5 — Write audit URLs back to HubSpot"
-        if: false
+      - name: Step 5 — Write audit URL back to HubSpot
         env:
           HUBSPOT_TOKEN: ${{ secrets.HUBSPOT_TOKEN }}
         run: |
           FRIENDLY_NAME="${{ steps.inputs.outputs.friendly_name }}"
           TRIGGER_FILE="${{ steps.inputs.outputs.trigger_file }}"
           CONTACT_ID=$(jq -r '.hubspot_contact_id // empty' "$TRIGGER_FILE")
-          BASE_URL="https://smb-team-technology.github.io/workwith-smbteam"
-          FIRM_NAME="${{ steps.inputs.outputs.firm_name }}"
-          DATE="${{ steps.inputs.outputs.date }}"
-          SAFE_DATE=$(echo "$DATE" | tr ' ,' '--')
 
           if [ -z "$CONTACT_ID" ]; then
             echo "No hubspot_contact_id in trigger file — skipping HubSpot writeback."
@@ -129,12 +111,17 @@ jobs:
           fi
 
           WORKWITH_URL="https://workwith.smbteam.com/$FRIENDLY_NAME"
-          curl -s -X PATCH \
+          RESPONSE=$(curl -s -w "\n%{http_code}" -X PATCH \
             "https://api.hubapi.com/crm/v3/objects/contacts/$CONTACT_ID" \
             -H "Authorization: Bearer $HUBSPOT_TOKEN" \
             -H "Content-Type: application/json" \
-            -d "{\"properties\": {\"growth_profit_and_freedom_roadmap\": \"$WORKWITH_URL\"}}"
-          echo "HubSpot contact $CONTACT_ID: growth_profit_and_freedom_roadmap = $WORKWITH_URL"
+            -d "{\"properties\": {\"growth_profit_and_freedom_roadmap\": \"$WORKWITH_URL\"}}")
+          HTTP_CODE=$(echo "$RESPONSE" | tail -1)
+          echo "HubSpot response ($HTTP_CODE): contact $CONTACT_ID → growth_profit_and_freedom_roadmap = $WORKWITH_URL"
+          if [ "$HTTP_CODE" != "200" ]; then
+            echo "ERROR: HubSpot returned $HTTP_CODE"
+            exit 1
+          fi
 
       # -----------------------------------------------------------------------
       # STEP 6 — Email the closer with PDF + PPTX attachments
