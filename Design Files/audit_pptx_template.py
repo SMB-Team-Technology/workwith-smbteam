@@ -31,7 +31,6 @@ OUTPUT_PATH    = "friendly-name/FirmName_Date_Proposal.pptx"  # FILL: output pat
 
 # Optional images
 WEBSITE_SCREENSHOT_PATH = None   # Set to a local PNG path to show a screenshot; None = skip entirely
-STAIRCASE_STAGE         = 4      # FILL: client's current stage number (2, 3, 4, 5, or 6)
 
 # ── Slide 1 ──────────────────────────────────────────────────────
 URGENCY_SCORE = "7"                          # FILL: copy from section_05 urgency score
@@ -196,29 +195,6 @@ PRIORITY_LIGHT = {
 FONT = "Calibri"
 LOGO_PATH = os.path.join(os.path.dirname(__file__), "smb_team_logo.png")
 
-# Staircase images hosted on Dropbox — downloaded at render time by stage number
-_STAIRCASE_URLS = {
-    2: "https://www.dropbox.com/scl/fi/gmoegufkiy1vxit0dyyoc/LLS-Lawyer.png?rlkey=fu7cv52aa2w46rp73gc86f7fo&st=n933j6nu&raw=1",
-    3: "https://www.dropbox.com/scl/fi/3d243mphsenx3vqnp9aas/LLS-Solo-Practitioner.png?rlkey=mgwovpkf3ntzx2wm856oyvn7s&st=5kasghsj&raw=1",
-    4: "https://www.dropbox.com/scl/fi/27el1jrgyynonfwcgi8ib/LLS-Small-Business-Manager.png?rlkey=biehntt1vm0nxnynabgako82i&st=z2k2uxwe&raw=1",
-    5: "https://www.dropbox.com/scl/fi/epfota8m1378jjzdfxgdz/LLS-Law-Firm-CEO.png?rlkey=f6a6t78l9l2kivmb5jnwx5imh&st=uasu9jaa&raw=1",
-    6: "https://www.dropbox.com/scl/fi/yxqhogs6byassd9nxztpf/LLS-Law-Firm-Owner.png?rlkey=v5mwc7upqym7z4h65z0ok0ie4&st=pxogmjre&raw=1",
-}
-
-def _get_staircase_path(stage):
-    import urllib.request, tempfile
-    url = _STAIRCASE_URLS.get(int(stage))
-    if not url:
-        return None
-    try:
-        tmp = tempfile.NamedTemporaryFile(suffix=".png", delete=False)
-        urllib.request.urlretrieve(url, tmp.name)
-        print(f"  Downloaded staircase image for Stage {stage}")
-        return tmp.name
-    except Exception as e:
-        print(f"  Warning: Could not download staircase image: {e}")
-        return None
-
 # ── Core helpers ──────────────────────────────────────────────────
 
 def emu(*inches):
@@ -293,14 +269,15 @@ def build_slide1(prs):
     layout = prs.slide_layouts[6]  # blank
     slide = prs.slides.add_slide(layout)
 
-    # Left yellow strip
-    add_rect(slide, 0, 0, 0.16, 5.625, fill=GOLD)
-
-    # Audit label + title
+    # Full-width NAVY banner — mirrors slides 2 and 3
+    add_rect(slide, 0, 0, 10, 1.05, fill=NAVY)
     add_text(slide, f"LAW FIRM GROWTH AUDIT  ·  {FIRM_NAME.upper()}",
-             0.28, 0.17, 5.20, 0.22, 8, GOLD, bold=True)
+             0.32, 0.10, 9.40, 0.22, 8, GOLD, bold=True)
     add_text(slide, f"Where {FIRM_NAME} Stands Today",
-             0.28, 0.42, 5.30, 0.58, 24, WHITE, bold=True)
+             0.32, 0.34, 9.40, 0.60, 24, WHITE, bold=True)
+
+    # Left yellow strip (starts below banner)
+    add_rect(slide, 0, 1.05, 0.16, 4.23, fill=GOLD)
 
     # Urgency box
     add_rect(slide, 0.28, 1.10, 1.42, 0.92, fill=RED)
@@ -337,26 +314,26 @@ def build_slide1(prs):
                  align=PP_ALIGN.CENTER)
         add_text(slide, text, 0.74, y+0.08, 4.76, 0.46, 10, txt_color)
 
-    # Right panel — white background
-    add_rect(slide, 5.75, 0, 4.25, 5.28, fill=WHITE)
+    # Right panel — white background (starts below banner)
+    add_rect(slide, 5.75, 1.05, 4.25, 4.23, fill=WHITE)
 
     # Website screenshot — only shown when a local PNG is provided
     if WEBSITE_SCREENSHOT_PATH and os.path.isfile(WEBSITE_SCREENSHOT_PATH):
         from pptx.util import Emu as E
         slide.shapes.add_picture(WEBSITE_SCREENSHOT_PATH,
-                                 E(int(5.82*914400)), E(int(0.12*914400)),
-                                 E(int(4.10*914400)), E(int(2.31*914400)))
+                                 E(int(5.82*914400)), E(int(1.10*914400)),
+                                 E(int(4.10*914400)), E(int(2.00*914400)))
 
-    # "You are here" strip
-    add_rect(slide, 5.75, 2.48, 4.25, 0.76, fill=NAVY)
-    add_rect(slide, 5.75, 2.48, 0.14, 0.76, fill=GOLD)
-    add_text(slide, "YOU ARE HERE", 6.00, 2.50, 3.80, 0.22, 8, GOLD, bold=True)
-    add_text(slide, STAGE_TEXT, 6.00, 2.72, 3.80, 0.44, 10, WHITE, bold=True)
+    # "You are here" strip — positioned just below banner
+    add_rect(slide, 5.75, 1.12, 4.25, 0.76, fill=NAVY)
+    add_rect(slide, 5.75, 1.12, 0.14, 0.76, fill=GOLD)
+    add_text(slide, "YOU ARE HERE", 6.00, 1.14, 3.80, 0.22, 8, GOLD, bold=True)
+    add_text(slide, STAGE_TEXT, 6.00, 1.36, 3.80, 0.44, 10, WHITE, bold=True)
 
     # Competitor table header
-    add_text(slide, "COMPETITOR LANDSCAPE", 5.90, 3.35, 3.90, 0.24, 8, SLATE, bold=True)
+    add_text(slide, "COMPETITOR LANDSCAPE", 5.90, 2.10, 3.90, 0.24, 8, SLATE, bold=True)
 
-    comp_ys = [3.62, 4.00, 4.38]
+    comp_ys = [2.38, 2.76, 3.14]
     for i, (name, reviews, detail) in enumerate(COMPETITORS[:3]):
         y = comp_ys[i]
         bg = COMP_ALT if i % 2 == 0 else WHITE
@@ -366,11 +343,11 @@ def build_slide1(prs):
         add_text(slide, detail, 8.96, y+0.07, 0.90, 0.22, 6, SLATE)
 
     # Client row
-    add_rect(slide, 5.75, 4.76, 4.25, 0.34, fill=rgb("FFF0F0"))
-    add_rect(slide, 5.75, 4.76, 0.10, 0.34, fill=RED)
-    add_text(slide, FIRM_NAME, 5.92, 4.81, 2.00, 0.24, 9, RED, bold=True)
-    add_text(slide, CLIENT_REVIEWS, 7.94, 4.81, 1.00, 0.24, 8, RED, bold=True)
-    add_text(slide, CLIENT_REVIEWS_NOTE, 8.96, 4.83, 0.90, 0.22, 6, SLATE)
+    add_rect(slide, 5.75, 3.52, 4.25, 0.34, fill=rgb("FFF0F0"))
+    add_rect(slide, 5.75, 3.52, 0.10, 0.34, fill=RED)
+    add_text(slide, FIRM_NAME, 5.92, 3.57, 2.00, 0.24, 9, RED, bold=True)
+    add_text(slide, CLIENT_REVIEWS, 7.94, 3.57, 1.00, 0.24, 8, RED, bold=True)
+    add_text(slide, CLIENT_REVIEWS_NOTE, 8.96, 3.59, 0.90, 0.22, 6, SLATE)
 
     add_footer(slide, 1, 3, LOGO_PATH)
 
@@ -389,18 +366,12 @@ def build_slide2(prs):
 
     # Left panel — model + goal
     add_rect(slide, 0.20, 1.12, 2.72, 3.98, fill=NAVY)
-    _staircase = _get_staircase_path(STAIRCASE_STAGE)
-    if _staircase:
-        from pptx.util import Emu as E
-        slide.shapes.add_picture(_staircase,
-                                 E(int(0.20*914400)), E(int(1.12*914400)),
-                                 E(int(2.72*914400)), E(int(1.53*914400)))
-    add_rect(slide, 0.20, 2.68, 2.72, 0.02, fill=GOLD)
-    add_text(slide, "THE SMB TEAM MODEL", 0.32, 2.76, 2.48, 0.22, 8, GOLD, bold=True)
-    add_text(slide, SMB_MODEL_DESC, 0.32, 3.00, 2.48, 0.72, 9, rgb("A8BFDA"))
-    add_rect(slide, 0.20, 3.78, 2.72, 0.72, fill=GOLD)
-    add_text(slide, GOAL_HEADLINE, 0.32, 3.80, 2.50, 0.30, 12, NAVY, bold=True)
-    add_text(slide, GOAL_DBM, 0.32, 4.10, 2.50, 0.36, 9, NAVY)
+    add_rect(slide, 0.20, 1.14, 2.72, 0.02, fill=GOLD)
+    add_text(slide, "THE SMB TEAM MODEL", 0.32, 1.20, 2.48, 0.22, 8, GOLD, bold=True)
+    add_text(slide, SMB_MODEL_DESC, 0.32, 1.46, 2.48, 1.72, 9, rgb("A8BFDA"))
+    add_rect(slide, 0.20, 3.28, 2.72, 0.82, fill=GOLD)
+    add_text(slide, GOAL_HEADLINE, 0.32, 3.30, 2.50, 0.30, 12, NAVY, bold=True)
+    add_text(slide, GOAL_DBM, 0.32, 3.60, 2.50, 0.44, 9, NAVY)
 
     # 3 priority columns
     priority_xs = [3.08, 5.40, 7.72]
