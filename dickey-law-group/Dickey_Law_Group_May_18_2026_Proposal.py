@@ -9,7 +9,7 @@ Slide 1 — Where [Firm] Stands Today         (assessment overview)
 Slide 2 — Your Growth Plan: 3 Priorities    (action plan)
 Slide 3 — Your Investment & What's Next     (pricing + first 90 days)
 
-Output: [friendly-name]/[FirmName]_[Date]_Proposal.pptx
+Output: dickey-law-group/Dickey_Law_Group_May_18_2026_Proposal.pptx
 """
 
 from pptx import Presentation
@@ -29,83 +29,85 @@ FIRM_NAME      = "Dickey Law Group PLLC"
 SALES_REP      = "Jonathan Farace"
 OUTPUT_PATH    = "dickey-law-group/Dickey_Law_Group_May_18_2026_Proposal.pptx"
 
-# Optional images (set to None to use a grey placeholder)
-WEBSITE_SCREENSHOT_PATH = None
-STAIRCASE_IMAGE_PATH    = None
+# Optional images
+WEBSITE_SCREENSHOT_PATH = None   # None = skip entirely
+STAIRCASE_STAGE         = 3      # Stage 3: Solo Practitioner
 
 # ── Slide 1 ──────────────────────────────────────────────────────
 URGENCY_SCORE = "6"
 
 # Pillar status — each is ("RED" | "AMBER" | "GREEN", label, one-line detail)
 PILLARS = [
-    ("RED",   "CRITICAL", "0% paid traffic"),      # Lead Generation
-    ("RED",   "CRITICAL", "Attorneys handle intake"), # Intake
-    ("RED",   "CRITICAL", "No support staff"),     # Team
-    ("AMBER", "AMBER",    "Margins unknown"),       # Profit Plan
+    ("RED",   "CRITICAL", "100% organic, 0% paid"),    # Lead Generation
+    ("RED",   "CRITICAL", "No intake staff"),           # Intake
+    ("RED",   "CRITICAL", "No support staff"),          # Team
+    ("AMBER", "MONITOR",  "No profit tracking"),        # Profit Plan
 ]
 PILLAR_NAMES = ["Lead Generation", "Intake", "Team", "Profit Plan"]
 
 # Key findings — list of ("neg"|"pos", "one-sentence finding")
 FINDINGS = [
-    ("neg", "No paid advertising — invisible to high-intent searchers in The Woodlands"),
-    ("neg", "Attorneys handle all intake personally — bottleneck at highest cost point"),
-    ("neg", "2-attorney firm, no staff — growth capped at personal capacity"),
-    ("pos", "32 five-star reviews + active bilingual blog — strong organic foundation"),
+    ("neg", "Zero paid ads — invisible to high-intent local searchers"),
+    ("neg", "Intake falls to both attorneys — no after-hours coverage"),
+    ("neg", "Two-attorney firm can't scale without systems and staff"),
+    ("pos", "5-star bilingual firm — a rare trust edge competitors lack"),
 ]
 
 # Competitor table — list of (name, "XXX reviews", "brief note")
 COMPETITORS = [
-    ("Riddle & Butts, LLP",  "Avvo 9.6–10.0", "80+ yrs exp. · CPA referral network"),
-    ("Weygandt Law",          "Multi-location", "Flat-fee · Wills & Waffles events"),
-    ("De Ford Law Firm",      "6 attorneys",    "25+ yrs · estate + family + probate"),
+    ("Riddle & Butts, LLP",  "80+ yr track record", "Top CPA referral source"),
+    ("Weygandt Law",         "Multi-location",       "Flat-fee brand, community events"),
+    ("De Ford Law Firm",     "6 attorneys",          "25+ yrs, high-volume capacity"),
 ]
-CLIENT_REVIEWS      = "32 reviews · 5.0 stars"
+CLIENT_REVIEWS      = "32 reviews"
 CLIENT_REVIEWS_NOTE = "← You are here"
 
 # Stage strip (right panel, Slide 1)
-STAGE_TEXT = "Stage 3: Solo Practitioner  →  Goal: Stage 6, Law Firm Owner"
+STAGE_TEXT = "Stage 3: Solo Practitioner  →  Goal: Stage 5, Law Firm CEO"
 
 # ── Slide 2 ──────────────────────────────────────────────────────
 SLIDE_2_TITLE = "Your Growth Plan: 3 Priorities to Reach $75K/Month"
 
 SMB_MODEL_DESC = (
-    "Lead generation, intake, team, and profit must all work together. "
-    "Missing any one means growth stalls regardless of ad spend."
+    "All four pillars must work together — miss any one and growth stalls "
+    "regardless of how talented the attorneys are. "
+    "When they run as a system, James and Mireya can step back "
+    "and let the firm grow without them in every room."
 )
 
 GOAL_HEADLINE = "$450K → $900K revenue"
-GOAL_DBM      = "Build a firm that runs itself"
+GOAL_DBM      = "Step back and let the firm grow without you"
 
 # Each priority: (line1, line2, accent_color_hex, [5 bullet strings])
 PRIORITIES = [
     (
         "Build the", "Marketing Engine", "1D4ED8",
         [
-            "Launch Google Ads for estate planning keywords",
-            "Activate LSA — pay per call, not per click",
-            "Launch Spanish-language ad campaigns",
-            "Build geo pages for Spring, Conroe, Tomball",
-            "Optimize GBP for local 3-pack ranking",
+            "Google LSA — qualified leads call you directly",
+            "Spanish ads — a channel no competitor can match",
+            "Contact form above fold — convert existing traffic",
+            "Geo pages for Spring, Conroe — widen your market",
+            "32 five-star reviews → Google Screened visibility",
         ],
     ),
     (
         "Fix Intake &", "Stop Losing Cases", "0F766E",
         [
-            "Add after-hours intake mechanism",
-            "Move contact form above the fold",
-            "Add embedded scheduling widget to site",
-            "Build 3-step follow-up sequence",
-            "Track inquiry volume and conversion rate",
+            "After-hours intake — no evening call goes unanswered",
+            "3-step follow-up sequence — stop losing warm leads",
+            "Booking widget converts visitors before they scroll",
+            "Track consult-to-client rate weekly — find the leak",
+            "Structured intake script — faster, consistent process",
         ],
     ),
     (
         "Install Team &", "Profit Systems", "6D28D9",
         [
-            "Document intake & onboarding SOPs first",
-            "Hire first support staff with systems ready",
-            "Track revenue by practice area monthly",
-            "Establish owner compensation plan",
-            "Build review request sequence — target 50+",
+            "Document SOPs before hiring — scale without chaos",
+            "Track revenue by practice area — know best margins",
+            "First support hire with training system in place",
+            "Monthly profit review — more revenue you actually keep",
+            "A firm that runs systems, not one that runs on you",
         ],
     ),
 ]
@@ -116,13 +118,13 @@ PACKAGES = [
     (
         "FULL SERVICE MARKETING — STARTER",
         "$4,847", "$5,697/mo",
-        "Google Ads · LSA · SEO · GBP · Website Optimization",
+        "Google Ads · LSA · SEO · GBP · Website optimization",
         "1D4ED8",
     ),
     (
         "ELITE COACH PLUS",
         "$3,200", "$3,497/mo",
-        "1-on-1 coaching · Masterminds · Group sessions",
+        "Weekly coaching · KPI scorecards · Intake framework",
         "6D28D9",
     ),
 ]
@@ -134,24 +136,25 @@ AD_SPEND_NOTE = (
     "+ Recommended ad spend: $5,500–$15,000/mo paid directly to Google/Meta"
 )
 
-AVG_CASE_VALUE      = "$3,500 (est.)"
+AVG_CASE_VALUE      = "$3,500"
 CONSERVATIVE_LABEL  = "Conservative  (6 cases/mo):"
-CONSERVATIVE_RESULT = "$21,000 revenue · 3.8x ROAS"
+CONSERVATIVE_RESULT = "$21,000 revenue · 3.8× ROAS"
 AGGRESSIVE_LABEL    = "Aggressive  (26 cases/mo):"
-AGGRESSIVE_RESULT   = "$91,000 revenue · 6.1x ROAS"
+AGGRESSIVE_RESULT   = "$91,000 revenue · 6.1× ROAS"
 
 # Timeline — 5 items: (milestone_label, action_text)
 TIMELINE = [
-    ("Day 1",   "Google Ads & LSA campaigns go live"),
-    ("Day 14",  "Website conversion optimization complete"),
-    ("Week 2",  "Coaching kickoff — metrics & 90-day plan"),
-    ("Week 3",  "Geo landing pages for Spring & Conroe built"),
-    ("Month 3", "Review sequence active — targeting 50+ reviews"),
+    ("Day 1",   "Launch Google Ads and LSA — paid leads active"),
+    ("Day 14",  "Contact form above fold, booking widget live"),
+    ("Week 2",  "Coaching kickoff — baseline metrics and 90-day plan"),
+    ("Week 3",  "Geo landing pages for Spring and Conroe TX"),
+    ("Month 3", "Automated review sequence live — targeting 50+ reviews"),
 ]
 
 CLOSING_QUOTE = (
-    '"The Woodlands market is contested, not conquered — '
-    'a bilingual firm with five-star reviews wins when it builds the systems to be found."'
+    '"You did not start this firm to handle every intake call yourself. '
+    'You started it to help families — and to build something that works '
+    'without requiring everything from both of you."'
 )
 
 # ═══════════════════════════════════════════════════════════════════
@@ -179,8 +182,9 @@ COMP_ALT    = rgb("F0F4FA")
 ROI_BG      = rgb("ECFDF5")
 ROI_GREEN   = rgb("065F46")
 ROI_HILIGHT = rgb("D1FAE5")
-NEAR_WHITE  = rgb("F0F4FA")
-BUNDLE_SUB  = rgb("7CA0C0")
+NEAR_WHITE    = rgb("F0F4FA")
+BUNDLE_SUB    = rgb("7CA0C0")
+STRIKETHROUGH = rgb("334155")
 
 STATUS_COLOR = {"RED": RED, "AMBER": AMBER, "GREEN": GREEN}
 PRIORITY_LIGHT = {
@@ -191,6 +195,29 @@ PRIORITY_LIGHT = {
 
 FONT = "Calibri"
 LOGO_PATH = os.path.join(os.path.dirname(__file__), "smb_team_logo.png")
+
+# Staircase images hosted on Dropbox — downloaded at render time by stage number
+_STAIRCASE_URLS = {
+    2: "https://www.dropbox.com/scl/fi/gmoegufkiy1vxit0dyyoc/LLS-Lawyer.png?rlkey=fu7cv52aa2w46rp73gc86f7fo&st=n933j6nu&raw=1",
+    3: "https://www.dropbox.com/scl/fi/3d243mphsenx3vqnp9aas/LLS-Solo-Practitioner.png?rlkey=mgwovpkf3ntzx2wm856oyvn7s&st=5kasghsj&raw=1",
+    4: "https://www.dropbox.com/scl/fi/27el1jrgyynonfwcgi8ib/LLS-Small-Business-Manager.png?rlkey=biehntt1vm0nxnynabgako82i&st=z2k2uxwe&raw=1",
+    5: "https://www.dropbox.com/scl/fi/epfota8m1378jjzdfxgdz/LLS-Law-Firm-CEO.png?rlkey=f6a6t78l9l2kivmb5jnwx5imh&st=uasu9jaa&raw=1",
+    6: "https://www.dropbox.com/scl/fi/yxqhogs6byassd9nxztpf/LLS-Law-Firm-Owner.png?rlkey=v5mwc7upqym7z4h65z0ok0ie4&st=pxogmjre&raw=1",
+}
+
+def _get_staircase_path(stage):
+    import urllib.request, tempfile
+    url = _STAIRCASE_URLS.get(int(stage))
+    if not url:
+        return None
+    try:
+        tmp = tempfile.NamedTemporaryFile(suffix=".png", delete=False)
+        urllib.request.urlretrieve(url, tmp.name)
+        print(f"  Downloaded staircase image for Stage {stage}")
+        return tmp.name
+    except Exception as e:
+        print(f"  Warning: Could not download staircase image: {e}")
+        return None
 
 # ── Core helpers ──────────────────────────────────────────────────
 
@@ -230,7 +257,6 @@ def add_text(slide, text, left, top, w, h, size, color, bold=False,
     run.font.color.rgb = color
     run.font.bold = bold
     run.font.italic = italic
-    # Remove auto-fit so text doesn't spill
     txb.text_frame.auto_size = None
     return txb
 
@@ -313,9 +339,12 @@ def build_slide1(prs):
     # Right panel — white background
     add_rect(slide, 5.75, 0, 4.25, 5.28, fill=WHITE)
 
-    # Website screenshot
-    add_image_or_placeholder(slide, WEBSITE_SCREENSHOT_PATH,
-                             5.82, 0.12, 4.10, 2.31, "Website Screenshot")
+    # Website screenshot — only shown when a local PNG is provided
+    if WEBSITE_SCREENSHOT_PATH and os.path.isfile(WEBSITE_SCREENSHOT_PATH):
+        from pptx.util import Emu as E
+        slide.shapes.add_picture(WEBSITE_SCREENSHOT_PATH,
+                                 E(int(5.82*914400)), E(int(0.12*914400)),
+                                 E(int(4.10*914400)), E(int(2.31*914400)))
 
     # "You are here" strip
     add_rect(slide, 5.75, 2.48, 4.25, 0.76, fill=NAVY)
@@ -359,8 +388,12 @@ def build_slide2(prs):
 
     # Left panel — model + goal
     add_rect(slide, 0.20, 1.12, 2.72, 3.98, fill=NAVY)
-    add_image_or_placeholder(slide, STAIRCASE_IMAGE_PATH,
-                             0.20, 1.12, 2.72, 1.53, "Staircase Image")
+    _staircase = _get_staircase_path(STAIRCASE_STAGE)
+    if _staircase:
+        from pptx.util import Emu as E
+        slide.shapes.add_picture(_staircase,
+                                 E(int(0.20*914400)), E(int(1.12*914400)),
+                                 E(int(2.72*914400)), E(int(1.53*914400)))
     add_rect(slide, 0.20, 2.68, 2.72, 0.02, fill=GOLD)
     add_text(slide, "THE SMB TEAM MODEL", 0.32, 2.76, 2.48, 0.22, 8, GOLD, bold=True)
     add_text(slide, SMB_MODEL_DESC, 0.32, 3.00, 2.48, 0.72, 9, rgb("A8BFDA"))
@@ -417,9 +450,9 @@ def build_slide3(prs):
         add_text(slide, label, 0.52, y+0.10, 4.16, 0.22, 8, ac, bold=True)
         add_text(slide, price, 0.52, y+0.30, 2.00, 0.48, 32, NAVY, bold=True)
         add_text(slide, "/mo", 2.04, y+0.42, 0.46, 0.28, 11, SLATE)
-        add_text(slide, retail, 2.54, y+0.44, 1.00, 0.26, 11, SLATE)
+        add_text(slide, retail, 2.54, y+0.44, 1.00, 0.26, 11, STRIKETHROUGH)
         # Strikethrough line over retail price
-        add_rect(slide, 2.54, y+0.55, 0.88, 0.01, fill=SLATE)
+        add_rect(slide, 2.54, y+0.55, 0.88, 0.01, fill=STRIKETHROUGH)
         add_text(slide, services, 0.52, y+0.84, 4.16, 0.22, 8, SLATE)
 
     # Bundle total
