@@ -40,7 +40,42 @@ Pricing: two package cards with bundled and retail prices, bundle total + saving
 
 ---
 
-## EXTRACTION RULES
+## DBM LANGUAGE — CUSTOMER-FACING TRANSLATION
+
+The research notes contain the owner's **Dominant Buying Motive** in internal shorthand (e.g., "Jay takes real time off"). The deck is shown to the client — translate that shorthand into aspirational language the owner would say about themselves.
+
+**The rule:** The sales companion speaks *about* the client to the rep ("Jay is trapped by his phone"). The deck speaks *to* the client about their future ("The freedom to step away — and trust your firm handles it").
+
+**Translation guide:**
+
+| Internal shorthand (research notes) | Client-facing version (deck) |
+|---|---|
+| "takes real time off" | "Step away from the firm — and it still runs" |
+| "not the one doing everything" | "A team that performs without you in every meeting" |
+| "hit $X revenue" | "A firm that generates $X — predictably, every month" |
+| "stop working weekends" | "Weekends back. Nights back. A business that works for you." |
+| "be proud of the firm" | "A firm you're proud to hand off — or hand over to the next generation" |
+
+Use the client's own words from the transcript wherever possible. If they said something quotable about what they want their life to look like, that is the DBM.
+
+**Where DBM language appears in the deck — all four touchpoints must reflect it:**
+
+1. **`GOAL_DBM`** (Slide 2 goal card, bottom of left panel) — one short phrase, 6–10 words, first-person outcome: *"Step away and trust the firm runs"*. No jargon, no metrics — pure aspiration.
+
+2. **`SMB_MODEL_DESC`** (Slide 2, below the staircase) — 1–2 sentences explaining the SMB model. End with a sentence connecting the model to *this owner's* outcome: *"When all four pillars work, [Owner] can finally [DBM outcome]."*
+
+3. **`CLOSING_QUOTE`** (Slide 3 closing bar) — the most powerful DBM moment. Write it as a vivid, specific version of the outcome the owner described. Should feel like something they almost said on the call. Put it in quotation marks. No metrics, no SMB jargon — pure vision.
+
+4. **Priority column bullets (Slide 2)** — at least one bullet per column should tie the action to a life outcome, not just a business output. Instead of *"Launch Google Ads campaign"*, write *"Turn Google into a client pipeline that runs without you"*.
+
+**What to avoid in the deck:**
+- Do not use internal closer language ("DBM", "stage", "pain points", "closes")
+- Do not reference the sales process or mention SMB Team's internal framework by name
+- Do not use urgency-pressure framing — the deck should feel like a vision, not a pitch
+
+---
+
+
 
 Copy values exactly — do not rewrite or recompute.
 
@@ -107,7 +142,7 @@ wc -c "[friendly-name]/[FirmName]_[Date]_Proposal.pptx"
 - Copy prices exactly from section_11 — never round or estimate
 - Bullet text: one idea, one sentence, ≤55 chars, 8th-grade reading level
 - Priority column bullets must be firm-specific — no generic language
-- The closing quote on Slide 3 should be in quotation marks, tied to the owner's DBM
+- The closing quote on Slide 3 must be vivid, specific, and in the owner's voice — not a generic tagline. If the transcript has a direct quote about what they want their life to look like, use it verbatim or near-verbatim
 - Do not add a fourth package card — maximum two packages per the template
 - Never modify `Design Files/audit_pptx_template.py` — work in the firm's copy only
 
