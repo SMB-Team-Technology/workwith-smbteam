@@ -184,10 +184,13 @@ jobs:
               msg["Cc"]  = ", ".join(cc_addrs)
           msg["Subject"] = f"Growth, Profit, and Freedom Roadmap ready for {firm_name}"
 
+          workwith_url = f"https://workwith.smbteam.com/{friendly_name}"
           body = "\n".join([
               f"Hi {sales_rep},",
               "",
               f"The Growth, Profit, and Freedom Roadmap for {firm_name} is ready ahead of your proposal call.",
+              "",
+              f"View the full report here: {workwith_url}",
               "",
               "Attached you'll find:",
               "  - Proposal Deck (PowerPoint) — share this on screen during the call",

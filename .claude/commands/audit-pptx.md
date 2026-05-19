@@ -85,7 +85,7 @@ Each bullet: one specific action for this firm, ≤55 chars.
 2. Fill every `# FILL:` placeholder using the extraction rules above
 3. Set `OUTPUT_PATH = "[friendly-name]/[FirmName]_[Date]_Proposal.pptx"`
 4. Set `SALES_REP` to the sales rep name
-5. For images: set `WEBSITE_SCREENSHOT_PATH = None` and `STAIRCASE_IMAGE_PATH = None` unless screenshot files exist in the firm's folder (name them `website_screenshot.png` and `staircase.png` to enable)
+5. Set `STAIRCASE_STAGE` to the client's current stage number (2–6) — the script downloads the correct image automatically from Dropbox. Set `WEBSITE_SCREENSHOT_PATH = None` (leave as-is unless a local screenshot PNG exists)
 6. Verify no `# FILL:` placeholder text remains (the word "FILL" should not appear in any string value)
 7. Run the script:
 

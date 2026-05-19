@@ -29,9 +29,9 @@ FIRM_NAME      = "FIRM NAME HERE"                    # FILL: full firm name
 SALES_REP      = "Sales Rep Name"                    # FILL: rep's full name
 OUTPUT_PATH    = "friendly-name/FirmName_Date_Proposal.pptx"  # FILL: output path
 
-# Optional images (set to None to use a grey placeholder)
-WEBSITE_SCREENSHOT_PATH = None   # FILL: path to website screenshot PNG, or None
-STAIRCASE_IMAGE_PATH    = None   # FILL: path to staircase image PNG, or None
+# Optional images
+WEBSITE_SCREENSHOT_PATH = None   # Set to a local PNG path to show a screenshot; None = skip entirely
+STAIRCASE_STAGE         = 4      # FILL: client's current stage number (2, 3, 4, 5, or 6)
 
 # ── Slide 1 ──────────────────────────────────────────────────────
 URGENCY_SCORE = "7"                          # FILL: copy from section_05 urgency score
@@ -182,8 +182,9 @@ COMP_ALT    = rgb("F0F4FA")
 ROI_BG      = rgb("ECFDF5")
 ROI_GREEN   = rgb("065F46")
 ROI_HILIGHT = rgb("D1FAE5")
-NEAR_WHITE  = rgb("F0F4FA")
-BUNDLE_SUB  = rgb("7CA0C0")
+NEAR_WHITE    = rgb("F0F4FA")
+BUNDLE_SUB    = rgb("7CA0C0")
+STRIKETHROUGH = rgb("334155")
 
 STATUS_COLOR = {"RED": RED, "AMBER": AMBER, "GREEN": GREEN}
 PRIORITY_LIGHT = {
@@ -194,6 +195,29 @@ PRIORITY_LIGHT = {
 
 FONT = "Calibri"
 LOGO_PATH = os.path.join(os.path.dirname(__file__), "smb_team_logo.png")
+
+# Staircase images hosted on Dropbox — downloaded at render time by stage number
+_STAIRCASE_URLS = {
+    2: "https://www.dropbox.com/scl/fi/gmoegufkiy1vxit0dyyoc/LLS-Lawyer.png?rlkey=fu7cv52aa2w46rp73gc86f7fo&st=n933j6nu&raw=1",
+    3: "https://www.dropbox.com/scl/fi/3d243mphsenx3vqnp9aas/LLS-Solo-Practitioner.png?rlkey=mgwovpkf3ntzx2wm856oyvn7s&st=5kasghsj&raw=1",
+    4: "https://www.dropbox.com/scl/fi/27el1jrgyynonfwcgi8ib/LLS-Small-Business-Manager.png?rlkey=biehntt1vm0nxnynabgako82i&st=z2k2uxwe&raw=1",
+    5: "https://www.dropbox.com/scl/fi/epfota8m1378jjzdfxgdz/LLS-Law-Firm-CEO.png?rlkey=f6a6t78l9l2kivmb5jnwx5imh&st=uasu9jaa&raw=1",
+    6: "https://www.dropbox.com/scl/fi/yxqhogs6byassd9nxztpf/LLS-Law-Firm-Owner.png?rlkey=v5mwc7upqym7z4h65z0ok0ie4&st=pxogmjre&raw=1",
+}
+
+def _get_staircase_path(stage):
+    import urllib.request, tempfile
+    url = _STAIRCASE_URLS.get(int(stage))
+    if not url:
+        return None
+    try:
+        tmp = tempfile.NamedTemporaryFile(suffix=".png", delete=False)
+        urllib.request.urlretrieve(url, tmp.name)
+        print(f"  Downloaded staircase image for Stage {stage}")
+        return tmp.name
+    except Exception as e:
+        print(f"  Warning: Could not download staircase image: {e}")
+        return None
 
 # ── Core helpers ──────────────────────────────────────────────────
 
@@ -316,9 +340,12 @@ def build_slide1(prs):
     # Right panel — white background
     add_rect(slide, 5.75, 0, 4.25, 5.28, fill=WHITE)
 
-    # Website screenshot
-    add_image_or_placeholder(slide, WEBSITE_SCREENSHOT_PATH,
-                             5.82, 0.12, 4.10, 2.31, "Website Screenshot")
+    # Website screenshot — only shown when a local PNG is provided
+    if WEBSITE_SCREENSHOT_PATH and os.path.isfile(WEBSITE_SCREENSHOT_PATH):
+        from pptx.util import Emu as E
+        slide.shapes.add_picture(WEBSITE_SCREENSHOT_PATH,
+                                 E(int(5.82*914400)), E(int(0.12*914400)),
+                                 E(int(4.10*914400)), E(int(2.31*914400)))
 
     # "You are here" strip
     add_rect(slide, 5.75, 2.48, 4.25, 0.76, fill=NAVY)
@@ -362,8 +389,12 @@ def build_slide2(prs):
 
     # Left panel — model + goal
     add_rect(slide, 0.20, 1.12, 2.72, 3.98, fill=NAVY)
-    add_image_or_placeholder(slide, STAIRCASE_IMAGE_PATH,
-                             0.20, 1.12, 2.72, 1.53, "Staircase Image")
+    _staircase = _get_staircase_path(STAIRCASE_STAGE)
+    if _staircase:
+        from pptx.util import Emu as E
+        slide.shapes.add_picture(_staircase,
+                                 E(int(0.20*914400)), E(int(1.12*914400)),
+                                 E(int(2.72*914400)), E(int(1.53*914400)))
     add_rect(slide, 0.20, 2.68, 2.72, 0.02, fill=GOLD)
     add_text(slide, "THE SMB TEAM MODEL", 0.32, 2.76, 2.48, 0.22, 8, GOLD, bold=True)
     add_text(slide, SMB_MODEL_DESC, 0.32, 3.00, 2.48, 0.72, 9, rgb("A8BFDA"))
@@ -420,9 +451,9 @@ def build_slide3(prs):
         add_text(slide, label, 0.52, y+0.10, 4.16, 0.22, 8, ac, bold=True)
         add_text(slide, price, 0.52, y+0.30, 2.00, 0.48, 32, NAVY, bold=True)
         add_text(slide, "/mo", 2.04, y+0.42, 0.46, 0.28, 11, SLATE)
-        add_text(slide, retail, 2.54, y+0.44, 1.00, 0.26, 11, SLATE)
+        add_text(slide, retail, 2.54, y+0.44, 1.00, 0.26, 11, STRIKETHROUGH)
         # Strikethrough line over retail price
-        add_rect(slide, 2.54, y+0.55, 0.88, 0.01, fill=SLATE)
+        add_rect(slide, 2.54, y+0.55, 0.88, 0.01, fill=STRIKETHROUGH)
         add_text(slide, services, 0.52, y+0.84, 4.16, 0.22, 8, SLATE)
 
     # Bundle total
