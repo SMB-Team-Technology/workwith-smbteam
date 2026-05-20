@@ -47,16 +47,16 @@ PILLAR_NAMES = ["Lead Generation", "Intake", "Team", "Profit Plan"]
 # Key findings — list of ("neg"|"pos", "one-sentence finding")
 FINDINGS = [
     ("neg", "Wrong GBP category hides firm from criminal defense searches in both markets"),
-    ("neg", "PNA Law and Price Benowitz hold LSA and 3-pack — MCS has zero paid presence"),
+    ("neg", "Robinson Law (266 reviews) and PNA Law (250) run ads MCS isn't running yet"),
     ("neg", "Speed-to-lead gaps during trial weeks hand after-hours cases to competitors"),
     ("pos", "5.0 rating with 10-attorney team — exceptional credibility to build on"),
 ]
 
 # Competitor table — list of (name, "XXX reviews", "brief note")
 COMPETITORS = [
-    ("Price Benowitz LLP",  "422 reviews · 4.9★", "Same Fairfax bldg · multi-channel"),
-    ("PNA Law",             "103 reviews · 4.9★", "LSA+PPC · 24/7 · 36 yrs in market"),
-    ("Medvin Law",          " 81 reviews · 5.0★", "Maps dominant · Alexandria criminal"),
+    ("Robinson Law, PLLC",  "266 reviews · 4.97★", "Fairfax · Google Ads · 6× MCS count"),
+    ("PNA Law",             "250 reviews · 4.9★",  "LSA+PPC · 24/7 · 36 yrs in market"),
+    ("Nova Defenders",      "490 Birdeye · 4.9★",  "Fairfax · near courthouse · dominant"),
 ]
 CLIENT_REVIEWS      = "~44 reviews · 5.0★"
 CLIENT_REVIEWS_NOTE = "← You are here"
