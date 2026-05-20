@@ -61,22 +61,15 @@ jobs:
           SLACK_THREAD_TS: ${{ github.event.client_payload.slack_thread_ts }}
         run: |
           SUMMARY=$(cat /tmp/summary.txt 2>/dev/null || echo "Change completed.")
-          PAYLOAD=$(python3 -c "
-          import json, os, sys
-          token = os.environ['SLACK_BOT_TOKEN']
-          print(f'token_prefix={token[:5]} token_len={len(token)}', file=sys.stderr)
-          print(json.dumps({
-            'channel':   os.environ['SLACK_CHANNEL'],
-            'thread_ts': os.environ['SLACK_THREAD_TS'],
-            'text':      f\"✅ Done! {os.environ['SUMMARY']}\",
-          }))
-          " SUMMARY="$SUMMARY")
-          echo "Slack response:"
+          PAYLOAD=$(jq -n \
+            --arg channel  "$SLACK_CHANNEL" \
+            --arg thread   "$SLACK_THREAD_TS" \
+            --arg text     "Done: $SUMMARY" \
+            '{channel: $channel, thread_ts: $thread, text: $text}')
           curl -s -X POST https://slack.com/api/chat.postMessage \
             -H "Authorization: Bearer $SLACK_BOT_TOKEN" \
             -H "Content-Type: application/json" \
             -d "$PAYLOAD"
-          echo ""
 
       - name: Post error to Slack
         if: failure()
@@ -85,19 +78,11 @@ jobs:
           SLACK_CHANNEL: ${{ github.event.client_payload.slack_channel }}
           SLACK_THREAD_TS: ${{ github.event.client_payload.slack_thread_ts }}
         run: |
-          PAYLOAD=$(python3 -c "
-          import json, os, sys
-          token = os.environ['SLACK_BOT_TOKEN']
-          print(f'token_prefix={token[:5]} token_len={len(token)}', file=sys.stderr)
-          print(json.dumps({
-            'channel':   os.environ['SLACK_CHANNEL'],
-            'thread_ts': os.environ['SLACK_THREAD_TS'],
-            'text':      '❌ Something went wrong making that change. Check the GitHub Actions log for details.',
-          }))
-          ")
-          echo "Slack response:"
+          PAYLOAD=$(jq -n \
+            --arg channel "$SLACK_CHANNEL" \
+            --arg thread  "$SLACK_THREAD_TS" \
+            '{channel: $channel, thread_ts: $thread, text: "Something went wrong making that change. Check the GitHub Actions log for details."}')
           curl -s -X POST https://slack.com/api/chat.postMessage \
             -H "Authorization: Bearer $SLACK_BOT_TOKEN" \
             -H "Content-Type: application/json" \
             -d "$PAYLOAD"
-          echo ""
