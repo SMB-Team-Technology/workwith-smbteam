@@ -83,11 +83,10 @@ app.post('/api/slack', express.raw({ type: '*/*' }), async (req, res) => {
 
   console.log(`event type=${event?.type} subtype=${event?.subtype} bot_id=${event?.bot_id} channel=${event?.channel} expected=${process.env.SLACK_CHANNEL_ID}`);
 
-  // Handle plain user messages AND @mentions in the designated channel
+  // Handle only @mentions in the designated channel
   if (
     !event ||
-    (event.type !== 'message' && event.type !== 'app_mention') ||
-    event.subtype ||              // ignore edits, joins, bot_message subtypes
+    event.type    !== 'app_mention' ||
     event.bot_id  ||              // ignore messages posted by bots (including ourselves)
     event.channel !== process.env.SLACK_CHANNEL_ID
   ) {
