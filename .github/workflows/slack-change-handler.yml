@@ -61,11 +61,13 @@ jobs:
           SLACK_THREAD_TS: ${{ github.event.client_payload.slack_thread_ts }}
         run: |
           python3 - << 'PYEOF'
-          import os, json, urllib.request
+          import os, json, urllib.request, urllib.error
 
           token   = os.environ["SLACK_BOT_TOKEN"]
           channel = os.environ["SLACK_CHANNEL"]
           thread  = os.environ["SLACK_THREAD_TS"]
+
+          print(f"Posting to channel={channel} thread={thread} token_len={len(token)}")
 
           try:
               summary = open("/tmp/summary.txt").read().strip()
@@ -82,8 +84,15 @@ jobs:
               data=body,
               headers={"Authorization": f"Bearer {token}", "Content-Type": "application/json"},
           )
-          urllib.request.urlopen(req)
-          print("Success notification sent to Slack.")
+          try:
+              resp = urllib.request.urlopen(req)
+              result = json.loads(resp.read())
+              if not result.get("ok"):
+                  raise RuntimeError(f"Slack error: {result.get('error')} | {result}")
+              print("Success notification sent to Slack.")
+          except urllib.error.HTTPError as e:
+              print(f"HTTP {e.code}: {e.read().decode()}")
+              raise
           PYEOF
 
       - name: Post error to Slack
@@ -94,11 +103,13 @@ jobs:
           SLACK_THREAD_TS: ${{ github.event.client_payload.slack_thread_ts }}
         run: |
           python3 - << 'PYEOF'
-          import os, json, urllib.request
+          import os, json, urllib.request, urllib.error
 
           token   = os.environ["SLACK_BOT_TOKEN"]
           channel = os.environ["SLACK_CHANNEL"]
           thread  = os.environ["SLACK_THREAD_TS"]
+
+          print(f"Posting error to channel={channel} thread={thread} token_len={len(token)}")
 
           body = json.dumps({
               "channel":   channel,
@@ -110,5 +121,11 @@ jobs:
               data=body,
               headers={"Authorization": f"Bearer {token}", "Content-Type": "application/json"},
           )
-          urllib.request.urlopen(req)
+          try:
+              resp = urllib.request.urlopen(req)
+              result = json.loads(resp.read())
+              if not result.get("ok"):
+                  print(f"Slack error: {result.get('error')} | {result}")
+          except urllib.error.HTTPError as e:
+              print(f"HTTP {e.code}: {e.read().decode()}")
           PYEOF
