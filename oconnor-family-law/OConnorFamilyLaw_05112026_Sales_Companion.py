@@ -98,7 +98,7 @@ story.append(Paragraph("Why This Marketing Package", S["section"]))
 story.append(Paragraph("<b>What it does for her:</b>", S["subsection"]))
 story.append(bd("Replaces raw call count reporting with signed-case attribution — Caitlyn stops auditing reports and starts leading."))
 story.append(bd("Rebalances PPC vs. LSA with income demographic layering and negative keywords — junk volume drops at the source."))
-story.append(Paragraph("<b>Platinum Full-Service Marketing  |  $15,997/mo bundled</b>", S["subsection"]))
+story.append(Paragraph("<b>Full Service Marketing Growth  |  $15,997/mo bundled</b>", S["subsection"]))
 story.append(b("Revenue over $3M triggers Platinum tier — O'Connor at $4M+ qualifies; no lower tier applies."))
 story.append(b("Two distinct markets (MetroWest + South Shore) require separate campaign structures and GBP strategies."))
 story.append(b("$10k/month LSA with ~50% spam rate requires full restructure and systematic dispute process to recover credit."))
@@ -139,7 +139,7 @@ story.append(Paragraph('"Half our LSA leads are spam. We\'re wasting money."', S
 story.append(Paragraph("LSA cannot exclude 'cheap' or 'free' divorce intent by design — that is a platform limitation. The fix is to rebalance toward PPC where we layer household income top 30%, exclude junk terms, and dispute every unqualified LSA lead for credit. The current agency has not been doing any of this.", S["objection_a"]))
 story.append(thin_rule())
 story.append(Paragraph("Investment At A Glance", S["section"]))
-price_data = [[Paragraph("<b>Platinum Full-Service Marketing</b>", S["price_main"]), Paragraph("$15,997/mo", S["price_main"])], [Paragraph("Website, SEO, PPC + LSA + Meta + GBP + signed-case attribution.", S["price_detail"]), Paragraph("<strike>$18,997</strike> stand alone", S["price_detail"])], [Paragraph("<b>Master's Circle + FCOO Partner</b>", S["price_main"]), Paragraph("$12,394/mo", S["price_main"])], [Paragraph("Elite Coach + High Level Mastermind + Team Training + FCOO Services.", S["price_detail"]), Paragraph("", S["price_detail"])], [Paragraph("<b>Recommended Ad Spend</b>", S["price_main"]), Paragraph("$15,000–$25,000/mo", S["price_main"])], [Paragraph("Goes to Google, LSA, and Meta — not to SMB Team.", S["price_detail"]), Paragraph("", S["price_detail"])]]
+price_data = [[Paragraph("<b>Full Service Marketing Growth</b>", S["price_main"]), Paragraph("$15,997/mo", S["price_main"])], [Paragraph("Website, SEO, PPC + LSA + Meta + GBP + signed-case attribution.", S["price_detail"]), Paragraph("<strike>$18,997</strike> stand alone", S["price_detail"])], [Paragraph("<b>Master's Circle + FCOO Partner</b>", S["price_main"]), Paragraph("$12,394/mo", S["price_main"])], [Paragraph("Elite Coach + High Level Mastermind + Team Training + FCOO Services.", S["price_detail"]), Paragraph("", S["price_detail"])], [Paragraph("<b>Recommended Ad Spend</b>", S["price_main"]), Paragraph("$15,000–$25,000/mo", S["price_main"])], [Paragraph("Goes to Google, LSA, and Meta — not to SMB Team.", S["price_detail"]), Paragraph("", S["price_detail"])]]
 pt = Table(price_data, colWidths=[4.5*inch, 1.7*inch])
 pt.setStyle(TableStyle([("VALIGN", (0,0), (-1,-1), "TOP"), ("LEFTPADDING", (0,0), (-1,-1), 4), ("RIGHTPADDING", (0,0), (-1,-1), 4), ("TOPPADDING", (0,0), (-1,-1), 2), ("BOTTOMPADDING", (0,0), (-1,-1), 1), ("LINEBELOW", (0,1), (-1,1), 0.5, RULE_GRAY), ("LINEBELOW", (0,3), (-1,3), 0.5, RULE_GRAY), ("LINEBELOW", (0,5), (-1,5), 0.5, RULE_GRAY)]))
 story.append(pt)
