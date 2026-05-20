@@ -250,13 +250,13 @@ story.append(thin_rule())
 story.append(Paragraph("If He Pushes Back", S["section"]))
 
 story.append(Paragraph('"Any investment must cover its expense near-term."', S["objection_q"]))
-story.append(Paragraph("At $13,200 conservative spend, projected revenue is $58,500/mo — 4.4x return by benchmark. The question is not whether it pays; it is how long PNA Law and Price Benowitz collect those leads while we wait.", S["objection_a"]))
+story.append(Paragraph("At $13,200 conservative spend, projected revenue is $58,500/mo — 4.4x return by benchmark. The question is not whether it pays; it is how long Robinson Law and PNA Law collect those leads while we wait.", S["objection_a"]))
 
 story.append(Paragraph('"We tried to set up LSA ourselves — it has been months."', S["objection_q"]))
-story.append(Paragraph("LSA requires background checks for all 8 attorneys, bar license submission, and category optimization. Done wrong, it stalls indefinitely. Every week unverified, PNA Law (103 reviews) collects pay-per-lead calls MCS should receive.", S["objection_a"]))
+story.append(Paragraph("LSA requires background checks for all 8 attorneys, bar license submission, and category optimization. Done wrong, it stalls indefinitely. Every week unverified, PNA Law (250 reviews) collects pay-per-lead calls MCS should receive.", S["objection_a"]))
 
 story.append(Paragraph('"We have a 5.0 rating — why aren\'t we getting Maps leads?"', S["objection_q"]))
-story.append(Paragraph("44 reviews vs PNA Law's 103, Medvin Law's 81, Price Benowitz's 422+. Review count is a Maps ranking signal and LSA credibility score — not just a trust signal. The rating earns the case; the count earns the position.", S["objection_a"]))
+story.append(Paragraph("44 reviews vs Robinson Law's 266, PNA Law's 250, and Nova Defenders' 490 Birdeye reviews. Review count is a Maps ranking signal and LSA credibility score — not just a trust signal. The rating earns the case; the count earns the position.", S["objection_a"]))
 
 story.append(thin_rule())
 
