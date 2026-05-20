@@ -42,6 +42,8 @@ jobs:
           echo "friendly_name=$(jq -r '.friendly_name' "$TRIGGER_FILE")" >> "$GITHUB_OUTPUT"
           echo "sales_rep=$(jq -r '.sales_rep' "$TRIGGER_FILE")"   >> "$GITHUB_OUTPUT"
           echo "date=$(jq -r '.date' "$TRIGGER_FILE")"             >> "$GITHUB_OUTPUT"
+          echo "hubspot_contact_id=$(jq -r '.hubspot_contact_id // empty' "$TRIGGER_FILE")" >> "$GITHUB_OUTPUT"
+          echo "sales_rep_email=$(jq -r '.sales_rep_email // empty' "$TRIGGER_FILE")" >> "$GITHUB_OUTPUT"
 
       - name: Configure git
         run: |
@@ -126,9 +128,6 @@ jobs:
       # -----------------------------------------------------------------------
       # STEP 6 — Email the closer with PDF + PPTX attachments
       # -----------------------------------------------------------------------
-      # TEST MODE (current): sends only to eli.gill@smbteam.com
-      # PRODUCTION: set TEST_EMAIL_ONLY to false — email goes to the closer
-      #             with eli CC'd. Requires sales rep email in trigger file.
       - name: Step 6 — Email closer with audit attachments
         env:
           GMAIL_USER: ${{ secrets.GMAIL_USER }}
@@ -136,7 +135,7 @@ jobs:
           FIRM_NAME: ${{ steps.inputs.outputs.firm_name }}
           FRIENDLY_NAME: ${{ steps.inputs.outputs.friendly_name }}
           SALES_REP: ${{ steps.inputs.outputs.sales_rep }}
-          TEST_EMAIL_ONLY: "true"
+          SALES_REP_EMAIL: ${{ steps.inputs.outputs.sales_rep_email }}
         run: |
           python3 - << 'PYEOF'
           import smtplib, os, glob, sys
@@ -144,33 +143,29 @@ jobs:
           from email.mime.text import MIMEText
           from email.mime.application import MIMEApplication
 
-          gmail_user     = os.environ["GMAIL_USER"]
-          gmail_password = os.environ["GMAIL_APP_PASSWORD"]
-          firm_name      = os.environ["FIRM_NAME"]
-          friendly_name  = os.environ["FRIENDLY_NAME"]
-          sales_rep      = os.environ["SALES_REP"]
-          test_only      = os.environ.get("TEST_EMAIL_ONLY", "true").lower() == "true"
+          gmail_user       = os.environ["GMAIL_USER"]
+          gmail_password   = os.environ["GMAIL_APP_PASSWORD"]
+          firm_name        = os.environ["FIRM_NAME"]
+          friendly_name    = os.environ["FRIENDLY_NAME"]
+          sales_rep        = os.environ["SALES_REP"]
+          sales_rep_email  = os.environ.get("SALES_REP_EMAIL", "").strip()
+
+          if not sales_rep_email:
+              print("ERROR: sales_rep_email is not set in the trigger file.")
+              sys.exit(1)
 
           # --- Recipients ---
-          # TEST MODE: send only to eli for verification
-          # PRODUCTION: flip TEST_EMAIL_ONLY to false and populate closer_email
-          # in the trigger file; add it to steps.inputs.outputs above.
-          eli = "eli.gill@smbteam.com"
-          if test_only:
-              to_addr = eli
-              cc_addrs = []
-              print(f"TEST MODE: sending only to {eli}")
-          else:
-              closer_email = os.environ.get("CLOSER_EMAIL", "")
-              if not closer_email:
-                  print("ERROR: CLOSER_EMAIL not set and TEST_EMAIL_ONLY is false.")
-                  sys.exit(1)
-              to_addr  = closer_email
-              cc_addrs = [eli]
+          to_addr  = sales_rep_email
+          cc_addrs = [
+              "eli.gill@smbteam.com",
+              "vanessa.odonnell@smbteam.com",
+              "chris.abouraad@smbteam.com",
+              "justin.hernandez@smbteam.com",
+          ]
 
           # --- Find attachments ---
-          pdf_files  = glob.glob(f"{friendly_name}/*_Sales_Companion.pdf")
-          pptx_files = glob.glob(f"{friendly_name}/*_Proposal.pptx")
+          pdf_files   = glob.glob(f"{friendly_name}/*_Sales_Companion.pdf")
+          pptx_files  = glob.glob(f"{friendly_name}/*_Proposal.pptx")
           attachments = pdf_files + pptx_files
 
           if not attachments:
@@ -180,8 +175,7 @@ jobs:
           msg = MIMEMultipart()
           msg["From"]    = gmail_user
           msg["To"]      = to_addr
-          if cc_addrs:
-              msg["Cc"]  = ", ".join(cc_addrs)
+          msg["Cc"]      = ", ".join(cc_addrs)
           msg["Subject"] = f"Growth, Profit, and Freedom Roadmap ready for {firm_name}"
 
           workwith_url = f"https://workwith.smbteam.com/{friendly_name}"
@@ -217,5 +211,5 @@ jobs:
               server.login(gmail_user, gmail_password)
               server.sendmail(gmail_user, all_recipients, msg.as_string())
 
-          print(f"Email sent to {to_addr}" + (f" (CC: {', '.join(cc_addrs)})" if cc_addrs else ""))
+          print(f"Email sent to {to_addr} (CC: {', '.join(cc_addrs)})")
           PYEOF

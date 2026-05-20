@@ -89,15 +89,61 @@ async function findProposalBookings() {
   return data.results || [];
 }
 
-/** Resolve a HubSpot owner ID to a display name. */
-async function getOwnerName(ownerId) {
-  if (!ownerId) return 'Sales Rep';
+/** Resolve a HubSpot owner ID to { name, email }. */
+async function getOwnerDetails(ownerId) {
+  if (!ownerId) return { name: 'Sales Rep', email: '' };
   const res = await fetch(`https://api.hubapi.com/crm/v3/owners/${ownerId}`, {
     headers: { 'Authorization': `Bearer ${HUBSPOT_TOKEN}` },
   });
-  if (!res.ok) return 'Sales Rep';
+  if (!res.ok) return { name: 'Sales Rep', email: '' };
   const data = await res.json();
-  return `${data.firstName || ''} ${data.lastName || ''}`.trim() || 'Sales Rep';
+  return {
+    name:  `${data.firstName || ''} ${data.lastName || ''}`.trim() || 'Sales Rep',
+    email: data.email || '',
+  };
+}
+
+/**
+ * Find the newest deal associated with a contact and return its owner's
+ * details. Falls back to { name: 'Sales Rep', email: '' } if no deal exists.
+ */
+async function getNewestDealOwner(contactId) {
+  const res = await fetch(
+    `https://api.hubapi.com/crm/v3/objects/contacts/${contactId}/associations/deals`,
+    { headers: { 'Authorization': `Bearer ${HUBSPOT_TOKEN}` } }
+  );
+  if (!res.ok) return { name: 'Sales Rep', email: '' };
+
+  const data    = res.ok ? await res.json() : {};
+  const results = data.results || [];
+  if (!results.length) return { name: 'Sales Rep', email: '' };
+
+  // Fetch all associated deals to find the newest by createdate
+  const dealIds = results.map(r => r.id).join(',');
+  const dealsRes = await fetch(
+    `https://api.hubapi.com/crm/v3/objects/deals/batch/read`,
+    {
+      method:  'POST',
+      headers: {
+        'Authorization': `Bearer ${HUBSPOT_TOKEN}`,
+        'Content-Type':  'application/json',
+      },
+      body: JSON.stringify({
+        inputs:     results.map(r => ({ id: r.id })),
+        properties: ['hubspot_owner_id', 'createdate'],
+      }),
+    }
+  );
+  if (!dealsRes.ok) return { name: 'Sales Rep', email: '' };
+
+  const dealsData = await dealsRes.json();
+  const deals     = dealsData.results || [];
+  deals.sort((a, b) =>
+    new Date(b.properties.createdate) - new Date(a.properties.createdate)
+  );
+
+  const newestOwnerId = deals[0]?.properties?.hubspot_owner_id;
+  return getOwnerDetails(newestOwnerId);
 }
 
 // ---------------------------------------------------------------------------
@@ -197,7 +243,7 @@ async function main() {
       } catch (_) { /* malformed file — overwrite */ }
     }
 
-    const salesRep   = await getOwnerName(p.hubspot_owner_id);
+    const dealOwner  = await getNewestDealOwner(contact.id);
     const transcript = await getFathomTranscript(p.email, contactName);
     const auditDate  = formatDate(new Date());
 
@@ -205,7 +251,8 @@ async function main() {
       firm_name:          firmName,
       friendly_name:      friendlyName,
       url:                p.website || '',
-      sales_rep:          salesRep,
+      sales_rep:          dealOwner.name,
+      sales_rep_email:    dealOwner.email,
       date:               auditDate,
       hubspot_contact_id: contact.id,
       contact_email:      p.email,
