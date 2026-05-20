@@ -2,5 +2,9 @@
   "name": "smb-audit-slack-bot",
   "version": "1.0.0",
   "private": true,
-  "engines": { "node": ">=18" }
+  "main": "server.js",
+  "engines": { "node": ">=18" },
+  "dependencies": {
+    "express": "^4.19.2"
+  }
 }

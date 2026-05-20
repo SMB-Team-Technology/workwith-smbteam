@@ -1,21 +1,13 @@
 'use strict';
-const crypto = require('crypto');
+const crypto  = require('crypto');
+const express = require('express');
 
-// Disable Vercel's default body parser — we need the raw body for signature verification
-module.exports.config = { api: { bodyParser: false } };
+const app  = express();
+const PORT = process.env.PORT || 8080;
 
 // ---------------------------------------------------------------------------
 // Helpers
 // ---------------------------------------------------------------------------
-
-async function getRawBody(req) {
-  return new Promise((resolve, reject) => {
-    const chunks = [];
-    req.on('data', c => chunks.push(c));
-    req.on('end', () => resolve(Buffer.concat(chunks)));
-    req.on('error', reject);
-  });
-}
 
 function verifySlackSignature(secret, rawBody, timestamp, slackSig) {
   if (!timestamp || !slackSig) return false;
@@ -33,27 +25,23 @@ function verifySlackSignature(secret, rawBody, timestamp, slackSig) {
 
 async function slackPost(token, channel, text, thread_ts) {
   await fetch('https://slack.com/api/chat.postMessage', {
-    method: 'POST',
+    method:  'POST',
     headers: { Authorization: `Bearer ${token}`, 'Content-Type': 'application/json' },
-    body: JSON.stringify({ channel, text, ...(thread_ts ? { thread_ts } : {}) }),
+    body:    JSON.stringify({ channel, text, ...(thread_ts ? { thread_ts } : {}) }),
   });
 }
 
 async function githubDispatch(pat, repo, instruction, slackChannel, slackTs) {
   const res = await fetch(`https://api.github.com/repos/${repo}/dispatches`, {
-    method: 'POST',
+    method:  'POST',
     headers: {
-      Authorization: `Bearer ${pat}`,
-      Accept: 'application/vnd.github.v3+json',
+      Authorization:  `Bearer ${pat}`,
+      Accept:         'application/vnd.github.v3+json',
       'Content-Type': 'application/json',
     },
     body: JSON.stringify({
-      event_type: 'slack-change-request',
-      client_payload: {
-        instruction,
-        slack_channel: slackChannel,
-        slack_thread_ts: slackTs,
-      },
+      event_type:     'slack-change-request',
+      client_payload: { instruction, slack_channel: slackChannel, slack_thread_ts: slackTs },
     }),
   });
   if (!res.ok) {
@@ -63,17 +51,16 @@ async function githubDispatch(pat, repo, instruction, slackChannel, slackTs) {
 }
 
 // ---------------------------------------------------------------------------
-// Handler
+// Routes
 // ---------------------------------------------------------------------------
 
-module.exports = async function handler(req, res) {
-  if (req.method !== 'POST') return res.status(405).end();
-
+// express.raw() gives us the unmodified body Buffer — required for Slack
+// signature verification (any JSON parsing would mutate the raw bytes).
+app.post('/api/slack', express.raw({ type: '*/*' }), async (req, res) => {
   // Ignore Slack retries — the first delivery already dispatched the workflow
   if (req.headers['x-slack-retry-num']) return res.status(200).json({ ok: true });
 
-  const rawBuf  = await getRawBody(req);
-  const rawBody = rawBuf.toString();
+  const rawBody = req.body.toString();
 
   if (!verifySlackSignature(
     process.env.SLACK_SIGNING_SECRET,
@@ -86,7 +73,7 @@ module.exports = async function handler(req, res) {
 
   const payload = JSON.parse(rawBody);
 
-  // Slack URL verification handshake
+  // Slack URL verification handshake (one-time, when you save the Event URL)
   if (payload.type === 'url_verification') {
     return res.status(200).json({ challenge: payload.challenge });
   }
@@ -98,7 +85,7 @@ module.exports = async function handler(req, res) {
     !event ||
     event.type    !== 'message' ||
     event.subtype ||              // ignore edits, joins, bot_message subtypes
-    event.bot_id  ||              // ignore messages from bots (including ourselves)
+    event.bot_id  ||              // ignore messages posted by bots (including ourselves)
     event.channel !== process.env.SLACK_CHANNEL_ID
   ) {
     return res.status(200).json({ ok: true });
@@ -108,11 +95,14 @@ module.exports = async function handler(req, res) {
   const pat   = process.env.GITHUB_PAT;
   const repo  = process.env.GITHUB_REPO || 'SMB-Team-Technology/workwith-smbteam';
 
-  // Acknowledge in-thread so the user knows it's being handled
+  // Acknowledge in-thread before dispatching so the user sees an immediate reply
   await slackPost(token, event.channel, `Got it — making that change now. I'll reply here when it's done.`, event.ts);
-
-  // Dispatch the GitHub Actions workflow with the instruction
   await githubDispatch(pat, repo, event.text, event.channel, event.ts);
 
   return res.status(200).json({ ok: true });
-};
+});
+
+// Health check — Cloud Run probes this to confirm the container is up
+app.get('/health', (_req, res) => res.status(200).send('ok'));
+
+app.listen(PORT, () => console.log(`SMB Audit Slack Bot listening on port ${PORT}`));
