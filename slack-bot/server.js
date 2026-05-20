@@ -4,7 +4,7 @@ const express = require('express');
 
 const app  = express();
 const PORT = process.env.PORT || 8080;
-// test
+
 // ---------------------------------------------------------------------------
 // Helpers
 // ---------------------------------------------------------------------------
@@ -55,13 +55,21 @@ async function githubDispatch(pat, repo, instruction, slackChannel, slackTs) {
 // ---------------------------------------------------------------------------
 
 // express.raw() gives us the unmodified body Buffer — required for Slack
-// signature verification (any JSON parsing would mutate the raw bytes).
+// signature verification (any JSON parsing would change the raw bytes).
 app.post('/api/slack', express.raw({ type: '*/*' }), async (req, res) => {
   // Ignore Slack retries — the first delivery already dispatched the workflow
   if (req.headers['x-slack-retry-num']) return res.status(200).json({ ok: true });
 
   const rawBody = req.body.toString();
+  const payload = JSON.parse(rawBody);
 
+  // Handle the one-time URL verification challenge BEFORE signature checking.
+  // Slack sends this when you first save the Event Subscriptions URL.
+  if (payload.type === 'url_verification') {
+    return res.status(200).json({ challenge: payload.challenge });
+  }
+
+  // Verify signature for all real events
   if (!verifySlackSignature(
     process.env.SLACK_SIGNING_SECRET,
     rawBody,
@@ -69,13 +77,6 @@ app.post('/api/slack', express.raw({ type: '*/*' }), async (req, res) => {
     req.headers['x-slack-signature'],
   )) {
     return res.status(401).json({ error: 'Invalid signature' });
-  }
-
-  const payload = JSON.parse(rawBody);
-
-  // Slack URL verification handshake (one-time, when you save the Event URL)
-  if (payload.type === 'url_verification') {
-    return res.status(200).json({ challenge: payload.challenge });
   }
 
   const event = payload.event;
