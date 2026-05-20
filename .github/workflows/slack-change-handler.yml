@@ -1,0 +1,114 @@
+name: Slack Change Request Handler
+
+on:
+  repository_dispatch:
+    types: [slack-change-request]
+
+jobs:
+  handle-change:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install Claude Code CLI
+        run: npm install -g @anthropic-ai/claude-code
+
+      - name: Configure git
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+      - name: Make the requested change
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          SLACK_INSTRUCTION: ${{ github.event.client_payload.instruction }}
+        run: |
+          # Write to file first to safely handle any special characters
+          printf '%s' "$SLACK_INSTRUCTION" > /tmp/instruction.txt
+
+          claude --model claude-sonnet-4-6 --dangerously-skip-permissions -p "
+            You are an AI assistant making a targeted edit to a law firm growth audit report
+            in this repository. Reports live in folders at the repo root
+            (e.g. oconnor-family-law/, santiago-legal/, moore-christoff-siddiqui/).
+
+            Read the change request from /tmp/instruction.txt, then:
+            1. Identify which report folder and files need to change.
+            2. Make the minimal, precise edit — nothing more.
+            3. Commit the change to main with a clear commit message.
+            4. Write a 1–2 sentence plain-English summary of exactly what you changed
+               to /tmp/summary.txt. No markdown. No headers. Just what changed.
+          "
+
+      - name: Post success to Slack
+        if: success()
+        env:
+          SLACK_BOT_TOKEN: ${{ secrets.SLACK_BOT_TOKEN }}
+          SLACK_CHANNEL: ${{ github.event.client_payload.slack_channel }}
+          SLACK_THREAD_TS: ${{ github.event.client_payload.slack_thread_ts }}
+        run: |
+          python3 - << 'PYEOF'
+          import os, json, urllib.request
+
+          token   = os.environ["SLACK_BOT_TOKEN"]
+          channel = os.environ["SLACK_CHANNEL"]
+          thread  = os.environ["SLACK_THREAD_TS"]
+
+          try:
+              summary = open("/tmp/summary.txt").read().strip()
+          except FileNotFoundError:
+              summary = "Change completed."
+
+          body = json.dumps({
+              "channel":   channel,
+              "thread_ts": thread,
+              "text":      f"✅ Done! {summary}",
+          }).encode()
+          req = urllib.request.Request(
+              "https://slack.com/api/chat.postMessage",
+              data=body,
+              headers={"Authorization": f"Bearer {token}", "Content-Type": "application/json"},
+          )
+          urllib.request.urlopen(req)
+          print("Success notification sent to Slack.")
+          PYEOF
+
+      - name: Post error to Slack
+        if: failure()
+        env:
+          SLACK_BOT_TOKEN: ${{ secrets.SLACK_BOT_TOKEN }}
+          SLACK_CHANNEL: ${{ github.event.client_payload.slack_channel }}
+          SLACK_THREAD_TS: ${{ github.event.client_payload.slack_thread_ts }}
+        run: |
+          python3 - << 'PYEOF'
+          import os, json, urllib.request
+
+          token   = os.environ["SLACK_BOT_TOKEN"]
+          channel = os.environ["SLACK_CHANNEL"]
+          thread  = os.environ["SLACK_THREAD_TS"]
+
+          body = json.dumps({
+              "channel":   channel,
+              "thread_ts": thread,
+              "text":      "❌ Something went wrong making that change. Check the GitHub Actions log for details.",
+          }).encode()
+          req = urllib.request.Request(
+              "https://slack.com/api/chat.postMessage",
+              data=body,
+              headers={"Authorization": f"Bearer {token}", "Content-Type": "application/json"},
+          )
+          urllib.request.urlopen(req)
+          PYEOF

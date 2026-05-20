@@ -213,3 +213,36 @@ jobs:
 
           print(f"Email sent to {to_addr} (CC: {', '.join(cc_addrs)})")
           PYEOF
+
+      # -----------------------------------------------------------------------
+      # STEP 7 — Notify Slack that the proposal is ready
+      # -----------------------------------------------------------------------
+      - name: Step 7 — Notify Slack
+        env:
+          SLACK_BOT_TOKEN: ${{ secrets.SLACK_BOT_TOKEN }}
+          SLACK_CHANNEL_ID: ${{ secrets.SLACK_CHANNEL_ID }}
+          FIRM_NAME: ${{ steps.inputs.outputs.firm_name }}
+          FRIENDLY_NAME: ${{ steps.inputs.outputs.friendly_name }}
+          SALES_REP: ${{ steps.inputs.outputs.sales_rep }}
+        run: |
+          python3 - << 'PYEOF'
+          import os, json, urllib.request
+
+          token     = os.environ["SLACK_BOT_TOKEN"]
+          channel   = os.environ["SLACK_CHANNEL_ID"]
+          firm      = os.environ["FIRM_NAME"]
+          slug      = os.environ["FRIENDLY_NAME"]
+          sales_rep = os.environ["SALES_REP"]
+          url       = f"https://workwith.smbteam.com/{slug}"
+
+          text = f"✅ *New proposal ready:* {firm}\n{url}\nPrepared for: {sales_rep}"
+
+          body = json.dumps({"channel": channel, "text": text}).encode()
+          req = urllib.request.Request(
+              "https://slack.com/api/chat.postMessage",
+              data=body,
+              headers={"Authorization": f"Bearer {token}", "Content-Type": "application/json"},
+          )
+          urllib.request.urlopen(req)
+          print(f"Slack notification sent for {firm}.")
+          PYEOF
