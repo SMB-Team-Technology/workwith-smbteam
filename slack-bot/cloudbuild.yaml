@@ -1,0 +1,38 @@
+steps:
+  # Build the Docker image
+  - name: 'gcr.io/cloud-builders/docker'
+    args:
+      - build
+      - -t
+      - $_AR_HOSTNAME/$PROJECT_ID/$_AR_REPO/smb-audit-slack-bot:$COMMIT_SHA
+      - .
+
+  # Push to Artifact Registry
+  - name: 'gcr.io/cloud-builders/docker'
+    args:
+      - push
+      - $_AR_HOSTNAME/$PROJECT_ID/$_AR_REPO/smb-audit-slack-bot:$COMMIT_SHA
+
+  # Deploy the new image to Cloud Run (preserves existing env vars on the service)
+  - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
+    entrypoint: gcloud
+    args:
+      - run
+      - deploy
+      - smb-audit-slack-bot
+      - --image=$_AR_HOSTNAME/$PROJECT_ID/$_AR_REPO/smb-audit-slack-bot:$COMMIT_SHA
+      - --region=$_RUN_REGION
+      - --allow-unauthenticated
+      - --platform=managed
+      - --quiet
+
+substitutions:
+  _AR_HOSTNAME: us-central1-docker.pkg.dev
+  _AR_REPO: smb-team
+  _RUN_REGION: us-central1
+
+images:
+  - '$_AR_HOSTNAME/$PROJECT_ID/$_AR_REPO/smb-audit-slack-bot:$COMMIT_SHA'
+
+options:
+  logging: CLOUD_LOGGING_ONLY
