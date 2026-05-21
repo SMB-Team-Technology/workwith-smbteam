@@ -30,7 +30,7 @@ jobs:
         run: npm install -g @anthropic-ai/claude-code
 
       - name: Install Python deps for PDF generation
-        run: pip install reportlab pypdf --break-system-packages --quiet
+        run: pip install reportlab pypdf beautifulsoup4 --break-system-packages --quiet
 
       - name: Find trigger file and parse inputs
         id: inputs
@@ -44,6 +44,7 @@ jobs:
           echo "date=$(jq -r '.date' "$TRIGGER_FILE")"             >> "$GITHUB_OUTPUT"
           echo "hubspot_contact_id=$(jq -r '.hubspot_contact_id // empty' "$TRIGGER_FILE")" >> "$GITHUB_OUTPUT"
           echo "sales_rep_email=$(jq -r '.sales_rep_email // empty' "$TRIGGER_FILE")" >> "$GITHUB_OUTPUT"
+          echo "suppress_pricing=$(jq -r '.suppress_pricing // "false"' "$TRIGGER_FILE")" >> "$GITHUB_OUTPUT"
 
       - name: Configure git
         run: |
@@ -95,6 +96,23 @@ jobs:
             the --with-pptx instructions at the end of audit-write.md. Report the commit
             hash when done.
           "
+
+      - name: Strip pricing sections (consultation meetings only)
+        if: steps.inputs.outputs.suppress_pricing == 'true'
+        run: |
+          FRIENDLY_NAME="${{ steps.inputs.outputs.friendly_name }}"
+          echo "suppress_pricing=true — stripping pricing sections from $FRIENDLY_NAME"
+          python3 scripts/strip-pricing-sections.py \
+            "$FRIENDLY_NAME/index.html" \
+            "$FRIENDLY_NAME/sections/section_executive_summary.html" \
+            "$FRIENDLY_NAME/sections/section_11_next_steps.html"
+          git add "$FRIENDLY_NAME/" || true
+          if ! git diff --cached --quiet; then
+            git commit -m "Remove pricing sections for consultation meeting audit: $FRIENDLY_NAME"
+            git push origin main
+          else
+            echo "No pricing sections found to remove (may already be clean)."
+          fi
 
       # -----------------------------------------------------------------------
       # STEP 5 — Write back to HubSpot
