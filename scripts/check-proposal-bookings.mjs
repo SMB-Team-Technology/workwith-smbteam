@@ -1,24 +1,28 @@
 /**
  * check-proposal-bookings.mjs
  *
- * Runs daily via audit-scheduler.yml. Queries HubSpot for contacts where
- * proposal_call_date is set and falls within the next LOOKAHEAD_DAYS days,
- * fetches the Fathom discovery call transcript for each, and writes a trigger
- * JSON to triggers/audit-research/ so the audit-pipeline.yml workflow fires.
+ * Runs on a schedule via audit-scheduler.yml. Queries HubSpot for deals that
+ * were moved to the "Proposal Scheduled" stage (34633618) within the last
+ * LOOKBACK_DAYS days, fetches the primary contact and their Fathom discovery
+ * call transcript, and writes a trigger JSON to triggers/audit-research/ so
+ * the audit-pipeline.yml workflow fires.
  *
  * Required secrets:
  *   HUBSPOT_TOKEN   — HubSpot private app token (Settings → Integrations → Private Apps)
  *   FATHOM_API_KEY  — Fathom API key (fathom.video → Settings → API)
  *
  * Optional:
- *   LOOKAHEAD_DAYS  — How many days ahead to look for proposal calls (default: 7)
+ *   LOOKBACK_DAYS   — How many days back to look for stage changes (default: 2)
  */
 
 import { writeFileSync, readFileSync, existsSync, mkdirSync } from 'fs';
 
 const HUBSPOT_TOKEN  = process.env.HUBSPOT_TOKEN;
 const FATHOM_API_KEY = process.env.FATHOM_API_KEY;
-const LOOKAHEAD_DAYS = parseInt(process.env.LOOKAHEAD_DAYS || '7', 10);
+const LOOKBACK_DAYS  = parseInt(process.env.LOOKBACK_DAYS || '2', 10);
+
+// Deal stage ID for "Proposal Scheduled" in the main sales pipeline (11715080)
+const PROPOSAL_SCHEDULED_STAGE = '34633618';
 
 if (!HUBSPOT_TOKEN) {
   console.error('ERROR: HUBSPOT_TOKEN secret is not set.');
@@ -49,30 +53,31 @@ function formatDate(date) {
 // ---------------------------------------------------------------------------
 
 /**
- * Find contacts where proposal_call_date is set and falls within the next
- * LOOKAHEAD_DAYS days. HubSpot datetime filters use millisecond timestamps.
+ * Find deals in the "Proposal Scheduled" stage whose hs_date_entered_
+ * dealstage activity contains "moved to Proposal Scheduled" — approximated
+ * by querying deals where dealstage = PROPOSAL_SCHEDULED_STAGE and
+ * hs_lastmodifieddate is within the last LOOKBACK_DAYS days.
  */
 async function findProposalBookings() {
-  const nowMs       = Date.now();
-  const lookaheadMs = nowMs + LOOKAHEAD_DAYS * 24 * 60 * 60 * 1000;
+  const nowMs      = Date.now();
+  const lookbackMs = nowMs - LOOKBACK_DAYS * 24 * 60 * 60 * 1000;
 
   const body = {
     filterGroups: [{
       filters: [
-        { propertyName: 'proposal_call_date', operator: 'GTE', value: String(nowMs) },
-        { propertyName: 'proposal_call_date', operator: 'LTE', value: String(lookaheadMs) },
+        { propertyName: 'dealstage',          operator: 'EQ',  value: PROPOSAL_SCHEDULED_STAGE },
+        { propertyName: 'hs_lastmodifieddate', operator: 'GTE', value: String(lookbackMs) },
       ]
     }],
     properties: [
-      'firstname', 'lastname', 'email', 'phone', 'company', 'website',
-      'city', 'state', 'country', 'hubspot_owner_id',
-      'proposal_call_date', 'lifecyclestage', 'hs_lead_status',
+      'dealname', 'dealstage', 'pipeline', 'hubspot_owner_id',
+      'hs_lastmodifieddate', 'hs_v2_date_entered_current_stage',
     ],
-    sorts: [{ propertyName: 'proposal_call_date', propertyOrder: 'ASCENDING' }],
+    sorts: [{ propertyName: 'hs_lastmodifieddate', propertyOrder: 'ASCENDING' }],
     limit: 50,
   };
 
-  const res = await fetch('https://api.hubapi.com/crm/v3/objects/contacts/search', {
+  const res = await fetch('https://api.hubapi.com/crm/v3/objects/deals/search', {
     method:  'POST',
     headers: {
       'Authorization': `Bearer ${HUBSPOT_TOKEN}`,
@@ -82,11 +87,36 @@ async function findProposalBookings() {
   });
 
   if (!res.ok) {
-    throw new Error(`HubSpot contacts/search failed: ${res.status} ${await res.text()}`);
+    throw new Error(`HubSpot deals/search failed: ${res.status} ${await res.text()}`);
   }
 
   const data = await res.json();
   return data.results || [];
+}
+
+/**
+ * Return the primary contact associated with a deal, or null if none.
+ * Picks the first contact in the associations list.
+ */
+async function getPrimaryContact(dealId) {
+  const res = await fetch(
+    `https://api.hubapi.com/crm/v3/objects/deals/${dealId}/associations/contacts`,
+    { headers: { 'Authorization': `Bearer ${HUBSPOT_TOKEN}` } }
+  );
+  if (!res.ok) return null;
+
+  const data    = await res.json();
+  const results = data.results || [];
+  if (!results.length) return null;
+
+  const contactId = results[0].id;
+  const cRes = await fetch(
+    `https://api.hubapi.com/crm/v3/objects/contacts/${contactId}?properties=firstname,lastname,email,company,website`,
+    { headers: { 'Authorization': `Bearer ${HUBSPOT_TOKEN}` } }
+  );
+  if (!cRes.ok) return null;
+  const contact = await cRes.json();
+  return { id: contactId, ...contact.properties };
 }
 
 /** Resolve a HubSpot owner ID to { name, email }. */
@@ -101,49 +131,6 @@ async function getOwnerDetails(ownerId) {
     name:  `${data.firstName || ''} ${data.lastName || ''}`.trim() || 'Sales Rep',
     email: data.email || '',
   };
-}
-
-/**
- * Find the newest deal associated with a contact and return its owner's
- * details. Falls back to { name: 'Sales Rep', email: '' } if no deal exists.
- */
-async function getNewestDealOwner(contactId) {
-  const res = await fetch(
-    `https://api.hubapi.com/crm/v3/objects/contacts/${contactId}/associations/deals`,
-    { headers: { 'Authorization': `Bearer ${HUBSPOT_TOKEN}` } }
-  );
-  if (!res.ok) return { name: 'Sales Rep', email: '' };
-
-  const data    = res.ok ? await res.json() : {};
-  const results = data.results || [];
-  if (!results.length) return { name: 'Sales Rep', email: '' };
-
-  // Fetch all associated deals to find the newest by createdate
-  const dealIds = results.map(r => r.id).join(',');
-  const dealsRes = await fetch(
-    `https://api.hubapi.com/crm/v3/objects/deals/batch/read`,
-    {
-      method:  'POST',
-      headers: {
-        'Authorization': `Bearer ${HUBSPOT_TOKEN}`,
-        'Content-Type':  'application/json',
-      },
-      body: JSON.stringify({
-        inputs:     results.map(r => ({ id: r.id })),
-        properties: ['hubspot_owner_id', 'createdate'],
-      }),
-    }
-  );
-  if (!dealsRes.ok) return { name: 'Sales Rep', email: '' };
-
-  const dealsData = await dealsRes.json();
-  const deals     = dealsData.results || [];
-  deals.sort((a, b) =>
-    new Date(b.properties.createdate) - new Date(a.properties.createdate)
-  );
-
-  const newestOwnerId = deals[0]?.properties?.hubspot_owner_id;
-  return getOwnerDetails(newestOwnerId);
 }
 
 // ---------------------------------------------------------------------------
@@ -207,13 +194,13 @@ async function getFathomTranscript(email, contactName) {
 // ---------------------------------------------------------------------------
 
 async function main() {
-  console.log(`\n=== Audit Scheduler: contacts with proposal_call_date in next ${LOOKAHEAD_DAYS} days ===\n`);
+  console.log(`\n=== Audit Scheduler: deals moved to Proposal Scheduled in last ${LOOKBACK_DAYS} days ===\n`);
 
-  const contacts = await findProposalBookings();
-  console.log(`HubSpot returned ${contacts.length} contact(s).\n`);
+  const deals = await findProposalBookings();
+  console.log(`HubSpot returned ${deals.length} deal(s) in Proposal Scheduled stage.\n`);
 
-  if (!contacts.length) {
-    console.log('No upcoming proposal calls found. Exiting.');
+  if (!deals.length) {
+    console.log('No recently-moved Proposal Scheduled deals found. Exiting.');
     return;
   }
 
@@ -222,17 +209,23 @@ async function main() {
   const today = new Date().toISOString().slice(0, 10); // YYYY-MM-DD
   let triggered = 0;
 
-  for (const contact of contacts) {
-    const p            = contact.properties;
-    const contactName  = `${p.firstname || ''} ${p.lastname || ''}`.trim();
-    const firmName     = p.company || contactName;
+  for (const deal of deals) {
+    const p         = deal.properties;
+    const dealName  = p.dealname || '';
+
+    // Get associated contact for firm name, email, and website
+    const contact   = await getPrimaryContact(deal.id);
+    const firmName  = contact?.company || dealName.replace(/\s*\(.*?\)\s*$/, '').replace(/\s*-\s*New Deal\s*$/i, '').trim() || dealName;
     const friendlyName = toFriendlyName(firmName);
     const triggerPath  = `triggers/audit-research/${friendlyName}.json`;
 
-    console.log(`Processing: ${contactName} — ${firmName} (proposal call: ${p.proposal_call_date})`);
+    const stageEnteredDate = p.hs_v2_date_entered_current_stage
+      ? new Date(p.hs_v2_date_entered_current_stage).toISOString().slice(0, 10)
+      : today;
 
-    // Skip if already triggered today — avoids re-running the audit daily
-    // for the same upcoming call until the call date passes.
+    console.log(`Processing deal: ${dealName} (stage entered: ${stageEnteredDate})`);
+
+    // Skip if already triggered today — avoids re-firing on every scheduler run
     if (existsSync(triggerPath)) {
       try {
         const existing = JSON.parse(readFileSync(triggerPath, 'utf8'));
@@ -243,20 +236,24 @@ async function main() {
       } catch (_) { /* malformed file — overwrite */ }
     }
 
-    const dealOwner  = await getNewestDealOwner(contact.id);
-    const transcript = await getFathomTranscript(p.email, contactName);
+    const dealOwner  = await getOwnerDetails(p.hubspot_owner_id);
+    const contactEmail = contact?.email || '';
+    const contactName  = contact
+      ? `${contact.firstname || ''} ${contact.lastname || ''}`.trim()
+      : firmName;
+    const transcript = await getFathomTranscript(contactEmail, contactName);
     const auditDate  = formatDate(new Date());
 
     const triggerData = {
       firm_name:          firmName,
       friendly_name:      friendlyName,
-      url:                p.website || '',
+      url:                contact?.website || '',
       sales_rep:          dealOwner.name,
       sales_rep_email:    dealOwner.email,
       date:               auditDate,
-      hubspot_contact_id: contact.id,
-      contact_email:      p.email,
-      proposal_call_date: p.proposal_call_date || null,
+      hubspot_contact_id: contact?.id || null,
+      contact_email:      contactEmail,
+      deal_id:            deal.id,
       _triggered_date:    today,
       transcript,
     };
