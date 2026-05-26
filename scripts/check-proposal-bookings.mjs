@@ -21,8 +21,10 @@ const HUBSPOT_TOKEN  = process.env.HUBSPOT_TOKEN;
 const FATHOM_API_KEY = process.env.FATHOM_API_KEY;
 const LOOKBACK_DAYS  = parseInt(process.env.LOOKBACK_DAYS || '2', 10);
 
-// Deal stage ID for "Proposal Scheduled" in the main sales pipeline (11715080)
-const PROPOSAL_SCHEDULED_STAGE = '34633618';
+// Deal stage IDs that indicate a proposal should be generated.
+// 34633617 (40%) = "Proposal Scheduled"
+// 34633618 (50%) = next stage — reps sometimes land here directly
+const PROPOSAL_STAGES = ['34633617', '34633618'];
 
 if (!HUBSPOT_TOKEN) {
   console.error('ERROR: HUBSPOT_TOKEN secret is not set.');
@@ -53,22 +55,22 @@ function formatDate(date) {
 // ---------------------------------------------------------------------------
 
 /**
- * Find deals in the "Proposal Scheduled" stage whose hs_date_entered_
- * dealstage activity contains "moved to Proposal Scheduled" — approximated
- * by querying deals where dealstage = PROPOSAL_SCHEDULED_STAGE and
- * hs_lastmodifieddate is within the last LOOKBACK_DAYS days.
+ * Find deals that have been moved to a proposal stage within the last
+ * LOOKBACK_DAYS days. Uses OR logic across both proposal stage IDs so deals
+ * landing in either stage are captured.
  */
 async function findProposalBookings() {
   const nowMs      = Date.now();
   const lookbackMs = nowMs - LOOKBACK_DAYS * 24 * 60 * 60 * 1000;
 
+  // One filterGroup per stage (OR logic between groups), each ANDed with the time window
   const body = {
-    filterGroups: [{
+    filterGroups: PROPOSAL_STAGES.map(stageId => ({
       filters: [
-        { propertyName: 'dealstage',          operator: 'EQ',  value: PROPOSAL_SCHEDULED_STAGE },
-        { propertyName: 'hs_lastmodifieddate', operator: 'GTE', value: String(lookbackMs) },
-      ]
-    }],
+        { propertyName: 'dealstage',           operator: 'EQ',  value: stageId },
+        { propertyName: 'hs_lastmodifieddate',  operator: 'GTE', value: String(lookbackMs) },
+      ],
+    })),
     properties: [
       'dealname', 'dealstage', 'pipeline', 'hubspot_owner_id',
       'hs_lastmodifieddate', 'hs_v2_date_entered_current_stage',
@@ -194,7 +196,7 @@ async function getFathomTranscript(email, contactName) {
 // ---------------------------------------------------------------------------
 
 async function main() {
-  console.log(`\n=== Audit Scheduler: deals moved to Proposal Scheduled in last ${LOOKBACK_DAYS} days ===\n`);
+  console.log(`\n=== Audit Scheduler: deals moved to Proposal Scheduled stages in last ${LOOKBACK_DAYS} days ===\n`);
 
   const deals = await findProposalBookings();
   console.log(`HubSpot returned ${deals.length} deal(s) in Proposal Scheduled stage.\n`);
