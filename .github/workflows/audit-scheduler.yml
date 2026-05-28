@@ -43,15 +43,26 @@ jobs:
           FATHOM_API_KEY: ${{ secrets.FATHOM_API_KEY }}
         run: node scripts/check-consultation-meetings.mjs
 
-      - name: Commit and push any new trigger files
+      - name: Commit and push any new trigger files (one commit per file)
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add triggers/audit-research/ || true
-          if ! git diff --cached --quiet; then
-            git commit -m "Auto-trigger: proposal call bookings $(date -u +%Y-%m-%d)"
+          # Stage each new/changed trigger file as its own commit so the
+          # audit-pipeline.yml (which uses `git diff-tree | head -1`) fires
+          # a separate pipeline run for every firm rather than just the first.
+          PUSHED=0
+          for file in $(git diff --cached --name-only | grep 'triggers/audit-research/.*\.json'); do
+            git reset HEAD -- . > /dev/null 2>&1 || true
+            git add "$file"
+            friendly=$(basename "$file" .json)
+            git commit -m "Auto-trigger: $friendly $(date -u +%Y-%m-%d)"
             git push origin main
-            echo "Pushed new trigger files — audit pipeline will fire automatically."
-          else
+            echo "Pushed trigger: $file"
+            PUSHED=$((PUSHED + 1))
+          done
+          if [ "$PUSHED" -eq 0 ]; then
             echo "No new proposal bookings found. Nothing to trigger."
+          else
+            echo "Pushed $PUSHED trigger file(s) — audit pipeline will fire for each."
           fi
