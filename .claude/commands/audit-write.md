@@ -141,7 +141,13 @@ Do not rely on memory for any price. Scroll to the SELECT MARKETING PACKAGE and 
   - Bundled price (from table): $X,XXX/mo
   - Stand-alone price (from table): $X,XXX/mo
   - Savings (stand-alone minus bundled): $X,XXX/mo
-- Total monthly investment (sum of bundled prices): $X,XXX/mo
+- Legal AI Workforce (LAW) package selected (if applicable): [name or "none"]
+  - Bundled price (from table): $X,XXX/mo
+  - Stand-alone price (from table): $X,XXX/mo
+  - Savings (stand-alone minus bundled): $X,XXX/mo
+- AI Avatar / Video Growth add-on selected (if applicable): [name or "none"]
+  - Price (from table): $X,XXX one-time or $X,XXX/mo + $X,XXX setup
+- Total monthly investment (sum of all bundled/recurring prices): $X,XXX/mo
 - Total savings (sum of all savings): $X,XXX/mo
 
 If any price you are about to write is not an exact match to a value in those tables, stop. Go back to the table and find the correct number. Do not round, interpolate, or estimate. Do not proceed to Step I-a until these lookups are confirmed character-by-character against the tables in this file.
@@ -198,7 +204,7 @@ Save to `[friendly-name]/sections/section_executive_summary.html`.
 
 ## PRICE INTEGRITY — CRITICAL
 
-The prices in the tables below are the ONLY approved prices. Do not estimate, round, interpolate, or use any number not listed here. Every dollar figure in the client report must come from one of the two pricing tables below. The example numbers in HTML template comments are illustrative only — do not use them as actual prices.
+The prices in the tables below are the ONLY approved prices. Do not estimate, round, interpolate, or use any number not listed here. Every dollar figure in the client report must come from one of the approved pricing tables below (Marketing, Non-Marketing, Legal AI Workforce, or AI Avatar). The example numbers in HTML template comments are illustrative only — do not use them as actual prices.
 
 ---
 
@@ -229,7 +235,7 @@ Complete this entire section before starting Step I.
 **General:**
 - Minimum MRR: $2,497/month — never recommend below this.
 - Default to recommending both a marketing package and a non-marketing package. A single-product recommendation is acceptable only when the transcript clearly shows the firm's needs are best served by one service category — do not force a second product that does not fit.
-- Total SMB spend (management fees + ad spend) must not exceed 35% of monthly revenue.
+- Total SMB spend (management fees + ad spend) must not exceed 35% of monthly revenue. Legal AI Workforce (LAW) recurring monthly fees count toward this cap alongside marketing and coaching packages.
 
 ---
 
@@ -277,6 +283,76 @@ Non-marketing packages are the default recommendation alongside marketing. Recom
 **Stand-alone prices:** Elite Coach $3,497 | Elite Coach Plus $3,497 | Master's Circle $4,997 | FCOO Advisor $3,797 | FCOO Director $5,797 | FCFO Advisor $3,797
 
 **Fractional packages (FCOO and FCFO) now include Elite Coach group deliverables.** When recommending any fractional package in Block 2, the deliverables list must include: weekly group coaching sessions, practice area masterminds, virtual access to quarterly workshops, and one annual in-person workshop. These are included in the fractional price — do not list them as a separate charge.
+
+---
+
+### SELECT LEGAL AI WORKFORCE (LAW) PACKAGE
+
+Legal AI Workforce (LAW) provides managed AI implementation for law firms — Claude Enterprise workspace, pre-built Law Firm AI Skills, and optional Fractional CTO leadership. Recommend alongside a marketing or coaching package when the firm shows AI readiness. LAW recurring fees count against the 35% cap.
+
+**Do NOT recommend LAW if:**
+- Revenue under $500K
+- Firm is solo with no support staff (minimum 1–2 staff needed to engage with implementation)
+- Owner shows no openness to staff training or technology adoption
+
+**LAW Tiers:**
+
+| Tier | Product Name | Bundled Price | Standalone Price | Target Revenue |
+|---|---|---|---|---|
+| AI Essentials | AI Workforce Pro | $1,597/mo | $2,497/mo | $500K+ |
+| AI Accelerator L1 | Fractional CTO Level 1 | $3,297/mo | $3,797/mo | $500K–$1.5M |
+| AI Accelerator L2 | Fractional CTO Level 2 | $4,997/mo | $5,797/mo | $1.5M–$3M |
+| AI Enterprise | Fractional CTO Level 3 | $8,997/mo | $9,997/mo | $3M+ |
+
+**Law Firm AI Foundation Sprint (one-time onboarding):**
+- Standalone: $19,997
+- Paired with Fractional CTO Level 1: $14,997 (bundle discount applied internally: net $8,403 above Level 1 MRR)
+- Paired with Fractional CTO Level 2: $14,997 (bundle discount applied internally: net $5,003 above Level 2 MRR)
+
+**Capacity add-ons (flag in notes if likely to apply; do not include in Block 3 by default):**
+- Additional employees above 5: $120/mo per employee + 2M AI credits
+- Overage AI credits: $150/mo per 2M credits
+- 1:1 Tech Support: $200/hr as needed
+- Optional 1:1 AI Implementation Manager: $200/mo
+
+**When to recommend each tier:**
+- **AI Essentials ($1,597/mo):** Revenue $500K–$1.5M. Owner wants to adopt AI with expert guidance; team will do the implementation work ("DIY with managed support"). Lowest-risk entry point.
+- **AI Accelerator L1 ($3,297/mo):** Revenue $500K–$1.5M. Owner has limited time to manage AI rollout internally; wants a dedicated Fractional CTO leading the effort ("done-with-you"). Prefer this over AI Essentials when owner says they don't have bandwidth to manage it themselves.
+- **AI Accelerator L2 ($4,997/mo):** Revenue $1.5M–$3M. Firm wants significant AI transformation — monthly custom agent builds, bi-monthly CTO strategy calls, four Skills deployed per month.
+- **AI Enterprise ($8,997/mo):** Revenue $3M+. Firm wants fully autonomous AI agents, a custom data warehouse, predictive business intelligence, and white-label IT/cybersecurity. "We are your full-service CTO."
+
+---
+
+### SELECT AI AVATAR / VIDEO GROWTH ADD-ON
+
+AI Avatar products pair with any active marketing package to drive social and video content using AI-generated avatar footage. Recommend when the firm is already investing in digital marketing and the owner expresses interest in video, social presence, or brand building.
+
+**Escalation: All AI Avatar / Virtual Video Growth packages require Alexis approval before including in a proposal.** Flag in the research notes.
+
+**AI Avatar Pricing:**
+
+| Product | Price | Contract |
+|---|---|---|
+| One-Time AI Avatar (kickoff + 5 videos) | $1,850 one-time | None |
+| Add-On: Virtual Video Growth Using AI Avatar | $1,950/mo + $2,997 setup fee | 12-month, auto-renewal |
+| Standalone: Virtual Video Growth Using AI Avatar (Qualified Firms Only) | $3,000/mo + $6,000 setup fee | 12-month, auto-renewal |
+
+**Add-On and Standalone recurring deliverables:** 1 long-form video/mo, 30 short-form videos/mo, YouTube optimization, 5 social media scripts/quarter, quarterly strategy meetings.
+
+**Standalone tier: firm must meet ALL of the following to qualify:**
+- $1M+ annual revenue
+- Established marketing budget
+- Running paid ads (paid social included)
+- Established organic social media presence
+- Studio setup with proper recording equipment
+- Strong intake system in place
+
+Note: Standalone setup fee ($6,000) may be waived if firm demonstrates a legitimate studio setup already in place.
+
+**When to recommend:**
+- **One-Time ($1,850):** Firm wants to test AI video content with no recurring commitment. Good for brand-aware firms not yet ready for ongoing video investment.
+- **Add-On recurring ($1,950/mo):** Firm is already on a marketing package and wants to accelerate social/video presence. Must have an active SMB marketing relationship.
+- **Standalone recurring ($3,000/mo):** Only for qualified firms meeting ALL six criteria above. Requires Alexis approval.
 
 ---
 
@@ -352,7 +428,8 @@ Note these in the research notes file for the sales team. Do not include in the 
 - Personal Injury in top 40 metro → approval required
 - Ad spend below practice area minimums → paid ads team review
 - Revenue goal exceeds projected ad revenue → paid ads team review
-- Any AI Virtual Video Growth package → Alexis approval required
+- Any AI Virtual Video Growth / AI Avatar package → Alexis approval required
+- Any Legal AI Workforce (LAW) package → confirm with sales rep that LAW delivery has launched and capacity is available before including in proposal
 
 ---
 
@@ -360,8 +437,8 @@ Note these in the research notes file for the sales team. Do not include in the 
 
 - **Phase 1 — Foundation:** Marketing + Coaching. Connect to DBM.
 - **Phase 2 — Operational Scale:** Add FCOO Advisor ($3,297/mo). Frame as graduation. Connect to DBM.
-- **Phase 3 — Optimize:** Add FCFO Advisor ($3,297/mo). Add Bookkeeping if needed. Connect to DBM.
-- **Phase 4 — Market Domination:** Upgrade marketing tier.
+- **Phase 3 — Optimize:** Add FCFO Advisor ($3,297/mo). Add Bookkeeping if needed. Add Legal AI Workforce (LAW) AI Essentials ($1,597/mo) if firm has not already adopted it — frame as deploying AI staff to handle repeatable tasks while the human team focuses on high-value work. Connect to DBM.
+- **Phase 4 — Market Domination:** Upgrade marketing tier. Upgrade LAW to Accelerator or Enterprise tier to match firm growth.
 - **Phase 5 — Full SMB Ecosystem:** All services. Closing line: "The firms that have the freedom you described all ended up here. And it started exactly where we are starting you."
 
 ---
