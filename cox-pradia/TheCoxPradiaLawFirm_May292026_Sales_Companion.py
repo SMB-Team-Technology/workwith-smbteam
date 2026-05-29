@@ -2,7 +2,7 @@
 Sales Companion PDF — The Cox Pradia Law Firm
 SMB Team | Nick Holderman | May 29, 2026
 Internal use only — do not share with client.
-Package: Full Service Marketing — Dominate + Master's Circle
+Package: Full Service Marketing — Growth + Master's Circle
 """
 
 from reportlab.lib.pagesizes import letter
@@ -135,14 +135,14 @@ story.append(thin_rule())
 
 story.append(Paragraph("Why This Marketing Package", S["section"]))
 story.append(Paragraph("<b>What it does for him:</b>", S["subsection"]))
-story.append(bd("Establishes Cox Pradia across Google Ads, LSA, Meta, and SEO at a budget that actually competes in Houston's PI market."))
-story.append(bd("Closes the visibility gap against Zehl and Simmons — at the Dominate level, the firm is finally in the same league as its top competitors."))
-story.append(bd("Builds the lead generation engine that lets the intake team already in place actually run at capacity."))
+story.append(bd("Establishes Cox Pradia across Google Ads, LSA, Meta, and SEO at a budget that begins competing in Houston's PI market."))
+story.append(bd("Creates the coordinated lead generation engine that the firm's intake team is already structured to handle — finally filling the pipeline."))
+story.append(bd("Builds the paid advertising infrastructure that turns the firm's 200+ blog posts and established reputation into a conversion system."))
 
-story.append(Paragraph("<b>Full Service Marketing — Dominate  |  $10,497/mo bundled</b>", S["subsection"]))
-story.append(b("PI practice in Houston's most competitive market requires Dominate-level investment to compete — Essentials and Starter are outgunned."))
-story.append(b("Dominate includes up to $75,000/mo ad spend capacity — covers full aggressive scenario as firm scales."))
-story.append(b("Saves $2,000/mo vs. stand-alone price of $12,497/mo."))
+story.append(Paragraph("<b>Full Service Marketing — Growth  |  $7,397/mo bundled</b>", S["subsection"]))
+story.append(b("Growth package is matched to the firm's size, team infrastructure, and trajectory in the $1M–$3M revenue range."))
+story.append(b("Includes up to $50,000/mo ad spend capacity — sufficient for the conservative-to-aggressive range for this market."))
+story.append(b("Saves $1,600/mo vs. stand-alone price of $8,997/mo."))
 
 story.append(thin_rule())
 
@@ -167,13 +167,13 @@ story.append(thin_rule())
 
 story.append(Paragraph("Why This Ad Spend", S["section"]))
 story.append(Paragraph("<b>What it does for him:</b>", S["subsection"]))
-story.append(bd("Conservative ($20K) projects 6 PI cases/mo at $50K avg = $300K/mo in case revenue vs. $20K spend — 15x return. (Estimates only.)"))
-story.append(bd("Aggressive ($60K) projects 20 PI cases/mo = $1,000,000/mo in case revenue vs. $60K spend — 17x return. (Estimates only.)"))
+story.append(bd("Conservative ($19.5K) projects 6 PI cases/mo at $50K avg = $300K/mo in case revenue vs. $19.5K spend — 15x return. (Estimates only.)"))
+story.append(bd("Aggressive ($50K) projects 17 PI cases/mo = $850,000/mo in case revenue vs. $50K spend — 17x return. (Estimates only.)"))
 
-story.append(Paragraph("<b>Recommended range: $20,000–$60,000/mo</b>", S["subsection"]))
-story.append(b("<b>Conservative:</b> PI hard floor $10K PPC + LSA $2K + Meta retargeting $1.5K + Meta lead gen $6.5K = $20,000."))
-story.append(b("<b>Aggressive:</b> $2.5M goal x 20% / 12 x 1.5 Tier-1 = $75K. Capped at Dominate practical level: $60,000."))
-story.append(b("<b>35% cap check:</b> Conservative $35,097 total requires $1.2M+/yr revenue. Aggressive $75,097 requires $2.6M+/yr. Confirm on call."))
+story.append(Paragraph("<b>Recommended range: $19,500–$50,000/mo</b>", S["subsection"]))
+story.append(b("<b>Conservative:</b> PI hard floor $10K PPC + LSA $2K + Meta retargeting $1.5K + Meta lead gen $6K = $19,500."))
+story.append(b("<b>Aggressive:</b> $2.5M goal x 20% / 12 x 1.5 Tier-1 = $75K. Capped at Growth tier limit: $50,000."))
+story.append(b("<b>35% cap check:</b> Conservative $31,497 total requires $1.1M+/yr revenue. Aggressive $61,997 requires $2.1M+/yr. Confirm on call."))
 story.append(Paragraph("<i>Avg. case value $50K is practice area default — not stated by firm. Houston truck/TBI/wrongful death cases often $100K–$2M+.</i>", S["disclaimer"]))
 
 story.append(thin_rule())
@@ -183,7 +183,7 @@ story.append(Paragraph("If He Pushes Back", S["section"]))
 story.append(Paragraph('"Our referrals have worked fine for 27 years."', S["objection_q"]))
 story.append(Paragraph("Referrals are relationship-based and capped by the partners' personal network. Zehl has 1,262 Google reviews and an estimated $913K/yr ad budget — they are capturing the cases no one refers to Cox Pradia. Referrals won't close that gap.", S["objection_a"]))
 
-story.append(Paragraph('"$15,097/month is a lot before we know if ads will work."', S["objection_q"]))
+story.append(Paragraph('"$11,997/month is a lot before we know if ads will work."', S["objection_q"]))
 story.append(Paragraph("At conservative ad spend, the projected return is 15x — one additional truck accident case at $150K pays for the full program. The question is not whether Houston PI ads work; it is who captures the leads while Cox Pradia waits.", S["objection_a"]))
 
 story.append(Paragraph('"Houston PI is too competitive — we can\'t beat Zehl."', S["objection_q"]))
@@ -194,16 +194,16 @@ story.append(thin_rule())
 story.append(Paragraph("Investment At A Glance", S["section"]))
 
 price_data = [
-    [Paragraph("<b>Full Service Marketing — Dominate</b>", S["price_main"]),
-     Paragraph("$10,497/mo", S["price_main"])],
+    [Paragraph("<b>Full Service Marketing — Growth</b>", S["price_main"]),
+     Paragraph("$7,397/mo", S["price_main"])],
     [Paragraph("Google Ads, LSA, Meta, full SEO, website — all PI practice areas in Houston.", S["price_detail"]),
-     Paragraph("<strike>$12,497</strike> stand alone", S["price_detail"])],
+     Paragraph("<strike>$8,997</strike> stand alone", S["price_detail"])],
     [Paragraph("<b>Master's Circle</b>", S["price_main"]),
      Paragraph("$4,600/mo", S["price_main"])],
     [Paragraph("Weekly coaching, PI masterminds, quarterly workshops, annual in-person event.", S["price_detail"]),
      Paragraph("<strike>$4,997</strike> stand alone", S["price_detail"])],
     [Paragraph("<b>Recommended Ad Spend</b>", S["price_main"]),
-     Paragraph("$20,000–$60,000/mo", S["price_main"])],
+     Paragraph("$19,500–$50,000/mo", S["price_main"])],
     [Paragraph("Goes to Google, LSA, and Meta — not to SMB Team.", S["price_detail"]),
      Paragraph("", S["price_detail"])],
 ]
@@ -220,7 +220,7 @@ pt.setStyle(TableStyle([
 ]))
 story.append(pt)
 story.append(Paragraph(
-    "SMB Team total: $15,097/mo  |  Save $2,397/mo by bundling  |  35% cap: confirm revenue ($1.2M+ conservative, $2.6M+ aggressive)",
+    "SMB Team total: $11,997/mo  |  Save $1,997/mo by bundling  |  35% cap: confirm revenue ($1.1M+ conservative, $2.1M+ aggressive)",
     S["savings"]))
 
 doc.build(story, onFirstPage=add_page_elements, onLaterPages=add_page_elements)
