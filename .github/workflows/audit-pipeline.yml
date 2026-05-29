@@ -147,6 +147,7 @@ jobs:
       # STEP 6 — Email the closer with PDF + PPTX attachments
       # -----------------------------------------------------------------------
       - name: Step 6 — Email closer with audit attachments
+        continue-on-error: true
         env:
           GMAIL_USER: ${{ secrets.GMAIL_USER }}
           GMAIL_APP_PASSWORD: ${{ secrets.GMAIL_APP_PASSWORD }}
@@ -236,6 +237,7 @@ jobs:
       # STEP 7 — Notify Slack that the proposal is ready
       # -----------------------------------------------------------------------
       - name: Step 7 — Notify Slack
+        continue-on-error: true
         env:
           SLACK_BOT_TOKEN: ${{ secrets.SLACK_BOT_TOKEN }}
           SLACK_CHANNEL_ID: ${{ secrets.SLACK_CHANNEL_ID }}
