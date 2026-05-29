@@ -45,6 +45,7 @@ jobs:
           echo "hubspot_contact_id=$(jq -r '.hubspot_contact_id // empty' "$TRIGGER_FILE")" >> "$GITHUB_OUTPUT"
           echo "sales_rep_email=$(jq -r '.sales_rep_email // empty' "$TRIGGER_FILE")" >> "$GITHUB_OUTPUT"
           echo "suppress_pricing=$(jq -r '.suppress_pricing // "false"' "$TRIGGER_FILE")" >> "$GITHUB_OUTPUT"
+          echo "package=$(jq -r '.package // empty' "$TRIGGER_FILE")" >> "$GITHUB_OUTPUT"
 
       - name: Configure git
         run: |
@@ -81,6 +82,11 @@ jobs:
           FRIENDLY_NAME="${{ steps.inputs.outputs.friendly_name }}"
           SALES_REP="${{ steps.inputs.outputs.sales_rep }}"
           DATE="${{ steps.inputs.outputs.date }}"
+          PACKAGE="${{ steps.inputs.outputs.package }}"
+          PACKAGE_HINT=""
+          if [ -n "$PACKAGE" ]; then
+            PACKAGE_HINT="PACKAGE OVERRIDE: The trigger file specifies \"$PACKAGE\" as the recommended marketing package. You MUST use this package in Section 11 (Next Steps). Do not override with a different tier based on revenue estimates."
+          fi
           claude --model claude-sonnet-4-6 --dangerously-skip-permissions -p "
             You are running Pass 2 of the SMB Team Growth Audit pipeline.
 
@@ -88,6 +94,7 @@ jobs:
             Friendly Name: $FRIENDLY_NAME
             Sales Rep: $SALES_REP
             Date: $DATE
+            $PACKAGE_HINT
 
             Read \`.claude/commands/audit-write.md\` in full. Read the research notes file
             and \`Design Files/audit_styles.css\`. Execute every step in order, saving each
