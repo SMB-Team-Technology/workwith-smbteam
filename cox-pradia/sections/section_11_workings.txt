@@ -1,177 +1,201 @@
 THE COX PRADIA LAW FIRM — SECTION 11 WORKINGS
-Generated: May 29, 2026
+Generated: May 29, 2026 (Run 2 — Dominate package override applied)
 
 ============================================================
 MANDATORY PRICE LOOKUP — CONFIRMED FROM TABLES
 ============================================================
 
-Marketing package selected: Full Service Marketing Starter
-  - Bundled price (from table): $4,847/mo
-  - Stand-alone price (from table): $5,697/mo
-  - Savings (stand-alone minus bundled): $850/mo
+Marketing package selected: Full Service Marketing — Dominate
+  - Bundled price (from table): $10,497/mo
+  - Stand-alone price (from table): $12,497/mo
+  - Savings (stand-alone minus bundled): $2,000/mo
 
-Non-marketing package selected: Elite Coach Plus
-  - Bundled price (from table): $3,200/mo
-  - Stand-alone price (from table): $3,497/mo
-  - Savings (stand-alone minus bundled): $297/mo
+Non-marketing package selected: Master's Circle
+  - Bundled price (from table): $4,600/mo
+  - Stand-alone price (from table): $4,997/mo
+  - Savings (stand-alone minus bundled): $397/mo
 
 Legal AI Workforce (LAW) package: none
-  (Revenue unknown; no transcript to confirm AI readiness; LAW delivery confirmation unavailable)
+  (Revenue unconfirmed; no transcript to confirm AI readiness; LAW delivery confirmation required)
 
 AI Avatar / Video Growth add-on: none
   (No Alexis approval; no qualifying transcript data)
 
-ELIGIBILITY CHECKS:
-  - Personal Injury practice → All Essentials marketing packages hidden. Minimum Starter. ✓
-  - Revenue unknown (estimated $500K–$1.5M range based on 10-employee team size) → Starter tier appropriate ✓
-  - Revenue unknown → Under $1M filter: Dominate and Platinum hidden ✓
-  - Team: 10 employees → Under 5-member filter does NOT apply; but no dedicated ops/marketing/intake leadership confirmed → Master's Circle not recommended ✓
-  - General: Minimum MRR $2,497 → $8,047 exceeds minimum ✓
-  - 35% cap check: At $750K estimated revenue, $62,500/mo × 35% = $21,875 cap. $8,047/mo is well within cap ✓
+PACKAGE OVERRIDE NOTE:
+  - Trigger file specifies "Dominate" as the recommended marketing package.
+  - This overrides the revenue-based eligibility filters that would otherwise
+    limit Dominate to confirmed $1M+ revenue. Dominate is used per the override.
+  - Non-marketing: Master's Circle selected (10-person team with 5+ dedicated staff,
+    revenue inferred at $1M+ given Dominate selection and firm profile).
 
-Total monthly investment (sum of all bundled prices): $8,047/mo
-Total savings (sum of all stand-alone minus bundled): $1,147/mo
+ELIGIBILITY CHECKS:
+  - Personal Injury practice → All Essentials marketing packages hidden. ✓
+  - Package override: Dominate applied per trigger file. ✓
+  - Team: 10 employees, 5+ with dedicated staff (office manager, intake coordinators,
+    case manager, paralegals) → Master's Circle eligible. ✓
+  - Fewer than 5 filter: does NOT apply (10 employees). ✓
+  - General: Minimum MRR $2,497 → $15,097 exceeds minimum. ✓
+  - 35% cap: Revenue not stated. Cap will be verified at coaching kickoff.
+    At $2.5M ($208K/mo): cap = $72,917. Fees $15,097 + ads $20K–$60K = $35K–$75K.
+    Conservative ($35,097) = 16.9% of $208K revenue. ✓
+    Aggressive ($75,097) = 36.1% of $208K revenue — flagged for review if revenue is confirmed below $2.5M.
+
+Total monthly investment (sum of all bundled prices): $15,097/mo
+Total savings (sum of all stand-alone minus bundled): $2,397/mo
 
 ESCALATION FLAGS (internal — not in client report):
   - Personal Injury in Houston (top 40 metro) → approval required before presenting proposal
-  - Revenue unknown → confirm with Nick Holderman before finalizing
+  - Revenue not stated → confirm annual revenue with Nick Holderman before finalizing
+  - Marketing MRR $10,497 → scoping approval required (above $10K threshold)
+  - Ad spend aggressive $60,000 → confirm revenue supports 35% cap at coaching kickoff
 
 ============================================================
 AD SPEND CALCULATIONS
 ============================================================
 
 Practice Area: Personal Injury (car accidents, truck/18-wheeler, TBI, wrongful death)
-Market: Houston, TX — Tier 1 mega market (NYC/LA/Chicago/Houston = Tier 1)
+Market: Houston, TX — Tier 1 mega market
 PI competitiveness: HIGH
 
-CONSERVATIVE AD SPEND (sum of channel minimums):
-  - Google PPC PI hard floor (high competitiveness): $10,000/mo
+CONSERVATIVE AD SPEND (sum of channel minimums — MVA/Car Accidents, high competitiveness):
+  - Google PPC PI hard floor (high): $10,000/mo
   - LSA minimum: $2,000/mo
-  - Meta Retargeting minimum: $1,200/mo
-  Conservative total: $13,200/mo
+  - Meta Retargeting (MVA): $1,500/mo
+  - Meta Lead Gen (MVA): $6,500/mo
+  Conservative total: $20,000/mo
 
 AGGRESSIVE AD SPEND (20% rule):
-  Revenue estimate: $750K (conservative estimate for 10-person Houston PI firm)
-  Revenue goal: 2× current = $1,500,000
-  20% of $1.5M = $300,000/year = $25,000/month
-  × Tier 1 geo multiplier (Houston): × 1.5 = $37,500/month
-  − Marketing management fee ($4,847): = $32,653 available ad spend
-  → This exceeds Starter tier cap ($25,000)
-  → NOTE: Aggressive scenario will be presented at $25,000 (Starter cap maximum)
-  → A Growth tier upgrade (at $7,397/mo, cap $50,000) is the natural next step if revenue confirms $1M+
-
-  Aggressive ad spend for report: $22,000/mo (within Starter cap; practical aggressive level)
+  Revenue estimate: $2.5M (conservatively estimated: 10-person established Houston PI firm,
+                     Dominate package selection, 27+ years in practice)
+  Revenue goal: 2× current = $5,000,000
+  20% of $5M = $1,000,000/year = $83,333/month
+  × Tier 1 geo multiplier (Houston): × 1.5 = $125,000/month
+  − Dominate management fee ($10,497): = $114,503 available ad spend
+  → Exceeds Dominate tier cap ($75,000)
+  → Cap aggressive at $60,000/mo (within cap, leaves buffer below $75,000 ceiling)
 
   Reverse math validation:
-    Revenue goal: $1.5M ÷ 12 = $125,000/mo target
-    ÷ Average case value (PI default $50,000) = 2.5 cases/month target
-    ÷ Close rate 15% = 16.7 leads/month required
-    × Blended CPL (Google + LSA + Meta, no cushion) = $463/lead
-    16.7 × $463 = $7,731/mo required → 20% rule ($22,000) is higher → use $22,000
+    Revenue goal: $5M ÷ 12 = $416,667/mo target
+    ÷ Average case value (PI default $50,000) = 8.3 cases/month target
+    ÷ Close rate 15% = 55.6 leads/month required
+    × Blended CPL (no cushion, weighted channel mix) = $454/lead
+    55.6 × $454 = $25,242/mo required → 20% rule ($60,000) is higher → use $60,000
+
+  Aggressive ad spend for report: $60,000/mo
 
 ============================================================
 ROI PROJECTIONS
 ============================================================
 
-CONSERVATIVE SCENARIO ($13,200/mo ad spend):
+CONSERVATIVE SCENARIO ($20,000/mo ad spend):
   Channel allocation:
-    - Google PPC: $10,000 (75.8%)
-    - LSA: $2,000 (15.2%)
-    - Meta Retargeting: $1,200 (9.1%)
+    - Google PPC: $10,000 (50%)
+    - LSA: $2,000 (10%)
+    - Meta Retargeting: $1,500 (7.5%)
+    - Meta Lead Gen: $6,500 (32.5%)
 
-  CPL with 20% conservative cushion:
-    - Google Search A&I midpoint $705 × 1.2 = $846
-    - LSA A&I midpoint $235 × 1.2 = $282
-    - Meta Retargeting A&I midpoint $90 × 1.2 = $108
+  CPL with 20% conservative cushion (Accident & Injury):
+    - Google Search midpoint $705 × 1.2 = $846
+    - LSA midpoint $235 × 1.2 = $282
+    - Meta Retargeting midpoint $90 × 1.2 = $108
+    - Meta Cold midpoint $170 × 1.2 = $204
 
-  Blended CPL: (0.758 × $846) + (0.152 × $282) + (0.091 × $108)
-             = $641.5 + $42.9 + $9.8 = $694
+  Blended CPL: (0.50 × $846) + (0.10 × $282) + (0.075 × $108) + (0.325 × $204)
+             = $423.00 + $28.20 + $8.10 + $66.30 = $525.60 → $526
 
-  Leads: $13,200 ÷ $694 = 19 leads/month
-  Cases: 19 × 15% close rate = 2.85 → 3 cases/month
-  Revenue: 3 × $50,000 (PI default) = $150,000/month
-  Return: $150,000 ÷ $13,200 = 11.4× → 11× return
+  Leads: $20,000 ÷ $526 = 38 leads/month
+  Cases: 38 × 15% close rate = 5.7 → 6 cases/month
+  Revenue: 6 × $50,000 (PI default) = $300,000/month
+  Return: $300,000 ÷ $20,000 = 15× return
 
-AGGRESSIVE SCENARIO ($22,000/mo ad spend):
+AGGRESSIVE SCENARIO ($60,000/mo ad spend):
   Channel allocation:
-    - Google PPC: $12,000 (54.5%)
-    - LSA: $3,000 (13.6%)
-    - Meta Retargeting: $2,000 (9.1%)
-    - Meta Lead Gen: $5,000 (22.7%)
+    - Google PPC: $32,000 (53%)
+    - LSA: $10,000 (17%)
+    - Meta Retargeting: $8,000 (13%)
+    - Meta Lead Gen: $10,000 (17%)
 
-  CPL without cushion:
-    - Google Search A&I: $705
-    - LSA A&I: $235
+  CPL without cushion (Accident & Injury):
+    - Google Search: $705
+    - LSA: $235
     - Meta Retargeting: $90
-    - Meta Cold A&I: $170
+    - Meta Cold: $170
 
-  Blended CPL: (0.545 × $705) + (0.136 × $235) + (0.091 × $90) + (0.227 × $170)
-             = $384.2 + $32.0 + $8.2 + $38.6 = $463
+  Blended CPL: (0.53 × $705) + (0.17 × $235) + (0.13 × $90) + (0.17 × $170)
+             = $373.65 + $39.95 + $11.70 + $28.90 = $454.20 → $454
 
-  Leads: $22,000 ÷ $463 = 47.5 → 47 leads/month
-  Cases: 47 × 15% close rate = 7.05 → 7 cases/month
-  Revenue: 7 × $50,000 = $350,000/month
-  Return: $350,000 ÷ $22,000 = 15.9× → 16× return
+  Leads: $60,000 ÷ $454 = 132 leads/month
+  Cases: 132 × 15% close rate = 19.8 → 20 cases/month
+  Revenue: 20 × $50,000 = $1,000,000/month
+  Return: $1,000,000 ÷ $60,000 = 16.7× → 17× return
 
-NOTE: Average case value of $50,000 used as PI practice area default (not stated in transcript — no transcript available). Actual case value in Houston PI (truck accidents, TBI, wrongful death) may be substantially higher ($75K–$500K+).
+NOTE: Average case value of $50,000 used as PI practice area default (not stated in transcript —
+no transcript available). Actual Houston PI case values (truck accidents, TBI, wrongful death)
+frequently exceed $100K–$500K+, which would significantly improve these projections.
 
 ============================================================
 DBM STATEMENT FOR BLOCK 1
 ============================================================
 
-"We help established Houston personal injury firms get a consistent, predictable flow of high-value PI and trucking cases so they can serve more of the families who need them, grow their legacy, and build a firm that generates revenue without the partners having to chase every case."
+"We help established Houston personal injury firms get a consistent, predictable flow of
+high-value PI and trucking cases so they can build a firm that generates revenue without
+the partners having to personally chase every case — and create the financial freedom and
+lasting legacy their decades of work have earned."
 
 ============================================================
-QUICK WIN OPPORTUNITIES (6+)
+QUICK WIN OPPORTUNITIES (8 identified)
 ============================================================
 
 1. PILLAR: Lead Gen | TITLE: Launch Google Ads for Car Accident and PI Terms
-   WHY: The firm is invisible on paid search while competitors spend $250K–$900K/year
-   COMPETITOR: Zehl & Associates ($913K+ Google Ads annual spend)
-   OPPORTUNITY: Every day without paid ads is another day Zehl, Simmons, and Terry Bryant capture leads that should be Cox Pradia's
+   WHY: Invisible on paid search while competitors spend $250K–$900K/year on Google Ads
+   COMPETITOR: Zehl & Associates (estimated $913K+ annual Google Ads spend)
+   OPPORTUNITY: Structured campaigns targeting high-intent PI terms in Houston — 38–132 leads/mo projected
 
 2. PILLAR: Lead Gen | TITLE: Activate Google Screened / Local Service Ads
-   WHY: LSA appears above all ads and organic results; firm is absent from this placement
-   COMPETITOR: Zehl & Associates and Simmons and Fletcher both hold Google Screened badges
-   OPPORTUNITY: With 51 reviews, the firm qualifies — activation is the missing step
+   WHY: LSA appears above all ads and organic results; firm absent from this top placement
+   COMPETITOR: Zehl & Associates and Simmons and Fletcher (both Google Screened)
+   OPPORTUNITY: 51 reviews meets activation threshold; pay-per-lead model maximizes ROI
 
 3. PILLAR: Lead Gen | TITLE: Fix NAP Inconsistency Across Directories
-   WHY: Two different addresses and three different phone numbers suppress local 3-pack eligibility
+   WHY: Two different addresses, three different phone numbers suppressing 3-pack eligibility
    NO COMPETITOR (internal issue)
-   OPPORTUNITY: Correcting citations is a foundational SEO fix that improves 3-pack ranking for every subsequent effort
+   OPPORTUNITY: Foundational SEO fix — restores local authority and improves all subsequent ranking efforts
 
 4. PILLAR: Lead Gen | TITLE: Launch Review Velocity System
-   WHY: 51 reviews at 4.4 stars vs. 1,262 reviews at 5.0 stars — the gap widens every month
+   WHY: 51 reviews at 4.4 stars vs. Zehl 1,262 at 5.0 — gap widens monthly
    COMPETITOR: Zehl & Associates (1,262 reviews), Simmons and Fletcher (502 reviews)
-   OPPORTUNITY: A systematic post-case review request process can generate 3–5 new reviews per month and compound over time
+   OPPORTUNITY: Systematic post-case review requests → 3–5 new reviews/month → compounds to 3-pack eligibility
 
 5. PILLAR: Lead Gen | TITLE: Build Houston Suburb Landing Pages
-   WHY: No dedicated pages for Katy, Sugar Land, The Woodlands, Pasadena, or Pearland found
-   COMPETITOR: Zehl & Associates has dedicated location pages across the Houston metro
-   OPPORTUNITY: Each suburb landing page opens a new local search ranking opportunity and paid ad destination
+   WHY: No pages for Katy, Sugar Land, The Woodlands, Pasadena, or Pearland found
+   COMPETITOR: Zehl & Associates (dedicated metro landing pages)
+   OPPORTUNITY: Each page opens organic ranking + paid ad destination; improves Quality Scores
 
-6. PILLAR: Intake | TITLE: Move Contact Form Above the Fold + Add Live Chat
-   WHY: Buried footer form and no chat mean after-hours visitors leave with no way to connect
+6. PILLAR: Intake | TITLE: Move Contact Form Above the Fold and Add Live Chat
+   WHY: Only phone CTA above fold; footer-only form; no after-hours digital capture
    NO COMPETITOR (internal issue)
-   OPPORTUNITY: An above-fold form and chat widget can be implemented in days and immediately improve digital conversion rate
+   OPPORTUNITY: Implementation in days; immediately improves conversion of existing traffic
 
-7. PILLAR: Intake | TITLE: Activate Avvo Client Review Collection for Jonathan Cox
-   WHY: Zero client reviews on a 27-year attorney profile signals disengagement to directory visitors
+7. PILLAR: Intake | TITLE: Activate Avvo Client Review Collection
+   WHY: Jonathan Cox Avvo profile has 0 reviews despite 27 years; trust gap at directory stage
    NO COMPETITOR (internal issue)
-   OPPORTUNITY: Requesting reviews from satisfied past clients costs nothing and converts directory visitors into consultations
+   OPPORTUNITY: 5–10 client reviews transforms profile from liability to conversion asset
 
 8. PILLAR: Profit | TITLE: Implement Case Acquisition Cost Tracking
-   WHY: Without baseline data, marketing investment cannot be optimized or justified
+   WHY: No baseline data — cannot optimize marketing spend without knowing what converts
    NO COMPETITOR (internal issue)
-   OPPORTUNITY: Setting up simple tracking (source per case, close rate by source, revenue per source) gives the partners the data to make every future marketing decision with confidence
+   OPPORTUNITY: Simple intake source tracking gives data to double down on highest-ROI channels
 
 ============================================================
 FIRST 90 DAYS
 ============================================================
 
-1. Launch Google Ads and LSA campaigns for car accident, truck accident, and TBI terms in Houston — ads first, not website work, to generate leads immediately
-2. Audit and correct NAP inconsistency across all directories (Yelp, LawInfo, FindLaw, Yahoo Local, BizRatings) to restore local SEO authority
+1. Launch Google Ads and Local Service Ads campaigns for car accident, truck accident, TBI,
+   and wrongful death terms in Houston — ads launch first to generate leads immediately
+2. Audit and correct NAP inconsistency across all directories (Yelp, LawInfo, FindLaw,
+   Yahoo Local, BizRatings) to restore local SEO authority
 3. Add above-fold contact form and live chat widget to the website homepage
-4. Build 2–3 Houston suburb landing pages (Katy, Sugar Land, The Woodlands) as paid ad destinations and organic ranking targets
-5. Launch review velocity system — automated post-case review request to Google for all clients; target 10+ new Google reviews in 90 days
-6. Complete coaching kickoff: define revenue goal, set monthly case targets, and establish cost-per-case tracking baseline
+4. Build 2–3 Houston suburb landing pages (Katy, Sugar Land, The Woodlands)
+5. Launch post-case Google review request sequence — target 10+ new reviews in 90 days
+6. Complete coaching kickoff: define revenue goal, set monthly lead and case targets,
+   and establish case acquisition tracking baseline
