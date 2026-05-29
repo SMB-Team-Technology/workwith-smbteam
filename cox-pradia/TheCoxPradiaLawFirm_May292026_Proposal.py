@@ -36,7 +36,7 @@ FINDINGS = [
     ("neg", "Not running ads while competitors spend $250K–$900K+/yr on Google"),
     ("neg", "Two addresses + 3 phone numbers across directories suppress 3-pack rank"),
     ("neg", "No live chat + footer-only form — after-hours leads leave unconverted"),
-    ("neg", "No cost-per-case tracking — can't measure or optimize marketing ROI"),
+    ("pos", "10-person team with intake coordinators + case manager already in place"),
 ]
 
 COMPETITORS = [
@@ -99,31 +99,31 @@ PRIORITIES = [
 # ── Slide 3 ──────────────────────────────────────────────────────
 PACKAGES = [
     (
-        "FULL SERVICE MARKETING — STARTER",
-        "$4,847", "$5,697/mo",
-        "Google Ads · LSA · Meta · SEO · Website optimization",
+        "FULL SERVICE MARKETING — DOMINATE",
+        "$10,497", "$12,497/mo",
+        "Google Ads · LSA · Meta · Full SEO · Website · All PI terms",
         "1D4ED8",
     ),
     (
-        "ELITE COACH PLUS",
-        "$3,200", "$3,497/mo",
-        "Weekly coaching · Masterminds · Workshops · 1:1 strategy",
+        "MASTER'S CIRCLE",
+        "$4,600", "$4,997/mo",
+        "Weekly coaching · PI masterminds · Workshops · Strategy sessions",
         "6D28D9",
     ),
 ]
 
-BUNDLE_TOTAL   = "$8,047 / mo"
-BUNDLE_SAVINGS = "Save $1,147/mo by bundling"
+BUNDLE_TOTAL   = "$15,097 / mo"
+BUNDLE_SAVINGS = "Save $2,397/mo by bundling"
 
 AD_SPEND_NOTE = (
-    "+ Recommended ad spend: $13,200–$22,000/mo paid directly to Google/Meta"
+    "+ Recommended ad spend: $20,000–$60,000/mo paid directly to Google/Meta"
 )
 
-AVG_CASE_VALUE      = "$50,000"
-CONSERVATIVE_LABEL  = "Conservative  (3 cases/mo):"
-CONSERVATIVE_RESULT = "$150,000 revenue · 11× ROAS"
-AGGRESSIVE_LABEL    = "Aggressive  (7 cases/mo):"
-AGGRESSIVE_RESULT   = "$350,000 revenue · 16× ROAS"
+AVG_CASE_VALUE      = "$50,000 (est.)"
+CONSERVATIVE_LABEL  = "Conservative  (6 cases/mo):"
+CONSERVATIVE_RESULT = "$300,000 revenue · 15× ROAS"
+AGGRESSIVE_LABEL    = "Aggressive  (20 cases/mo):"
+AGGRESSIVE_RESULT   = "$1,000,000 revenue · 17× ROAS"
 
 TIMELINE = [
     ("Day 1",   "Google Ads + LSA campaigns launched"),
