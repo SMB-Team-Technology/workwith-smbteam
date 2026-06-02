@@ -195,25 +195,15 @@ story.append(thin_rule())
 story.append(Paragraph("Why This Marketing Package", S["section"]))
 
 story.append(Paragraph("<b>What it does for him:</b>", S["subsection"]))
-story.append(bd("<b>Cases come in while he is in court.</b> Google Ads and LSA generate leads without attorney involvement."))
-story.append(bd("<b>Closes the paid channel gap.</b> Firm becomes visible where Baxter, Levow, and SRIS currently operate unopposed."))
+story.append(bd("<b>Cases come in while he is in court.</b> Google Ads, LSA, and Meta generate leads across every channel — no attorney involvement required."))
+story.append(bd("<b>Closes the paid channel gap on all fronts.</b> Firm becomes visible where Baxter, Levow, and SRIS currently operate unopposed."))
+story.append(bd("<b>Turns 39 years of reputation into a growth engine.</b> 120 five-star reviews and an 80% dismissal rate convert at high rates when the firm is visible."))
 
-story.append(Paragraph("<b>Full Service Marketing Essentials  |  $3,397/mo bundled</b>", S["subsection"]))
-story.append(b("Revenue $300K–$400K → Essentials tier ($250K–$400K band). DUI/DWI — Essentials not blocked."))
-story.append(b("Website modern and mobile responsive — no forced rebuild. Essentials ad cap $7,500; both spend levels within cap."))
-
-story.append(thin_rule())
-
-# ── Why This Coaching Package ──
-story.append(Paragraph("Why This Coaching Package", S["section"]))
-
-story.append(Paragraph("<b>What it does for him:</b>", S["subsection"]))
-story.append(bd("<b>Converts leads into cases.</b> Intake coaching maximizes conversion from every paid lead that comes in."))
-story.append(bd("<b>Accountability structure.</b> Weekly coaching keeps growth on plan — results happen on purpose, not by chance."))
-
-story.append(Paragraph("<b>Elite Coach  |  $2,600/mo bundled</b>", S["subsection"]))
-story.append(b("Revenue $300K–$400K → Elite Coach is the recommended tier. Fractional COO/CFO not eligible under $500K."))
-story.append(b("Intake gaps confirmed in research — after-hours protocol and follow-up sequence are day-one coaching priorities."))
+story.append(Paragraph("<b>Full Service Marketing Growth  |  $8,997/mo standalone + $2,200 setup</b>", S["subsection"]))
+story.append(b("Package override applied per sales rep instruction — Growth tier for full South Jersey DUI market domination."))
+story.append(b("Growth tier includes Google Ads, LSA, Meta retargeting and lead gen, full local SEO, and website optimization."))
+story.append(b("Growth ad spend cap $50,000/mo — well above the $7,500–$15,000 recommended range for this market."))
+story.append(b("Bundling with Elite Coach Plus saves $1,600/mo on marketing (drops to $7,397 bundled) — strong Phase 2 upsell."))
 
 
 # ══════════════════════════════════════════════════════════
@@ -232,17 +222,17 @@ story.append(bd("<b>Creates the pipeline he has never had.</b> Paid leads arrive
 story.append(bd("<b>Closes the gap on Baxter and Levow.</b> Puts this firm in front of the same high-intent DUI prospects they capture now."))
 
 story.append(Paragraph("<b>Recommended Ad Spend Range:</b>", S["subsection"]))
-story.append(b("<b>Conservative:</b> $4,000/mo — Google Ads intro level; within 35% cap at $350K est. revenue."))
-story.append(b("<b>Aggressive:</b> $5,500/mo — criminal defense PPC minimum; requires revenue confirmed at $400K."))
+story.append(b("<b>Conservative:</b> $7,500/mo — criminal defense minimums: Google PPC $5,500 + LSA $2,000."))
+story.append(b("<b>Aggressive:</b> $15,000/mo — Google $8,000 + LSA $3,000 + Meta Retargeting $2,000 + Meta Lead Gen $2,000."))
 
 story.append(Paragraph("<b>Estimated ROI:</b>", S["subsection"]))
-story.append(b("<b>Conservative:</b> ~3 cases x $4,500 = ~$13,500/mo vs. $4,000 = ~3.4x return. (Est.)"))
-story.append(b("<b>Aggressive:</b> ~5 cases x $4,500 = ~$22,500/mo vs. $5,500 = ~4.1x return. (Est.)"))
+story.append(b("<b>Conservative:</b> ~5 cases x $4,500 = ~$22,500/mo vs. $7,500 spend = ~3.0x return. (Est.)"))
+story.append(b("<b>Aggressive:</b> ~15 cases x $4,500 = ~$67,500/mo vs. $15,000 spend = ~4.5x return. (Est.)"))
 story.append(Paragraph("<i>Estimates. NJ DUI defaults: $4,000–$5,000 case value; 15% close rate. Not guaranteed.</i>", S["disclaimer"]))
 
 story.append(Paragraph("<b>How calculated:</b>", S["subsection"]))
-story.append(b("<b>Conservative:</b> $4,000 / ($180 CPL + 20% cushion = $216) = 18 leads x 15% = 3 cases."))
-story.append(b("<b>Aggressive:</b> $5,500 / $180 CPL = 31 leads x 15% = 5 cases. Total $11,497 vs. $11,667 cap. ✓"))
+story.append(b("<b>Conservative:</b> Google $5,500/($180+20%=$216)=25 leads; LSA $2,000/($160+20%=$192)=10 leads; 35 x 15% = 5 cases."))
+story.append(b("<b>Aggressive:</b> $15,000 / $148 blended CPL = 101 leads x 15% = 15 cases; blended CPL uses Google 53%, LSA 20%, Meta 27%."))
 
 story.append(thin_rule())
 
@@ -250,16 +240,16 @@ story.append(thin_rule())
 story.append(Paragraph("If He Pushes Back", S["section"]))
 
 story.append(Paragraph('"I\'ve built this for 39 years without paid ads."', S["objection_q"]))
-story.append(Paragraph("Baxter (144 reviews, former prosecutor) and Levow DWI Law (15 consecutive Best Law Firms) are running paid Burlington County campaigns now. Every month without ads, they convert prospects actively searching for you.", S["objection_a"]))
+story.append(Paragraph("Baxter (144 reviews, former prosecutor) and Levow DWI Law (15 consecutive Best Law Firms) are already running paid Burlington County campaigns. Every month without ads is a month they convert the prospects who should be calling Steven.", S["objection_a"]))
 
-story.append(Paragraph('"I don\'t know my actual revenue."', S["objection_q"]))
-story.append(Paragraph("Elite Coach kickoff establishes the baseline metrics Steven needs. The proposal uses conservative defaults ($300K–$400K) that work at the lower end of the range.", S["objection_a"]))
+story.append(Paragraph('"This feels like a big investment."', S["objection_q"]))
+story.append(Paragraph("Conservative scenario: 5 cases/month at $4,500 average = $22,500 in monthly revenue vs. $7,500 in ad spend — 3.0x return before accounting for case value growth. One additional case per month pays for the management fee.", S["objection_a"]))
 
 story.append(Paragraph('"Will Avvo hurt the ads?"', S["objection_q"]))
-story.append(Paragraph("Google Ads and LSA are independent of Avvo. The 120 Google reviews at 4.9 stars are what Google uses — that profile is strong. Avvo management is a separate long-term item that does not block ads from launching.", S["objection_a"]))
+story.append(Paragraph("Google Ads and LSA are independent of Avvo. The 120 Google reviews at 4.9 stars are what Google uses for LSA qualification — that profile is strong. Avvo management is a separate long-term item that does not block ads from launching.", S["objection_a"]))
 
 story.append(Paragraph('"What if I can\'t handle more cases?"', S["objection_q"]))
-story.append(Paragraph("Elite Coach addresses intake triage directly. Phase 2 builds the intake coordinator and operations layer that scales capacity alongside case volume.", S["objection_a"]))
+story.append(Paragraph("Phase 2 builds the intake coordinator and operations layer that scales capacity alongside case volume. The Growth package includes intake optimization in the first 90 days — we build the intake capacity before scaling spend.", S["objection_a"]))
 
 story.append(thin_rule())
 
@@ -267,17 +257,13 @@ story.append(thin_rule())
 story.append(Paragraph("Investment At A Glance", S["section"]))
 
 price_data = [
-    [Paragraph("<b>Full Service Marketing Essentials</b>", S["price_main"]),
-     Paragraph("$3,397/mo", S["price_main"])],
-    [Paragraph("Google Ads, LSA, local SEO, website optimization, monthly reporting.", S["price_detail"]),
-     Paragraph("Stand-alone N/A", S["price_detail"])],
-    [Paragraph("<b>Elite Coach</b>", S["price_main"]),
-     Paragraph("$2,600/mo", S["price_main"])],
-    [Paragraph("Weekly group coaching, practice area masterminds, intake process guidance, quarterly and annual workshops.", S["price_detail"]),
-     Paragraph("<strike>$3,497</strike> stand alone", S["price_detail"])],
+    [Paragraph("<b>Full Service Marketing Growth</b>", S["price_main"]),
+     Paragraph("$8,997/mo", S["price_main"])],
+    [Paragraph("Google Ads, LSA, Meta, full local SEO, website optimization, monthly reporting. $2,200 one-time setup fee.", S["price_detail"]),
+     Paragraph("<strike>$8,997</strike> standalone", S["price_detail"])],
     [Paragraph("<b>Recommended Ad Spend</b>", S["price_main"]),
-     Paragraph("$4,000–$5,500/mo", S["price_main"])],
-    [Paragraph("Goes to Google and LSA platforms — not to SMB Team.", S["price_detail"]),
+     Paragraph("$7,500–$15,000/mo", S["price_main"])],
+    [Paragraph("Goes to Google, LSA, and Meta platforms — not to SMB Team.", S["price_detail"]),
      Paragraph("", S["price_detail"])],
 ]
 pt = Table(price_data, colWidths=[4.5 * inch, 1.7 * inch])
@@ -289,11 +275,10 @@ pt.setStyle(TableStyle([
     ("BOTTOMPADDING", (0,0), (-1,-1), 1),
     ("LINEBELOW", (0,1), (-1,1), 0.5, RULE_GRAY),
     ("LINEBELOW", (0,3), (-1,3), 0.5, RULE_GRAY),
-    ("LINEBELOW", (0,5), (-1,5), 0.5, RULE_GRAY),
 ]))
 story.append(pt)
 story.append(Paragraph(
-    "Total: $5,997/mo + $4,000–$5,500 ad spend  |  Save $897/mo by bundling  |  34.4%–34.8% of revenue (under 35% cap at $400K est.)",
+    "Total: $8,997/mo + $7,500–$15,000 ad spend + $2,200 setup  |  Bundle with coaching to save $1,600/mo on marketing",
     S["savings"]))
 
 # ── Build ──

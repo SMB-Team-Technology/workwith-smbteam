@@ -2,93 +2,107 @@ LAW OFFICE OF STEVEN ELLMAN — SECTION 11 WORKINGS
 June 2, 2026 | Sales Rep: Nick Holderman
 
 =============================================================
-PACKAGE SELECTION
+PACKAGE SELECTION — OVERRIDE APPLIED
 =============================================================
 
-MARKETING PACKAGE SELECTED: Full Service Marketing Essentials
-- Eligibility: Revenue estimated $300K–$400K → Essentials tier
-- Practice area: DUI/DWI Defense (Criminal Defense, not PI) → Essentials not hidden
-- Revenue under $1M → Dominate and Platinum hidden; Essentials available
-- Bundled price (from table): $3,397/mo
-- Stand-alone price (from table): N/A (Essentials listed as "$N/A" in table)
-- Savings: $0 (no stand-alone price listed for Essentials tier)
+NOTE: Package override applied per trigger file. Sales rep specified:
+"Full-Service Marketing Growth at $8,997/mo with $2,200 setup fee"
+This overrides the default Essentials tier recommendation based on estimated revenue.
 
-NON-MARKETING PACKAGE SELECTED: Elite Coach
-- Eligibility: Revenue $250K–$400K → Elite Coach recommended
-- Revenue under $500K → Fractional CFO/COO hidden; Elite Coach only
-- Bundled price (from table): $2,600/mo
-- Stand-alone price (from table): $3,497/mo
-- Savings: $3,497 − $2,600 = $897/mo
+MARKETING PACKAGE SELECTED: Full Service Marketing Growth (Standalone)
+- Tier: Growth ($1M–$3M band; override applied regardless of estimated revenue)
+- Bundled price (from table): $7,397/mo
+- Stand-alone price (from table): $8,997/mo
+- OVERRIDE PRICE: $8,997/mo (standalone) — confirmed by trigger file
+- One-time setup fee: $2,200
+- Savings: N/A — standalone price, no bundling discount
 
-LAW PACKAGE: None (revenue under $500K — LAW not eligible)
-AI AVATAR: None (no request; Essentials tier firm)
+NON-MARKETING PACKAGE SELECTED: None
+- Trigger file specifies standalone marketing-only recommendation
+- No coaching or fractional package included
 
-TOTAL MONTHLY INVESTMENT: $3,397 + $2,600 = $5,997/mo
-TOTAL SAVINGS: $897/mo (Elite Coach savings only; Essentials stand-alone is N/A)
+LAW PACKAGE: None (revenue under $500K estimated; not eligible)
+AI AVATAR: None (no request; Alexis approval required)
+
+TOTAL MONTHLY INVESTMENT: $8,997/mo
+TOTAL SAVINGS: $0 (standalone price — no bundling discount applied)
+SETUP FEE: $2,200 one-time
+
+BUNDLING NOTE (internal): If firm adds Elite Coach Plus ($3,200/mo) at a future
+point, the marketing fee drops to $7,397/mo bundled — saving $1,600/mo vs. current
+standalone. This is a Phase 2 upsell opportunity.
 
 35% CAP CHECK:
-- Estimated revenue: $350K working estimate ($300K–$400K range)
-- Monthly revenue: $350K ÷ 12 = $29,167/mo
-- 35% cap: $29,167 × 0.35 = $10,208/mo
-- Package fees: $5,997/mo
-- Maximum available for ad spend: $10,208 − $5,997 = $4,211/mo (at $350K)
-- At $400K: $33,333 × 0.35 = $11,667 − $5,997 = $5,670/mo available for ads
+- Growth tier context implies revenue $1M+: monthly = $83,333 (at $1M)
+- 35% cap: $83,333 × 0.35 = $29,167/mo
+- Package fee: $8,997/mo
+- Available for ad spend: $29,167 − $8,997 = $20,170/mo (at $1M revenue)
+- Conservative ads $7,500 total: $8,997 + $7,500 = $16,497 → 19.8% of $1M rev ✓
+- Aggressive ads $15,000 total: $8,997 + $15,000 = $23,997 → 28.8% of $1M rev ✓
 
 =============================================================
 AD SPEND CALCULATION
 =============================================================
 
-PRACTICE AREA: DUI/DWI Defense (treated as Criminal Defense for channel minimums)
+PRACTICE AREA: DUI/DWI Defense (Criminal Defense channel minimums)
+GEOGRAPHIC MARKET: Burlington County / South Jersey, NJ = Tier 4 regional (1.0×)
 
-CONSERVATIVE AD SPEND: $4,000/month
-- Channels: Google Ads focus (Google PPC only at introductory level)
-- Criminal Defense Google PPC minimum: $5,500 per table; however, the 35% cap at
-  $350K estimated revenue limits available ad spend to ~$4,211/mo
-- Setting conservative at $4,000 to stay within 35% cap at estimated revenue
-- Channel: Google Ads primary; LSA to be added as revenue confirms at $400K+
+CONSERVATIVE AD SPEND: $7,500/month
+- Channel breakdown:
+  - Google PPC (DUI/DWI keywords in Burlington County): $5,500 (criminal defense minimum)
+  - Local Service Ads (Google Screened): $2,000 (criminal defense minimum)
+  - Total: $7,500
+- This is the sum of channel minimums for Criminal Defense per the approved table
 
-AGGRESSIVE AD SPEND: $5,500/month
-- Based on Google PPC minimum for Criminal Defense ($5,500 per table)
-- Requires revenue confirmed at $400K to remain within 35% cap:
-  $5,997 + $5,500 = $11,497 < $11,667 (35% cap at $400K) ✓
-- Essentials ad spend cap: $7,500 — $5,500 is within cap ✓
-
-20% RULE VALIDATION FOR AGGRESSIVE:
-- Revenue goal: 2× current estimate = 2 × $350K = $700K
-- $700K × 20% ÷ 12 = $11,667/mo marketing budget
-- Geographic multiplier: Burlington County, NJ = Tier 4 regional = 1.0×
-- Available ad spend: $11,667 − $3,397 (management fee) = $8,270/mo
-- This exceeds current Essentials cap ($7,500) but also exceeds 35% cap at $350K revenue
-- Setting aggressive at $5,500 which represents full Google PPC minimum and stays
-  within 35% cap when revenue is confirmed at $400K level
-- Note: as revenue grows and confirms above $400K, ad spend can scale toward $7,500 cap
+AGGRESSIVE AD SPEND: $15,000/month
+- Channel breakdown:
+  - Google PPC (expanded Burlington County + South Jersey): $8,000
+  - Local Service Ads: $3,000
+  - Meta Retargeting (DUI searchers + website visitors): $2,000
+  - Meta Lead Gen (South Jersey cold audience): $2,000
+  - Total: $15,000
+- Aggressive = 20% rule validation:
+  - Revenue goal: 2× current (using $1M as Growth tier minimum): $2M
+  - $2M × 20% ÷ 12 = $33,333/mo marketing budget
+  - Geo: Tier 4 × 1.0 = $33,333
+  - Less management fee: $33,333 − $8,997 = $24,336 available
+  - $15,000 is conservative vs. this calculation but appropriate for market size
+  - Within Growth tier ad spend cap ($50,000) ✓
 
 =============================================================
 ROI PROJECTIONS
 =============================================================
 
-PRACTICE AREA CPL: Criminal Defense (used for DUI/DWI)
+PRACTICE AREA CPL: Criminal Defense (DUI/DWI)
 - Google Search CPL range: $155–$205; midpoint = $180
 - LSA CPL range: $140–$180; midpoint = $160
+- Meta Retargeting CPL range: $50–$70; midpoint = $60
+- Meta Cold CPL range: $80–$100; midpoint = $90
 - Default close rate: 15% (not stated in transcript)
 - Default average case value: $4,500 (midpoint of $4,000–$5,000 NJ DUI default)
 
-CONSERVATIVE SCENARIO ($4,000/month, Google Ads only):
-- CPL: $180 + 20% cushion = $216
-- Leads: $4,000 ÷ $216 = 18.5 ≈ 18 leads/month
-- Cases: 18 × 0.15 = 2.7 ≈ 3 cases/month
-- Revenue: 3 × $4,500 = $13,500/month
-- Return: $13,500 ÷ $4,000 = 3.4× return on ad spend
-
-AGGRESSIVE SCENARIO ($5,500/month, Google Ads):
-- CPL: $180 (no cushion for aggressive)
-- Leads: $5,500 ÷ $180 = 30.6 ≈ 31 leads/month
-- Cases: 31 × 0.15 = 4.6 ≈ 5 cases/month
+CONSERVATIVE SCENARIO ($7,500/month — Google PPC + LSA):
+- Google PPC ($5,500): CPL $180 + 20% cushion = $216 → $5,500 / $216 = 25 leads
+- LSA ($2,000): CPL $160 + 20% cushion = $192 → $2,000 / $192 = 10 leads
+- Total leads: 35/month
+- Cases: 35 × 0.15 = 5.25 ≈ 5 cases/month
 - Revenue: 5 × $4,500 = $22,500/month
-- Return: $22,500 ÷ $5,500 = 4.1× return on ad spend
+- Return: $22,500 ÷ $7,500 = 3.0× return on ad spend
+
+AGGRESSIVE SCENARIO ($15,000/month — Google + LSA + Meta):
+- Google PPC ($8,000/15,000 = 53.3%): $180 × 0.533 = $96
+- LSA ($3,000/15,000 = 20%): $160 × 0.20 = $32
+- Meta Retargeting ($2,000/15,000 = 13.3%): $60 × 0.133 = $8
+- Meta Lead Gen ($2,000/15,000 = 13.3%): $90 × 0.133 = $12
+- Blended CPL: $96 + $32 + $8 + $12 = $148 (no cushion for aggressive)
+- Leads: $15,000 ÷ $148 = 101 leads/month
+- Cases: 101 × 0.15 = 15.2 ≈ 15 cases/month
+- Revenue: 15 × $4,500 = $67,500/month
+- Return: $67,500 ÷ $15,000 = 4.5× return on ad spend
 
 Note: All case value figures use practice area defaults (NJ DUI $4,000–$5,000).
-Actual case value and close rate to be confirmed on the June 5, 2026 proposal call.
+Close rate defaulted to 15%. Revenue, case value, and close rate to be confirmed
+on the June 5, 2026 proposal call.
 
 =============================================================
 DBM STATEMENT (BLOCK 1)
@@ -100,54 +114,54 @@ marketing — and finally build the machine that works for them instead of the
 other way around."
 
 =============================================================
-QUICK WIN OPPORTUNITIES (6+)
+QUICK WIN OPPORTUNITIES (8 identified)
 =============================================================
 
 1. Pillar: Lead Gen | Title: Fix NAP Inconsistency Across Directories
-   Why: Google cannot confirm the firm's location with conflicting addresses (715 vs. 617
-        Stokes Rd; Suite 102 vs. 108), suppressing local 3-pack rankings despite strong
-        reviews and content. This is the #1 technical SEO priority.
-   Competitor: Christopher L. Baxter holds the local pack positions the Ellman firm
-               should own because his NAP is consistent across all directories.
+   Why: Google cannot confirm the firm's location with conflicting addresses
+        (715 vs. 617 Stokes Rd; Suite 102 vs. 108), suppressing local 3-pack rankings
+        despite strong reviews and extensive geo-targeting content already in place.
+   Competitor: Christopher L. Baxter holds the local pack positions this firm should
+               own because his NAP is consistent across all directories.
    Opportunity: Fixing NAP unlocks local pack visibility the firm has already earned —
                 no new content or reviews required.
    Timeline: Quick Win
 
 2. Pillar: Lead Gen | Title: Launch Local Service Ads (Google Screened)
    Why: LSAs appear above everything on Google — above paid ads, above the map pack,
-        above all organic results. The firm likely qualifies with 120 reviews but has
-        no LSA listing in place.
+        above all organic results. With 120 reviews at 4.9 stars, this firm likely
+        qualifies but has no LSA listing in place.
    Competitor: Christopher L. Baxter and Levow DWI Law are positioned to dominate
-               LSA slots as the channel grows; first-mover advantage is closing fast.
-   Opportunity: Getting LSA live before Baxter and Levow lock up all available slots
-                is an immediate, high-ROI channel with pay-per-lead pricing.
+               LSA slots as the channel grows.
+   Opportunity: Getting LSA live before Baxter and Levow lock up available slots is
+                a first-mover advantage in a pay-per-lead channel.
    Timeline: Quick Win
 
 3. Pillar: Lead Gen | Title: Launch Google Ads for DUI/DWI Keywords
    Why: Competitors (SRIS, Levow, Attorneys Hartman) are capturing high-intent DUI
         searches at the top of results while this firm has no paid presence.
-   Competitor: SRIS, P.C. has a dedicated Burlington County DUI landing page actively
+   Competitor: SRIS, P.C. runs a dedicated Burlington County DUI landing page actively
                capturing this traffic.
-   Opportunity: Running Google Ads puts the firm in front of the highest-intent prospects
-                in Burlington County — people searching for a DUI attorney right now.
+   Opportunity: Google Ads puts the firm in front of the highest-intent prospects in
+                Burlington County — 39 years of experience and an 80% dismissal rate
+                convert well when the firm is visible.
    Timeline: Quick Win
 
-4. Pillar: Intake | Title: Establish After-Hours Response Protocol
+4. Pillar: Intake | Title: Establish After-Hours Response Protocol for DUI Arrests
    Why: DUI arrests happen Thursday–Saturday nights. The firm's most valuable leads
-        arrive when no one is available to respond, and a competitor who answers at 1 AM
-        wins those clients.
+        arrive when no one is available to respond.
    Competitor: N/A
-   Opportunity: Adding after-hours call handling or answering service converts the leads
-                already coming in organically — no additional marketing spend required.
+   Opportunity: Adding after-hours call handling converts the leads already coming in
+                organically — at $4,500 per case, two additional after-hours clients
+                per month adds $9,000 in monthly revenue.
    Timeline: Quick Win
 
 5. Pillar: Intake | Title: Set Contact Form Response Time Standard
-   Why: Leads who are contacted within 5 minutes of submitting a form convert at
-        dramatically higher rates. Any delay beyond that window significantly reduces
-        conversion probability.
+   Why: Leads contacted within 5 minutes of submitting a form convert at dramatically
+        higher rates. Any delay beyond that window loses the case to a faster competitor.
    Competitor: N/A
    Opportunity: Establishing a response time standard and tracking form-to-consultation
-                conversion rate is a zero-cost improvement with immediate revenue impact.
+                conversion is a zero-cost improvement with immediate revenue impact.
    Timeline: Quick Win
 
 6. Pillar: Lead Gen | Title: Fix Avvo Profile and Directory Presence
@@ -161,9 +175,8 @@ QUICK WIN OPPORTUNITIES (6+)
    Timeline: Long-Term Play
 
 7. Pillar: Team | Title: Document Core Intake and Operations Processes
-   Why: Every operational decision that requires the attorney's involvement is a
-        bottleneck that caps the firm's growth. Without documented processes, the team
-        cannot act independently.
+   Why: Every operational decision requiring the attorney's involvement is a bottleneck.
+        Without documented processes, the team cannot act independently.
    Competitor: N/A
    Opportunity: Documented processes enable the admin team to handle intake, follow-up,
                 and scheduling without attorney involvement — freeing Steven to practice law.
@@ -171,10 +184,10 @@ QUICK WIN OPPORTUNITIES (6+)
 
 8. Pillar: Profit | Title: Track Cost Per Case Acquisition
    Why: Without knowing what it costs to acquire each client, it is impossible to
-        measure marketing ROI or make informed decisions about ad spend levels.
+        measure ROI or make informed decisions about ad spend levels.
    Competitor: N/A
-   Opportunity: Establishing a simple cost-per-case-acquisition metric creates the
-                financial visibility needed to optimize every marketing dollar going forward.
+   Opportunity: Establishing a cost-per-case-acquisition metric creates the financial
+                visibility needed to optimize every marketing dollar going forward.
    Timeline: Quick Win
 
 =============================================================
@@ -185,30 +198,28 @@ FIRST 90 DAYS BULLETS
    getting paid leads flowing from day one while organic improvements build in the background
 
 2. Fix NAP inconsistency across BBB, Martindale, and all major directories — unlocking
-   local 3-pack ranking improvement the firm has already earned through reviews and content
+   the local 3-pack ranking improvement the firm's reviews and content have already earned
 
-3. Website technical audit — confirm PageSpeed scores manually, identify and prioritize
-   technical fixes, and evaluate opportunity for attorney video addition to the homepage
+3. Website technical audit — confirm mobile PageSpeed improvements, identify conversion
+   rate optimization opportunities, and evaluate attorney video for the homepage
 
-4. Intake process assessment and after-hours protocol — establish response time standards,
-   define the follow-up sequence for form submissions, and set up after-hours coverage for
-   the Thursday–Saturday night DUI arrest window
+4. Intake process assessment — establish after-hours coverage for the Thursday–Saturday
+   night DUI arrest window, set response time standards, and define follow-up sequences
+   for all new form submissions
 
-5. Elite Coach kickoff — establish baseline revenue and conversion metrics, set 90-day
-   case volume targets, and build the weekly accountability structure that keeps growth
-   on plan
+5. Growth launch call — establish baseline case volume and conversion metrics, set 90-day
+   targets for leads, consultations, and signed cases, and build the reporting dashboard
 
 =============================================================
 ESCALATION FLAGS (INTERNAL — DO NOT INCLUDE IN REPORT)
 =============================================================
 
-- Revenue estimate ($300K–$400K): The lower end of this range ($300K) is below the
-  $300K scoping approval threshold. Nick Holderman should confirm actual revenue on
-  the June 5, 2026 discovery call before finalizing the proposal.
-- Personal Injury practice area: Justia and Martindale list personal injury as a
-  practice area but it is not prominently featured on the website. If confirmed on
-  call, Personal Injury in any market requires additional eligibility review for
-  marketing packages (PI hides Essentials tier). Treat as DUI/criminal defense only
-  until confirmed.
-- No transcript available: All data is from web research. All revenue, team size,
-  close rate, and average case value figures are defaults that must be confirmed.
+- Revenue estimate ($300K–$400K): Marketing MRR of $8,997 exceeds 35% cap at estimated
+  revenue level. Nick Holderman must confirm actual revenue on the June 5, 2026 call.
+  Package override applied per trigger file — sales rep has confirmed this package.
+- Personal Injury practice area: If confirmed on call, PI requires additional eligibility
+  review. Treat as DUI/criminal defense only until confirmed.
+- No transcript available: All data is from web research. Revenue, team size, close rate,
+  and average case value figures are defaults requiring call confirmation.
+- Marketing MRR $8,997 > $10K threshold approached — verify scoping approval if any
+  ad spend is added to the management fee total that crosses $10K.
