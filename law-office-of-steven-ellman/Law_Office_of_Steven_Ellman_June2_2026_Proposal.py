@@ -65,7 +65,7 @@ CLIENT_REVIEWS_NOTE = "← You are here"
 STAGE_TEXT = "Stage 4: Small Business Manager  →  Goal: Stage 6, Law Firm Owner"
 
 # ── Slide 2 ──────────────────────────────────────────────────────
-SLIDE_2_TITLE = "Your Growth Plan: 3 Priorities to Reach $50,000/Month"
+SLIDE_2_TITLE = "Your Growth Plan: 3 Priorities to Reach $4M / Year"
 
 SMB_MODEL_DESC = (
     "Lead Generation, Intake, Self-Managing Team, and Profit Plan — "
@@ -73,7 +73,7 @@ SMB_MODEL_DESC = (
     "focus on defending clients while the firm feeds itself."
 )
 
-GOAL_HEADLINE = "$300K → $600K+ revenue"
+GOAL_HEADLINE = "$2.4M → $4M revenue"
 GOAL_DBM      = "Cases come in. Law gets done."
 
 # Each priority: (line1, line2, accent_color_hex, [5 bullet strings])
@@ -114,21 +114,15 @@ PRIORITIES = [
 # Package cards — (label, bundled_price, retail_price, services_line, accent_color_hex)
 PACKAGES = [
     (
-        "FULL SERVICE MARKETING ESSENTIALS",
+        "FULL SERVICE MARKETING GROWTH",
         "$3,397", "",
         "Google Ads · LSA · Local SEO · Website Optimization · Reporting",
         "1D4ED8",
     ),
-    (
-        "ELITE COACH",
-        "$2,600", "$3,497/mo",
-        "Weekly coaching · Masterminds · Intake framework · Workshops",
-        "6D28D9",
-    ),
 ]
 
-BUNDLE_TOTAL   = "$5,997 / mo"
-BUNDLE_SAVINGS = "Save $897/mo by bundling"
+BUNDLE_TOTAL   = "$3,397 / mo"
+BUNDLE_SAVINGS = "Standalone solution"
 
 AD_SPEND_NOTE = (
     "+ Recommended ad spend: $4,000–$5,500/mo paid directly to Google/LSA"
