@@ -44,15 +44,15 @@ PILLARS = [
 ]
 PILLAR_NAMES = ["Lead Generation", "Intake", "Team", "Profit Plan"]
 
-# Key findings
+# Key findings — list of ("neg"|"pos", "one-sentence finding")
 FINDINGS = [
-    ("neg", "Competitors own Google Ads & LSA in Burlington Co. — this firm has zero paid presence"),
-    ("neg", "Baxter now leads in reviews (144 vs. 120) and holds top Burlington Co. DWI positions"),
+    ("neg", "Competitors own Google Ads & LSA in Burlington Co. — firm has zero paid presence"),
+    ("neg", "Baxter leads in reviews (144 vs. 120) and holds top Burlington Co. DWI positions"),
     ("neg", "NAP mismatch (715 vs. 617 Stokes Rd) suppresses local pack rankings firm has earned"),
-    ("pos", "4.9-star Google profile with 120 reviews — the strongest foundation in this market"),
+    ("pos", "4.9-star Google profile with 120 reviews — strongest foundation in this market"),
 ]
 
-# Competitor table
+# Competitor table — list of (name, "XXX reviews", "brief note")
 COMPETITORS = [
     ("Law Offices of Christopher Baxter", "144 reviews", "5.0 ★ · Moorestown, 4 mi"),
     ("Levow DWI Law, P.C.",               "100 reviews", "5.0 ★ · Statewide DWI"),
@@ -81,31 +81,31 @@ PRIORITIES = [
     (
         "Build the", "Marketing Engine", "1D4ED8",
         [
-            "Turn Google into a DUI case pipeline without you",
+            "Turn Google into a DUI pipeline without you",
             "Get LSA live before Baxter claims all the slots",
-            "Fix NAP across BBB and Martindale — unlock 3-pack",
-            "Launch retargeting — follow prospects after they visit",
+            "Fix NAP across BBB & Martindale — unlock 3-pack",
+            "Launch Meta retargeting for South Jersey DUI leads",
             "Fix Avvo profile and expand FindLaw presence",
         ],
     ),
     (
         "Fix Intake &", "Stop Losing Cases", "0F766E",
         [
-            "Cover Thu–Sat nights when DUI arrests happen most",
-            "Set a 5-minute form response standard — win early",
+            "Cover Thu–Sat nights when DUI arrests peak",
+            "Set 5-minute form response standard — win early",
             "Document intake script so staff handles it, not you",
             "Track form-to-consult conversion from week one",
-            "Build follow-up sequence for leads who don't sign fast",
+            "Build follow-up for leads who don’t sign fast",
         ],
     ),
     (
         "Install Team &", "Profit Systems", "6D28D9",
         [
-            "Document ops so the firm moves when you're in court",
+            "Document ops so the firm runs when you’re in court",
             "Define roles: admin handles admin, you do the law",
             "Build cost-per-case metric — measure every ad dollar",
             "Profit plan: know what you keep, not just revenue",
-            "Phase 2: intake coordinator scales capacity with you",
+            "Phase 2: intake coordinator scales with case volume",
         ],
     ),
 ]
@@ -114,38 +114,38 @@ PRIORITIES = [
 # Package cards — (label, bundled_price, retail_price, services_line, accent_color_hex)
 PACKAGES = [
     (
-        "FULL SERVICE MARKETING GROWTH",
-        "$3,397", "",
-        "Google Ads · LSA · Local SEO · Website Optimization · Reporting",
+        "FULL SERVICE MARKETING — GROWTH",
+        "$8,997", "",
+        "Google Ads · LSA · Meta · Local SEO · Website Opt · $2,200 setup",
         "1D4ED8",
     ),
 ]
 
-BUNDLE_TOTAL   = "$3,397 / mo"
-BUNDLE_SAVINGS = "Standalone solution"
+BUNDLE_TOTAL   = "$8,997 / mo"
+BUNDLE_SAVINGS = "Add coaching & save $1,600/mo"
 
 AD_SPEND_NOTE = (
-    "+ Recommended ad spend: $4,000–$5,500/mo paid directly to Google/LSA"
+    "+ Recommended ad spend: $7,500–$15,000/mo paid directly to Google/Meta"
 )
 
 AVG_CASE_VALUE      = "$4,500"
-CONSERVATIVE_LABEL  = "Conservative  (~3 cases/mo):"
-CONSERVATIVE_RESULT = "~$13,500 revenue · ~3.4× ROAS"
-AGGRESSIVE_LABEL    = "Aggressive  (~5 cases/mo):"
-AGGRESSIVE_RESULT   = "~$22,500 revenue · ~4.1× ROAS"
+CONSERVATIVE_LABEL  = "Conservative  (~5 cases/mo):"
+CONSERVATIVE_RESULT = "~$22,500 revenue · ~3.0× ROAS"
+AGGRESSIVE_LABEL    = "Aggressive  (~15 cases/mo):"
+AGGRESSIVE_RESULT   = "~$67,500 revenue · ~4.5× ROAS"
 
 # Timeline — 5 items: (milestone_label, action_text)
 TIMELINE = [
     ("Day 1",   "Google Ads + LSA campaigns go live"),
     ("Week 1",  "NAP corrected across BBB, Martindale, all dirs"),
-    ("Week 3",  "Intake protocol + after-hours coverage defined"),
+    ("Week 3",  "Mobile PageSpeed + intake protocol defined"),
     ("Week 6",  "Website audit complete — priority fixes live"),
-    ("Month 3", "Coach reviews KPIs; Phase 2 roadmap confirmed"),
+    ("Month 3", "Dashboard reviewed; Phase 2 roadmap confirmed"),
 ]
 
 CLOSING_QUOTE = (
-    '"The leads exist — Christopher Baxter and Levow are capturing them right now '
-    'while this firm\'s paid presence sits empty."'
+    "“The leads exist — Christopher Baxter and Levow DWI Law are capturing "
+    "them right now while this firm’s paid presence sits empty.”"
 )
 
 # ═══════════════════════════════════════════════════════════════════
