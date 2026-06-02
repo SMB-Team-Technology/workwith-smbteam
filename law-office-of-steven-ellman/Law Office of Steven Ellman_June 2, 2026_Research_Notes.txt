@@ -44,11 +44,14 @@ counties (Atlantic, Bergen, Burlington, Camden, Essex, Gloucester, Hudson, Merce
 Monmouth, Morris, Ocean, Passaic, Salem, Sussex, Union) and 7 city-specific landing pages
 (Cherry Hill, Edison, Medford, New Brunswick, Newark, Perth Amboy, Warren Township).
 
-PageSpeed mobile score: COULD NOT BE RETRIEVED via automated testing — PageSpeed Insights API
-returned rate-limit errors on all attempts. Manual test at pagespeed.web.dev required before audit.
-PageSpeed desktop score: COULD NOT BE RETRIEVED — same issue. Manual test required.
+PageSpeed mobile score: 30 (Lighthouse v12.8.2, tested June 2, 2026 — poor; site is slow on mobile)
+PageSpeed desktop score: 96 (Lighthouse v12.8.2, tested June 2, 2026 — excellent on desktop)
 
-→ RESEARCH NOTES SAVED — website section complete.
+Note: There is a dramatic performance gap between mobile (30) and desktop (96). The low mobile score
+is a significant conversion risk — DUI prospects often search on a mobile device immediately after
+an arrest or stop. A slow mobile experience loses cases before the phone rings.
+
+→ RESEARCH NOTES SAVED — website section complete (PageSpeed scores updated June 2, 2026 run 2).
 
 =============================================================
 STEP 2 — GOOGLE BUSINESS PROFILE
@@ -385,19 +388,19 @@ PASS 2 — VERIFICATION CHECKLIST
 [x] No profitability or business claim appears unless from transcript (no transcript; all
     revenue estimates flagged as defaults requiring call confirmation)
 [x] No competitor reference uses generic labels — all are specific named local firms
-[x] PageSpeed scores flagged as unavailable via automated testing — manual run required
+[x] PageSpeed scores confirmed via Lighthouse: mobile 30 / desktop 96 (tested June 2, 2026)
 [x] DBM is recorded (clear inference from practice profile, flagged for call confirmation)
 [x] Revenue goal is recorded (flagged as "not stated; 2x current revenue" default applied)
 [x] Close rate is recorded (defaulted to 15% per command instructions)
 [x] Average case value is recorded (NJ DUI default of $4,000–$5,000 applied, flagged)
 
 ACTION ITEMS BEFORE PROPOSAL CALL (June 5, 2026):
-1. Run manual PageSpeed test at pagespeed.web.dev for stevenellmanlaw.com — both mobile and
-   desktop scores needed before audit write.
-2. Confirm practice areas, revenue, goal, team size, and DBM on call.
-3. Confirm whether Spanish-language cases are handled or desired.
-4. Confirm whether firm has ever run Google Ads, LSAs, or Meta Ads.
-5. Ask about the NAP discrepancy — which address (715 or 617 Stokes Rd) is correct.
+1. Confirm practice areas, revenue, goal, team size, and DBM on call.
+2. Confirm whether Spanish-language cases are handled or desired.
+3. Confirm whether firm has ever run Google Ads, LSAs, or Meta Ads.
+4. Ask about the NAP discrepancy — which address (715 or 617 Stokes Rd) is correct.
+
+NOTE: PageSpeed scores obtained via Lighthouse on June 2, 2026. Mobile: 30 / Desktop: 96.
 
 =============================================================
 END OF RESEARCH NOTES
