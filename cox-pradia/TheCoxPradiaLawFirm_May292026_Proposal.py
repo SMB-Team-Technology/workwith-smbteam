@@ -92,7 +92,7 @@ PRIORITIES = [
 PACKAGES = [
     (
         "FULL SERVICE MARKETING -- GROWTH",
-        "$7,397", "$8,997/mo",
+        "$8,997", "",
         "Google Ads, LSA, Meta Ads, SEO, Website Optimization",
         "1D4ED8",
     ),
