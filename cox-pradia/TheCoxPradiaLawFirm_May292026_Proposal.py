@@ -1,7 +1,7 @@
 """
 Audit PowerPoint — The Cox Pradia Law Firm
 SMB Team | Nick Holderman | May 29, 2026
-Package: Full Service Marketing — Growth + Master's Circle
+Package: Full Service Marketing — Growth
 """
 
 from pptx import Presentation
@@ -84,7 +84,7 @@ PRIORITIES = [
             "Document intake SLAs for consistent follow-up",
             "Build monthly profit dashboard -- know the margins",
             "Track cost-per-case and double down on winners",
-            "Master's Circle: peer coaching with $1M+ firm owners",
+            "Build a referral engine to convert case wins into new clients",
         ],
     ),
 ]
@@ -96,17 +96,12 @@ PACKAGES = [
         "Google Ads, LSA, Meta Ads, SEO, Website Optimization",
         "1D4ED8",
     ),
-    (
-        "MASTER'S CIRCLE",
-        "$4,600", "$4,997/mo",
-        "Weekly coaching, PI masterminds, Quarterly workshops",
-        "6D28D9",
-    ),
 ]
 
-BUNDLE_TOTAL   = "$11,997 / mo"
-BUNDLE_SAVINGS = "Save $1,997/mo by bundling"
-AD_SPEND_NOTE  = "+ Recommended ad spend: $19,500-$50,000/mo paid directly to Google/Meta"
+SETUP_FEE_LABEL = "ONE-TIME SETUP FEE"
+SETUP_FEE       = "$2,200"
+SETUP_FEE_DESC  = "Campaign build, tracking setup, and account configuration"
+AD_SPEND_NOTE   = "+ Recommended ad spend: $19,500-$50,000/mo paid directly to Google/Meta"
 
 AVG_CASE_VALUE      = "$50,000"
 CONSERVATIVE_LABEL  = "Conservative  (6 cases/mo):"
@@ -119,7 +114,7 @@ TIMELINE = [
     ("Day 14",  "NAP corrections across all directories"),
     ("Week 2",  "Above-fold form + Katy/Sugar Land pages live"),
     ("Week 3",  "Google review request system activated"),
-    ("Month 3", "Coaching kickoff + case tracking live"),
+    ("Month 3", "ROI dashboard live + review velocity targets set"),
 ]
 
 CLOSING_QUOTE = (
@@ -311,8 +306,8 @@ def build_slide3(prs):
              0.32, 0.10, 9.40, 0.22, 8, GOLD, bold=True)
     add_text(slide, "Your Investment & What Happens Next",
              0.32, 0.34, 9.40, 0.60, 22, WHITE, bold=True)
-    pkg_ys = [1.12, 2.34]
-    for i, (label, price, retail, services, hex_c) in enumerate(PACKAGES[:2]):
+    pkg_ys = [1.12]
+    for i, (label, price, retail, services, hex_c) in enumerate(PACKAGES[:1]):
         y = pkg_ys[i]
         ac = rgb(hex_c)
         add_rect(slide, 0.22, y, 4.52, 1.12, fill=WHITE)
@@ -323,12 +318,14 @@ def build_slide3(prs):
         add_text(slide, retail, 2.54, y+0.44, 1.00, 0.26, 11, STRIKETHROUGH)
         add_rect(slide, 2.54, y+0.55, 0.88, 0.01, fill=STRIKETHROUGH)
         add_text(slide, services, 0.52, y+0.84, 4.16, 0.22, 8, SLATE)
-    add_rect(slide, 0.22, 3.56, 4.52, 0.72, fill=NAVY)
-    add_text(slide, "BUNDLE TOTAL", 0.42, 3.60, 1.80, 0.26, 8, BUNDLE_SUB, bold=True)
-    add_text(slide, BUNDLE_TOTAL, 0.42, 3.82, 2.40, 0.38, 22, GOLD, bold=True)
-    add_text(slide, BUNDLE_SAVINGS, 2.92, 3.82, 1.90, 0.38, 8, BUNDLE_SUB)
-    add_rect(slide, 0.22, 4.34, 4.52, 0.44, fill=rgb("EEF2F8"))
-    add_text(slide, AD_SPEND_NOTE, 0.36, 4.37, 4.30, 0.38, 8, SLATE)
+    add_rect(slide, 0.22, 2.34, 4.52, 1.12, fill=WHITE)
+    add_rect(slide, 0.22, 2.34, 0.20, 1.12, fill=GOLD)
+    add_text(slide, SETUP_FEE_LABEL, 0.52, 2.44, 4.16, 0.22, 8, GOLD, bold=True)
+    add_text(slide, SETUP_FEE, 0.52, 2.62, 2.00, 0.48, 32, NAVY, bold=True)
+    add_text(slide, "one-time", 2.04, 2.74, 0.80, 0.28, 11, SLATE)
+    add_text(slide, SETUP_FEE_DESC, 0.52, 3.20, 4.16, 0.22, 8, SLATE)
+    add_rect(slide, 0.22, 3.56, 4.52, 0.44, fill=rgb("EEF2F8"))
+    add_text(slide, AD_SPEND_NOTE, 0.36, 3.59, 4.30, 0.38, 8, SLATE)
     add_rect(slide, 4.96, 1.12, 4.82, 1.44, fill=ROI_BG)
     add_text(slide, "PROJECTED RETURN ON AD SPEND",
              5.14, 1.18, 4.52, 0.24, 8, ROI_GREEN, bold=True)
