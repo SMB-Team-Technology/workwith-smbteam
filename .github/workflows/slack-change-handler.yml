@@ -32,25 +32,79 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
 
-      - name: Make the requested change
+      - name: Handle the request
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          HUBSPOT_TOKEN: ${{ secrets.HUBSPOT_TOKEN }}
           SLACK_INSTRUCTION: ${{ github.event.client_payload.instruction }}
         run: |
-          # Write to file first to safely handle any special characters
           printf '%s' "$SLACK_INSTRUCTION" > /tmp/instruction.txt
+          TODAY=$(date -u +%Y-%m-%d)
+          printf '%s' "$TODAY" > /tmp/today.txt
 
           claude --model claude-sonnet-4-6 --dangerously-skip-permissions -p "
-            You are an AI assistant making a targeted edit to a law firm growth audit report
-            in this repository. Reports live in folders at the repo root
-            (e.g. oconnor-family-law/, santiago-legal/, moore-christoff-siddiqui/).
+            You are an AI assistant managing law firm growth audit reports for SMB Team.
+            The repo lives at the current working directory. Read /tmp/instruction.txt to get
+            the request, and /tmp/today.txt for today's date.
 
-            Read the change request from /tmp/instruction.txt, then:
-            1. Identify which report folder and files need to change.
-            2. Make the minimal, precise edit — nothing more.
-            3. Commit the change to main with a clear commit message.
-            4. Write a 1–2 sentence plain-English summary of exactly what you changed
-               to /tmp/summary.txt. No markdown. No headers. Just what changed.
+            You handle THREE types of requests. Identify which type applies, then act:
+
+            ━━━ TYPE 1 — TARGETED EDIT ━━━
+            Phrases: 'change X in', 'update the package', 'edit the report', 'fix the pricing',
+            'remove X from', 'update X to say', etc.
+            Action:
+            1. Find the correct firm folder at the repo root (e.g. sivia-law/, oconnor-family-law/).
+            2. Make the minimal, precise edit to the relevant HTML file(s).
+            3. Commit to main with a descriptive message.
+            4. Write a 1–2 sentence plain-English summary to /tmp/summary.txt.
+
+            ━━━ TYPE 2 — RE-RUN or RESEND ━━━
+            Phrases: 're-run', 'rerun', 'regenerate', 'resend the email', 're-send', 'redo the audit',
+            'run it again', 'retrigger', 're-trigger', or any variant.
+            Action:
+            1. Find the trigger file at triggers/audit-research/[friendly-name].json.
+               The friendly name is the firm name lowercased and hyphenated
+               (e.g. 'Sivia Law' → 'sivia-law', 'Cox Pradia Law Firm' → 'cox-pradia').
+               List triggers/audit-research/ if unsure.
+            2. Read the file. Increment _run (add '\"_run\": 2' if missing, else N+1).
+               Update _triggered_date to today's date from /tmp/today.txt.
+               If the request specifies a package override, add or update the 'package' field.
+            3. CRITICAL: git add ONLY that single trigger file, then commit and push.
+               One file per commit — the audit pipeline uses git diff-tree | head -1.
+               This automatically fires the full pipeline: regenerates the report, PPTX,
+               Sales Companion PDF, and re-sends the email to the closer.
+            4. Write summary to /tmp/summary.txt: 'Re-triggered full audit pipeline for [Firm].
+               The report and email will regenerate automatically (usually ~60–90 min).'
+
+            ━━━ TYPE 3 — NEW AUDIT FROM SCRATCH ━━━
+            Phrases: 'trigger new audit', 'run audit for', 'create trigger for', 'new proposal for',
+            or any request to start an audit for a firm not yet in triggers/audit-research/.
+            Action:
+            1. Parse from the instruction: firm name, contact name, contact email, website,
+               sales rep name, sales rep email, and proposal call date/time if given.
+            2. If HUBSPOT_TOKEN env var is set, call HubSpot to look up missing details:
+               - Search contacts: POST https://api.hubapi.com/crm/v3/objects/contacts/search
+               - Get associated deals to find deal_id and hubspot_owner_id
+               - Resolve owner: GET https://api.hubapi.com/crm/v3/owners/{ownerId}
+               Use Authorization: Bearer \$HUBSPOT_TOKEN header on all requests.
+            3. Build the friendly name: lowercase the firm name, strip legal suffixes
+               (llp, llc, pc, pllc, ltd, law group, law firm, attorneys, counselors),
+               replace non-alphanumeric runs with hyphens, trim leading/trailing hyphens.
+            4. Write triggers/audit-research/[friendly-name].json with:
+               firm_name, friendly_name, url, sales_rep, sales_rep_email, date (today formatted
+               as 'Month D, YYYY'), hubspot_contact_id, contact_email, deal_id,
+               proposal_call_date (ISO 8601 UTC), _triggered_date (today YYYY-MM-DD),
+               transcript ('No Fathom transcript available.').
+            5. CRITICAL: git add ONLY that single trigger file, then commit and push.
+            6. Write summary to /tmp/summary.txt: 'Created new audit trigger for [Firm] (closer: [Rep]).
+               The pipeline will start automatically and email [rep email] when done.'
+
+            ━━━ IMPORTANT RULES ━━━
+            - For TYPE 2 and TYPE 3: ONLY commit the single trigger file. Never batch multiple files.
+            - Always pull latest before pushing: run 'git pull --rebase origin main' before 'git push'.
+            - If git push fails with 403/rejected, pull --rebase and retry up to 3 times.
+            - Do not run the audit yourself — writing the trigger file IS the trigger.
+            - Sales rep email pattern if unknown: firstname.lastname@smbteam.com.
           "
 
       - name: Post success to Slack
@@ -60,11 +114,11 @@ jobs:
           SLACK_CHANNEL: ${{ github.event.client_payload.slack_channel }}
           SLACK_THREAD_TS: ${{ github.event.client_payload.slack_thread_ts }}
         run: |
-          SUMMARY=$(cat /tmp/summary.txt 2>/dev/null || echo "Change completed.")
+          SUMMARY=$(cat /tmp/summary.txt 2>/dev/null || echo "Done.")
           PAYLOAD=$(jq -n \
             --arg channel  "$SLACK_CHANNEL" \
             --arg thread   "$SLACK_THREAD_TS" \
-            --arg text     "Done: $SUMMARY" \
+            --arg text     "✅ $SUMMARY" \
             '{channel: $channel, thread_ts: $thread, text: $text}')
           curl -s -X POST https://slack.com/api/chat.postMessage \
             -H "Authorization: Bearer $SLACK_BOT_TOKEN" \
@@ -81,8 +135,9 @@ jobs:
           PAYLOAD=$(jq -n \
             --arg channel "$SLACK_CHANNEL" \
             --arg thread  "$SLACK_THREAD_TS" \
-            '{channel: $channel, thread_ts: $thread, text: "Something went wrong making that change. Check the GitHub Actions log for details."}')
+            '{channel: $channel, thread_ts: $thread, text: "❌ Something went wrong. Check the GitHub Actions log for details."}')
           curl -s -X POST https://slack.com/api/chat.postMessage \
             -H "Authorization: Bearer $SLACK_BOT_TOKEN" \
             -H "Content-Type: application/json" \
             -d "$PAYLOAD"
+
