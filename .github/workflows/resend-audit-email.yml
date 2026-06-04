@@ -1,0 +1,147 @@
+name: Resend Audit Email
+
+on:
+  workflow_dispatch:
+    inputs:
+      friendly_name:
+        description: "Friendly name of the firm (e.g. cox-pradia, sivia-business-legal-services)"
+        required: true
+        type: string
+  repository_dispatch:
+    types: [resend-audit-email]
+
+jobs:
+  resend-email:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      contents: read
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          ref: main
+
+      - name: Resolve friendly name
+        id: resolve
+        run: |
+          # Support both workflow_dispatch input and repository_dispatch payload
+          NAME="${{ github.event.inputs.friendly_name || github.event.client_payload.friendly_name }}"
+          TRIGGER_FILE="triggers/audit-research/${NAME}.json"
+          if [ ! -f "$TRIGGER_FILE" ]; then
+            echo "ERROR: Trigger file not found: $TRIGGER_FILE"
+            exit 1
+          fi
+          echo "friendly_name=$NAME"               >> "$GITHUB_OUTPUT"
+          echo "trigger_file=$TRIGGER_FILE"         >> "$GITHUB_OUTPUT"
+          echo "firm_name=$(jq -r '.firm_name'      "$TRIGGER_FILE")" >> "$GITHUB_OUTPUT"
+          echo "sales_rep=$(jq -r '.sales_rep'      "$TRIGGER_FILE")" >> "$GITHUB_OUTPUT"
+          echo "sales_rep_email=$(jq -r '.sales_rep_email // empty' "$TRIGGER_FILE")" >> "$GITHUB_OUTPUT"
+
+      - name: Send email
+        env:
+          GMAIL_USER: ${{ secrets.GMAIL_USER }}
+          GMAIL_APP_PASSWORD: ${{ secrets.GMAIL_APP_PASSWORD }}
+          FIRM_NAME: ${{ steps.resolve.outputs.firm_name }}
+          FRIENDLY_NAME: ${{ steps.resolve.outputs.friendly_name }}
+          SALES_REP: ${{ steps.resolve.outputs.sales_rep }}
+          SALES_REP_EMAIL: ${{ steps.resolve.outputs.sales_rep_email }}
+        run: |
+          python3 - << 'PYEOF'
+          import smtplib, os, glob, sys
+          from email.mime.multipart import MIMEMultipart
+          from email.mime.text import MIMEText
+          from email.mime.application import MIMEApplication
+
+          gmail_user      = os.environ["GMAIL_USER"]
+          gmail_password  = os.environ["GMAIL_APP_PASSWORD"]
+          firm_name       = os.environ["FIRM_NAME"]
+          friendly_name   = os.environ["FRIENDLY_NAME"]
+          sales_rep       = os.environ["SALES_REP"]
+          sales_rep_email = os.environ.get("SALES_REP_EMAIL", "").strip()
+
+          if not sales_rep_email:
+              print("ERROR: sales_rep_email is not set in the trigger file.")
+              sys.exit(1)
+
+          to_addr  = sales_rep_email
+          cc_addrs = [
+              "eli.gill@smbteam.com",
+              "vanessa.odonnell@smbteam.com",
+              "chris.abouraad@smbteam.com",
+              "justin.hernandez@smbteam.com",
+          ]
+
+          pdf_files   = glob.glob(f"{friendly_name}/*_Sales_Companion.pdf")
+          pptx_files  = glob.glob(f"{friendly_name}/*_Proposal.pptx")
+          attachments = pdf_files + pptx_files
+
+          if not attachments:
+              print(f"WARNING: No PDF or PPTX found in {friendly_name}/. Sending without attachments.")
+
+          msg = MIMEMultipart()
+          msg["From"]    = gmail_user
+          msg["To"]      = to_addr
+          msg["Cc"]      = ", ".join(cc_addrs)
+          msg["Subject"] = f"Growth, Profit, and Freedom Roadmap ready for {firm_name}"
+
+          workwith_url = f"https://workwith.smbteam.com/{friendly_name}"
+          body = "\n".join([
+              f"Hi {sales_rep},",
+              "",
+              f"The Growth, Profit, and Freedom Roadmap for {firm_name} is ready ahead of your proposal call.",
+              "",
+              f"View the full report here: {workwith_url}",
+              "",
+              "Attached you'll find:",
+              "  - Proposal Deck (PowerPoint) — share this on screen during the call",
+              "  - Sales Companion (PDF) — your seller-only cheat sheet, not for the client",
+              "",
+              "Let the team know if you need any changes before the call.",
+              "",
+              "SMB Team",
+              "",
+          ])
+          msg.attach(MIMEText(body, "plain"))
+
+          for filepath in attachments:
+              with open(filepath, "rb") as f:
+                  part = MIMEApplication(f.read(), Name=os.path.basename(filepath))
+              part["Content-Disposition"] = f'attachment; filename="{os.path.basename(filepath)}"'
+              msg.attach(part)
+              print(f"Attached: {filepath}")
+
+          all_recipients = [to_addr] + cc_addrs
+          with smtplib.SMTP("smtp.gmail.com", 587) as server:
+              server.starttls()
+              server.login(gmail_user, gmail_password)
+              server.sendmail(gmail_user, all_recipients, msg.as_string())
+
+          print(f"Email sent to {to_addr} (CC: {', '.join(cc_addrs)})")
+          PYEOF
+
+      - name: Post result to Slack (repository_dispatch only)
+        if: github.event_name == 'repository_dispatch'
+        env:
+          SLACK_BOT_TOKEN: ${{ secrets.SLACK_BOT_TOKEN }}
+          SLACK_CHANNEL: ${{ github.event.client_payload.slack_channel }}
+          SLACK_THREAD_TS: ${{ github.event.client_payload.slack_thread_ts }}
+          FIRM_NAME: ${{ steps.resolve.outputs.firm_name }}
+          SALES_REP: ${{ steps.resolve.outputs.sales_rep }}
+          SALES_REP_EMAIL: ${{ steps.resolve.outputs.sales_rep_email }}
+        run: |
+          if [ "${{ job.status }}" = "success" ]; then
+            TEXT="✅ Email resent for $FIRM_NAME → $SALES_REP ($SALES_REP_EMAIL)"
+          else
+            TEXT="❌ Failed to resend email for $FIRM_NAME. Check the Actions log."
+          fi
+          PAYLOAD=$(jq -n \
+            --arg channel "$SLACK_CHANNEL" \
+            --arg thread  "$SLACK_THREAD_TS" \
+            --arg text    "$TEXT" \
+            '{channel: $channel, thread_ts: $thread, text: $text}')
+          curl -s -X POST https://slack.com/api/chat.postMessage \
+            -H "Authorization: Bearer $SLACK_BOT_TOKEN" \
+            -H "Content-Type: application/json" \
+            -d "$PAYLOAD"

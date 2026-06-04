@@ -36,7 +36,11 @@ jobs:
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
           HUBSPOT_TOKEN: ${{ secrets.HUBSPOT_TOKEN }}
+          GITHUB_PAT: ${{ secrets.GITHUB_PAT || secrets.GITHUB_TOKEN }}
+          GITHUB_REPO: ${{ github.repository }}
           SLACK_INSTRUCTION: ${{ github.event.client_payload.instruction }}
+          SLACK_CHANNEL: ${{ github.event.client_payload.slack_channel }}
+          SLACK_THREAD_TS: ${{ github.event.client_payload.slack_thread_ts }}
         run: |
           printf '%s' "$SLACK_INSTRUCTION" > /tmp/instruction.txt
           TODAY=$(date -u +%Y-%m-%d)
@@ -44,67 +48,69 @@ jobs:
 
           claude --model claude-sonnet-4-6 --dangerously-skip-permissions -p "
             You are an AI assistant managing law firm growth audit reports for SMB Team.
-            The repo lives at the current working directory. Read /tmp/instruction.txt to get
-            the request, and /tmp/today.txt for today's date.
+            Repo is at current working directory. Read /tmp/instruction.txt for the request
+            and /tmp/today.txt for today's date.
 
-            You handle THREE types of requests. Identify which type applies, then act:
+            Identify which of the four request types applies, then execute it:
 
-            ━━━ TYPE 1 — TARGETED EDIT ━━━
-            Phrases: 'change X in', 'update the package', 'edit the report', 'fix the pricing',
-            'remove X from', 'update X to say', etc.
-            Action:
-            1. Find the correct firm folder at the repo root (e.g. sivia-law/, oconnor-family-law/).
-            2. Make the minimal, precise edit to the relevant HTML file(s).
-            3. Commit to main with a descriptive message.
-            4. Write a 1–2 sentence plain-English summary to /tmp/summary.txt.
+            --- TYPE 1: TARGETED EDIT ---
+            Triggered by: 'change X in', 'update the package', 'edit the report',
+            'fix the pricing', 'remove X from', 'update X to say', etc.
+            Steps:
+            1. Find the firm folder at repo root (e.g. sivia-law/, oconnor-family-law/).
+            2. Make the minimal, precise edit to the HTML file(s).
+            3. Commit to main with a clear message.
+            4. Write 1-2 sentence summary to /tmp/summary.txt.
 
-            ━━━ TYPE 2 — RE-RUN or RESEND ━━━
-            Phrases: 're-run', 'rerun', 'regenerate', 'resend the email', 're-send', 'redo the audit',
-            'run it again', 'retrigger', 're-trigger', or any variant.
-            Action:
-            1. Find the trigger file at triggers/audit-research/[friendly-name].json.
-               The friendly name is the firm name lowercased and hyphenated
-               (e.g. 'Sivia Law' → 'sivia-law', 'Cox Pradia Law Firm' → 'cox-pradia').
+            --- TYPE 2: RESEND EMAIL ONLY ---
+            Triggered by: 'resend the email', 're-send the email', 'send the email again',
+            'email failed', 'email didn't arrive', 'resend email for X'.
+            Steps:
+            1. Identify the friendly name for the firm (lowercase-hyphenated).
                List triggers/audit-research/ if unsure.
-            2. Read the file. Increment _run (add '\"_run\": 2' if missing, else N+1).
-               Update _triggered_date to today's date from /tmp/today.txt.
-               If the request specifies a package override, add or update the 'package' field.
-            3. CRITICAL: git add ONLY that single trigger file, then commit and push.
-               One file per commit — the audit pipeline uses git diff-tree | head -1.
-               This automatically fires the full pipeline: regenerates the report, PPTX,
-               Sales Companion PDF, and re-sends the email to the closer.
-            4. Write summary to /tmp/summary.txt: 'Re-triggered full audit pipeline for [Firm].
-               The report and email will regenerate automatically (usually ~60–90 min).'
+            2. Read the trigger file to get sales_rep and sales_rep_email for the summary.
+            3. Dispatch the resend-audit-email workflow via GitHub API:
+               curl -s -X POST https://api.github.com/repos/\$GITHUB_REPO/dispatches
+                 -H 'Authorization: Bearer '\$GITHUB_PAT
+                 -H 'Accept: application/vnd.github.v3+json'
+                 -H 'Content-Type: application/json'
+                 -d '{\"event_type\":\"resend-audit-email\",\"client_payload\":{\"friendly_name\":\"<name>\",\"slack_channel\":\"\$SLACK_CHANNEL\",\"slack_thread_ts\":\"\$SLACK_THREAD_TS\"}}'
+            4. Write to /tmp/summary.txt:
+               'Resending email for [Firm] to [sales_rep] ([email]). Should arrive in ~2 min.'
 
-            ━━━ TYPE 3 — NEW AUDIT FROM SCRATCH ━━━
-            Phrases: 'trigger new audit', 'run audit for', 'create trigger for', 'new proposal for',
-            or any request to start an audit for a firm not yet in triggers/audit-research/.
-            Action:
-            1. Parse from the instruction: firm name, contact name, contact email, website,
-               sales rep name, sales rep email, and proposal call date/time if given.
-            2. If HUBSPOT_TOKEN env var is set, call HubSpot to look up missing details:
-               - Search contacts: POST https://api.hubapi.com/crm/v3/objects/contacts/search
-               - Get associated deals to find deal_id and hubspot_owner_id
-               - Resolve owner: GET https://api.hubapi.com/crm/v3/owners/{ownerId}
-               Use Authorization: Bearer \$HUBSPOT_TOKEN header on all requests.
-            3. Build the friendly name: lowercase the firm name, strip legal suffixes
-               (llp, llc, pc, pllc, ltd, law group, law firm, attorneys, counselors),
-               replace non-alphanumeric runs with hyphens, trim leading/trailing hyphens.
-            4. Write triggers/audit-research/[friendly-name].json with:
-               firm_name, friendly_name, url, sales_rep, sales_rep_email, date (today formatted
-               as 'Month D, YYYY'), hubspot_contact_id, contact_email, deal_id,
-               proposal_call_date (ISO 8601 UTC), _triggered_date (today YYYY-MM-DD),
-               transcript ('No Fathom transcript available.').
-            5. CRITICAL: git add ONLY that single trigger file, then commit and push.
-            6. Write summary to /tmp/summary.txt: 'Created new audit trigger for [Firm] (closer: [Rep]).
-               The pipeline will start automatically and email [rep email] when done.'
+            --- TYPE 3: FULL RE-RUN ---
+            Triggered by: 're-run', 'rerun', 'regenerate', 'redo the audit', 'run it again',
+            'retrigger', 're-trigger' — any variant implying full report regeneration.
+            Steps:
+            1. Find triggers/audit-research/[friendly-name].json (list folder if unsure).
+            2. Increment _run (set to 2 if missing, else N+1). Update _triggered_date to today.
+               Add or update 'package' field if the request specifies one.
+            3. CRITICAL: git add ONLY that one trigger file, commit, push.
+               One file per commit — the pipeline uses git diff-tree | head -1.
+               This fires the full pipeline: regenerates report + PPTX + PDF + re-sends email.
+            4. Write to /tmp/summary.txt:
+               'Re-triggered full audit for [Firm] (~60-90 min). Email will resend when done.'
 
-            ━━━ IMPORTANT RULES ━━━
-            - For TYPE 2 and TYPE 3: ONLY commit the single trigger file. Never batch multiple files.
-            - Always pull latest before pushing: run 'git pull --rebase origin main' before 'git push'.
-            - If git push fails with 403/rejected, pull --rebase and retry up to 3 times.
-            - Do not run the audit yourself — writing the trigger file IS the trigger.
-            - Sales rep email pattern if unknown: firstname.lastname@smbteam.com.
+            --- TYPE 4: NEW AUDIT FROM SCRATCH ---
+            Triggered by: 'trigger new audit', 'run audit for', 'new proposal for', etc.
+            Steps:
+            1. Parse firm name, contact name, email, website, sales rep, proposal date/time.
+            2. If HUBSPOT_TOKEN is set, call HubSpot to fill missing fields:
+               Search contacts: POST https://api.hubapi.com/crm/v3/objects/contacts/search
+               Get deals: GET .../contacts/{id}/associations/deals
+               Get owner: GET .../owners/{ownerId}
+               (Authorization: Bearer \$HUBSPOT_TOKEN on all requests)
+            3. Build friendly name: lowercase, strip suffixes (llp llc pc pllc ltd law group
+               law firm attorneys counselors), replace non-alphanumeric with hyphens, trim.
+            4. Write triggers/audit-research/[friendly-name].json with all fields.
+            5. CRITICAL: git add ONLY that file, commit, push.
+            6. Write summary to /tmp/summary.txt.
+
+            RULES FOR ALL TYPES:
+            - Always run 'git pull --rebase origin main' before git push.
+            - If push fails with 403/rejected, pull --rebase and retry up to 3 times.
+            - For Types 3 and 4: commit ONLY the single trigger file, never multiple files.
+            - Sales rep email if unknown: firstname.lastname@smbteam.com.
           "
 
       - name: Post success to Slack
@@ -140,4 +146,3 @@ jobs:
             -H "Authorization: Bearer $SLACK_BOT_TOKEN" \
             -H "Content-Type: application/json" \
             -d "$PAYLOAD"
-
