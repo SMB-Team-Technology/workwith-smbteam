@@ -1,6 +1,7 @@
-SECTION 11 WORKINGS — The Law Offices of Pekins and Associates, PLLC
+SECTION 11 WORKINGS — The Law Offices of Perkins and Associates, PLLC
 Date: June 4, 2026
 Sales Rep: Randy Gold
+PACKAGE OVERRIDE APPLIED: FCOO Advisor + FCTO: Level 1
 ======================================================================
 
 === MANDATORY PRICE LOOKUP (verified character-by-character against tables) ===
@@ -10,64 +11,77 @@ Marketing package selected: Full Service Marketing Starter
   - Stand-alone price (from table): $5,697/mo
   - Savings (stand-alone minus bundled): $850/mo
 
-Non-marketing package selected: Elite Coach Plus
-  - Bundled price (from table): $3,200/mo
-  - Stand-alone price (from table): $3,497/mo
-  - Savings (stand-alone minus bundled): $297/mo
+Non-marketing package selected: FCOO Advisor (package override — see note below)
+  - Bundled price (from table): $3,297/mo
+  - Stand-alone price (from table): $3,797/mo
+  - Savings (stand-alone minus bundled): $500/mo
+  NOTE: Table default for $400K–$1M growing is "Elite Coach Plus + FCOO Advisor"
+  at $4,694/mo bundled. This engagement uses FCOO Advisor standalone per the
+  trigger file override. FCOO Advisor includes Elite Coach group deliverables
+  per current package structure.
 
-Legal AI Workforce (LAW) package selected: none
-  (Reason: solo practitioner with no confirmed support staff; minimum 1–2 staff required
-   for LAW implementation to be effective)
+Legal AI Workforce (LAW) package selected: Fractional CTO Level 1 (AI Accelerator L1) — package override
+  - Bundled price (from table): $3,297/mo
+  - Stand-alone price (from table): $3,797/mo
+  - Savings (stand-alone minus bundled): $500/mo
+  ONE-TIME: Law Firm AI Foundation Sprint — $4,997 (one-time onboarding, paired with FCTO L1)
+  NOTE: LAW package recommended per trigger override. Confirm with sales rep (Randy Gold)
+  that LAW delivery has launched and capacity is available before presenting proposal.
+  Firm is solo practitioner — minimum 1–2 staff engagement capacity should be
+  confirmed at discovery.
 
 AI Avatar / Video Growth add-on selected: none
   (Reason: no qualifying criteria confirmed from research; requires Alexis approval)
 
-Total monthly investment (sum of all bundled/recurring prices): $8,047/mo
-  ($4,847 + $3,200 = $8,047)
+Total monthly investment (sum of all bundled/recurring prices): $11,441/mo
+  ($4,847 + $3,297 + $3,297 = $11,441)
 
-Total savings (sum of all savings): $1,147/mo
-  ($850 + $297 = $1,147)
+Total savings (sum of all savings): $1,850/mo
+  ($850 + $500 + $500 = $1,850)
 
 === ELIGIBILITY FILTERS APPLIED ===
 
 Practice Area: Personal Injury → Essentials marketing packages hidden. Minimum Starter tier applied.
-Revenue estimated $400K–$600K → Under $500K: Fractional CFO/COO hidden. Under $1M: Master's Circle, Dominate, Platinum hidden.
+Revenue estimated $400K–$600K → Under $500K: Fractional CFO products hidden by default (not recommended here).
+  Under $1M: Master's Circle, Dominate, Platinum hidden.
 Team: Solo (fewer than 5 members) → Master's Circle options hidden.
-Revenue estimated $400K–$600K → Over $1M products hidden by default; OK.
-Total MRR $8,047 within minimum ($2,497) and maximum.
+Package override: FCOO Advisor + FCTO Level 1 applied per trigger file directive.
+Total MRR $11,441 within minimum ($2,497 floor met).
 
-35% CAP CHECK:
-- Estimated revenue: $400K–$600K annually. Using $500K midpoint = $41,667/mo.
-- 35% of $41,667 = $14,583/mo total spend ceiling (management fees + ad spend)
-- Management fees: $8,047/mo
-- Available for ad spend within 35% cap: $14,583 - $8,047 = $6,536/mo
-- Conservative ad spend recommended: $6,000/mo (within cap at $500K revenue)
-- Aggressive ad spend: $10,000/mo (within cap at $600K revenue: 35% of $50,000 = $17,500; $8,047 + $10,000 = $18,047 → slightly over cap at $600K, so note this; within cap at $650K+)
-- Note for sales rep: actual ad spend should be calibrated against confirmed revenue at discovery
+35% CAP CHECK (updated for three-package recommendation):
+- Estimated revenue: $400K–$600K annually.
+- At $600K midpoint of upper range = $50,000/mo.
+- 35% of $50,000 = $17,500/mo total spend ceiling (management fees + ad spend)
+- Management fees: $11,441/mo
+- Available for ad spend within 35% cap at $600K revenue: $17,500 - $11,441 = $6,059/mo
+- Conservative ad spend recommended: $6,000/mo (within cap at $600K revenue)
+- Aggressive ad spend: $10,000/mo (requires $700K+ confirmed revenue for 35% cap:
+  $11,441 + $10,000 = $21,441; 35% threshold reached at ~$735K annual revenue)
+- Note for sales rep: Confirm actual revenue at discovery; present conservative scenario
+  as safe starting point and aggressive scenario as growth target once revenue confirms.
 
 ESCALATION FLAGS (internal, never in client report):
 - Personal Injury in top 40 metro → approval required (Houston is top 40)
-- Revenue under $300K → not triggered (estimated $400K+)
 - Marketing MRR $4,847 → under $10K threshold, no scoping approval needed
+- Any Legal AI Workforce (LAW) package → confirm with Randy Gold that LAW delivery
+  has launched and capacity is available before finalizing proposal
+- FCOO Advisor recommended for solo practitioner below $1M — package override applied;
+  note potential eligibility deviation for sales rep awareness
 
 === AD SPEND CALCULATION ===
 
 Practice Area: Personal Injury (primary)
 Market: Houston, TX → Tier 2 (primary high-density market, 1.3× multiplier)
 Competition Level: High (Houston top 40 metro for PI)
-Spanish campaign: Possible — Houston is 45% Hispanic/Latino; bilingual capability not confirmed → not included in base calculation; flag as add-on opportunity
+Spanish campaign: Possible — Houston is 45% Hispanic/Latino; bilingual capability
+  not confirmed → not included in base calculation; flag as add-on opportunity
 
-Conservative (sum of channel minimums, PI hard floor applied):
-  Google PPC min (Accident/Injury General): $6,000
-  LSA min: $2,000
-  Meta Retargeting min: $1,200
-  Meta Lead Gen min: $5,500
-  Sum of minimums: $14,700
-  PI hard floor (High competitiveness): $10,000
-  $14,700 > $10,000, so channel minimum sum applies
-  → BUT this exceeds 35% cap at estimated revenue
-  → Adjusted conservative: $6,000/mo (Google PPC + LSA enrollment; starting point within cap at $500K revenue)
-  → Full channel minimum build ($14,700) is Phase 2 milestone once revenue confirmed above $600K+
+Conservative (within 35% cap at $600K estimated revenue):
+  Available at $600K revenue: $6,059 → use $6,000/mo
+  Channel allocation: Google PPC $4,000 / LSA $2,000
+  PI hard floor (High): $10,000 channel minimum for full deployment
+  → $6,000 is a valid starting point; scale to full channel minimums ($14,700)
+     as revenue confirms above $700K
 
 Aggressive (20% rule calculation):
   Revenue goal (no goal stated, use 2× current estimate): 2 × $500K = $1,000,000
@@ -83,8 +97,8 @@ Aggressive (20% rule calculation):
     10 ÷ 15% close rate = ~67 leads/month needed
     67 × $500 blended CPL (midpoint of PI CPL ranges) = $33,500 needed
     $16,820 < $33,500 — reverse math is higher
-  → Use $10,000/mo as practical aggressive starting point (within cap at $600K revenue; can scale up as revenue confirms)
-  → Note for sales rep: full aggressive target is $16,820–$33,500 at confirmed higher revenue
+  → Use $10,000/mo as practical aggressive starting point (within 35% cap at ~$735K
+     confirmed revenue); can scale up as revenue confirms and 35% cap expands
 
 Recommended presentation in Block 4:
   Conservative: $6,000/mo
@@ -126,48 +140,58 @@ AGGRESSIVE SCENARIO ($10,000/mo):
  flow of qualified cases so they can build a firm that serves their community with
  the depth, impact, and financial stability their legacy deserves."
 
-=== QUICK WIN OPPORTUNITIES (6+) ===
+=== QUICK WIN OPPORTUNITIES (8 identified) ===
 
 1. LEAD GEN — Fix SSL Certificate & Rebuild Website
-   Why: Expired SSL triggers browser security warnings; every referral sent to the website hits this warning first. Site currently inaccessible for performance measurement.
+   Why: Expired SSL triggers browser security warnings; every referral sent to the website hits this warning first.
    Competitor: WestLoop Law — modern, SSL-secured, mobile-optimized site capturing South Loop PI prospects
-   Opportunity: Restoring a secure, fast website immediately converts referral traffic that is currently being lost, and creates the technical foundation for all paid advertising.
+   Opportunity: Restoring a secure, fast website immediately converts referral traffic being lost and creates
+   the technical foundation for all paid advertising.
 
 2. LEAD GEN — Launch Google Local Service Ads (LSA)
-   Why: LSAs appear above all paid ads and organic results; no LSA presence means zero visibility at the highest-intent position on Google.
-   Competitor: The Gonzalez Law Group, PLLC — active LSA for PI and criminal defense, capturing pay-per-lead contacts ahead of every other result
-   Opportunity: Enrolling in LSA for personal injury and criminal defense immediately puts the firm's 5.0-star rating at the top of the page before any competitor's organic result.
+   Why: LSAs appear above all paid ads and organic results; no LSA presence means zero visibility at the
+   highest-intent position on Google.
+   Competitor: The Gonzalez Law Group, PLLC — active LSA for PI and criminal defense
+   Opportunity: Enrolling in LSA for personal injury and criminal defense immediately puts the firm's
+   5.0-star rating at the top of the page.
 
 3. LEAD GEN — Build Google Review Volume
-   Why: 30 reviews vs. 1,364+ for the primary competitor; low review volume = invisible in 3-pack results for every core practice area.
+   Why: 30 reviews vs. 1,364+ for the primary competitor; low review volume = invisible in 3-pack results.
    Competitor: The Gonzalez Law Group — 1,364 Birdeye reviews; Scheiner Law Group — 114 Google reviews
-   Opportunity: A systematic review-request process (text/email to every satisfied client within 24 hours of case close) can close the volume gap over 12 months and dramatically improve 3-pack visibility.
+   Opportunity: A systematic review-request process can close the volume gap over 12 months.
 
 4. INTAKE — Build Intake System & After-Hours Coverage
-   Why: Solo practitioner handling all intake personally means every call during court, meetings, or after hours is a lost lead with no follow-up path.
-   Opportunity: A defined intake process with after-hours coverage converts leads already being generated — without any increase in marketing spend.
+   Why: Solo practitioner handling all intake personally means every call during court or after hours is lost.
+   Opportunity: A defined intake process with after-hours coverage converts leads already being generated.
 
 5. LEAD GEN — Launch Google Search Ads (Expungement Niche)
-   Why: Expungement and non-disclosure are documented specialties with high demand in Houston's large criminal justice-affected community; no competitors are specifically targeting these keywords at the same credibility level.
-   Opportunity: Bidding on "expungement attorney Houston" and "non-disclosure Texas" captures high-intent leads in a niche where 29 years of documented success is a genuine differentiator.
+   Why: Expungement and non-disclosure are documented specialties with high demand in Houston's criminal
+   justice-affected community; 29 years of documented success is a genuine differentiator.
+   Opportunity: Bidding on niche expungement keywords captures high-intent leads.
 
 6. LEAD GEN — Fix NAP Inconsistencies Across Directories
-   Why: Martindale lists the old address (3264 Simmons St); Texas State Bar lists the current address (2600 South Loop West); inconsistent NAP suppresses local SEO authority.
-   Opportunity: Correcting NAP across all directories is a free, high-impact local SEO action that removes a barrier to 3-pack visibility.
+   Why: Martindale lists the old address; TX State Bar lists the current address; inconsistent NAP
+   suppresses local SEO authority.
+   Opportunity: Correcting NAP is a free, high-impact local SEO action.
 
 7. PROFIT — Track Profitability by Practice Area
-   Why: Mixed contingency/flat-fee revenue with no confirmed tracking means the firm may be working hardest on its least profitable cases.
-   Opportunity: A simple case-type profitability analysis can reveal where to focus intake effort and marketing spend to maximize take-home income per hour worked.
+   Why: Mixed contingency/flat-fee revenue with no confirmed tracking means the firm may be working
+   hardest on its least profitable cases.
+   Opportunity: A profitability-by-practice-area analysis reveals where to focus marketing spend.
 
 8. TEAM — Define and Delegate Intake Role
-   Why: All client contact flows through the attorney; no leverage exists; growth directly increases personal workload.
-   Opportunity: A part-time intake coordinator or trained legal assistant as the first hire creates the capacity for the firm to handle more volume — and gives the attorney back hours every week.
+   Why: All client contact flows through the attorney; no leverage exists; growth increases personal workload.
+   Opportunity: A part-time intake coordinator as the first hire creates capacity for growth.
 
 === FIRST 90 DAYS ===
 
-1. Launch Google Ads campaign (PI + criminal defense + expungement keywords) and enroll in Local Service Ads for personal injury and criminal defense
-2. Begin website rebuild: SSL certificate, practice area pages, attorney bio, mobile-optimized design, and clear contact forms on every page
+1. Launch Google Ads campaign (PI + criminal defense + expungement keywords) and enroll in Local Service
+   Ads for personal injury and criminal defense
+2. Begin website rebuild: SSL certificate, practice area pages, attorney bio, mobile-optimized design,
+   and clear contact forms on every page
 3. Launch Google review-request process: text/email every satisfied client within 24 hours of case resolution
-4. Coaching kickoff: establish revenue baselines, identify top-performing practice areas, and build a profit-by-case-type tracking system
-5. Fix NAP inconsistencies across all directory listings (Martindale, Avvo, Justia) and claim/optimize GBP with updated photos, posts, and business description
-
+4. FCOO Advisor + coaching kickoff: establish revenue baselines, document current intake process,
+   identify first hire role, and begin operational systems mapping; FCTO Level 1 Foundation Sprint
+   launches to map AI opportunity areas across intake and case management
+5. Fix NAP inconsistencies across all directory listings (Martindale, Avvo, Justia) and claim/optimize
+   GBP with updated photos, posts, and business description
