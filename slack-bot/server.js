@@ -83,23 +83,37 @@ app.post('/api/slack', express.raw({ type: '*/*' }), async (req, res) => {
 
   console.log(`event type=${event?.type} subtype=${event?.subtype} bot_id=${event?.bot_id} channel=${event?.channel} expected=${process.env.SLACK_CHANNEL_ID}`);
 
-  // Handle only @mentions in the designated channel
-  if (
-    !event ||
-    event.type    !== 'app_mention' ||
-    event.bot_id  ||              // ignore messages posted by bots (including ourselves)
-    event.channel !== process.env.SLACK_CHANNEL_ID
-  ) {
+  if (!event || event.channel !== process.env.SLACK_CHANNEL_ID) {
     return res.status(200).json({ ok: true });
   }
 
   const token = process.env.SLACK_BOT_TOKEN;
   const pat   = process.env.GITHUB_PAT;
   const repo  = process.env.GITHUB_REPO || 'SMB-Team-Technology/workwith-smbteam';
+  const text  = event.text || '';
+
+  // HubSpot proposal booking notifications — bot messages matching the pattern
+  const isProposalBooking =
+    (event.type === 'message') &&
+    (text.includes('Closer booked a Proposal Call') || text.includes('Law Firm Proposal Review'));
+
+  if (isProposalBooking) {
+    console.log(`HubSpot proposal booking detected, dispatching audit trigger`);
+    await githubDispatch(pat, repo, text, event.channel, event.ts);
+    return res.status(200).json({ ok: true });
+  }
+
+  // Handle @mentions from humans (ignore bot senders)
+  if (
+    event.type    !== 'app_mention' ||
+    event.bot_id
+  ) {
+    return res.status(200).json({ ok: true });
+  }
 
   // Acknowledge in-thread before dispatching so the user sees an immediate reply
   await slackPost(token, event.channel, `Got it — making that change now. I'll reply here when it's done.`, event.ts);
-  await githubDispatch(pat, repo, event.text, event.channel, event.ts);
+  await githubDispatch(pat, repo, text, event.channel, event.ts);
 
   return res.status(200).json({ ok: true });
 });
