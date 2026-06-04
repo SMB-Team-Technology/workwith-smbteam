@@ -74,6 +74,11 @@ jobs:
             to main and report the commit hash when complete.
           "
 
+      - name: Pass 1.5 — Deterministic package selection
+        run: |
+          FRIENDLY_NAME="${{ steps.inputs.outputs.friendly_name }}"
+          node scripts/select-package.mjs "$FRIENDLY_NAME" || true
+
       - name: Pass 2 + 3 — Audit Write (with PPTX)
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
@@ -83,10 +88,26 @@ jobs:
           SALES_REP="${{ steps.inputs.outputs.sales_rep }}"
           DATE="${{ steps.inputs.outputs.date }}"
           PACKAGE="${{ steps.inputs.outputs.package }}"
-          PACKAGE_HINT=""
-          if [ -n "$PACKAGE" ]; then
-            PACKAGE_HINT="PACKAGE OVERRIDE: The trigger file specifies \"$PACKAGE\" as the recommended marketing package. You MUST use this package in Section 11 (Next Steps). Do not override with a different tier based on revenue estimates."
+
+          # Build package instruction — prefer deterministic JSON over soft hint
+          PACKAGE_INSTRUCTION=""
+          DECISION_FILE="$FRIENDLY_NAME/package_decision.json"
+          if [ -f "$DECISION_FILE" ]; then
+            CONFIDENCE=$(jq -r '.confidence' "$DECISION_FILE")
+            DECISION_JSON=$(cat "$DECISION_FILE")
+            if [ "$CONFIDENCE" = "high" ]; then
+              PACKAGE_INSTRUCTION="PACKAGE DECISION (revenue confirmed from research notes — do not override):
+$DECISION_JSON
+Use EXACTLY these tier names and prices. Do not re-run eligibility logic. Do not recalculate. Copy every dollar amount character-by-character from this JSON."
+            else
+              PACKAGE_INSTRUCTION="PACKAGE DECISION (revenue was estimated — verify before finalizing):
+$DECISION_JSON
+Revenue was NOT explicitly stated in research notes; this is an evidence-based estimate with confidence: $CONFIDENCE. Before writing Section 11: re-read the research notes and confirm the revenue band is consistent with all available signals. If the estimate appears correct, use these values exactly. If the research notes clearly indicate a different revenue band, apply the eligibility rules and select the correct tier — document your reasoning in section_11_workings.txt."
+            fi
+          elif [ -n "$PACKAGE" ]; then
+            PACKAGE_INSTRUCTION="PACKAGE OVERRIDE: The trigger file specifies \"$PACKAGE\" as the recommended marketing package. You MUST use this package in Section 11 (Next Steps). Do not override with a different tier based on revenue estimates."
           fi
+
           claude --model claude-sonnet-4-6 --dangerously-skip-permissions -p "
             You are running Pass 2 of the SMB Team Growth Audit pipeline.
 
@@ -94,7 +115,7 @@ jobs:
             Friendly Name: $FRIENDLY_NAME
             Sales Rep: $SALES_REP
             Date: $DATE
-            $PACKAGE_HINT
+            $PACKAGE_INSTRUCTION
 
             Read \`.claude/commands/audit-write.md\` in full. Read the research notes file
             and \`Design Files/audit_styles.css\`. Execute every step in order, saving each

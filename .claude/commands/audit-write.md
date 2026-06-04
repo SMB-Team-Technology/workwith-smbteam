@@ -127,6 +127,13 @@ Fill: firm name (twice), bridge text connecting current reality to transformatio
 
 This section is large and must be completed in three sub-steps to avoid API timeouts. Complete and save after each sub-step before continuing.
 
+**PACKAGE DECISION FILE — CHECK THIS FIRST**
+
+Before any eligibility logic, check whether `[friendly-name]/package_decision.json` exists.
+
+- **If it exists:** Read it. The marketing and coaching tiers have already been selected by the deterministic pipeline script. If `confidence` is `"high"`, use the tier names and prices exactly — do not re-run eligibility logic. If `confidence` is `"medium"` or `"low"`, verify the selected tiers match the research notes before proceeding; document any correction in section_11_workings.txt.
+- **If it does not exist (interactive session or fallback):** Apply the full eligibility rules and MANDATORY PRICE LOOKUP below.
+
 Apply all package eligibility and calculation logic (below) BEFORE starting Step I-a.
 
 **MANDATORY PRICE LOOKUP — COMPLETE THIS BEFORE STEP I-a**
