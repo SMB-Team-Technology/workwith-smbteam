@@ -96,13 +96,9 @@ jobs:
             CONFIDENCE=$(jq -r '.confidence' "$DECISION_FILE")
             DECISION_JSON=$(cat "$DECISION_FILE")
             if [ "$CONFIDENCE" = "high" ]; then
-              PACKAGE_INSTRUCTION="PACKAGE DECISION (revenue confirmed from research notes — do not override):
-$DECISION_JSON
-Use EXACTLY these tier names and prices. Do not re-run eligibility logic. Do not recalculate. Copy every dollar amount character-by-character from this JSON."
+              PACKAGE_INSTRUCTION=$(printf 'PACKAGE DECISION (revenue confirmed from research notes — do not override):\n%s\nUse EXACTLY these tier names and prices. Do not re-run eligibility logic. Do not recalculate. Copy every dollar amount character-by-character from this JSON.' "$DECISION_JSON")
             else
-              PACKAGE_INSTRUCTION="PACKAGE DECISION (revenue was estimated — verify before finalizing):
-$DECISION_JSON
-Revenue was NOT explicitly stated in research notes; this is an evidence-based estimate with confidence: $CONFIDENCE. Before writing Section 11: re-read the research notes and confirm the revenue band is consistent with all available signals. If the estimate appears correct, use these values exactly. If the research notes clearly indicate a different revenue band, apply the eligibility rules and select the correct tier — document your reasoning in section_11_workings.txt."
+              PACKAGE_INSTRUCTION=$(printf 'PACKAGE DECISION (revenue was estimated — verify before finalizing):\n%s\nRevenue was NOT explicitly stated in research notes; this is an evidence-based estimate with confidence: %s. Before writing Section 11: re-read the research notes and confirm the revenue band is consistent with all available signals. If the estimate appears correct, use these values exactly. If the research notes clearly indicate a different revenue band, apply the eligibility rules and select the correct tier — document your reasoning in section_11_workings.txt.' "$DECISION_JSON" "$CONFIDENCE")
             fi
           elif [ -n "$PACKAGE" ]; then
             PACKAGE_INSTRUCTION="PACKAGE OVERRIDE: The trigger file specifies \"$PACKAGE\" as the recommended marketing package. You MUST use this package in Section 11 (Next Steps). Do not override with a different tier based on revenue estimates."
