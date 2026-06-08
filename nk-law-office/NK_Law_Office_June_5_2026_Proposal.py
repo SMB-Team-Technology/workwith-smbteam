@@ -1,6 +1,15 @@
 """
-Audit PowerPoint — NK Law Office
-SMB Team Proposal · June 5, 2026
+Audit PowerPoint Template — SMB Team
+======================================
+Generates a 3-slide proposal PPTX from the Growth, Profit, and Freedom Roadmap.
+Uses python-pptx. Do not modify the layout engine below the FILL section.
+Only replace the # FILL: placeholders with audit-specific content.
+
+Slide 1 — Where [Firm] Stands Today         (assessment overview)
+Slide 2 — Your Growth Plan: 3 Priorities    (action plan)
+Slide 3 — Your Investment & What's Next     (pricing + first 90 days)
+
+Output: [friendly-name]/[FirmName]_[Date]_Proposal.pptx
 """
 
 from pptx import Presentation
@@ -12,110 +21,109 @@ from lxml import etree
 import os
 
 # ═══════════════════════════════════════════════════════════════════
-# FILL — All values extracted from completed audit sections
+# FILL — Replace every placeholder. Do not delete any variable.
 # ═══════════════════════════════════════════════════════════════════
 
 # Report metadata
-FIRM_NAME   = "NK Law Office"
-SALES_REP   = "Jacob Meissner"
-OUTPUT_PATH = "nk-law-office/NK_Law_Office_June_5_2026_Proposal.pptx"
+FIRM_NAME      = "NK Law Office"
+SALES_REP      = "Jacob Meissner"
+OUTPUT_PATH    = "nk-law-office/NK_Law_Office_June_5_2026_Proposal.pptx"
 
 # Optional images
-WEBSITE_SCREENSHOT_PATH = None
+WEBSITE_SCREENSHOT_PATH = None   # Set to a local PNG path to show a screenshot; None = skip entirely
 
 # ── Slide 1 ──────────────────────────────────────────────────────
-URGENCY_SCORE = "8"   # from section_05
+URGENCY_SCORE = "8"
 
-# Pillar status — (status, label, one-line detail ≤20 chars)
+# Pillar status — each is ("RED" | "AMBER" | "GREEN", label, one-line detail)
 PILLARS = [
-    ("RED",   "CRITICAL", "Not indexed by Google"),
-    ("RED",   "CRITICAL", "Solo intake, no process"),
-    ("RED",   "CRITICAL", "Solo — no team"),
-    ("AMBER", "AMBER",    "No revenue tracking"),
+    ("RED",   "CRITICAL", "Not indexed by Google"),   # Lead Generation
+    ("RED",   "CRITICAL", "All intake handled solo"),  # Intake
+    ("RED",   "CRITICAL", "Solo — no team at all"),    # Team
+    ("AMBER", "NEEDS WORK", "No revenue tracking"),    # Profit Plan
 ]
 PILLAR_NAMES = ["Lead Generation", "Intake", "Team", "Profit Plan"]
 
-# Key findings — ("neg"|"pos", "consequence-first finding")
+# Key findings — list of ("neg"|"pos", "one-sentence finding")
 FINDINGS = [
-    ("neg", "Website not indexed by Google — invisible to all client searches"),
-    ("neg", "Solo intake: every lead waits for the attorney personally"),
-    ("neg", "Competitor in same building has 543 reviews, outranks at this address"),
-    ("pos", "Professional site with LL.M credentials — strong trust signals ready"),
+    ("neg", "Website not indexed on Google — even referrals sent to the site can't find it"),
+    ("neg", "No intake system — after-hours calls go unanswered while competitors answer"),
+    ("neg", "Same-building competitor has 543 reviews vs. near-zero for NK Law Office"),
+    ("neg", "Zero paid ads while competitors run Google Ads, LSA, and Meta simultaneously"),
 ]
 
-# Competitor table
+# Competitor table — list of (name, "XXX reviews", "brief note")
 COMPETITORS = [
-    ("Strategic Criminal Defence", "700+ reviews", "Ads · LSA · Facebook · all channels"),
-    ("Shory Law",                  "260 reviews",  "Immigration + criminal + family"),
-    ("Cameron Horne Law Office",   "543 reviews",  "Same building · real estate dominant"),
+    ("Strategic Criminal Defence", "700+ reviews · 4.9★", "Dominates criminal defense"),
+    ("Shory Law",                  "260 reviews · 4.6★",  "Crim + immigration + family"),
+    ("Cameron Horne Law Office",   "543 reviews · 4.9★",  "Same building — real estate"),
 ]
-CLIENT_REVIEWS      = "~0 reviews"
+CLIENT_REVIEWS      = "0 reviews"
 CLIENT_REVIEWS_NOTE = "← You are here"
 
-# Stage strip
+# Stage strip (right panel, Slide 1)
 STAGE_TEXT = "Stage 3: Solo Practitioner  →  Goal: Stage 6, Law Firm Owner"
 
 # ── Slide 2 ──────────────────────────────────────────────────────
-SLIDE_2_TITLE = "Your Growth Plan: 3 Priorities to Build NK Law Office"
+SLIDE_2_TITLE = "Your Growth Plan: 3 Priorities to Reach $1M"
 
 SMB_MODEL_DESC = (
-    "All four pillars must work together: Lead Generation, "
-    "Intake, Team, and Profit. Missing any one means growth stalls "
-    "regardless of how much is invested. "
-    "When all four are running, Nkiru can focus on the law — "
-    "and let the firm grow on its own terms."
+    "Marketing, Intake, Team, and Profit must all work together — "
+    "a gap in any one pillar caps the rest. "
+    "When all four run systematically, Nkiru can focus on "
+    "practicing law instead of managing everything around it."
 )
 
-GOAL_HEADLINE = "Stage 3 → Stage 6 Law Firm Owner"
-GOAL_DBM      = "A firm that grows — so you can focus on the law"
+GOAL_HEADLINE = "$500K → $1M revenue"
+GOAL_DBM      = "Build a firm that runs — and pays you for it"
 
-# Each priority: (line1, line2, accent_hex, [5 bullets ≤55 chars])
+# Each priority: (line1, line2, accent_color_hex, [5 bullet strings])
 PRIORITIES = [
     (
         "Build the", "Marketing Engine", "1D4ED8",
         [
-            "Get NK Law Office indexed and visible on Google",
-            "Launch Google Ads: criminal defense + immigration",
-            "Build GBP reviews toward LSA top-of-page placement",
-            "List in Avvo, FindLaw, Yelp, Justia — citation base",
-            "Turn Google into a client pipeline that runs itself",
+            "Turn Google into a client pipeline that runs 24/7",
+            "Get indexed on Google — stop being invisible online",
+            "Run Google Ads for criminal defense and immigration",
+            "Build GBP reviews to rank in Calgary's map pack",
+            "Launch directory listings — 8 citations in 90 days",
         ],
     ),
     (
         "Fix Intake &", "Stop Losing Cases", "0F766E",
         [
-            "Install after-hours inquiry capture system",
-            "Add above-fold contact form to homepage",
-            "Build follow-up process for unconverted leads",
-            "Create intake script so calls qualify without you",
-            "Convert more of the traffic you're already getting",
+            "Install after-hours capture — no missed inquiries",
+            "Move contact form above the fold on homepage",
+            "Build a follow-up sequence that runs without you",
+            "Design an intake process you can hire and train into",
+            "Stop leads from reaching a competitor's voicemail",
         ],
     ),
     (
         "Install Team &", "Profit Systems", "6D28D9",
         [
-            "Plan and hire your first intake coordinator",
-            "Track revenue and time invested by practice area",
-            "Set monthly profit targets — plan it, don't discover it",
-            "Weekly coaching for firm-building strategy and clarity",
-            "Build systems that let you step back without worry",
+            "Hire a part-time intake coordinator — free your hours",
+            "Map case value by practice area — know what to grow",
+            "Track acquisition cost so ad spend is defensible",
+            "Build org structure to support a first full hire",
+            "Plan profit intentionally — not just discover it",
         ],
     ),
 ]
 
 # ── Slide 3 ──────────────────────────────────────────────────────
-# Package cards — (label, bundled_price, retail_price, services_line, accent_hex)
+# Package cards — (label, bundled_price, retail_price, services_line, accent_color_hex)
 PACKAGES = [
     (
         "FULL SERVICE MARKETING — STARTER",
         "$4,847", "$5,697/mo",
-        "Website · Google Ads · LSA · Meta Ads · SEO · GBP",
+        "Website · Google Ads · LSA · Meta Ads · GBP optimization",
         "1D4ED8",
     ),
     (
         "ELITE COACH PLUS",
         "$3,200", "$3,497/mo",
-        "Weekly coaching · masterminds · 1:1 strategy sessions",
+        "Weekly coaching · 1:1 sessions · Intake framework · Workshops",
         "6D28D9",
     ),
 ]
@@ -128,29 +136,31 @@ AD_SPEND_NOTE = (
 )
 
 AVG_CASE_VALUE      = "$4,000"
-CONSERVATIVE_LABEL  = "Conservative  (~10 cases/mo):"
-CONSERVATIVE_RESULT = "~$40,000 revenue · 5.3× ROAS"
-AGGRESSIVE_LABEL    = "Aggressive  (~41 cases/mo):"
-AGGRESSIVE_RESULT   = "~$164,000 revenue · 6.6× ROAS"
+CONSERVATIVE_LABEL  = "Conservative  (10 cases/mo):"
+CONSERVATIVE_RESULT = "$40,000 revenue · 5.3× ROAS"
+AGGRESSIVE_LABEL    = "Aggressive  (42 cases/mo):"
+AGGRESSIVE_RESULT   = "$168,000 revenue · 6.6× ROAS"
 
-# Timeline — 5 items: (milestone_label ≤7 chars, action ≤55 chars)
+# Timeline — 5 items: (milestone_label, action_text)
 TIMELINE = [
-    ("Day 1",   "Launch Google Ads — criminal defense + immigration"),
-    ("Day 14",  "Website rebuild with above-fold CTAs + practice pages"),
-    ("Week 2",  "Complete GBP setup and legal directory listings"),
-    ("Week 3",  "Begin active Google review generation strategy"),
+    ("Day 1",   "Launch Google Ads — criminal defense, immigration"),
+    ("Day 14",  "Website rebuild live — indexed, above-fold CTA"),
+    ("Week 2",  "GBP setup + top legal directories complete"),
+    ("Week 3",  "Google review generation campaign launched"),
     ("Month 3", "Coaching kickoff — intake system + first hire plan"),
 ]
 
 CLOSING_QUOTE = (
-    '"The clients are already searching. The expertise is already there. '
-    'This is the system that makes sure they find each other."'
+    '"You built this practice from scratch. '
+    'Now build the system that makes it grow without requiring '
+    'your presence in every file, every call, and every decision."'
 )
 
 # ═══════════════════════════════════════════════════════════════════
 # LAYOUT ENGINE — DO NOT MODIFY BELOW THIS LINE
 # ═══════════════════════════════════════════════════════════════════
 
+# ── Color palette ─────────────────────────────────────────────────
 def rgb(h): return RGBColor(int(h[0:2],16), int(h[2:4],16), int(h[4:6],16))
 
 NAVY        = rgb("0D1F3C")
@@ -185,6 +195,7 @@ PRIORITY_LIGHT = {
 FONT = "Calibri"
 LOGO_PATH = os.path.join(os.path.dirname(__file__), "smb_team_logo.png")
 
+# ── Core helpers ──────────────────────────────────────────────────
 
 def emu(*inches):
     return tuple(int(x * 914400) for x in inches)
@@ -222,6 +233,7 @@ def add_text(slide, text, left, top, w, h, size, color, bold=False,
     run.font.color.rgb = color
     run.font.bold = bold
     run.font.italic = italic
+    # Remove auto-fit so text doesn't spill
     txb.text_frame.auto_size = None
     return txb
 
@@ -251,24 +263,30 @@ def add_footer(slide, page, total, logo_path):
              align=PP_ALIGN.RIGHT)
 
 
+# ── Slide 1: Assessment Overview ──────────────────────────────────
+
 def build_slide1(prs):
-    layout = prs.slide_layouts[6]
+    layout = prs.slide_layouts[6]  # blank
     slide = prs.slides.add_slide(layout)
 
+    # Full-width NAVY banner — mirrors slides 2 and 3
     add_rect(slide, 0, 0, 10, 1.05, fill=NAVY)
     add_text(slide, f"LAW FIRM GROWTH AUDIT  ·  {FIRM_NAME.upper()}",
              0.32, 0.10, 9.40, 0.22, 8, GOLD, bold=True)
     add_text(slide, f"Where {FIRM_NAME} Stands Today",
              0.32, 0.34, 9.40, 0.60, 24, WHITE, bold=True)
 
+    # Left yellow strip (starts below banner)
     add_rect(slide, 0, 1.05, 0.16, 4.23, fill=GOLD)
 
+    # Urgency box
     add_rect(slide, 0.28, 1.10, 1.42, 0.92, fill=RED)
     add_text(slide, URGENCY_SCORE, 0.28, 1.10, 1.42, 0.62, 28, WHITE, bold=True,
              align=PP_ALIGN.CENTER)
     add_text(slide, "COMPETITIVE URGENCY", 0.28, 1.72, 1.42, 0.30, 6, WHITE, bold=True,
              align=PP_ALIGN.CENTER)
 
+    # Pillar cards
     pillar_xs = [1.84, 2.78, 3.72, 4.66]
     for i, (status, label, detail) in enumerate(PILLARS):
         x = pillar_xs[i]
@@ -279,8 +297,10 @@ def build_slide1(prs):
         add_text(slide, label, x+0.06, 1.55, 0.76, 0.20, 7, sc, bold=True)
         add_text(slide, detail, x+0.06, 1.74, 0.76, 0.26, 7, LIGHT_BLUE)
 
+    # Key findings label
     add_text(slide, "KEY FINDINGS", 0.28, 2.14, 5.30, 0.24, 8, GOLD, bold=True)
 
+    # Finding rows
     finding_ys = [2.42, 3.10, 3.78, 4.46]
     for i, (ftype, text) in enumerate(FINDINGS[:4]):
         y = finding_ys[i]
@@ -294,19 +314,23 @@ def build_slide1(prs):
                  align=PP_ALIGN.CENTER)
         add_text(slide, text, 0.74, y+0.08, 4.76, 0.46, 10, txt_color)
 
+    # Right panel — white background (starts below banner)
     add_rect(slide, 5.75, 1.05, 4.25, 4.23, fill=WHITE)
 
+    # Website screenshot — only shown when a local PNG is provided
     if WEBSITE_SCREENSHOT_PATH and os.path.isfile(WEBSITE_SCREENSHOT_PATH):
         from pptx.util import Emu as E
         slide.shapes.add_picture(WEBSITE_SCREENSHOT_PATH,
                                  E(int(5.82*914400)), E(int(1.10*914400)),
                                  E(int(4.10*914400)), E(int(2.00*914400)))
 
+    # "You are here" strip — positioned just below banner
     add_rect(slide, 5.75, 1.12, 4.25, 0.76, fill=NAVY)
     add_rect(slide, 5.75, 1.12, 0.14, 0.76, fill=GOLD)
     add_text(slide, "YOU ARE HERE", 6.00, 1.14, 3.80, 0.22, 8, GOLD, bold=True)
     add_text(slide, STAGE_TEXT, 6.00, 1.36, 3.80, 0.44, 10, WHITE, bold=True)
 
+    # Competitor table header
     add_text(slide, "COMPETITOR LANDSCAPE", 5.90, 2.10, 3.90, 0.24, 8, SLATE, bold=True)
 
     comp_ys = [2.38, 2.76, 3.14]
@@ -318,6 +342,7 @@ def build_slide1(prs):
         add_text(slide, reviews, 7.94, y+0.05, 1.00, 0.24, 8, GREEN)
         add_text(slide, detail, 8.96, y+0.07, 0.90, 0.22, 6, SLATE)
 
+    # Client row
     add_rect(slide, 5.75, 3.52, 4.25, 0.34, fill=rgb("FFF0F0"))
     add_rect(slide, 5.75, 3.52, 0.10, 0.34, fill=RED)
     add_text(slide, FIRM_NAME, 5.92, 3.57, 2.00, 0.24, 9, RED, bold=True)
@@ -327,15 +352,19 @@ def build_slide1(prs):
     add_footer(slide, 1, 3, LOGO_PATH)
 
 
+# ── Slide 2: Growth Plan ───────────────────────────────────────────
+
 def build_slide2(prs):
     layout = prs.slide_layouts[6]
     slide = prs.slides.add_slide(layout)
 
+    # Header
     add_rect(slide, 0, 0, 10, 1.05, fill=NAVY)
     add_text(slide, f"LAW FIRM GROWTH AUDIT  ·  {FIRM_NAME.upper()}",
              0.32, 0.10, 9.40, 0.22, 8, GOLD, bold=True)
     add_text(slide, SLIDE_2_TITLE, 0.32, 0.34, 9.40, 0.60, 22, WHITE, bold=True)
 
+    # Left panel — model + goal
     add_rect(slide, 0.20, 1.12, 2.72, 3.98, fill=NAVY)
     add_rect(slide, 0.20, 1.14, 2.72, 0.02, fill=GOLD)
     add_text(slide, "THE SMB TEAM MODEL", 0.32, 1.20, 2.48, 0.22, 8, GOLD, bold=True)
@@ -344,6 +373,7 @@ def build_slide2(prs):
     add_text(slide, GOAL_HEADLINE, 0.32, 3.30, 2.50, 0.30, 12, NAVY, bold=True)
     add_text(slide, GOAL_DBM, 0.32, 3.60, 2.50, 0.44, 9, NAVY)
 
+    # 3 priority columns
     priority_xs = [3.08, 5.40, 7.72]
     bullet_ys   = [2.04, 2.70, 3.36, 4.02, 4.68]
 
@@ -352,11 +382,13 @@ def build_slide2(prs):
         ac = rgb(hex_color)
         light = PRIORITY_LIGHT.get(hex_color, rgb("F8F8FF"))
 
+        # Header
         add_rect(slide, x, 1.12, 2.24, 0.92, fill=ac)
         add_text(slide, f"0{col_i+1}", x+0.12, 1.14, 0.50, 0.30, 10, WHITE, bold=True)
         add_text(slide, line1, x+0.12, 1.44, 2.04, 0.28, 12, WHITE, bold=True)
         add_text(slide, line2, x+0.12, 1.70, 2.04, 0.28, 12, WHITE, bold=True)
 
+        # Bullet rows
         for row_i, bullet in enumerate(bullets[:5]):
             y = bullet_ys[row_i]
             bg = light if row_i % 2 == 0 else WHITE
@@ -367,16 +399,20 @@ def build_slide2(prs):
     add_footer(slide, 2, 3, LOGO_PATH)
 
 
+# ── Slide 3: Investment & Next Steps ──────────────────────────────
+
 def build_slide3(prs):
     layout = prs.slide_layouts[6]
     slide = prs.slides.add_slide(layout)
 
+    # Header
     add_rect(slide, 0, 0, 10, 1.05, fill=NAVY)
     add_text(slide, f"LAW FIRM GROWTH AUDIT  ·  {FIRM_NAME.upper()}",
              0.32, 0.10, 9.40, 0.22, 8, GOLD, bold=True)
     add_text(slide, "Your Investment & What Happens Next",
              0.32, 0.34, 9.40, 0.60, 22, WHITE, bold=True)
 
+    # Package cards
     pkg_ys = [1.12, 2.34]
     for i, (label, price, retail, services, hex_c) in enumerate(PACKAGES[:2]):
         y = pkg_ys[i]
@@ -387,17 +423,21 @@ def build_slide3(prs):
         add_text(slide, price, 0.52, y+0.30, 2.00, 0.48, 32, NAVY, bold=True)
         add_text(slide, "/mo", 2.04, y+0.42, 0.46, 0.28, 11, SLATE)
         add_text(slide, retail, 2.54, y+0.44, 1.00, 0.26, 11, STRIKETHROUGH)
+        # Strikethrough line over retail price
         add_rect(slide, 2.54, y+0.55, 0.88, 0.01, fill=STRIKETHROUGH)
         add_text(slide, services, 0.52, y+0.84, 4.16, 0.22, 8, SLATE)
 
+    # Bundle total
     add_rect(slide, 0.22, 3.56, 4.52, 0.72, fill=NAVY)
     add_text(slide, "BUNDLE TOTAL", 0.42, 3.60, 1.80, 0.26, 8, BUNDLE_SUB, bold=True)
     add_text(slide, BUNDLE_TOTAL, 0.42, 3.82, 2.40, 0.38, 22, GOLD, bold=True)
     add_text(slide, BUNDLE_SAVINGS, 2.92, 3.82, 1.90, 0.38, 8, BUNDLE_SUB)
 
+    # Ad spend note
     add_rect(slide, 0.22, 4.34, 4.52, 0.44, fill=rgb("EEF2F8"))
     add_text(slide, AD_SPEND_NOTE, 0.36, 4.37, 4.30, 0.38, 8, SLATE)
 
+    # ROI card
     add_rect(slide, 4.96, 1.12, 4.82, 1.44, fill=ROI_BG)
     add_text(slide, "PROJECTED RETURN ON AD SPEND",
              5.14, 1.18, 4.52, 0.24, 8, ROI_GREEN, bold=True)
@@ -409,6 +449,7 @@ def build_slide3(prs):
     add_text(slide, AGGRESSIVE_LABEL, 5.14, 2.14, 2.10, 0.28, 9, rgb("1E293B"), bold=True)
     add_text(slide, AGGRESSIVE_RESULT, 7.36, 2.14, 2.30, 0.28, 9, ROI_GREEN, bold=True)
 
+    # First 90 days
     add_text(slide, "WHAT HAPPENS IN THE FIRST 90 DAYS",
              4.96, 2.70, 4.82, 0.26, 8, NAVY, bold=True)
     timeline_ys = [2.98, 3.37, 3.76, 4.15, 4.54]
@@ -418,6 +459,7 @@ def build_slide3(prs):
         add_text(slide, milestone, 5.40, y+0.01, 0.88, 0.28, 8, NAVY, bold=True)
         add_text(slide, action, 6.36, y+0.01, 3.34, 0.28, 8, rgb("1E293B"))
 
+    # Closing quote bar
     add_rect(slide, 0, 4.84, 10, 0.44, fill=NAVY)
     add_text(slide, CLOSING_QUOTE, 0.30, 4.84, 9.40, 0.44, 9, LIGHT_BLUE, italic=True,
              align=PP_ALIGN.CENTER)
