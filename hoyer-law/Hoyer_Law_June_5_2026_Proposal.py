@@ -1,6 +1,6 @@
 """
 Audit PowerPoint — Hoyer Law
-June 5, 2026 | Rep: Randy Gold
+SMB Team  |  June 5, 2026  |  Rep: Randy Gold
 Generated from completed Growth, Profit, and Freedom Roadmap audit.
 """
 
@@ -13,7 +13,7 @@ from lxml import etree
 import os
 
 # ═══════════════════════════════════════════════════════════════════
-# FILL — All values extracted from completed audit sections
+# FILL — all values extracted from completed audit sections
 # ═══════════════════════════════════════════════════════════════════
 
 FIRM_NAME   = "Hoyer Law"
@@ -23,126 +23,119 @@ OUTPUT_PATH = "hoyer-law/Hoyer_Law_June_5_2026_Proposal.pptx"
 WEBSITE_SCREENSHOT_PATH = None
 
 # ── Slide 1 ──────────────────────────────────────────────────────
-# Urgency score from section_05_growth_health.html
 URGENCY_SCORE = "6"
 
-# Pillars from section_05 sc-cards (status, label, one-line detail ≤20 chars)
 PILLARS = [
-    ("RED",   "CRITICAL",  "No paid ads active"),    # Lead Generation
-    ("AMBER", "AMBER",     "Delegation in place"),    # Intake
-    ("AMBER", "AMBER",     "GM role not formal"),     # Team
-    ("AMBER", "AMBER",     "No margin visibility"),   # Profit Plan
+    ("RED",   "NO PAID ADS",   "No paid channels"),
+    ("AMBER", "GAPS EXIST",    "No confirmed SOP"),
+    ("AMBER", "NEEDS STRUCTURE","GM not formalized"),
+    ("AMBER", "NO VISIBILITY", "No profit tracking"),
 ]
 PILLAR_NAMES = ["Lead Generation", "Intake", "Team", "Profit Plan"]
 
-# Key findings from section_executive_summary.html top priorities (3 neg + 1 pos)
 FINDINGS = [
-    ("neg", "No paid ads — CoilLaw captures every paid click in Utah County"),
-    ("neg", "CoilLaw: 308 reviews vs. 139 — 3-pack visibility gap widens monthly"),
-    ("neg", "NAP errors on YellowPages suppress rankings already earned"),
-    ("pos", "139 reviews + bilingual staff = unique advantage no competitor holds"),
+    ("neg", "No paid ads — CoilLaw & Arnold Wadsworth capture every high-intent search click"),
+    ("neg", "CoilLaw: 308 reviews at 4.8 vs. Hoyer Law's 139 — 3-pack visibility suppressed"),
+    ("neg", "Three phone numbers & outdated address confirmed across directories — SEO liability"),
+    ("pos", "10-person bilingual team + GM already in place — self-managing foundation exists"),
 ]
 
-# Competitor table from section_06_lead_generation.html
 COMPETITORS = [
-    ("CoilLaw, LLC",              "308 reviews", "4.8★ · multi-location Utah County"),
-    ("Arnold, Wadsworth & Coggins", "Unverified", "Lehi office · national award recognition"),
-    ("SeegLawUtah — H. Seegmiller", "20+ yrs exp", "Exclusive family law · same geography"),
+    ("CoilLaw, LLC",              "308 reviews", "4.8★ · multi-location · paying ads"),
+    ("Arnold Wadsworth & Coggins","unverified",  "Lehi office · multi-attorney · paid"),
+    ("SeegLawUtah",               "unverified",  "family law only · 20+ yrs · local"),
 ]
 CLIENT_REVIEWS      = "139 reviews"
 CLIENT_REVIEWS_NOTE = "← You are here"
 
-# Stage strip from research notes
 STAGE_TEXT = "Stage 4: Small Business Manager  →  Goal: Stage 6, Law Firm Owner"
 
 # ── Slide 2 ──────────────────────────────────────────────────────
-SLIDE_2_TITLE = "Your Growth Plan: 3 Priorities to Reach $8M Revenue"
+SLIDE_2_TITLE = "Your Growth Plan: 3 Priorities to Reach $1.2M Revenue"
 
 SMB_MODEL_DESC = (
-    "Lead Generation, Intake, Team, and Profit Plan — all four must "
-    "work together. Missing any one means growth stalls regardless of "
-    "effort. When all four work, Casey can step away from operations "
-    "and trust the firm delivers — every single month."
+    "Marketing, Intake, Team, and Profit must all work together. "
+    "Missing any one means growth stalls regardless of ad spend. "
+    "When all four pillars fire, Casey can step away from the day-to-day "
+    "and trust the firm handles itself."
 )
 
-GOAL_HEADLINE = "$4M → $8M Revenue"
-GOAL_DBM      = "Step back and trust the firm runs"
+GOAL_HEADLINE = "~$600K → $1.2M revenue"
+GOAL_DBM      = "Step away — and trust the firm runs"
 
 PRIORITIES = [
     (
         "Build the", "Marketing Engine", "1D4ED8",
         [
-            "Launch Google Ads for divorce + custody in Utah County",
-            "Activate LSA — get Google Screened on 139 reviews",
-            "Run Spanish-language ads — no local competitor doing it",
-            "Fix NAP errors to recover suppressed 3-pack rankings",
-            "Turn Google into a client pipeline that runs itself",
+            "Turn Google into a daily family law pipeline",
+            "Launch LSA — get Google Screened today",
+            "Spanish-language ads — own an unserved segment",
+            "Fix NAP data and restore your ranking potential",
+            "Compete for paid placements CoilLaw is winning",
         ],
     ),
     (
         "Fix Intake &", "Stop Losing Cases", "0F766E",
         [
-            "Build after-hours response — stop losing evening leads",
-            "Define intake SOP with a 1-hour response standard",
-            "Automate consultation booking from website forms",
-            "Track consultation-to-retainer conversion rate",
-            "Fix intake so every lead becomes a booked consult",
+            "Capture leads that arrive after hours and weekends",
+            "Build intake SOP so every call converts consistently",
+            "Set a 1-hour response standard for all leads",
+            "Train staff on a proven family law consult script",
+            "Track lead-to-consult rate every month",
         ],
     ),
     (
         "Install Team &", "Profit Systems", "6D28D9",
         [
-            "Formalize Analia's GM authority + team KPI dashboard",
-            "Weekly accountability meeting structure for all roles",
-            "Build case-type profitability tracking monthly",
-            "Build owner comp plan — know what you take home",
-            "Two-location protocol so Casey can genuinely step back",
+            "Formalize Analia's GM authority and decision rights",
+            "Launch weekly KPI dashboard and accountability meeting",
+            "Deploy AI intake response — handle leads after hours",
+            "Track profitability by case type — know your margins",
+            "Build monthly dashboard: revenue, costs, take-home",
         ],
     ),
 ]
 
 # ── Slide 3 ──────────────────────────────────────────────────────
-# Packages from section_11_next_steps.html investment-grid
 PACKAGES = [
     (
-        "FULL SERVICE MARKETING — GROWTH",
-        "$7,397", "$8,997/mo",
-        "Google · LSA · Meta · Spanish campaigns · SEO · GBP",
+        "FULL SERVICE MARKETING — STARTER",
+        "$4,847", "$5,697/mo",
+        "Google Ads · LSA · Meta · SEO · Spanish-language campaigns",
         "1D4ED8",
     ),
     (
-        "MASTER'S CIRCLE",
-        "$4,600", "$4,997/mo",
-        "Weekly coaching · masterminds · GM framework · profit plan",
+        "FRACTIONAL CTO LEVEL 1",
+        "$3,297", "$3,797/mo",
+        "Claude Enterprise · AI Skills · CTO-led rollout · staff training",
         "6D28D9",
     ),
 ]
 
-BUNDLE_TOTAL   = "$11,997 / mo"
-BUNDLE_SAVINGS = "Save $1,997/mo by bundling"
+BUNDLE_TOTAL   = "$8,144 / mo"
+BUNDLE_SAVINGS = "Save $1,350/mo by bundling"
 
 AD_SPEND_NOTE = (
-    "+ Recommended ad spend: $10,000–$45,000/mo paid directly to Google/Meta"
+    "+ Recommended ad spend: $5,500–$14,000/mo paid directly to Google/Meta/LSA"
 )
 
-AVG_CASE_VALUE      = "~$10,000"
-CONSERVATIVE_LABEL  = "Conservative  (~15 cases/mo):"
-CONSERVATIVE_RESULT = "~$150,000 revenue · ~15× ROAS"
-AGGRESSIVE_LABEL    = "Aggressive  (~79 cases/mo):"
-AGGRESSIVE_RESULT   = "~$790,000 revenue · ~18× ROAS"
+AVG_CASE_VALUE      = "~$10,000 (default)"
+CONSERVATIVE_LABEL  = "Conservative  (~8 cases/mo):"
+CONSERVATIVE_RESULT = "~$80,000 revenue · ~15× ROAS"
+AGGRESSIVE_LABEL    = "Aggressive  (~25 cases/mo):"
+AGGRESSIVE_RESULT   = "~$250,000 revenue · ~18× ROAS"
 
-# First 90 days from section_11 Block 5 (condensed to ≤55 chars)
 TIMELINE = [
-    ("Day 1",   "Launch Google, LSA, Meta, and Spanish campaigns"),
-    ("Day 14",  "Correct all NAP errors across directories"),
-    ("Week 2",  "Activate website lead response + booking system"),
-    ("Week 3",  "GM coaching kickoff — Analia's framework built"),
-    ("Month 3", "Financial dashboard + case profitability live"),
+    ("Day 1",   "Launch Google Ads, LSA, Meta — family law + Spanish"),
+    ("Day 14",  "Fix NAP inconsistencies across all directories"),
+    ("Week 2",  "Fractional CTO kickoff — Claude Enterprise + AI Skills"),
+    ("Week 3",  "Website lead response system + intake dashboard live"),
+    ("Month 3", "GM framework, KPI dashboard, and AI fully operational"),
 ]
 
 CLOSING_QUOTE = (
-    '"You have spent 15 years building this firm. '
-    'Now it is time to build it so it works without you."'
+    "“The reputation is here. The team is here. The bilingual staff to serve all of Utah County is here. "
+    "The only thing missing is the growth engine — and that is exactly what we are building next.”"
 )
 
 # ═══════════════════════════════════════════════════════════════════
@@ -422,8 +415,6 @@ def build_slide3(prs):
 
     add_footer(slide, 3, 3, LOGO_PATH)
 
-
-# ── Assemble ──────────────────────────────────────────────────────
 
 prs = Presentation()
 prs.slide_width  = Inches(10)
