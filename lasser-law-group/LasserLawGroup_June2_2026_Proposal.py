@@ -112,16 +112,16 @@ PACKAGES = [
         "1D4ED8",
     ),
     (
-        "ELITE COACH PLUS",
-        "$3,200", "$3,497/mo",
-        "Weekly coaching · Intake audit · KPI framework · Workshops",
+        "FCOO ADVISOR",
+        "$3,297", "$3,797/mo",
+        "Fractional COO · Ops roadmap · Coaching sessions · Workshops",
         "6D28D9",
     ),
 ]
 
 # Copied from section_11 investment-total and investment-savings
-BUNDLE_TOTAL   = "$8,047 / mo"
-BUNDLE_SAVINGS = "Save $1,147/mo by bundling"
+BUNDLE_TOTAL   = "$8,144 / mo"
+BUNDLE_SAVINGS = "Save $1,350/mo by bundling"
 
 # Copied from section_11 Block 4 ad spend row
 AD_SPEND_NOTE = (
