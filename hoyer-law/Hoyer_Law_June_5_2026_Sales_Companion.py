@@ -1,7 +1,6 @@
 """
 Sales Companion PDF — Hoyer Law
-June 5, 2026 | Rep: Randy Gold
-Internal document — do not share with client.
+SMB Team  |  June 5, 2026  |  Rep: Randy Gold
 """
 
 from reportlab.lib.pagesizes import letter
@@ -107,9 +106,11 @@ S["disclaimer"] = ParagraphStyle(
 
 # ── Helpers — DO NOT MODIFY ──
 def b(text):
+    """Gray bullet for scoping rationale, obstacles, and technical details."""
     return Paragraph(f"<bullet>&bull;</bullet> {text}", S["bullet"])
 
 def bd(text):
+    """Dark bullet for transformation statements and what she/he wants."""
     return Paragraph(f"<bullet>&bull;</bullet> {text}", S["bullet_dark"])
 
 def thin_rule():
@@ -117,6 +118,7 @@ def thin_rule():
                        spaceBefore=3, spaceAfter=3)
 
 def quote_block(text):
+    """Quote block with subtle background for prospect's own words."""
     p = Paragraph(f'"{text}"', S["quote"])
     t = Table([[p]], colWidths=[6.5 * inch])
     t.setStyle(TableStyle([
@@ -134,7 +136,7 @@ def quote_block(text):
 # ══════════════════════════════════════════════════════════
 story = []
 
-story.append(Paragraph("Hoyer Law", S["title"]))
+story.append(Paragraph("Hoyer Law (Hoyer Law Firm)", S["title"]))
 story.append(Paragraph("Sales Companion  |  June 5, 2026  |  Rep: Randy Gold", S["subtitle"]))
 story.append(thin_rule())
 
@@ -148,10 +150,10 @@ snap = [
      Paragraph("<b>Close Rate</b>", S["snap_label"]),
      Paragraph("<b>Location</b>", S["snap_label"])],
     [Paragraph("Casey Hoyer", S["snap_value"]),
-     Paragraph("~$3–4M est. (ZoomInfo)", S["snap_value"]),
-     Paragraph("10 staff", S["snap_value"]),
+     Paragraph("~$600K est.", S["snap_value"]),
+     Paragraph("10 (3 atty)", S["snap_value"]),
      Paragraph("Stage 4", S["snap_value"]),
-     Paragraph("15% (default)", S["snap_value"]),
+     Paragraph("15% default", S["snap_value"]),
      Paragraph("Lehi + St. George, UT", S["snap_value"])],
 ]
 t1 = Table(snap, colWidths=[1.15*inch, 1.2*inch, 0.8*inch, 0.7*inch, 0.7*inch, 1.15*inch])
@@ -166,51 +168,55 @@ story.append(Spacer(1, 4))
 
 # ── Dominant Buying Motive ──
 story.append(Paragraph("Dominant Buying Motive: FREEDOM", S["section"]))
-story.append(Paragraph("Casey wants a firm that runs without him — practicing law on his terms, with Analia owning operations.", S["subsection"]))
+story.append(Paragraph("Casey wants a firm that runs itself so he can practice law on his terms and stop managing every detail of the business.", S["subsection"]))
 
-story.append(quote_block("No transcript available. Inferred from website/directories. Confirm DBM, revenue, and case value on call."))
+story.append(quote_block("No Fathom transcript available — DBM inferred from web research and firm profile."))
+story.append(Spacer(1, 1))
+story.append(quote_block("15+ years building a firm with a GM (wife Analia), 10 staff, and 2 locations — the infrastructure of freedom exists, but the growth engine to make it sustainable does not."))
 story.append(Spacer(1, 2))
 
-story.append(Paragraph("<b>What Casey wants:</b>", S["subsection"]))
-story.append(bd("<b>Firm runs without him.</b> Analia is GM — needs formal authority and KPIs to make that real."))
-story.append(bd("<b>Predictable leads.</b> All organic today; wants a paid system that generates clients consistently."))
-story.append(bd("<b>Income clarity.</b> Two locations, 10 staff — needs profit visibility, not just revenue growth."))
+story.append(Paragraph("<b>What he wants:</b>", S["subsection"]))
+story.append(bd("<b>Predictable client flow.</b> Stop relying on organic and referrals — build a paid pipeline that delivers family law clients every month."))
+story.append(bd("<b>Operational freedom.</b> Let Analia and the team run day-to-day so he can focus on the cases he chooses."))
+story.append(bd("<b>AI-powered leverage.</b> Multiply staff output on intake, drafting, and client updates without adding headcount."))
 
 story.append(Spacer(1, 2))
 
 story.append(Paragraph("<b>What is stopping him:</b>", S["subsection"]))
-story.append(b("<b>No paid ads.</b> Zero Google Ads, LSA, or Meta — CoilLaw captures every paid click in the market."))
-story.append(b("<b>Review gap.</b> CoilLaw 308 reviews vs. Hoyer 139 — 3-pack disadvantage on every competitive keyword."))
-story.append(b("<b>NAP errors.</b> 3 phone numbers + old address on YellowPages — suppressing rankings already earned."))
-story.append(b("<b>GM not formalized.</b> Analia's role exists but no KPI structure or delegation framework confirmed."))
+story.append(b("<b>No paid advertising.</b> CoilLaw (308 reviews) and Arnold Wadsworth are capturing every paid click while Hoyer Law relies entirely on organic."))
+story.append(b("<b>No confirmed intake SOP.</b> Quality depends on which staff member picks up — not on a consistent system."))
+story.append(b("<b>GM authority not formalized.</b> Analia is GM in title but operational decisions still route to Casey."))
+story.append(b("<b>No AI infrastructure.</b> 10-person bilingual firm with a GM is AI-ready — no one is leading the rollout."))
 
 story.append(thin_rule())
 
 # ── Why This Marketing Package ──
 story.append(Paragraph("Why This Marketing Package", S["section"]))
 
-story.append(Paragraph("<b>What it does for Casey:</b>", S["subsection"]))
-story.append(bd("First paid lead pipeline across Google, LSA, Meta, and Spanish — capturing traffic CoilLaw takes every month."))
-story.append(bd("Fixes NAP errors and local SEO issues suppressing the rankings his 15-year reputation has already earned."))
+story.append(Paragraph("<b>What it does for him:</b>", S["subsection"]))
+story.append(bd("Converts 15 years of reputation and 139 reviews into a paid lead engine — entering Google, LSA, and Meta for the first time while competitors are already spending."))
+story.append(bd("Spanish-language campaigns give Hoyer Law first-mover advantage in a bilingual market segment no competitor has claimed."))
 
-story.append(Paragraph("<b>Full Service Marketing — Growth  |  $7,397/mo bundled</b>", S["subsection"]))
-story.append(b("Revenue ~$3–4M (ZoomInfo) — Growth tier for $1M–$3M+ range; confirm exact figure on call."))
-story.append(b("No paid ads active — entering Google, LSA, Meta simultaneously maximizes early traction."))
-story.append(b("Bilingual staff (Analia + Yasmeen) enables Spanish campaigns; no local competitor confirmed in Spanish."))
+story.append(Paragraph("<b>Full Service Marketing — Starter  |  $4,847/mo bundled</b>", S["subsection"]))
+story.append(b("Revenue ~$600K–$1M places firm in Starter tier ($400K–$1M range)."))
+story.append(b("Starter covers all channels: Google Ads, LSA, Meta, SEO, and Spanish-language campaigns."))
+story.append(b("Starter ad spend cap $25,000/mo — well above $5,500–$14,000 recommended range."))
+story.append(b("Stand-alone $5,697/mo — bundled saves $850/mo."))
 
 story.append(thin_rule())
 
-# ── Why This Coaching Package ──
-story.append(Paragraph("Why This Coaching Package", S["section"]))
+# ── Why This AI Package ──
+story.append(Paragraph("Why This AI &amp; Growth Infrastructure Package", S["section"]))
 
-story.append(Paragraph("<b>What it does for Casey:</b>", S["subsection"]))
-story.append(bd("Converts Analia's GM role into real operational leadership — a handoff path Casey can actually use."))
-story.append(bd("Builds the profit plan that ensures growth produces personal income, not just more overhead at two locations."))
+story.append(Paragraph("<b>What it does for him:</b>", S["subsection"]))
+story.append(bd("A Fractional CTO deploys Claude Enterprise and AI Skills for intake and drafting — without adding to Casey's management load."))
+story.append(bd("Every staff member trained on AI tools relevant to their role — Analia, paralegals, receptionist all work faster on repeatable tasks."))
 
-story.append(Paragraph("<b>Master's Circle  |  $4,600/mo bundled</b>", S["subsection"]))
-story.append(b("10-person team, GM, financial specialist, case manager — qualifies for Master's Circle."))
-story.append(b("No confirmed KPI or delegation framework — coaching bridges the gap from having a team to having a self-managing one."))
-story.append(b("Includes weekly group sessions, masterminds, workshops, and 1:1 support for Casey and Analia."))
+story.append(Paragraph("<b>Fractional CTO Level 1 (AI Accelerator L1)  |  $3,297/mo bundled</b>", S["subsection"]))
+story.append(b("Revenue $600K+ clears $500K LAW minimum; 10-person team with bilingual GM — not solo."))
+story.append(b("L1 done-with-you model selected: Casey lacks bandwidth to manage AI rollout independently."))
+story.append(b("Includes Claude Enterprise, pre-built Law Firm AI Skills, monthly CTO strategy calls, full staff training."))
+story.append(b("Stand-alone $3,797/mo — bundled saves $500/mo. AI Foundation Sprint $14,997 one-time available."))
 
 
 # ══════════════════════════════════════════════════════════
@@ -224,32 +230,40 @@ story.append(thin_rule())
 # ── Why This Ad Spend ──
 story.append(Paragraph("Why This Ad Spend", S["section"]))
 
-story.append(Paragraph("<b>What it does for Casey:</b>", S["subsection"]))
-story.append(bd("Conservative $10K/mo covers all channels immediately with minimal risk while campaigns prove out."))
-story.append(bd("Aggressive $45K/mo pursues the 2x growth goal and stays under the Growth tier cap."))
+story.append(Paragraph("<b>What it does for him:</b>", S["subsection"]))
+story.append(bd("$5,500/mo conservative launches paid coverage on Google and LSA for the first time — capturing high-intent family law searches currently going to CoilLaw."))
+story.append(bd("$14,000/mo aggressive adds Meta retargeting and cold audiences including Spanish-language targeting — no confirmed competitor is reaching this segment."))
 
 story.append(Paragraph("<b>Recommended Ad Spend Range:</b>", S["subsection"]))
-story.append(b("<b>Conservative $10,000/mo:</b> Family Law minimums — Google $3,500 + LSA $2,000 + Meta retargeting $1,200 + Meta cold $3,500."))
-story.append(b("<b>Aggressive $45,000/mo:</b> $8M goal x 20% / 12 = $133K. Tier 4 (1.0x) x Spanish (1.33x) = $177K. Capped at $45K."))
+story.append(b("<b>Conservative:</b> $5,500/mo — Google PPC $3,500 + LSA $2,000. Minimum viable coverage for Lehi family law."))
+story.append(b("<b>Aggressive:</b> $14,000/mo — all four channels. 20% rule: $1.2M goal x 20% / 12 = $20K; minus $4,847 fee = $15K; using $14K."))
 
-story.append(Paragraph("<b>Estimated ROI:</b>", S["subsection"]))
-story.append(b("<b>Conservative:</b> ~15 cases x $10K = $150K/mo vs. $10K spend = ~15x (est., default case value)."))
-story.append(b("<b>Aggressive:</b> ~79 cases x $10K = $790K/mo vs. $45K spend = ~18x (est., default case value)."))
-story.append(Paragraph("<i>Estimates. Confirm actual case value on call.</i>", S["disclaimer"]))
+story.append(Paragraph("<b>Estimated Return on Investment:</b>", S["subsection"]))
+story.append(b("<b>Conservative ($5,500/mo):</b> ~8 cases x $10K avg = ~$80K/mo vs. $5,500 spend = ~15x return (est.)."))
+story.append(b("<b>Aggressive ($14,000/mo):</b> ~25 cases x $10K avg = ~$250K/mo vs. $14,000 spend = ~18x return (est.)."))
+story.append(Paragraph("<i>All figures are estimates. Case value is practice area default ($10K) — confirm on call. Results not guaranteed.</i>", S["disclaimer"]))
+
+story.append(Paragraph("<b>How the range was calculated:</b>", S["subsection"]))
+story.append(b("<b>Conservative:</b> Family Law minimums: Google PPC $3,500 + LSA $2,000 = $5,500."))
+story.append(b("<b>Aggressive:</b> $1.2M target x 20% / 12 = $20K. Tier 4 (1.0x). Minus $4,847 fee = ~$15K; using $14,000."))
+story.append(b("Total aggressive: $8,144 fees + $14,000 ads = $22,144. Flag revenue on call — if $840K+, within 35% cap."))
 
 story.append(thin_rule())
 
 # ── If He Pushes Back ──
 story.append(Paragraph("If He Pushes Back", S["section"]))
 
-story.append(Paragraph('"We already get clients through Google — why pay for ads?"', S["objection_q"]))
-story.append(Paragraph("Organic gets you who finds you. Paid gets you who found CoilLaw first. CoilLaw has 308 reviews and a multi-location budget — every month without paid coverage is a month they extend their lead on the keywords Hoyer Law's reputation should be winning.", S["objection_a"]))
+story.append(Paragraph('"I\'m already getting leads from organic — why do I need paid?"', S["objection_q"]))
+story.append(Paragraph("CoilLaw (308 reviews, 4.8 stars) and Arnold Wadsworth are both confirmed in paid results for 'divorce attorney Lehi Utah.' Every high-intent click on Google Ads and LSA goes to them. Organic works — paid defends the top of the page.", S["objection_a"]))
 
-story.append(Paragraph('"Analia runs the office — do we really need coaching?"', S["objection_q"]))
-story.append(Paragraph("Having a GM is the head start. Master's Circle formalizes her authority with KPIs and a delegation protocol — without that structure, every real decision still routes to Casey regardless of the title.", S["objection_a"]))
+story.append(Paragraph('"I\'m not sure my team is ready for AI."', S["objection_q"]))
+story.append(Paragraph("Level 1 is done-with-you — the Fractional CTO leads the entire rollout. Casey and Analia do not manage it. Bilingual GM + 7 support staff is exactly the human foundation AI implementation requires.", S["objection_a"]))
 
-story.append(Paragraph('"The revenue estimate might be off."', S["objection_q"]))
-story.append(Paragraph("ZoomInfo shows ~$4M — unconfirmed. Even at $1.5M, $11,997/mo is under 10% of monthly revenue and well within the 35% cap. Confirm actual revenue and case value on the call.", S["objection_a"]))
+story.append(Paragraph('"Can we start with just the marketing?"', S["objection_q"]))
+story.append(Paragraph("More leads without AI-powered intake just means more manual work for Casey and the team. The Fractional CTO converts the marketing investment into operational leverage — handling intake responses and drafting so the team can scale without adding headcount.", S["objection_a"]))
+
+story.append(Paragraph('"What if the revenue estimate is wrong?"', S["objection_q"]))
+story.append(Paragraph("Revenue was not confirmed — $600K is estimated from team size; ZoomInfo says ~$4M. Both Starter and FCTO Level 1 qualify at $500K–$1.5M either way. If revenue confirms higher on the call, Growth + Master's Circle may be appropriate — Randy to assess.", S["objection_a"]))
 
 story.append(thin_rule())
 
@@ -257,16 +271,16 @@ story.append(thin_rule())
 story.append(Paragraph("Investment At A Glance", S["section"]))
 
 price_data = [
-    [Paragraph("<b>Full Service Marketing — Growth</b>", S["price_main"]),
-     Paragraph("$7,397/mo", S["price_main"])],
-    [Paragraph("Google Ads, LSA, Meta, Spanish campaigns, SEO, GBP, website optimization.", S["price_detail"]),
-     Paragraph("<strike>$8,997</strike> stand alone", S["price_detail"])],
-    [Paragraph("<b>Master's Circle</b>", S["price_main"]),
-     Paragraph("$4,600/mo", S["price_main"])],
-    [Paragraph("Weekly coaching, masterminds, workshops, 1:1 for Casey and Analia, profit plan build-out.", S["price_detail"]),
-     Paragraph("<strike>$4,997</strike> stand alone", S["price_detail"])],
+    [Paragraph("<b>Full Service Marketing — Starter</b>", S["price_main"]),
+     Paragraph("$4,847/mo", S["price_main"])],
+    [Paragraph("Google Ads, LSA, Meta, SEO, Spanish-language campaigns, website optimization.", S["price_detail"]),
+     Paragraph("<strike>$5,697</strike> stand alone", S["price_detail"])],
+    [Paragraph("<b>Fractional CTO Level 1</b>", S["price_main"]),
+     Paragraph("$3,297/mo", S["price_main"])],
+    [Paragraph("Claude Enterprise, Law Firm AI Skills, done-with-you rollout, staff training. Foundation Sprint $14,997 one-time (optional).", S["price_detail"]),
+     Paragraph("<strike>$3,797</strike> stand alone", S["price_detail"])],
     [Paragraph("<b>Recommended Ad Spend</b>", S["price_main"]),
-     Paragraph("$10,000–$45,000/mo", S["price_main"])],
+     Paragraph("$5,500–$14,000/mo", S["price_main"])],
     [Paragraph("Goes to Google, LSA, and Meta — not to SMB Team.", S["price_detail"]),
      Paragraph("", S["price_detail"])],
 ]
@@ -283,7 +297,7 @@ pt.setStyle(TableStyle([
 ]))
 story.append(pt)
 story.append(Paragraph(
-    "Total: $11,997/mo + $10,000–$45,000 ad spend  |  Save $1,997/mo by bundling  |  ~4.8%–19.2% of est. revenue (under 35% cap)",
+    "Total: $8,144/mo + $5,500–$14,000 ad spend  |  Save $1,350/mo by bundling  |  Confirm revenue on call",
     S["savings"]))
 
 # ── Build ──

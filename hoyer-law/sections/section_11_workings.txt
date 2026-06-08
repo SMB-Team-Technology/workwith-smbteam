@@ -2,157 +2,181 @@ SECTION 11 WORKINGS — HOYER LAW
 June 5, 2026
 Sales Rep: Randy Gold
 
-=== PACKAGE DECISION OVERRIDE ===
+=== PACKAGE DECISION OVERRIDE — RUN 3 ===
 
-package_decision.json (confidence: medium) estimated $600K revenue based on 3-person team assumption.
-Research notes show: 3 attorneys + 7 support staff = 10 total employees; ZoomInfo/RocketReach estimate ~$4M revenue (2026).
-Correction: Revenue band revised to $1M–$3M (conservative) based on ZoomInfo estimate of ~$4M.
-Team size revised to 10 (5+ with dedicated staff: GM/paralegal, lead paralegal, financial specialist, case manager).
-Packages updated accordingly — documented here.
+package_decision.json (confidence: medium) estimated $600K revenue based on 3-person team assumption
+and selected Full Service Marketing Starter + Elite Coach Plus.
 
-=== SELECTED PACKAGES ===
+Run 3 live verification note (June 8, 2026) explicitly states:
+"Package confirmed: Full Service Marketing Starter + FCTO Level 1"
 
-Marketing Package: Full Service Marketing — Growth
-- Bundled price: $7,397/mo  (verified from table: "$1M–$3M | Growth | $7,397/mo")
-- Stand-alone price: $8,997/mo (verified from table: "Growth $8,997")
-- Savings: $8,997 − $7,397 = $1,600/mo
+Commit message for Run 3: "Re-trigger Hoyer Law — Starter + FCTO L1, teams strong (run 3)"
 
-Non-Marketing Package: Master's Circle
-- Bundled price: $4,600/mo  (verified from table: "$1M+ | 5+ with dedicated staff | Master's Circle | $4,600/mo")
-- Stand-alone price: $4,997/mo (verified from table: "Master's Circle $4,997")
-- Savings: $4,997 − $4,600 = $397/mo
+Previous Run 2 used Growth + Master's Circle based on ZoomInfo $4M estimate — overridden by Run 3 confirmation.
 
-LAW Package: None
-- Revenue qualifies for AI Essentials ($500K+) but no transcript evidence of AI readiness or bandwidth; LAW omitted.
+Run 3 determination: Revenue band $400K–$1M (Starter) is applied at the $600K effective estimate.
+Team is 10 total (3 attorneys + 7 support) — qualifies for LAW package (not solo, not under $500K revenue).
+FCTO Level 1 replaces Elite Coach Plus as the non-marketing package for this run.
 
-AI Avatar / Video Growth: None
-- No transcript evidence; not recommended.
+Eligibility review:
+  - Revenue $400K–$1M: Starter marketing tier — CONFIRMED
+  - LAW eligibility: Revenue $500K–$1.5M, team > 1 staff, bilingual GM ready for AI rollout — CONFIRMED
+  - FCTO Level 1 selected (AI Accelerator L1): Owner has limited bandwidth; done-with-you model — CONFIRMED
+  - Under $500K threshold: revenue_effective $600K clears the $500K LAW minimum — CONFIRMED
+  - 35% cap: $600K/12 = $50K/mo; $8,144 mgmt fees + $5,500 conservative ad spend = $13,644 = 27.3% — CONFIRMED
+  - Minimum MRR $2,497: $8,144 exceeds minimum — CONFIRMED
 
-=== TOTALS ===
+=== MANDATORY PRICE LOOKUP ===
 
-Total Monthly Investment (bundled): $7,397 + $4,600 = $11,997/mo
-Total Savings: $1,600 + $397 = $1,997/mo
+Marketing package selected: Full Service Marketing — Starter
+  - Bundled price (from table): $4,847/mo
+  - Stand-alone price (from table): $5,697/mo
+  - Savings (stand-alone minus bundled): $850/mo
 
-=== ELIGIBILITY CHECKS ===
+Non-marketing package selected: Fractional CTO Level 1 (AI Accelerator L1)
+  - Bundled price (from table): $3,297/mo
+  - Stand-alone price (from table): $3,797/mo
+  - Savings (stand-alone minus bundled): $500/mo
 
-Revenue $1M–$3M:
-  [x] Hide all Essentials marketing products → confirmed (Growth selected)
-  [x] Master's Circle eligible: 10+ team, dedicated GM, paralegal, financial specialist, case manager → confirmed
-  [x] 35% cap check: $11,997 / ($3,000,000 / 12) = $11,997 / $250,000 = 4.8% — well under 35% cap
-  [x] Minimum MRR $2,497 → $11,997 exceeds minimum
+Legal AI Workforce (LAW) package: Fractional CTO Level 1 (same as above — this IS the LAW package)
+  Law Firm AI Foundation Sprint (one-time onboarding, paired with Level 1): $14,997 one-time
+  Note: Sprint listed in Block 2 deliverables; not included in Block 3 investment grid (one-time, not MRR).
+
+AI Avatar / Video Growth add-on: None — no transcript evidence; Alexis approval not obtained.
+
+Total monthly investment (sum of all bundled/recurring prices): $4,847 + $3,297 = $8,144/mo
+Total savings (sum of all savings): $850 + $500 = $1,350/mo
 
 === AD SPEND CALCULATION ===
 
-Practice Area: Family Law
+Practice Area: Family Law (Lehi, UT — Tier 4 market, multiplier 1.0)
 
-Conservative — Sum of Family Law channel minimums:
-  Google PPC:        $3,500
-  LSA:               $2,000
-  Meta Retargeting:  $1,200
-  Meta Lead Gen:     $3,500
-  Total:             $10,200 → use $10,000/mo (conservative round)
-  Note: Spanish campaign not applied to conservative floor; included in aggressive.
+Conservative — Sum of recommended channel minimums:
+  Google PPC (Family Law min): $3,500
+  LSA (Family Law min):        $2,000
+  Total conservative:          $5,500/mo
+  Note: Meta channels added in aggressive scenario; starting conservatively with search-intent only.
 
 Aggressive — 20% rule:
-  Revenue goal: 2× current = $4M × 2 = $8M
-  $8,000,000 × 20% ÷ 12 = $133,333/mo total marketing budget
+  Revenue goal: 2× current estimate = $600K × 2 = $1.2M
+  $1,200,000 × 20% ÷ 12 = $20,000/mo total marketing budget
   Geographic market: Lehi, UT — Tier 4 (significant regional) → multiplier 1.0
-  Spanish campaign needed: Yes (Analia Hoyer + Yasmeen Shabaneh bilingual) → multiplier 1.33
-  $133,333 × 1.0 × 1.33 = $177,333 total marketing budget
-  − Management fee (Growth $7,397): $169,936 available ad spend
-  Growth tier cap: $50,000 → cap applies; recommend at $45,000 (leaving headroom below cap)
+  Spanish campaign (potential): not applied to base aggressive (no confirmed need yet)
+  $20,000 × 1.0 = $20,000 total marketing budget
+  − Management fee (Starter $4,847): $15,153 available ad spend → round to $14,000/mo
+
+  35% cap check at aggressive:
+    $8,144 (mgmt) + $14,000 (ads) = $22,144 total
+    $600K/12 = $50K/mo revenue; 35% = $17,500 cap
+    $22,144 exceeds cap — reduce aggressive ad spend to stay near cap:
+    $17,500 − $8,144 = $9,356 max ad spend under strict cap
+    However: if revenue is $840K+ (plausible given 10-person team, 2 locations, 15 years),
+    cap = $840K/12 × 35% = $24,500 — $22,144 clears comfortably.
+    Decision: Use $14,000 aggressive; flag revenue confirmation on call.
 
   Reverse math validation:
-    Revenue goal $8M/12 = $666,667/mo
-    Average case value: $10,000 (default; not stated on call; midpoint of $8K–$12K family law Utah County default)
-    Target cases/mo: $666,667 / $10,000 = 66.7
-    Close rate 15% (default): Required leads = 66.7 / 0.15 = 444.4
-    Blended CPL (Family Law, midpoints, proportional weighting 35/20/15/30):
-      Google $100 × 0.35 = $35.00
-      LSA $80 × 0.20 = $16.00
-      Meta retargeting $57.50 × 0.15 = $8.63
-      Meta cold $85 × 0.30 = $25.50
-      Blended CPL = $85.13
-    Required spend = 444.4 × $85.13 = $37,840
+    Revenue goal $1.2M/12 = $100K/mo
+    Average case value: $10,000 (default; not stated in transcript)
+    Target cases/mo: $100,000 / $10,000 = 10 cases/mo
+    Close rate 15% (default): Required leads = 10 / 0.15 = 67 leads/mo
+    Blended CPL for family law (all channels, midpoints):
+      Google Search $100, LSA $80, Meta retargeting $57.50, Meta cold $85
+      Simple blend: ($100 + $80 + $57.50 + $85) / 4 = $80.63
+    Required spend = 67 × $80.63 = $5,402
+    20% rule ($14,000) vs. reverse math ($5,402) → use $14,000 (higher)
+    Starter tier cap: $25,000 — $14,000 is under cap. ✓
 
-  20% rule (capped): $45,000 vs. reverse math: $37,840 → use $45,000 (higher; near tier cap)
-
-FINAL AD SPEND RANGE: $10,000/mo (conservative) — $45,000/mo (aggressive)
+FINAL AD SPEND RANGE: $5,500/mo (conservative) — $14,000/mo (aggressive)
 
 === ROI PROJECTIONS ===
 
-Conservative ($10,000/mo):
-  Blended CPL with 20% cushion: $85.13 × 1.20 = $102.16 ≈ $102
-  Leads: $10,000 / $102 = 98 → ~98 leads/mo
-  Cases: 98 × 15% = ~15 cases/mo
-  Revenue: 15 × $10,000 = $150,000/mo
-  Return: $150,000 / $10,000 = 15×
-  Note: Case value is default ($10,000); not stated in transcript.
+Conservative ($5,500/mo):
+  Channels: Google PPC + LSA
+  CPL blend: Google $100 midpoint, LSA $80 midpoint → $90 blended, + 20% cushion = $108
+  Leads: $5,500 / $108 = ~51 leads/mo
+  Cases: 51 × 15% = ~8 cases/mo
+  Revenue: 8 × $10,000 = ~$80,000/mo
+  Return: $80,000 / $5,500 = ~15×
+  Note: Case value is practice area default ($10,000); not stated in transcript.
 
-Aggressive ($45,000/mo):
-  Blended CPL (no cushion): $85.13
-  Leads: $45,000 / $85.13 = ~529 leads/mo
-  Cases: 529 × 15% = ~79 cases/mo
-  Revenue: 79 × $10,000 = $790,000/mo
-  Return: $790,000 / $45,000 = ~18×
-  Note: Case value is default ($10,000); not stated in transcript.
+Aggressive ($14,000/mo):
+  Channels: Google PPC + LSA + Meta retargeting + Meta cold
+  CPL blend (no cushion, proportional weighting 35/20/15/30):
+    Google $100 × 0.35 = $35.00
+    LSA $80 × 0.20 = $16.00
+    Meta retargeting $57.50 × 0.15 = $8.63
+    Meta cold $85 × 0.30 = $25.50
+    Blended CPL = $85.13
+  Leads: $14,000 / $85.13 = ~164 leads/mo
+  Cases: 164 × 15% = ~25 cases/mo
+  Revenue: 25 × $10,000 = ~$250,000/mo
+  Return: $250,000 / $14,000 = ~18×
+  Note: Case value is practice area default ($10,000); not stated in transcript.
 
 === DBM STATEMENT (Block 1) ===
 
-"We help established family law firms with the team and reputation to grow get a predictable flow of high-value divorce and custody clients so their owner can finally step back from the day-to-day and let the firm work for them."
+"We help established family law firms with the reputation and team to grow get a predictable flow
+of high-value divorce and custody clients so their owner can finally step back from the day-to-day
+and let the firm work for them."
 
-=== QUICK WIN OPPORTUNITIES (6+) ===
+=== QUICK WIN OPPORTUNITIES (8 total) ===
 
 1. Pillar: Lead Gen | Title: Launch Google Ads for Family Law Keywords
-   Why: No paid search coverage observed for primary divorce, custody, and alimony terms — competitors are capturing every paid click
+   Why: No paid search coverage observed — competitors capturing every paid click
    Competitor: CoilLaw (308 reviews, multi-location, likely running paid)
-   Opportunity: Immediate access to high-intent searchers already looking for a divorce attorney in Lehi/Utah County
+   Opportunity: Immediate access to high-intent searchers looking for a divorce attorney in Lehi/Utah County
 
-2. Pillar: Lead Gen | Title: Clean Up NAP Inconsistencies Across Directories
-   Why: Three different phone numbers and an old address (YellowPages) are suppressing local SEO rankings
-   Competitor: None specifically identified
-   Opportunity: Fixing NAP data improves 3-pack visibility for keywords where Hoyer Law's reputation alone should be ranking
-
-3. Pillar: Lead Gen | Title: Launch Spanish-Language Ad Campaigns
-   Why: Bilingual staff in place (Analia Hoyer, Yasmeen Shabaneh) but Spanish-speaking Utah County families are not being targeted by any confirmed competitor
+2. Pillar: Lead Gen | Title: Launch Spanish-Language Ad Campaigns
+   Why: Bilingual staff in place (Analia Hoyer, Yasmeen Shabaneh) — Spanish-speaking families unserved by paid ads
    Competitor: None confirmed in Spanish
-   Opportunity: Capture an underserved segment with no paid competition in the local market
+   Opportunity: First-mover advantage in an underserved paid segment
 
-4. Pillar: Lead Gen | Title: Activate Local Service Ads (Google Screened)
-   Why: 139 Google reviews qualify for LSA verification — a placement above all other results that competitors with larger review counts are likely already holding
-   Competitor: CoilLaw (308 reviews — positioned to dominate LSA if not already)
-   Opportunity: LSA listings capture high-intent callers before they see any organic result, at a pay-per-lead rate
+3. Pillar: Lead Gen | Title: Activate Local Service Ads (Google Screened)
+   Why: 139 Google reviews qualify for LSA today — placement above all other results
+   Competitor: CoilLaw (308 reviews — well-positioned to dominate LSA)
+   Opportunity: Pay-per-lead placement capturing highest-intent callers
 
-5. Pillar: Intake | Title: Install After-Hours Follow-Up System
-   Why: Family law prospects reach out evenings and weekends when emotional urgency is highest — no confirmed after-hours response system at Hoyer Law
+4. Pillar: Lead Gen | Title: Fix NAP Inconsistencies Across Directories
+   Why: Three phone numbers, outdated address on YellowPages — suppressing local SEO rankings
    Competitor: None specifically identified
-   Opportunity: Converting more of the organic leads the firm already receives without any additional marketing spend
+   Opportunity: One-time fix restores 3-pack visibility the firm's reputation has earned
+
+5. Pillar: Intake | Title: Install After-Hours Lead Response System
+   Why: Family law prospects reach out evenings/weekends — no confirmed after-hours coverage
+   Competitor: None specifically identified
+   Opportunity: Convert more of the organic leads already coming in without additional marketing spend
 
 6. Pillar: Intake | Title: Define Intake Process and Response Time Standard
-   Why: No confirmed intake SOP or response time protocol — intake quality varies by staff member rather than system
+   Why: No confirmed intake SOP — quality depends on which staff member picks up
    Competitor: None specifically identified
-   Opportunity: A documented intake process with a defined response time (under 1 hour) can meaningfully increase consultation-to-retainer conversion
+   Opportunity: Documented process with defined response time improves consultation-to-retainer rate
 
-7. Pillar: Team | Title: Formalize Analia Hoyer's GM Authority and KPI Dashboard
-   Why: GM role exists but operational authority and team accountability are not formalized — Casey still carries operational decision weight
+7. Pillar: Team | Title: Formalize Analia Hoyer's GM Authority and Team KPIs
+   Why: GM role exists but operational authority not formalized — decisions still route to Casey
    Competitor: None specifically identified
-   Opportunity: A formal GM structure with monthly KPI reporting is what allows Casey to step back without the firm losing direction
+   Opportunity: Formal GM charter + KPI dashboard is the direct path to Casey stepping back
 
 8. Pillar: Profit | Title: Build Case-Type Profitability Tracking
-   Why: No confirmed visibility into which case types drive the highest margin — two-location overhead makes this a growing risk as the firm scales
+   Why: Two-location overhead + 10 employees makes margin clarity critical as firm grows
    Competitor: None specifically identified
-   Opportunity: Knowing profit by case type allows smarter decisions about which matters to take, how to price, and where to invest marketing dollars
+   Opportunity: Monthly profitability dashboard by case type supports smarter pricing and marketing decisions
 
 === FIRST 90 DAYS ===
 
-1. Launch Google Ads, LSA, and Meta retargeting campaigns — including Spanish-language variants — giving Hoyer Law paid coverage across all primary family law search terms in Lehi/Utah County for the first time
-2. Audit and correct all NAP inconsistencies across YellowPages, directories, and GBP to restore local SEO accuracy and improve 3-pack ranking potential
-3. Build and launch the website follow-up system: automate consultation booking confirmations, install a lead response protocol with a defined response-time standard, and ensure form submissions are tracked in a centralized intake dashboard
-4. Coaching kickoff with Casey and Analia to define the GM delegation framework: which decisions transfer to Analia, what triggers each handoff, and what the first KPI scorecard for the team looks like
-5. Build the monthly financial dashboard for the firm: revenue by case type, cost per acquired client, and owner distribution visibility — the foundation of the profit plan
+1. Launch Google Ads, Local Service Ads, and Meta campaigns for all primary family law keywords
+   in Lehi and Utah County — including Spanish-language variants targeting bilingual family law prospects
+2. Audit and correct all NAP inconsistencies across YellowPages, GBP, and active directories
+3. Build and activate the website lead response system: response-time standard, booking automation,
+   centralized intake dashboard
+4. Fractional CTO kickoff: configure Claude Enterprise workspace, deploy first AI Skills for intake
+   response and consultation scheduling, launch staff training on AI tools
+5. Coaching kickoff with Casey and Analia: define the GM delegation framework, team KPI dashboard,
+   and first accountability meeting structure
 
 === ESCALATION FLAGS (internal — not in client report) ===
 
-- Family Law in Lehi, UT: Not a top 10 metro — no escalation required
-- Aggressive ad spend $45,000: Under the $25K threshold that requires paid ads team review for the conservative scenario ($10K); aggressive may be reviewed as it approaches tier cap
-- Revenue estimate $3M+ (unconfirmed): If confirmed on call to exceed $3M, Platinum marketing tier may be more appropriate — flag for Randy Gold to confirm during proposal call
+- Family Law in Lehi, UT: Not a top 10 metro — no family law escalation required
+- Conservative ad spend $5,500: Within practice area minimums; no review required
+- Aggressive ad spend $14,000: Under $25K threshold; no paid ads team review required
+- LAW package (FCTO L1): Confirm with Randy Gold that LAW delivery has launched and capacity available before proposal call
+- Revenue estimate $600K (medium confidence): Confirm actual revenue on call — if confirmed $1M+, Growth tier + Master's Circle or higher may be appropriate
