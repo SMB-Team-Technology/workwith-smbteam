@@ -140,14 +140,14 @@ story.append(b("Conservative $10K ad spend: est. 13 cases x $9K avg = $117K/mo, 
 
 story.append(thin_rule())
 
-story.append(Paragraph("Why This Coaching Package", S["section"]))
+story.append(Paragraph("Why This Operations Package", S["section"]))
 story.append(Paragraph("<b>What it does for him:</b>", S["subsection"]))
-story.append(bd("Builds the intake system and KPI framework that turns new lead flow into signed cases at a predictable conversion rate."))
-story.append(bd("Structured path from Stage 4 (owner-operator) to Stage 5 (CEO) — gives Stephen his time back without a new full-time hire."))
+story.append(bd("Builds the operational infrastructure — intake systems, team accountability, management structure — so nine attorneys across three offices run without Stephen as the bottleneck."))
+story.append(bd("Dedicated Fractional COO specializing in law firm operations, plus Elite Coach group deliverables included in the package."))
 
-story.append(Paragraph("<b>Elite Coach Plus  |  $3,200/mo bundled</b>", S["subsection"]))
-story.append(b("~$1M revenue, 12-person team, three offices — weekly group coaching and masterminds for Stage 4 to 5 transition."))
-story.append(b("No confirmed intake process or KPI framework — coaching addresses both. Stand-alone $3,497; bundle saves $297/mo."))
+story.append(Paragraph("<b>FCOO Advisor  |  $3,297/mo bundled</b>", S["subsection"]))
+story.append(b("~$1M revenue, 12-person team, 3 offices with no confirmed ops layer — FCOO Advisor builds the management structure to handle increased case volume."))
+story.append(b("Includes weekly group coaching, practice area masterminds, quarterly workshops, and annual in-person workshop. Stand-alone $3,797; bundle saves $500/mo."))
 
 
 # PAGE 2
@@ -173,7 +173,7 @@ story.append(Paragraph("<i>Business Law CPL benchmarks, NYC Tier 1. Blended case
 story.append(Paragraph("<b>How the numbers were built:</b>", S["subsection"]))
 story.append(b("<b>Conservative:</b> Channel minimums. PPC $3,500 + LSA $2,000 + Meta $2,700 = $10,200 rounded to $10,000."))
 story.append(b("<b>Aggressive:</b> $2M goal x 20% / 12 x 1.5 (Tier 1) = $50,000 — capped at Starter limit of $25,000."))
-story.append(b("$8,047 + $10,000 = $18,047/mo = ~1.8% of revenue. Aggressive $33,047 = ~3.3%. Both under the 35% cap."))
+story.append(b("$8,144 + $10,000 = $18,144/mo = ~1.8% of revenue. Aggressive $33,144 = ~3.3%. Both under the 35% cap."))
 
 story.append(thin_rule())
 
@@ -195,8 +195,8 @@ story.append(Paragraph("Investment At A Glance", S["section"]))
 price_data = [
     [Paragraph("<b>Full Service Marketing Starter</b>", S["price_main"]), Paragraph("$4,847/mo", S["price_main"])],
     [Paragraph("Google Ads, LSA, website rebuild, local SEO, Meta ads, monthly reporting.", S["price_detail"]), Paragraph("<strike>$5,697</strike> stand alone", S["price_detail"])],
-    [Paragraph("<b>Elite Coach Plus</b>", S["price_main"]), Paragraph("$3,200/mo", S["price_main"])],
-    [Paragraph("Weekly group coaching, masterminds, intake optimization, KPI framework, workshops.", S["price_detail"]), Paragraph("<strike>$3,497</strike> stand alone", S["price_detail"])],
+    [Paragraph("<b>FCOO Advisor</b>", S["price_main"]), Paragraph("$3,297/mo", S["price_main"])],
+    [Paragraph("Fractional COO, operational roadmap, team accountability, coaching sessions, masterminds, workshops.", S["price_detail"]), Paragraph("<strike>$3,797</strike> stand alone", S["price_detail"])],
     [Paragraph("<b>Recommended Ad Spend</b>", S["price_main"]), Paragraph("$10,000–$25,000/mo", S["price_main"])],
     [Paragraph("Goes to Google, LSA, and Meta — not to SMB Team.", S["price_detail"]), Paragraph("", S["price_detail"])],
 ]
@@ -211,7 +211,7 @@ pt.setStyle(TableStyle([
 ]))
 story.append(pt)
 story.append(Paragraph(
-    "Total: $8,047/mo + $10,000–$25,000 ad spend  |  Save $1,147/mo by bundling  |  1.8%–3.3% of revenue (under 35% cap)",
+    "Total: $8,144/mo + $10,000–$25,000 ad spend  |  Save $1,350/mo by bundling  |  1.8%–3.3% of revenue (under 35% cap)",
     S["savings"]))
 
 doc.build(story, onFirstPage=add_page_elements, onLaterPages=add_page_elements)
