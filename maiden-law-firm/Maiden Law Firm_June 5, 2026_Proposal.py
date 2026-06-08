@@ -103,16 +103,10 @@ PACKAGES = [
         "Website · Google Ads · LSA · Local SEO · Facebook & Instagram",
         "1D4ED8",
     ),
-    (
-        "ELITE COACH PLUS",
-        "$3,200", "$3,497/mo",
-        "Dedicated coach · Weekly coaching · Intake + team systems",
-        "6D28D9",
-    ),
 ]
 
-BUNDLE_TOTAL   = "$8,047 / mo"
-BUNDLE_SAVINGS = "Save $1,147/mo by bundling"
+BUNDLE_TOTAL   = "$4,847 / mo"
+BUNDLE_SAVINGS = "Save $850/mo vs. stand-alone"
 
 AD_SPEND_NOTE = (
     "+ Recommended ad spend: $10,000–$20,000/mo paid directly to Google/Meta"
@@ -127,8 +121,8 @@ AGGRESSIVE_RESULT   = "~$100,000 revenue · ~5× ROAS"
 TIMELINE = [
     ("Day 1",   "Google Ads campaigns go live"),
     ("Day 14",  "LSA application submitted; review campaign starts"),
+    ("Week 4",  "Review request campaign begins — targeting 50+ in 90 days"),
     ("Week 6",  "Website rebuild — bio, practice pages, city pages"),
-    ("Week 8",  "Elite Coach kickoff — intake protocols defined"),
     ("Month 3", "50+ new reviews; 3-pack visibility improving"),
 ]
 

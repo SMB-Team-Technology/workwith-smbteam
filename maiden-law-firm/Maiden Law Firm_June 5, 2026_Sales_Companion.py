@@ -199,19 +199,12 @@ story.append(b("Site missing attorney bio, practice area pages, geo-targeting �
 
 story.append(thin_rule())
 
-# ── Why This Coaching Package ──
-story.append(Paragraph("Why This Coaching Package", S["section"]))
-
-story.append(Paragraph("<b>What it does for her:</b>", S["subsection"]))
-story.append(bd("Accountability partner keeps Brooke building systems instead of personally running everything as leads grow."))
-story.append(bd("Intake protocols and delegation SOPs built in 90 days — so marketing leads don't hit an attorney bottleneck."))
-story.append(bd("Weekly group coaching with peer PI owners at the same Stage 3-to-4 transition."))
-
-story.append(Paragraph("<b>Elite Coach Plus  |  $3,200/mo bundled</b>", S["subsection"]))
-story.append(b("Revenue $400K–$1M — Elite Coach Plus is the correct coaching tier match."))
-story.append(b("No intake specialist confirmed — delegation and systems building is the immediate coaching priority."))
-story.append(b("No financial framework in place — coach establishes revenue baseline and profit tracking in 90 days."))
-story.append(b("Stage 3 firm needs operational coaching alongside marketing to prevent a capacity bottleneck."))
+# ── Phase 2 Note ──
+story.append(Paragraph("Phase 2 Note (For Randy Gold)", S["section"]))
+story.append(Paragraph("<b>Coaching is not included in Phase 1 per sales rep directive.</b>", S["subsection"]))
+story.append(b("Phase 1 = Full Service Marketing — Starter only. Do not present coaching as part of this proposal."))
+story.append(b("Phase 2 recommendation: Add Elite Coach Plus ($3,200/mo bundled) once marketing launches and Brooke sees lead volume growing — frame as the system that converts more leads into signed cases without her personally running intake."))
+story.append(b("Natural trigger: After first 60–90 days when she's asking 'how do I handle all these leads?' — that is the coaching conversation."))
 
 
 # ══════════════════════════════════════════════════════════
@@ -232,7 +225,7 @@ story.append(bd("Conservative spend projects ~5–6 cases/mo ($41K revenue) vs. 
 story.append(Paragraph("<b>Ad Spend Range &amp; ROI (estimates — confirm case value and close rate):</b>", S["subsection"]))
 story.append(b("<b>Conservative $10K/mo:</b> ~37 leads x 15% close x $7,500 = ~$41,000 revenue. ~4x return. PPC $5K + LSA $3K + Meta $2K."))
 story.append(b("<b>Aggressive $20K/mo:</b> ~89 leads x 15% close x $7,500 = ~$100,000 revenue. ~5x return. Exceeds Starter cap — Growth tier upgrade or 10% overage required."))
-story.append(b("<b>35% cap:</b> $8,047 fees + $10K ads = $18,047 / est. $41,667 mo rev = 43%. Cap compliance requires ~$640K+ annual rev. Confirm with Brooke."))
+story.append(b("<b>35% cap:</b> $4,847 fees + $10K ads = $14,847 / est. $41,667 mo rev = 36%. Near cap — confirm revenue is at least ~$510K annually. If revenue is lower, reduce ad spend first."))
 
 story.append(thin_rule())
 
@@ -258,10 +251,6 @@ price_data = [
      Paragraph("$4,847/mo", S["price_main"])],
     [Paragraph("Website rebuild, Google Ads, LSA, local SEO, Facebook/Instagram ads.", S["price_detail"]),
      Paragraph("<strike>$5,697</strike> stand alone", S["price_detail"])],
-    [Paragraph("<b>Elite Coach Plus</b>", S["price_main"]),
-     Paragraph("$3,200/mo", S["price_main"])],
-    [Paragraph("Dedicated coach, weekly group sessions, intake + team systems coaching.", S["price_detail"]),
-     Paragraph("<strike>$3,497</strike> stand alone", S["price_detail"])],
     [Paragraph("<b>Recommended Ad Spend</b>", S["price_main"]),
      Paragraph("$10,000–$20,000/mo", S["price_main"])],
     [Paragraph("Goes to Google, LSA, and Meta — not to SMB Team. Confirm tier/overage for $20K.", S["price_detail"]),
@@ -276,11 +265,10 @@ pt.setStyle(TableStyle([
     ("BOTTOMPADDING", (0,0), (-1,-1), 1),
     ("LINEBELOW", (0,1), (-1,1), 0.5, RULE_GRAY),
     ("LINEBELOW", (0,3), (-1,3), 0.5, RULE_GRAY),
-    ("LINEBELOW", (0,5), (-1,5), 0.5, RULE_GRAY),
 ]))
 story.append(pt)
 story.append(Paragraph(
-    "Total SMB fees: $8,047/mo + $10K–$20K ad spend  |  Save $1,147/mo by bundling  |  Confirm revenue for 35% cap compliance",
+    "Total SMB fees: $4,847/mo + $10K–$20K ad spend  |  Save $850/mo vs. stand-alone  |  Phase 1: marketing only per sales rep directive",
     S["savings"]))
 
 # ── Build ──
