@@ -1,6 +1,7 @@
 """
-Sales Companion PDF — Hoyer Law
-SMB Team  |  June 5, 2026  |  Rep: Randy Gold
+Sales Companion PDF — The Law Offices of David P. Shapiro
+SMB Team | June 11, 2026 | Rep: Jacob Meissner
+FOR INTERNAL USE ONLY — DO NOT SHARE WITH CLIENT
 """
 
 from reportlab.lib.pagesizes import letter
@@ -24,7 +25,7 @@ WHITE = HexColor("#FFFFFF")
 RED_WARNING = HexColor("#CC0000")
 RED_ACCENT = HexColor("#C0392B")
 
-OUTPUT_PATH = "hoyer-law/Hoyer_Law_06052026_Sales_Companion.pdf"
+OUTPUT_PATH = "the-law-offices-of-david-p-shapiro/The_Law_Offices_of_David_P_Shapiro_06112026_Sales_Companion.pdf"
 
 
 def add_page_elements(canvas, doc):
@@ -136,8 +137,8 @@ def quote_block(text):
 # ══════════════════════════════════════════════════════════
 story = []
 
-story.append(Paragraph("Hoyer Law (Hoyer Law Firm)", S["title"]))
-story.append(Paragraph("Sales Companion  |  June 5, 2026  |  Rep: Randy Gold", S["subtitle"]))
+story.append(Paragraph("The Law Offices of David P. Shapiro", S["title"]))
+story.append(Paragraph("Sales Companion  |  June 11, 2026  |  Rep: Jacob Meissner", S["subtitle"]))
 story.append(thin_rule())
 
 # ── Prospect Snapshot ──
@@ -149,12 +150,12 @@ snap = [
      Paragraph("<b>Stage</b>", S["snap_label"]),
      Paragraph("<b>Close Rate</b>", S["snap_label"]),
      Paragraph("<b>Location</b>", S["snap_label"])],
-    [Paragraph("Casey Hoyer", S["snap_value"]),
-     Paragraph("~$600K est.", S["snap_value"]),
-     Paragraph("10 (3 atty)", S["snap_value"]),
+    [Paragraph("David P. Shapiro", S["snap_value"]),
+     Paragraph("Est. $500K+ (unconfirmed)", S["snap_value"]),
+     Paragraph("7 (3 atty + 4 staff)", S["snap_value"]),
      Paragraph("Stage 4", S["snap_value"]),
-     Paragraph("15% default", S["snap_value"]),
-     Paragraph("Lehi + St. George, UT", S["snap_value"])],
+     Paragraph("15% (default)", S["snap_value"]),
+     Paragraph("San Diego, CA (2 locations)", S["snap_value"])],
 ]
 t1 = Table(snap, colWidths=[1.15*inch, 1.2*inch, 0.8*inch, 0.7*inch, 0.7*inch, 1.15*inch])
 t1.setStyle(TableStyle([
@@ -167,25 +168,27 @@ story.append(t1)
 story.append(Spacer(1, 4))
 
 # ── Dominant Buying Motive ──
-story.append(Paragraph("Dominant Buying Motive: FREEDOM", S["section"]))
-story.append(Paragraph("Casey wants a firm that runs itself so he can practice law on his terms and stop managing every detail of the business.", S["subsection"]))
+story.append(Paragraph("Dominant Buying Motive: SCALE AND DOMINATE", S["section"]))
+story.append(Paragraph("David wants to be recognized as the undisputed #1 criminal defense firm in San Diego County — and to build a firm that generates consistent revenue whether or not he is personally present.", S["subsection"]))
 
-story.append(quote_block("No Fathom transcript available — DBM inferred from web research and firm profile."))
+# No transcript — inferred signals from research
+story.append(quote_block("Firm describes itself as 'one of San Diego's largest criminal defense law firms' — the ambition to dominate is built into the firm's public identity."))
 story.append(Spacer(1, 1))
-story.append(quote_block("15+ years building a firm with a GM (wife Analia), 10 staff, and 2 locations — the infrastructure of freedom exists, but the growth engine to make it sustainable does not."))
+story.append(quote_block("12 consecutive Super Lawyers listings, BBB Torch Award for Ethics, 'San Diego's Most Influential People' 2022/2024/2025 — David is building a legacy brand, not just a practice."))
 story.append(Spacer(1, 2))
 
 story.append(Paragraph("<b>What he wants:</b>", S["subsection"]))
-story.append(bd("<b>Predictable client flow.</b> Stop relying on organic and referrals — build a paid pipeline that delivers family law clients every month."))
-story.append(bd("<b>Operational freedom.</b> Let Analia and the team run day-to-day so he can focus on the cases he chooses."))
-story.append(bd("<b>AI-powered leverage.</b> Multiply staff output on intake, drafting, and client updates without adding headcount."))
+story.append(bd("<b>Market dominance.</b> To be the recognized #1 criminal defense firm in San Diego County."))
+story.append(bd("<b>Scalable revenue.</b> Consistent case flow that does not depend on David personally handling every decision."))
+story.append(bd("<b>Legacy and freedom.</b> A documented, valuable firm he can scale, pass on, or sell on his terms."))
 
 story.append(Spacer(1, 2))
 
 story.append(Paragraph("<b>What is stopping him:</b>", S["subsection"]))
-story.append(b("<b>No paid advertising.</b> CoilLaw (369 reviews) and Arnold Wadsworth are capturing every paid click while Hoyer Law relies entirely on organic."))
-story.append(b("<b>Review velocity gap.</b> CoilLaw grew from 308 to 369 reviews in weeks — their acceleration vs. Hoyer Law's 139 is suppressing 3-pack placement."))
-story.append(b("<b>No AI infrastructure.</b> 10-person bilingual firm with a GM is AI-ready — no one is leading the rollout."))
+story.append(b("<b>No paid digital presence.</b> No Google Ads, LSA, or Meta Ads — competitors capture emergency searches while the firm relies on SEO and radio."))
+story.append(b("<b>Review gap.</b> Sevens Legal: 800+ Google reviews vs. ~204 here — 4:1 gap suppressing local pack rankings."))
+story.append(b("<b>Dead domain.</b> davidshapiro.com resolves to a 404 — all referrals to that URL are lost prospects."))
+story.append(b("<b>Revenue unconfirmed.</b> No transcript — defaults applied. Confirm actual revenue on call to validate tier."))
 
 story.append(thin_rule())
 
@@ -193,29 +196,29 @@ story.append(thin_rule())
 story.append(Paragraph("Why This Marketing Package", S["section"]))
 
 story.append(Paragraph("<b>What it does for him:</b>", S["subsection"]))
-story.append(bd("Converts 15 years of reputation and 139 reviews into a paid lead engine — entering Google, LSA, and Meta for the first time while competitors are already spending."))
-story.append(bd("Spanish-language campaigns give Hoyer Law first-mover advantage in a bilingual market segment no competitor has claimed."))
+story.append(bd("Puts the firm above Sevens Legal and Dod Law in Google at the moment of arrest — the highest-intent moment in criminal defense."))
+story.append(bd("LSA Google Screened captures pay-per-lead calls above all paid ads and map pack results."))
+story.append(bd("Retargeting keeps the firm visible to every prospect who visited the site but did not call."))
 
 story.append(Paragraph("<b>Full Service Marketing — Starter  |  $4,847/mo bundled</b>", S["subsection"]))
-story.append(b("Revenue ~$600K–$1M places firm in Starter tier ($400K–$1M range)."))
-story.append(b("Starter covers all channels: Google Ads, LSA, Meta, SEO, and Spanish-language campaigns."))
-story.append(b("Starter ad spend cap $25,000/mo — well above $5,500–$14,000 recommended range."))
-story.append(b("Stand-alone $5,697/mo — bundled saves $850/mo."))
+story.append(b("San Diego Tier 2 market — $60–$150 CPCs; minimum viable paid presence is $5,500/mo ad spend."))
+story.append(b("Covers Google PPC, LSA, Meta Ads, SEO, and website CRO — all channels currently uncontested."))
+story.append(b("Stand-alone $5,697/mo; bundled saves $850/mo. If revenue confirms $1M+, upgrade to Growth tier."))
 
 story.append(thin_rule())
 
-# ── Why This AI Package ──
-story.append(Paragraph("Why This AI &amp; Growth Infrastructure Package", S["section"]))
+# ── Why This Coaching Package ──
+story.append(Paragraph("Why This Coaching Package", S["section"]))
 
 story.append(Paragraph("<b>What it does for him:</b>", S["subsection"]))
-story.append(bd("A Fractional CTO deploys Claude Enterprise and AI Skills for intake and drafting — without adding to Casey's management load."))
-story.append(bd("Every staff member trained on AI tools relevant to their role — Analia, paralegals, receptionist all work faster on repeatable tasks."))
+story.append(bd("Converts more of the new leads the marketing generates — better intake, higher close rates, no extra ad spend."))
+story.append(bd("Connects David with criminal defense attorneys who have scaled past this stage — peer learning from practitioners who solved these same problems."))
+story.append(bd("Builds the management accountability frameworks so the firm operates without David in every decision."))
 
-story.append(Paragraph("<b>Fractional CTO Level 1 (AI Accelerator L1)  |  $3,297/mo bundled</b>", S["subsection"]))
-story.append(b("Revenue $600K+ clears $500K LAW minimum; 10-person team with bilingual GM — not solo."))
-story.append(b("L1 done-with-you model selected: Casey lacks bandwidth to manage AI rollout independently."))
-story.append(b("Includes Claude Enterprise, pre-built Law Firm AI Skills, monthly CTO strategy calls, full staff training."))
-story.append(b("Stand-alone $3,797/mo — bundled saves $500/mo. AI Foundation Sprint $14,997 one-time available."))
+story.append(Paragraph("<b>Elite Coach Plus  |  $3,200/mo bundled</b>", S["subsection"]))
+story.append(b("Revenue $400K–$1M, 7-person team: Elite Coach Plus is correct tier per eligibility rules."))
+story.append(b("Includes: weekly coaching, practice area masterminds, quarterly workshops, annual in-person event."))
+story.append(b("Stand-alone $3,497/mo; bundled saves $297/mo. If revenue $1M+, escalate to Master's Circle ($4,600/mo)."))
 
 
 # ══════════════════════════════════════════════════════════
@@ -223,46 +226,36 @@ story.append(b("Stand-alone $3,797/mo — bundled saves $500/mo. AI Foundation S
 # ══════════════════════════════════════════════════════════
 story.append(PageBreak())
 
-story.append(Paragraph("Hoyer Law — Sales Companion (continued)", S["title"]))
+story.append(Paragraph("David P. Shapiro — Sales Companion (continued)", S["title"]))
 story.append(thin_rule())
 
 # ── Why This Ad Spend ──
 story.append(Paragraph("Why This Ad Spend", S["section"]))
 
 story.append(Paragraph("<b>What it does for him:</b>", S["subsection"]))
-story.append(bd("$5,500/mo conservative launches paid coverage on Google and LSA for the first time — capturing high-intent family law searches currently going to CoilLaw."))
-story.append(bd("$14,000/mo aggressive adds Meta retargeting and cold audiences including Spanish-language targeting — no confirmed competitor is reaching this segment."))
+story.append(bd("<b>Conservative $5,500/mo:</b> Activates Google PPC for criminal defense and DUI — captures highest-intent cases at the moment of arrest."))
+story.append(bd("<b>Aggressive $22,000/mo:</b> Full-market presence across Google, LSA, and Meta — Sevens Legal-level digital investment."))
 
-story.append(Paragraph("<b>Recommended Ad Spend Range:</b>", S["subsection"]))
-story.append(b("<b>Conservative:</b> $5,500/mo — Google PPC $3,500 + LSA $2,000. Minimum viable coverage for Lehi family law."))
-story.append(b("<b>Aggressive:</b> $14,000/mo — all four channels. 20% rule: $1.2M goal x 20% / 12 = $20K; minus $4,847 fee = $15K; using $14K."))
-
-story.append(Paragraph("<b>Estimated Return on Investment:</b>", S["subsection"]))
-story.append(b("<b>Conservative ($5,500/mo):</b> ~8 cases x $10K avg = ~$80K/mo vs. $5,500 spend = ~15x return (est.)."))
-story.append(b("<b>Aggressive ($14,000/mo):</b> ~25 cases x $10K avg = ~$250K/mo vs. $14,000 spend = ~18x return (est.)."))
-story.append(Paragraph("<i>All figures are estimates. Case value is practice area default ($10K) — confirm on call. Results not guaranteed.</i>", S["disclaimer"]))
-
-story.append(Paragraph("<b>How the range was calculated:</b>", S["subsection"]))
-story.append(b("<b>Conservative:</b> Family Law minimums: Google PPC $3,500 + LSA $2,000 = $5,500."))
-story.append(b("<b>Aggressive:</b> $1.2M target x 20% / 12 = $20K. Tier 4 (1.0x). Minus $4,847 fee = ~$15K; using $14,000."))
-story.append(b("Total aggressive: $8,144 fees + $14,000 ads = $22,144. Flag revenue on call — if $840K+, within 35% cap."))
+story.append(Paragraph("<b>Recommended Range + ROI (all estimates):</b>", S["subsection"]))
+story.append(b("<b>Conservative:</b> $5,500/mo → ~25 leads x 15% close = ~4 cases x $4K avg = $16K/mo revenue. 2.9x return."))
+story.append(b("<b>Aggressive:</b> $22,000/mo → ~150 leads x 15% close = ~23 cases x $4K avg = $92K/mo revenue. 4.2x return."))
+story.append(b("<b>Calculation:</b> $1M goal x 20% / 12 x 1.3 Tier 2 = $21,667. Reverse math ($144 blended CPL x 139 leads) = $20,042. Use $22,000."))
+story.append(Paragraph("<i>Estimates only. $4,000 default case value (criminal defense midpoint). 15% default close rate. Not guaranteed.</i>", S["disclaimer"]))
 
 story.append(thin_rule())
 
 # ── If He Pushes Back ──
 story.append(Paragraph("If He Pushes Back", S["section"]))
 
-story.append(Paragraph('"I\'m already getting leads from organic — why do I need paid?"', S["objection_q"]))
-story.append(Paragraph("CoilLaw (369 reviews, 4.8 stars) and Arnold Wadsworth are both confirmed in paid results for 'divorce attorney Lehi Utah.' Every high-intent click on Google Ads and LSA goes to them. Organic works — paid defends the top of the page.", S["objection_a"]))
+story.append(Paragraph('"We already do radio — why do we need digital ads too?"', S["objection_q"]))
+story.append(Paragraph("Radio builds brand awareness for later; Google and LSA capture prospects at the moment of arrest. Someone arrested at 11pm searches on their phone — not a radio station. Both channels serve different moments.", S["objection_a"]))
 
-story.append(Paragraph('"I\'m not sure my team is ready for AI."', S["objection_q"]))
-story.append(Paragraph("Level 1 is done-with-you — the Fractional CTO leads the entire rollout. Casey and Analia do not manage it. Bilingual GM + 7 support staff is exactly the human foundation AI implementation requires.", S["objection_a"]))
+story.append(Paragraph('"We have a great reputation — 4.9 stars, Super Lawyers. Why aren\'t we getting more clients?"', S["objection_q"]))
+story.append(Paragraph("Reputation earns trust after the prospect finds you. With ~204 Google reviews vs. Sevens Legal's 800+, this firm is not in the local 3-pack. The reputation is real; the visibility system is not yet built.", S["objection_a"]))
 
-story.append(Paragraph('"Can we start with just the marketing?"', S["objection_q"]))
-story.append(Paragraph("More leads without AI-powered intake just means more manual work for Casey and the team. The Fractional CTO converts the marketing investment into operational leverage — handling intake responses and drafting so the team can scale without adding headcount.", S["objection_a"]))
+story.append(Paragraph('"I\'m not sure about the investment level."', S["objection_q"]))
+story.append(Paragraph("Conservative scenario: $13,547/mo total → ~4 cases/mo at $4,000 avg = $16,000 in projected revenue — 2.9x estimate. One retained felony at $15,000+ pays for a full month of both packages.", S["objection_a"]))
 
-story.append(Paragraph('"What if the revenue estimate is wrong?"', S["objection_q"]))
-story.append(Paragraph("Revenue was not confirmed — $600K is estimated from team size; ZoomInfo says ~$4M. Both Starter and FCTO Level 1 qualify at $500K–$1.5M either way. If revenue confirms higher on the call, Growth + Master's Circle may be appropriate — Randy to assess.", S["objection_a"]))
 
 story.append(thin_rule())
 
@@ -272,14 +265,14 @@ story.append(Paragraph("Investment At A Glance", S["section"]))
 price_data = [
     [Paragraph("<b>Full Service Marketing — Starter</b>", S["price_main"]),
      Paragraph("$4,847/mo", S["price_main"])],
-    [Paragraph("Google Ads, LSA, Meta, SEO, Spanish-language campaigns, website optimization.", S["price_detail"]),
+    [Paragraph("Google Ads, LSA, Meta Ads, SEO, website CRO — full digital presence.", S["price_detail"]),
      Paragraph("<strike>$5,697</strike> stand alone", S["price_detail"])],
-    [Paragraph("<b>Fractional CTO Level 1</b>", S["price_main"]),
-     Paragraph("$3,297/mo", S["price_main"])],
-    [Paragraph("Claude Enterprise, Law Firm AI Skills, done-with-you rollout, staff training. Foundation Sprint $14,997 one-time (optional).", S["price_detail"]),
-     Paragraph("<strike>$3,797</strike> stand alone", S["price_detail"])],
+    [Paragraph("<b>Elite Coach Plus</b>", S["price_main"]),
+     Paragraph("$3,200/mo", S["price_main"])],
+    [Paragraph("Weekly coaching, practice area masterminds, quarterly workshops, annual in-person.", S["price_detail"]),
+     Paragraph("<strike>$3,497</strike> stand alone", S["price_detail"])],
     [Paragraph("<b>Recommended Ad Spend</b>", S["price_main"]),
-     Paragraph("$5,500–$14,000/mo", S["price_main"])],
+     Paragraph("$5,500–$22,000/mo", S["price_main"])],
     [Paragraph("Goes to Google, LSA, and Meta — not to SMB Team.", S["price_detail"]),
      Paragraph("", S["price_detail"])],
 ]
@@ -296,7 +289,7 @@ pt.setStyle(TableStyle([
 ]))
 story.append(pt)
 story.append(Paragraph(
-    "Total: $8,144/mo + $5,500–$14,000 ad spend  |  Save $1,350/mo by bundling  |  Confirm revenue on call",
+    "Total: $8,047/mo + $5,500–$22,000 ad spend  |  Save $1,147/mo bundled  |  Confirm revenue on call — conservative scenario (32.5%) under 35% cap at $500K estimate.",
     S["savings"]))
 
 # ── Build ──
