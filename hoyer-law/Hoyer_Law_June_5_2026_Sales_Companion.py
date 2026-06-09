@@ -183,9 +183,8 @@ story.append(bd("<b>AI-powered leverage.</b> Multiply staff output on intake, dr
 story.append(Spacer(1, 2))
 
 story.append(Paragraph("<b>What is stopping him:</b>", S["subsection"]))
-story.append(b("<b>No paid advertising.</b> CoilLaw (308 reviews) and Arnold Wadsworth are capturing every paid click while Hoyer Law relies entirely on organic."))
-story.append(b("<b>No confirmed intake SOP.</b> Quality depends on which staff member picks up — not on a consistent system."))
-story.append(b("<b>GM authority not formalized.</b> Analia is GM in title but operational decisions still route to Casey."))
+story.append(b("<b>No paid advertising.</b> CoilLaw (369 reviews) and Arnold Wadsworth are capturing every paid click while Hoyer Law relies entirely on organic."))
+story.append(b("<b>Review velocity gap.</b> CoilLaw grew from 308 to 369 reviews in weeks — their acceleration vs. Hoyer Law's 139 is suppressing 3-pack placement."))
 story.append(b("<b>No AI infrastructure.</b> 10-person bilingual firm with a GM is AI-ready — no one is leading the rollout."))
 
 story.append(thin_rule())
@@ -254,7 +253,7 @@ story.append(thin_rule())
 story.append(Paragraph("If He Pushes Back", S["section"]))
 
 story.append(Paragraph('"I\'m already getting leads from organic — why do I need paid?"', S["objection_q"]))
-story.append(Paragraph("CoilLaw (308 reviews, 4.8 stars) and Arnold Wadsworth are both confirmed in paid results for 'divorce attorney Lehi Utah.' Every high-intent click on Google Ads and LSA goes to them. Organic works — paid defends the top of the page.", S["objection_a"]))
+story.append(Paragraph("CoilLaw (369 reviews, 4.8 stars) and Arnold Wadsworth are both confirmed in paid results for 'divorce attorney Lehi Utah.' Every high-intent click on Google Ads and LSA goes to them. Organic works — paid defends the top of the page.", S["objection_a"]))
 
 story.append(Paragraph('"I\'m not sure my team is ready for AI."', S["objection_q"]))
 story.append(Paragraph("Level 1 is done-with-you — the Fractional CTO leads the entire rollout. Casey and Analia do not manage it. Bilingual GM + 7 support staff is exactly the human foundation AI implementation requires.", S["objection_a"]))
