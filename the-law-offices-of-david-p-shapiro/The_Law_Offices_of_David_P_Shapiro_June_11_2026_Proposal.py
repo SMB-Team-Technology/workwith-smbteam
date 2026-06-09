@@ -47,7 +47,7 @@ PILLAR_NAMES = ["Lead Generation", "Intake", "Team", "Profit Plan"]
 # Key findings — list of ("neg"|"pos", "one-sentence finding")
 FINDINGS = [
     ("neg", "No Google Ads or LSA — Sevens Legal captures every emergency search"),
-    ("neg", "Dead domain davidshapiro.com actively loses referral leads"),
+    ("neg", "davidshapiro.com leads to a Baltimore attorney — active lead loss"),
     ("neg", "Contact form buried below fold, no after-hours response path"),
     ("pos", "4.9 Google stars · 12x Super Lawyers · BBB Torch Award — elite reputation"),
 ]
@@ -56,7 +56,7 @@ FINDINGS = [
 COMPETITORS = [
     ("Sevens Legal, APC",          "800+ reviews", "SD Best Criminal & DUI 2024"),
     ("Dod Law, APC",               "5.0 stars",    "2023 Trial Lawyer of the Year"),
-    ("Monder Criminal Lawyer Grp", "4.8 stars",    "Active DUI/criminal presence"),
+    ("sandiegoduilawyers.com",     "N/A",          "Dedicated DUI PPC capture funnel"),
 ]
 CLIENT_REVIEWS      = "~204 Google reviews"
 CLIENT_REVIEWS_NOTE = "← You are here"
@@ -135,14 +135,14 @@ AD_SPEND_NOTE = (
 )
 
 AVG_CASE_VALUE     = "$4,000"
-CONSERVATIVE_LABEL = "Conservative  (~4 cases/mo):"
-CONSERVATIVE_RESULT = "$16,000 revenue · 2.9× ROAS"
-AGGRESSIVE_LABEL   = "Aggressive  (~23 cases/mo):"
-AGGRESSIVE_RESULT  = "$92,000 revenue · 4.2× ROAS"
+CONSERVATIVE_LABEL = "Conservative  (2–3 cases/mo):"
+CONSERVATIVE_RESULT = "$10,000 revenue · 1.8× ROAS"
+AGGRESSIVE_LABEL   = "Aggressive  (12–13 cases/mo):"
+AGGRESSIVE_RESULT  = "$52,000 revenue · 2.4× ROAS"
 
 # Timeline — 5 items: (milestone_label, action_text)
 TIMELINE = [
-    ("Day 1",   "Dead domain redirect + coaching kickoff"),
+    ("Day 1",   "Coaching kickoff + onboarding begins"),
     ("Day 14",  "Google Ads + LSA campaigns go live"),
     ("Week 2",  "Meta retargeting campaign launches"),
     ("Week 3",  "Homepage capture + after-hours intake live"),
