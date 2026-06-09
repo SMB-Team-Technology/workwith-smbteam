@@ -26,22 +26,22 @@ WEBSITE_SCREENSHOT_PATH = None
 URGENCY_SCORE = "6"
 
 PILLARS = [
-    ("RED",   "NO PAID ADS",   "No paid channels"),
-    ("AMBER", "GAPS EXIST",    "No confirmed SOP"),
-    ("AMBER", "NEEDS STRUCTURE","GM not formalized"),
-    ("AMBER", "NO VISIBILITY", "No profit tracking"),
+    ("RED",   "CRITICAL",    "No paid ads observed"),
+    ("GREEN", "ON TRACK",    "Dedicated intake team"),
+    ("GREEN", "ON TRACK",    "GM + 10-person team"),
+    ("AMBER", "IN PROGRESS", "No profit visibility"),
 ]
 PILLAR_NAMES = ["Lead Generation", "Intake", "Team", "Profit Plan"]
 
 FINDINGS = [
     ("neg", "No paid ads — CoilLaw & Arnold Wadsworth capture every high-intent search click"),
-    ("neg", "CoilLaw: 308 reviews at 4.8 vs. Hoyer Law's 139 — 3-pack visibility suppressed"),
+    ("neg", "CoilLaw: 369 reviews at 4.8 vs. Hoyer Law's 139 — gap widening every week"),
     ("neg", "Three phone numbers & outdated address confirmed across directories — SEO liability"),
     ("pos", "10-person bilingual team + GM already in place — self-managing foundation exists"),
 ]
 
 COMPETITORS = [
-    ("CoilLaw, LLC",              "308 reviews", "4.8★ · multi-location · paying ads"),
+    ("CoilLaw, LLC",              "369 reviews", "4.8★ · multi-location · paying ads"),
     ("Arnold Wadsworth & Coggins","unverified",  "Lehi office · multi-attorney · paid"),
     ("SeegLawUtah",               "unverified",  "family law only · 20+ yrs · local"),
 ]
@@ -75,23 +75,23 @@ PRIORITIES = [
         ],
     ),
     (
-        "Fix Intake &", "Stop Losing Cases", "0F766E",
+        "Amplify Intake &", "Grow Conversions", "0F766E",
         [
-            "Capture leads that arrive after hours and weekends",
-            "Build intake SOP so every call converts consistently",
-            "Set a 1-hour response standard for all leads",
-            "Train staff on a proven family law consult script",
-            "Track lead-to-consult rate every month",
+            "Turn paid traffic into booked consultations",
+            "AI after-hours intake — no lead left unanswered",
+            "Bilingual intake reaches all of Utah County",
+            "Post-case review requests after every close",
+            "Expand St. George paid presence — 2nd market",
         ],
     ),
     (
-        "Install Team &", "Profit Systems", "6D28D9",
+        "Scale Team &", "Profit Clarity", "6D28D9",
         [
-            "Formalize Analia's GM authority and decision rights",
-            "Launch weekly KPI dashboard and accountability meeting",
-            "Deploy AI intake response — handle leads after hours",
-            "Track profitability by case type — know your margins",
-            "Build monthly dashboard: revenue, costs, take-home",
+            "FCTO Level 1 — AI Skills for every staff role",
+            "Claude Enterprise configured for Hoyer Law",
+            "Monthly profit dashboard by case type",
+            "Marketing attribution: track ROI by channel",
+            "Growth roadmap: upgrade tiers as revenue grows",
         ],
     ),
 ]
@@ -129,8 +129,8 @@ TIMELINE = [
     ("Day 1",   "Launch Google Ads, LSA, Meta — family law + Spanish"),
     ("Day 14",  "Fix NAP inconsistencies across all directories"),
     ("Week 2",  "Fractional CTO kickoff — Claude Enterprise + AI Skills"),
-    ("Week 3",  "Website lead response system + intake dashboard live"),
-    ("Month 3", "GM framework, KPI dashboard, and AI fully operational"),
+    ("Week 3",  "Review acquisition campaign activated for CoilLaw gap"),
+    ("Month 3", "Paid benchmarks set + AI fully deployed across team"),
 ]
 
 CLOSING_QUOTE = (
