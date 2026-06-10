@@ -52,6 +52,85 @@ const AD_SPEND_FLOORS = [
   { keywords: ['bankruptcy'],                                                         floor: 4_500  },
 ];
 
+// ─── HubSpot revenue lookup ───────────────────────────────────────────────────
+
+/**
+ * Parse a HubSpot text revenue range (e.g. "$961K - $3M", "$81K-$250K") into
+ * { min, max, mid }. Returns null if unparseable.
+ */
+function parseRevenueRange(text) {
+  if (!text || typeof text !== 'string') return null;
+  const re = /\$([0-9,]+(?:\.[0-9]+)?)\s*(K|M|B|k|m|b)?/gi;
+  const amounts = [];
+  let m;
+  while ((m = re.exec(text)) !== null) {
+    let n = parseFloat(m[1].replace(/,/g, ''));
+    const s = (m[2] || '').toUpperCase();
+    if (s === 'K') n *= 1_000;
+    if (s === 'M') n *= 1_000_000;
+    if (s === 'B') n *= 1_000_000_000;
+    if (!isNaN(n) && n > 0) amounts.push(n);
+  }
+  if (!amounts.length) return null;
+  const min = Math.min(...amounts);
+  const max = Math.max(...amounts);
+  return { min, max, mid: (min + max) / 2 };
+}
+
+/**
+ * Query HubSpot for revenue-related contact fields.
+ * Returns { value, source, confidence, rawLabel } or null.
+ *
+ * Field priority:
+ *   1. annual_law_firm_revenue — e.g. "$961K - $3M"
+ *   2. how_much_revenue_is_your_law_firm_currently_generating_per_month × 12
+ *   3. n2024_annual_revenue
+ *   4. total_annual_revenue_last_year
+ */
+async function fetchHubSpotRevenue(contactId) {
+  const HUBSPOT_TOKEN = process.env.HUBSPOT_TOKEN;
+  if (!HUBSPOT_TOKEN || !contactId) return null;
+
+  const fields = [
+    'annual_law_firm_revenue',
+    'how_much_revenue_is_your_law_firm_currently_generating_per_month',
+    'n2024_annual_revenue',
+    'total_annual_revenue_last_year',
+  ].join(',');
+
+  let res;
+  try {
+    res = await fetch(
+      `https://api.hubapi.com/crm/v3/objects/contacts/${contactId}?properties=${fields}`,
+      { headers: { 'Authorization': `Bearer ${HUBSPOT_TOKEN}`, 'Content-Type': 'application/json' } }
+    );
+  } catch (err) {
+    console.warn(`  HubSpot revenue lookup failed: ${err.message}`);
+    return null;
+  }
+  if (!res.ok) {
+    console.warn(`  HubSpot revenue lookup returned ${res.status} for contact ${contactId}`);
+    return null;
+  }
+
+  const props = (await res.json()).properties || {};
+
+  const annual = parseRevenueRange(props.annual_law_firm_revenue);
+  if (annual) return { value: annual.mid, source: 'hubspot_annual_law_firm_revenue', confidence: annual.max / annual.min > 5 ? 'low' : 'medium', rawLabel: props.annual_law_firm_revenue };
+
+  const monthly = parseRevenueRange(props.how_much_revenue_is_your_law_firm_currently_generating_per_month);
+  if (monthly) return { value: monthly.mid * 12, source: 'hubspot_monthly_annualized', confidence: 'medium', rawLabel: `${props.how_much_revenue_is_your_law_firm_currently_generating_per_month} (×12)` };
+
+  const rev2024 = parseRevenueRange(props.n2024_annual_revenue);
+  if (rev2024) return { value: rev2024.mid, source: 'hubspot_2024_annual_revenue', confidence: 'medium', rawLabel: props.n2024_annual_revenue };
+
+  const lastYear = parseRevenueRange(props.total_annual_revenue_last_year);
+  if (lastYear) return { value: lastYear.mid, source: 'hubspot_total_revenue_last_year', confidence: 'medium', rawLabel: props.total_annual_revenue_last_year };
+
+  console.log(`  HubSpot: no parseable revenue fields for contact ${contactId}`);
+  return null;
+}
+
 // ─── Parsing helpers ──────────────────────────────────────────────────────────
 
 function parseRevenue(text) {
@@ -265,7 +344,9 @@ function estimateRevenueFromTeamSize(teamSize, notes) {
 }
 
 // ─── Main ─────────────────────────────────────────────────────────────────────
+// Top-level async wrapper so we can await HubSpot fetch
 
+(async () => {
 const friendlyName = process.argv[2];
 if (!friendlyName) {
   console.error('Usage: node scripts/select-package.mjs <friendly-name>');
@@ -279,6 +360,7 @@ if (!existsSync(friendlyName)) {
 
 // If trigger file has an explicit package override, skip — PACKAGE_HINT handles it
 const triggerPath = `triggers/audit-research/${friendlyName}.json`;
+let hubspotContactId = null;
 if (existsSync(triggerPath)) {
   try {
     const trigger = JSON.parse(readFileSync(triggerPath, 'utf8'));
@@ -287,6 +369,7 @@ if (existsSync(triggerPath)) {
       console.log('Skipping deterministic selection — PACKAGE_HINT will be used in Pass 2.');
       process.exit(0);
     }
+    hubspotContactId = trigger.hubspot_contact_id || null;
   } catch { /* non-fatal */ }
 }
 
@@ -312,19 +395,34 @@ console.log(`  Team size:       ${teamSizeStated ?? 'NOT STATED'}`);
 console.log(`  Practice areas:  ${practiceAreas.join(' | ') || 'none detected'}`);
 
 // Determine effective values (stated or estimated)
+// Revenue hierarchy: research notes → HubSpot contact fields → team size estimate
 let confidence = 'high';
 let effectiveRevenue = revenueStated;
-let effectiveTeam    = teamSizeStated ?? 3;
+let revenueSource = revenueStated != null ? 'research_notes' : null;
+let revenueLabel  = null;
+let effectiveTeam = teamSizeStated ?? 3;
 
 if (revenueStated === null) {
-  if (teamSizeStated !== null) {
+  // Fallback 1: HubSpot contact revenue fields
+  const hsRevenue = await fetchHubSpotRevenue(hubspotContactId);
+  if (hsRevenue) {
+    effectiveRevenue = hsRevenue.value;
+    revenueSource    = hsRevenue.source;
+    revenueLabel     = hsRevenue.rawLabel;
+    confidence       = hsRevenue.confidence;
+    notes.push(`Revenue not in research notes — sourced from HubSpot (${hsRevenue.source}): "${hsRevenue.rawLabel}" → $${hsRevenue.value.toLocaleString()}`);
+    console.log(`  HubSpot revenue: ${hsRevenue.rawLabel} → $${hsRevenue.value.toLocaleString()} (${hsRevenue.confidence})`);
+  } else if (teamSizeStated !== null) {
+    // Fallback 2: team size estimate
     const est = estimateRevenueFromTeamSize(teamSizeStated, notes);
     effectiveRevenue = est.estimate;
-    confidence = 'medium';
+    revenueSource    = 'team_size_estimate';
+    confidence       = 'medium';
   } else {
     notes.push('Revenue and team size both unknown — using conservative defaults. Review with sales rep.');
     effectiveRevenue = 500_000;
-    confidence = 'low';
+    revenueSource    = 'default';
+    confidence       = 'low';
   }
 }
 
@@ -347,6 +445,8 @@ const decision = {
   confidence,
   revenue_stated:          revenueStated,
   revenue_effective:       effectiveRevenue,
+  revenue_source:          revenueSource,
+  revenue_label:           revenueLabel,
   team_size_stated:        teamSizeStated,
   team_size_effective:     effectiveTeam,
   practice_areas_detected: practiceAreas,
@@ -386,3 +486,7 @@ if (notes.length) {
   console.log(`  Notes:`);
   notes.forEach(n => console.log(`    - ${n}`));
 }
+})().catch(err => {
+  console.error(`select-package.mjs error: ${err.message}`);
+  process.exit(0); // non-fatal — Pass 2 falls back to PACKAGE_HINT
+});

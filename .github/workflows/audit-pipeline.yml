@@ -75,6 +75,8 @@ jobs:
           "
 
       - name: Pass 1.5 — Deterministic package selection
+        env:
+          HUBSPOT_TOKEN: ${{ secrets.HUBSPOT_TOKEN }}
         run: |
           FRIENDLY_NAME="${{ steps.inputs.outputs.friendly_name }}"
           node scripts/select-package.mjs "$FRIENDLY_NAME" || true
