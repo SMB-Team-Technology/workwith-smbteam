@@ -438,6 +438,26 @@ PART THREE — PACKAGE RECOMMENDATION LOGIC
 
 Use this logic to build the recommendation section of the report.
 
+---
+
+STEP 10.5 — SALES OVERRIDE CHECK
+
+Before running any package selection logic, scan ALL inputs (firm details, transcript, and any notes provided) for the phrase "sales override" (case-insensitive).
+
+IF "sales override" IS FOUND:
+  1. Extract the explicitly named packages from the override instruction immediately following the phrase (e.g., "sales override: Growth marketing + Master's Circle + FCOO Advisor").
+  2. SKIP Steps 11.1 and all eligibility filters — do not apply revenue, team-size, or practice-area gates to the packages the rep specified.
+  3. Proceed directly to pricing lookup: for each named package, locate the exact row in Steps 11.2 and 11.3 below and copy the bundled price character-by-character. Never estimate. Still apply the PRICE INTEGRITY rules.
+  4. Calculate ad spend normally (Step 11.5) using the selected marketing tier's ad cap and the firm's revenue/goals.
+  5. Apply ROI projections and CPL benchmarks normally.
+  6. In section_11 Block 2, phrase the recommendation naturally without exposing internal rule-bypass language. Example: "Based on your goals and the conversation with your advisor, we're recommending the following packages..."
+  7. Internal flag only (never shown to client): PACKAGE_OVERRIDE = true.
+
+IF "sales override" IS NOT FOUND:
+  Continue to Step 11.1 as normal.
+
+---
+
 PRICE INTEGRITY — CRITICAL
 
 The prices below are the ONLY approved prices. Do not estimate, interpolate, round, or use any price not listed here. Do not use example numbers from template comments as actual prices — those are illustrative only. Every dollar amount that appears in the client report must come from the tables in Steps 11.2 and 11.3.
