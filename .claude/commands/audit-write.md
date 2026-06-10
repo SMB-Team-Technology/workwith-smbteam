@@ -129,9 +129,19 @@ This section is large and must be completed in three sub-steps to avoid API time
 
 Apply all package eligibility and calculation logic (below) BEFORE starting Step I-a.
 
+**PACKAGE DECISION FILE — CHECK THIS FIRST**
+
+Before running the eligibility rules, check whether `[friendly-name]/package_decision.json` exists. If it does:
+- Read it and extract `marketing_tier`, `marketing_bundled`, `marketing_retail`, `coaching_tier`, `coaching_bundled`, `coaching_retail`, `total_bundled`, `ad_spend_min`, `ad_spend_max`, and `confidence`.
+- If `confidence` is `"high"`: use these values exactly. Do not re-evaluate revenue or re-run eligibility. Skip straight to the workings file step below.
+- If `confidence` is `"medium"` or `"low"`: use these as a starting point. Cross-check against the research notes. If you find clearer revenue data, document the correction in the workings file and adjust. Otherwise accept the pre-selected values.
+- If the file does not exist: proceed with the full eligibility rules below.
+
+If the pipeline injected a `PACKAGE INSTRUCTION` block in your system prompt, that directive supersedes both the decision file and the eligibility rules below.
+
 **MANDATORY PRICE LOOKUP — COMPLETE THIS BEFORE STEP I-a**
 
-Do not rely on memory for any price. Scroll to the SELECT MARKETING PACKAGE and SELECT NON-MARKETING PACKAGE tables in this command file and read the exact dollar amounts. Then write them out explicitly in this format before proceeding:
+Do not rely on memory for any price. If using package_decision.json, copy the prices from that file. Otherwise, scroll to the SELECT MARKETING PACKAGE and SELECT NON-MARKETING PACKAGE tables in this command file and read the exact dollar amounts. Then write them out explicitly in this format before proceeding:
 
 - Marketing package selected: [name]
   - Bundled price (from table): $X,XXX/mo

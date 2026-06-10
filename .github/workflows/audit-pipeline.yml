@@ -73,6 +73,21 @@ jobs:
             to main and report the commit hash when complete.
           "
 
+      - name: Pass 1.5 — Deterministic package selection
+        env:
+          HUBSPOT_TOKEN: ${{ secrets.HUBSPOT_TOKEN }}
+        run: |
+          FRIENDLY_NAME="${{ steps.inputs.outputs.friendly_name }}"
+          echo "Running package selection for: $FRIENDLY_NAME"
+          node scripts/select-package.mjs "$FRIENDLY_NAME" || true
+          if [ -f "$FRIENDLY_NAME/package_decision.json" ]; then
+            git add "$FRIENDLY_NAME/package_decision.json"
+            if ! git diff --cached --quiet; then
+              git commit -m "Pass 1.5: package decision for $FRIENDLY_NAME"
+              git push origin main
+            fi
+          fi
+
       - name: Pass 2 + 3 — Audit Write (with PPTX)
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
@@ -81,6 +96,32 @@ jobs:
           FRIENDLY_NAME="${{ steps.inputs.outputs.friendly_name }}"
           SALES_REP="${{ steps.inputs.outputs.sales_rep }}"
           DATE="${{ steps.inputs.outputs.date }}"
+
+          # Build package instruction from package_decision.json (if produced by Pass 1.5)
+          # or fall back to PACKAGE_HINT from the trigger file.
+          PKG_DECISION_FILE="$FRIENDLY_NAME/package_decision.json"
+          TRIGGER_FILE="${{ steps.inputs.outputs.trigger_file }}"
+          PACKAGE_HINT=$(jq -r '.package // empty' "$TRIGGER_FILE" 2>/dev/null || true)
+
+          if [ -f "$PKG_DECISION_FILE" ]; then
+            CONFIDENCE=$(jq -r '.confidence // "low"' "$PKG_DECISION_FILE")
+            PKG_DECISION=$(cat "$PKG_DECISION_FILE")
+            if [ "$CONFIDENCE" = "high" ]; then
+              PACKAGE_INSTRUCTION="PACKAGE DECISION (deterministic — do not override):
+${PKG_DECISION}
+Use EXACTLY these tier names and prices. Do not recalculate revenue or re-evaluate eligibility."
+            else
+              PACKAGE_INSTRUCTION="PACKAGE DECISION (confidence: ${CONFIDENCE} — verify before finalizing):
+${PKG_DECISION}
+Start with these tier names and prices. If the research notes contain clearer revenue data, document any correction in the workings file."
+            fi
+          elif [ -n "$PACKAGE_HINT" ]; then
+            PACKAGE_INSTRUCTION="PACKAGE HINT (manually set by sales rep — use this package in Section 11):
+${PACKAGE_HINT}"
+          else
+            PACKAGE_INSTRUCTION="No package pre-selected. Apply full eligibility rules from audit-write.md."
+          fi
+
           claude --model claude-sonnet-4-6 --dangerously-skip-permissions -p "
             You are running Pass 2 of the SMB Team Growth Audit pipeline.
 
@@ -88,6 +129,9 @@ jobs:
             Friendly Name: $FRIENDLY_NAME
             Sales Rep: $SALES_REP
             Date: $DATE
+
+            PACKAGE INSTRUCTION:
+            $PACKAGE_INSTRUCTION
 
             Read \`.claude/commands/audit-write.md\` in full. Read the research notes file
             and \`Design Files/audit_styles.css\`. Execute every step in order, saving each
