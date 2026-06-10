@@ -1,31 +1,39 @@
-SECTION 11 WORKINGS — The Law Offices of David P. Shapiro
+SECTION 11 WORKINGS — The Law Offices of David B. Shapiro
 Generated: June 11, 2026
 Sales Rep: Jacob Meissner
 
 ================================================================================
-PACKAGE DECISION VERIFICATION
+PACKAGE DECISION VERIFICATION (confidence: low)
 ================================================================================
 
-Revenue confidence: LOW (no transcript, estimated $400K–$1M effective band)
-Team size from research: 7 total (3 attorneys + 4 support staff)
-  NOTE: package_decision.json used team_size_effective: 3 (wrong — website shows 7).
-  Coaching recommendation is unchanged regardless: $400K–$1M, Any → Elite Coach Plus.
+Revenue from research notes: $15,000–$70,000/month (highly variable, lumpy).
+Annualized midpoint: ($15K + $70K) / 2 = $42.5K × 12 = $510,000.
+HubSpot range used by package_decision.json: $180K–$960K → effective $570,000.
+Both estimates fall in the $400K–$1M band. Revenue band confirmed: $400K–$1M.
 
-Revenue band note: Research notes describe 3 attorneys, 2 office locations, 16-year
-practice with active radio advertising (Padres broadcasts / 97.3 The Fan) — contextually
-consistent with a firm generating well above $500K, potentially $1M+. However, without
-transcript confirmation, proceeding with the conservative $400K–$1M band. Sales rep
-should clarify actual revenue at the proposal call. If revenue exceeds $1M:
-  - Marketing tier remains Starter (unless aggressive ad goals require Growth)
-  - Coaching upgrades to Elite Coach Plus + FCOO Advisor ($3,694/mo bundled) or
-    Master's Circle if team has 5+ with dedicated staff (confirmed with 7 people)
+Team: Solo practitioner (no associate attorneys). Support staff ~3–5 people total
+(1 admin, a few part-time, 1 office manager). No dedicated ops/marketing staff.
+team_size_effective: 3 (from package_decision.json) — conservative but appropriate.
 
-Criminal Defense + San Diego: San Diego is a competitive criminal defense market →
-Essentials marketing packages hidden per eligibility rules. Starter is the correct
-minimum tier. ✓
+Practice areas include Personal Injury → Essentials marketing packages eliminated.
+Minimum marketing tier: Starter. ✓
+
+Criminal Defense + Baltimore market: Baltimore is competitive but not top-10 metro.
+Essentials packages already eliminated due to PI. Starter tier remains correct. ✓
+
+Revenue $400K–$1M, team <5, no dedicated ops → Elite Coach Plus (not FCOO Advisor).
+FCOO Advisor requires "growing team with dedicated ops" — not applicable here. ✓
+
+35% cap check: $8,047 management fees ÷ ($510,000 ÷ 12 = $42,500/mo) = 18.9% — within cap.
+With $7,500 conservative ad spend: $15,547 ÷ $42,500 = 36.6% — marginally over cap.
+→ At revenue midpoint, conservative ad spend is at the cap boundary. Flag for rep.
+→ If revenue is closer to $570K effective ($47,500/mo): $15,547 / $47,500 = 32.7% ✓
+→ Aggressive $25,000 ad spend at $47,500/mo: $33,047 = 69.6% — EXCEEDS cap significantly.
+→ Aggressive scenario requires revenue closer to $100K/month goal to be within cap.
+→ Present conservative as starting point; note aggressive scenario assumes revenue growth.
 
 ================================================================================
-SELECTED PACKAGES
+MANDATORY PRICE LOOKUP (verified from pricing tables)
 ================================================================================
 
 Marketing Package: Full Service Marketing — Starter
@@ -38,172 +46,177 @@ Coaching Package: Elite Coach Plus
   Stand-alone price: $3,497/mo
   Savings:             $297/mo
 
-LAW Package: None (revenue under $500K confidence threshold; solo with unknown AI readiness)
-AI Avatar: None (requires Alexis approval; not discussed)
+LAW Package: None
+  (Revenue ~$400K–$1M effective; solo with no confirmed AI readiness signals; team too small)
+
+AI Avatar: None
+  (Requires Alexis approval; not discussed on call)
 
 Total monthly investment: $4,847 + $3,200 = $8,047/mo
 Total savings: $850 + $297 = $1,147/mo
-
-35% cap check: $8,047 management fees. At $500K revenue ($41,667/mo), 35% = $14,583.
-$8,047 management fees alone = 19.3% — within cap without ad spend.
-With $5,500 ad spend: $13,547 total = 32.5% — within cap.
-With $22,000 ad spend: $30,047 total = 72% — EXCEEDS cap significantly.
-→ Aggressive scenario ad spend assumes revenue is higher than $500K effective.
-→ At $1M revenue ($83,333/mo): 35% cap = $29,167. $8,047 + $22,000 = $30,047 = 36%.
-→ Marginally over cap at $1M. Flag for sales rep to confirm actual revenue.
 
 ================================================================================
 AD SPEND CALCULATION
 ================================================================================
 
-Conservative:
-- Criminal Defense: PPC min $2,500 + LSA min $1,000 + Meta retargeting $1,200 + Meta lead gen $500 = $5,200
-- Rounded up to $5,500 (package_decision.json confirmed)
-- San Diego is high-competitiveness criminal defense → minimum $3,000 per criminal defense rule
-- $5,500 meets minimum ✓
+Conservative ($7,500/mo):
+  Practice areas: PI (primary) + Criminal Defense
+  PI: PPC min $2,000 (Accident/Injury General) + LSA $1,000 = $3,000
+  Criminal: PPC min $2,500 + LSA $1,000 = $3,500
+  Shared Meta retargeting: $1,000 (combined for both practice areas)
+  Total: $3,000 + $3,500 + $1,000 = $7,500 ✓
+  Matches package_decision.json conservative: $7,500 ✓
 
-Aggressive:
-- Revenue goal: 2× $500K = $1M
-- Monthly budget: $1M × 20% ÷ 12 = $16,667
-- Tier 2 geo multiplier (San Diego): × 1.3 = $21,667
-- Less management fee: $21,667 − $4,847 = $16,820 available for ads
+Aggressive ($25,000/mo):
+  Revenue goal from transcript: $100K/month = $1.2M/year
+  Monthly marketing budget (20% rule): $1.2M × 20% ÷ 12 = $20,000
+  Geographic multiplier: Baltimore = Tier 4 (significant regional, 1.0×) → $20,000 × 1.0 = $20,000
+  Less management fee: $20,000 − $4,847 = $15,153 available for ads (20% rule)
 
-Reverse math validation:
-- Revenue goal: $1M ÷ 12 = $83,333/month
-- Average case value: $4,000 (criminal defense default $3K–$5K midpoint)
-- Target cases/month: $83,333 ÷ $4,000 = 20.8 cases
-- Required leads at 15% close: 20.8 ÷ 0.15 = 138.7 leads
-- Blended CPL at $250 midpoint: 138.7 × $250 = $34,675 required spend
-→ Reverse math ($34,675) exceeds 20% rule ($16,820) — use reverse math figure
-→ But $34,675 is well above Starter tier cap ($8,000)
-→ Require Growth tier ($7,397/mo bundled) for aggressive scenario to work properly
-→ package_decision.json shows $22,000 aggressive — this is a reasonable middle ground
+  Reverse math validation:
+    Revenue goal: $100,000/month
+    Blended avg case value: PI default $6,500 (midpoint $5K–$8K, 60% of cases)
+                            + Criminal default $4,000 (midpoint $3K–$5K, 40% of cases)
+                            = 0.60 × $6,500 + 0.40 × $4,000 = $3,900 + $1,600 = $5,500 blended
+    Target cases/month: $100,000 ÷ $5,500 = 18.2 cases
+    Required leads at 15% close: 18.2 ÷ 0.15 = 121 leads
+    Blended CPL midpoint: PI $225 + Criminal $250 = ~$240 blended
+    Required spend: 121 × $240 = $29,040
 
-FLAG FOR SALES REP: Aggressive ad spend at $22,000 significantly exceeds the Starter
-tier cap of $8,000. If prospect wants aggressive growth, a Growth tier upgrade
-($7,397/mo bundled, $30,000 ad spend cap) should be discussed. Present conservative
-($5,500) as starter scenario and note upgrade path.
+  Reverse math ($29,040) > 20% rule ($15,153) → use reverse math figure.
+  $29,040 exceeds Starter tier cap ($8,000).
+  → Aggressive scenario implies Growth tier upgrade ($7,397/mo bundled, $30,000 cap).
+  → package_decision.json shows $25,000 aggressive — reasonable middle ground.
+  → FLAG FOR SALES REP: Aggressive $25,000 exceeds Starter tier $8,000 cap.
+    If prospect commits to aggressive growth, discuss Growth tier upgrade path.
+  → Presenting $25,000 as stated; note upgrade path in sales companion.
 
 ================================================================================
 ROI PROJECTIONS
 ================================================================================
 
-Conservative ($5,500/mo ad spend):
-- Criminal defense CPL: $150–$350 midpoint $250, +20% cushion = $300
-- Leads: $5,500 ÷ $300 = 18 leads/month
-- Cases: 18 × 15% close rate = 2.7 ≈ 2–3 cases/month
-- Revenue: 2.5 × $4,000 = $10,000/month
-- Return: $10,000 ÷ $5,500 = 1.8× return on ad spend
-  NOTE: Using practice area default case value ($3K–$5K). Actual firm cases likely
-  higher ($10K–$50K+ for violent/sex crimes/federal). True ROI likely 3–5×.
+Conservative ($7,500/mo ad spend):
+  Blended CPL with 20% cushion:
+    PI CPL $225 × 1.20 = $270
+    Criminal CPL $250 × 1.20 = $300
+    60/40 weighted blend: 0.60 × $270 + 0.40 × $300 = $162 + $120 = $282 → round to $280
+  Leads: $7,500 ÷ $280 = 26.8 ≈ 27 leads
+  Cases: 27 × 15% = 4.0 cases
+  Revenue: 4 × $5,500 = $22,000
+  Return: $22,000 ÷ $7,500 = 2.9× ≈ 3×
 
-Aggressive ($22,000/mo ad spend):
-- Criminal defense CPL: $250 midpoint (no cushion)
-- Leads: $22,000 ÷ $250 = 88 leads/month
-- Cases: 88 × 15% close rate = 13.2 ≈ 12–14 cases/month
-- Revenue: 13 × $4,000 = $52,000/month
-- Return: $52,000 ÷ $22,000 = 2.4× return on ad spend
+Aggressive ($25,000/mo ad spend):
+  Blended CPL (no cushion): 0.60 × $225 + 0.40 × $250 = $135 + $100 = $235 → round to $240
+  Leads: $25,000 ÷ $240 = 104 leads
+  Cases: 104 × 15% = 15.6 ≈ 15 cases
+  Revenue: 15 × $5,500 = $82,500
+  Return: $82,500 ÷ $25,000 = 3.3×
 
-Block 4 presentation (using range):
-- Ad spend: $5,500–$22,000/mo
-- Case value: $4,000 (practice area default; actual may be significantly higher)
-- Cases/month: 2–13 cases
-- Monthly revenue from ads: $8,000–$52,000
+Block 4 presentation:
+  Ad spend range: $7,500–$25,000/mo
+  Case value: $5,500 (blended default; actual case values may be higher)
+  Cases/month: 4–15 cases
+  Monthly revenue from ads: $22,000–$82,500
 
 ================================================================================
 DBM STATEMENT FOR BLOCK 1
 ================================================================================
 
-"We help decorated San Diego criminal defense firms with the credentials to dominate
-their market get the digital systems and team infrastructure they need so they can
-become the undisputed number one firm in their city — recognized by the market as
-clearly and definitively as they deserve to be."
+"We help solo practitioners with decades of earned reputation and a full caseload
+get the team and digital systems they need so they can finally step back from the
+60-hour week — and spend more time on the life they have been working toward."
 
 ================================================================================
-QUICK WIN OPPORTUNITIES (6+)
+QUICK WIN OPPORTUNITIES (8 total)
 ================================================================================
 
-1. PILLAR: Lead Gen | TITLE: Local Service Ads Setup | TIMELINE: Quick Win
-   WHY: LSA leads appear above everything on Google and cost $80–$250/lead with 7×
-   the conversion rate of PPC. Not appearing in LSA means competitors are capturing
-   Google's highest-intent legal leads.
-   COMPETITOR: Sevens Legal (800+ reviews, likely holding top LSA positions)
-   OPPORTUNITY: Activate LSA with Google Screened verification — 204 reviews at 4.9
-   stars is a competitive foundation. First-mover advantage in verified criminal defense
-   LSA in San Diego.
+1. PILLAR: Lead Gen | TITLE: Fix Website HTTPS & Full Rebuild | TIMELINE: Quick Win
+   WHY: TLS certificate error means every referred prospect who clicks the website
+   URL sees a browser security warning — some bounce before reading a word. A working,
+   modern website is the foundation everything else depends on.
+   COMPETITOR: None (internal problem)
+   OPPORTUNITY: Fix TLS cert immediately (under $100/year); full website rebuild
+   converts referred traffic at a rate that matches David's actual credentials and
+   37-year reputation — not an outdated design that erodes trust before a call is made.
 
-2. PILLAR: Lead Gen | TITLE: Google Ads for DUI & Criminal Defense | TIMELINE: Quick Win
-   WHY: $60–$150 CPC for San Diego criminal defense. Competitors spending $5K–$12K/mo
-   are capturing all emergency digital searches. Without PPC, the firm does not appear
-   on the highest-intent queries.
-   COMPETITOR: sandiegoduilawyers.com (dedicated PPC funnel for DUI captures)
-   OPPORTUNITY: Dedicated campaigns for DUI, violent crimes, sex crimes, and federal
-   defense — matching the firm's practice area depth with keyword coverage.
+2. PILLAR: Lead Gen | TITLE: Google LSA Setup & Activation | TIMELINE: Quick Win
+   WHY: LSA leads appear above everything on Google — paid ads, the map pack, all
+   organic results. With 84 Google reviews already on file, this firm qualifies for
+   Google Screened immediately. Every month without LSA is a month competitors are
+   receiving the highest-intent leads in legal digital marketing.
+   COMPETITOR: Bob Katz Law (190+ reviews, likely active in LSA for Baltimore PI)
+   OPPORTUNITY: Activate LSA for Personal Injury and Criminal Defense immediately —
+   these are pay-per-lead, not pay-per-click, meaning the firm only pays when a
+   qualified prospect calls directly.
 
-3. PILLAR: Lead Gen | TITLE: Google Review Velocity Campaign | TIMELINE: Long-Term Play
-   WHY: 4:1 review gap vs. Sevens Legal (204 vs 800+). Review count is a direct local
-   ranking signal — without closing this gap, the firm cannot rank in the top 3-pack
-   for high-volume criminal defense searches.
-   COMPETITOR: Sevens Legal (800+ reviews, systematic review generation process)
-   OPPORTUNITY: Systematic outreach to existing satisfied clients plus workflow
-   integration to request reviews at case close. Doubling review count to 400+ would
-   materially improve 3-pack ranking.
+3. PILLAR: Lead Gen | TITLE: Activate & Optimize LegalMatch | TIMELINE: Quick Win
+   WHY: A LegalMatch contract at approximately $1,500/month is signed but has never
+   been activated — the firm is paying for a lead service generating zero leads.
+   COMPETITOR: None (internal problem)
+   OPPORTUNITY: Activate the existing LegalMatch account immediately to put the
+   contract investment to work — PI and criminal defense leads at no additional cost
+   above the contract already in place.
 
-4. PILLAR: Intake | TITLE: Above-the-Fold Contact Form | TIMELINE: Quick Win
-   WHY: Buried contact form means website traffic — especially after-hours — cannot
-   convert without scrolling the full homepage. Every paid click to this site is
-   generating fewer contacts than it should.
-   COMPETITOR: None identified specifically
-   OPPORTUNITY: A single above-the-fold intake form with click-to-call button
-   immediately improves conversion rates from all existing and new traffic sources.
+4. PILLAR: Intake | TITLE: After-Hours & Weekend Intake Coverage | TIMELINE: Quick Win
+   WHY: Criminal arrests and car accidents happen at all hours. Owner is currently
+   taking 2 AM calls personally. Every unanswered Saturday call is a case that a
+   competitor's answering service captured first.
+   COMPETITOR: None (internal problem)
+   OPPORTUNITY: A professional after-hours intake service answers every call,
+   qualifies the prospect, and schedules a callback — David stops taking 2 AM calls
+   and the firm starts converting the cases it is currently missing.
 
-5. PILLAR: Intake | TITLE: After-Hours Intake Coverage | TIMELINE: Quick Win
-   WHY: Criminal defense emergencies happen at all hours. An unanswered Saturday night
-   arrest call becomes the competitor's signed retainer by Monday morning.
-   COMPETITOR: None identified specifically
-   OPPORTUNITY: After-hours intake service or answering protocol with rapid callback
-   SLA — converts the emergency calls that currently go to voicemail and are lost.
+5. PILLAR: Lead Gen | TITLE: Google Ads for PI & Criminal Defense | TIMELINE: Quick Win
+   WHY: Baltimore PI keywords run $15–$50 CPC and criminal defense $50–$150 CPC.
+   Competitors are actively bidding on these terms. Without paid search, this firm
+   does not appear for any prospect who searches instead of receiving a referral.
+   COMPETITOR: The Snyder Law Group (410 The Firm) — active paid marketing presence
+   OPPORTUNITY: Dedicated campaigns for auto accidents, criminal defense, and DUI/DWI
+   in Baltimore City and Baltimore County — capturing emergency searches at the moment
+   of highest intent.
 
-6. PILLAR: Lead Gen | TITLE: Meta Retargeting + Paid Social | TIMELINE: Long-Term Play
-   WHY: Website visitors who did not convert leave with no follow-up. Once they leave
-   the site, the firm has no way to re-engage them. Retargeting recaptures these
-   warm prospects at low cost.
-   COMPETITOR: Sevens Legal (active Facebook page + YouTube channel, likely running
-   paid amplification)
-   OPPORTUNITY: Retargeting campaign for website visitors + educational video ads
-   featuring the attorney. The radio presence and personal brand translate directly
-   to video creative.
+6. PILLAR: Lead Gen | TITLE: Google Review Velocity Campaign | TIMELINE: Long-Term Play
+   WHY: 84 Google reviews vs. Bob Katz Law (190+) and Seth Okin (212). Review count
+   is a direct local 3-pack ranking signal. The gap widens every month without action.
+   COMPETITOR: Seth Okin (212 reviews at 5.0 — 2.5× this firm's count)
+   OPPORTUNITY: Systematic review outreach to recently closed cases at settlement —
+   reaching 150+ reviews closes the gap with mid-market competitors and improves
+   3-pack ranking for both PI and criminal defense searches.
 
-7. PILLAR: Team | TITLE: Management Accountability Structure | TIMELINE: Long-Term Play
-   WHY: A seven-person team without a confirmed management layer creates owner
-   dependency — every operational question escalates to David Shapiro personally.
-   No named competitor identified for this specific issue.
-   OPPORTUNITY: Define a weekly accountability cadence, assign team leads, and
-   document performance metrics — so the owner can step back from daily operations
-   without quality degrading.
+7. PILLAR: Team | TITLE: Build A-Team Structure & Accountability System | TIMELINE: Long-Term Play
+   WHY: "C or D team" by owner's own assessment. 80% of David's 60–70 hour weeks
+   is delegable work. Without an A-team and an accountability system, the Maine
+   home and the restaurant stay on the plan instead of on the calendar.
+   COMPETITOR: None (internal problem)
+   OPPORTUNITY: Define role expectations, document key processes, and implement a
+   weekly accountability cadence — so the next hire delivers results and the current
+   team starts performing at a higher level.
 
-8. PILLAR: Profit | TITLE: Revenue Tracking by Practice Area | TIMELINE: Long-Term Play
-   WHY: Criminal defense case values range from $3,000 (DUI misdemeanor) to $50,000+
-   (federal/violent crimes). Without tracking by case type, the firm cannot optimize
-   its marketing and intake for the most profitable matters.
-   No named competitor identified for this specific issue.
-   OPPORTUNITY: Set up profit tracking by practice area to identify which case types
-   to prioritize in marketing, intake screening, and attorney time allocation.
+8. PILLAR: Profit | TITLE: PI Backlog Resolution System | TIMELINE: Long-Term Play
+   WHY: 150 active PI cases represent $3.75M+ in potential settlement value at a
+   conservative $25K average. Without a system to track progress and prioritize
+   high-value matters, this revenue converts slowly and unpredictably.
+   COMPETITOR: None (internal problem)
+   OPPORTUNITY: Build a case pipeline tracker with estimated resolution timelines
+   and settlement value — turning the backlog into a financial asset that can be
+   managed strategically rather than resolved by chance.
 
 ================================================================================
 FIRST 90 DAYS
 ================================================================================
 
-1. Launch Google Ads campaigns for DUI defense, criminal defense, and federal criminal
-   defense keywords — capturing the emergency searches the firm is currently missing
-2. Build and activate Local Service Ads profile with Google Screened verification —
-   immediately puts the firm above paid search results on Google
-3. Deploy above-the-fold contact form on homepage and establish after-hours intake
-   protocol to convert website leads at all hours
-4. Begin systematic Google review generation campaign targeting recently closed cases —
-   working toward closing the review gap with market leaders
-5. Coaching kickoff — establish weekly accountability sessions, set revenue and intake
-   baselines, and build the management infrastructure to support scaling
+1. Launch Google Ads campaigns for personal injury (auto accidents, slip and fall)
+   and criminal defense (DUI, drug charges, assault) in Baltimore — capturing the
+   emergency digital searches the firm is currently missing entirely
+2. Build and activate Local Service Ads with Google Screened verification — puts
+   this firm's name above paid ads and the map pack for the highest-intent Baltimore
+   PI and criminal defense searches immediately
+3. Fix the website TLS certificate error and begin website rebuild with an above-the-fold
+   contact form, click-to-call, and a modern design that converts referred traffic
+4. Activate the existing LegalMatch contract and deploy an after-hours intake coverage
+   service so every call gets answered — including 2 AM criminal arrests
+5. Coaching kickoff — establish weekly sessions, set revenue and intake baselines,
+   and begin building the A-team accountability structure David described
 
 ================================================================================
 END OF WORKINGS
