@@ -1,9 +1,13 @@
 /**
  * fathom.mjs — shared Fathom transcript lookup utility
  *
- * The Fathom REST API v1 does NOT support filtering by invitee email via query
- * parameter (returns 404). Instead we fetch recent calls and filter client-side
- * by matching the contact's email or name against call metadata.
+ * Lookup hierarchy:
+ *   1. Direct call ID — if a fathom_url or fathom_call_id is provided, fetch
+ *      that specific call directly. Most reliable; bypasses all search issues.
+ *   2. List + filter — list recent calls from GET /api/v1/calls and match
+ *      client-side by email/name. Fallback when no direct ID is available.
+ *      NOTE: The Fathom REST API list endpoint behavior is not fully documented;
+ *      if it returns 404 the lookup is skipped gracefully.
  */
 
 const FATHOM_BASE = 'https://fathom.video/api/v1';
@@ -11,10 +15,32 @@ const LOOKBACK_DAYS = 90;
 const MAX_SUMMARY_CHARS = 8000;
 
 /**
+ * Extract a numeric call ID from a Fathom URL.
+ * Handles https://fathom.video/calls/704816497 → "704816497"
+ */
+function extractCallId(url) {
+  if (!url) return null;
+  const m = String(url).match(/\/calls\/(\d+)/);
+  return m ? m[1] : null;
+}
+
+/**
+ * Fetch the summary text for a single call by its ID. Returns null on failure.
+ */
+async function fetchCallSummary(callId, headers) {
+  const res = await fetch(`${FATHOM_BASE}/calls/${callId}/summary`, { headers });
+  if (!res.ok) {
+    console.warn(`  Fathom summary fetch failed for call ${callId}: ${res.status}`);
+    return null;
+  }
+  const data = await res.json();
+  return data.summary || data.text || data.content || null;
+}
+
+/**
  * Returns true if a call's metadata matches the given contact email or name.
  */
 function callMatchesContact(call, emailLower, nameParts) {
-  // Collect all attendee/invitee identifiers from possible field names
   const inviteeFields = [
     call.attendees,
     call.invitees,
@@ -33,7 +59,7 @@ function callMatchesContact(call, emailLower, nameParts) {
     }
   }
 
-  // Also check the call title for the contact name
+  // Check call title for contact name
   const title = (call.title || '').toLowerCase();
   if (nameParts.some(p => title.includes(p))) return true;
 
@@ -41,29 +67,17 @@ function callMatchesContact(call, emailLower, nameParts) {
 }
 
 /**
- * Fetch the summary text for a single call. Returns null on failure.
- */
-async function fetchCallSummary(callId, headers) {
-  const res = await fetch(`${FATHOM_BASE}/calls/${callId}/summary`, { headers });
-  if (!res.ok) return null;
-  const data = await res.json();
-  return data.summary || data.text || data.content || null;
-}
-
-/**
- * Look up a Fathom call transcript for a contact, identified by email and name.
+ * Look up a Fathom transcript for a contact.
  *
- * Strategy:
- *  1. List recent calls (last LOOKBACK_DAYS days) via GET /api/v1/calls
- *  2. Filter client-side by matching email or name in invitee/attendee fields or title
- *  3. Fetch the summary for the most recent matched call
- *
- * @param {string} email - contact's email address
- * @param {string} contactName - contact's full name (used for name-based matching)
- * @param {string} apiKey - Fathom API key
- * @returns {Promise<string>} transcript/summary text, or a descriptive fallback message
+ * @param {string} email         - contact's email address
+ * @param {string} contactName   - contact's full name
+ * @param {string} apiKey        - Fathom API key
+ * @param {string} [fathomUrl]   - optional: direct Fathom call URL from trigger file
+ *                                 e.g. "https://fathom.video/calls/704816497"
+ *                                 When provided, skips search and fetches directly.
+ * @returns {Promise<string>}
  */
-export async function getFathomTranscript(email, contactName, apiKey) {
+export async function getFathomTranscript(email, contactName, apiKey, fathomUrl) {
   if (!apiKey) {
     console.warn('  FATHOM_API_KEY not set — skipping transcript lookup.');
     return 'No transcript available. FATHOM_API_KEY secret is not configured.';
@@ -74,13 +88,28 @@ export async function getFathomTranscript(email, contactName, apiKey) {
     'Accept': 'application/json',
   };
 
+  // ── Strategy 1: Direct call ID lookup ──────────────────────────────────────
+  // Most reliable. Use when a fathom_url is stored in the trigger file.
+  const directCallId = extractCallId(fathomUrl);
+  if (directCallId) {
+    console.log(`  Fathom: direct lookup for call ID ${directCallId}`);
+    const summaryText = await fetchCallSummary(directCallId, headers);
+    if (summaryText) {
+      console.log(`  Fathom: found summary via direct call ID ${directCallId}`);
+      return summaryText.slice(0, MAX_SUMMARY_CHARS);
+    }
+    console.warn(`  Fathom: direct lookup failed for call ${directCallId}, falling back to search`);
+  }
+
+  // ── Strategy 2: List recent calls + client-side filter ─────────────────────
+  // The Fathom REST API list endpoint does not support filtering by invitee email.
+  // We fetch recent calls and match by email/name in metadata and title.
   const emailLower = (email || '').toLowerCase().trim();
   const nameParts = (contactName || '')
     .toLowerCase()
     .split(/\s+/)
     .filter(p => p.length > 2);
 
-  // Fetch recent calls without an email filter (that filter returns 404)
   const since = new Date(Date.now() - LOOKBACK_DAYS * 24 * 60 * 60 * 1000)
     .toISOString()
     .split('T')[0];
@@ -101,12 +130,11 @@ export async function getFathomTranscript(email, contactName, apiKey) {
 
     if (!res.ok) {
       if (res.status === 404 && page === 1) {
-        // Try without date filter — some API versions don't support created_after
-        const fallbackUrl = `${FATHOM_BASE}/calls?per_page=100&sort=created_at:desc`;
-        const fallbackRes = await fetch(fallbackUrl, { headers });
+        // Try without date filter
+        const fallbackRes = await fetch(`${FATHOM_BASE}/calls?per_page=100&sort=created_at:desc`, { headers });
         if (!fallbackRes.ok) {
           console.warn(`  Fathom list API unavailable: ${fallbackRes.status}`);
-          return `No Fathom transcript available (API returned ${fallbackRes.status}).`;
+          return `No Fathom transcript available (list API returned ${fallbackRes.status}).`;
         }
         const fallbackData = await fallbackRes.json();
         allCalls = fallbackData.calls || fallbackData.data || fallbackData.results || [];
@@ -121,7 +149,6 @@ export async function getFathomTranscript(email, contactName, apiKey) {
     const pageCalls = data.calls || data.data || data.results || [];
     allCalls = allCalls.concat(pageCalls);
 
-    // Stop paging if this page was short (last page) or no next cursor
     if (pageCalls.length < 100 || !data.next_page) {
       keepPaging = false;
     } else {
@@ -130,22 +157,21 @@ export async function getFathomTranscript(email, contactName, apiKey) {
   }
 
   if (!allCalls.length) {
-    console.log(`  No Fathom calls returned from API.`);
+    console.log(`  Fathom: no calls returned from list API.`);
     return `No Fathom transcript found for ${contactName} (${email}).`;
   }
 
-  console.log(`  Fathom: scanning ${allCalls.length} recent call(s) for "${contactName}" / ${email}`);
+  console.log(`  Fathom: scanning ${allCalls.length} call(s) for "${contactName}" / ${email}`);
 
   const matched = allCalls.filter(call => callMatchesContact(call, emailLower, nameParts));
 
   if (!matched.length) {
-    console.log(`  No matching Fathom recording found for ${contactName} (${email}).`);
     return `No Fathom transcript found for ${contactName} (${email}).`;
   }
 
   const latest = matched[0];
   const callLabel = latest.title || latest.id;
-  console.log(`  Matched Fathom recording: "${callLabel}" (${latest.created_at || ''})`);
+  console.log(`  Fathom: matched "${callLabel}" (${latest.created_at || ''})`);
 
   const summaryText = await fetchCallSummary(latest.id, headers);
   if (!summaryText) {

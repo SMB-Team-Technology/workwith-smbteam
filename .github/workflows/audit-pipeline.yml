@@ -46,11 +46,40 @@ jobs:
           echo "sales_rep_email=$(jq -r '.sales_rep_email // empty' "$TRIGGER_FILE")" >> "$GITHUB_OUTPUT"
           echo "suppress_pricing=$(jq -r '.suppress_pricing // "false"' "$TRIGGER_FILE")" >> "$GITHUB_OUTPUT"
           echo "package=$(jq -r '.package // empty' "$TRIGGER_FILE")" >> "$GITHUB_OUTPUT"
+          echo "fathom_url=$(jq -r '.fathom_url // empty' "$TRIGGER_FILE")" >> "$GITHUB_OUTPUT"
 
       - name: Configure git
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
+
+      - name: Fetch Fathom transcript (direct call lookup)
+        if: steps.inputs.outputs.fathom_url != ''
+        env:
+          FATHOM_API_KEY: ${{ secrets.FATHOM_API_KEY }}
+        run: |
+          TRIGGER_FILE="${{ steps.inputs.outputs.trigger_file }}"
+          FATHOM_URL="${{ steps.inputs.outputs.fathom_url }}"
+          CALL_ID=$(echo "$FATHOM_URL" | grep -oP '(?<=/calls/)\d+')
+          if [ -z "$CALL_ID" ]; then
+            echo "Could not extract call ID from $FATHOM_URL — skipping."
+            exit 0
+          fi
+          echo "Fetching Fathom summary for call ID: $CALL_ID"
+          SUMMARY=$(curl -sf \
+            -H "Authorization: Bearer $FATHOM_API_KEY" \
+            -H "Accept: application/json" \
+            "https://fathom.video/api/v1/calls/${CALL_ID}/summary" \
+            | jq -r '.summary // .text // .content // empty')
+          if [ -z "$SUMMARY" ]; then
+            echo "No summary returned from Fathom for call $CALL_ID — leaving transcript field unchanged."
+            exit 0
+          fi
+          # Inject the fetched summary into the trigger file's transcript field
+          TRUNCATED=$(echo "$SUMMARY" | head -c 8000)
+          jq --arg t "SOURCE: Fathom (direct) — $FATHOM_URL\n\n$TRUNCATED" '.transcript = $t' \
+            "$TRIGGER_FILE" > /tmp/trigger_updated.json && mv /tmp/trigger_updated.json "$TRIGGER_FILE"
+          echo "Transcript injected into $TRIGGER_FILE (${#TRUNCATED} chars)"
 
       - name: Pass 1 — Audit Research
         env:

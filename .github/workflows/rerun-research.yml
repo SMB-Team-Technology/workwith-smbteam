@@ -53,6 +53,28 @@ jobs:
           echo "friendly_name=$FRIENDLY_NAME" >> "$GITHUB_OUTPUT"
           echo "Firm: $FRIENDLY_NAME"
 
+      - name: Fetch Fathom transcript (direct call lookup)
+        env:
+          FATHOM_API_KEY: ${{ secrets.FATHOM_API_KEY }}
+        run: |
+          FRIENDLY_NAME="${{ steps.resolve.outputs.friendly_name }}"
+          TRIGGER_FILE="triggers/audit-research/${FRIENDLY_NAME}.json"
+          FATHOM_URL=$(jq -r '.fathom_url // empty' "$TRIGGER_FILE" 2>/dev/null || true)
+          if [ -z "$FATHOM_URL" ]; then exit 0; fi
+          CALL_ID=$(echo "$FATHOM_URL" | grep -oP '(?<=/calls/)\d+')
+          if [ -z "$CALL_ID" ]; then exit 0; fi
+          echo "Fetching Fathom summary for call ID: $CALL_ID"
+          SUMMARY=$(curl -sf \
+            -H "Authorization: Bearer $FATHOM_API_KEY" \
+            -H "Accept: application/json" \
+            "https://fathom.video/api/v1/calls/${CALL_ID}/summary" \
+            | jq -r '.summary // .text // .content // empty')
+          if [ -z "$SUMMARY" ]; then echo "No summary from Fathom."; exit 0; fi
+          TRUNCATED=$(echo "$SUMMARY" | head -c 8000)
+          jq --arg t "SOURCE: Fathom (direct) — $FATHOM_URL\n\n$TRUNCATED" '.transcript = $t' \
+            "$TRIGGER_FILE" > /tmp/trigger_updated.json && mv /tmp/trigger_updated.json "$TRIGGER_FILE"
+          echo "Transcript injected (${#TRUNCATED} chars)"
+
       - name: Pass 1 — Audit Research
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
