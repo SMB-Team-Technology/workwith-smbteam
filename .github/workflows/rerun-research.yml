@@ -7,6 +7,10 @@ on:
         description: 'Firm friendly name (e.g. the-law-offices-of-david-p-shapiro)'
         required: true
         type: string
+  push:
+    branches: [main]
+    paths:
+      - 'triggers/rerun-research/*.json'
 
 jobs:
   rerun-research:
@@ -36,11 +40,24 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
 
+      - name: Resolve friendly name
+        id: resolve
+        run: |
+          if [ "${{ github.event_name }}" = "push" ]; then
+            FILE=$(git diff-tree --no-commit-id -r --name-only "${{ github.sha }}" \
+              | grep '^triggers/rerun-research/.*\.json$' | head -1)
+            FRIENDLY_NAME=$(jq -r '.friendly_name' "$FILE")
+          else
+            FRIENDLY_NAME="${{ github.event.inputs.friendly_name }}"
+          fi
+          echo "friendly_name=$FRIENDLY_NAME" >> "$GITHUB_OUTPUT"
+          echo "Firm: $FRIENDLY_NAME"
+
       - name: Pass 1 — Audit Research
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
         run: |
-          FRIENDLY_NAME="${{ github.event.inputs.friendly_name }}"
+          FRIENDLY_NAME="${{ steps.resolve.outputs.friendly_name }}"
           TRIGGER_FILE="triggers/audit-research/${FRIENDLY_NAME}.json"
 
           if [ ! -f "$TRIGGER_FILE" ]; then
@@ -69,7 +86,7 @@ jobs:
         env:
           HUBSPOT_TOKEN: ${{ secrets.HUBSPOT_TOKEN }}
         run: |
-          FRIENDLY_NAME="${{ github.event.inputs.friendly_name }}"
+          FRIENDLY_NAME="${{ steps.resolve.outputs.friendly_name }}"
           echo "Running package selection for: $FRIENDLY_NAME"
           node scripts/select-package.mjs "$FRIENDLY_NAME" || true
           if [ -f "$FRIENDLY_NAME/package_decision.json" ]; then
