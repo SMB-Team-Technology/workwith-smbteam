@@ -1,0 +1,46 @@
+name: Fathom-HubSpot Lookup Diagnostic
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'triggers/diagnostic-run.txt'
+
+jobs:
+  diagnose:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Test resolve-fathom-url for David Shapiro (contact 227288962849)
+        env:
+          HUBSPOT_TOKEN: ${{ secrets.HUBSPOT_TOKEN }}
+        run: |
+          echo "=== Running resolve-fathom-url.mjs ==="
+          RESULT=$(node scripts/resolve-fathom-url.mjs 227288962849 2>&1)
+          echo "stdout: $RESULT"
+          echo ""
+
+          echo "=== Raw HubSpot notes associations ==="
+          curl -s -w "\nHTTP %{http_code}" \
+            -H "Authorization: Bearer $HUBSPOT_TOKEN" \
+            "https://api.hubapi.com/crm/v3/objects/contacts/227288962849/associations/notes" \
+            | tail -20
+
+          echo ""
+          echo "=== Raw HubSpot meetings associations ==="
+          curl -s -w "\nHTTP %{http_code}" \
+            -H "Authorization: Bearer $HUBSPOT_TOKEN" \
+            "https://api.hubapi.com/crm/v3/objects/contacts/227288962849/associations/meetings" \
+            | tail -20
+
+          echo ""
+          echo "=== Raw HubSpot calls associations ==="
+          curl -s -w "\nHTTP %{http_code}" \
+            -H "Authorization: Bearer $HUBSPOT_TOKEN" \
+            "https://api.hubapi.com/crm/v3/objects/contacts/227288962849/associations/calls" \
+            | tail -5
