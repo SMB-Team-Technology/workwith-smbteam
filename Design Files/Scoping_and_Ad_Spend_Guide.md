@@ -350,6 +350,15 @@ These are hard floors. If the recommended ad spend falls below these, the recomm
 
 ---
 
+<a id="sales-override"></a>
+## SALES OVERRIDE
+
+Before running Steps 5 or 6, check all inputs for the phrase **"sales override"** (case-insensitive).
+
+If found, extract the packages named after that phrase and skip all eligibility filters in Steps 5A and 6A. Use those packages directly. Still look up every price character-by-character from the official tables — never estimate. Still calculate ad spend and ROI normally. See Step 10.5 in the system prompt for full instructions.
+
+---
+
 <a id="6-marketing-package"></a>
 ## 6. STEP 5 — SELECT THE MARKETING PACKAGE
 
