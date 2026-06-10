@@ -96,21 +96,28 @@ async function searchEngagementType(objectType, bodyField) {
 
 (async () => {
   try {
-    // Try notes first (Fathom's default HubSpot engagement type)
+    // Fathom's HubSpot integration logs recordings as Meeting engagements
+    const fromMeetings = await searchEngagementType('meetings', 'hs_meeting_body');
+    if (fromMeetings) {
+      process.stdout.write(fromMeetings);
+      process.exit(0);
+    }
+
+    // Fallback: notes
     const fromNotes = await searchEngagementType('notes', 'hs_note_body');
     if (fromNotes) {
       process.stdout.write(fromNotes);
       process.exit(0);
     }
 
-    // Fallback: try calls (some setups log here instead)
+    // Fallback: calls
     const fromCalls = await searchEngagementType('calls', 'hs_call_body');
     if (fromCalls) {
       process.stdout.write(fromCalls);
       process.exit(0);
     }
 
-    console.error('No Fathom URL found in HubSpot notes or calls for this contact.');
+    console.error('No Fathom URL found in HubSpot meetings, notes, or calls for this contact.');
     process.exit(0);
   } catch (err) {
     console.error(`resolve-fathom-url error: ${err.message}`);

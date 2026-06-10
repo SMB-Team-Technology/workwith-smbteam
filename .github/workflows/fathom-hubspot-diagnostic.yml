@@ -22,25 +22,14 @@ jobs:
         run: |
           echo "=== Running resolve-fathom-url.mjs ==="
           RESULT=$(node scripts/resolve-fathom-url.mjs 227288962849 2>&1)
-          echo "stdout: $RESULT"
+          echo "$RESULT"
           echo ""
 
-          echo "=== Raw HubSpot notes associations ==="
-          curl -s -w "\nHTTP %{http_code}" \
+          echo "=== Meeting bodies (batch read IDs 110808831077 + 110848585243) ==="
+          curl -s \
+            -X POST \
             -H "Authorization: Bearer $HUBSPOT_TOKEN" \
-            "https://api.hubapi.com/crm/v3/objects/contacts/227288962849/associations/notes" \
-            | tail -20
-
-          echo ""
-          echo "=== Raw HubSpot meetings associations ==="
-          curl -s -w "\nHTTP %{http_code}" \
-            -H "Authorization: Bearer $HUBSPOT_TOKEN" \
-            "https://api.hubapi.com/crm/v3/objects/contacts/227288962849/associations/meetings" \
-            | tail -20
-
-          echo ""
-          echo "=== Raw HubSpot calls associations ==="
-          curl -s -w "\nHTTP %{http_code}" \
-            -H "Authorization: Bearer $HUBSPOT_TOKEN" \
-            "https://api.hubapi.com/crm/v3/objects/contacts/227288962849/associations/calls" \
-            | tail -5
+            -H "Content-Type: application/json" \
+            "https://api.hubapi.com/crm/v3/objects/meetings/batch/read" \
+            -d '{"properties":["hs_meeting_title","hs_meeting_body","hs_timestamp","hs_meeting_external_url"],"inputs":[{"id":"110808831077"},{"id":"110848585243"}]}' \
+            | jq '[.results[] | {id: .id, title: .properties.hs_meeting_title, timestamp: .properties.hs_timestamp, body_snippet: (.properties.hs_meeting_body // "" | .[0:300]), external_url: .properties.hs_meeting_external_url}]'
