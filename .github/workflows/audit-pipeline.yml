@@ -53,13 +53,28 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
 
-      - name: Fetch Fathom transcript (direct call lookup)
-        if: steps.inputs.outputs.fathom_url != ''
+      - name: Resolve Fathom URL
+        id: resolve_fathom
+        env:
+          HUBSPOT_TOKEN: ${{ secrets.HUBSPOT_TOKEN }}
+        run: |
+          FATHOM_URL=$(node scripts/resolve-fathom-url.mjs \
+            "${{ steps.inputs.outputs.hubspot_contact_id }}" \
+            "${{ steps.inputs.outputs.fathom_url }}" 2>/dev/null || true)
+          echo "fathom_url=${FATHOM_URL}" >> "$GITHUB_OUTPUT"
+          if [ -n "$FATHOM_URL" ]; then
+            echo "Resolved Fathom URL: $FATHOM_URL"
+          else
+            echo "No Fathom URL found — Pass 1 will proceed without transcript."
+          fi
+
+      - name: Fetch Fathom transcript
+        if: steps.resolve_fathom.outputs.fathom_url != ''
         env:
           FATHOM_API_KEY: ${{ secrets.FATHOM_API_KEY }}
         run: |
           TRIGGER_FILE="${{ steps.inputs.outputs.trigger_file }}"
-          FATHOM_URL="${{ steps.inputs.outputs.fathom_url }}"
+          FATHOM_URL="${{ steps.resolve_fathom.outputs.fathom_url }}"
           CALL_ID=$(echo "$FATHOM_URL" | grep -oP '(?<=/calls/)\d+')
           if [ -z "$CALL_ID" ]; then
             echo "Could not extract call ID from $FATHOM_URL — skipping."
@@ -75,7 +90,6 @@ jobs:
             echo "No summary returned from Fathom for call $CALL_ID — leaving transcript field unchanged."
             exit 0
           fi
-          # Inject the fetched summary into the trigger file's transcript field
           TRUNCATED=$(echo "$SUMMARY" | head -c 8000)
           jq --arg t "SOURCE: Fathom (direct) — $FATHOM_URL\n\n$TRUNCATED" '.transcript = $t' \
             "$TRIGGER_FILE" > /tmp/trigger_updated.json && mv /tmp/trigger_updated.json "$TRIGGER_FILE"

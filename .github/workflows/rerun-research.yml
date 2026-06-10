@@ -53,14 +53,31 @@ jobs:
           echo "friendly_name=$FRIENDLY_NAME" >> "$GITHUB_OUTPUT"
           echo "Firm: $FRIENDLY_NAME"
 
-      - name: Fetch Fathom transcript (direct call lookup)
+      - name: Resolve Fathom URL
+        id: resolve_fathom
+        env:
+          HUBSPOT_TOKEN: ${{ secrets.HUBSPOT_TOKEN }}
+        run: |
+          FRIENDLY_NAME="${{ steps.resolve.outputs.friendly_name }}"
+          TRIGGER_FILE="triggers/audit-research/${FRIENDLY_NAME}.json"
+          CONTACT_ID=$(jq -r '.hubspot_contact_id // empty' "$TRIGGER_FILE" 2>/dev/null || true)
+          HINT_URL=$(jq -r '.fathom_url // empty' "$TRIGGER_FILE" 2>/dev/null || true)
+          FATHOM_URL=$(node scripts/resolve-fathom-url.mjs "$CONTACT_ID" "$HINT_URL" 2>/dev/null || true)
+          echo "fathom_url=${FATHOM_URL}" >> "$GITHUB_OUTPUT"
+          if [ -n "$FATHOM_URL" ]; then
+            echo "Resolved Fathom URL: $FATHOM_URL"
+          else
+            echo "No Fathom URL found — Pass 1 will proceed without transcript."
+          fi
+
+      - name: Fetch Fathom transcript
+        if: steps.resolve_fathom.outputs.fathom_url != ''
         env:
           FATHOM_API_KEY: ${{ secrets.FATHOM_API_KEY }}
         run: |
           FRIENDLY_NAME="${{ steps.resolve.outputs.friendly_name }}"
           TRIGGER_FILE="triggers/audit-research/${FRIENDLY_NAME}.json"
-          FATHOM_URL=$(jq -r '.fathom_url // empty' "$TRIGGER_FILE" 2>/dev/null || true)
-          if [ -z "$FATHOM_URL" ]; then exit 0; fi
+          FATHOM_URL="${{ steps.resolve_fathom.outputs.fathom_url }}"
           CALL_ID=$(echo "$FATHOM_URL" | grep -oP '(?<=/calls/)\d+')
           if [ -z "$CALL_ID" ]; then exit 0; fi
           echo "Fetching Fathom summary for call ID: $CALL_ID"
