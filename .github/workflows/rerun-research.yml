@@ -1,0 +1,85 @@
+name: Re-run Research + Package Selection (Pass 1 + 1.5 only)
+
+on:
+  workflow_dispatch:
+    inputs:
+      friendly_name:
+        description: 'Firm friendly name (e.g. the-law-offices-of-david-p-shapiro)'
+        required: true
+        type: string
+
+jobs:
+  rerun-research:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install Claude Code CLI
+        run: npm install -g @anthropic-ai/claude-code
+
+      - name: Configure git
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+      - name: Pass 1 — Audit Research
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: |
+          FRIENDLY_NAME="${{ github.event.inputs.friendly_name }}"
+          TRIGGER_FILE="triggers/audit-research/${FRIENDLY_NAME}.json"
+
+          if [ ! -f "$TRIGGER_FILE" ]; then
+            echo "ERROR: Trigger file not found: $TRIGGER_FILE"
+            exit 1
+          fi
+
+          claude --model claude-sonnet-4-6 --dangerously-skip-permissions -p "
+            You are running Pass 1 of the SMB Team Growth Audit pipeline.
+
+            Read the trigger file at \`$TRIGGER_FILE\` — it is a JSON file containing
+            firm_name, friendly_name, url, sales_rep, date, and transcript.
+            Extract those values first.
+
+            The trigger file contains a transcript field with the discovery call notes.
+            Use that as ground truth per the TRANSCRIPT-FIRST RULE in the command file.
+            If the URL resolves, browse it live. If not (fictional/test firm), fabricate
+            realistic research data for all steps. Do not leave any section blank.
+
+            Read \`.claude/commands/audit-research.md\` in full and execute every step in
+            order. Save progress after each major section. Commit the research notes file
+            to main and report the commit hash when complete.
+          "
+
+      - name: Pass 1.5 — Deterministic package selection
+        env:
+          HUBSPOT_TOKEN: ${{ secrets.HUBSPOT_TOKEN }}
+        run: |
+          FRIENDLY_NAME="${{ github.event.inputs.friendly_name }}"
+          echo "Running package selection for: $FRIENDLY_NAME"
+          node scripts/select-package.mjs "$FRIENDLY_NAME" || true
+          if [ -f "$FRIENDLY_NAME/package_decision.json" ]; then
+            echo "=== package_decision.json ==="
+            cat "$FRIENDLY_NAME/package_decision.json"
+            git add "$FRIENDLY_NAME/package_decision.json"
+            if ! git diff --cached --quiet; then
+              git commit -m "Pass 1.5: package decision for $FRIENDLY_NAME (research re-run)"
+              git push origin main
+            fi
+          else
+            echo "No package_decision.json produced."
+          fi
