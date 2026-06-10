@@ -1,10 +1,7 @@
 name: Fathom-HubSpot Lookup Diagnostic
 
 on:
-  push:
-    branches: [main]
-    paths:
-      - 'triggers/diagnostic-run.txt'
+  workflow_dispatch:
 
 jobs:
   diagnose:
