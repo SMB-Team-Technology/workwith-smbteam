@@ -72,28 +72,39 @@ jobs:
         if: steps.resolve_fathom.outputs.fathom_url != ''
         env:
           FATHOM_API_KEY: ${{ secrets.FATHOM_API_KEY }}
+          HUBSPOT_TOKEN: ${{ secrets.HUBSPOT_TOKEN }}
         run: |
           TRIGGER_FILE="${{ steps.inputs.outputs.trigger_file }}"
           FATHOM_URL="${{ steps.resolve_fathom.outputs.fathom_url }}"
           CALL_ID=$(echo "$FATHOM_URL" | grep -oP '(?<=/calls/)\d+')
-          if [ -z "$CALL_ID" ]; then
-            echo "Could not extract call ID from $FATHOM_URL — skipping."
-            exit 0
+
+          if [ -n "$CALL_ID" ]; then
+            echo "Fetching Fathom summary for call ID: $CALL_ID"
+            SUMMARY=$(curl -sf \
+              -H "Authorization: Bearer $FATHOM_API_KEY" \
+              -H "Accept: application/json" \
+              "https://fathom.video/api/v1/calls/${CALL_ID}/summary" \
+              | jq -r '.summary // .text // .content // empty')
+            if [ -z "$SUMMARY" ]; then
+              echo "No summary returned from Fathom for call $CALL_ID — leaving transcript field unchanged."
+              exit 0
+            fi
+            TRUNCATED=$(echo "$SUMMARY" | head -c 8000)
+            jq --arg t "SOURCE: Fathom (direct) — $FATHOM_URL\n\n$TRUNCATED" '.transcript = $t' \
+              "$TRIGGER_FILE" > /tmp/trigger_updated.json && mv /tmp/trigger_updated.json "$TRIGGER_FILE"
+            echo "Transcript injected into $TRIGGER_FILE (${#TRUNCATED} chars)"
+          else
+            echo "Share URL found ($FATHOM_URL) — extracting transcript from HubSpot internal meeting notes."
+            CONTACT_ID="${{ steps.inputs.outputs.hubspot_contact_id }}"
+            TRANSCRIPT=$(node scripts/fetch-hubspot-fathom-notes.mjs "$CONTACT_ID" 2>/dev/null || true)
+            if [ -z "$TRANSCRIPT" ]; then
+              echo "No transcript found in HubSpot internal meeting notes — leaving transcript field unchanged."
+              exit 0
+            fi
+            jq --arg t "SOURCE: Fathom (via HubSpot internal notes) — $FATHOM_URL\n\n$TRANSCRIPT" \
+              '.transcript = $t' "$TRIGGER_FILE" > /tmp/trigger_updated.json && mv /tmp/trigger_updated.json "$TRIGGER_FILE"
+            echo "Transcript injected from HubSpot internal notes (${#TRANSCRIPT} chars)"
           fi
-          echo "Fetching Fathom summary for call ID: $CALL_ID"
-          SUMMARY=$(curl -sf \
-            -H "Authorization: Bearer $FATHOM_API_KEY" \
-            -H "Accept: application/json" \
-            "https://fathom.video/api/v1/calls/${CALL_ID}/summary" \
-            | jq -r '.summary // .text // .content // empty')
-          if [ -z "$SUMMARY" ]; then
-            echo "No summary returned from Fathom for call $CALL_ID — leaving transcript field unchanged."
-            exit 0
-          fi
-          TRUNCATED=$(echo "$SUMMARY" | head -c 8000)
-          jq --arg t "SOURCE: Fathom (direct) — $FATHOM_URL\n\n$TRUNCATED" '.transcript = $t' \
-            "$TRIGGER_FILE" > /tmp/trigger_updated.json && mv /tmp/trigger_updated.json "$TRIGGER_FILE"
-          echo "Transcript injected into $TRIGGER_FILE (${#TRUNCATED} chars)"
 
       - name: Pass 1 — Audit Research
         env:

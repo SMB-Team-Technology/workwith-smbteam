@@ -20,20 +20,13 @@ jobs:
         env:
           HUBSPOT_TOKEN: ${{ secrets.HUBSPOT_TOKEN }}
         run: |
-          echo "=== Running resolve-fathom-url.mjs ==="
-          RESULT=$(node scripts/resolve-fathom-url.mjs 227288962849 2>&1)
-          echo "$RESULT"
+          echo "=== Running resolve-fathom-url.mjs (expects share URL) ==="
+          FATHOM_URL=$(node scripts/resolve-fathom-url.mjs 227288962849 2>&1)
+          echo "URL output: $FATHOM_URL"
           echo ""
 
-          echo "=== Full details for VIP Confirmation Call meeting (110808831077) ==="
-          curl -s \
-            -H "Authorization: Bearer $HUBSPOT_TOKEN" \
-            "https://api.hubapi.com/crm/v3/objects/meetings/110808831077?properties=hs_meeting_title,hs_meeting_body,hs_timestamp,hs_meeting_external_url,hs_meeting_source,hs_meeting_outcome,hs_lastmodifieddate" \
-            | jq '{title: .properties.hs_meeting_title, timestamp: .properties.hs_timestamp, source: .properties.hs_meeting_source, external_url: .properties.hs_meeting_external_url, lastmodified: .properties.hs_lastmodifieddate, full_body: .properties.hs_meeting_body}'
-
-          echo ""
-          echo "=== All properties on meeting 110808831077 ==="
-          curl -s \
-            -H "Authorization: Bearer $HUBSPOT_TOKEN" \
-            "https://api.hubapi.com/crm/v3/objects/meetings/110808831077?properties=hs_meeting_title,hs_meeting_body,hs_timestamp,hs_meeting_external_url,hs_meeting_source,hs_internal_meeting_notes,hs_meeting_location,hs_activity_type" \
-            | jq '.properties | to_entries | map(select(.value != null and .value != "")) | from_entries'
+          echo "=== Running fetch-hubspot-fathom-notes.mjs (expects full transcript) ==="
+          TRANSCRIPT=$(node scripts/fetch-hubspot-fathom-notes.mjs 227288962849 2>&1)
+          echo "Transcript length: ${#TRANSCRIPT}"
+          echo "First 500 chars:"
+          echo "$TRANSCRIPT" | head -c 500

@@ -21,7 +21,8 @@
 
 const [, , contactId, fathomUrlHint] = process.argv;
 
-const FATHOM_URL_RE = /https:\/\/fathom\.video\/calls\/\d+/;
+// Matches both direct call URLs and share URLs logged by Fathom's HubSpot integration
+const FATHOM_URL_RE = /https:\/\/fathom\.video\/(calls\/\d+|share\/[A-Za-z0-9_-]+)/;
 
 if (fathomUrlHint && FATHOM_URL_RE.test(fathomUrlHint)) {
   process.stdout.write(fathomUrlHint.match(FATHOM_URL_RE)[0]);
@@ -40,10 +41,14 @@ const HEADERS = {
 
 /**
  * Get all HubSpot object IDs of a given type associated with this contact,
- * then batch-read their body/text field and return any that contain a Fathom URL.
+ * then batch-read their body/text fields and return any that contain a Fathom URL.
+ * bodyFields: string or array of property names to search.
+ * Call URLs (/calls/\d+) take priority over share URLs (/share/...).
  * Returns the most recent Fathom URL found, or null.
  */
-async function searchEngagementType(objectType, bodyField) {
+async function searchEngagementType(objectType, bodyFields) {
+  const fields = Array.isArray(bodyFields) ? bodyFields : [bodyFields];
+
   const assocRes = await fetch(
     `https://api.hubapi.com/crm/v3/objects/contacts/${contactId}/associations/${objectType}`,
     { headers: HEADERS }
@@ -62,7 +67,7 @@ async function searchEngagementType(objectType, bodyField) {
       method: 'POST',
       headers: HEADERS,
       body: JSON.stringify({
-        properties: [bodyField, 'hs_timestamp', 'hs_lastmodifieddate'],
+        properties: [...fields, 'hs_timestamp', 'hs_lastmodifieddate'],
         inputs: ids.map(id => ({ id })),
       }),
     }
@@ -81,14 +86,27 @@ async function searchEngagementType(objectType, bodyField) {
     return tb - ta;
   });
 
+  let shareUrlFallback = null;
+
   for (const item of items) {
-    const body = item.properties?.[bodyField] || '';
-    const m = body.match(FATHOM_URL_RE);
-    if (m) {
-      console.error(`Found Fathom URL in HubSpot ${objectType} (id ${item.id})`);
-      return m[0];
+    for (const field of fields) {
+      const body = item.properties?.[field] || '';
+      const m = body.match(FATHOM_URL_RE);
+      if (m) {
+        const url = 'https://fathom.video/' + m[1];
+        if (m[1].startsWith('calls/')) {
+          console.error(`Found Fathom call URL in HubSpot ${objectType}.${field} (id ${item.id})`);
+          return url;
+        }
+        if (!shareUrlFallback) {
+          console.error(`Found Fathom share URL in HubSpot ${objectType}.${field} (id ${item.id})`);
+          shareUrlFallback = url;
+        }
+      }
     }
   }
+
+  if (shareUrlFallback) return shareUrlFallback;
 
   console.error(`Scanned ${items.length} HubSpot ${objectType} — no Fathom URL found.`);
   return null;
@@ -96,8 +114,8 @@ async function searchEngagementType(objectType, bodyField) {
 
 (async () => {
   try {
-    // Fathom's HubSpot integration logs recordings as Meeting engagements
-    const fromMeetings = await searchEngagementType('meetings', 'hs_meeting_body');
+    // Fathom's HubSpot integration logs summaries to hs_internal_meeting_notes on Meeting engagements
+    const fromMeetings = await searchEngagementType('meetings', ['hs_meeting_body', 'hs_internal_meeting_notes']);
     if (fromMeetings) {
       process.stdout.write(fromMeetings);
       process.exit(0);
