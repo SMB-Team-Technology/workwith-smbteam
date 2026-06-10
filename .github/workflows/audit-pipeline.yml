@@ -76,7 +76,7 @@ jobs:
         run: |
           TRIGGER_FILE="${{ steps.inputs.outputs.trigger_file }}"
           FATHOM_URL="${{ steps.resolve_fathom.outputs.fathom_url }}"
-          CALL_ID=$(echo "$FATHOM_URL" | grep -oP '(?<=/calls/)\d+')
+          CALL_ID=$(echo "$FATHOM_URL" | grep -oP '(?<=/calls/)\d+' || true)
 
           if [ -n "$CALL_ID" ]; then
             echo "Fetching Fathom summary for call ID: $CALL_ID"
@@ -90,7 +90,8 @@ jobs:
               exit 0
             fi
             TRUNCATED=$(echo "$SUMMARY" | head -c 8000)
-            jq --arg t "SOURCE: Fathom (direct) — $FATHOM_URL\n\n$TRUNCATED" '.transcript = $t' \
+            T="SOURCE: Fathom (direct) — ${FATHOM_URL}"$'\n\n'"${TRUNCATED}"
+            jq --arg t "$T" '.transcript = $t' \
               "$TRIGGER_FILE" > /tmp/trigger_updated.json && mv /tmp/trigger_updated.json "$TRIGGER_FILE"
             echo "Transcript injected into $TRIGGER_FILE (${#TRUNCATED} chars)"
           else
@@ -101,8 +102,9 @@ jobs:
               echo "No transcript found in HubSpot internal meeting notes — leaving transcript field unchanged."
               exit 0
             fi
-            jq --arg t "SOURCE: Fathom (via HubSpot internal notes) — $FATHOM_URL\n\n$TRANSCRIPT" \
-              '.transcript = $t' "$TRIGGER_FILE" > /tmp/trigger_updated.json && mv /tmp/trigger_updated.json "$TRIGGER_FILE"
+            T="SOURCE: Fathom (via HubSpot internal notes) — ${FATHOM_URL}"$'\n\n'"${TRANSCRIPT}"
+            jq --arg t "$T" '.transcript = $t' \
+              "$TRIGGER_FILE" > /tmp/trigger_updated.json && mv /tmp/trigger_updated.json "$TRIGGER_FILE"
             echo "Transcript injected from HubSpot internal notes (${#TRANSCRIPT} chars)"
           fi
 
