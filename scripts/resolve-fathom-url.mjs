@@ -4,11 +4,15 @@
  *
  * Resolves the Fathom recording URL for a HubSpot contact.
  *
+ * The Fathom → HubSpot integration ("Log Meetings and Fathom Call Summaries
+ * in HubSpot") logs each recording as a HubSpot Note engagement on the
+ * matching contact. The note body contains the call summary and a link to
+ * the Fathom recording.
+ *
  * Strategy:
- *   1. If fathom_url_hint is a valid Fathom call URL, use it directly.
- *   2. Query HubSpot calls associated with the contact, parse hs_call_body
- *      for a fathom.video URL. Requires Fathom → HubSpot sync to be enabled
- *      in Fathom account settings (Integrations → HubSpot).
+ *   1. Use fathom_url from trigger JSON if present.
+ *   2. Search HubSpot notes associated with the contact for a fathom.video URL.
+ *   3. Fallback: search HubSpot calls (in case object type varies by setup).
  *
  * Usage:   node scripts/resolve-fathom-url.mjs <hubspot_contact_id> [fathom_url_hint]
  * Output:  Fathom URL printed to stdout, nothing if not found.
@@ -29,63 +33,84 @@ if (!HUBSPOT_TOKEN || !contactId || contactId === 'undefined' || contactId === '
   process.exit(0);
 }
 
+const HEADERS = {
+  Authorization: `Bearer ${HUBSPOT_TOKEN}`,
+  'Content-Type': 'application/json',
+};
+
+/**
+ * Get all HubSpot object IDs of a given type associated with this contact,
+ * then batch-read their body/text field and return any that contain a Fathom URL.
+ * Returns the most recent Fathom URL found, or null.
+ */
+async function searchEngagementType(objectType, bodyField) {
+  const assocRes = await fetch(
+    `https://api.hubapi.com/crm/v3/objects/contacts/${contactId}/associations/${objectType}`,
+    { headers: HEADERS }
+  );
+  if (!assocRes.ok) {
+    console.error(`HubSpot ${objectType} associations: ${assocRes.status}`);
+    return null;
+  }
+
+  const ids = ((await assocRes.json()).results || []).map(r => r.id);
+  if (!ids.length) return null;
+
+  const batchRes = await fetch(
+    `https://api.hubapi.com/crm/v3/objects/${objectType}/batch/read`,
+    {
+      method: 'POST',
+      headers: HEADERS,
+      body: JSON.stringify({
+        properties: [bodyField, 'hs_timestamp', 'hs_lastmodifieddate'],
+        inputs: ids.map(id => ({ id })),
+      }),
+    }
+  );
+  if (!batchRes.ok) {
+    console.error(`HubSpot ${objectType} batch read: ${batchRes.status}`);
+    return null;
+  }
+
+  const items = (await batchRes.json()).results || [];
+
+  // Sort most-recent first
+  items.sort((a, b) => {
+    const ta = new Date(a.properties?.hs_timestamp || a.properties?.hs_lastmodifieddate || 0).getTime();
+    const tb = new Date(b.properties?.hs_timestamp || b.properties?.hs_lastmodifieddate || 0).getTime();
+    return tb - ta;
+  });
+
+  for (const item of items) {
+    const body = item.properties?.[bodyField] || '';
+    const m = body.match(FATHOM_URL_RE);
+    if (m) {
+      console.error(`Found Fathom URL in HubSpot ${objectType} (id ${item.id})`);
+      return m[0];
+    }
+  }
+
+  console.error(`Scanned ${items.length} HubSpot ${objectType} — no Fathom URL found.`);
+  return null;
+}
+
 (async () => {
   try {
-    // Step 1: get call IDs associated with this contact
-    const assocRes = await fetch(
-      `https://api.hubapi.com/crm/v3/objects/contacts/${contactId}/associations/calls`,
-      { headers: { Authorization: `Bearer ${HUBSPOT_TOKEN}` } }
-    );
-    if (!assocRes.ok) {
-      console.error(`HubSpot associations lookup returned ${assocRes.status}`);
+    // Try notes first (Fathom's default HubSpot engagement type)
+    const fromNotes = await searchEngagementType('notes', 'hs_note_body');
+    if (fromNotes) {
+      process.stdout.write(fromNotes);
       process.exit(0);
     }
 
-    const callIds = ((await assocRes.json()).results || []).map(r => r.id);
-    if (!callIds.length) {
-      console.error('No HubSpot calls associated with this contact.');
+    // Fallback: try calls (some setups log here instead)
+    const fromCalls = await searchEngagementType('calls', 'hs_call_body');
+    if (fromCalls) {
+      process.stdout.write(fromCalls);
       process.exit(0);
     }
 
-    // Step 2: batch-read call bodies
-    const batchRes = await fetch(
-      'https://api.hubapi.com/crm/v3/objects/calls/batch/read',
-      {
-        method: 'POST',
-        headers: {
-          Authorization: `Bearer ${HUBSPOT_TOKEN}`,
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          properties: ['hs_call_body', 'hs_call_title', 'hs_timestamp', 'hs_call_source'],
-          inputs: callIds.map(id => ({ id })),
-        }),
-      }
-    );
-    if (!batchRes.ok) {
-      console.error(`HubSpot batch read returned ${batchRes.status}`);
-      process.exit(0);
-    }
-
-    const calls = (await batchRes.json()).results || [];
-
-    // Sort most-recent first
-    calls.sort((a, b) => {
-      const ta = new Date(a.properties?.hs_timestamp || 0).getTime();
-      const tb = new Date(b.properties?.hs_timestamp || 0).getTime();
-      return tb - ta;
-    });
-
-    for (const call of calls) {
-      const body = call.properties?.hs_call_body || '';
-      const m = body.match(FATHOM_URL_RE);
-      if (m) {
-        process.stdout.write(m[0]);
-        process.exit(0);
-      }
-    }
-
-    console.error(`Scanned ${calls.length} HubSpot calls — no Fathom URL found. Enable Fathom → HubSpot sync in Fathom account settings.`);
+    console.error('No Fathom URL found in HubSpot notes or calls for this contact.');
     process.exit(0);
   } catch (err) {
     console.error(`resolve-fathom-url error: ${err.message}`);
