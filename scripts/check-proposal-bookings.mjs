@@ -22,6 +22,7 @@
  */
 
 import { writeFileSync, readFileSync, existsSync, mkdirSync } from 'fs';
+import { getFathomTranscript as _getFathomTranscript } from './lib/fathom.mjs';
 
 const HUBSPOT_TOKEN  = process.env.HUBSPOT_TOKEN;
 const FATHOM_API_KEY = process.env.FATHOM_API_KEY;
@@ -145,56 +146,8 @@ async function getOwnerDetails(ownerId) {
 // Fathom
 // ---------------------------------------------------------------------------
 
-/**
- * Look up Fathom recordings for a contact by email, then return the summary
- * of the most recent discovery/analysis call as a transcript string.
- *
- * NOTE: The Fathom REST API endpoint below is based on documented v1 API
- * structure. Verify against https://developers.fathom.video if endpoints change.
- */
-async function getFathomTranscript(email, contactName) {
-  if (!FATHOM_API_KEY) {
-    console.warn('  FATHOM_API_KEY not set — skipping transcript lookup.');
-    return `No transcript available. FATHOM_API_KEY secret is not configured.`;
-  }
-
-  const searchUrl = `https://fathom.video/api/v1/calls?invitee_email=${encodeURIComponent(email)}&per_page=10&sort=created_at:desc`;
-  const res = await fetch(searchUrl, {
-    headers: {
-      'Authorization': `Bearer ${FATHOM_API_KEY}`,
-      'Accept':        'application/json',
-    },
-  });
-
-  if (!res.ok) {
-    console.warn(`  Fathom lookup failed for ${email}: ${res.status}`);
-    return `No Fathom transcript available (API returned ${res.status} for ${email}).`;
-  }
-
-  const data  = await res.json();
-  const calls = data.calls || data.data || data.results || [];
-
-  if (!calls.length) {
-    console.log(`  No Fathom recordings found for ${email}.`);
-    return `No Fathom transcript found for ${contactName} (${email}).`;
-  }
-
-  const latest     = calls[0];
-  const summaryRes = await fetch(`https://fathom.video/api/v1/calls/${latest.id}/summary`, {
-    headers: {
-      'Authorization': `Bearer ${FATHOM_API_KEY}`,
-      'Accept':        'application/json',
-    },
-  });
-
-  if (!summaryRes.ok) {
-    return `Fathom recording found (${latest.title || latest.id}) but summary unavailable.`;
-  }
-
-  const summary = await summaryRes.json();
-  const text    = summary.summary || summary.text || summary.content || JSON.stringify(summary);
-  console.log(`  Found Fathom transcript: "${latest.title || latest.id}" (${latest.created_at || ''})`);
-  return text.slice(0, 8000);
+function getFathomTranscript(email, contactName) {
+  return _getFathomTranscript(email, contactName, FATHOM_API_KEY);
 }
 
 // ---------------------------------------------------------------------------
