@@ -9,7 +9,7 @@ Slide 1 — Where [Firm] Stands Today         (assessment overview)
 Slide 2 — Your Growth Plan: 3 Priorities    (action plan)
 Slide 3 — Your Investment & What's Next     (pricing + first 90 days)
 
-Output: [friendly-name]/[FirmName]_[Date]_Proposal.pptx
+Output: the-law-offices-of-david-p-shapiro/The_Law_Offices_of_David_P_Shapiro_June_11_2026_Proposal.pptx
 """
 
 from pptx import Presentation
@@ -30,82 +30,83 @@ SALES_REP      = "Jacob Meissner"
 OUTPUT_PATH    = "the-law-offices-of-david-p-shapiro/The_Law_Offices_of_David_P_Shapiro_June_11_2026_Proposal.pptx"
 
 # Optional images
-WEBSITE_SCREENSHOT_PATH = None
+WEBSITE_SCREENSHOT_PATH = None   # Set to a local PNG path to show a screenshot; None = skip entirely
 
 # ── Slide 1 ──────────────────────────────────────────────────────
 URGENCY_SCORE = "7"
 
 # Pillar status — each is ("RED" | "AMBER" | "GREEN", label, one-line detail)
 PILLARS = [
-    ("AMBER", "IN PROGRESS", "No paid ads confirmed"),
-    ("AMBER", "IN PROGRESS", "Form buried, no chat"),
-    ("AMBER", "IN PROGRESS", "No mgmt layer yet"),
-    ("AMBER", "IN PROGRESS", "Revenue unconfirmed"),
+    ("RED",   "CRITICAL", "Referrals only; 0 ads"),    # Lead Generation
+    ("RED",   "CRITICAL", "2am calls to David"),        # Intake
+    ("RED",   "CRITICAL", "C/D team; no mgmt"),         # Team
+    ("AMBER", "AT RISK",  "$15K–$70K swing"),            # Profit Plan
 ]
 PILLAR_NAMES = ["Lead Generation", "Intake", "Team", "Profit Plan"]
 
 # Key findings — list of ("neg"|"pos", "one-sentence finding")
 FINDINGS = [
-    ("neg", "No Google Ads or LSA — Sevens Legal captures every emergency search"),
-    ("neg", "davidshapiro.com leads to a Baltimore attorney — active lead loss"),
-    ("neg", "Contact form buried below fold, no after-hours response path"),
-    ("pos", "4.9 Google stars · 12x Super Lawyers · BBB Torch Award — elite reputation"),
+    ("neg", "Website TLS error sends a security warning to every referral click — blocking leads before they see David's credentials."),
+    ("neg", "Intake depends entirely on David — including 2 a.m. emergency calls — with no process, no backup, and weekend cases being missed."),
+    ("neg", "A self-described 'C or D team' with no management layer — 80% of David's work is delegable but there is no one to delegate to."),
+    ("pos", "38 years of practice, a US Supreme Court victory, and 150 active PI cases already in the pipeline — unmatched Baltimore credentials."),
 ]
 
 # Competitor table — list of (name, "XXX reviews", "brief note")
 COMPETITORS = [
-    ("Sevens Legal, APC",          "800+ reviews", "SD Best Criminal & DUI 2024"),
-    ("Dod Law, APC",               "5.0 stars",    "2023 Trial Lawyer of the Year"),
-    ("sandiegoduilawyers.com",     "N/A",          "Dedicated DUI PPC capture funnel"),
+    ("Hassan, Hassan & Tuchman",  "385 reviews", "4.9 ★ · PI dominant"),
+    ("Seth Okin",                 "212 reviews", "5.0 ★ · AVVO 10.0"),
+    ("Greenberg Law Offices",     "60+ yrs",     "Top 5 PI MD 2026"),
 ]
-CLIENT_REVIEWS      = "~204 Google reviews"
+CLIENT_REVIEWS      = "85 reviews"
 CLIENT_REVIEWS_NOTE = "← You are here"
 
 # Stage strip (right panel, Slide 1)
-STAGE_TEXT = "Stage 4: Small Business Manager  →  Goal: Stage 6, Law Firm Owner"
+STAGE_TEXT = "Stage 3: Solo Practitioner  →  Goal: Stage 5, Law Firm CEO"
 
 # ── Slide 2 ──────────────────────────────────────────────────────
-SLIDE_2_TITLE = "Your Growth Plan: 3 Priorities to Become San Diego's #1"
+SLIDE_2_TITLE = "Your Growth Plan: 3 Priorities to Reach $100,000/Month"
 
 SMB_MODEL_DESC = (
-    "Lead Generation, Intake, Team, and Profit — all four must work together. "
-    "When they do, David P. Shapiro becomes the recognized #1 criminal defense "
-    "firm in San Diego County and the firm runs on systems, not on him alone."
+    "The SMB Model builds Lead Generation, Intake, Team, and Profit "
+    "so all four pillars work together — not just one at a time. "
+    "When all four work, David can step back, trust the firm runs, "
+    "and finally have the time to build what he has been putting off."
 )
 
-GOAL_HEADLINE = "Est. $500K → $1M+ revenue"
-GOAL_DBM      = "Recognized #1 in San Diego"
+GOAL_HEADLINE = "$47K avg → $100K/month"
+GOAL_DBM      = "Maine home. Restaurant. Freedom."
 
 # Each priority: (line1, line2, accent_color_hex, [5 bullet strings])
 PRIORITIES = [
     (
         "Build the", "Marketing Engine", "1D4ED8",
         [
-            "Turn Google into a criminal case pipeline",
-            "Activate LSA — pay per lead, not per click",
-            "Fix dead domain, recover lost referrals now",
-            "Meta retargeting converts visitors who didn't call",
-            "Close the 4:1 review gap with Sevens Legal",
+            "Fix TLS cert — stop turning referrals away",
+            "Launch Google Ads for PI + CD in Baltimore",
+            "Enroll in LSA — earn Google Screened badge",
+            "Build review pipeline toward 300+ Google reviews",
+            "Make digital presence a 24/7 lead engine",
         ],
     ),
     (
         "Fix Intake &", "Stop Losing Cases", "0F766E",
         [
-            "Add above-fold capture to the homepage",
-            "Install after-hours response for 2am arrests",
-            "Track every lead: source, speed, close rate",
-            "Cut response time — first to answer wins",
-            "Convert more leads already earned by reputation",
+            "End 2 a.m. calls going to David personally",
+            "Install after-hours coverage for CD + DUI",
+            "Define follow-up cadence for every inquiry",
+            "Hire and train a dedicated intake specialist",
+            "Convert more of the 150 PI cases in pipeline",
         ],
     ),
     (
         "Install Team &", "Profit Systems", "6D28D9",
         [
-            "Build a management layer below David",
-            "Track revenue and margin by practice area",
-            "Elevate Partner Molea to operational lead",
-            "Establish KPIs and weekly team accountability",
-            "Know your profit — not just your revenue",
+            "Replace C/D team with a capable A team",
+            "Delegate 80% of David's tasks to trained staff",
+            "Weekly accountability structure for every role",
+            "Track revenue by case type — PI, CD, and other",
+            "Build profit plan tied to $100K/month + Maine",
         ],
     ),
 ]
@@ -116,13 +117,13 @@ PACKAGES = [
     (
         "FULL SERVICE MARKETING — STARTER",
         "$4,847", "$5,697/mo",
-        "Google Ads · LSA · Meta Ads · SEO · Website CRO",
+        "Website rebuild · Google Ads · LSA · GBP · Reviews",
         "1D4ED8",
     ),
     (
         "ELITE COACH PLUS",
         "$3,200", "$3,497/mo",
-        "Weekly coaching · Masterminds · Workshops · Annual event",
+        "Weekly coaching · PI/CD masterminds · Intake systems",
         "6D28D9",
     ),
 ]
@@ -131,27 +132,27 @@ BUNDLE_TOTAL   = "$8,047 / mo"
 BUNDLE_SAVINGS = "Save $1,147/mo by bundling"
 
 AD_SPEND_NOTE = (
-    "+ Recommended ad spend: $5,500–$22,000/mo paid directly to Google/Meta"
+    "+ Recommended ad spend: $7,500–$25,000/mo paid directly to Google/Meta"
 )
 
-AVG_CASE_VALUE     = "$4,000"
-CONSERVATIVE_LABEL = "Conservative  (2–3 cases/mo):"
-CONSERVATIVE_RESULT = "$10,000 revenue · 1.8× ROAS"
-AGGRESSIVE_LABEL   = "Aggressive  (12–13 cases/mo):"
-AGGRESSIVE_RESULT  = "$52,000 revenue · 2.4× ROAS"
+AVG_CASE_VALUE     = "$6,500"
+CONSERVATIVE_LABEL = "Conservative  (3 cases/mo):"
+CONSERVATIVE_RESULT = "$23,000 revenue · 3.1× ROAS"
+AGGRESSIVE_LABEL   = "Aggressive  (15 cases/mo):"
+AGGRESSIVE_RESULT  = "$97,500 revenue · 3.9× ROAS"
 
 # Timeline — 5 items: (milestone_label, action_text)
 TIMELINE = [
-    ("Day 1",   "Coaching kickoff + onboarding begins"),
-    ("Day 14",  "Google Ads + LSA campaigns go live"),
-    ("Week 2",  "Meta retargeting campaign launches"),
-    ("Week 3",  "Homepage capture + after-hours intake live"),
-    ("Month 3", "Review gen: 15–30 new Google reviews/month"),
+    ("Day 1",   "Coaching kickoff — intake metrics and priorities set"),
+    ("Day 14",  "Website TLS fix and rebuild initiated"),
+    ("Week 3",  "Google Ads and LSA go live in Baltimore"),
+    ("Month 1", "After-hours intake protocol established"),
+    ("Month 3", "Review campaign active; team accountability live"),
 ]
 
 CLOSING_QUOTE = (
-    '"16 years of building something exceptional — '
-    'now it\'s time to make sure San Diego sees it the moment they need help."'
+    '"When the firm runs without me, I can finally go to Maine — '
+    'and start building the restaurant I have been putting off for years."'
 )
 
 # ═══════════════════════════════════════════════════════════════════
