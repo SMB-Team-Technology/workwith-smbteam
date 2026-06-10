@@ -25,11 +25,15 @@ jobs:
           echo "$RESULT"
           echo ""
 
-          echo "=== Meeting bodies (batch read IDs 110808831077 + 110848585243) ==="
+          echo "=== Full details for VIP Confirmation Call meeting (110808831077) ==="
           curl -s \
-            -X POST \
             -H "Authorization: Bearer $HUBSPOT_TOKEN" \
-            -H "Content-Type: application/json" \
-            "https://api.hubapi.com/crm/v3/objects/meetings/batch/read" \
-            -d '{"properties":["hs_meeting_title","hs_meeting_body","hs_timestamp","hs_meeting_external_url"],"inputs":[{"id":"110808831077"},{"id":"110848585243"}]}' \
-            | jq '[.results[] | {id: .id, title: .properties.hs_meeting_title, timestamp: .properties.hs_timestamp, body_snippet: (.properties.hs_meeting_body // "" | .[0:300]), external_url: .properties.hs_meeting_external_url}]'
+            "https://api.hubapi.com/crm/v3/objects/meetings/110808831077?properties=hs_meeting_title,hs_meeting_body,hs_timestamp,hs_meeting_external_url,hs_meeting_source,hs_meeting_outcome,hs_lastmodifieddate" \
+            | jq '{title: .properties.hs_meeting_title, timestamp: .properties.hs_timestamp, source: .properties.hs_meeting_source, external_url: .properties.hs_meeting_external_url, lastmodified: .properties.hs_lastmodifieddate, full_body: .properties.hs_meeting_body}'
+
+          echo ""
+          echo "=== All properties on meeting 110808831077 ==="
+          curl -s \
+            -H "Authorization: Bearer $HUBSPOT_TOKEN" \
+            "https://api.hubapi.com/crm/v3/objects/meetings/110808831077?properties=hs_meeting_title,hs_meeting_body,hs_timestamp,hs_meeting_external_url,hs_meeting_source,hs_internal_meeting_notes,hs_meeting_location,hs_activity_type" \
+            | jq '.properties | to_entries | map(select(.value != null and .value != "")) | from_entries'
