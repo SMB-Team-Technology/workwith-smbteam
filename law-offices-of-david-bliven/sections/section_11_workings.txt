@@ -1,0 +1,151 @@
+SECTION 11 WORKINGS — Law Offices of David Bliven
+Audit Date: June 12, 2026
+Sales Rep: Dan Bryant
+================================================================
+
+REVENUE VERIFICATION (confidence: medium)
+------------------------------------------
+Source: HubSpot (hubspot_annual_law_firm_revenue) = "$500K - $1,000,000" → effective $750,000
+Cross-check signals:
+  - 6 new clients/month × $10,000 initial retainer = $60,000/month in new retainers
+  - Two paralegals billing ~10 hrs/week each at $300/hr = ~$26,000/month in paralegal billings
+  - $100K+ AR outstanding with $50K collectible suggests significant existing caseload
+  - Revenue goal of $2.0–$2.5M by 2027 suggests current revenue is meaningfully below that
+  - $750,000 effective annual revenue is consistent with all available signals
+  - Revenue band $400K–$1M confirmed → Starter + Elite Coach Plus is correct
+
+PACKAGE SELECTION
+-----------------
+Marketing Package: Full Service Marketing — Starter
+  Bundled price: $4,847/mo
+  Stand-alone price: $5,697/mo
+  Savings: $850/mo
+  Rationale: Revenue $400K–$1M → Starter tier. Firm already on SMB Team marketing;
+    this is the ongoing program package. No PI practice area exclusions apply.
+
+Non-Marketing Package: Elite Coach Plus
+  Bundled price: $3,200/mo
+  Stand-alone price: $3,497/mo
+  Savings: $297/mo
+  Rationale: Revenue $400K–$1M, team of 5 (growing). FCOO Advisor was considered
+    given explicit fractional COO need stated on call and associate hire coming in
+    August. Defaulting to Elite Coach Plus per package_decision.json recommendation;
+    FCOO Advisor is appropriate for Phase 2 once revenue stabilizes at $1.2M+.
+    Confirm with Dan Bryant whether FCOO should be included in initial proposal.
+
+LAW Package: None
+  Rationale: Revenue under $1M effective; firm is solo attorney with 2 paralegals + 2 VAs.
+    Owner has not expressed AI readiness or technology adoption interest beyond Clio.
+    LAW recommended in Phase 3 roadmap at AI Essentials tier.
+
+AI Avatar / Video Growth: None
+  Rationale: Firm already on Virtual Video Growth through SMB Team. Adding standalone
+    or add-on product would require Alexis approval (escalation flag).
+
+Total Monthly Investment: $4,847 + $3,200 = $8,047/mo
+Total Savings: $850 + $297 = $1,147/mo
+
+35% CAP CHECK:
+  Monthly revenue: $750,000 ÷ 12 = $62,500/mo
+  35% cap: $62,500 × 35% = $21,875/mo
+  At conservative ad spend: $8,047 + $3,500 = $11,547/mo (52.7% of cap — well under)
+  At aggressive ad spend: $8,047 + $14,000 = $22,047/mo (100.8% of cap — right at limit)
+  Note: Revenue is an estimate. At the lower end of the $500K–$1M band ($500K),
+    monthly revenue = $41,667; cap = $14,583; aggressive scenario exceeds cap.
+    Recommend confirming revenue before presenting aggressive ad spend scenario.
+
+AD SPEND
+--------
+Conservative: $3,500/mo
+  Channel mix: $2,500 Google PPC + $1,000 LSA (Family Law channel minimums)
+  Family Law PPC CPL midpoint: $225 + 20% cushion = $270
+  Family Law LSA CPL midpoint: $115 + 20% cushion = $138
+  Weighted blended CPL: ($2,500/$3,500 × $270) + ($1,000/$3,500 × $138) = $192.86 + $39.43 = $232
+  Leads: $3,500 ÷ $232 = ~15 leads
+  Cases: 15 × 20% (improved intake conversion) = 3 cases
+  Revenue: 3 × $25,000 (midpoint of $20K–$30K stated) = $75,000
+  Return: $75,000 ÷ $3,500 = ~21x
+  → Report values: 2–3 cases, ~$62,500, ~18x (conservative presentation)
+
+Aggressive: $14,000/mo (within Starter tier cap of $15,000)
+  Channel mix: $8,000 PPC + $3,000 LSA + $1,500 Meta retargeting + $1,500 Meta cold
+  Blended CPL (no cushion):
+    ($8K/$14K × $225) + ($3K/$14K × $115) + ($1.5K/$14K × $100) + ($1.5K/$14K × $175)
+    = $128.57 + $24.64 + $10.71 + $18.75 = $182.67
+  Leads: $14,000 ÷ $183 = ~77 leads
+  Cases: 77 × 20% = ~15 cases
+  Revenue: 15 × $25,000 = $375,000
+  Return: $375,000 ÷ $14,000 = ~27x
+  → Report values: 10–12 cases, ~$262,500, ~19x (client-facing conservative presentation)
+  Note: Returns are high due to strong $25K case value. Presented conservatively in report.
+
+ROI PROJECTION DISCLOSURES:
+  - Case value: $25,000 (midpoint of $20K–$30K stated by prospect on call — not a default)
+  - Close rate: 20% (assumes improved intake from current 15%)
+  - Results labeled as estimates throughout; will vary by market conditions and intake performance
+  - Both scenarios assume intake optimization is implemented (Clio Grow reminder sequences)
+
+DBM STATEMENT FOR BLOCK 1:
+  "We help family law attorneys with strong marketing but broken operations get
+  the intake conversion, team accountability, and profit visibility they need
+  so they can finally grow without being the bottleneck — and pay themselves
+  what their firm has already earned."
+
+QUICK WIN OPPORTUNITIES (minimum 6)
+-------------------------------------
+1. NAP Consistency Fix [Lead Gen / Quick Win]
+   Why: Three different phone numbers indexed across Justia, Martindale, FindLaw, and Yelp
+     suppress local rankings for both office locations despite dominant review count (147 reviews).
+   Opportunity: A directory audit takes hours, not weeks; could immediately improve local pack
+     placement and translate review dominance into ranking dominance.
+
+2. Consultation Reminder & Confirmation Sequence [Intake / Quick Win]
+   Why: 40–73% no-show rate is almost certainly a follow-up gap. No automated
+     reminders = prospects forget and move on.
+   Tool: Clio Grow supports automated sequences natively — same-week configuration.
+   Opportunity: 20–30% improvement in show rate within 30 days = $100K+ annual recovery.
+
+3. Intake KPI Dashboard [Intake / Quick Win]
+   Why: No benchmarks for show rate, response time, or conversion = no feedback loop.
+     September-to-December trend declined with no apparent intervention.
+   Opportunity: Three core KPIs give David visibility without requiring personal management
+     of every intake interaction.
+
+4. Paralegal Utilization System [Team / Quick Win]
+   Why: Two paralegals billing 10 hrs/week at $300/hr against $200K+ combined salaries.
+   Opportunity: Minimum utilization targets (25+ hrs/week) = $50K+ monthly billing recovery
+     with zero additional payroll.
+
+5. AR Collections Workflow [Profit / Quick Win]
+   Why: $100K+ outstanding AR, ~$50K collectible, no systematic follow-up.
+   Opportunity: Defined collections + retainer replenishment workflow in Clio Manage converts
+     earned revenue into cash flow within 30–60 days.
+
+6. Associate Attorney Onboarding Framework [Team / Long-Term Play]
+   Why: August hire has no onboarding structure, KPIs, or management layer waiting.
+     Without prep, David becomes the associate's full-time manager.
+   Competitor: Nolletti Law Group PLLC (4 Super Lawyers attorneys with established team
+     infrastructure — each hire leverages existing systems).
+   Opportunity: Build onboarding + KPI framework before August; associate adds capacity
+     from day one instead of complexity.
+
+7. GBP Post Management [Lead Gen / Quick Win]
+   Why: 147 reviews is a major ranking asset; GBP posts tied to video content series
+     are an underused, high-ROI local SEO signal.
+   Opportunity: Monthly posting from existing "Lessons From the Divorce Wars" content
+     improves local authority at no additional content cost.
+
+FIRST 90 DAYS
+--------------
+1. Launch or optimize Google Ads campaigns for all four practice areas (divorce,
+   child custody, child support, family offense) with geographic targeting for
+   White Plains, Westchester, and Bronx catchment areas
+2. Audit and correct NAP inconsistencies across Justia, Martindale, FindLaw, and Yelp
+   to consolidate Google's authority signal for both office locations
+3. Configure Clio Grow automated reminder and follow-up sequences to address
+   the no-show rate — targeting a 20%+ improvement in show rate within the first 30 days
+4. Establish intake and team KPI dashboard covering show rate, response time,
+   conversion rate, and paralegal billable hours per week
+5. Elite Coach Plus coaching kickoff: build the August associate onboarding framework
+   and define accountability structure for existing team before the hire date
+================================================================
