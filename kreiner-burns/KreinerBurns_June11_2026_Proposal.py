@@ -119,7 +119,7 @@ AGGRESSIVE_LABEL    = "Aggressive  (8–9 cases/mo):"
 AGGRESSIVE_RESULT   = "~$42,500 revenue · ~6× ROAS"
 
 TIMELINE = [
-    ("Day 1",   "Coaching kickoff + intake audit begins"),
+    ("Day 1",   "Marketing onboarding + account setup begins"),
     ("Day 14",  "Google Ads + LSA launch in NJ and PA"),
     ("Week 2",  "Form routing fixed; intake protocol live"),
     ("Week 3",  "NAP corrections across all directories"),
