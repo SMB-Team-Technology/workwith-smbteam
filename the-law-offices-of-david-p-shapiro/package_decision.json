@@ -1,5 +1,5 @@
 {
-  "confidence": "low",
+  "confidence": "high",
   "revenue_stated": null,
   "revenue_effective": 570000,
   "revenue_source": "hubspot_annual_law_firm_revenue",
@@ -7,29 +7,36 @@
   "team_size_stated": 1,
   "team_size_effective": 1,
   "practice_areas_detected": [
-    "on site (from search result snippets and directory data):",
     "personal injury",
     "criminal defense",
     "dui defense",
     "medical malpractice"
   ],
-  "marketing_tier": "Starter",
-  "marketing_name": "Full Service Marketing — Starter",
-  "marketing_price_bundled": 4847,
-  "marketing_price_retail": 5697,
-  "marketing_savings": 850,
+
+  "marketing_tier": null,
+  "marketing_name": null,
+  "marketing_price_bundled": null,
+  "marketing_price_retail": null,
+  "marketing_savings": null,
+
   "coaching_name": "Elite Coach Plus",
   "coaching_price_bundled": 3200,
   "coaching_price_retail": 3497,
   "coaching_savings": 297,
+
   "law_tier": null,
-  "total_bundled": 8047,
-  "total_savings": 1147,
-  "ad_spend_conservative": 7500,
-  "ad_spend_aggressive": 25000,
+
+  "total_bundled": 3200,
+  "total_savings": 297,
+
+  "ad_spend_conservative": null,
+  "ad_spend_aggressive": null,
+
+  "sales_override": true,
+  "sales_override_note": "COACHING ONLY — sales rep override. Do NOT include any marketing package, marketing pricing, or ad spend in this report. Section 11 must present Elite Coach Plus as the sole recommendation. Remove all references to Full Service Marketing, Starter, Growth, Dominate, Platinum, and ad spend throughout the entire report.",
+
   "selection_notes": [
-    "Revenue not in research notes — sourced from HubSpot (hubspot_annual_law_firm_revenue): \"$180K - $960K\" → $570,000",
-    "Revenue $400K–$1M: Starter tier.",
-    "Revenue $400K–$1M: Elite Coach Plus selected."
+    "Sales override: Elite Coach Plus only. No marketing package.",
+    "Remove all marketing package references and ad spend from the report."
   ]
 }
