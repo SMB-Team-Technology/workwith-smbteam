@@ -99,20 +99,14 @@ PRIORITIES = [
 PACKAGES = [
     (
         "FULL SERVICE MARKETING — STARTER",
-        "$4,847", "$5,697/mo",
+        "$5,697", "",
         "Google Ads · LSA · Meta · Website · GBP · Directories",
         "1D4ED8",
     ),
-    (
-        "ELITE COACH PLUS",
-        "$3,200", "$3,497/mo",
-        "Weekly coaching · Intake protocol · Revenue roadmap",
-        "6D28D9",
-    ),
 ]
 
-BUNDLE_TOTAL   = "$8,047 / mo"
-BUNDLE_SAVINGS = "Save $1,147/mo by bundling"
+BUNDLE_TOTAL   = "$5,697 / mo"
+BUNDLE_SAVINGS = "Standalone pricing"
 
 AD_SPEND_NOTE = (
     "+ Recommended ad spend: $3,500–$7,000/mo paid directly to Google/Meta"
@@ -367,7 +361,8 @@ def build_slide3(prs):
     add_text(slide, "Your Investment & What Happens Next",
              0.32, 0.34, 9.40, 0.60, 22, WHITE, bold=True)
 
-    pkg_ys = [1.12, 2.34]
+    single = len(PACKAGES) == 1
+    pkg_ys = [1.12] if single else [1.12, 2.34]
     for i, (label, price, retail, services, hex_c) in enumerate(PACKAGES[:2]):
         y = pkg_ys[i]
         ac = rgb(hex_c)
@@ -376,17 +371,22 @@ def build_slide3(prs):
         add_text(slide, label, 0.52, y+0.10, 4.16, 0.22, 8, ac, bold=True)
         add_text(slide, price, 0.52, y+0.30, 2.00, 0.48, 32, NAVY, bold=True)
         add_text(slide, "/mo", 2.04, y+0.42, 0.46, 0.28, 11, SLATE)
-        add_text(slide, retail, 2.54, y+0.44, 1.00, 0.26, 11, STRIKETHROUGH)
-        add_rect(slide, 2.54, y+0.55, 0.88, 0.01, fill=STRIKETHROUGH)
+        if retail:
+            add_text(slide, retail, 2.54, y+0.44, 1.00, 0.26, 11, STRIKETHROUGH)
+            add_rect(slide, 2.54, y+0.55, 0.88, 0.01, fill=STRIKETHROUGH)
         add_text(slide, services, 0.52, y+0.84, 4.16, 0.22, 8, SLATE)
 
-    add_rect(slide, 0.22, 3.56, 4.52, 0.72, fill=NAVY)
-    add_text(slide, "BUNDLE TOTAL", 0.42, 3.60, 1.80, 0.26, 8, BUNDLE_SUB, bold=True)
-    add_text(slide, BUNDLE_TOTAL, 0.42, 3.82, 2.40, 0.38, 22, GOLD, bold=True)
-    add_text(slide, BUNDLE_SAVINGS, 2.92, 3.82, 1.90, 0.38, 8, BUNDLE_SUB)
+    bundle_y   = 2.38 if single else 3.56
+    adspend_y  = 3.16 if single else 4.34
+    total_label = "TOTAL" if single else "BUNDLE TOTAL"
 
-    add_rect(slide, 0.22, 4.34, 4.52, 0.44, fill=rgb("EEF2F8"))
-    add_text(slide, AD_SPEND_NOTE, 0.36, 4.37, 4.30, 0.38, 8, SLATE)
+    add_rect(slide, 0.22, bundle_y, 4.52, 0.72, fill=NAVY)
+    add_text(slide, total_label, 0.42, bundle_y+0.04, 1.80, 0.26, 8, BUNDLE_SUB, bold=True)
+    add_text(slide, BUNDLE_TOTAL, 0.42, bundle_y+0.26, 2.40, 0.38, 22, GOLD, bold=True)
+    add_text(slide, BUNDLE_SAVINGS, 2.92, bundle_y+0.26, 1.90, 0.38, 8, BUNDLE_SUB)
+
+    add_rect(slide, 0.22, adspend_y, 4.52, 0.44, fill=rgb("EEF2F8"))
+    add_text(slide, AD_SPEND_NOTE, 0.36, adspend_y+0.03, 4.30, 0.38, 8, SLATE)
 
     add_rect(slide, 4.96, 1.12, 4.82, 1.44, fill=ROI_BG)
     add_text(slide, "PROJECTED RETURN ON AD SPEND",
