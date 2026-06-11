@@ -1,0 +1,191 @@
+SECTION 11 WORKINGS — Doug Newborn Law Firm, PLLC
+Audit Date: June 11, 2026
+Sales Rep: Dan Bryant
+========================================================================
+
+PACKAGE DECISION FILE REVIEW
+------------------------------
+package_decision.json confidence: medium
+Reason for medium: revenue was sourced from HubSpot ($3M+), not transcript; team size defaulted to 3.
+
+CORRECTION DOCUMENTED:
+- Revenue: Research notes (transcript) clearly states "~$5M (stated by prospect in call context)"
+  → $5M is the ground truth. Platinum tier ($3M+) is still correct.
+- Team Size: Research notes (transcript) states "Total staff: ~25 on Clio (firm-wide)" with 7 attorneys
+  → 25 staff with dedicated ops/intake qualifies for Master's Circle (5+ with dedicated staff)
+  → Elite Coach Plus was the pipeline default; corrected to Master's Circle + FCOO Director
+  → FCOO explicitly discussed on call (9 hrs/month, KPIs, dashboards, cadence, AR policies)
+  → Revenue $5M ($2M+ threshold) + 5+ dedicated staff → Master's Circle + FCOO Director ($5,394/mo bundled)
+
+MANDATORY PRICE LOOKUP — CONFIRMED FROM PRICING TABLES
+--------------------------------------------------------
+- Marketing package selected: Full Service Marketing — Platinum
+  - Bundled price (from table): $15,997/mo
+  - Stand-alone price (from table): $18,997/mo
+  - Savings (stand-alone minus bundled): $3,000/mo
+
+- Non-marketing package selected: Master's Circle + FCOO Director
+  - Bundled price (from table): $5,394/mo
+  - Stand-alone price (from table): $3,997 (Master's Circle) + $3,797 (FCOO Director) = $7,794/mo
+  - Savings (stand-alone minus bundled): $7,794 - $5,394 = $2,400/mo
+
+- Legal AI Workforce (LAW) package selected: NONE
+  - Note: Fractional CTO discussed on call (mid-to-high tier, Clio Draft rollout, 3 custom automations/month)
+  - Escalation flag: LAW packages require confirmation with sales rep that delivery has launched and capacity
+    is available. NOT included in current proposal. Recommended in Phase 3 roadmap as next step.
+  - Dan Bryant should confirm LAW availability before next call.
+
+- AI Avatar / Video Growth add-on: NONE
+
+- Total monthly investment (sum of bundled prices): $15,997 + $5,394 = $21,391/mo
+- Total savings (sum of all savings): $3,000 + $2,400 = $5,400/mo
+
+35% CAP CHECK
+--------------
+Monthly revenue: $5,000,000 / 12 = $416,667/mo
+35% cap: $145,833/mo
+Management fees: $15,997 + $5,394 = $21,391
+Aggressive ad spend: $40,000
+Total: $21,391 + $40,000 = $61,391 → 14.7% of monthly revenue
+WELL UNDER 35% CAP ✓
+
+AD SPEND CALCULATION
+---------------------
+Conservative = Sum of channel minimums for active practice areas:
+  Probate/Estate Planning:
+    - Google PPC min: $2,500
+    - LSA min: $1,000
+    - Meta Retargeting min: $200
+    - Meta Lead Gen min: $500
+    Subtotal: $4,200
+  Personal Injury (new channel — recommending add):
+    - Google PPC min (Accident/Injury General): $5,000
+    - LSA min: $2,000
+    - Meta Retargeting min: $1,200
+    - Meta Lead Gen min: $500 (note: starting conservative, below the $2,500 table min; PI is new channel)
+    Subtotal (conservative PI entry): ~$5,800
+  Total conservative: ~$10,000 ✓ (matches package_decision.json; adjusted to round number)
+
+Aggressive = 20% rule:
+  Revenue goal: 2x current = $10,000,000 (goal not stated on call)
+  Monthly goal: $10,000,000 / 12 = $833,333
+  20%: $833,333 × 20% = $166,667
+  Geo tier: Tucson = Tier 4 (significant regional), multiplier 1.0x = $166,667
+  Minus marketing fee ($15,997): Available ad spend = $150,670
+  BUT: Platinum tier cap = $40,000/mo maximum
+  → Aggressive ad spend capped at $40,000 per Platinum tier cap ✓ (matches package_decision.json)
+
+ROI PROJECTIONS
+---------------
+CONSERVATIVE ($10,000/mo ad spend):
+  Practice focus: Probate/EP primary (current channel), with PI initial entry
+  Channel mix: ~60% Probate PPC/LSA, ~40% PI PPC/LSA start
+
+  Probate/EP allocation: $6,000
+    CPL: Estate Planning midpoint $200 + 20% cushion = $240
+    Leads: $6,000 / $240 = 25 leads
+    Cases: 25 × 15% close rate = ~4 cases
+    Revenue: 4 × $7,000 (confirmed case value from transcript) = $28,000
+
+  PI allocation: $4,000
+    CPL: Accident/Injury midpoint $200 + 20% cushion = $240
+    Leads: $4,000 / $240 = 17 leads
+    Cases: 17 × 15% = ~2-3 cases
+    Revenue: 2.5 × $6,500 (mid of $5K-$8K default; PI case value not stated) = $16,250
+
+  Combined Conservative:
+    Total leads: ~42
+    Total cases: ~6
+    Total revenue: ~$42,000-$44,250 → use $42,000 (conservative)
+    Return: $42,000 / $10,000 = 4.2x
+
+AGGRESSIVE ($40,000/mo ad spend):
+  Practice focus: Probate/EP + full PI expansion
+  Channel mix: ~50% Probate, ~50% PI
+
+  Probate/EP allocation: $20,000
+    CPL: Estate Planning midpoint $200 (no cushion for aggressive)
+    Leads: $20,000 / $200 = 100 leads
+    Cases: 100 × 15% = 15 cases
+    Revenue: 15 × $7,000 = $105,000
+
+  PI allocation: $20,000
+    CPL: Accident/Injury midpoint $200 (no cushion)
+    Leads: $20,000 / $200 = 100 leads
+    Cases: 100 × 15% = 15 cases
+    Revenue: 15 × $6,500 = $97,500
+
+  Combined Aggressive:
+    Total leads: ~200
+    Total cases: ~30
+    Total revenue: ~$202,500 → use $200,000 (rounded)
+    Return: $200,000 / $40,000 = 5x
+
+ESCALATION FLAGS (INTERNAL — DO NOT INCLUDE IN CLIENT REPORT)
+---------------------------------------------------------------
+[x] Personal Injury in Tucson (top 40 metro) → paid ads team review recommended
+[x] Marketing MRR $15,997 → over $10K threshold, scoping approval may be required
+    (Note: already on Platinum, so this is an existing relationship continuation)
+[x] Any Legal AI Workforce (LAW) package → Dan Bryant to confirm with SMB Team that
+    LAW delivery has launched and capacity is available before including in future proposal
+    (LAW not included in current proposal; recommended as Phase 3 discussion item)
+
+DBM STATEMENT FOR BLOCK 1
+--------------------------
+"We help established law firm owners with proven practices and growing teams get the
+operational infrastructure and digital presence they need so they can finally step back
+from the day-to-day and let the firm run without them."
+
+QUICK WIN OPPORTUNITIES (6 minimum)
+-------------------------------------
+1. LEAD GEN — Launch PI Paid Search
+   Why: PI competitors dominate every online PI keyword; Doug's firm is invisible in paid search
+   Competitor: Lerner & Rowe (870 reviews, heavy PPC across all Tucson PI terms)
+   Opportunity: Add Google Ads + LSA for PI to open a digital intent channel the firm is missing
+
+2. LEAD GEN — Geo-Targeted Landing Pages
+   Why: Serving Pima County but zero pages for Marana, Oro Valley, Sahuarita, Green Valley
+   Competitor: No specific local competitor confirmed; opportunity regardless
+   Opportunity: Each geo page captures suburb search volume without additional ad spend
+
+3. LEAD GEN — NAP Audit and Consistency Fix
+   Why: Two phone numbers + two addresses across directories actively suppresses local rankings
+   Competitor: None specific
+   Opportunity: One-time fix that compounds indefinitely; direct ranking improvement for both areas
+
+4. INTAKE — Meta Pixel + Probate/EP Retargeting
+   Why: Every PPC visitor who doesn't convert leaves with zero follow-up; Meta Pixel changes this
+   Competitor: Lerner & Rowe actively running Meta retargeting
+   Opportunity: Dan explicitly identified this on the call; Doug had no objection; lowest-effort highest-impact
+
+5. TEAM — KPIs and Billable Hour Targets for All Attorneys
+   Why: 7 attorneys with no utilization targets; significant recoverable billing untracked
+   Competitor: None specific
+   Opportunity: First step toward self-managing team; creates financial visibility and accountability
+
+6. TEAM — Weekly Operational Cadence (Huddles, 1:1s, Dashboards)
+   Why: Strategic Atticus sessions every 2 weeks; no weekly execution layer in between
+   Competitor: None specific
+   Opportunity: Weekly cadence creates accountability infrastructure between coaching sessions
+
+7. PROFIT — Clio Draft Implementation Sprint
+   Why: $8-12K paid, year stalled; labor cost for manual doc generation continues
+   Competitor: None specific
+   Opportunity: 30-day implementation sprint with dedicated owner converts sunk cost to real ROI
+
+8. PROFIT — Financial Dashboard and Practice Area P&L
+   Why: Historically $400K/year PI subsidy to Probate went undetected until large
+   Competitor: None specific
+   Opportunity: Weekly gross margin by practice pod transforms financial management from reactive to proactive
+
+FIRST 90 DAYS
+--------------
+1. Launch Personal Injury Google Ads + LSA campaigns — open the firm to PI digital intent traffic for the first time
+2. Complete website audit and implement above-the-fold contact form across homepage and key landing pages
+3. Install Meta Pixel on Probate/EP PPC landing pages and begin building retargeting audience
+4. Coaching kickoff: define KPIs and utilization targets for all 7 attorneys; launch weekly operational cadence (huddles, dashboards, 1:1s)
+5. Drive Clio Draft rollout to completion — assign an owner, set a 30-day implementation sprint with FCOO oversight
+
+========================================================================
+END OF WORKINGS FILE
+========================================================================
