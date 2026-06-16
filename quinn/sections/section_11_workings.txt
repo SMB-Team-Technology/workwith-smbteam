@@ -1,0 +1,194 @@
+SECTION 11 — WORKINGS FILE
+Quinn Law Group | June 24, 2026 | Nick Holderman
+
+=====================================================================
+PACKAGE DECISION VERIFICATION
+=====================================================================
+
+package_decision.json confidence: LOW
+Revenue source: HubSpot estimate ("$180K - $960K" → $570,000)
+Revenue stated in transcript: NOT STATED
+
+Revenue band check against research signals:
+- 7 office locations (Philadelphia, Pittsburgh, Bethlehem PA; Cherry Hill, Hoboken, Princeton NJ)
+- Intake Manager + Case Managers (plural) = minimum 3-4 staff
+- $15,000 MINIMUM case value (stated on call)
+- Sean Quinn: 25 years practice, nationally recognized trial lawyer
+- Active lead acquisition spending in a $100-$140 CPC market
+- Avvo 10.0 rating suggests substantial case history
+
+Assessment: $570K is likely a conservative estimate. A 7-office PI firm with senior staff and $15K+ case values in Philadelphia plausibly operates at $700K-$1.2M. However, no explicit revenue data exists to override the estimate. Proceeding with Starter tier ($400K-$1M band) as per package_decision.json — this is appropriate and conservative. If actual revenue exceeds $1M, Growth tier would be indicated, but that cannot be confirmed without disclosure.
+
+PI firm filter: ALL Essentials tiers are HIDDEN for PI firms. Minimum is Starter. ✓
+Revenue under $1M: Dominate and Platinum are HIDDEN. ✓
+Revenue under $500K (estimated): FCOO and FCFO products are HIDDEN per rules. ✓ (noted for roadmap purposes — these are Phase 2/3 products contingent on revenue growth)
+
+DECISION: Accept package_decision.json tiers as confirmed. Document confidence concern.
+
+35% Cap Check:
+Monthly revenue at $570K = $47,500/mo
+35% cap = $16,625/mo
+Conservative total (fees $8,047 + ad spend $10,000) = $18,047 — slightly above cap
+Aggressive total (fees $8,047 + ad spend $25,000) = $33,047 — above cap
+
+NOTE per scoping guide: "If the client is growing — if their GOAL revenue supports the spend at 35%, note this."
+- Revenue goal (2x current): $1,140,000 annual = $95,000/month
+- 35% of $95,000 = $33,250/month
+- Aggressive total $33,047 < $33,250 — WITHIN CAP at goal revenue ✓
+- Conservative total $18,047 < $33,250 ✓
+
+Resolution: Current estimated revenue places aggressive spend slightly above the 35% cap, but the ad spend is specifically designed to reach goal revenue at which the spend is within cap. This is appropriate per the guide. Will note in Block 4 disclaimer.
+
+Escalation flags (internal only — not in client report):
+- Personal Injury in top 40 metro (Philadelphia = top 10) → approval required
+- Revenue not stated — flag for follow-up
+
+=====================================================================
+SELECTED PACKAGES
+=====================================================================
+
+MARKETING PACKAGE:
+  Name: Full Service Marketing — Starter
+  Bundled price: $4,847/mo (character-by-character verified from table)
+  Stand-alone price: $5,697/mo (character-by-character verified from table)
+  Savings: $850/mo
+
+NON-MARKETING PACKAGE:
+  Name: Elite Coach Plus
+  Bundled price: $3,200/mo (character-by-character verified from table)
+  Stand-alone price: $3,497/mo (character-by-character verified from table)
+  Savings: $297/mo
+
+LAW PACKAGE: None (revenue estimated at $570K — above $500K threshold, but LAW not appropriate at this stage given team size uncertainty and no specific AI readiness signal beyond general openness)
+
+AI AVATAR: None
+
+TOTAL MONTHLY INVESTMENT: $4,847 + $3,200 = $8,047/mo
+TOTAL SAVINGS: $850 + $297 = $1,147/mo
+
+GBP Location note: Starter tier covers up to 2 GBP locations. Quinn has 7 offices. Full multi-location GBP management requires Growth tier or higher. Recommend noting this as a Phase 2 upgrade trigger once the firm reaches $1M revenue.
+
+=====================================================================
+AD SPEND CALCULATIONS
+=====================================================================
+
+Philadelphia = Tier 1 Mega Market (6M DMA) → multiplier 1.5×
+Practice area: PI (comprehensive) — Philadelphia classified as HIGH competitiveness
+PI + High competitiveness hard floor = $10,000/mo minimum
+
+CONSERVATIVE AD SPEND:
+  Sum of PI channel minimums:
+  - Google PPC min (Accident/Injury General): $6,000
+  - LSA min: $2,000
+  - Meta Retargeting min: $1,200
+  Total channel minimums: $9,200
+  Apply PI high competitiveness floor: $10,000 (higher)
+  Conservative ad spend = $10,000/mo
+
+AGGRESSIVE AD SPEND (20% Rule):
+  Revenue goal: not stated → use 2× current = 2 × $570,000 = $1,140,000
+  Annual marketing budget: $1,140,000 × 20% = $228,000
+  Monthly: $228,000 ÷ 12 = $19,000
+  Apply Tier 1 geo multiplier (1.5×): $19,000 × 1.5 = $28,500
+  Subtract management fee: $28,500 - $4,847 = $23,653 available for ad spend
+  Check against Starter tier cap ($25,000): $23,653 < $25,000 ✓
+
+  Reverse math validation:
+  - Revenue goal/12 = $95,000/mo
+  - Target cases/mo = $95,000 ÷ $15,000 = 6.3 cases
+  - Required leads = 6.3 ÷ 0.15 = 42 leads
+  - Blended CPL (Google 50% + LSA 30% + Meta Retarget 20%):
+      Google Acc&Injury mid = $705, LSA mid = $235, Meta Retarget mid = $90
+      Blended = ($705×0.50) + ($235×0.30) + ($90×0.20) = $352.50 + $70.50 + $18 = $441
+  - Required spend = 42 × $441 = $18,522
+  - 20% rule gives $23,653 — use higher → $23,653
+  - Round to $25,000 (Starter cap) as aggressive target ✓
+
+  Aggressive ad spend = $25,000/mo (at Starter tier cap)
+
+=====================================================================
+ROI PROJECTIONS
+=====================================================================
+
+Case value: $15,000 minimum (stated in transcript)
+Close rate: 15% (default — not stated on call)
+
+Channel mix assumed: Google PPC 50%, LSA 30%, Meta Retargeting 20%
+Blended CPL (no cushion) = $441
+Blended CPL (with 20% cushion for conservative) = $441 × 1.20 = $529
+
+CONSERVATIVE SCENARIO ($10,000/mo):
+  Leads = $10,000 ÷ $529 = ~19 leads
+  Cases = 19 × 0.15 = ~2–3 cases
+  Revenue = 2.5 × $15,000 = $37,500 (midpoint)
+  Return = $37,500 ÷ $10,000 = 3.75× → present as ~3.5×–4× return
+
+AGGRESSIVE SCENARIO ($25,000/mo):
+  Leads = $25,000 ÷ $441 = ~57 leads
+  Cases = 57 × 0.15 = ~8–9 cases
+  Revenue = 8.5 × $15,000 = $127,500 (midpoint)
+  Return = $127,500 ÷ $25,000 = 5.1× → present as ~5× return
+
+Note: Aggressive scenario of 8–9 cases/month aligns with the firm's stated goal of 50–75 new cases in 6 months (target range 8–13 cases/month). This is good validation that the ad spend recommendation is calibrated to the stated goal.
+
+=====================================================================
+DBM STATEMENT FOR BLOCK 1
+=====================================================================
+
+"We help established multi-location personal injury firms get a scalable, AI-powered intake and digital marketing system so they can capture 50–75 new cases in the next six months and win market share in Philadelphia before better-funded competitors finish building what Quinn Law Group is building now."
+
+=====================================================================
+QUICK WIN OPPORTUNITIES (6+)
+=====================================================================
+
+1. LEAD GEN — Quick Win
+   Title: Launch Google LSA for Philadelphia Personal Injury
+   Why: LSA sits above all Google ads, the map pack, and organic results; Quinn's 4.9★ rating qualifies the firm immediately and would place it above lower-rated competitors
+   Competitor: MyPhillyLawyer (304 reviews, high local pack presence)
+   Opportunity: First-mover in LSA at 4.9★ means Quinn pays per lead, not per click — and the rating gives a quality advantage even over firms with more reviews
+
+2. INTAKE — Quick Win
+   Title: AI-Powered After-Hours Intake Automation
+   Why: 2–3 qualified leads/month confirmed lost; $15K minimum case value = $30K–$45K/month in preventable revenue loss
+   Competitor: N/A (internal operational gap)
+   Opportunity: Automated intake integrating with Nextiva/DocuBe eliminates after-hours drop-off without additional staff
+
+3. LEAD GEN — Quick Win
+   Title: Structured Review Acquisition Program
+   Why: Quinn has the best rating in the competitive set (4.9★) but trails MyPhillyLawyer by 136 reviews — volume gap is the key local pack ranking factor
+   Competitor: The Levin Firm (5.0★, ~227 reviews and growing)
+   Opportunity: Systematic review requests post-resolution can close the gap within 12 months, improving local pack position across all 7 office markets
+
+4. PROFIT — Quick Win
+   Title: Marketing ROI and Cost-Per-Acquisition Dashboard
+   Why: Without knowing acquisition cost, the firm cannot evaluate which lead sources are profitable and which are subsidizing losses
+   Competitor: N/A (internal operational gap)
+   Opportunity: Connecting Case Status data to campaign performance metrics gives Sean full financial visibility on every dollar spent on marketing
+
+5. LEAD GEN — Long-Term Play
+   Title: Multi-Location SEO Landing Pages for All 7 Offices
+   Why: Pittsburgh, Bethlehem, Hoboken, Princeton, and Cherry Hill offices generate zero local SEO traffic for their respective markets
+   Competitor: MyPhillyLawyer (dominant in Philadelphia organic; does not compete in all Quinn markets — opportunity to dominate others)
+   Opportunity: Geo-targeted pages for all 7 locations multiply the firm's local search footprint across two states simultaneously
+
+6. INTAKE — Long-Term Play
+   Title: Automated Follow-Up Sequence Replacing Manual Touchpoints
+   Why: 2–3 hours/day of intake manager time consumed by manual follow-up is an unsustainable workload that cannot scale with more leads
+   Competitor: N/A (internal operational gap)
+   Opportunity: Automated multi-touchpoint follow-up sequence frees the Intake Manager to focus on high-value conversations and case strategy rather than manual contact attempts
+
+7. TEAM — Long-Term Play
+   Title: Operations Accountability Infrastructure
+   Why: No Director of Operations or equivalent exists; Sean is the operational decision-maker by default for a 7-office firm
+   Competitor: N/A (internal operational gap)
+   Opportunity: Coaching + accountability structure gives the existing team the framework to manage operations independently, freeing Sean for strategy and business development
+
+=====================================================================
+FIRST 90 DAYS
+=====================================================================
+
+1. Launch Google Ads and LSA campaigns for personal injury in Philadelphia — immediately capturing high-intent searches currently going to competitors
+2. Build new website with embedded contact forms, updated mobile performance (target 85+), and geo-targeted landing pages for Philadelphia and one additional market at launch
+3. Implement AI-powered after-hours intake automation integrating with Nextiva phone system and existing tech stack — eliminating confirmed after-hours lead loss
+4. Launch Elite Coach Plus coaching program and establish monthly accountability reviews with signed-case targets
+5. Deploy automated lead follow-up sequence to replace manual 3–6 touchpoint process — reducing intake manager manual workload and increasing lead-to-signed conversion rate
