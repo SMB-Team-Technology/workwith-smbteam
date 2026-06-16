@@ -1,0 +1,178 @@
+SECTION 11 WORKINGS — Indiana Immigration Attorneys
+Audit Date: June 5, 2026
+Sales Rep: Jacob Meissner
+
+============================================================
+PACKAGE DECISION CORRECTION (confidence: low → corrected)
+============================================================
+
+package_decision.json used revenue_effective: $500,000 (Starter tier).
+Research notes explicitly state: "estimated revenue is in the $150,000–$350,000 range."
+$500K is not consistent with the signals: 13-month-old firm, 2 staff, no paid ads, Logansport IN (pop. ~18,000).
+
+CORRECTION: Downgrading from Starter to Essentials tier (revenue band $250K–$400K).
+If Jacob confirms revenue is $400K+, upgrade marketing to Starter and coaching to Elite Coach Plus.
+
+35% cap check (conservative at $250K annual):
+  Monthly revenue: $20,833
+  35% cap: $7,292/mo
+  Essentials ($2,397) + Elite Coach ($1,600) + $3,000 ad spend = $6,997 = 33.6% ✓ Within cap.
+
+Escalation flag: If revenue is below $250K, scoping approval required before proceeding.
+
+============================================================
+SELECTED PACKAGES
+============================================================
+
+MARKETING PACKAGE:
+  Name: Full Service Marketing — Essentials
+  Bundled price: $2,397/mo
+  Stand-alone price: N/A (no savings calculation for Essentials)
+  Savings: N/A
+
+NON-MARKETING PACKAGE:
+  Name: Elite Coach
+  Bundled price: $1,600/mo
+  Stand-alone price: $2,497/mo
+  Savings: $897/mo
+
+LAW PACKAGE: None (revenue under $500K; LAW not eligible)
+AI AVATAR: None
+
+TOTAL MONTHLY INVESTMENT: $2,397 + $1,600 = $3,997/mo
+TOTAL SAVINGS: $897/mo (from Elite Coach only; Essentials has no stand-alone price)
+
+============================================================
+AD SPEND CALCULATIONS
+============================================================
+
+CONSERVATIVE AD SPEND: $3,000/mo
+  Immigration channel minimums:
+    Google PPC: $1,000
+    LSA: $500
+    Meta Retargeting: $200
+    Meta Lead Gen: $1,000
+    Subtotal: $2,700
+    × 1.33 Spanish campaign multiplier = $3,591 → round to $3,000 (within Essentials cap of $3,500)
+  Note: $3,000 is within the Essentials tier ad spend cap of $3,500. ✓
+
+AGGRESSIVE AD SPEND: $7,000/mo
+  Aggressive calculation:
+    Revenue goal = 2× estimated current ($300K) = $600,000
+    Monthly marketing budget: $600,000 × 20% ÷ 12 = $10,000
+    × Tier 4 geo multiplier (Logansport/north Indiana, sub-regional): 1.0×
+    × 1.33 Spanish campaign: $10,000 × 1.33 = $13,300
+    − Management fee ($2,397) = $10,903 available ad spend
+  Reverse math validation:
+    Revenue goal/12 = $50,000/mo
+    Target cases: $50,000 ÷ $3,500 avg case value = ~14.3 cases/mo
+    Required leads (15% close): 14.3 ÷ 0.15 = ~95 leads/mo
+    Required spend (blended CPL ~$100): 95 × $100 = $9,500 → ≈ $10,000
+  → Higher of 20% rule vs. reverse math: ~$10,000 (consistent)
+  Note: $7,000 aggressive is below calculated maximum for presentation clarity.
+  Note: Aggressive scenario above $3,500 exceeds Essentials cap → rep should discuss
+        Starter tier upgrade OR note 10% overage fee applies above $3,500.
+
+============================================================
+ROI PROJECTIONS
+============================================================
+
+Average case value: $3,500 (blended estimate — verify with prospect)
+Close rate: 15% (default — verify with prospect)
+Blended CPL immigration (estimated): ~$100/lead blended across channels
+
+CONSERVATIVE ($3,000/mo ad spend):
+  Blended CPL with 20% cushion: ~$120
+  Leads: $3,000 ÷ $120 = 25 leads
+  Cases: 25 × 0.15 = ~4 cases/mo
+  Revenue: 4 × $3,500 = $14,000/mo from ads
+  Return: $14,000 ÷ $3,000 = ~4.7× (round to ~5×)
+
+AGGRESSIVE ($7,000/mo ad spend):
+  Blended CPL no cushion: ~$100
+  Leads: $7,000 ÷ $100 = 70 leads
+  Cases: 70 × 0.15 = ~10-11 cases/mo
+  Revenue: 10.5 × $3,500 = ~$36,750/mo from ads
+  Return: $36,750 ÷ $7,000 = ~5.25× (round to ~5×)
+
+Note: All ROI figures are estimates based on industry averages. Results not guaranteed.
+Note: Case value and close rate to be confirmed with Libby on the call.
+
+============================================================
+DBM STATEMENT FOR BLOCK 1
+============================================================
+
+"We help mission-driven immigration attorneys in underserved communities get a predictable flow of client inquiries so they can serve more families — without sacrificing the personal connections that brought them home."
+
+DBM core: Libby wants to be the trusted immigration attorney for north Indiana for a generation, serving her community sustainably without burning out. Secondary: financial freedom to sustain the mission.
+
+============================================================
+QUICK WIN OPPORTUNITIES (6+)
+============================================================
+
+1. PILLAR: Lead Gen | TITLE: Google Business Profile Review Campaign | TIMELINE: Quick Win
+   WHY: 16 reviews is invisible vs. Flora Legal Group (406), Banks & Brower (792). GBP reviews are the #1 trust signal in local immigration search ranking.
+   COMPETITOR: Flora Legal Group (406 reviews, 4.7 stars) dominates local map results.
+   OPPORTUNITY: A systematic ask-every-client review strategy could add 30–50 reviews in 60 days — the fastest path to local Maps visibility with zero ad spend.
+
+2. PILLAR: Lead Gen | TITLE: Spanish-Language Social Ad Campaign | TIMELINE: Quick Win
+   WHY: IIA has a bilingual team serving the Spanish-speaking manufacturing community in north Indiana — but no paid outreach to that community exists.
+   COMPETITOR: No named competitor confirmed running Spanish-language paid social in north Indiana.
+   OPPORTUNITY: Spanish-language Facebook/Instagram ads targeting north-central Indiana zip codes represent a near-vacant audience where IIA's local bilingual story is the most compelling message in the market.
+
+3. PILLAR: Lead Gen | TITLE: Google Local Service Ads (Google Screened) | TIMELINE: Quick Win
+   WHY: LSA placement appears above all paid ads and organic results. No local competitor holds this spot for north Indiana immigration searches.
+   COMPETITOR: None named at local level.
+   OPPORTUNITY: Applying and achieving Google Screened status claims the #1 Google position for immigration searches in Logansport and Kokomo before any competitor does.
+
+4. PILLAR: Intake | TITLE: After-Hours Intake Response Protocol | TIMELINE: Quick Win
+   WHY: Immigration cases are often urgent — asylum hearings, visa deadlines, court dates. Families who can't reach someone after hours call the next firm.
+   COMPETITOR: None named.
+   OPPORTUNITY: An after-hours answering protocol or form auto-response could convert clients who would otherwise call a competitor — at no additional ad spend.
+
+5. PILLAR: Lead Gen | TITLE: Geo-Targeting Landing Pages for North Indiana Cities | TIMELINE: Long-Term Play
+   WHY: No sub-pages for Kokomo, Peru, Frankfort, or Monticello. IIA serves all of north-central Indiana but is invisible in local searches from those communities.
+   COMPETITOR: Flora Legal Group has geo-targeted service pages for every region of Indiana.
+   OPPORTUNITY: One landing page per city could rank for local immigration searches and capture leads the firm is currently losing to directories and Indianapolis firms.
+
+6. PILLAR: Team | TITLE: Intake Specialist Hire | TIMELINE: Long-Term Play
+   WHY: As lead volume grows with marketing, Libby cannot handle intake and casework simultaneously. The bottleneck will cap growth and quality.
+   COMPETITOR: None named.
+   OPPORTUNITY: A trained intake specialist — even part-time — removes the primary constraint on growth capacity and lets Libby focus entirely on billable casework.
+
+7. PILLAR: Profit | TITLE: Revenue and Profitability Tracking by Case Type | TIMELINE: Quick Win
+   WHY: Not all immigration cases pay equally. DACA renewals are high-volume but lower-margin — without tracking, Libby could be working hardest for the least return.
+   COMPETITOR: None named.
+   OPPORTUNITY: A simple per-case tracking system establishes the financial visibility needed to make informed decisions about pricing, hiring, and growth investment.
+
+8. PILLAR: Lead Gen | TITLE: Directory Claims (Avvo, Justia, Yelp) | TIMELINE: Quick Win
+   WHY: Unclaimed or missing profiles on Avvo, Justia, and Yelp are doorways competitors control. These directories rank on page one for legal searches.
+   COMPETITOR: Flora Legal Group is listed on every major legal directory with optimized geo-targeted content.
+   OPPORTUNITY: Claiming and optimizing all three profiles puts IIA in front of families who search legal directories directly — at zero ongoing cost.
+
+============================================================
+FIRST 90 DAYS
+============================================================
+
+1. Launch Google Search campaigns targeting "immigration attorney" + Logansport, Kokomo, and north Indiana — including Spanish-language keywords for the Hispanic manufacturing community
+2. Implement systematic GBP review request strategy — target 50+ reviews in 90 days to close the visibility gap with Indianapolis competitors
+3. Apply for Google Local Service Ads (Google Screened) for immigration
+4. Optimize website for conversion and build geo-targeting landing pages for Kokomo, Peru, and Frankfort
+5. Elite Coach kickoff: establish intake response protocols, accountability cadence, and 90-day growth targets with coach
+
+============================================================
+PACKAGE PRICING CONFIRMATION (character-by-character verified)
+============================================================
+
+Full Service Marketing — Essentials:
+  Bundled: $2,397/mo
+  Stand-alone: N/A
+  Savings: N/A
+
+Elite Coach:
+  Bundled: $1,600/mo
+  Stand-alone: $2,497/mo
+  Savings: $897/mo
+
+Total bundled: $3,997/mo
+Total savings: $897/mo

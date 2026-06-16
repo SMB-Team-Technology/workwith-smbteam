@@ -46,11 +46,67 @@ jobs:
           echo "sales_rep_email=$(jq -r '.sales_rep_email // empty' "$TRIGGER_FILE")" >> "$GITHUB_OUTPUT"
           echo "suppress_pricing=$(jq -r '.suppress_pricing // "false"' "$TRIGGER_FILE")" >> "$GITHUB_OUTPUT"
           echo "package=$(jq -r '.package // empty' "$TRIGGER_FILE")" >> "$GITHUB_OUTPUT"
+          echo "fathom_url=$(jq -r '.fathom_url // empty' "$TRIGGER_FILE")" >> "$GITHUB_OUTPUT"
 
       - name: Configure git
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
+
+      - name: Resolve Fathom URL
+        id: resolve_fathom
+        env:
+          HUBSPOT_TOKEN: ${{ secrets.HUBSPOT_TOKEN }}
+        run: |
+          FATHOM_URL=$(node scripts/resolve-fathom-url.mjs \
+            "${{ steps.inputs.outputs.hubspot_contact_id }}" \
+            "${{ steps.inputs.outputs.fathom_url }}" 2>/dev/null || true)
+          echo "fathom_url=${FATHOM_URL}" >> "$GITHUB_OUTPUT"
+          if [ -n "$FATHOM_URL" ]; then
+            echo "Resolved Fathom URL: $FATHOM_URL"
+          else
+            echo "No Fathom URL found — Pass 1 will proceed without transcript."
+          fi
+
+      - name: Fetch Fathom transcript
+        if: steps.resolve_fathom.outputs.fathom_url != ''
+        env:
+          FATHOM_API_KEY: ${{ secrets.FATHOM_API_KEY }}
+          HUBSPOT_TOKEN: ${{ secrets.HUBSPOT_TOKEN }}
+        run: |
+          TRIGGER_FILE="${{ steps.inputs.outputs.trigger_file }}"
+          FATHOM_URL="${{ steps.resolve_fathom.outputs.fathom_url }}"
+          CALL_ID=$(echo "$FATHOM_URL" | grep -oP '(?<=/calls/)\d+' || true)
+
+          if [ -n "$CALL_ID" ]; then
+            echo "Fetching Fathom summary for call ID: $CALL_ID"
+            SUMMARY=$(curl -sf \
+              -H "Authorization: Bearer $FATHOM_API_KEY" \
+              -H "Accept: application/json" \
+              "https://fathom.video/api/v1/calls/${CALL_ID}/summary" \
+              | jq -r '.summary // .text // .content // empty')
+            if [ -z "$SUMMARY" ]; then
+              echo "No summary returned from Fathom for call $CALL_ID — leaving transcript field unchanged."
+              exit 0
+            fi
+            TRUNCATED=$(echo "$SUMMARY" | head -c 8000)
+            T="SOURCE: Fathom (direct) — ${FATHOM_URL}"$'\n\n'"${TRUNCATED}"
+            jq --arg t "$T" '.transcript = $t' \
+              "$TRIGGER_FILE" > /tmp/trigger_updated.json && mv /tmp/trigger_updated.json "$TRIGGER_FILE"
+            echo "Transcript injected into $TRIGGER_FILE (${#TRUNCATED} chars)"
+          else
+            echo "Share URL found ($FATHOM_URL) — extracting transcript from HubSpot internal meeting notes."
+            CONTACT_ID="${{ steps.inputs.outputs.hubspot_contact_id }}"
+            TRANSCRIPT=$(node scripts/fetch-hubspot-fathom-notes.mjs "$CONTACT_ID" 2>/dev/null || true)
+            if [ -z "$TRANSCRIPT" ]; then
+              echo "No transcript found in HubSpot internal meeting notes — leaving transcript field unchanged."
+              exit 0
+            fi
+            T="SOURCE: Fathom (via HubSpot internal notes) — ${FATHOM_URL}"$'\n\n'"${TRANSCRIPT}"
+            jq --arg t "$T" '.transcript = $t' \
+              "$TRIGGER_FILE" > /tmp/trigger_updated.json && mv /tmp/trigger_updated.json "$TRIGGER_FILE"
+            echo "Transcript injected from HubSpot internal notes (${#TRANSCRIPT} chars)"
+          fi
 
       - name: Pass 1 — Audit Research
         env:
@@ -75,6 +131,8 @@ jobs:
           "
 
       - name: Pass 1.5 — Deterministic package selection
+        env:
+          HUBSPOT_TOKEN: ${{ secrets.HUBSPOT_TOKEN }}
         run: |
           FRIENDLY_NAME="${{ steps.inputs.outputs.friendly_name }}"
           node scripts/select-package.mjs "$FRIENDLY_NAME" || true
@@ -96,13 +154,9 @@ jobs:
             CONFIDENCE=$(jq -r '.confidence' "$DECISION_FILE")
             DECISION_JSON=$(cat "$DECISION_FILE")
             if [ "$CONFIDENCE" = "high" ]; then
-              PACKAGE_INSTRUCTION="PACKAGE DECISION (revenue confirmed from research notes — do not override):
-$DECISION_JSON
-Use EXACTLY these tier names and prices. Do not re-run eligibility logic. Do not recalculate. Copy every dollar amount character-by-character from this JSON."
+              PACKAGE_INSTRUCTION=$(printf 'PACKAGE DECISION (revenue confirmed from research notes — do not override):\n%s\nUse EXACTLY these tier names and prices. Do not re-run eligibility logic. Do not recalculate. Copy every dollar amount character-by-character from this JSON.' "$DECISION_JSON")
             else
-              PACKAGE_INSTRUCTION="PACKAGE DECISION (revenue was estimated — verify before finalizing):
-$DECISION_JSON
-Revenue was NOT explicitly stated in research notes; this is an evidence-based estimate with confidence: $CONFIDENCE. Before writing Section 11: re-read the research notes and confirm the revenue band is consistent with all available signals. If the estimate appears correct, use these values exactly. If the research notes clearly indicate a different revenue band, apply the eligibility rules and select the correct tier — document your reasoning in section_11_workings.txt."
+              PACKAGE_INSTRUCTION=$(printf 'PACKAGE DECISION (revenue was estimated — verify before finalizing):\n%s\nRevenue was NOT explicitly stated in research notes; this is an evidence-based estimate with confidence: %s. Before writing Section 11: re-read the research notes and confirm the revenue band is consistent with all available signals. If the estimate appears correct, use these values exactly. If the research notes clearly indicate a different revenue band, apply the eligibility rules and select the correct tier — document your reasoning in section_11_workings.txt.' "$DECISION_JSON" "$CONFIDENCE")
             fi
           elif [ -n "$PACKAGE" ]; then
             PACKAGE_INSTRUCTION="PACKAGE OVERRIDE: The trigger file specifies \"$PACKAGE\" as the recommended marketing package. You MUST use this package in Section 11 (Next Steps). Do not override with a different tier based on revenue estimates."

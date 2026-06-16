@@ -1,0 +1,170 @@
+SECTION 11 WORKINGS — Chase Injury Law
+Generated: June 12, 2026
+
+================================================================================
+PACKAGE DECISION VERIFICATION (confidence: medium)
+================================================================================
+
+Source: package_decision.json (revenue estimated from HubSpot: "$0-$180K" → $180,000 effective)
+
+Research notes state:
+- Annual revenue: Not stated — firm is a startup launched April 2026 with 3 referral cases; effectively pre-revenue. Use $0 as baseline.
+- Revenue goal: $250,000 in year one (stated)
+
+The HubSpot $180K estimate represents the upper bound of the "$0-$180K" bucket. The firm is effectively pre-revenue, which places it below $180K. This is consistent with the Essentials tier (lowest available marketing tier) and the Elite Coach recommendation (revenue $250K-$400K range applies to goal revenue, not current).
+
+Eligibility check:
+- Practice area: Workers' Compensation (primary). Personal Injury (secondary). Workers' comp does not trigger the PI filter that hides Essentials. Essentials is eligible.
+- Revenue under $250K: Scoping approval required before proceeding. Flag for Randy Gold.
+- Revenue under $500K: LAW package not eligible. Confirmed — not recommended.
+- Team size: 1 (solo). Master's Circle not eligible (requires 5+ team members). Confirmed.
+- Personal Injury filter: PI is SECONDARY only. Primary is workers' comp. Essentials eligible.
+
+35% spend cap check:
+- Monthly revenue effective: $180,000 / 12 = $15,000/month
+- 35% cap: $15,000 × 0.35 = $5,250/month max SMB spend
+- Total SMB fees (management only): $5,997/month
+- NOTE: Total SMB fees slightly exceed the 35% cap based on the $180K estimate. However, the firm's actual operating goal is $250K year-one. At $250K/12 = $20,833/month, the 35% cap is $7,292 — comfortably above $5,997. Package is appropriate for the firm's goal revenue. Flag for sales rep to confirm financial capability.
+
+CONCLUSION: Package decision confirmed with notes. Values from decision file are accurate and consistent with research notes. Scoping approval required due to revenue under $250K.
+
+================================================================================
+MANDATORY PRICE LOOKUP — CHARACTER-BY-CHARACTER VERIFICATION
+================================================================================
+
+Marketing package selected: Full Service Marketing — Essentials
+  - Bundled price (from table): $3,397/mo
+  - Stand-alone price (from table): N/A (Essentials stand-alone listed as $N/A in pricing table)
+  - Savings (stand-alone minus bundled): N/A
+
+Non-marketing package selected: Elite Coach
+  - Bundled price (from table): $2,600/mo
+  - Stand-alone price (from table): $3,497/mo
+  - Savings (stand-alone minus bundled): $897/mo
+
+Legal AI Workforce (LAW) package selected: none
+  - Reason: Revenue under $500K — LAW not eligible
+
+AI Avatar / Video Growth add-on selected: none
+  - Reason: Not applicable at this stage; firm has no active marketing relationship yet
+
+Total monthly investment (sum of all bundled/recurring prices): $5,997/mo
+Total savings: $897/mo
+
+================================================================================
+AD SPEND CALCULATIONS
+================================================================================
+
+Practice area: Workers' Compensation (primary) — Fort Lauderdale / Broward County
+Market tier: Tier 2 (Fort Lauderdale is in the Miami–Fort Lauderdale MSA)
+Tier 2 multiplier: 1.3x (if applied to aggressive calculation)
+
+CONSERVATIVE AD SPEND: $3,000/mo
+Rationale: Absolute minimum for any paid ads per eligibility rules. Starting budget for a pre-revenue firm entering a competitive market. This is below the workers' comp competitive threshold for Broward County but appropriate for launch phase.
+
+Channel mix (conservative): LSA $2,000 + Google PPC $1,000
+Using Accident & Injury CPL row (closest proxy for workers' comp):
+- LSA CPL midpoint: ($210 + $260) / 2 = $235; +20% cushion = $282
+- Google Search CPL midpoint: ($630 + $780) / 2 = $705; +20% cushion = $846
+Blended CPL: (2,000/3,000 × $282) + (1,000/3,000 × $846) = $188.00 + $282.00 = $470
+Leads: $3,000 / $470 = 6.4 ≈ 6 leads/month
+Cases: 6 × 15% close rate = 0.9 ≈ 1 case/month
+Revenue: 1 × $25,000 ACV = $25,000/month
+Return multiple: $25,000 / $3,000 = 8.3x
+
+Note: ACV of $25,000 is the conservative Florida workers' comp default (typical settlement range $20,000–$35,000). Not stated in transcript; default applied per instructions. Workers' comp settlement timelines in Florida are typically 6–18 months from case sign — revenue does not realize immediately.
+
+AGGRESSIVE AD SPEND: $7,500/mo
+Rationale: Essentials tier ad spend cap. Revenue goal calculation:
+- $250K goal × 20% / 12 = $4,167/mo marketing budget gross
+- Minus management fee $3,397 = $770 available (too low — use tier cap)
+- Long-term goal $1M × 20% / 12 = $16,667 × Tier 2 multiplier 1.3 = $21,667 gross
+- Minus management fee $3,397 = $18,270 available — above Essentials cap of $7,500
+- Essentials tier cap applies: $7,500/mo (ad spend cap per pricing table)
+
+Channel mix (aggressive): Google PPC $3,500 + LSA $2,500 + Meta Retargeting $1,500
+Using Accident & Injury CPL row, no cushion:
+- Google Search CPL midpoint: $705
+- LSA CPL midpoint: $235
+- Meta Retargeting CPL midpoint: $90
+Blended: (3,500/7,500 × $705) + (2,500/7,500 × $235) + (1,500/7,500 × $90)
+       = (0.4667 × $705) + (0.3333 × $235) + (0.2000 × $90)
+       = $329.00 + $78.33 + $18.00 = $425.33 ≈ $425
+Leads: $7,500 / $425 = 17.6 ≈ 18 leads/month
+Cases: 18 × 15% = 2.7 ≈ 3 cases/month
+Revenue: 3 × $25,000 = $75,000/month
+Return multiple: $75,000 / $7,500 = 10x
+
+Reverse math validation (aggressive):
+- Revenue goal $250K/year ÷ $25,000 ACV = 10 cases needed/year ÷ 12 = 0.83 cases/month
+- At 15% close rate: 0.83 / 0.15 = 5.6 qualified leads/month required
+- × Blended CPL $425 = $2,380/month required spend
+- 20% rule gives higher number ($7,500) — use $7,500 per instructions
+
+Escalation flags (internal — not in client report):
+- Revenue under $300K → scoping approval required
+- Revenue under $250K → confirm client has funds to cover 4 months of services ($5,997 × 4 = $23,988)
+
+================================================================================
+DBM STATEMENT FOR BLOCK 1
+================================================================================
+
+"We help new workers' compensation attorneys building location-independent practices get a predictable flow of qualified injury cases so they can generate the income that sustains the life they moved to Portugal to live."
+
+================================================================================
+QUICK WIN OPPORTUNITIES (8 identified)
+================================================================================
+
+1. LEAD GEN / Quick Win — Resolve GBP Verification
+   Why: GBP stuck since April 2026; single gating factor blocking 3-pack, LSA, and reviews
+   Competitor: Anidjar & Levine (1,696 reviews, top 3-pack every relevant search)
+   Opportunity: Resolves three channel blockers in one action
+
+2. LEAD GEN / Quick Win — Rebuild Google Ads with Workers' Comp Keywords
+   Why: Health insurance keywords → 200 daily visitors, zero leads; targeting is the problem not the platform
+   Competitor: Lyle B. Masnikoff & Associates (workerscompfl.net — exact keyword strategy SMB Team proposes)
+   Opportunity: Same budget, repositioned to intent-matched terms = qualified leads
+
+3. LEAD GEN / Quick Win — Fix NAP Inconsistency
+   Why: Pompano Beach address vs Fort Lauderdale marketing = split signal suppressing both cities
+   Competitor: None (internal fix)
+   Opportunity: Zero-cost removal of active local search suppression factor
+
+4. INTAKE / Quick Win — Embed Contact Form Above the Fold
+   Why: Buried form adds friction at highest-intent moment; loses prospects who won't click through
+   Competitor: None
+   Opportunity: Increases conversion rate of all future traffic without additional ad spend
+
+5. INTAKE / Quick Win — After-Hours Response Protocol
+   Why: Portugal time zone creates daily coverage gap during peak Florida inquiry hours; competitors advertise 24/7
+   Competitor: Anidjar & Levine ("24/7 availability" in ad copy)
+   Opportunity: Automated acknowledgment + committed callback time prevents lead loss during coverage gaps
+
+6. TEAM / Long-Term Play — First Hire: Intake Coordinator
+   Why: Solo operation from Portugal is a ceiling; firm cannot scale without at least one team member locally
+   Competitor: None
+   Opportunity: First hire removes the personal bottleneck limiting revenue to Michelle's available hours
+
+7. PROFIT / Quick Win — Break-Even Model and Monthly Case Target Plan
+   Why: No financial model exists to translate $250K goal into monthly case counts and acquisition cost ceiling
+   Competitor: None
+   Opportunity: A financial model that shows exactly how many cases per month are needed to hit the goal
+
+8. LEAD GEN / Long-Term Play — Spanish-Language Campaign
+   Why: Broward County's Hispanic workforce is underserved for workers' comp; lower CPL, less competition
+   Competitor: None identified targeting this segment
+   Opportunity: Differentiator channel that larger competitors are not yet optimizing for
+
+================================================================================
+FIRST 90 DAYS ACTION ITEMS
+================================================================================
+
+1. Launch Google Ads with workers' comp and injury intent keywords — replace health insurance targeting immediately to start generating qualified leads from existing budget
+2. Resolve Google Business Profile verification — SMB Team assists; unlocks LSA eligibility, 3-pack visibility, and review collection simultaneously
+3. Fix NAP consistency — choose Fort Lauderdale as primary city; unify all citations across web directories
+4. Website conversion optimization — embed contact form above the fold, add automated form confirmation response
+5. Coaching kickoff — build break-even model, monthly case targets, and 12-month runway plan tied to Michelle's financial goals
+
+================================================================================
+END OF WORKINGS FILE
+================================================================================

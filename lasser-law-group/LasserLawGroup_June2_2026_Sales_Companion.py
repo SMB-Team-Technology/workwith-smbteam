@@ -2,6 +2,7 @@
 Sales Companion PDF — Lasser Law Group
 Sales Rep: Randy Gold | Audit Date: June 2, 2026
 FOR INTERNAL USE ONLY. DO NOT SHARE WITH CLIENT.
+PACKAGE: FCOO Advisor ONLY — Coaching and Operations Proposal
 """
 
 from reportlab.lib.pagesizes import letter
@@ -89,17 +90,17 @@ def quote_block(text):
 story = []
 
 story.append(Paragraph("Lasser Law Group PLLC", S["title"]))
-story.append(Paragraph("Sales Companion  |  June 2, 2026  |  Rep: Randy Gold", S["subtitle"]))
+story.append(Paragraph("Sales Companion  |  June 2, 2026  |  Rep: Randy Gold  |  FCOO Advisor Proposal", S["subtitle"]))
 story.append(thin_rule())
 
 story.append(Paragraph("Prospect Snapshot", S["section"]))
 snap = [
     [Paragraph("<b>Owner</b>", S["snap_label"]), Paragraph("<b>Revenue</b>", S["snap_label"]),
      Paragraph("<b>Team</b>", S["snap_label"]), Paragraph("<b>Stage</b>", S["snap_label"]),
-     Paragraph("<b>Close Rate</b>", S["snap_label"]), Paragraph("<b>Location</b>", S["snap_label"])],
+     Paragraph("<b>Urgency</b>", S["snap_label"]), Paragraph("<b>Location</b>", S["snap_label"])],
     [Paragraph("S. Lasser", S["snap_value"]), Paragraph("~$1M est.", S["snap_value"]),
      Paragraph("12 (9 atty)", S["snap_value"]), Paragraph("Stage 4", S["snap_value"]),
-     Paragraph("15% default", S["snap_value"]), Paragraph("NYC, 3 offices", S["snap_value"])],
+     Paragraph("7 / 10", S["snap_value"]), Paragraph("NYC, 3 offices", S["snap_value"])],
 ]
 t1 = Table(snap, colWidths=[1.15*inch, 1.2*inch, 0.8*inch, 0.7*inch, 0.7*inch, 1.15*inch])
 t1.setStyle(TableStyle([
@@ -116,38 +117,28 @@ story.append(Paragraph("Stephen wants Lasser Law Group to be the recognized firs
 story.append(quote_block("No transcript available — DBM inferred from 20+ year history, multi-office expansion, video podcast investment, and 'large law firm experience with personal service' positioning."))
 
 story.append(Paragraph("<b>What he wants:</b>", S["subsection"]))
-story.append(bd("<b>Market Visibility.</b> The firm's expertise findable by clients searching online — not just referral sources."))
-story.append(bd("<b>Predictable Case Flow.</b> A reliable pipeline independent of who happens to make a referral call."))
-story.append(bd("<b>Systems-Driven Growth.</b> A firm where nine attorneys operate efficiently without the managing partner in every decision."))
+story.append(bd("<b>Systems-Driven Growth.</b> A firm where nine attorneys operate efficiently across three offices without the managing partner in every decision."))
+story.append(bd("<b>Predictable Case Flow.</b> A reliable pipeline built on a solid operational foundation — not just referrals."))
+story.append(bd("<b>Market Domination.</b> The Lasser name as the first call for any property owner, landlord, or developer who needs legal representation in New York."))
 
 story.append(Paragraph("<b>What is stopping him:</b>", S["subsection"]))
-story.append(b("<b>No Digital Presence.</b> Zero paid ads, no LSA, not in the 3-pack — all online traffic goes to competitors."))
+story.append(b("<b>No Operations Layer.</b> Nine attorneys and three offices with no confirmed COO or ops staff — everything flows through the managing partner."))
+story.append(b("<b>Intake Gap.</b> Contact form buried, no systematic intake process — growth marketing will under-convert without this fixed first."))
 story.append(b("<b>Reputation Risk.</b> 3.6 stars / 24 reviews; recent reviews negative. Goldberg &amp; Lindenberg: 57 reviews at 4.2★."))
-story.append(b("<b>Weak Intake.</b> Contact form buried, no live chat — any new marketing will under-convert."))
 story.append(b("<b>Revenue Unconfirmed.</b> $1M is a third-party estimate only — qualify actual figure early in the call."))
 
 story.append(thin_rule())
 
-story.append(Paragraph("Why This Marketing Package", S["section"]))
+story.append(Paragraph("Why FCOO Advisor Is the Right Starting Point", S["section"]))
 story.append(Paragraph("<b>What it does for him:</b>", S["subsection"]))
-story.append(bd("Puts the firm at the top of every Manhattan real estate attorney search — converting 20 years of expertise into steady inbound cases."))
-story.append(bd("LSA enrollment and GBP recovery give the Google Screened badge and rebuild trust signals above the 4.0-star threshold."))
+story.append(bd("Builds the operational infrastructure — intake systems, team accountability, management structure — so nine attorneys across three offices run consistently without Stephen as the decision-maker for every question."))
+story.append(bd("Dedicated Fractional COO with law firm operations expertise, plus Elite Coach group deliverables included: weekly coaching, practice area masterminds, quarterly workshops, and annual in-person event."))
+story.append(bd("Review generation system and GBP optimization as 90-day quick wins — immediate visibility improvement without any ad spend."))
 
-story.append(Paragraph("<b>Full Service Marketing Starter  |  $4,847/mo bundled</b>", S["subsection"]))
-story.append(b("NYC Tier 1, high-CPL legal market — requires full-service management across Google Ads, LSA, local SEO, and Meta."))
-story.append(b("Website rebuild needed: contact form buried, blog stalled 12+ months, mobile performance unconfirmed."))
-story.append(b("Conservative $10K ad spend: est. 13 cases x $9K avg = $117K/mo, ~11.7x return. All figures are estimates."))
-
-story.append(thin_rule())
-
-story.append(Paragraph("Why This Coaching Package", S["section"]))
-story.append(Paragraph("<b>What it does for him:</b>", S["subsection"]))
-story.append(bd("Builds the intake system and KPI framework that turns new lead flow into signed cases at a predictable conversion rate."))
-story.append(bd("Structured path from Stage 4 (owner-operator) to Stage 5 (CEO) — gives Stephen his time back without a new full-time hire."))
-
-story.append(Paragraph("<b>Elite Coach Plus  |  $3,200/mo bundled</b>", S["subsection"]))
-story.append(b("~$1M revenue, 12-person team, three offices — weekly group coaching and masterminds for Stage 4 to 5 transition."))
-story.append(b("No confirmed intake process or KPI framework — coaching addresses both. Stand-alone $3,497; bundle saves $297/mo."))
+story.append(Paragraph("<b>FCOO Advisor  |  $2,297/mo</b>", S["subsection"]))
+story.append(b("~$1M revenue, 12-person team, 3 offices with no confirmed ops layer — operations foundation must be built before marketing investment is maximized."))
+story.append(b("Fractional COO assesses all three offices within first 30 days; 90-day operational roadmap tailored to a multi-office real estate litigation practice."))
+story.append(b("Stand-alone price $2,797/mo — bundled rate saves $500/mo through the SMB Team relationship."))
 
 
 # PAGE 2
@@ -156,49 +147,39 @@ story.append(PageBreak())
 story.append(Paragraph("Lasser Law Group — Sales Companion (continued)", S["title"]))
 story.append(thin_rule())
 
-story.append(Paragraph("Why This Ad Spend", S["section"]))
-story.append(Paragraph("<b>What it does for him:</b>", S["subsection"]))
-story.append(bd("Captures landlord, property manager, and board member intent traffic currently going to Goldberg &amp; Lindenberg and Belkin Burden Goldman."))
-story.append(bd("One signed commercial litigation matter at $10K–$30K recovers a full month of ad spend — making this the highest-leverage investment available."))
+story.append(Paragraph("What the First 90 Days Look Like", S["section"]))
+story.append(Paragraph("<b>Operational actions (FCOO Advisor):</b>", S["subsection"]))
+story.append(bd("FCOO Advisor kickoff: full operations assessment across all three offices — identify most urgent bottlenecks in intake, matter management, and team accountability."))
+story.append(bd("Define role clarity and documented intake process — establish who owns first contact, follow-up, and conversion across Manhattan, Westchester, and Long Island."))
+story.append(bd("Monthly coaching cadence and case targets established — accountability checkpoints for managing partner and team from day one."))
 
-story.append(Paragraph("<b>Recommended Ad Spend Range:</b>", S["subsection"]))
-story.append(b("<b>Conservative:</b> $10,000/mo — PPC $3,500 + LSA $2,000 + Meta Ret $1,200 + Meta Lead $3,500 = $10,200."))
-story.append(b("<b>Aggressive:</b> $25,000/mo — Starter tier cap. Scaling beyond $25K requires Growth tier ($7,397/mo fee)."))
-
-story.append(Paragraph("<b>Estimated ROI (estimates only, not guaranteed):</b>", S["subsection"]))
-story.append(b("<b>Conservative:</b> 85 leads x 15% = 13 cases x $9,000 = $117,000/mo vs. $10,000 = 11.7x return."))
-story.append(b("<b>Aggressive:</b> 255 leads x 15% = 38 cases x $9,000 = $342,000/mo vs. $25,000 = 13.7x return."))
-story.append(Paragraph("<i>Business Law CPL benchmarks, NYC Tier 1. Blended case value — commercial litigation averages higher. No transcript to confirm close rate.</i>", S["disclaimer"]))
-
-story.append(Paragraph("<b>How the numbers were built:</b>", S["subsection"]))
-story.append(b("<b>Conservative:</b> Channel minimums. PPC $3,500 + LSA $2,000 + Meta $2,700 = $10,200 rounded to $10,000."))
-story.append(b("<b>Aggressive:</b> $2M goal x 20% / 12 x 1.5 (Tier 1) = $50,000 — capped at Starter limit of $25,000."))
-story.append(b("$8,047 + $10,000 = $18,047/mo = ~1.8% of revenue. Aggressive $33,047 = ~3.3%. Both under the 35% cap."))
+story.append(Paragraph("<b>Fast digital wins (no ad spend required):</b>", S["subsection"]))
+story.append(b("Begin review generation process targeting satisfied clients — target: recover Google rating above 4.0 stars within 60–90 days."))
+story.append(b("Optimize Google Business Profile with Super Lawyers credentials; correct FindLaw and Yelp NAP inconsistencies."))
 
 story.append(thin_rule())
 
 story.append(Paragraph("If He Pushes Back", S["section"]))
 
+story.append(Paragraph('"I\'m not sure I need an operations person — I need more clients."', S["objection_q"]))
+story.append(Paragraph("Marketing without operations is like turning up the water pressure before fixing the leaky pipes. Nine attorneys, three offices, no documented intake process — every new lead that comes in without a system hits a bottleneck. Fix the operations first; then every marketing dollar converts at a higher rate.", S["objection_a"]))
+
 story.append(Paragraph('"We get enough work from referrals."', S["objection_q"]))
-story.append(Paragraph("Referrals have a ceiling. Goldberg & Lindenberg has 57 Google reviews at 4.2 stars and appears in every Manhattan landlord-tenant search. That gap grows every month without action.", S["objection_a"]))
+story.append(Paragraph("Referrals have a ceiling. Goldberg & Lindenberg has 57 Google reviews at 4.2 stars and appears in every Manhattan landlord-tenant search. Belkin Burden Goldman has 60 attorneys and is Chambers-ranked. That gap grows every month without action. The operational foundation you build today is what makes marketing investment pay off tomorrow.", S["objection_a"]))
 
-story.append(Paragraph('"Our Google rating has some issues."', S["objection_q"]))
-story.append(Paragraph("3.6 stars / 24 reviews with a May 2026 critical review is the first thing a new prospect sees. Systematic review generation can recover above 4.0 in 60–90 days — but only if it starts now.", S["objection_a"]))
+story.append(Paragraph('"Is $2,297/mo worth it for coaching?"', S["objection_q"]))
+story.append(Paragraph("This is not coaching in the abstract — it is a dedicated Fractional COO with law firm operations expertise assessing all three offices and building the management structure that makes every attorney hour more productive. One additional case per month from improved intake conversion more than covers the investment.", S["objection_a"]))
 
-story.append(Paragraph('"Is the timing right? We\'re busy managing three offices."', S["objection_q"]))
-story.append(Paragraph("Urgency score: 7/10. Belkin Burden Goldman (60 attorneys, Chambers-ranked) and Gallet Dreyer & Berkey (50+ years in condo/co-op) are not waiting. Every month extends their lead.", S["objection_a"]))
+story.append(Paragraph('"We\'re busy managing three offices already."', S["objection_q"]))
+story.append(Paragraph("Urgency score: 7/10. Competitors are dominating multiple channels in this market right now. The three-office structure you are managing manually today is the exact problem FCOO Advisor solves — so the managing partner can lead the firm rather than run it.", S["objection_a"]))
 
 story.append(thin_rule())
 
 story.append(Paragraph("Investment At A Glance", S["section"]))
 
 price_data = [
-    [Paragraph("<b>Full Service Marketing Starter</b>", S["price_main"]), Paragraph("$4,847/mo", S["price_main"])],
-    [Paragraph("Google Ads, LSA, website rebuild, local SEO, Meta ads, monthly reporting.", S["price_detail"]), Paragraph("<strike>$5,697</strike> stand alone", S["price_detail"])],
-    [Paragraph("<b>Elite Coach Plus</b>", S["price_main"]), Paragraph("$3,200/mo", S["price_main"])],
-    [Paragraph("Weekly group coaching, masterminds, intake optimization, KPI framework, workshops.", S["price_detail"]), Paragraph("<strike>$3,497</strike> stand alone", S["price_detail"])],
-    [Paragraph("<b>Recommended Ad Spend</b>", S["price_main"]), Paragraph("$10,000–$25,000/mo", S["price_main"])],
-    [Paragraph("Goes to Google, LSA, and Meta — not to SMB Team.", S["price_detail"]), Paragraph("", S["price_detail"])],
+    [Paragraph("<b>FCOO Advisor</b>", S["price_main"]), Paragraph("$2,297/mo", S["price_main"])],
+    [Paragraph("Fractional COO, operations assessment, intake systems, team accountability, coaching sessions, masterminds, workshops.", S["price_detail"]), Paragraph("<strike>$2,797</strike> stand alone", S["price_detail"])],
 ]
 pt = Table(price_data, colWidths=[4.5 * inch, 1.7 * inch])
 pt.setStyle(TableStyle([
@@ -206,12 +187,10 @@ pt.setStyle(TableStyle([
     ("LEFTPADDING", (0,0), (-1,-1), 4), ("RIGHTPADDING", (0,0), (-1,-1), 4),
     ("TOPPADDING", (0,0), (-1,-1), 2), ("BOTTOMPADDING", (0,0), (-1,-1), 1),
     ("LINEBELOW", (0,1), (-1,1), 0.5, RULE_GRAY),
-    ("LINEBELOW", (0,3), (-1,3), 0.5, RULE_GRAY),
-    ("LINEBELOW", (0,5), (-1,5), 0.5, RULE_GRAY),
 ]))
 story.append(pt)
 story.append(Paragraph(
-    "Total: $8,047/mo + $10,000–$25,000 ad spend  |  Save $1,147/mo by bundling  |  1.8%–3.3% of revenue (under 35% cap)",
+    "Total: $2,297/mo  |  Save $500/mo  |  0.23% of estimated revenue (well under the 35% cap)",
     S["savings"]))
 
 doc.build(story, onFirstPage=add_page_elements, onLaterPages=add_page_elements)

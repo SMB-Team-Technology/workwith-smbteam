@@ -1,0 +1,157 @@
+name: Re-run Research + Package Selection (Pass 1 + 1.5 only)
+
+on:
+  workflow_dispatch:
+    inputs:
+      friendly_name:
+        description: 'Firm friendly name (e.g. the-law-offices-of-david-p-shapiro)'
+        required: true
+        type: string
+  push:
+    branches: [main]
+    paths:
+      - 'triggers/rerun-research/*.json'
+
+jobs:
+  rerun-research:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install Claude Code CLI
+        run: npm install -g @anthropic-ai/claude-code
+
+      - name: Configure git
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+      - name: Resolve friendly name
+        id: resolve
+        run: |
+          if [ "${{ github.event_name }}" = "push" ]; then
+            FILE=$(git diff-tree --no-commit-id -r --name-only "${{ github.sha }}" \
+              | grep '^triggers/rerun-research/.*\.json$' | head -1)
+            FRIENDLY_NAME=$(jq -r '.friendly_name' "$FILE")
+          else
+            FRIENDLY_NAME="${{ github.event.inputs.friendly_name }}"
+          fi
+          echo "friendly_name=$FRIENDLY_NAME" >> "$GITHUB_OUTPUT"
+          echo "Firm: $FRIENDLY_NAME"
+
+      - name: Resolve Fathom URL
+        id: resolve_fathom
+        env:
+          HUBSPOT_TOKEN: ${{ secrets.HUBSPOT_TOKEN }}
+        run: |
+          FRIENDLY_NAME="${{ steps.resolve.outputs.friendly_name }}"
+          TRIGGER_FILE="triggers/audit-research/${FRIENDLY_NAME}.json"
+          CONTACT_ID=$(jq -r '.hubspot_contact_id // empty' "$TRIGGER_FILE" 2>/dev/null || true)
+          HINT_URL=$(jq -r '.fathom_url // empty' "$TRIGGER_FILE" 2>/dev/null || true)
+          FATHOM_URL=$(node scripts/resolve-fathom-url.mjs "$CONTACT_ID" "$HINT_URL" 2>/dev/null || true)
+          echo "fathom_url=${FATHOM_URL}" >> "$GITHUB_OUTPUT"
+          if [ -n "$FATHOM_URL" ]; then
+            echo "Resolved Fathom URL: $FATHOM_URL"
+          else
+            echo "No Fathom URL found — Pass 1 will proceed without transcript."
+          fi
+
+      - name: Fetch Fathom transcript
+        if: steps.resolve_fathom.outputs.fathom_url != ''
+        env:
+          FATHOM_API_KEY: ${{ secrets.FATHOM_API_KEY }}
+          HUBSPOT_TOKEN: ${{ secrets.HUBSPOT_TOKEN }}
+        run: |
+          FRIENDLY_NAME="${{ steps.resolve.outputs.friendly_name }}"
+          TRIGGER_FILE="triggers/audit-research/${FRIENDLY_NAME}.json"
+          FATHOM_URL="${{ steps.resolve_fathom.outputs.fathom_url }}"
+          CALL_ID=$(echo "$FATHOM_URL" | grep -oP '(?<=/calls/)\d+' || true)
+
+          if [ -n "$CALL_ID" ]; then
+            echo "Fetching Fathom summary for call ID: $CALL_ID"
+            SUMMARY=$(curl -sf \
+              -H "Authorization: Bearer $FATHOM_API_KEY" \
+              -H "Accept: application/json" \
+              "https://fathom.video/api/v1/calls/${CALL_ID}/summary" \
+              | jq -r '.summary // .text // .content // empty')
+            if [ -z "$SUMMARY" ]; then echo "No summary from Fathom."; exit 0; fi
+            TRUNCATED=$(echo "$SUMMARY" | head -c 8000)
+            T="SOURCE: Fathom (direct) — ${FATHOM_URL}"$'\n\n'"${TRUNCATED}"
+            jq --arg t "$T" '.transcript = $t' \
+              "$TRIGGER_FILE" > /tmp/trigger_updated.json && mv /tmp/trigger_updated.json "$TRIGGER_FILE"
+            echo "Transcript injected (${#TRUNCATED} chars)"
+          else
+            echo "Share URL found ($FATHOM_URL) — extracting transcript from HubSpot internal meeting notes."
+            CONTACT_ID=$(jq -r '.hubspot_contact_id // empty' "$TRIGGER_FILE" 2>/dev/null || true)
+            TRANSCRIPT=$(node scripts/fetch-hubspot-fathom-notes.mjs "$CONTACT_ID" 2>/dev/null || true)
+            if [ -z "$TRANSCRIPT" ]; then
+              echo "No transcript found in HubSpot internal meeting notes — skipping."
+              exit 0
+            fi
+            T="SOURCE: Fathom (via HubSpot internal notes) — ${FATHOM_URL}"$'\n\n'"${TRANSCRIPT}"
+            jq --arg t "$T" '.transcript = $t' \
+              "$TRIGGER_FILE" > /tmp/trigger_updated.json && mv /tmp/trigger_updated.json "$TRIGGER_FILE"
+            echo "Transcript injected from HubSpot internal notes (${#TRANSCRIPT} chars)"
+          fi
+
+      - name: Pass 1 — Audit Research
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: |
+          FRIENDLY_NAME="${{ steps.resolve.outputs.friendly_name }}"
+          TRIGGER_FILE="triggers/audit-research/${FRIENDLY_NAME}.json"
+
+          if [ ! -f "$TRIGGER_FILE" ]; then
+            echo "ERROR: Trigger file not found: $TRIGGER_FILE"
+            exit 1
+          fi
+
+          claude --model claude-sonnet-4-6 --dangerously-skip-permissions -p "
+            You are running Pass 1 of the SMB Team Growth Audit pipeline.
+
+            Read the trigger file at \`$TRIGGER_FILE\` — it is a JSON file containing
+            firm_name, friendly_name, url, sales_rep, date, and transcript.
+            Extract those values first.
+
+            The trigger file contains a transcript field with the discovery call notes.
+            Use that as ground truth per the TRANSCRIPT-FIRST RULE in the command file.
+            If the URL resolves, browse it live. If not (fictional/test firm), fabricate
+            realistic research data for all steps. Do not leave any section blank.
+
+            Read \`.claude/commands/audit-research.md\` in full and execute every step in
+            order. Save progress after each major section. Commit the research notes file
+            to main and report the commit hash when complete.
+          "
+
+      - name: Pass 1.5 — Deterministic package selection
+        env:
+          HUBSPOT_TOKEN: ${{ secrets.HUBSPOT_TOKEN }}
+        run: |
+          FRIENDLY_NAME="${{ steps.resolve.outputs.friendly_name }}"
+          echo "Running package selection for: $FRIENDLY_NAME"
+          node scripts/select-package.mjs "$FRIENDLY_NAME" || true
+          if [ -f "$FRIENDLY_NAME/package_decision.json" ]; then
+            echo "=== package_decision.json ==="
+            cat "$FRIENDLY_NAME/package_decision.json"
+            git add "$FRIENDLY_NAME/package_decision.json"
+            if ! git diff --cached --quiet; then
+              git commit -m "Pass 1.5: package decision for $FRIENDLY_NAME (research re-run)"
+              git push origin main
+            fi
+          else
+            echo "No package_decision.json produced."
+          fi

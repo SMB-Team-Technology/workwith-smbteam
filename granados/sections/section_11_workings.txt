@@ -1,0 +1,202 @@
+SECTION 11 WORKINGS — Granados Law Group, PLLC
+Date: June 11, 2026
+Sales Rep: Jacob Meissner
+Prepared by: Claude Code (SMB Team Audit Pipeline)
+
+==========================================================
+REVENUE VERIFICATION
+==========================================================
+
+Revenue stated in transcript: ~$750,000 (explicitly stated by Lindsey Granados)
+Revenue from package_decision.json: $570,000 (HubSpot estimate — less reliable)
+OVERRIDE: Use $750,000 stated revenue. Still in $400K–$1M band.
+Revenue goal stated: $1,250,000 (prior peak, explicit goal)
+Monthly revenue: $750,000 / 12 = $62,500/mo
+
+Practice areas confirmed: Criminal defense (felonies), DWI, misdemeanors, drug crimes,
+  traffic tickets, personal injury (secondary), family law (listed), expungement (statewide)
+  → Shifting focus toward higher-value felonies; away from low-margin traffic cases
+
+Team size confirmed: 6 total (Lindsey + 1 attorney associate + 1 FT staff + 2 PT staff + 1 intern)
+Eligibility filters:
+  • Personal Injury practice → hide ALL Essentials marketing packages (min Starter) ✓ confirmed
+  • Revenue $400K–$1M → hide Fractional CFO, Fractional COO, and Master's Circle ✓
+  • Revenue under $1M → hide Dominate and Platinum tiers ✓
+  • Team fewer than 5 (firm has 6 total, but core staff may be fewer) — borderline; revenue under $1M makes Master's Circle moot anyway ✓
+
+==========================================================
+MANDATORY PRICE LOOKUP — CONFIRMED FROM TABLES
+==========================================================
+
+Marketing package selected: Full Service Marketing — Starter
+  - Bundled price (from table): $4,847/mo
+  - Stand-alone price (from table): $5,697/mo
+  - Savings (stand-alone minus bundled): $850/mo
+
+Non-marketing package selected: Elite Coach Plus
+  - Bundled price (from table): $3,200/mo
+  - Stand-alone price (from table): $3,497/mo
+  - Savings (stand-alone minus bundled): $297/mo
+
+Legal AI Workforce (LAW) package: none
+  (Revenue under $1M, solo attorney as primary worker — not recommended at this stage)
+
+AI Avatar / Video Growth: none
+  (No AI Avatar recommendation; would require Alexis approval anyway)
+
+Total monthly investment: $4,847 + $3,200 = $8,047/mo
+Total savings: $850 + $297 = $1,147/mo
+
+==========================================================
+35% CAP CHECK
+==========================================================
+
+Monthly revenue: $62,500
+35% cap: $62,500 × 0.35 = $21,875/mo maximum total SMB spend (management fees + ad spend)
+Management fees: $8,047/mo
+Maximum ad spend at current revenue: $21,875 - $8,047 = $13,828/mo
+
+Conservative ad spend: $7,500/mo — total $15,547 (24.9%) ✓ WITHIN CAP
+Aggressive ad spend: $13,500/mo — total $21,547 (34.5%) ✓ WITHIN CAP
+Note: package_decision.json suggested $25,000 aggressive; adjusted to $13,500 to stay within
+  35% cap at current $750K revenue. At goal revenue of $1.25M ($104,167/mo), the cap would
+  allow up to $28,410/mo total, making $25,000 ad spend viable once goal is reached.
+
+==========================================================
+AD SPEND CALCULATION — CONSERVATIVE AND AGGRESSIVE
+==========================================================
+
+Practice areas for ad spend: Criminal Defense (primary), DWI (primary), Personal Injury (secondary)
+Market: Cary/Wake County, NC — Raleigh = Tier 3 (strategic growth) → multiplier 1.15×
+Criminal Defense competitiveness: Medium-High (Saad Law dominant, multiple competitors)
+
+CONSERVATIVE SCENARIO — $7,500/mo:
+Channel allocation:
+  • Google PPC criminal defense/DWI: $4,000 (covers main keywords 24/7)
+  • LSA criminal defense/DWI: $2,000 (pay-per-lead, high intent)
+  • Meta retargeting: $1,000 (website visitors, brand building)
+  • Meta lead gen (DWI awareness): $500
+  Total: $7,500 ✓
+
+AGGRESSIVE SCENARIO — $13,500/mo:
+20% rule: $750K × 20% / 12 = $12,500/mo total marketing budget
+  × Tier 3 multiplier (1.15×): $14,375
+  - Management fee $4,847: $9,528 available ad spend
+Goal revenue: $1.25M × 20% / 12 = $20,833 × 1.15 = $23,958 - $4,847 = $19,111
+Cap-constrained at 35%: $13,828 max
+Selected aggressive: $13,500 (just under 35% cap at current revenue)
+
+Channel allocation:
+  • Google PPC criminal defense/DWI/felony: $7,500
+  • LSA criminal defense/DWI: $3,000
+  • Meta retargeting + lead gen: $2,000
+  • Personal Injury Google PPC: $1,000
+  Total: $13,500 ✓
+
+==========================================================
+ROI PROJECTIONS
+==========================================================
+
+Average case value (blended from transcript):
+  Low-level felony/misdemeanor/traffic: $4,000–$5,000
+  Mid-level felony: $15,000–$20,000
+  High-level felony: $35,000–$50,000
+  DWI: estimated $7,500–$10,000 (firm charges $350 consult + full representation fee)
+  Blended case value (mix weighted toward criminal defense/DWI): ~$8,000
+
+Criminal defense blended CPL estimate (Google + LSA mix):
+  Conservative estimate (with 20% cushion): ~$240/lead
+  Aggressive estimate (no cushion): ~$200/lead
+
+Close rate for projections: 15% (lead-to-case; transcript 80% is consult-to-sign,
+  which is post-qualification; 15% is the appropriate lead-to-case rate)
+
+CONSERVATIVE ROI PROJECTION ($7,500/mo):
+  Leads: $7,500 / $240 = ~31 leads
+  Cases: 31 × 15% = ~5 cases
+  Revenue: 5 × $8,000 = ~$40,000/mo
+  Return: $40,000 / $7,500 = 5.3× → presented as ~5× return
+
+AGGRESSIVE ROI PROJECTION ($13,500/mo):
+  Leads: $13,500 / $200 = ~67 leads
+  Cases: 67 × 15% = ~10 cases
+  Revenue: 10 × $8,000 = ~$80,000/mo
+  Return: $80,000 / $13,500 = 5.9× → presented as ~6× return
+
+Block 4 — presented values (conservative as primary display):
+  Ad spend range: $7,500–$13,500/mo
+  Estimated case value: $8,000
+  Conservative: ~5 cases/mo, ~$40,000 revenue, ~5× return
+  Aggressive: ~10 cases/mo, ~$80,000 revenue, ~6× return
+
+==========================================================
+DBM STATEMENT — BLOCK 1
+==========================================================
+
+"We help ambitious criminal defense attorneys get a firm that generates consistent leads
+around the clock so they can finally step back, take their vacation, and fund the financial
+security — college and retirement — that they have been working 11 hours a day to earn."
+
+==========================================================
+QUICK WIN OPPORTUNITIES (6+)
+==========================================================
+
+1. Pillar: Lead Gen | Title: Restore 24/7 Ad Coverage
+   Why: Ads pause at night; DWI arrests happen Friday/Saturday 10pm–3am; competitors capture those calls
+   Competitor: Saad Law — 24/7 paid coverage, former DA credentialing
+   Opportunity: 2–4 additional DWI/criminal cases/month without budget increase
+
+2. Pillar: Intake | Title: After-Hours Answering System
+   Why: No answering service + dark ads at night = zero after-hours capture; at $7,500+ per DWI case this is costly
+   Opportunity: 1–2 recovered cases/month from missed calls = $7,500–$15,000+ recovered revenue on ~$600/mo investment
+
+3. Pillar: Lead Gen | Title: Structured Review Generation Program
+   Why: 102+ reviews vs Amy Whinery Osborne 208, Kurtz & Blum 290 — review volume is a ranking signal
+   Competitor: Kurtz & Blum — 290 reviews systematically building local pack authority
+   Opportunity: 15–20 reviews/month through systematic ask program; close the gap within 6 months
+
+4. Pillar: Team | Title: Document Core Firm Playbooks
+   Why: No written processes; team functions on Lindsey's institutional knowledge; firm stops when she stops
+   Opportunity: Document top 10 processes; team can handle operations without Lindsey present → vacation becomes possible
+
+5. Pillar: Profit | Title: Track Marketing ROI and Ad Acquisition Cost
+   Why: Lindsey doesn't know if Rise Up Marketing ads are performing; spending budget blind
+   Opportunity: Basic performance tracking reveals cost per lead and cost per case; optimize or reallocate wasted budget immediately
+
+6. Pillar: Lead Gen | Title: Felony-Specific Landing Pages and Campaigns
+   Why: Firm is shifting toward $15K–$50K felony cases but ads are generic criminal defense
+   Opportunity: Dedicated felony-specific campaigns (weapons charges, sex crimes, high-level drug trafficking) attract self-selected high-value clients; improve case mix without volume increase
+
+7. Pillar: Intake | Title: Formalize Associate Intake Protocol
+   Why: Associate handles lower-value cases without a documented intake process; inconsistent follow-up loses cases
+   Opportunity: Written intake protocol with same-day follow-up standards improves conversion on associate-handled cases at no additional cost
+
+==========================================================
+FIRST 90 DAYS
+==========================================================
+
+1. Launch 24/7 Google Ads and LSA campaigns — activate after-hours coverage immediately,
+   prioritizing Thursday through Sunday evenings for DWI and criminal defense
+2. Rebuild and optimize the website for conversion — move CTA above fold, add trust signals,
+   verify and address PageSpeed performance
+3. Implement after-hours professional answering service to capture DWI and criminal emergency
+   calls when the firm is dark
+4. Launch structured review generation program — every closed case triggers a review ask sequence
+5. Elite Coach Plus kickoff — identify the 3 highest-leverage activities Lindsey should stop doing
+   personally and begin the delegation transition
+
+==========================================================
+ESCALATION FLAGS (internal — do not appear in client report)
+==========================================================
+
+- Personal Injury in Raleigh (Tier 3 market) — confirm with paid ads team whether PI
+  requires full approval for Wake County (not top 40 metro; Raleigh is Tier 3)
+- Review count discrepancy (102 vs 177) — verify live before sending
+- PageSpeed scores not retrieved — must be verified live before delivery
+- 3-pack position not confirmed live — spot-check before delivery
+- Spanish-language capability (Tomas Nazer-Paniagua on team) — confirm with Lindsey
+  before recommending Spanish campaign; if confirmed, apply 1.33× multiplier to aggressive ad spend
+
+==========================================================
+END OF WORKINGS
+==========================================================

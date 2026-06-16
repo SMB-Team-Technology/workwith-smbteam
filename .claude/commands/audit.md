@@ -20,6 +20,9 @@ Package Criteria: [optional — include if ready to complete the recommendation 
 
 All fields except `Package Criteria` are required.
 
+**Package Override** (optional): If you have already agreed on specific packages with the prospect, include the phrase `sales override` followed by the package names anywhere in your input to bypass automatic package selection. Pricing will still be pulled from the official tables — never estimated.
+Example: `sales override: Growth marketing + Master's Circle + FCOO Advisor`
+
 **Friendly Name rules:** lowercase, hyphens only, no spaces or underscores. Examples: `angel-law`, `mandel-law-firm`, `smith-injury-law`.
 
 ---

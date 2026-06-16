@@ -1,0 +1,248 @@
+SECTION 11 WORKINGS — Charles Chase
+Generated: June 12, 2026
+Sales Rep: Randy Gold
+
+========================================================
+PACKAGE DECISION VERIFICATION
+========================================================
+
+Package decision file confidence: LOW
+Original package decision used $500,000 default revenue (revenue unknown at time of Pass 1).
+
+CLEARER DATA FROM RESEARCH NOTES:
+- Revenue stated: Not explicitly given
+- Revenue goal (12-month): $250,000 (stated directly in transcript)
+- Current revenue: Near-zero — 3 cases since April 2026 launch (~$5,000–$10,000 in potential fees, unrealized)
+- Long-term goal: $1M+ annual profit
+- Team size stated: Not stated; inferred solo (1 attorney, no staff)
+
+REVENUE BAND DETERMINATION:
+- Using 12-month revenue GOAL as the eligibility proxy: $250,000
+- This places the firm in the $250K–$400K revenue band
+
+MARKETING TIER:
+- $250K–$400K → Essentials tier ($2,397/mo bundled)
+- BOUNDARY RULE APPLIES: Workers' comp (Accident/Injury General) minimum ad spend is approximately
+  $3,000–$4,000/mo (Google PPC min $2,000 + LSA min $1,000 + Meta retargeting $1,200 = $4,200).
+  Essentials ad spend cap is $1,500/mo. Conservative minimum exceeds cap by 2×.
+  Additionally, the firm's goals are aggressive (long-term: $1M+ profit; replacing $400K+ combined income).
+- DECISION: Move to Starter tier per boundary rule.
+- SELECTED: Full Service Marketing — Starter
+
+COACHING TIER:
+- Original decision: Elite Coach Plus ($3,200/mo) — based on default $500K revenue assumption
+- Research notes: Revenue goal $250K → $250K–$400K band → Elite Coach ($1,600/mo)
+- ADJUSTMENT: Downgrade from Elite Coach Plus to Elite Coach to match actual revenue goal band
+- SELECTED: Elite Coach
+
+35% CAP CHECK (noted for sales rep review):
+- Total management fees: $4,847 + $1,600 = $6,447/mo
+- Conservative ad spend: $3,000/mo
+- Total spend: $9,447/mo
+- Monthly revenue at $250K/year: $20,833
+- $9,447/$20,833 = 45.3% — above the 35% cap
+- FLAG: At the stated $250K revenue goal, total spend including ads exceeds the 35% cap.
+  Sales rep should discuss with prospect: (1) whether the revenue goal is conservative,
+  (2) whether to phase ad spend entry, or (3) whether to confirm a higher revenue expectation.
+  NOTE: The 35% cap applies to current/goal revenue. If actual revenue ramps faster (which
+  SMB Team's programs are designed to achieve), the cap concern dissipates quickly.
+
+========================================================
+MANDATORY PRICE LOOKUP (character-by-character from tables)
+========================================================
+
+Marketing package selected: Full Service Marketing — Starter
+  - Bundled price (from table): $4,847/mo
+  - Stand-alone price (from table): $5,697/mo
+  - Savings (stand-alone minus bundled): $850/mo
+
+Non-marketing package selected: Elite Coach
+  - Bundled price (from table): $1,600/mo
+  - Stand-alone price (from table): $3,497/mo
+  - Savings (stand-alone minus bundled): $1,897/mo
+
+Legal AI Workforce (LAW) package selected: none
+  (Revenue under $500K; solo with no support staff; LAW eligibility not met)
+
+AI Avatar / Video Growth add-on selected: none
+
+Total monthly investment (sum of bundled prices): $6,447/mo
+  ($4,847 + $1,600 = $6,447)
+
+Total savings (sum of all savings): $2,747/mo
+  ($850 + $1,897 = $2,747)
+
+========================================================
+AD SPEND CALCULATION
+========================================================
+
+CONSERVATIVE AD SPEND:
+Practice area: Workers' Compensation (maps to Accident/Injury General)
+Channel minimums:
+  - Google PPC: $2,000
+  - LSA: $1,000
+  - Meta Retargeting: $0 (startup; launch Google + LSA first, add Meta in Month 2–3)
+  Total conservative: $3,000/mo
+  NOTE: Package decision file also had conservative = $3,000; consistent with channel-minimum approach.
+
+AGGRESSIVE AD SPEND:
+Method: 20% rule
+  Revenue target (2× goal): $500,000/year
+  Monthly: $500,000 / 12 = $41,667
+  20% = $8,333/mo
+  Geographic multiplier — Fort Lauderdale = Tier 2 (primary high-density): ×1.3
+  $8,333 × 1.3 = $10,833/mo
+  Spanish campaign (Fort Lauderdale 34%+ Latino population, workers' comp; non-PI): ×1.33
+  $10,833 × 1.33 = $14,408/mo
+  Minus management fee ($4,847) = $9,561 available ad spend
+
+  Starter tier ad spend cap: $10,000/mo
+  $9,561 rounds to $10,000 (at Starter cap)
+
+  Reverse math validation:
+  Revenue goal: $250K/year → $20,833/mo
+  Average case value (workers' comp attorney fee): $2,500 midpoint
+  Target cases/mo: $20,833 / $2,500 = 8.3 cases
+  Close rate: 15% default
+  Required leads: 8.3 / 0.15 = 55 leads
+  Blended CPL (Google + LSA mix, no cushion): ~$94
+  Required spend: 55 × $94 = $5,170 → below 20% rule; use 20% rule result
+
+  AGGRESSIVE AD SPEND: $10,000/mo (Starter tier cap)
+
+========================================================
+ROI PROJECTIONS
+========================================================
+
+CPL basis: Accident & Injury (General) — closest match for workers' compensation
+  Google Search: $75–$150 (midpoint $112.50)
+  LSA: $75–$150 (midpoint $112.50)
+  Meta Retargeting: $25–$50 (midpoint $37.50)
+
+Average case value: $2,500/case (midpoint of $1,500–$3,500 Florida workers' comp attorney fee range)
+  NOTE: Using practice area default — not stated in transcript
+Close rate: 15% (not stated in transcript — protocol default)
+
+CONSERVATIVE SCENARIO ($3,000/mo):
+  Channel split: $2,000 Google Search + $1,000 LSA
+  Blended CPL: ($2,000/$3,000 × $112.50) + ($1,000/$3,000 × $112.50) = $112.50
+  +20% cushion for conservative: $135
+  Leads: $3,000 / $135 = 22 leads
+  Cases: 22 × 15% = 3.3 → 3 cases/mo
+  Revenue: 3 × $2,500 = $7,500/mo
+  Return: $7,500 / $3,000 = 2.5×
+
+AGGRESSIVE SCENARIO ($10,000/mo):
+  Channel split: 50% Google ($5,000), 25% LSA ($2,500), 25% Meta retargeting ($2,500)
+  Blended CPL: (0.50 × $112.50) + (0.25 × $112.50) + (0.25 × $37.50)
+             = $56.25 + $28.13 + $9.38 = $93.76 → $94
+  Leads: $10,000 / $94 = 106 leads
+  Cases: 106 × 15% = 15.9 → 15 cases/mo
+  Revenue: 15 × $2,500 = $37,500/mo
+  Return: $37,500 / $10,000 = 3.75×
+
+All projections are estimates based on industry averages. Not guaranteed.
+
+========================================================
+DBM STATEMENT
+========================================================
+
+"I need this firm to generate enough revenue and operate with enough systems that I can live
+the life I want — in Portugal — without the firm failing the moment I step back."
+
+Freedom/lifestyle motivation. 12-month personal runway. Must replace $400K+ combined annual income.
+Long-term: $1M+ annual profit.
+
+BLOCK 1 FORMULA:
+"We help newly launched workers' compensation attorneys get a predictable, system-driven flow of
+inbound cases so they can build the firm income and freedom that makes the life they left for
+actually possible."
+
+========================================================
+QUICK WIN OPPORTUNITIES (6+)
+========================================================
+
+1. Pillar: Lead Gen | Quick Win
+   Title: Resolve GBP Verification — Unlock Every Local Channel at Once
+   Why: GBP verification is the single gating item blocking local search, local 3-pack, LSA eligibility,
+        and review collection simultaneously. Nothing else is possible until this is live.
+   Competitor: Winer Law Group — 4.7 Google stars with active review profile built on a verified GBP
+   Opportunity: One resolved verification unlocks local search, LSA access, and the ability to collect
+                reviews that build the trust signals every digital channel rewards.
+
+2. Pillar: Lead Gen | Quick Win
+   Title: Launch Firm-Owned Website With Workers' Comp Landing Pages
+   Why: No owned website means there is no conversion asset for any ad to land on, no organic SEO
+        foundation, and no professional brand credibility when prospects Google the firm name.
+   Competitor: Masnikoff Associates — workerscompfl.net with dozens of geo-targeted landing pages
+   Opportunity: A professionally built, conversion-optimized website with Fort Lauderdale workers'
+                comp landing pages becomes the foundation every other channel depends on.
+
+3. Pillar: Lead Gen | Quick Win
+   Title: Replace Misdirected Ads With High-Intent Workers' Comp Google Campaign
+   Why: The current vendor generated 200 daily visitors with zero leads because the targeting was
+        wrong — health insurance keywords, not injured worker intent keywords.
+   Competitor: Benenfeld / Injury Law Service — dedicated PPC domain confirms active, professional
+                campaign management targeting the right terms
+   Opportunity: Switching to "workers comp attorney Fort Lauderdale" and related intent terms turns
+                an existing ad budget into actual case leads.
+
+4. Pillar: Lead Gen | Long-Term
+   Title: Spanish-Language Campaign for Broward County Latino Workforce
+   Why: Broward County is 34%+ Latino; construction, hospitality, and manufacturing — the highest
+        workers' comp injury industries — have disproportionately high Latino workforce representation.
+   Competitor: Masnikoff Associates — explicitly markets multilingual services in Spanish, Portuguese,
+                and Creole and owns this demographic entirely
+   Opportunity: A Spanish-language Google and social campaign targets an underserved, high-volume
+                segment of injured workers who are searching in Spanish and finding only one competitor.
+
+5. Pillar: Lead Gen | Long-Term
+   Title: Directory Presence — Avvo, Justia, FindLaw, Martindale
+   Why: 180+ workers' comp attorneys are listed in the Fort Lauderdale section of Justia alone —
+        Charles Chase is absent from every major discovery directory.
+   Competitor: Feldman Law, P.A. — top-rated Avvo profile, Super Lawyers recognized, Lawyers.com
+                4.9/5 with 17 reviews
+   Opportunity: Claiming and optimizing free directory profiles creates additional search surface area,
+                builds domain authority for SEO, and gives prospects trusted third-party trust signals.
+
+6. Pillar: Intake | Quick Win
+   Title: Build Intake System Before Ads Launch
+   Why: When ads begin driving leads, there is currently no system ready to convert them — no intake
+        script, no follow-up sequence, no tracking, and no defined response process.
+   Opportunity: A defined intake process — answering criteria, a qualification script, a follow-up
+                schedule, and a way to track every lead — converts ad spend into signed cases instead
+                of lost contacts.
+
+7. Pillar: Team | Long-Term
+   Title: Hire First Intake Coordinator to Protect Attorney Time
+   Why: As case volume grows, every hour the attorney spends on intake calls is an hour not spent
+        on casework — and the bottleneck that will limit growth is attorney availability, not ad spend.
+   Opportunity: A part-time or virtual intake coordinator handling inbound calls, form submissions,
+                and initial qualification frees attorney time for case work and increases conversion
+                on every lead the marketing system generates.
+
+8. Pillar: Profit | Quick Win
+   Title: Set Up Lead Cost and Revenue Tracking From Day One
+   Why: Without knowing cost per lead and cost per case, it is impossible to make smart decisions
+        about ad spend, intake improvement, or team hiring — every dollar is flying blind.
+   Opportunity: Establishing basic CRM-level tracking before ads launch gives the firm the data
+                to optimize spend, identify drop-off points, and know exactly what the marketing
+                investment is returning from week one.
+
+========================================================
+FIRST 90 DAYS
+========================================================
+
+1. Launch targeted Google Ads for workers' comp keywords in Fort Lauderdale — replacing
+   health insurance keyword waste with high-intent searchers who need a workers' comp attorney now
+
+2. Build and launch firm-owned website — conversion-optimized with workers' comp landing pages,
+   attorney bio, contact form, and the credibility signals that turn traffic into calls
+
+3. Resolve GBP verification — the single unlock that opens local search, LSA, and review collection
+
+4. Submit to top legal directories — Avvo, Justia, FindLaw, Lawyers.com — free listings that add
+   search surface area and trust signals immediately
+
+5. Coaching kickoff — establish intake workflow, 90-day case goal, and revenue tracking system;
+   define qualification criteria and set up lead tracking before the first inbound call arrives

@@ -1,0 +1,164 @@
+VENTO LAW FIRM — SECTION 11 WORKINGS
+Audit Date: June 24, 2026
+Sales Rep: Nick Holderman
+
+======================================================
+MANDATORY PRICE LOOKUP (from package_decision.json — confidence: HIGH)
+======================================================
+
+Marketing package selected: Full Service Marketing — Essentials
+  - Bundled price: $3,397/mo
+  - Stand-alone price: N/A (Essentials tier has no published stand-alone retail price)
+  - Savings: N/A
+
+Non-marketing package selected: Elite Coach
+  - Bundled price: $2,600/mo
+  - Stand-alone price: $3,497/mo
+  - Savings: $3,497 - $2,600 = $897/mo
+
+LAW package: none
+AI Avatar: none
+
+Total monthly investment (bundled): $3,397 + $2,600 = $5,997/mo
+Total savings: $897/mo (coaching savings only)
+
+ESCALATION NOTE (internal only — do not include in client report):
+- Revenue $180K is under $250K threshold — scoping approval required per pipeline notes
+- Revenue under $300K: approval required per escalation table
+- Total SMB spend check: $5,997 management + $5,500–$7,500 ad spend = $11,497–$13,497/mo
+  vs. 35% cap of $15,000/mo × 35% = $5,250/mo — management fees alone exceed the cap
+  This was pre-selected in package_decision.json with confidence "high" — using as-is per instructions
+
+======================================================
+AD SPEND CALCULATION
+======================================================
+
+Practice area: Criminal Defense (Tampa, FL)
+Market tier: Tampa = Tier 2 (primary high-density market)
+
+Conservative ad spend: $5,500/mo
+- Criminal Defense channel minimum: Google PPC $1,500 + LSA $1,000 + Meta retargeting $200 + Meta lead gen $500 = $3,200
+- Spanish-language campaign additional: $3,200 × 1.33 = $4,256 (blended with English)
+- Rounded to conservative floor: $5,500/mo (accounts for multi-county coverage and Spanish component)
+- Source: package_decision.json ad_spend_conservative: 5500
+
+Aggressive ad spend: $7,500/mo
+- Revenue goal: 2× current = $360K/year
+- $360K × 20% ÷ 12 = $6,000/mo marketing budget
+- × Tier 2 multiplier (1.3) = $7,800
+- × Spanish modifier (1.33 for criminal defense) = not applied to full budget (partial Spanish)
+- Minus management fee $3,397 = $4,403 available → below practice area floor
+- Using reverse math: target 20–25 cases/mo at $4,000 avg case value:
+  20 cases ÷ 15% close rate = 133 leads ÷ 12 months = 11 leads/mo
+  11 leads × $190 CPL (LSA rate from research notes) = $2,090 (too low)
+  For 5–6 cases/mo: 5 ÷ 15% = 33 leads × $190 = $6,270 → ~$6,300–$7,500 is appropriate
+- Source: package_decision.json ad_spend_aggressive: 7500
+
+======================================================
+ROI PROJECTIONS
+======================================================
+
+Data basis:
+- CPL: $190/call (LSA rate from research notes; Tampa criminal defense market)
+- Close rate: 15% (default — not stated in transcript; confirm on June 24 call)
+- Average case value: $4,000 estimated (criminal defense Tampa default $3K–$5K midpoint;
+  confirm with Nick on June 24 call — not explicitly stated in transcript)
+- NOTE: Using defaults; results are estimates only
+
+CONSERVATIVE SCENARIO ($5,500/mo ad spend):
+- CPL with 20% cushion: $190 × 1.20 = $228
+- Leads: $5,500 ÷ $228 = ~24 leads/mo
+- Cases: 24 × 15% = ~3–4 cases/mo (using 3.6, round to 3–4)
+- Revenue: 3.5 × $4,000 = ~$14,000/mo
+- Return multiple: $14,000 ÷ $5,500 = 2.5x
+
+AGGRESSIVE SCENARIO ($7,500/mo ad spend):
+- CPL (no cushion): $190
+- Leads: $7,500 ÷ $190 = ~39 leads/mo
+- Cases: 39 × 15% = ~5–6 cases/mo
+- Revenue: 5.9 × $4,000 = ~$23,600/mo
+- Return multiple: $23,600 ÷ $7,500 = 3.1x
+
+For Block 4 HTML display (simplified range):
+- Recommended ad spend: $5,500–$7,500/mo
+- Estimated case value: $4,000 (est.; confirm on call)
+- Est. cases per month: 3–6 cases
+- Est. monthly revenue from ads: $12,000–$24,000
+
+======================================================
+DBM STATEMENT FOR BLOCK 1
+======================================================
+
+"We help solo criminal defense attorneys who are surviving on referrals
+get a predictable, systemized flow of qualified clients so they can
+build the firm that stands on its own — and stop taking every case
+out of financial necessity."
+
+Formula: We help [audience] get [external desire] so they can [DBM].
+
+======================================================
+QUICK WIN OPPORTUNITIES (6+ identified)
+======================================================
+
+1. Pillar: Lead Gen | Title: Launch Google Ads Now | Timeline: Quick Win
+   Why: Criminal defense paid search in Tampa is underdeveloped — only Fernandez confirmed running ads
+   Competitor: Daniel J. Fernandez, P.A. (confirmed Google Ads, 21.22% paid traffic)
+   Opportunity: Immediate page-1 visibility against competitors not bidding; fastest path to call volume
+
+2. Pillar: Lead Gen | Title: Google Review Velocity Campaign | Timeline: Quick Win
+   Why: At 32 reviews, firm is below every local pack competitor's floor (minimum 61, Hanlon Law)
+   Competitor: Sammis Law Firm (161), Fernandez (570), Hersem (98)
+   Opportunity: Structured outreach to 75+ reviews unlocks full LSA competitive positioning
+
+3. Pillar: Lead Gen | Title: LSA Enrollment | Timeline: Quick Win
+   Why: LSAs appear above everything on Google; Tampa criminal defense LSA at $190/call is cost-effective
+   Competitor: Sammis Law Firm, Hanlon Law (both active LSA)
+   Opportunity: Enrollment now builds LSA history while review campaign runs; immediate call potential
+
+4. Pillar: Lead Gen | Title: Spanish-Language Market Capture | Timeline: Quick Win
+   Why: Idalis is bilingual English/Spanish; no top-5 Tampa competitor running Spanish paid search
+   Competitor: None identified — this is an uncontested opportunity
+   Opportunity: Bilingual paid search and content is a competitive moat available to this firm only
+
+5. Pillar: Intake | Title: Above-Fold Contact + Urgency Language | Timeline: Quick Win
+   Why: Criminal defense is emergency-driven; contact form buried below fold loses crisis-moment visitors
+   Competitor: No specific named competitor
+   Opportunity: Moving form above fold + "Arrested Tonight? Call Now" CTA improves conversion immediately
+
+6. Pillar: Intake | Title: After-Hours Call Coverage | Timeline: Quick Win
+   Why: Criminal arrests happen 24/7; no after-hours coverage means every off-hours call is lost
+   Competitor: No specific named competitor
+   Opportunity: Virtual receptionist or answering service captures calls Idalis cannot personally answer
+
+7. Pillar: Lead Gen | Title: Geo-Targeting Landing Pages | Timeline: Long-Term Play
+   Why: Firm serves 10+ counties but has zero dedicated pages for any surrounding market
+   Competitor: Hanlon Law (dedicated satellite sites for St. Petersburg and Sarasota)
+   Opportunity: Pages for St. Pete, Clearwater, Brandon, Pasco County capture lower-competition searches
+
+8. Pillar: Team | Title: First Hire: Intake Coordinator | Timeline: Long-Term Play
+   Why: Idalis handling every intake call limits case capacity and creates after-hours coverage gap
+   Competitor: Sammis Law Firm (6 attorneys + dedicated intake infrastructure)
+   Opportunity: Intake coordinator multiplies return on every marketing dollar spent
+
+9. Pillar: Profit | Title: Case Type Profitability Tracking | Timeline: Quick Win
+   Why: Without tracking by case type, cannot optimize marketing toward highest-value cases
+   Competitor: No specific named competitor
+   Opportunity: Basic tracking reveals which cases (felony, DUI, misdemeanor) produce highest margin
+
+======================================================
+FIRST 90 DAYS
+======================================================
+
+1. Launch Google Ads for criminal defense, DUI, drug charges, and Spanish-language keywords
+   targeting Tampa and surrounding counties — immediate call volume from day one
+2. Website conversion updates: move contact form above fold, add above-fold urgency CTA,
+   add 24/7 availability messaging and prominent click-to-call for mobile
+3. Google review outreach campaign: contact all past clients and professional contacts
+   to build toward 75+ reviews and unlock LSA competitive positioning
+4. LSA enrollment and Google Screened application submitted
+5. Elite Coach kickoff: establish revenue baseline, target case count of 20–25 active matters,
+   and build 90-day accountability plan with weekly check-ins
+
+======================================================
+END OF WORKINGS FILE
+======================================================

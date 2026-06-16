@@ -1,0 +1,220 @@
+SECTION 11 WORKINGS — The Law Offices of David P. Shapiro
+Generated: June 11, 2026
+Sales Rep: Jacob Meissner
+
+================================================================================
+PACKAGE DECISION VERIFICATION (confidence: LOW — revenue estimated)
+================================================================================
+
+Correct firm confirmed: The Law Offices of David B. Shapiro, Baltimore, MD
+  NOTE: All prior runs (1–3) incorrectly researched a San Diego firm. Run 4 research
+  notes identify the correct firm. Sections have been rewritten based on Run 4 data.
+
+Revenue assessment:
+  Monthly revenue stated on call: $15,000–$70,000/month (highly variable)
+  Annual implied range: $180,000–$840,000/year
+  HubSpot estimate used in package_decision.json: $570,000 (mid of $180K–$960K band)
+  Revenue band applied: $400K–$1M (using HubSpot mid-point as best estimate)
+
+PI eligibility override: Personal Injury is the primary practice area (150 active PI cases).
+  Per eligibility rules: PI → hide ALL Essentials packages. Minimum tier is Starter.
+  This rule overrides any revenue-band Essentials eligibility.
+
+Revenue under $400K risk: If actual revenue is below $400K (possible given $15K/month low):
+  - Coaching tier would be Elite Coach ($1,600/mo bundled) rather than Elite Coach Plus
+  - Under $250K: confirm funds for 4 months of service before proceeding
+  SALES REP ACTION: Confirm actual annual revenue at proposal call.
+
+Criminal Defense + Baltimore (Tier 2): High competitiveness in criminal defense market →
+  Essentials marketing packages hidden per eligibility rules. Starter is correct minimum. ✓
+
+Team size: Solo practitioner (1 good admin, few part-time — effectively solo at ownership level)
+  Under 5 team members → hide Master's Circle options ✓
+  Revenue under $500K → hide Fractional CFO and Fractional COO products ✓
+    (Even if revenue is confirmed $400K–$1M, under $500K certainty → omit FCOO/FCFO for now)
+
+================================================================================
+SELECTED PACKAGES — PRICE LOOKUP CONFIRMATION
+================================================================================
+
+Marketing Package: Full Service Marketing — Starter
+  Bundled price (from table):      $4,847/mo
+  Stand-alone price (from table):  $5,697/mo
+  Savings (stand-alone minus bundled): $850/mo
+
+Coaching Package: Elite Coach Plus
+  Bundled price (from table):      $3,200/mo
+  Stand-alone price (from table):  $3,497/mo
+  Savings (stand-alone minus bundled): $297/mo
+
+LAW Package: None
+  Revenue uncertain (possibly under $500K); solo with no confirmed AI readiness.
+  Revisit at Phase 3 when revenue confirmed above $500K.
+
+AI Avatar: None (requires Alexis approval; not discussed on call)
+
+Total monthly investment: $4,847 + $3,200 = $8,047/mo
+Total savings: $850 + $297 = $1,147/mo
+
+35% cap check (at estimated $47,500/month mid-revenue):
+  $47,500 × 35% = $16,625 cap
+  $8,047 management fees only = 16.9% ✓
+  With $7,500 conservative ad spend: $15,547 = 32.7% — within cap ✓
+  With $25,000 aggressive ad spend: $33,047 = 69.6% — EXCEEDS cap significantly
+  → At $70K/month revenue: $70,000 × 35% = $24,500. $8,047 + $25,000 = $33,047 > cap.
+  → Aggressive scenario requires confirmed revenue above $70K/month to stay within cap.
+  → SALES REP ACTION: Confirm revenue before committing to aggressive ad spend scenario.
+
+================================================================================
+AD SPEND CALCULATION
+================================================================================
+
+Practice area note: PI is primary (150 active cases); criminal defense secondary.
+Baltimore geo tier: Tier 2 (primary high-density market; 1.3× multiplier applies to aggressive).
+Spanish campaign: Not indicated.
+
+Conservative ($7,500/mo):
+  PI Google Ads: $3,500 (medium competitiveness PI hard floor for Tier 2)
+  PI LSA: $2,000
+  Meta retargeting: $1,200
+  Criminal defense starter: $800 (supporting secondary practice area)
+  Total: $7,500 ✓
+  PI hard floor check: Baltimore PI medium → $3,500 minimum met ✓
+
+Aggressive ($25,000/mo):
+  Revenue goal: $100,000/month × 12 = $1,200,000 annual (stated goal)
+  20% rule: $1,200,000 × 20% ÷ 12 = $20,000/month marketing budget
+  Tier 2 geo multiplier: $20,000 × 1.3 = $26,000
+  Less management fee: $26,000 − $4,847 = $21,153 available for ads
+  → 20% rule yields $21,153
+
+  Reverse math validation:
+  Revenue goal: $100,000/month
+  Average case value: $6,500 (PI default midpoint $5K–$8K)
+  Target cases/month: $100,000 ÷ $6,500 = 15.4 cases
+  Required leads at 15% close: 15.4 ÷ 0.15 = 102.7 leads
+  Blended CPL at $250 midpoint: 102.7 × $250 = $25,675 required spend
+  → Reverse math ($25,675) > 20% rule ($21,153) → use reverse math
+  → $25,000 is reasonable (package_decision.json figure accepted) ✓
+
+  NOTE: $25,000 exceeds the Starter tier ad spend cap of $8,000.
+  If prospect wants aggressive growth, Growth tier ($7,397/mo bundled, $30,000 cap) should
+  be discussed. Present conservative ($7,500) as starting scenario; Growth tier is the
+  upgrade path for full revenue-goal pursuit.
+
+================================================================================
+ROI PROJECTIONS
+================================================================================
+
+Conservative ($7,500/mo ad spend):
+  Primary practice: Personal Injury
+  PI CPL midpoint: $75–$500 range; midpoint ~$250; +20% cushion = $300
+  Leads: $7,500 ÷ $300 = 25 leads/month
+  Cases: 25 × 15% close rate = 3.75 ≈ 3–4 cases/month
+  Revenue: 3.5 × $6,500 (PI default midpoint) = $22,750 ≈ $23,000/month
+  Return: $23,000 ÷ $7,500 = 3.1× return on ad spend
+  NOTE: PI default case value $6,500 used — actual PI settlements (TBI, wrongful death,
+  truck accidents) often $25K–$500K+. True ROI likely significantly higher.
+
+Aggressive ($25,000/mo ad spend):
+  PI CPL midpoint: $250 (no cushion)
+  Leads: $25,000 ÷ $250 = 100 leads/month
+  Cases: 100 × 15% = 15 cases/month
+  Revenue: 15 × $6,500 = $97,500 ≈ $98,000/month
+  Return: $98,000 ÷ $25,000 = 3.9× return on ad spend
+
+Block 4 presentation (using range):
+  Ad spend: $7,500–$25,000/mo
+  Case value: $6,500 (practice area default — actual PI settlements may be significantly higher)
+  Cases/month: 3–15 cases
+  Monthly revenue from ads: $23,000–$98,000
+
+================================================================================
+DBM STATEMENT FOR BLOCK 1
+================================================================================
+
+"We help experienced Baltimore attorneys who have spent decades earning their reputation
+get the team, the systems, and the digital presence they need so they can stop being
+the Chief Everything Officer — and finally have the time to live the life they have
+been working toward."
+
+================================================================================
+QUICK WIN OPPORTUNITIES (8 identified)
+================================================================================
+
+1. PILLAR: Lead Gen | TITLE: Fix Website TLS Certificate | TIMELINE: Quick Win
+   WHY: www.davidshapiro.com generates a browser security warning on HTTPS — any
+   visitor arriving via a secure link sees "Not Secure" before reading the firm's content.
+   COMPETITOR: None named specifically for this issue
+   OPPORTUNITY: Same-day fix that removes the active lead barrier from every referral
+   follow-up, directory listing, and future paid campaign.
+
+2. PILLAR: Lead Gen | TITLE: Launch Local Service Ads | TIMELINE: Quick Win
+   WHY: LSA leads appear above everything on Google and carry the Google Screened badge.
+   Not appearing in LSA means this firm is invisible on the most trusted legal placement.
+   COMPETITOR: Hassan, Hassan & Tuchman, P.A. (385 reviews, 4.9 stars — strong LSA candidate)
+   OPPORTUNITY: Google Screened enrollment places the firm above all paid search and the
+   map pack. 85 existing reviews are a starting foundation; every additional review
+   strengthens LSA ranking.
+
+3. PILLAR: Intake | TITLE: After-Hours Intake Protocol | TIMELINE: Quick Win
+   WHY: Criminal defense and DUI emergencies happen at all hours. An unanswered Friday-night
+   arrest call becomes a competitor's signed retainer by Saturday morning.
+   COMPETITOR: None named specifically
+   OPPORTUNITY: A legal answering service or trained on-call team member converts emergency
+   calls into signed retainers. In PI and criminal defense, after-hours responsiveness is a
+   significant competitive differentiator.
+
+4. PILLAR: Lead Gen | TITLE: Google Review Velocity Campaign | TIMELINE: Long-Term Play
+   WHY: 85 cross-platform reviews in 38 years vs. competitors with 212 and 385 reviews.
+   Review count is the primary signal for 3-pack placement and LSA ranking.
+   COMPETITOR: Hassan, Hassan & Tuchman (385 reviews) and Seth Okin (212 reviews)
+   OPPORTUNITY: Systematic outreach to the 150+ active PI clients for Google reviews —
+   doubling to 170+ is achievable; reaching 300+ would materially shift 3-pack ranking.
+
+5. PILLAR: Intake | TITLE: Dedicated Intake Team Member | TIMELINE: Long-Term Play
+   WHY: David is the intake team. No trained intake specialist means every missed call or
+   unanswered form is a case that goes to a competitor.
+   COMPETITOR: None named specifically
+   OPPORTUNITY: A trained intake specialist with a defined script and follow-up cadence
+   allows David to stop fielding first calls and focus on billable casework.
+
+6. PILLAR: Team | TITLE: Management Accountability Structure | TIMELINE: Long-Term Play
+   WHY: With no management layer, every operational question escalates to David —
+   keeping him at 60–70 hours/week indefinitely.
+   COMPETITOR: None named specifically
+   OPPORTUNITY: Weekly accountability cadence, assigned team lead for operations, and
+   defined performance metrics create the infrastructure for delegation and freedom.
+
+7. PILLAR: Lead Gen | TITLE: AVVO Profile Optimization | TIMELINE: Quick Win
+   WHY: AVVO 6.7/10 ("Good") with 1 review from 2015 and 0 peer endorsements — vs.
+   competitors at 10.0 "Superb." When prospects compare on AVVO, 6.7 next to 10.0 loses.
+   COMPETITOR: Seth Okin (AVVO 10.0, America's Top 100 Criminal Defense)
+   OPPORTUNITY: Updated credentials, recent client reviews, and peer endorsements from
+   Maryland bar colleagues could raise the rating to 8.0–9.0+ and eliminate this disadvantage.
+
+8. PILLAR: Profit | TITLE: Revenue Tracking by Case Type | TIMELINE: Long-Term Play
+   WHY: Without tracking by case type, David cannot know which PI matters (TBI vs. fender
+   bender) are most profitable relative to time invested — preventing strategic prioritization.
+   COMPETITOR: None named specifically
+   OPPORTUNITY: Basic revenue tracking by practice area and case type lets David optimize
+   marketing, intake screening, and attorney time for the highest-value matters.
+
+================================================================================
+FIRST 90 DAYS
+================================================================================
+
+1. Fix website TLS certificate and rebuild site with updated credentials, above-the-fold
+   intake form, and click-to-call button — so the website converts instead of blocking leads
+2. Launch Google Ads and LSA campaigns for personal injury and criminal defense in
+   Baltimore — capturing high-intent searches the firm currently never sees
+3. Establish after-hours intake protocol to ensure no emergency call goes unanswered —
+   starting with the criminal defense and DUI calls that happen overnight and on weekends
+4. Begin systematic Google review request outreach to recently closed clients — building
+   toward the review volume needed for competitive local 3-pack placement
+5. Coaching kickoff — set baseline metrics, define delegation priorities, and begin building
+   the intake and management accountability structure for the A team David described
+
+================================================================================
+END OF WORKINGS
+================================================================================

@@ -55,19 +55,18 @@ CLIENT_REVIEWS_NOTE = "← You are here"
 STAGE_TEXT = "Stage 4: Small Business Manager  →  Goal: Stage 6, Law Firm Owner"
 
 # ── Slide 2 ──────────────────────────────────────────────────────
-SLIDE_2_TITLE = "Your Growth Plan: 3 Priorities to Reach $2M Revenue"
+SLIDE_2_TITLE = "Your Growth Plan: 3 Priorities for Lasser Law Group"
 
 SMB_MODEL_DESC = (
-    "Four pillars — Lead Generation, Intake, Team, and Profit "
-    "— must all work together. When any one is missing, growth "
-    "stalls regardless of effort or spend. "
-    "When all four fire together, Lasser Law Group becomes the "
-    "firm that clients in New York find first, choose first, "
-    "and stay with — and Stephen Lasser gets to lead instead of manage."
+    "SMB Team builds the four pillars of a self-managing law firm: "
+    "Lead Generation, Intake, Team, and Profit. When all four work "
+    "together, Stephen Lasser can lead the firm rather than run it "
+    "— and Lasser Law Group becomes the dominant real estate firm "
+    "in New York it was built to be."
 )
 
-GOAL_HEADLINE = "~$1M → $2M Revenue"
-GOAL_DBM      = "Lead the market. Step back. Trust the firm runs."
+GOAL_HEADLINE = "Stage 4 → Stage 6 Law Firm Owner"
+GOAL_DBM      = "Be the first call in NYC real estate law"
 
 PRIORITIES = [
     (
@@ -104,50 +103,47 @@ PRIORITIES = [
 
 # ── Slide 3 ──────────────────────────────────────────────────────
 # Package names, bundled prices, retail prices — copied from section_11 investment grid
+# PACKAGE OVERRIDE: FCOO Advisor ONLY — no marketing package
 PACKAGES = [
     (
-        "FULL SERVICE MARKETING STARTER",
-        "$4,847", "$5,697/mo",
-        "Google Ads · LSA · Website · Local SEO · Meta Ads",
-        "1D4ED8",
-    ),
-    (
-        "ELITE COACH PLUS",
-        "$3,200", "$3,497/mo",
-        "Weekly coaching · Intake audit · KPI framework · Workshops",
+        "FCOO ADVISOR — OPERATIONS PACKAGE",
+        "$2,297", "$2,797/mo",
+        "Fractional COO · coaching · masterminds · workshops",
         "6D28D9",
     ),
 ]
 
 # Copied from section_11 investment-total and investment-savings
-BUNDLE_TOTAL   = "$8,047 / mo"
-BUNDLE_SAVINGS = "Save $1,147/mo by bundling"
+BUNDLE_TOTAL   = "$2,297 / mo"
+BUNDLE_SAVINGS = "Save $500/mo vs. stand-alone rate"
 
-# Copied from section_11 Block 4 ad spend row
+# Coaching-only proposal — Phase 2 adds marketing
 AD_SPEND_NOTE = (
-    "+ Recommended ad spend: $10,000–$25,000/mo paid directly to Google/Meta"
+    "+ When Phase 2 marketing launches: ad spend goes directly to Google/Meta platforms"
 )
 
-# Copied from section_11 Block 4 ROI table
-AVG_CASE_VALUE      = "$9,000"
-CONSERVATIVE_LABEL  = "Conservative  (13 cases/mo):"
-CONSERVATIVE_RESULT = "$117,000 revenue  ·  11.7× ROAS"
-AGGRESSIVE_LABEL    = "Aggressive  (38 cases/mo):"
-AGGRESSIVE_RESULT   = "$342,000 revenue  ·  13.7× ROAS"
+# Operational ROI (intake recovery) — no ad spend in this proposal
+AVG_CASE_VALUE      = "$9,000 blended estimate"
+CONSERVATIVE_LABEL  = "Conservative  (1 recovered case/mo):"
+CONSERVATIVE_RESULT = "$9,000 revenue · 3.9× ROI"
+AGGRESSIVE_LABEL    = "Aggressive  (3 recovered cases/mo):"
+AGGRESSIVE_RESULT   = "$27,000 revenue · 11.7× ROI"
 
 # Derived from section_11 first-90-days bullets, condensed to ≤55 chars each
 TIMELINE = [
-    ("Day 1",    "Strategy kickoff — campaigns begin setup"),
-    ("Day 14",   "Google Ads + LSA campaigns go live"),
-    ("Week 3",   "Website rebuilt, contact form above fold"),
-    ("Week 6",   "GBP optimized, review generation live"),
-    ("Month 3",  "Geo landing pages + coaching rhythm active"),
+    ("Day 1",    "FCOO Advisor kickoff; firm ops assessment begins"),
+    ("Week 2",   "Role clarity defined; intake process documented"),
+    ("Week 4",   "Review generation system launched firm-wide"),
+    ("Week 6",   "GBP optimized with Super Lawyers credentials"),
+    ("Month 3",  "Documented ops framework across all 3 offices"),
 ]
 
 # Copied from section_executive_summary.html exec-closing statement
 CLOSING_QUOTE = (
-    '"The expertise to dominate New York real estate law already exists inside this firm '
-    '— what is missing is the system to make it visible to every client searching right now."'
+    '“The operational infrastructure to grow this firm predictably '
+    '— intake systems, team accountability, and a management layer '
+    'that runs without the managing partner being the center of everything '
+    '— is exactly what this engagement delivers.”'
 )
 
 # ═══════════════════════════════════════════════════════════════════
