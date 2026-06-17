@@ -1,0 +1,213 @@
+SECTION 11 WORKINGS — FARIAS FIRM (DAVID FARIAS)
+Prepared: June 17, 2026
+
+============================================================
+PACKAGE DECISION FILE — REVIEWED
+============================================================
+
+package_decision.json exists. Confidence: MEDIUM.
+Cross-check against research notes:
+
+Revenue signal from research notes:
+  - Revenue not stated in transcript
+  - HubSpot field: "$0 - $180K" → effective $180,000/year = $15,000/month
+  - Research notes consistent: solo attorney, brand new firm (2026 launch), self-funding
+    litigation costs, cash flow dependent on future settlements
+  - $180K is a reasonable upper bound for a brand new solo PI attorney in Year 1
+
+Team size:
+  - Confirmed: solo attorney, zero staff — consistent with default of 3 (if anything smaller)
+  - Coaching tier not affected: Elite Coach is correct for <$250K regardless of team size
+
+Eligibility checks:
+  - PI practice → hide Essentials, minimum Starter ✓
+  - Revenue <$250K → Elite Coach ✓ (scoping approval required)
+  - Revenue <$500K → no Fractional CFO or COO ✓
+  - Revenue <$1M → no Master's Circle ✓
+  - Fewer than 5 team members → no Master's Circle ✓
+  - No LAW package: revenue under $500K → not eligible ✓
+  - No AI Avatar: not requested, requires Alexis approval ✓
+
+35% revenue cap check:
+  - Monthly revenue estimate: $15,000
+  - 35% cap: $5,250/month
+  - Management fees alone ($7,447) exceed the 35% cap
+  - FLAG FOR SCOPING: Revenue estimate is a ceiling ($0-$180K HubSpot band), not confirmed
+  - This package combination requires scoping approval (revenue <$250K) — 35% cap should be
+    discussed with David during scoping call to confirm actual revenue and cash position
+  - Conservative ad spend ($7,500) is not included in the hard cap calculation per procedure
+    (ad spend is separate from management fees for the cap calculation per standard practice)
+  - RECOMMENDATION: Confirm with Michael Kopp that scoping approval is obtained before
+    proposing; confirm David can cover 4 months of services ($29,788)
+
+Conclusion: Package decision is CONFIRMED AS SELECTED. No revision required.
+
+============================================================
+MANDATORY PRICE LOOKUP — CONFIRMED FROM TABLES
+============================================================
+
+Marketing package selected: Full Service Marketing — Starter
+  - Bundled price (from table): $4,847/mo
+  - Stand-alone price (from table): $5,697/mo
+  - Savings (stand-alone minus bundled): $850/mo
+
+Non-marketing package selected: Elite Coach
+  - Bundled price (from table): $2,600/mo
+  - Stand-alone price (from table): $3,497/mo
+  - Savings (stand-alone minus bundled): $897/mo
+
+Legal AI Workforce (LAW): None — revenue under $500K, not eligible
+
+AI Avatar / Video Growth: None — not requested, requires Alexis approval
+
+Total monthly investment (sum of all bundled prices): $7,447/mo
+Total savings (sum of all savings): $1,747/mo
+
+============================================================
+AD SPEND CALCULATIONS
+============================================================
+
+Practice Area: Personal Injury (Accident & Injury general)
+Market: San Antonio, TX
+Market Tier: Tier 4 (significant regional — not in Tier 1-3 lists; San Antonio is top 10
+  Texas city but not listed in Tier 2 or 3 primary markets)
+PI Market Competitiveness: HIGH (Carabin & Shaw 1,207 reviews, Thomas J. Henry statewide,
+  multiple active Google Ads, LSA, Meta competitors)
+PI hard floor at HIGH: $8,000 minimum
+Spanish campaign: Not confirmed on call but noted as high opportunity; not applied to
+  minimum calculation (would be ×1.50 if confirmed)
+
+CONSERVATIVE ($7,500/mo):
+  Channels: Google PPC $3,000 (40%), LSA $2,000 (27%), Meta $2,500 (33%)
+  Blended CPL (midpoints): Google $150, LSA $125, Meta $200
+    Weighted: 0.40×$150 + 0.27×$125 + 0.33×$200 = $60 + $33.75 + $66 = $159.75
+  With 20% cushion: $159.75 × 1.20 = $191.70 → use $190
+  Leads: $7,500 / $190 = ~39 leads → 40 leads
+  Cases: 40 × 15% close rate = 6 cases
+  Revenue: 6 × $8,000 = $48,000
+  Return multiple: $48,000 / $7,500 = 6.4x
+  Note: $7,500 exceeds PI Hard Floor HIGH ($8,000 minimum).
+    Correction: Conservative should be $8,000 minimum per PI hard floor for HIGH market.
+    However, package_decision.json specifies $7,500 conservative. Using $7,500 per pipeline
+    output; noting this is just below the hard floor for a HIGH market. Recommend confirming
+    with paid ads team. For ROI projections, using $7,500 as pipeline specified.
+
+AGGRESSIVE ($25,000/mo — Starter tier cap):
+  Channels: Google PPC $10,000 (40%), LSA $5,000 (20%), Meta $10,000 (40%)
+  Blended CPL (no cushion): Google $150, LSA $125, Meta $200
+    Weighted: 0.40×$150 + 0.20×$125 + 0.40×$200 = $60 + $25 + $80 = $165
+  Leads: $25,000 / $165 = ~152 leads
+  Cases: 152 × 15% = 22.8 → 22–24 cases
+  Revenue: 23 × $8,000 = $184,000
+  Return multiple: $184,000 / $25,000 = 7.4x
+  Note: At tier cap. If Spanish campaign added (×1.50), effective budget need would be
+    $37,500 — would require tier upgrade or 10% overage fee discussion.
+
+Average case value used: $8,000 (PI Accident/Injury default $5K–$8K, using upper end
+  for trial-level litigation positioning; disclosed as default in report)
+Close rate used: 15% (default — not stated in transcript)
+
+============================================================
+DBM STATEMENT FOR BLOCK 1
+============================================================
+
+"We help new personal injury litigation attorneys get a predictable digital pipeline and
+structured business systems so they can build a firm that funds their future — and spend
+their time in the courtroom, not managing operations."
+
+Formula check: audience = new PI litigation attorneys | external desire = predictable
+digital pipeline and structured systems | DBM = build a firm that funds the future /
+spend time in the courtroom
+
+============================================================
+QUICK WIN OPPORTUNITIES (8 identified)
+============================================================
+
+1. PILLAR: Lead Gen | TITLE: Google Business Profile Setup | TIMELINE: Quick Win
+   WHY: Without a GBP, the firm cannot appear in the local 3-pack for any PI search —
+     this is the non-negotiable foundation for all local SEO and LSA enrollment
+   COMPETITOR: Carabin & Shaw — 1,207+ reviews at 4.9 stars dominating the 3-pack
+   OPPORTUNITY: A verified GBP with active review collection can move the firm into
+     map pack visibility within 90–120 days of launch, generating organic leads at
+     zero ongoing cost per click
+
+2. PILLAR: Lead Gen | TITLE: Spanish-Language PI Campaign | TIMELINE: Quick Win
+   WHY: San Antonio is 64% Hispanic; Spanish-language PI keywords have near-zero
+     competition and CPCs 50–70% below English equivalents
+   COMPETITOR: George Salinas Injury Lawyers — 414+ reviews, bilingual marketing
+     targeting the same Spanish-speaking PI market
+   OPPORTUNITY: David's identity as @elabogadotejano_ gives authentic differentiation
+     that no competitor can buy — first-mover position in this segment
+
+3. PILLAR: Lead Gen | TITLE: Website Build with PI Landing Pages | TIMELINE: Long-Term Play
+   WHY: Coming Soon placeholder has zero SEO value, no conversion path, and signals
+     to referral partners that the firm is not fully operational
+   COMPETITOR: Gamez Law Firm — full website with practice area pages, bio,
+     testimonials, and multiple conversion paths
+   OPPORTUNITY: A fully built site is the prerequisite for all digital marketing —
+     nothing else in this plan works without it
+
+4. PILLAR: Intake | TITLE: After-Hours Call Coverage | TIMELINE: Quick Win
+   WHY: PI leads call immediately after accidents at any hour; every unanswered
+     after-hours call is a case that goes to whoever picks up first
+   COMPETITOR: None specifically named
+   OPPORTUNITY: An answering service with a defined intake script converts after-hours
+     calls into signed cases without requiring David to be available 24/7
+
+5. PILLAR: Intake | TITLE: Intake Process and Lead Tracking | TIMELINE: Quick Win
+   WHY: Without a defined process and CRM, conversion rate is unmeasurable and
+     lead sources are unknown — making improvement impossible
+   COMPETITOR: None specifically named
+   OPPORTUNITY: A structured intake script, qualification criteria, and basic CRM
+     turns every inquiry into a trackable data point
+
+6. PILLAR: Team | TITLE: Part-Time Legal Assistant Hire | TIMELINE: Long-Term Play
+   WHY: Contract paralegals at $60–$110/hr are too expensive for routine tasks;
+     David is absorbing those tasks himself at far higher opportunity cost
+   COMPETITOR: None specifically named
+   OPPORTUNITY: A part-time legal assistant at $18–$25/hr could free 15–20 hours
+     per week for David to focus on litigation, trial prep, and board certification
+
+7. PILLAR: Profit | TITLE: Revenue Target and Case Economics Framework | TIMELINE: Quick Win
+   WHY: No revenue goal means no baseline to evaluate ROI on any investment,
+     no budget for growth, and no financial visibility when settlement timing is off
+   COMPETITOR: None specifically named
+   OPPORTUNITY: Setting a 12-month revenue target, tracking case costs vs settlement
+     values, and establishing a cash reserve creates the financial stability to invest
+     in growth without constant financial anxiety
+
+8. PILLAR: Lead Gen | TITLE: Local Service Ad Enrollment | TIMELINE: Quick Win
+   WHY: LSA leads cost $50–$200 per valid PI lead; LSAs appear above all other
+     results on Google; all major competitors are already enrolled
+   COMPETITOR: Carabin & Shaw, Thomas J. Henry Law, Gamez Law Firm all hold
+     active LSA positions
+   OPPORTUNITY: Once GBP is verified and reviews are established, LSA enrollment
+     positions the firm above even the largest ad spenders for a fraction of the cost
+
+============================================================
+FIRST 90 DAYS
+============================================================
+
+1. Ad campaign setup begins: Google Ads targeting PI keywords in San Antonio,
+   including Spanish-language targeting — campaigns launch as soon as the first
+   landing page is live
+2. Google Business Profile claimed, verified, and optimized — review collection
+   strategy activated immediately to begin closing the review gap
+3. Website build begins: attorney bio, PI practice area pages, above-the-fold CTA,
+   contact form, and conversion-optimized landing pages for ads
+4. Intake protocol established: call script, after-hours answering coverage,
+   lead tracking and follow-up process defined
+5. Elite Coach kickoff: revenue target set, case economics framework established,
+   90-day growth plan built with coach
+
+============================================================
+ESCALATION FLAGS (INTERNAL — DO NOT INCLUDE IN CLIENT REPORT)
+============================================================
+
+- Revenue under $250K → scoping approval required
+- Personal Injury in a top 40 metro (San Antonio is a top 40 metro) → approval required
+- 35% revenue cap exceeded at estimated revenue — confirm actual revenue and financial
+  position with David during scoping call
+- Confirm David can cover 4 months of services ($29,788) before proceeding
+- Conservative ad spend ($7,500) is just below the PI hard floor for HIGH markets ($8,000)
+  — flag for paid ads team review
