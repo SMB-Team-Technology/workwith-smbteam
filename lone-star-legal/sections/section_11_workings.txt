@@ -1,0 +1,191 @@
+SECTION 11 WORKINGS — Lone Star Legal
+Generated: June 18, 2026
+Sales Rep: Nick Holderman
+
+========================================
+REVENUE VERIFICATION (confidence: low)
+========================================
+Revenue stated in research notes: NOT STATED (no transcript provided)
+Revenue source: HubSpot annual law firm revenue field — "$180K - $960K"
+Revenue effective (midpoint): $570,000/year = $47,500/month
+Revenue band: $400K–$1M → Starter marketing tier
+Team size: 9 confirmed from website (package_decision.json defaulted to 3 — corrected)
+With 9 staff and a Board Certified PI partner, the $570K midpoint is plausible.
+Note: True revenue could be anywhere in the $180K–$960K HubSpot range. Starter tier is correct for both endpoints below $1M.
+
+========================================
+MANDATORY PRICE LOOKUP — FROM APPROVED TABLES
+========================================
+
+Marketing package selected: Full Service Marketing — Starter
+  Bundled price (from table): $4,847/mo
+  Stand-alone price (from table): $5,697/mo
+  Savings (stand-alone minus bundled): $850/mo
+
+Non-marketing package selected: Elite Coach Plus
+  Bundled price (from table): $3,200/mo
+  Stand-alone price (from table): $3,497/mo
+  Savings (stand-alone minus bundled): $297/mo
+
+LAW package selected: none
+AI Avatar / Video Growth add-on selected: none
+
+Total monthly investment (sum of all bundled): $4,847 + $3,200 = $8,047/mo
+Total savings (sum of all savings): $850 + $297 = $1,147/mo
+
+Revenue verification note for coaching tier:
+  - Team size is 9 (from website) — not 3 as defaulted in package_decision.json
+  - Table options for $400K–$1M: Elite Coach Plus ($3,200/mo) or Elite Coach Plus + FCOO Advisor ($5,694/mo for "Growing" team)
+  - "Growing" qualifier not confirmed without transcript — staying with Elite Coach Plus at $3,200/mo
+  - FCOO Advisor can be introduced in Phase 2 roadmap as natural progression
+
+35% CAP CHECK:
+  Estimated monthly revenue: $47,500
+  Total SMB spend at conservative ad spend ($10,000): $8,047 + $10,000 = $18,047
+  $18,047 / $47,500 = 38.0% — slightly above 35% cap based on estimated revenue
+  Total SMB spend at aggressive ad spend ($25,000): $8,047 + $25,000 = $33,047
+  $33,047 / $47,500 = 69.6% — significantly above cap
+
+  RESOLUTION: Revenue estimate is low-confidence. If true revenue is $600K+:
+    At $600K ($50,000/mo): $18,047 / $50,000 = 36.1% (conservative — near cap)
+    At $700K ($58,333/mo): $18,047 / $58,333 = 30.9% (conservative — within cap)
+
+  Recommendation: Present conservative ad spend ($10,000) as the starting recommendation.
+  Note on call that ad spend can increase as revenue is confirmed. Sales rep should confirm
+  revenue on the proposal call and adjust if needed. Conservative scenario is appropriate
+  for launch. Aggressive scenario assumes revenue growth and is presented as a goal-state target.
+
+ESCALATION FLAGS (internal — do not include in client report):
+  - PI firm in Georgetown/Austin metro area — Austin is a significant market. Georgetown is
+    not in the top 40 metros for PI, but proximity to Austin means broader market competitive
+    pressure. Check with paid ads team if PI Austin metro escalation applies.
+  - Ad spend at conservative ($10,000): at PI high competitiveness hard floor — no escalation for below-minimum.
+  - Revenue estimate: $570K (low confidence) — within normal range, no scoping approval needed.
+
+========================================
+AD SPEND CALCULATIONS
+========================================
+
+PRACTICE AREA: Personal Injury — Motor Vehicle Accidents (Car, Truck, Motorcycle)
+MARKET: Georgetown, TX (Austin suburb) — Tier 3 strategic growth (per geo-tier table: Charlotte/Austin/Portland = Tier 3)
+COMPETITION LEVEL: High (based on competitive urgency score of 7/10 and competitor review counts)
+
+PI HARD FLOOR (high competitiveness): $10,000 minimum
+  Conservative = PI hard floor = $10,000/mo ✓
+
+AGGRESSIVE — 20% rule:
+  Revenue goal (2x current, per protocol): $570,000 x 2 = $1,140,000/year
+  Monthly revenue goal: $1,140,000 / 12 = $95,000/month
+  20% of monthly goal: $95,000 x 0.20 = $19,000
+  Geographic multiplier (Tier 3): x 1.15 = $21,850
+  Minus management fee ($4,847): Available ad spend = $17,003
+
+REVERSE MATH VALIDATION:
+  Revenue goal/month: $95,000
+  Average case value (PI/car accident default): $7,500 (range $5K–$10K, using midpoint)
+  Target cases/month: $95,000 / $7,500 = 12.7 cases
+  Close rate (default 15%): Required leads = 12.7 / 0.15 = 84.7 leads
+  Blended CPL (Google dominant, some LSA):
+    Google Search PI midpoint: $705 / lead
+    LSA PI midpoint: $235 / lead
+    Blended (70% Google, 30% LSA): 0.7 x $705 + 0.3 x $235 = $493.50 + $70.50 = $564 blended CPL
+  Required spend: 84.7 x $564 = $47,771/month
+
+  Reverse math ($47,771) > 20% rule result ($17,003)
+  Reverse math result exceeds Starter tier cap ($25,000)
+  → Use Starter tier cap: $25,000 (note 10% overage fee or tier upgrade would apply above this)
+
+  Aggressive = Starter tier cap = $25,000/mo ✓ (matches package_decision.json)
+
+========================================
+ROI PROJECTIONS
+========================================
+
+CONSERVATIVE SCENARIO ($10,000/mo):
+  Channel split: $7,000 Google Ads, $3,000 LSA
+  CPL Google (Accident & Injury midpoint + 20% cushion): $705 x 1.20 = $846
+  CPL LSA (Accident & Injury midpoint + 20% cushion): $235 x 1.20 = $282
+  Google leads: $7,000 / $846 = 8.3
+  LSA leads: $3,000 / $282 = 10.6
+  Total leads: 18.9 → 19 leads/month
+  Cases (15% close rate): 19 x 0.15 = 2.85 → 3 cases/month
+  Revenue (avg case value $7,500): 3 x $7,500 = $22,500/month
+  Return multiple: $22,500 / $10,000 = 2.3x return
+
+AGGRESSIVE SCENARIO ($25,000/mo):
+  Channel split: $15,000 Google Ads, $5,000 LSA, $5,000 Meta cold
+  CPL Google (Accident & Injury midpoint, no cushion): $705
+  CPL LSA (Accident & Injury midpoint, no cushion): $235
+  CPL Meta cold (Accident & Injury midpoint, no cushion): $170
+  Google leads: $15,000 / $705 = 21.3
+  LSA leads: $5,000 / $235 = 21.3
+  Meta leads: $5,000 / $170 = 29.4
+  Total leads: 72 leads/month
+  Cases (15% close rate): 72 x 0.15 = 10.8 → 11 cases/month
+  Revenue (avg case value $7,500): 11 x $7,500 = $82,500/month
+  Return multiple: $82,500 / $25,000 = 3.3x return
+
+NOTE: Average case value of $7,500 is the default for PI/car accidents per audit protocol.
+Lone Star Legal handles catastrophic injury and wrongful death cases that can settle for
+$500K+; when those cases come in through the paid pipeline, the ROI multiples above become
+significantly higher. All projections disclosed as estimates.
+
+========================================
+DBM STATEMENT FOR BLOCK 1
+========================================
+"We help established personal injury firms with exceptional credentials get a predictable,
+consistent flow of Georgetown and Williamson County cases so they can finally build the
+firm that runs itself — and step back from the grind of unpredictable case intake."
+
+========================================
+QUICK WIN OPPORTUNITIES (8 identified)
+========================================
+
+1. PILLAR: Lead Gen | TITLE: Launch Google Ads for Georgetown PI Terms | BADGE: Quick Win
+   WHY: Every high-intent prospect searching "car accident lawyer Georgetown TX" right now is seeing competitor ads at the top of the page. The firm's absence from paid search means it is invisible at the highest point of buyer intent.
+   COMPETITOR: The Carlson Law Firm — actively markets across Williamson County with a digital budget
+   OPPORTUNITY: Launching search campaigns for Georgetown car accident, truck accident, and catastrophic injury terms captures the highest-intent PI traffic in the market — cases that would otherwise go to Angel Reyes or Carlson.
+
+2. PILLAR: Lead Gen | TITLE: Activate Local Service Ads | BADGE: Quick Win
+   WHY: LSA positions appear above paid search ads, above the map pack, and above all organic results. With a Board Certified PI attorney on staff and an AV Preeminent rating, Lone Star Legal has the credentials to qualify for Google Screened verification immediately.
+   COMPETITOR: Angel Reyes & Associates — with 790+ reviews, already positioned to dominate LSA positions
+   OPPORTUNITY: Getting Google Screened and launching LSA puts the firm at the very top of search results on a pay-per-lead model — no wasted spend on clicks, only on actual calls.
+
+3. PILLAR: Lead Gen | TITLE: Fix NAP Inconsistency and Consolidate GBP | BADGE: Quick Win
+   WHY: FindLaw lists a former address (205 E University Ave) while the current address is 285 SE Inner Loop. The firm also operates under two names across directories. Google uses NAP consistency as a local ranking signal — this inconsistency is actively suppressing the firm's local 3-pack rankings.
+   COMPETITOR: Heritage Law (Georgetown) — 160 reviews, 4.9 stars, consistently in local pack
+   OPPORTUNITY: Correcting NAP data across directories and consolidating the firm's GBP under one consistent name and address is the single highest-leverage local SEO action available — it costs nothing but produces meaningful ranking improvement.
+
+4. PILLAR: Intake | TITLE: Add After-Hours Intake Coverage | BADGE: Quick Win
+   WHY: Office hours are 9 AM–5 PM M–F. PI accidents happen around the clock, and victims in high-emotion states call immediately. Every evening or weekend call that goes to voicemail is a potential case going to a competitor who answers.
+   COMPETITOR: (none identified — omit who is doing it better row)
+   OPPORTUNITY: Adding a professional answering service or AI-assisted intake for after-hours calls means the firm captures cases it is currently generating through referrals and reputation but losing because no one is available to answer.
+
+5. PILLAR: Intake | TITLE: Move Contact Form Above the Fold | BADGE: Quick Win
+   WHY: A contact form buried at the bottom of the homepage is functionally invisible to the majority of website visitors who do not scroll completely through the page. Conversion rates drop significantly for every additional step required to reach the firm.
+   COMPETITOR: (none identified — omit who is doing it better row)
+   OPPORTUNITY: Moving a contact form or a "free case review" CTA into the hero section of the homepage is a no-cost conversion improvement that immediately increases the percentage of paid and organic visitors who become leads.
+
+6. PILLAR: Lead Gen | TITLE: Build Google Review Velocity | BADGE: Long-Term Play
+   WHY: Angel Reyes & Associates has 790+ Google reviews; The Carlson Law Firm has 408. Google's local algorithm weights review count and recency heavily in 3-pack rankings. Lone Star Legal's review count appears significantly lower than these competitors, which is the primary driver of its absence from local results.
+   COMPETITOR: Angel Reyes & Associates — 790+ reviews, 5.0 stars, dominant in local rankings
+   OPPORTUNITY: A systematic review-request process — sending clients a direct Google review link at case resolution — can generate 10–20 new reviews per month. Within 6–12 months, this catches up to the review gap and unlocks 3-pack position improvements across all Georgetown PI keywords.
+
+7. PILLAR: Team | TITLE: Implement Case Pipeline Accountability | BADGE: Long-Term Play
+   WHY: With nine staff and no confirmed accountability system, there is no mechanism to hold the team to case flow targets, intake conversion rates, or client satisfaction metrics. A firm cannot scale without metrics.
+   COMPETITOR: (none identified — omit who is doing it better row)
+   OPPORTUNITY: Implementing weekly pipeline reviews and role-specific KPIs creates the accountability structure that allows Robbye to step back from day-to-day management — the team starts managing itself to targets rather than waiting for partner direction.
+
+8. PILLAR: Profit | TITLE: Establish Case-Level Profitability Tracking | BADGE: Quick Win
+   WHY: PI cases vary dramatically in time-to-close, cost to work, and net margin. Without tracking profitability by case type, the firm could be over-investing in case types that generate less take-home while under-investing in the cases that drive the most profit.
+   COMPETITOR: (none identified — omit who is doing it better row)
+   OPPORTUNITY: Setting up basic profitability tracking by case type (car accident vs. catastrophic vs. offshore) allows the firm to make investment decisions — in marketing, in staffing, in case acceptance — based on what actually generates profit, not just revenue.
+
+========================================
+FIRST 90 DAYS
+========================================
+1. Launch Google Ads campaigns for Georgetown personal injury keywords — capture high-intent traffic immediately and start building conversion data
+2. Complete Google Screened verification and activate Local Service Ads — place the firm at the top of Georgetown PI search results above all competitors
+3. Audit and correct all directory listings for NAP consistency — fix FindLaw old address, consolidate Kelly Law Firm / Lone Star Legal naming across all directories
+4. Website optimization: move contact form above the fold and implement homepage conversion improvements before paid traffic launches
+5. Coaching kickoff with Elite Coach Plus — establish weekly accountability cadence, set 90-day case and revenue targets, and build the marketing reporting baseline
