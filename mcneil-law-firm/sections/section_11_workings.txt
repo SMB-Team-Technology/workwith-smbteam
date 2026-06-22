@@ -1,0 +1,226 @@
+SECTION 11 WORKINGS — McNeil Law Firm
+Date: June 22, 2026
+Sales Rep: Jacob Meissner
+
+================================================================================
+PACKAGE DECISION CORRECTION
+================================================================================
+
+The package_decision.json had confidence: "medium" and sourced revenue from HubSpot
+at $3M+ (→ Platinum). The research notes explicitly state:
+  "Annual revenue: ~$720,000 (down from just over $1M; approximately -30% YoY decline)"
+
+This clearly places the firm in the $400K–$1M revenue band. Platinum is hidden for
+under $1M revenue per eligibility rules. Corrected to Starter + Elite Coach Plus.
+
+================================================================================
+SELECTED PACKAGES
+================================================================================
+
+MARKETING PACKAGE:
+  Name: Full Service Marketing — Starter
+  Revenue band: $400K–$1M
+  Bundled price: $7,847/mo
+  Stand-alone price: $9,697/mo
+  Savings: $1,850/mo
+  Source: audit-write.md Marketing Tiers table — $400K–$1M Starter row
+
+NON-MARKETING PACKAGE:
+  Name: Elite Coach Plus
+  Revenue band: $400K–$1M, any team size
+  Bundled price: $3,200/mo
+  Stand-alone price: $3,497/mo
+  Savings: $297/mo
+  Source: audit-write.md Non-Marketing Packages table — $400K–$1M Any row
+
+LAW PACKAGE: None
+  Revenue $720K is above $500K threshold, but owner showed minimal AI readiness in
+  transcript (tested Clio Vincent AI, found ineffective). No LAW recommendation.
+
+AI AVATAR: None (no Alexis approval obtained; not recommended)
+
+TOTAL MONTHLY INVESTMENT (bundled):
+  $7,847 (marketing) + $3,200 (coaching) = $11,047/mo
+
+TOTAL SAVINGS:
+  $1,850 (marketing) + $297 (coaching) = $2,147/mo
+
+35% CAP CHECK:
+  Monthly revenue: $720,000 / 12 = $60,000
+  35% cap: $21,000/month
+  Packages alone: $11,047 = 18.4% of monthly revenue ✓
+  With conservative ad spend ($3,500): $14,547 = 24.2% ✓
+  With aggressive ad spend ($5,000): $16,047 = 26.7% ✓
+  All scenarios under 35% cap.
+
+================================================================================
+AD SPEND CALCULATION
+================================================================================
+
+PRACTICE AREA: Family Law
+
+CONSERVATIVE — channel minimums:
+  Google PPC min:       $1,500
+  LSA min:              $1,000
+  Meta retargeting min:   $200
+  Meta lead gen min:      $500
+  Sum:                  $3,200 → rounded to $3,500 (above absolute $1,000 floor)
+
+Conservative ad spend: $3,500/mo
+
+AGGRESSIVE — Starter tier cap applies:
+  20% rule: $1.5M goal × 20% ÷ 12 = $25,000 marketing budget
+  × Raleigh Tier 3 geo multiplier (1.15) = $28,750
+  − $7,847 Starter management fee = $20,903 available ad spend
+  BUT Starter tier ad spend cap = $5,000
+
+  Reverse math check:
+  $125,000/mo target ÷ $4,100 blended case value = 30.5 cases/mo target
+  ÷ 26% close rate = 117 leads needed
+  × blended CPL ~$108 = ~$12,636 required
+  Both 20% rule ($20,903) and reverse math ($12,636) exceed Starter cap.
+  Per boundary rule: "If ad spend exceeds tier cap, recommend tier upgrade or note
+  10% overage fee." Given revenue decline and Julia's skepticism, conservative
+  recommendation of Starter is strategically appropriate. Cap aggressive at $5,000.
+
+Aggressive ad spend: $5,000/mo (Starter cap)
+
+NOTE: If firm hits $1M in revenue and upgrades to Growth tier, aggressive ad spend
+can increase to Growth cap ($10,000/mo). Document this in roadmap as Phase 2 trigger.
+
+================================================================================
+ROI PROJECTIONS
+================================================================================
+
+Family Law CPL ranges (client-facing):
+  Google Search: $75–$200 (midpoint $137.50)
+  LSA: $75–$150 (midpoint $112.50)
+  Meta Retargeting: $25–$75 (midpoint $50)
+  Meta Cold: $50–$150 (midpoint $100)
+
+CONSERVATIVE SCENARIO ($3,500 ad spend):
+Channel allocation:
+  Google PPC: $1,500 (42.9%) → CPL $137.50
+  LSA: $1,000 (28.6%) → CPL $112.50
+  Meta Retargeting: $200 (5.7%) → CPL $50
+  Meta Lead Gen: $500 (14.3%) → CPL $100
+  Other: $300 (8.6%) → allocated to Google
+
+Blended CPL: 0.429×137.50 + 0.286×112.50 + 0.057×50 + 0.143×100 + 0.086×137.50
+           = $59.00 + $32.18 + $2.85 + $14.30 + $11.83 = $120.16
+With 20% cushion: $120.16 × 1.20 = $144.19 → round to $145
+
+Conservative leads: $3,500 ÷ $145 = 24 leads
+Conservative cases: 24 × 0.26 = 6.2 → 6 cases
+Conservative revenue: 6 × $4,100 = $24,600
+Conservative return multiple: $24,600 ÷ $3,500 = 7.0×
+
+Presentation values (conservative): ~6 cases → ~$24,600/mo → ~7× ROI
+
+AGGRESSIVE SCENARIO ($5,000 ad spend, no CPL cushion):
+Same channel mix (scaled proportionally):
+Blended CPL: ~$120
+Aggressive leads: $5,000 ÷ $120 = 41.7 → 42 leads
+Aggressive cases: 42 × 0.26 = 10.9 → 11 cases
+Aggressive revenue: 11 × $4,100 = $45,100
+Aggressive return multiple: $45,100 ÷ $5,000 = 9.0×
+
+Presentation values (aggressive): ~11 cases → ~$45,100/mo → ~9× ROI
+
+Average case value used: ~$4,100 (blended: 60% litigation at $5,000 + 30% flat fee at $3,000
+= $4,100 blended — source: transcript stated directly)
+
+================================================================================
+DOMINANT BUYING MOTIVE
+================================================================================
+
+Block 1 formula statement:
+"We help family law firm owners facing revenue decline get a professionally managed,
+fully attributed marketing system so they can build the 6-to-9-month pipeline that
+ends the feast-and-famine cycle for good."
+
+DBM anchor: Financial stability and predictability — building a full pipeline so
+John McNeil stops dreading the 6-week holiday slow season, stops worrying about
+making payroll, and achieves the financial certainty that comes from knowing the
+firm has work months in advance.
+
+================================================================================
+QUICK WIN OPPORTUNITIES (6 MINIMUM)
+================================================================================
+
+1. LEAD GEN / QUICK WIN: Fix Google Ads Attribution
+   Why: Running PPC without conversion tracking means the firm cannot identify which
+   keywords generate signed cases vs. wasted clicks. Attribution is the prerequisite
+   for every other marketing optimization decision.
+   Competitor: McIlveen Family Law Firm (higher QS = lower CPC for same keywords)
+   Opportunity: Proper tracking reveals the 20% of keywords driving 80% of cases —
+   immediate budget reallocation lowers CPA without reducing lead volume.
+
+2. LEAD GEN / QUICK WIN: Grow Google Review Count Past 100
+   Why: Review count is an algorithmic ranking signal for both the 3-pack and LSA
+   auction. McNeil has 67; McIlveen has 102. That gap directly explains the ranking gap.
+   Competitor: McIlveen Family Law Firm (102 Google reviews)
+   Opportunity: Closing the review gap to 100+ is the single highest-leverage action
+   for organic and LSA visibility — cases without an ad spend per click.
+
+3. LEAD GEN / LONG-TERM: Launch Facebook & Instagram Retargeting Campaigns
+   Why: Every website visitor who leaves without calling is currently lost with no
+   follow-up. Meta retargeting recaptures that interest.
+   No named competitor confirmed for Meta specifically.
+   Opportunity: Family law clients research across channels; being present where
+   Google-only firms are absent captures leads at the awareness stage.
+
+4. INTAKE / QUICK WIN: Move Contact Form Above the Fold
+   Why: The contact form buried below the fold reduces form submissions — the primary
+   digital intake mechanism — before prospects reach the intake step.
+   No named competitor for this specific element.
+   Opportunity: UX best practice suggests 20-40% lift in form submissions from above-
+   fold placement; immediate implementation, no new spend required.
+
+5. INTAKE / QUICK WIN: Implement Speed-to-Lead Protocol
+   Why: 26% close rate means 74% of qualified prospects are leaving. Research shows
+   5-minute response vs. 1-hour response lifts close rate 21×.
+   No named competitor for this element.
+   Opportunity: Even a 4-point close rate improvement (26% → 30%) on 38-63 qualified
+   leads/month adds ~2 additional cases/month = ~$8,200/mo additional revenue.
+
+6. TEAM / LONG-TERM: Hire Paralegal to Unlock Attorney Capacity
+   Why: John McNeil is the production ceiling. A paralegal handles preparation,
+   docs, and client communication — freeing John for more cases.
+   Competitor: Parker Bryan Family Law (9 attorneys + support staff — scalable capacity)
+   Opportunity: With paralegal support, John can handle more cases per week without
+   working more hours — the prerequisite to hitting 30 new clients/month.
+
+7. PROFIT / QUICK WIN: Implement Monthly Financial Dashboard & P&L Review
+   Why: No budget, no projections, no cost-per-acquisition = no financial certainty.
+   Cannot plan for slow seasons or make hiring decisions without this visibility.
+   No named competitor needed.
+   Opportunity: Monthly P&L tracking reveals which case types and channels are most
+   profitable — enabling John to intentionally grow the right cases.
+
+8. INTAKE / LONG-TERM: Create After-Hours Lead Capture Process
+   Why: No live chat, no after-hours protocol = systematic evening/weekend revenue
+   leak. Family law prospects call at night during emotional crises.
+   No named competitor for this element.
+   Opportunity: Structured voicemail-to-text + morning follow-up protocol or
+   contact form automation ensures every evening lead gets a response before they
+   call the next firm on the Google results page.
+
+================================================================================
+FIRST 90 DAYS
+================================================================================
+
+1. Launch fully managed Google Ads with proper conversion tracking — replacing
+   in-house ad management with attributed, accountable campaigns from day one
+2. Audit and optimize LSA account to improve Google Screened position and
+   accelerate review acquisition toward the 100-review milestone
+3. Website homepage optimization — move contact form above the fold, add trust
+   signals, optimize CTAs for family law conversion
+4. Implement structured review acquisition process with active clients to close
+   the review gap with McIlveen Family Law Firm
+5. Coaching kickoff — establish $1.5M revenue accountability framework, map
+   current pipeline, and build monthly reporting cadence for financial visibility
+
+================================================================================
+END WORKINGS
+================================================================================
