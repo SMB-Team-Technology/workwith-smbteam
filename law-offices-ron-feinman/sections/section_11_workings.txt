@@ -1,0 +1,174 @@
+SECTION 11 WORKINGS — Law Offices of Ron Feinman
+Date: June 22, 2026
+Sales Rep: Jacob Meissner
+
+================================================================================
+PACKAGE DECISION VERIFICATION (confidence: medium)
+================================================================================
+
+Package_decision.json states revenue_stated: null — CORRECTION: The transcript
+explicitly stated ~$1.25M projected for 2026. However, $1.25M falls within the
+same Growth tier band ($1M–$3M), so the marketing package selection is unchanged.
+
+Revenue used: $1.25M (transcript-stated, June 2026 projection)
+Monthly revenue: $1.25M ÷ 12 = $104,167/mo
+
+NOTE: The transcript explicitly recommended "Fractional COO (vs. Business Coaching)"
+for this firm. Master's Circle is the appropriate base selection (revenue $1M+, team 5+),
+but the sales rep should discuss adding the FCOO Advisor in Phase 2 given the explicit
+COO recommendation from the discovery call.
+
+================================================================================
+PRICE LOOKUP (character-by-character verified from audit-write.md tables)
+================================================================================
+
+Marketing package selected: Full Service Marketing — Growth
+  - Bundled price (from table): $7,397/mo
+  - Stand-alone price (from table): $8,997/mo
+  - Savings (stand-alone minus bundled): $1,600/mo
+
+Non-marketing package selected: Master's Circle
+  - Bundled price (from table): $4,600/mo
+  - Stand-alone price (from table): $4,997/mo
+  - Savings (stand-alone minus bundled): $397/mo
+
+LAW package selected: None
+
+Total monthly investment (sum of all bundled prices): $7,397 + $4,600 = $11,997/mo
+Total savings (sum of all savings): $1,600 + $397 = $1,997/mo
+
+35% CAP VERIFICATION:
+Monthly revenue = $1.25M ÷ 12 = $104,167
+35% cap = $36,458/mo
+Conservative total (fees + ad spend) = $11,997 + $3,500 = $15,497 → 14.9% ✓
+Aggressive total (fees + ad spend) = $11,997 + $14,000 = $25,997 → 25.0% ✓
+Both scenarios are under the 35% cap.
+
+================================================================================
+AD SPEND CALCULATION
+================================================================================
+
+Practice areas: Elder law + Estate planning
+Geo market: Lynchburg, VA = Tier 4 (significant regional, 1.0× multiplier)
+Spanish campaign: No
+
+CONSERVATIVE — Sum of channel minimums (estate planning):
+  Google PPC minimum: $1,500
+  LSA minimum: $1,000
+  Meta Retargeting minimum: $1,000
+  Total conservative: $3,500/mo ✓ (matches package_decision.json)
+
+AGGRESSIVE — 20% rule:
+  Revenue goal $2.5M × 20% ÷ 12 = $41,667/mo marketing budget
+  × Tier 4 geo multiplier (1.0×) = $41,667
+  − Marketing fee ($7,397) = Available ad spend $34,270
+  Growth tier ad spend cap = $14,000
+  $34,270 exceeds cap → aggressive = $14,000/mo (tier cap applies)
+  Note: Upgrading to Dominate tier would allow up to $25,000/mo. Sales rep
+  should discuss at proposal if client's goals warrant the upgrade.
+
+================================================================================
+ROI PROJECTIONS
+================================================================================
+
+Practice area: Elder law / Estate planning
+Default case value: $3,000 (upper end of $2,500–$3,000 default range;
+  appropriate for complex elder law matters; flagged as estimate since not stated)
+Close rate: 15% (default — not stated on call)
+
+CPL RANGES (estate planning):
+  Google Search midpoint: $250
+  LSA midpoint: $175
+  Meta Retargeting midpoint: $100
+
+CONSERVATIVE SCENARIO ($3,500/mo):
+  Channel mix: Google $1,500 + LSA $1,000 + Meta $1,000
+  Blended CPL (weighted): ($1,500/$3,500×$250) + ($1,000/$3,500×$175) + ($1,000/$3,500×$100)
+    = $107.14 + $50.00 + $28.57 = $185.71
+  With 20% cushion: $185.71 × 1.2 = $222.86 → $225
+  Leads: $3,500 ÷ $225 = 15.6 → ~16 leads
+  Cases: 16 × 15% = 2.4 → 2–3 cases
+  Revenue: 2.5 × $3,000 = $7,500
+  Return: $7,500 ÷ $3,500 = 2.1x
+
+AGGRESSIVE SCENARIO ($14,000/mo):
+  Blended CPL (no cushion, optimized at scale): $175
+  Leads: $14,000 ÷ $175 = 80 leads
+  Cases: 80 × 15% = 12 cases
+  Revenue: 12 × $3,000 = $36,000
+  Return: $36,000 ÷ $14,000 = 2.6x
+
+================================================================================
+DBM STATEMENT (Block 1)
+================================================================================
+
+"We help established elder law and estate tax planning firms get a predictable
+flow of qualified clients and a team that handles the caseload so they can
+build the well-oiled machine that runs without them."
+
+================================================================================
+QUICK WIN OPPORTUNITIES (6+ identified)
+================================================================================
+
+1. PILLAR: Lead Gen | TITLE: Google Review Generation Campaign | TIMING: Quick Win
+   WHY: 4 reviews vs. Davies & Davies's 36 — this gap is the #1 local SEO suppression factor
+   COMPETITOR: Davies & Davies (36 reviews, 4.7★)
+   OPPORTUNITY: Systematic ask-every-client campaign adds 25–40 reviews in 90 days,
+     moving firm from invisible to competitive in local pack
+
+2. PILLAR: Lead Gen | TITLE: Google Business Profile Optimization | TIMING: Quick Win
+   WHY: GBP not appearing in 3-pack for any observed search — no observed photos or posts
+   OPPORTUNITY: Fully optimized GBP with photos, posts, and correct categories improves
+     3-pack visibility without additional ad spend
+
+3. PILLAR: Lead Gen | TITLE: NAP Consistency Cleanup | TIMING: Quick Win
+   WHY: 5+ entity name variations across directories — direct Google suppression signal
+   OPPORTUNITY: Citation audit and standardization removes primary barrier to GBP ranking
+
+4. PILLAR: Intake | TITLE: Intake Process Documentation | TIMING: Quick Win
+   WHY: No documented intake process — conversion depends on individual judgment
+   OPPORTUNITY: Standardized intake script + follow-up sequence increases consultation
+     booking rate without additional leads needed
+
+5. PILLAR: Lead Gen | TITLE: Google Ads — First Mover Advantage | TIMING: Long-Term Play
+   WHY: No local firm confirmed running paid search ads for elder law/estate planning
+     in Lynchburg — national directories own the top of funnel
+   COMPETITOR: National directories (FindLaw, Avvo, LegalZoom)
+   OPPORTUNITY: First local firm to run targeted PPC for elder law claims the top of funnel
+     before a competitor enters and makes it more expensive
+
+6. PILLAR: Team | TITLE: Structured A-Player Hiring System | TIMING: Long-Term Play
+   WHY: 3 critical hires needed (paralegal + 2 attorneys); Indeed/LinkedIn described
+     as ineffective for finding A-players in complex elder law work
+   OPPORTUNITY: Systematic recruiting process with compelling job narrative and structured
+     interview process fills critical roles faster and with better fit
+
+7. PILLAR: Lead Gen | TITLE: Local Service Ads — Google Screened | TIMING: Long-Term Play
+   WHY: LSA positions above all other results; firm not active; no local competitors confirmed
+   OPPORTUNITY: Google Screened badge builds immediate trust with elder law client base;
+     pay-per-lead model makes spend accountable from day one
+
+8. PILLAR: Profit | TITLE: Financial Visibility Dashboard | TIMING: Quick Win
+   WHY: No profit tracking or cost-per-matter system mentioned; scaling without
+     financial visibility is high-risk during a period of major investment and hiring
+   OPPORTUNITY: Simple dashboard tracking revenue, overhead, margin, and cost-per-
+     acquisition empowers data-driven decisions on staffing and expansion
+
+================================================================================
+FIRST 90 DAYS
+================================================================================
+
+1. Launch Google Ads for elder law and estate planning searches in Lynchburg and
+   surrounding markets — claim the first-mover position before a well-funded competitor does
+2. Launch review generation campaign with all current and past clients — target 25+
+   new Google reviews in 90 days to close the gap with Davies & Davies
+3. NAP audit and standardization across all directories — resolve 5+ entity name
+   variations that are suppressing GBP ranking
+4. Master's Circle coaching kickoff — establish hiring priorities, build structured
+   job descriptions and a recruiting process for the paralegal and 2 attorney roles
+5. Google Business Profile optimization — photos, categories, practice area descriptions,
+   weekly posts — maximize 3-pack visibility alongside the review campaign
+
+================================================================================
+END WORKINGS
+================================================================================
