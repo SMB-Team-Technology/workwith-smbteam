@@ -1,0 +1,154 @@
+SECTION 11 WORKINGS — Levine Family Law
+Audit Date: June 24, 2026
+Sales Rep: Dan Bryant
+========================================
+
+REVENUE VERIFICATION
+--------------------
+Package decision file confidence: medium
+HubSpot revenue data: $0–$180K → $180,000 (used in package_decision.json)
+Research notes revenue data:
+  - Low month: ~$21,000–$22,000
+  - Typical month: ~$30,000
+  - High trial month: ~$40,000–$45,000
+  - Annualized (typical): $30,000 × 12 = $360,000/year
+
+CORRECTION: Research notes provide more accurate and granular data than HubSpot.
+Effective annual revenue: ~$360,000/year ($250K–$400K band).
+Marketing tier Essentials is still correct at $360K (under $400K).
+Elite Coach is still correct at $360K ($250K–$400K range).
+Scoping approval is NOT required — revenue is ~$360K, above the $250K threshold.
+(Package_decision.json flagged scoping approval based on HubSpot's $180K figure,
+which is incorrect. No scoping approval required at verified ~$360K revenue.)
+
+PACKAGE SELECTION (MANDATORY PRICE LOOKUP — CHARACTER-BY-CHARACTER FROM TABLES)
+----------------------------------------------------------------------------------
+Marketing package selected: Full Service Marketing — Essentials
+  - Bundled price (from table): $3,397/mo
+  - Stand-alone price (from table): N/A (table lists "Essentials $N/A")
+  - Savings: N/A (no stand-alone retail listed for Essentials)
+
+Non-marketing package selected: Elite Coach
+  - Bundled price (from table): $2,600/mo
+  - Stand-alone price (from table): $3,497/mo
+  - Savings: $3,497 − $2,600 = $897/mo
+
+LAW package: None (revenue under $500K — ineligible)
+AI Avatar: None (not applicable)
+
+Total monthly investment (sum of bundled prices): $3,397 + $2,600 = $5,997/mo
+Total savings: $897/mo (Elite Coach savings only; Essentials has no retail comparison)
+
+35% CAP CHECK
+--------------
+Monthly revenue (typical): ~$30,000
+35% of $30,000 = $10,500 max total SMB spend/month
+Management fees: $5,997
+Available for ad spend at 35% cap: $10,500 − $5,997 = $4,503/month
+
+Conservative ad spend $3,500: Total SMB = $5,997 + $3,500 = $9,497 = 31.6% ✓ under cap
+Aggressive ad spend $7,500: Total SMB = $5,997 + $7,500 = $13,497 = 45.0% ✗ over cap at current revenue
+
+NOTE: Aggressive scenario ($7,500) exceeds the 35% guideline at current typical revenue
+of $30K/month. At goal revenue of $60K/month (2× current), $7,500 ad spend = 22.5% of
+revenue — well within the cap. Aggressive ad spend is presented as a growth target,
+not a Day 1 recommendation. The report will show both scenarios in Block 4 with
+appropriate labeling; conservative ($3,500) is the recommended starting point.
+
+AD SPEND CALCULATION
+---------------------
+Conservative = Google PPC minimum for Family Law: $3,500/mo
+  (LSA cannot launch until Google Screened approval is obtained; starting with PPC only)
+
+Aggressive = Essentials tier cap: $7,500/mo
+  (Google PPC + LSA + Meta once Google Screened status is established)
+  (Note: exceeds 35% cap at current revenue; appropriate as revenue scales to goal)
+
+ROI PROJECTIONS
+----------------
+Case value: $15,000 (from transcript — Scott stated typical average case value)
+Close rate: 15% (default — not stated on call)
+
+Conservative scenario ($3,500/mo — Google PPC only):
+  CPL: Family Law Google Search midpoint $100 × 1.20 cushion = $120/lead
+  Leads = $3,500 ÷ $120 = 29 leads/month
+  Cases = 29 × 15% = ~4 cases/month
+  Revenue = 4 × $15,000 = $60,000/month
+  Return = $60,000 ÷ $3,500 = 17.1× ≈ 17×
+
+Aggressive scenario ($7,500/mo — Google + LSA + Meta):
+  Mixed channel CPL (no cushion):
+    Google PPC ($3,000): 40% × $100 = $40
+    LSA ($2,000): 27% × $80 = $21.6
+    Meta ($2,500): 33% × $80 = $26.4
+    Blended CPL = $88/lead
+  Leads = $7,500 ÷ $88 = ~85 leads/month
+  Cases = 85 × 15% = ~13 cases/month
+  Revenue = 13 × $15,000 = $195,000/month
+  Return = $195,000 ÷ $7,500 = 26×
+
+DBM STATEMENT FOR BLOCK 1
+---------------------------
+"We help solo family law attorneys get a steady, predictable flow of high-value cases
+so they can hire a team, step back from the day-to-day, and build the multi-location
+firm they have been planning — without sacrificing weekends and their own health to
+achieve it."
+
+QUICK WIN OPPORTUNITIES (8 identified)
+----------------------------------------
+1. Lead Gen — Google Ads Overhaul (Quick Win)
+   Why: $800–$1,000/mo gets ~5–10 clicks/day in a $90–$180/click market; not enough
+   for consistent lead volume. Competitor: The Florida Probate & Family Law Firm.
+   Opportunity: Professional PPC at $3,500/mo → ~29 leads/month.
+
+2. Lead Gen — LSA / Google Screened Enrollment (Quick Win)
+   Why: Highest-converting format in family law; pay-per-lead, appears above everything.
+   Competitor: The Florida Probate & Family Law Firm (1,000+ reviews → dominant LSA).
+   Opportunity: Launch alongside review program for pay-per-lead visibility.
+
+3. Lead Gen — Systematic Google Review Generation (Quick Win)
+   Why: 34 reviews vs. 319 (Carmen Soto) and 1,000+; 3-pack invisible without 75–100+.
+   Competitor: Carmen G. Soto, PA.
+   Opportunity: Post-case workflow → 75–100 reviews in 90 days → 3-pack eligibility.
+
+4. Lead Gen — NAP Inconsistency Fix (Quick Win)
+   Why: Website lists different address than all directories; directly suppresses GBP.
+   No named competitor doing this better — unique issue to this firm.
+   Opportunity: One-time fix; measurable GBP ranking improvement within 60 days.
+
+5. Intake — 24/7 Answering Service + Intake Process (Quick Win)
+   Why: No after-hours coverage; $15K cases leave when calls go unanswered.
+   No named competitor.
+   Opportunity: AI answering ~$95/mo or human from ~$300/mo; never miss a lead.
+
+6. Lead Gen — Facebook & Instagram Advertising (Long-Term Play)
+   Why: $50–$95/lead vs. $100–$300+ on Google; life-event targeting untapped.
+   Competitor: Carmen G. Soto, PA (established social presence).
+   Opportunity: Retargeting + life-event targeting captures prospects before Google search.
+
+7. Team — First Hire: Full-Time Paralegal (Long-Term Play)
+   Why: All growth blocked until Scott has leverage; trial months unsustainable alone.
+   No named competitor.
+   Opportunity: Build hiring framework now; paralegal funded by 4+ new cases/month.
+
+8. Profit — Establish Cost-Per-Case Tracking (Quick Win)
+   Why: $1,500–$2,000/mo in marketing with no confirmed ROI measurement.
+   No named competitor.
+   Opportunity: 30-minute setup; immediately reveals which spend generates return.
+
+FIRST 90 DAYS ACTION BULLETS
+------------------------------
+1. Launch professional Google Ads campaigns for divorce and paternity keyword groups
+   with dedicated landing pages and call tracking; begin LSA (Google Screened) application
+2. Implement professional answering service and a 10-minute consultation booking link
+   to capture every inbound lead without relying on Scott's personal cell
+3. Correct NAP inconsistency: update website About page address to match GBP (6550 N
+   Federal Hwy), then audit and update Avvo, Yelp, and all major directories
+4. Launch post-case Google review request workflow: text/email sequence after every
+   matter closes targeting 75–100 reviews within the first 90 days
+5. Elite Coach kickoff: establish monthly financial dashboard (revenue by source, cost
+   per lead, cost per signed case), confirm $5,000 retainer floor, and build paralegal
+   role description and hiring criteria
+
+========================================
+END OF WORKINGS FILE
