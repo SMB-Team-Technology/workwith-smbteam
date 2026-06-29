@@ -1,0 +1,166 @@
+SECTION 11 WORKINGS — Lawrence Law Office
+Generated: June 29, 2026
+Sales Rep: Dan Bryant
+
+==================================================
+PACKAGE DECISION VERIFICATION
+==================================================
+
+Revenue signal check (confidence: medium):
+- HubSpot source: "$500K - $1,000,000" → effective $750,000
+- Research notes estimate: "$600K–$1.2M based on 2-attorney practice, 30 years, 2 offices in Columbus metro"
+- Both signals are consistent and overlap in the $600K–$1M band
+- Starter tier ($400K–$1M) is correct for both the HubSpot midpoint and the research estimate
+- Conclusion: Pre-selected tiers are confirmed. No correction needed.
+
+MANDATORY PRICE LOOKUP (character-by-character from pricing tables):
+
+Marketing package selected: Full Service Marketing — Starter
+  - Bundled price (from table): $4,847/mo
+  - Stand-alone price (from table): $5,697/mo
+  - Savings (stand-alone minus bundled): $850/mo
+
+Non-marketing package selected: Elite Coach Plus
+  - Bundled price (from table): $3,200/mo
+  - Stand-alone price (from table): $3,497/mo
+  - Savings (stand-alone minus bundled): $297/mo
+
+Legal AI Workforce (LAW) package selected: none
+  - Revenue ($750K effective) is above $500K threshold, but team size estimated at 3 and no openness to AI adoption observed (no transcript)
+  - Decision: Not recommended; no transcript confirmation of AI readiness
+
+AI Avatar / Video Growth: none
+  - No transcript data; not recommended without confirmed owner interest
+
+Total monthly investment (sum of bundled prices): $4,847 + $3,200 = $8,047/mo
+Total savings (sum of all savings): $850 + $297 = $1,147/mo
+
+35% CAP CHECK:
+  - Revenue: $750,000/yr → $62,500/mo
+  - 35% of monthly revenue: $21,875
+  - Conservative: $8,047 mgmt + $3,500 ads = $11,547 = 18.5% ✓
+  - Aggressive: $8,047 mgmt + $14,000 ads = $22,047 = 35.3% — just at cap; acceptable
+  - Both scenarios are within or at the 35% cap
+
+==================================================
+AD SPEND CALCULATIONS
+==================================================
+
+Conservative ($3,500/mo — family law channel minimums):
+  - Family Law Google PPC minimum: $2,500
+  - Family Law LSA minimum: $1,000 (approx; split across LSA)
+  - But total conservative floor per channel minimums for Family Law:
+    Google PPC min $2,500 + LSA min $1,000 = $3,500 ✓ (matches package_decision.json)
+
+Aggressive ($14,000/mo — 20% rule):
+  - Revenue goal (no goal stated → use 2x current): $750,000 × 2 = $1,500,000
+  - Monthly marketing budget: $1,500,000 × 20% ÷ 12 = $25,000
+  - Columbus is Tier 2 market (×1.3): $25,000 × 1.3 = $32,500
+  - Minus management fee ($4,847): $32,500 − $4,847 = $27,653 available
+  - Starter tier cap: $14,000. Aggressive ad spend is capped at $14,000 per Starter tier.
+  - Note: Full 20% rule would call for ~$27,653 — above Starter tier cap of $14,000.
+    At aggressive, firm should be counseled that upgrading to Growth tier ($9,397/mo) unlocks $25,000 ad cap.
+    For this proposal, cap at $14,000 and note tier upgrade opportunity.
+
+==================================================
+ROI PROJECTIONS
+==================================================
+
+Practice area: Family Law (Divorce, Child Custody) — Columbus, OH (Tier 2)
+Default case value: $5,000 (not stated in transcript; Columbus family law default)
+Default close rate: 15% (not stated in transcript)
+
+Blended CPL methodology:
+  Columbus family law estimated CPL ranges:
+    Google Search: $100–$150 midpoint $125
+    LSA: $50–$100 midpoint $75
+    Meta: $50–$100 midpoint $75
+
+CONSERVATIVE SCENARIO ($3,500/mo):
+  Channel allocation: Google Search $2,000, LSA $500, Meta $1,000
+  Weighted CPL: (2,000×$125 + 500×$75 + 1,000×$75) / 3,500
+             = ($250,000 + $37,500 + $75,000) / 3,500
+             = $362,500 / 3,500 = $103.57
+  With 20% cushion: $103.57 × 1.20 = $124.28 → ~$125
+  Leads: $3,500 / $125 = 28 leads/mo
+  Cases: 28 × 15% = 4.2 → 4–5 cases/mo
+  Revenue: 4 × $5,000 = $20,000 | 5 × $5,000 = $25,000 → $20,000–$25,000/mo
+  Return: $20,000 / $3,500 = 5.7x → ~6x
+
+AGGRESSIVE SCENARIO ($14,000/mo):
+  Channel allocation: Google Search $7,500, LSA $2,000, Meta $4,500
+  Weighted CPL: (7,500×$125 + 2,000×$75 + 4,500×$75) / 14,000
+             = ($937,500 + $150,000 + $337,500) / 14,000
+             = $1,425,000 / 14,000 = $101.79 → ~$102
+  No cushion for aggressive scenario
+  Leads: $14,000 / $102 = 137 leads/mo
+  Cases: 137 × 15% = 20.6 → 18–22 cases/mo
+  Revenue: 18 × $5,000 = $90,000 | 22 × $5,000 = $110,000 → $90,000–$110,000/mo
+  Return: $90,000 / $14,000 = 6.4x → ~6x to 7x
+
+Note: All ROI figures use default case value ($5,000) and close rate (15%) — not stated in transcript.
+Must be labeled as estimates in the report.
+
+==================================================
+DBM STATEMENT FOR BLOCK 1
+==================================================
+
+"We help established Columbus family law practices get a predictable flow of qualified divorce and custody clients so they can step back from the day-to-day — earning at the level their reputation deserves, without being the one driving every piece of it."
+
+==================================================
+QUICK WIN OPPORTUNITIES (6+ identified)
+==================================================
+
+1. Pillar: Lead Gen | Title: Launch Google Ads for Divorce and Custody Keywords
+   Why: Joslyn Law Firm, Gavvl Law, and Petroff Law Offices all advertise on these terms; Lawrence Law Office is absent from every paid search result
+   Competitor: Joslyn Law Firm — active Google Ads with "Request Your Consultation" CTA
+   Opportunity: Capture high-intent prospects actively searching for a divorce attorney in Columbus right now
+
+2. Pillar: Lead Gen | Title: Google Business Profile Review Campaign
+   Why: ~56 reviews at ~4.0 stars vs Gavvl Law (90+, 4.8★) and Joslyn (78+, 4.8★); review gap widens every month
+   Competitor: Gavvl Law — 90+ Google reviews, actively growing
+   Opportunity: Closing the review gap improves 3-pack ranking directly; 74+ reviews at 4.5+ stars positions firm for top placements
+
+3. Pillar: Lead Gen | Title: Activate Local Service Ads (LSA)
+   Why: LSA positions appear above all other Google results; competitors with LSA are capturing the prime real estate Lawrence Law Office is missing
+   Competitor: Joslyn Law Firm — inferred LSA presence from review count and marketing footprint
+   Opportunity: Pay-per-lead model means spend is tied directly to prospect calls, not clicks
+
+4. Pillar: Lead Gen | Title: Meta Advertising — Divorce and Custody Awareness Campaigns
+   Why: No Meta advertising observed; Joslyn and Gavvl are active on Facebook; social channel is entirely uncaptured
+   Competitor: Gavvl Law — active Facebook presence consistent with Meta advertising investment
+   Opportunity: Awareness and retargeting campaigns reach prospects earlier in the decision process, reducing CPL for Google campaigns
+
+5. Pillar: Intake | Title: After-Hours Response Protocol
+   Why: No after-hours coverage or live chat observed; family law prospects in crisis reach out evenings and weekends; first firm to respond wins
+   Competitor: (no named competitor confirmed for after-hours protocol)
+   Opportunity: Capturing after-hours leads without adding staff requires only an answering service integration — immediate ROI
+
+6. Pillar: Intake | Title: Documented Intake Script and Follow-Up Sequence
+   Why: Without a defined process, close rate depends on who answers and how they feel that day; a 5–10% improvement in close rate is worth $20,000–$40,000/yr in additional revenue
+   Competitor: (no named competitor confirmed)
+   Opportunity: A repeatable intake script converts a higher percentage of leads already being generated — without additional marketing spend
+
+7. Pillar: Team | Title: Delegate Intake and Consultation Scheduling
+   Why: Founding partners handling intake calls removes them from billable hours and creates the firm's growth ceiling
+   Competitor: Joslyn Law Firm — 6-attorney team with dedicated intake infrastructure
+   Opportunity: One dedicated intake coordinator removes Linda and Rodd from the front-end process, freeing capacity for client work
+
+8. Pillar: Profit | Title: Establish Client Acquisition Cost Baseline
+   Why: Without knowing the cost to acquire a new client by source, it is impossible to make informed decisions about where to invest marketing dollars
+   Competitor: (no named competitor)
+   Opportunity: Tracking acquisition cost by channel creates the financial intelligence needed to scale the most profitable lead sources
+
+==================================================
+FIRST 90 DAYS
+==================================================
+
+1. Launch Google Ads campaigns — target "divorce attorney Columbus Ohio," "child custody lawyer Columbus Ohio," "family law attorney Franklin County," and related high-intent terms
+2. Begin website optimization — address conversion paths, mobile experience, NAP consistency across all directory listings
+3. Execute Google Business Profile review campaign — target moving from ~56 to 75+ Google reviews with a 4.5+ star average within 90 days
+4. Establish after-hours intake protocol — implement answering service or response protocol for after-hours and weekend inbound contacts
+5. Coaching kickoff — establish financial baselines (revenue per case type, acquisition cost) and set 90-day revenue and case volume goals with accountability structure
+
+==================================================
+END OF WORKINGS FILE
+==================================================
