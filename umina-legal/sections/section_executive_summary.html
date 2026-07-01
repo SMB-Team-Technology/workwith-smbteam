@@ -3,28 +3,13 @@
      If you find yourself writing CSS — stop and delete it. -->
 <!-- ============================================================
      SECTION — EXECUTIVE SUMMARY
-
-     INSTRUCTIONS FOR COWORK:
-     Fill this section LAST — after all other sections are complete.
-     Copy values directly from the sections indicated. Do not rewrite or infer.
-     Do not add inline styles. Do not change class names.
-
-     - URGENCY_SCORE: copy the number from section_05 urgency-score
-     - PILLAR CIRCLES: copy the class (red / amber / green) from each sc-card in section_05
-     - TOP PRIORITIES: write 3–4 of the most critical firm-specific findings from sections 05–09.
-       One sentence each. Lead with the consequence, not the category label.
-     - INVESTMENT ROWS: copy package names and bundled prices from section_11 investment-grid
-     - AD_SPEND: copy from section_11 investment-grid "Recommended ad spend" row
-     - TOTAL INVESTMENT: sum of bundled package prices only (not ad spend) — copy from section_11
-     - EXEC_CLOSING: one Montserrat-weight sentence summarizing the firm's central opportunity.
-       Connect to the owner's DBM. Example: "The leads are there — the system to capture them is not, yet."
+     Values copied directly from completed sections as instructed.
      ============================================================ -->
 
 <div class="exec-summary" id="executive-summary">
   <div class="exec-summary-header">
     <div class="exec-summary-header-inner">
       <div class="exec-summary-title">Executive Summary</div>
-      <!-- FILL: FIRM_NAME -->
       <div class="exec-summary-firm">Umina Legal</div>
     </div>
   </div>
@@ -33,7 +18,7 @@
 
     <div class="exec-meta-row">
 
-      <!-- URGENCY_SCORE: 7 — copied from section_05 -->
+      <!-- URGENCY_SCORE: 7 — copied from section_05 urgency-score element -->
       <div class="exec-urgency">
         <div class="exec-urgency-number">7</div>
         <div class="exec-urgency-label">Urgency Score</div>
@@ -43,25 +28,25 @@
         <div class="exec-pillars-label">Pillar Health at a Glance</div>
         <div class="exec-pillar-row">
 
-          <!-- Lead Gen: AMBER — copied from section_05 -->
+          <!-- Lead Gen: AMBER — copied from section_05 Lead Generation sc-card traffic circle -->
           <div class="exec-pillar-item">
             <div class="exec-pillar-circle amber"></div>
             <div class="exec-pillar-name">Lead Gen</div>
           </div>
 
-          <!-- Intake: RED — copied from section_05 -->
+          <!-- Intake: RED — copied from section_05 Intake sc-card traffic circle -->
           <div class="exec-pillar-item">
             <div class="exec-pillar-circle red"></div>
             <div class="exec-pillar-name">Intake</div>
           </div>
 
-          <!-- Team: RED — copied from section_05 -->
+          <!-- Team: RED — copied from section_05 Self-Managing Team sc-card traffic circle -->
           <div class="exec-pillar-item">
             <div class="exec-pillar-circle red"></div>
             <div class="exec-pillar-name">Team</div>
           </div>
 
-          <!-- Profit: AMBER — copied from section_05 -->
+          <!-- Profit: AMBER — copied from section_05 Profit sc-card traffic circle -->
           <div class="exec-pillar-item">
             <div class="exec-pillar-circle amber"></div>
             <div class="exec-pillar-name">Profit</div>
@@ -74,43 +59,43 @@
 
     <div class="exec-content-grid">
 
-      <!-- TOP PRIORITIES -->
+      <!-- TOP PRIORITIES — consequence-first, firm-specific, from sections 05–09 -->
       <div class="exec-block">
         <div class="exec-block-title">Top Priorities</div>
         <ul class="exec-findings-list">
-          <!-- Consequence-first, firm-specific -->
-          <li>Ryan personally handling every intake call is a structural bottleneck that will cause burnout before the firm reaches $2M — delegating intake is the highest-leverage action available right now.</li>
-          <li>The firm earns $100K/month with no financial visibility, no active bookkeeping, and no CRM tracking — growing without this data is growing blind.</li>
-          <li>Competitors Slavey &amp; Shumaker (101 Google reviews, 4.8 stars) and The Moore Law Firm (~40 Google reviews, 4.7 stars) have credibility advantages in every organic search where Umina Legal currently does not appear — the review gap compounds every month without action.</li>
-          <li>Google Ads is the firm's only lead source at $3,000/month — a single point of failure that leaves satellite market offices generating zero leads and the top LSA placement unclaimed.</li>
+          <li>Ryan personally handles every intake call — this is the structural bottleneck that will cause burnout before the firm reaches $2M and is the highest-leverage action available right now.</li>
+          <li>Competitors Slavey &amp; Shumaker (101 Google reviews, 4.8 stars) and The Moore Law Firm (~40 Google reviews, 4.7 stars) dominate every organic comparison search while Umina Legal's reviews page is completely empty — a gap that grows every month without a review strategy.</li>
+          <li>Google Ads at $3,000/month is the firm's only lead source — a single channel with no organic floor, no LSA placement, and no satellite market coverage leaves the entire $1.2M revenue base vulnerable to a single campaign disruption.</li>
+          <li>The firm earns $100K/month with acknowledged bookkeeping gaps and no CRM tracking — growing to $2M without financial visibility means scaling a firm without knowing what it actually keeps.</li>
         </ul>
       </div>
 
-      <!-- RECOMMENDED INVESTMENT SNAPSHOT -->
+      <!-- RECOMMENDED INVESTMENT SNAPSHOT — copied from section_11 investment-grid -->
       <div class="exec-block">
         <div class="exec-block-title">Recommended Investment</div>
 
-        <!-- Copied from section_11 investment-grid -->
+        <!-- Copied from section_11 investment-grid: Full Service Marketing — Growth -->
         <div class="exec-investment-row">
-          <span>Fractional COO Advisor</span>
-          <span class="exec-investment-value">$1,297/mo</span>
+          <span>Full Service Marketing — Growth</span>
+          <span class="exec-investment-value">$8,397/mo</span>
         </div>
 
+        <!-- Copied from section_11 investment-grid: Elite Coach Plus -->
         <div class="exec-investment-row">
-          <span>Fractional CFO Advisor</span>
-          <span class="exec-investment-value">$1,297/mo</span>
+          <span>Elite Coach Plus</span>
+          <span class="exec-investment-value">$3,200/mo</span>
         </div>
 
-        <!-- AD_SPEND: copied from section_11 -->
+        <!-- AD_SPEND: copied from section_11 "Recommended ad spend range" row -->
         <div class="exec-investment-row">
-          <span>Recommended Ad Spend (self-managed)</span>
-          <span class="exec-investment-value">$7,500–$25,000/mo</span>
+          <span>Recommended Ad Spend</span>
+          <span class="exec-investment-value">$7,500–$15,000/mo</span>
         </div>
 
-        <!-- TOTAL INVESTMENT: $1,297 + $1,297 = $2,594 (bundled packages only, not ad spend) -->
+        <!-- TOTAL INVESTMENT: $8,397 + $3,200 = $11,597 (bundled packages only, not ad spend) -->
         <div class="exec-investment-total">
           <span>Total SMB Team Investment</span>
-          <span>$2,594/mo</span>
+          <span>$11,597/mo</span>
         </div>
 
       </div>
@@ -119,7 +104,7 @@
 
     <!-- EXECUTIVE CLOSING STATEMENT -->
     <div class="exec-closing">
-      <p><span>The revenue is already there — what is missing are the operations layer, the financial visibility, and the team structure that turn a $1.2M operator-dependent firm into the $2M, 30-hour-a-week firm Ryan described on this call.</span></p>
+      <p><span>The revenue is already there — what is missing is the professional marketing infrastructure, the coaching accountability, and the delegation structure that turn a $1.2M self-managed firm into the $2M, 30-hour-a-week firm Ryan described on this call.</span></p>
     </div>
 
   </div>

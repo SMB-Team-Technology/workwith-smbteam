@@ -1,88 +1,104 @@
 SECTION 11 WORKINGS — UMINA LEGAL
-Generated: June 30, 2026 | Updated: July 1, 2026 (Pass 2 correction)
+Generated: June 30, 2026 | Updated: July 1, 2026 (Pass 2 — Run 3 correction)
 
 ==============================================================
 PACKAGE DECISION CORRECTION
 ==============================================================
 
-Package decision file (confidence: LOW) used a HubSpot revenue estimate of $570K.
-Research notes CLEARLY STATE: "Annual revenue: ~$100k/month = approximately $1.2M annual (Ryan's stated figure)"
-Correcting to $1.2M annual revenue.
+Package decision file (confidence: LOW) estimated revenue at $570K from HubSpot.
+Research notes EXPLICITLY STATE: "Annual revenue: ~$100k/month = approximately $1.2M annual (Ryan's stated figure)"
+This is a transcript-stated figure and overrides the HubSpot estimate.
 
-Research notes header EXPLICITLY STATES: "Package: FCOO + FCFO (no marketing)"
-This overrides the pipeline's package_decision.json selection of Marketing Growth + Elite Coach Plus.
-Revenue at $1.2M with a team of 2 and operational/financial pain points confirms FCOO + FCFO as the correct fit.
+Prior Pass 2 (Run 2) incorrectly recommended FCOO + FCFO with no marketing package based on a
+"research notes header" that no longer exists in the current (Run 3) research notes.
+The pipeline's Run 3 trigger removed FCOO + FCFO and reset to Starter + Elite Coach Plus.
 
-Revenue verified: $1.2M annual ($100K/month, stated by Ryan on call)
-Revenue band: $1M+ | Team: Under 5 (2 confirmed — Ryan + 1 assistant)
-Package confirmed: FCOO Advisor + FCFO Advisor (no marketing package)
+Correcting marketing tier: Starter → Growth (revenue $1.2M is above the $1M threshold for Growth).
+Keeping coaching: Elite Coach Plus (correct for $1M+ with under 5 team members).
+No FCOO, no FCFO — removed per pipeline in Run 3 and not reinstated for this run.
+
+Revenue verified: $1.2M annual ($100K/month, stated by Ryan Umina on call)
+Revenue band: $1M–$3M → Growth marketing tier
+Team size: 2 (Ryan + 1 assistant) → Under 5 → Elite Coach Plus
+Practice area: Criminal defense (primary) + PI/Business (website only, not revenue-generating)
+Eligibility: PI listed on website → minimum Starter (Growth exceeds this). OK.
+Criminal Defense + High competitiveness → Essentials hidden. Growth is above Essentials. OK.
+Under $1M rule hiding Master's Circle: NOT applicable (revenue $1.2M).
+No dedicated ops/marketing staff → Master's Circle not recommended anyway.
 
 ==============================================================
 MANDATORY PRICE LOOKUP (from audit-write.md tables)
 ==============================================================
 
-Package selected: Fractional COO Advisor
-  Bundled price (from table): $1,297/mo
-  Stand-alone price (from table): $1,797/mo
-  Savings (stand-alone minus bundled): $500/mo
+Marketing package selected: Full Service Marketing — Growth
+  Bundled price (from table): $8,397/mo
+  Stand-alone price (from table): $9,997/mo
+  Savings (stand-alone minus bundled): $1,600/mo
 
-Package selected: Fractional CFO Advisor
-  Bundled price (from table): $1,297/mo
-  Stand-alone price (from table): $1,797/mo
-  Savings (stand-alone minus bundled): $500/mo
+Non-marketing package selected: Elite Coach Plus
+  Bundled price (from table): $3,200/mo
+  Stand-alone price (from table): $3,497/mo
+  Savings (stand-alone minus bundled): $297/mo
 
-Marketing package: NONE — per research notes header "no marketing"
-  Reason: Ryan is already running a self-managed Google Ads campaign at $3,000/mo with strong results.
-  Research notes explicitly flag this as a no-marketing engagement.
-  Marketing (Full Service Marketing — Growth) is deferred to Phase 2 roadmap once intake is delegated.
+Legal AI Workforce (LAW) package selected: none
+  Reason: Team is 2 people; Ryan already uses Claude AI (email routing, fee drafts).
+  LAW included in Phase 3 roadmap once team grows.
 
-LAW package: None
-  Reason: Revenue $1.2M (above $500K floor), but team is 2 people — minimum 1-2 staff needed for implementation.
-  Ryan uses Claude AI for email routing and fee drafts already — LAW included in Phase 3 roadmap.
+AI Avatar / Video Growth add-on selected: none
+  Reason: No transcript mention of interest in video/social content.
 
-AI Avatar: None — no transcript mention of interest in video/social content.
-
-Total monthly investment (bundled): $1,297 + $1,297 = $2,594/mo
-Total savings: $500 + $500 = $1,000/mo
+Total monthly investment (sum of bundled prices): $8,397 + $3,200 = $11,597/mo
+Total savings (sum of all savings): $1,600 + $297 = $1,897/mo
 
 35% cap verification:
   Monthly revenue: $100,000
   35% cap: $35,000
-  Management fees: $2,594/mo
-  Conservative ad spend (self-managed): $7,500 → total $10,094 (10.1%) ✓
-  Aggressive ad spend (self-managed): $25,000 → total $27,594 (27.6%) ✓
+  Management fees: $11,597
+  Conservative ad spend ($7,500) → total $19,097 (19.1%) ✓
+  Aggressive ad spend ($15,000) → total $26,597 (26.6%) ✓
+  Both scenarios well within the 35% cap.
 
-Minimum MRR check: $2,594 > $1,497 ✓
+Minimum MRR check: $11,597 > $1,497 ✓
 
 ==============================================================
-AD SPEND CALCULATION (Advisory — firm self-manages ads)
+AD SPEND CALCULATION
 ==============================================================
 
-Practice area: Criminal Defense (primary) | Location: Morgantown, WV | Geo tier: Tier 4 (1.0x)
-Note: No SMB Team marketing package — ad spend shown as advisory for firm's own campaigns.
+Practice area: Criminal Defense (primary) | Location: Morgantown, WV
+Geographic tier: Tier 5 sub-regional (0.85×) — small WV university city, ~30K population, metro ~120K
 
-CONSERVATIVE ($7,500/mo self-managed):
-  Channel minimums for Criminal Defense:
+CONSERVATIVE ($7,500/mo):
+  Channel minimums from table (Criminal Defense):
     Google PPC min: $2,500
     LSA min: $1,000
     Meta Retargeting min: $1,200
-    Meta Lead Gen min: $500
-    Total channel minimums: $5,200
-  Criminal Defense + High competitiveness floor: $5,000 minimum
-  Firm currently spending $3,000/month self-managed — step-up to $7,500 justified by
-  satellite market expansion (Parkersburg, Charleston, Waynesburg) + LSA layer.
+    Meta Lead Gen min: $1,500
+    Total channel minimums: $6,200
+  Absolute minimum: $3,000 ✓
+  Step-up from current $3,000 self-managed to $7,500 professional management justified:
+    Satellite markets (Parkersburg, Charleston, Waynesburg) require additional budget
+    LSA channel requires minimum $1,000 separate from Google Ads
+    Professional management expands ad groups and targeting beyond current single campaign
   Conservative ad spend: $7,500/mo
 
-AGGRESSIVE ($25,000/mo self-managed):
-  20% rule:
-    Revenue goal: $2M (upper end of stated $1.5M–$2M goal)
-    20% of $2M = $400,000/yr ÷ 12 = $33,333/mo marketing budget
-    Geo multiplier: Tier 4 (1.0x) → $33,333/mo
-    No Spanish campaign adjustment
-    No management fee to subtract (no SMB marketing package)
-    35% cap: $35,000 - $2,594 (FCOO+FCFO fees) = $32,406 available
-    Cap to $25,000 (within cap; leaves room for future marketing package addition)
-  Aggressive ad spend: $25,000/mo
+AGGRESSIVE ($15,000/mo):
+  20% rule calculation:
+    Revenue goal: $2M (upper end of stated $1.5M–$2M)
+    $2M × 20% ÷ 12 = $33,333 monthly marketing budget
+    Minus management fee (Growth: $8,397) = $24,936 available ad spend
+    Geo multiplier (Tier 5: 0.85×): $24,936 × 0.85 = $21,196
+    No Spanish campaign
+  Reverse math validation:
+    Revenue goal $2M ÷ 12 = $166,667/month target
+    Avg case value $7,500 (midpoint of criminal defense default $5K–$10K)
+    Cases needed: $166,667 ÷ $7,500 = 22.2 cases/month
+    Close rate 15% → required leads: 22.2 ÷ 0.15 = 148 leads
+    Blended CPL ~$150 → required spend: 148 × $150 = $22,200
+  Higher of 20% rule ($21,196) vs reverse math ($22,200) = $22,200
+  Growth tier cap: $15,000/mo
+  $22,200 exceeds Growth tier cap → capping at Growth tier cap of $15,000
+  Note: If Ryan wants to pursue $22,000+ ad spend, tier upgrade to Dominate ($12,497/mo) would be required
+  Aggressive ad spend: $15,000/mo (Growth tier cap)
 
 ==============================================================
 ROI PROJECTIONS
@@ -90,96 +106,91 @@ ROI PROJECTIONS
 
 Practice area defaults used (case value not stated in transcript):
   Criminal defense default: $5,000–$10,000 per case
-  Midpoint used: $7,000
-  Close rate: 15% (not stated, using default)
+  Conservative scenario uses: $5,000/case
+  Aggressive scenario uses: $7,500/case (midpoint)
+  Close rate: 15% (not stated — using default)
+  All projections labeled as estimates in client-facing materials.
 
-CONSERVATIVE SCENARIO ($7,500/mo ad spend):
-  Channel split: $5,000 Google Search, $2,500 LSA
-  Google Search CPL: midpoint $450, +20% cushion = $540
-    Leads: $5,000 / $540 = 9.3
-  LSA CPL: midpoint $300, +20% cushion = $360
-    Leads: $2,500 / $360 = 6.9
-  Total leads: ~16
-  Cases: 16 × 15% = 2.4 → 2–3 cases
-  Revenue: 2.5 × $7,000 = $17,500
-  Return: $17,500 / $7,500 = 2.3x → ~2x
+Criminal Defense CPL ranges (blended, Tier 5 market):
+  Google Search midpoint: $112.50 (smaller market discount)
+  Blended CPL (Google + LSA + Meta): approximately $125–$150
 
-AGGRESSIVE SCENARIO ($25,000/mo ad spend):
-  Channel split: $16,000 Google Search, $5,000 LSA, $2,500 Meta Retargeting, $1,500 Meta Lead Gen
-  Google Search CPL: midpoint $450, no cushion
-    Leads: $16,000 / $450 = 35.6
-  LSA CPL: midpoint $300, no cushion
-    Leads: $5,000 / $300 = 16.7
-  Meta Retargeting CPL: midpoint ~$400
-    Leads: $2,500 / $400 = 6.3
-  Meta Lead Gen CPL: midpoint ~$500
-    Leads: $1,500 / $500 = 3.0
-  Total leads: ~62
-  Cases: 62 × 15% = 9.3 → 9–10 cases
-  Revenue: 9.5 × $7,000 = $66,500 → ~$63,000–$70,000
-  Return: $63,000 / $25,000 = 2.5x → ~2-3x
+CONSERVATIVE SCENARIO ($7,500/mo):
+  CPL (Google Search midpoint + 20% cushion): $135
+  Leads: $7,500 ÷ $135 = 55.6 → ~56 leads
+  Cases: 56 × 15% = 8.4 → ~8 cases
+  Revenue: 8 × $5,000 = $40,000
+  Return: $40,000 ÷ $7,500 = 5.3×
+  Block 4 display: 7–9 cases, ~$40,000 revenue, ~5×
 
-NOTE: All projections use practice area default case values. Actual results will vary.
-All ROI labeled as estimates in client-facing materials.
+AGGRESSIVE SCENARIO ($15,000/mo):
+  CPL (no cushion, multi-channel blended): $125
+  Leads: $15,000 ÷ $125 = 120 leads
+  Cases: 120 × 15% = 18 cases
+  Revenue: 18 × $7,500 = $135,000
+  Return: $135,000 ÷ $15,000 = 9×
+  Block 4 display: 16–20 cases, ~$135,000 revenue, ~9×
 
 ==============================================================
 DBM STATEMENT (Block 1)
 ==============================================================
 
-"We help criminal defense attorneys who have already built real revenue traction
-get the operations, the financial clarity, and the team structure they need
-so they can grow past $1.2M to $2M on a 30-hour workweek — without the burnout."
+"We help established criminal defense attorneys generating $1M+ get the marketing
+infrastructure, the coaching accountability, and the team structure they need so they can
+grow past $1.5M to $2M — on a 30-hour workweek, without the burnout."
 
 ==============================================================
 QUICK WIN OPPORTUNITIES
 ==============================================================
 
 1. LEAD GEN / QUICK WIN: Add Local Service Ads
-   Why: LSAs appear above all other Google results; firm not observed in LSA placement
-   Competitor: Slavey & Shumaker (101 Google reviews, 4.8 stars — positioned for LSA dominance)
-   Opportunity: Google Screened placement at top of search results on pay-per-lead model
+   Why: LSAs appear above all Google results; firm not in LSA placement; low reviews limit eligibility
+   Competitor: Slavey & Shumaker (101 Google reviews) — positioned for LSA dominance
+   Opportunity: Google Screened placement; pay-per-lead model
 
-2. LEAD GEN / QUICK WIN: Expand Google Ads to Satellite Markets
-   Why: Firm has offices in Parkersburg, Waynesburg, Charleston — no targeted campaigns observed
-   Opportunity: Multi-city geo campaigns multiply lead flow without adding headcount
+2. LEAD GEN / QUICK WIN: Launch Geo-Targeted Campaigns for Satellite Markets
+   Why: Offices in Parkersburg, Waynesburg, Charleston generating zero paid leads
+   Opportunity: Multi-city campaigns multiply addressable market within existing footprint
 
 3. LEAD GEN / LONG-TERM PLAY: Build Systematic Review Generation Strategy
-   Why: Slavey & Shumaker (101 Google reviews), Moore Law Firm (~40 Google reviews) dominate
-   while Umina Legal's reviews page is empty; Facebook shows "not yet rated"
+   Why: Reviews page empty; Slavey & Shumaker has 101 reviews vs 0 confirmed for Umina Legal
    Competitor: Slavey & Shumaker, The Moore Law Firm
-   Opportunity: Review strategy builds organic credibility and LSA competitiveness simultaneously
+   Opportunity: Reviews build organic credibility and LSA competitiveness simultaneously
 
 4. INTAKE / QUICK WIN: Hire and Train a Dedicated Intake Coordinator
-   Why: Ryan handling all intake is the primary growth bottleneck and burnout risk
-   Opportunity: Every lead gets answered professionally; Ryan focuses on billable work
+   Why: Ryan handling all intake is primary growth bottleneck and burnout risk
+   Opportunity: Fast professional intake response without Ryan; frees 15–30 hours/month
 
-5. INTAKE / QUICK WIN: Implement a Working CRM (Clean Practice Panther Rebuild)
-   Why: Practice Panther unusable; no pipeline visibility; lead conversion unmeasured
-   Opportunity: Full lead-to-case tracking enables marketing ROI measurement and growth planning
+5. INTAKE / QUICK WIN: Rebuild Practice Panther (Clean Slate CRM)
+   Why: Current instance unusable; no pipeline visibility; lead-to-case conversion unmeasured
+   Opportunity: Full lead tracking enables marketing ROI measurement and confident scaling
 
-6. TEAM / LONG-TERM PLAY: Build Role Clarity and Accountability for Assistant
-   Why: One assistant with undefined role creates operational fragility
-   Opportunity: Documented roles + weekly accountability = foundation for next hire
+6. PROFIT / QUICK WIN: Engage Professional Bookkeeping
+   Why: Ryan acknowledges bookkeeping as a weakness; no financial visibility at $1.2M revenue
+   Opportunity: Monthly P&L enables confident ad spend and hiring decisions
 
-7. PROFIT / QUICK WIN: Engage Professional Bookkeeping
-   Why: Ryan acknowledges bookkeeping is a weakness; no financial visibility
-   Opportunity: Monthly P&L reporting enables confident marketing investment decisions
+7. LEAD GEN / LONG-TERM PLAY: Build Online Review Generation Strategy
+   Why: Market standard is 40–101 reviews; Umina Legal has 0 confirmed
+   Competitor: Slavey & Shumaker (101 reviews, 4.8 stars)
+   Opportunity: Systematic post-case reviews build LSA eligibility and organic credibility
 
-8. LEAD GEN / LONG-TERM PLAY: Consolidate NAP and Directory Presence
-   Why: Two URLs (uminalegal.com / umina-legal.com) risk NAP inconsistency affecting SEO
-   Opportunity: Unified directory presence strengthens local SEO authority over time
+8. TEAM / LONG-TERM PLAY: Define Role Clarity and Accountability for Assistant
+   Why: No documented processes or accountability structure for existing team member
+   Opportunity: Creates operational foundation and enables the next hire to onboard efficiently
 
 ==============================================================
-FIRST 90 DAYS BULLETS (FCOO + FCFO — no marketing)
+FIRST 90 DAYS BULLETS (Growth + Elite Coach Plus)
 ==============================================================
 
-1. FCOO Advisor engagement begins — operations audit, intake coordinator job description,
-   and hiring roadmap delivered within the first 30 days
-2. FCFO Advisor engagement begins — bookkeeping vendor engaged, clean financial records
-   from day one, first monthly P&L report at 30 days
-3. Intake coordinator hiring process launches — FCOO-designed role definition and
-   interview scoring rubric ready immediately
-4. Coaching community active — first group coaching session and criminal defense mastermind
-   scheduled within week one
-5. Google Ads advisory — satellite market expansion plan (Parkersburg, Charleston, Waynesburg)
-   developed for firm's self-managed campaign
+1. Launch expanded Google Ads campaigns — charge-type ad groups (assault, DUI, drug charges,
+   federal crimes, domestic violence) and geo-targeted satellite market campaigns for
+   Parkersburg, Charleston, and Waynesburg from day one
+2. Begin website rebuild — new criminal defense site with mobile performance optimization
+   and charge-specific landing pages to capture organic traffic the current site cannot rank for
+3. Implement systematic review generation — post-case review request workflows targeting
+   10+ new Google reviews per quarter to begin closing the gap with Slavey & Shumaker
+4. Elite Coach Plus kickoff — first group coaching session and criminal defense mastermind
+   scheduled in week one; intake delegation framework and 90-day accountability plan built
+   in the first sessions
+5. Audit and consolidate NAP data — resolving the uminalegal.com vs umina-legal.com
+   fragmentation and correcting directory listings to unlock local SEO ranking signals
