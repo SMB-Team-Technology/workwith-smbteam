@@ -33,81 +33,80 @@ OUTPUT_PATH    = "fiore-legal/FioreLegal_July1_2026_Proposal.pptx"
 WEBSITE_SCREENSHOT_PATH = None   # Set to a local PNG path to show a screenshot; None = skip entirely
 
 # ── Slide 1 ──────────────────────────────────────────────────────
-URGENCY_SCORE = "7"
+URGENCY_SCORE = "8"
 
 # Pillar status — each is ("RED" | "AMBER" | "GREEN", label, one-line detail)
 PILLARS = [
-    ("RED",   "CRITICAL",  "No paid ads observed"),   # Lead Generation
-    ("AMBER", "AMBER",     "No intake team confirmed"), # Intake
-    ("AMBER", "AMBER",     "No ops layer confirmed"),   # Team
-    ("AMBER", "AMBER",     "Revenue unconfirmed"),      # Profit Plan
+    ("RED",   "CRITICAL",  "No paid ads in any market"),  # Lead Generation
+    ("AMBER", "NEEDS WORK", "No after-hours coverage"),   # Intake
+    ("AMBER", "NEEDS WORK", "No ops layer confirmed"),    # Team
+    ("AMBER", "NEEDS WORK", "Revenue unconfirmed"),       # Profit Plan
 ]
 PILLAR_NAMES = ["Lead Generation", "Intake", "Team", "Profit Plan"]
 
 # Key findings — list of ("neg"|"pos", "one-sentence finding")
 FINDINGS = [
-    ("neg", "Competitors own all paid PI search in LA — Fiore Legal is invisible in Google Ads, LSA, and Meta."),
-    ("neg", "8 offices with no confirmed intake system — leads lost with no visibility into how many."),
-    ("neg", "No ops layer across 9 attorneys — growth capped by founder's personal involvement."),
-    ("pos", "25-year brand + 8 locations + bilingual team = a powerful foundation ready to scale digitally."),
+    ("neg", "No paid advertising across Google, LSA, or Meta — competitors own every high-intent PI search in all 8 markets while Fiore Legal relies on organic reputation alone."),
+    ("neg", "Eight offices with no confirmed intake system — leads are being lost across locations with no visibility into how many or where, a problem that compounds when paid volume begins."),
+    ("neg", "No ops or management layer across 9 attorneys and 8 offices — the firm's growth is structurally capped by founder involvement in decisions at every location."),
+    ("pos", "Eight physical locations + 25-year reputation + $250M recovered = structural market advantage that paid marketing can multiply immediately across every market served."),
 ]
 
 # Competitor table — list of (name, "XXX reviews", "brief note")
 COMPETITORS = [
-    ("Downtown LA Law Group",      "624+ Avvo reviews", "bilingual · 11+ markets"),
-    ("Sweet James Accident Attys", "600+ Google/Yelp",  "$22M verdict · multi-state"),
-    ("Adamson Ahdoot LLP",         "102 Avvo reviews",  "LA/Pasadena overlap"),
+    ("West Coast Trial Lawyers",  "510 reviews / 4.9★", "Full digital stack · all PI verticals"),
+    ("Downtown LA Law Group",     "284 reviews / 4.9★", "Bilingual · 624 Avvo · 11+ markets"),
+    ("Adamson Ahdoot LLP",        "475 reviews / 4.8★", "SGV overlap · Best Lawyers 2026"),
 ]
-CLIENT_REVIEWS      = "Not yet verified"
+CLIENT_REVIEWS      = "11 reviews / 3.2★"
 CLIENT_REVIEWS_NOTE = "← You are here"
 
 # Stage strip (right panel, Slide 1)
-STAGE_TEXT = "Stage 4: Small Business Manager  →  Goal: Stage 6, Law Firm Owner"
+STAGE_TEXT = "Stage 4: Small Business Manager  →  Goal: Law Firm CEO / Owner"
 
 # ── Slide 2 ──────────────────────────────────────────────────────
-SLIDE_2_TITLE = "Your Growth Plan: 3 Priorities to Scale All 8 Markets"
+SLIDE_2_TITLE = "Your Growth Plan: 3 Priorities to Reach Market Dominance"
 
 SMB_MODEL_DESC = (
-    "Lead Generation, Intake, Team, and Profit must all work "
-    "together — missing any one means growth stalls regardless "
-    "of effort or ad spend. When all four pillars are built, "
-    "Mauro can step back and trust the firm generates consistent "
-    "case flow without him personally driving every relationship."
+    "Four pillars — Marketing, Intake, Team, and Profit — "
+    "all running in parallel, across every one of your eight locations. "
+    "When the system is built right, Fiore Legal generates cases, converts them, "
+    "and tracks the return — without Mauro driving every decision."
 )
 
-GOAL_HEADLINE = "$1.5M → $3M+ annual revenue"
-GOAL_DBM      = "A firm that grows without Mauro at the center"
+GOAL_HEADLINE = "$1.5M → $3M+ revenue"
+GOAL_DBM      = "Eight offices running — without me in every decision"
 
 # Each priority: (line1, line2, accent_color_hex, [5 bullet strings])
 PRIORITIES = [
     (
         "Build the", "Marketing Engine", "1D4ED8",
         [
-            "Launch Google Ads for PI/MVA across all 8 markets",
-            "Get Google Screened — activate LSA firm-wide",
-            "Launch Spanish PI campaigns — lower CPL, same ROI",
-            "Build geo landing pages for all 8 office cities",
-            "A digital engine generating cases around the clock",
+            "Turn Google into a lead machine in all 8 markets",
+            "Launch Spanish campaigns — same cases, lower CPLs",
+            "Get Google Screened — appear above ads in LSA",
+            "Build city pages per office — rank where you practice",
+            "Close the 46x review gap vs. top LA competitors",
         ],
     ),
     (
         "Fix Intake &", "Stop Losing Cases", "0F766E",
         [
-            "Deploy after-hours coverage across all 8 offices",
-            "Standardize lead follow-up across every location",
-            "Bilingual intake for Spanish-speaking PI clients",
-            "Eliminate the gap between lead and consultation",
-            "Never lose a signed case to a slow response again",
+            "Deploy after-hours intake across all 8 locations",
+            "Standardize scripts and response times firm-wide",
+            "Capture every PI lead in minutes, not hours",
+            "Track follow-up rate by location — find the leaks",
+            "Convert leads your 25-year brand already earns",
         ],
     ),
     (
         "Install Team &", "Profit Systems", "6D28D9",
         [
-            "Build an ops layer to manage 8 locations",
-            "Establish location-level P&L for each office",
-            "Create KPIs and accountability firm-wide",
-            "Confirm revenue baseline in first 90 days",
-            "Free Mauro from daily operational decisions",
+            "Build ops layer — Mauro exits daily decisions",
+            "Deploy FCOO to structure accountability firm-wide",
+            "Establish location P&L — see which offices profit",
+            "FCFO sets revenue baseline in the first 90 days",
+            "Scale case volume without growing owner workload",
         ],
     ),
 ]
@@ -118,19 +117,19 @@ PACKAGES = [
     (
         "FULL SERVICE MARKETING — GROWTH",
         "$7,397", "$8,997/mo",
-        "Google Ads · LSA · Meta · Spanish campaigns · GBP · SEO",
+        "Google Ads · LSA · Meta · Spanish campaigns · 8-market GBP",
         "1D4ED8",
     ),
     (
-        "MASTER'S CIRCLE",
-        "$4,600", "$4,997/mo",
-        "Weekly coaching · PI masterminds · Quarterly workshops",
+        "MASTER'S CIRCLE + FCOO + FCFO ADVISORS",
+        "$7,991", "$10,591/mo",
+        "Weekly coaching · Fractional COO & CFO · 8-location P&L",
         "6D28D9",
     ),
 ]
 
-BUNDLE_TOTAL   = "$11,997 / mo"
-BUNDLE_SAVINGS = "Save $1,997/mo by bundling"
+BUNDLE_TOTAL   = "$15,388 / mo"
+BUNDLE_SAVINGS = "Save $4,200/mo by bundling"
 
 AD_SPEND_NOTE = (
     "+ Recommended ad spend: $10,000–$40,000/mo paid directly to Google/Meta"
@@ -144,16 +143,16 @@ AGGRESSIVE_RESULT  = "$210,000 revenue · 5.25× ROAS"
 
 # Timeline — 5 items: (milestone_label, action_text)
 TIMELINE = [
-    ("Day 1",   "Google Ads + LSA launched for PI in primary LA markets"),
-    ("Day 14",  "Spanish-language PI campaign live across LA"),
-    ("Week 2",  "GBP optimization + review strategy deployed firm-wide"),
-    ("Week 3",  "City landing pages started for 4 primary office markets"),
-    ("Month 3", "Intake system standardized across all 8 locations"),
+    ("Day 1",   "Google Ads + LSA live: MVA, PI, and workers' comp"),
+    ("Day 14",  "Spanish PI paid campaigns launched in Los Angeles"),
+    ("Week 2",  "GBP review strategy deployed across all 8 offices"),
+    ("Week 3",  "FCOO + FCFO kickoff; revenue baseline + P&L initiated"),
+    ("Month 3", "City SEO pages live; coaching KPIs and cadence set"),
 ]
 
 CLOSING_QUOTE = (
-    '"Every one of your 8 locations generating consistent case flow from digital '
-    '— not because you\'re there, but because the system is."'
+    '"Twenty-five years building the reputation. Now we build the system '
+    'that makes all eight locations generate leads — without me at the center of it."'
 )
 
 # ═══════════════════════════════════════════════════════════════════
