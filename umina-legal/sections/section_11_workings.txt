@@ -1,57 +1,67 @@
 SECTION 11 WORKINGS — UMINA LEGAL
-Generated: June 30, 2026
+Generated: June 30, 2026 | Updated: July 1, 2026 (Pass 2 correction)
 
 ==============================================================
 PACKAGE DECISION CORRECTION
 ==============================================================
 
-Package decision file had confidence: LOW because revenue was estimated at $570K from HubSpot ranges.
-Research notes clearly state: "Annual revenue: ~$100k/month = approximately $1.2M annual (Ryan's stated figure)"
-Correcting to $1.2M annual revenue. This moves marketing tier from Starter → Growth.
+Package decision file (confidence: LOW) used a HubSpot revenue estimate of $570K.
+Research notes CLEARLY STATE: "Annual revenue: ~$100k/month = approximately $1.2M annual (Ryan's stated figure)"
+Correcting to $1.2M annual revenue.
+
+Research notes header EXPLICITLY STATES: "Package: FCOO + FCFO (no marketing)"
+This overrides the pipeline's package_decision.json selection of Marketing Growth + Elite Coach Plus.
+Revenue at $1.2M with a team of 2 and operational/financial pain points confirms FCOO + FCFO as the correct fit.
 
 Revenue verified: $1.2M annual ($100K/month, stated by Ryan on call)
-Revenue band: $1M–$3M → Growth tier
+Revenue band: $1M+ | Team: Under 5 (2 confirmed — Ryan + 1 assistant)
+Package confirmed: FCOO Advisor + FCFO Advisor (no marketing package)
 
 ==============================================================
-SELECTED PACKAGES
+MANDATORY PRICE LOOKUP (from audit-write.md tables)
 ==============================================================
 
-Marketing package: Full Service Marketing — Growth
-  Bundled price (from table): $6,397/mo
-  Stand-alone price (from table): $6,997/mo
-  Savings: $600/mo
+Package selected: Fractional COO Advisor
+  Bundled price (from table): $1,297/mo
+  Stand-alone price (from table): $1,797/mo
+  Savings (stand-alone minus bundled): $500/mo
 
-Non-marketing package: Elite Coach Plus
-  Bundled price (from table): $3,200/mo
-  Stand-alone price (from table): $3,497/mo
-  Savings: $297/mo
+Package selected: Fractional CFO Advisor
+  Bundled price (from table): $1,297/mo
+  Stand-alone price (from table): $1,797/mo
+  Savings (stand-alone minus bundled): $500/mo
+
+Marketing package: NONE — per research notes header "no marketing"
+  Reason: Ryan is already running a self-managed Google Ads campaign at $3,000/mo with strong results.
+  Research notes explicitly flag this as a no-marketing engagement.
+  Marketing (Full Service Marketing — Growth) is deferred to Phase 2 roadmap once intake is delegated.
 
 LAW package: None
-  Reason: Team size is 2 (Ryan + 1 assistant). Revenue is $1.2M (above $500K floor).
-  However, with aggressive ad spend of $25,000/mo + $9,597/mo management fees = $34,597/mo
-  which is 34.6% of $100K monthly revenue — already near the 35% cap.
-  Adding LAW AI Essentials ($2,597/mo) would push total to $37,194/mo (37.2%) — over cap.
-  LAW included in Phase 3 roadmap as a future recommendation when revenue scales.
+  Reason: Revenue $1.2M (above $500K floor), but team is 2 people — minimum 1-2 staff needed for implementation.
+  Ryan uses Claude AI for email routing and fee drafts already — LAW included in Phase 3 roadmap.
 
-AI Avatar: None. No transcript mention of interest in video/social content.
+AI Avatar: None — no transcript mention of interest in video/social content.
 
-Total monthly investment: $6,397 + $3,200 = $9,597/mo
-Total savings: $600 + $297 = $897/mo
+Total monthly investment (bundled): $1,297 + $1,297 = $2,594/mo
+Total savings: $500 + $500 = $1,000/mo
 
 35% cap verification:
   Monthly revenue: $100,000
   35% cap: $35,000
-  Management fees: $9,597
-  Conservative ad spend: $7,500 → total $17,097 (17.1%) ✓
-  Aggressive ad spend: $25,000 → total $34,597 (34.6%) ✓ (just within cap)
+  Management fees: $2,594/mo
+  Conservative ad spend (self-managed): $7,500 → total $10,094 (10.1%) ✓
+  Aggressive ad spend (self-managed): $25,000 → total $27,594 (27.6%) ✓
+
+Minimum MRR check: $2,594 > $1,497 ✓
 
 ==============================================================
-AD SPEND CALCULATION
+AD SPEND CALCULATION (Advisory — firm self-manages ads)
 ==============================================================
 
 Practice area: Criminal Defense (primary) | Location: Morgantown, WV | Geo tier: Tier 4 (1.0x)
+Note: No SMB Team marketing package — ad spend shown as advisory for firm's own campaigns.
 
-CONSERVATIVE ($7,500/mo):
+CONSERVATIVE ($7,500/mo self-managed):
   Channel minimums for Criminal Defense:
     Google PPC min: $2,500
     LSA min: $1,000
@@ -59,19 +69,19 @@ CONSERVATIVE ($7,500/mo):
     Meta Lead Gen min: $500
     Total channel minimums: $5,200
   Criminal Defense + High competitiveness floor: $5,000 minimum
-  Firm currently spending $3,000/month (self-managed) — meaningful step-up to $7,500
-  with professional management justified by satellite market expansion + optimization.
+  Firm currently spending $3,000/month self-managed — step-up to $7,500 justified by
+  satellite market expansion (Parkersburg, Charleston, Waynesburg) + LSA layer.
   Conservative ad spend: $7,500/mo
 
-AGGRESSIVE ($25,000/mo):
+AGGRESSIVE ($25,000/mo self-managed):
   20% rule:
     Revenue goal: $2M (upper end of stated $1.5M–$2M goal)
     20% of $2M = $400,000/yr ÷ 12 = $33,333/mo marketing budget
     Geo multiplier: Tier 4 (1.0x) → $33,333/mo
     No Spanish campaign adjustment
-    Marketing management fee: $6,397/mo
-    Available ad spend: $33,333 - $6,397 = $26,936 → rounded to $25,000 (stays within 35% cap)
-  Growth tier cap: $40,000 → $25,000 is within cap ✓
+    No management fee to subtract (no SMB marketing package)
+    35% cap: $35,000 - $2,594 (FCOO+FCFO fees) = $32,406 available
+    Cap to $25,000 (within cap; leaves room for future marketing package addition)
   Aggressive ad spend: $25,000/mo
 
 ==============================================================
@@ -116,9 +126,9 @@ All ROI labeled as estimates in client-facing materials.
 DBM STATEMENT (Block 1)
 ==============================================================
 
-"We help criminal defense attorneys who are building toward $2M get the clients,
-the systems, and the team structure they need — so they can scale without
-sacrificing their health or their time."
+"We help criminal defense attorneys who have already built real revenue traction
+get the operations, the financial clarity, and the team structure they need
+so they can grow past $1.2M to $2M on a 30-hour workweek — without the burnout."
 
 ==============================================================
 QUICK WIN OPPORTUNITIES
@@ -126,7 +136,7 @@ QUICK WIN OPPORTUNITIES
 
 1. LEAD GEN / QUICK WIN: Add Local Service Ads
    Why: LSAs appear above all other Google results; firm not observed in LSA placement
-   Competitor: Slavey & Shumaker (10.0 Avvo, 21 reviews — positioned for LSA dominance)
+   Competitor: Slavey & Shumaker (101 Google reviews, 4.8 stars — positioned for LSA dominance)
    Opportunity: Google Screened placement at top of search results on pay-per-lead model
 
 2. LEAD GEN / QUICK WIN: Expand Google Ads to Satellite Markets
@@ -134,9 +144,10 @@ QUICK WIN OPPORTUNITIES
    Opportunity: Multi-city geo campaigns multiply lead flow without adding headcount
 
 3. LEAD GEN / LONG-TERM PLAY: Build Systematic Review Generation Strategy
-   Why: Slavey & Shumaker (21), Moore Law Firm (20) have strong profiles; Umina not in Avvo rankings
-   Competitor: Slavey & Shumaker, Moore Law Firm
-   Opportunity: Review strategy builds organic credibility and LSA competitiveness
+   Why: Slavey & Shumaker (101 Google reviews), Moore Law Firm (~40 Google reviews) dominate
+   while Umina Legal's reviews page is empty; Facebook shows "not yet rated"
+   Competitor: Slavey & Shumaker, The Moore Law Firm
+   Opportunity: Review strategy builds organic credibility and LSA competitiveness simultaneously
 
 4. INTAKE / QUICK WIN: Hire and Train a Dedicated Intake Coordinator
    Why: Ryan handling all intake is the primary growth bottleneck and burnout risk
@@ -159,15 +170,16 @@ QUICK WIN OPPORTUNITIES
    Opportunity: Unified directory presence strengthens local SEO authority over time
 
 ==============================================================
-FIRST 90 DAYS BULLETS
+FIRST 90 DAYS BULLETS (FCOO + FCFO — no marketing)
 ==============================================================
 
-1. Launch Google Ads expansion — increase budget to conservative level and add satellite market
-   geo campaigns for Parkersburg WV, Charleston WV, and Waynesburg PA
-2. Website optimization — mobile performance improvements (target PageSpeed 70+) and
-   full attorney bio/credibility page
-3. Begin Google Screened verification process for Local Service Ads eligibility
-4. Coaching kickoff — intake delegation framework, intake coordinator job description,
-   and hiring roadmap with Ryan
-5. Professional bookkeeping engagement — establish clean financial records and
-   monthly P&L reporting baseline
+1. FCOO Advisor engagement begins — operations audit, intake coordinator job description,
+   and hiring roadmap delivered within the first 30 days
+2. FCFO Advisor engagement begins — bookkeeping vendor engaged, clean financial records
+   from day one, first monthly P&L report at 30 days
+3. Intake coordinator hiring process launches — FCOO-designed role definition and
+   interview scoring rubric ready immediately
+4. Coaching community active — first group coaching session and criminal defense mastermind
+   scheduled within week one
+5. Google Ads advisory — satellite market expansion plan (Parkersburg, Charleston, Waynesburg)
+   developed for firm's self-managed campaign

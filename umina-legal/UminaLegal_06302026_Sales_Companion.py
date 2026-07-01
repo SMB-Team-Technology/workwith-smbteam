@@ -137,7 +137,7 @@ def quote_block(text):
 story = []
 
 story.append(Paragraph("Umina Legal PLLC — Ryan Umina", S["title"]))
-story.append(Paragraph("Sales Companion  |  June 30, 2026  |  Rep: Nick Holderman", S["subtitle"]))
+story.append(Paragraph("Sales Companion  |  June 30, 2026  |  Rep: Nick Holderman  |  Package: FCOO + FCFO (No Marketing)", S["subtitle"]))
 story.append(thin_rule())
 
 # ── Prospect Snapshot ──
@@ -178,48 +178,48 @@ story.append(Spacer(1, 2))
 story.append(Paragraph("<b>What he wants:</b>", S["subsection"]))
 story.append(bd("<b>$2M without more hours.</b> Scale revenue without scaling his personal workload."))
 story.append(bd("<b>Delegation that preserves quality.</b> Move intake off his plate without losing his standards."))
-story.append(bd("<b>Burnout-proof growth.</b> Systems that protect him the way the prior attempt didn't."))
+story.append(bd("<b>Burnout-proof growth.</b> Systems and financial clarity that protect him the way the prior attempt didn't."))
 
 story.append(Spacer(1, 2))
 
 story.append(Paragraph("<b>What is stopping him:</b>", S["subsection"]))
 story.append(b("<b>Intake bottleneck.</b> Every call goes to Ryan personally — growth multiplies his load."))
-story.append(b("<b>Single lead channel.</b> Google Ads only; no organic, LSA, or Meta presence."))
-story.append(b("<b>No CRM.</b> Practice Panther is unusable — no pipeline or conversion visibility."))
-story.append(b("<b>Weak bookkeeping.</b> Ryan can't measure real margins or ad ROI."))
-story.append(b("<b>Burnout caution.</b> Prior experience makes him risk-averse — needs a plan, not just spend."))
+story.append(b("<b>No ops layer.</b> Two-person firm with no management structure between Ryan and the work."))
+story.append(b("<b>Weak bookkeeping.</b> Ryan acknowledged this — no monthly P&L, no cost-per-acquisition data."))
+story.append(b("<b>Unusable CRM.</b> Practice Panther has years of disorganized data — no pipeline visibility."))
+story.append(b("<b>Burnout caution.</b> Prior scaling attempt failed — he needs a structured plan, not just spend."))
 
 story.append(thin_rule())
 
-# ── Why This Marketing Package ──
-story.append(Paragraph("Why This Marketing Package", S["section"]))
+# ── Why the FCOO Advisor ──
+story.append(Paragraph("Why the Fractional COO Advisor", S["section"]))
 
 story.append(Paragraph("<b>What it does for him:</b>", S["subsection"]))
-story.append(bd("Turns a single $3K/mo self-managed campaign into a professionally managed multi-channel engine — more leads, less Ryan managing it."))
-story.append(bd("Adds satellite market campaigns for Parkersburg, Waynesburg, and Charleston — offices he has but isn't generating leads from."))
-story.append(bd("Builds the organic and LSA presence that lets him own the top of Google, not just the paid slots."))
+story.append(bd("Builds the operations layer that lets intake leave Ryan's plate without losing his quality standards."))
+story.append(bd("Creates the team structure, role clarity, and accountability that makes the next hire a system — not a gamble."))
+story.append(bd("Gives Ryan a strategic partner to build the operational infrastructure that supports $2M without burnout."))
 
-story.append(Paragraph("<b>Full Service Marketing — Growth  |  $6,397/mo bundled</b>", S["subsection"]))
-story.append(b("Revenue ~$1.2M/yr (stated on call) — falls in $1M–$3M band; Growth tier is the correct match."))
-story.append(b("Criminal defense + PI practice mix; Starter is the floor for PI — Growth is the correct tier."))
-story.append(b("Retail stand-alone is $6,997/mo — bundled saves $600/mo vs. stand-alone."))
-story.append(b("At $25K aggressive ad spend: $6,397 + $25,000 = $31,397 = 31.4% of revenue, under the 35% cap."))
+story.append(Paragraph("<b>Fractional COO Advisor  |  $1,297/mo bundled</b>", S["subsection"]))
+story.append(b("Revenue $1M+, team under 5: FCOO Advisor is the correct eligibility match for this stage."))
+story.append(b("Ryan's primary pain: no ops layer, no delegation, no ability to step away — exactly what FCOO solves."))
+story.append(b("Includes Elite Coach group deliverables: weekly coaching, masterminds, quarterly and annual workshops."))
+story.append(b("Retail stand-alone is $1,797/mo — bundled saves $500/mo vs. stand-alone."))
 
 story.append(thin_rule())
 
-# ── Why This Coaching Package ──
-story.append(Paragraph("Why This Coaching Package", S["section"]))
+# ── Why the FCFO Advisor ──
+story.append(Paragraph("Why the Fractional CFO Advisor", S["section"]))
 
 story.append(Paragraph("<b>What it does for him:</b>", S["subsection"]))
-story.append(bd("Gives Ryan the delegation framework to move intake off his plate without losing the quality he values."))
-story.append(bd("Connects him with criminal defense peers who have already solved the operator-to-owner transition."))
-story.append(bd("Builds the accountability and team structure that protects him from repeating the prior burnout."))
+story.append(bd("Turns $100K/month in revenue from a feel-good number into a transparent financial picture with actual margins."))
+story.append(bd("Establishes the bookkeeping infrastructure Ryan called out as a weakness — clean P&L from month one."))
+story.append(bd("Tracks cost-per-acquisition on his Google Ads so every budget decision is grounded in real ROI data."))
 
-story.append(Paragraph("<b>Elite Coach Plus  |  $3,200/mo bundled</b>", S["subsection"]))
-story.append(b("Revenue $400K–$1M+ with team under 5 members — Elite Coach Plus is the standard recommendation."))
-story.append(b("Ryan's stated goal (operator to owner) is precisely what this program is built to deliver."))
-story.append(b("Retail stand-alone is $3,497/mo — bundled saves $297/mo vs. stand-alone."))
-story.append(b("Includes weekly group coaching, practice area masterminds, quarterly workshops, and one annual in-person event."))
+story.append(Paragraph("<b>Fractional CFO Advisor  |  $1,297/mo bundled</b>", S["subsection"]))
+story.append(b("Ryan explicitly acknowledged bookkeeping is a weakness — financial clarity is a stated need, not an assumption."))
+story.append(b("Practice Panther is unusable — FCFO engagement includes financial systems implementation support."))
+story.append(b("At $1.2M revenue with no P&L visibility, every scaling decision is a guess. FCFO fixes that."))
+story.append(b("Retail stand-alone is $1,797/mo — bundled saves $500/mo vs. stand-alone."))
 
 
 # ══════════════════════════════════════════════════════════
@@ -231,42 +231,38 @@ story.append(Paragraph("Umina Legal — Sales Companion (continued)", S["title"]
 story.append(thin_rule())
 
 # ── Why This Ad Spend ──
-story.append(Paragraph("Why This Ad Spend", S["section"]))
+story.append(Paragraph("Advisory: Google Ads Investment (Self-Managed)", S["section"]))
 
-story.append(Paragraph("<b>What it does for him:</b>", S["subsection"]))
-story.append(bd("More spend with professional management converts existing market demand into cases Ryan doesn't have to personally chase."))
-story.append(bd("Satellite market campaigns turn three offices with no leads into active revenue streams — no new headcount needed."))
+story.append(Paragraph("<b>Context:</b>", S["subsection"]))
+story.append(b("Ryan currently runs $3,000/mo in Google Ads self-managed — strong signal that this market responds to paid search."))
+story.append(b("No SMB Team marketing package recommended at this stage — existing campaign is working; internal systems are the gap."))
+story.append(b("Audit includes advisory ad spend targets for when internal systems are ready to handle higher lead volume."))
 
-story.append(Paragraph("<b>Recommended Ad Spend Range:</b>", S["subsection"]))
-story.append(b("<b>Conservative:</b> $7,500/mo — meaningful step up from current $3K, adds satellite markets and LSA setup."))
-story.append(b("<b>Aggressive:</b> $25,000/mo — full multi-channel build across Morgantown and all satellite markets."))
+story.append(Paragraph("<b>Recommended Self-Managed Ad Spend Range:</b>", S["subsection"]))
+story.append(b("<b>Conservative:</b> $7,500/mo — step up from $3K adds satellite markets (Parkersburg, Waynesburg, Charleston) + LSA layer."))
+story.append(b("<b>Aggressive:</b> $25,000/mo — full multi-channel coverage across all markets when intake is delegated and systems are ready."))
 
-story.append(Paragraph("<b>Estimated Return on Investment:</b>", S["subsection"]))
+story.append(Paragraph("<b>Estimated Return (for context):</b>", S["subsection"]))
 story.append(b("<b>Conservative:</b> ~16 leads x 15% close = 2–3 cases x $7K avg = ~$17,500/mo vs. $7,500 spend = ~2x return."))
 story.append(b("<b>Aggressive:</b> ~62 leads x 15% close = 9–10 cases x $7K avg = ~$63,000/mo vs. $25,000 spend = ~2.5x return."))
-story.append(Paragraph("<i>All figures are estimates using practice area defaults. Case value not stated on call. Not guaranteed.</i>", S["disclaimer"]))
-
-story.append(Paragraph("<b>How the range was calculated:</b>", S["subsection"]))
-story.append(b("<b>Conservative:</b> Criminal Defense minimums: PPC $2,500 + LSA $1,000 + Meta $1,200 + Lead Gen $500 = $5,200 floor; $7,500 chosen to cover satellite market launch."))
-story.append(b("<b>Aggressive:</b> $2M target x 20% / 12 = $33,333. Tier 4 (1.0x) = $33,333. Minus $6,397 fee = $26,936; rounded to $25,000."))
-story.append(b("Total at aggressive: $9,597 + $25,000 = $34,597/mo = 34.6% of revenue — just within 35% cap."))
+story.append(Paragraph("<i>All figures are estimates using practice area defaults ($7K midpoint). Case value not stated on call. Not guaranteed.</i>", S["disclaimer"]))
 
 story.append(thin_rule())
 
 # ── If He Pushes Back ──
 story.append(Paragraph("If He Pushes Back", S["section"]))
 
-story.append(Paragraph('"My Google Ads are already working — why change anything?"', S["objection_q"]))
-story.append(Paragraph("They work, but $3K/mo is his entire lead gen budget for a $1.2M firm. Slavey & Shumaker (10.0 Avvo, 21 reviews) holds organic and LSA slots above his paid ads. Growth tier adds multi-channel coverage and satellite market campaigns he isn't running.", S["objection_a"]))
+story.append(Paragraph('"My Google Ads are already working — why not just add a marketing package?"', S["objection_q"]))
+story.append(Paragraph("More leads hitting a firm with no intake coordinator will accelerate burnout, not prevent it. The bottleneck right now is internal — every additional lead means another call Ryan has to personally take. Fix the system first; add marketing fuel when the intake coordinator is trained and running.", S["objection_a"]))
 
 story.append(Paragraph('"I don\'t want to grow too fast — I burned out before."', S["objection_q"]))
-story.append(Paragraph("The burnout was caused by growth without systems — not by growth itself. Elite Coach Plus delivers the intake delegation framework and team structure that lets leads convert without adding to his hours. That's the structural fix he described needing.", S["objection_a"]))
+story.append(Paragraph("That caution is exactly right, which is why this recommendation leads with operations and financial clarity before adding any marketing. The FCOO Advisor builds the structure that makes growth safe. The prior burnout happened because systems weren't there — this is how you build them first.", S["objection_a"]))
 
-story.append(Paragraph('"I\'m not sure I can trust someone else to handle intake."', S["objection_q"]))
-story.append(Paragraph("That instinct is right — which is why coaching starts with building the intake coordinator role to his standards. He sets the bar; we help train someone to meet it. Every court day where no one answers the phone is a case going to Slavey & Shumaker.", S["objection_a"]))
+story.append(Paragraph('"Will the FCOO actually help me hire an intake coordinator?"', S["objection_q"]))
+story.append(Paragraph("Yes — the FCOO Advisor delivers the job description, interview scoring rubric, training framework, and accountability structure in the first 30 days. Ryan does not have to figure this out from scratch; the role is designed and ready to hire into.", S["objection_a"]))
 
-story.append(Paragraph('"The investment feels like a lot."', S["objection_q"]))
-story.append(Paragraph("At $9,597/mo, he needs 1–2 additional criminal defense cases per month to break even — realistic at conservative ad spend given his close rate. Every month without action extends competitors' directory and LSA leads.", S["objection_a"]))
+story.append(Paragraph('"$2,594/mo feels like a lot for something that isn\'t marketing."', S["objection_q"]))
+story.append(Paragraph("One additional criminal defense case per month covers both packages — and Ryan is currently losing cases every hour he's in court without backup. The FCOO Advisor turns the next hire into a revenue multiplier, not an expense. The FCFO Advisor shows him exactly what he is actually keeping from each case.", S["objection_a"]))
 
 story.append(thin_rule())
 
@@ -274,17 +270,17 @@ story.append(thin_rule())
 story.append(Paragraph("Investment At A Glance", S["section"]))
 
 price_data = [
-    [Paragraph("<b>Full Service Marketing — Growth</b>", S["price_main"]),
-     Paragraph("$6,397/mo", S["price_main"])],
-    [Paragraph("Google Ads, website, local SEO, LSA, Meta retargeting — all markets.", S["price_detail"]),
-     Paragraph("<strike>$6,997</strike> stand alone", S["price_detail"])],
-    [Paragraph("<b>Elite Coach Plus</b>", S["price_main"]),
-     Paragraph("$3,200/mo", S["price_main"])],
-    [Paragraph("Weekly group coaching, masterminds, intake framework, workshops.", S["price_detail"]),
-     Paragraph("<strike>$3,497</strike> stand alone", S["price_detail"])],
-    [Paragraph("<b>Recommended Ad Spend</b>", S["price_main"]),
+    [Paragraph("<b>Fractional COO Advisor</b>", S["price_main"]),
+     Paragraph("$1,297/mo", S["price_main"])],
+    [Paragraph("Operations advisory, intake framework, team structure, coaching included.", S["price_detail"]),
+     Paragraph("<strike>$1,797</strike> stand alone", S["price_detail"])],
+    [Paragraph("<b>Fractional CFO Advisor</b>", S["price_main"]),
+     Paragraph("$1,297/mo", S["price_main"])],
+    [Paragraph("Financial advisory, bookkeeping oversight, monthly P&L, coaching included.", S["price_detail"]),
+     Paragraph("<strike>$1,797</strike> stand alone", S["price_detail"])],
+    [Paragraph("<b>Recommended Ad Spend (Self-Managed, Advisory)</b>", S["price_main"]),
      Paragraph("$7,500–$25,000/mo", S["price_main"])],
-    [Paragraph("Goes to Google, LSA, and Meta — not to SMB Team.", S["price_detail"]),
+    [Paragraph("Goes directly to Google, LSA — not to SMB Team.", S["price_detail"]),
      Paragraph("", S["price_detail"])],
 ]
 pt = Table(price_data, colWidths=[4.5 * inch, 1.7 * inch])
@@ -300,7 +296,7 @@ pt.setStyle(TableStyle([
 ]))
 story.append(pt)
 story.append(Paragraph(
-    "Total: $9,597/mo + $7,500–$25,000 ad spend  |  Save $897/mo by bundling  |  17.1%–34.6% of revenue (under 35% cap)",
+    "Total SMB Investment: $2,594/mo  |  Save $1,000/mo by bundling  |  2.6% of revenue (well under 35% cap)",
     S["savings"]))
 
 # ── Build ──
