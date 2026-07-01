@@ -149,12 +149,12 @@ snap = [
      Paragraph("<b>Location</b>", S["snap_label"])],
     [Paragraph("Mauro Fiore Jr.", S["snap_value"]),
      Paragraph("~$1.5M est.", S["snap_value"]),
-     Paragraph("9 attys, 8 offices", S["snap_value"]),
+     Paragraph("30+ members, 8 offices", S["snap_value"]),
      Paragraph("Stage 4", S["snap_value"]),
      Paragraph("15% default", S["snap_value"]),
      Paragraph("Los Angeles, CA", S["snap_value"])],
 ]
-t1 = Table(snap, colWidths=[1.15*inch, 1.2*inch, 0.8*inch, 0.7*inch, 0.7*inch, 1.15*inch])
+t1 = Table(snap, colWidths=[1.15*inch, 1.2*inch, 1.05*inch, 0.6*inch, 0.65*inch, 1.05*inch])
 t1.setStyle(TableStyle([
     ("VALIGN", (0,0), (-1,-1), "TOP"),
     ("TOPPADDING", (0,0), (-1,-1), 1), ("BOTTOMPADDING", (0,0), (-1,-1), 1),
@@ -166,47 +166,42 @@ story.append(Spacer(1, 3))
 
 # ── Dominant Buying Motive ──
 story.append(Paragraph("Dominant Buying Motive: SCALE AND DOMINATE", S["section"]))
-story.append(Paragraph("Mauro wants a firm that generates consistent case flow across all 8 locations without him personally driving every client relationship.", S["subsection"]))
-
-story.append(quote_block("No transcript provided — DBM inferred from firm website and market research. Confirm on discovery call."))
+story.append(Paragraph("Mauro wants a firm that generates consistent case flow across all 8 locations — without him personally driving every client relationship.", S["subsection"]))
+story.append(quote_block("No transcript provided — DBM inferred from website and market research. Confirm on discovery call."))
 story.append(Spacer(1, 2))
 
 story.append(Paragraph("<b>What he wants:</b>", S["subsection"]))
 story.append(bd("<b>Predictable case flow at scale.</b> A paid system generating leads across all 8 markets — not referrals or organic alone."))
-story.append(bd("<b>A firm that runs without him.</b> 25 years and 9 attorneys should produce revenue without Mauro driving every relationship."))
-story.append(bd("<b>Market dominance in LA PI.</b> His footprint and reputation should translate to digital dominance — not ceding ground to newcomers with bigger budgets."))
+story.append(bd("<b>A firm that runs without him.</b> 30+ team members across 8 offices should produce revenue without Mauro in the loop."))
+story.append(bd("<b>Dominate LA PI.</b> His footprint and 25-year reputation should translate to digital dominance — not cede ground to well-funded newcomers."))
 
 story.append(Paragraph("<b>What is stopping him:</b>", S["subsection"]))
-story.append(b("<b>No paid marketing system.</b> No Google Ads, LSA, or Meta confirmed — competitors own all paid visibility in his markets."))
-story.append(b("<b>No intake coordination across 8 offices.</b> Leads likely lost with no visibility into how many or where."))
-story.append(b("<b>No ops layer.</b> Mauro is the decision-maker for 9 attorneys across 8 offices — a ceiling on growth."))
+story.append(b("<b>No paid marketing.</b> No Google Ads, LSA, or Meta confirmed — competitors own all paid visibility in every market he serves."))
+story.append(b("<b>No ops or intake layer confirmed across 8 offices.</b> Leads are likely lost with no visibility into how many or where."))
+story.append(b("<b>No financial baseline.</b> Revenue unconfirmed — growth investment decisions made without verified P&L data."))
 
 story.append(thin_rule())
 
 # ── Why This Marketing Package ──
 story.append(Paragraph("Why This Marketing Package", S["section"]))
-
-story.append(Paragraph("<b>What it does for him:</b>", S["subsection"]))
-story.append(bd("Launches paid case acquisition across all 8 markets — capturing high-intent PI and MVA searches competitors are currently winning."))
-story.append(bd("Adds Spanish-language campaigns — Fiore's bilingual team and Spanish site are ready; CPLs run 20-40% lower than English with identical case values."))
-
-story.append(Paragraph("<b>Full Service Marketing — Growth  |  $7,397/mo bundled</b>", S["subsection"]))
-story.append(b("Revenue ~$1.5M — Growth tier is correct for $1M–$3M. Growth tier ad spend cap: $40,000/mo."))
-story.append(b("PI in Tier 1 mega market (LA) — high-competitiveness floor applied; Spanish campaign multiplier also applies."))
-story.append(b("8-location GBP optimization, local SEO, and city-specific landing pages all covered under one management fee."))
+story.append(Paragraph("<b>Full Service Marketing — Growth  |  $7,397/mo bundled ($8,997 stand-alone)</b>", S["subsection"]))
+story.append(bd("Launches paid case acquisition across all 8 markets — capturing MVA, PI, and workers' comp searches competitors are currently winning uncontested."))
+story.append(bd("Spanish campaigns — Fiore's bilingual team and Spanish site are ready; Spanish CPLs run 20–40% lower than English with identical case values."))
+story.append(b("Growth tier correct for est. $1.5M+ revenue. Ad spend cap: $40,000/mo — upgrade to Dominate if goals require more."))
+story.append(b("Covers GBP optimization, local SEO, and city-specific landing pages across all 8 locations under one management fee."))
 
 story.append(thin_rule())
 
-# ── Why This Coaching Package ──
-story.append(Paragraph("Why This Coaching Package", S["section"]))
+# ── Why These Operational Packages ──
+story.append(Paragraph("Why These Operational &amp; Financial Packages", S["section"]))
+story.append(Paragraph("<b>Master's Circle + FCOO Advisor  |  $5,694/mo bundled ($7,794 stand-alone)</b>", S["subsection"]))
+story.append(bd("Builds the ops layer — a Fractional COO constructs accountability frameworks, multi-location management structure, and SOPs across all 8 offices so Mauro is not the decision-maker for everything."))
+story.append(bd("Master's Circle peer network of PI owners at the same revenue/complexity — sharing what actually works in competitive markets right now."))
+story.append(b("30+ team members confirmed on site — dedicated ops need exists NOW, not in Phase 2."))
 
-story.append(Paragraph("<b>What it does for him:</b>", S["subsection"]))
-story.append(bd("Gives Mauro the framework to build the ops layer, intake system, and financial visibility the firm needs to run at scale."))
-story.append(bd("Peer network of PI firm owners at the same revenue and complexity level — people who have solved the same problems he is facing now."))
-
-story.append(Paragraph("<b>Master's Circle  |  $4,600/mo bundled</b>", S["subsection"]))
-story.append(b("Revenue $1.5M+, 9 attorneys — firm is above $1M threshold; Master's Circle is the appropriate coaching tier."))
-story.append(b("No confirmed ops staff — coaching will provide the roadmap to build this layer; verify ops readiness with Randy Gold before finalizing."))
+story.append(Paragraph("<b>FCFO Advisor  |  $2,297/mo bundled ($2,797 stand-alone)</b>", S["subsection"]))
+story.append(bd("Establishes the revenue baseline and location-level P&L for all 8 offices — so every growth investment decision is made from data, not instinct."))
+story.append(b("No revenue confirmed externally — getting the verified financial picture is a first-90-days deliverable that removes the guessing from every future decision."))
 
 
 # ══════════════════════════════════════════════════════════
@@ -219,22 +214,17 @@ story.append(thin_rule())
 
 # ── Why This Ad Spend ──
 story.append(Paragraph("Why This Ad Spend", S["section"]))
-
 story.append(Paragraph("<b>What it does for him:</b>", S["subsection"]))
-story.append(bd("At conservative, generates est. 5 signed cases/month = $37,500 revenue from ads — a 3.75x return on spend."))
-story.append(bd("At aggressive, generates est. 28 cases/month = $210,000 revenue — a 5x return, dominating every market Fiore Legal serves."))
+story.append(bd("Conservative: est. 5 signed cases/month = $37,500 revenue from $10,000 in ad spend — a 3.75x return."))
+story.append(bd("Aggressive: est. 28 cases/month = $210,000 revenue from $40,000 spend — a 5x return across all 8 markets."))
 
 story.append(Paragraph("<b>Recommended Ad Spend Range:</b>", S["subsection"]))
 story.append(b("<b>Conservative:</b> $10,000/mo — MVA minimums: PPC $5,000 + LSA $2,000 + Meta $3,000."))
 story.append(b("<b>Aggressive:</b> $40,000/mo — Growth tier cap; full depth across all markets and Spanish campaigns."))
-
-story.append(Paragraph("<b>Estimated ROI:</b>", S["subsection"]))
-story.append(b("<b>Conservative:</b> 5 cases x $7,500 = $37,500 vs. $10,000 spend = 3.75x. (CPL ~$261 w/ cushion; 15% close; default case value.)"))
-story.append(b("<b>Aggressive:</b> 28 cases x $7,500 = $210,000 vs. $40,000 spend = 5.25x. (CPL ~$210; no cushion; English + Spanish.)"))
-story.append(Paragraph("<i>Estimates only. Not guaranteed. Confirm revenue and case value on discovery call.</i>", S["disclaimer"]))
+story.append(Paragraph("<i>Estimates only. Not guaranteed. Confirm revenue and actual case value on discovery call. Default case value of $7,500 used (MVA/PI midpoint).</i>", S["disclaimer"]))
 
 story.append(Paragraph("<b>Cap note:</b>", S["subsection"]))
-story.append(b("At aggressive: $51,997 total (fees + ads) = 41.6% of estimated $125K/mo revenue — exceeds 35% cap. Confirm actual revenue; if above $1.5M estimate, this resolves."))
+story.append(b("At aggressive: $55,388 total (fees + ads) = 44.3% of est. $125K/mo revenue — exceeds 35% cap. Confirm actual revenue; with 30+ staff across 8 offices, actual revenue is likely $3M–$6M+, which resolves this well within cap."))
 
 story.append(thin_rule())
 
@@ -242,13 +232,13 @@ story.append(thin_rule())
 story.append(Paragraph("If He Pushes Back", S["section"]))
 
 story.append(Paragraph('"We\'ve grown on referrals for 25 years — I\'m not sure paid ads will work for us."', S["objection_q"]))
-story.append(Paragraph("Downtown LA Law Group has 624 Avvo reviews and a full paid marketing stack in every Fiore market. Sweet James has 600+ five-star reviews and multi-million dollar verdicts marketed digitally. Referrals built the firm — paid search is what wins in LA PI today. Spanish-language PI campaigns here show CPLs 20-40% below English with identical case values.", S["objection_a"]))
+story.append(Paragraph("Downtown LA Law Group has 624 Avvo reviews and a full paid marketing stack across every Fiore market. Sweet James runs a multi-million dollar ad budget with 600+ reviews. Referrals built the firm — paid search is what wins in LA PI today. Spanish CPLs run 20–40% lower than English with identical case values.", S["objection_a"]))
 
-story.append(Paragraph('"The $11,997/month is a significant commitment."', S["objection_q"]))
-story.append(Paragraph("Conservative scenario: 5 cases x $7,500 = $37,500/mo from ads on $10,000 spend — 3.75x return. Bundled pricing saves $1,997/month vs. retail. And a 25-year LA PI firm's average case value is likely above the $7,500 default — actual ROI will be higher.", S["objection_a"]))
+story.append(Paragraph('"The $15,388/month is a significant commitment."', S["objection_q"]))
+story.append(Paragraph("Conservative scenario alone — 5 cases x $7,500 = $37,500/month from ads on $10,000 spend — returns 3.75x on just the ad spend. The bundled package saves $4,200/month vs. retail pricing. And with 30+ team members and 8 offices, actual case values are likely above the $7,500 default — real ROI will be higher.", S["objection_a"]))
 
-story.append(Paragraph('"We don\'t have revenue figures ready."', S["objection_q"]))
-story.append(Paragraph("Revenue estimated at ~$1.5M from team size. Getting the verified baseline is one of the explicit Master's Circle first-90-days deliverables. We start with the estimate and refine quickly — it doesn't block starting the marketing campaigns.", S["objection_a"]))
+story.append(Paragraph('"Why do we need both the FCOO and FCFO now?"', S["objection_q"]))
+story.append(Paragraph("The FCOO builds the management layer — 8 offices with no ops structure means Mauro is the ceiling on growth. The FCFO establishes the revenue baseline and location P&L tracking that makes every future investment decision defensible. Starting paid marketing without knowing which offices are profitable is flying blind. Both solve immediate problems.", S["objection_a"]))
 
 story.append(thin_rule())
 
@@ -258,12 +248,16 @@ story.append(Paragraph("Investment At A Glance", S["section"]))
 price_data = [
     [Paragraph("<b>Full Service Marketing — Growth</b>", S["price_main"]),
      Paragraph("$7,397/mo", S["price_main"])],
-    [Paragraph("Google Ads, LSA, Meta, Spanish campaigns, GBP optimization, SEO — all 8 markets.", S["price_detail"]),
-     Paragraph("<strike>$8,997</strike> stand alone", S["price_detail"])],
-    [Paragraph("<b>Master's Circle</b>", S["price_main"]),
-     Paragraph("$4,600/mo", S["price_main"])],
-    [Paragraph("Weekly coaching, PI masterminds, quarterly workshops, annual in-person event.", S["price_detail"]),
-     Paragraph("<strike>$4,997</strike> stand alone", S["price_detail"])],
+    [Paragraph("Google Ads, LSA, Meta, Spanish campaigns, GBP, SEO — all 8 markets.", S["price_detail"]),
+     Paragraph("<strike>$8,997</strike> stand-alone", S["price_detail"])],
+    [Paragraph("<b>Master's Circle + FCOO Advisor</b>", S["price_main"]),
+     Paragraph("$5,694/mo", S["price_main"])],
+    [Paragraph("Weekly coaching, PI masterminds, quarterly workshops, annual event + Fractional COO ops.", S["price_detail"]),
+     Paragraph("<strike>$7,794</strike> stand-alone", S["price_detail"])],
+    [Paragraph("<b>FCFO Advisor</b>", S["price_main"]),
+     Paragraph("$2,297/mo", S["price_main"])],
+    [Paragraph("Fractional CFO: revenue baseline, location-level P&L, profit planning, ROI tracking.", S["price_detail"]),
+     Paragraph("<strike>$2,797</strike> stand-alone", S["price_detail"])],
     [Paragraph("<b>Recommended Ad Spend</b>", S["price_main"]),
      Paragraph("$10,000–$40,000/mo", S["price_main"])],
     [Paragraph("Goes to Google, LSA, and Meta — not to SMB Team.", S["price_detail"]),
@@ -279,10 +273,11 @@ pt.setStyle(TableStyle([
     ("LINEBELOW", (0,1), (-1,1), 0.5, RULE_GRAY),
     ("LINEBELOW", (0,3), (-1,3), 0.5, RULE_GRAY),
     ("LINEBELOW", (0,5), (-1,5), 0.5, RULE_GRAY),
+    ("LINEBELOW", (0,7), (-1,7), 0.5, RULE_GRAY),
 ]))
 story.append(pt)
 story.append(Paragraph(
-    "Total: $11,997/mo + $10,000–$40,000 ad spend  |  Save $1,997/mo by bundling  |  17.6%–41.6% of est. revenue (confirm actuals)",
+    "Total: $15,388/mo + $10,000–$40,000 ad spend  |  Save $4,200/mo by bundling  |  Confirm actual revenue on call",
     S["savings"]))
 
 # ── Build ──
