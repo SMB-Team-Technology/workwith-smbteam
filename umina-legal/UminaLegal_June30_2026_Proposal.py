@@ -9,7 +9,7 @@ Slide 1 — Where [Firm] Stands Today         (assessment overview)
 Slide 2 — Your Growth Plan: 3 Priorities    (action plan)
 Slide 3 — Your Investment & What's Next     (pricing + first 90 days)
 
-Output: [friendly-name]/[FirmName]_[Date]_Proposal.pptx
+Output: umina-legal/UminaLegal_June30_2026_Proposal.pptx
 """
 
 from pptx import Presentation
@@ -33,35 +33,33 @@ OUTPUT_PATH    = "umina-legal/UminaLegal_June30_2026_Proposal.pptx"
 WEBSITE_SCREENSHOT_PATH = None   # Set to a local PNG path to show a screenshot; None = skip entirely
 
 # ── Slide 1 ──────────────────────────────────────────────────────
-URGENCY_SCORE = "6"   # copied from section_05 urgency-score element
+URGENCY_SCORE = "7"
 
 # Pillar status — each is ("RED" | "AMBER" | "GREEN", label, one-line detail)
-# Lead Gen: AMBER, Intake: RED, Team: RED, Profit: AMBER
 PILLARS = [
     ("AMBER", "AMBER",    "Single paid channel only"),    # Lead Generation
-    ("RED",   "CRITICAL", "Ryan handles all intake"),     # Intake
-    ("RED",   "CRITICAL", "No management layer"),         # Team
-    ("AMBER", "AMBER",    "No financial visibility"),     # Profit Plan
+    ("RED",   "CRITICAL", "Attorney handles all intake"), # Intake
+    ("RED",   "CRITICAL", "No delegation layer"),          # Team
+    ("AMBER", "AMBER",    "No P&L visibility"),            # Profit Plan
 ]
 PILLAR_NAMES = ["Lead Generation", "Intake", "Team", "Profit Plan"]
 
 # Key findings — list of ("neg"|"pos", "one-sentence finding")
-# Copied from section_executive_summary top priorities + section_05 positive finding
 FINDINGS = [
-    ("neg", "Intake bottleneck — Ryan answers every call; growth multiplies his load"),
-    ("neg", "No CRM, weak bookkeeping — $100K/mo with zero financial visibility"),
-    ("neg", "Competitors have 20+ Avvo reviews; Umina Legal not in main rankings"),
-    ("pos", "$100K/mo from one Google Ads campaign — strong paid foundation to build on"),
+    ("neg", "Intake handled personally — structural burnout risk before $2M"),
+    ("neg", "$100K/month with no bookkeeping, CRM, or P&L visibility"),
+    ("neg", "Slavey & Shumaker: 101 reviews vs. Umina's 0 — gap grows monthly"),
+    ("pos", "Self-managed Google Ads already drives $100K/mo — proven demand"),
 ]
 
-# Competitor table — 3 named competitors with Avvo review data (Google not confirmed)
+# Competitor table — list of (name, "XXX reviews", "brief note")
 COMPETITORS = [
-    ("Slavey & Shumaker",   "21 Avvo reviews", "10.0 rating · top Morgantown ranking"),
-    ("The Moore Law Firm",  "20 Avvo reviews", "9.1 rating · consistent directory presence"),
-    ("Candace Ogle Law",    "8 Avvo reviews",  "7.6 rating · Yellow Pages + Avvo listed"),
+    ("Slavey & Shumaker",        "101 reviews",  "4.8 stars · anchors local 3-pack"),
+    ("The Moore Law Firm",       "~40 reviews",  "4.7 stars · AV Preeminent rated"),
+    ("Mountaineer Criminal Law", "9 reviews",    "4.1 stars · crim-def domain"),
 ]
-CLIENT_REVIEWS      = "Not ranked"
-CLIENT_REVIEWS_NOTE = "← Not in Avvo rankings"
+CLIENT_REVIEWS      = "0 visible reviews"
+CLIENT_REVIEWS_NOTE = "← You are here"
 
 # Stage strip (right panel, Slide 1)
 STAGE_TEXT = "Stage 4: Small Business Manager  →  Goal: Stage 6, Law Firm Owner"
@@ -70,92 +68,91 @@ STAGE_TEXT = "Stage 4: Small Business Manager  →  Goal: Stage 6, Law Firm Owne
 SLIDE_2_TITLE = "Your Growth Plan: 3 Priorities to Reach $2M"
 
 SMB_MODEL_DESC = (
-    "The SMB Growth Model builds four pillars at once: "
-    "Lead Generation, Intake, Team, and Profit. "
-    "When all four work together, Ryan can finally "
-    "step back from the day-to-day — and the firm "
-    "generates $2M without generating burnout."
+    "SMB Team builds four pillars together: Lead Generation, "
+    "Intake, Team, and Profit. Most firms work one at a time — "
+    "and stall. When all four are working, Ryan can scale past "
+    "$2M without adding a single hour to his week."
 )
 
-GOAL_HEADLINE = "$1.2M → $2M annual revenue"
-GOAL_DBM      = "Step back. Work 30 hrs. Firm runs itself."
+GOAL_HEADLINE = "$1.2M → $2M revenue"
+GOAL_DBM      = "Scale to $2M — work 30 hours a week"
 
 # Each priority: (line1, line2, accent_color_hex, [5 bullet strings])
 PRIORITIES = [
     (
-        "Build the", "Marketing Engine", "1D4ED8",
+        "Fix Intake &", "Stop Losing Cases", "1D4ED8",
         [
-            "Expand Google Ads: professional managed campaigns",
-            "Launch satellite markets: Parkersburg, Charleston",
-            "Get Google Screened — own the top LSA placement",
-            "Fix mobile PageSpeed to convert paid traffic better",
-            "Turn Google into a pipeline that runs without you",
+            "Hire a trained intake coordinator — free Ryan",
+            "Cover every call — court days, nights, weekends",
+            "Rebuild Practice Panther — clean lead tracking",
+            "Build intake script tied to Ryan's quality bar",
+            "Know close rate — stop guessing on ad ROI",
         ],
     ),
     (
-        "Fix Intake &", "Stop Losing Cases", "0F766E",
+        "Build the", "Operations Layer", "0F766E",
         [
-            "Hire + train a dedicated intake coordinator",
-            "Rebuild Practice Panther with clean CRM tracking",
-            "Define intake script to Ryan's exact standards",
-            "Add after-hours coverage — no lead hits voicemail",
-            "Convert more leads from the $3K/mo already spent",
+            "Delegate ops — Ryan focuses on cases, not admin",
+            "Define every team role with clear accountability",
+            "Weekly ops rhythm Ryan can step back from",
+            "Build process docs the next hire steps into",
+            "FCOO builds the firm that runs without you",
         ],
     ),
     (
-        "Install Team &", "Profit Systems", "6D28D9",
+        "Install Financial", "Clarity Systems", "6D28D9",
         [
-            "Engage bookkeeping for monthly P&L visibility",
-            "Build role clarity + accountability for the team",
-            "Track cost-per-acquisition from Google Ads spend",
-            "Create the team structure that lets Ryan step back",
-            "Plan the 30-hour week before $2M — not after it",
+            "Bookkeeping from day 1 — no guessing margins",
+            "Monthly P&L — know what the firm actually keeps",
+            "Track cost-per-acquisition on every ad dollar",
+            "Financial model for the path to $2M — data-based",
+            "FCFO turns profit from guess to engineered plan",
         ],
     ),
 ]
 
 # ── Slide 3 ──────────────────────────────────────────────────────
 # Package cards — (label, bundled_price, retail_price, services_line, accent_color_hex)
-# Prices copied exactly from section_11 investment-grid
 PACKAGES = [
     (
-        "FULL SERVICE MARKETING — GROWTH",
-        "$6,397", "$6,997/mo",
-        "Google Ads · LSA · Website · Local SEO · Meta retargeting",
-        "1D4ED8",
+        "FRACTIONAL COO ADVISOR",
+        "$1,297", "$1,797/mo",
+        "Ops advisory · Intake framework · Team structure · Coaching included",
+        "0F766E",
     ),
     (
-        "ELITE COACH PLUS",
-        "$3,200", "$3,497/mo",
-        "Weekly coaching · Intake framework · Masterminds · Workshops",
+        "FRACTIONAL CFO ADVISOR",
+        "$1,297", "$1,797/mo",
+        "Financial advisory · Bookkeeping oversight · P&L · Coaching included",
         "6D28D9",
     ),
 ]
 
-BUNDLE_TOTAL   = "$9,597 / mo"
-BUNDLE_SAVINGS = "Save $897/mo by bundling"
+BUNDLE_TOTAL   = "$2,594 / mo"
+BUNDLE_SAVINGS = "Save $1,000/mo by bundling"
 
 AD_SPEND_NOTE = (
-    "+ Recommended ad spend: $7,500–$25,000/mo paid directly to Google/Meta"
+    "+ Advisory: $7,500–$25,000/mo self-managed ad spend paid directly to Google"
 )
 
-AVG_CASE_VALUE     = "~$7,000 (est.)"
+AVG_CASE_VALUE     = "~$7,000 (practice area default)"
 CONSERVATIVE_LABEL = "Conservative  (2–3 cases/mo):"
-CONSERVATIVE_RESULT = "~$17,500 revenue · ~2× ROAS"
+CONSERVATIVE_RESULT = "~$17,500 revenue · ~2x ROAS"
 AGGRESSIVE_LABEL   = "Aggressive  (9–10 cases/mo):"
-AGGRESSIVE_RESULT  = "~$63,000 revenue · ~2.5× ROAS"
+AGGRESSIVE_RESULT  = "~$63,000 revenue · ~2.5x ROAS"
 
-# Timeline — 5 items: (milestone_label, action_text) — max 55 chars per action
+# Timeline — 5 items: (milestone_label, action_text)
 TIMELINE = [
-    ("Day 1",   "Google Ads expansion + satellite markets scoped"),
-    ("Day 14",  "Satellite market campaigns live; website work begins"),
-    ("Week 2",  "Google Screened verification process initiated"),
-    ("Week 3",  "Intake coordinator job description + hiring begins"),
-    ("Month 3", "P&L baseline set; first monthly financial review"),
+    ("Day 1",   "FCOO + FCFO engagements begin — ops audit starts"),
+    ("Day 14",  "Intake coordinator job description delivered"),
+    ("Week 2",  "Bookkeeping vendor engaged — P&L baseline set"),
+    ("Week 3",  "Intake coordinator hiring process begins"),
+    ("Month 3", "Coordinator trained; first monthly P&L delivered"),
 ]
 
 CLOSING_QUOTE = (
-    '"I want to shift from operator to owner — and know my firm is running, even when I\'m not in it."'
+    "“Scale to $2M — work 30 hours a week — "
+    "without the burnout that came before. That is the firm we are building.”"
 )
 
 # ═══════════════════════════════════════════════════════════════════
