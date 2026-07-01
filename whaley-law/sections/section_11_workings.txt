@@ -1,0 +1,218 @@
+SECTION 11 WORKINGS — Whaley Law
+Generated: July 2, 2026
+Sales Rep: Jacob Meissner
+
+========================================
+REVENUE VERIFICATION & CORRECTION
+========================================
+
+package_decision.json confidence: LOW
+package_decision.json revenue_effective: $570,000 (sourced from HubSpot estimate)
+
+CORRECTION: Research notes contain explicit transcript-sourced revenue data:
+  - "Annual revenue: $20,000–$30,000/month → approximately $240,000–$360,000 annually"
+  - Current month (June 2026): $30,000/month = $360,000 annualized
+  - Revenue trajectory: doubling year-over-year ($15k/mo June 2025 → $30k/mo June 2026)
+
+CORRECTED REVENUE BAND: $250K–$400K
+(using $360,000 annualized run-rate from most recent month)
+
+========================================
+PRACTICE AREA ELIGIBILITY FILTER
+========================================
+
+Criminal Defense practice area confirmed.
+Little Rock, AR market assessment: HIGH competitiveness.
+Evidence: Multiple named firms actively running Google Ads for criminal defense
+(Ludwig Law Firm, Thompson Law Firm PLLC); 5+ named competitors with 50–102+
+Google reviews; active paid landscape in multiple criminal defense sub-categories.
+
+RESULT: Essentials marketing tier HIDDEN per eligibility rule.
+Minimum marketing tier: STARTER.
+
+========================================
+MANDATORY PRICE LOOKUP — CONFIRMED
+========================================
+
+- Marketing package selected: Full Service Marketing — Starter
+  - Bundled price (from table): $4,847/mo
+  - Stand-alone price (from table): $5,697/mo
+  - Savings (stand-alone minus bundled): $850/mo
+
+- Non-marketing package selected: Elite Coach
+  - Bundled price (from table): $2,600/mo
+  - Stand-alone price (from table): $3,497/mo
+  - Savings (stand-alone minus bundled): $897/mo
+  - NOTE: package_decision.json selected Elite Coach Plus ($3,200/mo) — this was
+    based on the incorrect $570K revenue estimate. Actual transcript revenue
+    ($240K–$360K) places firm in $250K–$400K band → Elite Coach is correct tier.
+
+- LAW package selected: None
+  - Reason: Revenue under $500K per eligibility rules
+
+- AI Avatar: None
+
+- Total monthly investment: $4,847 + $2,600 = $7,447/mo
+- Total savings: $850 + $897 = $1,747/mo
+
+========================================
+35% CAP REVIEW
+========================================
+
+Monthly revenue (current): $30,000/mo
+35% cap: $10,500/mo
+Management fees: $7,447/mo = 24.8% ← WITHIN CAP
+Conservative ad spend: $5,500/mo
+Total w/ conservative ads: $12,947/mo = 43.2% ← EXCEEDS CAP
+
+NOTE: The 35% cap is exceeded when management fees + conservative ad spend are
+combined at current revenue of $30,000/month. However:
+  - Revenue is doubling year-over-year; at $60k/mo (18–24 months), total = 21.6%
+  - At $1M goal ($83k/mo), total = 15.6% — very sustainable
+  - Package is deliberately sized for growth, not for the current starting point
+  - Recommend discussing with prospect; can start ads conservatively at $3,000-$4,000/mo
+    and scale as revenue grows through coaching milestones
+
+========================================
+AD SPEND CALCULATION
+========================================
+
+CONSERVATIVE: $5,500/mo
+  Basis: Sum of minimum channel spend for primary practice areas (traffic tickets,
+  license defense). Covers Google Search for both channels at minimums.
+  Note: Technically exceeds 35% cap at current $30k/month revenue — see above.
+
+AGGRESSIVE: $11,500/mo
+  Basis: 20% rule
+  - Revenue goal: $1,000,000 annual ($83,333/mo)
+  - 20% of goal: $83,333 × 20% = $16,667/mo marketing budget
+  - Geographic multiplier: Little Rock, AR = Tier 4 (1.0×) → $16,667
+  - Spanish campaign: Not needed → no multiplier
+  - Minus Starter management fee ($4,847): $16,667 – $4,847 = $11,820
+  - Round to: $11,500/mo
+  - Check vs. Starter tier ad spend cap ($15,000): $11,500 < $15,000 ✓
+
+========================================
+ROI PROJECTIONS
+========================================
+
+CPL Estimates (client-facing, blended):
+  - Traffic tickets (Google Search, Tier 4 market): ~$100/lead (high-intent, lower competition vs. top metros)
+  - Professional license defense (Google Search): ~$200/lead (niche, statewide targeting)
+  - Blended CPL (70% traffic, 30% license defense): 0.70 × $100 + 0.30 × $200 = $130/lead
+
+CONSERVATIVE SCENARIO ($5,500/mo):
+  - Blended CPL with 20% cushion: $130 × 1.20 = $156 → used $156
+  - Monthly leads: $5,500 ÷ $156 = 35 leads
+  - Cases at 15% close rate: 35 × 0.15 = 5.3 → 5 cases/mo
+  - Revenue breakdown:
+      Traffic (70% × 5 = 3.5 cases × $1,100): $3,850
+      License defense (30% × 5 = 1.5 cases × $3,000): $4,500
+      Total: $8,350 → rounded to $8,500/mo
+  - Blended case value used: ~$1,600
+  - Return on ad spend: $8,500 ÷ $5,500 = 1.55× → reported as ~1.5×
+
+AGGRESSIVE SCENARIO ($11,500/mo):
+  - Blended CPL (no cushion): $130
+  - Monthly leads: $11,500 ÷ $130 = 88 leads
+  - Cases at 15% close rate: 88 × 0.15 = 13.2 → 13 cases/mo
+  - Revenue breakdown:
+      Traffic (70% × 13 = 9.1 cases × $1,100): $10,010
+      License defense (30% × 13 = 3.9 cases × $3,000): $11,700
+      Total: $21,710 → rounded to $22,000/mo
+  - Blended case value used: ~$1,700
+  - Return on ad spend: $22,000 ÷ $11,500 = 1.91× → reported as ~2×
+
+Note: All ROI projections are estimates based on market averages and practice area
+CPL benchmarks. Results vary with market conditions, competition, and firm-specific
+conversion performance.
+
+========================================
+DBM STATEMENT — BLOCK 1
+========================================
+
+"We help solo criminal defense and traffic law attorneys get consistent, predictable
+client flow — so they can reach $1M in annual revenue, work a genuine 40-hour week,
+and finally build the financial stability and personal freedom they've been working toward."
+
+========================================
+QUICK WIN OPPORTUNITIES (8 identified)
+========================================
+
+1. PILLAR: Lead Gen | TITLE: Fix the Expired SSL Certificate
+   WHY: Website completely inaccessible to clients and Google's crawler — every day
+        this is unfixed compounds organic ranking loss and blocks all web-based leads
+   COMPETITOR: Ludwig Law Firm — fully functional, SEO-optimized website capturing all
+               organic traffic Whaley Law should be receiving
+   OPPORTUNITY: SSL fix restores website access, Google indexing, and enables all digital
+                marketing. This is the prerequisite for everything else. Quick Win.
+
+2. PILLAR: Lead Gen | TITLE: Launch Google Ads for Traffic Tickets
+   WHY: Zero paid presence while Ludwig Law Firm and Thompson Law Firm PLLC are running
+        ads capturing all paid traffic for traffic ticket and criminal defense searches
+   COMPETITOR: Ludwig Law Firm — running "expert, affordable traffic violation defense"
+               ads with dedicated traffic phone line
+   OPPORTUNITY: Traffic tickets are high-intent, high-volume searches in this market.
+                First paid ad presence immediately captures cases at a predictable CPL.
+
+3. PILLAR: Lead Gen | TITLE: Update GBP Cover Photo to Professional Headshot
+   WHY: GBP cover photo is not a professional headshot — reduces click-through rate from
+        map results and erodes trust at the first impression
+   NO NAMED COMPETITOR — internal quick win
+   OPPORTUNITY: A professional headshot increases GBP engagement, click-through rates,
+                and trust signals in under a day of work. Zero spend required.
+
+4. PILLAR: Lead Gen | TITLE: Build Review Volume to Compete (25+ Reviews)
+   WHY: 18 reviews at 4.1★ is far below the threshold for 3-pack placement or LSA
+        eligibility; Lemley Law has 102 reviews at 4.9★, Denson has 51 at 4.9★
+   COMPETITOR: Lemley Law Partners — 102+ reviews across Little Rock dominates map
+               pack for criminal defense and drug defense searches
+   OPPORTUNITY: A systematic review generation campaign targeting past clients can add
+                10–20 reviews quickly, diluting old negatives and improving 3-pack
+                eligibility. Long-Term Play.
+
+5. PILLAR: Intake | TITLE: Implement After-Hours Answering Service
+   WHY: Stewart cannot answer calls 24/7 — traffic ticket clients are time-sensitive
+        and will call the next attorney who answers when they can't reach Stewart
+   NO NAMED COMPETITOR — structural gap
+   OPPORTUNITY: After-hours coverage converts leads who are lost today. At $1,100 per
+                traffic ticket case, even 2 additional cases per month from after-hours
+                calls generates $2,200/mo in incremental revenue.
+
+6. PILLAR: Team | TITLE: First Part-Time Support Hire
+   WHY: Solo operation means Stewart is the bottleneck for every task — intake, billing,
+        admin — and increasing leads will create overwhelm rather than growth
+   COMPETITOR: Lemley Law Partners — trained intake staff and defined processes allow
+               them to convert leads at hours when Stewart is unavailable
+   OPPORTUNITY: A part-time VA or intake coordinator (10–15 hours/week) frees Stewart
+                from admin tasks and provides basic coverage during court appearances.
+                Long-Term Play.
+
+7. PILLAR: Profit | TITLE: Raise Felony Defense Pricing Toward Market Rate
+   WHY: Current $7,000 flat fee for felony defense is 23 cents on the dollar of the
+        $30,000 market rate; underpricing limits income without reducing caseload
+   NO NAMED COMPETITOR — internal pricing opportunity
+   OPPORTUNITY: Moving felony pricing to even $12,000–$15,000 (still below market)
+                doubles felony revenue without adding a single new case. Quick Win.
+
+8. PILLAR: Lead Gen | TITLE: Build Geographic Landing Pages for Underserved Markets
+   WHY: Dallas County and Clark County were identified as areas with few attorneys —
+        no current content targeting these areas despite dual office presence
+   COMPETITOR: None specifically identified for these markets
+   OPPORTUNITY: Location-specific pages with local SEO targeting low-competition
+                geographic searches — fastest path to organic rankings. Long-Term Play.
+
+========================================
+FIRST 90 DAYS
+========================================
+
+1. Fix SSL certificate on whaley.law and restore the website — prerequisite for all
+   digital marketing; Stewart mentioned 10Web as the platform to resolve this
+2. Launch Google Ads for traffic tickets and professional license defense in Little Rock
+   once website is live — this is the primary revenue-generating action in the first 90 days
+3. Activate review generation campaign — systematic outreach to past clients targeting
+   10–15 new 5-star reviews in the first 60 days to begin closing the review gap
+4. Implement after-hours call coverage solution (answering service or virtual receptionist)
+   to stop bleeding intake leads during court appearances and evenings
+5. Coaching kickoff — establish pricing strategy review, identify most profitable practice
+   areas, set 12-month revenue milestone targets, and build accountability structure
