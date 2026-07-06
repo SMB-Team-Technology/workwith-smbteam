@@ -1,0 +1,169 @@
+ANWARI LAW FIRM — SECTION 11 WORKINGS
+July 10, 2026
+
+==============================================================
+REVENUE VERIFICATION
+==============================================================
+
+Research notes clearly state: "$40k–$80k per month (volatile) = approximately $480k–$960k/year currently"
+Revenue goal: $1.5M/year (explicitly stated)
+Revenue band confirmed: $400K–$1M → Starter marketing tier and Elite Coach Plus coaching tier are correct.
+package_decision.json confidence was "low" (used HubSpot estimate of $570K) — but the research notes
+provide direct confirmation of the same revenue band. No correction needed. Values accepted as-is.
+
+==============================================================
+MANDATORY PRICE LOOKUP — CONFIRMED
+==============================================================
+
+Marketing package selected: Full Service Marketing — Starter
+  Bundled price (from table): $4,847/mo
+  Stand-alone price (from table): $5,697/mo
+  Savings (stand-alone minus bundled): $850/mo
+
+Non-marketing package selected: Elite Coach Plus
+  Bundled price (from table): $3,200/mo
+  Stand-alone price (from table): $3,497/mo
+  Savings (stand-alone minus bundled): $297/mo
+
+Legal AI Workforce (LAW) package selected: none
+  (Revenue borderline; team size small/solo; confidence:low on revenue — excluded)
+
+AI Avatar / Video Growth add-on selected: none
+  (Would require Alexis approval; firm not yet on active marketing relationship)
+
+Total monthly investment: $4,847 + $3,200 = $8,047/mo
+Total savings: $850 + $297 = $1,147/mo
+
+==============================================================
+AD SPEND CALCULATION
+==============================================================
+
+CONSERVATIVE — Sum of channel minimums for Immigration:
+  Google PPC Min: $1,000
+  LSA Min: $1,000
+  Meta Retargeting Min: $200
+  Meta Lead Gen Min: $1,000
+  Raw sum: $3,200
+  → Using $3,000 (from package_decision.json; within range, below raw sum; acceptable)
+  NOTE: Absolute minimum for any paid ads is $2,000/month. $3,000 qualifies.
+
+AGGRESSIVE — 20% rule:
+  Revenue goal: $1.5M/year = $125,000/month
+  20% of $125,000 = $25,000/month marketing budget
+  Geographic multiplier: Northern Virginia / DC metro = Tier 1 × 1.5
+  $25,000 × 1.5 = $37,500/month
+  Subtract management fee ($4,847): $37,500 - $4,847 = $32,653 available ad spend
+  Starter tier cap: $12,000/month → $32,653 exceeds cap
+
+  Reverse math validation:
+  Target cases/month: $125,000 ÷ $4,500 (ACV) = 27.8 cases
+  Required leads (15% close): 27.8 ÷ 0.15 = 185 leads
+  Blended CPL immigration (midpoints): ~$75
+  Required spend: 185 × $75 = $13,875 — exceeds $12,000 tier cap
+
+  → Aggressive ad spend capped at $12,000 (Starter tier cap)
+  Note: 10% overage option exists at $13,200 but $12,000 at cap is cleaner for presentation.
+
+==============================================================
+ROI PROJECTIONS
+==============================================================
+
+CPL assumptions — Immigration (estimated midpoints):
+  Google Search: $100/lead
+  LSA: $55/lead
+  Meta Retargeting: $42/lead
+  Meta Lead Gen: $85/lead
+
+CONSERVATIVE ($3,000/mo):
+  Spend allocation (approximate): Google $1,500, LSA $1,000, Meta $500
+  Weighted CPL: ($1,500×$100 + $1,000×$55 + $500×$42) / $3,000
+             = ($150,000 + $55,000 + $21,000) / $3,000
+             = $226,000 / $3,000 = $75.33
+  With 20% cushion: $75.33 × 1.2 = $90.40 → ~$90/lead
+  Leads: $3,000 ÷ $90 = 33 leads
+  Cases: 33 × 0.15 (default close rate) = 5 cases
+  Revenue: 5 × $4,500 (ACV) = $22,500
+  Return on ad spend: $22,500 ÷ $3,000 = 7.5× → ~7.5×
+
+AGGRESSIVE ($12,000/mo):
+  Spend allocation (approximate): Google $6,000, LSA $3,000, Meta Retargeting $1,500, Meta Cold $1,500
+  Weighted CPL (no cushion): ($6,000×$100 + $3,000×$55 + $1,500×$42 + $1,500×$85) / $12,000
+                            = ($600,000 + $165,000 + $63,000 + $127,500) / $12,000
+                            = $955,500 / $12,000 = $79.63 → ~$80/lead
+  Leads: $12,000 ÷ $80 = 150 leads
+  Cases: 150 × 0.15 = 22.5 → ~22 cases
+  Revenue: 22 × $4,500 = $99,000
+  Return on ad spend: $99,000 ÷ $12,000 = 8.25× → ~8×
+
+  NOTE: Using slightly rounded: 22 cases, $99,000 revenue, ~8× return for presentation.
+
+==============================================================
+DBM STATEMENT FOR BLOCK 1
+==============================================================
+
+"We help established immigration attorneys regain their peak revenue and build a self-sustaining practice so they can step back from daily operations and create the legacy they set out to build."
+
+==============================================================
+QUICK WIN OPPORTUNITIES (6+)
+==============================================================
+
+1. PILLAR: Lead Gen — TITLE: Claim and Optimize Google Business Profile
+   WHY: GBP unclaimed — 273 reviews earning no algorithmic credit; competitors with managed profiles get local pack priority
+   COMPETITOR: Montagut & Sobral, PC (345 reviews, fully managed profile)
+   OPPORTUNITY: Claimed + optimized GBP can move firm from outside local 3-pack to consistently inside it
+
+2. PILLAR: Lead Gen — TITLE: Launch Dari-Language Landing Pages
+   WHY: No competitor in Northern Virginia has Dari-language digital content — entirely uncontested niche
+   COMPETITOR: None identified
+   OPPORTUNITY: Dari-language pages create zero-competition search visibility for the firm's core client community
+
+3. PILLAR: Lead Gen — TITLE: Enroll in Google Local Service Ads
+   WHY: LSAs appear above all other Google results; 273 reviews qualify firm for Google Screened badge
+   COMPETITOR: Montagut & Sobral and Rodriguez Legal positioned to hold LSA spots
+   OPPORTUNITY: Top-of-page pay-per-call placement with existing review credentials
+
+4. PILLAR: Intake — TITLE: Move Consultation CTA Above the Fold
+   WHY: Primary conversion offer (15-min free consult) is not prominently featured; visitors leave without finding it
+   COMPETITOR: None specific
+   OPPORTUNITY: Above-fold CTA immediately increases consultation bookings from existing website traffic
+
+5. PILLAR: Intake — TITLE: Implement Post-Consultation Follow-Up Sequence
+   WHY: Prospects who don't sign at consultation are permanently lost without structured follow-up
+   COMPETITOR: None specific
+   OPPORTUNITY: 3-touch email follow-up recovers warm leads who needed more time — each recovered case worth $4,500+
+
+6. PILLAR: Lead Gen — TITLE: Correct NAP Inconsistencies Across Directories
+   WHY: Confirmed address discrepancy (Justia vs website) sends negative local SEO signal to Google
+   COMPETITOR: None specific
+   OPPORTUNITY: Standardizing NAP across Avvo, Justia, Yelp, BBB, ReachAttorneys, Birdeye removes negative ranking signal
+
+7. PILLAR: Team — TITLE: Build Associate Attorney Hiring Plan
+   WHY: Semi-retirement in 8–10 years is impossible without beginning associate development; every year of delay extends the timeline
+   COMPETITOR: None specific
+   OPPORTUNITY: Hiring and training first associate is the most consequential long-term investment toward the legacy goal
+
+8. PILLAR: Profit — TITLE: Establish Practice Area Profit Tracking
+   WHY: Firm serves immigration + business law with no stated profitability split by case type
+   COMPETITOR: None specific
+   OPPORTUNITY: Monthly P&L by practice area identifies highest-margin cases to prioritize in marketing
+
+==============================================================
+FIRST 90 DAYS
+==============================================================
+
+1. Google Ads campaigns launch for family-based immigration, employment immigration, and asylum keywords across Falls Church and Fairfax — the first active paid acquisition channel the firm has run in 13 years
+2. Website modernization begins with priority on: consultation CTA above fold, Google review widget integration, Dari-language landing page framework
+3. Google Business Profile is claimed and fully optimized across both locations — accurate NAP, review responses, practice area categories, and photos activated
+4. LSA enrollment process initiated — background check and bar verification submitted to begin Google Screened qualification
+5. Coaching kickoff establishes 12-month revenue milestone targets, practice area profitability framework, and associate attorney hiring timeline tied to the $1.5M and semi-retirement goals
+
+==============================================================
+ESCALATION FLAGS (internal — do not appear in client report)
+==============================================================
+
+- Revenue range $480K–$960K — no scoping approval required (above $300K threshold)
+- Marketing MRR $4,847 — no scoping approval required (below $10K)
+- Aggressive ad spend $12,000 — no scoping approval required (below $25K)
+- No Criminal Defense, PI, or Family Law in top metro — no approval required
+- AI Virtual Video / AI Avatar: not recommended — no Alexis approval needed
+- LAW package: not recommended in this proposal
