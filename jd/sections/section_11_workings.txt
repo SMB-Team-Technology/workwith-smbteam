@@ -1,0 +1,204 @@
+JD LAW GROUP — SECTION 11 WORKINGS
+Generated: July 9, 2026
+Sales Rep: Jacob Meissner
+
+═══════════════════════════════════════════════════════
+PACKAGE SELECTION (from package_decision.json — confidence: high)
+═══════════════════════════════════════════════════════
+
+Marketing package: Full Service Marketing — Growth
+  Bundled price:     $7,397/mo
+  Stand-alone price: $8,997/mo
+  Savings:           $1,600/mo
+
+Coaching package: Elite Coach Plus
+  Bundled price:     $3,200/mo
+  Stand-alone price: $3,497/mo
+  Savings:           $297/mo
+
+Total monthly investment (bundled): $10,597/mo
+Total savings:                       $1,897/mo
+
+Selection notes:
+- Revenue $1M+: Growth tier applies (hides all Essentials)
+- Revenue $1M+, team under 5: Elite Coach Plus selected (Master's Circle requires 5+ team)
+- PI practice area: hides Essentials marketing packages; Growth is minimum, satisfied
+- 35% cap check: $10,597 mgmt fees + $7,500 ad spend = $18,097 / ($2,500,000/12 = $208,333) = 8.7% — well under cap
+- At aggressive: $10,597 + $30,000 = $40,597 / $208,333 = 19.5% — under 35% cap ✓
+
+═══════════════════════════════════════════════════════
+AD SPEND CALCULATION
+═══════════════════════════════════════════════════════
+
+Practice areas: Criminal Defense (50%) + Personal Injury (50%)
+Market: Roswell, GA (Atlanta metro — Tier 2: 1.3x multiplier)
+Spanish campaign: Not needed
+
+CONSERVATIVE (channel minimums):
+  Criminal Defense: PPC $2,500 + LSA $1,000 + Meta retargeting $1,200 = $4,700
+  Personal Injury: PPC $3,000 + LSA $1,500 (PI floor Tier 2: $1,500 min) + Meta retargeting $1,200 = $5,700
+  → Blended minimum total: ~$7,500 (conservative per package_decision.json) ✓
+  Note: PI hard floor medium competitiveness = $3,500 minimum from ad table; consolidated at $7,500 ✓
+
+AGGRESSIVE (20% rule):
+  Revenue goal: $3.0M (first year recovery target per transcript)
+  $3.0M × 20% ÷ 12 = $50,000/mo marketing budget
+  × Tier 2 geo multiplier (1.3x) = technically $65,000, but Growth tier cap is $30,000
+  Available ad spend after Growth mgmt fee ($7,397) = $65,000 - $7,397 = $57,603 → capped at $30,000 per tier
+  Aggressive: $30,000 ✓ (per package_decision.json)
+
+  Reverse math validation:
+  Target: $3.0M/12 = $250,000/mo
+  Criminal: $250K × 50% = $125,000 ÷ $5,000 avg = 25 cases ÷ 25% close = 100 leads
+  PI: $250K × 50% = $125,000 ÷ $8,000 avg = 15.6 cases ÷ 25% close = 62 leads
+  Total leads needed: 162
+  At blended CPL $175: 162 × $175 = $28,350 → $30,000 confirms ✓
+
+═══════════════════════════════════════════════════════
+ROI PROJECTIONS
+═══════════════════════════════════════════════════════
+
+BLENDED AVERAGE CASE VALUE:
+  Criminal defense: $5,000 (stated in transcript)
+  Personal injury: $8,000 (default lower range for GA contingency — not stated, using default)
+  Blended (50/50): ($5,000 + $8,000) / 2 = $6,500
+
+CLOSE RATE:
+  Historical 65% (stated) but "currently much lower" — using 25% for digital lead projections
+  (Digital-generated leads from cold advertising convert lower than referrals; 25% reflects
+  realistic expectation with improved intake, above default 15% given firm's track record)
+
+CONSERVATIVE SCENARIO ($7,500/mo ad spend):
+  Channel breakdown: Criminal PPC $2,500 + Criminal LSA $1,000 + PI PPC $2,500 + PI LSA $1,500 = $7,500
+  CPL by channel (with 20% conservative cushion):
+    Criminal Google Search midpoint $175 × 1.20 = $210
+    Criminal LSA midpoint $100 × 1.20 = $120
+    PI Google Search midpoint $200 × 1.20 = $240
+    PI LSA midpoint $125 × 1.20 = $150
+  Weighted blended CPL: ~$210 (approximate)
+
+  Leads: $7,500 / $210 = ~36 leads/month
+  Cases: 36 × 25% = 9 cases/month
+  Revenue: 9 × $6,500 = $58,500/month
+  Return: $58,500 / $7,500 = 7.8x
+
+  → Presenting as: 8–10 cases, ~$58,500 revenue, ~7.8x return
+
+AGGRESSIVE SCENARIO ($30,000/mo ad spend):
+  CPL (no cushion):
+    Criminal Google Search midpoint $175
+    Criminal LSA midpoint $100
+    PI Google Search midpoint $200
+    PI LSA midpoint $125
+  Weighted blended CPL: ~$163
+
+  Leads: $30,000 / $163 = ~184 leads/month
+  Cases: 184 × 25% = ~46 cases/month
+  Revenue: 46 × $6,500 = $299,000/month
+  Return: $299,000 / $30,000 = ~10x
+
+  → Presenting as: 44–46 cases, ~$299,000 revenue, ~10x return
+
+═══════════════════════════════════════════════════════
+DBM STATEMENT (Block 1)
+═══════════════════════════════════════════════════════
+
+"We help criminal defense and personal injury attorneys in competitive Georgia markets
+get a predictable flow of qualified cases so they can focus on the legal work they love
+— not managing the business behind it."
+
+DBM anchor: Doug wants to WORK IN the business (solve legal puzzles), not manage it.
+The pitch is not "grow bigger" — it is "get your systems working so you can go back
+to doing what you actually love."
+
+═══════════════════════════════════════════════════════
+QUICK WIN OPPORTUNITIES (6+)
+═══════════════════════════════════════════════════════
+
+1. Pillar: Lead Gen | Title: Shut Down chancoschiffer.com and Redirect to jdgroup.law
+   Why: chancoschiffer.com is live, indexed, and competing with JD Law Group for the same keywords
+   Competitor: N/A — self-inflicted problem
+   Opportunity: Consolidating two indexed domains into one would immediately transfer all
+   chancoschiffer.com authority to jdgroup.law, reversing years of diluted rankings
+   Timeline: Quick Win
+
+2. Pillar: Lead Gen | Title: Activate Google Local Service Ads for Both Practice Areas
+   Why: The firm has 117 reviews at 4.7 stars — already above the qualification threshold;
+   every month without LSAs is lost pay-per-lead opportunity while competitors hold these spots
+   Competitor: Speights Law PC (criminal), Hammers PI Lawyers (PI)
+   Opportunity: LSAs appear above PPC and map pack — instant top-of-page visibility at
+   a lower cost per acquisition than traditional Google Ads
+   Timeline: Quick Win
+
+3. Pillar: Lead Gen | Title: Optimize and Complete Google Business Profile
+   Why: GBP is the primary local ranking factor and it is operating without a professional
+   headshot, unconfirmed category, and likely inactive posts
+   Competitor: Hammers Car Accident & PI Lawyers (103 Roswell reviews), Van Sant Law
+   Opportunity: A fully optimized GBP is the fastest path to local pack visibility and
+   drives a meaningful portion of calls for local legal searches
+   Timeline: Quick Win
+
+4. Pillar: Lead Gen | Title: Rebuild Paid Search with Conversion-Optimized Landing Pages
+   Why: Prior PPC campaigns failed — but root cause was likely non-indexed roswelllegal.com
+   and no conversion optimization, not an inherent market problem
+   Competitor: The Ford Law Firm, Hammers Car Accident & PI Lawyers
+   Opportunity: Rebuilt campaigns on a single authoritative domain with dedicated practice
+   area landing pages can recover the paid traffic that prior campaigns wasted
+   Timeline: Long-Term Play (first 90 days)
+
+5. Pillar: Intake | Title: After-Hours Lead Capture — Never Miss a Case Again
+   Why: Prospects searching for attorneys after 5pm find no way to contact JD Law Group
+   and call the next firm on the list; competitors like Hammers and Van Sant Law have
+   24/7 capture mechanisms
+   Competitor: N/A (no specific named competitor for this)
+   Opportunity: A simple after-hours contact form optimization could capture dozens of
+   additional monthly leads that currently go to competitors overnight
+   Timeline: Quick Win
+
+6. Pillar: Intake | Title: Same-Day Digital Lead Response Protocol
+   Why: Digital leads who don't get a same-day response have typically contacted 2–3 other
+   firms by the time you call back; at $6,500 per case this is measurable revenue leakage
+   Competitor: N/A
+   Opportunity: A structured follow-up sequence (text + call + email within 60 minutes)
+   can recover a meaningful portion of leads currently marked as "unresponsive"
+   Timeline: Quick Win
+
+7. Pillar: Lead Gen | Title: Build Practice Area Content for Google AI Visibility
+   Why: The Ford Law Firm appears in Google AI's "best criminal attorney in Roswell"
+   answers because of high-quality, in-depth content; JD Law Group's content is thin
+   Competitor: The Ford Law Firm
+   Opportunity: Practice area pages with case-type-specific depth content (domestic
+   violence, DUI, car accidents) position the firm for Google AI citations in the same
+   searches competitors currently own
+   Timeline: Long-Term Play
+
+8. Pillar: Team | Title: Add Intake/Operations Coordinator Role
+   Why: Both attorneys are absorbing operational responsibilities that prevent them from
+   focusing on casework; Doug explicitly wants to work in the business, not manage it
+   Competitor: N/A
+   Opportunity: One defined intake/operations role removes the operational burden from
+   both attorneys and creates the capacity for scaled case volume without adding management load
+   Timeline: Long-Term Play
+
+9. Pillar: Profit | Title: Cost-Per-Case-Type Profitability Analysis
+   Why: Without knowing the margin difference between criminal ($5K flat-fee) and PI
+   (contingency with variable resolution timelines), marketing spend allocation is a guess
+   Competitor: N/A
+   Opportunity: Knowing which practice area is more profitable per hour of attorney time
+   should drive how the marketing budget is split between criminal defense and PI
+   Timeline: Quick Win
+
+═══════════════════════════════════════════════════════
+FIRST 90 DAYS
+═══════════════════════════════════════════════════════
+
+1. Launch LSA campaigns for criminal defense and personal injury — highest-ROI channel
+   given existing 117-review base; get Google Screened status activated
+2. Initiate 301 redirect from chancoschiffer.com to jdgroup.law and audit directory listings
+   to update all ChancoSchiffer references to JD Law Group
+3. Build conversion-optimized landing pages for criminal defense and personal injury on
+   a single consolidated domain with above-fold contact forms
+4. Launch Google PPC campaigns targeting criminal defense and PI keywords in Roswell,
+   Alpharetta, Sandy Springs, and surrounding Fulton/Cherokee County markets
+5. Elite Coach Plus kickoff — establish profit plan framework, intake protocol, and
+   metrics dashboard to track case volume recovery week over week
