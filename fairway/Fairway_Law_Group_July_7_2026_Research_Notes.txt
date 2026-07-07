@@ -1,0 +1,264 @@
+SMB TEAM — GROWTH AUDIT RESEARCH NOTES
+=========================================
+Firm Name:     Fairway Law Group
+Friendly Name: fairway
+URL:           http://fairwaylawgroup.com
+Sales Rep:     Jacob Meissner
+Date:          July 7, 2026
+Contact:       Matthew Waring (matthew@fairwaylawgroup.com / +1 (954) 388-0646)
+Research Run:  July 7, 2026
+
+*** IMPORTANT — NO DISCOVERY CALL TRANSCRIPT AVAILABLE ***
+The trigger for this research pass (triggers/audit-research/fairway.json) contains no
+transcript field. The proposal/discovery call is scheduled for July 8, 2026 at 6:00 PM UTC —
+i.e., this pass was run BEFORE the call took place. All Step 9 fields normally sourced from
+the transcript are therefore unavailable and are marked "NOT STATED — call not yet held" with
+the rule-based defaults applied where the process specifies one. Do NOT treat any figure in
+Step 9 below as a prospect quote. This file should be revisited and corrected against the
+actual transcript once the July 8 call happens, before running /audit-write.
+
+
+=========================================
+STEP 1 — WEBSITE RESEARCH
+=========================================
+
+Website URL confirmed live: YES — http://fairwaylawgroup.com (loads over HTTP; no forced HTTPS redirect observed — worth flagging as a basic trust/security signal issue)
+Last redesign date/estimated age: Modern build (responsive .webp imagery, component-based nav); estimated within last 1–3 years
+Mobile responsive: YES (responsive image formats and adaptive navigation observed)
+Homepage headline: "The First Step To Your New Life" (supporting tagline: "protecting you, your family, and your future")
+CTA above fold: YES — "Schedule a Free Consultation" button in the hero section
+Contact form location: ABOVE FOLD — consultation booking widget (Lawmatics) reachable without scrolling; direct-dial numbers also shown for both offices (South Florida 954-388-0646, Central Florida 407-920-3293)
+Live chat present: NO
+Attorney bios present: YES — 5 attorneys with individual profile pages (Matthew Waring, Brian Dunmire, Lauren Colella, Alex Kiefer, Casey Whittington)
+Video present: YES — "Our Videos" section links to a YouTube channel (@fairwaylawgroup); firm also runs a podcast (Acast, Apple Podcasts, Spotify)
+Blog present: YES — active blog, most recent posts dated June 2026 (topics: parenting plans, mediation, custody)
+
+Practice areas listed on site (exact menu items):
+  - Family Law
+  - Child Custody
+  - Child Support
+  - Divorce
+  - Men's Divorce
+  - High Assest Divorce [sic — typo on live site, reads "Assest" not "Asset"]
+  - Complex Property Division
+  - Modification of Final Orders
+
+NOTE: Several third-party directory summaries (LawInfo, aggregator snippets) describe the firm
+as handling "personal injury" in addition to family law, likely a holdover from founder Matthew
+Waring's pre-2019 litigation background (defended Fortune 500 insurers, then plaintiff PI work)
+rather than a current service line — no personal injury practice area appears in the current
+site navigation. Confirm on the call whether PI is still being intaken.
+
+Two office locations confirmed on site:
+  - Deerfield Beach, FL (1430 S Federal Hwy, Suite 200, Deerfield Beach, FL 33441) — primary/South Florida
+  - Orlando, FL (722 W Smith St) — Central Florida
+  Firm markets itself as serving statewide Florida (city pages found for Miami, Tampa, Sarasota, Naples, West Palm Beach, and others).
+
+Website issue flags:
+  - Site loads on plain HTTP (http://fairwaylawgroup.com) with no observed forced HTTPS — modern browsers may flag this as "Not Secure," which is a credibility risk for a firm handling sensitive family law matters
+  - "High Assest Divorce" typo on a page targeting the firm's highest-value case type — an easy, high-visibility fix
+
+PageSpeed mobile score: [NOT RETRIEVED — pagespeed.web.dev and the PageSpeed Insights API both returned rate-limit/loading errors after repeated attempts. Must be run manually before /audit-write.]
+PageSpeed desktop score: [NOT RETRIEVED — same tool limitation as above.]
+
+*** SCORES NOT VERIFIED — MUST BE RUN MANUALLY AT pagespeed.web.dev BEFORE PROCEEDING TO /audit-write ***
+
+**→ Website section complete.**
+
+
+=========================================
+STEP 2 — GOOGLE BUSINESS PROFILE
+=========================================
+
+GBP found: YES (referenced consistently across Yelp, LawInfo, FindLaw, Trustindex aggregator listings for the Deerfield Beach address)
+Star rating: Aggregator sources (Trustindex, which syncs Google reviews) show a 5.0-star aggregate; Martindale shows 4.8/5.0 separately (4 reviews) — GBP star rating itself could not be pulled directly from Google Maps with available tools; treat as approximately 4.8–5.0 pending live confirmation
+Total review count: Trustindex reports 141+ reviews synced from Google as of research date — NOT independently confirmed directly on Google Maps; verify exact live count before quoting it in the audit
+Most recent review date: Not independently confirmed — Yelp listing shows "Updated April 2026," suggesting recent review activity
+Primary category: Not confirmed live — likely "Divorce Lawyer" or "Family Law Attorney" based on site content; verify on GBP directly
+Photos active: YES — Yelp listing alone shows 14 photos
+Posts active: Not observed/not confirmed
+
+FLAG: Exact GBP star rating and review count must be verified live on Google Maps before the audit is finalized — current figures are aggregator-sourced (Trustindex), not pulled directly from Google.
+
+
+=========================================
+STEP 3 — LOCAL 3-PACK SEARCHES
+=========================================
+
+NOTE: Available research tools returned aggregated web/search-summary results rather than a
+live rendered Google Maps 3-pack. Positions below are inferred from directory rankings and
+competitor prominence, not a direct pack screenshot. Recommend a manual live check before
+quoting exact pack position in the audit.
+
+Practice Area: Divorce / Family Law (Deerfield Beach / Broward County, FL)
+
+Search 1 "divorce lawyer Deerfield Beach FL": Firm appears: inferred YES (firm's own city page targets this term directly; frequently surfaced across directory aggregations) — competitors referenced: Heller & Heller PA (Coral Springs, serving Deerfield Beach), Law Offices of Ronald M. Zakarin P.A. (Boca Raton), Gladstone, Weissman, Hirschberg & Schneider P.A. (Boca Raton)
+
+Search 2 "family law attorney Deerfield Beach FL": Firm appears: inferred YES (dedicated "Family Law" and "Deerfield Beach, FL" landing pages exist) — competitors referenced: Weiner & Weiss LLC (Boca Raton), Beaulieu-Fawcett | Newell Law Group (Delray Beach), Lewert Law LLC
+
+Search 3 "high net worth divorce attorney Broward County FL": Firm appears: not confirmed — dedicated high-asset divorce page exists but is undermined by the "Assest" typo — competitors referenced: Gladstone, Weissman, Hirschberg & Schneider P.A. (Chambers-ranked Tier 1 High Net Worth firm, direct threat for this specific search term)
+
+Summary: Fairway Law Group has purpose-built landing pages for its core terms (family law, divorce, Deerfield Beach), which is a solid foundation, but several of the most credentialed competitors in the immediate market (Gladstone Weissman, Zakarin, Weiner & Weiss) carry decades of tenure and premium rankings (Tier 1 Chambers, AV-rated) that Fairway does not yet have — the firm's own site does not appear to be running ads for these terms, so it may be getting outbid or outranked by these longer-established names.
+
+
+=========================================
+STEP 4 — COMPETITOR REVIEW COUNTS
+=========================================
+
+NOTE: Live Google star/review counts could not be pulled directly for competitors with available
+tools (no direct Maps access) — figures below are the most specific third-party numbers found
+and are flagged accordingly. Do not present as certain live counts in the final audit without
+a manual re-check.
+
+- Competitor 1: Gladstone, Weissman, Hirschberg & Schneider, P.A. (Boca Raton, FL) — 22 reviews / 4.6 stars (per Birdeye aggregator); Tier 1 "Best Law Firms" (U.S. News), Chambers High Net Worth Tier 1 2024–2025 — premium brand, direct threat for high-asset divorce searches
+- Competitor 2: Weiner & Weiss, LLC (Boca Raton, FL) — exact review count not retrieved live; AV Preeminent (Martindale-Hubbell) rated, 60+ years combined attorney experience, both partners named Florida Super Lawyers
+- Competitor 3: Law Offices of Ronald M. Zakarin, P.A. (Boca Raton, FL) — exact review count not retrieved live; founder practicing since 1984, positions on complex/high-net-worth divorce litigation
+
+Comparison: Fairway's aggregator-reported ~141 reviews (Trustindex/Google-synced) would outnumber the review counts found for Gladstone Weissman (22) and other named local competitors if the aggregator figure holds up on live verification — this is a likely REVIEW VOLUME ADVANTAGE for Fairway that is currently not being leveraged into pack position or LSA prominence. Confirm the live Google count before citing this comparison in the audit; never state a competitor has more reviews than Fairway without live verification.
+
+
+=========================================
+STEP 5 — DIRECTORY LISTINGS
+=========================================
+
+Avvo: Matthew Waring has a profile (avvo.com/attorneys/33441-fl-matthew-waring-4582176.html) — Super Lawyers "Rising Stars" designation 2021–2025 also referenced on Super Lawyers' own profile page
+Justia: Firm/attorneys likely eligible for the Deerfield Beach divorce/family law directory pages (justia.com/lawyers/divorce/florida/deerfield-beach) — specific Fairway profile not directly confirmed in search results; verify listing exists and claim/complete it if not
+FindLaw: YES — dedicated firm profile found (lawyers.findlaw.com/florida/deerfield-beach/5158161_1/)
+LawInfo: YES — dedicated firm profile found (lawinfo.com/lawfirm/florida/deerfield-beach/fairway-law-group-pllc/...)
+Yelp: YES — "Fairway Law Group," 1430 Federal Hwy, Deerfield Beach, 14 photos, listing updated April 2026
+Martindale: YES — 4.8/5.0 rating from 4 reviews, high marks on legal knowledge, analytical capability, judgment, communication
+
+NAP consistency: Consistent address/phone observed across FindLaw, LawInfo, Yelp, and the firm's own site (1430 [S] Federal Hwy, Suite 200, Deerfield Beach, FL 33441 / 954-388-0646) — minor "1430 Federal Hwy" vs. "1430 S Federal Hwy" variance across sources worth a NAP cleanup pass.
+
+Geo-targeting landing pages: YES — dedicated "Areas Served" pages found for Deerfield Beach plus a broader statewide list (Miami, Tampa, Sarasota, Naples, West Palm Beach, and others), in addition to the Orlando/Central Florida office page. This is a notably broad geo-page footprint for a 5-attorney firm.
+
+**→ GBP, local SEO, and directory sections complete.**
+
+
+=========================================
+STEP 6 — GOOGLE ADS
+=========================================
+
+NOTE: No transcript is available to confirm whether Fairway currently runs Google Ads or at
+what budget. Live ad-copy observation could not be confirmed with available research tools
+(no rendered SERP/ads access). Per the ads-framing rule, do not state with certainty that the
+firm is not running ads — frame strictly as "not observed" / possible outbidding.
+
+Practice Area: Divorce / Family Law (Deerfield Beach / Broward County)
+  - Firm ads observed: Not observed with available tools
+  - Named local competitors likely active in this space: Gladstone, Weissman, Hirschberg & Schneider P.A.; Weiner & Weiss, LLC; Law Offices of Ronald M. Zakarin, P.A. — all carry premium credentials (Tier 1 rankings, AV ratings, decades of tenure) that typically correlate with sustained PPC/LSA investment in competitive South Florida family law markets
+
+Practice Area: High-Asset Divorce
+  - Firm ads observed: Not observed
+  - Named local competitors: Gladstone, Weissman, Hirschberg & Schneider P.A. (Chambers High Net Worth Tier 1 — the clearest named threat for this specific term)
+
+Assessment: Fairway does not appear to be running ads for these searches based on available tools — this may reflect the firm being outbid by longer-established, higher-ranked competitors, or simply that ad presence could not be confirmed with the tools available for this pass. Confirm actual paid-media status and budget on the July 8 call.
+
+
+=========================================
+STEP 7 — LOCAL SERVICE ADS (LSA)
+=========================================
+
+Firm appears in LSA: Not observed / not confirmed with available tools
+Google Screened: Not observed / not confirmed
+LSA review count: Not applicable — not confirmed
+Named local competitors likely positioned for LSA: Gladstone, Weissman, Hirschberg & Schneider P.A.; Weiner & Weiss, LLC — both carry the kind of long-tenured, high-review-volume profile that typically qualifies strongly for Google Screened / LSA placement in family law verticals
+
+Assessment: With no confirmed LSA presence and a review volume (per aggregator data, ~141) that would be competitive if verified, LSA is a plausible near-term opportunity gap for Fairway rather than a channel the firm is confirmed to be missing out on — verify directly on the call.
+
+
+=========================================
+STEP 8 — META ADS
+=========================================
+
+Firm has active ads: Not observed — Meta Ad Library (facebook.com/ads/library) could not be queried live with available tools; firm does have an active Instagram location page and the site links a YouTube channel and podcast, indicating some organic social investment
+Named local competitor 1: Weiner & Weiss, LLC — active Facebook presence; paid Meta activity not confirmed
+Named local competitor 2: Gladstone, Weissman, Hirschberg & Schneider P.A. — active Facebook presence (@gwhslaw); paid Meta activity not confirmed
+
+Assessment: Meta ad activity for Fairway and its named local competitors could not be confirmed with available tools this pass — flag as an area to verify manually in the Meta Ad Library before the audit is finalized. Fairway's existing video/podcast content would repurpose well into Meta ad creative if the channel is confirmed open.
+
+**→ All ads sections complete (with tool-access caveats noted above).**
+
+
+=========================================
+STEP 9 — TRANSCRIPT EXTRACTION
+=========================================
+
+*** NO DISCOVERY CALL TRANSCRIPT AVAILABLE FOR THIS PASS — see banner at top of file. ***
+The discovery/proposal call is scheduled for July 8, 2026. Every field below is either drawn
+from confirmed public/website facts (marked "confirmed — website") or is a rule-based default
+per the audit-research process (marked "not stated — call not yet held"). NONE of the items
+below should be treated as a prospect statement or quote.
+
+Practice areas confirmed: Family Law, Divorce, Men's Divorce, High-Asset Divorce, Child Custody, Child Support, Complex Property Division, Modification of Final Orders [confirmed — website; NOT from transcript]
+Current lead sources: not stated — call not yet held
+Ads ever run: not stated — call not yet held
+Team size and roles: 5 attorneys confirmed via website bios — Matthew Waring (founder, licensed since 2013), Brian Dunmire, Lauren Colella, Alex Kiefer, Casey Whittington [confirmed — website]; support staff count not stated
+Annual revenue: not stated — call not yet held
+Revenue goal: not stated — per process default, use 2x current revenue once current revenue is confirmed on the call
+Average case value: not stated — practice-area default (contested/high-asset divorce) should be used and confirmed on the call
+Current close rate: not stated — default to 15% per process
+Number of locations: 2 — confirmed via website (Deerfield Beach, FL and Orlando, FL) — this overrides the "1 if not mentioned" default since it is independently confirmed live
+Spanish campaign needed: not stated — call not yet held
+Dominant buying motive (DBM): not stated — insufficient information without a transcript to responsibly infer; do not fabricate a DBM quote for this real prospect. Recommend the call agenda explicitly surface this (options per process: firm that runs itself for more owner time / grow-and-sell / scale-and-dominate).
+Any profitability claims made by prospect: none stated — call not yet held
+Any claims about case types or practice areas: none stated — call not yet held (see Step 1 note on possible legacy personal-injury service line to confirm)
+
+**→ Step 9 intentionally incomplete pending the July 8, 2026 discovery call — do not backfill with invented figures.**
+
+
+=========================================
+STEP 10 — COMPETITIVE URGENCY SCORE
+=========================================
+
+Score: 6 / 10
+
+Rationale:
+  - Fairway has real structural advantages already in place — above-fold consultation form, video/podcast content, dedicated geo-landing pages across a wide statewide footprint, and (per aggregator data) a meaningfully larger review volume than at least one premium named competitor.
+  - However, several of the most credentialed firms in its own backyard (Gladstone Weissman — Chambers Tier 1 High Net Worth; Weiner & Weiss — AV-rated, Super Lawyers; Zakarin — practicing since 1984) directly target the same high-asset and contested divorce clientele Fairway is chasing, and none of Fairway's ad presence could be confirmed on any paid channel checked (Google Ads, LSA, Meta).
+  - No section of this research confirmed Fairway is currently running any paid campaign — that gap, if confirmed on the call, would mean organic/directory presence alone is standing against tenured, premium-branded competitors.
+
+Named specific local competitor threats:
+
+1. Gladstone, Weissman, Hirschberg & Schneider, P.A. (Boca Raton, FL)
+   - Chambers High Net Worth Tier 1 (2024–2025); U.S. News "Best Law Firms" Tier 1 Marital & Family Law
+   - Direct threat for the high-asset divorce term Fairway's own site targets (undermined by the "Assest" typo)
+   - Threat level: HIGH
+
+2. Weiner & Weiss, LLC (Boca Raton, FL)
+   - AV Preeminent (Martindale-Hubbell); both partners named Florida Super Lawyers; 60+ years combined experience
+   - Threat level: MODERATE-HIGH — established brand competing for the same Broward/Palm Beach family law clientele
+
+3. Law Offices of Ronald M. Zakarin, P.A. (Boca Raton, FL)
+   - Practicing since 1984; positions specifically on complex/high-net-worth divorce litigation
+   - Threat level: MODERATE — long tenure and reputation in the identical practice niche
+
+Dynamic sentence (Score 4–6):
+"A score of 6 means competitors have meaningful advantages in one or more areas and are pulling ahead. You are not invisible yet — but the window to close the gap is narrowing. Every month without action is a month they extend their lead."
+
+**→ Final research notes (pre-call version) saved.**
+
+
+=========================================
+PASS 2 — VERIFICATION CHECKLIST
+=========================================
+
+[x] Every number in the notes matches actually observed data (aggregator-sourced figures explicitly flagged as such, not presented as live-verified)
+[!] Competitor review counts: only one (Gladstone Weissman, 22/4.6 via Birdeye) was independently found — flagged for live re-verification; Fairway is not stated to have fewer reviews than any named competitor
+[x] Ads sections cover all confirmed practice areas (divorce, high-asset divorce); no ad claims made with false certainty
+[x] No section states "you are not running ads" — only "not observed" / "could not be confirmed"
+[x] No profitability or business claim appears — none available without a transcript
+[x] No competitor reference uses generic labels — all specific named local firms
+[!] PageSpeed scores: UNABLE TO RETRIEVE after multiple attempts (rate-limited) — must be run manually before /audit-write
+[!] DBM: NOT recorded — no transcript available; flagged for the July 8 call rather than invented
+[!] Revenue goal: NOT recorded — no transcript available; default rule noted for use once revenue is known
+[!] Close rate: defaulted to 15% per process (not stated)
+[!] Average case value: NOT recorded — practice-area default to be applied and confirmed on the call
+
+*** THIS FILE IS A PRE-CALL RESEARCH PASS. Re-run Step 9 (and re-check Steps 2, 4, 6, 7, 8 live)
+against the actual July 8, 2026 discovery call transcript before running /audit-write. ***
+
+
+=========================================
+END OF RESEARCH NOTES
+=========================================
