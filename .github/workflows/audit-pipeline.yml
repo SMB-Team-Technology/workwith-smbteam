@@ -113,7 +113,7 @@ jobs:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
         run: |
           TRIGGER_FILE="${{ steps.inputs.outputs.trigger_file }}"
-          claude --model claude-sonnet-4-6 --dangerously-skip-permissions -p "
+          claude --model claude-sonnet-5 --dangerously-skip-permissions -p "
             You are running Pass 1 of the SMB Team Growth Audit pipeline.
 
             Read the trigger file at \`$TRIGGER_FILE\` — it is a JSON file containing
@@ -162,7 +162,7 @@ jobs:
             PACKAGE_INSTRUCTION="PACKAGE OVERRIDE: The trigger file specifies \"$PACKAGE\" as the recommended marketing package. You MUST use this package in Section 11 (Next Steps). Do not override with a different tier based on revenue estimates."
           fi
 
-          claude --model claude-sonnet-4-6 --dangerously-skip-permissions -p "
+          claude --model claude-sonnet-5 --dangerously-skip-permissions -p "
             You are running Pass 2 of the SMB Team Growth Audit pipeline.
 
             Firm Name: $FIRM_NAME

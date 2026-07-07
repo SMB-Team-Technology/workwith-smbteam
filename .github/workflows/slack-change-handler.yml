@@ -46,7 +46,7 @@ jobs:
           TODAY=$(date -u +%Y-%m-%d)
           printf '%s' "$TODAY" > /tmp/today.txt
 
-          claude --model claude-sonnet-4-6 --dangerously-skip-permissions -p "
+          claude --model claude-sonnet-5 --dangerously-skip-permissions -p "
             You are an AI assistant managing law firm growth audit reports for SMB Team.
             Repo is at current working directory. Read /tmp/instruction.txt for the request
             and /tmp/today.txt for today's date.

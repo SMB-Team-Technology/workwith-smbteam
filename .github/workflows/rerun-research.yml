@@ -120,7 +120,7 @@ jobs:
             exit 1
           fi
 
-          claude --model claude-sonnet-4-6 --dangerously-skip-permissions -p "
+          claude --model claude-sonnet-5 --dangerously-skip-permissions -p "
             You are running Pass 1 of the SMB Team Growth Audit pipeline.
 
             Read the trigger file at \`$TRIGGER_FILE\` — it is a JSON file containing
