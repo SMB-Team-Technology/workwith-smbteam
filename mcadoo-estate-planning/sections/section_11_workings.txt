@@ -1,0 +1,97 @@
+SECTION 11 WORKINGS — McAdoo Estate Planning, LLC (July 9, 2026)
+======================================================================
+
+PACKAGE DECISION FILE REVIEW
+----------------------------
+mcadoo-estate-planning/package_decision.json exists (confidence: medium).
+
+Revenue verification (per Pass 2 instruction): Research notes explicitly
+state "Annual revenue: not stated in the transcript" and no other revenue
+signal appears anywhere else in the notes (no case volume, no staff payroll
+detail, no stated revenue goal). The HubSpot-sourced $3,000,000+ figure
+(hubspot_annual_law_firm_revenue) is therefore the best available evidence
+and is not contradicted by any clearer data in the research notes. Per
+audit-write.md: "If the estimate appears correct, use these values exactly."
+CONCLUSION: Revenue band $3,000,000+ / Platinum marketing tier CONFIRMED —
+no correction applied.
+
+Team size note: package_decision.json defaulted team_size_effective to 3
+and flagged "Review for coaching tier accuracy." The research notes
+describe more roles than a headcount of 3 (Kim McAdoo, Scott Holt,
+receptionist, office manager, plus unspecified "non-attorney salespeople"),
+but do not state an exact number. Because no explicit headcount is
+confirmed and the Pass 2 instruction scopes correction specifically to
+revenue band verification, the pre-selected Elite Coach Plus
+(Under-5/no-confirmed-headcount tier) is retained rather than upgraded to
+Master's Circle on an inferred headcount. Flagging for sales team review
+on the call: confirm actual team size to verify Elite Coach Plus vs.
+Master's Circle fit.
+
+MANDATORY PRICE LOOKUP
+-----------------------
+Marketing package selected: Full Service Marketing — Platinum
+  - Bundled price (from table): $15,997/mo
+  - Stand-alone price (from table): $18,997/mo
+  - Savings (stand-alone minus bundled): $3,000/mo
+
+Non-marketing package selected: Elite Coach Plus
+  - Bundled price (from table): $3,200/mo
+  - Stand-alone price (from table): $3,497/mo
+  - Savings (stand-alone minus bundled): $297/mo
+
+Legal AI Workforce (LAW) package selected: none (introduced in Phase 3 roadmap only, not in current investment)
+AI Avatar / Video Growth add-on selected: none
+
+Total monthly investment (sum of all bundled/recurring prices): $19,197/mo
+Total savings (sum of all savings): $3,297/mo
+
+PACKAGE ELIGIBILITY CHECK
+--------------------------
+- Practice area: Estate Planning — no Essentials/LSA-only restrictions apply.
+- Revenue $3M+: hides Essentials marketing products — Platinum (not Essentials) selected, compliant.
+- Team under 5 (unconfirmed exact count, defaulting per decision file): Master's Circle hidden — Elite Coach Plus selected, compliant.
+- Minimum MRR $2,497/mo: $19,197/mo total, compliant.
+- Both a marketing and non-marketing package recommended, per default.
+- 35% cap check: Revenue $3,000,000/yr = $250,000/mo. 35% = $87,500/mo. Total spend (management fees $19,197 + aggressive ad spend $14,000) = $33,197/mo — well under cap.
+
+AD SPEND & ROI PROJECTIONS
+----------------------------
+Practice area: Estate Planning. Close rate: 15% (not stated on call — default). Average case value: not stated on call — using practice-area default $1,500–$3,000, midpoint $2,250 (disclosed as an estimate).
+
+Conservative scenario — Ad spend $3,500/mo:
+  - Blended CPL: Google Search default (single primary channel, matches firm's current dominant channel), midpoint $135 + 20% conservative cushion = $162
+  - Leads: $3,500 / $162 ≈ 21 leads/mo
+  - Cases: 21 × 15% ≈ 3 cases/mo
+  - Revenue: 3 × $2,250 ≈ $6,750/mo
+  - Return: $6,750 / $3,500 ≈ 1.9x
+
+Aggressive scenario — Ad spend $14,000/mo:
+  - Blended CPL across Google Search ($135), LSA ($65), Meta Cold ($55) midpoints, evenly weighted, no cushion ≈ $85
+  - Leads: $14,000 / $85 ≈ 165 leads/mo
+  - Cases: 165 × 15% ≈ 25 cases/mo
+  - Revenue: 25 × $2,250 ≈ $56,250/mo
+  - Return: $56,250 / $14,000 ≈ 4.0x
+
+All figures disclosed in the report as estimates based on industry averages and defaults, since no firm-confirmed case value, revenue goal, or close rate was available.
+
+DBM STATEMENT (Block 1)
+-------------------------
+"We help established NYC estate planning firms get a predictable, self-running marketing and intake system so their team can stop patching gaps by hand and start running the firm instead of rescuing it."
+
+QUICK WIN OPPORTUNITIES (7 identified, spanning all 4 pillars)
+------------------------------------------------------------
+1. [Lead Gen / Quick Win] Fix NAP inconsistency across Avvo, Justia, and Yelp — no named competitor comparison, omit "who" row.
+2. [Lead Gen / Long-Term Play] Build geo-targeted landing pages — competitors: Morgan Legal Group P.C., Law Offices of Roman Aminov.
+3. [Lead Gen / Quick Win] Rebalance homepage messaging toward estate planning — no named competitor comparison, omit "who" row.
+4. [Intake / Quick Win] Add after-hours lead coverage — no named competitor comparison, omit "who" row (transcript references competitor LSA behavior generally, not a single named firm).
+5. [Team / Long-Term Play] Take vendor/landing-page work off Scott's plate — no named competitor comparison, omit "who" row.
+6. [Profit / Quick Win] Establish cost-per-case tracking — no named competitor comparison, omit "who" row.
+7. [Lead Gen / Quick Win] Get the Garden City office live on Maps/GBP — no named competitor comparison, omit "who" row.
+
+FIRST 90 DAYS (5 bullets)
+---------------------------
+1. Launch legal-specific management of Google Ads and Local Service Ads, replacing the current Grow My Ads generalist arrangement.
+2. Clean up NAP inconsistencies across Avvo, Justia, and Yelp so all directories match the firm's real Jamaica office and phone number.
+3. Rebalance homepage and core website messaging to lead with estate planning, wills, and trusts instead of probate.
+4. Build new geo-targeted landing pages for Queens Village, Hollis, St. Albans, Springfield Gardens, and Garden City.
+5. Kick off Elite Coach Plus coaching sessions with Kim and Scott to begin building the delegation and systems structure the firm currently lacks.
