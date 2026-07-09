@@ -1,0 +1,138 @@
+<!-- ⚠️ NO CSS IN THIS FILE. No <style> blocks. No inline styles. No style="" attributes.
+     All styling comes from audit_styles.css only. Use only existing class names.
+     If you find yourself writing CSS — stop and delete it. -->
+<!-- ============================================================
+     SECTION 05 — YOUR GROWTH HEALTH ASSESSMENT
+
+     INSTRUCTIONS FOR COWORK:
+     - For each traffic circle: use class "red", "amber", or "green" based on your rating
+     - For each sc-findings list: write 2-3 specific bullet points for this firm only
+     - For sc-dbm: one italic sentence connecting this pillar to income, freedom, or DBM
+     - For urgency score: replace the number, set left% = (score/10)*100 on the marker
+     - For urgency sentence: use the correct dynamic sentence based on score range
+     - For competitor cards: write 2-3 named competitors with specific threat reasons
+     - Do not add inline styles. Do not change class names.
+     ============================================================ -->
+
+<div class="section-header" id="growth-health">
+  <div class="section-header-inner">
+    <h2>Your Growth Health Assessment</h2>
+    <div class="subtext">Inkell &amp; Associates</div>
+  </div>
+</div>
+
+<div class="content-wrap">
+
+  <div class="legend">
+    <div class="legend-item">
+      <div class="legend-dot red"></div>
+      <div class="legend-label">Red <span>— Critical Priority</span></div>
+    </div>
+    <div class="legend-item">
+      <div class="legend-dot amber"></div>
+      <div class="legend-label">Amber <span>— In Progress</span></div>
+    </div>
+    <div class="legend-item">
+      <div class="legend-dot green"></div>
+      <div class="legend-label">Green <span>— On Track</span></div>
+    </div>
+  </div>
+
+  <div class="scorecard-label">Pillar Health Scorecard</div>
+
+  <div class="scorecard-grid">
+
+    <!-- LEAD GENERATION CARD -->
+    <div class="sc-card">
+      <div class="sc-card-header"><h3>Lead Generation</h3></div>
+      <div class="sc-card-body">
+        <div class="traffic-circle amber"></div>
+        <ul class="sc-findings">
+          <li>Both PPC and LSA are active with real, meaningful spend (Q1 2026: PPC $644 cost per lead, LSA $252 cost per lead) — this is not a firm starting from zero</li>
+          <li>Lead volume is high, but quality is inconsistent — a meaningful share of leads are already represented by another firm or are shopping around</li>
+          <li>No dedicated city or practice-area landing pages exist, while at least one named competitor (Rhoades &amp; Morrow) has built exactly that structure</li>
+        </ul>
+        <div class="sc-dbm">Fixing lead quality — not just lead volume — is what lets Griffin stop treating marketing spend as a gamble and start treating it as a predictable system he does not have to manage personally.</div>
+      </div>
+    </div>
+
+    <!-- INTAKE CARD -->
+    <div class="sc-card">
+      <div class="sc-card-header"><h3>Intake</h3></div>
+      <div class="sc-card-body">
+        <div class="traffic-circle red"></div>
+        <ul class="sc-findings">
+          <li>Current close rate is roughly 50% against the firm's own 80% target</li>
+          <li>Sales scripts exist but are not consistently used, and follow-up is inconsistent across the intake pipeline</li>
+          <li>An estimated one-third of qualified opportunities are mishandled somewhere between first contact and signed case</li>
+        </ul>
+        <div class="sc-dbm">Every mishandled opportunity is revenue the firm already paid to generate — and every one of them currently lands back on Griffin's desk to catch.</div>
+      </div>
+    </div>
+
+    <!-- SELF-MANAGING TEAM CARD -->
+    <div class="sc-card">
+      <div class="sc-card-header"><h3>Self-Managing Team</h3></div>
+      <div class="sc-card-body">
+        <div class="traffic-circle red"></div>
+        <ul class="sc-findings">
+          <li>All operational knowledge and problem-solving runs through Yuri Griffin — there is no independent management layer that functions without him</li>
+          <li>The 24-person team has real structure (overseas intake specialists, pre-litigation paralegals, a demand/negotiation department, a litigation team) but no accountability system independent of Griffin</li>
+          <li>The litigation team is missing its own monthly complaint-filing target (6/month) and pre-lit paralegals are pushing back on 70-80 case caseloads — both signs of a team without a self-correcting management structure</li>
+        </ul>
+        <div class="sc-dbm">Griffin's own stated goal — "an autonomous firm where systems drive performance" — cannot happen while every escalation, every metric miss, and every accountability gap still routes through him personally.</div>
+      </div>
+    </div>
+
+    <!-- PROFIT CARD -->
+    <div class="sc-card">
+      <div class="sc-card-header"><h3>Profit</h3></div>
+      <div class="sc-card-body">
+        <div class="traffic-circle amber"></div>
+        <ul class="sc-findings">
+          <li>Revenue is growing fast — 2025 actual $2.2M, 2026 projected &gt;$5M, well ahead of the firm's own $3M goal</li>
+          <li>Financial visibility currently lives in a local RStudio dashboard that Griffin maintains himself — the broader team does not have access to it</li>
+          <li>The firm is shifting strategy toward litigation cases (roughly double the revenue-per-case-day of pre-litigation work: $40.22 vs. $34.33) without a firm-wide profit plan tracking the transition</li>
+        </ul>
+        <div class="sc-dbm">Revenue outrunning visibility means growth is currently making Griffin more essential to the business, not less — the opposite of the freedom he says he wants.</div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- COMPETITIVE URGENCY SCORE -->
+  <div class="urgency-card" id="urgency-score">
+    <div class="urgency-label">Competitive Urgency Score</div>
+
+    <div class="urgency-score">5</div>
+    <div class="urgency-outof">out of 10</div>
+
+    <div class="urgency-sentence">A score of 5 means competitors have meaningful advantages in one or more areas and are pulling ahead. You are not invisible yet — but the window to close the gap is narrowing. Every month without action is a month they extend their lead.</div>
+
+    <div class="urgency-bar"><div class="urgency-marker" style="left:50%;"></div></div>
+    <div class="urgency-scale">
+      <span>1–3 = Low Urgency</span>
+      <span>4–6 = Moderate</span>
+      <span>7–10 = High Urgency</span>
+    </div>
+  </div>
+
+  <div class="competitors-label">Your Top Competitive Threats</div>
+
+  <div class="competitor-card">
+    <div class="competitor-name">Rhoades &amp; Morrow</div>
+    <div class="competitor-threat">Has built dedicated city and practice-area landing pages (e.g. areas-we-serve/wilmington/car-accident/) that Inkell's site currently lacks — giving them a stronger long-tail local SEO footprint even with a thinner review profile (4.5★/15 reviews vs. Inkell's 4.9★/324).</div>
+  </div>
+
+  <div class="competitor-card">
+    <div class="competitor-name">Silverman, McDonald &amp; Friedman</div>
+    <div class="competitor-threat">Consistently surfaces in organic search for core terms like "personal injury lawyer Wilmington DE" and "medical malpractice attorney Wilmington DE," where Inkell did not appear in this session's research — despite Inkell holding the stronger overall review profile (4.9★/324 vs. 4.8★/313).</div>
+  </div>
+
+  <div class="competitor-card">
+    <div class="competitor-name">Legacy Brand Drag — Hudson, Castle &amp; Inkell, LLC</div>
+    <div class="competitor-threat">BBB and Birdeye still list the firm under its prior name, stranding 219 reviews under a listing that has not been migrated to "The Inkell Firm, LLC" — fragmenting review signal and local citation consistency at exactly the moment competitors are consolidating their own local SEO presence.</div>
+  </div>
+
+</div>
+<div class="back-to-top"><a href="#toc">↑ Back to Top</a></div>

@@ -1,0 +1,221 @@
+INKELL & ASSOCIATES — SECTION 11 WORKINGS FILE
+Internal only. Not for client report.
+
+======================================================================
+PACKAGE DECISION CORRECTION — SUPERSEDES package_decision.json
+======================================================================
+inkell-associates/package_decision.json exists with "confidence": "low". It selected
+Full Service Marketing — Starter ($4,847/mo bundled) and Elite Coach Plus ($3,200/mo
+bundled) based on an estimated revenue of $570,000, sourced from a generic HubSpot
+revenue band ("$180K - $960K") because the research notes did not yet contain revenue
+data at the time that file was generated. It also defaulted team size to 3.
+
+This estimate is superseded. The research notes (Step 9, transcript extraction) contain
+explicit, real figures directly from the discovery call transcript:
+  - "Annual revenue: 2025 actual $2.2M; 2026 projected >$5M"
+  - "Revenue goal: $3M stated 2026 goal — firm is on track to exceed it (projected >$5M)"
+  - "Team size: 24 members plus 2-3 outsourced"
+
+Per audit-write.md: "If confidence is medium or low: verify the selected tiers match
+the research notes before proceeding; document any correction in
+section_11_workings.txt" and "If the research notes clearly indicate a different
+revenue band, apply the eligibility rules and select the correct tier — document your
+reasoning in section_11_workings.txt."
+
+Applying the real figures against the eligibility rules and pricing tables in
+audit-write.md produces a materially different — and materially larger — package than
+package_decision.json's stale estimate. The corrected selection is documented below.
+
+======================================================================
+MANDATORY PRICE LOOKUP — VERIFIED CHARACTER-FOR-CHARACTER AGAINST audit-write.md
+======================================================================
+
+Marketing package selected: Dominate (Full Service Marketing)
+  - Bundled price (from table): $10,497/mo
+  - Stand-alone price (from table): $12,497/mo
+  - Savings (stand-alone minus bundled): $2,000/mo
+  - Table row used: "$1M+ aggressive goals | Dominate | $10,497/mo | $75,000" (ad spend cap)
+  - Rationale: 2025 actual revenue ($2.2M) falls in the $1M-$3M Growth band on a
+    revenue-only basis. But the firm's goals are aggressive — it is on track to more
+    than double its own stated $3M 2026 goal (projected >$5M) — which triggers the
+    audit-write.md boundary rule: "If the firm's goals are aggressive or their
+    calculated ad spend exceeds the lower tier's cap, move to the higher tier." This
+    moves the selection from Growth ($7,397/mo, $50,000 cap) to Dominate ($10,497/mo,
+    $75,000 cap).
+
+Non-marketing package selected: Master's Circle + FCOO Director
+  - Bundled price (from table): $8,394/mo
+  - Stand-alone price (from table): $10,794/mo ($4,997 Master's Circle stand-alone +
+    $5,797 FCOO Director stand-alone)
+  - Savings (stand-alone minus bundled): $2,400/mo
+  - Table row used: "$2M+ | 5+ with dedicated staff | Master's Circle + FCOO Director
+    | $8,394/mo"
+  - Rationale: revenue is $2M+ (2025 actual $2.2M), team is 24+ members with dedicated
+    staff across distinct functions (marketing director, ops/paralegal management,
+    intake specialists, negotiation department, litigation team) — a direct match to
+    the "$2M+ | 5+ with dedicated staff" row. The transcript's own proposed solution is
+    literally "a fractional COO (10-15+ years experience) to directly implement systems
+    and build accountability" — a direct match to FCOO Director and to the DBM
+    (Griffin as single point of failure, no independent management layer).
+  - Per audit-write.md: "Fractional packages (FCOO and FCFO) now include Elite Coach
+    group deliverables." The FCOO Director deliverables list in Block 2 includes
+    weekly group coaching sessions, practice area masterminds, virtual access to
+    quarterly workshops, and one annual in-person workshop — included in the $8,394/mo
+    bundled price, not billed separately.
+
+Legal AI Workforce (LAW) package selected: none
+  - Not recommended this cycle. The litigation team is described as "resistant to AI
+    adoption" in the research notes — a signal against near-term LAW readiness. The
+    firm's most urgent need is operational accountability (FCOO Director), not AI
+    workforce tooling. LAW AI Essentials remains a natural Phase 3 addition once the
+    accountability layer is in place (see roadmap below).
+
+AI Avatar / Video Growth add-on selected: none
+  - No indication in the transcript of interest in video/social content production.
+    Not recommended.
+
+Total monthly investment (sum of all bundled/recurring prices):
+  $10,497 (Dominate) + $8,394 (Master's Circle + FCOO Director) = $18,891/mo
+
+Total savings (sum of all savings):
+  $2,000 (Marketing) + $2,400 (Non-Marketing) = $4,400/mo
+
+======================================================================
+AD SPEND CALCULATION
+======================================================================
+
+Conservative ad spend: $12,000/mo
+  - MVA/Car Accident row: Google PPC min $10,000 + LSA min $2,000 = $12,000
+  - No Meta included: the transcript's stated goal is to optimize existing PPC and LSA
+    channels for quality, not to expand into new channels at this time.
+
+Aggressive ad spend: $50,000/mo
+  - 20% rule: $3,000,000 (stated 2026 revenue goal) x 20% / 12 = $50,000/mo
+  - Geographic market multiplier: Wilmington, DE is a mid-size market — Tier 4
+    (significant regional), multiplier 1.0x. $50,000 x 1.0 = $50,000.
+  - No Spanish campaign needed (not stated in transcript) — no additional multiplier.
+  - Reverse math validation: ($3,000,000 / 12) / $7,500 avg case value = 33.3 target
+    cases/month -> / 50% close rate = 66.7 required leads/month -> x ~$470 blended CPL
+    (unweighted average, used only for this cross-check) = ~$31,000/mo. This is lower
+    than the 20%-rule figure of $50,000, so per the rule ("use whichever of 20% rule or
+    reverse math is higher") the $50,000 figure is used.
+  - Tier cap check: Dominate's ad spend cap is $75,000/mo. $50,000 fits comfortably
+    under this cap — no tier escalation needed for ad spend alone.
+
+Average case value: not stated as a dollar figure in the transcript (only
+revenue-per-case-day metrics were given: $40.22 litigation vs. $34.33 pre-litigation).
+Using the MVA/Car Accident practice-area default midpoint of $7,500 per the
+audit-write.md default table. This is a disclosed default, not a transcript-confirmed
+figure, and is labeled as such in both the audit and the Sales Companion.
+
+Close rate for ROI math: transcript's stated current rate, ~50% (target is 80% but not
+yet achieved). Current rate is used for conservative, defensible ROI math in Block 4;
+the 80% target is referenced qualitatively elsewhere in the audit (e.g. Growth Health,
+Intake sections) as upside, not built into the Block 4 math itself.
+
+Blended CPL (Accident & Injury, weighted ~83% Google Search / 17% LSA, reflecting the
+firm's actual channel mix and spend proportions):
+  Google Search mid = ($630+$780)/2 = $705
+  LSA mid = ($210+$260)/2 = $235
+  Blended = 0.83 x $705 + 0.17 x $235 = $585.15 + $39.95 = ~$625
+
+ROI Conservative ($12,000/mo spend):
+  Blended CPL $625 + 20% cushion = $750
+  Leads = $12,000 / $750 = 16/mo
+  Cases = 16 x 50% = 8/mo
+  Revenue = 8 x $7,500 = $60,000/mo
+  Return = $60,000 / $12,000 = 5.0x
+
+ROI Aggressive ($50,000/mo spend):
+  Blended CPL $625, no cushion
+  Leads = $50,000 / $625 = 80/mo
+  Cases = 80 x 50% = 40/mo
+  Revenue = 40 x $7,500 = $300,000/mo
+  Return = $300,000 / $50,000 = 6.0x
+
+All ROI figures are estimates and are labeled as such in both the audit HTML and the
+Sales Companion PDF.
+
+======================================================================
+DBM STATEMENT FOR BLOCK 1
+======================================================================
+"We help fast-growing personal injury firms get an autonomous, accountable operation
+so they can free the owner from being the firm's single point of failure."
+(Griffin/the firm is the audience; freedom from being the operational bottleneck —
+"an autonomous firm where systems drive performance" — is the DBM.)
+
+======================================================================
+QUICK WIN OPPORTUNITIES (6 minimum, across all four pillars)
+======================================================================
+1. [Lead Gen / Quick Win] Lead Quality Filtering on Existing PPC/LSA — Why: high
+   volume, low quality (already-represented, comparison-shopping leads) is diluting
+   two channels that already work. Competitor: n/a (internal process fix). Opportunity:
+   tighter targeting and qualification at the ad/landing-page level improves cost per
+   signed case without new spend.
+
+2. [Lead Gen / Long-Term Play] Geo-Targeted Landing Pages — Why: no service-area pages
+   exist for Newark, Dover, or New Castle County. Competitor: Rhoades & Morrow (has
+   areas-we-serve/wilmington/car-accident/ page structure). Opportunity: capture
+   long-tail local search volume currently ceded to a competitor with a weaker review
+   profile.
+
+3. [Lead Gen / Quick Win] Legacy Brand / Review Consolidation — Why: 219 reviews are
+   stranded under the old "Hudson, Castle & Inkell, LLC" name on BBB and Birdeye.
+   Competitor: n/a. Opportunity: reconciling NAP and review signal strengthens the
+   4.9/324 review profile that already beats every named competitor.
+
+4. [Intake / Quick Win] Sales Script Accountability — Why: scripts exist but are not
+   consistently used; close rate is ~50% vs. an 80% target. Competitor: n/a.
+   Opportunity: converting more of the leads already being generated, at zero
+   incremental marketing cost.
+
+5. [Intake / Quick Win] Qualified Opportunity Follow-Up Tracking — Why: an estimated
+   one-third of qualified opportunities are mishandled. Competitor: n/a. Opportunity:
+   recovering revenue already paid for through marketing spend.
+
+6. [Team / Long-Term Play] Fractional COO Implementation — Why: Griffin is the single
+   point of failure; no independent accountability layer exists. Competitor: n/a.
+   Opportunity: matches the firm's own proposed solution on the call ("a fractional
+   COO to directly implement systems and build accountability") and directly enables
+   the DBM.
+
+7. [Profit / Long-Term Play] Shared Financial Dashboard / Profit Visibility — Why:
+   financial visibility currently lives only in Griffin's personal RStudio dashboard,
+   inaccessible to the team. Competitor: n/a. Opportunity: a profit plan the
+   leadership team can see turns fast revenue growth into a firm that can run without
+   Griffin personally monitoring it.
+
+======================================================================
+FIRST 90 DAYS BULLETS
+======================================================================
+1. Launch optimized PPC and LSA campaigns with tightened targeting and qualification
+   to reduce already-represented and low-intent lead volume.
+2. Address homepage contact-form friction and confirm mobile responsiveness/PageSpeed
+   scores that could not be obtained during research.
+3. Kick off Master's Circle group coaching and begin FCOO Director onboarding to start
+   building the accountability layer beneath Griffin.
+4. Reconcile the legacy "Hudson, Castle & Inkell, LLC" listings on BBB and Birdeye to
+   consolidate the firm's 4.9/324 review signal under its current name.
+5. Stand up sales-script adherence tracking and a qualified-opportunity follow-up
+   process in intake.
+
+======================================================================
+ESCALATION FLAGS — INTERNAL ONLY, NEVER IN CLIENT-FACING REPORT
+======================================================================
+- Marketing MRR over $10K threshold: Dominate is $10,497/mo bundled -> exceeds the
+  "Marketing MRR over $10K -> scoping approval required" threshold. SCOPING APPROVAL
+  REQUIRED before this proposal is finalized with the client.
+- Ad spend over $25K threshold: Aggressive ad spend recommendation is $50,000/mo ->
+  exceeds the "Ad spend over $25,000 -> scoping approval required" threshold. SCOPING
+  APPROVAL REQUIRED. (Conservative $12,000/mo does not trigger this.)
+- Revenue goal exceeds projected ad revenue -> paid ads team review: NOT APPLICABLE —
+  the firm's revenue is projected to exceed its stated goal, not fall short of it.
+- Personal Injury in top 40 metro -> approval required: Wilmington, DE is not
+  identified as a top-40 metro in the research notes; not flagged, but sales rep should
+  confirm.
+- No LAW or AI Avatar package recommended this cycle, so those escalation triggers do
+  not apply.
+
+These flags are logged here for the sales team (Randy Gold) and must not appear
+anywhere in the client-facing HTML audit or the Sales Companion PDF's client-visible
+content.
