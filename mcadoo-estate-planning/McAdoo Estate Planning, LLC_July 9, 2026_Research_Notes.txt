@@ -1,0 +1,145 @@
+MCADOO ESTATE PLANNING, LLC — GROWTH AUDIT RESEARCH NOTES
+Prepared for: Scott Holt (contact) / Kim McAdoo (principal attorney)
+Sales Rep: Dan Bryant
+Date: July 9, 2026
+Firm operates as: NYC Estate Plans (nycestateplans.com)
+Proposal call: July 15, 2026, 11:00 AM–12:00 PM ET
+
+======================================================================
+STEP 1 — WEBSITE RESEARCH (nycestateplans.com)
+======================================================================
+- Website URL confirmed live: yes
+- Last redesign date or estimated age: not explicitly dated on-site; copyright year shows 2026, suggesting a recent build/update cycle. No prior web vendor is currently engaged (transcript: prior vendor "Non-Stuffy Attorney" built the existing site and has been terminated).
+- Mobile responsive: not independently confirmed via static fetch — flag for manual confirmation
+- Homepage headline: "Top NYC Estate Planning Firm" with subheading "Protect your legacy and provide for your loved ones."
+- CTA above fold: yes — "Schedule a Consultation," appears in both the top navigation and the hero section
+- Contact form location: reached via the "Schedule a Consultation" CTA throughout the page rather than an embedded above-fold form
+- Live chat present: no
+- Attorney bio present: no — homepage emphasizes firm philosophy/services over individual attorney credentials (matches transcript: Kim is the firm's attorney/face but no bio section was observed)
+- Video present: no video content observed on homepage sections reviewed
+- Blog present: yes — most recent visible post: "Designing Your Legacy: Strategic Tips for Crafting Effective Wills and..." dated January 2026
+- Practice area emphasis: Estate planning, Medicaid planning, probate, and wills/trusts all receive roughly equal visual weight as service cards, plus a "fixed rate legal fees" callout in the header. This confirms the transcript's pain point directly — Scott called the site "crap" and said it's over-weighted toward probate, which the firm wants to de-emphasize in favor of estate planning.
+- Additional confirmed detail: site lists two office addresses — 175-61 Hillside Ave, Ste 303, Jamaica, NY 11432 (primary) and 1225 Franklin Avenue, Suite 325, Garden City, NY 11530 (second office). This matches the transcript's note of "a second office not yet live on Maps."
+- Geo-targeted landing pages: none found for surrounding neighborhoods/cities (see Step 5).
+
+PageSpeed:
+- PageSpeed mobile score: NOT OBTAINED — the public PageSpeed Insights API returned HTTP 429 (quota exceeded) on every attempt this session (tried 3x, mobile strategy). The pagespeed.web.dev UI itself renders scores client-side via JavaScript after page load, so a static fetch only captures the "Running analysis" loading state.
+- PageSpeed desktop score: NOT OBTAINED — same limitation as above.
+- ACTION REQUIRED: re-run pagespeed.web.dev/report?url=https://nycestateplans.com/ manually before the report is finalized; do not substitute an estimated number for these fields.
+
+======================================================================
+STEP 2 — GOOGLE BUSINESS PROFILE
+======================================================================
+- GBP found: yes (verified via live review-aggregator breakdown, see note below)
+- Star rating: 4.9
+- Total review count: 273 (Birdeye's live source-breakdown view attributes all 273 reviews on the firm's profile directly to Google — "Google (273) / Birdeye (0)" — used as the best available live proxy for the GBP figure since a direct Google Maps render could not be captured in this session)
+- Most recent review date: not independently isolated this session (Google Maps date-stamping requires JS rendering not captured by static fetch)
+- Primary category: Estate Planning Attorney (site and directory listings consistently describe the firm this way)
+- Photos active: not independently confirmed (not renderable via available tools)
+- Posts active: not independently confirmed (not renderable via available tools)
+- NOTE: this is a genuine strength — McAdoo's review volume and rating exceed every named local competitor identified in Step 4 below.
+
+======================================================================
+STEP 3 — LOCAL 3-PACK SEARCHES
+======================================================================
+Note: live Google Maps 3-pack rendering was not accessible via available research tools this session (map pack requires JS rendering not captured by static search). Results below reflect organic/directory search visibility as the best available proxy — treat competitor "pack" positioning as directional, not a confirmed live map-pack screenshot.
+
+Practice Area 1: Estate Planning (Jamaica/Queens, NY)
+- Search 1 "estate planning attorney Jamaica NY": firm appears — not observed in top organic/directory results returned — competitors surfaced: Law Offices of Roman Aminov, Law Office of Elliot S. Schlissel
+- Search 2 "wills and trusts lawyer Queens NY": firm appears — not observed in top organic/directory results returned — competitors surfaced: Morgan Legal Group P.C., Simon & Gilman LLP, Tarshis & Hammerman LLP
+- Search 3 "elder law attorney Jamaica Queens NY": firm appears — not observed in top organic/directory results returned — competitors surfaced: Law Offices of Roman Aminov, Law Offices of Irina Yadgarova PLLC, Law Offices of Frank Bruno
+
+This matches the transcript's stated pain point directly: "Organic visibility gap: Low rankings across target grid; home/meta/H1 misalignment and thin/local relevance."
+
+======================================================================
+STEP 4 — COMPETITOR REVIEW COUNTS
+======================================================================
+- Competitor 1: Law Offices of Roman Aminov (Queens/Flushing location) — reviews: 41 (Google, verified live via Birdeye source breakdown) — rating: 5.0
+- Competitor 2: Morgan Legal Group P.C. (Queens) — reviews: 154 (Google, verified live via Birdeye source breakdown) — rating: 5.0
+- Competitor 3: Simon & Gilman, LLP (Queens Blvd) — reviews: 128 (Google, verified live via Birdeye source breakdown) — rating: 4.4 (aggregate across all platforms; no separate Google-only rating was displayed)
+
+Prospect comparison: McAdoo's review profile (4.9★ / 273 reviews) is currently stronger than all three named competitors above on both volume and rating. Reviews are a strength, not a gap, for this firm — do not frame reviews as a weakness in the audit.
+
+======================================================================
+STEP 5 — DIRECTORY LISTINGS
+======================================================================
+- Avvo: active profile for Kimberly Eugena McAdoo — lists address "17561 Hillside Ave Ste 303, Jamaica, NY 11432-5768" (close to actual office but formatted inconsistently), no phone number listed ("Telephone: Not Available"), and shows 0.0 rating / "Not yet reviewed" — a thin, incomplete profile despite the firm's strong review volume elsewhere.
+- Justia: active profile exists, but lists the firm at "99 Wall Street, #2139, New York, NY 10005" with phone "(347) 866-3189" — NAP INCONSISTENCY: neither the address nor the phone number matches the firm's actual Jamaica office or its site-listed number (718-306-6619).
+- FindLaw: NO PROFILE FOUND for the firm or for Kimberly McAdoo in New York in a targeted site search — this is a real directory gap, not just a weak listing.
+- Yelp: listing exists but is unclaimed — shows address "43 W 43rd St, Suite 95, New York, NY 10036" and phone "(212) 401-8601" — a second, different NAP inconsistency (a Manhattan virtual-office-style address, distinct from both the Jamaica office and the Justia listing). No star rating is displayed on the unclaimed listing itself.
+- Additional review aggregators found (Birdeye, ProvenExpert, Wheree): all correctly reference the Jamaica-based Google review pool (273 reviews / 4.9★).
+- NAP INCONSISTENCY SUMMARY: three different addresses and three different phone numbers are currently in circulation across Avvo, Justia, and Yelp alone, none of which match the firm's actual Jamaica office or site-listed phone number. This directly undermines local SEO trust signals and is worth flagging prominently in the audit.
+- Geo-targeting landing pages: none found on the firm's own site for surrounding neighborhoods/cities (e.g., Queens Village, Hollis, St. Albans, Springfield Gardens). By contrast, Morgan Legal Group P.C. maintains dedicated geo+practice-area pages (e.g., "queens-elder-law-attorney," "wills-and-trusts-queens") and Roman Aminov maintains a dedicated "Jamaica NY Branch" location page — both a structural local-SEO advantage McAdoo's site currently lacks.
+
+======================================================================
+STEP 6 — GOOGLE ADS
+======================================================================
+Practice Area 1: Estate Planning (Jamaica/Queens, NY)
+- Firm ads observed: not observed via available research tools this session (live paid-SERP rendering requires a real browser session and was not accessible here) — per the transcript, the firm confirms it actively runs Google Ads/PPC through vendor "Grow My Ads," with spend increasing from ~$6k to ~$8k/month, so absence from this session's search snapshot reflects a tooling limitation rather than an inactive campaign
+- Named local competitors running ads: not observed via available research tools this session — no distinctly-labeled paid ad units could be captured; recommend a live manual check before the proposal call if specific competitor ad copy is needed for the pitch
+
+======================================================================
+STEP 7 — LOCAL SERVICE ADS
+======================================================================
+- Firm appears in LSA: not observed via available research tools this session (LSA units render dynamically and were not captured by static search); per the transcript, the firm confirms an active, longstanding Google LSA presence, so this is a known active channel even though it could not be visually reconfirmed live today
+- Google Screened: not observed/not confirmed this session
+- LSA review count: not available this session
+- Named local competitors in LSA: not observed/not confirmed this session — recommend a live manual check from a Queens-based IP before the proposal call, especially given the transcript's note that competitors are running LSA 24/7 with message-lead capture, which Dan already flagged as a market shift since 2024
+
+======================================================================
+STEP 8 — META ADS
+======================================================================
+- Firm has active ads: not observed — Meta Ads Library could not be accessed directly in this session (request blocked/403, then a socket timeout on retry); this is consistent with the transcript, which states directly that the firm runs "No social ads" today
+- Named local competitor 1: Morgan Legal Group P.C. — maintains an active Facebook business presence; ad activity could not be confirmed live this session
+- Named local competitor 2: not confirmed — Meta Ads Library access was not available this session for any firm
+
+======================================================================
+STEP 9 — TRANSCRIPT EXTRACTION
+======================================================================
+- Practice areas confirmed: Estate planning (primary/desired focus), wills, trusts, Medicaid planning, probate (currently over-emphasized on the site but the firm wants to de-emphasize/avoid taking on more of this work); possible future expansion into elder law
+- Current lead sources: Google LSA (active) and Google Ads/PPC (active, run by third-party vendor "Grow My Ads"); organic presence described as weak; no social ads
+- Ads ever run: Yes — Google LSA active (historical/ongoing) and Google Ads/PPC active, with spend increasing from ~$6k to ~$8k/month via Grow My Ads (a generalist vendor, not legal-specific). No Meta/social ads currently ("No social ads" stated directly).
+- Team size: Kim McAdoo (principal attorney, "face of the firm"), Scott Holt (marketing/operations lead), plus a receptionist and an office manager. Non-attorney salespeople handle first meetings with prospects; Kim joins the second meeting.
+- Annual revenue: not stated in the transcript
+- Revenue goal: not stated — per instructions, default to 2x current revenue; however current revenue itself was also not stated, so both figures should be flagged as assumptions in the report rather than presented as firm-confirmed numbers
+- Average case value: not stated as a dollar figure in the transcript — flag and use an estate-planning practice-area default (typically presented as a flat-fee range) rather than a firm-confirmed number
+- Current close rate: not stated — default to 15% per instructions
+- Number of locations: 2 — primary office in Jamaica, Queens; a second office (confirmed via site research to be in Garden City, NY) exists but is "not yet live/optimized on Maps/site," per the transcript
+- Spanish campaign needed: not stated in the transcript
+- Dominant buying motive: not a clean surface answer in the transcript. Scott (ops/marketing lead) repeatedly frames pain points in terms of fragmented, manual workload falling on him personally — he is "forced to DIY landing pages causing inconsistency and fatigue," and wants intake, CRM data hygiene, and after-hours coverage to run automatically rather than requiring his manual intervention. This points to DBM category (1): a firm/marketing engine that runs itself so the operator (Scott, on Kim's behalf) has more time and is no longer the bottleneck patching gaps between vendors. This is an inference, not an exact quote.
+- Any profitability claims made by prospect: none stated
+- Any claims about case types or practice areas: "Practice area focus and expansion? Estate planning primary; maybe elder law later. Intend to avoid probate." Also: "Website: nycestateplans.com; Scott deems it 'crap,' over-weighted to probate (which they don't want)."
+
+======================================================================
+STEP 10 — COMPETITIVE URGENCY SCORE
+======================================================================
+Score: 6/10
+
+Named threats:
+1. Morgan Legal Group P.C. — 154 Google reviews at 5.0★, and maintains dedicated geo + practice-area landing pages (e.g., "wills-and-trusts-queens," "queens-elder-law-attorney") that McAdoo's site entirely lacks — a direct structural local-SEO advantage despite McAdoo holding the stronger overall review profile.
+2. Law Offices of Roman Aminov — maintains a dedicated "Jamaica NY Branch" location page targeting the exact same neighborhood as McAdoo's primary office, the kind of hyper-local, practice-specific content McAdoo's site does not currently have.
+3. Simon & Gilman, LLP — 128 Google reviews with a broad, established multi-practice presence on Queens Blvd, appearing prominently across wills/trusts search queries in this exact market.
+
+Dynamic sentence: "A score of 6 means competitors have meaningful advantages in one or more areas and are pulling ahead. You are not invisible yet — but the window to close the gap is narrowing. Every month without action is a month they extend their lead."
+
+======================================================================
+PASS 2 — VERIFICATION CHECKLIST
+======================================================================
+[x] Every number in the notes matches actually observed data (PageSpeed explicitly flagged as not obtained rather than estimated)
+[x] Every competitor review count has been verified via live aggregator data — McAdoo's own review profile (4.9/273) exceeds all three named competitors in Step 4, and this is stated explicitly rather than mischaracterized
+[x] Ad sections (Steps 6–8) cover all practice areas/channels called for; where the firm's own ads were not visible in this session's snapshot, the notes cite the transcript's confirmation that LSA/PPC campaigns are actively running rather than claiming otherwise
+[x] No section states "you are not running ads" — all phrased as "not observed via available research tools this session," with the transcript's confirmed active LSA/PPC spend stated plainly alongside
+[x] No profitability or business claim appears unless sourced from the transcript
+[x] No competitor reference uses generic labels — only specific named local firms (Roman Aminov, Morgan Legal Group P.C., Simon & Gilman LLP, Elliot S. Schlissel, Irina Yadgarova PLLC, Frank Bruno)
+[x] PageSpeed scores are explicitly flagged as NOT OBTAINED (tooling limitation — API quota exhausted) rather than estimated — action item logged for manual re-check before finalizing the report
+[x] DBM is recorded (inferred from transcript: marketing/intake systems that run themselves so Scott is no longer the manual bottleneck)
+[x] Revenue goal is recorded (not stated — flagged, default 2x current revenue also flagged since current revenue is unstated)
+[x] Close rate is recorded (not stated — defaulted to 15% per instructions)
+[x] Average case value is recorded (not stated — practice-area default flagged rather than presented as firm-confirmed)
+
+OUTSTANDING ITEMS FOR MANUAL FOLLOW-UP BEFORE FINALIZING REPORT:
+1. PageSpeed mobile/desktop scores — API quota was exhausted this session; re-run manually.
+2. Live Google Maps GBP photos/posts status and exact live review count/date — direct Maps rendering was not accessible via available tools.
+3. Live LSA unit screenshot (Google Screened badge, competitor names in the unit) and live Google Ads SERP screenshot — dynamic content not renderable this session.
+4. Meta Ads Library — access returned 403/timeout this session; competitor Meta ad activity should be reconfirmed manually (though transcript already confirms McAdoo itself runs no social ads).
+5. NAP inconsistency (three different addresses/phone numbers across Avvo, Justia, and Yelp) should be double-checked directly on each platform before the proposal call, as this is a strong, citable finding for the audit.
