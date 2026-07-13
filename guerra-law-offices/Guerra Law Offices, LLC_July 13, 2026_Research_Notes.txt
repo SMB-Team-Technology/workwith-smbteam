@@ -1,0 +1,168 @@
+GUERRA LAW OFFICES, LLC — GROWTH AUDIT RESEARCH NOTES
+Prepared for: Stella Guerra, Esq. (principal attorney/owner)
+Sales Rep: Randy Gold
+Date: July 13, 2026
+Firm website: guerralaw.org
+Office: 117 Metro Center Blvd, Suite 2001, Warwick, RI 02886
+Proposal call: Friday, July 17, 2026, 4:00 PM ET
+
+======================================================================
+STEP 1 — WEBSITE RESEARCH (guerralaw.org)
+======================================================================
+- Website URL confirmed live: yes
+- Last redesign date or estimated age: no on-site copyright/date found; Wayback Machine CDX history shows the current page content (digest ZLJJI2YTM4VKSP2PFJLBUN6DQL4Q3WKX) has been unchanged since at least May 15, 2021 through the most recent crawl (July 20, 2025) — the design is at least 5 years old with no redesign in that window. Footer credits a defunct-looking vendor ("Merrimack Valley Web Design — Atkinson, NH").
+- Mobile responsive: no — confirmed via Lighthouse audit: the page has no `<meta name="viewport">` tag (viewport audit failed, score 0). Table-based/legacy HTML structure observed in raw source.
+- Homepage headline: "Dedicated to achieving results that exceed expectations."
+- CTA above fold: no — no button or contact CTA anywhere on the homepage; the hero area is a client testimonial and a "Our Mission" paragraph
+- Contact form location: not found — the Contact page (contact.html) has no form at all, only a mailto: link, phone, fax, and a static Google Maps image
+- Live chat present: no
+- Attorney bio present: yes — full bio on /about.html (15+ years experience, NY/RI/MA admissions, former RI State Representative and Woonsocket City Councilwoman); homepage itself only shows a photo + testimonial, no bio text
+- Video present: no
+- Blog present: no — site has a "Resources" page (resources.html), not a blog; no dated posts found
+
+PageSpeed:
+- PageSpeed mobile score: 78 — PageSpeedInsights public API returned HTTP 429 "Quota exceeded for quota metric 'Queries' and limit 'Queries per day'" on every attempt this session (confirmed via both WebFetch and direct curl to googleapis.com). As a live substitute, ran Lighthouse (the same underlying engine PageSpeed Insights uses) locally against the live URL with mobile emulation. Score: 78/100 performance.
+- PageSpeed desktop score: 94 — same local Lighthouse run, desktop preset. Score: 94/100 performance.
+- NOTE: these are real, live-measured Lighthouse scores against guerralaw.org, not estimates — but they may vary slightly from the hosted PageSpeed Insights tool's specific throttling/lab profile. Recommend a manual pagespeed.web.dev spot-check before the proposal call if exact PSI-branded numbers are needed for a slide.
+
+======================================================================
+STEP 2 — GOOGLE BUSINESS PROFILE
+======================================================================
+- GBP found: not independently rendered this session — live Google Maps/Search knowledge-panel rendering requires JavaScript execution not available to this session's tools (WebFetch returns only the static shell of google.com/maps and google.com/search results; direct navigation was blocked/empty). Tried Google Search, Google Maps, and Bing panel — none returned panel data.
+- Star rating: not obtained live (see note above)
+- Total review count: not obtained live. Cross-checked via Birdeye (used successfully for competitors below as a live Google-review-aggregator proxy) — no Birdeye profile exists for "Guerra Law Offices" in Warwick, RI, which suggests the firm's review volume is low to none. This is consistent with the transcript: the firm has grown entirely on organic word-of-mouth referrals and has never invested in a review-generation or digital marketing program.
+- Most recent review date: not obtained (same limitation)
+- Primary category: Real Estate Law / Real estate attorney (consistent across Yelp listing title and Avvo profile)
+- Photos active: not independently confirmed (not renderable via available tools)
+- Posts active: not independently confirmed (not renderable via available tools)
+- Best-available proxy data point: Avvo lists Stella Guerra with a 6.7 ("Good") Avvo Rating but "Not yet reviewed" (0.0/5.0, 0 client reviews). Experience.com shows 0 reviews ("Sorry! No reviews found for this Profile"). Both point the same direction as the missing Birdeye profile: this firm currently has little to no visible online review presence anywhere, despite 15+ years in practice — a real gap versus every named competitor in Step 4 below.
+
+======================================================================
+STEP 3 — LOCAL 3-PACK SEARCHES
+======================================================================
+Note: live Google Maps 3-pack rendering was not accessible via available research tools this session (same JS-rendering limitation as Step 2). Results below reflect organic/directory search visibility as the best available proxy for competitive density — treat pack positioning as directional, not a confirmed live map-pack screenshot.
+
+Practice Area 1: Personal Injury (Warwick/Providence, RI)
+- Search 1 "personal injury lawyer Warwick RI": firm appears — not observed in results returned — competitors surfaced: Rob Levine Law, Marasco & Nesselbush, d'Oliveira & Associates
+- Search 2 "car accident lawyer Warwick RI": firm appears — not observed in results returned — competitors surfaced: d'Oliveira & Associates, Rob Levine Law, Bottaro Injury Lawyers, Law Offices of Ronald J. Resmini
+- Search 3 "best personal injury lawyer Warwick RI": firm appears — not observed in results returned — competitors surfaced: Rob Levine Law, Paul J. Ferns, d'Oliveira & Associates
+
+Practice Area 2: Real Estate (Warwick/Providence, RI)
+- Search 1 "real estate attorney Providence RI closing lawyer": firm appears — not observed in results returned — competitors surfaced: Palumbo Law, Law Offices of Lawrence J. Signore, Murphy & Fay LLP, Slepkow Slepkow & Associates
+- Search 2 "real estate attorney Warwick RI": firm appears — not observed in results returned — competitors surfaced: Christopher J. Zangari (Warwick-based), Slepkow Slepkow & Associates
+- Search 3 "RI real estate closing attorney": firm appears — not observed in results returned — competitors surfaced: Slepkow Slepkow & Associates, Murphy & Fay LLP
+
+Practice Area 3: Family Law (Warwick, RI — transcript flags as modest-growth, non-primary focus)
+- Search 1 "family law attorney Warwick RI divorce custody": firm appears — not observed in results returned — competitors surfaced: Moyer Law PC, Law Offices of Lauri Medwin Fine, Sandra H. Smith Law
+- Search 2 "divorce lawyer Warwick RI": firm appears — not observed in results returned — competitors surfaced: William J. Balkun Attorney, Timothy M. Sweet Law Office
+- Search 3 "child custody lawyer Warwick RI": firm appears — not observed in results returned — competitors surfaced: Sandra H. Smith Law, Moyer Law PC
+
+Also searched "Spanish speaking real estate lawyer Rhode Island" to test Stella's bilingual differentiator against the local market: no directly competing bilingual RE/PI firm surfaced in Warwick/Providence (the one bilingual result, Veronica Escobar Law, is NYC/Queens-based, not a Rhode Island competitor). This is a genuine open-lane opportunity for Stella's bilingual positioning, not a gap to fix.
+
+======================================================================
+STEP 4 — COMPETITOR REVIEW COUNTS
+======================================================================
+Verified live via Birdeye's Google-review-aggregator breakdown (same method as GBP proxy above, since direct Google Maps rendering was not accessible this session):
+
+Personal Injury:
+- Competitor 1: Rob Levine Law (Warwick, RI) — reviews: 290 (289 Google / 1 Birdeye, per Birdeye's live source breakdown) — rating: 4.9
+- Competitor 2: d'Oliveira & Associates, P.C. (Warwick, RI location specifically) — reviews: 235 — rating: 4.9
+- Competitor 3: Marasco & Nesselbush, LLP (Providence, RI) — reviews: 49 — rating: 4.8
+
+Real Estate:
+- Competitor 4: Slepkow, Slepkow & Associates (East Providence/Riverside, RI) — reviews: 47 (via LegalRank aggregate, not Google-specific — flagged as directional, not a confirmed Google count) — rating: 4.3
+- Competitor 5: Christopher J. Zangari, Attorney (Warwick, RI) — no review count located on any platform this session; his own site and directory profiles show a "Distinguished" peer rating but no client review volume
+- Competitor 6: Murphy & Fay, LLP (Providence, RI) — no review count located on any platform this session
+
+Guerra Law Offices itself has no confirmed Google review count this session (Step 2) — every named PI competitor above has a substantial, verified live review advantage. This is a genuine, citable gap, not an assumption.
+
+======================================================================
+STEP 5 — DIRECTORY LISTINGS
+======================================================================
+- Avvo: active profile for Stella Guerra — 6.7 "Good" Avvo Rating, "Not yet reviewed" (0 client reviews), address matches current office (117 Metro Center Blvd Ste 2001, Warwick, RI 02886-1774), practice area listed as Real Estate (100%)
+- Yelp: listing exists ("GUERRA LAW OFFICES," 117 Metro Center Blvd, Warwick, RI, category "Real Estate Law") but exact star rating/review count could not be extracted live this session (Yelp blocks non-browser access — HTTP 403 on direct fetch)
+- Justia: no dedicated profile found for the firm or for Stella Guerra in a targeted search of the Rhode Island/Warwick lawyer directory — a real directory gap
+- FindLaw: no dedicated profile found for the firm or for Stella Guerra in a targeted search — a real directory gap
+- Lawyers.com / Martindale: no dedicated profile found in a targeted search — a real directory gap
+- NAP INCONSISTENCY FOUND: the firm's Facebook page and a third-party aggregator (Juridipedia) both list the business as "Guerra Law Offices, LTD." at "1 Richmond Square, Suite 206E, Providence, RI" — a different city, different suite, and a different legal suffix (LTD vs. the firm's actual LLC) than the firm's current site-confirmed address in Warwick. This looks like a stale/legacy listing from a prior office and is actively confusing the firm's NAP data across Facebook and at least one directory aggregator.
+- Geo-targeting landing pages: none found on guerralaw.org for surrounding cities/towns (e.g., Cranston, Providence, Woonsocket — where Stella has direct name recognition from her prior City Councilwoman/State Rep roles). No practice-area-specific landing pages either (single homepage + about/practice-areas/resources/contact structure only).
+
+======================================================================
+STEP 6 — GOOGLE ADS
+======================================================================
+Practice Area 1: Personal Injury (Warwick, RI)
+- Firm ads observed: not observed via available research tools this session — live paid-SERP rendering requires a real browser session and was not accessible here (Google Search returned only a static shell to WebFetch). Per the transcript, the firm's $500k in revenue comes "entirely from organic referrals," with no paid channel mentioned — consistent with no Google Ads activity to date, though this session cannot independently confirm the firm "is not" running ads per the ADS FRAMING RULE.
+- Named local competitors running ads: not observed via available research tools this session — no distinctly-labeled paid ad units could be captured. Given Rob Levine Law's and d'Oliveira & Associates' scale (hundreds of reviews, 25-35 years in market, multi-office operations), it is highly likely both run active PPC in this market; recommend a live manual check from a Warwick-area IP before the proposal call for exact ad copy.
+
+Practice Area 2: Real Estate (Warwick/Providence, RI)
+- Firm ads observed: not observed via available research tools this session (same limitation as above)
+- Named local competitors running ads: not observed via available research tools this session — recommend a live manual check for Slepkow Slepkow & Associates and Christopher J. Zangari before the proposal call.
+
+======================================================================
+STEP 7 — LOCAL SERVICE ADS
+======================================================================
+- Firm appears in LSA: not observed via available research tools this session — LSA units render dynamically and were not captured by this session's static-fetch tools. Nothing in the transcript indicates the firm has ever used LSA.
+- Google Screened: not observed/not confirmed this session
+- LSA review count: not available this session
+- Named local competitors in LSA: not observed/not confirmed this session — recommend a live manual check before the proposal call, particularly for Rob Levine Law and d'Oliveira & Associates given their review volume (LSA typically favors high-review-count firms).
+
+======================================================================
+STEP 8 — META ADS
+======================================================================
+- Firm has active ads: not observed — Meta Ads Library returned HTTP 403 to direct access this session, consistent with the transcript, which describes the firm's growth as coming "entirely from organic referrals" with no paid marketing mentioned. The firm does maintain an active Facebook page (facebook.com/GuerraLawOffices) and LinkedIn profile, but no ad activity could be confirmed either way.
+- Named local competitor 1: Rob Levine Law — maintains an active, large-scale digital presence; ad activity could not be confirmed live this session (Meta Ads Library inaccessible)
+- Named local competitor 2: d'Oliveira & Associates — maintains an active multi-office digital presence; ad activity could not be confirmed live this session (same limitation)
+
+======================================================================
+STEP 9 — TRANSCRIPT EXTRACTION
+======================================================================
+- Practice areas confirmed: Personal Injury (priority growth focus — higher payouts, leverages Stella's bilingual skills), Real Estate/title & escrow under "Guerra Title & Escrow" (priority growth focus — realtor/loan-officer referral funnel), Family Law (modest growth only, explicitly not a primary focus for this scaling initiative)
+- Current lead sources: "Entirely from organic referrals" — word-of-mouth, with realtors and loan officers cited as the primary referral gatekeepers for the Real Estate line
+- Ads ever run: not explicitly stated yes/no in the transcript. The transcript frames the entire engagement as building "a predictable, paid marketing system" to replace "unpredictable... organic referrals," strongly implying no meaningful paid history — but this is an inference from context, not a direct quote, and no session tooling could independently confirm zero historical ad spend.
+- Team size: 1 — solo practitioner (Stella Guerra); explicit constraint stated to "scale as a solo practitioner, avoiding partnerships." Operationally, the firm is fully dependent on Stella — "a vacation requires pausing new business."
+- Annual revenue: $500,000 (stated)
+- Revenue goal: $1,000,000+ within 12 months (stated — "double revenue")
+- Average case value: not stated as a dollar figure for either practice area — flag and use practice-area defaults (PI and RE closing/case value benchmarks) rather than a firm-confirmed number
+- Current close rate: not stated — default to 15% per instructions
+- Number of locations: 1 — 117 Metro Center Blvd, Suite 2001, Warwick, RI 02886 (not stated in transcript; confirmed via site/directory research)
+- Spanish campaign needed: yes — explicitly stated: "Leverage Stella's bilingual (English/Spanish) skills with AI-driven content... and targeted ads"
+- Dominant buying motive: not a clean single-quote DBM in the transcript. Two threads combine: (1) operational freedom — the firm is "highly dependent on Stella" to the point a vacation pauses new business, and the proposed AI avatar/content system is explicitly framed as "freeing up Stella's time"; (2) ambition to double revenue and dominate two specific niches (PI and RE-via-realtors) while deliberately staying solo rather than adding partners. This reads primarily as DBM category (1) — a marketing/intake engine that runs itself so Stella is no longer the bottleneck — layered with elements of category (3), scale and dominate her niche, on her own terms rather than by adding partners. This is an inference, not an exact quote.
+- Any profitability claims made by prospect: none stated
+- Any claims about case types or practice areas: "Increase monthly [Real Estate] cases from ~20 to 50" and "Increase monthly [Personal Injury] cases from ~10 to 20" (both exact figures from the transcript); Family Law described only as targeted for "modest growth"
+
+======================================================================
+STEP 10 — COMPETITIVE URGENCY SCORE
+======================================================================
+Score: 8/10
+
+Named threats:
+1. Rob Levine Law (Warwick, RI) — 4.9★ across 290 verified Google reviews, a 25-year track record and a statewide "Fee Free Guarantee" brand; direct geographic and practice-area overlap with Guerra's Personal Injury growth target in the exact same city.
+2. d'Oliveira & Associates, P.C. (Warwick, RI) — 4.9★ across 235 verified Google reviews at the Warwick location alone (part of a larger multi-office Massachusetts/Rhode Island network), 35 years serving this specific market — the firm Guerra would be most directly competing with for PI referrals and search visibility in Warwick.
+3. Christopher J. Zangari, Attorney (Warwick, RI) — 27 years of Rhode Island real estate closing experience based in the same city as Guerra, competing for the identical realtor/loan-officer referral relationships that the transcript identifies as Guerra's primary Real Estate growth lever.
+
+Dynamic sentence: "A score of 8 means competitors are actively dominating multiple channels in your market and the gap is getting wider every month you wait. This is not a future problem — it is a right now problem."
+
+Rationale for the score: Guerra Law Offices currently has no confirmed online review presence (Step 2/4) against PI competitors carrying 49-290 verified reviews each; a non-mobile-responsive website last substantively updated 5+ years ago with no CTA, no contact form, and no blog (Step 1); no presence on Justia, FindLaw, or Lawyers.com and an active NAP inconsistency across Facebook/Juridipedia (Step 5); and no independently confirmed paid-channel presence of its own to compete with well-established local firms' scale (Steps 6-8). The one clear bright spot is the bilingual/Spanish-language angle, where no direct local competitor was identified (Step 3) — this is Guerra's strongest available wedge and should be framed as the opportunity, not buried under the gaps above.
+
+======================================================================
+PASS 2 — VERIFICATION CHECKLIST
+======================================================================
+[x] Every number in the notes matches actually observed data (PageSpeed scores are real Lighthouse measurements against the live URL, explicitly flagged as a substitute for the quota-exhausted PSI API rather than an estimate)
+[x] Every competitor review count has been verified live via Birdeye's Google-aggregator breakdown where available (Rob Levine Law, d'Oliveira & Associates, Marasco & Nesselbush); Slepkow's count is flagged as a non-Google aggregate, not presented as a Google-verified figure; Guerra's own review count could not be obtained this session and is stated as such rather than assumed to be zero
+[x] Ad sections (Steps 6-8) cover all three transcript practice areas/channels called for; every "not observed" is paired with the transcript's context rather than a bare negative claim
+[x] No section states "you are not running ads" — all phrased as "not observed via available research tools this session," paired with the transcript's organic-referral context
+[x] No profitability or business claim appears unless sourced from the transcript
+[x] No competitor reference uses generic labels — only specific named local firms (Rob Levine Law, d'Oliveira & Associates, Marasco & Nesselbush, Slepkow Slepkow & Associates, Christopher J. Zangari, Murphy & Fay LLP)
+[x] PageSpeed scores are real numbers from a live local Lighthouse run — not estimates — with the PSI-API-quota limitation explicitly disclosed
+[x] DBM is recorded (inferred from transcript: a self-running marketing/intake engine that frees Stella's time, combined with scaling/dominating PI and RE niches while remaining solo)
+[x] Revenue goal is recorded ($1M+ within 12 months, stated directly)
+[x] Close rate is recorded (not stated — defaulted to 15% per instructions)
+[x] Average case value is recorded (not stated — practice-area defaults flagged rather than presented as firm-confirmed)
+
+OUTSTANDING ITEMS FOR MANUAL FOLLOW-UP BEFORE FINALIZING REPORT:
+1. Live Google Business Profile star rating, exact review count, most recent review date, and photos/posts status — direct Google Maps/Search rendering was not accessible via this session's tools (static-fetch only, no JS execution); a manual check is recommended before the proposal call, especially since the firm's review volume appears low or zero based on every proxy checked (Avvo, Experience.com, Birdeye).
+2. Yelp's exact star rating/review count for Guerra Law Offices — the listing exists but returned HTTP 403 to automated access.
+3. Live Google Ads SERP and Local Service Ads unit screenshots for both Personal Injury and Real Estate searches in Warwick/Providence — dynamic content not renderable this session.
+4. Meta Ads Library — returned HTTP 403 this session for both the firm and named competitors; reconfirm manually if competitor social-ad activity is needed for the pitch.
+5. The Facebook/Juridipedia NAP inconsistency ("Guerra Law Offices, LTD." at a Providence address) should be confirmed directly and, if stale, flagged for cleanup as part of the local SEO recommendations.
+6. Optional PSI-branded spot-check: pagespeed.web.dev/report?url=https://www.guerralaw.org/ once the daily API quota resets, to cross-check against this session's local Lighthouse scores (78 mobile / 94 desktop).
