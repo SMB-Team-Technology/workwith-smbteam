@@ -1,0 +1,349 @@
+WENIG SALTIEL LLP — GROWTH AUDIT RESEARCH NOTES
+Prepared for: Jeffrey L. Saltiel, Esq. (semi-retired founding partner)
+Sales Rep: Jacob Meissner
+Date: July 20, 2026
+Firm website: https://www.wenigsaltiel.com/
+Offices: 321 Broadway, 2nd Floor, Manhattan, NY; 420 South Avenue, Staten Island, NY
+Phone: (718) 797-5700
+Proposal call: Monday, July 20, 2026, 3:00–4:00 PM ET (with Fractional CTO)
+
+IMPORTANT CONTEXT FOR PASS 2 (audit-write):
+This deal is NOT a traditional lead-generation/marketing engagement. Per the discovery
+call transcript, Jeffrey Saltiel is semi-retired and the proposed solution is
+Fractional CTO + AI Workforce Pro (including a wholesale-priced Claude Enterprise
+license). His stated goal is to automate internal operations — pre-bill review (a
+3-hour, bi-weekly manual review of a 3-inch stack of paper pre-bills), document
+assembly, and billing inside the firm's legacy ProLaw system — "not necessarily to
+cut costs or grow revenue." The standard growth-audit marketing research below
+(GBP, 3-pack, ads, etc.) was still completed in full per the standard research
+protocol, but Pass 2 should weight Sections 7/8/9 (intake, team, profit/efficiency)
+and the "What's Possible" section toward operational automation and time-back-to-
+the-owner, rather than a lead-volume growth narrative.
+
+======================================================================
+STEP 1 — WEBSITE RESEARCH (wenigsaltiel.com)
+======================================================================
+- Website URL confirmed live: yes
+- Last redesign date or estimated age: site is built on the Wix platform. Wayback
+  Machine confirms Wix markup present on the site as far back as the January 2, 2019
+  snapshot (http://web.archive.org/web/20190102152138/http://www.wenigsaltiel.com:80/),
+  and CDX digest history through April 2026 shows no structural redesign since — at
+  minimum 7 years on the same template/platform with no visible refresh.
+- Mobile responsive: yes — confirmed via raw HTML: `<meta name="viewport" content="width=device-width, initial-scale=1" id="wixDesktopViewport" />` is present.
+- Homepage headline: "REPRESENTATION FOR OVER 25 YEARS."
+- CTA above fold: no — the "CONTACT US >" button sits below the practice-areas section, not above the fold.
+- Contact form location: not found on the homepage in the fetched content — phone number is the primary above-fold contact path.
+- Live chat present: no
+- Attorney bio present: yes — dedicated bio pages for all 8 listed attorneys, including founding partners Meryl L. Wenig and Jeffrey L. Saltiel.
+- Video present: no
+- Blog present: yes, labeled "News" — but effectively static/undated. Content includes items referencing a November 15, 2018 Housing Court Judges presentation; no consistently dated recent posts were found. A separate "Cases of Interest" page lists 20+ case summaries, also undated. Neither section shows evidence of active, recent maintenance.
+
+PageSpeed (live-measured):
+- The public PageSpeed Insights API (googleapis.com/pagespeedonline) returned HTTP 429
+  "Quota exceeded for quota metric 'Queries' and limit 'Queries per day'" on every
+  attempt this session (quota_limit_value: 0 for anonymous/unauthenticated calls —
+  confirmed via both WebFetch and direct curl, so this is not a transient rate limit).
+  As a live substitute, ran Lighthouse (the same underlying engine PageSpeed Insights
+  uses) locally against the live URL via headless Chromium.
+- PageSpeed mobile score: 56/100 — live Lighthouse run, mobile emulation, performance category only.
+- PageSpeed desktop score: 99/100 — live Lighthouse run, desktop preset, performance category only.
+- NOTE: these are real, live-measured Lighthouse scores against wenigsaltiel.com, not
+  estimates — but may vary slightly from the hosted PageSpeed Insights tool's specific
+  throttling/lab profile. Recommend a manual pagespeed.web.dev spot-check before the
+  proposal call if exact PSI-branded numbers are needed for a slide.
+
+======================================================================
+STEP 2 — GOOGLE BUSINESS PROFILE
+======================================================================
+- GBP found: not independently rendered this session — live Google Maps/Search
+  knowledge-panel rendering requires JavaScript execution not available to this
+  session's tools (WebFetch returns only a static shell of google.com/maps and
+  google.com/search; direct navigation returned no panel data).
+- Star rating: not obtained directly from Google this session. Best-available live
+  proxy: Birdeye's aggregator page for "Wenig Saltiel LLP" (26 Court St #1200,
+  Brooklyn NY listing) shows an overall 3.4-star rating across 43 total reviews,
+  broken down as 39 from Google, 2 from Yellow Pages, and 2 from Facebook — meaning
+  the large majority of the firm's review volume and rating is Google-sourced.
+- Total review count: 39 (Google, via Birdeye breakdown, see above). Separately, a
+  Yelp listing snippet ("WENIG SALTIEL LLP... 321 Broadway... 14 Reviews") surfaced
+  in search results but could not be opened directly (Yelp returns HTTP 403 to
+  non-browser access).
+- Most recent review date: not obtained live this session (same JS-rendering limitation).
+- Primary category: Real Estate Law / Landlord-Tenant Law (consistent across the
+  firm's own site framing and third-party directory listings).
+- Photos active: not independently confirmed (not renderable via available tools).
+- Posts active: not independently confirmed (not renderable via available tools).
+
+======================================================================
+STEP 3 — LOCAL 3-PACK SEARCHES
+======================================================================
+Note: live Google Maps 3-pack rendering was not accessible via available research
+tools this session (same JS-rendering limitation as Step 2). Results below reflect
+organic/directory search visibility as the best available proxy for competitive
+density — treat as directional, not a confirmed live map-pack screenshot.
+
+Practice Area 1: Landlord Representation (Manhattan/NYC)
+- Search 1 "landlord attorney Manhattan NYC best law firm": firm appears — not
+  observed in results returned — competitors surfaced: Mitofsky, Shapiro, Neville &
+  Hazen LLP; Goldberg & Lindenberg, P.C.; Rosenberg & Estis, P.C.
+- Search 2 "landlord tenant lawyer New York City": firm appears — not observed in
+  results returned — competitors surfaced: Belkin Burden Goldman, LLP; Sperber
+  Denenberg & Kahan, PC
+- Search 3 "best landlord tenant lawyers Manhattan": firm appears — not observed in
+  results returned — competitors surfaced: Rosenberg & Estis, P.C.; Goldberg &
+  Lindenberg, P.C.
+
+Practice Area 2: Foreclosure Defense (NYC)
+- Search 1 "foreclosure defense attorney New York City": firm appears — not observed
+  in results returned — competitors surfaced: The Price Law Firm; Law Offices of
+  David I. Pankin, P.C.
+- Search 2 "NYC foreclosure lawyer": firm appears — not observed in results returned
+  — competitors surfaced: Sharova Law Firm; The Linden Law Group, P.C.
+- Search 3 "commercial foreclosure attorney NYC": firm appears — not observed in
+  results returned — competitors surfaced: The Price Law Firm
+
+Practice Area 3: Commercial Tenant Representation (NYC)
+- Search 1 "commercial tenant attorney New York City": firm appears — not observed
+  in results returned — competitors surfaced: Himmelstein Gribben & Joseph LLP;
+  Goldberg & Lindenberg, P.C.
+- Search 2 "commercial lease lawyer NYC": firm appears — not observed in results
+  returned — competitors surfaced: The Price Law Firm; Capell Barnett Matalon &
+  Schoenfeld
+- Search 3 "commercial landlord tenant attorney Manhattan": firm appears — not
+  observed in results returned — competitors surfaced: Goldberg & Lindenberg, P.C.;
+  Law Offices of Justin C. Brasch
+
+Practice Area 4: Real Estate Litigation (NYC)
+- Search 1 "real estate litigation attorney NYC": firm appears — not observed in
+  results returned — competitors surfaced: Adam Leitman Bailey, P.C.; Rosenberg &
+  Estis, P.C.
+- Search 2 "real estate litigation lawyer Manhattan": firm appears — not observed in
+  results returned — competitors surfaced: Belkin Burden Goldman, LLP
+- Search 3 "NYC real estate litigation law firm": firm appears — not observed in
+  results returned — competitors surfaced: Adam Leitman Bailey, P.C.
+
+======================================================================
+STEP 4 — COMPETITOR REVIEW COUNTS
+======================================================================
+Verified live via Birdeye's Google-review-aggregator breakdown (same method used
+for the firm's own GBP proxy in Step 2, since direct Google Maps rendering was not
+accessible this session):
+
+- Competitor 1: Rosenberg & Estis, P.C. (Manhattan, NY) — reviews: 57 (57 from
+  Google, per Birdeye's live source breakdown) — rating: 4.6
+- Competitor 2: Belkin Burden Goldman, LLP (Manhattan, NY) — reviews: 53 (52 from
+  Google, 1 Birdeye) — rating: 4.7
+- Competitor 3: Sperber Denenberg & Kahan, PC (Manhattan, NY) — reviews: 24 — rating: 1.5
+- Competitor 4: Gutman Mintz Baker & Sonnenfeldt, P.C. (New Hyde Park, NY) —
+  reviews: 22 — rating: 1.6
+- Competitor 5: Adam Leitman Bailey, P.C. (Manhattan, NY) — Birdeye shows 0 reviews
+  aggregated despite the firm's strong Chambers USA / Super Lawyers professional
+  recognition — a real gap in this specific firm's Google-review presence, not a
+  claim about their overall reputation.
+
+Wenig Saltiel's own count (39 Google reviews / 3.4 blended rating, Step 2) sits
+behind the two most directly comparable prestige NYC landlord/real-estate-litigation
+firms — Rosenberg & Estis (57) and Belkin Burden Goldman (52-53) — but ahead of
+Sperber Denenberg & Kahan (24) and Gutman Mintz (22), and far ahead of Adam Leitman
+Bailey on this specific aggregator (0). No competitor cited here as "ahead" actually
+has fewer reviews than Wenig Saltiel — verified before inclusion.
+
+======================================================================
+STEP 5 — DIRECTORY LISTINGS
+======================================================================
+- Avvo / Justia / FindLaw / Martindale / LawCrossing / BCGSearch / Super Lawyers: the
+  firm has active profiles across all of these. Meryl L. Wenig carries Avvo Top
+  Contributor and Avvo Client's Choice awards; Jeffrey L. Saltiel has been a Super
+  Lawyer in the NY Metro area since 2018.
+- Yelp: active listing ("WENIG SALTIEL LLP," 321 Broadway, New York, category "Real
+  Estate Law," ~14 reviews per search snippet) but exact star rating could not be
+  extracted live this session (Yelp returns HTTP 403 to non-browser/automated access).
+- NAP INCONSISTENCY FOUND: FindLaw, Martindale, BCGSearch, and LawCrossing all list
+  the firm at a Brooklyn address — 26 Court Street, Suite 1200, Brooklyn, NY — while
+  the firm's own live website lists two current offices in Manhattan (321 Broadway,
+  2nd Floor) and Staten Island (420 South Avenue), with no Brooklyn address anywhere
+  on the current site. This is a stale/legacy address propagating across multiple
+  high-authority legal directories and actively confusing the firm's NAP consistency.
+- Geo-targeting landing pages: none found on wenigsaltiel.com for surrounding NYC
+  boroughs/neighborhoods (e.g., Brooklyn, Bronx, Queens) despite the firm clearly
+  having handled Brooklyn-based matters historically (per the directory address
+  above). No dedicated landing pages per practice area beyond the four main
+  practice-area pages (Landlords, Foreclosure Defense, Commercial Tenants, Real
+  Estate Litigation).
+
+======================================================================
+STEP 6 — GOOGLE ADS
+======================================================================
+Practice Area 1: Landlord Representation (Manhattan/NYC)
+- Firm ads observed: not observed via available research tools this session — live
+  paid-SERP rendering requires a real browser session and was not accessible here
+  (Google Search returned only a static shell to WebFetch). The firm does not appear
+  to be running ads for this search based on available signals, though this session
+  cannot independently rule it out per the ADS FRAMING RULE.
+- Named local competitors running ads: not observed via available research tools
+  this session. Given Rosenberg & Estis and Belkin Burden Goldman's scale (50+
+  verified reviews each, decades in the Manhattan market), it is plausible one or
+  both run active PPC in this market; recommend a live manual check before the
+  proposal call.
+
+Practice Area 2: Foreclosure Defense (NYC)
+- Firm ads observed: not observed via available research tools this session (same limitation).
+- Named local competitors running ads: not observed via available research tools this session.
+
+Practice Area 3: Commercial Tenant Representation (NYC)
+- Firm ads observed: not observed via available research tools this session (same limitation).
+- Named local competitors running ads: not observed via available research tools this session.
+
+Practice Area 4: Real Estate Litigation (NYC)
+- Firm ads observed: not observed via available research tools this session (same limitation).
+- Named local competitors running ads: not observed via available research tools this session — recommend checking Adam Leitman Bailey, P.C. given their aggressive content-marketing footprint (dedicated landlord-representation and condo/co-op litigation practice pages).
+
+======================================================================
+STEP 7 — LOCAL SERVICE ADS
+======================================================================
+- Firm appears in LSA: not observed via available research tools this session — LSA
+  units render dynamically and were not captured by this session's static-fetch
+  tools. Nothing in the transcript indicates the firm has ever used LSA (the
+  transcript does not discuss lead generation at all — see Important Context note above).
+- Google Screened: not observed/not confirmed this session
+- LSA review count: not available this session
+- Named local competitors in LSA: not observed/not confirmed this session — recommend
+  a live manual check before the proposal call, particularly for Rosenberg & Estis
+  and Belkin Burden Goldman given their review volume (LSA typically favors
+  high-review-count firms).
+
+======================================================================
+STEP 8 — META ADS
+======================================================================
+- Firm has active ads: not observed — Meta Ads Library returned HTTP 403 to direct
+  automated access this session. No ad activity could be confirmed either way; the
+  firm does not appear to be running Meta ads based on available signals, but this
+  is not a confirmed negative.
+- Named local competitor 1: Rosenberg & Estis, P.C. — ad activity could not be
+  confirmed live this session (Meta Ads Library inaccessible to automated tools).
+- Named local competitor 2: Belkin Burden Goldman, LLP — ad activity could not be
+  confirmed live this session (same limitation).
+
+======================================================================
+STEP 9 — TRANSCRIPT EXTRACTION
+======================================================================
+- Practice areas confirmed: Landlord Representation, Foreclosure Defense, Commercial
+  Tenant Representation, Real Estate Litigation (all four confirmed via the firm's
+  own website; the transcript itself does not discuss practice areas — the call was
+  focused entirely on internal operations automation, not case types or marketing).
+- Current lead sources: not stated in transcript — the discovery call did not touch
+  on marketing or lead generation at all.
+- Ads ever run: not stated in transcript.
+- Team size: not stated in transcript. Website lists 8 attorneys total, including
+  founding partners Meryl L. Wenig and Jeffrey L. Saltiel (the latter described in
+  the transcript as "semi-retired").
+- Annual revenue: not stated in transcript — flagged as a missing input for Pass 2.
+- Revenue goal: not stated in transcript — flagged; per instructions, default to 2x
+  current revenue is not usable here since current revenue is also unstated. Note
+  for Pass 2: this deal's stated goal is explicitly NOT revenue growth (see DBM below).
+- Average case value: not stated in transcript — not applicable in the traditional
+  sense, since the engagement is about internal-ops time savings rather than case
+  acquisition.
+- Current close rate: not stated — default to 15% per instructions (though not
+  directly relevant to this engagement's framing).
+- Number of locations: not stated in transcript; confirmed via live site research as
+  2 (Manhattan and Staten Island — see Step 1/5).
+- Spanish campaign needed: no — not mentioned in transcript.
+- Dominant buying motive: clearly and directly stated — DBM category (1), "a firm
+  that runs itself so the owner has more time." Exact framing from the transcript:
+  Jeffrey Saltiel, "a semi-retired partner, seeks to automate high-volume tasks
+  (e.g., pre-bill review, document assembly) to reduce his workload and regain
+  personal time, not necessarily to cut costs or grow revenue." His core, named pain
+  point is the "3-hour, bi-weekly manual review of paper pre-bills," which he wants
+  reduced to "~1 hour" via an AI tool that scans the stack and flags issues.
+- Any profitability claims made by prospect: none stated.
+- Any claims about case types or practice areas: none stated — the transcript
+  discusses only internal operations (pre-bill review, document assembly, billing in
+  the firm's legacy ProLaw system), not case types, case volume, or practice-area mix.
+
+======================================================================
+STEP 10 — COMPETITIVE URGENCY SCORE
+======================================================================
+Score: 6/10
+
+Named threats:
+1. Rosenberg & Estis, P.C. (Manhattan, NY) — 4.6★ across 57 verified Google reviews,
+   a top-tier Manhattan real estate litigation/landlord-representation firm directly
+   overlapping two of Wenig Saltiel's four practice areas in the same borough.
+2. Belkin Burden Goldman, LLP (Manhattan, NY) — 4.7★ across 52-53 verified Google
+   reviews, a ~60-attorney real estate-focused firm competing directly for the same
+   landlord-tenant and real estate litigation clients.
+3. Adam Leitman Bailey, P.C. (Manhattan, NY) — while carrying 0 aggregated Google
+   reviews on Birdeye, this firm has an aggressive, actively maintained
+   content-marketing footprint (dedicated landlord-representation and condo/co-op
+   litigation practice pages) that Wenig Saltiel's largely static, undated "News"
+   section does not currently match.
+
+Dynamic sentence: "A score of 6 means competitors have meaningful advantages in one
+or more areas and are pulling ahead. You are not invisible yet — but the window to
+close the gap is narrowing. Every month without action is a month they extend their
+lead."
+
+Rationale for the score: Wenig Saltiel is not invisible — 39 Google reviews, 25+
+years of reputation, Super Lawyers recognition for Jeffrey Saltiel, and Avvo awards
+for Meryl Wenig are real strengths. But the two most direct, name-brand competitors
+in the same practice areas and same borough (Rosenberg & Estis, Belkin Burden
+Goldman) both carry more reviews and higher ratings, the firm's website has run on
+the same Wix template for 7+ years with a mobile performance score of 56/100, no
+live chat, no video, and an effectively undated "News"/case-summary section, and a
+stale Brooklyn address is still propagating across major legal directories (Step 5).
+Note for Pass 2: given this deal's DBM is explicitly about the owner's personal time
+back rather than growth or lead volume (Step 9), this score should be framed as
+supporting context/opportunity rather than the primary hook of the audit narrative.
+
+======================================================================
+PASS 2 — VERIFICATION CHECKLIST
+======================================================================
+[x] Every number in the notes matches actually observed data (PageSpeed scores are
+    real Lighthouse measurements against the live URL, explicitly flagged as a
+    substitute for the quota-exhausted PSI API — quota_limit_value confirmed as 0
+    for anonymous calls, not a transient limit)
+[x] Every competitor review count has been verified live via Birdeye's Google-
+    aggregator breakdown (Rosenberg & Estis, Belkin Burden Goldman, Sperber
+    Denenberg & Kahan, Gutman Mintz Baker & Sonnenfeldt, Adam Leitman Bailey); no
+    competitor is cited as ahead of Wenig Saltiel's 39 reviews unless verified higher
+[x] Ad sections (Steps 6-8) cover all four confirmed practice areas; every "not
+    observed" is paired with context rather than a bare negative claim
+[x] No section states "you are not running ads" — all phrased as "not observed via
+    available research tools" or "does not appear to be running ads for this search"
+[x] No profitability or business claim appears unless sourced from the transcript
+[x] No competitor reference uses generic labels — only specific named local firms
+    (Rosenberg & Estis, Belkin Burden Goldman, Sperber Denenberg & Kahan, Gutman
+    Mintz Baker & Sonnenfeldt, Adam Leitman Bailey, Himmelstein Gribben & Joseph,
+    Goldberg & Lindenberg, The Price Law Firm, and others named per practice area)
+[x] PageSpeed scores are real numbers from a live local Lighthouse run — not
+    estimates — with the PSI-API-quota limitation explicitly disclosed
+[x] DBM is recorded — unusually explicit and directly quoted for this deal: personal
+    time back for a semi-retired partner, not revenue growth
+[x] Revenue goal is recorded as not stated — flagged for Pass 2, with the note that
+    this deal's DBM makes a revenue-growth framing inappropriate for this audit
+[x] Close rate is recorded (not stated — defaulted to 15% per instructions)
+[x] Average case value is recorded (not stated — flagged as not directly applicable
+    to this ops-automation-focused engagement)
+
+OUTSTANDING ITEMS FOR MANUAL FOLLOW-UP BEFORE FINALIZING REPORT:
+1. Live Google Business Profile star rating, exact review count, most recent review
+   date, and photos/posts status — direct Google Maps/Search rendering was not
+   accessible via this session's tools; the 39-review/3.4-star figures are a live
+   third-party aggregator (Birdeye) proxy, not a direct GBP screenshot.
+2. Yelp's exact star rating for Wenig Saltiel LLP — listing exists (~14 reviews per
+   search snippet) but returned HTTP 403 to automated access.
+3. Live Google Ads SERP, Local Service Ads units, and Meta Ads Library results for
+   all four practice areas — dynamic content not renderable this session (Meta Ads
+   Library returned HTTP 403; Google SERP returned only a static shell).
+4. The FindLaw/Martindale/BCGSearch/LawCrossing Brooklyn address (26 Court Street,
+   Suite 1200) should be confirmed as stale and flagged for cleanup as part of local
+   SEO/NAP recommendations.
+5. Optional PSI-branded spot-check: pagespeed.web.dev/report?url=https://www.wenigsaltiel.com/
+   once the daily API quota resets, to cross-check against this session's local
+   Lighthouse scores (56 mobile / 99 desktop).
+6. Revenue, revenue goal, team size, and average case value are all unstated in the
+   transcript — recommend confirming at minimum current revenue and team size on the
+   July 20 CTO call, since Section 5 (Growth Health) and Section 7/8/9 of the
+   standard audit template expect these inputs even though this deal's framing is
+   operations-automation-first rather than growth-first.
