@@ -1,0 +1,210 @@
+WENIG SALTIEL LLP — SECTION 11 WORKINGS FILE (INTERNAL — NOT CLIENT FACING)
+Prepared for: Jacob Meissner, Sales Rep
+Date: July 20, 2026
+================================================================================
+
+CRITICAL: package_decision.json OVERRIDDEN — DO NOT USE ITS VALUES
+================================================================================
+The deterministic pipeline script at wenig-saltiel/package_decision.json produced:
+  - confidence: "medium"
+  - marketing_tier: "Growth" — Full Service Marketing — Growth — $7,397/mo bundled
+    ($8,997/mo retail, $1,600/mo savings)
+  - coaching_tier: "Elite Coach Plus" — $3,200/mo bundled ($3,497/mo retail,
+    $297/mo savings)
+  - total_bundled: $10,597/mo
+  - ad_spend_conservative: $3,000/mo, ad_spend_aggressive: $12,000/mo
+  - revenue_effective: $1,980,500 (sourced from HubSpot
+    hubspot_annual_law_firm_revenue field, label "$961K - $3M")
+
+THIS IS WRONG AND HAS BEEN OVERRIDDEN IN FULL. Reasoning:
+
+The package_decision.json script is a generic revenue-based marketing/coaching
+selector. It has no visibility into the actual discovery call content, and this
+deal is fundamentally not a marketing engagement. Per the research notes'
+"IMPORTANT CONTEXT FOR PASS 2" section: Jeffrey L. Saltiel, the semi-retired
+founding partner, initiated this engagement specifically to automate internal
+operations — a 3-hour, bi-weekly manual review of a 3-inch stack of paper
+pre-bills (target: ~1 hour via AI), document assembly automation, and
+modernizing billing inside the firm's legacy ProLaw system. His own words,
+extracted from the transcript: this is "not necessarily to cut costs or grow
+revenue." The July 20 proposal call itself is with a Fractional CTO, not a
+marketing strategist — further confirming this is an internal-ops-automation
+sale, not a lead-generation sale.
+
+No lead generation, marketing, or coaching need was ever raised on the call.
+Recommending Full Service Marketing Growth ($7,397/mo) and Elite Coach Plus
+($3,200/mo) — a combined $10,597/mo — would propose two products the buyer
+never asked for and that do not match his stated goal, while omitting the one
+product category (Legal AI Workforce) that matches his stated goal exactly.
+
+CORRECTED PACKAGE — LEGAL AI WORKFORCE (LAW) ONLY
+================================================================================
+Per audit-write.md: "A single-product recommendation is acceptable only when
+the transcript clearly shows the firm's needs are best served by one service
+category — do not force a second product that does not fit." This transcript
+is an unambiguous example of that exception. No marketing package and no
+coaching package (Elite Coach / Elite Coach Plus / Master's Circle) are
+recommended in this proposal.
+
+LAW ELIGIBILITY CHECK (all pass):
+  - Revenue: well over the $500K minimum (see revenue estimate note below)
+  - Team: NOT solo — 8 attorneys, has support staff to engage with implementation
+  - Owner AI-adoption openness: clear and explicit — Jeffrey initiated this
+    engagement himself and is proposing to have AI review pre-bills and assemble
+    documents
+
+MANDATORY PRICE LOOKUP (character-by-character from audit-write.md tables):
+  - Marketing package selected: none
+  - Non-marketing (coaching) package selected: none
+  - Legal AI Workforce (LAW) package selected: AI Accelerator L2 — Fractional
+    CTO Level 2
+      - Bundled price (from table): $4,997/mo
+      - Standalone price (from table): $5,797/mo
+      - Savings (standalone minus bundled): $800/mo
+  - One-time onboarding: Law Firm AI Foundation Sprint, paired with Fractional
+    CTO Level 2
+      - Bundled (paired) price (from table): $14,997 one-time
+      - Standalone price (from table): $19,997 one-time
+      - Savings (standalone minus bundled): $5,000 one-time
+  - AI Avatar / Video Growth add-on selected: none
+  - Total monthly investment: $4,997/mo
+  - Total one-time investment: $14,997
+  - Total monthly savings: $800/mo
+  - Total one-time savings: $5,000
+
+TIER SELECTION REASONING — WHY L2 AND NOT L1 OR AI ESSENTIALS:
+  (a) HubSpot-estimated revenue ($1,980,500, medium confidence — NOT
+      transcript-confirmed) falls within L2's $1.5M–$3M target range, not L1's
+      $500K–$1.5M range.
+  (b) The scope discussed spans multiple distinct custom workflows — pre-bill
+      review automation, document assembly automation, and ProLaw billing
+      integration — matching L2's description of "monthly custom agent builds"
+      rather than a single narrow workflow, which would point to L1 or AI
+      Essentials instead.
+  (c) The informally discussed call price ceiling was in the $3,800–$7,000/mo
+      range (per research notes transcript context). L2's bundled price
+      ($4,997/mo) comfortably fits within that range, whereas L1's bundled
+      price ($3,297/mo) sits below the call's own discussed floor ($3,800).
+  FLAG FOR SALES REP: L1 (Fractional CTO Level 1, $3,297/mo bundled) remains a
+  viable fallback tier if the live CTO scoping call on July 20 determines the
+  actual technical complexity is lower than currently scoped. Confirm tier on
+  that call before finalizing.
+
+35% SPEND CAP CHECK:
+  $1,980,500 / 12 = $165,042/mo estimated revenue
+  35% cap = $57,764/mo
+  $4,997/mo LAW fee is far under this cap — no issue.
+
+MINIMUM MRR CHECK: SMB Team minimum is $2,497/mo. $4,997/mo clears easily.
+
+INTERNAL ESCALATION FLAGS (DO NOT PUT IN CLIENT REPORT):
+  1. Per audit-write.md: "Any Legal AI Workforce (LAW) package → confirm with
+     sales rep that LAW delivery has launched and capacity is available before
+     including in proposal." ACTION: Jacob Meissner must confirm LAW delivery
+     capacity before this proposal is finalized with the client.
+  2. Revenue ($1,980,500) is a HubSpot estimate, NOT confirmed by the
+     transcript or the prospect. Confirm actual revenue on the July 20 call —
+     this affects whether L2 remains the correct tier vs. L1.
+  3. Team size effective (3) in package_decision.json also appears to
+     understate the firm's actual size (8 attorneys per the firm's own
+     website) — the LAW eligibility "not solo" check clearly passes regardless,
+     but this discrepancy is noted for data-quality awareness.
+  4. Tier (L2 vs. L1) should be confirmed live on the July 20 Fractional CTO
+     scoping call once real technical scope and revenue are established.
+
+BLOCK 4 STRUCTURAL ADAPTATION — NO AD SPEND FOR THIS DEAL
+================================================================================
+This deal has no ad spend component — there is no marketing package, so there
+is no ROI-on-ad-spend section to compute. Rather than fabricate ad spend
+figures or leave Block 4 empty, the second investment-block in Block 3/4's
+investment-grid has been repurposed (using only existing CSS classes:
+investment-block, investment-header, investment-body, roi-row,
+roi-disclaimer) to show "One-Time Onboarding Investment" instead of
+"Recommended Monthly Ad Spend":
+  - Law Firm AI Foundation Sprint (paired with Fractional CTO L2): $14,997
+    one-time
+  - Standalone price: $19,997 one-time
+  - Savings: $5,000 one-time
+  - Disclaimer line: this is a one-time onboarding investment, separate from
+    the $4,997/mo recurring fee shown in the first investment-block.
+The two-column investment-grid structure is otherwise unchanged. Block 2 shows
+only ONE package-block (Legal AI Workforce — Fractional CTO L2), not two —
+the second package-block from the template has been deleted, since there is
+no second product in this proposal.
+
+DBM STATEMENT FOR BLOCK 1
+================================================================================
+DBM Category (1): "a firm that runs itself so the owner has more time."
+Formula: "We help semi-retired law firm founders automate the manual,
+paper-based operations still running through their own hands so they can
+finally get their personal time back — without needing to grow revenue or cut
+costs to justify it."
+
+GROWTH ROADMAP (BLOCK 6) — DELIBERATE DEVIATION FROM STANDARD TEMPLATE
+================================================================================
+The standard audit-write.md roadmap defaults to a marketing-first sequence
+(Foundation = Marketing + Coaching; Phase 2 = add FCOO Advisor; Phase 3 = add
+FCFO Advisor + LAW AI Essentials; Phase 4 = upgrade marketing tier; Phase 5 =
+full ecosystem). None of that applies here, because there is no marketing or
+coaching engagement to build on. The roadmap has been adapted as follows,
+per the specific instructions for this deal:
+  - Phase 1 = LAW Foundation: Fractional CTO L2 + Foundation Sprint deploying
+    pre-bill review automation, document assembly automation, and ProLaw
+    billing integration. Trigger: Starting Now.
+  - Phase 2 = Operational Scale: expand automation scope to additional
+    repetitive tasks Jeffrey identifies as the AI system proves itself;
+    consider FCOO Advisor only if broader ops support becomes relevant later —
+    not forced into this roadmap since nothing in the transcript points to
+    that need yet. Trigger: Once the pre-bill and document assembly automation
+    is fully adopted and additional repetitive tasks are identified.
+  - Phase 3 = Optimize: upgrade the LAW tier (e.g., to AI Enterprise / Level 3)
+    or deepen AI Skills coverage as adoption matures and firm needs evolve.
+    Trigger: Once the firm's AI adoption has matured and additional workflow
+    complexity emerges.
+  - Each phase's DBM sentence is tied to time back for Jeffrey personally, not
+    revenue growth, consistent with the DBM throughout this audit.
+This deviation is intentional and documented here so a human sales reviewer
+understands why Section 11 does not follow the standard 5-phase
+marketing-led roadmap template.
+
+QUICK WIN CARDS (MINIMUM 6, ACROSS ALL 4 PILLARS)
+================================================================================
+1. [Team / Quick Win] Pre-Bill Review Automation — Jeffrey's 3-hour, bi-weekly
+   manual review of a 3-inch paper stack, target ~1 hour via AI. No named
+   competitor (internal-ops improvement, not a competitive comparison).
+2. [Team / Quick Win] Document Assembly Automation — replaces manual,
+   file-by-file document assembly with an AI-assisted workflow. No named
+   competitor.
+3. [Profit / Quick Win] ProLaw Billing Modernization — layers a modern
+   workflow on top of the firm's legacy ProLaw billing system to reduce
+   friction and staff time. No named competitor.
+4. [Team / Quick Win] Human-Reviewed AI Draft Folder — all AI-generated output
+   routes to a draft folder for human attorney review before anything is sent,
+   directly addressing safety/trust concerns around AI touching billing and
+   documents. No named competitor.
+5. [Profit / Quick Win] Reduced Billing Error Risk — an AI-assisted first pass
+   on pre-bills can flag likely errors before Jeffrey's own review, tightening
+   the safety net without adding to his hours. No named competitor.
+6. [Lead Gen / Long-Term Play] NAP Consistency Cleanup — stale Brooklyn
+   address (26 Court St, Suite 1200) still listed on FindLaw, Martindale,
+   BCGSearch, and LawCrossing while real offices are Manhattan and Staten
+   Island. Long-term/optional, not part of this proposal.
+7. [Lead Gen / Long-Term Play] Website Modernization — 7-year-old Wix template,
+   56/100 mobile PageSpeed score. Long-term/optional, not part of this
+   proposal. Named competitor comparison: Rosenberg & Estis, P.C. and Belkin
+   Burden Goldman, LLP both outrank the firm on review volume/rating in the
+   same practice areas.
+
+FIRST 90 DAYS BULLETS
+================================================================================
+1. Kickoff call with the Fractional CTO to finalize scope for pre-bill review
+   automation, document assembly, and ProLaw billing integration.
+2. Export and map existing ProLaw billing data to prepare for the custom
+   integration build.
+3. Build and test the first AI pre-bill review workflow, targeting the
+   3-hour-to-1-hour reduction, with all AI output routed to a draft folder for
+   Jeffrey's review before anything is finalized.
+4. Deploy the document assembly automation workflow for the firm's most
+   common document types.
+5. Review results with Jeffrey at the 30/60/90-day marks and identify the next
+   repetitive task to automate under the Fractional CTO engagement.
