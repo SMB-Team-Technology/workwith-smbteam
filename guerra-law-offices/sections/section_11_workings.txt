@@ -1,0 +1,107 @@
+GUERRA LAW OFFICES, LLC — SECTION 11 WORKINGS
+(Internal working file — not part of the client-facing report)
+
+======================================================================
+MANDATORY PRICE LOOKUP (source: guerra-law-offices/package_decision.json, confidence: high — used exactly, not recalculated)
+======================================================================
+
+Marketing package selected: Full Service Marketing — Starter
+  - Bundled price: $4,847/mo
+  - Stand-alone price: $5,697/mo
+  - Savings: $850/mo
+
+Non-marketing package selected: Elite Coach Plus
+  - Bundled price: $3,200/mo
+  - Stand-alone price: $3,497/mo
+  - Savings: $297/mo
+
+Legal AI Workforce (LAW) package selected: none (law_tier: null — firm is solo with no support staff, which disqualifies LAW per eligibility rules regardless of revenue)
+
+AI Avatar / Video Growth add-on selected: none (not included in package_decision.json; requires Alexis approval and was not flagged for this firm)
+
+Total monthly investment (bundled): $4,847 + $3,200 = $8,047/mo
+Total savings: $850 + $297 = $1,147/mo
+
+Note: Team size was defaulted to 3 by the pipeline script for coaching-tier lookup purposes; research notes state the firm is solo (team size 1). This does not change the tier selected (Elite Coach Plus applies to "$400K–$1M / Any" team size), so no correction needed.
+
+Note: Combined monthly investment ($8,047) plus conservative ad spend ($7,500) = $15,547/mo, which is slightly above the 35%-of-revenue guideline ($41,667 monthly revenue x 35% = $14,583). This is a pipeline-decided package (confidence: high) and was not recalculated per instructions; flagging for sales rep awareness only — not included in the client report.
+
+======================================================================
+AD SPEND (source: package_decision.json — used exactly)
+======================================================================
+Conservative: $7,500/mo
+Aggressive: $25,000/mo
+
+Ad spend and ROI modeled primarily on Personal Injury — the stated "priority growth focus" per the research notes, and the practice area with a client-facing CPL bucket ("Accident & Injury"). Real Estate growth is transcript-identified as running primarily through realtor/loan-officer referral relationships and local SEO/reviews rather than paid PPC, and has no corresponding CPL bucket in the approved pricing tables — consistent with the transcript's framing of Real Estate growth as a referral-funnel play, not a paid-ads play.
+
+Channel mix assumption: 50% Google Search, 25% LSA, 15% Meta Retargeting, 10% Meta Cold (Accident & Injury CPL bucket, per audit-write.md table).
+CPL midpoints: Google Search $705 | LSA $235 | Meta Retargeting $90 | Meta Cold $170
+Weighted blended CPL (no cushion): (0.50 x 705) + (0.25 x 235) + (0.15 x 90) + (0.10 x 170) = $441.75 -> ~$440
+Conservative blended CPL (+20% cushion): ~$530
+
+Close rate: not stated in transcript — defaulted to 15% per instructions.
+Average case value: not stated in transcript — defaulted to Accident/Injury practice-area range ($5K-$8K), midpoint $6,500 used. Disclosed as a default in the client report.
+
+CONSERVATIVE SCENARIO — $7,500/mo ad spend
+  Leads = $7,500 / $530 ~ 14 leads/mo
+  Cases = 14 x 15% ~ 2 cases/mo
+  Revenue = 2 x $6,500 ~ $13,000/mo
+  Return = $13,000 / $7,500 ~ 1.7x
+
+AGGRESSIVE SCENARIO — $25,000/mo ad spend
+  Leads = $25,000 / $440 ~ 57 leads/mo
+  Cases = 57 x 15% ~ 9 cases/mo
+  Revenue = 9 x $6,500 ~ $58,500/mo (reported below as ~$55,000-$58,500 range; using 8.5 cases x $6,500 = $55,250 for the report figure)
+  Return = $55,250 / $25,000 ~ 2.2x
+
+======================================================================
+DBM STATEMENT (Block 1)
+======================================================================
+"We help bilingual solo practitioners get a marketing and team system that runs without them, so they can double their revenue and finally step away without pausing the business."
+
+======================================================================
+QUICK WIN OPPORTUNITIES (7 identified across 4 pillars)
+======================================================================
+1. [Lead Generation] Turn On Local Service Ads for Personal Injury
+   Why: No confirmed LSA presence for the firm. LSAs appear above paid ads, the map pack, and organic results, and only charge per verified lead.
+   Competitor: Rob Levine Law (290 Google reviews, 4.9★) and d'Oliveira & Associates (235 Google reviews, 4.9★) are positioned to dominate LSA's review-driven ranking.
+   Opportunity: Even a modest review base plus Google Screened status opens a low-risk, pay-per-lead channel immediately.
+
+2. [Lead Generation] Launch a Review-Generation Program
+   Why: Zero confirmed online reviews across Google, Avvo, and Experience.com after 15+ years in practice.
+   Competitor: Rob Levine Law — 290 reviews at 4.9 stars.
+   Opportunity: Closing even part of this gap builds the trust foundation every other channel depends on.
+
+3. [Lead Generation] Fix the Facebook/Juridipedia NAP Inconsistency
+   Why: The firm is listed under a different name ("Guerra Law Offices, LTD."), suite, and city (Providence) on Facebook and Juridipedia, splitting local search authority.
+   Competitor: none named — internal data-hygiene issue.
+   Opportunity: Correcting this consolidates local SEO signal strength immediately at no added cost.
+
+4. [Lead Generation] Launch Bilingual Personal Injury & Real Estate Ad Campaigns
+   Why: No directly competing bilingual firm was identified in Warwick or Providence.
+   Competitor: none named — open lane.
+   Opportunity: Stella's bilingual skill is a genuine first-mover advantage in this specific market.
+
+5. [Intake] Add a Real Contact Form to the Website
+   Why: The Contact page currently has no form — only a mailto link, phone, fax, and a static map image.
+   Competitor: none named.
+   Opportunity: Captures leads who are not ready to call, without spending another marketing dollar.
+
+6. [Team] Document a Basic Backup/Coverage Plan
+   Why: A vacation currently requires pausing all new business.
+   Competitor: none named.
+   Opportunity: Even minimal delegation of intake triage lets Stella step away without turning off the business.
+
+7. [Profit] Track Cost-Per-Case by Practice Area
+   Why: No visibility into which of Personal Injury, Real Estate, or Family Law is actually most profitable, despite prioritizing Personal Injury for "higher payouts."
+   Competitor: none named.
+   Opportunity: Confirms growth investment is going to the right practice area before scaling ad spend further.
+
+======================================================================
+FIRST 90 DAYS (Block 5 source list)
+======================================================================
+1. Launch Google Search and Local Service Ads for personal injury in Warwick/Providence, including a bilingual Spanish-language campaign
+2. Rebuild the website with mobile responsiveness, a real contact form, and attorney bio content surfaced on the homepage
+3. Kick off Elite Coach Plus coaching sessions to build the profit plan and delegation roadmap
+4. Begin structured review-generation outreach to past clients and referral partners
+5. Correct the Facebook/Juridipedia NAP inconsistency to consolidate local SEO signal
