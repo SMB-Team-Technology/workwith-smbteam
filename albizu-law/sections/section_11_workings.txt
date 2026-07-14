@@ -1,0 +1,143 @@
+ALBIZU LAW — SECTION 11 WORKINGS
+=====================================================
+
+PACKAGE DECISION FILE VERIFICATION (confidence: medium)
+=====================================================
+package_decision.json flagged revenue as sourced from HubSpot ("$961K - $3M" -> $1,980,500)
+because it was not found in the research notes at the time the pipeline ran.
+
+Correction on review: revenue IS stated in the research notes (Step 9 — Transcript
+Extraction): "Annual revenue: 2023: ~$800k; 2024: $1.3M; 2025: $1.8M; 2026 projection:
+$2.0M." This confirms — rather than contradicts — the HubSpot-derived estimate of
+$1,980,500. Both land inside the same $1M-$3M band. No tier change required from this
+correction.
+
+Team size: research notes do not state an exact headcount, but describe a lean team —
+Iris personally absorbs ~85% of casework at ~70 hrs/wk, and the stated growth plan calls
+for 4-5 *future* strategic hires (2-3 attorneys, 2 paralegals), implying the current team
+is well under 5. The decision file's team_size_effective=3 is a reasonable estimate and
+does not change the "Under 5" eligibility bucket.
+
+TIER SELECTION — CONFIRMED, WITH DOCUMENTED REASONING ON THE AGGRESSIVE-GOAL BOUNDARY RULE
+=====================================================
+Revenue $1.98M places the firm in the $1M-$3M Growth tier by the standard table.
+The firm's stated revenue GOAL ($5M-$6M) is aggressive, which the boundary rule would
+normally read as a trigger to escalate to the Dominate tier. This was deliberately NOT
+done, for two independently sufficient reasons:
+
+1. Research notes explicitly caution: "the audit's growth narrative should center on
+   capacity-building (SOPs, workflows, strategic hires) rather than urging aggressive new
+   demand generation, since more top-of-funnel volume without capacity would worsen the
+   burnout problem described on the call." Escalating to a higher ad-spend-cap tier would
+   contradict this transcript-driven guidance directly.
+2. Math check: running the 20%-rule off the revenue GOAL ($5.5M midpoint x 20% / 12 =
+   $91,666/mo, x1.15 Austin Tier-3 multiplier, x1.33 Spanish-campaign multiplier =
+   ~$140,000/mo aggressive ad spend) blows through the 35%-of-current-monthly-revenue
+   spend cap ($1,980,500/12 x 0.35 = ~$57,764/mo total for management fees + ad spend)
+   by a wide margin. A tier escalation cannot be supported by the client's current
+   revenue regardless of their goal. Growth tier's $50,000 ad spend cap is already close
+   to the ceiling the 35% rule allows once the $10,597 bundled package cost is netted out
+   (~$47,167 remaining) — confirming Growth is the appropriate tier today, with room to
+   move to Dominate/Platinum as revenue actually grows (see Phase 4 of roadmap below).
+
+Selected package (confirmed, matches package_decision.json):
+- Marketing: Full Service Marketing — Growth
+- Coaching: Elite Coach Plus
+- No Legal AI Workforce package recommended (team too lean/no AI-readiness signal on the call)
+- No AI Avatar / Video Growth add-on recommended (no signal of interest, requires Alexis approval regardless)
+
+MANDATORY PRICE LOOKUP
+=====================================================
+- Marketing package selected: Full Service Marketing — Growth
+  - Bundled price (from table): $7,397/mo
+  - Stand-alone price (from table): $8,997/mo
+  - Savings (stand-alone minus bundled): $1,600/mo
+- Non-marketing package selected: Elite Coach Plus
+  - Bundled price (from table): $3,200/mo
+  - Stand-alone price (from table): $3,497/mo
+  - Savings (stand-alone minus bundled): $297/mo
+- Legal AI Workforce (LAW) package selected: none
+- AI Avatar / Video Growth add-on selected: none
+- Total monthly investment (sum of all bundled/recurring prices): $10,597/mo
+- Total savings (sum of all savings): $1,897/mo
+
+TOTAL MONTHLY INVESTMENT
+=====================================================
+Marketing (Growth) $7,397/mo + Coaching (Elite Coach Plus) $3,200/mo = $10,597/mo
+Total savings vs. stand-alone: $1,600 + $297 = $1,897/mo
+
+35% SPEND CAP CHECK
+=====================================================
+Current monthly revenue: $1,980,500 / 12 = ~$165,042/mo
+35% cap: ~$57,764/mo (management fees + ad spend)
+Bundled package cost: $10,597/mo -> leaves ~$47,167/mo of ad spend headroom under the cap
+Both the conservative ($3,500) and aggressive ($14,000) ad spend figures below sit
+comfortably under this ceiling.
+
+AD SPEND — CONSERVATIVE AND AGGRESSIVE
+=====================================================
+Conservative ($3,500/mo): equal to the Family Law Google Search PPC channel minimum —
+prioritized because the firm already has a dedicated, unused Google Ads landing page
+built for family law, making this the fastest channel to reactivate.
+- Blended CPL: Family Law Google Search midpoint ~$100, +20% conservative cushion = ~$120
+- Leads: $3,500 / $120 ≈ 29 leads/month
+- Cases: 29 x 15% default close rate (not stated in transcript) ≈ 4 cases/month
+- Revenue: 4 cases x $4,000 default Family Law case value (not stated in transcript) ≈ $17,500/month
+- Return: ~5.0x
+
+Aggressive ($14,000/mo): blended across Google Search + LSA + Meta for both immigration
+and family law — the practical ceiling for a capacity-constrained firm, well short of
+the Growth tier's $50,000 cap and the 35% spend ceiling above.
+- Blended CPL across channels/practice areas: ~$85 (mid-range estimate, no cushion)
+- Leads: $14,000 / $85 ≈ 165 leads/month
+- Cases: 165 x 15% default close rate ≈ 25 cases/month
+- Revenue: 25 cases x $4,250 blended default case value (Immigration $3K-6K + Family Law
+  $3K-5K midpoints, not stated in transcript) ≈ $106,250/month
+- Return: ~7.6x
+
+All case values and close rate are defaults, disclosed as such per pricing rules — the
+transcript did not state either figure.
+
+DBM STATEMENT FOR BLOCK 1
+=====================================================
+"The current pace is unsustainable and threatens burnout. Iris wants to regain time for
+family, especially a teenage daughter before she leaves for college." Stated goal: reduce
+from ~70 hrs/wk (85% case work) to a sustainable 40 hrs/wk (50/50 case/strategy split)
+while still scaling revenue toward $5M-$6M with minimal headcount growth. DBM category:
+a firm that runs itself so the owner has more time.
+
+QUICK WIN OPPORTUNITIES (7 identified, spanning all four pillars)
+=====================================================
+1. [Lead Gen] Fix the LawInfo NAP citation conflict — no named competitor comparison (no
+   specific firm identified with this issue); opportunity: remove a live signal
+   potentially capping local map-pack rankings, at zero media cost.
+2. [Lead Gen] Reactivate the existing family law Google Ads landing page — competitor:
+   Kirker Davis LLP / Modern Family Law (both actively running family law paid search);
+   opportunity: fastest path to paid leads since the landing page already exists.
+3. [Lead Gen] Build out Local Service Ads (Google Screened) — no named competitor
+   confirmed in LSA (not independently verified via available tools); opportunity: the
+   firm's 4.7-star GBP rating already qualifies it to compete for top-of-page,
+   pay-per-lead placement.
+4. [Intake] Add an embedded, above-the-fold contact form to the homepage — no competitor
+   comparison; opportunity: convert hand-raising visitors who won't click through to a
+   separate scheduling page.
+5. [Intake] Stand up a defined lead follow-up sequence — no competitor comparison;
+   opportunity: stop losing already-earned referral leads to slow or missing follow-up.
+6. [Team] Formalize the hiring plan into a phased 90-day bilingual recruiting sprint —
+   no competitor comparison; opportunity: start relieving Iris's caseload with the first
+   of the 4-5 planned hires instead of leaving the plan unexecuted.
+7. [Profit] Implement cost-per-case and margin tracking by practice area — no competitor
+   comparison; opportunity: know whether growth to $5M-$6M actually builds profit, not
+   just revenue that requires more of Iris's time to sustain.
+
+FIRST 90 DAYS
+=====================================================
+1. Launch the Growth marketing package: reactivate the family law Google Ads campaign
+   and stand up immigration Google Search + LSA campaigns.
+2. Fix the LawInfo NAP citation conflict and complete Local Service Ads (Google Screened)
+   setup to close the local visibility gap identified in this audit.
+3. Add an embedded homepage contact form to reduce intake friction ahead of new ad traffic.
+4. Kick off Elite Coach Plus coaching engagement, prioritizing the bilingual hiring plan
+   and a defined intake follow-up process.
+5. Stand up basic cost-per-case and margin tracking so Iris has profit visibility as new
+   leads and hires come online.
