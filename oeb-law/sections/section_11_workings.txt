@@ -1,0 +1,166 @@
+SECTION 11 WORKINGS — OEB Law — July 14, 2026
+================================================================
+
+PACKAGE DECISION FILE CHECK
+----------------------------------------------------------------
+oeb-law/package_decision.json exists. confidence = "low" (revenue was estimated,
+not stated in transcript/research notes). Per instructions, cross-checked the
+decision file against the research notes before finalizing.
+
+REVENUE CONFIDENCE RE-CHECK (required because confidence = "low")
+----------------------------------------------------------------
+- Research notes STEP 9 explicitly state: "Annual revenue: not stated in
+  transcript." The underlying Fathom call summary confirms: "Budget: Not
+  discussed." This was a reconnect/account-setup call with DJ Pendergrass;
+  Managing Partner Tim Elrod (the decision maker) was not present (in court).
+  The joint call intended to gather these numbers directly from Tim was
+  scheduled for today, July 14, 2026 — no transcript from that call was
+  available for this pass.
+- No dollar-figure signal exists anywhere in the research notes or transcript
+  that would let us pick a more precise number than the HubSpot estimate.
+  The only quantitative color is historical: the firm "historically spent
+  millions on ads/TV/billboards" — this describes past spend, not current
+  revenue, and cannot be used to infer an annual revenue figure.
+- The HubSpot-sourced label ($180K–$960K, midpoint $570,000) is therefore kept
+  as-is. This is a wide band — it is worth flagging to Dan Bryant that the low
+  end of this range ($180K–$300K) would fall under the "confirm client has
+  funds to cover 4 months of services" and "scoping approval required" rules,
+  and would likely make the recommended $8,047/mo management-fee package
+  unaffordable relative to the 35% total-spend cap. At the $570K midpoint used
+  here, total SMB spend (management fees $8,047 + conservative ad spend
+  $7,500 = $15,547/mo) is 32.7% of monthly revenue ($47,500) — inside the 35%
+  cap. If actual revenue is materially below $400K, this package should be
+  revisited before signing. RECOMMENDATION FOR SALES: confirm actual annual
+  revenue directly with Tim/DJ before the proposal call on 2026-07-29.
+- Team size: research notes flag "8 attorneys" as an unverified external
+  (directory) data point, explicitly not confirmed on the call, versus the
+  decision file's default of 3. This does NOT change the package decision —
+  both the $400K–$1M marketing tier and the $400K–$1M coaching tier apply
+  regardless of team size ("Any" team size) per the pricing tables — but it
+  should also be confirmed with the firm directly.
+- CONCLUSION: keeping marketing_tier = Starter and coaching_name = Elite Coach
+  Plus exactly as computed by the pipeline. No override applied. Revenue and
+  team-size uncertainty documented above for the sales team, not surfaced in
+  the client-facing report.
+
+MANDATORY PRICE LOOKUP (verified character-by-character against the tables
+in .claude/commands/audit-write.md)
+----------------------------------------------------------------
+- Marketing package selected: Full Service Marketing — Starter
+  - Bundled price (from table, $400K–$1M row): $4,847/mo
+  - Stand-alone price (from table): $5,697/mo
+  - Savings (stand-alone minus bundled): $850/mo
+- Non-marketing package selected: Elite Coach Plus
+  - Bundled price (from table, $400K–$1M | Any row): $3,200/mo
+  - Stand-alone price (from table): $3,497/mo
+  - Savings (stand-alone minus bundled): $297/mo
+- Legal AI Workforce (LAW) package selected: none — law_tier is null in the
+  decision file. No LAW recurring fee counted toward the 35% cap.
+- AI Avatar / Video Growth add-on: none included in the priced proposal.
+  FLAG FOR SALES: DJ explicitly expressed interest in a "practical video
+  strategy that doesn't overburden the attorney" and specifically an AI
+  avatar workflow (has a green screen, iPhone 4K, tripod, mic, lighting
+  already, and is evaluating HeyGen). The One-Time AI Avatar package
+  ($1,850 one-time, kickoff + 5 videos) is a strong fit and does not require
+  the 6-criteria Standalone qualification. Per policy, ANY AI Avatar /
+  Virtual Video Growth package requires Alexis approval before it can be
+  included in a proposal — flagging here rather than pricing it into Block 3.
+- Total monthly investment (sum of bundled/recurring prices): $8,047/mo
+  ($4,847 + $3,200)
+- Total savings (sum of all savings): $1,147/mo ($850 + $297)
+
+AD SPEND (from package_decision.json — ad spend confidence was not flagged
+low, only revenue/team size were; used exactly as computed)
+----------------------------------------------------------------
+- Conservative: $7,500/mo (aligns with the PI "Medium competitiveness" hard
+  floor — reasonable given OEB Law retains meaningful offline brand equity
+  even though digital competitiveness in-market is high)
+- Aggressive: $25,000/mo (equals the Starter tier ad spend cap)
+
+ROI PROJECTIONS
+----------------------------------------------------------------
+Practice area: Accident & Injury (Personal Injury generally — auto,
+motorcycle, truck accidents, slip-and-fall, on-the-job injury per directory
+research; no single sub-category confirmed as exclusive focus).
+Case value: not stated on the call — using PI practice-area default of
+$5,000–$8,000, midpoint $6,500, disclosed as a default in the client report.
+Close rate: not stated — defaulted to 15% per instructions.
+Client-facing CPL midpoints used (Accident & Injury row): Google Search $705,
+LSA $235, Meta Retargeting $90, Meta Cold $170.
+
+Conservative scenario ($7,500/mo):
+- Assumed channel mix: 35% Google Search, 35% LSA, 20% Meta Retargeting,
+  10% Meta Cold (LSA-weighted, consistent with the call's stated goal of
+  competing on trust/locality rather than expensive head-to-head PPC against
+  national firms like Morgan & Morgan)
+- Blended CPL = (0.35×705)+(0.35×235)+(0.20×90)+(0.10×170) = $364/lead
+- Conservative cushion (+20%) = ~$437/lead
+- Leads = $7,500 ÷ $437 ≈ 17 leads/mo (range shown as 16–18)
+- Cases = 17 × 15% ≈ 2.6 cases/mo (range shown as 2–3)
+- Revenue = 2.6 × $6,500 ≈ $16,800/mo
+- Return = $16,800 ÷ $7,500 ≈ 2.2x
+
+Aggressive scenario ($25,000/mo):
+- Assumed channel mix: 45% Google Search, 25% LSA, 20% Meta Retargeting,
+  10% Meta Cold (more Google Search weight as budget scales), no cushion
+- Blended CPL = (0.45×705)+(0.25×235)+(0.20×90)+(0.10×170) = $411/lead
+- Leads = $25,000 ÷ $411 ≈ 61 leads/mo (range shown as 58–62)
+- Cases = 61 × 15% ≈ 9.1 cases/mo (range shown as 8–9)
+- Revenue = 9.1 × $6,500 ≈ $59,000/mo
+- Return = $59,000 ÷ $25,000 ≈ 2.4x
+
+DBM STATEMENT (Block 1)
+----------------------------------------------------------------
+DBM: Tim wants OEB Law generating a consistent flow of Personal Injury cases
+without having to personally manage marketing or spend his own limited time
+on camera — a system that runs whether or not he's in trial that week
+(DBM #1: a firm that runs itself so the owner gets his time back).
+
+Formula sentence: "We help established Personal Injury firms with untapped
+brand equity get a predictable, systemized flow of new cases so they can
+step back from carrying the marketing weight personally and reclaim their
+time."
+
+QUICK WIN OPPORTUNITIES IDENTIFIED (7 — minimum 6 required)
+----------------------------------------------------------------
+1. [Lead Gen / Quick Win] Local SEO Foundation Reset — why: zero 3-pack/
+   organic presence for all 3 core PI search terms — who: Garza Law Firm
+   (dominates rankings) — opportunity: consistent new-case flow without an
+   extra ad dollar.
+2. [Lead Gen / Long-Term] Geo-Expansion Landing Pages for East Tennessee —
+   why: no content for Maryville/Oak Ridge/Sevierville despite claiming to
+   serve them — no named competitor identified for this specific gap —
+   opportunity: capture surrounding-county search traffic currently going
+   entirely to competitors.
+3. [Lead Gen / Long-Term] Local Service Ads / Google Screened enrollment —
+   why: ~105 reviews already position OEB Law to qualify faster than it
+   could climb the organic 3-pack — no named competitor confirmed holding
+   LSA spots this pass — opportunity: pay-per-lead placement above all
+   organic and paid results.
+4. [Intake / Quick Win] Turn the Intaker Video Greeting Back On — why:
+   already-installed, already-paid-for tool sitting unused — no competitor —
+   opportunity: immediate trust-building upgrade at zero incremental cost.
+5. [Intake / Quick Win] Move the Contact Form Above the Fold — why: form
+   buried mid-to-lower page loses conversions — no competitor — opportunity:
+   capture more of the traffic the firm is already generating.
+6. [Team / Long-Term] Build a Leadership Layer Below Tim — why: Tim is the
+   bottleneck decision maker; DJ currently carries marketing evaluation
+   alone — no competitor (internal) — opportunity: a self-managing structure
+   means Tim's court schedule stops setting the pace for firm growth.
+7. [Profit / Quick Win] Establish Baseline Case Value & Close Rate Tracking —
+   why: no case value/close rate/revenue data currently tracked — no
+   competitor (internal) — opportunity: turns every future marketing dollar
+   into a measurable investment instead of a guess.
+
+FIRST 90 DAYS (5 bullets)
+----------------------------------------------------------------
+1. Launch Google Ads, Local Service Ads, and Meta retargeting campaigns
+   targeting core Knoxville Personal Injury search terms.
+2. Rebuild the local SEO foundation — Google Business Profile optimization
+   and city-specific landing pages for Maryville, Oak Ridge, and Sevierville.
+3. Website conversion improvements — move the contact form above the fold
+   and add attorney bios and video content.
+4. Kick off Elite Coach Plus coaching sessions for Tim and DJ to begin
+   building the accountability and leadership structure.
+5. Establish baseline tracking for case value, close rate, and cost per case
+   so future ad spend can be measured against real numbers.
