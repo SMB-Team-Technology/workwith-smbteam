@@ -1,0 +1,173 @@
+================================================================================
+SECTION 11 WORKINGS — Conley Law Office (July 17, 2026)
+================================================================================
+
+MANDATORY PRICE LOOKUP
+--------------------------------------------------------------------------------
+- Marketing package selected: Full Service Marketing — Starter
+  - Bundled price (from table): $4,847/mo
+  - Stand-alone price (from table): $5,697/mo
+  - Savings (stand-alone minus bundled): $850/mo
+- Non-marketing package selected: Elite Coach Plus
+  - Bundled price (from table): $3,200/mo
+  - Stand-alone price (from table): $3,497/mo
+  - Savings (stand-alone minus bundled): $297/mo
+- Legal AI Workforce (LAW) package selected: none (revenue under $500K minimum; noted as a Phase 3 future add only)
+- AI Avatar / Video Growth add-on selected: none (not indicated by transcript; requires Alexis approval and firm does not meet criteria today)
+- Total monthly investment (sum of all bundled/recurring prices): $8,047/mo
+- Total savings (sum of all savings): $1,147/mo
+
+PACKAGE_DECISION.JSON VERIFICATION (confidence: medium)
+--------------------------------------------------------------------------------
+package_decision.json proposed: Starter marketing ($4,847/$5,697) + Elite Coach Plus ($3,200/$3,497),
+based on revenue_effective $624,500 sourced from a coarse HubSpot band ("$250K-$999K"), with
+revenue_stated recorded as null.
+
+CORRECTION: revenue_stated is not actually null. Research notes Step 9 (Transcript Extraction)
+states: "Annual revenue: Stated (indirectly) — transcript ties the bookkeeping pricing tier
+($2,000-$2,600/month) to an annual revenue range of '$350k-$500k.'" This is transcript-sourced,
+ground-truth data per the transcript-first principle, and is more reliable than the coarse
+HubSpot band used to generate the $624,500 estimate. Effective revenue for this audit is treated
+as the $350K-$500K range (midpoint ~$425,000), not $624,500.
+
+Despite the revenue correction, the pipeline's tier selections hold up, for two independent reasons:
+1. Revenue: the midpoint of the corrected $350K-$500K range (~$425,000) still falls inside the
+   $400K-$1M Starter/Elite-Coach-Plus band.
+2. Eligibility override: research notes Step 9 and Step 5 (directory listings) show third-party
+   directories list Personal Injury as a practice area Conley Law handles (Hub.biz: "Personal
+   Injury, Criminal Defense and Divorce & Custody"). Per the Practice Area eligibility filter,
+   Personal Injury hides ALL Essentials marketing packages and sets Starter as the minimum tier —
+   this holds regardless of whether revenue lands in the $250K-$400K or $400K-$1M band.
+
+CONCLUSION: Marketing tier = Full Service Marketing Starter ($4,847/mo bundled). Coaching tier =
+Elite Coach Plus ($3,200/mo bundled). No change from the package_decision.json selection, but the
+reasoning is now correctly anchored to transcript-sourced revenue + the Personal Injury eligibility
+rule rather than the coarse HubSpot band.
+
+ELIGIBILITY FILTERS APPLIED
+--------------------------------------------------------------------------------
+- Personal Injury present among practice areas -> Essentials hidden, Starter is the floor. CONFIRMED.
+- Revenue ($350K-$500K, corrected) is under $500K -> Fractional CFO/COO products and all bundles
+  containing them are hidden. No FCOO/FCFO recommended in Block 2 (correctly excluded).
+- Revenue is under $1M -> Master's Circle and Dominate/Platinum marketing tiers hidden. N/A here
+  since Starter is already selected.
+- Team size defaulted to 3 (not stated in transcript; website shows solo attorney + unnamed
+  support staff) -> fewer than 5 team members, so Master's Circle is hidden regardless of revenue.
+- Legal AI Workforce: revenue under $500K -> LAW not recommended at this time (do-not-recommend
+  threshold). Flagged as a possible Phase 3 addition once revenue clears $500K.
+- AI Avatar/Video Growth: no signal in transcript indicating interest in video/social content;
+  not recommended.
+- Minimum MRR check: $8,047/mo total is well above the $2,497/mo minimum. PASS.
+
+35% CAP CHECK (internal note for sales rep — does not appear in client report)
+--------------------------------------------------------------------------------
+Current monthly revenue (corrected estimate, $425,000/yr midpoint): ~$35,417/mo. 35% cap = ~$12,396/mo.
+Management fees alone ($8,047/mo) = ~22.7% of current monthly revenue.
+Adding the full computed ad spend range would push total spend well above the current-revenue 35%
+cap. Per the audit-write eligibility guide, when a firm is on a growth trajectory the cap can
+instead be checked against GOAL revenue: at the default 2x-current-revenue goal (~$850,000/yr,
+~$70,833/mo), the 35% cap is ~$24,792/mo. The aggressive ad spend figure below ($16,700/mo) was
+capped at this goal-based ceiling (mgmt fees $8,047 + ad spend $16,700 = $24,747/mo, essentially at
+the goal-based cap) rather than at the Starter tier's raw $25,000/mo ad spend ceiling or the higher
+reverse-math figure (~$32,000/mo), both of which would exceed the 35% guardrail relative to this
+firm's current size. FLAG FOR SALES REP: current-revenue affordability is tight at the aggressive
+end — confirm actual current revenue with Ginny directly before presenting the aggressive scenario
+as a near-term target; conservative scenario is the more realistic entry point given firm size.
+
+AD SPEND CALCULATION
+--------------------------------------------------------------------------------
+Practice areas: Family Law, Criminal Defense, Personal Injury (multi-practice firm). Per the
+Scoping Guide's multi-practice-area rule, channel minimums are set using the MOST competitive
+(highest-cost) practice area: Personal Injury / Accident & Injury (General).
+
+Recommended channels: Google PPC + LSA + Meta Retargeting (the firm's primary paid channel mix
+for a Full Service Marketing Starter engagement).
+
+CONSERVATIVE (sum of PI/Accident-Injury-General channel minimums):
+  Google PPC min $6,000 + LSA min $2,000 + Meta Retargeting min $1,200 = $9,200/mo
+  Checked against PI hard floor (Medium competitiveness market: $7,500 min) -> $9,200 clears it. PASS.
+  Checked against Starter tier ad spend cap ($25,000) -> well within cap. PASS.
+  CONSERVATIVE AD SPEND = $9,200/mo
+
+AGGRESSIVE (20% rule + reverse math, capped by 35% guardrail — see note above):
+  Revenue goal not stated -> default to 2x current revenue: 2 x $425,000 = $850,000/yr goal.
+  20% rule: $850,000 x 20% / 12 = $14,166.67/mo total marketing budget.
+  Geo tier: Parkersburg, WV is Tier 5 (sub-regional/rural, under 600K DMA) -> x0.85 multiplier.
+  Geo-adjusted budget: $14,166.67 x 0.85 = $12,041.67/mo.
+  No Spanish campaign needed (per research notes).
+  Minus marketing management fee ($4,847): $12,041.67 - $4,847 = $7,194.67/mo available (20%-rule ad spend).
+  Reverse math validation: Target monthly cases = ($850,000/12) / $6,500 case value ~= 10.9 cases/mo.
+    Required leads = 10.9 / 15% close rate ~= 72.7 leads/mo.
+    Blended CPL (PPC 65.2% / LSA 21.7% / Meta Retargeting 13.0% of conservative spend mix, no
+    cushion): (705 x .652) + (235 x .217) + (90 x .130) = ~$522/lead.
+    Required ad spend = 72.7 x $522 ~= $37,950/mo (reverse math is higher than the 20%-rule figure).
+  Use the higher of the two (reverse math): ~$37,950/mo, well above the Starter tier's $25,000 cap.
+  Since revenue ($350K-$500K) does not qualify for a Growth-tier upgrade, and the 35%-of-goal-revenue
+  guardrail (~$24,792/mo total spend, ~$16,745/mo ad spend after mgmt fees) is the binding
+  constraint here, aggressive ad spend is capped at the 35%-of-goal-revenue ceiling rather than the
+  Starter tier cap or the uncapped reverse-math figure.
+  AGGRESSIVE AD SPEND = $16,700/mo (rounded)
+
+AD SPEND RANGE: $9,200 – $16,700/mo
+
+ROI PROJECTIONS
+--------------------------------------------------------------------------------
+Estimated case value: $6,500 (practice-area default for Personal Injury / Accident & Injury General,
+used as the anchor practice area for this multi-practice firm since actual case values were not
+stated in the transcript; disclosed as an industry-benchmark default).
+Close rate: 15% (default; not stated in transcript).
+Blended CPL: ~$522/lead (no cushion, aggressive) / ~$627/lead (with 20% cushion, conservative),
+weighted 65.2% Google PPC / 21.7% LSA / 13.0% Meta Retargeting using client-facing CPL midpoints
+(PPC $705, LSA $235, Meta Retargeting $90).
+
+CONSERVATIVE SCENARIO ($9,200/mo):
+  Leads: $9,200 / $627 ~= 14-15 leads/mo
+  Cases: ~14.7 x 15% ~= 2 cases/mo (present as 2-3 cases/mo)
+  Revenue: ~2.2 x $6,500 ~= $14,300/mo (present as $13,000-$19,500/mo)
+  Return multiple: ~1.6x
+
+AGGRESSIVE SCENARIO ($16,700/mo):
+  Leads: $16,700 / $522 ~= 32 leads/mo
+  Cases: ~32 x 15% ~= 4.8 cases/mo (present as 4-5 cases/mo)
+  Revenue: ~4.8 x $6,500 ~= $31,200/mo (present as $26,000-$32,500/mo)
+  Return multiple: ~1.9x
+
+Both scenarios produce a positive return on ad spend. All figures are estimates based on industry
+benchmarks and disclosed default case values; actual results depend on real close rates and case
+values once available.
+
+DBM STATEMENT FOR BLOCK 1
+--------------------------------------------------------------------------------
+DBM: Grow and sell — Ginny Conley is building toward a firm sale within 5 years and wants the firm's
+systems (financial, lead generation, team) to support a strong, provable valuation, not just more
+revenue.
+"We help solo law firm owners with a growing, multi-practice-area caseload get clean, compliant
+finances and a lead generation system that runs without them so they can build real, sellable firm
+value ahead of a 5-year exit."
+
+QUICK WIN OPPORTUNITIES (8 identified across all four pillars)
+--------------------------------------------------------------------------------
+1. [Lead Gen / Quick Win] Claim and Optimize Google Business Profile — GBP rating (3.7) trails
+   Klie Law Offices (4.5-4.8); no verified review count. Competitor: Klie Law Offices.
+2. [Lead Gen / Long-Term] Launch Google Ads across all three practice areas — no ad presence found
+   anywhere. Competitor: Summers & Associates.
+3. [Lead Gen / Quick Win] Fix the NAP inconsistency (FindLaw vs. website/BBB address) — no named
+   competitor, correctable at no cost.
+4. [Intake / Quick Win] Move the contact form to the homepage — no named competitor.
+5. [Intake / Long-Term] Add live chat and after-hours coverage — no named competitor.
+6. [Team / Long-Term] Build a second layer of leadership before the North Carolina expansion — no
+   named competitor.
+7. [Profit / Quick Win] Complete the trust account cleanup and Clio migration — no named competitor.
+8. [Profit / Long-Term] Build a real profit plan ahead of the 5-year exit — no named competitor.
+
+FIRST 90 DAYS
+--------------------------------------------------------------------------------
+1. Launch Google PPC and Local Service Ads campaigns across all three practice areas (family law,
+   criminal defense, personal injury) to start generating trackable leads immediately.
+2. Move the website's contact form onto the homepage to reduce friction at the moment a prospect is
+   ready to reach out.
+3. Claim, verify, and optimize the Google Business Profile, and correct the NAP inconsistency
+   between the website/BBB address and the FindLaw listing.
+4. Kick off Elite Coach Plus coaching sessions to build accountability around the North Carolina
+   expansion and the financial cleanup already underway.
+5. Launch a review-generation process to close the gap with Klie Law Offices and Summers & Associates.
