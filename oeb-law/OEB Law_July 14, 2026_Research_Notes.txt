@@ -1,0 +1,151 @@
+OEB LAW — GROWTH AUDIT RESEARCH NOTES
+Firm: OEB Law
+URL: http://oeblawtn.com
+Sales Rep: Dan Bryant
+Date: July 14, 2026
+Contact: DJ Pendergrass (marketing/operations) — Decision Maker: Tim Elrod (Managing Partner)
+
+======================================================================
+STEP 1 — WEBSITE RESEARCH
+======================================================================
+- Website URL confirmed live: yes (http://oeblawtn.com)
+- Last redesign date or estimated age: not directly observable; footer copyright reads "© 2026 OEB Law" (does not indicate build/redesign date)
+- Mobile responsive: not observed directly in this pass (static fetch only) — recommend manual mobile check
+- Homepage headline: "When It Comes to Personal Injury You Don't Pay Unless We Win"
+- CTA above fold: yes — "Text or Call for Help Now. Standing By 24/7. (865) 546-1111"
+- Contact form location: buried (below the fold, mid-to-lower page)
+- Live chat present: no live chat visible on homepage — however per transcript, Intaker chat/AI bot is installed sitewide (video greeting currently disabled)
+- Attorney bio present: not visible directly on homepage, but "Attorneys" nav link exists (bios live behind that page)
+- Video present: no video observed on homepage
+- Blog present: yes — "Law Blog" in navigation; most recent post date not visible without a deeper crawl
+
+PageSpeed scores: NOT OBTAINED THIS PASS. The Google PageSpeed API is quota-exhausted in this environment (daily quota returned as 0/rate-limited on repeated attempts) and the pagespeed.web.dev tool is a JS-rendered SPA that cannot be scraped statically with available tools. Per the transcript-first rule, this is a "verify live" item that could NOT be verified live in this pass — flagging rather than fabricating a number. Recommend Pass 2 (audit-write) or a manual check run pagespeed.web.dev directly against http://oeblawtn.com before the numbers are cited in the report.
+
+NAP FLAG: Website footer lists the firm's address as 625 Market Street, 3rd Floor, Knoxville, TN 37902. Transcript states DJ's office is on the 6th floor at the same Market Street address. This is a floor-number inconsistency worth confirming/correcting — potential minor NAP consistency issue if replicated across directories.
+
+======================================================================
+STEP 2 — GOOGLE BUSINESS PROFILE
+======================================================================
+- GBP found: yes (via search aggregation, not direct Maps render)
+- Star rating: 4.5 (most consistent figure across sources; one aggregator shows 4.6)
+- Total review count: ~105 (firm's own site/aggregator figure; secondary sources show variance — 72 and 52 on other directories, likely reflecting different platforms, not GBP itself)
+- Most recent review date: not observed (Maps live render not available with current tools)
+- Primary category: Personal Injury Attorney / Personal Injury Law (per directory listings; Chamber of Commerce lists "Personal Injury Attorney")
+- Photos active: not observed
+- Posts active: not observed
+
+Note: exact live GBP numbers should be confirmed with a direct Maps look before finalizing the written report, since secondary aggregators disagree slightly (52–105 review range depending on source/date of scrape).
+
+======================================================================
+STEP 3 — LOCAL 3-PACK SEARCHES
+======================================================================
+Tooling note: available search tools return organic web results, not a rendered Google Maps 3-pack. Used as the best available proxy — OEB Law's absence across all three core-keyword searches below is a meaningful, verifiable signal on its own, but exact 3-pack map positions should be confirmed with a live Maps search before publishing.
+
+Practice Area 1: Personal Injury (primary focus per discovery call)
+- Search 1 "personal injury lawyer knoxville tn": firm appears no — top firms appearing: Garza Law Firm, Butler Vines & Babb, The Myers Firm, Banks and Jones, Hotz & Associates, NST Law, Hartsoe Law Firm, Brown and Roberto
+- Search 2 "car accident lawyer knoxville tn": firm appears no — top firms appearing: Fox Farley Willis & Burnette, Garza Law Firm, Brown and Roberto, Hartsoe Law Firm, Hodges Doughty & Carson, Hotz & Associates
+- Search 3 "truck accident attorney knoxville tn": firm appears no — top firms appearing: Garza Law Firm, NST Law, Brown and Roberto, Hotz & Associates, Hodges Doughty & Carson, Inman Stadler & Hill
+
+OEB Law did not surface organically in any of the three core Personal Injury search terms for its own city, despite being a long-established, well-known local brand (formerly Ogle, Elrod & Burrill, "wreck into a check"). This lines up directly with the pain point DJ raised on the call — foundational SEO issues holding back Maps/organic performance despite the site "looking good."
+
+======================================================================
+STEP 4 — COMPETITOR REVIEW COUNTS
+======================================================================
+- Competitor 1: Garza Law Firm — reviews: ~1,418 (aggregator-verified, Birdeye) — rating: 4.7–4.8
+- Competitor 2: NST Law — reviews: ~126 (aggregator-verified) — rating: 4.7
+- Competitor 3: Hodges, Doughty & Carson — reviews: ~78 (aggregator-verified, TrueLaws) — rating: not clearly established live (mixed sources)
+
+OEB Law's own review count (~105) is higher than Hodges, Doughty & Carson's (~78) — noted so this is not mischaracterized as a firm "dominating" OEB on reviews. Garza Law and NST Law both currently outpace OEB on review volume and/or rating.
+
+======================================================================
+STEP 5 — DIRECTORY LISTINGS
+======================================================================
+- Avvo: yes — Timothy Grant Elrod has an active, populated profile with Avvo Client's Choice Award badge
+- Justia: firm/attorneys appear in Justia's Knoxville personal injury directory
+- FindLaw: yes — lawyers.findlaw.com listing found (historically also associated with a criminal-defense classification per Dan's note on the call — worth correcting if still misclassified anywhere)
+- Yelp: yes — 12 photos / 13 reviews at 625 Market St, Knoxville listing
+- Additional directories: Lawyers.com, Martindale-Hubbell, LawInfo all carry active OEB Law / Timothy Elrod profiles
+
+NAP: Address across directories consistently shows 625 Market St, Knoxville, TN 37902, but floor number varies/unclear (see NAP flag in Step 1 — site says 3rd floor, transcript references 6th floor).
+
+Geo-targeting pages: none found. The site's navigation and footer show only Personal Injury, Criminal Defense, Agreed Divorce, Attorneys, Community, and Law Blog — no dedicated landing pages for surrounding East Tennessee cities (Maryville, Oak Ridge, Sevierville, etc.) despite the site referencing service across "Knox County and All of East Tennessee." This is a clear content gap opportunity.
+
+======================================================================
+STEP 6 — GOOGLE ADS
+======================================================================
+Tooling note: live rendering of paid search placements (top-of-SERP ads) is not accessible with the tools available in this pass — this requires a live, JS-rendered browser session. No ads were directly observed for OEB Law or competitors as a result; this should not be read as confirmation ads are absent.
+
+Practice Area 1: Personal Injury
+- Firm ads observed: not observed (tooling limitation — recommend live-browser confirmation before the written report cites this)
+- Named local competitors running ads: not observed this pass — Garza Law Firm and Brown and Roberto are the most heavily marketed local competitors based on organic footprint and are reasonable candidates to check for live paid placements in Pass 2
+
+Per the ads framing rule: OEB Law "does not appear to be running ads for this search" based on what could be observed — no certainty claim is made either way.
+
+======================================================================
+STEP 7 — LOCAL SERVICE ADS
+======================================================================
+- Firm appears in LSA: not observed (tooling limitation, same as Step 6)
+- Google Screened: not observed
+- LSA review count: n/a — not observed
+- Named local competitors in LSA: not observed this pass
+
+======================================================================
+STEP 8 — META ADS
+======================================================================
+- Firm has active ads: not observed — Meta Ad Library blocked the automated request in this environment (403 response / requires an authenticated, JS-capable browser session)
+- Named local competitor 1: Garza Law Firm — active ads: not observed this pass
+- Named local competitor 2: Brown and Roberto — active ads: not observed this pass
+
+Recommend a manual check of https://www.facebook.com/ads/library/ for "OEB Law," "Garza Law Firm," and "Brown and Roberto" before finalizing ad-related claims in the written report.
+
+======================================================================
+STEP 9 — TRANSCRIPT EXTRACTION
+======================================================================
+- Practice areas confirmed: Personal Injury (primary focus per call — "wreck into a check" brand). Website also lists Criminal Defense and Agreed Divorce, but Dan explicitly noted a prior misclassification toward criminal work and confirmed the current focus is PI.
+- Current lead sources: Website + Intaker chat/AI bot (recently connected Google + review workflows); referral relationships with trusted local attorneys (referral fee splits practiced in TN); strong offline brand recall from historical TV/billboard presence.
+- Ads ever run: yes — historically spent "millions" on ads/TV/billboards; no active TV for ~6 years; has since pulled back from paid media. Specific platform/budget figures for that historical spend were not stated.
+- Team size: not stated in transcript. (External directory sources reference "8 attorneys" at this location — unverified against the call, flagging as a data point to confirm with Tim/DJ directly rather than treating as transcript-sourced.)
+- Annual revenue: not stated in transcript.
+- Revenue goal: not stated — per instructions, default to 2x current revenue once revenue is confirmed.
+- Average case value: not stated in transcript — practice area is Personal Injury (auto/motorcycle/truck accidents, slip-and-fall, on-the-job injuries per directory research); use PI practice-area default until confirmed.
+- Current close rate: not stated — default to 15%.
+- Number of locations: 1 (625 Market St, Knoxville, TN — no other locations referenced).
+- Spanish campaign needed: not stated / no indication either way.
+- Dominant buying motive: not explicitly stated. Inferred from context: Tim Elrod (Managing Partner/decision maker) is described as consistently hard to reach due to court commitments; DJ (not Tim) is driving the marketing evaluation and content production; the firm wants a "practical video strategy that doesn't overburden the attorney." This points toward DBM #1 — a firm that runs itself so the owner gets more time back — rather than a stated "grow and sell" or "scale and dominate" motive. Should be confirmed directly with Tim on the 7/14 joint call.
+- Any profitability claims made by prospect: none stated.
+- Any claims about case types or practice areas: "wreck into a check" personal injury brand; historical confusion/misclassification toward criminal defense that the firm wants corrected; referral relationships with trusted attorneys for cases outside their focus, including suspected (unconfirmed) referral kickback practices DJ mentioned anecdotally.
+
+======================================================================
+STEP 10 — COMPETITIVE URGENCY SCORE
+======================================================================
+Score: 8/10
+
+Named specific local competitor threats:
+1. Garza Law Firm — overwhelming review volume advantage (~1,418 reviews at 4.7–4.8 stars vs. OEB's ~105) and consistently surfaces at the top of organic results for the exact keywords OEB should own locally.
+2. NST Law — 30+ attorney, 135-support-staff firm that also outranks OEB organically on core PI and truck-accident searches, with a higher review count and rating than OEB currently holds.
+3. Brown and Roberto — heavy authority positioning ("$50M+ recovered," 98% success rate messaging) and consistent organic visibility for car accident and truck accident searches where OEB does not appear at all.
+
+Dynamic sentence: "A score of 8 means competitors are actively dominating multiple channels in your market and the gap is getting wider every month you wait. This is not a future problem — it is a right now problem."
+
+======================================================================
+PASS 2 — VERIFICATION CHECKLIST
+======================================================================
+[x] Every number in the notes matches actually observed/researched data — items that could not be verified live with available tools are explicitly flagged as "not observed" rather than estimated
+[x] Every competitor review count cited has a source basis; OEB's own review count (~105) is confirmed higher than Hodges Doughty & Carson's (~78), so HDC is not mischaracterized as dominating
+[x] Ads sections cover the firm's practice area (Personal Injury); Google Ads/LSA/Meta Ads could not be directly rendered this pass — flagged for manual confirmation rather than fabricated
+[x] No section states with certainty that OEB "is not running ads" — framed only as "not observed" / "does not appear to be running"
+[x] No profitability or business claim appears beyond what the transcript stated (none stated)
+[x] No competitor reference uses generic labels — only specific named local firms (Garza Law Firm, NST Law, Brown and Roberto, Hodges Doughty & Carson, Hotz & Associates)
+[ ] PageSpeed scores are real numbers — NOT obtained this pass (tooling/quota limitation); flagged, not estimated. Must be captured live before the written report cites a number.
+[x] DBM is recorded as a clear inference, flagged as unconfirmed pending the 7/14 call with Tim
+[x] Revenue goal is recorded as not stated, with default noted
+[x] Close rate is recorded as not stated, defaulted to 15%
+[x] Average case value is recorded as not stated, practice-area default noted
+
+OPEN ITEMS FOR PASS 2 / MANUAL FOLLOW-UP:
+1. Live PageSpeed mobile + desktop scores for oeblawtn.com (blocked by API quota/JS rendering in this pass).
+2. Live Google Maps confirmation of GBP star rating, exact review count, and most recent review date.
+3. Live SERP check for Google Ads and Local Service Ads on core PI keywords.
+4. Live Meta Ads Library check for OEB Law, Garza Law Firm, and Brown and Roberto (blocked by 403 in this pass).
+5. Confirm 3rd floor vs. 6th floor address discrepancy with DJ/Tim.
+6. Confirm revenue, revenue goal, team size, average case value, and close rate directly on the 7/14 call — none were stated in the discovery transcript.
