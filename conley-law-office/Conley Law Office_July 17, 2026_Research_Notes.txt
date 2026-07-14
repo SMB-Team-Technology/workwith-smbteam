@@ -1,0 +1,337 @@
+================================================================================
+GROWTH, PROFIT & FREEDOM ROADMAP — RESEARCH NOTES
+Firm: Conley Law Office (Conley Law Office, PLLC)
+Friendly Name: conley-law-office
+URL: https://www.conleylawoffice.com
+Sales Rep: Nick Holderman
+Date: July 17, 2026
+Contact: Ginny Conley (gconley@conleylawoffice.com / +1-304-482-1249)
+================================================================================
+
+NOTE ON TRANSCRIPT: The discovery call transcript on file is from a BOOKKEEPING/
+trust-accounting discovery call (Fathom summary, SMB Team bookkeeping side), not a
+marketing/growth discovery call. It contains firm financial and operational
+context (revenue basis, expansion plans, exit strategy) but does NOT cover
+practice-area marketing details, lead sources, ad history, team size/roles, close
+rate, or average case value. Per the transcript-first rule, all values the
+transcript DOES provide are used as ground truth below. All values it does NOT
+provide were researched live from the firm's website and public directories, or
+defaulted per the audit-research defaults, and are flagged accordingly.
+
+================================================================================
+STEP 1 — WEBSITE RESEARCH
+================================================================================
+
+- Website URL confirmed live: Yes (HTTP 200, verified via curl)
+- Last redesign date or estimated age: Footer copyright reads "© 2024–2026" —
+  site content/design appears current as of 2024, refreshed through 2026.
+- Mobile responsive: Yes — confirmed via viewport meta tag
+  (`<meta name="viewport" content="width=device-width, initial-scale=1">`).
+- Homepage headline: "The legal partner you need for life's toughest moments."
+- CTA above fold: Yes — "Let's Discuss Your Case >>" button, links to contact page.
+- Contact form location: Not on homepage above the fold — housed on a dedicated
+  Contact Us page reached via nav; phone and office address (1130 Market Street,
+  Parkersburg, WV 26101 / (304) 485-3333) appear in the footer site-wide.
+- Live chat present: No — no chat widget script (Intercom/Drift/Tawk/Zendesk/
+  HubSpot chat) found in page source.
+- Attorney bio present: Yes — dedicated bio page for Ginny Conley highlighting
+  12 years as a prosecuting attorney and a "we'll always share the truth with
+  you" philosophy.
+- Video present: No — no `<video>`, YouTube, or Vimeo embeds found in page source.
+- Blog present: No — no blog section found on the site.
+
+Site structure: Home, Family Law, Mediation, Criminal Defense, Other Focus Areas,
+Ginny Conley (bio), Staff, Contact Us. Solo-attorney practice (Ginny Conley) with
+unnamed support staff ("our team" language used but only one attorney named).
+
+PageSpeed mobile score: UNABLE TO OBTAIN. Google PageSpeed Insights API returned
+  "Quota exceeded for quota metric 'Queries' and limit 'Queries per day'" (HTTP 429)
+  on repeated attempts, including direct API calls. pagespeed.web.dev itself
+  requires JavaScript execution to render results and returned only a "Running
+  analysis / data loading" state with no score.
+PageSpeed desktop score: UNABLE TO OBTAIN (same quota issue).
+Raw performance proxy (collected via curl, not a substitute for Lighthouse):
+  - HTTP response: 200
+  - Time to first byte: 0.043s
+  - Total page load (initial HTML only): 0.070s
+  - Page size (initial HTML): 248,529 bytes
+  Server response is fast; this does not capture render-blocking JS/CSS,
+  image weight, or Core Web Vitals. FLAGGED — verify actual PageSpeed mobile/
+  desktop scores at pagespeed.web.dev before the proposal call.
+
+================================================================================
+STEP 2 — GOOGLE BUSINESS PROFILE
+================================================================================
+
+- GBP found: Yes (listing confirmed to exist via multiple directory cross-references)
+- Star rating: 3.7 (per ReachAttorneys.com aggregator, which explicitly labels
+  this figure "Google Reviews"). NOT independently confirmed directly on Google
+  Maps — Google Maps/Search listing pages returned no scrapeable content
+  (blocked/JS-rendered) across repeated attempts.
+- Total review count: NOT VERIFIED LIVE. Google Maps itself was not accessible
+  through available research tools. FLAGGED — verify exact current review count
+  and star rating directly on Google Maps before the proposal call.
+- Most recent review date: Not observed (same access limitation).
+- Primary category: Family law attorney / Divorce & family law (per Yelp category
+  listing: "Divorce & Family Law").
+- Photos active: Not observed — could not access GBP directly.
+- Posts active: Not observed — could not access GBP directly.
+
+Secondary rating data points found (not Google, but directionally useful):
+  - Martindale.com: firm-level 4.5/5.0 rating (1 peer review, "Distinguished"
+    Martindale-Hubbell peer rating, 2026); individual attorney Virginia Conley
+    listed separately at 3.0 (2 peer reviews) — peer ratings, not client reviews.
+  - BBB: A+ rating, NOT a BBB-accredited business. File opened 10/17/2023;
+    business founded 12/1/2019.
+  - Yelp: listing exists ("CONLEY LAW OFFICE," category Divorce & Family Law,
+    updated Feb 2026 per search index) but page returned HTTP 403 on direct
+    fetch — could not confirm exact star/review figures.
+  - Lawyers.com: listing shows "no reviews currently" on that specific platform.
+
+================================================================================
+STEP 3 — LOCAL 3-PACK SEARCHES
+================================================================================
+
+Practice Area 1: Divorce / Family Law
+- Search 1 "divorce lawyer Parkersburg WV": firm appears — yes (organic listing
+  found; local pack composition not independently visible via available tools) —
+  competitors surfacing: Klie Law Offices, Raber Law Offices [Justin Raber
+  Attorney at Law], Summers & Associates
+- Search 2 "family law attorney Parkersburg WV": firm appears — not confirmed in
+  top organic results reviewed — competitors surfacing: Raber Law Offices, Klie
+  Law Offices, Titus Law, Fluharty & Townsend
+- Search 3 "child custody lawyer Parkersburg WV" (topical variant, not
+  independently re-run — inferred from overlapping practice-area competitor set
+  above): competitors surfacing: Klie Law Offices, Raber Law Offices, Summers &
+  Associates
+
+Practice Area 2: Criminal Defense
+- Search 1 "criminal defense attorney Parkersburg WV": firm appears — not
+  observed in top organic results reviewed — competitors surfacing: George J.
+  Cosenza PLLC, Bill Merriman (Attorney at Law, PLLC), The Law Office of Jay W.
+  Gerber Jr. PLLC, Summers & Associates
+- Search 2 "DUI lawyer Parkersburg WV" (topical variant within same practice
+  area): competitors surfacing: Summers & Associates, Bill Merriman, Jay W.
+  Gerber Jr.
+
+Practice Area 3: Personal Injury
+- Search 1 "personal injury lawyer Parkersburg WV": firm appears — not observed
+  — competitors surfacing: Jim Leach LC, Dunbar & Fowler PLLC, Johnstone &
+  Gabhart, Law Office of Bruce M. White, Shaffer Law
+- Search 2 "wrongful death attorney Parkersburg WV" (topical variant): Bill
+  Merriman, George J. Cosenza, Jim Leach LC surfacing repeatedly
+
+NOTE: Available research tools could not render Google's actual local 3-pack map
+pack UI (JS-rendered, blocked to automated fetch). The competitor names above are
+drawn from organic search result presence for each query, which is a directional
+proxy, not a literal 3-pack screenshot. FLAGGED — confirm literal map-pack
+placement live during the proposal call walkthrough.
+
+================================================================================
+STEP 4 — COMPETITOR REVIEW COUNTS
+================================================================================
+
+All figures below verified live via search as of this research pass. None of
+these are cited as "beating" Conley Law Office on Google specifically, since
+Conley's own Google review count could not be confirmed — see Step 2 flag.
+
+- Klie Law Offices (multi-office: Parkersburg, Buckhannon, Clarksburg,
+  Morgantown) — 4.8 rating / 38 reviews (Chamber of Commerce listing); also
+  shows 78 reviews on BestProsInTown and 4.5/110 reviews on Elite Litigators —
+  review counts vary by platform but consistently show a large, multi-office
+  review base.
+- Raber Law Offices, PLLC (Justin Raber Attorney at Law) — 3.7 rating / 25
+  reviews (AllUsInjuryLawyers.com), 3.7 also shown on TrustAnalytica.
+- William B. Summers & Associates — 3.9 rating / 210 reviews (Birdeye) — by far
+  the largest review volume of any directly comparable local firm found.
+- George J. Cosenza, PLLC — no aggregated star rating or review count found
+  through available directories; firm has practiced 45+ years and holds a
+  Martindale-Hubbell "Distinguished" peer rating (2026).
+- Bill Merriman, Attorney at Law, PLLC — 100% recommend / 10 reviews (Facebook
+  page); Multi-Million Dollar Advocates Forum member.
+
+================================================================================
+STEP 5 — DIRECTORY LISTINGS
+================================================================================
+
+- BBB: Listed, A+ rating, not accredited. Address 1130 Market Street,
+  Parkersburg, WV 26101.
+- Yelp: Listed under "Divorce & Family Law" category; direct page fetch blocked
+  (403) so rating/review count not independently confirmed here (see Step 2).
+- Justia: Firm appears in the Parkersburg family law and divorce directory
+  listings (justia.com/lawyers/family-law/west-virginia/parkersburg and
+  /divorce/...).
+- FindLaw: Listed — but shows a DIFFERENT address: "610 Market Street, Suite 3,
+  Parkersburg, WV 26101" and fax (304) 485-3444, versus the website/BBB address
+  of "1130 Market Street." **NAP INCONSISTENCY FLAGGED** — this is a genuine
+  local SEO issue worth raising in the audit.
+- Martindale.com: Listed, firm profile with peer ratings (see Step 2).
+- Avvo: Firm/attorney-specific profile page could not be located via direct
+  fetch (landing page returned only generic directory content) — recommend
+  manual check for completeness/claim status before proposal call.
+- Hub.biz: Listed (conley-law-office-pllc-wv.hub.biz), shows practice areas as
+  "Personal Injury, Criminal Defense and Divorce & Custody" — unclaimed listing,
+  invites the firm to claim it.
+- Lawyers.com: Listed with "no reviews currently" note.
+
+No geo-targeted landing pages for surrounding cities (e.g., Vienna, Belpre,
+Marietta OH, or the planned North Carolina expansion market) were found on the
+firm's site — the site is structured around practice areas, not geography.
+
+================================================================================
+STEP 6 — GOOGLE ADS
+================================================================================
+
+Practice Area 1: Divorce / Family Law
+- Firm ads observed: not observed via available search tools (automated tools
+  cannot reliably render Google's live sponsored-ad slots — see note below)
+- Named local competitors running ads: not confirmed live; Summers &
+  Associates and Klie Law Offices are the most likely paid-search spenders
+  given their multi-office scale and review volume, but no specific ad copy was
+  captured this pass.
+
+Practice Area 2: Criminal Defense
+- Firm ads observed: not observed
+- Named local competitors running ads: not confirmed live
+
+Practice Area 3: Personal Injury
+- Firm ads observed: not observed
+- Named local competitors running ads: not confirmed live
+
+NOTE: Available tools return organic/summarized search results and could not
+render live Google SERP ad slots (this requires an interactive, JS-capable
+browser session). Conley Law Office does not appear to be running ads for these
+searches based on the research conducted, but this should be read as an
+opportunity gap, not a confirmed absence — a live SERP check is recommended
+before the proposal call to confirm current ad activity for the firm and its
+named competitors.
+
+================================================================================
+STEP 7 — LOCAL SERVICE ADS
+================================================================================
+
+- Firm appears in LSA: not observed (tool limitation — LSA widget requires live
+  SERP rendering, same constraint as Step 6)
+- Google Screened: not observed
+- LSA review count: n/a
+- Named local competitors in LSA: not confirmed live — FLAGGED for manual check.
+
+================================================================================
+STEP 8 — META ADS
+================================================================================
+
+- Firm has active ads: not observed — Meta Ad Library access was blocked
+  (HTTP 403 on direct fetch; the library requires an interactive session to
+  browse results). Conley Law Office does not appear to be running Meta ads
+  based on available research, framed as an opportunity gap rather than a
+  confirmed absence.
+- Named local competitor checks: not completed — same access limitation.
+  FLAGGED — recommend a manual Meta Ad Library check for Summers & Associates
+  and Klie Law Offices (the two largest local competitors by review volume)
+  before the proposal call.
+
+================================================================================
+STEP 9 — TRANSCRIPT EXTRACTION
+================================================================================
+
+- Practice areas confirmed: Transcript does not state practice areas directly
+  (it is a bookkeeping-service call). From the firm's own website and
+  directories: Family Law (divorce, custody, alimony), Mediation, Criminal
+  Defense, Estate/Wills/Trusts; third-party directories also list Personal
+  Injury, Employment Law, Social Security, and Consumer Law as areas the firm
+  handles.
+- Current lead sources: Not stated in transcript.
+- Ads ever run: Not stated in transcript.
+- Team size: Not stated in transcript. Website indicates a solo-attorney
+  practice (Ginny Conley) plus unnamed support staff; transcript separately
+  references "a part-time bookkeeper" handling the firm's own finances (an
+  internal admin role, not client-facing legal staff).
+- Annual revenue: Stated (indirectly) — transcript ties the bookkeeping pricing
+  tier ($2,000–$2,600/month) to an annual revenue range of "$350k–$500k."
+- Revenue goal: Not stated — default to 2x current revenue per audit default,
+  i.e., approximately $700k–$1M.
+- Average case value: Not stated — no default given in transcript; use standard
+  family law practice-area default pending sales-call confirmation.
+- Current close rate: Not stated — default to 15% per audit default.
+- Number of locations: 1 (Parkersburg, WV) currently. Transcript notes an active
+  expansion into North Carolina, which carries stricter trust-account
+  regulations and is a driver of urgency for the firm's bookkeeping/compliance
+  overhaul — this NC expansion is a meaningful growth-story data point even
+  though it originated on the bookkeeping call.
+- Spanish campaign needed: Not stated — no.
+- Dominant buying motive: Not stated in "more clients/more money" terms — but
+  clearly inferable: transcript explicitly states the fractional CFO service
+  exists "to support the firm's 5-year goal of maximizing value for a sale" and
+  refers to the firm's "5-year exit strategy." This is a clean fit for DBM
+  category (2) — grow and sell. Ginny Conley is building toward a firm sale
+  within 5 years, not simply chasing more revenue for its own sake.
+- Any profitability claims made by prospect: None stated.
+- Any claims about case types or practice areas: None stated directly in the
+  transcript beyond the trust-account/compliance context (client funds handling
+  for family law matters, referenced via the "Anderson" client mix-up example).
+
+================================================================================
+STEP 10 — COMPETITIVE URGENCY SCORE
+================================================================================
+
+Score: 6 / 10
+
+Named specific local competitor threats:
+1. William B. Summers & Associates — 210 reviews (Birdeye), the largest review
+   volume of any directly comparable local firm, spanning personal injury,
+   criminal defense, family law, and DUI across both WV and OH. Their sheer
+   review volume gives them an outsized trust signal against Conley Law's
+   comparatively thin, unverified review base.
+2. Klie Law Offices — multi-office presence across Parkersburg, Buckhannon,
+   Clarksburg, and Morgantown, with a strong review base (38–110 depending on
+   platform, 4.5–4.8 rating) and dedicated location pages. Their regional
+   footprint is directly relevant given Conley Law's own expansion plans.
+3. Raber Law Offices, PLLC (Justin Raber) — a direct family law and personal
+   injury competitor physically located in Parkersburg, with an established
+   review base (25+) and practice-specific landing pages competing for the same
+   divorce/custody searches Conley Law relies on.
+
+"A score of 6 means competitors have meaningful advantages in one or more areas
+and are pulling ahead. You are not invisible yet — but the window to close the
+gap is narrowing. Every month without action is a month they extend their
+lead."
+
+================================================================================
+PASS 2 — VERIFICATION CHECKLIST
+================================================================================
+
+[x] Every number in the notes matches actually observed data (or is explicitly
+    flagged as unable to obtain/verify, with the reason stated)
+[x] Every competitor review count cited was pulled from a live source; Conley
+    Law's own Google review count could NOT be verified live, so no competitor
+    is stated to definitively have "more reviews" than Conley on Google
+    specifically — only comparative review volume across third-party
+    aggregators is cited
+[x] Ad sections (Google, LSA, Meta) cover all three identified practice areas
+    (divorce/family law, criminal defense, personal injury)
+[x] No section states "you are not running ads" — framed as "does not appear to
+    be running" / "not observed" throughout
+[x] No profitability or business claim appears unless it came from the
+    transcript (5-year exit strategy / sale goal is transcript-sourced)
+[x] No competitor reference uses generic labels — only specific named local firms
+[~] PageSpeed scores are real numbers — NOT OBTAINED (API quota exhausted after
+    repeated attempts, pagespeed.web.dev JS-rendered and unreachable). Raw
+    server-response proxy data recorded instead. FLAGGED for manual check.
+[x] DBM recorded — grow-and-sell / 5-year exit strategy, transcript-sourced
+[x] Revenue goal recorded — not stated, defaulted to 2x current revenue
+[x] Close rate recorded — not stated, defaulted to 15%
+[x] Average case value recorded — not stated, flagged for practice-area default
+
+OUTSTANDING ITEMS TO VERIFY LIVE BEFORE PROPOSAL CALL:
+1. Exact Google review count and star rating for Conley Law Office (GBP itself
+   was inaccessible to available research tools this pass).
+2. Actual PageSpeed Insights mobile/desktop scores (API quota exhausted).
+3. Live Google SERP ad presence (firm and named competitors) for all three
+   practice areas.
+4. Live Meta Ad Library check for Summers & Associates and Klie Law Offices.
+5. NAP inconsistency: FindLaw lists "610 Market Street, Suite 3" vs. the
+   website/BBB address of "1130 Market Street" — confirm which is current.
+
+================================================================================
+END OF RESEARCH NOTES
+================================================================================
