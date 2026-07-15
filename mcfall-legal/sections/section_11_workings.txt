@@ -1,0 +1,149 @@
+SECTION 11 — WORKINGS FILE (INTERNAL — NOT FOR CLIENT REPORT)
+McFall Legal (McFall Law, LLC) — July 24, 2026 — Sales Rep: Jacob Meissner
+
+=======================================================================
+PACKAGE DECISION FILE VERIFICATION (package_decision.json, confidence: medium)
+=======================================================================
+Revenue effective: $180,000/yr ($0-$180K HubSpot band, hubspot_annual_law_firm_revenue).
+Revenue was NOT stated in a transcript — no discovery call transcript was supplied with
+this research trigger (per research notes, all transcript-dependent fields default per
+documented protocol: 15% close rate, 2x revenue goal, estate planning case-value benchmark).
+
+Cross-check performed: the research notes were re-read in full for any revenue signal that
+could confirm or contradict the HubSpot-sourced $180K estimate. None exists — team size,
+lead sources, ad spend history, and revenue are all explicitly marked "not stated." Nothing
+in the notes points to a different revenue band. CONCLUSION: no correction applied — the
+package_decision.json values are used as-is, per the "medium confidence, no contradicting
+signal" instruction.
+
+Team size effective: 3 (default; research notes show 2 attorneys — Alan B. McFall, founder,
+and Jason McFall, joined 2023 — plus unknown support staff, consistent with an effective
+team size of roughly 3).
+
+INTERNAL FLAG FOR SALES REP (do not include in client report):
+- Revenue estimate ($180,000/yr = $15,000/mo) is under the $250K eligibility threshold —
+  per the eligibility rules, this requires confirming the client has funds to cover 4
+  months of service before proceeding, and revenue under $300K triggers standard scoping
+  approval regardless of package size.
+- 35% SMB-spend cap check: at an estimated $15,000/mo revenue, the 35% cap is $5,250/mo.
+  The selected bundle alone ($5,997/mo, before any ad spend) already exceeds that cap.
+  Essentials + Elite Coach are the lowest tiers on the product ladder (Essentials is the
+  floor marketing tier; Elite Coach is the floor coaching tier; both are above the $2,497
+  MRR minimum individually), so there is no lower tier to move to if revenue is confirmed
+  at this level. Flagging for Jacob to confirm actual revenue and affordability directly
+  with Alan before or during the proposal call — do not treat the $180K estimate as final
+  without verification, given how close it sits to eligibility floors.
+
+=======================================================================
+MANDATORY PRICE LOOKUP (verified against audit-write.md tables)
+=======================================================================
+- Marketing package selected: Full Service Marketing — Essentials
+  - Bundled price (from table): $3,397/mo
+  - Stand-alone price (from table): N/A (Essentials has no stand-alone tier)
+  - Savings: N/A
+- Non-marketing package selected: Elite Coach
+  - Bundled price (from table): $2,600/mo
+  - Stand-alone price (from table): $3,497/mo
+  - Savings: $897/mo
+- Legal AI Workforce (LAW) package selected: none (revenue under $500K minimum — not eligible)
+- AI Avatar / Video Growth add-on selected: none (not indicated as a fit; would require
+  Alexis approval regardless)
+- Total monthly investment (sum of bundled prices): $3,397 + $2,600 = $5,997/mo
+- Total savings (sum of all savings): $897/mo (Essentials has no stand-alone comparison,
+  so only the Elite Coach savings count toward the total)
+
+=======================================================================
+AD SPEND & ROI PROJECTIONS
+=======================================================================
+Conservative ad spend: $3,500/mo (Google PPC minimum for Estate Planning, the firm's
+primary practice area; above the $3,000 absolute minimum for any paid ads)
+Aggressive ad spend: $7,500/mo (equal to the Essentials tier's ad spend cap — no stated
+revenue goal exists to run the 20% rule against with confidence, so the tier cap is used
+as the aggressive ceiling rather than an extrapolated figure)
+
+Practice area used for CPL/case-value assumptions: Estate Planning (primary named focus).
+Average case value: not stated in a transcript — using the practice-area default of
+$2,500-$3,500, midpoint $3,000, explicitly disclosed as an estimate.
+Close rate: not stated — using the documented default of 15%.
+
+CONSERVATIVE scenario ($3,500/mo, single-channel Google Search, +20% cushion applied):
+- Blended CPL: Estate Planning Google Search midpoint $135 x 1.20 = ~$162
+- Leads: $3,500 / $162 = ~21/mo
+- Cases: 21 x 15% = ~3/mo (range 2-4)
+- Revenue: 3 x $3,000 = ~$9,000/mo (range $6,000-$12,000)
+- Return: ~2.6x
+
+AGGRESSIVE scenario ($7,500/mo, diversified across Google Search/LSA/Meta, no cushion,
+assumed channel split 50% Google / 30% LSA / 20% Meta blended):
+- Blended CPL: (0.5 x $135) + (0.3 x $65) + (0.2 x $53.75) = ~$98
+- Leads: $7,500 / $98 = ~76/mo
+- Cases: 76 x 15% = ~11/mo (range 9-13)
+- Revenue: 11 x $3,000 = ~$33,000/mo (range $27,000-$39,000)
+- Return: ~4.4x
+
+All figures above are estimates based on industry averages and documented defaults, not
+firm-confirmed numbers — label as such in the client-facing report.
+
+=======================================================================
+DBM STATEMENT (Block 1)
+=======================================================================
+DBM: building a firm that runs itself and can be handed to the next generation (family
+succession pattern — Alan founded the solo practice in 2021, son Jason joined in 2023).
+This is an inference from public information, not a transcript quote, and should be
+confirmed on the actual discovery/proposal call.
+
+Closing statement formula: "We help solo and small-team estate planning and real estate
+firms get a predictable, referral-independent flow of new clients so they can build a
+practice that runs without them and is ready to hand to the next generation."
+
+=======================================================================
+QUICK WIN OPPORTUNITIES (6+ across all four pillars)
+=======================================================================
+1. [Lead Gen / Quick Win] Directory & NAP Cleanup — Why: Avvo, FindLaw, and Yellow Pages
+   still list the firm under the retired "McFall, Layman & Jordan" name, diluting the
+   current brand across exactly the sources prospects check before calling. Competitor:
+   none (internal fix). Opportunity: correcting all three listings recovers lost brand
+   authority at effectively no cost.
+
+2. [Lead Gen / Long-Term Play] Geo-Targeted Landing Pages — Why: no geo-landing pages
+   exist for surrounding towns. Competitor: Daly Law Offices has built a full Bangor +
+   Easton page set for estate planning, elder law, wills & trusts, and probate. Opportunity:
+   matching this structure closes a real, specific SEO gap with a named local competitor.
+
+3. [Lead Gen / Quick Win] Local Service Ads Enrollment — Why: McFall Legal's 4.8-star,
+   21-review profile already exceeds its two closest same-town competitors, positioning it
+   well for Google Screened/LSA eligibility. Competitor: Cramer, Swetz, McManus, Jordan &
+   Saylor P.C.'s 99-review volume gives it a scale edge that favors LSA ranking if it
+   enrolls first. Opportunity: enrolling now captures pay-per-lead placement above the map
+   pack before a larger competitor claims it.
+
+4. [Intake / Quick Win] Defined Consultation Follow-Up Process — Why: the only confirmed
+   intake channel is a single form with no visible process behind it. Competitor: none.
+   Opportunity: a defined follow-up sequence converts more of the leads already being
+   generated, with no new marketing spend required.
+
+5. [Intake / Long-Term Play] Extended Intake Coverage — Why: no after-hours or weekend
+   contact path was identified. Competitor: none. Opportunity: capturing evening and
+   weekend inquiries before they go to a competitor.
+
+6. [Team / Long-Term Play] Designated Non-Attorney Point of Contact — Why: Alan remains
+   the central point of contact five years after founding the firm solo, even with Jason
+   now on staff. Competitor: none. Opportunity: delegating routine client contact frees
+   both attorneys' time for casework and reduces single-person dependency.
+
+7. [Profit / Quick Win] Cost-Per-Acquisition Tracking — Why: no known cost-per-acquisition
+   or documented profit plan exists. Competitor: none. Opportunity: knowing this number
+   turns future marketing spend into a measured investment instead of a guess.
+
+=======================================================================
+FIRST 90 DAYS (3-5 bullets)
+=======================================================================
+1. Launch Google Search and Local Service Ads campaigns for estate planning/probate and
+   real estate practice areas in the Bangor/Northampton County market.
+2. Correct the legacy "McFall, Layman & Jordan" listing on Avvo, FindLaw, and Yellow Pages
+   to the current "McFall Law, LLC" brand.
+3. Build initial geo-targeted landing pages for Bangor, Wind Gap, and Easton.
+4. Kick off Elite Coach coaching sessions to build a defined intake follow-up process and
+   begin tracking cost-per-acquisition.
+5. Confirm and document current PageSpeed performance and mobile responsiveness, and scope
+   any needed website fixes identified.
