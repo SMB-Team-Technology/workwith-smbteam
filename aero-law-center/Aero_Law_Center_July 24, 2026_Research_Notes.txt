@@ -346,3 +346,36 @@ OUTSTANDING MANUAL CHECKS BEFORE THE JULY 24 CALL:
    lien lawyer Fort Lauderdale"
 5. Manual Meta Ad Library check for the three named competitors
 6. Confirm DBM directly with John on the 7/24 call
+
+================================================================
+ESCALATION FLAGS — INTERNAL ONLY, NEVER IN CLIENT REPORT
+================================================================
+Generated during Pass 2 (audit write) — for Dan Bryant / sales leadership review
+before this proposal is finalized. Do not include any of the below in the
+client-facing HTML report.
+
+1. Marketing MRR ($15,997/mo, Full Service Marketing — Platinum) is over
+   $10,000/mo -> scoping approval required.
+2. Aggressive ad spend (~$105,000/mo) is over $25,000/mo -> scoping approval
+   required.
+3. Revenue goal ($5-7M this year) may exceed what the conservative ad spend
+   scenario ($6,700/mo) alone can produce -> paid ads team review recommended
+   before finalizing the proposal.
+4. Both the ~$3M revenue figure and the 13-person team size are inferred, not
+   confirmed live by the prospect on this call: revenue is stated as
+   approximate ("~$3M last year") and team size was counted from the firm's
+   own website team page, not confirmed as current headcount on the call.
+   Recommend Dan confirm both figures directly with John (the principal, who
+   was not on this discovery call) before finalizing the proposal.
+5. The Dominant Buying Motive (Scale and Dominate) is inferred from context
+   (national expansion, $10M long-term target, "largest aviation law firm in
+   the US" branding), not stated directly — John was not on this call.
+   Recommend confirming directly with him before the proposal is presented.
+6. Package tier correction note: the automated pipeline's
+   package_decision.json used a DEFAULT revenue of $500,000 (confidence:
+   "low") because it failed to extract the real revenue figure from these
+   research notes. The actual package used in the final proposal was
+   corrected to Full Service Marketing — Platinum ($15,997/mo bundled) +
+   Master's Circle + FCOO Director ($8,394/mo bundled), based on the
+   ~$3M actual revenue and 13-person team with dedicated Finance/Revenue
+   Manager stated above. Flagging here so the correction is auditable.
