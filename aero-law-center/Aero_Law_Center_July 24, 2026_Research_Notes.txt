@@ -1,0 +1,348 @@
+AERO LAW CENTER — GROWTH AUDIT RESEARCH NOTES
+Prepared for proposal call: July 24, 2026
+Sales Rep: Dan Bryant
+Contact: Sean Anglim (Finance/Revenue Manager), anglim@aerolawcenter.com, (954) 400-4643
+Firm URL: https://aerolawcenter.com/
+HubSpot Contact ID: 121982766461
+
+TOOLING NOTE (read first): This research session did not have access to a JS-rendering
+browser (Google Maps/GBP panel, Facebook Ads Library, Google SERP ad blocks, and the
+pagespeed.web.dev live app all require rendered/interactive access that this session's
+tools cannot execute). Where a data point could not be verified through a live, real-time
+source, that is flagged explicitly below rather than estimated or invented. All flagged
+items should be spot-checked manually before the July 24 call if precision matters for
+that section. Everything not flagged was pulled from either the discovery call transcript
+(ground truth per process) or a live fetch/search performed during this session.
+
+================================================================
+STEP 1 — WEBSITE RESEARCH (live fetch performed)
+================================================================
+- Website URL confirmed live: yes (aerolawcenter.com)
+- Last redesign date or estimated age: not directly datable from fetch; site carries a
+  2025/2026 copyright and actively dated blog posts (see below), consistent with an
+  actively maintained, modern build — not a stale/legacy site.
+- Mobile responsive: not observed via rendered screenshot (no browser tool available this
+  session); page markup/structure is consistent with a responsive framework. Recommend
+  confirming with a phone check before the call.
+- Homepage headline (exact): "The Gold Standard in Aviation Legal Services – Global.
+  Strategic. Elite."
+- CTA above fold: yes — "Start Your Free Consultation Today" button
+- Contact form location: buried at bottom of homepage (inside a "Free Consultation"
+  section) — not above the fold. Fields: name, phone, email, case details, privacy
+  consent, SMS consent.
+- Live chat present: no
+- Attorney bio present: yes — 13 team members listed with individual bio pages (incl.
+  Jonathan A. Ewing, Nada Ragland, Esperanza Segarra, and others)
+- Video present: yes — embedded HTML5 video in the services section
+- Blog present: yes — last posts observed: "The Role of Bilateral Air Service Agreements
+  for FL-Based Carriers" (Jan 15, 2025) and "FAA and TSA to Subjugate Public Charter
+  Flights to Airline Regulations" (Jan 10, 2025). Confirms transcript pain point that
+  promised content volume (6 articles/mo from prior SEO vendor) did not materialize —
+  most recent indexed posts are over a year old.
+
+PageSpeed scores: COULD NOT BE RETRIEVED THIS SESSION.
+- The public PageSpeed Insights API (pagespeedonline.googleapis.com) returned a hard
+  quota-exceeded (429/RESOURCE_EXHAUSTED, daily limit "0" for this environment's egress
+  project) on repeated attempts.
+- pagespeed.web.dev itself is a client-rendered app; a non-interactive fetch only
+  captured the "Running analysis / data loading" state, not a completed score.
+- FLAGGED — Dan/team should run pagespeed.web.dev manually against
+  https://aerolawcenter.com/ before the call to get real mobile/desktop numbers for the
+  report. Do not substitute an estimate.
+
+Site architecture (confirms transcript pain points):
+- State pages exist for: Florida, New York, California, Texas, Arizona, Georgia,
+  Illinois. City pages exist for: Fort Lauderdale, Miami, Los Angeles, Dallas.
+- Orlando and Atlanta pages do NOT exist yet, despite being named as priority target
+  cities in the transcript — confirms the transcript's stated gap and the action item to
+  compile a target city/state list.
+- No dedicated Aircraft Lien page exists. Lien/title issues are mentioned only inside the
+  broader Aircraft Transaction page copy — confirms transcript's stated gap ("missing
+  high-intent pages e.g. aircraft lien") and the action item to build one.
+
+================================================================
+STEP 2 — GOOGLE BUSINESS PROFILE
+================================================================
+Direct GBP panel could not be rendered live this session (Google Maps requires JS
+rendering not available to this session's tools). Best available live proxy: Trustindex,
+a third-party aggregator that syncs and displays live Google review data.
+
+- GBP found: yes (per BBB, Trustindex, and directory listings; transcript also confirms
+  GBP exists and is owned under John's personal Gmail — access issues noted during call)
+- Star rating: 4.9 (via Trustindex aggregation of Google reviews, pulled live this
+  session)
+- Total review count: 198 total across sources; 190 specifically sourced from Google (8
+  from Trustindex's own widget) — per Trustindex, pulled live this session
+- Review breakdown: 194 five-star, 0 four-star, 0 three-star, 1 two-star, 3 one-star
+- Most recent review date: April 29, 2026 (5 stars) — per Trustindex, pulled live
+- Primary category: not independently confirmed live this session — transcript notes GBP
+  category/services are "likely incomplete," consistent with the neglect described
+- Photos active: not observed live — FLAGGED, transcript notes cover photo is not
+  optimized (action item: swap to John's headshot)
+- Posts active: not observed live — FLAGGED for manual check
+
+================================================================
+STEP 3 — LOCAL SEARCH VISIBILITY BY PRACTICE AREA
+================================================================
+Note: this session's tools returned Google organic web-search results, not a rendered
+Google Maps 3-pack panel. Treat the below as organic/local search competitive landscape
+rather than a literal 3-pack pull — flagged for manual 3-pack confirmation if the exact
+pack composition matters for the report.
+
+Practice Area 1: Litigation (aircraft liens, demand letters)
+- Search "aircraft lien lawyer Fort Lauderdale": Aero Law Center appears — competitors
+  surfacing: Aviation Legal Group PA, Tripp Scott, Aviation Legal Counsel, Richard L.
+  Richards Law Office
+- Search "aircraft lien lawyer": Aero Law Center appears — same competitor set
+- Search "aviation litigation lawyer Fort Lauderdale": Aero Law Center appears
+  (aerolawcenter.com/fort-lauderdale/aviation-litigation-lawyer/) — competitors: Tripp
+  Scott, Hinshaw & Culbertson LLP
+
+Practice Area 2: Transactional (aircraft purchase/sale/lease)
+- Search "aircraft purchase attorney Fort Lauderdale": Aero Law Center appears —
+  competitors: Lapayowker Jet Counsel PA, Aviation Legal Group PA, Aviation Legal
+  Counsel, Bruce David Green PA
+- Search "aircraft transaction lawyer Fort Lauderdale": Aero Law Center appears
+- Search "aircraft lease attorney Florida": Aero Law Center appears — competitors:
+  Lapayowker Jet Counsel PA, Aviation Legal Group PA
+
+Practice Area 3: Regulatory (FAA compliance)
+- Search "FAA compliance attorney Fort Lauderdale": Aero Law Center appears —
+  competitors: Aviation Legal Group PA, Aviation Law Florida (Sobota PL)
+- Search "FAA certification lawyer Fort Lauderdale": Aero Law Center appears (dedicated
+  page: aerolawcenter.com/fort-lauderdale/aviation-regulation-lawyer/faa-certification/)
+- Search "aviation MRO compliance lawyer": Aero Law Center appears (dedicated page) —
+  no other local firm found with a comparable dedicated MRO compliance page, a notable
+  differentiation opportunity given the AeroShield/MRO/Part 135 target audience
+
+================================================================
+STEP 4 — COMPETITOR REVIEW COUNTS
+================================================================
+FLAGGED — live Google star ratings/review counts for the named competitors below could
+not be pulled through this session's tools (no Maps rendering access). What was verified
+live via search: none of these three firms show an aggregated Google review count on any
+indexed platform (Martindale, Avvo, FindLaw, Lawyers.com) surfaced this session — a
+meaningful signal in itself, since Aero Law Center's own 190 Google reviews / 4.9 stars
+(verified live via Trustindex, see Step 2) is a real, demonstrable number these
+competitors don't appear to be surfacing anywhere indexed. Do not cite a specific review
+count for any of these three without a manual live Maps check first.
+
+- Aviation Legal Group, P.A. (888 S Andrews Ave #303, Fort Lauderdale) — reviews: not
+  found on any indexed platform this session — rating: AV Rated Preeminent (peer rating,
+  Martindale-Hubbell — not a consumer review score)
+- Tripp Scott (multi-practice, 39 lawyers, Fort Lauderdale) — reviews: not found on any
+  indexed platform this session for the aviation practice specifically; firm-wide
+  Martindale listing shows 4.9/5.0 across 243 reviews (peer/client mixed, not GBP-
+  specific) — rating: 4.9 (Martindale, not Google)
+- Lapayowker Jet Counsel, P.A. (Plantation, FL) — reviews: not found on any indexed
+  platform this session — rating: AV Rated Preeminent (Martindale, peer rating); ranked
+  in Chambers High Net Worth
+
+================================================================
+STEP 5 — DIRECTORY LISTINGS
+================================================================
+- Avvo: Jonathan A. Ewing has an individual attorney profile (avvo.com); no separate firm-
+  level Avvo profile surfaced
+- Justia: no current Justia Lawyer Directory profile for the firm surfaced this session
+  (only a historical mention of a past associate, 2016–2017, and a trademark filing
+  record for "Aero Law Center" under Ewing Legal Group, PA)
+- FindLaw: firm surfaces in FindLaw's Fort Lauderdale aviation lawyer category listing
+  page, not confirmed to have a dedicated claimed profile
+- Yelp: listing exists ("AERO LAW CENTER," 1100 Lee Wagener Blvd, Fort Lauderdale,
+  General Litigation category) — page blocked automated fetch this session (403); review
+  count/rating not confirmed live, FLAGGED for manual check
+- BBB: A+ accredited, accreditation confirmed January 30, 2026. Address on file: 1100 Lee
+  Wagener Blvd Ste 211, Fort Lauderdale, FL 33315. Alternate/legal names on file: Ewing
+  Legal Group PA / Ewing Legal Group, P.A. Leadership listed: Jonathan A. Ewing
+  (President), Sean Anglim (Finance Manager) — matches transcript and trigger contact.
+- Trustindex: aggregator confirming live Google review sync (see Step 2)
+
+NAP consistency: address and phone number consistent across BBB, Yelp listing, and
+firm site (1100 Lee Wagener Blvd Ste 211, Fort Lauderdale, FL 33315 / (954) 869-8950 main
+BBB-listed number vs. (954) 400-4643 listed in trigger contact info — two different
+phone numbers appear across sources, worth a NAP cleanup pass, especially since a second
+legal entity name (Ewing Legal Group PA) is on file with BBB, which could cause GBP/
+directory mismatch confusion if not consolidated under one consistent name/number.
+
+Geo-targeting landing pages: confirmed present for 7 states and 4 cities (see Step 1) —
+this is more built-out than the transcript's "thin city-level coverage" framing suggests
+in absolute terms, but the two cities the prospect explicitly flagged as priority
+(Orlando, Atlanta) are both gaps, and there is no per-city practice-area page depth (e.g.
+no "aircraft lien — Miami" page).
+
+================================================================
+STEP 6 — GOOGLE ADS
+================================================================
+FLAGGED — this session's tools cannot render the Google search results ad block/SERP
+sponsored section (WebSearch returns organic-equivalent results without ad labeling, and
+no live-browser tool was available to inspect the actual SERP). Per the transcript,
+Google Ads may currently be off due to a payment issue on the prospect's own account, and
+a Google Ads read-only audit has already been scheduled with SMB Team (ppcteam@smbteam.
+com). Recommend the live Google Ads audit already in motion serve as the authoritative
+source for this section rather than an external SERP check.
+
+Practice Area 1: Litigation (aircraft lien/demand letter)
+- Firm ads observed: not observed this session (tooling limitation, see above)
+- Named local competitors running ads: not observed this session
+
+Practice Area 2: Transactional (aircraft purchase/sale/lease)
+- Firm ads observed: not observed this session
+- Named local competitors running ads: not observed this session
+
+Practice Area 3: Regulatory (FAA compliance)
+- Firm ads observed: not observed this session
+- Named local competitors running ads: not observed this session
+
+Framing for the report: the firm does not appear to be running Google Ads for these
+searches at present — consistent with the transcript's note of a payment issue pausing
+the account — which reads as an open opportunity gap rather than a competitor-dominance
+finding, since no competitor ad activity could be confirmed either.
+
+================================================================
+STEP 7 — LOCAL SERVICE ADS
+================================================================
+FLAGGED — LSA panel requires live SERP rendering, not available this session.
+- Firm appears in LSA: not observed
+- Google Screened: not observed
+- LSA review count: not observed
+- Named local competitors in LSA: not observed
+Recommend a manual check of "aviation lawyer Fort Lauderdale" on a mobile device before
+the call if LSA is going to be a specific recommendation in the report.
+
+================================================================
+STEP 8 — META ADS
+================================================================
+FLAGGED — the Meta Ad Library (facebook.com/ads/library) blocked automated access this
+session (403 Forbidden), which is consistent with it requiring an authenticated, JS-
+rendered session.
+- Firm has active ads: per transcript, yes — Meta ads have been active since June 18 for
+  the AeroShield webinar funnel, run by the webinar vendor (not general practice
+  marketing). This is transcript-sourced, not independently re-verified live this
+  session, and per the transcript-first rule this is trusted as-is.
+- Named local competitor 1: not observed this session (tooling limitation)
+- Named local competitor 2: not observed this session (tooling limitation)
+Recommend a manual Ad Library check on Aviation Legal Group, Tripp Scott, and Lapayowker
+Jet Counsel before the call if Meta competitive activity is going to be cited
+specifically in the report.
+
+================================================================
+STEP 9 — TRANSCRIPT EXTRACTION
+================================================================
+- Practice areas confirmed: Litigation (aircraft liens, demand letters), Transactional
+  (aircraft purchase/sale/lease/fractional ownership), Regulatory (FAA compliance/
+  certification). Weekly AeroShield webinars target MROs, repair stations, and Part 135
+  operators as a lead-gen/membership channel.
+- Current lead sources: "relationships, referrals, conferences, PR, and AeroShield
+  webinars"; SEO not currently core to GTM
+- Ads ever run: yes. Meta ads active since June 18 (webinar vendor, AeroShield funnel);
+  Google Ads may currently be off due to a payment issue. Prior paid SEO retainer:
+  $8,600/month to Hennessey Digital (strategy, 6 articles/month, maintenance, reporting,
+  landing pages/CRO, meetings) — relationship ended at the new year over lack of ROI;
+  only ~5 blog posts were actually indexed against a 6/month promise, and 96 core pages
+  total. Prior PPC (separate vendor): one month at ~$17,000 spend generated ~140
+  leads/month, ~75% junk quality, ~25–30 qualified, 12–15 retained on average.
+- Team size: not stated as a specific headcount. Known roles: John (principal attorney,
+  board-certified in aviation law, $700/hr, 25% discount for AeroShield members), Sean
+  Anglim (Finance/Revenue Manager — the call contact and DM), 13 attorneys/team members
+  listed on the website team page, remote team practicing nationally out of one Fort
+  Lauderdale office.
+- Annual revenue: ~$3M last year (stated)
+- Revenue goal: $5–7M this year; long-term goal of $10M (stated)
+- Average case value: $18,000–$20,000 average; note many prior PPC-sourced leads
+  converted into lower-value demand letter matters ($2,000–$5,000), which is part of why
+  PPC ROI perception was poor
+- Current close rate: not explicitly stated as an overall percentage. Historical PPC-
+  specific conversion data given: ~140 leads/mo → ~25–30 qualified → 12–15 retained,
+  i.e. roughly 9–11% lead-to-retained and ~45–50% qualified-to-retained on that channel
+  specifically. Per process default, use 15% as the general close-rate assumption for
+  non-PPC-specific modeling, noting the PPC-specific historical rate was lower.
+- Number of locations: 1 (Fort Lauderdale, FL) — remote team; client concentration in FL,
+  TX, NY, CA, and Atlanta, GA nationally. Satellite office strategy (additional GBP
+  locations) is under consideration per the transcript.
+- Spanish campaign needed: not discussed on the call — no
+- Dominant buying motive: not directly stated — John (the principal and ultimate
+  decision maker) did not attend this call, so no personal/lifestyle statement exists in
+  the transcript to quote directly. Closest inference from context: Scale and Dominate.
+  The firm is explicitly targeting $3M → $5–7M → $10M revenue growth, is building a
+  national multi-state footprint (7 state pages, 4 city pages already live, more planned
+  for TX/NY/CA/GA/Atlanta), is evaluating a satellite-office strategy for additional GBP
+  locations, and already brands itself "the largest aviation law firm in the United
+  States." This reads as an owner building a category-dominant national platform rather
+  than optimizing for personal time/lifestyle or a near-term sale. Recommend confirming
+  directly with John on the 7/24 call since he was not present for this discovery call.
+- Any profitability claims made by prospect: none stated
+- Any claims about case types or practice areas: "Aircraft/aviation liens and demand
+  letters are common litigation gateway; transactional/regulatory also core." "No
+  aviation PI; passenger complaints not targeted." Inbound from AI-driven search
+  increasingly includes misfit inquiries (e.g., drone/FAA license issues) that the firm
+  does not want to pursue.
+
+================================================================
+STEP 10 — COMPETITIVE URGENCY SCORE
+================================================================
+Score: 6 / 10
+
+This lands in the "competitors have meaningful advantages in one or more areas" band
+rather than the top tier, because no single local competitor was found to be dominating
+digital channels (no confirmed active Google Ads, Meta ads, or LSA presence for any named
+competitor this session) — but several carry real structural and reputational advantages
+that compound over time if the firm's own marketing stays paused:
+
+1. Tripp Scott — a 39-lawyer full-service firm with a dedicated aviation practice and a
+   4.9/243-review Martindale profile. Its scale and cross-practice referral network give
+   it durable visibility Aero Law Center can't match with content/reviews alone.
+2. Aviation Legal Group, P.A. — AV Rated Preeminent since 1997, appearing alongside Aero
+   Law Center in nearly every practice-area search run this session (liens, transactions,
+   FAA compliance). Nearly 30 years of tenure and consistent multi-keyword visibility is
+   a durable trust signal a newer or currently-paused content program can't quickly
+   close.
+3. Lapayowker Jet Counsel, P.A. — Chambers High Net Worth ranked and AV Preeminent rated,
+   competing directly in the transactional/aircraft purchase space where average case
+   values ($18–20k) are highest.
+
+Meanwhile, Aero Law Center just ended its only active SEO program, has a stalled Google
+Ads account (payment issue), thin/aging blog content (last indexed post over a year old
+against a paid promise of 6/month), and two explicitly named priority cities (Orlando,
+Atlanta) with no landing page yet.
+
+Dynamic sentence: "A score of 6 means competitors have meaningful advantages in one or
+more areas and are pulling ahead. You are not invisible yet — but the window to close the
+gap is narrowing. Every month without action is a month they extend their lead."
+
+================================================================
+PASS 2 — VERIFICATION CHECKLIST
+================================================================
+[x] Every number in the notes matches actually observed data (live-fetched or transcript-
+    sourced); every estimate/gap is explicitly flagged rather than presented as verified
+[x] Every competitor review count claim is either live-verified (Trustindex for the
+    prospect) or explicitly marked as not-found/not-verified — no competitor is cited as
+    having more reviews than the prospect; in fact no competitor review count could be
+    confirmed at all this session, which is itself the honest finding
+[x] Ads sections (Google Ads, LSA, Meta) cover all three named practice areas /
+    applicable checks, each explicitly flagged where live rendering wasn't possible
+[x] No section states the firm "is not running ads" as certainty — all phrased as "not
+    observed" / "does not appear to be running" / opportunity-gap framing
+[x] No profitability or business claim appears that didn't come from the transcript
+[x] No competitor reference uses generic labels — only specific named local firms
+    (Aviation Legal Group, Tripp Scott, Lapayowker Jet Counsel, Bruce David Green,
+    Aviation Legal Counsel, Aviation Law Florida/Sobota PL, Richard L. Richards Law
+    Office)
+[x] PageSpeed scores: NOT available — explicitly flagged as unverified rather than
+    estimated; manual check recommended before the report is finalized
+[x] DBM recorded — inferred (Scale and Dominate) with explicit caveat that John was not
+    on this call and should be asked to confirm directly
+[x] Revenue goal recorded: $5–7M this year, $10M long-term (stated)
+[x] Close rate recorded: not stated overall; 15% default flagged, plus actual historical
+    PPC-specific conversion data included
+[x] Average case value recorded: $18–20k stated, with PPC-lead value caveat noted
+
+OUTSTANDING MANUAL CHECKS BEFORE THE JULY 24 CALL:
+1. Run pagespeed.web.dev manually for mobile + desktop scores (API quota blocked this
+   session)
+2. Confirm GBP photos/posts status and primary category directly in Google Maps
+3. Confirm Yelp review count/rating directly (automated fetch was blocked, 403)
+4. Manual SERP check for Google Ads/LSA presence (firm + Aviation Legal Group + Tripp
+   Scott + Lapayowker Jet Counsel) on "aviation lawyer Fort Lauderdale" and "aircraft
+   lien lawyer Fort Lauderdale"
+5. Manual Meta Ad Library check for the three named competitors
+6. Confirm DBM directly with John on the 7/24 call
