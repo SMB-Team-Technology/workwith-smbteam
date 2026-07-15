@@ -1,0 +1,301 @@
+MCFALL LEGAL (McFall Law, LLC) — GROWTH AUDIT RESEARCH NOTES
+Prepared for: Alan McFall, Esq. (founder/principal attorney)
+Sales Rep: Jacob Meissner
+Date: July 24, 2026
+Firm website: mcfall-legal.com
+Office: 134 Broadway, Bangor, PA 18013
+Proposal call: Friday, July 24, 2026, 3:00 PM ET
+Contact: Alan McFall — amcfall@mcfall-legal.com — 610-704-8164
+
+NOTE ON INPUTS: No discovery call transcript was provided with this research trigger (the
+"transcript" field was absent/empty). Per the /audit-research protocol, a missing transcript is
+treated as "none" rather than fabricated — all transcript-dependent fields in Step 9 below are
+marked "not stated" and filled using the documented defaults (15% close rate, 2x revenue goal,
+practice-area case-value benchmark). These should be corrected against the real discovery call
+transcript before /audit-write runs, if one becomes available.
+
+======================================================================
+STEP 1 — WEBSITE RESEARCH (mcfall-legal.com)
+======================================================================
+- Website URL confirmed live: yes
+- Last redesign date or estimated age: no on-site build date confirmed this session. Firm history:
+  Alan McFall practiced for years as part of "McFall, Layman & Jordan, P.C." in Bangor, PA; in 2021,
+  following a partner's retirement, he launched the solo practice "McFall Law, LLC" under the
+  mcfall-legal.com domain — so the current site/brand is roughly 5 years old. Son Jason McFall
+  joined the firm in 2023 (per firm bio/directory content).
+- Mobile responsive: not independently confirmed this session (static-fetch tooling could not
+  render/measure the live layout) — flag for manual check before the proposal call.
+- Homepage headline/messaging: "Estate Planning and Probate | McFall Law, LLC" — homepage framing
+  is "a client-centered law firm offering assistance with creating wills, estate planning documents,
+  probating estates, buying/selling property, creating business entities, and solving business
+  problems."
+- CTA above fold: not independently confirmed — site tooling returned only truncated summaries of
+  page content this session. Flag for manual check.
+- Contact form location: firm has a dedicated "Contact Us" page (mcfall-legal.com/contact-us/)
+  described as a "Legal Consultation Form" — present, but position on-page (above/below fold) not
+  independently confirmed this session.
+- Live chat present: not observed
+- Attorney bio present: yes — dedicated "Our Legal Team" page (mcfall-legal.com/our-legal-team/)
+  covering Alan B. McFall (founder) and Jason McFall (joined 2023)
+- Video present: not observed
+- Blog present: yes — "Insights & News" section (mcfall-legal.com/our-insights-news/); most recent
+  identifiable post topic is on electronic signature wills ("Electronic Signature Wills" per page
+  title metadata) — exact publish date not independently confirmed this session.
+
+PageSpeed:
+- PageSpeed mobile score: NOT OBTAINED LIVE — the public PageSpeed Insights API
+  (googleapis.com/pagespeedonline/v5) returned HTTP 429 "Too Many Requests" on four separate
+  attempts this session, and the pagespeed.web.dev report page did not finish rendering scores
+  within this session's static-fetch tooling (no JS execution available, no local Lighthouse
+  binary available in this environment). No substitute measurement was taken — no number is
+  recorded here rather than guessing one.
+- PageSpeed desktop score: NOT OBTAINED LIVE — same limitation as above.
+- ACTION REQUIRED BEFORE FINALIZING REPORT: run a manual pagespeed.web.dev check against
+  https://mcfall-legal.com/ (mobile and desktop) and drop the real scores into this file before
+  /audit-write runs. Do not carry forward an estimated number.
+
+→ Website section above is the most complete version obtainable this session; flagged items need a manual pass.
+
+======================================================================
+STEP 2 — GOOGLE BUSINESS PROFILE
+======================================================================
+- GBP found: not independently rendered this session — live Google Maps/Search knowledge-panel
+  rendering requires JS execution not available to this session's tools (WebFetch returned only
+  static/loading shells for google.com/maps and pagespeed.web.dev alike).
+- Star rating: best-available live proxy is Birdeye's aggregator profile for "McFall Law LLC,"
+  which shows 4.8 stars — Birdeye aggregates primarily from Google, so this is a strong proxy but
+  not a direct Google Business Profile screenshot.
+- Total review count: 21 reviews (via Birdeye aggregator, same caveat as above)
+- Most recent review date: not obtained live this session
+- Primary category: Estate Planning Attorney (consistent with Avvo's practice-area listing —
+  "Real estate, Education, Wills and living wills" — and the firm's own site framing)
+- Photos active: not independently confirmed this session
+- Posts active: not independently confirmed this session
+- ACTION REQUIRED: confirm exact GBP star rating/review count/most-recent-review-date via a
+  direct Google Maps search before finalizing the report — the 4.8★/21-review figure above is a
+  reliable proxy, not a screenshot-verified live number.
+
+======================================================================
+STEP 3 — LOCAL 3-PACK SEARCHES
+======================================================================
+Note: live Google Maps 3-pack rendering was not accessible via available research tools this
+session (same JS-rendering limitation as Step 2). Results below reflect organic/directory search
+visibility as the best available proxy for competitive density.
+
+Practice Area 1: Estate Planning & Probate (Bangor/Wind Gap/Northampton County, PA)
+- Search 1 "estate planning attorney Bangor PA": firm appears — not independently confirmed in
+  map-pack form — competitors surfaced in organic/directory results: Daly Law Offices, 13 reviews,
+  4.7★; Ceraul Law Offices, 15 reviews, 4.9★; Cramer, Swetz, McManus, Jordan & Saylor P.C.
+  (Stroudsburg), 99 reviews, 4.8★
+- Search 2 "probate lawyer Bangor PA": firm appears — not independently confirmed — competitors
+  surfaced: Ceraul Law Offices, 15 reviews, 4.9★; Cramer, Swetz, McManus, Jordan & Saylor P.C.,
+  99 reviews, 4.8★
+- Search 3 "wills and trusts attorney Easton PA": firm appears — not independently confirmed —
+  competitors surfaced: Daly Law Offices, 13 reviews, 4.7★ (has a dedicated Easton/Bangor
+  geo-landing-page structure — see Step 5); Molder Law, 10 reviews, 4.9★
+
+Practice Area 2: Real Estate/Property Transactions (Bangor/Northampton County, PA)
+- Search 1 "real estate attorney Bangor PA": firm appears — not independently confirmed —
+  competitors surfaced: Ceraul Law Offices, 15 reviews, 4.9★
+- Search 2 "real estate closing lawyer Northampton County PA": firm appears — not independently
+  confirmed — competitors surfaced: Cramer, Swetz, McManus, Jordan & Saylor P.C., 99 reviews, 4.8★
+- Search 3 "property lawyer Wind Gap PA": firm appears — not independently confirmed —
+  competitors surfaced: Ceraul Law Offices, 15 reviews, 4.9★
+
+ACTION REQUIRED: confirm true map-pack positions with a live, geo-located Google Maps search
+before finalizing the report. Organic/directory visibility above is directional only.
+
+======================================================================
+STEP 4 — COMPETITOR REVIEW COUNTS
+======================================================================
+Verified live via Birdeye/Chamber-of-Commerce aggregator listings (best available Google-review
+proxy this session):
+
+- Competitor 1: Daly Law Offices (Easton/Bangor, PA — Joshua N. Daly, Esq.) — reviews: 13 —
+  rating: 4.7
+- Competitor 2: Ceraul Law Offices (Bangor, PA — David J. Ceraul, since 1981) — reviews: 15 —
+  rating: 4.9
+- Competitor 3: Cramer, Swetz, McManus, Jordan & Saylor, P.C. (Stroudsburg, PA — 30+ years,
+  multiple Super Lawyers-recognized attorneys) — reviews: 99 — rating: 4.8
+
+IMPORTANT: McFall Law, LLC's own review count (21, per Step 2) is actually HIGHER than Daly Law
+Offices (13) and Ceraul Law Offices (15) — do NOT frame those two as "dominating" on review volume;
+McFall currently leads them there. The one competitor with a genuine review-volume advantage is
+Cramer, Swetz, McManus, Jordan & Saylor P.C. (99 vs. 21) — a larger, longer-established regional
+firm. Frame the local two-attorney competitors' threat around web/SEO infrastructure (Step 5)
+rather than review count.
+
+======================================================================
+STEP 5 — DIRECTORY LISTINGS
+======================================================================
+- Avvo: active profile for Alan B. McFall — address 134 Broadway, Bangor, PA 18013, listed under
+  "McFall Layman & Jordan, P.C." (the pre-2021 firm name), practice areas Real Estate, Education,
+  Wills and living wills
+- FindLaw: profile still listed under "McFall, Layman & Jordan, A Professional Corporation" —
+  same legacy-name issue as Avvo
+- Yellow Pages: listing still under "McFall Layman & Jordan PC" at the same Bangor address
+- Justia: not independently confirmed this session — flag for manual check
+- Yelp: a listing exists ("MCFALL LAW," updated February 2025) but under the legacy name
+  "mcfall-layman-and-jordan"; exact star rating/review count not independently extracted this
+  session
+- Birdeye: active profile under the correct current name "McFall Law LLC" — 21 reviews, 4.8★
+  (see Steps 2 and 4)
+- NAP INCONSISTENCY FOUND: Avvo, FindLaw, and Yellow Pages all still list the firm under its
+  pre-2021 legacy name "McFall, Layman & Jordan, P.C./PC" rather than the current "McFall Law,
+  LLC" brand — a real, citable directory-cleanup gap five years after the rebrand.
+- Geo-targeting landing pages for surrounding cities: McFall Law, LLC has none identified this
+  session. By contrast, Daly Law Offices has a built-out set of geo + practice-area landing pages
+  (e.g., dalyfirm.com/bangor-pa/, /bangor-pa-estate-planning-lawyer/, /bangor-pa-elder-law-attorney/,
+  /bangor-pa-wills-trusts-attorney/, /bangor-pa-probate-attorney/, /easton-pa/) — a genuine, specific
+  SEO-infrastructure advantage for that one named competitor. Ceraul Law Offices, by contrast, was
+  checked specifically for the same pattern (Wind Gap, Pen Argyl, Nazareth) and no dedicated
+  geo-landing pages were found there — so this gap is specific to Daly, not the whole local market.
+
+======================================================================
+STEP 6 — GOOGLE ADS
+======================================================================
+Practice Area 1: Estate Planning & Probate (Bangor/Northampton County, PA)
+- Firm ads observed: not observed via available research tools this session — live paid-SERP
+  rendering requires a real browser session and was not accessible here.
+- Named local competitors running ads: not observed via available research tools this session —
+  no distinctly labeled paid ad units could be captured for Daly Law Offices, Ceraul Law Offices,
+  or Cramer, Swetz, McManus, Jordan & Saylor P.C. McFall Law does not appear to be running ads for
+  this search, though the same is true of the named competitors within this session's tooling —
+  recommend a live, geo-located manual check before the proposal call.
+
+Practice Area 2: Real Estate/Property Transactions (Bangor/Northampton County, PA)
+- Firm ads observed: not observed via available research tools this session (same limitation)
+- Named local competitors running ads: not observed via available research tools this session —
+  recommend a live manual check for Ceraul Law Offices and Cramer, Swetz, McManus, Jordan & Saylor.
+
+======================================================================
+STEP 7 — LOCAL SERVICE ADS
+======================================================================
+- Firm appears in LSA: not observed via available research tools this session — LSA units render
+  dynamically and were not captured by this session's static-fetch tooling.
+- Google Screened: not observed/not confirmed this session
+- LSA review count: not available this session
+- Named local competitors in LSA: not observed/not confirmed this session — recommend a live
+  manual check, particularly for Cramer, Swetz, McManus, Jordan & Saylor P.C. given its larger
+  review volume (LSA eligibility/ranking typically favors higher review counts).
+
+======================================================================
+STEP 8 — META ADS
+======================================================================
+- Firm has active ads: not observed — Meta Ads Library was not directly renderable via this
+  session's tooling; no ad activity could be confirmed either way for McFall Law, LLC.
+- Named local competitor 1: Daly Law Offices — maintains an active Facebook page
+  (facebook.com/DalyLawOffices); ad activity could not be confirmed live this session.
+- Named local competitor 2: Ceraul Law Offices — web presence confirmed (ceraul.com); ad activity
+  could not be confirmed live this session (no distinct Meta Ads Library access available).
+
+======================================================================
+STEP 9 — TRANSCRIPT EXTRACTION
+======================================================================
+No discovery call transcript was supplied with this research trigger. All fields below are
+marked "not stated" and filled per the documented defaults — replace with real transcript data
+before /audit-write runs if a transcript becomes available.
+
+- Practice areas confirmed: not stated in a transcript — inferred from the firm's own site/
+  directory content: Estate Planning & Probate (primary/named focus), Real Estate/Property
+  Transactions, Business Entities/Business Law
+- Current lead sources: not stated
+- Ads ever run: not stated
+- Team size: not stated in a transcript — site/directory content shows 2 attorneys (Alan B.
+  McFall, founder; Jason McFall, joined 2023) plus unknown support staff
+- Annual revenue: not stated
+- Revenue goal: not stated — use 2x current revenue per default (current revenue itself is also
+  not stated, so this cannot be reduced to a dollar figure without the transcript)
+- Average case value: not stated — use estate-planning practice-area default (~$2,500–$3,500 per
+  engagement is a typical solo/small-firm estate planning benchmark) rather than a firm-confirmed
+  number
+- Current close rate: not stated — default to 15%
+- Number of locations: 1 (134 Broadway, Bangor, PA 18013) — confirmed via site/directory research,
+  not the transcript
+- Spanish campaign needed: not stated
+- Dominant buying motive: not stated directly — inferred from context: Alan McFall took over as
+  a solo practitioner in 2021 after a partner's retirement, and his son Jason joined the practice
+  in 2023. This pattern (family succession, second attorney recently added) points toward DBM
+  category (1) — building a firm that runs itself / creates more time and stability for the
+  next generation — or possibly category (2), building enterprise value toward an eventual
+  transition to Jason. This is an inference from public information only, not a transcript quote,
+  and should be confirmed on the discovery call.
+- Any profitability claims made by prospect: none stated (no transcript)
+- Any claims about case types or practice areas: none stated (no transcript) — see practice areas
+  above, sourced from the website instead
+
+======================================================================
+STEP 10 — COMPETITIVE URGENCY SCORE
+======================================================================
+Score: 5/10
+
+Named threats:
+1. Daly Law Offices (Easton/Bangor, PA) — smaller review count than McFall (13 vs. 21), but has
+   built a genuine geo + practice-area landing-page infrastructure (dedicated Bangor and Easton
+   pages for estate planning, elder law, wills & trusts, and probate specifically) that McFall Law
+   does not currently match — a real SEO-reach advantage even without a review-count edge.
+2. Cramer, Swetz, McManus, Jordan & Saylor, P.C. (Stroudsburg, PA) — 99 reviews at 4.8★ and 30+
+   years in the broader Poconos/Monroe County market with multiple Super Lawyers-recognized
+   attorneys; the one true reviews-and-scale threat in the region, even though it sits slightly
+   outside McFall's immediate Bangor market.
+3. Directory/NAP drift — Avvo, FindLaw, and Yellow Pages still list the firm under its pre-2021
+   legacy name ("McFall, Layman & Jordan"), which dilutes the current "McFall Law, LLC" brand's
+   authority across exactly the directories prospective clients cross-check before calling.
+
+Dynamic sentence: "A score of 5 means competitors have meaningful advantages in one or more areas
+and are pulling ahead. You are not invisible yet — but the window to close the gap is narrowing.
+Every month without action is a month they extend their lead."
+
+Rationale for the score: McFall Law, LLC is not losing on reviews against its closest same-town
+competitors (21 vs. 13 and 15) and has a functioning, content-rich website with a blog and a
+dedicated consultation form — this is a firm with real assets, not one starting from zero. The
+gap is in infrastructure and brand consistency: no confirmed geo-landing pages while a direct
+local competitor (Daly) has built exactly that; a five-year-old rebrand that three major
+directories still haven't caught up to; and no independently confirmed paid-ads presence in a
+market where a much larger regional firm (Cramer, Swetz, McManus, Jordan & Saylor) has both
+scale and reviews. This lands in the middle of the scale rather than at the high-urgency end.
+
+======================================================================
+PASS 2 — VERIFICATION CHECKLIST
+======================================================================
+[x] Every number in the notes matches actually observed data (Birdeye-sourced review counts/
+    ratings for McFall Law, Daly Law Offices, Ceraul Law Offices, and Cramer Swetz McManus Jordan
+    & Saylor are all live-verified via that aggregator; anything not independently confirmed is
+    explicitly marked "not observed"/"not obtained" rather than estimated)
+[x] Every competitor review count has been verified live — and McFall's own 21-review count is
+    explicitly confirmed to exceed Daly (13) and Ceraul (15), so neither is framed as dominating
+    on reviews; only Cramer Swetz McManus Jordan & Saylor (99) is cited as a true reviews advantage
+[ ] PageSpeed scores are NOT recorded as real numbers this session — API access was rate-limited
+    (HTTP 429) on four attempts and no substitute measurement tool was available. Flagged as an
+    open action item rather than estimated. THIS MUST BE FILLED IN MANUALLY BEFORE /audit-write.
+[x] Every ad section (Steps 6-8) covers both practice areas the firm markets under (estate
+    planning/probate and real estate); no ad section states firm "is not running ads" — only
+    "does not appear to be running ads for this search" / "not observed"
+[x] No profitability or business claim appears anywhere in this file — none were available (no
+    transcript), and none were invented
+[x] No competitor reference uses generic labels — only specific named local/regional firms (Daly
+    Law Offices, Ceraul Law Offices, Cramer Swetz McManus Jordan & Saylor P.C., Molder Law)
+[x] DBM is recorded as an inference from public information, explicitly flagged as unconfirmed
+    pending a real discovery call transcript
+[x] Revenue goal is recorded (flagged: not stated, default 2x current revenue, but current
+    revenue is also not stated without a transcript)
+[x] Close rate is recorded (not stated — defaulted to 15% per instructions)
+[x] Average case value is recorded (not stated — practice-area default of ~$2,500–$3,500 flagged,
+    not presented as firm-confirmed)
+
+OUTSTANDING ITEMS FOR MANUAL FOLLOW-UP BEFORE FINALIZING REPORT:
+1. No discovery call transcript was available this session — obtain the real transcript (or
+   confirm none exists yet) and re-run Step 9 before /audit-write, since revenue, revenue goal,
+   team size, close rate, case value, lead sources, ad history, and DBM are all currently
+   defaults/inferences rather than firm-confirmed figures.
+2. PageSpeed mobile and desktop scores — API was rate-limited all session; run a manual
+   pagespeed.web.dev check against https://mcfall-legal.com/ before finalizing.
+3. Live Google Business Profile star rating, exact review count, most recent review date, and
+   photos/posts status — direct Google Maps rendering was not accessible this session; the
+   4.8★/21-review Birdeye figure is a strong but unconfirmed-on-Google-itself proxy.
+4. Live Google Maps 3-pack positions, Google Ads SERP screenshots, Local Service Ads units, and
+   Meta Ads Library results — none of these render via this session's static-fetch tooling;
+   recommend a manual pass from a Bangor, PA-area location before the proposal call.
+5. Confirm whether the firm is aware of/has begun correcting the legacy "McFall, Layman & Jordan"
+   name still showing on Avvo, FindLaw, and Yellow Pages — useful both as an audit talking point
+   and a quick-win recommendation.
