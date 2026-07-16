@@ -1,0 +1,158 @@
+REBEL BROWN LAW GROUP — SECTION 11 WORKINGS
+=============================================
+
+REVENUE / PACKAGE DECISION VERIFICATION (per pipeline instruction)
+--------------------------------------------------------------
+package_decision.json shipped with confidence: LOW, revenue_effective $570,000,
+sourced from HubSpot field "hubspot_annual_law_firm_revenue" ($180K-$960K range,
+not a stated figure).
+
+Cross-checked against research notes (transcript-first principle): the notes
+give a concrete STATED figure — "SSD practice projected at $400k this year" —
+plus the explicit fact that overall firm revenue (incl. Family Law) is "not
+separately stated" because Family Law is being wound down and handed off to
+another firm. SSD is the sole practice this engagement is built around.
+
+Conclusion: the $400,000 stated SSD figure is more reliable than the $570,000
+HubSpot-derived estimate and is used as the effective revenue anchor going
+forward.
+
+$400,000 sits exactly on the Essentials ($250K-$400K) / Starter ($400K-$1M)
+boundary. Per the Boundary Rule ("if the firm's goals are aggressive... move
+to the higher tier"): the firm's stated goal is scaling SSD from $400K to
+1,000 clients on a lean 2.5-person team — an aggressive, roughly 2x+ growth
+target. This pushes selection to Starter. Essentials' $7,500 ad spend cap
+would also be too restrictive for the growth plan described on the call.
+
+RESULT: Starter marketing tier is CONFIRMED — same tier package_decision.json
+selected, but on corrected grounds ($400K stated + aggressive goal boundary
+rule, not the $570K HubSpot estimate). Confidence upgraded from LOW to MEDIUM
+for this write-up.
+
+Team size: not explicitly stated beyond "staff" generally and one named staffer
+("Meg"); target lean team is 2.5. Elite Coach Plus applies at the $400K-$1M
+band regardless of exact team size ("Any" team row), so the tier holds
+independent of this ambiguity.
+
+LAW package: revenue ($400K, effective) is under the $500K minimum — correctly
+excluded, consistent with package_decision.json (law_tier: null).
+
+FCOO/FCFO add-on: not warranted — prospect stated no independent profitability
+complaints beyond the audit's own missed-lead calculation (not a pre-existing
+claim), so the "profit problems" trigger for a Fractional CFO/COO add-on does
+not apply. Matches package_decision.json (no FCOO/FCFO in total_bundled).
+
+AI Avatar: not recommended — no signals of interest in video/social investment
+on the call.
+
+MANDATORY PRICE LOOKUP
+-----------------------
+Marketing package selected: Full Service Marketing — Starter
+  - Bundled price (from table): $4,847/mo
+  - Stand-alone price (from table): $5,697/mo
+  - Savings (stand-alone minus bundled): $850/mo
+
+Non-marketing package selected: Elite Coach Plus
+  - Bundled price (from table): $3,200/mo
+  - Stand-alone price (from table): $3,497/mo
+  - Savings (stand-alone minus bundled): $297/mo
+
+Legal AI Workforce (LAW) package selected: none (revenue under $500K)
+
+AI Avatar / Video Growth add-on selected: none (no fit signals on the call)
+
+Total monthly investment (sum of all bundled/recurring prices): $8,047/mo
+Total savings (sum of all savings): $1,147/mo
+
+SPEND CAP CHECK (35% of monthly revenue)
+------------------------------------------
+Current monthly SSD revenue: $400,000/12 = $33,333/mo. 35% cap = $11,667/mo.
+- Conservative scenario: $8,047 (packages) + $3,500 (ad spend) = $11,547/mo —
+  fits within the current-revenue cap.
+- Aggressive scenario: $8,047 + $14,000 = $22,047/mo — exceeds the
+  current-revenue cap, but the aggressive ad spend figure is deliberately
+  sized against the derived revenue GOAL ($800,000/yr = $66,667/mo, 35% cap
+  $23,333/mo), which the aggressive scenario fits comfortably under. This is
+  expected: the aggressive scenario is sized to fund the growth that produces
+  the goal revenue, not the current revenue.
+
+AD SPEND CALCULATION
+----------------------
+Revenue goal: not explicitly stated as a dollar figure on the call — the
+stated goal is 1,000 SSD clients on a lean team. Per instructions, defaulted
+to 2x current stated SSD revenue = $800,000/yr (flagged in research notes as
+derived, not stated).
+
+Conservative ad spend: $3,500/mo (matches package_decision.json; equivalent to
+a single-channel Google PPC minimum under the Family Law practice-area row —
+the closest directly-comparable row in the approved channel-minimum table,
+since Social Security Disability is not itself a listed practice area).
+
+Aggressive ad spend: $14,000/mo (matches package_decision.json; consistent
+with an independent 20% rule recalculation: $800,000 x 20% / 12 = $13,333/mo,
+Tier 4 South Jersey geo multiplier 1.0x, no Spanish campaign, within the
+Starter tier's $25,000 ad spend cap).
+
+NOTE ON CPL BENCHMARK USED FOR ROI MATH: Social Security Disability is not a
+listed practice area in the approved CPL benchmark table. SSD paid-search
+economics (nationally competitive, contingency, benefit-driven) are
+economically closer to Accident & Injury (General) than to Family Law, so the
+Accident & Injury (General) CPL row was used as the closest available proxy
+for the ROI projections below. This is disclosed as an assumption; the paid
+ads team should validate SSD-specific CPL data before finalizing client-facing
+numbers. Case value ($4,000) and close rate (80%) are STATED transcript
+figures, not defaults, and were used directly.
+
+CONSERVATIVE SCENARIO ($3,500/mo ad spend)
+Blended CPL (Accident & Injury proxy, weighted ~50% Google/25% LSA/25% Meta,
+midpoints, +20% conservative cushion): ~$533
+Leads = $3,500 / $533 ≈ 6 leads/mo
+Cases = 6 x 80% close rate ≈ 5 cases/mo
+Revenue = 5 x $4,000 average case value = $20,000/mo
+Return = $20,000 / $3,500 ≈ 5.7x
+
+AGGRESSIVE SCENARIO ($14,000/mo ad spend)
+Blended CPL (Accident & Injury proxy, same channel weights, no cushion): ~$444
+Leads = $14,000 / $444 ≈ 31 leads/mo
+Cases = 31 x 80% close rate ≈ 25 cases/mo
+Revenue = 25 x $4,000 average case value = $100,000/mo
+Return = $100,000 / $14,000 ≈ 7.1x
+
+DBM STATEMENT (Block 1)
+------------------------
+We help growing South Jersey Social Security Disability practices get a
+steady, well-converted flow of new clients so they can scale to 1,000 clients
+on a lean team without the owner personally carrying every case.
+
+QUICK WIN OPPORTUNITIES (7 identified, min 6 required)
+--------------------------------------------------------
+1. [Lead Gen / Quick Win] No city/county landing pages for the 8 counties the
+   SSD site claims to serve. Competitor: Stopper Lopez builds individual
+   city-specific pages (Mount Laurel, Cherry Hill, North Hanover).
+2. [Intake / Quick Win] Only ~20 of ~80 monthly leads are actually responded
+   to, at an 80% close rate once contacted — no competitor (internal gap).
+3. [Lead Gen / Quick Win] NAP inconsistency across directories — split phone
+   numbers and an undocumented third office (Wall, NJ) — no competitor.
+4. [Team / Long-Term Play] No delegation or accountability structure to
+   support the 2.5-person lean team goal — no competitor.
+5. [Lead Gen / Long-Term Play] Two disconnected web properties (legacy Family
+   Law site, modern SSD growth site) split search authority and GBP is still
+   categorized as Family Law — no competitor.
+6. [Profit / Quick Win] No practice-level profitability tracking separating
+   Family Law from SSD during the transition — no competitor.
+7. [Intake / Long-Term Play] No after-hours or overflow coverage described for
+   handling lead volume — no competitor.
+
+FIRST 90 DAYS
+--------------
+1. Launch SSD-focused Google Ads and LSA campaigns targeting South Jersey
+   county terms and competitor brand names.
+2. Rebuild the local SEO foundation: correct GBP category to SSD, fix NAP
+   inconsistencies, and add city/county landing pages for all 8 served
+   counties.
+3. Consolidate web presence around the SSD site (njdisabilitylaw.com) as the
+   primary growth asset, with fresh content and a stronger blog cadence.
+4. Stand up an intake follow-up process so every lead gets answered and
+   worked within a defined response window.
+5. Kick off Elite Coach Plus coaching to build the delegation structure and
+   team accountability the 1,000-client goal requires.
