@@ -1,0 +1,142 @@
+SECTION 11 WORKINGS — Grimmett Law Firm — July 29, 2026
+================================================================
+
+REVENUE CORRECTION (read this first)
+------------------------------------
+package_decision.json was generated upstream with confidence "low" using a HubSpot-
+estimated annual revenue of $570,000 (label: "$180K - $960K", source:
+hubspot_annual_law_firm_revenue). The research notes' Step 9 (Transcript Extraction)
+states the actual, ground-truth annual revenue directly from the discovery call:
+"~$900,000 (current, stated as 'on track')." Per the transcript-first principle, the
+$900,000 figure supersedes the $570,000 HubSpot estimate and is the number used
+throughout the client-facing report (or the "on track" phrasing where a specific
+number is not natural in context).
+
+Both $570,000 and $900,000 fall within the same $400K-$1M marketing/coaching
+eligibility band in the pricing tables. Re-running eligibility logic against $900,000
+produces the identical tier selections already made in package_decision.json:
+  - Marketing: Revenue $400K-$1M -> Starter tier. Unchanged.
+  - Coaching: Revenue $400K-$1M -> Elite Coach Plus. Unchanged.
+No package selection required correction. Only the revenue figure referenced in
+client-facing narrative content was corrected (from $570K to $900K / "on track").
+
+MANDATORY PRICE LOOKUP (confirmed against package_decision.json, confidence: low,
+cross-checked against pricing tables in audit-write.md — figures match exactly)
+------------------------------------------------------------------------------
+Marketing package selected: Full Service Marketing — Starter
+  - Bundled price: $4,847/mo
+  - Stand-alone (retail) price: $5,697/mo
+  - Savings: $850/mo
+
+Non-marketing (coaching) package selected: Elite Coach Plus
+  - Bundled price: $3,200/mo
+  - Stand-alone (retail) price: $3,497/mo
+  - Savings: $297/mo
+
+Legal AI Workforce (LAW) package: none. Revenue ($900K) clears the $500K minimum,
+but transcript shows no signal of AI-readiness or bandwidth for adoption from a
+5-person team already stretched across a 156-case load — not recommended this round.
+
+AI Avatar / Video Growth add-on: none. Not indicated by transcript; no interest in
+video/social content expressed on the call.
+
+TOTAL MONTHLY INVESTMENT: $4,847 + $3,200 = $8,047/mo
+TOTAL SAVINGS: $850 + $297 = $1,147/mo
+
+AD SPEND (from package_decision.json, matches Practice Area = Personal Injury /
+Accident & Injury channel minimums and 20% rule scaling against the $10M revenue goal)
+------------------------------------------------------------------------------
+Conservative: $7,500/mo
+Aggressive: $25,000/mo
+
+ROI PROJECTIONS
+----------------
+Blended CPL basis: Accident & Injury client-facing CPL table (Google Search
+$630-$780, LSA $210-$260, Meta Retargeting $80-$100, Meta Cold $150-$190),
+weighted ~40% Google / 30% LSA / 15% Meta retargeting / 15% Meta cold, using
+midpoints. Blended CPL (no cushion) = ~$392. Conservative scenario applies a 20%
+cushion per process (~$470 effective CPL).
+
+Close rate: 15% (not stated on call, default per process — disclosed as an estimate)
+Average case value: $2,500-$5,000 (stated on call) — projections show the full range
+
+CONSERVATIVE ($7,500/mo ad spend):
+  Leads: ~16/mo ($7,500 / ~$470 blended CPL w/ cushion)
+  Cases: ~2-3/mo (16 x 15% close rate)
+  Revenue: ~$6,000-$12,000/mo (2-3 cases x $2,500-$5,000 case value)
+  Return: roughly 0.8x-1.6x on ad spend alone in month one; return improves as
+  cases close over the following months given legal case cycle times, and does not
+  include referral-relationship cost savings if referral volume is displaced
+
+AGGRESSIVE ($25,000/mo ad spend):
+  Leads: ~64/mo ($25,000 / ~$392 blended CPL, no cushion)
+  Cases: ~9-10/mo (64 x 15% close rate)
+  Revenue: ~$24,000-$48,000/mo (9-10 cases x $2,500-$5,000 case value)
+  Return: roughly 1.0x-1.9x on ad spend alone in month one; same disclosure as above
+  regarding case cycle timing and referral displacement
+
+All figures are estimates based on industry CPL benchmarks and the transcript-stated
+case value range. Not guaranteed. Actual results depend on market conditions,
+competition, and firm-specific factors. Legal cases typically take longer than one
+month to close/pay out, so month-one return multiples understate the full-cycle
+return once a steady pipeline is running.
+
+DBM STATEMENT FOR BLOCK 1
+-------------------------
+DBM: Scale and Dominate (inferred — not stated in personal terms on the call; the
+transcript frames the challenge as "the transition from a skilled lawyer to an
+effective business owner," paired with a stated goal of $10M revenue and 10 lawyers
+within 3-5 years).
+
+Formula: "We help growth-minded personal injury and insurance-focused firm owners
+get a predictable flow of high-value cases and a scalable team structure so they can
+build the $10M, 10-lawyer firm they've set out to build."
+
+QUICK WIN OPPORTUNITIES IDENTIFIED (6+ across pillars)
+-------------------------------------------------------
+1. [Lead Gen] Fix GBP category mis-listing ("General Law" -> "Personal Injury
+   Attorney") — why: actively suppressing visibility for the firm's core practice
+   area; competitor: Griffith Law (stronger organic PI visibility); opportunity:
+   immediate visibility lift at no cost.
+2. [Lead Gen] Resolve Yelp category mismatch ("Divorce & Family Law" -> Personal
+   Injury) and NAP inconsistency (Franklin vs. Nashville/FindLaw address) — why:
+   directory confusion compounds the GBP issue; no single named competitor for this
+   specific fix; opportunity: directory consistency pass restores trust signals to
+   search engines and prospects.
+3. [Lead Gen] Launch Google Ads for Personal Injury, Bad Faith, and Child Custody
+   terms — why: zero paid search presence currently; competitor: Griffith Law, The
+   Williams Firm (strong organic footholds the firm could contest via paid search);
+   opportunity: capture high-intent searches immediately rather than waiting on SEO.
+4. [Intake] Close the 20% unanswered call gap — why: ~52-60 of 260-300 weekly calls
+   go unanswered; no named competitor (internal process fix); opportunity: convert
+   already-arriving leads without spending another marketing dollar.
+5. [Intake] Move the website contact form above the fold — why: currently buried at
+   the bottom of the homepage; no named competitor; opportunity: reduce drop-off
+   for prospects who prefer to convert online instead of calling.
+6. [Team] Build a leadership/case-manager layer ahead of the 10-lawyer growth goal —
+   why: current team of 5 (David + associate + EA + paralegal + VA) is sized for
+   today, not for a 10-lawyer firm; no named competitor; opportunity: avoid
+   compounding owner dependency as the firm scales.
+7. [Profit] Build a profit plan around case mix and referral cost — why: $2,500-
+   $5,000 attorney fees running against $3,000-$4,000 referral costs is eroding
+   margin on the majority (80%) low-value caseload; no named competitor; opportunity:
+   protect the stated 15% margin goal as revenue grows.
+8. [Lead Gen] Revive the Bad Faith blog content — why: stale ~18 months despite Bad
+   Faith being a core practice area; competitor: McWherter Scott & Bobbitt
+   (Tennessee-wide active bad faith practice); opportunity: recapture organic search
+   relevance in a practice area where the firm already has demonstrated authority.
+
+FIRST 90 DAYS
+-------------
+1. Launch Google Ads campaigns across Personal Injury, Bad Faith, and Child Custody
+   terms at the conservative ad spend level to start generating leads outside the
+   referral relationship immediately.
+2. Fix GBP category (General Law -> Personal Injury Attorney), Yelp category, and
+   NAP inconsistency (Franklin vs. Nashville/FindLaw) to unlock suppressed local
+   visibility.
+3. Rebuild the website's lead capture path — move the contact form above the fold
+   and confirm mobile performance via a manual PageSpeed check.
+4. Stand up a defined intake process (call coverage, follow-up sequence) to close
+   the 20% unanswered-call gap before new ad-driven leads arrive.
+5. Kick off Elite Coach Plus coaching to begin building the profit plan and
+   leadership structure the 10-lawyer, $10M goal requires.
