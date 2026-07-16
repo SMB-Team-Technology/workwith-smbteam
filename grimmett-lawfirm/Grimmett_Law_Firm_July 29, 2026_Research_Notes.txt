@@ -1,0 +1,325 @@
+GRIMMETT LAW FIRM — GROWTH AUDIT RESEARCH NOTES
+Prepared for proposal call: July 29, 2026
+Sales Rep: Jacob Meissner
+Contact: Erin Grimmett, egrimmett3@gmail.com, (615) 934-0327
+Firm URL: https://www.grimmettlawfirm.com
+HubSpot Contact ID: 132316253337
+
+NAME NOTE: the trigger record lists the firm name as "Grimmett Lawfirm." The firm's
+actual live website and branding use "Grimmett Law Firm" (legal entity: Grimmett Law
+Firm, PLLC). This file and the report should use "Grimmett Law Firm" — flagging the
+discrepancy here so it isn't mistaken for a different business downstream.
+
+TOOLING NOTE (read first): This research session did not have access to a JS-rendering
+browser. Google Maps/GBP panel, the Google search local 3-pack and ad blocks, Local
+Service Ads panel, the Meta Ad Library, and the pagespeed.web.dev live app all require
+rendered/interactive access this session's tools cannot execute. Where a data point could
+not be verified through a live, real-time source, that is flagged explicitly below rather
+than estimated or invented, per this firm being a real, verifiable business (site resolves
+live) rather than a fictional test case. Everything not flagged was pulled from either the
+discovery call transcript (ground truth per process) or a live fetch/search performed
+during this session. Items below should be spot-checked manually before the July 29 call
+if precision matters for that section.
+
+================================================================
+STEP 1 — WEBSITE RESEARCH (live fetch performed)
+================================================================
+- Website URL confirmed live: yes (www.grimmettlawfirm.com)
+- Last redesign date or estimated age: not directly datable from fetch; footer copyright
+  reads "Copyright© 2026," consistent with an actively maintained build. However, the
+  blog has not been updated since January 2025 (see below) — content maintenance appears
+  to have lapsed even if the site shell itself is current.
+- Mobile responsive: yes — duplicate desktop/mobile navigation markup observed, consistent
+  with a responsive framework. Recommend a manual phone check to confirm rendering quality.
+- Homepage headline (exact): "You Deserve The Win" with subtitle "Middle Tennessee
+  Personal Injury Lawyers"
+- CTA above fold: yes — "FREE CONSULTATION (615) 933-8000" button appears twice in the
+  header navigation
+- Contact form location: buried — "Get a Free Case Evaluation" form (name, email, phone,
+  inquiry description) sits at the bottom of the homepage, not above the fold
+- Live chat present: no
+- Attorney bio present: yes, above the fold — David Grimmett, described as "a seasoned
+  trial lawyer with 17 years of experience" who "founded the Grimmett Law Firm with the
+  mission of helping others"
+- Video present: no
+- Blog present: yes — most recent post found: "Tennessee Bad Faith Statute Explained"
+  (January 22, 2025), followed by a cluster of December 2024/November 2024 posts. No new
+  content in roughly 18 months as of this write-up — notable given Bad Faith is one of the
+  firm's three practice areas and organic content there has gone stale.
+
+PageSpeed scores: COULD NOT BE RETRIEVED THIS SESSION.
+- The public PageSpeed Insights API (pagespeedonline.googleapis.com) returned a hard
+  429 (Too Many Requests / quota-exhausted) on repeated attempts across both mobile and
+  desktop strategy, spaced out over several minutes.
+- pagespeed.web.dev itself is a client-rendered app; a non-interactive fetch only
+  captured the "Running analysis / data loading" state, not a completed score.
+- FLAGGED — run pagespeed.web.dev manually against https://www.grimmettlawfirm.com before
+  the call to get real mobile/desktop numbers for the report. Do not substitute an
+  estimate.
+
+================================================================
+STEP 2 — GOOGLE BUSINESS PROFILE
+================================================================
+Direct GBP panel could not be rendered live this session (Google Maps/Search requires JS
+rendering not available to this session's tools). Best available live proxy: Chamber of
+Commerce's business directory listing, which syncs Google-sourced review data.
+
+- GBP found: yes (per Chamber of Commerce, Avvo, FindLaw, Yelp, and other directory
+  listings; the transcript also confirms an active GBP with known optimization issues)
+- Star rating: 4.4 (per Chamber of Commerce directory listing, pulled this session — not
+  a direct Google Maps render; treat as an approximation)
+- Total review count: 27 (same source/caveat as above). Other third-party aggregators
+  showed different counts (16 on one legal-review site, 55 on another) — these
+  discrepancies likely reflect different sync windows/methodologies across aggregators
+  rather than a single authoritative number. FLAGGED for a manual live Google Maps check.
+- Most recent review date: not observed this session — FLAGGED for manual check
+- Primary category: per the transcript, currently listed as "General Law" rather than
+  "Personal Injury Attorney" — trusted directly from the discovery call per the
+  transcript-first rule (category was confirmed by the prospect, not something that
+  needed live verification)
+- Photos active: not observed this session — FLAGGED for manual check
+- Posts active: not observed this session — FLAGGED for manual check
+
+================================================================
+STEP 3 — LOCAL SEARCH VISIBILITY BY PRACTICE AREA
+================================================================
+Note: this session's tools returned Google organic web-search results, not a rendered
+Google Maps 3-pack panel. Treat the below as the organic/local competitive landscape
+rather than a literal 3-pack pull — flagged for manual 3-pack confirmation if the exact
+pack composition matters for the report.
+
+Practice Area 1: Personal Injury
+- Search "personal injury lawyer Franklin TN": Grimmett Law Firm not observed among the
+  top organic results returned this session — firms surfacing prominently: Griffith Law
+  (GriffithLaw, established 2002), The Williams Firm (Nashville), Puryear, Newman &
+  Morton PLLC (Franklin, est. 1997), Larsen Law PLLC, 615 Lawyer, Story & Abernathy PLLP
+- Search "car accident lawyer Franklin TN" (via directory cross-reference): David
+  Grimmett does carry an individual Avvo profile for Car Accidents in Franklin, TN, but
+  the same competitor set (Griffith Law, The Williams Firm) shows stronger multi-platform
+  visibility
+- Search "truck accident lawyer Nashville": not independently re-run this session;
+  transcript and directory data both point to the same competitor set above as the
+  active local field
+
+Practice Area 2: Bad Faith (Insurance)
+- Search "bad faith insurance lawyer Franklin TN": named local/regional firms surfacing —
+  White & Rhodes, P.C. (Brentwood/Franklin), Freeman & Fuson (Mark Freeman holds a CPCU
+  insurance-industry credential), McWherter Scott & Bobbitt (Tennessee-wide bad faith
+  practice)
+- Grimmett Law Firm not observed among top organic results for this keyword this session,
+  despite the firm's own blog post "Tennessee Bad Faith Statute Explained" being its most
+  recent published content — a content/ranking mismatch worth flagging
+
+Practice Area 3: Child Custody
+- Search "child custody lawyer Franklin TN": named local firms surfacing — Milazo Law,
+  P.C. (John M. Milazo, est. 1999), Fort, Holloway & Saylor, Garrett Talley & Thorington
+  (serving the area since 1973), Church Family Law Firm, MC Davis Law
+- Grimmett Law Firm not observed among top organic results for this keyword this session.
+  Notably, the firm's own Yelp listing categorizes it under "Divorce & Family Law" rather
+  than Personal Injury — see NAP/category note in Step 5.
+
+================================================================
+STEP 4 — COMPETITOR REVIEW COUNTS
+================================================================
+FLAGGED — live Google star ratings/review counts for the named competitors below could
+not be pulled through this session's tools (no Maps rendering access). What follows is
+third-party aggregator data (Birdeye, Facebook, other directory sites), pulled live this
+session but not a direct Google Maps render — treat as directionally reliable, not exact,
+and confirm manually before citing an exact number in the client-facing report.
+
+- Griffith Law (GriffithLaw PLLC, Franklin, TN — Personal Injury) — reviews: reported as
+  471 on Birdeye and 27 on Facebook (92% recommend) — high variance across aggregators;
+  firm has been established since 2002 with sustained multi-directory presence
+- The Williams Firm (Nashville, TN — Personal Injury) — reviews: 81 tracked Google
+  reviews per one aggregator — rating: 5.0
+- Puryear, Newman & Morton, PLLC (Franklin, TN — multi-practice incl. family/injury) —
+  reviews: 66 per Birdeye — rating: 4.9
+
+All three of the above show a higher review count than Grimmett Law Firm's own ~27 (Step
+2 proxy figure), which is directionally consistent even accounting for aggregator
+variance and should be treated as a real competitive gap, not just a data artifact.
+
+================================================================
+STEP 5 — DIRECTORY LISTINGS
+================================================================
+- Avvo: yes — David Ryan Grimmett has an individual attorney profile (Franklin, TN),
+  listed for Car Accidents, Insurance, and Slip and Fall Accident
+- Justia: presence not independently confirmed this session
+- FindLaw: yes — but lists the firm/David R. Grimmett at "315 Deaderick Street Suite 1210,
+  Regions Center, Nashville, TN 37238" — a different address than the firm's own site and
+  Yelp listing (3326 Aspen Grove Dr, Franklin, TN 37067). This is a genuine NAP
+  (Name/Address/Phone) inconsistency across directories.
+- Yelp: yes — listed at the Franklin, TN address, but under the "Divorce & Family Law"
+  category rather than Personal Injury — a category inconsistency that compounds the
+  GBP "General Law" mis-categorization issue noted in the transcript (Step 2)
+- Also present: LinkedIn (company page), Martindale, Chamber of Commerce, ZoomInfo
+
+NAP/category consistency: address is inconsistent between the Franklin office (Aspen
+Grove Dr, matches the firm's own site) and a Nashville address (Regions Center, via
+FindLaw) — worth a directory cleanup pass. Category is also inconsistent: GBP shows
+"General Law" (per transcript) and Yelp shows "Divorce & Family Law," while the firm's
+actual core practice per its own site and transcript is Personal Injury. This is likely
+actively suppressing the firm's visibility for its primary, highest-value practice area.
+
+Geo-targeting landing pages for surrounding cities (e.g. Brentwood, Nashville, Murfreesboro
+as distinct city pages): not observed this session — FLAGGED for a manual site-crawl
+check; not confirmed present or absent with confidence.
+
+================================================================
+STEP 6 — GOOGLE ADS
+================================================================
+FLAGGED — this session's tools cannot render the Google search results ad block/SERP
+sponsored section live (WebSearch returns organic-equivalent results without ad labeling,
+and no live-browser tool was available to inspect the actual SERP).
+
+Practice Area 1: Personal Injury
+- Firm ads observed: not observed this session (tooling limitation, see above) — the firm
+  does not appear to be running ads for this search based on available data
+- Named local competitors running ads: not observed this session
+
+Practice Area 2: Bad Faith
+- Firm ads observed: not observed this session
+- Named local competitors running ads: not observed this session
+
+Practice Area 3: Child Custody
+- Firm ads observed: not observed this session
+- Named local competitors running ads: not observed this session
+
+Framing for the report: Grimmett Law Firm does not appear to be running Google Ads for
+these searches at present. This reads as an open opportunity gap rather than a confirmed
+competitor-dominance finding, since no competitor ad activity could be independently
+confirmed either this session (tooling limitation, not evidence of absence). Recommend a
+manual SERP check before the report is finalized if Google Ads competitive activity is
+going to be cited specifically.
+
+================================================================
+STEP 7 — LOCAL SERVICE ADS
+================================================================
+FLAGGED — LSA panel requires live SERP rendering, not available this session.
+- Firm appears in LSA: not observed
+- Google Screened: not observed
+- LSA review count: not observed
+- Named local competitors in LSA: not observed
+Recommend a manual check of "personal injury lawyer Franklin TN" on a mobile device
+before the call if LSA is going to be a specific recommendation in the report.
+
+================================================================
+STEP 8 — META ADS
+================================================================
+FLAGGED — the Meta Ad Library (facebook.com/ads/library) requires an authenticated,
+JS-rendered session not available to this session's tools.
+- Firm has active ads: not observed this session. Firm does maintain an active Facebook
+  page (facebook.com/nashvilleinjurylawyers, ~1,198 likes), but no active ad campaign
+  could be confirmed or ruled out through the Ad Library specifically.
+- Named local competitor 1 (Griffith Law): not observed this session
+- Named local competitor 2 (The Williams Firm): not observed this session
+Recommend a manual Ad Library check on Griffith Law and The Williams Firm before the call
+if Meta competitive activity is going to be cited specifically in the report.
+
+================================================================
+STEP 9 — TRANSCRIPT EXTRACTION
+================================================================
+- Practice areas confirmed: Personal Injury (PI), Bad Faith (insurance), Child Custody
+- Current lead sources: primarily referral-based — sourced through "Shannara" (Alabama),
+  at a ~50% referral fee; no meaningful organic/paid digital lead generation described as
+  currently working
+- Ads ever run: not stated as currently running any paid channel; no budget or platform
+  detail given in the transcript for a past or current campaign — consistent with the
+  "not observed" findings in Steps 6–8
+- Team size: 1 associate, 1 EA (executive assistant), 1 paralegal, 1 VA (virtual
+  assistant), plus David Grimmett as owner/lead attorney
+- Annual revenue: ~$900,000 (current, stated as "on track")
+- Revenue goal: $10,000,000 within 3–5 years (stated), alongside a goal of 10 lawyers and
+  a 15% profit margin
+- Average case value: attorney's fee of $2,500–$5,000 per case against a referral cost of
+  ~$3,000–$4,000 per case (stated) — a slim-to-negative margin per case under the current
+  referral model
+- Current close rate: not stated — default to 15% per process
+- Number of locations: 1 (not explicitly stated in transcript; default per process)
+- Spanish campaign needed: not discussed — no
+- Dominant buying motive: not directly/personally stated (e.g. no quote about retirement,
+  coaching a kid's team, or a specific lifestyle goal). Closest inference from context:
+  Scale and Dominate. The transcript frames the primary challenge as "the transition from
+  a skilled lawyer to an effective business owner," paired with an explicit target of
+  $10M revenue and 10 lawyers within 3–5 years — this reads as a builder/scale ambition
+  rather than a lifestyle or exit-focused motive. Recommend confirming directly on the
+  July 29 call since this wasn't stated in personal terms.
+- Any profitability claims made by prospect: none stated beyond the case-economics figures
+  above (referral fee/cost vs. attorney's fee) — no explicit margin or take-home
+  profitability percentage was quoted
+- Any claims about case types or practice areas: "156-case caseload, 80% low-value" (per
+  transcript) — the firm is carrying a high volume of lower-value cases sourced through
+  the referral relationship, which is a core driver of the "growth stalled" narrative
+
+================================================================
+STEP 10 — COMPETITIVE URGENCY SCORE
+================================================================
+Score: 7 / 10
+
+This lands in the "competitors dominating multiple channels" band because, while no
+single local competitor was confirmed to be running paid ads (Google, LSA, or Meta) this
+session, several carry structural review/visibility advantages that Grimmett Law Firm is
+not currently matching, compounded by the firm's own GBP/category/NAP issues actively
+suppressing its visibility for its core practice area:
+
+1. Griffith Law — established 2002, appears prominently in organic search for
+   "personal injury lawyer Franklin TN," and carries a substantially larger review
+   footprint across aggregators than Grimmett Law Firm's own ~27.
+2. The Williams Firm — a 5.0-star, 81-review presence (per aggregator) directly
+   competing for the same Nashville/Franklin personal injury searches.
+3. Puryear, Newman & Morton, PLLC — nearly three decades in the market (est. 1997),
+   66 reviews at 4.9 stars, and multi-practice depth that lets it cross-sell family and
+   injury work the way Grimmett Law Firm could with its own three practice areas.
+
+Meanwhile, Grimmett Law Firm's GBP is mis-categorized ("General Law" instead of
+"Personal Injury Attorney"), its Yelp listing is mis-categorized as "Divorce & Family
+Law," its directory NAP is inconsistent (Franklin vs. a Nashville address on FindLaw),
+its blog has been stale for roughly 18 months, and ~20% of 260–300 weekly inbound calls
+are going unanswered — every one of these compounds the visibility gap against
+competitors who are not carrying the same self-inflicted friction.
+
+Dynamic sentence: "A score of 7 means competitors are actively dominating multiple
+channels in your market and the gap is getting wider every month you wait. This is not a
+future problem — it is a right now problem."
+
+================================================================
+PASS 2 — VERIFICATION CHECKLIST
+================================================================
+[x] Every number in the notes matches actually observed data (live-fetched or transcript-
+    sourced); every estimate/gap is explicitly flagged rather than presented as verified
+[x] Every competitor review count claim is either live-verified or explicitly marked as
+    aggregator-sourced/not Maps-verified; no competitor is cited as having fewer reviews
+    than the prospect when it doesn't — all three named PI competitors show more reviews
+    than Grimmett Law Firm's own ~27 proxy figure
+[x] Ads sections (Google Ads, LSA, Meta) cover all three named practice areas / applicable
+    checks, each explicitly flagged where live rendering wasn't possible
+[x] No section states the firm "is not running ads" as certainty — all phrased as "not
+    observed" / "does not appear to be running" / opportunity-gap framing
+[x] No profitability or business claim appears that didn't come from the transcript
+[x] No competitor reference uses generic labels — only specific named local firms
+    (Griffith Law, The Williams Firm, Puryear Newman & Morton, Milazo Law, White & Rhodes,
+    Freeman & Fuson, McWherter Scott & Bobbitt, Fort Holloway & Saylor, Garrett Talley &
+    Thorington, Church Family Law Firm, MC Davis Law)
+[x] PageSpeed scores: NOT available — explicitly flagged as unverified rather than
+    estimated; manual check recommended before the report is finalized
+[x] DBM recorded — inferred (Scale and Dominate) with explicit caveat that it wasn't
+    stated in personal terms on this call
+[x] Revenue goal recorded: $10M within 3–5 years (stated)
+[x] Close rate recorded: not stated — 15% default applied per process
+[x] Average case value recorded: $2,500–$5,000 attorney's fee per case (stated), against
+    a $3,000–$4,000 referral cost per case
+
+OUTSTANDING MANUAL CHECKS BEFORE THE JULY 29 CALL:
+1. Run pagespeed.web.dev manually for mobile + desktop scores (API quota blocked this
+   session)
+2. Confirm GBP star rating, review count, most recent review date, photos/posts status,
+   and primary category directly in Google Maps (transcript already confirms category
+   issue; live numeric verification still recommended)
+3. Manual SERP check for Google Ads/LSA presence (firm + Griffith Law + The Williams Firm)
+   on "personal injury lawyer Franklin TN"
+4. Manual Meta Ad Library check for Griffith Law and The Williams Firm
+5. Confirm DBM directly with David/Erin on the 7/29 call — not stated in personal terms
+   in this transcript
+6. Manual directory-consistency pass: resolve the Franklin vs. Nashville (FindLaw) address
+   discrepancy and the "General Law"/"Divorce & Family Law" category mismatches across GBP
+   and Yelp
