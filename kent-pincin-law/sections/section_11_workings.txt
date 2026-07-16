@@ -1,0 +1,155 @@
+KENT PINCIN LAW — SECTION 11 WORKINGS FILE
+=====================================================
+
+REVENUE / PACKAGE CORRECTION (documented per instructions)
+-----------------------------------------------------------
+package_decision.json (confidence: "medium") estimated revenue at $1,980,500, sourced from a
+HubSpot dropdown label ("$961K - $3M" -> hubspot_annual_law_firm_revenue). This estimate is
+SUPERSEDED by the research notes' Step 9 transcript extraction, which explicitly states:
+"Monthly revenue of $200k-$900k, averaging $400k-$500k/month (roughly $4.8M-$6M annualized
+at the stated average)." A direct, explicit transcript-stated figure takes precedence over an
+indirect HubSpot dropdown label per the medium-confidence correction rule in audit-write.md.
+
+Effective revenue used for this audit: $4.8M-$6M annualized (transcript-stated), placing the
+firm solidly in the "$3M+" tier band.
+
+This correction changed:
+- Marketing tier: Growth ($7,397/mo bundled, per stale package_decision.json) -> Platinum
+  ($15,997/mo bundled), because $3M+ revenue firms sit in the Platinum tier, not Growth.
+- Non-marketing package: Elite Coach Plus ($3,200/mo bundled, per stale package_decision.json)
+  -> FCOO Advisor ($3,297/mo bundled). Reasoning: the firm has 6 attorneys (grown from 2 in a
+  year, hiring 2 more) but NO dedicated ops, marketing, or intake team member — Michael Kent
+  personally handles ~90% of case acquisition/intake, and employment cases require attorney-led
+  intake, preventing delegation to non-lawyers. Per eligibility rules, "No dedicated ops,
+  marketing, or intake team member -> hide all Master's Circle options" — this applies
+  regardless of attorney headcount, so Master's Circle-based options are excluded. The DBM
+  (partners want to stop being "the single point of failure" for IT/case assignment/intake and
+  become "pure CEOs managing managers") is a textbook Fractional COO fit, not a general-coaching
+  fit. Platinum + FCOO Advisor = one marketing + one non-marketing package, satisfying the
+  default recommendation rule; a single non-marketing product is justified because the
+  transcript clearly points to one specific service category (operational/delegation build,
+  not general coaching).
+
+ASSUMPTION — EMPLOYMENT LAW AS BUSINESS LAW PROXY
+-----------------------------------------------------------
+The ad-spend/CPL tables in audit-write.md do not have a dedicated row for Employment Law. The
+"Business Law" row was used as the closest available proxy for ad spend minimums and default
+case value, since both are white-collar, higher-value, lower-volume practice areas relative to
+personal injury or consumer-facing practice areas. This assumption is disclosed here and should
+be flagged for a sales-side sanity check given Employment Law's distinct claim dynamics
+(discrimination/retaliation/harassment/wrongful termination) versus general Business Law.
+
+AD SPEND CAP NOTE
+-----------------------------------------------------------
+The aggressive ad spend scenario calculated via the 20% rule (see below) produces a theoretical
+available spend of ~$254,003/mo, which exceeds the Platinum tier's $150,000/mo ad spend cap.
+There is no higher marketing tier available. Per the tier-cap rule, aggressive ad spend is
+capped at $150,000/mo in this proposal; spending beyond this cap would require a 10% overage
+fee and should only be discussed with the client if they explicitly want to exceed the
+Platinum tier ceiling.
+
+=====================================================
+MANDATORY PRICE LOOKUP (verified against approved tables)
+=====================================================
+Marketing package selected: Platinum (Full Service Marketing)
+  - Bundled price: $15,997/mo
+  - Stand-alone price: $18,997/mo
+  - Savings: $3,000/mo
+
+Non-marketing package selected: Fractional COO (FCOO) Advisor
+  - Bundled price: $3,297/mo
+  - Stand-alone price: $3,797/mo
+  - Savings: $500/mo
+
+Legal AI Workforce (LAW) package: none — no explicit AI-readiness signal in transcript.
+AI Avatar / Video Growth add-on: none — mentioned by prospect only as a longer-term "phase 2"
+idea, not the urgent need; also requires Alexis approval and is not appropriate for the core
+package at this time.
+
+Total monthly investment (sum of bundled prices): $15,997 + $3,297 = $19,294/mo
+Total savings (sum of all stand-alone minus bundled): $3,000 + $500 = $3,500/mo
+
+35% cap check: $19,294/mo in management fees is well under 35% of $400K-$500K monthly revenue
+($140,000-$175,000) — no issue.
+
+=====================================================
+AD SPEND AND ROI PROJECTIONS
+=====================================================
+Practice areas: Employment Law (Business Law proxy — see assumption above) and Personal
+Injury (Accident/Injury General row — firm handles auto/motorcycle/truck/bicycle accidents,
+premises liability, wrongful death, broader than MVA-only).
+
+CONSERVATIVE (sum of channel minimums, both practice areas, Google PPC + LSA + Meta
+Retargeting + Meta Lead Gen):
+  - Employment Law (Business Law proxy): $3,500 + $2,000 + $1,200 + $3,500 = $10,200/mo
+  - Personal Injury (Accident/Injury General): $6,000 + $2,000 + $1,200 + $5,500 = $14,700/mo
+  - Total conservative ad spend: $24,900/mo
+    (PI hard floor for Medium competitiveness is $7,500/mo — already exceeded, no adjustment
+    needed)
+  - Blended CPL (weighted by spend, using CPL midpoints) ~ $271, +20% cushion for conservative
+    ~ $325
+  - Leads ~ 24,900 / 325 ~ 77/mo
+  - Cases = 77 x 26% close rate (transcript-stated) ~ 20 cases/mo
+  - Blended avg case value ~ $5,885/case (weighted blend of Business Law $3K-$7K default and
+    Accident/Injury $5K-$8K default, midpoints, spend-weighted) — disclosed as a default
+    estimate, not transcript-stated
+  - Revenue ~ 20 x $5,885 ~ $117,700/mo
+  - Return ~ 4.7x
+
+AGGRESSIVE (20% rule): No firm-wide revenue goal was stated — only a personal partner-
+distribution goal of $5M+/year each, not a firm revenue target. Per the rules, defaulted to
+2x current revenue. Current annualized revenue midpoint ~ $5.4M -> goal ~ $10.8M.
+  - $10.8M x 20% / 12 = $180,000/mo
+  - x 1.5 (LA is a Tier 1 mega market) = $270,000/mo
+  - minus $15,997 management fee ~ $254,003 available
+  - This exceeds Platinum's $150,000/mo ad spend cap and there is no higher tier — aggressive
+    ad spend is capped at $150,000/mo (see Ad Spend Cap Note above; 10% overage fee would apply
+    beyond this cap)
+  - Blended CPL (no cushion) ~ $271 -> Leads ~ 150,000 / 271 ~ 554/mo
+  - Cases ~ 554 x 26% ~ 144 cases/mo
+  - Revenue ~ 144 x $5,885 ~ $847,700/mo
+  - Return ~ 5.6x
+  - Note: this lead volume would far exceed what attorney-led intake can currently absorb,
+    reinforcing why the FCOO/operational build is paired with the marketing investment rather
+    than marketing alone.
+
+=====================================================
+DBM STATEMENT FOR BLOCK 1
+=====================================================
+"We help growing employment and personal injury law firms build the operational systems and
+lead generation engines they need so their partners can stop being the single point of
+failure and become true CEOs managing managers."
+
+=====================================================
+QUICK WIN OPPORTUNITIES (6 total across 4 pillars)
+=====================================================
+1. Lead Gen — Zero paid marketing / 100% referral dependency in a $4.8M-$6M revenue firm — the
+   single largest untapped growth lever. No named competitor (internal capacity finding).
+2. Lead Gen — No geo-targeted landing pages for 4 of the 5 markets the firm claims presence in
+   (San Diego, San Francisco, Torrance, Downtown LA). Competitor: Miracle Mile Law Group has
+   dedicated LA/Oakland/San Diego landing pages.
+3. Lead Gen — Review count gap: firm's best-estimated 8-11 Google reviews vs. Miracle Mile Law
+   Group (117), The Simon Law Group (60), Conner & Associates (16) — firm has fewer reviews
+   than every named competitor.
+4. Intake — Attorney-led intake bottleneck is causing the firm to turn away referral volume,
+   including live transfers, due to capacity — a direct, stated lost-revenue admission from
+   the transcript. No named competitor.
+5. Team — No delegation infrastructure: partners remain the single point of failure for IT,
+   case assignment, and intake despite tripling attorney headcount in one year. No named
+   competitor.
+6. Profit — Overhead growth from rapid team scaling is compressing partner take-home pay below
+   peer attorney compensation, with no dedicated operational/financial oversight in place as
+   the firm scales toward 12-15 attorneys. No named competitor.
+
+"Who Is Doing It Better" rows omitted on cards 1, 4, 5, 6 (no named competitor identified).
+
+=====================================================
+FIRST 90 DAYS
+=====================================================
+1. Launch Google Ads + LSA campaigns for both Employment Law and Personal Injury.
+2. Deploy geo-targeted landing pages for San Diego, San Francisco, Torrance, and Downtown LA to
+   match the firm's actual footprint.
+3. Kick off the Fractional COO Advisor engagement to begin mapping case-assignment and intake
+   delegation workflows.
+4. Consolidate the two duplicate Yelp listings and launch a review-generation push to close the
+   gap with named competitors.
