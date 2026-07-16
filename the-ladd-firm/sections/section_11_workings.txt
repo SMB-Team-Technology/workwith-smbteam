@@ -1,0 +1,126 @@
+THE LADD FIRM, LLC — SECTION 11 WORKINGS
+==========================================
+
+REVENUE VERIFICATION (package_decision.json confidence: low)
+--------------------------------------------------------------
+package_decision.json sourced revenue from HubSpot ("$180K - $960K" → effective $570,000)
+because revenue_stated was null in the automated parse. The research notes text
+DOES state revenue explicitly, in the transcript extraction section:
+  "Annual revenue: on pace ~$800K this year; prior year ~$600K"
+This transcript-stated figure (~$800K current pace) is more authoritative than the
+HubSpot band estimate. However, both $570,000 (HubSpot) and $800,000 (transcript)
+fall within the same $400K–$1M revenue band used for tier eligibility. Result:
+package_decision.json's tier selections are CONFIRMED CORRECT — no change required.
+  - Marketing tier: Full Service Marketing — Starter (unchanged)
+  - Coaching tier: Elite Coach Plus (unchanged)
+Team size: research notes list an actual roster (Banks Ladd, Mary Carol Ladd,
+Summer Palmer, Leo Baker, Colin Bulger [external contractor], a recently hired
+probate attorney) rather than the pipeline's default of 3. This does not change
+the outcome: revenue is under $1M, so Master's Circle and FCOO/FCFO bundles are
+ineligible regardless of team size, and no profit-problem signal was stated on
+the call to justify adding a Fractional CFO/COO Advisor. Elite Coach Plus remains
+the correct non-marketing package.
+
+MANDATORY PRICE LOOKUP
+--------------------------------------------------------------
+- Marketing package selected: Full Service Marketing — Starter
+  - Bundled price (from table): $4,847/mo
+  - Stand-alone price (from table): $5,697/mo
+  - Savings (stand-alone minus bundled): $850/mo
+- Non-marketing package selected: Elite Coach Plus
+  - Bundled price (from table): $3,200/mo
+  - Stand-alone price (from table): $3,497/mo
+  - Savings (stand-alone minus bundled): $297/mo
+- Legal AI Workforce (LAW) package selected: none
+- AI Avatar / Video Growth add-on selected: none
+- Total monthly investment (sum of bundled/recurring prices): $8,047/mo
+- Total savings (sum of all savings): $1,147/mo
+
+35% SPEND CAP CHECK
+--------------------------------------------------------------
+Effective monthly revenue: $800,000/12 = $66,667/mo. 35% cap = $23,333/mo.
+Management fees ($8,047) + aggressive ad spend ($14,000) = $22,047/mo — within cap.
+Management fees ($8,047) + conservative ad spend ($3,500) = $11,547/mo — within cap.
+
+AD SPEND — CONSERVATIVE AND AGGRESSIVE (from package_decision.json, both within
+tier cap of $25,000/mo and the 35% total-spend cap above)
+--------------------------------------------------------------
+Conservative: $3,500/mo
+Aggressive: $14,000/mo
+
+ROI PROJECTIONS (Practice area: Estate Planning table; blended CPL weighted
+63.6% Google Search / 36.4% LSA, per the channel-minimum proportions for
+Estate Planning — Google Search mid $135, LSA mid $65 → blended $110/lead)
+
+Conservative scenario ($3,500/mo, blended CPL + 20% cushion = ~$132):
+  - Leads: ~26/month
+  - Cases (15% close rate, default — not stated in transcript): 3–4 cases/month
+  - Revenue (avg case value $4,000, stated in transcript): $12,000–$16,000/month
+  - Return: ~4x
+
+Aggressive scenario ($14,000/mo, blended CPL = $110, no cushion):
+  - Leads: ~127/month
+  - Cases (15% close rate): 18–20 cases/month
+  - Revenue ($4,000 avg case value): $72,000–$80,000/month
+  - Return: ~5–6x
+
+All figures labeled as estimates in the client-facing report.
+
+DBM STATEMENT (Block 1)
+--------------------------------------------------------------
+"We help estate planning and probate firms get a predictable, coordinated flow of
+design meetings so they can run without consuming the owner's every hour."
+Dominant Buying Motive: Category 1 — a firm that runs itself so the owner has more
+time. Inferred from Banks's need for ~5 hours/day of personal production work,
+his stated fear of being overloaded by new initiatives, and his delegation moves
+(hiring a probate attorney, leaning on Summer/Leo/Colin).
+
+QUICK WIN OPPORTUNITIES (7 identified, minimum 6 required)
+--------------------------------------------------------------
+1. [Lead Gen / Quick Win] Fix NAP inconsistency across directories (FindLaw's old
+   address vs. current address) — no named competitor tied to this specific fix.
+2. [Lead Gen / Long-Term Play] Match Holt & Associates' city-level paid search
+   strategy — competitor: Holt & Associates.
+3. [Lead Gen / Quick Win] Put the firm's review advantage (165-209 vs. max 60 for
+   any named competitor) to work in ad copy and directory profiles — no
+   competitor tied (firm already leads here).
+4. [Intake / Quick Win] Formalize a follow-up process for design-meeting leads —
+   no named competitor.
+5. [Team / Long-Term Play] Reduce single-point-of-failure on marketing execution
+   (one contractor covering website/SEO/PPC/LSA) — no named competitor.
+6. [Profit / Quick Win] Close the gap between the firm's $4,000 average case value
+   and the ~$5,000 local market rate — no named competitor.
+7. [Lead Gen / Long-Term Play] Establish satellite market presence before Southern
+   Estate Lawyers further locks in Foley/Daphne/Gulf Coast — competitor: Southern
+   Estate Lawyers.
+
+FIRST 90 DAYS
+--------------------------------------------------------------
+1. Launch a coordinated Google PPC + LSA plan across estate planning and probate,
+   replacing the current single-contractor, uncoordinated approach.
+2. Correct the NAP inconsistency across directories (FindLaw, Avvo, Justia) to
+   protect the local ranking the 20+ geo-pages are built to capture.
+3. Rebuild the website's above-the-fold contact experience so the form is visible
+   without scrolling.
+4. Kick off coaching engagement with Banks to build a defined follow-up process
+   for design-meeting leads.
+5. Establish a baseline profit plan tracking case value and margin by practice
+   area (estate planning vs. probate), not just top-line revenue pace.
+
+REP-FACING NOTE (internal — not in client report): raw call transcript added to
+triggers/audit-research/the-ladd-firm.json after Pass 1 research notes were
+written. It confirms every figure used above (revenue, ad spend, case value,
+DBM) and surfaces two items Dan should reconcile before the July 23 call:
+1. The transcript shows Elite Coach already quoted/emailed to Banks at
+   $2,600/mo (Double Your Investment Guarantee) from a prior call — this Growth
+   Audit recommends Elite Coach PLUS at $3,200/mo instead, per the approved
+   pricing table for the firm's $400K–$1M revenue band. Flagging the mismatch
+   so Dan can decide which offer to carry into the reconvene call.
+2. The transcript shows AI Workforce Pro (a Legal AI Workforce product,
+   $1,597/mo bundled trial) is already in a separate agreement with Banks. It is
+   NOT included in this Growth Audit's package recommendation. Per the LAW
+   escalation rule, confirm LAW delivery has launched and has capacity before
+   bundling it into any proposal alongside this audit's packages.
+3. Transcript confirms Banks is specifically sensitive to full-service marketing
+   overlapping with Colin (existing contractor) — reflected in this audit's
+   Sales Companion objection responses.
