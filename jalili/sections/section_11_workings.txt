@@ -1,0 +1,62 @@
+SECTION 11 — WORKINGS FILE
+Jalili Law Group — July 21, 2026
+
+REVENUE / PACKAGE DECISION VERIFICATION (per package_decision.json, confidence: low)
+- package_decision.json used revenue_effective $570,000 (HubSpot estimate, "$180K-$960K" midpoint), team_size_effective 3 (default, not stated).
+- Research notes / transcript actually state: 2024 revenue ~$950,000; stated 2025/current goal $2,000,000 (explicit).
+- CORRECTION: Effective revenue for this audit should be treated as ~$950,000 (transcript-stated, ground truth) rather than the $570,000 HubSpot estimate.
+- Tier impact: $950,000 still falls within the $400K-$1M band used by package_decision.json, so NO TIER CHANGE is required. Full Service Marketing — Starter and Elite Coach Plus remain correct.
+- Team size correction: actual team is 6-7 staff (not the defaulted 3), and the firm already has an internal COO. This does NOT change the coaching selection — the "$400K-$1M | Growing | Elite Coach Plus + FCOO Advisor" row was considered and rejected because the firm already has its own COO in place; adding an external Fractional COO Advisor would be redundant. Elite Coach Plus alone (the "$400K-$1M | Any" row) is the correct fit.
+- No Fractional CFO Advisor added: no profit problems, no "not taking home more" statements, and no financial-visibility complaints were made on the call (explicitly confirmed in research notes as absent) — eligibility criteria for FCFO Advisor not met.
+- Legal AI Workforce (LAW) considered: transcript shows strong AI-readiness ("using AI to automate workflows... eliminating 29 of 40 case-handling steps," explicit interest in growth "without needing to hire more staff"). Revenue (~$950K) and team size (6-7, not solo) both clear LAW eligibility floors. However, LAW is NOT included as an immediate Block 2/3 paid line item in this proposal — doing so would push Marketing MRR-equivalent spend over $10K/mo (escalation flag: "Marketing MRR over $10K -> scoping approval required") and requires confirming with the sales rep that LAW delivery has capacity (escalation flag), neither of which can be resolved in this research/writing pass. Instead, Legal AI Workforce (AI Essentials) is surfaced as a Phase 2 roadmap recommendation (future-looking, not a committed line item) to properly reflect the transcript's strong AI-readiness signal without overstepping.
+  -> FLAG FOR SALES REP (internal only, not in client report): confirm LAW delivery capacity and scoping approval before formally proposing AI Essentials in a follow-up conversation.
+
+APPROVED PRICING (from .claude/commands/audit-write.md tables, copied exactly — package_decision.json values cross-checked and match)
+- Marketing: Full Service Marketing — Starter | Bundled $4,847/mo | Stand-alone $5,697/mo | Savings $850/mo
+- Coaching: Elite Coach Plus | Bundled $3,200/mo | Stand-alone $3,497/mo | Savings $297/mo
+- Total Monthly Investment (bundled): $4,847 + $3,200 = $8,047/mo
+- Total Savings: $850 + $297 = $1,147/mo
+
+AD SPEND
+- Conservative: $5,500/mo (matches Criminal Defense Google PPC Min — single-channel Google Search focus on the dominant 85-90% practice area, consistent with the "quality over quantity" pitch from the call)
+- Aggressive: $22,000/mo (per package_decision.json; consistent with the 20% rule against the stated $2M revenue goal, blended across Criminal Defense + Family Law and multiple channels)
+- NOTE (internal, not client-facing): at 2024's actual ~$950K/yr revenue ($79,167/mo), the aggressive scenario ($22,000 ad spend + $8,047 bundled = $30,047/mo) runs to ~38% of monthly revenue, slightly above the standard 35% total-spend guideline. Conservative scenario ($5,500 + $8,047 = $13,547/mo) is well within the cap at ~17%. Flag for sales rep to confirm before committing to the top of the aggressive range.
+
+ROI PROJECTIONS (Block 4)
+Practice mix: Criminal Defense ~85-90% of caseload (dominant), Family Law secondary, Immigration bundled/minor. Close rate: 15% (not stated on call, using stated default). Average case value: not stated on call — using disclosed practice-area default of $3,000-$5,000 (Criminal Defense and Family Law both fall in this range), midpoint $4,000.
+
+Conservative ($5,500/mo — Google Search, Criminal Defense only):
+- CPL: $155-$205 midpoint $180, +20% conservative cushion = $216
+- Leads: $5,500 / $216 ~= 25 leads/mo
+- Cases: 25 x 15% ~= 4 cases/mo
+- Revenue: 4 x $4,000 = $16,000/mo
+- Return: $16,000 / $5,500 ~= 2.9x
+
+Aggressive ($22,000/mo — blended Google Search + LSA + Meta Retargeting + Meta Cold, Criminal Defense 85% / Family Law 15%, no cushion):
+- Blended CPL ~= $116 (CD channel avg $122.5, FL channel avg $80.6, weighted 85/15)
+- Leads: $22,000 / $116 ~= 190 leads/mo
+- Cases: 190 x 15% ~= 29 cases/mo
+- Revenue: 29 x $4,000 = $116,000/mo
+- Return: $116,000 / $22,000 ~= 5.3x
+
+All figures labeled as estimates in the client report; average case value default explicitly disclosed.
+
+DBM STATEMENT (Block 1)
+Primary DBM: scale/build a second (U.S.) firm — doubling Canadian revenue to $2M specifically to fund and launch a California firm (Lemon Law, then Personal Injury), gated on the COO's green card approval.
+Secondary DBM: firm autonomy via AI-driven workflow automation — growth without proportionally more headcount.
+Formula: "We help growing criminal defense firms get a steady flow of qualified, private-pay clients without adding another hour to the attorney's calendar, so they can fund and launch their next firm without slowing down the one that got them here."
+
+QUICK WIN OPPORTUNITIES (6, across all four pillars)
+1. [Lead Gen / Quick Win] Consolidate phone numbers onto one trackable line — why: 3 different numbers across the firm's own properties fragment call tracking; no named competitor; opportunity: finally measure which of the $10K/month ad spend actually produces private-pay clients.
+2. [Lead Gen / Long-Term] Build city-specific landing pages — why: site organizes by charge type only, invisible to searches in North York/Scarborough/Vaughan/Mississauga; competitor: Kazandji Law (offices in both Toronto and Thornhill); opportunity: compete directly in every market already served.
+3. [Intake / Quick Win] Add a qualification step before the attorney's calendar — why: attorney personally takes every free consultation including non-fits; no named competitor; opportunity: protect attorney time for clients who move the $2M goal forward.
+4. [Team / Long-Term] Give the COO ownership of client screening — why: COO exists but attorney still personally screens every prospect; no named competitor; opportunity: frees attorney time, builds leadership bench needed for U.S. expansion.
+5. [Profit / Quick Win] Track case profitability by practice area — why: no profit-margin or case-value data shared on the call; no named competitor; opportunity: target growth toward $2M in a way that protects margin, not just top-line revenue.
+6. [Lead Gen / Quick Win] Claim Avvo, Justia, and FindLaw listings — why: no confirmed Ontario listing on any of the three; competitor: Daniel Brown Law (broader directory/citation footprint); opportunity: close the trust/citation gap Google and prospects use to compare firms.
+
+FIRST 90 DAYS
+1. Launch refined Google Ads campaigns targeting high-intent criminal defense and family law searches, including city-specific and competitor-name keywords
+2. Consolidate call tracking onto a single trackable number system so every lead source can finally be measured against case value
+3. Rebuild local SEO foundation — city-specific landing pages for North York, Scarborough, Vaughan, and Mississauga, plus directory listings on Avvo, Justia, and FindLaw
+4. Kick off Elite Coach Plus coaching sessions to build the intake qualification process that protects the attorney's calendar
+5. Stand up practice-area case tracking so profitability by case type is visible before the next growth push
