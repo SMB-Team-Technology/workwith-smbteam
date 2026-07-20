@@ -23,10 +23,10 @@ import { join } from 'path';
 // Keep in sync with Design Files/audit-write.md and SMB_Team_Audit_Agent_System_Prompt.txt
 
 const MARKETING_TIERS = [
-  { tier: 'Essentials', name: 'Full Service Marketing — Essentials', bundled: 3397,  retail: null,  adCap: 7_500,   minRev: 250_000,  maxRev: 399_999 },
-  { tier: 'Starter',    name: 'Full Service Marketing — Starter',    bundled: 4847,  retail: 5697,  adCap: 25_000,  minRev: 400_000,  maxRev: 999_999 },
-  { tier: 'Growth',     name: 'Full Service Marketing — Growth',     bundled: 7397,  retail: 8997,  adCap: 50_000,  minRev: 1_000_000, maxRev: 2_999_999 },
-  { tier: 'Dominate',   name: 'Full Service Marketing — Dominate',   bundled: 10497, retail: 12497, adCap: 75_000,  minRev: 1_000_000, maxRev: Infinity },
+  { tier: 'Essentials', name: 'Full Service Marketing — Essentials', bundled: 3497,  retail: 3797,  adCap: 5_000,   minRev: 0,         maxRev: 749_999 },
+  { tier: 'Starter',    name: 'Full Service Marketing — Starter',    bundled: 4997,  retail: 5697,  adCap: 20_000,  minRev: 500_000,   maxRev: 999_999 },
+  { tier: 'Growth',     name: 'Full Service Marketing — Growth',     bundled: 7497,  retail: 8997,  adCap: 50_000,  minRev: 1_000_000, maxRev: 1_999_999 },
+  { tier: 'Dominate',   name: 'Full Service Marketing — Dominate',   bundled: 10497, retail: 12497, adCap: 100_000, minRev: 2_000_000, maxRev: 2_999_999 },
   { tier: 'Platinum',   name: 'Full Service Marketing — Platinum',   bundled: 15997, retail: 18997, adCap: 150_000, minRev: 3_000_000, maxRev: Infinity },
 ];
 const TIER_BY_NAME = Object.fromEntries(MARKETING_TIERS.map(t => [t.tier.toLowerCase(), t]));
@@ -219,23 +219,27 @@ function selectMarketingTier(revenue, effectiveRevenue, practiceAreas, text, not
   const piDetected = detectPI(practiceAreas);
   const cdDetected = detectCriminalDefense(practiceAreas);
   const cdHighComp  = cdDetected && detectHighCompetitiveness(text);
-  const aggressiveGoals = /aggressive goal|aggressive growth|dominate the market|rapid growth/i.test(text);
+  const multiPracticeArea = practiceAreas.length > 1;
 
   let tier;
 
   if (effectiveRevenue >= 3_000_000) {
     tier = TIER_BY_NAME['platinum'];
     notes.push('Revenue $3M+: Platinum tier.');
+  } else if (effectiveRevenue >= 2_000_000) {
+    tier = TIER_BY_NAME['dominate'];
+    notes.push('Revenue $2M–$3M: Dominate tier.');
   } else if (effectiveRevenue >= 1_000_000) {
-    tier = aggressiveGoals ? TIER_BY_NAME['dominate'] : TIER_BY_NAME['growth'];
-    notes.push(`Revenue $1M+: ${tier.tier} tier${aggressiveGoals ? ' (aggressive goals detected)' : ''}.`);
-  } else if (effectiveRevenue >= 400_000) {
-    tier = TIER_BY_NAME['starter'];
-    notes.push('Revenue $400K–$1M: Starter tier.');
-  } else {
-    // Under $400K — default Essentials, but PI/CD can't use it
+    tier = TIER_BY_NAME['growth'];
+    notes.push('Revenue $1M–$2M: Growth tier.');
+  } else if (effectiveRevenue < 750_000 && !multiPracticeArea) {
     tier = TIER_BY_NAME['essentials'];
-    notes.push('Revenue under $400K: Essentials tier.');
+    notes.push('Revenue under $750K, single practice area detected: Essentials tier. Essentials also requires a single location — confirm with sales rep before finalizing.');
+  } else {
+    tier = TIER_BY_NAME['starter'];
+    notes.push(effectiveRevenue < 750_000
+      ? 'Revenue under $750K but multiple practice areas detected: Essentials hidden (requires single practice area) — Starter tier.'
+      : 'Revenue $500K–$1M: Starter tier.');
   }
 
   // Eligibility overrides
@@ -246,10 +250,6 @@ function selectMarketingTier(revenue, effectiveRevenue, practiceAreas, text, not
   if (cdHighComp && tier.tier === 'Essentials') {
     tier = TIER_BY_NAME['starter'];
     notes.push('Criminal Defense in high-competition market: Essentials hidden — upgraded to Starter.');
-  }
-  if (effectiveRevenue > 1_000_000 && tier.tier === 'Essentials') {
-    tier = TIER_BY_NAME['starter']; // shouldn't happen but safety net
-    notes.push('Revenue >$1M: Essentials hidden (safety net).');
   }
 
   return tier;

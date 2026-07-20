@@ -238,12 +238,15 @@ Complete this entire section before starting Step I.
 **Practice Area:**
 - Personal Injury → hide ALL Essentials marketing packages AND the LSA-only add-on. Minimum tier is Starter.
 - Criminal Defense + High competitiveness → hide ALL Essentials marketing packages. LSA-only still allowed.
+- Essentials marketing tier requires a single location AND a single practice area → hide Essentials for any firm with multiple locations or multiple practice areas, regardless of revenue.
 
 **Revenue:**
 - Under $250K → confirm client has funds to cover 4 months of services before proceeding.
 - Under $500K → hide all Fractional CFO and Fractional COO products and all bundles containing them.
-- Under $1M → hide Master's Circle and all bundles. Hide Dominate and Platinum marketing tiers.
-- Over $1M → hide all Essentials marketing products.
+- Under $1M → hide Master's Circle and all bundles.
+- Under $2M → hide Dominate and Platinum marketing tiers.
+- Under $3M → hide Platinum marketing tier.
+- Over $750K → hide all Essentials marketing products.
 
 **Team:**
 - Fewer than 5 team members → hide all Master's Circle options.
@@ -264,16 +267,16 @@ Default to Full Service Marketing at the appropriate tier unless there is a spec
 
 | Revenue | Tier | Bundled Price | Ad Spend Cap |
 |---|---|---|---|
-| $250K–$400K | Essentials | $3,397/mo | $7,500 |
-| $400K–$1M | Starter | $4,847/mo | $25,000 |
-| $1M–$3M | Growth | $7,397/mo | $50,000 |
-| $1M+ aggressive goals | Dominate | $10,497/mo | $75,000 |
+| Under $750K, single location + single practice area | Essentials | $3,497/mo | $5,000 |
+| $500K–$1M (or under $750K with multiple locations/practice areas) | Starter | $4,997/mo | $20,000 |
+| $1M–$2M | Growth | $7,497/mo | $50,000 |
+| $2M–$3M | Dominate | $10,497/mo | $100,000 |
 | $3M+ | Platinum | $15,997/mo | $150,000 |
 
 **Stand-alone prices (for savings calculation in Block 3):**
-Essentials $N/A | Starter $5,697 | Growth $8,997 | Dominate $12,497 | Platinum $18,997
+Essentials $3,797 | Starter $5,697 | Growth $8,997 | Dominate $12,497 | Platinum $18,997
 
-**Boundary rule:** If the firm's goals are aggressive or their calculated ad spend exceeds the lower tier's cap, move to the higher tier.
+**Boundary rule:** If the firm's calculated ad spend exceeds the tier's cap, move to the higher tier. Aggressive goals alone no longer bypass the Dominate/Platinum revenue floors — a firm must meet the revenue threshold to be eligible.
 
 **Website rebuild needed if:** PageSpeed mobile below 50, design 5+ years old, not mobile responsive, no practice area pages, no attorney bios. If rebuild needed, must use Full Service (not ads-only).
 
@@ -325,6 +328,7 @@ Legal AI Workforce (LAW) provides managed AI implementation for law firms — Cl
 - Standalone: $19,997
 - Paired with Fractional CTO Level 1: $14,997 (bundle discount applied internally: net $8,403 above Level 1 MRR)
 - Paired with Fractional CTO Level 2: $14,997 (bundle discount applied internally: net $5,003 above Level 2 MRR)
+- Paired with Fractional CTO Level 3: $14,997 (bundle discount applied internally: net $0 above Level 3 MRR — free when bundled with the top CTO tier)
 
 **Capacity add-ons (flag in notes if likely to apply; do not include in Block 3 by default):**
 - Additional employees above 5: $120/mo per employee + 2M AI credits
