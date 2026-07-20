@@ -1,0 +1,207 @@
+MANDALL IMMIGRATION LAW — SECTION 11 WORKINGS
+=======================================================================
+REVENUE CORRECTION — READ FIRST
+=======================================================================
+package_decision.json (confidence: medium) selected Platinum tier based on
+revenue_effective = $3,000,000, sourced from HubSpot field
+"hubspot_annual_law_firm_revenue" = "$3,000,000+".
+
+This conflicts directly with the research notes, which state (Step 9 —
+Transcript Extraction, a direct transcript-sourced figure):
+  "Annual revenue: ~$2M run rate ($200k–$280k/mo)"
+  "Revenue goal: $500k/mo by April 2026 (short-term); $100M/year long-term vision"
+
+Per the Transcript-first principle ("the research notes contain data
+extracted from the transcript — those values are ground truth"), the
+transcript figure overrides the HubSpot CRM field, which likely reflects a
+stale or aspirational value rather than current run rate.
+
+CORRECTED current annual revenue: ~$2,000,000 (band: $1M–$3M).
+This does NOT meet the Platinum tier's $3M+ revenue eligibility.
+
+However, the firm's stated goals are explicitly aggressive: a 3x revenue
+jump to $500K/mo within the stated (already-passed) short-term window, plus
+a $100M/year long-term vision. Per the Marketing Tier table, "$1M+
+aggressive goals" maps to Dominate — a goals-based path distinct from
+Platinum's revenue-only path. Boundary rule confirms: "If the firm's goals
+are aggressive... move to the higher tier" (from Growth to Dominate).
+
+CORRECTION: Marketing tier downgraded from Platinum to Dominate.
+
+Coaching tier: package_decision.json selected Master's Circle but flagged
+"team 10+ but no dedicated ops detected — verify with sales rep." Research
+notes show no dedicated ops/marketing/intake role — to the contrary, Austin
+(the owner) personally handles payment collection and file opening himself,
+and sales tracking is manual and inaccurate (tracked in Apple Notes). This is
+direct evidence AGAINST a dedicated ops function existing. Per eligibility
+filter: "No dedicated ops, marketing, or intake team member → hide all
+Master's Circle options."
+
+CORRECTION: Coaching tier downgraded from Master's Circle to Elite Coach Plus.
+
+=======================================================================
+MANDATORY PRICE LOOKUP (character-by-character from audit-write.md tables)
+=======================================================================
+Marketing package selected: Full Service Marketing — Dominate
+  - Bundled price (from table): $10,497/mo
+  - Stand-alone price (from table): $12,497/mo
+  - Savings: $2,000/mo
+
+Non-marketing package selected: Elite Coach Plus
+  - Bundled price (from table): $3,200/mo
+  - Stand-alone price (from table): $3,497/mo
+  - Savings: $297/mo
+
+Legal AI Workforce (LAW) package selected: none — no AI-readiness signal in
+transcript; not a default recommendation.
+
+AI Avatar / Video Growth add-on selected: none — no interest in
+video/social content expressed on the call.
+
+Total monthly investment: $10,497 + $3,200 = $13,697/mo
+Total savings: $2,000 + $297 = $2,297/mo
+
+=======================================================================
+35% REVENUE CAP CHECK
+=======================================================================
+Monthly revenue stated as a range ($200K–$280K/mo). Using the conservative
+(low) end for the cap check: $200,000/mo × 35% = $70,000/mo maximum total
+SMB spend (management fees + ad spend).
+Available ad spend under cap = $70,000 − $13,697 (mgmt fees) = $56,303/mo.
+This is the binding constraint on the aggressive ad spend figure below —
+tighter than the Dominate tier's own $75,000/mo ad spend cap.
+
+=======================================================================
+AD SPEND CALCULATION — CONSERVATIVE
+=======================================================================
+Practice area: Immigration. LSA is not available to Canadian law firms
+(confirmed in research notes) — omitted from channel mix entirely.
+Recommended channels: Google PPC (continue/rebuild) + Meta Retargeting
+(warm-audience only — deliberately NOT Meta cold Lead Gen, given the
+transcript's 2025 Meta experience: 3x ROAS but low-quality leads that
+burned out the intake team).
+
+Conservative = Google PPC min ($3,000) + Meta Retargeting min ($1,200) = $4,200/mo
+
+=======================================================================
+AD SPEND CALCULATION — AGGRESSIVE
+=======================================================================
+20% Rule: Revenue Goal ($500K/mo × 12 = $6,000,000/yr) × 20% ÷ 12 = $100,000/mo
+  × Geographic multiplier: Toronto has no direct entry in the US-market
+    tier tables; given its DMA-equivalent scale (~6.5M metro) and the
+    research notes' own finding of CAD $35–$85 CPC for Toronto immigration
+    keywords (consistent with Tier-1 pricing), a Tier 1 (1.5x) multiplier
+    is used as the best available analog.
+  = $100,000 × 1.5 = $150,000/mo
+  − Marketing management fee ($10,497) = $139,503/mo available (20% rule)
+
+Reverse math validation: transcript directly states the firm's own required
+lead volume — "2,000 leads/mo needed to hit the $500K/mo revenue target."
+Per transcript-first principle, this stated figure is used directly rather
+than re-derived from default case value/close rate assumptions (which would
+have implied a lower ~741 leads/mo).
+  Blended CPL (80% Google Search / 20% Meta Retargeting, Immigration
+  client-facing midpoints: Google Search ~$97.50, Meta Retargeting ~$57.50)
+  = (0.8 × 97.50) + (0.2 × 57.50) = $89.50/lead
+  Required ad spend = 2,000 × $89.50 ≈ $179,000/mo
+
+Reverse math ($179,000) > 20% rule ($139,503) → use reverse math per
+methodology ("use whichever is higher"). This confirms the firm's stated
+lead-volume goal is aggressive relative to what current revenue can support.
+
+Both far exceed the Dominate tier cap ($75,000/mo) AND the 35% revenue cap
+($56,303/mo available). Per Step 3H, when calculated spend exceeds the tier
+cap, either upgrade tier or note the overage. Platinum is not eligible here
+(requires actual $3M+ revenue, not just aggressive goals — see eligibility
+table), so tier upgrade is not available. The 35% cap is the binding,
+non-negotiable constraint (protecting the firm from overcommitting relative
+to today's actual revenue).
+
+AGGRESSIVE AD SPEND (used in report) = $56,000/mo (rounded down from the
+$56,303 cap headroom).
+
+Disclosed in the audit: as monthly revenue grows — including from the
+returns this ad spend itself generates — available ad spend room under the
+35% guardrail grows with it, and Phase 4 of the roadmap revisits a tier
+upgrade once revenue crosses $3M/year (Platinum eligibility threshold).
+
+Present as: "$4,200 – $56,000/month"
+
+=======================================================================
+ROI PROJECTIONS
+=======================================================================
+Average case value: not stated in transcript — using Immigration default
+midpoint ($3,000–$6,000 range) = $4,500, disclosed as an estimate.
+Close rate: not stated — default 15% per methodology, disclosed as an estimate.
+Blended CPL (no cushion, aggressive calc): $89.50 ≈ $90
+Blended CPL (with 20% cushion, conservative calc): $90 × 1.20 = $108
+
+CONSERVATIVE ($4,200/mo):
+  Leads = 4,200 ÷ 108 ≈ 39/mo
+  Cases = 39 × 15% ≈ 6/mo
+  Revenue = 6 × $4,500 ≈ $27,000/mo
+  Return = $27,000 ÷ $4,200 ≈ 6.4x
+
+AGGRESSIVE ($56,000/mo):
+  Leads = 56,000 ÷ 90 ≈ 622/mo
+  Cases = 622 × 15% ≈ 93/mo
+  Revenue = 93 × $4,500 ≈ $418,500/mo
+  Return = $418,500 ÷ $56,000 ≈ 7.5x
+
+Honest note for the report: even at the aggressive level supportable by
+today's revenue, projected ad-driven revenue (~$418,500/mo) lands just
+under the firm's full $500K/mo goal — the remaining gap closes as revenue
+growth itself unlocks more ad spend room under the 35% cap, and as the
+firm graduates to a higher marketing tier (Phase 4 of the roadmap).
+
+=======================================================================
+DBM STATEMENT (Block 1)
+=======================================================================
+Dominant Buying Motive: financial freedom and the ability to travel
+frequently — freed from low-value admin work (payment collection, file
+opening) to focus on strategy, blended with an explicit ambition to scale
+and dominate the market (stated $100M/year long-term vision).
+
+Block 1 formula: "We help fast-growing Canadian immigration firms get a
+reliable, professionally managed lead generation engine and a delegated
+admin function so they can free the owner from day-to-day paperwork and
+pursue aggressive, market-dominating growth."
+
+=======================================================================
+QUICK WIN OPPORTUNITIES (7 identified)
+=======================================================================
+1. [Lead Gen / Quick Win] No performance reporting from current agency —
+   week-to-week revenue swings ($37K vs $111K) with no visibility into why.
+   No named competitor (agency-side issue).
+2. [Lead Gen / Long-Term] Review volume gap vs. established competitors —
+   Green & Spiegel (1,182), Matkowsky (846), Kingwell (390) all dwarf
+   Mandall's unconfirmed-but-likely-small review count for a 22-month-old firm.
+3. [Lead Gen / Quick Win] Single paid channel dependency — no LSA available
+   in Canada, no active Meta presence, 100% of paid lead volume rides on one
+   inconsistent Google Ads account. Competitor: Matkowsky runs diversified
+   Google + Microsoft remarketing.
+4. [Intake / Quick Win] 75–90 day file completion time vs. an ideal 2–3
+   weeks — directly delays the second retainer payment and drags cash flow.
+5. [Intake / Quick Win] Manual, inaccurate sales tracking in Apple Notes —
+   no visibility into true lead-to-client conversion.
+6. [Team / Long-Term] Owner personally handles payment collection and file
+   opening — no delegation of low-value admin work.
+7. [Profit / Long-Term] Profits sit at healthy 55–60% margins but are not
+   strategically reinvested — no profit plan translating margin into growth.
+
+=======================================================================
+FIRST 90 DAYS
+=======================================================================
+1. Launch a rebuilt, fully reported Google Ads account across all
+   Canadian immigration service lines (work permits, PR/Express Entry,
+   study permits, visitor visas, citizenship) — the $37K-vs-$111K weekly
+   swings stop being a mystery from Day 1.
+2. Launch Meta retargeting (warm-audience only, learning from the 2025
+   cold-lead experience) to recapture visitors who did not convert.
+3. Confirm PageSpeed and live GBP/review numbers during onboarding and
+   begin a systematic review-generation program to start closing the gap
+   with Green & Spiegel, Matkowsky, and Kingwell.
+4. Coaching kickoff with Austin: build a delegation plan to move payment
+   collection and file opening off his desk and onto a defined team role.
+5. Stand up a real sales/lead tracking system to replace Apple Notes —
+   the foundation for reliable reporting on the new ad spend.
