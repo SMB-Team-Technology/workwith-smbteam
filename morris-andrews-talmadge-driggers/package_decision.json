@@ -1,0 +1,41 @@
+{
+  "confidence": "corrected",
+  "revenue_stated": "$4-6M/year",
+  "revenue_effective": 5000000,
+  "revenue_source": "transcript (explicit statement, Step 9 transcript extraction: \"Annual revenue: $4-6M/year (stated range)\")",
+  "revenue_label": "$4M - $6M",
+  "team_size_stated": "5 attorneys (4 partners, 1 associate) + 6.5 support staff, 2 offices",
+  "team_size_effective": 11.5,
+  "practice_areas_detected": [
+    "personal injury — car accidents",
+    "truck accidents",
+    "motorcycle accidents",
+    "construction accidents",
+    "workplace injuries",
+    "workers' compensation"
+  ],
+  "marketing_tier": "Platinum",
+  "marketing_name": "Full Service Marketing — Platinum",
+  "marketing_price_bundled": 15997,
+  "marketing_price_retail": 18997,
+  "marketing_savings": 3000,
+  "marketing_ad_spend_cap": 150000,
+  "coaching_name": "FCOO Advisor",
+  "coaching_price_bundled": 3297,
+  "coaching_price_retail": 3797,
+  "coaching_savings": 500,
+  "law_tier": null,
+  "total_bundled": 19294,
+  "total_savings": 3500,
+  "ad_spend_conservative": 17500,
+  "ad_spend_aggressive": 125000,
+  "selection_notes": [
+    "CORRECTED from prior pipeline run: original decision used HubSpot-derived revenue estimate ($961K-$3M / $1,980,500 effective), which produced Growth tier + Master's Circle. Research notes explicitly state 'Annual revenue: $4-6M/year (stated range)' in Step 9 transcript extraction — this is a directly stated figure, not an estimate, and supersedes the HubSpot deal-field estimate.",
+    "Revenue $4-6M is $3M+: Platinum marketing tier ($15,997/mo bundled, $18,997 standalone, $150K ad spend cap). Also matches firm's stated aggressive goal ($10M+ target).",
+    "Master's Circle ELIMINATED per eligibility filter: 'No dedicated ops, marketing, or intake team member -> hide all Master's Circle options.' Transcript confirms the intake specialist role is vacant (paralegals doing intake as overflow) and there is no dedicated ops person -- that is precisely why the firm is asking for a fractional COO. Partners also explicitly said group coaching is not preferred ('preferred over group coaching, which partners are unlikely to attend').",
+    "FCOO Advisor selected as the non-marketing package: only individually-priced FCOO SKU in the approved table ($3,297/mo bundled, $3,797/mo standalone). FCOO Director/Partner have no standalone-alone bundled price in the approved tables (only appear inside Master's Circle combo rows), so recommending them alone would require estimating a price -- not permitted under Price Integrity rules. Flag for sales: firm's scale (2 offices, 11.5 staff) may warrant scoping a higher FCOO tier in conversation.",
+    "Ad spend conservative = sum of MVA channel minimums (Google PPC $10,000 + Meta Retargeting $1,500 + Meta Lead Gen $6,000) = $17,500/mo.",
+    "Ad spend aggressive: 20% rule on $10M goal = $166,667/mo; reverse-math against full $10M goal implies ~$300K/mo, both of which exceed the 35%-of-monthly-revenue total-spend cap (~$145,833/mo minus $19,294 mgmt fees = ~$126,539/mo ad spend ceiling). Recommending $125,000/mo as the responsible aggressive figure -- capped by the 35% rule, not by the Platinum tier's $150K cap. Reaching the full $10M goal will require referral-channel growth and the FCOO-led operational scale-up in addition to paid ads alone.",
+    "ESCALATION (internal only, not in client report): Marketing MRR $15,997 > $10K -- scoping approval required. Aggressive ad spend $125,000 > $25K -- scoping approval required."
+  ]
+}

@@ -1,0 +1,167 @@
+SECTION 11 — WORKINGS
+Morris, Andrews, Talmadge & Driggers LLC — July 24, 2026
+
+===================================================================
+REVENUE / PACKAGE CORRECTION (read this first)
+===================================================================
+
+The pipeline's package_decision.json (Run 1) selected packages using a
+HubSpot deal-field estimate: "$961K - $3M" -> $1,980,500 effective, medium
+confidence. That produced: Growth marketing tier + Master's Circle coaching.
+
+Re-reading the research notes before writing this section surfaced a
+directly stated revenue figure that the pipeline's estimate did not use:
+
+  Step 9 — Transcript Extraction: "Annual revenue: $4-6M/year (stated range)"
+
+This is an explicit, transcript-sourced figure, not an estimate — it
+supersedes the HubSpot deal-field number per the transcript-first principle.
+Using $4-6M (effective ~$5M) changes the correct tier selection materially:
+
+1. MARKETING TIER: Revenue $4-6M falls in the "$3M+" band -> Platinum, not
+   Growth. This also matches the firm's own stated aggressive goal ($10M+).
+
+2. NON-MARKETING PACKAGE: Re-checking the Team eligibility filter — "No
+   dedicated ops, marketing, or intake team member -> hide all Master's
+   Circle options" — the transcript confirms MCAT has NO dedicated intake
+   person (the intake specialist role is vacant; paralegals absorb intake
+   as overflow) and NO ops person (that is precisely why they are asking
+   for a fractional COO). Master's Circle is therefore INELIGIBLE, contrary
+   to the original pipeline decision's assumption of "dedicated ops."
+   The partners were also explicit on the call that they prefer an operator
+   over group coaching, which they said partners are unlikely to attend.
+   FCOO Advisor is selected instead — the only individually-priced FCOO SKU
+   in the approved tables (FCOO Director/Partner only have prices listed
+   inside Master's Circle combo rows, so recommending them standalone would
+   require estimating a price, which Price Integrity rules forbid).
+
+package_decision.json has been updated in the firm folder to reflect this
+correction.
+
+===================================================================
+MANDATORY PRICE LOOKUP (character-for-character from audit-write.md tables)
+===================================================================
+
+- Marketing package selected: Full Service Marketing — Platinum
+  - Bundled price (from table): $15,997/mo
+  - Stand-alone price (from table): $18,997/mo
+  - Savings (stand-alone minus bundled): $3,000/mo
+  - Ad spend cap (from table): $150,000/mo
+
+- Non-marketing package selected: FCOO Advisor
+  - Bundled price (from table): $3,297/mo
+  - Stand-alone price (from table): $3,797/mo
+  - Savings (stand-alone minus bundled): $500/mo
+
+- Legal AI Workforce (LAW) package selected: none (no signal of AI
+  readiness in the transcript; not forced)
+
+- AI Avatar / Video Growth add-on selected: none (requires Alexis approval
+  and no signal firm has studio setup / established organic social; not
+  proposed)
+
+- Total monthly investment (sum of bundled/recurring prices): $19,294/mo
+- Total savings (sum of all savings): $3,500/mo
+
+===================================================================
+AD SPEND — CONSERVATIVE AND AGGRESSIVE
+===================================================================
+
+Practice area used for channel minimums: MVA / Car Accidents (the firm's
+core caseload — car, truck, motorcycle accidents).
+
+CONSERVATIVE = sum of channel minimums (Google PPC $10,000 + Meta
+Retargeting $1,500 + Meta Lead Gen $6,000) = $17,500/mo.
+(Satisfies PI hard floor for High competitiveness, $10,000 min.)
+
+AGGRESSIVE:
+- 20% rule: Revenue GOAL $10,000,000 x 20% / 12 = $166,667/mo baseline.
+  Geo multiplier: Dothan/Mobile AL = Tier 4 "most mid-size cities" (1.0x).
+  No Spanish campaign. Minus Platinum mgmt fee ($15,997) = $150,670
+  available ad spend under the 20% rule.
+- Reverse math: $10M goal / 12 = $833,333/mo target revenue. Avg case
+  value not stated in transcript — using disclosed default $7,500
+  (midpoint of MVA $5K-$10K range, this firm's mix skews higher due to
+  truck/construction/workplace claims). Target cases = 111/mo. Close rate
+  not stated — default 15% -> ~741 leads/mo required. Blended CPL (Google
+  Search 57% / Meta retargeting 9% / Meta cold 34% weighting, midpoints) ~
+  $468, no cushion -> ~$346,900/mo required spend.
+- Reverse math ($346,900) > 20% rule ($150,670) -> reverse math governs per
+  rule, but BOTH exceed the Platinum tier cap ($150,000) AND the 35%-of-
+  revenue total spend cap.
+- 35% CAP CHECK (binding constraint): Monthly revenue ~$5M/12 = ~$416,667.
+  35% = ~$145,833 max total SMB spend (mgmt fees + ad spend). Fixed mgmt
+  fees = $19,294 (Platinum + FCOO Advisor) -> max ad spend for cap
+  compliance = ~$126,539/mo.
+- RECOMMENDATION: $125,000/mo aggressive ad spend — capped by the 35%
+  total-spend rule, comfortably under the Platinum tier's own $150,000 cap.
+  Reaching the full $10M goal purely through paid ads at a responsible
+  spend level is not realistic in year one; hitting $10M+ will require
+  continued referral-channel strength plus the FCOO-led operational
+  scale-up in addition to paid growth. This nuance is reflected in the
+  Phase 2/3 roadmap in section_11_next_steps.html, not stated as a
+  guarantee anywhere in the client-facing copy.
+
+CONSERVATIVE ROI PROJECTION ($17,500/mo):
+- Blended CPL with 20% conservative cushion: ~$468 x 1.2 = ~$562
+- Leads = $17,500 / $562 ~= 31/mo
+- Cases = 31 x 15% close rate ~= 5/mo
+- Revenue = 5 x $7,500 avg case value = $37,500/mo
+- Return = $37,500 / $17,500 = 2.1x
+
+AGGRESSIVE ROI PROJECTION ($125,000/mo):
+- Blended CPL, no cushion: ~$468
+- Leads = $125,000 / $468 ~= 267/mo
+- Cases = 267 x 15% close rate ~= 40/mo
+- Revenue = 40 x $7,500 avg case value = $300,000/mo
+- Return = $300,000 / $125,000 = 2.4x
+
+All figures disclosed to the client as estimates using an assumed 15%
+close rate and $7,500 average case value (neither stated in transcript).
+
+===================================================================
+DBM
+===================================================================
+
+Dominant Buying Motive: "Scale and dominate." The partners operate as
+"four chiefs" with individual practices under shared overhead; the
+explicit goal is proving ROI on a strategic growth investment to unlock
+partner buy-in for further scaling, targeting high-value "Black Belt"
+venues to become the dominant regional PI brand — not simply to free up
+personal time.
+
+===================================================================
+QUICK WIN OPPORTUNITIES (7 identified, all 4 pillars covered)
+===================================================================
+
+1. [Lead Gen / Quick Win] Fix the broken mcatlaw.com domain
+2. [Lead Gen / Quick Win] Verify + rebuild the Dothan Google Business Profile (competitor: Stokes Stemle, LLC)
+3. [Lead Gen / Long-Term] Clean up NAP inconsistencies across directories
+4. [Intake / Quick Win] Fill the vacant intake specialist role / stand up a dedicated intake team
+5. [Team / Long-Term] Bring in a fractional COO to unify the "four chiefs" model
+6. [Profit / Long-Term] Build a profit plan that funds growth from new revenue, not partner take-home
+7. [Lead Gen / Quick Win] Launch tracked Google + Meta campaigns targeting "Black Belt" venues (competitor: The Cochran Firm — Dothan)
+
+===================================================================
+FIRST 90 DAYS
+===================================================================
+
+1. Launch tracked Google Ads and Meta campaigns for both Dothan and Mobile, targeting high-value Black Belt venues
+2. Verify the Dothan Google Business Profile and correct the address and photos on both office GBPs
+3. Fix the broken mcatlaw.com domain so referral traffic and branded searches land on a working page
+4. Clean up NAP inconsistencies across Avvo, FindLaw, and other directories, retiring the old "Morris, Cary, Andrews, Talmadge & Driggers" name
+5. Kick off the FCOO engagement and begin building the dedicated intake team to end the paralegal intake bottleneck
+
+===================================================================
+ESCALATION FLAGS (INTERNAL ONLY — do not appear in client report)
+===================================================================
+
+- Marketing MRR $15,997 > $10,000 -> scoping approval required
+- Aggressive ad spend $125,000 > $25,000 -> scoping approval required
+- Revenue goal ($10M) exceeds what a responsibly-capped ad spend can
+  project in year one -> paid ads team review recommended; roadmap frames
+  $10M+ as multi-phase, not a year-one guarantee
+- PageSpeed mobile/desktop scores were never captured (Google API daily
+  quota exceeded, confirmed again this session) — recommend a manual
+  pagespeed.web.dev run on https://www.injurylawamerica.com/ before the
+  sales call if precision matters
