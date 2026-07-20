@@ -221,7 +221,7 @@ Save to `[friendly-name]/sections/section_executive_summary.html`.
 
 ## PRICE INTEGRITY — CRITICAL
 
-The prices in the tables below are the ONLY approved prices. Do not estimate, round, interpolate, or use any number not listed here. Every dollar figure in the client report must come from one of the approved pricing tables below (Marketing, Non-Marketing, Legal AI Workforce, or AI Avatar). The example numbers in HTML template comments are illustrative only — do not use them as actual prices.
+The prices in the tables below are the ONLY approved prices. Do not estimate, round, interpolate, or use any number not listed here. Every dollar figure in the client report must come from one of the approved pricing tables below (Marketing, Non-Marketing, Legal AI Workforce, AI Avatar, Bookkeeping, OmniSocial AI, or Attorney Assistant). The example numbers in HTML template comments are illustrative only — do not use them as actual prices.
 
 ---
 
@@ -377,6 +377,78 @@ Note: Standalone setup fee ($6,000) may be waived if firm demonstrates a legitim
 
 ---
 
+### SELECT BOOKKEEPING PACKAGE
+
+Bookkeeping pairs with any active package as a standalone recurring engagement. Recommend when the firm has no dedicated bookkeeper or financials are disorganized — typically a Phase 3 (Optimize) roadmap addition, not a Phase 1 recommendation, unless financials are in immediate crisis.
+
+**Bookkeeping Tiers:**
+
+| Revenue | Level | Bundled Price | Setup Fee (non-waivable) |
+|---|---|---|---|
+| Under $1M | Level 1 | $1,697/mo | $1,500 |
+| $1M–$2.9M | Level 2 | $2,197/mo | $2,000 |
+| $3M–$3.9M | Level 3 | $3,497/mo | $2,500 |
+| $4M+ | Level 4 | Custom | Custom |
+
+Each tier includes 2 hours/month of Controller Services in addition to monthly bookkeeping. The setup fee covers one quarter's worth of clean-up and reconciliation; additional cleanup time bills at $75/hr. Bookkeeping is the only product line where the setup fee can never be waived.
+
+**AR/AP/Payroll Add-On** (requires an active Bookkeeping engagement at the matching level):
+
+| Add-On Level | Requires | Additional Hours/mo | Revenue Band |
+|---|---|---|---|
+| Level 1 | Bookkeeping Level 1 | +12 hrs/mo | Under $1M |
+| Level 2 | Bookkeeping Level 2 | +25 hrs/mo | $1.5M–$2.9M |
+| Level 3 | Bookkeeping Level 3 | +45 hrs/mo | $3M–$3.9M |
+
+Add-on pricing is custom-scoped — never quote a dollar figure for it in the client report. Flag "AR/AP/Payroll add-on interest — requires custom scoping" in research notes instead.
+
+**When to recommend:** Firm has no bookkeeper, financials are disorganized, or the owner has no visibility into cash position. Add AR/AP/Payroll only if the firm explicitly needs help with receivables, payables, or running payroll beyond standard bookkeeping.
+
+---
+
+### SELECT OMNISOCIAL AI ADD-ON
+
+OmniSocial AI covers paid and organic social/video content, separate from the Full Service Marketing package. Most tiers are upgrade-only for existing marketing clients — only the 360 bundle can be sold standalone to a new client. Requires a 12-month minimum term.
+
+**Escalation: every OmniSocial AI proposal requires sales-ops approval with a 72-hour turnaround.** Do not promise same-day terms — flag in research notes.
+
+**OmniSocial AI Pricing:**
+
+| Package | Price | Notes |
+|---|---|---|
+| Content – Standard | $1,797/mo | Existing-client upgrade only |
+| Content – Pro | TBD | Existing-client upgrade only — confirm current price with sales ops before quoting |
+| Ads – Starter | $1,297/mo | Up to $5K ad spend. Existing-client upgrade only |
+| Ads – Growth | $1,797/mo | $5K–$10K ad spend. Existing-client upgrade only |
+| Ads – Dominate | $2,497/mo | $10K–$25K ad spend. Existing-client upgrade only |
+| Ads – Platinum | $3,997/mo | $25K–$50K ad spend. Existing-client upgrade only |
+| OmniSocial AI 360 (Content + Ads bundle) | Combined tier price minus $350/mo bundle discount | Sellable standalone to new clients |
+| "Omni Total Ads" | Concept — TBD/custom | Not yet a sellable product; do not offer |
+
+**When to recommend:** Firm is already an active SMB marketing client and wants a dedicated paid/organic social presence beyond what their Full Service Marketing package includes. For net-new prospects, only the 360 bundle is available — never offer a single Content or Ads tier standalone to a new client.
+
+---
+
+### SELECT ATTORNEY ASSISTANT (AI INTAKE AGENT) ADD-ON
+
+Attorney Assistant is a volume-priced AI intake agent (IA) product — priced per seat, not a flat fee. Recommend when the firm's intake volume or after-hours coverage is a clear bottleneck.
+
+**Attorney Assistant Pricing (per IA, USD/month):**
+
+| # of IAs | Starting Price/IA | After Day 60 Price/IA (applies to all IAs) |
+|---|---|---|
+| 1–4 | $2,145 | $2,000 |
+| 5–9 | $2,145 | $1,975 |
+| 10–19 | $2,000 (for IAs 10+) | $1,950 |
+| 20–49 | $1,900 (for IAs 20+) | $1,875 |
+| 50+ | Custom | Custom |
+
+**Contract terms:** Technically a 12-month agreement, but includes a 60-day no-questions-asked opt-out. After day 60, cancellation requires 30 days' notice — functions as month-to-month after the first 60 days. This is the one product line where "Clients Can Pivot, But Cannot Cancel" does not strictly apply after day 60.
+
+**When to recommend:** Firm has intake volume or after-hours gaps that a human team can't cover cost-effectively. No documented revenue floor for this product — if fit is unclear, flag "Attorney Assistant fit — confirm qualification with sales rep" rather than guessing.
+
+---
+
 ### AD SPEND CALCULATION — CONSERVATIVE AND AGGRESSIVE
 
 Always present ad spend as a range: **Conservative (low end) to Aggressive (high end).**
@@ -451,6 +523,9 @@ Note these in the research notes file for the sales team. Do not include in the 
 - Revenue goal exceeds projected ad revenue → paid ads team review
 - Any AI Virtual Video Growth / AI Avatar package → Alexis approval required
 - Any Legal AI Workforce (LAW) package → confirm with sales rep that LAW delivery has launched and capacity is available before including in proposal
+- Any OmniSocial AI package → sales-ops approval required, 72-hour turnaround
+- AR/AP/Payroll Bookkeeping add-on → custom scoping required, never price in the client report
+- Attorney Assistant fit unclear → confirm qualification with sales rep before including in proposal
 
 ---
 
