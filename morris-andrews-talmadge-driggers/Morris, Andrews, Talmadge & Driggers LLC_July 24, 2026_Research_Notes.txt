@@ -1,0 +1,244 @@
+RESEARCH NOTES
+Firm: Morris, Andrews, Talmadge & Driggers LLC
+Friendly Name: morris-andrews-talmadge-driggers
+URL provided: http://Mcatlaw.com
+Sales Rep: Jacob Meissner
+Date: July 24, 2026
+Contact: Joey Morris (jamorris@mcatlaw.com)
+
+===================================================================
+STEP 1 — WEBSITE RESEARCH
+===================================================================
+
+IMPORTANT FINDING — URL PROVIDED DOES NOT RESOLVE:
+- http://Mcatlaw.com / https://mcatlaw.com returns HTTP 200 but serves only an
+  error page: "Error. Page cannot be displayed. Please contact your service
+  provider for more details." Confirmed via direct request — this is not a
+  temporary glitch, the domain is live but misconfigured/parked.
+- The firm's actual working website was located at: https://www.injurylawamerica.com/
+  (their internal email domain reception@mcatlaw.com still uses the old domain,
+  but the public-facing site has moved to injurylawamerica.com). All website
+  research below was performed on injurylawamerica.com since that is the site
+  prospective clients actually land on when searching.
+- This is itself a notable finding: the firm's own primary domain (mcatlaw.com)
+  is broken for anyone who types or clicks it directly — a lost-lead risk worth
+  flagging in the audit.
+
+- Website URL confirmed live: yes (injurylawamerica.com) / no (mcatlaw.com — broken/parked)
+- Last redesign date or estimated age: not stated on site; copyright year shows 2026, suggesting active maintenance. No explicit redesign date found.
+- Mobile responsive: yes — viewport meta tag present, responsive nav (hamburger menu) confirmed
+- Homepage headline: "We Fight To Win Your Case" (subheadline: "Alabama's Premier Personal Injury Firm")
+- CTA above fold: yes — "Schedule a Free Consultation" button, plus phone numbers 844.654.6228 and (888) 694-0174 displayed prominently
+- Contact form location: buried — mid-page, after the "Why Hire Us" section, not above the fold
+- Live chat present: no
+- Attorney bio present: yes — 5 attorneys featured (S. Mark Andrews, Cory H. Driggers, Joseph A. Morris, Joseph Dan Talmadge Jr., Par Gilmore) with individual profile pages
+- Video present: yes — video section referenced in navigation
+- Blog present: yes — active, recent posts found (as recently as June/July 2025)
+
+PageSpeed scores:
+- PageSpeed mobile score: NOT CAPTURED — Google PageSpeed Insights API returned
+  HTTP 429 "Quota exceeded for quota metric 'Queries' and limit 'Queries per
+  day'" on repeated attempts (confirmed hard daily quota, not transient — retried
+  twice). Per the transcript-first rule this must be a real verified number, so
+  it is intentionally left unfilled rather than estimated. FLAG FOR MANUAL
+  FOLLOW-UP before Pass 2 (audit-write): run pagespeed.web.dev manually on
+  https://www.injurylawamerica.com/ (mobile + desktop) and drop the two scores
+  into this file before generating the report.
+- PageSpeed desktop score: NOT CAPTURED — same reason as above.
+
+===================================================================
+STEP 2 — GOOGLE BUSINESS PROFILE
+===================================================================
+
+NOTE: Direct Google Search / Google Maps scraping was blocked by the research
+tooling this session (Google returns a bot-check/error page to automated
+fetches). The figures below rely on (a) the discovery call transcript, taken
+the same week as this research, and (b) third-party aggregator sites that
+mirror Google data. They were NOT independently re-verified against live
+Google Maps this session — flag for a manual live check before the call if
+precision matters.
+
+- GBP found: yes (per transcript — two profiles, one per office)
+- Star rating: 4.3 (main GBP, per transcript)
+- Total review count: 3 (main GBP, per transcript) — very low for a firm of this size and tenure
+- Most recent review date: not independently verified this session
+- Primary category: Personal Injury Attorney (inferred from practice focus; exact GBP category string not independently confirmed)
+- Photos active: no — transcript notes outdated photos on the profile
+- Posts active: not observed
+- Additional finding (from transcript): the Dothan office GBP is unverified by
+  Google, which blocks that location from local search visibility entirely —
+  a significant, fixable gap.
+- Additional finding: transcript notes the GBP also has the wrong address listed.
+
+===================================================================
+STEP 3 — LOCAL 3-PACK SEARCHES
+===================================================================
+
+NOTE: Live Google local-pack rendering was not accessible to the research
+tooling this session (Google blocks automated fetches of search results
+pages). The competitor set below was compiled via web search of the Dothan
+and Mobile PI markets and cross-referenced against directory/review
+aggregator data. Positions ("appears in pack: yes/no") could not be
+independently confirmed live — treat firm-visibility calls below as directional,
+consistent with the transcript's own description of a "severely underperforming"
+online presence, and re-verify locally before the call if precision matters.
+
+Practice Area 1: Personal Injury / Car Accidents (Dothan)
+- Search 1 "car accident lawyer Dothan AL": firm not confirmed appearing — competitors surfacing prominently: The Cochran Firm – Dothan (66 reviews, 4.7), Stokes Stemle, LLC (119 reviews, 4.9), Dothan Law Group
+- Search 2 "personal injury lawyer Dothan AL": firm not confirmed appearing — competitors: The Cochran Firm – Dothan, Stokes Stemle LLC, Boles Holmes White LLC
+- Search 3 "truck accident attorney Dothan AL": firm not confirmed appearing — competitors: The Cochran Firm – Dothan, Stokes Stemle LLC
+
+Practice Area 2: Personal Injury / Car Accidents (Mobile)
+- Search 1 "car accident lawyer Mobile AL": firm not confirmed appearing — competitors: Andy Citrin Injury Attorneys (144 reviews, 4.7), Moore Law Firm (30 Google reviews, 5.0), Long & Long Attorneys at Law
+- Search 2 "personal injury lawyer Mobile AL": firm not confirmed appearing — competitors: Andy Citrin Injury Attorneys, Moore Law Firm
+- Search 3 "wrongful death lawyer Mobile AL": firm not confirmed appearing — competitors: Andy Citrin Injury Attorneys, Moore Law Firm
+
+===================================================================
+STEP 4 — COMPETITOR REVIEW COUNTS
+===================================================================
+
+Verified via web search / aggregator sites (Birdeye, Yelp, firm-hosted Google
+review widgets) — not pulled live from Google Maps directly this session, see
+Step 2/3 note. Prospect's main GBP has only 3 reviews per transcript, so no
+competitor listed below risks contradicting the "prospect has more" rule.
+
+- Competitor 1: The Cochran Firm – Dothan — reviews: 66 — rating: 4.7
+- Competitor 2: Stokes Stemle, LLC (Dothan) — reviews: 119 — rating: 4.9
+- Competitor 3: Andy Citrin Injury Attorneys (Mobile) — reviews: 144 — rating: 4.7
+- Competitor 4: Moore Law Firm (Mobile) — reviews: 30 (Google Reviews specifically) — rating: 5.0
+
+===================================================================
+STEP 5 — DIRECTORY LISTINGS
+===================================================================
+
+Checked: Avvo, Justia, FindLaw, Yelp, Martindale, Super Lawyers.
+
+- Yelp: listed separately for Dothan (3334 Ross Clark Cir, 11 photos) and Mobile (169 Dauphin St) offices
+- Avvo: listed under an older firm name — "Morris, Cary, Andrews, Talmadge & Driggers, LLC" — NAP inconsistency (missing name change; "Cary" no longer appears to be part of the current firm name used on the live site or in the transcript)
+- FindLaw: listed with Dothan office, and a separate stale listing under the old "Morris, Cary, Andrews, Talmadge & Driggers" name showing a Montgomery office
+- Justia: general directory presence found, individual firm profile not confirmed
+- Martindale: separate listings for Dothan and Mobile offices, addresses consistent with current site
+- Super Lawyers: individual attorney profiles listed for Fairhope and Mobile — an additional Fairhope address (21 South Section Street Suite 4, Fairhope, AL 36532) surfaced that does not match the two offices (Dothan, Mobile) described in the transcript
+
+NAP INCONSISTENCIES FOUND:
+- Old firm name "Morris, Cary, Andrews, Talmadge & Driggers, LLC" still live on Avvo and at least one FindLaw profile — a name-change cleanup was never pushed across directories
+- Address/location spread is wider online (Dothan, Mobile, Fairhope, and a stale Montgomery reference) than the two offices the firm currently operates (Dothan and Mobile per transcript) — likely legacy attorney profiles from a prior firm configuration
+- Geo-targeted landing pages for surrounding cities: not observed on injurylawamerica.com — no dedicated city/location pages found beyond the main office listings
+
+===================================================================
+STEP 6 — GOOGLE ADS
+===================================================================
+
+NOTE: Live Google SERP ad-slot rendering was not accessible to research tooling
+this session. Framed per the ADS FRAMING RULE — no certainty claims made.
+
+Practice Area 1: Personal Injury / Car Accidents (Dothan)
+- Firm ads observed: not observed
+- Named local competitors running ads: not confirmed live this session — The Cochran Firm and Stokes Stemle both run active digital marketing programs regionally and are plausible paid-search competitors, but specific ad copy could not be captured without live SERP access
+
+Practice Area 2: Personal Injury / Car Accidents (Mobile)
+- Firm ads observed: not observed
+- Named local competitors running ads: Andy Citrin Injury Attorneys and Moore Law Firm both maintain visible regional brand advertising (billboards, digital); specific live ad copy could not be captured without live SERP access
+
+This is consistent with the transcript, which states the firm's only paid
+history is two billboards and a past, untracked Google LSA campaign — the
+firm does not appear to be running ads for these searches today.
+
+===================================================================
+STEP 7 — LOCAL SERVICE ADS
+===================================================================
+
+- Firm appears in LSA: not observed
+- Google Screened: not observed
+- LSA review count: n/a
+- Named local competitors in LSA: not confirmed live this session (LSA panel requires live SERP rendering, which was not accessible to research tooling this session)
+
+Per transcript: the firm ran Google LSAs in the past but did not track results,
+and does not appear to be running LSAs currently.
+
+===================================================================
+STEP 8 — META ADS
+===================================================================
+
+NOTE: Meta Ad Library (facebook.com/ads/library) blocked automated access
+this session (403). Framed per ADS FRAMING RULE.
+
+- Firm has active ads: not observed
+- Named local competitor 1: The Cochran Firm – Dothan — active ads: not confirmed live this session
+- Named local competitor 2: Andy Citrin Injury Attorneys (Mobile) — active ads: not confirmed live this session
+
+The firm's proposed plan (per transcript) is to launch Meta/Google campaigns
+for the first time in a coordinated way — the firm does not appear to be
+running Meta ads today, which lines up with the "does not appear to be
+running ads for this search" framing rather than a certainty claim.
+
+===================================================================
+STEP 9 — TRANSCRIPT EXTRACTION
+===================================================================
+
+- Practice areas confirmed: Personal injury — car accidents, truck accidents, motorcycle accidents, construction accidents, workplace injuries, workers' compensation (per transcript topics discussed; site additionally lists catastrophic injury, nursing home abuse, wrongful death, dog bites, slip & fall, product liability, mass torts)
+- Current lead sources: "80% referral-based (former clients, other attorneys)" — exact quote from transcript
+- Ads ever run: yes — "Limited to two billboards ($2.5-3k/mo) and a past, untracked Google LSAs campaign." No Meta/social ads run historically.
+- Team size: 5 attorneys (4 partners, 1 associate) and 6.5 support staff, across two offices (Dothan & Mobile, AL)
+- Annual revenue: $4-6M/year (stated range)
+- Revenue goal: $10M+ annual revenue — "targeting an extra $2M/year to prove the value of a strategic growth investment to partners"
+- Average case value: not stated — default to practice-area norm for PI (mixed auto/truck/catastrophic injury caseload)
+- Current close rate: not stated — default to 15%
+- Number of locations: 2 (Dothan & Mobile, AL — per transcript)
+- Spanish campaign needed: not stated — no
+- Dominant buying motive: closest inference — "scale and dominate." The partners operate like "four chiefs" with individual practices under shared overhead; the explicit goal is proving ROI on a strategic growth investment to unlock partner buy-in for further scaling, and targeting high-value "Black Belt" venues suggests an ambition to become the dominant regional PI brand rather than simply free up personal time.
+- Any profitability claims made by prospect: "A fixed 35% of revenue is allocated to overhead, with the rest paid to attorneys" — this model "leaves little capital for growth investments" (exact framing from transcript)
+- Any claims about case types or practice areas: "Personal injury (PI) firm established in 1999," handling "a broad spectrum of personal injury cases" per site; transcript specifically discusses targeting high-value "Black Belt" venues in AL (south of a Montgomery-Selma line)
+
+Additional transcript context:
+- Operational bottleneck: paralegals handle intake calls due to a vacant intake specialist role, which delays high-value work (filing lawsuits, sending demands)
+- Proposed solution: multi-channel marketing (Google + Meta, Meta framed as 30-40% cheaper than Google PPC) targeting Black Belt venues, paired with a fractional COO to build systems and hire a dedicated intake team (preferred over group coaching, which partners are unlikely to attend)
+- ROI tracking: call tracking numbers proposed to attribute every lead to source
+
+===================================================================
+STEP 10 — COMPETITIVE URGENCY SCORE
+===================================================================
+
+Score: 7/10
+
+Reasoning: The firm is nearly invisible in the two channels that drive
+predictable PI intake today. Its Dothan GBP is unverified (blocking local
+map visibility entirely), its combined online review footprint (3 reviews)
+is a fraction of what regional competitors carry, and its primary domain
+(mcatlaw.com) is broken. Meanwhile:
+
+- Stokes Stemle, LLC (Dothan) — 119 reviews at 4.9 stars, an established
+  local PI-only brand with a strong review moat the firm cannot currently compete with on trust signals.
+- The Cochran Firm – Dothan — a nationally recognized brand name operating
+  directly in the same downtown Dothan market with 66 reviews and heavy
+  brand recognition from national advertising.
+- Andy Citrin Injury Attorneys (Mobile) — 144 reviews at 4.7 stars and a
+  strong regional paid + organic presence in the Mobile market the firm is also trying to serve.
+
+Matching dynamic sentence (score 7-9): "A score of 7 means competitors are
+actively dominating multiple channels in your market and the gap is getting
+wider every month you wait. This is not a future problem — it is a right
+now problem."
+
+===================================================================
+PASS 2 — VERIFICATION CHECKLIST
+===================================================================
+
+[x] Every number in the notes matches actually observed data (or is clearly flagged as transcript-sourced / not independently re-verified this session, with reason given)
+[x] Every competitor review count has been verified via web search / aggregator cross-reference — prospect's 3-review GBP does not exceed any competitor cited as dominating
+[x] Every ad section covers ALL practice areas / both markets (Dothan and Mobile) listed in the transcript
+[x] No section says "you are not running ads" — only "does not appear to be running" / "not observed"
+[x] No profitability or business claim appears unless it came from the transcript (35% overhead figure, referral %, ad spend history)
+[x] No competitor reference uses generic labels — only specific named local firms (Cochran Firm, Stokes Stemle, Andy Citrin, Moore Law Firm)
+[ ] PageSpeed scores are real numbers — NOT CAPTURED this session (Google API daily quota exceeded); flagged above for manual follow-up before Pass 2
+[x] DBM is recorded (inference: scale and dominate)
+[x] Revenue goal is recorded ($10M+, extra $2M/year)
+[x] Close rate is recorded (not stated — defaulted to 15%)
+[x] Average case value is recorded (not stated — practice-area default noted)
+
+OUTSTANDING ITEM BEFORE /audit-write: PageSpeed mobile + desktop scores need
+a manual pagespeed.web.dev run against https://www.injurylawamerica.com/ and
+should be added to this file. Live Google GBP/SERP/Meta Ad Library figures in
+Steps 2, 3, 6, 7, 8 were compiled from transcript + aggregator cross-reference
+rather than a live Google session and should be spot-checked if precision
+matters for the call.
