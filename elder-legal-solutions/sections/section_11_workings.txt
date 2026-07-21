@@ -1,0 +1,155 @@
+ELDER LEGAL SOLUTIONS — SECTION 11 WORKINGS
+============================================================
+
+REVENUE CORRECTION — READ FIRST
+------------------------------------------------------------
+package_decision.json (confidence: medium) selected revenue_effective = $3,000,000+
+sourced from HubSpot field hubspot_annual_law_firm_revenue, and picked Platinum
+marketing tier + Elite Coach Plus coaching on that basis.
+
+The research notes (transcript, ground truth per audit-write.md "transcript-first
+principle") explicitly state: "Annual revenue: ~$740k/year, growing ~$100–120k
+annually" and "Revenue goal: ... implying a working goal of roughly $940k."
+$740K is nowhere near $3,000,000+ — the HubSpot field appears stale or mismatched
+to this record.
+
+CORRECTION APPLIED: revenue band used = $400K–$1M (actual, from transcript).
+- Marketing tier changed: Platinum ($15,997/mo) -> Starter ($4,847/mo).
+  Eligibility rule "Under $1M -> hide Dominate and Platinum marketing tiers"
+  confirms Platinum is not eligible at this revenue.
+- Coaching tier unchanged: Elite Coach Plus ($3,200/mo bundled) is correct at
+  both the $400K–$1M band and the $1M+/under-5-team band, so the pipeline's
+  selection happened to still be right.
+- Ad spend conservative/aggressive recalculated from scratch against the
+  corrected revenue and goal (see below) rather than using the pipeline's
+  $3,500 / $14,000 figures, which were sized off the wrong revenue base.
+
+MANDATORY PRICE LOOKUP (character-checked against audit-write.md tables)
+------------------------------------------------------------
+Marketing package selected: Full Service Marketing — Starter
+  - Bundled price (from table): $4,847/mo
+  - Stand-alone price (from table): $5,697/mo
+  - Savings: $850/mo
+  - Ad spend cap for this tier: $25,000/mo
+
+Non-marketing package selected: Elite Coach Plus
+  - Bundled price (from table): $3,200/mo
+  - Stand-alone price (from table): $3,497/mo
+  - Savings: $297/mo
+
+Legal AI Workforce (LAW) package selected: none — not indicated by any AI
+readiness signal in the transcript; not added.
+
+AI Avatar / Video Growth add-on selected: none — not indicated in the transcript.
+
+Total monthly investment (bundled): $4,847 + $3,200 = $8,047/mo
+Total savings (stand-alone minus bundled): $850 + $297 = $1,147/mo
+
+35% SPEND CAP CHECK
+------------------------------------------------------------
+Monthly revenue = $740,000 / 12 = $61,667
+35% cap = $21,583/mo (management fees + ad spend combined)
+Management fees alone ($8,047) leave up to $13,536/mo of ad spend headroom
+under the cap. Aggressive ad spend below is set at $13,500/mo to respect this.
+
+AD SPEND CALCULATION
+------------------------------------------------------------
+Practice area note: no dedicated "Medicaid & VA Asset Protection" row exists in
+the ad-spend/CPL tables. Estate Planning is used as the closest proxy for both
+this firm's core Medicaid/VA work and its Estate Planning/Probate work — flagged
+as an estimate.
+
+Conservative (channel minimums, Estate Planning row):
+  Google PPC $3,500 + LSA $2,000 + Meta Lead Gen $3,500 = $9,000/mo
+
+Aggressive (20% rule):
+  Revenue goal ~$940,000 x 20% / 12 = $15,667/mo
+  x 1.3 geo multiplier (Fort Lauderdale treated as Tier 2, adjacent to Miami)
+  = $20,367/mo
+  - Starter mgmt fee ($4,847) = $15,520/mo available (unconstrained)
+  Reverse-math check (goal revenue / 12 / case value / close rate x CPL) produced
+  a lower required spend, so the 20% rule governs per methodology.
+  Tier cap check: Starter caps at $25,000/mo — no upgrade triggered.
+  35%-of-revenue guardrail (above) caps usable aggressive spend at ~$13,536/mo;
+  rounded to $13,500/mo. (Unconstrained 20%-rule result was ~$15,500/mo — noting
+  the reduction here for transparency.)
+
+ROI PROJECTIONS
+------------------------------------------------------------
+Average case value: not stated on the call. No Medicaid/VA Asset Protection
+entry exists in the practice-area case-value table; using the Estate Planning
+default ($1.5K–$3K) would imply an unrealistic 200+ cases/year at the firm's
+actual revenue. Instead, a $5,000 blended estimate is used, reflecting that
+60–70% of this firm's revenue comes from higher-complexity Medicaid/VA asset
+protection work rather than simple estate planning — flagged as an estimate
+that should be confirmed against firm invoicing data.
+
+Close rate: the transcript's stated 25–50% (current) / 50–75% (goal) rate
+applies to warm referral leads. Paid-ad leads are colder and convert
+differently, so the audit-write.md default (15%) is used for the conservative
+paid-lead scenario, with a modestly improved 20% for the aggressive scenario
+(assuming the intake fix in this same proposal is in place) — flagged as an
+estimate distinct from the firm's referral close rate.
+
+Blended CPL (Estate Planning row, weighted by conservative channel mix):
+  Google Search mid $135, LSA mid $65, Meta Lead Gen mid $55
+  Weighted (39% Google / 22% LSA / 39% Meta) = ~$88/lead
+  Conservative: +20% cushion = ~$106/lead
+  Aggressive: no cushion = ~$88/lead
+
+Conservative scenario ($9,000/mo ad spend):
+  Leads = 9,000 / 106 ≈ 85/mo
+  Cases = 85 x 15% ≈ 13/mo
+  Revenue = 13 x $5,000 ≈ $65,000/mo
+  Return = ~7.2x
+
+Aggressive scenario ($13,500/mo ad spend):
+  Leads = 13,500 / 88 ≈ 153/mo
+  Cases = 153 x 20% ≈ 31/mo
+  Revenue = 31 x $5,000 ≈ $155,000/mo
+  Return = ~11.5x
+
+Section 11 Block 4 (actual template has one combined roi-row set, not separate
+conservative/aggressive blocks) presents these as ranges:
+  Recommended ad spend: $9,000–$13,500/mo
+  Estimated case value: $5,000
+  Est. cases per month: 13–31 cases
+  Est. monthly revenue from ads: $65,000–$155,000
+
+DOMINANT BUYING MOTIVE (Block 1)
+------------------------------------------------------------
+Fund partner Tamr's $50K income raise by building the operational systems
+(intake, legal-ops workflow, financial visibility) that remove him as the
+firm's single point of failure and free Neal from personally drowning in
+intake — a firm that runs on structure, not on two overloaded partners.
+Category: "a firm that runs itself."
+
+QUICK WIN OPPORTUNITIES (6+ across all four pillars)
+------------------------------------------------------------
+1. Lead Gen / Quick Win — Claim Directory Presence: absent from Avvo/Justia
+   Fort Lauderdale elder-law listings while 20+ competitors appear there.
+   No single named competitor tied to this specific gap.
+2. Lead Gen / Long-Term — Build Geo-Targeted Landing Pages: Siegel Law Group
+   runs a full network of city-specific pages the firm has no equivalent of.
+3. Lead Gen / Quick Win — Get Google Screened via LSA: no LSA presence found;
+   opportunity to capture the top-of-page slot with a vetted badge.
+4. Intake / Quick Win — Stand Up a Real Intake Process: 10,000+ unread
+   emails, no CRM/tracking, inconsistent 25-50% close rate.
+5. Intake / Long-Term — Add After-Hours Lead Coverage: no defined after-hours
+   response path.
+6. Team / Long-Term — Hire the Paralegal Already Identified: role identified
+   internally, not yet filled; Tamr remains sole operator of core practice.
+7. Profit / Quick Win — Move to Monthly Financial Visibility: currently
+   annual-only bookkeeping with no KPIs.
+
+FIRST 90 DAYS (Block 5) — ads first, then website, include coaching kickoff
+------------------------------------------------------------
+1. Launch Google Ads, LSA, and Meta campaigns across Medicaid/VA asset
+   protection and estate planning/probate
+2. Begin local SEO and Google Business Profile work across all 5 office
+   locations
+3. Rework homepage and practice-area pages to add attorney bios and stronger
+   calls to action, coordinated with the website revamp already under contract
+4. Kick off Elite Coach Plus coaching to start building a defined intake
+   process and reduce Tamr's single-point-of-failure risk
+5. Establish baseline reporting on lead source, close rate, and case value
