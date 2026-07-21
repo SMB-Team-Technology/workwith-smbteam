@@ -38,7 +38,7 @@ The output of this guide feeds directly into:
 - Use ranges, not absolutes, for all projections. Better to under-promise and over-deliver.
 - Every number must be traceable to a formula or benchmark in this guide.
 - The 35% cap on total monthly spend (management fees + ad spend) relative to monthly revenue is a hard constraint.
-- Minimum MRR is $3,497/month. Never recommend below this.
+- Minimum MRR is $2,497/month. Never recommend below this.
 
 ---
 
@@ -219,8 +219,8 @@ The Monthly Marketing Budget calculated above represents TOTAL marketing investm
 Available Ad Spend = Final Adjusted Budget − Marketing Package Management Fee
 ```
 
-**Example:** Total budget is $16,667. Full Service Marketing Starter is $4,847/month.
-→ Available for ad spend: $16,667 − $4,847 = $11,820/month
+**Example:** Total budget is $16,667. Full Service Marketing Starter is $4,997/month.
+→ Available for ad spend: $16,667 − $4,997 = $11,670/month
 
 ### Step 3F — Run Reverse Math Validation
 
@@ -244,13 +244,13 @@ Check the ad spend against the maximum for their marketing tier:
 
 | Marketing Tier | Max Ad Spend Managed |
 |---|---|
-| Essentials (Full Service) | $7,500/month |
+| Essentials (Full Service) | $5,000/month |
 | Essentials (LSA+PPC or LSA+Social) | $5,000/month |
-| Starter (Full Service) | $25,000/month |
+| Starter (Full Service) | $20,000/month |
 | Starter (LSA+PPC) | $20,000/month |
 | Starter (LSA+PPC+Social) | $25,000/month |
 | Growth | $50,000/month |
-| Dominate | $75,000/month |
+| Dominate | $100,000/month |
 | Platinum | $150,000/month |
 
 If the calculated ad spend exceeds the tier cap, either:
@@ -370,9 +370,13 @@ Before selecting, remove ineligible packages:
 - **Personal Injury firms:** Remove ALL Essentials marketing packages AND the LSA-only add-on. Minimum starting tier is Starter.
 - **Criminal Defense in High competitiveness markets:** Remove ALL Essentials marketing packages. LSA-only still permitted.
 
+**Scope Filters:**
+- **Multiple locations OR multiple practice areas:** Remove Essentials marketing tier regardless of revenue. Essentials requires a single location and single practice area.
+
 **Revenue Filters:**
-- **Over $1M revenue:** Remove ALL Essentials marketing products.
-- **Under $1M revenue:** Remove Dominate and Platinum marketing tiers.
+- **Over $750K revenue:** Remove ALL Essentials marketing products.
+- **Under $2M revenue:** Remove Dominate and Platinum marketing tiers.
+- **Under $3M revenue:** Remove Platinum marketing tier.
 - **Under $250K revenue:** Must verify client has funds to cover 4 months of services. If not verified, do not proceed.
 
 ### Step 5B — Determine Marketing Package Type
@@ -389,29 +393,28 @@ Based on the firm's needs identified during the audit, determine which type of m
 
 | Revenue Range | Default Tier | Full Service Price (Bundled) | Notes |
 |---|---|---|---|
-| $250K–$400K | Essentials | $3,397/mo | Hidden for PI; if hidden, move to Starter |
-| $400K–$1M | Starter | $4,847/mo | Most common starting point |
-| $1M–$3M | Growth | $7,397/mo | For firms with substantial growth goals |
-| $1M+ aggressive goals | Dominate | $10,497/mo | For firms wanting to dominate their market |
+| Under $750K, single location + single practice area | Essentials | $3,497/mo | Hidden for PI, multi-location, or multi-practice-area firms; if hidden, move to Starter |
+| $500K–$1M (or under $750K but ineligible for Essentials on scope) | Starter | $4,997/mo | Most common starting point |
+| $1M–$2M | Growth | $7,497/mo | For firms with substantial growth goals |
+| $2M–$3M | Dominate | $10,497/mo | For firms wanting to dominate their market |
 | $3M+ | Platinum | $15,997/mo | Highest tier |
 
-**Boundary decisions:** When a firm falls on the border between tiers, the deciding factor is their goals:
-- If they want to maintain and grow steadily → lower tier
-- If they want aggressive growth and market dominance → higher tier
+**Boundary decisions:** When a firm falls on the border between tiers, the deciding factor is:
 - If their calculated ad spend exceeds the lower tier's cap → must use higher tier
+- Otherwise, use the tier matching their revenue. Aggressive goals no longer bypass the Dominate/Platinum revenue floors — a firm must meet the revenue threshold to be eligible for those tiers.
 
 ### Step 5D — Marketing Package Sub-Options by Tier
 
 Each tier offers sub-packages. Default recommendation is Full Service Marketing unless there's a specific reason not to:
 
-**Essentials Tier:**
+**Essentials Tier:** (single location + single practice area only, under $750K revenue)
 | Sub-Package | Bundled Price | Ad Spend Cap | Best For |
 |---|---|---|---|
 | LSA + PPC Essentials | $1,497/mo | $5,000 | Firms that only need paid ads + have good website |
 | LSA + Social Essentials | $1,497/mo | $5,000 | Firms wanting social over PPC |
 | Web + SEO Essentials | $1,497/mo | N/A | Firms that only need a website and SEO |
 | Web + SEO + LSA Essentials | $2,797/mo | $5,000 | Website + SEO + basic paid |
-| Full Service Marketing Essentials | $3,397/mo | $7,500 | Everything (DEFAULT recommendation) |
+| Full Service Marketing Essentials | $3,497/mo | $5,000 | Everything (DEFAULT recommendation) |
 
 **Starter Tier:**
 | Sub-Package | Bundled Price | Ad Spend Cap | Best For |
@@ -419,21 +422,21 @@ Each tier offers sub-packages. Default recommendation is Full Service Marketing 
 | LSA + PPC Starter | $1,997/mo | $20,000 | Ads-only with good existing website |
 | LSA + PPC + Social Starter | $2,497/mo | $25,000 | All ads, good existing website |
 | Web + SEO Starter | $3,497/mo | N/A | Website + SEO only |
-| Full Service Marketing Starter | $4,847/mo | $25,000 | Everything (DEFAULT recommendation) |
+| Full Service Marketing Starter | $4,997/mo | $20,000 | Everything (DEFAULT recommendation) |
 
 **Growth Tier:**
 | Sub-Package | Bundled Price | Ad Spend Cap | Best For |
 |---|---|---|---|
 | LSA + PPC + Social Growth | $3,497/mo | $50,000 | All ads, strong existing website |
 | Web + SEO Growth | $4,897/mo | N/A | Website + SEO only |
-| Full Service Marketing Growth | $7,397/mo | $50,000 | Everything (DEFAULT recommendation) |
+| Full Service Marketing Growth | $7,497/mo | $50,000 | Everything (DEFAULT recommendation) |
 
 **Dominate Tier:**
 | Sub-Package | Bundled Price | Ad Spend Cap | Best For |
 |---|---|---|---|
 | LSA + PPC + Social Dominate | $5,000/mo | $75,000 | All ads, strong existing website |
 | Web + SEO Dominate | $6,597/mo | N/A | Website + SEO only |
-| Full Service Marketing Dominate | $10,497/mo | $75,000 | Everything (DEFAULT recommendation) |
+| Full Service Marketing Dominate | $10,497/mo | $100,000 | Everything (DEFAULT recommendation) |
 
 **Platinum Tier:**
 | Sub-Package | Bundled Price | Ad Spend Cap | Best For |
@@ -544,7 +547,7 @@ Maximum Recommended Spend = Monthly Revenue × 35%
 2. If still too high, reduce ad spend first (but not below practice area minimums)
 3. If still too high, consider a lower marketing tier
 4. If still too high, simplify the non-marketing recommendation (e.g., Elite Coach instead of Elite Coach + FCOO)
-5. Never drop below $3,497/month total MRR
+5. Never drop below $2,497/month total MRR
 
 ### Calculate Savings for Block 3:
 
@@ -558,8 +561,9 @@ Always show savings from EVERY package combined, not just one.
 
 | Package | Stand Alone | Bundled | Savings |
 |---|---|---|---|
-| Full Service Marketing Starter | $5,697 | $4,847 | $850 |
-| Full Service Marketing Growth | $8,997 | $7,397 | $1,600 |
+| Full Service Marketing Essentials | $3,797 | $3,497 | $300 |
+| Full Service Marketing Starter | $5,697 | $4,997 | $700 |
+| Full Service Marketing Growth | $8,997 | $7,497 | $1,500 |
 | Full Service Marketing Dominate | $12,497 | $10,497 | $2,000 |
 | Full Service Marketing Platinum | $18,997 | $15,997 | $3,000 |
 | Elite Coach | $3,497 | $2,600 | $897 |
@@ -817,7 +821,7 @@ If truly critical data is missing and cannot be estimated, flag it in the resear
 - If the transcript shows they're consistently generating $15K+/month, they likely qualify
 - Be conservative with ad spend recommendations — these firms have less margin for error
 - Consider coaching-only (Elite Coach at $2,600) + LSA add-on ($900) as an entry point = $3,500/mo
-- The goal is to get them to $400K+ so they qualify for Starter tier
+- The goal is to get them to $500K+ so they qualify for Starter tier
 
 **Firms Over $3M Revenue:**
 - Default to Platinum marketing tier
@@ -991,9 +995,9 @@ This section mirrors every key numeric value from the guide above in a clean, un
 
 | Package | Bundled | Stand-Alone | Savings |
 |---|---|---|---|
-| Full Service Marketing Essentials | 3397 | — | — |
-| Full Service Marketing Starter | 4847 | 5697 | 850 |
-| Full Service Marketing Growth | 7397 | 8997 | 1600 |
+| Full Service Marketing Essentials | 3497 | 3797 | 300 |
+| Full Service Marketing Starter | 4997 | 5697 | 700 |
+| Full Service Marketing Growth | 7497 | 8997 | 1500 |
 | Full Service Marketing Dominate | 10497 | 12497 | 2000 |
 | Full Service Marketing Platinum | 15997 | 18997 | 3000 |
 | LSA + PPC Essentials | 1497 | — | — |
@@ -1014,38 +1018,42 @@ This section mirrors every key numeric value from the guide above in a clean, un
 
 | Marketing Tier and Sub-Package | Max Ad Spend |
 |---|---|
-| Essentials Full Service | 7500 |
+| Essentials Full Service | 5000 |
 | Essentials LSA+PPC or LSA+Social | 5000 |
-| Starter Full Service | 25000 |
+| Starter Full Service | 20000 |
 | Starter LSA+PPC | 20000 |
 | Starter LSA+PPC+Social | 25000 |
 | Growth | 50000 |
-| Dominate | 75000 |
+| Dominate | 100000 |
 | Platinum | 150000 |
 
 ### Revenue Tier — Default Marketing Package Selection (USD/year)
 
+Essentials additionally requires single location + single practice area (scope filter, not a revenue threshold).
+
 | Revenue Low | Revenue High | Default Tier | Full Service Bundled Monthly |
 |---|---|---|---|
-| 250000 | 400000 | Essentials | 3397 |
-| 400000 | 1000000 | Starter | 4847 |
-| 1000000 | 3000000 | Growth | 7397 |
-| 1000000 | — | Dominate (aggressive goals) | 10497 |
+| 0 | 749999 | Essentials | 3497 |
+| 500000 | 999999 | Starter | 4997 |
+| 1000000 | 1999999 | Growth | 7497 |
+| 2000000 | 2999999 | Dominate | 10497 |
 | 3000000 | — | Platinum | 15997 |
 
 ### Revenue Eligibility Thresholds (USD/year)
 
 | Rule | Threshold |
 |---|---|
-| Essentials removed at or above | 1000000 |
-| Dominate and Platinum removed below | 1000000 |
+| Essentials removed at or above | 750000 |
+| Essentials also removed for multi-location or multi-practice-area firms | N/A — scope rule, not revenue |
+| Dominate and Platinum removed below | 2000000 |
+| Platinum removed below | 3000000 |
 | Under this revenue — must verify 4 months of funds | 250000 |
 | FCOO and FCFO products removed below | 500000 |
 | Master's Circle removed below | 1000000 |
 | FCFO Advisor minimum revenue | 400000 |
 | FCFO Director minimum revenue | 1000000 |
 | FCFO Partner minimum revenue | 3000000 |
-| Minimum MRR — never recommend below | 3497 |
+| Minimum MRR — never recommend below | 2497 |
 | Tier upgrade overage fee percentage | 10 |
 
 ### Non-Marketing Package Monthly Fees (Bundled and Stand-Alone, USD/month)

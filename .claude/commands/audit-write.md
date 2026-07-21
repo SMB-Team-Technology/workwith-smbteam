@@ -221,7 +221,7 @@ Save to `[friendly-name]/sections/section_executive_summary.html`.
 
 ## PRICE INTEGRITY — CRITICAL
 
-The prices in the tables below are the ONLY approved prices. Do not estimate, round, interpolate, or use any number not listed here. Every dollar figure in the client report must come from one of the approved pricing tables below (Marketing, Non-Marketing, Legal AI Workforce, or AI Avatar). The example numbers in HTML template comments are illustrative only — do not use them as actual prices.
+The prices in the tables below are the ONLY approved prices. Do not estimate, round, interpolate, or use any number not listed here. Every dollar figure in the client report must come from one of the approved pricing tables below (Marketing, Non-Marketing, Legal AI Workforce, AI Avatar, Bookkeeping, OmniSocial AI, or Attorney Assistant). The example numbers in HTML template comments are illustrative only — do not use them as actual prices.
 
 ---
 
@@ -238,12 +238,15 @@ Complete this entire section before starting Step I.
 **Practice Area:**
 - Personal Injury → hide ALL Essentials marketing packages AND the LSA-only add-on. Minimum tier is Starter.
 - Criminal Defense + High competitiveness → hide ALL Essentials marketing packages. LSA-only still allowed.
+- Essentials marketing tier requires a single location AND a single practice area → hide Essentials for any firm with multiple locations or multiple practice areas, regardless of revenue.
 
 **Revenue:**
 - Under $250K → confirm client has funds to cover 4 months of services before proceeding.
 - Under $500K → hide all Fractional CFO and Fractional COO products and all bundles containing them.
-- Under $1M → hide Master's Circle and all bundles. Hide Dominate and Platinum marketing tiers.
-- Over $1M → hide all Essentials marketing products.
+- Under $1M → hide Master's Circle and all bundles.
+- Under $2M → hide Dominate and Platinum marketing tiers.
+- Under $3M → hide Platinum marketing tier.
+- Over $750K → hide all Essentials marketing products.
 
 **Team:**
 - Fewer than 5 team members → hide all Master's Circle options.
@@ -264,16 +267,16 @@ Default to Full Service Marketing at the appropriate tier unless there is a spec
 
 | Revenue | Tier | Bundled Price | Ad Spend Cap |
 |---|---|---|---|
-| $250K–$400K | Essentials | $3,397/mo | $7,500 |
-| $400K–$1M | Starter | $4,847/mo | $25,000 |
-| $1M–$3M | Growth | $7,397/mo | $50,000 |
-| $1M+ aggressive goals | Dominate | $10,497/mo | $75,000 |
+| Under $750K, single location + single practice area | Essentials | $3,497/mo | $5,000 |
+| $500K–$1M (or under $750K with multiple locations/practice areas) | Starter | $4,997/mo | $20,000 |
+| $1M–$2M | Growth | $7,497/mo | $50,000 |
+| $2M–$3M | Dominate | $10,497/mo | $100,000 |
 | $3M+ | Platinum | $15,997/mo | $150,000 |
 
 **Stand-alone prices (for savings calculation in Block 3):**
-Essentials $N/A | Starter $5,697 | Growth $8,997 | Dominate $12,497 | Platinum $18,997
+Essentials $3,797 | Starter $5,697 | Growth $8,997 | Dominate $12,497 | Platinum $18,997
 
-**Boundary rule:** If the firm's goals are aggressive or their calculated ad spend exceeds the lower tier's cap, move to the higher tier.
+**Boundary rule:** If the firm's calculated ad spend exceeds the tier's cap, move to the higher tier. Aggressive goals alone no longer bypass the Dominate/Platinum revenue floors — a firm must meet the revenue threshold to be eligible.
 
 **Website rebuild needed if:** PageSpeed mobile below 50, design 5+ years old, not mobile responsive, no practice area pages, no attorney bios. If rebuild needed, must use Full Service (not ads-only).
 
@@ -325,6 +328,7 @@ Legal AI Workforce (LAW) provides managed AI implementation for law firms — Cl
 - Standalone: $19,997
 - Paired with Fractional CTO Level 1: $14,997 (bundle discount applied internally: net $8,403 above Level 1 MRR)
 - Paired with Fractional CTO Level 2: $14,997 (bundle discount applied internally: net $5,003 above Level 2 MRR)
+- Paired with Fractional CTO Level 3: $14,997 (bundle discount applied internally: net $0 above Level 3 MRR — free when bundled with the top CTO tier)
 
 **Capacity add-ons (flag in notes if likely to apply; do not include in Block 3 by default):**
 - Additional employees above 5: $120/mo per employee + 2M AI credits
@@ -370,6 +374,78 @@ Note: Standalone setup fee ($6,000) may be waived if firm demonstrates a legitim
 - **One-Time ($1,850):** Firm wants to test AI video content with no recurring commitment. Good for brand-aware firms not yet ready for ongoing video investment.
 - **Add-On recurring ($1,950/mo):** Firm is already on a marketing package and wants to accelerate social/video presence. Must have an active SMB marketing relationship.
 - **Standalone recurring ($3,000/mo):** Only for qualified firms meeting ALL six criteria above. Requires Alexis approval.
+
+---
+
+### SELECT BOOKKEEPING PACKAGE
+
+Bookkeeping pairs with any active package as a standalone recurring engagement. Recommend when the firm has no dedicated bookkeeper or financials are disorganized — typically a Phase 3 (Optimize) roadmap addition, not a Phase 1 recommendation, unless financials are in immediate crisis.
+
+**Bookkeeping Tiers:**
+
+| Revenue | Level | Bundled Price | Setup Fee (non-waivable) |
+|---|---|---|---|
+| Under $1M | Level 1 | $1,697/mo | $1,500 |
+| $1M–$2.9M | Level 2 | $2,197/mo | $2,000 |
+| $3M–$3.9M | Level 3 | $3,497/mo | $2,500 |
+| $4M+ | Level 4 | Custom | Custom |
+
+Each tier includes 2 hours/month of Controller Services in addition to monthly bookkeeping. The setup fee covers one quarter's worth of clean-up and reconciliation; additional cleanup time bills at $75/hr. Bookkeeping is the only product line where the setup fee can never be waived.
+
+**AR/AP/Payroll Add-On** (requires an active Bookkeeping engagement at the matching level):
+
+| Add-On Level | Requires | Additional Hours/mo | Revenue Band |
+|---|---|---|---|
+| Level 1 | Bookkeeping Level 1 | +12 hrs/mo | Under $1M |
+| Level 2 | Bookkeeping Level 2 | +25 hrs/mo | $1.5M–$2.9M |
+| Level 3 | Bookkeeping Level 3 | +45 hrs/mo | $3M–$3.9M |
+
+Add-on pricing is custom-scoped — never quote a dollar figure for it in the client report. Flag "AR/AP/Payroll add-on interest — requires custom scoping" in research notes instead.
+
+**When to recommend:** Firm has no bookkeeper, financials are disorganized, or the owner has no visibility into cash position. Add AR/AP/Payroll only if the firm explicitly needs help with receivables, payables, or running payroll beyond standard bookkeeping.
+
+---
+
+### SELECT OMNISOCIAL AI ADD-ON
+
+OmniSocial AI covers paid and organic social/video content, separate from the Full Service Marketing package. Most tiers are upgrade-only for existing marketing clients — only the 360 bundle can be sold standalone to a new client. Requires a 12-month minimum term.
+
+**Escalation: every OmniSocial AI proposal requires sales-ops approval with a 72-hour turnaround.** Do not promise same-day terms — flag in research notes.
+
+**OmniSocial AI Pricing:**
+
+| Package | Price | Notes |
+|---|---|---|
+| Content – Standard | $1,797/mo | Existing-client upgrade only |
+| Content – Pro | TBD | Existing-client upgrade only — confirm current price with sales ops before quoting |
+| Ads – Starter | $1,297/mo | Up to $5K ad spend. Existing-client upgrade only |
+| Ads – Growth | $1,797/mo | $5K–$10K ad spend. Existing-client upgrade only |
+| Ads – Dominate | $2,497/mo | $10K–$25K ad spend. Existing-client upgrade only |
+| Ads – Platinum | $3,997/mo | $25K–$50K ad spend. Existing-client upgrade only |
+| OmniSocial AI 360 (Content + Ads bundle) | Combined tier price minus $350/mo bundle discount | Sellable standalone to new clients |
+| "Omni Total Ads" | Concept — TBD/custom | Not yet a sellable product; do not offer |
+
+**When to recommend:** Firm is already an active SMB marketing client and wants a dedicated paid/organic social presence beyond what their Full Service Marketing package includes. For net-new prospects, only the 360 bundle is available — never offer a single Content or Ads tier standalone to a new client.
+
+---
+
+### SELECT ATTORNEY ASSISTANT (AI INTAKE AGENT) ADD-ON
+
+Attorney Assistant is a volume-priced AI intake agent (IA) product — priced per seat, not a flat fee. Recommend when the firm's intake volume or after-hours coverage is a clear bottleneck.
+
+**Attorney Assistant Pricing (per IA, USD/month):**
+
+| # of IAs | Starting Price/IA | After Day 60 Price/IA (applies to all IAs) |
+|---|---|---|
+| 1–4 | $2,145 | $2,000 |
+| 5–9 | $2,145 | $1,975 |
+| 10–19 | $2,000 (for IAs 10+) | $1,950 |
+| 20–49 | $1,900 (for IAs 20+) | $1,875 |
+| 50+ | Custom | Custom |
+
+**Contract terms:** Technically a 12-month agreement, but includes a 60-day no-questions-asked opt-out. After day 60, cancellation requires 30 days' notice — functions as month-to-month after the first 60 days. This is the one product line where "Clients Can Pivot, But Cannot Cancel" does not strictly apply after day 60.
+
+**When to recommend:** Firm has intake volume or after-hours gaps that a human team can't cover cost-effectively. No documented revenue floor for this product — if fit is unclear, flag "Attorney Assistant fit — confirm qualification with sales rep" rather than guessing.
 
 ---
 
@@ -447,6 +523,9 @@ Note these in the research notes file for the sales team. Do not include in the 
 - Revenue goal exceeds projected ad revenue → paid ads team review
 - Any AI Virtual Video Growth / AI Avatar package → Alexis approval required
 - Any Legal AI Workforce (LAW) package → confirm with sales rep that LAW delivery has launched and capacity is available before including in proposal
+- Any OmniSocial AI package → sales-ops approval required, 72-hour turnaround
+- AR/AP/Payroll Bookkeeping add-on → custom scoping required, never price in the client report
+- Attorney Assistant fit unclear → confirm qualification with sales rep before including in proposal
 
 ---
 

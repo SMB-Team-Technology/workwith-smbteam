@@ -471,13 +471,17 @@ Apply these rules before recommending anything. Any hidden package must not appe
 Practice Area Rules:
 - Personal Injury: hide all Essentials marketing packages and the LSA-only add-on
 - Criminal Defense + High competitiveness market: hide all Essentials marketing packages. LSA-only still allowed.
+- Essentials marketing tier requires a single location AND a single practice area. Hide Essentials for any firm with multiple locations or multiple practice areas, regardless of revenue.
 
 Revenue Rules:
 - Under $250K: confirm the client has funds to cover 4 months of services before proceeding. If not confirmed, do not proceed with a recommendation.
 - Over $250K: hide Coach Essentials
 - Under $500K: hide all Fractional CFO and Fractional COO products and all bundles containing them
-- Under $1M: hide Master's Circle and all bundles containing it. Hide Dominate and Platinum marketing tiers.
-- Over $1M: hide Coach Essentials Plus and all Essentials marketing products
+- Under $1M: hide Master's Circle and all bundles containing it
+- Under $2M: hide Dominate and Platinum marketing tiers
+- Under $3M: hide Platinum marketing tier
+- Over $750K: hide all Essentials marketing products
+- Over $1M: hide Coach Essentials Plus
 
 Team Rules:
 - Fewer than 5 team members: hide all Master's Circle options
@@ -494,13 +498,13 @@ Use the bundled price in the report. Use the stand-alone price ONLY to calculate
 
 | Revenue | Tier | Bundled Price | Stand-Alone Price | Ad Spend Cap |
 |---|---|---|---|---|
-| $250K–$400K | Essentials | $3,397/mo | N/A | $7,500 |
-| $400K–$1M | Starter | $4,847/mo | $5,697/mo | $25,000 |
-| $1M–$3M | Growth | $7,397/mo | $8,997/mo | $50,000 |
-| $1M+ aggressive goals | Dominate | $10,497/mo | $12,497/mo | $75,000 |
+| Under $750K, single location + single practice area | Essentials | $3,497/mo | $3,797/mo | $5,000 |
+| $500K–$1M (or under $750K with multiple locations/practice areas) | Starter | $4,997/mo | $5,697/mo | $20,000 |
+| $1M–$2M | Growth | $7,497/mo | $8,997/mo | $50,000 |
+| $2M–$3M | Dominate | $10,497/mo | $12,497/mo | $100,000 |
 | $3M+ | Platinum | $15,997/mo | $18,997/mo | $150,000 |
 
-Unless hidden by practice area rules, use the tier that matches the firm's revenue. If goals are aggressive or calculated ad spend exceeds the lower tier's cap, move to the higher tier.
+Unless hidden by practice area rules, use the tier that matches the firm's revenue. If calculated ad spend exceeds the tier's cap, move to the higher tier. Aggressive goals alone no longer bypass the Dominate/Platinum revenue floors — a firm must meet the revenue threshold to be eligible.
 
 STEP 11.3 — SELECT THE NON-MARKETING PACKAGE
 
@@ -528,7 +532,7 @@ STEP 11.4 — RECOMMEND AD SPEND
 - $250K–$500K firms: $3,000–$5,000/month
 - $500K–$1M firms: $5,000–$10,000/month
 - $1M+ firms: $10,000–$25,000/month
-- Maximum by marketing tier: Essentials $5K, Starter $25K, Growth $50K, Dominate $75K, Platinum $150K
+- Maximum by marketing tier: Essentials $5K, Starter $20K, Growth $50K, Dominate $100K, Platinum $150K
 
 Practice area minimums — flag for paid ads team if below these:
 - Personal Injury + Low competitiveness: $5,500/month minimum
@@ -544,7 +548,7 @@ Phase 1 — Foundation: Marketing + Coaching. Connect every element to the DBM.
 Phase 2 — Operational Scale: Add Fractional COO Advisor ($3,297/month). Frame as graduation not upgrade. Connect to DBM.
 Phase 3 — Optimize: Add Fractional CFO Advisor ($3,297/month). Add Bookkeeping if needed. Connect to DBM.
 Phase 4 — Market Domination: Upgrade marketing tier. Add Fractional COO Director or Partner as team grows.
-Phase 5 — Full SMB Ecosystem: Full Service Marketing + Master's Circle + Fractional COO + Fractional CFO + Bookkeeping + Attorney Assistant VAs ($2,000/month per VA) + AttorneyFuel. Plant the seed: "The firms that have the freedom you described all ended up here. And it started exactly where we are starting you."
+Phase 5 — Full SMB Ecosystem: Full Service Marketing + Master's Circle + Fractional COO + Fractional CFO + Bookkeeping + Attorney Assistant AI intake agents (from $2,145/mo per IA, volume pricing — see audit-write.md) + OmniSocial AI. Plant the seed: "The firms that have the freedom you described all ended up here. And it started exactly where we are starting you."
 
 STEP 11.6 — TONE RULES
 
