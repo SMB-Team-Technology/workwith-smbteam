@@ -1,0 +1,177 @@
+FABBRINI LAW GROUP LLC — SECTION 11 WORKINGS
+================================================================
+
+PACKAGE DECISION FILE VERIFICATION (confidence: medium)
+================================================================
+Reviewed package_decision.json against Fabbrini Law Group LLC_July 24, 2026_Research_Notes.txt.
+
+REVENUE — ACCEPTED AS-IS
+- Research notes explicitly state "Annual revenue: not stated" on the call — this discovery
+  call was focused on Fractional CTO / AI automation, not a standard marketing/revenue
+  conversation, so the absence of a stated figure is expected, not a red flag.
+- package_decision.json sourced $3,000,000+ from HubSpot (hubspot_annual_law_firm_revenue).
+  Nothing in the research notes contradicts this — a 25-year, 2-location, 5-staff PI/criminal
+  defense firm in Chicago is consistent with $3M+ revenue.
+- ACCEPTED: revenue_effective = $3,000,000+ → Platinum marketing tier eligibility confirmed.
+
+TEAM SIZE — CORRECTED
+- package_decision.json used team_size_effective: 3 (a default guess, explicitly flagged in
+  its own selection_notes as "not stated in research notes... review for coaching tier
+  accuracy").
+- The research notes DO state team size explicitly (Step 9): "2 paralegals, 1 medical
+  records specialist, 1 liens specialist, 1 receptionist, plus Jim Fabbrini as owner/
+  attorney — 5 staff plus the owner."
+- This directly contradicts the "under 5" assumption that drove the Elite Coach Plus
+  selection. Corrected team size = 5 dedicated-role staff (not generalists), satisfying
+  the "5+ team members with dedicated staff" eligibility threshold for Master's Circle.
+  The receptionist role also satisfies the "dedicated intake" eligibility carve-out, so
+  Master's Circle is not hidden.
+- Revenue ($3M+) clears the $2M+ threshold for the "Master's Circle + FCOO Director" row.
+  Team of 5 (not a "large team" in the sense the $3M+/Large-team row implies — that row
+  reads as targeting significantly larger teams) does not support jumping to FCOO Partner,
+  so the $2M+ row is the correct match.
+- CORRECTED non-marketing package: Master's Circle + FCOO Director ($8,394/mo bundled)
+  — replacing Elite Coach Plus ($3,200/mo bundled).
+
+LEGAL AI WORKFORCE (LAW) — FLAGGED, NOT PRICED IN THIS PROPOSAL
+- package_decision.json left law_tier: null. The deterministic pipeline has no way to
+  detect the qualitative signal in this transcript: the ENTIRE discovery call was about
+  a Fractional CTO / custom AI automation engagement, not standard marketing intake. Jim
+  has already built his own Claude/Zapier tools (medical record timeline analysis, a
+  daily briefing tool, an in-progress firm dashboard) and wants to replace Filevine with
+  a fully custom, API-friendly AI-driven practice management system, automating ~90% of
+  repetitive staff work.
+- Firm clears every LAW eligibility gate: revenue $3M+ (fits AI Enterprise / Fractional
+  CTO Level 3, target revenue $3M+), 5 staff (not a solo shop), and exceptional
+  demonstrated openness to AI/technology adoption.
+- HOWEVER: audit-write.md requires "confirm with sales rep that LAW delivery has launched
+  and capacity is available before including in proposal" for ANY LAW package. This is a
+  hard escalation gate, not a suggestion. Per that gate, LAW is NOT included in the priced
+  client-facing proposal in this pass.
+- INTERNAL FLAG FOR NICK HOLDERMAN: This is an unusually strong LAW/Fractional CTO fit —
+  arguably a stronger fit for LAW than for a standard marketing package, given what the
+  call was actually about. Recommend looping in the LAW/Fractional CTO team before or
+  during the sales process. If cleared, AI Enterprise (Fractional CTO Level 3, $8,997/mo
+  bundled, $9,997/mo stand-alone) is the matching tier, with the Law Firm AI Foundation
+  Sprint effectively free when bundled with Level 3 (net $0 above Level 3 MRR per the
+  bundle table). Jim also raised a direct concern about the quality/vetting of prior
+  Fractional CTO pitches from other providers — worth addressing head-on in any LAW
+  follow-up conversation.
+
+================================================================
+FINAL PACKAGE SELECTION FOR THIS PROPOSAL
+================================================================
+
+MARKETING PACKAGE: Full Service Marketing — Platinum
+- Bundled price (table): $15,997/mo
+- Stand-alone price (table): $18,997/mo
+- Savings: $3,000/mo
+- Why: Revenue $3M+, personal injury practice area (minimum tier Starter, easily cleared),
+  2 locations, and a firm that is currently invisible across every paid and organic channel
+  tested — needs the top tier of full-funnel coverage, not a stripped-down package.
+
+NON-MARKETING PACKAGE: Master's Circle + FCOO Director
+- Bundled price (table): $8,394/mo
+- Stand-alone price (table): $10,794/mo ($4,997 Master's Circle + $5,797 FCOO Director)
+- Savings: $2,400/mo
+- Why: Revenue $3M+ and 5 dedicated-role staff qualify for Master's Circle; Jim's explicit
+  DBM (moving from daily legal work into a strategic, KPI-driven ownership role) is a direct
+  match for FCOO-level operational leadership, not just group coaching.
+
+TOTAL MONTHLY INVESTMENT (marketing + coaching only): $15,997 + $8,394 = $24,391/mo
+TOTAL SAVINGS: $3,000 + $2,400 = $5,400/mo
+
+35% TOTAL SPEND CAP CHECK
+- Monthly revenue: $3,000,000 / 12 = $250,000
+- 35% cap = $87,500/mo (management fees + ad spend combined)
+- Fixed MRR ($24,391) + aggressive ad spend ($30,000) = $54,391 — well under cap. Confirmed feasible.
+
+================================================================
+AD SPEND — CONSERVATIVE AND AGGRESSIVE
+================================================================
+Practice area used for ROI modeling: Personal Injury (the practice area actually discussed
+on the call, and where all urgency/competitor evidence lives). Criminal Defense is covered
+qualitatively in Section 6 as a secondary blind spot but is not separately budgeted here.
+
+Conservative ad spend: $7,500/mo
+Aggressive ad spend: $30,000/mo
+(Both accepted from package_decision.json — comfortably inside the Platinum tier's
+$150,000 ad spend cap and the 35% total-spend cap above.)
+
+Blended CPL (Accident & Injury row): Google Search $630–780 (mid $705), LSA $210–260
+(mid $235), Meta Retargeting/Cold (mid ~$130) — blended average ≈ $357.
+- Conservative: +20% cushion → ≈ $428 blended CPL
+- Aggressive: no cushion → ≈ $357 blended CPL
+
+Close rate: not stated on the call — default 15% per methodology.
+Average case value: not stated — using PI default range $5K–$8K, midpoint $6,500,
+disclosed as an estimate/default in the report.
+
+CONSERVATIVE SCENARIO ($7,500/mo)
+- Leads: $7,500 ÷ $428 ≈ 17–18 leads/month
+- Cases: 17.5 × 15% ≈ 2–3 cases/month
+- Revenue: ~2.6 cases × $6,500 ≈ $16,900/month
+- Return: $16,900 ÷ $7,500 ≈ 2.3x
+
+AGGRESSIVE SCENARIO ($30,000/mo)
+- Leads: $30,000 ÷ $357 ≈ 84 leads/month
+- Cases: 84 × 15% ≈ 12–13 cases/month
+- Revenue: ~12.6 cases × $6,500 ≈ $81,900/month
+- Return: $81,900 ÷ $30,000 ≈ 2.7x
+
+================================================================
+DBM STATEMENT (Block 1)
+================================================================
+Formula: "We help [audience] get [external desire] so they can [DBM]."
+"We help experienced personal injury attorneys with a strong reputation but an invisible
+digital footprint get a predictable, multi-channel flow of new cases so they can shift
+from daily legal work into a strategic, KPI-driven ownership role."
+
+Full DBM (from transcript): Jim wants to "escape daily legal work and focus on business
+strategy" — shifting to "a strategic, data-driven ownership role, monitoring KPIs to
+identify and fix bottlenecks." Category 1 DBM: a firm that runs itself so the owner has
+time and can operate strategically rather than in the day-to-day.
+
+================================================================
+QUICK WIN OPPORTUNITIES (6+ across all 4 pillars)
+================================================================
+1. [Lead Gen / Quick Win] NAP consolidation — at least 4 distinct address variants and
+   multiple phone numbers across the website, GBP (2 separate listings), FindLaw/Avvo,
+   and Yelp are fragmenting local search signals. No named competitor row (internal fix).
+2. [Lead Gen / Long-Term Play] Local pack / organic visibility — firm did not appear in
+   any of 6 local-visibility searches across PI and criminal defense. Competitor:
+   Disparti Law Group (dominant organic visibility, ~3,400+ reviews).
+3. [Lead Gen / Quick Win] Google Search Ads launch — no paid search presence detected.
+   Competitors: Rosenfeld Injury Lawyers, Zayed Law Offices (both show clear PPC/content
+   investment signals).
+4. [Lead Gen / Quick Win] Local Service Ads enrollment — not appearing in LSA, Google
+   Screened status unconfirmed. No specific named LSA competitor confirmed, but the
+   channel is well-established and competitive in Chicago PI/DUI generally.
+5. [Lead Gen / Quick Win] Meta retargeting — no Meta ad activity observed; website
+   visitors who do not convert currently leave with zero follow-up. Competitors:
+   Levinson and Stefani Injury Lawyers, Zayed Law Offices (active Facebook business
+   presence).
+6. [Intake / Quick Win] Intake process formalization — no confirmed after-hours coverage
+   or defined follow-up sequence; only one dedicated receptionist as first point of
+   contact. No named competitor (internal fix).
+7. [Team / Long-Term Play] Operational leadership gap — Jim is personally building his
+   own AI tools and dashboard in addition to practicing law; no ops/leadership layer
+   exists to absorb that work. No named competitor (internal fix).
+8. [Profit / Quick Win] KPI/financial visibility — no centralized dashboard exists today
+   (Jim is building one himself from scratch), meaning profit and performance data is
+   not yet centralized for confident decision-making. No named competitor (internal fix).
+
+================================================================
+FIRST 90 DAYS
+================================================================
+1. Launch Google Search and Local Service Ads campaigns for Personal Injury to start
+   generating a paid lead flow within the first 30 days.
+2. Consolidate NAP data across Google Business Profile (merge the two active listings),
+   directories, and the website to resolve the 4-address/multi-phone-number
+   inconsistency undermining local search visibility.
+3. Kick off the Master's Circle + FCOO Director coaching engagement, starting with
+   building the firm's first centralized KPI dashboard.
+4. Launch Meta retargeting and educational ad campaigns to capture visitors who do not
+   convert on the first visit.
+5. Begin geo-targeted landing page buildout (e.g. Naperville, Cicero, Oak Park, Evanston)
+   to strengthen local SEO footprint beyond the existing practice-area-only pages.
