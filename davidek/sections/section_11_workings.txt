@@ -1,0 +1,80 @@
+SECTION 11 — WORKINGS FILE (INTERNAL — NOT CLIENT FACING)
+Davidek Law Firm Pllc — July 24, 2026 — Sales Rep: Randy Gold
+
+======================================================================
+MANDATORY PRICE LOOKUP (from davidek/package_decision.json — confidence: high)
+======================================================================
+
+- Marketing package selected: Full Service Marketing — Dominate
+  - Bundled price: $10,497/mo
+  - Stand-alone price: $12,497/mo
+  - Savings: $2,000/mo
+
+- Non-marketing package selected: Master's Circle
+  - Bundled price: $4,600/mo
+  - Stand-alone price: $4,997/mo
+  - Savings: $397/mo
+
+- Legal AI Workforce (LAW) package selected: none (law_tier: null in decision file)
+- AI Avatar / Video Growth add-on selected: none
+
+- Total monthly investment (sum of bundled prices): $15,097/mo
+- Total savings (sum of all savings): $2,397/mo
+
+All figures copied character-by-character from davidek/package_decision.json. Not recalculated.
+
+======================================================================
+ELIGIBILITY NOTE — FOR RANDY, NOT FOR CLIENT REPORT
+======================================================================
+The pipeline's selection_notes flag: "Revenue $1M+, team 5+ but no dedicated ops detected: Master's Circle selected. Verify ops capacity with sales rep." The transcript states 5 attorney SEATS but only 3 are currently staffed, and no dedicated ops/marketing/intake team member is confirmed in the research notes. Per audit-write.md eligibility rules, "No dedicated ops, marketing, or intake team member" would normally hide Master's Circle. Confidence on the decision file is "high," so this audit proceeds with Master's Circle as instructed — but recommend confirming actual team composition and ops capacity with Dirk before finalizing this proposal.
+
+======================================================================
+AD SPEND — CONSERVATIVE AND AGGRESSIVE
+======================================================================
+Practice area used for CPL/ad-spend tables: Estate Planning (85% of business).
+
+CONSERVATIVE: $3,500/mo (Google Search channel only — matches Estate Planning Google PPC minimum)
+- Blended CPL: Google Search midpoint $135 + 20% conservative cushion = $162
+- Leads = $3,500 / $162 ≈ 21.6/mo
+- Close rate: ~80% blended (Amber ~75%, Robert ~90%, per transcript — firm-specific rate used instead of generic 15% default, per Pass 1 research notes instruction)
+- Cases = 21.6 × 0.80 ≈ 17.3/mo → presented as "16–18 cases"
+- Case value: not stated in transcript; using Estate Planning default $1,500–$3,000, midpoint $2,250 (disclosed as default)
+- Revenue = 17.3 × $2,250 ≈ $38,925/mo → presented as "$35,000–$40,000"
+- Return = $38,925 / $3,500 ≈ 11.1x → presented as "~11x"
+
+AGGRESSIVE: $14,000/mo (spread across Google Search, LSA, Meta Retargeting, Meta Cold — $3,500 each, no cushion)
+- Google Search: $3,500 / $135 ≈ 25.9 leads
+- LSA: $3,500 / $65 ≈ 53.8 leads
+- Meta Retargeting: $3,500 / $52.5 ≈ 66.7 leads
+- Meta Cold: $3,500 / $55 ≈ 63.6 leads
+- Total leads ≈ 210/mo
+- Cases = 210 × 0.80 ≈ 168/mo → presented as "160–170 cases"
+- Revenue = 168 × $2,250 ≈ $378,000/mo → presented as "$370,000–$380,000"
+- Return = $378,000 / $14,000 ≈ 27x → presented as "~27x"
+
+CAVEAT FOR RANDY: These figures scale strictly per the audit-write.md formulas (channel CPL bands x 80% transcript-derived close rate x default case value). The 80% rate reflects Amber/Robert's close rate on the firm's current warm/referral-heavy intake pipeline, not a validated conversion rate for cold paid-ad leads — and the resulting aggressive-scenario case volume (160-170/mo) is well beyond what 3-5 attorneys could realistically staff. Recommend confirming a more conservative, ads-specific close rate assumption with Dirk before presenting the aggressive scenario, or caveat verbally on the call.
+
+======================================================================
+DOMINANT BUYING MOTIVE (DBM) — BLOCK 1
+======================================================================
+Not stated in personal terms on the call. Inferred from context (fractional CFO engaged, time-tracking study underway, $4M revenue goal, 20% margin target, Austin rebrand/expansion by a fixed date): grow and sell / build enterprise value — building a scalable, more valuable practice rather than purely buying back personal time. Flagged as an inference; confirm directly with Dirk on the next call.
+
+======================================================================
+QUICK WIN OPPORTUNITIES (7 identified, minimum 6 required)
+======================================================================
+1. [Lead Gen / Quick Win] Unify the phone number across every channel — (830) 515-5854 vs (830) 217-1544 splits calls and corrupts tracking. No named competitor angle.
+2. [Lead Gen / Quick Win] Confirm paid ad performance with the current agency — no independent visibility into agency-managed campaigns. Competitor: The J.M. Dickerson Law Firm.
+3. [Lead Gen / Long-Term Play] Build Austin geo-landing pages before the January 2027 launch. No named competitor angle (market not yet entered).
+4. [Intake / Quick Win] Add a filter step for low-value "tire kicker" / AI-document-review inquiries. No named competitor angle.
+5. [Intake / Quick Win] Put a contact form above the fold on the homepage. No named competitor angle.
+6. [Team / Long-Term Play] Close the two open attorney seats (3 of 5 staffed for 12+ months). Competitor: Carroll Law Group, PLLC.
+7. [Profit / Long-Term Play] Turn the CFO's time-tracking study into an executed margin plan. Competitor: Cludius Law (C. Frederick Cludius, LLC).
+
+======================================================================
+FIRST 90 DAYS (3-5 bullets)
+======================================================================
+1. Launch Dominate-tier paid campaigns (Google Search, LSA application, Meta) with full visibility Davidek does not currently have into agency-managed spend.
+2. Fix the phone number NAP inconsistency and add a visible above-the-fold contact form on the website.
+3. Build the first Austin geo-landing pages ahead of the January 2027 rebrand and market launch.
+4. Kick off Master's Circle group coaching and begin the intake-filtering process for low-value inquiries.
+5. Align the coaching engagement with the fractional CFO's existing time-tracking study to connect marketing performance to the firm's 20% margin target.
