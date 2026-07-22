@@ -1,0 +1,173 @@
+SECTION 11 WORKINGS — CourtLaw Injury Lawyers
+============================================================
+
+PACKAGE DECISION FILE REVIEW (confidence: medium — verification required)
+============================================================
+package_decision.json supplied by the pipeline:
+- Revenue: $3,000,000+ sourced from HubSpot field hubspot_annual_law_firm_revenue
+  (not stated on the call — transcript only confirms a $5M peak "during COVID"
+  and describes a current intake collapse from ~5/day to ~5/month).
+- Marketing tier selected: Full Service Marketing — Platinum
+- Coaching tier selected: Master's Circle
+- Confidence: medium
+
+REVENUE VERIFICATION:
+The transcript never states current annual revenue — only the historical $5M
+COVID-era peak and a severe new-intake collapse. However, personal injury
+case revenue lags new-client intake substantially (PI/rideshare cases often
+take 12-24+ months to resolve), so a firm with 5 attorneys and ~20 staff that
+built to a $5M peak is very plausibly still realizing $3M+ in revenue this
+year from cases already in its pipeline, even as new intake has stalled. The
+HubSpot-sourced $3,000,000+ figure is not contradicted by anything in the
+research notes and is corroborated by firm size (a 25-person firm sustaining
+itself for 40 years does not typically operate at a much lower run rate
+without layoffs, which were not mentioned — the firm is instead trying to
+HIRE). DECISION: retain Platinum marketing tier ($3M+ eligible) but flag for
+Randy to confirm current-year revenue with Karim directly on the 7/28 call,
+since this is a medium-confidence, evidence-based estimate rather than a
+stated figure.
+
+COACHING TIER CORRECTION:
+The pipeline selected Master's Circle ($4,600/mo bundled) but its own
+selection note reads: "team 5+ but no dedicated ops detected: Master's Circle
+selected. Verify ops capacity with sales rep." Per the eligibility rules in
+audit-write.md: "No dedicated ops, marketing, or intake team member → hide
+all Master's Circle options." This condition is independently sufficient to
+disqualify Master's Circle regardless of headcount. The transcript confirms
+no dedicated ops/financial person exists — Karim "handles all financials,
+prioritizing payroll over strategic analysis" — and Karim explicitly DECLINED
+SMB Team's own CFO/bookkeeping offer on the call, stating the firm is
+"probably for a bigger firm." Recommending Master's Circle (a higher-touch,
+higher-price coaching tier built around firms with dedicated staff already in
+place) would both violate the stated eligibility rule and push a service tier
+the prospect has already signaled resistance to.
+DECISION: downgrade coaching package to Elite Coach Plus ($3,200/mo bundled),
+matching table row "$1M+ | Under 5 | Elite Coach Plus | $3,200/mo" — the
+better fit for a firm where all financial/ops decision-making still runs
+through one person with no delegated capacity, consistent with the firm's own
+stated resistance to bigger-firm-style overhead.
+
+============================================================
+MANDATORY PRICE LOOKUP
+============================================================
+- Marketing package selected: Full Service Marketing — Platinum
+  - Bundled price (from table): $15,997/mo
+  - Stand-alone price (from table): $18,997/mo
+  - Savings (stand-alone minus bundled): $3,000/mo
+- Non-marketing package selected: Elite Coach Plus
+  - Bundled price (from table): $3,200/mo
+  - Stand-alone price (from table): $3,497/mo
+  - Savings (stand-alone minus bundled): $297/mo
+- Legal AI Workforce (LAW) package selected: none — transcript does not
+  establish confirmed AI-readiness beyond Randy's own pitch; not recommended
+  as a core package this round.
+- AI Avatar / Video Growth add-on: One-Time AI Avatar (kickoff + 5 videos),
+  $1,850 one-time, no recurring commitment — mentioned only as an optional
+  First 90 Days item (Randy pitched AI avatar video content on the discovery
+  call). NOT included in the core recurring investment grid so as not to
+  over-commit a firm currently in revenue crisis to additional recurring
+  fees. ESCALATION FLAG (internal only): any AI Avatar package requires
+  Alexis approval before inclusion in a signed proposal — confirm before this
+  is formalized past the audit stage.
+- Total monthly investment (sum of all bundled/recurring prices): $19,197/mo
+  ($15,997 + $3,200)
+- Total savings (sum of all savings): $3,297/mo ($3,000 + $297)
+
+35% SPEND CAP CHECK: At the HubSpot-sourced $3M+ revenue estimate (~$250K/mo),
+$19,197 recurring + $40,000 aggressive ad spend = $59,197/mo = ~23.7% of
+monthly revenue — within the 35% cap. Even at a more conservative $2M/yr
+estimate (~$166K/mo), the conservative ad spend scenario ($10,000/mo) keeps
+total spend at ~17.6%, comfortably within cap; only the aggressive high end
+approaches the ceiling, which is why ad spend is presented as a range, not a
+single number.
+
+============================================================
+AD SPEND — CONSERVATIVE AND AGGRESSIVE
+============================================================
+Practice area: MVA / Car Accidents (primary), including Uber/Lyft rideshare.
+PI hard floor at High competitiveness: $10,000/mo minimum — matches
+conservative figure exactly.
+
+CONSERVATIVE: $10,000/mo
+Channel mix (avoiding the channel with a negative history for this firm):
+LSA ~$2,000, Meta Retargeting ~$1,500, Meta Lead Gen ~$6,000, limited Google
+testing ~$500.
+Blended CPL (channel-weighted midpoints, +20% conservative cushion): ~$235
+Est. leads: ~42/mo
+Close rate: 15% (default — not stated on call, disclosed as estimate)
+Est. cases: ~6/mo
+Est. case value: $7,500 (MVA default midpoint $5K-$10K — not stated on call,
+disclosed as estimate; rideshare cases with commercial insurance limits push
+the true average higher, but $7,500 is used as the conservative disclosed
+default)
+Est. monthly revenue: ~$45,000
+Return multiple: ~4.5x
+
+AGGRESSIVE: $40,000/mo
+Channel mix: Google Search (rebuilt, targeted) ~$15,000, LSA ~$5,000, Meta
+Retargeting ~$5,000, Meta Lead Gen ~$15,000.
+Blended CPL (channel-weighted midpoints, no cushion): ~$370
+Est. leads: ~108/mo
+Est. cases: ~16/mo
+Est. monthly revenue: ~$120,000
+Return multiple: ~3.0x
+
+Both scenarios sit well within the Platinum tier's $150,000/mo ad spend cap.
+
+============================================================
+DBM STATEMENT — BLOCK 1
+============================================================
+"We help established personal injury firms whose reputation has outgrown
+their lead generation system get a predictable flow of high-value rideshare
+and car accident cases so they can protect the legacy and the 20 jobs they've
+built without carrying every decision alone."
+
+============================================================
+QUICK WIN OPPORTUNITIES (7 identified)
+============================================================
+1. [Lead Gen / Quick Win] Turn On Local Service Ads With a Reputation Edge —
+   Why: LSA is pay-per-lead, sidestepping the $40k PPC history, and CourtLaw's
+   4.6-star/~203-review profile beats every named local competitor. No named
+   LSA competitor confirmed — omit "who" row. Opportunity: enter LSA ahead of
+   the review-count comp set.
+2. [Lead Gen / Long-Term] Amplify the Geo-Pages Already Built — Why: existing
+   New Brunswick/Uber-Lyft geo pages rank for narrow searches but not broader
+   practice-area terms. Competitor: Lombardi & Lombardi (weaker reviews, more
+   scale/proximity). Opportunity: technical + paid push turns an existing
+   asset into real volume.
+3. [Lead Gen / Long-Term] Rebuild Paid Search Around Rideshare and Spanish
+   Language, Not Generic Terms — Why: the $40k failure was broad and
+   untargeted; a rideshare-specific, bilingual campaign is a different bet.
+   Competitor: Bramnick Rodriguez Grabas Arnold & Mangan (brand budget/scale).
+   Opportunity: capture the highest-value case type competitors aren't
+   specifically targeting.
+4. [Intake / Quick Win] Close the Spanish-Language Intake Gap — Why: ~90% of
+   the client base is Spanish-speaking with no dedicated bilingual intake
+   staff currently in place. No competitor named — omit "who" row.
+   Opportunity: stop losing the firm's own majority audience at first contact.
+5. [Intake / Quick Win] Add a Defined Follow-Up Sequence — Why: "garbage"
+   calls may include salvageable leads lost to inconsistent follow-up, not
+   just genuinely bad leads. No competitor named. Opportunity: recover cases
+   from leads already being paid for.
+6. [Team / Long-Term] Give Karim a Financial Second-in-Command — Why: every
+   dollar decision runs through one person despite a 20-person staff. No
+   competitor named. Opportunity: begin the delegation that makes stepping
+   back possible.
+7. [Profit / Quick Win] Build the Profit Visibility Karim Has Never Had —
+   Why: no cost-per-case or margin visibility exists despite a $5M peak
+   revenue year. No competitor named. Opportunity: know which practice areas
+   are actually worth growing into.
+
+============================================================
+FIRST 90 DAYS
+============================================================
+1. Launch Meta retargeting and lead-gen campaigns immediately — an untested
+   channel with no negative history, the fastest realistic path to new leads
+2. Stand up Local Service Ads, leveraging CourtLaw's review advantage over
+   every named local competitor
+3. Rebuild a narrow, rideshare-specific, Spanish-language Google Ads campaign
+   — not a repeat of the earlier broad $40k attempt
+4. Optimize and amplify the geo-targeted landing pages already built (New
+   Brunswick, Perth Amboy, Uber/Lyft) that are underperforming their potential
+5. Kick off Elite Coach Plus coaching sessions to begin building the
+   financial visibility and delegation structure Karim has never had
