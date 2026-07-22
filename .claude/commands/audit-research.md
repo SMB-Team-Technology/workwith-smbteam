@@ -189,6 +189,9 @@ Extract from the discovery call transcript. Trust these values exactly as stated
 - Dominant buying motive: [exact quote or closest inference]
 - Any profitability claims made by prospect: [exact quotes only — if none stated, write "none stated"]
 - Any claims about case types or practice areas: [exact quotes only]
+- Stated call focus / product interest: [what the prospect or rep said the call was actually about — e.g. "standard marketing/growth discovery," "Fractional CTO / AI automation engagement," "coaching/ops" — if the call was framed around something other than marketing/intake growth, say so explicitly, do not default to "standard"]
+- Existing marketing/SEO/ad vendor engagements: [any recently signed or currently active contract with another marketing, SEO, ad, or AEO vendor — exact quote if available, or "none stated"]
+- Budget constraints stated: [any explicit statement about affordability, spend limits, or inability to commit to a larger monthly investment — exact quote if available, or "none stated"]
 ```
 
 **Dominant buying motive:** Do not accept surface answers. "More money" and "more clients" are not DBMs. The real answer is what the money or growth will allow the owner to do personally — coach their kid's team, retire, take a vacation, stop missing weekends. If not clearly stated, infer from context. Most fall into: (1) firm that runs itself so they have more time, (2) grow and sell, (3) scale and dominate.
@@ -229,6 +232,9 @@ Before finishing, check every item. Fix anything unchecked before saving.
 - [ ] Revenue goal is recorded (or flagged if not stated)
 - [ ] Close rate is recorded (stated or defaulted to 15%)
 - [ ] Average case value is recorded (stated or practice area default noted)
+- [ ] Stated call focus / product interest is recorded — if the call was about something other than marketing/intake growth (e.g. Fractional CTO/AI, coaching/ops), that is called out explicitly, not buried in a "note" or left implicit
+- [ ] Existing marketing/SEO/ad vendor engagements are recorded (or "none stated")
+- [ ] Budget constraints stated by the prospect are recorded (or "none stated")
 
 ---
 

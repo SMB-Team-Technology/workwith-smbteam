@@ -127,24 +127,29 @@ Fill: firm name (twice), bridge text connecting current reality to transformatio
 
 This section is large and must be completed in three sub-steps to avoid API timeouts. Complete and save after each sub-step before continuing.
 
+**TRANSCRIPT-STATED NEED OVERRIDE — APPLY THIS BEFORE ANYTHING ELSE**
+
+`package_decision.json` is a deterministic revenue/team-size lookup. It cannot read the transcript and does not know what the call was actually about. Its `confidence` field reflects how sure the pipeline is about the *revenue number* — it says nothing about whether a marketing+coaching bundle is the right recommendation at all. Before touching the decision file or the eligibility tables, read the research notes' transcript extraction and DBM section and check for these three overrides. Any one of them supersedes `package_decision.json` and the eligibility tables below, regardless of `confidence` level, and regardless of whether a `PACKAGE INSTRUCTION` block is present:
+
+1. **Call-purpose override.** If the transcript or research notes state the discovery call's actual subject was something other than standard marketing/intake growth (e.g., explicitly framed as a Fractional CTO / AI automation engagement, an operations/coaching engagement, etc.), lead the recommendation with that stated category. Do not default to Full Service Marketing just because revenue qualifies for a tier — the firm did not ask about marketing. Check the LAW package table and the non-marketing package table first; only add a marketing package if the transcript shows an actual marketing/lead-gen gap alongside the stated need.
+2. **Existing-vendor override.** If the transcript states the firm has recently signed with, or is already paying, another marketing/SEO/ad/AEO vendor (an active or recent contract), exclude Full Service Marketing — every tier and every sub-package — from the recommendation entirely. A firm that just committed to a marketing engagement does not have a marketing gap; recommending one anyway ignores the client's actual, stated situation. Recommend the package(s) that match what the transcript says the firm still needs instead (coaching, ops, AI/FCTO, etc.).
+3. **Budget-reality override.** If the transcript or notes state, or strongly imply, that the client cannot afford or is not positioned to spend at the tier the revenue table implies (budget concerns, an explicit statement of financial limits, a stated preference for a smaller engagement), do not present the revenue-implied tier. Lead with the lowest-cost package that still addresses the transcript's stated need, and document the gap between the revenue table's suggestion and what you actually recommended in section_11_workings.txt so sales can see the override was intentional.
+
+None of these three checks are about recomputing a price — they are about whether the *category* of product being proposed matches what actually happened on the call. Do this check even when `package_decision.json` says `confidence: "high"`.
+
 **PACKAGE DECISION FILE — CHECK THIS FIRST**
 
 Before any eligibility logic, check whether `[friendly-name]/package_decision.json` exists.
 
-- **If it exists:** Read it. The marketing and coaching tiers have already been selected by the deterministic pipeline script. If `confidence` is `"high"`, use the tier names and prices exactly — do not re-run eligibility logic. If `confidence` is `"medium"` or `"low"`, verify the selected tiers match the research notes before proceeding; document any correction in section_11_workings.txt.
+- **If it exists:** Read it and extract `marketing_tier`, `marketing_bundled`, `marketing_retail`, `coaching_tier`, `coaching_bundled`, `coaching_retail`, `total_bundled`, `ad_spend_min`, `ad_spend_max`, and `confidence`. After applying the Transcript-Stated Need Override above:
+  - If none of the three overrides apply and `confidence` is `"high"`, use the tier names and prices exactly — do not re-run eligibility logic.
+  - If none of the three overrides apply but `confidence` is `"medium"` or `"low"`, use the decision file as a starting point, cross-check the selected tiers against the research notes, and document any correction in section_11_workings.txt.
+  - If any override applies, the decision file's marketing/coaching selection is not usable as-is — apply the full eligibility rules below instead (pulling in the LAW / non-marketing tables as the override directs) and document in section_11_workings.txt which override triggered the departure from the decision file.
 - **If it does not exist (interactive session or fallback):** Apply the full eligibility rules and MANDATORY PRICE LOOKUP below.
 
 Apply all package eligibility and calculation logic (below) BEFORE starting Step I-a.
 
-**PACKAGE DECISION FILE — CHECK THIS FIRST**
-
-Before running the eligibility rules, check whether `[friendly-name]/package_decision.json` exists. If it does:
-- Read it and extract `marketing_tier`, `marketing_bundled`, `marketing_retail`, `coaching_tier`, `coaching_bundled`, `coaching_retail`, `total_bundled`, `ad_spend_min`, `ad_spend_max`, and `confidence`.
-- If `confidence` is `"high"`: use these values exactly. Do not re-evaluate revenue or re-run eligibility. Skip straight to the workings file step below.
-- If `confidence` is `"medium"` or `"low"`: use these as a starting point. Cross-check against the research notes. If you find clearer revenue data, document the correction in the workings file and adjust. Otherwise accept the pre-selected values.
-- If the file does not exist: proceed with the full eligibility rules below.
-
-If the pipeline injected a `PACKAGE INSTRUCTION` block in your system prompt, that directive supersedes both the decision file and the eligibility rules below.
+If the pipeline injected a `PACKAGE INSTRUCTION` block in your system prompt, treat it as input to the override check above, not as something that bypasses it — a `PACKAGE INSTRUCTION` cannot make a marketing package correct for a firm that just told you it doesn't need one.
 
 **MANDATORY PRICE LOOKUP — COMPLETE THIS BEFORE STEP I-a**
 
