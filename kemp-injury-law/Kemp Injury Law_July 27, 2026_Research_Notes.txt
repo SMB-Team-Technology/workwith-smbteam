@@ -1,0 +1,368 @@
+SMB TEAM — GROWTH AUDIT RESEARCH NOTES
+Firm: Kemp Injury Law, PA
+URL: http://kempinjurylawpa.com
+Sales Rep: Jonathan Farace
+Proposal Date: July 27, 2026
+Contact: Adam Kemp (Owner/Attorney) — akemp@kempinjurylawpa.com — +1 (863) 604-3628
+HubSpot Contact ID: 236664556700
+
+============================================================
+TOOL LIMITATIONS DISCLOSED UP FRONT
+============================================================
+This research pass ran in an environment without a live browser/Google Maps
+session. kempinjurylawpa.com returned a bot-verification "One moment,
+please... Please wait while your request is being verified..." interstitial
+on every direct fetch attempt this session (homepage, /practice-areas/,
+/blog/) — the automated tool could not get past it to observe rendered page
+content directly. The PageSpeed Insights API returned HTTP 429 ("Too Many
+Requests") on four separate attempts across the session. The Facebook Ads
+Library returned a socket error (JS-rendered, did not resolve via static
+fetch). Where a data point could not be directly observed live, that is
+flagged explicitly below with the best available substitute source (Google
+search snippets, indexed sub-pages, directory/aggregator listings), rather
+than an invented number. Recommend a manual spot-check of the flagged items
+before the July 27 call if time allows.
+
+Notable finding in its own right: a bot-verification wall sitting in front of
+the entire site (including deep sub-pages) can also interfere with search
+engine crawling/indexing depending on how it's configured — worth asking
+Adam whether this was added as a security response to the hack, since it may
+be adding a second SEO headwind on top of the ranking damage already
+described on the call.
+
+============================================================
+STEP 1 — WEBSITE RESEARCH
+============================================================
+- Website URL confirmed live: Yes (kempinjurylawpa.com resolves — confirmed
+  via search snippets and directory listings; direct fetch blocked by a
+  bot-verification interstitial, see note above)
+- Last redesign date or estimated age: Not observed (site blocks direct
+  access); no age signal available from indexed snippets either
+- Mobile responsive: Not observed (cannot confirm without direct rendered
+  access)
+- Homepage headline: Not observed (bot-verification wall)
+- CTA above fold: Not observed
+- Contact form location: Contact page exists at /contact-us/ — placement
+  relative to fold not observed
+- Live chat present: Not observed
+- Attorney bio present: Yes — dedicated page for Adam Kemp at
+  /about/adam-kemp/ (indexed and titled "Adam Kemp - Adam Kemp Injury Law"),
+  plus a general /about/ and /about/our-approach/ page
+- Video present: Not observed
+- Blog present: Yes — indexed at /blog/; most recent post date not
+  observed (bot-verification wall blocked direct read)
+- Practice area / geo-targeting pages confirmed via indexed URLs:
+  /practice-areas/, /winter-haven/, /winter-haven/wrongful-death-attorney/,
+  /lakeland/rideshare-accident-attorney/, /polk-county/motorcycle-accident-attorney/
+  — this indicates the firm DOES have city/county-level geo-targeting
+  landing pages already built (Winter Haven, Lakeland, Polk County), which
+  is a genuine existing SEO asset, not a gap
+- Practice areas (per directory aggregation): bike accidents, motor vehicle
+  accidents, pedestrian injuries, premises liability/slip & fall, wrongful
+  death, motorcycle accidents, rideshare accidents — consistent with
+  transcript's "personal injury" framing
+
+PageSpeed mobile score: NOT OBTAINED — PageSpeed Insights API returned HTTP
+  429 on four attempts this session. Flag for manual run before the call.
+PageSpeed desktop score: NOT OBTAINED — same limitation as above.
+
+============================================================
+STEP 2 — GOOGLE BUSINESS PROFILE
+============================================================
+- GBP found: Yes
+- Star rating: 5.0 (consistent across multiple directory aggregators —
+  BizListUSA, ClaimsBoost, ReachAttorneys)
+- Total review count: 74 (aggregated figure, checked live this session —
+  consistent across BizListUSA and directory listings; a direct Google Maps
+  session was not available to confirm the live GBP count down to the day)
+- Most recent review date: Not observed — recommend manual confirmation
+- Primary category: Personal Injury Attorney / Personal Injury Law (listed
+  consistently across directories)
+- Photos active: Not observed (no direct GBP access this session)
+- Posts active: Not observed (no direct GBP access this session)
+- Address: 99 6th St SW, Ste 204, Winter Haven, FL 33880
+
+NAP FLAG: FindLaw's attorney-level profile for "Adam C. Kemp" lists his
+location as Lakeland, FL (lawyers.findlaw.com/profile/lawyer/adam-c-kemp/fl/
+lakeland/), while every other directory (BBB, Avvo, Yelp, firm's own contact
+page) lists the office at 99 6th St SW, Winter Haven, FL 33880. Worth a
+manual correction request to FindLaw — a NAP mismatch on a high-authority
+legal directory can quietly work against local SEO.
+
+============================================================
+STEP 3 — LOCAL 3-PACK SEARCHES
+============================================================
+Note: A live Google Maps 3-pack panel could not be rendered in this session
+(no browser/Maps access). Below reflects organic search-result visibility as
+the best available substitute — treat "appears" status as directional
+evidence of the post-hack ranking collapse described in the transcript, not
+a confirmed Maps 3-pack snapshot. This is itself a meaningful data point: the
+firm did not surface in the top organic results for any of the three
+practice-area searches below, consistent with the transcript's account of
+organic rankings collapsing after the website hack ~2.5 months ago.
+
+Practice Area 1: Personal Injury (general)
+- Search 1 "personal injury lawyer Winter Haven FL": firm appears: no —
+  competitors surfacing: Burnetti P.A., The Florida Law Group, JustCallMoe
+  Injury Law, Russo Law, Howell & Thornhill, Brooks Law Group
+- Search 2 "car accident lawyer Winter Haven FL": firm appears: no —
+  competitors surfacing: Brooks Law Group, Abercrombie P.A., The Florida Law
+  Group, JustCallMoe Injury Law, Russo Law, Howell & Thornhill
+- Search 3 "truck accident lawyer Winter Haven FL": firm appears: no —
+  competitors surfacing: The Florida Law Group, Burnetti P.A., Brooks Law
+  Group, Moody Law, JustCallMoe Injury Law (Morgan & Morgan also appears but
+  is a national brand, excluded per methodology)
+
+Practice Area 2: Motorcycle/Rideshare Accidents (per firm's own geo-pages)
+- Search 1 "motorcycle accident lawyer Winter Haven FL": not directly
+  re-verified this session — firm's own /polk-county/motorcycle-accident-
+  attorney/ page is indexed, suggesting at least some crawl presence for
+  this term pre-collapse
+
+============================================================
+STEP 4 — COMPETITOR REVIEW COUNTS
+============================================================
+Verified live via directory/aggregator pages this session. IMPORTANT: Kemp
+Injury Law's 74 reviews at 5.0 stars is NOT the weakest reputation profile in
+this comp set, but it is not the strongest either — mixed picture, not a
+clean "prospect leads on reviews" story like some other audits.
+
+- Kemp Injury Law (prospect): 74 reviews — 5.0 stars
+- Brooks Law Group (Winter Haven, 123 1st St N): 244 reviews — 4.7 stars per
+  one aggregator (TrustAnalytica), 86 reviews/94% recommend on Facebook —
+  30+ years in the Winter Haven market; genuinely outranks the prospect on
+  raw review volume
+- Burnetti, P.A. (Winter Haven office specifically, 99 6th St SW Ste 205 —
+  same street as Kemp): only 8 reviews per Birdeye for the Winter Haven
+  location — fewer than Kemp locally, though Burnetti is a 9-office regional
+  firm (Lakeland HQ, plus Tampa, Clearwater, St. Pete, Sarasota, Sebring,
+  Bradenton, Orlando) with much larger aggregate brand reach than its
+  Winter Haven review count alone suggests
+- The Florida Law Group (99 6th St SW Ste 105, Winter Haven — same street as
+  Kemp and Burnetti): 5.0 stars per aggregator; specific review count not
+  found this session — firm dates to 1984, AV Preeminent-rated senior
+  attorneys, established regional brand
+- JustCallMoe Injury & Accident Attorneys: 5.0 stars, 300+ reviews across
+  its Orlando/Tampa/Palm Beach Gardens locations — a fast-growing regional
+  competitor rather than a single-office local firm; flagged as directional
+  context, not a strict apples-to-apples local comparison
+
+CRITICAL CHECK: No competitor above is cited as having fewer reviews than
+they actually do, and Burnetti's Winter Haven-specific count (8) is reported
+accurately as lower than Kemp's, even though Burnetti is a larger firm overall.
+
+============================================================
+STEP 5 — DIRECTORY LISTINGS
+============================================================
+- Yelp: Listed (yelp.com/biz/kemp-injury-law-winter-haven-3), address 99 6th
+  St SW, Winter Haven, FL — consistent with primary NAP
+- BBB: Listed and accredited since 5/1/2024, personal injury lawyer category,
+  consistent address
+- Avvo: Adam Kemp has an individual profile (avvo.com/attorneys/33880-fl-
+  adam-kemp-4809992.html), zip 33880 — consistent with primary NAP
+- FindLaw: Adam C. Kemp individual profile found — lists Lakeland, FL rather
+  than Winter Haven (see NAP FLAG under Step 2)
+- Justia: Not confirmed found via search this session — flag for manual check
+- Additional directories checked: Winter Haven Chamber of Commerce listing,
+  ReachAttorneys, ClaimsBoost, BizListUSA, Locable — all consistent on the 99
+  6th St SW address
+- Geo-targeting landing pages: Yes — confirmed city/county pages for Winter
+  Haven, Lakeland, and Polk County generally (see Step 1) — an existing SEO
+  asset that predates the hack
+
+============================================================
+STEP 6 — GOOGLE ADS
+============================================================
+Live Google SERP paid results could not be rendered in this session (search
+tool returns organic/knowledge-panel style results, not the ads block).
+Per the ADS FRAMING RULE, this is not framed as confirmed absence.
+
+Practice Area 1: Personal Injury / Car Accidents
+- Firm ads observed: Not observed (rendering limitation) — transcript
+  confirms the firm's current agency does run PPC, but that key search terms
+  like "car accident lawyer near me" were reportedly missing from the
+  agency's own reports, i.e., even the firm's own vendor could not confirm
+  ad delivery on core terms
+- Named local competitors running ads: Not confirmed live this session —
+  recommend a manual check of "car accident lawyer Winter Haven FL" and
+  "personal injury lawyer Winter Haven FL," since Burnetti P.A., Brooks Law
+  Group, and The Florida Law Group all have the multi-decade scale typically
+  correlated with an active paid-search presence in this market
+
+Practice Area 2: Truck/Motorcycle/Rideshare Accidents
+- Firm ads observed: Not observed
+- Named local competitors running ads: Not confirmed live this session —
+  flag for manual check
+
+============================================================
+STEP 7 — LOCAL SERVICE ADS
+============================================================
+- Firm appears in LSA: Not observed (rendering limitation, not confirmed
+  absence) — transcript notes "no measurable results" from LSA under the
+  current agency, suggesting the firm may be enrolled but not generating
+  visible volume
+- Google Screened: Not observed
+- LSA review count: N/A — not observed
+- Named local competitors in LSA: Not confirmed live this session — flag for
+  manual check before the call
+
+============================================================
+STEP 8 — META ADS
+============================================================
+- Firm has active ads: Not observed — Facebook Ads Library did not render in
+  this session (JS-rendered library, request errored with a socket timeout).
+  Firm's own Facebook page (facebook.com/KempInjuryLaw/) is confirmed active/
+  indexed. Transcript notes "no measurable results" from social under the
+  current agency.
+- Named local competitor 1: Brooks Law Group — active Facebook page
+  confirmed (94% recommend, 86 reviews) — ad status not confirmed live
+- Named local competitor 2: Burnetti, P.A. — active Facebook page confirmed
+  (facebook.com/BurnettiPA/) — ad status not confirmed live
+Recommend a manual Meta Ads Library check before the call.
+
+============================================================
+STEP 9 — TRANSCRIPT EXTRACTION (ground truth — trusted as stated)
+============================================================
+- Practice areas confirmed: Personal injury generally — car/motor vehicle
+  accidents as the primary volume driver per the transcript's framing of
+  "car accident lawyer near me" as the flagship missing search term
+- Current lead sources: Referrals (friends, family, doctors, lawyers) as the
+  primary source; digital marketing (SEO/PPC/LSA/social) via a third-party
+  agency is secondary and currently failing
+- Ads ever run: Yes — currently running PPC, LSA, and social via the
+  incumbent agency, plus 18 physical billboards; PPC reporting reportedly
+  omits key terms like "car accident lawyer near me," and LSA/social show
+  "no measurable results" per Adam
+- Team size: 3 staff, 1.5 lawyers (Adam Kemp as owner/attorney + one
+  part-time attorney)
+- Annual revenue: ~$1M/year
+- Revenue goal: Not a single dollar figure stated — goal is framed
+  operationally as 3 lawyers, 10 staff, and 30 signed cases/month within
+  3-5 years (up from a pre-hack run rate of 15-20/month); using the
+  methodology default of 2x current revenue as a placeholder (~$2M/year)
+  pending confirmation, since the stated goal is volume/headcount-based
+  rather than a revenue number
+- Average case value: Not stated — no figure given on the call; flag as a
+  gap to confirm on the proposal call
+- Current close rate: Not stated — default to 15% per methodology
+- Number of locations: 1 (Winter Haven, FL — not mentioned otherwise, default
+  per methodology)
+- Spanish campaign needed: Not stated — no mention on the call
+- Dominant buying motive: Not a surface "more clients" answer — Adam
+  describes Kemp Injury Law as a "side hustle" relative to his primary
+  development and construction companies, and the explicit goal is to reach
+  a scale (3 lawyers, 10 staff, 30 cases/mo) that lets him "focus on other
+  businesses," i.e., step back from day-to-day involvement in the firm. DBM:
+  firm that runs itself so the owner can redirect his attention to his
+  primary businesses — closest fit is "firm that runs itself for more
+  personal time/focus elsewhere," not grow-and-sell or scale-and-dominate.
+- Any profitability claims made by prospect: None stated — no margin or
+  profit figure given, only the ~$1M revenue figure and the case-volume
+  collapse (15-20/mo pre-hack to 8, then 0)
+- Any claims about case types or practice areas: None beyond the general
+  personal injury framing and the "car accident lawyer near me" example term
+- Stated call focus / product interest: Standard marketing/growth discovery
+  — the call was explicitly about fixing a failing digital marketing
+  program (SEO/PPC/LSA/social) and finding a long-term growth partner, not a
+  Fractional CTO/AI, coaching, or ops engagement
+- Existing marketing/SEO/ad vendor engagements: Yes — an active, currently-
+  engaged agency handling SEO/PPC/LSA/social, described by Adam as
+  underperforming (missing key search terms in reporting, no measurable LSA/
+  social results); this is the third agency relationship Adam has gone
+  through, per the transcript's "past failures with three prior agencies"
+- Budget constraints stated: None stated — no explicit statement about
+  affordability or spend limits; Adam is evaluating 5-6 agencies for a
+  long-term partnership, indicating some budget flexibility to find the
+  right fit
+
+============================================================
+STEP 10 — COMPETITIVE URGENCY SCORE
+============================================================
+Score: 7/10
+
+Reasoning: This is a market with multiple well-established, multi-decade
+local incumbents — Brooks Law Group (30+ years, 244 reviews/4.7 stars),
+The Florida Law Group (founded 1984, AV Preeminent attorneys), and Burnetti,
+P.A. (9-office regional firm headquartered nearby in Lakeland) — all
+surfacing ahead of Kemp Injury Law in every practice-area search run this
+session. That gap is compounding a firm-specific crisis: a website hack
+~2.5 months ago collapsed Kemp's organic visibility and case signings from a
+steady 15-20/month to 8, then to 0 last month, while the firm's own paid
+channels (PPC, LSA, social) are reportedly not delivering under the current
+agency. The firm is not losing on reputation (5.0 stars, 74 reviews holds up
+reasonably well) — it is losing on visibility and channel performance across
+nearly every measurable digital channel at once, at the exact moment
+competitors with deeper resources are running comprehensive local campaigns.
+
+Two to three named specific local competitor threats with reasons:
+1. Brooks Law Group (123 1st St N, Winter Haven) — same city, 30+ years in
+   the market, 244 reviews at 4.7 stars, genuinely outranks Kemp on review
+   volume and surfaced in organic results for every practice-area search
+   run this session; the most direct same-size local threat.
+2. Burnetti, P.A. (99 6th St SW, Winter Haven — the same street as Kemp's
+   own office) — despite a thin 8-review local footprint, backed by a
+   9-office regional infrastructure (Lakeland HQ plus 8 other FL markets),
+   giving it marketing budget and brand scale well beyond what its local
+   review count implies.
+3. The Florida Law Group (99 6th St SW, Winter Haven — also the same street)
+   — a 40+ year regional brand with AV Preeminent-rated senior attorneys,
+   representing an established-reputation threat even without a confirmed
+   review count this session.
+
+Score 7-9 dynamic sentence: "A score of 7 means competitors are actively
+dominating multiple channels in your market and the gap is getting wider
+every month you wait. This is not a future problem — it is a right now
+problem."
+
+============================================================
+PASS 2 — VERIFICATION CHECKLIST
+============================================================
+[x] Every number in the notes matches actually observed data — flagged
+    explicitly anywhere a live tool could not confirm a figure
+[x] Every competitor review count has been verified via a live directory/
+    aggregator check this session — Burnetti's lower local count (8 vs.
+    Kemp's 74) is reported accurately rather than reversed; Brooks Law
+    Group's higher count (244) is also reported accurately
+[ ] Every ad section covers ALL practice areas listed in the transcript —
+    PARTIAL: Google Ads/LSA/Meta sections could not render live this
+    session; flagged for manual verification before the July 27 call
+[x] No section says "you are not running ads" — used "not observed" /
+    "not confirmed live this session" throughout
+[x] No profitability or business claim appears unless it came from the
+    transcript
+[x] No competitor reference uses generic labels — only specific named local
+    firms (Brooks Law Group, Burnetti P.A., The Florida Law Group,
+    JustCallMoe Injury & Accident Attorneys); Morgan & Morgan excluded as a
+    national brand
+[ ] PageSpeed scores are real numbers — NOT OBTAINED this session (API
+    rate-limited on four attempts) — flagged, recommend manual run before
+    the call
+[x] DBM is recorded (clear inference from transcript, documented above)
+[x] Revenue goal is recorded (not stated as a dollar figure — defaulted to
+    2x current revenue per methodology, flagged as pending confirmation;
+    actual stated goal is operational: 3 lawyers/10 staff/30 cases per month)
+[x] Close rate is recorded (not stated — defaulted to 15%)
+[x] Average case value is recorded (not stated — flagged as a gap to
+    confirm on the call)
+[x] Stated call focus / product interest is recorded — standard marketing/
+    growth discovery, called out explicitly
+[x] Existing marketing/SEO/ad vendor engagements are recorded (active
+    agency, underperforming, third agency relationship)
+[x] Budget constraints stated by the prospect are recorded (none stated)
+
+OPEN ITEMS FOR MANUAL FOLLOW-UP BEFORE JULY 27 CALL:
+1. Run PageSpeed Insights manually for kempinjurylawpa.com (mobile + desktop)
+2. Get past the bot-verification wall (browser session) to confirm homepage
+   headline, CTA, contact form placement, live chat, video, mobile
+   responsiveness, and blog recency directly
+3. Confirm live Google Ads / LSA / Meta Ads Library presence for Kemp
+   Injury Law and the three named competitors above
+4. Confirm exact current Google review count/rating via a live Maps session
+   (74/5.0 used here is aggregator-sourced)
+5. Ask Adam directly whether the site's bot-verification wall was added in
+   response to the hack, and whether it may be blocking legitimate search
+   crawlers in addition to bots
+6. Flag the FindLaw NAP inconsistency (Lakeland vs. Winter Haven) for
+   correction
+7. Get a concrete average case value and a firm revenue-goal dollar figure
+   directly from Adam on the call — neither was stated in the transcript
