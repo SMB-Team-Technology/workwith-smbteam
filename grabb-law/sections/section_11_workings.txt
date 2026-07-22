@@ -1,0 +1,138 @@
+GRABB LAW — SECTION 11 WORKINGS
+================================================================
+
+MANDATORY PRICE LOOKUP (character-checked against Marketing/Non-Marketing tables in audit-write.md)
+----------------------------------------------------------------
+- Marketing package selected: Full Service Marketing — Starter
+  - Bundled price (from table): $4,997/mo
+  - Stand-alone price (from table): $5,697/mo
+  - Savings (stand-alone minus bundled): $700/mo
+- Non-marketing package selected: Elite Coach Plus
+  - Bundled price (from table): $3,200/mo
+  - Stand-alone price (from table): $3,497/mo
+  - Savings (stand-alone minus bundled): $297/mo
+- Legal AI Workforce (LAW) package selected: none (revenue below the $500K reliable-adoption floor at the low end of the estimate range; flagged as a Phase 3 candidate only, not priced into this proposal)
+- AI Avatar / Video Growth add-on selected: none (no interest expressed on the call; requires Alexis approval and was not evaluated)
+- Total monthly investment (sum of all bundled/recurring prices): $8,197/mo
+- Total savings (sum of all savings): $997/mo
+
+REVENUE VERIFICATION — READ BEFORE FINALIZING
+----------------------------------------------------------------
+package_decision.json shipped with confidence: LOW. revenue_effective = $570,000, sourced from
+HubSpot field hubspot_annual_law_firm_revenue = "$180K - $960K" (range midpoint-ish estimate).
+The research notes confirm annual revenue was NOT stated on the call — Jeff's action item was to
+confirm it with Robert directly. This was re-checked against the research notes before writing
+this section, per the Pass 2 instruction.
+
+Cross-check against other transcript signals:
+- The firm already spends ~$25,000/month (~$300,000/year) on marketing across TV, radio, social,
+  and website vendors. At the $570K estimate, that would be ~53% of revenue spent on marketing
+  alone — implausible for an operating firm. This signal suggests actual revenue is likely higher
+  than the $570K midpoint, plausibly toward the upper half of the $180K–$960K HubSpot range or
+  above it.
+- Team size (6: 2 attorneys, 4 paralegals) is modest but not inconsistent with a firm in the
+  $750K–$1.5M range for a contingency-fee PI practice.
+- Practice areas detected are multiple (general PI + MVA-specific criteria + motorcycle, plus 14
+  practice-area sub-pages on the site) — this independently eliminates Essentials regardless of
+  revenue, and Over $750K also independently eliminates Essentials. Both filters point the same
+  direction, so the tier selection is NOT sensitive to exactly where in the range revenue falls,
+  as long as it is at least $500K:
+    - $500K–$1M with multiple practice areas -> Starter ($4,997/mo, $20,000 ad cap)
+    - $1M–$2M -> Growth ($7,497/mo, $50,000 ad cap)
+  Coaching tier is also insensitive to this uncertainty: both the $400K–$1M band and the $1M+ band
+  (team under 5 dedicated staff) resolve to Elite Coach Plus at $3,200/mo. Master's Circle stays
+  hidden either way (fewer than 5 dedicated ops/marketing/intake staff — the team is 2 attorneys +
+  4 paralegals doing casework, not dedicated ops/marketing/intake roles).
+
+DECISION: Kept Full Service Marketing — Starter + Elite Coach Plus as selected by the pipeline.
+This is the defensible, lower-risk recommendation given confirmed data, and it is correct under
+both the stated HubSpot estimate and the more-likely-higher revenue read implied by current ad
+spend. The one scenario where this proposal would need to change is if Robert confirms revenue at
+or above $1M — in which case marketing should move to Growth ($7,497/mo bundled, $8,997 stand-alone,
+$50,000 ad cap). RECOMMEND: sales rep confirms actual annual revenue with Robert before contract
+signing; if it lands at $1M+, re-run this package selection at the Growth tier.
+
+35% SPEND-CAP CHECK (internal, not in client report)
+----------------------------------------------------------------
+Total SMB spend = $8,197/mo management fees + $10,000–$20,000/mo ad spend = $18,197–$28,197/mo.
+At the $570K estimate ($47,500/mo revenue), 35% cap = $16,625/mo — the conservative scenario alone
+already exceeds this cap by ~$1,572/mo. At $750K/yr ($62,500/mo), cap = $21,875/mo — conservative
+scenario fits, aggressive does not. At $960K/yr top of range ($80,000/mo), cap = $28,000/mo — both
+scenarios fit comfortably.
+FLAG FOR JACOB: given this, anchor the initial conversation on the conservative $10,000/mo ad spend
+figure until revenue is confirmed, and treat the $20,000/mo aggressive figure as the target once
+Robert confirms a revenue number that supports it under the 35% guideline.
+
+FIRM BRANDING NOTE (internal, not a proposal blocker)
+----------------------------------------------------------------
+grabblaw.com redirects live to grabbanddurando.com; site branding reads "Grabb & Durando" while the
+sales trigger and this proposal use "Grabb Law." Confirmed as the same firm (Tucson AZ address,
+PI practice mix, 6 staff all match the transcript). Recommend Jacob confirm with Jeff which brand
+name to use consistently before the report is presented.
+
+AD SPEND & ROI — CONSERVATIVE AND AGGRESSIVE
+----------------------------------------------------------------
+Primary practice area for ad spend calc: MVA / Car Accidents (PI hard floor: High competitiveness
+given urgency score 7/10 and three competitors actively dominating paid channels -> $10,000 minimum).
+
+Conservative ($10,000/mo): allocate to Google Search only (highest-intent channel; matches the
+MVA Google PPC Min of $10,000 and the PI High-competitiveness floor).
+  - Blended CPL = Accident & Injury Google Search midpoint ($630–$780 -> $705) + 20% cushion = $846
+  - Leads = $10,000 / $846 ≈ 11.8/mo -> ~10–12 leads/mo
+  - Cases = 11.8 x 15% default close rate ≈ 1.8/mo -> ~1–2 cases/mo
+  - Case value: not stated on the call: using MVA default $5K–$10K, midpoint $7,500 (disclosed as
+    a default, not a transcript figure)
+  - Revenue ≈ 1.8 x $7,500 ≈ $13,275/mo -> ~$13,000–$15,000/mo
+  - Return ≈ 1.3x
+
+Aggressive ($20,000/mo — matches Starter tier ad spend cap; no revenue goal was stated on the call,
+so this uses the tier cap rather than the 20%-of-goal formula): allocate across Google Search
+($10,000), LSA ($2,000), Meta Retargeting ($1,500), and Meta Lead Gen/cold ($6,000) — this ~$19,500
+channel-minimum mix for MVA rounds to the $20,000 tier cap.
+  - Blended CPL (spend-weighted midpoints, no cushion):
+      Google 51.3% x $705 = $361.7
+      LSA 10.3% x $235 = $24.2
+      Meta Retargeting 7.7% x $90 = $6.9
+      Meta Cold 30.8% x $170 = $52.4
+      Blended CPL ≈ $445
+  - Leads = $20,000 / $445 ≈ 44.9/mo -> ~40–45 leads/mo
+  - Cases = 44.9 x 15% ≈ 6.7/mo -> ~6–7 cases/mo
+  - Revenue ≈ 6.7 x $7,500 ≈ $50,250/mo -> ~$48,000–$52,000/mo
+  - Return ≈ 2.5x
+
+Both scenarios use the 15% default close rate and the MVA default case value range — disclosed
+because neither was stated on the call. Revenue in Block 4 of section_11 is presented as the full
+range ($10,000–$20,000/mo spend, ~$15,000–$50,000/mo estimated revenue from ads, 2–7 estimated
+cases/mo) to span both scenarios in the single ad-spend table the template provides.
+
+DBM STATEMENT FOR BLOCK 1
+----------------------------------------------------------------
+DBM (inferred, not a stated personal quote — flagged in research notes for direct confirmation with
+Robert/Jeff): a firm that runs on systems rather than the owner's day-to-day oversight of vendors,
+intake decisions, and case-quality standards — inferred from the firm's interest in fractional CTO
+automations "to improve efficiency and reduce costs" and its operational framing of the profit goal.
+We help established Tucson personal injury firms already spending real money on marketing get a
+system that turns that spend into a predictable flow of quality cases so they can step back from
+day-to-day vendor management and case-intake oversight and run a firm that operates on systems, not
+personal follow-up.
+
+QUICK WIN OPPORTUNITIES (6 identified, across all four pillars)
+----------------------------------------------------------------
+1. [Lead Gen / Quick Win] Redirect Marketing Spend Toward Digital Channels — competitor: Zanes Law
+2. [Intake / Quick Win] Track Where Leads Are Being Lost After the Call — no competitor
+3. [Team / Long-Term Play] Establish an Intake/Ops Lead — no competitor
+4. [Profit / Quick Win] Confirm Revenue and Marketing ROI Baseline — no competitor
+5. [Lead Gen / Long-Term Play] Fix the NAP Inconsistency Across Directories — competitor: Karnas Law Firm
+6. [Intake / Long-Term Play] Build a Defined Follow-Up Sequence for Non-Signing Leads — no competitor
+
+FIRST 90 DAYS
+----------------------------------------------------------------
+1. Launch Google Ads and Local Service Ads campaigns targeting car accident, personal injury, and
+   motorcycle-accident searches in Tucson.
+2. Redirect a portion of the existing $25,000/month marketing budget toward these new digital
+   channels rather than adding net-new spend on day one.
+3. Fix the NAP inconsistency across the firm's website and directory listings (Avvo, FindLaw, Yelp,
+   BBB, etc.).
+4. Begin website optimization — attorney bio, PageSpeed performance, and mobile experience.
+5. Kick off Elite Coach Plus coaching sessions to start building the accountability and
+   profit-tracking structure the firm doesn't have today.
