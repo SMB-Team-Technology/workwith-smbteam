@@ -1,0 +1,201 @@
+KEMP INJURY LAW — SECTION 11 WORKINGS
+============================================================
+
+REVENUE CORRECTION (per TRANSCRIPT-STATED NEED OVERRIDE check)
+------------------------------------------------------------
+package_decision.json used revenue_effective = $570,000 (confidence: low,
+sourced from HubSpot's banded field "hubspot_annual_law_firm_revenue":
+"$180K - $960K"). The research notes' STEP 9 transcript extraction — labeled
+"ground truth, trusted as stated" — explicitly states: "Annual revenue:
+~$1M/year." This is a direct transcript figure and takes precedence over the
+low-confidence HubSpot band estimate per the audit-write.md instruction to
+cross-check decision-file output against the research notes when confidence
+is not "high."
+
+CORRECTED REVENUE USED FOR ALL CALCULATIONS BELOW: $1,000,000/year
+($83,333/month)
+
+Per the Numeric Quick-Reference table, revenue of 1,000,000 falls in the
+"1000000–1999999 → Growth" band (the $500K–$1M Starter band is exclusive of
+1,000,000). This moves the marketing tier from Starter (package_decision.json's
+original pick, based on the incorrect $570K figure) to Growth.
+
+Non-marketing (coaching) package is unaffected by this correction — both the
+$570K and $1M revenue bands map to Elite Coach Plus (team size 3, "Under 5"),
+so package_decision.json's coaching selection stands.
+
+OVERRIDE CHECKS (Transcript-Stated Need Override)
+------------------------------------------------------------
+1. Call-purpose override: Does NOT apply. Stated call focus was standard
+   marketing/growth discovery (fixing a failing digital marketing program),
+   confirmed explicitly in research notes STEP 9.
+2. Existing-vendor override: Does NOT apply, despite an active current agency
+   relationship. The override exists to stop recommending marketing to a firm
+   that "just committed to a marketing engagement" and has no marketing gap.
+   Here the opposite is true: the current (third) agency is described as
+   failing (missing key search terms in PPC reporting, "no measurable
+   results" from LSA/social), and the entire stated purpose of the call was
+   to replace it with a working long-term marketing partner. A marketing gap
+   clearly exists — the override's rationale does not hold, so Full Service
+   Marketing remains the correct recommendation.
+3. Budget-reality override: Does NOT apply. No budget constraints were
+   stated or implied (Adam is evaluating 5-6 agencies, indicating spend
+   flexibility to find the right fit).
+
+MANDATORY PRICE LOOKUP
+------------------------------------------------------------
+- Marketing package selected: Full Service Marketing Growth
+  - Bundled price (from table): $7,497/mo
+  - Stand-alone price (from table): $8,997/mo
+  - Savings (stand-alone minus bundled): $1,500/mo
+- Non-marketing package selected: Elite Coach Plus
+  - Bundled price (from table): $3,200/mo
+  - Stand-alone price (from table): $3,497/mo
+  - Savings (stand-alone minus bundled): $297/mo
+- Legal AI Workforce (LAW) package selected: none — call focus was standard
+  marketing/growth discovery, no AI/FCTO interest expressed
+- AI Avatar / Video Growth add-on selected: none
+- Total monthly investment (bundled): $7,497 + $3,200 = $10,697/mo
+- Total savings: $1,500 + $297 = $1,797/mo
+
+ELIGIBILITY CHECK (at corrected $1M revenue)
+------------------------------------------------------------
+- Personal Injury (multiple sub-types: MVA/car accidents, motorcycle,
+  rideshare, wrongful death, premises liability) → Essentials hidden
+  regardless (PI rule + multi-practice-area rule + revenue >$750K rule all
+  independently exclude it). Minimum tier Starter; revenue band selects Growth.
+- Team size 3 (Under 5) → Master's Circle hidden; Elite Coach Plus applies.
+- No profit-problem signal in transcript → Fractional CFO Advisor not added.
+- No AI/FCTO interest → LAW not recommended.
+
+AD SPEND CALCULATION
+------------------------------------------------------------
+Practice area used for floors: MVA/Car Accidents (most competitive/highest-cost
+sub-type among the firm's PI practice areas, per multi-practice-area rule).
+
+CONSERVATIVE (sum of channel minimums, 3 recommended channels — PPC, LSA,
+Meta Retargeting; continuing the same 3 channel types the firm already runs,
+per channel priority order):
+  Google PPC min:      $10,000
+  LSA min:               $2,000
+  Meta Retargeting min:  $1,500
+  ------------------------------
+  Conservative Ad Spend: $13,500/mo
+
+AGGRESSIVE (20% rule):
+  No dollar revenue goal stated (goal is operational: 3 lawyers/10 staff/30
+  cases per month) → default to 2x current revenue = $2,000,000 goal.
+  Annual marketing budget = $2,000,000 x 20% = $400,000
+  Monthly = $400,000 / 12 = $33,333
+  Geo multiplier: Winter Haven/Polk County falls within the Tampa-St.
+  Petersburg-Sarasota DMA (Tier 2, ~3.1M) = 1.3x
+  Geo-adjusted = $33,333 x 1.3 = $43,333
+  Spanish campaign: not stated, no modifier
+  - Marketing mgmt fee ($7,497) = Available ad spend = $35,836/mo
+
+  Reverse math validation:
+  Target monthly cases = ($2,000,000/12) / $7,500 avg case value ≈ 22.2
+  Required leads = 22.2 / 15% close rate ≈ 148/mo
+  Blended CPL (Accident & Injury, PPC 74%/LSA 15%/Meta Retarget 11% mix,
+  midpoints $705/$235/$90) ≈ $567
+  Required ad spend ≈ 148 x $567 ≈ $83,900/mo — far above the 20%-rule number.
+  This gap signals the operational goal (30 cases/month) is aggressive
+  relative to the Growth tier's ad spend cap. Per the boundary rule, revenue
+  ($1M) does not meet the $2M floor required for Dominate, so tier upgrade is
+  not available regardless of ad spend need. AGGRESSIVE AD SPEND IS CAPPED AT
+  THE 20%-RULE NUMBER ($35,836 ≈ $35,800/mo), well under the Growth tier's
+  $50,000 cap. Flagged for sales: the stated case-volume goal likely requires
+  a future tier upgrade as revenue grows — this is reflected in the Phase 4
+  roadmap note, not promised in Block 4.
+
+  AGGRESSIVE AD SPEND: $35,800/mo
+
+35% CAP CHECK
+------------------------------------------------------------
+Current monthly revenue: $83,333. 35% cap = $29,167.
+Packages ($10,697) + aggressive ad spend ($35,800) = $46,497 — exceeds the
+35% cap on CURRENT revenue.
+Per Step 7's built-in exception: check against GOAL revenue. Goal monthly
+revenue = $166,667. 35% of goal = $58,333. $46,497 is comfortably under this.
+CONCLUSION: present the aggressive scenario, but note internally that it is a
+stretch relative to current revenue and becomes a smaller percentage of
+revenue as the firm grows toward its goal — standard framing per the guide,
+not a reason to reduce the recommendation.
+Conservative scenario ($13,500 ad spend + $10,697 packages = $24,197/mo) is
+well within the current-revenue 35% cap ($29,167).
+
+ROI PROJECTIONS
+------------------------------------------------------------
+Average case value: not stated in transcript — using MVA/Car Accidents
+default midpoint ($5,000-$10,000 range) = $7,500. Disclosed as an estimate.
+Close rate: not stated — default 15%.
+
+CONSERVATIVE ($13,500/mo ad spend):
+  Blended CPL with 20% cushion ≈ $680
+  Leads = $13,500 / $680 ≈ 20 leads/mo
+  Cases = 20 x 15% ≈ 3 cases/mo
+  Revenue = 3 x $7,500 = $22,500/mo
+  Return = $22,500 / $13,500 ≈ 1.7x
+
+AGGRESSIVE ($35,800/mo ad spend):
+  Blended CPL, no cushion ≈ $567
+  Leads = $35,800 / $567 ≈ 63 leads/mo
+  Cases = 63 x 15% ≈ 9 cases/mo
+  Revenue = 9 x $7,500 = $67,500/mo
+  Return = $67,500 / $35,800 ≈ 1.9x
+
+DBM STATEMENT (Block 1)
+------------------------------------------------------------
+Adam Kemp treats Kemp Injury Law as a "side hustle" relative to his primary
+development and construction businesses. His stated goal (3 lawyers, 10
+staff, 30 cases/month within 3-5 years) is explicitly about reaching a scale
+that lets him step back and redirect his attention to those other
+businesses — not about growing the firm as his main focus. DBM: a firm that
+runs itself so the owner can redirect his attention elsewhere.
+
+QUICK WIN OPPORTUNITIES (7, across all 4 pillars)
+------------------------------------------------------------
+1. [Lead Gen / Quick Win] Fix the bot-verification wall — may be compounding
+   the hack's SEO damage by blocking search crawlers in addition to bots. No
+   named competitor tie-in.
+2. [Lead Gen / Quick Win] Correct the FindLaw NAP mismatch (Lakeland listed
+   instead of Winter Haven) — low-cost local SEO fix. No named competitor
+   tie-in.
+3. [Lead Gen / Quick Win] Audit the current agency's PPC setup for the
+   missing "car accident lawyer near me" term. Competitor: Brooks Law Group
+   (surfaces in every search Kemp does not).
+4. [Lead Gen / Long-Term] Rebuild organic rankings via SEO content on top of
+   the existing Winter Haven/Lakeland/Polk County geo-pages. Competitors:
+   Brooks Law Group, The Florida Law Group.
+5. [Intake / Quick Win] Start tracking total monthly lead volume — real
+   after-hours coverage (24/7 on-call staff, lead case manager, answering
+   service) already exists per the transcript, but no formal system tracks
+   volume, so acknowledged monthly lead leakage cannot be measured or fixed.
+   No named competitor tie-in.
+6. [Team / Long-Term] Build a leadership/ops layer so growth does not all
+   land on Adam personally. No named competitor tie-in.
+7. [Profit / Quick Win] Establish average case value and cost-per-acquisition
+   tracking. No named competitor tie-in.
+
+FIRST 90 DAYS
+------------------------------------------------------------
+1. Launch Google PPC, LSA, and Meta retargeting campaigns targeting car
+   accident, motorcycle, and rideshare accident searches across Winter Haven
+   and Polk County
+2. Resolve the bot-verification wall and confirm real PageSpeed scores so
+   search engines can fully crawl and rank the site again
+3. Correct the FindLaw NAP listing and audit remaining directory consistency
+4. Kick off Elite Coach Plus coaching to begin building the leadership
+   structure Adam needs to step back
+5. Stand up formal lead-volume tracking behind the existing 24/7 intake setup,
+   alongside case value/CPA tracking, to measure what is actually working
+
+INTERNAL ESCALATION FLAGS (do not appear in client report)
+------------------------------------------------------------
+- Aggressive ad spend ($35,800/mo) exceeds $25,000 — scoping approval
+  required
+- Combined package + aggressive ad spend exceeds 35% of CURRENT monthly
+  revenue (though within 35% of goal revenue) — sales should confirm Adam's
+  comfort with a stretch investment in year one
+- Revenue figure used ($1M) is a transcript-stated approximation ("~$1M"),
+  not an exact figure — recommend confirming an exact number before contract
