@@ -1,0 +1,137 @@
+SAPALA LLP — SECTION 11 WORKINGS
+=====================================================================
+
+MANDATORY PRICE LOOKUP (confirmed character-by-character against tables in audit-write.md)
+- Marketing package selected: Full Service Marketing — Starter
+  - Bundled price (from table): $4,997/mo
+  - Stand-alone price (from table): $5,697/mo
+  - Savings (stand-alone minus bundled): $700/mo
+  - Ad spend cap: $20,000/mo
+- Non-marketing package selected: Elite Coach Plus
+  - Bundled price (from table): $3,200/mo
+  - Stand-alone price (from table): $3,497/mo
+  - Savings (stand-alone minus bundled): $297/mo
+- Legal AI Workforce (LAW) package selected: none
+  - Excluded per eligibility rule: firm is solo with no support staff (minimum 1-2 staff
+    needed to engage with LAW implementation). Revalue if/when Brandon hires support staff.
+- AI Avatar / Video Growth add-on selected: none
+  - No expressed interest in video/social content on the call; requires Alexis approval and
+    an established marketing budget the firm doesn't have yet.
+- Total monthly investment (sum of all bundled/recurring prices): $8,197/mo
+  ($4,997 + $3,200 = $8,197)
+- Total savings (sum of all savings): $997/mo
+  ($700 + $297 = $997)
+
+PACKAGE TIER VERIFICATION (Pass 2 — see also sapala-law/package_decision.json)
+- Revenue: not stated as an annual figure in research notes. Sourced from HubSpot
+  ("$180K - $960K" band) as $570,000 (confidence: medium). CONFIRMED against transcript:
+  June 2026 collected $43K/mo and billed >$50K/mo, annualizing to $516K-$600K+, which
+  brackets the $570K estimate. No correction needed to the revenue figure.
+- Team size: transcript is explicit the firm is a "solo founder" bottleneck (corrected
+  from Pass 1's default assumption of 3). Does not change coaching tier — the $400K-$1M
+  revenue band recommends Elite Coach Plus regardless of team size ("Any").
+- Marketing tier: Pass 1 selected Starter but justified it by counting the firm's future,
+  not-yet-operating business lines (residential title agency SC/FL; Miami commercial
+  finance) as "multiple practice areas." Research notes are explicit both are NOT yet
+  operating. On a strict single-location/single-current-practice-area reading, Essentials
+  could be argued. However, the AD SPEND BOUNDARY RULE independently and controls the
+  outcome: the aggressive ad spend figure ($14,000/mo, derived below) exceeds Essentials'
+  $5,000/mo cap by a wide margin, and only reconciles with the 20%-rule math when Starter's
+  $4,997 management fee is subtracted ($19,000 - $4,997 = $14,003 ~= $14,000; Essentials'
+  $3,497 fee would yield $15,503, which does not reconcile with the calculated dollar
+  amount). Starter's $20,000/mo cap comfortably accommodates the $14,000 aggressive
+  figure. CONCLUSION: Starter tier confirmed correct (for the ad-spend-boundary reason,
+  not the flawed practice-area-count reason Pass 1 originally cited).
+
+AD SPEND — CONSERVATIVE AND AGGRESSIVE
+- Practice area does not map cleanly onto the ad-spend/CPL tables (all built for
+  consumer-facing verticals). Closest analog used, with disclosure: "Business Law."
+- Conservative = channel minimum for the one channel that fits an institutional B2B
+  practice today (Google Search): $3,500/mo (Business Law Google PPC min). LSA and Meta
+  are not recommended as conservative-scenario channels for this practice type per
+  research notes (Step 6/7/8) — both are consumer-intent channels not used by any
+  named competitor in this niche either.
+- Aggressive (20% rule):
+  1. No stated revenue goal -> 2x current annual revenue: $570K x 2 = $1,140,000
+  2. $1,140,000 x 20% / 12 = $19,000/mo
+  3. Geo multiplier: Mt. Pleasant/Charleston SC = Tier 4 (mid-size market) = 1.0x -> $19,000/mo
+  4. No Spanish campaign needed
+  5. - Starter management fee ($4,997) = $14,003/mo -> rounds to $14,000/mo
+  6. Check against tier cap: $14,000 < Starter's $20,000 cap. OK, no further tier bump needed.
+- Reverse math check (Business Law defaults, CPL and case value): produces case/engagement
+  counts (see below) that are not realistic for a low-volume institutional CRE
+  finance/corporate transactional practice — flagged explicitly below and in the
+  client-facing table as a category default, not a firm-specific figure.
+
+35% TOTAL SPEND CAP CHECK (management fees + ad spend vs. monthly revenue) — FLAG FOR SALES REP
+- Current actual monthly revenue (most defensible basis): $43K collected in June 2026
+  (billed was >$50K same month). 35% of $43K = $15,050/mo.
+- At the CONSERVATIVE ad spend ($3,500): $8,197 mgmt fee + $3,500 ad spend = $11,697/mo
+  = ~27% of current monthly revenue. WITHIN the 35% cap.
+- At the AGGRESSIVE ad spend ($14,000): $8,197 + $14,000 = $22,197/mo = ~52% of CURRENT
+  monthly revenue ($43K) — EXCEEDS the 35% cap if measured against today's revenue.
+  However, the aggressive figure was deliberately derived from the 2x GOAL revenue
+  ($1.14M annual / ~$95K mo), not current revenue — against that goal, $22,197 is ~23%,
+  comfortably under the cap. This is a stretch/future-state number the firm would grow
+  into, not a day-one recommendation.
+- ACTION: present the aggressive scenario explicitly as a growth target tied to hitting
+  2x revenue, not a starting point. The Phase 1 / First 90 Days plan in this audit only
+  recommends starting at the conservative ad spend level ($3,500/mo), which is safely
+  within the 35% cap today. Sales rep should not commit the client to the aggressive
+  spend level until revenue has grown toward the goal used to calculate it.
+
+ROI PROJECTIONS (Block 4) — using Business Law CPL/case-value defaults, explicitly disclosed
+- Blended CPL basis: Google Search midpoint ~$110 (range $100-120)
+- Conservative ($3,500/mo, +20% cushion -> CPL ~$132):
+  - Leads: $3,500 / $132 ~= 26 leads/mo
+  - Cases: 26 x 15% default close rate ~= 4 cases/mo
+  - Revenue: 4 x $5,000 default case value = $20,000/mo
+  - Return: $20,000 / $3,500 ~= 5.7x
+- Aggressive ($14,000/mo, no cushion -> CPL ~$110):
+  - Leads: $14,000 / $110 ~= 127 leads/mo
+  - Cases: 127 x 15% ~= 19 cases/mo
+  - Revenue: 19 x $5,000 = $95,000/mo
+  - Return: $95,000 / $14,000 ~= 6.8x
+- IMPORTANT CAVEAT FOR SALES REP: the "Business Law" default case value ($3K-$7K) and the
+  resulting case count (up to ~19/mo at the aggressive end) do not reflect how this practice
+  actually operates. Sapala LLP is an institutional CRE finance/corporate transactional
+  practice — deals are few in number and high in value per matter (no per-engagement fee
+  was stated in the transcript; the only deal-size reference given was $5M-$100M, but that
+  is for the FUTURE Miami vision, not current work). Present the ROI table as a directional,
+  methodology-driven estimate only — do not let the client anchor on "19 cases/month" as a
+  literal expectation. Recommend revisiting this projection with real per-engagement fee
+  data once available.
+
+DBM STATEMENT FOR BLOCK 1
+"We help solo institutional real estate finance and corporate transactional attorneys get
+the operational systems and lead generation their reputation has already earned, so they
+can transition from operator to rainmaker — and eventually, owner."
+
+QUICK WIN OPPORTUNITIES (6, across all four pillars)
+1. [Lead Gen / Quick Win] Claim & build out a Google Business Profile — no named
+   competitor doing this better (none confirmed) — free, fast credibility boost for
+   referral prospects who look the firm up before calling.
+2. [Lead Gen / Long-Term Play] Launch a low-cost Google Search test campaign — no
+   confirmed competitor running search ads either — opens a second client channel not
+   capped by the size of Brandon's personal network.
+3. [Intake / Quick Win] Put a phone number and contact form above the fold — no
+   competitor angle; pure conversion fix for warm referral traffic already landing on
+   the site.
+4. [Team / Long-Term Play] Bring in dedicated support for intake and operations —
+   competitor: Graybill Lansche & Vinzani, a comparable boutique CRE-finance/business-
+   transactional firm that has scaled past a single rainmaker across two SC markets.
+5. [Profit / Quick Win] Close the billed-vs-collected gap (>$50K billed vs. $43K
+   collected in June) — no competitor angle; cash-flow hygiene fix.
+6. [Profit / Long-Term Play] Build a formal profit plan before scaling further — no
+   competitor angle; foundational to the operator-to-owner transition.
+
+FIRST 90 DAYS (leads with ads, then website, includes coaching kickoff, no live chat/CRM mention)
+1. Launch a modest, targeted Google Search test campaign on core practice-area and
+   competitor-name keywords ($3,500/mo conservative start)
+2. Rebuild the homepage above the fold — add a visible phone number and contact form,
+   and confirm mobile PageSpeed performance
+3. Kick off Elite Coach Plus coaching sessions to begin building the team and
+   operational structure needed to step out of day-to-day intake
+4. Claim and fully build out the firm's Google Business Profile
+5. Establish a simple monthly reconciliation habit to track the gap between billed and
+   collected revenue

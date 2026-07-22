@@ -1,0 +1,37 @@
+{
+  "confidence": "medium",
+  "revenue_stated": null,
+  "revenue_effective": 570000,
+  "revenue_source": "hubspot_annual_law_firm_revenue, corroborated by transcript monthly run-rate (June 2026: $43K collected / >$50K billed, annualized to $516K-$600K+)",
+  "revenue_label": "$180K - $960K",
+  "team_size_stated": null,
+  "team_size_effective": 1,
+  "practice_areas_detected": [
+    "currently (operating) — commercial real estate finance / corporate transactional law (debt finance focus) — single integrated practice",
+    "future vision, NOT yet operating — residential title agency (SC/FL)",
+    "future vision, NOT yet operating — sophisticated commercial finance firm (Miami)"
+  ],
+  "marketing_tier": "Starter",
+  "marketing_name": "Full Service Marketing — Starter",
+  "marketing_price_bundled": 4997,
+  "marketing_price_retail": 5697,
+  "marketing_savings": 700,
+  "marketing_ad_spend_cap": 20000,
+  "coaching_name": "Elite Coach Plus",
+  "coaching_price_bundled": 3200,
+  "coaching_price_retail": 3497,
+  "coaching_savings": 297,
+  "law_tier": null,
+  "total_bundled": 8197,
+  "total_savings": 997,
+  "ad_spend_conservative": 3500,
+  "ad_spend_aggressive": 14000,
+  "selection_notes": [
+    "Revenue not in research notes — sourced from HubSpot (hubspot_annual_law_firm_revenue): \"$180K - $960K\" -> $570,000. CONFIRMED consistent with transcript: June 2026 collected $43K/mo and billed >$50K/mo, annualizing to $516K-$600K+, bracketing the $570K estimate. Confidence raised from low to medium.",
+    "CORRECTED from Pass 1: team size is explicitly 'solo founder' per transcript (single point of failure/bottleneck framing), not defaulted to 3. Does not change coaching tier -- $400K-$1M band recommends Elite Coach Plus regardless of team size ('Any').",
+    "RE-EXAMINED Pass 1's marketing tier reasoning: Pass 1 justified hiding Essentials via 'multiple practice areas,' but that count improperly included the firm's future, not-yet-operating business lines (residential title agency SC/FL; Miami commercial finance) -- research notes explicitly mark both as not yet operating. The firm's current operating practice is genuinely a single integrated practice area, single location. On practice-area/location grounds alone, Essentials would be arguable.",
+    "However, the AD SPEND BOUNDARY RULE independently controls the outcome and confirms Starter is correct regardless: aggressive ad spend = 2x current annual revenue ($570K -> $1.14M) x 20% / 12 = $19,000/mo x 1.0 geo multiplier (Charleston/Mt. Pleasant = Tier 4 mid-size market) = $19,000, minus management fee. This reconciles almost exactly with Starter's fee ($19,000 - $4,997 = $14,003 ~= $14,000, the pre-computed aggressive figure) but NOT with Essentials' fee ($19,000 - $3,497 = $15,503, no match). Essentials' $5,000 ad spend cap is also far below the $14,000 aggressive figure, while Starter's $20,000 cap comfortably accommodates it. Per the boundary rule ('if calculated ad spend exceeds the tier's cap, move to the higher tier'), Starter is the correct tier.",
+    "Caveat for the report: this firm is a referral-driven, institutional B2B practice with no formal paid-lead-gen history and a very low urgency score (2/10). The aggressive scenario is a stretch/directional planning assumption (2x revenue goal was not client-stated), not a firm commitment -- present ad spend as a range and frame paid channels as a supplemental test, not the primary growth engine.",
+    "Revenue $400K-$1M: Elite Coach Plus selected (unchanged)."
+  ]
+}
