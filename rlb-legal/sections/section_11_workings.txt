@@ -1,0 +1,176 @@
+SECTION 11 WORKINGS — RLB Legal (July 23, 2026)
+======================================================================
+
+TRANSCRIPT-STATED NEED OVERRIDE ANALYSIS (required check, all three)
+----------------------------------------------------------------------
+1. Call-purpose override — NOT TRIGGERED. The transcript describes a standard
+   marketing/growth discovery call. The proposed solution discussed is
+   explicitly a 3-part roadmap: (1) a clear growth plan, (2) organic social
+   via an AI video avatar, and (3) a targeted paid ad strategy — not a
+   coaching-only, Fractional CTO, or AI-automation engagement. Full Service
+   Marketing + Coaching remains the correct lead recommendation.
+2. Existing-vendor override — NOT TRIGGERED. The firm has one small active
+   vendor relationship — a low-cost local SEO vendor at $250/mo — which
+   covers a single, thin channel, not the broad marketing gap identified
+   (website, local SEO/NAP, paid ads, directories). The $10K/mo paid ad
+   agency proposal (70% Google / 30% LinkedIn) is under evaluation, not
+   signed, per the transcript. Neither excludes Full Service Marketing.
+3. Budget-reality override — NOT TRIGGERED. No budget constraint was stated
+   or implied. The prospect is actively comparing a $10K/mo third-party
+   agency proposal, which suggests capacity to invest at that scale, not
+   budget hesitancy.
+
+CONCLUSION: None of the three overrides apply. package_decision.json
+(confidence: high) is used as-is, per Pass 2 instructions — no
+recalculation performed.
+
+PACKAGE DECISION FILE REVIEW
+----------------------------
+rlb-legal/package_decision.json exists (confidence: high).
+Revenue: $500,000 (research-notes-confirmed, firm's first fiscal year,
+ended June 2026). Team size: not explicitly stated as a number in the
+transcript (roles listed: 1 W-2 attorney, 1 W-2 support staff, 2 contract
+attorneys, 2 contract paralegals — 6 total); decision file defaults
+team_size_effective to 3, which does not change the tier outcome, since
+Elite Coach Plus is the correct tier for $400K-$1M revenue regardless of
+whether the true headcount is 3 or 6, and 6 remains well under the
+5-person-with-dedicated-staff threshold that would trigger Master's
+Circle. Practice area: commercial litigation (60%) and oil & gas/energy
+transactional (40%) — multiple practice areas plus a single Tyler, TX
+location. Since revenue is under $750K but the firm has multiple practice
+areas (not single-practice-area, as Essentials tier requires), Essentials
+is correctly hidden and Starter is the correct tier per the decision file.
+
+MANDATORY PRICE LOOKUP
+-----------------------
+Marketing package selected: Full Service Marketing — Starter
+  - Bundled price (from table): $4,997/mo
+  - Stand-alone price (from table): $5,697/mo
+  - Savings (stand-alone minus bundled): $700/mo
+
+Non-marketing package selected: Elite Coach Plus
+  - Bundled price (from table): $3,200/mo
+  - Stand-alone price (from table): $3,497/mo
+  - Savings (stand-alone minus bundled): $297/mo
+
+Legal AI Workforce (LAW) package selected: none (revenue and staffing
+would qualify for AI Essentials, but the transcript's stated call focus
+was marketing/growth, not AI adoption — introduced only as a Phase 3
+roadmap option, not part of the current investment)
+
+AI Avatar / Video Growth add-on selected: none for the current investment.
+Sales note: the transcript explicitly proposes organic social content via
+an AI video avatar as one of the 3-part roadmap's pillars. The Add-On:
+Virtual Video Growth Using AI Avatar ($1,950/mo + $2,997 setup, 12-month)
+would be the matching product once the firm is on an active marketing
+package — but adding it here would push total monthly investment from
+$8,197/mo to $10,147/mo, which is not reflected in package_decision.json's
+total_bundled ($8,197) and was not part of this deterministic pass. Per
+audit-write.md, every AI Avatar package also requires Alexis approval
+before inclusion in any proposal. Recommend Jonathan raise the AI Avatar
+add-on as a live, separately-priced conversation on the July 29 call
+rather than assuming it is already inside the Starter marketing package —
+Full Service Marketing does not include AI-avatar video production.
+
+Total monthly investment (sum of all bundled/recurring prices): $8,197/mo
+Total savings (sum of all savings): $997/mo
+
+PACKAGE ELIGIBILITY CHECK
+--------------------------
+- Practice area: commercial litigation + oil & gas/transactional, single
+  location (Tyler, TX) — no Essentials/LSA-only restriction applies beyond
+  the multi-practice-area Essentials exclusion already noted above.
+- Revenue $500K (under $750K, multiple practice areas): Essentials hidden,
+  Starter selected — compliant.
+- Team under 5 with dedicated staff unconfirmed: Master's Circle hidden,
+  Elite Coach Plus selected — compliant.
+- Minimum MRR $2,497/mo: $8,197/mo total, compliant.
+- Both a marketing and non-marketing package recommended, per default.
+- 35% cap check: Revenue $500,000/yr = $41,667/mo. 35% = $14,583/mo.
+  Management fees ($8,197/mo) + conservative ad spend ($3,000/mo) =
+  $11,197/mo — within cap. Management fees + aggressive ad spend
+  ($12,000/mo) = $20,197/mo — exceeds the $14,583/mo cap measured against
+  CURRENT $500K revenue by ~$5,600/mo. Measured against the firm's own
+  stated revenue GOAL for this year ($650K-$750K → $18,958-$21,875/mo cap),
+  the aggressive scenario falls at or just under the cap. Flagging for
+  Jonathan: the aggressive ad spend figure is taken as-is from
+  package_decision.json per Pass 2 instructions (not recalculated here),
+  but sales should be aware it is tight against trailing revenue and may
+  be worth positioning as a "grow into it" figure rather than a Day 1
+  recommendation.
+
+AD SPEND & ROI PROJECTIONS
+----------------------------
+Practice area used for CPL/case-value lookups: no commercial litigation or
+oil & gas-specific row exists in the standard ad spend/CPL tables —
+"Business Law" used as the nearest available analog for transactional and
+commercial-dispute work, disclosed as an estimate. Close rate: 15% (not
+stated for the firm's organic/referral flow — default per instructions;
+the transcript's separate 10-15% figure refers only to projected
+conversion on the cold-lead agency proposal and is not used here). Average
+case value: not stated — using the Business Law practice-area default
+range ($3,000-$7,000), midpoint $5,000, disclosed as an estimate.
+
+Conservative scenario — Ad spend $3,000/mo:
+  - Blended CPL: single primary channel (Google Search), Business Law
+    midpoint $110 + 20% conservative cushion = $132
+  - Leads: $3,000 / $132 ≈ 22-23 leads/mo
+  - Cases: ~22 × 15% ≈ 3 cases/mo
+  - Revenue: 3 × $5,000 ≈ $15,000/mo
+  - Return: $15,000 / $3,000 ≈ 5.0x
+
+Aggressive scenario — Ad spend $12,000/mo:
+  - Blended CPL across Google Search ($110), LSA ($125 mid), Meta Cold
+    ($80 mid), evenly weighted, no cushion ≈ $105
+  - Leads: $12,000 / $105 ≈ 114 leads/mo
+  - Cases: 114 × 15% ≈ 17 cases/mo
+  - Revenue: 17 × $5,000 ≈ $85,000/mo
+  - Return: $85,000 / $12,000 ≈ 7.1x
+
+All figures disclosed in the report as estimates based on industry
+averages and a Business Law proxy category, since no firm-confirmed case
+value, revenue goal tied to ad spend, or litigation/energy-specific CPL
+data was available.
+
+DBM STATEMENT (Block 1)
+-------------------------
+"We help solo and boutique commercial litigation and energy transactional
+attorneys built entirely on word-of-mouth referrals get a predictable,
+paid client acquisition system so they can hire proactively — from a
+position of strength, not necessity — and build the close-knit,
+multi-attorney boutique firm they're working toward."
+
+QUICK WIN OPPORTUNITIES (7 identified, spanning all 4 pillars)
+------------------------------------------------------------
+1. [Lead Gen / Quick Win] Fix the homepage's Lorem Ipsum testimonial
+   placeholder copy — no named competitor comparison, omit "who" row.
+2. [Lead Gen / Quick Win] Correct the Avvo NAP address error (3620 Old
+   Bullard Rd vs. the firm's actual 1012 Pruitt Pl) — no named competitor
+   comparison, omit "who" row.
+3. [Lead Gen / Long-Term Play] Build out oil & gas/energy practice-area
+   web content depth — competitors: Wilson Law Firm, The Parker Firm, P.C.
+4. [Lead Gen / Long-Term Play] Build geo-targeted landing pages for
+   Midland, Dallas, and Houston — no named competitor comparison, omit
+   "who" row.
+5. [Intake / Quick Win] Add an embedded contact form and define after-
+   hours coverage — no named competitor comparison, omit "who" row.
+6. [Team / Long-Term Play] Build a documented hiring/growth plan so
+   hiring becomes proactive instead of reactive — no named competitor
+   comparison, omit "who" row.
+7. [Profit / Quick Win] Establish cost-per-lead and cost-per-case tracking
+   before committing further ad spend — no named competitor comparison,
+   omit "who" row.
+
+FIRST 90 DAYS (5 bullets)
+---------------------------
+1. Launch Google Ads and Local Service Ads management for commercial
+   litigation and oil & gas/energy terms across Tyler, Midland, Dallas,
+   and Houston.
+2. Fix the homepage's Lorem Ipsum testimonial placeholder and add a
+   direct, above-the-fold contact path to reduce lead friction.
+3. Correct the Avvo NAP address error and close the directory gaps on
+   Justia, FindLaw, and Yelp.
+4. Kick off Elite Coach Plus coaching sessions with Reagan to begin
+   building the hiring plan and systems the firm needs to absorb growth.
+5. Establish baseline cost-per-lead and cost-per-case tracking so ad
+   performance can be measured against real numbers, not guesses.
