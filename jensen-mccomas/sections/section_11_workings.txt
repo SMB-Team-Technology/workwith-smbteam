@@ -1,0 +1,200 @@
+JENSEN & McCOMAS, LLC — SECTION 11 WORKINGS (INTERNAL — NOT FOR CLIENT REPORT)
+================================================================================
+
+PACKAGE DECISION FILE OVERRIDE — REQUIRED CORRECTIONS
+--------------------------------------------------------------------------------
+package_decision.json shipped with confidence: "low" and two material errors,
+both corrected below using ground-truth transcript data per the
+transcript-first principle:
+
+1. REVENUE: decision file used $570,000 (HubSpot band midpoint, "$180K-$960K").
+   The research notes' Step 9 transcript extraction states actual current
+   annual revenue is ~$1.2M, with a stated growth goal of $3M within one year.
+   $1.2M is used for all eligibility and tier logic below.
+
+2. TEAM SIZE: decision file defaulted to 3 (no data found). The research notes
+   state the firm has 16 total staff (6 attorneys, 3 paralegals, ~7 admin/ops),
+   with a planned 30% headcount increase (5 new hires: 1 senior associate,
+   1 junior associate, 1+ additional attorney, 2 admins). 16 is used below.
+
+CALL-PURPOSE OVERRIDE — TRIGGERED
+--------------------------------------------------------------------------------
+The research notes' Step 9 transcript extraction explicitly states this was
+NOT a standard marketing/growth discovery call. Direct finding: "the immediate
+priority is building a scalable foundation (intake, hiring) before launching
+marketing to avoid wasting ad spend and overwhelming staff," with SMB Team's
+proposed role framed as "a phased plan, starting with foundational systems and
+potentially including fractional COO/recruiting services." Budget is not the
+constraint (none stated) — capacity is: admins already support 2+ attorneys
+each at max load.
+
+This triggers the Call-Purpose Override in the audit-write instructions:
+"Do not default to Full Service Marketing just because revenue qualifies for
+a tier — the firm did not ask about marketing." package_decision.json's
+selection (Full Service Marketing Starter + Elite Coach Plus, based on the
+wrong $570K revenue figure) is discarded entirely. The non-marketing / ops
+category leads the recommendation instead.
+
+MANDATORY PRICE LOOKUP (character-checked against Design Files/audit_styles
+pricing tables in .claude/commands/audit-write.md)
+--------------------------------------------------------------------------------
+- Marketing package selected: NONE for the current proposal (deferred to
+  Phase 2 of the roadmap — see reasoning below). Reference tier if/when
+  added: Full Service Marketing — Growth ($1M-$2M revenue band).
+    - Bundled price (from table): $7,497/mo
+    - Stand-alone price (from table): $8,997/mo
+    - Savings: $1,500/mo
+  (Not included in Block 2/3 investment total — Phase 2 only.)
+
+- Non-marketing package selected: FCOO Advisor
+    - Bundled price (from table): $3,297/mo
+    - Stand-alone price (from table): $3,797/mo
+    - Savings (stand-alone minus bundled): $500/mo
+  Rationale: revenue is $1M+; no dedicated ops/marketing/intake staff member
+  exists (Kristine is personally building the firm's intake tooling), so
+  Master's Circle is hidden per the "no dedicated ops/marketing/intake staff"
+  filter. The "$1M+ / Under 5 operational focus / FCOO Advisor" row is the
+  closest fit to the transcript's explicit, stated need for "fractional
+  COO/recruiting services" — this is a request for operational leadership,
+  not a headcount-banded coaching tier. Per the pricing table note, FCOO
+  Advisor already includes Elite Coach group deliverables (weekly group
+  coaching, practice area masterminds, virtual quarterly workshops, one
+  annual in-person workshop), so no separate coaching line is needed.
+
+- Legal AI Workforce (LAW) package selected: none. Kristine is already
+  building an in-house AI-driven intake system (beta expected end of August
+  2026) — recommending a paid LAW engagement on top of an active DIY build
+  the client did not ask us to help with would be redundant. Revisit in
+  Phase 3 only if a capability gap remains once her build is live.
+
+- AI Avatar / Video Growth add-on selected: none. No stated interest in
+  video/social content on the call.
+
+- Total monthly investment (Phase 1 / current proposal): $3,297/mo
+- Total savings (Phase 1 / current proposal): $500/mo
+
+MRR / spend-cap checks: $3,297/mo clears the $2,497 MRR floor. Monthly
+revenue ~$100,000 (from $1.2M/yr) → 35% cap = $35,000/mo; $3,297/mo is well
+inside the cap, leaving ample room for a Phase 2 marketing tier later.
+
+WHY A SINGLE-PRODUCT RECOMMENDATION (not marketing + coaching)
+--------------------------------------------------------------------------------
+Default guidance is to recommend both a marketing and non-marketing package.
+Here the transcript clearly shows a single-category fit: the client explicitly
+sequenced foundational operations before any marketing spend, to avoid
+"wasting ad spend and overwhelming staff." Layering in Full Service Marketing
+now would contradict what the client asked for on the call. FCOO Advisor
+alone — which already bundles Elite Coach-equivalent group deliverables —
+correctly matches the stated need. Marketing is retained in the Growth
+Roadmap (Block 6) as Phase 2, triggered once the intake process and first
+new hires are in place.
+
+AD SPEND / ROI — PHASE 2 PROJECTION (used in Block 4, framed as forward-
+looking since no marketing package is sold in this proposal)
+--------------------------------------------------------------------------------
+Practice-area proxy mapping: Corporate/M&A → "Business Law" row; Trusts &
+Estates → "Estate Planning" row (closest matches in the approved tables).
+
+Methodology note / judgment call: Corporate/M&A work at this firm carries a
+transcript-stated $85K average case value and is, per the transcript's own
+description of current lead sources, won through partner relationships and
+conference networking (Dealmakers, Chambers 100) — not through paid digital
+channels. Modeling paid-ad ROI against an $85K corporate case value would
+overstate returns dramatically (mechanical run using the blended ~$50K
+transcript figure across both practice areas produced return multiples over
+50x on a modest ad budget — not credible for a client-facing report). Digital
+paid channels are modeled against Trusts & Estates only (the practice area an
+individual actually searches for online), using the transcript-stated $20K
+average case value. This is a disclosed methodological choice, not a silent
+deviation.
+
+Conservative scenario:
+- Ad spend: $5,500/mo (Estate Planning row: Google PPC min $3,500 + LSA min
+  $2,000; absolute paid-ads floor of $3,000/mo is cleared)
+- Blended CPL: PPC weight 63.6% x $135 midpoint + LSA weight 36.4% x $65
+  midpoint = $109.60; +20% conservative cushion = ~$131.50
+- Leads: $5,500 / $131.50 ≈ 42/mo
+- Cases: 42 x 15% default close rate (not stated in transcript) ≈ 6/mo
+- Revenue: 6 x $20,000 = ~$120,000/mo
+- Return: ~21.8x
+
+Aggressive scenario — 20% rule vs. reverse math:
+- 20% rule: $3M revenue goal x 20% / 12 = $50,000/mo x Tier 4 (Baltimore
+  region, no Tier 1-3 match) 1.0x multiplier = $50,000/mo; no Spanish
+  campaign; minus Growth-tier mgmt fee $7,497/mo = $42,503/mo available ad
+  spend if a marketing package were active.
+- Reverse math: ($3M / 12) / $20,000 case value = 12.5 cases/mo needed /
+  15% close rate = 83.3 leads/mo x $109.60 CPL (no cushion) ≈ $9,133/mo.
+- Per instructions, use whichever is higher — mechanically that is the 20%
+  rule ($42,503/mo). Flagging per escalation rules ("Revenue goal exceeds
+  projected ad revenue → paid ads team review"): $42,503/mo of Estate
+  Planning-only paid spend is disproportionate to what a single-office,
+  boutique Trusts & Estates practice in Towson/Lutherville-Timonium can
+  realistically absorb — running the CPL math forward at that budget implies
+  ~390 leads/mo and ~58 cases/mo, far beyond what a 6-attorney firm could
+  service. Presenting a market-realistic aggressive figure instead, and
+  flagging the 20%-rule/reverse-math gap for sales/paid-ads team review
+  before any Phase 2 marketing proposal is finalized.
+- Aggressive figure used in the client report: $8,500/mo (adds Estate
+  Planning Meta lead-gen budget on top of conservative PPC+LSA; roughly
+  1.5x conservative spend — realistic for this market size)
+- Blended CPL (no cushion): ~$109.60
+- Leads: $8,500 / $109.60 ≈ 78/mo
+- Cases: 78 x 15% ≈ 11/mo (rounded down from 11.7 for a conservative display)
+- Revenue: 11 x $20,000 = ~$220,000/mo
+- Return: ~25.9x
+
+Client-facing Block 4 range: $5,500 - $8,500/mo ad spend, 6-11 cases/mo,
+~$120,000 - $220,000/mo revenue, case value $20,000 (Trusts & Estates).
+These figures apply to Phase 2 of the roadmap, not the current proposal.
+
+DBM STATEMENT (Block 1)
+--------------------------------------------------------------------------------
+Inferred DBM: category 3 (scale and dominate) — hitting $3M within one year
+alongside a 30% headcount increase, deliberately building a bigger, more
+capable firm — with a secondary category 1 thread (controlled, non-chaotic
+growth: explicitly sequencing foundational systems before marketing "to avoid
+wasting ad spend and overwhelming staff"). Flagged as inference per the
+research notes, not an exact quote.
+
+"We help ambitious corporate and trusts & estates firms get the operational
+foundation and lead generation systems to match their growth targets, so they
+can scale to $3M without the firm cracking under its own momentum."
+
+QUICK WIN OPPORTUNITIES (6+, used in Block "Quick Wins")
+--------------------------------------------------------------------------------
+1. [Lead Gen / Quick Win] Claim and optimize the Google Business Profile —
+   zero reviews today vs. established competitors with real review/BBB/peer
+   ratings (Levin & Gann, Caruso & Zerwitz).
+2. [Lead Gen / Long-Term] Build Local Service Ads eligibility for Corporate
+   and Trusts & Estates — pay-per-lead placement above all other results,
+   blocked today by the zero-review GBP. No named LSA competitor confirmed.
+3. [Intake / Quick Win] Define the intake process before the in-house AI tool
+   launches in August — no named competitor (internal fix).
+4. [Team / Long-Term] Give operations a real owner before the next 5 hires —
+   no named competitor (internal fix).
+5. [Profit / Quick Win] Separate Corporate vs. Trusts & Estates profitability
+   tracking — no named competitor (internal fix).
+6. [Lead Gen / Long-Term] Fix the NAP inconsistency across Avvo (still shows
+   predecessor firm Bowie & Jensen) and missing BBB/Justia/FindLaw/Yelp
+   listings — no named competitor (internal/directory fix).
+7. [Lead Gen / Quick Win] Add a real above-the-fold contact path on the
+   website — both current CTAs route to the About page, not a way to
+   convert a visitor. No named competitor.
+
+FIRST 90 DAYS (3-5 bullets, Block 5)
+--------------------------------------------------------------------------------
+Note: standard guidance says "lead with launching ads first" — that does not
+apply here since no marketing package is part of this proposal (call-purpose
+override). Bullets instead reflect the FCOO Advisor engagement actually being
+sold:
+1. FCOO kickoff — map the current intake workflow end-to-end and identify
+   exactly where leads fall through today.
+2. Design a defined intake process (response-time targets, ownership,
+   follow-up cadence) ahead of the in-house AI intake tool's August beta.
+3. Build the hiring and onboarding plan for the five already-identified
+   roles (senior associate, junior associate, additional attorney, 2 admins).
+4. Coaching kickoff — first weekly group coaching session and practice area
+   mastermind.
+5. Begin directory/NAP cleanup (Avvo, BBB, Google Business Profile) so the
+   firm is ready the moment Phase 2 marketing begins.
