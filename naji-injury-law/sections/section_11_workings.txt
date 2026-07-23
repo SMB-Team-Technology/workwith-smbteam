@@ -1,0 +1,241 @@
+SECTION 11 — WORKINGS FILE (INTERNAL — Naji Injury Law)
+================================================================
+
+OVERRIDES APPLIED (supersede package_decision.json)
+================================================================
+
+1. REVENUE CORRECTION (confidence was "medium" in package_decision.json — cross-checked
+   and corrected per Transcript-First Principle):
+   - package_decision.json used revenue_effective = $3,000,000, sourced from
+     "hubspot_annual_law_firm_revenue" ($3,000,000+ label).
+   - The research notes' Step 9 Transcript Extraction states explicitly: "Annual revenue:
+     'On track for $1M in fees' (current year)." The $3M and $7M figures are the owner's
+     STATED LONG-TERM GOALS, not current revenue — the notes themselves say "Use $3M as
+     the next milestone target in the report; note $7M as the longer-range vision."
+   - The HubSpot field appears to have been populated from the revenue goal, not actual
+     current revenue. Per the transcript-first principle ("research notes... are ground
+     truth"), corrected revenue_effective = $1,000,000 for tier eligibility purposes.
+   - This moves Marketing tier from Platinum ($3M+ floor) down to Growth ($1M–$2M).
+   - This moves coaching tier down from Master's Circle to Elite Coach Plus (see #3 below).
+   - RANDY: please confirm actual current revenue live before the proposal call — if HubSpot
+     is right and current revenue really is $3M+, the tier should move back up to Platinum
+     and the Master's Circle team-eligibility question (below) should be revisited too.
+
+2. CALL-PURPOSE OVERRIDE (transcript-stated need supersedes package_decision.json, which
+   had law_tier: null and did not consider this at all):
+   - Research notes Step 9 state explicitly: "THIS CALL WAS NOT A STANDARD MARKETING/INTAKE
+     DISCOVERY CALL ONLY. It was framed around TWO things explicitly: (1) shifting from
+     third-party lead gen to brand-specific marketing... AND (2) a 'Fractional CTO' /
+     AI-automation engagement to build custom PI-specific automations... into the firm's
+     EXISTING Claude AI setup."
+   - Because a genuine marketing/lead-gen gap ALSO exists (competitor dominance, failing
+     third-party vendor, absence from local search, no local SEO presence), BOTH categories
+     are recommended — Full Service Marketing AND a Legal AI Workforce (LAW) package — rather
+     than defaulting to marketing-only.
+   - Added: AI Accelerator L1 (Fractional CTO Level 1), $3,297/mo bundled — see lookup below.
+     This is a Phase 1 (not Phase 3) inclusion because the client explicitly asked for it on
+     this call, which overrides the standard roadmap default of introducing LAW in Phase 3.
+
+3. EXISTING-VENDOR OVERRIDE — CHECKED, DOES NOT APPLY:
+   - Firm has an active third-party LEAD GENERATION vendor relationship (~60 leads/month),
+     but the transcript frames this as a FAILING relationship (zero conversions since July 3)
+     the firm explicitly wants to move away from — not a recently-signed marketing/SEO/ad
+     engagement they are satisfied with. This does not trigger the existing-vendor exclusion;
+     it is evidence supporting Full Service Marketing as the replacement.
+
+4. BUDGET-REALITY OVERRIDE — CHECKED, DOES NOT CLEANLY APPLY, BUT FLAGGED:
+   - No explicit dollar ceiling or affordability statement was made. Jamil/Laura are
+     withholding a marketing hiring decision pending review of Randy's plan and costs —
+     a pending-decision gate, not a stated budget constraint.
+   - HOWEVER: seeAD SPEND / 35% CAP TENSION below — this is a real affordability question
+     that surfaced once revenue was corrected to $1M, and Randy should be prepared to discuss
+     it live.
+
+TEAM ELIGIBILITY NOTE (Master's Circle vs. Elite Coach Plus):
+   - Team is 6 (meets the "5+" headcount threshold), but no dedicated ops, marketing, or
+     intake team member was confirmed — roles are not broken out beyond Jamil (owner/
+     attorney) and Laura (joint decision-maker on the still-unfilled marketing hire).
+   - Per eligibility filter: "No dedicated ops, marketing, or intake team member → hide all
+     Master's Circle options." Applied — Master's Circle is hidden, Elite Coach Plus selected
+     instead. RANDY: if Laura or another team member is confirmed as a dedicated
+     ops/marketing/intake lead on the call, Master's Circle ($4,600/mo bundled) may be the
+     better fit — please confirm and adjust if so.
+
+================================================================
+MANDATORY PRICE LOOKUP (character-by-character from approved tables)
+================================================================
+
+Marketing package selected: Full Service Marketing — Growth
+  - Bundled price (from table): $7,497/mo
+  - Stand-alone price (from table): $8,997/mo
+  - Savings (stand-alone minus bundled): $1,500/mo
+  - Ad spend cap for this tier: $50,000/mo
+
+Non-marketing package selected: Elite Coach Plus
+  - Bundled price (from table): $3,200/mo
+  - Stand-alone price (from table): $3,497/mo
+  - Savings (stand-alone minus bundled): $297/mo
+
+Legal AI Workforce (LAW) package selected: AI Accelerator L1 (Fractional CTO Level 1)
+  - Bundled price (from table): $3,297/mo
+  - Stand-alone price (from table): $3,797/mo
+  - Savings (stand-alone minus bundled): $500/mo
+  - Law Firm AI Foundation Sprint, paired with Fractional CTO Level 1 (one-time): $14,997
+    (referenced in First 90 Days as onboarding kickoff, not added to the recurring
+    investment grid, which reflects monthly bundled prices only)
+
+AI Avatar / Video Growth add-on selected: none — not indicated by the transcript.
+
+Total monthly investment (sum of all bundled/recurring prices):
+  $7,497 + $3,200 + $3,297 = $13,994/mo
+
+Total savings (sum of all savings):
+  $1,500 + $297 + $500 = $2,297/mo
+
+================================================================
+35% CAP CHECK
+================================================================
+Corrected current monthly revenue: $1,000,000 / 12 = $83,333/mo
+35% cap: $29,167/mo
+
+Conservative scenario: $13,994 (mgmt fees) + $15,000 (ad spend) = $28,994/mo = 34.8% of
+  monthly revenue — fits within the cap.
+
+Aggressive scenario: $13,994 (mgmt fees) + $50,000 (ad spend, Growth tier cap) = $63,994/mo
+  = 76.8% of CURRENT monthly revenue — exceeds the 35% cap against today's $1M run rate.
+  This aggressive figure is the 20%-rule/reverse-math result bounded by the Growth tier's ad
+  spend cap (see AD SPEND CALCULATION below) and is tied to the firm's STATED $3M revenue
+  goal, not current revenue — at $3M annual revenue ($250,000/mo), $63,994/mo would be 25.6%,
+  comfortably within cap.
+  RANDY: this is a genuine tension worth discussing live — the aggressive scenario as
+  presented in the client report is framed as a growth-goal-aligned stretch scenario (with
+  the standard ROI disclaimer), not a committed day-one spend. Consider phasing ad spend up
+  from the conservative figure as revenue grows, rather than starting at $50,000/mo on a
+  $1M current run rate. This matches the escalation criteria "Revenue goal exceeds projected
+  ad revenue → paid ads team review."
+
+================================================================
+AD SPEND CALCULATION
+================================================================
+Practice area used: Accident/Injury (General) — firm markets a broad PI mix (car accidents,
+trucking, motorcycle, slip and fall, drowning, wrongful death, TBI, dog bites, pedestrian),
+not an MVA-only book, so the general PI row was used rather than the MVA-specific row.
+
+Conservative = sum of channel minimums (Accident/Injury General row):
+  Google PPC $6,000 + LSA $2,000 + Meta Retargeting $1,200 + Meta Lead Gen $5,500 = $14,700/mo
+  Presented rounded to $15,000/mo. PI hard floor check: market is high-competitiveness
+  (Brown & Crouppen, Schultz & Myers, Cofman Townsley all established incumbents) → $10,000
+  floor — $14,700 already clears it.
+
+Aggressive (20% rule):
+  1. Revenue GOAL ($3,000,000) × 20% ÷ 12 = $50,000/mo monthly marketing budget
+  2. Geo multiplier: St. Louis, MO = Tier 4 (most mid-size cities) × 1.0 = $50,000
+  3. Spanish campaign: not needed (per transcript) — no multiplier
+  4. − Marketing mgmt fee ($7,497) = $42,503 available ad spend (20%-rule figure)
+  5. Reverse math validation: ($3,000,000 ÷ 12) ÷ $6,500 avg case value (PI-market default,
+     Accident/Injury General midpoint, since firm did not state a case value) = ~38.5 target
+     cases/mo ÷ 15% default close rate (88% figure explicitly is qualified-lead intake
+     conversion, NOT a case-settlement close rate, per research notes caution — default
+     used instead) = ~257 required leads/mo × $391 blended CPL (no cushion) = ~$100,230/mo
+     required spend.
+  6. Reverse math ($100,230) > 20%-rule ($42,503-$50,000) → use reverse math, but check
+     against Growth tier cap ($50,000/mo). $100,230 exceeds the cap. Revenue does not
+     qualify for Dominate/Platinum tiers (both require $2M+/$3M+ current revenue, and
+     "aggressive goals alone no longer bypass the revenue floors"). Aggressive ad spend
+     therefore presented at the Growth tier cap: $50,000/mo, with the tier-upgrade path
+     noted in the roadmap (Phase 4) as revenue grows.
+
+Blended CPL (Accident/Injury General midpoints, weighted by conservative-scenario channel
+proportions — Google 40.8% / LSA 13.6% / Meta Retargeting 8.2% / Meta Cold 37.4%):
+  Google Search mid $705, LSA mid $235, Meta Retargeting mid $90, Meta Cold mid $170
+  Base blended CPL = 0.408(705) + 0.136(235) + 0.082(90) + 0.374(170) ≈ $391
+  Conservative blended CPL (+20% cushion) ≈ $469
+  Aggressive blended CPL (no cushion) = $391
+
+================================================================
+ROI PROJECTIONS
+================================================================
+Average case value: NOT STATED by the firm — PI-market default used (Accident/Injury
+General: $5,000–$8,000, midpoint $6,500). Disclosed as a default in the client report.
+Close rate: 15% default used (the transcript's 88% is qualified-lead intake conversion, not
+a case-settlement close rate — explicitly flagged in research notes as such).
+
+CONSERVATIVE ($15,000/mo ad spend):
+  Leads = $15,000 / $469 ≈ 32 leads/mo
+  Cases = 32 × 15% ≈ 4–5 cases/mo
+  Revenue = 4–5 cases × $6,500 ≈ $26,000–$32,500/mo
+  Return = ≈ 1.7x–2.2x on ad spend
+
+AGGRESSIVE ($50,000/mo ad spend):
+  Leads = $50,000 / $391 ≈ 128 leads/mo
+  Cases = 128 × 15% ≈ 19–20 cases/mo
+  Revenue = 19–20 cases × $6,500 ≈ $123,500–$130,000/mo
+  Return = ≈ 2.5x–2.6x on ad spend
+
+Presented in client report as ranges: ad spend $15,000–$50,000/mo, case value $5,000–$8,000
+(disclosed default), cases 5–20/mo, revenue $32,500–$130,000/mo.
+
+================================================================
+DBM STATEMENT (Block 1)
+================================================================
+DBM (inferred, not a direct quote per research notes): scale and dominate the St. Louis PI
+market and build a firm that runs on systems, not just Jamil's hours — build brand equity
+rather than rent it from third-party lead vendors. Stated goals: $3M next, $7M long-term.
+Stated explicitly: "the goal is more return on hours, not fewer hours."
+
+Formula: "We help fast-growing personal injury firms with strong intake but no owned lead
+pipeline get a steady flow of brand-driven cases they do not have to rent from a vendor, so
+they can scale past $3M toward $7M on systems built to run without Jamil in every decision."
+
+================================================================
+QUICK WIN OPPORTUNITIES (7 identified — minimum 6 required)
+================================================================
+1. [Lead Gen / Quick Win] Replace the failing third-party lead vendor — zero conversions
+   since July 3 — with an owned Full Service Marketing pipeline. No named competitor (vendor
+   relationship, not a competing firm).
+2. [Lead Gen / Long-Term Play] Absence from local search vs. Brown & Crouppen — St. Louis's
+   highest-volume PI brand appears in every search tested where Naji Injury Law does not.
+3. [Lead Gen / Quick Win] Claim and optimize GBP + Avvo profile vs. Schultz & Myers'
+   documented 4.9-star reputation.
+4. [Intake / Quick Win] Protect and scale the 88% qualified-lead conversion rate with
+   after-hours/overflow coverage as lead volume grows. No named competitor.
+5. [Team / Long-Term Play] Delegate marketing/ops decision authority off Jamil's desk — no
+   named competitor.
+6. [Team / Quick Win] Launch the Fractional CTO-led AI automation build (medical record data
+   entry, policy-limit/final-bill triggers, fax/document routing) into the firm's existing
+   Claude AI setup — directly responsive to the stated call focus. No named competitor.
+7. [Profit / Long-Term Play] Build a profit plan now, while still at $1M, before scaling to
+   $3M. No named competitor.
+
+================================================================
+FIRST 90 DAYS
+================================================================
+1. Launch Google Ads, LSA, and Meta ad campaigns across all marketed practice areas to begin
+   replacing the underperforming third-party lead vendor.
+2. Claim and fully optimize the Google Business Profile and Avvo listing.
+3. Build out the missing practice-area pages (wrongful death, TBI, pedestrian injury,
+   drowning) and add geo-targeted landing pages for the surrounding St. Louis metro.
+4. Kick off Elite Coach Plus coaching sessions to begin building delegation and leadership
+   structure.
+5. Kick off the Fractional CTO engagement and Law Firm AI Foundation Sprint to begin building
+   custom PI-specific automations into the firm's existing Claude AI setup.
+
+================================================================
+ESCALATION FLAGS FOR RANDY (INTERNAL ONLY — DO NOT INCLUDE IN CLIENT REPORT)
+================================================================
+- Revenue correction ($3M → $1M) is a significant departure from package_decision.json —
+  confirm actual current revenue live before the proposal call.
+- Any Legal AI Workforce (LAW) package → confirm with sales rep that LAW delivery has
+  launched and capacity is available before including in proposal.
+- Marketing MRR ($7,497) is under the $10K escalation threshold — no scoping approval flag
+  needed on that basis alone, but total recurring MRR ($13,994) plus aggressive ad spend
+  ($50,000) should be reviewed given the 35% cap tension noted above.
+- Ad spend aggressive scenario ($50,000) exceeds $25K → scoping approval required.
+- Revenue goal ($3M) exceeds current-revenue-projected ad affordability at the aggressive
+  ad spend level → paid ads team review recommended.
+- "Kaufman" (transcript) is very likely Cofman Townsley Attorneys at Law (Clayton, same
+  submarket) — confirmed and used under its real name in the report. "Krutman" (transcript)
+  has no verified St. Louis PI match — NOT used in the client report; confirm the actual firm
+  name with the client before it is cited anywhere.
+- Live PageSpeed, GBP, and Ads Library data could not be pulled this research pass (tooling
+  quota/rendering limits) — recommend a live check before the proposal call.
