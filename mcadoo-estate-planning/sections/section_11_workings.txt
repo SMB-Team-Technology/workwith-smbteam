@@ -1,31 +1,90 @@
-SECTION 11 WORKINGS — McAdoo Estate Planning, LLC (July 9, 2026)
+SECTION 11 WORKINGS — McAdoo Estate Planning, LLC (July 23, 2026 re-trigger)
 ======================================================================
+
+RE-TRIGGER CONTEXT: This is the second /audit-write pass for this firm.
+The July 9, 2026 pass produced the original audit and proposal deck for a
+July 15 proposal call. A second, longer working/account-setup call has
+since happened, and a new proposal call is now scheduled (trigger record
+says 2026-07-28; the July 23 transcript's own action-item text says
+"Jul 29" — a one-day discrepancy Dan should confirm before the call; this
+is an internal scheduling note only and does not appear in the client
+report). This workings file re-verifies the package decision against the
+July 23 research notes and updates the figures the July 9 pass did not
+have (review counts, NAP severity, PPC audit context).
 
 PACKAGE DECISION FILE REVIEW
 ----------------------------
 mcadoo-estate-planning/package_decision.json exists (confidence: medium).
 
-Revenue verification (per Pass 2 instruction): Research notes explicitly
-state "Annual revenue: not stated in the transcript" and no other revenue
-signal appears anywhere else in the notes (no case volume, no staff payroll
-detail, no stated revenue goal). The HubSpot-sourced $3,000,000+ figure
-(hubspot_annual_law_firm_revenue) is therefore the best available evidence
-and is not contradicted by any clearer data in the research notes. Per
-audit-write.md: "If the estimate appears correct, use these values exactly."
-CONCLUSION: Revenue band $3,000,000+ / Platinum marketing tier CONFIRMED —
-no correction applied.
+Revenue verification (per Pass 2 instruction): The July 23 research notes
+again state plainly, "Annual revenue: not stated in either transcript,"
+and no other revenue signal (case volume, payroll, stated revenue goal)
+appears anywhere in either the July 9 or July 23 notes. The HubSpot-sourced
+$3,000,000+ figure (hubspot_annual_law_firm_revenue) remains the best
+available evidence and is not contradicted by anything in this pass's
+notes either. CONCLUSION: Revenue band $3,000,000+ / Platinum marketing
+tier CONFIRMED again — no correction applied.
 
-Team size note: package_decision.json defaulted team_size_effective to 3
-and flagged "Review for coaching tier accuracy." The research notes
-describe more roles than a headcount of 3 (Kim McAdoo, Scott Holt,
-receptionist, office manager, plus unspecified "non-attorney salespeople"),
-but do not state an exact number. Because no explicit headcount is
-confirmed and the Pass 2 instruction scopes correction specifically to
-revenue band verification, the pre-selected Elite Coach Plus
-(Under-5/no-confirmed-headcount tier) is retained rather than upgraded to
-Master's Circle on an inferred headcount. Flagging for sales team review
-on the call: confirm actual team size to verify Elite Coach Plus vs.
-Master's Circle fit.
+Team size note: package_decision.json defaults team_size_effective to 3.
+The July 23 notes describe the same roles as July 9 — Kim McAdoo
+(principal attorney), Scott Holt (marketing/ops), a receptionist, an
+office manager, plus unspecified "non-attorney salespeople" for first
+meetings — so actual headcount is closer to 4+ but still not explicitly
+stated as a number, and in any case remains under the 5-person threshold
+that would trigger Master's Circle. CONCLUSION: Elite Coach Plus remains
+the correct tier regardless of whether the true count is 3 or ~4-5.
+Flagging again for sales: confirm exact team size on the call so this is
+locked in with certainty rather than inference.
+
+TRANSCRIPT-STATED NEED OVERRIDE ANALYSIS (required check, all three)
+----------------------------------------------------------------------
+1. Call-purpose override — NOT TRIGGERED. The July 9 discovery call (the
+   actual "what does this firm need" conversation) was standard
+   marketing/intake growth: website, LSA, intake automation, CRM hygiene.
+   The July 23 call was a working/account-setup call, not a second
+   discovery call, and its action items (send Scott an "AI Visibility
+   Audit," a "PPC Audit," and gather "AI safeguards/governance" answers)
+   read as SMB Team-initiated deliverables layered onto an existing
+   marketing-centric engagement, not a restatement of the firm's core
+   need. Nothing in either transcript frames this relationship as a
+   Fractional CTO/AI automation engagement in place of marketing. No
+   override applied — Full Service Marketing + Coaching remains the
+   correct lead recommendation.
+2. Existing-vendor override — NOT TRIGGERED. Grow My Ads is a real, active
+   vendor (~$6K-$8K/mo), but it covers PPC only — one channel. The prior
+   web/SEO vendor (Non-Stuffy Attorney) has been terminated, and the
+   firm's own stated pain points (site over-weighted to probate, no
+   geo-pages, NAP inconsistency now spreading into Google's own
+   aggregation, no Meta presence, no after-hours coverage) span website,
+   local SEO, directories, and social — none of which Grow My Ads
+   touches. A single-channel PPC vendor does not close a marketing gap
+   this broad. Full Service Marketing is not excluded. Sales note: since
+   SMB Team is now formally reviewing the live Grow My Ads PPC account as
+   part of this engagement, frame the proposal as transitioning that
+   existing ~$6K-$8K/mo spend into SMB-managed campaigns rather than
+   layering entirely new ad spend on top of it — this should be an
+   explicit talking point on the July 28/29 call, not left implicit.
+3. Budget-reality override — NOT TRIGGERED. No budget constraint is
+   stated or implied in either transcript. The July 23 action item asking
+   for "2-3 proposal options + pricing" reflects a request to see a range,
+   not a stated ceiling — it does not by itself justify leading with a
+   lower tier than the revenue table supports. Platinum remains the lead
+   recommendation.
+
+AI VISIBILITY / GOVERNANCE SIGNAL (internal note, not client-facing):
+The July 23 call introduced "AI Visibility Audit" and "AI safeguards/
+governance" as named deliverables — a genuinely new signal versus July 9.
+Per the LAW eligibility rules, this firm would qualify for a LAW package
+(revenue $3M+, has support staff, no stated resistance to tech adoption),
+but the stated need is narrower ("AI visibility" + "governance questions")
+than a full Fractional CTO engagement, and it was not the subject of the
+original discovery call. Per audit-write.md's default Growth Roadmap
+Phases, LAW AI Essentials is already positioned in Phase 3 of this
+proposal (see roadmap below) rather than forced into the Phase 1 /
+Block 2-3 core recommendation. Recommend Dan confirm directly with Scott
+whether the "AI Visibility Audit" is meant to be a distinct, separately
+scoped/priced deliverable before the July 28/29 call — do not assume it
+is folded into the standard PPC/marketing audit without confirming.
 
 MANDATORY PRICE LOOKUP
 -----------------------
