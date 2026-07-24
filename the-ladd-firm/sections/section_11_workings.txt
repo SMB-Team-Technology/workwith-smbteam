@@ -1,126 +1,188 @@
-THE LADD FIRM, LLC — SECTION 11 WORKINGS
-==========================================
+THE LADD FIRM, LLC — SECTION 11 WORKINGS (Pass 2, July 27, 2026 re-trigger)
+================================================================
+
+OVERRIDE ANALYSIS — APPLIED BEFORE package_decision.json / ELIGIBILITY TABLES
+--------------------------------------------------------------
+The July 27 research notes surface two facts that were NOT present in the July 23
+research notes and are not knowable to the deterministic package_decision.json
+lookup. Both trigger the "TRANSCRIPT-STATED NEED OVERRIDE" section of
+audit-write.md and supersede the decision file's marketing selection entirely.
+
+1. CALL-PURPOSE OVERRIDE (triggered): "Stated call focus / product interest" in
+   the July 27 notes states explicitly: "this call was NOT a standard
+   marketing/intake-growth discovery call — it was framed primarily around AI
+   enablement (AI Workforce Pro 14-day trial, MyCase integration, prebuilt legal
+   skills, potential Fractional CTO for workflow automation) and
+   coaching/accountability (Elite Coach ...). Marketing/full-service scope ... was
+   discussed as a secondary, not-yet-decided topic reserved for the follow-up
+   call." The firm did not ask about marketing on this call — a marketing
+   package should not be the lead recommendation just because revenue qualifies.
+
+2. EXISTING-VENDOR OVERRIDE (triggered): "Existing marketing/SEO/ad vendor
+   engagements: yes — Colin Bulger, an external marketing contractor based in
+   Mobile, currently manages website/SEO/PPC/LSA for the firm; Banks is
+   explicitly sensitive to any full-service marketing proposal overlapping with
+   Colin's remit." Per audit-write.md: "exclude Full Service Marketing — every
+   tier and every sub-package — from the recommendation entirely" when this
+   applies.
+
+3. BUDGET-REALITY OVERRIDE: not triggered. No budget ceiling stated; Banks is
+   "open to investing more if ROI is clear."
+
+RESULT: package_decision.json's marketing selection (Full Service Marketing —
+Starter, $4,997/mo bundled) is NOT usable as-is. It is dropped from this audit's
+recommendation entirely. This is a category change (no marketing package), not a
+tier change — the eligibility tables for marketing tiers were not re-run because
+no marketing package is being proposed this cycle.
+
+The decision file's non-marketing (coaching) selection is unaffected by either
+override and is confirmed below on its own merits.
+
+Note: an earlier, incomplete draft of this workings file (present in the sections
+folder before this pass) still recommended Full Service Marketing — Starter. That
+draft did not apply the override rules above and has been discarded. It also
+contained an unsourced claim that "AI Workforce Pro is already in a separate
+signed agreement" — that claim does not appear anywhere in the July 27 research
+notes (which describe AI Workforce Pro only as a discussed 14-day trial) and has
+not been carried forward.
 
 REVENUE VERIFICATION (package_decision.json confidence: low)
 --------------------------------------------------------------
-package_decision.json sourced revenue from HubSpot ("$180K - $960K" → effective $570,000)
-because revenue_stated was null in the automated parse. The research notes text
-DOES state revenue explicitly, in the transcript extraction section:
-  "Annual revenue: on pace ~$800K this year; prior year ~$600K"
-This transcript-stated figure (~$800K current pace) is more authoritative than the
-HubSpot band estimate. However, both $570,000 (HubSpot) and $800,000 (transcript)
-fall within the same $400K–$1M revenue band used for tier eligibility. Result:
-package_decision.json's tier selections are CONFIRMED CORRECT — no change required.
-  - Marketing tier: Full Service Marketing — Starter (unchanged)
-  - Coaching tier: Elite Coach Plus (unchanged)
-Team size: research notes list an actual roster (Banks Ladd, Mary Carol Ladd,
-Summer Palmer, Leo Baker, Colin Bulger [external contractor], a recently hired
-probate attorney) rather than the pipeline's default of 3. This does not change
-the outcome: revenue is under $1M, so Master's Circle and FCOO/FCFO bundles are
-ineligible regardless of team size, and no profit-problem signal was stated on
-the call to justify adding a Fractional CFO/COO Advisor. Elite Coach Plus remains
-the correct non-marketing package.
+package_decision.json sourced revenue from HubSpot ("$180K - $960K" -> effective
+$570,000) because revenue_stated was null in the automated parse. The research
+notes state revenue explicitly in the transcript extraction section: "Annual
+revenue: on pace ~$800K this year; prior year ~$600K." This transcript-stated
+figure is more authoritative than the HubSpot band estimate and is used
+throughout this audit ($800,000 current pace). Both figures fall within the same
+$400K-$1M revenue band for the coaching table, so this correction does not change
+the coaching tier — see below.
+
+Team size: research notes list an actual roster (Banks Ladd, Summer Palmer, Leo
+Baker, Colin Bulger [external contractor, not internal team], a recently hired
+probate attorney) — under 5 internal staff, not the pipeline's default of 3.
+Master's Circle and FCOO/FCFO bundles remain ineligible regardless (revenue is
+under $1M), so this does not change the coaching outcome either.
 
 MANDATORY PRICE LOOKUP
 --------------------------------------------------------------
-- Marketing package selected: Full Service Marketing — Starter
-  - Bundled price (from table): $4,847/mo
-  - Stand-alone price (from table): $5,697/mo
-  - Savings (stand-alone minus bundled): $850/mo
+- Marketing package selected: none (excluded by call-purpose and existing-vendor
+  overrides above — not a fit for this cycle's proposal)
 - Non-marketing package selected: Elite Coach Plus
   - Bundled price (from table): $3,200/mo
   - Stand-alone price (from table): $3,497/mo
   - Savings (stand-alone minus bundled): $297/mo
-- Legal AI Workforce (LAW) package selected: none
-- AI Avatar / Video Growth add-on selected: none
-- Total monthly investment (sum of bundled/recurring prices): $8,047/mo
-- Total savings (sum of all savings): $1,147/mo
+- Legal AI Workforce (LAW) package selected: AI Accelerator L1 — Fractional CTO
+  Level 1
+  - Bundled price (from table): $3,297/mo
+  - Stand-alone price (from table): $3,797/mo
+  - Savings (stand-alone minus bundled): $500/mo
+  - Law Firm AI Foundation Sprint, paired with Fractional CTO Level 1 (one-time
+    onboarding): $14,997 one-time (vs. $19,997 standalone — $5,000 one-time
+    savings when paired)
+- AI Avatar / Video Growth add-on selected: none (not discussed on the call)
+- Total monthly investment (sum of all bundled/recurring prices): $6,497/mo
+- Total savings (sum of all recurring savings): $797/mo
+
+LAW ELIGIBILITY CHECK
+--------------------------------------------------------------
+- Revenue $800,000 is at/above the $500K floor -> eligible (not under $500K)
+- Firm is not solo — has Summer Palmer, Leo Baker, and a recently hired probate
+  attorney as internal staff -> eligible
+- Owner shows clear openness to AI adoption — already trialing AI Workforce Pro,
+  explicitly wants a Fractional CTO to build automations -> eligible
+
+TIER SELECTION: AI Accelerator L1 (Fractional CTO Level 1) over AI Essentials —
+per audit-write.md, "Prefer this over AI Essentials when owner says they don't
+have bandwidth to manage it themselves." Banks is time-constrained (needs ~5
+hours/day for production work) and fears being overloaded by new initiatives —
+he explicitly wants a Fractional CTO leading the effort, not a DIY-with-support
+model. Revenue ($800K) sits inside the $500K-$1.5M target band for L1.
 
 35% SPEND CAP CHECK
 --------------------------------------------------------------
 Effective monthly revenue: $800,000/12 = $66,667/mo. 35% cap = $23,333/mo.
-Management fees ($8,047) + aggressive ad spend ($14,000) = $22,047/mo — within cap.
-Management fees ($8,047) + conservative ad spend ($3,500) = $11,547/mo — within cap.
+New SMB monthly commitment (Coaching $3,200 + LAW CTO L1 $3,297) = $6,497/mo —
+well within cap. The firm's existing ~$6,000/mo ad spend continues through Colin
+Bulger, is not managed by SMB Team under this proposal, and is therefore not
+counted against SMB's cap.
 
-AD SPEND — CONSERVATIVE AND AGGRESSIVE (from package_decision.json, both within
-tier cap of $25,000/mo and the 35% total-spend cap above)
+AD SPEND — NOT INCLUDED IN THIS PROPOSAL
 --------------------------------------------------------------
-Conservative: $3,500/mo
-Aggressive: $14,000/mo
-
-ROI PROJECTIONS (Practice area: Estate Planning table; blended CPL weighted
-63.6% Google Search / 36.4% LSA, per the channel-minimum proportions for
-Estate Planning — Google Search mid $135, LSA mid $65 → blended $110/lead)
-
-Conservative scenario ($3,500/mo, blended CPL + 20% cushion = ~$132):
-  - Leads: ~26/month
-  - Cases (15% close rate, default — not stated in transcript): 3–4 cases/month
-  - Revenue (avg case value $4,000, stated in transcript): $12,000–$16,000/month
-  - Return: ~4x
-
-Aggressive scenario ($14,000/mo, blended CPL = $110, no cushion):
-  - Leads: ~127/month
-  - Cases (15% close rate): 18–20 cases/month
-  - Revenue ($4,000 avg case value): $72,000–$80,000/month
-  - Return: ~5–6x
-
-All figures labeled as estimates in the client-facing report.
+No new SMB-managed ad spend or ROI projection is presented in this cycle's Block
+4, because no marketing package is being recommended (see override analysis
+above) — SMB is not proposing to manage paid media this round, so a Conservative/
+Aggressive ad-spend table would misrepresent what is actually on the table.
+package_decision.json's ad_spend figures ($3,500 conservative / $14,000
+aggressive) are tied to its now-excluded marketing tier and are not used.
+For context only (not a projection): the transcript states the firm's existing
+$6,000/mo spend (via Colin) generated approximately $60,000 in revenue last
+month, a ~10x return per the owner's own tracking.
 
 DBM STATEMENT (Block 1)
 --------------------------------------------------------------
-"We help estate planning and probate firms get a predictable, coordinated flow of
-design meetings so they can run without consuming the owner's every hour."
-Dominant Buying Motive: Category 1 — a firm that runs itself so the owner has more
-time. Inferred from Banks's need for ~5 hours/day of personal production work,
-his stated fear of being overloaded by new initiatives, and his delegation moves
-(hiring a probate attorney, leaning on Summer/Leo/Colin).
+"We help estate planning and probate firm owners build the AI-powered workflows
+and coaching structure that let them step back from day-to-day production, so
+they can run a firm that doesn't require their every hour."
+Dominant Buying Motive: Category 1 — a firm that runs itself so the owner has
+more time. Inferred from Banks's need for ~5 hours/day of personal production
+work, his stated fear of being overloaded by new initiatives, and his
+delegation moves (hiring a probate attorney, leaning on Summer/Leo/Colin,
+wanting a Fractional CTO to build automations rather than doing it himself).
 
 QUICK WIN OPPORTUNITIES (7 identified, minimum 6 required)
 --------------------------------------------------------------
+Unchanged from the diagnostic findings in Sections 05-09 (these describe the
+firm's current state and are independent of which package is recommended in
+Section 11):
 1. [Lead Gen / Quick Win] Fix NAP inconsistency across directories (FindLaw's old
    address vs. current address) — no named competitor tied to this specific fix.
 2. [Lead Gen / Long-Term Play] Match Holt & Associates' city-level paid search
    strategy — competitor: Holt & Associates.
-3. [Lead Gen / Quick Win] Put the firm's review advantage (165-209 vs. max 60 for
-   any named competitor) to work in ad copy and directory profiles — no
-   competitor tied (firm already leads here).
+3. [Lead Gen / Quick Win] Put the firm's review advantage (165 vs. max 60 for any
+   named competitor) to work in ad copy and directory profiles — no competitor
+   tied (firm already leads here).
 4. [Intake / Quick Win] Formalize a follow-up process for design-meeting leads —
    no named competitor.
 5. [Team / Long-Term Play] Reduce single-point-of-failure on marketing execution
-   (one contractor covering website/SEO/PPC/LSA) — no named competitor.
-6. [Profit / Quick Win] Close the gap between the firm's $4,000 average case value
-   and the ~$5,000 local market rate — no named competitor.
-7. [Lead Gen / Long-Term Play] Establish satellite market presence before Southern
-   Estate Lawyers further locks in Foley/Daphne/Gulf Coast — competitor: Southern
-   Estate Lawyers.
+   (one contractor covering website/SEO/PPC/LSA) — no named competitor. Framed
+   neutrally (not as a pitch for an SMB marketing package) given the existing-
+   vendor override above.
+6. [Profit / Quick Win] Close the gap between the firm's $4,000 average case
+   value and the ~$5,000 local market rate — no named competitor.
+7. [Lead Gen / Long-Term Play] Establish satellite market presence before
+   Southern Estate Lawyers further locks in Foley/Daphne/Gulf Coast —
+   competitor: Southern Estate Lawyers.
 
 FIRST 90 DAYS
 --------------------------------------------------------------
-1. Launch a coordinated Google PPC + LSA plan across estate planning and probate,
-   replacing the current single-contractor, uncoordinated approach.
-2. Correct the NAP inconsistency across directories (FindLaw, Avvo, Justia) to
-   protect the local ranking the 20+ geo-pages are built to capture.
-3. Rebuild the website's above-the-fold contact experience so the form is visible
-   without scrolling.
-4. Kick off coaching engagement with Banks to build a defined follow-up process
-   for design-meeting leads.
-5. Establish a baseline profit plan tracking case value and margin by practice
+1. Kick off the Law Firm AI Foundation Sprint — deploy the Claude Enterprise
+   workspace and pre-built Legal AI Skills, and connect them to the firm's
+   existing MyCase system.
+2. Begin Fractional CTO Level 1 engagement — build the first automations for
+   repeatable intake and follow-up tasks Banks currently handles personally.
+3. Kick off Elite Coach Plus coaching engagement with Banks to build a defined
+   follow-up process for design-meeting leads and a delegation plan for Summer
+   and Leo.
+4. Establish a baseline profit plan tracking case value and margin by practice
    area (estate planning vs. probate), not just top-line revenue pace.
 
-REP-FACING NOTE (internal — not in client report): raw call transcript added to
-triggers/audit-research/the-ladd-firm.json after Pass 1 research notes were
-written. It confirms every figure used above (revenue, ad spend, case value,
-DBM) and surfaces two items Dan should reconcile before the July 23 call:
-1. The transcript shows Elite Coach already quoted/emailed to Banks at
-   $2,600/mo (Double Your Investment Guarantee) from a prior call — this Growth
-   Audit recommends Elite Coach PLUS at $3,200/mo instead, per the approved
-   pricing table for the firm's $400K–$1M revenue band. Flagging the mismatch
-   so Dan can decide which offer to carry into the reconvene call.
-2. The transcript shows AI Workforce Pro (a Legal AI Workforce product,
-   $1,597/mo bundled trial) is already in a separate agreement with Banks. It is
-   NOT included in this Growth Audit's package recommendation. Per the LAW
-   escalation rule, confirm LAW delivery has launched and has capacity before
-   bundling it into any proposal alongside this audit's packages.
-3. Transcript confirms Banks is specifically sensitive to full-service marketing
-   overlapping with Colin (existing contractor) — reflected in this audit's
-   Sales Companion objection responses.
+DBM STATEMENT AND QUICK WINS ABOVE FEED SECTION 11 DIRECTLY. Do not proceed to
+Step I-b until this file is saved.
+
+REP-FACING NOTES (internal — not in client report)
+--------------------------------------------------------------
+1. ESCALATION: Per the LAW escalation rule, confirm with the sales rep that LAW
+   delivery has launched and has capacity available before this proposal goes
+   out — a Legal AI Workforce package (Fractional CTO Level 1) is included here.
+2. Dan should be aware the marketing conversation (Full Service Marketing
+   Essentials/Starter, discussed on a prior call per the July 23 pass) has been
+   deliberately left out of this proposal because Banks himself reserved it for
+   a later, separate conversation to avoid overlapping with Colin Bulger's
+   current scope. This is not an oversight — it is a direct application of the
+   existing-vendor and call-purpose overrides in audit-write.md. If Dan wants to
+   revisit marketing with Banks, that should be a distinct proposal, not bundled
+   into this one.
+3. Confirm whether the "Elite Coach" name discussed live on the call (vs. "Elite
+   Coach Plus" recommended here) needs reconciling with Banks before the
+   proposal is presented — the $400K-$1M revenue band supports Elite Coach Plus
+   per the approved pricing table.
