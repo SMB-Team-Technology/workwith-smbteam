@@ -1,0 +1,221 @@
+THE SHARP FIRM — SECTION 11 WORKINGS
+(Internal sales-facing math and reasoning. Never appears in client report.)
+
+===================================================================
+TRANSCRIPT-STATED NEED OVERRIDE CHECK (per audit-write.md)
+===================================================================
+
+1. Call-purpose override — NOT TRIGGERED.
+   Research notes explicitly state: "Stated call focus / product interest: Standard
+   marketing/growth discovery... This was not a Fractional CTO, AI-automation-engineering,
+   or coaching/ops call — it was a lead-generation and channel-strategy discovery call."
+   Full Service Marketing + coaching remains the correct product category.
+
+2. Existing-vendor override — CONSIDERED, NOT TRIGGERED.
+   Transcript shows two vendor threads: (a) a new, unnamed vendor recently engaged for
+   "hosting/AI/web work" only — not SEO, not PPC, not paid social, not lead-gen strategy;
+   (b) the prospect is still actively "talking to other vendors" for social/video/AI
+   marketing in parallel with this SMB Team evaluation, i.e. he has NOT signed with anyone
+   for the actual scope this call was about (lead generation/channel strategy). The
+   override requires an active/recent contract with a "marketing/SEO/ad/AEO vendor" —
+   hosting/web/AI work is a distinct scope from lead-gen marketing, and the prospect is
+   openly still shopping for the latter. Full Service Marketing is not excluded.
+   FLAG FOR SALES: coordinate with Lance so SMB Team's marketing work doesn't collide
+   with whatever the new hosting/web vendor is doing — confirm what that vendor's scope
+   actually covers before kickoff. Also flag the old Rise Up footer credit still live on
+   the site (vendor transition appears incomplete) — worth a quick client heads-up.
+
+3. Budget-reality override — CONSIDERED, NOT TRIGGERED.
+   Notes state explicitly: "Budget constraints stated: None stated as a hard affordability
+   limit... His hesitation is ROI skepticism from past SEO/PPC underperformance, not stated
+   inability to spend." The $1,500 Meta + $500 YouTube figure discussed on the call was
+   framed as a "starting point" for paid social testing, not a stated ceiling, and the
+   ~$3,500/mo retainer figure was described as an "average" example "with higher tiers
+   noted" — i.e. flexibility was already discussed, not a rejected budget. No override.
+
+===================================================================
+PACKAGE DECISION FILE — CROSS-CHECK (confidence: low)
+===================================================================
+
+package_decision.json confidence is "low" because revenue was not stated on the call and
+had to be sourced from HubSpot's broad band ($180K–$960K, effective midpoint $570,000).
+Per audit-write.md, decision file used as a starting point and cross-checked below.
+
+MARKETING TIER — Starter confirmed robust to the revenue uncertainty.
+- Practice Area filter: firm has multiple active/target practice areas (car accidents,
+  truck/18-wheeler, plus legacy med/dental mal) → Essentials hidden regardless of revenue
+  (Essentials requires single practice area). Floor tier is Starter for Personal Injury.
+- Revenue filter: "$500K–$1M (or under $750K with multiple locations/practice areas) →
+  Starter." Every plausible reading of the $180K–$960K HubSpot band that is not below
+  $250K lands on Starter here — either directly (revenue $500K–$1M) or via the
+  multiple-practice-area clause (revenue under $750K). Starter holds regardless of exactly
+  where in the band actual revenue falls.
+- Website rebuild check: not needed. Design refreshed ~12-18 months ago, mobile responsive
+  signals present, has practice area pages and attorney bios. No conflict with the new
+  hosting/web vendor's scope.
+=> CONFIRMED: Full Service Marketing — Starter. Bundled $4,997/mo, retail $5,697/mo, saves
+$700/mo.
+
+COACHING TIER — Elite Coach Plus confirmed, with a supporting signal beyond the decision file.
+- "$400K–$1M | Any | Elite Coach Plus | $3,200/mo" — team size does not gate this row, so
+  the effective team-size default (3) does not change the outcome even though the actual
+  team is closer to 2 (Lance + Laura Sharp, no other staff named).
+- Supporting signal for the revenue band: the firm previously sustained $7.5K–$8K/month in
+  agency marketing fees alone. A firm spending that consistently is very unlikely to sit at
+  the bottom of the $180K–$960K band (that would be well over a third of revenue on
+  marketing spend alone) — this supports an effective revenue solidly in the $400K+ range,
+  consistent with the decision file's $570K estimate.
+=> CONFIRMED: Elite Coach Plus. Bundled $3,200/mo, retail $3,497/mo, saves $297/mo.
+
+MANDATORY PRICE LOOKUP (copied character-for-character from package_decision.json / the
+approved tables in audit-write.md):
+- Marketing package selected: Full Service Marketing — Starter
+  - Bundled price: $4,997/mo
+  - Stand-alone price: $5,697/mo
+  - Savings: $700/mo
+- Non-marketing package selected: Elite Coach Plus
+  - Bundled price: $3,200/mo
+  - Stand-alone price: $3,497/mo
+  - Savings: $297/mo
+- Legal AI Workforce (LAW) package: none (not indicated — firm is 2 attorneys with no
+  support staff to engage with implementation; do not recommend per LAW eligibility rules)
+- AI Avatar / Video Growth add-on: none in Block 3 pricing (Lance expressed direct interest
+  in AI avatar/video — flagging as a Phase 2/3 upsell conversation, not priced into this
+  proposal; would require Alexis approval before ever being quoted)
+- Total monthly investment (bundled): $4,997 + $3,200 = $8,197/mo
+- Total savings: $700 + $297 = $997/mo
+
+===================================================================
+AD SPEND CALCULATION
+===================================================================
+
+Practice area: MVA / Car Accidents (also covers truck/18-wheeler — no separate row in the
+practice-area table; treated as the same category with case values skewing higher).
+Competitiveness: High — Thomas J. Henry and Jim Adler both named directly by the prospect
+as firms he "cannot outspend" on core accident terms; Austin PI CPCs run $50-150+/click.
+
+CONSERVATIVE:
+Recommended channels (deliberately excluding head-to-head Google PPC — the prospect
+explicitly cannot outspend Thomas J. Henry/Jim Adler there, and this matches his own
+stated preference for a social/video-led strategy): LSA ($2,000 min) + Meta Retargeting
+($1,500 min) + Meta Lead Gen ($6,000 min) = $9,500. PI hard floor for High competitiveness
+is $10,000 minimum — the higher of the two governs.
+=> Conservative ad spend: $10,000/mo (matches package_decision.json).
+
+AGGRESSIVE (20% rule):
+1. No revenue goal stated → default to 2x current revenue = $1,140,000.
+2. $1,140,000 x 20% / 12 = $19,000/mo monthly marketing budget.
+3. Austin = Tier 3 (strategic growth market) → x1.15 = $21,850/mo.
+4. No Spanish campaign flagged.
+5. − marketing package management fee ($4,997) = $16,853/mo available ad spend.
+Reverse math validation: Target monthly revenue $1,140,000/12 = $95,000. Average case value
+(MVA default, not stated on call) $5K–$10K, midpoint $7,500 → target ~12.7 cases/month.
+Close rate not stated, default 15% → ~84 leads/month required. Blended CPL (Accident &
+Injury table, weighted by the LSA/Retargeting/Lead-Gen mix above, no cushion) ≈ $171 →
+required spend ≈ $14,400/mo. The 20%-rule figure ($16,853) is higher, so it governs.
+Checked against Starter tier ad spend cap ($20,000) — within cap, no tier change needed.
+=> Aggressive ad spend: rounded to $18,000/mo (corrected down from the decision file's
+$20,000 placeholder — that figure was not traceable to a specific calculation step; $18,000
+is the defensible, rounded output of the 20%-rule/reverse-math check above).
+
+35% TOTAL-SPEND CAP — FLAG FOR SALES, NOT SILENTLY RESOLVED:
+At the effective/estimated revenue ($570K/yr → $47,500/mo), 35% cap = $16,625/mo. Bundled
+management fees alone ($8,197/mo) are well within cap (17.3% of monthly revenue). But
+management fees + conservative ad spend ($8,197 + $10,000 = $18,197/mo) run to 38.3% of
+estimated monthly revenue — modestly over the 35% cap AT THE ESTIMATE. Because revenue
+confidence is low (HubSpot band spans $180K–$960K) and the firm's own prior $7.5-8K/month
+agency spend implies real revenue is plausibly at or above the ~$624K/yr breakeven point
+for this total to clear 35%, this was not used to shrink ad spend below the PI hard floor
+($10,000 is a floor because campaigns below it are not considered viable to run). SALES
+ACTION: confirm actual annual revenue with Lance directly before finalizing; if confirmed
+revenue comes in materially under ~$600K/year, revisit ad spend down from the aggressive
+figure or phase in ad spend gradually rather than starting at the full recommended range.
+
+ROI PROJECTIONS:
+Average case value used: $7,500 (midpoint of MVA default $5K–$10K; not stated on the call
+— disclosed as an estimate). Close rate: 15% (not stated, default).
+
+Conservative ($10,000/mo ad spend):
+- Blended CPL ≈ $171, +20% cushion = ~$205
+- Leads: $10,000 / $205 ≈ 49/mo
+- Cases: 49 x 15% ≈ 7/mo
+- Revenue: 7 x $7,500 ≈ $52,500/mo
+- Return: ≈ 5.25x
+
+Aggressive ($18,000/mo ad spend):
+- Blended CPL ≈ $171 (no cushion)
+- Leads: $18,000 / $171 ≈ 105/mo
+- Cases: 105 x 15% ≈ 16/mo
+- Revenue: 16 x $7,500 ≈ $120,000/mo
+- Return: ≈ 6.67x
+
+===================================================================
+DOMINANT BUYING MOTIVE (DBM)
+===================================================================
+
+Primary: a firm that runs itself so Lance has his time back — he is buried in 5-10 calls/day
+of low-value med/dental mal intake that he personally triages and rejects ~99% of, and
+explicitly wants a "done-for-you" solution ("Hell no" to DIY social/video).
+Secondary: scale and dominate the truck/auto niche — interest in a distinct brand/GMB to
+rank in Maps for truck cases specifically.
+
+Block 1 formula: "We help veteran personal injury attorneys buried in low-value case intake
+get a predictable pipeline of high-value auto and truck accident cases so they can finally
+step back from screening every call themselves and build the dominant truck-and-auto
+practice they actually want."
+
+===================================================================
+QUICK WIN OPPORTUNITIES (7 — minimum 6 required, all 4 pillars covered)
+===================================================================
+
+1. [Lead Gen / Quick Win] "Capture the Traffic Currently Walking Away" — No Meta pixel
+   installed, no remarketing in place; every non-converting site visitor is lost for good.
+   No competitor named. Opportunity: pixel + 90-day remarketing turns "no" into "not yet."
+
+2. [Lead Gen / Quick Win] "Fix the NAP Problem Undermining Local Rankings" — Avvo, FindLaw,
+   and a duplicate Yelp listing all show a stale address (3307 Northland Drive) that
+   disagrees even with itself (different suite numbers), while the live site/GBP show the
+   current 7800 N. Mopac address. No competitor named. Opportunity: clean NAP data is a
+   free, fast local-ranking lever.
+
+3. [Lead Gen / Long-Term] "Build a Dedicated Truck & 18-Wheeler Presence" — Firm's organic
+   visibility is strongest in medical malpractice (the practice area it wants to shed) and
+   weakest in truck/auto (the practice area it wants to grow). Competitor: McMinn Personal
+   Injury Lawyers (390 Google reviews, 4.9 stars, dedicated truck/18-wheeler landing pages —
+   already building exactly the niche presence Lance says he wants).
+
+4. [Lead Gen / Quick Win] "Turn the Referral Network Into a Marketing Channel" — No
+   email/text nurture or structured referral-partner program exists despite a real network
+   of government-attorney referral contacts in Austin. No competitor named. Opportunity:
+   warm-audience remarketing and a referral-ask video campaign monetize a relationship
+   asset that currently produces nothing systematic.
+
+5. [Intake / Quick Win] "Centralize Leads With Basic Lead Tracking" — No CRM or lead
+   tracking tool; callbacks are manually prioritized by Lance personally. No competitor
+   named. Opportunity: every lead visible in one place instead of living in one person's head.
+
+6. [Team / Long-Term] "Get Intake Triage Off the Owner's Desk" — Lance personally decides
+   and prioritizes every callback (10-minute standard for auto, batched for med mal); there
+   is no other staff to delegate to. No competitor named. Opportunity: this is the single
+   biggest lever for Lance to get personal time back.
+
+7. [Profit / Quick Win] "Start Tracking Cost Per Lead and Cost Per Case" — No financial
+   visibility into marketing ROI was described on the call; past PPC/SEO decisions were
+   evaluated on overall satisfaction ("was fantastic," "poor ROI") rather than tracked
+   numbers. No competitor named. Opportunity: the coaching engagement gives Lance the
+   numbers to know what is actually working, not just what feels like it is.
+
+===================================================================
+FIRST 90 DAYS
+===================================================================
+
+1. Launch Meta retargeting + Meta lead-gen campaigns targeting car and truck accident
+   cases in the Austin market (ads launch before web/SEO work, per playbook order).
+2. Install Meta Pixel and verify event tracking on sharpfirm.com.
+3. Fix the NAP inconsistency across Avvo, FindLaw, and the duplicate Yelp listing.
+4. Kick off Elite Coach Plus coaching — weekly group sessions and practice-area
+   mastermind access begin immediately.
+5. Compile the referral/past-client list and launch a 90-day warm-audience remarketing
+   and referral-ask video campaign.
+
+===================================================================
