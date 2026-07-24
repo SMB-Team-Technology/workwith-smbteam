@@ -1,0 +1,179 @@
+TOMES LAW FIRM, PC — SECTION 11 WORKINGS
+=====================================================================
+
+OVERRIDE CHECK (per audit-write.md TRANSCRIPT-STATED NEED OVERRIDE)
+=====================================================================
+package_decision.json (confidence: low) selected:
+  - Marketing: Full Service Marketing — Starter, bundled $4,997/mo
+  - Coaching: Elite Coach Plus, bundled $3,200/mo
+  - Total bundled: $8,197/mo
+
+CALL-PURPOSE OVERRIDE APPLIES — this decision file is NOT usable as-is.
+
+Evidence from research notes Step 9 (Transcript Extraction) and the raw
+transcript (triggers/audit-research/tomes.json):
+  - "Stated call focus / product interest: NOT a standard marketing/intake-
+    growth discovery call... explicitly an operations/staffing discovery
+    focused on SMB Team's fractional COO program (5, 9, or 17 hours/month
+    options)... The transcript explicitly frames the sequencing as
+    'Address foundation issues before considering lead generation
+    services' — meaning marketing/lead-gen was raised and explicitly
+    deferred until operations are fixed."
+  - Raw transcript Topics section: "Address foundation issues before
+    considering lead generation services" listed directly under "SMB Team
+    Potential Solutions," alongside "Fractional COO program (5, 9, or 17
+    hours/month options)."
+
+This is an explicit, stated deferral by the prospect/rep — not silence,
+and not merely an unconfirmed marketing gap. Per the override rule, Full
+Service Marketing (every tier, every sub-package) is excluded from this
+recommendation entirely. Only the LAW and non-marketing tables were
+checked for what the transcript says the firm still needs.
+
+LAW (Legal AI Workforce) was considered and rejected: revenue qualifies
+($500K+) and the firm is not solo, but nothing in the transcript signals
+AI readiness or interest — the stated need is operational/staffing, not
+technology adoption. Recommending LAW would not match what actually
+happened on the call, so it is left out.
+
+REVENUE CORRECTION
+=====================================================================
+package_decision.json listed revenue_stated: null and used a HubSpot
+estimate of $570,000 (confidence: low). This is incorrect — the
+transcript explicitly states annual revenue "around $650k, down from
+pre-COVID levels" (also noted in research notes Step 9). Using the
+transcript-stated $650,000 instead of the HubSpot estimate. This does
+not change tier eligibility — both figures fall in the same $400K–$1M /
+above-$500K bands relevant to the packages below — but it is a more
+accurate, higher-confidence number and is used throughout this workings
+file and the report.
+
+Note: the transcript itself states this $650k figure inconsistently
+("down from pre-COVID levels ($650k vs $250k previously)" — the two
+figures as given read as an increase, not a decrease). This is flagged
+in Section 09 (Profit) rather than resolved silently, per the research
+notes' own flag for the sales rep to confirm with Frances.
+
+MANDATORY PRICE LOOKUP
+=====================================================================
+Marketing package selected: NONE (excluded by call-purpose override —
+see above; transcript explicitly defers lead generation)
+
+Non-marketing package selected: Elite Coach Plus + FCOO Advisor
+  - Bundled price (from table): $5,694/mo
+  - Stand-alone price (sum of components — Elite Coach Plus $3,497 +
+    FCOO Advisor $3,797): $7,294/mo
+  - Savings (stand-alone minus bundled): $1,600/mo
+
+Rationale: Revenue $650K falls in the $400K–$1M band. Team size is 7
+(above the "fewer than 5" Master's Circle cutoff, but Master's Circle
+itself additionally requires "dedicated ops, marketing, or intake staff,"
+which is not evidenced here — Master's Circle is not recommended).
+The $400K–$1M band offers "Elite Coach Plus" alone ($3,200/mo) or "Elite
+Coach Plus + FCOO Advisor" ($5,694/mo) for a "Growing" team. Tomes is
+actively trying to scale operational capacity (ending a 6-month local
+COO engagement, actively asking about SMB's own fractional COO tiers) —
+this is precisely the "Growing team, coaching + operations help"
+scenario the +FCOO Advisor row describes, and it directly matches what
+Frances asked about on the call. FCOO products are not hidden (revenue
+is above the $500K floor for FCOO/CFO products).
+
+Legal AI Workforce (LAW) package selected: none (see override discussion
+above)
+
+AI Avatar / Video Growth add-on selected: none (no marketing package
+active; add-on requires an active marketing relationship)
+
+Total monthly investment (sum of all bundled/recurring prices): $5,694/mo
+Total savings (sum of all savings): $1,600/mo
+
+35% CAP CHECK: Monthly revenue = $650,000 ÷ 12 = $54,167. 35% cap =
+$18,958/mo. Total recommended spend ($5,694/mo, no ad spend) is well
+within the cap.
+
+Minimum MRR check: $5,694/mo clears the $2,497/mo floor.
+
+AD SPEND / ROI PROJECTIONS
+=====================================================================
+Not applicable this phase. No marketing package is being recommended in
+Phase 1 per the call-purpose override — the transcript explicitly states
+the firm should "address foundation issues before considering lead
+generation services." Ad spend, blended CPL, and ROI projections are
+deferred to Phase 2 of the growth roadmap (Market Domination / marketing
+tier to be scoped once operations are stabilized and revenue/eligibility
+are reassessed). Block 4 of section_11_next_steps.html is filled to
+reflect $0/mo recommended ad spend for Phase 1 rather than an invented
+figure.
+
+DEVIATION FROM STANDARD FIRST-90-DAYS FRAMING
+=====================================================================
+Standard guidance is to lead First 90 Days with launching ads, then
+website work, then coaching kickoff. That default does not fit this
+firm — the transcript explicitly asked SMB Team to address operations
+before lead generation is even discussed. First 90 Days below leads with
+the FCOO/coaching engagement instead, consistent with the override.
+
+DBM STATEMENT FOR BLOCK 1
+=====================================================================
+Dominant Buying Motive: a firm that runs itself so Frances gets her time
+and her life back — escaping 60-hour weeks and constant oversight of an
+inefficient, low-follow-through staff. Two prior fixes (2-year How to
+Manage coaching engagement; current ending 6-month local part-time COO)
+were both attempts to buy back her own time, not to grow the top line.
+
+Formula: "We help multi-practice-area law firm owners get a team and
+operating structure that runs without them so they can step back from
+60-hour weeks and reclaim their time."
+
+QUICK WIN OPPORTUNITIES (7)
+=====================================================================
+1. [Team] "Turn Your Policy Manual Into a Living System" — Why: a
+   180-page policy/procedure manual and staff KPIs already exist, but no
+   one owns enforcing them day to day. No named competitor. Opportunity:
+   an operational leader who owns accountability turns paperwork already
+   built into real, followed process.
+2. [Team] "Stop Managing Staff Over WhatsApp" — Why: ad hoc, unlogged
+   communication excludes Frances from visibility into daily operations.
+   No named competitor. Opportunity: a centralized system restores
+   oversight without requiring her personal involvement in every thread.
+3. [Intake] "Define What Happens After the Phone Rings" — Why: no
+   defined intake process; staff described as reactive and lacking
+   follow-through. No named competitor. Opportunity: converting more of
+   the leads already coming in — no new marketing dollar required.
+4. [Intake] "Close the After-Hours Gap" — Why: no after-hours coverage
+   was stated for calls or form submissions. No named competitor.
+   Opportunity: capture leads currently going unanswered outside business
+   hours.
+5. [Lead Generation] "Fix the NAP Inconsistency Before It Costs More
+   Visibility" — Why: the firm's Birdeye listing still carries the prior
+   name "Tomes & Hanratty PC," and a possibly-duplicate Yelp listing
+   surfaced for a Marlboro address. No named competitor. Opportunity:
+   consolidating listings unlocks the local ranking benefit of 99 reviews
+   at 4.9 stars that may currently be split or suppressed.
+6. [Lead Generation] "Claim the Open Bankruptcy Ad Market (When Ready)" —
+   Why: no named local competitor (Detzky Hunter & DeFillippo, Robert
+   Manchel) was confirmed running search ads for bankruptcy. Competitor:
+   Detzky, Hunter & DeFillippo, LLC / Robert Manchel, Esq. Opportunity:
+   an uncontested paid channel is available whenever the firm is ready
+   to revisit lead generation in Phase 2.
+7. [Profit] "Resolve the Revenue Figure Before Planning Around It" — Why:
+   the $650k current vs. $250k "previously" figures were stated in a way
+   that reads as inconsistent. No named competitor. Opportunity: a clean,
+   confirmed number is the foundation any credible growth or profit plan
+   needs.
+
+FIRST 90 DAYS
+=====================================================================
+1. Kick off Elite Coach Plus group coaching and enroll Frances in her
+   practice-area mastermind
+2. Fractional COO Advisor conducts a full operational audit, reviewing
+   the existing 180-page policy manual and staff KPIs against what the
+   team is actually doing day to day
+3. Stand up a single accountability system to replace ad hoc WhatsApp
+   coordination, restoring Frances's visibility without requiring her
+   personal involvement in every thread
+4. Build a defined intake follow-up process so the ~2 bankruptcy
+   cases/week already coming in convert at a higher rate before any new
+   lead source is added
+5. Establish a baseline profit/revenue picture — including resolving the
+   $650k/$250k discrepancy — before Phase 2 growth planning begins
