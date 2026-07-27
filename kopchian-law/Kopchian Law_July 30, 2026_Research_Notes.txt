@@ -312,3 +312,58 @@ PASS 2 — VERIFICATION CHECKLIST
     past coaching programs noted for context)
 [x] Budget constraints stated recorded (no explicit cap; affordability
     sensitivity noted from transcript context)
+
+==============================================================
+PASS 2 — ESCALATION FLAGS (INTERNAL ONLY — NEVER IN CLIENT REPORT)
+==============================================================
+- REVENUE UNDER $300K → SCOPING APPROVAL REQUIRED. Effective annual
+  revenue of ~$286,000 (transcript states $5,000-$6,000/week, which
+  annualizes to $260,000-$312,000/year) spans below the $300K threshold.
+  Confirm the client has funds to cover 4 months of services before
+  proceeding, per standard policy for revenue under $250K-$300K.
+
+- PACKAGE DECISION CORRECTION (Pass 1 → Pass 2). package_decision.json's
+  original output was generated from an unreliable revenue source and an
+  extraction artifact, and has been corrected:
+  BEFORE (Pass 1): revenue_effective $570,000 (confidence: low, sourced
+  from a HubSpot band "$180K - $960K", not the transcript); team_size
+  defaulted to 3 (never stated); three near-duplicate practice-area
+  strings incorrectly treated as multiple practice areas. This produced
+  Full Service Marketing — Starter ($4,997/mo bundled) + Elite Coach Plus
+  ($3,200/mo bundled) = $8,197/mo total, $997/mo total savings.
+  AFTER (Pass 2): revenue_effective corrected to ~$286,000 using the
+  transcript's explicit weekly revenue figures; team_size corrected to 1
+  (solo attorney, zero staff, confirmed directly in transcript); practice
+  areas corrected to 1 (all three detected strings describe the same
+  Immigration Law practice). This produces Full Service Marketing —
+  Essentials ($3,497/mo bundled) + Elite Coach ($2,600/mo bundled) =
+  $6,097/mo total, $1,197/mo total savings. Essentials and Elite Coach
+  (not Plus) are the correct eligible tiers at this firm's actual revenue
+  and team size. package_decision.json has been updated to reflect this
+  correction, with full before/after detail in its own selection_notes.
+
+- BUDGET-REALITY OVERRIDE APPLIED TO AD SPEND. The transcript explicitly
+  states current weekly revenue is already insufficient to cover the
+  owner's debt obligations, and business expenses are being put on credit
+  cards. The call was explicitly framed around implementing operational
+  systems before any marketing spend, because the prospect is
+  bottlenecked in production ("Marketing without systems would waste ad
+  spend and overwhelm the firm"). Checking the 35%-of-revenue cap: current
+  monthly revenue is ~$21,667-$26,000, so the cap is ~$7,583-$9,100/month
+  for combined management fees + ad spend — and $6,097/mo in management
+  fees alone already consumes most of that. The standard conservative
+  methodology (summing all four Immigration channel minimums: Google PPC
+  $3,000 + LSA $2,000 + Meta Retargeting $1,200 + Meta Lead Gen $3,000 =
+  $9,200/mo) was considered and explicitly REJECTED as unaffordable for
+  this firm right now. Conservative ad spend was instead set at the
+  absolute floor: $3,000/mo, single channel (Google Search only).
+
+- AGGRESSIVE AD SPEND EXCEEDS TIER CAP. The aggressive ad spend figure
+  ($6,000/mo) exceeds the Essentials tier's $5,000/mo ad spend cap by
+  ~$1,000-$1,250/mo. Starter tier — which carries a higher ad spend cap —
+  is NOT available as an upgrade path at this firm's corrected revenue
+  (Starter requires $500K-$1M revenue, or under $750K only with multiple
+  locations/practice areas, neither of which applies here). FLAG FOR
+  SALES: confirm a 10% management overage with the client before running
+  the aggressive ad spend scenario. This overage mechanic must not appear
+  in the client-facing HTML report — internal only.

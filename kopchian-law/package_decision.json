@@ -1,0 +1,40 @@
+{
+  "confidence": "low",
+  "revenue_stated": null,
+  "revenue_effective": 286000,
+  "revenue_source": "transcript_weekly_revenue_annualized",
+  "revenue_label": "$5,000-$6,000/week stated on transcript → ~$260,000-$312,000/year, midpoint $286,000 used",
+  "team_size_stated": null,
+  "team_size_effective": 1,
+  "practice_areas_detected": [
+    "immigration law (family- and employment-based visas/green cards, plus mandamus actions — single practice area)"
+  ],
+  "marketing_tier": "Essentials",
+  "marketing_name": "Full Service Marketing — Essentials",
+  "marketing_price_bundled": 3497,
+  "marketing_price_retail": 3797,
+  "marketing_savings": 300,
+  "coaching_name": "Elite Coach",
+  "coaching_price_bundled": 2600,
+  "coaching_price_retail": 3497,
+  "coaching_savings": 897,
+  "law_tier": null,
+  "total_bundled": 6097,
+  "total_savings": 1197,
+  "ad_spend_conservative": 3000,
+  "ad_spend_aggressive": 6000,
+  "selection_notes": [
+    "PASS 2 CORRECTION (July 30, 2026): Pass 1's revenue_effective of $570,000 (confidence: low, sourced from a HubSpot band \"$180K - $960K\") was overridden using the transcript's explicit, more reliable weekly revenue figures ($5,000-$6,000/week → ~$260,000-$312,000/year, midpoint $286,000 used).",
+    "PASS 2 CORRECTION: Pass 1's team_size_effective of 3 (an undocumented default) was corrected to 1 — the transcript explicitly states this is a solo attorney with no staff at all (\"solo attorney is overwhelmed by casework\").",
+    "PASS 2 CORRECTION: Pass 1's practice_areas_detected contained three near-duplicate strings that all describe the SAME single practice area (general immigration law — family- and employment-based visas/green cards, plus mandamus actions). This was incorrectly treated as multiple practice areas, which wrongly excluded the Essentials marketing tier. Corrected to a single practice area.",
+    "Locations: 1 (defaulted per rule, consistent with solo-practitioner structure).",
+    "BEFORE (Pass 1, incorrect): Full Service Marketing — Starter ($4,997/mo bundled) + Elite Coach Plus ($3,200/mo bundled) = $8,197/mo total, $997/mo total savings.",
+    "AFTER (Pass 2, corrected): Full Service Marketing — Essentials ($3,497/mo bundled) + Elite Coach ($2,600/mo bundled) = $6,097/mo total, $1,197/mo total savings. Essentials is correctly eligible because revenue is under $750K AND the firm has a single location AND a single practice area. Elite Coach (not Plus) is correct because revenue ~$286K falls in the $250K-$400K band, not the $400K-$1M band.",
+    "Fractional CFO Advisor: NOT eligible (requires $400K minimum revenue; this firm does not reach it, even though profit/cash-flow problems were mentioned on the call).",
+    "Legal AI Workforce (LAW): NOT eligible (revenue under $500K, AND firm is solo with zero support staff — both disqualifiers apply independently).",
+    "AI Avatar/Video Growth, Master's Circle, Bookkeeping, OmniSocial AI, Attorney Assistant: not applicable — no transcript signal supports any of these.",
+    "BUDGET-REALITY OVERRIDE APPLIED to ad spend: transcript states current weekly revenue is already insufficient to cover the owner's debt obligations and business expenses are on credit cards; call was explicitly framed around implementing systems before any marketing spend. Conservative ad spend set at the absolute floor ($3,000/mo, Google Search only) instead of summing all four Immigration channel minimums (~$9,200/mo), which was considered and rejected as unaffordable given the ~35%-of-revenue cap at this firm's current revenue.",
+    "Aggressive ad spend ($6,000/mo) exceeds the Essentials tier's $5,000/mo ad spend cap by ~$1,000-$1,250/mo. Starter tier is not available as an upgrade path at this firm's corrected revenue. Flagged for sales to confirm a 10% management overage before running the aggressive scenario.",
+    "ESCALATION FLAG (internal only, not in client report): revenue under $300K → scoping approval required per firm policy (this firm's effective revenue of $286,000 falls within the $260,000-$312,000 stated range, which spans below this threshold)."
+  ]
+}

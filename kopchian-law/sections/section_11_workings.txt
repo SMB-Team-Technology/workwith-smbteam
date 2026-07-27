@@ -1,0 +1,206 @@
+==============================================================
+SECTION 11 WORKINGS — Kopchian Law (July 30, 2026)
+INTERNAL ONLY — never appears in client-facing HTML
+==============================================================
+
+PACKAGE DECISION FILE OVERRIDE (documented per Step 0.5 / Transcript-Stated
+Need Override — Budget-Reality Override applies)
+--------------------------------------------------------------
+package_decision.json (Pass 1 output) was WRONG and has been corrected:
+
+BEFORE (Pass 1 / package_decision.json as generated):
+- revenue_effective: $570,000 (confidence: LOW — sourced from a HubSpot
+  band "$180K - $960K", not from the transcript)
+- team_size_effective: 3 (not stated anywhere — a default guess)
+- practice_areas_detected: 3 near-duplicate strings that are all the SAME
+  practice area (Immigration Law), incorrectly treated as multiple
+  practice areas
+- marketing_tier: Starter ($4,997/mo bundled / $5,697 retail / $700 saved)
+  — selected only because "multiple practice areas" incorrectly excluded
+  Essentials
+- coaching_name: Elite Coach Plus ($3,200/mo bundled / $3,497 retail /
+  $297 saved) — selected for the $400K-$1M band, which this firm does not
+  actually reach
+- total_bundled: $8,197/mo
+- ad_spend_conservative: $3,000 / ad_spend_aggressive: $12,000
+
+AFTER (Pass 2 correction, this document):
+- revenue_effective: ~$286,000 (transcript states $5,000-$6,000/week,
+  which annualizes to ~$260,000-$312,000/year; midpoint used)
+- team_size_effective: 1 (solo attorney, zero staff — transcript: "solo
+  attorney is overwhelmed by casework")
+- practice_areas_detected: 1 (Immigration Law generally — family- and
+  employment-based visas/green cards, plus mandamus actions as an
+  existing upsell — this is ONE practice area, not three; the Pass 1
+  extraction just captured overlapping phrasing of the same thing)
+- locations: 1 (defaulted per rule, consistent with solo structure)
+- marketing_tier: Full Service Marketing — Essentials ($3,497/mo bundled
+  / $3,797 retail / $300 saved) — correctly eligible because revenue is
+  under $750K AND the firm has a single location AND a single practice
+  area
+- coaching_name: Elite Coach ($2,600/mo bundled / $3,497 retail / $897
+  saved) — correct band is $250K-$400K revenue, not $400K-$1M
+- total_bundled: $6,097/mo (down from $8,197/mo)
+- total_savings: $1,197/mo (up from $997/mo)
+
+WHY THE CORRECTION WAS MADE: The transcript is ground truth and contains
+explicit weekly revenue and team-size statements that are more reliable
+than a HubSpot-sourced annual revenue band flagged "low confidence." The
+practice-area multiplicity that excluded Essentials in Pass 1 was an
+artifact of near-duplicate string extraction, not a real second or third
+practice area. Correcting both moves this firm from Starter+Elite Coach
+Plus ($8,197/mo) to Essentials+Elite Coach ($6,097/mo) — a $2,100/mo
+reduction that is directly appropriate given this firm's actual revenue
+and team size.
+
+MANDATORY PRICE LOOKUP (confirmed character-by-character against tables)
+--------------------------------------------------------------
+- Marketing package selected: Full Service Marketing — Essentials
+  - Bundled price: $3,497/mo
+  - Stand-alone price: $3,797/mo
+  - Savings: $300/mo
+- Non-marketing package selected: Elite Coach
+  - Bundled price: $2,600/mo
+  - Stand-alone price: $3,497/mo
+  - Savings: $897/mo
+- Legal AI Workforce (LAW): none — NOT ELIGIBLE (revenue under $500K AND
+  firm is solo with zero support staff; both disqualifiers independently
+  apply per the LAW eligibility rules)
+- AI Avatar / Video Growth: none — not applicable (no existing marketing
+  investment, no social/video presence, does not meet criteria)
+- Fractional CFO Advisor: none — NOT ELIGIBLE (requires minimum $400K
+  revenue; this firm's ~$286K effective revenue does not reach it, even
+  though profit/cash-flow problems were mentioned on the call)
+- Master's Circle, Bookkeeping, OmniSocial AI, Attorney Assistant: not
+  applicable — no signal in the transcript supporting any of these; not
+  forced into the recommendation
+
+TOTAL MONTHLY INVESTMENT (sum of bundled prices): $3,497 + $2,600 =
+$6,097/mo
+TOTAL SAVINGS (sum of retail minus bundled per package): $300 + $897 =
+$1,197/mo
+
+BUDGET-REALITY OVERRIDE — AD SPEND (documented per Step 0.5)
+--------------------------------------------------------------
+The transcript explicitly states current weekly revenue ($5,000-$6,000)
+is already insufficient to cover Adam's debt obligations, and business
+expenses are being put on credit cards. The call was explicitly framed
+around implementing operational systems FIRST, before any marketing
+spend, because the prospect is bottlenecked in production. Transcript:
+"Marketing without systems would waste ad spend and overwhelm the firm."
+
+35%-of-revenue cap check: current monthly revenue ~$21,667-$26,000 (from
+$5,000-$6,000/week) → 35% cap is ~$7,583-$9,100/month for combined
+management fees + ad spend. Mgmt fees alone ($6,097/mo) already consume
+most of that cap, leaving very little headroom for ad spend.
+
+Standard conservative methodology would sum all four Immigration channel
+minimums: Google PPC $3,000 + LSA $2,000 + Meta Retargeting $1,200 + Meta
+Lead Gen $3,000 = $9,200/mo. This was CONSIDERED AND REJECTED as
+unaffordable for this firm right now, given the 35% cap math above and
+the explicit "systems before marketing spend" framing from the call.
+
+DECISION: Conservative ad spend set at the absolute floor instead —
+$3,000/mo, single channel (Google Search only) — the lowest amount the
+spec allows for any paid ads, chosen deliberately because of the
+budget-reality override, not derived from the four-channel sum.
+
+AGGRESSIVE AD SPEND CALCULATION
+--------------------------------------------------------------
+20% rule: Revenue goal ~$390K midpoint (using the $364K-$416K annualized
+goal range from the transcript's $7,000-$8,000/week stated target) × 20%
+÷ 12 = $6,500/mo. × NYC Tier-1 geo multiplier (1.5) = $9,750/mo. −
+Essentials mgmt fee ($3,497) = ~$6,253/mo available.
+
+Reverse-math validation: using default case value ~$4,500 (Immigration
+default midpoint, not transcript-stated) and 15% default close rate
+(transcript did not state a close rate) comes in lower, ~$3,540/mo.
+
+Per methodology, use the HIGHER of the two: $6,253/mo → rounded to a
+clean client-facing number of $6,000/mo.
+
+TIER CAP FLAG: $6,000/mo aggressive ad spend exceeds the Essentials
+tier's $5,000/mo ad spend cap by ~$1,000-$1,250/mo. Starter tier is NOT
+available as an upgrade path at this firm's corrected revenue (Starter
+requires $500K-$1M revenue, or under $750K only with multiple
+locations/practice areas — neither applies here). FLAG FOR SALES: confirm
+a 10% management overage before running the aggressive ad spend scenario.
+This overage mechanic is NOT disclosed in the client-facing HTML — internal
+only.
+
+ROI PROJECTIONS (case value and close rate are practice-area defaults,
+disclosed as such in the client report — not transcript-stated figures)
+--------------------------------------------------------------
+Conservative ($3,000/mo, Google Search only):
+- CPL: Immigration Google Search midpoint ~$97.50, +20% conservative
+  cushion ≈ $117/lead
+- Leads: $3,000 ÷ $117 ≈ 25 leads/mo
+- Cases: 25 × 15% close rate ≈ 4 cases/mo
+- Revenue: 4 × $4,500 avg case value ≈ $18,000/mo
+- Return: $18,000 ÷ $3,000 ≈ 6.0x
+
+Aggressive ($6,000/mo, blended Google Search + LSA + Meta Cold, no
+cushion):
+- Blended CPL ≈ $79/lead
+- Leads: $6,000 ÷ $79 ≈ 76 leads/mo
+- Cases: 76 × 15% close rate ≈ 11 cases/mo
+- Revenue: 11 × $4,500 avg case value ≈ $49,500/mo
+- Return: $49,500 ÷ $6,000 ≈ 8.3x
+
+DBM STATEMENT FOR BLOCK 1
+--------------------------------------------------------------
+DBM: Moving from "player" to "owner" — escaping the day-to-day production
+bottleneck that keeps Adam personally handling every case and every
+intake call, so the firm can generate a real financial buffer instead of
+running on credit cards. Not an explicit personal/lifestyle statement on
+the call — inferred from context, with the "player" to "owner" language
+taken directly from the transcript's own framing.
+
+Formula: "We help solo immigration attorneys get a predictable stream of
+qualified cases and the operational systems to handle them so they can
+finally become the owner of their firm instead of its only employee."
+
+QUICK WIN OPPORTUNITIES IDENTIFIED (6+, across all four pillars)
+--------------------------------------------------------------
+1. [Lead Gen / Quick Win] Fix NAP inconsistency across directories — three
+   different name/address/phone identities live right now (Kopchian Law
+   at 195 Broadway Brooklyn; Kopchian Law at 291 Broadway NYC per Avvo;
+   "Brown Law Practice PLLC" at Long Island City per FindLaw). Low-cost,
+   high-impact local SEO fix. Competitor: none named for this specific
+   card (a firm-side technical fix, not a competitive comparison).
+2. [Lead Gen / Long-Term Play] Build a real website to replace the parked
+   domain — no lead generation channel below this can function without a
+   destination page. Competitor: Alena Shautsova Law Offices (content-rich
+   site, 318 reviews).
+3. [Lead Gen / Quick Win] Google Business Profile reputation repair — 1.0
+   stars across 2 reviews is actively repelling searchers; a review
+   generation push is a fast, low-cost fix. Competitor: Hargis Law Firm,
+   PLLC (100+ five-star reviews, 11-year Avvo Clients' Choice streak).
+4. [Intake / Quick Win] Establish a defined intake process and follow-up
+   sequence so referrals are not lost to Adam's casework overload. No
+   named competitor for this card (an internal process fix).
+5. [Team / Long-Term Play] Begin building delegation and a first hire so
+   Adam is not the single point of failure for every case. Competitor:
+   none named (internal capacity fix).
+6. [Profit / Quick Win] Establish basic financial visibility (a simple
+   profit plan) to stop the credit-card-funded expense cycle before it
+   compounds further. No named competitor for this card.
+7. [Lead Gen / Quick Win] Correct Google/Meta local pack visibility by
+   claiming and completing all directory profiles consistently.
+   Competitor: Gottfried & Gottfried, LLP (252 Yelp reviews, 40+ years in
+   market).
+
+FIRST 90 DAYS
+--------------------------------------------------------------
+1. Launch the conservative Google Search ad campaign ($3,000/mo) once the
+   new website is live — the single, affordable channel appropriate for
+   this firm's current cash position.
+2. Design and launch a real website to replace the parked GoDaddy domain,
+   including practice area pages and an attorney bio.
+3. Correct the NAP inconsistency across all directories (Avvo, FindLaw,
+   Birdeye/Google, Chamber of Commerce) to a single consistent identity.
+4. Kick off Elite Coach coaching sessions focused on building the
+   operational systems (intake process, basic delegation plan) the
+   transcript identified as the prerequisite to marketing spend.
+5. Begin a Google Business Profile review-generation push to address the
+   1.0-star rating before ad spend scales.
