@@ -1,0 +1,391 @@
+==============================================================
+SMB TEAM — AUDIT RESEARCH NOTES
+Firm: Law Offices of Jason L. Abelove
+Friendly Name: law-offices-of-jason-l-abelove
+URL: http://jasonabelove.com
+Sales Rep: Jonathan Farace
+Date: July 29, 2026
+Contact: Jason Abelove (jason@jasonabelove.com / 516-222-7000)
+==============================================================
+
+ENVIRONMENT / TOOLING NOTE (read before trusting any "not observed" line below):
+This research pass ran without an interactive browser. Live-verification
+tools failed or were unavailable, flagged wherever they affected a data
+point:
+- Google PageSpeed Insights (both the public API and the pagespeed.web.dev
+  UI) returned HTTP 429 "Quota exceeded for quota metric 'Queries'... limit
+  value 0" — the shared project quota for this environment is exhausted,
+  not a transient error. Retried twice; same result both times.
+- Meta Ad Library (facebook.com/ads/library) returned HTTP 403 Forbidden to
+  direct fetch — no ad data retrievable for the firm or any competitor.
+- No live Google Maps rendering (3-pack, GBP panel, LSA unit) is available
+  in this environment. Where a Maps-native number (review count, LSA
+  presence) could not be independently re-verified live, this is flagged
+  explicitly rather than guessed at. The firm's own site was fetched and
+  read directly (live, HTTP 200), and all competitor names/details below
+  come from live directory/search sources (Yelp, Birdeye, Super Lawyers,
+  Justia, Avvo, Martindale, the competitors' own sites) — none are invented.
+
+==============================================================
+STEP 1 — WEBSITE RESEARCH
+==============================================================
+- Website URL confirmed live: Yes (jasonabelove.com resolves, HTTP 200,
+  fetched directly).
+- Last redesign date or estimated age: Not date-stamped on the site itself.
+  Strong circumstantial signal it has not been meaningfully touched in
+  several years: the blog's most recent posts are dated 05.13.21 and
+  04.22.21 — over five years old as of this audit.
+- Mobile responsive: Not independently confirmed in this environment (no
+  device-emulation rendering available). Site uses a modern-looking
+  template; not flagged as broken, but not tested on an actual device.
+- Homepage headline: "REAL ANSWERS & REAL ADVOCACY IN THE WORKPLACE"
+- CTA above fold: Yes — "LET'S GET STARTED" button, links to a consultation
+  section.
+- Contact form location: Mid-page, under a "SET UP A FREE MEETING" section
+  — not above the fold.
+- Live chat present: No.
+- Attorney bio present: Yes — prominent, emphasizes nearly three decades of
+  experience and personal accessibility ("I'M ACCESSIBLE TO MY CLIENTS.
+  EVERY PHONE CALL IS ANSWERED BY ME").
+- Video present: No.
+- Blog present: Yes — but stale. Most recent posts found: 05.13.21 and
+  04.22.21 (over 5 years old).
+- Notable: Three case results displayed on the homepage ($620,000 to
+  $6,000,000 range) — a real credibility asset not being leveraged
+  elsewhere (no dedicated video, no social proof carried into ads).
+- GAP CONFIRMED — CRIMINAL DEFENSE NOT ON THE SITE AT ALL: The full site
+  sitemap and practice-areas page were checked directly. Practice areas
+  listed are exclusively Employment Law (wage & overtime, sexual
+  harassment/defense, workplace discrimination, wrongful termination, wage
+  and hour) and Business Law (commercial litigation). There is no criminal
+  defense page, practice area, or mention anywhere on the site. This
+  directly matches the transcript's stated problem: Jason hired a new
+  attorney specifically to handle criminal defense cases, but there is
+  currently no digital presence at all generating demand for that practice
+  area — the new hire has nowhere on the firm's own site sending it leads.
+- No geo-targeting landing pages found for surrounding cities/towns (e.g.
+  Mineola, Hempstead, Hicksville) — sitemap shows only the core page set,
+  no location-specific pages.
+
+PageSpeed:
+- PageSpeed mobile score: Not obtainable. Both the public PageSpeed
+  Insights API and the pagespeed.web.dev UI returned a quota/loading
+  failure in this environment (see tooling note above). Not fabricated.
+- PageSpeed desktop score: Same — not obtainable, same reason.
+
+==============================================================
+STEP 2 — GOOGLE BUSINESS PROFILE
+==============================================================
+- GBP found: Yes (referenced consistently across directory sources at the
+  firm's confirmed address/phone; direct Maps panel rendering unavailable
+  in this environment).
+- Star rating: Not independently re-verified live this pass (no Maps
+  rendering available). No source contradicts a strong rating — all
+  third-party review platforms found (Avvo, Lawyers.com, Attorney at Law)
+  show uniformly positive client language ("experienced, courteous,
+  responsive, knowledgeable and honest").
+- Total review count: 26, per the transcript (Jason and Jonathan discussed
+  this as the current count and an "immediate win" to grow it). Flagged
+  per the transcript-first rule that this number changes frequently and
+  ideally would be re-verified live immediately before the proposal call —
+  it could not be independently re-checked live in this environment.
+- Most recent review date: Not observed (no Maps access this pass).
+- Primary category: Not observed directly on Maps; site and directories
+  consistently categorize the firm as Employment Law / Labor & Employment
+  Attorney.
+- Photos active: Not observed.
+- Posts active: Not observed.
+- Listed address (cross-checked across every directory found — fully
+  consistent): 666 Old Country Rd, Suite 303, Garden City, NY 11530.
+  Phone (516) 222-7000, fax (516) 542-2001. No NAP discrepancy found on
+  address/phone (see Step 5 for a separate duplicate-listing issue).
+
+==============================================================
+STEP 3 — LOCAL 3-PACK SEARCHES
+==============================================================
+NOTE: No live Google Maps 3-pack rendering is available in this
+environment. Competitor names and details below are real, live-verified
+firms and figures (via Yelp, Birdeye, Super Lawyers, and the firms' own
+sites) serving as the closest available proxy for local pack competition.
+Firm-appearance ("firm appears: yes/no") reflects organic search visibility
+observed via live web search, not a confirmed Maps 3-pack position.
+
+Practice Area 1: Employment Law
+- Search 1 "employment lawyer Garden City NY": firm appears — yes (site
+  and profiles surface). Competitors surfacing: Borrelli & Associates,
+  PLLC (910 Franklin Ave, Garden City — 39 Yelp reviews; Avvo shows 49
+  total reviews, 44 five-star), Bashian & Papantoniou, P.C. (1225 Franklin
+  Ave, Garden City — review count not independently verified this pass).
+- Search 2 "workplace discrimination attorney Garden City": firm appears —
+  yes. Competitors surfacing: Borrelli & Associates (same as above), J.
+  Leeds Law Firm (dedicated Garden City employment-law landing page at
+  jleedslawfirm.com — signal of active local SEO investment; review count
+  not independently verified this pass).
+- Search 3 "wrongful termination lawyer Nassau County": firm appears —
+  yes. Competitors surfacing: Borrelli & Associates, Employment Law Firm
+  New York (employmentlawyernewyork.com — dedicated Garden City landing
+  page; review count not independently verified this pass).
+
+Practice Area 2: Criminal Defense
+- Search 1 "criminal defense attorney Garden City NY": firm appears — no
+  (the firm has no criminal defense content anywhere on its site — see
+  Step 1 gap). Competitors surfacing: Barket Epstein Kearon Aldea &
+  LoTurco, LLP (666 Old Country Rd, Suite 700, Garden City — same building
+  as Jason's office; 9 attorneys on Super Lawyers/Rising Stars lists, "over
+  200 years combined experience," former prosecutors and judges on staff),
+  Hochhauser Criminal & DWI Defense, PLLC.
+- Search 2 "criminal defense lawyer Nassau County": firm appears — no.
+  Competitors surfacing: Barket Epstein Kearon Aldea & LoTurco, Martello &
+  LaMagna, P.C.
+- Search 3 "DWI defense attorney Garden City": firm appears — no.
+  Competitors surfacing: Hochhauser Criminal & DWI Defense, PLLC (name
+  built directly around DWI defense as a specialty), Barket Epstein Kearon
+  Aldea & LoTurco.
+
+==============================================================
+STEP 4 — COMPETITOR REVIEW COUNTS
+==============================================================
+- Competitor 1: Borrelli & Associates, PLLC (employment law, Garden City) —
+  reviews: 39 (Yelp, verified directly) / 49 total with 44 five-star
+  (Avvo, verified directly) — rating: predominantly 5-star across both
+  platforms. Direct employment-law competitor located a few blocks from
+  Jason's office.
+- Competitor 2: Barket Epstein Kearon Aldea & LoTurco, LLP (criminal
+  defense, Garden City) — reviews: not independently verified live this
+  pass (no Maps access) — notable regardless for scale: 9 Super
+  Lawyers/Rising Stars attorneys, "Distinguished" Martindale rating in
+  2026, and located in the SAME BUILDING as Jason's office (666 Old
+  Country Rd) — meaning a well-established, much larger criminal defense
+  competitor is literally next door to where Jason's new attorney is
+  trying to build a caseload.
+- Competitor 3: Schwartzapfel Lawyers, P.C. (personal injury-focused, but
+  surfaces heavily in general Garden City legal searches from the same
+  600 Old Country Rd corridor) — reviews: 683 (Birdeye, 100% Google-
+  sourced per Birdeye's own platform breakdown, verified directly) / only
+  15 on Yelp — rating: 5.0 on Birdeye. Included as a market-visibility
+  benchmark for what a heavy review-generation program looks like in this
+  same few-block radius, not as a direct practice-area competitor.
+
+All competitor figures above exceed the firm's transcript-stated 26 Google
+reviews — no risk of overstating the gap in the wrong direction.
+
+==============================================================
+STEP 5 — DIRECTORY LISTINGS
+==============================================================
+Checked live: Avvo, Justia, FindLaw, Yelp, Super Lawyers, Martindale,
+Lawyers.com, Attorney at Law.
+
+NAP address/phone is consistent everywhere it was found: 666 Old Country
+Rd, Suite 303, Garden City, NY 11530 / (516) 222-7000.
+
+DUPLICATE LISTING FOUND — MINOR NAP/LISTING ISSUE: Two separate, differently-
+named Yelp business pages exist for the same firm:
+1. yelp.com/biz/abelove-jason-l-atty-garden-city
+2. yelp.com/biz/law-offices-of-jason-l-abelove-garden-city
+Split listings like this fragment review volume and local-SEO signal
+across two pages instead of consolidating it onto one — a real, fixable
+issue, not a hypothetical.
+
+Geo-targeting landing pages for surrounding cities (Mineola, Hempstead,
+Hicksville, Mineola, Westbury, etc.): None found — confirmed directly via
+the site's own sitemap (Step 1).
+
+==============================================================
+STEP 6 — GOOGLE ADS
+==============================================================
+No live rendered SERP with ad markers is available in this environment
+(the search tool here returns synthesized organic-style results, not a raw
+page distinguishing paid units). Ad presence below is based on what
+surfaced in live web search plus direct signals from competitors' own
+sites (e.g., dedicated landing pages built for paid traffic).
+
+Practice Area 1: Employment Law
+- Firm ads observed: Not observed. The firm's site does not appear to be
+  running ads for this search — consistent with the transcript, which
+  frames the firm as a "pen and paper" operation with no formal marketing
+  system in place.
+- Named local competitors running ads: J. Leeds Law Firm (jleedslawfirm.com
+  maintains a dedicated "Employment Law in Garden City, NY" landing page —
+  the kind of page typically built specifically to receive paid search
+  traffic; exact ad copy/spend not verified live), Employment Law Firm New
+  York (employmentlawyernewyork.com — same signal, dedicated Garden City
+  landing page).
+
+Practice Area 2: Criminal Defense
+- Firm ads observed: Not applicable / not observed — the firm has no
+  criminal defense content to advertise at all right now (see Step 1).
+- Named local competitors running ads: Hochhauser Criminal & DWI Defense,
+  PLLC (site built around DWI-specific landing pages, a common paid-search
+  pattern for this practice area; exact ad copy/spend not verified live),
+  Barket Epstein Kearon Aldea & LoTurco, LLP (large, well-funded firm with
+  extensive practice-area content; exact ad copy/spend not verified live).
+
+==============================================================
+STEP 7 — LOCAL SERVICE ADS
+==============================================================
+- Firm appears in LSA: Not observed.
+- Google Screened: Not observed.
+- LSA review count: Not applicable.
+- Named local competitors in LSA: Not able to confirm live in this
+  environment (no rendered top-of-SERP view available). Flagging as an
+  open question rather than asserting an unverified competitor list.
+
+==============================================================
+STEP 8 — META ADS
+==============================================================
+- Firm has active ads: Not observed. Direct Meta Ad Library access
+  returned HTTP 403 in this environment (see tooling note). The firm does
+  have an existing Facebook page (facebook.com/JasonLAbelovePC) — no ad-
+  related activity surfaced in any available source.
+- Named local competitor 1: Borrelli & Associates, PLLC — active Yelp/Avvo
+  presence and consistent review generation suggests an ongoing digital
+  reputation effort; specific Meta ad status not confirmed live (403
+  blocked).
+- Named local competitor 2: Schwartzapfel Lawyers, P.C. — 683 Birdeye
+  reviews and a heavy multi-platform review-generation program (Birdeye,
+  Trustindex, Yelp all active) is the kind of investment usually paired
+  with paid social; specific Meta ad status not confirmed live (403
+  blocked).
+
+==============================================================
+STEP 9 — TRANSCRIPT EXTRACTION
+==============================================================
+- Practice areas confirmed: Employment law (core practice — wage/overtime,
+  harassment, discrimination, wrongful termination) and criminal defense
+  (new, expansion area tied to the recent attorney hire). Business
+  law/commercial litigation is a secondary, already-established practice
+  area per the website but was not a focus of the call.
+- Current lead sources: Referrals, plus a recently-discovered channel —
+  high-quality referrals from ChatGPT. Transcript: ChatGPT ranks the firm
+  "#3 for 'employment lawyer in Garden City,'" likely driven by a single
+  5-star Yelp review. No formal paid marketing system exists.
+- Ads ever run: Not stated as currently running. Transcript references
+  "past failures with low-quality leads" for high-value employment law
+  cases — implying some prior lead-generation effort (channel/platform not
+  specified) that underperformed, distinct from the current ChatGPT
+  referral success.
+- Team size: Jason Abelove (owner/attorney) plus one newly-hired attorney
+  (working half-time, $13k/month salary, currently unprofitable due to
+  insufficient criminal defense case volume). No other staff roles
+  mentioned (no dedicated intake, marketing, or CRM system — described as
+  "pen and paper").
+- Annual revenue: ~$1.2M–$1.4M/year, per transcript, with ~50% profit
+  margins.
+- Revenue goal: Not stated as a specific target figure. Transcript frames
+  the goal as building a sellable asset valued at a 1.25x revenue multiple
+  (e.g., "a $5M firm → $6.25M sale") — a valuation/exit target rather than
+  a stated annual revenue number. Per the rule, flagging that no explicit
+  revenue goal number was given; default to 2x current revenue (~$2.4M–
+  $2.8M/year) if a figure is needed downstream.
+- Average case value: Not stated as a specific figure for either practice
+  area. Flag for practice-area default downstream (employment law and
+  criminal defense each carry different standard defaults).
+- Current close rate: Not stated — default to 15% per standard assumption.
+- Number of locations: 1 (not explicitly stated; defaulting per rule).
+- Spanish campaign needed: Not stated on the call.
+- Dominant buying motive: Not a surface "more money/more clients" answer.
+  Transcript is explicit: the goal is to transform the firm "from a
+  personal practice into a sellable asset," building a scalable client-
+  acquisition system that "creates optionality for retirement or reduced
+  hours." This is bucket (2), grow and sell — reinforced by the stated
+  1.25x-revenue valuation target and the "aha moment" catalyst of watching
+  a less-skilled peer achieve a bigger financial outcome through business
+  growth rather than lawyering skill alone.
+- Any profitability claims made by prospect: "Revenue is ~$1.2–1.4M/yr,
+  with high profit margins (~50%)." Also: "high personal spending has
+  maxed out a credit line" despite the revenue/margin level, and the new
+  attorney hire is "losing money... costing $13k/mo for half-time work"
+  due to insufficient case volume.
+- Any claims about case types or practice areas: ChatGPT-driven referrals
+  are specifically for "high-value employment law cases." The new hire's
+  case need is specifically "criminal defense cases" to make that hire
+  profitable.
+- Stated call focus / product interest: Standard SMBteam growth/marketing
+  discovery call — building a scalable client-acquisition system and the
+  operational systems (e.g., a CRM) the firm currently lacks entirely.
+  Explicitly NOT a Fractional CTO/AI-only or coaching-only engagement: the
+  transcript's proposed path forward is "a phased growth plan... to build
+  systems and generate demand," with a long-term target structure of "a
+  20% marketing budget and 10% operational coaching budget" — the standard
+  four-pillar program, phased for a $50k–$75k initial investment. One
+  action item notes the proposal itself will be "AI-led; no on-camera,"
+  which describes the proposal's delivery format, not the engagement type.
+- Existing marketing/SEO/ad vendor engagements: None stated. No mention of
+  any current or recently-signed marketing, SEO, ad, or AEO vendor
+  contract.
+- Budget constraints stated: No explicit ceiling stated as unaffordable —
+  the opposite signal is present. Transcript: "$50k–$75k, a comfortable
+  starting point for Jason" for the initial investment, and revenue/margin
+  levels (~$1.2–1.4M/yr at ~50% margin) support this. The one financial
+  caution flag is unrelated to program affordability: "high personal
+  spending has maxed out a credit line" — a personal cash-flow signal
+  worth being aware of, but the transcript frames the initial investment
+  itself as comfortable, not constrained.
+
+==============================================================
+STEP 10 — COMPETITIVE URGENCY SCORE
+==============================================================
+Score: 6/10
+
+Reasons (named specific local competitor threats):
+1. Barket Epstein Kearon Aldea & LoTurco, LLP — a large, established
+   criminal defense firm (9 Super Lawyers/Rising Stars attorneys, former
+   prosecutors and judges on staff) operating out of the SAME BUILDING as
+   Jason's office (666 Old Country Rd, Garden City). Jason's new attorney
+   is trying to build a criminal defense caseload with zero web presence
+   for that practice area, while a major, well-known competitor sits one
+   floor away.
+2. Borrelli & Associates, PLLC — a direct employment-law competitor a few
+   blocks away, already carrying meaningfully more reviews (39 Yelp / 49
+   Avvo) than Jason's current 26 Google reviews, in the same practice area
+   where Jason is otherwise winning organically via ChatGPT.
+3. Schwartzapfel Lawyers, P.C. — not a direct practice-area competitor, but
+   a benchmark for what aggressive reputation-building looks like in the
+   same few-block corridor: 683 Birdeye reviews and an active presence
+   across Birdeye, Yelp, and Trustindex simultaneously.
+
+Score rationale: this is not a 7-10 "competitors dominating every channel"
+situation — Jason is actually winning some ground organically right now
+(the #3 ChatGPT ranking for employment law). But the firm has no formal
+marketing system, no paid presence found anywhere, a stale website with no
+practice-area page at all for its newest revenue line (criminal defense),
+and at least one much larger, better-established named competitor sharing
+his own building for that exact practice area.
+
+"A score of 6 means competitors have meaningful advantages in one or more
+areas and are pulling ahead. You are not invisible yet — but the window to
+close the gap is narrowing. Every month without action is a month they
+extend their lead."
+
+==============================================================
+PASS 2 — VERIFICATION CHECKLIST
+==============================================================
+[x] Every number in the notes matches actually observed data (or is
+    explicitly flagged as not obtainable in this environment, with reason)
+[x] Every competitor review count cited (Borrelli & Associates, Schwartzapfel
+    Lawyers) was verified live and exceeds the firm's transcript-stated 26 —
+    no risk of overstating any competitor as smaller than the firm
+[x] Ad sections address both practice areas discussed on the call
+    (Employment Law and Criminal Defense)
+[x] No section states "you are not running ads" — only "not observed" /
+    "does not appear to be running"
+[x] No profitability or business claim appears unless sourced from the
+    transcript
+[x] No competitor reference uses generic labels — only specific named local
+    firms (Borrelli & Associates, Barket Epstein Kearon Aldea & LoTurco,
+    Hochhauser Criminal & DWI Defense, Schwartzapfel Lawyers, J. Leeds Law
+    Firm, Employment Law Firm New York, Martello & LaMagna)
+[x] PageSpeed section reports real tool status (429 quota error, retried
+    twice) rather than an invented number
+[x] DBM recorded (clear transcript-grounded inference: grow-and-sell, bucket 2)
+[x] Revenue goal recorded (not stated as a number — 1.25x-revenue exit
+    valuation target noted, 2x-current default flagged if needed downstream)
+[x] Close rate recorded (not stated — defaulted to 15%)
+[x] Average case value recorded (not stated — flagged for practice-area
+    default downstream, separately for employment law and criminal defense)
+[x] Stated call focus / product interest recorded and confirmed as standard
+    four-pillar growth engagement, not a non-marketing engagement
+[x] Existing marketing/SEO/ad vendor engagements recorded (none stated)
+[x] Budget constraints stated recorded (none stated as unaffordable — initial
+    investment explicitly described as "comfortable"; personal credit-line
+    note flagged separately as context, not a program-affordability cap)
