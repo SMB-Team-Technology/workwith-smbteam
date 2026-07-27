@@ -1,0 +1,168 @@
+SECTION 11 — WORKINGS FILE
+The Licatesi Law Group, LLP — August 3, 2026
+============================================================
+
+REVENUE DETERMINATION (reconciliation note)
+------------------------------------------------------------
+- package_decision.json estimated revenue_effective = $624,500 (medium confidence,
+  sourced from HubSpot label "$250K-$999K").
+- The transcript itself (Step 9 of research notes) states current revenue directly:
+  "~$60k/month" growing toward a "~$100k/month" goal. Annualized, that is
+  ~$720,000/year current revenue — more precise, transcript-sourced ground truth.
+- CONCLUSION: use $720,000/year as the effective current annual revenue in all
+  narrative/workings content (Transcript-First Principle). Both $624,500 and
+  $720,000 fall within the same eligibility bands ($500K-$1M for marketing tier
+  purposes, $400K-$1M for non-marketing tier purposes), so this does NOT change
+  any tier selection — it only refines the number.
+- Revenue GOAL (for ad spend aggressive calc / 20% rule): ~$100k/month stated =
+  $1,200,000/year annualized goal.
+
+OVERRIDE CHECK (completed, no reopening)
+------------------------------------------------------------
+- Call-purpose override: does NOT apply. Meeting Purpose stated directly in the
+  transcript is "Evaluate SMB Team for a new marketing partnership" — standard
+  marketing/lead-gen discovery.
+- Existing-vendor override: does NOT apply. Firm has an underperforming current
+  vendor, but the call's entire purpose is to REPLACE that vendor with SMB Team —
+  an active marketing gap being evaluated, not a covered need. Full Service
+  Marketing stays in the recommendation.
+- Budget-reality override: does NOT apply. "Wants a competitive budget" and "will
+  proceed only if financially viable and risk is low" is general risk-aversion
+  (addressed by SMB's own guaranteed CPA framing), not a stated inability to
+  afford the revenue-implied tier.
+- Net effect: package_decision.json's marketing_tier (Starter) and coaching
+  selection (Elite Coach Plus) are used as-is, per the medium-confidence path —
+  cross-checked against notes, correction documented = the revenue refinement
+  above only, no tier change.
+
+MANDATORY PRICE LOOKUP (copied verbatim from package_decision.json / resolved decisions)
+------------------------------------------------------------
+- Marketing package selected: Full Service Marketing — Starter
+  - Bundled price: $4,997/mo
+  - Stand-alone price: $5,697/mo
+  - Savings: $700/mo
+- Non-marketing package selected: Elite Coach Plus
+  - Bundled price: $3,200/mo
+  - Stand-alone price: $3,497/mo
+  - Savings: $297/mo
+- Legal AI Workforce (LAW) package: none — not indicated by the transcript
+- AI Avatar / Video Growth add-on: none — not indicated by the transcript
+- Total monthly investment: $4,997 + $3,200 = $8,197/mo
+- Total savings: $700 + $297 = $997/mo
+
+AD SPEND — CONSERVATIVE AND AGGRESSIVE
+------------------------------------------------------------
+Practice area for ad-spend table lookups: MVA / Car Accidents (personal injury is
+the flagship/majority practice area per the competitive analysis in the notes).
+
+Conservative: $10,000/month
+- Clears the Google PPC MVA minimum ($10,000) and the PI "Medium competitiveness"
+  floor ($7,500).
+
+Aggressive: 20%-rule computation
+- ($1,200,000 revenue goal x 20%) / 12 = $20,000/mo
+- x Tier 1 NYC-metro geo multiplier 1.5 = $30,000
+- - $4,997 mgmt fee = ~$25,000 available
+- This exceeds the Starter tier's $20,000 ad-spend cap; per the boundary rule a
+  tier upgrade would normally apply, but revenue ($624.5K-$720K) does not meet
+  the Growth tier's $1M revenue floor. Per "Aggressive goals alone no longer
+  bypass revenue floors," the recommended aggressive ad spend is capped at the
+  Starter tier's $20,000 cap rather than upgrading tiers.
+- Aggressive: $20,000/month (capped)
+
+Average case value: not stated in transcript — using MVA default midpoint
+~$7,500 (disclosed as a default per methodology).
+Close rate: not stated — default 15% per methodology.
+
+Blended CPL (MVA, Google Search + LSA weighted ~83%/17% split):
+Google Search midpoint $705, LSA midpoint $235 -> weighted blended CPL ~ $627/lead.
+- Conservative scenario applies a 20% cushion: ~$752/lead
+- Aggressive scenario uses no cushion: ~$627/lead
+
+CONSERVATIVE ROI PROJECTION
+- Ad spend: $10,000/mo
+- Leads: $10,000 / $752 ~ 13.3 leads
+- Cases: 13.3 x 15% close rate ~ 2.0 cases
+- Revenue: 2.0 cases x $7,500 avg case value = $15,000
+- Return: $15,000 / $10,000 = 1.5x
+
+AGGRESSIVE ROI PROJECTION
+- Ad spend: $20,000/mo
+- Leads: $20,000 / $627 ~ 31.9 leads
+- Cases: 31.9 x 15% close rate ~ 4.8, rounded to 5 cases
+- Revenue: 5 cases x $7,500 avg case value = $37,500
+- Return: $37,500 / $20,000 = 1.9x
+
+All figures above are estimates per methodology. Average case value ($7,500) is
+an explicitly disclosed MVA default, not a transcript-stated figure. Close rate
+(15%) is also a disclosed default.
+
+DBM STATEMENT FOR BLOCK 1
+------------------------------------------------------------
+"We help established personal injury firms get a predictable, hands-off case
+acquisition engine so they can free up the owner's and their team's time from
+constantly managing an underperforming marketing vendor."
+
+Direct transcript quote anchoring this DBM: "A hands-off marketing solution to
+free up his and Brianna's time." Archetype (1) — a firm that runs itself so the
+owner has time back.
+
+QUICK WIN OPPORTUNITIES (6+, across all four pillars)
+------------------------------------------------------------
+1. [Lead Gen / Quick Win] Consolidate the rebrand onto one live domain —
+   Why: tllgllp.com is an unfinished "Launching Soon" placeholder while
+   licatesilaw.com is the real, fully built site; prospects searching the new
+   brand name may land on the wrong one. Competitor: n/a (internal/structural
+   issue, no named competitor comparison applies). Opportunity: capture 100% of
+   brand-aware search traffic on one consistent domain.
+
+2. [Lead Gen / Quick Win] Fix NAP inconsistency across directories —
+   Why: three different phone numbers (516-227-2662, 516-806-6384, 516-659-2058)
+   and a still-indexed legacy "Licatesi Law Group, LLC" listing actively confuse
+   both Google's local algorithm and prospects. Competitor: n/a. Opportunity:
+   improved local pack and organic visibility from consistent NAP data alone.
+
+3. [Lead Gen / Long-Term Play] Win back organic visibility for core local
+   searches — Why: the firm does not surface in top organic results for "car
+   accident lawyer Uniondale NY," "personal injury lawyer Nassau County," or
+   "nursing home abuse lawyer Long Island." Competitor: Palermo Law, P.L.L.C. —
+   400+ reviews, 5.0 rating, occupies this visibility instead. Opportunity: the
+   firm's own strong review base (4.8/291) becomes the asset winning cases
+   instead of a rented lead-gen agency relationship.
+
+4. [Lead Gen / Long-Term Play] Qualify for Local Service Ads — Why: personal
+   injury/no-fault is LSA-eligible and the firm's 4.8-star/291-review base is a
+   strong starting position, but LSA presence was not observed this session.
+   Competitor: Raphaelson & Levine Law Firm, P.C. — 700+ reviews positions it
+   strongly if participating. Opportunity: pay-per-lead placement above all
+   organic and paid results on Google.
+
+5. [Intake / Quick Win] Resolve the intake-software dependency blocking paid
+   social — Why: the firm's own $500/month Instagram campaign is paused
+   pending a new intake software's booking link — an active channel sitting
+   idle. Opportunity: relaunch a channel that is otherwise ready to run at
+   effectively no incremental ad cost.
+
+6. [Team / Long-Term Play] Remove Michael and Brianna from day-to-day vendor
+   management — Why: the current vendor "requires constant prompting from
+   Brianna" and delivers no clear ROI. Opportunity: a marketing partner that
+   reports results without requiring hands-on oversight, freeing their time.
+
+7. [Profit / Quick Win] Reconcile lead-gen spend vs. case volume vs. case value —
+   Why: ~$100k/month spend at ~$1,800/case implies more cases than the stated
+   20-30/month, and no average case value was shared (only acquisition cost).
+   Opportunity: clear unit economics that let the firm know, rather than guess,
+   whether its marketing spend is paying for itself.
+
+FIRST 90 DAYS (3-5 bullets)
+------------------------------------------------------------
+1. Launch Google Search and Local Service Ads campaigns targeting MVA/personal
+   injury terms in Uniondale, Brooklyn, and Corona/Queens.
+2. Consolidate the firm's web presence onto licatesilaw.com and correct NAP data
+   (phone numbers, legacy listings) across major directories.
+3. Kick off Elite Coach Plus coaching sessions to build a clear profit and
+   acquisition-cost tracking plan alongside Michael.
+4. Relaunch paused Meta/Instagram paid social once the intake booking link is
+   resolved.
+5. Run a manual PageSpeed check on licatesilaw.com (mobile and desktop) to
+   confirm technical performance ahead of scaling ad spend.
