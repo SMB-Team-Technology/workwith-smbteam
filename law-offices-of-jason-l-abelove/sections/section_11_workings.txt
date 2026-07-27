@@ -1,0 +1,150 @@
+==============================================================
+SECTION 11 — WORKINGS FILE
+Firm: Law Offices of Jason L. Abelove
+==============================================================
+
+PACKAGE DECISION FILE CROSS-CHECK (confidence: medium)
+--------------------------------------------------------------
+- package_decision.json used HubSpot-sourced revenue estimate ($1,980,500,
+  "$961K-$3M" band) because revenue was not found stated in the research
+  notes at generation time. On full re-read of the research notes, Step 9
+  (Transcript Extraction) DOES state revenue explicitly: "~$1.2M-$1.4M/year
+  ... with ~50% profit margins." This is transcript ground truth and takes
+  precedence over the HubSpot estimate.
+- CORRECTION: Effective revenue = ~$1.2M-$1.4M/yr (transcript), not
+  $1,980,500 (HubSpot). Both figures fall within the same $1M-$2M band ->
+  Growth marketing tier is unchanged.
+- Team size: decision file defaulted to 3 (not stated). Research notes
+  Step 9 state the team is "Jason Abelove (owner/attorney) plus one
+  newly-hired attorney" -> actual team size = 2. Both 2 and 3 fall within
+  the "$1M+, Under 5" band -> Elite Coach Plus is unchanged.
+- Transcript-Stated Need Override check: none of the three overrides apply.
+  (1) Call-purpose: standard four-pillar marketing/coaching engagement per
+  transcript ("a phased growth plan to build systems and generate demand");
+  not Fractional CTO/AI or coaching-only. (2) Existing-vendor: none stated.
+  (3) Budget-reality: transcript explicitly frames $50k-$75k initial
+  investment as "a comfortable starting point for Jason" - no constraint
+  signal.
+- CONCLUSION: package_decision.json's marketing_tier (Growth) and
+  coaching_name (Elite Coach Plus) are confirmed correct and used as-is.
+  Revenue and team-size inputs were corrected for documentation accuracy;
+  no tier change resulted.
+
+SELECTED PACKAGES (prices verified against approved tables)
+--------------------------------------------------------------
+Marketing: Full Service Marketing - Growth
+  - Bundled: $7,497/mo | Stand-alone: $8,997/mo | Savings: $1,500/mo
+
+Non-Marketing: Elite Coach Plus
+  - Bundled: $3,200/mo | Stand-alone: $3,497/mo | Savings: $297/mo
+
+Legal AI Workforce (LAW): none recommended (no AI-readiness signal; call
+was explicitly a standard marketing/coaching engagement)
+
+AI Avatar / Video Growth: none recommended
+
+TOTAL MONTHLY INVESTMENT (bundled packages only): $10,697/mo
+TOTAL SAVINGS: $1,797/mo
+
+MRR / spend-cap checks:
+- Minimum MRR ($2,497) - passed, well above.
+- 35% of monthly revenue cap: ~$1.2M-$1.4M/yr = ~$100K-$117K/mo revenue;
+  35% = ~$35K-$41K/mo. Total spend at aggressive ad spend ($10,697 +
+  $22,000 = $32,697/mo) stays under the cap.
+- No escalation flags triggered: revenue not under $300K; marketing MRR
+  ($7,497) is under the $10K scoping-approval threshold; ad spend
+  (conservative $5,500 / aggressive $22,000) stays under the $25K
+  scoping-approval threshold and above practice-area minimums.
+
+AD SPEND — CONSERVATIVE TO AGGRESSIVE
+--------------------------------------------------------------
+Conservative: $5,500/mo (Criminal Defense Google PPC channel minimum —
+the practice area with the most urgent, zero-presence gap right now).
+Aggressive: $22,000/mo (approximates 20% of current annual revenue /12,
+using current revenue since no explicit revenue goal number was given on
+the call; stays well under the Growth tier's $50,000 ad spend cap).
+
+Average case value default used: Criminal Defense $3K-$5K, midpoint
+$4,000 (disclosed default — no case value was stated on the call for
+either practice area; employment law has no listed table default, so
+Criminal Defense's stated default is used as the blended basis since that
+is the practice area the recommended ad spend is primarily earmarked for).
+Close rate: 15% (default — not stated on the call).
+
+CONSERVATIVE SCENARIO ($5,500/mo)
+  Blended CPL (Google Search, Criminal Defense midpoint $180 + 20%
+  conservative cushion) = $216
+  Leads = $5,500 / $216 = ~25 leads/mo
+  Cases = 25 x 15% = ~4 cases/mo
+  Revenue = 4 x $4,000 = $16,000/mo
+  Return = $16,000 / $5,500 = ~2.9x
+
+AGGRESSIVE SCENARIO ($22,000/mo)
+  Blended CPL (50% Google Search $180 / 30% LSA $160 / 20% Meta Cold $90,
+  no cushion) = $156
+  Leads = $22,000 / $156 = ~141 leads/mo
+  Cases = 141 x 15% = ~21 cases/mo
+  Revenue = 21 x $4,000 = $84,000/mo
+  Return = $84,000 / $22,000 = ~3.8x
+
+All figures above are estimates using disclosed defaults where the
+transcript did not state a number; labeled as such in the client report.
+
+DBM STATEMENT FOR BLOCK 1
+--------------------------------------------------------------
+Jason's dominant buying motive is bucket (2), grow-and-sell: transforming
+the firm "from a personal practice into a sellable asset," building a
+scalable client-acquisition system that creates optionality for
+retirement or reduced hours, anchored to a stated 1.25x-revenue exit
+valuation target.
+
+Formula: "We help law firm owners like Jason get a predictable flow of
+new clients across every practice area they operate so they can build a
+firm valuable enough to sell — not just a bigger paycheck."
+
+QUICK WIN OPPORTUNITIES (6+)
+--------------------------------------------------------------
+1. [Lead Gen] Build a criminal defense page and content on the website —
+   Why: zero digital presence for the practice area the new hire was
+   specifically brought on to build. Competitor: Barket Epstein Kearon
+   Aldea & LoTurco, LLP (same building, 666 Old Country Rd). Opportunity:
+   gives the new hire something for search and ads to actually point to.
+2. [Lead Gen] Consolidate the duplicate Yelp listings — Why: review
+   volume and local-SEO signal are currently split across two pages for
+   the same firm. Opportunity: immediate, no-cost fix that strengthens
+   the existing 26-review profile.
+3. [Lead Gen] Launch Google Ads for criminal defense terms — Why: firm
+   appears in zero searches for "criminal defense attorney Garden City
+   NY," "criminal defense lawyer Nassau County," "DWI defense attorney
+   Garden City." Competitor: Hochhauser Criminal & DWI Defense, PLLC.
+   Opportunity: direct case volume for the currently-unprofitable hire.
+4. [Lead Gen] Grow Google review count — Why: 26 reviews vs. 39 (Yelp) /
+   49 (Avvo) for Borrelli & Associates, PLLC, the nearest direct
+   employment-law competitor. Opportunity: closes a visible trust gap in
+   the practice area already winning organically.
+5. [Intake] Stand up a CRM and defined follow-up process — Why: firm
+   operates "pen and paper" with no tracking of leads or follow-up.
+   Opportunity: converts more of the leads already being generated
+   without spending another marketing dollar.
+6. [Team] Build a demand pipeline dedicated to the new criminal defense
+   hire — Why: hire is costing $13,000/month for half-time work due to
+   insufficient case volume. Opportunity: turns a cost center into a
+   profit center.
+7. [Profit] Build a practice-area-level profit plan — Why: revenue and
+   margin are known at a high level but a personal credit line is maxed
+   out despite ~50% margins, and the new hire's true cost/benefit is not
+   tracked. Opportunity: protects the margin the 1.25x exit valuation
+   depends on.
+
+FIRST 90 DAYS
+--------------------------------------------------------------
+1. Launch Google Ads and local SEO work for criminal defense terms —
+   the most urgent, zero-presence gap.
+2. Build a dedicated criminal defense page and refresh the stale
+   (5+ year old) site content, including surfacing the $620K-$6M case
+   results already sitting unused on the homepage.
+3. Consolidate the duplicate Yelp listings and launch a review-growth
+   push across both practice areas.
+4. Kick off Elite Coach Plus coaching sessions to begin building the
+   profit plan and operational structure behind the growth.
+5. Stand up a defined lead follow-up process for both practice areas.
