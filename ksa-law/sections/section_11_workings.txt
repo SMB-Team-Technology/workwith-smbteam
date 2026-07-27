@@ -1,0 +1,159 @@
+SECTION 11 — WORKINGS FILE
+KSA Law — July 29, 2026
+
+============================================================
+TRANSCRIPT-STATED NEED OVERRIDE — APPLIED
+============================================================
+Override triggered: #1 CALL-PURPOSE OVERRIDE.
+
+package_decision.json (confidence: low) selected:
+  marketing_tier: Starter ($4,997/mo bundled, $5,697/mo retail)
+  coaching_name: Elite Coach Plus ($3,200/mo bundled, $3,497/mo retail)
+
+Per the research notes' top-of-file flag and Step 9 transcript extraction, this
+discovery call was explicitly scoped around Business Coaching and a Fractional
+CFO engagement — NOT marketing or lead generation. The transcript's "Proposed
+Solution" section lists the recommended start as (1) Business Coaching and (2)
+Fractional CFO, with marketing named only as a "Future Add-on." No lead
+sources, ad spend, website performance, or intake process were discussed on
+the call at all. There is no stated marketing/lead-gen gap alongside the
+stated need, so the Call-Purpose Override applies: Full Service Marketing
+(Starter tier) is DROPPED from the recommendation entirely. This is a
+departure from package_decision.json's marketing selection, made intentionally
+per the override logic in audit-write.md, not an error.
+
+The coaching selection (Elite Coach Plus) from package_decision.json is
+retained, since it matches independent eligibility-table logic for this
+revenue/team band. Fractional CFO Advisor is ADDED (not in package_decision.json)
+because the transcript explicitly names Fractional CFO as one of the two
+proposed starting engagements, and because Step 6C signals are present
+verbatim: cash flow strain, no financial visibility, and no stated
+profitability plan (goal: break-even Oct 2026, profitability EOY 2026).
+
+============================================================
+REVENUE CROSS-CHECK
+============================================================
+package_decision.json revenue_effective: $570,000 (low confidence, sourced from
+HubSpot band "$180K–$960K").
+Transcript signal (Step 9): Kelly's individual practice generates $40k–$60k/month
+(~$480k–$720k/year run rate). The $570K estimate falls inside this transcript-
+stated range, so it is treated as directionally reliable for package-eligibility
+purposes even though team-wide current ARR was not confirmed (the transcript's
+separate "$3M to $5M ARR" goal language is ambiguous per the research notes and
+is NOT used for eligibility — only the transcript's stated current run rate is).
+At the low end ($480K) and high end ($720K) of the transcript-stated range, the
+firm remains solidly within the $400K–$1M band used below, and above the $500K
+minimum for Fractional CFO Advisor. Eligibility conclusions in this file hold
+across the full stated range.
+Open item for the rep: confirm actual current firm-wide ARR directly (research
+notes open item #7).
+
+============================================================
+MANDATORY PRICE LOOKUP
+============================================================
+- Marketing package selected: None (Call-Purpose Override — see above)
+- Non-marketing package selected: Elite Coach Plus
+  - Bundled price (from table): $3,200/mo
+  - Stand-alone price (from table): $3,497/mo
+  - Savings (stand-alone minus bundled): $297/mo
+- Non-marketing package selected (add-on): Fractional CFO (FCFO) Advisor
+  - Bundled price (from table): $3,297/mo
+  - Stand-alone price (from table): $3,797/mo
+  - Savings (stand-alone minus bundled): $500/mo
+- Legal AI Workforce (LAW) package selected: none (flagged as a Phase 3 future
+  consideration only — not part of the current recommendation)
+- AI Avatar / Video Growth add-on selected: none
+- Total monthly investment (sum of bundled prices): $3,200 + $3,297 = $6,497/mo
+- Total savings (sum of all savings): $297 + $500 = $797/mo
+
+Eligibility checks:
+- FCFO Advisor minimum revenue $400K: met (transcript range $480K–$720K)
+- Minimum MRR $2,497/mo: met ($6,497/mo)
+- 35% of monthly revenue cap: monthly revenue ~$47,500 (at $570K/yr) x 35% =
+  ~$16,625/mo ceiling. Recommended spend of $6,497/mo is well within cap.
+- No marketing package, so no ad spend cap or tier-boundary check applies this
+  phase.
+
+============================================================
+CONSERVATIVE / AGGRESSIVE AD SPEND
+============================================================
+Not applicable this phase. No marketing package is being recommended per the
+Call-Purpose Override — the transcript did not surface a marketing/lead-gen
+gap, and the firm's own stated next step frames marketing as a future add-on
+after the coaching + FCFO foundation is in place. No ad spend, lead, case, or
+revenue projection is presented in Block 4; the investment grid instead notes
+this explicitly rather than fabricating figures for a channel not being sold.
+Ad spend and blended CPL tables do not apply to this firm's business-law/
+B2B model in any case (see Section 06 structural flags).
+
+============================================================
+DBM STATEMENT (Block 1)
+============================================================
+Dominant Buying Motive: Scale and dominate — building KSA Law into the
+definitive fractional-GC platform for growth-stage/VC-backed businesses in its
+market, reaching the stated $5M ARR goal within 18–24 months — combined with a
+real, near-term personal driver: ending the cash-flow strain that currently
+requires Kelly to personally capitalize firm expenses, and protecting the
+career growth she wants for her team. (Per research notes: DBM does not
+cleanly match the three standard archetypes; this is the closest inference,
+flagged accordingly.)
+
+============================================================
+QUICK WIN OPPORTUNITIES (8 identified, min 6 required)
+============================================================
+1. [Lead Gen / Quick Win] Get Past the Bot Wall on Your Own Website — why:
+   ksagc.com is currently blocked by a bot-verification interstitial for
+   automated visitors; no named competitor angle; opportunity: ensure every
+   referred prospect who Googles the firm actually reaches a working site.
+2. [Lead Gen / Long-Term] Build a Digital Presence That Matches the Firm's
+   Positioning — why: no confirmed GBP or directory listings; competitor: MSB
+   Law (ranked by Best Law Firms in 3 practice areas); opportunity: give
+   referred prospects something to find and trust, at no ad cost.
+3. [Intake / Quick Win] Put a Number on the Close Rate — why: firm has
+   explicitly said it doesn't know its close rate; no competitor angle;
+   opportunity: track win/loss for one quarter to get a real baseline.
+4. [Intake / Long-Term] Build a Repeatable Proposal Process — why: every
+   proposal runs through Kelly personally with no framework; no competitor
+   angle; opportunity: close more of the VC-fund business already coming in.
+5. [Team / Quick Win] Relieve the Litigation Bottleneck — why: litigation team
+   at capacity months after launch; no competitor angle; opportunity: a
+   capacity plan lets the firm say yes to more work.
+6. [Team / Long-Term] Build a Leadership Layer Beneath Kelly — why: Kelly
+   carries two leadership roles with no manager layer at KSA Law; no
+   competitor angle; opportunity: free Kelly's time for high-value BD work.
+7. [Profit / Quick Win] Stop Personally Funding Cash Flow Gaps — why: 30-45
+   day payment cycles force personal capitalization; no competitor angle;
+   opportunity: a short-term cash flow plan within the current quarter.
+8. [Profit / Long-Term] Build the Financial Visibility Behind the $5M ARR Goal
+   — why: the $3M-5M ARR figure isn't clearly reconciled with Kelly's stated
+   monthly revenue; no competitor angle; opportunity: track real progress
+   toward break-even (Oct 2026) and profitability (EOY 2026).
+
+============================================================
+FIRST 90 DAYS (5 bullets)
+============================================================
+1. Kick off Elite Coach Plus with a working session on KSA Law's fractional GC
+   proposal process — establishing a baseline close rate and a repeatable
+   pitch framework.
+2. Begin FCFO Advisor financial visibility work — building a real cash flow
+   view so Kelly can stop personally capitalizing firm expenses.
+3. Map a capacity plan for the litigation team so KSA Law can start saying yes
+   to new litigation work again.
+4. Confirm the open research questions flagged in this audit (current
+   firm-wide ARR, website performance, GBP presence) so future planning is
+   built on solid numbers.
+5. Identify the first internal leader candidate to begin building a
+   management layer beneath Kelly.
+
+Note: no "launch ads" or website-rebuild bullet is included, consistent with
+no marketing package being recommended this phase.
+
+============================================================
+INTERNAL ESCALATION FLAGS (not in client report)
+============================================================
+- None of the standard escalation thresholds are triggered (revenue not under
+  $300K by transcript-stated range; no marketing MRR; no ad spend; LAW not
+  recommended this phase).
+- Recommend rep confirm actual current firm-wide ARR with Kelly directly
+  before finalizing any future marketing/LAW phase pricing (see research notes
+  open items 1, 2, 4, 5, 6, 7, 8).
