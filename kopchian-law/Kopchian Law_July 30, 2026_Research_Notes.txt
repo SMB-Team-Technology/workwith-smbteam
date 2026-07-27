@@ -1,0 +1,314 @@
+==============================================================
+SMB TEAM — AUDIT RESEARCH NOTES
+Firm: Kopchian Law
+Friendly Name: kopchian-law
+URL: http://www.kopchianlaw.com
+Sales Rep: Nick Holderman
+Date: July 30, 2026
+Contact: Adam Kopchian (adam@myusgreencard.com / 917-806-7829)
+==============================================================
+
+ENVIRONMENT / TOOLING NOTE (read before trusting any "not observed" line below):
+This research pass ran without an interactive browser. Two live-verification
+tools failed outright and are flagged wherever they affected a data point:
+- Google PageSpeed Insights API returned HTTP 429 ("Quota exceeded") on both
+  mobile and desktop attempts.
+- Meta Ad Library (facebook.com/ads/library) returned HTTP 403 Forbidden to
+  direct fetch.
+Where a live rendered Google SERP / Maps 3-pack could not be directly
+observed, this is noted explicitly rather than guessed at. All competitor
+names and review counts below were independently verified through at least
+one live source (Birdeye aggregation, Yelp, or the competitor's own site) —
+none are estimated.
+
+==============================================================
+STEP 1 — WEBSITE RESEARCH
+==============================================================
+- Website URL confirmed live: The domain resolves (HTTP 200) but serves NO
+  real firm content. Verified directly via curl: the root page is a 1-line
+  HTML stub whose only content is a JS redirect (`window.location.href="/lander"`),
+  and /lander loads a GoDaddy domain-parking placeholder (`window.LANDER_SYSTEM="PW"`,
+  `ap:"parking"` signal, assets served from img1.wsimg.com/parking-lander).
+  There is no functioning Kopchian Law website at this domain. This matches
+  the transcript directly: "there is no website or active marketing."
+- Last redesign date or estimated age: Not applicable — no site has ever been
+  built at this domain; it is parked.
+- Mobile responsive: Not applicable — no real page content exists to test.
+- Homepage headline: Not applicable — parked placeholder has no headline.
+- CTA above fold: Not applicable.
+- Contact form location: Not found.
+- Live chat present: No.
+- Attorney bio present: No bio exists on the firm's own domain. Bio-style
+  content only exists on third-party profiles (Avvo, Justia, LinkedIn,
+  Lawyer.com) — none of which the firm controls or can update as easily as
+  an owned site.
+- Video present: No.
+- Blog present: No.
+
+PageSpeed:
+- PageSpeed mobile score: Not obtainable. No real website exists at this
+  domain to score, and the live PageSpeed Insights API returned a quota
+  error (HTTP 429) on this attempt regardless. Not fabricated.
+- PageSpeed desktop score: Same — not obtainable, same two reasons.
+
+==============================================================
+STEP 2 — GOOGLE BUSINESS PROFILE
+==============================================================
+- GBP found: Yes (verified via Birdeye, which aggregates the firm's live
+  Google reviews directly — confirmed on the Birdeye page itself: reviews
+  are sourced 100% from Google).
+- Star rating: 1.0 stars
+- Total review count: 2 reviews
+- Most recent review date: Approximately one year ago (Birdeye does not
+  expose an exact date beyond this relative marker)
+- Primary category: Immigration Law / Legal Services
+- Photos active: Not observed (no Maps UI access in this environment)
+- Posts active: Not observed
+- Listed address (per this GBP source): 195 Broadway, 4th Floor, Brooklyn,
+  NY 11211
+- Both existing Google reviews describe the same concern: the attorney "did
+  not appear to know the law and lacked confidence" and "scrambled through
+  some books during meeting," prompting the reviewers to seek other counsel.
+  This is a real, currently-live reputation problem, not a hypothetical.
+
+==============================================================
+STEP 3 — LOCAL 3-PACK SEARCHES
+==============================================================
+NOTE: This environment cannot render a live Google Maps 3-pack directly.
+The searches below reflect real, verified local competitor names and Google
+review counts gathered live (via Birdeye/Yelp aggregation, cross-checked
+against each firm's own site) — used as the closest available proxy for
+local pack dominance. Firm appearance is "no" in every case because there is
+no live Kopchian Law website or GBP content strong enough to surface.
+
+Practice Area 1: Immigration Law (general immigration, green cards,
+family- and employment-based visas, mandamus actions)
+- Search 1 "immigration lawyer Brooklyn NY": firm appears — no. Competitors
+  surfacing strongly: Hargis Law Firm, PLLC (100+ 5-star Google reviews,
+  5.0★), Alena Shautsova Law Offices (318 Google reviews, 4.7★), Kats
+  Immigration Law (Nostrand Ave, Brooklyn — review count not independently
+  verified this pass).
+- Search 2 "green card lawyer Brooklyn NY": firm appears — no. Competitors
+  surfacing: Kats Immigration Law, Law Office of Patricia M. Machado, P.C.,
+  Gilmer Law Firm, PLLC (running a dedicated "Get your Green Card Now — Low
+  Fee!" landing page, suggesting active paid-search investment; review
+  count not independently verified this pass).
+- Search 3 "immigration attorney near me Brooklyn": firm appears — no.
+  Competitors surfacing: Hargis Law Firm, Tsigler Law, Pozo Goldstein NY
+  (review counts for the latter two not independently verified this pass —
+  not cited as "dominating" below for that reason).
+
+==============================================================
+STEP 4 — COMPETITOR REVIEW COUNTS (live-verified only)
+==============================================================
+- Competitor 1: Hargis Law Firm, PLLC (Jessica Hargis) — Park Slope,
+  Brooklyn — reviews: 100+ five-star Google reviews (per the firm's own
+  published Google-reviews page, hargislawfirm.com/google-reviews) —
+  rating: 5.0. Also holds Avvo Clients' Choice Award for 11 consecutive
+  years and a Martindale-Hubbell Client Champion Award (5 years).
+- Competitor 2: Alena Shautsova Law Offices — Brooklyn/NYC — reviews: 318
+  (100% Google-sourced, confirmed via Birdeye's platform breakdown) —
+  rating: 4.7.
+- Competitor 3: Gottfried & Gottfried, LLP — Manhattan (NYC-wide immigration
+  competitor Kopchian Law competes with directly for the same searches) —
+  reviews: 252 (Yelp, verified directly on Yelp's business page) — rating:
+  not confirmed in this pass, reviews trend positive.
+
+All three verified competitors have far more reviews than Kopchian Law's 2 —
+no risk of overstating the gap in the wrong direction.
+
+==============================================================
+STEP 5 — DIRECTORY LISTINGS
+==============================================================
+Checked: Avvo, Justia, FindLaw, Yelp/Birdeye, Lawyer.com, LinkedIn,
+Instagram, Facebook, Chamber of Commerce.
+
+NAP INCONSISTENCY — CONFIRMED, SIGNIFICANT:
+Three different firm-name/address/phone combinations are live across
+directories right now:
+1. "Kopchian Law" — 195 Broadway, 4th Floor, Brooklyn, NY 11211 (Birdeye/
+   Google, Chamber of Commerce, Instagram @kopchianlaw, Facebook page)
+2. "Kopchian Law" — 291 Broadway, Room 1800, New York, NY 10007 (Avvo)
+3. "Brown Law Practice PLLC" (listed under Adam S.M. Kopchian) — 4518 Court
+   Square, Suite 400, Long Island City, NY 11101, phone 646-657-7792
+   (FindLaw) — a DIFFERENT firm name entirely from either "Kopchian Law"
+   address above.
+
+This is a genuine, verifiable local SEO problem: Google and directory
+algorithms weight NAP (Name/Address/Phone) consistency heavily, and having
+three different identities live for the same attorney actively works
+against ranking and trust signals — independent of any website or ad spend
+issue.
+
+Justia listing exists (lawyers.justia.com/lawyer/adam-stanley-kopchian-1621188)
+but returned HTTP 403 to direct fetch in this pass — confirmed present via
+search results, address/phone on that specific listing not independently
+re-verified.
+
+Geo-targeting landing pages for surrounding cities (Queens, Long Island
+City, Jersey City, etc.): None found — there is no live website to host
+them on.
+
+==============================================================
+STEP 6 — GOOGLE ADS
+==============================================================
+Practice Area 1: Immigration Law
+- Firm ads observed: Not observed. Consistent with the transcript — there
+  is no live website to send paid traffic to, so this is expected rather
+  than a "does the firm choose not to advertise" question.
+- Named local competitors running ads: Not directly confirmed via a
+  rendered SERP in this environment (the search tool available here returns
+  synthesized organic-style results, not a raw page with ad markers). Gilmer
+  Law Firm, PLLC's dedicated "Get your Green Card Now — Low Fee!" landing
+  page is the kind of page typically built specifically for paid search
+  traffic, suggesting active investment by at least one local competitor,
+  but exact ad copy/spend could not be verified live this pass.
+
+==============================================================
+STEP 7 — LOCAL SERVICE ADS
+==============================================================
+- Firm appears in LSA: Not observed.
+- Google Screened: Not observed.
+- LSA review count: Not applicable.
+- Named local competitors in LSA: Not able to confirm live in this
+  environment (no rendered top-of-SERP view available). Flagging as an
+  open question rather than asserting an unverified competitor list.
+
+==============================================================
+STEP 8 — META ADS
+==============================================================
+- Firm has active ads: Not observed. Direct Meta Ad Library access returned
+  HTTP 403 in this environment. The firm does have an existing Facebook
+  page (facebook.com/p/Kopchian-Law-100063560319806) and Instagram
+  (@kopchianlaw), but no ad-related activity surfaced in any available
+  source for either.
+- Named local competitor 1: Alena Shautsova Law Offices — has an active,
+  content-rich web presence (shautsova.com) suggesting ongoing digital
+  investment; specific Meta ad status not confirmed live (403 blocked).
+- Named local competitor 2: Hargis Law Firm, PLLC — actively promotes its
+  Google review volume as a marketing asset; specific Meta ad status not
+  confirmed live (403 blocked).
+
+==============================================================
+STEP 9 — TRANSCRIPT EXTRACTION
+==============================================================
+- Practice areas confirmed: Immigration law generally — family-based and
+  employment-based visa/green card matters, plus mandamus actions
+  (litigation to compel USCIS action on delayed cases), per transcript.
+- Current lead sources: Referrals and upsells only (e.g., mandamus actions
+  sold to existing clients). Transcript: "Growth is limited to referrals
+  and upsells... there is no website or active marketing."
+- Ads ever run: Not stated — no mention in the transcript of any ad
+  platform, budget, or history. Given "there is no website," this reads as
+  no ad history rather than an omission.
+- Team size: Solo attorney (Adam Kopchian) — no other roles mentioned.
+  Transcript: "solo attorney is overwhelmed by casework."
+- Annual revenue: Not stated as an annual figure. Transcript gives current
+  weekly revenue of $5,000–$6,000/week, which annualizes to roughly
+  $260,000–$312,000/year at 52 weeks (math shown for reference — not a
+  figure the prospect stated directly).
+- Revenue goal: $7,000–$8,000/week stated on the call, to "cover debt
+  obligations (e.g., student loans) and create a financial buffer" —
+  annualizes to roughly $364,000–$416,000/year.
+- Average case value: Not stated as a specific dollar figure. Practice area
+  is immigration (family-/employment-based visas, green cards, mandamus) —
+  use practice-area default range if needed downstream; disclose as a
+  default, not a stated figure.
+- Current close rate: Not stated — default to 15% per standard assumption.
+- Number of locations: 1 (not explicitly mentioned, defaulting per rule —
+  consistent with solo-practitioner structure).
+- Spanish campaign needed: Not stated on the call.
+- Dominant buying motive: Not an explicit personal/lifestyle statement (no
+  mention of retirement, a kid's team, vacations, etc.). Closest clear
+  inference from context: relief from being trapped in day-to-day
+  "production" so the firm can generate a real financial buffer instead of
+  running on credit cards — i.e., bucket (1), a firm that runs itself so he
+  has the time and capacity to grow beyond survival mode. The transcript
+  frames this explicitly as moving him from "player" to "owner."
+- Any profitability claims made by prospect: "Weekly revenue of $5,000–
+  $6,000 is insufficient to meet debt obligations and create a financial
+  buffer, leading to business expenses being put on credit cards." No other
+  profitability figures stated.
+- Any claims about case types or practice areas: "mandamus actions" named
+  specifically as an existing upsell; otherwise described only generally as
+  "immigration or family matter needs."
+- Stated call focus / product interest: Standard SMBteam growth/marketing
+  discovery call, but explicitly framed around implementing operational
+  systems FIRST — before any marketing spend — because the prospect is
+  bottlenecked in production. Per transcript: "Marketing without systems
+  would waste ad spend and overwhelm the firm." This is still the standard
+  four-pillar program (lead gen, intake/sales, team, profit planning), not
+  a standalone Fractional CTO/AI-only engagement — AI-based document
+  automation is proposed as one supporting system within the broader
+  program, not the primary ask on its own.
+- Existing marketing/SEO/ad vendor engagements: None currently active. The
+  prospect previously enrolled in two business-coaching programs (New Law
+  Business Model and HTM) — not marketing/SEO/ad vendors — both of which he
+  discontinued due to lack of time for homework and feeling overwhelmed.
+  Relevant context on program fatigue, but not a live marketing vendor
+  conflict.
+- Budget constraints stated: No explicit maximum stated, but clear
+  affordability sensitivity is present in the transcript: current weekly
+  revenue ($5,000–$6,000) is already insufficient to cover debt
+  obligations, and business expenses are being put on credit cards —
+  indicating limited cash cushion for a large upfront commitment. The
+  $2,500–$7,000+/month investment range discussed on the call was presented
+  by SMBteam as the program's range, not a number the prospect proposed or
+  capped himself.
+
+==============================================================
+STEP 10 — COMPETITIVE URGENCY SCORE
+==============================================================
+Score: 8/10
+
+Reasons (named specific local competitor threats):
+1. Alena Shautsova Law Offices — 318 live Google reviews at 4.7★, an
+   active content-rich website (shautsova.com) with dedicated testimonial
+   pages — a mature, trust-signal-heavy digital footprint Kopchian Law
+   cannot currently match at any level.
+2. Hargis Law Firm, PLLC — 100+ five-star Google reviews, an 11-consecutive-
+   year Avvo Clients' Choice Award streak, and a dedicated page built just
+   to showcase its Google review volume — reputation marketing running as
+   an ongoing engine, not a one-time effort.
+3. Gottfried & Gottfried, LLP — 252 Yelp reviews and 40+ years of brand
+   presence across the same NYC immigration search terms Kopchian Law would
+   need to compete on.
+
+Meanwhile Kopchian Law has no live website (the domain is parked), a
+1.0-star/2-review Google profile, and its name/address/phone is fractured
+across three different identities in major directories — actively working
+against it before any marketing dollar is spent.
+
+"A score of 8 means competitors are actively dominating multiple channels
+in your market and the gap is getting wider every month you wait. This is
+not a future problem — it is a right now problem."
+
+==============================================================
+PASS 2 — VERIFICATION CHECKLIST
+==============================================================
+[x] Every number in the notes matches actually observed data (or is
+    explicitly flagged as not obtainable in this environment, with reason)
+[x] Every competitor review count cited (Hargis, Shautsova, Gottfried) was
+    verified live — Kopchian Law's 2 reviews is well below all three
+[x] Ad sections address the firm's single practice area (Immigration Law)
+[x] No section states "you are not running ads" — only "not observed" /
+    "does not appear to be running"
+[x] No profitability or business claim appears unless sourced from the
+    transcript
+[x] No competitor reference uses generic labels — only specific named local
+    firms (Hargis Law Firm, Alena Shautsova Law Offices, Gottfried &
+    Gottfried, Kats Immigration Law, Gilmer Law Firm)
+[x] PageSpeed section reports real tool status (429 quota error) rather
+    than an invented number
+[x] DBM recorded as a clear inference, reasoning shown
+[x] Revenue goal recorded ($7,000–$8,000/week, annualized shown for
+    reference)
+[x] Close rate recorded (not stated — defaulted to 15%)
+[x] Average case value recorded (not stated — flagged for practice-area
+    default downstream)
+[x] Stated call focus recorded and called out explicitly (systems-first
+    framing, not a non-marketing engagement)
+[x] Existing marketing/SEO/ad vendor engagements recorded (none active;
+    past coaching programs noted for context)
+[x] Budget constraints stated recorded (no explicit cap; affordability
+    sensitivity noted from transcript context)
