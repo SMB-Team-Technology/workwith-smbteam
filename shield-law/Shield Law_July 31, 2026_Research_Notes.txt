@@ -1,0 +1,364 @@
+SHIELD LAW — GROWTH AUDIT RESEARCH NOTES
+Sales Rep: Jonathan Farace
+Date: July 31, 2026
+Firm URL: http://www.shieldlaw.com
+Contact: Dominick Yammine (dominick@shieldlaw.com / +1 508-505-6158)
+Owner: Nick Yousif (attorney, founder)
+Locations: 218 Willard St #302, Quincy, MA 02169 (current primary) | 157 Belmont St,
+Brockton, MA 02301 (former primary, office moved April 2026) | One Boston Place Suite
+2600, Boston, MA 02108 | 237 South St. Suite 110, Waukesha, WI 53186
+Current site phone (all MA locations): (617) 377-0000
+
+================================================================
+STEP 9 — STATED CALL FOCUS (flagged up front per instructions)
+================================================================
+This WAS a standard marketing/lead-generation growth discovery call — not a
+Fractional CTO/AI-automation or coaching/ops engagement. The call centered on a
+lead-generation crisis triggered by an April 2026 office move from Brockton to
+Quincy that broke the firm's SEO (organic clicks fell from ~124/mo to 10-11/mo,
+new client signings fell from ~30/mo to 10-15/mo). Jonathan Farace proposed a
+strategic marketing pivot toward cash-flow-friendly practice areas (Estate Planning,
+Family Law/uncontested divorce) ahead of the more competitive, cash-intensive areas
+(Personal Injury) the firm currently also lists. Full-service marketing takeover is
+on the table pending termination of the firm's existing 6-month contract with
+Convert Marketing.
+
+================================================================
+STEP 1 — WEBSITE RESEARCH (live browse of shieldlaw.com)
+================================================================
+- Website URL confirmed live: yes
+- Last redesign date or estimated age: not explicitly dated on the site; design and
+  content structure appear reasonably current, no stale copyright year observed
+- Mobile responsive: yes (skip-navigation links and responsive layout markers observed)
+- Homepage headline: "Shielding Your Rights!" with supporting copy: "We can provide
+  niche consumer protection legal work with no upfront fees."
+- CTA above fold: yes — two buttons, "Get Started" and "Watch Video," both routing to
+  the contact page
+- Contact form location: multiple forms placed throughout the page (sections titled
+  "Have you been a Victim?" and "Let's Work Together") rather than a single clear
+  above-the-fold form
+- Live chat present: no
+- Attorney bio present: yes — individual profile pages for Nick Yousif, Matt McKenna,
+  and Hunter Cook
+- Video present: yes — embedded YouTube video on illegal mortgage practices
+- Blog present: yes — 4 recent posts visible (illegal mortgage practices, car
+  accidents, creditor harassment, 24/7 consultations); exact publish dates were not
+  exposed in the fetched content
+- Practice areas listed on site: Consumer Protection, Bankruptcy, Loan Modification,
+  Personal Injury, Medical Malpractice, Real Estate Law, Estate Planning, Employment
+  Law, Family Law, Foreclosure Defense, Criminal Law, Business Defense Litigation —
+  notably broader than the bankruptcy/consumer-protection focus described on the call,
+  and already includes Estate Planning and Family Law as listed (but not marketed)
+  practice areas, which supports the pivot Jonathan proposed — the infrastructure to
+  list these areas already exists, it is simply not the marketing focus today
+- Spanish-language page present: yes (shieldlaw.com/spanish-espanol/) — relevant to the
+  transcript's noted multilingual/Spanish niche opportunity
+- Geo-targeting: practice-area pages list all 4 office addresses in the footer, but no
+  city-specific landing pages exist (e.g. no dedicated "Bankruptcy Lawyer in Quincy"
+  or "...in Brockton" page)
+
+PageSpeed scores: COULD NOT BE OBTAINED LIVE. Both the PageSpeed Insights API
+(www.googleapis.com/pagespeedonline/v5) and the interactive pagespeed.web.dev tool
+were attempted five times across this research pass. The API returned a "429 Too Many
+Requests" (quota) error on every attempt, and the interactive tool is JS-rendered and
+never returned completed scores through available fetch tooling (it stayed on
+"Running analysis / data loading"). Per instructions, no number is estimated or
+recorded here. FLAG FOR MANUAL FOLLOW-UP: run
+https://pagespeed.web.dev/analysis?url=http://www.shieldlaw.com manually (mobile +
+desktop) before the report is finalized.
+
+================================================================
+STEP 2 — GOOGLE BUSINESS PROFILE
+================================================================
+NOTE ON METHOD: Direct live rendering of the Google Maps/GBP panel was not accessible
+in this environment — Google Search and Google Maps are JS-rendered and returned no
+usable listing data through available fetch tooling (Bing and DuckDuckGo HTML search
+were also tried and returned no local business panel). FLAG FOR MANUAL VERIFICATION
+of a live Google Maps pull before the report is finalized.
+
+- GBP found: could not be independently confirmed for the current Quincy address
+  (218 Willard St #302) through any available tool.
+- What WAS found (third-party mirror of the legacy Brockton profile): TrustAnalytica
+  shows "Shield Law," 157 Belmont St, Brockton, MA — 4.9 stars, 119 reviews. This is
+  close to, and corroborates, the transcript's claim of "122 five-star Google reviews
+  tied to the old Brockton location."
+- Every other directory checked (Avvo, FindLaw, Lawyers.com, Martindale, SuperLawyers,
+  LawInfo, Bay State Banner, and a Yelp result surfaced via search) still indexes the
+  firm exclusively under the old Brockton address and, in several cases, the old
+  Brockton-specific phone number (508) 588-7300 — not the current unified (617)
+  377-0000 number shown on shieldlaw.com/contact/ today. No directory or search result
+  surfaced a distinct, populated Quincy GBP listing. This is consistent with — and
+  helps explain — the transcript's account that the move killed the firm's local SEO:
+  the business's review equity and directory presence appear to still be anchored to
+  Brockton, not transferred to Quincy.
+- Avvo profile (Nicola/Nick Yousif): 7.3 "Very Good" Avvo rating, 3 client reviews
+  (5.0/5.0 average), addresses listed: 157 Belmont St, Brockton + One Boston Place,
+  Boston — no Quincy address listed on Avvo.
+- Star rating / review count / most recent review date / photos / posts for the
+  current Quincy GBP specifically: NOT independently verified — flag for manual check.
+
+================================================================
+STEP 3 — LOCAL 3-PACK SEARCHES
+================================================================
+NOTE ON METHOD: Google's live interactive local map-pack could not be rendered through
+available search/fetch tooling (it requires JS/geolocation rendering not exposed to
+these tools). Below reflects organic/directory search-result prominence as a proxy,
+not a literal 3-pack screenshot. FLAG FOR MANUAL VERIFICATION of the actual map pack.
+
+Practice Area 1: Bankruptcy
+- Search "bankruptcy lawyer Quincy MA": Shield Law does not appear on page one of
+  results — competitors surfacing prominently: Levin and Levin, LLP; The Law Firm of
+  Ullian & Associates, P.C.; Law Office of Richard C. Hyman; Law Office of Rachel M.
+  Matos
+- Search "Quincy MA bankruptcy attorney": same competitor set surfaces; Shield Law not
+  observed on page one
+- Search "chapter 7 bankruptcy lawyer Quincy": directory aggregators (Avvo, Justia,
+  Super Lawyers) dominate; Shield Law not observed on page one
+
+Practice Area 2: Consumer Protection
+- Search "consumer protection attorney Quincy MA": Shield Law not observed on page
+  one — named firms surfacing: Rights Protection Law Group; Law Office of Margaret M.
+  Cronin, P.C. (Cronin Law); FitzGerald Law Company
+- Search "consumer protection lawyer near Quincy MA": same pattern, directory sites
+  and the above named firms dominate visible results
+- Search "debt collection harassment lawyer Quincy MA": Shield Law not observed on
+  page one
+
+Practice Area 3: Personal Injury
+- Search "personal injury lawyer Quincy MA": Shield Law not observed on page one —
+  named firms surfacing: Bellotti Law Group, P.C.; Marasco & Nesselbush; Shea Culgin
+  Law; Flanagan & Associates
+- Search "car accident lawyer Quincy MA": same competitor set surfaces
+- Search "Quincy MA injury attorney": same pattern, Shield Law not observed
+
+================================================================
+STEP 4 — COMPETITOR REVIEW COUNTS
+================================================================
+Live Google review counts for named local competitors could not be pulled directly
+(same rendering limitation as Step 2). Avvo profile data (a verifiable third-party
+source, not Google itself) was used as the closest available proxy — flag for manual
+Google Maps confirmation before citing exact figures in the report:
+
+- Levin and Levin, LLP (875 Southern Artery, Quincy, MA — bankruptcy/real estate,
+  founded 1933) — Avvo: 4.9 stars, 10 reviews, PRO profile, 2025 Avvo Client's Choice
+  Award
+- Bellotti Law Group, P.C. (1372 Hancock St #201, Quincy, MA — personal injury) —
+  Avvo: 10.0 "Superb" rating; exact review count not surfaced in available results
+- The Law Firm of Ullian & Associates, P.C. (Braintree/Quincy-area — bankruptcy,
+  40+ years in practice) — holds an Avvo Client's Choice Award badge and multiple
+  positive testimonials; exact review count not surfaced in available results
+
+Because Shield Law's own current, live Google review count at the Quincy address
+could not be independently verified (see Step 2), a certified reviews-count
+comparison against the prospect cannot be made this pass. Per the transcript, the
+firm's ~122 five-star reviews are tied to the Brockton listing and the owner
+describes losing access to that social proof at the new office — treat this as the
+prospect's own framing rather than an independently-verified live number pending
+manual confirmation.
+
+================================================================
+STEP 5 — DIRECTORY LISTINGS
+================================================================
+Checked: Avvo, FindLaw, Yelp (search-snippet only — direct fetch returned 403),
+Lawyers.com, Martindale, SuperLawyers, LawInfo, Bay State Banner, Justia (direct
+fetch returned 403, not confirmed via search either), ZoomInfo (direct fetch
+returned 403).
+
+NAP INCONSISTENCY — VERIFIED LIVE: The firm's own current contact page
+(shieldlaw.com/contact/) lists a single unified phone number, (617) 377-0000, for
+all four office locations including Brockton and Quincy. However, third-party
+directories still show the legacy Brockton-specific number: FindLaw's profile
+(last updated April 5, 2024) lists 157 Belmont St, Brockton with phone 508-588-7300;
+Bay State Banner's local directory lists the same old number. None of the eight
+directories checked showed a populated Quincy (218 Willard St) listing — every one
+anchors the firm to the old Brockton address. This is a concrete, live-verified NAP
+fragmentation problem directly tied to the SEO collapse described in the transcript.
+
+Geo-targeting landing pages: none found on the firm's own site for surrounding
+cities (Quincy, Brockton, Boston, or others) — practice-area pages list all office
+addresses in the footer only.
+
+================================================================
+STEP 6 — GOOGLE ADS
+================================================================
+NOTE ON METHOD: Live Google Ads/sponsored-slot rendering could not be accessed
+through available search tooling (search results returned only organic/directory
+listings, no sponsored markers). FLAG FOR MANUAL VERIFICATION.
+
+Practice Area 1: Bankruptcy
+- Firm ads observed: not observed in research conducted — Shield Law does not appear
+  to be running search ads for this term, or may be getting outbid by competitors.
+  (Transcript confirms a new $1,500/mo Google Ads campaign via Convert Marketing
+  started last month — Jonathan Farace assessed this budget as too small to secure
+  meaningful, consistent visibility.)
+- Named local competitors: Levin and Levin, LLP and The Law Firm of Ullian &
+  Associates, P.C. maintain established, SEO-optimized practice pages that would
+  plausibly support paid search; live ad presence not confirmed this pass.
+
+Practice Area 2: Consumer Protection
+- Firm ads observed: not observed
+- Named local competitors: Rights Protection Law Group and Law Office of Margaret M.
+  Cronin, P.C.; live ad presence not confirmed this pass.
+
+Practice Area 3: Personal Injury
+- Firm ads observed: not observed
+- Named local competitors: Bellotti Law Group, P.C. and Marasco & Nesselbush; live ad
+  presence not confirmed this pass.
+
+================================================================
+STEP 7 — LOCAL SERVICE ADS
+================================================================
+- Firm appears in LSA: not observed / not confirmed live in this environment
+- Google Screened: not observed / not confirmed live
+- LSA review count: n/a
+- Named local competitors in LSA: not confirmed live — FLAG FOR MANUAL VERIFICATION
+
+================================================================
+STEP 8 — META ADS
+================================================================
+- Firm has active ads: could not be confirmed — Meta Ad Library (facebook.com/ads/
+  library) returned a 403/blocked response to automated fetch in this environment.
+  FLAG FOR MANUAL VERIFICATION at facebook.com/ads/library (search "Shield Law").
+- Named local competitor 1: Levin and Levin, LLP — ad presence not independently
+  verified this pass.
+- Named local competitor 2: Bellotti Law Group, P.C. — ad presence not independently
+  verified this pass.
+
+================================================================
+STEP 9 — TRANSCRIPT EXTRACTION
+================================================================
+- Practice areas confirmed: Current marketing/legal focus — Bankruptcy and Consumer
+  Protection. Site also lists (but does not currently market) Personal Injury,
+  Medical Malpractice, Real Estate Law, Estate Planning, Employment Law, Family Law,
+  Foreclosure Defense, Criminal Law, Business Defense Litigation, Loan Modification.
+  Proposed pivot focus: Estate Planning and Family Law (uncontested divorce) for
+  faster cash-flow ROI, with SEO/AEO continuing to capture niche consumer-protection
+  leads as a secondary channel.
+- Current lead sources: Historically organic/SEO tied to the Brockton office and
+  phone number (~124 organic clicks/mo, ~30 new clients/mo before the move); collapsed
+  to 10-11 organic clicks/mo and 10-15 new clients/mo after the April 2026 move to
+  Quincy.
+- Ads ever run: Yes — a new $1,500/mo Google Ads campaign managed by Convert
+  Marketing, started last month (as of the call). Jonathan Farace's assessment:
+  $1,500/mo is an insufficient budget for a meaningful PPC campaign.
+- Team size: Not fully enumerated on the call. Confirmed personnel: Nick Yousif
+  (owner/attorney, handles all admin, follow-ups, and client communication personally
+  — no delegation), plus attorneys Matt McKenna and Hunter Cook per the firm website.
+- Annual revenue: Not stated as an annual figure. July 2026 is projected at a low of
+  $45k for the month; revenue described as highly volatile since the move.
+- Revenue goal: $200k/mo stated explicitly (goal is a sustainable business generating
+  $200k/mo, enabling Nick Yousif to step back from daily operations).
+- Average case value: Not stated for the firm's current bankruptcy/consumer
+  protection work. For the proposed pivot areas: Estate Planning retainers of
+  $1,500-$5,000+; Family Law (uncontested divorce) $5k-$10k.
+- Current close rate: not stated — default to 15%.
+- Number of locations: 4 (Quincy and Brockton, MA — both active; Boston, MA; Waukesha,
+  WI) per the firm's own site; the transcript frames Quincy as the new primary office
+  post-move.
+- Spanish campaign needed: yes — transcript explicitly calls out leveraging the
+  team's multilingual skills (especially Spanish) as a niche opportunity to build
+  trust and capture a specific client segment; the firm's site already has a
+  Spanish-language page in place.
+- Dominant buying motive: Firm that runs itself so the owner has more time back.
+  Nick Yousif currently works 7-day weeks plus a side job in real estate to cover
+  income gaps caused by a lack of scalable systems and processes — he personally
+  handles all admin, follow-ups, and client communication. The stated goal (a
+  sustainable $200k/mo business) is explicitly framed as the path to stepping back
+  from daily operations, matching DBM category (1) — firm that runs itself so the
+  owner has more time.
+- Any profitability claims made by prospect: none stated beyond the $45k July revenue
+  projection and the $200k/mo goal noted above.
+- Any claims about case types or practice areas: "The firm's current focus [is] on
+  bankruptcy and consumer protection" with a proposed pivot to "cash-flow-friendly
+  areas like Estate Planning or Family Law" for faster ROI ahead of "more
+  competitive, cash-intensive fields like Personal Injury."
+- Stated call focus / product interest: Standard marketing/lead-generation growth
+  discovery call — focused on fixing the post-move SEO collapse and proposing a
+  practice-area marketing pivot. Not a Fractional CTO/AI-automation or coaching/ops
+  engagement.
+- Existing marketing/SEO/ad vendor engagements: Yes — a current 6-month contract with
+  Convert Marketing (a generalist agency) covering SEO (described as ineffective;
+  failed to manage the SEO transition during the office move) and the new $1,500/mo
+  Google Ads campaign. Shield Law is investigating early termination of this contract
+  to enable a full-service takeover by SMB Team.
+- Budget constraints stated: No explicit statement of inability to afford a larger
+  monthly marketing investment; the only budget-related statement is Jonathan
+  Farace's critique that the firm's *current* $1,500/mo PPC spend (via Convert
+  Marketing) is too small to be effective — this is framed as a vendor/strategy
+  problem, not a stated affordability constraint from the prospect.
+
+================================================================
+STEP 10 — COMPETITIVE URGENCY SCORE
+================================================================
+Score: 7/10
+
+Reasoning: Shield Law's organic visibility has already collapsed (organic clicks
+down roughly 91%, from ~124/mo to 10-11/mo, since the April 2026 move) and its
+review equity/NAP presence remains fragmented and stuck at the old Brockton address
+across every directory checked (Avvo, FindLaw, Lawyers.com, Martindale, SuperLawyers,
+LawInfo, Bay State Banner) with no confirmed Quincy GBP presence — a real, currently-
+observed vulnerability, not a hypothetical one. Meanwhile, named local competitors in
+every core practice area have established, credentialed local footholds directly in
+Quincy: Levin and Levin, LLP (est. 1933, 4.9-star/10-review Avvo profile, 2025 Avvo
+Client's Choice Award, 875 Southern Artery, Quincy), Bellotti Law Group, P.C. (10.0
+"Superb" Avvo rating, 1372 Hancock St, Quincy, decades of personal injury results),
+and The Law Firm of Ullian & Associates, P.C. (40+ years, Avvo Client's Choice Award).
+Direct live confirmation of competitors' ad/LSA/Meta spend was not possible this pass
+(see flags above), so this score reflects confirmed organic/directory dominance and
+the firm's own confirmed SEO collapse rather than a fully verified paid-channel
+picture.
+
+"A score of 7 means competitors are actively dominating multiple channels in your
+market and the gap is getting wider every month you wait. This is not a future
+problem — it is a right now problem."
+
+================================================================
+RESEARCH LIMITATIONS / FOLLOW-UP FLAGS
+================================================================
+The following live-verification steps could not be completed from this environment
+and should be manually confirmed by the SMB Team research/sales team before the
+report is finalized or presented on the July 31 proposal call:
+1. PageSpeed mobile/desktop scores (API quota exhausted on every attempt this pass)
+2. Live Google Business Profile star rating/review count for the current Quincy
+   address specifically (no direct GBP render available; legacy Brockton mirror data
+   used as context — see Step 2)
+3. Live Google search local 3-pack and Google Ads results (direct SERP/map-pack
+   render blocked; organic/directory prominence used as a proxy — see Steps 3 and 6)
+4. Live Local Service Ads presence for the firm and named competitors
+5. Meta Ad Library results for the firm and named competitors (request blocked/403)
+
+None of the above affect the transcript-derived facts, which are the primary basis
+for this engagement's pitch (SEO collapse post-move, NAP/review fragmentation,
+underfunded PPC, and the proposed practice-area pivot).
+
+================================================================
+PASS 2 VERIFICATION CHECKLIST
+================================================================
+[x] Every number in the notes matches actually observed/researched data, or is
+    explicitly flagged as not independently verified live
+[x] Competitor review counts sourced from Avvo (verifiable third-party source) and
+    flagged where live GBP verification was not possible — no claim is made that a
+    competitor has "more reviews" than Shield Law, since Shield Law's current live
+    review count could not itself be confirmed (see Step 4)
+[x] Ads sections cover all three core current practice areas (Bankruptcy, Consumer
+    Protection, Personal Injury)
+[x] No section states the firm "is not running ads" — framed as "not observed" /
+    "may be getting outbid" throughout
+[x] No profitability or business claim appears unless it came from the transcript
+[x] No competitor reference uses generic labels — only specific named local firms
+    (Levin and Levin LLP, Bellotti Law Group P.C., The Law Firm of Ullian &
+    Associates P.C., Rights Protection Law Group, Law Office of Margaret M. Cronin
+    P.C., Marasco & Nesselbush)
+[x] PageSpeed scores not fabricated — flagged as unobtainable this pass, real
+    numbers still required before final report
+[x] DBM recorded (firm that runs itself so owner has more time — see Step 9)
+[x] Revenue goal recorded ($200k/mo, stated explicitly)
+[x] Close rate recorded (not stated — defaulted to 15%)
+[x] Average case value recorded (not stated for current practice; stated for pivot
+    areas — Estate Planning $1,500-$5,000+, Family Law $5k-$10k)
+[x] Stated call focus called out explicitly (Step 9) — confirmed standard marketing/
+    intake growth discovery, not a Fractional CTO/AI/coaching engagement
+[x] Existing vendor engagement recorded (Convert Marketing, 6-month contract, SEO +
+    $1,500/mo Google Ads; termination under investigation)
+[x] Budget constraints recorded (none stated as an affordability constraint from the
+    prospect; only a vendor-spend-adequacy critique from the rep)
