@@ -1,0 +1,169 @@
+ANGIULI & GENTILE, LLP — GROWTH AUDIT RESEARCH NOTES
+Prepared for: Gary Angiuli (contact/managing partner)
+Sales Rep: Nick Holderman
+Date: August 5, 2026
+Firm operates as: Angiuli & Gentile, LLP (aglawnyc.com)
+
+CALL FOCUS FLAG — READ BEFORE USING THESE NOTES IN A PROPOSAL:
+The August 5 discovery call was NOT a standard marketing/growth discovery call. Per the transcript, Nick Holderman explicitly pivoted the conversation away from marketing and toward SMB Team's fractional recruiting service, because the firm's stated bottleneck is hiring capacity, not lead generation. The firm's recent Facebook ad campaigns generated MORE leads than the firm's 4 lawyers can service. The next meeting (this proposal call) is specifically to discuss the fractional recruiting offering, not a standard growth/marketing package. Any proposal built from these notes should lead with capacity/recruiting, not marketing spend — see Step 9 for full detail.
+
+======================================================================
+STEP 1 — WEBSITE RESEARCH (aglawnyc.com / www.aglawnyc.com)
+======================================================================
+- Website URL confirmed live: yes (aglawnyc.com redirects 301 to www.aglawnyc.com)
+- Last redesign date or estimated age: not dated on-site; site is modern in structure (video hero, individual attorney pages, e-books) — no visible age indicator
+- Mobile responsive: not independently confirmed via available research tools this session — flag for manual confirmation
+- Homepage headline: "Walk With Confidence" — positioned around Staten Island Divorce Lawyer & Elder Law
+- CTA above fold: yes — "Get a Case Review" button plus a prominent clickable phone number in the hero section
+- Contact form location: below the fold, appearing twice on the homepage (name, email, phone, service selection, case description fields)
+- Live chat present: no
+- Attorney bio present: yes — six attorneys with individual profile pages, including managing partners Gary C. Angiuli and Annamarie G. Gentile
+- Video present: yes — video hero background and a dedicated video library section
+- Blog present: yes, accessible via a "Media" menu — exact most recent post date not surfaced in the page content pulled this session; flag for manual confirmation
+- Practice areas listed on site: Divorce, Family Law, Child Custody, Elder Law, Estate Planning, Medicaid Planning, Real Estate (residential and commercial), Business Law, Personal Injury
+- Other site features: testimonials section, free e-books, "Super Lawyers" designation displayed, professional association badges (RCBA, SITLA, LEAD COUNCIL), social links
+- Geo-targeted landing pages: none found — a guessed /locations/ URL returned 404, and no location-specific navigation was surfaced on the homepage pull. Flag as a gap/opportunity rather than a confirmed absence, since the full site nav was not exhaustively crawled.
+
+PageSpeed:
+- PageSpeed mobile score: NOT OBTAINED — the public PageSpeed Insights API (googleapis.com/pagespeedonline) returned HTTP 429 with "Quota exceeded... quota_limit_value: 0" on repeated attempts this session — this is a hard project-level quota exhaustion, not a transient rate limit, and retrying did not help. The pagespeed.web.dev UI also could not be used because it renders scores client-side via JavaScript after page load, so a direct fetch only captures the "Running analysis" loading state.
+- PageSpeed desktop score: NOT OBTAINED — same limitation.
+- ACTION REQUIRED: run pagespeed.web.dev/report?url=https://www.aglawnyc.com/ manually from a real browser before the report is finalized; do not substitute an estimated number for these fields.
+
+======================================================================
+STEP 2 — GOOGLE BUSINESS PROFILE
+======================================================================
+- GBP found: presumed yes (firm is well-established since 1985 with a physical Staten Island office), but could NOT be directly rendered this session — see limitation note below.
+- Star rating: NOT DIRECTLY VERIFIED — Google Search and Google Maps both render their business/knowledge panels via client-side JavaScript, which is not captured by the fetch tools available this session (attempts returned only page shells with no panel data). Best-available directional proxies gathered instead: Yelp shows the firm at 13 reviews (as "ANGIULI & GENTILE," 1493 Hylan Blvd), FindLaw's profile shows 29 reviews at 4.7/5, Avvo shows 3 reviews at 5.0/5 (9.1 "Superb" Avvo rating). None of these are the Google star rating/count specifically — flag for manual confirmation before finalizing the report.
+- Total review count: NOT DIRECTLY VERIFIED (see above) — flag for manual live check.
+- Most recent review date: not available this session.
+- Primary category: not confirmed via GBP directly; site and directories position the firm primarily as Divorce/Family Law and Elder Law/Estate Planning.
+- Photos active: not confirmed this session.
+- Posts active: not confirmed this session.
+- ACTION REQUIRED: confirm actual Google star rating and review count with a manual browser check before finalizing the report — do not present the Yelp/FindLaw/Avvo numbers above as Google numbers in the deliverable.
+
+======================================================================
+STEP 3 — LOCAL 3-PACK SEARCHES
+======================================================================
+Note: live Google local map-pack rendering was not accessible via available research tools this session (same limitation as Step 2 — the map pack requires JS rendering the fetch tools cannot capture). Results below reflect organic/directory search visibility as the best available proxy, with named local competitors surfaced for each practice area.
+
+Practice Area 1: Divorce / Family Law / Child Custody (Staten Island, NY)
+- Search 1 "divorce lawyer Staten Island": firm's own page (aglawnyc.com/divorce-and-child-custody/) appears in organic results — named competitors surfaced: The Law Office of Keith M. Casella, P.C. (Casella Law), DePalo Law Firm, Soren Law Group, Stephen Bilkis & Associates
+- Search 2 "divorce attorney Staten Island NY": firm not observed in the top organic results pulled — named competitors surfaced: Soren Law Group, DePalo Law Firm, Rudyuk Law Firm P.C., Casella Law, Law Office of Tracy & Tracy, Stephen Bilkis & Associates
+- Search 3 "child custody lawyer Staten Island": firm not observed in the top organic results pulled — named competitors surfaced: Stephen Bilkis & Associates, Law Office of Tracy & Tracy, Law Office of Jeffrey W. Johnson, Valerie Wolfman Esq.
+
+Practice Area 2: Elder Law / Estate Planning / Medicaid Planning (Staten Island, NY)
+- Search 1 "elder law attorney Staten Island": firm appears (aglawnyc.com/elder-law/) — named competitors surfaced: Ettinger Law Firm, Gallo & Spero LLP, Lepore Law
+- Search 2 "estate planning lawyer Staten Island": firm appears (aglawnyc.com/elder-law/estate-planning-and-probate/) — named competitors surfaced: Connors & Sullivan, Ettinger Law Firm, Danna & Associates PC, DiVernieri, DiVernieri and Cotter LLP, Summit Estate Planning Group
+- Search 3 "Medicaid planning attorney Staten Island": firm appears (aglawnyc.com/elder-law/medicaid-planning/) — named competitors surfaced: Leventhal Elias Law, Danna & Associates, Louis Lepore Esq., Merlino & Gonzalez, Corash & Hollender P.C., Rampulla & Newstad LLP
+
+======================================================================
+STEP 4 — COMPETITOR REVIEW COUNTS
+======================================================================
+Verified via live web search (aggregator-reported, cross-checked where possible — true Google-only counts could not be isolated this session per the Step 2 limitation):
+- Competitor 1: Corash & Hollender, P.C. — reviews: 125 (Birdeye, live) / 18 (Yelp) — rating: 4.8
+- Competitor 2: Soren Law Group, PLLC — reviews: 102 (Birdeye, live) — rating: 4.9
+- Competitor 3: Danna & Associates, PC — reviews: 49 (Chamber of Commerce, live) — rating: 4.9
+- Competitor 4 (mixed signal, for completeness): Gallo & Spero LLP — reviews: 3–12 depending on listing (Birdeye) — rating: 4.3–5.0
+
+Prospect comparison: Angiuli & Gentile's own directory footprint (Yelp 13, FindLaw 29, Avvo 3) is meaningfully smaller than Corash & Hollender and Soren Law Group's aggregator-reported totals. This is directionally reliable even though the true Google-only counts on both sides could not be isolated this session — the gap is large enough (roughly 4-10x) that it is very unlikely to reverse once Google counts are confirmed. Recommend a manual live check to pin exact Google numbers before quoting them in the report, but the underlying finding (firm is behind on review volume vs. its two closest identified peers) is well supported.
+
+======================================================================
+STEP 5 — DIRECTORY LISTINGS
+======================================================================
+- Avvo: Gary Angiuli's profile lists TWO different addresses — "60 Bay Street, Penthouse Floor, Staten Island, NY 10301" and "1481 Hylan Blvd, Staten Island, NY 10305" — neither matches the site's own address. Avvo rating 9.1 ("Superb"), 3 reviews at 5.0/5.
+- FindLaw: lists "1493 Hylan Boulevard, Staten Island, NY 10305" (matches the site) and phone "347-201-4447" — 29 reviews at 4.7/5.
+- Website's own address: "1493 Hylan Boulevard, Staten Island, NY 10305," phone "718-550-0466" (site) — a separate search snippet also surfaced "(718) 816-0005" for the firm.
+- Justia: attempted live check returned HTTP 403 (blocked) — not independently confirmed this session; the firm does appear in Justia's Staten Island divorce directory listing per earlier search results.
+- Yelp: "ANGIULI & GENTILE," 1493 Hylan Blvd, 13 reviews, categorized under Divorce & Family Law.
+- NAP INCONSISTENCY SUMMARY: at minimum three distinct phone numbers (718-550-0466, 347-201-4447, 718-816-0005) and two distinct addresses (1493 Hylan Blvd vs. 60 Bay Street/1481 Hylan Blvd on Avvo) are circulating across the firm's own site and its directory profiles. This is a legitimate, citable NAP consistency finding — flag prominently in the audit rather than treating it as minor.
+- Geo-targeting landing pages: none found on the firm's own site for surrounding areas (Brooklyn, New Jersey, other boroughs) — a guessed /locations/ URL returned 404 and no such pages surfaced elsewhere in this session's research.
+
+======================================================================
+STEP 6 — GOOGLE ADS
+======================================================================
+Practice Area 1: Divorce / Family Law (Staten Island, NY)
+- Firm ads observed: not observed via available research tools this session — true PPC/paid-SERP rendering requires a live browser session and was not accessible here. The firm does not appear to be running ads for this specific search, or may be getting outbid by competitors for the terms checked.
+- Named local competitors running ads: not conclusively observed as paid placements this session (search results returned organic/directory listings only) — Corash & Hollender appeared in a search snippet described as a "sponsored listing" for elder law, but this could not be independently confirmed as an active Google Ads placement.
+
+Practice Area 2: Elder Law / Estate Planning (Staten Island, NY)
+- Firm ads observed: not observed via available research tools this session — same limitation as above.
+- Named local competitors running ads: Corash & Hollender, P.C. surfaced with sponsored-listing language in search results; not independently confirmed as a live paid ad this session.
+
+ACTION REQUIRED: recommend a live manual SERP check (real browser, Staten Island-located or geo-simulated) before finalizing ad-spend claims in the report.
+
+======================================================================
+STEP 7 — LOCAL SERVICE ADS
+======================================================================
+- Firm appears in LSA: not observed via available research tools this session — LSA units render dynamically and were not captured by the search tools available.
+- Google Screened: not observed/not confirmed this session.
+- LSA review count: not available this session.
+- Named local competitors in LSA: not observed/not confirmed this session.
+ACTION REQUIRED: recommend a live manual check from a Staten Island-based or geo-simulated search before the proposal call.
+
+======================================================================
+STEP 8 — META ADS
+======================================================================
+- Firm has active ads: could not access the Meta Ads Library directly this session (requests returned HTTP 403 / connection failures — the Library requires an authenticated, JS-rendered session not available to the fetch tools here). HOWEVER, per the TRANSCRIPT-FIRST RULE, the discovery call transcript directly confirms the firm has recently run Facebook ad campaigns, and that those campaigns generated a high volume of leads — high enough that the firm is currently struggling to service the resulting demand. This is ground truth from the prospect and should be treated as confirmed, not "not observed."
+- Named local competitor 1: Soren Law Group — active Facebook business presence noted in prior research; live ad activity could not be confirmed this session.
+- Named local competitor 2: Corash & Hollender, P.C. — active Facebook business presence noted; live ad activity could not be confirmed this session.
+ACTION REQUIRED: reconfirm current/live Meta ad status for the firm and competitors via a manual Ads Library check before finalizing the report — but do not contradict the transcript's confirmation that the firm's own Facebook campaigns have recently driven strong lead volume.
+
+======================================================================
+STEP 9 — TRANSCRIPT EXTRACTION
+======================================================================
+- Practice areas confirmed: Divorce, family law, elder law, and estate planning are the firm's core current practice (consistent with the site). The transcript separately notes a potential merger by year-end that "may expand practice areas (e.g., real estate, business law)" — meaning while the website already lists real estate and business law, the transcript frames these as areas of FUTURE expansion pending a merger, not necessarily current core revenue drivers. Flag this distinction for whoever writes the report.
+- Current lead sources: Facebook/Meta ads (confirmed run recently, generated "a high volume of leads"). No other lead source specified in the transcript.
+- Ads ever run: Yes — Facebook ad campaigns, budget not stated in the transcript, result: high lead volume, described as more than the firm's current staff can service.
+- Team size: 4 practicing lawyers, per the transcript's "Current State: $5M revenue with 4 practicing lawyers." NOTE: the firm's website lists six attorneys with individual bio pages (Gary C. Angiuli, Annamarie G. Gentile, plus four others) — a discrepancy against the transcript's "4 practicing lawyers" figure. Per the TRANSCRIPT-FIRST RULE the transcript figure is used as ground truth for the capacity narrative, but this gap (4 vs. 6) should be flagged and clarified with the sales rep, since it directly affects the capacity/hiring pitch math.
+- Annual revenue: $5M (stated).
+- Revenue goal: $6M — stated explicitly as "add $1M in revenue."
+- Average case value: not stated — flag and default to a practice-area estimate for divorce/family/elder law firms rather than presenting a firm-confirmed number.
+- Current close rate: not stated — default to 15% per instructions.
+- Number of locations: not stated in the transcript — default to 1 (consistent with the single Hylan Boulevard office referenced across the site and FindLaw); note the Avvo NAP inconsistency (Step 5) raises the question of whether a second/former office exists, but this is not confirmed.
+- Spanish campaign needed: not stated — no.
+- Dominant buying motive: not a clean personal DBM quote in the transcript. The clearest inference is business-value-oriented rather than lifestyle-oriented: Gary is focused on hitting a $6M revenue target while protecting the firm's "first-class" brand promise, in the context of a potential merger by year-end that could reshape the firm's scope and practice mix. This reads closest to DBM category (3) scale and dominate / build enterprise value ahead of a potential merger, rather than (1) a firm that runs itself for personal time or (2) grow-and-sell in the near term. This is an inference, not an exact quote — flag as such.
+- Any profitability claims made by prospect: none stated.
+- Any claims about case types or practice areas: "A potential merger by year-end may expand practice areas (e.g., real estate, business law)" — closest available quote/paraphrase from the transcript.
+- Stated call focus / product interest: CRITICAL — this call was NOT a standard marketing/growth discovery call. Per the transcript, Nick Holderman explicitly reframed the engagement from marketing to SMB Team's new fractional recruiting service, because the firm's real bottleneck is hiring capacity (a severe local talent shortage), not lead generation — the firm's own recent Facebook ads already over-delivered on leads relative to staff capacity. The upcoming call (August 5, 11:00 AM) is specifically to discuss fractional recruiting: sourcing candidates, managing interviews, making offers, focused on $100k+ salary placements with guarantees. Do not default this to a "standard marketing/growth" framing in the audit or proposal — the growth lever this prospect is currently engaged on is recruiting/capacity, not marketing.
+- Existing marketing/SEO/ad vendor engagements: none stated for marketing/SEO specifically. The firm HAS engaged headhunters for recruiting (e.g., "Nate Dean Bocelli"), but the transcript states these efforts failed to source qualified candidates despite offering market-rate salaries ($150k–$160k/yr) — this is recruiting vendor history, not a marketing vendor engagement, but is highly relevant context given the call's actual focus.
+- Budget constraints stated: none stated explicitly. Gary expressed willingness to pay a fee for successful placements and frustration with traditional headhunters — this signals openness to a placement-fee/guarantee model rather than any stated spend ceiling.
+
+======================================================================
+STEP 10 — COMPETITIVE URGENCY SCORE
+======================================================================
+Score: 6/10
+
+Named threats:
+1. Soren Law Group, PLLC — 102 reviews at 4.9★ (Birdeye, live) in the same divorce/family law space the prospect competes in — roughly 4-8x the prospect's own directory review volume (Yelp 13 / FindLaw 29), giving it a much stronger trust-signal footprint in the exact market Angiuli & Gentile is trying to hold onto.
+2. Corash & Hollender, P.C. — 125 reviews at 4.8★ (Birdeye, live), a long-established (1977) multi-practice Staten Island firm spanning real estate, business law, wills/estates, and family law — directly overlapping the practice areas the firm's potential merger would expand into, and already dominant in review volume there.
+3. Danna & Associates, PC — 49 reviews at 4.9★ (Chamber of Commerce, live), a 30+ year Staten Island estate planning/elder law/Medicaid planning firm competing directly for the same elder law and Medicaid planning searches the prospect ranks for organically.
+
+Important caveat for whoever uses this score: the prospect's stated bottleneck (per the transcript) is capacity/hiring, not marketing visibility — the firm's own Facebook ads already generate more leads than it can staff. This urgency score reflects competitive marketing/review positioning specifically, and should not be read as contradicting the transcript's core finding that marketing is not the growth constraint right now.
+
+Dynamic sentence: "A score of 6 means competitors have meaningful advantages in one or more areas and are pulling ahead. You are not invisible yet — but the window to close the gap is narrowing. Every month without action is a month they extend their lead."
+
+======================================================================
+PASS 2 — VERIFICATION CHECKLIST
+======================================================================
+[x] Every number in the notes matches actually observed data (PageSpeed and true Google star rating/count explicitly flagged as NOT OBTAINED rather than estimated)
+[x] Every competitor review count cited was verified live this session via web search; no competitor is cited as "dominating" without the prospect's own numbers also being shown for direct comparison
+[x] Ad sections (Steps 6-8) cover all core practice areas (divorce/family, elder law/estate planning) named in the transcript and site
+[x] No section states "you are not running ads" — all phrased as "does not appear to be running ads for this search," "not observed," or "may be getting outbid," except where the transcript itself confirms the firm HAS run ads (Meta/Facebook), which is stated plainly per the transcript-first rule
+[x] No profitability or business claim appears unless sourced from the transcript
+[x] No competitor reference uses generic labels — only specific named local Staten Island firms (Casella Law, DePalo Law Firm, Soren Law Group, Stephen Bilkis & Associates, Rudyuk Law Firm, Law Office of Tracy & Tracy, Jeffrey W. Johnson, Valerie Wolfman, Ettinger Law Firm, Gallo & Spero, Lepore Law, Connors & Sullivan, Danna & Associates, DiVernieri DiVernieri and Cotter, Summit Estate Planning Group, Leventhal Elias Law, Merlino & Gonzalez, Corash & Hollender, Rampulla & Newstad)
+[x] PageSpeed scores are explicitly flagged as NOT OBTAINED (hard API quota exhaustion this session) rather than estimated — action item logged for manual re-check before finalizing the report
+[x] DBM is recorded (inferred, not an exact quote — flagged as such: scale/build enterprise value ahead of a potential merger)
+[x] Revenue goal is recorded (stated: $6M, i.e. +$1M)
+[x] Close rate is recorded (not stated — defaulted to 15% per instructions)
+[x] Average case value is recorded (not stated — practice-area default flagged rather than presented as firm-confirmed)
+[x] Stated call focus / product interest is recorded and called out explicitly and prominently (top of this document and in Step 9) — this was a recruiting-focused pivot call, not a standard marketing/growth discovery call
+[x] Existing marketing/SEO/ad vendor engagements are recorded (none for marketing/SEO; recruiting/headhunter history noted as relevant context)
+[x] Budget constraints stated by the prospect are recorded (none stated; willingness to pay per-placement fees noted instead)
+
+OUTSTANDING ITEMS FOR MANUAL FOLLOW-UP BEFORE FINALIZING REPORT:
+1. PageSpeed mobile/desktop scores — public API quota fully exhausted this session (HTTP 429, quota_limit_value: 0); re-run manually from a real browser (pagespeed.web.dev) before finalizing.
+2. True Google Business Profile star rating and review count — Google Search/Maps panels could not be rendered by the fetch tools available this session; confirm manually before quoting any "Google reviews" figure in the report. Do not substitute the Yelp/FindLaw/Avvo numbers gathered here as if they were Google numbers.
+3. Live Google/LSA/Meta paid-ad status — none of Steps 6-8 could be visually confirmed via a live rendered browser this session; recommend a manual check, especially given the transcript's confirmation that the firm's own Facebook ads have been actively (and successfully) running recently.
+4. NAP inconsistency (Step 5) — at least 3 phone numbers and 2 addresses are circulating across the firm's own site and directory profiles; confirm the single correct set of NAP details directly with Gary before publishing anything in the report, since this could otherwise embarrass the firm.
+5. Team size discrepancy — transcript states "4 practicing lawyers," but the website lists 6 attorneys with individual bios. Confirm with Nick Holderman which figure should drive the capacity/hiring math in the recruiting proposal, since this call's real subject (fractional recruiting) hinges on an accurate current headcount.
+6. This proposal call is about fractional recruiting, not a standard growth/marketing package — confirm with Nick Holderman whether a full Growth, Profit, and Freedom Roadmap (as opposed to a recruiting-specific proposal) is even the right deliverable for this call before running /audit-write.
