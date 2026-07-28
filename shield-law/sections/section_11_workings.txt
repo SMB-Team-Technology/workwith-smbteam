@@ -1,0 +1,201 @@
+SHIELD LAW — SECTION 11 WORKINGS
+Sales Rep: Jonathan Farace | Date: July 31, 2026
+
+================================================================
+TRANSCRIPT-STATED NEED OVERRIDE CHECK (applied before package_decision.json)
+================================================================
+
+1. Call-purpose override: DOES NOT APPLY. Research notes Step 9 explicitly confirms
+   "This WAS a standard marketing/lead-generation growth discovery call — not a
+   Fractional CTO/AI-automation or coaching/ops engagement." Standard marketing +
+   coaching recommendation logic applies.
+
+2. Existing-vendor override: CONSIDERED, DOES NOT APPLY. Shield Law does have an
+   active 6-month contract with Convert Marketing (SEO + a new $1,500/mo Google Ads
+   campaign). On the letter of the rule this looks like it should exclude Full
+   Service Marketing. However, the override's purpose is to stop a marketing
+   recommendation being forced onto a firm that just committed to a vendor and has
+   no marketing gap. That is not this situation: the existing vendor's SEO work
+   failed to manage the office move and organic traffic collapsed 91% on their
+   watch, the current PPC spend under that vendor was assessed on the call as too
+   small to be effective, and the transcript's own next steps are "Shield Law will
+   investigate early termination of its current marketing contract to enable a
+   full-service takeover" by SMB Team. The stated need on this call literally IS a
+   full-service marketing takeover replacing a failing vendor — applying the
+   override here would exclude the exact product the prospect asked about. Full
+   Service Marketing stays in the recommendation.
+
+3. Budget-reality override: DOES NOT APPLY. Research notes state explicitly: "No
+   explicit statement of inability to afford a larger monthly marketing
+   investment; the only budget-related statement is Jonathan Farace's critique
+   that the firm's current $1,500/mo PPC spend is too small to be effective." No
+   affordability constraint from the prospect.
+
+Conclusion: none of the three overrides change the category of product being
+recommended. package_decision.json's marketing + coaching selection is usable,
+subject to the revenue/tier cross-check below (confidence: low).
+
+================================================================
+REVENUE / TIER CROSS-CHECK (package_decision.json confidence: low)
+================================================================
+
+package_decision.json used a HubSpot-sourced estimate ($570,000, band $180K-$960K)
+because no annual revenue figure was stated on the call. Research notes confirm:
+"Annual revenue: Not stated as an annual figure. July 2026 is projected at a low of
+$45k for the month; revenue described as highly volatile since the move." Revenue
+goal: $200k/mo, stated explicitly (a goal, not current state).
+
+Cross-check: Marketing tier selection here does not actually hinge on pinning down
+the exact revenue figure. Per the eligibility table, Essentials requires a single
+location AND a single practice area. Shield Law has four locations (Quincy,
+Brockton, Boston, Waukesha) and markets/lists multiple practice areas (current:
+bankruptcy, consumer protection; pivot: estate planning, family law; site also
+lists personal injury and others) — Essentials is hidden regardless of the exact
+revenue number. Starter applies at $500K-$1M (or under $750K with multiple
+locations/practice areas) — both conditions independently point to Starter as long
+as revenue stays under $1M, which is true under every signal available (a "low"
+$45k month, historical volume consistent with sub-$1M annualized revenue, no
+statement or evidence of revenue approaching $1M). CONFIRMED: Starter tier,
+$4,997/mo bundled, is correct independent of the low-confidence exact dollar
+estimate.
+
+Coaching tier: $400K-$1M revenue (any team size) -> Elite Coach Plus, $3,200/mo
+bundled. Team size was not stated and package_decision.json defaulted to 3 (the
+number of named attorneys: Nick Yousif, Matt McKenna, Hunter Cook) — this does not
+change the coaching tier since the $400K-$1M band applies at "Any" team size.
+CONFIRMED: Elite Coach Plus is correct.
+
+No correction to package_decision.json's tier selections was needed. Both
+selections are robust to the revenue estimate's low confidence because they are
+independently supported by the practice-area/location eligibility filters and by
+every directional signal in the transcript (none of which suggest revenue near or
+above $1M).
+
+================================================================
+MANDATORY PRICE LOOKUP (verified against tables in audit-write.md)
+================================================================
+
+- Marketing package selected: Full Service Marketing — Starter
+  - Bundled price (from table): $4,997/mo
+  - Stand-alone price (from table): $5,697/mo
+  - Savings (stand-alone minus bundled): $700/mo
+
+- Non-marketing package selected: Elite Coach Plus
+  - Bundled price (from table): $3,200/mo
+  - Stand-alone price (from table): $3,497/mo
+  - Savings (stand-alone minus bundled): $297/mo
+
+- Legal AI Workforce (LAW) package selected: none (revenue and team profile do not
+  clearly support LAW readiness this pass; not included)
+
+- AI Avatar / Video Growth add-on selected: none
+
+- Total monthly investment (sum of all bundled/recurring prices): $8,197/mo
+
+- Total savings (sum of all savings): $997/mo
+
+================================================================
+AD SPEND
+================================================================
+
+Conservative: $7,500/mo (sum of channel minimums across the recommended pivot +
+current practice areas — Estate Planning, Family Law, and continuing
+Bankruptcy/Consumer Protection paid presence)
+
+Aggressive: $20,000/mo — this is the Starter tier's ad spend cap. The raw 20%-rule
+calculation using the stated $200k/mo revenue goal ($200k x 12 x 20% / 12 =
+$40,000/mo, x 1.3 Tier 2 Boston-metro multiplier = $52,000/mo, minus the $4,997/mo
+marketing fee = ~$47,000/mo available) comes in far above the Starter tier's
+$20,000 cap. Per the boundary rule, this would normally suggest a tier upgrade —
+but Growth tier requires $1M-$2M revenue, which no signal in this file supports.
+The aggressive figure is therefore capped at the Starter tier ceiling ($20,000/mo)
+rather than recommending a tier the firm is not shown to qualify for. Note for
+sales: as revenue recovers and stabilizes toward the $200k/mo goal, a tier upgrade
+conversation (Growth, $7,497/mo bundled, $50,000 ad spend cap) becomes appropriate
+— this is reflected in the Phase 4 roadmap language already built into this
+product line.
+
+35% SPEND CAP CHECK: At the conservative ad spend, total SMB spend ($8,197 mgmt +
+$7,500 ads = $15,697/mo) against an estimated ~$45,000-$47,500/mo current revenue
+baseline is ~33-35% — within the cap, but tight. At the aggressive ad spend
+($8,197 + $20,000 = $28,197/mo), spend would run ~59-63% of current depressed
+revenue — over the cap. Flagging for sales: the aggressive ad spend figure should
+be framed as a scale-up target for once revenue stabilizes, not a Day 1
+recommendation at today's depressed run rate. This does not change the published
+range ($7,500-$20,000, labeled as an estimate) but should inform how Jonathan
+presents it on the call.
+
+ROI PROJECTION (blended across Estate Planning, Family Law, and continuing
+Bankruptcy/Consumer Protection paid presence; close rate defaulted to 15%, not
+stated on call):
+
+Blended CPL (Google Search/LSA/Meta Retargeting/Meta Cold weighted 50/20/15/15,
+averaged across the three practice areas' CPL midpoints): ~$91 aggressive, ~$109
+conservative (with 20% cushion).
+
+Blended average case value (Estate Planning $1,500-$5,000+ mid ~$3,250; Family Law
+$5k-$10k mid ~$7,500; Bankruptcy default $1.5K-$3K mid ~$2,250 — used because no
+case value was stated for current practice; disclosed as a default): ~$4,333.
+
+Conservative scenario ($7,500/mo ad spend):
+- Leads: ~69/mo ($7,500 / $109)
+- Cases: ~10/mo (69 x 15% close rate)
+- Revenue: ~$44,600/mo (10 x $4,333)
+- Return: ~6x
+
+Aggressive scenario ($20,000/mo ad spend):
+- Leads: ~220/mo ($20,000 / $91)
+- Cases: ~33/mo (220 x 15% close rate)
+- Revenue: ~$143,000/mo (33 x $4,333)
+- Return: ~7x
+
+The section_11_next_steps.html template's Block 4 investment-block only supports a
+single ad-spend/case-value/cases/revenue row set (no separate conservative/
+aggressive sub-rows in this template version) — per CRITICAL RULES, the HTML
+structure was not altered. The client-facing Block 4 therefore shows the combined
+range ($7,500-$20,000/mo ad spend; 10-33 cases/mo; ~$44,000-$143,000/mo revenue),
+with the full conservative/aggressive breakdown preserved here for sales reference.
+
+================================================================
+DBM STATEMENT (BLOCK 1)
+================================================================
+
+We help law firm owners whose lead generation collapsed overnight through no
+fault of their own get a rebuilt, diversified pipeline across faster-paying
+practice areas so they can stop relying on a second job and finally take home the
+income their firm is capable of producing.
+
+================================================================
+QUICK WIN OPPORTUNITIES IDENTIFIED (6+)
+================================================================
+
+1. [Lead Gen / Quick Win] Reclaim the Quincy Google Business Profile — every
+   directory still anchors the firm to Brockton; competitor: Levin and Levin, LLP.
+2. [Lead Gen / Long-Term] Launch the Estate Planning & Family Law pivot — faster,
+   higher-value retainers than current bankruptcy/consumer protection casework; no
+   named competitor tied to this specific pivot.
+3. [Lead Gen / Quick Win] Claim Local Service Ads placement — competitor: Bellotti
+   Law Group, P.C. (10.0 Avvo rating, the credibility bar LSA rewards).
+4. [Intake / Quick Win] Put a follow-up system behind every lead — no named
+   competitor.
+5. [Team / Long-Term] Delegate admin and follow-up to the attorneys already on
+   staff (Matt McKenna, Hunter Cook) — no named competitor.
+6. [Profit / Quick Win] Establish a baseline for the $200k/month goal — no named
+   competitor.
+
+================================================================
+FIRST 90 DAYS
+================================================================
+
+1. Launch Google Ads and Local Service Ads campaigns across bankruptcy, consumer
+   protection, Estate Planning, and Family Law — replacing the underfunded
+   $1,500/mo campaign with a properly resourced, multi-channel approach.
+2. Claim and optimize the Quincy Google Business Profile, and begin consolidating
+   the firm's 122 Brockton reviews toward the new location.
+3. Rebuild city-specific landing pages and tighten the website's contact-form
+   placement to convert the new traffic being driven to it.
+4. Kick off Elite Coach Plus coaching sessions with Nick to begin delegating
+   admin, follow-up, and intake to Matt McKenna and Hunter Cook.
+5. Establish baseline profit tracking (case value, close rate, cost per
+   acquisition) across all four practice areas to measure progress toward the
+   $200k/month goal.
