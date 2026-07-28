@@ -1,0 +1,170 @@
+RMD LAW — SECTION 11 WORKINGS
+======================================================================
+
+TRANSCRIPT-STATED NEED OVERRIDE CHECK (applied before package_decision.json)
+----------------------------------------------------------------------
+1. Call-purpose override: DOES NOT APPLY. Research notes explicitly state this was
+   a standard marketing/growth discovery call ("to explore smbteam.com's marketing
+   services for RMD Law"), covering lead-gen channel mix, budget reallocation,
+   website redesign, AI avatars, review management, and intake optimization. No
+   Fractional CTO / AI automation / coaching-only framing was stated.
+2. Existing-vendor override: DOES NOT APPLY, on balance. Two vendor relationships
+   are mentioned: (a) Neil Patel's "Excel" team, which handles strategy but whose
+   contract is ENDING by end of August 2026 — explicitly described in the notes as
+   creating "an immediate need for a new partner." A firm whose primary marketing
+   vendor is about to depart is the opposite of the scenario this override protects
+   against (a firm that just signed and has no gap). (b) A separate overseas agency
+   handles content, dev, and link building with no stated end date — but this is a
+   narrow production vendor, not a full marketing/paid-ads/review-management
+   engagement, and the call itself was explicitly framed around exploring a full
+   marketing partnership. Full Service Marketing remains an appropriate
+   recommendation; the overseas vendor is flagged below as a first-90-days
+   coordination point, not a reason to exclude the package.
+3. Budget-reality override: DOES NOT APPLY. No budget constraint was stated. The
+   firm currently spends $80,000/month and the call was about reallocating that
+   existing budget, not about an inability to spend at a given level.
+
+None of the three overrides trigger a departure from a standard Marketing +
+Coaching/Ops recommendation.
+
+REVENUE RE-VERIFICATION (package_decision.json confidence: medium)
+----------------------------------------------------------------------
+package_decision.json used the HubSpot band "$961K–$3M" and picked the numeric
+midpoint ($1,980,500), landing on the Growth tier ($1M–$2M). Re-reading the
+research notes against this figure surfaces multiple signals that the firm is
+materially larger than that midpoint:
+  - The firm supports a genuine, currently-active $80,000/month ($960,000/year)
+    marketing budget. At a plausible 10-25% marketing-to-revenue ratio for an
+    aggressively expanding PI firm, this alone implies annual revenue in the
+    $3.8M-$9.6M range. Even at an unusually high 30-35% ratio (aggressive growth
+    mode, consistent with active multi-market expansion), implied revenue is
+    still $2.7M-$3.2M+ — well above the $1.98M Growth-tier estimate.
+  - Firm scale: 9 office locations across 2 states, 6 named attorneys each with
+    individual bio pages, an in-house CMO managing paid ads, and a separate
+    Marketing Director (Nick) — a materially larger operation than a firm sized
+    at ~$2M/year typically supports.
+  - Concurrent, simultaneous vendor relationships (Neil Patel/Excel team for
+    strategy, a separate overseas content/dev/link-building agency, plus in-house
+    management of Yelp Ads, Google, LSA, and ChatGPT Ads) further indicate scale
+    beyond the Growth-tier band.
+CORRECTION: revenue is revised upward from the $1,980,500 Growth-tier estimate to
+the $2M-$3M Dominate band, using $2,500,000/year ($208,333/month) as the working
+midpoint for all downstream calculations. This is itself an estimate — exact
+revenue was never stated in the transcript — and should be confirmed by sales
+before the proposal call. If actual revenue is confirmed at $3M+, the marketing
+package should move to Platinum and the coaching/ops package should be
+re-evaluated against the "$3M+ / Large team" row.
+Team size: also not stated as a headcount. Roles confirmed (CMO, Marketing
+Director, 6 attorneys, 9-location operational footprint) clearly exceed the
+"fewer than 5, no dedicated staff" disqualifier for Master's Circle — "5+ with
+dedicated staff" is treated as met.
+
+MANDATORY PRICE LOOKUP (character-checked against tables in audit-write.md)
+----------------------------------------------------------------------
+- Marketing package selected: Full Service Marketing — Dominate
+  - Bundled price (from table): $10,497/mo
+  - Stand-alone price (from table): $12,497/mo
+  - Savings (stand-alone minus bundled): $2,000/mo
+- Non-marketing package selected: Master's Circle + FCOO Director
+  - Bundled price (from table): $8,394/mo
+  - Stand-alone price (from table): Master's Circle $4,997/mo + FCOO Director
+    $5,797/mo = $10,794/mo
+  - Savings (stand-alone minus bundled): $2,400/mo
+- Legal AI Workforce (LAW) package selected: none (Phase 3 roadmap mention only,
+  not part of the current proposal — flagged per escalation rule: confirm LAW
+  delivery has launched and capacity is available before ever including it)
+- AI Avatar / Video Growth add-on selected: none
+- Total monthly investment (sum of bundled/recurring prices): $10,497 + $8,394 =
+  $18,891/mo
+- Total savings (sum of all savings): $2,000 + $2,400 = $4,400/mo
+
+35% TOTAL SPEND CAP CHECK
+----------------------------------------------------------------------
+Monthly revenue (working estimate): $208,333. 35% cap = $72,917/mo (management
+fees + ad spend combined). Fees = $18,891/mo, leaving $54,026/mo available for ad
+spend under the cap — this is the binding constraint on the aggressive ad spend
+scenario, not the Dominate tier's $100,000 ad spend cap.
+
+AD SPEND CALCULATION
+----------------------------------------------------------------------
+Conservative = sum of channel minimums, MVA/Car Accidents row (car accidents are
+RMD Law's flagship, homepage-featured case type; PI hard floor for High
+competitiveness — consistent with $250-300 CPCs cited in the transcript — is
+$10,000, already satisfied by the Google PPC minimum alone):
+  Google PPC $10,000 + LSA $2,000 + Meta Retargeting $1,500 + Meta Lead Gen
+  $6,000 = $19,500/mo
+
+Aggressive = 20% rule vs. reverse math, capped by the 35% total-spend rule above:
+  20% rule: no stated revenue goal (goal given in case-volume terms only) →
+  default to 2x current revenue estimate = $5,000,000. $5,000,000 x 20% / 12 =
+  $83,333/mo x 1.3 geo multiplier (Irvine/Orange County treated as Tier 2, in
+  line with San Diego) = $108,333/mo, minus $10,497 marketing management fee =
+  $97,836/mo.
+  Reverse math: $5,000,000 revenue goal / 12 = $416,667/mo / $6,500 avg case
+  value (PI general default midpoint, disclosed) = 64 target cases/mo / 15%
+  default close rate = 428 required leads x $445 blended CPL = $190,282/mo.
+  Reverse math is higher, per instructions — but both figures exceed what the
+  35% total-spend cap allows at the estimated revenue level. Binding constraint:
+  $54,026/mo (35% cap minus fees), rounded to $54,000/mo.
+
+Blended CPL (channel-weighted, Accident & Injury CPL midpoints): Google Search
+$705 (51.3% weight) + LSA $235 (10.3%) + Meta Retargeting $90 (7.7%) + Meta Cold
+$170 (30.8%) = ~$445 blended, no cushion. Conservative scenario applies the
+required 20% cushion: $445 x 1.2 = ~$534.
+
+ROI PROJECTIONS
+----------------------------------------------------------------------
+Conservative ($19,500/mo, CPL $534 with cushion):
+  Leads = 19,500 / 534 ≈ 36
+  Cases = 36 x 15% close rate ≈ 5
+  Revenue = 5 x $6,500 avg case value (PI general default, disclosed) = $32,500
+  Return = $32,500 / $19,500 ≈ 1.7x
+
+Aggressive ($54,000/mo, CPL $445, no cushion):
+  Leads = 54,000 / 445 ≈ 121
+  Cases = 121 x 15% ≈ 18
+  Revenue = 18 x $6,500 = $117,000
+  Return = $117,000 / $54,000 ≈ 2.2x
+
+Note: average case value uses the disclosed Personal Injury (general) default of
+$5,000-$8,000 (midpoint $6,500), not the higher Truck Accident default
+($15,000-$50,000), since RMD Law's caseload spans many PI sub-types beyond
+trucking specifically. Close rate uses the disclosed 15% default — the
+transcript's 28% figure is intake-to-signed conversion on already-qualified
+leads, a later funnel stage, and is not conflated with the lead-to-client close
+rate default here.
+
+DBM STATEMENT FOR BLOCK 1
+----------------------------------------------------------------------
+DBM (inferred, not a direct quote — flagged in research notes for confirmation
+on the next call): scale and dominate — building a multi-market, multi-practice
+firm that leads every city it enters, rather than "runs itself" or "grow and
+sell" framing.
+Block 1 formula: "We help multi-market personal injury firms get a marketing
+system that converts the budget they're already spending so they can dominate
+every city they expand into."
+
+QUICK WIN OPPORTUNITIES (6, across Lead Gen / Intake / Profit)
+----------------------------------------------------------------------
+1. [Lead Gen, Quick Win] NAP/phone number consistency fix — no competitor
+2. [Lead Gen, Long-Term] Sacramento local pack visibility — competitor: Demas
+   Law Group, P.C.
+3. [Lead Gen, Long-Term] Austin local trust-building ahead of ad spend —
+   competitor: Thomas J. Henry Injury Attorneys
+4. [Lead Gen, Quick Win] San Bernardino local pack gap — competitor: The
+   Dominguez Firm
+5. [Intake, Quick Win] LSA account rebuild (aged/poor ranking) — no competitor
+6. [Profit, Quick Win] Attach a dollar figure / margin target to the case-volume
+   goal — no competitor
+
+FIRST 90 DAYS
+----------------------------------------------------------------------
+1. Rebuild the aged LSA account and launch coordinated Google Ads and Meta
+   campaigns across Irvine, Sacramento, San Diego, San Bernardino, and Austin
+2. Fix NAP consistency across FindLaw, Yelp, and directory listings
+3. Address the mobile website experience once live PageSpeed scores are
+   confirmed, prioritizing pages already driving the most paid traffic
+4. Kick off Master's Circle group coaching and begin Fractional COO Director
+   sessions to start building delegation structure behind the expansion
+5. Stand up full-funnel intake tracking to see what happens to a lead before it
+   becomes "qualified"
