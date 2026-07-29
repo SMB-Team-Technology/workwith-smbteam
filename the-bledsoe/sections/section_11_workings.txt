@@ -1,0 +1,324 @@
+SECTION 11 — WORKINGS FILE
+The Bledsoe Firm — August 12, 2026
+============================================================
+
+TRANSCRIPT-STATED NEED OVERRIDE (read this first)
+------------------------------------------------------------
+package_decision.json (confidence: medium) selected Full Service Marketing —
+Dominate + Elite Coach Plus using a pure revenue/team-size lookup. It has no
+visibility into what the call was actually about. Per the audit-write.md
+Transcript-Stated Need Override, the CALL-PURPOSE OVERRIDE applies here and
+supersedes the coaching selection regardless of confidence level:
+
+Research notes state explicitly: "this call was NOT a standard marketing-only
+discovery call. It covered two co-equal topics: (1) standard marketing
+consolidation... AND (2) a Fractional CTO (FCTO) / AI-driven intake automation
+engagement, explicitly proposed to build custom AI automations (e.g., an
+'Intake Qualifier' tool that grades calls, tailors follow-ups, and coaches
+staff on objection handling) to double the firm's 17% conversion rate."
+
+This is a hybrid marketing + Fractional CTO/AI-automation opportunity. Per the
+override instructions: check the LAW table and non-marketing table first, and
+only keep a marketing package because the transcript ALSO shows an actual,
+verified marketing/lead-gen gap (NAP inconsistency, Yelp fragmentation, no
+FindLaw profile, named competitors out-pacing the firm on reviews) — which it
+does. Conclusion: keep the marketing package, but REPLACE Elite Coach Plus
+with a Legal AI Workforce (LAW) package, since the stated non-marketing need
+on this call was explicitly AI/FCTO-driven intake automation, not coaching.
+Coaching was never discussed on the call and would be an unforced second
+non-marketing product with no transcript basis.
+
+The existing-vendor override was also checked and does NOT apply: although
+Noble (marketing agency), a direct mail vendor, and Vertical 10 (Meta ads) are
+active and valued vendors, the research notes state the call itself framed
+topic (1) as "replacing the fragmented ~$36k/mo multi-vendor spend with SMB's
+[marketing package]" — i.e., the client is explicitly discussing consolidating
+onto an SMB marketing engagement, not signaling it already has its marketing
+need covered elsewhere. This is the opposite of the scenario the existing-
+vendor override is designed to catch.
+
+REVENUE BAND VERIFICATION (medium confidence — re-checked per instruction)
+------------------------------------------------------------
+package_decision.json revenue_effective ($2,000,000) is sourced from HubSpot's
+"$1,000,000 - $3,000,000" annual-revenue field (medium confidence), not from
+the research notes, which state "Annual revenue: not stated."
+
+Cross-check against research notes signals:
+- Current combined vendor spend is ~$36,000/mo. Of that, ~$8,500/mo is Noble's
+  management fee; the remainder (~$26,500/mo: Google Ads $15,500 + Meta $4,000
+  + direct mail $7,000) is actual paid media/channel spend. Media spend in the
+  15-20% of the revenue range typical for an aggressively growing firm implies
+  roughly $1.6M-$2.1M in annual revenue — consistent with, and centered right
+  around, the $2M HubSpot estimate.
+- The firm "tripled in size," is targeting 20+ new clients/month (record month
+  17), and is funding new-office expansion into San Diego and LA — all
+  consistent with a firm at or above the $2M mark, not below it.
+- Counter-signal: the research notes state the call referenced SMB's "Full
+  Service Marketing Starter package ($5,700/mo managing up to $25k in ad
+  spend)" by name — Starter is the tier for the $500K-$1M band, well below
+  $2M. However, neither the $5,700 figure nor the $25k cap is an exact match
+  to any current approved table price (Starter bundled is $4,997/stand-alone
+  $5,697/cap $20k) — this reads as an approximate/rounded reference, likely
+  from an earlier stage of the sales conversation before revenue was
+  confirmed, not a precise, current tier determination.
+
+Given the media-spend evidence and growth signals directionally support the
+$2M estimate more strongly than the single imprecise tier-name reference
+contradicts it, the revenue band is NOT clearly indicated to be different from
+the decision file. Dominate tier ($2M-$3M band) is retained. This is a
+judgment call under genuine ambiguity — flagged below as an escalation item:
+confirm actual annual revenue with John Bledsoe before the proposal call. If
+revenue turns out to be under $2M, Growth tier ($7,497/mo bundled) would be
+the correct downgrade.
+
+ADDENDUM — raw transcript reviewed directly (via triggers/audit-research/
+the-bledsoe.json): the Fathom transcript confirms the "Full Service Marketing
+Starter Package ($5,700/mo managing up to $25,000 in ad spend)" reference came
+from the FIRST discovery call, where it was offered as a generic, un-verified
+starting point — that same transcript explicitly states next steps were to
+"initiate a free marketing audit to analyze the firm's current performance"
+and hold the August 12 follow-up specifically to review that audit and
+determine the real recommendation. In other words, "Starter" was a
+placeholder pitch made before any revenue verification — precisely the gap
+this audit (and the August 12 call it supports) exists to close. This
+reinforces treating the Starter mention as non-authoritative and retaining
+Dominate based on the actual revenue/media-spend cross-check above, rather
+than anchoring to the earlier call's un-verified guess.
+
+============================================================
+MANDATORY PRICE LOOKUP — CONFIRMED CHARACTER-BY-CHARACTER AGAINST TABLES
+============================================================
+
+Marketing package selected: Full Service Marketing — Dominate
+  Bundled price (from table): $10,497/mo
+  Stand-alone price (from table): $12,497/mo
+  Savings (stand-alone minus bundled): $2,000/mo
+
+Non-marketing package selected: Legal AI Workforce — Fractional CTO Level 2
+  (AI Accelerator L2)
+  Bundled price (from table): $4,997/mo
+  Stand-alone price (from table): $5,797/mo
+  Savings (stand-alone minus bundled): $800/mo
+  Rationale: Revenue $2M falls in the $1.5M-$3M target band for L2. The call's
+  explicit ask — a custom "Intake Qualifier" tool that grades calls, tailors
+  follow-ups, and coaches staff, to double a 17% close rate — matches L2's
+  "monthly custom agent builds, bi-monthly CTO strategy calls" description
+  precisely, more so than the lighter AI Essentials or L1 tiers.
+  Law Firm AI Foundation Sprint (one-time onboarding, paired with L2): $14,997
+  available as an OPTIONAL accelerator — not included by default, since no
+  urgency for a compressed sprint timeline was stated on the call. Flagged in
+  Block 2 deliverables as optional, not priced into Block 3.
+
+Legal AI Workforce (LAW) package: Fractional CTO Level 2 (same as above — this
+  IS the non-marketing package for this run)
+
+AI Avatar / Video Growth add-on selected: none
+  (No Alexis approval obtained; no transcript evidence of interest in video
+  content production beyond the attorney's existing YouTube presence)
+
+Total monthly investment (sum of all bundled prices): $10,497 + $4,997 = $15,494/mo
+Total savings (sum of all stand-alone minus bundled): $2,000 + $800 = $2,800/mo
+
+ELIGIBILITY CHECKS
+------------------------------------------------------------
+- Revenue $2M: Dominate band ($2M-$3M) — CONFIRMED. Under $3M correctly hides Platinum.
+- LAW eligibility: revenue $2M clears the $500K minimum; firm is not solo (John
+  + Kate + implied additional staff given "tripled in size"); owner shows
+  clear openness to AI/technology adoption (explicitly requested it) — CONFIRMED.
+- Minimum MRR $2,497: $15,494 exceeds minimum — CONFIRMED.
+- General rule "default to marketing + non-marketing": satisfied by Dominate +
+  LAW L2. A third product (coaching) was deliberately NOT forced — see override
+  note above.
+- 35% cap: see below — passes at conservative ad spend, requires disclosure at
+  aggressive ad spend (see AD SPEND CALCULATION).
+
+============================================================
+AD SPEND CALCULATION
+============================================================
+
+Practice Area: Family Law (Lake Forest, CA / Orange County)
+Geo tier: Orange County is not explicitly listed in the common geo tiers table.
+Treated as Tier 2 (primary high-density market, comparable to San Diego) given
+its affluence, competitive saturation (~80 child-custody attorneys), and
+direct adjacency to the LA metro — a judgment call, disclosed here.
+
+CONSERVATIVE — sum of recommended channel minimums (search-intent only):
+  Google PPC (Family Law min): $3,500
+  LSA (Family Law min):        $2,000
+  Total conservative:          $5,500/mo
+  (Meta channels added only in the aggressive scenario, consistent with how
+  this practice area was modeled in other recent audits.)
+
+AGGRESSIVE — 20% rule:
+  Revenue goal: not stated in dollars. The firm's own stated goal is to
+  "double again" — directly consistent with the rule's fallback of 2x current
+  revenue. 2 x $2,000,000 = $4,000,000.
+  $4,000,000 x 20% / 12 = $66,667/mo total marketing budget
+  x Tier 2 geo multiplier (1.3) = $86,667/mo
+  No Spanish campaign need stated — no multiplier applied
+  - Management fees ($15,494: Dominate + LAW L2) = $71,173 available ad spend
+  Rounded down to $70,000/mo aggressive ad spend.
+
+  Reverse math validation:
+    Revenue goal $4,000,000 / 12 = $333,333/mo
+    Average case value: not stated — Family Law default $3K-$5K midpoint =
+      $4,000 (disclosed estimate)
+    Target cases/mo = $333,333 / $4,000 = 83.3 cases/mo
+    Close rate: 17% (stated directly) -> Required leads = 83.3 / 0.17 = 490 leads/mo
+    Blended CPL (all 4 channels, Family Law, proportional weighting 35/20/15/30
+      Google Search/LSA/Meta Retargeting/Meta Cold, table midpoints):
+      $100 x .35 = $35.00 + $80 x .20 = $16.00 + $57.50 x .15 = $8.63 +
+      $85 x .30 = $25.50 = $85.13 blended CPL
+    Required spend = 490 x $85.13 = ~$41,714/mo
+
+  20%-rule figure (~$71,173, rounded to $70,000) is higher than reverse math
+  (~$41,714) -> per "use whichever is higher," $70,000/mo governs.
+  Dominate tier cap ($100,000) — $70,000 is comfortably within cap, no tier
+  upgrade required.
+
+  DISCLOSURE — CASE VOLUME MISMATCH: The formula-implied target of ~83
+  cases/month (and the resulting ~140 cases/month projected in the aggressive
+  ROI scenario below) is a mechanical output of the revenue-doubling formula.
+  It is dramatically higher than the firm's own stated operational goal of
+  ~20 new clients/month (current record: 17). Current staffing (John + Kate,
+  no additional confirmed intake team) could not process that volume without
+  major operational scaling. This should be read as a directional ceiling
+  under the "double revenue" framing, not a literal near-term forecast — flag
+  for Jacob to present the aggressive scenario carefully, and consider
+  anchoring the proposal conversation around the stated ~20-25 clients/month
+  goal instead.
+
+FINAL AD SPEND RANGE: $5,500/mo (conservative) — $70,000/mo (aggressive)
+
+35% CAP CHECK
+------------------------------------------------------------
+Total monthly investment (management fees) = $15,494/mo.
+Monthly revenue at $2M/yr estimate = $166,667/mo; 35% cap = $58,333/mo.
+- Conservative: $15,494 + $5,500 = $20,994/mo = ~12.6% of current monthly
+  revenue — well under cap.
+- Aggressive: $15,494 + $70,000 = $85,494/mo = ~51.3% of CURRENT monthly
+  revenue — OVER the 35% cap.
+- Against the revenue GOAL ($4M/yr -> $333,333/mo), which the aggressive ad
+  spend figure is explicitly scaled to: $85,494 / $333,333 = ~25.7% — under cap.
+The aggressive scenario only clears the cap once revenue growth toward the
+stated "double again" goal materializes. Disclosed as an escalation flag
+below (ad spend over $25K requires scoping approval; revenue estimate itself
+is medium confidence and should be confirmed before this scenario is treated
+as an operating plan).
+
+============================================================
+ROI PROJECTIONS
+============================================================
+
+CONSERVATIVE SCENARIO ($5,500/mo ad spend):
+  Channels: Google PPC + LSA
+  CPL blend: Google $100 midpoint + LSA $80 midpoint -> $90 blended, + 20%
+    conservative cushion = $108
+  Leads = $5,500 / $108 = ~50.9 -> ~51 leads/mo
+  Cases = 51 x 17% close rate = ~8.7 -> ~9 cases/mo
+  Revenue = 9 x $4,000 (Family Law default case value; not stated in
+    transcript, disclosed) = ~$36,000/mo
+  Return = $36,000 / $5,500 = ~6.5x
+
+AGGRESSIVE SCENARIO ($70,000/mo ad spend):
+  Channels: Google PPC + LSA + Meta Retargeting + Meta Cold
+  Blended CPL (no cushion, proportional weighting 35/20/15/30): $85.13
+    (calculated above)
+  Leads = $70,000 / $85.13 = ~822 leads/mo
+  Cases = 822 x 17% close rate = ~139.7 -> ~140 cases/mo
+  Revenue = 140 x $4,000 = ~$560,000/mo
+  Return = $560,000 / $70,000 = ~8.0x
+  Note: see CASE VOLUME MISMATCH disclosure above — 140 cases/month is a
+  mathematical ceiling under the revenue-doubling formula, not an operational
+  forecast at current staffing levels.
+
+CASE VALUE CAVEAT: Average case value was not stated in the transcript. The
+Family Law practice-area default ($3K-$5K, midpoint $4,000) is used for both
+scenarios and disclosed here per the "always disclose when using defaults"
+rule. Given the firm's "high-conflict divorce" and father's-rights
+positioning, actual case value may run higher than this default — recommend
+confirming on the proposal call.
+
+CLOSE RATE: The transcript states 17% directly (lead-to-consultation, current
+performance) — used as-is for both ROI scenarios rather than the process
+default of 15%. The LAW package's proposed doubling of this rate (to ~34%) is
+the upside case for Phase 1 and is not baked into these baseline projections,
+consistent with modeling current performance rather than a hoped-for future
+state.
+
+============================================================
+DBM STATEMENT FOR BLOCK 1
+============================================================
+
+"We help family law firm owners preparing to open new markets get one
+accountable marketing engine and an AI-powered intake system that converts
+more of the leads they already generate so they can scale into San Diego and
+LA while finally stepping back from the day-to-day work Kate and a real team
+can own instead."
+
+============================================================
+QUICK WIN OPPORTUNITIES (8 identified)
+============================================================
+
+1. [Lead Gen] Fix NAP inconsistency across directories — the website header
+   phone number does not match the number listed on Justia, Yahoo Local, and
+   other directories. No competitor (internal issue).
+2. [Lead Gen] Consolidate the fragmented Yelp listings ("The Bledsoe Firm" and
+   "John A. Bledsoe," 24 reviews) into one profile. No competitor (internal
+   issue).
+3. [Lead Gen] Close the review gap with Minyard Morris LLP — 246 reviews at
+   4.9 stars vs. the firm's 201 at 4.8. Competitor: Minyard Morris LLP.
+4. [Lead Gen] Build a defensive Lake Forest child-custody content/landing
+   page to counter an aggressive out-of-area geo-conquest. Competitor: Cianci
+   Law PC (Roseville, no local office).
+5. [Lead Gen] Close the FindLaw visibility gap. Competitor: Richard E. Young &
+   Associates (has a FindLaw profile; the firm does not).
+6. [Intake] Move the lead-capture form above the fold on the homepage. No
+   competitor (internal issue).
+7. [Intake] Deploy the AI Intake Qualifier tool (Fractional CTO Level 2) to
+   double the current 17% close rate. No competitor (internal capability
+   gap) — ties directly to the LAW package recommendation.
+8. [Team/Profit] Consolidate four vendors (Noble, direct mail, Vertical 10,
+   Google Ads) into one accountable engagement, creating the channel-level
+   profitability visibility John currently lacks. No competitor (internal
+   issue).
+
+============================================================
+FIRST 90 DAYS
+============================================================
+
+1. Launch consolidated Google PPC + LSA campaigns (conservative $5,500/mo)
+   targeting divorce and child custody terms across Lake Forest and Orange
+   County, replacing the fragmented $36,000/mo multi-vendor approach with one
+   accountable engagement.
+2. Fix the NAP inconsistency (unify the phone number across all directories)
+   and consolidate the fragmented Yelp listings.
+3. Move the website's lead-capture form above the fold.
+4. Legal AI Workforce (Fractional CTO Level 2) kickoff — configure Claude
+   Enterprise workspace and begin building the custom Intake Qualifier tool
+   to grade calls, tailor follow-ups, and coach staff on objection handling.
+5. Launch a systematic review-acquisition sequence to begin closing the gap
+   with Minyard Morris (246 vs. 201 reviews).
+
+============================================================
+ESCALATION FLAGS (internal — not in client report)
+============================================================
+
+- Revenue estimate $2,000,000 (medium confidence, HubSpot-sourced — not
+  stated in research notes): confirm actual annual revenue with John Bledsoe
+  before the proposal call. If confirmed under $2M, downgrade marketing tier
+  to Growth ($7,497/mo bundled) and re-run ad spend math.
+- LAW package (Fractional CTO Level 2): confirm with Jacob Meissner that LAW
+  delivery has launched and capacity is available before including in the
+  proposal.
+- Marketing MRR $10,497/mo: exceeds the $10K scoping-approval threshold —
+  approval required before presenting.
+- Aggressive ad spend $70,000/mo: exceeds the $25K threshold — paid ads team
+  review required.
+- Aggressive ad spend exceeds the 35% cap against CURRENT estimated revenue
+  (clears only against the stated revenue-doubling goal) — flag for review
+  alongside the revenue confirmation above.
+- Team size defaulted to 3 (not stated numerically in research notes) — used
+  only to confirm LAW eligibility (not solo); does not otherwise change the
+  package recommendation since coaching was replaced by LAW per the
+  call-purpose override.
