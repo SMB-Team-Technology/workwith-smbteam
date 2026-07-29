@@ -1,0 +1,148 @@
+DAVLATOV LAW FIRM, P.C. — SECTION 11 WORKINGS
+================================================================
+
+OVERRIDE CHECK (per audit-write.md TRANSCRIPT-STATED NEED OVERRIDE)
+================================================================
+1. Call-purpose override: DOES NOT APPLY. Transcript states this was a standard
+   two-phase engagement discussion (Phase 1 Operations, Phase 2 Marketing) — the
+   default marketing + coaching bundle matches what was actually discussed on the
+   call.
+2. Existing-vendor override: DOES NOT APPLY. No active marketing/SEO/ad vendor
+   contract stated. Lawmatics is CRM/intake software, described as underutilized,
+   not a marketing vendor.
+3. Budget-reality override: APPLIES. Transcript/notes state revenue "now only
+   covers expenses" (breakeven) and ~$1M in uncollected client receivables — a
+   real, material cash-flow constraint even though no dollar ceiling was named.
+
+REVENUE DATA FLAG FOR NICK:
+package_decision.json used revenue_effective = $50,000 and its selection_notes
+say "Revenue under $250K: Elite Coach selected, scoping approval required." This
+appears to be a monthly-vs-annual mixup — the research notes state revenue is
+$50,000/MONTH (~$600K/year run rate), not $50,000/year. At the correct ~$600K/year
+figure, the revenue table's own coaching band ($400K–$1M → Elite Coach Plus,
+$3,200/mo bundled) would normally apply instead of Elite Coach.
+HOWEVER: the Budget-Reality override (#3 above) independently supports keeping
+Elite Coach (the lower-cost tier) rather than upgrading to Elite Coach Plus,
+given the firm's breakeven position and $1M uncollected receivables. So the
+final recommendation below is UNCHANGED from package_decision.json — but for a
+different reason than the decision file states. Recommend Nick have a direct
+conversation with the client about affordability before finalizing, independent
+of the (inaccurate) automated "under $250K" flag.
+Marketing tier (Starter) is correct either way — $600K/year falls within the
+"$500K–$1M" Starter band regardless of the revenue mixup.
+No Legal AI Workforce (LAW) package is recommended — package_decision.json sets
+law_tier: null, and stacking additional recurring spend onto a breakeven firm
+with a real cash-flow crunch is not appropriate right now. This is also
+consistent with the LAW eligibility rule that firm readiness/support staff and
+financial headroom should be clear before adding LAW.
+
+MANDATORY PRICE LOOKUP (copied character-for-character from package_decision.json,
+verified against the live Marketing/Non-Marketing tables in .claude/commands/audit-write.md)
+================================================================
+- Marketing package selected: Full Service Marketing — Starter
+  - Bundled price (from table): $4,997/mo
+  - Stand-alone price (from table): $5,697/mo
+  - Savings (stand-alone minus bundled): $700/mo
+- Non-marketing package selected: Elite Coach
+  - Bundled price (from table): $2,600/mo
+  - Stand-alone price (from table): $3,497/mo
+  - Savings (stand-alone minus bundled): $897/mo
+- Legal AI Workforce (LAW) package selected: none
+- AI Avatar / Video Growth add-on selected: none
+- Total monthly investment (sum of all bundled/recurring prices): $7,597/mo
+- Total savings (sum of all savings): $1,597/mo
+
+Total SMB spend as % of monthly revenue: $7,597 / $50,000 ≈ 15.2% — well under
+the 35% cap, even before ad spend is added ($7,597 + $7,500 conservative ad
+spend = $15,097 / $50,000 ≈ 30.2%, still under 35%).
+
+CONSERVATIVE AD SPEND: $7,500/mo (from package_decision.json — within Starter
+tier's $20,000 ad spend cap)
+AGGRESSIVE AD SPEND: $20,000/mo (from package_decision.json — at Starter tier's
+ad spend cap; matches the tier ceiling so no upgrade trigger applies)
+
+ROI PROJECTIONS (Block 4) — ESTIMATES, using default assumptions disclosed below
+================================================================
+Assumptions (disclosed per audit-write.md — not stated on the call):
+- Close rate: 15% (default, not stated on call)
+- Average case values: not stated on call — using practice area defaults:
+  Immigration $3K–$6K (mid $4.5K), Family Law $3K–$5K (mid $4K), Personal
+  Injury/Accident $5K–$8K (mid $6.5K)
+- Channel mix assumption: 60% Google Search / 20% LSA / 20% Meta, spend split
+  evenly across the firm's three practice areas (Immigration, Family Law,
+  Personal Injury) given all three are covered in the recommended campaign
+- Blended CPL uses client-facing CPL table midpoints from audit-write.md:
+  Immigration blended ≈ $85/lead, Family Law blended ≈ $90/lead, Personal
+  Injury/Accident blended ≈ $496/lead (PI CPL is materially higher than the
+  firm's other two practice areas)
+
+Conservative ($7,500/mo, +20% CPL cushion applied):
+- Leads: ~52/mo
+- Cases: ~8/mo (52 × 15% close rate)
+- Revenue: ~$35,200/mo (blended avg case value ≈ $4,400, weighted toward
+  Immigration/Family Law volume)
+- Return: ~4.7x
+
+Aggressive ($20,000/mo, no cushion):
+- Leads: ~166/mo
+- Cases: ~25/mo
+- Revenue: ~$110,000/mo
+- Return: ~5.5x
+
+Note: the aggressive revenue estimate exceeds the defaulted revenue goal
+(~$100K/mo, itself a default = 2x current revenue since no goal was stated on
+the call) — flag this as an optimistic, assumption-driven estimate, not a
+guarantee, consistent with case-value and close-rate defaults used above.
+
+DBM STATEMENT (Block 1)
+================================================================
+"We help immigrant-serving law firm owners get predictable growth without
+adding more hours to the day, so they can finally step back from being the
+only engine behind their firm."
+
+QUICK WIN OPPORTUNITIES (6+ across all four pillars)
+================================================================
+1. [Lead Gen] Claim Personal Injury Visibility — why: zero search/directory
+   footprint despite a live PI service page — competitor: Karasik Law Group,
+   P.C. / The Orlow Firm — opportunity: launch PI-specific local SEO + Google
+   Ads to begin appearing in local pack and organic results.
+2. [Lead Gen] Launch Family Law Local SEO — why: zero footprint in Family Law
+   despite being a named pivot target — competitor: The Louis Law Firm, PLLC —
+   opportunity: build Family Law service + neighborhood landing pages, add
+   Family Law as a GBP category.
+3. [Lead Gen] Enroll in Local Service Ads — why: not observed in LSA despite a
+   4.7-star rating and 90+ reviews that already qualify the firm on reputation
+   — no specific named competitor confirmed in this research pass (LSA
+   rendering unavailable) — opportunity: pay-per-lead placement above all
+   organic and paid results.
+4. [Lead Gen] Reactivate the Existing Client Base — why: the firm's own
+   2,000–3,000 existing immigration clients are a warm audience the transcript
+   itself flags for PI/Family Law cross-referral — no competitor applicable —
+   opportunity: retargeting + referral campaign to this list.
+5. [Intake] Stop the Missed-Call Bleed — why: stated directly on the call as
+   an active issue causing lost leads and wasted marketing spend — no
+   competitor applicable — opportunity: call tracking/answering coverage plus
+   a defined follow-up sequence.
+6. [Team] Build a Delegation Layer — why: firm is "entirely dependent on the
+   owner," who works 12-hour days with no delegation structure — no competitor
+   applicable — opportunity: coaching-led build of a first management layer.
+7. [Profit] Recover Uncollected Receivables — why: ~$1M in uncollected client
+   debt is creating a real, active cash-flow crunch — no competitor applicable
+   — opportunity: a structured collections push paired with the firm's new
+   upfront-payment policy.
+
+FIRST 90 DAYS (3-5 bullets, ads first, then website, coaching kickoff, no live
+chat, no CRM setup mentions)
+================================================================
+1. Launch Google Ads and Local Service Ads campaigns for Personal Injury and
+   Family Law to start generating leads in the firm's two currently invisible
+   practice areas.
+2. Build out Personal Injury and Family Law service pages and Brooklyn
+   neighborhood landing pages on the website.
+3. Kick off the Elite Coach engagement to begin building a delegation
+   structure and a defined follow-up process for missed calls.
+4. Launch a retargeting and referral campaign to the firm's existing
+   2,000–3,000 immigration client base.
+5. Strengthen the local SEO foundation (Google Business Profile optimization,
+   directory/NAP consistency) to close the gap with Gursoy Law Firm in the
+   firm's established immigration category.
