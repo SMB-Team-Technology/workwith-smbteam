@@ -1,0 +1,186 @@
+==============================================================
+SECTION 11 WORKINGS — The Law Offices of Peter Paul Mendel
+==============================================================
+
+--------------------------------------------------------------
+OVERRIDE ANALYSIS — WHY package_decision.json WAS NOT USED AS-IS
+--------------------------------------------------------------
+package_decision.json (confidence: LOW) selected:
+  Marketing: Full Service Marketing — Starter ($4,997/mo bundled, $5,697 retail)
+  Coaching: Elite Coach Plus ($3,200/mo bundled, $3,497 retail)
+  Total bundled: $8,197/mo
+  Basis: revenue_effective $570,000, sourced from HubSpot's
+  "hubspot_annual_law_firm_revenue" field ("$180K - $960K" range midpoint),
+  NOT from the transcript.
+
+Per audit-write.md's TRANSCRIPT-STATED NEED OVERRIDE, all three overrides apply:
+
+1. CALL-PURPOSE OVERRIDE — TRIGGERED.
+   Research notes Step 9 explicitly states: "Stated call focus / product
+   interest: EXPLICITLY NOT a standard marketing/intake growth call." Jacob's
+   proposed path forward is business coaching (referral network, systems,
+   hiring, AI billing/AR tools) explicitly BEFORE any marketing spend, not a
+   marketing engagement itself. Per the override, do not default to Full
+   Service Marketing — only add a marketing package if the transcript shows
+   an actual marketing/lead-gen gap alongside the stated need. It does not:
+   the stated need is coaching/foundation-building.
+
+2. BUDGET-REALITY OVERRIDE — TRIGGERED.
+   Peter is explicitly unwilling to pay retainer/brand-awareness fees without
+   performance guarantees, following a bad experience paying for undifferentiated
+   ("~90% looky-loo") leads. This is a structural deal-structure constraint,
+   not just a dollar ceiling, and it directly rules out a standard retainer-based
+   Full Service Marketing package at this time.
+
+3. REVENUE INCONSISTENCY — the transcript (ground truth, per the
+   transcript-first principle) states current revenue is ~$3,500/month
+   (~$42,000/year annualized), from legacy attorney work — NOT a stable
+   mediation revenue stream. This is drastically inconsistent with the
+   HubSpot-sourced $570,000 annual estimate used by package_decision.json.
+   The HubSpot figure appears to reflect a broader/historical estimate that
+   does not match the firm's actual current run rate as described on the
+   call. Ground truth from the transcript is used instead.
+
+CONCLUSION: No marketing package is recommended in this proposal. This is a
+single-product recommendation (Elite Coach), which is explicitly permitted
+under the package eligibility rules when "the transcript clearly shows the
+firm's needs are best served by one service category."
+
+--------------------------------------------------------------
+LEGAL AI WORKFORCE (LAW) — CONSIDERED AND EXCLUDED
+--------------------------------------------------------------
+The transcript mentions Peter adopting "SMB Team's AI tools for billing/AR/
+follow-up efficiency" as part of the coaching plan — this maps conceptually
+to LAW. However, LAW's eligibility rules explicitly exclude:
+  - "Firm is solo with no support staff (minimum 1-2 staff needed to engage
+    with implementation)" — Peter is solo, confirmed team_size 1, no staff.
+  - Revenue under $500K — true under either the HubSpot estimate's low end
+    or the transcript's actual current run rate.
+LAW is therefore NOT included as a standalone product line in this proposal.
+Instead, the specific billing/AR/follow-up tooling Peter asked about is
+folded into the Elite Coach engagement's deliverables (coaching-guided
+implementation support), and formal LAW AI Essentials is flagged as a
+Phase 3 addition once Peter has at least one support hire in place (see
+roadmap below).
+
+--------------------------------------------------------------
+REVENUE / SCOPING — INTERNAL ESCALATION FLAGS (NEVER IN CLIENT REPORT)
+--------------------------------------------------------------
+- Revenue under $300K → scoping approval required (transcript-stated current
+  revenue of ~$42,000/year annualized is well under this threshold).
+- Revenue under $250K → confirm client has funds to cover 4 months of
+  services before proceeding. Sales should confirm Peter can sustain a
+  $2,600/month coaching investment for at least 4 months given current cash
+  flow is thin and mediation revenue is not yet a stable stream.
+- These flags are internal only and do not appear anywhere in the client
+  report.
+
+--------------------------------------------------------------
+MANDATORY PRICE LOOKUP
+--------------------------------------------------------------
+Marketing package selected: NONE (see override analysis above)
+
+Non-marketing package selected: Elite Coach
+  - Bundled price (from table): $2,600/mo
+  - Stand-alone price (from table): $3,497/mo
+  - Savings (stand-alone minus bundled): $897/mo
+  Note: package_decision.json selected Elite Coach Plus ($3,200/mo) based on
+  a $400K-$1M revenue band derived from the questionable HubSpot estimate.
+  Using the transcript's ground-truth current revenue (~$42K/year, far below
+  every band in the non-marketing table), Elite Coach — the lowest-cost
+  coaching tier, and the tier matching the $250K-$400K band — is selected
+  instead, per the budget-reality override's instruction to "lead with the
+  lowest-cost package that still addresses the transcript's stated need."
+
+Legal AI Workforce (LAW) package selected: none (excluded — solo/no staff,
+  revenue under $500K; see analysis above)
+
+AI Avatar / Video Growth add-on selected: none (not indicated by transcript)
+
+Total monthly investment (sum of all bundled/recurring prices): $2,600/mo
+Total savings (sum of all savings): $897/mo
+
+--------------------------------------------------------------
+AD SPEND — NOT RECOMMENDED IN THIS PROPOSAL
+--------------------------------------------------------------
+Per the call-purpose and budget-reality overrides, no marketing package and
+no ad spend is being recommended in this proposal. Block 4 (Recommended Ad
+Spend) has been omitted from section_11_next_steps.html for this reason —
+recommending a dollar ad-spend figure here would contradict the transcript's
+explicit statement that marketing is a later-phase decision pending a
+performance-based, pay-per-signed-case vendor (which Jacob is researching
+separately). package_decision.json's ad_spend_conservative ($3,500) and
+ad_spend_aggressive ($14,000) figures are not used. Exploring paid,
+performance-based lead generation is noted as a Phase 2 milestone in the
+roadmap instead.
+
+--------------------------------------------------------------
+DBM STATEMENT FOR BLOCK 1
+--------------------------------------------------------------
+Dominant Buying Motive: Scale-and-dominate — building a multi-mediator
+platform (~50 mediators, each generating $20K-$40K/month), rooted in the
+freedom motivation of permanently eliminating the AR/collections risk
+($500,000 uncollected) that ended Peter's prior general practice.
+
+--------------------------------------------------------------
+QUICK WIN OPPORTUNITIES (6+, across all four pillars)
+--------------------------------------------------------------
+1. [Lead Gen / Quick Win] Directory & NAP Cleanup — Why: three different
+   addresses and three different phone numbers across active directories;
+   Avvo and FindLaw still describe the prior general practice. No named
+   competitor callout (internal fix, not a competitive comparison).
+   Opportunity: standardizing NAP and updating stale directories strengthens
+   the referral channel at zero ad spend.
+
+2. [Lead Gen / Long-Term] Untapped Geo Landing Pages — Why: the
+   longbeachmediation subdomain proves the model works, but no equivalent
+   pages exist for surrounding cities or the business/real estate practice
+   area. Competitor: South Bay Mediation (Torrance-based) already serves
+   part of this geo footprint for divorce mediation. Opportunity: replicate
+   the subdomain model once systems can support additional volume.
+
+3. [Intake / Quick Win] No Multi-Party Qualification Filter — Why: mediation
+   requires buy-in from all parties, but past lead-gen produced ~90%
+   "looky-loo" inquiries with no screening step. No named competitor.
+   Opportunity: a mediation-specific qualification script filters non-viable
+   inquiries before they reach Peter's calendar.
+
+4. [Team / Long-Term] Zero Delegation Capacity — Why: no staff exist to
+   handle case files, billing, or follow-up; hard ceiling on 3 mediations/week
+   and the 50-mediator vision. No named competitor. Opportunity: a coaching-
+   guided hiring plan for the first support hire.
+
+5. [Profit / Quick Win] AR/Collections Risk Recurrence — Why: the prior
+   $500,000 AR disaster happened with no dedicated billing/collections
+   process; the same exposure exists today without one. No named competitor.
+   Opportunity: SMB Team's AI billing/AR/follow-up tools (part of the Elite
+   Coach engagement) close this gap before volume scales.
+
+6. [Profit / Long-Term] No Revenue Visibility Into the Mediation Line — Why:
+   current reported revenue is legacy attorney work, not mediation; no clean
+   tracking exists of what mediation itself generates case by case. No named
+   competitor. Opportunity: separate tracking is the baseline needed to know
+   whether the $40,000/month goal is being hit.
+
+--------------------------------------------------------------
+FIRST 90 DAYS
+--------------------------------------------------------------
+NOTE: The standard instruction to "lead with launching ads first, then
+website work" does not apply here, since no marketing package is being
+recommended (see override analysis above). First 90 days instead leads with
+the Elite Coach kickoff and the foundational systems the transcript
+describes as the actual stated need.
+
+1. Kick off the Elite Coach engagement — first 1:1 session mapping Peter's
+   existing attorney referral network and identifying the fastest wins to
+   strengthen it.
+2. Build and implement a mediation-specific intake qualification script to
+   filter non-viable "looky-loo" inquiries before they reach Peter's
+   calendar.
+3. Stand up AI billing/AR/follow-up tooling as part of the coaching
+   engagement so every new mediation is tracked and collected on.
+4. Clean up and standardize NAP information across Avvo, FindLaw, Yelp, and
+   Chamber of Commerce so all directories reflect the current mediation-only
+   practice.
+5. Define the firm's first support hire and begin the hiring roadmap toward
+   the team needed to handle 3 mediations a week.
