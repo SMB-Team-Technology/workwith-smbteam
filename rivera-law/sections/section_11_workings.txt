@@ -1,0 +1,222 @@
+==============================================================
+SECTION 11 WORKINGS — Rivera Law
+==============================================================
+
+--------------------------------------------------------------
+OVERRIDE ANALYSIS — WHY package_decision.json WAS NOT USED AS-IS
+--------------------------------------------------------------
+package_decision.json (confidence: MEDIUM) selected:
+  Marketing: Full Service Marketing — Platinum ($15,997/mo bundled, $18,997 retail)
+  Coaching: Elite Coach Plus ($3,200/mo bundled, $3,497 retail)
+  Total bundled: $19,197/mo
+  Basis: revenue_effective $3,000,000, sourced from HubSpot's
+  "hubspot_annual_law_firm_revenue" field ("$3,000,000+"), NOT from the transcript.
+
+None of the three named overrides (call-purpose, existing-vendor, budget-reality)
+are triggered here — this is a standard marketing/growth discovery call, no
+existing marketing vendor was mentioned, and no budget constraint was stated.
+However, per the instruction for medium-confidence decision files, the selected
+tiers were cross-checked against the research notes, and a clear revenue
+inconsistency was found:
+
+REVENUE INCONSISTENCY — the transcript (ground truth, per the transcript-first
+principle) states:
+  - Monthly revenue fell from ~$100k to ~$50k after an associate left with a
+    large share of the client base in November (active files: 900 -> 688).
+  - The firm has since had a "recent $100k month" but revenue "remains volatile."
+  - The firm's own STATED near-term goal is to "restore revenue to $1M/year" —
+    language that only makes sense if current annualized revenue is BELOW
+    $1M/year. You do not "restore" a number you are already exceeding.
+  - The long-term vision ($2M-$3M/year, $500k personal income) is explicitly
+    framed as a future aspiration, not a current state.
+
+Annualizing the stated monthly range ($50k-$100k/mo) gives $600k-$1.2M/year,
+consistent with a firm currently under its own $1M/year recovery target.
+Using the midpoint of that range (~$75k/mo = ~$900k/year) as the working
+revenue estimate, this firm falls in the $500K-$1M marketing band and the
+$400K-$1M non-marketing band — nowhere near the $3M+ Platinum threshold the
+HubSpot field implied. The HubSpot "$3,000,000+" figure appears to reflect a
+stale, aspirational, or otherwise disconnected CRM value that does not match
+the firm's actual current run rate as described on the call. Per the
+eligibility table, revenue under $2M hides the Dominate and Platinum
+marketing tiers entirely — Platinum is therefore not eligible regardless of
+what the decision file selected. Ground truth from the transcript is used
+instead, consistent with how this override was handled in prior audits (e.g.
+The Law Offices of Peter Paul Mendel, where a HubSpot-sourced revenue figure
+was similarly overridden by a drastically different transcript-stated figure).
+
+Team size: package_decision.json defaulted team_size_effective to 3 because
+team size was not read from the notes. The notes clearly state team size as
+Jesus Rivera (solo attorney) plus 5 staff (office manager, 2 paralegals, legal
+assistant, IT contact) = 6 total. This does not change the coaching tier
+selection here, since Master's Circle requires $1M+ revenue (not met), but is
+noted for accuracy.
+
+CONCLUSION: Marketing tier corrected from Platinum to Starter. Coaching tier
+(Elite Coach Plus) remains correct — it independently matches the $400K-$1M
+"Any" team-size band regardless of the revenue correction.
+
+--------------------------------------------------------------
+MANDATORY PRICE LOOKUP
+--------------------------------------------------------------
+Marketing package selected: Full Service Marketing — Starter
+  - Bundled price (from table): $4,997/mo
+  - Stand-alone price (from table): $5,697/mo
+  - Savings (stand-alone minus bundled): $700/mo
+
+Non-marketing package selected: Elite Coach Plus
+  - Bundled price (from table): $3,200/mo
+  - Stand-alone price (from table): $3,497/mo
+  - Savings (stand-alone minus bundled): $297/mo
+
+Legal AI Workforce (LAW) package selected: none. Considered — the firm has
+6 total team members (meets the 1-2 staff minimum) and revenue plausibly
+clears the $500K floor, but nothing on the call indicated AI/tech adoption
+interest. Per the standard Growth Roadmap Phases, LAW AI Essentials is noted
+as a Phase 3 addition rather than a Phase 1 recommendation.
+
+AI Avatar / Video Growth add-on selected: none (not indicated by transcript;
+also requires Alexis approval and an established marketing budget/organic
+social presence not yet in place).
+
+Total monthly investment (sum of all bundled/recurring prices): $8,197/mo
+Total savings (sum of all savings): $997/mo
+
+Total SMB spend guardrail check: management fees ($8,197/mo) plus ad spend
+must not exceed 35% of monthly revenue. Using the ~$75k/mo working revenue
+estimate, the 35% cap is ~$26,250/mo, leaving ~$18,053/mo available for ad
+spend. This directly informed capping the aggressive ad spend scenario below.
+
+--------------------------------------------------------------
+AD SPEND — CONSERVATIVE AND AGGRESSIVE
+--------------------------------------------------------------
+Practice areas: Family Law (55%), Immigration (35%), Criminal Defense (20%,
+stated growth focus).
+
+CONSERVATIVE (sum of Google PPC minimums across all three practice areas,
+plus one firm-wide LSA minimum):
+  Family Law Google PPC: $3,500 + Immigration Google PPC: $3,000 +
+  Criminal Defense Google PPC: $5,500 + LSA (firm-wide): $2,000
+  = $14,000/mo
+  Meets Criminal Defense + High competitiveness floor ($5,000 min) and the
+  absolute minimum ($3,000/mo).
+
+AGGRESSIVE (20% rule, capped by tier and the 35% total-spend guardrail):
+  Revenue goal ($1,000,000/yr) x 20% / 12 = $16,667/mo
+  x Geographic multiplier (Schaumburg, a Chicago-metro suburb, treated as
+    Tier 2 primary high-density market): x1.3 = $21,667/mo
+  x Spanish campaign multiplier (bilingual branding strongly implied, not
+    PI/MVA): x1.33 = $28,817/mo
+  - Management fee ($4,997) = $23,820/mo raw available ad spend
+  Reverse math check: ($1,000,000/12) / ~$4,575 weighted avg case value
+    (using disclosed defaults: Family Law $3K-5K, Immigration $3K-6K,
+    Criminal Defense $3K-5K, weighted by practice mix) = ~18.2 cases/mo
+    / 15% default close rate = ~121.5 leads/mo x ~$125 blended Google
+    Search CPL = ~$15,188/mo. The 20% rule figure is higher, so it governs.
+  Starter tier ad spend cap is $20,000/mo — the raw $23,820 exceeds it, and
+  a tier upgrade is not available (Growth tier requires $1M-$2M revenue,
+  not met at the corrected ~$900k estimate). The 35% total-spend guardrail
+  is the binding constraint here: $26,250 - $8,197 mgmt fees = ~$18,053/mo.
+  AGGRESSIVE AD SPEND PRESENTED: $18,000/mo (rounded, within both the tier
+  cap and the 35% guardrail). Documenting here per the boundary rule that the
+  unconstrained calculation would support scaling toward the $20,000 tier cap
+  as revenue stabilizes and grows past $1M.
+
+ROI PROJECTIONS:
+Conservative ($14,000/mo):
+  Blended CPL with 20% cushion: ~$150
+  Leads: $14,000 / $150 = ~93
+  Cases: 93 x 15% = ~14
+  Revenue: 14 x $4,575 avg case value = ~$64,050/mo
+  Return: ~4.6x return on ad spend
+
+Aggressive ($18,000/mo):
+  Blended CPL (no cushion): ~$125
+  Leads: $18,000 / $125 = ~144
+  Cases: 144 x 15% = ~22
+  Revenue: 22 x $4,575 avg case value = ~$100,650/mo
+  Return: ~5.6x return on ad spend
+
+All figures are estimates, and average case value was not stated on the call
+— practice-area default ranges are used and disclosed per standard rule.
+
+--------------------------------------------------------------
+DBM STATEMENT FOR BLOCK 1
+--------------------------------------------------------------
+Dominant Buying Motive: Building a valuable legacy for his daughter to
+inherit in roughly 5 years, paired with a shift from being the firm's
+"Chief Everything Officer" to a CEO who is not personally the bottleneck on
+every consultation.
+
+Formula: "We help bilingual family law, immigration, and criminal defense
+attorneys get predictable revenue and a self-managing intake and team
+structure so they can build a legacy their family can inherit."
+
+--------------------------------------------------------------
+QUICK WIN OPPORTUNITIES (6+, across all four pillars)
+--------------------------------------------------------------
+1. [Lead Gen / Quick Win] NAP & Directory Cleanup — Why: LawInfo lists a
+   different phone number (773-368-1915) than the firm's actual line, and no
+   Avvo, Justia, or FindLaw profile exists for the firm at all, while named
+   competitors are fully present on all three. No named competitor callout
+   (internal fix). Opportunity: standardizing NAP and claiming missing
+   directories strengthens organic visibility at zero ad spend.
+
+2. [Lead Gen / Quick Win] Local Pack Invisibility — Why: Rivera Law did not
+   surface organically in any of nine local searches across all three
+   practice areas. Competitor: Sterling Lawyers, LLC dominates family law
+   visibility in the same searches. Opportunity: local SEO foundational work
+   (GBP optimization, directory consistency) to begin appearing where
+   competitors currently own the market.
+
+3. [Lead Gen / Long-Term] No Spanish-Language Paid Campaign — Why: the
+   firm's own branding (abogadoillinois.com, Spanish-first homepage) proves
+   a bilingual client base exists, but no dedicated Spanish-language ad
+   campaign was identified. No named competitor. Opportunity: a Spanish
+   campaign converts an existing brand asset into a paid acquisition channel
+   most competitors are not built to capture.
+
+4. [Intake / Quick Win] No Lead Qualification/Vetting Process — Why: Jesus
+   personally vets every Google Ads inquiry, converting only 5 of 20-30
+   monthly inquiries. No named competitor. Opportunity: a trained intake
+   process converts more of the leads already being paid for, without
+   additional ad spend.
+
+5. [Team / Long-Term] Single Point of Failure Risk — Why: an associate's
+   November departure cut active files from 900 to 688 and halved monthly
+   revenue; no management layer exists between Jesus and his five-person
+   staff. No named competitor. Opportunity: coaching-guided delegation and
+   leadership structure so no single departure can do this kind of damage
+   again.
+
+6. [Profit / Quick Win] No Revenue Predictability — Why: monthly revenue
+   swings between ~$50k and ~$100k with no stated system for smoothing it;
+   the firm's own goal is to "restore" $1M/year, implying it is not there
+   today. No named competitor. Opportunity: a marketing and coaching system
+   working together to convert the existing lead flow and reputation into
+   consistent monthly revenue.
+
+7. [Lead Gen / Quick Win] Criminal Defense Growth Focus Unsupported by Paid
+   Visibility — Why: Criminal Defense is the firm's stated marketing growth
+   focus (20% of practice, DUIs/drug possession), but no ad presence or
+   local pack visibility was found for this practice area either. Competitor:
+   James G. Dimeas & Associates holds a strong reputation/PR position here.
+   Opportunity: dedicated criminal defense campaigns targeting the exact
+   growth area the firm has already identified.
+
+--------------------------------------------------------------
+FIRST 90 DAYS
+--------------------------------------------------------------
+1. Launch Google Ads and LSA campaigns across Family Law, Immigration, and
+   Criminal Defense — replacing the $125/week ad hoc spend with a structured,
+   full-service campaign build.
+2. Rebuild the website's conversion path — add a contact form, attorney bio,
+   and geo-targeting pages for surrounding cities (Hoffman Estates, Elgin,
+   Palatine, Arlington Heights).
+3. Clean up NAP consistency across directories and claim missing Avvo,
+   Justia, and FindLaw profiles.
+4. Kick off the Elite Coach Plus engagement — first sessions focused on
+   building an intake qualification process and beginning the delegation
+   structure that reduces Jesus's personal bottleneck.
+5. Stand up a defined lead follow-up sequence so inquiries that don't
+   convert on first contact aren't simply lost.
