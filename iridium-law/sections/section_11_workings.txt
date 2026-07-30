@@ -1,0 +1,172 @@
+IRIDIUM LAW APC — SECTION 11 WORKINGS
+======================================
+
+PACKAGE DECISION FILE CROSS-CHECK (confidence: low — required per audit-write.md)
+----------------------------------------------------------------------------------
+package_decision.json (pipeline output) proposed:
+  - revenue_effective: $570,000 (sourced from HubSpot label "$180K-$960K" midpoint)
+  - team_size_effective: 3 (default, not stated)
+  - marketing_tier: Starter ($4,997/mo) — rationale given: "multiple practice areas detected"
+  - coaching_tier: Elite Coach Plus ($3,200/mo)
+  - ad_spend: $3,500 conservative / $14,000 aggressive
+
+Transcript-Stated Need Override check: none of the three overrides apply (this is a
+standard marketing/lead-gen discovery call, no existing vendor, no explicit budget veto).
+Proceeding to the confidence:low cross-check path instead.
+
+CORRECTION — the pipeline's inputs do not hold up against the research notes:
+
+1. "Multiple practice areas detected" is a parsing artifact. The pipeline's
+   practice_areas_detected list includes fragments like "on site: not observed directly"
+   and "transcript and" — clearly scraped text, not real practice areas. The research
+   notes' own Step 9 transcript extraction states plainly: "Practice areas confirmed:
+   Family Law, Northern California — general family law practice." This is a SINGLE
+   practice area. Combined with a single location (one co-working space in Pleasant
+   Hill), Essentials marketing is NOT excluded on scope grounds.
+
+2. Revenue was never stated as an annual figure, but it can be reasonably inferred
+   (Step 11 Tier-1 "infer from context" rule) from transcript figures that ARE stated
+   directly: profit ~$30K/month (up from $10-15K/month) with expenses under $3K/month.
+   Revenue = profit + expenses ≈ $30,000 + $2,500 = ~$32,500/month ≈ $390,000/year.
+   This is a far more grounded estimate than the HubSpot band midpoint ($570K), which
+   is a wide, generic range ($180K-$960K) not specific to this firm. $390K is
+   comfortably under the $750K Essentials revenue ceiling and under the $400K Elite
+   Coach Plus threshold.
+
+3. Team size: the pipeline defaulted to 3 (unstated). The transcript is explicit:
+   current team is Hadeel (sole attorney) + 1 paralegal. The "3 attorneys + 1
+   paralegal" figure is the stated 3-5 YEAR TARGET structure, not the team today.
+
+REVISED PACKAGE SELECTION (applied):
+  - Revenue effective: ~$390,000/year (inferred: $30K/mo profit + ~$2.5K/mo expenses,
+    annualized) — confidence: low-to-medium, transcript-grounded
+  - Team size effective: 2 (Hadeel + 1 paralegal)
+  - Practice areas: 1 (Family Law)
+  - Locations: 1 (Pleasant Hill co-working space)
+  - Revenue under $750K + single location + single practice area → Essentials is NOT
+    hidden → Full Service Marketing ESSENTIALS (not Starter)
+  - Revenue $250K-$400K → Elite Coach (not Elite Coach Plus, which requires $400K-$1M)
+
+MANDATORY PRICE LOOKUP
+-----------------------
+- Marketing package selected: Full Service Marketing Essentials
+  - Bundled price (from table): $3,497/mo
+  - Stand-alone price (from table): $3,797/mo
+  - Savings (stand-alone minus bundled): $300/mo
+  - Ad spend cap for this tier: $5,000/mo
+- Non-marketing package selected: Elite Coach
+  - Bundled price (from table): $2,600/mo
+  - Stand-alone price (from table): $3,497/mo
+  - Savings (stand-alone minus bundled): $897/mo
+- Legal AI Workforce (LAW) package selected: none (Phase 3 roadmap item only — revenue
+  currently under the $500K LAW minimum)
+- AI Avatar / Video Growth add-on selected: none
+- Total monthly investment (sum of all bundled/recurring prices): $6,097/mo
+- Total savings (sum of all savings): $1,197/mo
+
+35% CAP CHECK: Monthly revenue ~$32,500 x 35% = ~$11,375 max total SMB spend.
+$6,097 fees + up to $5,000 ad spend = $11,097 — within cap.
+
+AD SPEND CALCULATION
+---------------------
+Conservative (sum of channel minimums, fit within Essentials $5,000 cap):
+  Google PPC (Family Law min $3,500) + Meta Retargeting (min $1,200) = $4,700/mo
+  (LSA at $2,000 would push PPC+LSA to $5,500, over the Essentials cap — Meta
+  Retargeting is the next channel-priority item that fits.)
+
+Aggressive (20%-rule, per Step 3A-3H):
+  Revenue GOAL $1,500,000 (stated) x 20% / 12 = $25,000/mo
+  x Geo multiplier (SF Bay Area / Contra Costa = Tier 2, 1.3x) = $32,500/mo
+  - Marketing fee ($3,497) = ~$29,003/mo "available ad spend"
+  This vastly exceeds the Essentials tier's $5,000/mo ad spend cap. Per the
+  boundary rule (Step 3H), this signals a tier-upgrade path for later — not a
+  Phase 1 recommendation for a 6-month-old, 2-person firm. Presenting $29K/mo as
+  a current "recommended ad spend" would also blow the 35% total-spend cap and
+  contradicts recommending Essentials in the same document. Aggressive ad spend
+  for THIS phase is capped at the Essentials tier max: $5,000/mo. The gap between
+  $5,000 and the ~$29,003 implied by the $1.5M goal is called out explicitly in
+  the Growth Roadmap (Phase 2/4 — "upgrade marketing tier as revenue and ad spend
+  needs grow").
+
+  Reverse math cross-check: Target monthly cases = ($1.5M/12) / $37,500 avg case
+  value = 3.3 cases/mo. Required leads = 3.3 / 15% default close rate = 22.2
+  leads/mo. This is well BELOW what $4,700-$5,000/mo already produces (see below)
+  — confirming the Essentials-tier ad spend is sufficient to hit the transcript's
+  own stated target of "4-5 new clients/month," even at the conservative end.
+
+Blended CPL (Family Law, PPC + Meta Retargeting mix, ~74.5% PPC / ~25.5% Meta):
+  Base = ($100 x 0.745) + ($57.50 x 0.255) = $89.16
+  Conservative (with 20% cushion) = $89.16 x 1.2 = ~$107
+  Aggressive (no cushion) = ~$89
+
+ROI PROJECTION:
+  Conservative: $4,700/mo -> ~44 leads -> 44 x 15% = ~6-7 cases -> 6 x $37,500 =
+    ~$225,000/mo estimated revenue -> ~48x return
+  Aggressive: $5,000/mo -> ~56 leads -> 56 x 15% = ~8 cases -> 8 x $37,500 =
+    ~$300,000/mo estimated revenue -> ~60x return
+  Presented range: $4,700-$5,000/mo ad spend -> 6-8 cases/mo -> $225,000-$300,000/mo
+  estimated revenue impact. (High nominal multiples are consistent with high-ticket
+  family law retainer economics against a small ad budget, not a modeling error.)
+  NOTE FOR SALES: this revenue-impact range represents demand generation, not current
+  capacity — a 1-attorney firm cannot process 6-8 new $35-40K cases/month. This is
+  exactly why the coaching/team-build track (Elite Coach -> hiring path) runs in
+  parallel with marketing; flag for the Aug 11 call.
+
+DBM STATEMENT (Block 1)
+-------------------------
+Hadeel's dominant buying motive is Category 1 — a firm that runs itself so she has
+more time. Specifically: transition from "workhorse" associate-style hours to
+owner/strategist, escape the "rat race," and be present for her 13-year-old daughter.
+
+INTERNAL ESCALATION FLAGS (do not appear in client report)
+-------------------------------------------------------------
+- Family Law in a top-10 metro: San Francisco Bay Area DMA is a top-10 US metro —
+  flag "Family Law in top 10 metro — approval required" per audit-write.md escalation
+  rules.
+- Revenue under $300K: not triggered ($390K estimate is above this threshold).
+- Team-size discrepancy in transcript itself (3 attorneys+1 paralegal named vs. a
+  separately cited "6-person team" tied to the $250K/employee benchmark) — noted in
+  research notes Step 9, flagged there for the Aug 11 call, not resolved here.
+- Revenue estimate confidence is LOW (inferred from profit+expenses, not a directly
+  stated annual figure) — recommend confirming actual annual revenue on the Aug 11
+  call before finalizing contract terms.
+
+QUICK WIN OPPORTUNITIES (6, spanning all 4 pillars)
+------------------------------------------------------
+1. [Lead Gen / Quick Win] Verify Your Google Business Profile — why: this is the one
+   hard blocker the transcript itself names first; opportunity: near-zero cost, fastest
+   path to local map-pack visibility; who's doing it better: Radcliffe & Radcliffe (39
+   Yelp reviews, ranks in Pleasant Hill searches today).
+2. [Lead Gen / Quick Win] Clean Up Directory Listings (NAP Consistency) — why: Hadeel's
+   own name currently points to 3 different cities and her prior firm; opportunity:
+   consolidate to one accurate Iridium Law listing everywhere; who's doing it better:
+   Bay Area Family Law Center (single consistent Walnut Creek/Benicia presence).
+3. [Lead Gen / Long-Term Play] Launch Paid Search & LSA for Family Law — why: zero paid
+   channels exist today; opportunity: capture high-intent searches competitors are not
+   yet bidding on either. No named competitor currently running ads — omit who-row.
+4. [Intake / Quick Win] Add a Client-Qualification Step to Intake — why: no screening
+   exists before a lead hits the calendar; opportunity: protect attorney time as lead
+   volume grows. No competitor comparison applicable — omit who-row.
+5. [Team / Long-Term Play] Build a Path to the First Associate Attorney — why: firm
+   cannot operate a single day without Hadeel; opportunity: start the hiring/delegation
+   groundwork now so growth doesn't stall waiting on her personally. No competitor
+   comparison applicable — omit who-row.
+6. [Profit / Quick Win] Separate Profit Tracking by Lead Source — why: no visibility
+   into whether discounted ARAG cases are actually profitable versus full-price
+   referrals; opportunity: know which lead source to double down on. No competitor
+   comparison applicable — omit who-row.
+
+FIRST 90 DAYS (5 bullets)
+---------------------------
+1. Launch Google PPC and Meta Retargeting for family law across Pleasant Hill, Walnut
+   Creek, and surrounding Contra Costa County, timed to go live as GBP verification
+   clears.
+2. Complete Google Business Profile verification (co-work-space address approval) and
+   clean up fragmented Avvo, Martindale, Super Lawyers, and Lawyers.com listings so
+   every directory points to Iridium Law's real Pleasant Hill practice.
+3. Begin website review and content build-out — practice area pages and attorney bio
+   content to support the new local search visibility.
+4. Elite Coach kickoff begins — weekly accountability rhythm and SOP documentation for
+   the intake and case-handling processes Hadeel currently carries alone.
+5. Build a client-qualification step into intake so new lead volume converts instead of
+   consuming attorney time on unqualified consults.
