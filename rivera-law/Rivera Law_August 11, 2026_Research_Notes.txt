@@ -1,0 +1,423 @@
+==============================================================
+SMB TEAM — AUDIT RESEARCH NOTES
+Firm: Rivera Law
+Friendly Name: rivera-law
+URL: http://abogadoillinois.com
+Sales Rep: Jonathan Farace
+Date: August 11, 2026
+Contact: Jesus Rivera (riveraesq@gmail.com)
+==============================================================
+
+ENVIRONMENT / TOOLING NOTE (read before trusting any "not observed" line below):
+This research pass ran without an interactive browser. Live-verification
+tools failed or were unavailable, flagged wherever they affected a data
+point:
+- Google PageSpeed Insights (the public runPagespeed API) returned HTTP 429
+  "Quota exceeded for quota metric 'Queries' ... per day" on repeated
+  attempts (via both the web-fetch tool and a direct curl call) — a
+  shared-quota/daily-limit failure, not a transient blip. No mobile/desktop
+  score obtained; none fabricated.
+- Meta Ad Library (facebook.com/ads/library) returned HTTP 403 Forbidden on
+  direct fetch — no ad data retrievable for the firm or any competitor.
+- No live Google Maps rendering (3-pack, GBP panel, LSA unit) is available
+  in this environment; Google web search itself also blocks direct fetch
+  (returns an error page, not results). Where a Maps-native number (star
+  rating, review count, LSA presence) could not be independently
+  re-verified live, this is flagged explicitly rather than guessed at.
+- The firm's own site (http://abogadoillinois.com) was fetched and read
+  directly (live, resolves successfully) via a web-fetch tool. All
+  competitor names/details below come from live web-search and directory
+  sources (Yelp, LawInfo, ReachAttorneys, TrustAnalytica, Chamber of
+  Commerce, BBB, the competitors' own sites) — none are invented.
+
+==============================================================
+STEP 1 — WEBSITE RESEARCH
+==============================================================
+- Website URL confirmed live: Yes (abogadoillinois.com resolves, fetched
+  directly).
+- Last redesign date or estimated age: Not date-stamped on the site. Clean,
+  professional layout with bilingual (Spanish-primary) branding — reads as
+  a reasonably current build, though no explicit redesign date is shown.
+- Mobile responsive: Not independently confirmed in this environment (no
+  device-emulation rendering available). Nothing in the fetched content
+  indicated broken responsiveness.
+- Homepage headline: "Bienvenido/a" (Welcome) — the homepage is
+  Spanish-first, with copy centered on family law matters and legal
+  representation; no separate English headline was captured.
+- CTA above fold: Yes — "Llame hoy para una consulta gratis" (Call today
+  for a free consultation) with phone number (847) 348-0009 displayed
+  prominently.
+- Contact form location: No traditional contact form found on the
+  homepage. The site instead emphasizes direct phone contact, email
+  (info@abogadoillinois.com), and a consultation booking page
+  (abogadoillinois.com/consulta/).
+- Live chat present: No.
+- Attorney bio present: No detailed attorney biography surfaced on the
+  homepage.
+- Video present: No.
+- Blog present: No blog section found; no post dates to report.
+- Contact details (verified across directories): 1750 E Golf Rd Ste 130,
+  Schaumburg, IL 60173 / (847) 348-0009.
+- Notable: the site's domain and homepage are Spanish-first
+  ("abogadoillinois" = "Illinois lawyer" in Spanish) — directly reflects a
+  bilingual/Hispanic client base, consistent with the firm's Spanish-
+  speaking staff.
+- No geo-targeting landing pages found for surrounding cities (e.g.
+  Hoffman Estates, Elgin, Palatine, Arlington Heights).
+
+PageSpeed:
+- PageSpeed mobile score: Not obtainable. The PageSpeed Insights API
+  returned HTTP 429 (daily quota exceeded) on repeated attempts in this
+  environment (see tooling note above). Not fabricated.
+- PageSpeed desktop score: Same — not obtainable, same reason.
+
+==============================================================
+STEP 2 — GOOGLE BUSINESS PROFILE
+==============================================================
+- GBP found: Referenced consistently across directory aggregators (Yelp,
+  LawInfo, ReachAttorneys, TrustAnalytica); direct Google Maps panel
+  rendering is unavailable in this environment.
+- Star rating: 4.7 stars, reported consistently across two independent
+  live sources referencing Google Reviews (a general web search summary
+  and the ReachAttorneys directory profile). Not independently
+  re-verified against a live-rendered Maps panel, since Maps rendering
+  isn't available here — treat as reliable but not primary-source
+  confirmed.
+- Total review count: Not independently confirmed — no source surfaced an
+  exact review count tied to the 4.7 rating. Flagging as an open item to
+  verify live immediately before the proposal call.
+- Most recent review date: Not observed (no Maps access this pass).
+- Primary category: Listed across directories under multiple categories —
+  Attorney, Criminal Justice Attorney, Family Law Attorney, Immigration
+  Attorney, Personal Injury Attorney (per LegalRank aggregator profile,
+  which also showed 0 reviews on that specific platform). No single
+  "primary" category confirmed via a live Maps panel.
+- Photos active: Not observed.
+- Posts active: Not observed.
+- NAP inconsistency found — see Step 5 for full detail.
+
+==============================================================
+STEP 3 — LOCAL 3-PACK SEARCHES
+==============================================================
+NOTE: No live Google Maps 3-pack rendering is available in this
+environment. Competitor names and details below are real, live-verified
+firms and figures (via web search and directory sources), serving as the
+closest available proxy for local pack competition. "Firm appears"
+reflects organic search/directory visibility observed via live web
+search, not a confirmed Maps 3-pack position — it should not be read as
+proof the firm is literally absent from the 3-pack itself.
+
+Practice Area 1: Family Law (55% of practice)
+- Search 1 "divorce lawyer Schaumburg IL": Rivera Law did not surface in
+  the organic/directory results returned — competitors in pack: Sterling
+  Lawyers LLC (Schaumburg office, multi-location IL firm), Law Office of
+  Nicholas W. Richardson P.C. (Schaumburg), Reifman Law Offices
+  (Schaumburg).
+- Search 2 "family law attorney Schaumburg IL": firm did not surface —
+  competitors in pack: Gardi, Haught, Fischer & Bhosale LTD (Schaumburg,
+  4.5 stars/7 reviews, verified live), Law Offices of Robert M. Kaplan
+  (Schaumburg), Caryl Jacobs Gabe (practicing since 1976).
+- Search 3 "child custody lawyer Schaumburg IL": firm did not surface —
+  competitors in pack: Sterling Lawyers LLC (7,000+ client reviews
+  firm-wide, verified live), Miller Law Firm P.C., Anderson Attorneys P.C.
+
+Practice Area 2: Immigration (35% of practice)
+- Search 1 "immigration lawyer Schaumburg IL": firm did not surface —
+  competitors in pack: Francis Law Center (dedicated Schaumburg office,
+  4.8 stars/186 reviews per Chamber of Commerce, verified live), Gardi,
+  Haught, Fischer & Bhosale LTD, Khan Nayyar & Associates LLC.
+- Search 2 "immigration attorney near Schaumburg IL": firm did not
+  surface — competitors in pack: Law Offices of Angela L. Kwan
+  (Schaumburg), Takhsh Law, P.C., Metcalf & Associates, P.C.
+- Search 3 "deportation defense lawyer Schaumburg IL": firm did not
+  surface — competitors in pack: Law Offices of Angela L. Kwan, Francis
+  Law Center, Gardi, Haught, Fischer & Bhosale LTD.
+
+Practice Area 3: Criminal Defense (20% of practice; stated marketing
+focus for growth per transcript — DUIs, drug possession)
+- Search 1 "criminal defense lawyer Schaumburg IL": firm did not surface —
+  competitors in pack: Marder & Seidler Law Firm (Schaumburg, former Cook
+  County Public Defenders), James G. Dimeas & Associates (Schaumburg),
+  Gardi, Haught, Fischer & Bhosale LTD.
+- Search 2 "DUI lawyer Schaumburg IL": firm did not surface — competitors
+  in pack: Law Offices of Christopher M. Cosley, Steven R. Roach
+  (Schaumburg), John W. Callahan, Ltd.
+- Search 3 "criminal defense attorney Schaumburg Illinois": firm did not
+  surface — competitors in pack: James G. Dimeas & Associates ("Top 100
+  Criminal Defense Trial Lawyer," The National Trial Lawyers), Villadonga
+  & Villadonga (Mount Prospect, serves Schaumburg), Hirsch Law Group.
+
+Rivera Law did not surface organically in any of the 9 searches run above
+— notable directionally, though this cannot be read as confirmed absence
+from the actual Maps 3-pack given the rendering limitation noted above.
+
+==============================================================
+STEP 4 — COMPETITOR REVIEW COUNTS
+==============================================================
+- Competitor 1: Gardi, Haught, Fischer & Bhosale LTD (939 N Plum Grove Rd,
+  Schaumburg) — reviews: 7 (verified live via TrustAnalytica aggregator);
+  rating: 4.5. Direct cross-practice competitor — handles family law,
+  immigration, and criminal defense, the same three practice areas as
+  Rivera Law.
+- Competitor 2: Francis Law Center (dedicated Schaumburg office) —
+  reviews: 186 (Chamber of Commerce directory, verified live), with a
+  separate aggregator (Trustindex) citing 452 total customers and 400+
+  five-star reviews; rating: 4.8. The most review-dense
+  immigration-specific competitor found — directly threatens Rivera Law's
+  second-largest practice area (35% immigration).
+- Competitor 3: Sterling Lawyers, LLC (Schaumburg office of a
+  multi-location IL firm) — reviews: 7,000+ firm-wide across all Illinois
+  locations including Schaumburg (verified live); BBB A+ accredited since
+  2018. A review-volume and brand-scale competitor in family law, Rivera
+  Law's largest practice area (55%).
+- Competitor 4: James G. Dimeas & Associates (120 W Golf Rd, Schaumburg) —
+  exact Google review count not independently confirmed live; carries
+  Avvo 10.0 "Top Rated," Justia 10/10 (2 peer reviews), and a "Top 100
+  Criminal Defense Trial Lawyer" award from The National Trial Lawyers —
+  a strong reputation/PR signal in Criminal Defense, the practice area
+  Rivera Law's growth plan specifically targets next.
+
+None of the review counts above can be confirmed to exceed Rivera Law's
+own review count, since Rivera Law's own live review count could not be
+independently re-verified this pass (only the 4.7 rating was corroborated
+— see Step 2). This comparison should be re-checked live before the
+proposal call rather than asserted either way in the report.
+
+==============================================================
+STEP 5 — DIRECTORY LISTINGS
+==============================================================
+Checked live: Avvo, Justia, FindLaw, Yelp, BBB, LawInfo, ReachAttorneys,
+LegalRank.
+
+NAP INCONSISTENCY FOUND — REAL, VERIFIED LIVE:
+- Firm site + most directories (Yelp, ReachAttorneys, ZoomInfo, and the
+  address portion of the LawInfo listing): 1750 E Golf Rd Ste 130,
+  Schaumburg, IL 60173 / (847) 348-0009.
+- LawInfo listing: same Schaumburg address, but a different phone number —
+  773-368-1915 — attached to the listing instead of the firm's primary
+  (847) 348-0009 line.
+- BBB: a "Rivera Law Firm, Inc." / "Rivera & Associates Law Firm" profile
+  surfaced tied to a Chicago address rather than Schaumburg. It is not
+  confirmed whether this is the same entity under an old address or a
+  different, similarly-named firm — worth a quick manual confirmation
+  before the proposal call rather than asserting it either way here.
+- No Avvo, Justia, or FindLaw profile was found for Rivera Law / Jesus
+  Rivera specifically. This is a real, notable gap: all three of those
+  directories are heavily populated by the named local competitors above
+  (Gardi Haught Fischer & Bhosale, Francis Law Center, James G. Dimeas &
+  Associates all have visible directory profiles), while Rivera Law does
+  not appear to have claimed presences there.
+
+No geo-targeting landing pages for surrounding cities (Hoffman Estates,
+Elgin, Palatine, Arlington Heights, etc.) were found.
+
+==============================================================
+STEP 6 — GOOGLE ADS
+==============================================================
+No live rendered SERP with ad-slot markers is available in this
+environment (the search tool returns synthesized organic-style results,
+not a raw page distinguishing paid units from organic ones). Per the
+transcript, Rivera Law does run Google Ads at a $125/week budget
+(yielding roughly 5 new clients/month from 20-30 inquiries), but no
+practice-area breakdown for that spend was stated on the call, and no
+live ad copy/headline could be observed given the rendering limitation.
+
+Practice Area 1: Family Law
+- Firm ads observed: Not observed live (see limitation above); confirmed
+  by transcript that some Google Ads spend exists firm-wide.
+- Named local competitors running ads: Not observed for Sterling Lawyers
+  or Gardi, Haught, Fischer & Bhosale in available search data — no ad
+  copy or dedicated paid-landing-page signal surfaced.
+
+Practice Area 2: Immigration
+- Firm ads observed: Not observed live (same limitation).
+- Named local competitors running ads: Not observed for Francis Law
+  Center or the Law Offices of Angela L. Kwan in available search data.
+
+Practice Area 3: Criminal Defense (stated marketing focus for growth)
+- Firm ads observed: Not observed live (same limitation).
+- Named local competitors running ads: Not observed for James G. Dimeas &
+  Associates or Marder & Seidler Law Firm in available search data —
+  notable given Dimeas's otherwise heavy PR/SEO/award-based reputation
+  investment, suggesting paid search may not be central to his current
+  acquisition strategy, though this cannot be confirmed either way given
+  the tooling limitation.
+
+==============================================================
+STEP 7 — LOCAL SERVICE ADS
+==============================================================
+- Firm appears in LSA: Not observed (no rendered top-of-SERP view
+  available in this environment).
+- Google Screened: Not observed.
+- LSA review count: Not applicable — could not be confirmed.
+- Named local competitors in LSA: Not able to confirm live in this
+  environment. Flagging as an open question rather than asserting an
+  unverified competitor list.
+
+Per the transcript, this is an open question internally at Rivera Law
+too: one of the rep's post-call action items is to "ask [the firm's] IT
+guy to confirm Google Ads PPC vs LSA and spend/performance" — meaning
+even the firm itself was not certain of this distinction at call time.
+
+==============================================================
+STEP 8 — META ADS
+==============================================================
+- Firm has active ads: Not observed — direct Meta Ad Library access
+  returned HTTP 403 Forbidden in this environment (see tooling note). The
+  firm has an active Facebook page (facebook.com/61566879187179 / "Rivera
+  Law Firm | Schaumburg IL") — no ad-related activity surfaced in any
+  other available source.
+- Named local competitor 1: Francis Law Center — no Meta ad activity
+  confirmed either way; direct library access blocked in this
+  environment.
+- Named local competitor 2: Sterling Lawyers, LLC — no Meta ad activity
+  confirmed either way; direct library access blocked. This firm's
+  multi-location scale (BBB A+, 7,000+ reviews firm-wide) makes paid
+  social plausible, but it is not confirmable here.
+
+==============================================================
+STEP 9 — TRANSCRIPT EXTRACTION
+==============================================================
+- Practice areas confirmed: Family Law (55%), Immigration (35%), Criminal
+  Defense (20%) — as stated on the call. The firm's forward-looking
+  marketing focus is specifically Criminal Defense (DUIs, drug
+  possession), per the stated growth plan.
+- Current lead sources: (1) Access Legal referral program — "most
+  profitable" source, $125 per referral paid regardless of whether the
+  lead is hired, described as high-quality/vetted; (2) Google Ads — $125
+  /week budget, "less effective," yields 5 new clients/month from 20-30
+  inquiries, and "requires significant owner time for vetting"; (3) Word
+  of Mouth — described as the firm's "primary historical source."
+- Ads ever run: Yes — Google Ads, $125/week budget, ~5 new clients/month
+  from 20-30 inquiries. An internal action item exists to confirm with
+  the firm's IT contact whether this spend is PPC, Local Service Ads, or
+  a mix of both, and to confirm actual spend/performance.
+- Team size: Solo attorney (Jesus Rivera) plus 5 staff: an office manager,
+  2 paralegals, a legal assistant, and an IT contact.
+- Annual revenue: Volatile at present. Monthly revenue fell from ~$100k to
+  ~$50k after an associate stole clients and left in November, which also
+  cut the active client base from 900 to 688 files. The firm has since had
+  a "recent $100k month" but revenue "remains volatile."
+- Revenue goal: Immediate/stated goal is to "restore revenue to $1M/year."
+  Long-term vision is a $2M-$3M/year firm generating $500k in personal
+  income for the owner.
+- Average case value: Not stated — flagging as not stated per the
+  standard rule (no practice-area-specific default was given on the
+  call).
+- Current close rate: 50% closing rate stated specifically for the Access
+  Legal referral channel (10 clients from 20 referrals). No overall
+  firm-wide close rate was stated for other channels (e.g. Google Ads
+  inquiries) — defaulting to 15% for those per standard rule, while
+  preserving the 50% Access Legal figure as stated and channel-specific.
+- Number of locations: 1 (Schaumburg, IL) — not explicitly stated as a
+  location count on the call; defaulting per rule, consistent with the
+  single address found across directories.
+- Spanish campaign needed: Not explicitly stated as a request on the
+  call. Strongly implied by the firm's existing branding: the website
+  (abogadoillinois.com) is Spanish-first, and the firm serves a
+  Spanish-speaking client base — flagging this as an inference from
+  live-observed branding, not a direct transcript quote.
+- Dominant buying motive: Not a surface "more money/more clients" answer.
+  The transcript is explicit: the goal is to "create a valuable legacy
+  for the owner's daughter to inherit" in roughly 5 years, paired with a
+  strategic shift from being a "Chief Everything Officer" to a CEO who
+  isn't personally the bottleneck on every consultation. This reads as
+  bucket (1) — a firm that runs itself so the owner has more time/isn't
+  the bottleneck — with a legacy/generational-wealth layer on top (closer
+  to bucket (2) in spirit, though the stated intent is to pass the firm
+  down rather than sell it).
+- Any profitability claims made by prospect: No profitability claims
+  beyond the revenue figures already captured above (~$100k/mo pre-drop,
+  ~$50k/mo post-drop, a recent $100k month, 900 -> 688 active files).
+- Any claims about case types or practice areas: "Practice Areas: Family
+  Law (55%), Immigration (35%), Criminal Defense (20%)"; "Marketing
+  Focus: Criminal Defense (DUIs, drug possession)."
+- Stated call focus / product interest: Standard marketing/growth
+  discovery call — described in the transcript itself as an "Exploratory
+  call to analyze Rivera ESQ's firm and growth challenges," with Jonathan
+  to prepare a growth plan for a follow-up meeting. Nothing in the
+  transcript suggests a non-standard engagement type (no Fractional
+  CTO/AI or pure-coaching framing) — this is a standard SMB Team growth/
+  marketing engagement discussion.
+- Existing marketing/SEO/ad vendor engagements: None stated. The only
+  named lead-generation relationships are Access Legal (a referral/lead
+  service, paid per referral) and self-run Google Ads — no marketing/SEO
+  agency contract mentioned.
+- Budget constraints stated: None stated. No explicit statement about
+  affordability, spend ceilings, or inability to commit to a larger
+  monthly investment appears in the transcript.
+
+==============================================================
+STEP 10 — COMPETITIVE URGENCY SCORE
+==============================================================
+Score: 7/10
+
+Reasons (named specific local competitor threats):
+1. Sterling Lawyers, LLC — a multi-location Illinois family-law-only firm
+   with a dedicated Schaumburg office, 7,000+ client reviews firm-wide,
+   and BBB A+ accreditation since 2018 — directly threatens Rivera Law's
+   largest practice area (Family Law, 55% of the business) with
+   review-volume and brand scale Rivera Law's single-location profile
+   cannot easily match.
+2. Francis Law Center — a dedicated Schaumburg immigration office with a
+   4.8-star rating and 186+ verified reviews (400+ five-star reviews per
+   a separate aggregator) — directly threatens Rivera Law's
+   second-largest practice area (Immigration, 35%).
+3. James G. Dimeas & Associates — a Schaumburg-based criminal defense
+   firm carrying an Avvo 10.0 "Top Rated" designation and a "Top 100
+   Criminal Defense Trial Lawyer" award from The National Trial Lawyers —
+   a strong reputation/PR threat in Criminal Defense, the exact practice
+   area Rivera Law's own growth plan is now targeting for expansion.
+
+Score rationale: this is not a full 10 — no competitor's live paid-search,
+LSA, or Meta ad activity could be confirmed in this environment (see
+Steps 6-8), so "comprehensive campaigns across all channels" cannot be
+asserted. But across all three of Rivera Law's practice areas, at least
+one well-established, review-rich or award-winning named local competitor
+was found with a stronger visible reputation footprint than Rivera Law's
+own (which itself could not be fully verified — see Step 2/4), and Rivera
+Law did not surface organically in any of the 9 practice-area searches
+run in Step 3. That combination — real, named threats in every practice
+area plus a firm's own weak organic/directory visibility (Step 5) — is
+consistent with competitors having meaningful advantages in multiple
+areas rather than a quiet market.
+
+"A score of 7 means competitors have meaningful advantages in one or more
+areas and are pulling ahead. You are not invisible yet — but the window
+to close the gap is narrowing. Every month without action is a month
+they extend their lead."
+
+==============================================================
+PASS 2 — VERIFICATION CHECKLIST
+==============================================================
+[x] Every number in the notes matches actually observed data (or is
+    explicitly flagged as not obtainable in this environment, with reason)
+[x] Competitor review-count comparisons are not asserted as exceeding
+    Rivera Law's own count, since Rivera Law's own live review count
+    could not be independently re-verified this pass — flagged as an open
+    item instead of guessed at
+[x] Ad sections address all three practice areas discussed on the call
+    (Family Law, Immigration, Criminal Defense)
+[x] No section states "you are not running ads" — only "not observed" /
+    "does not appear to be running"
+[x] No profitability or business claim appears unless sourced from the
+    transcript (revenue drop/recovery figures, active-file count, Access
+    Legal economics)
+[x] No competitor reference uses generic labels — only specific named
+    local firms (Sterling Lawyers, Francis Law Center, James G. Dimeas &
+    Associates, Gardi Haught Fischer & Bhosale, Law Offices of Angela L.
+    Kwan, and others named above)
+[x] PageSpeed section reports real tool status (HTTP 429, daily quota
+    exceeded, confirmed via two independent fetch attempts) rather than
+    an invented number
+[x] DBM recorded (transcript-grounded: legacy for the owner's daughter,
+    paired with the "Chief Everything Officer" to CEO transition)
+[x] Revenue goal recorded ($1M/year near-term restoration goal; $2M-$3M
+    /year long-term vision for $500k personal income)
+[x] Close rate recorded (50% stated specifically for Access Legal
+    referrals; other channels defaulted to 15% per standard rule)
+[x] Average case value recorded (not stated — flagged per standard rule)
+[x] Stated call focus / product interest recorded — standard marketing/
+    growth discovery call, no non-standard engagement type indicated
+[x] Existing marketing/SEO/ad vendor engagements recorded (none stated)
+[x] Budget constraints stated recorded (none stated)
