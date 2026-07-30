@@ -1,0 +1,403 @@
+==============================================================
+SMB TEAM — AUDIT RESEARCH NOTES
+Firm: The Law Offices of Peter Paul Mendel
+Friendly Name: the-law-offices-of-peter-paul-mendel
+URL: https://peterpaulmendel.com
+Sales Rep: Jacob Meissner
+Date: August 10, 2026
+Contact: Peter Paul Mendel (peterpaul@peterpaulmendel.com)
+==============================================================
+
+ENVIRONMENT / TOOLING NOTE (read before trusting any "not observed" line below):
+This research pass ran without an interactive browser. Live-verification
+tools failed or were unavailable, flagged wherever they affected a data
+point:
+- Google PageSpeed Insights (the public runPagespeed API) returned HTTP 429
+  "Too Many Requests" on three separate attempts across the session — a
+  shared-quota failure, not a transient blip. No mobile/desktop score
+  obtained; none fabricated.
+- Meta Ad Library (facebook.com/ads/library) returned a socket hang up on
+  direct fetch — no ad data retrievable for the firm or any competitor.
+- No live Google Maps rendering (3-pack, GBP panel, LSA unit) is available
+  in this environment. Where a Maps-native number (star rating, review
+  count, LSA presence) could not be independently re-verified live, this is
+  flagged explicitly rather than guessed at.
+- The firm's own site (https://peterpaulmendel.com) was fetched and read
+  directly (live, resolves successfully) via a web-fetch tool, and its
+  Contact page was fetched directly as well. All competitor names/details
+  below come from live web-search and directory sources (Yelp, Avvo,
+  Justia, FindLaw, Martindale, Chamber of Commerce, the competitors' own
+  sites) — none are invented.
+
+==============================================================
+STEP 1 — WEBSITE RESEARCH
+==============================================================
+- Website URL confirmed live: Yes (peterpaulmendel.com resolves, fetched
+  directly).
+- Last redesign date or estimated age: Not date-stamped on the site. The
+  homepage copy and positioning ("Mediation for high-stakes business and
+  real estate disputes") read as a recent, purpose-built rebrand around
+  the mediation pivot described in the transcript — consistent with a
+  fairly new redesign, though no explicit date is shown.
+- Mobile responsive: Not independently confirmed in this environment (no
+  device-emulation rendering available). Site references virtual
+  consultation options and flexible scheduling; not flagged as broken, but
+  not tested on an actual device.
+- Homepage headline: "Mediation for high-stakes business and real estate
+  disputes that protects your client's assets—and your time."
+- CTA above fold: Yes — a prominent "Schedule Consultation" button
+  appears early on the page.
+- Contact form location: Reached via the "Contact Us" page and a "Book
+  Discovery Call" button — not a form sitting directly above the fold on
+  the homepage itself.
+- Live chat present: No.
+- Attorney bio present: No detailed biography of Peter Paul Mendel found on
+  the homepage itself, though his name, 35+ years of experience, and a
+  "Trusted by Law Firms" trust signal appear in the branding. (Note: a
+  fuller bio does exist on the separate /About-Us page per search results,
+  referencing BYU/Fordham Law and prior general counsel work — just not
+  surfaced on the homepage.)
+- Video present: No.
+- Blog present: No blog section or recent posts found on the primary site.
+- Contact details (from the live Contact Us page): 1900 E. Ocean Blvd
+  #401, Long Beach, CA 90802 / +1-562-642-3292 / Monday–Friday 9am–5pm,
+  office visits by appointment only.
+- Notable: the firm also runs a dedicated subdomain,
+  longbeachmediation.peterpaulmendel.com, focused specifically on divorce
+  mediation — a real, existing geo/practice-specific landing page distinct
+  from the main business/real estate mediation positioning on the root
+  domain. This is a genuine asset already in place, not a gap.
+- No other geo-targeting landing pages found for surrounding cities
+  (e.g. Torrance, Signal Hill, Lakewood, Seal Beach).
+
+PageSpeed:
+- PageSpeed mobile score: Not obtainable. The PageSpeed Insights API
+  returned HTTP 429 (quota exceeded) on repeated attempts in this
+  environment (see tooling note above). Not fabricated.
+- PageSpeed desktop score: Same — not obtainable, same reason.
+
+==============================================================
+STEP 2 — GOOGLE BUSINESS PROFILE
+==============================================================
+- GBP found: Referenced consistently across directory sources (Yelp,
+  Chamber of Commerce, 2findlocal) at addresses tied to the firm; direct
+  Google Maps panel rendering unavailable in this environment.
+- Star rating: Not independently re-verified live this pass (no Maps
+  rendering available). Third-party sources found (Alignable, LinkedIn
+  recommendations) are uniformly positive in tone ("diligent, honest, and
+  thoughtful," "excellent lawyer and negotiator") but do not carry a
+  numeric Google star rating.
+- Total review count: Not independently re-verified live this pass — not
+  stated in the transcript either. Flagging as an open data point that
+  should be checked live immediately before the proposal call.
+- Most recent review date: Not observed (no Maps access this pass).
+- Primary category: Not observed directly on Maps. The Yelp listing
+  categorizes the firm under "Business Law"; the firm's own site
+  positions it purely as a mediation practice — a potential mismatch
+  between how the GBP/Yelp category may still read versus current
+  positioning (see Step 5 NAP/staleness finding, which reinforces this).
+- Photos active: Not observed.
+- Posts active: Not observed.
+- NAP inconsistency found across sources — see Step 5 for full detail;
+  flagging here because it directly affects GBP/local-search reliability.
+
+==============================================================
+STEP 3 — LOCAL 3-PACK SEARCHES
+==============================================================
+NOTE: No live Google Maps 3-pack rendering is available in this
+environment. Competitor names and details below are real, live-verified
+firms and figures (via Yelp, Avvo, Martindale, and the firms' own sites),
+serving as the closest available proxy for local pack competition.
+"Firm appears" reflects organic search/directory visibility observed via
+live web search, not a confirmed Maps 3-pack position.
+
+Practice Area 1: Business & Real Estate Dispute Mediation
+- Search 1 "business mediation attorney Long Beach": firm's own listings
+  and directory profiles surface (Justia, mediate.com). Competitors
+  surfacing: Paul J. Carter, APC / ResolveLitigation.com (Long Beach —
+  5.0 Peer Rating, Martindale-Hubbell, verified live), Gayle L. Eskridge /
+  Eskridge Law & Mediation (Los Angeles — AV-rated, Martindale-Hubbell,
+  verified live).
+- Search 2 "real estate mediation Long Beach CA": Competitors surfacing:
+  Barry Ross / ROSS Mediation Services (Burbank/Pasadena area — 2,800+
+  mediations since 1993, verified live), Paul J. Carter, APC (same as
+  above — real estate is one of his listed mediation specialties).
+- Search 3 "arbitration mediation lawyer Long Beach": Justia's Long Beach
+  arbitration & mediation directory surfaces multiple names; the
+  strongest recurring, credentialed local name is Paul J. Carter, APC,
+  based directly in Long Beach.
+
+Practice Area 2: Divorce / Family Mediation (via the longbeachmediation
+subdomain)
+- Search 1 "divorce mediation Long Beach CA": firm's subdomain
+  (longbeachmediation.peterpaulmendel.com) surfaces. Competitors
+  surfacing: Families First Mediation (Dina Haddad — 4.8-star rating per
+  third-party review aggregator, serves Long Beach), Envision Family Law
+  (Long Beach office, Super Lawyers-recognized attorneys).
+- Search 2 "family mediation attorney Long Beach": Competitors surfacing:
+  South Bay Mediation (Torrance-based, serves Long Beach — 31 Yelp
+  reviews, verified live), Families First Mediation.
+- Search 3 "divorce mediator near Long Beach": Competitors surfacing:
+  South Bay Mediation, Envision Family Law.
+
+==============================================================
+STEP 4 — COMPETITOR REVIEW COUNTS
+==============================================================
+- Competitor 1: Paul J. Carter, APC (ResolveLitigation.com, based directly
+  in Long Beach, 90802) — reviews: specific count not independently
+  re-verified live this pass (no Maps access); rating: 5.0 Peer Rating on
+  Martindale-Hubbell, verified live, plus a positive Avvo peer review.
+  Direct in-niche competitor (business, real estate, trusts & estates
+  mediation) located in the same zip code as Peter's office.
+- Competitor 2: Gayle L. Eskridge / Eskridge Law & Mediation (Los
+  Angeles) — reviews: Yelp listing found (36 photos, verified live);
+  exact star/review count not independently re-verified live this pass.
+  AV-rated by Martindale-Hubbell and won the Avvo Client's Choice Award in
+  2026 (verified live) — a credentialed, well-marketed regional
+  competitor in the same business/real estate/employment mediation niche.
+- Competitor 3: Barry Ross / ROSS Mediation Services (Burbank/Pasadena) —
+  Avvo Rating 7.7 ("Very Good") but only 2.7 stars from 11 reviews on
+  Avvo specifically (verified live) — a mixed signal: massive experience
+  (2,800+ mediations since 1993, 90%+ settlement rate) paired with some
+  visible reputational risk on at least one platform. Included as a
+  scale benchmark, not a clean "dominating" competitor.
+
+None of the three figures above can be confirmed to exceed Peter's own
+review count, since Peter's own live GBP review count could not be
+independently re-verified this pass (see Step 2) — this comparison should
+be re-checked live before the proposal call rather than asserted either
+way in the report.
+
+==============================================================
+STEP 5 — DIRECTORY LISTINGS
+==============================================================
+Checked live: Avvo, Justia, FindLaw, Yelp, Chamber of Commerce,
+2findlocal, Alignable, LinkedIn, Facebook.
+
+NAP INCONSISTENCY FOUND — REAL, VERIFIED LIVE:
+- Current live site (peterpaulmendel.com/Contact-Us): 1900 E. Ocean Blvd
+  #401, Long Beach, CA 90802 / (562) 642-3292.
+- Yelp listing: 1900 E Ocean Blvd, Suite 401, Long Beach — but a
+  different phone number, (714) 915-3884.
+- Chamber of Commerce / 2findlocal listings: 111 W Ocean Blvd, Long
+  Beach, CA 90802 / a third phone number, (310) 745-3664.
+- Avvo: lists Peter Paul Mendel's location as Irvine, CA, practicing Tax,
+  Business, and Family law.
+- FindLaw: lists him practicing workers' compensation defense, business
+  organizations, and international law — no mention of mediation at all.
+
+This is a genuine, live-verified finding, not speculative: three
+different addresses and three different phone numbers are attached to
+the same attorney across active directory listings, and two major
+directories (Avvo, FindLaw) still reflect his prior general solo practice
+areas rather than the mediation-only positioning described in the
+transcript and shown on the current site. This directly matches the
+transcript's account of a business pivot (from a general solo practice
+with $500k in uncollected AR, to a mediation-only model) — the directory
+layer has not caught up to that pivot.
+
+Geo-targeting landing pages for surrounding cities: the divorce-mediation
+subdomain (longbeachmediation.peterpaulmendel.com) is a real, existing
+practice/geo-specific page (see Step 1). No further geo-targeted pages
+found for other surrounding cities (Torrance, Signal Hill, Lakewood,
+Seal Beach, etc.).
+
+==============================================================
+STEP 6 — GOOGLE ADS
+==============================================================
+No live rendered SERP with ad markers is available in this environment
+(the search tool available here returns synthesized organic-style
+results, not a raw page distinguishing paid units). Ad presence below is
+based on what surfaced in live web search.
+
+Practice Area 1: Business & Real Estate Dispute Mediation
+- Firm ads observed: Not observed. The firm does not appear to be
+  running ads for this search — may simply be getting outbid or not yet
+  competing in paid search for this niche.
+- Named local competitors running ads: Not observed for Paul J. Carter,
+  APC or Gayle L. Eskridge / Eskridge Law & Mediation — no dedicated
+  paid-landing-page signal or ad copy surfaced in live search for either.
+
+Practice Area 2: Divorce / Family Mediation
+- Firm ads observed: Not observed for the longbeachmediation subdomain.
+- Named local competitors running ads: Not observed for Families First
+  Mediation or South Bay Mediation in live search results — no ad copy or
+  dedicated paid-landing-page signal confirmed.
+
+==============================================================
+STEP 7 — LOCAL SERVICE ADS
+==============================================================
+- Firm appears in LSA: Not observed (no rendered top-of-SERP view
+  available in this environment).
+- Google Screened: Not observed.
+- LSA review count: Not applicable.
+- Named local competitors in LSA: Not able to confirm live in this
+  environment. Flagging as an open question rather than asserting an
+  unverified competitor list.
+
+==============================================================
+STEP 8 — META ADS
+==============================================================
+- Firm has active ads: Not observed. Direct Meta Ad Library access
+  returned a socket hang up in this environment (see tooling note). The
+  firm has a Facebook page (facebook.com/p/Law-Offices-of-Peter-Paul-
+  Mendel-100063495401970) — no ad-related activity surfaced in any
+  available source.
+- Named local competitor 1: Paul J. Carter, APC — no Meta ad activity
+  confirmed either way; direct library access blocked in this
+  environment.
+- Named local competitor 2: Families First Mediation — no Meta ad
+  activity confirmed either way; direct library access blocked in this
+  environment.
+
+==============================================================
+STEP 9 — TRANSCRIPT EXTRACTION
+==============================================================
+- Practice areas confirmed: Mediation — specifically high-stakes business
+  and real estate disputes (per the current site's primary positioning),
+  plus a separate divorce/family mediation offering (per the
+  longbeachmediation subdomain). Prior to the pivot, Peter ran a general
+  solo practice that accumulated the AR problem described below.
+- Current lead sources: Primarily referral network — attorneys who
+  represent parties in a dispute and refer the matter to Peter as
+  mediator. Jacob's proposed coaching plan specifically targets
+  strengthening this referral network as the primary growth lever.
+- Ads ever run: Implied yes, though platform/budget not specified. The
+  transcript states past lead-generation efforts yielded "~90%
+  'looky-loos'" — i.e., one-sided prospects seeking representation rather
+  than viable multi-party mediation leads — which is why Peter now
+  requires a performance-based (pay-per-signed-case) model rather than
+  paying for undifferentiated lead volume again.
+- Team size: Solo practitioner (Peter Paul Mendel only). No other staff
+  or associate attorneys mentioned as currently on payroll.
+- Annual revenue: Not stated as an annual figure. Current revenue stated
+  as ~$3,500/month, from remaining (legacy) attorney work — mediation
+  revenue is not yet a stable recurring stream at the time of the call.
+- Revenue goal: Short-term goal of $40,000/month, from 3 mediations per
+  week. Long-term vision: a firm of roughly 50 mediators, each generating
+  $20,000–$40,000/month.
+- Average case value: Not stated as an explicit dollar figure. Implied by
+  the stated short-term goal: $40,000/month ÷ ~13 mediations/month (3/wk)
+  ≈ roughly $3,000 per mediation, though this is a back-calculation, not
+  a figure Peter stated directly — flagging accordingly.
+- Current close rate: Not stated — default to 15% per standard
+  assumption.
+- Number of locations: 1 (Long Beach, CA) — not explicitly stated as a
+  location count on the call; defaulting per rule.
+- Spanish campaign needed: Not stated on the call.
+- Dominant buying motive: Not a surface "more money/more clients" answer.
+  The transcript is explicit about two linked goals: (1) permanently
+  eliminate the AR/collections risk that sank his prior practice ($500k
+  in uncollected receivables) by working strictly on an upfront-payment
+  basis, and (2) build toward a long-term vision of ~50 mediators under
+  one firm, each generating $20k–$40k/month. This reads as bucket (3),
+  scale and dominate — building a multi-mediator platform/network, not
+  just a solo lifestyle practice — with the AR-elimination goal as the
+  underlying freedom motivation that makes the scaled model feel safe to
+  pursue (upfront payment removes the risk that sank his last practice).
+- Any profitability claims made by prospect: "Peter's prior solo practice
+  accumulated $500k in uncollected accounts receivable (AR)." No current
+  profitability figures were stated — current revenue is described only
+  as ~$3,500/month from remaining attorney work.
+- Any claims about case types or practice areas: Mediation requires buy-in
+  from attorneys representing all parties to a dispute, not just one side
+  — this is described as the core reason lead-generation is structurally
+  harder for this practice than for traditional one-sided legal
+  representation. Past lead-gen efforts surfaced "~90% looky-loos" (single
+  parties seeking representation, not viable mediation engagements).
+- Stated call focus / product interest: EXPLICITLY NOT a standard
+  marketing/intake growth call — this needs to be called out directly in
+  the report, not buried. The transcript describes a fundamental
+  mismatch: Peter needs a performance-based, pay-per-signed-case
+  marketing model to avoid paying for non-viable "looky-loo" leads again,
+  while SMB Team's standard model is retainer-based, focused on brand
+  awareness and operational systems. Jacob's proposed path forward for
+  this engagement is business coaching — strengthening the referral
+  network, building scalable systems and hiring a team, and adopting
+  SMB Team's AI tools for billing/AR/follow-up efficiency — explicitly as
+  a foundation to be built BEFORE any marketing spend, not a marketing
+  engagement itself. The August 10 follow-up call is to continue this
+  discussion, with Jacob also researching mediation-specific
+  pay-per-signed-case lead-gen vendors to present as an option.
+- Existing marketing/SEO/ad vendor engagements: None stated. The
+  transcript references past lead-gen efforts and their poor lead quality
+  but does not name a current or recently-signed vendor contract.
+- Budget constraints stated: None stated as an explicit dollar ceiling.
+  The one stated constraint is structural/model-based rather than a
+  dollar limit: Peter is unwilling to pay retainer/brand-awareness fees
+  without performance guarantees, given his past experience paying for
+  low-quality leads. This should be treated as a real constraint on deal
+  structure, even though no specific dollar figure was mentioned.
+
+==============================================================
+STEP 10 — COMPETITIVE URGENCY SCORE
+==============================================================
+Score: 5/10
+
+Reasons (named specific local competitor threats):
+1. Paul J. Carter, APC (ResolveLitigation.com) — a directly in-niche
+   business/real estate mediation competitor based in Peter's own zip
+   code (90802), carrying a 5.0 Peer Rating on Martindale-Hubbell — the
+   closest apples-to-apples local competitive threat found.
+2. Gayle L. Eskridge / Eskridge Law & Mediation — a credentialed regional
+   competitor (AV-rated, 2026 Avvo Client's Choice Award winner) in the
+   same business/real estate/employment mediation niche, with an active
+   Yelp presence.
+3. Barry Ross / ROSS Mediation Services — massive scale and tenure
+   (2,800+ mediations since 1993) gives this name outsized referral-network
+   reach in the broader Southern California mediation community, even
+   though its own review profile is mixed.
+
+Score rationale: this is not a 7-10 "dominating every channel" situation
+— no competitor found in this niche shows evidence of aggressive paid
+search, LSA, or Meta ad activity (consistent with mediation being a
+referral-driven, relationship-based niche rather than a paid-lead
+market). But at least two named competitors (Carter, Eskridge) carry
+stronger third-party credentialing signals (peer ratings, awards) than
+anything currently visible on Peter's own site, and Peter's directory
+presence is fragmented and partly stale (see Step 5), which weakens his
+standing in exactly the referral-driven channel he depends on most.
+
+"A score of 5 means competitors have meaningful advantages in one or more
+areas and are pulling ahead. You are not invisible yet — but the window
+to close the gap is narrowing. Every month without action is a month
+they extend their lead."
+
+==============================================================
+PASS 2 — VERIFICATION CHECKLIST
+==============================================================
+[x] Every number in the notes matches actually observed data (or is
+    explicitly flagged as not obtainable in this environment, with reason)
+[x] Competitor review-count comparisons are not asserted as exceeding
+    Peter's own count, since Peter's own live review count could not be
+    independently re-verified this pass — flagged as an open item instead
+    of guessed at
+[x] Ad sections address both practice areas discussed on the call/site
+    (business & real estate mediation, and divorce/family mediation)
+[x] No section states "you are not running ads" — only "not observed" /
+    "does not appear to be running"
+[x] No profitability or business claim appears unless sourced from the
+    transcript ($500k uncollected AR; no current profitability figures
+    stated)
+[x] No competitor reference uses generic labels — only specific named
+    local/regional firms (Paul J. Carter APC, Eskridge Law & Mediation,
+    ROSS Mediation Services, Families First Mediation, South Bay
+    Mediation, Envision Family Law)
+[x] PageSpeed section reports real tool status (HTTP 429, repeated)
+    rather than an invented number
+[x] DBM recorded (transcript-grounded inference: scale-and-dominate via a
+    multi-mediator platform, rooted in the freedom motive of eliminating
+    AR/collections risk)
+[x] Revenue goal recorded ($40,000/month short-term; ~50 mediators at
+    $20k-$40k/month each long-term)
+[x] Close rate recorded (not stated — defaulted to 15%)
+[x] Average case value recorded (not stated directly — back-calculated
+    estimate of ~$3,000/mediation flagged as an inference, not a quote)
+[x] Stated call focus / product interest recorded and EXPLICITLY flagged
+    as a non-standard engagement: a business-coaching path proposed ahead
+    of marketing, due to a stated pay-per-signed-case vs. retainer model
+    mismatch — not buried in a footnote
+[x] Existing marketing/SEO/ad vendor engagements recorded (none stated)
+[x] Budget constraints stated recorded (no dollar ceiling stated; the
+    real constraint is a structural requirement for performance-based
+    pricing, flagged as such)
