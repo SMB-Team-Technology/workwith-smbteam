@@ -1,0 +1,204 @@
+HIGUERA IMMIGRATION LAW — SECTION 11 WORKINGS
+================================================================
+
+TRANSCRIPT-STATED NEED OVERRIDE — APPLIED
+----------------------------------------------------------------
+package_decision.json (medium confidence) selected:
+  Marketing: Full Service Marketing — Starter ($4,997/mo bundled, $5,697 retail, $700 savings)
+  Coaching: Elite Coach ($2,600/mo bundled, $3,497 retail, $897 savings)
+  Total: $7,597/mo bundled, $1,597/mo savings
+
+This selection is NOT usable as-is. Two of the three override checks apply:
+
+1. CALL-PURPOSE OVERRIDE — APPLIES.
+   Research notes, Step 9: "Stated call focus / product interest: Coaching-led
+   engagement, not a standard marketing-only discovery call. The prospect
+   explicitly asked 'What do you offer to help me make the jump to a
+   self-managing team?' and the call centered on org design, KPIs,
+   hiring/delegation sequencing, and intake/reviews process improvement —
+   paired with predictable lead generation (Google LSAs) as the funding
+   mechanism for hiring." This is an operations/coaching engagement, not a
+   marketing-discovery call. Lead the recommendation with coaching; only add
+   a lead-gen product because the transcript itself raised LSAs specifically
+   as the funding mechanism — not because revenue qualifies for a marketing
+   tier.
+
+2. EXISTING-VENDOR OVERRIDE — DOES NOT APPLY.
+   Drin Kaziu is a tech/website partner rebuilding the site, not a competing
+   marketing/SEO/ad vendor. No exclusion triggered.
+
+3. BUDGET-REALITY OVERRIDE — APPLIES.
+   Research notes, Step 9: "Budget constraints stated: Yes, explicit — Cost
+   sensitivity implied and directly noted as an unresolved objection:
+   affordability given ~$100-150k annual revenue and a part-time (~30
+   hrs/week) schedule. SMB Team positioned starting with LSAs + coaching to
+   build cash flow first; final pricing was deferred to the next call."
+   Escalation flag #1 in the notes explicitly instructs: "Recommend anchoring
+   the follow-up conversation on the coaching + minimum $500/week LSA spend
+   combination discussed on the call rather than a larger bundled package,
+   consistent with what Dan Bryant already signaled to the prospect."
+   The revenue-implied Starter tier ($4,997/mo Full Service Marketing) is not
+   appropriate here — it was never discussed, the client raised affordability
+   directly, and Dan already set the expectation of a smaller entry point.
+
+CORRECTED PACKAGE SELECTION
+----------------------------------------------------------------
+This is precisely the documented scenario in Design Files/Scoping_and_Ad_Spend_
+Guide.md, Section 12 ("Firms Under $250K Revenue"): "Consider coaching-only
+(Elite Coach at $2,600) + LSA add-on ($900) as an entry point = $3,500/mo. The
+goal is to get them to $500K+ so they qualify for Starter tier." Revenue here
+(~$100K-$150K/year, transcript-stated) is well under $250K, so this entry-point
+combination applies directly and matches what was actually discussed on the
+call.
+
+MANDATORY PRICE LOOKUP
+----------------------------------------------------------------
+- Non-marketing package selected: Elite Coach
+  - Bundled price (from table): $2,600/mo
+  - Stand-alone price (from table): $3,497/mo
+  - Savings (stand-alone minus bundled): $897/mo
+- Marketing/lead-gen package selected: LSA Management Add-On (coaching-only
+  clients) — Scoping_and_Ad_Spend_Guide.md Step 6E
+  - Bundled price (from table): $900/mo
+  - Stand-alone price (from table): none — this is a flat add-on with no
+    separate stand-alone tier (reference table lists "—" for stand-alone/
+    savings on this line item)
+  - Savings: $0 (no stand-alone comparison exists)
+- Legal AI Workforce (LAW) package selected: none — revenue is under the
+  $500K LAW eligibility floor
+- AI Avatar / Video Growth add-on selected: none — not discussed, no fit
+- Total monthly investment (sum of all bundled/recurring prices): $3,500/mo
+  ($2,600 + $900)
+- Total savings (sum of all savings): $897/mo
+
+REVENUE CONFIRMATION
+----------------------------------------------------------------
+package_decision.json sourced revenue from HubSpot ("$0-$180K" band, treated
+as $180,000, confidence: medium, because the pipeline didn't find revenue in
+the notes at the time it ran). The research notes DO state revenue directly
+in the transcript extraction: "~$100,000-$150,000/year (stated range)." Per
+the transcript-first principle, this stated figure governs. Using a point
+estimate of $125,000/year (midpoint) for all downstream math. This is
+consistent with — not a contradiction of — the HubSpot band, and it still
+falls under the $250K threshold that put Elite Coach (not a higher coaching
+tier) in play, and under $250K → confirm client has funds for 4 months of
+service before proceeding (flagged for Dan to confirm; matches escalation
+flag #1).
+
+35% CAP CHECK
+----------------------------------------------------------------
+Monthly revenue: $125,000 / 12 = $10,417. 35% cap = $3,646/mo.
+Total recurring management fees (Block 3 figure, ad spend excluded per the
+template's own Block 3/Block 4 split): $3,500/mo — within the cap.
+Ad spend is shown separately in Block 4, as instructed, and is money that
+goes directly to platforms, not to SMB Team.
+
+AD SPEND CALCULATION
+----------------------------------------------------------------
+Conservative ($3,000/mo): the documented absolute minimum for any paid ads
+program. This is close to the ~$500/week (~$2,167/mo) figure Dan already
+discussed on the call as a starting point, and is the correct conservative
+floor per the pricing rules rather than the raw per-channel LSA minimum
+($2,000) for Immigration.
+
+Aggressive: recalculated independently of package_decision.json's $12,000
+figure, which appears to have assumed a full multi-channel Starter-tier ad
+program (Google PPC + LSA + Social, $20,000 cap) — no longer the
+recommendation under the overrides above.
+  - Revenue goal: not stated on the call; defaulting to 2x current revenue
+    per instructions = ~$250,000/year.
+  - 20% rule: $250,000 x 20% / 12 = $4,167/mo.
+  - Geographic multiplier: Weston, FL sits in the greater Miami/Fort
+    Lauderdale metro (Tier 2, primary high-density market) x1.3 = $5,417/mo.
+  - Spanish-language multiplier: not applied. The bilingual (EN/ES) website
+    rebuild is in progress per Drin Kaziu, but the notes explicitly flag this
+    was "not directly requested as an ad requirement" — noted as context only.
+  - Reverse math validation: revenue goal $250,000/yr / 12 = $20,833/mo target
+    / $4,500 default immigration case value (midpoint of $3K-$6K, average
+    case value not stated on the call) = ~4.6 cases/mo / 15% default close
+    rate (not stated on the call) = ~31 leads/mo x $65 blended LSA CPL
+    (midpoint of Immigration LSA range $55-$75, no cushion for aggressive)
+    = ~$2,008/mo required spend.
+  - 20% rule ($5,417) > reverse math (~$2,008) -> use $5,417/mo, rounded to
+    $5,400/mo for presentation.
+
+ROI PROJECTIONS (both scenarios use default close rate 15% and default
+average case value $4,500 for Immigration — both explicitly disclosed as
+defaults in the report since neither was stated on the call)
+----------------------------------------------------------------
+Conservative — $3,000/mo ad spend, LSA channel only:
+  - Blended CPL: $65 midpoint + 20% cushion = $78
+  - Leads: $3,000 / $78 = ~38 leads/mo
+  - Cases: 38 x 15% = ~5-6 cases/mo
+  - Revenue: ~5.8 x $4,500 = ~$26,000/mo
+  - Return: ~$26,000 / $3,000 = ~8.7x
+
+Aggressive — $5,400/mo ad spend, LSA channel only:
+  - Blended CPL: $65 midpoint, no cushion
+  - Leads: $5,400 / $65 = ~83 leads/mo
+  - Cases: 83 x 15% = ~12-13 cases/mo
+  - Revenue: ~12.5 x $4,500 = ~$56,000/mo
+  - Return: ~$56,000 / $5,400 = ~10.4x
+
+DBM STATEMENT (Block 1)
+----------------------------------------------------------------
+Formula: "We help [audience] get [external desire] so they can [DBM]."
+"We help solo immigration attorneys get a predictable flow of business and
+family immigration cases and a team that can run without them so they can
+work fewer hours and be fully present for their families."
+
+DBM (full): Danja Higuera's dominant buying motive is time and presence —
+she explicitly, unprompted, connected the firm's growth to wanting to work
+fewer than her current ~30 hrs/week while parenting two kids (ages 9 and 11).
+Category 1: a firm that runs itself so the owner has more personal time.
+
+QUICK WIN OPPORTUNITIES (6, spanning all four pillars)
+----------------------------------------------------------------
+1. [Lead Gen / Quick Win] "Invisible Down the Hall" — Higuera did not surface
+   in any of six practice-area keyword searches run, while two of the most
+   visible, highest-reputation firms in the market — American Immigration Law
+   Center (Caroly Pedersen, Ste 137) and Carlos E. Sandoval P.A. (#626) — sit
+   in the same office building at 2645 Executive Park Dr. Opportunity: an LSA
+   placement shows above organic results, including her own building-mates.
+2. [Lead Gen / Quick Win] "Zero Paid Search Presence" — no Google Ads or LSA
+   activity was observed for either business/employment or family immigration.
+   Competitor: Parjus Law runs a dedicated "U.S. Work Visas" landing page
+   built to capture the exact keyword set Higuera is not visible for.
+   Opportunity: even a modest paid presence is new ground in this market.
+3. [Lead Gen / Long-Term Play] "Thin Directory Footprint & a Stale Phone
+   Number" — Avvo/Birdeye presence is noticeably thinner than neighboring
+   competitors (156 and 144/81 reviews), and a NAP inconsistency exists (Yahoo
+   Local lists a Cleveland, OH number vs. the firm's actual 954 line).
+   Competitor: American Immigration Law Center's 156-review footprint.
+   Opportunity: citation cleanup and a review-generation push close a trust
+   gap versus the neighbors competing for the same searches.
+4. [Intake / Quick Win] "No Delegated Intake Process" — Danja personally
+   handles intake with no fixed team to delegate to; this was explicitly
+   raised on the call as something she wants help fixing. Opportunity:
+   converting more of the leads already coming in, without spending
+   another dollar on marketing.
+5. [Team / Long-Term Play] "No Org Structure to Delegate Into" — team
+   consists of Danja plus independent contractors used "as needed," with no
+   defined roles, hiring sequence, or accountability structure. Opportunity:
+   this is the literal ask from the call — an org design and delegation
+   roadmap is the path to the self-managing team she described wanting.
+6. [Profit / Quick Win] "No Predictable Lead Flow to Plan Hiring Around" —
+   profit constraints were named directly, along with an inability to
+   confidently hire without predictable lead flow. Opportunity: a funded,
+   consistent LSA channel gives her a number to plan hiring against instead
+   of guessing.
+
+FIRST 90 DAYS
+----------------------------------------------------------------
+1. Launch and go live with LSA lead-generation management for business and
+   family immigration inquiries.
+2. Kick off Elite Coach onboarding — first working session maps current org
+   structure, sets initial KPIs, and sequences the first delegation/hiring
+   move.
+3. Clean up NAP citations across Yahoo Local, Avvo, and Birdeye — remove the
+   legacy Cleveland, OH phone number and standardize the Weston, FL address.
+4. Confirm mobile responsiveness and PageSpeed scores on higueraimm.com
+   (not retrievable live this research session — flagged for manual
+   verification) alongside Drin Kaziu's in-progress rebuild.
+5. Build a defined follow-up sequence for new LSA-generated leads so they get
+   a fast, consistent response instead of depending on Danja's availability.
