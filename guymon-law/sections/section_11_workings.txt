@@ -1,0 +1,228 @@
+GUYMON LAW — SECTION 11 WORKINGS
+==================================
+
+OVERRIDE ANALYSIS (applied BEFORE package_decision.json eligibility logic)
+---------------------------------------------------------------------------
+package_decision.json proposed: Full Service Marketing Starter ($4,997/mo bundled)
++ Elite Coach Plus ($3,200/mo bundled), confidence: low.
+
+Two corrections were required before using this:
+
+1. REVENUE CHECK (confidence: low in the decision file):
+   Research notes Step 9 state annual revenue "not stated as an annual figure —
+   trigger record shows monthly revenue range of $15K-$80K." Annualized, that is
+   $180K-$960K, midpoint $570,000 — this is an EXACT match to the decision file's
+   revenue_effective ($570,000) and revenue_label ("$180K - $960K"). The estimate
+   is not an independent guess; it is the transcript-derived trigger figure
+   annualized. Treated as reliable despite the "low" confidence flag.
+
+2. PRACTICE AREA / TIER CHECK:
+   package_decision.json's stated reason for hiding Essentials ("multiple practice
+   areas detected") is a parsing artifact — its practice_areas_detected list is a
+   garbled split of sub-services (custody, child support, paternity, etc.) that are
+   all sub-issues of ONE practice area. Research notes explicitly state (line 24):
+   "all under the single practice area of Family Law." However, Guymon Law operates
+   TWO physical offices (Chandler and Scottsdale), and the eligibility rule states:
+   "Essentials marketing tier requires a single location AND a single practice area
+   → hide Essentials for any firm with multiple locations or multiple practice
+   areas." Multiple locations alone disqualifies Essentials regardless of practice
+   area count. Net result: Starter tier is still correct, but for the right reason
+   (2 locations), not the stated one (multiple practice areas).
+
+3. TRANSCRIPT-STATED NEED OVERRIDE #1 (Call-Purpose) — APPLIES, CHANGES THE LEAD
+   RECOMMENDATION:
+   Research notes Step 9 state explicitly: "This was NOT a standard marketing/
+   lead-generation discovery call... There is no mention anywhere in the transcript
+   of lead generation, marketing, advertising, or website/SEO performance...the
+   report should not imply otherwise." The call was about SMB Team's AI/automation
+   offerings by name — "AI Workforce Pro" and "Fractional CTO" — with stated pain
+   points entirely operational (manual intake/conflict-checking across 5+ systems,
+   video tutorial creation, Clio billing audits, document drafting).
+
+   Per audit-write.md override rules: "Do not default to Full Service Marketing
+   just because revenue qualifies for a tier — the firm did not ask about
+   marketing... only add a marketing package if the transcript shows an actual
+   marketing/lead-gen gap alongside the stated need." The TRANSCRIPT itself shows
+   no marketing gap — only this session's independent research does, and that
+   research explicitly flags itself as "a secondary/future opportunity to raise if
+   relevant, not the lead of the conversation" (Step 10 context).
+
+   DECISION: Lead recommendation is Legal AI Workforce (LAW) — Fractional CTO
+   Level 1 — matching the stated call subject. Full Service Marketing Starter is
+   still included, but as Package Two / secondary, explicitly framed in its
+   package-why text as an adjacent opportunity SMB Team's own research surfaced,
+   not what today's call was about. Elite Coach Plus (the decision file's original
+   Package Two) is DROPPED — coaching was never discussed on the call and has no
+   documented gap behind it the way the competitive/review data does for marketing.
+
+LAW ELIGIBILITY CHECK
+----------------------
+- Revenue $570,000 > $500K minimum: PASS
+- Firm is not solo / has support staff (4 attorneys, 1 LP, support staff, 16 total
+  per website "About" page): PASS
+- Owner shows openness to AI/tech adoption: PASS — firm already uses Claude for
+  email triage, document-saving automation, and paralegal draft-email generation;
+  explicitly asked about custom "private skills" for sensitive tasks.
+- Tier: AI Accelerator L1 (Fractional CTO Level 1) selected over AI Essentials (AI
+  Workforce Pro) because the transcript emphasizes CUSTOM builds (private skills
+  for performance reviews, multi-system intake automation, the "27 of 39 steps in
+  a probate case were automated" example) — this matches the "done-with-you,
+  dedicated Fractional CTO" description for L1 more closely than the "DIY with
+  managed support" description for AI Essentials. Revenue band $500K-$1.5M fits L1.
+  CONFIRMED by the full trigger-file transcript (surfaced after research notes were
+  written): staff outside Amber are explicitly described as "hesitant to use AI,
+  preferring familiar manual processes." SMB Team's own pitch on the call framed
+  Fractional CTO as delivering "deep, custom automation without requiring staff
+  buy-in" versus AI Workforce Pro needing firm-wide staff adoption — this is a
+  second, independent reason L1 is the right tier, not just the revenue/build-
+  emphasis reasoning above.
+
+MANDATORY PRICE LOOKUP
+------------------------
+- Legal AI Workforce package selected: AI Accelerator L1 — Fractional CTO Level 1
+  - Bundled price (from table): $3,297/mo
+  - Stand-alone price (from table): $3,797/mo
+  - Savings (stand-alone minus bundled): $500/mo
+  - One-time onboarding (Law Firm AI Foundation Sprint, paired with L1): $14,997
+    one-time (not included in monthly totals below — flagged separately)
+
+- Marketing package selected (secondary/optional): Full Service Marketing — Starter
+  - Bundled price (from table): $4,997/mo
+  - Stand-alone price (from table): $5,697/mo
+  - Savings (stand-alone minus bundled): $700/mo
+
+- Non-marketing/coaching package selected: none (dropped Elite Coach Plus — see
+  override analysis above; not discussed on the call, no documented gap)
+
+- Total monthly investment (sum of bundled recurring prices): $3,297 + $4,997 =
+  $8,294/mo
+- Total savings (sum of all savings): $500 + $700 = $1,200/mo
+
+AD SPEND CALCULATION (tied to the secondary Marketing Starter package only)
+------------------------------------------------------------------------------
+Conservative = channel minimum for Family Law, starting with Google PPC only
+(firm currently has zero confirmed ad presence in any channel): $3,500/mo
+
+Aggressive = 20% rule:
+  No revenue goal stated → default 2x current revenue = $1,140,000
+  $1,140,000 x 20% / 12 = $19,000/mo
+  x Geographic multiplier (Phoenix/Scottsdale = Tier 2, 1.3x) = $24,700/mo
+  No Spanish campaign needed
+  - Marketing management fee ($4,997) = $19,703/mo available ad spend
+  Reverse-math check: revenue goal $1,140,000/12 = $95,000/mo target / $4,000
+  avg. family law case value (default, not stated) = 23.75 cases/mo / 15% default
+  close rate = 158 leads/mo x ~$90 blended CPL = ~$14,247/mo. 20% rule ($19,703) is
+  higher, so it governs per the "use whichever is higher" rule.
+  Tier cap check: Starter cap is $20,000 — $19,703 is under cap, no tier change.
+
+  HOWEVER: the General eligibility rule states total SMB spend (management fees +
+  ad spend) must not exceed 35% of MONTHLY REVENUE (current, not goal).
+  Monthly revenue = $570,000 / 12 = $47,500. 35% cap = $16,625/mo.
+  Management fees alone ($3,297 LAW + $4,997 Marketing = $8,294/mo) already consume
+  part of that cap, leaving $16,625 - $8,294 = $8,331/mo maximum for ad spend if
+  both packages and full ad spend were live simultaneously.
+  DECISION: Aggressive ad spend is capped at $8,300/mo (rounded down from $8,331)
+  rather than the raw 20%-rule figure of $19,703/mo, to respect the 35%-of-current-
+  revenue spend cap. This is a deliberate reduction — documented here per the
+  Budget-Reality principle, even though revenue itself was not flagged as a
+  constraint by the prospect.
+
+ROI PROJECTIONS
+-----------------
+Conservative ($3,500/mo ad spend):
+  Blended CPL: Family Law Google Search $90-$110 (mid $100) + 20% cushion = $120
+  Leads = $3,500 / $120 = ~29 leads/mo
+  Cases = 29 x 15% (default close rate, not stated) = ~4 cases/mo
+  Revenue = 4 x $4,000 (Family Law default case value, not stated) = ~$17,500/mo
+  Return = $17,500 / $3,500 = ~5.0x
+
+Aggressive ($8,300/mo ad spend):
+  Blended CPL (multi-channel mix, no cushion) = ~$87
+  Leads = $8,300 / $87 = ~95 leads/mo
+  Cases = 95 x 15% = ~14 cases/mo
+  Revenue = 14 x $4,000 = ~$57,200/mo
+  Return = $57,200 / $8,300 = ~6.9x
+
+All figures use default close rate (15%) and default Family Law case value
+($3K-$5K, midpoint $4,000) because neither was stated on the call — disclosed as
+estimates in the client-facing report.
+
+DBM STATEMENT FOR BLOCK 1
+----------------------------
+"We help multi-office family law firm owners get AI-powered systems that multiply
+their team's existing capacity so they can pay their people more and reclaim their
+own time — without adding a single new hire."
+
+QUICK WIN OPPORTUNITIES (7 across 4 pillars)
+-----------------------------------------------
+1. [Lead Gen / Quick Win] Claim & Optimize the Google Business Profile — Why: live
+   GBP rating/count could not even be located this session, a sign it may be thin
+   or unclaimed. Competitor: Arizona Law Group (400+ reviews). Opportunity: a
+   focused review-generation push could meaningfully close the visibility gap.
+2. [Lead Gen / Long-Term] Build a Local SEO Presence That Actually Ranks — Why:
+   firm didn't surface in any of 3 local search tests run. Competitor: Genesis
+   Family Law (190+ reviews, near 5.0). Opportunity: existing geo-landing pages
+   give this a real foundation to build from.
+3. [Intake / Quick Win] Move the Contact Form Above the Fold — Why: form is
+   buried at the bottom of the homepage. No competitor. Opportunity: a simple
+   layout change could meaningfully lift form completions.
+4. [Intake / Long-Term] Consolidate Intake & Conflict-Checking Into Fewer Systems
+   — Why: process spans 5+ systems today, per the call. No competitor.
+   Opportunity: less manual work per case, more attorney/staff time freed up.
+5. [Team / Quick Win] Standardize the Firm's Existing AI Use — Why: Claude use
+   today is ad hoc, not firm-wide. No competitor. Opportunity: a documented
+   rollout turns individual habits into a system the whole team benefits from.
+6. [Team / Long-Term] Hand Off Amber's Personal Tasks to AI-Assisted Workflows —
+   Why: Amber personally handles performance reviews and tutorial videos. No
+   competitor. Opportunity: freeing this time is the direct path to the capacity
+   Amber wants to convert into raises.
+7. [Profit / Quick Win] Establish a Stated Revenue Goal — Why: no revenue goal
+   exists to plan capacity or pay decisions against. No competitor. Opportunity:
+   a single number to plan against turns "we think we're doing fine" into a plan.
+
+FIRST 90 DAYS
+---------------
+1. Kick off the Legal AI Workforce engagement — the Fractional CTO's first build
+   targets the intake/conflict-check workflow described on the call
+2. Complete the Law Firm AI Foundation Sprint to map all 5+ current intake systems
+   into one connected workflow
+3. Move the homepage contact form above the fold and confirm PageSpeed scores
+   manually (both flagged as outstanding from research)
+4. If the Marketing Starter package is added, kick off with a Google Business
+   Profile audit and review-generation push targeting the review gap with Arizona
+   Law Group and Owens & Perkins
+5. Set a stated revenue goal with Amber to anchor how much of the new AI-driven
+   capacity converts into staff pay raises
+
+Note on Block 5 sequencing: audit-write.md's default guidance says "lead with
+launching ads first, then website work, include coaching kickoff." That default
+assumes a marketing+coaching engagement. Per the Call-Purpose Override, this
+firm's actual lead package is LAW, so Block 5 leads with the LAW/Foundation Sprint
+kickoff instead, with the (secondary) marketing kickoff appearing later and coaching
+omitted entirely since no coaching package is being recommended.
+
+INTERNAL ESCALATION NOTES (do not include in client report)
+---------------------------------------------------------------
+- Any Legal AI Workforce (LAW) package → confirm with sales rep that LAW delivery
+  has launched and capacity is available before including in proposal.
+- TRANSCRIPT NAME MISMATCH — UPDATE: the fuller Fathom AI Meeting Summary now on
+  file in the trigger record still labels the firm "Diamond Law" throughout (e.g.
+  "Diamond Law: A family law firm in Scottsdale and Chandler, AZ"), while every
+  other detail (locations, owner named Amber, team composition, AI tooling)
+  matches Guymon Law exactly. This confirms the mismatch is Fathom's own AI
+  summary mislabeling the firm, not a mismatched transcript — still worth a
+  one-line confirmation with Jacob before the proposal call, but lower risk than
+  originally flagged.
+- Staff outside Amber are described in the full transcript as "hesitant to use
+  AI, preferring familiar manual processes" — this was not captured in the
+  original research notes and directly supports the L1/Fractional CTO tier
+  choice (delivers automation without requiring staff buy-in). Flagging in case
+  this affects how Jacob frames adoption expectations on the follow-up call.
+- Per the full transcript, a follow-up call with Alison and Amber is already
+  scheduled for Tuesday, Aug 12 at 1 PM Pacific to discuss pricing and options —
+  this audit and Sales Companion should be ready before then.
+- PageSpeed mobile/desktop scores and live GBP star rating/review count were not
+  obtained this session — recommend pulling both manually before the proposal call.
+- Possible NAP inconsistency (Birdeye listing, Gilbert AZ address) — confirm with
+  Alison whether this is a legacy listing, a different attorney, or a real third
+  location.
