@@ -1,0 +1,206 @@
+================================================================================
+RYE LAW — SECTION 11 WORKINGS
+================================================================================
+
+REVENUE VERIFICATION (per Pass 2 instruction — confidence: low in package_decision.json)
+--------------------------------------------------------------------------------
+package_decision.json used revenue_effective = $570,000 (midpoint of HubSpot band
+"$180K - $960K"), confidence: low, since revenue was not stated in the transcript.
+
+Cross-checked against research notes:
+- The prospect was already discussing/postponing a ~$5,000/mo engagement — this
+  matches the Starter tier bundled price ($4,997/mo) almost exactly, which is
+  only reachable in the $500K-$1M revenue row (or the multi-location/multi-
+  practice-area under-$750K row). Both independently point to Starter.
+- Firm profile (1 lawyer, 3 clerks, 1 bookkeeper, ~350 active files, 4 GTA
+  offices, 5 practice areas) is consistent with a firm in the mid-hundred-
+  thousands revenue range — not large enough to suggest $1M+, not so small
+  that the ~$50K AR + ~$60K expenses cited as a delay reason would be an
+  implausible share of revenue (roughly 19% combined at $570K — plausible;
+  would be very high at $180K, very low/inconsequential at $960K).
+- Nothing in the research notes clearly points to a different band.
+CONCLUSION: $570,000 revenue estimate is retained as-is for eligibility purposes.
+Marketing tier (Starter) is robust to the exact number within this band, since
+two independent eligibility rules (revenue $500K-$1M, and multi-location/multi-
+practice-area under $750K) both converge on Starter.
+
+TEAM SIZE CORRECTION
+--------------------------------------------------------------------------------
+package_decision.json defaulted team_size_effective to 3 (not stated). Research
+notes DO state team composition explicitly: Rick Rye (1 lawyer) + 3 law clerks +
+1 bookkeeper/office clerk = 5 people total. Corrected team size = 5. This does
+not change the non-marketing tier selection under the eligibility table's
+"$400K-$1M / Any" row — but is corrected here for accuracy.
+
+--------------------------------------------------------------------------------
+TRANSCRIPT-STATED NEED OVERRIDE — APPLIED
+--------------------------------------------------------------------------------
+1. Call-purpose override: NOT triggered. Research notes explicitly confirm
+   "Standard marketing/intake growth is confirmed as the product under
+   discussion" — this was a proposal-decision call on the standard engagement,
+   not a differently-scoped ask.
+
+2. Existing-vendor override: NOT triggered. No existing marketing/SEO/ad
+   vendor engagement was stated.
+
+3. Budget-reality override: TRIGGERED.
+   The transcript states Rick Rye is POSTPONING the exact $5,000/mo engagement
+   already on the table (not a larger one) until early January 2026, citing:
+   - ~$60,000 CAD in year-end expenses (taxes, prior investments)
+   - ~$50,000 CAD in unbilled AR still to collect
+   - A stated need to be "100% comfortable" financially before committing
+   This is an explicit, unambiguous budget constraint on the exact package
+   being discussed — not a hypothetical or inferred one.
+
+   ACTION TAKEN: package_decision.json paired Full Service Marketing — Starter
+   ($4,997/mo) with Elite Coach Plus coaching ($3,200/mo), for a $8,197/mo
+   total ask. That total is 64% higher than the $5,000/mo figure the prospect
+   already said he could not commit to right now. Per the override instruction
+   ("do not present the revenue-implied tier... lead with the lowest-cost
+   package that still addresses the transcript's stated need"), the coaching
+   package has been DROPPED from this recommendation. The final recommendation
+   is Full Service Marketing — Starter ALONE, at $4,997/mo — in line with the
+   figure Rick was already evaluating, and addressing the stated need
+   ("standard marketing/intake growth") without escalating the ask.
+
+   This is a single-product recommendation, which the general eligibility
+   rules permit "when the transcript clearly shows the firm's needs are best
+   served by one service category" — the explicit, dollar-specific budget
+   objection on this call is exactly that signal. Sales should reintroduce
+   coaching as a Phase 2 add-on once the firm re-engages (see roadmap).
+
+--------------------------------------------------------------------------------
+MANDATORY PRICE LOOKUP
+--------------------------------------------------------------------------------
+- Marketing package selected: Full Service Marketing — Starter
+  - Bundled price (from table): $4,997/mo
+  - Stand-alone price (from table): $5,697/mo
+  - Savings (stand-alone minus bundled): $700/mo
+- Non-marketing package selected: none (dropped per budget-reality override above)
+- Legal AI Workforce (LAW) package selected: none (not raised in transcript; also
+  revenue is right at the $500K threshold with a solo/near-solo team — not a fit
+  for this initial engagement)
+- AI Avatar / Video Growth add-on selected: none (not raised in transcript)
+- Total monthly investment (sum of all bundled/recurring prices): $4,997/mo
+- Total savings (sum of all savings): $700/mo
+
+--------------------------------------------------------------------------------
+35% TOTAL SPEND CAP CHECK
+--------------------------------------------------------------------------------
+Monthly revenue = $570,000 / 12 = $47,500/mo
+35% cap = $16,625/mo (management fees + ad spend, combined)
+Marketing management fee = $4,997/mo
+Maximum allowable ad spend under cap = $16,625 - $4,997 = $11,628/mo
+
+--------------------------------------------------------------------------------
+AD SPEND CALCULATION
+--------------------------------------------------------------------------------
+CONSERVATIVE = $3,500/mo (sum-of-channel-minimums basis; above the $3,000
+absolute minimum and the Immigration Google-min floor; well under the 35% cap).
+
+AGGRESSIVE — recomputed (package_decision.json's $14,000/mo breached the 35% cap):
+1. No revenue goal stated -> default to 2x current revenue = $1,140,000 goal
+2. 20% rule: $1,140,000 x 20% / 12 = $19,000/mo total marketing budget
+3. Geographic multiplier: Toronto/GTA is not in the named US-DMA tier table
+   (tiers are US-only), but by metro population (~6M+) it is analogous to a
+   Tier 1 mega market (1.5x) or at minimum Tier 2 (1.3x) -- not the unmultiplied
+   base rate. Using even the most conservative read (1.0x, no multiplier):
+   $19,000 - $4,997 mgmt fee = $14,003/mo (matches package_decision.json's
+   $14,000 figure - the UNCAPPED 20%-rule result). Applying a Tier 1/2
+   multiplier would only push this higher (e.g. 1.5x -> ~$23,500/mo available).
+4. 35% cap check: even at the lowest (unmultiplied) figure, $4,997 + $14,000 =
+   $18,997/mo > $16,625/mo cap -> EXCEEDS by $2,372/mo. Since the uncapped
+   result already exceeds the cap before any geo multiplier is applied, the
+   choice of multiplier does not change the outcome -- the 35% cap is the
+   binding constraint either way.
+5. CORRECTED aggressive ad spend, capped at $11,628/mo -> rounded to $11,500/mo
+   (well within the Starter tier's own $20,000 ad-spend cap, so no tier upgrade needed)
+
+FINAL: Conservative $3,500/mo | Aggressive $11,500/mo
+
+--------------------------------------------------------------------------------
+ROI PROJECTIONS (assumptions disclosed)
+--------------------------------------------------------------------------------
+Blended CPL uses Google Search midpoints across all 5 practice areas, equally
+weighted (no case-mix data available). Civil & Commercial Litigation and Real
+Estate Law have no dedicated CPL row in the pricing tables — Business Law CPL
+used as the closest proxy for both, and disclosed here as an assumption.
+  Immigration $97.5 | Family Law $100 | Litigation (BL proxy) $110 |
+  Real Estate (BL proxy) $110 | Business Law $110
+  Blended = (97.5+100+110+110+110)/5 = $105.50
+
+Close rate: not stated in transcript -> default 15%
+Case value: not stated in transcript -> practice area defaults, equally weighted
+  Immigration $4,500 | Family $4,000 | Litigation (BL proxy) $5,000 |
+  Real Estate (BL proxy) $5,000 | Business Law $5,000
+  Blended avg case value = $4,700
+
+CONSERVATIVE ($3,500/mo spend, CPL +20% cushion = $127):
+  Leads = 3,500 / 127 ~= 28/mo
+  Cases = 28 x 15% ~= 4/mo
+  Revenue = 4 x $4,700 ~= $18,800/mo
+  Return = 18,800 / 3,500 ~= 5.4x
+
+AGGRESSIVE ($11,500/mo spend, CPL no cushion = $106):
+  Leads = 11,500 / 106 ~= 108/mo
+  Cases = 108 x 15% ~= 16/mo
+  Revenue = 16 x $4,700 ~= $75,200/mo
+  Return = 75,200 / 11,500 ~= 6.5x
+
+All figures above are estimates using disclosed defaults (blended CPL with a
+Business Law proxy for Litigation/Real Estate, default case values, default
+15% close rate, and no stated revenue goal so 2x current revenue was used).
+
+--------------------------------------------------------------------------------
+DBM STATEMENT (Block 1)
+--------------------------------------------------------------------------------
+"We help busy multi-practice law firm owners like Rick get a steady,
+self-sustaining flow of new clients so they can step back from being
+personally entrenched in every file and build the independent, scalable
+business they set out to run."
+
+--------------------------------------------------------------------------------
+QUICK WIN OPPORTUNITIES (8 identified)
+--------------------------------------------------------------------------------
+1. [Lead Gen] Claim/verify Google Business Profile, pull a live review count —
+   Why: rating/review count unverified; Rye Law's own Facebook shows 0 reviews
+   vs. competitors at 57-868 — Who: Chaudhary Law Office (300 reviews, 4.8*) —
+   Opportunity: establish a credible trust signal before paid spend starts.
+2. [Lead Gen] Replace the off-site JotForm with a native, trackable contact
+   form — Why: no visibility into lead source or volume — Opportunity:
+   immediate measurement of what's actually generating inquiries.
+3. [Lead Gen] Launch Google Search ads for immigration and family law in North
+   York — Why: zero paid presence across all 5 practice areas — Who: Mamann
+   Sandaluk LLP / Russell Alexander Collaborative Family Lawyers — Opportunity:
+   capture prospects already searching who currently only find competitors.
+4. [Lead Gen] Clean up NAP consistency across site and directories (Danforth
+   vs. Finch addresses, Kitchener vs. Cambridge) — Why: inconsistency can
+   suppress local ranking — Opportunity: stronger local SEO foundation.
+5. [Intake] Add live chat or an AI-staffed intake channel — Why: no live
+   chat, no confirmed after-hours coverage — Opportunity: capture after-hours
+   inquiries currently going to voicemail or a competitor.
+6. [Intake] Build a defined follow-up sequence for leads who don't convert on
+   first contact — Why: no such sequence currently exists — Opportunity:
+   recover leads that are already being generated but lost.
+7. [Team] Establish a documented delegation process for the 3 existing law
+   clerks — Why: Rick remains personally entrenched despite staff capacity —
+   Opportunity: first real step toward Rick stepping back from daily ops.
+8. [Profit] Prioritize collecting the ~$50K in unbilled AR alongside any new
+   engagement — Why: uncollected cash is directly limiting growth investment —
+   Opportunity: free up cash flow without adding a single new client.
+
+(Cards 2, 4, 5, 6, 7, 8 omit the "Who Is Doing It Better" row — no named
+competitor was identified for those specific opportunities.)
+
+--------------------------------------------------------------------------------
+FIRST 90 DAYS
+--------------------------------------------------------------------------------
+1. Launch Google Search ads for immigration and family law in North York (Weeks 1-2)
+2. Rebuild the site's contact flow with a native, trackable form (Weeks 2-4)
+3. Claim/verify Google Business Profile and begin building genuine review volume (Weeks 1-4)
+4. Stand up a defined lead follow-up sequence for the intake team (Month 2)
+5. Launch Meta retargeting and educational content ads on top of the existing
+   Instagram audience (Month 2-3)
+
+Note: no coaching kickoff milestone is included in the First 90 Days list,
+since the coaching package was dropped per the budget-reality override above.
