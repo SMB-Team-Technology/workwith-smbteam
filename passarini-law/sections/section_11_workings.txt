@@ -1,0 +1,171 @@
+PASSARINI LAW, PLLC — SECTION 11 WORKINGS
+======================================================================
+OVERRIDE APPLIED — CALL-PURPOSE OVERRIDE (audit-write.md Transcript-Stated
+Need Override #1) — DEPARTS FROM package_decision.json
+======================================================================
+
+package_decision.json (confidence: medium) selected:
+- Marketing: Full Service Marketing — Starter ($4,997/mo bundled)
+- Coaching: Elite Coach ($2,600/mo bundled)
+- Total bundled: $7,597/mo
+
+This proposal DOES NOT use the marketing selection above. Reasoning:
+
+The research notes' transcript extraction (Step 9) states explicitly: "This
+was NOT a standard marketing/lead-generation discovery call. The transcript
+explicitly frames the engagement as an operations/fractional-executive
+engagement: 'SMB Team proposed a fractional executive to implement proven
+operational playbooks, not sell new software,' with the focus on 'building a
+structured workflow from client intake to off-boarding' using 'playbooks,
+scripts, and accountability.'" The notes go on to say the prospect's stated
+need right now is internal operations/workflow capacity, not marketing/intake
+volume — the firm is INTENTIONALLY suppressing new lead volume (paused all
+marketing to avoid exceeding ~10 new cases/month) until operations catch up.
+Outstanding item #6 in the notes explicitly recommends confirming that the
+proposal should lead with the operations engagement and position
+marketing/growth as a second-phase opportunity, not the immediate ask.
+
+This is a textbook Call-Purpose Override: the call was not about marketing,
+the firm has a stated reason (protecting current capacity) to NOT want lead
+volume increased right now, and package_decision.json's confidence field
+reflects only revenue-number uncertainty — it says nothing about whether a
+marketing package is the right recommendation at all here. Per audit-write.md,
+this override supersedes the decision file and the standard eligibility
+tables regardless of confidence level.
+
+Per the override instruction: "Check the LAW package table and the
+non-marketing package table first; only add a marketing package if the
+transcript shows an actual marketing/lead-gen gap alongside the stated need."
+LAW is independently excluded (revenue under $500K floor). The transcript
+does NOT show an active, unaddressed marketing gap the firm wants closed now
+— it shows a marketing channel the firm chose to turn off. So no marketing
+package is included in this recommendation. This is a single-product
+recommendation, which the general eligibility rules explicitly permit "when
+the transcript clearly shows the firm's needs are best served by one service
+category" — this is exactly that case.
+
+The non-marketing (coaching) selection in package_decision.json — Elite Coach,
+driven by the $250K–$400K revenue band — is NOT affected by the override and
+is re-verified independently below. FCOO Advisor would be the more literal
+match to "fractional executive" language in the transcript, but is hidden by
+the revenue-under-$500K eligibility filter (revenue_effective $250,000,
+medium confidence, sourced from HubSpot only — no stated dollar figure exists
+in the transcript itself). Elite Coach is the only eligible non-marketing
+product for this revenue band, and its deliverables (coaching, playbooks,
+accountability, masterminds) are a reasonable practical fit for the stated
+need given what's eligible.
+
+======================================================================
+MANDATORY PRICE LOOKUP
+======================================================================
+- Marketing package selected: none (Call-Purpose Override — no active
+  marketing/lead-gen gap stated; firm intentionally paused marketing)
+- Non-marketing package selected: Elite Coach
+  - Bundled price (from table): $2,600/mo
+  - Stand-alone price (from table): $3,497/mo
+  - Savings (stand-alone minus bundled): $897/mo
+- Legal AI Workforce (LAW) package selected: none (revenue under $500K floor
+  — excluded independent of the override)
+- AI Avatar / Video Growth add-on selected: none (no signal of interest;
+  requires an active marketing relationship or Alexis approval, neither
+  applicable here)
+- Total monthly investment (sum of all bundled/recurring prices): $2,600/mo
+- Total savings (sum of all savings): $897/mo
+
+======================================================================
+AD SPEND — PHASE 2 PROJECTION (NOT part of the active Phase 1 recommendation)
+======================================================================
+No ad spend is being recommended or sold in Phase 1 — the firm is
+intentionally not running ads right now. The figures below are shown in
+Block 4 as a future-state projection only, for when operations have scaled
+enough to safely reintroduce lead generation (Phase 2 of the roadmap), using
+the standard ad spend / ROI methodology so the number isn't fabricated:
+
+Practice area minimums (family law + immigration, PPC/LSA/Meta mix):
+Conservative = $3,500/mo (channel-minimum basis, per automated pipeline calc)
+Aggressive = $14,000/mo (20%-rule basis off the stated "double/triple revenue"
+goal applied to the $250K HubSpot-sourced revenue proxy, since no baseline
+dollar figure exists in the transcript itself — disclosed as an estimate)
+
+Blended CPL (family law + immigration averaged, 50% PPC / 30% LSA / 20% Meta
+retargeting mix, using client-facing CPL midpoints):
+- No cushion: ~$83
+- With 20% cushion (conservative scenario): ~$100
+
+Average case value: not stated on the call — using the midpoint of the
+practice-area defaults for family law ($3,000–$5,000) and immigration
+($3,000–$6,000) blended ≈ $4,250. Disclosed as an industry benchmark, not a
+firm-confirmed number.
+
+Close rate: not stated — defaulting to 15% per instructions.
+
+Conservative scenario: $3,500/mo ÷ $100 blended CPL ≈ 35 leads → × 15% close
+≈ 5 cases → × $4,250 ≈ $22,000/mo revenue → return ≈ 6.3x
+
+Aggressive scenario: $14,000/mo ÷ $83 blended CPL ≈ 169 leads → × 15% close
+≈ 25 cases → × $4,250 ≈ $106,000/mo revenue → return ≈ 7.6x
+
+Note: the aggressive scenario's ~25 cases/month figure is far above the
+firm's current stated capacity of ~10 cases/month. That is intentional — it
+represents the ceiling once Phase 1 operations work has expanded capacity,
+not a Phase 1 target. This is called out in the roadmap (Phase 2 trigger)
+so the numbers in Block 4 aren't read as an immediate plan.
+
+======================================================================
+DBM STATEMENT (Block 1)
+======================================================================
+"We help immigration and family law attorneys who are already at capacity
+get operational systems that don't depend on them personally, so they can
+reclaim their time now and retire on their own terms later."
+
+Dominant Buying Motive: build a firm that runs on documented systems rather
+than on Andrea personally — the explicit, immediate precondition for the
+stated 5-year retirement goal.
+
+======================================================================
+QUICK WIN OPPORTUNITIES (6+ across all four pillars)
+======================================================================
+1. [Lead Gen / Quick Win] Fix directory NAP inconsistencies — Avvo and
+   Justia both list Andrea Passarini under a stale Hollywood, FL address
+   instead of the current Pompano Beach office. Why: suppresses local search
+   visibility and looks unprofessional to a prospect researching the firm by
+   name. No named competitor tied to this specific issue.
+2. [Lead Gen / Quick Win] Resolve the passarinilaw.com → passarinilaw.site
+   redirect. Why: a primary domain forwarding to a non-.com TLD reads as
+   unfinished/in-migration and can dilute existing backlink equity. No named
+   competitor.
+3. [Lead Gen / Quick Win] Close the review-volume gap. Why: Avvo shows only
+   2 reviews for Andrea Passarini. Competitor: The Law Office of Melissa
+   Dacunha, P.A. — 87 reviews at 4.8★ on Birdeye, active in the same two
+   practice areas. Opportunity: a lightweight review-request habit closes
+   real ground with no ad spend required.
+4. [Intake / Quick Win] Move the website contact form above the fold. Why:
+   consultation requests are currently pushed near the footer, adding
+   friction before a lead can reach the firm. No named competitor.
+5. [Intake / Long-Term Play] Document the intake-to-off-boarding workflow.
+   Why: this is the explicit reason SMB Team was engaged — no process
+   currently exists beyond what's in Andrea's head. No named competitor.
+6. [Team / Long-Term Play] Turn tribal knowledge into playbooks and an
+   accountability structure so the paralegal team can run core processes
+   without Andrea in every file. No named competitor.
+7. [Profit / Quick Win] Establish a monthly revenue and case-value tracking
+   habit using existing Clio data as the starting point. Why: no financial
+   reporting cadence currently exists beyond case management. No named
+   competitor.
+
+======================================================================
+FIRST 90 DAYS
+======================================================================
+No ads or website work is launched in the first 90 days — no marketing
+package is part of this recommendation (see override above). Bullets lead
+with the coaching/operations kickoff instead:
+1. Kick off Elite Coach with an initial working session to map the intake-
+   to-off-boarding process as it exists today
+2. Draft the firm's first documented playbooks for the two highest-volume
+   practice areas — family law and immigration
+3. Build a simple role framework so paralegal responsibilities in intake and
+   follow-up are clearly assigned, not assumed
+4. Establish a monthly revenue and case-value tracking habit using existing
+   Clio data
+5. Set a 90-day capacity checkpoint to revisit whether the firm is ready to
+   safely reintroduce marketing (Phase 2)
