@@ -1,0 +1,192 @@
+PASSARINI LAW, PLLC — GROWTH AUDIT RESEARCH NOTES
+Prepared for: Andrea Passarini (attorney/principal) / Mateus Passarini (operations lead, contact)
+Sales Rep: Nick Holderman
+Date: August 11, 2026 (proposal call, 11:00 AM ET per trigger record — matches transcript's "Tuesday, August 11 at 11:00 AM ET")
+Firm operates as: Passarini Law (passarinilaw.com — currently 301-redirecting to passarinilaw.site)
+Discovery call: August 4, 2026 (Fathom transcript, via HubSpot internal notes)
+
+======================================================================
+STEP 1 — WEBSITE RESEARCH (passarinilaw.com)
+======================================================================
+- Website URL confirmed live: yes — but passarinilaw.com issues a 301 permanent redirect to http://passarinilaw.site/. Worth flagging on its own: a law firm's primary domain forwarding to a non-.com TLD reads as unfinished/in-migration to a prospective client and is a small trust-signal risk worth cleaning up regardless of the marketing engagement.
+- Last redesign date or estimated age: not explicitly dated on-site; copyright footer shows "© 2026," consistent with a recent build or active maintenance.
+- Mobile responsive: appears responsive based on page structure (scalable sectioning, organized headings) — not independently confirmed via a real device/browser this session.
+- Homepage headline: "Immigration, Family, Real Estate And Probate" with subheading "Strategic Legal Guidance Beyond Borders"
+- CTA above fold: yes — "Request a Consultation" and "View Practice Areas"
+- Contact form location: no embedded form observed above the fold; contact info (phone, email, address, social links) is consolidated in a "Request Initial Consultation" section near the footer — a real friction point for a firm trying to capture leads.
+- Live chat present: no
+- Attorney bio present: yes — an extensive bio for Andrea Passarini covering 20+ years of experience and dual Florida/Brazil licensure
+- Video present: not observed on-page, though a YouTube channel is linked in the footer/social links
+- Blog present: no blog section identified
+- Practice areas listed: Immigration, Family Law, Real Estate, Probate — each broken into service subcategories (e.g., immigration: asylum, citizenship, deportation defense, family visas, green cards, appeals, investment visas, marriage/fiancé visas, student/visitor/work visas; family: adoption, child custody, child support, father's rights, guardianship, paternity, prenups, restraining orders, same-sex family law)
+- Geo-targeted landing pages: none found for surrounding South Florida cities/areas
+- NAP on site: 17 SE 24th Ave, Pompano Beach, FL 33062 · (305) 833-8786 · legalassistant@passarinilaw.com
+
+PageSpeed:
+- PageSpeed mobile score: NOT OBTAINED — the public PageSpeed Insights API (googleapis.com/pagespeedonline/v5) returned HTTP 429 (quota exceeded) on four separate attempts this session, and the pagespeed.web.dev UI renders scores client-side via JavaScript after the analysis completes, so a fetch only ever captures the "Running analysis" loading state, never the final numbers. This is a known, recurring tooling limitation in this environment (documented in other recent research passes in this repo), not a reflection of the site's actual performance.
+- PageSpeed desktop score: NOT OBTAINED — same limitation.
+- ACTION REQUIRED: run pagespeed.web.dev/report?url=https://www.passarinilaw.com manually from a real browser before the report is finalized; do not substitute an estimated number for these fields.
+
+→ Website section complete.
+
+======================================================================
+STEP 2 — GOOGLE BUSINESS PROFILE
+======================================================================
+- GBP found: not independently confirmed this session — Google Maps and Google's business knowledge panel render client-side via JavaScript and were not accessible through available research tools. No third-party aggregator (Birdeye, Wheree, ProvenExpert, etc.) carrying a synced Google review count for "Passarini Law" or "Passarini Law PLLC" could be located either, which itself suggests the firm's review profile is thin or not yet claimed/optimized on major aggregators.
+- Star rating: NOT OBTAINED live this session.
+- Total review count: NOT OBTAINED live this session. Best available proxy: Avvo shows exactly 2 client reviews for Andrea Passarini, both positive ("took very good care of my case and got the results I wanted... from start to finish her office responded quickly," and "hired Passarini Law for her green card application. Everything went smoothly... highly recommend!"). Two reviews on a directory is not the same number as Google, but it is directional evidence of a low review-volume profile overall.
+- Most recent review date: NOT OBTAINED live this session.
+- Primary category: inferred as Immigration Attorney / Family Law Attorney from site and directory listings — not independently confirmed via GBP category field.
+- Photos active: not independently confirmed (not renderable via available tools this session)
+- Posts active: not independently confirmed (not renderable via available tools this session)
+- ACTION REQUIRED: pull the live GBP star rating and review count manually before finalizing the report — this is a material number for the audit narrative and should not be estimated.
+
+→ GBP section complete (flagged for manual follow-up).
+
+======================================================================
+STEP 3 — LOCAL 3-PACK SEARCHES
+======================================================================
+Note: live Google Maps 3-pack rendering was not accessible via available research tools this session (map pack requires JS rendering the available tools cannot capture). Results below reflect organic/directory search visibility as the best available proxy, restricted to attorneys actually based in Pompano Beach (not neighboring Fort Lauderdale/Boca Raton/Coral Springs firms that surfaced but are not true local-pack peers).
+
+Practice Area 1: Family Law (Pompano Beach, FL)
+- Search 1 "family law attorney Pompano Beach FL": Passarini Law appearance not observed in top organic/directory results returned — competitors surfaced: The Law Office of Melissa Dacunha, P.A. (Pompano Beach), Cheryl Beth Bucker, Ms. Tracht
+- Search 2 "divorce lawyer Pompano Beach FL": Passarini Law appearance not observed — competitors surfaced: Melissa Dacunha, Robert L. Bogen
+- Search 3 "child custody attorney Pompano Beach FL": Passarini Law appearance not observed — competitors surfaced: Melissa Dacunha, Cheryl Beth Bucker
+
+Practice Area 2: Immigration (Pompano Beach, FL)
+- Search 1 "immigration lawyer Pompano Beach FL": Passarini Law appearance not observed — competitors surfaced: Renata Castro / USA4ALL Immigration Law, The Law Office of Melissa Dacunha, P.A., Law Office of Alfredo Jurando P.A.
+- Search 2 "green card attorney Pompano Beach FL": Passarini Law appearance not observed — competitors surfaced: Renata Castro / USA4ALL, Melissa Dacunha
+- Search 3 "deportation defense lawyer Pompano Beach FL": Passarini Law appearance not observed — competitors surfaced: Renata Castro / USA4ALL
+
+Practice Area 3: Probate (Pompano Beach, FL)
+- Search 1 "probate attorney Pompano Beach FL": Passarini Law appearance not observed — competitors surfaced: Mark R. Manceri, P.A., Rebecca H. Fischer, P.A.
+- Search 2 "estate administration lawyer Pompano Beach FL": Passarini Law appearance not observed — competitors surfaced: Mark R. Manceri, P.A., Kelley, Grant & Tanis, P.A.
+- Search 3 "will contest attorney Pompano Beach FL": Passarini Law appearance not observed — competitors surfaced: Mark R. Manceri, P.A.
+
+Practice Area 4: Real Estate (Pompano Beach, FL)
+- Search 1 "real estate closing attorney Pompano Beach FL": Passarini Law appearance not observed — no single Pompano Beach-based named competitor could be confidently verified this session (top results skewed to Boca Raton/broader Broward County firms); flag for manual re-check.
+- Search 2 "real estate lawyer Pompano Beach FL": Passarini Law appearance not observed — same result as above.
+- Search 3 "title attorney Pompano Beach FL": Passarini Law appearance not observed — same result as above.
+
+Across every practice area searched, Passarini Law did not surface in the organic/directory results returned — directly consistent with the transcript's statement that the firm has paused marketing and is not actively pursuing visibility right now.
+
+→ GBP, local SEO, and directory sections complete.
+
+======================================================================
+STEP 4 — COMPETITOR REVIEW COUNTS
+======================================================================
+- Competitor 1: Renata Castro / USA4ALL Immigration Law (3111 N University Dr Suite 403, Pompano Beach, FL 33065) — reviews: 46 (Avvo, verified live) — rating: 4.8
+- Competitor 2: The Law Office of Melissa Dacunha, P.A. (750 E Sample Rd, Suite 224, Pompano Beach, FL) — reviews: 87 (Birdeye, verified live) — rating: 4.8. Note: the same attorney shows a lower 3.5/6-review profile on Avvo — ratings are inconsistent across platforms for this competitor, which is itself worth noting as a contrast point (a firm with a strong Google/Birdeye footprint but a weaker directory footprint).
+- Competitor 3: Mark R. Manceri, P.A. (1600 S Federal Hwy, Pompano Beach, FL) — reviews: 14 (Birdeye, verified live) — rating: 3.1 (mixed reviews — some describe him as an excellent litigator, others raise conduct concerns)
+
+Prospect comparison: Passarini Law's own live review count/rating could not be verified this session (see Step 2) — do not state that the firm "has more" or "has fewer" reviews than any competitor above until that number is confirmed manually. What can be said with confidence: Avvo shows only 2 reviews for Andrea Passarini, versus 46 (Castro) and 87 (Dacunha) on their respective strongest platforms — directionally, this points to a real review-volume gap versus the two most direct competitors (immigration and family law respectively), but should be framed as an opportunity gap pending live confirmation, not a stated fact.
+
+======================================================================
+STEP 5 — DIRECTORY LISTINGS
+======================================================================
+- Avvo: active profile for "Andrea Carvalho Passarini" — 2 reviews, positive. NAP INCONSISTENCY: Avvo's profile still surfaces a "Hollywood, FL" location association in search indexing, rather than the firm's current Pompano Beach address.
+- Justia: active listing — "Andrea Passarini, Lawyer in Hollywood, Florida" (lawyers.justia.com/lawyer/andrea-passarini-1675021) — same Hollywood, FL inconsistency as Avvo, suggesting both directories may be pulling from an outdated source record (likely a prior office location before the current Pompano Beach address was established).
+- FindLaw: no profile found for "Passarini Law" or "Andrea Passarini" in a targeted search this session — directory gap.
+- Yelp: no profile found for "Passarini Law" in a targeted search this session — directory gap.
+- BBB: no listing found for "Passarini Law" in Pompano Beach, FL — confirmed via direct BBB search (zero results).
+- bisprofiles.com: lists the firm's correct current registration — "Passarini Law PLLC, Pompano Beach, FL" — this is a business-filings aggregator rather than a client-facing directory, but confirms the entity's current registered location matches the website.
+- NAP INCONSISTENCY SUMMARY: the firm's site and business-filing records agree on the Pompano Beach, FL address, but both of the firm's two most client-visible legal directories (Avvo and Justia) still show a stale Hollywood, FL association. This is a real, fixable NAP problem worth flagging directly.
+- Geo-targeting landing pages: none found on the firm's own site for surrounding cities/areas (e.g. Fort Lauderdale, Coral Springs, Deerfield Beach) despite immigration and family law being highly localized search categories.
+
+→ All ads sections below noted; directory section complete.
+
+======================================================================
+STEP 6 — GOOGLE ADS
+======================================================================
+Practice Area 1: Family Law
+- Firm ads observed: not observed via available research tools this session — live paid-SERP rendering requires a real browser session and was not accessible here. Per the transcript, the firm has paused marketing altogether, so this is consistent with what would be expected, but it should be framed as an opportunity gap rather than a confirmed absence: "Passarini Law does not appear to be running ads for family law searches in its market right now."
+- Named local competitors running ads: not observed via available research tools this session — recommend a live manual check before the proposal call.
+
+Practice Area 2: Immigration
+- Firm ads observed: not observed via available research tools this session.
+- Named local competitors running ads: not observed via available research tools this session (Renata Castro / USA4ALL and Melissa Dacunha are the most relevant named local competitors to re-check manually, given their strength in Step 4).
+
+Practice Area 3: Probate
+- Firm ads observed: not observed via available research tools this session.
+- Named local competitors running ads: not observed via available research tools this session.
+
+Practice Area 4: Real Estate
+- Firm ads observed: not observed via available research tools this session.
+- Named local competitors running ads: not observed via available research tools this session.
+
+======================================================================
+STEP 7 — LOCAL SERVICE ADS
+======================================================================
+- Firm appears in LSA: not observed via available research tools this session — LSA units render dynamically and were not captured by the search tools available.
+- Google Screened: not observed/not confirmed this session.
+- LSA review count: not available this session.
+- Named local competitors in LSA: not observed/not confirmed this session — recommend a live manual check, particularly for Renata Castro / USA4ALL (immigration) and Melissa Dacunha (family/immigration), both of which have review profiles strong enough to plausibly support an LSA presence.
+
+======================================================================
+STEP 8 — META ADS
+======================================================================
+- Firm has active ads: not observed — Meta Ads Library (facebook.com/ads/library) requires an authenticated/JS-rendered session not accessible via available research tools this session. Per the transcript, the firm has paused marketing broadly, so an active Meta campaign would be unexpected, but this was not independently confirmed.
+- Named local competitor 1: Renata Castro / USA4ALL Immigration Law — active ads could not be confirmed this session.
+- Named local competitor 2: The Law Office of Melissa Dacunha, P.A. — active ads could not be confirmed this session.
+
+→ All ads sections complete (flagged for manual live re-check).
+
+======================================================================
+STEP 9 — TRANSCRIPT EXTRACTION
+======================================================================
+- Practice areas confirmed: Family law (primary historically), Immigration (now ~50% of caseload and growing, driven by complex removal proceedings and Hague Convention cases), Probate, Real Estate.
+- Current lead sources: not specified by channel in the transcript — the firm has paused marketing entirely to avoid exceeding current capacity, so no active lead-generation channel is described.
+- Ads ever run: not stated — the transcript confirms marketing has been paused but does not specify whether that pause includes paid ads specifically, or what (if anything) was run previously. Flag as "not stated" rather than assuming either way.
+- Team size: 5 — Andrea Passarini (sole attorney), 2 in-house paralegals, 2 remote paralegals. Operations are led part-time by Mateus Passarini (Andrea's son), a financial advisor by trade, who lacks deep legal-operations experience.
+- Annual revenue: not stated.
+- Revenue goal: not stated as a dollar figure, but explicitly stated as a goal to "double/triple revenue" — use this multiplier directly rather than the generic 2x default, and flag that no baseline revenue figure exists to multiply against.
+- Average case value: not stated — flag and default to practice-area benchmarks (family law and immigration case values respectively) rather than a firm-confirmed number.
+- Current close rate: not stated — default to 15% per instructions.
+- Number of locations: 1 (Pompano Beach, FL office at 17 SE 24th Ave).
+- Spanish campaign needed: not explicitly stated, though notably relevant — Andrea is fluent in English, Portuguese, and Spanish, and the growing immigration caseload (Hague Convention, removal proceedings) strongly suggests multilingual demand. Flag as a likely opportunity, not a confirmed requirement.
+- Dominant buying motive: Inferred, not a direct quote — the transcript states the goal is to "double/triple revenue while reducing the attorney's workload to prepare for a 5-year retirement plan." This is a blend of DBM categories (1) a firm that runs on systems rather than Andrea personally, so she can reduce her ~80 hr/week load now, and (2) a longer-horizon exit/retirement plan 5 years out. The immediate, actionable DBM for this engagement is category (1): building operational systems that don't depend on the attorney, which is also the explicit precondition for the category (2) retirement goal to become possible at all.
+- Any profitability claims made by prospect: none stated.
+- Any claims about case types or practice areas: "Immigration cases are increasing, now ~50% of the caseload, driven by complex removal proceedings and Hague Convention cases." Also: firm is "intentionally pausing marketing to avoid exceeding its current capacity of ~10 new cases/month."
+- Stated call focus / product interest: This was NOT a standard marketing/lead-generation discovery call. The transcript explicitly frames the engagement as an operations/fractional-executive engagement: "SMB Team proposed a fractional executive to implement proven operational playbooks, not sell new software," with the focus on "building a structured workflow from client intake to off-boarding" using "playbooks, scripts, and accountability." This should be called out explicitly wherever the audit or proposal is built — the prospect's stated need right now is internal operations/workflow capacity, not marketing/intake volume (the firm is intentionally suppressing new lead volume until operations catch up). A growth/marketing audit is still relevant to the retirement/revenue-growth goal, but it should be framed as "the next phase after operations stabilize," not the immediate ask.
+- Existing marketing/SEO/ad vendor engagements: none stated. The only existing technology mentioned is Clio (case management software), which SMB Team explicitly does not intend to replace — the engagement is about optimizing workflow within Clio, not swapping vendors.
+- Budget constraints stated: none stated.
+
+======================================================================
+STEP 10 — COMPETITIVE URGENCY SCORE
+======================================================================
+Score: 6/10
+
+Named threats:
+1. The Law Office of Melissa Dacunha, P.A. (Pompano Beach) — 87 reviews at 4.8★ on Birdeye, active across family law and immigration, the same two practice areas driving the majority of Passarini Law's current caseload.
+2. Renata Castro / USA4ALL Immigration Law (Pompano Beach) — 46 reviews at 4.8★ on Avvo, a dedicated immigration boutique in the same submarket exactly as Passarini's fastest-growing (and now ~50% of caseload) practice area.
+3. Mark R. Manceri, P.A. (Pompano Beach) — a longer-tenured (40+ years), Board-Certified probate/estate litigation specialist with an established local reputation, even with a more mixed review profile (3.1★/14 reviews).
+
+Dynamic sentence: "A score of 6 means competitors have meaningful advantages in one or more areas and are pulling ahead. You are not invisible yet — but the window to close the gap is narrowing. Every month without action is a month they extend their lead."
+
+Context for this score: Passarini Law's own review volume could not be verified live (Step 2), but the best available proxy (2 Avvo reviews) suggests a meaningfully smaller review footprint than the two most directly competing local firms in family law and immigration. Compounding this, the firm has voluntarily paused all marketing to protect its current operational capacity — a rational short-term decision given the ~80 hr/week bottleneck, but one that means competitors are the only ones actively building visibility in this market right now. This is not yet a 7-9 "competitors dominating multiple channels" situation because no evidence of aggressive paid-ad or LSA activity was found for any competitor this session — the gap observed is in organic reviews/local SEO footprint, not a multi-channel paid assault.
+
+======================================================================
+PASS 2 — VERIFICATION CHECKLIST
+======================================================================
+[x] Every number in the notes matches actually observed data (GBP star rating/review count and PageSpeed scores explicitly flagged as NOT OBTAINED rather than estimated)
+[x] Every competitor review count (Castro 46/4.8, Dacunha 87/4.8, Manceri 14/3.1) was verified live this session via Avvo/Birdeye; Passarini Law's own count was NOT claimed to be higher or lower than any competitor since it could not be verified live
+[x] Ad sections (Steps 6-8) cover all four practice areas/channels called for (family, immigration, probate, real estate) — all phrased as "not observed via available research tools" rather than a confirmed absence
+[x] No section states "you are not running ads" — all phrased as "does not appear to be running ads for this search" / "not observed via available research tools this session"
+[x] No profitability or business claim appears unless sourced from the transcript
+[x] No competitor reference uses generic labels — only specific named local firms (Renata Castro/USA4ALL Immigration Law, The Law Office of Melissa Dacunha P.A., Mark R. Manceri P.A.)
+[x] PageSpeed scores are explicitly flagged as NOT OBTAINED (API quota exhausted + client-rendered UI, same limitation documented elsewhere in this repo) rather than estimated — action item logged for manual re-check before finalizing the report
+[x] DBM is recorded (inferred: build operational systems that don't depend on Andrea personally, as the explicit precondition for the stated 5-year retirement goal)
+[x] Revenue goal is recorded (stated as "double/triple revenue" — no baseline dollar figure exists to apply a multiplier to, flagged)
+[x] Close rate is recorded (not stated — defaulted to 15% per instructions)
+[x] Average case value is recorded (not stated — practice-area default flagged rather than presented as firm-confirmed)
+[x] Stated call focus / product interest is recorded — explicitly called out that this call was about an operations/fractional-executive engagement (workflow, playbooks, intake-to-offboarding), NOT a standard marketing/intake growth ask, and that marketing should be framed as a later-phase opportunity rather than the immediate scope
+[x] Existing marketing/SEO/ad vendor engagements are recorded (none stated; Clio case management software is in use and will not be replaced)
+[x] Budget constraints stated by the prospect are recorded (none stated)
+
+OUTSTANDING ITEMS FOR MANUAL FOLLOW-UP BEFORE FINALIZING REPORT:
+1. PageSpeed mobile/desktop scores — API quota exhausted this session; re-run manually from a real browser (pagespeed.web.dev/report?url=https://www.passarinilaw.com) before finalizing.
+2. Live Google Business Profile star rating and review count for Passarini Law — could not be rendered via available tools this session; this is a material number for the audit and should be pulled manually rather than left as "2 Avvo reviews" proxy data.
+3. NAP inconsistency — Avvo and Justia both still associate Andrea Passarini with a "Hollywood, FL" location rather than the current Pompano Beach, FL address/office. Worth a direct, specific callout in the audit as a fixable trust-signal issue.
+4. passarinilaw.com 301-redirects to passarinilaw.site — confirm with the firm whether this is an intentional in-progress domain migration or an unintended technical issue; either way it is worth surfacing.
+5. Live paid-search (Google Ads), Local Service Ads, and Meta Ads Library checks for both the firm and named competitors (Castro/USA4ALL, Dacunha, Manceri) — none of these rendered via available research tools this session; recommend a manual browser check before the proposal call if specific ad copy/evidence is needed for the pitch.
+6. Given the transcript's framing, confirm with Nick before the August 11 call whether the proposal should lead with the operations/fractional-executive engagement (the stated ask) and position marketing/growth work as a second-phase opportunity, rather than leading with a standard growth/marketing pitch.
