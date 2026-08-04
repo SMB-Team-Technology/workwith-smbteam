@@ -1,0 +1,148 @@
+DHANANI LAW FIRM, LLC — SECTION 11 WORKINGS (INTERNAL ONLY — NEVER IN CLIENT REPORT)
+========================================================================
+
+PACKAGE_DECISION.JSON OVERRIDE REASONING (why it is NOT used as-is)
+--------------------------------------------------------------------
+1. REVENUE CORRECTION: package_decision.json claims revenue_stated: null and estimates
+   $180,000 from HubSpot. This is incorrect — the research notes STEP 9 explicitly state
+   revenue: "~$150k-$200k/year" current pace, with monthly revenue "<$15K" (trigger record).
+   Corrected effective revenue used throughout this audit: $180,000/year (~$15,000/month) —
+   consistent with the stated range, and noted here as a correction (stated, not inferred).
+
+2. 35% SPEND CAP VIOLATION (hard rule, not optional): The general eligibility rule caps
+   total SMB spend (management fees + ad spend) at 35% of monthly revenue. At ~$15,000/month
+   revenue, that cap is ~$5,250/month. package_decision.json recommended Full Service
+   Marketing Starter ($4,997/mo bundled) + Elite Coach ($2,600/mo bundled) = $7,597/mo in
+   management fees ALONE — before any ad spend — which already blows past the $5,250 cap by
+   over $2,300/month. Even Starter alone ($4,997/mo = ~33% of revenue) leaves no room for the
+   mandatory $3,000/mo minimum ad spend floor. Essentials (the cheaper marketing tier,
+   $3,497/mo) is hidden anyway because the firm has multiple detected practice areas (family
+   immigration + business immigration), and Essentials requires a single practice area.
+   CONCLUSION: no marketing package tier fits this firm's revenue within the 35% cap.
+
+3. BUDGET-REALITY OVERRIDE (transcript-stated need override #3) independently confirms this:
+   Research notes STEP 9 state "Rahim is described as 'open to SMB Team's $2,500/mo minimum
+   package (12-month commitment)'" — this matches Elite Coach's $2,600/mo bundled price
+   almost exactly, and is far below the $7,597/mo the revenue table implied.
+
+4. LAW (Legal AI Workforce) EXCLUDED despite real transcript interest in "AI Workforce Pro"
+   (explicitly discussed on the call per STEP 9) — LAW eligibility requires revenue $500K+
+   AND at least 1-2 support staff; this firm is under $500K revenue AND solo (Rahim is the
+   only attorney, no support staff beyond an outsourced 24/7 answering service). LAW is not
+   recommended this round. INTERNAL FLAG: sales should revisit LAW / AI Workforce Pro once
+   revenue clears $500K and support staff exist — good Phase 3 candidate.
+
+FINAL PACKAGE DECISION
+--------------------------------------------------------------------
+Marketing package selected: NONE in Phase 1.
+  This is a legitimate single-product recommendation (the eligibility doc allows this "when
+  the transcript clearly shows the firm's needs are best served by one service category").
+  Marketing is deferred to Phase 2 of the Growth Roadmap (Block 6) — once Elite Coach
+  coaching resolves the hiring/delegation "chicken-and-egg" problem and builds a team capable
+  of handling more case volume, THEN Full Service Marketing Starter tier is added and lead
+  generation turns on. This sequencing is a feature, not a gap: pushing lead volume at a solo
+  attorney with no team before fixing intake/team capacity would make things worse.
+
+Non-marketing package selected: Elite Coach
+  - Bundled price (from table): $2,600/mo
+  - Stand-alone price (from table): $3,497/mo
+  - Savings (stand-alone minus bundled): $897/mo
+  This is the SOLE Phase 1 package. It directly addresses the transcript's explicitly stated
+  need for coaching on systems/hiring/delegation to solve the "chicken-and-egg" staffing
+  problem, and is the practical embodiment of the DBM.
+
+Legal AI Workforce (LAW) package selected: none (excluded — see reasoning above)
+
+AI Avatar / Video Growth add-on selected: none (not discussed on call, no fit signal)
+
+TOTAL MONTHLY INVESTMENT (Block 3): $2,600/mo
+TOTAL SAVINGS: $897/mo
+Only ONE row in the investment grid — the second package-block div and second
+investment-row from the template are deleted (template has stubs for two packages; this
+audit uses only one).
+
+AD SPEND (Block 4) — PRESENTED AS PHASE 2 TARGET, NOT A PHASE 1 COMMITMENT
+--------------------------------------------------------------------
+Ad spend figures represent the Phase 2 target, tied to when Full Service Marketing launches
+— NOT something being spent starting Day 1 alongside the $2,600/mo Elite Coach investment.
+Phase 1 is Elite Coach only.
+
+CONSERVATIVE AD SPEND: $3,000/mo
+  - Google Search only, the Immigration category minimum ($3,000), which also satisfies the
+    $3,000/mo absolute floor for any paid ads
+  - Blended CPL ~$97.50 midpoint (Google Search $85-$110) + 20% cushion ~$117/lead
+  - Leads ~25/mo -> Cases ~25 x 15% default close rate ~3-4 cases/mo
+  - Case value: not stated in transcript, using Immigration default $3K-$6K (disclosed as a
+    default), midpoint $4,500 -> Revenue ~$13,500-$18,000/mo
+  - Return ~5-6x
+
+AGGRESSIVE AD SPEND: $12,000/mo
+  - 20% rule: $500K stated revenue goal x 20% / 12 = $8,333/mo x 1.5 Tier-1-Atlanta
+    multiplier ~$12,500/mo, rounded to $12,000
+  - Blended multi-channel CPL (Google Search + LSA + Meta Retargeting + Meta Cold, evenly
+    split) ~$70-$75/lead
+  - Leads ~160-170/mo -> Cases ~24-25/mo at 15% close rate
+  - Revenue ~24-25 cases x $4,500 midpoint ~$108,000-$112,500/mo
+  - Return ~9x
+
+DBM STATEMENT FOR BLOCK 1
+--------------------------------------------------------------------
+Rahim's explicit goal: "build a systematized, sellable firm that runs without his constant
+presence, enabling him to work on the business as a true CEO." Motivation named directly:
+"gain personal freedom, reduce stress, and build a lasting legacy by helping clients start
+new lives." Primary DBM category: (1) firm that runs itself so he has more time. Secondary
+thread: (2) grow and sell.
+
+Closing statement (Block 1): "We help solo immigration attorneys stuck doing everything
+themselves get out of the day-to-day bottleneck so they can build a systematized, sellable
+firm that runs without them."
+
+QUICK WIN OPPORTUNITIES (8 identified, minimum 6 required)
+--------------------------------------------------------------------
+1. [Lead Gen / Quick Win] NAP inconsistency — ZIP code mismatch between Avvo (30329) and
+   firm's own site/other directories (30309) for the same Peachtree Street suite — actively
+   hurting local search rankings. No named competitor for this specific row.
+2. [Lead Gen / Long-Term Play] Past PPC campaign failure (no landing page, no keyword
+   targeting) — real opportunity to do it right, but sequenced to Phase 2 per above.
+3. [Lead Gen / Long-Term Play] No geo-targeting landing pages for surrounding metro cities
+   (Marietta, Decatur, Sandy Springs).
+4. [Lead Gen / Long-Term Play] Review volume gap: 46 reviews at 4.7 stars vs. named
+   competitors Quijano Law (132 @ 4.9), Sharma Law Offices/eLaw Immigration (125 @ 4.9),
+   Chavarro Law Firm (136 @ 4.9 Birdeye). "Who Is Doing It Better" cites Quijano Law.
+5. [Intake / Quick Win] Contact form buried in footer, competing newsletter signup form
+   mid-page distracting from primary conversion path.
+6. [Intake / Long-Term Play] 24/7 answering service exists but conversion rate on paid leads
+   is unproven/unmeasured.
+7. [Team / Long-Term Play] Solo bottleneck, failed freelance hiring attempts due to poor
+   quality/lack of detail — directly ties to DBM.
+8. [Profit / Quick Win] No profit/margin visibility beyond top-line revenue and goal
+   figures — start tracking basic financial metrics.
+
+FIRST 90 DAYS (3-5 bullets)
+--------------------------------------------------------------------
+1. Kick off Elite Coach engagement — begin systems, hiring, and delegation coaching to
+   start resolving the chicken-and-egg staffing problem.
+2. Fix the NAP inconsistency (ZIP code mismatch between Avvo and the firm's own site) to
+   stop the active harm to local search rankings.
+3. Move the contact form out of the footer and resolve the competing newsletter-signup
+   distraction so existing referral traffic converts at a higher rate.
+4. Build a basic review-generation habit into the existing referral/client flow to begin
+   closing the gap with named competitors.
+5. Stand up basic profit tracking (revenue by practice area, rough cost per case) so
+   progress toward the $500K/$250K target can actually be measured.
+
+ESCALATIONS (INTERNAL ONLY — NEVER IN CLIENT REPORT)
+--------------------------------------------------------------------
+- Revenue under $300K -> scoping approval required.
+- Revenue under $250K -> confirm client has funds to cover 4 months of service before
+  proceeding. This firm is ~$150K-$200K/year, under BOTH thresholds. CONFIRM WITH RAHIM
+  BEFORE CONTRACT SIGNING.
+- LAW / AI Workforce Pro interest noted but excluded this round — revisit in Phase 3 once
+  revenue clears $500K and support staff are hired.
+- Single-product recommendation (Elite Coach only, no marketing) is an explicit
+  budget-reality + 35%-cap override departure from package_decision.json (which proposed
+  Starter + Elite Coach at $7,597/mo total). Documented here so sales sees this was
+  intentional, not an oversight.
+- Ad spend figures ($3,000 conservative / $12,000 aggressive) represent the Phase 2 target
+  once marketing launches — NOT a Phase 1 commitment. Phase 1 is Elite Coach only at
+  $2,600/mo.
