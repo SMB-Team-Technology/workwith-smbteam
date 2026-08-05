@@ -1,0 +1,206 @@
+================================================================================
+CALDERARO LAW GROUP — SECTION 11 WORKINGS (INTERNAL — NOT CLIENT FACING)
+================================================================================
+
+REVENUE OVERRIDE — READ FIRST
+--------------------------------------------------------------------------------
+package_decision.json (confidence: medium) used revenue_effective = $2,000,000,
+sourced from a HubSpot CRM field ("$1,000,000 - $3,000,000") with the pipeline
+taking the range midpoint. This is NOT the same as a transcript-stated figure.
+
+The research notes' Step 9 Transcript Extraction states explicitly:
+  "Annual revenue: ~$1M/year, described as revenue-stagnant/plateaued."
+This is ground truth per the Transcript-First Principle and overrides the
+HubSpot-derived $2M estimate.
+
+Correction: revenue_effective = ~$1,000,000/year (transcript-stated), treated
+at the $1M+ inclusive boundary used throughout the eligibility tables (Growth
+marketing tier "$1M-$2M", Master's Circle "$1M+, 5+ with dedicated staff").
+
+Why this matters: at $2M, the pipeline selected Dominate ($10,497/mo) +
+Master's Circle + FCOO Director ($8,394/mo) = $18,891/mo total. At the correct
+~$1M revenue, "Under $2M -> hide Dominate and Platinum marketing tiers" applies
+directly, and "$2M+ ... -> Master's Circle + FCOO Director" is not met either.
+Presenting the $2M-tier package to a ~$1M firm would have overshot both the
+firm's actual revenue band and the 35% total-spend cap relative to their real
+monthly revenue (~$83,333/mo -> 35% cap ~$29,167/mo). None of the three
+Transcript-Stated Need overrides (call-purpose, existing-vendor, budget-reality)
+apply here — this is a standard marketing/lead-gen engagement, no existing
+vendor, no stated inability to afford — so the correction is a straight
+eligibility-table re-run at the corrected revenue, not a category change.
+
+MANDATORY PRICE LOOKUP (confirmed against tables in audit-write.md)
+--------------------------------------------------------------------------------
+- Marketing package selected: Full Service Marketing — Growth
+  - Bundled price (from table): $7,497/mo
+  - Stand-alone price (from table): $8,997/mo
+  - Savings (stand-alone minus bundled): $1,500/mo
+  - Ad spend cap for this tier: $50,000/mo
+- Non-marketing package selected: Master's Circle
+  - Bundled price (from table): $4,600/mo
+  - Stand-alone price (from table): $4,997/mo
+  - Savings (stand-alone minus bundled): $397/mo
+  - Basis: revenue $1M+, team 14 (5+ threshold met), 2 dedicated intake staff
+    (satisfies "dedicated ops/marketing/intake team member" requirement).
+    No dedicated ops staff mentioned -> FCOO Advisor NOT added. Revenue is
+    ~$1M (not $2M+) -> FCOO Director NOT eligible. No profit-visibility
+    problem stated on the call -> FCFO Advisor NOT added.
+- Legal AI Workforce (LAW) package selected: none — AI readiness/openness was
+  not discussed on this call; do not introduce a product category the
+  transcript gives no signal for.
+- AI Avatar / Video Growth add-on selected: none — not discussed, no existing
+  marketing budget/paid ads history to pair it with.
+- Total monthly investment (sum of bundled/recurring): $7,497 + $4,600 =
+  $12,097/mo
+- Total savings (sum of all savings): $1,500 + $397 = $1,897/mo
+
+35% CAP CHECK
+--------------------------------------------------------------------------------
+Monthly revenue at ~$1M/year = ~$83,333/mo. 35% cap = ~$29,167/mo.
+Management fees ($12,097/mo) + aggressive ad spend ($50,000/mo, see below) =
+$62,097/mo — THIS EXCEEDS THE 35% CAP ($29,167/mo) at the aggressive ad spend
+level. Conservative scenario ($12,097 + $5,000 = $17,097/mo) is within cap.
+Flag for Randy: the aggressive ad-spend scenario in Block 4 is presented as
+the tier-capped ceiling for planning purposes, not as a first-90-days
+recommendation — actual ramp should stay within the 35% cap until revenue
+grows. Recommend opening the client conversation at/near the conservative
+level and scaling toward aggressive only as revenue and case capacity grow
+(see Phase 2/3 roadmap).
+
+AD SPEND CALCULATION
+--------------------------------------------------------------------------------
+Conservative = sum of the two channel minimums actually discussed on the call
+(transcript: "PPC ~$3,000/mo minimum, LSA ~$2,000/mo minimum"):
+  Google PPC min ($3,000, immigration) + LSA min ($2,000, immigration) = $5,000/mo
+
+Aggressive (20% rule, revenue goal $3.6M explicitly stated):
+  1. $3,600,000 x 20% / 12 = $60,000/mo
+  2. x Geo multiplier (Miami = Tier 2, 1.3x) = $78,000/mo
+  3. x Spanish campaign multiplier (immigration, non-PI/MVA, 1.33x) = $103,740/mo
+  4. - marketing management fee ($7,497) = $96,243/mo available ad spend
+  5. Reverse math validation: $3,600,000/12 = $300,000/mo target revenue ÷
+     $4,500 default avg case value (Immigration $3K-$6K midpoint — no case
+     value was stated in the transcript; flagged for sales rep to confirm,
+     since business-immigration/investor-visa cases (E2/EB5/L/O) typically
+     run higher than family-based immigration, so this default is likely
+     conservative) = 66.7 target cases/mo ÷ 20% stated close rate = 333.3
+     required leads/mo x ~$84.50 blended CPL (Google Search + LSA midpoints,
+     no cushion) = ~$28,171/mo required spend.
+     20% rule ($96,243) > reverse math ($28,171) -> use $96,243/mo.
+  6. Tier cap check: Growth tier caps ad spend at $50,000/mo. $96,243 exceeds
+     the cap. Per the boundary rule, exceeding a cap normally triggers a tier
+     upgrade — but "aggressive goals alone no longer bypass the Dominate/
+     Platinum revenue floors," and this firm's actual revenue (~$1M) does not
+     meet the Dominate floor ($2M+). Tier upgrade is NOT available.
+     -> Aggressive ad spend is capped at the Growth tier ceiling: $50,000/mo.
+        A 10% overage fee could apply if the client wants to exceed this
+        before qualifying for Dominate — flag as an option for Randy, not a
+        default recommendation.
+
+CAPACITY FLAG FOR SALES REP (internal — do not put in client report)
+--------------------------------------------------------------------------------
+The DBM/capacity data point in the transcript is "30 open case slots, currently
+at 90/120 capacity" — a modest, bounded gap. The mechanical ROI math at the
+$50,000/mo aggressive ad spend level projects ~126 cases/month (see ROI below),
+which is far beyond what a 14-person team with 30 open slots could plausibly
+absorb without significant operational scaling first. This is not a data
+error — it is the tier-cap ceiling calculated per the standard formula — but
+Randy should read this as "the aggressive scenario is a multi-year ceiling
+firms grow into, not a month-one target," and should pace ad spend scaling to
+match actual intake/case capacity growth (this is exactly what Phase 2 of the
+roadmap below is for). Recommend flagging for paid-ads-team review before
+presenting the full aggressive number to the client as a near-term plan.
+
+ROI PROJECTIONS
+--------------------------------------------------------------------------------
+Conservative ($5,000/mo — Google PPC + LSA, 60/40 spend split):
+  Blended CPL = (0.6 x $97.50 PPC mid) + (0.4 x $65 LSA mid) = $84.50
+    + 20% conservative cushion = $101.40
+  Leads = $5,000 / $101.40 ≈ 49 leads/mo
+  Cases = 49 x 20% stated close rate ≈ 10 cases/mo
+  Revenue = 10 x $4,500 default avg case value ≈ $45,000/mo
+  Return = $45,000 / $5,000 ≈ 9.0x
+
+Aggressive ($50,000/mo — Google PPC 40%, LSA 10%, Meta cold 30%, Meta
+retargeting 20%):
+  Blended CPL = (0.4x$97.50)+(0.1x$65)+(0.3x$75)+(0.2x$57.50) = $79.50 (no cushion)
+  Leads = $50,000 / $79.50 ≈ 629 leads/mo
+  Cases = 629 x 20% stated close rate ≈ 126 cases/mo
+  Revenue = 126 x $4,500 default avg case value ≈ $567,000/mo
+  Return = $567,000 / $50,000 ≈ 11.3x
+  (See capacity flag above — this is a ceiling, not a month-one expectation.)
+
+DBM STATEMENT FOR BLOCK 1
+--------------------------------------------------------------------------------
+"We help business immigration firms get a predictable, scalable flow of
+qualified investor-visa leads so they can break through a revenue plateau and
+hit an aggressive growth target without gambling the business on referrals
+alone."
+
+QUICK WIN OPPORTUNITIES IDENTIFIED (7 — minimum 6 required)
+--------------------------------------------------------------------------------
+1. [Lead Gen / Quick Win] Launch Google PPC for business immigration terms
+   (E2, EB5, L, O) with a Spanish-language track.
+   Why: 100% referral-dependent; zero paid or organic visibility for the exact
+   terms overseas buyers search.
+   Competitor: Davies & Associates — surfaces prominently in organic/aggregator
+   results for these same terms.
+   Opportunity: capture demand the firm is currently ceding entirely.
+
+2. [Lead Gen / Quick Win] Claim Local Service Ads (Google Screened) placement.
+   Why: LSA availability "varies by country" per the transcript but is untapped;
+   pay-per-lead, not pay-per-click.
+   No named competitor confirmed in LSA — omit "Who Is Doing It Better."
+   Opportunity: appear above all paid and organic results the moment a
+   qualified prospect searches.
+
+3. [Lead Gen / Long-Term] Build a structured review-generation program.
+   Why: firm's 90-95% case approval rate is real and provable but invisible —
+   no visible Google review footprint surfaced.
+   Competitor: Kurzban Kurzban Tetzeli & Pratt — 115 verified reviews at 4.7★.
+   Opportunity: convert an existing track record into the trust signal an
+   overseas buyer uses before wiring a large retainer.
+
+4. [Lead Gen / Quick Win] Add an attorney bio and credentials page.
+   Why: no dedicated bio page exists; Renata appears only inside one
+   testimonial — a gap for a buyer making a high-stakes, high-trust decision.
+   No named competitor for this specific gap — omit "Who Is Doing It Better."
+   Opportunity: close a credibility gap before a paid campaign even launches.
+
+5. [Intake / Quick Win] Standardize the lead follow-up sequence.
+   Why: current close rate is ~20% against a stated goal of 30%, with no
+   defined follow-up process described beyond having two dedicated intake
+   staff.
+   No named competitor — omit "Who Is Doing It Better."
+   Opportunity: convert more of the leads already in the pipeline without
+   spending another marketing dollar.
+
+6. [Team / Long-Term] Resolve the NAP (name/address/phone) inconsistency
+   across Google and directory listings.
+   Why: multiple conflicting addresses and phone numbers surfaced across
+   sources for the same firm, diluting local SEO signal and risking legitimacy
+   concerns for an overseas buyer verifying the firm before committing.
+   No named competitor — omit "Who Is Doing It Better."
+   Opportunity: fix a trust and SEO problem in a single move.
+
+7. [Profit / Long-Term] Establish case-value and profitability tracking by
+   practice area.
+   Why: no profitability metrics were part of this call — only top-line
+   revenue and the 2027 goal — despite a stated goal of nearly 4x growth.
+   No named competitor — omit "Who Is Doing It Better."
+   Opportunity: know which visa categories actually drive profit before
+   scaling ad spend against the $3.6M target.
+
+FIRST 90 DAYS
+--------------------------------------------------------------------------------
+1. Launch Google PPC and LSA campaigns targeting business immigration terms
+   (E2, EB5, L, O visas), including a Spanish-language track for the overseas
+   business-owner audience.
+2. Add an attorney bio/credentials page and tighten the homepage conversion
+   path so paid traffic converts once it lands.
+3. Kick off Master's Circle group coaching and align on a defined lead
+   follow-up sequence for the two dedicated intake staff.
+4. Begin correcting the NAP (name/address/phone) inconsistency across Google
+   and directory listings.
+5. Stand up review-generation outreach to qualified past clients to start
+   building a visible online track record.
