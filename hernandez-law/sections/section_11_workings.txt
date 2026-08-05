@@ -1,0 +1,200 @@
+SECTION 11 — WORKINGS FILE
+Hernandez Law | August 14, 2026 | Sales Rep: Dan Bryant
+============================================================
+
+*** BUDGET-REALITY OVERRIDE APPLIED — READ BEFORE USING NUMBERS BELOW ***
+
+Override triggered: TRANSCRIPT-STATED NEED OVERRIDE #3 (Budget-Reality Override),
+per audit-write.md.
+
+Why the override applies:
+- package_decision.json (confidence: "low") recommends Full Service Marketing —
+  Starter ($4,997/mo bundled) + Elite Coach Plus ($3,200/mo bundled) = $8,197/mo
+  total, based on a low-confidence HubSpot revenue estimate of $570,000.
+- The research notes' transcript extraction (Step 9) states actual revenue
+  directly: "~$1M in attorney's fees two years ago; close to $1M last year;
+  2026 pacing ~$500k due to referral slowdown." The ~$500K transcript figure
+  is used as ground truth in this report instead of the $570K HubSpot estimate
+  (both fall in the same eligibility band, so this correction alone does not
+  change tier math).
+- The transcript directly states: "Acknowledged SMB Team will be higher
+  ($3-4k) but includes foundational organic/GBP/site work and long-term asset
+  building" and "Prospect is open to the $2,000-$4,000/month range, most
+  likely to land at $3,000-$4,000/month."
+- Coaching was never discussed or requested on the call. Tatiana's stated
+  needs are 100% marketing / local-visibility: GBP remediation, EN/ES site
+  consolidation, on-page SEO, review generation, and Spanish PPC/social ads.
+- The revenue-implied bundle ($8,197/mo) is roughly double what she indicated
+  she is comfortable spending. This triggers the budget-reality override.
+
+EXCLUDED bundle (revenue-table default, NOT recommended):
+  Full Service Marketing — Starter ($4,997/mo bundled) + Elite Coach Plus
+  ($3,200/mo bundled) = $8,197/mo total. Excluded because it roughly doubles
+  the prospect's stated comfortable spend range and includes a coaching
+  product that was never discussed or requested on the call.
+
+RECOMMENDED instead (this report uses these numbers only):
+  Full Service Marketing — Essentials ONLY. No coaching package included.
+  Essentials is structurally eligible: revenue ~$500K is under the $750K
+  Essentials ceiling, the firm operates from a single location (1 Beverly
+  Hills office), and — correctly understood — the firm has a SINGLE practice
+  area (Employment Law). The sub-types listed in package_decision.json
+  (wrongful termination, wage & hour, discrimination, sexual harassment,
+  retaliation) are all facets of one practice area, not separate practice
+  areas, so they do not disqualify Essentials.
+
+  Legal AI Workforce (LAW) is NOT recommended as a Phase 1 package. The
+  research notes explicitly flag "explore AI tools to reduce discovery
+  burden" as a minor secondary interest, not the primary focus of the call,
+  and adding LAW would further exceed the stated budget. AI/discovery
+  tooling is mentioned only as a later-phase roadmap idea (Phase 3).
+
+============================================================
+MANDATORY PRICE LOOKUP (verified against SELECT MARKETING PACKAGE table,
+audit-write.md lines 271-282)
+============================================================
+
+- Marketing package selected: Full Service Marketing — Essentials
+  - Bundled price (from table): $3,497/mo
+  - Stand-alone price (from table): $3,797/mo
+  - Savings (stand-alone minus bundled): $300/mo
+
+- Non-marketing package selected: none (budget-reality override — coaching
+  was never requested and would exceed stated budget)
+  - N/A
+
+- Legal AI Workforce (LAW) package selected: none (secondary interest only;
+  roadmap mention in Phase 3, not a Phase 1 recommendation)
+
+- AI Avatar / Video Growth add-on selected: none
+
+- Total monthly investment (sum of all bundled/recurring prices): $3,497/mo
+
+- Total savings (sum of all savings): $300/mo
+
+============================================================
+AD SPEND — CONSERVATIVE AND AGGRESSIVE
+============================================================
+
+No practice-area row exists for "Employment Law" in the Ad Spend Calculation
+table (it only lists MVA, Accident/Injury General, Criminal Defense,
+Bankruptcy, Family Law, Estate Planning, Immigration, Business Law). Since
+none apply directly, conservative ad spend uses the table's stated "Absolute
+minimum for any paid ads" figure.
+
+Conservative ad spend: $3,000/mo (absolute minimum for any paid ads, per
+table — no PA-specific floor applies to Employment Law)
+
+Aggressive ad spend: $5,000/mo — THIS IS NOT A 20%-RULE OUTPUT. Per the
+budget-reality override instructions, the full 20%-rule computation
+(revenue goal x 20% / 12, geo multiplier, Spanish-campaign multiplier) was
+intentionally NOT run, because it would produce a figure far above both
+Tatiana's stated $2,000-$4,000/month comfort range and the Essentials tier's
+own $5,000 ad spend cap. Instead, the aggressive figure is capped at the
+Essentials tier's ad spend cap ($5,000/mo) — an intentional cap given the
+budget-reality override, not a 20%-rule output.
+
+CPL basis: No Employment Law row exists in the Client-Facing CPL table
+either. Business Law is used as the closest disclosed proxy (a non-PI,
+non-criminal, non-family/estate/immigration/bankruptcy civil practice
+area), per Google Search CPL $100-$120 (midpoint $110). This proxy and its
+use is disclosed here per the "always disclose when using defaults"
+principle.
+
+Close rate: not stated in transcript — default 15% used per research
+protocol.
+
+Average case value: $30,000-$50,000+ per case (stated in transcript).
+Midpoint of $40,000 used for revenue projections below.
+
+--- CONSERVATIVE SCENARIO ($3,000/mo ad spend) ---
+Blended CPL (with 20% cushion): $110 x 1.20 = $132
+Leads = $3,000 / $132 = ~22.7 leads/mo
+Cases = 22.7 x 15% = ~3 cases/mo
+Revenue = 3 cases x $40,000 = $120,000/mo
+Return = $120,000 / $3,000 = 40x
+
+--- AGGRESSIVE SCENARIO ($5,000/mo ad spend, capped per override) ---
+Blended CPL (no cushion): $110
+Leads = $5,000 / $110 = ~45.5 leads/mo
+Cases = 45.5 x 15% = ~6-7 cases/mo
+Revenue = 6.8 cases x $40,000 = ~$272,000/mo
+Return = $272,000 / $5,000 = ~54x
+
+Both scenarios are labeled as estimates using industry averages, a
+disclosed practice-area proxy, and a default close rate — not guarantees.
+
+============================================================
+DBM STATEMENT FOR BLOCK 1
+============================================================
+
+Category 1 — building a firm that runs itself so Tatiana has more time and
+bandwidth back. Transcript basis: "everything routes through her, causing
+delays and missed opportunities," discovery-heavy litigation weeks strain
+her bandwidth, and she is explicitly exploring AI tools "to reduce
+discovery burden."
+
+Formula: "We help employment law firm owners serving Spanish-speaking
+workers get a predictable, diversified flow of qualified cases so they can
+stop personally carrying every intake and litigation bottleneck."
+
+============================================================
+QUICK WIN OPPORTUNITIES (6+)
+============================================================
+
+1. [Lead Gen / Quick Win] Fix GBP category and address mismatch — GBP is
+   set to "Law firm" instead of "Employment attorney" and shows an old LA
+   address instead of the real Beverly Hills office. Competitor: Setareh
+   Law Group (correctly configured, 17 Yelp reviews). Opportunity: correct
+   local map visibility for the exact searches ideal clients are running.
+
+2. [Lead Gen / Long-Term Play] Consolidate EN/ES sites into one bilingual
+   domain — hernandezlawca.com and justicieralegal.com currently split SEO
+   authority. Opportunity: one stronger asset that ranks for both English
+   and Spanish searches instead of two weak, disconnected ones.
+
+3. [Lead Gen / Quick Win] Launch English-language Google Ads alongside the
+   existing Spanish campaign — the current campaign is Spanish-only, so
+   English-language searchers never see the firm. Competitor: King & Siegel
+   LLP (active, high-visibility paid acquisition). Opportunity: capture an
+   entirely untapped half of the market.
+
+4. [Intake / Quick Win] Move the consultation form above the fold — it is
+   currently buried below the fold. Opportunity: reduce friction at the
+   exact moment a ready prospect wants to reach out.
+
+5. [Intake / Long-Term Play] Build a defined follow-up sequence for leads
+   who do not sign immediately — none exists today. Opportunity: recover
+   revenue currently lost to slow or absent follow-up, especially during
+   busy litigation weeks.
+
+6. [Team / Long-Term Play] Define what routes to the new post-bar law clerk
+   and contract attorney versus what requires Tatiana directly. Competitor:
+   n/a (internal opportunity). Opportunity: real capacity growth instead of
+   just added headcount that still needs her.
+
+7. [Profit / Quick Win] Build monthly margin visibility beyond the known
+   overhead figure — currently only the ~$25,000/month overhead number is
+   tracked. Opportunity: confirm whether the existing $6,200/month ad spend
+   is still paying for itself as lead quality declines.
+
+8. [Lead Gen / Quick Win] Build review generation into intake follow-up —
+   the firm shows 0 reviews across Facebook and Avvo versus competitors'
+   double-digit counts. Competitor: Setareh Law Group (17 Yelp), Matern Law
+   Group (19 Yelp). Opportunity: close the credibility gap that costs
+   conversions at the comparison stage.
+
+============================================================
+FIRST 90 DAYS
+============================================================
+
+1. Launch corrected, bilingual Google Ads campaigns (English + Spanish)
+   targeting employment law, wrongful termination, and discrimination
+   keywords in Beverly Hills and Los Angeles.
+2. Remediate Google Business Profile — correct category to "Employment
+   attorney" and fix the address to the real Beverly Hills office.
+3. Begin EN/ES website consolidation and on-page SEO foundation work,
+   including moving the consultation form above the fold.
+4. Launch a review generation sequence tied to case intake and closure.
+5. Establish baseline reporting on lead source, lead quality, and
+   conversion so ad spend performance is visible going forward.
