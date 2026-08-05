@@ -208,32 +208,30 @@ story.append(b("<b>Guarantee skepticism.</b> Flagged enforceability concerns on 
 
 story.append(thin_rule())
 
-# ── Why This Marketing Package ──
-story.append(Paragraph("Why This Marketing Package", S["section"]))
+# ── Why This Coaching Package ──
+story.append(Paragraph("Why This Coaching Package", S["section"]))
 
 story.append(Paragraph("<b>What it does for him:</b>", S["subsection"]))
-story.append(bd("Gives Rye Law its first real lead gen system across all five practice areas, instead of referrals alone."))
-story.append(bd("Frees Rick from being the only source of new business — step one toward the independence he wants."))
+story.append(bd("Builds the leadership and delegation structure Rick doesn't have yet, using his 3 clerks and bookkeeper."))
+story.append(bd("Frees Rick from being personally entrenched in every file — step one toward the independence he wants."))
 
-story.append(Paragraph("<b>Full Service Marketing — Starter  |  $4,997/mo bundled</b>", S["subsection"]))
-story.append(b("4 locations + 5 practice areas make Essentials ineligible — Starter or above is required."))
-story.append(b("~$570K estimated revenue (low confidence, HubSpot-sourced) independently qualifies for Starter."))
-story.append(b("Rick was already evaluating ~$5,000/mo — Starter's $4,997/mo bundled matches almost exactly."))
-story.append(b("Starter's $20,000 ad-spend cap comfortably covers the $3,500-$11,500/mo range below."))
+story.append(Paragraph("<b>Elite Coach Plus  |  $3,200/mo bundled</b>", S["subsection"]))
+story.append(b("Proposal narrowed to Elite Coach Plus only per sales request — marketing removed from the immediate ask."))
+story.append(b("~$400K-$1M estimated revenue band independently qualifies for Elite Coach Plus."))
+story.append(b("$3,200/mo bundled is well below the $5,000/mo figure Rick was already evaluating."))
 
 story.append(thin_rule())
 
-# ── Why No Coaching Package (Yet) — budget-reality override applied ──
-story.append(Paragraph("Why No Coaching Package (Yet)", S["section"]))
+# ── Why No Marketing Package (Yet) ──
+story.append(Paragraph("Why No Marketing Package (Yet)", S["section"]))
 
 story.append(Paragraph("<b>What holding it back does for him:</b>", S["subsection"]))
-story.append(bd("Keeps the ask at $4,997/mo — what Rick already reviewed — not $8,197/mo before he's re-engaged."))
-story.append(bd("Avoids compounding his cash-flow concern with a second new commitment he didn't ask for."))
+story.append(bd("Keeps the ask at $3,200/mo — well under the $4,997/mo Starter price Rick was previously evaluating."))
+story.append(bd("Avoids asking Rick to fund ad spend on top of a new commitment while the AR is still outstanding."))
 
-story.append(Paragraph("<b>Elite Coach Plus  |  held for Phase 2 ($3,200/mo if added later)</b>", S["subsection"]))
-story.append(b("OVERRIDE APPLIED: Rick postponed the existing $5K/mo ask over ~$60K expenses + ~$50K AR — adding coaching now raises the ask 64% above that."))
-story.append(b("package_decision.json paired Starter + Elite Coach Plus at $8,197/mo total — intentionally overridden; do not present that number to Rick."))
-story.append(b("Revenue and team size would otherwise qualify — reintroduce coaching in the Phase 2 conversation, not this re-engagement."))
+story.append(Paragraph("<b>Full Service Marketing — Starter  |  held for Phase 2 ($4,997/mo if added later)</b>", S["subsection"]))
+story.append(b("Rick postponed the existing $5K/mo ask over ~$60K expenses + ~$50K AR — coaching alone is a lower, easier re-entry point."))
+story.append(b("Revenue and practice-area mix would otherwise qualify Starter — reintroduce it once coaching builds the leadership structure."))
 
 
 # ══════════════════════════════════════════════════════════
@@ -244,26 +242,17 @@ story.append(PageBreak())
 story.append(Paragraph("Rye Law — Sales Companion (continued)", S["title"]))
 story.append(thin_rule())
 
-# ── Why This Ad Spend ──
-story.append(Paragraph("Why This Ad Spend", S["section"]))
+# ── Why No Ad Spend This Phase ──
+story.append(Paragraph("Why No Ad Spend This Phase", S["section"]))
 
 story.append(Paragraph("<b>What it does for him:</b>", S["subsection"]))
-story.append(bd("Turns paid traffic into a predictable stream of new cases across all 5 practice areas instead of relying on referrals."))
-story.append(bd("Scales with the firm — starting conservative while AR clears, then expanding once cash flow allows."))
+story.append(bd("Keeps this engagement entirely inside SMB Team's management fee — no third-party dollars to Google/Meta to approve right now."))
+story.append(bd("Lead generation (and the ad-spend conversation) is revisited once the leadership structure is in place and cash flow is predictable — see Phase 2 of the roadmap."))
 
-story.append(Paragraph("<b>Recommended Ad Spend Range:</b>", S["subsection"]))
-story.append(b("<b>Conservative:</b> $3,500/mo — minimum viable spend across recommended channels, well under the 35% cap."))
-story.append(b("<b>Aggressive:</b> $11,500/mo — capped by the 35% total-spend rule, not the tier's $20,000 ceiling."))
-
-story.append(Paragraph("<b>Estimated Return on Investment:</b>", S["subsection"]))
-story.append(b("<b>Conservative:</b> 4 cases x $4.7K = $18.8K/mo vs. $3.5K spend = 5.4x return."))
-story.append(b("<b>Aggressive:</b> 16 cases x $4.7K = $75.2K/mo vs. $11.5K spend = 6.5x return."))
-story.append(Paragraph("<i>All figures are estimates. Not guaranteed.</i>", S["disclaimer"]))
-
-story.append(Paragraph("<b>How the range was calculated:</b>", S["subsection"]))
-story.append(b("<b>Conservative:</b> Blended practice-area minimums across Immigration, Family, Litigation, Real Estate, and Business Law ~= $3,500."))
-story.append(b("<b>Aggressive:</b> 2x current revenue ($1.14M) x 20% / 12 = $19,000. Minus $4,997 mgmt fee = $14,003 uncapped."))
-story.append(b("Total spend at aggressive: $4,997 + $11,500 = $16,497/mo = 34.7% of revenue. Under the 35% cap (uncapped figure would have been 37.9% — corrected down)."))
+story.append(Paragraph("<b>If Ad Spend Comes Up:</b>", S["subsection"]))
+story.append(b("Reference range once Starter is reintroduced: Conservative $3,500/mo, Aggressive $11,500/mo — both scoped to all 5 practice areas."))
+story.append(b("Do not quote ROI/ROAS figures for this engagement — coaching has no ad-spend component to project a return against."))
+story.append(Paragraph("<i>Marketing figures above are reference-only for the Phase 2 conversation, not part of this proposal.</i>", S["disclaimer"]))
 
 story.append(thin_rule())
 
@@ -271,16 +260,16 @@ story.append(thin_rule())
 story.append(Paragraph("If He Pushes Back", S["section"]))
 
 story.append(Paragraph('"We already said we need to wait until January."', S["objection_q"]))
-story.append(Paragraph("This proposal is built around the exact $5,000/mo figure Rick already reviewed — Starter alone, no added coaching — so there's nothing new to reconsider financially. It's ready to activate the moment the AR clears.", S["objection_a"]))
+story.append(Paragraph("This proposal is built at $3,200/mo — well under the $5,000/mo figure Rick already reviewed — with no ad spend attached, so it's an easier re-engagement, not a harder one. It's ready to activate the moment the AR clears.", S["objection_a"]))
 
 story.append(Paragraph('"The guarantee isn’t enforceable here, so how do I know this works?"', S["objection_q"]))
-story.append(Paragraph("Point to the named local competitors already outperforming Rye Law in his own market: Chaudhary Law Office (300 reviews, 4.8 stars), Zinati Kay (27,000+ closings marketed), Simple Divorce (doors away from his own office). The risk isn't the guarantee — it's the gap widening every month with zero paid presence.", S["objection_a"]))
+story.append(Paragraph("The guarantee applies to the marketing/ad-spend engagement, not to coaching — reframe around the concrete deliverables instead: weekly coaching, a delegation framework for his existing team, and financial visibility on the AR/expense cycle that's delaying him.", S["objection_a"]))
 
 story.append(Paragraph('"I don’t have a marketing budget line yet — can this wait until the AR is in?"', S["objection_q"]))
-story.append(Paragraph("Recommend using part of the ~$50K AR collection itself to fund the first 1-2 months of ad spend once collected, so the campaign can launch without waiting for a completely clean slate.", S["objection_a"]))
+story.append(Paragraph("That's exactly why this proposal doesn't include marketing or ad spend right now — Elite Coach Plus fits inside the management fee alone, with lead generation revisited in Phase 2 once the AR clears.", S["objection_a"]))
 
-story.append(Paragraph('"Is $5K/mo actually going to move the needle for 5 practice areas?"', S["objection_q"]))
-story.append(Paragraph("Starter's $20,000 ad-spend cap and the conservative-to-aggressive $3,500-$11,500/mo range are both scoped specifically to cover all 5 areas — this isn't a single-practice budget stretched thin.", S["objection_a"]))
+story.append(Paragraph('"Is coaching alone actually going to move the needle for 5 practice areas?"', S["objection_q"]))
+story.append(Paragraph("Coaching isn't the lead-gen lever — it's the leadership and delegation structure that lets Rick step back from personally holding all 5 practice areas together, which is the prerequisite he described needing before scaling lead flow.", S["objection_a"]))
 
 story.append(thin_rule())
 
@@ -288,16 +277,16 @@ story.append(thin_rule())
 story.append(Paragraph("Investment At A Glance", S["section"]))
 
 price_data = [
-    [Paragraph("<b>Full Service Marketing — Starter</b>", S["price_main"]),
-     Paragraph("$4,997/mo", S["price_main"])],
-    [Paragraph("Ads, local SEO, and website conversion work across all 5 practice areas.", S["price_detail"]),
-     Paragraph("<strike>$5,697</strike> stand alone", S["price_detail"])],
     [Paragraph("<b>Elite Coach Plus</b>", S["price_main"]),
+     Paragraph("$3,200/mo", S["price_main"])],
+    [Paragraph("Weekly coaching, delegation frameworks, and financial visibility work.", S["price_detail"]),
+     Paragraph("<strike>$3,497</strike> stand alone", S["price_detail"])],
+    [Paragraph("<b>Full Service Marketing — Starter</b>", S["price_main"]),
      Paragraph("Held for Phase 2", S["price_main"])],
-    [Paragraph("Not included in this proposal — see budget-reality override above.", S["price_detail"]),
-     Paragraph("$3,200/mo if added later", S["price_detail"])],
+    [Paragraph("Not included in this proposal — revisit once leadership structure is in place.", S["price_detail"]),
+     Paragraph("$4,997/mo if added later", S["price_detail"])],
     [Paragraph("<b>Recommended Ad Spend</b>", S["price_main"]),
-     Paragraph("$3,500–$11,500/mo", S["price_main"])],
+     Paragraph("Not part of this phase", S["price_main"])],
     [Paragraph("Goes to Google, LSA, and Meta — not to SMB Team.", S["price_detail"]),
      Paragraph("", S["price_detail"])],
 ]
@@ -314,7 +303,7 @@ pt.setStyle(TableStyle([
 ]))
 story.append(pt)
 story.append(Paragraph(
-    "Total: $4,997/mo + $3,500–$11,500 ad spend  |  Save $700/mo by bundling  |  17.9%–34.7% of revenue (under 35% cap)",
+    "Total: $3,200/mo  |  Save $297/mo by bundling  |  6.7% of estimated revenue (well under the 35% cap)",
     S["savings"]))
 
 # ── Build ──

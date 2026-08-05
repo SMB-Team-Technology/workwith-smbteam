@@ -113,33 +113,33 @@ PRIORITIES = [
 # Package cards — (label, bundled_price, retail_price, services_line, accent_color_hex)
 PACKAGES = [
     (
-        "FULL SERVICE MARKETING — STARTER",
-        "$4,997", "$5,697/mo",
-        "Google Ads · Meta Ads · Local SEO · Website · GBP",
-        "1D4ED8",
+        "ELITE COACH PLUS",
+        "$3,200", "$3,497/mo",
+        "Weekly Coaching · Delegation Frameworks · Financial Visibility · Masterminds",
+        "6D28D9",
     ),
 ]
 
-BUNDLE_TOTAL   = "$4,997 / mo"
-BUNDLE_SAVINGS = "Save $700/mo vs. stand-alone pricing"
+BUNDLE_TOTAL   = "$3,200 / mo"
+BUNDLE_SAVINGS = "Save $297/mo vs. stand-alone pricing"
 
 AD_SPEND_NOTE = (
-    "+ Recommended ad spend: $3,500–$11,500/mo paid directly to Google/Meta"
+    "Marketing and ad spend are not part of this initial engagement — revisited once the leadership structure is in place."
 )
 
-AVG_CASE_VALUE     = "$4,700 (blended)"
-CONSERVATIVE_LABEL = "Conservative  (4 cases/mo):"
-CONSERVATIVE_RESULT = "$18,800 revenue · 5.4× ROAS"
-AGGRESSIVE_LABEL   = "Aggressive  (16 cases/mo):"
-AGGRESSIVE_RESULT  = "$75,200 revenue · 6.5× ROAS"
+AVG_CASE_VALUE     = "Dedicated SMB Team coach"
+CONSERVATIVE_LABEL = "Delegation framework:"
+CONSERVATIVE_RESULT = "Built for 3 clerks + bookkeeper"
+AGGRESSIVE_LABEL   = "Financial visibility:"
+AGGRESSIVE_RESULT  = "AR & expense cycle mapped"
 
 # Timeline — 5 items: (milestone_label, action_text)
 TIMELINE = [
-    ("Day 1",   "Google Ads live for immigration & family law"),
-    ("Day 14",  "Native contact form replaces the JotForm"),
-    ("Week 2",  "GBP verified, review generation begins"),
-    ("Week 3",  "Lead follow-up sequence goes live"),
-    ("Month 3", "Meta retargeting layers on existing audience"),
+    ("Week 1",   "Weekly coaching sessions & mastermind enrollment begin"),
+    ("Weeks 2-4",  "Delegation framework drafted for clerks & bookkeeper"),
+    ("Weeks 1-4",  "Financial visibility work starts on AR & expense cycle"),
+    ("Month 1-2",  "Outstanding AR collection runs in parallel"),
+    ("Month 2-3", "First profit-plan groundwork laid across all 5 practice areas"),
 ]
 
 CLOSING_QUOTE = (
@@ -429,9 +429,9 @@ def build_slide3(prs):
 
     # ROI card
     add_rect(slide, 4.96, 1.12, 4.82, 1.44, fill=ROI_BG)
-    add_text(slide, "PROJECTED RETURN ON AD SPEND",
+    add_text(slide, "WHAT ELITE COACH PLUS DELIVERS",
              5.14, 1.18, 4.52, 0.24, 8, ROI_GREEN, bold=True)
-    add_text(slide, "Average case value:", 5.14, 1.46, 2.10, 0.28, 9, rgb("1E293B"), bold=True)
+    add_text(slide, "Coaching cadence:", 5.14, 1.46, 2.10, 0.28, 9, rgb("1E293B"), bold=True)
     add_text(slide, AVG_CASE_VALUE, 7.36, 1.46, 2.30, 0.28, 9, ROI_GREEN)
     add_rect(slide, 5.08, 1.76, 4.58, 0.34, fill=ROI_HILIGHT)
     add_text(slide, CONSERVATIVE_LABEL, 5.14, 1.80, 2.10, 0.28, 9, rgb("1E293B"), bold=True)
