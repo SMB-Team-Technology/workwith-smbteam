@@ -215,10 +215,10 @@ story.append(bd("Prevents pushing lead volume at a solo attorney with no team to
 story.append(bd("Keeps monthly investment inside the 35% of revenue cap, instead of overshooting before ad spend starts."))
 
 story.append(Paragraph("<b>Scoping rationale — departure from the revenue-based recommendation:</b>", S["subsection"]))
-story.append(b("35% cap at ~$15K/mo revenue is ~$5,250/mo. Starter + Elite Coach = $7,597/mo, over by $2,300+ before ad spend."))
+story.append(b("35% cap at ~$15K/mo revenue is ~$5,250/mo. Starter + Elite Coach bundled = $7,597/mo, over by $2,300+ before ad spend."))
 story.append(b("Essentials tier unavailable — multiple practice areas (family + business immigration) require single-practice-area Essentials."))
-story.append(b("Rahim is open to a $2,500/mo minimum — matches Elite Coach, not the $7,597/mo revenue table figure."))
-story.append(b("Marketing deferred to Phase 2 once coaching builds a team — documented as intentional, not an oversight."))
+story.append(b("Rahim's $2,500/mo comfort level assumed a bundle partner. Sold alone, Elite Coach is $3,497/mo — flag this gap for Jacob."))
+story.append(b("Marketing deferred to Phase 2 — documented as intentional, not an oversight."))
 
 story.append(thin_rule())
 
@@ -229,11 +229,10 @@ story.append(Paragraph("<b>What it does for him:</b>", S["subsection"]))
 story.append(bd("Gives him a real hiring/training/delegation system, not a repeat of the failed freelance hire."))
 story.append(bd("Builds the team capacity that must exist before more leads would help him."))
 
-story.append(Paragraph("<b>Elite Coach  |  $2,600/mo bundled</b>", S["subsection"]))
-story.append(b("Stand-alone $3,497/mo — bundled saves $897/mo."))
-story.append(b("Matches his stated openness to a $2,500/mo minimum commitment."))
-story.append(b("Includes weekly group coaching, masterminds, quarterly workshops, one annual in-person workshop."))
-story.append(b("Sole Phase 1 recommendation — fits the transcript's explicit coaching/systems focus."))
+story.append(Paragraph("<b>Elite Coach  |  $3,497/mo</b>", S["subsection"]))
+story.append(b("Stand-alone rate. Bundled $2,600/mo only applies with a second package — see objection below."))
+story.append(b("Includes weekly coaching, masterminds, quarterly workshops, one annual in-person workshop."))
+story.append(b("Sole Phase 1 recommendation — fits the call's explicit coaching/systems focus."))
 
 
 # ══════════════════════════════════════════════════════════
@@ -266,13 +265,16 @@ story.append(thin_rule())
 story.append(Paragraph("If He Pushes Back", S["section"]))
 
 story.append(Paragraph('"I thought we were going to start running ads right away."', S["objection_q"]))
-story.append(Paragraph("More leads without a team to handle them just recreates the bottleneck you described. Elite Coach builds that team first — marketing launches in Phase 2 once you're ready for the volume.", S["objection_a"]))
+story.append(Paragraph("More leads without a team just recreates the bottleneck you described. Elite Coach builds the team first — marketing launches in Phase 2.", S["objection_a"]))
+
+story.append(Paragraph('"You said $2,500 a month — this is $3,497."', S["objection_q"]))
+story.append(Paragraph("$2,500 assumed a bundle with marketing. Sold alone in Phase 1, Elite Coach is priced at its standard $3,497/mo rate. Bundling returns in Phase 2.", S["objection_a"]))
 
 story.append(Paragraph('"Why not just do the $4,997/mo Starter marketing package now?"', S["objection_q"]))
-story.append(Paragraph("At your current revenue, Starter alone is already ~33% of monthly revenue, leaving no room for the required ad spend and pushing you over the 35% cap SMB Team holds to on every client.", S["objection_a"]))
+story.append(Paragraph("At your revenue, Starter alone is already ~33% of monthly revenue — no room left for ad spend under the 35% cap.", S["objection_a"]))
 
 story.append(Paragraph('"What about the AI Workforce Pro tool we talked about?"', S["objection_q"]))
-story.append(Paragraph("That's a great fit down the road — it requires $500K+ revenue and 1-2 support staff to implement well. Elite Coach is what gets you to both of those, so we can revisit AI Workforce Pro in Phase 3.", S["objection_a"]))
+story.append(Paragraph("A great fit down the road — it needs $500K+ revenue and 1-2 support staff. Elite Coach gets you there; revisit in Phase 3.", S["objection_a"]))
 
 story.append(thin_rule())
 
@@ -281,12 +283,12 @@ story.append(Paragraph("Investment At A Glance", S["section"]))
 
 price_data = [
     [Paragraph("<b>Elite Coach</b>", S["price_main"]),
-     Paragraph("$2,600/mo", S["price_main"])],
-    [Paragraph("Weekly coaching on systems, hiring, and delegation.", S["price_detail"]),
-     Paragraph("<strike>$3,497</strike> stand alone", S["price_detail"])],
+     Paragraph("$3,497/mo", S["price_main"])],
+    [Paragraph("Weekly coaching on systems, hiring, and delegation. Stand-alone rate — no bundle partner yet.", S["price_detail"]),
+     Paragraph("", S["price_detail"])],
     [Paragraph("<b>Marketing</b>", S["price_main"]),
      Paragraph("Deferred to Phase 2", S["price_main"])],
-    [Paragraph("Launches once coaching builds a team ready for more volume.", S["price_detail"]),
+    [Paragraph("Launches once coaching builds a team. Bundling then drops Elite Coach to $2,600/mo.", S["price_detail"]),
      Paragraph("", S["price_detail"])],
     [Paragraph("<b>Recommended Ad Spend (Phase 2)</b>", S["price_main"]),
      Paragraph("$3,000–$12,000/mo", S["price_main"])],
@@ -306,7 +308,7 @@ pt.setStyle(TableStyle([
 ]))
 story.append(pt)
 story.append(Paragraph(
-    "Total Phase 1: $2,600/mo  |  Save $897/mo by bundling  |  Phase 2 ad spend adds $3,000-$12,000/mo on top",
+    "Total Phase 1: $3,497/mo (stand-alone, no bundle partner yet)  |  Phase 2 ad spend adds $3,000-$12,000/mo on top",
     S["savings"]))
 
 # ── Build ──

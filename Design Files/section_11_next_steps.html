@@ -243,7 +243,10 @@
   <div class="investment-grid">
 
     <!-- BLOCK 3: SMB TEAM MONTHLY INVESTMENT -->
-    <!-- FILL INSTRUCTIONS FOR INVESTMENT BLOCK:
+    <!-- FILL INSTRUCTIONS FOR INVESTMENT BLOCK — "BUNDLED" REQUIRES 2+ PACKAGES:
+         First count the distinct packages being recommended in this proposal.
+
+         CASE A — 2 or more packages recommended (the normal case):
          Retail price = stand-alone price from the pricing tables in Steps 11.2 and 11.3
          Bundled price = discounted bundled price from the same tables
          Savings per package = retail minus bundled for EACH package
@@ -253,26 +256,34 @@
                   Coaching retail $3,497 bundled $2,600 = saves $897
                   Total savings = $700 + $897 = $1,597/month
                   Total investment = $4,997 + $2,600 = $7,597/month
+         Keep the row's retail price struck through next to the bundled price, and keep the "You save $X/month by bundling" line.
+
+         CASE B — only 1 package recommended:
+         There is nothing to bundle. Delete the second package row entirely.
+         Show ONLY the stand-alone price for the single package (no strikethrough, no second price shown).
+         Total investment = that stand-alone price.
+         DELETE the "You save $X/month by bundling" div entirely — do not print $0 savings or any bundling language.
+
          IMPORTANT: Only use prices from the approved pricing tables. Never estimate. -->
     <div class="investment-block">
       <div class="investment-header"><h4>SMB Team Monthly Investment</h4></div>
       <div class="investment-body">
         <div class="investment-row">
-          <!-- FILL: PACKAGE_ONE_NAME, RETAIL_PRICE_ONE, BUNDLED_PRICE_ONE -->
+          <!-- FILL: PACKAGE_ONE_NAME, price (bundled if 2+ packages total, else stand-alone) -->
           <span class="label">PACKAGE NAME ONE</span>
           <span><span class="retail">$X,XXX/mo</span>&nbsp;<span class="bundled">$X,XXX/mo</span></span>
         </div>
         <div class="investment-row">
-          <!-- FILL: PACKAGE_TWO_NAME, RETAIL_PRICE_TWO, BUNDLED_PRICE_TWO -->
+          <!-- FILL: PACKAGE_TWO_NAME, price. DELETE THIS ENTIRE ROW if only 1 package is recommended. -->
           <span class="label">PACKAGE NAME TWO</span>
           <span><span class="retail">$X,XXX/mo</span>&nbsp;<span class="bundled">$X,XXX/mo</span></span>
         </div>
-        <!-- FILL: TOTAL_INVESTMENT = sum of all bundled prices -->
+        <!-- FILL: TOTAL_INVESTMENT = sum of the prices actually charged (bundled if 2+, stand-alone if 1) -->
         <div class="investment-total">
           <span class="total-label">Total Monthly Investment</span>
           <span class="total-amount">$X,XXX/mo</span>
         </div>
-        <!-- FILL: TOTAL_SAVINGS = sum of (retail minus bundled) for EACH package added together -->
+        <!-- FILL: TOTAL_SAVINGS = sum of (retail minus bundled) for EACH package. DELETE THIS ENTIRE DIV if only 1 package is recommended — do not show $0 savings. -->
         <div class="investment-savings">You save $XXX/month by bundling</div>
       </div>
     </div>

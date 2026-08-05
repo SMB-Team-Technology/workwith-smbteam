@@ -13,9 +13,11 @@
      - PILLAR CIRCLES: copy the class (red / amber / green) from each sc-card in section_05
      - TOP PRIORITIES: write 3–4 of the most critical firm-specific findings from sections 05–09.
        One sentence each. Lead with the consequence, not the category label.
-     - INVESTMENT ROWS: copy package names and bundled prices from section_11 investment-grid
+     - INVESTMENT ROWS: copy package names and prices straight from section_11's investment-grid —
+       do NOT recompute. section_11 already applied the bundling rule (bundled price only if 2+
+       packages are recommended together; stand-alone price if only 1).
      - AD_SPEND: copy from section_11 investment-grid "Recommended ad spend" row
-     - TOTAL INVESTMENT: sum of bundled package prices only (not ad spend) — copy from section_11
+     - TOTAL INVESTMENT: sum of the package prices shown in section_11's investment-total (not ad spend)
      - EXEC_CLOSING: one Montserrat-weight sentence summarizing the firm's central opportunity.
        Connect to the owner's DBM. Example: "The leads are there — the system to capture them is not, yet."
      ============================================================ -->
@@ -93,13 +95,15 @@
       <div class="exec-block">
         <div class="exec-block-title">Recommended Investment</div>
 
-        <!-- FILL: PACKAGE_ONE_NAME, BUNDLED_PRICE_ONE — copy from section_11 investment-grid -->
+        <!-- FILL: PACKAGE_ONE_NAME, PRICE_ONE — copy from section_11 investment-grid as-is
+             (bundled price if section_11 recommended 2+ packages together, stand-alone price if
+             it recommended only this one package). Do not recompute the bundling rule here. -->
         <div class="exec-investment-row">
           <span>PACKAGE NAME ONE</span>
           <span class="exec-investment-value">$X,XXX/mo</span>
         </div>
 
-        <!-- FILL: PACKAGE_TWO_NAME, BUNDLED_PRICE_TWO — copy from section_11 investment-grid.
+        <!-- FILL: PACKAGE_TWO_NAME, PRICE_TWO — copy from section_11 investment-grid.
              Delete this row if only one package is recommended. -->
         <div class="exec-investment-row">
           <span>PACKAGE NAME TWO</span>
@@ -112,7 +116,7 @@
           <span class="exec-investment-value">$X,XXX/mo</span>
         </div>
 
-        <!-- FILL: TOTAL_INVESTMENT — sum of bundled package prices only, not ad spend.
+        <!-- FILL: TOTAL_INVESTMENT — sum of the package prices shown above, not ad spend.
              Copy from section_11 investment-total. -->
         <div class="exec-investment-total">
           <span>Total SMB Team Investment</span>
