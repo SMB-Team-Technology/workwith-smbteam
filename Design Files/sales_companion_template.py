@@ -18,6 +18,7 @@ Output filename: [FirmName]_[Date]_Sales_Companion.pdf
   - Save to the root of the project folder (same location as the Growth Audit HTML)
 """
 
+import os
 from reportlab.lib.pagesizes import letter
 from reportlab.lib.units import inch
 from reportlab.lib.colors import HexColor
@@ -27,10 +28,25 @@ from reportlab.platypus import (
     SimpleDocTemplate, Paragraph, Spacer, Table, TableStyle,
     HRFlowable, PageBreak
 )
+from reportlab.pdfbase import pdfmetrics
+from reportlab.pdfbase.ttfonts import TTFont
 
-# ── Colors — DO NOT MODIFY ──
-DARK_NAVY = HexColor("#1a2332")
-ACCENT_GREEN = HexColor("#3B6D11")
+# ── Fonts — SMB Team brand font is Poppins. Embedded so it renders the
+# same regardless of what's installed on the machine opening the PDF. ──
+_FONT_DIR = os.path.join(os.path.dirname(__file__), "fonts")
+pdfmetrics.registerFont(TTFont("Poppins", os.path.join(_FONT_DIR, "Poppins-Regular.ttf")))
+pdfmetrics.registerFont(TTFont("Poppins-Bold", os.path.join(_FONT_DIR, "Poppins-Bold.ttf")))
+pdfmetrics.registerFont(TTFont("Poppins-Italic", os.path.join(_FONT_DIR, "Poppins-Italic.ttf")))
+pdfmetrics.registerFontFamily(
+    "Poppins", normal="Poppins", bold="Poppins-Bold",
+    italic="Poppins-Italic", boldItalic="Poppins-Bold",
+)
+
+# ── Colors — SMB Team brand colors (Deep Wood Blue, Ocean Blue) plus the
+# existing semantic grays/reds/savings-green, which stay as they were. ──
+DARK_NAVY = HexColor("#003A59")     # Deep Wood Blue — brand primary
+SECTION_BLUE = HexColor("#0091C9")  # Ocean Blue — brand accent, section headers
+ACCENT_GREEN = HexColor("#3B6D11")  # savings/positive-outcome green — matches the audit report
 MEDIUM_GRAY = HexColor("#555555")
 LIGHT_GRAY = HexColor("#888888")
 RULE_GRAY = HexColor("#CCCCCC")
@@ -47,7 +63,7 @@ def add_page_elements(canvas, doc):
     """Draws red warning header and confidential footer on every page. DO NOT MODIFY."""
     canvas.saveState()
     width, height = letter
-    canvas.setFont("Helvetica-Bold", 10)
+    canvas.setFont("Poppins-Bold", 10)
     canvas.setFillColor(RED_WARNING)
     canvas.drawCentredString(width / 2, height - 0.38 * inch,
                              "FOR INTERNAL USE ONLY; DO NOT SHARE.")
@@ -55,7 +71,7 @@ def add_page_elements(canvas, doc):
     canvas.setLineWidth(0.5)
     canvas.line(0.6 * inch, height - 0.44 * inch,
                 width - 0.6 * inch, height - 0.44 * inch)
-    canvas.setFont("Helvetica", 7)
+    canvas.setFont("Poppins", 7)
     canvas.setFillColor(LIGHT_GRAY)
     canvas.drawCentredString(width / 2, 0.28 * inch,
                              "SMB Team  |  Confidential  |  Internal Document")
@@ -71,52 +87,52 @@ doc = SimpleDocTemplate(
 # ── Styles — DO NOT MODIFY ──
 S = {}
 S["title"] = ParagraphStyle(
-    "title", fontName="Helvetica-Bold", fontSize=16, leading=20,
+    "title", fontName="Poppins-Bold", fontSize=16, leading=20,
     textColor=DARK_NAVY, spaceAfter=1)
 S["subtitle"] = ParagraphStyle(
-    "subtitle", fontName="Helvetica", fontSize=9.5, leading=13,
+    "subtitle", fontName="Poppins", fontSize=9.5, leading=13,
     textColor=LIGHT_GRAY, spaceAfter=3)
 S["section"] = ParagraphStyle(
-    "section", fontName="Helvetica-Bold", fontSize=11, leading=15,
-    textColor=ACCENT_GREEN, spaceBefore=6, spaceAfter=2)
+    "section", fontName="Poppins-Bold", fontSize=11, leading=15,
+    textColor=SECTION_BLUE, spaceBefore=6, spaceAfter=2)
 S["subsection"] = ParagraphStyle(
-    "subsection", fontName="Helvetica-Bold", fontSize=10, leading=13,
+    "subsection", fontName="Poppins-Bold", fontSize=10, leading=13,
     textColor=DARK_NAVY, spaceBefore=2, spaceAfter=1)
 S["bullet"] = ParagraphStyle(
-    "bullet", fontName="Helvetica", fontSize=9.5, leading=13,
+    "bullet", fontName="Poppins", fontSize=9.5, leading=13,
     textColor=MEDIUM_GRAY, leftIndent=12, bulletIndent=0,
     spaceBefore=1, spaceAfter=1)
 S["bullet_dark"] = ParagraphStyle(
-    "bullet_dark", fontName="Helvetica", fontSize=9.5, leading=13,
+    "bullet_dark", fontName="Poppins", fontSize=9.5, leading=13,
     textColor=DARK_NAVY, leftIndent=12, bulletIndent=0,
     spaceBefore=1, spaceAfter=1)
 S["quote"] = ParagraphStyle(
-    "quote", fontName="Helvetica-Oblique", fontSize=9.5, leading=13,
+    "quote", fontName="Poppins-Italic", fontSize=9.5, leading=13,
     textColor=DARK_NAVY, leftIndent=6, rightIndent=6,
     spaceBefore=1, spaceAfter=1)
 S["snap_label"] = ParagraphStyle(
-    "snap_label", fontName="Helvetica-Bold", fontSize=8.5, leading=11,
+    "snap_label", fontName="Poppins-Bold", fontSize=8.5, leading=11,
     textColor=LIGHT_GRAY)
 S["snap_value"] = ParagraphStyle(
-    "snap_value", fontName="Helvetica", fontSize=9.5, leading=12,
+    "snap_value", fontName="Poppins", fontSize=9.5, leading=12,
     textColor=DARK_NAVY)
 S["objection_q"] = ParagraphStyle(
-    "objection_q", fontName="Helvetica-Bold", fontSize=9.5, leading=13,
+    "objection_q", fontName="Poppins-Bold", fontSize=9.5, leading=13,
     textColor=RED_ACCENT, spaceBefore=2, spaceAfter=0)
 S["objection_a"] = ParagraphStyle(
-    "objection_a", fontName="Helvetica", fontSize=9.5, leading=13,
+    "objection_a", fontName="Poppins", fontSize=9.5, leading=13,
     textColor=MEDIUM_GRAY, leftIndent=8, spaceAfter=2)
 S["price_main"] = ParagraphStyle(
-    "price_main", fontName="Helvetica-Bold", fontSize=9.5, leading=13,
+    "price_main", fontName="Poppins-Bold", fontSize=9.5, leading=13,
     textColor=DARK_NAVY)
 S["price_detail"] = ParagraphStyle(
-    "price_detail", fontName="Helvetica", fontSize=8.5, leading=12,
+    "price_detail", fontName="Poppins", fontSize=8.5, leading=12,
     textColor=MEDIUM_GRAY)
 S["savings"] = ParagraphStyle(
-    "savings", fontName="Helvetica-Bold", fontSize=9.5, leading=13,
+    "savings", fontName="Poppins-Bold", fontSize=9.5, leading=13,
     textColor=ACCENT_GREEN, alignment=TA_CENTER, spaceBefore=3)
 S["disclaimer"] = ParagraphStyle(
-    "disclaimer", fontName="Helvetica-Oblique", fontSize=8.5, leading=11,
+    "disclaimer", fontName="Poppins-Italic", fontSize=8.5, leading=11,
     textColor=LIGHT_GRAY, spaceBefore=1, spaceAfter=1)
 
 

@@ -81,7 +81,7 @@ GOAL_DBM      = "Owner takes real time off"  # FILL: DBM outcome phrase
 # Each priority: (line1, line2, accent_color_hex, [5 bullet strings])
 PRIORITIES = [
     (
-        "Build the", "Marketing Engine", "1D4ED8",
+        "Build the", "Marketing Engine", "0091C9",
         [
             "Bullet 1 — specific action for this firm",
             "Bullet 2 — specific action for this firm",
@@ -91,7 +91,7 @@ PRIORITIES = [
         ],
     ),
     (
-        "Fix Intake &", "Stop Losing Cases", "0F766E",
+        "Fix Intake &", "Stop Losing Cases", "69CD2B",
         [
             "Bullet 1 — specific action for this firm",
             "Bullet 2 — specific action for this firm",
@@ -101,7 +101,7 @@ PRIORITIES = [
         ],
     ),
     (
-        "Install Team &", "Profit Systems", "6D28D9",
+        "Install Team &", "Profit Systems", "003A59",
         [
             "Bullet 1 — specific action for this firm",
             "Bullet 2 — specific action for this firm",
@@ -119,13 +119,13 @@ PACKAGES = [
         "FULL SERVICE MARKETING — GROWTH",
         "$X,XXX", "$X,XXX/mo",
         "Website · Google Ads · LSA · Meta Ads · GBP optimization",
-        "1D4ED8",
+        "0091C9",
     ),
     (
         "ELITE COACH PLUS",
         "$X,XXX", "$X,XXX/mo",
         "Weekly group coaching · KPI scorecards · Intake framework",
-        "6D28D9",
+        "003A59",
     ),
 ]
 
@@ -163,9 +163,11 @@ CLOSING_QUOTE = (
 # ── Color palette ─────────────────────────────────────────────────
 def rgb(h): return RGBColor(int(h[0:2],16), int(h[2:4],16), int(h[4:6],16))
 
-NAVY        = rgb("0D1F3C")
-DARK_NAVY   = rgb("162947")
-GOLD        = rgb("F5C400")
+# SMB Team brand colors (see brand book): Deep Wood Blue, Ocean Blue, Lime Green.
+NAVY        = rgb("003A59")   # Deep Wood Blue — primary brand color
+DARK_NAVY   = rgb("265872")   # lighter tint of Deep Wood Blue, for card panels
+OCEAN_BLUE  = rgb("0091C9")   # brand accent — large numbers, decorative accents
+LIME_GREEN  = rgb("69CD2B")   # brand accent — small "pop" text/labels on navy
 WHITE       = rgb("FFFFFF")
 RED         = rgb("C0392B")
 AMBER       = rgb("D97706")
@@ -186,13 +188,18 @@ BUNDLE_SUB    = rgb("7CA0C0")
 STRIKETHROUGH = rgb("334155")
 
 STATUS_COLOR = {"RED": RED, "AMBER": AMBER, "GREEN": GREEN}
+# Priority/package accent colors cycle through the brand palette. Lime Green
+# is light, so anything filled with it uses NAVY text instead of WHITE —
+# see ACCENT_TEXT_COLOR below.
 PRIORITY_LIGHT = {
-    "1D4ED8": rgb("EFF6FF"),
-    "0F766E": rgb("F0FDFA"),
-    "6D28D9": rgb("F5F3FF"),
+    "0091C9": rgb("E3F4FA"),   # light Ocean Blue tint
+    "69CD2B": rgb("EDF9E6"),   # light Lime Green tint
+    "003A59": rgb("E0E7EB"),   # light Deep Wood Blue tint
 }
+# Header text color to use for each accent fill — defaults to WHITE elsewhere.
+ACCENT_TEXT_COLOR = {"69CD2B": NAVY}
 
-FONT = "Calibri"
+FONT = "Poppins"
 LOGO_PATH = os.path.join(os.path.dirname(__file__), "smb_team_logo.png")
 
 # ── Core helpers ──────────────────────────────────────────────────
@@ -272,12 +279,12 @@ def build_slide1(prs):
     # Full-width NAVY banner — mirrors slides 2 and 3
     add_rect(slide, 0, 0, 10, 1.05, fill=NAVY)
     add_text(slide, f"LAW FIRM GROWTH AUDIT  ·  {FIRM_NAME.upper()}",
-             0.32, 0.10, 9.40, 0.22, 8, GOLD, bold=True)
+             0.32, 0.10, 9.40, 0.22, 8, LIME_GREEN, bold=True)
     add_text(slide, f"Where {FIRM_NAME} Stands Today",
              0.32, 0.34, 9.40, 0.60, 24, WHITE, bold=True)
 
     # Left yellow strip (starts below banner)
-    add_rect(slide, 0, 1.05, 0.16, 4.23, fill=GOLD)
+    add_rect(slide, 0, 1.05, 0.16, 4.23, fill=OCEAN_BLUE)
 
     # Urgency box
     add_rect(slide, 0.28, 1.10, 1.42, 0.92, fill=RED)
@@ -298,7 +305,7 @@ def build_slide1(prs):
         add_text(slide, detail, x+0.06, 1.74, 0.76, 0.26, 7, LIGHT_BLUE)
 
     # Key findings label
-    add_text(slide, "KEY FINDINGS", 0.28, 2.14, 5.30, 0.24, 8, GOLD, bold=True)
+    add_text(slide, "KEY FINDINGS", 0.28, 2.14, 5.30, 0.24, 8, LIME_GREEN, bold=True)
 
     # Finding rows
     finding_ys = [2.42, 3.10, 3.78, 4.46]
@@ -326,8 +333,8 @@ def build_slide1(prs):
 
     # "You are here" strip — positioned just below banner
     add_rect(slide, 5.75, 1.12, 4.25, 0.76, fill=NAVY)
-    add_rect(slide, 5.75, 1.12, 0.14, 0.76, fill=GOLD)
-    add_text(slide, "YOU ARE HERE", 6.00, 1.14, 3.80, 0.22, 8, GOLD, bold=True)
+    add_rect(slide, 5.75, 1.12, 0.14, 0.76, fill=OCEAN_BLUE)
+    add_text(slide, "YOU ARE HERE", 6.00, 1.14, 3.80, 0.22, 8, LIME_GREEN, bold=True)
     add_text(slide, STAGE_TEXT, 6.00, 1.36, 3.80, 0.44, 10, WHITE, bold=True)
 
     # Competitor table header
@@ -361,15 +368,15 @@ def build_slide2(prs):
     # Header
     add_rect(slide, 0, 0, 10, 1.05, fill=NAVY)
     add_text(slide, f"LAW FIRM GROWTH AUDIT  ·  {FIRM_NAME.upper()}",
-             0.32, 0.10, 9.40, 0.22, 8, GOLD, bold=True)
+             0.32, 0.10, 9.40, 0.22, 8, LIME_GREEN, bold=True)
     add_text(slide, SLIDE_2_TITLE, 0.32, 0.34, 9.40, 0.60, 22, WHITE, bold=True)
 
     # Left panel — model + goal
     add_rect(slide, 0.20, 1.12, 2.72, 3.98, fill=NAVY)
-    add_rect(slide, 0.20, 1.14, 2.72, 0.02, fill=GOLD)
-    add_text(slide, "THE SMB TEAM MODEL", 0.32, 1.20, 2.48, 0.22, 8, GOLD, bold=True)
+    add_rect(slide, 0.20, 1.14, 2.72, 0.02, fill=OCEAN_BLUE)
+    add_text(slide, "THE SMB TEAM MODEL", 0.32, 1.20, 2.48, 0.22, 8, LIME_GREEN, bold=True)
     add_text(slide, SMB_MODEL_DESC, 0.32, 1.46, 2.48, 1.72, 9, rgb("A8BFDA"))
-    add_rect(slide, 0.20, 3.28, 2.72, 0.82, fill=GOLD)
+    add_rect(slide, 0.20, 3.28, 2.72, 0.82, fill=LIME_GREEN)
     add_text(slide, GOAL_HEADLINE, 0.32, 3.30, 2.50, 0.30, 12, NAVY, bold=True)
     add_text(slide, GOAL_DBM, 0.32, 3.60, 2.50, 0.44, 9, NAVY)
 
@@ -381,12 +388,13 @@ def build_slide2(prs):
         x = priority_xs[col_i]
         ac = rgb(hex_color)
         light = PRIORITY_LIGHT.get(hex_color, rgb("F8F8FF"))
+        header_text = ACCENT_TEXT_COLOR.get(hex_color, WHITE)
 
         # Header
         add_rect(slide, x, 1.12, 2.24, 0.92, fill=ac)
-        add_text(slide, f"0{col_i+1}", x+0.12, 1.14, 0.50, 0.30, 10, WHITE, bold=True)
-        add_text(slide, line1, x+0.12, 1.44, 2.04, 0.28, 12, WHITE, bold=True)
-        add_text(slide, line2, x+0.12, 1.70, 2.04, 0.28, 12, WHITE, bold=True)
+        add_text(slide, f"0{col_i+1}", x+0.12, 1.14, 0.50, 0.30, 10, header_text, bold=True)
+        add_text(slide, line1, x+0.12, 1.44, 2.04, 0.28, 12, header_text, bold=True)
+        add_text(slide, line2, x+0.12, 1.70, 2.04, 0.28, 12, header_text, bold=True)
 
         # Bullet rows
         for row_i, bullet in enumerate(bullets[:5]):
@@ -408,7 +416,7 @@ def build_slide3(prs):
     # Header
     add_rect(slide, 0, 0, 10, 1.05, fill=NAVY)
     add_text(slide, f"LAW FIRM GROWTH AUDIT  ·  {FIRM_NAME.upper()}",
-             0.32, 0.10, 9.40, 0.22, 8, GOLD, bold=True)
+             0.32, 0.10, 9.40, 0.22, 8, LIME_GREEN, bold=True)
     add_text(slide, "Your Investment & What Happens Next",
              0.32, 0.34, 9.40, 0.60, 22, WHITE, bold=True)
 
@@ -430,7 +438,7 @@ def build_slide3(prs):
     # Bundle total
     add_rect(slide, 0.22, 3.56, 4.52, 0.72, fill=NAVY)
     add_text(slide, "BUNDLE TOTAL", 0.42, 3.60, 1.80, 0.26, 8, BUNDLE_SUB, bold=True)
-    add_text(slide, BUNDLE_TOTAL, 0.42, 3.82, 2.40, 0.38, 22, GOLD, bold=True)
+    add_text(slide, BUNDLE_TOTAL, 0.42, 3.82, 2.40, 0.38, 22, OCEAN_BLUE, bold=True)
     add_text(slide, BUNDLE_SAVINGS, 2.92, 3.82, 1.90, 0.38, 8, BUNDLE_SUB)
 
     # Ad spend note
