@@ -1,0 +1,206 @@
+SECTION 11 WORKINGS — Law Offices of Ricky Malik, P.C.
+====================================================================
+
+TRANSCRIPT-STATED NEED OVERRIDE — APPLIED (all three checked)
+====================================================================
+
+1. CALL-PURPOSE OVERRIDE — TRIGGERED.
+   Research notes STEP 9: "THIS CALL WAS NOT A STANDARD MARKETING/INTAKE
+   GROWTH DISCOVERY. Per the transcript, SMB Team's proposed initial focus
+   is operational: coaching for Ricky and staff, a Fractional COO
+   engagement, and a Fractional CTO/automation engagement (an internal
+   'Ricky GPT' tool to enforce SOPs) — with marketing (specifically
+   Spanish-language ads) explicitly positioned as a secondary, later-stage
+   lever once operations are fixed." The recommendation below leads with
+   coaching/FCOO/FCTO, per the override instruction, not marketing.
+
+2. EXISTING-VENDOR OVERRIDE — TRIGGERED.
+   Research notes STEP 9: "Existing marketing/SEO/ad vendor engagements:
+   yes — active, ongoing relationship with an SEO/reputation vendor and
+   Smith.ai for intake (~$5k/mo combined), described as producing only
+   marginal gains." Per the override, Full Service Marketing — every
+   tier — is excluded from this recommendation entirely.
+
+3. BUDGET-REALITY OVERRIDE — NOT TRIGGERED.
+   No budget constraints stated in the transcript (STEP 9: "Budget
+   constraints stated: none stated explicitly").
+
+NET EFFECT: No marketing package is recommended in Phase 1. Only a
+non-marketing (coaching/FCOO) package and a Legal AI Workforce (LAW)
+package are recommended, matching the transcript's own stated need.
+
+====================================================================
+REVENUE CORRECTION — DEPARTURE FROM package_decision.json
+====================================================================
+
+package_decision.json set revenue_effective = $1,980,500 (confidence:
+medium), sourced from HubSpot's "$961K - $3M" band, and selected Growth
+marketing tier + Master's Circle coaching on that basis.
+
+This is superseded. The transcript is unambiguous and is ground truth
+per the transcript-first principle: "Revenue Plateau: The firm has been
+stuck at a sub-$1M revenue mark for years" and Ricky describes the goal
+as breaking out of a "sub-$1M revenue plateau." The HubSpot band
+($961K-$3M) is a wide bucket that does not reflect what was actually
+said on the call, and the call is the more reliable source.
+
+Corrected revenue estimate: $500K-$1M band. Reasoning: 16+ years in
+business, 8 staff across 3 locations, ~$5K/mo current marketing spend,
+15-16 retainers/month — consistent with the upper half of the sub-$1M
+range, not a firm near $2M. No exact figure was stated; this is an
+estimate for eligibility purposes only, not asserted as fact in the
+client-facing report.
+
+Effect on eligibility:
+- Under $1M revenue → Master's Circle and all bundles containing it
+  are INELIGIBLE. package_decision.json's Master's Circle selection is
+  discarded for this reason alone, independent of the overrides above.
+- Full Service Marketing at any tier is moot — excluded by the
+  existing-vendor override regardless of revenue-implied tier.
+
+====================================================================
+MANDATORY PRICE LOOKUP
+====================================================================
+
+Marketing package selected: NONE (excluded by existing-vendor override
+and call-purpose override — see above)
+
+Non-marketing package selected: Elite Coach Plus + FCOO Advisor
+  - Bundled price (from table): $5,694/mo
+  - Stand-alone price (from table): $3,497 (Elite Coach Plus) + $3,797
+    (FCOO Advisor) = $7,294/mo
+  - Savings (stand-alone minus bundled): $1,600/mo
+  - Table row matched: "$400K–$1M / Growing → Elite Coach Plus + FCOO
+    Advisor $5,694/mo." Transcript explicitly names both coaching
+    ("Train Ricky and coachable staff to build an A-player team") and
+    Fractional COO ("Provide high-level operational leadership") as
+    SMB Team's proposed tactics — direct match to the stated need.
+
+Legal AI Workforce (LAW) package selected: AI Accelerator L1 /
+Fractional CTO Level 1
+  - Bundled price (from table): $3,297/mo
+  - Stand-alone price (from table): $3,797/mo
+  - Savings (stand-alone minus bundled): $500/mo
+  - Eligibility: revenue $500K-$1.5M band fits; firm has 8 staff (not
+    solo); owner has shown openness to AI adoption (transcript
+    explicitly proposes a "Ricky GPT" automation tool to enforce SOPs).
+    L1 ("done-with-you") preferred over AI Essentials ("DIY with
+    managed support") because Ricky has no bandwidth to manage a
+    rollout himself — he is already the firm's stated bottleneck.
+  - One-time Law Firm AI Foundation Sprint, paired with L1: $14,997
+    one-time onboarding (noted in First 90 Days, not included in the
+    recurring monthly investment total).
+  - ESCALATION FLAG (internal only, not in client report): confirm
+    with sales rep that LAW delivery has launched and capacity is
+    available before this proposal is finalized.
+
+AI Avatar / Video Growth add-on selected: none (no stated interest in
+paid ongoing video production beyond what's already scoped in the
+Meta Ads opportunity section)
+
+Total monthly investment (sum of all bundled/recurring prices):
+  $5,694 + $3,297 = $8,991/mo
+
+Total savings (sum of all savings): $1,600 + $500 = $2,100/mo
+
+35% spend-cap check: at an estimated $500K-$1M annual revenue
+($41,667-$83,333/mo), 35% of monthly revenue is $14,583-$29,167.
+$8,991/mo is comfortably under this cap at any point in the estimated
+band.
+
+====================================================================
+AD SPEND — PHASE 2 PROJECTION (not a Phase 1 recommendation)
+====================================================================
+
+No marketing package is being sold in Phase 1, so this ad spend is
+presented as a Phase 2 projection for when the Spanish-language
+campaign the transcript itself proposes gets added — once operations
+can handle the added volume. Practice area: Immigration.
+
+Conservative: $8,000/mo (sum of immigration channel minimums: Google
+PPC $3,000 + LSA $2,000 + Meta Lead Gen $3,000)
+  - Blended CPL with 20% cushion: ~$100
+  - Leads: 8,000 / 100 = ~80/mo
+  - Cases (15% default close rate, not stated in transcript): ~12/mo
+  - Revenue (immigration default case value $4,500 midpoint of
+    $3K-$6K, not stated in transcript — disclosed as a default):
+    12 x $4,500 = $54,000/mo
+  - Return: 54,000 / 8,000 = 6.8x
+
+Aggressive: $15,000/mo (roughly 3x the firm's current combined
+marketing spend — a deliberately moderate aggressive case, since the
+firm's own growth goal is +14-15 retainers/month total across all
+levers, not an open-ended scale-up)
+  - Blended CPL, no cushion: ~$80
+  - Leads: 15,000 / 80 = ~188/mo
+  - Cases: ~28/mo
+  - Revenue: 28 x $4,500 = $126,000/mo
+  - Return: 126,000 / 15,000 = 8.4x
+
+Both scenarios use the immigration default case value and default
+15% close rate — disclosed as estimates in the client report per
+policy; average case value was flagged as a gap to confirm with Ricky.
+
+====================================================================
+DBM STATEMENT (Block 1)
+====================================================================
+
+DBM: A firm that runs itself so Ricky has more time — inferred from
+his stated role as the firm's bottleneck plus the associate-attorney
+hiring plan explicitly framed as freeing him "for business-level
+activities."
+
+Closing statement: "We help immigration attorneys running full teams
+that still depend on them for everyday decisions get a firm that runs
+on systems instead of on them, so they can finally step back from
+daily firefighting and own their business instead of just working
+in it."
+
+====================================================================
+QUICK WIN OPPORTUNITIES (7 identified, minimum 6 required)
+====================================================================
+
+1. [Lead Gen / Quick Win] Confirm & fix PageSpeed score — mobile speed
+   directly affects "Talk With Ricky" form conversion; unconfirmed
+   this session due to a PSI quota error. No competitor named.
+2. [Lead Gen / Long-Term Play] Local pack visibility — 391 reviews not
+   fully converting to map-pack placement for key search terms.
+   Competitor: SRIS Law Group / Law Offices of SRIS, P.C.
+3. [Intake / Quick Win] Spanish-accent intake bias — non-Hispanic
+   callers disengage on accent alone. No competitor named.
+4. [Intake / Quick Win] Smith.ai reliability — dropped calls and poor
+   Spanish-language filtering lose already-paid-for leads. No
+   competitor named.
+5. [Team / Long-Term Play] SOP enforcement — Ricky is the bottleneck
+   because documented SOPs aren't followed. No competitor named.
+6. [Profit / Quick Win] Track average case value — only the $250
+   consult fee is currently tracked. No competitor named.
+7. [Team / Quick Win] Formalize the associate-attorney hiring plan
+   already underway, paired with coaching to protect the time it's
+   meant to free up. No competitor named.
+
+====================================================================
+FIRST 90 DAYS
+====================================================================
+
+NOTE: audit-write.md's generic Block 5 instruction says to "lead with
+launching ads first, then website work." That default is written for
+the standard marketing-first engagement and is superseded here by the
+Transcript-Stated Need Override — leading with ads would contradict
+the override decision above (no marketing package in Phase 1). First
+90 days instead leads with the coaching/FCOO/FCTO kickoff that the
+transcript itself asked about.
+
+1. Kickoff Elite Coach Plus + Fractional COO Advisor engagement —
+   begin building the accountability system that gets existing SOPs
+   actually followed
+2. Fractional COO conducts a team deep-dive to understand why only 2
+   of 8 staff are A-players and builds a retention/training plan
+   suited to the local talent market
+3. Fractional CTO Level 1 kickoff, including the Law Firm AI
+   Foundation Sprint ($14,997 one-time, paired rate) — begin scoping
+   the SOP-enforcement automation ("Ricky GPT") discussed on the call
+4. Manual PageSpeed re-check and website quick-win fixes (adding
+   attorney video content) — no marketing spend required
+5. Establish average case value and basic profit tracking by matter
+   type
