@@ -1,0 +1,248 @@
+QUESADA LAW FIRM — SECTION 11 WORKINGS FILE
+Prepared for Pass 2 (Audit Write) — August 14, 2026
+================================================================
+
+OVERRIDE REASONING (READ FIRST — DEPARTURES FROM package_decision.json AND
+FROM audit-write.md's GENERIC DEFAULTS)
+================================================================
+
+1. REVENUE CORRECTION
+   package_decision.json lists revenue_effective as $375,000, sourced from
+   HubSpot ("$250K - $500K" band). This is WRONG. The research notes' Step 9
+   transcript extraction explicitly states annual revenue is ~$700,000/year,
+   "a plateau maintained for the last three years," with a stated goal to
+   break $1,000,000. The transcript is ground truth and supersedes the
+   HubSpot-sourced figure. CORRECTED REVENUE USED THROUGHOUT: $700,000/year,
+   placing the firm in the $500K–$1M band for all eligibility and tier
+   lookups. Team size (3: owner + 1 assistant + 1 investigator) matched
+   package_decision.json already — no correction needed there.
+
+2. CALL-PURPOSE OVERRIDE (audit-write.md override #1 — TRIGGERED)
+   Research notes Step 9 explicitly flag: "THIS WAS NOT A STANDARD
+   MARKETING/INTAKE GROWTH CALL." The transcript frames the engagement as a
+   three-phase plan the client himself proposed:
+     Phase 1 — Build Capacity: delegate intake away from the owner, improve
+       online reputation/reviews (Coaching)
+     Phase 2 — Drive Predictable Leads: marketing/ads, explicitly proposed
+       only AFTER capacity is built (Marketing)
+     Phase 3 — Automate & Scale: SMB Team's "Fractional CTO" service, named
+       explicitly on the call, building agentic AI workflows connecting to
+       the firm's existing stack (Dropbox, Manus) (Legal AI Workforce / LAW)
+   Because this override applies, package_decision.json's marketing-only,
+   two-package framing is not usable as-is. The full eligibility rules were
+   applied using the corrected revenue figure, and the LAW table was
+   consulted directly (package_decision.json had law_tier: null, which is
+   incomplete given the transcript explicitly names Fractional CTO as a real
+   deal component, not a hypothetical future upsell).
+   Marketing is still justifiably included as the Phase 2 component — not
+   because revenue mechanically qualifies for a tier, but because the
+   research notes independently document a real, severe lead-generation gap
+   (100% referral-based client acquisition, zero visibility in organic
+   search against three named competitors with 3–10x the review volume,
+   zero ad history on any channel, and a blog dormant since 2019). This is
+   the correct sequencing: Coaching first (matches the stated need), then
+   Marketing (independently justified by the data), then LAW (explicitly
+   named on the call).
+
+3. THREE-PACKAGE RECOMMENDATION (INTENTIONAL DEPARTURE FROM 2-PACKAGE DEFAULT)
+   audit-write.md's general eligibility guidance defaults to recommending
+   one marketing package + one non-marketing package. This audit instead
+   recommends THREE packages: Full Service Marketing Starter + Elite Coach
+   Plus + Fractional CTO Level 1. This is intentional and documented here so
+   sales can see it was not an error. Rationale: the call explicitly covered
+   all three tracks by name (capacity/coaching, marketing, and Fractional
+   CTO/AI automation) as a single connected growth plan the client proposed
+   himself — omitting any one of the three would misrepresent what was
+   actually discussed and agreed to as a sequence on the call.
+
+4. FIRST 90 DAYS SEQUENCING DEVIATION (documented per override-handling rule)
+   audit-write.md's Block 5 instruction generically says to "lead with
+   launching ads first, then website work" for the First 90 Days section.
+   This directly contradicts Quesada Law Firm's own explicitly-stated and
+   agreed sequencing: capacity/coaching BEFORE marketing. Leading with ads
+   would ignore what the client actually asked for and agreed to on the
+   call. Per the override principle in audit-write.md (transcript-stated
+   need supersedes generic template defaults), the First 90 Days section in
+   this audit instead leads with coaching kickoff and intake delegation
+   groundwork, followed by marketing prep/launch, followed by LAW/Fractional
+   CTO onboarding. This is an intentional deviation, not an oversight. Live
+   chat and CRM setup are not mentioned as first-90-days deliverables, per
+   standing rules.
+
+5. FIRM STAGE — LOWER-STAGE-ON-BORDER RULE APPLIED
+   The firm has a small team (owner + assistant + investigator), which
+   borders on Stage 4 (Small Business Manager). However, the firm has zero
+   scalable lead-generation system (100% referral) and no delegation
+   process. Per the "assign the lower stage if on the border" rule in
+   audit-write.md, Stage 3 — Solo Practitioner governs, using the
+   LLS-Solo-Practitioner staircase image.
+
+================================================================
+MANDATORY PRICE LOOKUP (verbatim from audit-write.md tables, corrected)
+================================================================
+
+- Marketing package selected: Full Service Marketing — Starter
+  - Bundled price (from table): $4,997/mo
+  - Stand-alone price (from table): $5,697/mo
+  - Savings (stand-alone minus bundled): $700/mo
+  - Rationale: Revenue $500K–$1M (corrected figure) qualifies for Starter on
+    its own; multiple practice areas (criminal defense general + DUI
+    defense) independently also point to Starter, since Essentials requires
+    a single practice area. Essentials is excluded on both grounds.
+
+- Non-marketing package selected: Elite Coach Plus
+  - Bundled price (from table): $3,200/mo
+  - Stand-alone price (from table): $3,497/mo
+  - Savings (stand-alone minus bundled): $297/mo
+  - Rationale: Corrected revenue band $400K–$1M maps to Elite Coach Plus,
+    not the $250K–$400K Elite Coach row that package_decision.json
+    incorrectly selected using the wrong $375K revenue figure.
+
+- Legal AI Workforce (LAW) package selected: Fractional CTO Level 1
+  (AI Accelerator L1)
+  - Bundled price (from table): $3,297/mo
+  - Stand-alone price (from table): $3,797/mo
+  - Savings (stand-alone minus bundled): $500/mo
+  - Rationale: $700K revenue falls within the $500K–$1.5M L1 target band.
+    The "solo with no support staff" exclusion does not apply — the firm has
+    2 support staff (assistant + investigator). The owner is already
+    building his own AI/automation work and explicitly wants a Fractional
+    CTO to lead the effort — matching L1's "done-with-you" positioning over
+    AI Essentials' "DIY with managed support," per audit-write.md's
+    tier-selection guidance ("Prefer this over AI Essentials when owner says
+    they don't have bandwidth to manage it themselves").
+
+- AI Avatar / Video Growth add-on selected: none — not discussed, not a fit.
+
+- Total monthly investment (sum of all bundled/recurring prices):
+  $4,997 + $3,200 + $3,297 = $11,494/mo
+
+- Total savings (sum of all savings):
+  $700 + $297 + $500 = $1,497/mo
+
+No AI Avatar, no Bookkeeping, no OmniSocial, no Attorney Assistant — none
+discussed on the call and none fit the firm's stated situation.
+
+================================================================
+AD SPEND — CONSERVATIVE AND AGGRESSIVE (already computed, used as-is)
+================================================================
+
+Practice-area defaults disclosed (not stated on the call): average case
+value $4,000 (Criminal Defense $3K–$5K range midpoint) and close rate 15%
+(standard default, not stated by the prospect).
+
+CONSERVATIVE: $5,500/mo (Google Search only — matches Criminal Defense
+Google PPC minimum)
+  - CPL: Criminal Defense Google Search $155–$205, midpoint $180, +20%
+    conservative cushion = $216 blended CPL
+  - Leads = $5,500 / $216 ≈ 25.5/mo
+  - Cases = 25.5 × 15% ≈ 3.8/mo
+  - Revenue = 3.8 × $4,000 ≈ $15,280/mo
+  - Return ≈ 2.8x
+
+AGGRESSIVE: $20,000/mo (capped at Starter tier's ad spend cap)
+  - Multi-channel blend: Google Search $10K / LSA $4K / Meta Cold $4K / Meta
+    Retargeting $2K
+  - Blended CPL ≈ $146, no cushion
+  - Leads = $20,000 / $146 ≈ 137/mo
+  - Cases = 137 × 15% ≈ 20.5/mo
+  - Revenue = 20.5 × $4,000 ≈ $82,000/mo
+  - Return ≈ 4.1x
+  - BOUNDARY RULE NOTE: The 20% rule/reverse-math calculation would suggest
+    a higher spend ceiling, but the firm's current $700K revenue does not
+    meet the $1M–$2M Growth tier revenue threshold. Per the Boundary Rule,
+    aggressive goals alone do not bypass the revenue floor for a tier
+    upgrade — so the $20,000 Starter tier ad spend cap governs the
+    aggressive scenario instead of a higher reverse-math figure.
+  - CONSISTENCY CHECK: The aggressive scenario's ~20.5 cases/mo and ~$82K/mo
+    in ad-driven revenue closely validates against the reverse-math target
+    needed to hit the client's stated $1M annual goal (approximately
+    $83,333/mo in total revenue needed to reach $1M/year from the current
+    $700K base — ads alone at the aggressive tier get remarkably close to
+    covering that full gap, though referrals remain part of the realistic
+    mix). This consistency is worth highlighting to sales as a strong
+    signal that the aggressive tier is well-calibrated to this client's
+    stated goal, not an arbitrary number.
+
+================================================================
+DBM STATEMENT FOR BLOCK 1
+================================================================
+
+Primary DBM: A firm that runs itself so the owner has more time. Exact
+transcript language: "Build a 'well-oiled machine' that can operate without
+the owner's daily involvement, enabling him to eventually transition out of
+law" / "Increase personal time and presence outside the firm."
+Secondary long-term lean: eventual exit/transition out of law.
+
+Block 1 formula: "We help [audience] get [external desire] so they can
+[DBM]." — We help established solo criminal defense attorneys get a
+predictable flow of new clients and a team that runs without them so they
+can build a firm that operates without their daily involvement and
+eventually step away from the practice of law altogether.
+
+================================================================
+QUICK WIN OPPORTUNITIES IDENTIFIED (6+, across all four pillars)
+================================================================
+
+1. [Lead Gen / Quick Win] Local Search Invisibility — the firm does not
+   surface in organic search for "criminal defense lawyer Miami" or "DUI
+   lawyer Miami," while Mirer (306 reviews) and Hernandez (203 reviews) both
+   dominate those exact searches. Opportunity: closing this visibility gap
+   converts existing 20-year credibility into inbound search traffic.
+
+2. [Lead Gen / Long-Term Play] Zero Paid Advertising History — the firm has
+   never run Google, LSA, or Meta ads on any channel. Opportunity: opening
+   even one paid channel creates the firm's first controllable, scalable
+   lead source independent of referrals.
+
+3. [Lead Gen / Quick Win] Dormant Blog Since 2019 — no new content in
+   nearly 7 years, while Wichman Law Firm maintains active, regularly
+   updated content. Opportunity: fresh content signals active practice to
+   both search engines and prospective clients.
+
+4. [Intake / Quick Win] Owner-Handled Intake — Marco personally handles
+   every intake call alongside a full felony/DUI caseload, with no
+   delegation in place. Opportunity: delegating intake immediately frees
+   attorney time for higher-value work and is the client's own stated
+   Phase 1 priority.
+
+5. [Intake / Quick Win] Buried Contact Form — the homepage contact form sits
+   near the bottom of the page rather than above the fold. Opportunity: a
+   more prominent, accessible form reduces friction for ready-to-act
+   prospects.
+
+6. [Team / Long-Term Play] No Delegation Layer Beyond a 3-Person Team —
+   Marco, one assistant, one investigator, with no documented process for
+   intake or case handoff. Opportunity: building repeatable systems (with
+   AI-driven automation, per the owner's own stated preference) allows the
+   firm to grow without proportionally growing headcount or owner hours.
+
+7. [Profit / Long-Term Play] Three-Year Revenue Plateau at ~$700K —
+   consistent, stable, but capped by the current referral-only model.
+   Opportunity: introducing a new lead channel and delegated systems is what
+   breaks the plateau and moves the firm toward its stated $1M goal.
+
+8. [Team / Quick Win] Owner-Led AI Automation Without Dedicated Leadership —
+   Marco is already personally building agentic workflows connecting
+   Dropbox and Manus, but doing so entirely solo alongside casework and
+   intake. Opportunity: a dedicated Fractional CTO accelerates and
+   professionalizes work the owner has already validated the need for.
+
+================================================================
+FIRST 90 DAYS BULLET POINTS (sequenced per override #4 above — coaching
+first, then marketing, then LAW — NOT the generic "ads first" default)
+================================================================
+
+1. Kick off Elite Coach Plus coaching engagement and begin building the
+   intake delegation framework so Marco is no longer the sole point of
+   contact for every new inquiry.
+2. Audit and strengthen the firm's online reputation and review generation
+   process, building on the firm's existing 5.0-star foundation.
+3. Move the website's contact form above the fold and confirm the
+   criminaldefensemiamilawyer.com domain issue is resolved or redirected.
+4. Prepare and launch Full Service Marketing Starter — Google Search
+   campaigns for criminal defense and DUI defense terms in Miami.
+5. Begin Fractional CTO Level 1 onboarding, mapping the firm's existing
+   Dropbox and Manus workflows for the first agentic automation builds.
+
+(Live chat and CRM setup are intentionally not included, per standing rule.)
