@@ -1,0 +1,169 @@
+ERKAN & SULLIVAN, P.C. — SECTION 11 WORKINGS
+Prepared by Claude Code Audit Agent — Pass 2 (Write)
+
+===========================================
+TRANSCRIPT-STATED NEED OVERRIDE CHECK
+===========================================
+1. Call-purpose override: Does NOT apply. Transcript confirms this is a standard marketing/growth
+   discovery call (Ahrefs SEO gap review + proposal for a full-service marketing replacement).
+2. Existing-vendor override: Does NOT apply. Blue Shark is an existing vendor being actively
+   REPLACED, not a recently-signed new vendor. The prospect's dissatisfaction with Blue Shark
+   ("canned," "robotic," "insulting" content) is the reason for this engagement, not a reason
+   to withhold a marketing recommendation.
+3. Budget-reality override: Does NOT apply. No budget constraints, financial limits, or
+   preference for a smaller engagement were stated or implied in the transcript.
+
+No overrides triggered. Proceeding with package_decision.json as the starting point per the
+"confidence: low" cross-check requirement.
+
+===========================================
+REVENUE / TEAM-SIZE CROSS-CHECK (confidence: low)
+===========================================
+package_decision.json used revenue_effective = $500,000 (default, no stated figure) and
+team_size_effective = 3 (default, no stated figure).
+
+Correction found: Research notes (Step 9) confirm the actual team is 6 people — Murat Erkan,
+Ryan Sullivan, plus 4 named support staff (Shah, Victor, Sandra, Felicia Gordon) — not the
+default of 3. This does NOT change the package selection: the non-marketing table's "Growing"
+row (Elite Coach Plus + FCOO Advisor) requires an explicit growth/ops-strain signal beyond team
+headcount, and none was stated on the call (no mention of financial visibility problems,
+no-take-home-growth complaints, or acquisition-cost blindness beyond the single clerk's-hearing
+math point). Plain Elite Coach Plus remains correct.
+
+Revenue estimate ($500,000, low confidence) was checked against firm profile signals: 2 partners
++ 4 staff, ~$15K current average case value, 154 five-star reviews accumulated over an
+established multi-practice-area criminal defense firm with Super Lawyers/AV-rated partners.
+No signal in the research notes pushes this below $400K (firm is too established and staffed
+for that) or above $1M (no revenue figure, high case volume, or staffing scale was stated to
+support it). $500K sits comfortably inside the range that keeps both table selections stable:
+- Marketing: Multiple practice areas are confirmed (OUI/DUI, domestic violence, drug crimes,
+  assault, gun offenses, sex crimes, white collar, student defense, expungement, federal crimes,
+  restraining orders) — this hides Essentials regardless of exact revenue (single-practice-area
+  requirement fails), and revenue under $1M lands on Starter either way. Tier: STARTER — confirmed.
+- Non-marketing: $400K–$1M band → Elite Coach Plus — confirmed, no change.
+
+CONCLUSION: package_decision.json's marketing_tier (Starter) and coaching_name (Elite Coach Plus)
+are confirmed correct and used as-is. Ad spend figures required correction — see below.
+
+===========================================
+MANDATORY PRICE LOOKUP
+===========================================
+- Marketing package selected: Full Service Marketing — Starter
+  - Bundled price (from table): $4,997/mo
+  - Stand-alone price (from table): $5,697/mo
+  - Savings (stand-alone minus bundled): $700/mo
+- Non-marketing package selected: Elite Coach Plus
+  - Bundled price (from table): $3,200/mo
+  - Stand-alone price (from table): $3,497/mo
+  - Savings (stand-alone minus bundled): $297/mo
+- Legal AI Workforce (LAW) package selected: none — no AI readiness or interest signal on the call
+- AI Avatar / Video Growth add-on selected: none — not discussed on the call; also requires
+  Alexis approval and is not warranted without an expressed interest
+- Total monthly investment (sum of all bundled/recurring prices): $8,197/mo
+- Total savings (sum of all savings): $997/mo
+
+===========================================
+AD SPEND CALCULATION
+===========================================
+Recommended channels per transcript: Google PPC (search) + Meta retargeting (transcript
+explicitly proposes "PPC" and "social media retargeting ads" — not LSA, not Meta cold lead gen).
+
+CONSERVATIVE (sum of channel minimums, Criminal Defense):
+  Google PPC min $5,500 + Meta Retargeting min $1,200 = $6,700/mo
+  (Correction from package_decision.json's $5,500 — that figure omitted the retargeting
+  channel the transcript explicitly proposes as part of scope.)
+
+AGGRESSIVE (20% rule, since no dollar revenue goal was stated):
+  Revenue goal = 2x current revenue (per research notes' explicit fallback instruction) =
+    2 x $500,000 = $1,000,000
+  Monthly budget = $1,000,000 x 20% / 12 = $16,667
+  Geo multiplier: Andover, MA (Boston-area market) = Tier 2 (1.3x) -> $16,667 x 1.3 = $21,667
+  No Spanish campaign needed (not mentioned in transcript) -> no multiplier
+  Minus marketing package management fee ($4,997) = $16,670 available ad spend
+  Reverse math check: ($1,000,000 / 12) / $22,500 (goal case value midpoint) = 3.7 target
+    cases/mo / 15% close rate = 24.7 required leads x ~$158 blended CPL (no cushion) = ~$3,900
+    required spend. 20% rule result ($16,670) is higher, so it governs per the "use whichever
+    is higher" rule.
+  Check against tier cap: Starter cap is $20,000 -> $16,670 is under cap, no tier upgrade needed.
+  (Correction from package_decision.json's $20,000 — that figure appears to be the tier cap
+  itself rather than a computed 20%-rule/reverse-math result.)
+  Rounded for the client report: $16,500/mo
+
+ROI PROJECTIONS
+Average case value used for both scenarios: $15,000 (current stated average case value from
+transcript — used consistently for both scenarios per report convention).
+
+Conservative scenario ($6,700/mo):
+  Blended CPL (weighted by spend proportion: 82% PPC @ $180 midpoint, 18% Meta retargeting
+    @ $60 midpoint, + 20% conservative cushion) = ~$190
+  Leads = $6,700 / $190 = ~35/mo
+  Cases = 35 x 15% close rate = ~5/mo
+  Revenue = 5 x $15,000 = ~$75,000/mo
+  Return = $75,000 / $6,700 = ~11.2x
+
+Aggressive scenario ($16,500/mo):
+  Blended CPL (same channel weighting, no cushion) = ~$158
+  Leads = $16,500 / $158 = ~104/mo
+  Cases = 104 x 15% close rate = ~16/mo
+  Revenue = 16 x $15,000 = ~$240,000/mo
+  Return = $240,000 / $16,500 = ~14.5x
+
+All figures are labeled as estimates in the client report per the required disclaimer.
+
+35% SPEND CAP CHECK:
+Total monthly SMB spend at the aggressive level = $8,197 (mgmt fees) + $16,500 (ad spend) = $24,697.
+Checked against the same revenue basis used to derive the aggressive ad spend figure (the $1,000,000
+goal, i.e. $83,333/mo) since the aggressive spend is inherently a forward-looking investment against
+that goal, not today's run rate: $24,697 / $83,333 = 29.6% — under the 35% cap.
+(Note: if checked instead against the low-confidence current-revenue estimate of $41,667/mo, the
+aggressive scenario would exceed the cap — flagging for sales rep awareness given revenue confidence
+is low. Recommend confirming actual current revenue with the client before finalizing ad spend at
+the aggressive end.)
+
+===========================================
+DBM STATEMENT FOR BLOCK 1
+===========================================
+"We help established criminal defense firms with a trial record stronger than their visibility
+get a predictable flow of premium, high-value cases so they can build a self-managing team and
+step back from personally running every hearing themselves."
+
+===========================================
+QUICK WIN OPPORTUNITIES (6+)
+===========================================
+1. [Lead Gen / Quick Win] Launch Google PPC on zero-competition OUI/DUI terms — no named
+   competitor (Panas Law, Neyman, Gilman Law) confirmed running search ads on these terms.
+   Opportunity: first-mover paid visibility while competitors are absent from paid search.
+2. [Lead Gen / Quick Win] Local Service Ads enrollment — firm's 154 five-star reviews already
+   qualify it to move quickly toward Google Screened status. Opportunity: pay-per-lead
+   placement above the map pack and all organic results.
+3. [Lead Gen / Long-Term Play] Full local SEO rebuild replacing Blue Shark's "canned" content —
+   competitor Stephen Neyman out-ranks the firm 868 keywords to 100. Opportunity: close the
+   6-9x organic visibility gap over time.
+4. [Lead Gen / Long-Term Play] Build a dedicated campaign (landing page + PPC + retargeting)
+   around the statewide OUI breathalyzer ruling and the 27,000 affected drivers — a content
+   and audience asset no competitor can replicate. Opportunity: convert a one-time blog post
+   into an ongoing case-generation asset.
+5. [Intake / Quick Win] Add live chat and move the consultation CTA above the fold. Opportunity:
+   capture after-hours and urgent inquiries that currently have no way to engage before the
+   next business day.
+6. [Team / Long-Term Play] Build a defined intake/case-management process ahead of the planned
+   associate hire — Gilman Law's 470-review volume shows the size of the opportunity being left
+   on the table industry-wide. Opportunity: make the new hire additive capacity, not another
+   person for the partners to manage closely.
+7. [Profit / Quick Win] Track per-case-type profitability firm-wide, extending the $2,000/hr
+   clerk's-hearing math the partners have already identified. Opportunity: confirm the stated
+   $800/hr partner target is actually being hit.
+
+===========================================
+FIRST 90 DAYS
+===========================================
+1. Launch Google PPC campaigns for OUI/DUI, domestic violence, and drug crimes terms across
+   Andover, Lawrence, and Lowell — the first paid channel this firm has ever run.
+2. Launch Meta retargeting ads to re-engage the firm's existing (currently unconverted) website
+   traffic.
+3. Rebuild key website conversion points — move the consultation CTA above the fold and add
+   live chat.
+4. Kick off Elite Coach Plus coaching sessions with Murat and Ryan, starting with the profit-plan
+   and team-delegation gaps identified in this audit.
+5. Begin local SEO rebuild, starting with a dedicated landing page and content campaign around
+   the statewide OUI breathalyzer ruling.
