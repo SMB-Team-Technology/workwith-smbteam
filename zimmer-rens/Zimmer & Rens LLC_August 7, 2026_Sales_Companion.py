@@ -218,22 +218,20 @@ story.append(Paragraph("<b>What it does for them:</b>", S["subsection"]))
 story.append(bd("Gives estate planning and criminal defense their own lead flow instead of leftover real estate referrals."))
 story.append(bd("Directly closes the CFO-flagged marketing-spend-below-benchmark gap."))
 
-story.append(Paragraph("<b>Full Service Marketing — Growth  |  $7,497/mo bundled</b>", S["subsection"]))
-story.append(b("Revenue estimate ($1.8M) + multiple practice areas/locations rules out Essentials and caps Dominate/Platinum — Growth is the defensible middle tier."))
-story.append(b("Ad cap $50K/mo — well above the $23.4K-$37.1K/mo range this proposal actually recommends."))
-story.append(b("If Taylor confirms revenue above $2M, re-check Dominate tier eligibility before the call closes."))
+story.append(Paragraph("<b>Full Service Marketing — Starter  |  $4,997/mo bundled</b>", S["subsection"]))
+story.append(b("Quoted at Starter per Jacob's package instruction for this call — note the $1.8M revenue estimate would otherwise place the firm in the Growth tier; confirm with Taylor whether Starter or Growth is the right fit."))
+story.append(b("FLAG: Starter's ad cap is $20K/mo — below the $23.4K-$37.1K/mo range this proposal recommends. Confirm with Jacob whether to cap ad spend to $20K or upgrade the marketing tier before presenting."))
 
 story.append(thin_rule())
 
-# ── Why This Coaching + AI Package ──
-story.append(Paragraph("Why This Coaching &amp; AI Package", S["section"]))
+# ── Why This AI Package ──
+story.append(Paragraph("Why This AI Package", S["section"]))
 
 story.append(Paragraph("<b>What it does for them:</b>", S["subsection"]))
-story.append(bd("Master's Circle gives Paul and Taylor a peer framework for exactly this multi-office, multi-practice-area growth stage."))
 story.append(bd("Fractional CTO L1 delivers the operational AI automation the firm explicitly asked for — without the $100K generalist price tag."))
 
-story.append(Paragraph("<b>Master's Circle $4,600/mo + Fractional CTO L1 $3,297/mo bundled</b>", S["subsection"]))
-story.append(b("16-person team with dedicated ops/intake staff (office manager, paralegals) qualifies for Master's Circle."))
+story.append(Paragraph("<b>Fractional CTO L1 $3,297/mo bundled</b>", S["subsection"]))
+story.append(b("16-person team with dedicated ops/intake staff (office manager, paralegals) gives the firm the bandwidth to engage with a done-with-you AI rollout."))
 story.append(b("CTO L1 chosen over L2 — transcript describes a modest initial need (email/scheduling), and the firm already balked at a $100K quote."))
 story.append(b("Escalation flag: confirm LAW delivery capacity with sales rep before this proposal is finalized."))
 
@@ -255,7 +253,7 @@ story.append(bd("Stays under the 35%-of-revenue cap even at the aggressive end, 
 
 story.append(Paragraph("<b>Recommended Ad Spend Range:</b>", S["subsection"]))
 story.append(b("<b>Conservative:</b> $23,400/mo — channel minimums for Estate Planning ($10,200) + Criminal Defense ($13,200)."))
-story.append(b("<b>Aggressive:</b> $37,100/mo — capped by the 35% total-spend rule, not the Growth tier's $50K ad cap."))
+story.append(b("<b>Aggressive:</b> $37,100/mo — under the 35% total-spend rule, but exceeds the Starter tier's $20K ad cap (see flag above)."))
 
 story.append(Paragraph("<b>Estimated Return on Investment:</b>", S["subsection"]))
 story.append(b("<b>Conservative:</b> ~27 cases/mo x ~$3.1K avg = ~$83K/mo vs. $23.4K spend = ~3.5x return."))
@@ -264,8 +262,8 @@ story.append(Paragraph("<i>All figures are estimates using published CPL ranges 
 
 story.append(Paragraph("<b>How the range was calculated:</b>", S["subsection"]))
 story.append(b("<b>Conservative:</b> EP: PPC $3,500 + LSA $2,000 + Meta $4,700 = $10,200. CD: PPC $5,500 + LSA $2,000 + Meta $5,700 = $13,200."))
-story.append(b("<b>Aggressive:</b> $3.6M (2x revenue est.) x 20% / 12 = $60,000. Tier 3 (1.15x) = $69,000. Minus $15,394 mgmt fee = $53,606 theoretical."))
-story.append(b("35% cap ($150K est. monthly revenue) binds tighter than the $53,606 figure or the $50K tier cap: $52,500 total - $15,394 fees = $37,106 ad spend."))
+story.append(b("<b>Aggressive:</b> $3.6M (2x revenue est.) x 20% / 12 = $60,000. Tier 3 (1.15x) = $69,000. Minus $8,294 mgmt fee = $60,706 theoretical."))
+story.append(b("35% cap ($150K est. monthly revenue): $52,500 total - $8,294 fees = $44,206 ad spend room — but Starter's own $20K tier cap now binds tighter than either figure (see flag above)."))
 
 story.append(thin_rule())
 
@@ -287,14 +285,14 @@ story.append(thin_rule())
 story.append(Paragraph("Investment At A Glance", S["section"]))
 
 price_data = [
-    [Paragraph("<b>Full Service Marketing — Growth</b>", S["price_main"]),
-     Paragraph("$7,497/mo", S["price_main"])],
+    [Paragraph("<b>Full Service Marketing — Starter</b>", S["price_main"]),
+     Paragraph("$4,997/mo", S["price_main"])],
     [Paragraph("Dedicated lead gen for Estate Planning &amp; Criminal Defense.", S["price_detail"]),
-     Paragraph("<strike>$8,997</strike> stand alone", S["price_detail"])],
-    [Paragraph("<b>Master's Circle + Fractional CTO L1</b>", S["price_main"]),
-     Paragraph("$7,897/mo", S["price_main"])],
-    [Paragraph("Peer coaching + AI automation for email/scheduling.", S["price_detail"]),
-     Paragraph("<strike>$8,794</strike> stand alone", S["price_detail"])],
+     Paragraph("<strike>$5,697</strike> stand alone", S["price_detail"])],
+    [Paragraph("<b>Fractional CTO L1</b>", S["price_main"]),
+     Paragraph("$3,297/mo", S["price_main"])],
+    [Paragraph("AI automation for email/scheduling.", S["price_detail"]),
+     Paragraph("<strike>$3,797</strike> stand alone", S["price_detail"])],
     [Paragraph("<b>Recommended Ad Spend</b>", S["price_main"]),
      Paragraph("$23,400–$37,100/mo", S["price_main"])],
     [Paragraph("Goes to Google, LSA, and Meta — not to SMB Team.", S["price_detail"]),
@@ -313,8 +311,8 @@ pt.setStyle(TableStyle([
 ]))
 story.append(pt)
 story.append(Paragraph(
-    "Total: $15,394/mo + $23,400–$37,100 ad spend  |  Save $2,397/mo by bundling  |  "
-    "25.9%–35.0% of est. revenue (at the 35% cap on the aggressive end — confirm actual revenue before close)",
+    "Total: $8,294/mo + $23,400–$37,100 ad spend  |  Save $1,200/mo by bundling  |  "
+    "21.1%–30.3% of est. revenue (confirm actual revenue before close — aggressive ad spend exceeds Starter's $20K tier cap, see flag above)",
     S["savings"]))
 
 # ── Build ──

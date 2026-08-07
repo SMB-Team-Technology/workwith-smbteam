@@ -101,7 +101,7 @@ PRIORITIES = [
     (
         "Install Team &", "Profit Systems", "6D28D9",
         [
-            "Start Master's Circle coaching for the partners",
+            "Free Paul and Taylor from day-to-day admin work",
             "Launch a Fractional CTO for email/scheduling AI",
             "Close the CFO-flagged 20% marketing gap",
             "Automate admin so the team focuses on cases",
@@ -114,21 +114,21 @@ PRIORITIES = [
 # Package cards — (label, bundled_price, retail_price, services_line, accent_color_hex)
 PACKAGES = [
     (
-        "FULL SERVICE MARKETING — GROWTH",
-        "$7,497", "$8,997/mo",
+        "FULL SERVICE MARKETING — STARTER",
+        "$4,997", "$5,697/mo",
         "Google Ads · LSA · Meta Ads · Local SEO · Landing Pages",
         "1D4ED8",
     ),
     (
-        "MASTER'S CIRCLE + FRACTIONAL CTO L1",
-        "$7,897", "$8,794/mo",
-        "Peer coaching · AI automation for email & scheduling",
+        "FRACTIONAL CTO LEVEL 1",
+        "$3,297", "$3,797/mo",
+        "AI automation for email & scheduling",
         "6D28D9",
     ),
 ]
 
-BUNDLE_TOTAL   = "$15,394 / mo"
-BUNDLE_SAVINGS = "Save $2,397/mo by bundling"
+BUNDLE_TOTAL   = "$8,294 / mo"
+BUNDLE_SAVINGS = "Save $1,200/mo by bundling"
 
 AD_SPEND_NOTE = (
     "+ Recommended ad spend: $23,400–$37,100/mo paid directly to Google/Meta"
@@ -144,7 +144,7 @@ AGGRESSIVE_RESULT   = "$158,000 revenue · 4.3× ROAS"
 TIMELINE = [
     ("Day 1",   "Launch Criminal Defense + Estate Planning ads"),
     ("Day 14",  "After-hours intake coverage goes live"),
-    ("Week 2",  "Master's Circle coaching kicks off"),
+    ("Week 2",  "Practice area landing pages live for CD & EP"),
     ("Week 3",  "AI Foundation Sprint begins (Fractional CTO)"),
     ("Month 3", "La Crosse geo-pages live ahead of opening"),
 ]
