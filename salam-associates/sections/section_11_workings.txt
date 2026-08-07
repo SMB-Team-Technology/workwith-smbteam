@@ -1,0 +1,285 @@
+================================================================================
+SALAM & ASSOCIATES, P.C. — SECTION 11 WORKINGS (INTERNAL — NOT CLIENT FACING)
+================================================================================
+
+CALL-PURPOSE OVERRIDE — READ FIRST
+--------------------------------------------------------------------------------
+package_decision.json (confidence: "high") selected Full Service Marketing —
+Platinum ($15,997/mo bundled) + Elite Coach Plus ($3,200/mo bundled), derived
+purely from revenue ($4M, taken as revenue_effective) and a defaulted team
+size of 3. That selection is NOT usable as-is.
+
+Per audit-write.md's TRANSCRIPT-STATED NEED OVERRIDE section, override #1
+(Call-purpose override) applies here. The research notes carry a dedicated
+header at the very top of the file — "IMPORTANT — STATED CALL FOCUS / PRODUCT
+INTEREST (READ FIRST)" — and restate it in Step 9, both saying explicitly that
+this discovery call was NOT a standard marketing/intake-growth call. The
+transcript's own stated proposed solution is:
+
+  "A tailored plan combining team coaching (led by Peter Schultz) and custom
+  AI automation (e.g., a 'Fatima GPT' for SOPs) to fix operations before
+  investing in marketing."
+
+The firm did not ask about marketing on this call — it asked for coaching and
+AI automation, with marketing investment explicitly and deliberately deferred
+by the client's own stated sequencing. Per the override instructions, a
+Full Service Marketing package must NOT be defaulted into Phase 1 just
+because revenue qualifies for a tier. The LAW package table and the
+non-marketing package table are checked first, and only a coaching + AI
+recommendation is used for Phase 1. The `confidence: "high"` flag on the
+decision file describes confidence in the revenue number only — it says
+nothing about whether the marketing+coaching bundle is the right category of
+recommendation, which is a separate question the pipeline cannot evaluate
+from a JSON revenue/team-size lookup alone.
+
+Revenue used throughout: per Research Notes Step 9, "$4M/year historical,
+PROJECTED to fall to approximately $2M this year." Treated as instructed:
+~$2,000,000 = current effective revenue for eligibility/cap checks; $4M =
+historical context (and itself part of the crisis narrative — case volume
+collapsing from ~400/yr to ~175/yr). Revenue growth goal discussed on the
+call: 20% increase from the ~$2M base to ~$2.4M (flagged by the rep as likely
+a conservative target).
+
+MANDATORY PRICE LOOKUP (confirmed character-by-character against tables in
+audit-write.md)
+--------------------------------------------------------------------------------
+- Marketing package selected: NONE (deferred to Phase 2 roadmap only, no
+  dollar figure priced in Phase 1 per the override above)
+- Non-marketing package selected: Elite Coach Plus
+  - Bundled price (from table): $3,200/mo
+  - Stand-alone price (from table): $3,497/mo
+  - Savings (stand-alone minus bundled): $297/mo
+  - Basis: SELECT NON-MARKETING PACKAGE table, row "$1M+ | Under 5 | Elite
+    Coach Plus | $3,200/mo" — revenue $1M+ (effective current-year ~$2M),
+    team under 5. Matches the transcript's actual proposed solution
+    (full-team coaching led by Peter Schultz to fix the 75%-owner-bottleneck
+    and accountability gap).
+- Legal AI Workforce (LAW) package selected: AI Accelerator L2 — Fractional
+  CTO Level 2
+  - Bundled price (from table): $4,997/mo
+  - Standalone price (from table): $5,797/mo
+  - Savings (stand-alone minus bundled): $800/mo
+  - Basis: SELECT LEGAL AI WORKFORCE (LAW) PACKAGE table, row "AI Accelerator
+    L2 | Fractional CTO Level 2 | $4,997/mo | $5,797/mo | $1.5M-$3M" —
+    current effective revenue (~$2M) and the stated 20%-growth goal (~$2.4M)
+    both fall inside this band. LAW eligibility check: revenue over $500K
+    (pass), firm has support staff so not "solo with no support staff"
+    (pass — internal intake staff and broader team exist), owner shows clear
+    openness to AI adoption — she wants a custom "Fatima GPT" SOP assistant,
+    automated case notes/document tracking (e.g., finding missing radiology
+    bills), an automated client-retention drip campaign, and automated
+    check-population in Intuit (pass). Per the "When to recommend each tier"
+    guidance, this is "significant AI transformation" — multiple concurrent
+    automation builds — which matches the L2 description (monthly custom
+    agent builds, bi-monthly CTO strategy calls, four Skills/month), not the
+    lighter DIY-with-support L1/Essentials tiers. Fatima has zero spare
+    bandwidth to run this herself (already at ~75% capacity on casework), so
+    a done-with-you Fractional CTO leading the effort is the correct fit
+    over a DIY tier.
+- One-time onboarding: Law Firm AI Foundation Sprint, paired with Fractional
+  CTO Level 2
+  - Bundled/paired price (from table): $14,997 one-time
+  - Stand-alone price (from table): $19,997 one-time
+  - Savings: $5,000 one-time
+  - This is a ONE-TIME fee, not part of the recurring monthly total. There is
+    no ad-spend package in Phase 1 (marketing is deferred), so Block 4 of
+    section_11 is repurposed into a "One-Time Onboarding Investment" block
+    instead of "Recommended Ad Spend" — mirroring the precedent pattern in
+    wenig-saltiel/sections/section_11_next_steps.html (Block 4), which does
+    the same repurposing for a LAW Foundation Sprint paired with Fractional
+    CTO L2. Copy adjusted to be Salam & Associates-specific.
+- AI Avatar / Video Growth add-on selected: none — not discussed on the call,
+  no existing marketing budget or paid-ads relationship to pair it with, and
+  marketing itself is deferred.
+- Total monthly investment (sum of all bundled/recurring prices): $3,200 +
+  $4,997 = $8,197/mo
+- Total savings (sum of all savings, recurring only): $297 + $800 = $1,097/mo
+  (the $5,000 one-time onboarding savings is separate and not added to the
+  recurring total)
+
+35% CAP CHECK
+--------------------------------------------------------------------------------
+Monthly revenue at ~$2,000,000/yr current effective = ~$166,667/mo.
+35% cap = ~$58,333/mo.
+Phase 1 recurring investment ($8,197/mo) is well within the cap regardless of
+whether the $2M current or $4M historical revenue figure is used (35% of
+$4M/yr monthly = ~$116,667/mo cap). No cap issue at either revenue figure.
+LAW recurring fees ($4,997/mo) are included in this check per the rule that
+LAW fees count toward the 35% cap alongside marketing and coaching.
+Minimum MRR ($2,497/month) is satisfied by a wide margin.
+
+WHY MARKETING IS NOT PRICED IN PHASE 1
+--------------------------------------------------------------------------------
+Full Service Marketing is deliberately excluded from Block 3 pricing. It
+appears only as a qualitative Phase 2 roadmap item (see section_11 Block 6),
+introduced once intake is routing cleanly through Alert Communications and
+coaching cadence is established — framed explicitly as "safe to add now
+because intake won't leak the new volume." Per the revenue band the firm's
+current ~$2M-$2.4M revenue falls into, the natural next tier when marketing
+is reintroduced is Full Service Marketing — Growth ($7,497/mo bundled,
+$8,997/mo stand-alone, $1,500/mo savings, $1M-$2M revenue band, $50,000 ad
+spend cap) — this is recorded here for sales visibility only; no dollar
+figure for this tier appears anywhere in the client-facing Block 3.
+
+ESCALATION FLAGS (INTERNAL ONLY — DO NOT PUT IN CLIENT REPORT)
+--------------------------------------------------------------------------------
+- Any Legal AI Workforce (LAW) package -> confirm with sales rep (Jacob
+  Meissner) that LAW delivery has launched and capacity is available before
+  including Fractional CTO Level 2 in the final proposal.
+
+PHASE 2/3 AD SPEND + ROI PLANNING REFERENCE (NOT A PHASE 1 COMMITMENT)
+--------------------------------------------------------------------------------
+No ad spend is recommended or priced in Phase 1. The figures below are
+computed now purely for sales visibility into the economics of the eventual
+Phase 2 Full Service Marketing — Growth engagement, using the calculation
+method in audit-write.md. Practice area = Personal Injury / MVA-heavy;
+competitiveness judged High given the 7/10 urgency score and three
+dominant named competitors (MAS Law, Mullen & Mullen, Fielding Law) ->
+PI hard floor at High competitiveness = $10,000 minimum. Geographic tier:
+Richardson, TX is Dallas-metro = Tier 1, 1.5x multiplier. Revenue goal for
+the 20% rule = $2.4M (per transcript). No Spanish campaign was stated as a
+need on this call (the existing Spanish-language landing pages were found in
+web research, not raised in the transcript) -> no Spanish multiplier applied.
+
+Conservative = channel minimum (MVA/PI, Google PPC): $10,000/mo (matches the
+table's MVA Google PPC min and the PI High-competitiveness hard floor
+exactly — both land on $10,000).
+
+Aggressive (20% rule):
+  1. $2,400,000 x 20% / 12 = $40,000/mo
+  2. x Geo multiplier (Dallas = Tier 1, 1.5x) = $60,000/mo
+  3. No Spanish campaign multiplier applied (not stated as a need on the call)
+  4. - marketing management fee (Growth tier, $7,497/mo, the tier this
+     revenue band would use once marketing is reintroduced) = $52,503/mo
+     available ad spend
+  5. Reverse math validation: ($2,400,000 / 12) = $200,000/mo target revenue
+     / $7,500 default avg case value (MVA/PI $5K-$10K midpoint — not stated
+     in transcript, flagged as a default) = 26.7 target cases/mo / 15%
+     default close rate (current close rate not stated; the call's own
+     "20 cases from 50 leads" language is a forward-looking target
+     [40%], not a current-state figure, so the 15% default applies here per
+     protocol) = 177.8 required leads/mo x $450.50 blended CPL (Google
+     Search 50% / LSA 20% / Meta cold 30% mix, midpoints, no cushion) =
+     ~$80,089/mo required spend.
+     20% rule ($52,503) < reverse math ($80,089) -> use the higher figure,
+     $80,089/mo.
+  6. Tier cap check: Growth tier caps ad spend at $50,000/mo. $80,089 exceeds
+     the cap. Per the boundary rule, exceeding a cap normally triggers a tier
+     upgrade — but "aggressive goals alone no longer bypass the Dominate/
+     Platinum revenue floors," and this firm's current effective revenue
+     (~$2M, with a stated goal of only ~$2.4M) does not clearly clear the
+     Dominate floor ($2M+ boundary, and the firm's own revenue is in an
+     active decline, not a growth position, at the time of this audit).
+     -> Aggressive ad spend for planning purposes is capped at the Growth
+        tier ceiling: $50,000/mo. This is well within the Growth tier's
+        $50,000 ad spend cap referenced in the task brief (fits exactly at
+        the ceiling).
+
+Both figures ($10,000 conservative / package_decision.json's original
+$10,000 conservative estimate matches exactly; $50,000 capped aggressive vs.
+package_decision.json's original $40,000 aggressive placeholder is
+corrected upward per the formula above, since the ad-spend math is
+revenue/practice-area driven and independent of which package category was
+chosen — the $40,000 figure in package_decision.json was not run through the
+20% rule/reverse-math/tier-cap sequence and is superseded by this
+calculation).
+
+ROI PROJECTIONS (Phase 2/3 reference only — labeled as estimates)
+--------------------------------------------------------------------------------
+Conservative ($10,000/mo — Google PPC, MVA/PI floor):
+  CPL = $705 Google Search midpoint x 1.20 conservative cushion = $846
+  Leads = $10,000 / $846 ~= 11.8 leads/mo
+  Cases = 11.8 x 15% default close rate ~= 1.8 cases/mo
+  Revenue = 1.8 x $7,500 default avg case value ~= $13,300/mo
+  Return = $13,300 / $10,000 ~= 1.33x
+  (Reflects how thin a single-channel, floor-level PI budget is against a
+  $7,500 case value — a data point for sales on why this is a starting point,
+  not a target scenario.)
+
+Aggressive ($50,000/mo capped — Google Search 50% / LSA 20% / Meta cold 30%):
+  Blended CPL = (0.5 x $705) + (0.2 x $235) + (0.3 x $170) = $450.50 (no
+  cushion)
+  Leads = $50,000 / $450.50 ~= 111.0 leads/mo
+  Cases = 111.0 x 15% default close rate ~= 16.6 cases/mo
+  Revenue = 16.6 x $7,500 default avg case value ~= $124,900/mo
+  Return = $124,900 / $50,000 ~= 2.50x
+
+Both scenarios use the 15% default close rate (current close rate not stated
+in transcript) and the $7,500 default MVA/PI avg case value midpoint (not
+stated in transcript) — both defaults are disclosed here for sales, and
+should be replaced with real figures once available. These numbers are
+Phase 2/3 planning inputs only; they are not shown anywhere in the
+client-facing report, which contains no ad-spend commitment for Phase 1.
+
+DBM STATEMENT FOR BLOCK 1
+--------------------------------------------------------------------------------
+"We help solo-practitioner-led personal injury firms get a self-managing team
+and an automated back office so the owner can finally step back from daily
+operations and put her energy into what's next."
+
+QUICK WIN OPPORTUNITIES IDENTIFIED (6 — minimum 6 required)
+--------------------------------------------------------------------------------
+1. [Lead Gen / Quick Win] Fix the Google Business Profile primary photo.
+   Why: current primary GBP photo is an accident scene image rather than the
+   firm or team — actively undermines trust before a prospect ever clicks,
+   and costs nothing to fix.
+   No named competitor for this specific gap — omit "Who Is Doing It Better."
+   Opportunity: replace with an office/team photo watermarked "Salam &
+   Associates" — a same-day fix with immediate trust impact.
+
+2. [Lead Gen / Long-Term] Close the review-count gap vs. named competitors.
+   Why: 90 reviews today vs. Fielding Law 128+, MAS Law several hundred, and
+   Mullen & Mullen 500+ — the firm is behind every verified named competitor
+   in its own market.
+   Competitor: Fielding Law, MAS Law, Mullen & Mullen — include "Who Is Doing
+   It Better" row.
+   Opportunity: launch a structured review-generation campaign toward the
+   200-review goal already discussed on the call.
+
+3. [Intake / Quick Win] Stop the ~$600K/year leak from slow follow-up.
+   Why: slow, inconsistent internal follow-up is estimated to lose at least
+   5 cases a month, quantified directly on the call.
+   No named competitor — omit "Who Is Doing It Better."
+   Opportunity: convert more of the leads the firm already generates without
+   spending another marketing dollar — the single highest-ROI fix available.
+
+4. [Intake / Quick Win] Transition intake to Alert Communications + AI-based
+   instant lead routing.
+   Why: no after-hours coverage exists today, and the transition to Alert
+   Communications discussed on the call is not yet complete.
+   No named competitor — omit "Who Is Doing It Better."
+   Opportunity: every new inquiry gets an immediate, trained response
+   regardless of time of day, closing the after-hours gap entirely.
+
+5. [Team / Long-Term] End the 75%-owner-bottleneck via full-team coaching.
+   Why: Fatima personally handles roughly 75% of the firm's work and admits
+   to being a poor mentor, with no accountability structure for the team.
+   No named competitor — internal problem, omit "Who Is Doing It Better."
+   Opportunity: Peter Schultz-led team coaching builds the accountability
+   structure that lets the team catch its own mistakes instead of relying on
+   Fatima to catch them.
+
+6. [Profit / Quick Win] Tie declining, unpredictable profit directly to the
+   intake and team failures — and treat it as fixable.
+   Why: revenue falling from $4M toward ~$2M and case volume falling from
+   ~400/year to ~175/year track directly with the intake leak and team
+   bottleneck documented above — this is not a demand problem.
+   No named competitor — omit "Who Is Doing It Better."
+   Opportunity: fixing intake and team operations is a direct, measurable
+   path back toward the firm's historical $4M revenue level, without new ad
+   spend.
+
+FIRST 90 DAYS
+--------------------------------------------------------------------------------
+1. Kick off Elite Coach Plus team coaching with Peter Schultz to begin
+   building accountability structure across the team.
+2. Begin the Fractional CTO Level 2 engagement with the Law Firm AI
+   Foundation Sprint, scoping the "Fatima GPT" SOP assistant and case
+   note/document tracking automation.
+3. Complete the transition of intake to Alert Communications and stand up
+   AI-based instant lead routing to close the after-hours gap.
+4. Fix the Google Business Profile primary photo and launch the
+   review-growth campaign toward 200+ reviews.
+5. Review the ~$600K/year intake leak at the 30/60/90-day marks to confirm
+   the follow-up process is holding leads that would previously have been
+   lost.
