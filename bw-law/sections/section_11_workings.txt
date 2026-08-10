@@ -1,0 +1,219 @@
+BW LAW, PLLC — SECTION 11 WORKINGS FILE
+====================================================================
+PACKAGE DECISION OVERRIDE — DOCUMENTED PER AUDIT-WRITE.MD
+====================================================================
+
+package_decision.json (confidence: medium) proposed:
+  - Marketing: Full Service Marketing — Starter, $4,997/mo bundled, $5,697/mo
+    retail, saves $700/mo
+  - Coaching: Elite Coach, $2,600/mo bundled, $3,497/mo retail, saves $897/mo
+  - Total bundled (as proposed by decision file): $7,597/mo
+  - Revenue source: HubSpot "$0 - $180K" -> $180,000 effective, medium confidence
+
+OVERRIDE APPLIED: Transcript-Stated Need Override #1 — Call-Purpose Override.
+
+Rationale: The research notes state explicitly, at the top of the document
+under "STATED CALL FOCUS — READ FIRST," that this discovery call was NOT a
+standard marketing/intake growth call. The prospect's stated goal is scaling
+from ~$200k to $500k by fixing HIRING and OPERATIONS. The two products
+actually proposed and discussed on the call were (1) coaching on
+hiring/systems/workflow (~$2,000/month, confirmed realistic by the client)
+and (2) the "AI Workforce" platform for admin automation. Marketing/lead
+generation was discussed only secondarily — current lead sources (GBP,
+referrals, local networking) are explicitly described as "working," and the
+firm has no paid marketing history to build from or fix.
+
+Per audit-write.md: "Do not default to Full Service Marketing just because
+revenue qualifies for a tier — the firm did not ask about marketing. Check
+the LAW package table and the non-marketing package table first; only add a
+marketing package if the transcript shows an actual marketing/lead-gen gap
+alongside the stated need." No such gap was identified on the call — the
+client's own framing of GBP/referrals/networking as "working" plus zero paid
+marketing history means there is no stated marketing pain point driving this
+proposal. The marketing tier suggested by package_decision.json is
+therefore NOT used.
+
+This is also consistent with the "Default to recommending both a marketing
+package and a non-marketing package" rule's stated exception: "A single-
+product recommendation is acceptable only when the transcript clearly shows
+the firm's needs are best served by one service category." That is exactly
+this case.
+
+Revenue-band re-check (medium confidence flag): Research notes state the
+actual transcript figure is "~$200k in 2025" with a stated goal of $500k.
+This is consistent with — not materially different from — the HubSpot-
+sourced $180,000 estimate. Both figures fall within the same eligibility
+bracket (under $250K). No revenue-band correction to the tier is needed;
+Elite Coach remains correct at this revenue level regardless of which of the
+two figures ($180K or $200K) is used.
+
+====================================================================
+LAW (LEGAL AI WORKFORCE) — WHY IT IS EXCLUDED FROM THE PRICED PROPOSAL
+====================================================================
+
+The "AI Workforce" platform was literally discussed and proposed on the
+actual sales call (intake lead qualification, client case-update
+communication, email drafting — month-to-month agreement). However, per the
+LAW eligibility table in audit-write.md: "Do NOT recommend LAW if revenue
+under $500K." BW Law's revenue (~$180K-$200K) is well under this floor.
+
+This is a real tension: the client-facing conversation on the call included
+a product that formal pricing-tier eligibility rules say cannot be
+recommended yet. Per instruction, LAW is EXCLUDED from the priced
+investment grid in this client-facing report despite being discussed on
+the call. FLAG FOR RANDY GOLD: follow up on the AI Workforce conversation
+separately outside the formal proposal, and revisit LAW eligibility if/when
+BW Law's revenue trajectory crosses the $500K floor (this is exactly the
+kind of firm that could reach that floor if the coaching engagement
+succeeds in helping them hit their stated $500K goal). Internal only — do
+not include this reasoning in the client-facing HTML report.
+
+====================================================================
+MANDATORY PRICE LOOKUP
+====================================================================
+
+- Marketing package selected: NONE (override applied — see above)
+- Non-marketing package selected: Elite Coach
+  - Bundled price (from table): $2,600/mo
+  - Stand-alone price (from table): $3,497/mo
+  - Savings (stand-alone minus bundled): $897/mo
+- Legal AI Workforce (LAW) package selected: none (excluded — revenue under
+  $500K eligibility floor; discussed on call but not included in proposal)
+- AI Avatar / Video Growth add-on selected: none (not discussed, not fit)
+- Total monthly investment (sum of all bundled/recurring prices): $2,600/mo
+- Total savings (sum of all savings): $897/mo
+
+====================================================================
+AD SPEND — CONSERVATIVE AND AGGRESSIVE
+====================================================================
+
+Framing note: no marketing package is being sold. Ad spend is presented as
+optional, supplemental informational guidance for BW Law to consider
+testing alongside the coaching engagement — not as a purchased deliverable
+or part of the recommended investment grid total.
+
+CONSERVATIVE SCENARIO — $3,000/mo
+- Basis: Immigration Google PPC minimum ($3,000) = platform absolute
+  minimum for any paid ads ($3,000). Both floors converge at $3,000/mo.
+- Blended CPL: Immigration Google Search CPL range $85-$110, midpoint
+  $97.50. Conservative scenario adds 20% cushion per methodology:
+  $97.50 x 1.20 = $117.00 blended CPL.
+- Leads = $3,000 / $117.00 = ~25.6 leads/mo
+- Close rate: 15% (not stated in transcript — default per methodology)
+- Cases = 25.6 x 0.15 = ~3.8 cases/mo
+- Average case value: $4,500 (midpoint of Immigration default range
+  $3K-$6K — not stated in transcript, disclosed here as a default)
+- Revenue = 3.8 x $4,500 = ~$17,300/mo
+- Return = $17,300 / $3,000 = ~5.8x
+
+AGGRESSIVE SCENARIO — $8,300/mo (rounded from $8,333)
+- 20% rule: Revenue goal $500,000 x 20% / 12 = $8,333/mo monthly marketing
+  budget
+- Geographic market multiplier: Gainesville, FL is not in the Tier 1-3
+  city lists (not a mega market, primary high-density market, or listed
+  strategic growth market) -> Tier 4, significant regional market,
+  multiplier 1.0x
+  $8,333 x 1.0 = $8,333/mo
+- Spanish campaign multiplier: not applicable — firm's differentiator is
+  Chinese/English bilingual service, not Spanish-language; no Spanish
+  campaign signal in transcript
+- Reverse math validation: ($500,000 / 12) / $4,500 avg case value = ~9.3
+  target cases/mo -> / 15% close rate = ~61.7 required leads/mo -> x
+  $97.50 blended CPL (no cushion for aggressive) = ~$6,019/mo required
+  spend
+- 20% rule ($8,333) is higher than reverse math ($6,019) -> use $8,333/mo,
+  rounded to $8,300/mo for presentation
+- No marketing package management fee to subtract (none being sold) —
+  full amount is available ad spend if BW Law chooses to test it
+  independently
+- Leads = $8,300 / $97.50 (no cushion) = ~85.1 leads/mo
+- Cases = 85.1 x 0.15 = ~12.8 cases/mo
+- Revenue = 12.8 x $4,500 = ~$57,600/mo
+- Return = $57,600 / $8,300 = ~6.9x
+
+Both scenarios use the Immigration default average case value ($3K-$6K
+range, $4,500 midpoint used) and 15% default close rate — neither was
+stated in the transcript. Both defaults are disclosed here and should be
+labeled as estimates in the client-facing report.
+
+====================================================================
+DBM STATEMENT FOR BLOCK 1
+====================================================================
+
+We help immigration attorneys who have outgrown solo-practice systems get
+a trained team they can trust to handle casework without personal
+oversight of every file, so they can step back from being "chief everything
+officer" and reinvest that time in the business development and networking
+that actually grows the firm.
+
+====================================================================
+QUICK WIN OPPORTUNITIES (6+)
+====================================================================
+
+1. [Lead Gen / Quick Win] Fix the "©2035" Wix footer bug — Why: a small,
+   visible trust signal issue undercutting an otherwise credible bilingual
+   practice. No named competitor (this is a self-inflicted, fixable issue).
+   Opportunity: a five-minute fix that removes a visible red flag for
+   prospects doing due diligence.
+
+2. [Lead Gen / Long-Term Play] Close the local search visibility gap —
+   Why: BW Law did not surface on page one of any of three generic local
+   immigration searches performed. Competitor: dePaz Cabrera Immigration
+   Law, whose 10+ year organic directory presence (Justia, Super Lawyers,
+   LawInfo, Facebook) consistently outranks BW Law. Opportunity: local SEO
+   and directory work to build a second, no-incremental-cost lead channel.
+
+3. [Lead Gen / Quick Win] Resolve the NAP (address) inconsistency — Why:
+   website/Avvo list "Ste 190" while Sunbiz/BCGSearch reference "Ste 307,"
+   an unpropagated citation change that can quietly suppress local search
+   trust signals. No named competitor (internal data-hygiene issue).
+   Opportunity: a straightforward directory clean-up project.
+
+4. [Lead Gen / Long-Term Play] Build missing directory presence — Why: no
+   confirmed listing on Yelp or FindLaw, and Justia could not be verified.
+   Competitor: Maldonado & Vallejo Immigration Law, with 122 reviews and an
+   outsized local trust advantage partly built on broad directory presence.
+   Opportunity: fill these gaps to compound the firm's already-strong 5.0
+   star rating across more platforms.
+
+5. [Intake / Quick Win] Add a homepage contact form — Why: contact info
+   currently lives in the footer only, adding friction for a ready
+   prospect. No named competitor. Opportunity: reduce drop-off between
+   "found the site" and "reached out."
+
+6. [Team / Long-Term Play] Build a hiring and delegation system — Why:
+   Sarah personally reviews all contractor work with no leadership
+   structure beneath her ("chief everything officer," 40-50+ hrs/week). No
+   named competitor (internal capacity issue — this is the coaching
+   engagement's core focus). Opportunity: free Sarah's time for business
+   development and networking, directly serving her stated DBM.
+
+7. [Profit / Quick Win] Tie the $500K goal to a hiring/capacity plan — Why:
+   no operational plan currently connects the stated revenue goal to the
+   team needed to deliver it. No named competitor. Opportunity: avoid
+   scaling revenue and Sarah's personal workload in lockstep.
+
+8. [Lead Gen / Long-Term Play — informational, not a purchased package]
+   Test paid visibility (Google PPC / LSA) alongside the coaching
+   engagement — Why: 100% of current lead flow depends on GBP, referrals,
+   and local networking, with zero paid channel tested. Opportunity: a
+   second, scalable lead source that does not depend on Sarah's personal
+   network. Framed as optional/supplemental per package-decision override
+   — not part of the priced recommendation.
+
+====================================================================
+FIRST 90 DAYS BULLET POINTS
+====================================================================
+
+1. Kick off Elite Coach engagement — establish a hiring and delegation
+   roadmap so contractor work no longer requires Sarah's personal review
+   of every file.
+2. Fix the "©2035" Wix footer bug and add a visible homepage contact form
+   to remove friction for ready prospects.
+3. Run a manual PageSpeed Insights check and resolve the NAP address
+   inconsistency (Ste 190 vs. Ste 307) across directory listings.
+4. Confirm and, where missing, build out directory presence on Yelp,
+   FindLaw, and Justia to compound the firm's 5.0-star reputation.
+5. If BW Law chooses to test paid visibility, start with a conservative
+   Google PPC budget (~$3,000/mo) to validate channel performance before
+   any larger commitment.
