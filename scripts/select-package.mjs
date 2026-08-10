@@ -20,7 +20,9 @@ import { readFileSync, writeFileSync, readdirSync, existsSync } from 'fs';
 import { join } from 'path';
 
 // ─── Approved pricing tables ─────────────────────────────────────────────────
-// Keep in sync with Design Files/audit-write.md and SMB_Team_Audit_Agent_System_Prompt.txt
+// Keep in sync with .claude/commands/audit-write.md, Design Files/SMB_Team_Audit_Agent_System_Prompt.txt,
+// and Design Files/Scoping_and_Ad_Spend_Guide.md — all four are hand-maintained copies of the same
+// 2026 SMB Team pricing catalog and must be updated together whenever prices/eligibility change.
 
 const MARKETING_TIERS = [
   { tier: 'Essentials', name: 'Full Service Marketing — Essentials', bundled: 3497,  retail: 3797,  adCap: 5_000,   minRev: 0,         maxRev: 749_999 },
@@ -33,12 +35,14 @@ const TIER_BY_NAME = Object.fromEntries(MARKETING_TIERS.map(t => [t.tier.toLower
 
 // Coaching (non-marketing) stand-alone prices for savings calculation
 const COACHING_RETAIL = {
+  'Coach Essentials Plus': 2497,
   'Elite Coach':     3497,
   'Elite Coach Plus': 3497,
   "Master's Circle": 4997,
   'FCOO Advisor':    3797,
   'FCOO Director':   5797,
 };
+// Coach Essentials has no stand-alone price — cannot be sold as a stand-alone engagement.
 
 // Conservative ad spend floors by practice area keyword ($/mo)
 const AD_SPEND_FLOORS = [
@@ -208,6 +212,10 @@ function detectCriminalDefense(practiceAreas) {
   return practiceAreas.some(a => /criminal defense|criminal law|dui|dwi|drug offense|felony|misdemeanor/i.test(a));
 }
 
+function detectFamilyLaw(practiceAreas) {
+  return practiceAreas.some(a => /family law|divorce|custody|child support|alimony/i.test(a));
+}
+
 function detectHighCompetitiveness(text) {
   const highMetroPattern = /\b(new york city|los angeles|chicago|houston|dallas|atlanta|philadelphia|washington dc|miami|boston|phoenix|seattle|detroit|san francisco|tampa|minneapolis|denver|san diego|orlando)\b/i;
   return highMetroPattern.test(text) && /high.{0,30}competi|competi.{0,30}high/i.test(text);
@@ -261,12 +269,12 @@ function selectCoachingTier(revenue, effectiveRevenue, teamSize, effectiveTeam, 
   const hasOps = hasDedicatedOps(text);
 
   if (effectiveRevenue < 250_000) {
-    notes.push('Revenue under $250K: Elite Coach selected, scoping approval required.');
-    return { name: 'Elite Coach', bundled: 2600, retail: COACHING_RETAIL['Elite Coach'] };
+    notes.push('Revenue under $250K: Elite Coach is NOT eligible (its floor is $250K+). Coach Essentials Plus selected instead — fund verification required (client must be able to cover 4 months of services) before proceeding.');
+    return { name: 'Coach Essentials Plus', bundled: 1997, retail: COACHING_RETAIL['Coach Essentials Plus'], verifyFunds: true };
   }
 
   if (effectiveRevenue < 400_000) {
-    notes.push('Revenue $250K–$400K: Elite Coach selected.');
+    notes.push("Revenue $250K–$400K: Elite Coach selected (default). Coach Essentials Plus ($1,997/mo bundled) is also eligible in this band as a lighter entry point — confirm with sales rep which fits the client's stated needs and budget.");
     return { name: 'Elite Coach', bundled: 2600, retail: COACHING_RETAIL['Elite Coach'] };
   }
 
@@ -317,6 +325,37 @@ function estimateAdSpend(practiceAreas, marketingTier) {
   }
   const ceiling = Math.min(marketingTier.adCap, floor * 4);
   return { conservative: floor, aggressive: ceiling };
+}
+
+// ─── Approval & Scoping requirements ──────────────────────────────────────────
+// Mirrors Design Files/Scoping_and_Custom_Rules — mechanically-detectable triggers only.
+// Triggers that require reading the contract/website count (multiple websites, nationwide
+// targeting, non-templated combined services, MRR-delta on an upgrade/downgrade) are NOT
+// evaluated here — flag those for manual review in Pass 2 instead.
+
+function computeApprovalScopingFlags(effectiveRevenue, marketingTier, adSpend, practiceAreas, text, notes) {
+  const piDetected = detectPI(practiceAreas);
+  const cdDetected = detectCriminalDefense(practiceAreas);
+  const familyDetected = detectFamilyLaw(practiceAreas);
+  const majorMetro = detectHighCompetitiveness(text); // metro name + explicit high-competitiveness language
+
+  const requiresApprovalForm = effectiveRevenue < 300_000;
+  const requiresScopingForm =
+    effectiveRevenue < 300_000 ||
+    marketingTier.bundled > 10_000 ||
+    adSpend.aggressive > 25_000 ||
+    ((cdDetected || familyDetected) && majorMetro) ||
+    (piDetected && majorMetro);
+  const requiresCustomAgreement = marketingTier.bundled > 10_000;
+
+  if (requiresApprovalForm) notes.push('Revenue under $300K: Approval Form + Scoping Form required before this proposal can be sent.');
+  if (marketingTier.bundled > 10_000) notes.push('Marketing MRR over $10K: Scoping Form + Custom Agreement required.');
+  if (adSpend.aggressive > 25_000) notes.push('Aggressive ad spend over $25K/mo: Scoping Form required.');
+  if ((cdDetected || familyDetected) && majorMetro) notes.push('Criminal Defense or Family Law in a major metro: Scoping Form required — confirm whether this metro is Top 10 for the practice area.');
+  if (piDetected && majorMetro) notes.push('Personal Injury in a major metro: Scoping Form required — confirm whether this metro is Top 40 for PI.');
+  notes.push('Not evaluated by this script (confirm manually): multiple websites, nationwide targeting, non-templated combined services, and MRR-delta checks on upgrades/downgrades.');
+
+  return { requiresApprovalForm, requiresScopingForm, requiresCustomAgreement };
 }
 
 // ─── Revenue estimation when not stated ──────────────────────────────────────
@@ -434,6 +473,7 @@ if (teamSizeStated === null) {
 const marketing = selectMarketingTier(revenueStated, effectiveRevenue, practiceAreas, text, notes);
 const coaching  = selectCoachingTier(revenueStated, effectiveRevenue, teamSizeStated, effectiveTeam, text, notes);
 const adSpend   = estimateAdSpend(practiceAreas, marketing);
+const approvalFlags = computeApprovalScopingFlags(effectiveRevenue, marketing, adSpend, practiceAreas, text, notes);
 
 // Calculate totals and savings
 const totalBundled = marketing.bundled + coaching.bundled;
@@ -461,6 +501,7 @@ const decision = {
   coaching_price_bundled:  coaching.bundled,
   coaching_price_retail:   coaching.retail,
   coaching_savings:        cchSavings,
+  coaching_verify_funds:   coaching.verifyFunds ?? false,
 
   law_tier:                null,
 
@@ -469,6 +510,10 @@ const decision = {
 
   ad_spend_conservative:   adSpend.conservative,
   ad_spend_aggressive:     adSpend.aggressive,
+
+  requires_approval_form:    approvalFlags.requiresApprovalForm,
+  requires_scoping_form:     approvalFlags.requiresScopingForm,
+  requires_custom_agreement: approvalFlags.requiresCustomAgreement,
 
   selection_notes: notes,
 };
@@ -482,6 +527,10 @@ console.log(`  Coaching:   ${coaching.name} — $${coaching.bundled.toLocaleStri
 console.log(`  Total:      $${totalBundled.toLocaleString()}/mo`);
 console.log(`  Ad spend:   $${adSpend.conservative.toLocaleString()}–$${adSpend.aggressive.toLocaleString()}/mo`);
 console.log(`  Confidence: ${confidence}`);
+if (coaching.verifyFunds) console.log(`  ⚠ Fund verification required before proceeding (revenue under $250K).`);
+if (approvalFlags.requiresApprovalForm || approvalFlags.requiresScopingForm || approvalFlags.requiresCustomAgreement) {
+  console.log(`  ⚠ Approval Form: ${approvalFlags.requiresApprovalForm ? 'REQUIRED' : 'not required'} | Scoping Form: ${approvalFlags.requiresScopingForm ? 'REQUIRED' : 'not required'} | Custom Agreement: ${approvalFlags.requiresCustomAgreement ? 'REQUIRED' : 'not required'}`);
+}
 if (notes.length) {
   console.log(`  Notes:`);
   notes.forEach(n => console.log(`    - ${n}`));

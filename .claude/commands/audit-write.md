@@ -137,6 +137,10 @@ This section is large and must be completed in three sub-steps to avoid API time
 
 None of these three checks are about recomputing a price — they are about whether the *category* of product being proposed matches what actually happened on the call. Do this check even when `package_decision.json` says `confidence: "high"`.
 
+**PRICING CASCADE RULE — APPLY AFTER THE OVERRIDE CHECK, BEFORE FILLING ANY PRICE**
+
+Every "Bundled Price" in the tables below is conditional on the client actually buying a marketing package alongside it. If the final recommendation has no marketing package — because override #1 or #2 above removed it, because override #3 downgraded to a lower-cost single product, or because the transcript simply never showed a marketing/lead-gen gap — the non-marketing (coaching/LAW/FCOO/FCFO) package must be priced at its **Stand-alone price**, not its Bundled price, and no "savings" figure should be shown anywhere in the report (Block 3 investment grid, executive summary, Sales Companion, or deck). Getting this wrong — showing a marketing-bundled discount on a deal that doesn't include marketing — is a pricing error, not a formatting nicety; the client will see a lower number than what they will actually be billed.
+
 **PACKAGE DECISION FILE — CHECK THIS FIRST**
 
 Before any eligibility logic, check whether `[friendly-name]/package_decision.json` exists.
@@ -155,33 +159,38 @@ If the pipeline injected a `PACKAGE INSTRUCTION` block in your system prompt, tr
 
 Do not rely on memory for any price. If using package_decision.json, copy the prices from that file. Otherwise, scroll to the SELECT MARKETING PACKAGE and SELECT NON-MARKETING PACKAGE tables in this command file and read the exact dollar amounts. Then write them out explicitly in this format before proceeding:
 
-- Marketing package selected: [name]
+- Is a marketing package included in the final recommendation? [yes/no — if no, per the PRICING CASCADE RULE above, every non-marketing/LAW/FCOO/FCFO line below uses its Stand-alone price, not Bundled, and the savings line is omitted]
+- Marketing package selected: [name, or "none"]
   - Bundled price (from table): $X,XXX/mo
   - Stand-alone price (from table): $X,XXX/mo
   - Savings (stand-alone minus bundled): $X,XXX/mo
 - Non-marketing package selected: [name]
-  - Bundled price (from table): $X,XXX/mo
-  - Stand-alone price (from table): $X,XXX/mo
-  - Savings (stand-alone minus bundled): $X,XXX/mo
+  - Price actually charged (Bundled if a marketing package is included above, otherwise Stand-alone): $X,XXX/mo
+  - The other price, for reference only (do not print in the client report if no marketing package is included): $X,XXX/mo
+  - Savings (only if a marketing package is included; otherwise "N/A — sold stand-alone"): $X,XXX/mo
 - Legal AI Workforce (LAW) package selected (if applicable): [name or "none"]
-  - Bundled price (from table): $X,XXX/mo
-  - Stand-alone price (from table): $X,XXX/mo
-  - Savings (stand-alone minus bundled): $X,XXX/mo
+  - Price actually charged (Bundled if a marketing package is included above, otherwise Stand-alone): $X,XXX/mo
+  - Savings (only if a marketing package is included; otherwise "N/A — sold stand-alone"): $X,XXX/mo
 - AI Avatar / Video Growth add-on selected (if applicable): [name or "none"]
   - Price (from table): $X,XXX one-time or $X,XXX/mo + $X,XXX setup
-- Total monthly investment (sum of all bundled/recurring prices): $X,XXX/mo
-- Total savings (sum of all savings): $X,XXX/mo
+- Total monthly investment (sum of all prices actually charged above): $X,XXX/mo
+- Total savings (sum of all savings actually shown above — $0 if no marketing package is included): $X,XXX/mo
+- Budget-reality override check (required — see override #3 above): Does the research notes' "budget constraints stated" field have content? [yes/no]. If yes, was the ad-spend recommendation and/or package tier adjusted downward accordingly? [yes — describe the adjustment / no — explain why the stated constraint doesn't change the recommendation]. Document the answer in section_11_workings.txt.
+- GBP review count / star rating source check (required): Is the review count/star rating in the research notes flagged as sourced from a proxy/aggregator rather than native GBP? [yes/no]. If yes, add a "CONFIRM WITH SALES REP BEFORE SEND" tag to section_11_workings.txt with the proxy source named.
 
 If any price you are about to write is not an exact match to a value in those tables, stop. Go back to the table and find the correct number. Do not round, interpolate, or estimate. Do not proceed to Step I-a until these lookups are confirmed character-by-character against the tables in this file.
 
 **STEP I-a — Write workings file**
 Compute and save `[friendly-name]/sections/section_11_workings.txt` containing:
-- Selected marketing package name, bundled price, stand-alone price, savings
-- Selected non-marketing package(s) name, bundled price, stand-alone price, savings
-- Total monthly investment (sum of bundled prices)
-- Total savings (sum of all stand-alone minus bundled)
+- Selected marketing package name (or "none"), bundled price, stand-alone price, savings
+- Selected non-marketing package(s) name, price actually charged, which price basis was used (bundled or stand-alone) and why
+- Total monthly investment (sum of prices actually charged)
+- Total savings (sum of all stand-alone minus bundled — $0 if sold stand-alone)
 - Conservative ad spend amount and full ROI projection (leads, cases, revenue, return multiple)
 - Aggressive ad spend amount and full ROI projection (leads, cases, revenue, return multiple)
+- Budget-reality override check result (from the MANDATORY PRICE LOOKUP checklist above)
+- GBP review count / star rating source check result — include the "CONFIRM WITH SALES REP BEFORE SEND" tag if applicable
+- Approval & Scoping Requirements flags (see that section below) — which thresholds triggered, if any
 - DBM statement for Block 1
 - List of 6+ quick win opportunities identified (pillar, title, why, competitor if any, opportunity)
 - First 90 days bullet points (3–5)
@@ -234,10 +243,6 @@ The prices in the tables below are the ONLY approved prices. Do not estimate, ro
 
 Complete this entire section before starting Step I.
 
-### ELIMINATED PRODUCTS — never recommend under any circumstances
-- Coach Essentials (eliminated)
-- Coach Essentials Plus (eliminated)
-
 ### ELIGIBILITY FILTERS — apply first, hide anything that fails
 
 **Practice Area:**
@@ -246,7 +251,8 @@ Complete this entire section before starting Step I.
 - Essentials marketing tier requires a single location AND a single practice area → hide Essentials for any firm with multiple locations or multiple practice areas, regardless of revenue.
 
 **Revenue:**
-- Under $250K → confirm client has funds to cover 4 months of services before proceeding.
+- Under $250K → Coach Essentials and Coach Essentials Plus require confirming the client has funds to cover 4 months of services before proceeding. Elite Coach is not eligible below $250K — its floor is $250K+.
+- $250K–$400K → hide Elite Coach's stand-alone eligibility below $250K; Coach Essentials / Coach Essentials Plus are the fit for firms under $250K, Elite Coach and Coach Essentials Plus are both viable $250K–$400K (sales judgment).
 - Under $500K → hide all Fractional CFO and Fractional COO products and all bundles containing them.
 - Under $1M → hide Master's Circle and all bundles.
 - Under $2M → hide Dominate and Platinum marketing tiers.
@@ -289,11 +295,12 @@ Essentials $3,797 | Starter $5,697 | Growth $8,997 | Dominate $12,497 | Platinum
 
 ### SELECT NON-MARKETING PACKAGE
 
-Non-marketing packages are the default recommendation alongside marketing. Recommend one when it genuinely fits the firm's stage and needs.
+Non-marketing packages are the default recommendation alongside marketing — unless the deal is genuinely coaching/LAW-only, see the PRICING CASCADE RULE above. Recommend one when it genuinely fits the firm's stage and needs.
 
 | Revenue | Team | Recommended | Bundled Price |
 |---|---|---|---|
-| $250K–$400K | Any | Elite Coach | $2,600/mo |
+| Under $250K | Any | Coach Essentials Plus (fund verification required) | $1,997/mo |
+| $250K–$400K | Any | Elite Coach, or Coach Essentials Plus for a lighter entry point | $2,600/mo (Elite Coach) or $1,997/mo (Coach Essentials Plus) |
 | $400K–$1M | Any | Elite Coach Plus | $3,200/mo |
 | $400K–$1M | Growing | Elite Coach Plus + FCOO Advisor | $5,694/mo |
 | $1M+ | Under 5 | Elite Coach Plus | $3,200/mo |
@@ -303,9 +310,11 @@ Non-marketing packages are the default recommendation alongside marketing. Recom
 | $2M+ | 5+ with dedicated staff | Master's Circle + FCOO Director | $8,394/mo |
 | $3M+ | Large team | Master's Circle + FCOO Partner | $12,394/mo |
 
+**Coach Essentials** ($1,000/mo bundled, no stand-alone price — cannot be sold as a stand-alone engagement, must be paired with a marketing package) and **Coach Essentials Plus** ($1,997/mo bundled / $2,497/mo stand-alone) both require $250K–$400K revenue, or fund verification (client can cover 4 months of services) if under $250K. Both carry an LSA add-on at $900/mo (not included free, unlike Elite Coach's stand-alone tier).
+
 **Add Fractional CFO Advisor ($3,297/mo bundled)** if: owner mentions profit problems, revenue growing but not taking home more, no financial visibility, doesn't know acquisition cost. Min revenue $400K.
 
-**Stand-alone prices:** Elite Coach $3,497 | Elite Coach Plus $3,497 | Master's Circle $4,997 | FCOO Advisor $3,797 | FCOO Director $5,797 | FCFO Advisor $3,797
+**Stand-alone prices:** Coach Essentials Plus $2,497 | Elite Coach $3,497 (includes free LSAs) | Elite Coach Plus $3,497 | Master's Circle $4,997 | FCOO Advisor $3,797 | FCOO Director $5,797 | FCFO Advisor $3,797
 
 **Fractional packages (FCOO and FCFO) now include Elite Coach group deliverables.** When recommending any fractional package in Block 2, the deliverables list must include: weekly group coaching sessions, practice area masterminds, virtual access to quarterly workshops, and one annual in-person workshop. These are included in the fractional price — do not list them as a separate charge.
 
@@ -324,10 +333,13 @@ Legal AI Workforce (LAW) provides managed AI implementation for law firms — Cl
 
 | Tier | Product Name | Bundled Price | Standalone Price | Target Revenue |
 |---|---|---|---|---|
-| AI Essentials | AI Workforce Pro | $1,597/mo | $2,497/mo | $500K+ |
+| AI Starter Seat | AI Workforce Pro – Starter | $350/user/mo (1–4 users) | $350/user/mo (1–4 users) | No stated revenue floor — for a single user or small team, not gated by the $500K LAW floor below |
+| AI Essentials | AI Workforce Pro | $1,597/mo (5 users included) | $2,497/mo | $500K+ |
 | AI Accelerator L1 | Fractional CTO Level 1 | $3,297/mo | $3,797/mo | $500K–$1.5M |
 | AI Accelerator L2 | Fractional CTO Level 2 | $4,997/mo | $5,797/mo | $1.5M–$3M |
 | AI Enterprise | Fractional CTO Level 3 | $8,997/mo | $9,997/mo | $3M+ |
+
+**AI Workforce Pro – Starter** is a distinct, per-seat product from AI Workforce Pro (which starts at 5 users). Use it when the firm wants an AI workforce seat for a single user or a small team (1–4 people) — e.g. a solo practitioner or a firm too small/early to justify the 5-user AI Essentials tier. Overage beyond 4 users bills at $150/mo per additional seat until the firm reaches 5, at which point AI Workforce Pro (5-user) becomes the better fit. The "Do NOT recommend LAW if... Revenue under $500K" rule below applies to AI Essentials and above — it does not apply to the Starter seat, which has no stated revenue floor in the 2026 pricing catalog.
 
 **Law Firm AI Foundation Sprint (one-time onboarding):**
 - Standalone: $19,997
@@ -451,6 +463,29 @@ Attorney Assistant is a volume-priced AI intake agent (IA) product — priced pe
 **Contract terms:** Technically a 12-month agreement, but includes a 60-day no-questions-asked opt-out. After day 60, cancellation requires 30 days' notice — functions as month-to-month after the first 60 days. This is the one product line where "Clients Can Pivot, But Cannot Cancel" does not strictly apply after day 60.
 
 **When to recommend:** Firm has intake volume or after-hours gaps that a human team can't cover cost-effectively. No documented revenue floor for this product — if fit is unclear, flag "Attorney Assistant fit — confirm qualification with sales rep" rather than guessing.
+
+---
+
+### APPROVAL & SCOPING REQUIREMENTS
+
+Check every trigger below against the firm's effective revenue, the final package selection, and the research notes. Any trigger that fires must be written into `section_11_workings.txt` as an internal flag — never mention Approval Forms, Scoping Forms, or Custom Agreements in the client-facing report.
+
+| Trigger | Approval Form Required | Scoping Form Required | Custom Agreement Required |
+|---|---|---|---|
+| Under $300,000 in Annual Revenue (new sale or upgrade) | Yes | Yes | No |
+| Over $10K in Marketing MRR | No | Yes | Yes |
+| Outside of Product Ascension Model (PAM) guidelines | Yes | Yes | No |
+| Outside of PAM guidelines + over $10K Marketing MRR | Yes | Yes | Yes |
+| Prospect/client with multiple websites (even if only one is being taken over) | No | Yes | Yes |
+| Prospect/client wanting nationwide marketing targeting | No | Yes | Yes |
+| Ad spend over $25K/mo total (LSA + Google Ads + Social combined) | No | Yes | No |
+| Criminal Defense or Family Law firm in a Top 10 major metro | No | Yes | No |
+| Personal Injury firm in a Top 40 major metro | No | Yes | No |
+| Combined services that aren't templated | No | Yes | Yes |
+| Upgrade of $5K+ in MRR | Yes | No | No |
+| Downgrade of any kind/level | Yes | No | Yes |
+
+General sales rules that apply to every proposal regardless of triggers: 12-month+ agreements only; paid-ads-only marketing must always be sold with another service; minimum MRR is $2,497; discounts are awarded for all packages and should be made clear to the client; SMB retains ownership of all assets until the first year is fully paid; clients can pivot between packages but cannot cancel; set-up fees can be waived for every package except Bookkeeping.
 
 ---
 

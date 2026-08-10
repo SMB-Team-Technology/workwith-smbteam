@@ -466,14 +466,11 @@ Every client must have at least one non-marketing package. Clients with marketin
 
 ### Step 6A — Apply Eligibility Filters
 
-**ELIMINATED PRODUCTS — never recommend:**
-- Coach Essentials (eliminated)
-- Coach Essentials Plus (eliminated)
-
 **Revenue Filters:**
+- **Under $250K:** Only Coach Essentials or Coach Essentials Plus are eligible — confirm the client can fund 4 months of services before proceeding. Elite Coach is NOT eligible below $250K (its floor is $250K+).
+- **Over $400K:** Remove Coach Essentials and Coach Essentials Plus (both are scoped to the $250K–$400K band)
 - **Under $500K:** Remove ALL Fractional COO and Fractional CFO products and all bundles containing them
 - **Under $1M:** Remove Master's Circle and all bundles containing it
-- **Over $1M:** Remove all remaining Essentials coaching products
 
 **Team Filters:**
 - **Fewer than 5 team members:** Remove ALL Master's Circle options
@@ -483,7 +480,8 @@ Every client must have at least one non-marketing package. Clients with marketin
 
 | Revenue | Team Size | Primary Need | Recommended Package | Bundled Price |
 |---|---|---|---|---|
-| $250K–$400K | Any | Growth coaching | Elite Coach | $2,600/mo |
+| Under $250K | Any | Entry-level coaching (fund verification required) | Coach Essentials Plus | $1,997/mo |
+| $250K–$400K | Any | Growth coaching | Elite Coach, or Coach Essentials Plus for a lighter entry point | $2,600/mo (Elite Coach) or $1,997/mo (Coach Essentials Plus) |
 | $400K–$1M | Any | Growth coaching + accountability | Elite Coach Plus | $3,200/mo |
 | $400K–$1M | Growing team | Coaching + operations help | Elite Coach + FCOO Advisor | $5,694/mo |
 | $1M+ | Under 5 | Coaching + strategy | Elite Coach Plus | $3,200/mo |
@@ -555,6 +553,8 @@ Maximum Recommended Spend = Monthly Revenue × 35%
 Total Savings = Σ (Stand Alone Price − Bundled Price) for EVERY package in the recommendation
 ```
 
+**PRICING CASCADE RULE:** the Bundled price for a non-marketing package (Elite Coach, Elite Coach Plus, Coach Essentials Plus, Master's Circle, FCOO, FCFO) is only valid when a marketing package is ALSO included in the final recommendation. If the recommendation has no marketing package — because of an eligibility filter, a transcript-driven override, or because the deal is genuinely coaching-only — use that package's Stand Alone price instead, and it contributes $0 to Total Savings (do not sum a bundled-vs-standalone delta for a package the client isn't actually getting the bundle discount on).
+
 Always show savings from EVERY package combined, not just one.
 
 **Stand Alone vs. Bundled Reference:**
@@ -566,6 +566,7 @@ Always show savings from EVERY package combined, not just one.
 | Full Service Marketing Growth | $8,997 | $7,497 | $1,500 |
 | Full Service Marketing Dominate | $12,497 | $10,497 | $2,000 |
 | Full Service Marketing Platinum | $18,997 | $15,997 | $3,000 |
+| Coach Essentials Plus | $2,497 | $1,997 | $500 |
 | Elite Coach | $3,497 | $2,600 | $897 |
 | Elite Coach Plus | $3,497 | $3,200 | $297 |
 | Master's Circle | $4,997 | $4,600 | $397 |
@@ -820,8 +821,8 @@ If truly critical data is missing and cannot be estimated, flag it in the resear
 - Must verify client has funds to cover 4 months of services
 - If the transcript shows they're consistently generating $15K+/month, they likely qualify
 - Be conservative with ad spend recommendations — these firms have less margin for error
-- Consider coaching-only (Elite Coach at $2,600) + LSA add-on ($900) as an entry point = $3,500/mo
-- The goal is to get them to $500K+ so they qualify for Starter tier
+- Elite Coach is NOT eligible below $250K (its floor is $250K+) — use Coach Essentials Plus (bundled $1,997/mo) + LSA add-on ($900/mo) as an entry point = $2,897/mo instead
+- The goal is to get them to $250K+ so they qualify for Elite Coach, then $500K+ for Starter marketing tier
 
 **Firms Over $3M Revenue:**
 - Default to Platinum marketing tier
@@ -1060,6 +1061,8 @@ Essentials additionally requires single location + single practice area (scope f
 
 | Package | Bundled | Stand-Alone | Savings |
 |---|---|---|---|
+| Coach Essentials | 1000 | — (cannot be sold stand-alone) | — |
+| Coach Essentials Plus | 1997 | 2497 | 500 |
 | Elite Coach | 2600 | 3497 | 897 |
 | Elite Coach Plus | 3200 | 3497 | 297 |
 | Elite Coach + FCOO Advisor | 5694 | — | — |
@@ -1079,7 +1082,8 @@ Essentials additionally requires single location + single practice area (scope f
 
 | Revenue Low | Revenue High | Team Size | Recommended Package | Bundled Monthly |
 |---|---|---|---|---|
-| 250000 | 400000 | any | Elite Coach | 2600 |
+| 0 | 250000 | any | Coach Essentials Plus (fund verification required) | 1997 |
+| 250000 | 400000 | any | Elite Coach, or Coach Essentials Plus | 2600 (Elite Coach) or 1997 (Coach Essentials Plus) |
 | 400000 | 1000000 | any | Elite Coach Plus | 3200 |
 | 400000 | 1000000 | growing | Elite Coach + FCOO Advisor | 5694 |
 | 1000000 | — | under 5 | Elite Coach Plus | 3200 |
