@@ -113,7 +113,11 @@ PRIORITIES = [
 ]
 
 # ── Slide 3 ──────────────────────────────────────────────────────
-# Package cards — (label, bundled_price, retail_price, services_line, accent_color_hex)
+# Package cards — (label, price, retail_price, services_line, accent_color_hex)
+# BUNDLING RULE: "price" here is the BUNDLED rate only if 2+ packages are recommended together
+# (as in this 2-package example). If only ONE package is being recommended, remove the second
+# tuple from PACKAGES, set that package's "price" to its STAND-ALONE rate, and set retail_price
+# to "" (nothing to show struck through) — a single package is never priced at its bundled rate.
 PACKAGES = [
     (
         "FULL SERVICE MARKETING — GROWTH",
@@ -129,8 +133,8 @@ PACKAGES = [
     ),
 ]
 
-BUNDLE_TOTAL   = "$X,XXX / mo"                      # FILL: sum of bundled prices
-BUNDLE_SAVINGS = "Save $X,XXX/mo by bundling"        # FILL
+BUNDLE_TOTAL   = "$X,XXX / mo"                      # FILL: sum of the prices actually charged above
+BUNDLE_SAVINGS = "Save $X,XXX/mo by bundling"        # FILL — DELETE/blank this if only 1 package is in PACKAGES; there is no bundling savings for a single package
 
 AD_SPEND_NOTE = (
     "+ Recommended ad spend: $X,XXX–$XX,XXX/mo paid directly to Google/Meta"

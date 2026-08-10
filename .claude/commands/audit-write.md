@@ -153,33 +153,38 @@ If the pipeline injected a `PACKAGE INSTRUCTION` block in your system prompt, tr
 
 **MANDATORY PRICE LOOKUP — COMPLETE THIS BEFORE STEP I-a**
 
-Do not rely on memory for any price. If using package_decision.json, copy the prices from that file. Otherwise, scroll to the SELECT MARKETING PACKAGE and SELECT NON-MARKETING PACKAGE tables in this command file and read the exact dollar amounts. Then write them out explicitly in this format before proceeding:
+Do not rely on memory for any price. If using package_decision.json, copy the prices from that file. Otherwise, scroll to the SELECT MARKETING PACKAGE and SELECT NON-MARKETING PACKAGE tables in this command file and read the exact dollar amounts. First count how many distinct packages are being recommended together — that count determines, per the BUNDLING RULE above, whether the price you write for each package is its Bundled Price or its Stand-Alone Price. Then write them out explicitly in this format before proceeding:
 
+- Number of packages recommended together: [N] (bundling applies only if N ≥ 2)
 - Marketing package selected: [name]
   - Bundled price (from table): $X,XXX/mo
   - Stand-alone price (from table): $X,XXX/mo
-  - Savings (stand-alone minus bundled): $X,XXX/mo
+  - Price to charge (bundled if N≥2, else stand-alone): $X,XXX/mo
+  - Savings (stand-alone minus bundled, or $0 if N=1): $X,XXX/mo
 - Non-marketing package selected: [name]
   - Bundled price (from table): $X,XXX/mo
   - Stand-alone price (from table): $X,XXX/mo
-  - Savings (stand-alone minus bundled): $X,XXX/mo
+  - Price to charge (bundled if N≥2, else stand-alone): $X,XXX/mo
+  - Savings (stand-alone minus bundled, or $0 if N=1): $X,XXX/mo
 - Legal AI Workforce (LAW) package selected (if applicable): [name or "none"]
   - Bundled price (from table): $X,XXX/mo
   - Stand-alone price (from table): $X,XXX/mo
-  - Savings (stand-alone minus bundled): $X,XXX/mo
+  - Price to charge (bundled if N≥2, else stand-alone): $X,XXX/mo
+  - Savings (stand-alone minus bundled, or $0 if N=1): $X,XXX/mo
 - AI Avatar / Video Growth add-on selected (if applicable): [name or "none"]
   - Price (from table): $X,XXX one-time or $X,XXX/mo + $X,XXX setup
-- Total monthly investment (sum of all bundled/recurring prices): $X,XXX/mo
-- Total savings (sum of all savings): $X,XXX/mo
+- Total monthly investment (sum of all "price to charge" values above): $X,XXX/mo
+- Total savings (sum of all savings; $0 if only 1 package total): $X,XXX/mo
 
 If any price you are about to write is not an exact match to a value in those tables, stop. Go back to the table and find the correct number. Do not round, interpolate, or estimate. Do not proceed to Step I-a until these lookups are confirmed character-by-character against the tables in this file.
 
 **STEP I-a — Write workings file**
 Compute and save `[friendly-name]/sections/section_11_workings.txt` containing:
-- Selected marketing package name, bundled price, stand-alone price, savings
-- Selected non-marketing package(s) name, bundled price, stand-alone price, savings
-- Total monthly investment (sum of bundled prices)
-- Total savings (sum of all stand-alone minus bundled)
+- Number of packages recommended together (bundling applies only if 2+)
+- Selected marketing package name, price to charge (bundled if 2+ packages, else stand-alone), stand-alone price, savings (0 if only 1 package total)
+- Selected non-marketing package(s) name, price to charge (bundled if 2+ packages, else stand-alone), stand-alone price, savings (0 if only 1 package total)
+- Total monthly investment (sum of the prices to charge)
+- Total savings (0 if only 1 package total; otherwise sum of all stand-alone minus bundled)
 - Conservative ad spend amount and full ROI projection (leads, cases, revenue, return multiple)
 - Aggressive ad spend amount and full ROI projection (leads, cases, revenue, return multiple)
 - DBM statement for Block 1
@@ -194,7 +199,9 @@ Fill and save `[friendly-name]/sections/section_11_next_steps.html` with the com
 - All quick win cards (minimum 6 across all four pillars). Delete the "Who Is Doing It Better" row on any card where no named competitor was identified.
 - Block 1: custom closing statement (formula: "We help [audience] get [external desire] so they can [DBM].")
 - Block 2: DBM subheader + package block(s) with deliverables. Each package block must include a package-label div identifying the package type.
-- Block 3: investment rows with retail (stand-alone) and bundled prices pulled from your workings file. Total monthly investment row. Savings callout. Use ONLY the prices from the approved tables — never deviate. Each row represents one service category (e.g. "Full Service Marketing Starter", "Elite Coach Plus") — never break a category into sub-component line items or show individual pricing within a service category.
+- Block 3: investment rows pulled from your workings file, priced per the BUNDLING RULE. Use ONLY the prices from the approved tables — never deviate. Each row represents one service category (e.g. "Full Service Marketing Starter", "Elite Coach Plus") — never break a category into sub-component line items or show individual pricing within a service category.
+  - If 2+ packages are recommended: show each row's retail (stand-alone) price struck through next to its bundled price, a total monthly investment row (sum of bundled prices), and a savings callout.
+  - If only 1 package is recommended: show that package's stand-alone price with no strikethrough, a total monthly investment row equal to that stand-alone price, and omit the savings callout entirely.
 - Block 4: recommended ad spend table. **DO NOT change the HTML structure.** Only replace the placeholder dollar amounts, case counts, and return multiples. Structure: ad spend range row → case value row → spacer → "Conservative scenario" header + 3 rows (cases, revenue, return) → spacer → "Aggressive scenario" header + 3 rows → disclaimer.
 
 Leave blocks 5–8 with their original template placeholder text for now. Save the file.
@@ -214,10 +221,10 @@ Copy `Design Files/section_executive_summary.html` to `[friendly-name]/sections/
 - `URGENCY_SCORE`: copy the number from the urgency-score element in your completed `section_05_growth_health.html`
 - Pillar circles (4 items): copy the class (`red` / `amber` / `green`) from each `sc-card` traffic light in your completed `section_05_growth_health.html`
 - `TOP_PRIORITY_1` through `TOP_PRIORITY_4`: 3–4 of the most critical firm-specific findings from sections 05–09. One sentence each. Lead with the consequence. Delete the fourth `<li>` if only 3 priorities.
-- `PACKAGE_ONE_NAME` / `BUNDLED_PRICE_ONE`: copy from your completed `section_11_next_steps.html` investment grid
+- `PACKAGE_ONE_NAME` / `BUNDLED_PRICE_ONE`: copy the name and price (bundled if 2+ packages, stand-alone if only 1) straight from your completed `section_11_next_steps.html` investment grid — do not recompute
 - `PACKAGE_TWO_NAME` / `BUNDLED_PRICE_TWO`: copy from investment grid; delete this row if only one package
 - `AD_SPEND`: copy "Recommended ad spend" value from investment grid
-- `TOTAL_INVESTMENT`: sum of bundled package prices only (not ad spend); copy from investment-total in section 11
+- `TOTAL_INVESTMENT`: sum of the package prices shown in section 11's investment-total (not ad spend)
 - `EXEC_CLOSING`: one sentence tied to this firm's central opportunity and owner's DBM. No placeholders.
 
 Save to `[friendly-name]/sections/section_executive_summary.html`.
@@ -227,6 +234,15 @@ Save to `[friendly-name]/sections/section_executive_summary.html`.
 ## PRICE INTEGRITY — CRITICAL
 
 The prices in the tables below are the ONLY approved prices. Do not estimate, round, interpolate, or use any number not listed here. Every dollar figure in the client report must come from one of the approved pricing tables below (Marketing, Non-Marketing, Legal AI Workforce, AI Avatar, Bookkeeping, OmniSocial AI, or Attorney Assistant). The example numbers in HTML template comments are illustrative only — do not use them as actual prices.
+
+### BUNDLING RULE — WHEN THE "BUNDLED" PRICE APPLIES
+
+"Bundled" means two or more packages sold together in the same proposal. The lower "Bundled Price" in every table below is earned by combining packages — it is not the default price for a package sold alone.
+
+- Count the distinct packages in this proposal (marketing, non-marketing/coaching, LAW, Fractional CFO, Bookkeeping, add-ons, etc.).
+- **2+ packages recommended together** → use each package's Bundled Price. Show its stand-alone price struck through in Block 3 for the savings comparison.
+- **Only 1 package recommended** → use that package's Stand-Alone Price as the client's price. Do not apply the bundled discount and do not show a savings/"bundling" callout in Block 3 — there is nothing to bundle.
+- Rows that already name a combination (e.g. "Elite Coach + FCOO Advisor," "Master's Circle + FCOO Director") are themselves 2+ products bundled together — their listed price is correct only when every named component is actually being delivered; it does not get further discounted, and it does not collapse to a single stand-alone price.
 
 ---
 
@@ -258,15 +274,17 @@ Complete this entire section before starting Step I.
 - No dedicated ops, marketing, or intake team member → hide all Master's Circle options.
 
 **General:**
-- Minimum MRR: $2,497/month — never recommend below this.
-- Default to recommending both a marketing package and a non-marketing package. A single-product recommendation is acceptable only when the transcript clearly shows the firm's needs are best served by one service category — do not force a second product that does not fit.
-- Total SMB spend (management fees + ad spend) must not exceed 35% of monthly revenue. Legal AI Workforce (LAW) recurring monthly fees count toward this cap alongside marketing and coaching packages.
+- Minimum MRR: $2,497/month — never recommend below this. This floor is checked against the price actually being charged (bundled if 2+ packages, stand-alone if only 1) — do not use the bundled figure to clear this floor for a single-package recommendation.
+- Default to recommending both a marketing package and a non-marketing package. A single-product recommendation is acceptable only when the transcript clearly shows the firm's needs are best served by one service category — do not force a second product that does not fit. A single-product recommendation is priced at that product's stand-alone rate per the BUNDLING RULE above, not its bundled rate.
+- Total SMB spend (management fees + ad spend) must not exceed 35% of monthly revenue, calculated using whichever price (bundled or stand-alone) is actually being charged. Legal AI Workforce (LAW) recurring monthly fees count toward this cap alongside marketing and coaching packages.
 
 ---
 
 ### SELECT MARKETING PACKAGE
 
 Default to Full Service Marketing at the appropriate tier unless there is a specific reason to use a sub-package. Sub-packages (ads-only, web+SEO only) must be paired with a coaching package.
+
+Per the BUNDLING RULE: use the Bundled Price below only if a non-marketing (or other) package is also being recommended alongside marketing. If marketing is the only package recommended, use the Stand-alone price instead.
 
 **Marketing Tiers — Full Service Bundled Prices:**
 
@@ -290,6 +308,8 @@ Essentials $3,797 | Starter $5,697 | Growth $8,997 | Dominate $12,497 | Platinum
 ### SELECT NON-MARKETING PACKAGE
 
 Non-marketing packages are the default recommendation alongside marketing. Recommend one when it genuinely fits the firm's stage and needs.
+
+Per the BUNDLING RULE: use the Bundled Price below only if a marketing (or other) package is also being recommended alongside this one. If this is the only package recommended, use the Stand-alone price (see below the table) instead. Rows that already name a 2-product combination (e.g. "Elite Coach Plus + FCOO Advisor," "Master's Circle + FCOO Advisor") are exempt — they're already a bundle and keep their listed price whenever both named components are delivered.
 
 | Revenue | Team | Recommended | Bundled Price |
 |---|---|---|---|
@@ -321,6 +341,8 @@ Legal AI Workforce (LAW) provides managed AI implementation for law firms — Cl
 - Owner shows no openness to staff training or technology adoption
 
 **LAW Tiers:**
+
+Per the BUNDLING RULE: use the Bundled Price only if LAW is being recommended alongside at least one other package (marketing, coaching, etc.). If LAW is the only package recommended, use the Standalone Price instead.
 
 | Tier | Product Name | Bundled Price | Standalone Price | Target Revenue |
 |---|---|---|---|---|

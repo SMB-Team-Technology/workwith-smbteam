@@ -38,6 +38,7 @@ The output of this guide feeds directly into:
 - Use ranges, not absolutes, for all projections. Better to under-promise and over-deliver.
 - Every number must be traceable to a formula or benchmark in this guide.
 - The 35% cap on total monthly spend (management fees + ad spend) relative to monthly revenue is a hard constraint.
+- **"Bundled" means 2+ packages sold together.** Every price table in this guide lists a "Bundled Price" — that price applies only when this package is sold alongside at least one other package (marketing, non-marketing, LAW, FCFO, Bookkeeping, add-ons, etc.). If a package is being recommended on its own, charge its Stand-Alone Price instead and skip any savings/bundling callout. See section 7's pricing tables for stand-alone prices.
 - Minimum MRR is $2,497/month. Never recommend below this.
 
 ---
@@ -391,13 +392,15 @@ Based on the firm's needs identified during the audit, determine which type of m
 
 ### Step 5C — Select the Tier by Revenue
 
-| Revenue Range | Default Tier | Full Service Price (Bundled) | Notes |
-|---|---|---|---|
-| Under $750K, single location + single practice area | Essentials | $3,497/mo | Hidden for PI, multi-location, or multi-practice-area firms; if hidden, move to Starter |
-| $500K–$1M (or under $750K but ineligible for Essentials on scope) | Starter | $4,997/mo | Most common starting point |
-| $1M–$2M | Growth | $7,497/mo | For firms with substantial growth goals |
-| $2M–$3M | Dominate | $10,497/mo | For firms wanting to dominate their market |
-| $3M+ | Platinum | $15,997/mo | Highest tier |
+Per the bundling rule (section 1): "Full Service Price (Bundled)" applies only when marketing is paired with a non-marketing package (or other product). If marketing is the only package recommended, charge the Stand-Alone price instead.
+
+| Revenue Range | Default Tier | Full Service Price (Bundled) | Full Service Price (Stand-Alone) | Notes |
+|---|---|---|---|---|
+| Under $750K, single location + single practice area | Essentials | $3,497/mo | $3,797/mo | Hidden for PI, multi-location, or multi-practice-area firms; if hidden, move to Starter |
+| $500K–$1M (or under $750K but ineligible for Essentials on scope) | Starter | $4,997/mo | $5,697/mo | Most common starting point |
+| $1M–$2M | Growth | $7,497/mo | $8,997/mo | For firms with substantial growth goals |
+| $2M–$3M | Dominate | $10,497/mo | $12,497/mo | For firms wanting to dominate their market |
+| $3M+ | Platinum | $15,997/mo | $18,997/mo | Highest tier |
 
 **Boundary decisions:** When a firm falls on the border between tiers, the deciding factor is:
 - If their calculated ad spend exceeds the lower tier's cap → must use higher tier
@@ -481,19 +484,21 @@ Every client must have at least one non-marketing package. Clients with marketin
 
 ### Step 6B — Select Based on Revenue, Team, and Needs
 
-| Revenue | Team Size | Primary Need | Recommended Package | Bundled Price |
-|---|---|---|---|---|
-| $250K–$400K | Any | Growth coaching | Elite Coach | $2,600/mo |
-| $400K–$1M | Any | Growth coaching + accountability | Elite Coach Plus | $3,200/mo |
-| $400K–$1M | Growing team | Coaching + operations help | Elite Coach + FCOO Advisor | $5,694/mo |
-| $1M+ | Under 5 | Coaching + strategy | Elite Coach Plus | $3,200/mo |
-| $1M+ | Under 5 | Operations + team building | FCOO Advisor (standalone) | $3,297/mo |
-| $1M+ | 5+ with dedicated staff | Community + team training | Master's Circle | $4,600/mo |
-| $1M+ | 5+ with dedicated staff | Community + operations | Master's Circle + FCOO Advisor | $6,694/mo |
-| $1M+ | 5+ established leaders | Advanced operations | FCOO Director (standalone) | $4,997/mo |
-| $2M+ | 5+ with dedicated staff | Full support | Master's Circle + FCOO Director | $8,394/mo |
-| $3M+ | Large team | Executive-level operations | FCOO Partner | $8,997/mo |
-| $3M+ | Large established team | Full ecosystem | Master's Circle + FCOO Partner | $12,394/mo |
+Per the bundling rule (section 1): the "Bundled Price" column applies only when this row is paired with a marketing package or another non-marketing product. If this is the ONLY package being recommended, charge the "Stand-Alone Price" instead — rows that are themselves already a combination of two products (e.g. "Elite Coach + FCOO Advisor") are exempt from this substitution since they are already 2+ products bundled together; their listed price is correct whenever both named components are actually being delivered.
+
+| Revenue | Team Size | Primary Need | Recommended Package | Bundled Price | Stand-Alone Price |
+|---|---|---|---|---|---|
+| $250K–$400K | Any | Growth coaching | Elite Coach | $2,600/mo | $3,497/mo |
+| $400K–$1M | Any | Growth coaching + accountability | Elite Coach Plus | $3,200/mo | $3,497/mo |
+| $400K–$1M | Growing team | Coaching + operations help | Elite Coach + FCOO Advisor | $5,694/mo | N/A (already a 2-product combo) |
+| $1M+ | Under 5 | Coaching + strategy | Elite Coach Plus | $3,200/mo | $3,497/mo |
+| $1M+ | Under 5 | Operations + team building | FCOO Advisor (standalone) | $3,297/mo | $3,797/mo |
+| $1M+ | 5+ with dedicated staff | Community + team training | Master's Circle | $4,600/mo | $4,997/mo |
+| $1M+ | 5+ with dedicated staff | Community + operations | Master's Circle + FCOO Advisor | $6,694/mo | N/A (already a 2-product combo) |
+| $1M+ | 5+ established leaders | Advanced operations | FCOO Director (standalone) | $4,997/mo | $5,797/mo |
+| $2M+ | 5+ with dedicated staff | Full support | Master's Circle + FCOO Director | $8,394/mo | N/A (already a 2-product combo) |
+| $3M+ | Large team | Executive-level operations | FCOO Partner | $8,997/mo | N/A — confirm current stand-alone rate with sales ops before quoting solo |
+| $3M+ | Large established team | Full ecosystem | Master's Circle + FCOO Partner | $12,394/mo | N/A (already a 2-product combo) |
 
 ### Step 6C — When to Add Fractional CFO
 
