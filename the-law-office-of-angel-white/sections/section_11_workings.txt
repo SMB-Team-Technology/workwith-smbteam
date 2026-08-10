@@ -1,0 +1,247 @@
+THE LAW OFFICE OF ANGEL WHITE — SECTION 11 WORKINGS
+======================================================================
+REVENUE CORRECTION — READ FIRST
+======================================================================
+package_decision.json (confidence: low) used an evidence-based revenue estimate
+of $570,000, sourced from a HubSpot band label ("$180K - $960K") because its
+selection_notes claim "Revenue not in research notes." That claim is incorrect.
+
+The research notes' Step 9 transcript extraction explicitly states:
+  "Annual revenue: Projected $250k this year"
+  "Revenue goal: $500k by next year (explicitly stated)"
+
+This is a directly-stated figure from the discovery call transcript, which is
+strictly more reliable than a broad HubSpot revenue band midpoint. Per the
+audit-write instructions ("if the research notes clearly indicate a different
+revenue band, apply the eligibility rules and select the correct tier"), this
+audit uses REVENUE = $250,000 (current/projected this year) as the basis for
+non-marketing tier eligibility, and REVENUE GOAL = $500,000 (next year) as the
+basis for the 20%-rule aggressive ad spend calculation.
+
+Transcript-Stated Need Override check (all three checked, none change the
+marketing+coaching category call):
+  1. Call-purpose override: does not apply — transcript confirms the call was
+     explicitly a combined marketing + coaching engagement, not something else.
+  2. Existing-vendor override: does not apply — although the firm is in month 2
+     of a Levitate engagement, the transcript explicitly frames the SMB Team
+     engagement as a REPLACEMENT of Levitate/pay-per-lead ("The proposed SMB
+     Team engagement is a replacement strategy, not an add-on"), not an addition
+     alongside an existing marketing relationship the firm intends to keep. The
+     override exists to stop recommending marketing the client doesn't want;
+     here the client explicitly asked for it.
+  3. Budget-reality override: no explicit budget constraint was stated
+     ("Budget constraints stated: None stated"). Not applied as a hard override,
+     but see the 35% cap note below — flagged for internal scoping review.
+
+======================================================================
+MARKETING PACKAGE
+======================================================================
+Selected: Full Service Marketing — Starter
+Eligibility: Essentials is excluded regardless of revenue because the firm has
+BOTH multiple locations (Georgia + Alabama) and multiple practice areas (Estate
+Planning + Probate). Per the Marketing Tiers table: "$500K-$1M (or under $750K
+with multiple locations/practice areas) -> Starter." This holds true whether
+revenue is read as $250,000 or the decision file's $570,000 — the scope carve-out
+controls, not revenue. No change from package_decision.json on this package.
+
+  Bundled price (from table): $4,997/mo
+  Stand-alone price (from table): $5,697/mo
+  Savings: $700/mo
+  Ad spend cap: $20,000/mo
+
+======================================================================
+NON-MARKETING (COACHING) PACKAGE — CORRECTED
+======================================================================
+package_decision.json selected: Elite Coach Plus ($3,200/mo bundled), based on
+revenue band $400K-$1M (using the $570,000 HubSpot estimate).
+
+Corrected selection: Elite Coach ($2,600/mo bundled), based on the actual
+stated current revenue of $250,000, which falls in the $250K-$400K band per
+the Non-Marketing Package table ("$250K-$400K | Any | Elite Coach | $2,600/mo").
+Team size is "Any" for this band, so the team-size default (3, unconfirmed) does
+not change the outcome.
+
+  Bundled price (from table): $2,600/mo
+  Stand-alone price (from table): $3,497/mo
+  Savings: $897/mo
+
+Fractional CFO Advisor: not added. No profit-problem, cash-flow, or financial-
+visibility signal was stated on the call beyond the DBM itself, and revenue
+($250K) is below the $400K minimum for FCFO Advisor regardless.
+
+Legal AI Workforce (LAW): not recommended. Revenue ($250K, and even the
+$500K goal) is at/under the $500K LAW floor, and the firm is solo with no
+confirmed support staff — both are disqualifying conditions.
+
+======================================================================
+TOTAL MONTHLY INVESTMENT
+======================================================================
+Marketing (Full Service Marketing Starter):     $4,997/mo
+Coaching (Elite Coach):                         $2,600/mo
+TOTAL BUNDLED:                                  $7,597/mo
+
+Total savings (stand-alone minus bundled, all packages):
+  Marketing: $5,697 - $4,997 = $700/mo
+  Coaching:  $3,497 - $2,600 = $897/mo
+TOTAL SAVINGS: $1,597/mo
+
+======================================================================
+35% CAP CHECK — INTERNAL FLAG (not client-facing)
+======================================================================
+Monthly revenue (current, $250,000/yr):  $20,833/mo
+35% of current monthly revenue:          $7,292/mo
+Total management fees alone ($7,597/mo) already exceed this by ~$305/mo before
+any ad spend is added. Even the lowest-eligible marketing tier (Starter, forced
+by the multi-location/multi-practice-area scope rule) combined with the
+lowest-eligible coaching tier (Elite Coach) puts management fees just over the
+current-revenue 35% guideline.
+
+Monthly revenue (goal, $500,000/yr):     $41,667/mo
+35% of goal monthly revenue:             $14,583/mo
+Management fees ($7,597/mo) comfortably fit under the goal-revenue cap; the
+conservative all-in total (fees + ad spend, see below) also fits under the
+goal cap. Per the scoping guide's remediation script: "Your current revenue
+supports a maximum investment of $7,292/month. However, as you grow toward
+your goal of $500,000, this investment will represent a decreasing percentage
+of revenue." Package selection is already at the floor on both products
+(cannot go lower than Starter on scope grounds, cannot go lower than Elite
+Coach without dropping to an eliminated product), so no further package
+reduction is available as a remediation lever.
+
+ESCALATION FLAGS FOR SALES (internal only — do not include in client report):
+  - Revenue under $300K -> scoping approval required (current revenue $250K)
+  - Management fees exceed 35% of CURRENT monthly revenue (~36.5%), though they
+    fit comfortably under 35% of goal revenue — flag for scoping review before
+    contracting; consider whether a phased start (coaching first, marketing
+    ramp after early Alabama traction) is worth discussing with the client.
+  - Firm's own revenue-under-$250K funds-verification guardrail is not
+    triggered (current revenue is $250K, not under it), but given how close
+    the number is, confirm ability to sustain 4 months of service as a
+    precaution.
+
+======================================================================
+AD SPEND — CONSERVATIVE AND AGGRESSIVE
+======================================================================
+Practice area used for channel minimums: Estate Planning (both Estate Planning
+and Probate use the same minimums table row).
+Recommended channels: Google PPC + Local Service Ads (matches the transcript's
+explicit "PPC, LSAs" mention; Meta not included in the baseline recommendation).
+
+CONSERVATIVE (sum of channel minimums for recommended channels):
+  Google PPC min (Estate Planning): $3,500
+  LSA min (Estate Planning):        $2,000
+  CONSERVATIVE AD SPEND:            $5,500/mo
+  (Channel mix for blended CPL: Google 63.6% / LSA 36.4%)
+
+AGGRESSIVE (20% rule vs. reverse math, use higher):
+  20% rule:
+    $500,000 (goal) x 20% = $100,000/yr -> $8,333/mo
+    x Geo multiplier: Douglasville, GA sits within the Atlanta DMA (Tier 1,
+      5M+ DMA population) per "use DMA population, not city population" ->
+      1.5x -> $12,500/mo
+    No Spanish campaign multiplier (not stated as needed)
+    - Management fee ($4,997) = Available ad spend: $7,503/mo
+
+  Reverse math validation:
+    Target monthly cases = ($500,000 / 12) / $2,250 avg case value (Estate
+      Planning default $1,500-$3,000 midpoint, disclosed as a default) = 18.5
+    Required monthly leads = 18.5 / 15% close rate (not stated, defaulted) = 123.5
+    Blended CPL (no cushion): 0.636 x $135 (Google Search midpoint) +
+      0.364 x $65 (LSA midpoint) = $109.52
+    Required ad spend = 123.5 x $109.52 = ~$13,527/mo
+
+  Reverse math ($13,527) > 20% rule ($7,503) -> use reverse math.
+  Check vs. Starter tier ad spend cap ($20,000/mo): within cap, no upgrade needed.
+  AGGRESSIVE AD SPEND: $13,500/mo (rounded)
+
+Present as: "$5,500 - $13,500/month"
+
+======================================================================
+ROI PROJECTIONS (Block 4)
+======================================================================
+Average case value used: $2,250 (Estate Planning default midpoint, $1,500-
+$3,000 range — disclosed as an industry default; not stated in transcript)
+Close rate used: 15% (default; not stated in transcript)
+
+CONSERVATIVE SCENARIO — $5,500/mo ad spend
+  Blended CPL (with 20% cushion): $109.52 x 1.20 = $131.42
+  Leads: $5,500 / $131.42 = ~42 leads/mo
+  Cases: 42 x 15% = ~6 cases/mo
+  Revenue: 6 x $2,250 = ~$14,175/mo
+  Return: $14,175 / $5,500 = 2.6x
+
+AGGRESSIVE SCENARIO — $13,500/mo ad spend
+  Blended CPL (no cushion): $109.52
+  Leads: $13,500 / $109.52 = ~123 leads/mo
+  Cases: 123 x 15% = ~18 cases/mo
+  Revenue: 18 x $2,250 = ~$41,625/mo
+  Return: $41,625 / $13,500 = 3.1x
+
+All figures presented to the client as estimates.
+
+======================================================================
+DBM STATEMENT — BLOCK 1
+======================================================================
+Dominant Buying Motive: shift from daily operations to a CEO-level role,
+regaining work-life balance (explicitly stated on the call: "Personal Goal:
+Transition from daily operations to a CEO role, gaining work-life balance").
+
+Block 1 formula ("We help [audience] get [external desire] so they can
+[DBM]"): We help estate planning and probate attorneys get a predictable,
+owned pipeline of new clients so they can step out of the day-to-day and lead
+their firm like a CEO instead of running every piece of it themselves.
+
+======================================================================
+QUICK WIN OPPORTUNITIES (6+, for Block reference)
+======================================================================
+1. [Lead Generation] Replace pay-per-lead dependency with owned Local Service
+   Ads — Why: firm already has a 5.0 rating and 24 reviews, more than enough
+   to qualify, but has zero LSA presence. Competitor: none confirmed running
+   LSA either — open window. Opportunity: pay-per-lead-call economics without
+   splitting leads with a shared marketplace.
+2. [Lead Generation] Bid on "estate planning attorney Douglasville GA" and
+   "wills and trusts attorney Douglasville Georgia" — Why: high-intent local
+   searches with zero paid presence from the firm. Competitor: Scott K. Camp,
+   Don F. DeFoor both show organic investment in this exact keyword set.
+   Opportunity: capture demand competitors are already fighting for organically.
+3. [Local SEO] Build dedicated Probate landing content — Why: firm did not
+   appear in any of 3 probate-specific local searches checked. Competitor:
+   Sams Larkin & Huff, Morgan & DiSalvo, Hartley Rowe & Fowler, Don F. DeFoor,
+   SR Law Group, Scott K. Camp all surfaced instead. Opportunity: stop ceding
+   an entire practice area's local search visibility.
+4. [Local SEO] Launch geo-targeted pages for Villa Rica, Carrollton, and
+   Austell — Why: no geo-targeted content exists for any surrounding city.
+   No named competitor identified as dominating this specific gap — omit
+   competitor row. Opportunity: capture nearby-market searchers currently
+   landing on generic content or not finding the firm at all.
+5. [Local SEO / New Market] Stand up GBP and local SEO foundation for the new
+   Alabama office — Why: zero online footprint exists there today (opened the
+   day of the call). No competitor data exists yet for that market by
+   definition — omit competitor row. Opportunity: greenfield visibility in a
+   market with no incumbent digital presence to out-rank.
+6. [Intake] Move the contact form above the fold and add a non-phone
+   conversion path — Why: above-fold CTA is phone-call only today. No named
+   competitor identified for this specific finding — omit competitor row.
+   Opportunity: capture visitors who won't call, without spending another
+   marketing dollar.
+7. [Team] Build a first hire/delegation plan before scaling ad spend — Why:
+   Angel is the sole operational hub for two offices with no team role
+   mentioned. No named competitor identified — omit competitor row.
+   Opportunity: make growth compatible with the CEO transition, not a bigger
+   version of the same bottleneck.
+
+======================================================================
+FIRST 90 DAYS (3-5 bullets, for Block 5)
+======================================================================
+1. Launch Google PPC and Local Service Ads for Estate Planning and Probate in
+   the Douglasville market (leveraging the firm's existing 5.0 rating for LSA
+   eligibility on day one).
+2. Stand up a Google Business Profile and local SEO foundation for the new
+   Alabama office from scratch.
+3. Move the contact form above the fold and tighten the site's non-phone
+   conversion path (no live chat and no CRM setup included as first-90-day
+   deliverables, per policy).
+4. Kick off Elite Coach engagement: weekly coaching sessions focused on
+   building the firm's first delegation plan for intake and daily operations.
+5. Build initial geo-targeted content for Villa Rica, Carrollton, and Austell
+   to widen the addressable local search footprint.
