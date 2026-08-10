@@ -16,19 +16,25 @@
   "marketing_price_bundled": 4997,
   "marketing_price_retail": 5697,
   "marketing_savings": 700,
-  "coaching_name": "Elite Coach",
-  "coaching_price_bundled": 2600,
-  "coaching_price_retail": 3497,
-  "coaching_savings": 897,
+  "coaching_name": "Coach Essentials Plus",
+  "coaching_price_bundled": 1997,
+  "coaching_price_retail": 2497,
+  "coaching_savings": 500,
+  "coaching_verify_funds": true,
   "law_tier": null,
-  "total_bundled": 7597,
-  "total_savings": 1597,
+  "total_bundled": 6994,
+  "total_savings": 1200,
   "ad_spend_conservative": 3000,
   "ad_spend_aggressive": 12000,
+  "requires_approval_form": true,
+  "requires_scoping_form": true,
+  "requires_custom_agreement": false,
   "selection_notes": [
     "Revenue not in research notes — sourced from HubSpot (hubspot_annual_law_firm_revenue): \"$0 - $180K\" → $180,000",
     "Team size not stated in research notes — defaulting to 3. Review for coaching tier accuracy.",
     "Revenue under $750K but multiple practice areas detected: Essentials hidden (requires single practice area) — Starter tier.",
-    "Revenue under $250K: Elite Coach selected, scoping approval required."
+    "Revenue under $250K: Elite Coach is NOT eligible (its floor is $250K+). Coach Essentials Plus selected instead — fund verification required (client must be able to cover 4 months of services) before proceeding.",
+    "Revenue under $300K: Approval Form + Scoping Form required before this proposal can be sent.",
+    "CORRECTION (2026-08-10, per sales rep Randy Gold's post-delivery feedback): the originally shipped proposal used Elite Coach at $2,600/mo bundled — Elite Coach is not eligible at this revenue level, and no marketing package is included in the final recommendation (see section_11_workings.txt override), so the bundled discount did not apply either way. Corrected to Coach Essentials Plus at its $2,497/mo stand-alone price."
   ]
 }

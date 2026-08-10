@@ -54,11 +54,11 @@ FINDINGS = [
 
 # Competitor table — list of (name, "XXX reviews", "brief note")
 COMPETITORS = [
-    ("Maldonado & Vallejo Immigration Law", "122 reviews", "4.9 stars · 6x volume"),
+    ("Maldonado & Vallejo Immigration Law", "122 reviews", "4.9 stars · 4x volume"),
     ("dePaz Cabrera Immigration Law",        "98 reviews",  "4.9 stars · 10+ yrs"),
     ("Robert J. Jacobs Immigration Law",     "26 reviews",  "3.9 stars · since 1997"),
 ]
-CLIENT_REVIEWS      = "21 reviews"
+CLIENT_REVIEWS      = "30 reviews"
 CLIENT_REVIEWS_NOTE = "← You are here"
 
 # Stage strip (right panel, Slide 1)
@@ -85,7 +85,7 @@ PRIORITIES = [
             "Add a visible homepage contact form",
             "Resolve the Ste 190 vs. Ste 307 address mismatch",
             "Build out Yelp, FindLaw, and Justia listings",
-            "Test a modest paid visibility channel",
+            "Monitor local search visibility as directory fixes take effect",
         ],
     ),
     (
@@ -105,42 +105,53 @@ PRIORITIES = [
             "Turn contractor oversight into a delegated process",
             "Tie the $500K goal to a real hiring/capacity plan",
             "Free Sarah's time for business development",
-            "Revisit AI Workforce once revenue nears $500K",
+            "Add the AI Workforce Starter seat for admin automation",
         ],
     ),
 ]
 
 # ── Slide 3 ──────────────────────────────────────────────────────
 # Package cards — (label, bundled_price, retail_price, services_line, accent_color_hex)
+# Note: retail_price is left blank for both — neither is priced against a
+# marketing-bundled discount, so there is no stand-alone/bundled comparison
+# to strike through (the layout engine's strikethrough line still renders;
+# with no retail text next to it this reads as a plain accent line — see
+# commit message for why this deck was corrected instead of left as-is).
 PACKAGES = [
     (
-        "ELITE COACH",
-        "$2,600", "$3,497/mo",
-        "Weekly group coaching · Masterminds · Hiring/delegation framework",
+        "COACH ESSENTIALS PLUS",
+        "$2,497", "",
+        "Weekly group coaching · Monthly 1:1 · Hiring/delegation framework",
         "003A59",
+    ),
+    (
+        "AI WORKFORCE PRO — STARTER (1 USER)",
+        "$350", "",
+        "Intake qualification · Case updates · Email drafting",
+        "0091C9",
     ),
 ]
 
-BUNDLE_TOTAL   = "$2,600 / mo"
-BUNDLE_SAVINGS = "Save $897/mo by bundling"
+BUNDLE_TOTAL   = "$2,847 / mo"
+BUNDLE_SAVINGS = "Stand-alone pricing — no marketing bundle"
 
 AD_SPEND_NOTE = (
-    "Optional: test paid visibility at $3,000–$8,300/mo, paid directly to Google/LSA"
+    "Not recommended yet — budget priority is hiring/ops first. LSA/PPC comped by Randy whenever she opts in."
 )
 
 AVG_CASE_VALUE     = "$4,500"
-CONSERVATIVE_LABEL = "Conservative  (~4 cases/mo):"
+CONSERVATIVE_LABEL = "If pursued later (~4 cases/mo):"
 CONSERVATIVE_RESULT = "$17,300 revenue · 5.8× ROAS"
-AGGRESSIVE_LABEL   = "Aggressive  (~13 cases/mo):"
+AGGRESSIVE_LABEL   = "If pursued later (~13 cases/mo):"
 AGGRESSIVE_RESULT  = "$57,600 revenue · 6.9× ROAS"
 
 # Timeline — 5 items: (milestone_label, action_text)
 TIMELINE = [
-    ("Day 1",   "Kick off Elite Coach — build the hiring roadmap"),
+    ("Day 1",   "Kick off Coach Essentials Plus — build the hiring roadmap"),
+    ("Day 1",   "AI Workforce Starter seat live for intake and admin"),
     ("Day 14",  "Fix footer bug and add homepage contact form"),
     ("Week 2",  "Resolve NAP address mismatch across directories"),
     ("Week 3",  "Confirm PageSpeed and fill Yelp/FindLaw/Justia gaps"),
-    ("Month 3", "Optional paid visibility test alongside coaching"),
 ]
 
 CLOSING_QUOTE = (
@@ -422,9 +433,11 @@ def build_slide3(prs):
         add_text(slide, label, 0.52, y+0.10, 4.16, 0.22, 8, ac, bold=True)
         add_text(slide, price, 0.52, y+0.30, 2.00, 0.48, 32, NAVY, bold=True)
         add_text(slide, "/mo", 2.04, y+0.42, 0.46, 0.28, 11, SLATE)
-        add_text(slide, retail, 2.54, y+0.44, 1.00, 0.26, 11, STRIKETHROUGH)
-        # Strikethrough line over retail price
-        add_rect(slide, 2.54, y+0.55, 0.88, 0.01, fill=STRIKETHROUGH)
+        if retail:
+            add_text(slide, retail, 2.54, y+0.44, 1.00, 0.26, 11, STRIKETHROUGH)
+            # Strikethrough line over retail price — only drawn when a retail
+            # price is actually being shown (stand-alone packages have none).
+            add_rect(slide, 2.54, y+0.55, 0.88, 0.01, fill=STRIKETHROUGH)
         add_text(slide, services, 0.52, y+0.84, 4.16, 0.22, 8, SLATE)
 
     # Bundle total
@@ -437,17 +450,18 @@ def build_slide3(prs):
     add_rect(slide, 0.22, 4.34, 4.52, 0.44, fill=rgb("EEF2F8"))
     add_text(slide, AD_SPEND_NOTE, 0.36, 4.37, 4.30, 0.38, 8, SLATE)
 
-    # ROI card
-    add_rect(slide, 4.96, 1.12, 4.82, 1.44, fill=ROI_BG)
-    add_text(slide, "PROJECTED RETURN ON AD SPEND",
-             5.14, 1.18, 4.52, 0.24, 8, ROI_GREEN, bold=True)
+    # Ad spend reference card — muted styling (SLATE, not ROI_GREEN) since this
+    # is explicitly NOT a current recommendation, only future-phase reference math.
+    add_rect(slide, 4.96, 1.12, 4.82, 1.44, fill=NEAR_WHITE)
+    add_text(slide, "PAID ADS — REFERENCE ONLY, NOT RECOMMENDED YET",
+             5.14, 1.18, 4.52, 0.24, 8, SLATE, bold=True)
     add_text(slide, "Average case value:", 5.14, 1.46, 2.10, 0.28, 9, rgb("1E293B"), bold=True)
-    add_text(slide, AVG_CASE_VALUE, 7.36, 1.46, 2.30, 0.28, 9, ROI_GREEN)
-    add_rect(slide, 5.08, 1.76, 4.58, 0.34, fill=ROI_HILIGHT)
+    add_text(slide, AVG_CASE_VALUE, 7.36, 1.46, 2.30, 0.28, 9, SLATE)
+    add_rect(slide, 5.08, 1.76, 4.58, 0.34, fill=rgb("F0F4FA"))
     add_text(slide, CONSERVATIVE_LABEL, 5.14, 1.80, 2.10, 0.28, 9, rgb("1E293B"), bold=True)
-    add_text(slide, CONSERVATIVE_RESULT, 7.36, 1.80, 2.30, 0.28, 9, ROI_GREEN, bold=True)
+    add_text(slide, CONSERVATIVE_RESULT, 7.36, 1.80, 2.30, 0.28, 9, SLATE, bold=True)
     add_text(slide, AGGRESSIVE_LABEL, 5.14, 2.14, 2.10, 0.28, 9, rgb("1E293B"), bold=True)
-    add_text(slide, AGGRESSIVE_RESULT, 7.36, 2.14, 2.30, 0.28, 9, ROI_GREEN, bold=True)
+    add_text(slide, AGGRESSIVE_RESULT, 7.36, 2.14, 2.30, 0.28, 9, SLATE, bold=True)
 
     # First 90 days
     add_text(slide, "WHAT HAPPENS IN THE FIRST 90 DAYS",

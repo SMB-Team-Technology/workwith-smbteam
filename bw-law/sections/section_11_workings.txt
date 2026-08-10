@@ -1,13 +1,66 @@
 BW LAW, PLLC — SECTION 11 WORKINGS FILE
 ====================================================================
+CORRECTION LOG (2026-08-10)
+====================================================================
+
+This proposal was corrected after sales rep Randy Gold's post-delivery
+feedback identified three inaccuracies, and after a pipeline fix to
+scripts/select-package.mjs and the governing pricing docs (audit-write.md,
+SMB_Team_Audit_Agent_System_Prompt.txt, Scoping_and_Ad_Spend_Guide.md)
+found the root cause of one of them. Corrections made:
+
+1. Coaching package: Elite Coach ($2,600/mo, presented as "bundled" with a
+   $897/mo savings) -> Coach Essentials Plus ($2,497/mo, stand-alone).
+   Elite Coach's real eligibility floor is $250K+ revenue — BW Law's
+   ~$180K-$200K effective revenue was never eligible for it. Separately,
+   no marketing package is included in this proposal (see override below),
+   so the "bundled" discount claimed in the original version was never
+   applicable regardless of which coaching product was selected — the
+   PRICING CASCADE RULE (bundled price requires an actual marketing
+   package in the deal) applies. No savings figure is shown.
+2. Google review count: 21 -> 30 reviews (5.0 star rating unchanged — that
+   figure was correct). The original number was sourced from LegalRank.co,
+   a third-party aggregator used as a proxy because native GBP would not
+   render in available browser tooling — flagged in the original research
+   notes as "proxy, not GBP-verified." Corrected per Randy Gold's direct
+   confirmation with the client.
+3. Ad spend: Randy does not recommend starting paid ads initially — BW Law
+   is budget-conscious and is prioritizing the coaching/hiring engagement
+   first. The ad spend scenario math below is kept as internal reference
+   only; it has been removed from the "First 90 Days" and "Phase 1"
+   sections of the client-facing report and is no longer presented as a
+   near-term option.
+4. New: AI Workforce Pro – Starter (1 user, $350/mo) is now included. The
+   original proposal excluded all Legal AI Workforce products because the
+   only tier that existed at the time ("AI Workforce Pro," 5-user, $500K+
+   revenue floor) doesn't fit a firm at BW Law's revenue. The pricing
+   pipeline fix added a genuine single-seat tier (AI Workforce Pro –
+   Starter, no stated revenue floor) that resolves this — see the LAW
+   section below.
+5. New: LSA/PPC — Randy has committed to including LSA/PPC at no
+   additional service fee whenever BW Law opts in down the road. This is
+   a rep-level concession, not a standard catalog term: Coach Essentials
+   Plus's standard LSA add-on is $900/mo per the approved pricing tables.
+   Documented here so the concession is visible, not silently absorbed
+   into the priced total. No dollar figure is shown for it in the
+   client-facing report since it is not being charged now or on a
+   defined date.
+6. New (internal only, never client-facing): revenue under $300K triggers
+   a mandatory Approval Form + Scoping Form per the newly-added Approval &
+   Scoping Requirements rules — see flag at the bottom of this file.
+
+====================================================================
 PACKAGE DECISION OVERRIDE — DOCUMENTED PER AUDIT-WRITE.MD
 ====================================================================
 
 package_decision.json (confidence: medium) proposed:
   - Marketing: Full Service Marketing — Starter, $4,997/mo bundled, $5,697/mo
     retail, saves $700/mo
-  - Coaching: Elite Coach, $2,600/mo bundled, $3,497/mo retail, saves $897/mo
-  - Total bundled (as proposed by decision file): $7,597/mo
+  - Coaching: Coach Essentials Plus, $1,997/mo bundled, $2,497/mo retail,
+    saves $500/mo (bundled price shown for reference only — not usable, see
+    PRICING CASCADE RULE below, since no marketing package survives the
+    override)
+  - Total bundled (as proposed by decision file, pre-override): $6,994/mo
   - Revenue source: HubSpot "$0 - $180K" -> $180,000 effective, medium confidence
 
 OVERRIDE APPLIED: Transcript-Stated Need Override #1 — Call-Purpose Override.
@@ -43,54 +96,92 @@ Revenue-band re-check (medium confidence flag): Research notes state the
 actual transcript figure is "~$200k in 2025" with a stated goal of $500k.
 This is consistent with — not materially different from — the HubSpot-
 sourced $180,000 estimate. Both figures fall within the same eligibility
-bracket (under $250K). No revenue-band correction to the tier is needed;
-Elite Coach remains correct at this revenue level regardless of which of the
-two figures ($180K or $200K) is used.
+bracket (under $250K). Elite Coach is NOT eligible at this revenue level
+(its floor is $250K+) regardless of which of the two figures ($180K or
+$200K) is used — Coach Essentials Plus is the correct fit, with mandatory
+fund verification (client can cover 4 months of services) before proceeding.
 
 ====================================================================
-LAW (LEGAL AI WORKFORCE) — WHY IT IS EXCLUDED FROM THE PRICED PROPOSAL
+LAW (LEGAL AI WORKFORCE) — NOW INCLUDED VIA THE NEW STARTER TIER
 ====================================================================
 
 The "AI Workforce" platform was literally discussed and proposed on the
 actual sales call (intake lead qualification, client case-update
-communication, email drafting — month-to-month agreement). However, per the
-LAW eligibility table in audit-write.md: "Do NOT recommend LAW if revenue
-under $500K." BW Law's revenue (~$180K-$200K) is well under this floor.
+communication, email drafting — month-to-month agreement). The original
+version of this proposal excluded it because the only LAW tier that existed
+("AI Workforce Pro," bundled at $1,597/mo, 5 users included) carries a
+$500K+ revenue floor that BW Law (~$180K-$200K) does not meet.
 
-This is a real tension: the client-facing conversation on the call included
-a product that formal pricing-tier eligibility rules say cannot be
-recommended yet. Per instruction, LAW is EXCLUDED from the priced
-investment grid in this client-facing report despite being discussed on
-the call. FLAG FOR RANDY GOLD: follow up on the AI Workforce conversation
-separately outside the formal proposal, and revisit LAW eligibility if/when
-BW Law's revenue trajectory crosses the $500K floor (this is exactly the
-kind of firm that could reach that floor if the coaching engagement
-succeeds in helping them hit their stated $500K goal). Internal only — do
-not include this reasoning in the client-facing HTML report.
+The pricing pipeline fix (2026-08-10) added a distinct "AI Workforce Pro –
+Starter" tier: $350/user/month for 1-4 users, with no stated revenue floor
+in the 2026 pricing catalog — unlike AI Essentials and above, the "Do NOT
+recommend LAW if revenue under $500K" rule does not apply to this seat
+tier. BW Law wants a single user (Sarah), so this resolves the tension
+flagged in the original version of this file and is now included in the
+priced investment grid at $350/mo for 1 seat.
 
 ====================================================================
 MANDATORY PRICE LOOKUP
 ====================================================================
 
-- Marketing package selected: NONE (override applied — see above)
-- Non-marketing package selected: Elite Coach
-  - Bundled price (from table): $2,600/mo
-  - Stand-alone price (from table): $3,497/mo
-  - Savings (stand-alone minus bundled): $897/mo
-- Legal AI Workforce (LAW) package selected: none (excluded — revenue under
-  $500K eligibility floor; discussed on call but not included in proposal)
+- Is a marketing package included in the final recommendation? NO (override
+  applied — see above). Per the PRICING CASCADE RULE, every non-marketing/
+  LAW line below uses its Stand-alone price, not Bundled, and no savings
+  figure is shown.
+- Marketing package selected: none
+- Non-marketing package selected: Coach Essentials Plus
+  - Price actually charged (Stand-alone — no marketing package included): $2,497/mo
+  - Bundled price, for reference only (not usable here): $1,997/mo
+  - Savings: N/A — sold stand-alone
+- Legal AI Workforce (LAW) package selected: AI Workforce Pro – Starter (1 user)
+  - Price actually charged: $350/mo
+  - Savings: N/A — sold stand-alone (no revenue floor gating this tier)
+- LSA/PPC: not priced — Randy Gold has committed to including it at no
+  additional service fee whenever BW Law opts in down the road (rep-level
+  concession; standard catalog add-on price is $900/mo). No dollar figure
+  shown in the client-facing report.
 - AI Avatar / Video Growth add-on selected: none (not discussed, not fit)
-- Total monthly investment (sum of all bundled/recurring prices): $2,600/mo
-- Total savings (sum of all savings): $897/mo
+- Total monthly investment (Coach Essentials Plus + AI Workforce Starter): $2,847/mo
+- Total savings: $0 (sold stand-alone)
+- Budget-reality override check (required — override #3): Does the research
+  notes' "budget constraints stated" field have content? YES — client is
+  budget-conscious and is prioritizing hiring/operations fixes before any
+  paid marketing spend. Was the ad-spend recommendation adjusted downward
+  accordingly? YES — ad spend removed from "First 90 Days" and "Phase 1";
+  the scenario math is retained below as internal reference only, not
+  presented to the client as a near-term recommendation.
+- GBP review count / star rating source check (required): Was the review
+  count/star rating in the research notes flagged as sourced from a proxy?
+  YES, originally (LegalRank.co). RESOLVED — corrected to 30 reviews per
+  direct sales rep confirmation (Randy Gold); star rating (5.0) was
+  already correct and is unchanged.
 
 ====================================================================
-AD SPEND — CONSERVATIVE AND AGGRESSIVE
+APPROVAL & SCOPING REQUIREMENTS (internal only — never client-facing)
 ====================================================================
 
-Framing note: no marketing package is being sold. Ad spend is presented as
-optional, supplemental informational guidance for BW Law to consider
-testing alongside the coaching engagement — not as a purchased deliverable
-or part of the recommended investment grid total.
+- Revenue under $300K (effective revenue ~$180K-$200K): Approval Form AND
+  Scoping Form REQUIRED before this proposal can be sent. This applies
+  regardless of which coaching package is selected. FLAG FOR RANDY GOLD /
+  SALES OPS: confirm these forms were completed for the original send: if
+  not, complete them before this corrected version goes out.
+- Marketing MRR: $0 (no marketing package) — Custom Agreement not
+  triggered on this basis.
+- Ad spend: $0 currently recommended — not triggered.
+- Practice area / metro triggers: immigration, Gainesville FL — not a
+  Top 10/Top 40 major metro for the criminal-defense/family-law/PI
+  triggers; not applicable.
+
+====================================================================
+AD SPEND — CONSERVATIVE AND AGGRESSIVE (INTERNAL REFERENCE ONLY)
+====================================================================
+
+Framing note: no marketing package is being sold, and per Randy Gold's
+feedback the client is budget-conscious and ads are not being recommended
+as part of this engagement. This math is kept here as internal reference
+only — it must NOT appear in the client-facing report's "First 90 Days" or
+"Phase 1" sections. If the client's situation changes and SMB Team wants to
+revisit paid visibility in a later phase, this is the starting math.
 
 CONSERVATIVE SCENARIO — $3,000/mo
 - Basis: Immigration Google PPC minimum ($3,000) = platform absolute
@@ -125,7 +216,7 @@ AGGRESSIVE SCENARIO — $8,300/mo (rounded from $8,333)
   rounded to $8,300/mo for presentation
 - No marketing package management fee to subtract (none being sold) —
   full amount is available ad spend if BW Law chooses to test it
-  independently
+  independently, in a later phase
 - Leads = $8,300 / $97.50 (no cushion) = ~85.1 leads/mo
 - Cases = 85.1 x 0.15 = ~12.8 cases/mo
 - Revenue = 12.8 x $4,500 = ~$57,600/mo
@@ -133,8 +224,8 @@ AGGRESSIVE SCENARIO — $8,300/mo (rounded from $8,333)
 
 Both scenarios use the Immigration default average case value ($3K-$6K
 range, $4,500 midpoint used) and 15% default close rate — neither was
-stated in the transcript. Both defaults are disclosed here and should be
-labeled as estimates in the client-facing report.
+stated in the transcript. Kept here for a future phase only — not part of
+the current client-facing recommendation.
 
 ====================================================================
 DBM STATEMENT FOR BLOCK 1
@@ -174,7 +265,7 @@ QUICK WIN OPPORTUNITIES (6+)
    Competitor: Maldonado & Vallejo Immigration Law, with 122 reviews and an
    outsized local trust advantage partly built on broad directory presence.
    Opportunity: fill these gaps to compound the firm's already-strong 5.0
-   star rating across more platforms.
+   star rating (30 reviews) across more platforms.
 
 5. [Intake / Quick Win] Add a homepage contact form — Why: contact info
    currently lives in the footer only, adding friction for a ready
@@ -193,27 +284,26 @@ QUICK WIN OPPORTUNITIES (6+)
    team needed to deliver it. No named competitor. Opportunity: avoid
    scaling revenue and Sarah's personal workload in lockstep.
 
-8. [Lead Gen / Long-Term Play — informational, not a purchased package]
-   Test paid visibility (Google PPC / LSA) alongside the coaching
-   engagement — Why: 100% of current lead flow depends on GBP, referrals,
-   and local networking, with zero paid channel tested. Opportunity: a
-   second, scalable lead source that does not depend on Sarah's personal
-   network. Framed as optional/supplemental per package-decision override
-   — not part of the priced recommendation.
+8. [Intake / Quick Win] Stand up the AI Workforce Starter seat for admin
+   automation — Why: Sarah is the sole point of contact for intake
+   qualification, case-update communication, and email drafting, with no
+   automation in place. Opportunity: a single AI Workforce seat handles
+   first-pass intake and routine communication so hiring and coaching time
+   goes toward higher-value work, directly serving the stated DBM.
 
 ====================================================================
 FIRST 90 DAYS BULLET POINTS
 ====================================================================
 
-1. Kick off Elite Coach engagement — establish a hiring and delegation
-   roadmap so contractor work no longer requires Sarah's personal review
-   of every file.
-2. Fix the "©2035" Wix footer bug and add a visible homepage contact form
+1. Kick off Coach Essentials Plus engagement — establish a hiring and
+   delegation roadmap so contractor work no longer requires Sarah's
+   personal review of every file.
+2. Stand up the AI Workforce Starter seat for intake qualification, case
+   updates, and email drafting.
+3. Fix the "©2035" Wix footer bug and add a visible homepage contact form
    to remove friction for ready prospects.
-3. Run a manual PageSpeed Insights check and resolve the NAP address
+4. Run a manual PageSpeed Insights check and resolve the NAP address
    inconsistency (Ste 190 vs. Ste 307) across directory listings.
-4. Confirm and, where missing, build out directory presence on Yelp,
-   FindLaw, and Justia to compound the firm's 5.0-star reputation.
-5. If BW Law chooses to test paid visibility, start with a conservative
-   Google PPC budget (~$3,000/mo) to validate channel performance before
-   any larger commitment.
+5. Confirm and, where missing, build out directory presence on Yelp,
+   FindLaw, and Justia to compound the firm's 5.0-star, 30-review
+   reputation.

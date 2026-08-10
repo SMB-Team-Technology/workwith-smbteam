@@ -226,13 +226,17 @@ story.append(Paragraph("Why This Coaching Package", S["section"]))
 
 story.append(Paragraph("<b>What it does for her:</b>", S["subsection"]))
 story.append(bd("Gives her a structured hiring and delegation framework instead of winging it."))
-story.append(bd("Group coaching and masterminds with owners solving the same Stage 4 to 6 problem."))
+story.append(bd("Group coaching with owners solving the same Stage 4 to 6 problem."))
 
-story.append(Paragraph("<b>Elite Coach  |  $2,600/mo bundled</b>", S["subsection"]))
-story.append(b("Revenue is under $250K on both the HubSpot estimate ($180K) and the transcript figure (~$200K) — Elite Coach is correct either way."))
-story.append(b("Matches what was proposed on the call: coaching on hiring/systems at ~$2,000/mo, which Sarah confirmed as realistic."))
-story.append(b("Stand-alone price is $3,497/mo — bundled pricing saves $897/mo."))
+story.append(Paragraph("<b>Coach Essentials Plus  |  $2,497/mo stand-alone</b>", S["subsection"]))
+story.append(b("Revenue is under $250K on both the HubSpot estimate ($180K) and the transcript figure (~$200K) — Elite Coach's floor is $250K+, so it does not qualify. Coach Essentials Plus is the correct tier (fund verification required)."))
+story.append(b("Closely matches what was proposed on the call: coaching on hiring/systems at ~$2,000/mo, which Sarah confirmed as realistic."))
+story.append(b("Priced stand-alone — no marketing package is bundled in, so there is no bundled discount to show."))
 story.append(b("No marketing package included: GBP/referrals/networking already work and there is no paid history to fix. Single-product by design."))
+
+story.append(Paragraph("<b>AI Workforce Pro &ndash; Starter (1 user)  |  $350/mo</b>", S["subsection"]))
+story.append(b("The exact 'AI Workforce' platform discussed on the call, sized to a single user — no revenue floor on this seat tier, unlike the 5-user AI Essentials tier."))
+story.append(b("Automates intake qualification, case-update communication, and email drafting — freeing Sarah's time for hiring and business development."))
 
 
 # ══════════════════════════════════════════════════════════
@@ -243,39 +247,35 @@ story.append(PageBreak())
 story.append(Paragraph("BW Law — Sales Companion (continued)", S["title"]))
 story.append(thin_rule())
 
-# ── Why This Ad Spend ──
-story.append(Paragraph("Why This Ad Spend", S["section"]))
+# ── Why We're Not Recommending Ads Yet ──
+story.append(Paragraph("Why We're Not Recommending Ads Yet", S["section"]))
 
-story.append(Paragraph("<b>What it does for her:</b>", S["subsection"]))
-story.append(bd("Tests paid visibility at low risk, alongside coaching, without buying a marketing package she did not ask for."))
-story.append(bd("Builds a second lead channel that does not depend on her personal referral network."))
+story.append(Paragraph("<b>Randy's call:</b>", S["subsection"]))
+story.append(bd("BW Law is budget-conscious and is prioritizing the hiring/operations fix first — do not lead with or push ad spend on this proposal."))
+story.append(bd("Revisit paid visibility in Phase 2, once hiring and delegation systems free up bandwidth to handle added lead flow."))
 
-story.append(Paragraph("<b>Recommended Ad Spend Range (optional, informational only):</b>", S["subsection"]))
+story.append(Paragraph("<b>Reference math only (not part of this proposal):</b>", S["subsection"]))
 story.append(b("<b>Conservative:</b> $3,000/mo — Immigration Google PPC minimum, which also matches the platform's absolute floor for any paid ads."))
 story.append(b("<b>Aggressive:</b> $8,300/mo — full budget aligned to the $500K revenue goal."))
 
-story.append(Paragraph("<b>Estimated Return on Investment:</b>", S["subsection"]))
+story.append(Paragraph("<b>Estimated Return, if pursued later:</b>", S["subsection"]))
 story.append(b("<b>Conservative:</b> ~3.8 cases x $4.5K avg case value = ~$17.3K/mo vs. $3.0K spend = ~5.8x return."))
 story.append(b("<b>Aggressive:</b> ~12.8 cases x $4.5K avg case value = ~$57.6K/mo vs. $8.3K spend = ~6.9x return."))
-story.append(Paragraph("<i>All figures are estimates using an Immigration default case value ($4,500) and 15% default close rate — neither was stated on the call. Not guaranteed.</i>", S["disclaimer"]))
-
-story.append(Paragraph("<b>How the range was calculated:</b>", S["subsection"]))
-story.append(b("<b>Conservative:</b> Immigration Google PPC minimum = platform absolute minimum. Both floors converge at $3,000/mo."))
-story.append(b("<b>Aggressive:</b> $500K goal x 20% ÷ 12 = $8,333/mo. Tier 4 Gainesville multiplier (1.0x), rounded to $8,300/mo. No mgmt fee to subtract — none sold."))
+story.append(Paragraph("<i>All figures are estimates using an Immigration default case value ($4,500) and 15% default close rate — neither was stated on the call. Not guaranteed, and not currently recommended.</i>", S["disclaimer"]))
 
 story.append(thin_rule())
 
 # ── If She Pushes Back ──
 story.append(Paragraph("If She Pushes Back", S["section"]))
 
-story.append(Paragraph('"What about the AI Workforce platform we talked about?"', S["objection_q"]))
-story.append(Paragraph("Still matters — but Legal AI Workforce has a formal $500K revenue floor, and BW Law is at ~$180K-$200K. Not eligible to price in yet. Frame as Phase 3: revisit as revenue trends toward $500K, which coaching is designed to help her reach.", S["objection_a"]))
-
 story.append(Paragraph('"Why isn\'t there a marketing package here?"', S["objection_q"]))
-story.append(Paragraph("She said GBP, referrals, and networking are working, and she's never run paid marketing. The call was about hiring, not lead gen. Ad spend is offered as an optional add-on only.", S["objection_a"]))
+story.append(Paragraph("She said GBP, referrals, and networking are working, and she's never run paid marketing. The call was about hiring, not lead gen. Ad spend is reference-only for a later phase, not part of this proposal.", S["objection_a"]))
 
-story.append(Paragraph('"Is $2,600/mo really enough?"', S["objection_q"]))
-story.append(Paragraph("She independently confirmed ~$2,000/mo as realistic before we quoted a price — $2,600/mo bundled closely matches what she already told us she's comfortable with.", S["objection_a"]))
+story.append(Paragraph('"Is $2,497/mo really enough for the coaching?"', S["objection_q"]))
+story.append(Paragraph("She independently confirmed ~$2,000/mo as realistic before we quoted a price — $2,497/mo stand-alone is close to what she already told us she's comfortable with.", S["objection_a"]))
+
+story.append(Paragraph('"Can we do LSA/PPC too?"', S["objection_q"]))
+story.append(Paragraph("Randy has committed to including LSA/PPC at no additional service fee whenever she opts in down the road — flag this as a rep concession, not a standard catalog term (standard add-on is $900/mo), so it's tracked if she takes him up on it.", S["objection_a"]))
 
 story.append(thin_rule())
 
@@ -283,13 +283,13 @@ story.append(thin_rule())
 story.append(Paragraph("Investment At A Glance", S["section"]))
 
 price_data = [
-    [Paragraph("<b>Elite Coach</b>", S["price_main"]),
-     Paragraph("$2,600/mo", S["price_main"])],
-    [Paragraph("Coaching on hiring, systems, and workflow — the exact category discussed on the call.", S["price_detail"]),
-     Paragraph("<strike>$3,497</strike> stand alone", S["price_detail"])],
-    [Paragraph("<b>Recommended Ad Spend (optional)</b>", S["price_main"]),
-     Paragraph("$3,000–$8,300/mo", S["price_main"])],
-    [Paragraph("Goes to Google/LSA — not to SMB Team. Not part of the package above.", S["price_detail"]),
+    [Paragraph("<b>Coach Essentials Plus</b>", S["price_main"]),
+     Paragraph("$2,497/mo", S["price_main"])],
+    [Paragraph("Coaching on hiring, systems, and workflow — the exact category discussed on the call. Stand-alone (no marketing bundle).", S["price_detail"]),
+     Paragraph("", S["price_detail"])],
+    [Paragraph("<b>AI Workforce Pro &ndash; Starter (1 user)</b>", S["price_main"]),
+     Paragraph("$350/mo", S["price_main"])],
+    [Paragraph("Intake qualification, case updates, email drafting.", S["price_detail"]),
      Paragraph("", S["price_detail"])],
 ]
 pt = Table(price_data, colWidths=[4.5 * inch, 1.7 * inch])
@@ -304,7 +304,7 @@ pt.setStyle(TableStyle([
 ]))
 story.append(pt)
 story.append(Paragraph(
-    "Total: $2,600/mo + optional $3,000–$8,300 ad spend  |  Save $897/mo by bundling  |  1.6%–5.4% of stated $500K goal (well under 35% cap)",
+    "Total: $2,847/mo  |  Stand-alone pricing, no marketing bundle  |  1.4% of stated $500K goal (well under 35% cap)  |  LSA/PPC comped by Randy whenever she opts in — not shown above",
     S["savings"]))
 
 # ── Build ──
