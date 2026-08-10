@@ -1,0 +1,177 @@
+FERRELL LAW FIRM — SECTION 11 WORKINGS
+====================================================================
+
+REVENUE CORRECTION (per package_decision.json confidence: "low")
+--------------------------------------------------------------------
+- package_decision.json estimated revenue at $570,000 sourced from a generic
+  HubSpot band ("$180K - $960K" midpoint), flagged confidence "low."
+- The research notes' transcript extraction contain a more specific,
+  transcript-sourced figure that supersedes the HubSpot estimate: "Annual
+  revenue: Highly inconsistent historically, ranging $100k-$700k/year.
+  Current year (2026) projected at $600k-$650k."
+- CORRECTION APPLIED: Use $600K-$650K (effective midpoint ~$625K) as the
+  effective revenue instead of the $570K HubSpot estimate.
+- IMPACT ON TIER OUTCOME: None. Both figures land in the same eligibility
+  bands:
+    - Marketing: Personal Injury practice area forces a Starter-tier floor
+      regardless of exact revenue (Essentials is hidden outright for PI).
+      $625K also independently falls within the $500K-$1M Starter band.
+    - Coaching: $625K falls within the $400K-$1M Elite Coach Plus band,
+      same band the original $570K estimate landed in.
+  Tier selection is UNCHANGED by this correction — documented here per
+  the "if confidence is low, document any correction" instruction.
+
+TRANSCRIPT-STATED NEED OVERRIDE CHECK (all three ruled out)
+--------------------------------------------------------------------
+1. Call-purpose override: Does not apply. Call was standard marketing/
+   growth discovery covering lead gen, intake, team, and profit pillars —
+   not a Fractional CTO/AI or pure coaching/ops engagement.
+2. Existing-vendor override: Does not apply. No active or recent
+   marketing/SEO/ad/AEO vendor engagement stated. The $2.5k Wix site is a
+   self-directed DIY build with "no SEO plan" — not an agency engagement.
+3. Budget-reality override: Does not apply. No budget concerns stated
+   regarding SMB Team's own pricing. The only financial-uncertainty
+   comment in the transcript concerns affording the future paralegal
+   hire, not SMB Team's engagement cost.
+
+PACKAGE SELECTION (from package_decision.json, confidence "low" —
+cross-checked against research notes per above; no correction needed
+beyond the revenue documentation above)
+--------------------------------------------------------------------
+Marketing Package: Full Service Marketing — Starter
+  - Bundled price: $4,997/mo
+  - Stand-alone price: $5,697/mo
+  - Savings: $700/mo
+
+Non-Marketing Package: Elite Coach Plus
+  - Bundled price: $3,200/mo
+  - Stand-alone price: $3,497/mo
+  - Savings: $297/mo
+
+Legal AI Workforce (LAW): None recommended.
+  - Firm is solo with no support staff — LAW requires minimum 1-2 staff
+    to engage with implementation. Revenue is also right at the edge of
+    the $500K floor, but the solo/no-staff rule is the disqualifier.
+
+Total Monthly Investment (bundled): $4,997 + $3,200 = $8,197/mo
+Total Savings (stand-alone minus bundled, summed): $700 + $297 = $997/mo
+
+35% CAP CHECK: $8,197/mo management fees + $7,500-$20,000/mo ad spend on
+$600K-$650K annual revenue (~$50,000-$54,167/mo) = 31%-56% of monthly
+revenue depending on ad spend level chosen. At conservative ad spend
+($7,500), total = $15,697/mo = ~29-31% of monthly revenue — within cap.
+At aggressive ad spend ($20,000), total = $28,197/mo = ~52-56% of
+monthly revenue — this is presented as the upper end of a range, not a
+mandatory spend level; conservative anchors the recommendation within
+the cap.
+
+AD SPEND — PRACTICE AREA: Accident/Injury (General), Kansas City MO
+(Tier 4 mid-size market, multiplier 1.0x)
+--------------------------------------------------------------------
+Conservative: $7,500/mo (channel minimums for Accident/Injury General,
+PI floor also considered)
+Aggressive: $20,000/mo (Starter tier ad spend cap — capped here rather
+than upgrading tiers, since revenue ($600K-$650K) does not support the
+Growth tier's $1M-$2M floor; if 20%-rule/reverse-math validation implied
+a higher number, it is capped at $20,000 per Starter tier ad spend cap
+rather than exceeding it)
+
+Close rate: 15% (not stated on call — default applied, disclosed)
+Average case value: $6,500 (midpoint of PI practice-area default range
+$5K-$8K — not stated on call, disclosed as a default)
+
+CONSERVATIVE SCENARIO ($7,500/mo ad spend):
+  - Blended CPL (with 20% cushion applied): ~$300
+  - Estimated leads/mo: ~25
+  - Estimated cases/mo (25 x 15% close rate): ~3-4 cases
+  - Estimated monthly revenue (3.75 cases x $6,500): ~$24,000
+  - Return multiple: ~3.2x
+
+AGGRESSIVE SCENARIO ($20,000/mo ad spend):
+  - Blended CPL (no cushion): ~$220
+  - Estimated leads/mo: ~91
+  - Estimated cases/mo (91 x 15% close rate): ~13-14 cases
+  - Estimated monthly revenue (13.6 cases x $6,500): ~$88,500
+  - Return multiple: ~4.4x
+
+Both figures are labeled as estimates in the client report, based on
+industry averages, disclosed practice-area default case value, and
+disclosed default close rate.
+
+DBM STATEMENT FOR BLOCK 1
+--------------------------------------------------------------------
+Andrew Ferrell's dominant buying motive is direct from the transcript:
+"Gain more time for family, investments, and ministry work." He is
+currently capped at 7 cases while working only 10-15 hrs/wk because
+administrative and intake work crowds out high-value legal work. His
+growth plan — predictable leads, then hiring an assistant, then scaling
+to 20 cases — is explicitly in service of freeing his time for family,
+investing, and ministry, not pure revenue maximization. This is DBM
+category (1): a firm that runs itself so the owner has more time.
+
+Block 1 formula: "We help solo personal injury attorneys get a
+predictable flow of qualified PI leads so they can build a firm that
+runs without consuming every hour of their week — freeing up time for
+family, investments, and ministry."
+
+QUICK WIN OPPORTUNITIES (6+, across all four pillars)
+--------------------------------------------------------------------
+1. [Lead Gen / Quick Win] No Google Business Profile — Ferrell Law Firm
+   has zero GBP presence in Kansas City, MO. Competitor: McShane & Brady,
+   LLC (122 reviews, 4.6 rating) actively appears in local search.
+   Opportunity: Standing up a GBP is the single fastest path to
+   appearing in the local map pack for "personal injury lawyer Kansas
+   City MO."
+
+2. [Lead Gen / Quick Win] Zero online reviews on any platform — Ferrell
+   has 0 verifiable reviews vs. Foster Wallace, LLC's 243 reviews (4.6
+   rating, $1B+ in career settlements marketed). Opportunity: A basic
+   review generation system converts satisfied referral clients into
+   public proof, directly competing with entrenched local brands.
+
+3. [Lead Gen / Long-Term Play] No local directory presence — no Justia,
+   FindLaw, Yelp, LawInfo, or Super Lawyers listing; the one Avvo match
+   uses the wrong city (Kearney, MO) and lists no practice area.
+   Opportunity: Fixing NAP consistency and building out directory
+   presence closes an entire visibility channel competitors already
+   dominate (Dickerson Oxton has active directory presence across
+   FindLaw and Yelp).
+
+4. [Lead Gen / Long-Term Play] Website mid-build with no SEO plan — the
+   new $2.5k Wix site has placeholder "Lorem ipsum" copy and no CTA
+   above the fold. Opportunity: Building the site out with real content,
+   attorney credibility, and a clear call to action before launch
+   prevents wasted traffic once marketing begins.
+
+5. [Intake / Quick Win] Contact form buried at the bottom of the page,
+   no CTA above the fold. Opportunity: Moving a clear call-to-action
+   above the fold and shortening the path to contact will convert more
+   of the traffic the firm already gets.
+
+6. [Team / Long-Term Play] Solo practice, capped at 7 cases while
+   working only 10-15 hrs/week because admin work consumes capacity.
+   Opportunity: A trained intake/assistant hire (already being
+   considered) paired with predictable lead flow is what allows scaling
+   to 20 cases without the owner personally handling every step.
+
+7. [Profit / Quick Win] Revenue has swung $100K-$700K year to year with
+   no stated system for financial visibility; the goal is a specific net
+   profit target ($250K-$350K), not just top-line growth. Opportunity:
+   Coaching-driven profit planning turns an inconsistent, referral-driven
+   income into a plannable number tied to case volume and cost per case.
+
+FIRST 90 DAYS (3-5 bullets)
+--------------------------------------------------------------------
+1. Launch Google Search ads and stand up a Google Business Profile to
+   start generating a predictable, non-referral lead stream from day one.
+2. Finish the in-progress Wix website build — remove placeholder copy,
+   add a clear above-the-fold call to action, and build out PI
+   practice-area content before ad traffic is sent to it.
+3. Kick off Elite Coach Plus coaching to build a profit plan around the
+   stated $250K-$350K net profit goal and set the framework for the
+   planned paralegal-level hire.
+4. Build out core local directory listings (Justia, FindLaw, Avvo
+   correction) to establish NAP consistency and close the visibility gap
+   against established competitors.
+5. Begin a simple review-generation process so the firm's first verified
+   reviews start appearing before ad spend scales up.
