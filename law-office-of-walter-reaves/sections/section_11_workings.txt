@@ -1,0 +1,155 @@
+SECTION 11 WORKINGS — Law Office of Walter Reaves, PC
+========================================================
+
+OVERRIDE ANALYSIS (read this before the pricing — it changes the recommendation)
+---------------------------------------------------------------------------------
+
+1) REVENUE CORRECTION — package_decision.json is not usable as-is.
+   package_decision.json used a HubSpot-derived estimate of $570,000/year (band
+   "$180K - $960K", confidence: low). The research notes' own transcript
+   extraction states a specific, explicit figure that supersedes the HubSpot
+   band: "Dropped from ~$600k to ~$250k/year following a failed merger" — current
+   run rate is ~$250,000/year, not $570,000. This is a stated transcript fact, not
+   an estimate, and it puts the firm in a materially different eligibility band
+   than the decision file assumed ($250K-$400K non-marketing band, not $400K-$1M).
+   Team size is also corrected: research notes state 2 (Walter + one part-time
+   legal assistant), not the decision file's default of 3. This does not change
+   which non-marketing tier applies (Elite Coach is "Any" team size at this
+   revenue band) but is noted for accuracy.
+
+2) CALL-PURPOSE OVERRIDE — APPLIES.
+   The research notes are explicit: "Stated call focus / product interest: NOT a
+   standard marketing/growth discovery call... explicitly framed around a
+   Fractional CTO / AI automation engagement" — SMB Team pitched AI Workforce
+   ($350/mo/user per the transcript) plus an AI Visibility Report (52/100). The
+   client did not ask about marketing on this call.
+
+3) EXISTING-VENDOR OVERRIDE — DOES NOT APPLY.
+   No agency or vendor contract exists. Current ~$800/mo spend is self-managed
+   SEO/referral activity, not a signed engagement with a third party.
+
+4) BUDGET-REALITY OVERRIDE — APPLIES.
+   Explicit, stated budget crisis: "A failed merger cut firm revenue from ~$600k
+   to ~$250k/year, creating a budget crisis," and "Budget: Extremely tight;
+   current marketing spend is ~$800/mo." Per the override rule, the
+   revenue-implied tier must not be presented; the lowest-cost package
+   addressing the stated need should lead instead.
+
+5) THE CENTRAL TENSION AND HOW IT WAS RESOLVED.
+   The client's stated interest (AI Workforce / Legal AI Workforce) is EXCLUDED
+   by SMB Team's own eligibility rule: "Do NOT recommend LAW if revenue under
+   $500K." Actual current revenue (~$250K) is under that floor. So the product
+   the call was actually about cannot be recommended today, regardless of the
+   override. Resolution: recommend Elite Coach ONLY for Phase 1 (fits the
+   $250K-$400K revenue band, clears the $2,497/mo minimum MRR floor, and is
+   explicitly justified as a single-product recommendation per the rule "a
+   single-product recommendation is acceptable only when the transcript clearly
+   shows the firm's needs are best served by one service category" — true here:
+   the actual stated need is operational/intake stabilization, which coaching
+   addresses directly). Legal AI Workforce — AI Essentials is placed in Phase 3
+   of the roadmap, to be added once annual revenue clears the $500K floor. This
+   directly answers the client's original AI Workforce interest once the firm is
+   actually eligible for it, rather than recommending it now in violation of the
+   revenue floor. No Full Service Marketing package is recommended in Phase 1 —
+   the 35% total-spend cap ($250K/yr ÷ 12 × 35% ≈ $7,292/mo) cannot absorb
+   Elite Coach ($2,600/mo) + any marketing tier ($3,497/mo minimum) + any ad
+   spend (absolute floor $3,000/mo) without blowing past the cap and past the
+   client's own stated budget reality. Marketing (starting with reactivating the
+   already-familiar, pay-per-lead Local Service Ads) is placed in Phase 2, once
+   the firm has stabilized.
+
+MANDATORY PRICE LOOKUP (character-checked against .claude/commands/audit-write.md)
+------------------------------------------------------------------------------------
+- Marketing package selected: NONE (deferred to Phase 2 per Budget-Reality Override — no
+  marketing package price applies to this proposal)
+- Non-marketing package selected: Elite Coach
+  - Bundled price (from table): $2,600/mo
+  - Stand-alone price (from table): $3,497/mo
+  - Savings (stand-alone minus bundled): $897/mo
+- Legal AI Workforce (LAW) package selected: none (revenue under $500K floor — deferred to
+  Phase 3 once eligible; AI Essentials bundled price for future reference: $1,597/mo)
+- AI Avatar / Video Growth add-on selected: none — not applicable, no active marketing
+  engagement and no expressed interest in video/social content
+- Total monthly investment (sum of all bundled/recurring prices): $2,600/mo
+- Total savings (sum of all savings): $897/mo
+
+DBM STATEMENT (Block 1)
+------------------------
+Walter Reaves built a 45-year criminal defense practice in Waco, board-certified in
+Criminal Law and Criminal Appellate Law — but a failed merger cut his revenue nearly in
+half, from about $600,000 to about $250,000 a year, and left him and one part-time
+assistant trying to catch every call personally. His dominant buying motive right now is
+not growth for growth's sake — it is stabilization: stopping the revenue bleed, rebuilding
+predictable income, and getting enough structure in place that the practice does not
+depend entirely on him personally answering every phone call.
+
+CONSERVATIVE / AGGRESSIVE AD SPEND — FULL ROI PROJECTION (internal reference only;
+NOT presented as a Phase 1 spend commitment in the client-facing HTML — see Phase 2)
+--------------------------------------------------------------------------------------
+Revenue goal used: $500,000/year (2x current run rate, per default rule — the pre-merger
+~$600,000 figure is noted as a possibly more resonant framing but $500K is the number used
+for all reverse-math calculations below, per the standard default).
+
+CONSERVATIVE — $2,000/mo (Criminal Defense LSA minimum; reactivating what the firm already
+ran before pausing post-merger):
+  - Blended CPL (LSA, mid $160, +20% conservative cushion) = $192
+  - Leads = $2,000 / $192 ≈ 10.4 leads/month
+  - Cases = 10.4 × 15% close rate ≈ 1.6 cases/month
+  - Revenue = 1.6 × $4,000 avg case value ≈ $6,250/month
+  - Return = $6,250 / $2,000 ≈ 3.1x
+
+AGGRESSIVE — $12,000/mo (20% rule: $500,000 × 20% ÷ 12 = $8,333; Waco = Tier 4 market,
+1.0x multiplier, no Spanish-campaign multiplier applied since not stated as needed;
+reverse-math check: ($500,000/12) ÷ $4,000 avg case value ≈ 10.4 target cases/month ÷ 15%
+close rate ≈ 69.4 leads/month × ~$170 blended Google Search/LSA CPL ≈ $11,800 — reverse
+math is higher than the 20%-rule figure, so per rule 5 the higher number governs; rounded
+to $12,000/mo):
+  - Blended CPL (Google Search + LSA, mid, no cushion) ≈ $170
+  - Leads = $12,000 / $170 ≈ 70.6 leads/month
+  - Cases = 70.6 × 15% ≈ 10.6 cases/month
+  - Revenue = 10.6 × $4,000 ≈ $42,400/month
+  - Return = $42,400 / $12,000 ≈ 3.5x
+
+Client-facing HTML presents this as a simplified Phase 2 range ($2,000–$5,000/mo to start,
+1–3 cases, $4,000–$12,000/mo estimated revenue) rather than the full conservative/aggressive
+breakdown above, since no marketing package is being sold in Phase 1 and the ad-spend block
+is explicitly framed as a near-term "once stabilized" consideration, not a current ask.
+
+QUICK WIN OPPORTUNITIES IDENTIFIED (7 — exceeds the 6 minimum, all 4 pillars covered)
+----------------------------------------------------------------------------------------
+1. [Lead Gen / Quick Win] Reactivate Local Service Ads — why: pay-per-lead, appears above
+   all other search results, and the firm already ran it before pausing post-merger.
+   No named competitor (LSA competitor presence unconfirmed per research notes).
+2. [Lead Gen / Long-Term] Build Temple/Killeen/Bell County landing pages — why: the site's
+   "Top DUI Lawyer in Temple" badge and second branded phone line show existing client draw
+   with no page built to capture it. No named competitor for this specific gap.
+3. [Lead Gen / Long-Term] Refresh the blog and content calendar — why: stale since June
+   2024. Competitor: Dunnam & Dunnam (dedicated McLennan County landing pages).
+4. [Intake / Quick Win] Give the overloaded assistant backup before hours are lost — why:
+   an estimated 5-6 cases/month ($20K-24K) lost to missed calls. No named competitor.
+5. [Intake / Quick Win] Build a follow-up process for leads who don't sign immediately —
+   why: no documented sequence exists today. No named competitor.
+6. [Team / Long-Term] Build accountability structure beyond Walter — why: every decision
+   runs through one person; no backup exists. No named competitor.
+7. [Profit / Quick Win] Get real cost-per-case visibility post-merger — why: no tracking
+   exists to guide a deliberate rebuild. No named competitor.
+
+FIRST 90 DAYS (deviates from the standard "lead with ads first" template default — see note)
+-----------------------------------------------------------------------------------------------
+NOTE: audit-write.md's default guidance for Block 5 is "lead with launching ads first, then
+website work." That default assumes a marketing package is being recommended. Because the
+Budget-Reality and Call-Purpose overrides exclude a Phase 1 marketing package for this firm,
+leading with ads would contradict the override rationale. First 90 days instead leads with
+coaching kickoff and intake triage, consistent with the single-product (Elite Coach)
+recommendation:
+1. Elite Coach kickoff — first session focused on stabilizing intake and defining a
+   follow-up process for leads who don't sign on the first call.
+2. Build a simple, no-cost workflow so Walter and the assistant both know exactly who
+   follows up with which lead and when — closing the gap costing an estimated $20K-24K/month.
+3. Set up basic monthly financial tracking so revenue and case profitability are visible in
+   real numbers.
+4. Evaluate reactivating Local Service Ads at a small, low-risk budget once intake is stable
+   enough to handle the calls it generates.
+5. Revisit the AI Workforce / Legal AI Workforce conversation once revenue trends back
+   toward the $500K threshold, so it's a fit the firm can sustain rather than a stretch
+   taken on too early.
