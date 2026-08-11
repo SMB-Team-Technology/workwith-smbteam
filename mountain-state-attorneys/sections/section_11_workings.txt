@@ -1,0 +1,229 @@
+MOUNTAIN STATE ATTORNEYS — SECTION 11 WORKINGS
+====================================================================
+
+REVENUE CORRECTION (per package_decision.json confidence: "medium")
+--------------------------------------------------------------------
+- package_decision.json estimated revenue at $180,000 sourced from a generic
+  HubSpot band ("$0 - $180K"), flagged confidence "medium."
+- The research notes' transcript extraction (Step 9) contains a specific,
+  transcript-sourced figure that supersedes the HubSpot estimate: "Annual
+  revenue: ~$400k projected for 2026, up from ~$250k in 2024."
+- CORRECTION APPLIED: Use the transcript-stated $250K (2024 actual) to
+  $400K (2026 projection) range as the effective revenue instead of the
+  $180K HubSpot estimate. Treated as landing in the "$250K-$400K" band
+  since the $400K figure is an in-flight projection, not a closed year.
+- IMPACT ON TIER OUTCOME: None on tier selection itself.
+    - Marketing: Multiple practice areas (8 listed on the website) hide
+      Essentials regardless of exact revenue — both $180K and $250K-$400K
+      fall under "$750K, multiple practice areas" → Starter tier either way.
+    - Coaching: $250K-$400K falls within the "$250K-$400K: Elite Coach"
+      band — same package the original $180K estimate landed on (the
+      $180K figure would also default to Elite Coach as the lowest tier).
+  Tier selection is UNCHANGED by this correction. What DOES change: the
+  "Revenue under $250K: confirm client has funds to cover 4 months of
+  services" eligibility filter no longer applies, since actual revenue is
+  above $250K per the transcript.
+
+TRANSCRIPT-STATED NEED OVERRIDE CHECK
+--------------------------------------------------------------------
+1. Call-purpose override: APPLIES. Research notes Step 9 explicitly state:
+   "Stated call focus / product interest: NOT standard marketing/intake
+   growth... The call was explicitly framed around a phased coaching-first
+   engagement — SMBTeam proposed starting with business coaching (systems,
+   hiring/onboarding blueprint, intake process replication) to build a
+   scalable foundation BEFORE scaling marketing spend... Any proposal
+   materials should lead with the coaching/ops engagement, not a marketing
+   package." Per the override rule, the recommendation leads with the
+   non-marketing (coaching) package. A marketing package is still included
+   because the research notes independently document a real marketing/
+   lead-gen gap (zero local-pack visibility across 3 practice areas, paused
+   LSAs, single-digit reviews vs. 100+ for named competitors) — but it is
+   presented SECOND in Block 2, and the Growth Roadmap phases this
+   accordingly (coaching-led Phase 1, marketing spend ramps in Phase 2).
+2. Existing-vendor override: Does not apply. No active/recent third-party
+   marketing/SEO/ad vendor engagement stated — only the firm's own
+   self-managed, now-paused Google LSA spend.
+3. Budget-reality override: Reinforces (does not independently trigger a
+   downgrade, since Starter is already the eligibility floor given multiple
+   practice areas hide Essentials). LSA spend was paused specifically "to
+   manage budget" — real, stated budget sensitivity at this revenue stage.
+   This supports leading with the lower-cost coaching package and phasing
+   in ad spend gradually rather than front-loading both packages at full
+   aggressive ad spend from day one.
+
+PACKAGE SELECTION (cross-checked against research notes; tier selection
+unchanged from package_decision.json, order changed per override #1)
+--------------------------------------------------------------------
+Non-Marketing Package (LEAD, per call-purpose override): Elite Coach
+  - Bundled price: $2,600/mo
+  - Stand-alone price: $3,497/mo
+  - Savings: $897/mo
+
+Marketing Package (SECOND, per call-purpose override): Full Service
+Marketing — Starter
+  - Bundled price: $4,997/mo
+  - Stand-alone price: $5,697/mo
+  - Savings: $700/mo
+
+Legal AI Workforce (LAW): None recommended.
+  - Revenue ($250K-$400K) is under the $500K LAW floor, and the firm is
+    solo with only one support staff member (paralegal) — does not clear
+    the "minimum 1-2 staff to engage with implementation" bar reliably at
+    this stage. Not recommended in this proposal.
+
+Fractional CFO/COO (FCOO/FCFO): Not recommended. Revenue is under the
+$500K floor that hides all Fractional CFO/COO products per the eligibility
+filters.
+
+Total Monthly Investment (bundled): $2,600 + $4,997 = $7,597/mo
+Total Savings (stand-alone minus bundled, summed): $897 + $700 = $1,597/mo
+
+35% CAP CHECK: $7,597/mo management fees + $5,500-$11,500/mo ad spend on
+$250K-$400K annual revenue (~$20,833-$33,333/mo) = roughly 39%-63% of
+monthly revenue at the low end of the revenue range, or 24%-38% at the
+high end. This is tight against the 35% cap, especially early in Phase 1
+before revenue grows toward the $400K projection. This is disclosed here
+so sales can address it directly: the roadmap phases ad spend in gradually
+(Phase 1 keeps ad spend minimal/foundational; ad spend ramps toward the
+aggressive figure in Phase 2 as revenue and hiring catch up), which keeps
+the early-stage spend closer to the cap rather than over it.
+
+AD SPEND — PRACTICE AREAS: Family Law, Criminal Defense, Estate Planning
+(the three practice areas actually researched for local ads/SEO), Salt
+Lake City, UT (Tier 4 mid-size market, multiplier 1.0x — not on the
+Tier 1/2/3 named-city lists)
+--------------------------------------------------------------------
+Conservative: $5,500/mo — the highest single practice-area channel minimum
+among the three (Criminal Defense Google PPC min $5,500; Family Law and
+Estate Planning are both $3,500), used as the conservative floor for a
+firm entering/re-entering paid ads with a constrained budget.
+
+Aggressive: 20% rule = Revenue Goal ($1M+, explicitly stated) x 20% / 12
+= $16,667/mo. Geo multiplier: Salt Lake City is not on the Tier 1/2/3
+named-city lists, so Tier 4 (most mid-size cities) applies at 1.0x =
+$16,667. No Spanish campaign needed (not stated). Minus marketing
+management fee ($4,997) = $11,670/mo, rounded to $11,500/mo. Reverse-math
+validation (see close-rate note below) produced a lower required-spend
+figure (~$2,600-$3,000/mo), so the higher 20%-rule figure is used per the
+"use whichever is higher" instruction. Checked against Starter tier's
+$20,000 ad spend cap: $11,500 is well under the cap, so Starter remains
+the correct tier (no upgrade needed).
+
+CLOSE RATE — DOCUMENTED DEVIATION FROM DEFAULT RULE: The transcript states
+a 96% close rate, but research notes Step 9 explicitly qualify it as
+"Kotter's personal close rate, which SMBTeam proposes to replicate across
+a future team" — i.e., it is an unproven, referral-quality, one-attorney
+number, not a demonstrated conversion rate on cold, marketing-generated
+leads. Applying 96% literally to the ad-spend ROI math would produce
+40-100+ "cases per month" from a $5,500-$11,500 ad budget — far beyond
+what a 1-attorney, 1-paralegal firm could service, and would set an
+unrealistic sales expectation. For the ad-spend ROI projection ONLY, the
+standard 15% default close rate is used instead, consistent with the rule
+"Cases = Leads x Close Rate (from transcript, or default 15%)" applied in
+the spirit of "use the number that reflects marketing-lead conversion,"
+since 96% is not yet demonstrated on that lead type. The 96% figure is
+still used prominently elsewhere in the report (Section 05, 07-09, and
+Section 11 package "why") as the aspirational, team-replication benchmark
+it is explicitly framed as in the transcript. Flagging this for sales
+visibility — worth confirming with Josh directly on the call.
+
+Average case value: $3,500 (blended default across Family Law $3K-$5K
+mid $4K, Criminal Defense $3K-$5K mid $4K, and Estate Planning $1.5K-$3K
+mid $2.25K — average of the three midpoints = ~$3,417, rounded to $3,500).
+Not stated on the call — explicitly flagged as a discovery item in the
+research notes; disclosed here and in the client report as a default.
+
+Blended CPL: Weighted average across Google Search and LSA for the three
+practice areas (~$106 no cushion, ~$127 with 20% cushion for conservative).
+
+CONSERVATIVE SCENARIO ($5,500/mo ad spend):
+  - Blended CPL (with 20% cushion applied): ~$127
+  - Estimated leads/mo: ~43
+  - Estimated cases/mo (43 x 15% close rate): ~6-7 cases
+  - Estimated monthly revenue (6.5 cases x $3,500): ~$22,750
+  - Return multiple: ~4.1x
+
+AGGRESSIVE SCENARIO ($11,500/mo ad spend):
+  - Blended CPL (no cushion): ~$106
+  - Estimated leads/mo: ~108
+  - Estimated cases/mo (108 x 15% close rate): ~15-17 cases
+  - Estimated monthly revenue (16 cases x $3,500): ~$56,000
+  - Return multiple: ~4.9x
+
+Client-facing figures (ranges): Ad spend $5,500-$11,500/mo. Case value
+$3,500 (blended default). Cases/mo 6-17. Revenue from ads $21,000-$59,500.
+Both figures are labeled as estimates in the client report, based on
+industry averages, disclosed default case value, and the disclosed 15%
+default close rate (see close-rate deviation note above).
+
+DBM STATEMENT FOR BLOCK 1
+--------------------------------------------------------------------
+Joshua Kotter's dominant buying motive is direct from the transcript:
+scale and dominate / build an empire. He wants to grow revenue from a
+projected ~$400K (2026) to $1M+ within 12 months, shift from 100%
+casework to 70-80% business development (hiring, managing, handling only
+10-20 cherry-picked cases himself), and long-term (40-year horizon) build
+toward 5,000-10,000 attorneys globally. This is not a "buy back my time"
+or "grow and sell" motive — it is explicitly about building an
+organization that can scale far beyond him personally.
+
+Block 1 formula: "We help ambitious solo attorneys with a proven close
+rate get the systems, team, and predictable lead flow they need to scale
+so they can shift from doing every case themselves to building the
+multi-attorney firm they've envisioned."
+
+QUICK WIN OPPORTUNITIES (7, across all four pillars)
+--------------------------------------------------------------------
+1. [Lead Gen / Quick Win] Google LSAs — the firm's only measured paid
+   channel — have been paused for 5+ weeks to manage budget. No named
+   competitor (internal channel gap). Opportunity: Resuming and optimizing
+   LSAs at the previously measured ~$190 cost per quality lead rebuilds a
+   predictable channel without starting from zero.
+
+2. [Lead Gen / Quick Win] Zero local-pack visibility across Family Law,
+   Criminal Defense, and Estate Planning (0 of 9 searches). Competitor:
+   Susanne Gustin, Attorney at Law — 290 Birdeye reviews / 101 Avvo
+   reviews, 4.8-5.0 stars. Opportunity: Building out GBP, reviews, and
+   directory presence closes a visibility gap competitors are actively
+   exploiting.
+
+3. [Lead Gen / Long-Term Play] ~6 landlord-tenant calls/day are declined,
+   not monetized. No named competitor (internal opportunity). Opportunity:
+   A referral-fee pipeline turns an existing "no" into recurring revenue
+   with no new marketing spend.
+
+4. [Lead Gen / Long-Term Play] Thin directory/review presence — Avvo
+   profile "Not Yet Reviewed," 0.0 rating, no practice areas listed.
+   Competitor: Intermountain Legal, P.C. — 169 Birdeye reviews, 4.8 stars,
+   overlapping both family law and criminal defense. Opportunity: Basic
+   review generation and directory cleanup builds public proof to match
+   Josh's actual 96% close rate.
+
+5. [Intake / Quick Win] Contact form not above the fold; no live chat.
+   No named competitor. Opportunity: Moving the CTA above the fold and
+   adding after-hours coverage converts more of the traffic already
+   arriving.
+
+6. [Team / Long-Term Play] No hiring/onboarding blueprint despite Josh
+   actively interviewing attorneys. No named competitor. Opportunity: A
+   documented blueprint, paired with intake-process replication, is what
+   lets a new hire close anywhere near Josh's rate.
+
+7. [Profit / Quick Win] No documented average case value or cost-per-case
+   tracking. No named competitor. Opportunity: Coaching-driven profit
+   planning turns the $1M goal into a plannable number tied to case mix
+   and cost per case.
+
+FIRST 90 DAYS (5 bullets)
+--------------------------------------------------------------------
+1. Kick off Elite Coach coaching to build the hiring/onboarding blueprint
+   and begin documenting Josh's intake process for future team replication.
+2. Resume Google Local Service Ads at a controlled budget, rebuilding the
+   firm's only previously-measured lead channel (~$190 cost per quality
+   lead in this market).
+3. Stand up a Google Business Profile and begin a review-generation
+   process across Family Law, Criminal Defense, and Estate Planning.
+4. Correct the Avvo profile (currently "Not Yet Reviewed," no practice
+   areas listed) and build out core directory/NAP consistency.
+5. Set up a simple referral-fee pipeline for the ~6 daily landlord-tenant
+   calls the firm currently declines.
