@@ -1,0 +1,222 @@
+TRIAS MATHIS PA — SECTION 11 WORKINGS (INTERNAL — NOT FOR CLIENT REPORT)
+================================================================
+
+TRANSCRIPT-STATED NEED OVERRIDE CHECK (per audit-write.md)
+-----------------------------------------------------------
+1. Call-purpose override: Does NOT apply. Research notes Step 9 state explicitly:
+   "Stated call focus / product interest: standard marketing/growth discovery — this
+   call was specifically about diversifying lead generation (ChatGPT/AEO ads plus a
+   broader digital package) to reduce referral dependency; not a Fractional CTO,
+   AI-ops, or coaching engagement." Marketing + coaching recommendation is correct.
+2. Existing-vendor override: Does NOT apply. Research notes: "Existing marketing/SEO/
+   ad vendor engagements: none stated." Prior Google Ads spend was discontinued, not
+   active.
+3. Budget-reality override: Does NOT apply. Trias did not state a budget ceiling or
+   inability to spend — he asked for a concrete ROI proposal before committing, which
+   is a proof-of-ROI requirement, not a budget constraint. Current $17K-$19K/month
+   traditional marketing spend demonstrates real budget capacity.
+
+None of the three overrides trigger. Standard marketing + coaching eligibility logic
+applies, per package_decision.json's baseline approach.
+
+REVENUE CORRECTION — WHY THIS DEPARTS FROM package_decision.json
+-----------------------------------------------------------------
+package_decision.json flagged confidence "medium" and stated "Revenue not in research
+notes — sourced from HubSpot ... $1,980,500." This is incorrect: the research notes
+DO state revenue directly, in Step 9 Transcript Extraction: "Annual revenue: ~$1M
+annually (collected fees)" with a stated revenue GOAL of "$2.5M annual revenue."
+Per the transcript-first principle, the transcript-stated figure (~$1,000,000) is
+ground truth and overrides the HubSpot-derived estimate ($1,980,500).
+
+Revenue used for all calculations below: $1,000,000/year (~$83,333/month).
+Revenue GOAL used for 20% rule and cap-support check: $2,500,000/year (~$208,333/month).
+Team size used: 7-8 total (2 attorneys + 4-5 support staff) — NOT 3 as
+package_decision.json assumed (it appears to have only counted attorneys).
+
+Despite the corrected revenue figure landing at the Starter/Growth boundary
+($1,000,000 exactly = bottom of the Growth band per the numeric reference table),
+the marketing tier and coaching selections in package_decision.json both hold up
+under the corrected numbers — see reasoning below. No correction needed to the
+final package selection, only to the stated rationale.
+
+MARKETING PACKAGE SELECTION
+----------------------------
+Full Service Marketing — Growth
+  Bundled price (from table): $7,497/mo
+  Stand-alone price (from table): $8,997/mo
+  Savings: $1,500/mo
+
+Reasoning:
+- Revenue at $1,000,000/year falls at the bottom of the Growth band ($1M-$2M) per
+  the numeric reference table (1000000-1999999 = Growth).
+- Personal Injury practice area independently requires minimum tier Starter (Essentials
+  is hidden for PI regardless of revenue).
+- Multi-location (4 offices: Fort Myers, Destin, Miami, Jacksonville) and multi-practice-
+  area (5 areas) independently disqualify Essentials regardless of revenue.
+- Boundary rule check: 20% rule using revenue GOAL ($2.5M) produces a required ad
+  budget of ~$55,000/month after subtracting the Growth management fee (see Ad Spend
+  Calculation below) — this exceeds the Starter tier's $20,000 ad spend cap by a wide
+  margin, confirming Growth (cap $50,000) is the correct tier, not Starter.
+- Dominate tier is not eligible (revenue under $2,000,000), so Growth is also the
+  ceiling — the aggressive ad spend figure is capped at Growth's $50,000 max rather
+  than escalated further.
+
+NON-MARKETING PACKAGE SELECTION
+---------------------------------
+Elite Coach Plus
+  Bundled price (from table): $3,200/mo
+  Stand-alone price (from table): $3,497/mo
+  Savings: $297/mo
+
+Reasoning:
+- Revenue is $1M+, which opens both the "Under 5 team" Elite Coach Plus row and the
+  "5+ with dedicated staff" Master's Circle row.
+- Actual team size is 7-8 (clears the 5+ headcount bar), but the eligibility filter
+  "No dedicated ops, marketing, or intake team member → hide all Master's Circle
+  options" also applies: the transcript describes general support staff, not a named
+  dedicated ops/marketing/intake hire. Growth decisions, including the AEO ad
+  evaluation, were handled by Larry personally — further evidence there is no
+  dedicated marketing/ops staff member yet.
+- Master's Circle is therefore excluded on the "no dedicated staff" filter despite
+  headcount, leaving Elite Coach Plus as the correct non-Master's-Circle option for
+  a $1M+ firm. This matches package_decision.json's selection, though for a more
+  precise reason than its stated "team size defaulting to 3."
+
+TOTAL INVESTMENT
+------------------
+Total bundled: $7,497 + $3,200 = $10,697/mo
+Total savings: $1,500 + $297 = $1,797/mo
+
+AD SPEND CALCULATION
+-----------------------
+Conservative (floor, sum of channel minimums / PI hard floor):
+  Competitiveness assessment: HIGH — saturated ad space, 500+ review competitors
+  (Viles & Beckman 761, Dellutri 740, Farah & Farah 578), urgency score 8/10.
+  PI + High competitiveness hard floor = $10,000/month.
+  Conservative ad spend = $10,000/month.
+
+Aggressive (20% rule, using revenue GOAL of $2,500,000):
+  Annual marketing budget = $2,500,000 x 20% = $500,000
+  Monthly = $500,000 / 12 = $41,667
+  Geo multiplier: Fort Myers-Cape Coral DMA (~770K-800K population) = Tier 4 = 1.0x
+  Spanish modifier: PI/MVA firm requiring Spanish campaign = +50% = x1.5
+  Adjusted budget = $41,667 x 1.0 x 1.5 = $62,500/month
+  Available ad spend = $62,500 - $7,497 (Growth mgmt fee) = $55,003/month
+  Tier cap check: Growth tier max ad spend = $50,000/month. $55,003 exceeds the cap.
+  Dominate tier (cap $100,000) is not eligible — revenue is under $2,000,000.
+  Resolution: present aggressive ad spend at the Growth tier cap, $50,000/month,
+  and note internally that the uncapped calculation slightly exceeds this ceiling
+  (10% overage possible in future scoping conversations once revenue clears $2M).
+  Aggressive ad spend = $50,000/month.
+
+35% TOTAL SPEND CAP VALIDATION
+---------------------------------
+Total monthly SMB spend = management fees ($10,697) + ad spend
+
+Conservative scenario: $10,697 + $10,000 = $20,697/month
+  35% of current monthly revenue ($83,333) = $29,167 → $20,697 is 24.8% of current
+  revenue. PASSES the cap with room to spare.
+
+Aggressive scenario: $10,697 + $50,000 = $60,697/month
+  35% of current monthly revenue ($83,333) = $29,167 → $60,697 FAILS this cap
+  (73% of current revenue).
+  Per Step 7 fallback: check if GOAL revenue supports the spend at 35%.
+  35% of goal monthly revenue ($2,500,000/12 = $208,333) = $72,917 → $60,697 PASSES
+  against goal revenue (83% of that ceiling, with headroom).
+  Resolution: present the aggressive scenario with the required caveat framing:
+  "Your current revenue supports a smaller monthly investment. As Trias Mathis grows
+  toward its $2.5M goal, this investment represents a decreasing percentage of
+  revenue." This framing is used in Block 4 of section_11_next_steps.html.
+
+ESCALATION FLAG (internal only — never in client report):
+  "Ad spend over $25K — scoping approval required" (aggressive scenario is $50,000/mo)
+
+ROI PROJECTIONS
+------------------
+Practice area for CPL basis: Accident & Injury (client-facing CPL table)
+Channel mix assumption: 50% Google Search / 30% LSA / 20% Meta Retargeting
+  Google Search midpoint: $705 ($630-$780)
+  LSA midpoint: $235 ($210-$260)
+  Meta Retargeting midpoint: $90 ($80-$100)
+  Blended CPL (no cushion) = 705(.5) + 235(.3) + 90(.2) = $441
+  Blended CPL (20% cushion, conservative) = $441 x 1.20 = $529
+
+Close rate: not stated on call — default 15% per methodology.
+Case value: >$10,000 in attorney's fees per case (stated on call) — used as $10,000
+  floor; actual return could be higher.
+
+Conservative: $10,000 / $529 = 18.9 -> 19 leads/month
+  19 x 15% = 2.85 -> 3 cases/month
+  3 x $10,000 = $30,000/month revenue
+  Return = $30,000 / $10,000 = 3.0x
+
+Aggressive: $50,000 / $441 = 113.4 -> 113 leads/month
+  113 x 15% = 16.95 -> 17 cases/month
+  17 x $10,000 = $170,000/month revenue
+  Return = $170,000 / $50,000 = 3.4x
+
+Note: the aggressive scenario's projected case volume (17/month) exceeds the firm's
+explicit near-term incremental target (5 new cases/month, +$600K/year) — this is
+expected, since the aggressive scenario is sized to the full $2.5M annual goal, not
+just the incremental slice. The conservative scenario (3 cases/month, $30K/month)
+makes real progress toward the stated 5-case/$50K-month target when combined with
+existing referral flow.
+
+DBM STATEMENT (Block 1)
+--------------------------
+Larry is building a firm that runs independent of referral relationships — he used
+the phrases "future-proof the business" and "control growth" on the call, rather than
+citing a lifestyle exit or a pure revenue number. The 2.5x revenue growth ambition is
+real, but the underlying driver is predictability and control over how that growth
+happens, not dependency on referral partners' goodwill or boom/bust cycles.
+
+Formula: We help personal injury and multi-practice-area firm owners like Larry Trias
+get a steady, ownable stream of qualified cases across every practice area so they can
+build a firm that grows on its own terms — not at the mercy of referral partners.
+
+QUICK WIN OPPORTUNITIES (8 identified, minimum 6 required)
+-------------------------------------------------------------
+1. [Lead Gen] Directory & NAP cleanup — Why: Avvo (Orlando), FindLaw (2 conflicting
+   profiles), and BBB (Destin address) all show the wrong location, diluting Fort
+   Myers local authority. Competitor: n/a (internal fix). Opportunity: consolidate to
+   one accurate NAP across all directories.
+2. [Lead Gen] Google Ads launch (PI, workers' comp, insurance claims) — Why: zero
+   paid search presence across all 5 practice areas. Competitor: Viles & Beckman, GBC
+   Law (both run dedicated Fort Myers PPC landing pages). Opportunity: capture
+   uncontested high-intent search volume.
+3. [Lead Gen] Local Service Ads — Why: pay-per-lead, Google Screened trust badge,
+   sits above all other search results — a lower-risk entry point given the firm's
+   past bad PPC experience. Competitor: unconfirmed this pass (flagged for live
+   check). Opportunity: build trust and lead volume without repeating past mistakes.
+4. [Lead Gen] Spanish-language campaigns — Why: validated bilingual differentiator
+   (6/6 site testimonials are Hispanic surnames; Larry is a native Spanish speaker)
+   has never been paid to amplify. Competitor: none directly identified. Opportunity:
+   capture Hispanic-community search and social traffic in Southwest Florida.
+5. [Lead Gen] Website reinforcement (video + confirmed page speed) — Why: no video
+   content and unconfirmed PageSpeed scores sit on top of a real content asset (19
+   city landing pages) that's otherwise ready to convert. Competitor: n/a. Opportunity:
+   lift conversion on traffic the firm is about to start paying for.
+6. [Intake] Define intake process & after-hours coverage — Why: no defined process
+   or after-hours coverage was described across 4 markets. Competitor: n/a.
+   Opportunity: protect new digital lead investment from being lost the same way
+   inconsistent referral follow-up risks leads today.
+7. [Team] Delegate vendor/channel evaluation — Why: Larry personally vets every new
+   channel (e.g., the AEO ad rejection pending ROI proof). Competitor: n/a.
+   Opportunity: free up owner bandwidth as the team and lead volume scale.
+8. [Profit] Cost-per-case tracking — Why: no margin visibility across 5 practice
+   areas; $17K-$19K/month already spent with no ROI tracking. Competitor: n/a.
+   Opportunity: know which practice area is most profitable to grow first.
+
+FIRST 90 DAYS (5 bullets)
+----------------------------
+1. Launch Google Ads and Local Service Ads campaigns for personal injury, workers'
+   comp, and insurance claims in Fort Myers — the highest-intent, uncontested search
+   volume identified in this audit.
+2. Fix directory and NAP inconsistencies across Avvo, FindLaw, and BBB so local SEO
+   authority stops being diluted before new campaigns can compound it.
+3. Reinforce the website with attorney video content and confirm PageSpeed performance
+   before scaling paid traffic to it.
+4. Kick off Elite Coach Plus coaching sessions to build the delegation and
+   accountability structure Larry needs as new lead volume increases.
+5. Stand up cost-per-case tracking across all five practice areas so every ad dollar
+   can be measured against the ROI proposal Larry asked for.
