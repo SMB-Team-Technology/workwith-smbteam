@@ -92,10 +92,16 @@ WEBSITE DATA
 - Video present: [yes/no]
 - Blog present: [yes/no — last post date if yes]
 
+REVIEW-DATA VERIFICATION RULE — applies to every review count and star rating recorded below (firm and competitors)
+Tag each one with how it was obtained:
+- [confirmed via Google] — read directly off the firm's or competitor's Google Maps / Google Business Profile listing.
+- [UNCONFIRMED — sourced from <aggregator name>, not independently confirmed via Google] — used when a direct Google listing could not be reached and the number came from a third-party site instead.
+Never record a bare number with no tag. A number tagged UNCONFIRMED must never appear as a specific fact in the client-facing report (see PASS 2 rule below) — use qualitative framing instead and flag it for the sales rep to verify live before the call.
+
 GOOGLE BUSINESS PROFILE
 - GBP found: [yes/no]
-- Star rating: [actual number]
-- Total review count: [actual number — verify this live before recording]
+- Star rating: [actual number] [verification-method tag]
+- Total review count: [actual number — verify this live before recording] [verification-method tag]
 - Most recent review date: [actual date]
 - Primary category: [exact category listed]
 - Photos active: [yes/no]
@@ -113,9 +119,9 @@ Practice Area 2 (if applicable): [name]
 - Search 3 "[keyword]": firm appears [yes/no] — competitors in pack: [name, review count], [name, review count], [name, review count]
 
 COMPETITOR REVIEW COUNTS — verify every number before using it in the report
-- Competitor 1 name: [name] — review count: [actual number verified live] — star rating: [actual number]
-- Competitor 2 name: [name] — review count: [actual number verified live] — star rating: [actual number]
-- Competitor 3 name: [name] — review count: [actual number verified live] — star rating: [actual number]
+- Competitor 1 name: [name] — review count: [actual number verified live] [verification-method tag] — star rating: [actual number] [verification-method tag]
+- Competitor 2 name: [name] — review count: [actual number verified live] [verification-method tag] — star rating: [actual number] [verification-method tag]
+- Competitor 3 name: [name] — review count: [actual number verified live] [verification-method tag] — star rating: [actual number] [verification-method tag]
 CRITICAL: Never cite a competitor as having more reviews than the prospect if the prospect actually has more. Verify both numbers.
 
 GOOGLE ADS — run searches for EACH practice area
@@ -145,7 +151,9 @@ TRANSCRIPT DATA POINTS — extracted from discovery call
 - Current lead sources: [exact quotes if available]
 - Ads ever run: [yes/no — what platform, what budget, what result]
 - Team size: [number and roles]
-- Annual revenue: [stated figure or range]
+- Annual revenue (gross / case value): [stated figure or range]
+- Annual revenue (net / take-home / collected): [stated figure or range — if the prospect only ever gives one number, write "not distinguished from gross"]
+- Fee structure: [contingency % / hourly / flat-fee / mixed — exact quote if available, or "not stated"]
 - Revenue goal: [stated figure]
 - Dominant buying motive: [exact quote or closest inference]
 - Any profitability claims made by prospect: [exact quotes only — if none stated, write "none stated"]
@@ -159,6 +167,8 @@ Before filling in any section file, run this verification checklist:
 
 [ ] Every number in my report matches a number recorded in my Pass 1 notes
 [ ] Every competitor review count has been verified live — prospect does not have more reviews than any competitor I cite as "dominating"
+[ ] No review count or star rating tagged UNCONFIRMED in Pass 1 notes appears as a specific figure in the client report — those use qualitative framing instead and are flagged for the sales rep to verify live before the call
+[ ] For contingency-fee practices (e.g. Personal Injury) where the transcript states both a gross and a net/collected revenue figure, package tier and ad-spend math are based on the net figure, not gross
 [ ] Every ad section covers ALL practice areas listed in the transcript
 [ ] No section says "you are not running ads" — only "does not appear to be running" or "not observed"
 [ ] No profitability or business claim appears in the report unless it came from the transcript or was directly observed
@@ -467,6 +477,8 @@ MANDATORY PRICE LOOKUP: Before writing any dollar amount for a package, re-read 
 STEP 11.1 — DETERMINE PACKAGE ELIGIBILITY
 
 Apply these rules before recommending anything. Any hidden package must not appear anywhere in the report.
+
+Effective-Revenue Rule (contingency-fee practices): For practices commonly billed on contingency (Personal Injury, mass tort, workers' comp, etc.), if the transcript states both a gross/case-value revenue figure and a net/take-home/collected figure, apply every revenue rule below — tier selection, ad-spend caps, and the 35%-of-revenue check — against the NET figure, not gross. Document which figure was used, and why, in section_11_workings.txt. If only gross is stated, note in the workings file that the tier is a fallback based on gross and should be confirmed against actual collected revenue with the sales rep before finalizing.
 
 Practice Area Rules:
 - Personal Injury: hide all Essentials marketing packages and the LSA-only add-on

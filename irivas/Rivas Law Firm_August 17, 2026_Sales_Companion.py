@@ -185,7 +185,7 @@ snap = [
      Paragraph("<b>Location</b>", S["snap_label"])],
     # FILL: All six snapshot values from Pass 1 research and transcript
     [Paragraph("Israel Rivas", S["snap_value"]),
-     Paragraph("$1.5–2M gross", S["snap_value"]),
+     Paragraph("$1.5–2M gross / ~$500K net", S["snap_value"]),
      Paragraph("Solo + contract attys", S["snap_value"]),
      Paragraph("3: Solo Practitioner", S["snap_value"]),
      Paragraph("15% (default)", S["snap_value"]),
@@ -244,32 +244,19 @@ story.append(bd("Gets the firm in front of the same Pharr/McAllen searches compe
 story.append(bd("Builds the bilingual site needed to actually convert his own Spanish-speaking client base."))
 
 # FILL: "[Package Name]  |  $[bundled price]/mo bundled"
-story.append(Paragraph("<b>Full Service Marketing — Growth  |  $7,497/mo bundled</b>", S["subsection"]))
+story.append(Paragraph("<b>Full Service Marketing — Essentials (Standalone)  |  $3,797/mo</b>", S["subsection"]))
 # FILL: 3-4 gray bullets (use b()) — scoping rationale. One fact per bullet.
-story.append(b("Revenue is $1.5-2M/yr, placing the firm in the $1M-$2M Growth tier, not Starter."))
-story.append(b("CRM's $570K HubSpot estimate was wrong — corrected to Growth using the transcript's stated $1.5-2M."))
-story.append(b("Ad spend cap on Growth is $50K/mo, well above the $19.5K conservative recommendation."))
-story.append(b("Package fees + conservative ad spend ($30.2K/mo) sit comfortably under the 35% revenue cap."))
+story.append(b("Revenue is a contingency-fee PI practice: transcript states $1.5-2M gross / ~$500K net. Tier off NET, not gross — that puts this at Essentials/Starter, not Growth."))
+story.append(b("SALES OVERRIDE: Essentials is normally hidden for PI. Applied here on purpose — see workings file — because it matches what the firm can actually fund."))
+story.append(b("$3,797/mo + up to $5,000/mo ad spend is funded entirely by redirecting the existing $60K/yr billboard budget — no new capital ask."))
+story.append(b("Phase 2: revisit Starter tier ($20K ad cap) once digital lead flow and revenue are proven."))
 
 story.append(thin_rule())
 
-# ── Why This Coaching Package ──
-story.append(Paragraph("Why This Coaching Package", S["section"]))
-
-# FILL: "What it does for her/him:" — 2-3 dark bullets (use bd())
-# Transformation statements. What the package makes possible. Not deliverables.
-story.append(Paragraph("<b>What it does for him:</b>", S["subsection"]))
-story.append(bd("Builds the delegation plan that finally gets casework and intake off Israel's plate."))
-story.append(bd("Connects him with other PI practice owners solving the same scaling problems."))
-story.append(bd("Gives him a structured path from solo practitioner to firm owner."))
-
-# FILL: "[Package Name]  |  $[bundled price]/mo bundled"
-story.append(Paragraph("<b>Elite Coach Plus  |  $3,200/mo bundled</b>", S["subsection"]))
-# FILL: 3-4 gray bullets (use b()) — scoping rationale. One fact per bullet.
-story.append(b("Revenue is $1M+ and team is under 5 (solo + contract attorneys) — matches Elite Coach Plus exactly."))
-story.append(b("Coach Essentials and Essentials Plus are eliminated products, not eligible under any circumstance."))
-story.append(b("FCOO/FCFO Advisor add-ons are reserved for Phase 2/3 once dedicated staff exist."))
-story.append(b("Deliverables include weekly group coaching plus PI practice masterminds — targets his delegation gap directly."))
+# ── Phase 1 Scope Note ──
+story.append(Paragraph("Phase 1 Scope Note: No Coaching Package Yet", S["section"]))
+story.append(b("No coaching package in Phase 1 — the override above prioritizes proving the marketing channel first, within the firm's current redirectable budget."))
+story.append(b("Elite Coach Plus ($3,497/mo stand-alone) is the planned Phase 2 addition once digital lead flow is established — see roadmap in the client report."))
 
 
 # ══════════════════════════════════════════════════════════
@@ -291,21 +278,21 @@ story.append(bd("Gives Israel his first real data on cost-per-case, something he
 
 # FILL: Ad spend range — conservative (channel minimums) to aggressive (20% rule)
 story.append(Paragraph("<b>Recommended Ad Spend Range:</b>", S["subsection"]))
-story.append(b("<b>Conservative:</b> $19,500/mo — minimum viable spend across recommended channels (MVA/PI minimums)."))
-story.append(b("<b>Aggressive:</b> $50,000/mo — Growth tier ad spend cap (see calc note below)."))
+story.append(b("<b>Conservative:</b> $3,000/mo — absolute channel minimum (Google Search + LSA only)."))
+story.append(b("<b>Aggressive:</b> $5,000/mo — Essentials tier ad spend cap."))
 
 # FILL: ROI projection bullets for BOTH levels — all labeled as estimates
 # Use data from Scoping Guide: CPL benchmarks, close rate, avg case value
 story.append(Paragraph("<b>Estimated Return on Investment:</b>", S["subsection"]))
-story.append(b("<b>Conservative:</b> ~5-6 cases x $7.5K = ~$41K/mo vs. $19.5K spend = ~2.1x return."))
-story.append(b("<b>Aggressive:</b> ~17 cases x $7.5K = ~$127K/mo vs. $50K spend = ~2.5x return."))
+story.append(b("<b>Conservative:</b> ~1 case every 5-6 weeks x $7.5K = ~$6.3K/mo vs. $3K spend = ~2.1x return."))
+story.append(b("<b>Aggressive:</b> ~1-2 cases x $7.5K = ~$12.75K/mo vs. $5K spend = ~2.55x return."))
 story.append(Paragraph("<i>All figures are estimates. Not guaranteed. Case value and close rate are PI/MVA defaults, not stated on the call.</i>", S["disclaimer"]))
 
 # FILL: How both numbers were calculated — from Scoping Guide Steps 3-4
 story.append(Paragraph("<b>How the range was calculated:</b>", S["subsection"]))
-story.append(b("<b>Conservative:</b> MVA/PI minimums: Google PPC $10,000 + LSA $2,000 + Meta Retargeting $1,500 + Meta Lead Gen $6,000 = $19,500."))
-story.append(b("<b>Aggressive:</b> 20% rule and reverse math both exceed $50K, but Dominate tier needs $2M+ revenue — so aggressive is capped at Growth tier's $50K/mo ceiling."))
-story.append(b("At aggressive, total spend hits ~36%-49% of revenue depending on where in the range — lead with conservative; aggressive is a ceiling to grow into."))
+story.append(b("This budget is intentionally below the $19,500/mo full channel-minimum sum for a competitive PI market — it is a Phase 1 test sized to the Essentials tier's $5,000/mo cap, not the ideal channel mix."))
+story.append(b("Case volume is modest at this budget level by design. Frame it as proving the channel, not a ceiling — scaling to Starter's $20K cap happens once revenue and results justify it."))
+story.append(b("Package fee + aggressive ad spend ($8,797/mo total) is ~18-21% of effective net monthly revenue — comfortably under the 35% cap."))
 
 story.append(thin_rule())
 
@@ -315,14 +302,17 @@ story.append(thin_rule())
 # Responses use specific data from the audit — competitor numbers, transcript quotes, etc.
 story.append(Paragraph("If She Pushes Back", S["section"]))
 
+story.append(Paragraph('"You told me revenue is $1.5-2M — why such a small package?"', S["objection_q"]))
+story.append(Paragraph("That's gross, on contingency. He collects roughly $500K net — that's the number that actually funds a monthly fee, so Essentials is the honest fit.", S["objection_a"]))
+
 story.append(Paragraph('"$100K a year is already a lot for marketing."', S["objection_q"]))
 story.append(Paragraph("Only ~$40K of that is actually digital-available. The rest funds billboards that produced ~5 cases last year, ~$12K per case.", S["objection_a"]))
 
 story.append(Paragraph('"My billboards have worked fine for years."', S["objection_q"]))
-story.append(Paragraph("$60K/yr for ~5 cases. Leah Wise (782 reviews) and Tijerina Legal Group (906 reviews) are winning this market digitally instead.", S["objection_a"]))
+story.append(Paragraph("$60K/yr for ~5 cases. Leah Wise and Tijerina Legal Group have built a far larger review base than Rivas and are winning this market digitally instead.", S["objection_a"]))
 
 story.append(Paragraph('"I don\'t have staff to manage all this."', S["objection_q"]))
-story.append(Paragraph("Elite Coach Plus builds the delegation plan first. AI staffing waits until Phase 3, once dedicated support exists.", S["objection_a"]))
+story.append(Paragraph("Essentials is a lean Phase 1 — no coaching yet. Elite Coach Plus and delegation planning come in Phase 2, once digital lead flow is proven.", S["objection_a"]))
 
 story.append(thin_rule())
 
@@ -331,22 +321,16 @@ story.append(thin_rule())
 story.append(Paragraph("Investment At A Glance", S["section"]))
 
 price_data = [
-    # FILL: Marketing package name and bundled price
-    [Paragraph("<b>Full Service Marketing — Growth</b>", S["price_main"]),
-     Paragraph("$7,497/mo", S["price_main"])],
-    # FILL: One-line description and stand-alone price with strikethrough
-    [Paragraph("Bilingual website, local SEO, Google/LSA/Meta ad management.", S["price_detail"]),
-     Paragraph("<strike>$8,997</strike> stand alone", S["price_detail"])],
-    # FILL: Coaching package name and bundled price
-    [Paragraph("<b>Elite Coach Plus</b>", S["price_main"]),
-     Paragraph("$3,200/mo", S["price_main"])],
-    # FILL: One-line description and stand-alone price with strikethrough
-    [Paragraph("Weekly group coaching plus personal injury practice masterminds.", S["price_detail"]),
-     Paragraph("<strike>$3,497</strike> stand alone", S["price_detail"])],
+    # FILL: Marketing package name and price
+    [Paragraph("<b>Full Service Marketing — Essentials</b>", S["price_main"]),
+     Paragraph("$3,797/mo", S["price_main"])],
+    # FILL: One-line description (standalone — no bundled discount, no coaching paired)
+    [Paragraph("Bilingual website, local SEO, Google/LSA ad management. Standalone — no coaching bundled in Phase 1.", S["price_detail"]),
+     Paragraph("", S["price_detail"])],
     # FILL: Recommended ad spend range (conservative to aggressive)
     [Paragraph("<b>Recommended Ad Spend</b>", S["price_main"]),
-     Paragraph("$19,500–$50,000/mo", S["price_main"])],
-    [Paragraph("Goes to Google, LSA, and Meta — not to SMB Team.", S["price_detail"]),
+     Paragraph("$3,000–$5,000/mo", S["price_main"])],
+    [Paragraph("Goes to Google and LSA — not to SMB Team. Funded by redirecting existing billboard spend.", S["price_detail"]),
      Paragraph("", S["price_detail"])],
 ]
 pt = Table(price_data, colWidths=[4.5 * inch, 1.7 * inch])
@@ -358,12 +342,11 @@ pt.setStyle(TableStyle([
     ("BOTTOMPADDING", (0,0), (-1,-1), 1),
     ("LINEBELOW", (0,1), (-1,1), 0.5, RULE_GRAY),
     ("LINEBELOW", (0,3), (-1,3), 0.5, RULE_GRAY),
-    ("LINEBELOW", (0,5), (-1,5), 0.5, RULE_GRAY),
 ]))
 story.append(pt)
-# FILL: Total line — bundled total + ad spend range | savings | % of revenue at aggressive level
+# FILL: Total line — package + ad spend range | % of revenue at aggressive level
 story.append(Paragraph(
-    "Total: $10,697/mo + $19,500–$50,000 ad spend  |  Save $1,797/mo by bundling  |  18%–49% of revenue (conservative fits under 35% cap; aggressive is a tier ceiling to grow into)",
+    "Total: $3,797/mo + $3,000–$5,000 ad spend  |  ~18%–21% of effective net monthly revenue (well under the 35% cap)  |  Sales override: Essentials for PI — see workings file",
     S["savings"]))
 
 # ── Build ──

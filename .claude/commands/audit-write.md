@@ -53,6 +53,7 @@ Create `[friendly-name]/sections/` if it does not exist.
 - Never mention CRM setup as a first 90 days deliverable.
 - Never state profitability facts by practice area unless the prospect explicitly said so on the call.
 - Escalation flags are internal only — never appear in the client report.
+- **Never print a review count or star rating (firm or competitor) tagged `UNCONFIRMED` in the research notes as a specific fact.** Use qualitative framing instead (e.g., "far fewer reviews than several competitors in this market" rather than an exact number), and add "Review counts unconfirmed — verify live before the call" to the escalation flags in `section_11_workings.txt`. Only a number tagged `[confirmed via Google]` in the research notes may appear as a specific figure in the client-facing report.
 
 ---
 
@@ -129,19 +130,20 @@ This section is large and must be completed in three sub-steps to avoid API time
 
 **TRANSCRIPT-STATED NEED OVERRIDE — APPLY THIS BEFORE ANYTHING ELSE**
 
-`package_decision.json` is a deterministic revenue/team-size lookup. It cannot read the transcript and does not know what the call was actually about. Its `confidence` field reflects how sure the pipeline is about the *revenue number* — it says nothing about whether a marketing+coaching bundle is the right recommendation at all. Before touching the decision file or the eligibility tables, read the research notes' transcript extraction and DBM section and check for these three overrides. Any one of them supersedes `package_decision.json` and the eligibility tables below, regardless of `confidence` level, and regardless of whether a `PACKAGE INSTRUCTION` block is present:
+`package_decision.json` is a deterministic revenue/team-size lookup. It cannot read the transcript and does not know what the call was actually about. Its `confidence` field reflects how sure the pipeline is about the *revenue number* — it says nothing about whether a marketing+coaching bundle is the right recommendation at all. Before touching the decision file or the eligibility tables, read the research notes' transcript extraction and DBM section and check for these four overrides. Any one of them supersedes `package_decision.json` and the eligibility tables below, regardless of `confidence` level, and regardless of whether a `PACKAGE INSTRUCTION` block is present:
 
 1. **Call-purpose override.** If the transcript or research notes state the discovery call's actual subject was something other than standard marketing/intake growth (e.g., explicitly framed as a Fractional CTO / AI automation engagement, an operations/coaching engagement, etc.), lead the recommendation with that stated category. Do not default to Full Service Marketing just because revenue qualifies for a tier — the firm did not ask about marketing. Check the LAW package table and the non-marketing package table first; only add a marketing package if the transcript shows an actual marketing/lead-gen gap alongside the stated need.
 2. **Existing-vendor override.** If the transcript states the firm has recently signed with, or is already paying, another marketing/SEO/ad/AEO vendor (an active or recent contract), exclude Full Service Marketing — every tier and every sub-package — from the recommendation entirely. A firm that just committed to a marketing engagement does not have a marketing gap; recommending one anyway ignores the client's actual, stated situation. Recommend the package(s) that match what the transcript says the firm still needs instead (coaching, ops, AI/FCTO, etc.).
 3. **Budget-reality override.** If the transcript or notes state, or strongly imply, that the client cannot afford or is not positioned to spend at the tier the revenue table implies (budget concerns, an explicit statement of financial limits, a stated preference for a smaller engagement), do not present the revenue-implied tier. Lead with the lowest-cost package that still addresses the transcript's stated need, and document the gap between the revenue table's suggestion and what you actually recommended in section_11_workings.txt so sales can see the override was intentional.
+4. **Effective-revenue override.** If the research notes state a net/take-home/collected revenue figure distinct from a gross/case-value figure (common for contingency-fee practices — e.g. "$1.5–2M gross / ~$500k net"), tier and calculate against the **net** figure, not gross, regardless of what `revenue_effective` in `package_decision.json` says. `select-package.mjs` applies this automatically when both figures are parseable (check `net_revenue_stated` and `is_contingency_practice` in the decision file), but if the notes state a net figure the script's regex missed, apply it by hand and document the correction — including the recomputed 35%-cap check and ad-spend range — in section_11_workings.txt.
 
-None of these three checks are about recomputing a price — they are about whether the *category* of product being proposed matches what actually happened on the call. Do this check even when `package_decision.json` says `confidence: "high"`.
+None of these four checks are about recomputing a price in isolation — they are about whether the *category* and *scale* of product being proposed matches what actually happened on the call. Do this check even when `package_decision.json` says `confidence: "high"`.
 
 **PACKAGE DECISION FILE — CHECK THIS FIRST**
 
 Before any eligibility logic, check whether `[friendly-name]/package_decision.json` exists.
 
-- **If it exists:** Read it and extract `marketing_tier`, `marketing_bundled`, `marketing_retail`, `coaching_tier`, `coaching_bundled`, `coaching_retail`, `total_bundled`, `ad_spend_min`, `ad_spend_max`, and `confidence`. After applying the Transcript-Stated Need Override above:
+- **If it exists:** Read it and extract `marketing_tier`, `marketing_price_bundled`, `marketing_price_retail`, `coaching_name`, `coaching_price_bundled`, `coaching_price_retail`, `total_bundled`, `ad_spend_conservative`, `ad_spend_aggressive`, `net_revenue_stated`, `is_contingency_practice`, and `confidence`. After applying the Transcript-Stated Need Override above:
   - If none of the three overrides apply and `confidence` is `"high"`, use the tier names and prices exactly — do not re-run eligibility logic.
   - If none of the three overrides apply but `confidence` is `"medium"` or `"low"`, use the decision file as a starting point, cross-check the selected tiers against the research notes, and document any correction in section_11_workings.txt.
   - If any override applies, the decision file's marketing/coaching selection is not usable as-is — apply the full eligibility rules below instead (pulling in the LAW / non-marketing tables as the override directs) and document in section_11_workings.txt which override triggered the departure from the decision file.
@@ -633,9 +635,12 @@ Run bash grep — do not read `index.html` directly:
 grep -c "FILL:" "[friendly-name]/index.html" || true
 grep -cE '<style|style="' "[friendly-name]/index.html" || true
 grep -c 'href="audit_styles.css"' "[friendly-name]/index.html" || true
+grep -c "UNCONFIRMED" "[friendly-name]/index.html" || true
 wc -c "[friendly-name]/audit_styles.css"
 wc -l "[friendly-name]/index.html"
 ```
+
+If the `UNCONFIRMED` count is > 0, the verification tag leaked into the client-facing file — find it and replace it with qualitative framing per the review-data rule above.
 
 If placeholder count > 0 or style count > 0, read only the specific flagged lines:
 ```bash
