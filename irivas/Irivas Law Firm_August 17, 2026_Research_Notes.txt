@@ -1,0 +1,386 @@
+================================================================================
+GROWTH, PROFIT & FREEDOM ROADMAP — RESEARCH NOTES
+Firm: Irivas Law Firm (per trigger) — confirmed live legal name: Rivas Law Firm, PLLC
+Friendly Name: irivas
+URL given in trigger: https://www.instagram.com/rivaslawfirm (Instagram, not a website)
+URL used for research: https://www.rivaslawrgv.com/ (live firm website, located via search)
+Sales Rep: Nick Holderman
+Date: August 17, 2026
+Contact: Israel Irivas / Attorney Israel Rivas
+  (ez@irivaslawfirm.com per trigger; ir@irivaslawfirm.com found live on-site;
+  956-207-2435 per trigger; 956-331-8777 / 956-787-6261 found live on-site)
+================================================================================
+
+NOTE ON FIRM NAME / IDENTITY: The trigger record lists the firm as "Irivas Law
+Firm" and the contact as "Israel Irivas." Live research found no firm operating
+under the name "Irivas Law Firm" — the actual, verified legal entity is "Rivas
+Law Firm, PLLC," founded by Attorney Israel (Lee) Rivas, based in Pharr, TX,
+serving the Rio Grande Valley (RGV). The firm's email domain (irivaslawfirm.com)
+and Facebook handle (facebook.com/IrivasLawFirm) both use the contracted "I.
+Rivas" branding, which is almost certainly the source of the "Irivas" name in
+the CRM record. This research treats "Rivas Law Firm, PLLC" / Israel Rivas as
+the confirmed real-world entity behind this trigger. FLAGGED — confirm correct
+legal name and preferred spelling with the sales rep before finalizing the
+audit report.
+
+NOTE ON TRANSCRIPT: The discovery call transcript (Fathom summary via HubSpot)
+is a full marketing/growth discovery call and is treated as ground truth per
+the transcript-first rule for all values it provides (revenue, goals, budget,
+lead sources, team structure, competitor names, DBM). Live research below
+covers items the transcript does not provide or that require live
+verification (reviews, PageSpeed, ads, directories).
+
+================================================================================
+STEP 1 — WEBSITE RESEARCH
+================================================================================
+
+- Website URL confirmed live: Yes — https://www.rivaslawrgv.com/ returns live
+  content (fetched successfully). NOTE: this is NOT the URL provided in the
+  trigger (an Instagram profile link); the actual firm website was located via
+  web search, consistent with the transcript's description of a website "built
+  by a son" that isn't actively managed or promoted.
+- Last redesign date or estimated age: Footer shows "© 2026 Rivas Law Firm,
+  PLLC," site built by "Bordertown Digital." No specific build/redesign date
+  found. Site is minimal (homepage + contact page live; other referenced pages
+  return 404 — see below), consistent with a small, non-agency, "built by
+  family member" site per the transcript.
+- Mobile responsive: Not independently observed — could not render/measure
+  viewport behavior with available tools. FLAGGED for manual check.
+- Homepage headline: "Personal Injury Representation for the Rio Grande
+  Valley," with supporting subtext: "We represent clients in family law,
+  criminal defense, and property matters throughout Hidalgo County and South
+  Texas."
+- CTA above fold: Yes — "Schedule Consultation" and "Call Now" (956-331-8777).
+- Contact form location: Not found on the homepage; homepage CTA routes to a
+  dedicated /contact page rather than an on-page form.
+- Live chat present: No — not observed.
+- Attorney bio present: Yes — a brief "About Our Firm" section with a
+  headshot labeled "Attorney Israel Rivas," noting the firm's founding and
+  "recovering millions of dollars in settlements" for clients. No dedicated,
+  in-depth bio page was reachable (see site-structure note below).
+- Video present: No — not observed.
+- Blog present: No — no blog section found.
+
+Site structure note: Only the homepage (/) and /contact were reachable at
+research time. /personal-injury and /meet-the-team — both pages that appear
+in this firm's own search-index listings (e.g., "Personal Injury Attorney in
+McAllen & RGV | Rivas Law Firm, PLLC" and a team page) — returned HTTP 404 on
+direct fetch. No geo-targeted city landing pages (McAllen, Edinburg, Mission,
+etc.) were found. This is consistent with the transcript's description of an
+unmanaged, DIY site with minimal upkeep.
+
+Language note: the homepage copy includes one line stating "Bilingual legal
+services (English/Spanish)." Per the transcript-first rule, the transcript's
+own assessment — "Language: English-only, a critical mismatch for the 95%
+Spanish-speaking client base" — is treated as ground truth for the audit,
+since it reflects the prospect's own characterization of his site on the
+discovery call. The one bilingual-services line on the homepage does not
+change the overall English-first structure of the site's content.
+
+PageSpeed mobile score: UNABLE TO OBTAIN. The Google PageSpeed Insights API
+  (googleapis.com/pagespeedonline/v5/runPagespeed) returned HTTP 429 ("Too Many
+  Requests") on four separate attempts across ~40 seconds of backoff. The
+  interactive pagespeed.web.dev tool requires JavaScript execution to render a
+  score and could not be driven with available tools.
+PageSpeed desktop score: UNABLE TO OBTAIN (same quota/access issue).
+FLAGGED — run pagespeed.web.dev manually against https://www.rivaslawrgv.com/
+before the proposal call; do not present an estimated number.
+
+================================================================================
+STEP 2 — GOOGLE BUSINESS PROFILE
+================================================================================
+
+- GBP found: Yes (existence confirmed via multiple third-party directory
+  cross-references; Google Maps/Search listing pages themselves are
+  JS-rendered and were not directly scrapeable with available tools).
+- Star rating: 4.7/5 — consistently reported across AllUsInjuryLawyers.com and
+  other aggregators that source from Google. NOT independently confirmed by
+  directly loading the live Google Maps listing this session. FLAGGED for a
+  manual live check before the proposal call.
+- Total review count: 15 reviews — same sourcing/caveat as above.
+- Most recent review date: Not observed (Google Maps listing itself
+  inaccessible to available tools).
+- Primary category: "Law firm," with directory sub-tagging for personal
+  injury (car accidents, 18-wheeler accidents, wrongful death), criminal
+  defense, and family law.
+- Photos active: Not observed — could not access the live GBP directly.
+- Posts active: Not observed — could not access the live GBP directly.
+
+Secondary data points:
+  - Avvo: profile exists for Israel L. Rivas but shows "0.0 — Not yet
+    reviewed" (Avvo-specific reviews, separate from Google).
+  - Yelp: listing exists ("RIVAS LAW FIRM," 3920 S Jackson Rd, Pharr) — direct
+    page fetch returned HTTP 403, so Yelp-specific star/review figures could
+    not be independently confirmed.
+  - Facebook (facebook.com/IrivasLawFirm): page exists; review count, star
+    rating, and follower count could not be extracted (JS-rendered, blocked to
+    direct fetch).
+
+15 total reviews is a genuinely small base for a firm doing $1.5–2M gross
+annually on a 95%-referral model — worth noting directly in the audit as a
+trust-signal gap versus every named competitor below.
+
+================================================================================
+STEP 3 — LOCAL 3-PACK SEARCHES
+================================================================================
+
+Practice Area 1: Personal Injury (primary focus per transcript — "solo PI
+practice")
+
+- Search 1 "car accident lawyer Pharr TX": firm appears — no (not present in
+  organic results reviewed) — competitors surfacing: Tijerina Legal Group,
+  Javier Villarreal Law Firm, Barrera Sanchez & Associates, Leeds Law Firm,
+  The Law Giant (Texas Legal Group)
+- Search 2 "personal injury lawyer McAllen TX": firm appears — no —
+  competitors surfacing: Law Office of Raul Guajardo, Ricardo A. Garcia, Law
+  Office of Lino H. Ochoa, Almaraz Law Firm, De La Garza Law Firm, Tijerina
+  Legal Group
+- Search 3 "18-wheeler accident lawyer Rio Grande Valley Texas": firm appears
+  — no — competitors surfacing: Tijerina Legal Group, Carabin Shaw, J.
+  Gonzalez Law Firm, Ryan Solis Law Office, Sandoval Law Firm, Law Office of
+  Aaron Fonseca
+
+NOTE: Available research tools return organic/summarized search results and
+cannot render Google's literal local 3-pack map-pack UI (JS-rendered).
+Competitor names above are drawn from consistent organic presence across
+searches, which is a directional proxy for local visibility, not a literal
+3-pack screenshot. This directly corroborates the transcript's own claim of
+~16 organic visitors/month for Rivas Law Firm — across three separate,
+practice-area-relevant searches, the firm did not surface at all, while
+Tijerina Legal Group appeared in all three.
+
+================================================================================
+STEP 4 — COMPETITOR REVIEW COUNTS
+================================================================================
+
+All figures below were verified live via directory/aggregator sources this
+session. Rivas Law Firm's own count (15, see Step 2) is lower than every
+named competitor below — no competitor claim here overstates the gap.
+
+- Leah Wise Law Firm, PLLC (Pharr, TX — named directly by the prospect on the
+  call as the SEO/reputation benchmark) — 5.0/5 rating, 782 reviews.
+  Recognized for Texas's largest PI settlement in 2020 and Best of Bar top 1%
+  distinction; ~2,000 organic visitors/month per the transcript.
+- Ruy Mireles Law Firm, PLLC (McAllen, TX — named directly by the prospect as
+  the paid-ads benchmark) — 5.0/5 rating, 115 reviews (Birdeye aggregate
+  sourced from Google). Runs paid ads to target the Pharr market despite
+  having no physical office there, per the transcript.
+- Tijerina Legal Group, PC (McAllen / Pharr / Brownsville) — 906 reviews, 98%
+  recommend (Facebook-sourced metric, not Google — noted as a different
+  platform). Appeared in all three local 3-pack searches above.
+- Herrman & Herrman, P.L.L.C. (McAllen/RGV, multi-office regional PI firm) —
+  3.4/5 rating, 72 reviews (Yelp-sourced).
+
+================================================================================
+STEP 5 — DIRECTORY LISTINGS
+================================================================================
+
+- Avvo: Profile exists for Israel L. Rivas (3920 S Jackson Rd, Pharr, TX
+  78577-9865) — "0.0, Not yet reviewed" on Avvo's own review system.
+- Justia: Listing exists ("Israel L. EZ Rivas, Lawyer in Pharr, Texas") —
+  direct page fetch returned HTTP 403, address not independently re-confirmed
+  here beyond the search-index snippet.
+- Yelp: Listed as "RIVAS LAW FIRM," 3920 S Jackson Rd, Pharr — direct fetch
+  blocked (403).
+- Lawyers.com / Martindale.com: Both list 3920 S Jackson Rd, Pharr, TX 78577,
+  (956) 331-8777.
+- AllUsInjuryLawyers.com: Same address, 4.7/5, 15 reviews (see Step 2).
+- FindLaw: Not located via search this session — FLAGGED for manual check.
+
+**NAP INCONSISTENCY FLAGGED**: The firm's own live website contact page
+(rivaslawrgv.com/contact) lists the address as "125 E. Caffery Ave, Pharr, TX
+78577" — this does NOT match the address used consistently across every
+third-party directory checked (Avvo, Lawyers.com, Martindale, Yelp,
+AllUsInjuryLawyers): "3920 S Jackson Rd, Pharr, TX 78577." This is a genuine,
+verifiable local SEO / trust issue: the firm's own site disagrees with its
+Google-indexed and directory-indexed address, which can directly suppress
+map-pack ranking and confuse prospective clients trying to visit in person.
+
+No geo-targeted landing pages for surrounding RGV cities (McAllen, Edinburg,
+Mission, San Juan) were found — the live site currently consists of only a
+homepage and a contact page (see Step 1 site-structure note).
+
+================================================================================
+STEP 6 — GOOGLE ADS
+================================================================================
+
+Practice Area 1: Personal Injury
+- Firm ads observed: not observed via available search tools (automated tools
+  return organic/summarized search results and cannot render Google's live
+  sponsored-ad slots — this requires an interactive, JS-capable browser
+  session, which was not available this pass). This is consistent with the
+  transcript, which confirms the firm has never run digital/paid-search ads —
+  the $100k marketing budget is 95% word-of-mouth-supported and the paid
+  portion goes to two billboards, not digital.
+- Named local competitors running ads: not confirmed live via direct SERP
+  rendering. Per the transcript, the prospect and rep specifically discussed
+  Ruy Mireles Law Firm as actively running paid ads to reach the Pharr market
+  from a McAllen base — this is transcript-sourced, not independently
+  re-verified live this session. Leah Wise Law Firm and Tijerina Legal Group
+  are also plausible paid-search spenders given their review volume and
+  organic dominance, but no specific ad copy was captured this pass.
+
+FLAGGED — a live SERP check for "car accident lawyer Pharr TX" and "personal
+injury lawyer McAllen TX" is recommended before the proposal call to capture
+current ad copy for Ruy Mireles, Leah Wise, and Tijerina Legal Group.
+
+================================================================================
+STEP 7 — LOCAL SERVICE ADS
+================================================================================
+
+- Firm appears in LSA: not observed (tool limitation — LSA widget requires
+  live SERP rendering, same constraint as Step 6).
+- Google Screened: not observed.
+- LSA review count: n/a.
+- Named local competitors in LSA: not confirmed live — FLAGGED for manual
+  check.
+
+================================================================================
+STEP 8 — META ADS
+================================================================================
+
+- Firm has active ads: not observed — Meta Ad Library access was blocked
+  (HTTP 403 on direct fetch to facebook.com/ads/library/; the library
+  requires an interactive session to browse results). Rivas Law Firm does not
+  appear to be running Meta ads based on available research and the
+  transcript (billboard + word-of-mouth model, no digital spend to date) —
+  framed as an opportunity gap, not a confirmed absence.
+- Named local competitor checks: not completed for Leah Wise Law Firm or Ruy
+  Mireles Law Firm — same 403 access limitation. FLAGGED — recommend a manual
+  Meta Ad Library check for both before the proposal call.
+
+================================================================================
+STEP 9 — TRANSCRIPT EXTRACTION
+================================================================================
+
+- Practice areas confirmed: Personal injury (solo PI practice, contract
+  attorneys). The firm's own website additionally lists criminal defense,
+  family law, real estate, and immigration, but the transcript frames the
+  firm and this engagement specifically around PI growth.
+- Current lead sources: "95% word-of-mouth referrals." No active digital lead
+  generation.
+- Ads ever run: Two billboards ($60k/year, ~$5k/month) — "yielding only ~5
+  cases in the last year" per the transcript. No digital/paid-search or paid
+  social ads have ever been run.
+- Team size: Solo attorney (Israel Rivas) with contract attorneys; exact
+  headcount/roles beyond "contract attorneys" not stated.
+- Annual revenue: $1.5–2M gross / ~$500k net.
+- Revenue goal: Stated explicitly — double to $3–4M gross.
+- Average case value: Not stated — default to personal-injury practice-area
+  default pending sales-call confirmation.
+- Current close rate: Not stated — default to 15% per audit default.
+- Number of locations: 1 (Pharr, TX) — not explicitly stated in transcript,
+  defaulted per rule; corroborated by the single office address found in live
+  research (modulo the NAP inconsistency flagged in Step 5).
+- Spanish campaign needed: Yes — explicitly flagged in the transcript as a
+  "critical mismatch": the client base is 95% Spanish-speaking and the current
+  website is English-only.
+- Dominant buying motive: "Double revenue... driven by a desire for more
+  personal time and delegation" — explicitly stated in the transcript's Key
+  Takeaways. This is a clean fit for DBM category (1): building a firm that
+  runs itself so the owner gets more personal time, achieved via hiring and
+  delegation rather than simply working more hours himself.
+- Any profitability claims made by prospect: None stated beyond the
+  $1.5–2M gross / ~$500k net figures above.
+- Any claims about case types or practice areas: None stated beyond personal
+  injury as the core practice; the transcript does not break out sub-case-type
+  mix (e.g., auto vs. 18-wheeler vs. premises).
+- Stated call focus / product interest: Standard marketing/growth discovery —
+  the meeting purpose is explicitly stated as "Explore growth strategies for
+  Rivas Law Firm," and SMB Team's proposed solution centers on the four-pillar
+  "Law Firm Growth Acceleration Model" (Lead Gen, Intake, Team, Profit
+  Planning). This is a standard marketing/intake growth engagement, not a
+  Fractional CTO/AI, coaching, or ops-only engagement.
+- Existing marketing/SEO/ad vendor engagements: None stated. The only existing
+  outside marketing commitment is the two-billboard contract (non-digital,
+  non-agency).
+- Budget constraints stated: Yes — explicit. The prospect's proposed $100k
+  annual marketing budget is effectively only $40k/year (~$3.3k/month) for
+  digital, because $60k/year is already committed to two billboards. SMB
+  Team's position, stated directly in the transcript, is that "$3.3k/month
+  budget is insufficient for a competitive PI market" — this budget/channel
+  mismatch (branding vs. lead generation) is the central strategic problem the
+  audit and proposal need to address.
+
+================================================================================
+STEP 10 — COMPETITIVE URGENCY SCORE
+================================================================================
+
+Score: 8 / 10
+
+Named specific local competitor threats:
+1. Leah Wise Law Firm, PLLC (Pharr) — 782 reviews at 5.0/5 and an estimated
+   ~2,000 organic visitors/month (per the transcript) versus Rivas Law Firm's
+   15 reviews and ~16 organic visitors/month. Leah Wise's aggressive SEO and
+   reputation-management strategy has reached the point where it is reducing
+   her own paid-ad spend — she is winning the market on owned, compounding
+   assets that Rivas Law Firm has not built at all.
+2. Ruy Mireles Law Firm, PLLC (McAllen) — 115 verified reviews at 5.0/5, and
+   per the transcript is successfully running paid ads to capture Pharr-market
+   demand without even maintaining a physical office there. This is a direct,
+   active demonstration that outside firms can out-compete Rivas Law Firm for
+   its own local market using digital spend alone.
+3. Tijerina Legal Group, PC (McAllen/Pharr/Brownsville) — appeared in all
+   three local 3-pack-adjacent searches run this session (car accident lawyer
+   Pharr TX; personal injury lawyer McAllen TX; 18-wheeler accident lawyer
+   RGV) and shows 906 reviews / 98% recommend. Multi-office scale and
+   consistent organic visibility across every PI-relevant search performed.
+
+"A score of 8 means competitors are actively dominating multiple channels in
+your market and the gap is getting wider every month you wait. This is not a
+future problem — it is a right now problem."
+
+================================================================================
+PASS 2 — VERIFICATION CHECKLIST
+================================================================================
+
+[x] Every number in the notes matches actually observed data (or is
+    explicitly flagged as unable to obtain/verify, with the reason stated)
+[x] Every competitor review count was pulled from a live source this
+    session; none is cited as beating Rivas Law Firm's count when it
+    shouldn't be — all four named competitors (782, 115, 906, 72) exceed
+    Rivas Law Firm's 15, so no correction was needed
+[x] Ad sections (Google, LSA, Meta) all cover the firm's core practice area
+    (personal injury) as confirmed in the transcript
+[x] No section states "you are not running ads" — framed as "does not appear
+    to be running" / "not observed" throughout, per the ads framing rule
+[x] No profitability or business claim appears unless it came from the
+    transcript (revenue, net, goal, budget breakdown all transcript-sourced)
+[x] No competitor reference uses generic labels — only specific named local
+    firms (Leah Wise, Ruy Mireles, Tijerina Legal Group, Herrman & Herrman)
+[~] PageSpeed scores are real numbers — NOT OBTAINED (API returned HTTP 429
+    quota-exceeded on repeated attempts; pagespeed.web.dev is JS-rendered and
+    unreachable with available tools). FLAGGED for manual check — no estimate
+    was fabricated.
+[x] DBM recorded — more personal time / delegation, transcript-sourced exact
+    framing
+[x] Revenue goal recorded — explicitly stated, double to $3–4M gross
+[x] Close rate recorded — not stated, defaulted to 15%
+[x] Average case value recorded — not stated, flagged for PI practice-area
+    default
+[x] Stated call focus / product interest recorded — standard marketing/
+    growth discovery, Law Firm Growth Acceleration Model
+[x] Existing marketing/SEO/ad vendor engagements recorded — none stated
+    (only the non-digital billboard contract)
+[x] Budget constraints stated by the prospect recorded — explicit $100k
+    nominal / $40k effective digital budget mismatch
+
+OUTSTANDING ITEMS TO VERIFY LIVE BEFORE PROPOSAL CALL:
+1. Actual PageSpeed Insights mobile/desktop scores for rivaslawrgv.com (API
+   quota exhausted this session).
+2. Exact live Google review count/star rating directly from the GBP listing
+   (15/4.7 sourced from directory aggregators, not the live Maps listing
+   itself).
+3. NAP inconsistency: firm's own site lists "125 E. Caffery Ave, Pharr, TX
+   78577" while every third-party directory lists "3920 S Jackson Rd, Pharr,
+   TX 78577" — confirm which address is current/correct.
+4. Live Google SERP ad-copy check for Ruy Mireles, Leah Wise, and Tijerina
+   Legal Group for personal-injury + city searches.
+5. Live Meta Ad Library check for Leah Wise Law Firm and Ruy Mireles Law
+   Firm.
+6. Confirm correct legal firm name/spelling ("Rivas Law Firm, PLLC" vs. the
+   CRM's "Irivas Law Firm") with the sales rep before finalizing the report.
+
+================================================================================
+END OF RESEARCH NOTES
+================================================================================
