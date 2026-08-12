@@ -3,161 +3,152 @@ SECTION 11 — WORKINGS (INTERNAL — NOT FOR CLIENT REPORT)
 Firm: Rivas Law Firm, PLLC ("Irivas Law Firm" per CRM/trigger)
 ================================================================================
 
-REVENUE OVERRIDE — DOCUMENTED PER AUDIT-WRITE.MD LOW-CONFIDENCE CROSS-CHECK RULE
+CORRECTION LOG (this revision)
 --------------------------------------------------------------------------------
-package_decision.json shipped with confidence: "low" and revenue_effective:
-$570,000, sourced from a HubSpot label ("$180K - $960K" midpoint) because
-revenue was not found in the research notes at the time the decision file was
-generated.
+This file replaces an earlier version that recommended Full Service Marketing —
+Growth ($7,497/mo) + Elite Coach Plus ($3,200/mo) = $10,697/mo. Two errors in
+that version have been corrected here:
 
-The research notes DO in fact state revenue explicitly, as transcript-sourced
-ground truth (Step 9 — Transcript Extraction): "Annual revenue: $1.5–2M gross
-/ ~$500k net" with a stated revenue goal to "double to $3–4M gross." This is
-a directly transcript-stated figure, not an estimate, and it places the firm
-in a materially different revenue band than the $570K figure the decision
-file used.
+1. Google rating error: the report stated Rivas Law Firm's GBP rating as 4.7/5.
+   The sales rep confirmed the actual live rating is 4.8/5. Corrected throughout
+   the client report.
+2. Revenue-basis error: the prior version tiered the marketing package off the
+   transcript's GROSS revenue figure ($1.5–2M). Rivas Law Firm is a contingency-fee
+   PI practice — the transcript states $1.5–2M gross / ~$500k net in the same
+   breath, and net/collected revenue is the correct basis for tiering a
+   contingency-fee firm, not the gross case value the firm never fully collects.
+   Re-run against the ~$500k net figure below.
+3. Review-count verification: none of the specific review-count figures
+   previously cited for Rivas Law Firm or its four named competitors (15, 782,
+   115, 906, 72) could be confirmed against an authoritative Google source this
+   session — WebFetch/WebSearch could only reach third-party aggregators
+   (Birdeye, Yelp, AllUsInjuryLawyers, Facebook, Chamber of Commerce), which
+   returned conflicting counts for the same firms. Per the UNCONFIRMED review-data
+   rule, these numbers have been replaced with qualitative framing in the
+   client-facing report ("a large, established review base" etc.) instead of
+   printed as fact. See ESCALATION FLAGS below — verify live via Google Maps
+   before quoting a specific number to the client.
 
-Correction applied: re-ran SELECT MARKETING PACKAGE eligibility using
-$1.5–2M revenue instead of $570K.
-  - $570K (decision file) -> $500K–$1M band -> Starter tier ($4,997/mo bundled)
-  - $1.5–2M (transcript, corrected) -> $1M–$2M band -> Growth tier ($7,497/mo
-    bundled)
-This is a full tier upgrade, not a rounding difference, so it could not be
-patched — full eligibility re-run was required.
-
-The non-marketing/coaching selection (Elite Coach Plus) was re-checked against
-the corrected revenue band and still holds: $1M+ revenue, team under 5 ->
-Elite Coach Plus ($3,200/mo bundled) per the SELECT NON-MARKETING PACKAGE
-table. No change needed there.
-
-TRANSCRIPT-STATED NEED OVERRIDE CHECK (performed before any eligibility logic)
+REVENUE-BASIS OVERRIDE — EFFECTIVE-REVENUE RULE (contingency-fee practice)
 --------------------------------------------------------------------------------
-1. Call-purpose override: Does not apply. Transcript states the meeting
-   purpose as "Explore growth strategies for Rivas Law Firm" — a standard
-   marketing/growth discovery call, not a Fractional CTO/AI, ops-only, or
-   coaching-only engagement.
-2. Existing-vendor override: Does not apply. The only existing outside
-   marketing commitment is a non-digital, non-agency two-billboard contract.
-   No marketing/SEO/ad/AEO vendor is currently engaged.
-3. Budget-reality override: Considered but does NOT override the tier
-   selection. The transcript does flag a budget constraint (nominal $100K/yr
-   marketing budget is effectively only ~$40K/yr, or ~$3.3K/mo, once $60K/yr
-   in billboard spend is subtracted — SMB Team's own stated position on the
-   call is that this is "insufficient for a competitive PI market"). This is
-   a real gap between current ad spend capacity and the tier's ad spend
-   range, but it is a reason to have an honest ad-spend conversation on the
-   call — not a reason to under-recommend the management-fee tier the firm's
-   actual revenue supports. The Growth tier's $7,497/mo management fee is
-   well within the firm's revenue (see 35% cap check below); the budget gap
-   is specifically in ad spend, which is addressed by presenting a
-   conservative ad-spend scenario ($19,500/mo) built from channel minimums
-   rather than jumping straight to an aggressive number the firm cannot
-   fund today.
+Transcript states explicitly (Step 9 — Transcript Extraction): "Annual revenue:
+$1.5–2M gross / ~$500k net," fee structure is standard PI contingency (roughly
+one-third contingency, consistent with the ~$500k net on $1.5–2M gross).
+
+Rivas Law Firm is a contingency-fee PI practice, so the effective-revenue rule
+applies: tier and calculate against the NET/collected figure (~$500k, treated
+as a $500K–$600K effective range per sales judgment), not the $1.5–2M gross
+figure. Re-running `select-package.mjs` with the corrected net/gross parsing
+confirms this: it now reads both figures from the transcript, detects the
+contingency-fee practice area, and tiers on net — producing a base
+recommendation of Starter ($4,997/mo) + Elite Coach Plus ($3,200/mo), a large
+step down from the original Growth+Coaching total, purely from fixing the
+revenue basis.
+
+SALES OVERRIDE — APPLIED ON TOP OF THE CORRECTED BASE RECOMMENDATION
+--------------------------------------------------------------------------------
+Sales rep override: present Full Service Marketing — Essentials, Standalone,
+$3,797/mo, with NO coaching package in Phase 1. This overrides even the
+corrected Starter+Coaching base recommendation above.
+
+Rationale documented for audit trail:
+- Essentials is normally hidden for Personal Injury (practice-area eligibility
+  filter). This is an explicit, documented sales-rep override of that filter,
+  not a pipeline error — flagging here so a future reviewer does not "correct"
+  it back to Starter without checking with sales first.
+- The firm's real, currently-committed marketing budget is $60,000/year in
+  billboard spend — exactly $5,000/mo. That number lines up almost exactly
+  with the Essentials tier's $5,000/mo ad-spend cap, meaning the recommendation
+  can be funded entirely by redirecting existing spend, with no ask for new
+  capital. A Starter or Growth recommendation would require the firm to find
+  new money before results are proven — Essentials does not.
+- No coaching package in Phase 1: at ~$500K–$600K effective revenue, the
+  firm's real near-term priority and afforded budget favor proving the
+  digital-marketing channel first. Elite Coach Plus is moved to Phase 2 (see
+  section_11_next_steps.html roadmap) once digital lead flow is established.
 
 MANDATORY PRICE LOOKUP (character-checked against tables in audit-write.md)
 --------------------------------------------------------------------------------
-- Marketing package selected: Full Service Marketing — Growth
-  - Bundled price (from table): $7,497/mo
-  - Stand-alone price (from table): $8,997/mo
-  - Savings (stand-alone minus bundled): $1,500/mo
-- Non-marketing package selected: Elite Coach Plus
-  - Bundled price (from table): $3,200/mo
-  - Stand-alone price (from table): $3,497/mo
-  - Savings (stand-alone minus bundled): $297/mo
-- Legal AI Workforce (LAW) package selected: none (Phase 1). Revenue clears
-  the $500K floor, but the firm is currently solo with contract attorneys
-  only (no dedicated support staff to engage with implementation) — LAW
-  eligibility rule explicitly excludes this. Revisit in Phase 3 once Phase 2
-  adds dedicated staff.
+- Marketing package selected: Full Service Marketing — Essentials (Standalone)
+  - Stand-alone price (from table): $3,797/mo
+  - No bundled price applies — sold standalone, no coaching package paired in
+    Phase 1, so there is no bundling discount to apply.
+- Non-marketing package selected: none in Phase 1 (see sales override above).
+  Elite Coach Plus ($3,497/mo stand-alone) is the planned Phase 2 addition.
+- Legal AI Workforce (LAW) package selected: none (Phase 1). Same reasoning as
+  before — solo practice, no dedicated support staff, LAW eligibility
+  explicitly excludes this. Revisit once support staff are in place.
 - AI Avatar / Video Growth add-on selected: none. No stated interest in
-  video/social content on the call; firm has no existing marketing budget or
-  organic social presence to build from yet.
-- Total monthly investment (sum of all bundled/recurring prices): $10,697/mo
-  ($7,497 + $3,200)
-- Total savings (sum of all savings): $1,797/mo ($1,500 + $297)
+  video/social content; no existing marketing budget or organic social
+  presence to build from yet.
+- Total monthly investment: $3,797/mo (Essentials standalone only)
+- Total savings: none — standalone pricing, no bundling discount in Phase 1.
 
 35% SPEND CAP CHECK
 --------------------------------------------------------------------------------
-Monthly revenue at stated range ($1.5–2M/yr) = $125,000–$166,667/mo.
-35% cap = $43,750–$58,333/mo.
-Package fees ($10,697/mo) + conservative ad spend ($19,500/mo) = $30,197/mo —
-well within cap at both ends of the revenue range.
-Package fees + aggressive ad spend ($50,000/mo, Growth tier cap) = $60,697/mo
-— roughly 36% of revenue at the top of the range ($166,667/mo, right at the
-cap) and roughly 49% of revenue at the bottom of the range ($125,000/mo,
-well over the cap). Flagged clearly for sales: the aggressive figure is a
-Growth-tier ceiling to grow into as revenue climbs toward $2M+, not a Day-1
-recommendation. Sales should lead with the conservative scenario, which
-fits comfortably under the cap across the entire revenue range.
+Monthly EFFECTIVE (net) revenue at ~$500K–$600K/yr = $41,667–$50,000/mo.
+35% cap = $14,583–$17,500/mo.
+Package fee ($3,797/mo) + aggressive ad spend ($5,000/mo) = $8,797/mo —
+roughly 18–21% of effective monthly revenue, comfortably within cap.
+(For reference, the same check against the old Growth+Coaching total plus its
+ad-spend range — $10,697 + $19,500–50,000 = $30,197–$60,697/mo — would have
+been 60–146% of effective net monthly revenue. That comparison is the clearest
+evidence the prior recommendation was not affordable for this firm.)
 
 AD SPEND CALCULATION
 --------------------------------------------------------------------------------
-Practice area classified as MVA / Car Accidents (car accident + 18-wheeler
-accident emphasis per Step 3 competitor searches), which is the closest
-matching row in the Ad Spend Calculation table.
+Practice area: MVA / Car Accidents (car accident + 18-wheeler accident
+emphasis per Step 3 competitor searches).
 
-Conservative = sum of channel minimums (MVA / Car Accidents row):
-  Google PPC $10,000 + LSA $2,000 + Meta Retargeting $1,500 + Meta Lead Gen
-  $6,000 = $19,500/mo
-  (PI hard floor for High competitiveness is $10,000 — the channel-minimum
-  sum already exceeds this floor, so the sum governs.)
+The full channel-minimum sum for this practice area ($19,500/mo — Google PPC
+$10,000 + LSA $2,000 + Meta Retargeting $1,500 + Meta Lead Gen $6,000) far
+exceeds the Essentials tier's $5,000/mo ad-spend cap. This is the known
+tension in recommending Essentials for a PI practice — flagging explicitly
+rather than silently presenting an ad-spend number as if it were the
+"ideal" channel mix:
 
-Aggressive (20% rule, using $3.5M midpoint of the stated $3–4M revenue goal):
-  1. $3,500,000 x 20% / 12 = $58,333/mo
-  2. x Geographic multiplier: Pharr/McAllen, TX (RGV) = Tier 4 (significant
-     regional, not a named Tier 1–3 metro) = 1.0x -> $58,333/mo
-  3. x Spanish campaign multiplier (needed, explicitly stated in transcript,
-     PI/MVA rate) = 1.50x -> $87,500/mo
-  4. - Growth tier management fee ($7,497) = $80,003/mo available
-  5. Reverse math validation: ($3,500,000/12) / $7,500 avg case value (MVA
-     default, case value not stated in transcript) = ~38.9 target cases/mo /
-     15% close rate (default, not stated) = ~259 required leads/mo x ~$445
-     blended CPL (Accident & Injury CPL midpoints, weighted by the
-     conservative channel mix) = ~$115,485/mo required. Reverse math is
-     higher than the 20% rule, so it governs per the "use whichever is
-     higher" rule.
-  6. Tier cap check: Growth tier caps ad spend at $50,000/mo. The
-     reverse-math figure ($115,485/mo) exceeds this cap. Per the boundary
-     rule, exceeding the cap normally means moving to the next tier
-     (Dominate, cap $100,000) — but Dominate requires $2M–$3M revenue, and
-     this firm's current revenue ($1.5–2M) does not clear that floor.
-     "Aggressive goals alone no longer bypass the Dominate/Platinum revenue
-     floors" — so Dominate is NOT eligible yet. Aggressive ad spend is
-     therefore presented at the Growth tier's $50,000/mo cap, not the
-     uncapped reverse-math figure. Scaling further into the $3–4M goal
-     happens in Phase 4 (tier upgrade) once revenue clears $2M.
+Conservative ad spend: $3,000/mo (absolute minimum per audit-write.md floor;
+  Google Search + LSA only — no Meta at this budget level).
+Aggressive ad spend: $5,000/mo (Essentials tier cap).
 
-FINAL AD SPEND RANGE: $19,500/mo (conservative) to $50,000/mo (aggressive,
-capped at Growth tier ceiling).
+This range is intentionally a Phase 1 test budget, not the full recommended
+channel mix for a competitive PI market. Sales should frame it honestly on
+the call: this is what the redirected billboard budget can fund starting day
+one; scaling to the channel-minimum-recommended $19,500+/mo happens in Phase 2
+once case flow and revenue justify a tier upgrade to Starter ($20,000 ad cap)
+or Growth ($50,000 ad cap).
 
 ROI PROJECTIONS
 --------------------------------------------------------------------------------
-Using Accident & Injury CPL table midpoints, weighted by the conservative
-channel-spend mix (Google 51.3% / LSA 10.3% / Meta Retargeting 7.7% / Meta
-Cold 30.8%): blended CPL (no cushion) = ~$445. Conservative scenario adds a
-20% cushion per the methodology = ~$534.
-Average case value: $7,500 (MVA/Accident-Injury default midpoint — NOT
-stated in transcript, disclosed as a default). Close rate: 15% (default —
-not stated in transcript).
+Using the same blended CPL methodology as before (Google/LSA/Meta mix,
+Accident & Injury CPL table midpoints): blended CPL (no cushion) = ~$445;
+conservative scenario adds a 20% cushion = ~$534.
+Average case value: $7,500 (MVA/Accident-Injury default midpoint — NOT stated
+in transcript, disclosed as a default). Close rate: 15% (default — not stated
+in transcript).
 
-Conservative ($19,500/mo ad spend):
-  Leads = 19,500 / 534 =~ 36.5/mo
-  Cases = 36.5 x 15% =~ 5.5/mo (present as 5–6 cases/month)
-  Revenue = 5.5 x $7,500 =~ $41,000/mo
+Conservative ($3,000/mo ad spend):
+  Leads = 3,000 / 534 =~ 5.6/mo
+  Cases = 5.6 x 15% =~ 0.8/mo (present as "roughly 1 case every 5-6 weeks")
+  Revenue = 0.8 x $7,500 =~ $6,300/mo
   Return = ~2.1x
 
-Aggressive ($50,000/mo ad spend):
-  Leads = 50,000 / 445 =~ 112.4/mo
-  Cases = 112.4 x 15% =~ 16.9/mo (present as 16–17 cases/month)
-  Revenue = 16.9 x $7,500 =~ $127,000/mo
-  Return = ~2.5x
+Aggressive ($5,000/mo ad spend):
+  Leads = 5,000 / 445 =~ 11.2/mo
+  Cases = 11.2 x 15% =~ 1.7/mo (present as "1-2 cases/month")
+  Revenue = 1.7 x $7,500 =~ $12,750/mo
+  Return = ~2.55x
 
-Client-facing presentation (matches existing Block 4 template structure —
-ad spend row, case value row, cases/month row, monthly revenue row):
-  Recommended ad spend: $19,500 – $50,000/mo
+Client-facing presentation (matches existing Block 4 template structure):
+  Recommended ad spend: $3,000 – $5,000/mo
   Estimated case value: $7,500 (PI/MVA industry default; not stated on call)
-  Est. cases per month: 5–17 cases
-  Est. monthly revenue from ads: $40,000 – $127,000
+  Est. cases per month: 1–2 cases
+  Est. monthly revenue from ads: $6,300 – $12,750
+
+Sales note: these numbers are intentionally modest — they reflect the smaller
+Essentials ad-spend cap, not a ceiling on the firm's real opportunity. Use the
+"scales with tier upgrade" framing in Phase 2/3 to set expectations correctly
+on the call.
 
 DBM STATEMENT FOR BLOCK 1
 --------------------------------------------------------------------------------
@@ -172,17 +163,18 @@ QUICK WIN OPPORTUNITIES (6, across all 4 pillars)
    dependency, $60K/yr billboards producing ~5 cases/yr.
    Competitor: Ruy Mireles Law Firm — runs paid ads into the Pharr market
    from a McAllen office with no local presence.
-   Opportunity: launching Google/LSA/Meta campaigns targets demand
-   competitors are already capturing today.
+   Opportunity: launching Google/LSA campaigns targets demand competitors are
+   already capturing today.
 2. [Lead Gen / Quick Win] English-only website against a 95% Spanish-
    speaking client base. No named competitor identified for this specific
    gap.
    Opportunity: bilingual practice-area pages open the firm to the majority
    of its own addressable market for the first time.
-3. [Lead Gen / Long-Term Play] Reputation/review gap — 15 reviews vs.
-   hundreds for named competitors.
-   Competitor: Leah Wise Law Firm — 782 reviews, 5.0/5, Texas's largest 2020
-   PI settlement, ~2,000 organic visitors/month.
+3. [Lead Gen / Long-Term Play] Reputation/review gap — a small handful of
+   reviews vs. an established review base for named competitors (exact
+   competitor counts UNCONFIRMED this session — see escalation flag below).
+   Competitor: Leah Wise Law Firm — large established review base, 5.0/5,
+   Texas's largest 2020 PI settlement, ~2,000 organic visitors/month.
    Opportunity: a review-generation system closes the trust gap that is
    currently sending prospects to the competition.
 4. [Intake / Quick Win] No formal intake process — Israel personally fields
@@ -199,17 +191,35 @@ QUICK WIN OPPORTUNITIES (6, across all 4 pillars)
    year (~$12,000 cost per case), with zero tracking of marketing ROI. No
    named competitor (internal financial-visibility gap).
    Opportunity: redirecting billboard spend into trackable digital channels
-   turns an unmeasured cost center into a measurable growth engine.
+   turns an unmeasured cost center into a measurable growth engine — and
+   funds the Essentials ad-spend recommendation above with no new capital.
 
-FIRST 90 DAYS (5 bullets)
+FIRST 90 DAYS (4 bullets)
 --------------------------------------------------------------------------------
 1. Launch Google Search + LSA campaigns targeting "car accident lawyer Pharr
    TX," "personal injury lawyer McAllen TX," and Spanish-language equivalents.
-2. Launch Meta retargeting and lead-gen campaigns to capture and convert
-   website visitors and cold prospects across the RGV market.
-3. Rebuild rivaslawrgv.com with bilingual (English/Spanish) practice-area
+2. Rebuild rivaslawrgv.com with bilingual (English/Spanish) practice-area
    pages, corrected NAP data, and conversion-focused calls to action.
-4. Launch a Google review-generation campaign to close the trust gap against
+3. Launch a Google review-generation campaign to close the trust gap against
    Leah Wise, Tijerina Legal Group, and Ruy Mireles.
-5. Kick off Elite Coach Plus coaching sessions to build the delegation plan
-   that lets Israel step back from day-to-day intake and casework.
+4. Redirect the existing $60,000/year billboard budget into the new digital
+   campaigns so ad spend is funded from day one.
+
+ESCALATION FLAGS (internal only — never appear in client report)
+--------------------------------------------------------------------------------
+- Review counts UNCONFIRMED: Rivas Law Firm's own review count and all four
+  named competitors' review counts (previously cited as 15 / 782 / 115 / 906 /
+  72) could not be verified against an authoritative Google source this
+  session. The 4.8/5 rating for Rivas Law Firm was confirmed directly by the
+  sales rep and is safe to state. Before the proposal call, pull each firm's
+  live Google Business Profile directly to confirm current counts if a
+  specific number needs to be quoted verbally.
+- Essentials tier practice-area override: Personal Injury normally hides
+  Essentials (eligibility filter in audit-write.md). This proposal is an
+  explicit, documented sales-rep override — confirm this is still the
+  intended positioning before the call, since a future automated re-run of
+  package selection will otherwise default back to Starter.
+- Ad spend below practice-area channel minimums: the $3,000–$5,000/mo
+  recommended range is below the $19,500/mo channel-minimum sum for a
+  competitive MVA/PI market — paid ads team review recommended before
+  committing to campaign channel mix.

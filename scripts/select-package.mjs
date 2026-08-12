@@ -134,6 +134,23 @@ async function fetchHubSpotRevenue(contactId) {
 // ─── Parsing helpers ──────────────────────────────────────────────────────────
 
 function parseRevenue(text) {
+  // Range forms first (e.g. "Annual revenue: $1.5-2M gross", "$1.5–2M"), since a
+  // bare-number pattern below would otherwise only catch the first number in the range.
+  const rangePatterns = [
+    /annual revenue[:\s]+\$?([\d,\.]+)\s*[-–—to]+\s*\$?([\d,\.]+)\s*(million|M|[Kk])\b/i,
+    /revenue[:\s]+\$?([\d,\.]+)\s*[-–—to]+\s*\$?([\d,\.]+)\s*(million|M|[Kk])\b/i,
+  ];
+  for (const pattern of rangePatterns) {
+    const m = text.match(pattern);
+    if (!m) continue;
+    const lo = parseFloat(m[1].replace(/,/g, ''));
+    const hi = parseFloat(m[2].replace(/,/g, ''));
+    if (isNaN(lo) || isNaN(hi) || lo <= 0 || hi <= 0) continue;
+    const suffix = m[3].toLowerCase();
+    const mult = (suffix === 'million' || suffix === 'm') ? 1_000_000 : 1_000;
+    return ((lo + hi) / 2) * mult;
+  }
+
   const patterns = [
     /annual revenue[:\s]+\$?([\d,\.]+)\s*(million|M)\b/i,
     /annual revenue[:\s]+\$?([\d,\.]+)\s*([Kk])\b/i,
@@ -202,6 +219,39 @@ function hasDedicatedOps(text) {
 
 function detectPI(practiceAreas) {
   return practiceAreas.some(a => /personal injury|car accident|auto accident|mva|motor vehicle|truck accident|wrongful death|catastrophic injury|brain injury|tbi|slip and fall|premise|dog bite/i.test(a));
+}
+
+// Practices commonly billed on contingency, where "revenue" in a research note
+// is often the gross case value rather than the fee actually collected.
+function detectContingencyPractice(practiceAreas) {
+  return practiceAreas.some(a => /personal injury|car accident|auto accident|mva|motor vehicle|truck accident|wrongful death|catastrophic injury|brain injury|tbi|slip and fall|premise|dog bite|mass tort|workers[' ]?comp|medical malpractice|product liability/i.test(a));
+}
+
+/**
+ * Parse a net/collected/take-home revenue figure, distinct from gross revenue.
+ * Contingency-fee practices frequently state both in the same breath
+ * (e.g. "$1.5-2M gross / ~$500k net") — the net figure is what the firm
+ * actually collects and is the correct basis for package tiering.
+ */
+function parseNetRevenue(text) {
+  const patterns = [
+    /\$?([\d,\.]+)\s*(million|M|k|K)?\s*net\b/i,
+    /net\s+revenue[:\s]+\$?([\d,\.]+)\s*(million|M|k|K)?/i,
+    /take[- ]home[:\s]+\$?([\d,\.]+)\s*(million|M|k|K)?/i,
+    /collected(?:\s+revenue)?[:\s]+\$?([\d,\.]+)\s*(million|M|k|K)?/i,
+    /net of contingency[:\s]+\$?([\d,\.]+)\s*(million|M|k|K)?/i,
+  ];
+  for (const pattern of patterns) {
+    const m = text.match(pattern);
+    if (!m) continue;
+    const raw = parseFloat(m[1].replace(/,/g, ''));
+    if (isNaN(raw) || raw <= 0) continue;
+    const suffix = (m[2] || '').toLowerCase();
+    if (suffix === 'million' || suffix === 'm') return raw * 1_000_000;
+    if (suffix === 'k') return raw * 1_000;
+    if (raw >= 100_000) return raw;
+  }
+  return null;
 }
 
 function detectCriminalDefense(practiceAreas) {
@@ -387,10 +437,13 @@ const notes = [];
 
 // Parse signals
 const revenueStated  = parseRevenue(text);
+const netRevenueStated = parseNetRevenue(text);
 const practiceAreas  = parsePracticeAreas(text);
 const teamSizeStated = parseTeamSize(text);
+const isContingencyPractice = detectContingencyPractice(practiceAreas);
 
 console.log(`  Revenue stated:  ${revenueStated != null ? '$' + revenueStated.toLocaleString() : 'NOT STATED'}`);
+console.log(`  Net revenue:     ${netRevenueStated != null ? '$' + netRevenueStated.toLocaleString() : 'NOT STATED'}`);
 console.log(`  Team size:       ${teamSizeStated ?? 'NOT STATED'}`);
 console.log(`  Practice areas:  ${practiceAreas.join(' | ') || 'none detected'}`);
 
@@ -402,7 +455,20 @@ let revenueSource = revenueStated != null ? 'research_notes' : null;
 let revenueLabel  = null;
 let effectiveTeam = teamSizeStated ?? 3;
 
-if (revenueStated === null) {
+// Contingency-fee practices: tier on collected/net revenue, not gross case value,
+// when the research notes state a net/collected figure.
+if (isContingencyPractice && netRevenueStated !== null) {
+  effectiveRevenue = netRevenueStated;
+  revenueSource = 'research_notes_net';
+  notes.push(revenueStated !== null
+    ? `Contingency-fee practice with both gross ($${revenueStated.toLocaleString()}) and net/collected ($${netRevenueStated.toLocaleString()}) revenue stated — tiering on net per contingency-revenue rule.`
+    : `Contingency-fee practice with net/collected revenue stated ($${netRevenueStated.toLocaleString()}) — tiering on net per contingency-revenue rule.`);
+} else if (isContingencyPractice && revenueStated !== null && netRevenueStated === null) {
+  notes.push(`Contingency-fee practice with only gross revenue stated ($${revenueStated.toLocaleString()}) — no net/collected figure found. Using gross as fallback, but confidence downgraded: confirm actual collected revenue with sales rep before finalizing tier.`);
+  confidence = 'low';
+}
+
+if (effectiveRevenue === null) {
   // Fallback 1: HubSpot contact revenue fields
   const hsRevenue = await fetchHubSpotRevenue(hubspotContactId);
   if (hsRevenue) {
@@ -444,6 +510,8 @@ const totalSavings = (mktSavings ?? 0) + (cchSavings ?? 0);
 const decision = {
   confidence,
   revenue_stated:          revenueStated,
+  net_revenue_stated:      netRevenueStated,
+  is_contingency_practice: isContingencyPractice,
   revenue_effective:       effectiveRevenue,
   revenue_source:          revenueSource,
   revenue_label:           revenueLabel,

@@ -48,20 +48,23 @@ PILLAR_NAMES = ["Lead Generation", "Intake", "Team", "Profit Plan"]
 # Use "neg" for problems (red ✕), "pos" for strengths (green ✓).
 # Include 3–4 total; at least one "pos" if a genuine strength exists.
 FINDINGS = [
-    ("neg", "15 reviews vs. hundreds for named competitors"),
+    ("neg", "A small handful of reviews vs. an established base for named competitors"),
     ("neg", "$60K/yr billboards produced only ~5 cases last year"),
     ("neg", "Every case routes through Israel personally, with no team"),
-    ("pos", "Strong 4.7-star rating shows no reputation problem, only volume"),
+    ("pos", "Strong 4.8-star rating shows no reputation problem, only volume"),
 ]
 
-# Competitor table — list of (name, "XXX reviews", "brief note")
+# Competitor table — list of (name, short qualitative descriptor, "brief note")
 # List 3 competitors + the client row is added automatically.
+# NOTE: exact review counts could not be confirmed via an authoritative Google
+# source this session (see section_11_workings.txt) — qualitative descriptors
+# used instead of unverified specific numbers.
 COMPETITORS = [
-    ("Leah Wise Law Firm",    "782 reviews", "5.0★ SEO leader"),
-    ("Tijerina Legal Group",  "906 reviews", "98% recommend"),
-    ("Ruy Mireles Law Firm",  "115 reviews", "Ads, no office"),
+    ("Leah Wise Law Firm",    "Large base", "5.0★ SEO leader"),
+    ("Tijerina Legal Group",  "Large base", "98% recommend"),
+    ("Ruy Mireles Law Firm",  "Established", "Ads, no office"),
 ]
-CLIENT_REVIEWS      = "15 reviews"
+CLIENT_REVIEWS      = "Small base"
 CLIENT_REVIEWS_NOTE = "← You are here"
 
 # Stage strip (right panel, Slide 1)
@@ -84,7 +87,7 @@ PRIORITIES = [
         "Build the", "Marketing Engine", "0091C9",
         [
             "Launch Google & LSA ads in Pharr/McAllen",
-            "Launch Meta retargeting + lead-gen ads",
+            "Fund the launch by redirecting billboard spend",
             "Rebuild site bilingual, fix NAP mismatch",
             "Launch a review-generation campaign",
             "Turn Google into leads that don't need you",
@@ -103,7 +106,7 @@ PRIORITIES = [
     (
         "Install Team &", "Profit Systems", "003A59",
         [
-            "Add FCOO Advisor to build real delegation",
+            "Add Elite Coach Plus once lead flow is proven",
             "Track cost-per-case on every ad dollar",
             "Redirect $60K/yr billboard spend to ads",
             "Build weekly coaching + PI masterminds",
@@ -116,39 +119,33 @@ PRIORITIES = [
 # Package cards — (label, bundled_price, retail_price, services_line, accent_color_hex)
 PACKAGES = [
     (
-        "FULL SERVICE MARKETING — GROWTH",
-        "$7,497", "$8,997/mo",
-        "Bilingual site · Google/LSA/Meta Ads · Local SEO",
+        "FULL SERVICE MARKETING — ESSENTIALS",
+        "$3,797", "",
+        "Bilingual site · Google/LSA Ads · Local SEO",
         "0091C9",
-    ),
-    (
-        "ELITE COACH PLUS",
-        "$3,200", "$3,497/mo",
-        "Weekly coaching · PI masterminds · Delegation plan",
-        "003A59",
     ),
 ]
 
-BUNDLE_TOTAL   = "$10,697 / mo"
-BUNDLE_SAVINGS = "Save $1,797/mo by bundling"
+BUNDLE_TOTAL   = "$3,797 / mo"
+BUNDLE_SAVINGS = "Funded by redirecting existing ad budget"
 
 AD_SPEND_NOTE = (
-    "+ Recommended ad spend: $19,500–$50,000/mo paid directly to Google/Meta"
+    "+ Recommended ad spend: $3,000–$5,000/mo paid directly to Google/LSA"
 )
 
 AVG_CASE_VALUE     = "$7,500"
-CONSERVATIVE_LABEL = "Conservative  (5-6 cases/mo):"
-CONSERVATIVE_RESULT = "$41,000 revenue · 2.1× ROAS"
-AGGRESSIVE_LABEL   = "Aggressive  (16-17 cases/mo):"
-AGGRESSIVE_RESULT  = "$127,000 revenue · 2.5× ROAS"
+CONSERVATIVE_LABEL = "Conservative  (~1 case/mo):"
+CONSERVATIVE_RESULT = "$6,300 revenue · 2.1× ROAS"
+AGGRESSIVE_LABEL   = "Aggressive  (1-2 cases/mo):"
+AGGRESSIVE_RESULT  = "$12,750 revenue · 2.55× ROAS"
 
 # Timeline — 5 items: (milestone_label, action_text)
 TIMELINE = [
-    ("Day 1",   "Launch Google, LSA & Meta ad campaigns"),
+    ("Day 1",   "Launch Google & LSA ad campaigns"),
     ("Day 14",  "Bilingual website rebuild kicks off"),
     ("Week 2",  "Review-generation campaign goes live"),
-    ("Week 3",  "Elite Coach Plus coaching begins"),
-    ("Month 3", "Intake process built, delegation begins"),
+    ("Week 6",  "First cost-per-case ROI report"),
+    ("Month 3", "Evaluate tier upgrade as results come in"),
 ]
 
 CLOSING_QUOTE = (

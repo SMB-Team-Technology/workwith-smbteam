@@ -41,6 +41,17 @@ The discovery call transcript is ground truth. Before searching for any data poi
 
 ---
 
+## REVIEW-DATA VERIFICATION RULE
+
+Every Google review count and star rating recorded anywhere in this file (firm or competitor, in STEP 2, STEP 3, or STEP 4) must carry an explicit verification-method tag:
+
+- `[confirmed via Google]` — read directly off the firm's or competitor's Google Maps / Google Business Profile listing.
+- `[UNCONFIRMED — sourced from <aggregator name, e.g. Birdeye/Yelp/Facebook/directory site>, not independently confirmed via Google]` — used when a direct Google listing could not be reached and the number came from a third-party aggregator instead.
+
+Never record a bare number with no tag. A number tagged `UNCONFIRMED` is not fact — it must stay tagged that way all the way through to `/audit-write`, which will not print it as a specific figure in the client-facing report.
+
+---
+
 ## ADS FRAMING RULE
 
 Never state with certainty that a firm is not running ads unless the prospect confirmed it on the call. When ads are not visible, say the firm "does not appear to be running ads for this search" or "may be getting outbid by competitors." Always frame as an opportunity gap. Never write "You are not currently running ads."
@@ -77,8 +88,8 @@ If PageSpeed tool fails, try again. The actual numbers must be recorded.
 Search for the firm by name on Google. Record:
 
 - GBP found: [yes/no]
-- Star rating: [actual number]
-- Total review count: [actual number — verify live]
+- Star rating: [actual number] [verification-method tag — see REVIEW-DATA VERIFICATION RULE]
+- Total review count: [actual number — verify live] [verification-method tag]
 - Most recent review date: [actual date]
 - Primary category: [exact category listed]
 - Photos active: [yes/no]
@@ -109,9 +120,9 @@ Practice Area 2 (if applicable): [name]
 Verify every number live before recording. Never cite a competitor as having more reviews than the prospect if the prospect actually has more.
 
 ```
-- Competitor 1: [name] — reviews: [actual number verified live] — rating: [actual number]
-- Competitor 2: [name] — reviews: [actual number verified live] — rating: [actual number]
-- Competitor 3: [name] — reviews: [actual number verified live] — rating: [actual number]
+- Competitor 1: [name] — reviews: [actual number verified live] [verification-method tag] — rating: [actual number] [verification-method tag]
+- Competitor 2: [name] — reviews: [actual number verified live] [verification-method tag] — rating: [actual number] [verification-method tag]
+- Competitor 3: [name] — reviews: [actual number verified live] [verification-method tag] — rating: [actual number] [verification-method tag]
 ```
 
 ---
@@ -180,7 +191,9 @@ Extract from the discovery call transcript. Trust these values exactly as stated
 - Current lead sources: [exact quotes if available]
 - Ads ever run: [yes/no — what platform, what budget, what result]
 - Team size: [number and roles]
-- Annual revenue: [stated figure or range]
+- Annual revenue (gross / case value): [stated figure or range]
+- Annual revenue (net / take-home / collected): [stated figure or range — if the prospect only ever states one number, write "not distinguished from gross"]
+- Fee structure: [contingency % / hourly / flat-fee / mixed — exact quote if available, or "not stated"]
 - Revenue goal: [stated figure — if not stated, note "not stated, use 2x current revenue"]
 - Average case value: [stated figure or practice area]
 - Current close rate: [stated figure or "not stated — default to 15%"]
@@ -223,6 +236,8 @@ Before finishing, check every item. Fix anything unchecked before saving.
 
 - [ ] Every number in the notes matches actually observed data
 - [ ] Every competitor review count has been verified live — prospect does not have more reviews than any competitor cited as "dominating"
+- [ ] Every review count and star rating (firm and competitors) carries a verification-method tag — `[confirmed via Google]` or `[UNCONFIRMED — sourced from ...]` — per the REVIEW-DATA VERIFICATION RULE
+- [ ] Annual revenue is split into gross/case-value and net/take-home/collected figures, with fee structure recorded, whenever the transcript distinguishes them
 - [ ] Every ad section covers ALL practice areas listed in the transcript
 - [ ] No section says "you are not running ads" — only "does not appear to be running" or "not observed"
 - [ ] No profitability or business claim appears unless it came from the transcript
