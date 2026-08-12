@@ -1,0 +1,111 @@
+DUMAS & SANCLEMENTE, PLLC — SECTION 11 WORKINGS (INTERNAL — NOT FOR CLIENT REPORT)
+======================================================================
+
+OVERRIDE CHECK (Transcript-Stated Need Override)
+- Call-purpose override: does NOT apply — standard marketing/growth discovery call, confirmed in research notes ("CALL FOCUS FLAG").
+- Existing-vendor override: does NOT apply — "Existing marketing/SEO/ad vendor engagements: none stated."
+- Budget-reality override: does NOT apply — "Budget constraints stated: none stated explicitly by the prospect."
+=> No override triggered. Proceed with package_decision.json as starting point (confidence: medium).
+
+REVENUE CORRECTION
+- package_decision.json used revenue_effective = $1,980,500 (HubSpot band "$961K-$3M", confidence: medium).
+- Research notes Step 9 (transcript extraction) explicitly state: "Annual revenue: ~$1.2M (stated — 'current plateau')". This is transcript-stated ground truth and takes priority over the HubSpot estimate for narrative purposes.
+- Eligibility impact: NONE. Both $1.2M and $1.98M fall within the $1M-$2M marketing band (Growth tier) and the $1M+/Under-5-team coaching band (Elite Coach Plus). Tier selections in package_decision.json are confirmed correct.
+- Revenue goal used for aggressive ad-spend math: $2.5M+ (stated in transcript), not current revenue.
+
+MANDATORY PRICE LOOKUP (verified against tables in .claude/commands/audit-write.md)
+- Marketing package selected: Full Service Marketing — Growth (revenue $1M-$2M band)
+  - Bundled price (from table): $7,497/mo
+  - Stand-alone price (from table): $8,997/mo
+  - Savings: $1,500/mo
+- Non-marketing package selected: Elite Coach Plus (revenue $1M+, team under 5 — Master's Circle requires 5+ dedicated staff, not established here)
+  - Bundled price (from table): $3,200/mo
+  - Stand-alone price (from table): $3,497/mo
+  - Savings: $297/mo
+- Legal AI Workforce (LAW) package selected: none — no AI/tech-adoption signal in transcript; not recommended
+- AI Avatar / Video Growth add-on selected: none — no video/social interest stated in transcript; not recommended
+- Total monthly investment (bundled): $7,497 + $3,200 = $10,697/mo
+- Total savings: $1,500 + $297 = $1,797/mo
+
+ELIGIBILITY FILTER CHECKS
+- Practice area: Personal Injury, 2 locations, multiple case types -> Essentials tier hidden (moot; Growth already selected, well above minimum Starter floor)
+- Revenue under $2M -> Dominate/Platinum hidden. Growth tier correctly NOT upgraded despite aggressive revenue goal ($2.5M+), per "aggressive goals alone no longer bypass the Dominate/Platinum revenue floors."
+- Team under 5 -> Master's Circle hidden. Elite Coach Plus correctly selected.
+- Minimum MRR $2,497/mo -> total $10,697/mo comfortably clears this.
+- Both a marketing and non-marketing package recommended (default), consistent with transcript showing both a lead-gen gap and a team/ops gap.
+
+35% TOTAL SPEND CAP CHECK
+- Using current stated revenue ($1.2M/yr = $100,000/mo, the more conservative and defensible figure vs. the $1.98M HubSpot estimate): 35% cap = $35,000/mo total (management fees + ad spend).
+- Management fees = $10,697/mo. Max ad spend under cap = $35,000 - $10,697 = $24,303/mo.
+- This caps the AGGRESSIVE ad spend recommendation below the Growth tier's nominal $50,000/mo ad spend cap — the binding constraint here is affordability against current revenue, not the tier's channel cap.
+
+AD SPEND CALCULATION
+Practice area used: MVA / Car Accidents (primary category — car, truck, motorcycle, rideshare, pedestrian accidents represent the bulk of the caseload; slip-and-fall/premises liability secondary).
+Recommended channels: Google Search, LSA, Meta Retargeting, Meta Lead Gen (cold) — covering both Tampa Bay/Lutz and Fort Lauderdale/South Florida under one blended recommendation (pricing tables are practice-area based, not per-office).
+
+Conservative = sum of channel minimums (MVA row):
+  Google PPC $10,000 + LSA $2,000 + Meta Retargeting $1,500 + Meta Lead Gen $6,000 = $19,500/mo
+  (Exceeds PI hard floor for Medium competitiveness of $7,500 — no floor adjustment needed.)
+  Correction note: package_decision.json listed ad_spend_conservative = $10,000, which reflects only the Google PPC minimum, not the full channel-sum method in this file's Ad Spend Calculation table. Using the corrected $19,500/mo conservative figure.
+  Check vs. 35% cap: $10,697 + $19,500 = $30,197/mo = 30.2% of $100,000/mo revenue. Within cap.
+
+Aggressive = 20% rule:
+  1. Revenue GOAL $2,500,000 x 20% / 12 = $41,666.67/mo
+  2. x Geographic multiplier: Tampa = Tier 2 (1.3x); Fort Lauderdale/South Florida treated as Tier 2 (aligns with Miami Tier 2 listing) = 1.3x -> $54,166.67
+  3. x Spanish campaign multiplier (PI/MVA) 1.50x -> $81,250.00
+  4. - Marketing management fee $7,497 = $73,753.00 available ad spend (20%-rule result)
+  5. Reverse math validation:
+     Revenue Goal / 12 = $208,333.33/mo target revenue
+     / Average Case Value (MVA default, disclosed assumption, midpoint of $5K-$10K range = $7,500; actual per-case values in this FL no-fault, low-BI-minimum "singles" market may run toward the lower end) = 27.78 -> corrected: $208,333.33 / $7,500 = 27.78 target cases/month
+     / Close rate 15% (default, not stated) = 185.2 required leads/month
+     Blended CPL (Accident & Injury row, weighted by conservative channel-spend proportions: Google 51.3%, LSA 10.3%, Meta Retarget 7.7%, Meta Cold 30.8%; midpoints $705/$235/$90/$170) = ~$445/lead (no cushion)
+     Required spend = 185.2 x $445 = $82,414/mo
+     Higher of 20%-rule ($73,753) vs reverse math ($82,414) -> reverse math wins: ~$82,414/mo
+  6. Check vs tier cap: Growth tier cap is $50,000/mo — both the 20%-rule and reverse-math figures exceed this, but the firm's revenue does not meet the $2M floor required to move to Dominate tier (aggressive goals alone cannot bypass this floor).
+  7. Check vs 35% affordability cap (current revenue): max ad spend = $24,303/mo. THIS is the binding constraint — well below both the tier cap and the raw 20%-rule/reverse-math figures.
+  => Aggressive ad spend presented to client: $24,000/mo (rounded down slightly from the $24,303 cap for clean presentation). This is a deliberate, documented departure from package_decision.json's ad_spend_aggressive figure of $40,000 — that figure would push total spend to $10,697 + $40,000 = $50,697/mo (50.7% of current monthly revenue), which breaches the 35% total-spend eligibility filter. Flagging for sales: as revenue grows toward the $2.5M goal, aggressive spend can scale up correspondingly within the cap.
+
+ROI PROJECTIONS (Block 4)
+Average case value used: $7,500 (MVA default midpoint, disclosed assumption; actual case values in this market may run lower per the FL no-fault/low-BI-minimum "singles market" dynamic noted in the transcript). Close rate: 15% (default, not stated).
+
+Conservative scenario — Ad spend $19,500/mo:
+  Blended CPL with 20% cushion = $445 x 1.20 = $534
+  Leads = $19,500 / $534 = ~36 leads/mo
+  Cases = 36 x 15% = ~5 cases/mo (5.48)
+  Revenue = 5.48 x $7,500 = ~$41,100/mo
+  Return = $41,100 / $19,500 = ~2.1x
+
+Aggressive scenario — Ad spend $24,000/mo:
+  Blended CPL, no cushion = $445
+  Leads = $24,000 / $445 = ~54 leads/mo
+  Cases = 54 x 15% = ~8 cases/mo (8.09)
+  Revenue = 8.09 x $7,500 = ~$60,700/mo
+  Return = $60,700 / $24,000 = ~2.5x
+
+All figures are estimates based on default assumptions where the transcript did not state exact numbers (close rate, average case value) — disclosed in the client report.
+
+DBM STATEMENT (Block 1)
+DBM (inferred, not an exact transcript quote): scale and dominate — become the "go-to" PI firm across Tampa Bay and South Florida, explicitly benchmarked against TomDoc Law's success in the same market, with a secondary undertone of replacing unpredictable referral dependence with a predictable new-business engine.
+"We help personal injury firms like Dumas & Sanclemente get a predictable system for new cases so they can become the go-to PI firm across Tampa Bay and South Florida — the kind of growth TomDoc Law has already achieved in this market."
+
+QUICK WIN OPPORTUNITIES (7 — minimum 6 required, across all four pillars)
+1. [Lead Gen] NAP Cleanup — Why: 3 different addresses and 2 different phone numbers circulating across the firm's own site and directory profiles, likely suppressing local ranking signals. Competitor: n/a (internal fix). Opportunity: consolidate to one verified NAP everywhere to unlock map-pack visibility.
+2. [Lead Gen] Geo-Targeted Landing Pages — Why: only 2 office-city pages exist despite the firm's own copy claiming broader Tampa Bay/South Florida coverage. Competitor: Florin Gray, Holliday Karatinos (dedicated hyper-local pages). Opportunity: build pages for Clearwater, St. Petersburg, Wesley Chapel, Hollywood, and Miami.
+3. [Lead Gen] Launch Google Ads for core PI/MVA terms — Why: zero paid search presence today in either market. Competitor: The Fernandez Law Group, Holliday Karatinos. Opportunity: capture ready-to-hire searchers immediately instead of relying solely on referrals.
+4. [Lead Gen] Spanish-language campaign — Why: transcript flags this as a high-potential, lower-cost channel given South Florida's large Hispanic population. Competitor: none identified running dedicated Spanish-language campaigns. Opportunity: capture an underserved audience at a lower blended CPL.
+5. [Intake] Build a defined intake process with tracking — Why: no CRM or intake tracking described; no after-hours coverage confirmed. Competitor: n/a. Opportunity: convert more of the existing $10k-$20k/mo in referral leads without spending on new marketing.
+6. [Team] Establish an accountability structure — Why: two attorneys remain the sole operational core with no dedicated ops/marketing/intake role. Competitor: n/a. Opportunity: free attorney time as the growth plan adds caseload and new systems.
+7. [Profit] Implement basic profit visibility — Why: no profit or margin figures discussed on the call; no bookkeeping or CFO engagement in place. Competitor: n/a. Opportunity: confirm the growth plan converts to real take-home profit, not just more revenue.
+
+FIRST 90 DAYS (5 bullets — lead with ads, then website, include coaching kickoff)
+1. Launch Google Ads and LSA campaigns for core PI/MVA terms across Tampa Bay and Fort Lauderdale, including a Spanish-language track.
+2. Fix the firm's NAP inconsistency across all directory listings and rebuild geo-targeted landing pages for underserved metro cities.
+3. Confirm true PageSpeed mobile/desktop scores and address any critical website issues found.
+4. Kick off the Elite Coach Plus coaching engagement to build an intake tracking process and a profit-visibility baseline.
+5. Launch retargeting and video ad creative on Meta built around both attorneys' combined insurance-defense and plaintiff backgrounds.
+
+ESCALATION FLAGS (INTERNAL ONLY — never in client report)
+- Marketing MRR ($10,697/mo total investment; $7,497/mo marketing alone stays under $10K individually, but confirm with sales whether the combined-package threshold applies) — flag for scoping review.
+- Personal Injury practice area in Tampa and Fort Lauderdale — both are large metro markets; confirm with sales rep whether either ranks in the top 40 metro list requiring approval.
+- Aggressive ad spend recommendation ($24,000/mo) is a documented reduction from package_decision.json's $40,000/mo figure, driven by the 35% total-spend affordability cap against current ($1.2M) rather than HubSpot-estimated ($1.98M) revenue. Flag for sales visibility — as revenue grows, aggressive spend has room to scale up within the cap.
+- Team size/roles beyond the two named attorneys were not confirmed — flagged in research notes for Jacob Meissner to confirm before finalizing capacity claims.
