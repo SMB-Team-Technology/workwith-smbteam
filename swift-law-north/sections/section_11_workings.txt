@@ -1,0 +1,165 @@
+SWIFT LAW NORTH — SECTION 11 WORKINGS
+========================================
+
+MANDATORY PRICE LOOKUP (from .claude/commands/audit-write.md tables, verified character-by-character)
+--------------------------------------------------------------------------------------------------
+Marketing package selected: Full Service Marketing — Growth
+  - Bundled price (from table): $7,497/mo
+  - Stand-alone price (from table): $8,997/mo
+  - Savings: $1,500/mo
+
+Non-marketing package selected: Master's Circle
+  - Bundled price (from table): $4,600/mo
+  - Stand-alone price (from table): $4,997/mo
+  - Savings: $397/mo
+
+Legal AI Workforce (LAW) package selected: none (not recommended in Phase 1; flagged for Phase 3 roadmap only, per standard template — "Add Legal AI Workforce (LAW) AI Essentials ($1,597/mo) if firm has not already adopted it")
+
+AI Avatar / Video Growth add-on selected: none (transcript mentions avatar content as SMB Team's pitch, not a confirmed client need this pass — omitted from proposal; would require Alexis approval if added later)
+
+Total monthly investment (bundled): $7,497 + $4,600 = $12,097/mo
+Total savings: $1,500 + $397 = $1,897/mo
+
+CORRECTION TO package_decision.json (confidence: medium — required cross-check per Transcript-Stated Need Override / decision-file rules)
+-------------------------------------------------------------------------------------------------------------------------------------
+package_decision.json selected "Elite Coach Plus" ($3,200/mo bundled) using team_size_effective=3, explicitly noted as a DEFAULT because "team size not stated in research notes."
+
+This default is incorrect — team size IS stated in the research notes (STEP 9, transcript extraction):
+  "Team size: 4 partners (Mike Adada is CTO), ~10 underwriting staff, plus an outsourced
+  intake team based in India."
+
+That is at least 14 people, clearly "5+ team members," and the firm has dedicated staff
+(underwriting staff + a dedicated intake team) — satisfying both Master's Circle eligibility
+conditions ("5+ with dedicated staff" and NOT "no dedicated ops/marketing/intake team member").
+
+Corrected non-marketing package lookup: Revenue $1M+, team 5+ with dedicated staff →
+Master's Circle ($4,600/mo bundled / $4,997/mo stand-alone), per the SELECT NON-MARKETING
+PACKAGE table. Elite Coach Plus is replaced by Master's Circle throughout Section 11 and the
+Executive Summary.
+
+Eligibility filters re-checked with corrected team size:
+  - Fewer than 5 team members → hide Master's Circle: DOES NOT APPLY (team is 14+)
+  - No dedicated ops/marketing/intake staff → hide Master's Circle: DOES NOT APPLY (dedicated
+    underwriting + intake staff exist)
+  - Under $1M revenue → hide Master's Circle: DOES NOT APPLY (revenue $1,980,500)
+  Master's Circle is fully eligible.
+
+Marketing tier (Growth, $1M–$2M revenue band) is unchanged from package_decision.json — no
+override applies there; the HubSpot-sourced revenue estimate ($1,980,500 from "$961K - $3M"
+midpoint) is the best available figure since no firm-wide revenue (gross or net) was ever
+stated on the call — only per-case value range ("low tens of thousands to $500k"). No net vs.
+gross distinction exists to apply the Effective-Revenue Override (#4) — there is only one
+unstated-revenue estimate, not a stated net figure the pipeline missed.
+
+TRANSCRIPT-STATED NEED OVERRIDE CHECK (all four)
+-------------------------------------------------
+1. Call-purpose override: Does NOT apply. Research notes explicitly confirm this was a
+   standard marketing/lead-gen discovery call, not a Fractional CTO/AI or coaching-only call,
+   despite Mike's CTO title.
+2. Existing-vendor override: Does NOT apply. Transcript confirms "no prior paid marketing."
+3. Budget-reality override: Does NOT apply. No budget constraints or spend-limit statements
+   were made on the call.
+4. Effective-revenue override: Does NOT apply. No net/gross split was stated — see above.
+
+Note on is_contingency_practice flag: package_decision.json lists this as `false`, but the
+research notes (STEP 9 and site homepage copy) confirm SLN is in fact a contingency-fee
+practice ("no out-of-pocket fees or costs to clients"). This does not change the revenue
+figure used (no separate net figure exists to substitute), but is flagged here as a data
+accuracy note on the decision file for future reference.
+
+AD SPEND & ROI PROJECTIONS
+---------------------------
+Methodology note: Swift Law North is a national, virtual practice with no local service area,
+so it does not map cleanly onto any single row in the practice-area ad spend/CPL tables (all of
+which assume a local map-pack market). Per the research notes' own adapted-methodology framing,
+the following approach was used and should be verified with a human/paid-ads review before
+finalizing spend commitments:
+  - LSA is excluded entirely (requires a defined local service area SLN does not have).
+  - Recommended channels: Google Search (national) + Meta Retargeting + Meta Cold/Lead Gen.
+  - CPL: no "Consumer Protection / FCRA" row exists in the CPL table. Used "Business Law" as
+    the closest analog (complex/high-value national case type): Google Search $100–$120
+    (mid $110), Meta Retargeting $60–$80 (mid $70), Meta Cold $70–$90 (mid $80).
+  - Assumed channel mix: 60% Google Search / 20% Meta Retargeting / 20% Meta Cold (search-heavy
+    since LSA is unavailable).
+  - Blended CPL (no cushion) = 0.6(110) + 0.2(70) + 0.2(80) = $96
+  - Blended CPL (conservative, +20% cushion) = $96 x 1.2 = ~$115
+  - Average case value: transcript states "wide range, from low tens of thousands to $500k"
+    with no single average given, and this vertical has no listed practice-area default.
+    Used a disclosed representative estimate of $25,000 (near the stated low end, not the
+    $500k outlier) rather than fabricate a precise average. This should be validated by sales
+    before quoting to the client.
+  - Close rate: not stated on call — defaulted to 15% per standard assumption (per research
+    notes STEP 9).
+  - Ad spend: conservative $3,000/mo (absolute floor for any paid ads, used in place of the
+    local channel-minimums sum since no local-market row applies); aggressive $12,000/mo
+    (Growth tier ad spend cap — no dollar revenue goal was stated on the call to run the 20%
+    rule against, only a client-volume goal, so the tier cap was used as the aggressive bound).
+
+Conservative scenario:
+  Ad spend: $3,000/mo
+  Leads = $3,000 / $115 = ~26 leads/mo
+  Cases = 26 x 15% = ~4 cases/mo
+  Revenue = 4 x $25,000 = $100,000/mo
+  Return = $100,000 / $3,000 = ~33x
+
+Aggressive scenario:
+  Ad spend: $12,000/mo
+  Leads = $12,000 / $96 = ~125 leads/mo
+  Cases = 125 x 15% = ~19 cases/mo
+  Revenue = 19 x $25,000 = $475,000/mo
+  Return = $475,000 / $12,000 = ~40x
+
+35% cap check: Estimated monthly revenue ~$165,042 ($1,980,500 / 12). 35% cap = ~$57,764/mo.
+Total spend at aggressive (management fees $12,097 + ad spend $12,000) = $24,097/mo — well
+under cap.
+
+DBM STATEMENT FOR BLOCK 1
+--------------------------
+DBM (inferred, not a direct quote — flagged as such in research notes): "Scale and dominate."
+The call was framed entirely around aggressive volume growth (30-40 -> 100+ -> an "ultimate
+vision" of 500 new clients/month) and market positioning (national reach + Spanish-language
+capability + "a less competitive, more cost-effective ad market"), not around personal
+time-freedom or an exit/sale.
+
+Formula: "We help identity theft, fraud, and credit-report-error victims nationwide get the
+correction and compensation they're owed without paying anything out of pocket, so they can
+scale Swift Law North into the dominant national consumer-protection brand their team and
+capacity already support."
+
+QUICK WIN OPPORTUNITIES (8 — across all four pillars)
+--------------------------------------------------------
+1. [Lead Gen / Quick Win] Zero organic visibility across all three core practice areas
+   (credit report/FCRA, identity theft, FDCPA) — competitor: Consumer Attorneys (appears in
+   all three verticals).
+2. [Lead Gen / Quick Win] No paid search presence in a vertical multiple specialized national
+   firms already occupy — competitor: Francis Mailman Soumilas (owns "credit report errors"
+   search intent).
+3. [Lead Gen / Quick Win] No third-party directory/citation presence under the "Swift Law
+   North" brand itself (Avvo, Justia, FindLaw, BBB) — no named competitor, omit who-row.
+4. [Lead Gen / Long-Term] Spanish-language, national-reach advantage identified in the
+   transcript as a real, less-contested angle — not yet activated in any paid channel — no
+   named competitor, omit who-row.
+5. [Lead Gen / Quick Win] No phone number displayed on the homepage — friction for prospects
+   with an urgent legal need — no named competitor, omit who-row.
+6. [Intake / Quick Win] Outsourced overseas intake team with no confirmed after-hours coverage
+   — no named competitor, omit who-row.
+7. [Team / Long-Term] All strategic and operational decisions currently run through the
+   4-partner group with no dedicated ops leadership as SLN scales past 30-40/month toward
+   100+/month — no named competitor, omit who-row.
+8. [Profit / Long-Term] No firm-wide revenue or per-case profitability visibility discussed —
+   case value spans a wide range ($10Ks-$500k) with no tracking of which case types are most
+   profitable — no named competitor, omit who-row.
+
+FIRST 90 DAYS
+--------------
+1. Launch Google Search + Meta paid campaigns targeting credit report errors/FCRA, identity
+   theft/fraud, and illegal debt collection nationally, with a Spanish-language track from
+   day one.
+2. Fix homepage conversion basics — add a visible phone number and confirm mobile
+   responsiveness — before scaling ad spend into the site.
+3. Build out directory/citation presence for the "Swift Law North" brand specifically (Avvo,
+   Justia, FindLaw) to back paid traffic with third-party trust signals.
+4. Kick off Master's Circle coaching for the partner group — weekly group coaching sessions
+   and practice-area masterminds, plus scheduling the first workshop.
+5. Audit the outsourced intake team's current response times and after-hours coverage so new
+   paid leads do not go cold overnight.
