@@ -1,0 +1,297 @@
+LUCERO, PC — GROWTH AUDIT RESEARCH NOTES
+Prepared for: Proposal call, August 18, 2026
+Sales Rep: Nick Holderman
+Contact: Lindsey Lucero (lindsey@luceropc.com / +1 909-317-6440)
+URL: https://www.luceropc.com/
+
+RESEARCH ENVIRONMENT NOTE (read first): This session's browsing tools are a text-based
+web-fetch/web-search layer, not an interactive/JS-rendered browser. Several live-verification
+steps normally done by visually loading Google Maps, PageSpeed, the Meta Ads Library, and
+Google's ad/LSA surfaces could not be completed because those endpoints returned 429/403
+errors or require a rendered browser session (confirmed by testing the PageSpeed API against
+a neutral control URL, which also returned 429 — this is an environment-level block, not a
+firm-specific finding). Every place this affected a data point is flagged below rather than
+papered over with an estimate. The firm's website itself resolved live and was read directly,
+so all website-content findings are real observations.
+
+================================================================
+STEP 1 — WEBSITE RESEARCH
+================================================================
+- Website URL confirmed live: yes (https://www.luceropc.com/)
+- Last redesign date or estimated age: not exposed on page; modern-looking template with
+  2026 "Best Lawyers" badge suggests content is actively maintained at least annually
+- Mobile responsive: not observed directly (text-only fetch cannot confirm responsive
+  breakpoints) — not observed
+- Homepage headline: "Your Criminal and DUI Defense Firm In La Verne, California"
+- CTA above fold: yes — "Get Your Free Consultation Today" button
+- Contact form location: not found — no dedicated web contact form on the homepage or the
+  /contact page; site is phone-first (213-668-7569 displayed repeatedly, "Call 24/7" banner)
+  with a "Schedule a Case Evaluation" section near the footer instead of a form
+- Live chat present: no
+- Attorney bio present: yes — single attorney, Christopher Lucero, "Former Deputy District
+  Attorney," "10+ Years of Experience" on homepage bio blurb (About page states 8 years of
+  solid experience specific to criminal defense — see NAP/consistency note in Step 5).
+  No additional attorneys or staff bios found on the About page.
+- Video present: no
+- Blog present: yes — linked in navigation, but no post dates or previews were retrievable
+  in this fetch; last post date not observed
+
+PageSpeed: COULD NOT OBTAIN. Three retries against the PageSpeed Insights API (mobile
+strategy) returned HTTP 429. A control test against a neutral third-party URL also returned
+429, confirming this is a tooling/rate-limit block in this research environment, not a
+signal about the firm's site. Do not cite a mobile or desktop PageSpeed number in the
+audit deck — flag this line item as "not independently measurable in this pass" if asked,
+and recommend a live PageSpeed run be pulled manually before the proposal call if a specific
+number is needed on-screen.
+- PageSpeed mobile score: NOT OBTAINED (tool blocked — do not estimate)
+- PageSpeed desktop score: NOT OBTAINED (tool blocked — do not estimate)
+
+================================================================
+STEP 2 — GOOGLE BUSINESS PROFILE
+================================================================
+- GBP found: not independently confirmed — direct Google Maps/Search fetches were blocked
+  (403/empty-shell responses) in this environment
+- Star rating: UNCONFIRMED — sourced from Avvo, not independently confirmed via Google.
+  Avvo lists Christopher Lucero at a 5.0 rating based on 2 client reviews. No Google-specific
+  star rating could be retrieved.
+- Total review count: UNCONFIRMED — sourced from Avvo, not independently confirmed via
+  Google. Avvo shows 2 client reviews (both 5-star). No third-party aggregator (Yelp,
+  Birdeye) surfaced a separate Google review count for this firm in this pass.
+- Most recent review date: not observed
+- Primary category: "Criminal Defense Law" per Yelp listing title (not independently
+  confirmed via Google Business Profile)
+- Photos active: not observed
+- Posts active: not observed
+
+Flag for the proposal: with only 2 reviews found on any platform (Avvo), this firm's
+review volume is very likely thin relative to local competitors regardless of exact
+Google count — treat "low review velocity" as a safe, directionally correct talking
+point even without a confirmed Google number.
+
+================================================================
+STEP 3 — LOCAL 3-PACK SEARCHES
+================================================================
+Live visual confirmation of the Google Maps 3-pack was not obtainable in this environment
+(Maps fetch returned an empty shell with no listing data). The searches below reflect
+organic/directory search-result visibility instead, which is a reasonable proxy but should
+not be quoted to the client as literal 3-pack positioning.
+
+Practice Area 1: Criminal Defense
+- Search 1 "criminal defense lawyer La Verne CA": firm appears — yes, among named results
+  (directory/organic) — other named firms surfacing: Confianza Legal, DG Law APC, Weber Law
+  LLP, Law Office of James McGee, Law Offices of Ali Komaili, David J.P. Kaloyanides APLC
+  (review counts not independently confirmed for these — see Step 4)
+- Search 2 "criminal defense attorney Pomona Claremont La Verne": firm appears — not
+  observed in this result set; competitors surfacing instead: Eisner Gorin LLP, Law Offices
+  of Kirk Tarman & Associates, Muñoz~Muñoz & Ellis (Covina)
+- Search 3 "La Verne criminal lawyer" (Justia directory): firm appears — yes, listed
+
+Practice Area 2: DUI Defense
+- Search 1 "DUI lawyer La Verne CA": firm appears — not observed in this result set;
+  competitors surfacing: Poseidon Defense APC, Law Offices of Paul S. Geller, J. Patrick
+  Carey Law Corporation, Confianza Legal (has a dedicated La Verne DUI/criminal landing page)
+- Search 2 "DUI attorney La Verne": firm appears — not observed directly in top organic
+  results pulled in this pass
+- Search 3 "criminal defense lawyer near me La Verne": firm appears — yes, via its own
+  domain ranking plus Justia/LawInfo directory listings
+
+Takeaway: the firm shows up reliably in directory listings and its own SEO pages for
+"La Verne" + practice-area queries, but did not surface in this pass for DUI-specific or
+neighboring-city (Pomona/Claremont) queries — consistent with the transcript's own
+observation that the firm has no active, profitable paid channel and relies on organic/
+blog-driven visibility.
+
+================================================================
+STEP 4 — COMPETITOR REVIEW COUNTS
+================================================================
+- Competitor 1: Confianza Legal (Santa Fe Springs, CA — serves La Verne via dedicated geo
+  landing page) — reviews: 119 [UNCONFIRMED — sourced from Birdeye, not independently
+  confirmed via Google] — rating: 4.6 [UNCONFIRMED — sourced from Birdeye, not
+  independently confirmed via Google]. (Note: Yelp separately shows 11 reviews for this
+  firm's Santa Fe Springs location — platform counts differ, as expected; Birdeye figure
+  is the one being cited as it aggregates broader review volume.)
+- Competitor 2: DG Law, APC (serves La Verne/Pomona courts) — reviews: not obtainable in
+  this pass [UNCONFIRMED — no aggregator or Google listing reachable]
+- Competitor 3: Law Offices of Ali Komaili (Tustin, CA — lists La Verne as a service area,
+  ~30 min away) — reviews: 15 [UNCONFIRMED — sourced from Yelp, not independently confirmed
+  via Google], reviews reference strong client sentiment ("reliable, hard working, and
+  knowledgeable")
+
+No competitor cited above was found to have a confirmed higher Google review count than
+Lucero, PC, because Lucero, PC's own Google count could not be confirmed either — do not
+let the deck imply a specific numeric gap. The safe, defensible claim is Confianza Legal's
+119 (Birdeye-sourced) review volume against Lucero PC's 2 known reviews (Avvo-sourced) as a
+directional review-velocity gap, clearly caveated as cross-platform.
+
+================================================================
+STEP 5 — DIRECTORY LISTINGS
+================================================================
+- Avvo: present — Christopher Lucero, 5.0 rating, 2 reviews
+- Justia: present — listed in La Verne criminal law directory
+- FindLaw: present — listed in La Verne criminal defense directory
+- Yelp: present — "Lucero, PC," 2220 3rd St, La Verne, CA 91750, category "Criminal Defense
+  Law" (star rating not retrievable — Yelp blocked direct fetch in this pass)
+- LawInfo: present — firm profile page exists, no reviews/ratings listed
+- BBB: present — not BBB-rated
+
+NAP inconsistency found: the firm's own website displays 213-668-7569 as its primary
+"Call 24/7" number, while multiple third-party listings (search snippets, BBB/directory
+aggregation) show (213) 668-7779 as the firm's number. This is a genuine, verifiable NAP
+(Name/Address/Phone) mismatch worth flagging — inconsistent phone numbers across the web
+directly hurt local SEO map-pack ranking.
+
+Geo-targeting landing pages for surrounding cities: NOT FOUND. The /practice-areas page
+lists no Pomona, Claremont, Glendora, San Dimas, or Rancho Cucamonga landing pages. The
+site does have out-of-market state-level pages (/California, /new-york-city) reflecting
+Christopher Lucero's dual CA/NY bar admission, but nothing built for the immediate service
+radius. By contrast, Confianza Legal — a competitor with a much smaller home-market
+footprint — has built a dedicated La Verne city landing page. This is a concrete, low-cost
+opportunity gap.
+
+================================================================
+STEP 6 — GOOGLE ADS
+================================================================
+Direct SERP ad-slot rendering was not obtainable in this environment (Google Search fetch
+returned an empty results shell). Per the ADS FRAMING RULE, absence of observation is
+reported as an opportunity gap, not a certainty.
+
+Practice Area 1: Criminal Defense
+- Firm ads observed: not observed (consistent with transcript: the firm's only paid
+  channel is Convert It's PPC program, described by the prospect as unprofitable and
+  exhausting its budget in 3-4 days each month — so paid visibility is likely inconsistent
+  or absent for much of any given month)
+- Named local competitors running ads: not independently observed in this pass — no ad
+  copy could be captured live; do not state any competitor is or isn't running ads based on
+  this step alone
+
+Practice Area 2: DUI Defense
+- Firm ads observed: not observed
+- Named local competitors running ads: not independently observed in this pass
+
+================================================================
+STEP 7 — LOCAL SERVICE ADS
+================================================================
+- Firm appears in LSA: not observed (transcript confirms the firm has never run LSA —
+  Nick specifically raised LSA as a *potential* new solution on the call, framed around the
+  "3 R's": Responsiveness, Radius, Reviews)
+- Google Screened: not observed
+- LSA review count: n/a
+- Named local competitors in LSA: not independently observed in this pass — live LSA
+  widget rendering was not reachable with available tools
+
+================================================================
+STEP 8 — META ADS
+================================================================
+Facebook Ads Library blocked direct access in this environment (403 — the Library requires
+an authenticated/rendered browser session). No firm or competitor Meta ad data could be
+captured live.
+- Firm has active ads: not observed (not independently verifiable this pass)
+- Named local competitor 1: not independently observed
+- Named local competitor 2: not independently observed
+
+================================================================
+STEP 9 — TRANSCRIPT EXTRACTION
+================================================================
+- Practice areas confirmed: Criminal defense (private-pay and court-appointed matters) is
+  the core of the discussion; the firm's site additionally lists DUI Defense and Estate
+  Planning as formal practice areas, though the call itself centered entirely on the
+  criminal defense caseload.
+- Current lead sources: PPC via Convert It (paid, currently unprofitable); the firm's own
+  organic blogging efforts, described on the call as "the primary driver of new clients";
+  court-appointed assignments (a separate, non-marketing referral pipeline).
+- Ads ever run: yes — Google PPC through Convert It, $5,000/mo ad spend + $800/mo
+  management fee. Budget is "exhausted in 3-4 days," yields "low-quality leads," and is
+  described as unprofitable, generating only ~1 private client/month from the spend.
+- Team size: Christopher Lucero (attorney/owner) and Lindsey Lucero (contact listed on
+  intake/ops side). No associate attorney currently — hiring one is the stated goal.
+- Annual revenue (gross / case value): not stated in annual terms. Figures given are
+  monthly: currently 2-3 private cases/mo; goal of 5-6 private cases/mo would add
+  ~$22.5k/mo in revenue. This implies an average private case value in the range of
+  ~$7,500 (the $22.5k/mo goal divided across the ~3 additional cases/mo needed) — this is
+  a calculated inference from the stated goal, not a figure the prospect stated directly.
+- Annual revenue (net / take-home / collected): not distinguished from gross — the
+  transcript never separates gross billings from collected/net revenue.
+- Fee structure: not stated (no contingency/hourly/flat-fee language used on the call).
+- Revenue goal: stated — grow from 2-3 to 5-6 private cases/mo, adding ~$22.5k/mo, enough
+  to "cover Lindsey's salary and enable hiring an associate."
+- Average case value: not directly stated — see calculated inference above (~$7,500/case).
+- Current close rate: stated, and trending down month over month — July: 9 calls → 2-3
+  clients (~22-33%); August: ~15 calls → 1 client (~7%). SMB Team benchmark cited on the
+  call: clients typically convert 15-25% of total leads, meaning August's ~7% is well below
+  benchmark and July's rate is roughly in line with it.
+- Number of locations: 1 (not otherwise mentioned; confirmed single La Verne address via
+  website/directories).
+- Spanish campaign needed: not stated.
+- Dominant buying motive: not "more money" on its face — the transcript is explicit that
+  the underlying goal is building "a scalable business not reliant on Christopher," with a
+  stated plan to "hire an associate within 24-36 months to delegate court appearances and
+  create a more resilient firm." This maps to DBM pattern (1): a firm that runs itself so
+  the owner is no longer the single point of failure showing up in court every day.
+- Any profitability claims made by prospect: "unprofitable" — used specifically to describe
+  the Convert It PPC campaign's return. No other profitability claims were made.
+- Any claims about case types or practice areas: none beyond the general "private cases"
+  vs. "court-appointed work" framing already captured above — no specific case-type mix
+  quotes were given on the call.
+- Stated call focus / product interest: standard marketing/growth discovery. The call was
+  explicitly framed around SMB Team's 4-pillar growth model (Lead Generation, Intake &
+  Sales, Team Building, Profit Planning) as a "strategic partnership" alternative to Convert
+  It's "tactical, click-focused" PPC vendor relationship — not a Fractional CTO/AI,
+  coaching, or ops-only engagement.
+- Existing marketing/SEO/ad vendor engagements: yes, active and ongoing — Convert It:
+  $5,000/mo ad spend + $800/mo management fee for PPC, plus a separate $400/mo fee
+  described on the call as covering "basic hosting, not active SEO" (i.e., the firm is
+  currently paying for SEO-adjacent services it is not actually receiving).
+- Budget constraints stated: none stated explicitly. The prospect did not say they cannot
+  afford a larger monthly investment; the complaint was about the existing spend being
+  unprofitable, not about affordability of a new one.
+
+================================================================
+STEP 10 — COMPETITIVE URGENCY SCORE
+================================================================
+Score: 6/10
+
+Reasoning: No single local competitor was confirmed (with tools available in this pass) to
+be dominating every channel — direct SERP/Maps/LSA/Meta verification was largely blocked in
+this research environment, so this score is likely conservative rather than overstated.
+Even with that gap, three concrete threats are already confirmed from what *was* reachable:
+
+1. Confianza Legal — despite being headquartered outside the immediate market (Santa Fe
+   Springs), has built a dedicated La Verne geo-landing page and shows meaningfully higher
+   review volume (119 Birdeye-sourced reviews vs. Lucero PC's 2 known Avvo reviews) —
+   exactly the kind of local-SEO investment Lucero, PC has not made.
+2. Lucero, PC itself is bleeding budget on an unprofitable PPC engagement ($5,800/mo
+   combined spend for ~1 client/mo) while paying a separate $400/mo "SEO" fee for what the
+   prospect describes as basic hosting only — real dollars going out with no defensive or
+   offensive digital-marketing benefit.
+3. The firm has zero geo-targeting landing pages for the cities immediately surrounding La
+   Verne (Pomona, Claremont, San Dimas, Rancho Cucamonga) despite regularly appearing in
+   those courts — an open lane for any competitor investing in local content to out-rank it.
+
+"A score of 6 means competitors have meaningful advantages in one or more areas and are
+pulling ahead. You are not invisible yet — but the window to close the gap is narrowing.
+Every month without action is a month they extend their lead."
+
+================================================================
+PASS 2 — VERIFICATION CHECKLIST
+================================================================
+[x] Every number in the notes matches actually observed data, or is explicitly flagged as
+    not obtained / UNCONFIRMED — no live-tool numbers were invented
+[x] No competitor is cited as "dominating" reviews without an explicit cross-platform
+    caveat (Lucero PC's own count is unconfirmed, so no numeric gap is asserted as fact)
+[x] Every review count/rating carries a verification-method tag
+[x] Revenue is recorded in the monthly terms the transcript actually used; gross/net were
+    not distinguished by the prospect, and that is noted rather than assumed
+[x] Every ad section (Google Ads, LSA, Meta) covers both stated practice areas
+[x] No section states "you are not running ads" — all use "not observed" / opportunity-gap
+    framing
+[x] No profitability or business claim appears that didn't come from the transcript
+[x] No competitor reference uses generic labels — only specific named local (or
+    named/serving-the-area) firms
+[x] PageSpeed scores are explicitly marked NOT OBTAINED rather than estimated
+[x] DBM recorded with supporting quote/inference
+[x] Revenue goal recorded
+[x] Close rate recorded (both July and August figures, from the transcript)
+[x] Average case value recorded as a calculated inference, clearly labeled as such
+[x] Stated call focus recorded and confirmed as standard marketing/growth discovery
+[x] Existing vendor engagement (Convert It) recorded in full
+[x] Budget constraints: none stated — recorded as such
