@@ -1,0 +1,157 @@
+KAMALUDDIN LAW — SECTION 11 WORKINGS
+=====================================================
+
+REVENUE CORRECTION (confidence: low → resolved)
+-----------------------------------------------
+package_decision.json estimated revenue at $570,000 (confidence: low), sourced from a
+HubSpot CRM range field ("$180K - $960K"). The research notes' transcript extraction
+(Step 9) explicitly states: "Annual revenue (gross / case value): 'just under $1.2M'" —
+a direct transcript-derived figure. Per the Transcript-first principle, this is ground
+truth and overrides the HubSpot-derived estimate. Note the HubSpot range doesn't even
+contain $1.2M, confirming the two signals genuinely conflict, not just diverge slightly.
+
+Net revenue is NOT distinguished from gross in the transcript ("Annual revenue (net /
+take-home / collected): not distinguished from gross"), so there is no separate net
+figure to apply under the Effective-Revenue Override (#4) — gross ≈ net for tiering
+purposes here. Effective revenue used for all eligibility and calculations below:
+~$1,200,000 ("just under $1.2M").
+
+CORRECTED PACKAGE ELIGIBILITY
+-----------------------------------------------
+- Marketing tier: $1M–$2M band → Full Service Marketing GROWTH (was Starter in the
+  decision file). Multiple practice areas (immigration + personal injury) independently
+  disqualify Essentials, but this is moot since revenue alone now points to Growth.
+- Non-marketing package: Elite Coach Plus — unchanged from decision file. Team is
+  effectively solo (Nahla handles all case evaluation/intake personally; "Joshua" named
+  only as a second call attendee with no stated role) — fits the "$1M+, Under 5 team"
+  row regardless of the revenue correction.
+- Revenue goal: not stated → default to 2x current revenue = ~$2.4M (not ~$1.14M as the
+  old low estimate implied).
+
+MANDATORY PRICE LOOKUP (character-verified against .claude/commands/audit-write.md
+pricing tables — NOT the corrupted skill-rendered copy, which mangled several dollar
+figures into fragments of the firm name, e.g. "$3,497" → "Law,497". Disregarded.)
+-----------------------------------------------
+- Marketing package selected: Full Service Marketing — Growth
+  - Bundled price (from table): $7,497/mo
+  - Stand-alone price (from table): $8,997/mo
+  - Savings: $1,500/mo
+- Non-marketing package selected: Elite Coach Plus
+  - Bundled price (from table): $3,200/mo
+  - Stand-alone price (from table): $3,497/mo
+  - Savings: $297/mo
+- Legal AI Workforce (LAW) package selected: none (Phase 3 roadmap addition only —
+  AI Essentials $1,597/mo flagged for later, not part of the current recommendation)
+- AI Avatar / Video Growth add-on selected: none
+- Total monthly investment: $10,697/mo
+- Total savings: $1,797/mo
+
+35% SPEND CAP CHECK
+-----------------------------------------------
+Current monthly revenue ≈ $1,200,000 ÷ 12 = $100,000/mo. 35% cap = $35,000/mo total
+(management fees + ad spend).
+- Management fees: $10,697/mo
+- Remaining headroom under cap: $35,000 − $10,697 = $24,303/mo available for ad spend
+
+AD SPEND — CONSERVATIVE
+-----------------------------------------------
+Channels (Immigration, the stated primary practice area and call focus):
+Google PPC min $3,000 + LSA min $2,000 + Meta Lead Gen min $3,000 = $8,000/mo
+Total spend check: $10,697 + $8,000 = $18,697/mo (18.7% of current revenue) — well under cap.
+
+Blended CPL (Immigration): Google Search $85–110 (mid $97.5), LSA $55–75 (mid $65),
+Meta Cold $65–85 (mid $75) → simple average $79.17, +20% cushion (conservative) = ~$95.
+- Leads = $8,000 / $95 ≈ 84
+- Cases = 84 × 15% (close rate not stated, default) ≈ 12.6 → ~13
+- Revenue = 12.6 × $4,500 (avg case value not stated; Immigration default $3K–$6K,
+  midpoint used, disclosed) ≈ $56,800
+- Return = $56,800 / $8,000 ≈ 7.1x
+
+AD SPEND — AGGRESSIVE
+-----------------------------------------------
+20% rule: Revenue goal $2,400,000 × 20% ÷ 12 = $40,000/mo
+× Geo multiplier: Atlanta metro = Tier 1 mega market → ×1.5 = $60,000/mo
+No Spanish campaign confirmed → no additional multiplier
+− Marketing management fee ($7,497) = $52,503/mo available ad spend (pre-cap)
+
+Reverse math validation: $2,400,000 ÷ 12 ÷ $4,500 avg case value ≈ 44.4 target
+cases/month ÷ 15% close rate ≈ 296 required leads/month × $79 blended CPL (no cushion)
+≈ $23,400 required spend. 20% rule ($52,503) is higher — use 20% rule.
+
+Tier cap check: Growth tier caps ad spend at $50,000/mo. $52,503 exceeds this, and the
+firm's revenue ($1.2M) does not qualify for a tier upgrade (Dominate requires $2M–$3M) —
+so per the boundary rule, no upgrade path exists.
+
+35% cap check (governing constraint): $52,503 (or even the $50,000 tier-capped figure)
+would push total spend to $60,697–$63,200/mo against a current-revenue cap of
+$35,000/mo — far over. Since no transcript signal suggests the client explicitly cannot
+afford this (no budget override triggered), the constraint here is the firm's own hard
+35%-of-current-revenue spend ceiling, not a client-stated budget limit. Aggressive ad
+spend is therefore scaled down to the actual affordable ceiling: $35,000 − $10,697 =
+$24,303/mo headroom → rounded down to $24,000/mo for a clean client-facing figure.
+
+Recomputed aggressive ROI at $24,000/mo:
+- Leads = $24,000 / $79 ≈ 304
+- Cases = 304 × 15% ≈ 45.6 → ~46
+- Revenue = 45.6 × $4,500 ≈ $207,000
+- Return = $207,000 / $24,000 ≈ 8.6x
+Total spend check: $10,697 + $24,000 = $34,697/mo (34.7% of current revenue) — just
+under the 35% cap.
+
+Note for sales: reaching the full $2.4M revenue goal via ad spend alone would require an
+ad budget well beyond what current revenue can support under the 35% cap. This is a
+natural, honest tie-in to the firm's own stated DBM — the full aggressive scale (~$52.5K
+recommended by the 20% rule) becomes affordable as revenue grows, which is exactly the
+team-scaling story Nahla described. Frame this as a Phase 4 (Market Domination) revisit,
+not a promise made today.
+
+DBM STATEMENT (Block 1)
+-----------------------------------------------
+DBM (direct transcript quote): "Primary Goal: Build a legacy firm with a larger team of
+attorneys, moving Nahla into a CEO role focused on leadership and training." Every
+section anchors to this: moving Nahla from personally handling every case evaluation and
+fee negotiation into a leadership role atop a trained, delegated team.
+
+QUICK WIN OPPORTUNITIES (8 identified — min 6 required)
+-----------------------------------------------
+1. [Lead Gen / Quick Win] Fix GBP category ("Law Firm" → "Immigration Law Firm") +
+   resolve pending video verification block. Competitor: Weinstock Immigration Lawyers
+   (holds the "best immigration attorney Atlanta" visibility this firm needs).
+2. [Lead Gen / Quick Win] Correct NAP inconsistency (directory lists correct street
+   address under wrong city/zip). No competitor needed.
+3. [Lead Gen / Long-Term] Launch paid search + LSA for immigration law. Competitor:
+   Orgesi Pandeli / Delgado Law Firm (premium/sponsored placements in Smyrna-area
+   immigration searches).
+4. [Intake / Quick Win] Move case evaluation form above the fold. No competitor.
+5. [Intake / Long-Term] Build a delegated intake process. No competitor.
+6. [Team / Long-Term] Create a real delegation & training system. No competitor.
+7. [Profit / Quick Win] Standardize the fee model across practice areas. No competitor.
+8. [Lead Gen / Quick Win] Turn case wins (e.g. green card approvals) into a systematic
+   review-request engine. Competitor: Hammers Car Accident & Personal Injury Lawyers
+   (strong, consistently reinforced review presence in the PI market).
+
+FIRST 90 DAYS
+-----------------------------------------------
+1. Launch Google Ads and Local Service Ads campaigns for immigration law — the firm's
+   core keyword target.
+2. Correct the Google Business Profile category and resolve the pending video
+   verification issue.
+3. Fix the NAP inconsistency and clean up remaining local directory citations.
+4. Move the case evaluation form above the fold and add a dedicated attorney bio page.
+5. Kick off Elite Coach Plus coaching sessions to begin building the delegation and
+   hiring plan behind the legacy-firm goal.
+
+ESCALATION FLAGS (internal only — do not appear in client report)
+-----------------------------------------------
+- Review counts/ratings unconfirmed across firm and all named competitors — verify live
+  via Google before the sales call. Only qualitative framing used in the client report.
+- PageSpeed mobile/desktop scores unavailable (Google API rate-limited across the
+  research session) — not fabricated; spoken to qualitatively only in the client report.
+- Marketing MRR ($7,497) is under the $10K scoping-approval threshold — no escalation
+  required on that basis.
+- Ad spend range ($8,000–$24,000/mo) is under the $25K scoping-approval threshold.
+- Aggressive ad spend was scaled down from a $52,503 20%-rule calculation to $24,000 to
+  respect the 35%-of-current-revenue total spend cap — document this override was
+  intentional, not an error, if sales wants to revisit at a higher ad budget later.
+- Meta Ads presence could not be confirmed (Meta Ad Library blocked to automated tools)
+  — spot-check manually if Meta becomes a talking point on the call.
