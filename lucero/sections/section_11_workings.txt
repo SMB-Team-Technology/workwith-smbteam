@@ -1,5 +1,11 @@
 LUCERO, PC — SECTION 11 WORKINGS (INTERNAL — NOT CLIENT-FACING)
 ================================================================
+Regenerated for the re-triggered research pass (fresh research notes dated August 18,
+2026, re-run #2). package_decision.json is unchanged from the original run and was
+re-verified against this pass's updated findings (higher urgency score, NAP mismatch
+confirmed, dormant Personal Injury practice line discovered, additional named competitor
+detail). Conclusions below are consistent with the prior pass; pricing and revenue-band
+verification are unchanged.
 
 TRANSCRIPT-STATED NEED OVERRIDE CHECK
 --------------------------------------
@@ -8,37 +14,39 @@ TRANSCRIPT-STATED NEED OVERRIDE CHECK
    coaching-only call.
 2. Existing-vendor override: DOES NOT APPLY. The firm is paying Convert It ($5,000/mo PPC +
    $800/mo management + $400/mo "SEO"/hosting), but that engagement is explicitly described
-   as unprofitable and failing ("exhausted in 3-4 days," "low-quality leads," ~1 client/mo).
-   The prospect is on this call specifically because that vendor relationship isn't working
-   and they want a replacement — this is a marketing GAP, not a recently-signed engagement
-   that already meets the need. Excluding Full Service Marketing here would ignore the
-   client's actual stated situation. Full Service Marketing stays in the recommendation.
+   as unprofitable and failing ("exhausted in 3-4 days," ~1 client/mo). The prospect is on
+   this call specifically because that vendor relationship isn't working and wants a
+   replacement — this is a marketing GAP, not a recently-signed engagement that already
+   meets the need. Full Service Marketing stays in the recommendation.
 3. Budget-reality override: DOES NOT APPLY. No budget constraints, financial limits, or
    preference for a smaller engagement were stated. The complaint was profitability of
    existing spend, not affordability of new spend.
 4. Effective-revenue override: DOES NOT APPLY. Not a contingency-fee practice; no separate
-   net/gross figures stated.
+   net/gross figures stated (net_revenue_stated and is_contingency_practice are null/false
+   in package_decision.json).
 
-No override triggers. package_decision.json (confidence: low) is used as the starting point,
-cross-checked below, with one correction (ad spend) documented.
+No override triggers. package_decision.json (confidence: low) is used as the starting
+point, cross-checked below, with one correction (aggressive ad spend, for the 35% cap)
+carried forward from the prior verification.
 
 REVENUE VERIFICATION (confidence: low in decision file)
 --------------------------------------------------------
-package_decision.json sourced revenue_effective = $570,000 from HubSpot's
-"$180K - $960K" annual-revenue bucket (midpoint), since no revenue figure appears in the
-research notes or transcript.
-Bottom-up cross-check from transcript: 2-3 private cases/mo currently, goal of 5-6/mo adding
-~$22.5k/mo => implies ~$7,500/private case. Private-case revenue alone therefore annualizes
-to ~$180K-270K/yr. Transcript also states the firm currently *relies primarily on
-court-appointed work* (private cases are the smaller, supplemental piece) — meaning total
-firm revenue (private + court-appointed) sits meaningfully above the private-only floor.
-This is consistent with, and does not contradict, the $400K-$1M band the $570K estimate
-falls into. Team size corrected from decision file's defaulted "3" to 2 (Christopher Lucero,
-attorney/owner + Lindsey Lucero, intake/ops) — no associate currently — per transcript. This
-correction does not change tier eligibility (the $400K-$1M / "Any" team row applies either
-way).
+package_decision.json sourced revenue_effective = $570,000 from HubSpot's "$180K - $960K"
+annual-revenue bucket (midpoint), since no revenue figure appears in the research notes or
+transcript. Bottom-up cross-check from transcript: 2-3 private cases/mo currently, goal of
+5-6/mo adding ~$22.5k/mo => implies ~$7,500/private case. Private-case revenue alone
+therefore annualizes to only ~$180K-270K/yr — but this explicitly EXCLUDES the firm's
+separate, unquantified court-appointed casework revenue stream, which this pass's notes
+again confirm exists ("a separate, non-marketing referral pipeline") but never size. Because
+the notes show a partial revenue slice rather than a clear contradiction of the full-firm
+estimate, this does not meet the bar required to override the decision file's revenue band.
+Team size corrected from decision file's defaulted "3" to 2 (Christopher Lucero, attorney/
+owner + Lindsey Lucero, ops/contact — no associate attorney yet, hiring one is the stated
+24-36 month goal). This correction does not change tier eligibility — the $400K-$1M / "Any"
+team row applies either way (the "Growing" team variant does not apply; team is static, not
+actively growing).
 Revenue is kept at $570,000/effective for tiering purposes, flagged for sales to confirm
-actual figures before finalizing — see escalation flags below.
+actual figures (including court-appointed volume) before finalizing — see escalation flags.
 
 MANDATORY PRICE LOOKUP (from package_decision.json, verified against approved tables)
 ---------------------------------------------------------------------------------------
@@ -46,22 +54,18 @@ MANDATORY PRICE LOOKUP (from package_decision.json, verified against approved ta
   - Bundled price: $4,997/mo
   - Stand-alone price: $5,697/mo
   - Savings: $700/mo
-  (Eligibility: revenue $570K falls in $500K-$1M band; also, multiple practice areas
-  detected [Criminal Defense + DUI Defense] independently hides Essentials regardless of
-  revenue, and revenue is over $750K's Essentials cutoff is moot since Essentials is already
-  excluded — Starter confirmed either way.)
-
+  (Eligibility: revenue $570K falls in $500K-$1M band; independently, multiple practice
+  areas detected [Criminal Defense + DUI Defense, plus Estate Planning and a dormant
+  Personal Injury line] hides Essentials regardless of exact revenue point — Starter
+  confirmed either way.)
 - Non-marketing package selected: Elite Coach Plus
   - Bundled price: $3,200/mo
   - Stand-alone price: $3,497/mo
   - Savings: $297/mo
   (Eligibility: revenue $400K-$1M, any team size.)
-
 - Legal AI Workforce (LAW) package: none. No AI-readiness or automation discussion appears
   anywhere in the transcript.
-
 - AI Avatar / Video Growth add-on: none. No video/social interest discussed.
-
 - Total monthly investment (bundled): $8,197/mo
 - Total savings: $997/mo
 
@@ -71,16 +75,15 @@ Monthly revenue at $570,000/yr = ~$47,500/mo. 35% cap = ~$16,625/mo total SMB sp
 (management fees + ad spend).
 - Conservative: $8,197 (fees) + $5,500 (ad spend) = $13,697/mo = ~28.8% of monthly revenue.
   Within cap — no correction needed.
-- Aggressive: package_decision.json set ad_spend_aggressive to $20,000, the Starter tier's
-  ad spend cap. $8,197 + $20,000 = $28,197/mo = ~59.4% of monthly revenue — well OVER the
-  35% cap. This is a real conflict, not just a rounding issue, so it is corrected here:
-  Max total spend under cap = 0.35 x $47,500 = $16,625/mo. Minus $8,197 management fees =
-  ~$8,428/mo available for ads. CORRECTED aggressive ad spend used in the client report:
-  $8,400/mo (still comfortably under the Starter tier's $20,000 cap, so no tier upgrade is
-  triggered by the boundary rule).
+- Aggressive: the Starter tier's ad spend cap is $20,000/mo. $8,197 + $20,000 = $28,197/mo
+  = ~59.4% of monthly revenue — well OVER the 35% cap. This is a real conflict, not a
+  rounding issue, so it is corrected here: max total spend under cap = 0.35 x $47,500 =
+  $16,625/mo. Minus $8,197 management fees = ~$8,428/mo available for ads. CORRECTED
+  aggressive ad spend used in the client report: $8,400/mo (still comfortably under the
+  Starter tier's $20,000 cap, so no tier upgrade is triggered by the boundary rule).
   Sales note: if actual revenue is confirmed higher during onboarding (e.g. toward the top
-  of the $180K-$960K HubSpot band), the aggressive ad spend figure can be revised upward
-  toward the full $20,000 tier cap.
+  of the $180K-$960K HubSpot band, or once court-appointed revenue is counted), the
+  aggressive ad spend figure can be revised upward toward the full $20,000 tier cap.
 
 AD SPEND AND ROI PROJECTIONS (Block 4) — Criminal Defense
 ------------------------------------------------------------
@@ -91,8 +94,8 @@ Average case value used: $7,500/private case — a calculated inference from the
 hit the 5-6/mo goal), not a figure the prospect stated directly. Disclosed as an estimate.
 Blended CPL: Criminal Defense Google Search range $155-$205, midpoint $180/lead.
 
-CONSERVATIVE ($5,500/mo ad spend, Google Ads channel, single-firm minimum for Criminal
-Defense; 20% cushion applied per conservative-scenario rule):
+CONSERVATIVE ($5,500/mo ad spend, Google Search channel, Criminal Defense minimum; 20%
+cushion applied per conservative-scenario rule):
   Blended CPL with cushion = $180 x 1.2 = $216
   Leads = $5,500 / $216 = ~25 leads/mo
   Cases = 25 x 15% = ~4 cases/mo
@@ -107,73 +110,88 @@ AGGRESSIVE ($8,400/mo ad spend — corrected for the 35% cap, see above; no cush
   Return = $52,500 / $8,400 = ~6.25x
   Note: 7 cases/mo aggressive slightly exceeds the firm's own stated 5-6/mo goal — a
   credible, non-inflated ceiling. (An unadjusted run at the full $20,000 tier cap would
-  project ~17 cases/mo, which is unrealistic given the firm has no associate and would also
-  violate the 35% spend cap — this is why the aggressive figure was corrected down rather
-  than left at the tier cap.)
+  project ~17 cases/mo, which both violates the 35% spend cap and is unrealistic for a
+  2-person team with no associate — this is why the aggressive figure is corrected down
+  rather than left at the tier cap.)
 
 DBM STATEMENT (Block 1)
 ---------------------------
-DBM: a firm that runs itself so Christopher is no longer the single point of failure showing
-up in court every day — explicitly building toward hiring an associate within 24-36 months.
+DBM: a firm that runs itself so Christopher is no longer the single point of failure
+showing up in court every day — explicitly building toward hiring an associate within
+24-36 months to delegate court appearances and create a more resilient firm.
 Block 1 formula: "We help law firm owners like Christopher get a predictable, profitable
 pipeline of private cases so they can build the resilient, associate-supported firm that
 does not depend on them showing up in court every single day."
 
 QUICK WIN OPPORTUNITIES (6+ across all four pillars)
 ---------------------------------------------------------
-1. [Lead Generation] Fix the failing PPC campaign — Why: current $5,800/mo combined Convert
-   It spend produces ~1 client/mo and exhausts budget in 3-4 days. No named competitor.
-   Opportunity: retarget spend toward tighter, lower-competition keywords (neighboring
-   cities, urgency terms) to stretch the same budget across the full month.
-2. [Lead Generation] Launch Local Service Ads — Why: transcript raised LSA as an unexplored
-   pay-per-lead channel. No named competitor confirmed in LSA. Opportunity: pay only for
-   qualified calls, directly solving the "unprofitable clicks" problem described on the call.
-3. [Lead Generation / Local SEO] Build neighboring-city geo-pages — Why: zero landing pages
-   exist for Pomona, Claremont, San Dimas, Rancho Cucamonga despite regularly appearing in
-   those courts. Competitor: Confianza Legal (built a dedicated La Verne page despite being
-   based outside the market). Opportunity: capture searches happening in courts already served.
-4. [Lead Generation / Local SEO] Fix the NAP phone-number mismatch — Why: site shows
-   213-668-7569, but third-party listings show (213) 668-7779. No competitor angle.
-   Opportunity: free, immediate local-ranking fix.
-5. [Intake] Build a defined follow-up process — Why: close rate fell from ~22-33% (July) to
-   ~7% (August). No competitor angle. Opportunity: recovering even a few points of close rate
-   adds private cases with zero new ad spend.
+1. [Lead Generation] Fix the failing PPC campaign — Why: current $5,800/mo combined
+   Convert It spend produces ~1 client/mo and exhausts budget in 3-4 days. No named
+   competitor. Opportunity: restructure spend to run the full month instead of a few days.
+2. [Lead Generation] Launch Local Service Ads — Why: the call raised LSA as an unexplored
+   pay-per-lead channel around the "3 R's" (Responsiveness, Radius, Reviews). No named
+   competitor confirmed in LSA this pass. Opportunity: pay only for qualified calls,
+   directly solving the "unprofitable clicks" problem described on the call.
+3. [Lead Generation / Local SEO] Build neighboring-city geo-pages — Why: zero landing
+   pages exist for Pomona, Claremont, San Dimas, Rancho Cucamonga despite regularly
+   appearing in those courts. Competitors: Poseidon Defense, A.P.C. (La Verne pages down
+   to the sub-practice-area level) and Confianza Legal (La Verne, Pomona, Riverside, Santa
+   Fe Springs pages). Opportunity: capture searches happening in courts already served.
+4. [Lead Generation / Local SEO] Fix the NAP phone-number mismatch — Why: the site shows
+   213-668-7569 as its "Call 24/7" number, while BBB shows (213) 668-7779 — confirmed via
+   direct fetch this pass. No competitor angle. Opportunity: free, immediate local-ranking
+   fix.
+5. [Intake] Build a defined follow-up process — Why: close rate fell from ~22-33% (July)
+   to ~7% (August) even as call volume rose. No competitor angle. Opportunity: recovering
+   even a few points of close rate adds private cases with zero new ad spend.
 6. [Intake] Add a website contact form — Why: no web contact form exists anywhere on the
-   site; intake is phone-only. No competitor angle. Opportunity: capture leads who prefer not
-   to call first.
+   site; intake is phone-only. No competitor angle. Opportunity: capture leads who prefer
+   not to call first, especially after hours.
 7. [Team] Plan the associate hire proactively — Why: Christopher is the only attorney
-   handling every case and court date. No competitor angle. Opportunity: coaching support to
-   build the hiring/delegation plan ahead of time instead of reactively.
+   handling every case and court date, with the hire tied to a revenue number not yet
+   reached. No competitor angle. Opportunity: coaching support to build the hiring/
+   delegation plan ahead of time instead of reactively.
 8. [Profit] Establish a profit plan tied to the associate hire — Why: no revenue/profit
-   figures were tracked on the call, only case-count goals. No competitor angle. Opportunity:
-   know the real margin needed before committing to a new hire's salary.
+   figures were tracked on the call, only case-count goals, and the firm confirmed one
+   major expense (PPC) is already unprofitable. No competitor angle. Opportunity: know the
+   real margin needed before committing to a new hire's salary.
 
 FIRST 90 DAYS
 -----------------
-1. Launch a properly targeted Google Ads campaign and begin Local Service Ads setup to
-   replace the failing Convert It PPC engagement.
-2. Add a website contact form and correct the NAP phone-number mismatch across directory
-   listings.
-3. Kick off Elite Coach Plus coaching sessions to start building the intake follow-up process
-   and the associate-hiring plan.
+1. Launch a restructured Google Search + LSA campaign built to run the full month,
+   targeting La Verne, Pomona, Claremont, and Rancho Cucamonga.
+2. Fix the NAP phone-number mismatch across the website, BBB, and other directory listings.
+3. Kick off Elite Coach Plus coaching sessions to start building the intake follow-up
+   process and the associate-hiring plan.
 4. Build the first neighboring-city geo-landing page (starting with Pomona or Claremont).
-5. Establish baseline profit tracking tied to the case-count growth goal.
+5. Establish baseline cost-per-lead and cost-per-case tracking tied to the case-count
+   growth goal.
 
 ESCALATION FLAGS (internal only — never in client report)
 --------------------------------------------------------------
 - Revenue estimate is low-confidence (HubSpot bucket midpoint, not transcript-stated) —
-  confirm actual annual revenue with the client before finalizing.
+  confirm actual annual revenue, including court-appointed casework volume, with the
+  client before finalizing.
 - Aggressive ad spend corrected down from the Starter tier's $20,000 cap to $8,400/mo to
-  satisfy the 35% total-spend cap at the estimated $570K revenue — revisit if actual revenue
-  is confirmed higher.
-- Review counts unconfirmed — verify live before the call (Avvo-sourced 2 reviews / 5.0 for
-  the firm; Birdeye-sourced 119 reviews / 4.6 for Confianza Legal; Yelp-sourced 15 reviews
-  for Law Offices of Ali Komaili — none independently confirmed via Google).
-- Revenue goal (~$70k/mo total target) exceeds the aggressive scenario's projected ad-driven
-  revenue (~$52.5k/mo) — expected, since organic blog traffic and court-appointed work are
-  also part of the total revenue picture, not ads alone; paid ads team may want to review.
+  satisfy the 35% total-spend cap at the estimated $570K revenue — revisit if actual
+  revenue is confirmed higher.
+- Review counts unconfirmed — verify live via Google before the call. This pass's sourcing:
+  Avvo shows Christopher Lucero at 3.7/5.0 from 3 client reviews (Avvo Rating separately
+  8.4 — a credential score, not a review average); Poseidon Defense self-reports 5.0/145
+  reviews; Confianza Legal shows 101 reviews/4.7 via Birdeye (11 reviews on Yelp
+  separately); Law Offices of Ali Komaili shows 15 reviews on Yelp / 14 on Avvo, all
+  5-star. None of these are independently confirmed via Google — do not quote as exact
+  client-facing figures.
+- Revenue goal (~$22.5k/mo incremental private-case target) is not directly comparable to
+  the aggressive ad-driven revenue projection (~$52.5k/mo total, not incremental) since
+  organic blog traffic and court-appointed work are also part of the total revenue
+  picture, not ads alone — paid ads team may want to review framing before the call.
 - Team size corrected from decision file's defaulted "3" to 2 (Christopher + Lindsey, no
   associate) — did not change tier eligibility, but flagging for sales accuracy.
 - Attorney Assistant (AI intake agent) could help with the declining close rate / intake
-  volume gap — fit unclear, not included in this proposal; confirm qualification with sales
-  rep if of interest.
+  volume gap — fit unclear, not included in this proposal; confirm qualification with
+  sales rep if of interest.
+- Personal Injury practice line (auto, truck, motorcycle/bicycle accidents, medical
+  malpractice, premises liability) exists on the site but was never discussed on the call
+  — mentioned only as a passing secondary opportunity in the client report per the
+  transcript-first principle; not sized or recommended against.
