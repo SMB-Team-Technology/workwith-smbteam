@@ -33,13 +33,13 @@ OUTPUT_PATH    = "lucero/Lucero PC_August 18, 2026_Proposal.pptx"
 WEBSITE_SCREENSHOT_PATH = None   # Set to a local PNG path to show a screenshot; None = skip entirely
 
 # ── Slide 1 ──────────────────────────────────────────────────────
-URGENCY_SCORE = "6"
+URGENCY_SCORE = "7"
 
 # Pillar status — each is ("RED" | "AMBER" | "GREEN", label, one-line detail)
 PILLARS = [
-    ("AMBER", "AMBER", "Unprofitable PPC spend"),   # Lead Generation
+    ("RED",   "RED",   "Unprofitable PPC spend"),   # Lead Generation
     ("RED",   "RED",   "Close rate now ~7%"),       # Intake
-    ("RED",   "RED",   "No associate yet"),         # Team
+    ("AMBER", "AMBER", "No associate yet"),         # Team
     ("RED",   "RED",   "No profit visibility"),     # Profit Plan
 ]
 PILLAR_NAMES = ["Lead Generation", "Intake", "Team", "Profit Plan"]
@@ -59,9 +59,9 @@ FINDINGS = [
 # pass, so qualitative framing is used instead of exact numbers (per the
 # review-data integrity rule — never state an unconfirmed count as fact).
 COMPETITORS = [
-    ("Confianza Legal",              "Larger review base", "Built a La Verne page"),
-    ("Law Offices of Ali Komaili",   "Strong sentiment",    "30 min away, still visible"),
-    ("Poseidon Defense APC",         "Appears in DUI search", "Lucero, PC does not"),
+    ("Poseidon Defense APC",         "Larger review base", "Built La Verne sub-area pages"),
+    ("Confianza Legal",              "Larger review base", "4 dedicated city landing pages"),
+    ("Law Offices of Ali Komaili",   "Spotless 5-star",     "30 min away, still visible"),
 ]
 CLIENT_REVIEWS      = "Very few reviews"
 CLIENT_REVIEWS_NOTE = "← You are here"
