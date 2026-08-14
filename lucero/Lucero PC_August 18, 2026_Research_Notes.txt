@@ -3,199 +3,292 @@ Prepared for: Proposal call, August 18, 2026
 Sales Rep: Nick Holderman
 Contact: Lindsey Lucero (lindsey@luceropc.com / +1 909-317-6440)
 URL: https://www.luceropc.com/
+Package: Full Service Marketing Growth
+Note: This is a re-run of the research pass (trigger re-fired 2026-08-14, run #2). A prior
+research file exists for this engagement dated the same proposal-call date; this file
+replaces it with a fresh research pass rather than appending to it.
 
 RESEARCH ENVIRONMENT NOTE (read first): This session's browsing tools are a text-based
-web-fetch/web-search layer, not an interactive/JS-rendered browser. Several live-verification
-steps normally done by visually loading Google Maps, PageSpeed, the Meta Ads Library, and
-Google's ad/LSA surfaces could not be completed because those endpoints returned 429/403
-errors or require a rendered browser session (confirmed by testing the PageSpeed API against
-a neutral control URL, which also returned 429 — this is an environment-level block, not a
-firm-specific finding). Every place this affected a data point is flagged below rather than
-papered over with an estimate. The firm's website itself resolved live and was read directly,
-so all website-content findings are real observations.
+web-fetch/web-search layer, not an interactive/JS-rendered browser. Direct WebFetch requests
+to luceropc.com itself consistently failed with a socket-level error (confirmed on the
+homepage, /practice-areas, and the bare domain — all three attempts failed the same way,
+while a neutral control URL, example.com, fetched fine, and other third-party domains such
+as BBB.org and Avvo.com fetched successfully). This points to the firm's own site blocking
+or dropping this tool's fetch requests specifically, not a general outage. Google Maps,
+Google Search SERPs (ads/LSA/map-pack rendering), the PageSpeed Insights API, and the Meta
+Ads Library were also unreachable (429/403/empty-shell responses), consistent with the prior
+research pass on this firm — these are environment-level blocks on JS-rendered/rate-limited
+surfaces, not firm-specific findings. Everywhere this affected a data point, it is flagged
+below rather than papered over with an estimate. Where the firm's own subpages were
+reachable through third-party search indexing (title tags, cached snippets, directory
+mirrors), those observations are used and cited as such.
 
 ================================================================
 STEP 1 — WEBSITE RESEARCH
 ================================================================
-- Website URL confirmed live: yes (https://www.luceropc.com/)
-- Last redesign date or estimated age: not exposed on page; modern-looking template with
-  2026 "Best Lawyers" badge suggests content is actively maintained at least annually
-- Mobile responsive: not observed directly (text-only fetch cannot confirm responsive
-  breakpoints) — not observed
-- Homepage headline: "Your Criminal and DUI Defense Firm In La Verne, California"
-- CTA above fold: yes — "Get Your Free Consultation Today" button
-- Contact form location: not found — no dedicated web contact form on the homepage or the
-  /contact page; site is phone-first (213-668-7569 displayed repeatedly, "Call 24/7" banner)
-  with a "Schedule a Case Evaluation" section near the footer instead of a form
-- Live chat present: no
-- Attorney bio present: yes — single attorney, Christopher Lucero, "Former Deputy District
-  Attorney," "10+ Years of Experience" on homepage bio blurb (About page states 8 years of
-  solid experience specific to criminal defense — see NAP/consistency note in Step 5).
-  No additional attorneys or staff bios found on the About page.
-- Video present: no
-- Blog present: yes — linked in navigation, but no post dates or previews were retrievable
-  in this fetch; last post date not observed
+- Website URL confirmed live: yes — indexed and resolving (confirmed via search-engine
+  indexing of luceropc.com and multiple subpages: /about-us, /practice-areas, /blog,
+  /reviews, /results, /christopher-lucero, /dui-defense, /criminal-defense,
+  /criminal-defense/misdemeanors, /estate-planning-law, /personal-injury/* pages,
+  /California). Direct WebFetch of the homepage and /practice-areas both failed with a
+  socket-level error on repeated attempts — not independently re-rendered this pass.
+- Last redesign date or estimated age: not exposed on page; site carries a current-year
+  ("2026") Best Lawyers-style badge per prior-pass observation, suggesting content is at
+  least annually maintained — not independently re-confirmed this pass (see fetch-block
+  note above).
+- Mobile responsive: not observed (text-based tools cannot confirm responsive breakpoints)
+- Homepage headline: not independently re-observed this pass (homepage WebFetch blocked);
+  page title tag confirmed live via search indexing as "La Verne, California | Criminal
+  Lawyer | Lucero, PC" — carried forward from the prior research pass, not re-verified:
+  "Your Criminal and DUI Defense Firm In La Verne, California"
+- CTA above fold: not independently re-observed this pass — carried forward from prior
+  pass, not re-verified: "Get Your Free Consultation Today" button. Independently
+  re-confirmed via search-indexed snippet this pass: firm "proudly offers FREE consultations
+  ... without any financial pressure or obligation," fee structure is contingency-style for
+  personal injury ("you will pay no fee unless, and until you receive money in a settlement
+  or judgment").
+- Contact form location: not found — no dedicated web contact form surfaced in this pass;
+  firm is phone-first, with 213-668-7569 cited repeatedly across indexed content and a
+  24/7 answering-service claim (Chris Lucero "available during normal working hours, but
+  also maintains a 24/7 answering service" for weekend/evening consultations)
+- Live chat present: no (not observed in this pass or prior pass)
+- Attorney bio present: yes — single named attorney, Christopher Lucero. Former Southern
+  California Deputy District Attorney, licensed in California and New York, 8 years of
+  experience, founded the firm in 2015. Recognized as California's "Top 40 Under 40" for
+  criminal defense and a "Rising Star" in Southern California (a distinction the source
+  describes as awarded to ~2.5% of attorneys). While a prosecutor, claimed to have never
+  lost a DUI, domestic violence, or homicide case. No other attorney or staff bios surfaced.
+- Video present: not observed
+- Blog present: yes — confirmed live at /blog, covering criminal-law topics (e.g., how bail
+  is set under county Bail Schedules, probation-termination motions under Penal Code
+  §1203.3). Specific post dates not retrievable in this pass; last post date not observed.
+- NEW FINDING this pass: the site's footprint is broader than the transcript's framing.
+  Beyond Criminal Defense, DUI Defense, and Estate Planning, the site also has a full
+  Personal Injury practice-area section with dedicated sub-pages: auto accidents, truck
+  accidents, motorcycle/bicycle accidents, medical malpractice, and premises liability.
+  The discovery call did not reference personal injury at all — this looks like a
+  secondary/dormant practice line with its own SEO investment that isn't part of the
+  private-case growth conversation. Worth a passing mention as an underused asset, not a
+  core recommendation, since the prospect never raised it.
 
-PageSpeed: COULD NOT OBTAIN. Three retries against the PageSpeed Insights API (mobile
-strategy) returned HTTP 429. A control test against a neutral third-party URL also returned
-429, confirming this is a tooling/rate-limit block in this research environment, not a
-signal about the firm's site. Do not cite a mobile or desktop PageSpeed number in the
-audit deck — flag this line item as "not independently measurable in this pass" if asked,
-and recommend a live PageSpeed run be pulled manually before the proposal call if a specific
-number is needed on-screen.
+PageSpeed: COULD NOT OBTAIN. The PageSpeed Insights API (googleapis.com/pagespeedonline)
+was queried directly twice for the mobile strategy and returned HTTP 429 both times. This
+matches the prior research pass's finding against the same tool and a neutral control URL,
+confirming an environment-level rate limit, not a signal about the firm's site.
 - PageSpeed mobile score: NOT OBTAINED (tool blocked — do not estimate)
 - PageSpeed desktop score: NOT OBTAINED (tool blocked — do not estimate)
+
+**→ Website section complete.**
 
 ================================================================
 STEP 2 — GOOGLE BUSINESS PROFILE
 ================================================================
-- GBP found: not independently confirmed — direct Google Maps/Search fetches were blocked
-  (403/empty-shell responses) in this environment
+- GBP found: not independently confirmed — direct Google Maps/Search fetches returned
+  empty-shell/no-listing-data responses in this environment (same block as prior pass)
 - Star rating: UNCONFIRMED — sourced from Avvo, not independently confirmed via Google.
-  Avvo lists Christopher Lucero at a 5.0 rating based on 2 client reviews. No Google-specific
-  star rating could be retrieved.
-- Total review count: UNCONFIRMED — sourced from Avvo, not independently confirmed via
-  Google. Avvo shows 2 client reviews (both 5-star). No third-party aggregator (Yelp,
-  Birdeye) surfaced a separate Google review count for this firm in this pass.
+  Direct fetch of Avvo's reviews page (avvo.com/attorneys/91750-ca-christopher-lucero-
+  4748177/reviews.html) this pass shows Christopher Tolosa Lucero at 3.7 out of 5.0 based
+  on 3 client reviews (his separate Avvo Rating — a peer/credential-based score, not a
+  review average — is 8.4, "Excellent"). This is a change from the prior pass's Avvo
+  reading of 5.0/2 reviews; Avvo listings update over time, and this pass's number comes
+  from a direct page fetch rather than a search summary, so it is treated as the more
+  current figure. Do not cite this as a Google rating.
+- Total review count: UNCONFIRMED — sourced from Avvo (3 reviews, see above), not
+  independently confirmed via Google. No Google-specific review count could be retrieved.
 - Most recent review date: not observed
-- Primary category: "Criminal Defense Law" per Yelp listing title (not independently
-  confirmed via Google Business Profile)
+- Primary category: "Criminal Defense Law" per Yelp listing title (Lucero, PC — 2220 3rd
+  St, La Verne, CA 91750) — not independently confirmed via Google Business Profile
 - Photos active: not observed
 - Posts active: not observed
 
-Flag for the proposal: with only 2 reviews found on any platform (Avvo), this firm's
-review volume is very likely thin relative to local competitors regardless of exact
-Google count — treat "low review velocity" as a safe, directionally correct talking
-point even without a confirmed Google number.
+Flag for the proposal: even taking the most current number available (3 reviews on Avvo),
+this firm's review volume is thin relative to local competitors regardless of the exact
+Google count — "low review velocity" remains a safe, directionally correct talking point.
 
 ================================================================
 STEP 3 — LOCAL 3-PACK SEARCHES
 ================================================================
 Live visual confirmation of the Google Maps 3-pack was not obtainable in this environment
-(Maps fetch returned an empty shell with no listing data). The searches below reflect
-organic/directory search-result visibility instead, which is a reasonable proxy but should
+(Maps and SERP fetches returned empty-shell responses with no ad/pack rendering — confirmed
+again this pass with a direct fetch attempt against a live Google Search results URL, which
+returned only a generic "having trouble accessing Google Search" shell). The searches below
+reflect organic/directory search-result visibility instead, a reasonable proxy that should
 not be quoted to the client as literal 3-pack positioning.
 
 Practice Area 1: Criminal Defense
-- Search 1 "criminal defense lawyer La Verne CA": firm appears — yes, among named results
-  (directory/organic) — other named firms surfacing: Confianza Legal, DG Law APC, Weber Law
-  LLP, Law Office of James McGee, Law Offices of Ali Komaili, David J.P. Kaloyanides APLC
-  (review counts not independently confirmed for these — see Step 4)
+- Search 1 "criminal defense lawyer La Verne CA": firm appears — not directly surfaced in
+  this pass's organic result set (directory aggregators dominated: FindLaw, LawInfo,
+  Lawyers.com, Justia, Confianza Legal, DG Law/crimlawla.com, Weber Law/law.ninja). Search
+  engine's own summary noted "48 local law firms offering criminal defense services in
+  La Verne with an average client rating of 4.4" as a directory-aggregate figure, not a
+  count of any one listing.
 - Search 2 "criminal defense attorney Pomona Claremont La Verne": firm appears — not
-  observed in this result set; competitors surfacing instead: Eisner Gorin LLP, Law Offices
-  of Kirk Tarman & Associates, Muñoz~Muñoz & Ellis (Covina)
-- Search 3 "La Verne criminal lawyer" (Justia directory): firm appears — yes, listed
+  observed; competitors surfacing: Eisner Gorin LLP (Pomona), Law Offices of Kirk Tarman &
+  Associates (Claremont/Diamond Bar/La Verne/Montclair/Walnut), Law Offices of David S.
+  Chesley (Pomona)
+- Search 3 "La Verne criminal lawyer" (directory indexing): firm appears — yes, listed
+  among La Verne-area attorneys per Justia/LawInfo/FindLaw directory indexing
 
 Practice Area 2: DUI Defense
 - Search 1 "DUI lawyer La Verne CA": firm appears — not observed in this result set;
-  competitors surfacing: Poseidon Defense APC, Law Offices of Paul S. Geller, J. Patrick
-  Carey Law Corporation, Confianza Legal (has a dedicated La Verne DUI/criminal landing page)
-- Search 2 "DUI attorney La Verne": firm appears — not observed directly in top organic
-  results pulled in this pass
+  competitors surfacing: Poseidon Defense A.P.C. (with a dedicated La Verne DUI
+  landing page), Law Offices of Paul S. Geller, J. Patrick Carey Law Corporation,
+  Confianza Legal (dedicated La Verne DUI landing page), plus attorneys Lara Yeretsian and
+  G. Amy Vahdat listed by directories as serving the area
+- Search 2 "DUI attorney La Verne": firm appears — not observed directly in this pass's
+  top results
 - Search 3 "criminal defense lawyer near me La Verne": firm appears — yes, via its own
-  domain ranking plus Justia/LawInfo directory listings
+  domain's directory listings (Justia, LawInfo, BestLawyers, Cornell Legal Information
+  Institute, HandelOnTheLaw, SuperLawyers)
 
-Takeaway: the firm shows up reliably in directory listings and its own SEO pages for
-"La Verne" + practice-area queries, but did not surface in this pass for DUI-specific or
-neighboring-city (Pomona/Claremont) queries — consistent with the transcript's own
-observation that the firm has no active, profitable paid channel and relies on organic/
-blog-driven visibility.
+Note on Weber Law / law.ninja: excluded as a named competitor threat below. Its content
+follows a templated, nationwide state-by-state/city-by-city page pattern (Draper, Utah
+Yelp listing under the same brand) typical of a marketing-network-run site rather than a
+single local firm — this reads as a content-mill competitor for search visibility, not a
+genuine local practice a prospect would compare pricing/service against.
+
+Takeaway: consistent with the prior pass and the transcript's own account, the firm shows
+up in directory listings and its own SEO pages for "La Verne" + practice-area queries, but
+did not surface in this pass for DUI-specific or neighboring-city (Pomona/Claremont)
+queries — while at least two real, named local/regional competitors (Poseidon Defense,
+Confianza Legal) have built dedicated landing pages for those exact queries.
 
 ================================================================
 STEP 4 — COMPETITOR REVIEW COUNTS
 ================================================================
-- Competitor 1: Confianza Legal (Santa Fe Springs, CA — serves La Verne via dedicated geo
-  landing page) — reviews: 119 [UNCONFIRMED — sourced from Birdeye, not independently
-  confirmed via Google] — rating: 4.6 [UNCONFIRMED — sourced from Birdeye, not
-  independently confirmed via Google]. (Note: Yelp separately shows 11 reviews for this
-  firm's Santa Fe Springs location — platform counts differ, as expected; Birdeye figure
-  is the one being cited as it aggregates broader review volume.)
-- Competitor 2: DG Law, APC (serves La Verne/Pomona courts) — reviews: not obtainable in
-  this pass [UNCONFIRMED — no aggregator or Google listing reachable]
-- Competitor 3: Law Offices of Ali Komaili (Tustin, CA — lists La Verne as a service area,
-  ~30 min away) — reviews: 15 [UNCONFIRMED — sourced from Yelp, not independently confirmed
-  via Google], reviews reference strong client sentiment ("reliable, hard working, and
-  knowledgeable")
+- Competitor 1: Poseidon Defense, A.P.C. (Fullerton, CA — has a dedicated La Verne service
+  page, plus La Verne sub-practice pages for theft/shoplifting and fraud/embezzlement) —
+  reviews: 145 [UNCONFIRMED — sourced from the firm's own marketing/aggregator summary
+  citing "Google Rating: 5.0 Google Rating with 145 Reviews," not independently confirmed
+  via a direct Google Maps fetch] — rating: 5.0 [same UNCONFIRMED sourcing]. Also holds an
+  Avvo Clients' Choice Award 2025 and a 5-star Avvo rating per the same source.
+- Competitor 2: Confianza Legal (Santa Fe Springs, CA — serves La Verne, Pomona, Riverside
+  via dedicated city landing pages) — reviews: 101 [confirmed via Birdeye aggregator page,
+  UNCONFIRMED — sourced from Birdeye, not independently confirmed via Google] — rating: 4.7
+  [UNCONFIRMED — same Birdeye sourcing]. Yelp separately shows 11 reviews for the Santa Fe
+  Springs location [UNCONFIRMED — sourced from Yelp] — platform counts differ, as expected;
+  the Birdeye figure is cited as the broader aggregate. Confianza Legal also has a live
+  Facebook presence with case-evaluation ad-style posts (e.g., a "need strong criminal
+  defense... free case evaluation" post), indicating active paid/organic social promotion.
+- Competitor 3: Law Offices of Ali Komaili (Tustin, CA — lists La Verne-area service,
+  ~30 min away) — reviews: 15 on Yelp [UNCONFIRMED — sourced from Yelp, not independently
+  confirmed via Google] / 14 on Avvo, all 5-star [UNCONFIRMED — sourced from Avvo]. Client
+  language cited: "reliable, hard working, and knowledgeable."
 
-No competitor cited above was found to have a confirmed higher Google review count than
-Lucero, PC, because Lucero, PC's own Google count could not be confirmed either — do not
-let the deck imply a specific numeric gap. The safe, defensible claim is Confianza Legal's
-119 (Birdeye-sourced) review volume against Lucero PC's 2 known reviews (Avvo-sourced) as a
-directional review-velocity gap, clearly caveated as cross-platform.
+Additional competitor noted but not reviewable: DG Law, APC (Pomona-area criminal/federal
+defense practice, crimlawla.com) — no review count or rating obtainable from any source
+reached in this pass [UNCONFIRMED — not obtainable].
+
+No competitor cited above was confirmed to have a higher Google-specific review count than
+Lucero, PC, because Lucero, PC's own Google count could not be confirmed either — the deck
+should not imply a specific numeric Google-to-Google gap. The safe, defensible claim is
+review-volume and content-investment gaps across platforms: Poseidon Defense's 145
+(self-reported) and Confianza Legal's 101 (Birdeye) versus Lucero PC's 3 known reviews
+(Avvo), clearly caveated as cross-platform, plus the fact that both named competitors have
+built dedicated local landing pages Lucero, PC has not.
 
 ================================================================
 STEP 5 — DIRECTORY LISTINGS
 ================================================================
-- Avvo: present — Christopher Lucero, 5.0 rating, 2 reviews
-- Justia: present — listed in La Verne criminal law directory
+- Avvo: present — Christopher Lucero (Christopher Tolosa Lucero), Avvo Rating 8.4
+  ("Excellent"), 3.7/5.0 client-review average based on 3 reviews (see Step 2)
+- Justia: present — listed in La Verne criminal law directory (lawyers.justia.com profile
+  and justia.com/lawyers directory); direct fetch of the Justia directory page returned
+  403 this pass, so listing presence is confirmed via search indexing rather than a direct
+  page read
 - FindLaw: present — listed in La Verne criminal defense directory
 - Yelp: present — "Lucero, PC," 2220 3rd St, La Verne, CA 91750, category "Criminal Defense
-  Law" (star rating not retrievable — Yelp blocked direct fetch in this pass)
-- LawInfo: present — firm profile page exists, no reviews/ratings listed
-- BBB: present — not BBB-rated
+  Law" (direct Yelp fetch returned 403 this pass; star rating not independently confirmed)
+- LawInfo: present — firm profile page exists
+- BestLawyers / SuperLawyers / HandelOnTheLaw / Cornell LII: present — professional/
+  credential-style directory listings, consistent with the firm's Top 40 Under 40 / Rising
+  Star recognitions
+- BBB: present — confirmed via direct fetch this pass. Rating: A+. Not a BBB-Accredited
+  Business. No review count listed. Phone on file: (213) 668-7779. Address: 2220 3rd St,
+  La Verne, CA 91750.
 
-NAP inconsistency found: the firm's own website displays 213-668-7569 as its primary
-"Call 24/7" number, while multiple third-party listings (search snippets, BBB/directory
-aggregation) show (213) 668-7779 as the firm's number. This is a genuine, verifiable NAP
-(Name/Address/Phone) mismatch worth flagging — inconsistent phone numbers across the web
-directly hurt local SEO map-pack ranking.
+NAP inconsistency confirmed again this pass: the firm's own site content (per prior-pass
+observation and this pass's search-indexed snippets) displays 213-668-7569 as its primary
+"Call 24/7" number, while BBB's listing (independently fetched and confirmed this pass)
+shows (213) 668-7779. This is a genuine, verifiable NAP (Name/Address/Phone) mismatch —
+inconsistent phone numbers across the web directly hurt local SEO map-pack ranking. (Note:
+the contact phone in the intake record, +1 909-317-6440, is a different number still —
+likely a direct/personal line for Lindsey Lucero rather than the firm's public listing
+number, so it is not counted as a third public NAP variant, but is flagged for awareness.)
 
-Geo-targeting landing pages for surrounding cities: NOT FOUND. The /practice-areas page
-lists no Pomona, Claremont, Glendora, San Dimas, or Rancho Cucamonga landing pages. The
-site does have out-of-market state-level pages (/California, /new-york-city) reflecting
-Christopher Lucero's dual CA/NY bar admission, but nothing built for the immediate service
-radius. By contrast, Confianza Legal — a competitor with a much smaller home-market
-footprint — has built a dedicated La Verne city landing page. This is a concrete, low-cost
-opportunity gap.
+Geo-targeting landing pages for surrounding cities: NOT FOUND on luceropc.com. A /results
+page references cases handled at Los Angeles County Superior Court (Pomona) and San
+Bernardino County Superior Court (Rancho Cucamonga), but there are no dedicated Pomona,
+Claremont, San Dimas, or Rancho Cucamonga service-area landing pages — only a general
+/California state-level page (reflecting Christopher Lucero's dual CA/NY bar admission) and
+practice-area pages. By contrast, both Poseidon Defense (La Verne-specific theft/
+shoplifting and fraud/embezzlement sub-pages) and Confianza Legal (dedicated La Verne,
+Pomona, Riverside, and Santa Fe Springs city pages) have built exactly this kind of
+local-intent content. This remains a concrete, low-cost opportunity gap — and this pass
+shows it is deeper than previously documented, since competitors are now confirmed to be
+targeting city + sub-practice-area combinations, not just city + broad-practice-area.
+
+**→ GBP, local SEO, and directory sections complete.**
 
 ================================================================
 STEP 6 — GOOGLE ADS
 ================================================================
-Direct SERP ad-slot rendering was not obtainable in this environment (Google Search fetch
-returned an empty results shell). Per the ADS FRAMING RULE, absence of observation is
-reported as an opportunity gap, not a certainty.
+Direct SERP ad-slot rendering was not obtainable in this environment — a direct fetch
+attempt against a live Google Search results URL this pass returned only a generic
+"having trouble accessing Google Search" shell with no ad, LSA, or map-pack content (same
+block as the prior pass and consistent across multiple query attempts). Per the ADS
+FRAMING RULE, absence of observation is reported as an opportunity gap, not a certainty.
 
 Practice Area 1: Criminal Defense
-- Firm ads observed: not observed (consistent with transcript: the firm's only paid
+- Firm ads observed: not observed (consistent with the transcript: the firm's only paid
   channel is Convert It's PPC program, described by the prospect as unprofitable and
-  exhausting its budget in 3-4 days each month — so paid visibility is likely inconsistent
-  or absent for much of any given month)
-- Named local competitors running ads: not independently observed in this pass — no ad
-  copy could be captured live; do not state any competitor is or isn't running ads based on
-  this step alone
+  exhausting its budget in 3-4 days each month — paid visibility is likely inconsistent or
+  absent for much of any given month)
+- Named local competitors running ads: not independently observed via live SERP this pass;
+  however, Confianza Legal was confirmed this pass to be actively promoting free
+  case-evaluation offers via Facebook, suggesting active paid/organic social spend even
+  where Google ad-slot rendering could not be captured directly
 
 Practice Area 2: DUI Defense
 - Firm ads observed: not observed
-- Named local competitors running ads: not independently observed in this pass
+- Named local competitors running ads: not independently observed via live SERP this pass
 
 ================================================================
 STEP 7 — LOCAL SERVICE ADS
 ================================================================
-- Firm appears in LSA: not observed (transcript confirms the firm has never run LSA —
-  Nick specifically raised LSA as a *potential* new solution on the call, framed around the
-  "3 R's": Responsiveness, Radius, Reviews)
+- Firm appears in LSA: not observed (transcript confirms the firm has never run LSA — Nick
+  raised LSA as a *potential* new solution on the call, framed around the "3 R's":
+  Responsiveness, Radius, Reviews)
 - Google Screened: not observed
 - LSA review count: n/a
-- Named local competitors in LSA: not independently observed in this pass — live LSA
-  widget rendering was not reachable with available tools
+- Named local competitors in LSA: not independently observed this pass — live LSA widget
+  rendering was not reachable with available tools (same block as Google Ads section)
 
 ================================================================
 STEP 8 — META ADS
 ================================================================
-Facebook Ads Library blocked direct access in this environment (403 — the Library requires
-an authenticated/rendered browser session). No firm or competitor Meta ad data could be
-captured live.
+Facebook Ads Library blocked direct access in this environment — a direct fetch attempt
+this pass returned a socket-level error (same class of failure as the luceropc.com direct
+fetches), consistent with the Library requiring an authenticated/rendered browser session.
+No firm or competitor Meta ad data could be captured via the Library itself.
 - Firm has active ads: not observed (not independently verifiable this pass)
-- Named local competitor 1: not independently observed
+- Named local competitor 1: Confianza Legal — an active organic/ad-style Facebook post
+  offering a free case evaluation was found via general web search (not the Ads Library
+  itself, so "active ad" status cannot be confirmed — but it confirms the firm is running
+  paid-style creative/messaging on the platform)
 - Named local competitor 2: not independently observed
+
+**→ All ads sections complete.**
 
 ================================================================
 STEP 9 — TRANSCRIPT EXTRACTION
 ================================================================
 - Practice areas confirmed: Criminal defense (private-pay and court-appointed matters) is
   the core of the discussion; the firm's site additionally lists DUI Defense and Estate
-  Planning as formal practice areas, though the call itself centered entirely on the
-  criminal defense caseload.
+  Planning as formal practice areas, and — newly confirmed this pass — a full Personal
+  Injury practice line (auto, truck, motorcycle/bicycle accidents, medical malpractice,
+  premises liability). The call itself centered entirely on the criminal defense caseload;
+  personal injury was never mentioned.
 - Current lead sources: PPC via Convert It (paid, currently unprofitable); the firm's own
   organic blogging efforts, described on the call as "the primary driver of new clients";
   court-appointed assignments (a separate, non-marketing referral pipeline).
@@ -211,7 +304,11 @@ STEP 9 — TRANSCRIPT EXTRACTION
   a calculated inference from the stated goal, not a figure the prospect stated directly.
 - Annual revenue (net / take-home / collected): not distinguished from gross — the
   transcript never separates gross billings from collected/net revenue.
-- Fee structure: not stated (no contingency/hourly/flat-fee language used on the call).
+- Fee structure: not stated for criminal defense on the call (no contingency/hourly/
+  flat-fee language used). Note: the site's Personal Injury pages (not discussed on the
+  call) describe a contingency fee structure — "no fee unless and until you receive money
+  in a settlement or judgment" — but that applies to a different practice line than the
+  one under discussion.
 - Revenue goal: stated — grow from 2-3 to 5-6 private cases/mo, adding ~$22.5k/mo, enough
   to "cover Lindsey's salary and enable hiring an associate."
 - Average case value: not directly stated — see calculated inference above (~$7,500/case).
@@ -219,8 +316,8 @@ STEP 9 — TRANSCRIPT EXTRACTION
   clients (~22-33%); August: ~15 calls → 1 client (~7%). SMB Team benchmark cited on the
   call: clients typically convert 15-25% of total leads, meaning August's ~7% is well below
   benchmark and July's rate is roughly in line with it.
-- Number of locations: 1 (not otherwise mentioned; confirmed single La Verne address via
-  website/directories).
+- Number of locations: 1 (confirmed single La Verne address, 2220 3rd St, via BBB and
+  directory listings).
 - Spanish campaign needed: not stated.
 - Dominant buying motive: not "more money" on its face — the transcript is explicit that
   the underlying goal is building "a scalable business not reliant on Christopher," with a
@@ -248,36 +345,40 @@ STEP 9 — TRANSCRIPT EXTRACTION
 ================================================================
 STEP 10 — COMPETITIVE URGENCY SCORE
 ================================================================
-Score: 6/10
+Score: 7/10
 
-Reasoning: No single local competitor was confirmed (with tools available in this pass) to
-be dominating every channel — direct SERP/Maps/LSA/Meta verification was largely blocked in
-this research environment, so this score is likely conservative rather than overstated.
-Even with that gap, three concrete threats are already confirmed from what *was* reachable:
+Reasoning: Direct SERP/Maps/LSA/Meta-Ads-Library verification was again largely blocked in
+this research environment, so live ad-slot and 3-pack positioning could not be captured
+first-hand — but this pass surfaced more concrete, confirmed competitive investment than
+the prior pass did, which is why the score moves up rather than down:
 
-1. Confianza Legal — despite being headquartered outside the immediate market (Santa Fe
-   Springs), has built a dedicated La Verne geo-landing page and shows meaningfully higher
-   review volume (119 Birdeye-sourced reviews vs. Lucero PC's 2 known Avvo reviews) —
-   exactly the kind of local-SEO investment Lucero, PC has not made.
-2. Lucero, PC itself is bleeding budget on an unprofitable PPC engagement ($5,800/mo
+1. Poseidon Defense, A.P.C. — has built La Verne-specific landing pages down to the
+   sub-practice-area level (theft/shoplifting, fraud/embezzlement), not just a general
+   city page, and reports a 5.0/145-review profile (self-sourced, UNCONFIRMED via direct
+   Google, but directionally a large volume gap regardless of platform).
+2. Confianza Legal — has dedicated city landing pages for La Verne, Pomona, Riverside, and
+   Santa Fe Springs, a confirmed 101-review/4.7 Birdeye profile, and an active Facebook
+   presence running free-case-evaluation offers — a multi-channel local + social footprint
+   Lucero, PC does not currently match on any channel.
+3. Lucero, PC itself is bleeding budget on an unprofitable PPC engagement ($5,800/mo
    combined spend for ~1 client/mo) while paying a separate $400/mo "SEO" fee for what the
    prospect describes as basic hosting only — real dollars going out with no defensive or
-   offensive digital-marketing benefit.
-3. The firm has zero geo-targeting landing pages for the cities immediately surrounding La
-   Verne (Pomona, Claremont, San Dimas, Rancho Cucamonga) despite regularly appearing in
-   those courts — an open lane for any competitor investing in local content to out-rank it.
+   offensive digital-marketing benefit — and has zero geo-targeting landing pages for the
+   cities immediately surrounding La Verne (Pomona, Claremont, San Dimas, Rancho Cucamonga)
+   despite regularly appearing in those courts per its own /results page.
 
-"A score of 6 means competitors have meaningful advantages in one or more areas and are
-pulling ahead. You are not invisible yet — but the window to close the gap is narrowing.
-Every month without action is a month they extend their lead."
+"A score of 7 means competitors are actively dominating multiple channels in your market
+and the gap is getting wider every month you wait. This is not a future problem — it is a
+right now problem."
 
 ================================================================
 PASS 2 — VERIFICATION CHECKLIST
 ================================================================
 [x] Every number in the notes matches actually observed data, or is explicitly flagged as
     not obtained / UNCONFIRMED — no live-tool numbers were invented
-[x] No competitor is cited as "dominating" reviews without an explicit cross-platform
-    caveat (Lucero PC's own count is unconfirmed, so no numeric gap is asserted as fact)
+[x] No competitor is cited as "dominating" Google reviews specifically without an explicit
+    cross-platform caveat (Lucero PC's own Google count is unconfirmed, so no numeric
+    Google-to-Google gap is asserted as fact)
 [x] Every review count/rating carries a verification-method tag
 [x] Revenue is recorded in the monthly terms the transcript actually used; gross/net were
     not distinguished by the prospect, and that is noted rather than assumed
@@ -285,8 +386,9 @@ PASS 2 — VERIFICATION CHECKLIST
 [x] No section states "you are not running ads" — all use "not observed" / opportunity-gap
     framing
 [x] No profitability or business claim appears that didn't come from the transcript
-[x] No competitor reference uses generic labels — only specific named local (or
-    named/serving-the-area) firms
+[x] No competitor reference uses generic labels — only specific named local/regional firms
+    (Weber Law/law.ninja explicitly excluded as a content-mill network rather than a single
+    local competitor)
 [x] PageSpeed scores are explicitly marked NOT OBTAINED rather than estimated
 [x] DBM recorded with supporting quote/inference
 [x] Revenue goal recorded
