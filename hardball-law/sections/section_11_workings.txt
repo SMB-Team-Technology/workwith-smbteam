@@ -1,0 +1,224 @@
+================================================================================
+SECTION 11 — WORKINGS (INTERNAL — NOT CLIENT FACING)
+Firm: Hardball Law | Date: August 17, 2026 | Rep: Jacob Meissner
+================================================================================
+
+TRANSCRIPT-STATED NEED OVERRIDE CHECK (applied before touching package_decision.json)
+--------------------------------------------------------------------------------
+1. Call-purpose override: NOT TRIGGERED. Per the Fathom summary's own "Meeting
+   Purpose," this was a "Consultation on PI marketing strategy and ChatGPT ad
+   verification." The core ask is standard PI marketing/lead-gen discovery
+   (SMB Team scoping a Google PPC/LSA-led paid strategy). The ChatGPT/OpenAI
+   ads-verification thread is Susan's own unrelated administrative task
+   (business verification at ads.openai.com, blocked on a missing logo file)
+   — not an SMB Team product category (not Fractional CTO/AI, not
+   coaching/ops). It does not redirect the recommendation category.
+2. Existing-vendor override: NOT TRIGGERED. Current SEO ("city page" strategy)
+   and radio spend is described as active but unnamed/unvendored, and
+   explicitly "zero ROI." No recent/active marketing vendor contract was
+   named. This is the growth gap the marketing package addresses, not a
+   reason to exclude it.
+3. Budget-reality override: NOT TRIGGERED. No budget constraints, financial
+   limits, or preference for a smaller engagement were stated on the call.
+4. Effective-revenue override: NOT TRIGGERED. No net vs. gross revenue split
+   was stated at all — revenue is entirely absent from the transcript (see
+   revenue verification below). There is no stated net figure to apply in
+   place of a gross figure.
+
+Conclusion: none of the four overrides apply. package_decision.json's
+marketing + coaching selection logic is usable, subject to the confidence-low
+cross-check below.
+
+REVENUE VERIFICATION (confidence: low — required check before finalizing)
+--------------------------------------------------------------------------------
+Research notes Step 9 explicitly state: "Annual revenue (gross / case value):
+Not stated in the transcript. Annual revenue (net / take-home / collected):
+Not stated in the transcript." No other revenue proxy, profitability claim, or
+financial figure appears anywhere else in the research notes. Nothing in the
+notes contradicts or points to a different band than the pipeline's estimate.
+
+package_decision.json sourced revenue_effective ($570,000) from HubSpot's
+"annual_law_firm_revenue" field ("$180K - $960K" band, midpoint used). This is
+a CRM-level estimate, not a transcript-derived figure — hence confidence:
+low. Since the research notes neither confirm nor clearly contradict this
+estimate (they simply have no revenue data at all), I am using the estimate
+as the best available evidence per the pipeline instruction, WITH the
+following corrections/flags documented below.
+
+Team size correction: package_decision.json defaulted team_size_effective to
+3 ("not stated — defaulting to 3"). Research notes are explicit that Susan is
+a true solo practitioner ("Solo practitioner who partners with larger firms
+on complex cases to avoid high overhead") with no internal staff described.
+Correcting this to "solo / 0 internal staff" does NOT change the coaching
+tier: the $400K–$1M revenue band's "Elite Coach Plus" row applies to "Any"
+team configuration, and is not "Growing" (which would require internal team
+expansion evidence not present here). No change to coaching selection.
+
+LAW (Legal AI Workforce) eligibility: correctly excluded (law_tier: null).
+Confirmed correct given "Firm is solo with no support staff" is an explicit
+disqualifier, independent of revenue.
+
+MARKETING TIER — ELIGIBILITY CROSS-CHECK ACROSS FULL REVENUE RANGE
+--------------------------------------------------------------------------------
+Practice areas detected: Personal Injury (general) + Medical Malpractice —
+multiple practice areas. Essentials is hidden regardless of revenue (requires
+single practice area). Personal Injury also independently sets a Starter
+minimum tier floor. Both rules hold true at every point across the entire
+$180K–$960K HubSpot band, and the Starter row ("$500K–$1M, or under $750K
+with multiple practice areas") covers the full range. CONCLUSION: Starter is
+the correct marketing tier regardless of where in the estimated band actual
+revenue falls. No correction needed.
+
+COACHING TIER — SENSITIVITY TO THE ESTIMATE
+--------------------------------------------------------------------------------
+Elite Coach Plus ($3,200/mo bundled) applies for $400K–$1M. If actual revenue
+is confirmed BELOW $400K (a real possibility given the HubSpot band's low end
+of $180K), the correct tier would step down to Elite Coach ($2,600/mo
+bundled, $250K–$400K band). FLAG FOR JACOB: confirm actual revenue on the
+Aug 19 call. If confirmed revenue < $400K, downgrade coaching line in Block 2
+and Block 3 to Elite Coach ($2,600/mo bundled / $3,497/mo stand-alone,
+$897/mo savings) and recompute totals before the proposal is finalized.
+
+35% SPEND CAP — REVENUE-DEPENDENT, FLAGGED FOR SALES
+--------------------------------------------------------------------------------
+At the point-estimate revenue ($570,000/yr = $47,500/mo), 35% cap = $16,625/mo
+total SMB spend (management fees + ad spend).
+- Management fees (Starter $4,997 + Elite Coach Plus $3,200) = $8,197/mo.
+- Conservative scenario ($7,500 ad spend): total $15,697/mo = ~33% of
+  estimated monthly revenue. Within cap, but narrowly.
+- Aggressive scenario ($20,000 ad spend, the Starter tier's own cap): total
+  $28,197/mo = ~59% of estimated monthly revenue. EXCEEDS the 35% cap at the
+  point-estimate revenue.
+The $20,000 aggressive figure only clears the 35% cap if actual annual
+revenue is at least ~$966,000 (near the top of the HubSpot band). FLAG FOR
+JACOB: do not commit to the $20,000/mo aggressive ad spend figure until
+actual revenue is confirmed on the Aug 19 call. If confirmed revenue is
+below roughly $700K/yr, scale the aggressive scenario down toward the
+conservative figure (or re-run this calculation against the confirmed
+number) before presenting it as a commitment.
+The client-facing report still presents the approved Conservative
+($7,500)–Aggressive ($20,000) range per the Starter tier's own ad spend
+cap table (per Price Integrity rules, these are the only approved figures
+for this tier) — the cap tension above is an internal note for scoping,
+not a reason to invent a different number for the client report.
+
+MANDATORY PRICE LOOKUP
+--------------------------------------------------------------------------------
+- Marketing package selected: Full Service Marketing — Starter
+  - Bundled price (from table): $4,997/mo
+  - Stand-alone price (from table): $5,697/mo
+  - Savings (stand-alone minus bundled): $700/mo
+- Non-marketing package selected: Elite Coach Plus
+  - Bundled price (from table): $3,200/mo
+  - Stand-alone price (from table): $3,497/mo
+  - Savings (stand-alone minus bundled): $297/mo
+- Legal AI Workforce (LAW) package selected: none (solo practice, no support
+  staff — explicit LAW disqualifier)
+- AI Avatar / Video Growth add-on selected: none (not discussed on the call;
+  video opportunity noted qualitatively in Lead Generation section only)
+- Total monthly investment (sum of bundled/recurring prices): $8,197/mo
+- Total savings (sum of all savings): $997/mo
+
+AD SPEND & ROI PROJECTIONS
+--------------------------------------------------------------------------------
+Practice area used for CPL/case-value defaults: "Accident & Injury" (no
+distinct medical malpractice row exists in the approved CPL or case-value
+tables; Susan's higher-value target case types — wrongful death, med-mal,
+motorcycle — are not separately priced, so this likely UNDERSTATES true
+revenue potential. Disclosed as a default per the practice-area-default
+disclosure rule.)
+Competitiveness: Medium (PI hard floor $7,500) — consistent with a market
+where the Competitive Urgency Score is 7/10: several well-established named
+competitors, but Hardball Law retains genuine legacy brand equity (40+ years,
+active video/blog content).
+Channel mix: per the transcript's own stated allocation — 80% Google
+(Search/LSA), 20% brand awareness (Meta/video/CTV). Modeled as 60% Google
+Search + 20% LSA + 20% Meta (cold/awareness).
+Blended CPL (Accident & Injury midpoints — Search $705, LSA $235, Meta Cold
+$170): 0.6(705) + 0.2(235) + 0.2(170) = $504.
+- Conservative CPL (+20% cushion): $605
+- Aggressive CPL (no cushion): $504
+Close rate: 15% (default — not stated in transcript).
+Case value: $6,500 (midpoint of Accident/Injury $5K–$8K default — disclosed
+default, likely conservative given target case mix).
+
+CONSERVATIVE SCENARIO — Ad Spend $7,500/mo
+  Leads = $7,500 / $605 ≈ 12.4 leads/mo
+  Cases = 12.4 × 15% ≈ 1.9 cases/mo
+  Revenue = 1.9 × $6,500 ≈ $12,350/mo
+  Return = $12,350 / $7,500 ≈ 1.6x
+
+AGGRESSIVE SCENARIO — Ad Spend $20,000/mo (Starter tier cap)
+  Leads = $20,000 / $504 ≈ 39.7 leads/mo
+  Cases = 39.7 × 15% ≈ 6.0 cases/mo
+  Revenue = 6.0 × $6,500 ≈ $39,000/mo
+  Return = $39,000 / $20,000 ≈ 2.0x
+(Reverse-math validation using a 2x-current-revenue goal default was run and
+produced a materially higher required-spend figure than the Starter tier
+supports — but since current revenue itself is an unconfirmed, wide-range
+HubSpot estimate, compounding a "2x of a guess" goal on top of it would be
+speculation on speculation. The Starter tier's own approved ad spend cap
+($20,000) is used as the aggressive figure instead, per Price Integrity
+rules, with the 35% cap flag above documented for sales.)
+
+DBM STATEMENT FOR BLOCK 1
+--------------------------------------------------------------------------------
+"We help experienced solo personal injury attorneys get a predictable flow of
+high-value cases so they can stay selective about the work they take —
+instead of grinding through volume just to cover overhead."
+
+QUICK WIN OPPORTUNITIES (6, across all four pillars)
+--------------------------------------------------------------------------------
+1. [Lead Generation] Fix the NAP/brand inconsistency across directories —
+   Why: current site/Yelp use one address+name, Martindale/BBB/Justia/FindLaw
+   use another, splitting local ranking signal. Competitor: n/a (internal
+   fix). Opportunity: consolidate to one consistent NAP, recovering local SEO
+   authority built over 40 years.
+2. [Lead Generation] Launch Google Search + LSA campaigns for wrongful death,
+   med-mal, and motorcycle accident terms — Why: no paid ads run to date and
+   no organic visibility in these searches this session. Competitor: Plaxen
+   Adler Muncy, Silverman Thompson, Miller Stern Lawyers. Opportunity: capture
+   high-intent searchers actively looking for these exact case types now.
+3. [Lead Generation] Launch Meta retargeting + video ads using Susan's
+   existing video library — Why: no paid social currently running, but video
+   assets already exist. Competitor: n/a. Opportunity: low-lift launch since
+   content already exists.
+4. [Intake] Add 24/7 intake coverage — Why: Susan personally handles every
+   intake call with no confirmed after-hours coverage, and PI emergencies
+   happen at all hours. Competitor: n/a. Opportunity: capture leads that
+   currently go to voicemail or a competitor after hours.
+5. [Team] Document a defined case-intake and follow-up process — Why:
+   currently undocumented and dependent entirely on Susan's personal
+   bandwidth. Competitor: n/a. Opportunity: frees up hours and creates the
+   foundation for future delegation.
+6. [Profit] Establish baseline revenue and case-value tracking — Why: no
+   revenue, fee structure, or case-value data currently tracked. Competitor:
+   n/a. Opportunity: gives Susan the visibility needed to set a real revenue
+   goal and evaluate marketing ROI going forward.
+
+FIRST 90 DAYS
+--------------------------------------------------------------------------------
+1. Launch Google Search + LSA campaigns targeting wrongful death, medical
+   malpractice, and motorcycle accident cases in the Baltimore/Towson market
+2. Fix the NAP/brand inconsistency across Martindale, BBB, Justia, and
+   FindLaw so every directory matches the current "Hardball Law" address and
+   brand
+3. Confirm PageSpeed and mobile performance on hardball-law.com and address
+   any issues found before scaling ad spend further
+4. Kick off Elite Coach Plus coaching sessions to start building the systems
+   and financial visibility behind the marketing push
+5. Begin building out Meta video/retargeting campaigns using Susan's existing
+   video library
+
+ESCALATION FLAGS (internal only — never in client report)
+--------------------------------------------------------------------------------
+- Revenue estimate is confidence: low (HubSpot CRM band, not transcript-
+  stated) — confirm actual revenue with client before finalizing proposal
+- If confirmed revenue < $400K: downgrade coaching to Elite Coach ($2,600/mo
+  bundled) and recompute Block 3 totals
+- Aggressive ad spend ($20,000/mo) exceeds the 35% total-spend cap at the
+  point-estimate revenue ($570K/yr) — re-verify once revenue is confirmed
+- Review counts unconfirmed — verify live via Google before the call
+- PageSpeed scores not obtained this session — run manually before the call
+- Status of Susan's ChatGPT/OpenAI ads-verification process (logo file,
+  EIN/business details) — confirm resolved before the Aug 19 call
