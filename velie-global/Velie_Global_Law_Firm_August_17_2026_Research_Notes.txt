@@ -1,0 +1,475 @@
+VELIE GLOBAL LAW FIRM — AUDIT RESEARCH NOTES
+Firm: Velie Global Law Firm, P.L.L.C.
+URL: https://velielaw.com
+Offices: 401 W Main Street, Suite 300, Norman, OK 73069 (Immigration) | Plano/Dallas, TX (Litigation)
+Phone (OK office, tracked): (405) 310-4333
+Phone (Dallas office, tracked): (469) 606-9555
+Sales Rep: Jacob Meissner
+Research Date: August 17, 2026
+
+================================================================================
+STEP 1 — WEBSITE RESEARCH
+================================================================================
+
+NOTE: velielaw.com is a React single-page application (Create React App bundle,
+main.5b468699.js) that server-returns an essentially empty <div id="root"> — no
+headless-browser/rendering tool was available in this environment, so the page
+could not be visually rendered or screenshotted. Findings below were reconstructed
+from (1) the raw HTML head/meta, (2) literal strings and route paths extracted
+directly from the production JS bundle, and (3) Wayback Machine snapshots. Items
+that genuinely require visual/interactive confirmation are marked [VERIFY LIVE].
+
+- Website URL confirmed live: Yes (HTTP 200 on http://velielaw.com)
+- Last redesign date or estimated age: Confirmed via Wayback Machine CDX history —
+  page payload was 14–22KB (traditional server-rendered site) through Dec 2023,
+  then dropped to ~1.9KB (React app shell) starting Feb 25, 2024. Redesign to the
+  current React/SPA site occurred approximately February 2024 (~2.5 years old).
+- Mobile responsive: Not directly observed (SPA, no renderer available) — CRA
+  builds are responsive by default. [VERIFY LIVE]
+- Homepage headline: Not observed — could not render JS. [VERIFY LIVE]
+- CTA above fold: Site integrates Cal.com ("app.cal.com" / "cal.com" DNS-prefetched,
+  bundle contains "Cal.com inline embed initialized" and "The scheduling calendar
+  is now open"), and markets a paid "Strategy Session" as distinct from a free
+  consultation (bundle string: "Unlike typical consultations, our Strategy
+  Sessions, ..." and "Difference Between a Strategy Session and a Consultation").
+  Exact CTA button text: [VERIFY LIVE]
+- Contact form location: /contact route exists; a fallback message in the bundle
+  reads "The scheduler could not open. Share this booking link instead:
+  https://velielaw.com/contact" — confirms a working contact/scheduling page.
+  Exact placement (above/below fold): [VERIFY LIVE]
+- Live chat present: No traditional live-chat vendor (Intercom/Drift/Zendesk/
+  Tawk) detected in the bundle. Site instead loads an ElevenLabs AI conversational
+  voice widget (unpkg.com/@elevenlabs/convai-widget-embed) after 5 seconds of
+  idle time or first user interaction — an AI voice agent, not text chat.
+- Attorney bio present: Yes — confirmed individual bio routes for at least 12
+  team members: Jon Velie (/jon-velie), Lisa Canterberry, Lisa Garza, Kurt
+  Elieson, Layth Gafoor, Alex Campbell, Ashley Morin, Matt Schlake, Nick Jordan,
+  Norris Lozano, Terry Turzinski, and Yesh Vasamsetty, plus a general /attorneys
+  and /team/ index.
+- Video present: Not observed — could not render JS. [VERIFY LIVE]
+- Blog present: Yes — confirmed at /blog/ with layout variants (/blog-left,
+  /blog-right, /blog-fullwidth) and multiple visa-specific long-form posts (e.g.
+  "B1 Visa Journey," "J1 Visa Journey," "H2A Agricultural Visas") titled
+  "... | Immigration Blog | Velie Global Law Firm." Most recent post date:
+  [VERIFY LIVE — post dates are rendered client-side]
+- Notable: site also runs paid-campaign landing pages distinct from organic blog
+  content — /campaign/h1b-webinar, /campaign/immigration-services,
+  /campaign/thank-you, /campaign/unsubscribe — indicating past or current email/
+  webinar lead-gen activity on the immigration side specifically.
+- Practice-area pages confirmed via routes: Immigration (extensive visa-type
+  pages — H1B, L1, O1, E1/E2/E3, EB1/EB1B/EB1C, EB2, EB5, TN, R1, P1, P3, I-visa,
+  K1–K4, spouse/family visa, naturalization, DACA), Business Litigation,
+  Corporate Law, Family Law, Personal Litigation, Litigation & Appeals, Tax Law,
+  Mergers & Acquisitions, Sports & Entertainment Law.
+- Geo-targeting pages: Only one dedicated city page found — /dallas. No
+  additional surrounding-city landing pages (e.g. Plano, Frisco, McKinney,
+  Oklahoma City) were found in the route list.
+
+PageSpeed Scores:
+- PageSpeed mobile score: COULD NOT OBTAIN — pagespeed.web.dev requires a live
+  browser session (not available in this environment); the PageSpeed Insights
+  public API returned HTTP 429 "Quota exceeded for quota metric 'Queries'...
+  per day" on repeated attempts. MUST RUN LIVE at pagespeed.web.dev before
+  audit write — do not estimate.
+- PageSpeed desktop score: COULD NOT OBTAIN — same reason. MUST RUN LIVE.
+
+================================================================================
+STEP 2 — GOOGLE BUSINESS PROFILE
+================================================================================
+
+NOTE: No live browser/Google Maps access was available in this environment.
+The figures below are pulled from third-party aggregators and are tagged
+UNCONFIRMED per the Review-Data Verification Rule — they must be re-verified
+live on Google Maps before the audit is written, and must not be printed as a
+specific figure in the client-facing report unless confirmed.
+
+- GBP found: Presumed yes (firm is well-established, 30+ years combined
+  practice, listed across major directories) — not directly opened. [VERIFY LIVE]
+- Star rating: 4.2 [UNCONFIRMED — sourced from Birdeye aggregate, not
+  independently confirmed via Google]
+- Total review count: 47 [UNCONFIRMED — sourced from Birdeye aggregate
+  (reviews.birdeye.com/velie-law-firm-155666407060995), not independently
+  confirmed via Google]
+- Most recent review date: [VERIFY LIVE]
+- Primary category: Immigration Attorney (per Yelp/directory listings)
+- Photos active: [VERIFY LIVE]
+- Posts active: [VERIFY LIVE]
+- Facebook: facebook.com/VelieLawFirm — approximately 90% recommend rate on 12
+  reviews [UNCONFIRMED — sourced from Facebook aggregator search result, not
+  independently confirmed]
+- NOTE: A second, separate Yelp listing exists for "William Velie, Attorney at
+  Law" at 225 N Peters Ave, Norman, OK — a different address from the primary
+  401 W Main St listing. This looks like a legacy/predecessor listing (a
+  related family firm — see STEP 5 NAP note) rather than the current entity,
+  and is worth flagging as a citation-consistency issue.
+
+================================================================================
+STEP 3 — LOCAL 3-PACK SEARCHES
+================================================================================
+
+NOTE: No live Google Search/Maps rendering tool was available in this
+environment, so exact 3-pack positions and pack composition could not be
+directly observed. The searches below reflect which specific local firms
+surface prominently for these queries based on available search data; exact
+pack position and whether Velie appears within the 3-pack itself must be
+confirmed live. [VERIFY LIVE] applies throughout this section.
+
+Practice Area 1: Immigration Law (Norman / OKC metro)
+- Search 1 "immigration lawyer Norman OK": Velie Law Firm appears prominently
+  in directory/organic results — competitors surfacing: Farzaneh & Patel, PLLC
+  (Moore, OK), Winningham & Associates (Oklahoma City, OK). [VERIFY LIVE for
+  3-pack]
+- Search 2 "immigration attorney Oklahoma City": Competitors surfacing:
+  Winningham & Associates, Farzaneh Law Firm PC. [VERIFY LIVE for 3-pack]
+- Search 3 "visa lawyer Norman Oklahoma": Velie surfaces strongly (firm's own
+  extensive visa-specific content is heavily indexed); named competitors less
+  prominent for this specific long-tail query. [VERIFY LIVE for 3-pack]
+
+Practice Area 2: Business/Commercial Litigation (Dallas / Plano, TX)
+- Search 1 "business litigation attorney Plano TX": Competitors surfacing:
+  JVP Law, PLLC (Plano). [VERIFY LIVE for 3-pack — Velie's Dallas presence
+  relies on referrals per transcript, so appearance in organic/3-pack results
+  is uncertain]
+- Search 2 "personal injury lawyer Dallas TX": Competitors surfacing: DFW
+  Injury Lawyers, GoSuits Trial Attorneys (Carrollton/Dallas), The Law Giant —
+  Texas Legal Group. [VERIFY LIVE for 3-pack]
+- Search 3 "small business lawyer Dallas TX": Competitors surfacing: general
+  directory listings, no single dominant named local firm identified. [VERIFY
+  LIVE for 3-pack]
+
+================================================================================
+STEP 4 — COMPETITOR REVIEW COUNTS
+================================================================================
+
+NOTE: Could not verify any of these live on Google Maps (no browser tool
+available). All figures below are sourced from third-party aggregators and are
+tagged UNCONFIRMED. None of the figures below currently exceed Velie's own
+47-review Birdeye figure by a margin large enough to state with confidence
+without live re-verification — treat all as directional only until confirmed.
+
+- Farzaneh & Patel, PLLC (Moore, OK) — rating: 4.7 [UNCONFIRMED — sourced from
+  Martindale.com, not independently confirmed via Google] — reviews: 6
+  [UNCONFIRMED — sourced from Martindale.com]. Immigration-focused, same OKC
+  metro market as Velie's Norman office.
+
+- E. Vance Winningham & Associates (Oklahoma City, OK) — rating: 4.8
+  [UNCONFIRMED — sourced from directory aggregator, not independently
+  confirmed via Google] — reviews: 36 [UNCONFIRMED — sourced from truelaws.com
+  aggregator]. Established immigration-exclusive firm since 1983, repeatedly
+  named a top immigration firm by U.S. News — a credibility/authority
+  competitor in the same metro.
+
+- DFW Injury Lawyers (Dallas, TX) — rating: 5.0 [UNCONFIRMED — sourced from
+  TrustAnalytica aggregator, not independently confirmed via Google] —
+  reviews: 21 [UNCONFIRMED — sourced from TrustAnalytica]. Direct competitor
+  for the personal-injury work Velie's Dallas office is trying to attract.
+
+- GoSuits Trial Attorneys (Carrollton/Dallas, TX) — rating: 4.9 [UNCONFIRMED
+  — sourced from Trustindex aggregator, not independently confirmed via
+  Google] — reviews: 152+ [UNCONFIRMED — sourced from Trustindex aggregator].
+  Claims 1,846+ clients served and 500+ lawsuits filed — a high-volume,
+  heavily-marketed PI competitor in the exact Dallas-area market Velie is
+  targeting for expansion.
+
+IMPORTANT NOTE FOR AUDIT WRITE: Do not state any of the above competitor
+figures as fact in the client-facing report — every one is UNCONFIRMED and
+must be re-verified live on Google Maps first. If live verification is not
+possible before the audit is written, do not cite specific competitor review
+counts; describe the competitive gap qualitatively instead (e.g., "several
+Dallas-area PI firms have built substantial online review volume while your
+Dallas office currently relies on referrals with no review-generation
+system").
+
+================================================================================
+STEP 5 — DIRECTORY LISTINGS
+================================================================================
+
+- Avvo: Present — Jon(athan) Thompson Velie, Norman, OK.
+  avvo.com/attorneys/73069-ok-jonathan-velie-4427088.html
+- Justia: Present — lawyers.justia.com/lawyer/jon-velie-1672869
+- Yelp: Present, but TWO separate listings found —
+  1. "VELIE LAW FIRM" — 401 W Main St, Norman, OK (current primary address)
+  2. "WILLIAM VELIE, ATTORNEY AT LAW" — 225 N Peters Ave, Norman, OK
+     (different address)
+- Facebook: facebook.com/VelieLawFirm/ (current firm page)
+- LinkedIn: linkedin.com/company/velie-law-firm-pllc and Jon Velie personal
+  profile (linkedin.com/in/jonvelie/), which lists him as "Lead Counsel of
+  Velie Global Law Firm, Plano, TX"
+- Birdeye: reviews.birdeye.com/velie-law-firm-155666407060995
+- Manta, ReachAttorneys, Chamber of Commerce, Lawcompanies.net: all present
+  with consistent firm/attorney info
+
+NAP INCONSISTENCIES NOTED:
+1. Two distinct related web properties exist outside the primary domain:
+   jonvelie.com (a personal "attorney portfolio" site for Jon Velie separately
+   from velielaw.com) and velie.us / "William Velie Attorney at Law" (appears
+   to be a related/legacy firm under a different name, with its own Facebook
+   page facebook.com/velie.us/ and its own Yelp listing at a different Norman
+   address). Having the practice split across velielaw.com, jonvelie.com, and
+   velie.us creates real NAP and brand-consistency risk — a prospective client
+   searching "Velie" could land on three different sites with different
+   addresses/branding.
+2. No dedicated Plano/Dallas GBP-style directory presence was found distinct
+   from the Norman, OK listings — the Dallas office does not appear to have
+   its own independent local citation footprint, consistent with the
+   transcript's description of Dallas operating purely on referrals with no
+   formal marketing.
+
+Geo-targeting: Minimal. Only one dedicated city landing page (/dallas) found
+on velielaw.com; no additional surrounding-city pages (Plano, Frisco, McKinney,
+Oklahoma City, Moore) were found in the site's route structure, despite the
+firm operating in two very different metro markets.
+
+================================================================================
+STEP 6 — GOOGLE ADS
+================================================================================
+
+NOTE: No live browser access to Google Search results pages was available in
+this environment, so live ad units could not be directly observed. Framed
+per the Ads Framing Rule — absence of visible ads is not stated as certainty.
+
+Practice Area 1: Immigration Law
+- Firm ads observed: Not observed for searches run. Velie's own visa-specific
+  content is heavily built out organically (dozens of dedicated visa-type
+  pages), suggesting historical investment in SEO/content over paid search,
+  but the firm does not appear to be running ads for this search today.
+- Named local competitors running ads: Not confirmed via available tools.
+  [VERIFY LIVE — check "immigration lawyer Norman OK" and "immigration
+  attorney Oklahoma City" for Farzaneh & Patel and Winningham & Associates ad
+  presence]
+
+Practice Area 2: Business Litigation / Personal Injury (Dallas)
+- Firm ads observed: Not observed for searches run — consistent with the
+  transcript's statement that Dallas operates on referrals with no formal
+  marketing.
+- Named local competitors running ads: Not confirmed via available tools.
+  [VERIFY LIVE — check "personal injury lawyer Dallas TX" for GoSuits and DFW
+  Injury Lawyers ad presence; both firms show volume-marketing behavior
+  (client-count claims, review-generation programs) consistent with active
+  paid acquisition]
+
+================================================================================
+STEP 7 — LOCAL SERVICE ADS (LSA)
+================================================================================
+
+- Firm appears in LSA: Not observed — could not verify live. [VERIFY LIVE]
+- Google Screened: Not observed. [VERIFY LIVE]
+- LSA review count: N/A
+- Named local competitors in LSA: Not confirmed via available tools. [VERIFY
+  LIVE — check top of results for "immigration lawyer Norman OK" and
+  "personal injury lawyer Dallas TX"]
+
+================================================================================
+STEP 8 — META ADS
+================================================================================
+
+NOTE: facebook.com/ads/library requires an interactive/authenticated browser
+session; it could not be queried programmatically in this environment.
+
+- Firm has active ads: Not observed. [VERIFY LIVE at facebook.com/ads/library
+  — search "Velie Law Firm" and "Velie Global Law Firm"]
+- Named local competitor 1 — GoSuits Trial Attorneys: active ads not
+  confirmed via available tools. [VERIFY LIVE]
+- Named local competitor 2 — Winningham & Associates: active ads not
+  confirmed via available tools. [VERIFY LIVE]
+
+================================================================================
+STEP 9 — TRANSCRIPT EXTRACTION
+================================================================================
+
+[All values below taken directly from the discovery call transcript — not
+searched]
+
+- Practice areas confirmed: Immigration law (Norman, OK office — tech-driven
+  intake via visas.ai); Full-service litigation including business litigation
+  and personal injury (Dallas, TX office — referral-based, no formal
+  marketing)
+
+- Current lead sources: OK office — visas.ai-driven strategy/intake process
+  plus a dedicated closer. Dallas office — referrals only; no documented
+  follow-up system
+
+- Ads ever run: Not stated in transcript (no mention of prior ad spend,
+  platform, or budget for either office)
+
+- Team size: Not stated as a specific number. Named roles: Jon Velie (CEO),
+  Pam Velie (CGO, hired to audit operations and build scalable foundation).
+  Site's own attorney/team pages independently list at least 12 named team
+  members across both offices (see STEP 1) — useful cross-reference but not
+  transcript-sourced.
+
+- Annual revenue (gross): ~$2.5M projected firm-wide for 2026. Dallas office
+  specifically: $700k revenue in 2025.
+
+- Annual revenue (net / take-home / collected): Not distinguished from gross
+  — profitability described only as "unknown but low"
+
+- Fee structure: Not stated (mixed practice — immigration flat-fee/contract
+  work per OK office process; Dallas litigation fee structure not specified)
+
+- Revenue goal: Dallas office specifically — $1M–$1.5M for 2026 (up from
+  $700k in 2025). Firm-wide profitability goal: 20–30% within 12 months
+  (from an unknown, low current margin)
+
+- Average case value: Not stated
+
+- Current close rate: Not stated — default to 15% per standard assumption
+
+- Number of locations: 2 — Norman, OK and Dallas/Plano, TX (explicitly
+  described as two distinct law offices)
+
+- Spanish campaign needed: Not mentioned
+
+- Dominant buying motive (DBM): Jon Velie (CEO) is overwhelmed by daily
+  litigation practice in the Dallas office and needs it systematized to run
+  independently so he can step back from day-to-day casework and focus on
+  executive strategy — including expanding to new markets (NY, SF). This is
+  primarily a Category 1 DBM ("firm that runs itself so the owner gets their
+  time/focus back"), layered with a Category 3 ambition ("scale and dominate"
+  via multi-market expansion) once Dallas is systematized. The stated
+  sequencing is explicit: Dallas must run independently BEFORE expansion is
+  pursued — do not present multi-market expansion as an immediate-term
+  recommendation.
+
+- Any profitability claims made by prospect: "Profitability: Unknown but low;
+  the 12-month goal is 20–30%." No specific current-margin figure was stated.
+
+- Any claims about case types or practice areas: OK office handles
+  immigration exclusively via a tech-driven (visas.ai) intake process with a
+  dedicated closer. Dallas office is full-service litigation (business, PI)
+  with an identified strategic opportunity to attract high-value clients,
+  specifically named as "PI for the local South Asian community."
+
+- Stated call focus / product interest: THIS WAS NOT A STANDARD MARKETING/
+  GROWTH DISCOVERY CALL. The call was framed around Fractional COO/CTO
+  operational and technology support, not marketing or lead generation. The
+  transcript explicitly states: "Fractional COO: To build and implement
+  operational systems... Fractional CTO: To integrate the tech stack (Clio,
+  QuickBooks, Stripe) and build custom automations... AI Workforce Pro: A law
+  firm-specific LLM with pre-built skills for intake, billing, and client
+  experience... Marketing: A future consideration for targeted campaigns once
+  internal systems are solid." Marketing/growth work is explicitly
+  positioned as a LATER phase, contingent on operational systems being built
+  first. The audit should be framed accordingly — leading with intake/ops/
+  systematization findings, not a standard lead-gen pitch.
+
+- Existing marketing/SEO/ad vendor engagements: None stated. The OK office
+  does use visas.ai as an intake/tech vendor (not a marketing/SEO/ad vendor).
+  No current marketing, SEO, or ad agency engagement mentioned for either
+  office.
+
+- Budget constraints stated: None stated as an affordability concern. The
+  transcript does cite a specific cost figure as rationale for the CTO/
+  integration service — "$8,400/year for a single Clio feature" — framed as
+  the cost of NOT integrating the tech stack, not as a budget limitation on
+  the prospect's side.
+
+================================================================================
+STEP 10 — COMPETITIVE URGENCY SCORE
+================================================================================
+
+Score: 6 / 10
+
+Rationale:
+The two offices sit at different points on this scale. The Dallas office is
+close to a 9 — it has zero formal marketing, no review-generation system, and
+no dedicated local citation footprint, while Dallas-market PI/litigation
+competitors are actively building high review volumes and marketing at scale.
+The Norman, OK immigration office is more moderate — Velie has real organic
+SEO equity (dozens of indexed visa-specific pages, an active blog, past
+webinar/campaign infrastructure) but faces established, higher-authority
+local competitors. Blended, this nets out to a 6: competitors have meaningful
+advantages in one or more areas and are pulling ahead in at least one market.
+
+Competitor Threat 1 — GoSuits Trial Attorneys (Carrollton/Dallas, TX):
+Aggregator-reported 150+ reviews at a near-perfect rating and public claims
+of 1,846+ clients served and 500+ lawsuits filed. This is exactly the kind of
+volume-marketed PI competitor that will out-position an unmarketed, referral-
+only Dallas office for the very PI work Velie wants to grow into (including
+the named South Asian community opportunity). [Review figures UNCONFIRMED —
+see STEP 4 note]
+
+Competitor Threat 2 — E. Vance Winningham & Associates (Oklahoma City, OK):
+A 40+-year-old immigration-exclusive firm repeatedly named a top immigration
+firm by U.S. News, operating in the same OKC metro as Velie's Norman office.
+Long institutional tenure and press recognition create an authority gap that
+pure SEO content cannot fully close on its own. [Rating/review figures
+UNCONFIRMED — see STEP 4 note]
+
+Competitor Threat 3 — DFW Injury Lawyers (Dallas, TX):
+A dedicated, Dallas-branded PI practice with an aggregator-reported near-
+perfect rating, competing directly in the same underserved lead-gen gap the
+Dallas office is trying to fill. [Rating/review figures UNCONFIRMED — see
+STEP 4 note]
+
+Dynamic sentence:
+"A score of 6 means competitors have meaningful advantages in one or more
+areas and are pulling ahead. You are not invisible yet — but the window to
+close the gap is narrowing. Every month without action is a month they
+extend their lead."
+
+================================================================================
+PASS 2 — VERIFICATION CHECKLIST
+================================================================================
+
+[x] Every number in the notes matches actually observed data (Wayback Machine
+    CDX history, live JS-bundle string/route extraction, raw HTML fetch,
+    third-party aggregator search results)
+[ ] Competitor review counts verified live — COULD NOT be verified live on
+    Google Maps (no browser tool available in this environment); all tagged
+    UNCONFIRMED and flagged not to be cited as specific figures in the
+    audit-write report unless re-verified
+[x] Every review count and star rating (firm and competitors) carries a
+    verification-method tag — all are [UNCONFIRMED — sourced from ...] since
+    none could be confirmed via live Google
+[x] Annual revenue split into gross (~$2.5M firm-wide, $700k Dallas 2025) and
+    net/profitability (unknown/low, 20-30% goal) per transcript; fee structure
+    not stated
+[x] Ad sections cover both practice areas/offices (Immigration — Norman/OKC;
+    Litigation/PI — Dallas)
+[x] No section states "you are not running ads" — framed as "not observed"
+    throughout
+[x] No profitability or business claim appears beyond what the transcript
+    states
+[x] No competitor reference uses generic labels — only specific named local
+    firms (Farzaneh & Patel, Winningham & Associates, DFW Injury Lawyers,
+    GoSuits, JVP Law)
+[ ] PageSpeed scores: NOT obtained — no live browser available; public API
+    quota exhausted (HTTP 429). MUST RUN LIVE at pagespeed.web.dev before
+    audit write.
+[x] DBM recorded: systematize Dallas first so Jon Velie can step back from
+    daily litigation and focus on strategy/expansion — Category 1 primary,
+    Category 3 downstream
+[x] Revenue goal recorded: Dallas $1M–$1.5M for 2026; firm-wide profitability
+    20–30% in 12 months
+[x] Close rate recorded: not stated — defaulted to 15%
+[x] Average case value recorded: not stated in transcript
+[x] Stated call focus / product interest recorded and explicitly flagged as
+    NON-standard: this was a Fractional COO/CTO + AI Workforce Pro
+    conversation, with marketing/growth positioned as a later-phase
+    consideration, not the subject of this call
+[x] Existing marketing/SEO/ad vendor engagements recorded: none stated
+    (visas.ai is an intake/tech vendor, not a marketing vendor)
+[x] Budget constraints stated by prospect recorded: none stated
+
+ACTION REQUIRED BEFORE AUDIT WRITE:
+1. Open pagespeed.web.dev in a live browser, run both mobile and desktop for
+   velielaw.com — record exact scores.
+2. Open Google Maps live and confirm the actual star rating and review count
+   for Velie Law Firm / Velie Global Law Firm in Norman, OK (currently only
+   have UNCONFIRMED Birdeye figure of 4.2 stars / 47 reviews).
+3. Verify live whether Velie appears in the local 3-pack for "immigration
+   lawyer Norman OK" and "immigration attorney Oklahoma City."
+4. Verify live competitor Google review counts for Farzaneh & Patel,
+   Winningham & Associates, DFW Injury Lawyers, and GoSuits before citing any
+   of them as a specific figure in the client-facing report.
+5. Check facebook.com/ads/library live for "Velie Law Firm" and the named
+   competitors above.
+6. Render velielaw.com in an actual browser to confirm homepage headline,
+   above-fold CTA text, mobile responsiveness, video presence, and most
+   recent blog post date — none of these could be observed from the static
+   HTML/JS-bundle-only research method used here.
+
+================================================================================
+END OF RESEARCH NOTES
+================================================================================
