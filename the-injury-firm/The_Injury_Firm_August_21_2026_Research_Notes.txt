@@ -1,0 +1,382 @@
+THE INJURY FIRM — AUDIT RESEARCH NOTES
+Firm: The Injury Firm
+URL: https://www.flinjuryfirm.com (root domain flinjuryfirm.com 301-redirects to www)
+Primary office (per Yelp/directory listings): 1608 E Commercial Blvd, Fort Lauderdale, FL
+Phone: (954) 951-0000 / toll-free (833) 332-1333
+Contact: Dalton Thomas (dalton@flinjuryfirm.com)
+Sales Rep: Dan Bryant
+Research Date: August 18, 2026
+Proposal call scheduled: August 21, 2026
+
+================================================================================
+IMPORTANT FLAG — NO DISCOVERY CALL TRANSCRIPT YET
+================================================================================
+
+The trigger file for this audit (triggers/audit-research/the-injury-firm.json)
+does NOT contain a transcript field, and no transcript exists anywhere in this
+repo for this firm. The proposal_call_date in the trigger is 2026-08-21T16:00 —
+three days after this research was run (2026-08-18) — so the discovery/
+proposal call has not happened yet. This is a real, live firm with a real
+named contact (Dalton Thomas, dalton@flinjuryfirm.com — domain matches the
+firm's own site), not a fictional/test entry.
+
+Per the TRANSCRIPT-FIRST RULE and STEP 9 of the audit-research process, values
+like revenue, revenue goal, team size, close rate, DBM, pain points, and
+current lead sources must come directly from the transcript — they are not
+something this process is meant to infer or fabricate for a real prospect.
+Inventing quotes or figures and attributing them to Dalton Thomas would put
+false statements into a business record under a real person's name, so STEP 9
+below is intentionally left as "not available" rather than fabricated (same
+approach used for lassen-law, the last audit that hit this same situation).
+
+STEPS 1–8 and 10 (independently web-verifiable, firm-and-market-level
+research) are completed below. STEP 9 must be re-run from the actual
+transcript after the August 21, 2026 call, before /audit-write is run.
+
+================================================================================
+STEP 1 — WEBSITE RESEARCH
+================================================================================
+
+- Website URL confirmed live: Yes — flinjuryfirm.com 301-redirects to
+  https://www.flinjuryfirm.com, which resolves and serves normal content.
+- Last redesign date or estimated age: Not directly datable — no Wayback
+  Machine check run in this pass. [VERIFY LIVE]
+- Mobile responsive: Not directly observed (no visual/rendering browser
+  available in this environment). [VERIFY LIVE]
+- Homepage headline: "We Fight for the Injured. We Win for Our Clients."
+- CTA above fold: Yes — "FREE CONSULTATION" with both phone numbers
+  ((954) 951-0000 and (833) 332-1333) prominently displayed in the header.
+- Contact form location: Mid-page, in a "FREE CASE EVALUATION" section
+  (name, email, phone, message) — not confirmed to be strictly above the
+  fold; the phone-first CTA is what sits above the fold. [VERIFY LIVE for
+  exact scroll position]
+- Live chat present: No — not observed on the homepage.
+- Attorney bio present: Not on the homepage itself; a "Legal Team" page is
+  linked from the main navigation.
+- Video present: No — not observed on the homepage.
+- Blog present: Yes — linked from main navigation (/blog/blog-grid/). Exact
+  most-recent post title/date could not be confirmed — the blog grid did not
+  render fully in this fetch. [VERIFY LIVE]
+- Footer copyright year: "© 2019 - The Injury Firm" — the footer copyright
+  has not been updated in 7 years despite the site otherwise appearing
+  active. This is a real, directly-observed finding worth flagging in the
+  report as a trust/credibility signal issue.
+- URL quality note: one of the firm's own location landing pages has a typo
+  in its slug — /fort-lauderdale-persoanal-injury-lawyers ("persoanal") —
+  directly observed in search index results.
+- Locations served (per site nav/footer): Fort Lauderdale, West Palm Beach,
+  and Orlando, FL; also Atlanta, GA; Louisville, KY; and Boston, MA. This is
+  a multi-state footprint, not a single-market local firm — worth confirming
+  with the prospect which of these are staffed offices vs. marketing-only
+  landing pages.
+- Practice areas listed on site: auto accidents, boat/watercraft accidents,
+  catastrophic injury, child injury, medical negligence, personal injury
+  (general), premises liability (slip/fall, dog bites), product liability,
+  property damage, truck accidents, wrongful death, workplace/disability
+  matters.
+
+PageSpeed Scores:
+- PageSpeed mobile score: COULD NOT OBTAIN — the public PageSpeed Insights
+  API (googleapis.com/pagespeedonline) returned HTTP 429 "Quota exceeded for
+  quota metric 'Queries' ... per day" on every attempt in this research
+  session, and pagespeed.web.dev itself requires a rendering browser not
+  available in this environment. MUST RUN LIVE before /audit-write.
+- PageSpeed desktop score: COULD NOT OBTAIN — same reason. MUST RUN LIVE.
+
+================================================================================
+STEP 2 — GOOGLE BUSINESS PROFILE
+================================================================================
+
+- GBP found: Presumed yes (large aggregated review volume observed via
+  Birdeye — see below), but not directly loaded from Google Maps itself in
+  this environment (no live Maps rendering available). [VERIFY LIVE]
+- Star rating: 4.9 [UNCONFIRMED — sourced from Birdeye
+  (reviews.birdeye.com/the-injury-firm-155668311741368), not independently
+  confirmed via Google]
+- Total review count: 385 total aggregated across platforms, of which
+  Birdeye's own breakdown attributes 380 to Google, 4 to Facebook, and 1 to
+  Birdeye directly. [UNCONFIRMED — sourced from Birdeye, not independently
+  confirmed via Google]
+- Most recent review date: Not observed. [VERIFY LIVE]
+- Primary category: Not directly observed from a live GBP listing; site
+  content and directory listings indicate "Personal Injury Attorney."
+  [VERIFY LIVE]
+- Photos active: Not observed. [VERIFY LIVE]
+- Posts active: Not observed. [VERIFY LIVE]
+
+IMPORTANT: at ~380–385 reviews, this firm has a substantially larger review
+footprint than every named local competitor identified in STEP 4 below (the
+highest of which is 202). Per the review-count rule, this must NOT be framed
+as a competitive weakness — it is a genuine strength to lead with in the
+report.
+
+================================================================================
+STEP 3 — LOCAL 3-PACK SEARCHES
+================================================================================
+
+NOTE: No live Google Search/Maps rendering was available in this
+environment, so actual 3-pack (map-pack) composition and whether The Injury
+Firm appears within it could not be directly observed. The firms below are
+the specific local/regional competitors that surface most prominently in
+web-search data for each query; exact pack position must be confirmed live.
+[VERIFY LIVE] applies throughout this section.
+
+Practice Area 1: Car Accidents — Fort Lauderdale, FL
+- Search 1 "car accident lawyer Fort Lauderdale FL": competitors surfacing —
+  Ginnis, Krathen & Zelnick, P.A. (review count: see STEP 4 note), Workman
+  Car Accident & Personal Injury Lawyers (review count not found), Krupnick
+  Campbell Malone Buser Slama Hancock (review count not found).
+- Search 2 "auto accident attorney Fort Lauderdale": competitors surfacing —
+  Hollander Law Firm (review count: see STEP 4), Chalik & Chalik (review
+  count: see STEP 4), Englander Peebles (review count: see STEP 4).
+- Search 3 "best car accident attorney Fort Lauderdale": competitors
+  surfacing — Law Offices of Jason Turchin (review count: see STEP 4),
+  Fazio, DiSalvo & Abers, P.A. (review count not found).
+
+Practice Area 2: Slip and Fall / Premises Liability — Fort Lauderdale, FL
+- Search 1 "slip and fall lawyer Fort Lauderdale FL": competitors surfacing —
+  Shiner Law Group (review count not found — firm states $500M+ recovered
+  statewide), Mike Slocumb Law Firm (review count not found), Ginnis,
+  Krathen & Zelnick (review count not found).
+- Search 2 "premises liability attorney Fort Lauderdale": competitors
+  surfacing — Fazio, DiSalvo & Abers, P.A. (review count not found),
+  Workman Car Accident & Personal Injury Lawyers (review count not found).
+- Search 3 "slip and fall attorney Broward County": competitors surfacing —
+  Shiner Law Group, Mike Slocumb Law Firm.
+
+Practice Area 3: Wrongful Death — Fort Lauderdale, FL
+- Search 1 "wrongful death attorney Fort Lauderdale FL": competitors
+  surfacing — Schlesinger Law Offices, P.A. (review count not found),
+  Winston Law Firm, P.A. (review count not found), Law Offices of Diana
+  Santa Maria, P.A. (review count not found).
+- Search 2 "wrongful death lawyer Broward County": competitors surfacing —
+  Shiner Law Group, Rosen & Ohr Law (review count not found).
+- Search 3 "wrongful death law firm Fort Lauderdale": competitors surfacing —
+  Krupnick Campbell Malone Buser Slama Hancock.
+
+(National-brand firms surfacing in raw search data — e.g. a Texas-based
+mass-tort/national marketing operation — were excluded per the rule against
+using national firms as named local competitors.)
+
+================================================================================
+STEP 4 — COMPETITOR REVIEW COUNTS
+================================================================================
+
+- Competitor 1: Englander Peebles, Accident & Injury Lawyers — reviews: 202
+  [UNCONFIRMED — sourced from a Chamber of Commerce directory listing, not
+  independently confirmed via Google] — rating: 4.9 [UNCONFIRMED — same
+  source]
+- Competitor 2: Hollander Law Firm Personal Injury & Car Accident Lawyers —
+  reviews: 149 [UNCONFIRMED — sourced from Birdeye; note this figure is for
+  the firm's West Palm Beach location specifically, not its Fort Lauderdale
+  office — VERIFY LIVE which office this attaches to] — rating: 4.9–5.0
+  [UNCONFIRMED — Birdeye]
+- Competitor 3: Law Offices of Jason Turchin — reviews: 83 [UNCONFIRMED —
+  sourced from Birdeye, Weston, FL office listing; firm also serves Fort
+  Lauderdale] — rating: 4.7 [UNCONFIRMED — Birdeye]
+- Competitor 4 (secondary): Chalik & Chalik Injury and Accident Lawyers —
+  reviews: 42 [UNCONFIRMED — sourced from Birdeye] — rating: 4.1
+  [UNCONFIRMED — Birdeye; Yelp separately shows a lower 3.5 from 19 reviews,
+  also UNCONFIRMED]
+
+None of the above exceed The Injury Firm's own ~385 aggregated / ~380
+Google-attributed review count (STEP 2). The Injury Firm leads on review
+volume against every named local competitor identified in this pass.
+
+================================================================================
+STEP 5 — DIRECTORY LISTINGS
+================================================================================
+
+Confirmed present: LawInfo, Better Business Bureau (BBB), Facebook, Birdeye,
+Super Lawyers (3 attorneys at the firm listed to Super Lawyers/Rising Stars),
+Yelp, FindLaw (lawyers.findlaw.com listing), ReachAttorneys, ChamberOfCommerce
+directory aggregators.
+
+Not clearly confirmed: a dedicated Avvo firm profile and a dedicated Justia
+firm profile were not found in this pass (only aggregator/directory mentions
+surfaced). [VERIFY LIVE]
+
+Geo-targeting landing pages: Yes — the firm maintains dedicated location
+pages beyond its Fort Lauderdale HQ, including /orlando-personal-injury-
+lawyers and a Fort Lauderdale-specific page at a misspelled slug
+(/fort-lauderdale-persoanal-injury-lawyers — see STEP 1). Given the firm
+also lists West Palm Beach, Atlanta, Louisville, and Boston in its footer,
+NAP (name/address/phone) consistency across all of these location pages and
+third-party directories was not fully cross-checked in this pass and should
+be verified live — a multi-state footprint like this is exactly where NAP
+drift commonly appears.
+
+================================================================================
+STEP 6 — GOOGLE ADS
+================================================================================
+
+NOTE: No live browser access to rendered Google Search results pages was
+available in this environment, so live ad units could not be directly
+observed for any practice area. Framed per the Ads Framing Rule — absence of
+visible ads in search-index data is never proof of "not running ads."
+[VERIFY LIVE] applies to all of STEP 6.
+
+Practice Area 1: Car Accidents
+- Firm ads observed: Not observed in this pass — does not appear to be
+  running ads for this search based on available data, or may simply be
+  getting outbid by competitors. [VERIFY LIVE]
+- Named local competitors: several of the firms above (e.g. Shiner Law
+  Group, which advertises "$500M+ recovered" positioning) are large enough
+  regional operations that paid search presence is likely — could not
+  confirm ad copy directly. [VERIFY LIVE]
+
+Practice Area 2: Slip and Fall / Premises Liability
+- Firm ads observed: Not observed in this pass. [VERIFY LIVE]
+- Named local competitors: Shiner Law Group, Mike Slocumb Law Firm —
+  ad copy not confirmed. [VERIFY LIVE]
+
+Practice Area 3: Wrongful Death
+- Firm ads observed: Not observed in this pass. [VERIFY LIVE]
+- Named local competitors: Schlesinger Law Offices, P.A. — ad copy not
+  confirmed. [VERIFY LIVE]
+
+================================================================================
+STEP 7 — LOCAL SERVICE ADS (LSA)
+================================================================================
+
+- Firm appears in LSA: Not observed — could not verify live in this
+  environment. [VERIFY LIVE]
+- Google Screened: Not observed. [VERIFY LIVE]
+- LSA review count: N/A — not confirmed. [VERIFY LIVE]
+- Named local competitors in LSA: Not confirmed. [VERIFY LIVE]
+
+================================================================================
+STEP 8 — META ADS
+================================================================================
+
+NOTE: facebook.com/ads/library requires an interactive/authenticated browser
+session; the request in this environment failed (connection error) and
+returned no content. It could not be checked directly. [VERIFY LIVE]
+
+- Firm has active ads: Not confirmed either way — does not appear to have
+  active ads based on available data, or ads could not be detected in this
+  environment. [VERIFY LIVE]
+- Named local competitor 1: Englander Peebles — active ad presence not
+  confirmed. [VERIFY LIVE]
+- Named local competitor 2: Hollander Law Firm — active ad presence not
+  confirmed. [VERIFY LIVE]
+
+================================================================================
+STEP 9 — TRANSCRIPT EXTRACTION
+================================================================================
+
+NOT AVAILABLE. No discovery call transcript exists in the trigger file or
+anywhere else in this repo for The Injury Firm as of this research date
+(2026-08-18). The proposal call is scheduled for 2026-08-21. All of the
+following must be filled in from the actual call transcript before
+/audit-write is run — none of it should be inferred or fabricated for a real
+named prospect (Dalton Thomas):
+
+- Practice areas confirmed: NOT AVAILABLE — transcript required
+- Current lead sources: NOT AVAILABLE — transcript required
+- Ads ever run: NOT AVAILABLE — transcript required
+- Team size: NOT AVAILABLE — transcript required
+- Annual revenue (gross / case value): NOT AVAILABLE — transcript required
+- Annual revenue (net / take-home / collected): NOT AVAILABLE — transcript required
+- Fee structure: NOT AVAILABLE — transcript required (site references a
+  "no-win, no-fee" guarantee, consistent with standard contingency fee, but
+  this is marketing copy, not a confirmed fee structure from the prospect)
+- Revenue goal: NOT AVAILABLE — transcript required
+- Average case value: NOT AVAILABLE — transcript required
+- Current close rate: NOT AVAILABLE — transcript required
+- Number of locations: NOT stated by prospect — site footer lists 6 cities
+  (Fort Lauderdale, West Palm Beach, Orlando, Atlanta, Louisville, Boston);
+  must confirm with prospect which are staffed offices
+- Spanish campaign needed: NOT AVAILABLE — transcript required
+- Dominant buying motive: NOT AVAILABLE — transcript required
+- Any profitability claims made by prospect: none stated — no transcript
+  exists yet
+- Any claims about case types or practice areas: none stated — no
+  transcript exists yet
+- Stated call focus / product interest: NOT AVAILABLE — transcript required
+- Existing marketing/SEO/ad vendor engagements: none stated — no transcript
+  exists yet
+- Budget constraints stated: none stated — no transcript exists yet
+
+================================================================================
+STEP 10 — COMPETITIVE URGENCY SCORE
+================================================================================
+
+Score: 5/10
+
+Reasoning: The Injury Firm has a genuine reputation advantage — its
+~380-385 aggregated reviews outpace every named local competitor found in
+this pass (Englander Peebles at 202 is the closest). That is a real
+strength. But the firm's own web presence shows aging signals (a footer
+copyright frozen at 2019, no attorney bio or video on the homepage, a typo
+in one of its own location-page URLs) at the same time that several
+well-capitalized regional competitors are actively expanding: Shiner Law
+Group advertises $500M+ recovered statewide and is one of the more visible
+names across multiple practice-area searches (slip and fall, wrongful
+death), and Krupnick Campbell Malone Buser Slama Hancock has operated in
+Broward County for over four decades with broad name recognition. Live ad
+presence (Google Ads, LSA, Meta) could not be confirmed for either the firm
+or its competitors in this pass and must be verified before the proposal
+call to sharpen this score.
+
+Named specific local competitor threats:
+1. Shiner Law Group — statewide $500M+ recovered positioning, surfaces
+   prominently across multiple practice-area searches (slip and fall,
+   wrongful death), suggesting broad paid/organic visibility.
+2. Krupnick Campbell Malone Buser Slama Hancock — decades-long Broward
+   County presence and name recognition across car accident and wrongful
+   death searches.
+3. Englander Peebles — closest reviewed competitor by volume (202 vs. the
+   Injury Firm's ~385), also AV-Preeminent rated with 3 Super Lawyers/Rising
+   Stars attorneys — a credibility peer even though behind on review count.
+
+"A score of 5 means competitors have meaningful advantages in one or more
+areas and are pulling ahead. You are not invisible yet — but the window to
+close the gap is narrowing. Every month without action is a month they
+extend their lead."
+
+================================================================================
+PASS 2 — VERIFICATION CHECKLIST
+================================================================================
+
+[x] Every number in the notes matches actually observed data (or is
+    explicitly tagged UNCONFIRMED / VERIFY LIVE / NOT AVAILABLE where it
+    could not be)
+[x] Every competitor review count has been verified against the prospect's
+    own count — no competitor is cited as exceeding The Injury Firm's ~385
+[x] Every review count and star rating (firm and competitors) carries a
+    verification-method tag
+[ ] Annual revenue split gross/net + fee structure — NOT AVAILABLE, no
+    transcript exists yet (see STEP 9 flag)
+[x] Every ad section (STEP 6/7/8) covers all identified practice areas,
+    framed as "not observed / could not verify," never "not running ads"
+[x] No section states with certainty the firm is not running ads
+[x] No profitability or business claim appears that did not come from a
+    transcript (none exist yet, so none are stated)
+[x] No competitor reference uses generic/national labels — only specific
+    named local/regional firms
+[ ] PageSpeed scores — COULD NOT OBTAIN (429 quota exceeded), flagged
+    explicitly, MUST RUN LIVE before /audit-write
+[ ] DBM — NOT AVAILABLE, no transcript exists yet
+[ ] Revenue goal — NOT AVAILABLE, no transcript exists yet
+[ ] Close rate — NOT AVAILABLE, no transcript exists yet
+[ ] Average case value — NOT AVAILABLE, no transcript exists yet
+[x] Stated call focus / product interest — explicitly flagged as
+    unavailable pending the actual call (this note IS the explicit callout)
+[ ] Existing marketing/SEO/ad vendor engagements — NOT AVAILABLE, no
+    transcript exists yet
+[ ] Budget constraints stated — NOT AVAILABLE, no transcript exists yet
+
+REMAINING WORK BEFORE /audit-write CAN RUN:
+1. Obtain and paste the actual discovery/proposal call transcript from the
+   2026-08-21 call into this file's STEP 9 section (or a follow-up trigger),
+   replacing every "NOT AVAILABLE" with the real stated values.
+2. Run PageSpeed Insights live (pagespeed.web.dev) for both mobile and
+   desktop and record the real scores.
+3. Confirm GBP star rating/review count directly via Google Maps (not just
+   Birdeye's aggregation) and tag as [confirmed via Google].
+4. Confirm live Google Ads / LSA / Meta Ads presence for the firm and its
+   named competitors.
+5. Confirm which of the firm's 6 listed cities (Fort Lauderdale, West Palm
+   Beach, Orlando, Atlanta, Louisville, Boston) are staffed offices vs.
+   marketing-only landing pages, and check NAP consistency across them.
