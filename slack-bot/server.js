@@ -31,7 +31,7 @@ async function slackPost(token, channel, text, thread_ts) {
   });
 }
 
-async function githubDispatch(pat, repo, instruction, slackChannel, slackTs) {
+async function githubDispatch(pat, repo, instruction, slackChannel, slackTs, eventType = 'slack-change-request') {
   const res = await fetch(`https://api.github.com/repos/${repo}/dispatches`, {
     method:  'POST',
     headers: {
@@ -40,7 +40,7 @@ async function githubDispatch(pat, repo, instruction, slackChannel, slackTs) {
       'Content-Type': 'application/json',
     },
     body: JSON.stringify({
-      event_type:     'slack-change-request',
+      event_type:     eventType,
       client_payload: { instruction, slack_channel: slackChannel, slack_thread_ts: slackTs },
     }),
   });
@@ -100,6 +100,25 @@ app.post('/api/slack', express.raw({ type: '*/*' }), async (req, res) => {
   if (isProposalBooking) {
     console.log(`HubSpot proposal booking detected, dispatching audit trigger`);
     await githubDispatch(pat, repo, text, event.channel, event.ts);
+    return res.status(200).json({ ok: true });
+  }
+
+  // Threaded replies from humans — may be a seller responding to a Phase 1
+  // proposal review request (lock it in / ask why / propose changes). We
+  // don't know here which thread that is (this bot is stateless), so every
+  // human threaded reply is dispatched and the workflow itself checks
+  // whether the thread_ts matches a pending proposal_review.json; if not,
+  // it's a no-op. Bot-authored replies (bot_id set) are excluded so the
+  // bot's own follow-ups never re-trigger this.
+  const isThreadReply =
+    event.type === 'message' &&
+    !event.bot_id &&
+    !!event.thread_ts &&
+    event.thread_ts !== event.ts;
+
+  if (isThreadReply) {
+    console.log(`Threaded reply detected in ${event.thread_ts}, dispatching proposal-response check`);
+    await githubDispatch(pat, repo, text, event.channel, event.thread_ts, 'slack-proposal-response');
     return res.status(200).json({ ok: true });
   }
 
