@@ -1,0 +1,184 @@
+name: Slack Proposal Response (Phase 1 review gate)
+
+on:
+  repository_dispatch:
+    types: [slack-proposal-response]
+
+jobs:
+  handle-response:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+          token: ${{ secrets.GH_PAT }}
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install Claude Code CLI
+        run: npm install -g @anthropic-ai/claude-code
+
+      - name: Configure git
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+      # -------------------------------------------------------------------
+      # Find which firm's Phase 1 review this thread belongs to. Every
+      # threaded reply in the Slack channel dispatches here — most are
+      # unrelated to a pending proposal review, so bail out quietly (no
+      # Slack post, no repo change) unless we find a match.
+      # -------------------------------------------------------------------
+      - name: Find matching proposal review
+        id: find
+        env:
+          SLACK_THREAD_TS: ${{ github.event.client_payload.slack_thread_ts }}
+        run: |
+          MATCH=""
+          for f in */proposal_review.json; do
+            [ -f "$f" ] || continue
+            TS=$(jq -r '.slack_thread_ts // empty' "$f")
+            if [ "$TS" = "$SLACK_THREAD_TS" ]; then
+              MATCH="$f"
+              break
+            fi
+          done
+
+          if [ -z "$MATCH" ]; then
+            echo "No pending proposal review matches thread_ts=$SLACK_THREAD_TS — ignoring."
+            echo "found=false" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+
+          STATUS=$(jq -r '.status' "$MATCH")
+          if [ "$STATUS" != "pending" ]; then
+            echo "Matched $MATCH but status is '$STATUS' (not pending) — already handled, ignoring."
+            echo "found=false" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+
+          echo "Matched $MATCH (status=pending)"
+          echo "found=true"                                          >> "$GITHUB_OUTPUT"
+          echo "review_file=$MATCH"                                   >> "$GITHUB_OUTPUT"
+          echo "friendly_name=$(jq -r '.friendly_name' "$MATCH")"     >> "$GITHUB_OUTPUT"
+          echo "firm_name=$(jq -r '.firm_name' "$MATCH")"             >> "$GITHUB_OUTPUT"
+          echo "sales_rep=$(jq -r '.sales_rep' "$MATCH")"             >> "$GITHUB_OUTPUT"
+          echo "sales_rep_email=$(jq -r '.sales_rep_email // empty' "$MATCH")" >> "$GITHUB_OUTPUT"
+          echo "date=$(jq -r '.date' "$MATCH")"                       >> "$GITHUB_OUTPUT"
+          echo "hubspot_contact_id=$(jq -r '.hubspot_contact_id // empty' "$MATCH")" >> "$GITHUB_OUTPUT"
+          echo "suppress_pricing=$(jq -r '.suppress_pricing // "false"' "$MATCH")"   >> "$GITHUB_OUTPUT"
+
+      - name: Handle the seller's response
+        if: steps.find.outputs.found == 'true'
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          SLACK_BOT_TOKEN: ${{ secrets.SLACK_BOT_TOKEN }}
+          SELLER_MESSAGE: ${{ github.event.client_payload.instruction }}
+          SLACK_CHANNEL: ${{ github.event.client_payload.slack_channel }}
+          SLACK_THREAD_TS: ${{ github.event.client_payload.slack_thread_ts }}
+          FRIENDLY_NAME: ${{ steps.find.outputs.friendly_name }}
+          FIRM_NAME: ${{ steps.find.outputs.firm_name }}
+          SALES_REP: ${{ steps.find.outputs.sales_rep }}
+          SALES_REP_EMAIL: ${{ steps.find.outputs.sales_rep_email }}
+          DATE: ${{ steps.find.outputs.date }}
+          HUBSPOT_CONTACT_ID: ${{ steps.find.outputs.hubspot_contact_id }}
+          SUPPRESS_PRICING: ${{ steps.find.outputs.suppress_pricing }}
+          REVIEW_FILE: ${{ steps.find.outputs.review_file }}
+        run: |
+          printf '%s' "$SELLER_MESSAGE" > /tmp/seller_message.txt
+
+          claude --model claude-sonnet-5 --dangerously-skip-permissions -p "
+            You are handling a seller's reply to a Phase 1 proposal review request for
+            the SMB Team Growth Audit pipeline. The full proposal notes live in
+            \`$FRIENDLY_NAME/*Research_Notes.txt\` and \`$FRIENDLY_NAME/package_decision.json\`.
+            The seller's reply is in /tmp/seller_message.txt.
+
+            Firm: $FIRM_NAME (friendly name: $FRIENDLY_NAME)
+            Sales rep: $SALES_REP <$SALES_REP_EMAIL>
+            Slack channel: $SLACK_CHANNEL, thread_ts: $SLACK_THREAD_TS
+
+            Read the seller's message and classify it into exactly one of three intents:
+
+            --- INTENT A: LOCK IT IN ---
+            Signals: 'lock it in', 'looks good', 'approved', 'go ahead', 'build it',
+            'let's go', 'ship it', or clear unambiguous approval with no requested changes.
+            Steps:
+            1. Write \`triggers/audit-write/$FRIENDLY_NAME.json\` with exactly these keys:
+               firm_name, friendly_name, sales_rep, sales_rep_email, date, with_pptx (true),
+               hubspot_contact_id, slack_channel, slack_thread_ts, suppress_pricing.
+               Use the values given above (hubspot_contact_id: \"$HUBSPOT_CONTACT_ID\",
+               suppress_pricing: \"$SUPPRESS_PRICING\" — pass suppress_pricing through as the
+               literal string \"true\" or \"false\").
+            2. git add ONLY that one new file, commit, push to main (pull --rebase first).
+               This fires the audit-write.yml pipeline (Pass 2+3, HubSpot writeback, email,
+               and the final Slack reply — all handled by that workflow).
+            3. Edit \`$REVIEW_FILE\` — set \"status\" to \"locked\". git add, commit
+               (separate commit from step 2), push.
+            4. Post a Slack reply in the SAME thread confirming the lock-in and that the
+               full build is underway (~60-90 min):
+               curl -s -X POST https://slack.com/api/chat.postMessage \
+                 -H \"Authorization: Bearer \$SLACK_BOT_TOKEN\" -H 'Content-Type: application/json' \
+                 -d '{\"channel\":\"'\"\$SLACK_CHANNEL\"'\",\"thread_ts\":\"'\"\$SLACK_THREAD_TS\"'\",\"text\":\"🔒 Locked in — building the full proposal now (~60-90 min). I will reply here when it is ready.\"}'
+
+            --- INTENT B: ASK FOR RATIONALE ---
+            Signals: a question about why something was proposed ('why this tier',
+            'why so much ad spend', 'why not X'), with no explicit change requested.
+            Steps:
+            1. Read the research notes and package_decision.json (especially
+               selection_notes) and compose a clear, specific answer grounded in that
+               evidence — cite the actual revenue/team-size/practice-area signals used.
+            2. Post the answer as a Slack reply in the SAME thread (same curl pattern as
+               above, with your answer as the text — keep it under ~150 words).
+            3. Do NOT modify \`$REVIEW_FILE\` or any trigger file — status stays 'pending'
+               so the seller can still lock it in or propose changes afterward.
+
+            --- INTENT C: PROPOSE CHANGES ---
+            Signals: a specific requested change to the package ('swap to X tier',
+            'drop coaching', 'raise/lower ad spend', 'use a different price').
+            Steps:
+            1. Apply the requested change directly to \`$FRIENDLY_NAME/package_decision.json\`
+               (update the relevant tier/name/price/ad-spend fields) and append a note to its
+               selection_notes array documenting the seller's override and why, e.g.
+               'Seller override: switched to Dominate tier per Slack request on <date>.'
+            2. git add ONLY that file, commit, push (pull --rebase first).
+            3. Post an updated proposal summary as a Slack reply in the SAME thread,
+               in this format, then repeat the same three options as before:
+               '📋 *Updated proposal for $FIRM_NAME*' followed by the new marketing/coaching/
+               total/ad-spend lines pulled from the updated package_decision.json, then:
+               'Reply again to: 🔒 lock it in / ❓ ask why / ✏️ propose more changes'
+            4. Do NOT modify \`$REVIEW_FILE\` — status stays 'pending' so the loop can
+               continue until the seller locks it in.
+
+            RULES FOR ALL INTENTS:
+            - Always run 'git pull --rebase origin main' before any git push.
+            - If push fails with 403/rejected, pull --rebase and retry up to 3 times.
+            - Never touch any other firm's files.
+            - Never guess the seller's intent if genuinely ambiguous — in that case, ask a
+              brief clarifying question as a Slack reply in the thread instead of acting,
+              and leave $REVIEW_FILE untouched.
+          "
+
+      - name: Post error to Slack
+        if: failure() && steps.find.outputs.found == 'true'
+        env:
+          SLACK_BOT_TOKEN: ${{ secrets.SLACK_BOT_TOKEN }}
+          SLACK_CHANNEL: ${{ github.event.client_payload.slack_channel }}
+          SLACK_THREAD_TS: ${{ github.event.client_payload.slack_thread_ts }}
+        run: |
+          PAYLOAD=$(jq -n \
+            --arg channel "$SLACK_CHANNEL" \
+            --arg thread  "$SLACK_THREAD_TS" \
+            '{channel: $channel, thread_ts: $thread, text: "❌ Something went wrong handling that reply. Check the GitHub Actions log for details."}')
+          curl -s -X POST https://slack.com/api/chat.postMessage \
+            -H "Authorization: Bearer $SLACK_BOT_TOKEN" \
+            -H "Content-Type: application/json" \
+            -d "$PAYLOAD"

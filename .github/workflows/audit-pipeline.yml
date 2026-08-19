@@ -1,4 +1,4 @@
-name: Audit Pipeline (Pass 1 → Pass 2 → Pass 3)
+name: Audit Pipeline (Pass 1 — Research + Seller Review Gate)
 
 on:
   push:
@@ -28,9 +28,6 @@ jobs:
 
       - name: Install Claude Code CLI
         run: npm install -g @anthropic-ai/claude-code
-
-      - name: Install Python deps for PDF generation
-        run: pip install reportlab pypdf beautifulsoup4 --break-system-packages --quiet
 
       - name: Find trigger file and parse inputs
         id: inputs
@@ -137,188 +134,13 @@ jobs:
           FRIENDLY_NAME="${{ steps.inputs.outputs.friendly_name }}"
           node scripts/select-package.mjs "$FRIENDLY_NAME" || true
 
-      - name: Pass 2 + 3 — Audit Write (with PPTX)
-        env:
-          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
-        run: |
-          FIRM_NAME="${{ steps.inputs.outputs.firm_name }}"
-          FRIENDLY_NAME="${{ steps.inputs.outputs.friendly_name }}"
-          SALES_REP="${{ steps.inputs.outputs.sales_rep }}"
-          DATE="${{ steps.inputs.outputs.date }}"
-          PACKAGE="${{ steps.inputs.outputs.package }}"
-
-          # Build package instruction — prefer deterministic JSON over soft hint
-          PACKAGE_INSTRUCTION=""
-          DECISION_FILE="$FRIENDLY_NAME/package_decision.json"
-          if [ -f "$DECISION_FILE" ]; then
-            CONFIDENCE=$(jq -r '.confidence' "$DECISION_FILE")
-            DECISION_JSON=$(cat "$DECISION_FILE")
-            if [ "$CONFIDENCE" = "high" ]; then
-              PACKAGE_INSTRUCTION=$(printf 'PACKAGE DECISION (revenue confirmed from research notes — do not override):\n%s\nUse EXACTLY these tier names and prices. Do not re-run eligibility logic. Do not recalculate. Copy every dollar amount character-by-character from this JSON.' "$DECISION_JSON")
-            else
-              PACKAGE_INSTRUCTION=$(printf 'PACKAGE DECISION (revenue was estimated — verify before finalizing):\n%s\nRevenue was NOT explicitly stated in research notes; this is an evidence-based estimate with confidence: %s. Before writing Section 11: re-read the research notes and confirm the revenue band is consistent with all available signals. If the estimate appears correct, use these values exactly. If the research notes clearly indicate a different revenue band, apply the eligibility rules and select the correct tier — document your reasoning in section_11_workings.txt.' "$DECISION_JSON" "$CONFIDENCE")
-            fi
-          elif [ -n "$PACKAGE" ]; then
-            PACKAGE_INSTRUCTION="PACKAGE OVERRIDE: The trigger file specifies \"$PACKAGE\" as the recommended marketing package. You MUST use this package in Section 11 (Next Steps). Do not override with a different tier based on revenue estimates."
-          fi
-
-          claude --model claude-sonnet-5 --dangerously-skip-permissions -p "
-            You are running Pass 2 of the SMB Team Growth Audit pipeline.
-
-            Firm Name: $FIRM_NAME
-            Friendly Name: $FRIENDLY_NAME
-            Sales Rep: $SALES_REP
-            Date: $DATE
-            $PACKAGE_INSTRUCTION
-
-            Read \`.claude/commands/audit-write.md\` in full. Read the research notes file
-            and \`Design Files/audit_styles.css\`. Execute every step in order, saving each
-            section before moving to the next. Assemble the final HTML report, generate
-            the Sales Companion PDF, and commit everything to main. Then run Pass 3 per
-            the --with-pptx instructions at the end of audit-write.md. Report the commit
-            hash when done.
-          "
-
-      - name: Strip pricing sections (consultation meetings only)
-        if: steps.inputs.outputs.suppress_pricing == 'true'
-        run: |
-          FRIENDLY_NAME="${{ steps.inputs.outputs.friendly_name }}"
-          echo "suppress_pricing=true — stripping pricing sections from $FRIENDLY_NAME"
-          python3 scripts/strip-pricing-sections.py \
-            "$FRIENDLY_NAME/index.html" \
-            "$FRIENDLY_NAME/sections/section_executive_summary.html" \
-            "$FRIENDLY_NAME/sections/section_11_next_steps.html"
-          git add "$FRIENDLY_NAME/" || true
-          if ! git diff --cached --quiet; then
-            git commit -m "Remove pricing sections for consultation meeting audit: $FRIENDLY_NAME"
-            git push origin main
-          else
-            echo "No pricing sections found to remove (may already be clean)."
-          fi
-
       # -----------------------------------------------------------------------
-      # STEP 5 — Write back to HubSpot
+      # PHASE 1 REVIEW GATE — post the proposal (package, pricing, rationale)
+      # to Slack and pause. Pass 2/3 (the actual report build) only fires once
+      # the seller replies in-thread with a lock-in. See
+      # slack-proposal-response.yml for how that reply is handled.
       # -----------------------------------------------------------------------
-      - name: Step 5 — Write audit URL back to HubSpot
-        env:
-          HUBSPOT_TOKEN: ${{ secrets.HUBSPOT_TOKEN }}
-        run: |
-          FRIENDLY_NAME="${{ steps.inputs.outputs.friendly_name }}"
-          TRIGGER_FILE="${{ steps.inputs.outputs.trigger_file }}"
-          CONTACT_ID=$(jq -r '.hubspot_contact_id // empty' "$TRIGGER_FILE")
-
-          if [ -z "$CONTACT_ID" ]; then
-            echo "No hubspot_contact_id in trigger file — skipping HubSpot writeback."
-            exit 0
-          fi
-
-          WORKWITH_URL="https://workwith.smbteam.com/$FRIENDLY_NAME"
-          RESPONSE=$(curl -s -w "\n%{http_code}" -X PATCH \
-            "https://api.hubapi.com/crm/v3/objects/contacts/$CONTACT_ID" \
-            -H "Authorization: Bearer $HUBSPOT_TOKEN" \
-            -H "Content-Type: application/json" \
-            -d "{\"properties\": {\"growth_profit_and_freedom_roadmap\": \"$WORKWITH_URL\"}}")
-          HTTP_CODE=$(echo "$RESPONSE" | tail -1)
-          echo "HubSpot response ($HTTP_CODE): contact $CONTACT_ID → growth_profit_and_freedom_roadmap = $WORKWITH_URL"
-          if [ "$HTTP_CODE" != "200" ]; then
-            echo "ERROR: HubSpot returned $HTTP_CODE"
-            exit 1
-          fi
-
-      # -----------------------------------------------------------------------
-      # STEP 6 — Email the closer with PDF + PPTX attachments
-      # -----------------------------------------------------------------------
-      - name: Step 6 — Email closer with audit attachments
-        continue-on-error: true
-        env:
-          GMAIL_USER: ${{ secrets.GMAIL_USER }}
-          GMAIL_APP_PASSWORD: ${{ secrets.GMAIL_APP_PASSWORD }}
-          FIRM_NAME: ${{ steps.inputs.outputs.firm_name }}
-          FRIENDLY_NAME: ${{ steps.inputs.outputs.friendly_name }}
-          SALES_REP: ${{ steps.inputs.outputs.sales_rep }}
-          SALES_REP_EMAIL: ${{ steps.inputs.outputs.sales_rep_email }}
-        run: |
-          python3 - << 'PYEOF'
-          import smtplib, os, glob, sys
-          from email.mime.multipart import MIMEMultipart
-          from email.mime.text import MIMEText
-          from email.mime.application import MIMEApplication
-
-          gmail_user       = os.environ["GMAIL_USER"]
-          gmail_password   = os.environ["GMAIL_APP_PASSWORD"]
-          firm_name        = os.environ["FIRM_NAME"]
-          friendly_name    = os.environ["FRIENDLY_NAME"]
-          sales_rep        = os.environ["SALES_REP"]
-          sales_rep_email  = os.environ.get("SALES_REP_EMAIL", "").strip()
-
-          if not sales_rep_email:
-              print("ERROR: sales_rep_email is not set in the trigger file.")
-              sys.exit(1)
-
-          # --- Recipients ---
-          to_addr  = sales_rep_email
-          cc_addrs = [
-              "eli.gill@smbteam.com",
-              "vanessa.odonnell@smbteam.com",
-              "chris.abouraad@smbteam.com",
-              "justin.hernandez@smbteam.com",
-          ]
-
-          # --- Find attachments ---
-          pdf_files   = glob.glob(f"{friendly_name}/*_Sales_Companion.pdf")
-          pptx_files  = glob.glob(f"{friendly_name}/*_Proposal.pptx")
-          attachments = pdf_files + pptx_files
-
-          if not attachments:
-              print(f"WARNING: No PDF or PPTX found in {friendly_name}/. Sending without attachments.")
-
-          # --- Build message ---
-          msg = MIMEMultipart()
-          msg["From"]    = gmail_user
-          msg["To"]      = to_addr
-          msg["Cc"]      = ", ".join(cc_addrs)
-          msg["Subject"] = f"Growth, Profit, and Freedom Roadmap ready for {firm_name}"
-
-          workwith_url = f"https://workwith.smbteam.com/{friendly_name}"
-          body = "\n".join([
-              f"Hi {sales_rep},",
-              "",
-              f"The Growth, Profit, and Freedom Roadmap for {firm_name} is ready ahead of your proposal call.",
-              "",
-              f"View the full report here: {workwith_url}",
-              "",
-              "Attached you'll find:",
-              "  - Proposal Deck (PowerPoint) — share this on screen during the call",
-              "  - Sales Companion (PDF) — your seller-only cheat sheet, not for the client",
-              "",
-              "Let the team know if you need any changes before the call.",
-              "",
-              "SMB Team",
-              "",
-          ])
-          msg.attach(MIMEText(body, "plain"))
-
-          for filepath in attachments:
-              with open(filepath, "rb") as f:
-                  part = MIMEApplication(f.read(), Name=os.path.basename(filepath))
-              part["Content-Disposition"] = f'attachment; filename="{os.path.basename(filepath)}"'
-              msg.attach(part)
-              print(f"Attached: {filepath}")
-
-          # --- Send ---
-          all_recipients = [to_addr] + cc_addrs
-          with smtplib.SMTP("smtp.gmail.com", 587) as server:
-              server.starttls()
-              server.login(gmail_user, gmail_password)
-              server.sendmail(gmail_user, all_recipients, msg.as_string())
-
-          print(f"Email sent to {to_addr} (CC: {', '.join(cc_addrs)})")
-          PYEOF
-
-      # -----------------------------------------------------------------------
-      # STEP 7 — Notify Slack that the proposal is ready
-      # -----------------------------------------------------------------------
-      - name: Step 7 — Notify Slack
+      - name: Post proposal to Slack for seller review
         continue-on-error: true
         env:
           SLACK_BOT_TOKEN: ${{ secrets.SLACK_BOT_TOKEN }}
@@ -326,25 +148,114 @@ jobs:
           FIRM_NAME: ${{ steps.inputs.outputs.firm_name }}
           FRIENDLY_NAME: ${{ steps.inputs.outputs.friendly_name }}
           SALES_REP: ${{ steps.inputs.outputs.sales_rep }}
+          SALES_REP_EMAIL: ${{ steps.inputs.outputs.sales_rep_email }}
+          DATE: ${{ steps.inputs.outputs.date }}
+          HUBSPOT_CONTACT_ID: ${{ steps.inputs.outputs.hubspot_contact_id }}
+          SUPPRESS_PRICING: ${{ steps.inputs.outputs.suppress_pricing }}
         run: |
           python3 - << 'PYEOF'
-          import os, json, urllib.request
+          import os, json, urllib.request, urllib.error, urllib.parse
 
-          token     = os.environ["SLACK_BOT_TOKEN"]
-          channel   = os.environ["SLACK_CHANNEL_ID"]
-          firm      = os.environ["FIRM_NAME"]
-          slug      = os.environ["FRIENDLY_NAME"]
-          sales_rep = os.environ["SALES_REP"]
-          url       = f"https://workwith.smbteam.com/{slug}"
+          token            = os.environ["SLACK_BOT_TOKEN"]
+          channel          = os.environ["SLACK_CHANNEL_ID"]
+          firm             = os.environ["FIRM_NAME"]
+          friendly_name    = os.environ["FRIENDLY_NAME"]
+          sales_rep        = os.environ["SALES_REP"]
+          sales_rep_email  = os.environ.get("SALES_REP_EMAIL", "").strip()
+          date             = os.environ.get("DATE", "")
+          hubspot_contact_id = os.environ.get("HUBSPOT_CONTACT_ID", "").strip()
+          suppress_pricing = os.environ.get("SUPPRESS_PRICING", "false")
 
-          text = f"✅ *New proposal ready:* {firm}\n{url}\nPrepared for: {sales_rep}"
+          def slack_api(method, payload):
+              body = json.dumps(payload).encode()
+              req = urllib.request.Request(
+                  f"https://slack.com/api/{method}",
+                  data=body,
+                  headers={"Authorization": f"Bearer {token}", "Content-Type": "application/json"},
+              )
+              with urllib.request.urlopen(req) as resp:
+                  return json.loads(resp.read())
 
-          body = json.dumps({"channel": channel, "text": text}).encode()
-          req = urllib.request.Request(
-              "https://slack.com/api/chat.postMessage",
-              data=body,
-              headers={"Authorization": f"Bearer {token}", "Content-Type": "application/json"},
-          )
-          urllib.request.urlopen(req)
-          print(f"Slack notification sent for {firm}.")
+          # Resolve the seller's Slack user ID from their email so the review
+          # request lands as a real @-mention rather than plain text.
+          mention = f"@{sales_rep}"
+          if sales_rep_email:
+              try:
+                  lookup_url = f"https://slack.com/api/users.lookupByEmail?email={urllib.parse.quote(sales_rep_email)}"
+                  req = urllib.request.Request(lookup_url, headers={"Authorization": f"Bearer {token}"})
+                  with urllib.request.urlopen(req) as resp:
+                      lookup = json.loads(resp.read())
+                  if lookup.get("ok"):
+                      mention = f"<@{lookup['user']['id']}>"
+                  else:
+                      print(f"users.lookupByEmail failed ({lookup.get('error')}) — falling back to plain-text mention")
+              except Exception as e:
+                  print(f"users.lookupByEmail request failed ({e}) — falling back to plain-text mention")
+
+          # Pull the deterministic package decision, if Pass 1.5 produced one.
+          decision_path = f"{friendly_name}/package_decision.json"
+          lines = [f"📋 *Proposal ready for review: {firm}*", f"Prepared for: {sales_rep} · {date}", ""]
+
+          if os.path.exists(decision_path):
+              with open(decision_path) as f:
+                  d = json.load(f)
+              lines.append(f"*Marketing:* {d.get('marketing_name')} — ${d.get('marketing_price_bundled'):,}/mo")
+              if d.get('coaching_name'):
+                  lines.append(f"*Coaching:* {d.get('coaching_name')} — ${d.get('coaching_price_bundled'):,}/mo")
+              lines.append(f"*Total:* ${d.get('total_bundled'):,}/mo" + (f" (saves ${d.get('total_savings'):,}/mo vs. retail)" if d.get('total_savings') else ""))
+              if d.get('ad_spend_conservative'):
+                  lines.append(f"*Suggested ad spend:* ${d.get('ad_spend_conservative'):,}–${d.get('ad_spend_aggressive'):,}/mo")
+              lines.append(f"*Confidence:* {d.get('confidence')}")
+              notes = d.get('selection_notes') or []
+              if notes:
+                  lines.append("")
+                  lines.append("*Why this package:*")
+                  for n in notes[:5]:
+                      lines.append(f"  • {n}")
+          else:
+              lines.append("_No deterministic package decision was produced — check the research notes._")
+
+          if suppress_pricing == "true":
+              lines.append("")
+              lines.append("_Note: this is a consultation-only meeting — pricing sections will be stripped from the final report._")
+
+          lines.append("")
+          lines.append(f"{mention} — this is Phase 1 (research + package). Reply in this thread to move it forward:")
+          lines.append("  🔒 *lock it in* — build the full proposal deck as-is")
+          lines.append("  ❓ *ask why* — e.g. \"why Growth and not Starter?\"")
+          lines.append("  ✏️ *propose changes* — e.g. \"swap to Dominate, drop coaching\"")
+
+          text = "\n".join(lines)
+          posted = slack_api("chat.postMessage", {"channel": channel, "text": text})
+          if not posted.get("ok"):
+              raise SystemExit(f"chat.postMessage failed: {posted}")
+
+          review_state = {
+              "firm_name": firm,
+              "friendly_name": friendly_name,
+              "sales_rep": sales_rep,
+              "sales_rep_email": sales_rep_email,
+              "date": date,
+              "hubspot_contact_id": hubspot_contact_id,
+              "suppress_pricing": suppress_pricing,
+              "slack_channel": posted["channel"],
+              "slack_thread_ts": posted["ts"],
+              "status": "pending",
+          }
+          with open(f"{friendly_name}/proposal_review.json", "w") as f:
+              json.dump(review_state, f, indent=2)
+          print(f"Posted proposal review request to Slack (thread_ts={posted['ts']}).")
           PYEOF
+
+      - name: Commit proposal review state
+        run: |
+          FRIENDLY_NAME="${{ steps.inputs.outputs.friendly_name }}"
+          if [ -f "$FRIENDLY_NAME/proposal_review.json" ]; then
+            git add "$FRIENDLY_NAME/proposal_review.json"
+            if ! git diff --cached --quiet; then
+              git commit -m "Phase 1 review gate: awaiting seller response for $FRIENDLY_NAME"
+              git push origin main
+            fi
+          else
+            echo "No proposal_review.json produced — Slack post may have failed (see previous step)."
+          fi
