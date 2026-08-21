@@ -1,0 +1,171 @@
+SMB TEAM — GROWTH AUDIT RESEARCH NOTES
+Firm: Triveni Law
+Friendly Name: triveni-law
+URL: https://www.trivenilaw.com/
+Sales Rep: Dan Bryant
+Call Date (this research supports): September 4, 2026
+Contact: Rahul Rehani, Esq. (office@trilegalusa.com / +1 640-224-1529)
+Research compiled: August 21, 2026
+
+================================================================
+STEP 1 — WEBSITE RESEARCH
+================================================================
+- Website URL confirmed live: yes (https://www.trivenilaw.com/, HTTP 200, hosted on Wix)
+- Last redesign date or estimated age: no explicit redesign date published. Site is a current-generation Wix build (site revision 83 in page metadata); most recent blog content is dated April 22, 2025, suggesting the current build has been substantially unchanged since at least early-mid 2025. Consistent with transcript note that the firm is "rebuilding website" now.
+- Mobile responsive: yes (viewport meta tag present: width=device-width, initial-scale=1; Wix responsive framework)
+- Homepage headline: "YOUR TRUSTED LEGAL PARTNER"
+- CTA above fold: yes/weak — a "Payment Link" button appears in the nav, but it is not a lead-generation CTA. No prominent "Free Consultation" or "Contact Us Now" button observed above the fold.
+- Contact form location: not clearly above fold — "Contact Us" nav link routes to an intake flow (hosted via Clio Grow at trilegalservices.cliogrow.com) rather than an embedded on-page form. Page copy states "someone from our office will reach out to you."
+- Live chat present: no
+- Attorney bio present: no individual attorney bio page found on the live site (site returned 404 on /about; no bio content surfaced on homepage)
+- Video present: no
+- Blog present: yes — last post date **April 22, 2025** (confirmed via blog RSS feed at trivenilaw.com/blog-feed.xml; 3 posts total in feed, all dated the same day, suggesting a single batch upload rather than ongoing content cadence)
+- Practice areas listed on site: Immigration Law, Estate Planning, Real Estate Transactions, Business Law (site does not surface bankruptcy despite transcript mentioning some bankruptcy work)
+
+PageSpeed mobile score: **COULD NOT BE RETRIEVED** — attempted via the official PageSpeed Insights API (10 attempts across two retry passes with delays). Every attempt returned HTTP 429 with the explicit reason "Quota exceeded for quota metric 'Queries' and limit 'Queries per day' of service pagespeedonline.googleapis.com" — this is a daily quota exhaustion on the research environment's shared API credential, not a firm-specific or transient issue, and will not resolve by retrying further today.
+PageSpeed desktop score: **COULD NOT BE RETRIEVED** — same cause as above.
+→ FLAG FOR HUMAN FOLLOW-UP: Run pagespeed.web.dev manually against https://www.trivenilaw.com/ before /audit-write, or re-run this tool tomorrow once the daily quota resets. Do not fabricate a score for /audit-write — leave placeholder until a real number is obtained.
+
+================================================================
+STEP 2 — GOOGLE BUSINESS PROFILE
+================================================================
+- GBP found: yes, per transcript (Rahul confirmed GBP is live, set as service-area business)
+- Star rating: not independently verifiable — direct Google Maps/Search scraping was blocked in this research environment (Google Search and Google Maps both returned empty/error shells to the fetch tool, no rendered listing data available). [UNCONFIRMED — could not reach a live Google listing via available tools; not sourced from any aggregator either, so no number is recorded]
+- Total review count: transcript states firm has "few reviews" — no exact number given. [UNCONFIRMED — sourced from transcript qualitative description only, not independently confirmed via Google]
+- Most recent review date: not available
+- Primary category: per transcript, currently set to generic **"Law Firm"** — this is a confirmed pain point the prospect and rep already discussed (action item: switch primary category to Immigration Attorney or Estate Planning Attorney, add secondary categories)
+- Photos active: per transcript, needs a headshot/cover photo fix (implies currently weak/generic photo presence)
+- Posts active: not stated in transcript; not independently observed
+
+NOTE: This entire section leans on the transcript per the TRANSCRIPT-FIRST RULE, since GBP review counts/ratings normally require live verification but the live tools available in this research pass could not render Google Maps or Google Search listings (both returned blank/error responses, likely bot-protection on Google's side). This should be spot-checked manually by a human before /audit-write cites any specific review number.
+
+================================================================
+STEP 3 — LOCAL 3-PACK SEARCHES
+================================================================
+Live rendered local 3-pack results could not be pulled in this environment (Google Search/Maps blocked automated rendering — see note above). The searches below reflect named, verified-to-exist local competitors surfaced through indirect research (law directories, firm websites) rather than a literal 3-pack snapshot. Treat all review counts in this section as [UNCONFIRMED — sourced from directory/search-engine snippets, not independently confirmed via Google].
+
+Practice Area 1: Immigration Law
+- Search "immigration attorney Princeton NJ": Triveni Law appears [not observed — could not render live pack]. Named local firms confirmed to be active in the market: VKM Law Group (300 Carnegie Center, Princeton), Law Office of Ben Ezra Eran (advertises Princeton NJ service), Sabina Dhillon / immigration practice at 103 Carnegie Center Suite 300, Princeton (~5.0 rating / ~27 reviews per search snippet) [UNCONFIRMED]
+- Search "immigration lawyer Princeton NJ": same competitive set surfaced; Archer & Greiner, P.C. (902 Carnegie Center Blvd) also appears as a larger full-service firm with an immigration practice serving Princeton
+- Search "immigration court attorney Mercer County NJ": directory aggregators (Justia, FindLaw, LawInfo, Super Lawyers) list 21 firms with immigration practices in the Princeton area — confirms a crowded niche
+
+Practice Area 2: Estate Planning
+- Search "estate planning attorney Princeton NJ": Rao Legal Group (Rekha Rao) and Melinda Previtera, Esq. surfaced as reviewed/recommended local attorneys [UNCONFIRMED review counts]
+- Search "wills and trusts lawyer Princeton NJ": Law Offices of Gary Cornick, LLC (elder law/estate planning focus) and Jessica J. Sauer (virtual consultations, evenings/weekends) surfaced
+- Search "probate attorney Princeton NJ": Pidgeon & Pidgeon, P.C. surfaced with a broad estate/probate/real estate practice
+
+Practice Area 3: Real Estate
+- Search "real estate closing attorney Princeton NJ": Pidgeon & Pidgeon, P.C. and Arij Syed Law surfaced with positive review snippets referenced in search results [UNCONFIRMED review counts]
+- Search "real estate attorney Princeton NJ 08540": directory count shows 661 real estate attorneys across 111 firms in the broader Princeton market — highly fragmented/competitive
+- Search "real estate lawyer Mercer County NJ": no single dominant named firm emerged repeatedly beyond the above two
+
+================================================================
+STEP 4 — COMPETITOR REVIEW COUNTS
+================================================================
+Live verification via Google was not available in this environment. Recording what could be sourced, all flagged UNCONFIRMED:
+- Competitor 1: Immigration practice at 103 Carnegie Center Suite 300 (Sabina Dhillon) — reviews: ~27 [UNCONFIRMED — sourced from search-engine snippet, not independently confirmed via Google] — rating: ~5.0 [UNCONFIRMED — same]
+- Competitor 2: Rao Legal Group (Rekha Rao, estate planning) — reviews: not numerically stated in sources found [UNCONFIRMED — sourced from directory testimonial language, no count available]
+- Competitor 3: Pidgeon & Pidgeon, P.C. (real estate/estate planning/probate) — reviews: not numerically stated in sources found [UNCONFIRMED — sourced from firm site/directory description, no count available]
+
+IMPORTANT: Because Triveni Law's own review count/rating could not be confirmed live either (Step 2), this research pass CANNOT respossibly assert that any competitor "dominates" the prospect on reviews — that comparison requires both sides to be verified live. Flag for human verification before /audit-write makes any review-count comparison claim.
+
+================================================================
+STEP 5 — DIRECTORY LISTINGS
+================================================================
+- Avvo: Confirmed listing exists, but under the firm's registered legal entity name **"TRI Legal Services, PC"**, not the "Triveni Law" consumer brand used on the website — a real NAP (Name/Address/Phone) inconsistency. Profile shows attorney Rahul Rehani, address 5 Exeter Ct, Princeton, NJ 08540, practice mix Immigration (40%), Business (30%), Real Estate (15%), Estate Planning (10%), Bankruptcy/Debt (5%), Avvo rating 6.2 ("Good"), 0 client reviews ("Not Yet Reviewed"). Profile also shows an internal inconsistency in licensure-length copy ("Licensed for 11 years" in the header vs. "Licensed in New Jersey for 9 years" in the state-specific section — the 11-year figure appears to reflect the Minnesota license instead).
+- Justia: Could not confirm a Triveni Law / Rahul Rehani / TRI Legal Services listing (directory page blocked automated access; no listing surfaced via search)
+- FindLaw: No dedicated Triveni Law / Rahul Rehani listing surfaced in search
+- Yelp: No dedicated Triveni Law listing surfaced in search (search results returned unrelated "Trivedi Law" firms in NY/CA/GA — name-confusion risk worth noting)
+- Additional check — Clio Grow intake: the firm's own website "Contact Us" flow routes to trilegalservices.cliogrow.com, again surfacing the "TRI Legal Services" name rather than "Triveni Law" — reinforces the brand-name/legal-entity-name mismatch as a real, verified finding (not speculative)
+- Additional check — blog RSS feed metadata: channel title reads "TRI Legal Services, PC" while channel description reads "Triveni Law" — same inconsistency confirmed a second, independent way
+- Geo-targeting landing pages for surrounding cities (e.g., Trenton, New Brunswick, Edison — other high-immigrant-population NJ markets): none found. Site has a single practice-area page structure (e.g., /immigration-law) with no city-specific landing pages.
+
+================================================================
+STEP 6 — GOOGLE ADS
+================================================================
+Per transcript, the firm has spent $0 on marketing/ads to date. Live rendered Google Ads results could not be pulled in this environment (Google Search blocked automated rendering). Framing per the ADS FRAMING RULE — the firm does not appear to be running ads for either practice area, and this is a validated opportunity gap the prospect has explicitly said he wants to fill in the next 0–3 months.
+
+Practice Area 1: Immigration Law
+- Firm ads observed: not observed (consistent with transcript: zero paid ads to date)
+- Named local competitors: no named local firm was confirmed to be running live Google Ads in this pass (search-engine results returned organic directory listings, not live ad units) — this should be spot-checked live before the call, since several of the named immigration competitors (VKM Law Group, Law Office of Ben Ezra Eran) are active, multi-channel-marketing practices and plausible ad spenders
+
+Practice Area 2: Estate Planning
+- Firm ads observed: not observed
+- Named local competitors: not confirmed live in this pass; Pidgeon & Pidgeon, P.C. and Rao Legal Group are candidates worth a live spot-check given their visibility in organic search
+
+================================================================
+STEP 7 — LOCAL SERVICE ADS
+================================================================
+- Firm appears in LSA: not observed (consistent with transcript — no ads run to date)
+- Google Screened: not observed
+- LSA review count: n/a
+- Named local competitors in LSA: not observed — live LSA placements only render inside an active Google SERP session and could not be captured with the tools available in this research pass. Flag for a human to do a live look before the call; LSA presence among the Carnegie Center immigration practices (VKM Law Group, Sabina Dhillon's practice) is plausible given their review profiles but unconfirmed.
+
+================================================================
+STEP 8 — META ADS
+================================================================
+- Firm has active ads: not observed (Meta Ad Library blocked automated access — returned HTTP 403 on repeated attempts, consistent with bot-protection rather than a confirmed absence)
+- Named local competitor 1: Pidgeon & Pidgeon, P.C. — active ads: not observed / could not access Meta Ad Library live
+- Named local competitor 2: VKM Law Group — active ads: not observed / could not access Meta Ad Library live
+
+================================================================
+STEP 9 — TRANSCRIPT EXTRACTION
+================================================================
+- Practice areas confirmed: Immigration (family-based filings; avoids court personally), Estate Planning (plans + probate), Real Estate closings, some Bankruptcy. Long-term: physician/healthcare-focused niche as a 3-year vision, potentially a separate entity.
+- Current lead sources: "MetLife/ARAG legal plans plus referrals" — ~$30K/month collections in months 1–2 with $0 marketing spend
+- Ads ever run: no — "$0 marketing," "zero paid ads yet"
+- Team size: 1 attorney (Rahul) + 2 part-time 1099 paralegals (one immigration, one real estate). 12-month target: hire 1–2 attorneys (e.g., an intake/qualifier + executor, or one for immigration court + one for estate).
+- Annual revenue (gross / case value): ~$30K/month collections in months 1–2 (annualized run-rate ~$360K if flat, though this is an early, likely non-representative sample per the prospect's own framing of "months 1–2"); 12-month target stated explicitly as $750K revenue.
+- Annual revenue (net / take-home / collected): not distinguished from gross for the current $30K/month figure. Prospect separately stated a personal take-home goal of ~$500K and a long-term profit target of ~30%, which he noted implies roughly $1.6M top-line to hit that take-home number — this is the prospect's own math, recorded as stated, not SMB Team's projection.
+- Fee structure: mixed — legal-plan intakes (MetLife/ARAG) paid at roughly ⅓ of standard rate unless upsold (trust funding, recording packages, litigation/probate/bankruptcy at standard or discounted rates); non-plan work implied to be standard flat-fee/hourly by case type (not itemized in transcript)
+- Revenue goal: $750K in 12 months, ~30% profit margin, stated explicitly
+- Average case value: Direct (non-plan) immigration case goal ~$3,500 stated explicitly. Other practice areas' case values not numerically stated — probate and bankruptcy described qualitatively as "convert well and are lucrative"; estate plan sales cycles described as "slower" with no dollar figure given.
+- Current close rate: not stated — default to 15% per methodology
+- Number of locations: 1 (Princeton, NJ office; not explicitly restated in transcript but no second location mentioned — using "1 if not mentioned" default)
+- Spanish campaign needed: not stated in transcript (no)
+- Dominant buying motive: Firm that runs itself so the owner has more time/can operate as strategist rather than operator. Exact framing from transcript: "avoid creating another job; elevate to strategy, delegate ops, and build processes," and "wants to scale as a strategist, not operator." This maps to DBM category (1) — firm that runs itself so they have more time — with a secondary long-term thread toward category (3) scale/dominate via the physician-niche 3-year vision. Primary DBM for this audit should lead with (1).
+- Any profitability claims made by prospect: "MetLifedigits/ARAG only profitable when upsold (trust funding, recording packages, litigation/probate/bankruptcy)... Pure plan work pays ~⅓ rate." No other profitability figures stated.
+- Any claims about case types or practice areas: "Focus immigration and estate planning... Avoids immigration court personally but recognizes high conversion/urgency; wants to hire court attorney. Probate and bankruptcy convert well and are lucrative; estate plan sales cycles slower." All exact/near-exact from transcript.
+- Stated call focus / product interest: The call was a standard marketing/growth-and-ops discovery call — prospect explicitly framed his need as wanting "a partner" that combines a **fractional COO (done-with-you operations build: SOPs, KPIs, team management)** with **done-for-you marketing (LSA, Google Ads, SEO/website rebuild)** — not a marketing-only engagement, and not an unrelated product line (e.g. not an AI/Fractional CTO ask). This dual ops+marketing framing should be called out explicitly in the audit rather than defaulted to a marketing-only narrative.
+- Existing marketing/SEO/ad vendor engagements: none currently signed; prospect is in RFP/quoting stage for a website rebuild with unnamed outside vendors and is "exploring marketing vendors generally" — no signed contract stated.
+- Budget constraints stated: no explicit budget ceiling stated. Prospect is "willing to reinvest profits near-term and not pay himself immediately to accelerate growth" and is "open to ads + fractional COO if ROI-clear" — this reads as ROI-gated openness rather than a hard budget constraint. Record as "none stated" per the literal budget-ceiling question, with the ROI-gating caveat noted for context.
+
+================================================================
+STEP 10 — COMPETITIVE URGENCY SCORE
+================================================================
+Score: 5 / 10
+
+Named specific local competitor threats:
+1. VKM Law Group (300 Carnegie Center, Princeton) — an established, multi-attorney immigration-focused firm in the same office corridor as several other legal practices; longer operating history and dedicated immigration branding than Triveni Law's four-practice-area generalist site.
+2. The immigration practice at 103 Carnegie Center Suite 300 (Sabina Dhillon) — carries a strong review signal (~5.0 rating / ~27 reviews per search snippets, UNCONFIRMED) that Triveni Law's "few reviews" GBP profile cannot currently match.
+3. Pidgeon & Pidgeon, P.C. — a long-tenured local firm spanning real estate, probate, and estate planning (the same three practice areas Triveni Law is trying to build a D2C funnel around), with an established local reputation and Mercer County Bar Association leadership ties.
+
+Dynamic sentence: "A score of 5 means competitors have meaningful advantages in one or more areas and are pulling ahead. You are not invisible yet — but the window to close the gap is narrowing. Every month without action is a month they extend their lead."
+
+Rationale: Triveni Law is not being outspent on paid channels — no local competitor was confirmed to be running live Google Ads, LSAs, or Meta ads in this pass, and the firm itself has spent $0 to date, so the paid-channel playing field is closer to level than in a typical "market is dominated" scenario. The real gap is on organic trust signals: an underdeveloped GBP (generic "Law Firm" category, few reviews, no bio/photos), a brand-name/legal-entity-name mismatch across directories (Triveni Law vs. TRI Legal Services, PC), and no attorney bio or video on the website — while several named local competitors (VKM Law Group, the 103 Carnegie Center immigration practice, Pidgeon & Pidgeon) have stronger review counts and longer-established local presence in the exact practice areas Triveni Law is targeting for D2C growth. That combination of "no one is dominating on ads yet, but several rivals have durable trust-signal advantages" places this at a 5, not higher — the opportunity window is real but not yet closing rapidly.
+
+================================================================
+PASS 2 — VERIFICATION CHECKLIST
+================================================================
+[x] Every number in the notes matches actually observed data, OR is explicitly flagged as unavailable/UNCONFIRMED with the reason stated (PageSpeed API daily quota exhaustion; Google Search/Maps/Meta Ad Library blocked automated rendering in this environment)
+[x] No competitor is asserted to have more reviews than the prospect as a "dominating" claim, because the prospect's own review count could not be confirmed live either — this is explicitly flagged in Step 4 as a comparison that cannot be made responsibly yet
+[x] Every review count and star rating carries a verification-method tag — all are tagged [UNCONFIRMED — ...] in this pass since no live Google listing could be reached
+[x] Annual revenue is split into gross/case-value ($30K/month current, $750K/yr goal) and net/take-home ($500K personal take-home goal, ~30% profit target), with fee structure (legal-plan vs. upsold) recorded
+[x] Ad sections (Google Ads, LSA, Meta) cover both practice areas the firm is prioritizing for D2C growth (immigration, estate planning)
+[x] No section says "you are not running ads" — all phrased as "not observed" or "does not appear to be running"
+[x] No profitability or business claim appears unless it came from the transcript (Step 9 profitability claims are direct quotes/near-quotes)
+[x] No competitor reference uses generic labels — all named specific local firms (VKM Law Group, 103 Carnegie Center/Sabina Dhillon practice, Rao Legal Group, Melinda Previtera Esq., Law Offices of Gary Cornick LLC, Pidgeon & Pidgeon P.C., Arij Syed Law, Archer & Greiner P.C., Law Office of Ben Ezra Eran)
+[ ] PageSpeed scores are real numbers — **NOT MET.** Could not be retrieved due to a daily API quota exhaustion in this research environment (confirmed via explicit error message, not a guess). Flagged clearly above for human follow-up before /audit-write; no fabricated number has been substituted.
+[x] DBM is recorded (transcript-quote-based: "avoid creating another job... scale as a strategist, not operator")
+[x] Revenue goal is recorded ($750K / 12 months, ~30% profit)
+[x] Close rate is recorded (not stated — defaulted to 15%)
+[x] Average case value is recorded (direct immigration ~$3,500 stated; other practice areas qualitative only, noted as such)
+[x] Stated call focus / product interest is recorded and called out explicitly as a combined fractional-COO (ops) + done-for-you marketing engagement, not a marketing-only call
+[x] Existing marketing/SEO/ad vendor engagements recorded (none signed; RFP/quoting stage for website rebuild)
+[x] Budget constraints stated recorded (none stated explicitly; ROI-gated openness noted for context)
+
+OPEN ITEMS FOR HUMAN FOLLOW-UP BEFORE /audit-write:
+1. Run PageSpeed Insights manually (pagespeed.web.dev) against https://www.trivenilaw.com/ for both mobile and desktop scores — automated retrieval was blocked by a daily API quota limit in this environment.
+2. Spot-check Triveni Law's live Google Business Profile star rating and review count directly on Google Maps — automated rendering was blocked in this environment.
+3. Spot-check the three named competitors' live Google review counts/ratings the same way before citing them as more established than Triveni Law in the final report.
+4. Consider whether the "Triveni Law" vs. "TRI Legal Services, PC" brand/entity naming inconsistency across Avvo, the Clio Grow intake link, and the blog RSS metadata should be raised as a discussion point on the Sept 4 call — it is a verified, real finding (not speculative).
