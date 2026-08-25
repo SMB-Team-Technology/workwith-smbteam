@@ -1,0 +1,136 @@
+RUNION INJURY LAW — SECTION 11 WORKINGS
+=========================================
+
+OVERRIDE DOCUMENTATION (per audit-write.md TRANSCRIPT-STATED NEED OVERRIDE)
+----------------------------------------------------------------------------
+Override triggered: #1 Call-Purpose Override (and consistent with #3 Budget-Reality
+framing via seller instruction).
+
+Research notes STEP 9 / CRITICAL FLAG state explicitly that this discovery call was
+NOT a standard marketing/intake growth call. Per the Fathom AI summary, the stated
+meeting purpose was "To align on growth bottlenecks and explore SMB's fractional COO
+solution." The engagement discussed was a Fractional COO (~$4,000/mo starting, tiered
+at 5/9/17 hrs/month, front-loaded 3-4 month sprint) — not a marketing/lead-gen
+retainer. No revenue, team size, close rate, average case value, ad budget, or
+revenue goal were stated on the call.
+
+Per the override rule, the LAW package table and non-marketing package table were
+checked first, and no marketing package was added because the transcript shows no
+stated marketing/lead-gen ask alongside the Fractional COO need — despite this audit's
+own independent research (Section 06) surfacing real lead-gen and local SEO gaps.
+
+package_decision.json exists for this deal with confidence: "low" (expected, since the
+standard revenue/team-size logic never ran — there was no revenue to run it against).
+Its selection_notes document two seller overrides from Nick Holderman via Slack:
+  - 2026-08-24: Drop coaching and marketing entirely; price as FCOO Director standalone
+    (~$4,000/mo bundled framing initially, i.e. $4,997/mo bundled, $5,797 retail, $800
+    savings) — consistent with the ~$4,000/month Fractional COO engagement discussed
+    on the call.
+  - 2026-08-25: Since the product is not bundled with anything (marketing_tier is
+    null), price it at the true stand-alone rate — $5,797/mo, $0 savings — per
+    Design Files/Scoping_and_Ad_Spend_Guide.md.
+This was subsequently locked in via Slack per commit history (Phase 1 review gate
+resolved, proposal marked "locked" in proposal_review.json).
+
+Because a live override already applies AND the seller has explicitly resolved the
+package selection, this report does not run the standard marketing-tier eligibility
+logic, and section_11 recommends a single non-marketing package: FCOO Director
+(standalone).
+
+Escalation carried forward from package_decision.json: FCOO Director standalone
+normally requires $1M+ annual revenue per the Scoping & Ad Spend Guide. Revenue was
+never confirmed on this call. Flag for sales: verify eligibility and the firm's
+ability to sustainably carry $5,797/mo (35% cap cannot be computed without a revenue
+figure) before contract signature.
+
+MANDATORY PRICE LOOKUP
+-----------------------
+- Marketing package selected: none (call-purpose override — no marketing/lead-gen ask
+  was stated on this call; independent research found real gaps, but the client did
+  not ask for and the seller did not scope a marketing engagement)
+- Non-marketing package selected: FCOO Director (standalone)
+  - Bundled price (from table): not applicable — sold standalone per seller instruction, not bundled with another package
+  - Stand-alone price (from table): $5,797/mo [Design Files/Scoping_and_Ad_Spend_Guide.md, Section 8 reference table; matches package_decision.json]
+  - Savings (stand-alone minus bundled): $0/mo (no bundle discount applies — nothing to bundle against)
+- Legal AI Workforce (LAW) package selected: none (revenue unconfirmed and no AI-readiness signal on this call)
+- AI Avatar / Video Growth add-on selected: none (not discussed, no active marketing relationship to attach it to)
+- Total monthly investment (sum of all bundled/recurring prices): $5,797/mo
+- Total savings (sum of all savings): $0/mo
+
+AD SPEND / ROI PROJECTION
+---------------------------
+Not applicable. No marketing package or paid ad spend is being recommended in this
+proposal (see override above). Section 11 Block 4 (Recommended Ad Spend) is omitted
+from section_11_next_steps.html for this firm rather than populated with a $0 or
+placeholder row, since the standard ad-spend/ROI structure does not apply to a
+Fractional COO-only engagement.
+
+DBM STATEMENT (Block 1)
+-------------------------
+"We help personal injury firm owners who are personally consumed by litigation get an
+operator running their systems day to day so they can step back from the caseload and
+reclaim real personal time."
+
+QUICK WIN OPPORTUNITIES (7 identified, across all 4 pillars)
+----------------------------------------------------------------
+1. [Lead Gen / Quick Win] Fix or Replace the Underperforming SEO Vendor — Why: current
+   CAMG spend is producing poor results per the firm's own account on the call.
+   Competitor: n/a (vendor performance issue, not a competitor comparison). Opportunity:
+   reallocating or renegotiating this spend could turn a sunk cost into an actual
+   pipeline once someone has bandwidth to manage the vendor relationship.
+2. [Lead Gen / Long-Term Play] Turn On Local Service Ads — Why: no LSA/Google Screened
+   presence was observed despite a website strong enough to support conversions.
+   Competitor: Lamber Goodnow Injury Lawyers, Phillips Law Group (industry-referenced
+   LSA presences in this market). Opportunity: pay-per-lead pricing plus
+   above-the-fold placement.
+3. [Lead Gen / Quick Win] Put Paid Traffic Behind the Geo-Pages Already Built — Why:
+   Albuquerque and Scottsdale geo-pages are genuinely localized but receive no paid
+   traffic. Competitor: Zanes Law Injury Lawyers. Opportunity: the landing pages
+   already exist — only the traffic behind them is missing.
+4. [Intake / Quick Win] Define a Follow-Up Process for Website Form Leads — Why: no
+   follow-up process was described on the call. Opportunity: costs nothing beyond
+   attention, converts leads the firm is already paying to generate.
+5. [Intake / Long-Term Play] Add After-Hours Coverage — Why: no live chat or
+   after-hours process was observed on the site. Opportunity: captures visitors who
+   currently have to wait until morning to engage.
+6. [Team / Long-Term Play] Install an Operational Owner (Fractional COO) — Why:
+   Derick is the sole litigator and de facto operator, and the firm's own operational
+   playbook ("Process Driven") is stalled without someone to execute it. Opportunity:
+   this is the primary recommendation in this proposal — freeing Derick's time is the
+   single highest-leverage move available to the firm right now.
+7. [Profit / Quick Win] Establish Baseline Financial Visibility — Why: revenue, close
+   rate, and average case value were not discussed on the call. Opportunity: a basic
+   financial snapshot clarifies how much investment the firm can sustainably make in
+   fixing itself.
+
+FIRST 90 DAYS
+---------------
+1. Kick off the Fractional COO engagement with a discovery and systems audit across
+   intake, team structure, and current marketing vendor performance.
+2. Begin implementing the operational playbook Derick has already started building,
+   starting with the highest-leverage gaps identified above (intake follow-up, SEO
+   vendor accountability).
+3. Establish baseline financial visibility (revenue, case value, close rate) so future
+   investment decisions have real numbers behind them.
+4. Build a simple intake follow-up process for existing website leads — a
+   zero-marketing-spend fix ready to implement immediately.
+5. Treat the quarterly in-person workshop referenced on the call (late September 2026,
+   Scottsdale) as the first checkpoint for Phase 1 progress.
+
+ESCALATION FLAGS (internal only — do not appear in client-facing report)
+----------------------------------------------------------------------------
+- Revenue not confirmed — FCOO Director standalone normally requires $1M+ annual
+  revenue; verify eligibility with the client before contract signature.
+- 35% total-spend cap cannot be computed without a confirmed revenue figure — confirm
+  the firm can sustainably carry $5,797/mo before signature.
+- Review counts and star ratings (firm and all three named competitors) are
+  UNCONFIRMED — sourced from aggregators, not a live Google Maps/Search check.
+  Verify live before the proposal call.
+- PageSpeed mobile/desktop scores were not obtained this session (API quota
+  exhausted) — recommend a manual re-check before finalizing.
+- Local 3-pack, Google Ads SERP, LSA, and Meta Ads Library findings are based on
+  organic-result proxies and blocked/unavailable tooling, not confirmed live
+  observations — recommend a manual logged-in browser pass before the proposal call.
+- Existing vendor note: firm currently pays an SEO vendor (CAMG) described as
+  yielding poor results — confirm with rep whether this is an active contract to be
+  aware of when discussing timeline for any future marketing engagement.
