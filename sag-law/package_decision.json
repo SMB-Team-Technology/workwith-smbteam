@@ -1,0 +1,36 @@
+{
+  "confidence": "medium",
+  "revenue_stated": null,
+  "revenue_effective": 1980500,
+  "revenue_source": "hubspot_annual_law_firm_revenue",
+  "revenue_label": "$961K - $3M",
+  "team_size_stated": null,
+  "team_size_effective": 3,
+  "practice_areas_detected": [
+    "personal injury (bart goplerud's practice — primary growth target)",
+    "family law (high-net-worth divorces, high hourly rate)",
+    "corporate (estate planning, probate, corporate transactions)"
+  ],
+  "marketing_tier": "Growth",
+  "marketing_name": "Full Service Marketing — Growth",
+  "marketing_price_bundled": 7497,
+  "marketing_price_retail": 8997,
+  "marketing_savings": 1500,
+  "coaching_name": null,
+  "coaching_price_bundled": null,
+  "coaching_price_retail": null,
+  "coaching_savings": null,
+  "law_tier": null,
+  "total_bundled": 7497,
+  "total_savings": 1500,
+  "ad_spend_conservative": 7500,
+  "ad_spend_aggressive": 30000,
+  "selection_notes": [
+    "Revenue not in research notes as a single parseable figure (stated only as \">$10M\" firm-wide gross) — sourced from HubSpot (hubspot_annual_law_firm_revenue): \"$961K - $3M\" → $1,980,500",
+    "Team size not stated in research notes in a parseable format — defaulting to 3. Research notes reference a 13-attorney firm; review for coaching/tier accuracy if coaching is reinstated.",
+    "Revenue $1M–$2M: Growth tier.",
+    "Revenue $1M+, team under 5: Elite Coach Plus selected (Master's Circle requires 5+ team).",
+    "Reconstructed from the Phase 1 Slack proposal message (posted 2026-08-25) — package_decision.json was not committed to the repo after Pass 1.5.",
+    "Seller override via Slack thread reply on 2026-08-25: coaching removed per seller request. Firm's stated ask on the discovery call was personal-injury lead generation only (new PI website, paid ads targeting high-value case types, dedicated intake line) — coaching was not part of the stated product interest."
+  ]
+}
