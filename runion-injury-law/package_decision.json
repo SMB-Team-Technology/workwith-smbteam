@@ -17,18 +17,19 @@
   "marketing_price_retail": null,
   "marketing_savings": null,
   "coaching_name": "FCOO Director",
-  "coaching_price_bundled": 4997,
+  "coaching_price_bundled": 5797,
   "coaching_price_retail": 5797,
-  "coaching_savings": 800,
+  "coaching_savings": 0,
   "law_tier": null,
-  "total_bundled": 4997,
-  "total_savings": 800,
+  "total_bundled": 5797,
+  "total_savings": 0,
   "ad_spend_conservative": null,
   "ad_spend_aggressive": null,
   "selection_notes": [
     "No prior package_decision.json existed for this deal — research notes flagged this call as a Fractional COO discovery conversation, not a standard marketing/intake growth call, so the standard revenue/team-size-based marketing+coaching tier logic was never run.",
     "Revenue, team size, and close rate not stated in transcript or research notes, and no HubSpot revenue field was available for this firm.",
     "Seller override: Nick Holderman requested via Slack on 2026-08-24 to drop coaching and marketing entirely and price the deal as FCOO Director standalone ($4,997/mo bundled, $5,797 retail, $800 savings) — consistent with the ~$4,000/month Fractional COO engagement discussed on the discovery call (transcript referenced 5/9/17 hrs/month tiers).",
-    "FCOO Director standalone normally requires $1M+ annual revenue per Design Files/Scoping_and_Ad_Spend_Guide.md — revenue was not confirmed for this firm; flagged for sales rep to verify eligibility before finalizing pricing with the client."
+    "FCOO Director standalone normally requires $1M+ annual revenue per Design Files/Scoping_and_Ad_Spend_Guide.md — revenue was not confirmed for this firm; flagged for sales rep to verify eligibility before finalizing pricing with the client.",
+    "Seller override: Nick Holderman clarified via Slack on 2026-08-25 that since this product is not bundled with anything (marketing tier is null), it should be priced as a true standalone product — changed price from the $4,997/mo bundled rate to the $5,797/mo stand-alone rate per Design Files/Scoping_and_Ad_Spend_Guide.md (FCOO Director stand-alone price), with $0 savings since no bundle discount applies."
   ]
 }
