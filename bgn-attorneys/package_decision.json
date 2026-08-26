@@ -1,0 +1,32 @@
+{
+  "confidence": "medium",
+  "revenue_stated": null,
+  "revenue_effective": 3000000,
+  "revenue_source": "hubspot_annual_law_firm_revenue",
+  "revenue_label": "$3,000,000+",
+  "team_size_stated": null,
+  "team_size_effective": 3,
+  "practice_areas_detected": [
+    "personal injury (car accidents, motorcycle accidents, truck accidents, slip and fall, wrongful death, dog bites)"
+  ],
+  "marketing_tier": null,
+  "marketing_name": null,
+  "marketing_price_bundled": null,
+  "marketing_price_retail": null,
+  "marketing_savings": null,
+  "coaching_name": "Elite Coach Plus",
+  "coaching_price_bundled": 3497,
+  "coaching_price_retail": 3497,
+  "coaching_savings": 0,
+  "law_tier": null,
+  "total_bundled": 3497,
+  "total_savings": 0,
+  "ad_spend_conservative": null,
+  "ad_spend_aggressive": null,
+  "selection_notes": [
+    "Revenue not in research notes (this was scoped as a coaching/ops discovery call, not a standard revenue-based audit, per the research notes) — sourced from HubSpot (hubspot_annual_law_firm_revenue): \"$3,000,000+\" → $3,000,000",
+    "Team size not stated in research notes in a parseable format — defaulting to 3. Research notes describe ~10 total headcount (3 partners); review for coaching-tier accuracy if revisited.",
+    "package_decision.json was not committed to the repo after Pass 1 research. Reconstructed from the Phase 1 Slack proposal message (posted 2026-08-26): original proposal was Full Service Marketing — Platinum ($15,997/mo bundled) + Elite Coach Plus ($3,200/mo bundled), total $19,197/mo, suggested ad spend $10,000–$40,000/mo.",
+    "Seller override via Slack thread reply on 2026-08-26: \"Drop marketing, only propose Elite Coach Plus.\" Followed by a clarifying question from the proposal bot (no package_decision.json on file, confirming standalone pricing), which the seller confirmed on 2026-08-26: \"Elite Coach Plus Stand alone $3,497/month, no marketing, no ad spend.\" Marketing tier and ad-spend line removed; coaching priced at $3,497/month standalone (retail/standard catalog price — no bundle discount applies since marketing was dropped)."
+  ]
+}
