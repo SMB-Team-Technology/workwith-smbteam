@@ -1,0 +1,141 @@
+SECTION 11 — WORKINGS FILE (INTERNAL — NOT FOR CLIENT REPORT)
+BGN Attorneys — September 2, 2026 — Dan Bryant
+
+================================================================
+OVERRIDE CHECK (applied before any eligibility/pricing logic)
+================================================================
+Override #1 — CALL-PURPOSE OVERRIDE: APPLIES.
+Research notes state explicitly, at the top of the file, that this discovery
+call was NOT a standard marketing/intake growth call. It was framed entirely
+around coaching/operations support (hiring sequence, capacity planning,
+building a self-managing team). The prospect explicitly said January 2027 is
+the earliest he would consider marketing changes. Per the override rule, this
+supersedes package_decision.json's automated eligibility output and the
+revenue-based marketing tier table, regardless of confidence level.
+
+Override #2 — EXISTING-VENDOR OVERRIDE: PARTIALLY RELEVANT, not the primary
+driver. LSAs are already running through an outside agency; that relationship
+is under review (not newly signed), so this override is noted as supporting
+context but Override #1 is the controlling reason marketing is excluded.
+
+Override #3 — BUDGET-REALITY OVERRIDE: Not explicitly stated in dollar terms,
+but the transcript's stated concern about over-hiring depressing owner
+take-home is consistent with a conservative, single-product recommendation
+rather than a larger bundled spend.
+
+Override #4 — EFFECTIVE-REVENUE OVERRIDE: Not applicable — no gross or net
+revenue figure was stated on the call at all (recorded N/A in research notes).
+The $3,000,000+ figure in package_decision.json was sourced from HubSpot, not
+the transcript, and is not being used to size a marketing tier because no
+marketing package is being recommended (Override #1).
+
+CONCLUSION: package_decision.json (confidence: medium) already reflects
+Override #1 correctly — it was reconstructed from an actual seller override in
+the Slack proposal thread (2026-08-26): "Drop marketing, only propose Elite
+Coach Plus," confirmed further as "Elite Coach Plus Stand alone $3,497/month,
+no marketing, no ad spend." This was cross-checked against the research notes
+and transcript extraction and is consistent — no correction needed. Master's
+Circle would have been the eligibility-table-implied non-marketing package
+given ~10 total headcount with dedicated intake/marketing/bookkeeping staff,
+but the seller's explicit standalone-coaching-only instruction is a direct
+human override of the automated eligibility table and is being followed as
+the controlling instruction.
+
+================================================================
+MANDATORY PRICE LOOKUP
+================================================================
+- Marketing package selected: None — excluded per Call-Purpose Override.
+- Non-marketing package selected: Elite Coach Plus (standalone)
+    - Bundled price (from package_decision.json, seller-confirmed in Slack): $3,497/mo
+    - Stand-alone price (same source — no bundle discount applies since there
+      is no marketing package to bundle against): $3,497/mo
+    - Savings (stand-alone minus bundled): $0/mo
+- Legal AI Workforce (LAW) package selected: None — not discussed on this
+  call; no AI-readiness signal to evaluate.
+- AI Avatar / Video Growth add-on selected: None — not applicable, no active
+  marketing engagement to pair it with.
+- Total monthly investment (sum of bundled/recurring prices): $3,497/mo
+- Total savings (sum of all savings): $0/mo
+
+================================================================
+AD SPEND / ROI PROJECTIONS
+================================================================
+No ad spend is recommended in this engagement. Marketing (and therefore any
+ad-spend or ROI projection) is intentionally excluded per the Call-Purpose
+Override — the firm has deferred the marketing conversation to January 2027
+at the earliest. Section 11 Block 4 (Recommended Ad Spend) will state this
+plainly rather than showing fabricated case/revenue projections against a
+spend that is not part of this proposal.
+
+================================================================
+DBM STATEMENT FOR BLOCK 1
+================================================================
+"We help growing personal injury firm founders get a documented hiring and
+capacity plan so they can scale case volume without becoming trapped in the
+day-to-day themselves."
+
+================================================================
+QUICK WIN OPPORTUNITIES (6, across all four pillars)
+================================================================
+1. [Lead Gen / Quick Win] Fix the broken www redirect — Why: prospects who
+   type "www" instead of clicking a link land on a spam-firewall interstitial
+   instead of the homepage and likely assume the site is broken or inactive.
+   No named competitor (technical fix, not a competitive comparison) —
+   omit "Who Is Doing It Better" row. Opportunity: a low-cost developer fix
+   recovers every visitor currently hitting a dead end.
+
+2. [Lead Gen / Quick Win] Correct NAP directory listings — Why: FindLaw,
+   Superlawyers, and one Yelp listing show a Spokane, WA address instead of
+   the firm's actual Kent office, confusing prospects and diluting local
+   map-pack signals. No named competitor — omit who row. Opportunity: a
+   zero-cost correction recovers local search trust and consistency.
+
+3. [Lead Gen / Long-Term] Close the review gap with named Kent competitors —
+   Competitor: Khan Injury Law (established since 2007, review count in the
+   hundreds per aggregator data) vs. BGN's own single-digit review count.
+   Why: reviews are a primary local-search and LSA ranking signal.
+   Opportunity: a simple post-case review request process compounds monthly.
+
+4. [Intake / Quick Win] Document an after-hours follow-up process — Why:
+   leads/referrals arriving evenings or weekends currently have no defined
+   response path, risking loss of cases the firm already worked to generate.
+   No named competitor — omit who row. Opportunity: captures cases already
+   reaching the firm at no additional marketing cost.
+
+5. [Team / Long-Term] Build a documented hiring sequence — Why: the firm is
+   hiring reactively (one role at a time as pressure builds) rather than
+   against a plan, adding urgency and onboarding disruption as volume climbs
+   toward 40-50/month. No named competitor — omit who row. Opportunity: turns
+   growth into a plan instead of a scramble — the core of this engagement.
+
+6. [Profit / Long-Term] Build a profit plan tied to personal comp targets —
+   Why: the stated $350-400K and $500K comp targets exist without a
+   documented path connecting today's case volume and case value to those
+   numbers. No named competitor — omit who row. Opportunity: turns case-volume
+   growth into a guardrail against over-hiring and a clear path to target
+   take-home.
+
+================================================================
+FIRST 90 DAYS
+================================================================
+1. Kick off Elite Coach Plus with a hiring-sequence and capacity-planning
+   session mapped to the 40-50 cases/month target
+2. Build a documented org chart clarifying what each partner owns today vs.
+   what should move to staff as the team grows
+3. Establish a profit plan connecting case volume and average case value to
+   the $350-400K and $500K personal comp targets
+4. Fix the broken www redirect and correct NAP directory listings
+   (Spokane/Pasco to Kent) at no cost
+5. Set up a review-generation process to begin closing the gap with named
+   Kent competitors ahead of the eventual marketing conversation
+
+================================================================
+ESCALATION FLAGS (internal — do not include in client report)
+================================================================
+- Review counts unconfirmed — verify live before the call (GBP star rating
+  and review count for BGN Attorneys, and all three named competitor review
+  counts — Khan Injury Law, Brumley Law Firm, Herschensohn — are sourced from
+  third-party aggregators, not a live Google Maps/GBP check)
+- Revenue under $300K → N/A, revenue not stated at all on this call
+- This is a single-product (coaching-only) recommendation — confirm with Dan
+  Bryant before the call that no marketing/ad-spend conversation is expected

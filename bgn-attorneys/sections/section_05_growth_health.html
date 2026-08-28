@@ -1,0 +1,164 @@
+<!-- ⚠️ NO CSS IN THIS FILE. No <style> blocks. No inline styles. No style="" attributes.
+     All styling comes from audit_styles.css only. Use only existing class names.
+     If you find yourself writing CSS — stop and delete it. -->
+<!-- ============================================================
+     SECTION 05 — YOUR GROWTH HEALTH ASSESSMENT
+     
+     INSTRUCTIONS FOR COWORK:
+     - For each traffic circle: use class "red", "amber", or "green" based on your rating
+     - For each sc-findings list: write 2-3 specific bullet points for this firm only
+     - For sc-dbm: one italic sentence connecting this pillar to income, freedom, or DBM
+     - For urgency score: replace the number, set left% = (score/10)*100 on the marker
+     - For urgency sentence: use the correct dynamic sentence based on score range
+     - For competitor cards: write 2-3 named competitors with specific threat reasons
+     - Do not add inline styles. Do not change class names.
+     ============================================================ -->
+
+<div class="section-header" id="growth-health">
+  <div class="section-header-inner">
+    <h2>Your Growth Health Assessment</h2>
+    <!-- FILL: FIRM_NAME -->
+    <div class="subtext">BGN Attorneys</div>
+  </div>
+</div>
+
+<div class="content-wrap">
+
+  <div class="legend">
+    <div class="legend-item">
+      <div class="legend-dot red"></div>
+      <div class="legend-label">Red <span>— Critical Priority</span></div>
+    </div>
+    <div class="legend-item">
+      <div class="legend-dot amber"></div>
+      <div class="legend-label">Amber <span>— In Progress</span></div>
+    </div>
+    <div class="legend-item">
+      <div class="legend-dot green"></div>
+      <div class="legend-label">Green <span>— On Track</span></div>
+    </div>
+  </div>
+
+  <div class="scorecard-label">Pillar Health Scorecard</div>
+
+  <div class="scorecard-grid">
+
+    <!-- LEAD GENERATION CARD -->
+    <div class="sc-card">
+      <div class="sc-card-header"><h3>Lead Generation</h3></div>
+      <div class="sc-card-body">
+        <!-- FILL: LEAD_GEN_TRAFFIC_LIGHT — change class to "red", "amber", or "green" -->
+        <div class="traffic-circle amber"></div>
+        <ul class="sc-findings">
+          <li>Referral network with medical providers and insurance agents is strong but entirely relationship-dependent, with no digital lead-generation system of its own</li>
+          <li>LSAs run through an outside agency under review, with no Google Ads, Meta ads, or organic SEO visibility observed for any practice area</li>
+          <li>The firm's own Kent and Seattle geo-landing pages did not surface in any organic searches conducted, while several named competitors dominate those results</li>
+        </ul>
+        <div class="sc-dbm">Until there is a lead-generation system that runs independent of any one relationship, case volume growth will always be capped by how many meetings the marketer can book.</div>
+      </div>
+    </div>
+
+    <!-- INTAKE CARD -->
+    <div class="sc-card">
+      <div class="sc-card-header"><h3>Intake</h3></div>
+      <div class="sc-card-body">
+        <!-- FILL: INTAKE_TRAFFIC_LIGHT — change class to "red", "amber", or "green" -->
+        <div class="traffic-circle amber"></div>
+        <ul class="sc-findings">
+          <li>A new intake specialist was recently hired, but a partner is still personally involved in intake and case administration day to day</li>
+          <li>No after-hours coverage or defined follow-up sequence was described for leads or referrals arriving outside business hours</li>
+          <li>An additional pre-lit paralegal is actively being hired, suggesting intake-to-case handoff is already stretched at roughly 30 cases/month</li>
+        </ul>
+        <div class="sc-dbm">Every hour spent on intake and case administration is an hour not spent on the higher-value legal and business-development work the partners say they actually want to be doing.</div>
+      </div>
+    </div>
+
+    <!-- SELF-MANAGING TEAM CARD -->
+    <div class="sc-card">
+      <div class="sc-card-header"><h3>Self-Managing Team</h3></div>
+      <div class="sc-card-body">
+        <!-- FILL: TEAM_TRAFFIC_LIGHT — change class to "red", "amber", or "green" -->
+        <div class="traffic-circle amber"></div>
+        <ul class="sc-findings">
+          <li>All three partners each personally own a core function &mdash; litigation, HR/hiring/IT, and intake/ops &mdash; with no manager layer beneath them</li>
+          <li>100% employee retention to date is a genuine strength, but the team has not yet been tested at the 40&ndash;50 cases/month volume the firm is targeting</li>
+          <li>A new "pre-legal" role is planned for mid-September 2026, showing the team is growing reactively rather than against a defined capacity plan</li>
+        </ul>
+        <div class="sc-dbm">A self-managing team is the only way the partners get back the freedom they left their W-2 jobs to build for themselves.</div>
+      </div>
+    </div>
+
+    <!-- PROFIT CARD -->
+    <div class="sc-card">
+      <div class="sc-card-header"><h3>Profit</h3></div>
+      <div class="sc-card-body">
+        <!-- FILL: PROFIT_TRAFFIC_LIGHT — change class to "red", "amber", or "green" -->
+        <div class="traffic-circle red"></div>
+        <ul class="sc-findings">
+          <li>No annual revenue, revenue goal, or fee structure was tracked or discussed in a way that gives a clear financial picture of the firm today</li>
+          <li>The stated concern about over-hiring depressing owner take-home shows real awareness of the risk, but there is no profit plan turning that concern into a guardrail number</li>
+          <li>Personal comp targets ($350&ndash;400K in year two, $500K within three years) exist without a visible plan connecting current case volume and case value to those targets</li>
+        </ul>
+        <div class="sc-dbm">Without a profit plan turning case volume into a target take-home number, hitting 40&ndash;50 cases/month will not automatically deliver the $500K personal comp the partners are working toward.</div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- COMPETITIVE URGENCY SCORE -->
+  <div class="urgency-card" id="urgency-score">
+    <div class="urgency-label">Competitive Urgency Score</div>
+
+    <!-- FILL: URGENCY_SCORE — replace with actual number 1-10 -->
+    <div class="urgency-score">8</div>
+    <div class="urgency-outof">out of 10</div>
+
+    <!-- FILL: URGENCY_SENTENCE — use the correct sentence based on score:
+         Score 1-3: "A score of [X] means no single competitor is dominating your market
+         yet — but that will not last forever. The firms that win markets do so by moving
+         first. Getting your systems in place now means you set the standard before
+         someone else does."
+         Score 4-6: "A score of [X] means competitors have meaningful advantages in one
+         or more areas and are pulling ahead. You are not invisible yet — but the window
+         to close the gap is narrowing. Every month without action is a month they extend
+         their lead."
+         Score 7-10: "A score of [X] means competitors are actively dominating multiple
+         channels in your market and the gap is getting wider every month you wait. This
+         is not a future problem — it is a right now problem." -->
+    <div class="urgency-sentence">A score of 8 means competitors are actively dominating multiple channels in your market and the gap is getting wider every month you wait. This is not a future problem &mdash; it is a right now problem.</div>
+
+    <div style="margin-bottom:10px;">
+      <!-- FILL: URGENCY_MARKER — set left% = (score/10)*100. Example: score 7 = left:70% -->
+      <div class="urgency-bar"><div class="urgency-marker" style="left:80%;"></div></div>
+      <div class="urgency-scale">
+        <span>1–3 = Low Urgency</span>
+        <span>4–6 = Moderate</span>
+        <span>7–10 = High Urgency</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="competitors-label">Your Top Competitive Threats</div>
+
+  <!-- FILL: COMPETITOR_1 — real named competitor, specific threat reason
+       Example: "Davidoff Law — Modern, conversion-optimized website dominating PI
+       rankings in Queens. They are capturing the leads this firm cannot reach." -->
+  <div class="competitor-card">
+    <div class="competitor-name">Khan Injury Law (Kent, WA)</div>
+    <div class="competitor-threat">Established since 2007 with dedicated Kent-specific landing pages for every case type BGN handles &mdash; car accidents, motorcycle, slip and fall &mdash; and a review count in the hundreds compared to BGN's single digits.</div>
+  </div>
+
+  <!-- FILL: COMPETITOR_2 -->
+  <div class="competitor-card">
+    <div class="competitor-name">Brumley Law Firm (Kent, WA)</div>
+    <div class="competitor-threat">Markets itself as "Western Washington's #1 law firm" for personal injury, with a heavy geo-content footprint across car accident, motorcycle, and wrongful death pages targeting the same Kent market BGN serves.</div>
+  </div>
+
+  <!-- FILL: COMPETITOR_3 -->
+  <div class="competitor-card">
+    <div class="competitor-name">Herschensohn Law &amp; Floyd Personal Injury Law Group</div>
+    <div class="competitor-threat">Both maintain a dedicated landing page for every practice area and city combination BGN handles, with Floyd citing 35+ years in the Kent market specifically.</div>
+  </div>
+
+</div>
+<div class="back-to-top"><a href="#toc">↑ Back to Top</a></div>
