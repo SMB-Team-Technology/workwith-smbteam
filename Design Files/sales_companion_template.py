@@ -247,7 +247,11 @@ story.append(bd("TRANSFORMATION BULLET 1."))
 story.append(bd("TRANSFORMATION BULLET 2."))
 story.append(bd("TRANSFORMATION BULLET 3."))
 
-# FILL: "[Package Name]  |  $[bundled price]/mo bundled"
+# FILL: "[Package Name]  |  $[price]/mo bundled" — ONLY label it "bundled" if a second package
+# (coaching, LAW, etc.) is also being recommended in this proposal. If this is the ONLY package
+# recommended, use its stand-alone price and label it "$[price]/mo" with no "bundled" word — there
+# is nothing to bundle with. Delete the entire "Why This Coaching Package" section below if no
+# second package applies, and skip straight to "Why This Ad Spend."
 story.append(Paragraph("<b>MARKETING PACKAGE NAME  |  $PRICE/mo bundled</b>", S["subsection"]))
 # FILL: 3-4 gray bullets (use b()) — scoping rationale. One fact per bullet.
 story.append(b("SCOPING RATIONALE 1."))
@@ -267,7 +271,9 @@ story.append(bd("TRANSFORMATION BULLET 1."))
 story.append(bd("TRANSFORMATION BULLET 2."))
 story.append(bd("TRANSFORMATION BULLET 3."))
 
-# FILL: "[Package Name]  |  $[bundled price]/mo bundled"
+# FILL: "[Package Name]  |  $[price]/mo bundled" — ONLY label it "bundled" if a second package
+# (marketing, LAW, etc.) is also being recommended in this proposal. If coaching is the ONLY
+# package recommended, use its stand-alone price and label it "$[price]/mo" with no "bundled" word.
 story.append(Paragraph("<b>COACHING PACKAGE NAME  |  $PRICE/mo bundled</b>", S["subsection"]))
 # FILL: 3-4 gray bullets (use b()) — scoping rationale. One fact per bullet.
 story.append(b("SCOPING RATIONALE 1."))
@@ -331,20 +337,29 @@ story.append(Paragraph("RESPONSE WITH SPECIFIC DATA.", S["objection_a"]))
 story.append(thin_rule())
 
 # ── Investment At A Glance ──
-# FILL: All pricing from the scoping calculation
+# FILL: All pricing from the scoping calculation.
+# BUNDLING RULE: "bundled" pricing and the "Save $X/mo by bundling" line ONLY apply when 2+
+# packages are being recommended together. If only ONE package is recommended (delete the second
+# price_data pair below in that case), price it at its stand-alone rate — no strikethrough row,
+# no savings line, no "bundled" wording anywhere on this page.
 story.append(Paragraph("Investment At A Glance", S["section"]))
 
 price_data = [
-    # FILL: Marketing package name and bundled price
+    # FILL: Marketing package name and price (bundled if a second package is also recommended
+    # below, otherwise this package's stand-alone price)
     [Paragraph("<b>MARKETING PACKAGE NAME</b>", S["price_main"]),
      Paragraph("$X,XXX/mo", S["price_main"])],
-    # FILL: One-line description and stand-alone price with strikethrough
+    # FILL: One-line description and stand-alone price with strikethrough.
+    # DELETE this row (and its strikethrough price) if only 1 package is recommended total —
+    # a single package has no bundled/stand-alone comparison to show.
     [Paragraph("ONE LINE DESCRIPTION.", S["price_detail"]),
      Paragraph("<strike>$X,XXX</strike> stand alone", S["price_detail"])],
-    # FILL: Coaching package name and bundled price
+    # FILL: Coaching package name and price. DELETE this entire pair of rows if only the
+    # marketing package (or only this package) is being recommended.
     [Paragraph("<b>COACHING PACKAGE NAME</b>", S["price_main"]),
      Paragraph("$X,XXX/mo", S["price_main"])],
-    # FILL: One-line description and stand-alone price with strikethrough
+    # FILL: One-line description and stand-alone price with strikethrough. DELETE if this package
+    # is the only one recommended.
     [Paragraph("ONE LINE DESCRIPTION.", S["price_detail"]),
      Paragraph("<strike>$X,XXX</strike> stand alone", S["price_detail"])],
     # FILL: Recommended ad spend range (conservative to aggressive)
@@ -365,7 +380,9 @@ pt.setStyle(TableStyle([
     ("LINEBELOW", (0,5), (-1,5), 0.5, RULE_GRAY),
 ]))
 story.append(pt)
-# FILL: Total line — bundled total + ad spend range | savings | % of revenue at aggressive level
+# FILL: Total line — total investment + ad spend range | % of revenue at aggressive level.
+# Include "Save $X,XXX/mo by bundling" ONLY if 2+ packages are recommended together. If only 1
+# package is recommended, drop that clause entirely — do not print "Save $0/mo by bundling".
 story.append(Paragraph(
     "Total: $X,XXX/mo + $X,XXX–$XX,XXX ad spend  |  Save $X,XXX/mo by bundling  |  XX.X%–XX.X% of revenue (under 35% cap)",
     S["savings"]))

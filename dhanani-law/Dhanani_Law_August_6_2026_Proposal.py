@@ -111,20 +111,24 @@ PRIORITIES = [
 ]
 
 # ── Slide 3 ──────────────────────────────────────────────────────
-# Package cards — (label, bundled_price, retail_price, services_line, accent_color_hex)
+# Package cards — (label, price, retail_price, services_line, accent_color_hex)
 # Single-package recommendation: Elite Coach only in Phase 1.
 # Marketing is deferred to Phase 2 once coaching builds a team ready for lead volume.
+# Priced at Elite Coach's STAND-ALONE rate ($3,497/mo) — the discounted $2,600/mo bundled rate
+# only applies when Elite Coach is sold alongside another package (e.g. marketing). Since
+# marketing is deferred to Phase 2, this is a single-package deal with nothing to bundle, so
+# retail_price is blank (no strikethrough comparison) and there is no bundling savings line.
 PACKAGES = [
     (
         "ELITE COACH",
-        "$2,600", "$3,497/mo",
+        "$3,497", "",
         "Weekly group coaching · Hiring & delegation systems · Masterminds",
         "6D28D9",
     ),
 ]
 
-BUNDLE_TOTAL   = "$2,600 / mo"
-BUNDLE_SAVINGS = "Save $897/mo by bundling"
+BUNDLE_TOTAL   = "$3,497 / mo"
+BUNDLE_SAVINGS = ""
 
 AD_SPEND_NOTE = (
     "Phase 2 target once marketing launches: $3,000-$12,000/mo direct to Google/Meta"
@@ -416,16 +420,19 @@ def build_slide3(prs):
         add_text(slide, label, 0.52, y+0.10, 4.16, 0.22, 8, ac, bold=True)
         add_text(slide, price, 0.52, y+0.30, 2.00, 0.48, 32, NAVY, bold=True)
         add_text(slide, "/mo", 2.04, y+0.42, 0.46, 0.28, 11, SLATE)
-        add_text(slide, retail, 2.54, y+0.44, 1.00, 0.26, 11, STRIKETHROUGH)
-        # Strikethrough line over retail price
-        add_rect(slide, 2.54, y+0.55, 0.88, 0.01, fill=STRIKETHROUGH)
+        if retail:
+            add_text(slide, retail, 2.54, y+0.44, 1.00, 0.26, 11, STRIKETHROUGH)
+            # Strikethrough line over retail price
+            add_rect(slide, 2.54, y+0.55, 0.88, 0.01, fill=STRIKETHROUGH)
         add_text(slide, services, 0.52, y+0.84, 4.16, 0.22, 8, SLATE)
 
-    # Bundle total
+    # Total investment (labeled "BUNDLE TOTAL" only when 2+ packages are recommended together)
     add_rect(slide, 0.22, 3.56, 4.52, 0.72, fill=NAVY)
-    add_text(slide, "BUNDLE TOTAL", 0.42, 3.60, 1.80, 0.26, 8, BUNDLE_SUB, bold=True)
+    total_label = "BUNDLE TOTAL" if len(PACKAGES) > 1 else "TOTAL INVESTMENT"
+    add_text(slide, total_label, 0.42, 3.60, 1.80, 0.26, 8, BUNDLE_SUB, bold=True)
     add_text(slide, BUNDLE_TOTAL, 0.42, 3.82, 2.40, 0.38, 22, GOLD, bold=True)
-    add_text(slide, BUNDLE_SAVINGS, 2.92, 3.82, 1.90, 0.38, 8, BUNDLE_SUB)
+    if BUNDLE_SAVINGS:
+        add_text(slide, BUNDLE_SAVINGS, 2.92, 3.82, 1.90, 0.38, 8, BUNDLE_SUB)
 
     # Ad spend note
     add_rect(slide, 0.22, 4.34, 4.52, 0.44, fill=rgb("EEF2F8"))

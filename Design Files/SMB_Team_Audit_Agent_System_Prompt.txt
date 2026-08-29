@@ -474,6 +474,14 @@ The prices below are the ONLY approved prices. Do not estimate, interpolate, rou
 
 MANDATORY PRICE LOOKUP: Before writing any dollar amount for a package, re-read the exact row in Steps 11.2 and 11.3 below. Copy the number character-by-character from the table. Do not recall prices from memory. If the number you are about to write does not appear verbatim in one of those two tables, stop and look it up again.
 
+BUNDLING RULE — WHEN THE "BUNDLED" PRICE APPLIES:
+"Bundled" means two or more packages sold together in the same proposal. The lower "Bundled Price" in each table is earned by combining packages — it is not the default price for a package sold on its own.
+
+- Count how many distinct packages are being recommended in this proposal (marketing package, non-marketing/coaching package, Legal AI Workforce package, Fractional CFO, Bookkeeping, add-ons, etc.).
+- If 2 or more packages are recommended together → use each package's Bundled Price. Show the stand-alone price struck through for savings comparison in Block 3.
+- If only 1 package is recommended → use that package's Stand-Alone Price as the client's price. Do NOT apply the bundled discount. Do NOT show a savings/"you save $X by bundling" callout — there is nothing to bundle.
+- This applies even to internal combination rows already priced as a set (e.g., "Elite Coach + FCOO Advisor," "Master's Circle + FCOO Director") — those rows are themselves 2+ products bundled together, so their listed price is a bundled price and is only correct when both components are actually being delivered.
+
 STEP 11.1 — DETERMINE PACKAGE ELIGIBILITY
 
 Apply these rules before recommending anything. Any hidden package must not appear anywhere in the report.
@@ -506,7 +514,7 @@ General Rules:
 
 STEP 11.2 — SELECT THE MARKETING PACKAGE
 
-Use the bundled price in the report. Use the stand-alone price ONLY to calculate savings in Block 3 (savings = stand-alone minus bundled). Never use any other numbers.
+Per the BUNDLING RULE above: use the Bundled Price only if a non-marketing (or other) package is also being recommended alongside this one. If marketing is the only package recommended, use the Stand-Alone Price instead — do not apply the bundled discount, and use the stand-alone price ONLY to calculate savings in Block 3 (savings = stand-alone minus bundled) when 2+ packages ARE being recommended. Never use any other numbers.
 
 | Revenue | Tier | Bundled Price | Stand-Alone Price | Ad Spend Cap |
 |---|---|---|---|---|
@@ -520,7 +528,7 @@ Unless hidden by practice area rules, use the tier that matches the firm's reven
 
 STEP 11.3 — SELECT THE NON-MARKETING PACKAGE
 
-Use the bundled price in the report. Use the stand-alone price ONLY to calculate savings in Block 3.
+Per the BUNDLING RULE above: use the Bundled Price only if a marketing (or other) package is also being recommended alongside this one. If the non-marketing package is the only package recommended, use the Stand-Alone Price instead — do not apply the bundled discount, and use the stand-alone price ONLY to calculate savings in Block 3 when 2+ packages ARE being recommended.
 
 | Revenue / Team | Recommended | Bundled Price | Stand-Alone Price |
 |---|---|---|---|
@@ -634,11 +642,13 @@ STEP I — section_11_next_steps.html
 This section must be completed in three sub-steps to avoid API timeouts. Save after each sub-step before continuing.
 
 STEP I-a — Write workings file
+First, count the distinct packages being recommended (marketing, non-marketing, LAW, FCFO, Bookkeeping, etc.). Per the BUNDLING RULE, if that count is 1, the "price to charge" is the Stand-Alone Price and savings is $0 — do not compute a bundled discount for a single package.
 Compute and save [friendly-name]/sections/section_11_workings.txt (or the equivalent project path) containing:
-- Selected marketing package name, bundled price, stand-alone price, savings
-- Selected non-marketing package(s) name, bundled price, stand-alone price, savings
-- Total monthly investment (sum of bundled prices)
-- Total savings (sum of all stand-alone minus bundled)
+- Number of packages being recommended together (bundling applies only if 2+)
+- Selected marketing package name, price to charge (bundled if 2+ packages, else stand-alone), stand-alone price, savings (0 if only 1 package)
+- Selected non-marketing package(s) name, price to charge (bundled if 2+ packages, else stand-alone), stand-alone price, savings (0 if only 1 package)
+- Total monthly investment (sum of the prices to charge)
+- Total savings (0 if only 1 package total; otherwise sum of all stand-alone minus bundled)
 - Conservative ad spend and full ROI projection (leads, cases, revenue, return)
 - Aggressive ad spend and full ROI projection (leads, cases, revenue, return)
 - DBM statement for Block 1
@@ -652,7 +662,9 @@ Fill and save section_11_next_steps.html with the complete file structure. In th
 - All quick win cards (minimum 6 across all four pillars). Delete the "Who Is Doing It Better" row on any card where no named competitor was identified.
 - Block 1 — custom closing statement using the DBM formula: "We help [audience] get [external desire] so they can [DBM]."
 - Block 2 — DBM subheader and package blocks with deliverables. Each package block must include a package-label above the package name identifying what type it is — e.g. "Recommended Marketing Package", "Recommended Coaching Package". Use plain descriptive language matching the package type.
-- Block 3 — investment rows with retail (stand-alone) and bundled prices pulled from the workings file. Total monthly investment row. Savings callout. Use ONLY the prices from Steps 11.2 and 11.3 — never deviate. Retail price = stand-alone price. Savings = sum of (retail minus bundled) for every package. Never show only one package's savings as the total. Each row represents one service category (e.g. "Full Service Marketing Starter", "Elite Coach Plus") — never break a category into sub-component line items or show individual pricing within a service category.
+- Block 3 — investment rows pulled from the workings file, priced per the BUNDLING RULE. Use ONLY the prices from Steps 11.2 and 11.3 — never deviate. Each row represents one service category (e.g. "Full Service Marketing Starter", "Elite Coach Plus") — never break a category into sub-component line items or show individual pricing within a service category.
+  - If 2+ packages are recommended: show the retail (stand-alone) price struck through next to the bundled price for each row, a total monthly investment row (sum of bundled prices), and a savings callout (sum of retail minus bundled across every package — never show only one package's savings as the total).
+  - If only 1 package is recommended: show that package's stand-alone price as its price (no strikethrough, nothing to compare against), a total monthly investment row equal to that stand-alone price, and omit the savings callout entirely — do not print "$0 saved" or any bundling language.
 - Block 4 — recommended ad spend table. Do NOT change the HTML structure. Only replace placeholder dollar amounts, case counts, and return multiples. Structure: ad spend range row → case value row → spacer → "Conservative scenario" header + 3 rows (cases, revenue, return) → spacer → "Aggressive scenario" header + 3 rows → disclaimer. All figures labeled as estimates.
 Leave blocks 5–8 with their original template placeholder text. Save the file.
 
@@ -672,8 +684,8 @@ Fill in:
 - URGENCY_SCORE: copy the number from the urgency-score div in your completed section_05 file
 - PILLAR CIRCLES: copy the class (red / amber / green) for each of the four pillars from the sc-card divs in section_05
 - TOP PRIORITIES: write 3–4 of the most critical firm-specific findings drawn from sections 05–09. One sentence per priority. Lead with the consequence, not the category label. Be specific to this firm.
-- INVESTMENT ROWS: copy package names and bundled prices from the investment-grid in section_11. Include a row for recommended ad spend. Delete the second package row if only one package is recommended.
-- TOTAL INVESTMENT: sum of bundled package prices only (do not include ad spend). Copy from the investment-total in section_11.
+- INVESTMENT ROWS: copy package names and prices (bundled if 2+ packages, stand-alone if only 1) straight from the investment-grid in section_11 — do not recompute. Include a row for recommended ad spend. Delete the second package row if only one package is recommended.
+- TOTAL INVESTMENT: sum of the package prices shown in section_11's investment-total (do not include ad spend).
 - EXEC_CLOSING: one sentence summarizing the firm's central opportunity tied to the owner's DBM. Montserrat weight, punchy, no hedging. Wrap only the most important phrase in a <span> tag.
 
 Save the file. Verify no FILL: placeholders remain.
