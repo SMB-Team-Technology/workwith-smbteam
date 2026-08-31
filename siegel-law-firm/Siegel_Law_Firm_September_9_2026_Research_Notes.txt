@@ -1,0 +1,400 @@
+SMB TEAM — LAW FIRM GROWTH AUDIT — RESEARCH NOTES
+Firm: Siegel Law Firm (legal entity: The Siegel Law Firm, P.A.)
+Friendly Name: siegel-law-firm
+URL provided: https://www.siegellawfirmpa.com
+Sales Rep: Dan Bryant
+Date: September 9, 2026
+Contact: Jason Siegel (jsiegel@siegellawfirmpa.com), Vice President / Attorney
+HubSpot Contact ID: 16894201
+
+====================================================================
+RESEARCH ACCESS NOTE — READ FIRST
+====================================================================
+The prospect's on-file URL (https://www.siegellawfirmpa.com) refused connections
+on every attempt during this research session (tested https and http, with and
+without "www", 4 attempts — all returned connection-refused at the resolved IP).
+This firm is NOT fictional — it is a real, licensed Florida law firm confirmed
+via BBB, FindLaw, Avvo, Justia search index, and LawInfo. The firm also
+operates a second live domain, servingyourlegalneeds.com, which is confirmed
+live in search index results but returned HTTP 403 (bot-protection block) on
+every direct fetch attempt during this session, so it also could not be
+browsed live.
+
+Because neither domain could be rendered live, Step 1 (Website Research) below
+is reconstructed from cached search-engine index snippets and third-party
+directory listings rather than a live browse. This is flagged explicitly per
+firm data point below. This access gap is itself a notable audit finding —
+see "Website Research" and the Growth Health section — and should be
+mentioned to the seller before the call: it's worth asking Jason directly
+whether siegellawfirmpa.com is still the firm's active site, since it appears
+to be down or decommissioned in favor of servingyourlegalneeds.com.
+
+PageSpeed Insights could not be run: the public PageSpeed API returned
+HTTP 429 (rate-limited) on three separate attempts during this session and
+the live tool could not be reached as a fallback since the underlying site
+itself refuses connections. No PageSpeed score is reported below — do not
+present a fabricated number as real in the client-facing report. Flag this
+for manual re-run by a team member with API access before the proposal call.
+
+====================================================================
+STEP 1 — WEBSITE RESEARCH (reconstructed from cached index, not live browse)
+====================================================================
+- Website URL confirmed live: NO — siegellawfirmpa.com refused connection on
+  4 separate attempts (https/http, with/without www). Google's search index
+  still has the domain indexed (site:siegellawfirmpa.com returns results),
+  meaning it was live at some more recent crawl but is not reachable now.
+- Secondary/current domain in use: servingyourlegalneeds.com — confirmed
+  indexed and referenced as the firm's site on FindLaw's attorney profile for
+  Jason Siegel, but returned HTTP 403 (bot block) on every direct fetch
+  attempt, so page-level content could not be observed live either.
+- Last redesign date or estimated age: not observed (could not browse live).
+- Mobile responsive: not observed (could not browse live).
+- Homepage headline: not observed (could not browse live).
+- CTA above fold: not observed (could not browse live).
+- Contact form location: not observed (could not browse live).
+- Live chat present: not observed (could not browse live).
+- Attorney bio present: yes — indexed subpages exist for individual attorneys
+  (e.g. servingyourlegalneeds.com/attorney/siegel-jason/), confirming bio
+  pages exist, though live rendering could not be confirmed.
+- Video present: not observed (could not browse live).
+- Blog present: not observed (could not browse live).
+- PageSpeed mobile score: COULD NOT BE OBTAINED — PageSpeed API returned
+  HTTP 429 (rate-limited) on 3 attempts; underlying site also unreachable.
+  Flag for manual re-check.
+- PageSpeed desktop score: COULD NOT BE OBTAINED — same reason as above.
+
+Practice area pages confirmed to exist via search index (titles only):
+- "Estate Planning Lawyer Jupiter FL | Wills Trusts Port St. Lucie"
+- "Probate and Estate Administration"
+- "Jupiter Law Office" (servingyourlegalneeds.com/jupiter-law-office/)
+- LawInfo listing states the firm offers a free initial consultation and
+  Spanish-language services.
+
+====================================================================
+STEP 2 — GOOGLE BUSINESS PROFILE
+====================================================================
+- GBP found: presumed yes (firm is an established, licensed 51-year-old
+  practice per BBB), but could not be pulled up directly — Google's search
+  results page could not be scraped live from this research environment
+  (returned a generic Google error page with no listing data on direct fetch).
+- Star rating: 5.0 [UNCONFIRMED — sourced from Birdeye, not independently
+  confirmed via Google]
+- Total review count: 20 [UNCONFIRMED — sourced from Birdeye listing titled
+  "The Siegel Law Firm, P.A. - 20 Reviews - Legal in Port St. Lucie, FL"; not
+  independently confirmed via Google]
+- Most recent review date: not observed.
+- Primary category: "Probate Law Firm" per LawInfo listing category; likely
+  Estate Planning Attorney or Probate Attorney on GBP itself — not
+  independently confirmed via Google.
+- Photos active: not observed.
+- Posts active: not observed.
+
+NOTE — NAME COLLISION RISK: There are at least two other unrelated "Siegel"
+law firms in the South Florida market that could cause a prospect/consumer to
+mix up reviews and search results with the wrong firm:
+  1. "The Siegel Law Group, P.A." — led by attorney Barry D. Siegel, HQ in
+     Boca Raton, with additional offices in Naples, West Palm Beach, and
+     Fort Lauderdale. No relation to Jason Siegel's firm.
+  2. "Law Offices of Daniel A. Seigel, P.A." — different spelling ("Seigel"),
+     probate/trust litigation firm in Boca Raton/West Palm Beach/Fort
+     Lauderdale. No relation.
+This is flagged here because it is directly relevant to STEP 4 competitor
+data below — care was taken not to attribute either unrelated firm's review
+counts to the prospect.
+
+====================================================================
+STEP 3 — LOCAL 3-PACK SEARCHES
+====================================================================
+Live local-pack rendering could not be captured directly (Google search
+results pages returned no scrapeable map-pack data in this environment).
+Practice-area presence below is inferred from organic search-index ranking
+data and directory cross-references rather than a literal 3-pack screenshot,
+and is flagged as such.
+
+Practice Area 1: Estate Planning
+- Search 1 "estate planning attorney Jupiter FL": firm appears — indexed,
+  organic ranking not confirmed as top-3/map-pack. Competitors ranking
+  nearby in search index: Doane & Doane P.A. [UNCONFIRMED review count, see
+  Step 4], Welch Law PLLC [UNCONFIRMED review count, see Step 4], Elder Law
+  P.A. (no review data captured).
+- Search 2 "wills and trusts lawyer Jupiter FL": firm's
+  servingyourlegalneeds.com practice-area page indexed for this term;
+  local-pack composition not observed live.
+- Search 3 "probate attorney Jupiter FL": The Siegel Law Group, P.A.
+  (Barry Siegel — unrelated firm, see name-collision note above) appeared as
+  a sponsored/ad result in search-index data for this exact term, alongside
+  organic results for Craig F. Snyder P.A. [UNCONFIRMED review count, see
+  Step 4].
+
+Practice Area 2: Probate & Estate Administration
+- Search 1 "probate lawyer Jupiter FL": firm's own practice-area page
+  ("Probate and Estate Administration") is indexed. Local-pack composition
+  not observed live.
+- Search 2 "probate litigation attorney Jupiter": Siegel Law Group (Barry
+  Siegel, unrelated) has a dedicated geo-landing page targeting this exact
+  term ("Probate Litigation Attorney in Jupiter"), indicating active SEO
+  investment in the prospect's home market by a same-surname competitor.
+- Search 3 "estate administration lawyer Jupiter FL": no additional
+  competitors observed beyond those already listed.
+
+====================================================================
+STEP 4 — COMPETITOR REVIEW COUNTS
+====================================================================
+All numbers below are sourced from third-party aggregators, not a direct
+Google Maps pull (Google's results could not be scraped live in this
+environment) — every figure carries the UNCONFIRMED tag per the
+REVIEW-DATA VERIFICATION RULE. None of these counts exceed the prospect's
+own 20-review Birdeye figure by a margin that would justify calling any one
+of them "dominant" on reviews alone; Doane & Doane's figures are the
+exception and are meaningfully higher.
+
+- Competitor 1: Doane & Doane, P.A. (Palm Beach Gardens/North Palm Beach) —
+  reviews: 66 [UNCONFIRMED — sourced from Lawyers.com, not independently
+  confirmed via Google] — rating: 5.0 [UNCONFIRMED — sourced from
+  Lawyers.com]. A second aggregator listed 4.9 rating / 53 reviews
+  [UNCONFIRMED — sourced from a secondary aggregator site].
+- Competitor 2: Welch Law, PLLC (Jupiter, FL — 641 University Blvd) —
+  reviews: 11 [UNCONFIRMED — sourced from Birdeye] — rating: 5.0
+  [UNCONFIRMED — sourced from Birdeye]. Yelp separately listed 10 reviews
+  [UNCONFIRMED — sourced from Yelp].
+- Competitor 3: Craig F. Snyder, P.A. (Jupiter, FL — 4495 Military Trail) —
+  reviews: 1 [UNCONFIRMED — sourced from Birdeye] — rating: 2.0
+  [UNCONFIRMED — sourced from Birdeye]. Minimal online review presence
+  overall; not a review-volume threat.
+- Named-but-unrelated for context only: The Siegel Law Group, P.A. (Barry
+  Siegel, Boca Raton) — reviews: 87 [UNCONFIRMED — sourced from Birdeye] —
+  rating: 4.8 [UNCONFIRMED — sourced from Birdeye]. Not a same-firm entity;
+  listed here only because its geo-targeted Jupiter content and paid search
+  presence make it a real visibility threat in the prospect's market despite
+  being headquartered outside it.
+
+====================================================================
+STEP 5 — DIRECTORY LISTINGS
+====================================================================
+Checked: Avvo, Justia, FindLaw, Yelp, BBB, LawInfo (6 directories/profiles
+checked total — exceeds the required minimum of 5).
+
+- Avvo: Jason Siegel profile live and indexed. Avvo Rating 7.0 ("Very Good").
+  Practice areas: Estate Planning (50%, ~1,000 cases), Probate (50%, ~500
+  cases). Listed as "Not yet reviewed" (0 client reviews on Avvo itself).
+- Justia: Jupiter, FL estate-planning directory page exists and is indexed;
+  direct fetch of the listing returned HTTP 403 (bot block), so it could not
+  be confirmed whether the firm has a claimed profile there.
+- FindLaw: Jason Siegel profile live. Practice areas listed: Wills, Trusts,
+  and Advanced Directives; Probate and Estate Administration; Real Estate.
+  Website field lists servingyourlegalneeds.com (not siegellawfirmpa.com).
+  Phone numbers listed: 772-292-0780 and 561-680-4959.
+- Yelp: Listing exists ("The Siegel Law Firm, P.A. - Jupiter, FL") but
+  returned HTTP 403 on direct fetch; rating/review data not confirmed.
+- BBB: Firm profile live. A+ rating, not BBB-accredited. Address: 801
+  Maplewood Dr STE 3, Jupiter, FL 33458-8800. Phone: (561) 743-4001.
+  Leadership listed as Stephen Siegel (President/Director) and Jason Siegel,
+  Esq. (Vice President). Firm established January 30, 1975; incorporated
+  September 13, 1982 (51 years in operation).
+- LawInfo: Listing live. Phone: 772-292-0780. Practice areas: Probate,
+  estate planning, real estate law, trusts, wills. "Average Experience: 35
+  years." Free initial consultation; Spanish-language services offered.
+
+NAP INCONSISTENCY FLAGGED: Three different phone numbers appear across
+directories for the same firm — (561) 743-4001 (BBB), 772-292-0780 (LawInfo,
+FindLaw), and 561-680-4959 (FindLaw, listed as a second number). This kind
+of NAP (Name/Address/Phone) fragmentation across directories and the two
+different domains (siegellawfirmpa.com vs. servingyourlegalneeds.com) can
+directly hurt local SEO ranking consistency and is worth raising as a
+concrete, fixable finding.
+
+Geo-targeting landing pages for surrounding cities: The prospect's own
+servingyourlegalneeds.com has at least one confirmed city-specific page
+("Jupiter Law Office") and references Port St. Lucie directly in its title
+tags, indicating some geo-targeting exists. Full scope of city pages could
+not be crawled live due to the 403 block.
+
+====================================================================
+STEP 6 — GOOGLE ADS
+====================================================================
+Practice Area 1: Estate Planning
+- Firm ads observed: not observed — search-index data showed no sponsored
+  listing for The Siegel Law Firm / Jason Siegel on estate-planning-related
+  queries for Jupiter, FL. The firm does not appear to be running ads for
+  this search based on available data; this may reflect being outbid or
+  simply not yet running paid search.
+- Named local competitors running ads: The Siegel Law Group, P.A. (Barry
+  Siegel — unrelated firm) appeared as a sponsored listing for "estate
+  planning attorney Jupiter FL" style queries in search-index data. Peter J.
+  Snyder, P.A. also appeared as a sponsored listing for estate planning
+  services in the Boca Raton/Jupiter corridor.
+
+Practice Area 2: Probate & Estate Administration
+- Firm ads observed: not observed — same basis as above.
+- Named local competitors running ads: The Siegel Law Group, P.A. maintains
+  multiple geo-targeted landing pages built around Jupiter-specific probate
+  keywords ("Probate Attorney in Jupiter," "Probate Litigation Attorney in
+  Jupiter," "Probate Court Attorney in Jupiter Farms"), indicating a
+  sustained paid-search and SEO push into the prospect's home market.
+
+====================================================================
+STEP 7 — LOCAL SERVICE ADS
+====================================================================
+- Firm appears in LSA: not observed — could not confirm live.
+- Google Screened: not observed — could not confirm live.
+- LSA review count: not applicable — no LSA presence observed.
+- Named local competitors in LSA: not observed — no competitor LSA
+  placements could be confirmed live in this research environment.
+
+====================================================================
+STEP 8 — META ADS
+====================================================================
+Attempted to search the Meta Ad Library for "Siegel Law Firm"; the request
+failed with a connection error (socket hang up) and could not be completed
+in this research environment.
+- Firm has active ads: not observed — Meta Ad Library could not be reached.
+- Named local competitor 1: Welch Law, PLLC — active ads: not observed
+  (could not reach Meta Ad Library).
+- Named local competitor 2: Doane & Doane, P.A. — active ads: not observed
+  (could not reach Meta Ad Library).
+
+====================================================================
+STEP 9 — TRANSCRIPT EXTRACTION
+====================================================================
+IMPORTANT — CALL FOCUS FLAG: This transcript is NOT a completed discovery
+call. Per the Fathom summary, the call was disrupted by persistent Zoom
+connectivity/access issues for Jason Siegel, and the meeting was carried on
+as a limited three-way phone call. Almost no firm-profile, marketing, or
+financial data was actually captured — the source notes mark nearly every
+field "N/A" and explicitly state a focused discovery call still needs to be
+rescheduled to cover firm profile, marketing, and intake metrics. Treat all
+fields below as unavailable-by-transcript, not as confirmed zeros or
+absences of the underlying fact.
+
+- Practice areas confirmed: not stated in transcript. (Independently
+  confirmed via directory research above: Estate Planning, Probate & Estate
+  Administration, Wills, Trusts, Real Estate.)
+- Current lead sources: not stated in transcript.
+- Ads ever run: not stated in transcript.
+- Team size: not fully stated in transcript. Transcript confirms only:
+  Jason Siegel (principal/attorney) and Jennifer (Associate Attorney) as
+  call attendees. (Directory research shows Stephen Siegel as President/
+  Director of the firm — not mentioned on this call.)
+- Annual revenue (gross / case value): not stated — N/A in transcript.
+- Annual revenue (net / take-home / collected): not stated — N/A in
+  transcript.
+- Fee structure: not stated.
+- Revenue goal: not stated, use 2x current revenue per default rule.
+- Average case value: not stated — practice area default should be used at
+  the modeling stage (estate planning / probate average case value default).
+- Current close rate: not stated — default to 15%.
+- Number of locations: not stated on call; independently confirmed via
+  research the firm operates from at least a Jupiter, FL office (801
+  Maplewood Dr Ste 3) and references a Port St. Lucie service area on its
+  secondary domain. Use "at least 1, likely 2" rather than a hard default.
+- Spanish campaign needed: not stated in transcript. (LawInfo listing
+  independently notes Spanish-language services are offered by the firm —
+  worth confirming directly with Jason.)
+- Dominant buying motive: not stated — the call did not reach substantive
+  discovery content. No inference can be responsibly drawn from the
+  available transcript; this must be captured on the rescheduled call before
+  DBM-driven messaging is finalized.
+- Any profitability claims made by prospect: none stated.
+- Any claims about case types or practice areas: none stated by the
+  prospect on this call.
+- Stated call focus / product interest: The call was explicitly a
+  reconnect around "AI Overview" (per the transcript's stated trigger for
+  the call), not a standard marketing/intake growth discovery — and even
+  that limited agenda was not meaningfully covered due to the connectivity
+  issues. FLAGGING EXPLICITLY: this was not a completed marketing/growth
+  discovery call. A full, focused discovery covering firm profile,
+  marketing, and intake metrics still needs to happen before the growth
+  audit's recommendations can be considered fully grounded in prospect input.
+- Existing marketing/SEO/ad vendor engagements: none stated.
+- Budget constraints stated: none stated.
+
+Additional transcript notes: A separate, unrelated phone interaction
+referenced in Dan's notes mentioned "neglect/mismanagement" and "breach of
+contract" audits in a different, unrelated context — not connected to
+Jason Siegel's discovery call and not used anywhere in this research.
+Jennifer's direct phone line was only partially captured audibly per the
+transcript and should be verified before any future outreach to her.
+
+====================================================================
+STEP 10 — COMPETITIVE URGENCY SCORE
+====================================================================
+Score: 6/10
+
+Reasoning: The prospect firm itself shows a modest but real review base (20
+reviews, UNCONFIRMED figure) and an established 51-year operating history,
+but has visible structural gaps — an unreachable primary domain, NAP
+inconsistency across directories, and no confirmed paid-search or LSA
+presence. Meanwhile, at least one aggressive, well-resourced, same-surname
+competitor is actively investing in SEO and paid search specifically
+targeting the prospect's home market, creating both a visibility gap and a
+brand-confusion risk.
+
+Named specific local competitor threats:
+1. The Siegel Law Group, P.A. (Barry Siegel, Boca Raton HQ) — running
+   multiple geo-targeted Jupiter landing pages and appearing in sponsored
+   search results for estate-planning/probate terms in the prospect's home
+   market, while sharing a nearly identical name that risks review and
+   search-intent confusion.
+2. Doane & Doane, P.A. — meaningfully higher review volume (66 reviews
+   UNCONFIRMED vs. the prospect's 20 UNCONFIRMED) in the same estate
+   planning/probate space, suggesting stronger accumulated online
+   reputation signal.
+3. Welch Law, PLLC — smaller but well-regarded Jupiter-based competitor
+   (5.0 rating, 11 reviews UNCONFIRMED) actively building local presence in
+   the same practice area.
+
+Dynamic sentence (score 4–6 band): "A score of 6 means competitors have
+meaningful advantages in one or more areas and are pulling ahead. You are
+not invisible yet — but the window to close the gap is narrowing. Every
+month without action is a month they extend their lead."
+
+====================================================================
+PASS 2 — VERIFICATION CHECKLIST
+====================================================================
+[x] Every number in the notes matches actually observed data, or is
+    explicitly marked not observed / could not be verified — no invented
+    numbers presented as fact.
+[x] Every competitor review count has been verified against the prospect's
+    own figure — no competitor is called "dominating" on review count alone
+    if the comparison could not be substantiated (Doane & Doane's 66 vs. the
+    prospect's 20 is the only case exceeding the prospect's figure by a wide
+    margin, and both are UNCONFIRMED-tagged, not treated as certain fact).
+[x] Every review count and star rating (firm and competitors) carries a
+    verification-method tag — all are UNCONFIRMED here since a live Google
+    listing could not be reached in this research environment.
+[x] Annual revenue split into gross/net attempted — not applicable, neither
+    figure was stated in the transcript.
+[x] Every ad section covers all practice areas listed (Estate Planning;
+    Probate & Estate Administration).
+[x] No section states with certainty that the firm is "not running ads" —
+    phrased as "not observed" / "does not appear to be running ads."
+[x] No profitability or business claim appears unless it came from the
+    transcript — none were available, so none are stated.
+[x] No competitor reference uses generic labels — only specific named firms
+    (Doane & Doane, Welch Law, Craig F. Snyder, The Siegel Law Group) used.
+[x] PageSpeed scores: NOT obtained — flagged explicitly above rather than
+    estimated, per the "must be a real number, never an estimate" rule.
+[x] DBM: not available from transcript — flagged explicitly, not guessed.
+[x] Revenue goal: flagged as not stated, defaulted per rule.
+[x] Close rate: flagged as not stated, defaulted to 15% per rule.
+[x] Average case value: flagged as not stated, practice-area default noted.
+[x] Stated call focus / product interest: recorded and flagged explicitly —
+    this was an incomplete "AI Overview" reconnect call, not a completed
+    marketing/growth discovery.
+[x] Existing marketing/SEO/ad vendor engagements: recorded as "none stated."
+[x] Budget constraints stated: recorded as "none stated."
+
+====================================================================
+RESEARCH-QUALITY FLAG FOR /audit-write AND THE SALES TEAM
+====================================================================
+This is a thin-data case on two fronts at once: (1) the discovery call did
+not happen in substance due to Jason Siegel's connectivity issues, and (2)
+the firm's on-file website could not be reached live from this research
+environment across two different domains. Nearly all firm-specific
+financial, operational, and DBM inputs are placeholder defaults rather than
+confirmed prospect statements. Recommend Dan Bryant either reschedule a full
+discovery call before the September 9, 2026 proposal call, or treat the
+proposal call itself as the first real discovery opportunity and adjust the
+agenda accordingly. The name-collision finding (Siegel Law Group / Barry
+Siegel) and the dead-primary-domain finding are both strong, concrete,
+non-generic talking points that hold up even without deeper financial data.
