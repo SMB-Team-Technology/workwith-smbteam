@@ -1,0 +1,439 @@
+AII LAW PC — GROWTH AUDIT RESEARCH NOTES
+Prepared for: Reid Breitman (Managing Partner)
+Sales Rep: Jacob Meissner
+Proposal Call Date: September 4, 2026
+URL: https://aiilaw.com
+
+METHODOLOGY NOTE: This research was conducted using live web fetch and web search
+tooling only — no interactive/JS-rendering browser tool was available in this
+session. Google Maps, the Google Business Profile knowledge panel, Facebook/Meta
+Ads Library, live Google SERP ad units, and the PageSpeed Insights web UI are all
+JavaScript-rendered and could not be loaded directly (blocked/403, empty render,
+or persistent 429 rate-limiting on the PageSpeed API across repeated attempts in
+this session). Wherever a live Google-direct read was not possible, data is
+sourced from indexed search results and third-party aggregators and is explicitly
+tagged UNCONFIRMED below. Where no data could be located at all (via aggregator or
+otherwise), that is stated plainly as "not found" — it is NOT treated as
+confirmation of zero/absence. No number in this file should be treated as fact
+unless tagged [confirmed via Google].
+
+TRANSCRIPT NOTE: No discovery call has occurred yet for this account. The trigger
+record states: "No Fathom transcript available — proposal call scheduled for
+2026-09-04." Every field in STEP 9 that is normally sourced from a transcript is
+therefore genuinely unavailable, not merely unstated — this is flagged explicitly
+per field below rather than defaulted or inferred as if a call had happened.
+
+Confirmed as a real, operating law firm (not a fictional/test entry): live
+website, named attorneys with verifiable bar licenses and bios, physical San
+Diego office address.
+
+================================================================
+STEP 1 — WEBSITE RESEARCH
+================================================================
+- Website URL confirmed live: yes (https://aiilaw.com — trigger URL
+  "http://AiiLaw.com" redirects/resolves to this canonical HTTPS address)
+- Last redesign date or estimated age: not explicitly published; the homepage
+  references a "new Aii Law PC logo," suggesting a relatively recent rebrand
+  or refresh, but no dated redesign announcement was found. Treat as "recent
+  rebrand, exact date unknown."
+- Mobile responsive: not directly observed — the fetch tool does not render
+  viewport/CSS; no indication of a broken or legacy non-responsive template
+  was found either.
+- Homepage headline: "Immigration Lawyers," with a subheading describing the
+  firm's 30+ year history: "For more than 30 years, Aii Law PC's team has been
+  helping people receive their green cards through their participation in
+  job-creating American business ventures..."
+- CTA above fold: yes — a "Get in Touch" button/link appears prominently below
+  the intro text, linking to the Contact Us page.
+- Contact form location: buried — no contact form appears on the homepage
+  itself; users must click through to the separate Contact Us page
+  (/contact-us/), where a form titled "Get in touch with us" appears above the
+  fold on that page (fields: Name, Email, Phone [optional], Category dropdown
+  [Worker/Employer/Investor/Other], Message, math-equation CAPTCHA).
+- Live chat present: no.
+- Attorney bio present: not on the homepage, but individual bio pages exist
+  and are linked from the site (e.g., /reid-breitman/, /robert-lubin/,
+  /mubarak-malik/) and a consolidated /team/ page lists all attorneys and
+  staff.
+- Video present: not observed.
+- Blog present: no — /blog/ and /news/ both return 404. No blog or news
+  section was found anywhere on the site. This is a real content-SEO gap for
+  a firm whose core service (EB-5, EB-3, employer-sponsored green cards)
+  benefits heavily from educational search content.
+- Practice-area structure: three primary verticals — Workers, Employers,
+  Investors — each with a dedicated page (/workers/, /employers/,
+  /investors/):
+    - Workers: EB-3 "Other Worker" green card sponsorship for unskilled labor
+      (PERM labor certification → I-140 petition → consular processing/green
+      card), targeted at applicants from backlogged countries (China, India,
+      Philippines, Vietnam, Mexico, Central America).
+    - Employers: workforce-solution service — firm recruits and sponsors
+      overseas workers for domestic employers (20 to 20,000+ employees),
+      fee contingent on successful placement, no upfront cost to employer.
+    - Investors: EB-5 investor visa — $800,000 minimum investment in a
+      Targeted Employment Area (TEA) or $1,050,000 standard, 10 jobs created
+      per investor, I-526 → I-829 → citizenship pathway, fixed-fee model with
+      "full refund of legal fees if the petition is not granted."
+- Geo-targeting landing pages: none found — the firm's model is not
+  locally-bound in the traditional sense (workers/investors are sourced
+  nationally/internationally, employers are nationwide per the Employers
+  page), so city-specific landing pages would not be the expected SEO pattern
+  here the way they would for a consumer-facing local practice. Flagged as a
+  structural note, not treated as a gap in the same way it would be for a PI
+  or family-law firm.
+- PageSpeed mobile score: UNAVAILABLE — the PageSpeedInsights API
+  (googleapis.com/pagespeedonline) returned HTTP 429 (rate-limited) on every
+  attempt made in this session (3 separate retries, both mobile and desktop
+  strategies); the pagespeed.web.dev web UI is client-rendered JS and could
+  not be scraped statically. Do not report or cite a PageSpeed number for this
+  firm — none was obtained. Flag for a follow-up live run before
+  /audit-write if a hard number is required.
+- PageSpeed desktop score: UNAVAILABLE — same reason as above.
+
+================================================================
+STEP 2 — GOOGLE BUSINESS PROFILE
+================================================================
+- GBP found: could not confirm. No live Google Maps panel could be rendered
+  by available tooling, and no third-party aggregator (Birdeye, Yelp,
+  Trustanalytica) listing for "AII Law PC" / "Aii Law" at the 5090 Shoreham
+  Place, San Diego address was located via web search, despite multiple
+  targeted search variants. This is recorded as "not found," not as
+  "confirmed zero reviews" — a live Google Maps check before /audit-write is
+  recommended to close this gap with certainty.
+- Star rating: not found [see note above — no source located, confirmed or
+  unconfirmed]
+- Total review count: not found [see note above]
+- Most recent review date: not found
+- Primary category: not confirmed via GBP; the firm self-describes as
+  "Immigration Lawyers" on-site
+- Photos active: not observed
+- Posts active: not observed
+- Contextual note: a distinct, unrelated firm called "American International &
+  Immigration Law" / "AII Law" based in Herndon, VA (~22 Birdeye reviews) was
+  found during search and is NOT this firm — do not conflate the two in
+  /audit-write; they share only a similar acronym.
+
+================================================================
+STEP 3 — LOCAL 3-PACK SEARCHES
+================================================================
+NOTE: The Google Maps local 3-pack widget is JS-rendered and not visible to
+available fetch tooling. The searches below reflect organic web-search
+prominence as the best available proxy for competitive visibility, NOT a
+literal read of the 3-pack UI. Treat competitor presence as directional, not a
+confirmed pack position. Note also that this firm's actual client acquisition
+model is not purely "near me" local-search driven (workers/investors are
+sourced nationally/internationally) — these searches test the "employer/
+investor searching from San Diego" angle specifically, which is the piece of
+the funnel most exposed to local competition.
+
+Practice Area 1: Investors (EB-5)
+- Search 1 "EB-5 investor visa attorney San Diego": Aii Law PC does not appear
+  among top-surfaced firms — competitors surfaced: North County Immigration,
+  Feldman Feldman & Associates, Jacobs & Schlesinger (JSS Legal), Law Offices
+  of Jacob J. Sapochnick
+- Search 2 "EB-5 investor visa lawyer near me San Diego": Aii Law PC does not
+  appear — competitors surfaced: Feldman Feldman & Associates, North County
+  Immigration, JSS Legal, Law Offices of Jacob J. Sapochnick, Sarian Law
+  Group APLC
+- Search 3 "investor visa lawyer San Diego E-2 EB-5": Aii Law PC does not
+  appear — competitors surfaced: North County Immigration, JSS Legal
+
+Practice Area 2: Workers (EB-3 employment-based green card)
+- Search 1 "EB-3 unskilled worker visa green card sponsorship attorney": Aii
+  Law PC does not appear among nationally-surfaced results (search returned
+  mostly out-of-market firms — Dallas, Irvine, Chicago, East Bay) — no
+  specific San Diego competitor surfaced strongly in this exact query
+- Search 2 "employment based green card lawyer San Diego": Aii Law PC does
+  not appear — competitors surfaced: North County Immigration, Law Offices of
+  Jacob J. Sapochnick
+- Search 3 "PERM labor certification attorney San Diego": not independently
+  re-run beyond the above; treat Workers-vertical local competition as the
+  same competitor set as Employers below (same buyer: local employers)
+
+Practice Area 3: Employers (employer-sponsored workforce/staffing)
+- Search 1 "employer sponsored green card attorney San Diego staffing
+  workforce": Aii Law PC does not appear — competitors surfaced: North County
+  Immigration, Law Offices of Jacob J. Sapochnick, Rodriguez Law Firm, Law
+  Offices of Jan Joseph Bejar
+- Search 2 "business immigration lawyer San Diego employer sponsored visa":
+  Aii Law PC does not appear — competitors surfaced: Hacking Law Practice,
+  North County Immigration, Banker's Hill Law Firm, San Diego Immigration Law
+  Office APC, Law Offices of Jacob J. Sapochnick, Law Offices of Jan Joseph
+  Bejar
+- Search 3 "H-1B visa attorney San Diego": Aii Law PC does not appear —
+  competitors surfaced: Law Offices of Jacob J. Sapochnick, Law Offices of Jan
+  Joseph Bejar, Feldman Feldman & Associates, Adams Global Immigration
+
+Per the Ads Framing Rule: Aii Law PC "does not appear to be ranking
+prominently for these searches" — this is not a certainty claim of zero
+presence, only that it was not observed to surface in these specific organic
+searches.
+
+================================================================
+STEP 4 — COMPETITOR REVIEW COUNTS
+================================================================
+Verification caveat: none of the figures below were read directly off a live
+Google Maps panel (tooling limitation, see Methodology Note); all are
+UNCONFIRMED. Aii Law PC's own review count could not be located at all (Step
+2), so these competitor figures cannot be benchmarked against a confirmed Aii
+Law PC number — they are presented as evidence of competitor reputation
+footprint in the market generally, not as a direct "beats Aii Law PC by X"
+comparison.
+
+- Competitor 1: Law Offices of Jacob J. Sapochnick — reviews: 801
+  [UNCONFIRMED — sourced from Birdeye aggregator (which aggregates Google
+  reviews), not independently confirmed via Google; a separate Yelp listing
+  for the same firm shows 85 reviews — platforms disagree substantially] —
+  rating: 4.8 [UNCONFIRMED, same Birdeye sourcing]
+- Competitor 2: Jacobs & Schlesinger LLP — reviews: 29 [UNCONFIRMED — sourced
+  from Birdeye aggregator, not independently confirmed via Google] — rating:
+  4.6 [UNCONFIRMED, same sourcing]
+- Competitor 3: North County Immigration — reviews: 21 [UNCONFIRMED — sourced
+  from Yelp (Escondido location), not independently confirmed via Google;
+  Facebook page separately shows 17 reviews at 100% recommend] — rating: not
+  found on Yelp snippet; Facebook shows 100% recommend, not a 5-point scale
+  rating
+
+Even under the UNCONFIRMED tagging, the scale gap between Sapochnick (801
+Birdeye reviews) and everything else in this market — including the total
+absence of any locatable review footprint for Aii Law PC itself — is the
+single most material competitive signal found in this pass.
+
+================================================================
+STEP 5 — DIRECTORY LISTINGS
+================================================================
+Checked: Avvo, Justia, FindLaw, Yelp, Birdeye, Bing/Google organic index.
+
+- No firm-level Avvo, Justia, or FindLaw profile for "Aii Law PC" / "AII Law
+  PC" was found in indexed search under the firm name.
+- Reid Breitman (Managing Partner, the sales contact for this proposal) DOES
+  have a personal Avvo profile, but it lists his firm as "Corporate Legal
+  Services, LLP" at a Pacific Palisades, CA address — NOT Aii Law PC, and
+  NOT the San Diego address — with practice areas listed as Personal Injury,
+  Real Estate, and Class Actions (no immigration practice area shown at all).
+  This is a real and notable NAP/brand inconsistency: the managing partner's
+  most-visible public attorney-directory profile does not reflect his current
+  firm, title, location, or practice area at all. Flag as a quick-win
+  correction opportunity.
+- No Yelp listing for "AII Law PC" San Diego was found (direct Yelp fetch
+  returned 403; search did not surface a matching business listing either).
+- No Birdeye listing for "AII Law PC" / "Aii Law" San Diego was found.
+- Geo-targeting landing pages for surrounding cities: none found (consistent
+  with Step 1 — expected given the firm's national/international client
+  sourcing model rather than hyper-local intake).
+
+================================================================
+STEP 6 — GOOGLE ADS
+================================================================
+NOTE: Live Google SERP ad units (the "Sponsored" listings) are JS-rendered
+and were not directly visible to available tooling — web search results used
+in this pass return synthesized organic content, not a raw SERP with ad
+markers. Findings below are therefore framed as "not observed" per the Ads
+Framing Rule, not as confirmed absence.
+
+Practice Area 1: Investors (EB-5)
+- Firm ads observed: not observed
+- Named local competitors running ads: not directly confirmed via a rendered
+  ad unit; North County Immigration and JSS Legal maintain dedicated,
+  SEO/PPC-style landing pages for investor visas (/practice/investor-visas/,
+  /investor-visas/) consistent with active paid-search investment, though
+  specific ad copy could not be captured
+
+Practice Area 2: Workers (EB-3)
+- Firm ads observed: not observed
+- Named local competitors running ads: not directly confirmed; no
+  San-Diego-specific EB-3/unskilled-worker dedicated ad-style landing page
+  was found among the named competitor set for this specific sub-practice
+
+Practice Area 3: Employers (workforce/staffing)
+- Firm ads observed: not observed
+- Named local competitors running ads: not directly confirmed; Law Offices of
+  Jacob J. Sapochnick and North County Immigration both maintain
+  dedicated employment-based visa landing pages consistent with active
+  SEO/PPC investment, though specific ad copy could not be captured
+
+================================================================
+STEP 7 — LOCAL SERVICE ADS
+================================================================
+- Firm appears in LSA: not observed (LSA units are JS-rendered and could not
+  be loaded by available tooling; also, LSA is not a typical channel for
+  business/investor immigration work the way it is for consumer legal
+  services, so a "not observed" result here is expected regardless of the
+  tooling gap)
+- Google Screened: not observed
+- LSA review count: n/a — not observed
+- Named local competitors in LSA: not confirmed
+
+================================================================
+STEP 8 — META ADS
+================================================================
+- Firm has active ads: not observed. facebook.com/ads/library could not be
+  loaded by available tooling (403 — JS-rendered, requires an interactive
+  session).
+- Named local competitor 1: North County Immigration — active ads: not
+  observed (tool limitation)
+- Named local competitor 2: Jacobs & Schlesinger LLP — active ads: not
+  observed (tool limitation)
+NOTE TO /audit-write: Meta Ads Library could not be verified live this pass.
+If a specific ad-count claim is needed for the report, re-run this check with
+interactive browser access before publishing.
+
+================================================================
+STEP 9 — TRANSCRIPT EXTRACTION
+================================================================
+NO DISCOVERY CALL TRANSCRIPT EXISTS FOR THIS ACCOUNT. The proposal call is
+scheduled for September 4, 2026 and has not yet occurred as of this research
+pass (trigger date August 31, 2026). Every field below that is normally
+sourced from the call is genuinely unavailable — not merely "unstated by the
+prospect," but never yet asked. Do not let /audit-write infer, default, or
+fabricate values into these fields as if a call had taken place; use the
+"not stated" defaults called for in the audit-write skill (15% close rate,
+2x-current-revenue goal, etc.) explicitly flagged as pre-call defaults, and
+recommend confirming all of these live on the actual call before finalizing
+client-facing figures.
+
+- Practice areas confirmed: not from transcript (none exists) — per public
+  website research (Step 1): Workers (EB-3), Employers (staffing/workforce),
+  Investors (EB-5)
+- Current lead sources: not stated — no transcript
+- Ads ever run: not stated — no transcript
+- Team size: not stated — no transcript. Per public /team/ page (website
+  research, not transcript-sourced): 6 attorneys (Reid Breitman – Managing
+  Partner; Robert Lubin – General Manager & Director of Business Development,
+  noted elsewhere as having retired from active law practice in 2025 and now
+  serving as Chief Marketing Officer; Mubarak Malik – Attorney; Yiwen Hao,
+  Steve Sul, Larysa Polunin – Associate Attorneys) plus 8 support staff
+  (Firm Administrator, 4 Paralegals, Economic/Legal Support, Marketing
+  Representative, Employer Relations Manager) — 14 people total per the
+  website, subject to confirmation on the call.
+- Annual revenue (gross / case value): not stated — no transcript
+- Annual revenue (net / take-home / collected): not stated — no transcript
+- Fee structure: not stated as a call quote — no transcript. Per public
+  website research: fixed-fee model for Investors (EB-5) with a full
+  legal-fee refund guarantee if the petition is not granted; contingent/
+  no-upfront-cost model for Employers (fee tied to successful placement).
+  Workers-vertical fee structure not specified on-site.
+- Revenue goal: not stated, use 2x current revenue (default — current revenue
+  itself is also not stated, so this default cannot yet be applied to a real
+  number; confirm both on the call)
+- Average case value: not stated — no transcript
+- Current close rate: not stated — default to 15%
+- Number of locations: 1 if not mentioned (confirmed via website: single
+  office at 5090 Shoreham Place, Suite 102, San Diego, CA 92122)
+- Spanish campaign needed: not stated — no transcript
+- Dominant buying motive: not stated — no transcript, and no reliable
+  inference is available. Reid Breitman's own bio (real estate/finance
+  background, "scaling service-oriented companies") is public marketing copy
+  about the business, not a personal statement of motive — do not treat it as
+  a DBM stand-in. Confirm DBM live on the September 4 call per the standard
+  discovery questions.
+- Any profitability claims made by prospect: none stated — no transcript
+- Any claims about case types or practice areas: none stated as a prospect
+  quote — no transcript; see website-sourced practice-area summary above
+- Stated call focus / product interest: NOT YET KNOWN — no call has occurred.
+  Explicitly flag for /audit-write and for Jacob Meissner ahead of the
+  September 4 call: confirm whether this is a standard marketing/growth
+  discovery call or something else (e.g., given the firm's fixed-fee/
+  workforce-placement business model, the call could plausibly focus on
+  investor lead generation, employer-side B2B lead generation, or both) —
+  do not default to "standard" without confirming on the call.
+- Existing marketing/SEO/ad vendor engagements: none stated — no transcript
+- Budget constraints stated: none stated — no transcript
+
+================================================================
+STEP 10 — COMPETITIVE URGENCY SCORE
+================================================================
+Score: 7 / 10
+
+Reasoning: Aii Law PC has no locatable Google/Birdeye/Yelp review footprint,
+no blog or content-marketing infrastructure, no firm-level Avvo/Justia/
+FindLaw directory presence, and its own managing partner's most visible
+public attorney-directory profile (Avvo) does not even list Aii Law PC as his
+firm. Meanwhile, at least one named local competitor in the same
+business-immigration space (Law Offices of Jacob J. Sapochnick) carries a
+Birdeye-aggregated review count in the 800+ range with an active,
+SEO-structured multi-page site, and multiple others (North County
+Immigration, Jacobs & Schlesinger, JSS Legal) maintain dedicated landing
+pages per visa type that Aii Law PC's own three-page site structure does not
+match in depth. This is not confirmed as a 8-10 because no live ad spend
+(Search, LSA, Meta) could be directly verified for any party in this pass —
+the gap identified is squarely in organic reputation and content footprint,
+not confirmed paid-channel dominance.
+
+Named specific local competitor threats:
+1. Law Offices of Jacob J. Sapochnick (h1b.biz) — 801 reviews at 4.8 stars
+   per Birdeye (aggregator, unconfirmed), extensive visa-type-specific
+   content pages, and self-promoted "Top Rated Law Firm on Google for 3
+   years in a row" positioning — the dominant reputation player in this
+   specific niche locally.
+2. North County Immigration — dedicated Investor Visas and Employment-Based
+   Visa Lawyer landing pages surfacing across all three of Aii Law PC's core
+   verticals (Investors, Workers/Employers) in this pass's searches,
+   indicating broader keyword-level SEO coverage than Aii Law PC's three
+   core pages.
+3. Jacobs & Schlesinger LLP (JSS Legal) — 29 Birdeye reviews at 4.6
+   (unconfirmed) with a long-tenured (since 2004) local reputation and
+   dedicated investor-visa page; smaller review count than Sapochnick but a
+   more directly comparable boutique-firm positioning to Aii Law PC.
+
+Dynamic sentence (matches 4–6 bracket, adjusted down from initial 7-10 framing
+given no paid-channel dominance was confirmed — using the 4-6 sentence as the
+more defensible framing pending live-tooling re-verification):
+"A score of 7 means competitors have meaningful advantages in one or more
+areas and are pulling ahead. You are not invisible yet — but the window to
+close the gap is narrowing. Every month without action is a month they extend
+their lead."
+
+NOTE TO /audit-write: the score (7) sits at the boundary between the 4-6 and
+7-10 dynamic-sentence brackets per the audit-research rubric text. Given that
+paid-channel dominance was NOT directly confirmed (tooling limitation) while
+organic/reputation dominance by at least one competitor WAS clearly evidenced
+(Sapochnick's review volume), treat this as a 7 with the 7-10 bracket
+sentence only if a live re-check before /audit-write confirms competitor ad
+activity; otherwise use the 4-6 sentence above as the safer, defensible
+framing. Re-verify with live browser tooling before the September 4 call if
+possible.
+
+================================================================
+PASS 2 — VERIFICATION CHECKLIST
+================================================================
+[x] Every number in the notes matches actually observed data (or is
+    explicitly flagged as unavailable/not found/UNCONFIRMED where live
+    tooling could not confirm it)
+[x] Every competitor review count is presented without claiming Aii Law PC
+    has fewer reviews than any specific figure — Aii Law PC's own count could
+    not be located at all, so no direct numeric comparison is asserted
+[x] Every review count and star rating (firm and competitors) carries a
+    verification-method tag — all are UNCONFIRMED or "not found" in this
+    pass; none are tagged [confirmed via Google] because live Google Maps/GBP
+    rendering was not available to this session's tooling
+[x] Annual revenue: not stated in either gross or net form — no transcript
+    exists; fee structure recorded from public website only (fixed-fee/
+    money-back for Investors, contingent-on-placement for Employers)
+[x] Every ad section (Google Ads, LSA, Meta) covers all three named practice
+    verticals (Investors, Workers, Employers) where applicable
+[x] No section states "you are not running ads" — all use "not observed" /
+    "does not appear to be" framing
+[x] No profitability or business claim appears unless it came from the
+    transcript — none exists, so none is asserted
+[x] No competitor reference uses generic labels — only specific named local
+    firms (Sapochnick, North County Immigration, Jacobs & Schlesinger/JSS
+    Legal, Feldman Feldman & Associates, Sarian Law Group, Law Offices of Jan
+    Joseph Bejar, Rodriguez Law Firm, Hacking Law Practice, Banker's Hill Law
+    Firm, Adams Global Immigration, San Diego Immigration Law Office APC)
+[x] PageSpeed scores are flagged UNAVAILABLE rather than estimated — real
+    numbers could not be obtained after repeated attempts against a
+    rate-limited API; do not fabricate a score in /audit-write
+[x] DBM is explicitly flagged as unavailable pending the actual call — not
+    inferred from marketing copy
+[x] Revenue goal is recorded as unavailable pending the call (default noted
+    but not computable without a current-revenue figure)
+[x] Close rate is recorded (not stated — defaulted to 15%)
+[x] Average case value is recorded as not stated — no transcript
+[x] Stated call focus / product interest is explicitly flagged as unknown
+    (no call has occurred) rather than defaulted to "standard"
+[x] Existing marketing/SEO/ad vendor engagements recorded as not stated (no
+    transcript)
+[x] Budget constraints stated are recorded as not stated (no transcript)
+
+END OF RESEARCH NOTES.
