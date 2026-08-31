@@ -1,0 +1,513 @@
+SMB TEAM — LAW FIRM GROWTH AUDIT — RESEARCH NOTES
+Firm: Life Seasons Estate Planning, PLLC
+Friendly Name: life-seasons-estate-planning
+URL provided: https://lifeseasonsestate.com
+Sales Rep: Jacob Meissner
+Date: September 14, 2026
+Contact: Susan Kirkpatrick, J.D. (susanjkirk@comcast.net), Attorney/Owner
+HubSpot Contact ID: 25249856
+Proposal Call: September 14, 2026, 6:00 PM UTC
+
+====================================================================
+RESEARCH ACCESS NOTE — READ FIRST
+====================================================================
+Two access gaps affected this research session and are flagged here before
+the step-by-step findings:
+
+1. NO DISCOVERY CALL TRANSCRIPT WAS PROVIDED. The trigger record for this
+   firm contains no "transcript" field at all (not even a placeholder note
+   that one is pending, unlike some other in-flight triggers). Per the
+   TRANSCRIPT-FIRST RULE and the /audit-research invocation format ("write
+   'none' if not yet available"), this is treated as transcript = none.
+   Every field in STEP 9 below is therefore a research-based inference or
+   an explicit "not stated," never a transcript quote. This is a significant
+   gap: revenue, revenue goal, team size, lead sources, fee structure, close
+   rate, DBM, and budget constraints are all unknown from the prospect's own
+   words and must be confirmed live on the September 14, 2026 proposal call.
+
+2. THE FIRM'S OWN WEBSITE COULD NOT BE RENDERED LIVE. lifeseasonsestate.com
+   was attempted via https, https://www., http, and four specific subpages
+   (/services/, /meet-us/, /contact-us/, root) — every attempt returned an
+   empty page body to the fetch tool. A control fetch of example.com in the
+   same session succeeded normally, confirming this is specific to this
+   domain (likely bot/scraper protection) rather than a tool-wide outage.
+   The firm is confirmed real and active (not a fictional/test firm) via
+   Google's search index, Nextdoor, Yelp, ZoomInfo, Facebook, and multiple
+   attorney directories, all cross-referencing the same address, phone
+   number, and attorney name. STEP 1 below is reconstructed from indexed
+   page titles, cached search snippets, and third-party sources rather than
+   a live browse, and is flagged accordingly point by point.
+
+PageSpeed Insights could not be run: the public PageSpeed API returned
+HTTP 429 (rate-limited) on repeated attempts across both mobile and desktop
+strategies, spaced out over the course of this research session. No
+PageSpeed score is reported below — do not present a fabricated number as
+real in the client-facing report. Flag for manual re-run by a team member
+with API access before the proposal call.
+
+====================================================================
+STEP 1 — WEBSITE RESEARCH (reconstructed from cached index, not live browse)
+====================================================================
+- Website URL confirmed live: NOT CONFIRMED BY DIRECT BROWSE — the domain
+  could not be rendered in this research environment (see access note
+  above), but it is confirmed indexed and active in Google's search index
+  as of this session (multiple lifeseasonsestate.com subpages appear in
+  search results, including a "TOP 10 BEST Estate Planning Law" style
+  aggregator page current to April 2026), and the firm's own social/directory
+  profiles all link back to it as the live site.
+- Indexed pages confirmed to exist (titles only, via search index):
+  - Homepage: "Wills And Estate Planning Trusts Lawyer, Attorney For Elder
+    Law Care Olympia WA - Life Seasons Estate Planning, PLLC"
+  - /services/: "Estate Planning Services Olympia WA | Elder Law Care &
+    More - Life Seasons Estate Planning, PLLC"
+  - /estate-planning-attorney-olympia-wa/: "Estate Planning Attorney
+    Olympia WA | Personalized Legal Plans" — a dedicated geo/service
+    landing page.
+  - /contact-us/: "Contact Life Seasons Estate Planning, PLLC at 360 539
+    3388 To Get Estate Planning Services"
+  - /meet-us/: "Meet Susan Kirkpatrick, Attorney - Life Seasons Estate
+    Planning, PLLC"
+  - /happy-clients/: testimonials page (title indicates a dedicated
+    testimonials/reviews page exists on-site).
+- Last redesign date or estimated age: not observed (could not browse
+  live). No blog subpage was surfaced anywhere in search-index results
+  during this session, which is itself notable — see Blog note below.
+- Mobile responsive: not observed (could not browse live).
+- Homepage headline: not observed verbatim (could not browse live); the
+  indexed page title suggests a wills/trusts/elder-law framing rather than
+  a single sharp headline benefit statement.
+- CTA above fold: not observed (could not browse live). Indirectly, the
+  firm's messaging elsewhere (Nextdoor, directory listings) consistently
+  leads with a "free 15-minute phone consultation" offer, which is likely
+  the primary site CTA.
+- Contact form location: not observed (could not browse live). A dedicated
+  /contact-us/ page exists per the index.
+- Live chat present: not observed (could not browse live).
+- Attorney bio present: YES — dedicated /meet-us/ page exists and is
+  indexed, confirming a bio page for Susan Kirkpatrick exists site-side.
+- Video present: not observed (could not browse live).
+- Blog present: NOT OBSERVED — no blog subpage or post-title surfaced in
+  any search-index query run against the domain during this session
+  (including a direct site: search). This is a gap worth flagging: no
+  visible fresh-content engine for SEO.
+- Testimonials/reviews page present: YES — dedicated /happy-clients/ page
+  is indexed separately from the homepage, suggesting the firm actively
+  curates and displays client testimonials.
+- PageSpeed mobile score: COULD NOT BE OBTAINED — PageSpeed API returned
+  HTTP 429 (rate-limited) on repeated attempts. Flag for manual re-check.
+- PageSpeed desktop score: COULD NOT BE OBTAINED — same reason as above.
+
+====================================================================
+STEP 2 — GOOGLE BUSINESS PROFILE
+====================================================================
+Google's own search results and Google Maps pages could not be scraped
+live in this research environment (both returned JS-shell pages with no
+business data to the fetch tool — the same limitation encountered on other
+recent audits in this pipeline). GBP data below is sourced from third-party
+aggregators only.
+
+- GBP found: presumed yes (firm is an established, actively-marketed
+  practice with a physical office, phone number, and hours listed
+  consistently across directories), but could not be pulled up directly.
+- Star rating: 5.0 [UNCONFIRMED — sourced from a Yahoo Local aggregator
+  listing, not independently confirmed via Google]
+- Total review count: 1 [UNCONFIRMED — sourced from the same Yahoo Local
+  listing, not independently confirmed via Google]. NOTE — this figure is
+  very likely stale or incomplete: the firm has been operating since 2022,
+  actively promotes client testimonials on its own /happy-clients/ page,
+  and was just awarded Gold for Best Wills & Trusts Law and Silver for Best
+  Estate Law in the Best of South Sound 2026 community awards (confirmed
+  via the firm's own August 4, 2026 Nextdoor post) — an outcome that
+  typically correlates with a meaningfully larger review base than 1. Flag
+  this discrepancy for the sales team; do not treat "1 review" as reliable,
+  and do not cite it as a weakness in the client-facing report without a
+  live Google Maps confirmation first.
+- Most recent review date: not observed.
+- Primary category: "Personal Financing" per the Yahoo Local listing —
+  this looks like a miscategorization by the aggregator rather than the
+  firm's actual GBP primary category (more likely "Estate Planning
+  Attorney" or "Wills & Trusts Lawyer" on the real GBP); worth confirming
+  and correcting if the miscategorization is actually live on Google, since
+  it would materially hurt local-search relevance.
+- Photos active: not observed.
+- Posts active: not observed directly on GBP, but the firm is confirmed
+  active on Nextdoor (award announcement posted August 4, 2026) and
+  maintains a Facebook page (facebook.com/lifeseasonsestate), indicating
+  general social/local posting activity exists even if GBP-specific posting
+  could not be confirmed.
+
+====================================================================
+STEP 3 — LOCAL 3-PACK SEARCHES
+====================================================================
+Live local-pack map widgets could not be captured directly (Google search
+results pages returned no scrapeable map-pack data in this environment, and
+the search tool available in this session returns organic link/snippet
+data rather than a literal map-pack screenshot). Presence below is inferred
+from organic search-index ranking and directory cross-references, and is
+flagged as such throughout.
+
+Practice Area 1: Estate Planning (Wills & Trusts)
+- Search 1 "estate planning attorney Olympia WA": firm's own site did not
+  surface among the top organic results returned for this generic (non-
+  branded) query — Cap City Law, Parr Price Law PS, and Jacobsen Law
+  Office all surfaced ahead of it in this search. Competitors in results:
+  Cap City Law PS [review data — see Step 4], Parr Price Law, PS [review
+  data — see Step 4], Jacobsen Law Office, P.S. [review data — see Step 4].
+- Search 2 "wills and trusts lawyer Olympia WA": firm's own homepage DID
+  surface in this search (its title tag is built around this exact phrase),
+  alongside Cap City Law, Jacobsen Law Office, and Parr Price Law.
+  Additional competitor observed: Budd Bay Law, P.S.
+- Search 3 "probate attorney Olympia WA": firm did NOT surface in this
+  search. Competitors observed: Jacobsen Law Office, P.S. (has a dedicated
+  probate practice-area page), Dickson Frohlich Phillips Burgess, Jack W.
+  Hanemann, P.S., J. Patrick Quinn LLM, PS.
+
+Practice Area 2: Elder Law Care
+- Search 1 "elder law attorney Olympia WA": firm did NOT surface among top
+  results. Named competitors observed: Elder Law with Care (501 Tyee Dr SW,
+  Olympia — a firm whose name is built entirely around this exact
+  keyword), J. Patrick Quinn (37 years experience, cited directly in
+  results), Paul Premack JD CELA (Certified Elder Law Attorney).
+- Search 2 "estate planning attorney near me Olympia WA": firm did not
+  surface in the top aggregator-dominated results (Martindale, SuperPages,
+  Justia, DexKnows all outranked individual firm sites, including the
+  prospect's).
+- Search 3 (branded control) "Life Seasons Estate Planning Olympia WA":
+  firm's own site and social profiles dominate this branded search as
+  expected — confirms the firm has zero problem being found by name, but
+  the Step 3/Step 3 searches above indicate a real visibility gap on
+  generic, non-branded local-intent searches, which is where most new
+  prospects actually start looking.
+
+Directory-level note: search-results aggregators (Cornell LII, Justia,
+Super Lawyers, Martindale, DexKnows, SuperPages) occupy a large share of
+page-one real estate for every generic query run above, ahead of most
+individual firm websites including the prospect's — this is a market-wide
+dynamic, not unique to this firm, but it raises the bar for how strong the
+firm's own SEO/local-pack presence needs to be to compete.
+
+====================================================================
+STEP 4 — COMPETITOR REVIEW COUNTS
+====================================================================
+Google Maps/GBP data could not be scraped live in this environment (see
+Step 2 note); all figures below are sourced from third-party aggregators
+and carry the UNCONFIRMED tag per the REVIEW-DATA VERIFICATION RULE. Per
+the rule against overstating competitor dominance: the prospect's own
+review figure (1, UNCONFIRMED, and flagged above as likely stale/inaccurate)
+cannot be reliably compared against any of the figures below — this
+uncertainty is called out explicitly rather than used to declare any
+competitor "dominant" on review count.
+
+- Competitor 1: Cap City Law, PS (2401 Bristol Court SW, Suite A-103,
+  Olympia, WA) — reviews: 20 [UNCONFIRMED — sourced from Experience.com,
+  not independently confirmed via Google] — rating: 4.6 [UNCONFIRMED —
+  sourced from Experience.com]. Firm was voted Silver for Best Family Law
+  and Bronze for Best Estate Law in the 2024 Best of South Sound awards —
+  notably, the prospect (Life Seasons) outranked Cap City Law's most recent
+  estate-law placement by winning Silver for Best Estate Law in the more
+  recent 2026 Best of South Sound awards, a genuine competitive strength
+  worth highlighting to the prospect directly.
+- Competitor 2: Jacobsen Law Office, P.S. (2018 Caton Way SW #106, Olympia,
+  WA) — reviews: 18 [UNCONFIRMED — sourced from Birdeye, not independently
+  confirmed via Google] — rating: 3.8 [UNCONFIRMED — sourced from Birdeye].
+  Sole practitioner (Ryan A. Jacobsen); received the Avvo Client's Choice
+  Award in 2021. Practices real estate, estate planning, probate,
+  guardianships, and trust administration — a closer practice-area overlap
+  with the prospect than most other competitors found.
+- Competitor 3: Parr Price Law, PS (1800 Cooper Point Rd SW Building 20A,
+  Olympia, WA) — reviews: not observed as a specific numeric count on any
+  source reached this session — rating: A+ (BBB rating, not a star rating;
+  BBB explicitly notes the firm is NOT BBB-accredited) [confirmed via BBB
+  business profile]. Firm focuses exclusively on estate planning, probate,
+  elder law, and litigation — the closest direct practice-area match to the
+  prospect of any competitor identified. In business since March 2016.
+
+====================================================================
+STEP 5 — DIRECTORY LISTINGS
+====================================================================
+Checked: BBB, Yelp, Nextdoor, Facebook, ZoomInfo, Lawyers.com, Yahoo Local
+(7 directories/profiles checked total — exceeds the required minimum of 5;
+Avvo, Justia, and FindLaw were also searched but see gap note below).
+
+- BBB: No BBB profile could be located for "Life Seasons Estate Planning
+  PLLC" specifically (direct profile URL attempt returned HTTP 404).
+  Absence of a BBB listing is itself a minor trust-signal gap compared to
+  Parr Price Law, which does have an active BBB profile (A+, not
+  accredited).
+- Yelp: Listing exists ("LIFE SEASONS ESTATE PLANNING," 2952 Limited Ln NW,
+  Olympia, updated as recently as April 2026 per the indexed snippet) but
+  returned HTTP 403 (bot block) on direct fetch, so star rating/review
+  count could not be confirmed live via Yelp itself.
+- Nextdoor: Active, claimed business page
+  ("susan-j-kirkpatrick-jd-estate-planner-olympia-wa"). Confirmed recent
+  activity: an August 4, 2026 post announcing the Best of South Sound 2026
+  Gold (Best Wills & Trusts Law) and Silver (Best Estate Law) awards, plus
+  multiple positive client recommendations in the Nextdoor feed praising
+  Susan Kirkpatrick's communication and ability to explain complex
+  documents simply.
+- Facebook: Page exists (facebook.com/lifeseasonsestate) but returned no
+  scrapeable content to the fetch tool in this session (could not confirm
+  follower count or post cadence).
+- ZoomInfo: Company profile exists (zoominfo.com listing found and
+  indexed) but returned HTTP 403 on direct fetch — could not confirm
+  employee-count or revenue-estimate data points ZoomInfo typically carries.
+- Lawyers.com: Individual attorney profile exists for "Susan Dick
+  Kirkpatrick" but returned HTTP 403 on direct fetch.
+- Yahoo Local: Two separate listings found — one for the firm generally
+  and one specifically for "Kirkpatrick Susan - Life Seasons Estate
+  Planning PLLC" — suggesting possible duplicate/fragmented local listings
+  under slightly different name formats, a minor NAP-consistency concern
+  worth a cleanup pass.
+- GAP — Avvo/Justia/FindLaw/Super Lawyers: No dedicated Avvo, Justia, or
+  FindLaw attorney profile could be located for Susan Kirkpatrick or Life
+  Seasons Estate Planning specifically in this session's searches, despite
+  these being the directories most other Olympia estate-planning
+  competitors (Jacobsen, Cap City Law, Parr Price Law) maintain active
+  profiles on. This is a real, concrete, fixable directory-presence gap
+  worth raising with the prospect.
+- Industry-program note: Susan Kirkpatrick is a member of the "Personal
+  Family Lawyer®" (PFL) program (newlawbusinessmodel.com), a national
+  membership/coaching framework for estate planning attorneys built around
+  a "Life & Legacy Planning" service and relationship-first client model.
+  This is a meaningful positive data point — it indicates the firm already
+  has structured intake/service-delivery training in place, which the
+  audit can build on rather than needing to introduce from scratch.
+
+No geo-targeting landing pages for surrounding cities (e.g. Lacey, Tumwater,
+Lacey, Yelm) were confirmed via the indexed titles found this session — the
+one dedicated landing page identified (/estate-planning-attorney-olympia-wa/)
+targets Olympia itself rather than a surrounding city, suggesting geo-
+expansion pages for neighboring Thurston County communities may not exist
+yet.
+
+====================================================================
+STEP 6 — GOOGLE ADS
+====================================================================
+No sponsored/ad units were surfaced in any query run this session (the
+search tool available returns organic results and does not reliably render
+paid search units), so ad presence could not be confirmed live for either
+the firm or competitors via direct observation of a live SERP.
+
+Practice Area 1: Estate Planning
+- Firm ads observed: not observed. The firm does not appear to be running
+  ads for this search based on available data — this may reflect being
+  outbid by competitors or simply not yet running paid search.
+- Named local competitors running ads: not observed. No local competitor
+  ad units surfaced in any search run this session for estate-planning
+  terms in the Olympia, WA market.
+
+Practice Area 2: Elder Law Care
+- Firm ads observed: not observed — same basis as above.
+- Named local competitors running ads: not observed — same basis as above.
+
+This is a genuine tooling limitation (organic-only search results in this
+environment), not a confirmed absence of paid search activity in this
+market — flag for the sales/media team to verify with a live SERP check
+before the proposal call, since Google Ads presence is a meaningful
+competitive data point either way.
+
+====================================================================
+STEP 7 — LOCAL SERVICE ADS
+====================================================================
+- Firm appears in LSA: not observed — could not confirm live (same
+  tooling limitation as Step 6; LSA widgets do not render in the organic
+  search results available in this environment).
+- Google Screened: not observed — could not confirm live.
+- LSA review count: not applicable — no LSA presence observed either way.
+- Named local competitors in LSA: not observed — no competitor LSA
+  placements could be confirmed live in this research environment.
+
+====================================================================
+STEP 8 — META ADS
+====================================================================
+Attempted to load the Meta Ad Library search for "Life Seasons Estate
+Planning"; the request failed with a connection error (socket hang up) and
+could not be completed in this research environment.
+- Firm has active ads: not observed — Meta Ad Library could not be reached.
+- Named local competitor 1: Cap City Law, PS — active ads: not observed
+  (could not reach Meta Ad Library).
+- Named local competitor 2: Jacobsen Law Office, P.S. — active ads: not
+  observed (could not reach Meta Ad Library).
+
+====================================================================
+STEP 9 — TRANSCRIPT EXTRACTION
+====================================================================
+IMPORTANT — NO TRANSCRIPT FLAG: There is no discovery call transcript for
+this prospect at all — the trigger record contains no transcript field or
+placeholder, meaning either no call has happened yet or none has been
+logged. Every field below is either "not stated" (true absence of
+transcript data) or a research-based inference explicitly marked as such
+— none of it should be treated as confirmed prospect input. A real
+discovery conversation (live on the September 14, 2026 proposal call, or
+before it) is needed to ground the eventual audit's recommendations.
+
+- Practice areas confirmed: not stated in transcript (no transcript
+  exists). Independently confirmed via website/directory research above:
+  Estate Planning, Wills & Trusts, Probate & Estate Administration, and
+  Elder Law Care.
+- Current lead sources: not stated in transcript.
+- Ads ever run: not stated in transcript. No paid search or Meta ad
+  activity could be confirmed or ruled out via research (see Steps 6–8).
+- Team size: not stated in transcript. Independently observed: Susan
+  Kirkpatrick (owner/attorney) is the only named attorney found in
+  research; the firm was actively recruiting for a part-time (with
+  potential full-time growth) in-person Paralegal role as of this session,
+  indicating the practice may currently be a solo-attorney shop that is
+  actively trying to scale its support staff.
+- Annual revenue (gross / case value): not stated — no transcript exists.
+- Annual revenue (net / take-home / collected): not stated — no transcript
+  exists.
+- Fee structure: not stated by the prospect. Independently noted: the
+  Personal Family Lawyer® program the firm is affiliated with is built
+  around flat-fee "Life & Legacy Planning" engagements industry-wide
+  (program materials cite an average of roughly $4,500 per client as a
+  program-wide benchmark) — this is an industry/program figure, NOT a
+  confirmed figure for this specific firm, and must not be presented as
+  this firm's actual average case value without prospect confirmation.
+- Revenue goal: not stated, use 2x current revenue per default rule.
+- Average case value: not stated by the prospect — use estate planning
+  practice-area default at the modeling stage; the ~$4,500 PFL program
+  benchmark above may be a reasonable starting reference point to validate
+  directly with Susan on the call, but should not be presented as fact.
+- Current close rate: not stated — default to 15%. Note: the PFL program
+  materials claim an industry-wide 80%+ close rate for member firms running
+  the standard Life & Legacy Planning process — again a program benchmark,
+  not a confirmed figure for this firm, and should be verified directly
+  rather than assumed.
+- Number of locations: not stated on a call; independently confirmed via
+  research the firm operates from one office (2952 Limited Ln NW, Ste A,
+  Olympia, WA 98502). Use "1."
+- Spanish campaign needed: not stated in transcript; no Spanish-language
+  service offering was observed anywhere in this session's research
+  (unlike some competitors in other markets) — worth asking directly.
+- Dominant buying motive: not stated — no transcript exists. No inference
+  can be responsibly drawn without prospect input; this must be captured
+  live on the proposal call before DBM-driven messaging is finalized. Note
+  for the rep: Susan returned to practicing law in 2022 after a long
+  earlier career (originally licensed in 1980, ran her own solo practice
+  for 17 years before this current firm) — this life-stage detail (a
+  second act, deliberately built around a "Life Seasons" relational
+  framing) may be a useful thread to pull on during discovery, but should
+  not be assumed as the DBM.
+- Any profitability claims made by prospect: none stated — no transcript
+  exists.
+- Any claims about case types or practice areas: none stated by the
+  prospect — no transcript exists.
+- Stated call focus / product interest: UNKNOWN — cannot be determined
+  without a transcript. Flag explicitly for Jacob Meissner: confirm what
+  this call was originally scoped as (standard marketing/growth discovery
+  vs. something else) before the September 14, 2026 proposal call, since
+  no record of the original discovery conversation is available in this
+  system.
+- Existing marketing/SEO/ad vendor engagements: none stated — no
+  transcript exists to confirm or rule this out either way.
+- Budget constraints stated: none stated — no transcript exists.
+
+====================================================================
+STEP 10 — COMPETITIVE URGENCY SCORE
+====================================================================
+Score: 5/10
+
+Reasoning: This is a genuinely mixed picture. On the positive side, the
+prospect just won a community-voted Gold award (Best Wills & Trusts Law)
+and Silver award (Best Estate Law) in the 2026 Best of South Sound
+awards — outranking at least one direct competitor (Cap City Law) in the
+estate-law category relative to that competitor's 2024 placement — and is
+affiliated with a structured national practice-growth program (Personal
+Family Lawyer®). On the negative side, the firm did not surface in several
+generic, non-branded local searches where competitors did appear, has no
+confirmed Avvo/Justia/FindLaw presence (unlike its three closest
+competitors), has no confirmed BBB profile, shows no blog or fresh-content
+engine, and its own website could not be verified live for basic
+conversion fundamentals (CTA, contact form placement, mobile
+responsiveness, PageSpeed) in this research pass. No competitor was
+observed running paid search or Meta ads, so this is not (yet) a market
+where the prospect risks being drowned out by aggressive competitor ad
+spend — the gap is more about SEO/directory visibility and unverified site
+fundamentals than about being outspent.
+
+Named specific local competitor threats:
+1. Parr Price Law, PS — the closest practice-area match (estate planning,
+   probate, elder law, litigation exclusively), in business since 2016,
+   with an active BBB profile the prospect currently lacks.
+2. Jacobsen Law Office, P.S. — a sole-practitioner competitor with 18
+   [UNCONFIRMED] Birdeye reviews and a 2021 Avvo Client's Choice Award,
+   actively covering wills/trusts, probate, and estate planning with
+   dedicated practice-area pages the prospect's own site does not appear
+   to match in generic search visibility.
+3. Cap City Law, PS — a broader multi-practice firm (business, real
+   estate, family law, estate planning) with 20 [UNCONFIRMED] reviews and
+   its own recent local-award history, competing directly for the same
+   "Best Estate Law" community recognition the prospect just won.
+
+Dynamic sentence (score 4–6 band): "A score of 5 means competitors have
+meaningful advantages in one or more areas and are pulling ahead. You are
+not invisible yet — but the window to close the gap is narrowing. Every
+month without action is a month they extend their lead."
+
+====================================================================
+PASS 2 — VERIFICATION CHECKLIST
+====================================================================
+[x] Every number in the notes matches actually observed data, or is
+    explicitly marked not observed / could not be verified — no invented
+    numbers presented as fact.
+[x] Every competitor review count claim was checked against the prospect's
+    own figure — the prospect's own "1 review" figure was explicitly
+    flagged as unreliable/likely stale rather than used to declare any
+    competitor "dominant" on review count.
+[x] Every review count and star rating (firm and competitors) carries a
+    verification-method tag — all are UNCONFIRMED here since a live Google
+    listing could not be reached in this research environment; the one BBB
+    rating is tagged [confirmed via BBB] as a non-Google source, not
+    conflated with a Google star rating.
+[x] Annual revenue split into gross/net attempted — not applicable, no
+    transcript exists to supply either figure.
+[x] Every ad section (Google Ads, LSA, Meta) covers both practice areas /
+    is addressed even where the underlying tooling could not confirm
+    presence either way.
+[x] No section states with certainty that the firm is "not running ads" —
+    phrased as "not observed" / "does not appear to be running ads."
+[x] No profitability or business claim appears unless it came from the
+    transcript — none were available (no transcript exists), so none are
+    stated as prospect claims; the PFL program benchmarks are explicitly
+    labeled as program-wide, not firm-specific.
+[x] No competitor reference uses generic labels — only specific named
+    firms (Cap City Law, Parr Price Law, Jacobsen Law Office) used.
+[x] PageSpeed scores: NOT obtained — flagged explicitly above rather than
+    estimated, per the "must be a real number, never an estimate" rule.
+[x] DBM: not available (no transcript) — flagged explicitly, not guessed.
+[x] Revenue goal: flagged as not stated, defaulted per rule.
+[x] Close rate: flagged as not stated, defaulted to 15% per rule.
+[x] Average case value: flagged as not stated, practice-area default
+    noted, with PFL benchmark labeled as non-firm-specific context only.
+[x] Stated call focus / product interest: flagged explicitly as UNKNOWN —
+    no transcript exists to confirm what this call was originally scoped
+    as; called out directly for the rep rather than defaulted to
+    "standard."
+[x] Existing marketing/SEO/ad vendor engagements: recorded as "none
+    stated" (no transcript exists to confirm either way).
+[x] Budget constraints stated: recorded as "none stated" (no transcript
+    exists).
+
+====================================================================
+RESEARCH-QUALITY FLAG FOR /audit-write AND THE SALES TEAM
+====================================================================
+This is a thin-data case: there is no discovery call transcript on file at
+all for this prospect, and the firm's own website could not be rendered
+live in this research environment, so the entire firm-profile and
+financial picture below rests on third-party directory/aggregator data and
+placeholder defaults rather than either a live site audit or confirmed
+prospect statements. The strongest, most concrete, non-generic talking
+points that survive this gap are: (1) the prospect's own August 2026 Best
+of South Sound Gold/Silver community awards, which are a genuine and
+recent competitive win worth leading with; (2) the PFL program affiliation,
+which shows the firm already has a structured growth framework rather than
+starting from zero; and (3) the concrete directory-visibility gap
+(no confirmed Avvo/Justia/FindLaw/BBB presence versus all three named
+competitors having at least one of these). Recommend Jacob Meissner
+either confirm a real discovery conversation has happened and locate the
+transcript before September 14, 2026, or treat the proposal call itself as
+the first real discovery opportunity and adjust the agenda accordingly.
+Also recommend a manual live-site check (mobile responsiveness, above-fold
+CTA, PageSpeed, and the "1 review" GBP discrepancy) before the call, since
+none of those could be confirmed by this research pass.
