@@ -1,0 +1,378 @@
+MAYDAY LAW OFFICE PLLC — GROWTH AUDIT RESEARCH NOTES
+Prepared for: Femi Ogunjumelo (Principal Attorney)
+Sales Rep: Jonathan Farace
+Proposal Call Date: September 3, 2026
+URL: https://maydayhoustonlaw.com
+
+METHODOLOGY NOTE: This research was conducted using live web fetch and web search
+tooling. Google Maps, the Google Business Profile panel, Facebook/Meta Ads Library,
+and PageSpeed Insights' web UI are all JavaScript-rendered and could not be loaded
+directly by the available browser/fetch tooling in this session (blocked/403,
+empty render, or persistent 429 rate-limiting on the PageSpeed API after 6 retries
+across the session). Wherever a live Google-direct read was not possible, data is
+sourced from indexed search results and third-party aggregators and is explicitly
+tagged UNCONFIRMED below per the Review-Data Verification Rule. No number in this
+file should be treated as fact unless tagged [confirmed via Google].
+
+================================================================
+STEP 1 — WEBSITE RESEARCH
+================================================================
+- Website URL confirmed live: yes (https://maydayhoustonlaw.com — the bare
+  "www.maydayhoustonlaw.com" URL in the trigger did not resolve directly via
+  fetch; the canonical https://maydayhoustonlaw.com/ URL does)
+- Last redesign date or estimated age: not explicitly published; site assets
+  (logo files, copyright) appear current as of 2025–2026. No redesign
+  announcement found. Treat as "unknown age, appears reasonably current."
+- Mobile responsive: not directly observed (fetch tool does not render
+  viewport); no indication of a broken/legacy non-responsive template.
+- Homepage headline: "Houston Personal Injury Lawyers" with tagline "We fight
+  so you don't have to."
+- CTA above fold: yes — phone number "888-MAYDAY-LAW | 888-629-3295" is the
+  primary above-fold CTA in the header. No visible "Free Case Evaluation" form
+  CTA above the fold on the homepage itself.
+- Contact form location: not found. The homepage does not surface an inline
+  contact/lead form; the dedicated Contact page (maydayhoustonlaw.com/contact-us/)
+  also has no form — it offers phone (281-741-1162) and a mailto "Email Mayday
+  Law Offices" button instead, positioned above the fold on that page.
+- Live chat present: no.
+- Attorney bio present: yes — Femi Ogunjumelo has a dedicated bio page
+  (/femi-ogunjumelo/) linked from the About Us menu.
+- Video present: not observed on homepage.
+- Blog present: yes — "Our Blog" at /our-blog/ (note: /blog/ 404s; correct path
+  is /our-blog/). Approximately 30 posts visible (e.g. "What to Do After a
+  Traumatic Brain Injury," "Who Is At-Fault in a Rear-End Accident?," "What to
+  Do When the Other Driver Didn't Have Insurance"). Publish dates were not
+  rendered in the fetch — cannot confirm recency, but volume suggests an
+  actively maintained blog.
+- Practice area pages: 18 distinct pages, including Spanish-language versions
+  (Accidentes Automovilísticos, Lesiones Personales) — confirms bilingual site
+  infrastructure consistent with the firm's "Se Habla Español" positioning.
+- Bilingual/Spanish note: site already has Spanish-language landing pages live;
+  Femi did not raise Spanish campaigns on the call (see Step 9).
+- Geo-targeting landing pages: NOT FOUND. Site search for surrounding-city terms
+  (Sugar Land, Katy, Pasadena, Spring, Pearland) returned no indexed
+  maydayhoustonlaw.com pages. The firm appears to have zero city-specific
+  landing pages despite serving the broader Houston metro — a real content-SEO
+  gap.
+- PageSpeed mobile score: UNAVAILABLE — PageSpeedInsights API (googleapis.com)
+  returned HTTP 429 (rate-limited) on 6 separate attempts across this session;
+  the pagespeed.web.dev web UI is client-rendered JS and could not be scraped
+  statically. Do not report or cite a PageSpeed number for this firm — none was
+  obtained. Flag for a follow-up live run before /audit-write if a hard number
+  is required.
+- PageSpeed desktop score: UNAVAILABLE — same reason as above.
+
+================================================================
+STEP 2 — GOOGLE BUSINESS PROFILE
+================================================================
+- GBP found: yes (indexed across multiple sources; direct Google Maps panel
+  could not be rendered by available tooling — see Methodology Note)
+- Star rating: 4.7–4.8 [UNCONFIRMED — sourced from Trustindex.io and
+  Trustanalytica.org aggregators, plus the firm's own homepage badge (which
+  displays "4.8/5 Stars"); not independently confirmed via Google]
+- Total review count: approximately 176–187 [UNCONFIRMED — Trustanalytica.org
+  lists 176 reviews, Trustindex.io references "over 187 happy customers";
+  sources disagree slightly and neither is a direct Google Maps read, not
+  independently confirmed via Google]
+- Most recent review date: not observed (not available through indexed
+  aggregator pages).
+- Primary category: "Personal Injury Attorney" (inferred from consistent
+  directory categorization across FindLaw, Lawyers.com, Martindale — not read
+  directly off the GBP panel).
+- Photos active: not observed.
+- Posts active: not observed.
+- Firm review page (maydayhoustonlaw.com/reviews/) exists and links out to
+  Google/Yelp/Facebook but does not embed a live count.
+
+================================================================
+STEP 3 — LOCAL 3-PACK SEARCHES
+================================================================
+NOTE: The Google Maps local 3-pack widget is JS-rendered and not visible to
+available fetch tooling (returns empty/error content — see Methodology Note).
+The searches below reflect organic web-search prominence as the best available
+proxy for competitive visibility, NOT a literal read of the 3-pack UI. Treat
+competitor presence as directional, not a confirmed pack position.
+
+Practice Area 1: Personal Injury (firm's single stated practice area per
+transcript; website subdivides into 18 sub-pages)
+- Search 1 "best personal injury lawyer Houston": Mayday Law Office does not
+  appear among top-surfaced firms — competitors surfaced: Sutliff & Stout
+  [~166 reviews, aggregator], Zinda Law Group [~35 reviews on one aggregator,
+  claims 1,000+ combined across platforms/offices], Simmons & Fletcher
+  [486 reviews, aggregator]
+- Search 2 "car accident lawyer Houston top rated firms": Mayday Law Office
+  does not appear among top-surfaced firms — competitors surfaced: Simmons &
+  Fletcher [486 reviews], The Miller Law Firm/"Texas Bulldog" [120+ reviews],
+  Joe I. Zaid & Associates [reviews not confirmed for Houston-specific
+  location], The Doan Law Firm [~479–511 reviews]
+- Search 3 "truck accident lawyer Houston top firms": Mayday Law Office does
+  not appear among top-surfaced firms — competitors surfaced: Zehl &
+  Associates [record-verdict positioning, review count not confirmed], Joe I.
+  Zaid & Associates, The Lanier Law Firm [national-scale firm, excluded from
+  named-competitor list per rule against national brands], Sutliff & Stout
+
+Per the Ads Framing Rule: Mayday "does not appear to be ranking prominently
+for these searches" — this is not a certainty claim that they have zero
+presence, only that they were not observed to surface in these specific
+searches.
+
+================================================================
+STEP 4 — COMPETITOR REVIEW COUNTS
+================================================================
+Verification caveat: none of the figures below were read directly off a live
+Google Maps panel (tooling limitation, see Methodology Note); all are
+UNCONFIRMED. Per the Review-Data Verification Rule, none is cited here as
+categorically "dominating" Mayday on review count alone where the numbers are
+close or lower — only the two clearly-larger firms are used for that framing
+in Step 10.
+
+- Competitor 1: Simmons & Fletcher, P.C. — reviews: 486 [UNCONFIRMED — sourced
+  via aggregated search result citing "Google rating," not independently
+  confirmed via Google] — rating: 4.9 [UNCONFIRMED, same sourcing]
+- Competitor 2: The Doan Law Firm (Accident & Injury Attorneys — Houston) —
+  reviews: ~479–511 (sources disagree) [UNCONFIRMED — sourced from Birdeye and
+  Trustanalytica aggregators, not independently confirmed via Google] —
+  rating: 5.0 [UNCONFIRMED, same sourcing]
+- Competitor 3: Sutliff & Stout, Injury & Accident Law Firm — reviews: ~166
+  [UNCONFIRMED — sourced from Birdeye aggregator, not independently confirmed
+  via Google] — rating: 4.8 [UNCONFIRMED, same sourcing]. NOTE: this figure is
+  LOWER than Mayday's own estimated 176–187, so Sutliff & Stout should NOT be
+  cited as out-reviewing Mayday — their competitive threat is channel breadth
+  (multi-city SEO/PPC footprint), not review volume.
+
+================================================================
+STEP 5 — DIRECTORY LISTINGS
+================================================================
+Checked: FindLaw, Lawyers.com/Martindale, Yelp, Avvo (via Martindale/Lawyers.com
+network), USAttorneys.com, LinkedIn. Justia-specific profile not found in
+indexed search (may not exist or is not indexed).
+
+- FindLaw (lawyers.findlaw.com/texas/houston/5058613_1/): lists firm as "Mayday
+  Law Office," attorney "Olufemi Philips Ogunjumelo," address "11222 Richmond
+  Avenue Suite 202, Houston, TX 77082," phones (281) 741-1162 and
+  (281) 656-9309, fax (281) 741-1312.
+- Current website/contact page: address "One Westoffice Center, 10590
+  Westoffice Drive Suite 2000, Houston, TX 77042," phone 281-741-1162
+  (primary) and 888-629-3295 (marketing/CTA number).
+- **NAP INCONSISTENCY FOUND**: FindLaw's listed address (11222 Richmond Avenue,
+  77082) does not match the firm's current address (10590 Westoffice Drive,
+  77042) shown on the live site, Yelp, and Martindale. This is a legacy/stale
+  directory listing (likely a prior office location) actively hurting local
+  citation consistency and should be corrected as a quick-win recommendation.
+- Yelp, Martindale, Lawyers.com, USAttorneys.com, LinkedIn: all show the
+  current 10590 Westoffice Drive address — consistent with each other.
+- Avvo: no standalone profile URL surfaced in search, but Femi Ogunjumelo is
+  referenced as an "Avvo Top Contributor" and the firm has received an "Avvo
+  Client's Choice Award" per secondary source (whoswhopr.com) — suggests an
+  active Avvo presence exists even though the direct URL wasn't indexed.
+- Geo-targeting landing pages for surrounding cities: none found (see Step 1).
+
+================================================================
+STEP 6 — GOOGLE ADS
+================================================================
+Practice Area 1: Personal Injury
+- Firm ads observed: not observed. No sponsored/search-ad presence for Mayday
+  Law Office surfaced in any search performed. Consistent with the transcript
+  (past SEO/Facebook efforts were the extent of paid marketing; no mention of
+  running Google Search ads). Framing per Ads Framing Rule: Mayday "does not
+  appear to be running Google search ads for personal injury terms in
+  Houston" — not a certainty claim.
+- Named local competitors running ads: Sutliff & Stout (dedicated landing
+  pages per case type/city suggest active SEM investment; ad copy itself not
+  directly observed via rendered SERP), Joe I. Zaid & Associates (aggressive
+  multi-office paid presence referenced across directory summaries; specific
+  ad copy not directly observed). Direct ad copy text could not be captured
+  because live Google SERP ad units are not renderable by available tooling —
+  competitor ad presence here is inferred from active landing-page/PPC-style
+  page structure (e.g., dedicated /truck-accident-lawyer/, /car-accident-lawyer/
+  pages), not a literal read of ad units.
+
+================================================================
+STEP 7 — LOCAL SERVICE ADS
+================================================================
+- Firm appears in LSA: not observed (could not render live LSA unit; no
+  evidence found either way).
+- Google Screened: not observed.
+- LSA review count: n/a — not observed.
+- Named local competitors in LSA: not confirmed — general market research
+  indicates Houston-metro personal injury LSA spend commonly runs $40k–$150k/mo
+  for top-15-metro firms, underscoring how capital-intensive this channel is
+  in Mayday's market, but no specific competitor was directly confirmed
+  in-unit.
+
+================================================================
+STEP 8 — META ADS
+================================================================
+- Firm has active ads: not observed. Facebook Ads Library (facebook.com/ads/library)
+  could not be loaded by available tooling (403/blocked — JS-rendered,
+  requires interactive session). Transcript confirms the firm has run Facebook
+  ads in the past ("Past digital ad attempts (SEO, Facebook) were ineffective,
+  yielding low-quality leads") but does not state whether anything is active
+  today. Per Ads Framing Rule, this is recorded as "not observed" rather than
+  a certainty claim.
+- Named local competitor 1: Sutliff & Stout — active ads: not observed (tool
+  limitation).
+- Named local competitor 2: The Doan Law Firm — active ads: not observed
+  (tool limitation).
+NOTE TO /audit-write: Meta Ads Library could not be verified live this pass.
+If a specific ad-count claim is needed for the report, re-run this check with
+interactive browser access before publishing.
+
+================================================================
+STEP 9 — TRANSCRIPT EXTRACTION
+================================================================
+- Practice areas confirmed: Personal injury (firm-wide framing on the call).
+  Website separately lists 18 sub-practice pages (car accidents, truck
+  accidents, catastrophic injury, wrongful death, nursing home abuse, dog
+  bites, oil & gas injuries, aviation, boating, railroad, ATV, etc.) but the
+  call treated the firm as a single-practice-area (PI) client.
+- Current lead sources: "A billboard and inconsistent client referrals."
+  Explicit quote: "Current marketing (billboard, referrals) is inconsistent
+  and fails to attract new clients."
+- Ads ever run: yes — SEO and Facebook Ads in the past. Outcome: "Ineffective;
+  yielded low-quality leads (e.g., bankruptcy inquiries) and poor ROI." Also:
+  an incomplete ChatGPT Ads (ads.openai.com) campaign already exists in the
+  account, created by another team member, never launched — Jonathan is
+  sending a verification guide for Femi/Kim to complete internally.
+- Team size: not explicitly stated as a headcount. Femi Ogunjumelo (principal
+  attorney/owner) and "Kim" (staff, handles GBP/intake-adjacent tasks per
+  action items) are the two named firm contacts on the call.
+- Annual revenue (gross / case value): stated as "~$150k/month (based on ~15
+  settlements/mo at ~$7.5k/case)" at current ~20 cases/mo volume. Note: not
+  all cases settle (20 cases/mo vs. 15 settlements/mo cited) — some variance
+  between intake and settlement volume.
+- Annual revenue (net / take-home / collected): not distinguished from gross —
+  the transcript only frames revenue via the settlement-volume calculation
+  above.
+- Fee structure: not explicitly restated on the call; website confirms
+  contingency ("never any fees unless we win") — treat as contingency-fee
+  personal injury model, consistent with practice type. No exact contingency
+  percentage disclosed anywhere.
+- Revenue goal: "Add 30 new cases/month to reach a consistent 50 cases/month."
+  A monthly-run-rate implied annual revenue figure was referenced during
+  budget discussion — "50 cases/mo (~$4.5M revenue)" — this reads as an
+  ANNUALIZED figure (50 cases/mo × 12 × ~$7.5k/case ≈ $4.5M/year), not a
+  monthly figure; flagged here so /audit-write does not misstate it as
+  monthly revenue.
+- Average case value: ~$7.5k/case (stated, used in rep's own math on the call).
+- Current close rate: not stated — default to 15% per standard assumption.
+- Number of locations: 1 (not otherwise mentioned; single Houston office
+  confirmed via website/directories).
+- Spanish campaign needed: not stated on the call. Note: the firm's existing
+  website already has live Spanish-language pages and "Se Habla Español"
+  positioning — a Spanish-language campaign angle was not raised or requested
+  by the prospect during this call.
+- Dominant buying motive: not stated as a personal quote. Inferred from
+  context: the call is framed entirely around building "a predictable client
+  acquisition system" to hit a firm-wide volume target (50 cases/mo) the firm
+  says it can "easily handle... without operational strain" — this points to
+  motive (3) scale and dominate, rather than a personal-time or exit-focused
+  motive. No statement was made about the owner's personal life, retirement,
+  or desire to reduce his own hours.
+- Any profitability claims made by prospect: none stated. All profitability
+  figures (revenue, case value, reinvestment %) originated from Jonathan's
+  benchmarking math on the call, not from Femi.
+- Any claims about case types or practice areas: "e.g., bankruptcy inquiries"
+  cited as an example of a low-quality lead type generated by past SEO/
+  Facebook efforts — implies bankruptcy is explicitly NOT a practice area/fit,
+  useful negative-qualifier context for future ad targeting exclusions.
+- Stated call focus / product interest: NOT standard marketing/growth
+  discovery framed generically — this call was explicitly convened as a
+  "Consult on ChatGPT ads and define a new marketing strategy," with a
+  specific AI/AEO angle: verifying and completing an existing ChatGPT Ads
+  (ads.openai.com) setup, plus explicit framing around the firm's absence
+  from ChatGPT search results for "best personal injury attorney in
+  Houston." The proposed strategy itself is a full-funnel SEO/AI (organic +
+  AEO) + Meta brand-awareness combination — call this out explicitly in
+  /audit-write rather than treating it as generic SEO/PPC discovery.
+- Existing marketing/SEO/ad vendor engagements: none stated as an active,
+  contracted third-party vendor. The one exception: an incomplete ChatGPT Ads
+  campaign already exists in the firm's own ad account, created internally by
+  "another team member," not by an outside agency, and never launched.
+- Budget constraints stated: no explicit "we can't afford X" statement from
+  Femi, but budget sensitivity is implied structurally — Jonathan's own
+  benchmark math produced $45k–$75k/mo figures, and the team proactively
+  proposed a lower "~$20k–$25k/month all-in budget... as a more accessible
+  entry point" instead, alongside a 12-month contract term.
+
+================================================================
+STEP 10 — COMPETITIVE URGENCY SCORE
+================================================================
+Score: 8 / 10
+
+Reasoning: Mayday is not observed to hold any paid presence (Search, LSA, or
+Meta) and does not surface prominently in organic local-pack-adjacent searches
+for its core practice area, while multiple well-established, specifically-named
+local competitors carry substantially larger review footprints and multi-page
+SEO/PPC infrastructure (city- and case-type-specific landing pages) that Mayday
+currently lacks entirely. The firm is also explicitly confirmed absent from
+ChatGPT/AI search results for its own core keyword ("best personal injury
+attorney in Houston") — a channel prospective clients are already using. This
+is not yet a 9–10 (no single firm was confirmed to be running a fully
+comprehensive campaign across every channel simultaneously with direct
+evidence), but the gap spans SEO, paid search, LSA, AI/AEO visibility, and
+directory-citation hygiene (see NAP inconsistency, Step 5) at once.
+
+Named specific local competitor threats:
+1. The Doan Law Firm — ~479–511 Google reviews at a 5.0 rating (aggregator
+   figures) and dedicated case-type landing pages; heavy local citation
+   presence versus Mayday's single homepage-level positioning.
+2. Simmons & Fletcher, P.C. — 486 reviews at 4.9 (aggregator figures),
+   long-tenured Houston-only local SEO presence with deep content footprint
+   (dedicated truck-accident, car-accident sub-pages).
+3. Sutliff & Stout — multi-city landing-page infrastructure (Houston, Cypress,
+   Austin, San Angelo) signaling active, ongoing SEO/PPC investment even
+   though its own review count (~166, aggregator) is currently lower than
+   Mayday's — the threat here is channel breadth and paid infrastructure, not
+   review volume.
+
+Dynamic sentence (matches 7–10 bracket):
+"A score of 8 means competitors are actively dominating multiple channels in
+your market and the gap is getting wider every month you wait. This is not a
+future problem — it is a right now problem."
+
+================================================================
+PASS 2 — VERIFICATION CHECKLIST
+================================================================
+[x] Every number in the notes matches actually observed data (or is explicitly
+    flagged as unavailable/UNCONFIRMED where live tooling could not confirm it)
+[x] Every competitor review count has been checked against Mayday's own
+    estimated count — Sutliff & Stout's lower figure is explicitly NOT framed
+    as out-reviewing Mayday
+[x] Every review count and star rating (firm and competitors) carries a
+    verification-method tag — all are UNCONFIRMED in this pass; none are
+    tagged [confirmed via Google] because live Google Maps/GBP rendering was
+    not available to this session's tooling
+[x] Annual revenue is split into gross/case-value ("~$150k/mo, ~15
+    settlements/mo at ~$7.5k/case") vs. net/take-home ("not distinguished
+    from gross"), with fee structure recorded (contingency, % not disclosed)
+[x] Every ad section (Google Ads, LSA, Meta) covers the firm's one stated
+    practice area (Personal Injury)
+[x] No section states "you are not running ads" — all use "not observed" /
+    "does not appear to be" framing
+[x] No profitability or business claim appears unless it came from the
+    transcript (all such figures are attributed to Jonathan's on-call math,
+    not presented as Femi's own claims)
+[x] No competitor reference uses generic labels — only specific named local
+    firms (Doan, Simmons & Fletcher, Sutliff & Stout, Zinda, Joe I. Zaid,
+    Zehl & Associates); The Lanier Law Firm was excluded from the named-threat
+    list as a national-scale brand
+[x] PageSpeed scores are flagged UNAVAILABLE rather than estimated — real
+    numbers could not be obtained after 6 retries against a rate-limited API;
+    do not fabricate a score in /audit-write
+[x] DBM is recorded as an inference (scale and dominate), clearly marked as
+    inferred, not a direct quote
+[x] Revenue goal is recorded (30 new cases/mo → 50/mo total), with the
+    $4.5M figure flagged as an annualized read, not monthly
+[x] Close rate is recorded (not stated — defaulted to 15%)
+[x] Average case value is recorded (~$7.5k/case, stated)
+[x] Stated call focus / product interest is recorded and called out
+    explicitly as a ChatGPT Ads/AEO-specific consult, not generic
+    marketing/growth discovery
+[x] Existing marketing/SEO/ad vendor engagements recorded (none active/
+    contracted; one incomplete internally-created ChatGPT Ads campaign)
+[x] Budget constraints stated are recorded (no explicit affordability
+    statement, but structural budget-sensitivity noted via the
+    $20k–$25k "more accessible entry point" framing)
+
+END OF RESEARCH NOTES.
