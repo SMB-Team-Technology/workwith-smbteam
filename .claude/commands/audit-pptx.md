@@ -33,7 +33,7 @@ If any of these files does not exist, stop and tell the user to run `/audit-writ
 Assessment overview: urgency score, 4-pillar health indicators, key findings (3 negative + 1 positive), competitor review table, stage strip.
 
 **Slide 2 — Your Growth Plan: 3 Priorities to Reach [Goal]**
-Action plan: SMB model description, goal statement tied to DBM, three priority columns (Marketing Engine / Fix Intake / Team & Profit Systems) with 5 bullets each.
+Action plan: SMB model description, goal statement tied to DBM, three priority columns (themed to match what's actually being sold — see Priority column rules below) with 5 bullets each.
 
 **Slide 3 — Your Investment & What Happens Next**
 Pricing: two package cards with bundled and retail prices, bundle total + savings, ad spend note, ROI projections, first-90-days timeline, closing quote.
@@ -105,10 +105,13 @@ Copy values exactly — do not rewrite or recompute.
 - `SLIDE_2_TITLE` — "Your Growth Plan: 3 Priorities to Reach [monthly goal]"
 
 **Priority column titles and bullets (Slide 2):**
-Derive from section_11 Block 1 / quick wins and section_06–09 findings. Map to three themes:
-- Priority 1 → Marketing Engine (lead gen actions)
-- Priority 2 → Fix Intake & Stop Losing Cases (intake actions)
-- Priority 3 → Install Team & Profit Systems (team + profit actions)
+
+⚠️ Do NOT default to a fixed Marketing / Intake / Team split. The priority columns must describe only work that is actually included in the package(s) on Slide 3 (section_11 PACKAGES) — never a service this firm isn't being sold this round. A firm buying an Operations/Coaching-only package must not get a "Marketing Engine" column pitching Google Ads, LSA, or SEO it never agreed to.
+
+1. First read section_11 PACKAGES and their deliverable lines to determine which pillar(s) — Lead Generation, Intake, Team, Profit — the sold package(s) actually cover.
+2. If the sold package(s) span 3+ distinct pillars, use one column per pillar (max 3), each titled and populated from section_11 Block 1 / quick wins and the matching section_06–09 findings for that pillar only.
+3. If the sold package(s) only span 1–2 pillars (e.g. a Coaching/Operations-only deal with no marketing component), do not manufacture a column for an unsold pillar. Instead break the sold scope itself into 3 sub-priorities that are all genuinely part of the package (e.g. for an Operations/FCOO package: team structure & hiring, profit/pricing systems, owner delegation & SOPs), drawn from section_11 Block 1 and the relevant section_07–09 findings.
+4. Every bullet in every column must be an action actually covered by the proposed package(s) for this firm — verify each bullet against section_11 before writing it.
 
 Each bullet: one specific action for this firm, ≤55 chars.
 
@@ -142,6 +145,7 @@ wc -c "[friendly-name]/[FirmName]_[Date]_Proposal.pptx"
 - Copy prices exactly from section_11 — never round or estimate
 - Bullet text: one idea, one sentence, ≤55 chars, 8th-grade reading level
 - Priority column bullets must be firm-specific — no generic language
+- Priority columns must reflect only pillars/services in the sold package(s) on Slide 3 — never pitch a service (e.g. Google Ads, LSA, SEO) that isn't part of what this firm is actually buying
 - The closing quote on Slide 3 must be vivid, specific, and in the owner's voice — not a generic tagline. If the transcript has a direct quote about what they want their life to look like, use it verbatim or near-verbatim
 - Do not add a fourth package card — maximum two packages per the template
 - Never modify `Design Files/audit_pptx_template.py` — work in the firm's copy only
