@@ -1,0 +1,199 @@
+RENEAU BAYS — SECTION 11 WORKINGS (INTERNAL — NOT CLIENT FACING)
+=================================================================
+
+PACKAGE DECISION FILE CROSS-CHECK
+----------------------------------
+scripts/select-package.mjs was run and produced reneau-bays/package_decision.json
+with confidence: "low". Its regex could not parse the research notes' free-text
+revenue statement ("combined firm estimated $700k-$900k/year") and fell back to a
+default of $500,000 and a default team size of 3. Per audit-write.md, a low-confidence
+decision file is used as a starting point with cross-checked corrections documented here:
+
+- REVENUE CORRECTION: True revenue per research notes is $700K-$900K/year (combined
+  firm estimate, Dan Bryant's assessment concurred by prospect), not the script's
+  $500K default. This is NOT a contingency-fee practice (hourly billing) and no
+  separate net/gross figure is stated, so the effective-revenue override does not
+  apply. Re-checking tier eligibility against the true $700K-$900K figure lands on
+  the SAME tiers the script selected (Starter marketing / Elite Coach Plus coaching),
+  so no package change was required — only the ad spend estimate needed correction
+  (below).
+- AD SPEND CORRECTION: The script's ad spend floor ($4,500 conservative / $18,000
+  aggressive) was driven by a "bankruptcy" keyword match in detected practice areas.
+  Bankruptcy is legacy/secondary and being wound down (along with Criminal Defense,
+  which Danny "no longer wants"). The firm's actual, transcript-stated ad plan is
+  "Start with Google Local Services Ads (family law/probate focus), then PPC as
+  needed" — so ad spend is recalculated below using the Family Law channel-minimum
+  table instead, which the practice-area detector should have weighted higher than
+  a winding-down bankruptcy practice.
+- OVERRIDE CHECK: None of the four transcript-stated-need overrides apply. Call
+  purpose is standard marketing + coaching discovery (not FCTO/AI or pure ops). No
+  existing marketing vendor is under contract (prior vendor was terminated). No
+  stated budget ceiling — the call discussed investment ranges as fit discussion,
+  not a hard limit. Not a contingency practice, so no net-vs-gross override.
+- TEAM: Practice areas detected (family law, probate, bankruptcy legacy, criminal
+  winding down) trigger multi-practice-area exclusion of the Essentials tier
+  regardless of revenue reading — Starter is the correct floor either way.
+
+MANDATORY PRICE LOOKUP (character-checked against Design Files/audit-write.md tables)
+----------------------------------------------------------------------------------------
+- Marketing package selected: Full Service Marketing — Starter
+  - Bundled price (from table): $4,997/mo
+  - Stand-alone price (from table): $5,697/mo
+  - Savings (stand-alone minus bundled): $700/mo
+- Non-marketing package selected: Elite Coach Plus
+  - Bundled price (from table): $3,200/mo
+  - Stand-alone price (from table): $3,497/mo
+  - Savings (stand-alone minus bundled): $297/mo
+- Legal AI Workforce (LAW) package selected: none — no signal of AI readiness on the
+  call beyond the unrelated Smith.ai/RingCentral phone-vendor discussion; reserved
+  for Phase 3 per the standard roadmap.
+- AI Avatar / Video Growth add-on selected: none — no stated interest in video/social
+  brand-building on the call.
+- Total monthly investment (sum of all bundled/recurring prices): $8,197/mo
+- Total savings (sum of all savings): $997/mo
+
+WHY ELITE COACH PLUS ALONE (NOT + FCOO ADVISOR)
+-------------------------------------------------
+Revenue ($700K-$900K) and the team's evaluation of adding associates would make
+"Elite Coach Plus + FCOO Advisor" ($5,694/mo bundled) eligible per the non-marketing
+table's "Growing" team row. This was considered but not selected for Phase 1: the
+call discussed an all-in investment range of roughly $6,000-$7,500/month for
+services plus ad spend starting around $2,000/month (typical all-in range
+$5,000-$10,000/month per the transcript). Marketing Starter + Elite Coach Plus
+($8,197/mo before ad spend) already sits at the upper edge of that discussed range.
+Adding FCOO Advisor now would push Phase 1 well past what was actually discussed on
+the call without a stated budget override triggering it. FCOO Advisor is placed in
+Phase 2 of the roadmap instead ("Operational Scale" — framed as graduation), which
+matches the standard roadmap definition exactly and lines up with Roger's own
+stated 1 short-term / 2-3 long-term associate hiring timeline.
+
+35% CAP CHECK
+--------------
+Monthly revenue: $700K-$900K/year / 12 = ~$58,300-$75,000/month.
+35% cap = ~$20,400-$26,250/month.
+Recommended spend: $8,197/mo (services) + $5,500-$20,000/mo (ad spend) =
+$13,697-$28,197/mo. At the low end of the revenue range and high end of ad spend,
+total spend could approach or slightly exceed the 35% cap — flagged for sales rep
+awareness; recommend confirming actual revenue before committing to the aggressive
+ad spend figure.
+
+AD SPEND CALCULATION
+----------------------
+Recommended focus: Family Law (primary) + Probate (secondary), per the transcript's
+stated channel plan ("Start with LSA — family law/probate focus — then PPC as
+needed"). No distinct "Probate" row exists in the ad-spend floor table; Family Law
+row minimums are used as the basis for both, consistent with overlapping search
+intent and the fact that Estate Planning (the closest analog) shares the same
+$3,500 Google PPC floor.
+
+CONSERVATIVE (sum of channel minimums, Family Law row):
+  Google PPC min $3,500 + LSA min $2,000 = $5,500/mo
+  (Absolute $3,000/mo minimum satisfied; no PI or Criminal Defense floors apply.)
+
+AGGRESSIVE (20% rule):
+  1. Revenue goal: Dan Bryant assessed "a path to 2x revenue in 12 months is
+     possible." Using current revenue midpoint $800K x 2 = $1,600,000 goal.
+     $1,600,000 x 20% / 12 = $26,667/mo.
+  2. Geo tier: Oklahoma City is not a named Tier 1-3 market -> Tier 4 (significant
+     regional), multiplier 1.0x. $26,667 x 1.0 = $26,667.
+  3. Spanish campaign: not needed -> no multiplier.
+  4. − Marketing management fee ($4,997) = $21,670 available ad spend.
+  5. Reverse math validation: $1,600,000 / 12 = $133,333/mo target revenue ÷
+     $10,000 avg case value = 13.3 cases/mo ÷ 15% default close rate = 88.9
+     leads/mo x blended CPL (~$93, weighted 64% Google Search $100 mid / 36% LSA
+     $80 mid) = ~$8,268/mo required. Lower than the 20%-rule figure -> use the
+     higher number ($21,670) per instructions.
+  6. Tier cap check: Starter cap is $20,000/mo. $21,670 exceeds the cap. Revenue
+     ($700K-$900K) does not meet the Growth tier's $1M-$2M floor, so a tier
+     upgrade is not eligible even though ad spend exceeds Starter's cap (per the
+     boundary rule, aggressive goals do not bypass revenue floors). Aggressive ad
+     spend is therefore presented at the Starter tier cap of $20,000/mo, with a
+     note that a 10% overage fee would apply if the client wants to exceed the cap
+     without upgrading tiers.
+
+ROI PROJECTIONS
+-----------------
+Average case value used: $10,000 (divorce, per transcript; probate is also ~$10,000).
+Close rate: 15% (default — not stated on call).
+Blended CPL basis: 64% Google Search ($100 mid) / 36% LSA ($80 mid) = ~$93/lead
+(channel mix matches the conservative-spend proportions).
+
+Conservative scenario ($5,500/mo, +20% cushion -> CPL ~$112):
+  Leads = $5,500 / $112 = ~49/mo
+  Cases = 49 x 15% = ~7/mo
+  Revenue = 7 x $10,000 = ~$70,000/mo
+  Return = $70,000 / $5,500 = ~12.7x
+
+Aggressive scenario ($20,000/mo, no cushion, CPL ~$93):
+  Leads = $20,000 / $93 = ~215/mo
+  Cases = 215 x 15% = ~32/mo
+  Revenue = 32 x $10,000 = ~$320,000/mo
+  Return = $320,000 / $20,000 = ~16x
+
+NOTE: the aggressive scenario's case volume (~32/mo) far exceeds what a 2-attorney
+firm could currently handle — it assumes the Phase 2/3 associate hiring already
+planned by Roger has happened. This should be framed in the report as the ceiling
+of what the ad spend tier allows, tied explicitly to the team-growth roadmap, not
+as an immediate Phase 1 expectation.
+
+DBM STATEMENT FOR BLOCK 1
+---------------------------
+We help post-merger family law and probate partners running on referrals get a
+predictable, non-referral flow of cases and a team built to handle them so they can
+step back from personally carrying every case, grow their income, and get their
+time back for their families.
+
+QUICK WIN OPPORTUNITIES (7 — minimum 6 required)
+---------------------------------------------------
+1. [Lead Gen / Quick Win] Merge & Correct the Two Fragmented GBPs
+   Why: two GBPs split reviews and rankings; one is miscategorized as Bankruptcy Attorney.
+   Competitor: Lai & Turner (far larger unified review footprint).
+   Opportunity: one unified, correctly-categorized profile immediately strengthens
+   local search and LSA eligibility.
+2. [Lead Gen / Quick Win] Launch Google Local Services Ads (Family Law/Probate)
+   Why: LSA is pay-per-lead, appears above all other search results, and is already
+   the plan discussed on the call.
+   Competitor: none named specifically for LSA — omit "who" row.
+   Opportunity: fastest, lowest-risk channel to launch first.
+3. [Lead Gen / Long-Term Play] Geo-Optimize Practice Area Pages & Add City Landing Pages
+   Why: titles/H1s aren't built around "Oklahoma City" keywords; 5 service-area
+   cities have zero dedicated pages.
+   Competitor: Lai & Turner and Cannon & Associates both outrank in organic
+   "best of" results.
+   Opportunity: capture searches the firm's own content depth should already be winning.
+4. [Intake / Quick Win] Close the After-Hours Coverage Gap
+   Why: 82 of 356 recent inbound calls went to voicemail with zero after-hours coverage.
+   Competitor: none — omit "who" row.
+   Opportunity: launching the already-planned Smith.ai/Clio integration converts
+   existing missed calls into signed cases at zero added marketing cost.
+5. [Intake / Long-Term Play] Build a Defined Follow-Up Sequence
+   Why: no structured re-engagement process exists today for leads who don't sign
+   on the first call.
+   Competitor: none — omit "who" row.
+   Opportunity: recovers cases currently lost to silence, not to competitors.
+6. [Team / Long-Term Play] Bring on the Planned Licensed Legal Intern & Associates
+   Why: Roger and Danny both still personally carry all casework, with no bench to
+   absorb new leads once marketing starts working.
+   Competitor: none — omit "who" row.
+   Opportunity: this is what actually converts more leads into more personal time,
+   not just more revenue.
+7. [Profit / Long-Term Play] Build a Profit Plan Tied to Danny's $250K Target
+   Why: rate increases are happening without a plan connecting them to take-home
+   income or profitability by practice area.
+   Competitor: none — omit "who" row.
+   Opportunity: turns "combined firm revenue growing" into "Danny's income
+   growing," which is the actual goal.
+
+FIRST 90 DAYS
+---------------
+1. Launch Google Local Services Ads for family law and probate — the fastest
+   channel to start generating pay-per-lead calls.
+2. Merge and correctly re-categorize both Google Business Profiles under one
+   unified "Reneau Bays" brand as Family Law Attorney (Divorce Lawyer secondary).
+3. Rebuild practice area page titles and headlines around real search terms
+   ("Oklahoma City Family Law Attorney," "Oklahoma City Divorce Lawyer") and
+   launch dedicated landing pages for Norman, Edmond, Moore, Midwest City, and Yukon.
+4. Kick off Elite Coach Plus coaching sessions focused on Danny's path from
+   litigating to managing and Roger's associate hiring plan.
+5. Launch Google Search PPC as a second channel once LSA is live and generating
+   consistent call volume.
