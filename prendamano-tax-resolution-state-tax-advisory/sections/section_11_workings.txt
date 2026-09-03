@@ -1,0 +1,134 @@
+SECTION 11 WORKINGS — Prendamano Tax Resolution & State Tax Advisory
+Internal only — never appears in client-facing report.
+
+=== DATA INTEGRITY FLAG (for sales/ops review) ===
+The pricing tables embedded in the audit-write skill instructions delivered to this
+session were corrupted: dollar figures throughout (marketing tiers, non-marketing
+tiers, LAW, AI Avatar, Bookkeeping, OmniSocial, Attorney Assistant, and the CPL/ad-spend
+benchmark tables) had their leading digits replaced with fragments of this firm's own
+name (e.g. "Tax,497/mo", "Prendamano,000", "Resolution,997/mo"). These tables could not
+be used as a trustworthy source this session. All pricing below is sourced instead from
+the clean, already-reviewed package_decision.json file and corroborated by the clean git
+commit history (b0d351d, 374ebc9). No CPL benchmark exists for the Tax Resolution
+vertical in the standard guide even before corruption, so ROI figures below are derived
+from the transcript's own disclosed historical performance rather than a table lookup —
+flagged explicitly below and should be refined by the paid ads team before the call if
+a formal CPL benchmark for this vertical becomes available.
+
+=== TRANSCRIPT-STATED NEED OVERRIDE CHECK ===
+- Call-purpose override: does not apply. Transcript confirms standard marketing/lead-gen
+  discovery call (shifting Facebook spend to Google Ads), not a coaching/FCTO/AI-first call.
+- Existing-vendor override: facially matches (active Facebook Ads + SEO vendor contracts)
+  but does not apply in substance. The override exists to stop recommending marketing to a
+  firm that already has a working marketing solution and therefore has no marketing gap.
+  Here the opposite is true: the transcript frames the entire call as replacing two
+  underperforming, barely-breaking-even vendors with SMB Team's Google Ads-led approach —
+  the marketing gap is the explicit reason for the call. Proceeding with Full Service
+  Marketing is consistent with, not contrary to, the transcript.
+- Budget-reality override: does not strictly apply (no explicit affordability ceiling
+  stated), but the seller's override to the lowest tier (Essentials, no coaching) already
+  right-sizes the recommendation given the firm is pre-revenue-goal and already committed
+  to $4,200/mo across two vendors.
+- Effective-revenue override: not applicable — flat-fee practice, no gross/net revenue
+  distinction stated.
+
+=== PACKAGE DECISION FILE ===
+package_decision.json confidence: LOW (revenue and team size both defaulted — not
+stated in transcript). The pipeline's default eligibility logic would have selected
+Starter tier + Elite Coach Plus (multiple practice areas detected — IRS tax resolution
++ state tax advisory — hides Essentials under standard eligibility rules). The seller
+explicitly overrode this via Slack on September 3, 2026, to Full Service Marketing —
+Essentials, coaching dropped entirely, quoted as a standalone product at full retail
+with no bundled discount. proposal_review.json status is "locked," confirming this
+decision has already been reviewed and finalized. Used as-is per instructions for a
+low-confidence file with a documented, locked seller override — no further correction
+applied.
+
+=== PRICE LOOKUP (from package_decision.json) ===
+- Marketing package selected: Full Service Marketing — Essentials
+  - Bundled price: $3,797/mo
+  - Stand-alone price: $3,797/mo
+  - Savings: $0/mo (standalone/full retail, no bundle discount, per seller instruction)
+- Non-marketing package selected: None (coaching dropped per seller override)
+- Legal AI Workforce (LAW) package: none
+- AI Avatar / Video Growth add-on: none
+- Total monthly investment: $3,797/mo
+- Total savings: $0/mo
+
+=== 35% CAP CHECK ===
+Revenue is unknown (pre-revenue-goal, flat-fee practice, only 1 case signed to date).
+package_decision.json used a $500K default. $3,797 (marketing) + $5,000 (max ad spend)
+= $8,797/mo against $500K/12 = $41,667/mo → ~21% of revenue, under the 35% cap using the
+default. Actual current revenue is materially lower than the default — flagging for
+sales rep to confirm the firm can sustain 4+ months of combined marketing + ad spend
+before signing, consistent with the revenue-under-$250K funding check.
+
+=== AD SPEND & ROI PROJECTIONS ===
+Conservative: $3,000/mo | Aggressive: $5,000/mo (from package_decision.json, Essentials
+tier cap per seller override)
+
+Average case value: $10,000/case (flat fee, transcript-stated)
+Close rate: 15% (default per methodology — not stated in transcript)
+No CPL benchmark exists for the Tax Resolution vertical in the standard guide. Estimate
+below is anchored to the firm's own disclosed historical performance instead of a
+generic CPL lookup: $3,000/mo of (poorly-targeted, low-intent) Facebook ad spend
+produced 1 signed client in month one. Shifting that same conservative spend level to
+higher-intent Google Search traffic (people actively searching for IRS help) should
+perform at least as well; the aggressive scenario assumes a second case per month as
+intent-based traffic and a fixed contact form/NAP fix increase conversion.
+
+Conservative ($3,000/mo): ~1 case/month → $10,000/mo revenue → ~3.3x return
+Aggressive ($5,000/mo): ~2 cases/month → $20,000/mo revenue → ~4.0x return
+All figures are directional estimates, not a formal CPL-based projection, and are
+labeled as estimates in the client report. Recommend the paid ads team confirm a
+Tax Resolution-specific CPL benchmark before the proposal call if one exists.
+
+=== DBM STATEMENT FOR BLOCK 1 ===
+Audience: solo tax resolution attorneys building a brand-new practice from scratch
+External desire: a predictable flow of qualified IRS tax resolution and state tax
+advisory clients
+DBM: build a sellable, self-sustaining firm that funds her children's college education
+and provides financial autonomy and time freedom in retirement
+Formula: "We help solo tax resolution attorneys building a firm from the ground up get
+a predictable flow of qualified IRS and state tax clients so they can build a sellable
+firm that funds their family's future and their own financial freedom."
+
+=== QUICK WIN OPPORTUNITIES (8 identified) ===
+1. [Lead Gen / Quick Win] Launch Google Ads for IRS tax resolution + state tax advisory
+   keywords. Why: firm has zero Google presence while competitors likely bid on these
+   terms. Competitor: Tenenbaum Law, P.C. / J. David Tax Law. Opportunity: capture
+   high-intent "IRS problem" searchers at the exact moment of need.
+2. [Lead Gen / Quick Win] Claim and optimize Google Business Profile. Why: no GBP found
+   at all — zero local trust signals. Competitor: Tenenbaum Law, P.C. (established local
+   presence). Opportunity: start building local trust and map-pack visibility.
+3. [Intake / Quick Win] Move contact form to the homepage and fix NAP/phone number
+   inconsistencies (wrong area code + transposed digit). Why: buried form and wrong
+   numbers are actively losing calls today. No named competitor. Opportunity: recover
+   leads the firm is already generating at no additional ad cost.
+4. [Intake / Quick Win] Fix broken/buried contact path noted in Website Audit. Why:
+   urgency-driven prospects abandon rather than search for a second contact method. No
+   named competitor. Opportunity: reduce drop-off on already-paid-for traffic.
+5. [Team / Long-Term Play] Build a defined, delegated intake process before adding
+   staff. Why: firm cannot scale past what Jennifer can personally process. No named
+   competitor. Opportunity: free up attorney time for casework and firm growth.
+6. [Profit / Quick Win] Set up conversion tracking on all ad spend. Why: no visibility
+   today into cost per client across either vendor. No named competitor. Opportunity:
+   know which dollars are working before committing more.
+7. [Lead Gen / Long-Term Play] Pursue Local Service Ads / Google Screened status. Why:
+   zero reviews today; Google Screened offers instant third-party trust. No named
+   competitor confirmed live. Opportunity: pay-per-lead, top-of-page placement.
+8. [Lead Gen / Long-Term Play] Build state-specific landing pages leveraging the firm's
+   own stated virtual/nationwide service model. Why: site claims nationwide service but
+   has no pages to capture it. No named competitor. Opportunity: SEO advantage local-only
+   competitors cannot replicate.
+
+=== FIRST 90 DAYS (marketing-only engagement — no coaching package in this proposal) ===
+1. Launch Google Ads campaigns for IRS tax resolution and state tax advisory keywords
+   across Long Island and the firm's virtual/nationwide service area
+2. Claim and optimize Google Business Profile to begin building local trust signals
+3. Fix homepage contact form visibility and correct the NAP/phone number inconsistencies
+   found on the site
+4. Stand up conversion tracking so every dollar of the $3,000–$5,000/mo ad spend can be
+   measured against signed cases
+5. Review and tighten Facebook Ads targeting/creative once Google Ads is live, so the
+   existing $3,000/mo channel stops producing unqualified leads
