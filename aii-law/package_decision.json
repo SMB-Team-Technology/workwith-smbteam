@@ -1,0 +1,32 @@
+{
+  "confidence": "low",
+  "revenue_stated": "Not stated — no discovery call transcript exists yet (proposal call scheduled for September 4, 2026); seller's Slack override did not cite a revenue figure.",
+  "revenue_effective": null,
+  "revenue_source": "seller_override_slack (tier specified directly; no revenue figure provided)",
+  "revenue_label": "Unknown — no transcript and no revenue figure given by seller",
+  "team_size_stated": "6 attorneys, 8 support staff (per public /team/ page; not transcript-confirmed)",
+  "team_size_effective": 14,
+  "practice_areas_detected": [
+    "business/investment immigration (EB-5 investors, EB-3 workers, employer-sponsored workforce placement)"
+  ],
+  "marketing_tier": null,
+  "marketing_name": null,
+  "marketing_price_bundled": null,
+  "marketing_price_retail": null,
+  "marketing_savings": null,
+  "coaching_name": "FCOO Director",
+  "coaching_price_bundled": 5797,
+  "coaching_price_retail": 5797,
+  "coaching_savings": 0,
+  "law_tier": null,
+  "total_bundled": 5797,
+  "total_savings": 0,
+  "ad_spend_conservative": null,
+  "ad_spend_aggressive": null,
+  "selection_notes": [
+    "No prior package_decision.json existed for this deal — the Phase 1 review gate was opened directly from research notes; no discovery call has occurred yet (proposal call scheduled for September 4, 2026), so the standard revenue/team-size marketing+coaching tier logic was never run.",
+    "Seller override: Jacob Meissner requested via Slack on September 4, 2026 to set the plan to FCOO Director coaching-only (~9 hrs/month tier) for Aii Law PC, explicitly stating no other services are required (no marketing tier bundled).",
+    "FCOO Director standalone eligibility normally requires $1M+ annual revenue and 5+ established leaders per Design Files/Scoping_and_Ad_Spend_Guide.md Non-Marketing Package eligibility table. Revenue was NOT stated by the seller or anywhere in the research notes (no transcript exists) and cannot be verified against the $1M+ threshold. Team size (6 attorneys + 8 support staff = 14, per public website, not transcript-confirmed) would satisfy the 5+ established-leaders threshold if confirmed. Flagged for the sales rep to confirm revenue before finalizing pricing/scope with the client.",
+    "Priced as a true standalone product (no marketing tier bundled): $5,797/mo per Design Files/Scoping_and_Ad_Spend_Guide.md FCOO Director stand-alone rate, $0 savings since no bundle discount applies — consistent with prior precedent (see diehl-law/package_decision.json, runion-injury-law/package_decision.json)."
+  ]
+}
