@@ -78,8 +78,36 @@ jobs:
             $WITH_PPTX (true), also run Pass 3. Report the commit hash when done.
           "
 
+      - name: Verify audit write completed
+        id: verify
+        run: |
+          FRIENDLY_NAME="${{ steps.inputs.outputs.friendly_name }}"
+          WITH_PPTX="${{ steps.inputs.outputs.with_pptx }}"
+          MISSING=""
+
+          if [ ! -f "$FRIENDLY_NAME/index.html" ]; then
+            MISSING="${MISSING}index.html, "
+          fi
+          if [ ! -d "$FRIENDLY_NAME/sections" ] || [ -z "$(ls -A "$FRIENDLY_NAME/sections" 2>/dev/null)" ]; then
+            MISSING="${MISSING}sections/, "
+          fi
+          if [ "$WITH_PPTX" = "true" ] && [ -z "$(ls "$FRIENDLY_NAME"/*_Proposal.pptx 2>/dev/null)" ]; then
+            MISSING="${MISSING}proposal PPTX, "
+          fi
+
+          MISSING="${MISSING%, }"
+
+          if [ -n "$MISSING" ]; then
+            echo "write_verified=false" >> "$GITHUB_OUTPUT"
+            echo "missing=$MISSING" >> "$GITHUB_OUTPUT"
+            echo "::warning::audit-write did not complete for $FRIENDLY_NAME — missing: $MISSING"
+          else
+            echo "write_verified=true" >> "$GITHUB_OUTPUT"
+            echo "missing=" >> "$GITHUB_OUTPUT"
+          fi
+
       - name: Strip pricing sections (consultation meetings only)
-        if: steps.inputs.outputs.suppress_pricing == 'true'
+        if: steps.verify.outputs.write_verified == 'true' && steps.inputs.outputs.suppress_pricing == 'true'
         run: |
           FRIENDLY_NAME="${{ steps.inputs.outputs.friendly_name }}"
           echo "suppress_pricing=true — stripping pricing sections from $FRIENDLY_NAME"
@@ -195,7 +223,7 @@ jobs:
           print(f"Email sent to {to_addr} (CC: {', '.join(cc_addrs)})")
           PYEOF
 
-      - name: Reply in Slack thread that the proposal is ready
+      - name: Reply in Slack thread with build result
         if: steps.inputs.outputs.slack_thread_ts != ''
         continue-on-error: true
         env:
@@ -205,28 +233,45 @@ jobs:
           FIRM_NAME: ${{ steps.inputs.outputs.firm_name }}
           FRIENDLY_NAME: ${{ steps.inputs.outputs.friendly_name }}
           SALES_REP: ${{ steps.inputs.outputs.sales_rep }}
+          WRITE_VERIFIED: ${{ steps.verify.outputs.write_verified }}
+          MISSING_FILES: ${{ steps.verify.outputs.missing }}
         run: |
           FRIENDLY_NAME="${{ steps.inputs.outputs.friendly_name }}"
-          # Mark the review as fully built, in the same thread the seller reviewed in.
+          # Only mark the review as fully built if the write step actually produced
+          # the report — otherwise leave status alone and flag the failure instead.
           if [ -f "$FRIENDLY_NAME/proposal_review.json" ]; then
-            jq '.status = "built"' "$FRIENDLY_NAME/proposal_review.json" > /tmp/pr.json \
+            if [ "$WRITE_VERIFIED" = "true" ]; then
+              NEW_STATUS="built"
+            else
+              NEW_STATUS="write_failed"
+            fi
+            jq --arg status "$NEW_STATUS" '.status = $status' "$FRIENDLY_NAME/proposal_review.json" > /tmp/pr.json \
               && mv /tmp/pr.json "$FRIENDLY_NAME/proposal_review.json"
             git add "$FRIENDLY_NAME/proposal_review.json"
-            git diff --cached --quiet || git commit -m "Mark proposal review built for $FRIENDLY_NAME"
+            git diff --cached --quiet || git commit -m "Mark proposal review $NEW_STATUS for $FRIENDLY_NAME"
             git pull --rebase origin main && git push origin main || true
           fi
 
           python3 - << 'PYEOF'
           import os, json, urllib.request
 
-          token   = os.environ["SLACK_BOT_TOKEN"]
-          channel = os.environ["SLACK_CHANNEL"]
-          thread  = os.environ["SLACK_THREAD_TS"]
-          firm    = os.environ["FIRM_NAME"]
-          slug    = os.environ["FRIENDLY_NAME"]
-          url     = f"https://workwith.smbteam.com/{slug}"
+          token    = os.environ["SLACK_BOT_TOKEN"]
+          channel  = os.environ["SLACK_CHANNEL"]
+          thread   = os.environ["SLACK_THREAD_TS"]
+          firm     = os.environ["FIRM_NAME"]
+          slug     = os.environ["FRIENDLY_NAME"]
+          verified = os.environ["WRITE_VERIFIED"] == "true"
+          missing  = os.environ.get("MISSING_FILES", "").strip()
+          url      = f"https://workwith.smbteam.com/{slug}"
 
-          text = f"✅ *Proposal ready:* {firm}\n{url}"
+          if verified:
+              text = f"✅ *Proposal ready:* {firm}\n{url}"
+          else:
+              text = (
+                  f"⚠️ *audit-write did not complete for {firm}* — no report was generated"
+                  f" (missing: {missing or 'index.html/sections'}).\n"
+                  f"The proposal was NOT marked built — please investigate the audit-write run and re-trigger."
+              )
 
           body = json.dumps({"channel": channel, "thread_ts": thread, "text": text}).encode()
           req = urllib.request.Request(
@@ -235,5 +280,5 @@ jobs:
               headers={"Authorization": f"Bearer {token}", "Content-Type": "application/json"},
           )
           urllib.request.urlopen(req)
-          print(f"Slack thread reply sent for {firm}.")
+          print(f"Slack thread reply sent for {firm} (verified={verified}).")
           PYEOF
