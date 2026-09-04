@@ -124,7 +124,7 @@ jobs:
           fi
 
       - name: Write audit URL back to HubSpot
-        if: steps.inputs.outputs.hubspot_contact_id != ''
+        if: steps.verify.outputs.write_verified == 'true' && steps.inputs.outputs.hubspot_contact_id != ''
         env:
           HUBSPOT_TOKEN: ${{ secrets.HUBSPOT_TOKEN }}
         run: |
@@ -144,7 +144,7 @@ jobs:
           fi
 
       - name: Email closer with audit attachments
-        if: steps.inputs.outputs.sales_rep_email != ''
+        if: steps.verify.outputs.write_verified == 'true' && steps.inputs.outputs.sales_rep_email != ''
         continue-on-error: true
         env:
           GMAIL_USER: ${{ secrets.GMAIL_USER }}
