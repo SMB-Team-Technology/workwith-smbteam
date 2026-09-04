@@ -1,0 +1,33 @@
+{
+  "confidence": "low",
+  "revenue_stated": "$8,000,000 (per seller Slack override, September 4, 2026)",
+  "revenue_effective": 8000000,
+  "revenue_source": "seller_override_slack",
+  "revenue_label": "$8M (seller-stated) vs. $1.6M/year (transcript-stated) — unreconciled, see selection_notes",
+  "team_size_stated": "3 attorneys, 5 support staff (per transcript)",
+  "team_size_effective": 8,
+  "practice_areas_detected": [
+    "personal injury (motor vehicle accidents only)"
+  ],
+  "marketing_tier": null,
+  "marketing_name": null,
+  "marketing_price_bundled": null,
+  "marketing_price_retail": null,
+  "marketing_savings": null,
+  "coaching_name": "FCOO Director",
+  "coaching_price_bundled": 5797,
+  "coaching_price_retail": 5797,
+  "coaching_savings": 0,
+  "law_tier": null,
+  "total_bundled": 5797,
+  "total_savings": 0,
+  "ad_spend_conservative": null,
+  "ad_spend_aggressive": null,
+  "selection_notes": [
+    "No prior package_decision.json existed for this deal — the Phase 1 review gate was opened directly from research notes without the standard revenue/team-size marketing+coaching tier logic having been run.",
+    "Seller override: Jacob Meissner requested via Slack on September 4, 2026 to set the plan to FCOO Director (the ~9 hrs/month tier) at the standard listed price, citing firm revenue of $8M and a strong growth focus.",
+    "FCOO Director standalone eligibility requires $1M+ revenue and 5+ established leaders per Design Files/Scoping_and_Ad_Spend_Guide.md Step 6B — met under either the seller-stated $8M figure or the transcript-stated ~$1.6M/year figure; team size (3 attorneys + 5 support staff, per transcript) satisfies the 5+ headcount threshold.",
+    "REVENUE CONFLICT FLAGGED: seller's Slack message states $8M revenue; the discovery-call transcript (research notes STEP 9) states revenue has been flat at ~$1.6M/year for roughly a decade. These figures differ by ~5x and were not reconciled — flagged for the sales rep to confirm the correct figure before finalizing pricing/scope with the client.",
+    "Priced as a true standalone product (no marketing tier bundled): $5,797/mo per Design Files/Scoping_and_Ad_Spend_Guide.md FCOO Director stand-alone rate, $0 savings since no bundle discount applies — consistent with prior precedent (see runion-injury-law/package_decision.json)."
+  ]
+}
