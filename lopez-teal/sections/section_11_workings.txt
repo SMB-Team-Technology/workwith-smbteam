@@ -1,0 +1,140 @@
+LOPEZ TEAL — SECTION 11 WORKINGS (INTERNAL — NOT CLIENT FACING)
+================================================================================
+
+PACKAGE DECISION OVERRIDE APPLIED
+--------------------------------------------------------------------------------
+package_decision.json does NOT exist for this firm (confirmed — only
+proposal_review.json is present in lopez-teal/).
+
+However, the Phase 1 review gate / seller-response pipeline for this firm
+resolved with an explicit locked decision, captured in commit e754036
+("Trigger audit-write for Lopez Teal: FCOO Advisor (standalone) locked in").
+This is treated as the operative package instruction, and it independently
+matches the Call-Purpose Override (#1) in the TRANSCRIPT-STATED NEED OVERRIDE
+rules:
+
+- The discovery call was explicitly framed as "Consultation on scaling a law
+  firm for a future sale" — not a marketing/lead-gen engagement. The firm's
+  stated need is reducing owner dependence and diversifying revenue ahead of
+  a 5-year exit, not more leads.
+- Per the override rule: "Do not default to Full Service Marketing just
+  because revenue qualifies for a tier — the firm did not ask about
+  marketing." No marketing package is included.
+- The seller's locked decision — FCOO Advisor, standalone (not bundled) — is
+  used as-is rather than re-run through eligibility/tier logic, consistent
+  with "If any override applies, apply the full eligibility rules... and
+  document which override triggered the departure." Override triggered:
+  Call-Purpose Override (#1), confirmed by explicit seller lock-in via Slack.
+
+This is a single-product, non-marketing-only recommendation. Per general
+eligibility rule: "A single-product recommendation is acceptable only when
+the transcript clearly shows the firm's needs are best served by one service
+category" — this firm's stated need (operational leadership to reduce owner
+dependence, build enterprise value) is squarely FCOO Advisor territory, not
+a marketing gap.
+
+MANDATORY PRICE LOOKUP (verified character-for-character against the on-disk
+.claude/commands/audit-write.md, lines 296-312 — NOT the corrupted pricing
+table text that was returned via the Skill tool invocation this session,
+which had digits replaced with words like "Teal"/"Lopez"/"Name:". The on-disk
+command file is ground truth.)
+--------------------------------------------------------------------------------
+- Marketing package selected: none (dropped per Call-Purpose Override)
+- Non-marketing package selected: FCOO Advisor
+    Bundled price (table, line 302): $3,297/mo — NOT used (nothing to bundle with)
+    Stand-alone price (table, line 310): $3,797/mo — THIS IS THE PRICE CHARGED
+    Savings: $0 (stand-alone sale, no bundle discount)
+- LAW package: none (not discussed on call; no AI-readiness signal to evaluate)
+- AI Avatar / Video Growth add-on: none
+- Total monthly investment: $3,797/mo
+- Total savings: $0/month
+
+Fractional package deliverables note: per rule, FCOO Advisor now includes
+Elite Coach group deliverables (weekly group coaching sessions, practice area
+masterminds, virtual access to quarterly workshops, one annual in-person
+workshop) bundled into the $3,797/mo stand-alone price — not billed separately.
+
+Eligibility cross-check (informational only, since this is a locked seller
+decision, not an algorithmic selection):
+- Revenue ~$1.3M (2026 projected, gross — no net/contingency distinction
+  applies; real estate closing fees are not a contingency practice) — fits
+  the "$1M+" revenue band for FCOO Advisor.
+- Team: 5 staff + 1 part-time attorney. FCOO Advisor's "Under 5 operational
+  focus" band doesn't literally match team size, but the seller lock-in
+  supersedes tier-matching logic per the override framework.
+- Minimum MRR floor ($2,497/mo) — cleared ($3,797/mo).
+- 35% cap check: $3,797/mo against ~$1.3M/yr (~$108k/mo) revenue = ~3.5% of
+  monthly revenue. Well under the 35% cap.
+
+AD SPEND
+--------------------------------------------------------------------------------
+Not applicable. No marketing package is being recommended in this proposal,
+so there is no ad spend component, no Block 4 ad-spend table, and no ROI
+projection in this report. (Lead-generation findings and quick wins in
+sections 05-06 remain in the audit as genuine findings — they inform Phase 2/3
+of the roadmap, but are not part of what's being sold today.)
+
+DBM STATEMENT FOR BLOCK 1
+--------------------------------------------------------------------------------
+DBM: Build a sellable asset within 5 years by reducing owner dependence and
+diversifying revenue beyond referrals. Driven by Annette's burnout — "Annette
+is 'drowning'" at 50-60+ hours/week as the firm's sole rainmaker in an
+increasingly "savage" Miami market.
+
+Block 1 formula: "We help boutique real estate law firm owners who are
+carrying every client relationship personally get an operational backbone
+that runs without them so they can build a firm they could actually sell —
+not just one that survives them showing up every day."
+
+QUICK WIN OPPORTUNITIES IDENTIFIED (6+, across all four pillars)
+--------------------------------------------------------------------------------
+1. [Lead Gen / Long-Term] NAP/directory consolidation — Avvo, Yelp, Justia,
+   FindLaw, and Martindale still list the firm under its prior legal name and
+   address. Competitor: n/a (internal citation issue). Opportunity: reconnect
+   years of earned directory credibility (5.0/5.0 Avvo, 9.6 "Superb") to the
+   current brand.
+2. [Lead Gen / Long-Term] Geo-targeted landing pages for Coral Gables/Coconut
+   Grove. Competitor: Strang Tryson, PLLC (has strangtryson.com/coconut-grove-fl/).
+   Opportunity: capture neighborhood-specific searches the firm's core niche
+   depends on.
+3. [Lead Gen / Quick Win] PageSpeed and technical audit — could not be
+   obtained live this session (API rate-limited); flagged for live
+   verification before the call. Opportunity: identify and fix any real
+   site-speed drag on conversion.
+4. [Intake / Quick Win] Formal intake process/CRM — no delegation or tracking
+   system currently exists; referrals stall waiting on Annette personally.
+   Opportunity: convert more of what's already coming in.
+5. [Team / Long-Term] Leadership layer between Annette and the 5-person
+   staff. Competitor: n/a. Opportunity: the core mechanism for reducing owner
+   dependence and enabling a future sale.
+6. [Profit / Long-Term] Firm-wide profit plan / enterprise-value roadmap
+   beyond file-level profitability tracking. Competitor: n/a. Opportunity:
+   attach a trackable number to the 2-3x -> 4-5x sale-multiple goal.
+7. [Lead Gen / Long-Term] Local SEO / GBP presence — star rating, review
+   count, and 3-pack visibility could not be confirmed live; flagged for
+   verification. Competitor context: Almazan Law and Jacqueline A. Salcines
+   PA both compete directly in this niche.
+
+FIRST 90 DAYS (3-5 bullets)
+--------------------------------------------------------------------------------
+1. Kick off FCOO Advisor engagement — initial operational assessment of how
+   client relationships, referral intake, and file handoffs currently run
+   through Annette.
+2. Map every point where the business depends on Annette personally and
+   build the first delegation plan to shift at least one of them off her plate.
+3. Stand up a lightweight lead/referral tracking process so no referral
+   introduction goes unmonitored while it's being converted.
+4. Begin structuring the firm's numbers (file-level profitability -> firm-wide
+   profit plan) so progress toward a 4-5x sale multiple is trackable, not just
+   aspirational.
+5. Join the included weekly group coaching sessions and practice area
+   masterminds as part of the FCOO Advisor engagement.
+
+ESCALATION FLAGS (INTERNAL ONLY — never in client report)
+--------------------------------------------------------------------------------
+- Review counts unconfirmed — verify live before the call (GBP star rating/
+  review count for Lopez Teal; Almazan Law and Jacqueline A. Salcines PA
+  review counts sourced from third-party aggregators, not Google).
+- PageSpeed scores unconfirmed — run live at pagespeed.web.dev before the call.
+- Seller override in effect: FCOO Advisor sold stand-alone, no marketing
+  package attached, per commit e754036 / Phase 1 review gate response.
