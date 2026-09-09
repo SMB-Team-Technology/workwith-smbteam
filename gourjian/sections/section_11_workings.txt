@@ -1,0 +1,177 @@
+GOURJIAN LAW — SECTION 11 WORKINGS (INTERNAL — NOT CLIENT-FACING)
+============================================================
+
+TRANSCRIPT-STATED NEED OVERRIDE CHECK
+--------------------------------------
+1. Call-purpose override: Transcript states the call was to "explore marketing
+   strategies for scaling a successful, non-marketing law firm" — a "branded play"
+   (content/authority) rather than traditional PPC. This IS still a marketing
+   conversation (not a Fractional CTO / ops / coaching engagement), and there is a
+   genuine, documented marketing/visibility gap (zero organic or paid presence for
+   any of the firm's core practice areas). Override does NOT redirect the category
+   to LAW/non-marketing tables, but DOES require the marketing package to be framed
+   around content/authority/local-SEO rather than a PPC-volume funnel, consistent
+   with the research notes' explicit "Call Focus Flag."
+2. Existing-vendor override: Not triggered — no existing marketing/SEO/ad vendor
+   stated.
+3. Budget-reality override: Not triggered — no budget constraint stated; owner is
+   open to reinvesting ~20% of revenue (~$600K/year).
+4. Effective-revenue override: Not triggered — firm is NOT a contingency-fee
+   practice (hourly billing, ~$650-700/hr blended). The $1.8M net figure is a
+   profit-margin/owner-comp figure, not a contingency net-collected vs. gross-case
+   distinction. Tier off the stated gross revenue (~$3M+), per
+   package_decision.json's own reasoning (is_contingency_practice: false).
+
+None of the four overrides redirect the package category away from marketing. No
+LAW or non-marketing package is added — the transcript shows no ops/coaching/AI
+need discussed on this call, and package_decision.json's law_tier and coaching_name
+fields are both null, consistent with a single-product recommendation.
+
+PACKAGE DECISION FILE — SELLER OVERRIDE APPLIED
+--------------------------------------------------
+package_decision.json (confidence: medium) documents a human seller override,
+recorded via Slack on September 9, 2026 and locked in proposal_review.json
+(status: "locked"): the automated Platinum ($15,997/mo bundled) + Elite Coach Plus
+($3,200/mo bundled) recommendation was replaced with Full Service Marketing —
+Dominate as a STAND-ALONE package (no coaching), priced at the $12,497/mo
+retail/stand-alone rate rather than the $10,497/mo bundled rate (bundled rate only
+applies when paired with a coaching package).
+
+Cross-check against research notes: Revenue is stated as "~$3M+" gross via hourly
+billing — ambiguous relative to the $3M Dominate/Platinum boundary. Moving to the
+lower tier (Dominate) when a firm sits on a revenue boundary is consistent with the
+"assign the lower tier when on the border" principle used elsewhere in this audit
+methodology. Dropping the coaching bundle is also consistent with the transcript:
+no team/ops/coaching need was discussed on the call, and team-size is unresolved
+(transcript says "one support staff member"; website lists 8 attorneys) — pairing a
+coaching package here would not reflect anything actually discussed. This override
+is adopted as-is.
+
+MANDATORY PRICE LOOKUP (confirmed against Design Files/audit_styles.css tables in
+.claude/commands/audit-write.md — NOT the corrupted Skill-tool echo)
+--------------------------------------------------------------------
+- Marketing package selected: Full Service Marketing — Dominate (stand-alone)
+  - Bundled price (from table): $10,497/mo — NOT USED (no coaching to bundle with)
+  - Stand-alone price (from table): $12,497/mo — USED
+  - Savings: $0 (single-service engagement; no bundle discount applies)
+- Non-marketing package selected: none (transcript shows no coaching/ops need)
+- Legal AI Workforce (LAW) package selected: none (not discussed on call; adding
+  one would violate the Call-purpose override's instruction not to introduce
+  products the call didn't ask about)
+- AI Avatar / Video Growth add-on selected: none
+- Total monthly investment: $12,497/mo
+- Total savings: $0/mo (no bundling applies to a single-package recommendation)
+
+35% CAP CHECK: $12,497/mo management fee + $4,500-$18,000/mo ad spend range =
+$16,997-$30,497/mo total spend, against a stated ~$3M annual revenue (~$250,000/mo).
+Even at the aggressive end this is ~12% of monthly revenue — well under the 35% cap.
+
+AD SPEND & ROI PROJECTION
+---------------------------
+Conservative: $4,500/mo | Aggressive: $18,000/mo (both carried forward from
+package_decision.json as seller-reviewed figures).
+
+No CPL table entry exists for "outside general counsel / business litigation" —
+Business Law is the closest available proxy (Google Search $100-$120, midpoint
+$110). LSA and Meta Cold are excluded from the blend: research notes confirm LSA
+inventory doesn't meaningfully serve this practice area, and this is a B2B,
+relationship-driven buyer, not a consumer searcher.
+
+CONSERVATIVE scenario (used in client-facing Block 4):
+  Blended CPL with 20% cushion: $110 x 1.2 = $132
+  Leads = $4,500 / $132 ~= 34/mo
+  Close rate: 15% default (flagged below) -> ~5 new inquiries/mo
+  Case/engagement value: Business Law default $3K-$7K, midpoint $5,000 (default —
+    disclosed; does NOT reflect this firm's real per-relationship economics, see
+    caveat below)
+  Est. monthly revenue: ~5 x $5,000 = ~$25,500
+  Return: ~$25,500 / $4,500 ~= 5.7x
+
+AGGRESSIVE scenario (computed for completeness per protocol — NOT used in the
+client-facing HTML; see caveat):
+  Blended CPL, no cushion: $110
+  Leads = $18,000 / $110 ~= 164/mo
+  Cases = 164 x 15% ~= 24-25/mo
+  Est. monthly revenue: ~24.5 x $5,000 = ~$122,700
+  Return: ~$122,700 / $18,000 ~= 6.8x
+
+CAVEAT (required disclosure per research notes Step 9 and audit-write.md ROI
+rules): The 15% close-rate default and the Business Law $3K-$7K case-value default
+are both a poor structural fit for this firm. Gourjian Law does not sell discrete
+"cases" — it sells ongoing, multi-year outside-GC relationships billed hourly at
+$650-700/hr, which are worth far more over time than a single $3K-$7K case value
+suggests, and the firm's addressable search volume for this practice area is very
+low (confirmed: the firm and its true peers do not appear in local search results
+at meaningful volume). The aggressive scenario's ~164 leads/mo is not a realistic
+expectation for this niche B2B market and should NOT be quoted to the client. The
+client-facing Block 4 uses only the conservative scenario, presents "Recommended ad
+spend" as the $4,500-$18,000/mo range, and the surrounding narrative (Block 1,
+package "why") foregrounds authority/content value rather than a lead-volume ROI
+story, consistent with the research notes' explicit Call Focus Flag instruction.
+
+DBM STATEMENT FOR BLOCK 1
+---------------------------
+We help established, highly profitable law firms that have grown entirely on
+referrals get the visible market presence they've never needed before, so they can
+keep hiring the attorneys their growth requires without depending on word-of-mouth
+alone.
+
+QUICK WIN OPPORTUNITIES (7 total, all 4 pillars represented)
+----------------------------------------------------------------
+1. [Lead Gen / Quick Win] Directory & Name Rebrand Fix — legacy "Gourjian Law
+   Group" name and "Bankruptcy Law" category across FindLaw, Martindale, and Yelp
+   don't match the firm's current name or practice focus. No named competitor —
+   omit "who" row. Opportunity: a free, fast fix that makes the firm findable
+   under its real identity.
+2. [Lead Gen / Long-Term Play] Own "Outside General Counsel" in Search — firm
+   doesn't appear for its own core service terms. Competitor: Babachanian | Legal
+   Counsel (dedicated GC service pages, outranks Gourjian Law). Opportunity: claim
+   the exact search terms a prospective client would use.
+3. [Lead Gen / Long-Term Play] Turn the News Feed Into Real Thought Leadership —
+   current "blog" is syndicated third-party news, not firm-authored content. No
+   named competitor — omit "who" row. Opportunity: build the actual content asset
+   the "branded play" strategy depends on.
+4. [Lead Gen / Quick Win] Real Estate Practice Visibility — firm invisible in
+   search for its real estate work. Competitor: Raffy Boulgourjian (114 reviews
+   per Yelp listing title). Opportunity: a second practice area with zero current
+   competition for paid/organic visibility.
+5. [Intake / Quick Win] Replace the Single-Inbox Intake Funnel — every inquiry
+   routes to one mailto address with no tracking. No named competitor — omit "who"
+   row. Opportunity: stop losing inquiries nobody sees in time.
+6. [Team / Long-Term Play] Build a Repeatable Attorney Hiring Engine — growth
+   plan depends on hiring but there's no system for it beyond word-of-mouth. No
+   named competitor — omit "who" row. Opportunity: make hiring scalable instead of
+   one-off.
+7. [Profit / Quick Win] Turn the 20% Reinvestment Idea Into a Funded Plan — Varand
+   is open to reinvesting ~$600K/year but no plan exists yet. No named competitor —
+   omit "who" row. Opportunity: convert stated intent into a running budget.
+
+FIRST 90 DAYS
+---------------
+Given the call-purpose override (this is a content/authority engagement, not a
+paid-ads-first funnel), the 90-day sequence leads with foundation and content work
+rather than an ads-first launch. No coaching kickoff bullet — no coaching package
+is recommended for this account.
+1. Fix directory/NAP inconsistencies across FindLaw, Martindale, Yelp, and Google
+   so all listings reflect "Gourjian Law" and its current practice areas.
+2. Launch foundational local SEO and Google Business Profile work for business
+   litigation, corporate transactions, general counsel, and real estate.
+3. Begin producing firm-authored authority content to replace the syndicated News
+   Feed and build the content asset the branded play depends on.
+4. Add a structured contact form and a basic inquiry-tracking process to the
+   website to stop losing inquiries to a single inbox.
+5. Launch a small, targeted paid presence (Google Search plus limited Meta) to
+   begin testing content distribution and visibility at low market cost.
+
+ESCALATION FLAGS FOR SALES (INTERNAL ONLY — NOT IN CLIENT REPORT)
+----------------------------------------------------------------
+- Review counts unconfirmed — verify live before the call (firm's own ~40-review
+  Yelp figure and all named-competitor review counts are UNCONFIRMED aggregator
+  data; no direct Google listing was reachable during research).
+- Team size discrepancy unresolved (transcript: "one support staff member";
+  website Our Team page: 8 named attorneys) — confirm with sales rep before any
+  future team-size claims are made to the client.
+- PageSpeed mobile/desktop scores were not obtainable (API quota exhausted) —
+  recommend a live manual check before the next client conversation.
+- Marketing MRR is under $10K/mo — no scoping approval required on that basis.
+  Aggressive ad spend ($18,000) is under the $25K scoping-approval threshold.
