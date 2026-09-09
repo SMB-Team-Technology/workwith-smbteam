@@ -1,0 +1,42 @@
+{
+  "confidence": "medium",
+  "revenue_stated": 3000000,
+  "net_revenue_stated": 1800000,
+  "is_contingency_practice": false,
+  "revenue_effective": 3000000,
+  "revenue_source": "research_notes",
+  "revenue_label": "~$3M+ gross (hourly billing, ~$650-700/hr blended rate); 60% profit margin (~$1.8M net taken as owner comp, not a contingency net-collected figure)",
+  "team_size_stated": null,
+  "team_size_effective": 3,
+  "practice_areas_detected": [
+    "outside general counsel (gc) for businesses",
+    "real estate",
+    "business litigation",
+    "corporate transactions",
+    "bankruptcy",
+    "reorga",
+    "real estate (transactions & litigation)",
+    "business litigation / general counsel"
+  ],
+  "marketing_tier": "Dominate",
+  "marketing_name": "Full Service Marketing — Dominate",
+  "marketing_price_bundled": 12497,
+  "marketing_price_retail": 12497,
+  "marketing_savings": null,
+  "coaching_name": null,
+  "coaching_price_bundled": null,
+  "coaching_price_retail": null,
+  "coaching_savings": null,
+  "law_tier": null,
+  "total_bundled": 12497,
+  "total_savings": null,
+  "ad_spend_conservative": 4500,
+  "ad_spend_aggressive": 18000,
+  "selection_notes": [
+    "Automated regex missed the stated revenue (notes read \"~$3M+ annual revenue\", figure before label) and defaulted to $500K/Starter — corrected by hand per the Transcript-First Principle: revenue is $3M+ gross via hourly billing (~$650-700/hr blended). Not a contingency-fee practice, so the $1.8M figure (60% profit margin / owner comp) is not the tiering basis — gross $3M+ is.",
+    "Team size not stated precisely — research notes flag a discrepancy (transcript: \"one support staff member\"; website Our Team page: 8 named attorneys). Defaulting to 3 pending reconciliation with sales rep; team-under-5 coaching rule applies either way.",
+    "Revenue $3M+: Platinum tier + Elite Coach Plus (team under 5) originally selected — Full Service Marketing — Platinum $15,997/mo bundled + Elite Coach Plus $3,200/mo bundled = $19,197/mo total, saving $3,297/mo vs. retail. This is the package referenced in the original Phase 1 Slack proposal.",
+    "package_decision.json for this firm was never committed by the Pass 1.5 CI step (audit-pipeline.yml runs select-package.mjs but only git-adds proposal_review.json, not package_decision.json) — reconstructed here from the research notes and the Platinum/Elite Coach Plus figures the seller's Slack reply references.",
+    "Seller override (Slack, September 9, 2026): dropped Elite Coach Plus entirely and replaced Full Service Marketing — Platinum with Full Service Marketing — Dominate as a stand-alone package — no coaching bundle, so priced at the $12,497/mo retail/stand-alone rate rather than the $10,497/mo bundled rate."
+  ]
+}
