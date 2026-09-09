@@ -255,6 +255,10 @@ test('shouldSkipFathomOverwrite is true when a miss prefix is followed by sales-
     shouldSkipFathomOverwrite('No Fathom transcript found for Jane (a@b.com). SALES REP NOTE: push FCOO advisor (not marketing).'),
     true,
   );
+  assert.equal(
+    shouldSkipFathomOverwrite('No Fathom transcript available. SALES REP NOTE: Phase 1 recommendation is Full Service Marketing Starter only. Do not recommend a coaching or non-marketing package at this stage.'),
+    true,
+  );
 });
 
 test('skip-fathom-overwrite.mjs exits 0 for a real transcript and 1 for a miss', () => {
@@ -269,9 +273,14 @@ test('skip-fathom-overwrite.mjs exits 0 for a real transcript and 1 for a miss',
     writeFileSync(noteFile, JSON.stringify({
       transcript: 'No Fathom transcript available (API returned 404 for a@b.com). SALES REP NOTE: keep this',
     }));
+    const bareNoteFile = join(dir, 'bare-note.json');
+    writeFileSync(bareNoteFile, JSON.stringify({
+      transcript: 'No Fathom transcript available. SALES REP NOTE: Phase 1 recommendation is Full Service Marketing Starter only.',
+    }));
     assert.equal(spawnSync(process.execPath, [script, realFile]).status, 0);
     assert.equal(spawnSync(process.execPath, [script, missFile]).status, 1);
     assert.equal(spawnSync(process.execPath, [script, noteFile]).status, 0);
+    assert.equal(spawnSync(process.execPath, [script, bareNoteFile]).status, 0);
   } finally {
     rmSync(dir, { recursive: true, force: true });
   }

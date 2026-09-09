@@ -42,12 +42,15 @@ const GENERATED_MISS_HEAD = [
   /^Fathom call \d+ found but summary is unavailable\./,
 ];
 const MISS_FAMILY = /^(No transcript available|No Fathom transcript|Fathom meeting found \(|Fathom call \d+ found but)/;
+// Bare openers used in older triggers: "No Fathom transcript available." plus notes.
+const BARE_MISS_HEAD = /^(No Fathom transcript available|No transcript available(?: yet)?)\./;
 
 /**
  * True when GHA should leave trigger.transcript alone.
  * False (run HubSpot/summary fallback) for empty values, exact generated
  * misses, and legacy miss-only lines. A miss sentence plus leftover notes
- * is treated as real content.
+ * is treated as real content, including "No Fathom transcript available.
+ * SALES REP NOTE: ...".
  */
 export function shouldSkipFathomOverwrite(transcript) {
   if (typeof transcript !== 'string') return false;
@@ -57,6 +60,8 @@ export function shouldSkipFathomOverwrite(transcript) {
     const m = t.match(re);
     if (m && m.index === 0) return t.slice(m[0].length).trim().length > 0;
   }
+  const bare = t.match(BARE_MISS_HEAD);
+  if (bare && bare.index === 0) return t.slice(bare[0].length).trim().length > 0;
   if (MISS_FAMILY.test(t)) return false;
   return true;
 }
