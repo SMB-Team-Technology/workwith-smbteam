@@ -233,6 +233,10 @@ test('shouldSkipFathomOverwrite is false for empty / miss placeholders (GHA fall
   assert.equal(shouldSkipFathomOverwrite('No Fathom transcript available.'), false);
   assert.equal(shouldSkipFathomOverwrite('No Fathom transcript available — proposal call scheduled for 2026-09-09.'), false);
   assert.equal(shouldSkipFathomOverwrite('No transcript available yet.'), false);
+  assert.equal(
+    shouldSkipFathomOverwrite('No Fathom transcript available. No recordings found for karla@santiagolegalgroup.com.'),
+    false,
+  );
 });
 
 test('shouldSkipFathomOverwrite is true for a real speaker transcript and for an existing HubSpot summary', () => {

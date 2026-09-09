@@ -61,7 +61,13 @@ export function shouldSkipFathomOverwrite(transcript) {
     if (m && m.index === 0) return t.slice(m[0].length).trim().length > 0;
   }
   const bare = t.match(BARE_MISS_HEAD);
-  if (bare && bare.index === 0) return t.slice(bare[0].length).trim().length > 0;
+  if (bare && bare.index === 0) {
+    const rest = t.slice(bare[0].length).trim();
+    if (!rest) return false;
+    if (/\bSALES REP NOTE\b/i.test(rest)) return true;
+    if (MISS_FAMILY.test(rest) || /^No recordings found\b/i.test(rest)) return false;
+    return true;
+  }
   if (MISS_FAMILY.test(t)) return false;
   return true;
 }
