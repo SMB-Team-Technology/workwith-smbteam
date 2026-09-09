@@ -1,0 +1,364 @@
+SMB TEAM — GROWTH AUDIT RESEARCH NOTES
+Firm: The Law Office of Kareem E. Abdo
+Friendly Name: kareem-abdo
+Sales Rep: Nick Holderman
+Date: September 16, 2026
+
+ENVIRONMENT / TOOLING LIMITATION — READ FIRST
+==============================================
+This research session had no live browser/computer-use tool available — only
+WebSearch and a static WebFetch (HTML→text, no JavaScript execution). This
+materially limits verification of anything that requires an interactive,
+JS-rendered page (Google Maps listings, PageSpeed Insights UI, Meta Ads
+Library UI). Specifically:
+- The Google PageSpeed Insights public API returned HTTP 429 "Quota exceeded
+  for quota metric 'Queries' and limit 'Queries per day'" on repeated
+  attempts (retried twice, ~15 seconds apart, same result). PageSpeed scores
+  below are NOT RECORDED rather than estimated, per the rule that these
+  numbers must be real, never estimated. This must be re-run with a working
+  PageSpeed tool before /audit-write, or /audit-write must omit specific
+  score claims.
+- Google Maps / Google Business Profile listing pages render via JavaScript
+  and returned no data through static fetch. Google review count/rating for
+  the firm and for local-pack competitors could NOT be confirmed directly
+  via Google. Where a number is available from a third-party aggregator
+  instead, it is tagged UNCONFIRMED per the verification rule. Where no
+  number could be found anywhere, that is stated explicitly.
+- Meta Ad Library (facebook.com/ads/library) returned HTTP 403 on static
+  fetch (requires JS/session). Meta ads presence could not be observed.
+- The trigger file's "url" field was blank. The firm's real website was
+  located via web search (kareemabdolaw.com) and cross-confirmed against
+  the phone number in the trigger (212-439-4723, matches the site exactly),
+  confirming this is the correct, real, live firm — not a fictional/test
+  entity. All data below reflects genuine research on the real firm, not
+  fabricated placeholder data.
+
+TRANSCRIPT SOURCE
+==============================================
+Fathom AI meeting summary (via HubSpot internal notes), discovery call with
+Kareem Abdo and Nick Holderman. Full transcript provided in trigger file.
+
+==============================================
+STEP 1 — WEBSITE RESEARCH
+==============================================
+- Website URL: https://www.kareemabdolaw.com/ (also resolves via
+  kareemabdolaw.wix.com/kareemabdolaw per search index — appears to be a Wix
+  site)
+- Website URL confirmed live: yes
+- Last redesign date or estimated age: not date-stamped anywhere on site;
+  visual/structural signals (basic Wix template, minimal page count, generic
+  stock imagery, no blog/CMS activity) suggest a site that has not been
+  substantially updated in several years. Estimated age: dated, likely
+  untouched since initial build.
+- Mobile responsive: not observed (static fetch cannot confirm responsive
+  behavior — would need live device rendering)
+- Homepage headline: "The Law Office of Kareem E. Abdo" with an "Overview"
+  section beneath it
+- CTA above fold: No formal CTA button. Phone number (212) 439-4723 and an
+  email address are displayed prominently near the top, functioning as the
+  de facto contact prompt.
+- Contact form location: not found — site offers only phone and email, no
+  contact form on homepage or About page
+- Live chat present: no
+- Attorney bio present: yes — bio states "I am a litigation attorney. I have
+  handled various litigations as lead counsel, both as a plaintiff's
+  attorney, and as a defense attorney," with detail on court admissions
+  (NY state courts, S.D.N.Y., E.D.N.Y., Second Circuit) and Fordham Law
+  background (Moot Court Board editor, Brendan Moore Trial Advocacy Team)
+- Video present: no
+- Blog present: no
+- PageSpeed mobile score: NOT OBTAINED — PageSpeed API quota exhausted in
+  this environment (HTTP 429 on repeated attempts); no browser tool
+  available as fallback. Do not estimate.
+- PageSpeed desktop score: NOT OBTAINED — same limitation as above.
+
+Additional observation (About page, kareemabdolaw.com/about): navigation
+lists "Litigation Services," "Appellate Litigation," "Contingency
+Litigation," and a pro bono/immigration referral link. Two professional
+photos present, no video/blog/contact form on this page either. No explicit
+CTA button — contact info and nav menu are the only engagement prompts.
+
+==============================================
+STEP 2 — GOOGLE BUSINESS PROFILE
+==============================================
+- GBP found: not confirmed — could not load Google Maps/GBP directly in
+  this environment (JS-rendered, static fetch returned no listing data)
+- Star rating: not found on any source checked [UNCONFIRMED — no Google
+  listing accessible; no aggregator found a rating for this specific firm]
+- Total review count: no reviews found on any platform checked (Yellow
+  Pages listing explicitly shows "Be the first to review!"; Avvo profile
+  shows 0.0 rating / zero reviews) [UNCONFIRMED — sourced from Yellow Pages
+  and Avvo, not independently confirmed via Google]. Working assumption for
+  audit purposes: firm currently has little to no online review footprint.
+- Most recent review date: n/a — no reviews found
+- Primary category: not confirmed (no accessible GBP listing); directory
+  listings show "General Practice" (Lawyer.com) and litigation/business law
+  focus per own site
+- Photos active: not observed (no GBP access)
+- Posts active: not observed (no GBP access)
+
+==============================================
+STEP 3 — LOCAL 3-PACK SEARCHES
+==============================================
+NOTE: Google Maps local 3-pack results could not be pulled directly (no
+browser tool). The searches below reflect organic web search results as a
+proxy, which is a materially different signal than an actual map-pack
+screenshot. Review counts for firms named here are sourced from aggregators
+where available and tagged accordingly — none are confirmed via a live
+Google Maps pack.
+
+Practice Area 1: Business/Commercial Litigation (small-business defense)
+- Search 1 "business litigation attorney NYC": firm (Kareem Abdo) appears —
+  no (organic results dominated by larger boutique/national firms);
+  competitors surfacing: Krantz & Berman LLP [rating 5.0, 1 review —
+  UNCONFIRMED, sourced from Martindale, not Google], Levy Goldenberg LLP
+  [no review count found on any platform checked], Starr & Starr, PLLC
+  [119 reviews, 5-star — UNCONFIRMED, sourced from Birdeye, not Google]
+- Search 2 "commercial litigation lawyer Manhattan": firm appears — no;
+  same competitor set surfaced (Krantz & Berman, Starr & Starr, Levy
+  Goldenberg)
+- Search 3 "small business litigation defense attorney New York": firm
+  appears — no; results skewed toward large multi-practice firms
+  (Oberheiden P.C., The Lanier Law Firm — excluded here as they are
+  national-scale firms, not comparable local competitors)
+
+Note: Starr & Starr, PLLC's listed address (260 Madison Ave, New York, NY
+10016) is the SAME building as Kareem Abdo's own office (260 Madison Ave
+Ste 204) — likely a shared/executive office suite. Worth flagging as a
+notable, geographically literal example of a better-reviewed neighbor firm.
+
+==============================================
+STEP 4 — COMPETITOR REVIEW COUNTS
+==============================================
+- Competitor 1: Starr & Starr, PLLC — reviews: 119 [UNCONFIRMED — sourced
+  from Birdeye, not independently confirmed via Google] — rating: 5.0
+  [UNCONFIRMED — sourced from Birdeye]
+- Competitor 2: Krantz & Berman LLP — reviews: 1 [UNCONFIRMED — sourced from
+  Martindale, not independently confirmed via Google] — rating: 5.0
+  [UNCONFIRMED — sourced from Martindale]
+- Competitor 3: Levy Goldenberg LLP — reviews: not found on any platform
+  checked (site displays individual client testimonials, not an aggregate
+  count) — rating: not found
+
+None of these figures could be confirmed live via Google, so none should be
+printed as hard client-facing numbers without a live re-check. Directionally,
+Starr & Starr shows a meaningfully larger, more visible review presence than
+Kareem Abdo currently has (which appears to be at or near zero).
+
+==============================================
+STEP 5 — DIRECTORY LISTINGS
+==============================================
+Checked: Avvo, Justia, FindLaw, Yelp, LawInfo, Yellow Pages, Lawyer.com,
+OpenCorporates, newyork-company.com.
+
+- Avvo: profile exists (Kareem El-Din Abdo, NY). Lists address as 30 Wall
+  St Fl 8, New York, NY 10005. Avvo rating 0.0/5.0, zero client reviews,
+  no practice areas specified on profile.
+- Justia: lawyer profile exists (lawyers.justia.com/lawyer/kareem-el-din-
+  abdo-1317238); page could not be fetched for full detail (403 on static
+  fetch) but is indexed and titled correctly.
+- Yellow Pages: listing exists, address 260 Madison Ave Ste 204, New York,
+  NY 10016, phone (646) 286-6472, "Be the first to review!" (zero reviews).
+- Lawyer.com: listing exists, same 260 Madison Ave address, firm size
+  listed as 1, practice area listed generically as "General Practice."
+  Notably also lists a second name, "Jeannette Sloan Warner," alongside
+  Kareem El-Din Abdo on this directory page — inconsistent with the
+  transcript's "solo practitioner" framing; likely a stale/shared listing
+  artifact rather than a current second attorney. Flagging as a directory
+  data-quality issue, not overriding the transcript.
+- FindLaw: not independently confirmed in this session.
+- Yelp: no dedicated Yelp business listing surfaced in search results for
+  this specific firm.
+- LawInfo: listing exists under "The Law Office of Kareem E. Abdo," New
+  York, NY.
+- OpenCorporates: confirms "THE LAW OFFICE OF KAREEM E. ABDO PLLC" as an
+  active domestic professional service LLC, incorporated 01/22/2013, NY
+  DOS ID 4348546.
+
+NAP INCONSISTENCY FOUND: Avvo lists 30 Wall St Fl 8, New York, NY 10005;
+most other directories (Yellow Pages, Lawyer.com, LawInfo) list 260 Madison
+Ave Ste 204, New York, NY 10016. These do not match — a real NAP
+(Name/Address/Phone) consistency problem that will hurt local SEO.
+
+Geo-targeting landing pages for surrounding cities/boroughs: none found —
+site has only a homepage and an About page, no location-specific landing
+pages (e.g. no dedicated Brooklyn, Queens, or Bronx business-litigation
+pages despite the firm's client base being described as Brooklyn-area small
+businesses in the transcript).
+
+==============================================
+STEP 6 — GOOGLE ADS
+==============================================
+Could not directly observe live Google Ads results pages (no browser tool
+to render/screenshot a real SERP; static fetch of Google search results is
+not reliable for ad-slot detection). Recorded as not observed rather than
+guessed:
+
+Practice Area 1: Business/Commercial Litigation
+- Firm ads observed: not observed (per transcript, firm has run its own
+  Google AdWords campaigns in the past but current live ad presence could
+  not be checked in this session)
+- Named local competitors running ads: not observed / could not be verified
+  live in this session. Does not appear to be running ads for this search
+  based on available (non-live) signals — treat as an information gap, not
+  a confirmed absence, and re-check live before finalizing the client
+  report.
+
+==============================================
+STEP 7 — LOCAL SERVICE ADS
+==============================================
+- Firm appears in LSA: not observed (no live SERP access)
+- Google Screened: not observed
+- LSA review count: n/a
+- Named local competitors in LSA: not observed / could not be verified live
+  in this session
+
+==============================================
+STEP 8 — META ADS
+==============================================
+- Firm has active ads: not observed — Meta Ad Library returned HTTP 403 on
+  static fetch (requires interactive session); could not be checked live in
+  this session
+- Named local competitor 1 (Starr & Starr, PLLC): not observed — same tool
+  limitation
+- Named local competitor 2 (Krantz & Berman LLP): not observed — same tool
+  limitation
+
+==============================================
+STEP 9 — TRANSCRIPT EXTRACTION
+==============================================
+- Practice areas confirmed: Business litigation defense for small
+  businesses (primary focus per call); site also lists appellate
+  litigation, contingency litigation, and a pro bono immigration referral
+  service as secondary offerings.
+- Current lead sources: Self-managed Google AdWords campaigns (past). No
+  other lead source stated.
+- Ads ever run: Yes — "Past Marketing: Self-managed Google AdWords
+  campaigns. Result: Initial success, but the last round only broke even."
+  Prior monthly marketing budget context: "$2k/mo budget" referenced as his
+  existing baseline that the new proposal exceeds.
+- Team size: Solo practitioner (since 2016), per transcript. [Directory
+  data-quality note: Lawyer.com listing also names a "Jeannette Sloan
+  Warner" — likely a stale listing artifact; transcript trusted as ground
+  truth per TRANSCRIPT-FIRST RULE.]
+- Annual revenue (gross / case value): ~$40,000 last year; this year's pace
+  described as uncertain.
+- Annual revenue (net / take-home / collected): not distinguished from
+  gross — prospect only ever stated the ~$40k figure.
+- Fee structure: Mixed/transitioning — moving from contingency-fee cases
+  toward hourly billing at $325/hour. Exact quote: "shifting from slow-
+  paying contingency cases to faster, hourly-based work." Example cited:
+  one contingency case has been pending 2 years and 8 months.
+- Revenue goal: Double current revenue to a six-figure income. Rationale
+  stated: "Just 1–2 new recurring clients could add $40k–$50k annually."
+- Average case value: Not stated as a flat case value — billed hourly at
+  $325/hour; no per-case dollar average given.
+- Current close rate: Not stated — default to 15%.
+- Number of locations: 1 (not mentioned otherwise — default).
+- Spanish campaign needed: No (not mentioned in transcript).
+- Dominant buying motive: Not explicitly stated as a personal-life goal.
+  Closest inference from context: financial independence and cash-flow
+  stability — moving off slow, unpredictable contingency payouts (one case
+  pending 2 years 8 months) and off reliance on his mother's financial
+  support, onto predictable hourly billing that funds a stable six-figure
+  income. Closest matching bucket: "firm that runs itself" / generates
+  reliable income without personal financial strain, rather than "grow and
+  sell" or "scale and dominate."
+- Any profitability claims made by prospect: none stated beyond the revenue
+  figures already captured above.
+- Any claims about case types or practice areas: "Client Profile: Small
+  businesses needing litigation defense."
+- Stated call focus / product interest: Standard marketing/lead-generation
+  discovery call — explicitly "To explore SMB Team's advertising services,"
+  covering Google Ads (PPC), Local Services Ads, and social media (Meta)
+  ads. This was NOT a Fractional CTO/AI, coaching, or ops-consulting call —
+  it was a standard growth/intake marketing conversation.
+- Existing marketing/SEO/ad vendor engagements: None stated — prospect has
+  only ever self-managed his own Google AdWords campaigns; no current or
+  recently signed agency/vendor contract mentioned.
+- Budget constraints stated: YES — significant and explicit. Quote: "the
+  proposed marketing investment—a $3,497/mo management fee plus ad spend—
+  is a major hurdle, as it exceeds his prior $2k/mo budget and requires
+  external financing." Prospect must discuss the investment with his
+  mother, who provides financial support, before deciding go/no-go, ahead
+  of the September 16 follow-up call. This is a first-order consideration
+  for how the proposal should be framed — affordability and ROI proof
+  (hence the "Double Your Investment" guarantee already offered) are
+  central to this deal, not incidental.
+
+==============================================
+STEP 10 — COMPETITIVE URGENCY SCORE
+==============================================
+Score: 6/10
+
+Reasoning: This is not a market where competitors are running comprehensive
+multi-channel campaigns and burying the firm (that would be 7-9). But it is
+also not a quiet, wide-open market (1-3). Kareem Abdo currently has
+essentially zero online review presence and a dated, minimal website with
+no blog, no video, no contact form, and no PageSpeed data available to even
+confirm technical performance. Meanwhile, comparable local commercial-
+litigation firms — most visibly Starr & Starr, PLLC, literally in the same
+office building — show a much larger review footprint (119 reviews per
+Birdeye, unconfirmed via Google but directionally telling) and more
+developed sites. Kareem's own past self-managed AdWords effort broke even
+at best, suggesting he is already feeling competitive pressure on cost per
+lead without professional management.
+
+Named specific local competitor threats:
+1. Starr & Starr, PLLC — same office building, far larger apparent review
+   footprint (119 reviews, Birdeye-sourced/unconfirmed), broader practice
+   marketing (bankruptcy, commercial collection, civil/commercial
+   litigation) with dedicated site sections.
+2. Krantz & Berman LLP — established Manhattan litigation boutique (est.
+   1997), Chambers-ranked, professional web presence with a "Results" page
+   — a firm to be dealt with when a prospective client is comparison-
+   shopping searches for a business litigation attorney.
+3. Levy Goldenberg LLP — active reviews/testimonials program and dedicated
+   commercial-litigation and business-law landing pages, a content/SEO
+   structure Kareem's site currently lacks entirely.
+
+Dynamic sentence (Score 4-6 tier): "A score of 6 means competitors have
+meaningful advantages in one or more areas and are pulling ahead. You are
+not invisible yet — but the window to close the gap is narrowing. Every
+month without action is a month they extend their lead."
+
+==============================================
+PASS 2 — VERIFICATION CHECKLIST
+==============================================
+[x] Every number in the notes matches actually observed data (or is
+    explicitly marked not obtained/not observed — none fabricated)
+[x] Every competitor review count claim is tagged UNCONFIRMED where not
+    Google-verified; none asserted as exceeding the prospect's count as
+    settled fact (prospect's own count is itself unconfirmed/near-zero, and
+    all competitor figures are flagged as needing live re-verification)
+[x] Every review count and star rating carries a verification-method tag
+[x] Annual revenue recorded — gross only ($40k), net not distinguished per
+    transcript; fee structure (contingency → hourly $325/hr) recorded
+[x] Ad sections cover the practice area(s) listed in the transcript
+    (business/commercial litigation) — no other practice areas stated
+[x] No section states "you are not running ads" — all framed as "not
+    observed" / information gap requiring live re-check
+[x] No profitability/business claim appears beyond what the transcript
+    stated
+[x] No competitor reference uses generic labels — only specific named local
+    firms (Starr & Starr, Krantz & Berman, Levy Goldenberg)
+[ ] PageSpeed scores are real numbers — NOT MET. Tool was inaccessible
+    (quota exhausted) in this environment. Flagged prominently at top of
+    this file and must be resolved (re-run with working tool, or
+    /audit-write must omit specific score claims) before the client-facing
+    report is finalized.
+[x] DBM recorded as a clear inference (not explicitly stated verbatim)
+[x] Revenue goal recorded (double to six-figure income)
+[x] Close rate recorded (not stated — defaulted to 15%)
+[x] Average case value recorded (not stated as flat value — hourly rate
+    given instead)
+[x] Stated call focus recorded and confirmed as standard marketing/growth
+    discovery, not a different product line
+[x] Existing marketing/vendor engagements recorded (none stated)
+[x] Budget constraints recorded in full, called out as a first-order issue
+    for this deal (not buried)
+
+OUTSTANDING ITEM FOR /audit-write: PageSpeed mobile/desktop scores are
+missing due to an environment tooling limitation, not absence of effort.
+Do not fabricate a number in the write pass — omit or note as pending
+re-verification.
