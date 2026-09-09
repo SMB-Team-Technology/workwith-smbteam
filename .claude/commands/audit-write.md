@@ -228,7 +228,7 @@ Save to `[friendly-name]/sections/section_executive_summary.html`.
 
 ## PRICE INTEGRITY — CRITICAL
 
-The prices in the tables below are the ONLY approved prices. Do not estimate, round, interpolate, or use any number not listed here. Every dollar figure in the client report must come from one of the approved pricing tables below (Marketing, Non-Marketing, Legal AI Workforce, AI Avatar, Bookkeeping, OmniSocial AI, or Attorney Assistant). The example numbers in HTML template comments are illustrative only — do not use them as actual prices.
+The prices in the tables below are the ONLY approved prices. Do not estimate, round, interpolate, or use any number not listed here. Every dollar figure in the client report must come from one of the approved pricing tables below (Marketing, Non-Marketing, Legal AI Workforce, AI Avatar, Bookkeeping, General Add-Ons, OmniSocial AI, or Attorney Assistant). The example numbers in HTML template comments are illustrative only — do not use them as actual prices.
 
 ---
 
@@ -236,9 +236,8 @@ The prices in the tables below are the ONLY approved prices. Do not estimate, ro
 
 Complete this entire section before starting Step I.
 
-### ELIMINATED PRODUCTS — never recommend under any circumstances
-- Coach Essentials (eliminated)
-- Coach Essentials Plus (eliminated)
+### FRACTIONAL CFO (FCFO) — confirm before quoting
+FCFO does not currently appear in the 2026 Core Coaching Services catalog (only Fractional COO is listed there). Confirm with sales ops that FCFO Advisor/Director/Partner are still sold before quoting any FCFO package.
 
 ### ELIGIBILITY FILTERS — apply first, hide anything that fails
 
@@ -274,7 +273,7 @@ Default to Full Service Marketing at the appropriate tier unless there is a spec
 
 | Revenue | Tier | Bundled Price | Ad Spend Cap |
 |---|---|---|---|
-| Under $750K, single location + single practice area | Essentials | $3,497/mo | $5,000 |
+| Under $750K, single location + single practice area | Essentials | $3,497/mo | $7,500 |
 | $500K–$1M (or under $750K with multiple locations/practice areas) | Starter | $4,997/mo | $20,000 |
 | $1M–$2M | Growth | $7,497/mo | $50,000 |
 | $2M–$3M | Dominate | $10,497/mo | $100,000 |
@@ -295,19 +294,27 @@ Non-marketing packages are the default recommendation alongside marketing. Recom
 
 | Revenue | Team | Recommended | Bundled Price |
 |---|---|---|---|
+| $250K–$400K, tight budget | Any | Coach Essentials | $1,000/mo |
+| $250K–$400K, tight budget, wants 1:1 support | Any | Coach Essentials Plus | $1,997/mo |
 | $250K–$400K | Any | Elite Coach | $2,600/mo |
 | $400K–$1M | Any | Elite Coach Plus | $3,200/mo |
-| $400K–$1M | Growing | Elite Coach Plus + FCOO Advisor | $5,694/mo |
+| $400K–$1M | Growing | Elite Coach + FCOO Advisor | $5,694/mo |
+| $400K–$1M | Growing, larger ops need | Elite Coach + FCOO Director | $7,394/mo |
+| $400K–$1M | Growing, largest ops need | Elite Coach + FCOO Partner | $11,394/mo |
 | $1M+ | Under 5 | Elite Coach Plus | $3,200/mo |
 | $1M+ | Under 5 operational focus | FCOO Advisor | $3,297/mo |
+| $1M+ | Under 5, established leaders, operational focus | FCOO Director | $4,997/mo |
 | $1M+ | 5+ with dedicated staff | Master's Circle | $4,600/mo |
 | $1M+ | 5+ with dedicated staff + ops | Master's Circle + FCOO Advisor | $6,694/mo |
 | $2M+ | 5+ with dedicated staff | Master's Circle + FCOO Director | $8,394/mo |
+| $3M+ | Large team, operational focus | FCOO Partner | $8,997/mo |
 | $3M+ | Large team | Master's Circle + FCOO Partner | $12,394/mo |
 
-**Add Fractional CFO Advisor ($3,297/mo bundled)** if: owner mentions profit problems, revenue growing but not taking home more, no financial visibility, doesn't know acquisition cost. Min revenue $400K.
+**Add Fractional CFO Advisor ($3,297/mo bundled)** if: owner mentions profit problems, revenue growing but not taking home more, no financial visibility, doesn't know acquisition cost. Min revenue $400K. See the Fractional CFO confirmation note above — confirm FCFO is still sold before quoting.
 
-**Stand-alone prices:** Elite Coach $3,497 | Elite Coach Plus $3,497 | Master's Circle $4,997 | FCOO Advisor $3,797 | FCOO Director $5,797 | FCFO Advisor $3,797
+**Note on Coach Essentials / Coach Essentials Plus:** Coach Essentials is group coaching only and cannot be sold standalone. Coach Essentials Plus adds a monthly 1:1 coaching call and can be sold standalone at $2,497/mo. Both are lower-cost alternatives to Elite Coach in the same $250K–$400K revenue band — use them only when the transcript indicates a tighter budget (e.g. via the Budget-Reality Override), not as the default recommendation for that revenue band.
+
+**Stand-alone prices:** Coach Essentials Plus $2,497 (Coach Essentials has no stand-alone price) | Elite Coach $3,497 | Elite Coach Plus $3,497 | Master's Circle $4,997 | FCOO Advisor $3,797 | FCOO Director $5,797 | FCOO Partner $9,997 | FCFO Advisor $3,797
 
 **Fractional packages (FCOO and FCFO) now include Elite Coach group deliverables.** When recommending any fractional package in Block 2, the deliverables list must include: weekly group coaching sessions, practice area masterminds, virtual access to quarterly workshops, and one annual in-person workshop. These are included in the fractional price — do not list them as a separate charge.
 
@@ -318,18 +325,24 @@ Non-marketing packages are the default recommendation alongside marketing. Recom
 Legal AI Workforce (LAW) provides managed AI implementation for law firms — Claude Enterprise workspace, pre-built Law Firm AI Skills, and optional Fractional CTO leadership. Recommend alongside a marketing or coaching package when the firm shows AI readiness. LAW recurring fees count against the 35% cap.
 
 **Do NOT recommend LAW if:**
-- Revenue under $500K
+- Revenue under $400K
 - Firm is solo with no support staff (minimum 1–2 staff needed to engage with implementation)
 - Owner shows no openness to staff training or technology adoption
 
 **LAW Tiers:**
 
-| Tier | Product Name | Bundled Price | Standalone Price | Target Revenue |
-|---|---|---|---|---|
-| AI Essentials | AI Workforce Pro | $1,597/mo | $2,497/mo | $500K+ |
-| AI Accelerator L1 | Fractional CTO Level 1 | $3,297/mo | $3,797/mo | $500K–$1.5M |
-| AI Accelerator L2 | Fractional CTO Level 2 | $4,997/mo | $5,797/mo | $1.5M–$3M |
-| AI Enterprise | Fractional CTO Level 3 | $8,997/mo | $9,997/mo | $3M+ |
+| Tier | Product Name | Price | Target Revenue |
+|---|---|---|---|
+| AI Essentials — Starter | AI Workforce Pro – Starter | $350/user/mo (1–4 users) | $400K+ |
+| AI Essentials — Base | AI Workforce Pro | $1,597/mo (base, 5 users) + $120/mo per additional employee over 5 | $400K+ |
+| AI Accelerator L1 | Fractional CTO Level 1 | $3,297/mo bundled / $3,797/mo standalone | $400K+ |
+| AI Accelerator L2 | Fractional CTO Level 2 | $4,997/mo bundled / $5,797/mo standalone | $1M+ |
+| AI Enterprise | Fractional CTO Level 3 | $8,997/mo bundled / $9,997/mo standalone | $3M+ |
+
+**AI Workforce Pro credits and contract terms:**
+- AI Workforce Pro – Starter: month-to-month contract, 1M AI credits per user, $150/mo overage per 2M credits.
+- AI Workforce Pro (base): 12-month contract, 10M usage credits + 10M bonus credits (20M total), $150/mo overage per 2M credits.
+- There is no standalone/retail price for either AI Workforce Pro tier in the current catalog — do not quote a standalone figure for these two products in the client report.
 
 **Law Firm AI Foundation Sprint (one-time onboarding):**
 - Standalone: $19,997
@@ -344,9 +357,10 @@ Legal AI Workforce (LAW) provides managed AI implementation for law firms — Cl
 - Optional 1:1 AI Implementation Manager: $200/mo
 
 **When to recommend each tier:**
-- **AI Essentials ($1,597/mo):** Revenue $500K–$1.5M. Owner wants to adopt AI with expert guidance; team will do the implementation work ("DIY with managed support"). Lowest-risk entry point.
-- **AI Accelerator L1 ($3,297/mo):** Revenue $500K–$1.5M. Owner has limited time to manage AI rollout internally; wants a dedicated Fractional CTO leading the effort ("done-with-you"). Prefer this over AI Essentials when owner says they don't have bandwidth to manage it themselves.
-- **AI Accelerator L2 ($4,997/mo):** Revenue $1.5M–$3M. Firm wants significant AI transformation — monthly custom agent builds, bi-monthly CTO strategy calls, four Skills deployed per month.
+- **AI Essentials – Starter ($350/user/mo, 1–4 users):** Revenue $400K+. Small team wants to adopt AI with expert guidance at the lowest entry cost; team will do the implementation work ("DIY with managed support").
+- **AI Essentials ($1,597/mo base, 5 users):** Revenue $400K+. Same "DIY with managed support" model as Starter, but for firms with 5+ users needing seats — more cost-effective per seat than Starter once a firm has 5+ users.
+- **AI Accelerator L1 ($3,297/mo):** Revenue $400K+. Owner has limited time to manage AI rollout internally; wants a dedicated Fractional CTO leading the effort ("done-with-you"). Prefer this over AI Essentials when owner says they don't have bandwidth to manage it themselves.
+- **AI Accelerator L2 ($4,997/mo):** Revenue $1M+. Firm wants significant AI transformation — monthly custom agent builds, bi-monthly CTO strategy calls, four Skills deployed per month.
 - **AI Enterprise ($8,997/mo):** Revenue $3M+. Firm wants fully autonomous AI agents, a custom data warehouse, predictive business intelligence, and white-label IT/cybersecurity. "We are your full-service CTO."
 
 ---
@@ -390,12 +404,12 @@ Bookkeeping pairs with any active package as a standalone recurring engagement. 
 
 **Bookkeeping Tiers:**
 
-| Revenue | Level | Bundled Price | Setup Fee (non-waivable) |
-|---|---|---|---|
-| Under $1M | Level 1 | $1,697/mo | $1,500 |
-| $1M–$2.9M | Level 2 | $2,197/mo | $2,000 |
-| $3M–$3.9M | Level 3 | $3,497/mo | $2,500 |
-| $4M+ | Level 4 | Custom | Custom |
+| Revenue | Level | Bundled Price | Stand-Alone Price | Setup Fee (non-waivable) |
+|---|---|---|---|---|
+| Under $1M | Level 1 | $1,697/mo | $1,997/mo | $1,500 |
+| $1M–$2.9M | Level 2 | $2,197/mo | $2,597/mo | $2,000 |
+| $3M–$3.9M | Level 3 | $3,497/mo | $3,997/mo | $2,500 |
+| $4M+ | Level 4 | Custom | Custom | Custom |
 
 Each tier includes 2 hours/month of Controller Services in addition to monthly bookkeeping. The setup fee covers one quarter's worth of clean-up and reconciliation; additional cleanup time bills at $75/hr. Bookkeeping is the only product line where the setup fee can never be waived.
 
@@ -410,6 +424,49 @@ Each tier includes 2 hours/month of Controller Services in addition to monthly b
 Add-on pricing is custom-scoped — never quote a dollar figure for it in the client report. Flag "AR/AP/Payroll add-on interest — requires custom scoping" in research notes instead.
 
 **When to recommend:** Firm has no bookkeeper, financials are disorganized, or the owner has no visibility into cash position. Add AR/AP/Payroll only if the firm explicitly needs help with receivables, payables, or running payroll beyond standard bookkeeping.
+
+---
+
+### GENERAL ADD-ONS
+
+Standalone add-on line items available from the catalog. Most are one-time or per-unit purchases rather than recurring packages — quote them individually, never bundle their cost into a package's bundled price.
+
+**Marketing add-ons:**
+
+| Add-On | Price |
+|---|---|
+| Website Hosting & Maintenance | $500/mo |
+| Content creation | $0.22/word |
+| Content transfer over allotted package amount (incl. multi-site merges) | $300 per 50 pages |
+| Premium Backlink | $950/each |
+| GBP Set-Up | $500/each |
+| Brand Video | $4,997/each |
+| Social/Landing Page Videos (6) | $3,997/each |
+| Social/Landing Page Videos (12) | $7,497/each |
+| Photoshoot | $3,997/each |
+| Landing Page (1) | $1,497/each |
+| EBook, up to 1.5K words | $1,997/each |
+| EBook, up to 3K words | $2,997/each |
+| EBook, up to 5K words | $4,997/each |
+| Integrations (per platform, up to 5 landing pages, common CRMs only, requires approval) | $500 for approved partners / $150/hr for others (must be scoped) |
+| Essentials On-Going SEO (Local + Organic SEO + 10K words/year content) | $900/mo — add-on only, requires an existing Essentials Web/SEO or FSM Essentials client (including hosting-only clients) |
+| Ongoing GBP Management (Local SEO, quarterly optimizations) | $500/mo |
+
+**Coaching add-ons:**
+
+| Add-On | Price |
+|---|---|
+| Bookkeeping Hourly Rate | $50/hr |
+| Course Bundle (8 courses) | $9,997 |
+
+**In-Person Workshop Ticket** (tiered by the client's existing package):
+
+| Client Type | Price |
+|---|---|
+| Elite Coach & Master's Circle clients | $697 |
+| FCOO & FCFO clients | $997 |
+| Coach Essentials / Coach Essentials Plus clients | $1,497 |
+| Non-coaching clients | $1,997 |
 
 ---
 
