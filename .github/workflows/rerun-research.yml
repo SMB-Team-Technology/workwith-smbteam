@@ -79,6 +79,12 @@ jobs:
           FRIENDLY_NAME="${{ steps.resolve.outputs.friendly_name }}"
           TRIGGER_FILE="triggers/audit-research/${FRIENDLY_NAME}.json"
           FATHOM_URL="${{ steps.resolve_fathom.outputs.fathom_url }}"
+
+          if node scripts/skip-fathom-overwrite.mjs "$TRIGGER_FILE"; then
+            echo "Trigger already has a real transcript — skipping HubSpot/summary overwrite."
+            exit 0
+          fi
+
           CALL_ID=$(echo "$FATHOM_URL" | grep -oP '(?<=/calls/)\d+' || true)
 
           if [ -n "$CALL_ID" ]; then
