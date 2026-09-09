@@ -236,9 +236,6 @@ The prices in the tables below are the ONLY approved prices. Do not estimate, ro
 
 Complete this entire section before starting Step I.
 
-### FRACTIONAL CFO (FCFO) — confirm before quoting
-FCFO does not currently appear in the 2026 Core Coaching Services catalog (only Fractional COO is listed there). Confirm with sales ops that FCFO Advisor/Director/Partner are still sold before quoting any FCFO package.
-
 ### ELIGIBILITY FILTERS — apply first, hide anything that fails
 
 **Practice Area:**
@@ -274,10 +271,12 @@ Default to Full Service Marketing at the appropriate tier unless there is a spec
 | Revenue | Tier | Bundled Price | Ad Spend Cap |
 |---|---|---|---|
 | Under $750K, single location + single practice area | Essentials | $3,497/mo | $7,500 |
-| $500K–$1M (or under $750K with multiple locations/practice areas) | Starter | $4,997/mo | $20,000 |
+| $500K–$1M (or under $750K with multiple locations/practice areas) | Starter | $4,997/mo | $25,000 |
 | $1M–$2M | Growth | $7,497/mo | $50,000 |
 | $2M–$3M | Dominate | $10,497/mo | $100,000 |
 | $3M+ | Platinum | $15,997/mo | $150,000 |
+
+Note: the Paid-Ads-only sub-package for Starter has a lower cap of $20,000 (see the General Add-Ons / sub-package pricing in Scoping_and_Ad_Spend_Guide.md) — $25,000 applies only to the Full Service Marketing Starter bundle above.
 
 **Stand-alone prices (for savings calculation in Block 3):**
 Essentials $3,797 | Starter $5,697 | Growth $8,997 | Dominate $12,497 | Platinum $18,997
@@ -310,11 +309,11 @@ Non-marketing packages are the default recommendation alongside marketing. Recom
 | $3M+ | Large team, operational focus | FCOO Partner | $8,997/mo |
 | $3M+ | Large team | Master's Circle + FCOO Partner | $12,394/mo |
 
-**Add Fractional CFO Advisor ($3,297/mo bundled)** if: owner mentions profit problems, revenue growing but not taking home more, no financial visibility, doesn't know acquisition cost. Min revenue $400K. See the Fractional CFO confirmation note above — confirm FCFO is still sold before quoting.
+**Add Fractional CFO** if: owner mentions profit problems, revenue growing but not taking home more, no financial visibility, doesn't know acquisition cost. FCFO Advisor $3,297/mo bundled (min revenue $400K); FCFO Director $4,997/mo bundled (min revenue $1M); FCFO Partner $8,997/mo bundled (min revenue $3M).
 
 **Note on Coach Essentials / Coach Essentials Plus:** Coach Essentials is group coaching only and cannot be sold standalone. Coach Essentials Plus adds a monthly 1:1 coaching call and can be sold standalone at $2,497/mo. Both are lower-cost alternatives to Elite Coach in the same $250K–$400K revenue band — use them only when the transcript indicates a tighter budget (e.g. via the Budget-Reality Override), not as the default recommendation for that revenue band.
 
-**Stand-alone prices:** Coach Essentials Plus $2,497 (Coach Essentials has no stand-alone price) | Elite Coach $3,497 | Elite Coach Plus $3,497 | Master's Circle $4,997 | FCOO Advisor $3,797 | FCOO Director $5,797 | FCOO Partner $9,997 | FCFO Advisor $3,797
+**Stand-alone prices:** Coach Essentials Plus $2,497 (Coach Essentials has no stand-alone price) | Elite Coach $3,497 | Elite Coach Plus $3,497 | Master's Circle $4,997 | FCOO Advisor $3,797 | FCOO Director $5,797 | FCOO Partner $9,997 | FCFO Advisor $3,797 | FCFO Director $5,797 | FCFO Partner $9,997
 
 **Fractional packages (FCOO and FCFO) now include Elite Coach group deliverables.** When recommending any fractional package in Block 2, the deliverables list must include: weekly group coaching sessions, practice area masterminds, virtual access to quarterly workshops, and one annual in-person workshop. These are included in the fractional price — do not list them as a separate charge.
 
@@ -408,7 +407,7 @@ Bookkeeping pairs with any active package as a standalone recurring engagement. 
 |---|---|---|---|---|
 | Under $1M | Level 1 | $1,697/mo | $1,997/mo | $1,500 |
 | $1M–$2.9M | Level 2 | $2,197/mo | $2,597/mo | $2,000 |
-| $3M–$3.9M | Level 3 | $3,497/mo | $3,997/mo | $2,500 |
+| $3M–$3.9M | Level 3 | $3,497/mo | $4,597/mo | $2,500 |
 | $4M+ | Level 4 | Custom | Custom | Custom |
 
 Each tier includes 2 hours/month of Controller Services in addition to monthly bookkeeping. The setup fee covers one quarter's worth of clean-up and reconciliation; additional cleanup time bills at $75/hr. Bookkeeping is the only product line where the setup fee can never be waived.
@@ -451,6 +450,9 @@ Standalone add-on line items available from the catalog. Most are one-time or pe
 | Integrations (per platform, up to 5 landing pages, common CRMs only, requires approval) | $500 for approved partners / $150/hr for others (must be scoped) |
 | Essentials On-Going SEO (Local + Organic SEO + 10K words/year content) | $900/mo — add-on only, requires an existing Essentials Web/SEO or FSM Essentials client (including hosting-only clients) |
 | Ongoing GBP Management (Local SEO, quarterly optimizations) | $500/mo |
+| AI Video Avatar Expansion Pack (add-on to an active AI Avatar/Virtual Video Growth package) | $1,800 for an initial batch of 10 additional short-form (<2 min) videos + avatar, $600 per additional batch of 10 |
+| At-Home Film Equipment Option (camera + microphone kit, for clients who cannot attend a workshop) | $300 |
+| Done-For-You Review Generation, Level 1 (up to 250 Google review requests sent per month; law firm must supply the list) | $500/mo — included at no charge for Growth tier and above |
 
 **Coaching add-ons:**
 
@@ -472,16 +474,16 @@ Standalone add-on line items available from the catalog. Most are one-time or pe
 
 ### SELECT OMNISOCIAL AI ADD-ON
 
-OmniSocial AI covers paid and organic social/video content, separate from the Full Service Marketing package. Most tiers are upgrade-only for existing marketing clients — only the 360 bundle can be sold standalone to a new client. Requires a 12-month minimum term.
+OmniSocial AI covers paid and organic social/video content, separate from the Full Service Marketing package. Most tiers are upgrade-only for existing marketing clients — only the 360 bundle can be sold standalone to a new client. Requires a 12-month minimum term. Minimum revenue $500K+ (flexible if the firm is profitable).
 
 **Escalation: every OmniSocial AI proposal requires sales-ops approval with a 72-hour turnaround.** Do not promise same-day terms — flag in research notes.
 
-**OmniSocial AI Pricing:**
+**OmniSocial AI Pricing** (all tiers carry a $1,850 one-time setup fee):
 
 | Package | Price | Notes |
 |---|---|---|
-| Content – Standard | $1,797/mo | Existing-client upgrade only |
-| Content – Pro | TBD | Existing-client upgrade only — confirm current price with sales ops before quoting |
+| Content – Standard | $2,297/mo | Organic video presence. Existing-client upgrade only |
+| Content – Pro | $3,697/mo | High-volume organic video (2x volume + avatar refreshes). Existing-client upgrade only |
 | Ads – Starter | $1,297/mo | Up to $5K ad spend. Existing-client upgrade only |
 | Ads – Growth | $1,797/mo | $5K–$10K ad spend. Existing-client upgrade only |
 | Ads – Dominate | $2,497/mo | $10K–$25K ad spend. Existing-client upgrade only |

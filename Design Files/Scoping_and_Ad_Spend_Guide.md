@@ -244,11 +244,10 @@ Check the ad spend against the maximum for their marketing tier:
 
 | Marketing Tier | Max Ad Spend Managed |
 |---|---|
-| Essentials (Full Service) | $5,000/month |
-| Essentials (LSA+PPC or LSA+Social) | $5,000/month |
-| Starter (Full Service) | $20,000/month |
-| Starter (LSA+PPC) | $20,000/month |
-| Starter (LSA+PPC+Social) | $25,000/month |
+| Essentials (Full Service) | $7,500/month |
+| Essentials (Paid Ads only) | $7,500/month |
+| Starter (Full Service) | $25,000/month |
+| Starter (Paid Ads only) | $20,000/month |
 | Growth | $50,000/month |
 | Dominate | $100,000/month |
 | Platinum | $150,000/month |
@@ -421,7 +420,7 @@ The catalog now sells the ads-only and web+SEO-only sub-packages as "Paid Ads" a
 |---|---|---|---|---|
 | Paid Ads Starter | $3,497/mo | $2,497/mo | $20,000 | Ads-only with good existing website |
 | Web + SEO Starter | $3,997/mo | $3,497/mo | N/A | Website + SEO only |
-| Full Service Marketing Starter | $5,697/mo | $4,997/mo | $20,000 | Everything (DEFAULT recommendation) |
+| Full Service Marketing Starter | $5,697/mo | $4,997/mo | $25,000 | Everything (DEFAULT recommendation) |
 
 **Growth Tier:**
 | Sub-Package | Stand-Alone Price | Bundled Price | Ad Spend Cap | Best For |
@@ -465,9 +464,6 @@ Every client must have at least one non-marketing package. Clients with marketin
 
 ### Step 6A — Apply Eligibility Filters
 
-**FRACTIONAL CFO (FCFO) — confirm before quoting:**
-FCFO does not currently appear in the 2026 Core Coaching Services catalog (only Fractional COO is listed there). Confirm with sales ops that FCFO Advisor/Director/Partner are still sold before quoting any FCFO package.
-
 **Revenue Filters:**
 - **Under $500K:** Remove ALL Fractional COO and Fractional CFO products and all bundles containing them
 - **Under $1M:** Remove Master's Circle and all bundles containing it
@@ -500,14 +496,14 @@ FCFO does not currently appear in the 2026 Core Coaching Services catalog (only 
 
 ### Step 6C — When to Add Fractional CFO
 
-Add Fractional CFO Advisor ($3,297/mo bundled) when ANY of these signals appear in the transcript:
+Add Fractional CFO when ANY of these signals appear in the transcript:
 - Owner mentions profit problems or cash flow issues
 - Revenue is growing but owner isn't taking home more
 - No financial reporting or visibility into margins
 - Owner doesn't know their cost per acquisition
 - Explicitly mentions wanting help with finances
 
-**Revenue minimum for FCFO:** $400K+ for Advisor, $1M+ for Director, $3M+ for Partner
+**FCFO pricing and revenue minimums:** Advisor $3,297/mo bundled, $3,797/mo stand-alone ($400K+); Director $4,997/mo bundled, $5,797/mo stand-alone ($1M+); Partner $8,997/mo bundled, $9,997/mo stand-alone ($3M+).
 
 ### Step 6D — When to Add Bookkeeping
 
@@ -517,7 +513,7 @@ Add Bookkeeping when the firm has no current bookkeeper or their financials are 
 |---|---|---|---|---|
 | Under $1M | Level 1 | $1,697/mo | $1,997/mo | $1,500 (CANNOT be waived) |
 | $1M–$2.9M | Level 2 | $2,197/mo | $2,597/mo | $2,000 (CANNOT be waived) |
-| $3M–$3.9M | Level 3 | $3,497/mo | $3,997/mo | $2,500 (CANNOT be waived) |
+| $3M–$3.9M | Level 3 | $3,497/mo | $4,597/mo | $2,500 (CANNOT be waived) |
 | $4M+ | Level 4 | Custom | Custom | Custom |
 
 **Note:** Bookkeeping is typically a Phase 3 recommendation (growth roadmap), not Phase 1 — unless the firm's financials are in such poor shape that it's an immediate need.
@@ -550,6 +546,9 @@ Standalone add-on line items available from the catalog. Most are one-time or pe
 | Integrations (per platform, up to 5 landing pages, common CRMs only, requires approval) | $500 for approved partners / $150/hr for others (must be scoped) |
 | Essentials On-Going SEO (Local + Organic SEO + 10K words/year content) | $900/mo — add-on only, requires an existing Essentials Web/SEO or FSM Essentials client (including hosting-only clients) |
 | Ongoing GBP Management (Local SEO, quarterly optimizations) | $500/mo |
+| AI Video Avatar Expansion Pack (add-on to an active AI Avatar/Virtual Video Growth package) | $1,800 for an initial batch of 10 additional short-form (<2 min) videos + avatar, $600 per additional batch of 10 |
+| At-Home Film Equipment Option (camera + microphone kit, for clients who cannot attend a workshop) | $300 |
+| Done-For-You Review Generation, Level 1 (up to 250 Google review requests sent per month; law firm must supply the list) | $500/mo — included at no charge for Growth tier and above |
 
 **Coaching add-ons:**
 
@@ -1061,7 +1060,7 @@ This section mirrors every key numeric value from the guide above in a clean, un
 |---|---|
 | Essentials Full Service | 7500 |
 | Essentials Paid Ads | 7500 |
-| Starter Full Service | 20000 |
+| Starter Full Service | 25000 |
 | Starter Paid Ads | 20000 |
 | Growth | 50000 |
 | Dominate | 100000 |
@@ -1119,8 +1118,6 @@ Essentials additionally requires single location + single practice area (scope f
 | FCFO Partner | 8997 | 9997 | 1000 |
 | LSA Add-On (coaching-only clients) | 900 | — | — |
 
-FCFO does not currently appear in the 2026 Core Coaching Services catalog (only Fractional COO is listed there) — confirm with sales ops before quoting FCFO.
-
 ### Non-Marketing Package — Revenue and Team Eligibility (USD/year)
 
 | Revenue Low | Revenue High | Team Size | Recommended Package | Bundled Monthly |
@@ -1147,7 +1144,7 @@ FCFO does not currently appear in the 2026 Core Coaching Services catalog (only 
 |---|---|---|---|---|---|
 | Level 1 | 0 | 999999 | 1697 | 1997 | 1500 |
 | Level 2 | 1000000 | 2999999 | 2197 | 2597 | 2000 |
-| Level 3 | 3000000 | 3999999 | 3497 | 3997 | 2500 |
+| Level 3 | 3000000 | 3999999 | 3497 | 4597 | 2500 |
 | Level 4 | 4000000 | — | Custom | Custom | Custom |
 
 ### General Add-Ons (USD)
@@ -1171,6 +1168,10 @@ FCFO does not currently appear in the 2026 Core Coaching Services catalog (only 
 | Integrations, others (must be scoped) | 150 | per hour |
 | Essentials On-Going SEO | 900 | per month |
 | Ongoing GBP Management | 500 | per month |
+| AI Video Avatar Expansion Pack, initial batch of 10 | 1800 | one-time |
+| AI Video Avatar Expansion Pack, additional batch of 10 | 600 | one-time |
+| At-Home Film Equipment Option | 300 | one-time |
+| Done-For-You Review Generation, Level 1 | 500 | per month |
 | Bookkeeping Hourly Rate | 50 | per hour |
 | Course Bundle (8 courses) | 9997 | one-time |
 | Workshop Ticket — Elite Coach & Master's Circle clients | 697 | each |
