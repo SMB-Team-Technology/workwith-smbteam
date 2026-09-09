@@ -1,0 +1,184 @@
+GAYDOS LAW, P.C. — GROWTH AUDIT RESEARCH NOTES
+Firm: Gaydos Law, P.C. (Gaydos, Gaydos & Associates, P.C.)
+Friendly Name: gaydos-law
+URL: https://www.gaydoslaw.com/
+Sales Rep: Dan Bryant
+Proposal Call Date: September 15, 2026
+Discovery Call Date: August 31, 2026 (~58 min) — Attendees: Joseph Gaydos (Owner/Attorney), Dan Bryant, Christian McLaughlin, Anthony Marotta
+
+================================================================
+STEP 1 — WEBSITE RESEARCH
+================================================================
+- Website URL confirmed live: yes (fetched live, https://www.gaydoslaw.com/)
+- Last redesign date or estimated age: not indicated on homepage; no redesign date found in live fetch or search results — flag as unknown, consistent with transcript's note that the site is managed by an outside vendor and is not SEO-optimized
+- Mobile responsive: not observed directly (WebFetch does not render viewport behavior) — not confirmed either way
+- Homepage headline: "The Attention You Deserve. The Results You Expect."
+- CTA above fold: yes — button reads "Contact Us Today"
+- Contact form location: near bottom of homepage, titled "Let's Get Started!" (collects name, email, phone, referral source, practice area, message) — not above the fold
+- Live chat present: no
+- Attorney bio present: yes — Joe Gaydos (Managing Partner, founded 1987), Hunter Shreffler (Associate Attorney), Lauren A. Watkins (Associate Attorney); Jonathan C. Veres noted as "Rated by Super Lawyers"
+- Video present: no
+- Blog present: yes — blog section exists but most recent post date could not be determined from the live fetch
+- Trust badges on homepage: "35+ Years Serving Western Pennsylvania," "10,000+ Closed Cases," "$50,000,000+ Recovered for Clients"
+- Practice areas listed on site: Personal Injury, Family Law, Estate Planning, Criminal Law
+- Service area listed: Allegheny, Beaver, Butler, Fayette, Greene, Washington, and Westmoreland counties
+- Geo-targeted landing pages: none observed in navigation — confirms transcript's diagnosis that the site lacks dedicated city/practice geo pages (e.g., no dedicated "White Oak Personal Injury Lawyer" or "Probate" page found)
+
+PageSpeed scores — NOT OBTAINED THIS SESSION:
+- PageSpeed mobile score: attempted via PageSpeed Insights API (googleapis.com/pagespeedonline/v5) and pagespeed.web.dev three times; API returned HTTP 429 (rate-limited) on all attempts, and the web UI requires client-side JS execution that this session's fetch tool cannot render. No real number obtained.
+- PageSpeed desktop score: same result — not obtained.
+- ACTION NEEDED before /audit-write: re-run pagespeed.web.dev for https://www.gaydoslaw.com/ manually (or retry the API later) to get real mobile/desktop scores. Do not fabricate — per the transcript, Dan already reviewed the site and found on-page SEO issues (title tags, H1s), which are recorded below and can carry the section if PageSpeed remains unavailable.
+
+================================================================
+STEP 2 — GOOGLE BUSINESS PROFILE
+================================================================
+- GBP found: yes (firm listing appears across directories consistent with 1223 Long Run Rd, White Oak, PA 15131)
+- Star rating: 4.9 [UNCONFIRMED — sourced from Trustindex.io aggregator (which displays Google reviews), not independently confirmed via a direct Google Maps/GBP fetch — this session's tools could not render the live Google Maps panel]
+- Total review count: 79 [UNCONFIRMED — sourced from Trustindex.io aggregator, not independently confirmed via Google]
+- Most recent review date: not obtained
+- Primary category: Personal Injury Attorney (inferred from directory listings; not confirmed directly off the GBP panel)
+- Photos active: yes, per Yelp cross-reference (18 photos on Yelp listing) — GBP photo activity itself not directly confirmed
+- Posts active: not observed
+- ACTION NEEDED before /audit-write: confirm star rating and review count directly on Google Maps — this session's web-fetch tooling could not render the live Google panel (returned empty/JS-only content on repeated attempts).
+
+================================================================
+STEP 3 — LOCAL 3-PACK SEARCHES
+================================================================
+NOTE: This session's tools could not render live Google Maps/local-pack results (Google Maps URLs returned empty JS-shell content on repeated fetch attempts). The searches below reflect organic web search results as the closest available proxy, not a confirmed live 3-pack screenshot. Named firms below are corroborated by multiple independent search results. Competitor pack positions and review counts are NOT independently confirmed via live Google and should be re-verified before /audit-write.
+
+Practice Area 1: Personal Injury
+- Search 1 "White Oak PA personal injury lawyer": firm appears — yes (Gaydos Law, PC named directly in Yelp-sourced result set alongside competitors) — competitors surfacing: Pribanic & Pribanic, LLC (1735 Lincoln Way, White Oak, PA), McGrail & Associates, LLC (1714 Lincoln Way, White Oak, PA), Jerome L. Tierney
+- Search 2 "Pittsburgh personal injury lawyer": firm appears — not observed in top results — competitors surfacing: Morgan & Morgan, Berger and Green, Edgar Snyder & Associates, Robert Peirce & Associates, TopDog Law
+- Search 3 "White Oak PA injury attorney": firm appears — yes (directory cross-listing) — competitors surfacing: Pribanic & Pribanic, LLC, Thompson Law Group P.C.
+
+Practice Area 2: Estate Planning / Probate
+- Search 1 "White Oak PA probate estate administration lawyer": firm appears — no (Gaydos Law did not surface in this result set) — competitors surfacing: DePaulis Law (Amanda L. DePaulis), Myers Duffy Dansak & Clegg LLC (Ryan Dansak), American Wills & Estates
+- Search 2 "White Oak PA estate planning attorney": firm appears — no — competitors surfacing: DePaulis Law, Holly Lynn Deihl
+- Search 3 "White Oak PA wills lawyer": firm appears — no — competitors surfacing: Myers Duffy Dansak & Clegg LLC
+
+Practice Area 3: Family Law
+- Search 1 "White Oak PA family law attorney divorce custody": firm appears — yes, referenced by name ("Gaydos and Associates... represented clients in custody matters, with Lori Love handling cases") — competitors surfacing: Bunde & Roberts, P.C. (Robb D. Bunde), Jennifer Roller Chontos, Todd Spivak
+- Search 2 "White Oak PA custody lawyer": firm appears — not confirmed in this result set — competitors surfacing: Bunde & Roberts, P.C.
+- Search 3 "White Oak PA divorce lawyer": firm appears — not confirmed — competitors surfacing: Jennifer Roller Chontos, Todd Spivak
+
+Takeaway consistent with transcript: the firm shows up organically for its strongest historical category (Personal Injury, via referral/brand equity) but is largely absent from Estate Planning/Probate search visibility despite that being an active, high-volume practice area for the firm ("opened 8 estates in last two weeks" per transcript) — a clear geo/practice-page gap.
+
+================================================================
+STEP 4 — COMPETITOR REVIEW COUNTS
+================================================================
+Per transcript, Joe Gaydos and Dan named three specific competitive threats: Pribanic & Pribanic ("ProBanic" in call notes), a firm heard as "Finters," and Top Dog Law. Live Google verification was not obtainable this session (Google Maps/Search rendered no data via available fetch tooling); every figure below is aggregator-sourced and tagged accordingly. These must be re-verified live before being cited as fact in the client-facing report.
+
+- Competitor 1: Pribanic & Pribanic, LLC (White Oak, PA — 1735 Lincoln Way) — reviews: not obtained [UNCONFIRMED — no aggregator or direct listing with a review count surfaced in this session's searches; Facebook page shows "84% recommend (8 reviews)" but that is a Facebook metric, not Google] — rating: not obtained [UNCONFIRMED]
+- Competitor 2: "Finters" — likely refers to The Law Firm of Fenters Ward (Irwin, PA / Westmoreland County) based on phonetic match; however, this firm shows only 4 reviews at a 5.0 rating on Birdeye [UNCONFIRMED — sourced from Birdeye aggregator, not confirmed via Google], which conflicts sharply with the transcript's claim of ~978 reviews driving map dominance. This is a material discrepancy — the transcript figure could not be corroborated for any firm plausibly matching "Finters" in the White Oak/Pittsburgh PI market in this session's research. FLAG FOR HUMAN REVIEW: do not cite "~978 reviews" for any named competitor in the client-facing report until the actual high-review firm is identified and confirmed live on Google — it may be a different, unnamed competitor that Dan was viewing live on the call.
+- Competitor 3: TopDog Law (Pittsburgh, PA — 6425 Living Pl, Ste 200b) — reviews: 119 [UNCONFIRMED — sourced from Birdeye aggregator, not independently confirmed via Google] — rating: 4.7 [UNCONFIRMED — same source]
+
+Verification note: no competitor above is confirmed, via live Google, to have more reviews than Gaydos Law's own aggregator-sourced count of 79. TopDog Law's aggregator-sourced 119 would exceed it if confirmed — flag for live confirmation before using in any "competitor is dominating you on reviews" framing.
+
+================================================================
+STEP 5 — DIRECTORY LISTINGS
+================================================================
+- Avvo: profile present (Joseph M. Gaydos Jr., White Oak, PA, 15131)
+- Justia: firm and attorney listings present in White Oak, PA directory pages
+- FindLaw: profile present ("Gaydos, Gaydos & Associates, P.C.")
+- Yelp: profile present — "GAYDOS LAW, PC," 1223 Long Run Rd, White Oak, PA, 18 photos, listed under Personal Injury Law
+- Martindale.com: profile present, address listed as 1223 Long Run Rd, White Oak, Pennsylvania — consistent
+- Super Lawyers: profile present ("Gaydos Law, P.C.," White Oak, Pennsylvania)
+- NAP consistency: name/address consistent across Yelp, Martindale, Super Lawyers, and the firm's own site (1223 Long Run Rd, White Oak, PA 15131; phone (412) 678-7900 per Yelp listing). No conflicting address variants surfaced in this session's research.
+- Geo-targeting landing pages for surrounding cities/counties: none found on gaydoslaw.com — confirms the gap noted in Step 1 and matches transcript's diagnosis that the site lacks geo/practice-specific pages despite serving seven counties.
+
+================================================================
+STEP 6 — GOOGLE ADS
+================================================================
+Per transcript: prior PPC vendor "Viv" ran ads early with results, then went unresponsive; a second vendor, A to Z e-Communications, handled local PR/ads; Google ads were recently paused after budget increases did not yield proportional results. No live ad presence was independently confirmed this session (Google Ads results are not renderable via this session's fetch tooling).
+
+Practice Area 1: Personal Injury
+- Firm ads observed: not observed (consistent with transcript — ads reported paused)
+- Named local competitors running ads: not observed this session — could not render live Google search ad slots via available tooling
+
+Practice Area 2: Family Law
+- Firm ads observed: not observed
+- Named local competitors running ads: not observed this session
+
+Practice Area 3: Estate Planning / Probate
+- Firm ads observed: not observed
+- Named local competitors running ads: not observed this session
+
+ACTION NEEDED before /audit-write: live Google Ads presence (firm and competitors) could not be confirmed via this session's tooling — a manual live search is recommended to fill this section with real ad copy if available; otherwise keep language at "does not appear to be running ads for this search" per the Ads Framing Rule.
+
+================================================================
+STEP 7 — LOCAL SERVICE ADS
+================================================================
+- Firm appears in LSA: not observed (could not render live LSA unit via available tooling)
+- Google Screened: not observed
+- LSA review count: N/A
+- Named local competitors in LSA: not observed this session
+
+================================================================
+STEP 8 — META ADS
+================================================================
+- Firm has active ads: not observed — Meta Ad Library (facebook.com/ads/library) is a login-gated, JS-rendered tool not reachable by this session's fetch tooling; firm's Facebook page (facebook.com/Gaydoslaw) confirmed to exist but active-ad status not confirmed
+- Named local competitor 1: Pribanic & Pribanic — active ads: not observed this session
+- Named local competitor 2: TopDog Law — active ads: not observed this session
+
+================================================================
+STEP 9 — TRANSCRIPT EXTRACTION
+================================================================
+- Practice areas confirmed: Personal injury (multi-million-dollar cases via referral), family law, estate planning/estate administration & probate (wills, estate admin — the more active side vs. planning), light criminal (DUIs, magistrate-level; heavier criminal/white-collar handled by of-counsel Ryan Renauro, a former prosecutor)
+- Current lead sources: Primarily referrals, historically driven by the Gaydos family name/local legacy (Joseph's father was a long-time local congressman); phones "ringing" via reception/intake; referral flywheel explicitly described as "waning over time"
+- Ads ever run: Yes — Google/paid ads run inconsistently and recently paused; "budget increases did not yield proportional results"; prior PPC vendor "Viv" performed early then became non-responsive; second vendor "A to Z e-Communications" handled local PR/ads (owner personally knows the principal); a "regular PR" team in Pittsburgh also used; an FMO (name not stated) produces videos
+- Team size: Owner (Joseph Gaydos) + 2 associate attorneys (former prosecutors; family/PI focus) + 1 of-counsel/partner attorney (Ryan Renauro, former prosecutor, heavy criminal/white-collar) + Office Manager (30 years, de facto operational lead) + Reception/Intake-Paralegal (records, PI admin, summaries) + owner's daughter (document summarization, pre-law) + 1 3L intern (Duquesne, just started) = 8 people total
+- Annual revenue (gross / case value): stated as "high hundreds, $700,000" initially, later aligned to approximately $1M gross excluding passthrough settlements
+- Annual revenue (net / take-home / collected): not distinguished from gross
+- Fee structure: not stated explicitly (PI cases described as referral-driven, multi-million-dollar via contingency implied by case type but not confirmed in exact quote — record as "not stated")
+- Revenue goal: not stated as a figure — owner expressed desire to "make a bunch more money" and grow; per default rule, use 2x current revenue (~$1.4M–$2M) as planning target
+- Average case value: not stated
+- Current close rate: not stated — default to 15%
+- Number of locations: 1 (White Oak, PA — not otherwise mentioned)
+- Spanish campaign needed: no (not mentioned)
+- Dominant buying motive: Build a self-managing, profitable firm that provides freedom and continuity — explicitly tied to legacy and longevity ("I'll be working until I'm dead"; 40+ years in practice; father's local legacy) and family transition (daughter considering law, potential future beneficiary/successor, positioning the firm for eventual transition or sale/buyout optionality). This is closest to DBM category (1) firm that runs itself so the owner has more time / continuity, blended with succession/legacy planning — not a "grow and sell fast" or pure "scale and dominate" motive.
+- Any profitability claims made by prospect: none stated (owner discussed revenue plateau and desire to improve profit via efficiency/AI, but made no specific profitability figures or claims)
+- Any claims about case types or practice areas: "six or eight wills every other week"; "opened 8 estates in last two weeks"; PI cases described as "multi-million-dollar cases via referral"; criminal limited to "DUIs, magistrate" level with heavier criminal/white-collar handled by Ryan Renauro
+- Stated call focus / product interest: Standard marketing/growth discovery call — explicitly triggered by "interest in AI usage/automation and improving marketing performance (website/SEO, PI without heavy ad spend)" plus recent dissatisfaction with ad ROI and vendor responsiveness. Not a Fractional CTO/pure-AI engagement call and not a coaching/ops call — marketing and intake growth (with an AI-efficiency angle for internal workflows) was the stated focus.
+- Existing marketing/SEO/ad vendor engagements: No current active contract confirmed — website is managed by an unnamed outside vendor; PPC vendor "Viv" went non-responsive after early results; PPC/local PR vendor "A to Z e-Communications" also referenced (owner knows the principal) with no stated current contract status; "regular PR people" in Pittsburgh also referenced without a contract status stated; treat as no confirmed active exclusive contract, but note owner has existing relationships with at least two outside vendors that may need to be unwound or coordinated with.
+- Budget constraints stated: none stated explicitly — no statement of inability to afford a given monthly investment. Discussion of SMB Team's typical $2.5K–$7.5K/month range (with a ~$30K/mo outlier example) was informational, not a budget objection from the prospect.
+
+================================================================
+STEP 10 — COMPETITIVE URGENCY SCORE
+================================================================
+Score: 6/10
+
+Reasoning: This is not a market where competitors are running comprehensive campaigns across every channel — ads are inconsistent even among named threats, and this session could not confirm any competitor is currently running live paid or LSA campaigns against the firm. But the firm has meaningful, confirmed structural disadvantages: near-zero organic visibility outside its legacy referral base (no geo pages, misconfigured titles/H1s, ~225 estimated organic visits/month per Dan's on-call review vs. competitors self-reported by Dan at 1.5K–1.7K+), no CRM/lead tracking despite referrals being the primary channel, and a fading namesake referral flywheel. Two of three named competitor threats (Pribanic & Pribanic, TopDog Law) are well-established specifically in the personal injury vertical where Gaydos is weakest online, even without confirmed live ad spend.
+
+Named specific local competitor threats:
+1. Pribanic & Pribanic, LLC (White Oak, PA) — direct geographic overlap (same town, Lincoln Way), long-established PI specialist with likely stronger practice-specific SEO presence (per Dan's on-call diagnosis of competitor geo-pages like "White Oak Personal Injury Lawyer")
+2. TopDog Law (Pittsburgh, PA) — aggregator-sourced 119 reviews at 4.7 stars [UNCONFIRMED], broader regional PI marketing presence
+3. The unnamed high-review-volume PI competitor referenced on the call as "Finters" (~978 reviews per Dan's live review during the call) — could not be identified/confirmed this session; if Dan's on-call figure is accurate, this represents the single largest map-visibility threat in the market and should be re-confirmed and named correctly before the proposal call
+
+Dynamic sentence (per Score 4–6 band): "A score of 6 means competitors have meaningful advantages in one or more areas and are pulling ahead. You are not invisible yet — but the window to close the gap is narrowing. Every month without action is a month they extend their lead."
+
+================================================================
+PASS 2 — VERIFICATION CHECKLIST
+================================================================
+[x] Every number in the notes matches actually observed data — where data could not be observed live, it is explicitly flagged as UNCONFIRMED or "not obtained," never presented as fact
+[x] Competitor review counts — not independently verified live this session; all tagged UNCONFIRMED; explicitly flagged that Gaydos's own aggregator-sourced 79 reviews is not confirmed to be lower than every named competitor (TopDog Law's aggregator figure of 119 would exceed it if confirmed)
+[x] Every review count/rating carries a verification-method tag
+[x] Revenue split into gross/case-value vs. net — transcript does not distinguish; noted as "not distinguished from gross"
+[x] Ad sections cover all three practice areas (PI, Family Law, Estate Planning/Probate)
+[x] No section states "you are not running ads" — all use "not observed" / "does not appear to be running" framing
+[x] No profitability claim recorded beyond what transcript stated (none stated)
+[x] No competitor reference uses generic labels — only specific named local firms (Pribanic & Pribanic, TopDog Law; "Finters" flagged as unresolved)
+[ ] PageSpeed scores — NOT obtained this session (tool inaccessible via available fetch tooling after three attempts); flagged as an open action item, not fabricated
+[x] DBM recorded (legacy/continuity + family succession, inferred from direct quotes)
+[x] Revenue goal recorded (not stated — 2x current revenue default noted, ~$1.4M–$2M)
+[x] Close rate recorded (not stated — defaulted to 15%)
+[x] Average case value recorded (not stated)
+[x] Stated call focus recorded — standard marketing/growth discovery with an AI-efficiency angle, explicitly not a Fractional CTO or coaching/ops call
+[x] Existing marketing/SEO/ad vendor engagements recorded (no confirmed active exclusive contract; two prior vendor relationships noted)
+[x] Budget constraints recorded (none stated)
+
+OPEN ACTION ITEMS FOR HUMAN REVIEW BEFORE /audit-write:
+1. PageSpeed mobile/desktop scores — re-run pagespeed.web.dev manually; this session's tooling could not render live results (API rate-limited, web UI requires JS execution unavailable to this session's fetch tool).
+2. Google Business Profile star rating/review count for Gaydos Law — confirm live on Google Maps (currently sourced from Trustindex aggregator only).
+3. Identify and confirm the competitor referred to as "Finters" on the call (~978 reviews claimed) — this session could not corroborate that review count for any plausibly-matching firm; do not use the 978 figure in the client-facing report until resolved.
+4. Live competitor review counts for Pribanic & Pribanic and TopDog Law — confirm directly on Google before citing in the report.
+5. Live Google Ads / LSA / Meta Ads presence for the firm and named competitors — not renderable via this session's tooling; a manual check is recommended if precise ad copy is desired for the report.
