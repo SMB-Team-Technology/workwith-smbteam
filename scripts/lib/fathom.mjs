@@ -28,17 +28,28 @@ const TRANSCRIPT_MAX_CHARS = 300_000; // ~60-90 min call with headroom; keeps tr
 const MAX_PAGES = 5;
 const FETCH_TIMEOUT_MS = 15_000; // a hung connection must not hang the scheduled run
 
-const MISS_PREFIX = /^(No transcript available|No Fathom transcript|Fathom meeting found \(|Fathom call \d+ found but)/;
+// Full-string templates only. A miss line plus a sales-rep note must not match.
+const GENERATED_MISS = [
+  /^No transcript available\. FATHOM_API_KEY secret is not configured\.$/,
+  /^No Fathom transcript lookup possible — contact has no email on file\.$/,
+  /^No Fathom transcript available \(API returned \d+ for [^)]+\)\.$/,
+  /^No Fathom transcript available \(lookup error: .+\)\.$/,
+  /^No Fathom transcript found for .+ \([^)]+\)\.$/,
+  /^Fathom meeting found \("[^"]*"\) but transcript was empty — flag for the rep\.$/,
+  /^No Fathom transcript available — fathom_url not set\. Use the \/trigger command\.$/,
+  /^Fathom call \d+ found but summary is unavailable\.$/,
+];
 
 /**
  * True when GHA should leave trigger.transcript alone.
- * False (run HubSpot/summary fallback) for empty values and known miss placeholders.
+ * False (run HubSpot/summary fallback) for empty values and exact generated
+ * miss placeholders. Prefix-plus-notes is treated as real content.
  */
 export function shouldSkipFathomOverwrite(transcript) {
   if (typeof transcript !== 'string') return false;
   const t = transcript.trim();
   if (!t) return false;
-  return !MISS_PREFIX.test(t);
+  return !GENERATED_MISS.some((re) => re.test(t));
 }
 
 export async function getFathomTranscript(email, contactName, apiKey, _fathomUrl) {
@@ -58,6 +69,7 @@ export async function getFathomTranscript(email, contactName, apiKey, _fathomUrl
 
   const meetings = [];
   let cursor = null;
+  let aborted = false;
   try {
     for (let page = 0; page < MAX_PAGES; page++) {
       const url = `https://api.fathom.ai/external/v1/meetings?${params}${cursor ? `&cursor=${encodeURIComponent(cursor)}` : ''}`;
@@ -67,6 +79,10 @@ export async function getFathomTranscript(email, contactName, apiKey, _fathomUrl
       });
       if (!res.ok) {
         console.warn(`  Fathom lookup failed (${res.status}) for ${email}: ${(await res.text()).slice(0, 200)}`);
+        if (meetings.length > 0) {
+          aborted = true;
+          break;
+        }
         return `No Fathom transcript available (API returned ${res.status} for ${email}).`;
       }
       const data = await res.json();
@@ -76,9 +92,12 @@ export async function getFathomTranscript(email, contactName, apiKey, _fathomUrl
     }
   } catch (err) {
     console.warn(`  Fathom lookup error for ${email}: ${err.message}`);
-    return `No Fathom transcript available (lookup error: ${err.message}).`;
+    if (meetings.length === 0) {
+      return `No Fathom transcript available (lookup error: ${err.message}).`;
+    }
+    aborted = true;
   }
-  if (cursor) {
+  if (cursor && !aborted) {
     console.warn(`  Fathom pagination cap hit (${MAX_PAGES} pages) for ${email} — scan incomplete; a no-transcript result may be a false negative.`);
   }
 

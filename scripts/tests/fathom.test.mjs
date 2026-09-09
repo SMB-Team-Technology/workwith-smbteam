@@ -141,6 +141,40 @@ test('API error returns a descriptive no-transcript message, never throws', asyn
   assert.match(out, /No Fathom transcript available \(API returned 401/);
 });
 
+test('later-page HTTP error keeps meetings already fetched', async () => {
+  let page = 0;
+  stubFetch(() => {
+    page++;
+    if (page === 1) {
+      return jsonResponse({
+        items: [meeting({ transcript: [{ speaker: { display_name: 'A' }, text: 'page one hit' }] })],
+        next_cursor: 'more',
+      });
+    }
+    return jsonResponse({ error: 'nope' }, 429);
+  });
+  const out = await getFathomTranscript('libby@indianaimmigration.com', 'Libby', 'k');
+  assert.match(out, /page one hit/);
+  assert.doesNotMatch(out, /No Fathom transcript available \(API returned/);
+});
+
+test('later-page throw keeps meetings already fetched', async () => {
+  let page = 0;
+  stubFetch(() => {
+    page++;
+    if (page === 1) {
+      return jsonResponse({
+        items: [meeting({ transcript: [{ speaker: { display_name: 'A' }, text: 'before hang' }] })],
+        next_cursor: 'more',
+      });
+    }
+    throw new Error('ECONNRESET');
+  });
+  const out = await getFathomTranscript('libby@indianaimmigration.com', 'Libby', 'k');
+  assert.match(out, /before hang/);
+  assert.doesNotMatch(out, /lookup error: ECONNRESET/);
+});
+
 test('network failure returns a descriptive message, never throws', async () => {
   global.fetch = async () => { throw new Error('ECONNRESET'); };
   const out = await getFathomTranscript('jane@examplefirm.com', 'Jane', 'k');
@@ -207,6 +241,15 @@ test('shouldSkipFathomOverwrite is true for a real speaker transcript and for an
   assert.equal(shouldSkipFathomOverwrite(directSummary), true);
 });
 
+test('shouldSkipFathomOverwrite is true when a miss prefix is followed by sales-rep notes', () => {
+  const withNote = 'No Fathom transcript available (API returned 404 for mymzheng@gmail.com). SALES REP NOTE: Recommend FCOO Advisor only — no marketing package.';
+  assert.equal(shouldSkipFathomOverwrite(withNote), true);
+  assert.equal(
+    shouldSkipFathomOverwrite('No Fathom transcript found for Jane (a@b.com).\nSALES REP NOTE: keep this'),
+    true,
+  );
+});
+
 test('skip-fathom-overwrite.mjs exits 0 for a real transcript and 1 for a miss', () => {
   const dir = mkdtempSync(join(tmpdir(), 'fathom-skip-'));
   const realFile = join(dir, 'real.json');
@@ -215,8 +258,13 @@ test('skip-fathom-overwrite.mjs exits 0 for a real transcript and 1 for a miss',
   writeFileSync(missFile, JSON.stringify({ transcript: 'No Fathom transcript found for Jane (a@b.com).' }));
   const script = fileURLToPath(new URL('../skip-fathom-overwrite.mjs', import.meta.url));
   try {
+    const noteFile = join(dir, 'note.json');
+    writeFileSync(noteFile, JSON.stringify({
+      transcript: 'No Fathom transcript available (API returned 404 for a@b.com). SALES REP NOTE: keep this',
+    }));
     assert.equal(spawnSync(process.execPath, [script, realFile]).status, 0);
     assert.equal(spawnSync(process.execPath, [script, missFile]).status, 1);
+    assert.equal(spawnSync(process.execPath, [script, noteFile]).status, 0);
   } finally {
     rmSync(dir, { recursive: true, force: true });
   }
