@@ -32,12 +32,16 @@ const MARKETING_TIERS = [
 const TIER_BY_NAME = Object.fromEntries(MARKETING_TIERS.map(t => [t.tier.toLowerCase(), t]));
 
 // Coaching (non-marketing) stand-alone prices for savings calculation
+// Coach Essentials has no stand-alone price (cannot be sold standalone).
 const COACHING_RETAIL = {
-  'Elite Coach':     3497,
-  'Elite Coach Plus': 3497,
-  "Master's Circle": 4997,
-  'FCOO Advisor':    3797,
-  'FCOO Director':   5797,
+  'Coach Essentials':      null,
+  'Coach Essentials Plus': 2497,
+  'Elite Coach':           3497,
+  'Elite Coach Plus':      3497,
+  "Master's Circle":       4997,
+  'FCOO Advisor':          3797,
+  'FCOO Director':         5797,
+  'FCOO Partner':          9997,
 };
 
 // Conservative ad spend floors by practice area keyword ($/mo)

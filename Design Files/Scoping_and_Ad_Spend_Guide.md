@@ -244,11 +244,10 @@ Check the ad spend against the maximum for their marketing tier:
 
 | Marketing Tier | Max Ad Spend Managed |
 |---|---|
-| Essentials (Full Service) | $5,000/month |
-| Essentials (LSA+PPC or LSA+Social) | $5,000/month |
-| Starter (Full Service) | $20,000/month |
-| Starter (LSA+PPC) | $20,000/month |
-| Starter (LSA+PPC+Social) | $25,000/month |
+| Essentials (Full Service) | $7,500/month |
+| Essentials (Paid Ads only) | $7,500/month |
+| Starter (Full Service) | $25,000/month |
+| Starter (Paid Ads only) | $20,000/month |
 | Growth | $50,000/month |
 | Dominate | $100,000/month |
 | Platinum | $150,000/month |
@@ -407,43 +406,42 @@ Based on the firm's needs identified during the audit, determine which type of m
 
 Each tier offers sub-packages. Default recommendation is Full Service Marketing unless there's a specific reason not to:
 
+The catalog now sells the ads-only and web+SEO-only sub-packages as "Paid Ads" and "Web + SEO" tiers (each also bundles OmniSocial AI); the old "LSA + PPC" / "LSA + Social" naming and prices below have been replaced with the current catalog figures.
+
 **Essentials Tier:** (single location + single practice area only, under $750K revenue)
-| Sub-Package | Bundled Price | Ad Spend Cap | Best For |
-|---|---|---|---|
-| LSA + PPC Essentials | $1,497/mo | $5,000 | Firms that only need paid ads + have good website |
-| LSA + Social Essentials | $1,497/mo | $5,000 | Firms wanting social over PPC |
-| Web + SEO Essentials | $1,497/mo | N/A | Firms that only need a website and SEO |
-| Web + SEO + LSA Essentials | $2,797/mo | $5,000 | Website + SEO + basic paid |
-| Full Service Marketing Essentials | $3,497/mo | $5,000 | Everything (DEFAULT recommendation) |
+| Sub-Package | Stand-Alone Price | Bundled Price | Ad Spend Cap | Best For |
+|---|---|---|---|---|
+| Paid Ads Essentials | N/A | $1,997/mo | $7,500 | Firms that only need paid ads + have good website |
+| Web + SEO Essentials | N/A | $1,997/mo | N/A | Firms that only need a website and SEO |
+| Full Service Marketing Essentials | $3,797/mo | $3,497/mo | $7,500 | Everything (DEFAULT recommendation) |
 
 **Starter Tier:**
-| Sub-Package | Bundled Price | Ad Spend Cap | Best For |
-|---|---|---|---|
-| LSA + PPC Starter | $1,997/mo | $20,000 | Ads-only with good existing website |
-| LSA + PPC + Social Starter | $2,497/mo | $25,000 | All ads, good existing website |
-| Web + SEO Starter | $3,497/mo | N/A | Website + SEO only |
-| Full Service Marketing Starter | $4,997/mo | $20,000 | Everything (DEFAULT recommendation) |
+| Sub-Package | Stand-Alone Price | Bundled Price | Ad Spend Cap | Best For |
+|---|---|---|---|---|
+| Paid Ads Starter | $3,497/mo | $2,497/mo | $20,000 | Ads-only with good existing website |
+| Web + SEO Starter | $3,997/mo | $3,497/mo | N/A | Website + SEO only |
+| Full Service Marketing Starter | $5,697/mo | $4,997/mo | $25,000 | Everything (DEFAULT recommendation) |
 
 **Growth Tier:**
-| Sub-Package | Bundled Price | Ad Spend Cap | Best For |
-|---|---|---|---|
-| LSA + PPC + Social Growth | $3,497/mo | $50,000 | All ads, strong existing website |
-| Web + SEO Growth | $4,897/mo | N/A | Website + SEO only |
-| Full Service Marketing Growth | $7,497/mo | $50,000 | Everything (DEFAULT recommendation) |
+| Sub-Package | Stand-Alone Price | Bundled Price | Ad Spend Cap | Best For |
+|---|---|---|---|---|
+| Paid Ads Growth | $5,497/mo | $4,497/mo | $50,000 | All ads, strong existing website |
+| Web + SEO Growth | $5,897/mo | $4,897/mo | N/A | Website + SEO only |
+| Full Service Marketing Growth | $8,997/mo | $7,497/mo | $50,000 | Everything (DEFAULT recommendation) |
 
 **Dominate Tier:**
-| Sub-Package | Bundled Price | Ad Spend Cap | Best For |
-|---|---|---|---|
-| LSA + PPC + Social Dominate | $5,000/mo | $75,000 | All ads, strong existing website |
-| Web + SEO Dominate | $6,597/mo | N/A | Website + SEO only |
-| Full Service Marketing Dominate | $10,497/mo | $100,000 | Everything (DEFAULT recommendation) |
+| Sub-Package | Stand-Alone Price | Bundled Price | Ad Spend Cap | Best For |
+|---|---|---|---|---|
+| Paid Ads Dominate | $7,997/mo | $6,997/mo | $100,000 | All ads, strong existing website |
+| Web + SEO Dominate | $7,997/mo | $6,997/mo | N/A | Website + SEO only |
+| Full Service Marketing Dominate | $12,497/mo | $10,497/mo | $100,000 | Everything (DEFAULT recommendation) |
 
 **Platinum Tier:**
-| Sub-Package | Bundled Price | Ad Spend Cap | Best For |
-|---|---|---|---|
-| LSA + PPC + Social Platinum | $7,497/mo | $150,000 | All ads, strong existing website |
-| Web + SEO Platinum | $9,597/mo | N/A | Website + SEO only |
-| Full Service Marketing Platinum | $15,997/mo | $150,000 | Everything (DEFAULT recommendation) |
+| Sub-Package | Stand-Alone Price | Bundled Price | Ad Spend Cap | Best For |
+|---|---|---|---|---|
+| Paid Ads Platinum | $9,997/mo | $8,997/mo | $150,000 | All ads, strong existing website |
+| Web + SEO Platinum | $11,497/mo | $9,597/mo | N/A | Website + SEO only |
+| Full Service Marketing Platinum | $18,997/mo | $15,997/mo | $150,000 | Everything (DEFAULT recommendation) |
 
 ### Step 5E — Determine If Website Build Is Needed
 
@@ -466,14 +464,9 @@ Every client must have at least one non-marketing package. Clients with marketin
 
 ### Step 6A — Apply Eligibility Filters
 
-**ELIMINATED PRODUCTS — never recommend:**
-- Coach Essentials (eliminated)
-- Coach Essentials Plus (eliminated)
-
 **Revenue Filters:**
 - **Under $500K:** Remove ALL Fractional COO and Fractional CFO products and all bundles containing them
 - **Under $1M:** Remove Master's Circle and all bundles containing it
-- **Over $1M:** Remove all remaining Essentials coaching products
 
 **Team Filters:**
 - **Fewer than 5 team members:** Remove ALL Master's Circle options
@@ -483,9 +476,13 @@ Every client must have at least one non-marketing package. Clients with marketin
 
 | Revenue | Team Size | Primary Need | Recommended Package | Bundled Price |
 |---|---|---|---|---|
+| $250K–$400K | Any, tight budget | Group coaching only | Coach Essentials | $1,000/mo |
+| $250K–$400K | Any, tight budget | Group coaching + 1:1 support | Coach Essentials Plus | $1,997/mo |
 | $250K–$400K | Any | Growth coaching | Elite Coach | $2,600/mo |
 | $400K–$1M | Any | Growth coaching + accountability | Elite Coach Plus | $3,200/mo |
 | $400K–$1M | Growing team | Coaching + operations help | Elite Coach + FCOO Advisor | $5,694/mo |
+| $400K–$1M | Growing team, larger ops need | Coaching + operations help | Elite Coach + FCOO Director | $7,394/mo |
+| $400K–$1M | Growing team, largest ops need | Coaching + operations help | Elite Coach + FCOO Partner | $11,394/mo |
 | $1M+ | Under 5 | Coaching + strategy | Elite Coach Plus | $3,200/mo |
 | $1M+ | Under 5 | Operations + team building | FCOO Advisor (standalone) | $3,297/mo |
 | $1M+ | 5+ with dedicated staff | Community + team training | Master's Circle | $4,600/mo |
@@ -495,33 +492,79 @@ Every client must have at least one non-marketing package. Clients with marketin
 | $3M+ | Large team | Executive-level operations | FCOO Partner | $8,997/mo |
 | $3M+ | Large established team | Full ecosystem | Master's Circle + FCOO Partner | $12,394/mo |
 
+**Coach Essentials note:** Coach Essentials is group coaching only and cannot be sold standalone ($1,000/mo package price only). Coach Essentials Plus adds a monthly 1:1 coaching call and can be sold standalone at $2,497/mo. Both are lower-cost alternatives to Elite Coach in the same $250K–$400K band — recommend them only when the transcript indicates a tighter budget, not as the default for that band.
+
 ### Step 6C — When to Add Fractional CFO
 
-Add Fractional CFO Advisor ($3,297/mo bundled) when ANY of these signals appear in the transcript:
+Add Fractional CFO when ANY of these signals appear in the transcript:
 - Owner mentions profit problems or cash flow issues
 - Revenue is growing but owner isn't taking home more
 - No financial reporting or visibility into margins
 - Owner doesn't know their cost per acquisition
 - Explicitly mentions wanting help with finances
 
-**Revenue minimum for FCFO:** $400K+ for Advisor, $1M+ for Director, $3M+ for Partner
+**FCFO pricing and revenue minimums:** Advisor $3,297/mo bundled, $3,797/mo stand-alone ($400K+); Director $4,997/mo bundled, $5,797/mo stand-alone ($1M+); Partner $8,997/mo bundled, $9,997/mo stand-alone ($3M+).
 
 ### Step 6D — When to Add Bookkeeping
 
 Add Bookkeeping when the firm has no current bookkeeper or their financials are a mess:
 
-| Revenue | Bookkeeping Level | Bundled Price | Setup Fee |
-|---|---|---|---|
-| Under $1M | Level 1 | $1,697/mo | $1,500 (CANNOT be waived) |
-| $1M–$2.9M | Level 2 | $2,197/mo | $2,000 (CANNOT be waived) |
-| $3M–$3.9M | Level 3 | $3,497/mo | $2,500 (CANNOT be waived) |
-| $4M+ | Level 4 | Custom | Custom |
+| Revenue | Bookkeeping Level | Bundled Price | Stand-Alone Price | Setup Fee |
+|---|---|---|---|---|
+| Under $1M | Level 1 | $1,697/mo | $1,997/mo | $1,500 (CANNOT be waived) |
+| $1M–$2.9M | Level 2 | $2,197/mo | $2,597/mo | $2,000 (CANNOT be waived) |
+| $3M–$3.9M | Level 3 | $3,497/mo | $4,597/mo | $2,500 (CANNOT be waived) |
+| $4M+ | Level 4 | Custom | Custom | Custom |
 
 **Note:** Bookkeeping is typically a Phase 3 recommendation (growth roadmap), not Phase 1 — unless the firm's financials are in such poor shape that it's an immediate need.
 
 ### Step 6E — LSA Add-On for Coaching-Only Clients
 
 If a client is getting coaching only (no marketing package), they can add LSA management for $900/month. This gives them a basic lead generation channel while they build toward full marketing.
+
+### Step 6F — General Add-Ons
+
+Standalone add-on line items available from the catalog. Most are one-time or per-unit purchases rather than recurring packages — quote them individually, never bundle their cost into a package's bundled price.
+
+**Marketing add-ons:**
+
+| Add-On | Price |
+|---|---|
+| Website Hosting & Maintenance | $500/mo |
+| Content creation | $0.22/word |
+| Content transfer over allotted package amount (incl. multi-site merges) | $300 per 50 pages |
+| Premium Backlink | $950/each |
+| GBP Set-Up | $500/each |
+| Brand Video | $4,997/each |
+| Social/Landing Page Videos (6) | $3,997/each |
+| Social/Landing Page Videos (12) | $7,497/each |
+| Photoshoot | $3,997/each |
+| Landing Page (1) | $1,497/each |
+| EBook, up to 1.5K words | $1,997/each |
+| EBook, up to 3K words | $2,997/each |
+| EBook, up to 5K words | $4,997/each |
+| Integrations (per platform, up to 5 landing pages, common CRMs only, requires approval) | $500 for approved partners / $150/hr for others (must be scoped) |
+| Essentials On-Going SEO (Local + Organic SEO + 10K words/year content) | $900/mo — add-on only, requires an existing Essentials Web/SEO or FSM Essentials client (including hosting-only clients) |
+| Ongoing GBP Management (Local SEO, quarterly optimizations) | $500/mo |
+| AI Video Avatar Expansion Pack (add-on to an active AI Avatar/Virtual Video Growth package) | $1,800 for an initial batch of 10 additional short-form (<2 min) videos + avatar, $600 per additional batch of 10 |
+| At-Home Film Equipment Option (camera + microphone kit, for clients who cannot attend a workshop) | $300 |
+| Done-For-You Review Generation, Level 1 (up to 250 Google review requests sent per month; law firm must supply the list) | $500/mo — included at no charge for Growth tier and above |
+
+**Coaching add-ons:**
+
+| Add-On | Price |
+|---|---|
+| Bookkeeping Hourly Rate | $50/hr |
+| Course Bundle (8 courses) | $9,997 |
+
+**In-Person Workshop Ticket** (tiered by the client's existing package):
+
+| Client Type | Price |
+|---|---|
+| Elite Coach & Master's Circle clients | $697 |
+| FCOO & FCFO clients | $997 |
+| Coach Essentials / Coach Essentials Plus clients | $1,497 |
+| Non-coaching clients | $1,997 |
 
 ---
 
@@ -1000,29 +1043,25 @@ This section mirrors every key numeric value from the guide above in a clean, un
 | Full Service Marketing Growth | 7497 | 8997 | 1500 |
 | Full Service Marketing Dominate | 10497 | 12497 | 2000 |
 | Full Service Marketing Platinum | 15997 | 18997 | 3000 |
-| LSA + PPC Essentials | 1497 | — | — |
-| LSA + Social Essentials | 1497 | — | — |
-| Web + SEO Essentials | 1497 | — | — |
-| Web + SEO + LSA Essentials | 2797 | — | — |
-| LSA + PPC Starter | 1997 | — | — |
-| LSA + PPC + Social Starter | 2497 | — | — |
-| Web + SEO Starter | 3497 | — | — |
-| LSA + PPC + Social Growth | 3497 | — | — |
-| Web + SEO Growth | 4897 | — | — |
-| LSA + PPC + Social Dominate | 5000 | — | — |
-| Web + SEO Dominate | 6597 | — | — |
-| LSA + PPC + Social Platinum | 7497 | — | — |
-| Web + SEO Platinum | 9597 | — | — |
+| Paid Ads Essentials | 1997 | — | — |
+| Web + SEO Essentials | 1997 | — | — |
+| Paid Ads Starter | 2497 | 3497 | 1000 |
+| Web + SEO Starter | 3497 | 3997 | 500 |
+| Paid Ads Growth | 4497 | 5497 | 1000 |
+| Web + SEO Growth | 4897 | 5897 | 1000 |
+| Paid Ads Dominate | 6997 | 7997 | 1000 |
+| Web + SEO Dominate | 6997 | 7997 | 1000 |
+| Paid Ads Platinum | 8997 | 9997 | 1000 |
+| Web + SEO Platinum | 9597 | 11497 | 1900 |
 
 ### Marketing Tier — Ad Spend Caps (USD/month)
 
 | Marketing Tier and Sub-Package | Max Ad Spend |
 |---|---|
-| Essentials Full Service | 5000 |
-| Essentials LSA+PPC or LSA+Social | 5000 |
-| Starter Full Service | 20000 |
-| Starter LSA+PPC | 20000 |
-| Starter LSA+PPC+Social | 25000 |
+| Essentials Full Service | 7500 |
+| Essentials Paid Ads | 7500 |
+| Starter Full Service | 25000 |
+| Starter Paid Ads | 20000 |
 | Growth | 50000 |
 | Dominate | 100000 |
 | Platinum | 150000 |
@@ -1060,9 +1099,13 @@ Essentials additionally requires single location + single practice area (scope f
 
 | Package | Bundled | Stand-Alone | Savings |
 |---|---|---|---|
+| Coach Essentials | 1000 | — (cannot be sold standalone) | — |
+| Coach Essentials Plus | 1997 | 2497 | 500 |
 | Elite Coach | 2600 | 3497 | 897 |
 | Elite Coach Plus | 3200 | 3497 | 297 |
 | Elite Coach + FCOO Advisor | 5694 | — | — |
+| Elite Coach + FCOO Director | 7394 | — | — |
+| Elite Coach + FCOO Partner | 11394 | — | — |
 | Master's Circle | 4600 | 4997 | 397 |
 | Master's Circle + FCOO Advisor | 6694 | — | — |
 | Master's Circle + FCOO Director | 8394 | — | — |
@@ -1079,9 +1122,13 @@ Essentials additionally requires single location + single practice area (scope f
 
 | Revenue Low | Revenue High | Team Size | Recommended Package | Bundled Monthly |
 |---|---|---|---|---|
+| 250000 | 400000 | any, tight budget | Coach Essentials | 1000 |
+| 250000 | 400000 | any, tight budget | Coach Essentials Plus | 1997 |
 | 250000 | 400000 | any | Elite Coach | 2600 |
 | 400000 | 1000000 | any | Elite Coach Plus | 3200 |
 | 400000 | 1000000 | growing | Elite Coach + FCOO Advisor | 5694 |
+| 400000 | 1000000 | growing, larger ops need | Elite Coach + FCOO Director | 7394 |
+| 400000 | 1000000 | growing, largest ops need | Elite Coach + FCOO Partner | 11394 |
 | 1000000 | — | under 5 | Elite Coach Plus | 3200 |
 | 1000000 | — | under 5 | FCOO Advisor | 3297 |
 | 1000000 | — | 5+ with dedicated staff | Master's Circle | 4600 |
@@ -1093,12 +1140,44 @@ Essentials additionally requires single location + single practice area (scope f
 
 ### Bookkeeping Fees (Bundled, USD/month)
 
-| Level | Revenue Low | Revenue High | Bundled Monthly | Setup Fee |
-|---|---|---|---|---|
-| Level 1 | 0 | 999999 | 1697 | 1500 |
-| Level 2 | 1000000 | 2999999 | 2197 | 2000 |
-| Level 3 | 3000000 | 3999999 | 3497 | 2500 |
-| Level 4 | 4000000 | — | Custom | Custom |
+| Level | Revenue Low | Revenue High | Bundled Monthly | Stand-Alone Monthly | Setup Fee |
+|---|---|---|---|---|---|
+| Level 1 | 0 | 999999 | 1697 | 1997 | 1500 |
+| Level 2 | 1000000 | 2999999 | 2197 | 2597 | 2000 |
+| Level 3 | 3000000 | 3999999 | 3497 | 4597 | 2500 |
+| Level 4 | 4000000 | — | Custom | Custom | Custom |
+
+### General Add-Ons (USD)
+
+| Add-On | Price | Unit |
+|---|---|---|
+| Website Hosting & Maintenance | 500 | per month |
+| Content creation | 0.22 | per word |
+| Content transfer over allotted package amount | 300 | per 50 pages |
+| Premium Backlink | 950 | each |
+| GBP Set-Up | 500 | each |
+| Brand Video | 4997 | each |
+| Social/Landing Page Videos (6) | 3997 | each |
+| Social/Landing Page Videos (12) | 7497 | each |
+| Photoshoot | 3997 | each |
+| Landing Page (1) | 1497 | each |
+| EBook up to 1.5K words | 1997 | each |
+| EBook up to 3K words | 2997 | each |
+| EBook up to 5K words | 4997 | each |
+| Integrations, approved partners | 500 | per platform |
+| Integrations, others (must be scoped) | 150 | per hour |
+| Essentials On-Going SEO | 900 | per month |
+| Ongoing GBP Management | 500 | per month |
+| AI Video Avatar Expansion Pack, initial batch of 10 | 1800 | one-time |
+| AI Video Avatar Expansion Pack, additional batch of 10 | 600 | one-time |
+| At-Home Film Equipment Option | 300 | one-time |
+| Done-For-You Review Generation, Level 1 | 500 | per month |
+| Bookkeeping Hourly Rate | 50 | per hour |
+| Course Bundle (8 courses) | 9997 | one-time |
+| Workshop Ticket — Elite Coach & Master's Circle clients | 697 | each |
+| Workshop Ticket — FCOO & FCFO clients | 997 | each |
+| Workshop Ticket — Coach Essentials/Plus clients | 1497 | each |
+| Workshop Ticket — non-coaching clients | 1997 | each |
 
 ### Geographic Multipliers
 
