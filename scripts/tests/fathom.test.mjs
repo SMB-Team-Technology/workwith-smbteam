@@ -230,6 +230,9 @@ test('shouldSkipFathomOverwrite is false for empty / miss placeholders (GHA fall
   assert.equal(shouldSkipFathomOverwrite('Fathom meeting found ("untitled") but transcript was empty — flag for the rep.'), false);
   assert.equal(shouldSkipFathomOverwrite('No Fathom transcript available — fathom_url not set. Use the /trigger command.'), false);
   assert.equal(shouldSkipFathomOverwrite('Fathom call 704816497 found but summary is unavailable.'), false);
+  assert.equal(shouldSkipFathomOverwrite('No Fathom transcript available.'), false);
+  assert.equal(shouldSkipFathomOverwrite('No Fathom transcript available — proposal call scheduled for 2026-09-09.'), false);
+  assert.equal(shouldSkipFathomOverwrite('No transcript available yet.'), false);
 });
 
 test('shouldSkipFathomOverwrite is true for a real speaker transcript and for an existing HubSpot summary', () => {
@@ -246,6 +249,10 @@ test('shouldSkipFathomOverwrite is true when a miss prefix is followed by sales-
   assert.equal(shouldSkipFathomOverwrite(withNote), true);
   assert.equal(
     shouldSkipFathomOverwrite('No Fathom transcript found for Jane (a@b.com).\nSALES REP NOTE: keep this'),
+    true,
+  );
+  assert.equal(
+    shouldSkipFathomOverwrite('No Fathom transcript found for Jane (a@b.com). SALES REP NOTE: push FCOO advisor (not marketing).'),
     true,
   );
 });

@@ -28,28 +28,37 @@ const TRANSCRIPT_MAX_CHARS = 300_000; // ~60-90 min call with headroom; keeps tr
 const MAX_PAGES = 5;
 const FETCH_TIMEOUT_MS = 15_000; // a hung connection must not hang the scheduled run
 
-// Full-string templates only. A miss line plus a sales-rep note must not match.
-const GENERATED_MISS = [
-  /^No transcript available\. FATHOM_API_KEY secret is not configured\.$/,
-  /^No Fathom transcript lookup possible — contact has no email on file\.$/,
-  /^No Fathom transcript available \(API returned \d+ for [^)]+\)\.$/,
-  /^No Fathom transcript available \(lookup error: .+\)\.$/,
-  /^No Fathom transcript found for .+ \([^)]+\)\.$/,
-  /^Fathom meeting found \("[^"]*"\) but transcript was empty — flag for the rep\.$/,
-  /^No Fathom transcript available — fathom_url not set\. Use the \/trigger command\.$/,
-  /^Fathom call \d+ found but summary is unavailable\.$/,
+// Leading generated-miss sentences (no $). Leftover after a match is protected
+// content (sales-rep notes). Unmatched miss-family strings (legacy "No Fathom
+// transcript available.") still allow HubSpot fallback.
+const GENERATED_MISS_HEAD = [
+  /^No transcript available\. FATHOM_API_KEY secret is not configured\./,
+  /^No Fathom transcript lookup possible — contact has no email on file\./,
+  /^No Fathom transcript available \(API returned \d+ for [^)]+\)\./,
+  /^No Fathom transcript available \(lookup error: [^)]+\)\./,
+  /^No Fathom transcript found for .+? \([^)]+\)\./,
+  /^Fathom meeting found \("[^"]*"\) but transcript was empty — flag for the rep\./,
+  /^No Fathom transcript available — fathom_url not set\. Use the \/trigger command\./,
+  /^Fathom call \d+ found but summary is unavailable\./,
 ];
+const MISS_FAMILY = /^(No transcript available|No Fathom transcript|Fathom meeting found \(|Fathom call \d+ found but)/;
 
 /**
  * True when GHA should leave trigger.transcript alone.
- * False (run HubSpot/summary fallback) for empty values and exact generated
- * miss placeholders. Prefix-plus-notes is treated as real content.
+ * False (run HubSpot/summary fallback) for empty values, exact generated
+ * misses, and legacy miss-only lines. A miss sentence plus leftover notes
+ * is treated as real content.
  */
 export function shouldSkipFathomOverwrite(transcript) {
   if (typeof transcript !== 'string') return false;
   const t = transcript.trim();
   if (!t) return false;
-  return !GENERATED_MISS.some((re) => re.test(t));
+  for (const re of GENERATED_MISS_HEAD) {
+    const m = t.match(re);
+    if (m && m.index === 0) return t.slice(m[0].length).trim().length > 0;
+  }
+  if (MISS_FAMILY.test(t)) return false;
+  return true;
 }
 
 export async function getFathomTranscript(email, contactName, apiKey, _fathomUrl) {
