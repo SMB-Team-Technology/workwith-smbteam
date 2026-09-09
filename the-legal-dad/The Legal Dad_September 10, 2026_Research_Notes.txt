@@ -1,0 +1,277 @@
+THE LEGAL DAD (Walsh Law PLLC) — RESEARCH NOTES
+Date: September 10, 2026
+Sales Rep: Dan Bryant
+URL: https://thelegaldad.com/
+Contact: Padriac Walsh — pwalsh@thelegaldad.com — 612-778-9978
+Proposal call: September 10, 2026
+
+RESEARCH ENVIRONMENT LIMITATION — READ FIRST
+This research pass was run in an environment without live browser/Google Maps access.
+Google Search, Google Maps, Yelp, and Facebook Ads Library all returned bot-blocked
+responses (403 / consent-wall pages) to automated fetch, and the Google PageSpeed
+Insights API returned a 429 "daily quota exceeded" error on every attempt (mobile and
+desktop, retried twice). Per the TRANSCRIPT-FIRST RULE and REVIEW-DATA VERIFICATION
+RULE, any figure that could not be genuinely observed is marked below as unable to
+verify rather than estimated or fabricated — this is a real, live firm, not a
+fictional/test case, so no data was invented to fill gaps. These fields should be
+re-checked manually (or via a session with live browser access) before /audit-write
+treats them as final. Website content itself (fetched directly via HTTP) is real and
+verified.
+
+No discovery call transcript was provided with this trigger — this research was run
+ahead of the scheduled September 10, 2026 proposal call. All Step 9 transcript-derived
+fields are marked "not available — no transcript provided" below and will need to be
+filled from the actual call before /audit-write.
+
+================================================================
+STEP 1 — WEBSITE RESEARCH
+================================================================
+- Website URL confirmed live: yes (HTTP 200, fetched directly)
+- Last redesign date or estimated age: sitemap.xml lastmod timestamps are all
+  2024-05-09 across every URL (including the September 2026 blog posts' parent /blog/
+  page), which is a sitemap generator artifact rather than a reliable build date —
+  treat as "at least since May 2024, exact redesign date not observable."
+- Mobile responsive: yes (viewport meta tag `width=device-width, initial-scale=1`
+  present in page source)
+- Homepage headline: "Father-Focused, Family-First, Fostering Your Future."
+- CTA above fold: yes — "Get a Consultation" button on the hero, plus "SCHEDULE a
+  CONSULTATION!" persistent in the nav header
+- Contact form location: present (Contact Form 7 form, `wpcf7-f17727-p4033-o1`) —
+  exact fold position not confirmed without live rendering; a dedicated Contact Us
+  page exists
+- Live chat present: no — no chat-widget scripts (Intercom, Drift, Tawk, LiveChat,
+  Zendesk, Podium, CallRail, Smith.ai, etc.) found in page source
+- Attorney bio present: yes — founding attorney Padraic D. Walsh's bio is prominent
+  on /about/, framed around his own contentious divorce/custody case
+- Video present: no — no `<video>`, YouTube embed, Vimeo, or Wistia embed found in
+  homepage source (a YouTube channel exists — youtube.com/channel/UC8VE5xRP-xQ44kGlFlOAjYw
+  — but it is not embedded on-site)
+- Blog present: yes — active, most recent post dated September 1, 2026
+  ("Understanding Alimony Obligations for Fathers in Minnesota Divorce Cases")
+
+PageSpeed scores:
+- PageSpeed mobile score: UNABLE TO VERIFY — Google PageSpeed Insights API returned
+  HTTP 429 "Quota exceeded for quota metric 'Queries' ... per day" on every attempt;
+  no browser tool available in this environment as a fallback. Needs to be pulled
+  manually before /audit-write cites a specific number.
+- PageSpeed desktop score: UNABLE TO VERIFY — same reason as above.
+
+→ Website section complete (with two flagged gaps above).
+
+================================================================
+STEP 2 — GOOGLE BUSINESS PROFILE
+================================================================
+- GBP found: presumed yes (firm is established, has a Yelp listing and directory
+  presence — see Step 5) but the profile itself could not be opened directly;
+  Google Search/Maps returned a blocked/error page to automated fetch in this
+  environment.
+- Star rating: UNABLE TO VERIFY — [no live Google access available; no aggregator
+  disclosed a numeric rating either — do not cite a number until confirmed live]
+- Total review count: UNABLE TO VERIFY — [same reason as above]
+- Most recent review date: UNABLE TO VERIFY
+- Primary category: presumed "Family law attorney" based on site content, not
+  confirmed from the GBP listing itself
+- Photos active: not observed
+- Posts active: not observed
+
+FLAG: This is the single most important gap to close before the proposal call —
+confirm the live GBP star rating and review count manually.
+
+================================================================
+STEP 3 — LOCAL 3-PACK SEARCHES
+================================================================
+UNABLE TO VERIFY LIVE — Google Search/Maps rendering is not accessible to automated
+fetch in this environment (returns a blocked/no-results shell page rather than the
+actual SERP). No 3-pack positions, and no competitor names/review counts pulled from
+an actual map pack, are recorded below. What follows is organic-search-only context
+(via text search, not Maps) to identify who else operates in this space locally —
+it is NOT a substitute for a real 3-pack check and should not be presented to the
+client as pack-position data.
+
+Practice Area 1: Fathers' Rights / Divorce for Men
+- Organic search surfaced named local competitors also targeting "divorce lawyer for
+  men" / "fathers rights attorney Minneapolis": Hajek Legal Services, Heimerl &
+  Lammers, Dwire Law Offices (divorceminnesota.com), Sobol Family Law, Williams
+  Divorce & Family Law P.A., Loftness Law Office P.A., MN Divorce for Dads
+  (mndivorcefordads.com), Minnesota Lawyer for Men (minnesotalawyerformen.com) —
+  local pack presence/order not confirmed.
+
+Practice Area 2: Child Custody
+- Organic search surfaced Heimerl & Lammers, Jensen Law Offices PLLP, and firms
+  listed via Super Lawyers/Best Lawyers directories as recognized in Minneapolis
+  child custody — local pack presence/order not confirmed.
+
+Practice Area 3: Divorce (general)
+- Not independently searched beyond the above; same named firms recur across
+  divorce/custody/fathers' rights queries in this market.
+
+================================================================
+STEP 4 — COMPETITOR REVIEW COUNTS
+================================================================
+UNABLE TO VERIFY LIVE — Google listings for competitor firms could not be opened
+directly in this environment (same blocking issue as Step 2). No review counts are
+recorded below as they could not be confirmed live, and per the REVIEW-DATA
+VERIFICATION RULE a number must never be recorded without a real verification tag.
+
+- Hajek Legal Services — reviews: UNABLE TO VERIFY — rating: UNABLE TO VERIFY
+- Heimerl & Lammers — reviews: UNABLE TO VERIFY — rating: UNABLE TO VERIFY
+- Sobol Family Law — reviews: UNABLE TO VERIFY — rating: UNABLE TO VERIFY
+
+FLAG: Do not cite any competitor as having "more reviews than" The Legal Dad in the
+report until both sides of that comparison are confirmed live — that comparison
+cannot be made responsibly from this pass.
+
+================================================================
+STEP 5 — DIRECTORY LISTINGS
+================================================================
+- Yelp: listing exists ("THE LEGAL DAD," updated December 2025 per search-result
+  snippet) — snippet lists the address as **1330 Lagoon Ave, Minneapolis, MN**,
+  which does NOT match the website's listed office address of **120 South 6th St,
+  23rd Floor, Minneapolis, MN 55402**. This is a NAP (Name/Address/Phone)
+  inconsistency worth flagging directly to the client — direct Yelp page fetch
+  returned HTTP 403 so the discrepancy could not be opened and re-confirmed further,
+  but the two addresses are directly contradictory as sourced.
+- Avvo: no profile found for "The Legal Dad" / "Walsh Law PLLC" / Padraic Walsh in
+  search; Avvo search surfaced unrelated attorneys with similar-sounding names only.
+  Presumed not claimed/optimized, not confirmed absent.
+- Justia: a firm-specific Justia profile was not surfaced in search (a directory
+  listing page exists at lawyers.justia.com but no matching Walsh/Legal Dad profile
+  page was returned).
+- FindLaw: firm not specifically named in FindLaw's Minneapolis fathers'-rights
+  listing results returned by search (the results were dominated by directory
+  category pages, not individual profiles).
+- catalog.lawyer: listing exists ("The Legal Dad (Walsh Law PLLC) - Minneapolis, MN")
+  — page could not be opened directly (HTTP 403) to confirm NAP details.
+- LawInfo / Super Lawyers / Best Lawyers / tennesseelawyersforhire.com: firm appears
+  referenced in the broader Minneapolis fathers'-rights/family-law directory
+  landscape via search, individual profile content not confirmed.
+- Geo-targeting landing pages for surrounding cities (e.g. St. Paul, Edina,
+  Bloomington, Minnetonka, Eden Prairie): none found. The site's XML sitemap lists
+  only 24 URLs total, all practice-area or blog pages tied to Minneapolis — no
+  city-specific landing pages exist for the surrounding metro.
+
+→ GBP, local SEO, and directory sections saved (with flagged verification gaps).
+
+================================================================
+STEP 6 — GOOGLE ADS
+================================================================
+UNABLE TO VERIFY LIVE — Google SERP ad placements are not observable in this
+environment (automated fetch returns a blocked shell page, not real ad results).
+
+Practice Area 1: Fathers' Rights / Divorce for Men
+- Firm ads observed: not observed (could not load live SERP)
+- Named local competitors running ads: not observed / not confirmed
+
+Practice Area 2: Child Custody
+- Firm ads observed: not observed (could not load live SERP)
+- Named local competitors running ads: not observed / not confirmed
+
+Per the ADS FRAMING RULE, none of this should be written in the client-facing report
+as "you are not running ads" — it should be re-checked live before /audit-write, and
+until then framed only as "not independently confirmed this pass."
+
+================================================================
+STEP 7 — LOCAL SERVICE ADS
+================================================================
+- Firm appears in LSA: not observed (could not load live SERP)
+- Google Screened: not observed
+- LSA review count: n/a — not observed
+- Named local competitors in LSA: not observed
+
+================================================================
+STEP 8 — META ADS
+================================================================
+- Firm has active ads: UNABLE TO VERIFY — facebook.com/ads/library returned HTTP 403
+  to automated fetch in this environment
+- Named local competitor 1: Hajek Legal Services — active ads: UNABLE TO VERIFY
+- Named local competitor 2: Heimerl & Lammers — active ads: UNABLE TO VERIFY
+
+→ All ads sections saved (flagged as unverified pending live re-check).
+
+================================================================
+STEP 9 — TRANSCRIPT EXTRACTION
+================================================================
+NOT AVAILABLE — no discovery call transcript was included in this trigger. This
+research was generated ahead of the scheduled September 10, 2026 proposal call.
+Every field below must be filled from the actual call before /audit-write runs.
+
+- Practice areas confirmed: not available — no transcript provided. (Website-derived
+  practice areas: Alimony, Child Custody, Child Support, Divorce incl. Military
+  Divorce, Domestic Violence, Paternity, Property Division — all framed toward
+  fathers/men specifically.)
+- Current lead sources: not available — no transcript provided
+- Ads ever run: not available — no transcript provided
+- Team size: not available from transcript. (Website-derived: 6 people — Padraic D.
+  Walsh, Director; Tiana Dawidowicz, Director of Firm Operations; Karee Joedeman,
+  Attorney; Victoria Cleaton, Attorney; Haley Glynn, Legal Support; Montayla
+  Pritchard, Paralegal.)
+- Annual revenue (gross / case value): not stated — no transcript provided
+- Annual revenue (net / take-home / collected): not stated — no transcript provided
+- Fee structure: not stated — no transcript provided
+- Revenue goal: not stated, use 2x current revenue (per default rule) once current
+  revenue is known
+- Average case value: not stated — no transcript provided
+- Current close rate: not stated — default to 15%
+- Number of locations: 1 (confirmed from website — single Minneapolis office)
+- Spanish campaign needed: not stated — no transcript provided
+- Dominant buying motive: not stated — no transcript provided. Contextual inference
+  only: founder's own personal narrative (near-loss of contact with his son) suggests
+  a motive oriented around mission/reach — more fathers helped — rather than a
+  stated personal-freedom or exit goal; this must be confirmed on the actual call,
+  not treated as fact.
+- Any profitability claims made by prospect: none stated — no transcript provided
+- Any claims about case types or practice areas: none stated — no transcript provided
+- Stated call focus / product interest: not available — no transcript provided. This
+  call is logged internally as a "proposal call" (per trigger metadata), which
+  implies a discovery call already occurred previously and this Sept 10 call is the
+  proposal presentation — flag this explicitly to the writer of /audit-write so the
+  report is not framed as a first-touch discovery summary.
+- Existing marketing/SEO/ad vendor engagements: none stated — no transcript provided
+- Budget constraints stated: none stated — no transcript provided
+
+================================================================
+STEP 10 — COMPETITIVE URGENCY SCORE
+================================================================
+SCORE NOT ASSIGNED — this score requires confirmed data on how aggressively named
+local competitors are marketing (ads, LSA, review counts, 3-pack presence) relative
+to the firm. Steps 3, 4, 6, 7, and 8 above could not be verified live in this
+environment, so assigning a defensible 1–10 score here would not be grounded in
+real observation. This must be completed once live browser/Maps/Ads access is
+available, using the named competitors already surfaced in Steps 3–5 (Hajek Legal
+Services, Heimerl & Lammers, Dwire Law Offices, Sobol Family Law, Williams Divorce &
+Family Law P.A., Loftness Law Office P.A., MN Divorce for Dads) as the starting
+competitor set.
+
+================================================================
+PASS 2 — VERIFICATION CHECKLIST
+================================================================
+- [x] Every number in the notes matches actually observed data (unverifiable figures
+      are marked UNABLE TO VERIFY rather than estimated)
+- [ ] Every competitor review count verified live — NOT DONE, see Step 4 flag
+- [x] Every review count/rating carries a verification-method tag or explicit
+      UNABLE TO VERIFY marker
+- [ ] Revenue split gross/net — n/a, no transcript available
+- [ ] Every ad section covers all practice areas — partially covered (top 2 practice
+      areas only), and unverified live; complete once SERP access is available
+- [x] No section states "you are not running ads" — all phrased as not observed /
+      unable to verify
+- [x] No profitability or business claim appears unless from the transcript (none
+      exist to misattribute — no transcript was provided)
+- [x] No competitor reference uses generic labels — only specific named local firms
+- [ ] PageSpeed scores are real numbers — NOT DONE, PSI API quota exhausted; needs
+      manual re-check
+- [ ] DBM recorded — NOT DONE, no transcript
+- [ ] Revenue goal recorded — NOT DONE, no transcript
+- [ ] Close rate recorded — defaulted to 15% per rule (no transcript)
+- [ ] Average case value recorded — NOT DONE, no transcript
+- [x] Stated call focus called out explicitly (flagged as proposal call, not
+      first-touch discovery, pending transcript confirmation)
+- [x] Existing vendor engagements recorded (none stated — no transcript)
+- [x] Budget constraints recorded (none stated — no transcript)
+
+OVERALL STATUS: Website/on-site research complete and verified via direct fetch.
+GBP, review, PageSpeed, local-pack, Google Ads, LSA, and Meta Ads data could NOT be
+verified live in this environment and must be re-checked with live browser/API
+access before /audit-write treats any of those figures as final. No discovery-call
+transcript was available at research time — all Step 9 fields need to be completed
+from the actual September 10, 2026 call before writing the report.
