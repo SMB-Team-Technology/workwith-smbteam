@@ -1,0 +1,194 @@
+SECTION 11 — WORKINGS FILE (INTERNAL ONLY — NEVER IN CLIENT REPORT)
+Burdick Law | Jacob Meissner | September 18, 2026
+
+═══════════════════════════════════════════════════════════════════
+OVERRIDE ANALYSIS
+═══════════════════════════════════════════════════════════════════
+
+package_decision.json confidence: LOW. revenue_effective = $570,000, sourced from
+HubSpot's "hubspot_annual_law_firm_revenue" field ("$180K - $960K" band), NOT from
+the transcript. The transcript itself states no dollar revenue figure — only
+70-80 cases in 4 months at low, per-case assigned-counsel (18-B) rates, explicitly
+"not distinguished from gross."
+
+TRANSCRIPT-STATED NEED OVERRIDE — Call-Purpose Override (#1) APPLIES:
+The discovery call was explicitly NOT a standard marketing/intake-growth call.
+Per the research notes' transcript extraction: "This was NOT a standard marketing
+or intake-growth discovery call. SMB Team proposed a phased, foundation-first
+engagement: (1) Coaching ($2,497/mo) ... (2) AI Workforce Pro ($350/mo) once a CRM
+is in place; (3) paid marketing/ads layered in only after the operational
+foundation is stable." The firm did not ask about marketing, and the research
+notes explicitly instruct: "Do not present a standard 'run more ads now'
+recommendation."
+
+Budget-Reality Override (#3) also applies in spirit: Burdick Law is a 4-month-old
+solo practice that has only just started generating revenue under a low-paying
+per-case fee structure. The $570K HubSpot revenue label is a poor proxy for this
+firm's actual financial position and would, if used mechanically, point to Elite
+Coach Plus ($3,200/mo, $400K-$1M band) or a Starter marketing bundle — neither of
+which fits a firm with no tracked dollar revenue, no website, and no marketing
+ask on the call.
+
+This exactly matches the seller override already recorded in package_decision.json:
+"Jacob Meissner flagged the original proposal as way off via Slack on September 10,
+2026 -- Burdick Law is a 4-month-old solo practice that has only just started
+generating revenue, so the Full Service Marketing package was dropped entirely and
+coaching switched to Coach Essentials Plus, sold standalone at $2,497/mo." No
+further correction needed — the decision file's low confidence reflects revenue
+uncertainty, not an error in package selection. Package selection is CONFIRMED
+correct as-is.
+
+LAW (Legal AI Workforce) eligibility: NOT recommended in Phase 1. Burdick Law is
+solo with no support staff — LAW's minimum-staff requirement (1-2 staff to engage
+with implementation) is not met today. The transcript's own proposed Phase 2 (AI
+Workforce Pro, $350/mo, added once a CRM exists) is carried into the Growth
+Roadmap (Block 6, Phase 2) as a future step, once the first support hire is in
+place — not into the immediate Block 2/3 recommendation.
+
+Marketing: NOT recommended in Phase 1, consistent with the override. Carried into
+Growth Roadmap Phase 3 as a future consideration once the operational foundation
+and first private-client intake process are proven.
+
+═══════════════════════════════════════════════════════════════════
+MANDATORY PRICE LOOKUP
+═══════════════════════════════════════════════════════════════════
+
+Marketing package selected: None (deferred to Phase 3 — see Growth Roadmap)
+
+Non-marketing package selected: Coach Essentials Plus (sold standalone — no
+marketing package to bundle against)
+  - Bundled price (from table, standalone use): $2,497/mo
+  - Stand-alone price (from table): $2,497/mo
+  - Savings (stand-alone minus bundled): $0/mo
+
+Legal AI Workforce (LAW) package selected: None in Phase 1 (ineligible — solo,
+no support staff). AI Workforce Pro – Starter ($350/user/mo, 1-4 users) flagged
+for Phase 2 of the Growth Roadmap only, once the firm's first hire is in place.
+
+AI Avatar / Video Growth add-on selected: None (not applicable — no active
+marketing engagement, no video/social interest expressed on the call)
+
+Total monthly investment (Phase 1): $2,497/mo
+Total savings: $0/mo (single standalone product, no bundle discount applies)
+
+═══════════════════════════════════════════════════════════════════
+AD SPEND & ROI PROJECTION (PHASE 3 — FUTURE PLANNING ESTIMATE ONLY)
+═══════════════════════════════════════════════════════════════════
+
+NOT part of the Phase 1 recommendation or investment total. Presented here and in
+the Growth Roadmap purely as a directional planning estimate for what marketing
+could look like once the operational foundation (Phase 1-2) is in place, per the
+research notes' explicit instruction not to present a "run ads now" recommendation.
+
+Practice area: Criminal Defense (private felony/homicide niche)
+Case value: Research notes flag the target case type (private felony/homicide) at
+an estimated $25,000-$150,000+ per case — a directional estimate only, not
+transcript-stated. The generic "Criminal Defense" default ($3K-$5K) reflects
+volume misdemeanor work and does NOT fit this firm's stated target niche, so the
+niche-specific estimate is used instead, per the research notes' own guidance.
+Close rate: Not stated on the call — defaulted to 15% per standard guidance.
+
+CONSERVATIVE (mechanical formula output):
+- Ad spend: $5,000/mo (Criminal Defense + High-competitiveness NYC-market floor)
+- Blended CPL: Google Search + LSA midpoint ($180 / $160) = $170, +20% cushion = $204
+- Leads: $5,000 / $204 ≈ 24/mo
+- Cases (24 x 15% close rate) ≈ 4/mo
+- Revenue (4 x $25,000, low end of case-value estimate) ≈ $100,000/mo
+- Return ≈ 20x
+
+AGGRESSIVE (mechanical formula output, 20% rule):
+- Revenue base: $750,000 (midpoint of the stated $700K-$800K long-term PROFIT
+  goal, used directionally as a stand-in since no annual revenue goal or current
+  revenue figure exists in the transcript — flagged as an estimate)
+- $750,000 x 20% / 12 = $12,500/mo x NYC Tier 1 multiplier (1.5) = $18,750/mo
+- Blended CPL (no cushion): $170
+- Leads: $18,750 / $170 ≈ 110/mo
+- Cases (110 x 15%) ≈ 17/mo
+- Revenue (17 x $25,000) ≈ $425,000/mo
+- Return ≈ 23x
+
+CAPACITY CAVEAT (applied to client-facing Block 4 numbers): The mechanical
+lead-to-case formula assumes volume-practice conversion behavior. It does not fit
+a solo attorney deliberately targeting a small number of very high-value felony
+and homicide cases — 4-17 new private felony/homicide retentions per month is not
+executable capacity for one attorney. The client-facing figures in Block 4 are
+scaled down to a capacity-realistic range (1-3 cases/month) rather than the raw
+mechanical output, to avoid presenting an impossible case volume as an ROI
+promise. Ad spend range ($5,000-$18,750/mo) and case value range
+($25,000-$150,000) are shown as-calculated; case count and revenue are
+capacity-adjusted. Flag for sales: if this Phase 3 plan is scoped in the future,
+right-size ad spend to actual intake capacity at that time, not to this
+projection.
+
+═══════════════════════════════════════════════════════════════════
+DBM STATEMENT (BLOCK 1)
+═══════════════════════════════════════════════════════════════════
+
+"We help solo criminal defense attorneys transitioning off assigned-counsel work
+get a predictable pipeline of high-value private clients so they can build a
+self-managing, CEO-level practice built around the cases they choose — not the
+cases the court assigns."
+
+═══════════════════════════════════════════════════════════════════
+QUICK WIN OPPORTUNITIES (8 IDENTIFIED)
+═══════════════════════════════════════════════════════════════════
+
+1. [Lead Gen / Quick Win] Launch a Foundational Website — Why: zero digital front
+   door exists today. Competitor: Spodek Law Group, P.C. (dedicated domain
+   network). Opportunity: gives a future private inquiry somewhere to land.
+2. [Lead Gen / Quick Win] Claim and Build Out a Google Business Profile — Why:
+   firm is invisible in any local search or map-pack result. No specific named
+   competitor for this exact card (GBP-specific). Opportunity: baseline local
+   visibility once the firm is ready to market.
+3. [Lead Gen / Long-Term Play] Build a Dedicated Felony/Homicide Landing Page —
+   Why: target niche requires specific positioning, not a generic practice page.
+   Competitor: Law Offices of Robert Tsigler, PLLC (dedicated homicide landing
+   page). Opportunity: capture high-intent searches for the exact target case
+   type once marketing launches.
+4. [Intake / Quick Win] Build a Defined Intake Process Before Marketing Launches
+   — Why: no process exists to catch or qualify a private inquiry today. No
+   named competitor. Opportunity: ensures future marketing spend is not wasted on
+   missed calls.
+5. [Intake / Long-Term Play] Add After-Hours Coverage — Why: no after-hours
+   coverage exists; criminal defense inquiries are often urgent. No named
+   competitor. Opportunity: capture time-sensitive "arrested now" inquiries.
+6. [Team / Long-Term Play] Make the First Support Hire — Why: Vanessa is the
+   sole attorney and sole staff member handling every task. No named competitor.
+   Opportunity: frees capacity for higher-value private casework and unlocks LAW
+   eligibility for Phase 2.
+7. [Profit / Quick Win] Establish a Private Fee Structure — Why: compensation
+   today is per-case assigned-counsel reimbursement only. No named competitor.
+   Opportunity: unlocks the revenue model the $700K-$800K goal depends on.
+8. [Profit / Long-Term Play] Track Case Value and Margin From Day One — Why: no
+   system exists to distinguish gross from net or to track cost per case. No
+   named competitor. Opportunity: know which case types are actually profitable
+   as the mix shifts toward private work.
+
+═══════════════════════════════════════════════════════════════════
+FIRST 90 DAYS (ADAPTED TO THE ACTUAL RECOMMENDED PACKAGE — COACHING, NOT ADS)
+═══════════════════════════════════════════════════════════════════
+
+Per the Call-Purpose Override, this firm's Phase 1 is coaching/foundation-only —
+no ads or website spend is being sold yet. The generic "lead with launching ads"
+guidance does not apply here; First 90 Days instead reflects the coaching
+engagement's actual scope.
+
+1. Coaching kickoff — begin 1:1 and group sessions to map the operational systems
+   Burdick Law needs before layering on marketing spend
+2. Define the intake process and follow-up sequence the firm will use to convert
+   its first private inquiries once marketing begins
+3. Build the roadmap for transitioning from assigned-counsel work to a private
+   fee structure, including target case value and margin tracking
+4. Identify the first hire or support role needed to take administrative work off
+   Vanessa's plate
+5. Scope the future website and Google Business Profile build so it is ready to
+   execute once the coaching engagement confirms the firm is ready for Phase 3
+
+ESCALATION FLAGS (internal only — do not include in client report):
+- Revenue under $300K (or effectively untracked) — scoping approval required
+- Review counts unconfirmed — verify live before the call
+- Package recommendation departs from the revenue-table default (Elite Coach
+  Plus / Starter marketing) due to Call-Purpose and Budget-Reality overrides —
+  documented above for sales visibility
+- Any future Legal AI Workforce (LAW) inclusion in Phase 2 — confirm with sales
+  rep that LAW delivery has launched and capacity is available before proposing
