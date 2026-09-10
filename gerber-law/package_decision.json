@@ -1,0 +1,32 @@
+{
+  "confidence": "high",
+  "revenue_stated": "Consistently >$1M/year (per transcript)",
+  "revenue_effective": 1000000,
+  "revenue_source": "research_notes_transcript",
+  "revenue_label": "$1M-$2M",
+  "team_size_stated": "not stated (Maria Gerber, founder/attorney; team headcount not broken out in transcript)",
+  "team_size_effective": null,
+  "practice_areas_detected": [
+    "personal injury (car accidents, truck/motorcycle accidents, slip and fall, premises liability, defective products, medical malpractice, wrongful death, nursing home injury/abuse)"
+  ],
+  "marketing_tier": "Starter",
+  "marketing_name": "Paid Ads Starter",
+  "marketing_price_bundled": null,
+  "marketing_price_retail": 3497,
+  "marketing_savings": 0,
+  "coaching_name": null,
+  "coaching_price_bundled": null,
+  "coaching_price_retail": null,
+  "coaching_savings": null,
+  "law_tier": null,
+  "total_bundled": 3497,
+  "total_savings": 0,
+  "ad_spend_conservative": null,
+  "ad_spend_aggressive": null,
+  "selection_notes": [
+    "SALES OVERRIDE — Seller (Jacob Meissner) explicitly requested via Slack on September 10, 2026: build the proposal as Paid Ads Starter, standalone pricing at $3,497/mo, with nothing else included (no coaching, no bundle, no other package).",
+    "This supersedes the discovery call's own stated focus and budget — the transcript scoped the engagement to AEO/SEO/review-generation at a $3k-$5k/mo budget and explicitly framed paid ads as cost-prohibitive at that budget. Per the SALES OVERRIDE mechanism (skip eligibility filters in Steps 5A/6A, use the seller's named package directly), tier and price are pulled character-for-character from the catalog (Paid Ads Starter, stand-alone price $3,497/mo, Starter-tier Paid-Ads-only ad spend cap $20,000/mo).",
+    "Ad spend was not specified by the seller — do not assume a locked figure. audit-write must calculate ad spend per the standard Step 3 formula using this firm's revenue data, capped at the Starter (Paid Ads only) ceiling of $20,000/mo.",
+    "Locked at seller's request — status set to \"locked\" in gerber-law/proposal_review.json the same day."
+  ]
+}
