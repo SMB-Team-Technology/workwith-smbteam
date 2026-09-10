@@ -1,0 +1,42 @@
+{
+  "confidence": "low",
+  "revenue_stated": null,
+  "net_revenue_stated": null,
+  "is_contingency_practice": true,
+  "revenue_effective": 500000,
+  "revenue_source": "default",
+  "revenue_label": null,
+  "team_size_stated": null,
+  "team_size_effective": 3,
+  "practice_areas_detected": [
+    "personal injury (tim rowe's book",
+    "with associate amy van ostrand — transcript spelling \"van ospreay\" flagged by rep as u",
+    "personal injury (firm-wide focus; tim rowe's book specifically)",
+    "personal injury / car accident"
+  ],
+  "marketing_tier": "OmniSocial AI 360",
+  "marketing_name": "OmniSocial AI 360 (Content – Standard + Ads – Growth bundle)",
+  "marketing_price_bundled": 3744,
+  "marketing_price_retail": 4094,
+  "marketing_savings": 350,
+  "coaching_name": null,
+  "coaching_price_bundled": null,
+  "coaching_price_retail": null,
+  "coaching_savings": null,
+  "law_tier": null,
+  "total_bundled": 3744,
+  "total_savings": 350,
+  "ad_spend_conservative": 5000,
+  "ad_spend_aggressive": 10000,
+  "selection_notes": [
+    "Revenue and team size both unknown — using conservative defaults. Review with sales rep.",
+    "Team size not stated in research notes — defaulting to 3. Review for coaching tier accuracy.",
+    "Revenue under $750K but multiple practice areas detected: Essentials hidden (requires single practice area) — Starter tier.",
+    "Revenue $400K–$1M: Elite Coach Plus selected.",
+    "SELLER OVERRIDE (Slack, September 10, 2026): seller requested dropping coaching entirely and replacing the marketing line with 'OmniSocial AI 360 Growth' at $3,744/mo, in the same reply as a lock-in request. Coaching removed per request.",
+    "Price verified against catalog (audit-write.md SELECT OMNISOCIAL AI ADD-ON table): OmniSocial AI 360 bundle price = Content – Standard ($2,297/mo) + Ads – Growth ($1,797/mo) − $350/mo bundle discount = $3,744/mo exact match. This is the standalone-sellable 360 bundle (net-new prospects can only buy the 360 bundle, not a single Content or Ads tier) using the Growth ads sub-tier ($5,000-$10,000/mo built-in ad spend, reflected above in ad_spend_conservative/aggressive — this is NOT the old Starter-tier ad spend range).",
+    "Also carries a $1,850 one-time setup fee (not included in total_bundled above) and a 12-month minimum term per the OmniSocial AI catalog terms — confirm both are reflected in any client-facing proposal.",
+    "COMPLIANCE HOLD: per audit-write.md, 'Any OmniSocial AI package → sales-ops approval required, 72-hour turnaround... Do not promise same-day terms.' The seller's message asked to lock in immediately, but the lock-in/build/HubSpot-writeback/email steps were intentionally NOT executed pending that sales-ops approval. status left as \"pending\" in proposal_review.json; flagged back to the seller in the same Slack thread.",
+    "Revenue eligibility note: OmniSocial AI 360 requires $500K+ revenue by default (flexible if the firm is profitable) — this firm's revenue is unstated/defaulted to $500,000; confirm actual revenue supports eligibility before sales-ops sign-off."
+  ]
+}
