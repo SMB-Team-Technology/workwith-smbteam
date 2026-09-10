@@ -1,0 +1,32 @@
+{
+  "confidence": "high",
+  "revenue_stated": "$40,000 (prior year, per transcript)",
+  "revenue_effective": 40000,
+  "revenue_source": "research_notes_transcript",
+  "revenue_label": "Under $750K",
+  "team_size_stated": "solo practitioner",
+  "team_size_effective": 1,
+  "practice_areas_detected": [
+    "business/commercial litigation defense for small businesses"
+  ],
+  "marketing_tier": "Starter",
+  "marketing_name": "Paid Ads Starter",
+  "marketing_price_bundled": null,
+  "marketing_price_retail": 3497,
+  "marketing_savings": 0,
+  "coaching_name": null,
+  "coaching_price_bundled": null,
+  "coaching_price_retail": null,
+  "coaching_savings": null,
+  "law_tier": null,
+  "total_bundled": 3497,
+  "total_savings": 0,
+  "ad_spend_conservative": null,
+  "ad_spend_aggressive": null,
+  "selection_notes": [
+    "SALES OVERRIDE — Seller (Kareem Abdo) explicitly requested via Slack on September 10, 2026: build the proposal as Paid Ads Starter, standalone pricing at $3,497/mo, with nothing else included (no coaching, no bundle, no other package).",
+    "This supersedes the revenue-based tier default (firm's ~$40K/yr revenue would otherwise route to Essentials) per the guide's Budget-Reality Override and SALES OVERRIDE mechanism. Tier and price pulled character-for-character from the catalog (Paid Ads Starter, stand-alone price $3,497/mo).",
+    "Ad spend was not specified by the seller — do not assume a locked figure. audit-write must calculate ad spend per the standard Step 3 formula using this firm's revenue data, capped at the Starter (Paid Ads only) ceiling of $20,000/mo.",
+    "Locked at seller's request — status set to \"locked\" in kareem-abdo/proposal_review.json the same day."
+  ]
+}
