@@ -1,0 +1,240 @@
+GERBER LAW — SECTION 11 WORKINGS (INTERNAL — NOT CLIENT FACING)
+Date: September 16, 2026 | Sales Rep: Jacob Meissner
+
+=====================================================================
+CRITICAL: PACKAGE OVERRIDE APPLIED — READ BEFORE PRESENTING TO CLIENT
+=====================================================================
+
+package_decision.json specifies a SALES OVERRIDE (logged Sept 10, 2026,
+per Slack thread, status "locked" in proposal_review.json) instructing
+this audit to be built as: "Paid Ads Starter," standalone pricing at
+$3,497/mo, with nothing else included (no coaching, no bundle).
+
+Per audit-write.md's TRANSCRIPT-STATED NEED OVERRIDE section, this
+sales override does NOT apply as written, for two independent reasons,
+either of which is sufficient on its own:
+
+1. BUDGET-REALITY OVERRIDE. The transcript is explicit: Maria's stated
+   target is "$3k-$5k/month all-in," and Jacob's own analysis on the
+   call flagged this as "too low for effective paid ads in the
+   competitive Sarasota market," projecting only "1-2 cases" for a
+   $5k/mo spend applied to ads. The call's own recommended path
+   pivoted away from paid ads to AEO/SEO/reviews specifically BECAUSE
+   paid ads were deemed cost-prohibitive at this budget. Selling
+   "Paid Ads Starter" standalone at $3,497/mo does the opposite of
+   what the call itself concluded.
+
+2. CALL-PURPOSE MISMATCH. The stated call focus (research notes Step 9)
+   was explicitly: "Deliver a marketing scope analysis for a $5k/month
+   budget, focusing on AEO and SEO" — NOT paid ads. The category of
+   product in package_decision.json (paid media) does not match the
+   category of product the client actually asked about (organic
+   AI-search visibility, SEO, and review generation).
+
+Additionally, "Paid Ads Starter" is an ads-only SUB-PACKAGE. Per
+audit-write.md: "Sub-packages (ads-only, web+SEO only) must be paired
+with a coaching package." The sales override's instruction to sell it
+"standalone... with nothing else included" violates this rule on its
+own, independent of the two points above.
+
+CORRECTED RECOMMENDATION: Web + SEO Starter (Full Service Marketing
+Starter tier's organic sub-package) + Coach Essentials Plus. This
+directly addresses what the client actually asked for (AEO/SEO/review
+generation) at a price that fits inside the client's own stated
+$3k-$5k/month target, and satisfies the sub-package coaching-pairing
+rule.
+
+FLAG FOR JACOB / SALES: This is a deliberate departure from the locked
+Slack instruction. Recommend a quick conversation with Maria to confirm
+she's open to organic-first positioning (which is what she and Jacob
+actually discussed on the call) before or during the Sept 16 proposal
+call, since the proposal in this audit differs from what was
+communicated internally as "locked." Escalate to sales-ops per SMB
+Team's standard override-conflict process before finalizing verbal
+pricing with the client.
+
+=====================================================================
+PACKAGE ELIGIBILITY CHECKS APPLIED
+=====================================================================
+- Revenue: >$1M/year stated, goal $3M/year → $1M-$2M band under
+  default eligibility tables.
+- Practice area: Personal Injury → Essentials tier hidden regardless
+  of revenue; minimum tier is Starter.
+- Locations: 2 (Venice, Sarasota) → Essentials tier hidden on scope
+  grounds as well (single-location requirement).
+- Revenue-implied default tier would be "Growth" ($7,497/mo bundled)
+  — explicitly NOT used per Budget-Reality Override; lowest eligible
+  tier (Starter) selected instead, in its Web+SEO (non-ads) form to
+  match the stated need.
+- No Fractional CFO signals present (no profitability complaints, no
+  cash-flow issues stated) → not recommended.
+- Team size not stated, no dedicated ops/marketing/intake staff
+  identified → Master's Circle and FCOO/FCFO tiers not eligible/not
+  applicable at this stage.
+- No effective-revenue (net vs. gross) distinction stated in
+  transcript → override 4 does not apply; used stated gross figure.
+- No existing-vendor override triggered: On The Map is a declining,
+  dissatisfied relationship (not a newly-signed active engagement) —
+  this justifies bringing in a new marketing partner, it does not
+  exclude one.
+
+=====================================================================
+MANDATORY PRICE LOOKUP (character-for-character from Scoping &
+Ad Spend Guide / audit-write.md pricing tables)
+=====================================================================
+Marketing package selected: Web + SEO Starter
+  - Bundled price (from table): $3,497/mo
+  - Stand-alone price (from table): $3,997/mo
+  - Savings: $500/mo
+
+Non-marketing package selected: Coach Essentials Plus
+  - Bundled price (from table): $1,997/mo
+  - Stand-alone price (from table): $2,497/mo
+  - Savings: $500/mo
+
+Legal AI Workforce (LAW) package selected: none (not appropriate for
+Phase 1 — firm is solo with minimal named support staff; revisit in
+Phase 3 per standard roadmap logic once team has grown)
+
+AI Avatar / Video Growth add-on selected: none (not raised on call,
+requires Alexis approval, not appropriate for Phase 1)
+
+Total monthly investment (bundled): $3,497 + $1,997 = $5,494/mo
+Total savings: $500 + $500 = $1,000/mo
+
+35% cap check: Monthly revenue ≈ $83,333 (based on >$1M/year stated).
+35% cap = $29,167/mo. $5,494/mo is well within cap.
+Minimum MRR check ($2,497 floor): $5,494/mo clears it.
+
+=====================================================================
+AD SPEND — PRESENTED AS A PHASE 2 (FUTURE) RECOMMENDATION, NOT PART
+OF THE PHASE 1 PACKAGE ABOVE
+=====================================================================
+Per the Budget-Reality Override, Phase 1 does not include a managed
+ad spend recommendation — this matches the transcript's own
+conclusion that paid ads are not viable at the client's current
+budget. The figures below are shown in the report as a Phase 2/future
+illustration (once organic authority and reviews are built and/or
+revenue grows), NOT as a current-dollar ask. This is a deliberate
+adaptation of the standard Block 4 framing — flagged here for sales
+visibility.
+
+Practice area used for calc: Accident/Injury (General) — broad PI
+mix (car accidents, slip/fall, med mal, wrongful death, nursing home).
+Market tier: Tampa-St. Petersburg-Sarasota DMA = Tier 2 (1.3x).
+Spanish campaign: not stated — no modifier applied.
+Close rate: not stated — defaulted to 15%.
+Case value: not stated — defaulted to Accident/Injury General
+range $5,000-$8,000 (midpoint $6,500 used for calculations).
+
+CONSERVATIVE (channel minimums — Google PPC + LSA + Meta Retargeting):
+  $6,000 + $2,000 + $1,200 = $9,200/mo
+  (Exceeds PI Medium-competitiveness hard floor of $7,500 — use $9,200)
+  Blended CPL (with 20% cushion, 50/30/20 channel mix): ~$529
+  Leads: $9,200 / $529 ≈ 17/mo
+  Cases: 17 x 15% ≈ 2-3/mo
+  Revenue: 2-3 cases x $6,500 ≈ $13,000-$19,500/mo
+  Return: ~1.4x-2.1x
+
+AGGRESSIVE (20% rule):
+  Revenue goal $3,000,000 x 20% / 12 = $50,000/mo
+  x Tier 2 multiplier (1.3) = $65,000/mo
+  - Management fee (using Growth tier bundled $7,497/mo, the tier this
+    firm would need to upgrade to in order to run managed ads at
+    scale) = $57,503/mo available
+  Reverse math: ($3,000,000/12) / $6,500 avg case value ≈ 38.5
+  cases/mo target -> /15% close rate ≈ 256 leads/mo required ->
+  x blended CPL (~$441, no cushion) ≈ $112,896/mo required — this is
+  HIGHER than the 20%-rule figure, so reverse math governs per
+  formula, BUT it is capped by tier eligibility below.
+  Tier cap check: firm is under $2M revenue, so Dominate/Platinum
+  tiers (needed to manage >$50,000/mo in ad spend) are NOT ELIGIBLE
+  yet. Aggressive figure is therefore capped at the Growth tier's
+  $50,000/mo ad spend ceiling.
+  FLAG: The $3M revenue goal, run through reverse math, implies an ad
+  spend requirement (~$112,896/mo) that exceeds what this firm is
+  currently tier-eligible to manage. This is a "Revenue goal exceeds
+  projected ad revenue" escalation — paid ads team review recommended
+  before quoting an aggressive scenario verbally. The $3M goal likely
+  requires the combination of paid ads + organic/AEO + referrals
+  working together, not paid ads alone.
+  Leads at cap: $50,000 / $441 ≈ 113/mo
+  Cases: 113 x 15% ≈ 17/mo
+  Revenue: 17 x $6,500 ≈ $110,500/mo
+  Return: ~2.2x
+
+Ad spend range for report: $9,200 - $50,000/mo (Phase 2+)
+Case value disclosed as industry benchmark, not transcript-stated.
+
+=====================================================================
+DBM STATEMENT FOR BLOCK 1
+=====================================================================
+DBM (inferred, flagged as inference in research notes — not a direct
+quote): Scale-and-dominate — Maria wants to modernize the firm's
+positioning (AI-first/AEO) so it can grow from >$1M to $3M and own
+the tri-county market conversation, rather than continuing to depend
+almost entirely on 29 years of referrals.
+
+Block 1 formula: "We help veteran personal injury firms with deep
+local reputations turn 29 years of earned trust into a review-rich,
+AI-visible digital presence so they can grow from seven figures to
+eight without gambling their budget on a channel that's never proven
+its worth."
+
+=====================================================================
+QUICK WIN OPPORTUNITIES IDENTIFIED (6+)
+=====================================================================
+1. [Lead Gen / Quick Win] Review-volume gap across two offices — why:
+   thin, fragmented review signal vs. tenure; competitor: David Harris
+   Law (qualitatively, more/higher-rated reviews, unconfirmed exact
+   count); opportunity: unified review-generation push.
+2. [Lead Gen / Long-Term] Untapped 30+ page geo/practice SEO
+   infrastructure not yet ranking (Port Charlotte wrongful death page
+   didn't surface); competitors: Viles & Beckman, Goldstein Buckley
+   Cechman Rice & Purtz; opportunity: authority-building content
+   activates pages already built.
+3. [Lead Gen / Quick Win] Vendor transition opening — On The Map's
+   service has declined post-acquisition; no competitor; opportunity:
+   natural moment to move to an AEO-focused partner.
+4. [Lead Gen / Long-Term] AI search visibility (AEO) gap — Maria's own
+   stated belief that "AI search is displacing websites"; no confirmed
+   competitor doing this yet; opportunity: first-mover advantage.
+5. [Intake / Quick Win] No lead-tracking/CRM system confirmed; no
+   competitor; opportunity: protect referral leads already paid for
+   (29 years of reputation) at no added marketing cost.
+6. [Team / Long-Term] Owner still personally handles vendor/marketing
+   decisions after 29 years; no competitor; opportunity: coaching
+   builds delegation habits.
+7. [Profit / Quick Win] 20 years of vendor spend with "no correlation
+   between spend and case volume" (direct quote); no competitor;
+   opportunity: cost-per-case tracking on all future spend.
+
+=====================================================================
+FIRST 90 DAYS (adapted — organic-first per override, not
+ads-first, since Phase 1 does not include paid ad spend)
+=====================================================================
+1. Kick off AI-search-optimized (AEO) content sprint across highest-
+   value practice area pages, starting with the Port Charlotte
+   wrongful death visibility gap.
+2. Launch a structured review-generation push across both Venice and
+   Sarasota offices.
+3. Optimize and unify Google Business Profiles for both locations.
+4. Begin monthly coaching sessions, starting with a framework for
+   delegating vendor/marketing decisions.
+5. Establish a baseline intake follow-up process so referred leads
+   don't fall through after hours.
+
+=====================================================================
+ESCALATION FLAGS (INTERNAL ONLY — confirm these do not appear
+anywhere in index.html)
+=====================================================================
+- Review counts unconfirmed — verify live before the call (firm and
+  all named competitors; no live Google access this research session).
+- Package override conflict: this audit departs from the "locked"
+  Slack sales override (Paid Ads Starter standalone) — see top of this
+  file. Requires sales-ops / Jacob sign-off before the Sept 16 call.
+- Revenue goal ($3M) exceeds projected ad-generated revenue at current
+  tier eligibility — paid ads team review recommended before quoting
+  the aggressive ad spend scenario verbally.
+- PageSpeed mobile/desktop scores not observed (API rate-limited) —
+  recommend manual check before the call.
