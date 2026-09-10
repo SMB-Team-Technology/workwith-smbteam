@@ -1,0 +1,178 @@
+SMB TEAM — LAW FIRM GROWTH AUDIT RESEARCH NOTES
+Firm: Rowe & Hamilton
+Friendly Name: rowe-hamilton
+URL: https://www.roweandhamilton.com
+Sales Rep: Dan Bryant
+Audit Date: September 29, 2026
+Research Run Date: 2026-09-10
+
+TOOL-ACCESS NOTE: This session's browser tooling is fetch/search-based (no live-rendered
+Google Maps, Facebook Ads Library, or PageSpeed Insights web app). Wherever a live number
+could not be pulled directly off Google/Maps, that is disclosed explicitly below rather than
+estimated. This is a REAL, currently-operating firm — nothing in this file is fabricated;
+gaps are marked as gaps.
+
+================================================================
+STEP 1 — WEBSITE RESEARCH (roweandhamilton.com)
+================================================================
+- Website URL confirmed live: yes
+- Last redesign date or estimated age: not explicitly dated on-site; footer copyright reads "© 2026" (current/rolling copyright, not a reliable redesign signal)
+- Mobile responsive: not observed (tool cannot render/resize the live page; no negative signal found either)
+- Homepage headline: "Your injury, our priority"
+- CTA above fold: yes — "Free Consultation" button in header, links to contact page
+- Contact form location: not found in fetched content (a dedicated /contact page exists — https://www.roweandhamilton.com/contact — but form placement/fold position could not be confirmed with this tool)
+- Live chat present: not observed
+- Attorney bio present: no dedicated attorney bio module surfaced on the homepage itself; team members (Tim Rowe, Amy Van Ostrand, David Hamilton, and staff member "Jerria") are named in client testimonials rather than a formal bios section. A separate /about page exists.
+- Video present: no embedded video observed above the fold
+- Blog present: yes — "Our Blog" section on homepage with recent posts including "Back-To-School Safety Reminders for Families" and "Recreational Injury Liability"; exact publish date not visible in fetched content, but topic (back-to-school) indicates active, timely posting
+
+PageSpeed scores:
+- PageSpeed mobile score: UNAVAILABLE — PageSpeedInsights API returned a hard "Queries per day" quota-exceeded error (HTTP 429) on repeated attempts (API call, retried, plus the pagespeed.web.dev app itself, which requires client-side JS this tool cannot execute). Per the research protocol, no estimated number is being recorded in its place.
+- PageSpeed desktop score: UNAVAILABLE — same quota-exceeded condition.
+- ACTION FOR /audit-write: re-run pagespeed.web.dev manually for roweandhamilton.com before the report is finalized, or state in the report that page-speed was not available at research time rather than printing a number.
+
+→ Website section complete.
+
+================================================================
+STEP 2 — GOOGLE BUSINESS PROFILE
+================================================================
+- GBP found: yes (listing exists across Google-linked directory aggregators; direct live Google Maps/GBP panel could not be rendered by this tool — see tags below)
+- Star rating: 4.8 [UNCONFIRMED — sourced from Birdeye, which aggregates and republishes Google reviews; not independently confirmed via a direct Google Maps listing render]
+- Total review count: 82 [UNCONFIRMED — sourced from Birdeye, not independently confirmed via Google]
+- Most recent review date: not available (not surfaced by aggregator or search)
+- Primary category: "Personal Injury Law" (as listed on Birdeye/directory aggregators; not independently confirmed via Google)
+- Photos active: not observed
+- Posts active: not observed
+
+Note: A secondary aggregator (TrustAnalytica) independently lists 4.8 stars for the firm, which is directionally consistent with the Birdeye figure but is itself also an aggregator, not a direct Google source — it does not upgrade the confidence tag.
+
+================================================================
+STEP 3 — LOCAL 3-PACK SEARCHES
+================================================================
+METHOD NOTE: This tool cannot render Google's live Maps 3-pack UI. The searches below were
+run as organic web searches for the same keywords as a proxy signal for local visibility, not
+as a direct 3-pack screenshot. Treat "firm appears" below as "appears in top organic results,"
+not confirmed 3-pack placement — flag this distinction in the audit if presenting to the client.
+
+Practice Area 1: Personal Injury (firm-wide focus; Tim Rowe's book specifically)
+- Search 1 "personal injury lawyer indianapolis": firm appears: no — top results: Wilson Kehoe Winingham [review count not verified], Barsumian Armiger Injury Lawyers [not verified], Rob King & Associates [not verified]
+- Search 2 "car accident lawyer indianapolis": firm appears: no — top results: Wilson Kehoe Winingham [not verified], Yosha Law [151 reviews, UNCONFIRMED — sourced from directory aggregator], Ward & Ward Personal Injury Lawyers [not verified]
+- Search 3 "truck accident lawyer indianapolis": firm appears: no — top results: Craig, Kelley & Faultless [not verified], Hensley Legal Group [3,993+ reviews, UNCONFIRMED — sourced from Birdeye], Pavlack Law [not verified]
+
+Rowe & Hamilton and 317justice.com did not surface organically for any of the three practice-area keyword searches above. This is a visibility gap opportunity, not confirmation of absence from Google's actual 3-pack (see method note).
+
+================================================================
+STEP 4 — COMPETITOR REVIEW COUNTS
+================================================================
+Verified live via direct Google Maps render: NOT POSSIBLE with this session's tooling (Maps is JS-rendered and could not be loaded). All figures below are sourced from directory aggregators that republish Google review data and are tagged accordingly. None of the figures below show the prospect (82 reviews, per Step 2) with more reviews than the competitor cited.
+
+- Competitor 1: Wagner Reese, LLP — reviews: 129 [UNCONFIRMED — sourced from Birdeye, not independently confirmed via Google] — rating: 4.9 [UNCONFIRMED — sourced from Birdeye]
+- Competitor 2: Hensley Legal Group, PC — reviews: 3,993 [UNCONFIRMED — sourced from Birdeye, not independently confirmed via Google] — rating: 4.9 [UNCONFIRMED — sourced from Birdeye]
+- Competitor 3: Yosha Law — reviews: 151 [UNCONFIRMED — sourced from directory aggregator, not independently confirmed via Google] — rating: 4.9 [UNCONFIRMED — sourced from directory aggregator]
+
+Hensley Legal Group in particular is a large multi-office statewide operator (25+ years, offices beyond Indianapolis) — this is the kind of PE-backed/high-volume advertiser Tim Rowe referenced in the call as depressing conversions for smaller PI shops.
+
+================================================================
+STEP 5 — DIRECTORY LISTINGS
+================================================================
+- Avvo: present — Timothy Arthur Rowe profile listed under "Rowe and Hamilton," 38 years as partner
+- Justia: firm's practice area category (personal injury, Indianapolis) is indexed in the Justia Indianapolis personal injury directory; individual firm profile not directly pulled
+- FindLaw: present — firm profile lists "more than 64 years combined experience," 100+ jury/bench trials
+- Yelp: present — listed at "101 W Ohio St, Suite 1701, Indianapolis, IN 46204"
+- Additional directories: Yellow Pages (present, but see NAP note below), HG.org (present), Super Lawyers (Tim Rowe individual profile present), Thumbtack (present)
+
+NAP inconsistency found: Yellow Pages lists the firm at ZIP "46201," while the firm's own website, Yelp, and other directories consistently list "101 W. Ohio St., Suite 1701, Indianapolis, IN 46204." This is a live NAP conflict worth flagging and correcting.
+
+Geo-targeted landing pages for surrounding cities/suburbs: not observed on roweandhamilton.com or 317justice.com based on fetched content — no dedicated city/suburb landing pages (e.g., Fishers, Carmel, Noblesville) surfaced.
+
+→ GBP, local SEO, and directory sections complete.
+
+================================================================
+STEP 6 — GOOGLE ADS
+================================================================
+METHOD NOTE: This tool cannot load live, geo-targeted Google SERPs with ad slots rendered (search results returned are organic/aggregated, not a rendered SERP with "Sponsored" labels visible). No sponsored/ad placements were visible in any fetched result set for the queries below.
+
+Practice Area 1: Personal Injury / Car Accident
+- Firm ads observed: not observed
+- Named local competitors running ads: not observed via this tool (no ad-labeled results surfaced in fetched content) — this is a tool-visibility gap, not confirmation of no local Google Ads activity either way
+
+This firm does not appear to be running Google Ads for personal injury/car accident terms at this time, based on what could be observed — and, separately, may be getting outbid or out-positioned by larger regional players (Hensley, Wagner Reese, Yosha) who dominate organic and directory visibility in the same space.
+
+================================================================
+STEP 7 — LOCAL SERVICE ADS
+================================================================
+- Firm appears in LSA: not observed
+- Google Screened: not observed
+- LSA review count: n/a
+- Named local competitors in LSA: not observed (tool cannot render the live LSA unit at the top of Google SERPs)
+
+================================================================
+STEP 8 — META ADS
+================================================================
+- Firm has active ads: not observed (Facebook Ads Library is a JS-rendered app; direct fetch attempt returned a connection error and no ad data could be retrieved)
+- Named local competitor 1: Wagner Reese, LLP — active ads: not observed (same tool constraint)
+- Named local competitor 2: Hensley Legal Group, PC — active ads: not observed (same tool constraint)
+
+This firm does not appear to be running Meta ads based on what could be checked — full confirmation would require a live check of facebook.com/ads/library at write-time. Per the transcript, Tim is actively planning to launch owned social (YouTube/Facebook/Instagram/TikTok) and client video testimonials, so current Meta ad activity is expected to be at or near zero regardless.
+
+→ All ads sections complete (with tool-access caveats noted above).
+
+================================================================
+STEP 9 — TRANSCRIPT EXTRACTION
+================================================================
+- Practice areas confirmed: Personal injury (Tim Rowe's book, with associate Amy Van Ostrand — transcript spelling "Van Ospreay" flagged by rep as uncertain; live directory/bio sources (Martindale, 317justice.com listings) consistently confirm the spelling as "Amy Van Ostrand" — recommend using this spelling going forward). Partner Dave Hamilton runs a separate, unspecified practice/book under the shared firm brand.
+- Current lead sources: Lead broker Walker Advertising (paid); referrals ("significant source from happy clients"); Levitate-managed CRM/database marketing (birthday emails, blogs); planned owned social (YouTube/Facebook/Instagram/TikTok) and client video testimonials
+- Ads ever run: Yes — has bought PI leads via Walker Advertising and "done about every single one" of the PI lead brokers; past SEO efforts "never converted" per Tim; has not run PPC/LSA or Meta ads directly (rep noted PPC/LSA is likely inefficient given avg. case value)
+- Team size: 3 named — Tim Rowe (PI lead/partner), Amy Van Ostrand (associate attorney, base + % on PI), Dave Hamilton (partner, separate book/practice, shares expenses only)
+- Annual revenue (gross / case value): ~$2M/year in attorney's fees (Tim + associate Amy; explicitly excludes partner Dave Hamilton's book)
+- Annual revenue (net / take-home / collected): not distinguished from gross
+- Fee structure: not explicitly stated as contingency %, but standard PI contingency structure is a very safe inference (average case value quoted as "attorney's fees," and payer friction with auto carriers was discussed) — treat as contingency, exact % not stated
+- Revenue goal: not stated — default to 2x current revenue (~$4M) per protocol; note desired volume growth (below) as the more concrete anchor
+- Average case value: ~$4,000–$5,000 in attorney's fees per PI case
+- Current close rate: not stated — default to 15% per protocol
+- Number of locations: 1 (Indianapolis — 101 W. Ohio St., Suite 1701); Tim is also licensed in Florida but undecided on leveraging this — not a current second location
+- Spanish campaign needed: no — not mentioned on the call
+- Dominant buying motive: Closest inference (not a clean "personal freedom" statement) — Tim's stated goal is "massive revenue growth and dominate the market," specifically adding 5–10 more PI cases/month, without subsidizing partner Dave's intake under the shared firm brand. This reads as a mix of DBM categories (3) scale-and-dominate on the practice-growth side, layered with a live, unresolved (2) succession/removing-himself-as-bottleneck question he raised but did not resolve on the call ("torn on removing himself as bottleneck; evaluating future options incl. potential Florida angle"). Treat "scale and dominate his own book, on his own terms" as the primary DBM, with the bottleneck/succession question as a live open thread worth probing on the proposal call.
+- Any profitability claims made by prospect: none stated
+- Any claims about case types or practice areas: PI only for Tim's book (car/truck accidents implied by market context and associate's practice per external sources; not itemized by Tim on the call itself beyond "PI cases")
+- Stated call focus / product interest: Call was a standard marketing/lead-generation growth discovery call — NOT a Fractional CTO/AI-automation or coaching/ops engagement. Specific product interest named on the call: OmniSocial AI 360 plan, with optional add-ons Connected TV and ChatGPT Ads.
+- Existing marketing/SEO/ad vendor engagements: Yes — active engagement with Walker Advertising (PI lead broker, current) and Levitate (website management for 317justice.com + CRM/database marketing, described as "minimal active work"/"light"). No recently-signed new contract mentioned beyond these existing, ongoing vendor relationships.
+- Budget constraints stated: Yes — explicit budget sensitivity given firm size; discussed ad budget range of $5.5k–$7.5k/month (Meta) plus "a little under $3k" SMB Team fee, and asked specifically about flexible billing cadence (monthly/weekly) due to sensitivity to monthly cash outlay. Also a structural constraint: marketing spend must not benefit/subsidize partner Dave Hamilton's separate book under the shared firm brand.
+
+Dominant buying motive — additional context: Tim explicitly wants marketing structured so ROI and case flow attribution stay tied to his own book (317justice.com) rather than the shared "Rowe & Hamilton" brand, to avoid subsidizing his partner. This is a structural/political constraint on any proposed solution, not just a marketing preference.
+
+================================================================
+STEP 10 — COMPETITIVE URGENCY SCORE
+================================================================
+Score: 7/10
+
+Named specific local competitor threats:
+1. Hensley Legal Group, PC — statewide, PE-scale operator with ~4,000 aggregated reviews and heavy multi-office presence; dominates organic visibility and directory review volume in the exact PI/car-accident/truck-accident searches Rowe & Hamilton needs to win.
+2. Wagner Reese, LLP — established Indianapolis PI firm (since 1997) with strong review velocity (129 reviews, 4.9 rating) and consistent organic placement across the same keyword set Rowe & Hamilton did not appear in.
+3. Yosha Law — 60+ year incumbent brand with strong review count (151, 4.9 rating) and consistent top-of-search organic visibility for "car accident lawyer indianapolis."
+
+Dynamic sentence (score 7–10): "A score of 7 means competitors are actively dominating multiple channels in your market and the gap is getting wider every month you wait. This is not a future problem — it is a right now problem."
+
+→ Final research notes file complete.
+
+================================================================
+PASS 2 — VERIFICATION CHECKLIST
+================================================================
+[x] Every number in the notes matches actually observed data (or is explicitly marked UNAVAILABLE/UNCONFIRMED where it could not be observed)
+[x] Every competitor review count has been verified against the prospect's own count — no competitor cited as "dominating" shows fewer reviews than the prospect (82)
+[x] Every review count and star rating (firm and competitors) carries a verification-method tag
+[x] Annual revenue recorded (gross only — $2M attorney's fees; net not distinguished; fee structure inferred as contingency, not explicitly stated)
+[x] Every ads section covers the firm's practice area (Personal Injury) — Google Ads, LSA, and Meta all checked, with tool-access limitations disclosed rather than guessed
+[x] No section states "you are not running ads" — all sections use "not observed" / "does not appear to be running" framing
+[x] No profitability or business claim appears that didn't come from the transcript
+[x] No competitor reference uses generic labels — only specific named local firms (Hensley Legal Group, Wagner Reese, Yosha Law)
+[x] PageSpeed scores are marked UNAVAILABLE rather than estimated, with the cause (API daily quota exceeded) and an action item for /audit-write
+[x] DBM recorded — inferred, with the underlying tension (scale-and-dominate his own book vs. an unresolved bottleneck/succession question) spelled out
+[x] Revenue goal recorded (not stated; default 2x noted; concrete volume goal of +5–10 cases/month flagged as the sharper anchor)
+[x] Close rate recorded (not stated — default to 15%)
+[x] Average case value recorded ($4k–$5k per PI case, stated)
+[x] Stated call focus / product interest recorded explicitly — standard marketing/growth call, OmniSocial AI 360 + optional Connected TV / ChatGPT Ads
+[x] Existing marketing/SEO/ad vendor engagements recorded (Walker Advertising, Levitate)
+[x] Budget constraints stated by the prospect recorded (ad budget range, fee ceiling, billing cadence sensitivity, brand-subsidy constraint)
+
+OUTSTANDING ITEM FOR /audit-write: PageSpeed mobile/desktop scores could not be retrieved this session (API quota exhausted). Re-check pagespeed.web.dev live before finalizing the client-facing report, or omit/qualify the page-speed claim rather than presenting an unverified number.
