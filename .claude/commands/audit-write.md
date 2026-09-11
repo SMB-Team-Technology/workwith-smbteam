@@ -264,7 +264,7 @@ Complete this entire section before starting Step I.
 
 ### SELECT MARKETING PACKAGE
 
-Default to Full Service Marketing at the appropriate tier unless there is a specific reason to use a sub-package. Sub-packages (ads-only, web+SEO only) must be paired with a coaching package.
+Default to Full Service Marketing at the appropriate tier unless there is a specific reason to use a sub-package. The ads-only sub-package can be sold standalone at any tier (Starter, Growth, Dominate, Platinum) without a paired coaching package. The web+SEO-only sub-package must still be paired with a coaching package.
 
 **Marketing Tiers — Full Service Bundled Prices:**
 
