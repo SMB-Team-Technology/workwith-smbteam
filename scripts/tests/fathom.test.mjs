@@ -15,7 +15,7 @@
 import { test, beforeEach, afterEach } from 'node:test';
 import assert from 'node:assert/strict';
 import { spawnSync } from 'node:child_process';
-import { mkdtempSync, writeFileSync, rmSync } from 'node:fs';
+import { mkdtempSync, writeFileSync, rmSync, readFileSync } from 'node:fs';
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -217,6 +217,24 @@ test('hitting the pagination cap warns that the scan is incomplete', async () =>
   }
 });
 
+test('live getFathomTranscript miss strings allow GHA overwrite', async () => {
+  stubFetch(() => jsonResponse({ error: 'nope' }, 401));
+  const produced = [
+    await getFathomTranscript('jane@examplefirm.com', 'Jane', ''),
+    await getFathomTranscript('', 'Jane', 'k'),
+    await getFathomTranscript('jane@examplefirm.com', 'Jane', 'k'),
+  ];
+  global.fetch = async () => { throw new Error('ECONNRESET'); };
+  produced.push(await getFathomTranscript('jane@examplefirm.com', 'Jane', 'k'));
+  stubFetch(() => jsonResponse({ items: [] }));
+  produced.push(await getFathomTranscript('jane@examplefirm.com', 'Jane', 'k'));
+  stubFetch(() => jsonResponse({ items: [meeting({ transcript: [] })] }));
+  produced.push(await getFathomTranscript('libby@indianaimmigration.com', 'Libby', 'k'));
+  for (const out of produced) {
+    assert.equal(shouldSkipFathomOverwrite(out), false, out);
+  }
+});
+
 test('shouldSkipFathomOverwrite is false for empty / miss placeholders (GHA fallback may run)', () => {
   assert.equal(shouldSkipFathomOverwrite(undefined), false);
   assert.equal(shouldSkipFathomOverwrite(null), false);
@@ -281,11 +299,30 @@ test('skip-fathom-overwrite.mjs exits 0 for a real transcript and 1 for a miss',
     writeFileSync(bareNoteFile, JSON.stringify({
       transcript: 'No Fathom transcript available. SALES REP NOTE: Phase 1 recommendation is Full Service Marketing Starter only.',
     }));
+    const badJson = join(dir, 'bad.json');
+    writeFileSync(badJson, '{not json');
+    const missing = join(dir, 'no-such.json');
     assert.equal(spawnSync(process.execPath, [script, realFile]).status, 0);
     assert.equal(spawnSync(process.execPath, [script, missFile]).status, 1);
     assert.equal(spawnSync(process.execPath, [script, noteFile]).status, 0);
     assert.equal(spawnSync(process.execPath, [script, bareNoteFile]).status, 0);
+    assert.equal(spawnSync(process.execPath, [script]).status, 2);
+    assert.equal(spawnSync(process.execPath, [script, missing]).status, 2);
+    assert.equal(spawnSync(process.execPath, [script, badJson]).status, 2);
   } finally {
     rmSync(dir, { recursive: true, force: true });
+  }
+});
+
+test('GHA fetch steps treat skip-helper exit 2 as leave-unchanged, not overwrite', () => {
+  const root = fileURLToPath(new URL('../..', import.meta.url));
+  for (const rel of [
+    '.github/workflows/audit-pipeline.yml',
+    '.github/workflows/rerun-research.yml',
+  ]) {
+    const yml = readFileSync(join(root, rel), 'utf8');
+    assert.match(yml, /SKIP_RC=\$\?/);
+    assert.match(yml, /\[ "\$SKIP_RC" -ne 1 \]/);
+    assert.doesNotMatch(yml, /if node scripts\/skip-fathom-overwrite\.mjs/);
   }
 });

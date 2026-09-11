@@ -1,7 +1,9 @@
 #!/usr/bin/env node
 /**
- * Exit 0 if trigger.transcript should be left alone (real transcript or
- * existing HubSpot summary). Exit 1 if GHA may run the HubSpot/summary fallback.
+ * Exit 0 — leave trigger.transcript alone (real transcript or notes).
+ * Exit 1 — confirmed miss placeholder; GHA may run HubSpot/summary fallback.
+ * Exit 2 — helper could not evaluate (missing path, I/O, parse); GHA must
+ *          leave the field unchanged, not treat this as a miss.
  *
  * Usage: node scripts/skip-fathom-overwrite.mjs <trigger.json>
  */
@@ -9,13 +11,17 @@ import { readFileSync } from 'fs';
 import { shouldSkipFathomOverwrite } from './lib/fathom.mjs';
 
 const file = process.argv[2];
-if (!file) process.exit(1);
+if (!file) {
+  console.error('skip-fathom-overwrite: missing trigger path');
+  process.exit(2);
+}
 
 let transcript;
 try {
   transcript = JSON.parse(readFileSync(file, 'utf8')).transcript;
-} catch {
-  process.exit(1);
+} catch (err) {
+  console.error(`skip-fathom-overwrite: ${err.message}`);
+  process.exit(2);
 }
 
 process.exit(shouldSkipFathomOverwrite(transcript) ? 0 : 1);

@@ -74,8 +74,16 @@ jobs:
           TRIGGER_FILE="${{ steps.inputs.outputs.trigger_file }}"
           FATHOM_URL="${{ steps.resolve_fathom.outputs.fathom_url }}"
 
-          if node scripts/skip-fathom-overwrite.mjs "$TRIGGER_FILE"; then
+          set +e
+          node scripts/skip-fathom-overwrite.mjs "$TRIGGER_FILE"
+          SKIP_RC=$?
+          set -e
+          if [ "$SKIP_RC" -eq 0 ]; then
             echo "Trigger already has a real transcript — skipping HubSpot/summary overwrite."
+            exit 0
+          fi
+          if [ "$SKIP_RC" -ne 1 ]; then
+            echo "skip-fathom-overwrite.mjs failed (exit $SKIP_RC) — leaving transcript field unchanged."
             exit 0
           fi
 
