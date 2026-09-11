@@ -21,8 +21,8 @@
  *   LOOKBACK_DAYS   — How many days back to look for signals (default: 2)
  */
 
-import { writeFileSync, readFileSync, existsSync, mkdirSync } from 'fs';
-import { getFathomTranscript as _getFathomTranscript } from './lib/fathom.mjs';
+import { readFileSync, existsSync, mkdirSync } from 'fs';
+import { getFathomTranscriptResult, mergeTrigger, writeTriggerAtomic } from './lib/fathom.mjs';
 
 const HUBSPOT_TOKEN  = process.env.HUBSPOT_TOKEN;
 const FATHOM_API_KEY = process.env.FATHOM_API_KEY;
@@ -146,8 +146,8 @@ async function getOwnerDetails(ownerId) {
 // Fathom
 // ---------------------------------------------------------------------------
 
-function getFathomTranscript(email, contactName) {
-  return _getFathomTranscript(email, contactName, FATHOM_API_KEY);
+function lookupTranscript(email, contactName) {
+  return getFathomTranscriptResult(email, contactName, FATHOM_API_KEY);
 }
 
 // ---------------------------------------------------------------------------
@@ -281,15 +281,19 @@ async function main() {
 
     console.log(`Processing deal: ${dealName} (stage entered: ${stageEnteredDate})`);
 
+    let existing = null;
     if (existsSync(triggerPath)) {
       try {
-        const existing = JSON.parse(readFileSync(triggerPath, 'utf8'));
-        if (existing._triggered_date === today) {
-          console.log(`  Already triggered today — skipping.\n`);
-          writtenThisRun.add(friendlyName);
-          continue;
-        }
-      } catch (_) { /* malformed file — overwrite */ }
+        existing = JSON.parse(readFileSync(triggerPath, 'utf8'));
+      } catch (err) {
+        console.warn(`  Malformed trigger ${triggerPath} — skipping overwrite (${err.message}).\n`);
+        continue;
+      }
+      if (existing._triggered_date === today) {
+        console.log(`  Already triggered today — skipping.\n`);
+        writtenThisRun.add(friendlyName);
+        continue;
+      }
     }
 
     const dealOwner    = await getOwnerDetails(p.hubspot_owner_id);
@@ -297,10 +301,10 @@ async function main() {
     const contactName  = contact
       ? `${contact.firstname || ''} ${contact.lastname || ''}`.trim()
       : firmName;
-    const transcript   = await getFathomTranscript(contactEmail, contactName);
+    const lookup       = await lookupTranscript(contactEmail, contactName);
     const auditDate    = formatDate(new Date());
 
-    const triggerData = {
+    const triggerData = mergeTrigger(existing, {
       firm_name:          firmName,
       friendly_name:      friendlyName,
       url:                contact?.website || '',
@@ -311,10 +315,9 @@ async function main() {
       contact_email:      contactEmail,
       deal_id:            deal.id,
       _triggered_date:    today,
-      transcript,
-    };
+    }, lookup);
 
-    writeFileSync(triggerPath, JSON.stringify(triggerData, null, 2));
+    writeTriggerAtomic(triggerPath, triggerData);
     console.log(`  Wrote trigger: ${triggerPath}\n`);
     writtenThisRun.add(friendlyName);
     triggered++;
@@ -349,15 +352,19 @@ async function main() {
       continue;
     }
 
+    let existing = null;
     if (existsSync(triggerPath)) {
       try {
-        const existing = JSON.parse(readFileSync(triggerPath, 'utf8'));
-        if (existing._triggered_date === today) {
-          console.log(`  Already triggered today — skipping.\n`);
-          writtenThisRun.add(friendlyName);
-          continue;
-        }
-      } catch (_) { /* malformed file — overwrite */ }
+        existing = JSON.parse(readFileSync(triggerPath, 'utf8'));
+      } catch (err) {
+        console.warn(`  Malformed trigger ${triggerPath} — skipping overwrite (${err.message}).\n`);
+        continue;
+      }
+      if (existing._triggered_date === today) {
+        console.log(`  Already triggered today — skipping.\n`);
+        writtenThisRun.add(friendlyName);
+        continue;
+      }
     }
 
     // Try to get deal and owner from the contact
@@ -367,10 +374,10 @@ async function main() {
 
     const contactEmail = contact.email || '';
     const contactName  = `${contact.firstname || ''} ${contact.lastname || ''}`.trim() || firmName;
-    const transcript   = await getFathomTranscript(contactEmail, contactName);
+    const lookup       = await lookupTranscript(contactEmail, contactName);
     const auditDate    = formatDate(new Date());
 
-    const triggerData = {
+    const triggerData = mergeTrigger(existing, {
       firm_name:          firmName,
       friendly_name:      friendlyName,
       url:                contact.website || '',
@@ -382,10 +389,9 @@ async function main() {
       deal_id:            deal?.id || null,
       proposal_call_date: meetingStart,
       _triggered_date:    today,
-      transcript,
-    };
+    }, lookup);
 
-    writeFileSync(triggerPath, JSON.stringify(triggerData, null, 2));
+    writeTriggerAtomic(triggerPath, triggerData);
     console.log(`  Wrote trigger: ${triggerPath}\n`);
     writtenThisRun.add(friendlyName);
     triggered++;

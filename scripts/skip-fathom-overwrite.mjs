@@ -1,9 +1,10 @@
 #!/usr/bin/env node
 /**
- * Exit 0 — leave trigger.transcript alone (real transcript or notes).
- * Exit 1 — confirmed miss placeholder; GHA may run HubSpot/summary fallback.
+ * Exit 0 — leave trigger.transcript alone (found payload, human custody, or notes).
+ * Exit 1 — fallback-eligible (absent / unknown / found_empty / legacy miss).
  * Exit 2 — helper could not evaluate (missing path, import, I/O, parse);
  *          GHA must leave the field unchanged, not treat this as a miss.
+ * Prefers trigger.transcript_status when present; otherwise sniffs .transcript.
  *
  * Usage: node scripts/skip-fathom-overwrite.mjs <trigger.json>
  */
@@ -23,12 +24,17 @@ try {
   process.exit(2);
 }
 
-let transcript;
+let trigger;
 try {
-  transcript = JSON.parse(readFileSync(file, 'utf8')).transcript;
+  trigger = JSON.parse(readFileSync(file, 'utf8'));
 } catch (err) {
   console.error(`skip-fathom-overwrite: ${err.message}`);
   process.exit(2);
 }
 
-process.exit(shouldSkipFathomOverwrite(transcript) ? 0 : 1);
+try {
+  process.exit(shouldSkipFathomOverwrite(trigger) ? 0 : 1);
+} catch (err) {
+  console.error(`skip-fathom-overwrite: ${err.message}`);
+  process.exit(2);
+}
