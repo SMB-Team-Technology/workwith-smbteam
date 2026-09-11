@@ -1,0 +1,88 @@
+name: Audit PPTX Layout Engine Check
+
+# A firm's Proposal script is a copy of Design Files/audit_pptx_template.py —
+# only the # FILL: values above the "LAYOUT ENGINE — DO NOT MODIFY BELOW THIS
+# LINE" marker should ever change. Historically, 138 of 170 generated decks
+# silently rewrote that protected section (font, brand colors), which is
+# exactly what drifted the portfolio's look. This check catches that at PR
+# time for newly generated decks, instead of relying on someone remembering
+# to diff it by hand.
+#
+# Only newly *added* *_Proposal.py files are checked (not edits to existing
+# ones) — a firm's copy is a brand-new file each time /audit-pptx runs, so
+# this targets exactly that generation step without blocking unrelated
+# maintenance edits to already-shipped decks.
+
+on:
+  pull_request:
+    paths:
+      - '**/*_Proposal.py'
+      - 'Design Files/audit_pptx_template.py'
+
+permissions:
+  contents: read
+
+jobs:
+  check-layout-engine:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout PR head
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
+          fetch-depth: 0
+
+      - name: Verify new Proposal scripts match the master layout engine
+        shell: bash
+        run: |
+          set -euo pipefail
+          MARKER='# LAYOUT ENGINE — DO NOT MODIFY BELOW THIS LINE'
+          MASTER="Design Files/audit_pptx_template.py"
+
+          extract_engine() {
+            awk -v marker="$MARKER" 'index($0, marker) { found=1 } found { print }' "$1"
+          }
+
+          if [ ! -f "$MASTER" ]; then
+            echo "::error::Master template not found at $MASTER"
+            exit 1
+          fi
+
+          extract_engine "$MASTER" > /tmp/master_engine.txt
+          if [ ! -s /tmp/master_engine.txt ]; then
+            echo "::error file=$MASTER::Could not find the LAYOUT ENGINE marker in the master template."
+            exit 1
+          fi
+
+          BASE_SHA="${{ github.event.pull_request.base.sha }}"
+          HEAD_SHA="${{ github.event.pull_request.head.sha }}"
+
+          mapfile -t ADDED_FILES < <(git diff --name-only --diff-filter=A "$BASE_SHA" "$HEAD_SHA" -- '*_Proposal.py')
+
+          if [ "${#ADDED_FILES[@]}" -eq 0 ]; then
+            echo "No newly added *_Proposal.py files in this PR — nothing to check."
+            exit 0
+          fi
+
+          FAILED=0
+          for f in "${ADDED_FILES[@]}"; do
+            [ -f "$f" ] || continue
+            [ "$f" = "$MASTER" ] && continue
+
+            extract_engine "$f" > /tmp/candidate_engine.txt
+            if [ ! -s /tmp/candidate_engine.txt ]; then
+              echo "::error file=$f::Could not find the LAYOUT ENGINE marker — this doesn't look like a copy of Design Files/audit_pptx_template.py."
+              FAILED=1
+              continue
+            fi
+
+            if ! diff -q /tmp/master_engine.txt /tmp/candidate_engine.txt > /dev/null; then
+              echo "::error file=$f::Layout engine differs from Design Files/audit_pptx_template.py. Firm copies must never modify anything below '$MARKER' (font, colors, layout code) — copy the current master template fresh and only fill in the # FILL: values."
+              diff -u /tmp/master_engine.txt /tmp/candidate_engine.txt || true
+              FAILED=1
+            else
+              echo "OK: $f matches the master layout engine"
+            fi
+          done
+
+          exit "$FAILED"
