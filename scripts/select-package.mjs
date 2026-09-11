@@ -137,16 +137,35 @@ async function fetchHubSpotRevenue(contactId) {
 
 // ─── Parsing helpers ──────────────────────────────────────────────────────────
 
+// Tolerates a parenthetical qualifier between the label and the colon (e.g.
+// "Annual revenue (gross / case value): ...") and stray quote/tilde
+// punctuation between the colon and the value (e.g. `: "~$800k"`) — both
+// common in the current research-notes template but not matched by a plain
+// `label[:\s]+` prefix.
+const QUALIFIER = '(?:\\s*\\([^)]*\\))?';
+const PUNCT = '[\\s"‘’\'~]*';
+
+// A minority of research notes state the label's figure as a monthly run-rate
+// (e.g. "Annual revenue (gross / case value): ~$30K/month...") with the true
+// annual figure only appearing later in the sentence. Rather than guess at
+// annualizing, treat a number immediately followed by a "/mo"-style marker as
+// unusable here and let the caller fall back to other sources — reporting a
+// monthly figure as the annual one would be worse than not parsing it at all.
+function isMonthlyFigure(text, matchEndIndex) {
+  return /^\s*\/?\s*(mo\b|month|monthly)/i.test(text.slice(matchEndIndex, matchEndIndex + 20));
+}
+
 function parseRevenue(text) {
   // Range forms first (e.g. "Annual revenue: $1.5-2M gross", "$1.5–2M"), since a
   // bare-number pattern below would otherwise only catch the first number in the range.
   const rangePatterns = [
-    /annual revenue[:\s]+\$?([\d,\.]+)\s*[-–—to]+\s*\$?([\d,\.]+)\s*(million|M|[Kk])\b/i,
-    /revenue[:\s]+\$?([\d,\.]+)\s*[-–—to]+\s*\$?([\d,\.]+)\s*(million|M|[Kk])\b/i,
+    new RegExp(`annual revenue${QUALIFIER}[:\\s]+${PUNCT}\\$?([\\d,\\.]+)\\s*[-–—to]+\\s*\\$?([\\d,\\.]+)\\s*(million|M|[Kk])\\b`, 'i'),
+    new RegExp(`revenue${QUALIFIER}[:\\s]+${PUNCT}\\$?([\\d,\\.]+)\\s*[-–—to]+\\s*\\$?([\\d,\\.]+)\\s*(million|M|[Kk])\\b`, 'i'),
   ];
   for (const pattern of rangePatterns) {
     const m = text.match(pattern);
     if (!m) continue;
+    if (isMonthlyFigure(text, m.index + m[0].length)) continue;
     const lo = parseFloat(m[1].replace(/,/g, ''));
     const hi = parseFloat(m[2].replace(/,/g, ''));
     if (isNaN(lo) || isNaN(hi) || lo <= 0 || hi <= 0) continue;
@@ -156,19 +175,20 @@ function parseRevenue(text) {
   }
 
   const patterns = [
-    /annual revenue[:\s]+\$?([\d,\.]+)\s*(million|M)\b/i,
-    /annual revenue[:\s]+\$?([\d,\.]+)\s*([Kk])\b/i,
-    /annual revenue[:\s]+\$?([\d,\.]+)/i,
+    new RegExp(`annual revenue${QUALIFIER}[:\\s]+${PUNCT}\\$?([\\d,\\.]+)\\s*(million|M)\\b`, 'i'),
+    new RegExp(`annual revenue${QUALIFIER}[:\\s]+${PUNCT}\\$?([\\d,\\.]+)\\s*([Kk])\\b`, 'i'),
+    new RegExp(`annual revenue${QUALIFIER}[:\\s]+${PUNCT}\\$?([\\d,\\.]+)`, 'i'),
     /revenue[:\s]+approximately\s+\$?([\d,\.]+)\s*(million|M|K)?\b/i,
-    /current revenue[:\s]+\$?([\d,\.]+)\s*(million|M)\b/i,
-    /current revenue[:\s]+\$?([\d,\.]+)/i,
-    /gross revenue[:\s]+\$?([\d,\.]+)\s*(million|M)\b/i,
-    /gross revenue[:\s]+\$?([\d,\.]+)/i,
-    /revenue[:\s]+\$?([\d,\.]+)\s*(million|M)\b/i,
+    new RegExp(`current revenue${QUALIFIER}[:\\s]+${PUNCT}\\$?([\\d,\\.]+)\\s*(million|M)\\b`, 'i'),
+    new RegExp(`current revenue${QUALIFIER}[:\\s]+${PUNCT}\\$?([\\d,\\.]+)`, 'i'),
+    new RegExp(`gross revenue${QUALIFIER}[:\\s]+${PUNCT}\\$?([\\d,\\.]+)\\s*(million|M)\\b`, 'i'),
+    new RegExp(`gross revenue${QUALIFIER}[:\\s]+${PUNCT}\\$?([\\d,\\.]+)`, 'i'),
+    new RegExp(`revenue${QUALIFIER}[:\\s]+${PUNCT}\\$?([\\d,\\.]+)\\s*(million|M)\\b`, 'i'),
   ];
   for (const pattern of patterns) {
     const m = text.match(pattern);
     if (!m) continue;
+    if (isMonthlyFigure(text, m.index + m[0].length)) continue;
     const raw = parseFloat(m[1].replace(/,/g, ''));
     if (isNaN(raw) || raw <= 0) continue;
     const suffix = (m[2] || '').toLowerCase();
@@ -201,7 +221,7 @@ function parsePracticeAreas(text) {
 }
 
 function parseTeamSize(text) {
-  if (/team size[:\s]+(solo practitioner|sole practitioner)/i.test(text)) return 1;
+  if (/team size[:\s]+(solo|sole)\s+(practitioner|attorney)/i.test(text)) return 1;
   const patterns = [
     /team size[:\s]+(\d+)\s*(employee|attorney|staff|team member|people)/i,
     /(\d+)\s*(employees|staff members|team members|attorneys)\s+confirmed/i,

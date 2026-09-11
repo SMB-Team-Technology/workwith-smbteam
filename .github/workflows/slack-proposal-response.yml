@@ -77,6 +77,44 @@ jobs:
           echo "hubspot_contact_id=$(jq -r '.hubspot_contact_id // empty' "$MATCH")" >> "$GITHUB_OUTPUT"
           echo "suppress_pricing=$(jq -r '.suppress_pricing // "false"' "$MATCH")"   >> "$GITHUB_OUTPUT"
 
+      # -------------------------------------------------------------------
+      # Self-heal: package_decision.json is produced by Pass 1.5 but was
+      # historically never committed alongside proposal_review.json, so any
+      # proposal still "pending" from before that fix has no decision file
+      # on main for this step to read. Regenerate it here rather than
+      # failing the whole reply — this also unblocks proposals that got
+      # stuck in this state before the commit-step fix landed.
+      # -------------------------------------------------------------------
+      - name: Ensure package decision exists
+        if: steps.find.outputs.found == 'true'
+        env:
+          HUBSPOT_TOKEN: ${{ secrets.HUBSPOT_TOKEN }}
+        run: |
+          FRIENDLY_NAME="${{ steps.find.outputs.friendly_name }}"
+          if [ -f "$FRIENDLY_NAME/package_decision.json" ]; then
+            echo "package_decision.json already present for $FRIENDLY_NAME."
+            exit 0
+          fi
+
+          echo "package_decision.json missing for $FRIENDLY_NAME — regenerating."
+          node scripts/select-package.mjs "$FRIENDLY_NAME" || true
+
+          if [ -f "$FRIENDLY_NAME/package_decision.json" ]; then
+            git add "$FRIENDLY_NAME/package_decision.json"
+            if ! git diff --cached --quiet; then
+              git commit -m "Pass 1.5 (self-heal): regenerate missing package decision for $FRIENDLY_NAME"
+              for attempt in 1 2 3; do
+                if git push origin main; then
+                  break
+                fi
+                echo "Push failed (attempt $attempt) — pulling --rebase and retrying."
+                git pull --rebase origin main
+              done
+            fi
+          else
+            echo "Regeneration did not produce package_decision.json — Handle the seller's response will report this."
+          fi
+
       - name: Handle the seller's response
         if: steps.find.outputs.found == 'true'
         env:
