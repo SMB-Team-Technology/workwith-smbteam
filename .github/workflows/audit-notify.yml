@@ -58,16 +58,17 @@ jobs:
           # Safe default: anything other than the explicit string "false" = test mode
           test_only      = os.environ.get("TEST_ONLY", "true").lower() != "false"
           closer_email   = os.environ.get("CLOSER_EMAIL", "")
-          eli            = "eli.gill@smbteam.com"
+          eli     = "eli.gill@smbteam.com"
+          carolyn = "carolyn.webb@smbteam.com"
 
           if test_only:
-              to_addr, cc_addrs = eli, []
+              to_addr, cc_addrs = eli, [carolyn]
               print(f"TEST MODE: sending only to {eli}")
           else:
               if not closer_email:
                   print("ERROR: closer_email not set in trigger file.")
                   sys.exit(1)
-              to_addr, cc_addrs = closer_email, [eli]
+              to_addr, cc_addrs = closer_email, [eli, carolyn]
 
           pdf_files  = glob.glob(f"{friendly_name}/*_Sales_Companion.pdf")
           pptx_files = glob.glob(f"{friendly_name}/*_Proposal.pptx")

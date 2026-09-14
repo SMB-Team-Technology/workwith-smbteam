@@ -15,7 +15,7 @@ Output: [friendly-name]/[FirmName]_[Date]_Proposal.pptx
 from pptx import Presentation
 from pptx.util import Inches, Pt
 from pptx.dml.color import RGBColor
-from pptx.enum.text import PP_ALIGN
+from pptx.enum.text import PP_ALIGN, MSO_AUTO_SIZE
 from pptx.oxml.ns import qn
 from lxml import etree
 import os
@@ -201,11 +201,35 @@ ACCENT_TEXT_COLOR = {"69CD2B": NAVY}
 
 FONT = "Poppins"
 LOGO_PATH = os.path.join(os.path.dirname(__file__), "smb_team_logo.png")
+# This script is copied into each firm's own folder (a sibling of "Design
+# Files/" at the repo root) to run — the logo above sits right next to it
+# because it's copied too, but fonts/ is not, so it's addressed relative to
+# the repo root instead.
+FONT_DIR = os.path.join(os.path.dirname(__file__), "..", "Design Files", "fonts")
 
 # ── Core helpers ──────────────────────────────────────────────────
 
 def emu(*inches):
     return tuple(int(x * 914400) for x in inches)
+
+
+# Fields with a documented character budget (see .claude/commands/audit-pptx.md)
+# get hard-capped where they're placed on the slide — a backstop so oversized
+# content can never spill past its box, no matter what the FILL section
+# contains. auto-shrink (set in add_text below) is the first line of defense;
+# this cap keeps the shrunk font from having to go microscopic.
+_TRUNCATED = []  # (label, original_text) pairs — reported just before saving
+
+def cap(text, max_chars, label=""):
+    text = "" if text is None else str(text)
+    if len(text) <= max_chars:
+        return text
+    truncated = text[:max_chars - 1].rstrip()
+    if " " in truncated:
+        truncated = truncated.rsplit(" ", 1)[0]
+    truncated = truncated.rstrip(" ,.;:-—–") + "…"
+    _TRUNCATED.append((label or text[:24], text))
+    return truncated
 
 
 def add_rect(slide, left, top, w, h, fill=None, line=False):
@@ -225,8 +249,11 @@ def add_rect(slide, left, top, w, h, fill=None, line=False):
 
 
 def add_text(slide, text, left, top, w, h, size, color, bold=False,
-             align=PP_ALIGN.LEFT, italic=False, wrap=True):
+             align=PP_ALIGN.LEFT, italic=False, wrap=True,
+             cap_chars=None, cap_label=""):
     from pptx.util import Emu as E, Pt as P
+    if cap_chars is not None:
+        text = cap(text, cap_chars, label=cap_label)
     txb = slide.shapes.add_textbox(E(int(left*914400)), E(int(top*914400)),
                                    E(int(w*914400)), E(int(h*914400)))
     tf = txb.text_frame
@@ -240,8 +267,9 @@ def add_text(slide, text, left, top, w, h, size, color, bold=False,
     run.font.color.rgb = color
     run.font.bold = bold
     run.font.italic = italic
-    # Remove auto-fit so text doesn't spill
-    txb.text_frame.auto_size = None
+    # Shrink text to fit the box instead of letting it spill past it —
+    # a backstop for any content the character caps above don't cover.
+    tf.auto_size = MSO_AUTO_SIZE.TEXT_TO_FIT_SHAPE
     return txb
 
 
@@ -302,7 +330,8 @@ def build_slide1(prs):
         add_rect(slide, x, 1.28, 0.88, 0.74, fill=DARK_NAVY)
         add_text(slide, PILLAR_NAMES[i], x+0.06, 1.30, 0.76, 0.26, 8, WHITE, bold=True)
         add_text(slide, label, x+0.06, 1.55, 0.76, 0.20, 7, sc, bold=True)
-        add_text(slide, detail, x+0.06, 1.74, 0.76, 0.26, 7, LIGHT_BLUE)
+        add_text(slide, detail, x+0.06, 1.74, 0.76, 0.26, 7, LIGHT_BLUE,
+                 cap_chars=28, cap_label=f"PILLARS[{i}] detail")
 
     # Key findings label
     add_text(slide, "KEY FINDINGS", 0.28, 2.14, 5.30, 0.24, 8, LIME_GREEN, bold=True)
@@ -319,7 +348,8 @@ def build_slide1(prs):
         add_rect(slide, 0.40, y+0.19, 0.24, 0.24, fill=dot)
         add_text(slide, sym, 0.40, y+0.17, 0.24, 0.26, 9, WHITE, bold=True,
                  align=PP_ALIGN.CENTER)
-        add_text(slide, text, 0.74, y+0.08, 4.76, 0.46, 10, txt_color)
+        add_text(slide, text, 0.74, y+0.08, 4.76, 0.52, 10, txt_color,
+                 cap_chars=150, cap_label=f"FINDINGS[{i}]")
 
     # Right panel — white background (starts below banner)
     add_rect(slide, 5.75, 1.05, 4.25, 4.23, fill=WHITE)
@@ -345,16 +375,22 @@ def build_slide1(prs):
         y = comp_ys[i]
         bg = COMP_ALT if i % 2 == 0 else WHITE
         add_rect(slide, 5.75, y, 4.25, 0.34, fill=bg)
-        add_text(slide, name, 5.92, y+0.05, 2.00, 0.24, 8, rgb("1E293B"))
-        add_text(slide, reviews, 7.94, y+0.05, 1.00, 0.24, 8, GREEN)
-        add_text(slide, detail, 8.96, y+0.07, 0.90, 0.22, 6, SLATE)
+        add_text(slide, name, 5.92, y+0.05, 2.00, 0.28, 8, rgb("1E293B"),
+                 cap_chars=34, cap_label=f"COMPETITORS[{i}] name")
+        add_text(slide, reviews, 7.94, y+0.05, 1.00, 0.28, 8, GREEN,
+                 cap_chars=22, cap_label=f"COMPETITORS[{i}] reviews")
+        add_text(slide, detail, 8.96, y+0.07, 0.90, 0.26, 6, SLATE,
+                 cap_chars=38, cap_label=f"COMPETITORS[{i}] detail")
 
     # Client row
     add_rect(slide, 5.75, 3.52, 4.25, 0.34, fill=rgb("FFF0F0"))
     add_rect(slide, 5.75, 3.52, 0.10, 0.34, fill=RED)
-    add_text(slide, FIRM_NAME, 5.92, 3.57, 2.00, 0.24, 9, RED, bold=True)
-    add_text(slide, CLIENT_REVIEWS, 7.94, 3.57, 1.00, 0.24, 8, RED, bold=True)
-    add_text(slide, CLIENT_REVIEWS_NOTE, 8.96, 3.59, 0.90, 0.22, 6, SLATE)
+    add_text(slide, FIRM_NAME, 5.92, 3.57, 2.00, 0.28, 9, RED, bold=True,
+             cap_chars=34, cap_label="CLIENT row firm name")
+    add_text(slide, CLIENT_REVIEWS, 7.94, 3.57, 1.00, 0.28, 8, RED, bold=True,
+             cap_chars=22, cap_label="CLIENT_REVIEWS")
+    add_text(slide, CLIENT_REVIEWS_NOTE, 8.96, 3.59, 0.90, 0.26, 6, SLATE,
+             cap_chars=38, cap_label="CLIENT_REVIEWS_NOTE")
 
     add_footer(slide, 1, 3, LOGO_PATH)
 
@@ -402,7 +438,8 @@ def build_slide2(prs):
             bg = light if row_i % 2 == 0 else WHITE
             add_rect(slide, x, y, 2.24, 0.62, fill=bg)
             add_rect(slide, x+0.10, y+0.24, 0.10, 0.10, fill=ac)
-            add_text(slide, bullet, x+0.26, y+0.06, 1.92, 0.52, 8, rgb("1E293B"))
+            add_text(slide, bullet, x+0.26, y+0.06, 1.92, 0.52, 8, rgb("1E293B"),
+                     cap_chars=58, cap_label=f"PRIORITIES[{col_i}] bullet {row_i+1}")
 
     add_footer(slide, 2, 3, LOGO_PATH)
 
@@ -433,7 +470,8 @@ def build_slide3(prs):
         add_text(slide, retail, 2.54, y+0.44, 1.00, 0.26, 11, STRIKETHROUGH)
         # Strikethrough line over retail price
         add_rect(slide, 2.54, y+0.55, 0.88, 0.01, fill=STRIKETHROUGH)
-        add_text(slide, services, 0.52, y+0.84, 4.16, 0.22, 8, SLATE)
+        add_text(slide, services, 0.52, y+0.84, 4.16, 0.22, 8, SLATE,
+                 cap_chars=65, cap_label=f"PACKAGES[{i}] services")
 
     # Bundle total
     add_rect(slide, 0.22, 3.56, 4.52, 0.72, fill=NAVY)
@@ -465,14 +503,134 @@ def build_slide3(prs):
         y = timeline_ys[i]
         add_rect(slide, 5.02, y, 0.28, 0.28, fill=NAVY)
         add_text(slide, milestone, 5.40, y+0.01, 0.88, 0.28, 8, NAVY, bold=True)
-        add_text(slide, action, 6.36, y+0.01, 3.34, 0.28, 8, rgb("1E293B"))
+        add_text(slide, action, 6.36, y+0.01, 3.34, 0.28, 8, rgb("1E293B"),
+                 cap_chars=58, cap_label=f"TIMELINE[{i}] action")
 
     # Closing quote bar
     add_rect(slide, 0, 4.84, 10, 0.44, fill=NAVY)
     add_text(slide, CLOSING_QUOTE, 0.30, 4.84, 9.40, 0.44, 9, LIGHT_BLUE, italic=True,
-             align=PP_ALIGN.CENTER)
+             align=PP_ALIGN.CENTER, cap_chars=220, cap_label="CLOSING_QUOTE")
 
     add_footer(slide, 3, 3, LOGO_PATH)
+
+
+# ── Font embedding ────────────────────────────────────────────────
+# python-pptx has no font-embedding API, so this patches the saved .pptx's
+# raw OOXML directly. Mirrors what sales_companion_template.py already does
+# for the PDF via reportlab's registerFont — without it, "Poppins" is just a
+# name any viewer without the font installed (Google Slides, a PowerPoint
+# missing the font) will silently substitute, which is why fonts can look
+# inconsistent across machines even though the script never changes.
+
+def embed_fonts(pptx_path, font_dir):
+    import zipfile, shutil, tempfile
+
+    faces = [
+        ("regular", "Poppins-Regular.ttf"),
+        ("bold",    "Poppins-Bold.ttf"),
+        ("italic",  "Poppins-Italic.ttf"),
+    ]
+    faces = [(role, os.path.join(font_dir, fname)) for role, fname in faces
+             if os.path.isfile(os.path.join(font_dir, fname))]
+    if not faces:
+        return
+
+    NS = {
+        "ct": "http://schemas.openxmlformats.org/package/2006/content-types",
+        "r":  "http://schemas.openxmlformats.org/officeDocument/2006/relationships",
+        "pr": "http://schemas.openxmlformats.org/package/2006/relationships",
+        "p":  "http://schemas.openxmlformats.org/presentationml/2006/main",
+    }
+
+    tmp_dir = tempfile.mkdtemp()
+    try:
+        with zipfile.ZipFile(pptx_path) as zin:
+            zin.extractall(tmp_dir)
+
+        # 1. Copy the font binaries into ppt/fonts/
+        fonts_dir = os.path.join(tmp_dir, "ppt", "fonts")
+        os.makedirs(fonts_dir, exist_ok=True)
+        font_parts = []  # (role, part_filename)
+        for i, (role, src_path) in enumerate(faces, start=1):
+            part_name = f"font{i}.fntdata"
+            shutil.copyfile(src_path, os.path.join(fonts_dir, part_name))
+            font_parts.append((role, part_name))
+
+        # 2. Register the .fntdata extension in [Content_Types].xml
+        ct_path = os.path.join(tmp_dir, "[Content_Types].xml")
+        ct_tree = etree.parse(ct_path)
+        ct_root = ct_tree.getroot()
+        if not ct_root.xpath("ct:Default[@Extension='fntdata']", namespaces=NS):
+            default = etree.SubElement(ct_root, f"{{{NS['ct']}}}Default")
+            default.set("Extension", "fntdata")
+            default.set("ContentType", "application/x-fontdata")
+        ct_tree.write(ct_path, xml_declaration=True, encoding="UTF-8", standalone=True)
+
+        # 3. Add a relationship from presentation.xml to each font part
+        rels_path = os.path.join(tmp_dir, "ppt", "_rels", "presentation.xml.rels")
+        rels_tree = etree.parse(rels_path)
+        rels_root = rels_tree.getroot()
+        existing_ids = {el.get("Id") for el in rels_root}
+
+        def new_rid(n=[1]):
+            while f"rIdEmbedFont{n[0]}" in existing_ids:
+                n[0] += 1
+            rid = f"rIdEmbedFont{n[0]}"
+            n[0] += 1
+            return rid
+
+        rel_ids = {}
+        for role, part_name in font_parts:
+            rid = new_rid()
+            rel = etree.SubElement(rels_root, f"{{{NS['pr']}}}Relationship")
+            rel.set("Id", rid)
+            rel.set("Type", "http://schemas.openxmlformats.org/officeDocument/2006/relationships/font")
+            rel.set("Target", f"fonts/{part_name}")
+            rel_ids[role] = rid
+        rels_tree.write(rels_path, xml_declaration=True, encoding="UTF-8", standalone=True)
+
+        # 4. Declare the embedded font in presentation.xml and flip the
+        #    embedTrueTypeFonts switch on.
+        pres_path = os.path.join(tmp_dir, "ppt", "presentation.xml")
+        pres_tree = etree.parse(pres_path)
+        pres_root = pres_tree.getroot()
+        pres_root.set("embedTrueTypeFonts", "1")
+
+        embedded_font = etree.Element(f"{{{NS['p']}}}embeddedFont")
+        font_el = etree.SubElement(embedded_font, f"{{{NS['p']}}}font")
+        font_el.set("typeface", FONT)
+        for role, rid in rel_ids.items():
+            face_el = etree.SubElement(embedded_font, f"{{{NS['p']}}}{role}")
+            face_el.set(f"{{{NS['r']}}}id", rid)
+
+        embedded_font_lst = etree.Element(f"{{{NS['p']}}}embeddedFontLst")
+        embedded_font_lst.append(embedded_font)
+
+        # Schema order (CT_Presentation) requires embeddedFontLst to sit
+        # after notesSz and before defaultTextStyle/custShowLst/etc.
+        notes_sz = pres_root.find(f"{{{NS['p']}}}notesSz")
+        default_text_style = pres_root.find(f"{{{NS['p']}}}defaultTextStyle")
+        if notes_sz is not None:
+            insert_at = list(pres_root).index(notes_sz) + 1
+        elif default_text_style is not None:
+            insert_at = list(pres_root).index(default_text_style)
+        else:
+            insert_at = len(pres_root)
+        pres_root.insert(insert_at, embedded_font_lst)
+
+        pres_tree.write(pres_path, xml_declaration=True, encoding="UTF-8", standalone=True)
+
+        # 5. Re-zip in place
+        tmp_pptx = pptx_path + ".tmp"
+        with zipfile.ZipFile(tmp_pptx, "w", zipfile.ZIP_DEFLATED) as zout:
+            for root_dir, _, files in os.walk(tmp_dir):
+                for fname in files:
+                    full = os.path.join(root_dir, fname)
+                    arcname = os.path.relpath(full, tmp_dir)
+                    zout.write(full, arcname)
+        shutil.move(tmp_pptx, pptx_path)
+    finally:
+        shutil.rmtree(tmp_dir, ignore_errors=True)
 
 
 # ── Assemble ──────────────────────────────────────────────────────
@@ -487,4 +645,12 @@ build_slide3(prs)
 
 os.makedirs(os.path.dirname(OUTPUT_PATH), exist_ok=True) if os.path.dirname(OUTPUT_PATH) else None
 prs.save(OUTPUT_PATH)
+embed_fonts(OUTPUT_PATH, FONT_DIR)
+
+if _TRUNCATED:
+    print(f"WARNING: {len(_TRUNCATED)} field(s) exceeded their character budget "
+          f"and were truncated — consider shortening the source copy instead:")
+    for label, original in _TRUNCATED:
+        print(f"  - {label}: {original!r}")
+
 print(f"Saved: {OUTPUT_PATH}  ({len(prs.slides)} slides)")

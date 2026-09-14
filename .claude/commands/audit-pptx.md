@@ -122,14 +122,21 @@ Each bullet: one specific action for this firm, ≤55 chars.
 4. Set `SALES_REP` to the sales rep name
 5. Set `WEBSITE_SCREENSHOT_PATH = None` (leave as-is unless a local screenshot PNG exists)
 6. Verify no `# FILL:` placeholder text remains (the word "FILL" should not appear in any string value)
-7. Run the script:
+7. Before running, diff the copy's layout engine against the master template and confirm there's no output — anything below `LAYOUT ENGINE — DO NOT MODIFY BELOW THIS LINE` must be byte-for-byte identical to `Design Files/audit_pptx_template.py` (this includes `FONT`, every color constant, `ACCENT_TEXT_COLOR`, `PRIORITY_LIGHT`, and every `build_slideN`/helper function):
+
+```bash
+diff <(sed -n '/LAYOUT ENGINE/,$p' "Design Files/audit_pptx_template.py") \
+     <(sed -n '/LAYOUT ENGINE/,$p' "[friendly-name]/[FirmName]_[Date]_Proposal.py")
+```
+
+8. Run the script:
 
 ```bash
 python3 "[friendly-name]/[FirmName]_[Date]_Proposal.py"
 ```
 
-8. Confirm the output prints "Saved: … (3 slides)"
-9. Verify the file exists and is not empty:
+9. Confirm the output prints "Saved: … (3 slides)". If it also prints a `WARNING: N field(s) exceeded their character budget…` block, that means the layout engine had to truncate something you filled in — go back and shorten that field's source copy rather than shipping the truncated version.
+10. Verify the file exists and is not empty:
 
 ```bash
 wc -c "[friendly-name]/[FirmName]_[Date]_Proposal.pptx"
@@ -145,6 +152,7 @@ wc -c "[friendly-name]/[FirmName]_[Date]_Proposal.pptx"
 - The closing quote on Slide 3 must be vivid, specific, and in the owner's voice — not a generic tagline. If the transcript has a direct quote about what they want their life to look like, use it verbatim or near-verbatim
 - Do not add a fourth package card — maximum two packages per the template
 - Never modify `Design Files/audit_pptx_template.py` — work in the firm's copy only
+- Never modify anything below `LAYOUT ENGINE — DO NOT MODIFY BELOW THIS LINE` in the firm's copy either — this includes `FONT` and every color constant. That section is what keeps every deck on-brand and visually consistent with every other deck in the portfolio; the diff in step 7 is the check. The layout engine already auto-shrinks oversized text and hard-caps a handful of fields as a backstop (see the `WARNING:` note in step 9) and embeds the Poppins font files into the saved `.pptx` — none of that requires anything from you beyond filling in the `# FILL:` values.
 
 ---
 
