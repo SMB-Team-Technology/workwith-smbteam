@@ -252,6 +252,9 @@ jobs:
           FRIENDLY_NAME="${{ steps.inputs.outputs.friendly_name }}"
           if [ -f "$FRIENDLY_NAME/proposal_review.json" ]; then
             git add "$FRIENDLY_NAME/proposal_review.json"
+            if [ -f "$FRIENDLY_NAME/package_decision.json" ]; then
+              git add "$FRIENDLY_NAME/package_decision.json"
+            fi
             if ! git diff --cached --quiet; then
               git commit -m "Phase 1 review gate: awaiting seller response for $FRIENDLY_NAME"
               git push origin main
