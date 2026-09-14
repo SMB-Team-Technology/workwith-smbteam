@@ -2,73 +2,87 @@ HILLER LAW, P.A. — GROWTH AUDIT RESEARCH NOTES
 Sales Rep: Nick Holderman
 Proposal Call Date: September 14, 2026
 Firm URL: http://dhillerlaw.com
-Research Pass Date: September 10, 2026
+Research Pass Date: September 14, 2026 (re-run — see note below)
 
 ============================================================
 RESEARCH ENVIRONMENT NOTE (READ FIRST)
 ============================================================
-This research pass was run in an environment where several live-verification
-tools were blocked or unavailable:
-- Google Search and Google Maps returned bot-check/error pages to the fetch
-  tool used in this session (could not render live SERP, local 3-pack, or
-  GBP knowledge panel content).
-- The Google PageSpeed Insights API returned a "quota exceeded" (429) error
-  on repeated attempts (confirmed via direct API call, not a transient miss).
-- Meta Ads Library (facebook.com/ads/library) returned HTTP 403.
+This is a re-run of Pass 1 research (prior pass dated September 10, 2026).
+The re-trigger was driven by a package-decision change (FCOO Advisor
+standalone, no marketing) — not by any change to the underlying firm
+facts. This pass independently re-verified everything live rather than
+reusing the prior file, and confirms the same tool-access limits persist:
+- Google Maps / Google Business Profile is JS-rendered and returns no
+  usable business-profile content (star rating, review count) to the
+  fetch tools available in this session — confirmed again on a direct
+  https://www.google.com/maps/search/ fetch attempt.
+- The Google PageSpeed Insights API returned a 429 "Quota exceeded for
+  quota metric 'Queries' ... quota_limit_value: 0" on a direct API call
+  today — the same permanent (not transient) restriction as the prior
+  pass, re-confirmed via a fresh curl call to
+  pagespeedonline.googleapis.com.
+- Meta Ads Library (facebook.com/ads/library) returned HTTP 403 on
+  direct fetch (same as the 403 seen in the prior pass).
+- General web search does not render live Google SERP ad placements,
+  Local Service Ads, or local 3-pack position — it returns directory/
+  aggregator results, not a live rendered SERP.
 
-Because dhillerlaw.com is a real, live, resolving website (not a fictional
-test firm), no data below has been fabricated to fill these gaps. Instead,
-every affected data point is explicitly marked as unavailable/unconfirmed
-in this pass, sourced from the best available secondary evidence (attorney
-directories, Yelp, Facebook, Trustindex) where possible. Nick should
-spot-check GBP star rating/review count, live 3-pack position, PageSpeed
-scores, and current ad presence directly before the proposal call if those
-specific numbers are needed for the client-facing report.
+Because dhillerlaw.com is a real, live, resolving website (not a
+fictional test firm), no data below has been fabricated to fill these
+gaps. Every affected data point is explicitly marked unavailable/
+unconfirmed, sourced from best-available secondary evidence where
+possible. Nick should spot-check GBP star rating/review count, live
+3-pack position, PageSpeed scores, and current ad presence directly
+before the proposal call if those specific numbers are needed.
 
 ============================================================
 STEP 1 — WEBSITE RESEARCH
 ============================================================
 - Website URL confirmed live: yes (dhillerlaw.com / http://dhillerlaw.com)
 - Last redesign date or estimated age: footer copyright reads "Hiller Law,
-  P.A. © 2015" — site appears to be running on the original 2015 WordPress
-  build. Footer also displays an unrendered PHP template tag
-  (`<?php echo get_template_directory_uri(); ?>`), indicating a broken/
-  unmaintained template — a specific, visible technical defect.
-- Mobile responsive: not observed — page uses static image sliders and a
-  dated template structure with no evidence of a modern responsive
-  (flexbox/grid) framework.
+  P.A. © 2015" — site still appears to be running on the original 2015
+  WordPress build.
+- Mobile responsive: not confirmed either way this pass — no rendering
+  tool available to test breakpoints live; page uses an older template
+  structure with no evidence of a modern responsive framework in the
+  fetched markup.
 - Homepage headline (exact text): "Serving All Of South Florida Your Real
   Estate Law Firm"
-- CTA above fold: yes — "feel free to contact us now" with phone number
-  (305) 456-4607 displayed prominently.
+- CTA above fold: yes — phone number (305) 456-4607 displayed prominently
+  with an invitation to contact regarding legal rights in Florida.
 - Contact form location: buried — only present in the footer, not above
   the fold.
 - Live chat present: no
-- Attorney bio present: yes — Douglas Hiller bio with professional
-  headshot. Covers Emory University (BA, Spanish/International Studies),
-  University of Miami (JD/MBA), ~9 years construction law experience
-  (lien foreclosures, payment bond claims, construction contracts),
-  ~4 years on a condo board, condo-association defense work, and
-  residential/commercial lease and landlord-tenant work.
+- Attorney bio present: yes — Douglas C. Hiller, Esq. bio on the About Us
+  page. Covers Emory University (BA, Spanish/International Studies, study
+  abroad in Vienna and Madrid), University of Miami (JD and MBA), ~9 years
+  construction law experience (lien foreclosures, payment bond claims,
+  construction contracts), ~4 years on a condo board, condo-association
+  defense work, residential/commercial lease and landlord-tenant work,
+  and 14 years in litigation/disputes. A headshot image is referenced in
+  the page's markup ("Dougs Pic").
 - Video present: no
-- Blog present: yes — no publish dates visible on listed posts. Recent
-  post titles observed: "Florida Evictions Explained: What Landlords Get
-  Wrong (and How It Backfires)," "Miami Landlord-Tenant Law: What Every
-  Property Owner Must Know Before Renting," "The Complete Guide to Real
-  Estate Transactions with an Expert Real Estate Transaction Lawyer,"
-  "The Eviction Timeline in Miami," "Top 7 Legal Challenges in Real Estate
-  Transactions." Content is topically current, suggesting posts were added
-  after the 2015 template build, but exact last-post date could not be
-  confirmed live.
+- Blog present: yes — recent post titles observed: "Florida Evictions
+  Explained: What Landlords Get Wrong (and How It Backfires)," "Miami
+  Landlord-Tenant Law: What Every Property Owner Must Know Before
+  Renting," "The Complete Guide to Real Estate Transactions with an
+  Expert Real Estate Transaction Lawyer," "The Eviction Timeline in
+  Miami: How Long It Really Takes and Why Delays Happen," "Top 7 Legal
+  Challenges in Real Estate Transactions and How a Real Estate
+  Transaction Lawyer Solves Them." No specific publish dates are exposed
+  in the page content — last-post date could not be confirmed live.
 - Main navigation: Home, Real Estate Transactions, Commercial Real Estate,
-  Condominium Law, Construction Law, Litigation, About Us, Organizations
-  We Support, Blog, Contact Us.
+  Condominium Law, Construction Law, Litigation, About Us, Blog,
+  Contact Us.
 - Location: 2655 S. LeJeune Road, Suite PH-2C, Coral Gables, FL 33134.
+- Facebook business page exists: facebook.com/dhillerlaw (found via web
+  search; content of the page itself was not accessible this pass).
 
-PageSpeed mobile score: UNAVAILABLE — Google PageSpeed Insights API
-returned "Quota exceeded for quota metric 'Queries' ... Queries per day"
-(HTTP 429) on repeated attempts today. Not an estimate; genuinely could
-not be retrieved in this pass.
+PageSpeed mobile score: UNAVAILABLE — direct call to
+pagespeedonline.googleapis.com returned HTTP 429, "Quota exceeded for
+quota metric 'Queries' ... quota_limit_value: 0" — confirmed this is a
+standing zero-quota restriction in this environment, not a transient
+miss. Not an estimate; genuinely could not be retrieved.
 PageSpeed desktop score: UNAVAILABLE — same cause as above.
 
 ============================================================
@@ -77,21 +91,22 @@ STEP 2 — GOOGLE BUSINESS PROFILE
 - GBP found: presumed yes (firm has an established physical office and
   consistent citations across attorney directories), but the live Google
   Business Profile / Google Maps listing itself could not be directly
-  accessed in this pass (Google Maps is JS-rendered and returned no
-  usable content to the available fetch tool).
+  accessed this pass — a direct fetch of the Google Maps search URL for
+  "Hiller Law P.A. Coral Gables FL" returned no business-profile data
+  (JS-rendered, not exposed to the fetch tool).
 - Star rating: UNKNOWN — [UNCONFIRMED — could not access Google Maps/GBP
-  directly in this environment]. Best available secondary data: Martindale
-  peer-review profile shows 5.0/5.0 across 11 reviews (Legal Knowledge 4.6,
-  Analytical Capability 4.7, Judgment 4.8, Communication 4.6, Legal
-  Experience 4.5) [UNCONFIRMED — sourced from Martindale.com, not Google].
-  Lawyers.com shows 5.0 with 1 review [UNCONFIRMED — sourced from
-  Lawyers.com]. Avvo shows 0 reviews on Douglas Hiller's profile
-  [UNCONFIRMED — sourced from Avvo, and distinct from Google].
-- Total review count: UNKNOWN live — see above; do not treat any of these
-  secondary numbers as the Google count.
+  directly in this environment]. Best available secondary data:
+  Martindale peer-review profile shows 4.6/5.0 based on 10 peer reviews
+  (Legal Knowledge 4.6, Analytical Capability 4.7, Judgment 4.8,
+  Communication 4.6, Legal Experience 4.5) [UNCONFIRMED — sourced from
+  Martindale.com, not Google]. Avvo shows an Avvo Client's Choice Award
+  but review count not confirmed [UNCONFIRMED — sourced from Avvo].
+- Total review count: UNKNOWN live — see above; do not treat any
+  secondary-source number as the Google count.
 - Most recent review date: not observed (could not access GBP directly).
 - Primary category: inferred as "Real estate attorney" based on directory
-  listings and site content (not confirmed via a live GBP category field).
+  listings and site content (not confirmed via a live GBP category
+  field).
 - Photos active: not observed.
 - Posts active: not observed.
 
@@ -104,35 +119,34 @@ rating verification as an action item for Nick before the proposal call.
 ============================================================
 STEP 3 — LOCAL 3-PACK SEARCHES
 ============================================================
-Live 3-pack rendering was not obtainable in this pass (Google Search
-returned a bot-check/error page to the available fetch tool on every
-attempt, including retries). The searches below reflect directory/
-citation research into who is active in each space, not confirmed live
-pack positions. Verify live before using specific "appears/does not
-appear" language in the client-facing report.
+Live 3-pack rendering was not obtainable this pass (general web search
+returns directory/aggregator link results, not a rendered Google Maps
+pack). The searches below reflect who is actively indexed/marketing in
+each space, not confirmed live pack positions.
 
 Practice Area 1: Real Estate Closings / Real Estate Transactions
-- Search 1 "real estate closing attorney coral gables": firm appears —
-  not confirmed live. Active named competitors identified in this space:
-  Jacqueline A. Salcines, P.A. (Salcines Law), Mancebo Law & Title,
-  Deeb & Deeb.
+- Search 1 "real estate closing attorney coral gables fl": firm appears
+  — not confirmed live. Named competitors surfaced: Jacqueline A.
+  Salcines, P.A. (Salcines Law), Llaudy Law Firm (Dagmar Llaudy), Carl
+  Sugarman P.A., South Florida Law, PLLC, Yelen & Yelen, P.A.
 - Search 2 "real estate attorney coral gables fl": firm appears — not
-  confirmed live. Same competitor set identified, plus Florin Law, P.A.
+  confirmed live. Same core competitor set, plus Florin Law, P.A.
   (broader practice, real estate is one of several areas).
 - Search 3 "condominium lawyer coral gables": firm appears — not
-  confirmed live. No additional condo-specific specialist firm surfaced
-  distinct from the general real estate set above.
+  confirmed live. No condo-specific specialist distinct from the general
+  real estate set above surfaced.
 
 Practice Area 2: Construction Law
-- Search 1 "construction attorney miami": firm appears — not confirmed
-  live. Directory research (Super Lawyers) confirms Douglas Hiller carries
-  a "Top Rated Construction Litigation Attorney" designation in Coral
-  Gables, indicating he is indexed in this category, but a live pack
-  position could not be observed.
+- Search 1 "construction litigation attorney coral gables fl": firm
+  appears — not confirmed live. Named competitors surfaced: Strang
+  Tryson, PLLC, BergaLaw, PA, Law Offices of Ronald E. Kaufman, P.A.
+  Directory research (Super Lawyers) confirms Douglas Hiller carries a
+  "Top Rated Construction Litigation Attorney" designation in Coral
+  Gables.
 - Search 2 "construction lien lawyer coral gables": firm appears — not
   confirmed live.
-- Search 3 "construction litigation attorney coral gables": firm appears —
-  not confirmed live.
+- Search 3 "construction attorney miami": firm appears — not confirmed
+  live.
 
 ============================================================
 STEP 4 — COMPETITOR REVIEW COUNTS
@@ -141,57 +155,61 @@ All numbers below are aggregator-sourced, not Google-confirmed, and are
 tagged accordingly per the verification rule. None should be presented in
 the client-facing report as a specific competitor Google rating/count.
 
-- Jacqueline A. Salcines, P.A. (Salcines Law) — reviews: 32
-  [UNCONFIRMED — sourced from Yelp, not independently confirmed via
-  Google] — also shows 259 reviews / 4.3 stars on Trustindex
-  [UNCONFIRMED — sourced from Trustindex]. Avvo Client's Choice Award
-  (2021) [UNCONFIRMED — sourced from Avvo].
+- Jacqueline A. Salcines, P.A. (Salcines Law) — reviews: 29, per a Yelp
+  listing updated December 2025 [UNCONFIRMED — sourced from Yelp, not
+  independently confirmed via Google] — Lawyers.com separately shows
+  4.7/5.0 with 320 reviews [UNCONFIRMED — sourced from Lawyers.com].
+  Maintains dedicated Coral Gables-specific service landing pages
+  (salcineslaw.com/coral-gables-real-estate/).
+- Llaudy Law Firm (Dagmar Llaudy) — Martindale "Distinguished" (2025) and
+  AV Preeminent peer-review rating [UNCONFIRMED — sourced from
+  Martindale, not Google]; specific review count not located this pass.
 - Mancebo Law & Title (Guillermo Mancebo) — reviews: 5, 100% recommend
   [UNCONFIRMED — sourced from Facebook, not independently confirmed via
-  Google].
-- Deeb & Deeb (Kevin L. Deeb) — reviews: 5, 100% recommend
-  [UNCONFIRMED — sourced from Facebook, not independently confirmed via
-  Google].
-- Florin Law, P.A. (Nicole Florin) — review count not located in this
-  pass; Yelp-verified listing with 5 photos [UNCONFIRMED — sourced from
-  Yelp].
+  Google] (carried over from prior pass; not re-verified live this pass).
+- Deeb & Deeb (Kevin L. Deeb) — reviews: 5, 100% recommend [UNCONFIRMED —
+  sourced from Facebook, not independently confirmed via Google] (carried
+  over from prior pass; not re-verified live this pass).
+- Florin Law, P.A. (Nicole Florin) — review count not located this pass;
+  Yelp-verified listing [UNCONFIRMED — sourced from Yelp].
 
 ============================================================
 STEP 5 — DIRECTORY LISTINGS
 ============================================================
-- Avvo: profile exists (Douglas Chance Hiller) — listed under Litigation
-  (100%) rather than Real Estate, despite the firm's site and practice
-  being real-estate-first. 0 reviews on Avvo. Address on file: 2655 S Le
-  Jeune Rd Ph 2 C, Coral Gables, FL 33134-5827 (matches firm's own site).
+- Avvo: profile exists (Douglas Chance Hiller / "33134 fl douglas hiller
+  1293668") — Avvo Client's Choice Award noted. Address on file matches
+  the firm's own site (2655 S LeJeune Rd Ph 2C, Coral Gables, FL
+  33134-5827).
 - Justia: no dedicated Douglas Hiller / Hiller Law, P.A. profile located
-  in this pass.
-- FindLaw: profile exists — NAP INCONSISTENCY FOUND. FindLaw lists the
-  address as "3132 Ponce De Leon Blvd, Coral Gables, FL 33134," which does
-  not match the firm's actual address (2655 S. LeJeune Road, Suite PH-2C)
-  as shown on the firm's own site and Avvo. Phone number (305) 456-4607
-  matches.
-- Yelp: no listing found for the Florida firm at all (only an unrelated
-  "Hiller Law Offices" in Milwaukee, WI surfaced under the same search
-  terms) — the firm appears to have no Yelp presence.
-- Martindale: profile exists, 11 reviews, 5.0 overall.
-- Lawyers.com: profile exists, 5.0 rating, 1 review.
+  this pass.
+- FindLaw: profile exists (lawyers.findlaw.com/florida/coral-gables/
+  3649747_1/) — NAP INCONSISTENCY CONFIRMED AGAIN THIS PASS. FindLaw
+  lists the address as "3132 Ponce De Leon Blvd, Coral Gables, FL 33134,"
+  which does not match the firm's actual address (2655 S. LeJeune Road,
+  Suite PH-2C) as shown on the firm's own site and Avvo. Phone number
+  (305) 456-4607 matches.
+- Yelp: no listing found for the Florida firm this pass either — search
+  for "Hiller Law P.A. Coral Gables Yelp" surfaced Martindale, Facebook,
+  Lawyers.com, and Florida Bar results but no Yelp business page for the
+  firm.
+- Martindale: profile exists, 10 peer reviews, 4.6/5.0 overall.
 - Super Lawyers: profile exists — Rising Star (2009, 2014), current
   "Top Rated Construction Litigation Attorney" designation.
+- Florida Bar member profile: exists, admitted 2001, no misconduct
+  found, licensed 25 years.
 - Geo-targeting landing pages: none found on dhillerlaw.com for
-  surrounding cities/submarkets (e.g., no dedicated Kendall, Pinecrest, or
-  broader Miami-Dade city pages beyond general "Miami, South Florida"
-  phrasing in page titles). By contrast, competitor Salcines Law maintains
-  dedicated city/service landing pages (e.g., "Coral Gables Real Estate
-  Lawyer," "Coral Gables Title and Closing Lawyer") — a specific,
-  observed competitive gap.
+  surrounding cities/submarkets. By contrast, competitor Salcines Law
+  maintains dedicated city/service landing pages (e.g., "Coral Gables
+  Real Estate Lawyer," "Real Estate Law and Closing Services") — a
+  specific, observed competitive gap, confirmed again this pass.
 
 ============================================================
 STEP 6 — GOOGLE ADS
 ============================================================
-Live Google SERP ad placements could not be directly observed in this
-pass (Google Search rendering blocked to the available fetch tool on
-every attempt). Per the ads framing rule, this is stated as an observation
-gap, not a certainty either way.
+Live Google SERP ad placements could not be directly observed this pass
+— the web search tool available returns directory/aggregator results,
+not a rendered SERP with ad slots. Per the ads framing rule, this is
+stated as an observation gap, not a certainty either way.
 
 Practice Area 1: Real Estate Closings
 - Firm ads observed: not observed (live SERP inaccessible this pass) —
@@ -214,9 +232,12 @@ STEP 7 — LOCAL SERVICE ADS
 ============================================================
 STEP 8 — META ADS
 ============================================================
-Facebook Ads Library returned an HTTP 403 (access blocked) on the
-available fetch tool in this pass.
-- Firm has active ads: not observed — access blocked this pass.
+Facebook Ads Library returned an HTTP 403 (access blocked) on direct
+fetch this pass — same result as the prior pass.
+- Firm has active ads: not observed — access blocked this pass. Note:
+  the firm does have an active Facebook business page (facebook.com/
+  dhillerlaw), found via web search, though ad-specific data on it is
+  not accessible without Ads Library access.
 - Named local competitor 1 (Salcines Law): not observed — access blocked
   this pass.
 - Named local competitor 2 (Mancebo Law & Title): not observed — access
@@ -238,8 +259,8 @@ STEP 9 — TRANSCRIPT EXTRACTION
   states short-term (1-year) goal of increasing revenue 50–75%, and
   long-term goal of $500k–$1M+.
 - Annual revenue (net / take-home / collected): not distinguished from
-  gross — transcript only references the ~$350k figure and growth targets
-  without separating gross vs. take-home.
+  gross — transcript only references the ~$350k figure and growth
+  targets without separating gross vs. take-home.
 - Fee structure: not stated explicitly (no %/hourly/flat-fee breakdown
   given). Retainers of $3,500–$5,000 are referenced for turned-away work,
   suggesting a retainer/flat-fee model for real estate matters, but this
@@ -254,11 +275,11 @@ STEP 9 — TRANSCRIPT EXTRACTION
 - Dominant buying motive: primarily Pattern 1 — "a firm that runs itself
   so they have more time" — with a secondary retirement-funding
   motivation. Exact quote basis: "Long-Term Vision: A self-managed firm
-  that generates revenue while Hiller is on vacation, enabling him to save
-  $30k–$50k/yr for retirement." Reinforced by the stated root cause of the
-  problem: "All firm operations depend on Hiller, who works 10–11 hour
-  days," and the 2023 medical leave that caused a ~$60k revenue drop,
-  proving the firm's fragility without him.
+  that generates revenue while Hiller is on vacation, enabling him to
+  save $30k–$50k/yr for retirement." Reinforced by the stated root cause
+  of the problem: "All firm operations depend on Hiller, who works
+  10–11 hour days," and the 2023 medical leave that caused a ~$60k
+  revenue drop, proving the firm's fragility without him.
 - Any profitability claims made by prospect: "Hiller estimates he's
   leaving $100k/yr on the table from his current client base and could
   reach $500k total revenue by focusing on higher-margin real estate
@@ -277,6 +298,10 @@ STEP 9 — TRANSCRIPT EXTRACTION
   not lead generation. Marketing would be ineffective without the
   operational foundation." This should be called out explicitly in the
   report, not defaulted to a standard marketing/lead-gen framing.
+  NOTE: per the trigger file's package field for this re-run, the
+  proposal has since been scoped to FCOO Advisor ONLY (no marketing
+  package, no marketing deliverables, no ad spend) — consistent with
+  this Phase-1-first framing.
 - Existing marketing/SEO/ad vendor engagements: none stated.
 - Budget constraints stated: none stated explicitly in the transcript.
 
@@ -287,23 +312,24 @@ Score: 5/10
 
 Note: because the engagement itself is Phase-1/operations-focused rather
 than marketing-first (see Step 9), this score should be read as
-directional market context for Phase 2 planning, not as an urgent driver
-of the current proposal.
+directional market context for future Phase 2 planning, not as an urgent
+driver of the current (FCOO Advisor-only) proposal.
 
 Named competitor threats:
 1. Jacqueline A. Salcines, P.A. (Salcines Law) — a combined real estate
    law + title/escrow operation with dedicated Coral Gables-specific
    landing pages (a content/SEO structure Hiller Law's site currently
-   lacks) and a meaningfully larger aggregator review footprint (32 Yelp /
-   259 Trustindex reviews, both unconfirmed via Google) than what's
-   visible for Hiller Law on the same platforms.
-2. Mancebo Law & Title — also bundles title-company services directly
-   with real estate closings, competing head-on with the exact
-   "higher-margin real estate closings" niche Hiller wants to grow into.
-3. Deeb & Deeb — a long-tenured (since 1996) full-service real estate and
-   estate-planning firm, the same diversified-growth model Hiller cited
-   as inspiration (via peer Eric Grotebois/EPGD Law), already established
-   in Coral Gables.
+   lacks) and a larger aggregator review footprint (29 Yelp reviews as of
+   Dec 2025, 320 reviews/4.7 on Lawyers.com, both unconfirmed via Google)
+   than what's visible for Hiller Law on the same platforms.
+2. Llaudy Law Firm (Dagmar Llaudy) — full-service real estate closing and
+   title agent operation with an active, actively-maintained website and
+   strong peer-review standing (Martindale "Distinguished" 2025, AV
+   Preeminent), competing directly in the closings/title niche Hiller
+   wants to grow into.
+3. Mancebo Law & Title — bundles title-company services directly with
+   real estate closings, competing head-on with the exact "higher-margin
+   real estate closings" niche Hiller wants to grow into.
 
 Dynamic sentence (score 4–6): "A score of 5 means competitors have
 meaningful advantages in one or more areas and are pulling ahead. You are
@@ -331,7 +357,8 @@ PASS 2 — VERIFICATION CHECKLIST
     transcript.
 [x] No competitor reference uses generic labels — all named and specific.
 [x] PageSpeed scores: genuinely unavailable this pass (API quota
-    exhausted) — not estimated.
+    exhausted, quota_limit_value 0 — confirmed via a fresh direct API
+    call) — not estimated.
 [x] DBM recorded with supporting quotes.
 [x] Revenue goal recorded.
 [x] Close rate defaulted to 15% (not stated).
