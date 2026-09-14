@@ -377,12 +377,14 @@ def build_slide1(prs):
         add_text(slide, detail, 8.96, y+0.07, 0.90, 0.26, 6, SLATE,
                  cap_chars=38, cap_label=f"COMPETITORS[{i}] detail")
 
-    # Client row
-    add_rect(slide, 5.75, 3.52, 4.25, 0.34, fill=rgb("FFF0F0"))
-    add_rect(slide, 5.75, 3.52, 0.10, 0.34, fill=RED)
-    add_text(slide, FIRM_NAME, 5.92, 3.57, 2.00, 0.28, 9, RED, bold=True,
+    # Client row — a "you are here" highlight, not a warning, so it uses the
+    # same navy/ocean-blue language as the stage strip above rather than red
+    # (which reads as an error next to the neutral competitor rows above it).
+    add_rect(slide, 5.75, 3.52, 4.25, 0.34, fill=rgb("E3F4FA"))
+    add_rect(slide, 5.75, 3.52, 0.10, 0.34, fill=OCEAN_BLUE)
+    add_text(slide, FIRM_NAME, 5.92, 3.57, 2.00, 0.28, 9, NAVY, bold=True,
              cap_chars=34, cap_label="CLIENT row firm name")
-    add_text(slide, CLIENT_REVIEWS, 7.94, 3.57, 1.00, 0.28, 8, RED, bold=True,
+    add_text(slide, CLIENT_REVIEWS, 7.94, 3.57, 1.00, 0.28, 8, OCEAN_BLUE, bold=True,
              cap_chars=22, cap_label="CLIENT_REVIEWS")
     add_text(slide, CLIENT_REVIEWS_NOTE, 8.96, 3.59, 0.90, 0.26, 6, SLATE,
              cap_chars=38, cap_label="CLIENT_REVIEWS_NOTE")
