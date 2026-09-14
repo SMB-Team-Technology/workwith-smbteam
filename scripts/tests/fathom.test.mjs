@@ -493,6 +493,15 @@ test('shouldSkipFathomOverwrite prefers transcript_status when present', () => {
     transcript: 'No Fathom transcript found for Jane (a@b.com). SALES REP NOTE: FCOO only',
     transcript_status: { outcome: 'absent', custody: 'machine' },
   }), true);
+  const leftover = 'No Fathom transcript available (API returned 404 for a@b.com). Do not recommend coaching.';
+  assert.equal(shouldSkipFathomOverwrite({
+    transcript: leftover,
+    transcript_status: { outcome: 'unknown', custody: 'machine' },
+  }), true);
+  assert.equal(shouldSkipFathomOverwrite({
+    transcript: leftover,
+    transcript_status: { outcome: 'absent', custody: 'machine' },
+  }), true);
 });
 
 test('skip-fathom-overwrite.mjs honors transcript_status on the trigger object', () => {
@@ -502,6 +511,7 @@ test('skip-fathom-overwrite.mjs honors transcript_status on the trigger object',
     const human = join(dir, 'human.json');
     const found = join(dir, 'found.json');
     const unknown = join(dir, 'unknown.json');
+    const leftover = join(dir, 'leftover.json');
     writeFileSync(human, JSON.stringify({ transcript: 'x', transcript_status: { custody: 'human' } }));
     writeFileSync(found, JSON.stringify({
       transcript: 'Libby (00:01): hi',
@@ -511,9 +521,14 @@ test('skip-fathom-overwrite.mjs honors transcript_status on the trigger object',
       transcript: 'Fathom lookup incomplete for Jane (a@b.com) — 429 on page 2. This is not a confirmed absence.',
       transcript_status: { outcome: 'unknown', custody: 'machine' },
     }));
+    writeFileSync(leftover, JSON.stringify({
+      transcript: 'No Fathom transcript available (API returned 404 for a@b.com). Do not recommend coaching.',
+      transcript_status: { outcome: 'unknown', custody: 'machine' },
+    }));
     assert.equal(spawnSync(process.execPath, [script, human]).status, 0);
     assert.equal(spawnSync(process.execPath, [script, found]).status, 0);
     assert.equal(spawnSync(process.execPath, [script, unknown]).status, 1);
+    assert.equal(spawnSync(process.execPath, [script, leftover]).status, 0);
   } finally {
     rmSync(dir, { recursive: true, force: true });
   }

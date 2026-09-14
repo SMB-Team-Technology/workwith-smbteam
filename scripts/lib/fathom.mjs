@@ -84,8 +84,10 @@ function sniffSkip(transcript) {
 /**
  * True when GHA should leave trigger.transcript alone.
  * Accepts the transcript string (legacy) or the parsed trigger object.
- * When transcript_status is present: human custody or outcome found → skip;
- * otherwise fallback-eligible (absent / unknown / found_empty).
+ * When transcript_status is present: human custody, outcome found, or a
+ * miss/incomplete string with leftover closer notes → skip. Unknown/absent
+ * miss-only still allows HubSpot. Unrecognized prose with unknown status
+ * does not skip (that would block fallback).
  */
 export function shouldSkipFathomOverwrite(transcriptOrTrigger) {
   if (transcriptOrTrigger && typeof transcriptOrTrigger === 'object' && !Array.isArray(transcriptOrTrigger)) {
@@ -93,6 +95,8 @@ export function shouldSkipFathomOverwrite(transcriptOrTrigger) {
     if (st && typeof st === 'object') {
       if (isHumanTrigger(transcriptOrTrigger)) return true;
       if (st.outcome === 'found') return true;
+      const t = transcriptOrTrigger.transcript;
+      if (typeof t === 'string' && MISS_FAMILY.test(t.trim()) && sniffSkip(t)) return true;
       return false;
     }
     return sniffSkip(transcriptOrTrigger.transcript);
