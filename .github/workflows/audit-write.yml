@@ -29,8 +29,12 @@ jobs:
       - name: Install Claude Code CLI
         run: npm install -g @anthropic-ai/claude-code
 
-      - name: Install Python deps for PDF generation
-        run: pip install reportlab pypdf beautifulsoup4 --break-system-packages --quiet
+      - name: Install Python deps for PDF and PPTX generation
+        # python-pptx was previously never pinned here — the audit-pptx skill's
+        # `claude -p` invocation was installing it ad hoc via its own Bash tool
+        # calls, which don't surface in this step's log, making the deck
+        # toolchain unreviewed and uncached. Declare it explicitly instead.
+        run: pip install reportlab pypdf beautifulsoup4 python-pptx --break-system-packages --quiet
 
       - name: Find trigger file and parse inputs
         id: inputs

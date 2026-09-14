@@ -610,7 +610,7 @@ Note these in the research notes file for the sales team. Do not include in the 
 After all 10 sections are saved, run:
 
 ```bash
-pip install reportlab pypdf --break-system-packages --quiet
+pip install reportlab pypdf python-pptx --break-system-packages --quiet
 ```
 
 Then assemble the audit HTML via Python (avoids loading all sections back into context):
