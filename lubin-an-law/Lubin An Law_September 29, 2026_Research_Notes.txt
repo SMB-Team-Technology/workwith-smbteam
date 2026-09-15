@@ -1,0 +1,554 @@
+LAW FIRM GROWTH AUDIT — RESEARCH NOTES
+Firm: Lubin An Law
+Friendly Name: lubin-an-law
+Date of Discovery Call: September 15, 2026
+Proposal/Solution Call Date: September 29, 2026
+Sales Rep: Dan Bryant
+Researcher: Claude Code Audit Agent
+Notes Completed: September 15, 2026
+
+═══════════════════════════════════════════════════════════════════
+ENVIRONMENT LIMITATION NOTICE — READ BEFORE USING THIS FILE
+═══════════════════════════════════════════════════════════════════
+
+This research session had no live browser / computer-use tool available —
+only static page fetch (WebFetch) and web search (WebSearch). Several steps
+in the audit-research process require interactively loading and reading
+live, JavaScript-rendered surfaces (Google Maps/GBP panel, Google Search
+local 3-pack, PageSpeed Insights run, Google Ads SERP, Local Service Ads
+carousel, Meta Ads Library). Those surfaces either returned errors to
+static fetch tools or require rendered/paginated interaction that a search
+snippet cannot substitute for.
+
+Per the REVIEW-DATA VERIFICATION RULE, every number below that was not read
+directly off a live Google listing is tagged UNCONFIRMED with its actual
+source. Sections that could not be populated with real live data at all
+(PageSpeed, 3-pack composition, LSA, Meta Ads) are marked NOT OBTAINABLE IN
+THIS ENVIRONMENT rather than filled with invented numbers.
+
+MANUAL VERIFICATION RECOMMENDED before /audit-write finalizes any
+client-facing figure sourced from this file: run PageSpeed Insights
+directly, and pull up the firm's GBP and the three named competitors on
+Google Maps to confirm live star ratings/review counts.
+
+The firm's website (lubinanlaw.com) DID resolve live and was browsed via
+page fetch — those observations are direct, not fabricated.
+
+═══════════════════════════════════════════════════════════════════
+STEP 1 — WEBSITE RESEARCH
+═══════════════════════════════════════════════════════════════════
+
+Website URL confirmed live: Yes — https://www.lubinanlaw.com/
+
+Last redesign date or estimated age: Not confirmed. Footer copyright reads
+"Copyright © 2026, LUBIN AN LAW, LLC" (auto-updating year, not a redesign
+signal). Wayback Machine (web.archive.org) was unreachable during this
+research session ("Internet Archive: Temporarily Offline") so site history
+could not be checked. Site does not read as freshly redesigned — templated
+structure is consistent with the transcript's account that the site is
+built/managed by current vendor Speakeasy Marketing on a shared template.
+
+Mobile responsive: Appears yes — collapsible navigation and tap-friendly
+phone number links observed in page structure — but not confirmed via
+actual device/viewport testing.
+
+Homepage headline (exact text): "You Have The Right To The Best Defense"
+
+CTA above fold: Yes — "Schedule a consultation!" button positioned directly
+beneath the main headline.
+
+Contact form location: Above fold — includes a practice-area dropdown
+(Criminal Defense, DUI/DWI, Drug & Weapons Charges, Violent Crime, Sex
+Crime).
+
+Live chat present: No.
+
+Attorney bio present: Yes — full profile for Lubin An at
+/attorney-profile/lubin-an/. Notes he has defended clients since 2007, JD
+from Western Michigan University Cooley Law School, University of Georgia
+undergrad, describes a "WTT (Wording, Timing, and Tone)" case approach.
+
+Video present: Yes, but not embedded on the homepage or bio page — main
+navigation links to a video library ("Drug Charges FAQ Videos," "Drug &
+Weapons Charges FAQ Videos").
+
+Blog present: Yes — "Articles" section at /articles/ with at least 8 posts
+observed (e.g., "How Plea Deals Work In Georgia Criminal Cases," "Will A
+Violent Crime Conviction Ruin My Life?," "DUI Vs. Drug DUI In Georgia,"
+"Can You Get A Drug Conviction Expunged In Georgia?," drug possession and
+drug paraphernalia guides). No publish dates are displayed anywhere on the
+articles page or post previews — last post date could not be determined.
+
+Additional site observations tying to transcript:
+- Practice area pages do not appear to carry strong geo/keyword alignment
+  in visible headings — consistent with the prospect's own complaint that
+  "practice pages lack geo/keyword alignment."
+- No case-results page, no press/media page, and no visible newsletter
+  archive found — consistent with the transcript's note that the prospect
+  is "not leveraging case results/content reviews/newsletters" from his
+  current vendor.
+- No Korean-language version of the site found — consistent with the
+  transcript's note that a Korean site version was discussed as an
+  untapped opportunity.
+
+PageSpeed mobile score: NOT OBTAINABLE IN THIS ENVIRONMENT. The Google
+PageSpeed Insights API (googleapis.com/pagespeedonline) returned HTTP 429
+"Quota exceeded for quota metric 'Queries' and limit 'Queries per day'"
+on repeated attempts, and pagespeed.web.dev is a JavaScript app that
+returns only a "Running analysis... data loading" shell to a static fetch.
+MANUAL TEST REQUIRED: https://pagespeed.web.dev/report?url=https://www.lubinanlaw.com/
+
+PageSpeed desktop score: NOT OBTAINABLE IN THIS ENVIRONMENT — same reason
+as above.
+
+═══════════════════════════════════════════════════════════════════
+STEP 2 — GOOGLE BUSINESS PROFILE
+═══════════════════════════════════════════════════════════════════
+
+GBP found: Not confirmed directly — Google Search and Google Maps did not
+return a readable business panel to the fetch tool available in this
+environment (Google Search results page returned only an error/support
+shell with no panel data). The firm is presumed to have an active GBP
+given its established web/directory presence, but this was not read
+directly off Google.
+
+Star rating: UNCONFIRMED — no Google-specific figure could be read.
+Closest available proxy: Avvo Rating 7.4 ("Very Good") with 57 client
+reviews scored 5.0/5.0 [UNCONFIRMED — sourced from Avvo attorney profile,
+not independently confirmed via Google].
+
+Total review count: UNCONFIRMED — same limitation as above. Do not treat
+the Avvo figure as a Google review count; it is a different platform.
+
+Most recent review date: Not observed.
+
+Primary category: Not read directly from GBP. Inferred as "Criminal
+Justice Attorney" / "Criminal Defense Attorney" from FindLaw and site
+content — not confirmed as the exact GBP category string.
+
+Photos active / Posts active: Not observed — could not load the GBP panel.
+
+═══════════════════════════════════════════════════════════════════
+STEP 3 — LOCAL 3-PACK SEARCHES
+═══════════════════════════════════════════════════════════════════
+
+NOT OBTAINABLE IN THIS ENVIRONMENT. Rendering and reading the Google Maps
+local 3-pack requires an interactive/live browser session; the search and
+fetch tools available here return either blocked content or organic web
+results, not the Maps pack itself. No 3-pack composition (yes/no
+appearance, competitor names/review counts in-pack) could be recorded for
+any of the practice areas below without inventing data.
+
+Practice areas that would need this research:
+- Criminal Defense (Atlanta / Buckhead)
+- DUI Defense (Atlanta)
+- Drug & Weapons Charges (Atlanta)
+
+MANUAL VERIFICATION REQUIRED: run "criminal defense attorney Atlanta,"
+"DUI lawyer Atlanta," and "drug crime attorney Atlanta" (plus Buckhead
+variants) from a live, logged-out Google session and record the 3-pack.
+
+═══════════════════════════════════════════════════════════════════
+STEP 4 — COMPETITOR REVIEW COUNTS
+═══════════════════════════════════════════════════════════════════
+
+Per the transcript, the prospect named three specific local competitors:
+Ahmad Cruz (building/floor-mate, reportedly ~88 reviews and outranking
+him in Maps), Kevin Fisher (strong maps coverage), and Brian Howard
+(multi-location, heavy ads). Research below confirms identities/addresses
+but could NOT independently verify live Google review counts for any of
+them in this environment.
+
+- Competitor 1: The Law Office of Ahmad R. Crews (transcript spelling
+  "Ahmad Cruz" — correct legal name is "Crews"). Address: 1800 Peachtree
+  St NW Ste 335, Atlanta, GA — CONFIRMED same building as Lubin An Law
+  (Ste 300), supporting the prospect's "shares building/floor" claim.
+  Reviews: prospect stated ~88 reviews on the call — NOT independently
+  verified [UNCONFIRMED — sourced from prospect's own statement on the
+  discovery call, not confirmed via Google]. Rating: not obtained.
+
+- Competitor 2: Law Office of Kevin R. Fisher. Address: 1800 Peachtree St
+  NW, Atlanta, GA — also listed at the same building. Reviews/rating:
+  UNCONFIRMED — no direct Google figure found; Avvo/FindLaw profiles
+  confirm strong positive client sentiment but list no aggregate score
+  usable as a review count [UNCONFIRMED — sourced from Avvo/FindLaw
+  directory pages, not confirmed via Google].
+
+- Competitor 3: Howard Law Group / Howard and Arca Attorneys at Law
+  (attorney Bryan/"Brian" Howard). Multi-location: Douglasville,
+  Carrollton, Smyrna, and Metro Atlanta — confirms transcript's
+  "multi-location; heavy ads" description. Reviews: Avvo shows 67 total
+  reviews (66 five-star, 1 four-star) [UNCONFIRMED — sourced from Avvo,
+  not confirmed via Google].
+
+VERIFICATION NOTE: Because no competitor review count above was read
+directly off Google, none should be presented to the client as a confirmed
+number that "beats" the prospect's own (also unconfirmed) count. The
+prospect's self-reported ~88 for Ahmad Crews is the only "competitor ahead
+of me" claim on record, and it came from the prospect himself, not from
+independent verification.
+
+═══════════════════════════════════════════════════════════════════
+STEP 5 — DIRECTORY LISTINGS
+═══════════════════════════════════════════════════════════════════
+
+Avvo: LISTED — "Lubin Choon An," Avvo Rating 7.4 ("Very Good"), 57 reviews
+at 5.0/5.0. Address matches: 1800 Peachtree St NW Ste 300, Atlanta, GA
+30309-2504. Practice areas listed: Criminal Defense (50%), DUI and DWI
+(10%), Drug Crime (10%), Sex Crime (10%), Speeding/Traffic Ticket (10%),
+Violent Crime (10%). Client's Choice Award noted for 2021, 2023, 2024,
+2025.
+
+FindLaw: LISTED — "Lubin An Law, LLC," Managing Attorney Lubin An, address
+1800 Peachtree St NW Ste 300, Atlanta, GA 30309, phone 404-247-2030 —
+NAP MATCHES transcript-provided phone (4042472030) and website address.
+
+Justia: NOT FOUND — no Justia lawyer profile located for "Lubin An" or
+"Lubin An Law" in searches. This is a gap worth flagging as a missing
+directory/citation opportunity.
+
+Yelp: LISTED — "LUBIN AN LAW LLC," 1800 Peachtree St NW, Atlanta —
+confirmed via search result snippet only; direct page fetch returned
+403 Forbidden so star rating/review count could not be read.
+
+Lawyers.com: LISTED (firm and attorney profile pages found in search) —
+direct fetch returned 403 Forbidden; content not confirmed beyond listing
+existing.
+
+LawInfo: LISTED — "Lubin An Law, LLC - Atlanta, GA Criminal Defense Law
+Firm."
+
+NAP consistency: No inconsistencies found across the listings that could
+be read (site, Avvo, FindLaw all show 1800 Peachtree St NW Ste 300,
+Atlanta, GA 30309, phone 404-247-2030).
+
+Geo-targeting landing pages: Not observed. lubinanlaw.com does not appear
+to have dedicated landing pages for surrounding cities/suburbs beyond the
+Atlanta/Buckhead service area — a gap given the firm draws from the wider
+metro area.
+
+═══════════════════════════════════════════════════════════════════
+STEP 6 — GOOGLE ADS
+═══════════════════════════════════════════════════════════════════
+
+NOT OBTAINABLE IN THIS ENVIRONMENT for direct ad observation — reading
+live Google Ads placements requires an interactive search session, which
+this environment's tools do not provide (search results returned organic
+directory/listing links only, never sponsored placements).
+
+Practice Area 1: Criminal Defense (Atlanta)
+- Firm ads observed: Not observed in available data. Per transcript, the
+  firm has "no LSA/PPC to date" — consistent with finding no ad presence.
+- Named local competitors running ads: Not confirmed — could not load a
+  live SERP to check. Howard Law Group's multi-location structure and
+  the transcript's "heavy ads" description make it the most likely paid
+  advertiser among the three named competitors, but this is the
+  prospect's characterization, not independently observed ad copy.
+
+Practice Area 2: DUI/DWI (Atlanta)
+- Firm ads observed: Not observed / not applicable — transcript confirms
+  no ads have ever been run.
+- Named local competitors running ads: Not confirmed live (see above).
+
+Practice Area 3: Drug & Weapons Charges (Atlanta)
+- Firm ads observed: Not observed / not applicable.
+- Named local competitors running ads: Not confirmed live.
+
+MANUAL VERIFICATION REQUIRED: search "criminal defense attorney Atlanta,"
+"DUI lawyer Atlanta," and "drug crime lawyer Atlanta" live and record any
+sponsored results, with exact headline/description text for the firm and
+for Ahmad Crews, Kevin Fisher, and Howard Law Group specifically.
+
+═══════════════════════════════════════════════════════════════════
+STEP 7 — LOCAL SERVICE ADS
+═══════════════════════════════════════════════════════════════════
+
+NOT OBTAINABLE IN THIS ENVIRONMENT — the LSA carousel is a live-rendered
+Google Search feature; no view of it could be captured with static fetch
+or web search tools.
+
+- Firm appears in LSA: Not observed. Transcript confirms the prospect has
+  never run LSAs ("No LSA/PPC to date... understands CPL ~$190–$210...
+  open to starting").
+- Google Screened: Not observed / not applicable — firm has not enrolled.
+- LSA review count: Not applicable.
+- Named local competitors in LSA: Not confirmed — MANUAL VERIFICATION
+  REQUIRED for Ahmad Crews, Kevin Fisher, and Howard Law Group.
+
+═══════════════════════════════════════════════════════════════════
+STEP 8 — META ADS
+═══════════════════════════════════════════════════════════════════
+
+Direct access to Meta Ads Library (facebook.com/ads/library) returned
+HTTP 403 Forbidden to the fetch tool available in this environment, and no
+alternate path to the Ads Library's data exists without a live browser
+session.
+
+- Firm has active ads: Not observed / not confirmed. No firm-run social
+  ad activity is mentioned anywhere in the transcript (marketing spend of
+  ~$1,600/month is described as going entirely to Speakeasy Marketing for
+  website/content/social management, not paid social ads).
+- Named local competitor 1: Ahmad R. Crews — active ads: not confirmed
+  (Meta Ads Library inaccessible in this environment).
+- Named local competitor 2: Howard Law Group — active ads: not confirmed,
+  though the transcript's "heavy ads" description makes this the most
+  likely of the three to be running paid social, given its multi-location
+  scale.
+
+MANUAL VERIFICATION REQUIRED: search Meta Ads Library directly for "Lubin
+An Law," "Ahmad Crews," "Kevin Fisher," and "Howard Law Group."
+
+═══════════════════════════════════════════════════════════════════
+STEP 9 — TRANSCRIPT EXTRACTION
+═══════════════════════════════════════════════════════════════════
+
+(All values below are taken directly from the September 15, 2026 discovery
+call transcript between Dan Bryant and Lubin An. Transcript is ground
+truth per the TRANSCRIPT-FIRST RULE.)
+
+Practice areas confirmed:
+  - Criminal Defense (general) — Atlanta/Buckhead
+  - DUI/DWI — high volume, "not favorite but predictable"
+  - Drug & Weapons Charges, incl. drug trafficking/felonies — stated
+    favorite ("$7.5k–$10k typical")
+  - Violent Crime
+  - Sex Crime
+  - Domestic Violence (listed on website; not separately discussed on call)
+
+Current lead sources: Referrals (best clients); online channels via
+current vendor Speakeasy Marketing (inconsistent quality); prospect fields
+all calls personally.
+
+Ads ever run: No. "No LSA/PPC to date." Open to starting; understands CPL
+~$190–$210; starter ad budget guidance discussed at $2k–$4k/month; new
+advertiser Google credits available.
+
+Team size: 1 (solo attorney) — no answering service, no dedicated intake
+staff. Past experience of being overworked when adding support without
+processes in place.
+
+Annual revenue (gross / case value): ~$300,000/year (~$25,000/month).
+
+Annual revenue (net / take-home / collected): Not distinguished from
+gross in transcript.
+
+Fee structure: Not stated as a percentage/structure category — flat-fee
+pricing examples given per case type (see Average case value below).
+
+Revenue goal: "Doubling current revenue would be great" — implicit target
+~$600,000/year. Explicitly prefers higher-value matters over more case
+volume.
+
+Average case value: ~$5,000 typical; can dip to $3,000–$4,000 in slow
+periods; felonies generally $7,500–$10,000. DUI 1st offense ~$5,000;
+minimum case target ≥$3,000; avoids low-value traffic tickets unless high
+stakes (e.g., license suspension risk).
+
+Current close rate: Not stated as a percentage. Self-reported as "strong"
+when he personally speaks to the lead; ~70–75% of clients retained without
+ever meeting in person (phone-based consults). Default 15% should NOT
+override this — the prospect's qualitative claim of a strong close rate
+on calls he personally handles is on record and should be used with that
+caveat, but no numeric close rate is available.
+
+Number of locations: 1 (not explicitly stated as "1" but no other location
+mentioned — default applies).
+
+Spanish campaign needed: No — Korean-language site version discussed
+instead (prospect is bilingual Korean; not currently focused on Korean
+niche but open to translation for SEO leverage).
+
+Dominant buying motive (DBM): Build a more profitable practice with
+higher-value cases and consistent lead flow, without being "prisoner to
+the practice." Increase profit without substantially increasing case
+count. Personal layer: reduce financial stress and stabilize cash flow
+during a personal transition (divorce, back taxes, high credit card
+utilization); regain time and control; lessen reliance on referral
+seasonality; wants "done-for-you" execution with minimal time burden.
+Closest direct quotes: "I feel like I just have a website up." / "I just
+got to get my [stuff] together for a little bit." This best maps to
+DBM category (1): a firm that runs itself so the owner has more time and
+less financial/operational chaos — not "grow and sell" or "scale and
+dominate," since he explicitly does not want more volume, just more
+value per case and less personal overhead.
+
+Any profitability claims made by prospect: None stated (no dollar profit
+margin or take-home figures given — only gross case revenue described
+above).
+
+Any claims about case types or practice areas: "70–75% of my clients I've
+never even met" (phone-based consult model); prefers drug
+felonies/trafficking ("favorite"); DUI high-volume but "not favorite but
+predictable"; avoids low-value traffic tickets unless high stakes.
+
+Stated call focus / product interest: Standard marketing/growth
+discovery — the call was framed around improving lead generation
+consistency/quality and assessing marketing beyond the current vendor.
+Not a Fractional CTO/AI, coaching-only, or ops-only engagement.
+
+Existing marketing/SEO/ad vendor engagements: Yes — Speakeasy Marketing,
+active engagement (~$1,600/month) covering website (templated), content,
+and social media management. Prospect is dissatisfied: not leveraging
+case results/content reviews/newsletters the vendor provides, feels the
+site layout and SEO basics are wrong ("I feel like I just have a website
+up").
+
+Budget constraints stated: Yes — personal financial disorganization
+(back taxes outstanding, ongoing divorce, high credit card utilization,
+not seeking new credit, credit score impacted) is paying current
+marketing on a credit card; open to weekly billing to smooth cash flow.
+Requested ~10 days to organize finances before the proposal/solution call.
+
+═══════════════════════════════════════════════════════════════════
+STEP 10 — COMPETITIVE URGENCY SCORE
+═══════════════════════════════════════════════════════════════════
+
+Score: 7 / 10
+
+Reasoning: The prospect shares a building/floor with a directly named
+competitor (Ahmad Crews) who he says outranks him in Maps and has
+meaningfully more reviews — about as close and immediate a threat as a
+solo firm can face. A second named competitor (Kevin Fisher) is also
+headquartered in the same building with what the prospect describes as
+strong Maps coverage. A third (Howard Law Group) operates at multi-location
+scale with heavy advertising, which the prospect has never attempted
+himself (no LSA/PPC to date). Meanwhile the prospect's own marketing is
+limited to an underused website/content/social retainer, no after-hours
+coverage, and no answering service — while criminal defense demand
+(DUI/arrests) skews toward evenings and weekends when he is unreachable.
+This is a multi-channel gap (maps ranking, review volume, paid search,
+after-hours coverage) rather than a single weak spot, which is why this
+sits at the boundary between "meaningful disadvantage" and "dominating
+multiple channels" — placed at 7 given the immediacy of the same-building
+competitive proximity.
+
+Named competitor threats:
+
+1. AHMAD R. CREWS (Law Office of Ahmad R. Crews) — Shares the exact same
+   building (1800 Peachtree St NW) one floor away (Ste 335 vs. prospect's
+   Ste 300). Per the prospect's own account, outranks him in local Maps
+   results and holds roughly 88 reviews to the prospect's unconfirmed,
+   likely smaller count. Physical proximity means any client comparing
+   options in the building's directory or a quick Maps search sees both
+   firms side by side.
+
+2. KEVIN R. FISHER (Law Office of Kevin R. Fisher) — Also based at 1800
+   Peachtree St NW. Prospect describes his Maps coverage as strong. A
+   second same-building threat compounding the Crews proximity problem.
+
+3. HOWARD LAW GROUP (Bryan "Brian" Howard) — Multi-location firm
+   (Douglasville, Carrollton, Smyrna, Metro Atlanta) that the prospect
+   describes as running heavy ads — a channel the prospect has never
+   used. 67 reviews on Avvo signal an established, actively-marketed
+   practice reaching beyond a single office the way the prospect's solo,
+   referral-heavy model does not.
+
+Urgency statement:
+"A score of 7 means competitors are actively dominating multiple channels
+in your market and the gap is getting wider every month you wait. This is
+not a future problem — it is a right now problem."
+
+═══════════════════════════════════════════════════════════════════
+ADDITIONAL CONTEXT FOR AUDIT WRITER
+═══════════════════════════════════════════════════════════════════
+
+- Prospect requested ~10 days to organize personal finances before the
+  solution call; proposal call is currently scheduled September 29, 2026.
+  Personal financial stress (back taxes, divorce, credit card debt) is a
+  live constraint — the ADS FRAMING RULE and general tone should stay
+  sensitive to affordability; weekly billing was discussed as a way to
+  smooth cash flow and should be treated as a real option, not a
+  throwaway line.
+- Underutilization of the current vendor's deliverables (case results,
+  content approvals, newsletters) is a "quick win" opportunity distinct
+  from switching vendors entirely — the prospect has paid-for assets
+  sitting unused.
+- Quick wins explicitly discussed on the call: update GBP cover photo to
+  a professional headshot; extend hours / consider 24-7 coverage with an
+  answering service; Smith.ai trial; push for more Google reviews; fix
+  site titles/H1s; consider a Korean-language site version.
+- No after-hours coverage is a specific, quantifiable gap given his
+  practice mix (DUI/criminal arrests skew evenings/weekends) — this
+  should be a headline finding regardless of what PageSpeed/GBP numbers
+  end up being once manually verified.
+
+═══════════════════════════════════════════════════════════════════
+PASS 2 — VERIFICATION CHECKLIST
+═══════════════════════════════════════════════════════════════════
+
+[x] Every number in the notes matches actually observed data, or is
+    explicitly flagged UNCONFIRMED / NOT OBTAINABLE IN THIS ENVIRONMENT
+    where direct live access was not possible with available tools
+[x] No competitor review count is presented as confirmed fact beating the
+    prospect's own count — the only "ahead of me" claim (Ahmad Crews,
+    ~88 reviews) is tagged as the prospect's own unverified statement
+[x] Every review count and star rating carries a verification-method tag
+    ([UNCONFIRMED — sourced from ...]) — no bare numbers recorded
+[x] Revenue is recorded as a single gross figure per transcript (prospect
+    did not distinguish net/take-home); fee structure recorded as
+    flat-fee-by-case-type examples, no single stated structure
+[x] Ad sections (Google Ads, LSA, Meta) cover all three named practice
+    areas / all three named competitors, with "not observed"/"not
+    confirmed" framing throughout — no ad section claims direct
+    observation that didn't happen
+[x] No section states "you are not running ads" — framing used:
+    "does not appear to be running" / "not observed" / "not confirmed"
+[x] No profitability or business claim appears beyond what the transcript
+    states (none stated)
+[x] No competitor reference uses generic labels — all three are named,
+    specific local firms with confirmed addresses/identities
+[x] PageSpeed scores: FLAGGED as not obtainable in this environment
+    (API quota exhausted, live tool inaccessible) — manual test link
+    provided
+[x] DBM recorded — inferred from multiple direct quotes, mapped to
+    category (1) firm-runs-itself/more-time, with reasoning shown
+[x] Revenue goal recorded: implicit ~$600k/year (doubling), stated as
+    "would be great," not a hard target
+[x] Close rate recorded: no numeric figure stated; prospect's qualitative
+    "strong when I speak to the lead" claim recorded instead of silently
+    defaulting to 15%
+[x] Average case value recorded: ~$5,000 typical, $3,000–$4,000 low,
+    $7,500–$10,000 felonies — directly from transcript
+[x] Stated call focus recorded explicitly: standard marketing/growth
+    discovery (not Fractional CTO/AI or coaching-only)
+[x] Existing vendor engagement recorded: Speakeasy Marketing, ~$1,600/mo,
+    active and unsatisfactory
+[x] Budget constraints recorded: back taxes, divorce, high credit card
+    utilization, paying marketing on credit card, open to weekly billing
+
+═══════════════════════════════════════════════════════════════════
+SOURCES CONSULTED
+═══════════════════════════════════════════════════════════════════
+
+- lubinanlaw.com (direct live fetch — homepage, articles/blog listing,
+  attorney profile page)
+- avvo.com/attorneys/30309-ga-lubin-an-1720119.html
+- lawyers.findlaw.com/profile/lawyer/lubin-an/ga/atlanta/NTIzMDE0MF8x/PP
+- lawyers.findlaw.com (firm profile — Lubin An Law, LLC)
+- yelp.com/biz/lubin-an-law-llc-atlanta (search snippet only — direct
+  fetch blocked, HTTP 403)
+- lawyers.com/atlanta/georgia/lubin-an-law-llc-300052209-f/ (search
+  snippet only — direct fetch blocked, HTTP 403)
+- lawinfo.com/lawfirm/georgia/atlanta/lubin-an-law-llc/... (listing
+  confirmed via search)
+- reviews.birdeye.com/lubin-law-pc-169736040379091 (checked and RULED
+  OUT — different firm/address, 8325 Dunwoody Pl, not 1800 Peachtree)
+- pview.findlaw.com/lawfirm/law-office-of-ahmad-r-crews/... (Ahmad Crews
+  — competitor identity/address confirmation)
+- yelp.com/biz/the-law-office-of-ahmad-r-crews-atlanta-2 (search snippet)
+- lawyers.findlaw.com/georgia/atlanta/... Kevin R. Fisher profile pages
+- avvo.com/attorneys/30309-ga-kevin-fisher-1712569/reviews.html
+- lawyerhoward.com / lawyers.com Howard Law Group / Howard and Arca
+  Attorneys at Law pages (Bryan Howard — multi-location confirmation)
+- avvo.com/attorneys/30134-ga-bryan-howard-2059309/reviews.html
+- googleapis.com/pagespeedonline/v5/runPagespeed (attempted — HTTP 429
+  quota exceeded, both mobile and desktop)
+- pagespeed.web.dev (attempted — client-side app, no score renderable
+  via static fetch)
+- web.archive.org / archive.org wayback API (attempted — service
+  temporarily offline during this session)
+- google.com/search, bing.com/search (attempted for GBP panel — no
+  business panel data returned)
+- facebook.com/ads/library (attempted — HTTP 403 Forbidden)
+- September 15, 2026 discovery call transcript (primary source, via
+  Fathom/HubSpot)
