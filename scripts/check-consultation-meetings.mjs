@@ -15,8 +15,8 @@
  *   FATHOM_API_KEY  — Fathom API key (fathom.video → Settings → API)
  */
 
-import { writeFileSync, readFileSync, existsSync, mkdirSync } from 'fs';
-import { getFathomTranscript as _getFathomTranscript } from './lib/fathom.mjs';
+import { readFileSync, existsSync, mkdirSync } from 'fs';
+import { getFathomTranscriptResult, mergeTrigger, writeTriggerAtomic } from './lib/fathom.mjs';
 
 const HUBSPOT_TOKEN  = process.env.HUBSPOT_TOKEN;
 const FATHOM_API_KEY = process.env.FATHOM_API_KEY;
@@ -189,8 +189,8 @@ async function getNewestDealOwner(contactId) {
 // Fathom
 // ---------------------------------------------------------------------------
 
-function getFathomTranscript(email, contactName) {
-  return _getFathomTranscript(email, contactName, FATHOM_API_KEY);
+function lookupTranscript(email, contactName) {
+  return getFathomTranscriptResult(email, contactName, FATHOM_API_KEY);
 }
 
 // ---------------------------------------------------------------------------
@@ -244,15 +244,20 @@ async function main() {
     console.log(`  Contact: ${contactName} — ${firmName}`);
 
     // Deduplication: skip if already triggered for this exact meeting ID
+    let existing = null;
     if (existsSync(triggerPath)) {
       try {
-        const existing = JSON.parse(readFileSync(triggerPath, 'utf8'));
-        if (existing._triggered_meeting_id === meetingId) {
-          console.log(`  Already triggered for meeting ID ${meetingId} — skipping.\n`);
-          skipped++;
-          continue;
-        }
-      } catch (_) { /* malformed file — overwrite */ }
+        existing = JSON.parse(readFileSync(triggerPath, 'utf8'));
+      } catch (err) {
+        console.warn(`  Malformed trigger ${triggerPath} — skipping overwrite (${err.message}).\n`);
+        skipped++;
+        continue;
+      }
+      if (existing._triggered_meeting_id === meetingId) {
+        console.log(`  Already triggered for meeting ID ${meetingId} — skipping.\n`);
+        skipped++;
+        continue;
+      }
     }
 
     // Sales rep: try newest deal owner, fall back to contact owner
@@ -261,10 +266,10 @@ async function main() {
       dealOwner = await getOwnerDetails(cp.hubspot_owner_id);
     }
 
-    const transcript = await getFathomTranscript(cp.email, contactName);
+    const lookup     = await lookupTranscript(cp.email, contactName);
     const auditDate  = formatDate(new Date());
 
-    const triggerData = {
+    const triggerData = mergeTrigger(existing, {
       firm_name:              firmName,
       friendly_name:          friendlyName,
       url:                    cp.website || '',
@@ -276,10 +281,9 @@ async function main() {
       meeting_title:          meetingTitle,
       suppress_pricing:       true,
       _triggered_meeting_id:  meetingId,
-      transcript,
-    };
+    }, lookup);
 
-    writeFileSync(triggerPath, JSON.stringify(triggerData, null, 2));
+    writeTriggerAtomic(triggerPath, triggerData);
     console.log(`  Wrote trigger: ${triggerPath}\n`);
     triggered++;
   }
