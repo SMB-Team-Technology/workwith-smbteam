@@ -1,11 +1,11 @@
 {
   "confidence": "low",
-  "revenue_stated": null,
+  "revenue_stated": 400000,
   "net_revenue_stated": null,
   "is_contingency_practice": true,
-  "revenue_effective": 500000,
-  "revenue_source": "default",
-  "revenue_label": null,
+  "revenue_effective": 400000,
+  "revenue_source": "seller_slack_override",
+  "revenue_label": "$400,000/yr (seller-provided correction via Slack, supersedes default estimate of $500,000)",
   "team_size_stated": null,
   "team_size_effective": 3,
   "practice_areas_detected": [
@@ -19,18 +19,18 @@
     "catastrophic injuries",
     "wrongful"
   ],
-  "marketing_tier": "Starter",
-  "marketing_name": "Full Service Marketing — Starter",
-  "marketing_price_bundled": 4997,
-  "marketing_price_retail": 5697,
-  "marketing_savings": 700,
+  "marketing_tier": null,
+  "marketing_name": null,
+  "marketing_price_bundled": null,
+  "marketing_price_retail": null,
+  "marketing_savings": null,
   "coaching_name": "Elite Coach Plus",
-  "coaching_price_bundled": 3200,
+  "coaching_price_bundled": 3497,
   "coaching_price_retail": 3497,
-  "coaching_savings": 297,
+  "coaching_savings": 0,
   "law_tier": null,
-  "total_bundled": 8197,
-  "total_savings": 997,
+  "total_bundled": 3497,
+  "total_savings": 0,
   "ad_spend_conservative": 0,
   "ad_spend_aggressive": 0,
   "selection_notes": [
@@ -38,6 +38,9 @@
     "Team size not stated in research notes — defaulting to 3. Review for coaching tier accuracy.",
     "Revenue under $750K but multiple practice areas detected: Essentials hidden (requires single practice area) — Starter tier.",
     "Revenue $400K–$1M: Elite Coach Plus selected.",
-    "Seller override: switched to web/SEO-only growth plan per Slack request on September 8, 2026 — paid ad spend removed (was $10,000-$20,000/mo conservative-aggressive); marketing/coaching tiers unchanged and continue to cover SEO and website work."
+    "Seller override: switched to web/SEO-only growth plan per Slack request on September 8, 2026 — paid ad spend removed (was $10,000-$20,000/mo conservative-aggressive); marketing/coaching tiers unchanged and continue to cover SEO and website work.",
+    "Seller override: revenue corrected to $400,000/yr per Slack reply on September 15, 2026 (supersedes prior $500,000 default) — remains within the $400K-$1M band so Elite Coach Plus tier is unaffected.",
+    "Seller override: Full Service Marketing removed entirely per Slack request on September 15, 2026 — keep coaching only.",
+    "Seller override: package changed to Elite Coach Plus only, standalone, per Slack request on September 15, 2026 — priced at $3,497/mo per Design Files/Scoping_and_Ad_Spend_Guide.md (Elite Coach Plus stand-alone rate), $0 savings since no bundle discount applies — consistent with prior precedent (see oakwood-legal-group/package_decision.json, hiller-law/package_decision.json)."
   ]
 }
