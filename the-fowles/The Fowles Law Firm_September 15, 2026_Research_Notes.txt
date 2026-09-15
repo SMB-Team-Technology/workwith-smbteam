@@ -1,0 +1,343 @@
+THE FOWLES LAW FIRM — GROWTH AUDIT RESEARCH NOTES
+Date: September 15, 2026
+Sales Rep: Dan Bryant
+URL: https://thefowleslawfirm.com/
+Friendly Name: the-fowles
+
+===========================================================
+TOOLING LIMITATION NOTE (read before using this file)
+===========================================================
+This research session had live browser access to the firm's own site and to
+standard web search / page-fetch tools, but did NOT have a JS-rendering
+browser for Google Maps local pack, Google SERP ad slots, Google Local
+Service Ads, the Meta Ad Library, or the interactive pagespeed.web.dev tool.
+The PageSpeed Insights REST API was also attempted directly and returned
+HTTP 429 (rate-limited) on five separate attempts across the session.
+
+Per the audit-research rules, PageSpeed scores and live verification figures
+must be real numbers, never estimates — so where a live check could not be
+completed, that is stated explicitly below instead of a fabricated number.
+Anything below marked "NOT INDEPENDENTLY VERIFIED — TOOL LIMITATION" should
+be re-checked with a live browser before /audit-write treats it as fact, and
+should not be printed as a specific figure in the client-facing report.
+
+===========================================================
+STEP 1 — WEBSITE RESEARCH
+===========================================================
+- Website URL confirmed live: yes
+- Last redesign date or estimated age: not explicitly determinable. Wayback
+  Machine has only a single archived snapshot (June 14, 2026) and the current
+  design was already in place at that snapshot, so the site predates that by
+  an unknown amount. NOT INDEPENDENTLY VERIFIED — TOOL LIMITATION (no fuller
+  Wayback history available).
+- Mobile responsive: yes (observed — structured nav, responsive layout patterns)
+- Homepage headline (exact text): "Criminal Defense Attorney for Aggressive Defense Representation"
+- CTA above fold: yes — "Schedule a Consultation" button appears prominently near the top
+- Contact form location: buried — appears below the fold in a lower "Contact us now!" section (name, phone, email, message, CAPTCHA)
+- Live chat present: no
+- Attorney bio present: yes — Justin Fowles, positioned as a "Former Prosecutor"
+- Video present: not observed
+- Blog present: yes — most recent post "They're Watching Your Car, Your Route, and Your Business — And Conroe Won't Even Tell You How" dated May 12, 2026 (~4 months stale as of this audit date). Prior post dated August 1, 2023, indicating a long publishing gap before the May 2026 post.
+
+PageSpeed mobile score: NOT INDEPENDENTLY VERIFIED — TOOL LIMITATION (PageSpeed Insights API returned HTTP 429 on repeated attempts; no interactive browser tool available to run pagespeed.web.dev live)
+PageSpeed desktop score: NOT INDEPENDENTLY VERIFIED — TOOL LIMITATION (same as above)
+
+===========================================================
+STEP 2 — GOOGLE BUSINESS PROFILE
+===========================================================
+- GBP found: yes (firm has an established local presence per multiple directories; the interactive Google Maps/GBP listing itself could not be rendered directly with available tools this session)
+- Star rating: 5.0 [UNCONFIRMED — sourced from TrustAnalytica aggregator, which attributes its data to Google ("G Google 91" label shown on the page), not independently confirmed via direct Google Maps]
+- Total review count: two conflicting figures on record —
+  - Transcript (Sept 15, 2026 call, most recent): "~114 Google reviews currently" [UNCONFIRMED — this is the prospect's/rep's own count as stated on the call, not independently re-verified live this session]
+  - TrustAnalytica aggregator: 91 reviews [UNCONFIRMED — sourced from TrustAnalytica, not independently confirmed via Google; likely a stale aggregator cache given it is lower than the more recent transcript figure]
+  Recommend live re-verification via a browser-capable tool before /audit-write cites an exact number; if forced to pick one, the transcript's more recent 114 is the better-dated source but is still self-reported, not independently confirmed via Google.
+- Most recent review date: NOT INDEPENDENTLY VERIFIED — TOOL LIMITATION
+- Primary category: "Criminal Justice Attorney" / "Criminal Defense Attorney" (consistent across directory listings found)
+- Photos active: NOT INDEPENDENTLY VERIFIED — TOOL LIMITATION
+- Posts active: NOT INDEPENDENTLY VERIFIED — TOOL LIMITATION
+
+===========================================================
+STEP 3 — LOCAL 3-PACK SEARCHES
+===========================================================
+NOT INDEPENDENTLY VERIFIED — TOOL LIMITATION: Google's local 3-pack/map pack
+could not be rendered with available tools this session (Google serves a
+stripped-down, JS-dependent page to non-browser fetchers). The figures below
+reflect the prospect's own tracked competitive standing as reported on the
+most recent discovery call (Sept 15, 2026), not a live re-check.
+
+Practice Area 1: Criminal Defense (DWI / drug / domestic violence — Conroe, TX)
+- Per transcript: firm holds ~4% share of Google Maps "3-pack" local voice search
+  results for its category, versus named local competitors:
+  - Doug Atkinson — ~100% share of voice per prospect's tracking
+  - Brian Foley — ~87% share of voice per prospect's tracking
+- Live keyword-by-keyword 3-pack composition (e.g. "Conroe criminal defense
+  attorney," "Conroe DWI lawyer," "Montgomery County drug lawyer") could not
+  be run this session — recommend a live pass before finalizing the report if
+  exact keyword-level 3-pack appearance is needed.
+
+===========================================================
+STEP 4 — COMPETITOR REVIEW COUNTS
+===========================================================
+- Competitor 1: Douglas W. Atkinson, Attorney at Law (Conroe, TX)
+  - Reviews: 32 [UNCONFIRMED — sourced from Yelp, not Google; no direct Google
+    review count could be located via available tools]
+  - Rating: 5.0 Client Rating [UNCONFIRMED — sourced from Martindale-Hubbell, not Google]
+- Competitor 2: Brian Foley Law PLLC (Conroe, TX)
+  - Reviews: 154 [UNCONFIRMED — sourced from Experience.com aggregator, which
+    describes them as "verified reviews" but this was not independently
+    confirmed via direct Google Maps]
+  - Rating: 4.97 [UNCONFIRMED — same source as above]
+  - Note: Brian Foley Law's own website reviews page independently claims
+    "100+ verified Google reviews" and 5-star average, consistent in direction
+    with the Experience.com figure but not an independent confirmation.
+- Competitor 3: "Zavala/Santos" (named in transcript) — NOT CONFIRMED. Web
+  research found no Conroe-based criminal defense firm operating under this
+  name. The closest match, "Zavala Texas Law" (attorney Charles Zavala), is a
+  Houston-based immigration/criminal defense firm with a reported 4.9 Google
+  rating [UNCONFIRMED — self-reported on firm's own site], but there is no
+  evidence it is a direct local competitor in Conroe. Recommend confirming the
+  exact competitor name/firm with the prospect before citing this competitor
+  by name in the final report — it may be a different, unlisted local firm.
+
+Reminder for /audit-write: none of the above review counts should be presented
+as a specific verified figure in the client-facing report given the
+UNCONFIRMED tags — round-number, directional language ("meaningfully more
+reviews than X") is appropriate; exact digit-for-digit claims are not.
+
+===========================================================
+STEP 5 — DIRECTORY LISTINGS
+===========================================================
+Directories checked: Yelp, Patch, TrustAnalytica, LegalListings.us,
+ReviewYourAttorney.com. Avvo, Justia, and FindLaw profiles were searched for
+specifically but not confirmed found in search results this session — NOT
+INDEPENDENTLY VERIFIED — TOOL LIMITATION (a direct-navigation check of those
+three sites was not completed).
+
+NAP consistency: Address (412 W Phillips St, Ste 124, Conroe, TX 77301) and
+phone ((713) 332-6813) were consistent across every listing found (Yelp,
+Patch, TrustAnalytica, LegalListings). No NAP inconsistencies observed in the
+listings checked.
+
+Geo-targeted landing pages: YES — confirmed the firm has built city-specific
+landing pages, including:
+- thefowleslawfirm.com/conroe/
+- thefowleslawfirm.com/montgomery/
+- thefowleslawfirm.com/criminal-defense-lawyer-in-the-woodlands-tx/
+- thefowleslawfirm.com/drug-crime-lawyer-in-the-woodlands-tx/
+- thefowleslawfirm.com/drug-crime-lawyer-in-montgomery-tx/
+- thefowleslawfirm.com/criminal-lawyer-houston/conroe-tx-77304/
+Pages reference surrounding neighborhoods/cities: Conroe, The Woodlands,
+Shenandoah, Spring, and Magnolia.
+
+Likely cannibalization confirmed: the site has BOTH a "Criminal Defense
+Lawyer in The Woodlands, TX" page AND a separate "Drug Crime Lawyer in The
+Woodlands, TX" page targeting overlapping intent/geography, plus a third
+generic "criminal-lawyer-houston/conroe-tx-77304" page also targeting Conroe.
+This corroborates the transcript's own flag of "possible page cannibalization."
+
+===========================================================
+STEP 6 — GOOGLE ADS
+===========================================================
+NOT INDEPENDENTLY VERIFIED — TOOL LIMITATION: live Google SERP ad slots could
+not be rendered with available tools this session.
+
+Practice Area 1: Criminal Defense (DWI / drug / domestic violence — Conroe, TX)
+- Firm ads observed: not observed (consistent with transcript, which states
+  the firm has no PPC/LSA currently active despite interest)
+- Named local competitors running ads: not independently observed this
+  session — per the ADS FRAMING RULE, this should be written up as "does not
+  appear to be running ads for this search" / "may be getting outbid," not as
+  a certainty, regardless of the tooling gap.
+
+===========================================================
+STEP 7 — LOCAL SERVICE ADS
+===========================================================
+NOT INDEPENDENTLY VERIFIED — TOOL LIMITATION (same rendering constraint as Step 6).
+- Firm appears in LSA: not observed (consistent with transcript — no LSA
+  currently active; Justin was evaluating this per the Sept 11 call)
+- Google Screened: not observed
+- LSA review count: n/a
+- Named local competitors in LSA: not observed this session
+
+===========================================================
+STEP 8 — META ADS
+===========================================================
+NOT INDEPENDENTLY VERIFIED — TOOL LIMITATION: https://www.facebook.com/ads/library/
+returned HTTP 403 Forbidden to the available fetch tool (Meta requires an
+authenticated/JS-capable browser session to view the Ad Library).
+- Firm has active ads: not observed / not accessible this session
+- Named local competitor 1 (Brian Foley Law): not accessible this session
+- Named local competitor 2 (Douglas Atkinson): not accessible this session
+
+===========================================================
+STEP 9 — TRANSCRIPT EXTRACTION
+===========================================================
+- Practice areas confirmed: Criminal defense — DWI, drug charges (often
+  felony), domestic violence, occasional Class C misdemeanors; explicitly NOT
+  traffic tickets. Justin is weighing whether to add a transactional
+  (estate/probate) practice line as a lower-labor, saleable second line.
+- Current lead sources: Organic SEO, press releases, referrals/reputation,
+  and LegalMatch (paid lead service, ~$775/month spend, ~$90K-$100K collected
+  over ~10 months per Justin/Iris).
+- Ads ever run: No direct PPC/LSA/Meta ad spend confirmed run by the firm to
+  date. LegalMatch (a paid lead-gen service, not a self-managed ad platform)
+  has been used with positive ROI but heavy lead-quality friction (large
+  volume of traffic-ticket leads the firm doesn't take, requiring manual
+  filtering by Iris).
+- Team size: 3 — Justin Fowles (Owner/Attorney), Iris (FT — intake, client
+  comms, de facto sales/ops, ~20 years sales experience, handles calls
+  24/7), a PT remote assistant (evidence downloads/calendar, minimal hours).
+- Annual revenue (gross / case value): ~$500K-$600K run rate in 2026; Justin
+  expects to land "mid-6" figures this year.
+- Annual revenue (net / take-home / collected): not distinguished from gross
+  in the transcript.
+- Fee structure: flat-fee, per case (e.g., DWI/drug/DV cases run $4,000-
+  $6,500; $5,000 used as the firm's working average); a payment-plan example
+  was cited live on the second call (walk-in PCS-THC felony client: $4,000
+  flat fee, $1K due day-of, $2K on 9/29, $1K on 10/6).
+- Revenue goal: $1M gross in ~3 years, with a longer-term aspirational path
+  to $3M-$5M gross intended to net $1M in profit.
+- Average case value: $5,000 (working average agreed on call 2; range
+  discussed was $4,000-$6,500).
+- Current close rate: ~30-32% per Lawmatics reporting; Dan (SMB Team)
+  recommended planning conservatively at 20-25%.
+- Number of locations: 1 (412 W Phillips St, Ste 124, Conroe, TX — not
+  mentioned as multi-location, so treated as single-location).
+- Spanish campaign needed: not stated.
+- Dominant buying motive: Build a self-managing firm within roughly 3 years,
+  working 10-20 hours/week, largely remote, to homeschool/travel with two
+  young children (daughter ~1.5, son ~4) and avoid a "die at the desk"
+  trajectory. Interested in a lower-labor transactional/estate-planning
+  practice line as a saleable asset supporting this lifestyle goal. This is a
+  clearly stated DBM (Category 1: firm that runs itself so the owner has more time).
+- Any profitability claims made by prospect: none stated beyond the revenue
+  figures and the stated long-term goal of "$3M-$5M gross to net $1M profit."
+  No documented profit target distinct from revenue exists today — the
+  transcript explicitly flags "no defined profit target distinct from
+  revenue target" as a current gap.
+- Any claims about case types or practice areas: DWIs "now rarely under $5K";
+  drug cases (often felony) "$4K-$5K+"; domestic violence cases similar
+  pricing; no traffic tickets taken; occasional Class C misdemeanors.
+- Stated call focus / product interest: Standard marketing/growth discovery
+  and proposal review — NOT a Fractional CTO/AI or pure coaching engagement.
+  Call 1 was a 1:1 discovery (Justin opted out of the full-day event) framed
+  around auditing the website, local SEO, and a PPC/LSA plan. Call 2 was
+  explicitly a "Proposal Review Meeting" to scale the firm, covering
+  replacing/upgrading the web/SEO vendor, launching Google LSA (then possibly
+  PPC), reviews training, and a coaching component — i.e., a combined
+  marketing + coaching engagement, not a technical/AI engagement.
+- Existing marketing/SEO/ad vendor engagements: Yes — the firm has an
+  existing SEO/website vendor. Justin describes himself as "happy" with that
+  vendor, but Iris (office assistant/de facto ops) believes significant
+  improvements are needed. This is a live, currently-active vendor
+  relationship, not a lapsed one — call this out explicitly rather than
+  treating the firm as vendor-less.
+- Budget constraints stated: none stated explicitly as an affordability
+  concern; the tenor of both calls is proactive investment interest (adding
+  LSA/PPC, reviews training, coaching) rather than budget limitation. Note
+  the seller's own Slack context (see note below) references two specific
+  package price points under discussion, which is a red flag pointer for
+  package fit in /audit-write, not a stated hard budget ceiling from the
+  prospect.
+
+Additional operational notes from transcript (not fitting the fields above):
+- CRM/intake friction: the firm has been locked out of Lawmatics (CRM/intake
+  tool) for ~2.5 months due to an unresolved 2FA issue — a real, current
+  operational gap affecting intake tracking.
+- Recently adopted Clio Manage for case management (previously stored files
+  on Google Drive); payments processed via Clio Payments.
+- Capacity: currently ~8-10 retained clients/month; stated capacity goal of
+  ~18/month, which the prospect/rep estimated requires ~40 additional
+  qualified calls/month at a ~25% close rate.
+- No documented hiring process or KPIs for attorneys; no defined path to a
+  self-managing team; "vacation test" is ~1 week before issues surface.
+- No overflow answering service for after-hours/peak call volume — flagged
+  as a capacity-strain risk if lead volume increases as planned.
+- Live event during call 2: Justin retained a walk-in client (PCS-THC felony,
+  $4,000 flat fee) during the meeting itself — useful, concrete color for the
+  report on how immediate/organic demand already is.
+- Seller context (Slack, relayed via trigger note, not the prospect's own
+  words): Dan Bryant indicated this proposal should be built from both
+  discovery calls combined, and referenced "Full Service Marketing – Starter"
+  ($4,997/mo) and "Elite Coach Plus" ($3,200/mo) as the packages under
+  discussion. This is included here as context for /audit-write only — it is
+  not a substitute for applying the standard deterministic package-selection
+  rules, and /audit-write should independently arrive at package fit using
+  the firm's actual revenue, goals, and stated needs above.
+
+===========================================================
+STEP 10 — COMPETITIVE URGENCY SCORE
+===========================================================
+Score: 8 / 10
+
+Named specific local competitor threats:
+1. Doug Atkinson (Douglas W. Atkinson, Attorney at Law) — per the prospect's
+   own tracking, holds ~100% share of voice in local 3-pack visibility for
+   the firm's core category, effectively locking out The Fowles Law Firm
+   (~4% share) from top-of-map visibility on the category's highest-intent
+   searches.
+2. Brian Foley Law PLLC — a Board-Certified former Chief Prosecutor with a
+   strong review presence (100+ reviews referenced on his own site, high
+   4.9+ rating across sources) and ~87% local share of voice per the
+   prospect's tracking — a second entrenched, credential-heavy competitor in
+   the same small Conroe market.
+3. The firm's own foundational gaps compound the competitive gap: no active
+   PPC/LSA, a homepage not clearly optimized for "Conroe Criminal Defense,"
+   likely page cannibalization across geo-targeted city pages, and a stalled
+   blog (last substantive post 4 months old) — meaning the firm is ceding
+   both paid and organic channels simultaneously while two named competitors
+   dominate the free local-pack channel.
+
+Dynamic sentence (Score 7-10): "A score of 8 means competitors are actively
+dominating multiple channels in your market and the gap is getting wider
+every month you wait. This is not a future problem — it is a right now
+problem."
+
+===========================================================
+PASS 2 — VERIFICATION CHECKLIST
+===========================================================
+[x] Every number in the notes matches actually observed data, or is
+    explicitly flagged as transcript-sourced/UNCONFIRMED/tool-limited where
+    live observation was not possible this session
+[x] Every competitor review count carries a verification-method tag; none is
+    asserted as definitively higher than the firm's own count given both
+    sides are UNCONFIRMED
+[x] Every review count/star rating (firm and competitors) carries a tag —
+    [confirmed via Google] or [UNCONFIRMED — ...] — per the REVIEW-DATA
+    VERIFICATION RULE (note: no figure in this file could be tagged
+    [confirmed via Google] this session due to tooling constraints; all are
+    UNCONFIRMED or explicitly flagged as tool-limited)
+[x] Revenue is split gross vs. net/take-home per transcript (net "not
+    distinguished from gross"); fee structure (flat-fee) recorded
+[x] Ads sections (Google Ads, LSA, Meta) cover the firm's practice area(s);
+    tool limitations are disclosed rather than silently omitted
+[x] No section states "you are not running ads" — phrased as "not observed" /
+    "does not appear to be running" throughout
+[x] No profitability/business claim appears that did not come from the transcript
+[x] No competitor reference uses generic labels — only specific named local
+    firms (Doug Atkinson, Brian Foley Law); the "Zavala/Santos" competitor
+    named in the transcript could not be confirmed as a real local firm and
+    is flagged for prospect clarification rather than fabricated
+[x] PageSpeed scores are flagged as NOT INDEPENDENTLY VERIFIED — TOOL
+    LIMITATION rather than estimated (rule requires real numbers only)
+[x] DBM recorded (clear, explicit statement across both calls)
+[x] Revenue goal recorded ($1M gross in ~3 years; $3M-$5M longer-term to net $1M profit)
+[x] Close rate recorded (~30-32% per Lawmatics; plan conservatively at 20-25%)
+[x] Average case value recorded ($5,000 working average)
+[x] Stated call focus recorded explicitly as marketing/growth + coaching
+    proposal review, not a technical/AI engagement
+[x] Existing marketing/SEO/ad vendor engagement recorded (active vendor;
+    Justin satisfied, Iris sees room for improvement)
+[x] Budget constraints recorded (none stated explicitly by the prospect;
+    seller Slack context on package pricing noted separately as context only)
+
+OUTSTANDING ITEMS FOR FOLLOW-UP BEFORE /audit-write TREATS AS FACT:
+- Live-verify PageSpeed mobile/desktop scores with a browser-capable tool
+  (API access was rate-limited throughout this session).
+- Live-verify Google review counts/ratings for the firm, Doug Atkinson, and
+  Brian Foley Law directly on Google Maps (all current figures are aggregator-
+  or transcript-sourced, tagged UNCONFIRMED).
+- Confirm the identity of the "Zavala/Santos" competitor named in the
+  transcript — no matching Conroe-based firm by that name was found.
+- Live-verify Google Ads, LSA, and Meta Ads Library presence for the firm and
+  named competitors (not accessible with available tools this session).
