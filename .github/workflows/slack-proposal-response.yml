@@ -129,10 +129,26 @@ jobs:
         if: steps.find.outputs.found == 'true'
         run: |
           FRIENDLY_NAME="${{ steps.find.outputs.friendly_name }}"
-          if [ -f "$FRIENDLY_NAME/package_decision.json" ] && ls "$FRIENDLY_NAME"/*_Research_Notes.txt >/dev/null 2>&1; then
+          TRIGGER_FILE="triggers/audit-research/$FRIENDLY_NAME.json"
+
+          if ! ls "$FRIENDLY_NAME"/*_Research_Notes.txt >/dev/null 2>&1; then
+            echo "Research notes missing for $FRIENDLY_NAME."
+            echo "complete=false" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+
+          # package_decision.json is legitimately absent when the trigger file
+          # has an explicit package override — select-package.mjs skips writing
+          # it in that case and Pass 2 reads the override directly instead.
+          HAS_OVERRIDE="false"
+          if [ -f "$TRIGGER_FILE" ] && [ "$(jq -r '.package // empty' "$TRIGGER_FILE")" != "" ]; then
+            HAS_OVERRIDE="true"
+          fi
+
+          if [ -f "$FRIENDLY_NAME/package_decision.json" ] || [ "$HAS_OVERRIDE" = "true" ]; then
             echo "complete=true" >> "$GITHUB_OUTPUT"
           else
-            echo "Phase 1 artifacts missing for $FRIENDLY_NAME (package_decision.json and/or *_Research_Notes.txt not found)."
+            echo "package_decision.json missing for $FRIENDLY_NAME and no package override set."
             echo "complete=false" >> "$GITHUB_OUTPUT"
           fi
 

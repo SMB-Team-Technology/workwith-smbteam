@@ -44,6 +44,7 @@ jobs:
           echo "suppress_pricing=$(jq -r '.suppress_pricing // "false"' "$TRIGGER_FILE")" >> "$GITHUB_OUTPUT"
           echo "package=$(jq -r '.package // empty' "$TRIGGER_FILE")" >> "$GITHUB_OUTPUT"
           echo "fathom_url=$(jq -r '.fathom_url // empty' "$TRIGGER_FILE")" >> "$GITHUB_OUTPUT"
+          echo "has_transcript=$(jq -r 'if ((.transcript // "") | length) > 0 then "true" else "false" end' "$TRIGGER_FILE")" >> "$GITHUB_OUTPUT"
 
       - name: Configure git
         run: |
@@ -66,7 +67,12 @@ jobs:
           fi
 
       - name: Fetch Fathom transcript
-        if: steps.resolve_fathom.outputs.fathom_url != ''
+        # Skip when the trigger file already carries a transcript (e.g. one
+        # manually merged from multiple discovery calls) — auto-resolution
+        # only ever pulls the single most-recently-logged Fathom call, so
+        # running it here would silently overwrite a deliberately curated
+        # transcript with less complete data.
+        if: steps.resolve_fathom.outputs.fathom_url != '' && steps.inputs.outputs.has_transcript != 'true'
         env:
           FATHOM_API_KEY: ${{ secrets.FATHOM_API_KEY }}
           HUBSPOT_TOKEN: ${{ secrets.HUBSPOT_TOKEN }}
