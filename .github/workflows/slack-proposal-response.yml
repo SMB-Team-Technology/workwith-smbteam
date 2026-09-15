@@ -112,11 +112,51 @@ jobs:
               done
             fi
           else
-            echo "Regeneration did not produce package_decision.json — Handle the seller's response will report this."
+            echo "Regeneration did not produce package_decision.json — Phase 1 completeness check will catch this."
           fi
 
-      - name: Handle the seller's response
+      # -------------------------------------------------------------------
+      # Deterministic guard: if Pass 1 (research) never actually completed
+      # for this firm — e.g. it hit a transient error mid-run and the
+      # process exited without committing research notes — there is nothing
+      # for the seller-response handler to build a proposal from. Checking
+      # this in bash (rather than leaving it to the agent's judgment in the
+      # next step) guarantees the seller always gets a Slack reply instead
+      # of the request silently going nowhere.
+      # -------------------------------------------------------------------
+      - name: Check Phase 1 completeness
+        id: phase1
         if: steps.find.outputs.found == 'true'
+        run: |
+          FRIENDLY_NAME="${{ steps.find.outputs.friendly_name }}"
+          if [ -f "$FRIENDLY_NAME/package_decision.json" ] && ls "$FRIENDLY_NAME"/*_Research_Notes.txt >/dev/null 2>&1; then
+            echo "complete=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "Phase 1 artifacts missing for $FRIENDLY_NAME (package_decision.json and/or *_Research_Notes.txt not found)."
+            echo "complete=false" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Post Phase 1 incomplete notice to Slack
+        if: steps.find.outputs.found == 'true' && steps.phase1.outputs.complete == 'false'
+        env:
+          SLACK_BOT_TOKEN: ${{ secrets.SLACK_BOT_TOKEN }}
+          SLACK_CHANNEL: ${{ github.event.client_payload.slack_channel }}
+          SLACK_THREAD_TS: ${{ github.event.client_payload.slack_thread_ts }}
+          FRIENDLY_NAME: ${{ steps.find.outputs.friendly_name }}
+          FIRM_NAME: ${{ steps.find.outputs.firm_name }}
+        run: |
+          PAYLOAD=$(jq -n \
+            --arg channel "$SLACK_CHANNEL" \
+            --arg thread  "$SLACK_THREAD_TS" \
+            --arg text    "⚠️ Can't process that reply yet — Phase 1 research for *$FIRM_NAME* never actually finished (no research notes or package decision found for \`$FRIENDLY_NAME\`), even though this thread says it's ready for review. Someone needs to re-run the audit-research pipeline for this firm before a reply here can lock in or update the proposal." \
+            '{channel: $channel, thread_ts: $thread, text: $text}')
+          curl -s -X POST https://slack.com/api/chat.postMessage \
+            -H "Authorization: Bearer $SLACK_BOT_TOKEN" \
+            -H "Content-Type: application/json" \
+            -d "$PAYLOAD"
+
+      - name: Handle the seller's response
+        if: steps.find.outputs.found == 'true' && steps.phase1.outputs.complete == 'true'
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
           SLACK_BOT_TOKEN: ${{ secrets.SLACK_BOT_TOKEN }}

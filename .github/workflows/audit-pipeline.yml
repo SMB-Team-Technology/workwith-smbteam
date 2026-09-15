@@ -127,7 +127,47 @@ jobs:
             to main and report the commit hash when complete.
           "
 
+      # -----------------------------------------------------------------------
+      # Deterministic guard: Pass 1 above can end without actually finishing
+      # (e.g. it hits a transient error mid-run — a rate limit, a tool
+      # failure — and the process exits having committed nothing) while the
+      # step itself still reports success. Everything downstream (package
+      # selection, the seller review-gate post) assumes research notes
+      # exist, so check that here instead of finding out later when a
+      # seller replies to a review request that was never actually ready.
+      # -----------------------------------------------------------------------
+      - name: Verify Pass 1 completed
+        id: verify_pass1
+        run: |
+          FRIENDLY_NAME="${{ steps.inputs.outputs.friendly_name }}"
+          if ls "$FRIENDLY_NAME"/*_Research_Notes.txt >/dev/null 2>&1; then
+            echo "complete=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "No *_Research_Notes.txt found in $FRIENDLY_NAME/ — Pass 1 did not complete."
+            echo "complete=false" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Post Pass 1 failure to Slack
+        if: steps.verify_pass1.outputs.complete == 'false'
+        continue-on-error: true
+        env:
+          SLACK_BOT_TOKEN: ${{ secrets.SLACK_BOT_TOKEN }}
+          SLACK_CHANNEL_ID: ${{ secrets.SLACK_CHANNEL_ID }}
+          FIRM_NAME: ${{ steps.inputs.outputs.firm_name }}
+          FRIENDLY_NAME: ${{ steps.inputs.outputs.friendly_name }}
+        run: |
+          RUN_URL="${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}"
+          PAYLOAD=$(jq -n \
+            --arg channel "$SLACK_CHANNEL_ID" \
+            --arg text    "❌ Research (Pass 1) for *$FIRM_NAME* did not complete — no research notes were produced for \`$FRIENDLY_NAME\`. This proposal has NOT been posted for review. Check the run: $RUN_URL" \
+            '{channel: $channel, text: $text}')
+          curl -s -X POST https://slack.com/api/chat.postMessage \
+            -H "Authorization: Bearer $SLACK_BOT_TOKEN" \
+            -H "Content-Type: application/json" \
+            -d "$PAYLOAD"
+
       - name: Pass 1.5 — Deterministic package selection
+        if: steps.verify_pass1.outputs.complete == 'true'
         env:
           HUBSPOT_TOKEN: ${{ secrets.HUBSPOT_TOKEN }}
         run: |
@@ -141,6 +181,7 @@ jobs:
       # slack-proposal-response.yml for how that reply is handled.
       # -----------------------------------------------------------------------
       - name: Post proposal to Slack for seller review
+        if: steps.verify_pass1.outputs.complete == 'true'
         continue-on-error: true
         env:
           SLACK_BOT_TOKEN: ${{ secrets.SLACK_BOT_TOKEN }}
@@ -248,6 +289,7 @@ jobs:
           PYEOF
 
       - name: Commit proposal review state
+        if: steps.verify_pass1.outputs.complete == 'true'
         run: |
           FRIENDLY_NAME="${{ steps.inputs.outputs.friendly_name }}"
           if [ -f "$FRIENDLY_NAME/proposal_review.json" ]; then
