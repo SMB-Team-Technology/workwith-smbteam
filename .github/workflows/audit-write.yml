@@ -228,6 +228,17 @@ jobs:
           print(f"Email sent to {to_addr} (CC: {', '.join(cc_addrs)})")
           PYEOF
 
+      - name: Resolve seller mention
+        id: resolve_mention
+        if: steps.inputs.outputs.slack_thread_ts != ''
+        env:
+          SLACK_BOT_TOKEN: ${{ secrets.SLACK_BOT_TOKEN }}
+        run: |
+          MENTION=$(node scripts/resolve-slack-mention.mjs \
+            "${{ steps.inputs.outputs.sales_rep }}" \
+            "${{ steps.inputs.outputs.sales_rep_email }}")
+          echo "mention=$MENTION" >> "$GITHUB_OUTPUT"
+
       - name: Reply in Slack thread with build result
         if: steps.inputs.outputs.slack_thread_ts != ''
         continue-on-error: true
@@ -238,6 +249,8 @@ jobs:
           FIRM_NAME: ${{ steps.inputs.outputs.firm_name }}
           FRIENDLY_NAME: ${{ steps.inputs.outputs.friendly_name }}
           SALES_REP: ${{ steps.inputs.outputs.sales_rep }}
+          SALES_REP_EMAIL: ${{ steps.inputs.outputs.sales_rep_email }}
+          MENTION: ${{ steps.resolve_mention.outputs.mention }}
           WRITE_VERIFIED: ${{ steps.verify.outputs.write_verified }}
           MISSING_FILES: ${{ steps.verify.outputs.missing }}
         run: |
@@ -265,15 +278,17 @@ jobs:
           thread   = os.environ["SLACK_THREAD_TS"]
           firm     = os.environ["FIRM_NAME"]
           slug     = os.environ["FRIENDLY_NAME"]
+          sales_rep = os.environ["SALES_REP"]
+          mention  = os.environ.get("MENTION") or f"@{sales_rep}"
           verified = os.environ["WRITE_VERIFIED"] == "true"
           missing  = os.environ.get("MISSING_FILES", "").strip()
           url      = f"https://workwith.smbteam.com/{slug}"
 
           if verified:
-              text = f"✅ *Proposal ready:* {firm}\n{url}"
+              text = f"{mention} ✅ *Proposal ready:* {firm}\n{url}"
           else:
               text = (
-                  f"⚠️ *audit-write did not complete for {firm}* — no report was generated"
+                  f"{mention} ⚠️ *audit-write did not complete for {firm}* — no report was generated"
                   f" (missing: {missing or 'index.html/sections'}).\n"
                   f"The proposal was NOT marked built — please investigate the audit-write run and re-trigger."
               )

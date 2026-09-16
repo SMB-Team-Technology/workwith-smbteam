@@ -205,6 +205,17 @@ jobs:
       # the seller replies in-thread with a lock-in. See
       # slack-proposal-response.yml for how that reply is handled.
       # -----------------------------------------------------------------------
+      - name: Resolve seller mention
+        id: resolve_mention
+        if: steps.verify_pass1.outputs.complete == 'true'
+        env:
+          SLACK_BOT_TOKEN: ${{ secrets.SLACK_BOT_TOKEN }}
+        run: |
+          MENTION=$(node scripts/resolve-slack-mention.mjs \
+            "${{ steps.inputs.outputs.sales_rep }}" \
+            "${{ steps.inputs.outputs.sales_rep_email }}")
+          echo "mention=$MENTION" >> "$GITHUB_OUTPUT"
+
       - name: Post proposal to Slack for seller review
         if: steps.verify_pass1.outputs.complete == 'true'
         continue-on-error: true
@@ -215,6 +226,7 @@ jobs:
           FRIENDLY_NAME: ${{ steps.inputs.outputs.friendly_name }}
           SALES_REP: ${{ steps.inputs.outputs.sales_rep }}
           SALES_REP_EMAIL: ${{ steps.inputs.outputs.sales_rep_email }}
+          MENTION: ${{ steps.resolve_mention.outputs.mention }}
           DATE: ${{ steps.inputs.outputs.date }}
           HUBSPOT_CONTACT_ID: ${{ steps.inputs.outputs.hubspot_contact_id }}
           SUPPRESS_PRICING: ${{ steps.inputs.outputs.suppress_pricing }}
@@ -228,6 +240,7 @@ jobs:
           friendly_name    = os.environ["FRIENDLY_NAME"]
           sales_rep        = os.environ["SALES_REP"]
           sales_rep_email  = os.environ.get("SALES_REP_EMAIL", "").strip()
+          mention          = os.environ.get("MENTION") or f"@{sales_rep}"
           date             = os.environ.get("DATE", "")
           hubspot_contact_id = os.environ.get("HUBSPOT_CONTACT_ID", "").strip()
           suppress_pricing = os.environ.get("SUPPRESS_PRICING", "false")
@@ -241,22 +254,6 @@ jobs:
               )
               with urllib.request.urlopen(req) as resp:
                   return json.loads(resp.read())
-
-          # Resolve the seller's Slack user ID from their email so the review
-          # request lands as a real @-mention rather than plain text.
-          mention = f"@{sales_rep}"
-          if sales_rep_email:
-              try:
-                  lookup_url = f"https://slack.com/api/users.lookupByEmail?email={urllib.parse.quote(sales_rep_email)}"
-                  req = urllib.request.Request(lookup_url, headers={"Authorization": f"Bearer {token}"})
-                  with urllib.request.urlopen(req) as resp:
-                      lookup = json.loads(resp.read())
-                  if lookup.get("ok"):
-                      mention = f"<@{lookup['user']['id']}>"
-                  else:
-                      print(f"users.lookupByEmail failed ({lookup.get('error')}) — falling back to plain-text mention")
-              except Exception as e:
-                  print(f"users.lookupByEmail request failed ({e}) — falling back to plain-text mention")
 
           # Pull the deterministic package decision, if Pass 1.5 produced one.
           decision_path = f"{friendly_name}/package_decision.json"
