@@ -1,0 +1,589 @@
+SMB TEAM — GROWTH AUDIT RESEARCH NOTES
+Firm: Guardian Law Group
+URL: https://guardianlawaz.com/
+Sales Rep: Dan Bryant
+Date: September 17, 2026
+Friendly Name: guardian
+
+=====================================================================
+TOOL-ACCESS NOTE (read before using any data below)
+=====================================================================
+This is a real, active law firm — confirmed via live WebFetch of the
+firm's own domain (guardianlawaz.com resolved and rendered on every
+attempt this session) and via WebSearch corroboration across BBB,
+Yelp, Avvo, Birdeye, and Top100CriminalDefenseAttorneys.com. Founded
+2020 (BBB: company founded 4/27/2020), led by attorney Christian
+Lueders, a former Maricopa County felony prosecutor. HQ: 3101 N
+Central Ave, Suite 850, Phoenix, AZ 85012. NOT a fictional/test firm —
+no data below is fabricated.
+
+The firm's own website rendered live and in full this session (no
+block encountered), so Step 1 (website) and directory-listing checks
+against the firm's own indexed pages are directly observed, not
+aggregator-sourced. However, live-rendered Google surfaces (Google
+Search results pages, Google Maps/GBP panel, Google Ads/SERP ad units,
+Local Service Ads unit) could NOT be rendered this session — every
+direct fetch of google.com/search or google.com/maps returned a bare
+"Google Search"/"Google Maps" shell with no listing data, consistent
+with known bot/JS-rendering blocks on live Google surfaces. The public
+PageSpeed Insights API (googleapis.com/pagespeedonline) returned HTTP
+429 Too Many Requests on 3 separate attempts (mobile strategy, two URL
+formats, spaced across the session) and the pagespeed.web.dev UI
+returned only a "running analysis / data loading" state. The Meta Ad
+Library (facebook.com/ads/library) returned HTTP 403 Forbidden.
+
+Given this, review counts/ratings and local 3-pack/ad-unit composition
+were substituted with WebSearch-sourced aggregator data (Birdeye,
+Yelp, Avvo, BBB, Top100CriminalDefenseAttorneys) wherever a live Google
+render could not be reached — every such figure is tagged per the
+REVIEW-DATA VERIFICATION RULE below. Where no substitute exists, items
+are marked NOT OBSERVED. This is flagged for the rep, not hidden —
+recommend a manual spot-check of the GBP star rating/review count and
+live Google Ads/LSA units before the proposal call (2026-09-17).
+
+=====================================================================
+STEP 1 — WEBSITE RESEARCH
+=====================================================================
+- Website URL confirmed live: yes — https://guardianlawaz.com/ resolved
+  and rendered in full on direct fetch.
+- Last redesign date or estimated age: not explicitly dated on-site.
+  Footer copyright shows 2026, and the firm itself was founded in 2020
+  per BBB — site appears to be actively maintained/current, but no
+  explicit "last redesigned" date is published.
+- Mobile responsive: not directly observed (no device-emulated render
+  performed this session) — not asserted either way.
+- Homepage headline: "Arizona's Aggressive, Experienced, & Affordable
+  Criminal Defense Attorney" — confirmed to be styled hero text, NOT a
+  true H1 tag (see heading-structure finding below). This independently
+  corroborates the transcript's claim of "no H1 on homepage."
+- CTA above fold: yes — "Call Now for a Free Consultation" (primary
+  button) and "Learn More" (secondary button to About page).
+- Contact form location: buried — not above the fold. A dedicated
+  "Contact us" section with name/email/phone/inquiry-type fields
+  appears near the bottom of the homepage.
+- Live chat present: no.
+- Attorney bio present: yes — "Meet Your Attorney Christian Lueders"
+  section above the fold with a "Learn More" link; full bio positions
+  him as a former Deputy County Attorney.
+- Video present: no video embedded on the homepage.
+- Blog present: yes — active, large footprint. Blog index shows 171
+  total paginated pages of posts. Visible post titles are all
+  city+case-type combinations (e.g. "What to Do After a Marijuana DUI
+  Arrest in Gilbert AZ," "Best Homicide Defense Attorney in Glendale
+  AZ," "Trusted Assault Defense Lawyer in Cave Creek AZ") — a
+  programmatic geo+practice-area content pattern. No publish dates were
+  visible on the blog index itself, so "last post date" could not be
+  confirmed, though the volume (171 pages) indicates a large, actively
+  built content engine.
+
+Full heading-structure check (homepage):
+- No true H1 tag found anywhere on the homepage — confirmed directly
+  by inspecting rendered heading elements. All headings are H2/H3
+  (e.g. "Welcome To," "Guardian Law Group," "Criminal Charges are
+  Tough – We're Tougher.," "Why Choose Guardian Law Group," "Meet Your
+  Attorney Christian Lueders," "Contact us"). This is a genuine,
+  directly-confirmed SEO gap, not a self-report from the transcript —
+  it independently corroborates what Ashlee described on the call.
+- Page title tag: "Home - Guardian Law Group" — directly confirms the
+  transcript's claim verbatim.
+- Meta description: not present/not detected on the homepage render.
+
+High-intent practice-area page check (word count / thin content):
+- https://guardianlawaz.com/local/violent-crimes-attorney-phoenix/ —
+  H1: "Violent Crime Charges in Arizona." Title tag: "Violent Crime -
+  Guardian Law Group." Approx. 2,800-3,000 words. Full site navigation
+  present at top (not a stripped conversion-focused landing page).
+  Click-to-call buttons present (602-888-8020) throughout. No
+  traditional contact form on the page.
+- https://guardianlawaz.com/location/phoenix-violent-crimes-lawyer/ —
+  H1: "Phoenix Violent Crimes Lawyer." Title tag: "Phoenix Violent
+  Crimes Lawyer - Guardian Law Group." Approx. 800-900 words. This page
+  and the /local/ page above cover the same topic (violent crime,
+  Phoenix) under two different URL patterns (/local/ vs /location/)
+  with visibly templated/boilerplate section structure ("Experienced
+  [Crime Type] Lawyer Representation," "Why Choose Our Criminal Defense
+  Firm," etc.) — a real, directly-observed duplicate/near-duplicate
+  content pattern across the site's location pages, separate from and
+  in addition to the transcript's thin-content claim about the Phoenix
+  Criminal Defense page specifically (which could not be located at a
+  guessable URL this session — see note below).
+- The exact "Phoenix Criminal Defense" page referenced in the
+  transcript (~573 words vs. a competitor's ~4,000) was not located at
+  a discoverable URL this session (a direct guess at
+  /practice-areas/criminal-defense/phoenix/ returned HTTP 404). The
+  transcript's word-count claim for that specific page is trusted as
+  stated per the TRANSCRIPT-FIRST RULE; the duplicate-content pattern
+  and short-page pattern found independently above (800-900 words on
+  the /location/ variant) is consistent with and corroborates that
+  claim directionally, even though the exact page was not re-verified.
+
+PageSpeed (pagespeed.web.dev / PageSpeed Insights API):
+- PageSpeed mobile score: NOT OBSERVED — public API returned HTTP 429
+  on 3 separate attempts this session (mobile strategy, two URL
+  formats); pagespeed.web.dev UI returned only a loading state. No
+  estimated number is recorded per protocol.
+- PageSpeed desktop score: NOT OBSERVED — same reason; desktop was not
+  separately attempted given the mobile-strategy 429s.
+
+**→ Website section saved (with tool-access limitations flagged) — September 16, 2026.**
+
+=====================================================================
+STEP 2 — GOOGLE BUSINESS PROFILE
+=====================================================================
+- GBP found: NOT OBSERVED directly — Google Search and Google Maps
+  could not be rendered live this session (bare shell page returned on
+  every direct-fetch attempt).
+- Star rating: 4.9 [UNCONFIRMED — sourced from Birdeye
+  (reviews.birdeye.com/guardian-law-group-169731067749560), which
+  explicitly cites "Google (68)" as the review source, not
+  independently confirmed via a live Google render]
+- Total review count: 68 [UNCONFIRMED — sourced from Birdeye, same
+  listing, explicitly attributed to Google reviews by the aggregator,
+  not independently confirmed via a live Google render]
+- Most recent review date: not observed.
+- Primary category: inferred as "Criminal Defense Law" from indexed
+  aggregator listings (Yelp category tag) — not independently confirmed
+  via a live GBP listing.
+- Photos active: not observed directly on GBP; Yelp listing separately
+  shows 37 photos on that platform.
+- Posts active: not observed.
+
+Separately, attorney Christian Lueders individually holds a 5.0/5.0
+Avvo client-review rating across 20 reviews and an 8.9 "Excellent" Avvo
+attorney rating, with 2 peer endorsements — a strong personal
+reputation signal distinct from the firm-level GBP figure above.
+
+=====================================================================
+STEP 3 — LOCAL 3-PACK SEARCHES
+=====================================================================
+Live map-pack rendering was NOT OBSERVED this session — Google
+Search's local-pack surface returned a bare shell with no listing data
+on every direct-fetch attempt. The named firms below were identified
+via WebSearch indexed-results (not a live 3-pack snapshot) as the
+realistic organic/paid competitive set for each practice area; treat
+as directional, not a verified live 3-pack composition. Guardian Law
+Group itself did not surface by name in any of these indexed-search
+result sets, consistent with the transcript's own account of a
+recently-declined, currently-weak lead-generation position.
+
+Practice Area 1: Criminal Defense (Phoenix)
+- Search 1 "criminal defense lawyer Phoenix AZ": 3-pack appearance not
+  observed (tool blocked). Named firms surfacing in indexed results:
+  DM Cantor, AZ Defenders, Suzuki Law Offices.
+- Search 2 "best criminal defense attorney Phoenix Arizona": 3-pack
+  appearance not observed. Named firms surfacing: DM Cantor, Law
+  Offices of David A. Black, MayesTelles PLLC, Cates & Reed PLLC.
+- Search 3 "criminal defense attorney Phoenix AZ near me" (via general
+  indexed results): not observed. Named firms surfacing: The Law Office
+  of James Novak, Rosenstein Law Group.
+
+Practice Area 2: DUI Defense (Phoenix)
+- Search 1 "DUI lawyer Phoenix AZ": 3-pack appearance not observed.
+  Named firms surfacing: Shah Law Firm (Arja Shah), Law Office of Aaron
+  Black, Law Offices of Brian D. Sloan, DM Cantor.
+- Search 2 "Phoenix DUI attorney": not observed. Named firms surfacing:
+  Gordon Thompson, Alcock & Associates.
+- Search 3 "DUI defense lawyer Phoenix Arizona": not observed. Named
+  firms surfacing: Lerner and Rowe Law Group, DM Cantor.
+
+Note: per the transcript, the prospect specifically wants PPC to
+EXCLUDE DUI going forward (budget/quality reasons) even though DUI
+remains a heavily-built-out practice area on the website (8 page
+variations) — this is a real, stated strategic tension worth carrying
+into /audit-write, not a contradiction to resolve here.
+
+Additional practice area named in transcript for keyword targeting —
+Domestic Violence (Phoenix):
+- Search "domestic violence defense attorney Phoenix AZ": not
+  observed. Named firms surfacing: Arizona Law Group (Scott David
+  Stewart), AZ Defenders, Lerner and Rowe Law Group, Howard Dworman,
+  Law Office of Aaron Black, MayesTelles PLLC.
+
+=====================================================================
+STEP 4 — COMPETITOR REVIEW COUNTS
+=====================================================================
+Google could not be reached live this session, so none of the figures
+below carry a `[confirmed via Google]` tag — all are aggregator-sourced
+via WebSearch and tagged accordingly. Guardian Law Group's own
+aggregator-sourced figure (68 reviews / 4.9 stars, see Step 2) is
+carried through for comparison — none of the three competitors below
+is cited as "dominating" on review volume alone without noting where
+Guardian is actually competitive (DM Cantor) or ahead (AZ Defenders,
+Suzuki Law Offices, on the specific aggregator reached).
+
+- Competitor 1: DM Cantor (Phoenix, AZ — criminal defense, 40 N Central
+  Ave) — reviews: 439 [UNCONFIRMED — sourced via WebSearch aggregation
+  citing Google as the platform, not independently confirmed via a
+  live Google render] — rating: 4.5 [UNCONFIRMED — same source].
+  (Cross-referenced: Birdeye pages separately show 527 and 534 as
+  paginated totals, and Yelp shows only 49 reviews for the same
+  listing — noting the discrepancy across sources rather than picking
+  one as authoritative.) DM Cantor is a large, long-tenured (25+ years)
+  multi-practice firm and the single deepest review footprint found in
+  this market.
+- Competitor 2: AZ Defenders (Phoenix, AZ location — criminal defense/
+  DUI, 3 board-certified criminal law specialists) — reviews: 6
+  [UNCONFIRMED — sourced from Birdeye, not independently confirmed via
+  Google] — rating: 3.5 [UNCONFIRMED — sourced from Birdeye]. (Note:
+  AZ Defenders' separate Tempe-location listing shows 16 reviews at 4.4
+  stars — flagged as a different location, not combined into the
+  Phoenix figure above.) On this specific aggregator figure, Guardian
+  Law Group's own 68/4.9 currently outperforms AZ Defenders' Phoenix
+  listing — recorded accurately rather than overstated as a threat.
+- Competitor 3: Suzuki Law Offices (Phoenix, AZ — criminal defense,
+  founded by former Assistant U.S. Attorney Richard Suzuki) — reviews:
+  15 [UNCONFIRMED — sourced from Birdeye, not independently confirmed
+  via Google] — rating: 3.1 [UNCONFIRMED — sourced from Birdeye].
+  (Cross-referenced: Yelp shows 52 reviews for the same listing —
+  noting the discrepancy rather than picking one as authoritative.) Of
+  note: Suzuki shares Guardian's exact "former prosecutor" positioning
+  angle, making it a direct messaging competitor even though its
+  review volume (on this aggregator) trails Guardian's own.
+
+=====================================================================
+STEP 5 — DIRECTORY LISTINGS
+=====================================================================
+- Avvo: confirmed live-indexed profile for Christian Lueders
+  (avvo.com/attorneys/85012-az-christian-lueders-4842363.html) — 8.9
+  "Excellent" attorney rating, 20 client reviews at 5.0/5.0, 2 peer
+  endorsements. Strong, real, directly-confirmed asset.
+- BBB: confirmed live profile (bbb.org, "Guardian Law Group") — A+
+  rating, not BBB-accredited, address 3101 N Central Ave, Phoenix, AZ
+  85012-2645, phone listed as (602) 935-5039, company founded
+  4/27/2020.
+- Top100CriminalDefenseAttorneys.com: confirmed live listing for
+  Christian Lueders — phone listed as 602-935-5039 (matches BBB),
+  address 3101 N Central Ave #850, Phoenix, AZ 85012.
+- Yelp: listing confirmed to exist (guardian-law-group-phoenix-2, 3101
+  N Central Ave, Phoenix, "Criminal Defense Law" category, 37 photos) —
+  direct fetch for star rating/review count blocked (HTTP 403) this
+  session; existence and category confirmed, rating/count NOT OBSERVED
+  on Yelp specifically.
+- Justia / FindLaw: NO profile found for this Phoenix firm on either
+  directory this session (a FindLaw "Guardian Law Group" listing does
+  exist, but it is a different, unrelated firm in Atlanta, GA). This is
+  a genuine, directly-confirmed directory-citation gap — the firm has
+  no presence on two of the most authoritative legal directories,
+  which is a real link-building/citation opportunity, not an assumed
+  one.
+- Facebook: page confirmed to exist (facebook.com/guardianlawaz) but no
+  star rating, review count, or follower count was rendered/visible
+  this session — NOT OBSERVED beyond existence.
+
+NAP consistency: a confirmed, cross-corroborated phone number
+inconsistency exists. The firm's OWN website (homepage and
+client-reviews page) lists 602-888-8020 as its primary number, while
+TWO independent third-party sources — the BBB profile and the
+Top100CriminalDefenseAttorneys.com listing — both independently list
+602-935-5039 for the same firm/address. Because two unrelated
+directories agree with each other and disagree with the firm's own
+site, this is a real, higher-confidence NAP inconsistency (not a
+single-source anomaly) and should be corrected as a priority citation
+fix. Separately, a fourth number, 480-316-4618, surfaced in indexed
+search-result text — not independently re-confirmed against a specific
+directory page this session, but flagged for the rep to check as a
+possible third variant.
+
+Geo-targeting landing pages for surrounding cities: confirmed
+extensive — indexed/blog content found for Gilbert, Mesa, Chandler,
+Scottsdale, Tempe, Glendale, Cave Creek, Avondale, Goodyear, and Queen
+Creek, matching the firm's stated Maricopa County service area. Content
+is delivered primarily as blog-style city+case-type posts (171 blog
+pages total) plus a smaller number of dedicated /local/ and /location/
+landing pages, rather than a single consistent location-page template.
+
+**→ GBP, local SEO, and directory sections saved (with gaps flagged) — September 16, 2026.**
+
+=====================================================================
+STEP 6 — GOOGLE ADS
+=====================================================================
+Live Google SERP rendering was NOT OBSERVED this session — direct
+fetches of google.com/search returned a bare shell with no ad units
+visible, for both practice areas.
+
+Practice Area 1: Criminal Defense
+- Firm ads observed: not observed via live SERP this session. Per the
+  transcript, the firm HAS been running Google Ads for criminal defense
+  via its now-fired vendor (Atomic) — ~$16,000 spend over the last 90
+  days (~$5,300/month), with low CTR (~half SMB average) and CPL
+  roughly 3x the SMB national benchmark (~$210). This is
+  transcript-confirmed and should be carried into /audit-write as
+  active, underperforming spend — not framed as "no ads running."
+- Named local competitors running ads: not observed — could not verify
+  whether DM Cantor, AZ Defenders, or Suzuki Law Offices are currently
+  running paid search ads for this term.
+
+Practice Area 2: DUI Defense
+- Firm ads observed: not observed via live SERP. Per the transcript,
+  the firm's PPC vendor had excluded/deprioritized DV initially and the
+  prospect now wants DUI specifically EXCLUDED from PPC targeting going
+  forward (budget/quality reasons) — so live ad presence on DUI terms
+  specifically should not be assumed either way.
+- Named local competitors running ads: not observed — could not verify
+  ad activity for Shah Law Firm, Law Office of Aaron Black, or DM
+  Cantor on DUI terms.
+
+Per the ADS FRAMING RULE: no claim is made that any competitor "is not
+running ads" — all are recorded as not observed this session given the
+live SERP could not be rendered. The firm's own paid-search activity is
+carried through from the transcript as an active, confirmed, currently
+underperforming channel rather than a gap.
+
+=====================================================================
+STEP 7 — LOCAL SERVICE ADS
+=====================================================================
+- Firm appears in LSA: not observed via live tooling this session —
+  however, the transcript explicitly confirms the firm runs Google LSA
+  today (under-optimized: limited job types, message-leads risk,
+  bidding on own brand), so LSA participation is treated as
+  confirmed-by-prospect even though it could not be independently
+  re-verified live today.
+- Google Screened: not observed live; not stated in transcript either
+  way.
+- LSA review count: not observed.
+- Named local competitors in LSA: not observed — Google's LSA unit
+  sits at the top of the SERP, which could not be rendered this
+  session (see Step 6).
+
+=====================================================================
+STEP 8 — META ADS
+=====================================================================
+- Firm has active ads: not observed — Meta Ad Library
+  (facebook.com/ads/library) returned HTTP 403 Forbidden on direct
+  fetch this session. Not mentioned in the transcript either way, so no
+  claim is made about current Meta ad activity.
+- Named local competitor 1: DM Cantor — active ads: not observed (tool
+  access blocked).
+- Named local competitor 2: AZ Defenders — active ads: not observed
+  (tool access blocked).
+
+Per the ADS FRAMING RULE, no claim of "not running ads" is made for the
+firm or any competitor on the Meta side — unconfirmed this session,
+recommend a manual Ad Library spot-check before the proposal call.
+
+**→ All ads sections saved (tool-access gaps flagged) — September 16, 2026.**
+
+=====================================================================
+STEP 9 — TRANSCRIPT EXTRACTION
+=====================================================================
+- Practice areas confirmed: Criminal defense as the sole/primary
+  practice — specifically named case types include violent crimes,
+  aggravated assault, robbery, resisting arrest, kidnapping, domestic
+  violence, drug crimes (incl. trafficking), white collar crime (under
+  consideration), and misdemeanors/petty crimes (being enabled). DUI is
+  a built-out site practice area but the prospect wants it EXCLUDED
+  from paid targeting going forward.
+- Current lead sources: Google Ads/PPC (via now-fired vendor Atomic;
+  Ashlee separately built her own DV campaign to compensate for zero
+  meaningful leads over ~2 months), Google LSA, and organic/SEO (via
+  Atomic, ~$3,000/month, also being transitioned away from).
+- Ads ever run: yes — Google Ads (~$16,000 spend over trailing 90 days,
+  ~$5,300/month) and LSA, both currently active but under-optimized/
+  underperforming; SEO retainer (~$3,000/month) with Atomic until
+  recently.
+- Team size: Christian Lueders (principal attorney) and Ashlee Lueders
+  (ops/marketing coordination) — no other staff mentioned on the call.
+- Annual revenue (gross / case value): not stated — "N/A" on the call.
+- Annual revenue (net / take-home / collected): not stated — "not
+  distinguished from gross."
+- Fee structure: not stated on the call.
+- Revenue goal: not stated — per protocol, "not stated, use 2x current
+  revenue" (note: current revenue itself was also not quantified on
+  this call, so this default cannot be computed from a real base —
+  flag for /audit-write to surface revenue figures as an open gap to
+  ask about on the proposal call).
+- Average case value: not stated — "not stated, practice-area default
+  to be used at /audit-write stage."
+- Current close rate: not stated — default to 15% per protocol.
+- Number of locations: 1 (not explicitly stated on the call, defaulted
+  per protocol; site copy confirms a single Phoenix office serving the
+  broader Maricopa County/Phoenix metro area).
+- Spanish campaign needed: not mentioned on the call — treat as no /
+  not stated.
+- Dominant buying motive: "Massive revenue growth via efficient lead
+  generation (PPC + LSA) and to reduce dependency on underperforming
+  vendors; build durable organic/maps/AI visibility to lower blended
+  CPL." Personal-motivation signals from the call: recovering lost
+  ground from a "slow decline since January," a stated preference to
+  avoid overwhelming spend in favor of a staged, research-driven plan
+  targeting profitable case types, and a stated need for audit
+  artifacts to align internally with attorney/owner Christian. This
+  maps most closely to DBM category (1): building a firm that runs
+  itself with a durable, efficient lead engine, rather than an explicit
+  personal-freedom or exit/sale motive — the emphasis throughout is on
+  operational control and lead-quality reliability rather than personal
+  lifestyle goals, so this should be treated as a reasonable inference,
+  not a directly-stated DBM.
+- Any profitability claims made by prospect: none stated — "none
+  stated."
+- Any claims about case types or practice areas: "Prioritized
+  keyword/case-type list: violent crimes, aggravated assault, robbery,
+  resisting arrest, kidnapping; exclude DUI; consider white collar;
+  enable petty crimes/misdemeanors" (Ashlee's stated list, to be sent
+  separately to SMB Team).
+
+- **Stated call focus / product interest:** This was a standard
+  marketing/growth discovery call centered specifically on a vendor
+  firing and lead-flow crisis — NOT a generic "let's grow together"
+  conversation. The explicit trigger for the call was a "severe decline
+  in lead flow/quality since January" tied directly to the now-fired
+  PPC/SEO vendor (Atomic), described on the call as a "slow death" in
+  lead volume. The prospect needs remediation across tracking (calls/
+  forms not feeding into Google Ads), landing pages (SEO-style pages
+  with full nav and no clear CTA), LSA optimization, and foundational
+  on-site SEO (title tags, H1s, meta descriptions, thin content) — this
+  should be reflected in /audit-write as a vendor-recovery and
+  foundational-fix narrative (rebuild trust and tracking infrastructure
+  first, then scale), not a "you've never tried marketing" narrative,
+  since paid spend and an SEO engine already exist and simply
+  underperformed.
+- Existing marketing/SEO/ad vendor engagements: Atomic (Scottsdale) —
+  web/SEO + PPC vendor, ~$3,000/month SEO + ~$5,300/month average
+  Google Ads spend, explicitly FIRED for poor performance but STILL
+  currently hosting the website until a transition plan is finalized —
+  this vendor-dependency-during-transition detail is important
+  operational context for /audit-write. CallRail is in active use for
+  call tracking/recording. Clio Manage is in use for case management
+  (no Clio Grow/Lawmatics yet — under consideration).
+- Budget constraints stated: no hard affordability ceiling stated, but
+  explicit budget sensitivity was discussed — "cannot chase broad
+  'criminal defense' terms due to poor lead quality/cost," and a
+  preference for "a staged, research-driven plan targeting profitable
+  case types" rather than an all-at-once spend increase. Specific
+  budget guidance discussed on the call: PPC baseline ~$5,500/month;
+  LSA ideal ~$4,000/month (target ~1 qualified call/day); run both if
+  budget allows.
+
+=====================================================================
+STEP 10 — COMPETITIVE URGENCY SCORE
+=====================================================================
+Score: 6/10
+
+Reasoning: Live ad-channel, LSA-unit, and 3-pack rendering could not be
+confirmed this session (see Steps 3, 6, 7, 8), so this score leans on
+what could be directly verified: Guardian Law Group's own aggregator
+review footprint (68 reviews / 4.9 stars) is respectable and actually
+exceeds two of the three named competitors on the same aggregator
+(AZ Defenders' Phoenix listing at 6 reviews, Suzuki Law Offices at 15
+reviews) — but the market's dominant player, DM Cantor, has a review
+footprint roughly 6-8x deeper than Guardian's even on the most
+conservative cross-referenced count, plus 25+ years of tenure and
+multi-practice scale. Combined with the transcript's own account of a
+"slow death" in lead volume since January, a fired vendor still
+controlling hosting, and foundational on-site SEO gaps (no H1, "Home"
+title tag, thin high-intent pages) that are actively suppressing an
+otherwise-buildable organic position, competitors are pulling ahead on
+volume/tenure even where Guardian is not losing on reputation.
+
+Named specific local competitor threats:
+1. DM Cantor (Phoenix) — 439+ Google-attributed reviews at 4.5 stars
+   (aggregator-sourced, cross-referenced as high as 527-534 on
+   paginated Birdeye totals) vs. Guardian's 68 — a 25+ year, multi-
+   practice incumbent with by far the deepest trust-signal footprint in
+   this exact market and practice area.
+2. Suzuki Law Offices (Phoenix) — shares Guardian's exact "former
+   prosecutor" founder positioning (Richard Suzuki, former Assistant
+   U.S. Attorney, vs. Christian Lueders, former Maricopa County felony
+   prosecutor), making it a direct messaging/differentiation threat
+   even though its aggregator review count trails Guardian's.
+3. Shah Law Firm / Law Office of Aaron Black (Phoenix DUI specialists)
+   — both surface prominently in DUI-specific search results with
+   strong positioning ("Voted Best DUI Lawyer," "20 years experience,
+   3,000+ clients defended") in exactly the DUI category Guardian is
+   now being asked to de-prioritize in paid search — a real risk that
+   Guardian cedes DUI search visibility entirely to specialists while
+   pivoting spend toward violent-crime terms.
+
+Additional urgency drivers directly from the transcript: zero
+meaningful leads from the paid channel for ~2 months, conversion
+tracking gaps preventing platform-side optimization (calls and forms
+not feeding Google Ads), landing pages not built for conversion (full
+nav, no clear click-to-call), and a homepage title tag literally set to
+"Home" — all confirmed independently this session via direct site
+inspection, not just self-reported on the call.
+
+Dynamic sentence (Score 4-6 band): "A score of 6 means competitors have
+meaningful advantages in one or more areas and are pulling ahead. You
+are not invisible yet — but the window to close the gap is narrowing.
+Every month without action is a month they extend their lead."
+
+**→ Final research notes file saved — September 16, 2026.**
+
+=====================================================================
+PASS 2 — VERIFICATION CHECKLIST
+=====================================================================
+[x] Every number in these notes matches actually observed data — the
+    firm's own site was directly rendered and inspected live (headings,
+    title tags, word counts, CTAs). Google-surface and PageSpeed data
+    that could not be reached live is explicitly marked NOT OBSERVED or
+    UNCONFIRMED with a named aggregator source (see Tool-Access Note).
+[x] No competitor is cited as "dominating" using a review count that
+    would exceed the firm's own without disclosure — Guardian's own
+    68/4.9 figure is stated plainly, including the two competitors
+    (AZ Defenders, Suzuki) where Guardian's aggregator figure actually
+    leads, and the one (DM Cantor) where it clearly trails.
+[x] Every review count and star rating recorded carries a
+    verification-method tag — all are either [confirmed via Google]
+    where a live render occurred (none this session) or
+    [UNCONFIRMED — sourced from <aggregator>] with cross-referenced
+    discrepancies noted where found (DM Cantor, Suzuki Law Offices).
+[x] Revenue is not split gross vs. net because neither was stated on
+    the call — flagged explicitly in Step 9 as an open gap rather than
+    silently defaulted.
+[x] Ads sections address both practice areas explicitly targeted going
+    forward (Criminal Defense, DUI) plus the transcript-specific
+    Domestic Violence keyword focus — all marked NOT OBSERVED for live
+    SERP data, with the transcript's own confirmation of active,
+    underperforming Google Ads/LSA spend carried through accurately.
+[x] No section states the firm or any competitor "is not running ads"
+    — language used throughout is "not observed" / "not observed via
+    live SERP," and the transcript's confirmation that paid spend IS
+    active is preserved and emphasized (this is a live-spend
+    optimization story, not a zero-marketing story).
+[x] No profitability or business claim appears beyond what the
+    transcript stated (none stated).
+[x] No competitor reference uses generic labels — only specific named
+    local firms (DM Cantor, AZ Defenders, Suzuki Law Offices, Shah Law
+    Firm, Law Office of Aaron Black, Arizona Law Group, etc.).
+[x] PageSpeed scores: no estimated numbers recorded — both mobile and
+    desktop marked NOT OBSERVED (HTTP 429 x3 across attempts spaced
+    through the session).
+[x] DBM recorded: firm-that-runs-itself / durable efficient lead engine
+    (Category 1), inferred from operational-control and lead-quality-
+    reliability language on the call — explicitly flagged as an
+    inference, not a direct quote, since no personal-lifestyle DBM
+    statement was made.
+[x] Revenue goal: not stated — flagged explicitly rather than silently
+    computed from an unstated base.
+[x] Close rate: not stated — defaulted to 15% per protocol.
+[x] Average case value: not stated — flagged for practice-area default
+    at /audit-write stage.
+[x] Stated call focus / product interest recorded explicitly: a
+    vendor-firing / lead-flow-crisis recovery call requiring tracking,
+    landing-page, LSA, and foundational SEO remediation — not a
+    generic "you've never tried marketing" narrative.
+[x] Existing marketing/SEO/ad vendor engagements recorded: Atomic
+    (fired, but still hosting the site during transition), CallRail
+    (active, call tracking), Clio Manage (active, case management, no
+    Clio Grow/Lawmatics yet).
+[x] Budget constraints stated: recorded — no hard ceiling, but explicit
+    sensitivity to broad/expensive "criminal defense" terms and a
+    stated preference for a staged plan; specific budget guidance
+    figures (PPC ~$5,500/mo, LSA ~$4,000/mo) captured from the call.
+
+ADDITIONAL FLAG FOR /audit-write: Live Google-surface data (GBP
+star/review count, live 3-pack, live Google Ads/LSA units, PageSpeed
+scores, Meta Ad Library) could not be obtained this session (see
+Tool-Access Note) — all substituted with aggregator-sourced or
+transcript-confirmed data and tagged accordingly. The strongest,
+highest-confidence findings from this session are the DIRECTLY-verified
+on-site issues (no H1 on homepage, literal "Home" title tag, buried
+contact form, duplicate/near-duplicate location-page content between
+/local/ and /location/ URL patterns, and a real cross-corroborated NAP
+phone-number inconsistency between the firm's own site (602-888-8020)
+and two independent third-party directories, BBB and
+Top100CriminalDefenseAttorneys.com (602-935-5039 on both)) — lean on
+these for the report's core on-site-fix narrative. Recommend the rep
+manually confirm Guardian Law Group's live Google star rating/review
+count and current Google Ads/LSA ad presence before the 2026-09-17
+proposal call.
