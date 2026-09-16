@@ -263,23 +263,55 @@ def add_rect(slide, left, top, w, h, fill=None, line=False):
     return shape
 
 
-def add_pill(slide, text, left, top, w, h, bg, text_color, size=6.5, bold=True, font_name=None):
-    """A small rounded-rectangle chip with centered text — used for status
-    badges (RED/AMBER/GREEN) and the header's urgency-score widget."""
+def add_pill(slide, text, left, top, w, h, bg, text_color, size=6.5, bold=True):
+    """A small rounded-rectangle chip, optionally with centered text — used
+    for status badges (RED/AMBER/GREEN), the header's urgency-score widget,
+    and (with text=None) as a plain colored background for a vector icon
+    drawn on top by the caller."""
     from pptx.util import Emu as E
     shape = slide.shapes.add_shape(5, E(int(left*914400)), E(int(top*914400)),
                                    E(int(w*914400)), E(int(h*914400)))
     shape.line.fill.background()
     shape.fill.solid()
     shape.fill.fore_color.rgb = bg
-    add_text(slide, text, left, top, w, h, size, text_color, bold=bold, align=PP_ALIGN.CENTER,
-             font_name=font_name)
+    if text:
+        add_text(slide, text, left, top, w, h, size, text_color, bold=bold, align=PP_ALIGN.CENTER)
     return shape
+
+
+def add_check(slide, left, top, size, color, weight_pt=1.75):
+    """A vector checkmark (two line segments) — used instead of a ✓ glyph so
+    it renders identically everywhere, regardless of what fonts a given
+    viewer (PowerPoint, Keynote, Google Slides, ...) has or substitutes."""
+    from pptx.enum.shapes import MSO_CONNECTOR
+    from pptx.util import Emu as E, Pt as P
+    points = [(0.22, 0.55), (0.42, 0.74), (0.80, 0.26)]
+    abs_pts = [(left + px*size, top + py*size) for px, py in points]
+    for (x1, y1), (x2, y2) in zip(abs_pts, abs_pts[1:]):
+        conn = slide.shapes.add_connector(MSO_CONNECTOR.STRAIGHT,
+                                          E(int(x1*914400)), E(int(y1*914400)),
+                                          E(int(x2*914400)), E(int(y2*914400)))
+        conn.line.color.rgb = color
+        conn.line.width = P(weight_pt)
+
+
+def add_x_mark(slide, left, top, size, color, weight_pt=1.75, inset=0.24):
+    """A vector X (two crossed line segments) — same rationale as add_check."""
+    from pptx.enum.shapes import MSO_CONNECTOR
+    from pptx.util import Emu as E, Pt as P
+    a, b = inset*size, (1-inset)*size
+    for (x1, y1), (x2, y2) in [((left+a, top+a), (left+b, top+b)),
+                                ((left+a, top+b), (left+b, top+a))]:
+        conn = slide.shapes.add_connector(MSO_CONNECTOR.STRAIGHT,
+                                          E(int(x1*914400)), E(int(y1*914400)),
+                                          E(int(x2*914400)), E(int(y2*914400)))
+        conn.line.color.rgb = color
+        conn.line.width = P(weight_pt)
 
 
 def add_text(slide, text, left, top, w, h, size, color, bold=False,
              align=PP_ALIGN.LEFT, italic=False, wrap=True,
-             cap_chars=None, cap_label="", font_name=None):
+             cap_chars=None, cap_label=""):
     from pptx.util import Emu as E, Pt as P
     if cap_chars is not None:
         text = cap(text, cap_chars, label=cap_label)
@@ -291,10 +323,7 @@ def add_text(slide, text, left, top, w, h, size, color, bold=False,
     p.alignment = align
     run = p.add_run()
     run.text = text
-    # Poppins (embedded via embed_fonts below) doesn't cover dingbat-range
-    # glyphs like ✕/✓ — callers with such a symbol pass font_name to fall
-    # back to a widely-supported system font instead of a "missing glyph" box.
-    run.font.name = font_name or FONT
+    run.font.name = FONT
     run.font.size = P(size)
     run.font.color.rgb = color
     run.font.bold = bold
@@ -370,15 +399,20 @@ def build_slide1(prs):
     # Key findings label
     add_text(slide, "KEY FINDINGS", 0.30, 2.20, 4.70, 0.18, 7.5, NAVY, bold=True)
 
-    # Finding cards — white with a colored left accent bar and a rounded icon chip
+    # Finding cards — white with a colored left accent bar and a rounded icon chip.
+    # The check/X are drawn as vector line shapes, not text glyphs, so they
+    # render identically in every viewer instead of depending on font coverage.
     finding_ys = [2.48, 3.16, 3.84, 4.52]
     for i, (ftype, text) in enumerate(FINDINGS[:4]):
         y = finding_ys[i]
-        dot  = RED if ftype == "neg" else GREEN
-        sym  = "✕" if ftype == "neg" else "✓"
+        dot = RED if ftype == "neg" else GREEN
         add_rect(slide, 0.30, y, 4.72, 0.61, fill=WHITE)
         add_rect(slide, 0.30, y, 0.04, 0.61, fill=dot)
-        add_pill(slide, sym, 0.47, y+0.21, 0.18, 0.18, dot, WHITE, size=8, font_name="Arial")
+        add_pill(slide, None, 0.47, y+0.21, 0.18, 0.18, dot, WHITE)
+        if ftype == "neg":
+            add_x_mark(slide, 0.47, y+0.21, 0.18, WHITE)
+        else:
+            add_check(slide, 0.47, y+0.21, 0.18, WHITE)
         add_text(slide, text, 0.75, y+0.13, 3.77, 0.41, 8.5, BODY_TEXT,
                  cap_chars=115, cap_label=f"FINDINGS[{i}]")
 
