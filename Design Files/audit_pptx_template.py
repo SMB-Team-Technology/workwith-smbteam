@@ -79,9 +79,12 @@ GOAL_HEADLINE = "$X → $Y revenue"       # FILL: e.g. "$1M → $1.8M revenue"
 GOAL_DBM      = "Owner takes real time off"  # FILL: DBM outcome phrase
 
 # Each priority: (line1, line2, accent_color_hex, [5 bullet strings])
+# Titles must reflect what this firm is actually buying and its real priorities —
+# see .claude/commands/audit-pptx.md. Do not default a column to "Marketing Engine"
+# unless a marketing/ads package is actually part of this firm's recommendation.
 PRIORITIES = [
     (
-        "Build the", "Marketing Engine", "0091C9",
+        "Priority", "One", "0091C9",
         [
             "Bullet 1 — specific action for this firm",
             "Bullet 2 — specific action for this firm",
@@ -134,7 +137,7 @@ BUNDLE_SAVINGS = "Save $X,XXX/mo by bundling"        # FILL
 
 AD_SPEND_NOTE = (
     "+ Recommended ad spend: $X,XXX–$XX,XXX/mo paid directly to Google/Meta"
-)  # FILL
+)  # FILL — set to None if no marketing/ads package is part of this firm's recommendation
 
 AVG_CASE_VALUE     = "$X,XXX"                         # FILL
 CONSERVATIVE_LABEL = "Conservative  (X cases/mo):"   # FILL
@@ -481,9 +484,11 @@ def build_slide3(prs):
     add_text(slide, BUNDLE_TOTAL, 0.42, 3.82, 2.40, 0.38, 22, OCEAN_BLUE, bold=True)
     add_text(slide, BUNDLE_SAVINGS, 2.92, 3.82, 1.90, 0.38, 8, BUNDLE_SUB)
 
-    # Ad spend note
-    add_rect(slide, 0.22, 4.34, 4.52, 0.44, fill=rgb("EEF2F8"))
-    add_text(slide, AD_SPEND_NOTE, 0.36, 4.37, 4.30, 0.38, 8, SLATE)
+    # Ad spend note — omitted entirely when no marketing/ads package was sold
+    if AD_SPEND_NOTE:
+        add_rect(slide, 0.22, 4.34, 4.52, 0.44, fill=rgb("EEF2F8"))
+        add_text(slide, AD_SPEND_NOTE, 0.36, 4.37, 4.30, 0.38, 8, SLATE,
+                 cap_chars=130, cap_label="AD_SPEND_NOTE")
 
     # ROI card
     add_rect(slide, 4.96, 1.12, 4.82, 1.44, fill=ROI_BG)

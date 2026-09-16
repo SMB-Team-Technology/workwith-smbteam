@@ -182,8 +182,9 @@ Compute and save `[friendly-name]/sections/section_11_workings.txt` containing:
 - Selected non-marketing package(s) name, bundled price, stand-alone price, savings
 - Total monthly investment (sum of bundled prices)
 - Total savings (sum of all stand-alone minus bundled)
-- Conservative ad spend amount and full ROI projection (leads, cases, revenue, return multiple)
-- Aggressive ad spend amount and full ROI projection (leads, cases, revenue, return multiple)
+- Conservative ad spend amount and full ROI projection (leads, cases, revenue, return multiple) — only if a marketing/ads package is part of the recommendation
+- Aggressive ad spend amount and full ROI projection (leads, cases, revenue, return multiple) — only if a marketing/ads package is part of the recommendation
+- If a marketing/ads package is part of the recommendation: one plain-English "why this range" sentence naming the basis for both numbers — the conservative basis (practice-area channel minimums, from `ad_spend_rationale.conservative_basis` in `package_decision.json` if present) and the aggressive basis (revenue-goal/20%-rule or tier-cap scaling, from `ad_spend_rationale.aggressive_basis` if present, or derived directly from the AD SPEND CALCULATION methodology below otherwise). No CPL numbers or internal terminology — this sentence is client-facing.
 - DBM statement for Block 1
 - List of 6+ quick win opportunities identified (pillar, title, why, competitor if any, opportunity)
 - First 90 days bullet points (3–5)
@@ -197,7 +198,7 @@ Fill and save `[friendly-name]/sections/section_11_next_steps.html` with the com
 - Block 1: custom closing statement (formula: "We help [audience] get [external desire] so they can [DBM].")
 - Block 2: DBM subheader + package block(s) with deliverables. Each package block must include a package-label div identifying the package type.
 - Block 3: investment rows with retail (stand-alone) and bundled prices pulled from your workings file. Total monthly investment row. Savings callout. Use ONLY the prices from the approved tables — never deviate. Each row represents one service category (e.g. "Full Service Marketing Starter", "Elite Coach Plus") — never break a category into sub-component line items or show individual pricing within a service category.
-- Block 4: recommended ad spend table. **DO NOT change the HTML structure.** Only replace the placeholder dollar amounts, case counts, and return multiples. Structure: ad spend range row → case value row → spacer → "Conservative scenario" header + 3 rows (cases, revenue, return) → spacer → "Aggressive scenario" header + 3 rows → disclaimer.
+- Block 4: recommended ad spend table. **Only include this block at all if a marketing/ads package is actually part of this firm's recommendation** (i.e., a marketing tier was selected and survived the Transcript-Stated Need Override above) — if the recommendation is coaching/ops/AI-only, delete Block 4 entirely from the saved file rather than filling it with a number for a service the firm isn't buying. When it applies: **DO NOT change the HTML structure otherwise.** Replace the placeholder dollar amounts, case counts, and return multiples, and fill the "why this range" sentence (see Step I-a) using the client-facing basis, not the internal CPL/tier-multiplier math. Structure: ad spend range row → case value row → spacer → "Conservative scenario" header + 3 rows (cases, revenue, return) → spacer → "Aggressive scenario" header + 3 rows → why-this-range sentence → disclaimer.
 
 Leave blocks 5–8 with their original template placeholder text for now. Save the file.
 
@@ -218,7 +219,7 @@ Copy `Design Files/section_executive_summary.html` to `[friendly-name]/sections/
 - `TOP_PRIORITY_1` through `TOP_PRIORITY_4`: 3–4 of the most critical firm-specific findings from sections 05–09. One sentence each. Lead with the consequence. Delete the fourth `<li>` if only 3 priorities.
 - `PACKAGE_ONE_NAME` / `BUNDLED_PRICE_ONE`: copy from your completed `section_11_next_steps.html` investment grid
 - `PACKAGE_TWO_NAME` / `BUNDLED_PRICE_TWO`: copy from investment grid; delete this row if only one package
-- `AD_SPEND`: copy "Recommended ad spend" value from investment grid
+- `AD_SPEND`: copy "Recommended ad spend" value from investment grid; if Block 4 was omitted from section 11 (no marketing/ads package sold), omit this line here too instead of copying a number for a service that wasn't recommended
 - `TOTAL_INVESTMENT`: sum of bundled package prices only (not ad spend); copy from investment-total in section 11
 - `EXEC_CLOSING`: one sentence tied to this firm's central opportunity and owner's DBM. No placeholders.
 
@@ -545,6 +546,8 @@ Always present ad spend as a range: **Conservative (low end) to Aggressive (high
 6. Check against tier cap. If above cap, recommend tier upgrade or note 10% overage fee.
 
 **Common geo tiers:** NYC/LA/Chicago/Houston/Dallas/Atlanta/Philly/DC = Tier 1. Miami/Boston/Phoenix/Seattle/Detroit/SF/Tampa/Minneapolis/Denver/San Diego/Orlando = Tier 2. Charlotte/Austin/Portland/Nashville/Indianapolis/Columbus/Cleveland/Raleigh = Tier 3. Most mid-size cities = Tier 4. Rural/small markets = Tier 5.
+
+**Client-facing "why this range" sentence:** once both numbers are calculated, condense the basis into one sentence for Block 4 — name the practice area behind the conservative floor and the revenue-goal/20%-rule behind the aggressive figure (e.g. "Conservative reflects the minimum effective spend for personal injury across the recommended channels; aggressive is 20% of your $1.8M revenue goal, adjusted for your market."). Do not surface CPL benchmarks, geo-tier multiplier values, or other internal math in this sentence — that level of detail stays in the Sales Companion only. This only applies when a marketing/ads package is part of the recommendation.
 
 ---
 
