@@ -1,0 +1,314 @@
+WADE & NYSATHER AZ ACCIDENT ATTORNEYS — RESEARCH NOTES
+Sales Rep: Nick Holderman | Proposal Call: September 21, 2026
+Firm URL: http://azaccident.com | Secondary site: azburnlawyers.com
+HubSpot Contact: Claritza Molina (claritza.molina@azaccident.com, 623-476-9177)
+
+TOOLING NOTE (read first): This research was conducted in an environment without a
+live, JS-rendering browser. Static page fetches worked for azaccident.com itself.
+Google Maps, Google Search knowledge panels, the Google Local 3-pack, Google Ads
+SERPs, Google Local Service Ads, and the Meta Ad Library are all JS-rendered and/or
+bot-blocked (fetch attempts returned 403/empty-shell responses) and could not be
+observed directly. Where this affected a data point, it is called out explicitly
+below rather than fabricated. Review counts/ratings were cross-checked via search
+and third-party aggregators and are tagged per the verification rule.
+
+================================================================
+STEP 1 — WEBSITE RESEARCH (azaccident.com)
+================================================================
+- Website URL confirmed live: yes
+- Last redesign date or estimated age: Not explicitly dated on-site. Site references
+  the firm's "30th Anniversary" branding and copyright range 2024–2026; design/CMS
+  appears current (not visibly outdated), but no explicit "last redesigned" date found.
+- Mobile responsive: not directly observed (no live rendering available) — flag for
+  manual confirmation, but no red flags surfaced in the fetched markup.
+- Homepage headline: "WE DON'T GET PAID UNLESS YOU DO"
+- CTA above fold: yes — "SEE IF YOU HAVE A CASE" (repeated), "CALL US 24/7"
+  (602-547-2222), and a "Free Case Review" button
+- Contact form location: not clearly isolated from the fetched content — the site
+  pushes phone (24/7), text, Zoom, and a client portal as primary contact channels
+  rather than a prominent static form; not confirmed above/below fold.
+- Live chat present: no live chat detected
+- Attorney bio present: yes — "Meet Our Team" section lists attorneys/partners,
+  but several bio blurbs appear mismatched to the wrong attorney (e.g., a listing
+  shows "Steven E. Hames – Real Estate Lawyer" under what should be a personal
+  injury attorney bio) — a content-QA issue worth flagging.
+- Video present: none detected
+- Blog present: yes — most recent post "Wade & Nysather Proudly Sponsors 2026
+  Scottsdale Cops & Kids Back to School Event," August 18, 2026. Prior to that,
+  the last cluster of posts is dated October 21–23, 2025 — a roughly 10-month gap
+  between substantive SEO content posts.
+
+PageSpeed scores: COULD NOT BE OBTAINED. Attempted the PageSpeedInsights API
+(mobile and desktop, 5 attempts across ~2 minutes) and the pagespeed.web.dev UI;
+the API returned HTTP 429 (rate-limited) on every attempt and the UI is JS-rendered
+so a static fetch only shows a "running analysis" loading shell with no score data.
+Per the no-estimate rule, no number is recorded. This must be re-run manually
+(pagespeed.web.dev) before /audit-write if a specific score is required in the report.
+
+================================================================
+STEP 2 — GOOGLE BUSINESS PROFILE
+================================================================
+- GBP found: yes (firm has 5 GBP-linked locations: Scottsdale, Glendale, Mesa,
+  Chandler, Phoenix; Scottsdale, 8961 E Bell Rd #201, appears to be the flagship/HQ)
+- Star rating: 4.9 [UNCONFIRMED — sourced from trustanalytica.org aggregator page,
+  which itself attributes all reviews to a "Google" source tag; not independently
+  confirmed via a direct Google Maps/GBP listing]
+- Total review count: 69 (Scottsdale location, per trustanalytica) [UNCONFIRMED —
+  sourced from trustanalytica.org, not independently confirmed via Google]. Separately,
+  Yelp shows 19 reviews (Scottsdale) and 13 reviews (Glendale) [UNCONFIRMED — sourced
+  from Yelp, not Google].
+- Most recent review date: not confirmed (aggregator pages did not expose a
+  most-recent-review timestamp)
+- Primary category: "Personal Injury Attorney" (consistent across FindLaw/Lawyers.com
+  directory listings)
+- Photos active: yes (Yelp listing shows 26 photos on the Scottsdale profile,
+  15–28 photos across other location listings)
+- Posts active: not confirmed (GBP Posts feature could not be observed without
+  direct Maps access)
+
+================================================================
+STEP 3 — LOCAL 3-PACK SEARCHES
+================================================================
+CAVEAT: The visual Google Maps "3-pack" widget could not be rendered by available
+tools. The searches below were run as organic web searches (via Anthropic's web
+search tool, not a live Google Maps session) as the closest available substitute.
+Results reflect top organic/directory-indexed results, not a confirmed literal
+map-pack ranking. Wade & Nysather did not appear by name in the top organic
+results for any of the six searches run below, across three of its five office cities.
+
+Practice Area 1: Car Accidents
+- Search 1 "car accident lawyer Scottsdale AZ": firm appears NO — competitors
+  surfaced: The Accident Guys [1,220 reviews, Yelp], Feller & Wendt [~1,300 reviews],
+  Shapiro Law Team, KRLG LLC, Donald G. Yearin
+- Search 2 "car accident lawyer Phoenix AZ": firm appears NO — competitors surfaced:
+  Lamber Goodnow, Phillips Law Group [3,500+ reviews claimed on-site], Shapiro Law,
+  Phoenix Accident and Injury Law Firm, Harris Injury Law
+- Search 3 "car accident lawyer Mesa AZ": firm appears NO — competitors surfaced:
+  Morgan & Morgan, Skousen Gulbrandsen & Patience, Shapiro Law Team, Rasmussen
+  Injury Law, Tobler Law
+
+Practice Area 2: Motorcycle Accidents
+- Search 1 "motorcycle accident attorney Phoenix AZ": firm appears NO — competitors
+  surfaced: Burg Simpson, Gallagher & Kennedy, Hutzler Law, KRLG Injury Lawyers,
+  Wyatt Injury Law
+- Search 2 "motorcycle accident lawyer Scottsdale AZ": firm appears NO — competitors
+  surfaced: Lamber Goodnow, Suzuki Law Offices, Feller & Wendt, Mushkatel Gobbato
+  & Kile, Yearin Law Office
+- Search 3 "motorcycle accident lawyer Mesa AZ": firm appears NO — competitors
+  surfaced: Lamber Goodnow, Ben Crump Law, SGP Law, Feller & Wendt, Karnas Law
+
+Takeaway: Feller & Wendt and KRLG each recur across multiple cities/practice areas,
+indicating broad, sustained local SEO investment; Wade & Nysather did not surface
+organically in any of the six searches despite having offices in all three cities searched.
+
+================================================================
+STEP 4 — COMPETITOR REVIEW COUNTS
+================================================================
+- Competitor 1: Feller & Wendt, LLC (Scottsdale) — reviews: ~1,301 [UNCONFIRMED —
+  sourced from web-search aggregation of the firm's own site/third-party pages,
+  not independently confirmed via Google] — rating: 4.8 [UNCONFIRMED — same source]
+- Competitor 2: The Accident Guys (Scottsdale) — reviews: 1,220 [UNCONFIRMED —
+  sourced from Yelp] — rating: 4.9 [UNCONFIRMED — sourced from Yelp]. Firm's own
+  marketing separately claims "2,500+ five-star independent reviews" firm-wide.
+- Competitor 3: KRLG Injury Lawyers (Scottsdale) — reviews: 313–409 (two different
+  Birdeye profile pages disagree) [UNCONFIRMED — sourced from Birdeye] — rating:
+  4.8 [UNCONFIRMED — sourced from Birdeye]
+
+Prospect (Wade & Nysather) review count (69, per trustanalytica; 19+13 per Yelp
+by location) is lower than all three named competitors above under every source
+checked — no risk of overstating competitor standing relative to the prospect here.
+
+================================================================
+STEP 5 — DIRECTORY LISTINGS
+================================================================
+- FindLaw: yes — separate profiles for Scottsdale, Glendale, Chandler, and Mesa
+- Lawyers.com: yes — separate profiles for Phoenix, Glendale, Chandler
+- Martindale: yes — separate profiles for Chandler, Glendale, Scottsdale, Phoenix
+- Avvo: not found in search (no direct avvo.com profile surfaced)
+- Justia: not found in search (no direct justia.com profile surfaced)
+- Yelp: yes — separate listings per office (Scottsdale: 19 reviews/26 photos;
+  Glendale: 13 reviews/15 photos)
+NAP consistency: Name/phone/address appear consistent across FindLaw, Lawyers.com,
+and Martindale (single central number 602-547-2222 used across all directory
+listings and all five office addresses match the site's own footer).
+Geo-targeting landing pages: azaccident.com itself shows no dedicated per-city
+landing pages beyond its 5 office-location pages. Notably, the SEPARATE site
+azburnlawyers.com DOES run city/neighborhood-level geo-landing pages (e.g. a
+"Bethel Grove" personal injury page was found), confirming the two-site overlap
+problem flagged on the discovery call — the burn-injury site is generating broad
+personal-injury geo pages that compete with azaccident.com's own footprint rather
+than staying narrowly scoped to burn injuries.
+
+================================================================
+STEP 6 — GOOGLE ADS
+================================================================
+CAVEAT: Google Ads placements are only visible on a live, rendered SERP; available
+tools could not render live Google search results pages (fetch attempts returned
+blocked/empty-shell responses), and the search tool used elsewhere in this file
+returns organic index results only, not paid placements. No ad presence — firm's
+or competitors' — could be directly observed for any practice area. Per the ads
+framing rule, this is recorded as "not observed" rather than "not running."
+
+Practice Area 1: Car Accidents
+- Firm ads observed: not observed (tooling limitation, see caveat above)
+- Named local competitors running ads: not observed (tooling limitation)
+
+Practice Area 2: Motorcycle Accidents
+- Firm ads observed: not observed (tooling limitation)
+- Named local competitors running ads: not observed (tooling limitation)
+
+This section requires a manual live-SERP check before the client-facing report
+is finalized, given how central "personal injury lawyer" PPC economics ($150–200/click)
+are to the growth conversation.
+
+================================================================
+STEP 7 — LOCAL SERVICE ADS
+================================================================
+CAVEAT: same tooling limitation as Step 6 — LSA units render only in a live,
+logged-in-region Google SERP and could not be observed.
+- Firm appears in LSA: not observed
+- Google Screened: not observed
+- LSA review count: not observed
+- Named local competitors in LSA: not observed
+
+================================================================
+STEP 8 — META ADS
+================================================================
+CAVEAT: facebook.com/ads/library is a fully JS-rendered, bot-gated interface;
+fetch attempts returned a socket error and then HTTP 403. No Meta ad activity —
+firm's or competitors' — could be directly observed.
+- Firm has active ads: not observed (tooling limitation)
+- Named local competitor 1: not observed
+- Named local competitor 2: not observed
+
+================================================================
+STEP 9 — TRANSCRIPT EXTRACTION
+================================================================
+- Practice areas confirmed: Transcript frames the firm generically as a "personal
+  injury law firm" and separately flags a "burn injuries" niche (via azburnlawyers.com).
+  Full list per website (not contradicted by transcript): Car Accidents, Semi-Truck
+  Accidents, Motorcycle Accidents, Bicycle Accidents, Wrongful Death, Uber/Lyft
+  Accidents, Dog Bites, Brain Injuries, Spinal Cord Injury, Pedestrian Accidents,
+  Burn Injuries, Premises Liability.
+- Current lead sources: Referrals (primary — call explicitly frames the goal as
+  "Reduce reliance on referrals by improving marketing and operational efficiency").
+  Secondary: "reactive SEO service from a single [unnamed] provider."
+- Ads ever run: not stated in transcript.
+- Team size: 16 employees total, incl. 3 attorneys; 5–6 paralegals; an intake
+  department; Claritza Molina (office/client contact) and "Mike + partners" referenced
+  as attorneys/leadership to be looped in on the proposal.
+- Annual revenue (gross / case value): ~$2.7M/year ($200–250k/month), as stated.
+- Annual revenue (net / take-home / collected): not distinguished from gross —
+  transcript states only the one revenue figure.
+- Fee structure: not stated in the transcript itself. (Corroborating website
+  research: firm advertises "no recovery, no fee" — standard PI contingency —
+  but this is a website observation, not a transcript quote.)
+- Revenue goal: not stated — use 2x current revenue (~$5.4M/year) per default.
+- Average case value: not stated.
+- Current close rate: not stated — default to 15%.
+- Number of locations: not stated in transcript. Confirmed via website research:
+  5 (Scottsdale, Glendale, Mesa, Chandler, Phoenix).
+- Spanish campaign needed: not stated.
+- Dominant buying motive: Not stated as a personal/owner motive (no "retire,"
+  "sell," "coach my kid's team" language in the transcript). Closest inference:
+  this call is driven by operational relief for the TEAM, not a personal exit
+  motive for ownership — "automate manual tasks (intake, follow-ups, demand
+  letters) to free up staff for higher-value work" — closest bucket is (1) a firm
+  that runs itself so the owners/team have more time/capacity, but note this is
+  inferred from operational framing, not a direct personal statement from an owner.
+- Any profitability claims made by prospect: none stated.
+- Any claims about case types or practice areas: "personal injury law firm"
+  (exclusive focus); burn injuries called out as a distinct niche practice with
+  its own website (azburnlawyers.com).
+- Stated call focus / product interest: *** NOT standard marketing/intake growth. ***
+  This call was framed around a Fractional CTO / AI-automation engagement first,
+  with marketing/website consolidation as a paired secondary offer. Per the
+  transcript's own meeting purpose: "Explore AI and marketing solutions for a
+  personal injury law firm." Wade & Nysather is also a FORMER SMB Team client
+  (prior coaching/SEO engagement) now being pitched a new, expanded scope:
+  (1) AI Workforce Pro (SOC2 platform, $350/mo seats 1-5, $120/mo seats 6+,
+  ~$2,950/mo at 15 seats), (2) Fractional CTO Program (~$3,800/mo, annual
+  contract, 30-day audit → custom roadmap → 1-3 automations/month), paired with
+  (3) a proactive marketing package ($5,000-8,000/mo) contingent on building a
+  single consolidated website. /audit-write should NOT default to a standard
+  marketing-only growth narrative for this firm — the AI/CTO angle is the
+  primary proposed engagement and should lead or co-lead.
+- Existing marketing/SEO/ad vendor engagements: Yes — "reactive SEO service from
+  a single provider" currently in place (vendor unnamed). Also a past (not current)
+  vendor relationship with ProPlaintiff for demand letters, ended due to "a poor
+  experience."
+- Budget constraints stated: none stated. No affordability pushback recorded in
+  the transcript; combined proposed spend across CTO + marketing is roughly
+  $8,800–$11,800/mo (using the ~$3,800 CTO figure alone) up to ~$14,750/mo if
+  AI Workforce Pro (15 seats) is added on top.
+
+================================================================
+STEP 10 — COMPETITIVE URGENCY SCORE
+================================================================
+Score: 8/10
+
+Rationale: Wade & Nysather did not surface organically in any of the 6 practice-
+area/city searches run in Step 3, despite having a physical office in every city
+searched. Meanwhile, Feller & Wendt and KRLG Injury Lawyers each appear repeatedly
+across multiple cities and practice areas with substantially larger review bases
+(hundreds to 1,300+ reviews vs. the prospect's ~69), and the firm's own two-website
+structure is actively working against it (self-identified SEO cannibalization
+between azaccident.com and azburnlawyers.com, with the burn-injury site now
+publishing broad geo-targeted personal-injury pages that dilute rather than
+reinforce the flagship site). Google Ads/LSA/Meta ad activity could not be
+directly observed (tooling limitation — flagged above, not asserted as absent),
+so this score is built on organic/local-SEO visibility and reputation-volume
+signals only; a live ad-visibility pass would likely sharpen this further in
+either direction and should be run manually before finalizing the report.
+
+Named threats:
+1. Feller & Wendt, LLC — appears across car-accident AND motorcycle-accident
+   searches in Scottsdale, Phoenix, and Mesa; ~1,300 reviews at 4.8 stars vs.
+   the prospect's ~69 — an order of magnitude more social proof in the same market.
+2. The Accident Guys — dominant in Scottsdale and Glendale searches; 1,220+
+   reviews on Yelp alone (4.9 stars) plus a firm-wide claim of 2,500+ reviews;
+   aggressive volume-based reputation marketing the prospect cannot currently match.
+3. KRLG Injury Lawyers — Scottsdale-based direct competitor (same city as the
+   prospect's flagship office) appearing in both car-accident and motorcycle-
+   accident results with 300+ reviews at 4.8 stars.
+
+Dynamic sentence (Score 7–10): "A score of 8 means competitors are actively
+dominating multiple channels in your market and the gap is getting wider every
+month you wait. This is not a future problem — it is a right now problem."
+
+================================================================
+PASS 2 — VERIFICATION CHECKLIST
+================================================================
+[x] Every number in the notes matches actually observed data (or is explicitly
+    flagged as not observed / tool-limited — none are estimated/fabricated)
+[x] Competitor review counts checked — no competitor cited as "dominating" has
+    fewer reviews than the prospect
+[x] Every review count/rating carries a verification-method tag
+[x] Revenue split into gross vs. net attempted — transcript only gives one
+    figure, noted as "not distinguished from gross"
+[x] Ad sections (Google Ads, LSA, Meta) cover both listed practice areas but
+    are honestly marked "not observed" due to tooling limitations, not asserted
+    as absent
+[x] No section asserts "you are not running ads" — all use "not observed"
+[x] No profitability/business claim appears that didn't come from the transcript
+[x] No competitor reference uses generic labels — all named local firms
+[x] PageSpeed: NOT obtained (429 rate-limited after 5 attempts + UI unreachable)
+    — flagged clearly, not estimated. NEEDS MANUAL FOLLOW-UP.
+[x] DBM recorded as an inference with explicit caveat that no personal-motive
+    language was present in the transcript
+[x] Revenue goal recorded (not stated, defaulted to 2x = ~$5.4M)
+[x] Close rate recorded (not stated, defaulted to 15%)
+[x] Average case value recorded (not stated)
+[x] Stated call focus called out explicitly and prominently — this is an
+    AI/Fractional-CTO-led call, not a standard marketing/intake growth call
+[x] Existing marketing/SEO vendor engagement recorded (active, unnamed SEO vendor;
+    past ProPlaintiff relationship for demand letters, ended)
+[x] Budget constraints recorded (none stated)
+
+OUTSTANDING ITEMS FOR MANUAL FOLLOW-UP BEFORE /audit-write, IF POSSIBLE:
+1. PageSpeed mobile/desktop scores — re-run manually at pagespeed.web.dev.
+2. Live Google SERP check for Google Ads and Local Service Ads presence
+   (firm + Feller & Wendt / Accident Guys / KRLG).
+3. Meta Ads Library check via a logged-in browser session.
+4. Direct Google Maps confirmation of the firm's actual GBP star rating/review
+   count (currently only aggregator-sourced, tagged UNCONFIRMED).
