@@ -356,11 +356,11 @@ def build_slide1(prs):
     for i, (status, label, detail) in enumerate(PILLARS):
         x = pillar_xs[i]
         sc = STATUS_COLOR[status]
-        add_rect(slide, x, 1.10, 2.26, 0.86, fill=WHITE)
+        add_rect(slide, x, 1.10, 2.26, 0.96, fill=WHITE)
         add_rect(slide, x, 1.10, 2.26, 0.04, fill=sc)
-        add_text(slide, PILLAR_NAMES[i], x+0.16, 1.25, 1.94, 0.20, 10, DARK_TEXT, bold=True)
-        add_pill(slide, label, x+0.16, 1.50, 0.56, 0.15, STATUS_PILL_BG[status], sc, size=6.5)
-        add_text(slide, detail, x+0.16, 1.72, 1.94, 0.20, 8, SLATE,
+        add_text(slide, PILLAR_NAMES[i], x+0.16, 1.26, 1.94, 0.24, 12, DARK_TEXT, bold=True)
+        add_pill(slide, label, x+0.16, 1.56, 0.64, 0.19, STATUS_PILL_BG[status], sc, size=7.5)
+        add_text(slide, detail, x+0.16, 1.82, 1.94, 0.22, 9.5, SLATE,
                  cap_chars=40, cap_label=f"PILLARS[{i}] detail")
 
     # Key findings label
@@ -456,10 +456,10 @@ def build_slide2(prs):
         header_text = ACCENT_TEXT_COLOR.get(hex_color, WHITE)
 
         # Header
-        add_rect(slide, x, 1.10, 2.26, 0.86, fill=ac)
-        add_text(slide, f"0{col_i+1}", x+0.18, 1.22, 0.50, 0.22, 11, header_text, bold=True)
-        add_text(slide, line1, x+0.18, 1.46, 1.90, 0.22, 11.5, header_text, bold=True)
-        add_text(slide, line2, x+0.18, 1.68, 1.90, 0.22, 11.5, header_text, bold=True)
+        add_rect(slide, x, 1.10, 2.26, 0.92, fill=ac)
+        add_text(slide, f"0{col_i+1}", x+0.18, 1.20, 0.50, 0.24, 13, header_text, bold=True)
+        add_text(slide, line1, x+0.18, 1.44, 2.00, 0.24, 14, header_text, bold=True)
+        add_text(slide, line2, x+0.18, 1.68, 2.00, 0.24, 14, header_text, bold=True)
 
         # Bullet rows
         for row_i, bullet in enumerate(bullets[:5]):
@@ -496,18 +496,18 @@ def build_slide3(prs):
         add_rect(slide, 0.30, y, 4.42, 1.05, fill=WHITE)
         add_rect(slide, 0.30, y, 0.04, 1.05, fill=ac)
         add_text(slide, label, 0.56, y+0.15, 3.92, 0.16, 7.5, ac, bold=True)
-        add_text(slide, price, 0.56, y+0.38, 1.55, 0.42, 25, NAVY, bold=True)
-        add_text(slide, "/mo", 1.92, y+0.56, 0.40, 0.20, 10, SLATE)
-        add_text(slide, retail, 2.40, y+0.56, 1.00, 0.20, 10, SLATE)
-        add_text(slide, services, 0.56, y+0.82, 3.92, 0.18, 8, SLATE,
+        add_text(slide, price, 0.56, y+0.36, 1.90, 0.44, 30, NAVY, bold=True)
+        add_text(slide, "/mo", 2.10, y+0.58, 0.40, 0.20, 10, SLATE)
+        add_text(slide, retail, 3.20, y+0.58, 1.10, 0.20, 10, SLATE, align=PP_ALIGN.RIGHT)
+        add_text(slide, services, 0.56, y+0.85, 3.92, 0.18, 8.5, SLATE,
                  cap_chars=61, cap_label=f"PACKAGES[{i}] services")
 
-    # Bundle total
-    add_rect(slide, 0.30, 3.36, 4.42, 0.72, fill=NAVY)
-    add_rect(slide, 0.30, 3.36, 0.04, 0.72, fill=LIME_GREEN)
-    add_text(slide, "BUNDLE TOTAL", 0.56, 3.51, 1.70, 0.16, 7.5, LIME_GREEN, bold=True)
-    add_text(slide, BUNDLE_TOTAL, 0.56, 3.71, 2.20, 0.30, 17, WHITE, bold=True)
-    add_text(slide, BUNDLE_SAVINGS, 2.90, 3.78, 1.60, 0.20, 8.5, BUNDLE_SAVINGS_TEXT,
+    # Bundle total — same 0.10in gap used between the two package cards above
+    add_rect(slide, 0.30, 3.40, 4.42, 0.72, fill=NAVY)
+    add_rect(slide, 0.30, 3.40, 0.04, 0.72, fill=LIME_GREEN)
+    add_text(slide, "BUNDLE TOTAL", 0.56, 3.55, 1.70, 0.16, 7.5, LIME_GREEN, bold=True)
+    add_text(slide, BUNDLE_TOTAL, 0.56, 3.75, 2.20, 0.30, 17, WHITE, bold=True)
+    add_text(slide, BUNDLE_SAVINGS, 2.90, 3.82, 1.60, 0.20, 8.5, BUNDLE_SAVINGS_TEXT,
              align=PP_ALIGN.RIGHT)
 
     # Ad spend note + ROI-on-ad-spend card — both omitted entirely when no
@@ -517,8 +517,8 @@ def build_slide3(prs):
     has_ad_spend = bool(AD_SPEND_NOTE)
 
     if has_ad_spend:
-        add_rect(slide, 0.30, 4.16, 4.42, 0.42, fill=rgb("EEF2F5"))
-        add_text(slide, AD_SPEND_NOTE, 0.50, 4.16, 4.02, 0.42, 8, BODY_TEXT,
+        add_rect(slide, 0.30, 4.22, 4.42, 0.42, fill=rgb("EEF2F5"))
+        add_text(slide, AD_SPEND_NOTE, 0.50, 4.22, 4.02, 0.42, 8, BODY_TEXT,
                  cap_chars=120, cap_label="AD_SPEND_NOTE")
 
         # ROI card
