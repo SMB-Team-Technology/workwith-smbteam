@@ -204,8 +204,8 @@ Leave blocks 5–8 with their original template placeholder text for now. Save t
 
 **STEP I-c — Complete section 11 second half**
 Edit `[friendly-name]/sections/section_11_next_steps.html` to fill in blocks 5–8:
-- Block 5: first 90 days action bullets. Lead with launching ads first, then website work. Include coaching kickoff. Never mention live chat. Never mention CRM setup.
-- Block 6: three phase roadmap cards with dynamic milestone triggers and DBM sentences.
+- Block 5: first 90 days action bullets. Use the FIRST 90 DAYS — PACKAGE-KEYED ACTIONS table below. Never mention live chat. Never mention CRM setup.
+- Block 6: three phase roadmap cards. Use the GROWTH ROADMAP PHASES rules below — do not repeat what Block 2 already sold as a "new" phase addition.
 - Block 7: three outcome cards (More Profit, More Freedom, Better Client Results), each tied to this owner's DBM.
 - Block 8: personal closing paragraph (2–3 italic sentences) + final line with firm name.
 
@@ -598,13 +598,62 @@ Note these in the research notes file for the sales team. Do not include in the 
 
 ---
 
+### FIRST 90 DAYS — PACKAGE-KEYED ACTIONS (Block 5)
+
+Block 5 must be composed only from the package/service types that are
+actually part of THIS firm's Block 2 recommendation — never a fixed
+universal script, and never leading with ads by default.
+
+| Package/Service Sold | Typical First-90-Days Action |
+|---|---|
+| Full Service Marketing (any tier), ads-eligible channel identified in section_06 | Launch [specific channel: Google Ads / LSA / Meta] for [practice area] in [city] |
+| Full Service Marketing, website rebuild flagged needed (section_06) | Rebuild website / build practice-area landing pages |
+| Full Service Marketing, GBP/local SEO/NAP gaps flagged (section_06) | Clean up GBP profile, NAP consistency, directory listings |
+| Ads-only or Web+SEO-only sub-package | Only the one relevant action above — do not add the other marketing actions |
+| Coach Essentials / Elite Coach / Elite Coach Plus / Master's Circle | Coaching kickoff — first group session and goal-setting call |
+| FCOO Advisor / Director / Partner | Operations audit and workflow mapping kickoff |
+| FCFO Advisor / Director / Partner | Financial visibility setup — reporting cadence kickoff |
+| Legal AI Workforce (any LAW tier) | AI workspace setup and first Skill deployment |
+| Bookkeeping (any level) | First-month reconciliation and cleanup kickoff |
+| Attorney Assistant (AI intake agent) | Intake agent configuration and training kickoff |
+| AI Avatar / OmniSocial AI | First content/video batch kickoff |
+
+Rules:
+- Include one action per package/service type actually in Block 2 — 3-5
+  bullets total. Never include an action for a package this firm is not
+  buying.
+- Order bullets by which package is most central to this firm's
+  recommendation (tie to the reddest pillar, the DBM, or the largest
+  bundled price) — not a fixed sequence. Do not default to leading with ads.
+- Every bullet must connect to something SMB Team actually delivers. Never
+  mention live chat. Never mention CRM setup.
+
+---
+
 ### GROWTH ROADMAP PHASES
 
-- **Phase 1 — Foundation:** Marketing + Coaching. Connect to DBM.
-- **Phase 2 — Operational Scale:** Add FCOO Advisor ($3,297/mo). Frame as graduation. Connect to DBM.
-- **Phase 3 — Optimize:** Add FCFO Advisor ($3,297/mo). Add Bookkeeping if needed. Add Legal AI Workforce (LAW) AI Essentials ($1,597/mo) if firm has not already adopted it — frame as deploying AI staff to handle repeatable tasks while the human team focuses on high-value work. Connect to DBM.
-- **Phase 4 — Market Domination:** Upgrade marketing tier. Upgrade LAW to Accelerator or Enterprise tier to match firm growth.
-- **Phase 5 — Full SMB Ecosystem:** All services. Closing line: "The firms that have the freedom you described all ended up here. And it started exactly where we are starting you."
+Phases must reflect what THIS firm is actually buying and what it doesn't
+have yet — never assume every firm starts from the same Phase 1 bundle.
+
+- **Phase 1 — Foundation:** Whatever this firm is actually buying now, from
+  Block 2 (may be marketing alone, coaching alone, LAW alone, or a
+  combination — do not default to "Marketing + Coaching" if that isn't
+  what was recommended). Connect to DBM.
+- **Phase 2 — Operational Scale:** Add FCOO Advisor ($3,297/mo) only if it
+  is not already part of Phase 1. If the firm already has FCOO (or an
+  equivalent ops product), add the next thing this firm's trajectory
+  actually needs and doesn't have yet (e.g. an upgraded marketing tier,
+  LAW, or bookkeeping). Frame as graduation. Connect to DBM.
+- **Phase 3 — Optimize:** Add FCFO Advisor ($3,297/mo), Bookkeeping, and
+  Legal AI Workforce (LAW) AI Essentials ($1,597/mo) — but only whichever
+  of these the firm doesn't already have from Phase 1 or Phase 2. Frame LAW
+  as deploying AI staff to handle repeatable tasks while the human team
+  focuses on high-value work. Connect to DBM.
+- **Phase 4 — Market Domination:** Upgrade marketing tier. Upgrade LAW to
+  Accelerator or Enterprise tier to match firm growth.
+- **Phase 5 — Full SMB Ecosystem:** All services. Closing line: "The firms
+  that have the freedom you described all ended up here. And it started
+  exactly where we are starting you."
 
 ---
 
