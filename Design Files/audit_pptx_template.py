@@ -263,7 +263,7 @@ def add_rect(slide, left, top, w, h, fill=None, line=False):
     return shape
 
 
-def add_pill(slide, text, left, top, w, h, bg, text_color, size=6.5, bold=True):
+def add_pill(slide, text, left, top, w, h, bg, text_color, size=6.5, bold=True, font_name=None):
     """A small rounded-rectangle chip with centered text — used for status
     badges (RED/AMBER/GREEN) and the header's urgency-score widget."""
     from pptx.util import Emu as E
@@ -272,13 +272,14 @@ def add_pill(slide, text, left, top, w, h, bg, text_color, size=6.5, bold=True):
     shape.line.fill.background()
     shape.fill.solid()
     shape.fill.fore_color.rgb = bg
-    add_text(slide, text, left, top, w, h, size, text_color, bold=bold, align=PP_ALIGN.CENTER)
+    add_text(slide, text, left, top, w, h, size, text_color, bold=bold, align=PP_ALIGN.CENTER,
+             font_name=font_name)
     return shape
 
 
 def add_text(slide, text, left, top, w, h, size, color, bold=False,
              align=PP_ALIGN.LEFT, italic=False, wrap=True,
-             cap_chars=None, cap_label=""):
+             cap_chars=None, cap_label="", font_name=None):
     from pptx.util import Emu as E, Pt as P
     if cap_chars is not None:
         text = cap(text, cap_chars, label=cap_label)
@@ -290,7 +291,10 @@ def add_text(slide, text, left, top, w, h, size, color, bold=False,
     p.alignment = align
     run = p.add_run()
     run.text = text
-    run.font.name = FONT
+    # Poppins (embedded via embed_fonts below) doesn't cover dingbat-range
+    # glyphs like ✕/✓ — callers with such a symbol pass font_name to fall
+    # back to a widely-supported system font instead of a "missing glyph" box.
+    run.font.name = font_name or FONT
     run.font.size = P(size)
     run.font.color.rgb = color
     run.font.bold = bold
@@ -374,7 +378,7 @@ def build_slide1(prs):
         sym  = "✕" if ftype == "neg" else "✓"
         add_rect(slide, 0.30, y, 4.72, 0.61, fill=WHITE)
         add_rect(slide, 0.30, y, 0.04, 0.61, fill=dot)
-        add_pill(slide, sym, 0.47, y+0.21, 0.18, 0.18, dot, WHITE, size=8)
+        add_pill(slide, sym, 0.47, y+0.21, 0.18, 0.18, dot, WHITE, size=8, font_name="Arial")
         add_text(slide, text, 0.75, y+0.13, 3.77, 0.41, 8.5, BODY_TEXT,
                  cap_chars=115, cap_label=f"FINDINGS[{i}]")
 
