@@ -1,0 +1,25 @@
+name: TEMP — Slack scope check (no posting)
+
+on:
+  workflow_dispatch:
+    inputs:
+      email:
+        description: 'Email to test users.lookupByEmail against'
+        required: true
+        default: 'dan.bryant@smbteam.com'
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check users.lookupByEmail and users.list scopes
+        env:
+          SLACK_BOT_TOKEN: ${{ secrets.SLACK_BOT_TOKEN }}
+        run: |
+          echo "--- users.lookupByEmail (needs users:read.email) ---"
+          curl -s "https://slack.com/api/users.lookupByEmail?email=${{ inputs.email }}" \
+            -H "Authorization: Bearer $SLACK_BOT_TOKEN" | jq 'if .ok then {ok, user: {id: .user.id, name: .user.name}} else . end'
+
+          echo "--- users.list (needs users:read) ---"
+          curl -s "https://slack.com/api/users.list?limit=1" \
+            -H "Authorization: Bearer $SLACK_BOT_TOKEN" | jq '{ok, error, response_metadata}'
