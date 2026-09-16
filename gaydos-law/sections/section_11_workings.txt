@@ -1,135 +1,185 @@
 GAYDOS LAW, P.C. — SECTION 11 WORKINGS (INTERNAL — NOT FOR CLIENT REPORT)
 ==========================================================================
 
-PACKAGE DECISION FILE CROSS-CHECK
-----------------------------------
-package_decision.json confidence: "medium" (revenue was not stated directly in
-research notes and was originally sourced from HubSpot at $1,980,500/yr; the
-research notes' transcript extraction independently states revenue as
-approximately $1M gross/yr). Per the audit-write spec, medium confidence
-requires cross-checking the decision file against research notes and
-documenting any correction here — done below.
+*** UPDATED 2026-09-16 — RE-SCOPED PER DIRECT SELLER OVERRIDE (CAROLYN WEBB) ***
+This supersedes the 2026-09-14 Starter + Elite Coach Plus version of this file
+in full. The prior version's overrides-check narrative is preserved below for
+audit trail, but the package, ad strategy, and all downstream numbers in this
+file are the current, correct ones to use in the client report, Sales
+Companion, and Proposal PPTX.
 
-TRANSCRIPT-STATED NEED OVERRIDE CHECK (all four checked, none apply):
-1. Call-purpose override — NOT TRIGGERED. Research notes state the call was a
-   standard marketing/growth discovery call with an AI-efficiency angle for
-   internal workflows, not a Fractional CTO/pure-AI or coaching/ops call.
-2. Existing-vendor override — NOT TRIGGERED. No confirmed active exclusive
-   marketing/SEO/ad vendor contract; prior vendors (Viv, A to Z e-Communications)
-   have no stated current contract status, and ads are currently paused.
-3. Budget-reality override — NOT TRIGGERED. No budget constraints or financial
-   limits were stated by the prospect. Discussion of SMB Team's typical pricing
-   range was informational, not an objection.
-4. Effective-revenue override — NOT APPLICABLE. Firm revenue was described as
-   gross ("$700,000... approximately $1M gross") without a distinct net/
-   take-home figure; not a contingency-split situation requiring recalculation
-   against a net number. is_contingency_practice is marked true in the decision
-   file based on PI case type, but no separate net figure was ever stated to
-   recompute against.
+SELLER OVERRIDE — WHAT CHANGED AND WHY
+----------------------------------------
+Instruction received directly (not via the transcript): switch the
+recommendation to a single, stand-alone Full Service Marketing — Essentials
+engagement at $3,797/mo, with paid ads narrowed specifically to Local Service
+Ads (LSA) for Family Law and Probate — not a full multi-practice buildout.
+Case values and capacity were also given directly:
+  - Family Law (divorce/custody) case value: $5,000
+  - Probate (estate administration) case value: $20,000
+  - Stated capacity: up to 10-20 additional probate cases/mo, 20 additional
+    new family law cases/mo
+  - Ad spend plan: start LSA-only at $3,000-$5,000/mo, add PPC at
+    ~month 3 to bring total ad spend to $7,500/mo
 
-Conclusion: none of the four overrides apply. Per spec, since confidence is
-"medium" (not "high"), the decision file is used as a validated starting point
-with corrections cross-checked against research notes and documented below.
-The marketing/coaching tier selection itself was also independently confirmed
-via a seller override communicated through Slack on 2026-09-14 (see
-package_decision.json selection_notes) — this is treated as a deliberate,
-already-approved human decision, not something to re-litigate.
+This is treated the same way the 2026-09-14 Slack override was treated in the
+prior version of this file: a deliberate, already-approved human decision on
+package/scope, not something to re-litigate against the standard eligibility
+filters. It is documented here per the audit-write spec's requirement to show
+the departure and the reasoning.
+
+ELIGIBILITY FILTERS THIS OVERRIDES (documented per spec)
+-----------------------------------------------------------
+Per the standard SELECT MARKETING PACKAGE eligibility rules, Full Service
+Marketing Essentials would ordinarily be EXCLUDED here for three independent
+reasons:
+  1. Personal Injury is one of the firm's practice areas → hides ALL
+     Essentials marketing packages under the standard rules.
+  2. Essentials requires a single location AND a single practice area; this
+     firm has multiple practice areas (PI, Family Law, Estate Planning/
+     Probate, Criminal Law).
+  3. Essentials is generally hidden once revenue is over $750K (this firm is
+     ~$1M gross per the transcript, ~$1.98M per HubSpot either way).
+
+None of these are being ignored by mistake. The override is intentional and
+narrow: this is not "Full Service Marketing Essentials across all of Gaydos
+Law's practice areas" — it is a single-product, stand-alone engagement whose
+paid-ads scope is deliberately restricted to LSA only, on exactly two
+practice areas (Family Law and Probate). The Essentials price point and the
+$7,500/mo ad-spend cap that comes with it are being used because they match
+the client's own stated appetite to "start smaller and ramp up," not because
+the firm cleared the normal Essentials eligibility bar.
 
 MANDATORY PRICE LOOKUP (confirmed against .claude/commands/audit-write.md
-on-disk tables, character-by-character — NOT the corrupted skill-tool echo
-encountered mid-session, which was discarded as untrustworthy):
-
-- Marketing package selected: Full Service Marketing — Starter
-  - Bundled price (from table): $4,997/mo
-  - Stand-alone price (from table): $5,697/mo
-  - Savings (stand-alone minus bundled): $700/mo
-- Non-marketing package selected: Elite Coach Plus
-  - Bundled price (from table): $3,200/mo
-  - Stand-alone price (from table): $3,497/mo
-  - Savings (stand-alone minus bundled): $297/mo
-- Legal AI Workforce (LAW) package selected: none (law_tier is null in
-  package_decision.json)
+on-disk pricing tables, character-by-character)
+-----------------------------------------------------------------------------
+- Marketing package selected: Full Service Marketing — Essentials
+  - Bundled price (from table): $3,497/mo (bundled price requires pairing
+    with a non-marketing package — NOT used here)
+  - Stand-alone price (from table): $3,797/mo  <-- THIS is the quoted price,
+    since this is being sold as a single, stand-alone product with no
+    coaching or other package attached.
+  - Savings (stand-alone minus bundled): N/A — there is no bundle, so no
+    bundling discount applies. Do not show a "you save" line in the client
+    report for this package.
+- Non-marketing package selected: NONE (coaching removed from this proposal
+  per the override — this is now a single-product recommendation, which the
+  spec permits when "the transcript [here: the seller's direct instruction]
+  clearly shows the firm's needs are best served by one service category.")
+- Legal AI Workforce (LAW) package selected: none
 - AI Avatar / Video Growth add-on selected: none
-- Total monthly investment (sum of bundled prices): $4,997 + $3,200 = $8,197/mo
-- Total savings (sum of all savings): $700 + $297 = $997/mo
+- Total monthly investment (SMB Team fees only): $3,797/mo
+- Total savings: $0 (no bundle)
 
-COACHING TIER NOTE FOR SALES VISIBILITY (INTERNAL ONLY — DO NOT INCLUDE IN
-CLIENT REPORT):
-Research notes state total team size is 8 people (owner + 2 associate
-attorneys + 1 of-counsel + office manager + reception/intake-paralegal +
-owner's daughter + 1 intern). Per the non-marketing package eligibility table,
-"$1M+, 5+ with dedicated staff" would ordinarily point toward Master's Circle
-($4,600/mo bundled) rather than Elite Coach Plus ($3,200/mo bundled). However,
-Elite Coach Plus was explicitly locked in by the seller via Slack on
-2026-09-14 alongside the marketing tier change (see package_decision.json
-selection_notes: "coaching kept as Elite Coach Plus at $3,200/mo per the same
-request"). This is treated as a deliberate, already-approved human decision
-and the recommendation is NOT changed. Flagging here only so sales has
-visibility that team size technically crosses the Master's Circle threshold,
-in case this comes up in a future renewal or upsell conversation.
+Marketing tier ad-spend cap for Essentials: $7,500/mo (from the Marketing
+Tiers table). This matters below — the client's own requested ramp target of
+$7,500/mo lands exactly at this cap, so the ramp plan does not trigger a
+tier upgrade.
 
-AD SPEND CORRECTION (INTERNAL — DOCUMENT THE CHANGE MADE)
------------------------------------------------------------
-package_decision.json originally listed:
-  - ad_spend_conservative: $7,500/mo
-  - ad_spend_aggressive: $25,000/mo (capped to match Starter tier's ad-spend
-    ceiling, per decision file selection_notes, based on a HubSpot-sourced
-    annual revenue figure of $1,980,500/yr)
-
-Research notes state a transcript-derived revenue of approximately $1M
-gross/yr (~$83,333/mo) — a lower and more directly sourced figure than the
-HubSpot aggregate, since it comes from the discovery call itself ("high
-hundreds, $700,000 initially, later aligned to approximately $1M gross").
-
-35%-of-monthly-revenue cap check using the transcript-derived figure:
+35%-OF-MONTHLY-REVENUE CAP CHECK
+-----------------------------------
+Using the transcript-derived effective revenue of ~$1M gross/yr (~$83,333/mo)
+— the same, more directly-sourced figure used in the prior version of this
+file (see "AD SPEND CORRECTION" note below for why this figure is preferred
+over the HubSpot aggregate):
   $83,333/mo x 0.35 = $29,167/mo maximum combined package fees + ad spend
 
-Original proposed total at $25,000/mo aggressive ad spend:
-  $8,197/mo (package) + $25,000/mo (ad spend) = $33,197/mo
-  $33,197/mo EXCEEDS the $29,167/mo cap — breach of 32.6% vs. revenue,
-  not within the 35% SMB-spend cap rule.
+Phase 1 (LSA-only ramp): $3,797 (package) + $4,000 (ad spend, midpoint of the
+  requested $3,000-$5,000 range) = $7,797/mo = 9.4% of monthly revenue.
+Phase 2 (LSA + PPC, ~month 3 onward): $3,797 (package) + $7,500 (ad spend)
+  = $11,297/mo = 13.6% of monthly revenue.
 
-CORRECTED aggressive ad spend: $20,000/mo
-  $8,197/mo (package) + $20,000/mo (ad spend) = $28,197/mo
-  $28,197/mo is within the $29,167/mo cap (33.8% x $83,333... check:
-  $28,197 / $83,333 = 33.8%, within the 35% ceiling)
-  $20,000/mo is also within the Starter tier's $25,000/mo ad-spend ceiling,
-  so no marketing tier upgrade is triggered by this correction.
+Both phases are well within the 35% cap — no escalation triggered on this
+basis at either phase.
 
-Conservative ad spend ($7,500/mo) is unaffected by this correction:
-  $8,197/mo (package) + $7,500/mo (ad spend) = $15,697/mo = 18.8% of
-  $83,333/mo monthly revenue — well within the 35% cap.
+AD SPEND PLAN — TWO SEQUENTIAL PHASES, NOT CONSERVATIVE/AGGRESSIVE SCENARIOS
+-----------------------------------------------------------------------------
+Unlike the prior version of this proposal (which presented a conservative/
+aggressive spend RANGE as two hypothetical scenarios), this plan is a
+sequential ramp the client specifically asked for: start smaller, prove it
+out, then add the second channel. Block 4 of section_11_next_steps.html is
+relabeled "Phase 1 — LSA Launch" and "Phase 2 — LSA + PPC" instead of
+"Conservative"/"Aggressive" to accurately reflect this. The same three-row
+structure (cases, revenue, return) is kept underneath each, and the
+underlying CPL methodology below still borrows the conservative (20% cushion)
+approach for Phase 1 and the aggressive (no cushion) approach for Phase 2,
+since Phase 1 is the more cautious, unproven starting point and Phase 2
+reflects a channel mix with more historical performance data behind it.
 
-CONCLUSION: Use $7,500/mo conservative and $20,000/mo aggressive (corrected
-from the decision file's original $25,000/mo) in Block 4 and throughout the
-client-facing report and Sales Companion PDF.
+Channel/practice-area split assumption (not stated by the client — documented
+default): ad spend is split evenly 50/50 between Family Law and Probate at
+every phase, and the LSA spend from Phase 1 ($2,000 to each practice area at
+the $4,000/mo midpoint) is treated as staying in place in Phase 2, with the
+new PPC dollars ($3,500/mo) also split evenly 50/50 across the two practice
+areas ($1,750 each). This gives Phase 2: Family Law = $2,000 LSA + $1,750 PPC
+= $3,750; Probate = $2,000 LSA + $1,750 PPC = $3,750. If actual performance
+data shows one practice area converting meaningfully better, this split
+should be revisited before Phase 2 begins.
 
-ROI PROJECTIONS
------------------
-Both scenarios disclose: 15% close rate is a documented default (transcript
-did not state an actual close rate), and blended average case value of
-~$4,800 is a documented default weighted toward Personal Injury as the
-primary target practice area (PI is the firm's largest revenue driver via
-referral and its biggest competitive vulnerability online). Transcript did
-not state an actual average case value.
+CPL figures used (from the Client-Facing CPL Ranges table; Probate is priced
+using the table's "Estate Planning" row, the closest listed category):
+  - Family Law LSA: $70-$90 (mid $80)
+  - Family Law Google Search/PPC: $90-$110 (mid $100)
+  - Estate Planning/Probate LSA: $55-$75 (mid $65)
+  - Estate Planning/Probate Google Search/PPC: $120-$150 (mid $135)
 
-CONSERVATIVE SCENARIO ($7,500/mo ad spend):
-  - Blended CPL: ~$401/lead (includes 20% cushion per conservative-scenario
-    methodology)
-  - Leads/mo: $7,500 / $401 ≈ 19 leads/mo
-  - Cases/mo: 19 x 15% close rate ≈ 3 cases/mo
-  - Revenue/mo: 3 cases x ~$4,800 blended avg case value ≈ $14,400/mo
-  - Return: $14,400 / $7,500 ≈ 1.9x return
+Close rate: not stated in the transcript for these two practice areas —
+using the documented 15% default per spec, disclosed in the client report.
 
-AGGRESSIVE SCENARIO ($20,000/mo ad spend, corrected from $25,000/mo):
-  - Blended CPL: ~$334/lead (no cushion, aggressive-scenario methodology)
-  - Leads/mo: $20,000 / $334 ≈ 60 leads/mo
-  - Cases/mo: 60 x 15% close rate ≈ 9 cases/mo
-  - Revenue/mo: 9 cases x ~$4,800 blended avg case value ≈ $43,200/mo
-  - Return: $43,200 / $20,000 ≈ 2.2x return
+PHASE 1 — LSA LAUNCH (~$4,000/mo, midpoint of requested $3,000-$5,000 range)
+  Methodology: conservative (20% CPL cushion applied)
+  - Family Law: $2,000 spend / ($80 x 1.20 = $96 CPL) = 20.8 leads
+    -> 20.8 x 15% close rate = 3.1 -> ~3 cases
+  - Probate: $2,000 spend / ($65 x 1.20 = $78 CPL) = 25.6 leads
+    -> 25.6 x 15% close rate = 3.8 -> ~4 cases
+  - Total leads: ~46/mo | Total cases: ~7/mo (3 Family Law + 4 Probate)
+  - Revenue: (3 x $5,000) + (4 x $20,000) = $15,000 + $80,000 = $95,000/mo
+  - Return: $95,000 / $4,000 = ~23.8x
 
-DBM STATEMENT FOR BLOCK 1
----------------------------
+PHASE 2 — LSA + PPC (~$7,500/mo, starting ~month 3)
+  Methodology: aggressive (no CPL cushion)
+  - Family Law: $2,000 LSA / $80 = 25.0 leads; $1,750 PPC / $100 = 17.5 leads
+    -> 42.5 leads x 15% close rate = 6.4 -> ~6 cases
+  - Probate: $2,000 LSA / $65 = 30.8 leads; $1,750 PPC / $135 = 13.0 leads
+    -> 43.8 leads x 15% close rate = 6.6 -> ~7 cases
+  - Total leads: ~86/mo | Total cases: ~13/mo (6 Family Law + 7 Probate)
+  - Revenue: (6 x $5,000) + (7 x $20,000) = $30,000 + $140,000 = $170,000/mo
+  - Return: $170,000 / $7,500 = ~22.7x
+
+CAPACITY CHECK: Phase 2's ~6 new Family Law cases/mo is well within the
+client's stated 20/mo capacity. Phase 2's ~7 new Probate cases/mo is within
+the client's stated 10-20/mo capacity (nearer the low end, so there is
+meaningful additional headroom before capacity becomes a constraint on
+scaling ad spend further in a future phase).
+
+IMPORTANT CAVEATS TO CARRY INTO THE CLIENT REPORT AND SALES COMPANION:
+  - These figures use a 15% close-rate default (not stated on the call for
+    these practice areas) and an even 50/50 practice-area/channel spend
+    split (an assumption, not client-stated) — both must be disclosed as
+    estimates.
+  - Probate/estate administration revenue is typically realized over the
+    life of the estate administration, not as an immediate lump sum in the
+    month the case is signed — the $20,000 figure is total case value, not
+    guaranteed same-month cash. Frame it that way in the client report, not
+    as "monthly revenue" without qualification.
+  - The disproportionate weight of Probate case value ($20,000) vs. Family
+    Law ($5,000) in the blended return is a direct, correct consequence of
+    the client-provided case values — it is not a modeling error, but it
+    should be presented with the case-count breakdown (not just a blended
+    total) so it reads as credible rather than inflated.
+
+AD SPEND CORRECTION CARRIED FORWARD FROM PRIOR VERSION (context only)
+-------------------------------------------------------------------------
+For reference, the 2026-09-14 version of this file had already established
+that the transcript-derived revenue figure (~$1M/yr) is the more reliable,
+directly-sourced number to use for the 35% cap check, vs. the HubSpot
+aggregate ($1,980,500/yr) — that determination still holds and was used
+above. It is no longer decisive for ad-spend-cap purposes in this version,
+since both phases of the new plan sit far under the cap regardless of which
+revenue figure is used.
+
+DBM STATEMENT FOR BLOCK 1 (UNCHANGED)
+---------------------------------------
 We help established multi-generational law firms get a scalable, trackable
 flow of new clients so they can finally step back from a firm that only runs
 on the owner's name and hours — and build something that can carry the family
@@ -141,41 +191,15 @@ External desire: a scalable, trackable, predictable flow of new clients
 DBM: freedom from having to personally carry the firm every day, and the
 ability to hand a strong, self-sustaining business to the next generation
 
-QUICK WIN OPPORTUNITIES (6 minimum, across all four pillars)
+QUICK WIN OPPORTUNITIES (UNCHANGED — these are current-state findings, not
+package-specific, and were not part of the requested change)
 ----------------------------------------------------------------
-1. [Lead Gen] Relaunch paid search with measurable tracking — Why: prior ad
-   spend increases did not show proportional results because there was no
-   system to measure what was working; Competitor: Pribanic & Pribanic (same
-   street, established PI search presence); Opportunity: a properly tracked
-   campaign turns "we tried ads and they didn't work" into a measurable,
-   improvable channel.
-2. [Lead Gen] Build geo and practice-area landing pages — Why: the firm has
-   zero dedicated pages for probate, estate planning, or any of the seven
-   counties it serves; Competitor: none named specifically for this gap;
-   Opportunity: capture searches in an active, high-volume practice area
-   (6-8 wills every other week, 8 estates in two weeks) that currently has no
-   page to convert on.
-3. [Lead Gen] Fix on-page SEO issues (title tags, H1s) — Why: Dan's live
-   on-call review found specific technical SEO issues directly limiting
-   rankings; Competitor: none named; Opportunity: close part of the gap
-   between Gaydos Law's ~225 estimated monthly organic visits and the
-   1,500-1,700+ estimated for named competitors.
-4. [Intake] Implement CRM and lead tracking — Why: referrals are the firm's
-   only real channel and none of them are tracked; Competitor: none named;
-   Opportunity: know which relationships are actually producing clients and
-   catch leads before they are lost.
-5. [Intake] Add after-hours coverage — Why: no after-hours process was
-   described; Competitor: none named; Opportunity: stop losing prospects who
-   reach out outside business hours to a same-day-response competitor.
-6. [Team] Build a formal leadership and accountability structure — Why: the
-   30-year office manager provides real informal delegation, but there is no
-   formal structure and Joseph remains the central figure; Competitor: none
-   named; Opportunity: let the team run day-to-day operations without every
-   decision routing back to the owner.
-7. [Profit] Establish margin and cost-of-acquisition visibility — Why: no
-   financial visibility exists by practice area, and past marketing spend was
-   never evaluated against return; Competitor: none named; Opportunity:
-   understand which practice area actually drives profit, not just revenue.
+See the original 7 quick wins across Lead Gen, Intake, Team, and Profit —
+carried forward unchanged in section_11_next_steps.html. Card 1 ("Relaunch
+Paid Search With Real Tracking") remains a general finding about the paused,
+untracked ad history; it is not rewritten to name LSA/Family Law/Probate
+specifically, since Block 2-4 (the actual recommendation) is where the new,
+narrower ad strategy is presented.
 
 Note: only Pribanic & Pribanic and TopDog Law are usable as named competitors
 anywhere in the client-facing report (per research notes escalation flag).
@@ -183,20 +207,21 @@ The competitor referred to on the call as "Finters" (~978 reviews) is
 explicitly unconfirmed and unresolved — it is NOT used anywhere in this audit,
 the Sales Companion, or any quick win card.
 
-FIRST 90 DAYS (3-5 bullets)
-------------------------------
-1. Launch a properly tracked paid search campaign targeting personal injury
-   and estate planning/probate terms, replacing the untracked, inconsistent
-   ad history with a measurable system.
+FIRST 90 DAYS (UPDATED — coaching kickoff removed, LSA/Family Law/Probate
+focus added; no more than 5 bullets)
+------------------------------------------------------------------------
+1. Launch Local Service Ads (Google Screened) targeting Family Law
+   (divorce/custody) and Probate — the two practice areas this engagement is
+   scoped to — starting at $3,000-$5,000/mo.
 2. Fix the on-page SEO issues Dan identified live (title tags, H1s) and stand
-   up initial geo/practice-area landing pages, starting with the highest-
-   volume gap (estate planning/probate).
-3. Kick off Elite Coach Plus coaching to begin building the leadership and
-   accountability structure the team currently lacks.
-4. Stand up basic lead tracking so referral sources and new inquiries are
+   up Family Law and Probate landing pages, the two areas the paid campaign
+   is driving traffic to.
+3. Stand up basic lead tracking so referral sources and new inquiries are
    captured and measurable for the first time.
-5. Establish baseline financial visibility (revenue and rough margin by
-   practice area) to give the coaching engagement real numbers to work from.
+4. Monitor Phase 1 LSA performance for roughly the first 3 months to confirm
+   channel and practice-area mix before adding PPC.
+5. At ~month 3, layer in PPC for Family Law and Probate, bringing total ad
+   spend to $7,500/mo across both channels.
 
 ESCALATION FLAGS (INTERNAL ONLY — NEVER IN CLIENT REPORT)
 -------------------------------------------------------------
@@ -213,20 +238,24 @@ ESCALATION FLAGS (INTERNAL ONLY — NEVER IN CLIENT REPORT)
   rate-limited/JS-blocked) — do not fabricate; the Website Audit section
   instead relies on Dan's live on-call SEO diagnosis and the confirmed
   225 vs. 1,500-1,700+ organic traffic estimate, both transcript-sourced.
-- Ad spend correction applied: decision file's original $25,000/mo aggressive
-  figure exceeded the 35% SMB-spend cap when checked against the
-  transcript-derived revenue figure; corrected to $20,000/mo (see full
-  calculation above). Sales should be aware the HubSpot-sourced revenue
-  figure ($1,980,500/yr) and the transcript-derived figure (~$1M/yr) disagree
-  significantly — worth confirming the true annual number directly with Joseph
-  before finalizing a signed proposal.
-- Team size (8) technically crosses the "$1M+, 5+ with dedicated staff"
-  threshold that would ordinarily suggest Master's Circle instead of Elite
-  Coach Plus — the current recommendation (Elite Coach Plus) reflects a
-  deliberate seller override communicated via Slack on 2026-09-14, not an
-  oversight. No action needed unless sales wants to revisit at renewal.
-- Marketing MRR ($4,997) does not exceed the $10K scoping-approval threshold.
-  Combined package total ($8,197/mo) also does not trigger any scoping
-  escalation on its own.
-- Ad spend does not exceed $25K under either scenario post-correction, so no
-  ad-spend-over-$25K escalation applies.
+- ELIGIBILITY OVERRIDE (NEW, 2026-09-16): Full Service Marketing Essentials
+  is being sold here despite the firm having multiple practice areas,
+  Personal Injury present, and revenue over $750K — all of which would
+  normally exclude Essentials. This is a deliberate seller-directed scope
+  narrowing (single product, LSA-only, two practice areas) requested
+  directly by Carolyn Webb on 2026-09-16, not an automatic tier selection.
+  Flagging so anyone reviewing this file understands why Essentials appears
+  eligible here.
+- Coaching (Elite Coach Plus) has been REMOVED from this proposal as of
+  2026-09-16 per the same override. The team-size-vs-Master's-Circle note
+  from the prior version of this file no longer applies since no coaching
+  package is being recommended at all right now — flag for a future
+  upsell/renewal conversation instead.
+- Marketing MRR ($3,797) does not exceed the $10K scoping-approval threshold.
+- Ad spend does not exceed $25K under either phase, so no ad-spend-over-$25K
+  escalation applies. Phase 2's $7,500/mo sits exactly at, not above, the
+  Essentials tier's ad-spend cap.
+- Revenue figures still disagree significantly between HubSpot ($1,980,500/
+  yr) and the transcript (~$1M/yr) — worth confirming the true annual number
+  directly with Joseph before finalizing a signed proposal, independent of
+  this package change.

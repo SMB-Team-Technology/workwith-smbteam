@@ -85,10 +85,10 @@ PRIORITIES = [
     (
         "Build the", "Marketing Engine", "0091C9",
         [
-            "Relaunch tracked Google Ads for PI and estate cases",
+            "Launch LSA for Family Law and Probate leads",
             "Fix title tag and H1 SEO issues found on the site",
-            "Build geo pages for all 7 counties served",
-            "Add estate planning and probate landing pages",
+            "Build dedicated Family Law and Probate pages",
+            "Add PPC at month 3 to scale to $7,500/mo",
             "Turn paid search into a pipeline that runs without you",
         ],
     ),
@@ -107,7 +107,7 @@ PRIORITIES = [
         [
             "Formalize the leadership your office manager carries",
             "Build financial visibility by practice area",
-            "Launch Elite Coach Plus accountability framework",
+            "Prove the LSA channel before scaling ad spend",
             "Create a structure that runs without you in the room",
             "Build a firm your daughter could one day step into",
         ],
@@ -118,39 +118,33 @@ PRIORITIES = [
 # Package cards — (label, bundled_price, retail_price, services_line, accent_color_hex)
 PACKAGES = [
     (
-        "FULL SERVICE MARKETING — STARTER",
-        "$4,997", "$5,697/mo",
-        "Google Ads · SEO fixes · Geo/practice pages · GBP management",
+        "FULL SERVICE MARKETING — ESSENTIALS",
+        "$3,797", "$3,797/mo",
+        "LSA for Family Law & Probate · SEO fixes · Landing pages",
         "0091C9",
-    ),
-    (
-        "ELITE COACH PLUS",
-        "$3,200", "$3,497/mo",
-        "1:1 coaching · Group masterminds · Accountability framework",
-        "003A59",
     ),
 ]
 
-BUNDLE_TOTAL   = "$8,197 / mo"
-BUNDLE_SAVINGS = "Save $997/mo by bundling"
+BUNDLE_TOTAL   = "$3,797 / mo"
+BUNDLE_SAVINGS = "Stand-alone — no bundle discount"
 
 AD_SPEND_NOTE = (
-    "+ Recommended ad spend: $7,500–$20,000/mo paid directly to Google/Meta"
+    "+ Recommended ad spend: $3,000–$5,000/mo, ramping to $7,500/mo at month 3"
 )
 
-AVG_CASE_VALUE      = "$4,800"
-CONSERVATIVE_LABEL  = "Conservative  (~3 cases/mo):"
-CONSERVATIVE_RESULT = "~$14,400 revenue · 1.9× return"
-AGGRESSIVE_LABEL    = "Aggressive  (~9 cases/mo):"
-AGGRESSIVE_RESULT   = "~$43,200 revenue · 2.2× return"
+AVG_CASE_VALUE      = "FL $5K · Probate $20K"
+CONSERVATIVE_LABEL  = "Phase 1 — LSA  (~7 cases/mo):"
+CONSERVATIVE_RESULT = "~$95,000 value · 23.8× return"
+AGGRESSIVE_LABEL    = "Phase 2 — LSA+PPC  (~13 cases/mo):"
+AGGRESSIVE_RESULT   = "~$170,000 value · 22.7× return"
 
 # Timeline — 5 items: (milestone_label, action_text)
 TIMELINE = [
-    ("Day 1",   "Launch tracked paid search for PI and estate terms"),
+    ("Day 1",   "Launch LSA for Family Law and Probate"),
     ("Day 14",  "Fix on-page SEO title tag and H1 issues"),
-    ("Week 2",  "Begin geo and practice-area landing pages"),
-    ("Week 3",  "Stand up lead tracking and Elite Coach Plus kickoff"),
-    ("Month 3", "Baseline financial visibility by practice area live"),
+    ("Week 2",  "Begin Family Law and Probate landing pages"),
+    ("Week 3",  "Stand up lead tracking across referrals and ads"),
+    ("Month 3", "Add PPC, scaling total ad spend to $7,500/mo"),
 ]
 
 CLOSING_QUOTE = (
