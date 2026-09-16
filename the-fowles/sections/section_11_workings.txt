@@ -1,0 +1,201 @@
+THE FOWLES LAW FIRM — SECTION 11 WORKINGS (INTERNAL — NOT CLIENT-FACING)
+Date: September 15, 2026 | Sales Rep: Dan Bryant
+
+===========================================================
+OVERRIDE CHECK (performed before using package_decision.json)
+===========================================================
+package_decision.json confidence: "high". Per audit-write.md, the four
+transcript-stated-need overrides must be checked regardless of confidence.
+
+1. Call-purpose override: DOES NOT APPLY. Research notes explicitly state the
+   call focus was "Standard marketing/growth discovery and proposal review —
+   NOT a Fractional CTO/AI or pure coaching engagement... a combined
+   marketing + coaching engagement." Matches the default category.
+
+2. Existing-vendor override: CONSIDERED CLOSELY, DOES NOT APPLY.
+   The firm has an active, currently-paid SEO/website vendor relationship
+   (Justin "happy," Iris sees room for improvement). This is the exact fact
+   pattern the override's trigger language describes ("already paying...
+   an active... contract"). However, the override's own stated purpose is
+   to stop a marketing recommendation when "a firm... does not have a
+   marketing gap." Here, the transcript shows the opposite: Call 2 was
+   explicitly a "Proposal Review Meeting" about REPLACING/upgrading that
+   vendor, launching LSA (then possibly PPC), reviews training, and
+   coaching — i.e., the firm has a stated, active marketing gap (no
+   PPA/LSA/Meta ever run) and came to SMB specifically to close it. Excluding
+   Full Service Marketing here would ignore the client's actual, stated need
+   rather than protect it. Recommending FSM Starter to REPLACE an
+   under-delivering vendor is the intended use of this override's "category
+   matches what happened on the call" test, not a violation of it.
+   FLAGGING FOR DAN: this was a close call given the active-vendor fact
+   pattern — worth a gut check before this goes to the client, since it
+   directly affects whether the vendor-replacement framing in Block 2 lands
+   correctly with Justin and Iris.
+
+3. Budget-reality override: DOES NOT APPLY. Notes state no explicit
+   affordability concern; tenor of both calls is proactive investment
+   interest, not budget limitation.
+
+4. Effective-revenue override: DOES NOT APPLY. Revenue is not split
+   net/gross in the transcript ("not distinguished from gross"); flat-fee
+   practice, not contingency. Use $500K-$600K gross as stated. Matches
+   package_decision.json (revenue_effective: 500000, is_contingency_practice:
+   false).
+
+CONCLUSION: package_decision.json's marketing + coaching category selection
+is usable. The coaching tier downgrade already reflected in the decision file
+(Elite Coach Plus $3,200/mo -> Elite Coach $2,600/mo, seller override via
+Slack 9/15/26) is a same-category price concession, not a category override,
+per audit-write.md ("None of these four checks are about recomputing a price
+in isolation"). Kept as-is.
+
+===========================================================
+MANDATORY PRICE LOOKUP (verified character-by-character against
+.claude/commands/audit-write.md tables)
+===========================================================
+Marketing package selected: Full Service Marketing — Starter
+  - Bundled price (from table): $4,997/mo
+  - Stand-alone price (from table): $5,697/mo
+  - Savings: $700/mo
+
+Non-marketing package selected: Elite Coach
+  - Bundled price (from table): $2,600/mo
+  - Stand-alone price (from table): $3,497/mo
+  - Savings: $897/mo
+
+Legal AI Workforce (LAW) package selected: none (no stated AI readiness on
+the call; not a driver of this proposal)
+AI Avatar / Video Growth add-on selected: none (not discussed on the call)
+
+Total monthly investment: $4,997 + $2,600 = $7,597/mo
+Total savings: $700 + $897 = $1,597/mo
+
+===========================================================
+AD SPEND — CONSERVATIVE
+===========================================================
+Channels: Google PPC + LSA (the two channels explicitly discussed in the
+transcript — LSA first, "then possibly PPC").
+Criminal Defense channel minimums: Google PPC $5,500 + LSA $2,000 = $7,500/mo.
+(Corrects package_decision.json's $5,500, which reflected Google PPC alone;
+the transcript names LSA as the first channel Justin wants to launch, so it
+is included in the conservative baseline.)
+Exceeds Criminal Defense + High floor ($5,000) and absolute minimum ($3,000).
+CONSERVATIVE AD SPEND: $7,500/mo
+
+Conservative ROI:
+- Blended CPL (Criminal Defense, Google Search $155-$205 mid $180 / LSA
+  $140-$180 mid $160, weighted 73%/27% by spend) = ~$174.70, +20% cushion =
+  ~$210
+- Leads = $7,500 / $210 ≈ 35.7/mo
+- Close rate: 20% (low end of Dan's recommended 20-25% conservative range)
+- Cases ≈ 7/mo
+- Revenue ≈ 7 x $5,000 avg case value = ~$35,000/mo
+- Return ≈ 4.7x
+
+===========================================================
+AD SPEND — AGGRESSIVE
+===========================================================
+20% rule: Revenue goal $1,000,000 (3-year stated goal) x 20% / 12 = $16,667/mo
+Geo multiplier: Conroe, TX (Houston-area exurb, not itself a listed Tier 1-3
+metro) — treated as Tier 4 (significant regional), multiplier 1.0x = $16,667
+No Spanish campaign stated.
+Minus marketing management fee ($4,997) = Available ad spend: $11,670/mo
+
+Reverse math validation: ($1,000,000/12) / $5,000 avg case value = 16.67
+target cases/mo -> / 25% close rate (upper end of Dan's recommended range) =
+66.7 required leads/mo -> x blended CPL (no cushion, ~$174.70) = ~$11,655/mo.
+20% rule and reverse math are consistent (~$11,670 vs ~$11,655) -> use $11,700/mo.
+Tier cap check: Starter cap is $25,000/mo — well within.
+(Corrects package_decision.json's $20,000 aggressive figure, which did not
+net out the management fee or run the reverse-math validation against the
+stated $1M/3-year goal and $5,000 avg case value.)
+
+AGGRESSIVE AD SPEND: $11,700/mo
+
+Aggressive ROI:
+- Blended CPL (no cushion) ≈ $175
+- Leads = $11,700 / $175 ≈ 67/mo
+- Close rate: 25%
+- Cases ≈ 16-17/mo
+- Revenue ≈ 16.5 x $5,000 = ~$82,500/mo
+- Return ≈ 7.1x
+
+===========================================================
+35% SPEND CAP CHECK (flag for Dan — not a hard block)
+===========================================================
+Current monthly revenue ≈ $41,667-$50,000 (based on $500K-$600K annual).
+- Conservative total spend (mgmt fees $7,597 + ad spend $7,500) = $15,097/mo
+  = ~30-36% of current monthly revenue — at/near the 35% cap depending on
+  where in the $500K-$600K range the firm actually lands.
+- Aggressive total spend (mgmt fees $7,597 + ad spend $11,700) = $19,297/mo
+  = ~39-46% of CURRENT monthly revenue — exceeds the 35% cap against today's
+  numbers. Against the $1M/yr goal this scenario is built to reach
+  (~$83,333/mo), $19,297 is ~23% — comfortably under cap.
+RECOMMENDATION: present aggressive as the ceiling of a range, not the
+default ask. Conservative is the number to lead with in conversation.
+
+===========================================================
+DBM STATEMENT (Block 1)
+===========================================================
+"We help hands-on criminal defense attorneys who built a respected practice
+on referrals and reputation alone get a predictable flow of qualified DWI,
+drug, and domestic violence cases that doesn't depend on personally
+out-hustling two entrenched local competitors, so they can step back to a
+10-20 hour work week, work largely remote, and be present to homeschool and
+travel with their two young kids instead of grinding toward a 'die at the
+desk' ending."
+
+===========================================================
+QUICK WIN OPPORTUNITIES IDENTIFIED (6+ required, used 7)
+===========================================================
+1. [Lead Gen, Quick Win] Launch Local Service Ads — Why: zero paid presence
+   today; LSA is pay-per-lead, appears above all other search results, lowest
+   risk paid channel to start with. No named competitor confirmed in LSA
+   (tooling limitation) — omit "Who Is Doing It Better."
+2. [Lead Gen, Long-Term] Close the local map-pack visibility gap — Competitor:
+   Doug Atkinson (~100% share of voice). Opportunity: capture high-intent
+   local searches currently ceded entirely to him.
+3. [Lead Gen, Long-Term] Build a review-generation system — Competitor:
+   Brian Foley Law (100+ reviews per his own site, 5-star average).
+   Opportunity: close the credibility/review gap feeding his map-pack rank.
+4. [Intake, Quick Win] Add after-hours overflow coverage — Why: no coverage
+   today, calls after-hours risk going to a competitor. No named competitor.
+5. [Intake, Quick Win] Resolve the Lawmatics CRM lockout — Why: 2.5-month
+   lockout hides real lead/follow-up data. No named competitor. (Internal
+   note only — SMB does not perform CRM setup as a 90-day deliverable; this
+   stays a diagnostic quick win, not a package deliverable.)
+6. [Team, Long-Term] Document hiring criteria & KPIs for a second attorney —
+   Why: no path today to add attorney capacity beyond Justin. No competitor.
+7. [Profit, Quick Win] Define a profit target distinct from the revenue
+   goal — Why: no profit plan exists despite clear per-case fee data. No
+   competitor.
+
+===========================================================
+FIRST 90 DAYS
+===========================================================
+1. Launch Local Service Ads for DWI, drug, and domestic violence terms across
+   Conroe and surrounding cities — fastest path to new-client volume
+2. Launch Google PPC campaign structure for the same core terms once LSA
+   data validates close rates
+3. Fix the buried homepage contact form and resolve page cannibalization
+   across The Woodlands city pages
+4. Kick off Elite Coach coaching sessions to begin building hiring criteria,
+   KPIs, and a real profit plan
+5. Stand up a review-generation process to begin closing the credibility gap
+   against named local competitors
+
+===========================================================
+ESCALATION FLAGS (internal only — never in client report)
+===========================================================
+- Review counts unconfirmed — verify live before the call (firm's own count,
+  Doug Atkinson, and Brian Foley Law all UNCONFIRMED per research notes).
+- "Zavala/Santos" competitor named in transcript could not be confirmed as a
+  real Conroe-based firm — confirm identity with prospect before referencing
+  by name in any future materials.
+- PageSpeed mobile/desktop scores not independently verified — live-check
+  before finalizing any website rebuild scope.
+- Existing-vendor override was considered and NOT applied (see analysis
+  above) — flagging for Dan's review given it was a close call.
+- 35% total-spend cap: aggressive scenario exceeds 35% of CURRENT monthly
+  revenue (though not of the 3-year goal revenue it targets) — present
+  conservative as the lead number, aggressive as the ceiling.
