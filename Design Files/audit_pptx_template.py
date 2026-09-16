@@ -167,40 +167,52 @@ CLOSING_QUOTE = (
 def rgb(h): return RGBColor(int(h[0:2],16), int(h[2:4],16), int(h[4:6],16))
 
 # SMB Team brand colors (see brand book): Deep Wood Blue, Ocean Blue, Lime Green.
+# These three anchor the palette and are unchanged from the previous design —
+# what changed in this pass is how they're applied (thin accents/pills instead
+# of large solid fills) plus several supporting tones below, retuned to softer,
+# lower-saturation values matched from the reference redesign.
 NAVY        = rgb("003A59")   # Deep Wood Blue — primary brand color
-DARK_NAVY   = rgb("265872")   # lighter tint of Deep Wood Blue, for card panels
 OCEAN_BLUE  = rgb("0091C9")   # brand accent — large numbers, decorative accents
 LIME_GREEN  = rgb("69CD2B")   # brand accent — small "pop" text/labels on navy
 WHITE       = rgb("FFFFFF")
-RED         = rgb("C0392B")
-AMBER       = rgb("D97706")
-GREEN       = rgb("16A34A")
-SLATE       = rgb("64748B")
-LIGHT_BLUE  = rgb("8BADD0")
-FOOTER_TEXT = rgb("5A7A9A")
-NEG_BG      = rgb("2C1010")
-POS_BG      = rgb("0C2818")
-NEG_TEXT    = rgb("F0BABA")
-POS_TEXT    = rgb("86EFAC")
-COMP_ALT    = rgb("F0F4FA")
-ROI_BG      = rgb("ECFDF5")
-ROI_GREEN   = rgb("065F46")
-ROI_HILIGHT = rgb("D1FAE5")
-NEAR_WHITE    = rgb("F0F4FA")
-BUNDLE_SUB    = rgb("7CA0C0")
-STRIKETHROUGH = rgb("334155")
 
-STATUS_COLOR = {"RED": RED, "AMBER": AMBER, "GREEN": GREEN}
+BG_WASH       = rgb("F4F7F9")   # full-bleed slide background
+URGENCY_CARD  = rgb("0B4C6E")   # header-docked urgency widget
+URGENCY_SUB   = rgb("9CC0D6")   # urgency widget's "Score out of 10" subtitle
+
+RED         = rgb("B32D2D")
+AMBER       = rgb("B5770B")
+GREEN       = rgb("3F8F1A")
+RED_PILL_BG   = rgb("FBEEEE")
+AMBER_PILL_BG = rgb("FDF4E3")
+GREEN_PILL_BG = rgb("ECF7E4")
+
+DARK_TEXT   = rgb("1B2A38")   # near-black body/label text on white cards
+BODY_TEXT   = rgb("4A5C6B")   # neutral gray-blue for card copy (findings, ad spend note, timeline actions)
+SLATE       = rgb("7C8D9B")   # lighter captions (competitor detail, retail price, services line)
+LIGHT_BLUE  = rgb("B8CDDD")   # SMB Team Model description text (on navy)
+FOOTER_TEXT = rgb("8FB2C6")
+
+ROI_BG      = rgb("F0FAF4")
+ROI_GREEN   = rgb("0B6B4A")
+ROI_HILIGHT = rgb("E2F3E9")
+
+BUNDLE_SAVINGS_TEXT = rgb("A9D68C")   # lighter green — reads as "money saved"
+GOAL_TEXT_DARK      = rgb("143306")   # goal headline, on Lime Green card
+GOAL_TEXT_DARKER    = rgb("1F470C")   # goal DBM line, on Lime Green card
+
+STATUS_COLOR    = {"RED": RED, "AMBER": AMBER, "GREEN": GREEN}
+STATUS_PILL_BG  = {"RED": RED_PILL_BG, "AMBER": AMBER_PILL_BG, "GREEN": GREEN_PILL_BG}
 # Priority/package accent colors cycle through the brand palette. Lime Green
-# is light, so anything filled with it uses NAVY text instead of WHITE —
-# see ACCENT_TEXT_COLOR below.
+# is light, so anything filled with it uses a dark green text instead of
+# WHITE/navy — see ACCENT_TEXT_COLOR below.
 PRIORITY_LIGHT = {
-    "0091C9": rgb("E3F4FA"),   # light Ocean Blue tint
-    "69CD2B": rgb("EDF9E6"),   # light Lime Green tint
-    "003A59": rgb("E0E7EB"),   # light Deep Wood Blue tint
+    "0091C9": rgb("ECF5FA"),   # light Ocean Blue tint
+    "69CD2B": rgb("ECF7E4"),   # light Lime Green tint
+    "003A59": rgb("EEF2F5"),   # light Deep Wood Blue tint
 }
 # Header text color to use for each accent fill — defaults to WHITE elsewhere.
-ACCENT_TEXT_COLOR = {"69CD2B": NAVY}
+ACCENT_TEXT_COLOR = {"69CD2B": GOAL_TEXT_DARK}
 
 FONT = "Poppins"
 LOGO_PATH = os.path.join(os.path.dirname(__file__), "smb_team_logo.png")
@@ -251,6 +263,19 @@ def add_rect(slide, left, top, w, h, fill=None, line=False):
     return shape
 
 
+def add_pill(slide, text, left, top, w, h, bg, text_color, size=6.5, bold=True):
+    """A small rounded-rectangle chip with centered text — used for status
+    badges (RED/AMBER/GREEN) and the header's urgency-score widget."""
+    from pptx.util import Emu as E
+    shape = slide.shapes.add_shape(5, E(int(left*914400)), E(int(top*914400)),
+                                   E(int(w*914400)), E(int(h*914400)))
+    shape.line.fill.background()
+    shape.fill.solid()
+    shape.fill.fore_color.rgb = bg
+    add_text(slide, text, left, top, w, h, size, text_color, bold=bold, align=PP_ALIGN.CENTER)
+    return shape
+
+
 def add_text(slide, text, left, top, w, h, size, color, bold=False,
              align=PP_ALIGN.LEFT, italic=False, wrap=True,
              cap_chars=None, cap_label=""):
@@ -289,15 +314,15 @@ def add_image_or_placeholder(slide, path, left, top, w, h, label=""):
 
 
 def add_footer(slide, page, total, logo_path):
-    add_rect(slide, 0, 5.28, 10, 0.35, fill=NAVY)
+    add_rect(slide, 0, 5.27, 10, 0.35, fill=NAVY)
     if logo_path and os.path.isfile(logo_path):
         from pptx.util import Emu as E
         slide.shapes.add_picture(logo_path,
-                                 E(int(0.22*914400)), E(int(5.29*914400)),
-                                 E(int(1.28*914400)), E(int(0.26*914400)))
-    add_text(slide, f"CONFIDENTIAL  ·  Prepared by {SALES_REP} | SMB Team",
-             1.76, 5.29, 5.80, 0.30, 8, FOOTER_TEXT)
-    add_text(slide, f"{page} / {total}", 8.90, 5.29, 0.86, 0.30, 8, FOOTER_TEXT,
+                                 E(int(0.30*914400)), E(int(5.33*914400)),
+                                 E(int(1.03*914400)), E(int(0.21*914400)))
+    add_text(slide, f"CONFIDENTIAL  ·  PREPARED BY {SALES_REP.upper()} | SMB TEAM",
+             1.55, 5.35, 5.40, 0.20, 7, FOOTER_TEXT)
+    add_text(slide, f"{page} / {total}", 8.40, 5.35, 1.30, 0.20, 7, FOOTER_TEXT,
              align=PP_ALIGN.RIGHT)
 
 
@@ -307,95 +332,90 @@ def build_slide1(prs):
     layout = prs.slide_layouts[6]  # blank
     slide = prs.slides.add_slide(layout)
 
-    # Full-width NAVY banner — mirrors slides 2 and 3
-    add_rect(slide, 0, 0, 10, 1.05, fill=NAVY)
+    # Full-bleed background wash — every card below sits on this, not on white
+    add_rect(slide, 0, 0, 10, 5.625, fill=BG_WASH)
+
+    # Header banner + accent stripe (mirrors slides 2 and 3)
+    add_rect(slide, 0, 0, 10, 0.92, fill=NAVY)
+    add_rect(slide, 0, 0.92, 10, 0.04, fill=LIME_GREEN)
     add_text(slide, f"LAW FIRM GROWTH AUDIT  ·  {FIRM_NAME.upper()}",
-             0.32, 0.10, 9.40, 0.22, 8, LIME_GREEN, bold=True)
+             0.32, 0.20, 6.00, 0.18, 7.5, LIME_GREEN, bold=True)
     add_text(slide, f"Where {FIRM_NAME} Stands Today",
-             0.32, 0.34, 9.40, 0.60, 24, WHITE, bold=True)
+             0.32, 0.40, 6.90, 0.40, 20, WHITE, bold=True)
 
-    # Left yellow strip (starts below banner)
-    add_rect(slide, 0, 1.05, 0.16, 4.23, fill=OCEAN_BLUE)
-
-    # Urgency box
-    add_rect(slide, 0.28, 1.10, 1.42, 0.92, fill=RED)
-    add_text(slide, URGENCY_SCORE, 0.28, 1.10, 1.42, 0.62, 28, WHITE, bold=True,
+    # Urgency widget — docked in the header, not a large block in the content area
+    add_rect(slide, 7.42, 0.18, 2.26, 0.56, fill=URGENCY_CARD)
+    add_text(slide, URGENCY_SCORE, 7.58, 0.23, 0.42, 0.42, 21, WHITE, bold=True,
              align=PP_ALIGN.CENTER)
-    add_text(slide, "COMPETITIVE URGENCY", 0.28, 1.72, 1.42, 0.30, 6, WHITE, bold=True,
-             align=PP_ALIGN.CENTER)
+    add_text(slide, "COMPETITIVE URGENCY", 8.04, 0.30, 1.55, 0.18, 7, LIME_GREEN, bold=True)
+    add_text(slide, "Score out of 10", 8.04, 0.47, 1.55, 0.18, 7, URGENCY_SUB)
 
-    # Pillar cards
-    pillar_xs = [1.84, 2.78, 3.72, 4.66]
+    # Pillar cards — a full-width row of 4, each a white card with a colored
+    # top accent bar and a pill-shaped status badge
+    pillar_xs = [0.30, 2.68, 5.07, 7.45]
     for i, (status, label, detail) in enumerate(PILLARS):
         x = pillar_xs[i]
         sc = STATUS_COLOR[status]
-        add_rect(slide, x, 1.10, 0.88, 0.18, fill=sc)
-        add_rect(slide, x, 1.28, 0.88, 0.74, fill=DARK_NAVY)
-        add_text(slide, PILLAR_NAMES[i], x+0.06, 1.30, 0.76, 0.26, 8, WHITE, bold=True)
-        add_text(slide, label, x+0.06, 1.55, 0.76, 0.20, 7, sc, bold=True)
-        add_text(slide, detail, x+0.06, 1.74, 0.76, 0.26, 7, LIGHT_BLUE,
-                 cap_chars=28, cap_label=f"PILLARS[{i}] detail")
+        add_rect(slide, x, 1.10, 2.26, 0.86, fill=WHITE)
+        add_rect(slide, x, 1.10, 2.26, 0.04, fill=sc)
+        add_text(slide, PILLAR_NAMES[i], x+0.16, 1.25, 1.94, 0.20, 10, DARK_TEXT, bold=True)
+        add_pill(slide, label, x+0.16, 1.50, 0.56, 0.15, STATUS_PILL_BG[status], sc, size=6.5)
+        add_text(slide, detail, x+0.16, 1.72, 1.94, 0.20, 8, SLATE,
+                 cap_chars=40, cap_label=f"PILLARS[{i}] detail")
 
     # Key findings label
-    add_text(slide, "KEY FINDINGS", 0.28, 2.14, 5.30, 0.24, 8, LIME_GREEN, bold=True)
+    add_text(slide, "KEY FINDINGS", 0.30, 2.20, 4.70, 0.18, 7.5, NAVY, bold=True)
 
-    # Finding rows
-    finding_ys = [2.42, 3.10, 3.78, 4.46]
+    # Finding cards — white with a colored left accent bar and a rounded icon chip
+    finding_ys = [2.48, 3.16, 3.84, 4.52]
     for i, (ftype, text) in enumerate(FINDINGS[:4]):
         y = finding_ys[i]
-        bg   = NEG_BG if ftype == "neg" else POS_BG
         dot  = RED if ftype == "neg" else GREEN
         sym  = "✕" if ftype == "neg" else "✓"
-        txt_color = NEG_TEXT if ftype == "neg" else POS_TEXT
-        add_rect(slide, 0.28, y, 5.30, 0.62, fill=bg)
-        add_rect(slide, 0.40, y+0.19, 0.24, 0.24, fill=dot)
-        add_text(slide, sym, 0.40, y+0.17, 0.24, 0.26, 9, WHITE, bold=True,
-                 align=PP_ALIGN.CENTER)
-        add_text(slide, text, 0.74, y+0.08, 4.76, 0.52, 10, txt_color,
-                 cap_chars=150, cap_label=f"FINDINGS[{i}]")
-
-    # Right panel — white background (starts below banner)
-    add_rect(slide, 5.75, 1.05, 4.25, 4.23, fill=WHITE)
+        add_rect(slide, 0.30, y, 4.72, 0.61, fill=WHITE)
+        add_rect(slide, 0.30, y, 0.04, 0.61, fill=dot)
+        add_pill(slide, sym, 0.47, y+0.21, 0.18, 0.18, dot, WHITE, size=8)
+        add_text(slide, text, 0.75, y+0.13, 3.77, 0.41, 8.5, BODY_TEXT,
+                 cap_chars=115, cap_label=f"FINDINGS[{i}]")
 
     # Website screenshot — only shown when a local PNG is provided
     if WEBSITE_SCREENSHOT_PATH and os.path.isfile(WEBSITE_SCREENSHOT_PATH):
         from pptx.util import Emu as E
         slide.shapes.add_picture(WEBSITE_SCREENSHOT_PATH,
-                                 E(int(5.82*914400)), E(int(1.10*914400)),
-                                 E(int(4.10*914400)), E(int(2.00*914400)))
+                                 E(int(5.28*914400)), E(int(1.10*914400)),
+                                 E(int(4.42*914400)), E(int(1.00*914400)))
 
-    # "You are here" strip — positioned just below banner
-    add_rect(slide, 5.75, 1.12, 4.25, 0.76, fill=NAVY)
-    add_rect(slide, 5.75, 1.12, 0.14, 0.76, fill=OCEAN_BLUE)
-    add_text(slide, "YOU ARE HERE", 6.00, 1.14, 3.80, 0.22, 8, LIME_GREEN, bold=True)
-    add_text(slide, STAGE_TEXT, 6.00, 1.36, 3.80, 0.44, 10, WHITE, bold=True)
+    # "You are here" card
+    add_rect(slide, 5.28, 2.20, 4.42, 0.74, fill=NAVY)
+    add_rect(slide, 5.28, 2.20, 0.04, 0.74, fill=LIME_GREEN)
+    add_text(slide, "YOU ARE HERE", 5.48, 2.33, 4.02, 0.16, 7.5, LIME_GREEN, bold=True)
+    add_text(slide, STAGE_TEXT, 5.48, 2.54, 4.02, 0.34, 10, WHITE, bold=True)
 
     # Competitor table header
-    add_text(slide, "COMPETITOR LANDSCAPE", 5.90, 2.10, 3.90, 0.24, 8, SLATE, bold=True)
+    add_text(slide, "COMPETITOR LANDSCAPE", 5.28, 3.14, 4.42, 0.18, 7.5, NAVY, bold=True)
 
-    comp_ys = [2.38, 2.76, 3.14]
+    comp_ys = [3.42, 3.86, 4.30]
     for i, (name, reviews, detail) in enumerate(COMPETITORS[:3]):
         y = comp_ys[i]
-        bg = COMP_ALT if i % 2 == 0 else WHITE
-        add_rect(slide, 5.75, y, 4.25, 0.34, fill=bg)
-        add_text(slide, name, 5.92, y+0.05, 2.00, 0.28, 8, rgb("1E293B"),
-                 cap_chars=34, cap_label=f"COMPETITORS[{i}] name")
-        add_text(slide, reviews, 7.94, y+0.05, 1.00, 0.28, 8, GREEN,
-                 cap_chars=22, cap_label=f"COMPETITORS[{i}] reviews")
-        add_text(slide, detail, 8.96, y+0.07, 0.90, 0.26, 6, SLATE,
-                 cap_chars=38, cap_label=f"COMPETITORS[{i}] detail")
+        add_rect(slide, 5.28, y, 4.42, 0.39, fill=WHITE)
+        add_text(slide, name, 5.46, y, 1.78, 0.39, 8.5, DARK_TEXT,
+                 cap_chars=30, cap_label=f"COMPETITORS[{i}] name")
+        add_text(slide, reviews, 7.26, y, 1.48, 0.39, 8, GREEN,
+                 cap_chars=30, cap_label=f"COMPETITORS[{i}] reviews")
+        add_text(slide, detail, 8.78, y, 0.80, 0.39, 7, SLATE,
+                 cap_chars=34, cap_label=f"COMPETITORS[{i}] detail")
 
     # Client row — a "you are here" highlight, not a warning, so it uses the
-    # same navy/ocean-blue language as the stage strip above rather than red
-    # (which reads as an error next to the neutral competitor rows above it).
-    add_rect(slide, 5.75, 3.52, 4.25, 0.34, fill=rgb("E3F4FA"))
-    add_rect(slide, 5.75, 3.52, 0.10, 0.34, fill=OCEAN_BLUE)
-    add_text(slide, FIRM_NAME, 5.92, 3.57, 2.00, 0.28, 9, NAVY, bold=True,
-             cap_chars=34, cap_label="CLIENT row firm name")
-    add_text(slide, CLIENT_REVIEWS, 7.94, 3.57, 1.00, 0.28, 8, OCEAN_BLUE, bold=True,
-             cap_chars=22, cap_label="CLIENT_REVIEWS")
-    add_text(slide, CLIENT_REVIEWS_NOTE, 8.96, 3.59, 0.90, 0.26, 6, SLATE,
-             cap_chars=38, cap_label="CLIENT_REVIEWS_NOTE")
+    # same red accent-bar language as the RED pillar/finding cards rather than
+    # a solid warning block (which reads as an error next to the neutral rows above it).
+    add_rect(slide, 5.28, 4.74, 4.42, 0.39, fill=RED_PILL_BG)
+    add_rect(slide, 5.28, 4.74, 0.04, 0.39, fill=RED)
+    add_text(slide, FIRM_NAME, 5.46, 4.74, 1.78, 0.39, 8.5, RED, bold=True,
+             cap_chars=30, cap_label="CLIENT row firm name")
+    add_text(slide, CLIENT_REVIEWS, 7.26, 4.74, 1.48, 0.39, 8, RED, bold=True,
+             cap_chars=30, cap_label="CLIENT_REVIEWS")
+    add_text(slide, CLIENT_REVIEWS_NOTE, 8.78, 4.74, 0.80, 0.39, 7, SLATE,
+             cap_chars=34, cap_label="CLIENT_REVIEWS_NOTE")
 
     add_footer(slide, 1, 3, LOGO_PATH)
 
@@ -406,24 +426,28 @@ def build_slide2(prs):
     layout = prs.slide_layouts[6]
     slide = prs.slides.add_slide(layout)
 
-    # Header
-    add_rect(slide, 0, 0, 10, 1.05, fill=NAVY)
+    # Background wash + header (mirrors slides 1 and 3)
+    add_rect(slide, 0, 0, 10, 5.625, fill=BG_WASH)
+    add_rect(slide, 0, 0, 10, 0.92, fill=NAVY)
+    add_rect(slide, 0, 0.92, 10, 0.04, fill=LIME_GREEN)
     add_text(slide, f"LAW FIRM GROWTH AUDIT  ·  {FIRM_NAME.upper()}",
-             0.32, 0.10, 9.40, 0.22, 8, LIME_GREEN, bold=True)
-    add_text(slide, SLIDE_2_TITLE, 0.32, 0.34, 9.40, 0.60, 22, WHITE, bold=True)
+             0.32, 0.20, 6.00, 0.18, 7.5, LIME_GREEN, bold=True)
+    add_text(slide, SLIDE_2_TITLE, 0.32, 0.40, 9.30, 0.40, 20, WHITE, bold=True)
 
-    # Left panel — model + goal
-    add_rect(slide, 0.20, 1.12, 2.72, 3.98, fill=NAVY)
-    add_rect(slide, 0.20, 1.14, 2.72, 0.02, fill=OCEAN_BLUE)
-    add_text(slide, "THE SMB TEAM MODEL", 0.32, 1.20, 2.48, 0.22, 8, LIME_GREEN, bold=True)
-    add_text(slide, SMB_MODEL_DESC, 0.32, 1.46, 2.48, 1.72, 9, rgb("A8BFDA"))
-    add_rect(slide, 0.20, 3.28, 2.72, 0.82, fill=LIME_GREEN)
-    add_text(slide, GOAL_HEADLINE, 0.32, 3.30, 2.50, 0.30, 12, NAVY, bold=True)
-    add_text(slide, GOAL_DBM, 0.32, 3.60, 2.50, 0.44, 9, NAVY)
+    # Left column — model card and goal card, as two separate cards with a
+    # gap between them rather than one continuous box with an inset panel
+    add_rect(slide, 0.30, 1.10, 2.42, 2.50, fill=NAVY)
+    add_rect(slide, 0.30, 1.10, 2.42, 0.04, fill=LIME_GREEN)
+    add_text(slide, "THE SMB TEAM MODEL", 0.50, 1.28, 2.02, 0.16, 7.5, LIME_GREEN, bold=True)
+    add_text(slide, SMB_MODEL_DESC, 0.50, 1.56, 2.02, 1.90, 8.5, LIGHT_BLUE)
+
+    add_rect(slide, 0.30, 3.78, 2.42, 1.23, fill=LIME_GREEN)
+    add_text(slide, GOAL_HEADLINE, 0.50, 3.96, 2.02, 0.52, 12, GOAL_TEXT_DARK, bold=True)
+    add_text(slide, GOAL_DBM, 0.50, 4.52, 2.02, 0.34, 8.5, GOAL_TEXT_DARKER)
 
     # 3 priority columns
-    priority_xs = [3.08, 5.40, 7.72]
-    bullet_ys   = [2.04, 2.70, 3.36, 4.02, 4.68]
+    priority_xs = [2.92, 5.30, 7.68]
+    bullet_ys   = [2.04, 2.65, 3.25, 3.85, 4.46]
 
     for col_i, (line1, line2, hex_color, bullets) in enumerate(PRIORITIES):
         x = priority_xs[col_i]
@@ -432,19 +456,19 @@ def build_slide2(prs):
         header_text = ACCENT_TEXT_COLOR.get(hex_color, WHITE)
 
         # Header
-        add_rect(slide, x, 1.12, 2.24, 0.92, fill=ac)
-        add_text(slide, f"0{col_i+1}", x+0.12, 1.14, 0.50, 0.30, 10, header_text, bold=True)
-        add_text(slide, line1, x+0.12, 1.44, 2.04, 0.28, 12, header_text, bold=True)
-        add_text(slide, line2, x+0.12, 1.70, 2.04, 0.28, 12, header_text, bold=True)
+        add_rect(slide, x, 1.10, 2.26, 0.86, fill=ac)
+        add_text(slide, f"0{col_i+1}", x+0.18, 1.22, 0.50, 0.22, 11, header_text, bold=True)
+        add_text(slide, line1, x+0.18, 1.46, 1.90, 0.22, 11.5, header_text, bold=True)
+        add_text(slide, line2, x+0.18, 1.68, 1.90, 0.22, 11.5, header_text, bold=True)
 
         # Bullet rows
         for row_i, bullet in enumerate(bullets[:5]):
             y = bullet_ys[row_i]
             bg = light if row_i % 2 == 0 else WHITE
-            add_rect(slide, x, y, 2.24, 0.62, fill=bg)
-            add_rect(slide, x+0.10, y+0.24, 0.10, 0.10, fill=ac)
-            add_text(slide, bullet, x+0.26, y+0.06, 1.92, 0.52, 8, rgb("1E293B"),
-                     cap_chars=58, cap_label=f"PRIORITIES[{col_i}] bullet {row_i+1}")
+            add_rect(slide, x, y, 2.26, 0.56, fill=bg)
+            add_rect(slide, x+0.16, y+0.25, 0.07, 0.07, fill=ac)
+            add_text(slide, bullet, x+0.33, y+0.11, 1.76, 0.40, 8, DARK_TEXT,
+                     cap_chars=60, cap_label=f"PRIORITIES[{col_i}] bullet {row_i+1}")
 
     add_footer(slide, 2, 3, LOGO_PATH)
 
@@ -455,34 +479,36 @@ def build_slide3(prs):
     layout = prs.slide_layouts[6]
     slide = prs.slides.add_slide(layout)
 
-    # Header
-    add_rect(slide, 0, 0, 10, 1.05, fill=NAVY)
+    # Background wash + header (mirrors slides 1 and 2)
+    add_rect(slide, 0, 0, 10, 5.625, fill=BG_WASH)
+    add_rect(slide, 0, 0, 10, 0.92, fill=NAVY)
+    add_rect(slide, 0, 0.92, 10, 0.04, fill=LIME_GREEN)
     add_text(slide, f"LAW FIRM GROWTH AUDIT  ·  {FIRM_NAME.upper()}",
-             0.32, 0.10, 9.40, 0.22, 8, LIME_GREEN, bold=True)
+             0.32, 0.20, 6.00, 0.18, 7.5, LIME_GREEN, bold=True)
     add_text(slide, "Your Investment & What Happens Next",
-             0.32, 0.34, 9.40, 0.60, 22, WHITE, bold=True)
+             0.32, 0.40, 9.30, 0.40, 20, WHITE, bold=True)
 
-    # Package cards
-    pkg_ys = [1.12, 2.34]
+    # Package cards — white with a thin colored left accent bar
+    pkg_ys = [1.10, 2.25]
     for i, (label, price, retail, services, hex_c) in enumerate(PACKAGES[:2]):
         y = pkg_ys[i]
         ac = rgb(hex_c)
-        add_rect(slide, 0.22, y, 4.52, 1.12, fill=WHITE)
-        add_rect(slide, 0.22, y, 0.20, 1.12, fill=ac)
-        add_text(slide, label, 0.52, y+0.10, 4.16, 0.22, 8, ac, bold=True)
-        add_text(slide, price, 0.52, y+0.30, 2.00, 0.48, 32, NAVY, bold=True)
-        add_text(slide, "/mo", 2.04, y+0.42, 0.46, 0.28, 11, SLATE)
-        add_text(slide, retail, 2.54, y+0.44, 1.00, 0.26, 11, STRIKETHROUGH)
-        # Strikethrough line over retail price
-        add_rect(slide, 2.54, y+0.55, 0.88, 0.01, fill=STRIKETHROUGH)
-        add_text(slide, services, 0.52, y+0.84, 4.16, 0.22, 8, SLATE,
-                 cap_chars=65, cap_label=f"PACKAGES[{i}] services")
+        add_rect(slide, 0.30, y, 4.42, 1.05, fill=WHITE)
+        add_rect(slide, 0.30, y, 0.04, 1.05, fill=ac)
+        add_text(slide, label, 0.56, y+0.15, 3.92, 0.16, 7.5, ac, bold=True)
+        add_text(slide, price, 0.56, y+0.38, 1.55, 0.42, 25, NAVY, bold=True)
+        add_text(slide, "/mo", 1.92, y+0.56, 0.40, 0.20, 10, SLATE)
+        add_text(slide, retail, 2.40, y+0.56, 1.00, 0.20, 10, SLATE)
+        add_text(slide, services, 0.56, y+0.82, 3.92, 0.18, 8, SLATE,
+                 cap_chars=61, cap_label=f"PACKAGES[{i}] services")
 
     # Bundle total
-    add_rect(slide, 0.22, 3.56, 4.52, 0.72, fill=NAVY)
-    add_text(slide, "BUNDLE TOTAL", 0.42, 3.60, 1.80, 0.26, 8, BUNDLE_SUB, bold=True)
-    add_text(slide, BUNDLE_TOTAL, 0.42, 3.82, 2.40, 0.38, 22, OCEAN_BLUE, bold=True)
-    add_text(slide, BUNDLE_SAVINGS, 2.92, 3.82, 1.90, 0.38, 8, BUNDLE_SUB)
+    add_rect(slide, 0.30, 3.36, 4.42, 0.72, fill=NAVY)
+    add_rect(slide, 0.30, 3.36, 0.04, 0.72, fill=LIME_GREEN)
+    add_text(slide, "BUNDLE TOTAL", 0.56, 3.51, 1.70, 0.16, 7.5, LIME_GREEN, bold=True)
+    add_text(slide, BUNDLE_TOTAL, 0.56, 3.71, 2.20, 0.30, 17, WHITE, bold=True)
+    add_text(slide, BUNDLE_SAVINGS, 2.90, 3.78, 1.60, 0.20, 8.5, BUNDLE_SAVINGS_TEXT,
+             align=PP_ALIGN.RIGHT)
 
     # Ad spend note + ROI-on-ad-spend card — both omitted entirely when no
     # marketing/ads package was sold. Showing a return-on-ad-spend projection
@@ -491,43 +517,48 @@ def build_slide3(prs):
     has_ad_spend = bool(AD_SPEND_NOTE)
 
     if has_ad_spend:
-        add_rect(slide, 0.22, 4.34, 4.52, 0.44, fill=rgb("EEF2F8"))
-        add_text(slide, AD_SPEND_NOTE, 0.36, 4.37, 4.30, 0.38, 8, SLATE,
-                 cap_chars=130, cap_label="AD_SPEND_NOTE")
+        add_rect(slide, 0.30, 4.16, 4.42, 0.42, fill=rgb("EEF2F5"))
+        add_text(slide, AD_SPEND_NOTE, 0.50, 4.16, 4.02, 0.42, 8, BODY_TEXT,
+                 cap_chars=120, cap_label="AD_SPEND_NOTE")
 
         # ROI card
-        add_rect(slide, 4.96, 1.12, 4.82, 1.44, fill=ROI_BG)
+        add_rect(slide, 5.00, 1.10, 4.70, 1.42, fill=ROI_BG)
         add_text(slide, "PROJECTED RETURN ON AD SPEND",
-                 5.14, 1.18, 4.52, 0.24, 8, ROI_GREEN, bold=True)
-        add_text(slide, "Average case value:", 5.14, 1.46, 2.10, 0.28, 9, rgb("1E293B"), bold=True)
-        add_text(slide, AVG_CASE_VALUE, 7.36, 1.46, 2.30, 0.28, 9, ROI_GREEN)
-        add_rect(slide, 5.08, 1.76, 4.58, 0.34, fill=ROI_HILIGHT)
-        add_text(slide, CONSERVATIVE_LABEL, 5.14, 1.80, 2.10, 0.28, 9, rgb("1E293B"), bold=True)
-        add_text(slide, CONSERVATIVE_RESULT, 7.36, 1.80, 2.30, 0.28, 9, ROI_GREEN, bold=True)
-        add_text(slide, AGGRESSIVE_LABEL, 5.14, 2.14, 2.10, 0.28, 9, rgb("1E293B"), bold=True)
-        add_text(slide, AGGRESSIVE_RESULT, 7.36, 2.14, 2.30, 0.28, 9, ROI_GREEN, bold=True)
+                 5.22, 1.26, 4.26, 0.16, 7.5, ROI_GREEN, bold=True)
+        add_text(slide, "Average case value:", 5.22, 1.58, 1.95, 0.18, 8.5, DARK_TEXT, bold=True)
+        add_text(slide, AVG_CASE_VALUE, 7.25, 1.58, 2.30, 0.18, 8.5, ROI_GREEN)
+        add_rect(slide, 5.14, 1.83, 4.42, 0.28, fill=ROI_HILIGHT)
+        add_text(slide, CONSERVATIVE_LABEL, 5.22, 1.90, 1.95, 0.18, 8.5, DARK_TEXT, bold=True)
+        add_text(slide, CONSERVATIVE_RESULT, 7.25, 1.90, 2.30, 0.18, 8.5, ROI_GREEN, bold=True)
+        add_text(slide, AGGRESSIVE_LABEL, 5.22, 2.21, 1.95, 0.18, 8.5, DARK_TEXT, bold=True)
+        add_text(slide, AGGRESSIVE_RESULT, 7.25, 2.21, 2.30, 0.18, 8.5, ROI_GREEN, bold=True)
 
-        first90_y = 2.70
-        timeline_ys = [2.98, 3.37, 3.76, 4.15, 4.54]
+        first90_y = 2.72
+        timeline_ys = [2.99, 3.31, 3.62, 3.94, 4.25]
     else:
         # No ROI card above it — give First 90 Days the full right-column height.
-        first90_y = 1.12
+        first90_y = 1.10
         timeline_ys = [1.46, 1.97, 2.48, 2.99, 3.50]
 
-    # First 90 days
+    # First 90 days — alternating light/white rows; the Day-1 dot pops in
+    # lime green, the rest in ocean blue, so the immediate next step stands out
     add_text(slide, "WHAT HAPPENS IN THE FIRST 90 DAYS",
-             4.96, first90_y, 4.82, 0.26, 8, NAVY, bold=True)
+             5.00, first90_y, 4.70, 0.18, 7.5, NAVY, bold=True)
     for i, (milestone, action) in enumerate(TIMELINE[:5]):
         y = timeline_ys[i]
-        add_rect(slide, 5.02, y, 0.28, 0.28, fill=NAVY)
-        add_text(slide, milestone, 5.40, y+0.01, 0.88, 0.28, 8, NAVY, bold=True)
-        add_text(slide, action, 6.36, y+0.01, 3.34, 0.28, 8, rgb("1E293B"),
+        row_bg = rgb("EEF2F5") if i % 2 == 0 else WHITE
+        dot_color = LIME_GREEN if i == 0 else OCEAN_BLUE
+        add_rect(slide, 5.00, y, 4.70, 0.29, fill=row_bg)
+        add_rect(slide, 5.14, y+0.09, 0.10, 0.10, fill=dot_color)
+        add_text(slide, milestone, 5.36, y+0.055, 0.75, 0.18, 8, NAVY, bold=True)
+        add_text(slide, action, 6.18, y+0.055, 3.35, 0.18, 8, BODY_TEXT,
                  cap_chars=58, cap_label=f"TIMELINE[{i}] action")
 
-    # Closing quote bar
-    add_rect(slide, 0, 4.84, 10, 0.44, fill=NAVY)
-    add_text(slide, CLOSING_QUOTE, 0.30, 4.84, 9.40, 0.44, 9, LIGHT_BLUE, italic=True,
-             align=PP_ALIGN.CENTER, cap_chars=220, cap_label="CLOSING_QUOTE")
+    # Closing quote bar — taller, darker navy, with the same lime accent stripe
+    add_rect(slide, 0, 4.66, 10, 0.61, fill=rgb("002A41"))
+    add_rect(slide, 0, 4.66, 10, 0.02, fill=LIME_GREEN)
+    add_text(slide, CLOSING_QUOTE, 0.70, 4.82, 8.60, 0.34, 9.5, rgb("C2D8E6"),
+             align=PP_ALIGN.CENTER, cap_chars=200, cap_label="CLOSING_QUOTE")
 
     add_footer(slide, 3, 3, LOGO_PATH)
 
