@@ -382,15 +382,25 @@ function selectCoachingTier(revenue, effectiveRevenue, teamSize, effectiveTeam, 
 
 function estimateAdSpend(practiceAreas, marketingTier) {
   let floor = 3_000;
+  let floorBasis = 'no practice area matched a channel-minimum table — default floor';
   for (const area of practiceAreas) {
     for (const entry of AD_SPEND_FLOORS) {
-      if (entry.keywords.some(k => area.includes(k))) {
-        floor = Math.max(floor, entry.floor);
+      if (entry.keywords.some(k => area.includes(k)) && entry.floor > floor) {
+        floor = entry.floor;
+        floorBasis = area;
       }
     }
   }
-  const ceiling = Math.min(marketingTier.adCap, floor * 4);
-  return { conservative: floor, aggressive: ceiling };
+  const uncappedCeiling = floor * 4;
+  const ceiling = Math.min(marketingTier.adCap, uncappedCeiling);
+  const aggressiveBasis = ceiling < uncappedCeiling
+    ? `capped by ${marketingTier.tier} tier's ad cap`
+    : 'scaled 4x off the conservative channel-minimum floor';
+  return {
+    conservative: floor,
+    aggressive: ceiling,
+    rationale: { conservative_basis: floorBasis, aggressive_basis: aggressiveBasis },
+  };
 }
 
 // ─── Revenue estimation when not stated ──────────────────────────────────────
@@ -561,6 +571,7 @@ const decision = {
 
   ad_spend_conservative:   adSpend.conservative,
   ad_spend_aggressive:     adSpend.aggressive,
+  ad_spend_rationale:      adSpend.rationale,
 
   selection_notes: notes,
 };
@@ -572,7 +583,7 @@ console.log(`\nPackage decision → ${outputPath}`);
 console.log(`  Marketing:  ${marketing.name} — $${marketing.bundled.toLocaleString()}/mo`);
 console.log(`  Coaching:   ${coaching.name} — $${coaching.bundled.toLocaleString()}/mo`);
 console.log(`  Total:      $${totalBundled.toLocaleString()}/mo`);
-console.log(`  Ad spend:   $${adSpend.conservative.toLocaleString()}–$${adSpend.aggressive.toLocaleString()}/mo`);
+console.log(`  Ad spend:   $${adSpend.conservative.toLocaleString()}–$${adSpend.aggressive.toLocaleString()}/mo (conservative: ${adSpend.rationale.conservative_basis}; aggressive: ${adSpend.rationale.aggressive_basis})`);
 console.log(`  Confidence: ${confidence}`);
 if (notes.length) {
   console.log(`  Notes:`);

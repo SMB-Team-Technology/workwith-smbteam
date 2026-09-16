@@ -33,7 +33,7 @@ If any of these files does not exist, stop and tell the user to run `/audit-writ
 Assessment overview: urgency score, 4-pillar health indicators, key findings (3 negative + 1 positive), competitor review table, stage strip.
 
 **Slide 2 — Your Growth Plan: 3 Priorities to Reach [Goal]**
-Action plan: SMB model description, goal statement tied to DBM, three priority columns (Marketing Engine / Fix Intake / Team & Profit Systems) with 5 bullets each.
+Action plan: SMB model description, goal statement tied to DBM, three priority columns (themed to what this firm is actually buying and its real priorities — see below) with 5 bullets each.
 
 **Slide 3 — Your Investment & What Happens Next**
 Pricing: two package cards with bundled and retail prices, bundle total + savings, ad spend note, ROI projections, first-90-days timeline, closing quote.
@@ -87,7 +87,7 @@ Copy values exactly — do not rewrite or recompute.
 - `PACKAGES` — package name (from package-label div), bundled price, retail/stand-alone price, deliverables summary line (condense to one line, ≤65 chars)
 - `BUNDLE_TOTAL` — copy from investment-total
 - `BUNDLE_SAVINGS` — copy savings callout text
-- `AD_SPEND_NOTE` — copy recommended ad spend range row
+- `AD_SPEND_NOTE` — only fill this if Block 4 exists in section_11 (i.e., a marketing/ads package is part of the recommendation). Copy the recommended ad spend range and append a short clause distilled from Block 4's "why this range" sentence — the payoff, not the calculation basis, e.g. `"+ Recommended ad spend: $X,XXX–$XX,XXX/mo — to turn high-intent [practice area] searches into signed cases"`. Keep the full note under ~110 characters so it doesn't get truncated on the slide. If Block 4 was omitted from section_11 (no marketing/ads sold), set `AD_SPEND_NOTE = None` — do not show an ad spend note or rationale for a service this firm isn't buying. This also controls whether the "Projected Return on Ad Spend" card renders on Slide 3 (they're gated together in the layout engine) — when `AD_SPEND_NOTE` is `None`, `AVG_CASE_VALUE`/`CONSERVATIVE_*`/`AGGRESSIVE_*` are unused and can be left at their placeholder values.
 - `AVG_CASE_VALUE`, conservative/aggressive cases + revenue + ROAS — copy from Block 4 ROI table
 - `TIMELINE` — 5 first-90-days milestone items (Day 1 / Day 14 / Week 2 / Week 3 / Month 3), condense each action to ≤55 chars
 
@@ -105,10 +105,10 @@ Copy values exactly — do not rewrite or recompute.
 - `SLIDE_2_TITLE` — "Your Growth Plan: 3 Priorities to Reach [monthly goal]"
 
 **Priority column titles and bullets (Slide 2):**
-Derive from section_11 Block 1 / quick wins and section_06–09 findings. Map to three themes:
-- Priority 1 → Marketing Engine (lead gen actions)
-- Priority 2 → Fix Intake & Stop Losing Cases (intake actions)
-- Priority 3 → Install Team & Profit Systems (team + profit actions)
+Derive from section_11 Block 1 / quick wins, section_06–09 findings, and — critically — what this firm is actually buying (check `package_decision.json` and the package-label divs in section_11 Block 2). Each of the 3 columns must reflect a real priority for this firm; do not default to a generic theme regardless of what was sold.
+
+- A column may be themed "Build the Marketing Engine" (lead gen actions) **only if a marketing/ads package is part of this firm's recommendation.** If no marketing/ads package was sold (check `marketing_tier`/`marketing_name` in `package_decision.json`, or that a Transcript-Stated Need Override in `audit-write.md` dropped marketing), do not title any column "Marketing Engine" or imply ad spend is part of this plan — theme that column after an actual sold service or genuine next priority instead (e.g., intake, team systems, profit systems, a coaching foundation phase, or a phased "future marketing" note only if the roadmap genuinely calls for one later).
+- Intake and Team/Profit themes ("Fix Intake & Stop Losing Cases", "Install Team & Profit Systems") generally still apply regardless of package mix, since those pillars matter to every firm — but their bullets must stay firm-specific and reflect what was actually found/recommended, never generic filler.
 
 Each bullet: one specific action for this firm, ≤55 chars.
 
@@ -121,7 +121,7 @@ Each bullet: one specific action for this firm, ≤55 chars.
 3. Set `OUTPUT_PATH = "[friendly-name]/[FirmName]_[Date]_Proposal.pptx"`
 4. Set `SALES_REP` to the sales rep name
 5. Set `WEBSITE_SCREENSHOT_PATH = None` (leave as-is unless a local screenshot PNG exists)
-6. Verify no `# FILL:` placeholder text remains (the word "FILL" should not appear in any string value)
+6. Verify no `# FILL:` placeholder text remains (the word "FILL" should not appear in any string value). If `AD_SPEND_NOTE` was deliberately set to `None` because no marketing/ads package was sold, that's expected — not a missed FILL.
 7. Before running, diff the copy's layout engine against the master template and confirm there's no output — anything below `LAYOUT ENGINE — DO NOT MODIFY BELOW THIS LINE` must be byte-for-byte identical to `Design Files/audit_pptx_template.py` (this includes `FONT`, every color constant, `ACCENT_TEXT_COLOR`, `PRIORITY_LIGHT`, and every `build_slideN`/helper function):
 
 ```bash

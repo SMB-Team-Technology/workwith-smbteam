@@ -93,9 +93,12 @@ GOAL_HEADLINE = "$X → $Y revenue"       # FILL: e.g. "$1M → $1.8M revenue"
 GOAL_DBM      = "Owner takes real time off"  # FILL: DBM outcome phrase
 
 # Each priority: (line1, line2, accent_color_hex, [5 bullet strings])
+# Titles must reflect what this firm is actually buying and its real priorities —
+# see .claude/commands/audit-pptx.md. Do not default a column to "Marketing Engine"
+# unless a marketing/ads package is actually part of this firm's recommendation.
 PRIORITIES = [
     (
-        "Build the", "Marketing Engine", "0091C9",
+        "Priority", "One", "0091C9",
         [
             "Bullet 1 — specific action for this firm",
             "Bullet 2 — specific action for this firm",
@@ -148,7 +151,7 @@ BUNDLE_SAVINGS = "Save $X,XXX/mo by bundling"        # FILL
 
 AD_SPEND_NOTE = (
     "+ Recommended ad spend: $X,XXX–$XX,XXX/mo paid directly to Google/Meta"
-)  # FILL
+)  # FILL — set to None if no marketing/ads package is part of this firm's recommendation
 
 AVG_CASE_VALUE     = "$X,XXX"                         # FILL
 CONSERVATIVE_LABEL = "Conservative  (X cases/mo):"   # FILL
@@ -515,6 +518,17 @@ def build_slide3_html():
           <div class="pkg-services ellipsis">{esc(services)}</div>
         </div>"""
 
+    # Ad spend note + ROI-on-ad-spend card — both omitted entirely when no
+    # marketing/ads package was sold (flexbox column collapses the gap).
+    ad_spend_html = f'<div class="ad-spend">{esc(AD_SPEND_NOTE)}</div>' if AD_SPEND_NOTE else ""
+    roi_card_html = f"""
+          <div class="roi-card">
+            <div class="title">PROJECTED RETURN ON AD SPEND</div>
+            <div class="roi-line"><span>Average case value:</span><span class="roi-strong">{esc(AVG_CASE_VALUE)}</span></div>
+            <div class="roi-hi"><div class="roi-line"><span>{esc(CONSERVATIVE_LABEL)}</span><span class="roi-strong">{esc(CONSERVATIVE_RESULT)}</span></div></div>
+            <div class="roi-line"><span>{esc(AGGRESSIVE_LABEL)}</span><span class="roi-strong">{esc(AGGRESSIVE_RESULT)}</span></div>
+          </div>""" if AD_SPEND_NOTE else ""
+
     timeline_rows = ""
     for milestone, action in TIMELINE[:5]:
         timeline_rows += f"""
@@ -581,15 +595,10 @@ def build_slide3_html():
             </div>
             <div class="savings">{esc(BUNDLE_SAVINGS)}</div>
           </div>
-          <div class="ad-spend">{esc(AD_SPEND_NOTE)}</div>
+          {ad_spend_html}
         </div>
         <div class="right-col">
-          <div class="roi-card">
-            <div class="title">PROJECTED RETURN ON AD SPEND</div>
-            <div class="roi-line"><span>Average case value:</span><span class="roi-strong">{esc(AVG_CASE_VALUE)}</span></div>
-            <div class="roi-hi"><div class="roi-line"><span>{esc(CONSERVATIVE_LABEL)}</span><span class="roi-strong">{esc(CONSERVATIVE_RESULT)}</span></div></div>
-            <div class="roi-line"><span>{esc(AGGRESSIVE_LABEL)}</span><span class="roi-strong">{esc(AGGRESSIVE_RESULT)}</span></div>
-          </div>
+          {roi_card_html}
           <div class="tl-title">WHAT HAPPENS IN THE FIRST 90 DAYS</div>
           <div class="timeline">{timeline_rows}</div>
         </div>
