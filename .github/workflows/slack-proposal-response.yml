@@ -171,6 +171,17 @@ jobs:
             -H "Content-Type: application/json" \
             -d "$PAYLOAD"
 
+      - name: Resolve seller mention
+        id: resolve_mention
+        if: steps.find.outputs.found == 'true' && steps.phase1.outputs.complete == 'true'
+        env:
+          SLACK_BOT_TOKEN: ${{ secrets.SLACK_BOT_TOKEN }}
+        run: |
+          MENTION=$(node scripts/resolve-slack-mention.mjs \
+            "${{ steps.find.outputs.sales_rep }}" \
+            "${{ steps.find.outputs.sales_rep_email }}")
+          echo "mention=$MENTION" >> "$GITHUB_OUTPUT"
+
       - name: Handle the seller's response
         if: steps.find.outputs.found == 'true' && steps.phase1.outputs.complete == 'true'
         env:
@@ -183,6 +194,7 @@ jobs:
           FIRM_NAME: ${{ steps.find.outputs.firm_name }}
           SALES_REP: ${{ steps.find.outputs.sales_rep }}
           SALES_REP_EMAIL: ${{ steps.find.outputs.sales_rep_email }}
+          SALES_REP_MENTION: ${{ steps.resolve_mention.outputs.mention }}
           DATE: ${{ steps.find.outputs.date }}
           HUBSPOT_CONTACT_ID: ${{ steps.find.outputs.hubspot_contact_id }}
           SUPPRESS_PRICING: ${{ steps.find.outputs.suppress_pricing }}
@@ -199,6 +211,9 @@ jobs:
             Firm: $FIRM_NAME (friendly name: $FRIENDLY_NAME)
             Sales rep: $SALES_REP <$SALES_REP_EMAIL>
             Slack channel: $SLACK_CHANNEL, thread_ts: $SLACK_THREAD_TS
+            Pre-resolved Slack mention for this rep (use this verbatim wherever a reply
+            below needs to tag them — do NOT write \"@$SALES_REP\" yourself, that will not
+            notify anyone): $SALES_REP_MENTION
 
             Read the seller's message and classify it into exactly one of three intents:
 
@@ -218,10 +233,11 @@ jobs:
             3. Edit \`$REVIEW_FILE\` — set \"status\" to \"locked\". git add, commit
                (separate commit from step 2), push.
             4. Post a Slack reply in the SAME thread confirming the lock-in and that the
-               full build is underway (~60-90 min):
+               full build is underway (~60-90 min), tagging the rep with the pre-resolved
+               mention above:
                curl -s -X POST https://slack.com/api/chat.postMessage \
                  -H \"Authorization: Bearer \$SLACK_BOT_TOKEN\" -H 'Content-Type: application/json' \
-                 -d '{\"channel\":\"'\"\$SLACK_CHANNEL\"'\",\"thread_ts\":\"'\"\$SLACK_THREAD_TS\"'\",\"text\":\"🔒 Locked in — building the full proposal now (~60-90 min). I will reply here when it is ready.\"}'
+                 -d '{\"channel\":\"'\"\$SLACK_CHANNEL\"'\",\"thread_ts\":\"'\"\$SLACK_THREAD_TS\"'\",\"text\":\"'\"\$SALES_REP_MENTION\"' 🔒 Locked in — building the full proposal now (~60-90 min). I will reply here when it is ready.\"}'
 
             --- INTENT B: ASK FOR RATIONALE ---
             Signals: a question about why something was proposed ('why this tier',
@@ -246,9 +262,12 @@ jobs:
             2. git add ONLY that file, commit, push (pull --rebase first).
             3. Post an updated proposal summary as a Slack reply in the SAME thread,
                in this format, then repeat the same three options as before:
-               '📋 *Updated proposal for $FIRM_NAME*' followed by the new marketing/coaching/
-               total/ad-spend lines pulled from the updated package_decision.json, then:
+               '$SALES_REP_MENTION 📋 *Updated proposal for $FIRM_NAME*' followed by the new
+               marketing/coaching/total/ad-spend lines pulled from the updated
+               package_decision.json, then:
                'Reply again to: 🔒 lock it in / ❓ ask why / ✏️ propose more changes'
+               Use the pre-resolved mention text verbatim (it's already a real Slack
+               tag or a visibly-flagged plain name) — do not substitute "@$SALES_REP".
             4. Do NOT modify \`$REVIEW_FILE\` — status stays 'pending' so the loop can
                continue until the seller locks it in.
 
