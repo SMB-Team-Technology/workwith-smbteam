@@ -484,28 +484,39 @@ def build_slide3(prs):
     add_text(slide, BUNDLE_TOTAL, 0.42, 3.82, 2.40, 0.38, 22, OCEAN_BLUE, bold=True)
     add_text(slide, BUNDLE_SAVINGS, 2.92, 3.82, 1.90, 0.38, 8, BUNDLE_SUB)
 
-    # Ad spend note — omitted entirely when no marketing/ads package was sold
-    if AD_SPEND_NOTE:
+    # Ad spend note + ROI-on-ad-spend card — both omitted entirely when no
+    # marketing/ads package was sold. Showing a return-on-ad-spend projection
+    # for ad spend that isn't part of the recommendation is the same bug as
+    # the missing-rationale note, just in a second spot on this slide.
+    has_ad_spend = bool(AD_SPEND_NOTE)
+
+    if has_ad_spend:
         add_rect(slide, 0.22, 4.34, 4.52, 0.44, fill=rgb("EEF2F8"))
         add_text(slide, AD_SPEND_NOTE, 0.36, 4.37, 4.30, 0.38, 8, SLATE,
                  cap_chars=130, cap_label="AD_SPEND_NOTE")
 
-    # ROI card
-    add_rect(slide, 4.96, 1.12, 4.82, 1.44, fill=ROI_BG)
-    add_text(slide, "PROJECTED RETURN ON AD SPEND",
-             5.14, 1.18, 4.52, 0.24, 8, ROI_GREEN, bold=True)
-    add_text(slide, "Average case value:", 5.14, 1.46, 2.10, 0.28, 9, rgb("1E293B"), bold=True)
-    add_text(slide, AVG_CASE_VALUE, 7.36, 1.46, 2.30, 0.28, 9, ROI_GREEN)
-    add_rect(slide, 5.08, 1.76, 4.58, 0.34, fill=ROI_HILIGHT)
-    add_text(slide, CONSERVATIVE_LABEL, 5.14, 1.80, 2.10, 0.28, 9, rgb("1E293B"), bold=True)
-    add_text(slide, CONSERVATIVE_RESULT, 7.36, 1.80, 2.30, 0.28, 9, ROI_GREEN, bold=True)
-    add_text(slide, AGGRESSIVE_LABEL, 5.14, 2.14, 2.10, 0.28, 9, rgb("1E293B"), bold=True)
-    add_text(slide, AGGRESSIVE_RESULT, 7.36, 2.14, 2.30, 0.28, 9, ROI_GREEN, bold=True)
+        # ROI card
+        add_rect(slide, 4.96, 1.12, 4.82, 1.44, fill=ROI_BG)
+        add_text(slide, "PROJECTED RETURN ON AD SPEND",
+                 5.14, 1.18, 4.52, 0.24, 8, ROI_GREEN, bold=True)
+        add_text(slide, "Average case value:", 5.14, 1.46, 2.10, 0.28, 9, rgb("1E293B"), bold=True)
+        add_text(slide, AVG_CASE_VALUE, 7.36, 1.46, 2.30, 0.28, 9, ROI_GREEN)
+        add_rect(slide, 5.08, 1.76, 4.58, 0.34, fill=ROI_HILIGHT)
+        add_text(slide, CONSERVATIVE_LABEL, 5.14, 1.80, 2.10, 0.28, 9, rgb("1E293B"), bold=True)
+        add_text(slide, CONSERVATIVE_RESULT, 7.36, 1.80, 2.30, 0.28, 9, ROI_GREEN, bold=True)
+        add_text(slide, AGGRESSIVE_LABEL, 5.14, 2.14, 2.10, 0.28, 9, rgb("1E293B"), bold=True)
+        add_text(slide, AGGRESSIVE_RESULT, 7.36, 2.14, 2.30, 0.28, 9, ROI_GREEN, bold=True)
+
+        first90_y = 2.70
+        timeline_ys = [2.98, 3.37, 3.76, 4.15, 4.54]
+    else:
+        # No ROI card above it — give First 90 Days the full right-column height.
+        first90_y = 1.12
+        timeline_ys = [1.46, 1.97, 2.48, 2.99, 3.50]
 
     # First 90 days
     add_text(slide, "WHAT HAPPENS IN THE FIRST 90 DAYS",
-             4.96, 2.70, 4.82, 0.26, 8, NAVY, bold=True)
-    timeline_ys = [2.98, 3.37, 3.76, 4.15, 4.54]
+             4.96, first90_y, 4.82, 0.26, 8, NAVY, bold=True)
     for i, (milestone, action) in enumerate(TIMELINE[:5]):
         y = timeline_ys[i]
         add_rect(slide, 5.02, y, 0.28, 0.28, fill=NAVY)
