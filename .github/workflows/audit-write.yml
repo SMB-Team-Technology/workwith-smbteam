@@ -80,7 +80,7 @@ jobs:
             section before moving to the next. Assemble the final HTML report, generate
             the Sales Companion PDF, and commit everything to main. If with_pptx is
             $WITH_PPTX (true), also run Pass 3. Report the commit hash when done.
-          "
+          " | tee audit_write_output.log
 
       - name: Verify audit write completed
         id: verify
@@ -287,10 +287,24 @@ jobs:
           if verified:
               text = f"{mention} ✅ *Proposal ready:* {firm}\n{url}"
           else:
+              reasoning = ""
+              try:
+                  with open("audit_write_output.log", "r") as f:
+                      log = f.read().strip()
+                  if log:
+                      reasoning = log[-2000:]
+              except FileNotFoundError:
+                  pass
+
               text = (
                   f"{mention} ⚠️ *audit-write did not complete for {firm}* — no report was generated"
                   f" (missing: {missing or 'index.html/sections'}).\n"
-                  f"The proposal was NOT marked built — please investigate the audit-write run and re-trigger."
+              )
+              if reasoning:
+                  text += f"\n*What audit-write said:*\n>>> {reasoning}\n"
+              text += (
+                  f"\nThe proposal was NOT marked built — resolve the above and re-trigger"
+                  f" (e.g. push an updated change to triggers/audit-write/{slug}.json)."
               )
 
           body = json.dumps({"channel": channel, "thread_ts": thread, "text": text}).encode()
