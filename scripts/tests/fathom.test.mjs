@@ -342,17 +342,28 @@ test('skip-fathom-overwrite.mjs exits 0 for a real transcript and 1 for a miss',
   }
 });
 
-test('GHA fetch steps treat skip-helper exit 2 as leave-unchanged, not overwrite', () => {
+// The skip rules and the leave-unchanged-on-error behaviour that used to live
+// in the fetch steps' bash now belong to fetch-pass1-transcript.mjs (see
+// fetch-pass1-transcript.test.mjs). What the workflows must still guarantee:
+// the step always runs — an empty Slack trigger has no fathom_url and no
+// transcript — and it goes through the API script, never fathom.video.
+test('GHA fetch steps always run and delegate to fetch-pass1-transcript.mjs', () => {
   const root = fileURLToPath(new URL('../..', import.meta.url));
   for (const rel of [
     '.github/workflows/audit-pipeline.yml',
     '.github/workflows/rerun-research.yml',
   ]) {
     const yml = readFileSync(join(root, rel), 'utf8');
-    assert.match(yml, /SKIP_RC=\$\?/);
-    assert.match(yml, /\[ "\$SKIP_RC" -ne 1 \]/);
-    assert.doesNotMatch(yml, /if node scripts\/skip-fathom-overwrite\.mjs/);
-    assert.match(yml, /\.transcript = \$t \| \.transcript_status/);
+    const step = yml.split(/\n {6}- name: /).find(s => s.startsWith('Fetch Fathom transcript'));
+    assert.ok(step, `${rel}: no "Fetch Fathom transcript" step`);
+    assert.doesNotMatch(step, /^ {8}if:/m, `${rel}: the fetch step must not be conditional`);
+    assert.match(step, /node scripts\/fetch-pass1-transcript\.mjs/, rel);
+    assert.match(step, /FATHOM_API_KEY: \$\{\{ secrets\.FATHOM_API_KEY \}\}/, rel);
+    assert.match(step, /HUBSPOT_TOKEN: \$\{\{ secrets\.HUBSPOT_TOKEN \}\}/, rel);
+    assert.doesNotMatch(step, /fathom\.video/, `${rel}: fathom.video is not the API`);
+    assert.doesNotMatch(step, /Authorization: Bearer \$FATHOM_API_KEY/, rel);
+    assert.doesNotMatch(step, /SKIP_RC/, `${rel}: the script owns the skip rules`);
+    assert.doesNotMatch(step, /\.transcript = \$t \| \.transcript_status/, rel);
   }
 });
 
