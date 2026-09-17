@@ -61,69 +61,24 @@ jobs:
             "${{ steps.inputs.outputs.fathom_url }}" 2>/dev/null || true)
           echo "fathom_url=${FATHOM_URL}" >> "$GITHUB_OUTPUT"
           if [ -n "$FATHOM_URL" ]; then
-            echo "Resolved Fathom URL: $FATHOM_URL"
+            echo "Resolved Fathom URL (informational only): $FATHOM_URL"
           else
-            echo "No Fathom URL found — Pass 1 will proceed without transcript."
+            echo "No Fathom URL found — the transcript lookup is by invitee email, so Fetch still runs."
           fi
 
+      # The transcript lookup is by invitee email against api.fathom.ai, so it
+      # must run even when no fathom.video URL resolved and even when the
+      # trigger's transcript field is empty (every Slack-created trigger).
+      # The script owns the skip rules: human custody / rep notes and an
+      # existing Fathom API transcript are left alone, and HubSpot notes are
+      # only used as a fallback after the API came back without a transcript.
       - name: Fetch Fathom transcript
-        # Skip when the trigger file already carries a transcript (e.g. one
-        # manually merged from multiple discovery calls) — auto-resolution
-        # only ever pulls the single most-recently-logged Fathom call, so
-        # running it here would silently overwrite a deliberately curated
-        # transcript with less complete data.
-        if: steps.resolve_fathom.outputs.fathom_url != '' && steps.inputs.outputs.has_transcript != 'true'
         env:
           FATHOM_API_KEY: ${{ secrets.FATHOM_API_KEY }}
           HUBSPOT_TOKEN: ${{ secrets.HUBSPOT_TOKEN }}
         run: |
           TRIGGER_FILE="${{ steps.inputs.outputs.trigger_file }}"
-          FATHOM_URL="${{ steps.resolve_fathom.outputs.fathom_url }}"
-
-          set +e
-          node scripts/skip-fathom-overwrite.mjs "$TRIGGER_FILE"
-          SKIP_RC=$?
-          set -e
-          if [ "$SKIP_RC" -eq 0 ]; then
-            echo "Trigger already has a real transcript — skipping HubSpot/summary overwrite."
-            exit 0
-          fi
-          if [ "$SKIP_RC" -ne 1 ]; then
-            echo "skip-fathom-overwrite.mjs failed (exit $SKIP_RC) — leaving transcript field unchanged."
-            exit 0
-          fi
-
-          CALL_ID=$(echo "$FATHOM_URL" | grep -oP '(?<=/calls/)\d+' || true)
-
-          if [ -n "$CALL_ID" ]; then
-            echo "Fetching Fathom summary for call ID: $CALL_ID"
-            SUMMARY=$(curl -sf \
-              -H "Authorization: Bearer $FATHOM_API_KEY" \
-              -H "Accept: application/json" \
-              "https://fathom.video/api/v1/calls/${CALL_ID}/summary" \
-              | jq -r '.summary // .text // .content // empty')
-            if [ -z "$SUMMARY" ]; then
-              echo "No summary returned from Fathom for call $CALL_ID — leaving transcript field unchanged."
-              exit 0
-            fi
-            TRUNCATED=$(echo "$SUMMARY" | head -c 8000)
-            T="SOURCE: Fathom (direct) — ${FATHOM_URL}"$'\n\n'"${TRUNCATED}"
-            jq --arg t "$T" '.transcript = $t | .transcript_status = {"outcome":"found","custody":"machine","source":"fathom_direct"}' \
-              "$TRIGGER_FILE" > /tmp/trigger_updated.json && mv /tmp/trigger_updated.json "$TRIGGER_FILE"
-            echo "Transcript injected into $TRIGGER_FILE (${#TRUNCATED} chars)"
-          else
-            echo "Share URL found ($FATHOM_URL) — extracting transcript from HubSpot internal meeting notes."
-            CONTACT_ID="${{ steps.inputs.outputs.hubspot_contact_id }}"
-            TRANSCRIPT=$(node scripts/fetch-hubspot-fathom-notes.mjs "$CONTACT_ID" 2>/dev/null || true)
-            if [ -z "$TRANSCRIPT" ]; then
-              echo "No transcript found in HubSpot internal meeting notes — leaving transcript field unchanged."
-              exit 0
-            fi
-            T="SOURCE: Fathom (via HubSpot internal notes) — ${FATHOM_URL}"$'\n\n'"${TRANSCRIPT}"
-            jq --arg t "$T" '.transcript = $t | .transcript_status = {"outcome":"found","custody":"machine","source":"hubspot_notes"}' \
-              "$TRIGGER_FILE" > /tmp/trigger_updated.json && mv /tmp/trigger_updated.json "$TRIGGER_FILE"
-            echo "Transcript injected from HubSpot internal notes (${#TRANSCRIPT} chars)"
-          fi
+          node scripts/fetch-pass1-transcript.mjs "$TRIGGER_FILE"
 
       - name: Pass 1 — Audit Research
         env:
