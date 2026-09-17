@@ -1,0 +1,157 @@
+<!-- ⚠️ NO CSS IN THIS FILE. No <style> blocks. No inline styles. No style="" attributes.
+     All styling comes from audit_styles.css only. Use only existing class names.
+     If you find yourself writing CSS — stop and delete it. -->
+<!-- ============================================================
+     SECTION 05 — YOUR GROWTH HEALTH ASSESSMENT
+     
+     INSTRUCTIONS FOR COWORK:
+     - For each traffic circle: use class "red", "amber", or "green" based on your rating
+     - For each sc-findings list: write 2-3 specific bullet points for this firm only
+     - For sc-dbm: one italic sentence connecting this pillar to income, freedom, or DBM
+     - For urgency score: replace the number, set left% = (score/10)*100 on the marker
+     - For urgency sentence: use the correct dynamic sentence based on score range
+     - For competitor cards: write 2-3 named competitors with specific threat reasons
+     - Do not add inline styles. Do not change class names.
+     ============================================================ -->
+
+<div class="section-header" id="growth-health">
+  <div class="section-header-inner">
+    <h2>Your Growth Health Assessment</h2>
+    <div class="subtext">Beyond Business Contracts, PA</div>
+  </div>
+</div>
+
+<div class="content-wrap">
+
+  <div class="legend">
+    <div class="legend-item">
+      <div class="legend-dot red"></div>
+      <div class="legend-label">Red <span>— Critical Priority</span></div>
+    </div>
+    <div class="legend-item">
+      <div class="legend-dot amber"></div>
+      <div class="legend-label">Amber <span>— In Progress</span></div>
+    </div>
+    <div class="legend-item">
+      <div class="legend-dot green"></div>
+      <div class="legend-label">Green <span>— On Track</span></div>
+    </div>
+  </div>
+
+  <div class="scorecard-label">Pillar Health Scorecard</div>
+
+  <div class="scorecard-grid">
+
+    <!-- LEAD GENERATION CARD -->
+    <div class="sc-card">
+      <div class="sc-card-header"><h3>Lead Generation</h3></div>
+      <div class="sc-card-body">
+        <div class="traffic-circle red"></div>
+        <ul class="sc-findings">
+          <li>New business comes almost entirely from high-value in-person networking &mdash; no repeatable digital lead system exists</li>
+          <li>No paid search, LSA, or Meta activity was found or reported, so growth is capped by how many events one person can attend</li>
+          <li>The site has no city-specific pages for nearby markets like The Villages, Belleview, or Silver Springs</li>
+        </ul>
+        <div class="sc-dbm"><em>Networking alone cannot scale to a million-dollar firm &mdash; it depends entirely on your personal time, the opposite of the freedom you are working toward.</em></div>
+      </div>
+    </div>
+
+    <!-- INTAKE CARD -->
+    <div class="sc-card">
+      <div class="sc-card-header"><h3>Intake</h3></div>
+      <div class="sc-card-body">
+        <div class="traffic-circle amber"></div>
+        <ul class="sc-findings">
+          <li>Intake is delegated to Joshua, your part-time VA, but there is no documented, repeatable process behind it</li>
+          <li>No after-hours coverage was described for inbound business-law or closing inquiries</li>
+          <li>No contact form was confirmed on the homepage &mdash; prospects rely on calling or emailing directly</li>
+        </ul>
+        <div class="sc-dbm"><em>Every inquiry that slips through an undocumented intake process is a transactional client who could have moved you closer to a million-dollar firm.</em></div>
+      </div>
+    </div>
+
+    <!-- SELF-MANAGING TEAM CARD -->
+    <div class="sc-card">
+      <div class="sc-card-header"><h3>Self-Managing Team</h3></div>
+      <div class="sc-card-body">
+        <div class="traffic-circle red"></div>
+        <ul class="sc-findings">
+          <li>The team is you and one part-time VA &mdash; there is no one else to hand casework or operations to</li>
+          <li>You are still personally carrying litigation casework while also trying to lead the transactional pivot</li>
+          <li>No hired attorneys or leadership structure exists yet to support the CEO/rainmaker role you described</li>
+        </ul>
+        <div class="sc-dbm"><em>You cannot step into a CEO/rainmaker role over hired attorneys while you are still the entire team &mdash; and you cannot reclaim time for community involvement either.</em></div>
+      </div>
+    </div>
+
+    <!-- PROFIT CARD -->
+    <div class="sc-card">
+      <div class="sc-card-header"><h3>Profit</h3></div>
+      <div class="sc-card-body">
+        <div class="traffic-circle amber"></div>
+        <ul class="sc-findings">
+          <li>Revenue is a consistent $20&ndash;30k/month, but no margin, overhead, or take-home figure has been tracked separately from that gross number</li>
+          <li>No fee structure has been formalized yet for the growing transactional practice</li>
+        </ul>
+        <div class="sc-dbm"><em>Reaching a million-dollar firm on paper means little if you cannot see what you actually keep along the way.</em></div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- COMPETITIVE URGENCY SCORE -->
+  <div class="urgency-card" id="urgency-score">
+    <div class="urgency-label">Competitive Urgency Score</div>
+
+    <div class="urgency-score">6</div>
+    <div class="urgency-outof">out of 10</div>
+
+    <!-- FILL: URGENCY_SENTENCE — use the correct sentence based on score:
+         Score 1-3: "A score of [X] means no single competitor is dominating your market
+         yet — but that will not last forever. The firms that win markets do so by moving
+         first. Getting your systems in place now means you set the standard before
+         someone else does."
+         Score 4-6: "A score of [X] means competitors have meaningful advantages in one
+         or more areas and are pulling ahead. You are not invisible yet — but the window
+         to close the gap is narrowing. Every month without action is a month they extend
+         their lead."
+         Score 7-10: "A score of [X] means competitors are actively dominating multiple
+         channels in your market and the gap is getting wider every month you wait. This
+         is not a future problem — it is a right now problem." -->
+    <div class="urgency-sentence">A score of 6 means competitors have meaningful advantages in one or more areas and are pulling ahead. You are not invisible yet &mdash; but the window to close the gap is narrowing. Every month without action is a month they extend their lead.</div>
+
+    <div style="margin-bottom:10px;">
+      <!-- FILL: URGENCY_MARKER — set left% = (score/10)*100. Example: score 7 = left:70% -->
+      <div class="urgency-bar"><div class="urgency-marker" style="left:60%;"></div></div>
+      <div class="urgency-scale">
+        <span>1–3 = Low Urgency</span>
+        <span>4–6 = Moderate</span>
+        <span>7–10 = High Urgency</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="competitors-label">Your Top Competitive Threats</div>
+
+  <!-- FILL: COMPETITOR_1 — real named competitor, specific threat reason
+       Example: "Davidoff Law — Modern, conversion-optimized website dominating PI
+       rankings in Queens. They are capturing the leads this firm cannot reach." -->
+  <div class="competitor-card">
+    <div class="competitor-name">Dean &amp; Dean, LLP</div>
+    <div class="competitor-threat">An established, multi-attorney Ocala firm already built around real estate closings and estate planning &mdash; the exact transactional niche you are pivoting into and want to dominate. They have a stronger, more established local review presence in that lane today.</div>
+  </div>
+
+  <!-- FILL: COMPETITOR_2 -->
+  <div class="competitor-card">
+    <div class="competitor-name">Glover Law Firm, PLLC</div>
+    <div class="competitor-threat">A dominant, high-review local legal brand in the broader Ocala market. Not a direct practice-area competitor, but a benchmark for what a well-established local reputation looks like &mdash; the standard you will be measured against as you build the title-attorney brand.</div>
+  </div>
+
+  <!-- FILL: COMPETITOR_3 -->
+  <div class="competitor-card">
+    <div class="competitor-name">Michael J. Cooper, P.A.</div>
+    <div class="competitor-threat">A long-tenured Ocala business-law attorney competing directly for the same business-formation and contracts clients. His own online footprint is thin, which means the business-law lane is still winnable &mdash; but only if you move to establish authority in it first.</div>
+  </div>
+
+</div>
+<div class="back-to-top"><a href="#toc">↑ Back to Top</a></div>

@@ -1,0 +1,137 @@
+SECTION 11 — WORKINGS FILE
+Beyond Business Contracts, PA — September 18, 2026
+
+======================================================================
+TRANSCRIPT-STATED NEED OVERRIDE APPLIED
+======================================================================
+Call-purpose override APPLIES. Per the research notes (Step 9), the discovery
+call was explicitly NOT a standard marketing/lead-gen discovery call — the
+stated meeting purpose was "Discuss Tania's firm growth goals and SMBTeam's
+AI and coaching solutions," and the proposed solution discussed was SMBTeam's
+Agentic AI workflow automation (intake/qualification, document collection,
+deadline tracking, closing coordination) bundled with direct/collaborative
+coaching. No marketing/lead-gen gap was identified in the transcript, so no
+Full Service Marketing package is included in this recommendation — the
+research in section_06 is retained as supporting context only, per the
+research notes' explicit instruction.
+
+Existing-vendor override: does not apply (no existing marketing/SEO/ad
+vendor stated).
+Budget-reality override: does not apply (no budget constraints stated
+explicitly in the transcript), though see revenue-floor note below.
+Effective-revenue override: does not apply (no distinct net/gross figure
+stated; using the seller-corrected $250,000/yr figure as-is).
+
+======================================================================
+PACKAGE DECISION FILE — USED AS-IS (confidence: high)
+======================================================================
+package_decision.json confidence = "high." No override changes the
+marketing/coaching/LAW selection already reflected in the decision file, so
+tier names and prices below are used exactly as provided, per audit-write.md.
+
+NOTE FOR SALES — REVENUE-FLOOR EXCEPTION ON RECORD: The LAW catalog's
+standard floor for AI Accelerator L1 is $400K+ revenue. This firm's
+seller-corrected revenue is $250,000/yr, which is under that floor and under
+the $300K scoping-approval escalation threshold. Per package_decision.json's
+selection_notes and commit a260c27, Carolyn Webb reviewed and approved
+keeping Elite Coach + AI Accelerator L1 / Fractional CTO Level 1 as a
+deliberate, documented exception (Slack channel C0AUHEQN4MC, thread
+1789401714.922179). This is carried forward here for visibility, not
+re-litigated. Team size (2: Tania + Joshua) satisfies the LAW minimum
+1–2 staff requirement.
+
+======================================================================
+MANDATORY PRICE LOOKUP
+======================================================================
+- Marketing package selected: None (call-purpose override — no marketing
+  gap identified in the transcript)
+- Non-marketing package selected: Elite Coach
+  - Bundled price (from table): $2,600/mo
+  - Stand-alone price (from table): $3,497/mo
+  - Savings (stand-alone minus bundled): $897/mo
+- Legal AI Workforce (LAW) package selected: AI Accelerator L1 — Fractional
+  CTO Level 1
+  - Bundled price (from table): $3,297/mo
+  - Stand-alone price (from table): $3,797/mo
+  - Savings (stand-alone minus bundled): $500/mo
+- AI Avatar / Video Growth add-on selected: none
+- Total monthly investment (sum of all bundled/recurring prices): $5,897/mo
+- Total savings (sum of all savings): $1,397/mo
+
+35% cap check: $5,897/mo ÷ ($250,000/yr ÷ 12 = $20,833/mo) = 28.3% — within
+the 35% cap.
+
+No AI Foundation Sprint onboarding fee is included — it was removed from
+this package by seller request on 2026-09-14 and not restored on 2026-09-17.
+
+======================================================================
+AD SPEND / ROI PROJECTION
+======================================================================
+Not applicable. No marketing/ads package is part of this recommendation
+(call-purpose override), so Block 4 (Recommended Ad Spend) is omitted
+entirely from section_11_next_steps.html and from the executive summary.
+
+======================================================================
+DBM STATEMENT (BLOCK 1)
+======================================================================
+"We help solo attorneys pivoting from litigation into transactional law get
+the AI-driven systems and hands-on coaching to run their firm without living
+inside every case, so they can escape litigation burnout, reclaim their time,
+and build the dominant title and business-law firm in Ocala."
+
+======================================================================
+QUICK WIN OPPORTUNITIES IDENTIFIED (7 — minimum 6 required)
+======================================================================
+1. [Lead Gen / Long-Term] Own the Ocala Title & Closing Niche Online —
+   Why: the firm is pivoting into real estate/closings, the exact lane
+   where Dean & Dean, LLP already has an established local reputation.
+   Competitor: Dean & Dean, LLP.
+   Opportunity: build a dedicated real estate/closings presence and
+   review-generation cadence before the pivot fully completes.
+2. [Lead Gen / Quick Win] Establish Business-Law Authority While the Lane
+   Is Still Open — Why: Michael J. Cooper, P.A. competes directly for
+   business-formation clients but has a thin online review footprint,
+   meaning this lane is still winnable.
+   Competitor: Michael J. Cooper, P.A.
+   Opportunity: move first to become the reviewed, recognized name for
+   business formation and contracts locally.
+3. [Lead Gen / Quick Win] Add City-Specific Pages for Neighboring Markets —
+   Why: no city-specific pages exist for The Villages, Belleview, or Silver
+   Springs. No named competitor.
+   Opportunity: capture nearby, less-competitive markets without competing
+   head-on in the densest part of Ocala.
+4. [Intake / Quick Win] Formalize the Intake & Follow-Up Workflow — Why:
+   intake runs through Joshua with no documented process. No named
+   competitor.
+   Opportunity: convert more of the inquiries the firm already generates
+   without spending anything on new marketing.
+5. [Intake / Long-Term] Close the After-Hours Gap — Why: no after-hours
+   coverage was described. No named competitor.
+   Opportunity: make sure every inbound inquiry gets a fast, consistent
+   response regardless of when it arrives.
+6. [Team / Long-Term] Reduce Owner Dependency on Every Case — Why: the team
+   is Tania and one part-time VA, with Tania still carrying ~30% litigation
+   caseload. No named competitor.
+   Opportunity: free up time to lead the transactional pivot and eventually
+   hire attorneys to build toward the CEO/rainmaker role described.
+7. [Profit / Quick Win] Build Financial Visibility Before Scaling — Why: no
+   margin or take-home figure exists separate from the stated gross revenue.
+   No named competitor.
+   Opportunity: know the real numbers before committing to hiring or
+   pricing decisions on the way to a million-dollar firm.
+
+======================================================================
+FIRST 90 DAYS (Block 5) — package-keyed to Elite Coach + AI Accelerator L1
+======================================================================
+Ordered by largest bundled price / most central to the stated call focus
+(AI automation was the lead ask):
+1. AI workspace setup and first Skill deployment — configure the Claude
+   Enterprise workspace and deploy the first custom AI Skill targeting
+   document collection and deadline tracking for the transactional pivot.
+2. Fractional CTO Level 1 kickoff — dedicated CTO leadership session to map
+   intake, document, and closing-coordination workflows.
+3. Coaching kickoff — first group coaching session and 90-day goal-setting
+   call built around the shift to 100% transactional work.
+4. Review of the current networking-based lead flow to identify where
+   AI-assisted follow-up can be layered in without disrupting what already
+   works.
