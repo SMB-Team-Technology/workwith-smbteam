@@ -19,13 +19,16 @@
   "marketing_price_bundled": null,
   "marketing_price_retail": null,
   "marketing_savings": null,
-  "coaching_name": "FCOO Advisor",
-  "coaching_price_bundled": 3297,
-  "coaching_price_retail": 3797,
-  "coaching_savings": 500,
-  "law_tier": null,
-  "total_bundled": 3297,
-  "total_savings": 500,
+  "coaching_name": "Elite Coach",
+  "coaching_price_bundled": 2600,
+  "coaching_price_retail": 3497,
+  "coaching_savings": 897,
+  "law_tier": "AI Accelerator L1 — Fractional CTO Level 1",
+  "law_price_bundled": 3297,
+  "law_price_retail": 3797,
+  "law_savings": 500,
+  "total_bundled": 5897,
+  "total_savings": 1397,
   "ad_spend_conservative": null,
   "ad_spend_aggressive": null,
   "selection_notes": [
@@ -36,6 +39,7 @@
     "Seller override: revenue corrected to $250,000/yr per seller Slack reply on September 14, 2026 (supersedes HubSpot-derived estimate of $570,000; consistent with transcript's stated $20-30k/month run rate).",
     "Seller override: Full Service Marketing removed entirely per seller Slack request on September 14, 2026 — matches the discovery call's actual stated focus (automation + coaching, not marketing/lead-gen; see research notes Step 9).",
     "Seller override: package changed to FCOO Advisor only, standalone, per seller Slack request on September 14, 2026 — replaces the previously selected Elite Coach coaching plan and the added AI Accelerator L1 / Fractional CTO Level 1 add-on.",
-    "Seller override: seller asked on September 17, 2026 to remove the one-time AI Foundation Sprint onboarding fee. No pricing fields changed — that fee was already removed from this package on September 14, 2026 along with the AI Accelerator L1 / Fractional CTO Level 1 add-on it was paired with; the current package (FCOO Advisor only, $3,297/mo bundled) has no onboarding fee to strip out."
+    "Seller override: seller asked on September 17, 2026 to remove the one-time AI Foundation Sprint onboarding fee. No pricing fields changed — that fee was already removed from this package on September 14, 2026 along with the AI Accelerator L1 / Fractional CTO Level 1 add-on it was paired with; the current package (FCOO Advisor only, $3,297/mo bundled) has no onboarding fee to strip out.",
+    "Seller override: reverted per seller Slack request on September 17, 2026 to restore Elite Coach ($2,600/mo bundled) plus AI Accelerator L1 / Fractional CTO Level 1 ($3,297/mo bundled) — same combination selected on September 14, 2026, undoing the FCOO-Advisor-only swap made later that day. No one-time onboarding fee included since seller separately removed the AI Foundation Sprint onboarding fee on September 17, 2026 and did not ask for it back."
   ]
 }
