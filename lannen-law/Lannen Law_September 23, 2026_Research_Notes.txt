@@ -1,0 +1,208 @@
+LANNEN LAW, PLLC — GROWTH AUDIT RESEARCH NOTES
+Prepared for: Dan Bryant
+Date: September 23, 2026
+URL: http://lannenlawpllc.com
+Contact: Brittany Lannen — brittany@lannenlawpllc.com — (214) 876-0677 (contact on file) / (254) 301-9195 & (254) 294-3517 (published firm lines)
+
+===============================================================================
+TRANSCRIPT / DISCOVERY CALL STATUS
+===============================================================================
+No transcript field and no transcript_status field were present in the trigger
+file for this firm. This is not the same as a confirmed "no discovery call
+occurred" — it means the automated Fathom/HubSpot lookup step never ran or
+never wrote a result to the trigger at all (unlike other trigger files in this
+repo, which carry an explicit "No Fathom transcript available..." placeholder
+even on a miss). Per the transcript_status handling rule: treat this the same
+as an "unknown" outcome. DO NOT assert that a discovery call did or did not
+happen. All figures normally sourced from a transcript (revenue, team size,
+close rate, DBM, etc.) are marked "not stated" below and defaulted per the
+command file's standard defaults. The proposal call is scheduled for
+2026-09-23T21:00:00Z (5:00 PM EDT) — this may be the first substantive call
+with the prospect, or a discovery call may occur separately before then.
+Flag for Dan: confirm whether a discovery call has happened before this
+proposal call, since none of the qualifying data below came from the
+prospect directly.
+
+===============================================================================
+STEP 1 — WEBSITE RESEARCH
+===============================================================================
+- Website URL confirmed live: yes (http://lannenlawpllc.com, resolves over HTTP; no forced HTTPS observed)
+- Last redesign date or estimated age: not directly datestamped; footer copyright reads 2026, modern single-practice-site template, clean and current in style. Actively maintained (see blog cadence below).
+- Mobile responsive: yes (responsive nav/layout elements observed)
+- Homepage headline: "Your Compassionate Guide Through the Legal System."
+- CTA above fold: yes — "Get started today!" linking to the contact page
+- Contact form location: present, but positioned low on the homepage (lower portion, under a "contact us today!" prompt) — not immediately above the fold
+- Live chat present: no
+- Attorney bio present: yes — photo of Brittany Lannen with a "Meet your attorney!" link to the About page
+- Video present: no video content observed
+- Blog present: yes — active, last post August 20, 2026 ("Why Early Legal Representation Matters in Criminal Cases"). Prior posts July 24, June 19, May 21, April 23, 2026 — consistent ~monthly cadence, all criminal-defense-topic content. No CPS-, family-law-, estate-planning-, or business-formation-specific posts found despite those being marketed practice areas.
+
+PageSpeed (pagespeed.web.dev / PageSpeed Insights API):
+- PageSpeed mobile score: COULD NOT BE OBTAINED — the PageSpeed Insights API returned HTTP 429 "Quota exceeded for quota metric 'Queries' and limit 'Queries per day'" on repeated attempts (direct API call and the pagespeed.web.dev UI, which renders client-side and returned no score). This is a real tool-access failure, not an estimate — do not treat any number as measured for this section. Flag for whoever finalizes the report: re-run PageSpeed manually before quoting a mobile/desktop score in the client-facing deck.
+- PageSpeed desktop score: COULD NOT BE OBTAINED — same quota failure as above.
+
+===============================================================================
+STEP 2 — GOOGLE BUSINESS PROFILE
+===============================================================================
+Google Maps / GBP could not be reached directly from this research environment
+(Google Search and Google Maps results are not renderable via the available
+tools — requests returned blocked/error pages rather than live listing data).
+All figures below are therefore sourced from secondary aggregators and are
+tagged UNCONFIRMED per the review-data verification rule. This is a tooling
+limitation for this run, not a judgment that the firm has no GBP — flag for
+live confirmation before the report is finalized.
+
+- GBP found: not independently confirmed (see above); firm appears in local map-pack-style directory aggregation under "Waco, TX" and "Valley Mills, TX"
+- Star rating: 4.3 [UNCONFIRMED — sourced from Avvo (12 reviews: 10 five-star, 2 one-star), not independently confirmed via Google]
+- Total review count: Avvo 12 reviews [UNCONFIRMED — sourced from Avvo]; Facebook shows "100% recommend (9 reviews)" [UNCONFIRMED — sourced from Facebook]; Birdeye shows 0 reviews [UNCONFIRMED — sourced from Birdeye]; BBB profile is "Not Rated" (BBB states firm has not responded to their information request) [UNCONFIRMED — sourced from BBB]
+- Most recent review date: not available from any source reached
+- Primary category: Criminal Defense / Family Law attorney (appears in both categories across directories)
+- Photos active: not observed (no direct GBP access)
+- Posts active: not observed (no direct GBP access)
+
+Review posture takeaway: across every third-party platform reached, Lannen Law's review volume is thin (single digits to low teens) compared to established local competitors (see STEP 4). This is a real gap regardless of the exact live Google number.
+
+===============================================================================
+STEP 3 — LOCAL 3-PACK SEARCHES
+===============================================================================
+Note: Direct Google Maps 3-pack rendering was not accessible from this
+environment. The searches below reflect organic/aggregator search results
+(Google-indexed directory and "best of" content) as the closest available
+proxy — they should not be read as a literal live 3-pack screenshot. Named
+competitors and review counts pulled this way carry the same UNCONFIRMED tag
+as STEP 2.
+
+Practice Area 1: Criminal Defense
+- Search 1 "best criminal defense lawyer Waco TX": firm appears — yes, named directly ("Other highly-regarded criminal defense lawyers in Waco include Lannen Law...") — competitors surfacing above/alongside: Dunnam & Dunnam [190-192 reviews, UNCONFIRMED], Callahan & King, PLLC [113 reviews, UNCONFIRMED], Russell D. Hunt, Sr. [review count not found]
+- Search 2 "criminal defense attorney Waco TX Google ads sponsored": firm appears — not observed; results dominated by out-of-market/franchise-style operators — Cowboy Law Group (The Woodlands, TX — expanded into Waco/McLennan County via press release, heavy SEO-stuffed page titles, "24/7," "$0 case eval") [42 reviews, 5.0 rating, UNCONFIRMED], Better Call J Law [review count not found]
+- Search 3 "criminal defense lawyer near me Waco" (keyword variant): firm appears — not confirmed either way (no live SERP access); same named competitors recur (Dunnam & Dunnam, Cowboy Law Group)
+
+Practice Area 2: Family Law
+- Search 1 "best family lawyer Waco TX reviews": firm appears — yes, named directly among "highly rated" firms — competitors: Lighthouse Legal Services (Barrett Thomas) [review count not found; strong award history — Super Lawyer 2021–2025, "Best of Waco" 5+ years], Milam & Fanning [review count not found], Krasienko Law Firm [review count not found]
+- Search 2 "divorce attorney Valley Mills Bosque County TX": firm appears — yes, listed as the local-to-Valley-Mills option — competitors in the wider Bosque County directory pull: Jayson Laumeister (Laguna Park, TX) [review count not found], Natalie Cobb Koehler (Meridian, TX) [review count not found], Pfister Family Law [review count not found]
+- Search 3 "best divorce lawyer Waco TX": firm not directly named in this cut; Avvo indicates 89 family lawyers serve the Waco market with 226+ aggregate reviews across that pool — a crowded category
+
+===============================================================================
+STEP 4 — COMPETITOR REVIEW COUNTS
+===============================================================================
+All figures below are sourced from web-search aggregation of third-party
+listing pages (Birdeye, Yelp mirrors, Chamber of Commerce, etc.), not a live
+Google Maps pull — every number is tagged UNCONFIRMED. Lannen Law does not
+have more reviews than any competitor named below on any platform reached.
+
+- Competitor 1: Dunnam & Dunnam, LLP (Waco, TX — ~100-year-old firm, "Best Law Firm in Waco" per Wacoan Magazine) — reviews: 190–192 [UNCONFIRMED — sourced from aggregated web search snippet, not independently confirmed via Google] — rating: 4.3 [UNCONFIRMED — same source]
+- Competitor 2: Callahan & King, PLLC (Waco, TX) — reviews: 113 [UNCONFIRMED — sourced from aggregated web search snippet] — rating: 4.4 [UNCONFIRMED — same source]
+- Competitor 3: Cowboy Law Group (The Woodlands, TX — recently expanded criminal defense services into Waco/McLennan County via press release; SEO-aggressive page titles and "24/7"/"$0 case eval" messaging) — reviews: 42 [UNCONFIRMED — sourced from aggregated web search snippet] — rating: 5.0 [UNCONFIRMED — same source]
+
+===============================================================================
+STEP 5 — DIRECTORY LISTINGS
+===============================================================================
+- Avvo: present — 4.3 rating, 12 reviews (Brittany Lea Lannen profile)
+- Justia: present (listed in Waco criminal-law and family-law directory pulls)
+- FindLaw: present — "Lannen Law, PLLC - a Valley Mills, Texas (TX) Criminal Defense Law Firm"
+- Yelp: present — listing shows Waco address (1925 N 25th St, Waco, TX 76707)
+- Birdeye: present — 0 reviews
+- BBB: present — "Not Rated" (BBB notes the firm has not responded to their information request — this is itself a small trust-signal gap worth fixing)
+- Nextdoor: present (Valley Mills, TX listing)
+- LawInfo: present — lists 401 East Avenue C, Valley Mills, TX 76689
+
+NAP consistency: mixed. The firm's own website does not display a physical
+address anywhere in the pages reached (homepage, About, Contact) — only phone
+numbers. Two legitimate-looking office locations appear across directories —
+Valley Mills (401 East Avenue C / PO Box 438, Valley Mills, TX 76689) and Waco
+(1925 N 25th St, Waco, TX 76707) — plus two different phone numbers in
+circulation ((254) 301-9195 and (254) 294-3517). If both locations are real
+and active, that's fine, but the site should list both addresses explicitly;
+right now a prospect (and Google) has to piece NAP together from third-party
+directories rather than the firm's own site, which is a solvable local-SEO gap.
+
+Geo-targeted landing pages for surrounding cities/counties: none found. No
+dedicated pages observed for Waco, Valley Mills, McLennan County, or Bosque
+County individually — the site reads as a single general practice site
+without geo-specific SEO pages, despite the firm explicitly serving multiple
+counties (Bosque, McLennan, and "Central Texas" per its own marketing copy).
+
+===============================================================================
+STEP 6 — GOOGLE ADS
+===============================================================================
+Live Google SERP rendering (including the "Sponsored" ad block) was not
+accessible from this research environment — see tooling note in STEP 2. No ad
+copy for Lannen Law surfaced in any search performed. Per the ads framing
+rule, this is reported as an appearance gap, not a certainty.
+
+Practice Area 1: Criminal Defense
+- Firm ads observed: not observed (does not appear to be running ads for this search — see tooling caveat above)
+- Named local competitors running ads: could not be independently confirmed via live SERP; secondary research indicates the Waco/McLennan County legal-PPC market is active (third-party marketing-agency content cites $25–$55 CPCs for "criminal defense attorney Waco TX" and "DUI lawyer Waco" terms), and Cowboy Law Group's rapid multi-market expansion pattern (The Woodlands → Waco/McLennan County via press release) is consistent with an aggressive paid-acquisition strategy, though a live ad was not directly observed.
+
+Practice Area 2: Family Law
+- Firm ads observed: not observed (does not appear to be running ads for this search)
+- Named local competitors running ads: none directly confirmed via live SERP; no specific family-law ad copy surfaced for any named competitor in this research pass.
+
+===============================================================================
+STEP 7 — LOCAL SERVICE ADS
+===============================================================================
+- Firm appears in LSA: not observed (no live SERP access in this environment)
+- Google Screened: not observed
+- LSA review count: n/a — not observed
+- Named local competitors in LSA: none could be confirmed; general market research confirms criminal defense is a standard LSA category in comparable Texas markets with typical $25–$75 cost-per-lead, so the format is available to be captured in this market, but no specific competitor was seen occupying it.
+
+===============================================================================
+STEP 8 — META ADS
+===============================================================================
+Meta Ad Library (facebook.com/ads/library) returned HTTP 403 to direct access
+from this environment and could not be searched live.
+- Firm has active ads: not observed (tooling limitation — could not query Meta Ad Library directly)
+- Named local competitor 1: Dunnam & Dunnam — active ads: not observed (same tooling limitation)
+- Named local competitor 2: Callahan & King, PLLC — active ads: not observed (same tooling limitation)
+
+===============================================================================
+STEP 9 — TRANSCRIPT EXTRACTION
+===============================================================================
+No transcript was available for this firm (see status note at top of file).
+All fields below reflect the command file's stated defaults, not prospect
+statements.
+
+- Practice areas confirmed: not stated by prospect. From the firm's own site/directories: Criminal Defense, Family Law, CPS Cases, Estate Planning, Business Formations, Amicus/Ad Litem, Mediation Services.
+- Current lead sources: not stated
+- Ads ever run: not stated
+- Team size: not stated. Public sourcing (LinkedIn, directories) indicates Brittany Lannen practices as a solo attorney; staffing beyond that is unknown.
+- Annual revenue (gross / case value): not stated
+- Annual revenue (net / take-home / collected): not stated
+- Fee structure: not stated
+- Revenue goal: not stated, use 2x current revenue
+- Average case value: not stated
+- Current close rate: not stated — default to 15%
+- Number of locations: not stated by prospect; public directories show two (Valley Mills and Waco, TX) — see NAP note in STEP 5
+- Spanish campaign needed: not stated
+- Dominant buying motive: not stated / not clearly inferable without a transcript. The closest available signal is background context (Brittany Lannen is a former McLennan County Crimes Against Children prosecutor now in solo practice) — insufficient on its own to assign a DBM category. Flag for Dan to confirm on the call whether this is (1) building a firm that runs without her, (2) growing toward a sale, or (3) scaling to dominate the Central Texas criminal/family market.
+- Any profitability claims made by prospect: none stated (no transcript)
+- Any claims about case types or practice areas: none stated (no transcript)
+- Stated call focus / product interest: not stated — no transcript exists to confirm whether this call is a standard marketing/growth discovery or something else. Do not assume standard scope; confirm with Dan before the proposal call.
+- Existing marketing/SEO/ad vendor engagements: none stated
+- Budget constraints stated: none stated
+
+===============================================================================
+STEP 10 — COMPETITIVE URGENCY SCORE
+===============================================================================
+Score: 6/10
+
+Named threats:
+1. Dunnam & Dunnam, LLP — ~100-year local incumbent with the deepest review base found in this market (190+ reviews vs. Lannen Law's low-teens-or-fewer across every platform reached) and heavy earned-media/awards presence (Wacoan Magazine "Best Law Firm").
+2. Cowboy Law Group — an out-of-market operator (The Woodlands, TX) that has actively expanded into Waco/McLennan County criminal defense via press release, with SEO-aggressive positioning ("24/7," "$0 case eval") — a sign an outside firm sees this market as winnable and is actively investing to take share.
+3. Callahan & King, PLLC and Lighthouse Legal Services — both carry stronger review volume and/or award recognition (Super Lawyers 2021–2025) than Lannen Law in the same practice areas, without the benefit of Lannen Law's differentiated CPS/former-prosecutor background being visibly leveraged anywhere in her content or reviews.
+
+"A score of 6 means competitors have meaningful advantages in one or more areas and are pulling ahead. You are not invisible yet — but the window to close the gap is narrowing. Every month without action is a month they extend their lead."
+
+===============================================================================
+RESEARCH LIMITATIONS — READ BEFORE WRITING THE REPORT
+===============================================================================
+This research pass ran without browser/Maps/Ads-Library access. The following
+could NOT be independently verified and must be spot-checked before the
+report is finalized or any specific number is printed as fact:
+1. PageSpeed mobile/desktop scores (API quota exhausted — no number obtained at all)
+2. Live Google Business Profile star rating and review count for Lannen Law itself
+3. Live Google 3-pack positioning for any keyword
+4. Live Google Ads / Sponsored results presence for the firm or competitors
+5. Local Service Ads / Google Screened status for the firm or competitors
+6. Meta Ad Library results (blocked, HTTP 403)
+7. Whether a discovery call transcript exists at all (trigger file had no transcript or transcript_status field)
