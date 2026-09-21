@@ -386,7 +386,7 @@ Based on the firm's needs identified during the audit, determine which type of m
 
 **Web + SEO only** — for firms that only need organic presence and a website rebuild, not paid ads. Uncommon for audit recommendations since most firms need leads now.
 
-**Ads only (LSA+PPC, LSA+PPC+Social, LSA+Social)** — for firms that already have a strong website and SEO. CANNOT be sold standalone; must be paired with another core service (coaching/advisory).
+**Ads only (LSA+PPC, LSA+PPC+Social, LSA+Social)** — for firms that already have a strong website and SEO. Can be sold standalone (no coaching/advisory pairing required) at any tier — Starter, Growth, Dominate, or Platinum.
 
 ### Step 5C — Select the Tier by Revenue
 
