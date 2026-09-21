@@ -107,7 +107,7 @@ PRIORITIES = [
         [
             "Formalize the leadership your office manager carries",
             "Build financial visibility by practice area",
-            "Prove the LSA channel before scaling ad spend",
+            "Kick off Elite Coach to build that leadership structure",
             "Create a structure that runs without you in the room",
             "Build a firm your daughter could one day step into",
         ],
@@ -118,15 +118,21 @@ PRIORITIES = [
 # Package cards — (label, bundled_price, retail_price, services_line, accent_color_hex)
 PACKAGES = [
     (
-        "FULL SERVICE MARKETING — ESSENTIALS",
-        "$3,797", "$3,797/mo",
+        "FULL SERVICE MARKETING — STARTER",
+        "$4,997", "$5,697/mo",
         "LSA for Family Law & Probate · SEO fixes · Landing pages",
         "0091C9",
     ),
+    (
+        "ELITE COACH",
+        "$2,600", "$3,497/mo",
+        "Weekly group coaching · Masterminds · Quarterly workshops",
+        "69CD2B",
+    ),
 ]
 
-BUNDLE_TOTAL   = "$3,797 / mo"
-BUNDLE_SAVINGS = "Stand-alone — no bundle discount"
+BUNDLE_TOTAL   = "$7,597 / mo"
+BUNDLE_SAVINGS = "You save $1,597/month by bundling"
 
 AD_SPEND_NOTE = (
     "+ Recommended ad spend: $3,000–$5,000/mo, ramping to $7,500/mo at month 3"

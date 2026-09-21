@@ -233,12 +233,15 @@ story.append(bd("Replaces a fading referral flywheel with a tracked, managed sea
 story.append(bd("Closes the estate planning/probate visibility gap in a practice area he already wins casework in."))
 story.append(bd("Gives him a channel that does not depend on the family name holding up forever."))
 
-story.append(Paragraph("<b>Full Service Marketing — Essentials  |  $3,797/mo stand-alone</b>", S["subsection"]))
-story.append(b("Seller-directed override (9/16/26, Carolyn Webb) replaced Starter + Elite Coach Plus with this single, stand-alone package."))
+story.append(Paragraph("<b>Full Service Marketing — Starter  |  $4,997/mo bundled ($5,697/mo retail)</b>", S["subsection"]))
+story.append(b("Seller-directed override (9/21/26, Carolyn Webb, after her in-person meeting with the client) upgraded from the single, stand-alone Essentials package ($3,797/mo) to Starter, bundled with Elite Coach."))
 story.append(b("Ads scoped narrowly to LSA for Family Law and Probate only — not a full multi-practice buildout."))
-story.append(b("Essentials would normally be excluded here (multi-practice, PI present, revenue over $750K) — this is a deliberate scope narrowing, not a standard eligibility pass. See section_11_workings.txt."))
-story.append(b("$3,797/mo is the approved stand-alone price — no bundling discount applies since coaching is not attached."))
-story.append(b("Essentials ad spend cap is $7,500/mo — exactly matches the client's requested ramp target."))
+story.append(b("Starter tier ad spend cap is $25,000/mo — comfortably covers the client's requested ramp target."))
+
+story.append(Paragraph("<b>Elite Coach  |  $2,600/mo bundled ($3,497/mo retail)</b>", S["subsection"]))
+story.append(b("Added per the same 9/21/26 override to pair the new lead flow with a structured coaching cadence — formalizing leadership and financial visibility."))
+story.append(b("Elite Coach's standard eligibility band is $250K-$400K revenue, which does not match this firm's revenue profile — this is a deliberate seller override, not a standard tier match. See section_11_workings.txt."))
+story.append(b("Bundled total: $7,597/mo ($1,597/mo in combined bundling savings vs. buying each stand-alone)."))
 
 
 # ══════════════════════════════════════════════════════════
@@ -266,7 +269,7 @@ story.append(b("<b>Phase 2 (~$7.5K/mo):</b> ~6 Family Law + ~7 Probate = ~$170K 
 story.append(Paragraph("<i>Estimates use a 15% close rate default and an even 50/50 spend split between Family Law and Probate. Probate figures reflect total case value, typically realized over the life of the estate administration rather than same-month cash. Not guaranteed.</i>", S["disclaimer"]))
 
 story.append(Paragraph("<b>How the plan was scoped:</b>", S["subsection"]))
-story.append(b("Client-directed ramp: LSA-only for ~3 months, then add PPC to reach $7,500/mo — exactly the Essentials ad-spend cap."))
+story.append(b("Client-directed ramp: LSA-only for ~3 months, then add PPC to reach $7,500/mo — well under the Starter tier's $25,000/mo ad-spend cap."))
 story.append(b("Both phases stay within stated capacity (20 Family Law/mo, 10-20 Probate/mo) and combined spend never exceeds 14% of revenue."))
 
 story.append(thin_rule())
@@ -292,9 +295,13 @@ story.append(thin_rule())
 story.append(Paragraph("Investment At A Glance", S["section"]))
 
 price_data = [
-    [Paragraph("<b>Full Service Marketing — Essentials</b>", S["price_main"]),
-     Paragraph("$3,797/mo", S["price_main"])],
-    [Paragraph("LSA for Family Law + Probate, SEO fixes, landing pages. Stand-alone — no bundle discount.", S["price_detail"]),
+    [Paragraph("<b>Full Service Marketing — Starter</b>", S["price_main"]),
+     Paragraph("$4,997/mo", S["price_main"])],
+    [Paragraph("LSA for Family Law + Probate, SEO fixes, landing pages. Retail $5,697/mo.", S["price_detail"]),
+     Paragraph("", S["price_detail"])],
+    [Paragraph("<b>Elite Coach</b>", S["price_main"]),
+     Paragraph("$2,600/mo", S["price_main"])],
+    [Paragraph("Weekly group coaching, masterminds, quarterly workshops. Retail $3,497/mo.", S["price_detail"]),
      Paragraph("", S["price_detail"])],
     [Paragraph("<b>Recommended Ad Spend</b>", S["price_main"]),
      Paragraph("$3,000–$5,000/mo &rarr; $7,500/mo", S["price_main"])],
@@ -310,10 +317,11 @@ pt.setStyle(TableStyle([
     ("BOTTOMPADDING", (0,0), (-1,-1), 1),
     ("LINEBELOW", (0,1), (-1,1), 0.5, RULE_GRAY),
     ("LINEBELOW", (0,3), (-1,3), 0.5, RULE_GRAY),
+    ("LINEBELOW", (0,5), (-1,5), 0.5, RULE_GRAY),
 ]))
 story.append(pt)
 story.append(Paragraph(
-    "Total: $3,797/mo + $3,000–$7,500 ad spend  |  Stand-alone, no bundling  |  9.4%–13.6% of revenue (under 35% cap)",
+    "Total: $7,597/mo bundled ($1,597/mo saved vs. retail) + $3,000–$7,500 ad spend  |  13.9%–18.1% of revenue (under 35% cap)",
     S["savings"]))
 
 # ── Build ──
