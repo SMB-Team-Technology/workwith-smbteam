@@ -1,0 +1,428 @@
+BARNDS LAW LLC — GROWTH AUDIT RESEARCH NOTES
+Prepared for: Dan Bryant
+Proposal Call Date: October 13, 2026
+Research Date: September 22, 2026
+Firm URL: http://www.barndslaw.com
+Friendly Name: barnds-law
+Contact on file: Mia Barnds — officemanager@barndslaw.com — (630) 390-6661
+HubSpot Contact ID: 18677151
+
+===============================================================================
+TRANSCRIPT / DISCOVERY CALL STATUS
+===============================================================================
+No "transcript" field and no "transcript_status" field were present in the
+trigger file for this firm. Per the transcript_status handling rule, this is
+treated the same as an "unknown" outcome — it is NOT the same as a completed
+lookback confirming no call occurred. Do not assert that a discovery call did
+or did not happen.
+
+Separately, and more simply: the proposal call for this firm is scheduled for
+October 13, 2026 at 11:00 AM EDT, which is in the future relative to this
+research date (September 22, 2026). No discovery call has taken place yet.
+All figures normally sourced from a transcript (revenue, team size specifics,
+close rate, DBM, budget, etc.) are marked "not stated" below and defaulted per
+the command file's standard defaults, exactly as they would be for any
+pre-call research pass. Nothing in this file should be read as a quote or
+claim from the prospect — it is all independently sourced from public web
+research.
+
+===============================================================================
+STEP 1 — WEBSITE RESEARCH
+===============================================================================
+- Website URL confirmed live: yes (www.barndslaw.com)
+- Last redesign date or estimated age: Not explicitly dated on-site. Copyright
+  year reads 2026 and the site's design (modern layout, team photography,
+  blog cadence) is consistent with an actively maintained, relatively recent
+  build. No specific redesign date found.
+- Mobile responsive: yes (viewport meta tag present; layout structure is
+  responsive)
+- Homepage headline (exact text): "Finding favorable solutions for families"
+- Subheading: "Representing Family Law Clients With Professionalism"
+- CTA above fold: yes — "Schedule a Strategy Session" button, plus a clickable
+  phone number, "913-270-0505"
+- Contact form location: buried — the "To Schedule Your Strategy Session"
+  form lives in the footer/contact page, not embedded above the fold on the
+  homepage.
+- Live chat present: no
+- Attorney bio present: yes — a "Meet The Team" section on the homepage shows
+  headshots and names for 15+ team members (partners, attorneys, paralegals)
+  with clickable individual profile links.
+- Video present: yes — a "Videos" section exists on the homepage with a
+  "View All" link.
+- Blog present: yes — "Latest News & Insights" section shows posts dated
+  August 15, 2026 down to July 1, 2026 (roughly monthly-or-better cadence
+  based on the range observed).
+
+PageSpeed Insights:
+- PageSpeed mobile score: COULD NOT OBTAIN — the PageSpeed Insights API
+  (googleapis.com/pagespeedonline) returned HTTP 429 (rate-limited) on
+  repeated attempts, and pagespeed.web.dev requires JS rendering the fetch
+  tool could not complete (returned only a "Running analysis / data loading"
+  placeholder).
+- PageSpeed desktop score: COULD NOT OBTAIN — same limitation.
+- Explicit note: no PageSpeed numbers are fabricated here. Re-run manually at
+  pagespeed.web.dev before finalizing the report if a score is required.
+
+Practice areas listed on site: Family Law (divorce — contested/uncontested,
+child custody, child support, adoption incl. step-parent, guardianship,
+paternity, alimony, asset division, prenuptial agreements, father's rights,
+grandparent's rights, military family law), Criminal Defense (DUI incl.
+felony DUI and hardship driving privileges, drug charges, assault & battery,
+domestic violence, expungement, felonies, federal crimes, misdemeanors,
+military defense/court-martial), Business Law, and Estate Planning.
+
+Location-specific landing pages found: Shawnee KS, Kansas City KS, Leawood
+KS, Olathe KS — each offering divorce and criminal defense content.
+
+NAP / OFFICE FLAG:
+- Site lists two offices: Overland Park, KS (7400 College Blvd, Suite 100,
+  Overland Park, KS 66210 — primary, phone 913-270-0505) and Lee's Summit, MO
+  (3300 NE Ralph Powell Rd, Lee's Summit, MO 64064 — no distinct phone number
+  found for this location). No dedicated Lee's Summit-area geo-landing page
+  or Missouri-side local SEO content was found alongside the KS-side city
+  pages — a plausible content/SEO gap for the second office, not confirmed as
+  intentional.
+- A second phone number, 913-514-0909, appears in body text on the Family
+  Law / child custody pages (likely a call-tracking number for that practice
+  area rather than an error).
+
+===============================================================================
+STEP 2 — GOOGLE BUSINESS PROFILE
+===============================================================================
+- GBP found: A Google Maps listing (CID) exists and surfaced in search
+  results, but the live Maps panel could not be rendered by the fetch tool
+  used in this session (returned only a bare "Google Maps" shell, no ratings
+  data) — no MCP-authenticated Google Maps access was available.
+- Star rating: reported as "5-star rating on Google" per a WebSearch synthesis
+  of snippets [UNCONFIRMED — sourced from aggregated search snippets, not
+  independently confirmed via a rendered Google listing]. TrustAnalytica
+  separately shows 4.9 stars [UNCONFIRMED — sourced from TrustAnalytica, not
+  independently confirmed via Google].
+- Total review count: TrustAnalytica shows 44 total reviews [UNCONFIRMED —
+  sourced from TrustAnalytica, not independently confirmed via Google]. Yelp's
+  own listing title shows "14 Reviews" [UNCONFIRMED — sourced from Yelp,
+  direct page fetch returned HTTP 403 so this is from the search-result title
+  snippet only, not independently confirmed via Google]. BBB's profile shows
+  only 1 customer review on file [UNCONFIRMED — sourced from BBB, not
+  independently confirmed via Google]. These counts are not reconcilable
+  against each other from the sources available in this session — flag for
+  a direct Google Maps look-up before citing a specific number in the report.
+- Most recent review date: not observed/could not confirm live.
+- Primary category: Family Law Attorney (inferred from site branding and
+  directory categorization across FindLaw/LawInfo/Justia); not confirmed
+  directly from a live GBP listing.
+- Photos active: not observed (no direct GBP render access).
+- Posts active: not observed (no direct GBP render access).
+
+===============================================================================
+STEP 3 — LOCAL 3-PACK SEARCHES
+===============================================================================
+Note: WebSearch results returned organic/directory listings rather than a
+renderable Google Maps 3-pack widget, so "appears" below reflects organic/
+directory search visibility, not a confirmed Local Pack screenshot.
+Competitor review counts are reported with verification-method tags per the
+REVIEW-DATA VERIFICATION RULE; none were independently confirmed via a
+rendered Google listing in this session.
+
+SCOPE NOTE: The firm's site lists 4 practice areas (Family Law, Criminal
+Defense, Business Law, Estate Planning). With no transcript to confirm which
+areas are the actual growth priority, this research focused on Family Law and
+Criminal Defense — the two areas featured in the homepage headline, given
+dedicated sub-service depth, and given their own city landing pages (Shawnee,
+KC KS, Leawood, Olathe). Business Law and Estate Planning were NOT
+independently researched for local-pack/ads visibility in this session —
+confirm with the prospect whether either is a growth focus before the
+proposal call, and run those searches if so.
+
+Practice Area 1: Family Law
+- Search 1 "divorce attorney Overland Park KS": firm did not appear in the
+  organic results surfaced — competitors surfaced instead: Stange Law Firm,
+  PC — review count not available [not found]; Joseph, Hollander & Craft —
+  review count not available in this specific search [not found]; The Henry
+  Law Firm, P.A. — review count not available [not found].
+- Search 2 "child custody lawyer Overland Park KS": firm appears — yes
+  (barndslaw.com/child-custody/ ranked directly). Competitors in results:
+  Cordell & Cordell — review count not available [not found]; Stange Law
+  Firm, PC — review count not available [not found]; Joseph, Hollander &
+  Craft — 61 reviews per Truelaws [UNCONFIRMED — sourced from Truelaws, not
+  independently confirmed via Google], 4.9 stars per TrustAnalytica
+  [UNCONFIRMED — sourced from TrustAnalytica].
+- Search 3 "family law attorney Overland Park Kansas": firm appears — yes
+  (barndslaw.com homepage ranked directly). Competitors in results: Cordell &
+  Cordell — review count not available [not found]; Sarah Carmody Law, LLC —
+  review count not available [not found]; The Henry Law Firm, P.A. — review
+  count not available [not found].
+
+Practice Area 2: Criminal Defense
+- Search 1 "DUI attorney Overland Park KS": firm did not appear in the
+  organic results surfaced (a dedicated firm page exists at
+  barndslaw.com/criminal-defense/dui/ but did not rank in this search).
+  Competitors surfaced: Jay Norton (kansas-dui.com) — review count not
+  available [not found], "AV Preeminent 5.0" peer rating per Martindale-
+  Hubbell [UNCONFIRMED — sourced from firm's own site, not independently
+  confirmed via Google]; Paul D. Cramm — review count not available [not
+  found]; Neighbors Law Office — review count not available [not found].
+- Search 2 "criminal defense lawyer Overland Park Kansas": firm appears —
+  yes (barndslaw.com/criminal-defense/ ranked directly). Competitors in
+  results: Joseph, Hollander & Craft — 61 reviews [UNCONFIRMED — sourced from
+  Truelaws]; Roth Davies LLC — 9 reviews per Birdeye, 5.0 stars [UNCONFIRMED
+  — sourced from Birdeye]; Gyllenborg & Brown, P.A. — review count not
+  available on the sources checked [not found], though the firm holds an AV
+  Martindale-Hubbell rating and 2 Super Lawyers/Rising Stars selections.
+- Search 3 "drug charges attorney Overland Park KS": firm appears — yes
+  (barndslaw.com/criminal-defense/drug-charges/ ranked directly). Competitors
+  in results: Joseph, Hollander & Craft — 61 reviews [UNCONFIRMED — sourced
+  from Truelaws]; Gigstad Law Office, LLC — 62 reviews at 5.0 stars per
+  Chamber of Commerce [UNCONFIRMED — sourced from Chamber of Commerce], and
+  63 total reviews (62 five-star, 1 three-star) at a "10.0 Superb" rating per
+  Avvo [UNCONFIRMED — sourced from Avvo]; Gyllenborg & Brown, P.A. — review
+  count not available [not found].
+
+===============================================================================
+STEP 4 — COMPETITOR REVIEW COUNTS
+===============================================================================
+Direct Google verification was not obtainable in this session (Google Maps
+panel would not render; Yelp blocked direct fetch with HTTP 403). All figures
+below are aggregator-sourced and explicitly tagged. Barnds Law's own
+best-available aggregate figure is 44 reviews / 4.9 stars (TrustAnalytica)
+or 14 reviews (Yelp title snippet) — both UNCONFIRMED against a live Google
+listing, so competitor comparisons below should be treated as directional
+only, not a final competitive claim.
+
+- Competitor 1: Joseph, Hollander & Craft LLC (Overland Park, KS) — reviews:
+  61 [UNCONFIRMED — sourced from Truelaws, not independently confirmed via
+  Google] — rating: 4.9 [UNCONFIRMED — sourced from TrustAnalytica, not
+  independently confirmed via Google]. This is higher than Barnds Law's own
+  aggregator-reported 44 (TrustAnalytica), though both are third-party
+  aggregator figures, not Google-confirmed.
+- Competitor 2: Gigstad Law Office, LLC (Overland Park, KS) — reviews: 62 per
+  Chamber of Commerce / 63 per Avvo [UNCONFIRMED — sourced from Chamber of
+  Commerce and Avvo, not independently confirmed via Google] — rating: 5.0
+  (Chamber of Commerce) / "10.0 Superb" (Avvo) [UNCONFIRMED]. Also named
+  "Best Law Firm in Johnson County" 2023, 2024, and 2025 per its own
+  marketing — a specific, repeated local award claim worth noting as a
+  competitive threat signal.
+- Competitor 3: Roth Davies LLC (Overland Park, KS) — reviews: 9 per Birdeye
+  [UNCONFIRMED — sourced from Birdeye, not independently confirmed via
+  Google] — rating: 5.0 [UNCONFIRMED — sourced from Birdeye]. Lower review
+  volume than Barnds Law's own aggregator figures, but the firm carries
+  multiple "Best of the Bar" / Super Lawyers / Top 100 Trial Lawyers
+  individual-attorney accolades.
+
+===============================================================================
+STEP 5 — DIRECTORY LISTINGS
+===============================================================================
+- Avvo: Found — yes. Christopher Campbell Barnds has an individual attorney
+  profile (avvo.com/attorneys/66210-ks-christopher-barnds-4354384.html)
+  listed as a Family Lawyer in Overland Park, KS.
+- Justia: Found — yes. Christopher Campbell Barnds listed at
+  lawyers.justia.com, practice areas noted as family law, divorce, and
+  employment law.
+- FindLaw: Found — yes, firm-level profile at lawyers.findlaw.com. NAP
+  DISCREPANCY FLAG: FindLaw's profile lists the firm's address as "10985
+  Cody St. Ste 130, Overland Park, KS 66210" and phone "913-514-0909" — this
+  does NOT match the firm's own website, which lists "7400 College Blvd,
+  Suite 100, Overland Park, KS 66210" and "913-270-0505" as the primary
+  location/number. This is a genuine first-party-vs-directory NAP
+  inconsistency (not just a minor formatting difference — it's a different
+  street address entirely) and should be confirmed/corrected with the client,
+  since inconsistent NAP data across directories can suppress local SEO
+  performance. FindLaw also shows a rating of 5.0 from 1 customer review
+  [UNCONFIRMED — sourced from FindLaw, not independently confirmed via
+  Google].
+- Yelp: Found — yes (yelp.com/biz/barnds-law-overland-park), title snippet
+  shows "21 Photos & 14 Reviews," updated August 2026 per the snippet. Direct
+  page fetch returned HTTP 403, so on-page details beyond the title snippet
+  could not be independently confirmed.
+- BBB: Found — yes. Listed as "Barnds Law, LLC," rated A+ by BBB, but marked
+  "Not BBB Accredited." 1 customer review on file; 1 complaint closed in the
+  last 3 years.
+- LawInfo, SuperLawyers, Best Lawyers, Patch, TrustAnalytica, Facebook: all
+  found with active listings/profiles.
+
+NAP consistency notes: beyond the FindLaw address discrepancy above, the
+firm's own site is internally consistent (7400 College Blvd for the primary
+Overland Park office; 913-270-0505 as the primary number; 913-514-0909
+appearing specifically on Family Law/child custody pages, consistent with a
+practice-area call-tracking number rather than an error).
+
+Geo-targeted landing pages: confirmed for Shawnee KS, Kansas City KS, Leawood
+KS, and Olathe KS (all Kansas-side, all offering divorce and criminal defense
+content). No dedicated landing page was found for the Lee's Summit, MO
+office or the Missouri side of the market generally — a plausible expansion
+gap given the firm operates a second office there, not confirmed as
+intentional.
+
+===============================================================================
+STEP 6 — GOOGLE ADS
+===============================================================================
+Live Google SERP ad blocks could not be rendered by the fetch tool used in
+this session (repeated fetches of google.com/search returned only a bare
+error/placeholder shell, not actual search or ad results) — this is a tool
+access limitation, not a confirmed absence of ads. As in Step 3, this covers
+Family Law and Criminal Defense only — Business Law and Estate Planning ad
+activity was not researched (see SCOPE NOTE in Step 3).
+
+Practice Area 1: Family Law
+- Firm ads observed: not observed (tool limitation — see above).
+- Named local competitors running ads: not observed / could not verify via
+  the tools available in this session.
+
+Practice Area 2: Criminal Defense
+- Firm ads observed: not observed (tool limitation — see above).
+- Named local competitors running ads: not observed / could not verify.
+
+Overall: Barnds Law does not appear to be running visible Google Search ads
+for the family law or criminal defense searches conducted in this session —
+this may reflect a real gap, a rendering limitation of the tools used, or a
+reliance on other channels. Framing as an opportunity gap rather than a
+certainty, per the ADS FRAMING RULE.
+
+===============================================================================
+STEP 7 — LOCAL SERVICE ADS
+===============================================================================
+- Firm appears in LSA: not observed — no live LSA panel was accessible via
+  the tools used in this session.
+- Google Screened: not observed / not confirmed either way.
+- LSA review count: not available.
+- Named local competitors in LSA: not observed — could not render a live LSA
+  panel to identify participants.
+
+===============================================================================
+STEP 8 — META ADS
+===============================================================================
+- The Facebook Ads Library could not be accessed via the available fetch/
+  search tools in this session (one attempt returned a "socket hang up"
+  error; this requires interactive, authenticated, JS-heavy access not
+  supported by the tools available here).
+- Firm has active ads: not observed / could not verify.
+- Named local competitor 1 (Joseph, Hollander & Craft): active ads — not
+  observed / could not verify.
+- Named local competitor 2 (Gigstad Law Office): active ads — not observed /
+  could not verify.
+- Explicit disclosure: Meta Ads Library data could not be obtained live in
+  this session. Re-check manually via facebook.com/ads/library before
+  finalizing the report if Meta ad activity is a material point.
+
+===============================================================================
+STEP 9 — TRANSCRIPT EXTRACTION
+===============================================================================
+No transcript was available for this firm (see status note at top of file —
+no discovery call has occurred yet as of this research date; the proposal
+call is scheduled for October 13, 2026). All fields below reflect the command
+file's stated defaults, not prospect statements.
+
+- Practice areas confirmed: not stated by prospect. From the firm's own site:
+  Family Law (divorce, custody, adoption, guardianship, paternity, alimony,
+  asset division, prenups, father's/grandparent's rights, military family
+  law), Criminal Defense (DUI, drug charges, assault & battery, domestic
+  violence, expungement, felonies, federal crimes, misdemeanors, military
+  defense), Business Law, Estate Planning.
+- Current lead sources: not stated
+- Ads ever run: not stated
+- Team size: not stated by prospect. Public sourcing (firm's own "Meet The
+  Team" page) shows 15+ team members including partners, attorneys, and
+  paralegals — exact headcount and role breakdown unconfirmed.
+- Annual revenue (gross / case value): not stated
+- Annual revenue (net / take-home / collected): not stated
+- Fee structure: not stated
+- Revenue goal: not stated, use 2x current revenue
+- Average case value: not stated
+- Current close rate: not stated — default to 15%
+- Number of locations: not stated by prospect; the firm's own website shows
+  2 (Overland Park, KS primary; Lee's Summit, MO secondary) — see NAP note
+  in STEP 1/5.
+- Spanish campaign needed: not stated
+- Dominant buying motive: not stated / not clearly inferable without a
+  transcript. Flag for Dan to confirm on the call whether this maps to (1) a
+  firm that runs itself so the owner has more time, (2) growing toward a
+  sale, or (3) scaling to dominate the Kansas City metro family law/criminal
+  defense market — the two-office, 15+-person team structure suggests the
+  firm has already scaled past solo-practice size, which may point toward
+  option (1) or (3), but this is inference from public data only, not a
+  prospect statement.
+- Any profitability claims made by prospect: none stated (no transcript)
+- Any claims about case types or practice areas: none stated (no transcript)
+- Stated call focus / product interest: not stated — no transcript exists to
+  confirm whether this call is a standard marketing/growth discovery or
+  something else. Do not assume standard scope; confirm with Dan before the
+  proposal call.
+- Existing marketing/SEO/ad vendor engagements: none stated
+- Budget constraints stated: none stated
+
+===============================================================================
+STEP 10 — COMPETITIVE URGENCY SCORE
+===============================================================================
+Score: 5/10
+
+Named specific local competitor threats:
+1. Joseph, Hollander & Craft LLC — a larger, multi-office Kansas firm with a
+   materially higher review volume (61 per Truelaws vs. Barnds Law's own
+   aggregator-reported 44/TrustAnalytica or 14/Yelp) and a 4.9-star
+   aggregate rating; appears across family law, criminal defense, and drug
+   charge searches conducted in this session — the most consistently
+   visible named competitor across practice areas.
+2. Gigstad Law Office, LLC — a smaller, single-attorney criminal defense
+   practice, but with a notably strong and repeated local-award narrative
+   ("Best Law Firm in Johnson County" 2023, 2024, 2025 per its own site) and
+   a high review count (62-63 across Chamber of Commerce/Avvo) at a near-
+   perfect rating — a reputation-and-awards-driven threat specifically in
+   the criminal defense / DUI / drug charges space.
+3. Gyllenborg & Brown, P.A. — an established criminal defense firm with AV
+   Martindale-Hubbell peer ratings and 2 Super Lawyers/Rising Stars
+   selections; no numeric review count was found on the sources checked,
+   but its peer-recognition profile suggests meaningful reputational
+   competition in criminal defense specifically.
+
+Rationale: Barnds Law has real organic visibility (ranking directly for
+child custody, general family law, general criminal defense, and drug
+charges searches in this session) and a broad practice-area footprint across
+two offices, which keeps this from being a top-tier urgency score. However,
+it did not appear in the "divorce attorney" or "DUI attorney" searches
+conducted, where several named competitors (including Joseph, Hollander &
+Craft and Gigstad Law Office) show meaningfully higher review counts and, in
+Gigstad's case, a specific repeated local-award claim. No Google Ads, LSA, or
+Meta ad activity could be confirmed for the firm or its named competitors in
+this session (tool limitations — see Steps 6-8), so the paid-channel
+competitive picture remains an open question rather than a confirmed gap.
+The FindLaw NAP discrepancy (wrong address) is also a self-inflicted risk to
+local search visibility independent of competitor activity.
+
+Dynamic sentence: "A score of 5 means competitors have meaningful advantages
+in one or more areas and are pulling ahead. You are not invisible yet — but
+the window to close the gap is narrowing. Every month without action is a
+month they extend their lead."
+
+===============================================================================
+RESEARCH GAPS / ITEMS REQUIRING MANUAL FOLLOW-UP
+===============================================================================
+1. PageSpeed Insights mobile/desktop scores could not be retrieved live (API
+   rate-limited; web tool requires JS rendering not available here). Re-run
+   manually at pagespeed.web.dev before finalizing if needed.
+2. Direct Google Business Profile / Google Maps listing could not be
+   rendered live in this session — star rating and review count are sourced
+   from TrustAnalytica, Yelp, and BBB (all explicitly tagged UNCONFIRMED).
+   Recommend a manual look-up on Google Maps to convert this to a confirmed
+   figure before the proposal call.
+3. Yelp page exists but returned HTTP 403 on direct fetch — on-page details
+   beyond the search-result title snippet were not independently confirmed.
+4. Google Ads live SERP, Google LSA panel, and Meta Ads Library could not be
+   rendered live in this session (tool/access limitations) — Steps 6, 7, and
+   8 could not be confirmed either way for the firm or any competitor.
+5. FindLaw lists a materially different address (10985 Cody St. Ste 130)
+   and a different primary phone (913-514-0909) than the firm's own website
+   (7400 College Blvd, Suite 100 / 913-270-0505). Confirm which is correct
+   and update FindLaw before the proposal call — this is a first-party-
+   discoverable NAP risk.
+6. No transcript exists for this firm because the discovery/proposal call
+   has not yet occurred (scheduled October 13, 2026). All Step 9 fields are
+   defaults, not prospect statements — re-run or supplement this research
+   file with actual transcript data once the call happens, before finalizing
+   any client-facing report via /audit-write.
+7. No dedicated Lee's Summit, MO geo-landing page was found despite the firm
+   operating a second office there — confirm this is in fact a gap (vs. a
+   page missed in this session's search) before citing it as an opportunity.
+8. Local-pack, competitor-review, and ads research (Steps 3, 6) covered only
+   Family Law and Criminal Defense, not Business Law or Estate Planning (see
+   SCOPE NOTE in Step 3) — expand if either turns out to be a growth
+   priority on the call.
