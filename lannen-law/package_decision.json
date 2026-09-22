@@ -16,28 +16,30 @@
     "estate planning",
     "criminal defense"
   ],
-  "marketing_tier": "Starter",
-  "marketing_name": "Full Service Marketing — Starter",
-  "marketing_price_bundled": 4997,
-  "marketing_price_retail": 5697,
-  "marketing_savings": 700,
+  "marketing_tier": null,
+  "marketing_name": null,
+  "marketing_price_bundled": null,
+  "marketing_price_retail": null,
+  "marketing_savings": null,
+  "addon_name": "LSA Add-On",
+  "addon_price": 900,
   "coaching_name": "Elite Coach Plus",
   "coaching_price_bundled": 3200,
   "coaching_price_retail": 3497,
   "coaching_savings": 297,
-  "law_tier": null,
-  "total_bundled": 8197,
-  "total_savings": 997,
-  "ad_spend_conservative": 5500,
-  "ad_spend_aggressive": 20000,
-  "ad_spend_rationale": {
-    "conservative_basis": "directories: criminal defense",
-    "aggressive_basis": "capped by Starter tier's ad cap"
-  },
+  "law_tier": "AI Essentials — Starter — AI Workforce Pro – Starter (1 seat)",
+  "law_price_bundled": 350,
+  "law_price_retail": null,
+  "law_savings": null,
+  "total_bundled": 4450,
+  "total_savings": 297,
+  "ad_spend_conservative": null,
+  "ad_spend_aggressive": null,
   "selection_notes": [
     "Revenue not in research notes — sourced from HubSpot (hubspot_annual_law_firm_revenue): \"$180K - $960K\" → $570,000",
     "Team size not stated in research notes — defaulting to 3. Review for coaching tier accuracy.",
     "Revenue under $750K but multiple practice areas detected: Essentials hidden (requires single practice area) — Starter tier.",
-    "Revenue $400K–$1M: Elite Coach Plus selected."
+    "Revenue $400K–$1M: Elite Coach Plus selected.",
+    "Seller override: Full Service Marketing — Starter dropped per Slack request on September 22, 2026 — replaced with the LSA Add-On for coaching-only clients ($900/mo, per Design Files/Scoping_and_Ad_Spend_Guide.md Step 6E) plus AI Workforce Pro – Starter, 1 seat ($350/mo, AI Essentials — Starter tier). Elite Coach Plus coaching left unchanged. Ad-spend fields nulled since the Starter marketing tier's ad-cap/rationale no longer applies with no full marketing package in the mix."
   ]
 }
