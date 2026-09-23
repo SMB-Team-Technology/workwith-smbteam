@@ -669,8 +669,8 @@ def build_slide4(prs):
         # Card — white with a thin Lime Green left-border accent, matching the
         # outcome cards below (and the source roadmap design) rather than a
         # solid-fill colored block per phase.
-        add_rect(slide, x, 1.24, phase_w, 1.96, fill=WHITE)
-        add_rect(slide, x, 1.24, 0.05, 1.96, fill=LIME_GREEN)
+        add_rect(slide, x, 1.24, phase_w, 2.02, fill=WHITE)
+        add_rect(slide, x, 1.24, 0.05, 2.02, fill=LIME_GREEN)
 
         add_text(slide, f"PHASE {num}", content_x, 1.34, content_w, 0.12, 7, SLATE, bold=True)
         add_text(slide, name, content_x, 1.48, content_w, 0.22, 13, NAVY, bold=True)
@@ -685,21 +685,23 @@ def build_slide4(prs):
             add_text(slide, bullet, content_x+0.16, y+0.02, content_w-0.16, 0.28, 7.5, DARK_TEXT,
                      cap_chars=68, cap_label=f"PHASES[{i}] bullet {j+1}")
 
-        # Callout quote
-        add_text(slide, callout, content_x, 2.74, content_w, 0.38, 7, BODY_TEXT, italic=True,
+        # Callout quote — given real slack for its up-to-3-line wrap at this
+        # font size (a too-tight box here can render as illegibly shrunk or
+        # apparently "missing" text once PowerPoint's autofit kicks in).
+        add_text(slide, callout, content_x, 2.74, content_w, 0.44, 7, BODY_TEXT, italic=True,
                  cap_chars=130, cap_label=f"PHASES[{i}] callout")
 
     # 3 outcome cards — "Here Is What This Builds For You"
-    add_text(slide, "HERE IS WHAT THIS BUILDS FOR YOU", 0.30, 3.34, 6.00, 0.18, 7.5, NAVY, bold=True)
+    add_text(slide, "HERE IS WHAT THIS BUILDS FOR YOU", 0.30, 3.40, 6.00, 0.18, 7.5, NAVY, bold=True)
 
     outcome_xs = [0.30, 3.57, 6.84]
     outcome_w  = 2.83
     for i, (title, body) in enumerate(BUILDS_FOR_YOU[:3]):
         x = outcome_xs[i]
-        add_rect(slide, x, 3.58, outcome_w, 1.56, fill=WHITE)
-        add_rect(slide, x, 3.58, outcome_w, 0.05, fill=LIME_GREEN)
-        add_text(slide, title, x+0.16, 3.72, outcome_w-0.32, 0.24, 11, NAVY, bold=True)
-        add_text(slide, body, x+0.16, 4.00, outcome_w-0.32, 1.06, 8, BODY_TEXT,
+        add_rect(slide, x, 3.64, outcome_w, 1.50, fill=WHITE)
+        add_rect(slide, x, 3.64, outcome_w, 0.05, fill=LIME_GREEN)
+        add_text(slide, title, x+0.16, 3.78, outcome_w-0.32, 0.24, 11, NAVY, bold=True)
+        add_text(slide, body, x+0.16, 4.06, outcome_w-0.32, 1.00, 8, BODY_TEXT,
                  cap_chars=190, cap_label=f"BUILDS_FOR_YOU[{i}] body")
 
     add_footer(slide, 4, 4, LOGO_PATH)
