@@ -674,11 +674,14 @@ def build_slide4(prs):
 
         add_text(slide, f"PHASE {num}", content_x, 1.34, content_w, 0.12, 7, SLATE, bold=True)
         add_text(slide, name, content_x, 1.48, content_w, 0.22, 13, NAVY, bold=True)
-        add_text(slide, timing, content_x, 1.72, content_w, 0.14, 7, SLATE, italic=True)
+        # Timing label — given room for a real 2-line wrap (some phases' real
+        # timing text is long enough to wrap at this width; a box sized for
+        # only one line gets auto-shrunk down to near-illegible instead).
+        add_text(slide, timing, content_x, 1.72, content_w, 0.28, 7, SLATE, italic=True)
 
         # Bullet rows — sized for a 2-line wrap of a 68-char bullet, not just one
         # line (a shorter row here used to visually overlap the row below it).
-        bullet_ys = [1.96, 2.32]
+        bullet_ys = [2.04, 2.36]
         for j, bullet in enumerate(bullets[:2]):
             y = bullet_ys[j]
             add_text(slide, "›", content_x, y+0.02, 0.14, 0.20, 11, LIME_GREEN, bold=True)
@@ -688,7 +691,7 @@ def build_slide4(prs):
         # Callout quote — given real slack for its up-to-3-line wrap at this
         # font size (a too-tight box here can render as illegibly shrunk or
         # apparently "missing" text once PowerPoint's autofit kicks in).
-        add_text(slide, callout, content_x, 2.74, content_w, 0.44, 7, BODY_TEXT, italic=True,
+        add_text(slide, callout, content_x, 2.70, content_w, 0.44, 7, BODY_TEXT, italic=True,
                  cap_chars=130, cap_label=f"PHASES[{i}] callout")
 
     # 3 outcome cards — "Here Is What This Builds For You"
