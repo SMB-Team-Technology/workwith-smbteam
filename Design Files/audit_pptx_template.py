@@ -350,6 +350,23 @@ def add_x_mark(slide, left, top, size, color, weight_pt=1.75, inset=0.24):
         conn.line.width = P(weight_pt)
 
 
+def add_chevron(slide, left, top, size, color, weight_pt=1.75):
+    """A vector right-pointing chevron (two line segments) — used instead of
+    a "›" glyph so it renders identically everywhere; same rationale as
+    add_check/add_x_mark (a font glyph isn't guaranteed to exist in every
+    viewer's substituted font, and can render as a blank/missing mark)."""
+    from pptx.enum.shapes import MSO_CONNECTOR
+    from pptx.util import Emu as E, Pt as P
+    points = [(0.18, 0.15), (0.75, 0.50), (0.18, 0.85)]
+    abs_pts = [(left + px*size, top + py*size) for px, py in points]
+    for (x1, y1), (x2, y2) in zip(abs_pts, abs_pts[1:]):
+        conn = slide.shapes.add_connector(MSO_CONNECTOR.STRAIGHT,
+                                          E(int(x1*914400)), E(int(y1*914400)),
+                                          E(int(x2*914400)), E(int(y2*914400)))
+        conn.line.color.rgb = color
+        conn.line.width = P(weight_pt)
+
+
 def add_text(slide, text, left, top, w, h, size, color, bold=False,
              align=PP_ALIGN.LEFT, italic=False, wrap=True,
              cap_chars=None, cap_label=""):
@@ -684,7 +701,7 @@ def build_slide4(prs):
         bullet_ys = [2.04, 2.36]
         for j, bullet in enumerate(bullets[:2]):
             y = bullet_ys[j]
-            add_text(slide, "›", content_x, y+0.02, 0.14, 0.20, 11, LIME_GREEN, bold=True)
+            add_chevron(slide, content_x+0.01, y+0.08, 0.11, LIME_GREEN, weight_pt=1.8)
             add_text(slide, bullet, content_x+0.16, y+0.02, content_w-0.16, 0.28, 7.5, DARK_TEXT,
                      cap_chars=68, cap_label=f"PHASES[{i}] bullet {j+1}")
 
