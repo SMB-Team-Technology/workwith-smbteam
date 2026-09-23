@@ -1,6 +1,6 @@
 # SMB Team — Audit PowerPoint (Pass 3)
 
-Generates a 3-slide proposal PowerPoint from a completed audit. Run this after `/audit-write` finishes (all section files must exist).
+Generates a 4-slide proposal PowerPoint from a completed audit. Run this after `/audit-write` finishes (all section files must exist).
 
 ## How to invoke
 
@@ -37,6 +37,9 @@ Action plan: SMB model description, goal statement tied to DBM, three priority c
 
 **Slide 3 — Your Investment & What Happens Next**
 Pricing: two package cards with bundled and retail prices, bundle total + savings, ad spend note, ROI projections, first-90-days timeline, closing quote.
+
+**Slide 4 — Your Path Forward: What Happens Next**
+Roadmap: the 3-phase engagement roadmap (Foundation / Operational Scale / Optimize), each with a timing label, 2 condensed bullets, and a callout quote — plus the 3 "Here Is What This Builds For You" outcome cards (More Profit / More Freedom / Better Client Results).
 
 ---
 
@@ -90,6 +93,8 @@ Copy values exactly — do not rewrite or recompute.
 - `AD_SPEND_NOTE` — only fill this if Block 4 exists in section_11 (i.e., a marketing/ads package is part of the recommendation). Copy the recommended ad spend range and append a short clause distilled from Block 4's "why this range" sentence — the payoff, not the calculation basis, e.g. `"+ Recommended ad spend: $X,XXX–$XX,XXX/mo — to turn high-intent [practice area] searches into signed cases"`. Keep the full note under ~110 characters so it doesn't get truncated on the slide. If Block 4 was omitted from section_11 (no marketing/ads sold), set `AD_SPEND_NOTE = None` — do not show an ad spend note or rationale for a service this firm isn't buying. This also controls whether the "Projected Return on Ad Spend" card renders on Slide 3 (they're gated together in the layout engine) — when `AD_SPEND_NOTE` is `None`, `AVG_CASE_VALUE`/`CONSERVATIVE_*`/`AGGRESSIVE_*` are unused and can be left at their placeholder values.
 - `AVG_CASE_VALUE`, conservative/aggressive cases + revenue + ROAS — copy from Block 4 ROI table
 - `TIMELINE` — 5 first-90-days milestone items (Day 1 / Day 14 / Week 2 / Week 3 / Month 3), condense each action to ≤55 chars
+- `PHASES` — from Block 6 ("What Happens Next"), the 3 phases in order. For each: copy the phase name and timing label as written, then condense its bullets down to the 2 most important (≤68 chars each — do not invent bullets not present in the source), and condense its italic callout line to ≤130 chars while keeping its meaning and voice
+- `BUILDS_FOR_YOU` — from Block 7 ("Here Is What This Builds For You"), copy the 3 card titles as written and condense each card's body to ≤190 chars
 
 **From section_06_lead_generation.html:**
 - `COMPETITORS` — 3 named competitors with review counts and a one-phrase note each
@@ -135,7 +140,7 @@ diff <(sed -n '/LAYOUT ENGINE/,$p' "Design Files/audit_pptx_template.py") \
 python3 "[friendly-name]/[FirmName]_[Date]_Proposal.py"
 ```
 
-9. Confirm the output prints "Saved: … (3 slides)". If it also prints a `WARNING: N field(s) exceeded their character budget…` block, that means the layout engine had to truncate something you filled in — go back and shorten that field's source copy rather than shipping the truncated version.
+9. Confirm the output prints "Saved: … (4 slides)". If it also prints a `WARNING: N field(s) exceeded their character budget…` block, that means the layout engine had to truncate something you filled in — go back and shorten that field's source copy rather than shipping the truncated version.
 10. Verify the file exists and is not empty:
 
 ```bash
@@ -151,6 +156,7 @@ wc -c "[friendly-name]/[FirmName]_[Date]_Proposal.pptx"
 - Priority column bullets must be firm-specific — no generic language
 - The closing quote on Slide 3 must be vivid, specific, and in the owner's voice — not a generic tagline. If the transcript has a direct quote about what they want their life to look like, use it verbatim or near-verbatim
 - Do not add a fourth package card — maximum two packages per the template
+- Do not add a 4th roadmap phase or a 4th outcome card — exactly 3 of each, per the template. Char budgets: phase bullets ≤68 chars, phase callout ≤130 chars, outcome card body ≤190 chars
 - Never modify `Design Files/audit_pptx_template.py` — work in the firm's copy only
 - Never modify anything below `LAYOUT ENGINE — DO NOT MODIFY BELOW THIS LINE` in the firm's copy either — this includes `FONT` and every color constant. That section is what keeps every deck on-brand and visually consistent with every other deck in the portfolio; the diff in step 7 is the check. The layout engine already auto-shrinks oversized text and hard-caps a handful of fields as a backstop (see the `WARNING:` note in step 9) and embeds the Poppins font files into the saved `.pptx` — none of that requires anything from you beyond filling in the `# FILL:` values.
 

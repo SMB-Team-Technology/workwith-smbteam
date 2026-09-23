@@ -1,13 +1,14 @@
 """
 Audit PowerPoint Template — SMB Team
 ======================================
-Generates a 3-slide proposal PPTX from the Growth, Profit, and Freedom Roadmap.
+Generates a 4-slide proposal PPTX from the Growth, Profit, and Freedom Roadmap.
 Uses python-pptx. Do not modify the layout engine below the FILL section.
 Only replace the # FILL: placeholders with audit-specific content.
 
 Slide 1 — Where [Firm] Stands Today         (assessment overview)
 Slide 2 — Your Growth Plan: 3 Priorities    (action plan)
 Slide 3 — Your Investment & What's Next     (pricing + first 90 days)
+Slide 4 — Your Path Forward: What Happens Next   (roadmap + outcomes)
 
 Output: [friendly-name]/[FirmName]_[Date]_Proposal.pptx
 """
@@ -158,6 +159,46 @@ CLOSING_QUOTE = (
     '"Closing quote tied to this firm\'s DBM — exact transcript words '
     'or a sharp synthesis of the central opportunity."'
 )  # FILL
+
+# ── Slide 4 ──────────────────────────────────────────────────────
+SLIDE_4_TITLE = "Your Path Forward: What Happens Next"  # FILL: optional per-firm tweak; keep short
+
+# Roadmap phases — exactly 3. Each: (phase_no, name, timing_label, accent_color_hex, [2 bullets], callout_quote)
+# Copy from section_11_next_steps.html Block 6 — condense, do not invent bullets not present in the source.
+PHASES = [
+    (
+        "01", "Foundation", "Starting Now", "0091C9",
+        [
+            "Bullet 1 — specific action for this firm",
+            "Bullet 2 — specific action for this firm",
+        ],
+        '"Condensed callout quote for this phase — from section_11 Block 6."',
+    ),
+    (
+        "02", "Operational Scale", "Once lead flow is running consistently", "69CD2B",
+        [
+            "Bullet 1 — specific action for this firm",
+            "Bullet 2 — specific action for this firm",
+        ],
+        '"Condensed callout quote for this phase — from section_11 Block 6."',
+    ),
+    (
+        "03", "Optimize", "Once leadership and financial visibility are in place", "003A59",
+        [
+            "Bullet 1 — specific action for this firm",
+            "Bullet 2 — specific action for this firm",
+        ],
+        '"Condensed callout quote for this phase — from section_11 Block 6."',
+    ),
+]
+
+# "Here Is What This Builds For You" outcome cards — exactly 3: (title, body)
+# Copy from section_11_next_steps.html Block 7 — condense each body to one tight paragraph.
+BUILDS_FOR_YOU = [
+    ("More Profit", "Body text — specific to this firm, condensed from section_11 Block 7."),
+    ("More Freedom", "Body text — specific to this firm, condensed from section_11 Block 7."),
+    ("Better Client Results", "Body text — specific to this firm, condensed from section_11 Block 7."),
+]
 
 # ═══════════════════════════════════════════════════════════════════
 # LAYOUT ENGINE — DO NOT MODIFY BELOW THIS LINE
@@ -455,7 +496,7 @@ def build_slide1(prs):
     add_text(slide, CLIENT_REVIEWS_NOTE, 8.78, 4.74, 0.80, 0.39, 7, SLATE,
              cap_chars=34, cap_label="CLIENT_REVIEWS_NOTE")
 
-    add_footer(slide, 1, 3, LOGO_PATH)
+    add_footer(slide, 1, 4, LOGO_PATH)
 
 
 # ── Slide 2: Growth Plan ───────────────────────────────────────────
@@ -508,7 +549,7 @@ def build_slide2(prs):
             add_text(slide, bullet, x+0.33, y+0.11, 1.76, 0.40, 8, DARK_TEXT,
                      cap_chars=60, cap_label=f"PRIORITIES[{col_i}] bullet {row_i+1}")
 
-    add_footer(slide, 2, 3, LOGO_PATH)
+    add_footer(slide, 2, 4, LOGO_PATH)
 
 
 # ── Slide 3: Investment & Next Steps ──────────────────────────────
@@ -598,7 +639,69 @@ def build_slide3(prs):
     add_text(slide, CLOSING_QUOTE, 0.70, 4.82, 8.60, 0.34, 9.5, rgb("C2D8E6"),
              align=PP_ALIGN.CENTER, cap_chars=200, cap_label="CLOSING_QUOTE")
 
-    add_footer(slide, 3, 3, LOGO_PATH)
+    add_footer(slide, 3, 4, LOGO_PATH)
+
+
+# ── Slide 4: Roadmap & Outcomes ────────────────────────────────────
+
+def build_slide4(prs):
+    layout = prs.slide_layouts[6]
+    slide = prs.slides.add_slide(layout)
+
+    # Background wash + header (mirrors slides 1-3)
+    add_rect(slide, 0, 0, 10, 5.625, fill=BG_WASH)
+    add_rect(slide, 0, 0, 10, 0.92, fill=NAVY)
+    add_rect(slide, 0, 0.92, 10, 0.04, fill=LIME_GREEN)
+    add_text(slide, f"LAW FIRM GROWTH AUDIT  ·  {FIRM_NAME.upper()}",
+             0.32, 0.20, 6.00, 0.18, 7.5, LIME_GREEN, bold=True)
+    add_text(slide, SLIDE_4_TITLE, 0.32, 0.40, 9.30, 0.40, 20, WHITE, bold=True)
+
+    # 3 phase columns — same x/width idiom as the PRIORITIES row on Slide 2
+    add_text(slide, "YOUR ROADMAP", 0.30, 1.02, 4.00, 0.16, 7.5, NAVY, bold=True)
+
+    phase_xs = [0.30, 3.57, 6.84]
+    phase_w  = 2.83
+    for i, (num, name, timing, hex_color, bullets, callout) in enumerate(PHASES[:3]):
+        x = phase_xs[i]
+        ac = rgb(hex_color)
+        light = PRIORITY_LIGHT.get(hex_color, rgb("F8F8FF"))
+        header_text = ACCENT_TEXT_COLOR.get(hex_color, WHITE)
+
+        # Header
+        add_rect(slide, x, 1.24, phase_w, 0.56, fill=ac)
+        add_text(slide, f"PHASE {num}", x+0.14, 1.30, phase_w-0.28, 0.16, 7.5, header_text, bold=True)
+        add_text(slide, name, x+0.14, 1.46, phase_w-0.28, 0.20, 12.5, header_text, bold=True)
+        add_text(slide, timing, x+0.14, 1.66, phase_w-0.28, 0.14, 7, header_text, italic=True)
+
+        # Bullet rows
+        bullet_ys = [1.86, 2.18]
+        for j, bullet in enumerate(bullets[:2]):
+            y = bullet_ys[j]
+            bg = light if j % 2 == 0 else WHITE
+            add_rect(slide, x, y, phase_w, 0.30, fill=bg)
+            add_rect(slide, x+0.12, y+0.11, 0.07, 0.07, fill=ac)
+            add_text(slide, bullet, x+0.28, y+0.045, phase_w-0.40, 0.22, 7.5, DARK_TEXT,
+                     cap_chars=68, cap_label=f"PHASES[{i}] bullet {j+1}")
+
+        # Callout quote
+        add_rect(slide, x, 2.52, phase_w, 0.56, fill=light)
+        add_text(slide, callout, x+0.12, 2.57, phase_w-0.24, 0.46, 7, BODY_TEXT, italic=True,
+                 cap_chars=130, cap_label=f"PHASES[{i}] callout")
+
+    # 3 outcome cards — "Here Is What This Builds For You"
+    add_text(slide, "HERE IS WHAT THIS BUILDS FOR YOU", 0.30, 3.22, 6.00, 0.18, 7.5, NAVY, bold=True)
+
+    outcome_xs = [0.30, 3.57, 6.84]
+    outcome_w  = 2.83
+    for i, (title, body) in enumerate(BUILDS_FOR_YOU[:3]):
+        x = outcome_xs[i]
+        add_rect(slide, x, 3.46, outcome_w, 1.68, fill=WHITE)
+        add_rect(slide, x, 3.46, outcome_w, 0.05, fill=LIME_GREEN)
+        add_text(slide, title, x+0.16, 3.60, outcome_w-0.32, 0.24, 11, NAVY, bold=True)
+        add_text(slide, body, x+0.16, 3.88, outcome_w-0.32, 1.18, 8, BODY_TEXT,
+                 cap_chars=190, cap_label=f"BUILDS_FOR_YOU[{i}] body")
+
+    add_footer(slide, 4, 4, LOGO_PATH)
 
 
 # ── Font embedding ────────────────────────────────────────────────
@@ -729,6 +832,7 @@ prs.slide_height = Inches(5.625)
 build_slide1(prs)
 build_slide2(prs)
 build_slide3(prs)
+build_slide4(prs)
 
 os.makedirs(os.path.dirname(OUTPUT_PATH), exist_ok=True) if os.path.dirname(OUTPUT_PATH) else None
 prs.save(OUTPUT_PATH)
