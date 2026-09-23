@@ -163,11 +163,11 @@ CLOSING_QUOTE = (
 # ── Slide 4 ──────────────────────────────────────────────────────
 SLIDE_4_TITLE = "Your Path Forward: What Happens Next"  # FILL: optional per-firm tweak; keep short
 
-# Roadmap phases — exactly 3. Each: (phase_no, name, timing_label, accent_color_hex, [2 bullets], callout_quote)
+# Roadmap phases — exactly 3. Each: (phase_no, name, timing_label, [2 bullets], callout_quote)
 # Copy from section_11_next_steps.html Block 6 — condense, do not invent bullets not present in the source.
 PHASES = [
     (
-        "01", "Foundation", "Starting Now", "0091C9",
+        "01", "Foundation", "Starting Now",
         [
             "Bullet 1 — specific action for this firm",
             "Bullet 2 — specific action for this firm",
@@ -175,7 +175,7 @@ PHASES = [
         '"Condensed callout quote for this phase — from section_11 Block 6."',
     ),
     (
-        "02", "Operational Scale", "Once lead flow is running consistently", "69CD2B",
+        "02", "Operational Scale", "Once lead flow is running consistently",
         [
             "Bullet 1 — specific action for this firm",
             "Bullet 2 — specific action for this firm",
@@ -183,7 +183,7 @@ PHASES = [
         '"Condensed callout quote for this phase — from section_11 Block 6."',
     ),
     (
-        "03", "Optimize", "Once leadership and financial visibility are in place", "003A59",
+        "03", "Optimize", "Once leadership and financial visibility are in place",
         [
             "Bullet 1 — specific action for this firm",
             "Bullet 2 — specific action for this firm",
@@ -661,32 +661,32 @@ def build_slide4(prs):
 
     phase_xs = [0.30, 3.57, 6.84]
     phase_w  = 2.83
-    for i, (num, name, timing, hex_color, bullets, callout) in enumerate(PHASES[:3]):
+    for i, (num, name, timing, bullets, callout) in enumerate(PHASES[:3]):
         x = phase_xs[i]
-        ac = rgb(hex_color)
-        light = PRIORITY_LIGHT.get(hex_color, rgb("F8F8FF"))
-        header_text = ACCENT_TEXT_COLOR.get(hex_color, WHITE)
+        content_x = x + 0.18
+        content_w = phase_w - 0.32
 
-        # Header
-        add_rect(slide, x, 1.24, phase_w, 0.50, fill=ac)
-        add_text(slide, f"PHASE {num}", x+0.14, 1.30, phase_w-0.28, 0.16, 7.5, header_text, bold=True)
-        add_text(slide, name, x+0.14, 1.44, phase_w-0.28, 0.20, 12.5, header_text, bold=True)
-        add_text(slide, timing, x+0.14, 1.58, phase_w-0.28, 0.14, 7, header_text, italic=True)
+        # Card — white with a thin Lime Green left-border accent, matching the
+        # outcome cards below (and the source roadmap design) rather than a
+        # solid-fill colored block per phase.
+        add_rect(slide, x, 1.24, phase_w, 1.96, fill=WHITE)
+        add_rect(slide, x, 1.24, 0.05, 1.96, fill=LIME_GREEN)
+
+        add_text(slide, f"PHASE {num}", content_x, 1.34, content_w, 0.12, 7, SLATE, bold=True)
+        add_text(slide, name, content_x, 1.48, content_w, 0.22, 13, NAVY, bold=True)
+        add_text(slide, timing, content_x, 1.72, content_w, 0.14, 7, SLATE, italic=True)
 
         # Bullet rows — sized for a 2-line wrap of a 68-char bullet, not just one
-        # line (a 0.30in row here used to visually overlap the row below it).
-        bullet_ys = [1.80, 2.24]
+        # line (a shorter row here used to visually overlap the row below it).
+        bullet_ys = [1.96, 2.32]
         for j, bullet in enumerate(bullets[:2]):
             y = bullet_ys[j]
-            bg = light if j % 2 == 0 else WHITE
-            add_rect(slide, x, y, phase_w, 0.42, fill=bg)
-            add_rect(slide, x+0.12, y+0.175, 0.07, 0.07, fill=ac)
-            add_text(slide, bullet, x+0.28, y+0.04, phase_w-0.40, 0.34, 7.5, DARK_TEXT,
+            add_text(slide, "›", content_x, y+0.02, 0.14, 0.20, 11, LIME_GREEN, bold=True)
+            add_text(slide, bullet, content_x+0.16, y+0.02, content_w-0.16, 0.28, 7.5, DARK_TEXT,
                      cap_chars=68, cap_label=f"PHASES[{i}] bullet {j+1}")
 
         # Callout quote
-        add_rect(slide, x, 2.70, phase_w, 0.50, fill=light)
-        add_text(slide, callout, x+0.12, 2.74, phase_w-0.24, 0.42, 7, BODY_TEXT, italic=True,
+        add_text(slide, callout, content_x, 2.74, content_w, 0.38, 7, BODY_TEXT, italic=True,
                  cap_chars=130, cap_label=f"PHASES[{i}] callout")
 
     # 3 outcome cards — "Here Is What This Builds For You"
