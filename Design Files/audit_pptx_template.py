@@ -668,37 +668,38 @@ def build_slide4(prs):
         header_text = ACCENT_TEXT_COLOR.get(hex_color, WHITE)
 
         # Header
-        add_rect(slide, x, 1.24, phase_w, 0.56, fill=ac)
+        add_rect(slide, x, 1.24, phase_w, 0.50, fill=ac)
         add_text(slide, f"PHASE {num}", x+0.14, 1.30, phase_w-0.28, 0.16, 7.5, header_text, bold=True)
-        add_text(slide, name, x+0.14, 1.46, phase_w-0.28, 0.20, 12.5, header_text, bold=True)
-        add_text(slide, timing, x+0.14, 1.66, phase_w-0.28, 0.14, 7, header_text, italic=True)
+        add_text(slide, name, x+0.14, 1.44, phase_w-0.28, 0.20, 12.5, header_text, bold=True)
+        add_text(slide, timing, x+0.14, 1.58, phase_w-0.28, 0.14, 7, header_text, italic=True)
 
-        # Bullet rows
-        bullet_ys = [1.86, 2.18]
+        # Bullet rows — sized for a 2-line wrap of a 68-char bullet, not just one
+        # line (a 0.30in row here used to visually overlap the row below it).
+        bullet_ys = [1.80, 2.24]
         for j, bullet in enumerate(bullets[:2]):
             y = bullet_ys[j]
             bg = light if j % 2 == 0 else WHITE
-            add_rect(slide, x, y, phase_w, 0.30, fill=bg)
-            add_rect(slide, x+0.12, y+0.11, 0.07, 0.07, fill=ac)
-            add_text(slide, bullet, x+0.28, y+0.045, phase_w-0.40, 0.22, 7.5, DARK_TEXT,
+            add_rect(slide, x, y, phase_w, 0.42, fill=bg)
+            add_rect(slide, x+0.12, y+0.175, 0.07, 0.07, fill=ac)
+            add_text(slide, bullet, x+0.28, y+0.04, phase_w-0.40, 0.34, 7.5, DARK_TEXT,
                      cap_chars=68, cap_label=f"PHASES[{i}] bullet {j+1}")
 
         # Callout quote
-        add_rect(slide, x, 2.52, phase_w, 0.56, fill=light)
-        add_text(slide, callout, x+0.12, 2.57, phase_w-0.24, 0.46, 7, BODY_TEXT, italic=True,
+        add_rect(slide, x, 2.70, phase_w, 0.50, fill=light)
+        add_text(slide, callout, x+0.12, 2.74, phase_w-0.24, 0.42, 7, BODY_TEXT, italic=True,
                  cap_chars=130, cap_label=f"PHASES[{i}] callout")
 
     # 3 outcome cards — "Here Is What This Builds For You"
-    add_text(slide, "HERE IS WHAT THIS BUILDS FOR YOU", 0.30, 3.22, 6.00, 0.18, 7.5, NAVY, bold=True)
+    add_text(slide, "HERE IS WHAT THIS BUILDS FOR YOU", 0.30, 3.34, 6.00, 0.18, 7.5, NAVY, bold=True)
 
     outcome_xs = [0.30, 3.57, 6.84]
     outcome_w  = 2.83
     for i, (title, body) in enumerate(BUILDS_FOR_YOU[:3]):
         x = outcome_xs[i]
-        add_rect(slide, x, 3.46, outcome_w, 1.68, fill=WHITE)
-        add_rect(slide, x, 3.46, outcome_w, 0.05, fill=LIME_GREEN)
-        add_text(slide, title, x+0.16, 3.60, outcome_w-0.32, 0.24, 11, NAVY, bold=True)
-        add_text(slide, body, x+0.16, 3.88, outcome_w-0.32, 1.18, 8, BODY_TEXT,
+        add_rect(slide, x, 3.58, outcome_w, 1.56, fill=WHITE)
+        add_rect(slide, x, 3.58, outcome_w, 0.05, fill=LIME_GREEN)
+        add_text(slide, title, x+0.16, 3.72, outcome_w-0.32, 0.24, 11, NAVY, bold=True)
+        add_text(slide, body, x+0.16, 4.00, outcome_w-0.32, 1.06, 8, BODY_TEXT,
                  cap_chars=190, cap_label=f"BUILDS_FOR_YOU[{i}] body")
 
     add_footer(slide, 4, 4, LOGO_PATH)
