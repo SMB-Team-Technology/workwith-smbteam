@@ -15,28 +15,28 @@
     "custody",
     "guardianship & adoption"
   ],
-  "marketing_tier": "Growth",
-  "marketing_name": "Full Service Marketing — Growth",
-  "marketing_price_bundled": 7497,
-  "marketing_price_retail": 8997,
-  "marketing_savings": 1500,
-  "coaching_name": "Elite Coach Plus",
-  "coaching_price_bundled": 3200,
-  "coaching_price_retail": 3497,
-  "coaching_savings": 297,
-  "law_tier": null,
-  "total_bundled": 10697,
-  "total_savings": 1797,
-  "ad_spend_conservative": 3500,
-  "ad_spend_aggressive": 14000,
-  "ad_spend_rationale": {
-    "conservative_basis": "family law generally — divorce",
-    "aggressive_basis": "scaled 4x off the conservative channel-minimum floor"
-  },
+  "marketing_tier": null,
+  "marketing_name": null,
+  "marketing_price_bundled": null,
+  "marketing_price_retail": null,
+  "marketing_savings": null,
+  "coaching_name": null,
+  "coaching_price_bundled": 0,
+  "coaching_price_retail": 0,
+  "coaching_savings": 0,
+  "law_tier": "AI Accelerator L1 — Fractional CTO Level 1 + AI Essentials — Base — AI Workforce Pro (5 seats)",
+  "law_price_bundled": 4894,
+  "law_price_retail": 3797,
+  "law_savings": 500,
+  "total_bundled": 4894,
+  "total_savings": 500,
+  "ad_spend_conservative": null,
+  "ad_spend_aggressive": null,
   "selection_notes": [
     "Revenue not in research notes — sourced from HubSpot (hubspot_annual_law_firm_revenue): \"$961K - $3M\" → $1,980,500",
     "Team size not stated in research notes — defaulting to 3. Review for coaching tier accuracy.",
     "Revenue $1M–$2M: Growth tier.",
-    "Revenue $1M+, team under 5: Elite Coach Plus selected (Master's Circle requires 5+ team)."
+    "Revenue $1M+, team under 5: Elite Coach Plus selected (Master's Circle requires 5+ team).",
+    "Seller override: package changed to Fractional CTO Level 1 ($3,297/mo bundled) + AI Workforce Pro (5 seats, AI Essentials — Base tier, $1,597/mo) per Slack request on September 24, 2026 — replaces the previously selected Full Service Marketing — Growth ($7,497/mo) + Elite Coach Plus ($3,200/mo). The original pipeline output ignored the call-purpose override already flagged in the research notes: the discovery call was explicitly a Fractional CTO / AI automation engagement (central AI hub across MyCase, Microsoft 365, QuickBooks, VXT), not a marketing/lead-gen conversation — see research notes Step 9 / Call-Focus Flag. Marketing and coaching dropped entirely; ad-spend fields nulled since no marketing package is in the mix. There is no standalone/retail price for AI Workforce Pro in the current catalog, so law_price_retail ($3,797) and law_savings ($500) reflect the Fractional CTO Level 1 component only — AI Workforce Pro's $1,597/mo is priced at the same rate bundled or standalone."
   ]
 }
