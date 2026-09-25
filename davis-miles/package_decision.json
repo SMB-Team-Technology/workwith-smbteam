@@ -12,17 +12,17 @@
     "family law (arizona) — the engagement and"
   ],
   "marketing_tier": "Starter",
-  "marketing_name": "Full Service Marketing — Starter",
-  "marketing_price_bundled": 4997,
-  "marketing_price_retail": 5697,
-  "marketing_savings": 700,
-  "coaching_name": "Elite Coach Plus",
-  "coaching_price_bundled": 3200,
-  "coaching_price_retail": 3497,
-  "coaching_savings": 297,
+  "marketing_name": "Paid Ads Starter",
+  "marketing_price_bundled": 2497,
+  "marketing_price_retail": 3497,
+  "marketing_savings": 1000,
+  "coaching_name": null,
+  "coaching_price_bundled": 0,
+  "coaching_price_retail": 0,
+  "coaching_savings": 0,
   "law_tier": null,
-  "total_bundled": 8197,
-  "total_savings": 997,
+  "total_bundled": 2497,
+  "total_savings": 1000,
   "ad_spend_conservative": 3500,
   "ad_spend_aggressive": 16000,
   "ad_spend_rationale": {
@@ -33,6 +33,7 @@
     "Team size not stated in research notes — defaulting to 3. Review for coaching tier accuracy.",
     "Revenue $500K–$1M: Starter tier.",
     "Revenue $400K–$1M: Elite Coach Plus selected.",
-    "Seller override: aggressive ad spend raised from $14,000 to $16,000 per Slack request on September 25, 2026."
+    "Seller override: aggressive ad spend raised from $14,000 to $16,000 per Slack request on September 25, 2026.",
+    "Seller override: swapped Full Service Marketing — Starter ($4,997/mo bundled) for Paid Ads Starter ($2,497/mo bundled) and dropped Elite Coach Plus coaching ($3,200/mo) entirely per Slack request on September 25, 2026. Ad spend cap for Paid Ads Starter is $20,000/mo (vs $25,000/mo for Full Service Starter) — both conservative ($3,500) and aggressive ($16,000) ad spend figures remain within the new cap, so no change was made to those fields."
   ]
 }
