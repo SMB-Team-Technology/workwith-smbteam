@@ -24,27 +24,28 @@
     "probate and trust litigation",
     "guardianship and conservat"
   ],
-  "marketing_tier": "Starter",
-  "marketing_name": "Full Service Marketing — Starter",
-  "marketing_price_bundled": 4997,
-  "marketing_price_retail": 5697,
-  "marketing_savings": 700,
-  "coaching_name": "Elite Coach Plus",
-  "coaching_price_bundled": 3200,
-  "coaching_price_retail": 3497,
-  "coaching_savings": 297,
+  "marketing_tier": "Essentials",
+  "marketing_name": "Full Service Marketing — Essentials",
+  "marketing_price_bundled": 3497,
+  "marketing_price_retail": 3797,
+  "marketing_savings": 300,
+  "coaching_name": null,
+  "coaching_price_bundled": null,
+  "coaching_price_retail": null,
+  "coaching_savings": null,
   "law_tier": null,
-  "total_bundled": 8197,
-  "total_savings": 997,
+  "total_bundled": 3497,
+  "total_savings": 300,
   "ad_spend_conservative": 3500,
-  "ad_spend_aggressive": 14000,
+  "ad_spend_aggressive": 7500,
   "ad_spend_rationale": {
     "conservative_basis": "(1) high-value probate and civil litigation — primary focus (e.g.",
-    "aggressive_basis": "scaled 4x off the conservative channel-minimum floor"
+    "aggressive_basis": "capped to Essentials (Full Service) tier's $7,500/mo max ad spend managed — was $14,000 under the Starter tier"
   },
   "selection_notes": [
     "Revenue not in research notes — sourced from HubSpot (hubspot_annual_law_firm_revenue): \"$180K - $960K\" → $570,000",
     "Revenue under $750K but multiple practice areas detected: Essentials hidden (requires single practice area) — Starter tier.",
-    "Revenue $400K–$1M: Elite Coach Plus selected."
+    "Revenue $400K–$1M: Elite Coach Plus selected.",
+    "Seller override: switched to Full Service Marketing — Essentials, marketing only (coaching dropped entirely), per Slack request on September 30, 2026. Aggressive ad spend re-capped to the Essentials tier's $7,500/mo max ad spend managed."
   ]
 }
