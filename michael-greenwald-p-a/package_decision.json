@@ -24,28 +24,26 @@
     "probate and trust litigation",
     "guardianship and conservat"
   ],
-  "marketing_tier": "Essentials",
-  "marketing_name": "Full Service Marketing — Essentials",
-  "marketing_price_bundled": 3497,
-  "marketing_price_retail": 3797,
-  "marketing_savings": 300,
-  "coaching_name": null,
-  "coaching_price_bundled": null,
-  "coaching_price_retail": null,
-  "coaching_savings": null,
+  "marketing_tier": null,
+  "marketing_name": null,
+  "marketing_price_bundled": null,
+  "marketing_price_retail": null,
+  "marketing_savings": null,
+  "coaching_name": "Elite Coach Plus",
+  "coaching_price_bundled": 3497,
+  "coaching_price_retail": 3497,
+  "coaching_savings": 0,
   "law_tier": null,
   "total_bundled": 3497,
-  "total_savings": 300,
-  "ad_spend_conservative": 3500,
-  "ad_spend_aggressive": 7500,
-  "ad_spend_rationale": {
-    "conservative_basis": "(1) high-value probate and civil litigation — primary focus (e.g.",
-    "aggressive_basis": "capped to Essentials (Full Service) tier's $7,500/mo max ad spend managed — was $14,000 under the Starter tier"
-  },
+  "total_savings": 0,
+  "ad_spend_conservative": null,
+  "ad_spend_aggressive": null,
+  "ad_spend_rationale": null,
   "selection_notes": [
     "Revenue not in research notes — sourced from HubSpot (hubspot_annual_law_firm_revenue): \"$180K - $960K\" → $570,000",
     "Revenue under $750K but multiple practice areas detected: Essentials hidden (requires single practice area) — Starter tier.",
     "Revenue $400K–$1M: Elite Coach Plus selected.",
-    "Seller override: switched to Full Service Marketing — Essentials, marketing only (coaching dropped entirely), per Slack request on September 30, 2026. Aggressive ad spend re-capped to the Essentials tier's $7,500/mo max ad spend managed."
+    "Seller override: switched to Full Service Marketing — Essentials, marketing only (coaching dropped entirely), per Slack request on September 30, 2026. Aggressive ad spend re-capped to the Essentials tier's $7,500/mo max ad spend managed.",
+    "Seller override: reverted to Elite Coach Plus, no marketing package, priced at the standalone (non-bundled) rate of $3,497/mo per Slack request on September 30, 2026. Ad spend fields cleared since no marketing/ads package is being sold."
   ]
 }
