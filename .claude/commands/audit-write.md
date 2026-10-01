@@ -324,44 +324,55 @@ Non-marketing packages are the default recommendation alongside marketing. Recom
 
 Legal AI Workforce (LAW) provides managed AI implementation for law firms — Claude Enterprise workspace, pre-built Law Firm AI Skills, and optional Fractional CTO leadership. Recommend alongside a marketing or coaching package when the firm shows AI readiness. LAW recurring fees count against the 35% cap.
 
+Source of truth for every price and requirement below: the AI Services tab of the 2026 SMB Team Pricing, Products & Packages sheet. Keep this section, `LAW_TIERS` in `scripts/select-package.mjs`, and the Slack bot prompts in `.github/workflows/slack-*.yml` in sync with it.
+
 **Do NOT recommend LAW if:**
-- Revenue under $400K
+- Revenue is under the tier's requirement (Fractional CTO tiers only; AI Workforce Pro and the Foundation Sprint have no revenue requirement — they're limited by user count / any size)
 - Firm is solo with no support staff (minimum 1–2 staff needed to engage with implementation)
 - Owner shows no openness to staff training or technology adoption
 
 **LAW Tiers:**
 
-| Tier | Product Name | Price | Target Revenue |
+| Product | Bundled Price | Standalone Price | Requirements |
 |---|---|---|---|
-| AI Essentials — Starter | AI Workforce Pro – Starter | $350/user/mo (1–4 users) | $400K+ |
-| AI Essentials — Base | AI Workforce Pro | $1,597/mo (base, 5 users) + $120/mo per additional employee over 5 | $400K+ |
-| AI Accelerator L1 | Fractional CTO Level 1 | $3,297/mo bundled / $3,797/mo standalone | $400K+ |
-| AI Accelerator L2 | Fractional CTO Level 2 | $4,997/mo bundled / $5,797/mo standalone | $1M+ |
-| AI Enterprise | Fractional CTO Level 3 | $8,997/mo bundled / $9,997/mo standalone | $3M+ |
+| AI Workforce Pro – Starter | $350/user/mo | — | 1–4 users |
+| AI Workforce Pro | $1,597/mo (5 users) + $120/mo per employee over 5 | — | 5+ users |
+| Fractional CTO Level 1 | $3,297/mo | $3,797/mo | $400K+ annual revenue |
+| Fractional CTO Level 2 | $4,997/mo | $5,797/mo | $1M+ annual revenue |
+| Fractional CTO Level 3 | $8,997/mo | $9,997/mo | $3M+ annual revenue |
 
-**AI Workforce Pro credits and contract terms:**
-- AI Workforce Pro – Starter: month-to-month contract, 1M AI credits per user, $150/mo overage per 2M credits.
-- AI Workforce Pro (base): 12-month contract, 10M usage credits + 10M bonus credits (20M total), $150/mo overage per 2M credits.
-- There is no standalone/retail price for either AI Workforce Pro tier in the current catalog — do not quote a standalone figure for these two products in the client report.
+Fractional CTO setup fee: $0 at every level.
 
-**Law Firm AI Foundation Sprint (one-time onboarding):**
+**AI Workforce Pro terms:**
+- AI Workforce Pro – Starter: month-to-month contract, 1M AI credits per user, overages $150/mo. Includes access to AI Workforce Pro and a weekly AI Implementation Session.
+- AI Workforce Pro: yearly contract, 10M usage credits + 10M bonus credits (20M total), $120/mo per employee over 5, overages $150/mo. Includes access to AI Workforce Pro and a weekly AI Implementation Session.
+- There is no standalone price for either AI Workforce Pro tier — do not quote one in the client report.
+
+**Fractional CTO deliverables (per month):**
+
+| | Level 1 | Level 2 | Level 3 |
+|---|---|---|---|
+| 1:1 sessions with the fCTO | One monthly | Two monthly | Weekly |
+| Additional 1-hour sessions (optional) | Up to 2 | Up to 4 | Up to 4 |
+| Skills deployed from the skills library (clients keep access; this is set-up help) | Up to 2 | Up to 4 | Up to 4 |
+| Custom automations | Up to 1 | Up to 2 | Up to 3 |
+| Training videos on skills and automations (as needed) | ✓ | ✓ | ✓ |
+| Automation report on skills and automations | ✓ | ✓ | ✓ |
+| Law Firm AI Foundation Sprint | — | — | Included |
+
+**Law Firm AI Foundation Sprint (one-time):** includes an AI Readiness Assessment. Any firm size.
 - Standalone: $19,997
-- Paired with Fractional CTO Level 1: $14,997 (bundle discount applied internally: net $8,403 above Level 1 MRR)
-- Paired with Fractional CTO Level 2: $14,997 (bundle discount applied internally: net $5,003 above Level 2 MRR)
-- Paired with Fractional CTO Level 3: $14,997 (bundle discount applied internally: net $0 above Level 3 MRR — free when bundled with the top CTO tier)
-
-**Capacity add-ons (flag in notes if likely to apply; do not include in Block 3 by default):**
-- Additional employees above 5: $120/mo per employee + 2M AI credits
-- Overage AI credits: $150/mo per 2M credits
-- 1:1 Tech Support: $200/hr as needed
-- Optional 1:1 AI Implementation Manager: $200/mo
+- Packaged with any other service: $14,997
+- Packaged with Fractional CTO Level 1: $8,403
+- Packaged with Fractional CTO Level 2: $5,003
+- Packaged with Fractional CTO Level 3: $0 (included)
 
 **When to recommend each tier:**
-- **AI Essentials – Starter ($350/user/mo, 1–4 users):** Revenue $400K+. Small team wants to adopt AI with expert guidance at the lowest entry cost; team will do the implementation work ("DIY with managed support").
-- **AI Essentials ($1,597/mo base, 5 users):** Revenue $400K+. Same "DIY with managed support" model as Starter, but for firms with 5+ users needing seats — more cost-effective per seat than Starter once a firm has 5+ users.
-- **AI Accelerator L1 ($3,297/mo):** Revenue $400K+. Owner has limited time to manage AI rollout internally; wants a dedicated Fractional CTO leading the effort ("done-with-you"). Prefer this over AI Essentials when owner says they don't have bandwidth to manage it themselves.
-- **AI Accelerator L2 ($4,997/mo):** Revenue $1M+. Firm wants significant AI transformation — monthly custom agent builds, bi-monthly CTO strategy calls, four Skills deployed per month.
-- **AI Enterprise ($8,997/mo):** Revenue $3M+. Firm wants fully autonomous AI agents, a custom data warehouse, predictive business intelligence, and white-label IT/cybersecurity. "We are your full-service CTO."
+- **AI Workforce Pro – Starter ($350/user/mo, 1–4 users):** Small team wants to adopt AI at the lowest entry cost; the team does the implementation work with the weekly implementation session for support.
+- **AI Workforce Pro ($1,597/mo for 5 users):** Same model as Starter for firms with 5+ users — more cost-effective per seat than Starter once a firm has 5+ users.
+- **Fractional CTO Level 1 ($3,297/mo):** Revenue $400K+. Owner doesn't have time to run the AI rollout and wants a dedicated Fractional CTO leading it. Prefer this over AI Workforce Pro when the owner says they don't have bandwidth to manage it themselves.
+- **Fractional CTO Level 2 ($4,997/mo):** Revenue $1M+. Firm wants a faster rollout — two monthly fCTO sessions, up to 4 skills and up to 2 custom automations a month.
+- **Fractional CTO Level 3 ($8,997/mo):** Revenue $3M+. Firm wants weekly fCTO sessions, up to 3 custom automations a month, and the Foundation Sprint included at kickoff.
 
 ---
 
@@ -645,12 +656,13 @@ have yet — never assume every firm starts from the same Phase 1 bundle.
   actually needs and doesn't have yet (e.g. an upgraded marketing tier,
   LAW, or bookkeeping). Frame as graduation. Connect to DBM.
 - **Phase 3 — Optimize:** Add FCFO Advisor ($3,297/mo), Bookkeeping, and
-  Legal AI Workforce (LAW) AI Essentials ($1,597/mo) — but only whichever
+  Legal AI Workforce (LAW) AI Workforce Pro ($1,597/mo for 5 users, or
+  AI Workforce Pro – Starter at $350/user/mo for 1–4 users) — but only whichever
   of these the firm doesn't already have from Phase 1 or Phase 2. Frame LAW
   as deploying AI staff to handle repeatable tasks while the human team
   focuses on high-value work. Connect to DBM.
 - **Phase 4 — Market Domination:** Upgrade marketing tier. Upgrade LAW to
-  Accelerator or Enterprise tier to match firm growth.
+  a Fractional CTO level (Level 1/2/3) that matches firm growth.
 - **Phase 5 — Full SMB Ecosystem:** All services. Closing line: "The firms
   that have the freedom you described all ended up here. And it started
   exactly where we are starting you."

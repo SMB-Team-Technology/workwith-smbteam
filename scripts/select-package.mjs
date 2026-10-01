@@ -44,14 +44,16 @@ const COACHING_RETAIL = {
   'FCOO Partner':          9997,
 };
 
-// Legal AI Workforce (LAW) tiers — keep in sync with the LAW table in
-// .claude/commands/audit-write.md. AI Workforce Pro has no retail price.
+// Legal AI Workforce (LAW) tiers — source of truth is the AI Services tab of
+// the 2026 SMB Team Pricing sheet; keep in sync with the LAW section of
+// .claude/commands/audit-write.md. AI Workforce Pro has no standalone price
+// and no revenue requirement (it's limited by user count).
 const LAW_TIERS = {
-  'AI Workforce Pro – Starter': { tier: 'AI Essentials — Starter', perUser: 350, maxUsers: 4, retail: null, minRev: 400_000 },
-  'AI Workforce Pro (base)':    { tier: 'AI Essentials — Base', base: 1597, baseUsers: 5, perExtraUser: 120, retail: null, minRev: 400_000 },
-  'Fractional CTO Level 1':     { tier: 'AI Accelerator L1', bundled: 3297, retail: 3797, minRev: 400_000 },
-  'Fractional CTO Level 2':     { tier: 'AI Accelerator L2', bundled: 4997, retail: 5797, minRev: 1_000_000 },
-  'Fractional CTO Level 3':     { tier: 'AI Enterprise',     bundled: 8997, retail: 9997, minRev: 3_000_000 },
+  'AI Workforce Pro – Starter': { tier: 'AI Workforce Pro – Starter', perUser: 350, maxUsers: 4, retail: null, minRev: 0 },
+  'AI Workforce Pro (base)':    { tier: 'AI Workforce Pro', base: 1597, baseUsers: 5, perExtraUser: 120, retail: null, minRev: 0 },
+  'Fractional CTO Level 1':     { tier: 'Fractional CTO Level 1', bundled: 3297, retail: 3797, minRev: 400_000 },
+  'Fractional CTO Level 2':     { tier: 'Fractional CTO Level 2', bundled: 4997, retail: 5797, minRev: 1_000_000 },
+  'Fractional CTO Level 3':     { tier: 'Fractional CTO Level 3', bundled: 8997, retail: 9997, minRev: 3_000_000 },
 };
 
 // Shorthand reps use on calls → catalog name. Keep in sync with the
