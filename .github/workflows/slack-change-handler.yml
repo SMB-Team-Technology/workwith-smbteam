@@ -58,9 +58,27 @@ jobs:
             'fix the pricing', 'remove X from', 'update X to say', etc.
             Steps:
             1. Find the firm folder at repo root (e.g. sivia-law/, oconnor-family-law/).
-            2. Make the minimal, precise edit to the HTML file(s).
+            2. Make the minimal, precise edit to the HTML file(s). If the firm's
+               proposal_review.json has status 'pending' and the request changes the
+               package, edit package_decision.json instead, using the same rules as the
+               'propose changes' path in .github/workflows/slack-proposal-response.yml.
             3. Commit to main with a clear message.
             4. Write 1-2 sentence summary to /tmp/summary.txt.
+            Package/pricing changes: the approved catalog is the pricing tables in
+            .claude/commands/audit-write.md (Marketing, Non-Marketing, Legal AI Workforce
+            (LAW), AI Avatar, Bookkeeping, General Add-Ons, OmniSocial AI, Attorney
+            Assistant) — look a product up there before saying it isn't in the catalog,
+            and never invent a price. Resolve shorthand first: AIWP (any case, e.g. 'aiwp') / AI Workforce Pro /
+            'AI software' → AI Workforce Pro – Starter (\$350/user/mo, 1–4 users) or AI
+            Workforce Pro (\$1,597/mo for 5 users + \$120/mo per employee over 5); old names
+            AI Essentials → AI Workforce Pro, AI Accelerator L1/L2 → Fractional CTO Level
+            1/2, AI Enterprise → Fractional CTO Level 3; 'sprint' → Law Firm AI Foundation
+            Sprint; FCTO → Fractional CTO Level 1/2/3;
+            FCOO / FCFO → Advisor/Director/Partner; MC → Master's Circle; ECP → Elite Coach
+            Plus. AIWP with no tier: Starter for a team of 1–4 or unknown size (seats =
+            stated team size, else 1), base for 5+. If the product is clear but its tier or seat count isn't, use the most
+            likely tier and say which one in the summary; only stop to ask if no product
+            matches at all.
 
             --- TYPE 2: RESEND EMAIL ONLY ---
             Triggered by: 'resend the email', 're-send the email', 'send the email again',

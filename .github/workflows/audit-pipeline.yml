@@ -262,9 +262,16 @@ jobs:
           if os.path.exists(decision_path):
               with open(decision_path) as f:
                   d = json.load(f)
-              lines.append(f"*Marketing:* {d.get('marketing_name')} — ${d.get('marketing_price_bundled'):,}/mo")
+              if d.get('marketing_name'):
+                  lines.append(f"*Marketing:* {d.get('marketing_name')} — ${d.get('marketing_price_bundled'):,}/mo")
+              else:
+                  lines.append("*Marketing:* none — call was not about lead generation")
               if d.get('coaching_name'):
                   lines.append(f"*Coaching:* {d.get('coaching_name')} — ${d.get('coaching_price_bundled'):,}/mo")
+              if d.get('law_name'):
+                  seats = d.get('law_seats')
+                  seat_note = f" ({seats} seat{'s' if seats != 1 else ''})" if seats else ""
+                  lines.append(f"*AI:* {d.get('law_name')}{seat_note} — ${d.get('law_price_bundled'):,}/mo")
               lines.append(f"*Total:* ${d.get('total_bundled'):,}/mo" + (f" (saves ${d.get('total_savings'):,}/mo vs. retail)" if d.get('total_savings') else ""))
               if d.get('ad_spend_conservative'):
                   lines.append(f"*Suggested ad spend:* ${d.get('ad_spend_conservative'):,}–${d.get('ad_spend_aggressive'):,}/mo")
@@ -273,7 +280,7 @@ jobs:
               if notes:
                   lines.append("")
                   lines.append("*Why this package:*")
-                  for n in notes[:5]:
+                  for n in notes[:7]:
                       lines.append(f"  • {n}")
           else:
               lines.append("_No deterministic package decision was produced — check the research notes._")

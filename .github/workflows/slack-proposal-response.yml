@@ -259,6 +259,30 @@ jobs:
                (update the relevant tier/name/price/ad-spend fields) and append a note to its
                selection_notes array documenting the seller's override and why, e.g.
                'Seller override: switched to Dominate tier per Slack request on <date>.'
+               - The approved catalog is the pricing tables in \`.claude/commands/audit-write.md\`
+                 (Marketing, Non-Marketing, Legal AI Workforce (LAW), AI Avatar, Bookkeeping,
+                 General Add-Ons, OmniSocial AI, Attorney Assistant). Look a product up there
+                 before saying it isn't in the catalog. Never invent a price.
+               - Sellers use shorthand. Resolve it before looking up:
+                 AIWP (any case, e.g. 'aiwp') / AI Workforce Pro / 'AI software' → AI Workforce Pro – Starter
+                 (\$350/user/mo, 1–4 users) or AI Workforce Pro (\$1,597/mo for 5 users +
+                 \$120/mo per employee over 5); old names AI Essentials → AI Workforce Pro,
+                 AI Accelerator L1/L2 → Fractional CTO Level 1/2, AI Enterprise → Fractional
+                 CTO Level 3; 'sprint' / 'foundation sprint' → Law Firm AI Foundation Sprint;
+                 FCTO / fractional CTO → Fractional CTO Level 1/2/3; FCOO / fractional COO →
+                 FCOO Advisor/Director/Partner; FCFO / fractional CFO → FCFO Advisor/Director/
+                 Partner; MC → Master's Circle; ECP → Elite Coach Plus.
+                 AIWP with no tier: Starter if team_size_effective is 1–4 or team size
+                 is unknown (seats = team_size_stated, else 1), base if 5+.
+                 If the shorthand maps to one product but its tier or seat count is unclear,
+                 apply the most likely tier (team size and revenue in package_decision.json)
+                 and say in the reply which tier you used and why, so the seller can correct it —
+                 only ask instead of acting if no product matches at all.
+               - 'Change this to X + Y' REPLACES the package: anything not named is removed.
+                 Set removed products' fields to null (for marketing also null the ad_spend_*
+                 fields). LAW products go in law_tier / law_name / law_price_bundled /
+                 law_price_retail (null for AI Workforce Pro) / law_seats.
+                 Recompute total_bundled and total_savings from what remains.
             2. git add ONLY that file, commit, push (pull --rebase first).
             3. Post an updated proposal summary as a Slack reply in the SAME thread,
                in this format, then repeat the same three options as before:
