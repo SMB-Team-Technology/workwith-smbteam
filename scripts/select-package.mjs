@@ -48,7 +48,7 @@ const COACHING_RETAIL = {
 // .claude/commands/audit-write.md. AI Workforce Pro has no retail price.
 const LAW_TIERS = {
   'AI Workforce Pro – Starter': { tier: 'AI Essentials — Starter', perUser: 350, maxUsers: 4, retail: null, minRev: 400_000 },
-  'AI Workforce Pro':           { tier: 'AI Essentials — Base', base: 1597, baseUsers: 5, perExtraUser: 120, retail: null, minRev: 400_000 },
+  'AI Workforce Pro (base)':    { tier: 'AI Essentials — Base', base: 1597, baseUsers: 5, perExtraUser: 120, retail: null, minRev: 400_000 },
   'Fractional CTO Level 1':     { tier: 'AI Accelerator L1', bundled: 3297, retail: 3797, minRev: 400_000 },
   'Fractional CTO Level 2':     { tier: 'AI Accelerator L2', bundled: 4997, retail: 5797, minRev: 1_000_000 },
   'Fractional CTO Level 3':     { tier: 'AI Enterprise',     bundled: 8997, retail: 9997, minRev: 3_000_000 },
@@ -59,9 +59,12 @@ const LAW_TIERS = {
 // and the change-bot prompts in .github/workflows/slack-*.yml.
 // Order matters: more specific names first, so "AI Workforce Pro – Starter"
 // is matched before plain "AI Workforce Pro".
+const AIWP_UNSPECIFIED = 'AI Workforce Pro (tier not specified)';
 const PRODUCT_ALIASES = [
   { name: 'AI Workforce Pro – Starter', pattern: /ai workforce pro\s*[–—-]\s*starter|aiwp\s*starter|ai essentials\s*[–—-]?\s*starter/i },
-  { name: 'AI Workforce Pro',           pattern: /ai workforce pro|\baiwp\b|ai essentials\s*[–—-]?\s*base/i },
+  // Bare "AIWP" / "AI Workforce Pro" doesn't say which tier — resolved by team size in selectLawTier.
+  { name: 'AI Workforce Pro (base)',    pattern: /ai workforce pro\s*[–—(-]?\s*base\)?|aiwp\s*base|ai essentials\s*[–—-]?\s*base/i },
+  { name: AIWP_UNSPECIFIED,             pattern: /ai workforce pro|\baiwp\b/i },
   { name: 'Fractional CTO Level 3',     pattern: /(fractional cto|fcto)\s*(level|l)\s*3|ai enterprise/i },
   { name: 'Fractional CTO Level 2',     pattern: /(fractional cto|fcto)\s*(level|l)\s*2|ai accelerator\s*l2/i },
   { name: 'Fractional CTO Level 1',     pattern: /(fractional cto|fcto)\s*(level|l)\s*1|ai accelerator\s*l1/i },
@@ -321,7 +324,14 @@ function parseCallFocus(text) {
 }
 
 function selectLawTier(products, effectiveRevenue, teamSizeStated, notes) {
-  const named = (products || []).filter(p => LAW_TIERS[p]);
+  // "AIWP" alone: Starter for 1–4 users (or unknown team size), base for 5+.
+  const resolved = (products || []).map(p => {
+    if (p !== AIWP_UNSPECIFIED) return p;
+    const tier = teamSizeStated != null && teamSizeStated >= 5 ? 'AI Workforce Pro (base)' : 'AI Workforce Pro – Starter';
+    notes.push(`"AI Workforce Pro" named without a tier — using ${tier} (${teamSizeStated == null ? 'team size not stated' : `team of ${teamSizeStated}`}).`);
+    return tier;
+  });
+  const named = resolved.filter(p => LAW_TIERS[p]);
   if (!named.length) return null;
   if (named.length > 1) notes.push(`More than one AI product discussed on call (${named.join(', ')}) — using ${named[0]}; confirm with sales rep.`);
   const name = named[0];
@@ -674,7 +684,7 @@ const coaching  = selectCoachingTier(revenueStated, effectiveRevenue, teamSizeSt
 const law       = selectLawTier(callFocus.products, effectiveRevenue, teamSizeStated, focusNotes);
 const adSpend   = marketing ? estimateAdSpend(practiceAreas, marketing) : null;
 
-if (callFocus.engagement === 'AI' && !(callFocus.products || []).some(p => LAW_TIERS[p])) {
+if (callFocus.engagement === 'AI' && !(callFocus.products || []).some(p => LAW_TIERS[p] || p === AIWP_UNSPECIFIED)) {
   focusNotes.push('AI-led call but no AI product in "Products discussed on call" — review whether an AI Workforce Pro / Fractional CTO tier belongs in the package.');
 }
 

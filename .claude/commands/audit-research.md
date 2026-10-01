@@ -217,7 +217,8 @@ Extract from the discovery call transcript. Trust these values exactly as stated
 | Write this catalog name | When the transcript says |
 |---|---|
 | AI Workforce Pro – Starter | AIWP Starter, "AI software" at $350/mo or $350 per user, AI Essentials Starter |
-| AI Workforce Pro | AIWP (5+ users or $1,597/mo), AI Essentials base |
+| AI Workforce Pro (base) | AIWP base, $1,597/mo for 5 users, AI Essentials base |
+| AI Workforce Pro | AIWP / aiwp with no tier given — the script picks Starter for 1–4 users (or unknown team size), base for 5+ |
 | Fractional CTO Level 1 / Level 2 / Level 3 | FCTO, fractional CTO, AI Accelerator L1 / L2, AI Enterprise |
 | Elite Coach | Elite Coach, group coaching at ~$2,600/mo |
 | Elite Coach Plus | Elite Coach Plus, ~$3,200/mo coaching |
