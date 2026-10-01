@@ -203,11 +203,31 @@ Extract from the discovery call transcript. Trust these values exactly as stated
 - Any profitability claims made by prospect: [exact quotes only — if none stated, write "none stated"]
 - Any claims about case types or practice areas: [exact quotes only]
 - Stated call focus / product interest: [what the prospect or rep said the call was actually about — e.g. "standard marketing/growth discovery," "Fractional CTO / AI automation engagement," "coaching/ops" — if the call was framed around something other than marketing/intake growth, say so explicitly, do not default to "standard"]
+- Primary engagement: [exactly one of: marketing | coaching/ops | AI | mixed — this line is machine-read by select-package.mjs, so write only the keyword. "marketing" = the call was mainly about leads/ads/SEO/website; "coaching/ops" = mainly about coaching, delegation, team, operations, or fractional COO/CFO; "AI" = mainly about AI tools or Fractional CTO; "mixed" = marketing and a non-marketing need were both central]
+- Products discussed on call: [SMB Team products the rep or prospect named or priced on the call, comma-separated, using the exact catalog names from the alias table below — or "none". Machine-read by select-package.mjs]
+- Lead-gen gap stated: [yes/no — machine-read. "yes" only if the prospect said they want more leads/cases or asked about marketing, ads, SEO, or their website; the mere absence of marketing is not a "yes". Follow with a short exact quote]
 - Existing marketing/SEO/ad vendor engagements: [any recently signed or currently active contract with another marketing, SEO, ad, or AEO vendor — exact quote if available, or "none stated"]
 - Budget constraints stated: [any explicit statement about affordability, spend limits, or inability to commit to a larger monthly investment — exact quote if available, or "none stated"]
 ```
 
 **Dominant buying motive:** Do not accept surface answers. "More money" and "more clients" are not DBMs. The real answer is what the money or growth will allow the owner to do personally — coach their kid's team, retire, take a vacation, stop missing weekends. If not clearly stated, infer from context. Most fall into: (1) firm that runs itself so they have more time, (2) grow and sell, (3) scale and dominate.
+
+**Products discussed on call — catalog names.** Reps use shorthand and describe products by price. Write the catalog name, never the shorthand. This table must match `PRODUCT_ALIASES` in `scripts/select-package.mjs`.
+
+| Write this catalog name | When the transcript says |
+|---|---|
+| AI Workforce Pro – Starter | AIWP Starter, "AI software" at $350/mo or $350 per user, AI Essentials Starter |
+| AI Workforce Pro | AIWP (5+ users or $1,597/mo), AI Essentials base |
+| Fractional CTO Level 1 / Level 2 / Level 3 | FCTO, fractional CTO, AI Accelerator L1 / L2, AI Enterprise |
+| Elite Coach | Elite Coach, group coaching at ~$2,600/mo |
+| Elite Coach Plus | Elite Coach Plus, ~$3,200/mo coaching |
+| Coach Essentials / Coach Essentials Plus | Coach Essentials, Essentials coaching |
+| Master's Circle | MC, Master's Circle |
+| FCOO Advisor / Director / Partner | FCOO, fractional COO |
+| FCFO Advisor / Director / Partner | FCFO, fractional CFO |
+| Full Service Marketing | marketing package, ads + SEO, full service |
+
+If a price range was quoted that spans several products (e.g. "coaching ~$2,400–$3,200/mo"), list each product it could mean and say so in "Stated call focus" — do not pick one.
 
 ---
 
@@ -248,6 +268,7 @@ Before finishing, check every item. Fix anything unchecked before saving.
 - [ ] Close rate is recorded (stated or defaulted to 15%)
 - [ ] Average case value is recorded (stated or practice area default noted)
 - [ ] Stated call focus / product interest is recorded — if the call was about something other than marketing/intake growth (e.g. Fractional CTO/AI, coaching/ops), that is called out explicitly, not buried in a "note" or left implicit
+- [ ] "Primary engagement", "Products discussed on call" (catalog names only), and "Lead-gen gap stated" are each filled in with the exact format shown — select-package.mjs reads them to build the Phase 1 package
 - [ ] Existing marketing/SEO/ad vendor engagements are recorded (or "none stated")
 - [ ] Budget constraints stated by the prospect are recorded (or "none stated")
 

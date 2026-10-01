@@ -44,6 +44,38 @@ const COACHING_RETAIL = {
   'FCOO Partner':          9997,
 };
 
+// Legal AI Workforce (LAW) tiers — keep in sync with the LAW table in
+// .claude/commands/audit-write.md. AI Workforce Pro has no retail price.
+const LAW_TIERS = {
+  'AI Workforce Pro – Starter': { tier: 'AI Essentials — Starter', perUser: 350, maxUsers: 4, retail: null, minRev: 400_000 },
+  'AI Workforce Pro':           { tier: 'AI Essentials — Base', base: 1597, baseUsers: 5, perExtraUser: 120, retail: null, minRev: 400_000 },
+  'Fractional CTO Level 1':     { tier: 'AI Accelerator L1', bundled: 3297, retail: 3797, minRev: 400_000 },
+  'Fractional CTO Level 2':     { tier: 'AI Accelerator L2', bundled: 4997, retail: 5797, minRev: 1_000_000 },
+  'Fractional CTO Level 3':     { tier: 'AI Enterprise',     bundled: 8997, retail: 9997, minRev: 3_000_000 },
+};
+
+// Shorthand reps use on calls → catalog name. Keep in sync with the
+// "Products discussed on call" alias table in .claude/commands/audit-research.md
+// and the change-bot prompts in .github/workflows/slack-*.yml.
+// Order matters: more specific names first, so "AI Workforce Pro – Starter"
+// is matched before plain "AI Workforce Pro".
+const PRODUCT_ALIASES = [
+  { name: 'AI Workforce Pro – Starter', pattern: /ai workforce pro\s*[–—-]\s*starter|aiwp\s*starter|ai essentials\s*[–—-]?\s*starter/i },
+  { name: 'AI Workforce Pro',           pattern: /ai workforce pro|\baiwp\b|ai essentials\s*[–—-]?\s*base/i },
+  { name: 'Fractional CTO Level 3',     pattern: /(fractional cto|fcto)\s*(level|l)\s*3|ai enterprise/i },
+  { name: 'Fractional CTO Level 2',     pattern: /(fractional cto|fcto)\s*(level|l)\s*2|ai accelerator\s*l2/i },
+  { name: 'Fractional CTO Level 1',     pattern: /(fractional cto|fcto)\s*(level|l)\s*1|ai accelerator\s*l1/i },
+  { name: 'Elite Coach Plus',           pattern: /elite coach plus/i },
+  { name: 'Elite Coach',                pattern: /elite coach(?!\s*plus)/i },
+  { name: 'Coach Essentials Plus',      pattern: /coach essentials plus/i },
+  { name: 'Coach Essentials',           pattern: /coach essentials(?!\s*plus)/i },
+  { name: "Master's Circle",            pattern: /master'?s circle|\bmc\b/i },
+  { name: 'FCOO',                       pattern: /\bfcoo\b|fractional coo/i },
+  { name: 'FCFO',                       pattern: /\bfcfo\b|fractional cfo/i },
+  { name: 'Full Service Marketing',     pattern: /full service marketing/i },
+];
+const COACHING_PRODUCTS = new Set(['Elite Coach', 'Elite Coach Plus', 'Coach Essentials', 'Coach Essentials Plus', "Master's Circle", 'FCOO', 'FCFO']);
+
 // Conservative ad spend floors by practice area keyword ($/mo)
 const AD_SPEND_FLOORS = [
   { keywords: ['mva', 'motor vehicle', 'car accident', 'auto accident'],             floor: 10_000 },
@@ -143,7 +175,9 @@ async function fetchHubSpotRevenue(contactId) {
 // common in the current research-notes template but not matched by a plain
 // `label[:\s]+` prefix.
 const QUALIFIER = '(?:\\s*\\([^)]*\\))?';
-const PUNCT = '[\\s"‘’\'~]*';
+// Also skips a leading year label (e.g. "Annual revenue: 2023 revenue $400k"),
+// which would otherwise be read as the amount and rejected as too small.
+const PUNCT = '[\\s"‘’\'~]*(?:(?:19|20)\\d\\d\\s+(?:revenue\\s+)?(?:was\\s+|of\\s+)?)?';
 
 // A minority of research notes state the label's figure as a monthly run-rate
 // (e.g. "Annual revenue (gross / case value): ~$30K/month...") with the true
@@ -235,6 +269,88 @@ function parseTeamSize(text) {
     }
   }
   return null;
+}
+
+// Value of a "- Label: value" line in the research notes, including wrapped
+// continuation lines (indented, not starting a new "- " item). Null if absent
+// or still holding the template's [placeholder].
+function readNoteField(text, label) {
+  const re = new RegExp(`^\\s*-?\\s*${label}[:\\s]+(.+(?:\\n(?!\\s*-\\s)(?!\\s*$)\\s+.+)*)`, 'im');
+  const m = text.match(re);
+  if (!m) return null;
+  const value = m[1].replace(/\s+/g, ' ').trim();
+  return value && !value.startsWith('[') ? value : null;
+}
+
+/**
+ * Read the structured call-focus fields from the research notes
+ * (see STEP 9 in .claude/commands/audit-research.md). Each value is null when
+ * the notes predate those fields or leave them blank.
+ */
+function parseCallFocus(text) {
+  const engagementRaw = readNoteField(text, 'primary engagement');
+  let engagement = null;
+  if (engagementRaw) {
+    const e = engagementRaw.toLowerCase();
+    if (/^mixed/.test(e)) engagement = 'mixed';
+    else if (/^(coaching|ops|operations)/.test(e)) engagement = 'coaching/ops';
+    else if (/^ai\b/.test(e)) engagement = 'AI';
+    else if (/^marketing/.test(e)) engagement = 'marketing';
+  }
+
+  const productsRaw = readNoteField(text, 'products discussed on call');
+  let products = null;
+  if (productsRaw) {
+    products = [];
+    if (!/^none\b/i.test(productsRaw)) {
+      let rest = productsRaw;
+      for (const { name, pattern } of PRODUCT_ALIASES) {
+        const g = new RegExp(pattern.source, 'gi');
+        if (g.test(rest)) {
+          products.push(name);
+          rest = rest.replace(g, ' ');
+        }
+      }
+    }
+  }
+
+  const gapRaw = readNoteField(text, 'lead-gen gap stated');
+  const leadGenGap = gapRaw == null ? null : /^yes\b/i.test(gapRaw) ? true : /^no\b/i.test(gapRaw) ? false : null;
+
+  return { engagement, products, productsRaw, leadGenGap };
+}
+
+function selectLawTier(products, effectiveRevenue, teamSizeStated, notes) {
+  const named = (products || []).filter(p => LAW_TIERS[p]);
+  if (!named.length) return null;
+  if (named.length > 1) notes.push(`More than one AI product discussed on call (${named.join(', ')}) — using ${named[0]}; confirm with sales rep.`);
+  const name = named[0];
+  const t = LAW_TIERS[name];
+
+  if (effectiveRevenue < t.minRev) {
+    notes.push(`${name} discussed on call but revenue ($${effectiveRevenue.toLocaleString()}) is under its $${t.minRev.toLocaleString()} floor — not included. Confirm with sales rep.`);
+    return null;
+  }
+
+  let bundled, seats = null;
+  if (t.perUser) {
+    seats = Math.min(Math.max(teamSizeStated ?? 1, 1), t.maxUsers);
+    bundled = t.perUser * seats;
+    notes.push(`${name} discussed on call: ${seats} seat${seats > 1 ? 's' : ''} × $${t.perUser}/mo = $${bundled.toLocaleString()}/mo` +
+      (teamSizeStated == null ? ' (team size not stated — 1 seat assumed; confirm seat count).' : '.'));
+    if (teamSizeStated != null && teamSizeStated > t.maxUsers) {
+      notes.push(`Team of ${teamSizeStated} is over Starter's ${t.maxUsers}-user limit — consider AI Workforce Pro (base).`);
+    }
+  } else if (t.base) {
+    seats = Math.max(teamSizeStated ?? t.baseUsers, t.baseUsers);
+    bundled = t.base + t.perExtraUser * (seats - t.baseUsers);
+    notes.push(`${name} discussed on call: $${t.base.toLocaleString()}/mo for ${t.baseUsers} users` +
+      (seats > t.baseUsers ? ` + ${seats - t.baseUsers} extra × $${t.perExtraUser} = $${bundled.toLocaleString()}/mo.` : '.'));
+  } else {
+    bundled = t.bundled;
+    notes.push(`${name} discussed on call: $${bundled.toLocaleString()}/mo bundled.`);
+  }
+  return { tier: t.tier, name, bundled, retail: t.retail, seats };
 }
 
 function hasDedicatedOps(text) {
@@ -530,16 +646,62 @@ if (teamSizeStated === null) {
   notes.push('Team size not stated in research notes — defaulting to 3. Review for coaching tier accuracy.');
 }
 
+// Call focus — what the discovery call was actually about. Applied here so the
+// seller-facing Phase 1 package already reflects it (Pass 2's call-purpose
+// override in audit-write.md stays as a backstop). Its notes go first so they
+// show in the Slack summary.
+const callFocus = parseCallFocus(text);
+const focusNotes = [];
+console.log(`  Call focus:      ${callFocus.engagement ?? 'NOT STATED'} | products: ${callFocus.products?.join(', ') || 'none'} | lead-gen gap: ${callFocus.leadGenGap ?? 'NOT STATED'}`);
+
+let includeMarketing = true;
+if (callFocus.engagement === null) {
+  focusNotes.push('Call focus not recorded in structured fields (Primary engagement / Products discussed / Lead-gen gap) — package is revenue-based only. Check the call focus in the research notes before locking in.');
+} else if (callFocus.engagement === 'coaching/ops' || callFocus.engagement === 'AI') {
+  if (callFocus.leadGenGap === true) {
+    focusNotes.push(`${callFocus.engagement === 'AI' ? 'AI' : 'Coaching/ops'}-led call, but prospect stated a lead-gen need — marketing included.`);
+  } else if (callFocus.leadGenGap === false) {
+    includeMarketing = false;
+    focusNotes.push(`${callFocus.engagement === 'AI' ? 'AI' : 'Coaching/ops'}-led call with no lead-gen need stated — marketing left out (call-purpose rule).`);
+  } else {
+    focusNotes.push(`${callFocus.engagement === 'AI' ? 'AI' : 'Coaching/ops'}-led call but lead-gen gap not recorded — marketing kept; confirm with sales rep whether it belongs.`);
+  }
+}
+
 // Select packages
-const marketing = selectMarketingTier(revenueStated, effectiveRevenue, practiceAreas, text, notes);
+const marketing = includeMarketing ? selectMarketingTier(revenueStated, effectiveRevenue, practiceAreas, text, notes) : null;
 const coaching  = selectCoachingTier(revenueStated, effectiveRevenue, teamSizeStated, effectiveTeam, text, notes);
-const adSpend   = estimateAdSpend(practiceAreas, marketing);
+const law       = selectLawTier(callFocus.products, effectiveRevenue, teamSizeStated, focusNotes);
+const adSpend   = marketing ? estimateAdSpend(practiceAreas, marketing) : null;
+
+if (callFocus.engagement === 'AI' && !(callFocus.products || []).some(p => LAW_TIERS[p])) {
+  focusNotes.push('AI-led call but no AI product in "Products discussed on call" — review whether an AI Workforce Pro / Fractional CTO tier belongs in the package.');
+}
+
+// Coaching discussed on the call that differs from the revenue rule: flag it,
+// don't override — the coaching rules are unchanged until Sales signs off.
+const coachingDiscussed = (callFocus.products || []).filter(p => COACHING_PRODUCTS.has(p));
+const coachingParts = coaching.name.split(' + ');
+const matchesSelected = p => coachingParts.some(part => part === p || ((p === 'FCOO' || p === 'FCFO') && part.startsWith(`${p} `)));
+if (coachingDiscussed.length && !coachingDiscussed.some(matchesSelected)) {
+  focusNotes.push(`Coaching discussed on call: ${coachingDiscussed.join(' / ')}. Rules selected ${coaching.name} — confirm with sales rep.`);
+}
+
+notes.unshift(...focusNotes);
 
 // Calculate totals and savings
-const totalBundled = marketing.bundled + coaching.bundled;
-const mktSavings   = marketing.retail != null ? marketing.retail - marketing.bundled : null;
+const totalBundled = (marketing?.bundled ?? 0) + coaching.bundled + (law?.bundled ?? 0);
+const mktSavings   = marketing?.retail != null ? marketing.retail - marketing.bundled : null;
 const cchSavings   = coaching.retail  != null ? coaching.retail  - coaching.bundled  : null;
-const totalSavings = (mktSavings ?? 0) + (cchSavings ?? 0);
+const lawSavings   = law?.retail      != null ? law.retail       - law.bundled       : null;
+const totalSavings = (mktSavings ?? 0) + (cchSavings ?? 0) + (lawSavings ?? 0);
+
+// 35% cap: management fees + ad spend must not exceed 35% of monthly revenue.
+const monthlyCap = Math.round(effectiveRevenue / 12 * 0.35);
+const spendAtFloor = totalBundled + (adSpend?.conservative ?? 0);
+if (spendAtFloor > monthlyCap) {
+  notes.push(`Total at conservative ad spend ($${spendAtFloor.toLocaleString()}/mo) is over the 35% cap ($${monthlyCap.toLocaleString()}/mo on $${effectiveRevenue.toLocaleString()} revenue) — review with sales rep.`);
+}
 
 const decision = {
   confidence,
@@ -553,10 +715,16 @@ const decision = {
   team_size_effective:     effectiveTeam,
   practice_areas_detected: practiceAreas,
 
-  marketing_tier:          marketing.tier,
-  marketing_name:          marketing.name,
-  marketing_price_bundled: marketing.bundled,
-  marketing_price_retail:  marketing.retail,
+  call_focus: {
+    primary_engagement:  callFocus.engagement,
+    products_discussed:  callFocus.products,
+    lead_gen_gap:        callFocus.leadGenGap,
+  },
+
+  marketing_tier:          marketing?.tier ?? null,
+  marketing_name:          marketing?.name ?? null,
+  marketing_price_bundled: marketing?.bundled ?? null,
+  marketing_price_retail:  marketing?.retail ?? null,
   marketing_savings:       mktSavings,
 
   coaching_name:           coaching.name,
@@ -564,14 +732,18 @@ const decision = {
   coaching_price_retail:   coaching.retail,
   coaching_savings:        cchSavings,
 
-  law_tier:                null,
+  law_tier:                law?.tier ?? null,
+  law_name:                law?.name ?? null,
+  law_price_bundled:       law?.bundled ?? null,
+  law_price_retail:        law?.retail ?? null,
+  law_seats:               law?.seats ?? null,
 
   total_bundled:           totalBundled,
   total_savings:           totalSavings > 0 ? totalSavings : null,
 
-  ad_spend_conservative:   adSpend.conservative,
-  ad_spend_aggressive:     adSpend.aggressive,
-  ad_spend_rationale:      adSpend.rationale,
+  ad_spend_conservative:   adSpend?.conservative ?? null,
+  ad_spend_aggressive:     adSpend?.aggressive ?? null,
+  ad_spend_rationale:      adSpend?.rationale ?? null,
 
   selection_notes: notes,
 };
@@ -580,10 +752,11 @@ const outputPath = join(friendlyName, 'package_decision.json');
 writeFileSync(outputPath, JSON.stringify(decision, null, 2));
 
 console.log(`\nPackage decision → ${outputPath}`);
-console.log(`  Marketing:  ${marketing.name} — $${marketing.bundled.toLocaleString()}/mo`);
+console.log(`  Marketing:  ${marketing ? `${marketing.name} — $${marketing.bundled.toLocaleString()}/mo` : 'none (call-purpose rule)'}`);
 console.log(`  Coaching:   ${coaching.name} — $${coaching.bundled.toLocaleString()}/mo`);
+if (law) console.log(`  AI:         ${law.name} — $${law.bundled.toLocaleString()}/mo`);
 console.log(`  Total:      $${totalBundled.toLocaleString()}/mo`);
-console.log(`  Ad spend:   $${adSpend.conservative.toLocaleString()}–$${adSpend.aggressive.toLocaleString()}/mo (conservative: ${adSpend.rationale.conservative_basis}; aggressive: ${adSpend.rationale.aggressive_basis})`);
+if (adSpend) console.log(`  Ad spend:   $${adSpend.conservative.toLocaleString()}–$${adSpend.aggressive.toLocaleString()}/mo (conservative: ${adSpend.rationale.conservative_basis}; aggressive: ${adSpend.rationale.aggressive_basis})`);
 console.log(`  Confidence: ${confidence}`);
 if (notes.length) {
   console.log(`  Notes:`);

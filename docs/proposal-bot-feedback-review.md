@@ -1,6 +1,6 @@
 # Proposal Bot: Feedback Review Notes
 
-Working notes from going through Vanessa's feedback email (Sept 2026), one topic at a time. These notes are for discussion: no code changes have been made from them yet. Last updated Oct 1, 2026.
+Working notes from going through Vanessa's feedback email (Sept 2026), one topic at a time. These notes are for discussion. The only code change made from them so far is the call-focus fix for the starting package (Oct 1). Last updated Oct 1, 2026.
 
 ## Context
 - Sellers are holding off on using the bot's proposals until more updates are made.
@@ -93,9 +93,11 @@ Working notes from going through Vanessa's feedback email (Sept 2026), one topic
 - What should "email me this" send: the draft, or the finished proposal?
 - Which practice areas come up that the rules don't cover, and who can provide typical ad spend and case values for them?
 - Can Vanessa collect real phrases sellers use, so we can test against them?
+- **Elite Coach vs. Elite Coach Plus (awaiting Sales approval; no rule change until approved).** Today a $400K–$1M firm always gets Elite Coach Plus ($3,200/mo). Elite Coach ($2,600/mo) is only picked for $250K–$400K. Revenue alone decides it; the rules don't look at what else is in the package or at budget signals. Example: CNK Lawfirm (~$400K–$570K, two practice areas, coaching-led call) got Elite Coach Plus, but the seller wanted Elite Coach + AI Workforce Pro. Question: should Elite Coach be the default when coaching is paired with an AI product, or at the low end of $400K–$1M? Until then, when the call names a different coaching product than the rules pick, the Phase 1 summary flags it for the seller to confirm.
+- When a seller changes the package in Slack and then locks it in, should Pass 2 keep the seller's package even if its own call-purpose check would pick something else? Right now nothing says so.
 
 ## Topics not yet reviewed
-- Starting package accuracy (revenue, team size, call focus)
+- Starting package accuracy (revenue, team size): call focus now handled. Research notes record Primary engagement / Products discussed / Lead-gen gap, and select-package.mjs uses them for the Phase 1 package. See CNK Lawfirm, Oct 2026.
 - Seller changes and pricing (changes added on top of the package instead of replacing it; standalone vs bundle prices; Davis Miles)
 - Replies landing on the wrong firm
 - Builds and deliverables (edits not reaching the PPTX/PDF, links to the slides, pending reminders, HubSpot deal links, looking up a firm by email)
