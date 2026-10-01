@@ -202,7 +202,7 @@ jobs:
         run: |
           printf '%s' "$SELLER_MESSAGE" > /tmp/seller_message.txt
 
-          claude --model claude-sonnet-5 --dangerously-skip-permissions -p "
+          claude --model claude-sonnet-5-5 --dangerously-skip-permissions -p "
             You are handling a seller's reply to a Phase 1 proposal review request for
             the SMB Team Growth Audit pipeline. The full proposal notes live in
             \`$FRIENDLY_NAME/*Research_Notes.txt\` and \`$FRIENDLY_NAME/package_decision.json\`.
