@@ -13,28 +13,30 @@
     "immigration",
     "estate planning"
   ],
-  "marketing_tier": "Starter",
-  "marketing_name": "Full Service Marketing — Starter",
-  "marketing_price_bundled": 4997,
-  "marketing_price_retail": 5697,
-  "marketing_savings": 700,
-  "coaching_name": "Elite Coach Plus",
-  "coaching_price_bundled": 3200,
+  "marketing_tier": null,
+  "marketing_name": null,
+  "marketing_price_bundled": null,
+  "marketing_price_retail": null,
+  "marketing_savings": null,
+  "coaching_name": "Elite Coach",
+  "coaching_price_bundled": 2600,
   "coaching_price_retail": 3497,
-  "coaching_savings": 297,
-  "law_tier": null,
-  "total_bundled": 8197,
-  "total_savings": 997,
-  "ad_spend_conservative": 3500,
-  "ad_spend_aggressive": 14000,
-  "ad_spend_rationale": {
-    "conservative_basis": "estate planning",
-    "aggressive_basis": "scaled 4x off the conservative channel-minimum floor"
-  },
+  "coaching_savings": 897,
+  "law_tier": "AI Workforce Pro – Starter",
+  "total_bundled": 2950,
+  "total_savings": 897,
+  "ad_spend_conservative": null,
+  "ad_spend_aggressive": null,
+  "ad_spend_rationale": null,
   "selection_notes": [
     "Revenue not in research notes — sourced from HubSpot (hubspot_annual_law_firm_revenue): \"$180K - $960K\" → $570,000",
     "Team size not stated in research notes — defaulting to 3. Review for coaching tier accuracy.",
     "Revenue under $750K but multiple practice areas detected: Essentials hidden (requires single practice area) — Starter tier.",
-    "Revenue $400K–$1M: Elite Coach Plus selected."
-  ]
+    "Revenue $400K–$1M: Elite Coach Plus selected.",
+    "Seller override: replaced package with Elite Coach ($2,600/mo bundled) + AI Workforce Pro – Starter (1 seat × $350/mo; team size not stated so 1 seat assumed) and dropped Full Service Marketing — Starter per Slack request on October 1, 2026. Ad spend fields cleared since no marketing package remains."
+  ],
+  "law_name": "AI Workforce Pro – Starter",
+  "law_price_bundled": 350,
+  "law_price_retail": null,
+  "law_seats": 1
 }
