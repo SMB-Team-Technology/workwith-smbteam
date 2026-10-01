@@ -1,0 +1,440 @@
+CNK LAWFIRM — GROWTH, PROFIT & FREEDOM ROADMAP
+RESEARCH NOTES (PASS 1)
+
+Firm Name: CNK Lawfirm (legal entity: CNK Law Firm, LLC)
+Friendly Name: cnk-lawfirm
+URL: http://cnklawfirm.com
+Sales Rep: Jacob Meissner
+Proposal Call Date: October 9, 2026 (3:00 PM EDT)
+Contact: Caroline Kanja, Esq. (attorney@cnklawfirm.com, (443) 416-7835)
+Firm address (per directory research, not the transcript): 6755 Business
+  Pkwy, Suite 212, Elkridge, MD 21075 (Baltimore–Washington corridor,
+  Howard County)
+Transcript status: outcome=found, custody=machine, source=hubspot_notes
+  (Fathom AI summary via HubSpot internal notes — no human sales-rep
+  custody instructions attached)
+
+=====================================================================
+⚠ DATA-QUALITY FLAG — READ BEFORE WRITING THE REPORT
+=====================================================================
+1. The live website (cnklawfirm.com) is essentially blank. See STEP 1.
+2. AI-generated web-search summaries repeatedly claimed CNK Law Firm has
+   "5 stars / 9 reviews" and "5 stars / 7 reviews" on Birdeye. Direct
+   page fetches of BOTH underlying Birdeye URLs contradict this — both
+   pages explicitly display "NR — No reviews" / "has no reviews yet."
+   Do not use the 7/9 review figures anywhere downstream — they are
+   search-snippet artifacts, not real data. See STEP 2.
+3. Two different phone numbers appear across directories: (443)
+   416-7835 (the number on file / in the trigger record) and (667)
+   686-8463 (appearing on ReachAttorneys/ZoomInfo-derived listings).
+   Possible NAP inconsistency — see STEP 5.
+=====================================================================
+
+---------------------------------------------------------------------
+STEP 1 — WEBSITE RESEARCH
+---------------------------------------------------------------------
+- Website URL confirmed live: yes — http://cnklawfirm.com resolves
+  (HTTP 200, redirects to https://cnklawfirm.com). Confirmed via direct
+  fetch of the raw page source (not just a browser-rendered summary).
+- Last redesign date or estimated age: not determinable from a
+  redesign/footer date (no footer exists — see below). Logo asset
+  filenames are dated 2023/05 (e.g.
+  "CNK-Logo-Final-2023_Blue-One-Color-Landscape-scaled.jpg"), suggesting
+  current branding was set up around May 2023. Site runs WordPress
+  6.2.13 with the "Hello Elementor" blank-canvas theme.
+- Mobile responsive: not observed — there is no page content to assess
+  for responsive behavior (see below).
+- Homepage headline: NONE. The live homepage contains only a logo image
+  inside the site header. The `<main>` content area is completely
+  empty — no headline, no hero text, no body copy of any kind.
+- CTA above fold: no — no call-to-action of any kind exists anywhere on
+  the page.
+- Contact form location: not found. No contact form appears on the
+  homepage. The /contact and /about URLs both return HTTP 301 redirects
+  but land on pages that are equally empty (same blank-shell pattern:
+  logo only, no form, no body content).
+- Live chat present: no
+- Attorney bio present: no — not present anywhere observed
+- Video present: no
+- Blog present: no — not found; no blog/feed content discovered
+- Critical finding: the homepage, /contact, and /about pages all carry
+  `<meta name="robots" content="noindex, nofollow">` in the page
+  `<head>`. This means the site is explicitly telling Google and other
+  search engines NOT to index it. Combined with having zero body
+  content, this is a site that is both invisible to search engines by
+  its own configuration AND has nothing to show a visitor who does
+  find it. There is no navigation menu and no footer on any page
+  checked. This reads as an unfinished/under-construction WordPress
+  install rather than a live marketing site.
+
+PageSpeed mobile score: NOT OBTAINED. The public PageSpeed Insights API
+  (googleapis.com/pagespeedonline) returned HTTP 429 — "Quota exceeded
+  for quota metric 'Queries' ... quota_limit_value: 0" — on direct API
+  call and again via a second tool path. pagespeed.web.dev itself is a
+  client-side JS app that cannot be executed by available tooling. Per
+  the no-estimates rule, no number is recorded.
+PageSpeed desktop score: NOT OBTAINED — same tooling/quota limitation
+  as above.
+
+→ Website section complete. PageSpeed scores are flagged as
+  unverifiable in this environment, not fabricated. The absence of any
+  homepage content is itself a verified, high-impact finding — not a
+  tooling gap.
+
+---------------------------------------------------------------------
+STEP 2 — GOOGLE BUSINESS PROFILE
+---------------------------------------------------------------------
+- GBP found: not independently confirmed. Available tooling cannot
+  render a live Google Maps/Search knowledge panel — a direct fetch of
+  the Google search results page for "CNK Law Firm Elkridge MD" came
+  back with no business panel rendered at all (confirmed by direct
+  check, not assumed).
+- Star rating: UNCONFIRMED — see data-quality flag above. Two Birdeye
+  listings ("CNK LAW FIRM" and "CNK LAW FIRM, LLC," likely a
+  duplicate/split listing for the same business) were surfaced by
+  search snippets as "5 stars / 9 reviews" and "5 stars / 7 reviews."
+  Direct fetch of both Birdeye URLs shows "NR — No reviews" / "has no
+  reviews yet" on both. Recorded value: no confirmed star rating
+  [UNCONFIRMED — conflicting aggregator data; the only data obtained by
+  direct page fetch (Birdeye, not Google) shows zero reviews, not a
+  rating]
+- Total review count: UNCONFIRMED — direct-fetch-verified state on
+  Birdeye is 0 reviews on both listings [confirmed via Birdeye page
+  fetch — note this confirms Birdeye's own count, not Google's].
+  Separately, Avvo shows (via search snippet only; the Avvo page itself
+  returned HTTP 403 on direct fetch) an Avvo Review Score of 5.0/5.0
+  from 1 client review (dated Dec 29, 2023) for Caroline Kanja, and an
+  overall Avvo attorney rating of 6.4/10 [UNCONFIRMED — sourced from
+  Avvo search snippet, not independently confirmed via Google or via
+  direct Avvo page fetch]. No Google-specific review count or rating
+  could be retrieved in this pass.
+- Most recent review date: not observed (no confirmed reviews found to
+  date)
+- Primary category: Immigration Attorney (inferred from directory
+  listings; exact GBP category string not independently observed)
+- Photos active: not observed
+- Posts active: not observed
+
+---------------------------------------------------------------------
+STEP 3 — LOCAL 3-PACK SEARCHES
+---------------------------------------------------------------------
+NOTE ON METHOD: Available tooling cannot render Google's live local
+3-pack map widget (a direct fetch of a Google SERP returned no map
+panel/business listing content). The searches below use web search as
+a proxy for organic/directory visibility and named local competitive
+density — not a literal confirmed 3-pack snapshot. Treat "firm
+appears" below as "appears in directory/organic aggregation," not a
+confirmed map-pack placement.
+
+Practice Area 1: Immigration
+- Search 1 "immigration lawyer Elkridge MD": firm appears in directory
+  aggregation (Avvo/Justia-style listings) — not confirmed in an actual
+  map pack — named local competitors: Adam Afshin Habibi (5871
+  Washington Blvd, Elkridge — 4.9 rating per Avvo-style listing), Chidi
+  Onukwugha (6099 Claire Dr, Elkridge — 22 yrs experience), Laura A.
+  Donohue-Liban (6373 Forest Ave, Elkridge)
+- Search 2 "green card lawyer Baltimore MD": firm did not surface —
+  named firms: Law Offices of SRIS, P.C., Serrano Immigration Law,
+  Altius Immigration Law (Baltimore family-based immigration focus),
+  Law Offices of Immigration (Baltimore location)
+- Search 3 "immigration attorney near me Elkridge Howard County": firm
+  appears in directory aggregation — named local competitors: Adam
+  Afshin Habibi, Chidi Onukwugha, Eugenia Ordynsky (8182 Lark Brown Rd,
+  Elkridge, 31 yrs experience), Meetesh V Patel (Columbia, MD, 25 yrs
+  experience), Marigold Law Center
+
+Practice Area 2: Estate Planning
+- Search 1 "estate planning attorney Columbia MD": firm did NOT surface
+  at all — named local competitors: Elville and Associates, PC (4.8
+  rating, 45 reviews per aggregator), Shapiro Zwanetz & Lake (5.0
+  rating, 9 reviews per aggregator), Columbia Estate Planning, Ally
+  Legal Planning
+- Search 2 "wills and trusts attorney Elkridge MD": firm did not
+  surface — named local competitors: Geoffrey Kimball Calderone
+  (Elkridge-based, 26 yrs experience), McDonald Law Firm LLC (Columbia),
+  Julie D. Myers / Myers Law LLC, Law Offices of Marc A. Ominsky, LLC
+  (Ellicott City)
+- Search 3 "estate planning lawyer near me Howard County Maryland": firm
+  did not surface — named local competitors: Elville and Associates,
+  Law Offices of Thomas Stahl (Columbia), Shapiro Zwanetz & Lake,
+  Mulinazzi Law Office, Ally Legal Planning
+
+Takeaway: CNK does not surface at all in any of the 3 estate-planning
+searches run, versus partial directory-level presence for immigration
+searches. Consistent with estate planning being the smaller (20%) line
+of business per the transcript.
+
+---------------------------------------------------------------------
+STEP 4 — COMPETITOR REVIEW COUNTS
+---------------------------------------------------------------------
+No competitor review count below is directly confirmed via Google —
+available tooling could not render live Google listings for CNK or any
+competitor in this pass. All figures are aggregator/search-snippet
+sourced and tagged accordingly. CNK's own confirmed-live count is 0
+(Birdeye, direct fetch) / unconfirmed on Google, so no ranking-inversion
+check against "dominating" competitors is possible with confirmed
+Google data — flagging this gap explicitly rather than asserting it.
+
+- Competitor 1 (Immigration): Adam Afshin Habibi — reviews: 15
+  [UNCONFIRMED — sourced from Avvo-style aggregator listing, not
+  independently confirmed via Google] — rating: 4.9 [UNCONFIRMED — same
+  source]
+- Competitor 2 (Immigration): Chidi Onukwugha — reviews: not stated in
+  source [UNCONFIRMED — n/a] — rating: 5.0 [UNCONFIRMED — sourced from
+  Avvo-style aggregator listing, not independently confirmed via
+  Google]
+- Competitor 3 (Estate Planning): Elville and Associates, PC —
+  reviews: 45 [UNCONFIRMED — sourced from aggregator search snippet
+  (Martindale/Yelp-style), not independently confirmed via Google] —
+  rating: 4.8 [UNCONFIRMED — same source]
+- Competitor 4 (Estate Planning): Shapiro Zwanetz & Lake — reviews: 9
+  [UNCONFIRMED — sourced from aggregator search snippet, not
+  independently confirmed via Google] — rating: 5.0 [UNCONFIRMED — same
+  source]
+
+---------------------------------------------------------------------
+STEP 5 — DIRECTORY LISTINGS
+---------------------------------------------------------------------
+- Avvo: yes — profile exists for Caroline Nyamunya Kanja
+  (avvo.com/attorneys/21075-md-caroline-kanja-4814302.html); direct page
+  fetch returned HTTP 403 (blocked), so profile content is snippet-only
+  and unverified beyond existence.
+- Justia: general Elkridge/Howard County immigration-law and
+  estate-planning directory pages exist and were checked; no dedicated
+  CNK Law Firm profile was independently confirmed within them during
+  this pass.
+- FindLaw: not found in search results.
+- Yelp: not found in search results under the firm's name.
+- Lawyer.com: yes — both a firm page (lawyer.com/firm/cnk-law-firm.html)
+  and an individual attorney page for Caroline Kanja exist.
+- Other directories found: Clearway Law, ReachAttorneys.com,
+  ZoomInfo, RocketReach (corporate-data sites, not consumer legal
+  directories), QualityBusinessAwards.com (lists CNK as "Best
+  Immigration Lawyer in Elkridge, Maryland" for both 2025 and 2026 —
+  this reads as a low-credibility pay-to-play/SEO "awards mill" site,
+  not a strong trust signal, and should not be cited in the report as
+  meaningful social proof).
+- NAP consistency: POSSIBLE INCONSISTENCY — the phone number on file
+  for this account, (443) 416-7835, does not match the phone number
+  appearing on the ReachAttorneys.com / ZoomInfo-derived listing,
+  (667) 686-8463. Address (6755 Business Pkwy, Suite 212, Elkridge, MD
+  21075) appears consistent across the directories checked.
+- Geo-targeting landing pages for surrounding cities (Baltimore,
+  Columbia, Ellicott City, Laurel): none found — the live site has no
+  content pages of any kind to evaluate, let alone geo-targeted ones.
+
+→ Website, GBP, local SEO, and directory sections complete and saved.
+
+---------------------------------------------------------------------
+STEP 6 — GOOGLE ADS
+---------------------------------------------------------------------
+Available tooling could not render live Google SERP paid-ad slots (a
+direct fetch of a Google search results page returned no ad content,
+consistent with prior sessions' documented tooling limitation). Per the
+ADS FRAMING RULE, no certainty claim is made in either direction.
+
+Practice Area 1: Immigration
+- Firm ads observed: not observed (tooling cannot confirm live ad
+  placements — does not appear to be running ads for this search based
+  on available signals)
+- Named local competitors running ads: not observed with available
+  tooling — no specific local firm could be confirmed running paid
+  search ads for immigration-related terms in this pass
+
+Practice Area 2: Estate Planning
+- Firm ads observed: not observed
+- Named local competitors running ads: not observed with available
+  tooling
+
+NOTE: Re-verify with live SERP access before final report language is
+locked — this is an unobserved result, not a confirmed negative.
+
+---------------------------------------------------------------------
+STEP 7 — LOCAL SERVICE ADS
+---------------------------------------------------------------------
+- Firm appears in LSA: not observed (tooling cannot render LSA units)
+- Google Screened: not observed
+- LSA review count: n/a — not observed
+- Named local competitors in LSA: not observed with available tooling
+
+---------------------------------------------------------------------
+STEP 8 — META ADS
+---------------------------------------------------------------------
+- Firm has active ads: not observed — facebook.com/ads/library could
+  not be reached by available tooling (connection failure on direct
+  fetch attempt). No dedicated Facebook business page for CNK Law Firm
+  was found via search either; the one LinkedIn profile found
+  (linkedin.com/in/caroline-kanja-esq-219195284) is a personal profile
+  for Caroline Kanja, not a firm page. No Instagram presence found
+  ("CNK & Co Law Firm" on Instagram and "CNK & Associates LLP" on
+  LinkedIn are unrelated firms in Israel and India, respectively — not
+  this business).
+- Named local competitor 1: Elville and Associates, PC — active ads:
+  not observed (same Ad Library access limitation)
+- Named local competitor 2: Adam Afshin Habibi — active ads: not
+  observed (same Ad Library access limitation)
+
+NOTE: Meta Ad Library access failed outright in this environment
+(connection error) rather than returning a renderable "no ads" state —
+re-verify manually before finalizing report if Meta ad activity is a
+claim the report needs to make. Firm's social-media footprint overall
+appears to be effectively nonexistent (no confirmed firm Facebook,
+Instagram, or LinkedIn company page), which is itself a usable finding.
+
+---------------------------------------------------------------------
+STEP 9 — TRANSCRIPT EXTRACTION
+---------------------------------------------------------------------
+- Practice areas confirmed: Immigration (80% of business) and Estate
+  Planning (20% of business)
+- Current lead sources: "Marketing: Referral-based; no active marketing
+  due to capacity constraints" — exact framing from the transcript
+- Ads ever run: not stated — transcript indicates no active marketing
+  of any kind currently, consistent with "no ads ever run" but this is
+  an inference, not a direct quote about ad history specifically
+- Team size: not explicitly broken out by role/count in the transcript;
+  transcript states staff are "new and still training" and that
+  Caroline must personally review/sign all legal work. Paralegal
+  turnover cycle is 4–5 months (high turnover, not a stated headcount).
+  No specific total headcount number given — recorded as "not stated"
+  for exact team size.
+- Annual revenue (gross / case value): 2023 revenue $400k; 2024 goal
+  $650k; starting point referenced as $152k (likely an early-year
+  baseline). Current intake volume 12–15 new clients/month, up from
+  8–10/month previously.
+- Annual revenue (net / take-home / collected): not distinguished from
+  gross in the transcript
+- Fee structure: not stated
+- Revenue goal: 12-month goal of $1M+ stated by Caroline; Jacob (sales
+  rep) suggested $1.3M is achievable — both figures from the transcript,
+  record both
+- Average case value: not stated
+- Current close rate: not stated — default to 15% per methodology
+- Number of locations: 1 (not explicitly stated as "1" but no
+  additional office mentioned as currently operating); transcript notes
+  the firm is "Acquiring another firm by end of October" (2026),
+  adding more cases — a near-term expansion event, not a current
+  second location
+- Spanish campaign needed: not mentioned/not stated
+- Dominant buying motive: Clearly and explicitly stated in this
+  transcript — Caroline's stated strategic goal is to transition from
+  "attorney" to "CEO" by building a self-managing team, reduce her
+  80-hour workweeks to a "healthy 40 hours/week," and take a "Japan
+  plan" vacation with family. This is a direct, explicit DBM (not an
+  inference): bucket (1) "firm that runs itself so they have more
+  time," with a specific, named personal reward (the Japan trip) tied
+  to it.
+- Any profitability claims made by prospect: none stated beyond the
+  revenue figures already captured above (no margin/profit-percentage
+  claims made)
+- Any claims about case types or practice areas: Immigration (80%) and
+  Estate Planning (20%) is the only case-type breakdown given; no
+  claims about specific immigration sub-case-types (e.g. asylum vs.
+  family-based) were made
+- Stated call focus / product interest: Standard marketing/growth and
+  coaching/ops discovery call — NOT a Fractional CTO/AI-only
+  engagement. The call did cover one AI/software line item (SMB Team's
+  $350/month AI software for automation, reminders, inbox
+  organization), but the bulk of the proposed solutions and the
+  stated strategic goal (CEO transition, delegation, self-managing
+  team) point to SMB Team's coaching programs (~$2,400–$3,200/month)
+  as the primary fit, alongside near-term local-SEO "immediate wins"
+  (Google Business Profile update, review-generation process). This is
+  a coaching/ops-led conversation with a marketing/local-SEO
+  secondary track, not a pure lead-generation/ad-spend conversation —
+  flag this framing for /audit-write so the report leans into
+  delegation/capacity/systems language alongside the local-visibility
+  findings from this research pass.
+- Existing marketing/SEO/ad vendor engagements: none stated
+- Budget constraints stated: none stated explicitly; however, the
+  firm's entire growth narrative is built around capacity/time
+  constraints rather than stated inability to pay, so no budget
+  objection should be assumed
+
+---------------------------------------------------------------------
+STEP 10 — COMPETITIVE URGENCY SCORE
+---------------------------------------------------------------------
+Score: 6/10
+
+Reasoning: CNK Law Firm's own digital footprint is close to zero — a
+non-indexed, contentless website (noindex/nofollow, no headline, no
+CTA, no contact form), no confirmed Google reviews, and no confirmed
+social media presence. However, the LOCAL MARKET ITSELF is not shown
+by this research to be running comprehensive, aggressive, multi-channel
+campaigns either — no competitor's Google Ads, LSA, or Meta ad activity
+could be confirmed in this pass (a tooling limitation, not a confirmed
+absence), and several named immigration competitors in Elkridge appear
+to rely on the same directory-listing visibility CNK does, rather than
+dominant paid or organic presence. The real urgency driver here is
+asymmetric: CNK is further behind on basic digital fundamentals (an
+indexable, functioning website; any review presence at all) than the
+local competitors identified, several of whom have been established
+longer (Chidi Onukwugha, 22 yrs; Eugenia Ordynsky, 31 yrs) and show at
+least some review/rating signal where CNK currently shows none. Score
+reflects a meaningful and widening fundamentals gap rather than
+confirmed multi-channel competitor dominance.
+
+Named specific local competitor threats:
+1. Chidi Onukwugha (Elkridge, MD) — 22 years in practice at the same
+   immigration-law specialty, longer local tenure than CNK
+2. Eugenia Ordynsky (Elkridge, MD) — 31 years of experience, deepest
+   local tenure found among named immigration competitors
+3. Elville and Associates, PC (Columbia/Howard County) — established
+   estate-planning firm with an aggregator-reported 45 reviews at 4.8
+   stars [UNCONFIRMED via Google], far outpacing any review signal
+   found for CNK's estate-planning line of business, where CNK did not
+   surface in any of the three searches run
+
+Dynamic sentence (Score 4–6): "A score of 6 means competitors have
+meaningful advantages in one or more areas and are pulling ahead. You
+are not invisible yet — but the window to close the gap is narrowing.
+Every month without action is a month they extend their lead."
+
+---------------------------------------------------------------------
+PASS 2 — VERIFICATION CHECKLIST
+---------------------------------------------------------------------
+[x] Every number in the notes matches actually observed data, or is
+    explicitly flagged as not obtained / UNCONFIRMED / contradicted by
+    direct fetch — none fabricated
+[x] Competitor review counts checked against the prospect's own count —
+    prospect's own confirmed-live count is 0 (Birdeye direct fetch) /
+    not confirmed on Google; this gap is called out explicitly in STEP
+    4 rather than silently assuming an inversion check passed
+[x] Every review count and star rating (firm and competitor) carries a
+    verification-method tag per the REVIEW-DATA VERIFICATION RULE
+[x] Annual revenue recorded per the transcript (gross figures given;
+    net not distinguished from gross; fee structure recorded as not
+    stated)
+[x] Ad sections (Google Ads, LSA, Meta) cover both practice areas
+    (Immigration, Estate Planning) — flagged as not observed due to
+    tooling limits, never asserted as a confirmed negative
+[x] No section states "you are not running ads" — only "not observed" /
+    "does not appear to be running ads" language used throughout
+[x] No profitability or business claim appears that did not come from
+    the transcript
+[x] No competitor reference uses generic labels — only specific named
+    local firms used throughout (Adam Afshin Habibi, Chidi Onukwugha,
+    Laura A. Donohue-Liban, Eugenia Ordynsky, Meetesh V Patel, Elville
+    and Associates, Shapiro Zwanetz & Lake, McDonald Law Firm, Julie D.
+    Myers, Marc A. Ominsky, etc.)
+[x] PageSpeed scores: NOT obtained — flagged explicitly as a tooling/
+    quota limitation (HTTP 429, quota_limit_value 0) rather than
+    estimated or fabricated
+[x] DBM recorded as an explicit transcript quote/paraphrase (CEO
+    transition, 40-hour week, Japan trip), not an inference
+[x] Revenue goal recorded ($1M+ stated by Caroline; $1.3M suggested as
+    achievable by Jacob)
+[x] Close rate recorded — not stated, defaulted to 15%
+[x] Average case value recorded — not stated in transcript, no default
+    available
+[x] Stated call focus recorded — standard marketing/coaching/ops
+    discovery call with a secondary AI-software line item; explicitly
+    NOT a Fractional CTO/AI-only engagement; flagged for /audit-write
+[x] Existing marketing/SEO/ad vendor engagements recorded: none stated
+[x] Budget constraints recorded: none stated
+
+ADDITIONAL FLAG FOR /audit-write: The AI-search-summary vs. direct-fetch
+discrepancy on Birdeye review counts (STEP 2) is the single most
+important data-integrity item in this file — do not let "5 stars / 9
+reviews" leak into the report under any framing. The confirmed,
+direct-fetch state is zero reviews on Birdeye, with Google's own
+rating/count unconfirmed/unobtainable in this pass.
