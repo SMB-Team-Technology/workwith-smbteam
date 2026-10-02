@@ -1,51 +1,48 @@
 {
-  "confidence": "low",
-  "revenue_stated": null,
+  "confidence": "high",
+  "revenue_stated": "$1,000,000 annual revenue (seller, via Slack 2026-10-02)",
   "net_revenue_stated": null,
   "is_contingency_practice": false,
-  "revenue_effective": 570000,
-  "revenue_source": "hubspot_annual_law_firm_revenue",
-  "revenue_label": "$180K - $960K",
+  "revenue_effective": 1000000,
+  "revenue_source": "seller_override_slack",
+  "revenue_label": "$1M - $2M",
   "team_size_stated": null,
   "team_size_effective": 3,
   "practice_areas_detected": [
-    "not stated on call. per firm website (not call):",
-    "dui defense",
-    "criminal defense",
-    "domestic violence / restraining orders"
+    "dui defense (primary focus, Glendale CA)"
   ],
   "call_focus": {
-    "primary_engagement": null,
-    "products_discussed": [],
-    "lead_gen_gap": null
+    "primary_engagement": "Web + SEO only",
+    "products_discussed": [
+      "Web + SEO"
+    ],
+    "lead_gen_gap": "Wants to be found for web/SEO in Glendale and surrounding areas"
   },
-  "marketing_tier": "Starter",
-  "marketing_name": "Full Service Marketing — Starter",
-  "marketing_price_bundled": 4997,
-  "marketing_price_retail": 5697,
-  "marketing_savings": 700,
-  "coaching_name": "Elite Coach Plus",
-  "coaching_price_bundled": 3200,
-  "coaching_price_retail": 3497,
-  "coaching_savings": 297,
+  "marketing_tier": "Growth",
+  "marketing_name": "Web + SEO Growth (standalone)",
+  "marketing_price_bundled": null,
+  "marketing_price_retail": 5897,
+  "marketing_savings": 0,
+  "coaching_name": null,
+  "coaching_price_bundled": null,
+  "coaching_price_retail": null,
+  "coaching_savings": null,
   "law_tier": null,
   "law_name": null,
   "law_price_bundled": null,
   "law_price_retail": null,
   "law_seats": null,
-  "total_bundled": 8197,
-  "total_savings": 997,
-  "ad_spend_conservative": 5500,
-  "ad_spend_aggressive": 20000,
-  "ad_spend_rationale": {
-    "conservative_basis": "dui defense",
-    "aggressive_basis": "capped by Starter tier's ad cap"
-  },
+  "total_bundled": 5897,
+  "total_savings": 0,
+  "ad_spend_conservative": null,
+  "ad_spend_aggressive": null,
+  "ad_spend_rationale": null,
   "selection_notes": [
-    "Call focus not recorded in structured fields (Primary engagement / Products discussed / Lead-gen gap) — package is revenue-based only. Check the call focus in the research notes before locking in.",
-    "Revenue not in research notes — sourced from HubSpot (hubspot_annual_law_firm_revenue): \"$180K - $960K\" → $570,000",
-    "Team size not stated in research notes — defaulting to 3. Review for coaching tier accuracy.",
-    "Revenue under $750K but multiple practice areas detected: Essentials hidden (requires single practice area) — Starter tier.",
-    "Revenue $400K–$1M: Elite Coach Plus selected."
+    "Call focus not recorded in structured fields (Primary engagement / Products discussed / Lead-gen gap) \u2014 package is revenue-based only. Check the call focus in the research notes before locking in.",
+    "Revenue not in research notes \u2014 sourced from HubSpot (hubspot_annual_law_firm_revenue): \"$180K - $960K\" \u2192 $570,000",
+    "Team size not stated in research notes \u2014 defaulting to 3. Review for coaching tier accuracy.",
+    "Revenue under $750K but multiple practice areas detected: Essentials hidden (requires single practice area) \u2014 Starter tier.",
+    "Revenue $400K\u2013$1M: Elite Coach Plus selected.",
+    "Seller override (Slack, 2026-10-02): proposal flagged as incorrect. Firm does $1,000,000/yr, focuses on DUI defense in Glendale CA, wants web/SEO visibility in surrounding areas, web/SEO only. Replaced Full Service Starter + Elite Coach Plus with Web + SEO Growth, sold standalone (no coaching, no ads). Growth tier chosen because $1M falls in the $1M-$2M revenue band and multi-city geo content needs favor the higher content tier; stand-alone price $5,897/mo per Scoping_and_Ad_Spend_Guide.md. Alternative if seller wants lower: Web + SEO Starter $3,997/mo stand-alone ($3,497 bundled, requires coaching pairing). Total SMB spend $5,897 is within the 35%-of-revenue cap ($29,167/mo)."
   ]
 }
