@@ -1,0 +1,137 @@
+DAVIS MILES PLLC — SECTION 11 WORKINGS (INTERNAL — NOT CLIENT-FACING)
+Prepared for: Michael Kopp | Call date: October 6, 2026
+
+=====================================================================
+PRICE LOOKUP (confirmed against Scoping_and_Ad_Spend_Guide.md and package_decision.json)
+=====================================================================
+- Marketing package selected: Paid Ads Starter (Starter tier, ads-only sub-package)
+  - Bundled price: $2,497/mo in catalog; SELLER OVERRIDE applied (Slack, Sept 25, 2026)
+    removing the bundled discount -> quoted at flat stand-alone $3,497/mo
+  - Stand-alone price (from table): $3,497/mo
+  - Savings shown to client: $0 (no strikethrough row, no savings callout)
+- Non-marketing package selected: none (coaching dropped per seller override)
+- Legal AI Workforce (LAW): none
+- AI Avatar / Video Growth add-on: none
+- Total monthly investment: $3,497/mo
+- Total savings: $0/mo
+
+Source: davis-miles/package_decision.json (confidence: high; marketing_tier Starter;
+marketing_price_bundled 3497; coaching null; ad_spend_conservative 3500;
+ad_spend_aggressive 16000). Selection notes document three seller overrides.
+
+=====================================================================
+TRANSCRIPT-STATED NEED OVERRIDE CHECK
+=====================================================================
+1. Call-purpose: NOT triggered. Call was a standard marketing/lead-gen discovery call
+   framed as an agency replacement (research notes, top block and STEP 9).
+2. Existing-vendor: LITERALLY MET (Elevato is the current agency of record) but NOT APPLIED.
+   Reason: the firm is dissatisfied and actively shopping to REPLACE Elevato; the call is
+   about a marketing replacement, so the firm does have a marketing need. The override's
+   purpose (client just committed and has no gap) does not fit. Applying it literally would
+   remove the only package the rep and seller (Slack override) selected. REP/SELLER TO
+   CONFIRM this reading before the proposal is sent.
+3. Budget-reality: not triggered (no affordability concern stated).
+4. Effective-revenue: not triggered (net not distinguished from gross; no contingency fee).
+
+=====================================================================
+35% CAP CHECK
+=====================================================================
+Revenue $785,161/yr = $65,430/mo. 35% cap = $22,900/mo.
+Management fee $3,497 + aggressive ad spend $16,000 = $19,497 (29.8%). Within cap.
+NOTE: the ~$20k/mo Google spend the firm has today + Meta (~$75/day) + $3,497 fee would
+be ~$25.8k (~39%) and would EXCEED the cap. On the call the proposal referenced a fee
+covering up to $25k ad spend; Paid Ads Starter cap is $20,000. Client-facing range stays
+at the decision-file figures ($3,500–$16,000). Confirm with rep which figure was verbally
+discussed.
+
+=====================================================================
+AD SPEND AND ROI (client-facing figures are estimates)
+=====================================================================
+Practice area: Family Law (Arizona). Market: Phoenix metro (Tier 2).
+Average case value: $5,000 (transcript: average retainer).
+Lead-to-signed-case rate used: 15.6% (= 16.5 signed cases / 106 raw leads, from the
+rep's proposal math on the call). The stated 20% is a consultation-to-retainer rate;
+applying it to raw leads would overstate results (see sensitivity below).
+
+CPL midpoints (family law): Google $100 | LSA $80 | Meta retargeting $57.50 | Meta cold $85.
+
+CONSERVATIVE — $3,500/mo (decision file; Google PPC channel minimum only)
+- Blended CPL: $100 x 1.20 cushion = $120
+- Leads: 3,500 / 120 = 29.2
+- Cases: 29.2 x 15.6% = 4.5  (shown as ~4–5)
+- Revenue: 4.5 x $5,000 = ~$22,700
+- Return: 6.5x
+
+AGGRESSIVE — $16,000/mo (decision file; seller override raised from $14,000)
+- Channel mix weighted by channel minimums (Google 34.3% / LSA 19.6% /
+  Meta retargeting 11.8% / Meta cold 34.3%); no cushion
+- Blended CPL: $85.93
+- Leads: 16,000 / 85.93 = 186.2
+- Cases: 186.2 x 15.6% = 29.0
+- Revenue: 29.0 x $5,000 = ~$144,900
+- Return: 9.1x
+
+SENSITIVITY: at the stated 20% rate the conservative case yields ~5.8 cases / $29,167 / 8.3x
+and the aggressive case ~37.2 cases / $186,195 / 11.6x. The aggressive projection exceeds
+the ~16.7 cases/month ($1M/yr at $5,000) the goal requires; temper in conversation.
+
+WHY THIS RANGE (client-facing sentence used in Block 4):
+"To turn high-intent Arizona family law searches in Tempe, Mesa, and Chandler into signed
+retainers before Arizona Law Group and other firms capture them."
+
+=====================================================================
+DBM STATEMENT (Block 1)
+=====================================================================
+Inferred (no personal motive stated on the call): scale and dominate — reach $1,000,000 in
+Arizona family law revenue by closing a ~$215,000 gap. Block 1: "We help established
+multi-office Arizona family law firms get a steady flow of qualified consultations that
+turn into signed retainers so they can reach $1,000,000 in Arizona family law revenue."
+
+=====================================================================
+QUICK WIN OPPORTUNITIES (7)
+=====================================================================
+1. Lead Gen — Fix LSA management (transcript pain point; no competitor)
+2. Intake — Qualify leads before booking consultation (<50% show rate)
+3. Profit — Track every lead through to signed case (Lawmatics not integrated)
+4. Lead Gen — Consolidate listings/build reviews (competitor: Arizona Law Group)
+5. Lead Gen — City pages for Chandler/Gilbert/Scottsdale/Peoria (competitor: Edwards & Petersen)
+6. Team — Consistent consultation approach (attorney approach cited)
+7. Lead Gen — Retargeting before doubling Meta spend ($75 -> $150/day)
+
+=====================================================================
+FIRST 90 DAYS (package-keyed: Paid Ads Starter only)
+=====================================================================
+Ads-only sub-package -> only ads-launch actions (no web/SEO/GBP actions added):
+- Google Ads for Arizona family law (Tempe, Mesa, Glendale, surrounding cities)
+- Local Service Ads take-over and optimization
+- Meta retargeting + lead campaigns
+
+=====================================================================
+ESCALATION FLAGS (INTERNAL ONLY)
+=====================================================================
+- Review counts unconfirmed — verify live before the call. All firm and competitor review
+  counts/ratings in research notes are tagged UNCONFIRMED; client report uses qualitative
+  framing only (no numbers printed).
+- PageSpeed scores NOT OBTAINED (Google API quota 429, retried during Pass 2). Report states
+  scores were unavailable. Re-run live and update section 06 if desired.
+- Paid Ads (ads-only) sub-package is normally "must be paired with coaching/advisory";
+  coaching removed per seller override (Slack, Sept 25, 2026). Confirm approval.
+- Paid Ads tiers bundle OmniSocial AI per catalog note -> OmniSocial AI proposals need
+  sales-ops approval (72-hour turnaround). Confirm before sending.
+- Block 2 deliverables include Map Pack and ChatGPT search visibility, YouTube video ads —
+  taken from the scope the rep proposed on the call (research notes STEP 9). Confirm these
+  match the Paid Ads Starter catalog scope.
+- Family Law in top-10 metro (Phoenix MSA) -> approval required.
+- Website: PageSpeed/mobile responsiveness unverified; ads-only requires a good existing
+  website. Site has attorney bios, CTA, blog, but no city pages — confirm site is adequate.
+- Ad spend: client has ~$20k/mo today; proposed range $3,500–$16,000 (decision file).
+  Confirm range with rep (see 35% cap note).
+- Team size not stated (defaulted to 3 in decision file) — Team pillar rating is provisional.
+
+=====================================================================
+ROADMAP NOTES
+=====================================================================
+Phase 1: Paid Ads Starter (what the firm is buying).
+Phase 2: FCOO Advisor $3,297/mo (not in Phase 1) — consultation process and accountability.
+Phase 3: FCFO Advisor $3,297/mo (min revenue $400K met), bookkeeping support as needed
+         (no price quoted), Legal AI Workforce — AI Workforce Pro from $350/user/mo.
