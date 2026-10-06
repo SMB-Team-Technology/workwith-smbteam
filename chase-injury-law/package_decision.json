@@ -1,32 +1,48 @@
 {
   "confidence": "medium",
   "revenue_stated": null,
+  "net_revenue_stated": null,
+  "is_contingency_practice": false,
   "revenue_effective": 180000,
   "revenue_source": "hubspot_annual_law_firm_revenue",
   "revenue_label": "$0 - $180K",
-  "team_size_stated": null,
-  "team_size_effective": 3,
+  "team_size_stated": 1,
+  "team_size_effective": 1,
   "practice_areas_detected": [
     "- workers' compensation (primary — \"experts in work comp in florida\" is stated long-term vision)"
   ],
+  "call_focus": {
+    "primary_engagement": null,
+    "products_discussed": null,
+    "lead_gen_gap": null
+  },
   "marketing_tier": "Essentials",
   "marketing_name": "Full Service Marketing — Essentials",
-  "marketing_price_bundled": 3397,
-  "marketing_price_retail": null,
-  "marketing_savings": null,
+  "marketing_price_bundled": 3497,
+  "marketing_price_retail": 3797,
+  "marketing_savings": 300,
   "coaching_name": "Elite Coach",
   "coaching_price_bundled": 2600,
   "coaching_price_retail": 3497,
   "coaching_savings": 897,
   "law_tier": null,
-  "total_bundled": 5997,
-  "total_savings": 897,
+  "law_name": null,
+  "law_price_bundled": null,
+  "law_price_retail": null,
+  "law_seats": null,
+  "total_bundled": 6097,
+  "total_savings": 1197,
   "ad_spend_conservative": 3000,
-  "ad_spend_aggressive": 7500,
+  "ad_spend_aggressive": 5000,
+  "ad_spend_rationale": {
+    "conservative_basis": "no practice area matched a channel-minimum table — default floor",
+    "aggressive_basis": "capped by Essentials tier's ad cap"
+  },
   "selection_notes": [
+    "Call focus not recorded in structured fields (Primary engagement / Products discussed / Lead-gen gap) — package is revenue-based only. Check the call focus in the research notes before locking in.",
     "Revenue not in research notes — sourced from HubSpot (hubspot_annual_law_firm_revenue): \"$0 - $180K\" → $180,000",
-    "Team size not stated in research notes — defaulting to 3. Review for coaching tier accuracy.",
-    "Revenue under $400K: Essentials tier.",
-    "Revenue under $250K: Elite Coach selected, scoping approval required."
+    "Revenue under $750K, single practice area detected: Essentials tier. Essentials also requires a single location — confirm with sales rep before finalizing.",
+    "Revenue under $250K: Elite Coach selected, scoping approval required.",
+    "Total at conservative ad spend ($9,097/mo) is over the 35% cap ($5,250/mo on $180,000 revenue) — review with sales rep."
   ]
 }
