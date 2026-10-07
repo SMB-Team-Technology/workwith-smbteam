@@ -32,26 +32,26 @@
     "lead_gen_gap": true
   },
   "marketing_tier": "Starter",
-  "marketing_name": "Full Service Marketing — Starter",
-  "marketing_price_bundled": 4997,
-  "marketing_price_retail": 5697,
-  "marketing_savings": 700,
-  "coaching_name": "Elite Coach Plus",
-  "coaching_price_bundled": 3200,
-  "coaching_price_retail": 3497,
-  "coaching_savings": 297,
+  "marketing_name": "Paid Ads Starter (stand-alone)",
+  "marketing_price_bundled": 3497,
+  "marketing_price_retail": 3497,
+  "marketing_savings": 0,
+  "coaching_name": null,
+  "coaching_price_bundled": null,
+  "coaching_price_retail": null,
+  "coaching_savings": null,
   "law_tier": "AI Workforce Pro – Starter",
   "law_name": "AI Workforce Pro – Starter",
   "law_price_bundled": 350,
   "law_price_retail": null,
   "law_seats": 1,
-  "total_bundled": 8547,
-  "total_savings": 997,
+  "total_bundled": 3847,
+  "total_savings": 0,
   "ad_spend_conservative": 10000,
   "ad_spend_aggressive": 20000,
   "ad_spend_rationale": {
     "conservative_basis": "car accidents",
-    "aggressive_basis": "capped by Starter tier's ad cap"
+    "aggressive_basis": "capped by Paid Ads Starter tier's $20,000 ad cap"
   },
   "selection_notes": [
     "\"AI Workforce Pro\" named without a tier — using AI Workforce Pro – Starter (team size not stated).",
@@ -61,6 +61,7 @@
     "Team size not stated in research notes — defaulting to 3. Review for coaching tier accuracy.",
     "Revenue under $750K but multiple practice areas detected: Essentials hidden (requires single practice area) — Starter tier.",
     "Revenue $400K–$1M: Elite Coach Plus selected.",
-    "Total at conservative ad spend ($18,547/mo) is over the 35% cap ($16,625/mo on $570,000 revenue) — review with sales rep."
+    "Total at conservative ad spend ($18,547/mo) is over the 35% cap ($16,625/mo on $570,000 revenue) — review with sales rep.",
+    "Seller override (2026-10-07, Slack request): replaced the Full Service Marketing Starter + Elite Coach Plus + AI Workforce Pro – Starter recommendation with 'paid ads starter + aiwp' = Paid Ads Starter sold stand-alone at $3,497/mo (no bundling discount on a single-product sale) + AI Workforce Pro – Starter, 1 seat × $350/mo (team size not stated — 1 seat assumed; confirm seat count). Coaching dropped. Total $3,847/mo, savings $0. Ad spend unchanged at $10,000 conservative / $20,000 aggressive (within Paid Ads Starter's $20,000 cap)."
   ]
 }
