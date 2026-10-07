@@ -1,0 +1,56 @@
+{
+  "confidence": "low",
+  "revenue_stated": null,
+  "net_revenue_stated": null,
+  "is_contingency_practice": true,
+  "revenue_effective": 570000,
+  "revenue_source": "hubspot_annual_law_firm_revenue",
+  "revenue_label": "$180K - $960K",
+  "team_size_stated": null,
+  "team_size_effective": 3,
+  "practice_areas_detected": [
+    "not available from transcript (website lists criminal defense",
+    "dui",
+    "pi)",
+    "criminal defense (cumming, ga) — searches to run in a browser:",
+    "dui defense — \"dui lawyer cumming ga\", \"dui attorney forsyth county\", \"dui lawyer near me\"",
+    "personal injury — \"car accident lawyer cumming ga\", \"truck accident lawyer cumming ga\", \"motorcycle accident lawyer cumming ga\"",
+    "criminal defense — firm ads: not observed. named competitor ads: not observed.",
+    "dui — firm ads: not observed. named competitor ads: not observed.",
+    "personal injury — firm ads: not observed. named competitor ads: not observed."
+  ],
+  "call_focus": {
+    "primary_engagement": "mixed",
+    "products_discussed": [],
+    "lead_gen_gap": false
+  },
+  "marketing_tier": "Starter",
+  "marketing_name": "Full Service Marketing — Starter",
+  "marketing_price_bundled": 4997,
+  "marketing_price_retail": 5697,
+  "marketing_savings": 700,
+  "coaching_name": "Elite Coach Plus",
+  "coaching_price_bundled": 3200,
+  "coaching_price_retail": 3497,
+  "coaching_savings": 297,
+  "law_tier": null,
+  "law_name": null,
+  "law_price_bundled": null,
+  "law_price_retail": null,
+  "law_seats": null,
+  "total_bundled": 8197,
+  "total_savings": 997,
+  "ad_spend_conservative": 10000,
+  "ad_spend_aggressive": 20000,
+  "ad_spend_rationale": {
+    "conservative_basis": "personal injury — \"car accident lawyer cumming ga\", \"truck accident lawyer cumming ga\", \"motorcycle accident lawyer cumming ga\"",
+    "aggressive_basis": "capped by Starter tier's ad cap"
+  },
+  "selection_notes": [
+    "Revenue not in research notes — sourced from HubSpot (hubspot_annual_law_firm_revenue): \"$180K - $960K\" → $570,000",
+    "Team size not stated in research notes — defaulting to 3. Review for coaching tier accuracy.",
+    "Revenue under $750K but multiple practice areas detected: Essentials hidden (requires single practice area) — Starter tier.",
+    "Revenue $400K–$1M: Elite Coach Plus selected.",
+    "Total at conservative ad spend ($18,197/mo) is over the 35% cap ($16,625/mo on $570,000 revenue) — review with sales rep."
+  ]
+}
