@@ -1,0 +1,338 @@
+SMB TEAM — AUDIT RESEARCH NOTES (PASS 1)
+Firm: The Bonner Law Firm, PC
+Friendly name: the-bonner
+URL: https://www.thebonnerlawfirm.com/
+Sales rep: Jacob Meissner
+Audit date: October 12, 2026
+Contact: Vic Bonner (HubSpot contact; see STEP 9 note on Attorney Bonner vs. Vic Bonner Jr.)
+Research run date: October 7, 2026
+
+=====================================================================
+DATA-QUALITY DISCLOSURE — READ FIRST (for /audit-write)
+=====================================================================
+This is a REAL firm (Houston, TX). No data has been fabricated.
+This run had text-based web fetch and web search only — NO interactive browser. Result:
+- Firm website: reached and read via web fetch (live). Observations in STEP 1 are from that fetch.
+- PageSpeed: the Google PageSpeed API returned HTTP 429 (rate limited) on three attempts
+  (mobile and desktop). NO SCORES OBTAINED. No estimate recorded. Needs a live re-run.
+- Google Maps / Google Business Profile, Google SERPs (3-pack, ads, LSA): NOT reachable.
+  Review counts below come from web-search snippets and the Birdeye aggregator, so EVERY
+  review count and rating is tagged [UNCONFIRMED]. Nothing here is [confirmed via Google].
+- Meta Ad Library: returned HTTP 403. NOT OBSERVED.
+- Yelp page fetch returned HTTP 403; Yelp data is from a search snippet only.
+/audit-write must not print any [UNCONFIRMED] number as a specific figure in the client-facing
+report. Items marked NOT OBSERVED must be omitted or framed qualitatively.
+
+=====================================================================
+TRANSCRIPT STATUS
+=====================================================================
+transcript_status: outcome=found, custody=machine, source=hubspot_notes
+Source: Fathom AI summary pasted into HubSpot internal notes (64 min discovery call, no
+highlights). This is an AI summary, not a verbatim transcript — quotes below are the summary's
+wording, not the prospect's literal words.
+Follow-up call per transcript: Tuesday, October 13, 2:00 PM (Attorney Bonner + Vic Bonner Jr.).
+Trigger file proposal_call_date: 2026-10-12T19:00:00Z (Oct 12, 3:00 PM EDT). The transcript's
+follow-up date (Oct 13) differs from the trigger's proposal call date (Oct 12) — flag for the
+rep to confirm which is correct.
+
+=====================================================================
+STEP 1 — WEBSITE RESEARCH
+=====================================================================
+- Website URL confirmed live: yes (fetched October 7, 2026)
+- Last redesign date or estimated age: not determinable. Copyright year shows 2026; platform
+  appears custom-built. Actual redesign date NOT OBSERVED.
+- Mobile responsive: yes — viewport meta tag present (code-level observation, not tested on a
+  device)
+- Homepage headline: "Bold. Brilliant. Bona Fide."
+- CTA above fold: yes — "Contact Us" button and "Call Now" link to (832) 433-6565
+- Contact form location: dedicated contact page via navigation (not on the homepage above the
+  fold)
+- Live chat present: no (not detected)
+- Attorney bio present: yes — "Your Attorney" section plus an /about page ("About Our Houston
+  Law Firm")
+- Video present: not detected
+- Blog present: yes — 16 posts listed on /blog; publication dates are NOT displayed on the
+  blog page, so last post date NOT OBSERVED. Topics are Houston PI themed (drunk driving,
+  slip and fall, truck liability, dog bites, TBI, statute of limitations, etc.), several are
+  seasonal.
+- PageSpeed mobile score: NOT OBSERVED (API HTTP 429; no estimate recorded)
+- PageSpeed desktop score: NOT OBSERVED (API HTTP 429; no estimate recorded)
+
+Other site facts:
+- Phone: (832) 433-6565; Email on site: vicbonneresq@gmail.com
+- Address: 4820 Old Spanish Trail, Houston, TX 77021
+- Practice areas listed (11): truck wrecks, car accidents, motorcycle accidents, slip & fall,
+  DWI injuries, bus/truck accidents, accidental injuries, distracted driving, brain injuries,
+  dog bites, wrongful death
+- Geographic focus: Houston and surrounding areas. No city-specific landing pages observed
+  (not exhaustively crawled).
+- Spanish-language content: not present
+- Trust signals: BBB accreditation badge (BBB listing: A+ per search snippet); links to
+  Facebook, LinkedIn, Yelp
+- Site/transcript gap consistent with call: no deep FAQ content observed on the homepage;
+  attorney bio exists but transcript says site lacks attorney bios/FAQs vs. top competitors
+  (transcript governs; not independently verified in depth).
+
+SAVE POINT 1 — website section complete (PageSpeed gap noted).
+
+=====================================================================
+STEP 2 — GOOGLE BUSINESS PROFILE
+=====================================================================
+- GBP found: NOT OBSERVED directly (Google Maps unreachable). A Google-sourced presence
+  clearly exists (aggregators show Google reviews).
+- Star rating: 4.0 [UNCONFIRMED — sourced from a web-search result summary attributed to
+  Google, not independently confirmed via Google Maps]
+- Total review count: 24 [UNCONFIRMED — same web-search source, not independently confirmed
+  via Google]
+- CONFLICTING DATA — do not resolve in the report:
+  * Birdeye: 4.1 overall, 61 reviews total, of which 55 are Google-sourced; Birdeye also
+    shows a 50-review / 3.9 figure in its page title/snippet; "most recent review 11 years ago"
+    [UNCONFIRMED — sourced from Birdeye, not independently confirmed via Google; profile is
+    unclaimed and likely stale]
+  * Transcript (rep/prospect statement): "~40" reviews [transcript statement, not verified]
+  Three sources give three different counts (24 / 55 / ~40). The true Google count must be
+  read live off the Google Maps listing before any figure is used.
+- Most recent review date: NOT OBSERVED (Birdeye's "11 years ago" is from an unclaimed,
+  stale aggregator profile and should not be treated as the Google recency)
+- Primary category: NOT OBSERVED on Google. Birdeye lists "Personal Injury Law".
+- Photos active: NOT OBSERVED
+- Posts active: NOT OBSERVED
+- Hours: Birdeye shows "Open 24/7" (12:00 a.m.–Midnight daily) on an unclaimed profile —
+  likely not the firm's real hours; verify live. This is also relevant to the after-hours
+  intake gap in STEP 9.
+- Other platforms (not Google): Yelp 5.0 from 1 review [UNCONFIRMED — search snippet, Yelp
+  page returned 403]; Chamber of Commerce 2.9 from 12 reviews [UNCONFIRMED — directory
+  snippet, not Google]; BBB A+ accredited.
+
+=====================================================================
+STEP 3 — LOCAL 3-PACK SEARCHES
+=====================================================================
+NOT OBSERVED — Google SERPs/Maps could not be run. No 3-pack positions or in-pack competitor
+counts recorded. Do not state any 3-pack ranking for this firm in the report.
+
+Practice Area 1: Car / truck accidents (Houston)
+- Search 1 "car accident lawyer Houston": NOT OBSERVED
+- Search 2 "truck accident lawyer Houston": NOT OBSERVED
+- Search 3 "18-wheeler accident attorney Houston": NOT OBSERVED
+Practice Area 2: Slip & fall / premises liability
+- Search 1 "slip and fall lawyer Houston": NOT OBSERVED
+- Search 2 "premises liability attorney Houston": NOT OBSERVED
+- Search 3 "slip and fall attorney Houston TX": NOT OBSERVED
+Practice Area 3: Dog bite
+- Search 1 "dog bite lawyer Houston": NOT OBSERVED
+- Search 2 "dog bite attorney Houston TX": NOT OBSERVED
+- Search 3 "dog bite injury lawyer near me Houston": NOT OBSERVED
+
+Local competitors identified via organic web search (NOT from a 3-pack; relevance only):
+Jim Adler & Associates, Joe I. Zaid & Associates, The Doan Law Firm, Johnson Garcia LLP,
+Arnold & Itkin LLP, Sutliff & Stout, Guss Injury Lawyers, Zehl & Associates.
+
+=====================================================================
+STEP 4 — COMPETITOR REVIEW COUNTS
+=====================================================================
+No competitor count could be read directly from Google. All figures below come from search
+snippets / aggregators / the firms' own claims and are UNCONFIRMED. Prospect's own count is
+also unconfirmed (24 / 55 / ~40, see STEP 2). Do NOT print any of these as specific figures.
+- Competitor 1: Jim Adler & Associates — reviews: ~7,700 [UNCONFIRMED — sourced from the
+  firm's own website claim as echoed in search results; Birdeye shows 3,717 + 1,208 on
+  separate office profiles, not independently confirmed via Google] — rating: 4.6
+  [UNCONFIRMED — firm's own claim via search result, not confirmed via Google]
+- Competitor 2: Joe I. Zaid & Associates — reviews: 1,162 aggregate / "1,500+ five-star"
+  across four offices [UNCONFIRMED — sourced from search-result summaries and the firm's own
+  claim, not independently confirmed via Google] — rating: 5.0 [UNCONFIRMED — same source]
+- Competitor 3: The Doan Law Firm — reviews: 511–666 (sources differ) [UNCONFIRMED — sourced
+  from Birdeye / TrustAnalytica / search results, not independently confirmed via Google] —
+  rating: 5.0 [UNCONFIRMED — same sources]
+Directionally, every competitor above shows an order of magnitude more reviews than the
+prospect under any of the prospect's three candidate counts, so the claim "the prospect has
+more reviews than a competitor cited as dominating" does not occur.
+Transcript mentions Ben Crump Law as a competitor with 2k+ reviews. Not verified, and Ben Crump
+is a national brand — not used as a named competitor threat (ADS/competitor rule: local firms
+only). Ben Crump Law's Houston office shows 1.5 on Yelp (2 reviews) [UNCONFIRMED], which does
+not support a "2k+" Houston figure; do not repeat the transcript's number as fact.
+
+=====================================================================
+STEP 5 — DIRECTORY LISTINGS
+=====================================================================
+Checked via search results / fetched pages:
+- Avvo: listed (Victor M. Bonner, 4820 Old Spanish Trl P1 2, Houston 77021-1721; admitted TX 1972)
+- Justia: listed — phone shown as (713) 842-7700 (differs from site phone (832) 433-6565)
+- Birdeye: listed, unclaimed; website listed as http://www.thebonnerlawfirmpc.com/ (a
+  different domain from thebonnerlawfirm.com)
+- BBB: listed, accredited, A+
+- Yelp: listed, 5.0 / 1 review (snippet; page 403)
+- Facebook: page exists (facebook.com/vicbonnerlaw)
+- Lawyer.com, Manta, Chamber of Commerce (2.9 / 12), ReachAttorneys, WhoDoYou, BusinessYab,
+  LinkedIn (Victor Bonner — "Legal Assistant" title in LinkedIn result), State Bar of Texas
+  profile: listed
+- FindLaw: NOT OBSERVED
+NAP observations:
+- Phone inconsistency: Justia (713) 842-7700 vs. site/Birdeye-era listings (832) 433-6565
+- Website inconsistency: thebonnerlawfirmpc.com (Birdeye) vs. thebonnerlawfirm.com (live site)
+- Suite formatting varies ("P1-2" / "P1 2" / none)
+- Birdeye hours "24/7" likely inaccurate
+- Public record note (State Bar / Avvo): a 2006 public reprimand is listed against the
+  attorney. Internal context only — do NOT include in the client-facing report.
+Geo-targeting landing pages for surrounding cities: not observed in the fetched pages.
+
+SAVE POINT 2 — GBP, local SEO, and directory sections complete (with gaps as noted).
+
+=====================================================================
+STEP 6 — GOOGLE ADS
+=====================================================================
+NOT OBSERVED for all practice areas — Google SERPs unreachable. Per ADS FRAMING RULE, this does
+NOT mean the firm is not running ads. Transcript lists current marketing as word-of-mouth,
+TV/radio, and billboards; digital ad history was not stated.
+Practice Area 1: Car / truck accidents
+- Firm ads observed: not observed (searches not run)
+- Named local competitors running ads: not observed
+Practice Area 2: Slip & fall
+- Firm ads observed: not observed (searches not run)
+- Named local competitors running ads: not observed
+Practice Area 3: Dog bite
+- Firm ads observed: not observed (searches not run)
+- Named local competitors running ads: not observed
+(Competitors such as Jim Adler & Associates and Joe I. Zaid & Associates are known to
+advertise heavily in Houston, but that was not observed in this run and is not asserted.)
+
+=====================================================================
+STEP 7 — LOCAL SERVICE ADS
+=====================================================================
+- Firm appears in LSA: not observed
+- Google Screened: not observed
+- LSA review count: not observed
+- Named local competitors in LSA: not observed
+
+=====================================================================
+STEP 8 — META ADS
+=====================================================================
+- Firm has active ads: not observed (Meta Ad Library returned HTTP 403)
+- Named local competitor 1: not observed
+- Named local competitor 2: not observed
+
+SAVE POINT 3 — ads sections complete (all not observed; flagged above).
+
+=====================================================================
+STEP 9 — TRANSCRIPT EXTRACTION
+=====================================================================
+- Practice areas confirmed: Personal injury exclusively — car, truck, slip & fall, dog bite
+  (website lists 11 PI specialties)
+- Current lead sources: "Word-of-mouth, TV/radio ads, and billboards." Remote sign-ups via
+  JotForm.
+- Ads ever run: TV, radio, and billboards (traditional) — platform/budget/result not stated.
+  Digital (Google/Meta) ad history not stated.
+- Team size: 3 — Attorney Bonner, Chief Paralegal Vic Bonner Jr., Receptionist
+- Annual revenue (gross / case value): not stated. Volume: 40–50 active cases/month.
+- Annual revenue (net / take-home / collected): not stated — not distinguished from gross
+- Fee structure: not stated (PI; contingency not confirmed on the call)
+- Revenue goal: not stated, use 2x current revenue (current revenue also not stated). Stated
+  growth goal is volume: "Add 10–15 new clients/month to stabilize inconsistent lead flow and
+  return to a 'pumping' state."
+- Average case value: not stated
+- Current close rate: not stated — default to 15%
+- Number of locations: 1 (Houston, 4820 Old Spanish Trail)
+- Spanish campaign needed: no indication on the call; Houston market and the site has no
+  Spanish content — confirm with Jacob. Treat as "not stated."
+- Dominant buying motive: Not stated as a personal motive. Closest inference: (1) a firm with
+  steady, predictable lead flow that does not run on the owner's effort alone — "return to
+  peak performance" / "pumping" state after inconsistent flow, plus building a "self-managing
+  team" and "systems for owner freedom" (coaching pitch). Secondary: succession/handoff
+  dynamic (40+ year-old firm, Vic Bonner Jr. wants a CMS; Attorney Bonner prefers paper).
+  Flag as inference.
+- Any profitability claims made by prospect: none stated
+- Any claims about case types or practice areas: "40+ year-old Houston firm focused
+  exclusively on personal injury (car, truck, slip & fall, dog bite)." Handles "40–50 active
+  cases/month."
+- Stated call focus / product interest: MIXED — not a pure marketing discovery call. Marketing
+  (full-service SEO + paid ads, ~$30k/mo ad spend discussed as the minimum for 10–15 clients/
+  month, "a cost Bonner is aware of") sits alongside operational/AI themes: paper-based case
+  files (40–50 cases/month) blocking digital marketing and review generation; no formal intake
+  process (JotForm only); recorded after-hours message losing leads to 24/7 competitors
+  (especially weekend accidents). Also pitched: AI Workforce Pro (transcribing handwritten
+  notes, content generation), Fractional CTO (AI automation / connecting systems), and
+  coaching ("self-managing team", owner freedom). Coaching tier/price not stated. Next steps:
+  Jacob to send recap/resources and run a preliminary marketing scope; prospect to send
+  handwritten intake photos (OneDrive) for an AI demo; Vic to clarify an existing "AI
+  Workforce Pro subscription" (vendor/account unclear — possible existing-product issue to
+  clear up before pricing).
+- Primary engagement: mixed
+- Products discussed on call: Full Service Marketing, AI Workforce Pro, Fractional CTO Level 1,
+  Fractional CTO Level 2, Fractional CTO Level 3 (FCTO discussed with no level or price stated —
+  all levels listed; AIWP user count not stated, team of 3; coaching also pitched with no
+  tier stated, so not listed by catalog name)
+- Lead-gen gap stated: yes — "Add 10–15 new PI clients/month to stabilize inconsistent lead
+  flow"; website content gaps and low review count (~40) vs. competitors acknowledged.
+- Existing marketing/SEO/ad vendor engagements: none stated (traditional TV/radio/billboards
+  are in use; no vendor named)
+- Budget constraints stated: none stated. Prospect acknowledged the ~$30k/month ad spend
+  minimum; no affordability limit stated.
+
+Other transcript facts worth carrying forward:
+- Attorney Bonner prefers paper "for perceived security," while Vic Bonner Jr. prefers a CMS.
+  Both need to attend the follow-up; the decision-maker split is a risk.
+- Intake: JotForm for remote sign-ups; no formal intake process.
+- Contact ambiguity: HubSpot contact is "Vic Bonner" (vicbonneresq@gmail.com, which is also
+  the attorney email on the website). Transcript action items also list vicbonner@yahoo.com.
+  Confirm who "Vic" is (Attorney Bonner vs. Vic Bonner Jr.) before addressing the report.
+
+=====================================================================
+STEP 10 — COMPETITIVE URGENCY SCORE
+=====================================================================
+Score: 7 — PROVISIONAL / MODERATE CONFIDENCE. No 3-pack, ad, or Google-verified review data
+could be observed. The score rests on (a) the firm's Google review footprint being very small
+under every candidate count (24 / ~40 / 55, all unconfirmed) versus Houston PI competitors
+showing hundreds to thousands of reviews [UNCONFIRMED], (b) a website with a thin blog and no
+chat/video, (c) per the transcript, no digital acquisition engine and an after-hours phone
+gap, in one of the most heavily advertised PI markets in the country. If live checks show
+the firm holding 3-pack positions, lower to the 5–6 range.
+
+Named local competitor threats:
+1. Jim Adler & Associates — Houston PI brand with heavy advertising presence; markets a
+   4.6-rating, ~7,700-review Google profile on its own site [UNCONFIRMED — firm's own
+   claim, not verified via Google]; separate Birdeye profiles for multiple offices.
+2. Joe I. Zaid & Associates — four Houston-area offices; markets 1,500+ five-star Google
+   reviews [UNCONFIRMED — firm's own claim; search summaries show 1,162 aggregate].
+3. The Doan Law Firm — Houston accident/truck-accident firm; 5.0 rating with roughly
+   500–670 reviews depending on source [UNCONFIRMED — aggregator, not Google].
+
+Dynamic sentence (score 7–10): "A score of 7 means competitors are actively dominating
+multiple channels in your market and the gap is getting wider every month you wait. This is
+not a future problem — it is a right now problem."
+
+SAVE POINT 4 — final.
+
+=====================================================================
+PASS 2 — VERIFICATION CHECKLIST
+=====================================================================
+[x] Every number in the notes matches actually observed data — only numbers returned by
+    sources are recorded, each tagged with its source; unobserved items say NOT OBSERVED
+[~] Every competitor review count verified live — NOT possible (no Google access); all
+    recorded counts are tagged UNCONFIRMED and must not be printed as specific figures
+[x] Every review count / star rating carries a verification-method tag (none are
+    [confirmed via Google])
+[x] Revenue split: not stated by the prospect; fee structure "not stated"
+[x] Ad sections cover all practice areas — all "not observed"
+[x] No section says "you are not running ads"
+[x] No profitability/business claim beyond the transcript
+[x] No generic competitor labels — only specific named local firms (Ben Crump excluded as a
+    national brand)
+[ ] PageSpeed scores are real numbers — NOT MET: PageSpeed API returned HTTP 429 on all
+    attempts (not estimated, by design). Requires a live re-run.
+[x] DBM recorded (inference, flagged)
+[x] Revenue goal recorded (not stated; use 2x — current revenue also unstated)
+[x] Close rate recorded (not stated; default 15%)
+[x] Average case value recorded (not stated)
+[x] Stated call focus recorded — mixed: marketing + AI/Fractional CTO + coaching/ops
+[x] Primary engagement / Products discussed / Lead-gen gap filled in the exact format
+[x] Existing vendor engagements recorded (none stated)
+[x] Budget constraints recorded (none stated)
+
+OPEN ITEMS FOR HUMAN FOLLOW-UP:
+1. Live-verify PageSpeed (mobile + desktop), Google rating/review count (24 vs. ~40 vs. 55
+   conflict), 3-pack, Google Ads, LSA, and Meta Ad Library — all NOT OBSERVED or UNCONFIRMED.
+2. Confirm the follow-up date: transcript says Tue Oct 13, 2:00 PM; trigger says Oct 12,
+   3:00 PM EDT.
+3. Confirm who "Vic Bonner" is (contact) vs. Vic Bonner Jr. (Chief Paralegal), and the
+   report addressee.
+4. Clarify Vic's "AI Workforce Pro subscription" (vendor/account) before pricing AIWP.
+5. Confirm fee structure, revenue, and whether coaching tier was priced.
