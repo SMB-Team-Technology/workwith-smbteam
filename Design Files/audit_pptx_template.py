@@ -145,13 +145,16 @@ CONSERVATIVE_RESULT = "$XX,XXX revenue · X.X× ROAS"  # FILL
 AGGRESSIVE_LABEL   = "Aggressive  (X cases/mo):"     # FILL
 AGGRESSIVE_RESULT  = "$XX,XXX revenue · X.X× ROAS"   # FILL
 
-# Timeline — 5 items: (milestone_label, action_text)
+# Timeline — 4 items: (milestone_label, action_text)
+# Marketing sold: keep these four windows (SMB Team's onboarding timeline) and
+# condense each stage of Block 5 into the action text (<=55 chars).
+# No marketing sold: use labels "Week 1" / "Week 2" / "Month 1" / "Month 3"
+# with package-keyed actions from Block 5.
 TIMELINE = [
-    ("Day 1",   "Action at day 1 — specific to this firm"),
-    ("Day 14",  "Action at day 14 — specific to this firm"),
-    ("Week 2",  "Action at week 2 — specific to this firm"),
-    ("Week 3",  "Action at week 3 — specific to this firm"),
-    ("Month 3", "Action at month 3 — specific to this firm"),
+    ("Days 1–7",    "Checklist, platform access, portal & welcome"),
+    ("Days 8–14",   "Strategy Call with full team + 3 budget options"),
+    ("Days 15–30",  "Campaign builds begin + homepage design delivered"),
+    ("Days 30–90+", "Monthly reporting, check-ins & optimization"),
 ]
 
 CLOSING_QUOTE = (
@@ -572,25 +575,25 @@ def build_slide3(prs):
         add_text(slide, AGGRESSIVE_RESULT, 7.25, 2.21, 2.30, 0.18, 8.5, ROI_GREEN, bold=True)
 
         first90_y = 2.72
-        timeline_ys = [2.99, 3.31, 3.62, 3.94, 4.25]
+        timeline_ys = [2.99, 3.37, 3.75, 4.13]
     else:
         # No ROI card above it — give First 90 Days the full right-column height.
         first90_y = 1.10
-        timeline_ys = [1.46, 1.97, 2.48, 2.99, 3.50]
+        timeline_ys = [1.46, 2.06, 2.66, 3.26]
 
-    # First 90 days — alternating light/white rows; the Day-1 dot pops in
+    # First 90 days — alternating light/white rows; the first-stage dot pops in
     # lime green, the rest in ocean blue, so the immediate next step stands out
     add_text(slide, "WHAT HAPPENS IN THE FIRST 90 DAYS",
              5.00, first90_y, 4.70, 0.18, 7.5, NAVY, bold=True)
-    for i, (milestone, action) in enumerate(TIMELINE[:5]):
+    for i, (milestone, action) in enumerate(TIMELINE[:4]):
         y = timeline_ys[i]
         row_bg = rgb("EEF2F5") if i % 2 == 0 else WHITE
         dot_color = LIME_GREEN if i == 0 else OCEAN_BLUE
         add_rect(slide, 5.00, y, 4.70, 0.29, fill=row_bg)
         add_rect(slide, 5.14, y+0.09, 0.10, 0.10, fill=dot_color)
-        add_text(slide, milestone, 5.36, y+0.055, 0.75, 0.18, 8, NAVY, bold=True)
-        add_text(slide, action, 6.18, y+0.055, 3.35, 0.18, 8, BODY_TEXT,
-                 cap_chars=58, cap_label=f"TIMELINE[{i}] action")
+        add_text(slide, milestone, 5.36, y+0.055, 0.95, 0.18, 8, NAVY, bold=True)
+        add_text(slide, action, 6.36, y+0.055, 3.20, 0.18, 8, BODY_TEXT,
+                 cap_chars=55, cap_label=f"TIMELINE[{i}] action")
 
     # Closing quote bar — taller, darker navy, with the same lime accent stripe
     add_rect(slide, 0, 4.66, 10, 0.61, fill=rgb("002A41"))

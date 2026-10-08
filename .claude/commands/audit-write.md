@@ -187,7 +187,7 @@ Compute and save `[friendly-name]/sections/section_11_workings.txt` containing:
 - If a marketing/ads package is part of the recommendation: one plain-English "why this range" sentence explaining the *payoff* of spending in this range for this firm specifically — what it converts or captures (e.g. high-intent searches in their practice area, cases currently going to a competitor, their stated urgency/goal) — not a restatement of the math. Ground it in a real specific from the audit (practice area, a named competitor gap, or the DBM/goal), pulling from `ad_spend_rationale` in `package_decision.json` if present only as a hint toward which practice area or basis to reference, never to quote directly. No CPL numbers, tier caps, or other internal terminology — this sentence is client-facing.
 - DBM statement for Block 1
 - List of 6+ quick win opportunities identified (pillar, title, why, competitor if any, opportunity)
-- First 90 days bullet points (3–5)
+- First 90 days: Version A (marketing sold — onboarding timeline + any non-marketing kickoff bullets) or Version B (3–5 package-keyed bullets)
 
 Save the workings file. Do not proceed until it is saved.
 
@@ -204,7 +204,7 @@ Leave blocks 5–8 with their original template placeholder text for now. Save t
 
 **STEP I-c — Complete section 11 second half**
 Edit `[friendly-name]/sections/section_11_next_steps.html` to fill in blocks 5–8:
-- Block 5: first 90 days action bullets. Use the FIRST 90 DAYS — PACKAGE-KEYED ACTIONS table below. Never mention live chat. Never mention CRM setup.
+- Block 5: first 90 days. Use the FIRST 90 DAYS — ONBOARDING TIMELINE rules below (Version A = pre-written onboarding timeline when marketing is sold; Version B = package-keyed bullets otherwise). Never mention live chat. Never mention CRM setup.
 - Block 6: three phase roadmap cards. Use the GROWTH ROADMAP PHASES rules below — do not repeat what Block 2 already sold as a "new" phase addition.
 - Block 7: three outcome cards (More Profit, More Freedom, Better Client Results), each tied to this owner's DBM.
 - Block 8: personal closing paragraph (2–3 italic sentences) + final line with firm name.
@@ -609,14 +609,54 @@ Note these in the research notes file for the sales team. Do not include in the 
 
 ---
 
-### FIRST 90 DAYS — PACKAGE-KEYED ACTIONS (Block 5)
+### FIRST 90 DAYS — ONBOARDING TIMELINE (Block 5)
 
-Block 5 must be composed only from the package/service types that are
-actually part of THIS firm's Block 2 recommendation — never a fixed
-universal script, and never leading with ads by default.
+Block 5 depends on whether marketing is part of THIS firm's Block 2
+recommendation.
+
+**VERSION A — any Full Service Marketing (any tier), Ads-only, or Web+SEO
+package is sold.** Block 5 is SMB Team's marketing onboarding timeline, exactly
+as pre-written in the section_11 template. Do not rewrite, reorder, or remove
+any stage or bullet:
+
+| Stage | Window | What happens |
+|---|---|---|
+| Discovery + Prioritize | Days 1–7 | Practice Area Checklist assigned · Platform access invites on the way · Portal & welcome materials delivered · DNS, Reviews, and ChatGPT setup begins |
+| Build + Begin Execution | Days 8–14 | Strategy Call (SEO, PPC, Website, Hulu, Social, AI visibility) — meet the full team: Onboarding PC, Marketing Strategist, Project Coordinators · 3 budget options presented · Website & SEO Strategy call with Marketing Strategist & Web PC scheduled · "Preparing for Leads" call scheduled |
+| Demonstrate Progress | Days 15–30 | Once budgets are confirmed, campaign builds begin · First homepage design & content delivered · Weekly website build updates via the portal · Weekly reminders until launch |
+| Sustain + Grow | Days 30–90+ | Monthly reporting call with the Marketing Strategist · Monthly strategic check-ins & next-steps planning · Monthly reports with KPIs and insights · Team proactively monitors campaigns and flags opportunities |
+
+Mixed deal (marketing + other packages): add ONE kickoff bullet per
+non-marketing package from the VERSION B table below to the Days 1–7 or
+Days 8–14 list. Nothing else changes.
+
+**VERSION B — no marketing package is sold.** Delete the four stages and use
+3-5 package-keyed bullets, composed only from the package/service types
+actually in Block 2:
 
 | Package/Service Sold | Typical First-90-Days Action |
 |---|---|
+| Coach Essentials / Elite Coach / Elite Coach Plus / Master's Circle | Coaching kickoff — first group session and goal-setting call |
+| FCOO Advisor / Director / Partner | Operations audit and workflow mapping kickoff |
+| FCFO Advisor / Director / Partner | Financial visibility setup — reporting cadence kickoff |
+| Legal AI Workforce (any LAW tier) | AI workspace setup and first Skill deployment |
+| Bookkeeping (any level) | First-month reconciliation and cleanup kickoff |
+| Attorney Assistant (AI intake agent) | Intake agent configuration and training kickoff |
+| AI Avatar / OmniSocial AI | First content/video batch kickoff |
+
+Include one action per package/service type actually in Block 2. Never
+include an action for a package this firm is not buying. Order bullets by
+which package is most central to this firm's recommendation.
+
+Rules (both versions):
+- Never promise specific launch dates for the website or campaigns, specific
+  lead or click counts, strategy call dates faster than the timeline above,
+  or deliverables outside the signed agreement. The timeline is a flexible
+  framework, not a fixed calendar.
+- Every bullet must connect to something SMB Team actually delivers. Never
+  mention live chat. Never mention CRM setup.
+
+---|---|
 | Full Service Marketing (any tier), ads-eligible channel identified in section_06 | Launch [specific channel: Google Ads / LSA / Meta] for [practice area] in [city] |
 | Full Service Marketing, website rebuild flagged needed (section_06) | Rebuild website / build practice-area landing pages |
 | Full Service Marketing, GBP/local SEO/NAP gaps flagged (section_06) | Clean up GBP profile, NAP consistency, directory listings |

@@ -159,13 +159,16 @@ CONSERVATIVE_RESULT = "$XX,XXX revenue · X.X× ROAS"  # FILL
 AGGRESSIVE_LABEL   = "Aggressive  (X cases/mo):"     # FILL
 AGGRESSIVE_RESULT  = "$XX,XXX revenue · X.X× ROAS"   # FILL
 
-# Timeline — 5 items: (milestone_label, action_text)
+# Timeline — 4 items: (milestone_label, action_text)
+# Marketing sold: keep these four windows (SMB Team's onboarding timeline) and
+# condense each stage of Block 5 into the action text (<=55 chars).
+# No marketing sold: use labels "Week 1" / "Week 2" / "Month 1" / "Month 3"
+# with package-keyed actions from Block 5.
 TIMELINE = [
-    ("Day 1",   "Action at day 1 — specific to this firm"),
-    ("Day 14",  "Action at day 14 — specific to this firm"),
-    ("Week 2",  "Action at week 2 — specific to this firm"),
-    ("Week 3",  "Action at week 3 — specific to this firm"),
-    ("Month 3", "Action at month 3 — specific to this firm"),
+    ("Days 1–7",    "Checklist, platform access, portal & welcome"),
+    ("Days 8–14",   "Strategy Call with full team + 3 budget options"),
+    ("Days 15–30",  "Campaign builds begin + homepage design delivered"),
+    ("Days 30–90+", "Monthly reporting, check-ins & optimization"),
 ]
 
 CLOSING_QUOTE = (
@@ -530,7 +533,7 @@ def build_slide3_html():
           </div>""" if AD_SPEND_NOTE else ""
 
     timeline_rows = ""
-    for milestone, action in TIMELINE[:5]:
+    for milestone, action in TIMELINE[:4]:
         timeline_rows += f"""
         <div class="tl-row">
           <div class="tl-dot"></div>
@@ -571,7 +574,7 @@ def build_slide3_html():
     .timeline { display:flex; flex-direction:column; gap:26px; }
     .tl-row { display:flex; align-items:center; gap:16px; }
     .tl-dot { width:14px; height:14px; border-radius:50%; background:var(--navy); flex-shrink:0; }
-    .tl-milestone { width:90px; font-weight:700; color:var(--navy); font-size:15px; }
+    .tl-milestone { width:120px; font-weight:700; color:var(--navy); font-size:15px; }
     .tl-action { flex:1; font-size:15px; color:var(--ink); }
 
     .closing-bar { position:absolute; left:0; right:0; bottom:64px; height:46px; background:var(--navy);
