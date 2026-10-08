@@ -1,0 +1,99 @@
+ARCH LEGACY FIRM — SECTION 11 WORKINGS (INTERNAL ONLY — NEVER SHARE WITH CLIENT)
+Sales Rep: Dan Bryant | Date: October 8, 2026
+
+================================================================
+OVERRIDE DECISION (departure from package_decision.json)
+================================================================
+package_decision.json (confidence "high") selected: Full Service Marketing — Platinum ($15,997 bundled /
+$18,997 retail) + Elite Coach Plus ($3,200 bundled / $3,497 retail) = $19,197/mo, with ad spend $3,500-$14,000.
+
+That selection was NOT used. Override triggered: #1 CALL-PURPOSE OVERRIDE.
+- Research notes (Step 9, "Stated call focus / product interest") state the call was NOT a standard marketing/intake
+  growth discovery call. It was explicitly framed around secure, firmwide AI implementation: AI Workforce Pro (seats),
+  Fractional CTO (Level 1 vs Level 2), agentic workflows, an internal AI knowledge base trained on SOPs, and improved
+  after-hours voice AI. Next step on the call: same-day Solution Call to present AI Workforce Pro and Fractional CTO
+  pricing/contract options.
+- No lead-gen gap was raised on the call; the owner's stated problem is hiring fatigue and bandwidth, not lead volume
+  (~60 new EP matters/month, LSAs already running and producing qualified trust clients).
+- Also noted: decision file defaulted team_size_effective to 3 ("Team size not stated"); notes show ~18 employees.
+  Elite Coach Plus / Master's Circle selection logic was therefore based on a wrong team size.
+- Other overrides checked: #2 Existing-vendor (no marketing vendor stated; N/A), #3 Budget-reality (no budget concern
+  stated; N/A), #4 Effective-revenue (no net figure stated; $3M used as stated; N/A).
+- Marketing package: NONE recommended. Block 4 (ad spend / ROI) omitted from section_11 and the executive summary.
+  Coaching/ops packages: NOT recommended (not requested on call; fCTO engagement is the stated need).
+
+================================================================
+MANDATORY PRICE LOOKUP (from tables in audit-write.md)
+================================================================
+- Marketing package selected: none
+  - Bundled price: n/a
+  - Stand-alone price: n/a
+  - Savings: n/a
+- Non-marketing package selected: none
+  - Bundled price: n/a
+  - Stand-alone price: n/a
+  - Savings: n/a
+- Legal AI Workforce (LAW) packages selected:
+  1) Fractional CTO Level 2 (revenue requirement $1M+; firm is ~$3M)
+     - Bundled price (from table): $4,997/mo
+     - Stand-alone price (from table): $5,797/mo
+     - Savings (stand-alone minus bundled): $800/mo
+     - Setup fee: $0
+  2) AI Workforce Pro (20 seats, planning count stated on call)
+     - Bundled price (from table formula): $1,597/mo (5 users) + $120/mo x 15 additional employees = $1,597 + $1,800 = $3,397/mo
+     - Stand-alone price: none exists — never quote one
+     - Savings: $0 (no stand-alone price)
+     - Terms: yearly contract, 10M usage credits + 10M bonus credits (20M total), overages $150/mo, includes weekly
+       AI Implementation Session.
+- AI Avatar / Video Growth add-on selected: none
+- Total monthly investment (sum of bundled/recurring): $4,997 + $3,397 = $8,394/mo
+- Total savings (sum): $800/mo
+
+35% cap check: $3,000,000 / 12 = $250,000/mo revenue; 35% cap = $87,500/mo. $8,394/mo = ~3.4% of monthly revenue. Pass.
+
+Why Level 2 (not Level 1 or 3): Level 1 and Level 2 were the two options discussed on the call. Owner is out of bandwidth and wants a
+faster, firmwide rollout (agentic workflows, SOP knowledge base, voice AI improvement, analytics) — Level 2 gives two monthly
+fCTO sessions, up to 4 skills and up to 2 custom automations per month. Level 3 ($3M+) was not discussed; revenue would qualify
+if the firm wants weekly sessions + Foundation Sprint included.
+
+Optional one-time (not included in the proposal): Law Firm AI Foundation Sprint packaged with Fractional CTO Level 2 = $5,003.
+
+================================================================
+DBM STATEMENT (Block 1)
+================================================================
+We help growing, trust-focused estate planning firms get AI-powered systems that handle repeatable work so they can expand
+into business and tax planning without constant hiring and protect their team's work-life balance.
+Owner quotes: "I'm tired of hiring employees… implement systems… so that we can quit hiring for a hot minute." /
+"We're leaving a lot of money on the table by not pushing forward into business and tax… I'm out of bandwidth."
+
+================================================================
+QUICK WIN OPPORTUNITIES (7)
+================================================================
+1. Intake — Automate recap emails, file organization, and task handoffs — handoffs depend on people moving data between GHL and DecisionVault — no competitor.
+2. Team — Build an internal AI knowledge base from the firm's SOPs — long-term — no competitor.
+3. Intake — Upgrade the after-hours voice AI experience — current vendor (Abby Connect) viewed as subpar — no competitor.
+4. Profit — Cost-per-matter and marketing/analytics reporting automation — only labor-cost figure is a pre-change estimate — no competitor.
+5. Lead Gen — Resolve phone number mismatch and add Greensboro/Lake Oconee location pages — quick win — no named competitor.
+6. Lead Gen — Win probate searches in Athens — long-term — Fortson, Bentley & Griffin; Smith, Gilliam, Williams & Miles; Blasingame, Burch, Garrard & Ashley.
+7. Team — Build the third office on systems rather than headcount — long-term — no competitor.
+
+FIRST 90 DAYS
+- AI workspace setup and first Skill deployment (recap emails, file organization)
+- Weekly AI Implementation Sessions with the team; firmwide rollout across ~20 seats
+- First custom automation: coordinator-to-paralegal task handoffs
+- Begin SOP-trained knowledge base and scope the after-hours voice AI improvement
+
+================================================================
+ESCALATION FLAGS (INTERNAL — NOT IN CLIENT REPORT)
+================================================================
+- LAW package: confirm with sales rep that LAW delivery has launched and capacity is available before including in proposal.
+- AI Workforce Pro price ($3,397/mo) is computed from the table formula using the ~20 seat planning count — confirm actual seat count on the Solution Call; each seat beyond 5 is $120/mo.
+- AI Workforce Pro is a yearly contract (no month-to-month at 5+ users).
+- Review counts unconfirmed — verify live before the call. The Birdeye-sourced rating and ~330 review count (329 attributed to Google) are tagged UNCONFIRMED and appear nowhere in the client report; qualitative framing used instead. No competitor review counts could be located.
+- PageSpeed mobile/desktop scores could not be obtained (pagespeed.web.dev JS-rendering; API HTTP 429). No numbers fabricated; report states page speed has not been benchmarked. Re-run manually.
+- GBP, Google Ads SERP, LSA panel, and Meta Ads Library could not be verified live; report uses "not observed" framing only.
+- NAP discrepancy on the firm's own site: (706) 702-5749 (homepage) vs (706) 352-9060 (Contact Us). Confirm authoritative number.
+- No Greensboro/Lake Oconee landing page found in searches — confirm it is truly absent before presenting as a gap.
+- Revenue figure (~$3M, 2026 pace) is gross/case value; no net figure stated.
+- Revenue goal and close rate not stated — marketing ROI projections not applicable (no marketing package recommended).
+- Probate pricing and other practice details are prospect-stated; no per-practice-area profitability claims made.
