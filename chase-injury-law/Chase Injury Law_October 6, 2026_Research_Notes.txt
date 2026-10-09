@@ -5,7 +5,7 @@ URL: http://www.chaseinjurylaw.com
 Sales Rep: Michael Kopp (michael.kopp@smbteam.com)
 Date: October 6, 2026
 Proposal Call: Friday, October 9, 2026 at 10:00 AM ET (3:00 PM Portugal time) — 2026-10-09T14:00:00Z
-Pipeline run: Pass 1, trigger run 3 (prior audit for this firm: June 12, 2026, rep Randy Gold — different transcript; do not carry June transcript facts forward)
+Pipeline run: Pass 1, trigger run 4 (re-run October 9, 2026; run 3 notes were October 6) (prior audit for this firm: June 12, 2026, rep Randy Gold — different transcript; do not carry June transcript facts forward)
 
 Transcript status: outcome=found, custody=machine, source=hubspot_notes (Fathom summary, 94-minute call).
   https://fathom.video/share/5p4Mx5yguET37a9GPfHrgC2rVRNquJiu
@@ -14,19 +14,25 @@ RESEARCH TOOLING LIMITS (read first):
   This session could fetch web pages and run web searches. It could NOT render Google Search / Google Maps
   results, run pagespeed.web.dev (Google PageSpeed API returned 429 quota exhausted; the web UI returned only a
   "Running analysis" shell), or load the Meta Ads Library (HTTP 403). Items that depend on those are marked
-  "not observed" or "UNAVAILABLE" below — nothing in them is estimated or invented. Review figures come only
+  "not observed" or "UNAVAILABLE" below — nothing in them is estimated or invented.
+  RUN 4 UPDATE (October 9, 2026): pagespeed.web.dev / Google PageSpeed API still returned 429 (quota exhausted), but
+  PageSpeed scores were obtained by running Lighthouse 12.8.2 locally (headless Chrome) against the live site. These are
+  real measured numbers but come from Lighthouse, not the pagespeed.web.dev UI — see STEP 1. Google Search/Maps, Meta Ads
+  Library (HTTP 403 again) and GBP data remain unreachable, so those sections are unchanged from run 3. Review figures come only
   from search-result snippets and aggregators, so every one carries an UNCONFIRMED tag.
 
 ================================================================================
 STEP 1 — WEBSITE RESEARCH
 ================================================================================
 
-Website URL confirmed live: Yes (fetched October 6, 2026)
+Website URL confirmed live: Yes (fetched October 6 and re-fetched October 9, 2026)
 Platform: Squarespace (per June 2026 notes; CDN URLs)
 Last redesign date or estimated age: Recent — image metadata references May 23, 2026
 Mobile responsive: Yes (responsive nav menu, mobile-friendly layout)
-Homepage headline: "Florida Workers' Compensation Attorney" with tagline "You matter. We've got you."
-CTA above fold: Yes — "Start Your Free Consultation"
+Homepage headline: "Hurt at Work? The insurance company has a team. You deserve one too." (October 9 fetch). The October 6 fetch recorded
+  "Florida Workers' Compensation Attorney" / "You matter. We've got you." — the homepage copy appears to have changed or the two fetches captured different
+  hero elements; use the October 9 headline as most recent.
+CTA above fold: Yes — "Start Your Free Consultation" button and "Call 954.688.4858" link
 Contact form location: Dedicated /contact page, reached via CTAs ("Speak with an Attorney", "Talk to an Attorney Today"). Contact page offers Call Now / Text Now / Email Us buttons; no embedded form fields observed. Not embedded on the homepage above the fold.
 Live chat present: No (not detected)
 Attorney bio present: Yes — Michelle Chase, Esq.: "Former Prosecutor," "10+ Years Experience," "Millions Recovered"
@@ -35,7 +41,7 @@ Blog present: Yes — /blog. Posts observed (most recent first):
     - April 7, 2026 — "Workers' Compensation vs Personal Injury in Florida: Which Claim Do You Have?"
     - March 4, 2026 — "Do You Need a Florida Workers' Compensation Attorney?"
     - February 3, 2026 — "What to Do After a Work Injury in Florida"
-  Last post observed: April 7, 2026 (about 6 months before today — no new content since). The June notes listed an
+  Last post observed: April 7, 2026 — re-confirmed October 9 (about 6 months before today — no new content since). The June notes listed an
   April 18, 2026 slip-and-fall post and 2019-dated posts; those did not appear in this fetch, so the blog may have been
   pruned. Treat the June blog observations as superseded.
 Reviews/testimonials on site: No Google reviews widget or testimonial section observed on /blog or /contact.
@@ -45,8 +51,9 @@ Contact details observed: Phone 954.688.4858; text 305.697.0594; email info@chas
   2335 E Atlantic Blvd Ste 200, Pompano Beach, FL 33062. Site markets "throughout Florida" / statewide.
   Intake hours advertised on site: none observed (no 24/7 claim seen). Transcript: intake covers 5 AM–7 PM Florida time.
 
-PageSpeed mobile score: UNAVAILABLE — Google PageSpeed API returned 429 (daily quota exhausted) for both strategies; pagespeed.web.dev UI returned no results when fetched. Re-run required. No estimate is recorded.
-PageSpeed desktop score: UNAVAILABLE — same reason.
+PageSpeed mobile score: 29 / 100 (Lighthouse 12.8.2 run locally on October 9, 2026 against https://www.chaseinjurylaw.com/; mobile emulation; LCP 19.0 s, Total Blocking Time 1,530 ms, CLS 0.256). Measured with Lighthouse, not the pagespeed.web.dev UI — pagespeed.web.dev/API returned 429 quota exhausted. Scores can vary by a few points run to run.
+PageSpeed desktop score: 70 / 100 (same tool/date; desktop preset; LCP 3.5 s, TBT 70 ms, CLS 0.188).
+  Writer note: if citing in the report, describe as a Lighthouse performance score; mobile is clearly poor (LCP 19 s), desktop is moderate.
 
 ================================================================================
 STEP 2 — GOOGLE BUSINESS PROFILE
@@ -232,7 +239,7 @@ PASS 2 — VERIFICATION CHECKLIST
 [X] No section says "you are not running ads" — only "not observed"; the firm's own PPC is documented from the transcript
 [X] No profitability or business claim appears unless it came from the transcript (the monthly revenue figure is labeled derived)
 [X] No generic competitor labels — named firms only
-[ ] PageSpeed scores are real numbers — NOT MET: UNAVAILABLE (API quota 429; UI returned no data); must be re-run before the audit is finalized
+[X] PageSpeed scores are real numbers — MET (run 4): mobile 29, desktop 70, measured with local Lighthouse 12.8.2 because pagespeed.web.dev/API quota is exhausted (429)
 [X] DBM recorded (partial quote plus inference)
 [X] Revenue goal recorded (volume goal stated; no dollar goal stated)
 [X] Close rate recorded (82% referral stated; 20% online modeled by SMB Team)
@@ -248,7 +255,7 @@ NOTES FOR AUDIT WRITER
 
 1. Do NOT print specific competitor review counts or ratings — all are UNCONFIRMED. Use qualitative framing ("established firms with large review bases") or re-verify via Google first.
 2. Do NOT state the prospect's GBP rating/review count, or whether it is verified — status unknown. June notes (GBP stuck in verification) are out of date.
-3. PageSpeed must be re-run before the report goes out. Squarespace platform is noted; no score may be cited from this file.
+3. PageSpeed: mobile 29 / desktop 70 (local Lighthouse 12.8.2, October 9, 2026; pagespeed.web.dev was quota-blocked). Platform is Squarespace. Cite as Lighthouse scores; optionally re-check on pagespeed.web.dev if quota resets.
 4. Intake is the #1 success factor per the call — lead the plan with intake coverage (5 AM–7 PM FL time; owners remote in Portugal; after-hours leads at risk).
 5. Do not assert a Fort Lauderdale/Pompano Beach office exists — the owners are remote. Handle the GBP address/service-area setup as a question for the client.
 6. The 82% referral close rate is the firm's; 20% online close, $140 CPL, 75% qualified, and ~$8,400/month are SMB Team's call assumptions — label them as projections.
@@ -261,5 +268,5 @@ NOTES FOR AUDIT WRITER
 END OF RESEARCH NOTES
 ================================================================================
 Prepared by: SMB Team AI Research Agent (Pass 1)
-Research date: October 6, 2026
-Next step: Run /audit-write to generate the HTML report (after re-running PageSpeed).
+Research date: October 6, 2026 (updated October 9, 2026, run 4)
+Next step: Run /audit-write to generate the HTML report.
