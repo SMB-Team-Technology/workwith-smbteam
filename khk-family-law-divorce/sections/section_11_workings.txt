@@ -1,0 +1,108 @@
+SECTION 11 WORKINGS — KHK Family Law & Divorce Attorneys (INTERNAL — never shared with client)
+Date: October 9, 2026 | Rep: Michael Kopp
+
+======================================================================
+TRANSCRIPT-STATED NEED OVERRIDE CHECK
+======================================================================
+Source: research notes Step 9 + package_decision.json (confidence: high; seller overrides logged in selection_notes).
+1. Call-purpose override: NOT triggered as an exclusion. Call was MIXED — Fractional CFO (FCFO) was the lead topic, marketing was a second, material thread with a stated lead-gen gap (~20 signed cases/mo vs 40 target). Both FCFO and a marketing package are therefore recommended; FCFO leads Block 2.
+2. Existing-vendor override: NOT triggered. No outside marketing/SEO/ad vendor stated (in-house marketing coordinator only).
+3. Budget-reality override: NOT triggered. No budget constraint stated.
+4. Effective-revenue override: NOT triggered. The ~$300K figure is NET PROFIT (15% margin), not net collected revenue distinct from gross case value. is_contingency_practice = false. Tiered on revenue_effective = $2,000,000 (2026 estimate per transcript; seller-confirmed).
+Result: package_decision.json used as-is (confidence high, no overrides).
+
+======================================================================
+MANDATORY PRICE LOOKUP (verified against Scoping_and_Ad_Spend_Guide.md tables + package_decision.json)
+======================================================================
+- Marketing package selected: Paid Ads Starter (seller override of Full Service Marketing Starter, per Slack 10/9/2026)
+  - Bundled price (from table): $2,497/mo
+  - Stand-alone price (from table): $3,497/mo
+  - Savings: $1,000/mo
+  - Ad spend cap (Paid Ads Starter): $20,000/mo
+- Non-marketing package selected: Fractional CFO (FCFO) Advisor (transcript "Level 1" = Advisor tier — INFERENCE, tier not named by rep; seller confirmed)
+  - Bundled price (from table): $3,297/mo
+  - Stand-alone price (from table): $3,797/mo
+  - Savings: $500/mo
+  - Revenue floor $400K — met ($2M)
+- Legal AI Workforce (LAW) package selected: none
+- AI Avatar / Video Growth add-on selected: none
+- Total monthly investment (bundled): $5,794/mo
+- Total savings: $1,500/mo
+
+======================================================================
+35% SPEND CAP CHECK (revenue_effective $2,000,000 = $166,667/mo)
+======================================================================
+- Conservative: $5,794 + $15,000 = $20,794/mo = 12.5% of monthly revenue
+- Aggressive: $5,794 + $23,000 = $28,794/mo = 17.3% of monthly revenue
+- Under the 35% cap. CAUTION: if 2026 revenue lands near the 2025 level ($700K = $58,333/mo), 35% cap = $20,417/mo and the aggressive scenario would EXCEED it. The recommendation depends on the >$2M 2026 projection; confirm with prospect.
+
+======================================================================
+AD SPEND (from package_decision.json)
+======================================================================
+Conservative: $15,000/mo | Aggressive: $23,000/mo
+- Aggressive ($23,000) exceeds Paid Ads Starter cap ($20,000). Seller chose to stay on Paid Ads Starter and accept the 10% overage fee on spend above the cap (10% x $3,000 = $300/mo) rather than moving to Paid Ads Growth. Client report discloses the overage rule in Block 4 without quoting a dollar figure.
+- Blended CPL (Family Law client-facing midpoints; mix Google 40% @ $100, LSA 30% @ $80, Meta cold 20% @ $85, Meta retargeting 10% @ $57.50) = $86.75
+- Close rate: not stated on call — default 15% used (disclosed). Average case value: not stated — Family Law default $3,000–$5,000 used, $4,000 midpoint for revenue (disclosed). Note: firm targets high-value cases, so actual case value may be higher.
+
+CONSERVATIVE ($15,000/mo; 20% CPL cushion -> $104.10 blended CPL)
+- Leads: 15,000 / 104.10 = ~144
+- Cases: 144 x 15% = 21.6 -> 22 cases/mo
+- Revenue: 22 x $4,000 = $88,000/mo (range $66,000–$110,000 at $3K–$5K)
+- Return: $88,000 / $15,000 = 5.9x
+
+AGGRESSIVE ($23,000/mo; no cushion -> $86.75 blended CPL)
+- Leads: 23,000 / 86.75 = ~265
+- Cases: 265 x 15% = 39.8 -> 40 cases/mo (hits the 40-case goal)
+- Revenue: 40 x $4,000 = $160,000/mo (range $120,000–$200,000)
+- Return: $160,000 / $23,000 = 7.0x
+
+Note: package_decision.json's conservative rationale ($375 per signed case x 40 = $15,000) uses the firm's own observed LSA yield and would imply ~40 cases at $15K. The benchmark-CPL ROI method required by audit-write.md projects ~22 cases at $15K; the client report uses the benchmark method (more conservative).
+
+Why-this-range sentence (client-facing): "To put KHK in front of high-net-worth and contentious-divorce prospects across Cook, Lake, and DuPage counties before competitors do, and to close the gap between about 20 and 40 signed cases a month."
+
+======================================================================
+DBM STATEMENT (Block 1)
+======================================================================
+Matthew Katz's mission to combat attorney burnout (PhD research on vicarious trauma) — growth is the vehicle for it. Plus stepping into a CEO role with a top associate becoming a 50% equity partner in 3 years. Category: a firm that runs itself (leadership transition) combined with scale ($10M revenue at 20–30% net in 3 years).
+Block 1: "We help growing family law firm owners get a steady flow of high-value divorce and custody cases and the financial clarity to scale profitably so they can step into the CEO role, hand daily leadership to a trusted partner, and put their energy into their mission to combat attorney burnout."
+
+======================================================================
+QUICK WIN OPPORTUNITIES (8)
+======================================================================
+1. [Lead Gen / Quick Win] Target high-value divorce searches — Why: LSA-led marketing not aimed at HNW cases in Cook/Lake/DuPage. Competitor: Merel Family Law (dedicated Chicago HNW divorce page). Opportunity: targeted search + LSA campaigns for HNW/contentious divorce and custody.
+2. [Lead Gen / Quick Win] Fix mobile site speed — Why: Lighthouse mobile 26/100, LCP 19.7s; ads and search clicks land on slow pages. No competitor named. Opportunity: speed remediation / rebuild.
+3. [Lead Gen / Quick Win] Restart review flow — Why: newest on-site reviews are months old (UNCONFIRMED); competitors appear to hold larger review bases. Competitor: Arami Law (qualitative only). Opportunity: systematic review requests.
+4. [Lead Gen / Quick Win] Unify firm name and clean up the staging copy — Why: Yelp/Facebook still "Kulek, Hakimi & Katz"; staging copy indexed. No competitor. Opportunity: NAP/name consistency + de-index staging.
+5. [Intake / Quick Win] Measure lead-to-signed conversion by source — Why: close rate not stated; 20 vs 40 goal. No competitor. Opportunity: track every inquiry source through Practice Panther.
+6. [Intake / Long-Term] Simplify the path from first click to booked evaluation — Why: form at bottom of homepage, three booking paths. No competitor. Opportunity: single tracked intake path.
+7. [Team / Long-Term] Build role-level scorecards for the CEO transition — Why: single-successor plan, no KPIs beyond billing. No competitor. Opportunity: scorecards + weekly rhythm.
+8. [Profit / Quick Win] Profitability reporting by case type and attorney — Why: P&Ls not used for decisions; 15% net vs 20–30% target. No competitor. Opportunity: monthly profit reporting via FCFO. (Prospect explicitly stated no analysis exists; no practice-area profitability claims made.)
+
+======================================================================
+FIRST 90 DAYS — VERSION A (marketing sold: Paid Ads Starter)
+======================================================================
+Pre-written onboarding timeline kept exactly as-is. Mixed deal: ONE kickoff bullet added for FCFO Advisor to Days 1–7: "Fractional CFO kickoff — financial visibility setup and reporting cadence".
+
+======================================================================
+GROWTH ROADMAP PHASES
+======================================================================
+Phase 1 Foundation: FCFO Advisor + Paid Ads Starter (what is being bought now).
+Phase 2 Operational Scale: add FCOO Advisor ($3,297/mo bundled) — supports CEO transition / partner handoff. Milestone: once the firm is consistently signing 40 cases/mo.
+Phase 3 Optimize: Bookkeeping (Level 2, $1M–$2.9M band: $2,197/mo bundled + non-waivable $2,000 setup — not quoted to client) and Legal AI Workforce AI Workforce Pro ($1,597/mo for 5 users). FCFO already in Phase 1, so not repeated. Milestone: once the firm reaches $5M+ / partner transition complete.
+(Phase 4/5 not used in the 3-card template.)
+
+======================================================================
+ESCALATION FLAGS (INTERNAL — NOT IN CLIENT REPORT)
+======================================================================
+- Review counts unconfirmed — verify live before the call (firm AND competitors: Merel, Arami, STG, HKAS, ABM). All Pass 1 review figures were tagged UNCONFIRMED; the client report uses qualitative framing only and prints no review counts or ratings.
+- Pass 1 had no interactive browser: local 3-pack, Google Ads, LSA, and Meta Ad Library were NOT OBSERVED. Client report uses "not confirmed" framing only; no claim that ads are or are not running. A human with a real browser should confirm before/at the call.
+- PageSpeed desktop NOT OBTAINED (HTTP 403 on all attempts); only mobile (26, local Lighthouse lab run, not pagespeed.web.dev) is printed.
+- WEBSITE vs PACKAGE: mobile PageSpeed is 26 (<50) — guide says a site needing rebuild must use Full Service / Web+SEO, not ads-only. Seller override to Paid Ads Starter honored per Slack request; sites that slow will reduce paid-ads conversion. Recommend discussing a website rebuild (Full Service Marketing Starter) with the prospect.
+- Family Law in Chicago (top-10 metro) -> approval required.
+- Revenue goal ($10M in 3 yrs) exceeds projected ad-generated revenue (~$1.9M/yr at aggressive) -> paid ads team review.
+- Aggressive ad spend ($23,000) exceeds Paid Ads Starter cap ($20,000); 10% overage fee accepted by seller. Spend approaches the $25K scoping-approval threshold.
+- Transcript custody = machine (Fathom summary via HubSpot); no verbatim quotes were available, so no quote boxes appear in the client report.
+- FCFO "Level 1" -> Advisor tier is an inference — confirm with prospect.
+- Close rate and average case value not stated — defaults used in ROI.
+- Revenue basis: $2M is a 2026 ESTIMATE (2025 actual $700K). 35% cap holds only if projection is realistic.
+- LAW (Phase 3 mention only): confirm LAW delivery capacity before presenting.
