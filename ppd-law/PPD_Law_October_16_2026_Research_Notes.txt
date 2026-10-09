@@ -1,0 +1,227 @@
+PPD LAW — AUDIT RESEARCH NOTES (PASS 1)
+=======================================
+Firm Name: PPD Law (PPD LAW OFFICE)
+Friendly Name: ppd-law
+URL: http://ppdlaw.ca (resolves; live-browsed 2026-10-09)
+Sales Rep: Jacob Meissner (jacob.meissner@smbteam.com)
+Audit Date: October 16, 2026 (proposal call 2026-10-16 18:30Z = 1:30 PM CT)
+Research run date: 2026-10-09
+Contact: Premmal Patel-David — assist@ppdlaw.ca
+City / market: Brandon, Manitoba (Canada)
+Transcript status: outcome=found, custody=machine, source=hubspot_notes (Fathom AI summary, 24 min call, "No highlights"). The transcript is an AI-generated summary, not a verbatim transcript — no direct quotes from the prospect are available except where the summary itself quotes ("Small Business Manager" -> "Wealth Multiplier").
+
+RESEARCH METHOD / LIMITATIONS (read before using any number)
+- Website: fetched live (WebFetch + curl). Site sits behind a WAF that returns HTTP 403 to some desktop user-agents.
+- Google results (GBP, local packs, ads): pulled via headless Chromium from a datacenter IP, hl=en gl=ca, one query at a time, on 2026-10-09. Google local-pack data shown below was read directly off the Google results page, so it carries [confirmed via Google]. A datacenter session is not a real Brandon user: pack order, ad serving and LSA serving can differ for a real searcher in Brandon.
+- Google PageSpeed Insights API returned HTTP 429 (daily quota exhausted) on every retry; pagespeed.web.dev is a JS app that could not be driven here. PageSpeed numbers below are from LOCAL Lighthouse 12.8.2 runs (same engine PSI uses) and are labelled as such. They are real measured numbers but may differ from PSI by several points.
+- Meta Ad Library (facebook.com/ads/library) returned an empty page in headless mode (login/JS wall). Not observed — NOT evidence the firm runs no Meta ads.
+- Yelp, Lawzana returned 403; Alignable returned 429. Avvo/Justia/FindLaw only checked via Google search results.
+
+=======================================================================
+STEP 1 — WEBSITE RESEARCH
+=======================================================================
+- Website URL confirmed live: yes (https://ppdlaw.ca, WordPress + Yoast SEO)
+- Last redesign date or estimated age: not observed. Footer shows "2026 All Rights Reserved". Yoast sitemap: pages last modified 2026-06-16; posts last modified 2026-09-15. Blog content goes back to Dec 2023. GBP shows "3+ years in business".
+- Mobile responsive: yes — rendered and scored under Lighthouse mobile emulation; navigation menu is duplicated on page (typical responsive menu). Not hand-tested on a physical device.
+- Homepage headline: "Welcome to PPD Law Office" (with tagline about client interests and long-term relationships). Google title tag: "Experienced Lawyer in Brandon MB".
+- CTA above fold: yes — "Get Started" button -> contact page
+- Contact form location: separate /contact/ page (fields: First Name, Last Name, Email, Phone No., Services dropdown, Message). Not on homepage.
+- Live chat present: no
+- Attorney bio present: yes — "Your Trusted Advocate at PPD Law" section: Premmal Patel-David, "a dual-licensed lawyer with expertise in Estate Law, Real Estate, Commercial Law, Family & Civil Litigation"; lists professional affiliations and multilingual capability. Bio on site uses she/her.
+- Video present: no (none detected on homepage)
+- Blog present: yes — last post September 15, 2026 ("Serving divorce documents outside Canada"). Cadence is irregular: Sep 15 2026, Jun 15 2026, Apr 20 2026, Feb 2 2026, May 5 2025, Jan 30 2025, Jan 19 2024, Dec 2023 (x3).
+- Practice areas on site: Real Estate, Real Estate Development, Business/Commercial, Corporate, Immigration (+ "International Desk"), Civil, Wills & Estate, Family Law
+- Pages (page sitemap, 11 URLs): home, services, real-estate-law, commercial-business-law, wills-estate-law, family-law, international-desk, immigration-law, contact, about, real-estate-development-law
+- Hours listed: Mon–Fri 9–5, weekends closed
+- Address on site: Unit C-217 10th Street, Brandon, MB R7A 4E9; Phone 204-540-0414; assist@ppdlaw.ca
+
+PageSpeed (LOCAL Lighthouse 12.8.2, performance category, run 2026-10-09 — PSI API quota exhausted, see limitations):
+- PageSpeed mobile score: 43 (Lighthouse default mobile emulation; FCP 1.8 s, LCP 24.8 s, TBT 1,700 ms, CLS 0, Speed Index 5.3 s)
+- PageSpeed desktop score: 71 (LCP 4.6 s). NOTE: the default Lighthouse desktop run was blocked by the site (HTTP 403, 3 attempts); the 71 was obtained by running the desktop preset (desktop viewport/throttling) with the mobile user-agent string that the site does accept.
+- Treat both as lab scores: the LCP of 24.8 s on mobile is the key finding (slow-loading main content) and is worth re-checking on pagespeed.web.dev before quoting in a client-facing report.
+
+*** SECTION SAVED: WEBSITE ***
+
+=======================================================================
+STEP 2 — GOOGLE BUSINESS PROFILE
+=======================================================================
+- GBP found: yes — "PPD LAW OFFICE", 217 10th St Unit C, Brandon, MB R7A 4E8, +1 204-540-0414, http://www.ppdlaw.ca/
+- Star rating: 4.7 [confirmed via Google]
+- Total review count: 59 [confirmed via Google]
+- Most recent review date: not observed (review dates not shown in the results-page card)
+- Primary category: "Law firm" (Place category). Category label shown varies by query: "Family law attorney", "Real estate attorney", "Divorce lawyer".
+- Photos active: yes ("See photos" / "See outside" present)
+- Posts active: not observed
+- Business age shown: "3+ years in business"
+- Sample review snippets surfaced by Google: "She handled my immigration case very quickly and professionally."; "Communication was clear and they took the time to answer all my questions."; "The process was straightforward and handled with care."
+
+*** SECTION SAVED: GBP ***
+
+=======================================================================
+STEP 3 — LOCAL 3-PACK SEARCHES (all review counts/ratings read from Google local pack: [confirmed via Google])
+=======================================================================
+Practice area basis: the transcript names Business, Commercial, Immigration (core) plus Family Law and Real Estate. Wills & Estate is on the website but not in the transcript (one bonus search run).
+
+Practice Area 1: Business / Commercial
+- Search 1 "business lawyer Brandon MB": firm appears YES — pack: Meighen Haddad LLP 4.5 (65) [confirmed via Google], PPD LAW OFFICE 4.7 (59) [confirmed via Google], Epp Law Office 4.8 (24) [confirmed via Google]
+- Search 2 "commercial lawyer Brandon Manitoba": firm appears YES — pack: Meighen Haddad LLP 4.5 (65), PPD LAW OFFICE 4.7 (59), Epp Law Office 4.8 (24) [all confirmed via Google]
+- Search 3 "corporate lawyer near me Brandon MB": firm appears YES — pack: Meighen Haddad LLP 4.5 (65), PPD LAW OFFICE 4.7 (59), Epp Law Office 4.8 (24) [all confirmed via Google]
+
+Practice Area 2: Immigration
+- Search 1 "immigration lawyer Brandon MB": firm appears NO — pack: Shivay Immigration Services 4.9 (240), TS Canadian Immigration Services 5.0 (23), YWI Immigration Consulting (Brandon) 5.0 (3) [all confirmed via Google]
+- Search 2 "immigration lawyer Brandon Manitoba": firm appears NO — pack: Shivay Immigration Services 4.9 (240), YWI Immigration Consulting (Brandon) 5.0 (3), TS Canadian Immigration Services 5.0 (23) [all confirmed via Google]
+- Search 3 "work permit lawyer Brandon MB": firm appears NO — pack: Shivay Immigration Services 4.9 (240), YWI Immigration Consulting (Brandon) 5.0 (3), TS Canadian Immigration Services 5.0 (23) [all confirmed via Google]
+- Observation: PPD is absent from all three immigration packs even though Google surfaces a review mentioning an immigration case on PPD's own listing. Two of the three pack occupants are categorized by Google as "Immigration & naturalization service"/"Consultant" (not law firms); only YWI is labelled "Immigration attorney". Shivay's 240 reviews dwarfs PPD's 59.
+
+Practice Area 3: Family Law
+- Search 1 "family lawyer Brandon MB": firm appears YES (#1) — pack: PPD LAW OFFICE 4.7 (59), Meighen Haddad LLP 4.5 (65), Epp Law Office 4.8 (24) [all confirmed via Google]
+- Search 2 "divorce lawyer Brandon Manitoba": firm appears YES (#1) — pack: PPD LAW OFFICE 4.7 (59), Meighen Haddad LLP 4.5 (65), Donald & Kehler Law Office 4.3 (42) [all confirmed via Google]
+- Search 3 "separation agreement lawyer Brandon MB": firm appears YES (#2) — pack: Meighen Haddad LLP 4.5 (65), PPD LAW OFFICE 4.7 (59), Patersons LLP 3.2 (31) [all confirmed via Google]
+
+Practice Area 4: Real Estate
+- Search 1 "real estate lawyer Brandon MB": firm appears YES (#2) — pack: Epp Law Office 4.8 (24), PPD LAW OFFICE 4.7 (59), Meighen Haddad LLP 4.5 (65) [all confirmed via Google]
+- Search 2 "real estate lawyer Brandon Manitoba": firm appears YES (#2) — pack: Meighen Haddad LLP 4.5 (65), PPD LAW OFFICE 4.7 (59), Epp Law Office 4.8 (24) [all confirmed via Google]
+- Search 3 "property closing lawyer Brandon MB": firm appears YES (#2) — pack: Epp Law Office 4.8 (24), PPD LAW OFFICE 4.7 (59), Donald & Kehler Law Office 4.3 (42) [all confirmed via Google]
+
+Bonus (website practice area, not in transcript): Wills & Estate
+- Search 1 "wills and estates lawyer Brandon MB": firm appears YES (#2) — pack: Edwards Law Wills & Estates 5.0 (4), PPD LAW OFFICE 4.7 (59), Meighen Haddad LLP 4.5 (65) [all confirmed via Google]
+
+Summary: PPD appeared in the local pack in 10 of 13 searches — every business/commercial, family, real estate and wills search; 0 of 3 immigration searches. Organic web results for most queries were led by Meighen Haddad LLP (mhlaw.ca) and Thompson Dorfman Sweatman LLP (tdslaw.com).
+
+*** SECTION SAVED: 3-PACK ***
+
+=======================================================================
+STEP 4 — COMPETITOR REVIEW COUNTS (read off Google local pack, 2026-10-09)
+=======================================================================
+Prospect for comparison: PPD LAW OFFICE — 59 reviews, 4.7 [confirmed via Google]
+- Competitor 1: Meighen Haddad LLP (110 11 St, Brandon; 145+ yrs in business) — reviews: 65 [confirmed via Google] — rating: 4.5 [confirmed via Google]  (ONLY local law-firm competitor found with more reviews than PPD, by 6)
+- Competitor 2: Epp Law Office (642 18th St Unit A; 5+ yrs) — reviews: 24 [confirmed via Google] — rating: 4.8 [confirmed via Google]  (PPD has MORE reviews)
+- Competitor 3: Donald & Kehler Law Office (22 6th St; 7+ yrs) — reviews: 42 [confirmed via Google] — rating: 4.3 [confirmed via Google]  (PPD has MORE reviews)
+- Additional: Patersons LLP — reviews: 31 [confirmed via Google] — rating: 3.2 [confirmed via Google]  (PPD has MORE)
+- Immigration: Shivay Immigration Services (240 10th St; categorized as immigration service/consultant, not a law firm) — reviews: 240 [confirmed via Google] — rating: 4.9 [confirmed via Google]; TS Canadian Immigration Services — 23, 5.0 [confirmed via Google]; YWI Immigration Consulting (Brandon) — 3, 5.0 [confirmed via Google]
+- Do NOT describe PPD as trailing law-firm competitors on reviews except Meighen Haddad (65 vs 59) and, in immigration, Shivay (240 vs 59).
+
+*** SECTION SAVED: COMPETITORS ***
+
+=======================================================================
+STEP 5 — DIRECTORY LISTINGS
+=======================================================================
+- Google Business Profile: see Step 2 (4.7 / 59).
+- Facebook page "PPD LAW office": 444 followers, 17 following; "Not yet rated (1 review)"; posting actively (latest post ~6 hours before check, marked "AI content"); NAP matches website (217 10th Street Unit C, +1 204-540-0414, Assist@ppdlaw.ca).
+- Yelp (yelp.ca/biz/ppd-law-office-brandon): listing exists (Google snippet "Updated May 2026", category Real Estate Law) but page returned 403 — rating/review count NOT observed. Snippet shows address "29 10th Street" — differs from website/GBP (217 10th Street Unit C): possible stale/incorrect NAP on Yelp.
+- Alignable (alignable.com/brandon-mb/ppd-law-office): listing exists, 3 local-business recommendations per search snippet; page itself returned 429 so not verified. Address shown as 217 10th Street Unit C.
+- Lawzana: listing exists (Brandon, MB); page returned 403, not verified.
+- YellowPages.ca: PPD Law Office search returned a generic Brandon lawyers list with paid "Ad" placements for other firms (Treo Law LLP; Go To Canada Immigration Lawyer & Business Consultant, Winnipeg); a dedicated PPD listing was not confirmed.
+- Avvo / Justia / FindLaw: no PPD profile surfaced in Google results (these are US-centric directories and not meaningful for a Manitoba firm). Avvo is not a relevant gap. Martindale Brandon directory page was returned by search but not opened.
+- LinkedIn: Premmal Patel-David profile exists; Google snippet shows her LinkedIn bio listing the phone as "204-540-0141" (transposed digits vs 204-540-0414) — possible NAP inconsistency to verify.
+- NAP inconsistencies found: (a) postal code R7A 4E9 on website vs R7A 4E8 on GBP; (b) Yelp "29 10th Street"; (c) LinkedIn phone 204-540-0141 vs 204-540-0414; (d) HubSpot trigger contact phone 2048818333 differs from every public listing (204-540-0414); (e) opengovca registry lists Premmal Patel-David under a prior firm (Burch Law, 411-1011 Rosser Ave) — outdated registry data.
+- Geo-targeting landing pages for surrounding cities: none. Site has only 11 pages (see Step 1); no Neepawa/Virden/Souris/Carberry/Winnipeg location pages. Opportunity gap.
+
+*** SECTION SAVED: GBP / LOCAL SEO / DIRECTORIES ***
+
+=======================================================================
+STEP 6 — GOOGLE ADS (13 Google searches, 2026-10-09, headless Chromium)
+=======================================================================
+Caveat: ad serving to a datacenter headless browser is unreliable; "not observed" below does not mean no ads run. Per the ADS FRAMING RULE no claim of "not running ads" is made.
+Practice Area 1: Business / Commercial
+- Firm ads observed: not observed (no sponsored results in "business lawyer Brandon MB", "commercial lawyer Brandon Manitoba", "corporate lawyer near me Brandon MB")
+- Named local competitors running ads: not observed
+Practice Area 2: Immigration
+- Firm ads observed: not observed (3 immigration searches)
+- Named local competitors running ads: not observed on Google SERPs. (YellowPages.ca shows a paid "Ad" for Go To Canada Immigration Lawyer & Business Consultant, a Winnipeg firm — directory ad, not Google Ads.)
+Practice Area 3: Family Law
+- Firm ads observed: not observed (3 family searches)
+- Named local competitors running ads: not observed
+Practice Area 4: Real Estate
+- Firm ads observed: not observed (3 real estate searches)
+- Named local competitors running ads: not observed
+(Wills & Estate bonus search: no ads observed.)
+Framing: PPD "does not appear to be running Google Ads for these searches" in this check; the prospect did not state on the call whether they run ads.
+
+=======================================================================
+STEP 7 — LOCAL SERVICE ADS
+=======================================================================
+Search used: "immigration lawyer Brandon MB" and "business lawyer Brandon MB" (plus others above)
+- Firm appears in LSA: not observed
+- Google Screened: not observed
+- LSA review count: n/a
+- Named local competitors in LSA: not observed (LSA modules did not render in any of the 13 SERPs; Google LSA coverage in smaller Canadian markets for lawyers is limited)
+
+=======================================================================
+STEP 8 — META ADS
+=======================================================================
+- Firm has active ads: not observed — Meta Ad Library returned an empty page in headless mode (could not be queried). Facebook page shows organic posting only; no "Ads" transparency tab data was retrieved.
+- Named local competitor 1: Meighen Haddad LLP — not checked (Ad Library unreachable)
+- Named local competitor 2: Shivay Immigration Services — not checked (Ad Library unreachable)
+- Recommend the rep manually check facebook.com/ads/library for "PPD Law", "Meighen Haddad" and "Shivay Immigration" before the call if Meta ads will be discussed.
+
+*** SECTION SAVED: ADS ***
+
+=======================================================================
+STEP 9 — TRANSCRIPT EXTRACTION (source: Fathom AI summary via HubSpot notes; trust as stated)
+=======================================================================
+- Practice areas confirmed: Business, Commercial, Immigration (core focus); also Family Law and Real Estate
+- Current lead sources: not stated. Intake described as "Inconsistent (3–8 new files/month), but current capacity is full."
+- Ads ever run: not stated
+- Team size: Premmal Patel-David + 3 support staff (roles not specified). Hiring: "must hire recent graduates with less experience" because trained staff are hard to find. (Trigger package label says "team size unknown" — transcript gives 3 support staff.)
+- Annual revenue (gross / case value): ~$500k/year ("Revenue: ~$500k/year")
+- Annual revenue (net / take-home / collected): not distinguished from gross
+- Fee structure: mixed — "Flat Fee: For straightforward commercial/immigration cases. Billable Hours: For complex cases and all family law litigation."
+- Revenue goal: "Double revenue to $1M by 2027, but not at the expense of health or work-life balance."
+- Average case value: not stated (flat-fee commercial/immigration matters; hourly for complex/family litigation)
+- Current close rate: not stated — default to 15%
+- Number of locations: 1 (Brandon, MB; none mentioned on call)
+- Spanish campaign needed: no
+- Dominant buying motive: Firm that runs itself so he/she has time back. Summary: "Premmal wants to evolve from 'Small Business Manager' to 'Wealth Multiplier' (true CEO) to gain time for other ventures"; "The firm is entirely dependent on Premmal; operations would stop if he took a vacation, causing burnout"; wants growth "not at the expense of health or work-life balance." (Motive type 1: a firm that runs itself.)
+- Any profitability claims made by prospect: none stated
+- Any claims about case types or practice areas: "Practice Areas: Business, Commercial, Immigration (core focus); also Family Law & Real Estate."; "Flat Fee: For straightforward commercial/immigration cases. Billable Hours: For complex cases and all family law litigation."
+- Stated call focus / product interest: NOT a marketing/lead-gen call. Meeting purpose: "Analyze Premmal's law firm to identify growth and efficiency challenges." Focus is operational bottleneck and owner dependence: training inexperienced staff consumes ~20% of the owner's day; burnout "recent and recurring". Proposed solution discussed: SMB Team "done-for-you AI" (drafting, research, human-in-the-loop), "operational coaching" (systems/delegation to build a self-managing firm), and fractional COO/CFO/CTO (AI-focused) roles. No tier or price named on the call. Follow-up meeting agenda: "deeper dive on business operations and a demo of SMB Team's AI tools."
+- Primary engagement: coaching/ops
+- Products discussed on call: none (call described AI, coaching and fractional COO/CFO/CTO only generically — no catalog product, tier or price was named or quoted; the trigger's seller-set package "Elite Coach Plus + AI Workforce Pro – Starter" came from a Slack seller request, not from the call)
+- Lead-gen gap stated: no — "Client Intake: Inconsistent (3–8 new files/month), but current capacity is full." No request for more leads, ads, SEO or website help.
+- Existing marketing/SEO/ad vendor engagements: none stated
+- Budget constraints stated: none stated
+
+Data-quality flags for the rep / Pass 2:
+1. Pronouns: the call summary refers to Premmal as "he/his"; the firm website, LinkedIn and Google snippets use "she/her". Confirm before the report uses a pronoun — safest to use "Premmal" or "you".
+2. The recap email address in the summary is truncated ("assist@pp.see"/"assist@pp."); the site lists assist@ppdlaw.ca, matching the trigger contact email.
+3. Phone in the trigger (2048818333) does not match the office line on the website/GBP (204-540-0414).
+4. The call was 24 minutes with no highlights; the summary is thin. No Spanish, close-rate, case-value or lead-source detail exists — defaults noted above.
+5. Revenue of ~$500k and the $1M goal are call statements, not verified.
+
+=======================================================================
+STEP 10 — COMPETITIVE URGENCY SCORE
+=======================================================================
+Score: 4 / 10
+
+Reasoning: In Brandon's local market PPD is already visible — it appears in the 3-pack for business/commercial, family, real estate and wills searches (10 of 13 searches), ranks #1 for family/divorce, and holds 4.7 stars with 59 reviews, more than every local law-firm competitor except Meighen Haddad LLP (65). Gaps: (1) invisible in all 3 immigration pack searches, where Shivay Immigration Services (240 reviews, 4.9) dominates; (2) mobile PageSpeed 43 with a 24.8 s LCP (local Lighthouse); (3) no city/geo landing pages; (4) irregular blog cadence; (5) NAP inconsistencies. No competitor ad activity was observed in this check, and the market looks relatively quiet on paid channels (not verified for Meta). Because the call centered on owner dependence and capacity (intake already full), competitive pressure is a secondary theme for this audit.
+
+Named local competitor threats:
+1. Meighen Haddad LLP (Brandon, 145+ yrs) — 65 Google reviews at 4.5, in the pack for business, commercial, corporate, family, divorce, separation, real estate and wills searches and #1 organic result on most queries.
+2. Shivay Immigration Services (Brandon) — 240 Google reviews at 4.9, owns the immigration pack across all three searches (note: an immigration service/consultant, not a law firm).
+3. Epp Law Office (Brandon, 5+ yrs) — 4.8 stars (24 reviews); co-appears with PPD in business, family and real estate packs, #1 in two real estate searches.
+
+Matching dynamic sentence (Score 4–6): "A score of 4 means competitors have meaningful advantages in one or more areas and are pulling ahead. You are not invisible yet — but the window to close the gap is narrowing. Every month without action is a month they extend their lead."
+
+*** FINAL RESEARCH NOTES SAVED ***
+
+=======================================================================
+PASS 2 — VERIFICATION CHECKLIST
+=======================================================================
+[x] Every number matches observed data (PageSpeed = local Lighthouse, disclosed; GBP/competitor figures from Google results page)
+[x] Every competitor review count verified live against Google; PPD (59) is fewer than Meighen Haddad (65) and Shivay (240) only — no competitor described as "dominating" with fewer reviews than PPD
+[x] Every review count/rating tagged [confirmed via Google]; Facebook/Alignable/Yelp figures not recorded as numbers other than Facebook "Not yet rated (1 review)" (Facebook, not Google) — Alignable "3 recommendations" and Yelp rating are NOT to be quoted (unverified)
+[x] Revenue: only one figure stated (~$500k), recorded as "not distinguished from gross"; fee structure recorded (mixed flat fee / hourly)
+[x] Every ad section covers all transcript practice areas (Business/Commercial, Immigration, Family, Real Estate)
+[x] No section says "you are not running ads" — only "not observed"/"does not appear"
+[x] No profitability claims beyond transcript (none stated)
+[x] Competitors are specific named local firms (Shivay is a local immigration service, flagged as non-law-firm)
+[x] PageSpeed scores are real measured numbers (local Lighthouse; PSI API quota exhausted — disclosed)
+[x] DBM recorded
+[x] Revenue goal recorded ($1M by 2027)
+[x] Close rate recorded (not stated — default 15%)
+[x] Average case value recorded (not stated; flat fee vs hourly noted)
+[x] Stated call focus recorded — explicitly NOT marketing; coaching/ops + AI + fractional leadership
+[x] Primary engagement / Products discussed / Lead-gen gap filled in exact format
+[x] Existing vendor engagements recorded (none stated)
+[x] Budget constraints recorded (none stated)
