@@ -50,7 +50,7 @@ Create `[friendly-name]/sections/` if it does not exist.
 - Omit "Who Is Doing It Better" row on any quick win card where no specific named local competitor was identified.
 - Omit "The Positive" block in any pillar section where nothing genuine can be said.
 - Never mention live chat as an SMB Team service.
-- Never mention CRM setup as a first 90 days deliverable.
+- Never mention CRM setup as an SMB Team deliverable.
 - Never state profitability facts by practice area unless the prospect explicitly said so on the call.
 - Escalation flags are internal only — never appear in the client report.
 - **Never print a review count or star rating (firm or competitor) tagged `UNCONFIRMED` in the research notes as a specific fact.** Use qualitative framing instead (e.g., "far fewer reviews than several competitors in this market" rather than an exact number), and add "Review counts unconfirmed — verify live before the call" to the escalation flags in `section_11_workings.txt`. Only a number tagged `[confirmed via Google]` in the research notes may appear as a specific figure in the client-facing report.
@@ -187,7 +187,7 @@ Compute and save `[friendly-name]/sections/section_11_workings.txt` containing:
 - If a marketing/ads package is part of the recommendation: one plain-English "why this range" sentence explaining the *payoff* of spending in this range for this firm specifically — what it converts or captures (e.g. high-intent searches in their practice area, cases currently going to a competitor, their stated urgency/goal) — not a restatement of the math. Ground it in a real specific from the audit (practice area, a named competitor gap, or the DBM/goal), pulling from `ad_spend_rationale` in `package_decision.json` if present only as a hint toward which practice area or basis to reference, never to quote directly. No CPL numbers, tier caps, or other internal terminology — this sentence is client-facing.
 - DBM statement for Block 1
 - List of 6+ quick win opportunities identified (pillar, title, why, competitor if any, opportunity)
-- First 90 days: Version A (marketing sold — onboarding timeline + any non-marketing kickoff bullets) or Version B (3–5 package-keyed bullets)
+- What You Told Us (Block 5): the 3 items selected, each with the verbatim transcript line it comes from and the Block 2 package/deliverable it supports
 
 Save the workings file. Do not proceed until it is saved.
 
@@ -204,7 +204,7 @@ Leave blocks 5–8 with their original template placeholder text for now. Save t
 
 **STEP I-c — Complete section 11 second half**
 Edit `[friendly-name]/sections/section_11_next_steps.html` to fill in blocks 5–8:
-- Block 5: first 90 days. Use the FIRST 90 DAYS — ONBOARDING TIMELINE rules below (Version A = pre-written onboarding timeline when marketing is sold; Version B = package-keyed bullets otherwise). Never mention live chat. Never mention CRM setup.
+- Block 5: What You Told Us. Use the WHAT YOU TOLD US rules below — 3 items from the transcript, each tied to the recommendation, plus one next-step line. Never mention live chat. Never mention CRM setup.
 - Block 6: three phase roadmap cards. Use the GROWTH ROADMAP PHASES rules below — do not repeat what Block 2 already sold as a "new" phase addition.
 - Block 7: three outcome cards (More Profit, More Freedom, Better Client Results), each tied to this owner's DBM.
 - Block 8: personal closing paragraph (2–3 italic sentences) + final line with firm name.
@@ -609,75 +609,51 @@ Note these in the research notes file for the sales team. Do not include in the 
 
 ---
 
-### FIRST 90 DAYS — ONBOARDING TIMELINE (Block 5)
+### WHAT YOU TOLD US (Block 5)
 
-Block 5 depends on whether marketing is part of THIS firm's Block 2
-recommendation.
+Block 5 replaces the old "First 90 Days" block for every firm, whatever is
+sold. It plays the owner's own words back to them and shows how the
+recommendation answers each one. Same structure for every package mix.
 
-**VERSION A — any Full Service Marketing (any tier), Ads-only, or Web+SEO
-package is sold.** Block 5 is SMB Team's marketing onboarding timeline, exactly
-as pre-written in the section_11 template. Do not rewrite, reorder, or remove
-any stage or bullet:
+Content:
+- Exactly 3 rows. Each row = one thing the owner (or another attendee from
+  the firm) raised on the discovery call, in bold and in their framing,
+  followed by one sentence on how the Block 2 recommendation addresses it.
+- Pick the 3 that most directly support Block 2 — cover each package in
+  Block 2 where possible, most central package first (tie to the reddest
+  pillar, the DBM, or the largest bundled price).
+- End with one next-step line naming the first kickoff call for the most
+  central package (e.g. "kickoff call with your Onboarding team", "...with
+  your Coach", "...with your FCOO"). No dates.
 
-| Stage | Window | What happens |
-|---|---|---|
-| Discovery + Prioritize | Days 1–7 | Practice Area Checklist assigned · Platform access invites on the way · Portal & welcome materials delivered · DNS, Reviews, and ChatGPT setup begins |
-| Build + Begin Execution | Days 8–14 | Strategy Call (SEO, PPC, Website, Hulu, Social, AI visibility) — meet the full team: Onboarding PC, Marketing Strategist, Project Coordinators · 3 budget options presented · Website & SEO Strategy call with Marketing Strategist & Web PC scheduled · "Preparing for Leads" call scheduled |
-| Demonstrate Progress | Days 15–30 | Once budgets are confirmed, campaign builds begin · First homepage design & content delivered · Weekly website build updates via the portal · Weekly reminders until launch |
-| Sustain + Grow | Days 30–90+ | Monthly reporting call with the Marketing Strategist · Monthly strategic check-ins & next-steps planning · Monthly reports with KPIs and insights · Team proactively monitors campaigns and flags opportunities |
+Sourcing (non-negotiable):
+- Every row must come from the transcript. Record the verbatim transcript
+  line for each in `section_11_workings.txt` (Step I-a). If you cannot point
+  to a line, do not use it.
+- Paraphrase in the owner's framing. Quote verbatim only when the line is
+  short and clearly benign. Never strengthen, exaggerate, or combine what
+  they said into something they did not say.
+- Problems found only in research (website, reviews, ads) are not eligible —
+  those belong in Sections 5–9.
 
-Mixed deal (marketing + other packages): add ONE kickoff bullet per
-non-marketing package from the VERSION B table below to the Days 1–7 or
-Days 8–14 list. Nothing else changes.
+Never include (the report is forwarded to partners and staff):
+- Named employees, or criticism of an identifiable staff member
+- Personal, health, or family matters
+- Partner or co-owner disputes
+- Specific financial-distress figures (debt, missed payroll, overdrafts)
+If one of these is the strongest item, generalize it (e.g. "the firm
+depends on you for every decision") or pick a different one.
 
-**VERSION B — no marketing package is sold.** Delete the four stages and use
-3-5 package-keyed bullets, composed only from the package/service types
-actually in Block 2:
-
-| Package/Service Sold | Typical First-90-Days Action |
-|---|---|
-| Coach Essentials / Elite Coach / Elite Coach Plus / Master's Circle | Coaching kickoff — first group session and goal-setting call |
-| FCOO Advisor / Director / Partner | Operations audit and workflow mapping kickoff |
-| FCFO Advisor / Director / Partner | Financial visibility setup — reporting cadence kickoff |
-| Legal AI Workforce (any LAW tier) | AI workspace setup and first Skill deployment |
-| Bookkeeping (any level) | First-month reconciliation and cleanup kickoff |
-| Attorney Assistant (AI intake agent) | Intake agent configuration and training kickoff |
-| AI Avatar / OmniSocial AI | First content/video batch kickoff |
-
-Include one action per package/service type actually in Block 2. Never
-include an action for a package this firm is not buying. Order bullets by
-which package is most central to this firm's recommendation.
-
-Rules (both versions):
-- Never promise specific launch dates for the website or campaigns, specific
-  lead or click counts, strategy call dates faster than the timeline above,
-  or deliverables outside the signed agreement. The timeline is a flexible
-  framework, not a fixed calendar.
-- Every bullet must connect to something SMB Team actually delivers. Never
-  mention live chat. Never mention CRM setup.
-
----|---|
-| Full Service Marketing (any tier), ads-eligible channel identified in section_06 | Launch [specific channel: Google Ads / LSA / Meta] for [practice area] in [city] |
-| Full Service Marketing, website rebuild flagged needed (section_06) | Rebuild website / build practice-area landing pages |
-| Full Service Marketing, GBP/local SEO/NAP gaps flagged (section_06) | Clean up GBP profile, NAP consistency, directory listings |
-| Ads-only or Web+SEO-only sub-package | Only the one relevant action above — do not add the other marketing actions |
-| Coach Essentials / Elite Coach / Elite Coach Plus / Master's Circle | Coaching kickoff — first group session and goal-setting call |
-| FCOO Advisor / Director / Partner | Operations audit and workflow mapping kickoff |
-| FCFO Advisor / Director / Partner | Financial visibility setup — reporting cadence kickoff |
-| Legal AI Workforce (any LAW tier) | AI workspace setup and first Skill deployment |
-| Bookkeeping (any level) | First-month reconciliation and cleanup kickoff |
-| Attorney Assistant (AI intake agent) | Intake agent configuration and training kickoff |
-| AI Avatar / OmniSocial AI | First content/video batch kickoff |
-
-Rules:
-- Include one action per package/service type actually in Block 2 — 3-5
-  bullets total. Never include an action for a package this firm is not
-  buying.
-- Order bullets by which package is most central to this firm's
-  recommendation (tie to the reddest pillar, the DBM, or the largest
-  bundled price) — not a fixed sequence. Do not default to leading with ads.
-- Every bullet must connect to something SMB Team actually delivers. Never
-  mention live chat. Never mention CRM setup.
+Language rules:
+- "How this plan addresses it" framing only — never promise outcomes,
+  launch dates, timelines, lead or click counts, or deliverables outside
+  the signed agreement.
+- Never use the phrase "pain points" (or other internal closer language)
+  in client-facing copy.
+- Keep each row to 1–2 sentences; do not repeat narrative already in
+  Sections 5–9 or Block 2.
+- Every "addresses it" clause must connect to something SMB Team actually
+  delivers. Never mention live chat. Never mention CRM setup.
 
 ---
 

@@ -30,7 +30,7 @@ The output of this guide feeds directly into:
 - **Block 2** of section_11_next_steps.html — package blocks with deliverables
 - **Block 3** — investment rows with retail and bundled prices
 - **Block 4** — ad spend amount, estimated case value, estimated cases, estimated revenue
-- **Block 5** — first 90 days (onboarding timeline when marketing is sold; package-keyed bullets otherwise)
+- **Block 5** — What You Told Us (3 things the owner raised on the call, each tied to the recommendation, plus a next-step line)
 - **Block 6** — three phase cards with milestone triggers
 
 **Non-negotiable principles:**
