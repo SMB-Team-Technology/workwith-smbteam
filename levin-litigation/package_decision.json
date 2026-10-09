@@ -32,11 +32,11 @@
     ],
     "lead_gen_gap": false
   },
-  "marketing_tier": null,
-  "marketing_name": null,
-  "marketing_price_bundled": null,
-  "marketing_price_retail": null,
-  "marketing_savings": null,
+  "marketing_tier": "Starter",
+  "marketing_name": "Paid Ads Starter",
+  "marketing_price_bundled": 2497,
+  "marketing_price_retail": 3497,
+  "marketing_savings": 1000,
   "coaching_name": null,
   "coaching_price_bundled": null,
   "coaching_price_retail": null,
@@ -46,11 +46,14 @@
   "law_price_bundled": 4997,
   "law_price_retail": 5797,
   "law_seats": null,
-  "total_bundled": 4997,
-  "total_savings": 800,
-  "ad_spend_conservative": null,
-  "ad_spend_aggressive": null,
-  "ad_spend_rationale": null,
+  "total_bundled": 7494,
+  "total_savings": 1800,
+  "ad_spend_conservative": 5000,
+  "ad_spend_aggressive": 8500,
+  "ad_spend_rationale": {
+    "conservative_basis": "seller-specified range low end ($5,000/mo)",
+    "aggressive_basis": "seller-specified range high end ($8,500/mo); within Paid Ads Starter's $20,000 ad cap"
+  },
   "selection_notes": [
     "AI-led call with no lead-gen need stated \u2014 marketing left out (call-purpose rule).",
     "\"AI Workforce Pro\" named without a tier \u2014 using AI Workforce Pro \u2013 Starter (team size not stated).",
@@ -59,6 +62,7 @@
     "Revenue not in research notes \u2014 sourced from HubSpot (hubspot_annual_law_firm_revenue): \"$961K - $3M\" \u2192 $1,980,500",
     "Team size not stated in research notes \u2014 defaulting to 3. Review for coaching tier accuracy.",
     "Revenue $1M+, team under 5: Elite Coach Plus selected (Master's Circle requires 5+ team).",
-    "Seller override: swapped Elite Coach Plus for Fractional CTO Level 2 per Slack request on 2026-10-08 (Nick Holderman). Coaching removed; Fractional CTO Level 2 ($4,997/mo bundled, $5,797 retail; revenue $1M+ requirement met) takes the LAW slot, replacing AI Workforce Pro \u2013 Starter (one LAW product per package). Total $4,997/mo, savings $800/mo."
+    "Seller override: swapped Elite Coach Plus for Fractional CTO Level 2 per Slack request on 2026-10-08 (Nick Holderman). Coaching removed; Fractional CTO Level 2 ($4,997/mo bundled, $5,797 retail; revenue $1M+ requirement met) takes the LAW slot, replacing AI Workforce Pro \u2013 Starter (one LAW product per package). Total $4,997/mo, savings $800/mo.",
+    "Seller override: removed Elite Coach Plus and Full Service Marketing (neither remained in the package) and added Paid Ads Starter ($2,497/mo bundled with Fractional CTO Level 2, $3,497 retail) per Slack request on 2026-10-09 (Nick Holderman). Suggested ad spend $5,000-$8,500/mo, within the $20,000 Paid Ads Starter cap. Paid Ads is an ads-only sub-package and is normally paired with a core coaching/advisory service; Fractional CTO Level 2 is the only such service in this package, so confirm that pairing. Total $7,494/mo, savings $1,800/mo."
   ]
 }
