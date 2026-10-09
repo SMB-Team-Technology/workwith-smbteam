@@ -1,170 +1,143 @@
 SECTION 11 WORKINGS — Chase Injury Law
-Generated: June 12, 2026
+Generated: October 9, 2026 (Pass 2, research notes dated October 6, 2026, run 4)
+INTERNAL ONLY — never shared with the client.
 
 ================================================================================
-PACKAGE DECISION VERIFICATION (confidence: medium)
+PACKAGE DECISION VERIFICATION (package_decision.json confidence: medium)
 ================================================================================
 
-Source: package_decision.json (revenue estimated from HubSpot: "$0-$180K" → $180,000 effective)
+Source: package_decision.json, committed with the seller override (revenue_source: seller_override_pre_revenue). Phase 1 review gate
+is locked (proposal_review.json status: locked). Seller approved: Paid Ads Starter only, Elite Coach dropped, ad spend $8,000-$9,000/mo.
 
-Research notes state:
-- Annual revenue: Not stated — firm is a startup launched April 2026 with 3 referral cases; effectively pre-revenue. Use $0 as baseline.
-- Revenue goal: $250,000 in year one (stated)
+Transcript-Stated Need Override check (research notes, Step 9):
+1. Call-purpose: Not triggered. Primary engagement is marketing/growth (Google PPC, LSA, YouTube, ChatGPT plan) plus intake coverage and a hands-on
+   "coach" for Charles. Not an FCTO/AI or ops-coaching engagement.
+2. Existing-vendor: Not triggered. No marketing/SEO/ad vendor stated. (A 1-week-old PPC campaign exists; manager/contract not stated.)
+3. Budget-reality: Not triggered by the transcript (planned budget of $8k/month stated, no explicit limit). Package scope was set by the SELLER OVERRIDE.
+4. Effective-revenue: Not triggered. No net/gross split stated; annual revenue not stated. Decision file treats the firm as pre-revenue per seller.
 
-The HubSpot $180K estimate represents the upper bound of the "$0-$180K" bucket. The firm is effectively pre-revenue, which places it below $180K. This is consistent with the Essentials tier (lowest available marketing tier) and the Elite Coach recommendation (revenue $250K-$400K range applies to goal revenue, not current).
-
-Eligibility check:
-- Practice area: Workers' Compensation (primary). Personal Injury (secondary). Workers' comp does not trigger the PI filter that hides Essentials. Essentials is eligible.
-- Revenue under $250K: Scoping approval required before proceeding. Flag for Randy Gold.
-- Revenue under $500K: LAW package not eligible. Confirmed — not recommended.
-- Team size: 1 (solo). Master's Circle not eligible (requires 5+ team members). Confirmed.
-- Personal Injury filter: PI is SECONDARY only. Primary is workers' comp. Essentials eligible.
-
-35% spend cap check:
-- Monthly revenue effective: $180,000 / 12 = $15,000/month
-- 35% cap: $15,000 × 0.35 = $5,250/month max SMB spend
-- Total SMB fees (management only): $5,997/month
-- NOTE: Total SMB fees slightly exceed the 35% cap based on the $180K estimate. However, the firm's actual operating goal is $250K year-one. At $250K/12 = $20,833/month, the 35% cap is $7,292 — comfortably above $5,997. Package is appropriate for the firm's goal revenue. Flag for sales rep to confirm financial capability.
-
-CONCLUSION: Package decision confirmed with notes. Values from decision file are accurate and consistent with research notes. Scoping approval required due to revenue under $250K.
+DEPARTURES FROM STANDARD RULES (all introduced by the seller override — flagged so sales can see they are intentional):
+- Standard logic would recommend Full Service Marketing. Seller chose Paid Ads Starter (ads-only sub-package) per Slack, October 9, 2026.
+- Ads-only sub-packages normally must be paired with a coaching/advisory package. Elite Coach was dropped by the seller, so Paid Ads Starter is the
+  only package. Confirm this pairing exception is approved.
+- Ads-only is normally reserved for firms with a good existing website. PageSpeed mobile is 29/100 (below the 50 rebuild trigger). The client-facing
+  report describes the speed problem honestly but does not promise a website rebuild, since none is in the package.
+- Revenue under $250K / pre-revenue: scoping approval required. 35% spend-cap check does not apply per the seller (ad spend sized to goals, not revenue).
+- The research notes show the client raised a mentorship need beyond the standard 1 hr/month. With Elite Coach removed, the proposal does not include
+  coaching in the first phase. The rep should be ready to address the mentorship question on the October 9 call. Do not promise an intensive program.
 
 ================================================================================
 MANDATORY PRICE LOOKUP — CHARACTER-BY-CHARACTER VERIFICATION
 ================================================================================
 
-Marketing package selected: Full Service Marketing — Essentials
-  - Bundled price (from table): $3,397/mo
-  - Stand-alone price (from table): N/A (Essentials stand-alone listed as $N/A in pricing table)
-  - Savings (stand-alone minus bundled): N/A
+Marketing package selected: Paid Ads Starter
+  - Bundled price (from Scoping_and_Ad_Spend_Guide.md Starter sub-package table): $2,497/mo
+  - Stand-alone price (same table): $3,497/mo
+  - Savings (stand-alone minus bundled): $1,000/mo
+  - Ad spend cap: $20,000/mo (recommended $8,000-$9,000 is within cap)
 
-Non-marketing package selected: Elite Coach
-  - Bundled price (from table): $2,600/mo
-  - Stand-alone price (from table): $3,497/mo
-  - Savings (stand-alone minus bundled): $897/mo
-
+Non-marketing package selected: none (Elite Coach dropped by seller)
 Legal AI Workforce (LAW) package selected: none
-  - Reason: Revenue under $500K — LAW not eligible
-
 AI Avatar / Video Growth add-on selected: none
-  - Reason: Not applicable at this stage; firm has no active marketing relationship yet
 
-Total monthly investment (sum of all bundled/recurring prices): $5,997/mo
-Total savings: $897/mo
+Total monthly investment (sum of bundled prices): $2,497/mo
+Total savings: $1,000/mo
+Minimum MRR check: $2,497/mo meets the $2,497 minimum.
+Ad spend check: $8,000 conservative / $9,000 aggressive, above the $3,000 absolute minimum.
 
 ================================================================================
-AD SPEND CALCULATIONS
+AD SPEND AND ROI PROJECTIONS (ESTIMATES)
 ================================================================================
 
-Practice area: Workers' Compensation (primary) — Fort Lauderdale / Broward County
-Market tier: Tier 2 (Fort Lauderdale is in the Miami–Fort Lauderdale MSA)
-Tier 2 multiplier: 1.3x (if applied to aggressive calculation)
+Practice area: Workers' compensation (Florida), statewide goal, Broward anchor. Market: Fort Lauderdale/Pompano Beach (Tier 2 geo).
+Ad spend range: seller-specified. Conservative $8,000/mo, aggressive $9,000/mo.
+Note: Workers' compensation is not listed in the approved practice-area CPL or channel-minimum tables, so the table CPLs could not be used.
 
-CONSERVATIVE AD SPEND: $3,000/mo
-Rationale: Absolute minimum for any paid ads per eligibility rules. Starting budget for a pre-revenue firm entering a competitive market. This is below the workers' comp competitive threshold for Broward County but appropriate for launch phase.
+Assumptions used (all from the discovery call, per research notes Step 9 - SMB Team call assumptions, not observed market data):
+  - Cost per lead: $140
+  - Qualified lead rate: 75%
+  - Close rate (online leads): 20% (the firm's own 82% referral rate is NOT used for paid leads)
+  - Firm revenue per signed case: ~$4,375 (25% contingency on an average case value of $17,500)
 
-Channel mix (conservative): LSA $2,000 + Google PPC $1,000
-Using Accident & Injury CPL row (closest proxy for workers' comp):
-- LSA CPL midpoint: ($210 + $260) / 2 = $235; +20% cushion = $282
-- Google Search CPL midpoint: ($630 + $780) / 2 = $705; +20% cushion = $846
-Blended CPL: (2,000/3,000 × $282) + (1,000/3,000 × $846) = $188.00 + $282.00 = $470
-Leads: $3,000 / $470 = 6.4 ≈ 6 leads/month
-Cases: 6 × 15% close rate = 0.9 ≈ 1 case/month
-Revenue: 1 × $25,000 ACV = $25,000/month
-Return multiple: $25,000 / $3,000 = 8.3x
+Conservative scenario ($8,000/mo, CPL with +20% cushion = $168):
+  - Leads: 8,000 / 168 = 47.6
+  - Qualified leads (75%): 35.7
+  - Signed cases (20%): 7.1  -> shown as ~7 cases
+  - Revenue: 7.1 x $4,375 = $31,250 in firm fees
+  - Return: $31,250 / $8,000 = 3.9x
 
-Note: ACV of $25,000 is the conservative Florida workers' comp default (typical settlement range $20,000–$35,000). Not stated in transcript; default applied per instructions. Workers' comp settlement timelines in Florida are typically 6–18 months from case sign — revenue does not realize immediately.
+Aggressive scenario ($9,000/mo, CPL $140, no cushion):
+  - Leads: 9,000 / 140 = 64.3
+  - Qualified leads (75%): 48.2
+  - Signed cases (20%): 9.6  -> shown as ~9-10 cases
+  - Revenue: 9.6 x $4,375 = $42,188 in firm fees (shown as $42,200)
+  - Return: $42,188 / $9,000 = 4.7x
 
-AGGRESSIVE AD SPEND: $7,500/mo
-Rationale: Essentials tier ad spend cap. Revenue goal calculation:
-- $250K goal × 20% / 12 = $4,167/mo marketing budget gross
-- Minus management fee $3,397 = $770 available (too low — use tier cap)
-- Long-term goal $1M × 20% / 12 = $16,667 × Tier 2 multiplier 1.3 = $21,667 gross
-- Minus management fee $3,397 = $18,270 available — above Essentials cap of $7,500
-- Essentials tier cap applies: $7,500/mo (ad spend cap per pricing table)
+Cross-check with the call: the client's stated goal is 8-10 new cases per month. The range above (about 7 to 10) brackets it.
+Cautions:
+  - The call discussed a "$840 per signed case" figure that does not reconcile with $140 CPL / 75% qualified / 20% close (that math gives about $933).
+    This report uses the CPL, qualified rate, and close rate and does NOT print $840.
+  - Fees are collected as cases resolve, so monthly "revenue" is an estimate of fees from signed cases, not same-month cash.
+  - The firm's own PPC test (6 clicks, 0 calls in 1 week) is too small a sample to validate or contradict the $140 CPL.
+  - Paid ads team review recommended: workers' comp CPL not in the approved table; mobile PageSpeed 29/100 can depress conversion.
 
-Channel mix (aggressive): Google PPC $3,500 + LSA $2,500 + Meta Retargeting $1,500
-Using Accident & Injury CPL row, no cushion:
-- Google Search CPL midpoint: $705
-- LSA CPL midpoint: $235
-- Meta Retargeting CPL midpoint: $90
-Blended: (3,500/7,500 × $705) + (2,500/7,500 × $235) + (1,500/7,500 × $90)
-       = (0.4667 × $705) + (0.3333 × $235) + (0.2000 × $90)
-       = $329.00 + $78.33 + $18.00 = $425.33 ≈ $425
-Leads: $7,500 / $425 = 17.6 ≈ 18 leads/month
-Cases: 18 × 15% = 2.7 ≈ 3 cases/month
-Revenue: 3 × $25,000 = $75,000/month
-Return multiple: $75,000 / $7,500 = 10x
-
-Reverse math validation (aggressive):
-- Revenue goal $250K/year ÷ $25,000 ACV = 10 cases needed/year ÷ 12 = 0.83 cases/month
-- At 15% close rate: 0.83 / 0.15 = 5.6 qualified leads/month required
-- × Blended CPL $425 = $2,380/month required spend
-- 20% rule gives higher number ($7,500) — use $7,500 per instructions
-
-Escalation flags (internal — not in client report):
-- Revenue under $300K → scoping approval required
-- Revenue under $250K → confirm client has funds to cover 4 months of services ($5,997 × 4 = $23,988)
+Why this range (client-facing, in Block 4): "To put Google and Local Service Ads in front of injured workers searching for a workers' comp attorney across
+Florida, aimed at the 8-10 new cases a month you are working toward."
 
 ================================================================================
 DBM STATEMENT FOR BLOCK 1
 ================================================================================
 
-"We help new workers' compensation attorneys building location-independent practices get a predictable flow of qualified injury cases so they can generate the income that sustains the life they moved to Portugal to live."
+DBM: Charles learns marketing to run the business, not just work in it (stated); inferred: scale and dominate as Florida's top workers' comp firm
+while the owners run the firm remotely from Portugal and own all marketing assets.
+Block 1: "We help ambitious Florida workers' comp firms get a steady flow of signed injured-worker cases so they can run their firm — and own the
+marketing behind it — instead of just working in it."
 
 ================================================================================
-QUICK WIN OPPORTUNITIES (8 identified)
+QUICK WIN OPPORTUNITIES IDENTIFIED (8)
 ================================================================================
 
-1. LEAD GEN / Quick Win — Resolve GBP Verification
-   Why: GBP stuck since April 2026; single gating factor blocking 3-pack, LSA, and reviews
-   Competitor: Anidjar & Levine (1,696 reviews, top 3-pack every relevant search)
-   Opportunity: Resolves three channel blockers in one action
-
-2. LEAD GEN / Quick Win — Rebuild Google Ads with Workers' Comp Keywords
-   Why: Health insurance keywords → 200 daily visitors, zero leads; targeting is the problem not the platform
-   Competitor: Lyle B. Masnikoff & Associates (workerscompfl.net — exact keyword strategy SMB Team proposes)
-   Opportunity: Same budget, repositioned to intent-matched terms = qualified leads
-
-3. LEAD GEN / Quick Win — Fix NAP Inconsistency
-   Why: Pompano Beach address vs Fort Lauderdale marketing = split signal suppressing both cities
-   Competitor: None (internal fix)
-   Opportunity: Zero-cost removal of active local search suppression factor
-
-4. INTAKE / Quick Win — Embed Contact Form Above the Fold
-   Why: Buried form adds friction at highest-intent moment; loses prospects who won't click through
-   Competitor: None
-   Opportunity: Increases conversion rate of all future traffic without additional ad spend
-
-5. INTAKE / Quick Win — After-Hours Response Protocol
-   Why: Portugal time zone creates daily coverage gap during peak Florida inquiry hours; competitors advertise 24/7
-   Competitor: Anidjar & Levine ("24/7 availability" in ad copy)
-   Opportunity: Automated acknowledgment + committed callback time prevents lead loss during coverage gaps
-
-6. TEAM / Long-Term Play — First Hire: Intake Coordinator
-   Why: Solo operation from Portugal is a ceiling; firm cannot scale without at least one team member locally
-   Competitor: None
-   Opportunity: First hire removes the personal bottleneck limiting revenue to Michelle's available hours
-
-7. PROFIT / Quick Win — Break-Even Model and Monthly Case Target Plan
-   Why: No financial model exists to translate $250K goal into monthly case counts and acquisition cost ceiling
-   Competitor: None
-   Opportunity: A financial model that shows exactly how many cases per month are needed to hit the goal
-
-8. LEAD GEN / Long-Term Play — Spanish-Language Campaign
-   Why: Broward County's Hispanic workforce is underserved for workers' comp; lower CPL, less competition
-   Competitor: None identified targeting this segment
-   Opportunity: Differentiator channel that larger competitors are not yet optimizing for
+1. Lead Gen — Rebuild the Google search campaign around specific injured-worker searches. Why: 6 clicks / 0 calls / ~25% position after one week.
+   Competitor: Lyle B. Masnikoff & Associates (dedicated landing-page network at workerscompfl.net). Quick win.
+2. Lead Gen — Launch Local Service Ads with Google Screened. Why: top-of-page placement, pay per lead. No competitor named (not observed). Quick win.
+3. Lead Gen — Fix mobile page speed before scaling spend. Why: Lighthouse mobile 29/100, LCP 19.0 s. No competitor named. Quick win.
+4. Intake — Add after-hours intake coverage. Why: live coverage ends 7 PM ET. Competitor: Rosenberg & Rosenberg (advertises 24/7). Quick win.
+5. Lead Gen — Switch GBP primary category to Workers' Comp Attorney and settle address/service-area setup. No competitor named. Quick win.
+6. Profit — Track cost per signed case from week one (call tracking, signed-case tracking). No competitor named. Quick win.
+7. Lead Gen — Build a review and testimonial engine and refresh content. Why: no reviews/testimonials on site, last blog April 7, 2026.
+   Competitor: Anidjar & Levine (largest review/brand footprint; counts unconfirmed, not printed). Long-term.
+8. Team — Document marketing and intake playbooks before the associate hire. No competitor named. Long-term.
 
 ================================================================================
-FIRST 90 DAYS ACTION ITEMS
+FIRST 90 DAYS
 ================================================================================
 
-1. Launch Google Ads with workers' comp and injury intent keywords — replace health insurance targeting immediately to start generating qualified leads from existing budget
-2. Resolve Google Business Profile verification — SMB Team assists; unlocks LSA eligibility, 3-pack visibility, and review collection simultaneously
-3. Fix NAP consistency — choose Fort Lauderdale as primary city; unify all citations across web directories
-4. Website conversion optimization — embed contact form above the fold, add automated form confirmation response
-5. Coaching kickoff — build break-even model, monthly case targets, and 12-month runway plan tied to Michelle's financial goals
+Version A (marketing sold: Paid Ads Starter is an ads-only marketing package). Block 5 keeps the pre-written four-stage onboarding timeline unchanged.
+No non-marketing package is sold, so no extra kickoff bullets were added.
 
 ================================================================================
-END OF WORKINGS FILE
+GROWTH ROADMAP
 ================================================================================
+
+Phase 1 Foundation: Paid Ads Starter (Google Ads, LSA, YouTube, ChatGPT visibility, monthly reporting). Meta excluded per client.
+Phase 2 Operational Scale: FCOO Advisor (includes Elite Coach group deliverables - addresses the mentorship interest), triggered at the 75-100 case milestone.
+  Note: FCOO requires $500K+ revenue, so this is a later-stage milestone, not a first-phase offer. No price quoted in the report.
+Phase 3 Optimize: FCFO Advisor / Bookkeeping / Legal AI Workforce Pro, whichever applies then. No prices quoted in the report.
+
+================================================================================
+ESCALATION FLAGS (INTERNAL)
+================================================================================
+
+- Revenue under $300K (pre-revenue per seller) -> scoping approval required.
+- Ads-only package without a paired coaching package, with PageSpeed mobile 29/100 -> confirm the seller-approved exception.
+- Review counts unconfirmed — verify live before the call. No competitor or firm review counts or ratings appear in the client report; all were tagged
+  UNCONFIRMED in the research notes and are described qualitatively.
+- ROI uses call assumptions ($140 CPL, 75% qualified, 20% close) because workers' comp is not in the approved CPL table -> paid ads team review.
+- GBP status, rating, and review count not observed this session. June notes (GBP stuck in verification) are out of date. Confirm with the client.
+- Business address: directories show Pompano Beach, the website shows none, and owners are remote. Confirm legal address and storefront vs service-area setup.
+- Intake cost estimate (AI / VA / answering service) is a rep action item from the call and is NOT part of this proposal. Attorney Assistant fit —
+  confirm qualification with sales rep before quoting.
+- Rep action items from the call still open: 2 non-local client references, Florida workers' comp client count, ChatGPT ads setup (ads.openai.com).
+- Client concerns to prepare for: upsells and contract exits, SMB Team working with other Florida workers' comp firms (siloed teams, no exclusivity
+  promise), ownership of all marketing assets.
+- Local pack data could not be rendered this session. The June pack listings are historical and were not used in the client report.
