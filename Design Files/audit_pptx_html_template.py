@@ -21,7 +21,7 @@ Only replace the # FILL: placeholders with audit-specific content.
 
 Slide 1 — Where [Firm] Stands Today         (assessment overview)
 Slide 2 — Your Growth Plan: 3 Priorities    (action plan)
-Slide 3 — Your Investment & What's Next     (pricing + first 90 days)
+Slide 3 — Your Investment & What's Next     (pricing + what you told us)
 
 Output: [friendly-name]/[FirmName]_[Date]_Proposal.pptx
 """
@@ -159,16 +159,16 @@ CONSERVATIVE_RESULT = "$XX,XXX revenue · X.X× ROAS"  # FILL
 AGGRESSIVE_LABEL   = "Aggressive  (X cases/mo):"     # FILL
 AGGRESSIVE_RESULT  = "$XX,XXX revenue · X.X× ROAS"   # FILL
 
-# Timeline — 4 items: (milestone_label, action_text)
-# Marketing sold: keep these four windows (SMB Team's onboarding timeline) and
-# condense each stage of Block 5 into the action text (<=55 chars).
-# No marketing sold: use labels "Week 1" / "Week 2" / "Month 1" / "Month 3"
-# with package-keyed actions from Block 5.
-TIMELINE = [
-    ("Days 1–7",    "Checklist, platform access, portal & welcome"),
-    ("Days 8–14",   "Strategy Call with full team + 3 budget options"),
-    ("Days 15–30",  "Campaign builds begin + homepage design delivered"),
-    ("Days 30–90+", "Monthly reporting, check-ins & optimization"),
+# What You Told Us — exactly 3 items from section_11 Block 5:
+# (short_label, how_the_plan_addresses_it)
+# short_label: the owner's issue in 2–3 words (<=16 chars), e.g. "Missed calls".
+# action: condensed "how this plan addresses it" clause (<=55 chars).
+# Same rules as Block 5: traceable to the transcript, nothing sensitive,
+# no promised outcomes/dates/counts, never the phrase "pain points".
+WHAT_YOU_TOLD_US = [
+    ("Short label 1", "How the recommendation addresses it"),
+    ("Short label 2", "How the recommendation addresses it"),
+    ("Short label 3", "How the recommendation addresses it"),
 ]
 
 CLOSING_QUOTE = (
@@ -533,7 +533,7 @@ def build_slide3_html():
           </div>""" if AD_SPEND_NOTE else ""
 
     timeline_rows = ""
-    for milestone, action in TIMELINE[:4]:
+    for milestone, action in WHAT_YOU_TOLD_US[:3]:
         timeline_rows += f"""
         <div class="tl-row">
           <div class="tl-dot"></div>
@@ -574,7 +574,7 @@ def build_slide3_html():
     .timeline { display:flex; flex-direction:column; gap:26px; }
     .tl-row { display:flex; align-items:center; gap:16px; }
     .tl-dot { width:14px; height:14px; border-radius:50%; background:var(--navy); flex-shrink:0; }
-    .tl-milestone { width:120px; font-weight:700; color:var(--navy); font-size:15px; }
+    .tl-milestone { width:150px; font-weight:700; color:var(--navy); font-size:15px; }
     .tl-action { flex:1; font-size:15px; color:var(--ink); }
 
     .closing-bar { position:absolute; left:0; right:0; bottom:64px; height:46px; background:var(--navy);
@@ -602,7 +602,7 @@ def build_slide3_html():
         </div>
         <div class="right-col">
           {roi_card_html}
-          <div class="tl-title">WHAT HAPPENS IN THE FIRST 90 DAYS</div>
+          <div class="tl-title">WHAT YOU TOLD US</div>
           <div class="timeline">{timeline_rows}</div>
         </div>
       </div>

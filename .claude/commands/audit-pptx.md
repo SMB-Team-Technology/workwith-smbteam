@@ -36,7 +36,7 @@ Assessment overview: urgency score, 4-pillar health indicators, key findings (3 
 Action plan: SMB model description, goal statement tied to DBM, three priority columns (themed to what this firm is actually buying and its real priorities — see below) with 5 bullets each.
 
 **Slide 3 — Your Investment & What Happens Next**
-Pricing: two package cards with bundled and retail prices, bundle total + savings, ad spend note, ROI projections, first-90-days timeline, closing quote.
+Pricing: two package cards with bundled and retail prices, bundle total + savings, ad spend note, ROI projections, "What You Told Us" panel, closing quote.
 
 ---
 
@@ -89,7 +89,7 @@ Copy values exactly — do not rewrite or recompute.
 - `BUNDLE_SAVINGS` — copy savings callout text
 - `AD_SPEND_NOTE` — only fill this if Block 4 exists in section_11 (i.e., a marketing/ads package is part of the recommendation). Copy the recommended ad spend range and append a short clause distilled from Block 4's "why this range" sentence — the payoff, not the calculation basis, e.g. `"+ Recommended ad spend: $X,XXX–$XX,XXX/mo — to turn high-intent [practice area] searches into signed cases"`. Keep the full note under ~110 characters so it doesn't get truncated on the slide. If Block 4 was omitted from section_11 (no marketing/ads sold), set `AD_SPEND_NOTE = None` — do not show an ad spend note or rationale for a service this firm isn't buying. This also controls whether the "Projected Return on Ad Spend" card renders on Slide 3 (they're gated together in the layout engine) — when `AD_SPEND_NOTE` is `None`, `AVG_CASE_VALUE`/`CONSERVATIVE_*`/`AGGRESSIVE_*` are unused and can be left at their placeholder values.
 - `AVG_CASE_VALUE`, conservative/aggressive cases + revenue + ROAS — copy from Block 4 ROI table
-- `TIMELINE` — 4 first-90-days milestone items from Block 5. If Block 5 uses the onboarding timeline (marketing sold), the labels are fixed: `Days 1–7` / `Days 8–14` / `Days 15–30` / `Days 30–90+`, and each action condenses that stage's bullets (≤55 chars, e.g. "Strategy Call with full team + 3 budget options"). If Block 5 is the package-keyed list (no marketing sold), use labels `Week 1` / `Week 2` / `Month 1` / `Month 3` in that order with one Block 5 action each. Never add launch dates or lead/click counts.
+- `WHAT_YOU_TOLD_US` — exactly 3 items from Block 5 ("What You Told Us"), in the same order. Each item is `(short_label, action)`: `short_label` names the owner's issue in 2–3 words (≤16 chars, e.g. "Missed calls"); `action` condenses that row's "how this plan addresses it" clause (≤55 chars). Never add anything that isn't in Block 5, and never add outcomes, dates, or lead/click counts.
 
 **From section_06_lead_generation.html:**
 - `COMPETITORS` — 3 named competitors with review counts and a one-phrase note each

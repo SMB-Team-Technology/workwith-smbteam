@@ -7,7 +7,7 @@ Only replace the # FILL: placeholders with audit-specific content.
 
 Slide 1 — Where [Firm] Stands Today         (assessment overview)
 Slide 2 — Your Growth Plan: 3 Priorities    (action plan)
-Slide 3 — Your Investment & What's Next     (pricing + first 90 days)
+Slide 3 — Your Investment & What's Next     (pricing + what you told us)
 
 Output: [friendly-name]/[FirmName]_[Date]_Proposal.pptx
 """
@@ -145,16 +145,16 @@ CONSERVATIVE_RESULT = "$XX,XXX revenue · X.X× ROAS"  # FILL
 AGGRESSIVE_LABEL   = "Aggressive  (X cases/mo):"     # FILL
 AGGRESSIVE_RESULT  = "$XX,XXX revenue · X.X× ROAS"   # FILL
 
-# Timeline — 4 items: (milestone_label, action_text)
-# Marketing sold: keep these four windows (SMB Team's onboarding timeline) and
-# condense each stage of Block 5 into the action text (<=55 chars).
-# No marketing sold: use labels "Week 1" / "Week 2" / "Month 1" / "Month 3"
-# with package-keyed actions from Block 5.
-TIMELINE = [
-    ("Days 1–7",    "Checklist, platform access, portal & welcome"),
-    ("Days 8–14",   "Strategy Call with full team + 3 budget options"),
-    ("Days 15–30",  "Campaign builds begin + homepage design delivered"),
-    ("Days 30–90+", "Monthly reporting, check-ins & optimization"),
+# What You Told Us — exactly 3 items from section_11 Block 5:
+# (short_label, how_the_plan_addresses_it)
+# short_label: the owner's issue in 2–3 words (<=16 chars), e.g. "Missed calls".
+# action: condensed "how this plan addresses it" clause (<=55 chars).
+# Same rules as Block 5: traceable to the transcript, nothing sensitive,
+# no promised outcomes/dates/counts, never the phrase "pain points".
+WHAT_YOU_TOLD_US = [
+    ("Short label 1", "How the recommendation addresses it"),
+    ("Short label 2", "How the recommendation addresses it"),
+    ("Short label 3", "How the recommendation addresses it"),
 ]
 
 CLOSING_QUOTE = (
@@ -574,26 +574,27 @@ def build_slide3(prs):
         add_text(slide, AGGRESSIVE_LABEL, 5.22, 2.21, 1.95, 0.18, 8.5, DARK_TEXT, bold=True)
         add_text(slide, AGGRESSIVE_RESULT, 7.25, 2.21, 2.30, 0.18, 8.5, ROI_GREEN, bold=True)
 
-        first90_y = 2.72
+        told_us_y = 2.72
         timeline_ys = [2.99, 3.37, 3.75, 4.13]
     else:
-        # No ROI card above it — give First 90 Days the full right-column height.
-        first90_y = 1.10
+        # No ROI card above it — give What You Told Us the full right-column height.
+        told_us_y = 1.10
         timeline_ys = [1.46, 2.06, 2.66, 3.26]
 
-    # First 90 days — alternating light/white rows; the first-stage dot pops in
-    # lime green, the rest in ocean blue, so the immediate next step stands out
-    add_text(slide, "WHAT HAPPENS IN THE FIRST 90 DAYS",
-             5.00, first90_y, 4.70, 0.18, 7.5, NAVY, bold=True)
-    for i, (milestone, action) in enumerate(TIMELINE[:4]):
+    # What You Told Us — alternating light/white rows; the first dot pops in
+    # lime green, the rest in ocean blue, so the lead item stands out
+    add_text(slide, "WHAT YOU TOLD US",
+             5.00, told_us_y, 4.70, 0.18, 7.5, NAVY, bold=True)
+    for i, (milestone, action) in enumerate(WHAT_YOU_TOLD_US[:3]):
         y = timeline_ys[i]
         row_bg = rgb("EEF2F5") if i % 2 == 0 else WHITE
         dot_color = LIME_GREEN if i == 0 else OCEAN_BLUE
         add_rect(slide, 5.00, y, 4.70, 0.29, fill=row_bg)
         add_rect(slide, 5.14, y+0.09, 0.10, 0.10, fill=dot_color)
-        add_text(slide, milestone, 5.36, y+0.055, 0.95, 0.18, 8, NAVY, bold=True)
+        add_text(slide, milestone, 5.36, y+0.055, 0.95, 0.18, 8, NAVY, bold=True,
+                 cap_chars=16, cap_label=f"WHAT_YOU_TOLD_US[{i}] label")
         add_text(slide, action, 6.36, y+0.055, 3.20, 0.18, 8, BODY_TEXT,
-                 cap_chars=55, cap_label=f"TIMELINE[{i}] action")
+                 cap_chars=55, cap_label=f"WHAT_YOU_TOLD_US[{i}] action")
 
     # Closing quote bar — taller, darker navy, with the same lime accent stripe
     add_rect(slide, 0, 4.66, 10, 0.61, fill=rgb("002A41"))
