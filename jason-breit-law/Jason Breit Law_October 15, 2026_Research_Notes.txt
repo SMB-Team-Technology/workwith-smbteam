@@ -1,0 +1,251 @@
+SMB TEAM — GROWTH AUDIT RESEARCH NOTES
+Firm: Jason Breit Law (legal entity as shown on site: Jason R. Breit, Esq., P.C.)
+Contact: Jason R. Breit, Esq. (founding attorney; HubSpot contact 253457134234). Trigger lists contact email smathurin@jasonbreitlaw.com and phone 516-391-0389.
+  NOTE: smathurin@ belongs to Sarah Mathurin, Client Services Director per the firm's team page, not Jason himself. The trigger's "contact_email" is probably a staff inbox.
+URL: http://www.jasonbreitlaw.com (301 to https://www.jasonbreitlaw.com/, HTTP 200)
+Sales Rep: Nick Holderman (nick.holderman@smbteam.com)
+Date: October 15, 2026
+Proposal Call: 2026-10-15T18:30:00Z (Thursday, October 15, 2026, 2:30 PM EDT), closer Nick Holderman.
+Pipeline run: Pass 1, triggered 2026-10-13 (first run for this firm; no earlier notes in repo).
+
+Transcript status: no transcript_status in the trigger, so a complete lookback found no discovery call. Trigger transcript field reads
+  exactly: "No Fathom transcript available — proposal call scheduled for 2026-10-15." Custody is not human. There is NO discovery call data for this firm.
+  Every STEP 9 field below is therefore "not stated" or derived from the public website and is labelled as such. Nothing on a call is asserted
+  as having happened or not happened beyond: no transcript exists in the pipeline.
+
+RESEARCH TOOLING LIMITS (read first):
+  This session could fetch web pages (WebFetch), run web searches, and run Lighthouse locally (headless Chrome). It could NOT render Google
+  Search / Google Maps results, could NOT load the Meta Ads Library, and did not reach Avvo / Justia / Yelp / FindLaw pages directly (listings
+  below come from search-result snippets only). The Google PageSpeed web tool/API was not used; PageSpeed scores below come from Lighthouse
+  12.8.2 run locally. Note: WebFetch returns a model-written summary of each page, not raw HTML, so page details are as summarized.
+  Items depending on unreachable sources are marked "not observed" / "not obtained". Every review figure carries an UNCONFIRMED tag because
+  no Google listing could be read directly.
+
+================================================================================
+STEP 1 — WEBSITE RESEARCH
+================================================================================
+
+Website URL confirmed live: Yes (fetched October 13, 2026)
+Last redesign date or estimated age: Not determinable from observation. Footer shows © 2026 (likely auto-updated). The site is fresh enough to carry
+  recent "Near You on Long Island" SEO-style blog posts and a "Pricing" page, which suggests ongoing maintenance. This is an inference, not an observed redesign date.
+Mobile responsive: Likely yes (Lighthouse mobile emulation rendered it; layout described as responsive). Not tested on a physical device.
+Homepage headline: "Planning for Life, Legacy, and Dreams on Long Island" (page title: "Jason R. Breit - Planning for Life, Legacy & Dreams")
+CTA above fold: Yes — "Schedule a Free Consultation" button plus phone (516) 391-0389. Free consultations offered by Zoom or in person.
+Contact form location: No form on the homepage; booking button + phone are the homepage CTAs. A /contact page exists (form not examined).
+Live chat present: No (not detected)
+Attorney bio present: Yes — /team page: Jason R. Breit, Founding Attorney; NY attorney since 2007; JD Roger Williams School of Law; MBA Dowling College;
+  BA Hamilton College; RICP and CLTC designations; also works as a Financial Advisor; member of the Personal Family Lawyer network.
+  Also listed: Sarah Mathurin, Client Services Director.
+Video present: No (not detected on homepage)
+Blog present: Yes — /blog ("Client Resources") with six posts seen, e.g. "The Key Roles in an Estate Plan: Why Choosing Guardians for Minor Children Deserves Special Attention",
+  "How to Choose an Elder Law Attorney Near You on Long Island", "Who Will Raise Your Kids If Something Happens to You?", "6 Common Mistakes Long Island Parents Make When Naming a Guardian",
+  "How to Choose a Kids Protection Planning Attorney Near You...", "How to Choose a Special Needs Planning Attorney Near You...". Last post date: not determinable (no dates shown).
+Nav items (observed): Home; About Us (How We Work, Team); Practice Areas (Estate Planning, Probate Administration, Kids Protection Planning, Asset Protection, Elder Law,
+  Special Needs Planning, LIFT Planning); Reviews; Pricing; Blog; Contact; "Schedule a Free Consultation".
+Practice areas on site: Estate planning (wills, trusts, POAs, healthcare directives); probate administration; kids protection planning; asset protection;
+  elder law / Medicaid planning; special needs planning; "LIFT Planning" (not explained in fetched content). Estate tax protection is listed on a related site.
+Pricing page: Fixed fees only, no hourly billing. "Most plans for married couples range from $2,000 to $10,000"; Estate Plan Review & Checkup "$950 fixed";
+  complimentary three-year reviews after completion; fees agreed in writing before work starts; no phone quotes. (Public website claims, not call data.)
+Testimonials: Homepage shows ~15 first-name testimonials (e.g. Liz, Robert N., Stacy, Rick F., ...), undated. /reviews page states: "Reviews shown on this page come directly from
+  Jason R. Breit, Esq. P.C.'s Google Business Profile" — so a GBP exists per the firm's own statement. No aggregate count or star rating is displayed on the page.
+NAP on site: Present in footer — 48 South Service Road, STE 400, Melville, NY 11747; (516) 391-0389; smathurin@jasonbreitlaw.com; hours weekdays 9am–5pm.
+Service area stated: Nassau and Suffolk Counties, New York City, Garden City, Huntington, Massapequa.
+Associations: Personal Family Lawyer® network (text mention). No award badges seen.
+Spanish-language content: none seen.
+Related web properties surfaced by search (same NAP/phone): longisland-estateplanning.com ("Nassau County Estate Planning Attorney", Jason R. Breit, Esq., P.C.) and a GitHub Pages
+  landing page balaakshay25.github.io/jasonbreitlaw-lp ("Nassau County Estate Planning Attorney"). The second looks like a developer-hosted landing page; ownership/purpose not verified.
+  Possible duplicate-content / split-authority risk; worth asking Jason what these are.
+Geo-targeted landing pages for surrounding cities: Not evident in the nav; the blog uses "Near You on Long Island" regional titles. No city-specific pages observed.
+
+PageSpeed mobile score: 43 / 100 (Lighthouse 12.8.2, run locally Oct 13, 2026 18:44 UTC against https://www.jasonbreitlaw.com/; mobile emulation; LCP 7.4 s, Total Blocking Time 1,020 ms, CLS 0.04).
+PageSpeed desktop score: 89 / 100 (same tool; desktop preset; LCP 2.0 s, TBT 0 ms, CLS 0.067).
+  Single run each; scores move a few points run to run. Measured with Lighthouse, not the pagespeed.web.dev UI. Writer: describe as a Lighthouse performance score.
+
+>>> SAVED: website section complete.
+
+================================================================================
+STEP 2 — GOOGLE BUSINESS PROFILE
+================================================================================
+
+GBP found: Not confirmed directly (Google Search/Maps not readable here). The firm's own /reviews page says its reviews come from its Google Business Profile, and a web search summary
+  describes the practice as "rated 5-stars on Google" — both are indirect. Treat GBP as existing but not independently observed.
+Star rating: 4.9 [UNCONFIRMED — sourced from the firm's related site longisland-estateplanning.com, which displays "4.9-star rating from 16+ Google reviews"; not independently confirmed via Google]
+Total review count: "16+" [UNCONFIRMED — same source, firm's own related website; not confirmed via Google]. The count may be stale or rounded; it is not verified live.
+Most recent review date: not obtained
+Primary category: not obtained
+Photos active: not obtained
+Posts active: not obtained
+Writer rule: do NOT print any review count or star rating for this firm as a specific figure. Do NOT make any "you have fewer reviews than X" comparison.
+
+================================================================================
+STEP 3 — LOCAL 3-PACK SEARCHES
+================================================================================
+
+All 3-pack searches: NOT OBSERVED — Google Search/Maps results are not readable from this environment. Nothing below is observed data; the keyword sets are what should be
+run manually if a rendering browser becomes available. No competitors are recorded as "in the pack".
+
+Practice Area 1: Estate planning
+- Search 1 "estate planning attorney melville ny": not observed — firm appears [not observed]; pack competitors [not observed]
+- Search 2 "estate planning lawyer nassau county": not observed
+- Search 3 "wills and trusts attorney long island": not observed
+
+Practice Area 2: Elder law / Medicaid planning
+- Search 1 "elder law attorney melville ny": not observed
+- Search 2 "medicaid planning attorney long island": not observed
+- Search 3 "elder law attorney nassau county": not observed
+
+Practice Area 3: Probate
+- Search 1 "probate attorney nassau county ny": not observed
+- Search 2 "probate lawyer suffolk county": not observed
+- Search 3 "estate administration lawyer long island": not observed
+
+Practice Area 4: Kids protection planning / special needs planning
+- Search 1 "guardianship planning attorney long island": not observed
+- Search 2 "special needs trust attorney nassau county": not observed
+- Search 3 "special needs planning lawyer melville ny": not observed
+
+================================================================================
+STEP 4 — COMPETITOR REVIEW COUNTS
+================================================================================
+
+Named local competitors identified from search results and the firms' own sites. None could be read on Google.
+
+- Competitor 1: Davidov Law Group (New Hyde Park, Nassau County; estate planning / elder law; Michael Davidov, attorney and CFP) — reviews: "250+" [UNCONFIRMED — sourced from a web search summary describing "over 250 five-star Google reviews" (an earlier search summary said "more than 200"); not independently confirmed via Google] — rating: 5-star [UNCONFIRMED — same source; not confirmed via Google]
+- Competitor 2: Ettinger Law Firm (1 Huntington Quadrangle, Melville; elder law and estate planning since 1991; 12 NY locations) — reviews: 581 [UNCONFIRMED — sourced from the firm's own Melville page showing "4.7/5 stars (581 reviews)"; platform not stated on the page, so it may not be Google; not independently confirmed via Google] — rating: 4.7 [UNCONFIRMED — same source]
+- Competitor 3: Elder Attorney Long Island / Lisa Singer, Esq. (445 Broadhollow Rd, Melville; elder law, Medicaid planning, estate planning) — reviews: ~50 [UNCONFIRMED — web search summary stating "5.0 Google Rating with 50 reviews"; a Birdeye listing for the same firm showed 48 reviews; not independently confirmed via Google] — rating: 5.0 [UNCONFIRMED — same source]
+
+Also noted in Melville results (not scored): Jennifer B. Cona (225 Broad Hollow Rd), Joanne Fanizza (445 Broadhollow Rd), McAmporeale law (mcamporealelaw.com Melville page), TrustLaw (trustlaw.com/melville-ny).
+The prospect's own count could not be verified, so no comparison of the firm vs. any competitor is asserted. Davidov's and Ettinger's counts are probably larger than the firm's 16+ claim,
+but that cannot be stated as fact. Writer rule: none of these may be printed as specific figures.
+
+================================================================================
+STEP 5 — DIRECTORY LISTINGS
+================================================================================
+
+Directory pages were not fetched directly; findings are from search-result snippets.
+- Personal Family Lawyer network: site states membership (member directory page not checked).
+- LinkedIn: two profiles surfaced — "Jason Breit - Attorney/Financial Advisor" and "Jason R. Breit, Esq., P.C. Estate and Business Planning".
+- USA 500 Clubs: member listing for Jason Breit (usa500clubs.com) — minor directory.
+- Other attorney bio pages surfaced for different people named Jason Breit (munizlegal.com "Jason R. Breit, Esq." and floriowmg.com team page) — possibly the same person's prior or advisory affiliations; not verified. Possible consistency issue; ask.
+- Avvo / Justia / FindLaw / Yelp / Martindale: no firm-specific listing located in this run; status unknown (not confirmed absent).
+- Consistency: Address 48 South Service Road, Suite 400, Melville, NY 11747, and phone (516) 391-0389 are consistent on jasonbreitlaw.com, longisland-estateplanning.com and search summaries.
+- Website footer email is a staff address (smathurin@...).
+Geo-targeting landing pages for surrounding cities: none observed.
+
+>>> SAVED: GBP, local SEO, and directory sections complete.
+
+================================================================================
+STEP 6 — GOOGLE ADS
+================================================================================
+
+Google Search results are not readable here; ads could not be observed for any practice area. No call data on ad history. Framing: ads not observed; this does not mean none are running.
+A developer-hosted landing page ("Nassau County Estate Planning Attorney") exists, which can be typical of paid-search landing pages, but that is speculation and is not evidence of ads.
+
+Practice Area 1: Estate planning (Melville / Nassau / Suffolk)
+- Firm ads observed: not observed
+- Named local competitors running ads: not observed
+Practice Area 2: Elder law / Medicaid planning
+- Firm ads observed: not observed
+- Named local competitors running ads: not observed
+Practice Area 3: Probate
+- Firm ads observed: not observed
+- Named local competitors running ads: not observed
+Practice Area 4: Kids protection / special needs planning
+- Firm ads observed: not observed
+- Named local competitors running ads: not observed
+
+================================================================================
+STEP 7 — LOCAL SERVICE ADS
+================================================================================
+
+- Firm appears in LSA: not observed
+- Google Screened: not observed
+- LSA review count: not observed
+- Named local competitors in LSA: not observed
+
+================================================================================
+STEP 8 — META ADS
+================================================================================
+
+Meta Ads Library not reachable from this environment.
+- Firm has active ads: not observed (library unreachable)
+- Named local competitor 1: Davidov Law Group — not observed
+- Named local competitor 2: Ettinger Law Firm — not observed
+
+>>> SAVED: all ads sections complete (all "not observed" due to tooling limits).
+
+================================================================================
+STEP 9 — TRANSCRIPT EXTRACTION
+================================================================================
+
+No discovery call transcript exists. Values are "not stated" unless explicitly marked as coming from the public website.
+
+- Practice areas confirmed: Not confirmed on a call. Website lists estate planning, probate administration, kids protection planning, asset protection, elder law, special needs planning, LIFT planning.
+- Current lead sources: not stated. (Public signals only: website CTA, blog with local SEO-style posts, testimonials/GBP reviews, a related landing page. Referral volume unknown.)
+- Ads ever run: not stated.
+- Team size: not stated. Website names two people: Jason R. Breit (founding attorney) and Sarah Mathurin (Client Services Director). Others may exist; do not infer team size.
+- Annual revenue (gross / case value): not stated
+- Annual revenue (net / take-home / collected): not distinguished from gross (nothing stated)
+- Fee structure: not stated on a call. Website says fixed fees only, no hourly billing; married-couple plans typically $2,000–$10,000; plan review $950 fixed.
+- Revenue goal: not stated, use 2x current revenue (current revenue also not stated)
+- Average case value: not stated (website price range $2,000–$10,000 for married-couple plans; do not treat as average)
+- Current close rate: not stated — default to 15%
+- Number of locations: 1 (Melville office, per website)
+- Spanish campaign needed: No (not mentioned anywhere)
+- Dominant buying motive: not stated; no call. Do not infer from the website beyond the firm's own mission language ("estate planning should help families live a full, meaningful life"), which is marketing copy, not the owner's motive.
+- Any profitability claims made by prospect: none stated
+- Any claims about case types or practice areas: none stated on a call
+- Stated call focus / product interest: unknown — no discovery call transcript. Only known: a Proposal Call is booked for 10/15/26 2:30 PM EDT with Nick Holderman. Do not default to "standard marketing" and do not assume what was discussed.
+- Primary engagement: unknown — no discovery call transcript (not a valid keyword on purpose; select-package.mjs will treat the field as blank and fall back to revenue-based sizing)
+- Products discussed on call: none
+- Lead-gen gap stated: unknown — no discovery call transcript
+- Existing marketing/SEO/ad vendor engagements: none stated. Site evidence of outside web work (developer-hosted landing page; SEO-style blog titles) suggests there may be a web/marketing vendor, but that is an inference only — ask Jason.
+- Budget constraints stated: none stated
+
+================================================================================
+STEP 10 — COMPETITIVE URGENCY SCORE
+================================================================================
+
+Score: 5 / 10 — LOW-CONFIDENCE ASSIGNMENT. Google 3-pack, ads, LSA, Meta data and the firm's own review count could not be observed, so the score rests on:
+  firm site: mobile Lighthouse 43 (LCP 7.4 s, TBT 1,020 ms); fresh blog, fixed-fee Pricing page, free-consultation CTA, full NAP, testimonials sourced from GBP, versus
+  competitors with large claimed review volume (Davidov, Ettinger) in a dense Long Island estate/elder-law market. Treat as a placeholder to refine if live Google data becomes available.
+
+Named local competitor threats:
+  1. Davidov Law Group (New Hyde Park, Nassau) — described as an award-winning estate planning/elder law firm with a husband-and-wife team, an attorney who is also a CFP, and a very large claimed Google review base ("250+", UNCONFIRMED).
+  2. Ettinger Law Firm (Melville) — direct same-town competitor; elder law and estate planning since 1991, 12 locations, displays "4.7/5 stars (581 reviews)" on its site [UNCONFIRMED; platform not stated], free consultations.
+  3. Elder Attorney Long Island / Lisa Singer (Melville) — same-town elder law specialist; claims "30+ years", "helped over 1,000 families", ~50 reviews [UNCONFIRMED], strong elder-law keyword focus.
+
+Matching dynamic sentence (Score 4–6): "A score of 5 means competitors have meaningful advantages in one or more areas and are pulling ahead. You are not invisible yet — but the window to close the gap is narrowing. Every month without action is a month they extend their lead."
+
+>>> SAVED: final research notes.
+
+================================================================================
+PASS 2 — VERIFICATION CHECKLIST
+================================================================================
+
+[x] Every number in the notes matches observed data (PageSpeed from local Lighthouse Oct 13; pricing and review claims from firm sites, tagged where review-related)
+[x] Competitor review counts: none verified on Google — all tagged UNCONFIRMED; prospect's own count unknown, so no comparison is asserted
+[x] Every review count / rating carries a verification tag
+[x] Annual revenue split: nothing stated on either figure; fee structure from website only, labelled as such
+[x] Every ad section covers all practice areas (all "not observed" because Google/Meta were unreachable)
+[x] No section says "you are not running ads"
+[x] No profitability or business claim appears (no call data exists)
+[x] Competitors are specific named local firms only
+[x] PageSpeed scores are real measured numbers (43 mobile / 89 desktop via local Lighthouse 12.8.2)
+[x] DBM recorded as not stated (no call; no inference printed)
+[x] Revenue goal recorded as not stated (fallback 2x noted)
+[x] Close rate recorded (not stated — default 15%)
+[x] Average case value recorded as not stated, with website price range noted separately
+[x] Stated call focus recorded as unknown, explicitly NOT defaulted to "standard"
+[x] Primary engagement / Products discussed / Lead-gen gap fields filled in; engagement and lead-gen gap deliberately "unknown" because no call exists
+[x] Existing vendor engagements recorded (none stated; inference flagged)
+[x] Budget constraints recorded (none stated)
+
+Open items for the writer / rep (do not state as fact):
+  - No discovery call transcript: revenue, team size, close rate, DBM, goals, lead sources and budget are all unknown. Nick should collect these on the 10/15 proposal call. Do not fabricate them.
+  - GBP existence is indirect (firm's /reviews page); rating and count are UNCONFIRMED and must not print as specific figures.
+  - Competitor review numbers are UNCONFIRMED; none may be printed as specific figures.
+  - Mobile Lighthouse score is a single local run (43); re-run before quoting if the report is built much later.
+  - Related domains (longisland-estateplanning.com, balaakshay25.github.io/jasonbreitlaw-lp): ask what they are; possible duplicate-content issue.
+  - Trigger contact_email belongs to Sarah Mathurin (Client Services Director), not Jason.
+  - Blog freshness is unknown (no dates). Do not claim the blog is stale.
