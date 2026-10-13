@@ -1,0 +1,114 @@
+SECTION 11 WORKINGS — INTERNAL ONLY (never client-facing)
+Firm: Christine Brown Sports Law | Friendly name: christine-brown-sports-law | Rep: Jonathan Farace | Date: October 22, 2026
+
+=====================================================================
+0. READ FIRST — NO DISCOVERY CALL TRANSCRIPT EXISTS
+=====================================================================
+Research notes (Step 9) state no Fathom transcript was found; the first conversation is the proposal call on
+10/22/26 at 11:00 AM EDT. Every finding in the report comes from the public website, a local Lighthouse run,
+and search-result snippets. Consequences for this report:
+- No quote boxes anywhere (no transcript lines to quote).
+- DBM was not stated. Notes say "not inferred"; the writer used the audit-write default DBM (1): a firm that
+  runs on its team and systems so the owner has time back. It is phrased as direction, never as something
+  Christine said. CONFIRM THE REAL DBM ON THE CALL.
+- Block 5 (What You Told Us) was REMOVED. The rules require every row to trace to a verbatim transcript
+  line, and none exists. The seller's Slack instructions ("This is an FCTO and FCOO deal", "She will need 12
+  seats total") are seller direction, not statements by the prospect, so they are not eligible. Restore
+  Block 5 after the call if a transcript becomes available.
+- Stage 4 (Small Business Manager) assigned from public team structure (3 attorneys, COO, finance manager,
+  2 legal assistants, launched 2025). Stage 3 would fit if lead gen is referral-only and Christine handles
+  intake personally — unknown. Provisional; confirm on the call.
+- Traffic lights (all AMBER) and urgency 4/10 are low-confidence, per research notes Step 10.
+
+=====================================================================
+1. TRANSCRIPT-STATED NEED OVERRIDE CHECK
+=====================================================================
+1. Call-purpose: no transcript, so no stated call purpose in the notes. The SELLER OVERRIDE in
+   package_decision.json (Slack 2026-10-13: "This is an FCTO and FCOO deal"; add AI Workforce Pro, 12 seats)
+   sets the category: LAW + FCOO, no marketing, no coaching bundle. proposal_review.json status = locked.
+   Followed as instructed.
+2. Existing-vendor: none stated. Not triggered (marketing is excluded by the seller override anyway).
+3. Budget-reality: none stated. Not triggered.
+4. Effective-revenue: no gross/net figure. Revenue is a HubSpot range ($180K–$960K -> $570,000 working
+   figure, confidence LOW). Not triggered; REVENUE IS UNCONFIRMED.
+
+Departures / flags for sales to see:
+- Levels (FCTO Level 1, FCOO Advisor) were inferred by the seller override as the lowest tiers; seller to confirm.
+- 12 seats exceeds the 1–4 user cap of AI Workforce Pro – Starter, so the AI Workforce Pro tier is used
+  (5-user base + 7 additional users). 12 x Starter ($4,200) would be outside the approved catalog.
+- Elite Coach Plus and Full Service Marketing — Starter (the revenue-table default) were dropped per seller.
+- Foundation Sprint is NOT included (not in decision file). If wanted: one-time $8,403 when packaged with
+  Fractional CTO Level 1 (standalone $19,997).
+
+=====================================================================
+2. MANDATORY PRICE LOOKUP (checked against audit-write.md tables and package_decision.json)
+=====================================================================
+- Marketing package selected: none
+- Non-marketing package selected: FCOO Advisor
+  - Bundled price (from table): $3,297/mo
+  - Stand-alone price (from table): $3,797/mo
+  - Savings: $500/mo
+- Legal AI Workforce (LAW) packages selected:
+  a) Fractional CTO Level 1
+     - Bundled price (from table): $3,297/mo
+     - Stand-alone price (from table): $3,797/mo
+     - Savings: $500/mo
+  b) AI Workforce Pro, 12 users (yearly contract)
+     - Price: $1,597/mo (5 users) + 7 additional users x $120/mo = $840 -> $2,437/mo
+     - Stand-alone price: none exists (never quoted in the client report); Savings: $0
+- AI Avatar / Video Growth add-on: none
+- Total monthly investment: $3,297 + $2,437 + $3,297 = $9,031/mo  (matches package_decision.json total_bundled)
+- Total savings: $500 + $500 = $1,000/mo  (matches package_decision.json total_savings)
+- 35% cap check: revenue working figure $570,000/yr = $47,500/mo; 35% = $16,625/mo. Total $9,031 is under cap
+  (19.0% of the working revenue). Re-check once real revenue is known.
+- Revenue floors: FCTO L1 $400K+ OK; FCOO Advisor / fractional ops $500K+ OK at $570K (unconfirmed figure).
+
+=====================================================================
+3. AD SPEND / ROI (Block 4)
+=====================================================================
+Not applicable. No marketing/ads package is part of the recommendation, so Block 4 was deleted from
+section_11 and the Ad Spend row was omitted from the executive summary.
+
+=====================================================================
+4. DBM STATEMENT (Block 1)
+=====================================================================
+Inferred default, NOT stated: "a firm that runs on its team and systems instead of on Christine's personal
+involvement in every matter." Formula used: We help founders launching a specialty practice for college
+athletes and coaches get AI-powered systems and operational leadership so they can run a firm that does not
+depend on their personal involvement in every matter.
+
+=====================================================================
+5. QUICK WIN OPPORTUNITIES (8)
+=====================================================================
+1. Speed up the mobile site (Lead Gen) — mobile 28/100, desktop 53/100, LCP 19.2s; no named competitor.
+2. Add a consultation button above the fold and embed the intake form (Intake) — no named competitor.
+3. Clean up address/listing inconsistencies: Suite 210 vs 400, Old Greenwich vs Shelton (Lead Gen) — no competitor.
+4. Deploy the first AI skills with the Fractional CTO (Team) — no competitor.
+5. Monthly profit snapshot by matter type with the finance manager (Profit) — no competitor.
+6. Topic landing pages by issue and sport (Lead Gen, long-term) — competitor: Athlete Defender (many
+   keyword-targeted pages); Duffy Law (dedicated Title IX page).
+7. Operating rhythm and role-level accountability with the FCOO (Team, long-term) — no competitor.
+8. Defined response and follow-up process for new inquiries (Intake, long-term) — no competitor.
+
+=====================================================================
+6. WHAT YOU TOLD US (Block 5)
+=====================================================================
+Omitted — no transcript lines exist (see section 0).
+
+=====================================================================
+7. INTERNAL ESCALATION FLAGS (never in client report)
+=====================================================================
+- Review counts unconfirmed — verify live before the call. No Google review data for the firm or any
+  competitor was obtained; the only figures in the notes (Duffy Law, 1 review / 5.0, MapQuest) are tagged
+  UNCONFIRMED and were NOT printed. No review-based comparisons appear in the report.
+- Any Legal AI Workforce (LAW) package -> confirm with the sales rep that LAW delivery has launched and
+  capacity is available before including in the proposal.
+- Revenue (HubSpot range, $570K working figure), team size, close rate, fee structure, DBM, and goals are all
+  unconfirmed; collect on the 10/22 call. Revenue under $750K / multiple practice areas noted by the decision file.
+- Confirm Fractional CTO / FCOO levels and the 12-seat count with the seller.
+- AI Workforce Pro is a yearly contract (no month-to-month at the 5+ user tier).
+- Mobile Lighthouse (28) is a single local run; re-run before quoting if the report is sent much later.
+- NAP items to confirm with Christine: Suite 210 vs 400, Old Greenwich vs Shelton, trigger phone (203) 521-4441
+  vs site phones (203) 684-1834 / (844) 995-2226, and the /contact-us 404.
+- The report states Google Ads / LSA / Meta presence as "not observed" only; Google Search, Maps, and the Meta
+  Ads Library were not reachable during research.
