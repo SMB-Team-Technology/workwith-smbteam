@@ -1,0 +1,141 @@
+SECTION 11 WORKINGS — INTERNAL ONLY (never client-facing)
+Firm: The Bonner Law Firm | Friendly name: the-bonner | Rep: Jacob Meissner | Date: October 12, 2026
+
+=====================================================================
+1. TRANSCRIPT-STATED NEED OVERRIDE CHECK
+=====================================================================
+1. Call-purpose: call was MIXED (marketing + AI/FCTO + coaching/ops) with a stated lead-gen gap
+   ("add 10-15 new clients/month to stabilize inconsistent lead flow"). Marketing is a valid lead
+   recommendation. Does not trigger an override.
+2. Existing-vendor: no marketing/SEO/ad vendor stated. Does not trigger. (Vic's "AI Workforce Pro
+   subscription" is unclear — see open items; it is not a marketing vendor.)
+3. Budget-reality: no budget limit stated; prospect acknowledged the ~$30K/mo ad-spend minimum
+   discussed on the call. Does not trigger.
+4. Effective-revenue: no gross/net figure stated; revenue only from HubSpot range
+   ($180K-$960K -> $570,000 working figure). Does not trigger.
+
+Package source: package_decision.json (confidence: LOW — revenue and team size not stated on the call).
+The file's final selection reflects the SELLER OVERRIDE logged 2026-10-13 (Slack):
+"full service marketing growth to be standalone". proposal_review.json status = locked.
+Following the seller's locked instruction. Coaching, LAW, and AI Workforce Pro are NOT in this proposal
+(AI Workforce Pro - Starter was removed with the stand-alone override; seller can restore).
+
+Departures from the revenue tables, documented so sales can see the override is intentional:
+- Revenue table puts a $570K firm at Starter; seller selected Growth (table floor $1M). The ">$1M"
+  floor in the filters only hides "Master's Circle and all bundles" under $1M — Growth sold stand-alone
+  is not a bundle, so it is not hidden.
+- 35% CAP FLAG: total SMB spend at conservative ad spend = $8,997 + $10,000 = $18,997/mo vs cap of
+  $16,625/mo (35% of $570,000/12). Over by $2,372/mo. At aggressive ($20,000) total is $28,997/mo.
+  Revenue figure is an unconfirmed HubSpot range, so cap may move once real revenue is confirmed.
+  REVIEW WITH SALES REP BEFORE SENDING.
+
+=====================================================================
+2. MANDATORY PRICE LOOKUP (verified against tables in audit-write.md)
+=====================================================================
+- Marketing package selected: Full Service Marketing — Growth (sold stand-alone)
+  - Bundled price (from table): $7,497/mo
+  - Stand-alone price (from table): $8,997/mo
+  - Price used in proposal: $8,997/mo (stand-alone — seller override; no bundling discount on a single-product sale)
+  - Savings: $0/mo (shown as none in client report)
+- Non-marketing package selected: none
+- Legal AI Workforce (LAW) package selected: none
+- AI Avatar / Video Growth add-on selected: none
+- Total monthly investment: $8,997/mo
+- Total savings: $0/mo
+
+=====================================================================
+3. AD SPEND AND ROI PROJECTION (Block 4)
+=====================================================================
+Practice area: Personal Injury (car/truck accidents lead). Market: Houston = Tier 1 geo.
+Conservative ad spend: $10,000/mo (MVA Google PPC channel minimum; matches package_decision.json).
+Aggressive ad spend: $20,000/mo (per package_decision.json; within Growth cap of $50,000).
+Defaults used (not stated on call): close rate 15%; average case value $7,500 (midpoint of MVA
+default $5K-$10K). Disclosed as estimates in the client report.
+
+Client-facing CPL (Accident & Injury): Google Search $630-$780 (mid $705); LSA $210-$260 (mid $235).
+
+Conservative ($10,000, Google Search only):
+- Blended CPL = $705 x 1.20 cushion = $846
+- Leads = 10,000 / 846 = 11.8 (~12)
+- Cases = 11.8 x 15% = 1.77 (~2)
+- Revenue = 1.77 x $7,500 = ~$13,300
+- Return = ~1.3x
+
+Aggressive ($20,000; assumed split Google Search $14,000 / LSA $6,000 — 70/30, no cushion):
+- Google leads = 14,000 / 705 = 19.9; LSA leads = 6,000 / 235 = 25.5; total ~45 leads (blended CPL ~$441)
+- Cases = 45.4 x 15% = 6.8 (~7)
+- Revenue = 6.8 x $7,500 = ~$51,000
+- Return = ~2.6x
+
+"Why this range" (client-facing): to put paid search in front of high-intent Houston car and truck
+accident searches and turn them into signed cases before competitors such as Jim Adler & Associates
+capture them first.
+
+INTERNAL FLAGS ON AD SPEND:
+- Revenue goal exceeds projected ad revenue -> PAID ADS TEAM REVIEW. Projection (~2-7 cases/mo) is well
+  below the stated goal of 10-15 new clients/month. The call discussed ~$30K/mo as the minimum for
+  10-15 clients; the locked decision file uses $10K-$20K. Make sure the rep resets expectations.
+- Ad spend range was set by the decision file; if a higher spend is chosen, the 35% cap issue grows.
+- No Spanish campaign multiplier applied (not stated on call; site has no Spanish content — confirm).
+- Aggressive range was NOT recomputed with the 20% rule (revenue goal and current revenue not stated).
+
+=====================================================================
+4. DBM
+=====================================================================
+DBM (inference, flagged — not stated as a personal motive): a firm with steady, predictable lead flow that
+does not run on the owner's effort alone — a return to a strong, "pumping" state after inconsistent
+flow — plus building a self-managing team and systems for owner freedom. Secondary: succession/handoff
+dynamic (40+ year firm; chief paralegal Vic Bonner Jr. wants a CMS, Attorney Bonner prefers paper).
+
+Block 1 statement: "We help established Houston personal injury firms get a steady, predictable flow of
+new clients so they can return to a strong, thriving practice that runs on systems — not on one person's effort."
+
+=====================================================================
+5. QUICK WIN OPPORTUNITIES (8)
+=====================================================================
+1. Lead Gen | Quick Win | Launch Google Search ads for Houston car/truck/18-wheeler accidents
+   Why: no digital acquisition system; competitors compete for these searches. Competitor: Jim Adler & Associates.
+2. Intake | Quick Win | Close the after-hours gap (recorded message -> person/answering process)
+   Why: weekend accidents lost to 24/7 competitors. No competitor named.
+3. Lead Gen | Quick Win | Build a steady Google review engine
+   Why: review count far below competitors, true count unconfirmed. Competitor: The Doan Law Firm.
+4. Lead Gen | Quick Win | Clean up directory and business-listing inconsistencies (phone/domain/hours)
+   Why: Justia phone differs from site; Birdeye lists different domain. No competitor named.
+5. Profit | Quick Win | Track every lead to signed case (cost per signed case)
+   Why: TV/radio/billboards untracked. No competitor named.
+6. Lead Gen | Long-Term | Local landing pages + dated, steady content (11 practice pages, undated 16-post blog)
+   Competitor: Joe I. Zaid & Associates (multi-office; named only for scale, no observed content claim -> omitted)
+   -> No competitor row on this card.
+7. Intake | Long-Term | Build a documented intake and follow-up process. No competitor named.
+8. Team | Long-Term | Move case files from paper to a digital system. No competitor named.
+
+=====================================================================
+6. FIRST 90 DAYS — VERSION A (marketing sold)
+=====================================================================
+Pre-written onboarding timeline used exactly as in the template. No non-marketing packages sold, so
+no extra kickoff bullets added. No live chat, no CRM setup mentioned.
+
+=====================================================================
+7. ESCALATION FLAGS (internal)
+=====================================================================
+- Personal Injury in a top-40 metro (Houston) -> APPROVAL REQUIRED.
+- 35% cap exceeded at conservative ad spend ($18,997 vs $16,625) -> review with sales rep.
+- Revenue goal exceeds projected ad revenue -> paid ads team review (see section 3).
+- Revenue is an unconfirmed HubSpot range; tier is above the revenue table's suggestion (Starter) —
+  confirm revenue before sending.
+- Review counts unconfirmed — verify live before the call. Google rating/count: three sources disagree
+  (24 / 55 / ~40). No review count or star rating appears in the client report.
+- PageSpeed (mobile + desktop) NOT OBTAINED (API 429). Client report states scores could not be captured.
+  Run a live test and add real numbers if desired.
+- 3-pack, Google Ads, LSA, and Meta Ad Library all NOT OBSERVED — client report frames as "not observed"
+  and never says the firm is not running ads.
+- Competitor review counts not printed (all UNCONFIRMED).
+- LAW / AI Workforce Pro appears in the Phase 3 roadmap only; confirm LAW delivery has launched and clear
+  Vic's "existing AI Workforce Pro subscription" (vendor/account unclear) before pricing it.
+- Follow-up date conflict: transcript says Tue Oct 13, 2:00 PM; trigger says Oct 12, 3:00 PM EDT.
+- Report addressee: confirm who "Vic Bonner" is (Attorney vs. Vic Bonner Jr., Chief Paralegal). Report uses
+  firm name and "the attorney"/"chief paralegal" only.
+- 2006 public reprimand (State Bar/Avvo): internal context only; NOT in client report.
+- Ben Crump Law excluded as a named competitor (national brand; "2k+" figure unverified).
+- Decision-maker split risk: attorney prefers paper, chief paralegal prefers a CMS; both attend follow-up.
+- Fee structure/contingency not confirmed on the call; no profitability claims made in the report.
