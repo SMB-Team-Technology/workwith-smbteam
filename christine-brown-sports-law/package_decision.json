@@ -33,12 +33,12 @@
   "coaching_price_bundled": 3297,
   "coaching_price_retail": 3797,
   "coaching_savings": 500,
-  "law_tier": "Fractional CTO Level 1",
-  "law_name": "Fractional CTO Level 1",
-  "law_price_bundled": 3297,
+  "law_tier": "Fractional CTO Level 1 + AI Workforce Pro (12 seats)",
+  "law_name": "Fractional CTO Level 1 + AI Workforce Pro",
+  "law_price_bundled": 5734,
   "law_price_retail": 3797,
-  "law_seats": null,
-  "total_bundled": 6594,
+  "law_seats": 12,
+  "total_bundled": 9031,
   "total_savings": 1000,
   "ad_spend_conservative": null,
   "ad_spend_aggressive": null,
@@ -49,6 +49,7 @@
     "Team size not stated in research notes \u2014 defaulting to 3. Review for coaching tier accuracy.",
     "Revenue under $750K but multiple practice areas detected: Essentials hidden (requires single practice area) \u2014 Starter tier.",
     "Revenue $400K\u2013$1M: Elite Coach Plus selected.",
-    "Seller override: replaced Full Service Marketing \u2014 Starter + Elite Coach Plus with Fractional CTO Level 1 ($3,297/mo) + FCOO Advisor ($3,297/mo) per Slack request on 2026-10-13 (seller: 'This is an FCTO and FCOO deal'). Marketing and ad spend removed. Levels inferred (not specified): lowest tier of each, based on $570K revenue (<$1M) and 3-person team; both meet revenue floors (FCTO L1 $400K+, fractional COO $500K+). Seller to confirm."
+    "Seller override: replaced Full Service Marketing \u2014 Starter + Elite Coach Plus with Fractional CTO Level 1 ($3,297/mo) + FCOO Advisor ($3,297/mo) per Slack request on 2026-10-13 (seller: 'This is an FCTO and FCOO deal'). Marketing and ad spend removed. Levels inferred (not specified): lowest tier of each, based on $570K revenue (<$1M) and 3-person team; both meet revenue floors (FCTO L1 $400K+, fractional COO $500K+). Seller to confirm.",
+    "Seller override: added AI Workforce Pro to the existing FCTO Level 1 + FCOO Advisor package per Slack request on 2026-10-13 ('include AIWP starter too. She will need 12 seats total'). AI Workforce Pro \u2013 Starter is capped at 1\u20134 users, so 12 seats use the AI Workforce Pro tier: $1,597/mo (5 users) + 7 extra \u00d7 $120 = $2,437/mo. LAW bundled = FCTO L1 $3,297 + AIWP $2,437 = $5,734/mo; total bundled = FCOO Advisor $3,297 + $5,734 = $9,031/mo. AIWP has no standalone price. Tier inferred from seat count; seller to confirm (12 \u00d7 Starter $350 = $4,200 is outside the approved catalog)."
   ]
 }
