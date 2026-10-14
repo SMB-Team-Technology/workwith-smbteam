@@ -1,0 +1,239 @@
+SMB TEAM — GROWTH AUDIT RESEARCH NOTES
+Firm (per trigger / HubSpot): Office of James Patrick Barrett
+Contact: Catherine Register (HubSpot contact 254860852808), catherine@bllegal.com, 850-605-8840
+URL: http://www.bllegal.com (resolves live; served at https://www.bllegal.com/)
+Sales Rep: Jonathan Farace (jonathan.farace@smbteam.com)
+Date: October 21, 2026
+Proposal Call: 2026-10-21T19:45:00Z (Wednesday, October 21, 2026, 3:45 PM EDT), closer Jonathan Farace.
+Pipeline run: Pass 1, triggered 2026-10-14.
+
+!!! FIRM IDENTITY MISMATCH — RESOLVE BEFORE /audit-write !!!
+  The trigger firm name is "Office of James Patrick Barrett", but the URL given (bllegal.com) is the website of
+  "Brooks, LeBoeuf, Foster, Gwartney, Hobbs, Fusco & Richards, P.A." (marketed as "Brooks LeBoeuf Trial Attorneys"),
+  909 E Park Ave, Tallahassee, FL 32301. Nothing on the homepage mentions James Patrick Barrett.
+  Corroborating evidence the contact belongs to the Brooks LeBoeuf firm: the contact email domain is bllegal.com and the contact
+  phone is in the 850 (Tallahassee) area code, same as the firm's numbers (850-605-3555 new clients; 850-222-2000 existing clients).
+  Separately, web search surfaced "The Law Office of James Patrick Barrett, P.A." — a Washington, DC estate planning / business
+  formation practice (Florida Bar 2010, DC bar). NO evidence links that practice to bllegal.com or to Catherine Register; it may
+  be an unrelated person with the same name or a mis-named HubSpot company record.
+  What this file does: all website, PageSpeed, directory and competitor data below describe the firm that actually operates
+  bllegal.com (Brooks LeBoeuf). Nothing here is attributed to a James Patrick Barrett practice. Whether Catherine Register works for
+  Brooks LeBoeuf, or the HubSpot company name is wrong, is NOT known.
+  ACTION for Jonathan Farace / ops: confirm with the HubSpot record who the prospect is before the proposal is built. If the prospect is
+  a different firm, this entire file's research is for the wrong firm and Pass 1 must be re-run on the correct URL.
+
+Transcript status: no transcript_status in the trigger, so a complete lookback found no discovery call. Trigger transcript field reads
+  exactly: "No Fathom transcript available — proposal call scheduled for 2026-10-21." Custody is not human. There is NO discovery call data for this firm.
+  Every STEP 9 field below is therefore "not stated" or derived from the public website and is labelled as such. Nothing is asserted about what was or was not discussed on a call.
+
+RESEARCH TOOLING LIMITS (read first):
+  This session could fetch web pages (curl / WebFetch), run web searches, and run Lighthouse locally (headless Chrome). It could NOT render Google Search / Google Maps
+  results, could NOT load the Meta Ads Library, the PageSpeed Insights API returned HTTP 429, and Yelp returned HTTP 403. Directory findings come from search-result snippets only.
+  PageSpeed scores come from Lighthouse 12.8.2 run locally, not the pagespeed.web.dev UI. WebFetch returns a model-written summary of each page, not raw HTML;
+  homepage details below were read from raw HTML fetched with curl unless noted.
+  Items depending on unreachable sources are marked "not observed" / "not obtained". No Google review figure for the firm was obtained. Competitor figures below came
+  from search-result snippets citing third-party pages and are all tagged UNCONFIRMED.
+
+================================================================================
+STEP 1 — WEBSITE RESEARCH
+================================================================================
+
+Website URL confirmed live: Yes (fetched October 14, 2026, HTTP 200, redirects http://www.bllegal.com to https://www.bllegal.com/)
+Last redesign date or estimated age: Not determinable. Gatsby-built site (data-gatsby-head tags). Footer/page copyright reads 2026 per WebFetch summary, which suggests the site is maintained, but that is not a redesign date.
+Mobile responsive: Yes (viewport meta tag present; responsive navigation; Lighthouse mobile emulation rendered). Not tested on a physical device.
+Homepage headline: "Florida Personal Injury Lawyers - Here For You When There is Too Much at Stake to Go With Anyone Else" (per WebFetch summary of the page; page <title>: "Florida Personal Injury Lawyers | Accident Attorneys in Tallahassee, FL | Brooks, LeBoeuf"). Tagline in body: "When There is Too Much at Stake, We Will Advocate For You."
+CTA above fold: Yes — phone 850-605-3555 (new clients) and 850-222-2000 (existing clients), "Available 24/7 - Consultation is Free", and a "Schedule a Free Consultation" button (per WebFetch summary).
+Contact form location: Mid-page and again lower on the page ("Schedule Your Free Consultation": first/last name, phone, email, case type, how did you hear about us, case description, SMS consent). Not embedded above the fold.
+  Form copy promises "an attorney will reach out within 24-48 hours" — slow-response signal for an intake audit (website's own statement).
+Live chat present: No (no live-chat vendor script detected in page source; only Google Tag Manager and a Vimeo-hosted video seen). Not exhaustively tested.
+Attorney bio present: Yes — individual pages for 7 attorneys: Matthew K. Foster (Managing Shareholder), Dean R. LeBoeuf (Senior Partner), Scott E. Gwartney, Ryan Hobbs, Craig Richards, Tony Fusco (Shareholders), Sam Watford (Attorney). The site states all attorneys graduated from FSU College of Law.
+Video present: Yes — hosted Vimeo MP4 on the homepage plus a "Video Library" nav item and attorney testimonial video (per WebFetch summary).
+Blog present: Yes — /blog (HTTP 200) and a "Firm News" nav item (the /firm-news URL I guessed returned 404; the nav target was not resolved). Last post date: the only date visible in the /blog HTML is "May 21, 2026"; not confirmed to be the newest post.
+Practice areas on site: personal injury (car, truck, motorcycle, pedestrian, bicycle, rideshare Uber/Lyft, drunk/distracted driving, rear-end); catastrophic injury (brain, spinal cord, amputation, severe burn); premises liability (slip and fall, negligent security, pool, dog bite, Airbnb/VRBO); nursing home / assisted living / group home negligence and abuse; medical malpractice and birth injury; product liability; construction accidents; wrongful death; employment law (discrimination, sexual harassment). Case-type dropdown also lists contracts and estate law.
+Fee language on site: "Free Consultations | No Recovery, No Fee" (contingency, firm's own statement).
+Firm claims (own marketing, not independently verified): "more than 35 years of history", "more than 10,000 cases", "more than 100 years of combined experience". Featured results: $5.8M medical malpractice (wrongful death), $5.22M slip and fall, $2.2M nursing home abuse (confidential), $2.0M motor vehicle.
+Service area: "Serving Florida and South Georgia"; single listed address 909 E Park Ave, Tallahassee, FL 32301. Whether there are other offices is not known.
+Spanish-language content: none seen on the homepage.
+Geo-targeting landing pages for surrounding cities: not checked beyond the homepage; nav shows "Areas Served: Florida, Georgia" only.
+Social: Facebook (facebook.com/BrooksLeBoeuf) and Instagram (instagram.com/brooksleboeuflaw) linked.
+Testimonials on homepage: two 5-star text testimonials (Donna R., Robert G.) and one story (Erika Hall). No Google review count or rating is displayed in the page text. (WebFetch summary mentioned a "five-star review display" above the fold; no number was read.)
+
+PageSpeed mobile score: 33 / 100 (Lighthouse 12.8.2, run locally Oct 14, 2026 against https://www.bllegal.com/; mobile emulation; LCP 21.3 s, Total Blocking Time 1,950 ms, CLS 0.002).
+PageSpeed desktop score: 94 / 100 (same tool; desktop preset; LCP 0.8 s, TBT 110 ms, CLS 0.086).
+  Single run each; scores move a few points run to run. Measured with Lighthouse, not the pagespeed.web.dev UI. Writer: describe as a Lighthouse performance score. The PageSpeed Insights API returned 429 so the web UI numbers were not obtained.
+
+>>> SAVED: website section complete.
+
+================================================================================
+STEP 2 — GOOGLE BUSINESS PROFILE
+================================================================================
+
+GBP found: Not confirmed (Google Search/Maps not readable here). Treat GBP existence as unknown.
+Star rating: not obtained (no verification-method tag applicable because no number is recorded)
+Total review count: not obtained
+Most recent review date: not obtained
+Primary category: not obtained
+Photos active: not observed
+Posts active: not observed
+
+Third-party review figures seen in search snippets (NOT Google, do not print as the firm's review count):
+  - Yelp: 4.2 / 5 with 6 reviews [UNCONFIRMED — sourced from a web-search snippet about the Yelp listing (Yelp page itself returned 403), not independently confirmed via Google]
+  - Lawyers.com: 4.7 / 5 with 3 reviews [UNCONFIRMED — sourced from a web-search snippet about the Lawyers.com listing, not independently confirmed via Google]
+  - caraccidentattorney.com: 4.9 / 5 with 244 reviews [UNCONFIRMED — sourced from a web-search snippet about a third-party directory; it is not clear these are Google reviews, and the listing may aggregate other sources]
+  The Yelp listing title in search results reads "BROOKS, LEBOEUF, FOSTER, GWARTNEY & HOBBS - Updated June 2026" — the Yelp name omits Fusco and Richards.
+
+>>> SAVED: GBP section complete (no Google data obtained).
+
+================================================================================
+STEP 3 — LOCAL 3-PACK SEARCHES
+================================================================================
+
+NOT OBSERVED. Google Search / Maps local packs cannot be rendered in this environment. No search was run and no pack contents are asserted.
+Practice areas to run when a browser is available (from the site): car accidents, truck accidents, nursing home abuse/negligence, medical malpractice, premises liability / slip and fall, wrongful death.
+  Suggested searches: "car accident lawyer Tallahassee", "personal injury lawyer Tallahassee", "truck accident lawyer Tallahassee"; "nursing home abuse lawyer Tallahassee", "medical malpractice lawyer Tallahassee", "nursing home neglect attorney Tallahassee"; "slip and fall lawyer Tallahassee", "premises liability attorney Tallahassee", "wrongful death lawyer Tallahassee".
+Firm appears in 3-pack: not observed for any search.
+
+================================================================================
+STEP 4 — COMPETITOR REVIEW COUNTS
+================================================================================
+
+None of these were read off Google listings; all are search-snippet figures and carry the UNCONFIRMED tag. Do not use them as specific figures in the client report. The firm's own Google count was not obtained, so NO comparison (more/fewer reviews than the prospect) can be made.
+
+- Competitor 1: Shapiro Law Firm, P.A. (Tallahassee; tallahasseeinjurylawyer.com) — reviews: 63 [UNCONFIRMED — sourced from a web-search result snippet citing a Tallahassee car-accident-lawyer directory, not independently confirmed via Google] — rating: 4.7 [UNCONFIRMED — same source]
+- Competitor 2: The Pelham Law Firm (Tallahassee) — reviews: 40 [UNCONFIRMED — sourced from a web-search result snippet citing a Tallahassee car-accident-lawyer directory, not independently confirmed via Google] — rating: 4.8 [UNCONFIRMED — same source]
+- Competitor 3: The Masterson Law Firm (Philip A. Bates, Tallahassee) — reviews: not obtained — rating: not obtained
+- Reference only, NOT usable as a named competitor under the local-firm rule: Morgan & Morgan (national; Tallahassee office at 313 N Monroe St) — snippet from the firm's own site reads 4.7 with 2,519 reviews [UNCONFIRMED — sourced from the firm's own marketing page via web search, and this is a firm-wide figure for a national brand, not independently confirmed via Google].
+Other Tallahassee PI firms seen in results (no figures): Jimmy Fasig (trial attorney, 25+ years).
+
+================================================================================
+STEP 5 — DIRECTORY LISTINGS
+================================================================================
+
+Seen in search results (listing exists; page contents not read except via snippets):
+  - FindLaw: listed as "Brooks, LeBoeuf, Foster & Gwartney" — categorized under Criminal Law in the title, though the firm's site is personal injury and employment (category mismatch, from the snippet title only).
+  - Super Lawyers: firm profile exists (Personal Injury - General); snippet says 4 Super Lawyers; Craig Richards individually listed. Firm name there: "Brooks, LeBoeuf, Foster, Gwartney and Hobbs".
+  - Avvo: attorney profile for Scott Gwartney exists (Nursing Home Abuse). Other attorneys not checked.
+  - Yelp: listing exists, 909 East Park Ave, 13 photos, "Updated June 2026" (see STEP 2 for the figures, UNCONFIRMED).
+  - Lawyers.com, AttorneyAtLaw.com, caraccidentattorney.com, Law.com, LinkedIn company page, Facebook page, Florida Bar member profiles (Hobbs, LeBoeuf): listings exist.
+  - Justia: not seen in results; not confirmed either way.
+NAP consistency: firm name varies across directories (see below); address 909 East Park Ave, Tallahassee 32301 is consistent where seen. Phones: website lists 850-605-3555 (new clients) and 850-222-2000 (existing clients); the directory snippet showed 850-222-2000 only.
+  NAME inconsistency flag: the firm appears as "Brooks, LeBoeuf, Foster & Gwartney", "...Gwartney & Hobbs", "...Gwartney, Hobbs, Fusco & Richards" and "Brooks LeBoeuf Trial Attorneys" across the web — and the homepage itself mixes "Gwartney & Hobbs P.A." (form consent text) and "Brooks, LeBeouf, Foster & Gwartney" (misspelled "LeBeouf" in the client-stories paragraph).
+Geo-targeting landing pages for surrounding cities: not checked.
+
+>>> SAVED: GBP, local SEO, directory sections complete (with the gaps noted).
+
+================================================================================
+STEP 6 — GOOGLE ADS
+================================================================================
+
+NOT OBSERVED. Google Search results could not be rendered here, so no ad was seen for any practice area. This is a tooling limit, NOT evidence that the firm is not advertising.
+Practice Area 1: Car / truck accidents (Tallahassee)
+- Firm ads observed: not observed (could not check)
+- Named local competitors running ads: not observed
+Practice Area 2: Nursing home abuse (Tallahassee)
+- Firm ads observed: not observed (could not check)
+- Named local competitors running ads: not observed
+Practice Area 3: Medical malpractice (Tallahassee)
+- Firm ads observed: not observed (could not check)
+- Named local competitors running ads: not observed
+Practice Area 4: Premises liability / slip and fall (Tallahassee)
+- Firm ads observed: not observed (could not check)
+- Named local competitors running ads: not observed
+Ads framing for the writer: any ads statement must be "not observed" / "does not appear to be running" at most — and in this case not even that, because the check was not run. Ask the prospect on the call.
+Site-side hint only: Google Tag Manager is installed; the intake form has "Google" as a "How Did You Hear About Us?" option. Neither shows whether ads run.
+
+================================================================================
+STEP 7 — LOCAL SERVICE ADS
+================================================================================
+
+- Firm appears in LSA: not observed (could not check)
+- Google Screened: not observed
+- LSA review count: not observed
+- Named local competitors in LSA: not observed
+
+================================================================================
+STEP 8 — META ADS
+================================================================================
+
+The Meta Ads Library could not be loaded here.
+- Firm has active ads: not observed
+- Named local competitor 1: not observed
+- Named local competitor 2: not observed
+Site-side hint only: the firm has an active Facebook page (facebook.com/BrooksLeBoeuf) and Instagram (@brooksleboeuflaw) and promotes community sponsorships. Page activity level not read.
+
+>>> SAVED: all ads sections complete (as "not observed").
+
+================================================================================
+STEP 9 — TRANSCRIPT EXTRACTION
+================================================================================
+
+No discovery call transcript exists. Everything below is "not stated" unless labelled as website-derived.
+
+- Practice areas confirmed: not confirmed on a call. Website lists personal injury (primary), nursing home / assisted living negligence, medical malpractice, premises liability, wrongful death, employment law.
+- Current lead sources: not stated. (Website-derived: phone, web form with "how did you hear about us" options Google / Personal Referral / Attorney Referral / Returning Client / Legal Directory; the site states "There's way too much at stake to choose your attorney based on a television commercial or a billboard", which suggests the firm positions against TV/billboard advertisers — a website claim, not a statement about the firm's own spend.)
+- Ads ever run: not stated
+- Team size: not stated. (Website-derived only: 7 attorneys listed — Foster, LeBoeuf, Gwartney, Hobbs, Richards, Fusco, Watford; staff not counted.)
+- Annual revenue (gross / case value): not stated
+- Annual revenue (net / take-home / collected): not stated — not distinguished from gross (no call)
+- Fee structure: not stated on a call. Website: "No Recovery, No Fee" contingency for injury work.
+- Revenue goal: not stated, use 2x current revenue (current revenue also unknown)
+- Average case value: not stated (website case results are headline settlements only — $2.0M to $5.8M — and are not averages)
+- Current close rate: not stated — default to 15%
+- Number of locations: 1 if not mentioned (one address listed on site)
+- Spanish campaign needed: no evidence (no Spanish content on the homepage; not discussed)
+- Dominant buying motive: unknown — no call. No quote or inference is made.
+- Any profitability claims made by prospect: none stated
+- Any claims about case types or practice areas: none stated by the prospect. (Website's own claims: 35+ years, 10,000+ cases; see STEP 1.)
+- Stated call focus / product interest: unknown — no discovery call transcript. Only known: a Proposal Call is booked for 10/21/26 3:45 PM EDT with Jonathan Farace. Do not default to "standard marketing" and do not assume what was discussed.
+- Primary engagement: unknown — no discovery call transcript (not a valid keyword on purpose; select-package.mjs will treat the field as blank and fall back to revenue-based sizing)
+- Products discussed on call: none
+- Lead-gen gap stated: unknown — no discovery call transcript
+- Existing marketing/SEO/ad vendor engagements: none stated. The Gatsby site, video library, case-results and sponsorship pages suggest a professionally managed web presence; whether a vendor is involved is unknown — ask on the call.
+- Budget constraints stated: none stated
+
+================================================================================
+STEP 10 — COMPETITIVE URGENCY SCORE
+================================================================================
+
+Score: 5 / 10 — LOW-CONFIDENCE ASSIGNMENT. Google 3-pack, ads, LSA, Meta data and all firm Google review data could not be observed, so the score rests on:
+  - Tallahassee is a mid-size market with many injury firms (Shapiro Law Firm, The Pelham Law Firm, The Masterson Law Firm, Jimmy Fasig, and a national brand, Morgan & Morgan, with a local office).
+  - The firm has a visible, professionally built site with 7 named attorneys, case results and video — an asset, not a weakness.
+  - Mobile Lighthouse performance is 33/100 with LCP of 21.3 s (desktop 94/100) — a real mobile-experience gap given that injury searches skew mobile.
+  - Intake form promises a 24-48 hour reply — a speed-to-lead gap if accurate.
+  - No evidence either way on ads, LSA, 3-pack position or Google review volume.
+Named local competitor threats (reasons are limited to what was seen; none was verified live):
+  1. Shapiro Law Firm, P.A. — car/truck/motorcycle focus since 1997 and a Tallahassee injury-lawyer domain; Google 4.7 / 63 reviews [UNCONFIRMED — snippet source]
+  2. The Pelham Law Firm — 30+ years, car/DUI/premises/wrongful death, same practice overlap; Google 4.8 / 40 reviews [UNCONFIRMED — snippet source]
+  3. The Masterson Law Firm (Philip A. Bates) — Board Certified Civil Trial Lawyer, Super Lawyer, catastrophic injury and wrongful death overlap; review data not obtained
+Dynamic sentence (Score 4–6): "A score of 5 means competitors have meaningful advantages in one or more areas and are pulling ahead. You are not invisible yet — but the window to close the gap is narrowing. Every month without action is a month they extend their lead."
+  Writer caution: this sentence rests on a score assigned without ads / 3-pack / review observation and with an unresolved firm-identity question; soften or hold it until the rep has confirmed the prospect and re-run the live checks.
+
+>>> SAVED: final research notes.
+
+================================================================================
+PASS 2 — VERIFICATION CHECKLIST
+================================================================================
+
+[x] Every number in the notes matches observed data (PageSpeed from local Lighthouse runs; competitor and third-party review figures taken verbatim from search snippets and tagged)
+[x] No competitor is cited as "dominating" — no comparison to the prospect's review count was possible because the firm's Google count was not obtained
+[x] Every review count and star rating carries a verification-method tag — all are [UNCONFIRMED — sourced from ...]; none is [confirmed via Google]
+[x] Annual revenue gross/net split: not stated; recorded as not distinguished; fee structure recorded as not stated on a call (website contingency language noted)
+[x] Every ad section covers all practice areas — recorded as "not observed" because the tooling could not render Google / Meta
+[x] No section says "you are not running ads"
+[x] No profitability or business claim appears unless it came from the transcript — none exists; website marketing claims are labelled as the firm's own
+[x] No competitor reference uses generic labels — only named local firms (Morgan & Morgan is flagged as national and excluded from the threat list)
+[x] PageSpeed scores are real numbers from Lighthouse, not estimates
+[x] DBM recorded as unknown (no call), not invented
+[x] Revenue goal flagged: not stated, use 2x current revenue
+[x] Close rate: not stated, default 15%
+[x] Average case value: not stated; headline website settlements are explicitly not averages
+[x] Stated call focus recorded as unknown, explicitly NOT defaulted to "standard"
+[x] Primary engagement / Products discussed / Lead-gen gap fields filled in; engagement and lead-gen gap deliberately "unknown" because no call exists
+[x] Existing vendor engagements recorded (none stated)
+[x] Budget constraints recorded (none stated)
+
+Open items for the writer / rep (do not state as fact):
+  - FIRST: confirm the prospect identity. Trigger says "Office of James Patrick Barrett"; the URL and contact email domain point to Brooks LeBoeuf Trial Attorneys (Tallahassee). If these are different businesses, discard this research and re-run on the correct site.
+  - No discovery call transcript: revenue, team size, close rate, DBM, goals, lead sources, fees and budget are all unknown. Jonathan should collect these on the 10/21 proposal call. Do not fabricate them.
+  - Google review count/rating for the firm, 3-pack positions, Google/LSA/Meta ads and competitor Google counts still need a live browser check.
+  - Firm name inconsistency across directories and on the site itself (Gwartney & Hobbs vs. including Fusco & Richards; "LeBeouf" misspelling).
