@@ -404,3 +404,192 @@ export async function getFathomTranscript(email, contactName, apiKey, _fathomUrl
   const result = await getFathomTranscriptResult(email, contactName, apiKey, _fathomUrl);
   return result.text;
 }
+
+// ---------------------------------------------------------------------------
+// Full verbatim transcript for the exact call HubSpot links to.
+//
+// The audit workflows resolve a fathom.video URL from HubSpot. Instead of
+// scanning every meeting in the account (which hits the page cap within a day
+// of the team's calls), narrow the listing by the rep who recorded it and the
+// prospect's company domain, match the recording by its URL, then fetch that
+// one recording's transcript. The result is written to a temp file outside
+// the repo by fetch-fathom-transcript.mjs — never into a trigger JSON, since
+// this repo is public.
+// ---------------------------------------------------------------------------
+
+const FULL_LOOKBACK_DAYS = 120;
+const FULL_MAX_PAGES = 40;
+
+function parseFathomUrl(fathomUrl) {
+  const s = typeof fathomUrl === 'string' ? fathomUrl.trim() : '';
+  const call = s.match(/fathom\.video\/calls\/(\d+)/);
+  const share = s.match(/fathom\.video\/share\/(?:[a-z]\/)?([A-Za-z0-9_-]+)/);
+  return { callId: call ? call[1] : null, shareToken: share ? share[1] : null };
+}
+
+function meetingMatchesUrl(m, { callId, shareToken }) {
+  if (callId && typeof m.url === 'string' && m.url.match(/\/calls\/(\d+)/)?.[1] === callId) return true;
+  if (shareToken && typeof m.share_url === 'string' && m.share_url.includes(shareToken)) return true;
+  return false;
+}
+
+function hasInvitee(m, email) {
+  const e = email.toLowerCase();
+  return (m.calendar_invitees || []).some(i =>
+    (i.email || i.email_address || '').toLowerCase() === e);
+}
+
+function formatTimestamp(ts) {
+  if (typeof ts === 'string') return ts;
+  if (typeof ts !== 'number' || !Number.isFinite(ts)) return '';
+  const h = Math.floor(ts / 3600);
+  const m = Math.floor((ts % 3600) / 60);
+  const s = Math.floor(ts % 60);
+  const mm = String(m).padStart(2, '0');
+  const ss = String(s).padStart(2, '0');
+  return h ? `${h}:${mm}:${ss}` : `${mm}:${ss}`;
+}
+
+/**
+ * Label each speaker as SMB Team or prospect so Pass 1 can tell the rep's
+ * hypothetical numbers apart from facts the prospect stated.
+ */
+function speakerLabel(speaker, internalDomain) {
+  const name = speaker?.display_name || 'Speaker';
+  const email = (speaker?.matched_calendar_invitee_email || '').toLowerCase();
+  if (!email) return name;
+  return email.endsWith(`@${internalDomain}`) ? `${name} [SMB Team]` : `${name} [Prospect]`;
+}
+
+async function listMeetings(apiKey, filters, log) {
+  const params = new URLSearchParams({
+    created_after: filters.createdAfter || new Date(Date.now() - FULL_LOOKBACK_DAYS * 24 * 60 * 60 * 1000).toISOString(),
+  });
+  if (filters.createdBefore) params.append('created_before', filters.createdBefore);
+  if (filters.includeTranscript) params.append('include_transcript', 'true');
+  if (filters.repEmail) params.append('recorded_by[]', filters.repEmail);
+  if (filters.domain) params.append('calendar_invitees_domains[]', filters.domain);
+
+  const meetings = [];
+  let cursor = null;
+  let pages = 0;
+  for (; pages < FULL_MAX_PAGES; pages++) {
+    const url = `https://api.fathom.ai/external/v1/meetings?${params}${cursor ? `&cursor=${encodeURIComponent(cursor)}` : ''}`;
+    const res = await fetch(url, {
+      headers: { 'X-Api-Key': apiKey, 'Accept': 'application/json' },
+      signal: AbortSignal.timeout(FETCH_TIMEOUT_MS),
+    });
+    if (!res.ok) {
+      log(`meetings list HTTP ${res.status} on page ${pages + 1}`);
+      return { meetings, pages: pages + 1, complete: false };
+    }
+    const data = await res.json();
+    if (!Array.isArray(data.items)) return { meetings, pages: pages + 1, complete: false };
+    meetings.push(...data.items);
+    cursor = data.next_cursor || null;
+    if (!cursor) return { meetings, pages: pages + 1, complete: true };
+  }
+  return { meetings, pages, complete: false };
+}
+
+/**
+ * Find the recording HubSpot points to and return its verbatim transcript.
+ *
+ * Returns { found, text, chars, matched_by, recording_id, reason }.
+ * `text` holds transcript content — callers must not log it.
+ */
+export async function getFullTranscriptForCall({ fathomUrl, contactEmail, repEmail, apiKey, internalDomain = 'smbteam.com', log = () => {} }) {
+  if (!apiKey) return { found: false, reason: 'missing_api_key' };
+  const target = parseFathomUrl(fathomUrl);
+  const email = (contactEmail || '').trim();
+  if (!target.callId && !target.shareToken && !email) return { found: false, reason: 'no_url_or_email' };
+
+  const domain = email.split('@')[1]?.toLowerCase() || '';
+  const customDomain = domain && !FREE_MAIL.has(domain) ? domain : null;
+  const rep = (repEmail || '').trim() || null;
+
+  // Narrowest listing first; widen only if the call was not found.
+  const passes = [];
+  const seen = new Set();
+  for (const f of [{ repEmail: rep, domain: customDomain }, { repEmail: null, domain: customDomain }, { repEmail: rep, domain: null }]) {
+    if (!f.repEmail && !f.domain) continue;
+    const key = `${f.repEmail}|${f.domain}`;
+    if (!seen.has(key)) { seen.add(key); passes.push(f); }
+  }
+
+  let match = null;
+  let matchedBy = null;
+  const byInvitee = [];
+  try {
+    for (const f of passes) {
+      const { meetings, pages, complete } = await listMeetings(apiKey, f, log);
+      log(`listed ${meetings.length} meeting(s) in ${pages} page(s) (rep filter: ${f.repEmail ? 'yes' : 'no'}, domain filter: ${f.domain ? 'yes' : 'no'}, complete: ${complete})`);
+      match = meetings.find(m => meetingMatchesUrl(m, target)) || null;
+      if (match) { matchedBy = 'url'; break; }
+      if (email) byInvitee.push(...meetings.filter(m => hasInvitee(m, email)));
+    }
+  } catch (err) {
+    log(`meetings list error: ${err.message}`);
+    return { found: false, reason: 'network_error' };
+  }
+
+  // No URL match: fall back to the prospect's most recent call only when there
+  // was no HubSpot URL to match, so a linked call is never swapped for another.
+  if (!match && !target.callId && !target.shareToken && byInvitee.length) {
+    byInvitee.sort((a, b) => new Date(b.created_at || 0) - new Date(a.created_at || 0));
+    match = byInvitee[0];
+    matchedBy = 'invitee_email';
+  }
+  if (!match) return { found: false, reason: 'recording_not_found' };
+
+  let segments = Array.isArray(match.transcript) ? match.transcript : null;
+  if (!segments) {
+    try {
+      const res = await fetch(`https://api.fathom.ai/external/v1/recordings/${encodeURIComponent(match.recording_id)}/transcript`, {
+        headers: { 'X-Api-Key': apiKey, 'Accept': 'application/json' },
+        signal: AbortSignal.timeout(FETCH_TIMEOUT_MS),
+      });
+      if (res.ok) {
+        const data = await res.json();
+        segments = Array.isArray(data.transcript) ? data.transcript : null;
+      } else {
+        log(`transcript HTTP ${res.status} for recording ${match.recording_id} — retrying via meetings list`);
+      }
+    } catch (err) {
+      log(`transcript fetch error: ${err.message} — retrying via meetings list`);
+    }
+  }
+  if (!segments) {
+    // Fallback: re-list a narrow window around the matched call with transcripts included.
+    const at = new Date(match.created_at || Date.now()).getTime();
+    try {
+      const { meetings } = await listMeetings(apiKey, {
+        repEmail: match.recorded_by?.email || null,
+        domain: null,
+        includeTranscript: true,
+        createdAfter: new Date(at - 60 * 60 * 1000).toISOString(),
+        createdBefore: new Date(at + 60 * 60 * 1000).toISOString(),
+      }, log);
+      const again = meetings.find(m => m.recording_id === match.recording_id);
+      segments = Array.isArray(again?.transcript) ? again.transcript : null;
+    } catch (err) {
+      log(`fallback transcript list error: ${err.message}`);
+    }
+    if (!segments) return { found: false, reason: 'transcript_unavailable', recording_id: match.recording_id, matched_by: matchedBy };
+  }
+
+  const lines = segments
+    .filter(seg => seg && typeof seg.text === 'string' && seg.text.trim())
+    .map(seg => {
+      const ts = formatTimestamp(seg.timestamp);
+      return `${speakerLabel(seg.speaker, internalDomain)}${ts ? ` (${ts})` : ''}: ${seg.text.trim()}`;
+    });
+  if (!lines.length) return { found: false, reason: 'empty_transcript', recording_id: match.recording_id, matched_by: matchedBy };
+
+  const date = (match.created_at || '').slice(0, 10);
+  const header = `FULL VERBATIM TRANSCRIPT — Fathom recording ${match.recording_id}${date ? `, ${date}` : ''}. `
+    + 'Speakers tagged [SMB Team] are our reps; [Prospect] are the firm. Untagged speakers could not be matched to a calendar invitee.';
+  let text = `${header}\n\n${lines.join('\n')}`;
+  if (text.length > TRANSCRIPT_MAX_CHARS) text = `${text.slice(0, TRANSCRIPT_MAX_CHARS)}\n[TRANSCRIPT TRUNCATED AT 300K CHARS]`;
+  return { found: true, text, chars: text.length, matched_by: matchedBy, recording_id: match.recording_id };
+}

@@ -24,39 +24,23 @@ jobs:
 
           echo "=== Running fetch-hubspot-fathom-notes.mjs (expects full transcript) ==="
           TRANSCRIPT=$(node scripts/fetch-hubspot-fathom-notes.mjs 227288962849 2>&1)
+          # Length only: this repo's Actions logs are public.
           echo "Transcript length: ${#TRANSCRIPT}"
-          echo "First 500 chars:"
-          echo "$TRANSCRIPT" | head -c 500
 
-      - name: Test FATHOM_API_KEY visibility (which recorders' calls the key can see)
+      # Logs here are public (public repo): print only status, match method and length.
+      - name: Test full-transcript fetch for JCP Lawfirm (status and length only)
         env:
           FATHOM_API_KEY: ${{ secrets.FATHOM_API_KEY }}
         run: |
-          # Prints only counts, dates and recorder names — no titles, invitees or transcript text.
-          node --input-type=module -e '
-            const key = process.env.FATHOM_API_KEY;
-            if (!key) { console.log("FATHOM_API_KEY is not set."); process.exit(0); }
-            const after = new Date(Date.now() - 30 * 864e5).toISOString();
-            const meetings = [];
-            let cursor = null;
-            for (let page = 0; page < 10; page++) {
-              const url = `https://api.fathom.ai/external/v1/meetings?created_after=${after}${cursor ? `&cursor=${encodeURIComponent(cursor)}` : ""}`;
-              const res = await fetch(url, { headers: { "X-Api-Key": key, Accept: "application/json" } });
-              console.log(`Page ${page + 1}: HTTP ${res.status}`);
-              if (!res.ok) { console.log((await res.text()).slice(0, 300)); break; }
-              const data = await res.json();
-              meetings.push(...(data.items || []));
-              cursor = data.next_cursor || null;
-              if (!cursor) break;
-            }
-            console.log(`\nMeetings visible in last 30 days: ${meetings.length}${cursor ? " (more pages not fetched)" : ""}`);
-            const byRecorder = {};
-            for (const m of meetings) {
-              const who = m.recorded_by?.name || m.recorded_by?.email || "unknown";
-              (byRecorder[who] ||= []).push((m.created_at || "").slice(0, 10));
-            }
-            console.log("\nCalls per recorder:");
-            for (const [who, dates] of Object.entries(byRecorder).sort((a, b) => b[1].length - a[1].length)) {
-              console.log(`  ${who}: ${dates.length} (latest ${dates.sort().at(-1)})`);
-            }
-          '
+          OUT="$RUNNER_TEMP/diag_transcript.txt"
+          STATUS=$(node scripts/fetch-fathom-transcript.mjs "$OUT" \
+            "https://fathom.video/share/GPW1sbdsNc5N7GfyTQcy4BNpn5WHeG2U" \
+            "odm@jcplawfirm.com" "jacob.meissner@smbteam.com")
+          echo "Result: $STATUS"
+          if [ -s "$OUT" ]; then
+            echo "Bytes: $(wc -c < "$OUT")"
+            echo "Speaker lines: $(grep -c '): ' "$OUT")"
+            echo "Lines tagged [SMB Team]: $(grep -c '\[SMB Team\]' "$OUT")"
+            echo "Lines tagged [Prospect]: $(grep -c '\[Prospect\]' "$OUT")"
+            rm -f "$OUT"
+          fi

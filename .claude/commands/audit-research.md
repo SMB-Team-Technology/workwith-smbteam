@@ -41,6 +41,23 @@ The discovery call transcript is ground truth. Before searching for any data poi
 
 ---
 
+## FULL TRANSCRIPT RULES — WHEN A VERBATIM TRANSCRIPT IS PROVIDED
+
+The pipeline may hand you a full verbatim transcript file in addition to the trigger file's `transcript` field (which, when it starts with `SOURCE: Fathom`, is an AI summary). When the full transcript is provided:
+
+1. **It is the ground truth.** Read the whole file before STEP 9. Use the summary only as an overview; where they disagree, the full transcript wins.
+2. **Only the prospect's statements are facts.** Speakers tagged `[SMB Team]` are our reps. Their numbers are often hypotheticals or pitch math ("let's say $5,000 a month", "we've seen $2 million left on the table") — never record them as the firm's figures. Use a rep's number only when the prospect explicitly confirms it. Untagged speakers: work out from context who is who before trusting a figure.
+3. **Watch for transcription errors.** Speech-to-text garbles numbers and words (e.g. "$55,000" right after "$5,000", "illegible" for "eligible"). When a figure conflicts with what the speaker said just before or after, record the figure that fits the context and add `[transcript unclear — read as X]`. If you cannot tell, write `[transcript unclear]` and use the conservative reading.
+4. **Quotes are verbatim.** Copy the prospect's exact words for quote fields. You may drop filler and false starts ("um", "I mean, I —", repeated words) and mark cuts with "…", but never reword. Do not quote the rep as the client.
+5. **Use the client's own words for the DBM** whenever they said something quotable about what they want their life or firm to look like.
+6. **Record the source** at the top of STEP 9: `Transcript source: full verbatim Fathom transcript (summary used only as overview)`.
+7. **Capture the quotes Pass 2 will need.** `/audit-write` runs later without the transcript file, so it can only use what is in the research notes. At the end of STEP 9 add a `Key prospect quotes` list: 8–12 short verbatim prospect lines, each with its timestamp and a few words on the topic (intake, team, profit, lead sources, goals/DBM, budget, objections). Prefer lines about the firm's problems and goals over small talk.
+8. **This repo is public.** Never copy the transcript file, or long passages of it, into the repo, research notes, or any committed file, and never print it. Short quotes in the fields STEP 9 asks for and the `Key prospect quotes` list are fine.
+
+If no full transcript is provided and the trigger's `transcript` field is a Fathom AI summary, note at the top of STEP 9 that quotes come from an AI summary, not the client's own words.
+
+---
+
 ## REVIEW-DATA VERIFICATION RULE
 
 Every Google review count and star rating recorded anywhere in this file (firm or competitor, in STEP 2, STEP 3, or STEP 4) must carry an explicit verification-method tag:
