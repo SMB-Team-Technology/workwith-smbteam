@@ -1,0 +1,225 @@
+SMB TEAM — GROWTH AUDIT RESEARCH NOTES
+Firm: Stevenson Marino, LLP (name as shown on site: Stevenson Marino LLP)
+Contact: JR Stevenson (HubSpot contact 29101801). Trigger lists email jrs@stevensonmarino.com and phone 9175977064.
+URL: http://www.stevensonmarino.com (resolves live; redirects to https://stevensonmarino.com/)
+Sales Rep: Nick Holderman (nick.holderman@smbteam.com)
+Date: November 4, 2026
+Proposal Call: 2026-11-04T16:00:00Z (Wednesday, November 4, 2026, 11:00 AM EST), closer Nick Holderman.
+Pipeline run: Pass 1, triggered 2026-10-14.
+
+Transcript status: no transcript_status in the trigger, so a complete lookback found no discovery call. Trigger transcript field reads
+  exactly: "No Fathom transcript available — proposal call scheduled for 2026-11-04." Custody is not human. There is NO discovery call data for this firm.
+  Every STEP 9 field below is therefore "not stated" / "unknown" or derived from the public website and labelled as such. Nothing is asserted about what was or was not discussed on a call.
+
+RESEARCH TOOLING LIMITS (read first):
+  This session could fetch web pages (curl / WebFetch), run web searches, and run Lighthouse locally (headless Chrome). It could NOT render Google Search / Google Maps
+  results, could NOT load the Meta Ads Library, and did not reach Avvo / Justia / Yelp / FindLaw / Martindale pages directly. Directory findings come from search-result snippets only.
+  PageSpeed scores come from Lighthouse 12.8.2 run locally, not the pagespeed.web.dev UI. WebFetch returns a model-written summary of each page; homepage details were confirmed from raw HTML fetched with curl.
+  Items depending on unreachable sources are marked "not observed" / "not obtained". No Google review figure of any kind was obtained, so no review figure appears in this file as fact.
+
+================================================================================
+STEP 1 — WEBSITE RESEARCH
+================================================================================
+
+Website URL confirmed live: Yes (fetched October 14, 2026, HTTP 200 at https://stevensonmarino.com/). Note: a first curl with a bare user agent returned a 404 (/406.shtml, bot block); a browser-style user agent loads normally.
+Last redesign date or estimated age: Not determinable. Custom WordPress theme (wp-content/themes/stevenson_marino), Contact Form 7 6.1.6 (current). Footer shows "© 2026". Media/News page's newest item is dated May 17, 2023. Site includes an accessibility screen-reader notice. Inference only, not an observed redesign date.
+Mobile responsive: Yes (viewport meta tag present: width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no; Lighthouse mobile emulation rendered). Not tested on a physical device. Note: user-scalable=no is an accessibility flag.
+Homepage headline: Three stacked taglines, no single H1 value proposition: "strategic efficient uncompromising representations." / "tenacious effective litigators." / "legally trained. commercially minded." (page title: "Home - Stevenson Marino LLP")
+CTA above fold: Yes — "CALL 212.939.7228 to speak with an attorney." plus header phone 212.939.7227. A "Free Case Evaluation" form block sits on the right side of the homepage hero area, with the line "If you have received notice of a class/collective action and have questions, please call us at 212.939.7228".
+Contact form location: Contact Form 7 "Free Case Evaluation" form embedded on the homepage (right-side hero column, near the top). Not buried. Email info@stevensonmarino.com listed in footer.
+Live chat present: No. A "Chat ONLINE for a free consultation" block exists in the page source but is HTML-commented-out (not live).
+Attorney bio present: Yes — individual pages for J.R. Stevenson, Justin R. Marino, Jeffrey R. Maguire, Michael R. Minkoff, Alexander Csorny (/attorney/...). Firm's own About copy: Stevenson and Marino are "former seasoned big law firm attorneys" delivering "elite, responsive, cost-efficient legal services".
+Video present: No (no YouTube/Vimeo/<video> embeds detected on the homepage).
+Blog present: No blog. A "Media / News" page exists (/media-news/) with press coverage items; newest item May 17, 2023 ("Media attempts to destroy client's life"), then 2019, 2018, 2017 items. Also a "Settlements & Verdicts" page and a "sarah comrie tip line" page (class/collective action outreach).
+Practice areas on site: Employment Law (counseling; litigation; contracts, partnerships & restrictive covenants; wage and hour litigation; class and collective action litigation; discrimination / harassment / retaliation / whistleblowing); Commercial Law / commercial litigation (business disputes, maritime law); Environmental Law; ADA website accessibility / premise law; Insurance Coverage.
+  Site-listed breadth, not a call statement. Both plaintiff-side (class/collective, discrimination) and business-side (commercial, counseling) work are shown.
+Tracking/tech seen in source: Contact Form 7 with reCAPTCHA field; no Google Tag Manager / gtag / chat vendor string detected in the HTML pulled with curl (not a guarantee; scripts stripped in some views).
+NAP on site (footer, /offices/): White Plains — 445 Hamilton Avenue, Suite 1500, White Plains, NY 10601; Long Island — 105 Maxess Road, Suite 124, Melville, NY 11747; Deer Park — 2000 Deer Park Avenue, Deer Park, NY 11729. Phones 212.939.7227 (main) and 212.939.7228 (case evaluation). Email info@stevensonmarino.com. Site text also says "offices in Manhattan and Long Island".
+  NAP inconsistency flag: a MapQuest snippet lists "75 Maiden Ln, Rm 402, New York, NY 10038" (a Manhattan address not shown in the site footer); FindLaw snippet lists the firm under Deer Park; Super Lawyers lists Melville and White Plains profiles. All office addresses on the site use a 212 (Manhattan) phone number. Trigger phone 917-597-7064 is a different (likely personal/cell) line. Not verified which Manhattan address, if any, is current; ask JR.
+Service area: Greater New York metro (Manhattan, Westchester, Long Island), employment and commercial litigation clients; class/collective action outreach implies broader NY reach.
+Spanish-language content: none seen.
+Geo-targeting landing pages for surrounding cities: None seen (office page only; no city/county-specific practice pages observed).
+Team (from site): 5 attorneys listed (Stevenson, Marino, Maguire, Minkoff, Csorny). Staff beyond attorneys not listed. Website-derived, not a call statement.
+Testimonials page: none observed in main navigation.
+
+PageSpeed mobile score: 39 / 100 (Lighthouse 12.8.2, run locally Oct 14, 2026 against https://stevensonmarino.com/; mobile emulation; LCP 14.7 s, Total Blocking Time 730 ms, CLS 0).
+PageSpeed desktop score: 94 / 100 (same tool; desktop preset; LCP 1.4 s, TBT 10 ms, CLS 0.014).
+  Single run each; scores move a few points run to run. Measured with Lighthouse, not the pagespeed.web.dev UI. Writer: describe as a Lighthouse performance score.
+
+>>> SAVED: website section complete.
+
+================================================================================
+STEP 2 — GOOGLE BUSINESS PROFILE
+================================================================================
+
+GBP found: Not confirmed (Google Search/Maps not readable here; a web search for Google reviews returned none). Treat GBP existence as unknown.
+Star rating: not obtained
+Total review count: not obtained
+Most recent review date: not obtained
+Primary category: not obtained
+Photos active: not obtained
+Posts active: not obtained
+
+Non-Google review signals (search-result snippets only):
+  Avvo firm-level: 5.0 rating, 10 reviews [UNCONFIRMED — sourced from a web-search summary of Avvo, not independently confirmed via Google]. A separate Avvo score of 4.3 from 11 client reviews was reported for one attorney [UNCONFIRMED — same source]. Snippet text also noted some 2025 reviews with complaints about professionalism and client service, and a positive "A firm of great integrity and competency" quote on Lawyer.com [UNCONFIRMED — aggregator snippet]. Writer: do not print these as Google figures or as specific numbers.
+
+================================================================================
+STEP 3 — LOCAL 3-PACK SEARCHES
+================================================================================
+
+Google Search/Maps local pack is not renderable from this session. Every search below is "not observed". Keywords to run live before the call (suggested, not run):
+
+Practice Area 1: Employment Law
+- Search 1 "employment lawyer White Plains NY": firm appears not observed — competitors in pack: not observed
+- Search 2 "wage and hour lawyer Long Island": firm appears not observed — competitors in pack: not observed
+- Search 3 "employment discrimination attorney Melville NY": firm appears not observed — competitors in pack: not observed
+
+Practice Area 2: Commercial Litigation
+- Search 1 "commercial litigation attorney White Plains NY": firm appears not observed — competitors in pack: not observed
+- Search 2 "business litigation lawyer Long Island": firm appears not observed — competitors in pack: not observed
+- Search 3 "commercial litigation lawyer Manhattan": firm appears not observed — competitors in pack: not observed
+
+Practice Area 3: ADA Website Accessibility / Environmental / Insurance Coverage
+- Search 1 "ADA website accessibility lawyer New York": not observed
+- Search 2 "environmental law attorney Long Island": not observed
+- Search 3 "insurance coverage attorney New York": not observed
+
+Competitors surfaced by organic web search (not 3-pack data) for "employment lawyers White Plains / Westchester": Yankwitt LLP, Tully Rinckey, Phillips & Associates, Saluck Halper & Lehrman, Gould & Berg LLP, Denlea & Carton LLP. For Long Island wage-and-hour: Kessler Matura P.C. (Melville), Famighetti & Weinick PLLC (Melville), Leeds Brown Law, P.C., Ricotta & Marks, P.C. Presence in a 3-pack is NOT established for any of these.
+
+================================================================================
+STEP 4 — COMPETITOR REVIEW COUNTS
+================================================================================
+
+No competitor Google review count or rating could be verified live. Nothing is asserted about the prospect having more or fewer reviews than anyone.
+- Competitor 1: Yankwitt LLP (White Plains) — reviews: not obtained — rating: not obtained
+- Competitor 2: Kessler Matura P.C. (Melville) — reviews: not obtained — rating: not obtained
+- Competitor 3: Phillips & Associates — reviews: not obtained — rating: not obtained
+  Writer: do not print any competitor review figure for this firm.
+
+================================================================================
+STEP 5 — DIRECTORY LISTINGS
+================================================================================
+
+(From search-result snippets only; pages not opened.)
+- Avvo: attorney profile for Justin Marino (Deer Park, NY, employment lawyer) found; firm-level 5.0 / 10 reviews snippet [UNCONFIRMED — Avvo snippet, not Google].
+- Justia: lawyer profile for Justin Marino found (listed under New York, NY). Firm profile not confirmed.
+- FindLaw: firm listing found — "Stevenson Marino LLP - a Deer Park, New York (NY) Employment Law Firm" (address attribution differs from site: Deer Park vs. White Plains/Melville/Manhattan).
+- Super Lawyers: firm profiles found under New York, NY; Melville, NY; and White Plains, NY. Snippet says 5 attorneys selected to Super Lawyers or Rising Stars lists.
+- Lawyer.com: firm listing found, New York, NY.
+- MapQuest: listing at 75 Maiden Ln, Rm 402, New York, NY 10038 (not a site-listed address).
+- LinkedIn: Justin Marino listed as Founding Partner.
+- Yelp / Martindale-Hubbell: not found in search snippets; not observed.
+NAP inconsistencies: Directory listings attribute the firm to different primary cities (Deer Park / Melville / White Plains / Manhattan). The site presents three offices (White Plains, Melville, Deer Park) with a Manhattan phone number and a Manhattan reference; the MapQuest Maiden Lane address does not appear on the site. Worth reconciling.
+Geo-targeting landing pages: none seen.
+
+>>> SAVED: GBP, local SEO, and directory sections complete.
+
+================================================================================
+STEP 6 — GOOGLE ADS
+================================================================================
+
+Google results pages not renderable from this session. Ads are not observed because the page could not be loaded, not because ads were seen to be absent. No statement about whether the firm runs ads is made.
+
+Practice Area 1: Employment Law
+- Firm ads observed: not observed (SERP not viewable)
+- Named local competitors running ads: not observed
+
+Practice Area 2: Commercial Litigation
+- Firm ads observed: not observed (SERP not viewable)
+- Named local competitors running ads: not observed
+
+Practice Area 3: ADA Website Accessibility / Environmental / Insurance Coverage
+- Firm ads observed: not observed (SERP not viewable)
+- Named local competitors running ads: not observed
+
+================================================================================
+STEP 7 — LOCAL SERVICE ADS
+================================================================================
+
+- Firm appears in LSA: not observed
+- Google Screened: not observed
+- LSA review count: not obtained
+- Named local competitors in LSA: not observed
+
+================================================================================
+STEP 8 — META ADS
+================================================================================
+
+Meta Ads Library not loadable from this session.
+- Firm has active ads: not observed
+- Named local competitor 1: Kessler Matura P.C. — active ads: not observed
+- Named local competitor 2: Yankwitt LLP — active ads: not observed
+
+>>> SAVED: all ads sections complete (all not observed).
+
+================================================================================
+STEP 9 — TRANSCRIPT EXTRACTION
+================================================================================
+
+No discovery call transcript exists. All values below are "not stated" or "unknown" unless explicitly labelled website-derived.
+
+- Practice areas confirmed: not confirmed on a call. Website lists employment law (counseling, litigation, restrictive covenants, wage and hour, class/collective actions, discrimination/retaliation), commercial litigation, environmental law, ADA website accessibility / premise law, insurance coverage.
+- Current lead sources: not stated
+- Ads ever run: not stated
+- Team size: not stated. Website lists 5 attorneys (J.R. Stevenson, Justin R. Marino, Jeffrey R. Maguire, Michael R. Minkoff, Alexander Csorny); support staff not listed.
+- Annual revenue (gross / case value): not stated
+- Annual revenue (net / take-home / collected): not stated (not distinguished from gross)
+- Fee structure: not stated
+- Revenue goal: not stated, use 2x current revenue (current revenue also not stated)
+- Average case value: not stated
+- Current close rate: not stated — default to 15%
+- Number of locations: 3 per website (White Plains, Melville, Deer Park), plus a Manhattan reference; not confirmed on a call
+- Spanish campaign needed: No (not mentioned anywhere)
+- Dominant buying motive: not stated (no call; no inference printed)
+- Any profitability claims made by prospect: none stated
+- Any claims about case types or practice areas: none stated (website content only)
+- Stated call focus / product interest: unknown — no discovery call transcript. Only known: a Proposal Call is booked for 11/4/26 11:00 AM EST with Nick Holderman. Do not default to "standard marketing" and do not assume what was discussed.
+- Primary engagement: unknown — no discovery call transcript (not a valid keyword on purpose; select-package.mjs will treat the field as blank and fall back to revenue-based sizing)
+- Products discussed on call: none
+- Lead-gen gap stated: unknown — no discovery call transcript
+- Existing marketing/SEO/ad vendor engagements: none stated
+- Budget constraints stated: none stated
+
+================================================================================
+STEP 10 — COMPETITIVE URGENCY SCORE
+================================================================================
+
+Score: 5 / 10 — LOW-CONFIDENCE ASSIGNMENT. Google 3-pack, ads, LSA, Meta data and all review data (firm and competitors) could not be observed, so the score rests on:
+  firm site: mobile Lighthouse 39 (LCP 14.7 s) but strong desktop 94; homepage has a clear phone CTA and an embedded free-case-evaluation form; no video, no live chat (chat widget is commented out), no blog, newest media item May 2023, no city-specific landing pages for a three-office, multi-county footprint; user-scalable=no in the viewport tag,
+  in a dense metro market (Manhattan / Westchester / Long Island) with many established plaintiff-side employment and class-action firms. Treat as a placeholder to refine if live Google data becomes available.
+
+Named competitor threats (specific firms, no verified metrics):
+  1. Kessler Matura P.C. (Melville, NY) — Long Island wage-and-hour / class action firm with a dedicated "Wage & Hour Claims Attorney Long Island NY" page, directly overlapping the firm's Melville office and wage-and-hour / class-action practice.
+  2. Yankwitt LLP (White Plains, NY) — describes itself as a premier boutique litigation firm in White Plains/Westchester, with a dedicated employment-litigation / FLSA page, overlapping the White Plains office.
+  3. Phillips & Associates (NY) — ranked by Chambers USA 2026 for Labor and Employment (Mainly Plaintiffs) in New York; 15 attorneys recognized by Super Lawyers per search snippet (firm-claimed / directory-claimed, not verified here).
+
+Matching dynamic sentence (Score 4–6): "A score of 5 means competitors have meaningful advantages in one or more areas and are pulling ahead. You are not invisible yet — but the window to close the gap is narrowing. Every month without action is a month they extend their lead."
+
+>>> SAVED: final research notes.
+
+================================================================================
+PASS 2 — VERIFICATION CHECKLIST
+================================================================================
+
+[x] Every number in the notes matches observed data (PageSpeed from local Lighthouse Oct 14; office/attorney counts from the site; no Google review figures)
+[x] Competitor review counts: none verified on Google — all "not obtained"; no comparison asserted
+[x] Every review count / rating carries a verification tag (only the Avvo / Lawyer.com snippet figures appear, all tagged UNCONFIRMED)
+[x] Annual revenue split: nothing stated on either figure; fee structure not stated
+[x] Every ad section covers all practice areas (all "not observed" because Google/Meta were unreachable)
+[x] No section says "you are not running ads"
+[x] No profitability or business claim appears (no call data exists); website marketing claims labelled as such
+[x] Competitors are specific named firms only
+[x] PageSpeed scores are real measured numbers (39 mobile / 94 desktop via local Lighthouse 12.8.2)
+[x] DBM recorded as not stated (no call; no inference printed)
+[x] Revenue goal recorded as not stated (fallback 2x noted)
+[x] Close rate recorded (not stated — default 15%)
+[x] Average case value recorded as not stated
+[x] Stated call focus recorded as unknown, explicitly NOT defaulted to "standard"
+[x] Primary engagement / Products discussed / Lead-gen gap fields filled in; engagement and lead-gen gap deliberately "unknown" because no call exists
+[x] Existing vendor engagements recorded (none stated)
+[x] Budget constraints recorded (none stated)
+
+Open items for the writer / rep (do not state as fact):
+  - No discovery call transcript: revenue, team size, close rate, DBM, goals, lead sources, fees and budget are all unknown. Nick should collect these on the 11/4 proposal call. Do not fabricate them.
+  - Google review data, 3-pack, Google/LSA/Meta ads are unobserved; run live checks before the call if possible.
+  - Confirm current office addresses (Manhattan Maiden Lane vs. White Plains / Melville / Deer Park) and the right primary GBP location.
