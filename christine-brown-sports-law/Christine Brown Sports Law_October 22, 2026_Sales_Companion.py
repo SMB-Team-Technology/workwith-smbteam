@@ -269,7 +269,7 @@ story.append(Paragraph("<b>Why marketing was left out:</b>", S["subsection"]))
 story.append(b("The seller override in package_decision.json removed marketing and ad spend; the proposal review is locked."))
 story.append(b("The lead gen findings are real, but ads, LSA, and Meta were all not observed because Google and Meta were unreachable."))
 story.append(b("Review counts are unconfirmed for her and every competitor. Verify live before the call; none appear in the report."))
-story.append(Paragraph("<i>Report has no Block 4 (ad spend) and no Block 5 (What You Told Us), since no transcript exists.</i>", S["disclaimer"]))
+story.append(Paragraph("<i>Report has no Block 4 (ad spend). Block 5 is \"What We Found\" (research findings, not her words), since no transcript exists.</i>", S["disclaimer"]))
 
 story.append(thin_rule())
 
