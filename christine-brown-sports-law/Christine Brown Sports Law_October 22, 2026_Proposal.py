@@ -134,9 +134,15 @@ CONSERVATIVE_RESULT = "$XX,XXX revenue · X.X× ROAS"
 AGGRESSIVE_LABEL   = "Aggressive  (X cases/mo):"
 AGGRESSIVE_RESULT  = "$XX,XXX revenue · X.X× ROAS"
 
-# Section 11 Block 5 was omitted: no discovery call transcript exists, so there is nothing the
-# client told us to play back. Left empty on purpose rather than inventing client statements.
-WHAT_YOU_TOLD_US = []
+# No discovery call transcript exists, so section 11 Block 5 is the "What We Found" fallback
+# (research findings from Sections 7–8, not client statements).
+TOLD_US_TITLE = "WHAT WE FOUND"
+
+WHAT_YOU_TOLD_US = [
+    ("Repetitive work", "Monthly AI skills, rolled out to all 12 users"),
+    ("Escalations", "FCOO builds rhythm + role-level accountability"),
+    ("Follow-up gaps", "Defined inquiry process, built as an automation"),
+]
 
 CLOSING_QUOTE = (
     '"The credentials, the team, and the reputation are already in place — what is missing is '
@@ -498,6 +504,14 @@ def build_slide2(prs):
 # ── Slide 3: Investment & Next Steps ──────────────────────────────
 
 def build_slide3(prs):
+    # Never render an empty panel: with no transcript, Block 5 becomes
+    # "What We Found" and this list still gets 3 research-based items.
+    if len(WHAT_YOU_TOLD_US) != 3:
+        raise SystemExit(
+            f"WHAT_YOU_TOLD_US has {len(WHAT_YOU_TOLD_US)} items; Slide 3 needs exactly 3. "
+            "With no discovery call transcript, set TOLD_US_TITLE = \"WHAT WE FOUND\" and "
+            "copy the 3 research-based rows from section_11 Block 5.")
+
     layout = prs.slide_layouts[6]
     slide = prs.slides.add_slide(layout)
 
@@ -564,7 +578,7 @@ def build_slide3(prs):
 
     # What You Told Us — alternating light/white rows; the first dot pops in
     # lime green, the rest in ocean blue, so the lead item stands out
-    add_text(slide, "WHAT YOU TOLD US",
+    add_text(slide, TOLD_US_TITLE,
              5.00, told_us_y, 4.70, 0.18, 7.5, NAVY, bold=True)
     for i, (milestone, action) in enumerate(WHAT_YOU_TOLD_US[:3]):
         y = timeline_ys[i]

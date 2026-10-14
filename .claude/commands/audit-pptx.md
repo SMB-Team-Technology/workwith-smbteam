@@ -36,7 +36,7 @@ Assessment overview: urgency score, 4-pillar health indicators, key findings (3 
 Action plan: SMB model description, goal statement tied to DBM, three priority columns (themed to what this firm is actually buying and its real priorities — see below) with 5 bullets each.
 
 **Slide 3 — Your Investment & What Happens Next**
-Pricing: two package cards with bundled and retail prices, bundle total + savings, ad spend note, ROI projections, "What You Told Us" panel, closing quote.
+Pricing: two package cards with bundled and retail prices, bundle total + savings, ad spend note, ROI projections, "What You Told Us" (or "What We Found") panel, closing quote.
 
 ---
 
@@ -89,7 +89,8 @@ Copy values exactly — do not rewrite or recompute.
 - `BUNDLE_SAVINGS` — copy savings callout text
 - `AD_SPEND_NOTE` — only fill this if Block 4 exists in section_11 (i.e., a marketing/ads package is part of the recommendation). Copy the recommended ad spend range and append a short clause distilled from Block 4's "why this range" sentence — the payoff, not the calculation basis, e.g. `"+ Recommended ad spend: $X,XXX–$XX,XXX/mo — to turn high-intent [practice area] searches into signed cases"`. Keep the full note under ~110 characters so it doesn't get truncated on the slide. If Block 4 was omitted from section_11 (no marketing/ads sold), set `AD_SPEND_NOTE = None` — do not show an ad spend note or rationale for a service this firm isn't buying. This also controls whether the "Projected Return on Ad Spend" card renders on Slide 3 (they're gated together in the layout engine) — when `AD_SPEND_NOTE` is `None`, `AVG_CASE_VALUE`/`CONSERVATIVE_*`/`AGGRESSIVE_*` are unused and can be left at their placeholder values.
 - `AVG_CASE_VALUE`, conservative/aggressive cases + revenue + ROAS — copy from Block 4 ROI table
-- `WHAT_YOU_TOLD_US` — exactly 3 items from Block 5 ("What You Told Us"), in the same order. Each item is `(short_label, action)`: `short_label` names the owner's issue in 2–3 words (≤16 chars, e.g. "Missed calls"); `action` condenses that row's "how this plan addresses it" clause (≤55 chars). Never add anything that isn't in Block 5, and never add outcomes, dates, or lead/click counts.
+- `WHAT_YOU_TOLD_US` — exactly 3 items from Block 5 ("What You Told Us"), in the same order. Each item is `(short_label, action)`: `short_label` names the owner's issue in 2–3 words (≤16 chars, e.g. "Missed calls"); `action` condenses that row's "how this plan addresses it" clause (≤55 chars). Never add anything that isn't in Block 5, and never add outcomes, dates, or lead/click counts. Never leave the list empty — the build stops if it doesn't have exactly 3 items.
+- `TOLD_US_TITLE` — `"WHAT YOU TOLD US"` normally; `"WHAT WE FOUND"` when Block 5 is the no-transcript What We Found variant (match the Block 5 heading).
 
 **From section_06_lead_generation.html:**
 - `COMPETITORS` — 3 named competitors with review counts and a one-phrase note each

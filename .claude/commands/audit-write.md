@@ -188,7 +188,7 @@ Compute and save `[friendly-name]/sections/section_11_workings.txt` containing:
 - If a marketing/ads package is part of the recommendation: one plain-English "why this range" sentence explaining the *payoff* of spending in this range for this firm specifically — what it converts or captures (e.g. high-intent searches in their practice area, cases currently going to a competitor, their stated urgency/goal) — not a restatement of the math. Ground it in a real specific from the audit (practice area, a named competitor gap, or the DBM/goal), pulling from `ad_spend_rationale` in `package_decision.json` if present only as a hint toward which practice area or basis to reference, never to quote directly. No CPL numbers, tier caps, or other internal terminology — this sentence is client-facing.
 - DBM statement for Block 1
 - List of 6+ quick win opportunities identified (pillar, title, why, competitor if any, opportunity)
-- What You Told Us (Block 5): the 3 items selected, each with the verbatim transcript line it comes from and the Block 2 package/deliverable it supports
+- What You Told Us (Block 5): the 3 items selected, each with the verbatim transcript line it comes from (or, with no transcript, the Section 5–9 finding for What We Found) and the Block 2 package/deliverable it supports
 
 Save the workings file. Do not proceed until it is saved.
 
@@ -205,7 +205,7 @@ Leave blocks 5–8 with their original template placeholder text for now. Save t
 
 **STEP I-c — Complete section 11 second half**
 Edit `[friendly-name]/sections/section_11_next_steps.html` to fill in blocks 5–8:
-- Block 5: What You Told Us. Use the WHAT YOU TOLD US rules below — 3 items from the transcript, each tied to the recommendation, plus one next-step line. Never mention live chat. Never mention CRM setup.
+- Block 5: What You Told Us. Use the WHAT YOU TOLD US rules below — 3 items from the transcript, each tied to the recommendation, plus one next-step line. With no transcript, use the What We Found fallback below — never omit Block 5. Never mention live chat. Never mention CRM setup.
 - Block 6: three phase roadmap cards. Use the GROWTH ROADMAP PHASES rules below — do not repeat what Block 2 already sold as a "new" phase addition.
 - Block 7: three outcome cards (More Profit, More Freedom, Better Client Results), each tied to this owner's DBM.
 - Block 8: personal closing paragraph (2–3 italic sentences) + final line with firm name.
@@ -636,6 +636,18 @@ Sourcing (non-negotiable):
   they said into something they did not say.
 - Problems found only in research (website, reviews, ads) are not eligible —
   those belong in Sections 5–9.
+
+No discovery call transcript (fallback — never leave Block 5 empty):
+- Retitle Block 5 "What We Found — and How This Plan Addresses It". Keep
+  the same 3-row structure and next-step line.
+- Each row = one finding already stated in Sections 5–9 (bold, plain
+  language) + one sentence on how the Block 2 recommendation addresses it.
+  Pick the 3 that most directly support Block 2, most central package first.
+- Never word a finding as if the owner said it ("you told us", "you
+  mentioned", "you said"), and never guess at goals, revenue, or problems
+  the research did not show. Log the Section 5–9 source of each row in
+  section_11_workings.txt.
+- All "Never include" and language rules below still apply.
 
 Never include (the report is forwarded to partners and staff):
 - Named employees, or criticism of an identifiable staff member

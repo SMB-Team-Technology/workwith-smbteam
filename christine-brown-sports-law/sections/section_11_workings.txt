@@ -11,10 +11,10 @@ and search-result snippets. Consequences for this report:
 - DBM was not stated. Notes say "not inferred"; the writer used the audit-write default DBM (1): a firm that
   runs on its team and systems so the owner has time back. It is phrased as direction, never as something
   Christine said. CONFIRM THE REAL DBM ON THE CALL.
-- Block 5 (What You Told Us) was REMOVED. The rules require every row to trace to a verbatim transcript
-  line, and none exists. The seller's Slack instructions ("This is an FCTO and FCOO deal", "She will need 12
-  seats total") are seller direction, not statements by the prospect, so they are not eligible. Restore
-  Block 5 after the call if a transcript becomes available.
+- Block 5 uses the What We Found fallback (research findings, not client statements). The What You Told Us
+  rules require every row to trace to a verbatim transcript line, and none exists. The seller's Slack instructions ("This is an FCTO and FCOO deal", "She will need 12
+  seats total") are seller direction, not statements by the prospect, so they are not eligible. Switch
+  Block 5 to What You Told Us after the call if a transcript becomes available.
 - Stage 4 (Small Business Manager) assigned from public team structure (3 attorneys, COO, finance manager,
   2 legal assistants, launched 2025). Stage 3 would fit if lead gen is referral-only and Christine handles
   intake personally — unknown. Provisional; confirm on the call.
@@ -93,7 +93,16 @@ depend on their personal involvement in every matter.
 =====================================================================
 6. WHAT YOU TOLD US (Block 5)
 =====================================================================
-Omitted — no transcript lines exist (see section 0).
+No transcript lines exist (see section 0), so Block 5 uses the What We Found fallback
+(added 2026-10-14 after the template was updated to never leave Block 5 / Slide 3 blank). Sources:
+1. Repetitive work -> Section 08 Team, The Problem: "Repetitive attorney and staff work such as research
+   summaries, drafting, and intake notes still takes the same hours without AI-assisted systems."
+   Supports: Fractional CTO Level 1 + AI Workforce Pro (12 users).
+2. Escalations -> Section 08 Team, The Gap: "Without clear accountability measures for each role, the COO
+   has little to manage against and more issues escalate to Christine." Supports: FCOO Advisor.
+3. Inquiry follow-up -> Section 07 Intake, The Gap: "Without a defined response and follow-up process,
+   inquiries depend on whoever happens to see them first." Supports: FCOO Advisor + FCTO custom automation.
+Next step: kickoff call with your Fractional CTO (FCTO listed first in Block 2).
 
 =====================================================================
 7. INTERNAL ESCALATION FLAGS (never in client report)

@@ -176,7 +176,7 @@ Before filling in any section file, run this verification checklist:
 [ ] Live chat is not mentioned anywhere in the report as something SMB Team offers
 [ ] CRM setup is not listed as an SMB Team deliverable
 [ ] Stage 6 is not referenced in blind spots — use specific outcome language instead
-[ ] Block 5 (What You Told Us) has exactly 3 rows, each traceable to a transcript line logged in section_11_workings.txt
+[ ] Block 5 (What You Told Us) has exactly 3 rows, each traceable to a transcript line logged in section_11_workings.txt — or, with no transcript, is titled What We Found with 3 rows traceable to Sections 5–9
 [ ] Block 5 contains no named employees, personal/health/family matters, partner disputes, or financial-distress figures
 [ ] Block 5 promises no outcomes, dates, lead counts, or click counts, and never uses the phrase "pain points"
 [ ] PageSpeed scores are real numbers — not estimates or "unable to obtain"
@@ -599,6 +599,18 @@ Sourcing (non-negotiable):
 - Problems found only in research (website, reviews, ads) are not eligible —
   those belong in Sections 5–9.
 
+No discovery call transcript (fallback — never leave Block 5 empty):
+- Retitle Block 5 "What We Found — and How This Plan Addresses It". Keep
+  the same 3-row structure and next-step line.
+- Each row = one finding already stated in Sections 5–9 (bold, plain
+  language) + one sentence on how the Block 2 recommendation addresses it.
+  Pick the 3 that most directly support Block 2, most central package first.
+- Never word a finding as if the owner said it ("you told us", "you
+  mentioned", "you said"), and never guess at goals, revenue, or problems
+  the research did not show. Log the Section 5–9 source of each row in
+  section_11_workings.txt.
+- All "Never include" and language rules below still apply.
+
 Never include (the report is forwarded to partners and staff):
 - Named employees, or criticism of an identifiable staff member
 - Personal, health, or family matters
@@ -699,7 +711,7 @@ Compute and save [friendly-name]/sections/section_11_workings.txt (or the equiva
 - Aggressive ad spend and full ROI projection (leads, cases, revenue, return)
 - DBM statement for Block 1
 - List of 6+ quick win opportunities (pillar, title, why, competitor if any, opportunity)
-- What You Told Us (Block 5): the 3 items selected, each with the verbatim transcript line it comes from and the Block 2 package/deliverable it supports
+- What You Told Us (Block 5): the 3 items selected, each with the verbatim transcript line it comes from (or, with no transcript, the Section 5–9 finding for What We Found) and the Block 2 package/deliverable it supports
 Save the file before continuing.
 
 STEP I-b — Write section 11 first half
@@ -714,7 +726,7 @@ Leave blocks 5–8 with their original template placeholder text. Save the file.
 
 STEP I-c — Complete section 11 second half
 Edit section_11_next_steps.html to fill in blocks 5–8:
-- Block 5 — What You Told Us. Use the WHAT YOU TOLD US rules from Step 11.5a — 3 items from the transcript, each tied to the recommendation, plus one next-step line. Never mention live chat. Never mention CRM setup.
+- Block 5 — What You Told Us. Use the WHAT YOU TOLD US rules from Step 11.5a — 3 items from the transcript, each tied to the recommendation, plus one next-step line. With no transcript, use the What We Found fallback in Step 11.5a — never omit Block 5. Never mention live chat. Never mention CRM setup.
 - Block 6 — three phase cards with dynamic milestone triggers and DBM sentences. Use the Growth Roadmap rules from Step 11.5 — do not repeat what Block 2 already sold as a "new" phase addition.
 - Block 7 — three outcome cards tied to DBM (More Profit, More Freedom, Better Client Results).
 - Block 8 — personal closing paragraph (empathetic, specific to this owner) and final line with firm name.

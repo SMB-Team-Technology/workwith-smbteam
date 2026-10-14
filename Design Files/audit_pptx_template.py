@@ -145,12 +145,20 @@ CONSERVATIVE_RESULT = "$XX,XXX revenue · X.X× ROAS"  # FILL
 AGGRESSIVE_LABEL   = "Aggressive  (X cases/mo):"     # FILL
 AGGRESSIVE_RESULT  = "$XX,XXX revenue · X.X× ROAS"   # FILL
 
-# What You Told Us — exactly 3 items from section_11 Block 5:
+# Panel title — must match the Block 5 heading in section_11:
+# "WHAT YOU TOLD US" when a discovery call transcript exists, or
+# "WHAT WE FOUND" when there is no transcript (Block 5 then plays back
+# research findings from Sections 5–9 instead of the owner's words).
+TOLD_US_TITLE = "WHAT YOU TOLD US"                   # FILL
+
+# What You Told Us / What We Found — exactly 3 items from section_11 Block 5:
 # (short_label, how_the_plan_addresses_it)
-# short_label: the owner's issue in 2–3 words (<=16 chars), e.g. "Missed calls".
+# short_label: the issue in 2–3 words (<=16 chars), e.g. "Missed calls".
 # action: condensed "how this plan addresses it" clause (<=55 chars).
-# Same rules as Block 5: traceable to the transcript, nothing sensitive,
-# no promised outcomes/dates/counts, never the phrase "pain points".
+# Same rules as Block 5: traceable to the transcript (or, for WHAT WE FOUND,
+# to a finding in Sections 5–9), nothing sensitive, no promised
+# outcomes/dates/counts, never the phrase "pain points". Never leave this
+# empty — the build refuses to render a blank panel.
 WHAT_YOU_TOLD_US = [
     ("Short label 1", "How the recommendation addresses it"),
     ("Short label 2", "How the recommendation addresses it"),
@@ -517,6 +525,14 @@ def build_slide2(prs):
 # ── Slide 3: Investment & Next Steps ──────────────────────────────
 
 def build_slide3(prs):
+    # Never render an empty panel: with no transcript, Block 5 becomes
+    # "What We Found" and this list still gets 3 research-based items.
+    if len(WHAT_YOU_TOLD_US) != 3:
+        raise SystemExit(
+            f"WHAT_YOU_TOLD_US has {len(WHAT_YOU_TOLD_US)} items; Slide 3 needs exactly 3. "
+            "With no discovery call transcript, set TOLD_US_TITLE = \"WHAT WE FOUND\" and "
+            "copy the 3 research-based rows from section_11 Block 5.")
+
     layout = prs.slide_layouts[6]
     slide = prs.slides.add_slide(layout)
 
@@ -583,7 +599,7 @@ def build_slide3(prs):
 
     # What You Told Us — alternating light/white rows; the first dot pops in
     # lime green, the rest in ocean blue, so the lead item stands out
-    add_text(slide, "WHAT YOU TOLD US",
+    add_text(slide, TOLD_US_TITLE,
              5.00, told_us_y, 4.70, 0.18, 7.5, NAVY, bold=True)
     for i, (milestone, action) in enumerate(WHAT_YOU_TOLD_US[:3]):
         y = timeline_ys[i]
