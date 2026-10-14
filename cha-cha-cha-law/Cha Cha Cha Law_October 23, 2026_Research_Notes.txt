@@ -1,0 +1,208 @@
+SMB TEAM — GROWTH AUDIT RESEARCH NOTES (PASS 1)
+Firm: Cha Cha Cha Law (also listed as Law Offices of Alex Cha & Associates; owner Alex Cha / Alex Myung Cha)
+Friendly name: cha-cha-cha-law
+URL: http://www.alexchalaw.com (resolves to https://alexchalaw.com/)
+Contact: Samuel Yi (director of operations — "Pretty much.") — sam@alexchalaw.com
+Sales rep: Jacob Meissner
+Report date: October 23, 2026 (proposal call Oct 23, 2026, 12:00 PM Pacific)
+Discovery call: Wednesday Oct 14, 2026 (Fathom recording 192800814, ~46 min)
+Research run: 2026-10-14
+
+NOTE ON SOURCES / TOOL LIMITS (read before using this file)
+- This was a real, live firm. Nothing below is fabricated. Where a live source could not be reached, the field says "not observed" or "NOT RUN" and Pass 2 must not state it as fact.
+- Google Search, Google Maps / Business Profile, Google Ads results, Local Services Ads, and the Meta Ad Library could not be reached from the research environment (Google search page returned an error page; Meta Ad Library request failed; Avvo and Yelp returned HTTP 403). Therefore: GBP details, 3-pack results, ad observations, LSA and Meta ad observations are NOT confirmed. All review numbers below come from third-party aggregators or search-result snippets and are tagged UNCONFIRMED.
+- PageSpeed: the pagespeed.web.dev / PSI API daily quota was exhausted (HTTP quota error on both retries). Scores below were produced by running Lighthouse 12.8.2 locally (headless Chrome on a CI runner) against https://alexchalaw.com/. They are real measured numbers, but may differ from pagespeed.web.dev by a few points.
+- The call was about AI (AI Workforce Pro / Fractional CTO), not marketing. Per the TRANSCRIPT-FIRST RULE, firm facts come from the call; only live-changing items were researched.
+
+=====================================================================
+STEP 1 — WEBSITE RESEARCH (observed 2026-10-14)
+=====================================================================
+- Website URL confirmed live: yes (http://www.alexchalaw.com -> 301 -> https://alexchalaw.com/, HTTP 200)
+- Last redesign date or estimated age: WordPress, Salient theme (child theme). Homepage last modified 2026-07-24 (og:updated_time). Core homepage imagery and favicon uploaded 2025/05–2025/06, so the current design is estimated at roughly 1–1.5 years old. Footer reads "© 2026 Cha Cha Cha Law".
+- Mobile responsive: yes (viewport meta present; Lighthouse mobile emulation rendered and scored normally). Not visually reviewed on a physical device.
+- Homepage headline: "Los Angeles Personal Injury Lawyer"
+- CTA above fold: yes — "Call now to get started: (213) 351-3513"
+- Contact form location: not observed above the fold on the homepage (phone CTA only); a separate /contact/ page exists
+- Live chat present: no (no chat widget detected in homepage source)
+- Attorney bio present: yes (/team/about-alex-cha/ — U.S. Army service during Operation Desert Storm; moved from business law to personal injury; "20 plus years" practicing per call)
+- Video present: no (no video/embed detected on homepage; WP data shows hasVimeoEmbed false)
+- Blog present: yes — active. Most recent posts via WordPress API: 2026-10-14 (Korean-language post), 2026-10-09 (English: "car waiting for parts California lemon law"), 2026-10-07 (Korean).
+- Other site observations:
+  - Trilingual site: English, Español (/es/), Korean (/ko/). Homepage copy says "bilingual English and Korean speaking attorneys", "work on contingency", "Free consultation".
+  - Practice pages: Personal Injury (car, truck, motorcycle, bicycle, pedestrian, bus, slip & fall, dog bite, hit & run, fire/burn, defective products, rideshare Uber/Lyft, DoorDash/Grubhub, Amazon/FedEx/UPS driver, e-scooter) and Lemon Law (about 20 brand-specific pages: Toyota, Honda, Ford, Tesla, BMW, Mercedes, Audi, Hyundai, Kia, Genesis, etc.).
+  - Website self-claims (NOT independently verified): "150+ Five-Star Reviews" and "Over $10 Million Recovered for Our Clients" / "$10M+ recovered". Pages exist for /results/, /press-and-awards/, /faqs/, /team/.
+  - Tracking: Google Tag Manager and a Google tag (GT-MKBW72N) present. No CallRail/RingCentral/Podium/live-chat vendor detected.
+  - Address on site: 707 Wilshire Blvd, Floor 46, Los Angeles, CA 90017. Phone (213) 351-3513.
+- PageSpeed mobile score: 79 (local Lighthouse 12.8.2, mobile emulation) — pagespeed.web.dev quota exhausted, see note above
+- PageSpeed desktop score: 100 (local Lighthouse 12.8.2, desktop preset)
+
+=====================================================================
+STEP 2 — GOOGLE BUSINESS PROFILE
+=====================================================================
+Google Business Profile could not be reached directly. Fields below come from the call and aggregators only.
+- GBP found: yes — the sales rep pulled it up on screen during the call ("Great reviews"; "This looks pretty well optimized, 24 hours too."). Rep gave no counts or rating.
+- Star rating: 5.0 [UNCONFIRMED — sourced from MapQuest listing snippet, not independently confirmed via Google]
+- Total review count: 25 [UNCONFIRMED — sourced from MapQuest listing snippet, not independently confirmed via Google]. NOTE this conflicts with the firm's own website claim of "150+ Five-Star Reviews" [UNCONFIRMED — website marketing claim, not verified]. The MapQuest figure is probably stale or covers a different source; the true Google count is unknown. Pass 2 must NOT print a specific review count.
+- Most recent review date: not observed
+- Primary category: not observed
+- Photos active: not observed
+- Posts active: not observed
+- Hours: rep observed "24 hours" on the GBP (per call). FindLaw lists Mon–Fri 9:00 AM–6:00 PM (inconsistency, see Step 5).
+
+=====================================================================
+STEP 3 — LOCAL 3-PACK SEARCHES
+=====================================================================
+NOT RUN — Google Search / Maps was not reachable from the research environment, so no 3-pack could be observed. Do not state whether the firm appears in any 3-pack. Pass 2 should omit 3-pack claims or present them only as an opportunity to check.
+
+Practice Area 1: Personal Injury
+- Search 1 "los angeles personal injury lawyer": NOT RUN
+- Search 2 "koreatown car accident lawyer": NOT RUN
+- Search 3 "korean speaking car accident lawyer los angeles": NOT RUN
+Practice Area 2: Lemon Law
+- Search 1 "los angeles lemon law attorney": NOT RUN
+- Search 2 "lemon law lawyer koreatown": NOT RUN
+- Search 3 "tesla lemon law los angeles": NOT RUN
+
+=====================================================================
+STEP 4 — COMPETITOR REVIEW COUNTS
+=====================================================================
+Every number below came from web-search result snippets / aggregators or the competitor's own marketing, never read off Google directly. All are UNCONFIRMED and must not be printed as specific figures.
+- Competitor 1 (PI, Downtown LA): West Coast Trial Lawyers — reviews: 601 [UNCONFIRMED — sourced from Yelp/search snippet, not independently confirmed via Google] — rating: 4.8 [UNCONFIRMED — same source]
+- Competitor 2 (PI, Downtown LA): El Dabe Ritter Trial Lawyers — reviews: 575 [UNCONFIRMED — Yelp/search snippet] — rating: 4.9 [UNCONFIRMED — same source]
+- Competitor 3 (PI, Koreatown / Korean-speaking): Law Offices of John C. Ye — reviews: "900+ Google reviews" [UNCONFIRMED — firm's own marketing claim surfaced in search snippet, not independently confirmed via Google] — rating: 4.9 [UNCONFIRMED — same source]
+- Additional (PI, Koreatown): Law Offices of David Inpyo Lee & Associates — reviews: 213 [UNCONFIRMED — Yelp/search snippet] — rating: 4.9 [UNCONFIRMED — same source]
+- Additional (Lemon Law): Seven Law Group, APC — reviews: 461 [UNCONFIRMED — Birdeye snippet] — rating: 4.9 [UNCONFIRMED — Birdeye]
+- Additional (Lemon Law): Strategic Legal Practices (SLP) — reviews: 720 [UNCONFIRMED — firm's own site claim in search snippet] — rating: not captured
+- Prospect for comparison: 25 [UNCONFIRMED — MapQuest] to "150+" [UNCONFIRMED — own website claim]. Because the prospect's real Google count is unknown, do NOT write that any competitor "has more reviews" than the prospect as a specific comparison; use qualitative framing only ("several nearby competitors market hundreds of reviews").
+
+=====================================================================
+STEP 5 — DIRECTORY LISTINGS
+=====================================================================
+- FindLaw: listed as "Law Offices of Alex Cha and Associates", 707 Wilshire Blvd., 46th Floor, LA 90017, (213) 351-3513, fax (213) 351-3514, website alexchalaw.com. Practice area listed: Personal Injury only (no Lemon Law). 5.0 stars, 1 review [fetched directly from FindLaw page]. Attorneys: Alex Myung Cha, J. Edward Kim. Hours Mon–Fri 9–6.
+- Avvo: Alex Myung Cha profile exists (Los Angeles, Lemon Law Lawyer, 90017). 5.0 rating, 7 reviews [UNCONFIRMED — search snippet; page returned HTTP 403 on direct fetch]
+- MapQuest: listing under "Cha Cha Cha Law" (URL slug law-offices-of-alex-cha-associates), 707 Wilshire Blvd Fl 46; 5.0 / 25 reviews [UNCONFIRMED aggregator]
+- Facebook: page "Cha Cha Cha Law" (handle lawofficesofalexcha) exists
+- Yelp: HTTP 403 — not checked
+- Justia, Martindale, Super Lawyers, Lawyers.com: not checked directly
+- NAP consistency: address and phone consistent across site, FindLaw, MapQuest. NAME inconsistent: site/Facebook/MapQuest use "Cha Cha Cha Law" while FindLaw/Avvo/web results still show "Law Offices of Alex Cha & Associates" (legacy name). FindLaw hours (Mon–Fri 9–6) differ from the "24 hours" the rep saw on GBP, and FindLaw lists only Personal Injury.
+- Geo-targeting landing pages: yes — extensive. Spanish-language city pages exist for dozens of LA County cities (e.g. Cañada Flintridge, Pasadena, Glendale, Torrance, Long Beach, Santa Monica, Koreatown, Santa Clarita) across multiple practice types (e-scooter, hit-and-run, pedestrian, car accident, lemon law), plus English city pages such as /car-accident-lawyer-koreatown-ca/ and /pedestrian-accident-lawyer-los-angeles-ca/.
+
+=====================================================================
+STEP 6 — GOOGLE ADS
+=====================================================================
+Google results pages could not be reached; no ad observation was possible.
+Practice Area 1: Personal Injury
+- Firm ads observed: not observed (not checked — Google SERP unreachable). The prospect said paid ads are part of their mix ("All the above", 00:07:20), so ads may well be running; do not state the firm is or is not running ads.
+- Named local competitors running ads: not observed
+Practice Area 2: Lemon Law
+- Firm ads observed: not observed (not checked)
+- Named local competitors running ads: not observed
+
+=====================================================================
+STEP 7 — LOCAL SERVICE ADS
+=====================================================================
+- Firm appears in LSA: not observed (not checked)
+- Google Screened: not observed
+- LSA review count: not observed
+- Named local competitors in LSA: not observed
+
+=====================================================================
+STEP 8 — META ADS
+=====================================================================
+Meta Ad Library request failed (connection error); not checked.
+- Firm has active ads: not observed
+- Named local competitor 1: not observed
+- Named local competitor 2: not observed
+
+=====================================================================
+STEP 9 — TRANSCRIPT EXTRACTION
+=====================================================================
+Transcript source: full verbatim Fathom transcript (summary used only as overview)
+
+Where the trigger-file AI summary and the full transcript differ, the full transcript wins:
+- Summary says the firm uses a "self-integrated Claude Pro account". Transcript: "Right now I'm on Pro, Claude Pro" (00:40:55) AND "We're going to purchase the Claude team plan soon." (00:13:07). Claude connects to Gmail and Dropbox; Lawmatics is not connected.
+- Summary says Samuel sends the wish list "by EOD Oct 22". Transcript: Samuel — "I'll try to get to you by end of next week." (00:43:22); Jacob asked for "a one-day grace"; call set for Oct 23 at noon. Treat Oct 22 as the working due date, not a prospect commitment to a specific day.
+- Summary says the firm "wants to avoid operational complexity of firms >$5M". Transcript: "I don't think we want to get to five… It's way too big." (00:08:22/00:08:33). Samuel said this; no "complexity" wording.
+- Summary says goal is "growth without adding headcount". That framing is the REP's (00:36:25). Samuel said "it's just efficiency. I don't want to replace people…".
+- Summary says prior SMB Team engagement was fractional CFO and marketing. Samuel was unsure: "I think fractional CFO." "Probably some like marketing… not too sure." (00:11:51–00:12:00). Rep noted he would merge records.
+- Summary says $3M is 2026 revenue. Transcript: the REP floated "$3 million in annual revenue"; Samuel replied "I think that's our goal for this year." So $3M is a 2026 GOAL, not a confirmed actual.
+
+Extraction fields:
+- Practice areas confirmed: Personal injury, with Lemon Law "on the side" — "Yeah, and then Lemon Law on the side." (00:02:38)
+- Current lead sources: "Yeah, so in-house, right?" (00:07:10, re marketing in-house vs vendor). Paid ads vs organic: "All the above." (00:07:20). No specific lead-source breakdown given.
+- Ads ever run: yes, per "All the above" (paid ads and organic/relationship building). Platform, budget, and result not stated.
+- Team size: 10 total (00:04:14). "two attorneys, two case managers" (00:04:23); rep clarified "two case managers and everyone else pretty much a legal assistant" (00:05:26) — i.e. 2 attorneys, 2 case managers, 6 legal assistants. Prospect: "So that's six." (00:05:23) [transcript partly garbled by a connection drop — read as six legal assistants]. Owner is Alex Cha; practicing 20+ years, "seriously started scaling probably within like five, seven years ago" (00:05:55–00:06:00). Samuel is director of operations.
+- Annual revenue (gross / case value): not stated by the prospect as a current actual. The rep proposed ~$3M; Samuel: "I think that's our goal for this year." Working figure $3M (2026 goal) — flagged as goal, not confirmed actual.
+- Annual revenue (net / take-home / collected): not distinguished from gross
+- Fee structure: Lemon Law contingency — rep: "Lemon Law is also contingency based?" Samuel: "Yeah." (00:15:35–00:15:40). Personal injury fee structure not discussed on the call; firm website states contingency / no fee unless we win.
+- Revenue goal: 2026 goal $3M; 2027 goal $3.5M — "It's 3.5." (00:08:14). Does not want to reach $5M: "I don't think we want to get to five." (00:08:22)
+- Average case value: not stated (no practice-area default applied)
+- Current close rate: not stated — default to 15%
+- Number of locations: 1 (downtown Los Angeles — "We're in downtown LA", 00:00:32; 707 Wilshire Blvd)
+- Spanish campaign needed: no — not stated on the call. (Site already has Español and Korean sections; Korean-speaking is a stated positioning on the site.)
+- Dominant buying motive: Samuel (operations director) wants the owner out of production and focused on marketing/business, and wants the team to be efficient: "Yeah, like a self-managing team. I try to get him out of production." (00:08:58–00:09:00) and "he should focus more on the business portion, like marketing, and he could work on like a handful of cases… he should be more on the marketing side, I think." (00:09:29). Category: (1) a firm that runs itself so the owner has more time. Owner nuance: "I want him out, but I think he enjoys working on like some cases" (00:09:16). Owner Alex was not on the call; these are Samuel's words about Alex.
+- Any profitability claims made by prospect: none stated
+- Any claims about case types or practice areas: "Yeah, and then Lemon Law on the side." (00:02:38). No other case-type claims.
+- Stated call focus / product interest: AI — NOT standard marketing/growth discovery. The call was booked around AI ("I just learned more about AI, see what you guys have to offer." 00:01:21), tied to sign-up for the SMB Team AI Growth Summit at the end of October. Rep demoed AI Workforce Pro (hub with Lawmatics, Microsoft 365/Google, Zoom, Gusto, Dropbox integrations; 60+ skills; shared credit pool; AI Employee agent currently in beta/pulled for tweaks) and described the Fractional CTO as the done-for-you option. Rep stated "we're not really going into a full proposal" (00:34:14); proposal to follow on Oct 23 after Samuel's AI wish list. Samuel wants both done-for-you and a self-serve platform: "Both." (00:34:37). Fractional CTO was described but no level or price was named; FCOO was mentioned only as a possible future conversation. Marketing was not a topic of need on the call.
+- Primary engagement: AI
+- Products discussed on call: AI Workforce Pro
+- Lead-gen gap stated: no — prospect asked for AI efficiency, intake automation and drafting help; did not say they want more leads or ask about ads, SEO, or the website. Prospect said "Oh, yeah, of course. Yes, always." to being in growth mode (00:05:42), which is general growth intent, not a stated lead-gen gap.
+- Existing marketing/SEO/ad vendor engagements: none stated — marketing is in-house ("Yeah, so in-house, right?" 00:07:10). Prior SMB Team engagement (fractional CFO, "probably some like marketing") was "maybe like over a year" ago per Samuel and is not active.
+- Budget constraints stated: none stated. Pricing asked: "Do you have like a ballpark of like per user?" (00:39:41). Rep quoted AI Workforce Pro month-to-month, "After five seats, it's about $120 a seat… an initial cost for the first five" with shared credits (rep statements, not firm figures). Samuel also asked "Do you guys have, like, that in writing?" (00:42:41) — wants an agreement/contract.
+
+Other call facts for Pass 2:
+- Tech stack (prospect-stated): Lawmatics (CRM), Gmail, Dropbox, Claude (Pro now; Team plan planned), Zoom (intake calls), Gusto (payroll/finance), Adobe (agreements/e-signature), EvenUp (demand letters — "using EvenUp right now, probably going to dismiss it soon", 00:35:28). Not Clio. Lawmatics is not connected to Claude.
+- Automation wish list (prospect): intake ("if it could take over intake, that'd be great"), discovery drafts, complaint drafts, demand letters, faster Dropbox/Gmail search with source references. Samuel is "getting something automated right now with Claude" (intake).
+- Next steps: Jacob to ensure Samuel gets an AI Workforce Pro demo login (first email went to Alex's other address; Alex is opted out of email; resend from support/CTO Eli Gill), send recap email, confirm Adobe API feasibility and AI Employee ETA. Samuel to send AI wish list by end of next week (working date Oct 22). Follow-up proposal call Oct 23, 12:00 PM PT. Samuel has not used the demo account before ("No." 00:12:42).
+- Owner Alex Cha has an existing HubSpot record at SMB Team (prior engagement); Samuel's record to be merged.
+- Rep-supplied pitch stats NOT to be used as firm facts: "$500,000 in revenue" growth framing, "3x, 4x / 5X, 6X return", client examples (Mark Real, Boston bankruptcy attorney), token/credit claims.
+
+Key prospect quotes (all Samuel Yi, verbatim; filler trimmed):
+1. (00:01:21) "I just learned more about AI, see what you guys have to offer." — why they booked
+2. (00:01:27) "…AI is definitely five years from now it's going to be crucial." — AI outlook
+3. (00:07:10) "Yeah, so in-house, right?" — marketing handled in-house
+4. (00:08:14) "It's 3.5." — 2027 revenue goal
+5. (00:08:22) "I don't think we want to get to five." — growth ceiling; (00:08:33) "It's way too big."
+6. (00:08:58) "Yeah, like a self-managing team. I try to get him out of production." — owner role / DBM
+7. (00:09:29) "…he should focus more on the business portion, like marketing, and he could work on like a handful of cases…" — owner role
+8. (00:13:41) "I know AI is not there yet, but like if it could take over intake, that'd be, that'd be great." — intake
+9. (00:14:00) "…a whole bunch of things that we want to use AI for, to save some time on, you know, discovery drafts, complaint drafts." — litigation drafting
+10. (00:34:44) "…it's time-consuming on, like, looking for things." — search pain; and (00:35:12) "…if I want to look for something, I'd rather just ask like Claude, like a bunch of questions."
+11. (00:35:50) "It's pretty much doing what EvenUp is doing, but at a significantly cheaper cost." — vendor cost
+12. (00:36:02) "…it's just efficiency. I don't want to replace people…" — goal of AI
+
+=====================================================================
+STEP 10 — COMPETITIVE URGENCY SCORE
+=====================================================================
+Score: 6 (PROVISIONAL / low confidence — based on aggregator snippets only; no live Google, 3-pack, ads, or Meta data could be observed. The call was about AI, so this score carries less weight in this audit.)
+
+Named local competitor threats:
+- Law Offices of John C. Ye — Korean-speaking LA PI firm in the same community niche; markets "900+ Google reviews, 4.9" [UNCONFIRMED — own marketing claim].
+- West Coast Trial Lawyers — Downtown LA PI firm (350 Grand Ave); about 601 reviews at 4.8 on an aggregator [UNCONFIRMED].
+- Law Offices of David Inpyo Lee & Associates — Koreatown (3600 Wilshire Blvd) PI firm; about 213 reviews at 4.9 on an aggregator [UNCONFIRMED].
+(Lemon Law: Seven Law Group, APC and Strategic Legal Practices also market several hundred reviews [UNCONFIRMED].)
+
+Strengths of the prospect (for balance): strong site with active blog, 20+ lemon-law brand pages, extensive Spanish/Korean city pages, Korean-language positioning, desktop PageSpeed 100, mobile 79, GBP shows "24 hours" per rep.
+
+Dynamic sentence (4–6): "A score of 6 means competitors have meaningful advantages in one or more areas and are pulling ahead. You are not invisible yet — but the window to close the gap is narrowing. Every month without action is a month they extend their lead."
+
+=====================================================================
+PASS 2 — VERIFICATION CHECKLIST
+=====================================================================
+[x] Every number in the notes matches actually observed data (or is tagged UNCONFIRMED / not observed)
+[x] Competitor review counts: could NOT be verified live — all tagged UNCONFIRMED; no "prospect has fewer reviews" claim is made as a specific comparison
+[x] Every review count and star rating carries a verification-method tag
+[x] Annual revenue gross/net: prospect never distinguished them — recorded "not distinguished from gross"; $3M is a goal not an actual; fee structure recorded
+[x] Ad sections cover both practice areas (PI and Lemon Law); all "not observed"
+[x] No section says "you are not running ads"
+[x] No profitability or business claim appears unless it came from the transcript
+[x] Competitor references use specific named local firms only
+[x] PageSpeed scores are real numbers (local Lighthouse 12.8.2; PSI quota exhausted — disclosed)
+[x] DBM recorded (Samuel's words about the owner)
+[x] Revenue goal recorded ($3M 2026, $3.5M 2027)
+[x] Close rate recorded (not stated — default 15%)
+[x] Average case value recorded (not stated)
+[x] Stated call focus recorded explicitly as AI (not marketing)
+[x] Primary engagement / Products discussed / Lead-gen gap filled in machine-read format
+[x] Existing marketing vendor engagements recorded (none stated; in-house)
+[x] Budget constraints recorded (none stated)
