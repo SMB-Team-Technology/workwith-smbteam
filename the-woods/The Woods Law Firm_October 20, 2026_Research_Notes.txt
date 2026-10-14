@@ -1,0 +1,200 @@
+THE WOODS LAW FIRM — GROWTH AUDIT RESEARCH NOTES
+Sales Rep: Dan Bryant
+Audit Date: October 20, 2026 (proposal call 11:00 AM EDT)
+Contact: Freddy Woods (owner / lead attorney)
+Website: https://woodslawfirmsc.com/
+Research completed: October 14, 2026
+Discovery call: September 28, 2026 (~101 min, Dan Bryant + Freddy Woods)
+
+RESEARCH-ENVIRONMENT LIMITS (read first):
+- This environment has no rendered browser for Google Maps / Google SERPs / Facebook Ad Library (Ad Library and Avvo/Justia/Lawyers.com fetches returned HTTP 403; Google Maps is not reachable). Anything that needs a live Google Maps/SERP/ads view is marked "not observed". Nothing below was estimated or invented.
+- Review counts/ratings: no Google listing could be read directly, so EVERY review figure below is tagged UNCONFIRMED. /audit-write must not print any of them as specific figures.
+
+================================================================
+STEP 1 — WEBSITE RESEARCH
+================================================================
+- Website URL confirmed live: yes (fetched live; HTTP 200)
+- Last redesign date or estimated age: footer reads "© Copyright 2019 The Woods Law Firm". Site is WordPress (Astra theme + Elementor). Blog's newest post sitemap entry was last modified 2019-09-16. Prospect on call: "My site is trash from 2019, man." (00:44:14). Prospect says a new site is "already built" but not launched (00:40:23) — live site is still the 2019 build.
+- Mobile responsive: yes by markup (viewport meta tag + responsive nav); not visually verified on a device.
+- Homepage headline: H1 "South Carolina Criminal Defense Lawyer"; hero slider text "You Have Rights / We Protect Them". Title tag: "South Carolina Criminal Defense Lawyer - The Woods Law Firm - The Woods Law Firm" (brand name duplicated).
+- CTA above fold: yes — "Call Now (864) 810-0384" (multiple click-to-call links). Rep also noted a "text us" option on the mobile view (call 00:44:37).
+- Contact form location: lower-middle of homepage (name, email, phone, case details) — not above the fold
+- Live chat present: no (none detected in page source or render)
+- Attorney bio present: not on homepage; separate /about-us/ page exists (HTTP 200)
+- Video present: no
+- Blog present: yes, stale — 11 posts in post sitemap; most recent lastmod 2019-09-16 (then 2019-08-20, 2019-08-05)
+- Site size: 31 pages in page sitemap (rep on call also counted ~31 practice-area pages), 1 Elementor landing page (/google-landing-dui/). Rep on call: most pages target all of South Carolina rather than a city/office.
+- Geo pages found in page sitemap: /greenville-sc/, /columbia-sc/, /beaufort-sc/. No Spartanburg, York, Myrtle Beach (or Horry) pages found — these are the markets the prospect says matter most.
+- Other: Expertise.com badge, "5 Star Lawyers" claim, NACDL/ABA/NCDD logos, media logos (NBC/ABC/Fox/CNN) on homepage. Offices on site: Greer (main) 955 West Wade Hampton Blvd; Columbia 3501 North Main Street; Beaufort 28 Old Jericho Rd. Site phones: (864) 810-0384 (headline CTA), (864) 298-8111 (Greer), (803) 233-1828 (Columbia), (843) 492-7730 (Beaufort).
+
+PageSpeed (METHOD NOTE: pagespeed.web.dev API returned HTTP 429 quota-exceeded on repeated tries and the web UI did not render. Scores below are from Lighthouse 12.8.2 run locally in headless Chromium against https://woodslawfirmsc.com/ with default throttling — same engine as PageSpeed, but lab conditions can differ a few points from pagespeed.web.dev):
+- PageSpeed mobile score: 50
+- PageSpeed desktop score: 88
+
+**→ Website section complete.**
+
+================================================================
+STEP 2 — GOOGLE BUSINESS PROFILE
+================================================================
+- GBP found: yes per prospect — 3 live listings: Greer (home base), Columbia, Beaufort (call 00:09:25). Listing itself was not opened (Google Maps not reachable).
+- Star rating: 4.9 [UNCONFIRMED — sourced from Birdeye listing "The Woods Law Firm - Greenville Office" (Greer address) and a search-result snippet, not independently confirmed via Google]
+- Total review count: Greer office ~206 per prospect on the call ("206 or something", 00:42:59; rep repeated "206") [UNCONFIRMED — prospect's recollection read aloud on call, not confirmed via Google]. Birdeye aggregator shows 222 total, 210 of them Google, but its newest review is "8 years ago", so it is stale [UNCONFIRMED — sourced from Birdeye]. Second Birdeye listing for the firm shows 14 reviews (likely another office) [UNCONFIRMED — sourced from Birdeye]. Columbia and Beaufort GBP counts: not observed.
+- Most recent review date: not observed
+- Primary category: not observed (Google Maps not reachable)
+- Photos active: not observed
+- Posts active: not observed
+- From the call (rep's screen share, ~00:38–00:42, geo-grid for "DUI lawyer" centered on the Greer office, ~39x39 mile area): firm shows in ~9% of grid points. [Observed by rep with a rank-tracking tool; not independently verified by this research.]
+
+================================================================
+STEP 3 — LOCAL 3-PACK SEARCHES
+================================================================
+NOT RUN LIVE — no Google Maps / local pack access in this environment, so the 3 searches per practice area required by the command could not be performed. Substituted data, each labeled by source:
+
+Practice Area 1: Criminal defense (DUI / domestic violence / drug possession — the prospect's three main case types)
+- Call evidence (rep screen share, "DUI lawyer", Greer-centered grid): firm in ~9% of grid vs competitors Dayne Phillips ~65%, The Bateman Law Firm ~53%, Touma Law Group ~43% (rep, 00:41:53–00:42:32; the summary's "43–65%" matches). Prospect did not dispute these. Tool-derived figures shown on the call, not re-run here.
+- Web search "DUI lawyer Spartanburg SC" (organic results, NOT the 3-pack): KD Trial Lawyers, Ryan Beasley Law, Ellis Hinton LLC, Johnston Law Firm, Anderson & Moore (UpstateLaw), David W. Martin Law Group, The Bateman Law Firm. The Woods Law Firm did not appear in the results returned.
+- Web search "criminal defense lawyer Greer SC" (organic results, NOT the 3-pack): directory pages (Lawinfo, FindLaw, Avvo), King Law (Greer office, 955 W Wade Hampton Blvd Ste 8A — same building as the Woods office), Lauren Taylor, John Newkirk, John Crangle, Moyer Law Firm, Andrew Havran. A Woods Law Firm / Fred Woods listing appeared in the directory-style snippet.
+- Search 3 per practice area: not run.
+
+Practice Area 2: Personal injury / workers' comp — 100% referral/co-counsel per prospect; no PI advertising planned ("not pursuing PI ads now"). No local searches run; not an acquisition channel.
+
+================================================================
+STEP 4 — COMPETITOR REVIEW COUNTS
+================================================================
+Prospect-named real competitors (call 00:19:49–00:21:05): Jeffcoat, Dane/Dayne Phillips, Bateman, Joshua Schultz, "FR Law", David Price, "Hisker" (name garbled). Prospect explicitly said Lauren Taylor and Holcomb are not real competitors.
+
+Review counts below CONFLICT between the call and aggregators, and none could be read off Google. DO NOT cite any competitor as having more reviews than the prospect.
+- Competitor 1: Touma Law Group (spoken as "Tuma"; prospect: "they're new") — reviews: 291 as read aloud by rep at 00:42:45, prospect answered "Yep" [UNCONFIRMED — read off rep's screen on the call, not confirmed via Google]; Birdeye lists only 26 Google reviews [UNCONFIRMED — sourced from Birdeye] — rating: 5.0 [UNCONFIRMED — sourced from Birdeye]
+- Competitor 2: The Bateman Law Firm (Spartanburg; DUI-focused) — reviews: 280 as read aloud by rep at 00:42:47, prospect "Yep" [UNCONFIRMED — read off rep's screen on the call]; Birdeye lists 94 Google (99 total) [UNCONFIRMED — sourced from Birdeye] — rating: 4.9 on Google per a search snippet / 5.0 on Birdeye [UNCONFIRMED — sourced from aggregator/snippet]
+- Competitor 3: Dayne Phillips / South Carolina Criminal Law — reviews: 136 as read aloud by rep at 00:42:50, prospect "Yep" [UNCONFIRMED — read off rep's screen on the call]; search snippet shows ~103 Google [UNCONFIRMED — sourced from search-result snippet] — rating: 4.9 [UNCONFIRMED — sourced from search-result snippet]
+Note: by the on-call figures the prospect (~206) would out-review Dayne Phillips (136) and trail Touma (291) and Bateman (280); by aggregator figures the prospect would lead all three. Because the sources conflict and nothing is Google-confirmed, the safe framing for Pass 2 is the maps-visibility gap (9% vs 43–65% grid coverage), not a review-count gap.
+
+================================================================
+STEP 5 — DIRECTORY LISTINGS
+================================================================
+- Avvo: Fred Wallace Woods Jr. profile exists (Greer; practices Greer/Columbia/Beaufort). 4.9 from 61 reviews per search snippet [UNCONFIRMED — Avvo page returned 403; snippet only]. Competitor Bateman on Avvo: 5.0 / 31 reviews [UNCONFIRMED — snippet].
+- Justia: Freddy Woods profile (29 yrs experience) lists Criminal Defense, DUI Defense, "Military Criminal Defense (Worldwide Representation)" and Personal Injury; address 955 West Wade Hampton Blvd Ste 10 B, Greer 29650; phones (864) 810-0384 toll-free and (864) 298-8111; hours M–F 9–6 (search snippet; page fetch returned 403). Also a Snow & Woods, Attorneys at Law LLC firm listing (the separate PI firm the prospect mentioned).
+- Lawyers.com: separate Greer and Beaufort listings; Greer shows 5.0 with 2 client reviews, established 1997 [snippet].
+- FindLaw: Greer criminal-law directory page returned in search; firm entry not confirmed.
+- Yelp: firm listing not found in searches (competitors have Yelp pages).
+- Other listings seen: Birdeye (two listings, one named "Greenville Office" at the Greer address), Facebook page (facebook.com/WoodsLawFirm), HG.org, ReachAttorneys, catalog.lawyer (Columbia), Expertise.com badge on site.
+- NAP inconsistencies: (1) Birdeye names the Greer-address listing "Greenville Office"; (2) two phone numbers in use for the same office ((864) 810-0384 vs (864) 298-8111); (3) Suite shown as "Ste 10 B" / "Unit 10B" in directories; (4) a second domain, woodslaw-firm.com, appears in search results with "Why Choose the Woods Law Firm" and asset-forfeiture content — unverified whether it is the same firm, an old/duplicate site, or another business; worth checking before the web build.
+- Geo-targeting landing pages for surrounding cities: Greenville, Columbia, Beaufort pages only (see STEP 1). None for Spartanburg, York, Myrtle Beach.
+
+**→ GBP, local SEO, and directory sections complete.**
+
+================================================================
+STEP 6 — GOOGLE ADS
+================================================================
+Live SERPs could not be rendered in this environment — ad copy not observed for either practice area.
+
+Practice Area 1: Criminal defense (DUI / DV / drugs)
+- Firm ads observed: not observed (SERP not available). Prospect confirms on the call that the firm IS running Google PPC and LSA ("We're running LSA, we're running PPC", 00:10:16), with spend currently "$3,000 or nothing".
+- Named local competitors running ads (per PROSPECT'S statements while looking at the paid results on the call, 00:19:56–00:21:05; ad copy not captured): Jeffcoat Firm ("blankets everything"), Dayne Phillips, Bateman ("he does a bunch"), Joshua Schultz ("does a lot too"), plus FR Law, David Price and "Hisker".
+
+Practice Area 2: Personal injury / workers' comp
+- Not advertised by the firm (referral-only). Not observed.
+
+================================================================
+STEP 7 — LOCAL SERVICE ADS
+================================================================
+- Firm appears in LSA: not observed live; prospect confirms an active LSA account with "inconsistent volume" (summary) and says LSA is where he pays only per call and finds it "much, much more productive than a click" (00:18:32). SMB would take over this account.
+- Google Screened: not observed
+- LSA review count: not observed
+- Named local competitors in LSA (per prospect, call): Jeffcoat Firm, Dayne Phillips, Bateman, Joshua Schultz, FR Law, David Price — review counts not observed in LSA [UNCONFIRMED — none verified]
+- Rep noted on call that Google changed LSA budgeting this month so budgets were spent in the first week or two (00:25:48) — rep statement, general platform note.
+
+================================================================
+STEP 8 — META ADS
+================================================================
+- Firm has active ads: not observed — Facebook Ad Library returned HTTP 403 in this environment. Per prospect: Meta/Facebook vendor hired but "we haven't launched yet" (00:10:31).
+- Named local competitor 1: Bateman Law Firm — not observed
+- Named local competitor 2: Jeffcoat Firm — not observed
+
+**→ All ads sections complete (observation limits noted).**
+
+================================================================
+STEP 9 — TRANSCRIPT EXTRACTION
+================================================================
+Transcript source: full verbatim Fathom transcript (summary used only as overview). Speakers are tagged; the transcript has several garbled spots and, late in the call (~01:33–01:41), speaker labels and lines are duplicated/swapped, so quotes below come from clean spans only. Known transcription errors: "Buford" = Beaufort; "Tama/Tuma" = Touma Law Group; "Dane" = Dayne Phillips; "$37.97" = $3,797 [transcript unclear — read as $3,797; prospect repeated "$3,797" at 00:53:48]; one line has the prospect's 2025 vs 2024 spending sequence garbled (see Ads ever run).
+
+- Practice areas confirmed: Criminal defense (statewide; "all 46 counties") — "Criminal is probably 80% of it. PI is about 20%." (00:15:45); PI/workers' comp is referral/co-counsel only. Leads come "primarily only three cases, DUIs, domestic violence cases, and drug possession" (00:13:33). DUI is "about 30%, 30%, 35%" of criminal now (01:24:21).
+- Current lead sources: Google LSA, Google PPC, ChatGPT Ads (self-set up, serving, no attribution), Meta/Facebook (vendor hired, not launched); plus referrals — "law firms were sending us all of their work, all the billboard lawyers. They don't try cases." (00:11:19–00:11:31), 50-50 fee splits (00:16:06); PI/WC "100% referrals from either clients or attorneys" (00:16:29). Callers asked where they saw the firm mostly say "the internet" (00:14:45).
+- Ads ever run: yes — LSA + PPC. 2024: "somewhere about $10,000" (00:11:00) then stopped for three months — "that actually was more productive than the Google LSAs we were doing" (00:11:14) [transcript garbled around 2024/2025]. 2025: ran nothing (referrals filled the pipeline). 2026: tests in Jan/Feb — "$3,000 on one, $5,000 on another, $10,000 on another" — "It made literally no difference. The $3,000 campaign was more effective than anything else because we concentrated to one county" (00:11:42–00:11:58). Currently "$3,000 or nothing" (00:12:07). Self-managed PPC cost: "between $38 and $78 or $79" per click/lead — Dan asked about leads, prospect answered "for the click" (00:22:17–00:22:38), January. Diminishing returns: "if we spend $3,000 per county, then you exhaust all of the leads in that area" (00:14:00). ChatGPT Ads: serving since set up (~4 days to get serving), "you can't see those impressions" (00:14:42).
+- Team size: not stated as a headcount. Offices: 3 staffed (Greer HQ, Columbia, Beaufort), satellites Myrtle Beach and York (00:09:32–00:09:40); prospect expects more staff/volume ("I have more staff now, more volume now"). Separate PI firm Snow and Woods; a partner with a Charlotte, NC office handles NC trial cases (00:36:46). Prospect is the trial attorney and "always in court". Prospect equates $130–140K spend to hiring "three employees" at ~$50,000 each (01:36:12–01:36:24).
+- Annual revenue (gross / case value): "about 2 million in criminal only" (00:51:43) — prospect's statement. (Rep floated "$2 million or $3 million" first; prospect gave his own figure.)
+- Annual revenue (net / take-home / collected): not distinguished from gross
+- Fee structure: mixed — criminal appears to be flat/retainer-based ("$5,000 case", "if they have money", staged payments); referral trial work on 50-50 fee splits (00:16:06). Exact fee structure not stated.
+- Revenue goal: not stated, use 2x current revenue (~$4M). Prospect's volume target: "if per county, we added 20 cases per three counties, Beaufort, Spartanburg, and Richland… an additional 60 cases in flow. That would make any ad spend worth it" (00:12:28–00:12:43). That is 60 extra cases/month at ~$5,000 ≈ $300K/month of case value — an arithmetic illustration of his target, not a stated revenue goal.
+- Average case value: ~$5,000 — "$5,000 case." (00:12:49)
+- Current close rate: "better than 80% if they have money" (00:13:11); "Out of just the cases that come, we're better than 50%" (00:13:18). Use 50% overall. "The conversion is not our problem" (00:13:27).
+- Number of locations: 3 staffed offices with 3 live Google listings (Greer, Columbia, Beaufort) + 2 satellites (Myrtle Beach, York).
+- Spanish campaign needed: no (not mentioned)
+- Dominant buying motive: Cash flow and stability for his family — a son is due in December and he wants the fastest cash now, then long-term SEO later. Quotes: "Right now it's about walking people in that door." (01:06:19); "I'm just trying to get the most collection of cash I can right now. That's all that really matters right now." (01:08:46); "I want to be playing with house money, not my money, which I've been doing forever." (01:07:20); "I'm back home more… I got a kid coming in December." (01:08:31–01:08:36); "I gotta use whatever strategies are going to get the fastest returns. Then bank that money, then start going, okay, what about my long-term SEO?" (01:06:08–01:06:18). Classification: short-term cash flow to fund growth ("house money"), with a self-running-firm/time angle only lightly implied (he's no longer "flying around the world"). The AI summary's "time and profit freedom / self-managing firm" language is NOT in the transcript — do not attribute it to him. SENSITIVE: the prospect also shared a deeply personal loss in the call; deliberately not recorded in this public repo — Pass 2 must not reference it.
+- Any profitability claims made by prospect: "We're better than 80% if they have money" (00:13:11); "about 2 million in criminal only" (00:51:43); "I'm making money. I'm okay… Everything's clicking like it's supposed to." (01:08:12–01:08:22); "I'm doing a ton of real estate" (01:08:20). Rep-only numbers (client ROAS 4–8X, "$100K profit" for another client, "million a year" PPC/LSA managed, national $190 CPL, 85–92% retention) are pitch material, NOT the prospect's figures — do not use as the firm's data.
+- Any claims about case types or practice areas: "we do criminal defense for the entire state of South Carolina, all 46 counties" (00:04:10); "There's really only five counties that really matter" — Spartanburg, Richland (Columbia), York, Myrtle Beach (Horry), Beaufort (00:04:15–00:04:38); "Greenville is oversaturated" (00:05:17); "Spartanburg actually has more volume, and the leads cost less there" (00:05:33); "we're focusing on criminal right now because criminal gives the fastest amount of volume with the highest amount of money in the short term" (00:08:25); on PI ads: "I would not want to compete in the PI space because I don't want to pay $2,500 or $3,000 for a lead flow of a case that might only get you $3,000 in attorney's fees" (00:16:35); intends later to "let the criminal monetize… then turn around and advertise for comp" (00:17:00); "I have the highest amount of closings… in Spartanburg County, followed up closely by Beaufort County, then Greenville… Spartanburg County is pretty much the sweet spot" (01:04:34–01:04:50).
+- Stated call focus / product interest: standard marketing/growth discovery — the call was about immediate lead flow: taking over LSA, running PPC with dedicated landing pages (DUI, domestic violence, drugs, general criminal), maps/GBP optimization, web/SEO foundation (~20,000 words, "site within a site" per office), AI visibility, and social remarketing. Rep floated a "$5,000 to $10,000 a month" full package then scaled to $3,797/month. Coaching/ops/AI-tools products were NOT pitched (coaching mentioned only in passing as a retention factor and the reference's workshop). Prospect asked for AI work only in terms of ranking in AI/ChatGPT.
+- Primary engagement: marketing
+- Products discussed on call: Full Service Marketing
+- Lead-gen gap stated: yes — "It's lead flow." (00:10:00); "I need to get leads in." (00:10:09); "The conversion is not our problem." (00:13:27)
+- Existing marketing/SEO/ad vendor engagements: Meta/Facebook vendor hired, not yet launched — "I already called somebody, hired somebody to do my Meta and Facebook, and we haven't launched yet." (00:10:31). New website "already built" by someone, not launched, and "if I need to change it, I can" (00:40:23). Prospect currently manages LSA/PPC himself (self-managed, "I was doing it myself", 00:22:25). Past SMB Team engagements went badly (see objections); he last spoke to SMB in March 2026 (00:00:44). No signed contract with another agency stated.
+- Budget constraints stated: "My biggest issue is I don't want to… pour out the frame on cost for something. If I have to spend that cost, it needs to be more towards the actual PPC, landing page, actual things, than… the management piece" (00:40:28–00:41:00); wants the lowest-cost start — "what's the best value you can give me at the lowest price to get started, knowing we're going to ramp up?" (00:53:25); thinking of "just going $5,000" in ad spend to start (01:06:31); "I'm fine with the fee. I just don't want to sign a year contract" (01:27:09); a setup fee is not workable: "Yeah, we really can't do that right now" (01:28:25); sizes the total: "$130,000 investment for me to see if you can move the needle, which means I got to get all of that back" (01:29:32–01:29:46) — his math: ~$50K/year in fees + ~$75–80K ad spend.
+
+Offer context from the call (rep pitch, for Pass 2 awareness — NOT prospect figures): $3,797/month covering LSA takeover + PPC management, web/SEO foundation (keep ~50 existing pages, add ~20,000 words), GBP/maps optimization and AI-visibility work; manage up to ~$7,500/mo ad spend (prospect leaning ~$5,000 to start); no setup fee; weekly payment split available with a 3% card fee; standard 12-month term with site/content ownership transferring after year one; no month-to-month option; quick wins on LSA immediately, landing pages/negatives take ~3–4 weeks, site work ~45–60 days; rep asked for a monthly signed-case list for match-back (prospect: "That's easy for us to do. Yeah, we track everything.").
+
+Objections / conditions raised by prospect:
+- Two prior bad experiences with SMB (radius targeting over the ocean near Georgetown; a PI-firm video shoot that arrived ~3 months late then orphaned when the vendor changed) — "I've already had two bad experiences." (01:26:50)
+- Wants month-to-month, not a one-year contract — "I don't want to sign a one year contract on something I don't know." (01:26:47)
+- Wants a market-relevant reference before committing — Dan agreed to introduce Jerry Novak (suburb north of Chicago; prospect had asked for someone closer to his market, "it can't be like a Chicago") by group text; prospect would also have liked the New Braunfels, TX attorney.
+- Wants Dan involved: "I just don't want to be transferred like I was before, transferred away from you to somebody else and had to start over." (01:10:03) Rep said he can attend the first 2–3 calls with the dedicated marketing manager.
+- Not desperate: "I don't necessarily need this." (01:08:24)
+
+Next steps agreed on the call: Dan to email instructions to add SMB as manager on ChatGPT Ads; email CPL/budget estimates (Greer/Spartanburg for DUI/DV/drugs/criminal); LSA/Google Ads access requests, then LSA audit, 4 landing pages, PPC launch; prospect to record a short intro video for landing pages; monthly signed-case list for attribution; social remarketing coordinated with his Meta vendor; DBAs — prospect wants branding like "Woods Defense & DUI Lawyers" for criminal (Greer/Spartanburg) and "Woods Injury Lawyers" (Beaufort) with GBP names updated; SC bar rules on trade names must be checked (prospect said the Jeffcoat firm's naming model is allowed; "I could put Woods Defense Lawyers… powered by the Woods Law Firm"); group text intro to Jerry Novak.
+
+Key prospect quotes (verbatim; timestamps from the full transcript):
+1. (00:10:00) "It's lead flow." — core problem
+2. (00:10:46) "I literally just got to focus on lead flow to keep all these people fed right now." — urgency / team to feed
+3. (00:13:27) "So, yes, the conversion is not our problem." — intake/close rate
+4. (00:13:11) "We're better than 80% if they have money." — close rate
+5. (00:13:57) "Yeah, it's diminishing returns." — LSA/PPC spend ceiling in small SC markets
+6. (00:02:29) "He was drawing circles literally in the ocean." — prior SMB experience (geo-targeting)
+7. (00:44:14) "My site is trash from 2019, man." — website
+8. (01:06:19) "Right now it's about walking people in that door." — goals / urgency
+9. (01:07:20) "I want to be playing with house money, not my money, which I've been doing forever." — profit/budget, DBM
+10. (01:08:46) "I'm just trying to get the most collection of cash I can right now." — DBM
+11. (01:26:47) "I don't want to sign a one year contract on something I don't know." — objection
+12. (01:36:12) "…$130,000, $140,000 spend is basically hiring… That's like three employees first." — budget framing
+
+================================================================
+STEP 10 — COMPETITIVE URGENCY SCORE
+================================================================
+Score: 7
+Basis: On the rep's grid tool the firm's best office (Greer) shows in ~9% of the "DUI lawyer" map area versus ~43–65% for the three named competitors; the live site is a 2019 build with mostly statewide pages and no Spartanburg/York/Myrtle Beach pages; the prospect names several competitors who run PPC/LSA heavily. Offsetting: the prospect has strong reputation/review volume, a high close rate, and says competitors are limited by thin SC search volume. Review counts are unconfirmed, so this score rests on maps-visibility and ads presence, not reviews.
+Named local competitor threats:
+1. Dayne Phillips (South Carolina Criminal Law; Greenville/Spartanburg/Columbia) — ~65% grid coverage on the call; named by prospect as a paid competitor.
+2. The Bateman Law Firm (Spartanburg; DUI-focused brand/keywords) — ~53% grid coverage; prospect: "he does a bunch" of paid ads and "gets a lot of DUI from that" (01:24:42).
+3. Touma Law Group (Greenville/Columbia; Spartanburg awards) — ~43% grid coverage; new entrant per prospect.
+(Also named by prospect as heavy advertisers: Jeffcoat Firm, Joshua Schultz.)
+Dynamic sentence: "A score of 7 means competitors are actively dominating multiple channels in your market and the gap is getting wider every month you wait. This is not a future problem — it is a right now problem."
+
+================================================================
+PASS 2 — VERIFICATION CHECKLIST
+================================================================
+- [x] Every number matches observed data or is labeled with its source (Lighthouse local run; call figures tagged as rep-screen/prospect statements)
+- [x] No competitor is cited as "dominating" on review counts; review data conflicts are flagged and Pass 2 told not to assert a review gap
+- [x] Every review count/star rating carries [confirmed via Google] or [UNCONFIRMED — sourced from ...] — all are UNCONFIRMED; none could be read from Google
+- [x] Revenue recorded (~$2M criminal only); net not distinguished from gross; fee structure recorded as mixed/not fully stated
+- [~] Ad sections cover both practice areas but live observation was not possible (SERP/Ad Library/Maps unavailable) — marked "not observed"
+- [x] No section says "you are not running ads" — firm confirmed running LSA/PPC; Meta not launched per prospect
+- [x] No profitability/business claim without transcript source; rep pitch numbers excluded
+- [x] Competitors are named local firms only
+- [x] PageSpeed scores are real numbers (mobile 50, desktop 88) — method noted (local Lighthouse, not pagespeed.web.dev)
+- [x] DBM recorded with quotes (sensitive personal history intentionally omitted)
+- [x] Revenue goal flagged: not stated, use 2x current revenue
+- [x] Close rate recorded: ~50% overall, >80% if they have money
+- [x] Average case value recorded: ~$5,000
+- [x] Stated call focus recorded: standard marketing/growth discovery (lead flow); no coaching/AI-tools pitch
+- [x] "Primary engagement", "Products discussed on call", "Lead-gen gap stated" filled in exact format
+- [x] Existing vendor engagements recorded (Meta vendor, built-but-unlaunched site)
+- [x] Budget constraints recorded
+- [ ] Known gaps: live 3-pack searches (3 per practice area), GBP details (category/photos/posts/latest review), Google-confirmed review counts, observed ad copy (Google/LSA/Meta) — not obtainable in this environment
