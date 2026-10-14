@@ -8,15 +8,17 @@ Date: October 22, 2026
 Proposal Call: 2026-10-22T15:00:00Z (Thursday, October 22, 2026, 11:00 AM EDT), closer Jonathan Farace.
 Pipeline run: Pass 1, triggered 2026-10-13.
 
-Transcript status: no transcript_status in the trigger, so a complete lookback found no discovery call. Trigger transcript field reads
-  exactly: "No Fathom transcript available — proposal call scheduled for 2026-10-22." Custody is not human. There is NO discovery call data for this firm.
-  Every STEP 9 field below is therefore "not stated" or derived from the public website and is labelled as such. Nothing is asserted about what was or was not discussed on a call.
+Transcript status: transcript_status outcome "found", custody machine, source hubspot_notes. A discovery call took place October 13, 2026 (Fathom recording 192207429).
+  This is a RE-RUN of Pass 1: the earlier version of this file (committed October 13) was written before any transcript existed. Website/directory/competitor research from that run is preserved;
+  STEP 1 team note, STEP 6, STEP 9, STEP 10 and the closing checklist were updated October 14, 2026 using the full verbatim transcript (summary used only as overview).
+  Call focus was AI / operations (inquiry automation, process adherence, secure AI, fractional COO + fractional CTO), NOT marketing. Marketing/web is handled by The Bananaland.
 
 RESEARCH TOOLING LIMITS (read first):
   This session could fetch web pages (curl / WebFetch), run web searches, and run Lighthouse locally (headless Chrome). It could NOT render Google Search / Google Maps
   results, could NOT load the Meta Ads Library, and did not reach Avvo / Justia / Yelp / FindLaw / Martindale pages directly. Directory findings come from search-result snippets only.
   PageSpeed scores come from Lighthouse 12.8.2 run locally, not the pagespeed.web.dev UI. WebFetch returns a model-written summary of each page, not raw HTML.
   Homepage details below were read from raw HTML fetched with curl.
+  Re-run on Oct 14: PageSpeed Insights API returned 429 quota exceeded; Lighthouse was re-run locally (see STEP 1). Google Maps/Search/Meta Ad Library still unreachable.
   Items depending on unreachable sources are marked "not observed" / "not obtained". No Google review figure of any kind was obtained, so no review figure appears in this file as fact.
 
 ================================================================================
@@ -41,9 +43,11 @@ NAP on site: 1700 East Putnam Avenue, Suite 210, Old Greenwich, CT 06870-1366 (p
 Service area: National practice (college athletes/coaches nationwide, e.g. media quotes from Colorado, South Carolina, Louisiana). Single office in Connecticut. Not a geo-local consumer practice.
 Spanish-language content: none seen.
 Geo-targeting landing pages for surrounding cities: None seen (consistent with a national niche practice).
-Team (from /our-team): 3 attorneys (Emily Staker, Ben LaCourse, Aubrie Bailie) plus Christine Brown; Jennifer Milo (COO and Legal Sports Analyst), Steve Donahue (Finance Manager), 2 Sports Management Legal Assistants (Mia Kaufman, Isabella Rabeni). Website-derived, not a call statement; Christine Brown (CEO) is listed separately on the About page.
+Team (from /our-team; SUPERSEDED by the call — Christine said 12 people: 4 lawyers now, 5 within weeks, a COO, finance, 3 law student assistants, fully remote; see STEP 9): 3 attorneys (Emily Staker, Ben LaCourse, Aubrie Bailie) plus Christine Brown; Jennifer Milo (COO and Legal Sports Analyst), Steve Donahue (Finance Manager), 2 Sports Management Legal Assistants (Mia Kaufman, Isabella Rabeni). Website-derived, not a call statement; Christine Brown (CEO) is listed separately on the About page.
 Testimonials page: 9 client testimonials (athletes, parents, coaches); no mention of Google/Avvo review counts or star ratings; no video testimonials.
 
+PageSpeed re-run Oct 14 (local Lighthouse 12.8.2, https://christinebrownsportslaw.com/): mobile 25 (FCP 7.0 s, LCP 23.2 s, TBT 7,790 ms, CLS 0.044, Speed Index 14.5 s); desktop 67 (FCP 1.4 s, LCP 4.1 s, TBT 110 ms, CLS 0.006). Run-to-run variance is large (Oct 13: 28/53); describe as a Lighthouse performance score, mobile is poor in both runs.
+  Note: per the call, The Bananaland is replacing this site (soft-launch screen soon, full launch targeted February 2027), so site-speed findings should be framed as relevant to the rebuild.
 PageSpeed mobile score: 28 / 100 (Lighthouse 12.8.2, run locally Oct 13, 2026 against https://www.christinebrownsportslaw.com/; mobile emulation; LCP 19.2 s, Total Blocking Time 10,970 ms, CLS 0).
 PageSpeed desktop score: 53 / 100 (same tool; desktop preset; LCP 4.0 s, TBT 390 ms, CLS 0.003).
   Single run each; scores move a few points run to run. Measured with Lighthouse, not the pagespeed.web.dev UI. Writer: describe as a Lighthouse performance score.
@@ -117,7 +121,7 @@ Directory pages were not fetched directly; findings are from search-result snipp
 STEP 6 — GOOGLE ADS
 ================================================================================
 
-Google Search results are not readable here; ads could not be observed for any practice area. No call data on ad history. Framing: ads not observed; this does not mean none are running.
+Google Search results are not readable here; ads could not be observed for any practice area. Transcript (Christine, 00:21:51): "We don't do any paid right now." — the prospect confirmed no paid marketing currently; whether paid was ever run is not stated. Competitor ad activity: not observed.
 Google tag (gtag) is present on the site, which is consistent with analytics and/or conversion tracking, but does not show whether ads are running.
 
 Practice Area 1: Title IX / gender equity
@@ -155,29 +159,54 @@ Meta Ads Library not reachable from this environment.
 STEP 9 — TRANSCRIPT EXTRACTION
 ================================================================================
 
-No discovery call transcript exists. Values are "not stated" unless explicitly marked as coming from the public website.
+Transcript source: full verbatim Fathom transcript (summary used only as overview)
+Discovery call: October 13, 2026 (Fathom recording 192207429, ~55 min). Speakers: Christine Brown (owner), Jennifer Milo (COO, California, ~1 year at firm, non-attorney), Steve Donahue (finances, Nashville), Marcella Kovac and Jordan Rabidou (The Bananaland — the firm's marketing/creative/web partner) — all [Prospect]; Jonathan Farace [SMB Team]. Only prospect statements are recorded as facts. Rep statements/pitch math are not recorded as the firm's figures.
+Where the AI summary and the full transcript differ, the transcript wins: (a) the summary's "~31 consultations/month" is September only (31 consultations -> 5 new clients); (b) summary says "3->12 employees"; Christine said three employees in 2025, now "a team of 12" (Jennifer said "two to now 12"); (c) Christine said she WILL be involved in the class action and wants less involvement in inquiries.
 
-- Practice areas confirmed: Not confirmed on a call. Website lists Title IX and gender equity, NIL, athlete rights and advocacy, transfer portal/NCAA compliance/eligibility, athletic scholarships and financial aid, injury compensation and health coverage, coaching employment.
-- Current lead sources: not stated. (Public signals only: website phone numbers and Clio Grow intake form, "Newsletter & News" content, press/media quotes, trade-press coverage. Referral volume unknown.)
-- Ads ever run: not stated.
-- Team size: not stated on a call. Website /our-team shows 3 attorneys plus Christine Brown, a COO, a finance manager, and 2 legal assistants (about 8 people). Do not treat as confirmed.
-- Annual revenue (gross / case value): not stated
-- Annual revenue (net / take-home / collected): not distinguished from gross (nothing stated)
-- Fee structure: not stated. (No fee information on the website or launch press release.)
-- Revenue goal: not stated, use 2x current revenue (current revenue also not stated)
-- Average case value: not stated
-- Current close rate: not stated — default to 15%
-- Number of locations: 1 (Connecticut office, per website)
-- Spanish campaign needed: No (not mentioned anywhere)
-- Dominant buying motive: not stated; no call. Not inferred.
-- Any profitability claims made by prospect: none stated
-- Any claims about case types or practice areas: none stated on a call. (Website's own claim: "90% win rate" and "30+ years" — marketing copy, not a call statement.)
-- Stated call focus / product interest: unknown — no discovery call transcript. Only known: a Proposal Call is booked for 10/22/26 11:00 AM EDT with Jonathan Farace. Do not default to "standard marketing" and do not assume what was discussed.
-- Primary engagement: unknown — no discovery call transcript (not a valid keyword on purpose; select-package.mjs will treat the field as blank and fall back to revenue-based sizing)
-- Products discussed on call: none
-- Lead-gen gap stated: unknown — no discovery call transcript
-- Existing marketing/SEO/ad vendor engagements: none stated. The site is Squarespace with Clio Grow intake and a steady editorial newsletter; whether a vendor is involved is unknown — ask Christine.
-- Budget constraints stated: none stated
+- Practice areas confirmed: Sports law for athletes at the high school, collegiate and professional level (Christine, 00:07:16: "We are supporting athletes at the high school, collegiate, and professional level."); also "transactional" work and consulting. Adding an antitrust/class-action arm (Christine, 00:19:11: "we are taking on an additional practice, an antitrust arm of the practice that is going to have some, we are going to be setting up a major case that's going to go over several years and we're bringing down another lawyer for that"). Filing expected "literally… in a couple of weeks" (00:24:38). Website practice areas are listed in STEP 1.
+- Current lead sources: All inquiries come through the website form. Steve (00:25:10): "roughly, I'd say about 75% of them come either through Google or ChatGPT… the other 25% is either word of mouth or a referral from one of our other partners". Christine (00:22:12): "it's all just, we have LinkedIn, we publish a weekly newsletter, we, and it's word of mouth, just from, you know, some of the casework that I've been involved in." Attribution is from a "how did you hear about us" form field, not tracking (Jordan, 00:23:00: "We don't know that yet.").
+- Ads ever run: No paid marketing currently — Christine (00:21:51): "We don't do any paid right now." Whether paid was ever run in the past: not stated. Platform/budget/result: not stated. The Bananaland will help build "our strategic plan of how we're going to approach that going forward in a more disciplined way" (00:22:00).
+- Team size: 12 people total, fully remote, nationwide. 4 lawyers now (Christine + 3), 5 "in a couple of weeks" (Christine, 00:08:28), plus another lawyer being brought on for the class-action case; Jennifer Milo, COO; Steve Donahue, finances; 3 law student assistants. (Website /our-team shows an older/smaller roster — see STEP 1; the call figure is the current one.)
+- Annual revenue (gross / case value): ~$1.8M annualized gross (stated as monthly gross of about $150,000–$155,000, i.e. ~$1.8M–$1.86M a year; the rep's "1.5 to 2 million" range was confirmed by Steve) — Steve (00:18:33): "Gross is on average about $150,000." (00:18:55): "But on average about $155,000." (00:19:00): "Gross." That annualizes to roughly $1.8M. At 00:51:44 Jonathan asked "1.5 to 2 million, somewhere around there?" and Steve answered "Yeah" — Jonathan's figure, confirmed by the prospect.
+- Annual revenue (net / take-home / collected): not distinguished from gross — Steve (00:18:41): "Net is a little hard to answer only because…" (00:18:47): "It has changed every month based on our growth and all that."
+- Fee structure: mixed. $10,000 average retainer collected up front into a trust account and billed against: Christine (00:15:54): "we put it into a trust account and we bill against it" and (00:16:15): "we have an evergreen clause in our retainer agreement that if the trust account gets down below 50%, we ask them to replenish it up to the original amount." Also consulting work "about 25,000 to 30,000 a month" (00:17:00) and contingency-fee cases: "those are not reliable or regular, those are just, you know, those are the bigger dollars" (00:17:11). Hourly vs flat not explicitly stated.
+- Revenue goal: not stated, use 2x current revenue. (Christine expects the class action to be "significant" but "it could be years before it comes", 00:20:17–00:20:22.)
+- Average case value: ~$25,000 — Christine (00:17:27): "the majority of the work is, is somewhere around $25,000 per case"; transactional work "$20,000 and $30,000 per case" (00:16:41); collected over "less than six months" (00:17:46–00:17:54). Average retainer $10,000.
+- Current close rate: 15–16% of consultations to signed clients — Steve (00:12:51): "between a 15 and 16 percent close rate"; (00:15:23): "September numbers, 31 actual consultations that turned into five new clients. So 16%." About 93% of inquiries become consultations (Jennifer, 00:13:34). Inquiries: 37–40 per month (Christine, 00:14:36 — she corrected Jennifer's "20 to 30"). New clients ~5–6 per month. Free "30-minute" consultation that "always goes 45 to 60 minutes" (00:13:57). Open matters: ~77 (00:15:00).
+- Number of locations: 0 physical locations per the call ("complete virtual firm", practices nationwide, 00:07:10–00:07:14). Website still shows a Connecticut address (see STEP 1).
+- Spanish campaign needed: no (not mentioned)
+- Dominant buying motive: a firm that runs itself so Christine is no longer the bottleneck on every inquiry while she leads the class action. Christine (00:27:14): "I still need this practice to continue to grow and support everything that we're going to be doing, maybe with a little less involvement from me." Related (00:00:01): "I'm trying to stay cool and stay current and use AI and make sure that we, as we continue to scale this business, which is growing rapidly, that we are doing it in a way that is going to keep us competitive." Category (1), inferred from context; no personal/lifestyle DBM was stated.
+- Any profitability claims made by prospect: none stated (gross revenue only; net not given)
+- Any claims about case types or practice areas: Christine (00:08:36): "while my close rate is very high, they're still learning, you know, and they're still growing." (00:17:11): "we have, you know, contingency fee cases that we get settlements, you know, those are not reliable or regular". The "90% win rate" and "30+ years" are website marketing claims, not call statements.
+- Stated call focus / product interest: NOT standard marketing/growth. The call was about (1) automating the inquiry process so Christine is not on every inquiry, (2) consistent workflows/process adherence in a remote team, (3) secure firm-wide AI adoption (staff use their own AI tools; confidentiality and malpractice risk), and (4) a fractional COO to mentor Jennifer plus a fractional AI-first CTO. Marketing, SEO, branding and the website belong to The Bananaland (retainer); the rep positioned SMB Team as complementary with no overlap, and Jordan agreed (00:42:09). Christine did ask how SMB "could help complement" SEO/lead generation as her second priority (00:07:00) and does not want to "double down or duplicate" what she already has (00:37:31).
+- Primary engagement: AI
+- Products discussed on call: Fractional CTO (tier not specified — no pricing discussed), FCOO (tier not specified — no pricing discussed)
+- Lead-gen gap stated: yes — Christine (00:07:00): "how your service could help complement it is, you know, our SEO and how we get leads." Note: her primary stated gap is inquiry conversion/automation, not lead volume, and marketing/SEO is covered by The Bananaland's retainer.
+- Existing marketing/SEO/ad vendor engagements: The Bananaland — branding, full website modernization (launch targeted February 2027; a "takeover" soft-launch screen sooner), content, LinkedIn/thought leadership, and an upcoming ongoing marketing retainer. Marcella (00:01:09): "we will be continuing to be her partner with an ongoing marketing retainer." Jordan (00:39:43): "we'll be approaching the retainer part of our agreement". They "typically stop" at getting leads into the funnel (Jordan, 00:40:18). Also a PR and media partner (Christine, 00:06:00). IT: Better ITS (hardware/network/security, remote access; does not manage the tech stack or AI strategy, 00:48:00–00:49:03). Software: Clio Work "has not benefited our attorneys" (00:45:20); the firm is "embarking on getting Harvey" (00:45:07).
+- Budget constraints stated: none stated. The only objection was fit, not price — Christine (00:51:09): "are we too small of a business to be engaging somebody like you". (The rep replied that the firm fits SMB Team's ideal client profile; that is the rep's statement.)
+
+Other call facts for Pass 2:
+- Urgency: Christine (00:54:53): "It's urgent." and (00:54:57) "I do" want to move quickly. Class-action filing expected within weeks; "our national exposure is going to, you know, explode" (00:24:38).
+- Process gaps: workflows not followed consistently; leaks found late, causing lost inquiries; remote team contributes (Steve, 00:32:24). Jennifer (00:28:27): the firm built "a lot of workflows… and policies" from a blank slate in 18 months, but a live person still answers the phone and she wants to keep that while automating the surrounding steps.
+- AI/security: attorneys use their own AI tools; Christine cannot verify legal soundness of AI-generated work; she is unsure all staff work only on firm equipment (00:48:15).
+- Rep pitch (not firm facts): fractional COO requires an existing ops lead (Jennifer qualifies); fractional staff are W-2.
+- Next step: proposal call Thursday, October 22, 2026, 11:00 AM ET with Christine, Jennifer, Steve, Jordan, Marcella; rep will walk through it conversationally.
+
+Key prospect quotes (verbatim; timestamps from the transcript)
+1. (00:06:16, Christine — priority) "what's most important to us is automation of the inquiry process"
+2. (00:08:59, Christine — intake bottleneck) "I'm having to be on every inquiry in order for us to get the work."
+3. (00:09:09, Christine — cost of intake time) "we might do four inquiries in a day, and that basically is four hours out of the day… it's just eating into our billable time."
+4. (00:09:48, Christine — lost business) "I'm losing really good business that, you know, we should have, and I know we can have, and we can handle."
+5. (00:27:14, Christine — goal/DBM) "I still need this practice to continue to grow and support everything that we're going to be doing, maybe with a little less involvement from me."
+6. (00:31:12, Christine — process gaps) "We've got the bones, you know, but in terms of getting everybody to follow the processes or procedures… we haven't gotten there yet."
+7. (00:31:45, Christine — workflow leaks) "it isn't until later that we're finding that there's some leaks in the workflows… and it's too late."
+8. (00:35:01, Jennifer, COO — mentorship) "having a mentor or somebody that's done that or does that, I think, would be helpful for us because we don't know what we don't know."
+9. (00:45:33, Christine — AI security) "everybody's kind of using their own AI to do whatever they're doing… one of my biggest worries right now is security."
+10. (00:47:34, Christine — AI/malpractice) "I don't have the human time to be verifying that what they're putting out there under my name is, is, you know, legally sound."
+11. (00:37:31, Christine — no duplication) "What I don't want to do is, you know, double down or duplicate… things that we've already got in place that we're not completely accessing."
+12. (00:54:53, Christine — urgency) "It's urgent."
+
+>>> SAVED: transcript extraction complete.
 
 ================================================================================
 STEP 10 — COMPETITIVE URGENCY SCORE
@@ -192,6 +221,8 @@ Named competitor threats (specific firms, no verified metrics):
   2. Barry, Taylor & Levesque, LLC (Hartford, CT) — dedicated NCAA infractions / student-athlete representation pages in the Connecticut market.
   3. Athlete Defender (Jason Setchen) — 25+ years; dedicated service pages for NCAA athlete advocacy, transfers, scholarships, dismissals, and coach/administrator representation (many keyword-targeted pages).
 
+Update Oct 14: score kept at 4 (still no live competitor data). The call confirmed no paid marketing and ~37–40 inquiries/month (~75% from Google/ChatGPT), with a new brand/site coming in Feb 2027 via The Bananaland. The call was about inquiry conversion, process and AI security rather than competitor visibility, so keep competitive-urgency framing secondary and do not overlap The Bananaland's marketing scope.
+
 Matching dynamic sentence (Score 4–6): "A score of 4 means competitors have meaningful advantages in one or more areas and are pulling ahead. You are not invisible yet — but the window to close the gap is narrowing. Every month without action is a month they extend their lead."
 
 >>> SAVED: final research notes.
@@ -203,25 +234,26 @@ PASS 2 — VERIFICATION CHECKLIST
 [x] Every number in the notes matches observed data (PageSpeed from local Lighthouse Oct 13; team counts and site facts from the site; no review figures other than one tagged MapQuest snippet)
 [x] Competitor review counts: none verified on Google — all not obtained or tagged UNCONFIRMED; no comparison asserted
 [x] Every review count / rating carries a verification tag (only the Duffy Law MapQuest figures appear, both tagged UNCONFIRMED)
-[x] Annual revenue split: nothing stated on either figure; fee structure not stated
+[x] Annual revenue split: gross ~$150K–$155K/month (~$1.8M annualized); net not distinguished from gross (Steve: hard to answer); fee structure recorded (mixed)
 [x] Every ad section covers all practice areas (all "not observed" because Google/Meta were unreachable)
 [x] No section says "you are not running ads"
-[x] No profitability or business claim appears (no call data exists); website marketing claims labelled as such
+[x] No profitability claims beyond the transcript (none stated); website marketing claims labelled as such; rep pitch math not recorded as firm facts
 [x] Competitors are specific named firms only (national firms listed as "not scored", not used)
 [x] PageSpeed scores are real measured numbers (28 mobile / 53 desktop via local Lighthouse 12.8.2)
-[x] DBM recorded as not stated (no call; no inference printed)
+[x] DBM recorded (exact quote; category 1, firm that runs itself)
 [x] Revenue goal recorded as not stated (fallback 2x noted)
-[x] Close rate recorded (not stated — default 15%)
-[x] Average case value recorded as not stated
-[x] Stated call focus recorded as unknown, explicitly NOT defaulted to "standard"
-[x] Primary engagement / Products discussed / Lead-gen gap fields filled in; engagement and lead-gen gap deliberately "unknown" because no call exists
-[x] Existing vendor engagements recorded (none stated)
+[x] Close rate recorded (15–16% of consultations; 16% in September)
+[x] Average case value recorded (~$25,000; retainer $10,000)
+[x] Stated call focus recorded explicitly as AI/operations, not marketing
+[x] Primary engagement / Products discussed / Lead-gen gap filled in with the exact machine-read format (AI; Fractional CTO and FCOO tier unspecified; lead-gen gap yes with caveat)
+[x] Existing vendor engagements recorded (The Bananaland, Better ITS, Clio Work, Harvey pending)
 [x] Budget constraints recorded (none stated)
 
 Open items for the writer / rep (do not state as fact):
-  - No discovery call transcript: revenue, team size, close rate, DBM, goals, lead sources, fees and budget are all unknown. Jonathan should collect these on the 10/22 proposal call. Do not fabricate them.
+  - Transcript now exists; revenue, close rate, team, lead sources, fees and urgency come from STEP 9. Earlier "no transcript" statements elsewhere in this file's history are superseded.
+  - Any downstream artifacts built from the earlier no-transcript notes (index.html, sections, proposal, sales companion, package_decision.json) predate the transcript and should be regenerated from this file.
   - No Google review data for the firm or any competitor was obtained; no review figures may print.
-  - This is a national niche practice, not a local consumer practice: local 3-pack framing is a poor fit. Do not assert local pack positions.
-  - Mobile Lighthouse score is a single local run (28); re-run before quoting if the report is built much later.
+  - National niche practice, not local consumer: do not assert local pack positions.
+  - Lighthouse mobile score is variable (28 on Oct 13, 25 on Oct 14); re-run before quoting; site is being replaced Feb 2027.
   - NAP inconsistencies to confirm: suite 210 vs 400, Old Greenwich vs Shelton, trigger phone (2035214441) vs site phones.
-  - The /contact-us URL returned 404; confirm what the nav "Contact Us" link and the Clio Grow intake form look like for a visitor.
+  - Scope: SMB Team's offer is ops/AI and complementary to The Bananaland; avoid recommending marketing work that duplicates their retainer.
