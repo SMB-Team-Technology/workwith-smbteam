@@ -217,6 +217,14 @@ jobs:
 
             Read the seller's message and classify it into exactly one of three intents:
 
+            AWAITING SELLER INPUT: if package_decision.json has \"needs_seller_input\": true,
+            no package has been chosen yet (the call focus was unknown, usually because no
+            discovery call was found). Treat any reply that says what the call was about or
+            names products as INTENT C. Never lock it in while needs_seller_input is true:
+            for a lock-in reply, do not write any trigger file or change \`$REVIEW_FILE\`;
+            reply in the thread asking what to propose (e.g. 'FCTO Level 1 + 1 seat of
+            AIWP', or 'use the revenue-only option').
+
             --- INTENT A: LOCK IT IN ---
             Signals: 'lock it in', 'looks good', 'approved', 'go ahead', 'build it',
             'let's go', 'ship it', or clear unambiguous approval with no requested changes.
@@ -278,6 +286,10 @@ jobs:
                  apply the most likely tier (team size and revenue in package_decision.json)
                  and say in the reply which tier you used and why, so the seller can correct it —
                  only ask instead of acting if no product matches at all.
+               - Whenever you set a package, also set needs_seller_input to false.
+                 'Use the revenue-only option' (or 'marketing + coaching', 'the default')
+                 means: copy every field in revenue_only_option to the top-level fields of
+                 the same name, then recompute total_bundled and total_savings.
                - 'Change this to X + Y' REPLACES the package: anything not named is removed.
                  Set removed products' fields to null (for marketing also null the ad_spend_*
                  fields). LAW products go in law_tier / law_name / law_price_bundled /

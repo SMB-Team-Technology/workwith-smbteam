@@ -666,9 +666,13 @@ const callFocus = parseCallFocus(text);
 const focusNotes = [];
 console.log(`  Call focus:      ${callFocus.engagement ?? 'NOT STATED'} | products: ${callFocus.products?.join(', ') || 'none'} | lead-gen gap: ${callFocus.leadGenGap ?? 'NOT STATED'}`);
 
+// Unknown call focus (usually no discovery call found): recommend nothing and
+// ask the seller what the call was about. A revenue-only marketing + coaching
+// bundle is computed below only as a reference option the seller can pick.
+const needsSellerInput = callFocus.engagement === null;
 let includeMarketing = true;
-if (callFocus.engagement === null) {
-  focusNotes.push('Call focus not recorded in structured fields (Primary engagement / Products discussed / Lead-gen gap) — package is revenue-based only. Check the call focus in the research notes before locking in.');
+if (needsSellerInput) {
+  focusNotes.push('Call focus unknown (no discovery call found, or Primary engagement not recorded) — no package recommended. Seller must say what the call was about before this can be locked in.');
 } else if (callFocus.engagement === 'coaching/ops' || callFocus.engagement === 'AI') {
   if (callFocus.leadGenGap === true) {
     focusNotes.push(`${callFocus.engagement === 'AI' ? 'AI' : 'Coaching/ops'}-led call, but prospect stated a lead-gen need — marketing included.`);
@@ -681,10 +685,29 @@ if (callFocus.engagement === null) {
 }
 
 // Select packages
-const marketing = includeMarketing ? selectMarketingTier(revenueStated, effectiveRevenue, practiceAreas, text, notes) : null;
-const coaching  = selectCoachingTier(revenueStated, effectiveRevenue, teamSizeStated, effectiveTeam, text, notes);
+const revenueMarketing = includeMarketing ? selectMarketingTier(revenueStated, effectiveRevenue, practiceAreas, text, notes) : null;
+const revenueCoaching  = selectCoachingTier(revenueStated, effectiveRevenue, teamSizeStated, effectiveTeam, text, notes);
+const revenueAdSpend   = revenueMarketing ? estimateAdSpend(practiceAreas, revenueMarketing) : null;
+const marketing = needsSellerInput ? null : revenueMarketing;
+const coaching  = needsSellerInput ? null : revenueCoaching;
+const adSpend   = needsSellerInput ? null : revenueAdSpend;
 const law       = selectLawTier(callFocus.products, effectiveRevenue, teamSizeStated, focusNotes);
-const adSpend   = marketing ? estimateAdSpend(practiceAreas, marketing) : null;
+
+// Reference option for an unknown-focus package: what the revenue rules alone
+// would pick. Not a recommendation — the seller can choose it in Slack.
+const revenueOnlyOption = needsSellerInput ? {
+  marketing_tier:          revenueMarketing?.tier ?? null,
+  marketing_name:          revenueMarketing?.name ?? null,
+  marketing_price_bundled: revenueMarketing?.bundled ?? null,
+  marketing_price_retail:  revenueMarketing?.retail ?? null,
+  coaching_name:           revenueCoaching.name,
+  coaching_price_bundled:  revenueCoaching.bundled,
+  coaching_price_retail:   revenueCoaching.retail,
+  ad_spend_conservative:   revenueAdSpend?.conservative ?? null,
+  ad_spend_aggressive:     revenueAdSpend?.aggressive ?? null,
+  ad_spend_rationale:      revenueAdSpend?.rationale ?? null,
+  total_bundled:           (revenueMarketing?.bundled ?? 0) + revenueCoaching.bundled,
+} : null;
 
 if (callFocus.engagement === 'AI' && !(callFocus.products || []).some(p => LAW_TIERS[p] || p === AIWP_UNSPECIFIED)) {
   focusNotes.push('AI-led call but no AI product in "Products discussed on call" — review whether an AI Workforce Pro / Fractional CTO tier belongs in the package.');
@@ -693,18 +716,18 @@ if (callFocus.engagement === 'AI' && !(callFocus.products || []).some(p => LAW_T
 // Coaching discussed on the call that differs from the revenue rule: flag it,
 // don't override — the coaching rules are unchanged until Sales signs off.
 const coachingDiscussed = (callFocus.products || []).filter(p => COACHING_PRODUCTS.has(p));
-const coachingParts = coaching.name.split(' + ');
+const coachingParts = revenueCoaching.name.split(' + ');
 const matchesSelected = p => coachingParts.some(part => part === p || ((p === 'FCOO' || p === 'FCFO') && part.startsWith(`${p} `)));
 if (coachingDiscussed.length && !coachingDiscussed.some(matchesSelected)) {
-  focusNotes.push(`Coaching discussed on call: ${coachingDiscussed.join(' / ')}. Rules selected ${coaching.name} — confirm with sales rep.`);
+  focusNotes.push(`Coaching discussed on call: ${coachingDiscussed.join(' / ')}. Rules selected ${revenueCoaching.name} — confirm with sales rep.`);
 }
 
 notes.unshift(...focusNotes);
 
 // Calculate totals and savings
-const totalBundled = (marketing?.bundled ?? 0) + coaching.bundled + (law?.bundled ?? 0);
+const totalBundled = (marketing?.bundled ?? 0) + (coaching?.bundled ?? 0) + (law?.bundled ?? 0);
 const mktSavings   = marketing?.retail != null ? marketing.retail - marketing.bundled : null;
-const cchSavings   = coaching.retail  != null ? coaching.retail  - coaching.bundled  : null;
+const cchSavings   = coaching?.retail  != null ? coaching.retail  - coaching.bundled  : null;
 const lawSavings   = law?.retail      != null ? law.retail       - law.bundled       : null;
 const totalSavings = (mktSavings ?? 0) + (cchSavings ?? 0) + (lawSavings ?? 0);
 
@@ -727,6 +750,9 @@ const decision = {
   team_size_effective:     effectiveTeam,
   practice_areas_detected: practiceAreas,
 
+  needs_seller_input:      needsSellerInput,
+  revenue_only_option:     revenueOnlyOption,
+
   call_focus: {
     primary_engagement:  callFocus.engagement,
     products_discussed:  callFocus.products,
@@ -739,9 +765,9 @@ const decision = {
   marketing_price_retail:  marketing?.retail ?? null,
   marketing_savings:       mktSavings,
 
-  coaching_name:           coaching.name,
-  coaching_price_bundled:  coaching.bundled,
-  coaching_price_retail:   coaching.retail,
+  coaching_name:           coaching?.name ?? null,
+  coaching_price_bundled:  coaching?.bundled ?? null,
+  coaching_price_retail:   coaching?.retail ?? null,
   coaching_savings:        cchSavings,
 
   law_tier:                law?.tier ?? null,
@@ -764,8 +790,12 @@ const outputPath = join(friendlyName, 'package_decision.json');
 writeFileSync(outputPath, JSON.stringify(decision, null, 2));
 
 console.log(`\nPackage decision → ${outputPath}`);
-console.log(`  Marketing:  ${marketing ? `${marketing.name} — $${marketing.bundled.toLocaleString()}/mo` : 'none (call-purpose rule)'}`);
-console.log(`  Coaching:   ${coaching.name} — $${coaching.bundled.toLocaleString()}/mo`);
+if (needsSellerInput) {
+  console.log(`  NEEDS SELLER INPUT — call focus unknown, no package recommended.`);
+  console.log(`  Revenue-only reference: ${revenueOnlyOption.marketing_name ?? 'no marketing'} + ${revenueOnlyOption.coaching_name} — $${revenueOnlyOption.total_bundled.toLocaleString()}/mo`);
+}
+console.log(`  Marketing:  ${marketing ? `${marketing.name} — $${marketing.bundled.toLocaleString()}/mo` : needsSellerInput ? 'none (awaiting seller)' : 'none (call-purpose rule)'}`);
+console.log(`  Coaching:   ${coaching ? `${coaching.name} — $${coaching.bundled.toLocaleString()}/mo` : 'none (awaiting seller)'}`);
 if (law) console.log(`  AI:         ${law.name} — $${law.bundled.toLocaleString()}/mo`);
 console.log(`  Total:      $${totalBundled.toLocaleString()}/mo`);
 if (adSpend) console.log(`  Ad spend:   $${adSpend.conservative.toLocaleString()}–$${adSpend.aggressive.toLocaleString()}/mo (conservative: ${adSpend.rationale.conservative_basis}; aggressive: ${adSpend.rationale.aggressive_basis})`);
