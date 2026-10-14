@@ -1,0 +1,252 @@
+SMB TEAM — GROWTH AUDIT RESEARCH NOTES
+Firm: Dorcey Law Firm (legal name per directories: The Dorcey Law Firm, PLC)
+Friendly name: dorcey
+Contact: Joshua O. Dorcey (Managing Partner). The trigger spells the contact "Josh Dorsey"; the transcript, website and directories all spell it "Dorcey". HubSpot contact 106780296457, josh@dorceylaw.com, 239-309-2870
+URL: http://dorceylaw.com (resolves live; 301 to https://www.dorceylaw.com/, behind a Cloudflare bot check)
+Sales Rep: Dan Bryant (dan.bryant@smbteam.com)
+Date: October 20, 2026
+Proposal Call: 2026-10-20T18:15:00Z (Tuesday, October 20, 2026, 2:15 PM EDT), closer Dan Bryant. The call was scheduled on the discovery call itself.
+Pipeline run: Pass 1, triggered 2026-10-14.
+
+TRANSCRIPT STATUS (read first):
+  The trigger's transcript field reads "No Fathom transcript available — proposal call scheduled for 2026-10-20." and carries no transcript_status. That text is out of date or incomplete:
+  a full verbatim Fathom recording (recording 192716357, dated 2026-10-14, about 34 minutes, Dan Bryant with Joshua Dorcey) WAS provided to this run. Per the FULL TRANSCRIPT RULES the full transcript wins.
+  So a discovery call DID happen on 2026-10-14. STEP 9 below is built from it. The proposal call on 10/20 is a follow-up that Dan said would cover a web / SEO / ads audit and cost projections.
+
+RESEARCH TOOLING LIMITS (read first):
+  This session could run web searches, fetch pages with WebFetch (which returns a model-written summary, not raw HTML), and run Lighthouse 12.8.2 locally with headless Chrome. The PageSpeed Insights API returned a quota-exceeded error.
+  dorceylaw.com sits behind Cloudflare. curl and headless Chrome were mostly served a "Just a moment..." challenge page. WebFetch did read the homepage, /reviews/ and /contact-us/.
+  It could NOT render Google Search / Google Maps results and could NOT load the Meta Ads Library. So: no Google 3-pack, Google Ads, LSA or Meta ad observations were made, and no Google Business Profile was read directly.
+  Every review count and rating below comes from search-result snippets or an aggregator page and is tagged UNCONFIRMED. Writer: do not print any of them as a specific figure in the client report.
+
+================================================================================
+STEP 1 — WEBSITE RESEARCH
+================================================================================
+
+Website URL confirmed live: Yes (HTTP 301 to https://www.dorceylaw.com/; WebFetch read the homepage on October 14, 2026). Cloudflare bot protection is active.
+Last redesign date or estimated age: Not determinable. Logo image filenames carry date stamps (2410301130352 / 2410301132228), which suggests brand assets last updated around October 30, 2024 (inference from filename only). Site is on a proprietary CMS (/cms/includes, /common/usc/ paths) with Scorpion analytics scripts (see below).
+Mobile responsive: Yes per WebFetch ("responsive design features"); the Lighthouse mobile run rendered the page. Not tested on a physical device.
+Homepage headline: "Put Your Legacy on Cruise Control" (per WebFetch summary of the page). Search-result page title: "Fort Myers Estate Planning Attorneys".
+CTA above fold: Yes — "Schedule A Consultation" button linking to the contact page (per WebFetch).
+Contact form location: Contact form present on the homepage per WebFetch (exact position on the page not confirmed). /contact-us/ form fields: first name, last name, phone, email, client status (new potential client / current client / neither), message; SMS consent language included.
+Live chat present: No — none detected by WebFetch on the homepage or /contact-us/. The one Lighthouse run that loaded the real page showed no chat-vendor domains (only Scorpion analytics, Google Tag Manager, Google Analytics, Facebook pixel, Simpli.fi tag). Not exhaustively tested.
+Attorney bio present: Yes — seven attorneys listed with linked profile pages: Joshua O. Dorcey (Managing Partner), Michael A. Scott (Senior Partner), Erica D. Johnson (Partner), Kara A. Sajdak (Partner), Bradley W. Butcher (Partner), Brian H. Bronsther (Senior Counsel), Joseph C. LoTempio (Senior Counsel).
+Video present: Yes — a multi-generational family legacy video on the homepage (Lighthouse network log shows /media/Dorcey-EstatePlanning-video.mp4).
+Blog present: Yes — latest post seen is November 3, 2025, "Steps to Nominate a Guardian in Fort Myers" (per WebFetch; about 11 months before this research; not confirmed to be the newest post).
+Practice areas on site: Wills, Trusts, Probate & Estate Administration, Estate Tax Planning, Business Planning, Elder Law, Medicaid Crisis Planning, Asset Protection, Disaster Protection, Charitable Planning. Real estate / title is NOT on the homepage practice list although Josh said the firm has a title company and a real estate department.
+Offices on site: Fort Myers main office, 10181 Six Mile Cypress Parkway, Suite C, Fort Myers, FL 33966, (239) 309-2870. /contact-us/ also lists LaBelle (150 S. Main Street, Suite 4, LaBelle, FL 33935, by appointment) and Marco Island (760 North Collier Blvd, Suite 106A, Marco Island, FL 34145, by appointment). A Sarasota office, which Josh mentioned on the call, was NOT found on the pages read.
+Other site notes: /reviews/ page shows about 33 text testimonials with no dates, no Google/Yelp widget and no star rating or count. Testimonials mention the firm's "Auto-Pilot Planning Program (APP)" and webinars. The homepage headline ("Cruise Control") and APP both echo the firm's recurring-planning positioning.
+Marketing tech seen in the one real-page Lighthouse run (hosts analytics.scorpion.co and sa.scorpion.co, googletagmanager.com, google-analytics.com, connect.facebook.net, tag.simpli.fi): the site runs Scorpion analytics, a Facebook pixel, and a Simpli.fi tag (a programmatic display / retargeting platform). This shows tracking and possible Scorpion involvement; it does not show whether ads are running or who the vendor is. See STEP 9 vendor line.
+
+PageSpeed mobile score: 72 / 100 (Lighthouse 12.8.2, run locally October 14, 2026 against https://www.dorceylaw.com/, mobile emulation; LCP 2.3 s, Total Blocking Time 1,640 ms, CLS 0).
+  This is ONE valid run. A second mobile run (score 75) and every desktop run hit the Cloudflare challenge page instead of the real site (only 19–21 requests, no site assets, challenge-domain requests only), so those scores are invalid and are NOT recorded as results.
+PageSpeed desktop score: NOT OBTAINED. All six local desktop attempts were served the Cloudflare challenge page (scores near 100 reflect the challenge page, not dorceylaw.com), and the PageSpeed Insights API quota was exhausted. Writer: print no desktop figure.
+  Writer: describe the mobile figure as "a Lighthouse mobile performance score of 72, from a single run; scores vary a few points run to run". Re-run on pagespeed.web.dev if a desktop figure is needed.
+
+>>> SAVED: website section complete.
+
+================================================================================
+STEP 2 — GOOGLE BUSINESS PROFILE
+================================================================================
+
+GBP found: Not directly confirmed (Google Search / Maps cannot be rendered here). Treat GBP existence as likely but unconfirmed. The firm does appear to have one: a Birdeye aggregator page attributes Google reviews to it (see below).
+Review figures seen. They CONFLICT with each other and none is read off Google:
+  - Google: 4.2 stars, 16 reviews — [UNCONFIRMED — sourced from a web-search result snippet (search tool summary of Google listing data), not independently confirmed via Google]
+  - Birdeye aggregator page: 4.6 stars across 131 reviews, of which 123 are described as Google, 7 Facebook, 1 Birdeye — [UNCONFIRMED — sourced from Birdeye (reviews.birdeye.com), a third-party aggregator, not independently confirmed via Google]. A search snippet for the same page said 4.6 stars / 128 reviews — [UNCONFIRMED — sourced from Birdeye search snippet, not independently confirmed via Google]. The 16 vs 123 Google-review gap is unresolved.
+  - Yelp: 4.4 stars, 11 reviews ("DORCEY LAW", updated August 2026) — [UNCONFIRMED — sourced from a Yelp search-result snippet, not independently confirmed via Google]
+  - Martindale peer reviews: 4.6 / 5.0 (27) — [UNCONFIRMED — sourced from a Martindale search snippet, not independently confirmed via Google]
+Star rating: not confirmed (see above; 4.2 or 4.6 depending on source, both UNCONFIRMED)
+Total review count: not confirmed (16 or about 123 Google reviews depending on source, both UNCONFIRMED). Do NOT print a firm review count or compare it with competitors until read directly off Google.
+Most recent review date: not obtained (Birdeye summary showed its own most recent review as roughly two years old; not a Google date)
+Primary category: not obtained
+Photos active: not observed
+Posts active: not observed
+
+>>> SAVED: GBP section complete (no Google data read directly).
+
+================================================================================
+STEP 3 — LOCAL 3-PACK SEARCHES
+================================================================================
+
+NOT OBSERVED. Google Search / Maps local packs cannot be rendered in this environment. No search was run and no pack contents are asserted. Firm appears in 3-pack: not observed for any search.
+Practice areas confirmed on the call: estate planning, business planning, asset protection, real estate (residential and commercial closings, via the firm's own title company), probate and trust administration. Site adds elder law and Medicaid planning.
+Searches to run when a browser is available:
+  Practice Area 1: Estate planning — "estate planning attorney Fort Myers", "trust attorney Fort Myers", "wills and trusts lawyer Fort Myers"
+  Practice Area 2: Probate and trust administration — "probate attorney Fort Myers", "trust administration lawyer Fort Myers", "probate lawyer Lee County"
+  Practice Area 3: Asset protection / business planning — "asset protection attorney Fort Myers", "business planning attorney Fort Myers", "elder law attorney Fort Myers"
+  Practice Area 4: Real estate closings — "real estate closing attorney Fort Myers", "title company Fort Myers", "real estate lawyer Fort Myers"
+  Also worth checking: the same estate planning searches for Marco Island, Sarasota and LaBelle, since the firm has offices there.
+
+================================================================================
+STEP 4 — COMPETITOR REVIEW COUNTS
+================================================================================
+
+None of these were read off Google listings. All are search-snippet figures and carry the UNCONFIRMED tag. The firm's own Google count is itself unresolved (STEP 2), so NO more / fewer comparison against the prospect can be made. Do not call any competitor "dominating" on review count.
+
+- Competitor 1: The Dellutri Law Group, P.A. (Fort Myers) — reviews: 740 [UNCONFIRMED — sourced from a web-search result summarizing a Fort Myers estate-planning "best of" roundup, not independently confirmed via Google] — rating: 4.9 [UNCONFIRMED — same source]. A separate snippet gave Chamber of Commerce 4.9 / 791, Avvo 5.0 / 217, Yelp 4.0 / 16: those are not Google figures.
+- Competitor 2: Safe Harbor Law Firm (Fort Myers) — reviews: 261 [UNCONFIRMED — sourced from a web-search result snippet citing Google review data, not independently confirmed via Google] — rating: 5.0 [UNCONFIRMED — same source]
+- Competitor 3: Powell, Jackman, Stevens & Ricciardi, P.A. (marketed as "Your Advocates", Fort Myers) — reviews: 257 [UNCONFIRMED — sourced from a web-search result summarizing an estate-planning roundup, not independently confirmed via Google] — rating: 4.7 [UNCONFIRMED — same source]
+- Other Fort Myers estate planning firms in the same roundup: Kagan Law Firm — 81 reviews [UNCONFIRMED — same type of source, not independently confirmed via Google], 4.9 [UNCONFIRMED — same]; Barbara M. Pizzolato, P.A. — 95 reviews [UNCONFIRMED — same], 4.7 [UNCONFIRMED — same]; Law Office of Conrad Willkomm, P.A. (Naples and Fort Myers) — count not obtained; Kuhn Law Firm, P.A. (Scott A. Kuhn) — count not obtained.
+
+================================================================================
+STEP 5 — DIRECTORY LISTINGS
+================================================================================
+
+Seen in search results (listing exists; page contents read only via snippets unless noted):
+  - Martindale-Hubbell: firm profile "The Dorcey Law Firm, PLC" and a profile for Joshua O. Dorcey (overall rating 5.0 per snippet); firm established 2007; firm size listed as 6 (stale or partial: Josh said 28 domestic FTEs plus 8 global team members on the call).
+  - FindLaw: "Dorcey Law Firm", categorized Probate & Estate Planning, Probate & Trust Administration, Estate & Trust Litigation.
+  - Justia: attorney profile for Joshua Dorcey exists.
+  - Avvo: no Dorcey profile surfaced in results; not confirmed either way.
+  - Yelp: "DORCEY LAW", 10181 Six Mile Cypress Pkwy (4.4 / 11, UNCONFIRMED, see STEP 2).
+  - Super Lawyers: firm profile exists; three attorneys on the Super Lawyers or Rising Stars lists per snippet.
+  - Others: Lawyers.com (Joshua Dorcey), LawInfo, Birdeye, Nextdoor, Manta, probate.com, LinkedIn company page.
+NAP consistency:
+  - Firm name varies: "Dorcey Law Firm", "The Dorcey Law Firm, PLC", "DORCEY LAW".
+  - PHONE MISMATCH: the website and /contact-us/ show (239) 309-2870 while one directory snippet showed 239-418-0169 (the source directory for that number is not identified). Flag as a possible NAP inconsistency to verify.
+  - Address 10181 Six Mile Cypress Parkway, Suite C, Fort Myers, FL 33966 is consistent where seen.
+  - Branch offices (Marco Island, LaBelle) are not reflected on any directory listing seen; Sarasota not on the site at all.
+Geo-targeting landing pages for surrounding cities: not checked beyond the homepage and /contact-us/. Blog title "Steps to Nominate a Guardian in Fort Myers" shows Fort Myers-targeted content. No Sarasota, Marco Island or LaBelle pages confirmed.
+
+>>> SAVED: GBP, local SEO, directory sections complete (with the gaps noted).
+
+================================================================================
+STEP 6 — GOOGLE ADS
+================================================================================
+
+NOT OBSERVED. Google Search results could not be rendered here, so no ad was seen for any practice area. This is a tooling limit, NOT evidence that the firm is not advertising.
+Practice Area 1: Estate planning (Fort Myers)
+- Firm ads observed: not observed (could not check)
+- Named local competitors running ads: not observed
+Practice Area 2: Probate and trust administration (Fort Myers)
+- Firm ads observed: not observed (could not check)
+- Named local competitors running ads: not observed
+Practice Area 3: Asset protection / business planning / elder law (Fort Myers)
+- Firm ads observed: not observed (could not check)
+- Named local competitors running ads: not observed
+Practice Area 4: Real estate closings (Fort Myers)
+- Firm ads observed: not observed (could not check)
+- Named local competitors running ads: not observed
+Ads framing for the writer: any ads statement must be "not observed" / "does not appear to be running" at most. Here the check was not run, so say nothing about it. On the call Josh said Google and social media produced "only about 600,000" this year and the firm sends direct mail for workshops. He did not say whether any of that spend is paid ads. Ask on the proposal call.
+Site-side hint only: Google Tag Manager, Google Analytics, a Facebook pixel and a Simpli.fi tag are installed. These show tracking, not active campaigns.
+
+================================================================================
+STEP 7 — LOCAL SERVICE ADS
+================================================================================
+
+- Firm appears in LSA: not observed (could not check; LSA for estate planning attorneys may not be available in this market)
+- Google Screened: not observed
+- LSA review count: not observed
+- Named local competitors in LSA: not observed
+
+================================================================================
+STEP 8 — META ADS
+================================================================================
+
+The Meta Ads Library could not be loaded here.
+- Firm has active ads: not observed
+- Named local competitor 1: not observed
+- Named local competitor 2: not observed
+Site-side hint only: a Facebook pixel is on the site. Josh said Google and social media together produced about $600,000. No Facebook page activity level was read.
+
+>>> SAVED: all ads sections complete (as "not observed").
+
+================================================================================
+STEP 9 — TRANSCRIPT EXTRACTION
+================================================================================
+
+Transcript source: full verbatim Fathom transcript (summary used only as overview). The trigger's own transcript field held no call summary at all.
+Call: discovery call, recorded 2026-10-14, Dan Bryant (SMB Team) with Joshua Dorcey (prospect). Only Josh's statements are recorded as facts. Dan's figures (SMB Team revenue, client counts, VIP pricing such as "4000 bucks … 5000", Master's Circle tiers) are pitch material and are NOT firm figures.
+Transcription flags: the speech-to-text is rough in places. Where a figure is unclear it is marked below.
+
+- Practice areas confirmed: estate planning, business planning, asset protection, real estate (full title company, residential and commercial closings), probate and trust administration. Josh: "we do estate planning, business planning, asset protection, and real estate, right?" (00:16:31). Probate and trust administration is "only about a million, million, two of revenue" (00:21:00) but "we've got about 10,000 clients out there that we've done their estate plans on" and he expects that side to grow.
+- Current lead sources: Josh: "this year, financial advisors referred in a little bit over a million. Google and social media has produced only about 600,000. CPA is about 300,000." (00:19:08–00:19:28). "our major drivers are true direct mail, like I said, for workshops and seminars, which then turns into revenue. And then we've got … our publication that goes out" (00:19:33–00:19:48). Also paid lunch/dinner workshops and seminars, a coffee-table publication, and charitable marketing: "Big believer in being actively involved in local nonprofits" for "a decade and a half". He says "there's no way to ever identify exactly where those people come from" (00:19:51). Revenue mix: 40% from existing or previous clients coming back for new work, 10% from renewals (client care program) and referral fees from other attorneys, 50% from new generation (00:17:06–00:18:03).
+  Dollar figures are unlabeled in the transcript as to unit: read as dollars of revenue [transcript unclear — read as $1M+, $600K, $300K]; they add to about $1.9M of the roughly half of revenue Josh called new generation.
+- Ads ever run: not stated. Josh credits "Google and social media" with about $600,000 but never said whether that was paid advertising, which platforms, or any budget. He says the firm "market[s] in non-traditional ways other than the direct mail for the workshops and seminars" (00:01:23). Do not state that the firm does or does not run ads.
+- Team size: 28 domestic FTEs plus 8 "global team members out of the Philippines" (00:15:35–00:15:47). Attorneys (per website): 7. Staff includes a firm administrator and an executive assistant (Marissa Silva). Josh wants growth "without adding any more FTEs", but is "fine with using some global team members".
+- Annual revenue (gross / case value): "between eight and nine of this year" (00:15:47), depending on the final quarter [transcript unclear — read as $8–9 million; consistent with Josh's "$300,000 per FTE" across 28 FTEs, about $8.4M]. Josh said the firm "should have been at 10" (00:20:26) before real estate slowed.
+- Annual revenue (net / take-home / collected): not distinguished from gross
+- Fee structure: per-file fees, not contingency. Josh: "average size file … somewhere between $5,000 and $6,000 per file" overall; "closer to about $8,000" for estate planning, "in that $8,000 to $10,000 range typically is our average fee per file"; real estate closings "$1,500 to $1,800 on a closing" (00:16:00–00:17:00). Flat versus hourly was not stated explicitly. Also recurring contractual revenue from a "client care program" with "automatic renewals" and "referral fees" or "co-counsel fees" from other firms.
+- Revenue goal: "I like going for 25, 30% growth if I can, but I want to do it without adding any more FTEs" (00:22:00) for 2027. Derived (not stated): about $10M to $11.7M on an $8–9M base. Also: raise revenue per FTE "up to the $350,000 to $400,000 per FTE" from about $300,000 (00:22:21–00:22:26).
+- Average case value: $5,000–$6,000 per file overall; about $8,000–$10,000 for an estate plan; $1,500–$1,800 per real estate closing. Josh's own words: "if you take out the smaller probates and those types of things … closer to about $8,000".
+- Current close rate: "our typical close rate of our attorneys in our office range between 70, 90%" (00:26:13). Referrals from financial advisors or CPAs are "closer to that 90%"; cold social-media generation is lower. The firm emails a cultivation video to inquiries.
+- Number of locations: 4 per Josh: Fort Myers (main), Marco Island, LaBelle, and Sarasota (00:23:56–00:24:22). The website lists only Fort Myers, LaBelle and Marco Island. Josh is also considering "opening offices in states that are not as seasonally big" or going "more statewide".
+- Spanish campaign needed: no (not discussed; no Spanish content on the site)
+- Dominant buying motive: not stated outright, so inferred. Closest to Josh's own words: "our model and philosophy is we don't want anybody in our town to hire another law firm without at least considering us first" (00:10:04) and the efficiency driver "that's the driver is paying attention to where we're at for FTE" (00:22:31). The motive reads as scale and local dominance (type 3) built on higher output per person and use of off-season capacity, not a personal-lifestyle quote. No quote about time, family or exit was given. Writer: ask Josh on the proposal call what 25–30% growth would let him do personally.
+- Any profitability claims made by prospect: none stated (revenue, growth and revenue-per-FTE only; no profit or margin figures)
+- Any claims about case types or practice areas: Josh says clients are "upper middle America", and compares himself with Brad Galbraith's firm: "Brad sees 50 to $150 million files weekly, and I see 50 to $100 million files every other month" (00:08:11) [transcript unclear — these appear to be estate sizes, not fees]. He also states, "the majority of our clients come from middle America" (00:07:50). Season: peak is "January to May" (00:24:33); Josh says July revenue is typically about one third of January's (00:24:45–00:25:00) [transcript unclear — garbled, read as July at roughly one third of January]. Real estate department slowed with the market.
+- Stated call focus / product interest: not marketing-only. The call opened as relationship and event talk (Marco Island workshop December 3–5, referred by Brad Galbraith, who is in Master's Circle). Dan then pitched SMB Team broadly (coaching, Master's Circle, AI, full-service marketing). The prospect-stated need was lead generation: "it would probably be lead generation" (00:26:10). Dan proposed a follow-up where he would "do more of an audit on my side, web SEO, ads, et cetera" with "even cost projections" (00:32:04–00:32:14); Josh: "definitely open to it" (00:32:33). Master's Circle was described but not priced to the prospect. Coaching/ops and AI came up as rep pitch (Dan: "coaching and AI really go hand in hand"); Josh did not ask for them. Writer: frame the report around lead generation and using off-season capacity, and treat coaching as secondary.
+- Primary engagement: marketing
+- Products discussed on call: Full Service Marketing, Master's Circle
+- Lead-gen gap stated: yes — "it would probably be lead generation." (00:26:10); also capacity: asked whether the firm could handle more leads, intakes, consults and case work now (off-season), Josh answered "Yes, all of above." (00:25:51)
+- Existing marketing/SEO/ad vendor engagements: none stated by the prospect. Site-tech observation, not a prospect statement: the site loads Scorpion analytics scripts and a Simpli.fi tag, so a Scorpion-hosted site or campaign is possible. Dan said he was a top producer at Scorpion before joining SMB Team; a sentence about "your websites" in the transcript (00:14:43) is garbled and cannot be read as a statement that Dorcey uses Scorpion. Ask on the call.
+- Budget constraints stated: none stated
+
+Other call facts the writer may need (all from the prospect):
+  - Prior SMB Team history: Josh knew SMB Team earlier "when it was still a baby company": a colleague, Casey Williams (of counsel / associate attorney at Dorcey), "tried you guys out … and wasn't overly happy with the services" (00:10:42). Josh said "I don't hold you to that" (00:30:48). Treat as a trust objection to handle with care.
+  - Referral: Brian "Brad" Galbraith, a friend and fellow-mastermind member, in Master's Circle with SMB Team (Josh: "Brad and I have worked together for many, many years"). Josh built a five-firm mastermind about two years ago. Josh says he does not want an estate-planning-only peer group (00:28:33).
+  - Capacity and seasonality: peak Jan–May ("they are here for five months, and then they're gone for seven"); the firm staffs for peak and has spare capacity now. The firm extended its season by opening Marco, LaBelle and Sarasota offices.
+  - Growth areas he named: probate and trust administration (about $1–1.2M today, about 10,000 estate-plan clients), plus anything to fill the off-season.
+  - Attendance: Josh registered for the Marco Island event (December 3–5) during the call and plans to bring his firm administrator and a law partner; December 4 is the office Christmas party.
+
+Key prospect quotes (verbatim, Joshua Dorcey):
+  1. (00:01:23, marketing style) "So we market in non-traditional ways other than the direct mail for the workshops and seminars."
+  2. (00:09:42, referral and branding) "it's more about branding and third-party affirmation in our profession, in my opinion"
+  3. (00:10:04, goals / DBM) "our model and philosophy is we don't want anybody in our town to hire another law firm without at least considering us first."
+  4. (00:10:42, objection / prior history) "I had a colleague that tried you guys out when it was still a baby company and wasn't overly happy with the services."
+  5. (00:19:51, lead sources) "there's no way to ever identify exactly where those people come from."
+  6. (00:20:26, goals) "we should have been at 10. The real estate market is what slowed … us back."
+  7. (00:22:00, goals) "I like going for 25, 30% growth if I can, but I want to do it without adding any more FTEs."
+  8. (00:22:26, team / profit) "I'd like to get us up to the $350,000 to $400,000 per FTE."
+  9. (00:23:21, team / seasonality) "we have to staff for our high peak season, even though seven months out of the year, I don't need all the staff members I have."
+  10. (00:25:51, intake capacity) "Yes, all of above."
+  11. (00:26:10, lead sources / priority) "it would probably be lead generation."
+  12. (00:32:33, next steps / marketing audit) "So definitely open to it."
+  Also usable: (00:26:13, intake) "our typical close rate of our attorneys in our office range between 70, 90%." and (00:28:33, objection) "I don't want to be in a room exclusively with estate planning attorneys."
+
+================================================================================
+STEP 10 — COMPETITIVE URGENCY SCORE
+================================================================================
+
+Score: 5 / 10 — LOW-CONFIDENCE ASSIGNMENT. Google 3-pack, ads, LSA, Meta data and the firm's own Google review figures could not be observed, so the score rests on:
+  - Competitor review volume looks higher on the third-party snippets: The Dellutri Law Group (4.9, 740 reviews [UNCONFIRMED — snippet source]), Safe Harbor Law Firm (5.0, 261 [UNCONFIRMED — snippet source]) and Powell, Jackman, Stevens & Ricciardi (4.7, 257 [UNCONFIRMED — snippet source]). The firm's own Google figure is unresolved (16 or about 123, both UNCONFIRMED), so this is not a verified gap.
+  - The firm's demand does not depend on the local pack: Josh credits financial-advisor and CPA referrals, direct-mail workshops and a decade-plus of nonprofit work, with only about $600,000 attributed to Google and social media.
+  - The website is a real asset (seven attorneys, video, 33 testimonials, consultation CTA), but the blog was last updated November 2025, there is no live chat, and mobile Lighthouse performance was 72 from one run.
+  - Off-season capacity is idle now, and Josh is open to a lead-gen conversation.
+Named local competitor threats (reasons limited to what was seen; none verified live):
+  1. The Dellutri Law Group, P.A. — Fort Myers estate planning page and a large review footprint across directories; Google 4.9 / 740 reviews [UNCONFIRMED — snippet source]
+  2. Safe Harbor Law Firm — Fort Myers estate planning and elder law; Google 5.0 / 261 reviews [UNCONFIRMED — snippet source]
+  3. Powell, Jackman, Stevens & Ricciardi, P.A. ("Your Advocates") — estate planning page for Fort Myers; Google 4.7 / 257 reviews [UNCONFIRMED — snippet source]
+Dynamic sentence (Score 4–6): "A score of 5 means competitors have meaningful advantages in one or more areas and are pulling ahead. You are not invisible yet — but the window to close the gap is narrowing. Every month without action is a month they extend their lead."
+  Writer caution: this sentence rests on a score assigned without 3-pack, ads or verified review observation. Josh's firm wins mostly through referral partners and direct mail, so soften it, avoid "pulling ahead" claims about review counts, and frame the opportunity around off-season capacity and Google / social currently producing about $600,000 of an $8–9M firm.
+
+>>> SAVED: final research notes.
+
+================================================================================
+PASS 2 — VERIFICATION CHECKLIST
+================================================================================
+
+[x] Every number in the notes matches observed data (mobile PageSpeed from one valid local Lighthouse run; review figures taken from search snippets / Birdeye and tagged; call figures from the full transcript)
+[x] No competitor is cited as "dominating" — the firm's Google review count was not confirmed, so no comparison is made
+[x] Every review count and star rating (firm and competitors) carries a verification-method tag — all are [UNCONFIRMED — sourced from ...]; none is [confirmed via Google]
+[x] Annual revenue gross/net: only one figure stated ("not distinguished from gross"); fee structure recorded (per-file fees, plus recurring client care contracts)
+[x] Every ad section covers all practice areas — recorded as "not observed" because Google / Meta could not be rendered
+[x] No section says "you are not running ads"
+[x] No profitability or business claim appears unless it came from the transcript — website marketing claims are labelled as the firm's own, and rep pitch figures are excluded
+[x] No competitor reference uses generic labels — only named local firms
+[~] PageSpeed: mobile is a real number (72, single run); desktop NOT obtained (challenge page) and left blank on purpose rather than estimated
+[x] DBM recorded (inference from the prospect's own words, labelled as inferred)
+[x] Revenue goal recorded (25–30% growth for 2027, no added FTEs; derived dollar range labelled as derived)
+[x] Close rate recorded (stated: 70–90%)
+[x] Average case value recorded (stated: $5,000–$6,000 overall, $8,000–$10,000 estate plan)
+[x] Stated call focus recorded explicitly (lead generation as the prospect need; coaching, Master's Circle and AI were rep pitch)
+[x] "Primary engagement", "Products discussed on call" (catalog names only) and "Lead-gen gap stated" filled in with the exact format
+[x] Existing marketing/SEO/ad vendor engagements recorded (none stated; Scorpion tech observation labelled as an observation)
+[x] Budget constraints recorded (none stated)
+
+Open items for the writer / rep (do not state as fact):
+  - Google review count and rating for the firm conflict across sources (16 at 4.2 versus about 123 at 4.6); read them directly off the Google listing before any review claim.
+  - Desktop PageSpeed was not obtained; mobile 72 is a single run.
+  - 3-pack positions, Google / LSA / Meta ads and competitor Google counts still need a live browser check.
+  - Ask Josh on the 10/20 call: whether the $600,000 from "Google and social media" is paid or organic, current vendor (Scorpion?), budget range, and what 25–30% growth would let him do personally.
+  - Phone number mismatch across directories (239-309-2870 on site versus 239-418-0169 in one snippet) and the Sarasota office missing from the website.
+  - Josh dislikes estate-planning-only peer groups and has a prior-experience concern via Casey Williams; keep coaching secondary to the lead-gen audit.
