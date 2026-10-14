@@ -21,6 +21,11 @@ if (!HUBSPOT_TOKEN || !contactId || contactId === 'undefined' || contactId === '
   process.exit(0);
 }
 
+// Ignore meetings older than this, so a former client's old coaching/workshop
+// summaries are never used as the discovery call. Matches resolve-fathom-url.mjs.
+const MAX_AGE_DAYS = 90;
+const cutoffMs = Date.now() - MAX_AGE_DAYS * 24 * 60 * 60 * 1000;
+
 const HEADERS = {
   Authorization: `Bearer ${HUBSPOT_TOKEN}`,
   'Content-Type': 'application/json',
@@ -77,14 +82,15 @@ function stripHtml(html) {
       process.exit(0);
     }
 
-    const items = (await batchRes.json()).results || [];
+    const itemTime = item => new Date(item.properties?.hs_timestamp || 0).getTime();
+    const all = (await batchRes.json()).results || [];
+    const items = all.filter(item => itemTime(item) >= cutoffMs);
+    if (items.length < all.length) {
+      console.error(`Ignoring ${all.length - items.length} meeting(s) older than ${MAX_AGE_DAYS} days.`);
+    }
 
     // Sort most-recent first
-    items.sort((a, b) => {
-      const ta = new Date(a.properties?.hs_timestamp || 0).getTime();
-      const tb = new Date(b.properties?.hs_timestamp || 0).getTime();
-      return tb - ta;
-    });
+    items.sort((a, b) => itemTime(b) - itemTime(a));
 
     for (const item of items) {
       const notes = item.properties?.hs_internal_meeting_notes || '';

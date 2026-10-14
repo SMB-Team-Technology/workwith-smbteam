@@ -34,6 +34,13 @@ if (!HUBSPOT_TOKEN || !contactId || contactId === 'undefined' || contactId === '
   process.exit(0);
 }
 
+// Ignore engagements older than this. A former client's old meetings (coaching
+// calls, workshops) also carry Fathom links; without a window, a new call not
+// yet logged in HubSpot would resolve to one of those instead. Matches
+// FATHOM_LOOKBACK_DAYS in lib/fathom.mjs.
+const MAX_AGE_DAYS = 90;
+const cutoffMs = Date.now() - MAX_AGE_DAYS * 24 * 60 * 60 * 1000;
+
 const HEADERS = {
   Authorization: `Bearer ${HUBSPOT_TOKEN}`,
   'Content-Type': 'application/json',
@@ -77,14 +84,15 @@ async function searchEngagementType(objectType, bodyFields) {
     return null;
   }
 
-  const items = (await batchRes.json()).results || [];
+  const itemTime = item => new Date(item.properties?.hs_timestamp || item.properties?.hs_lastmodifieddate || 0).getTime();
+  const all = (await batchRes.json()).results || [];
+  const items = all.filter(item => itemTime(item) >= cutoffMs);
+  if (items.length < all.length) {
+    console.error(`Ignoring ${all.length - items.length} HubSpot ${objectType} older than ${MAX_AGE_DAYS} days.`);
+  }
 
   // Sort most-recent first
-  items.sort((a, b) => {
-    const ta = new Date(a.properties?.hs_timestamp || a.properties?.hs_lastmodifieddate || 0).getTime();
-    const tb = new Date(b.properties?.hs_timestamp || b.properties?.hs_lastmodifieddate || 0).getTime();
-    return tb - ta;
-  });
+  items.sort((a, b) => itemTime(b) - itemTime(a));
 
   let shareUrlFallback = null;
 
