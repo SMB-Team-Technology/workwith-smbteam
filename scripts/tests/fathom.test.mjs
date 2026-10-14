@@ -25,6 +25,7 @@ import {
   shouldSkipFathomOverwrite,
   mergeTrigger,
   writeTriggerAtomic,
+  getFullTranscriptForCall,
 } from '../lib/fathom.mjs';
 
 const realFetch = global.fetch;
@@ -687,4 +688,118 @@ test('schedulers merge instead of wholesale transcript replace', () => {
     assert.match(src, /getFathomTranscriptResult/, rel);
     assert.doesNotMatch(src, /writeFileSync\(triggerPath/, rel);
   }
+});
+
+// ---------------------------------------------------------------------------
+// getFullTranscriptForCall — exact recording from the HubSpot-linked URL
+// ---------------------------------------------------------------------------
+
+const SEGMENTS = [
+  { speaker: { display_name: 'Jacob Meissner', matched_calendar_invitee_email: 'jacob.meissner@smbteam.com' }, text: 'How many leads a month?', timestamp: '00:01:05' },
+  { speaker: { display_name: "Olvia's Desktop", matched_calendar_invitee_email: 'odm@jcplawfirm.com' }, text: 'About thirty.', timestamp: '00:01:09' },
+  { speaker: { display_name: 'Guest' }, text: 'Hello?', timestamp: 75 },
+];
+
+function listed(items, next_cursor = null) { return jsonResponse({ items, next_cursor }); }
+
+test('full transcript: matches the share URL and fetches that recording', async () => {
+  stubFetch(url => {
+    if (url.includes('/meetings?')) {
+      return listed([
+        { recording_id: 1, url: 'https://fathom.video/calls/111', share_url: 'https://fathom.video/share/OTHER', created_at: '2026-10-06T00:00:00Z', calendar_invitees: [{ email: 'odm@jcplawfirm.com' }] },
+        { recording_id: 2, url: 'https://fathom.video/calls/222', share_url: 'https://fathom.video/share/GPW1', created_at: '2026-10-05T00:00:00Z', calendar_invitees: [{ email: 'odm@jcplawfirm.com' }] },
+      ]);
+    }
+    if (url.endsWith('/recordings/2/transcript')) return jsonResponse({ transcript: SEGMENTS });
+    return jsonResponse({}, 404);
+  });
+  const r = await getFullTranscriptForCall({
+    fathomUrl: 'https://fathom.video/share/GPW1', contactEmail: 'odm@jcplawfirm.com', repEmail: 'jacob.meissner@smbteam.com', apiKey: 'k',
+  });
+  assert.equal(r.found, true);
+  assert.equal(r.recording_id, 2);
+  assert.equal(r.matched_by, 'url');
+  assert.match(r.text, /Jacob Meissner \[SMB Team\] \(00:01:05\): How many leads a month\?/);
+  assert.match(r.text, /Olvia's Desktop \[Prospect\] \(00:01:09\): About thirty\./);
+  assert.match(r.text, /Guest \(01:15\): Hello\?/);
+  const list = calls.find(c => c.url.includes('/meetings?')).url;
+  assert.match(list, /recorded_by%5B%5D=jacob.meissner%40smbteam.com/);
+  assert.match(list, /calendar_invitees_domains%5B%5D=jcplawfirm.com/);
+  assert.ok(!list.includes('include_transcript'));
+  assert.equal(calls.find(c => c.url.includes('/recordings/')).opts.headers['X-Api-Key'], 'k');
+});
+
+test('full transcript: matches a /calls/ URL by call id', async () => {
+  stubFetch(url => {
+    if (url.includes('/meetings?')) return listed([{ recording_id: 9, url: 'https://fathom.video/calls/847342597', created_at: '2026-10-05T00:00:00Z' }]);
+    if (url.endsWith('/recordings/9/transcript')) return jsonResponse({ transcript: SEGMENTS });
+    return jsonResponse({}, 404);
+  });
+  const r = await getFullTranscriptForCall({ fathomUrl: 'https://fathom.video/calls/847342597', contactEmail: 'a@gmail.com', repEmail: 'rep@smbteam.com', apiKey: 'k' });
+  assert.equal(r.found, true);
+  assert.equal(r.recording_id, 9);
+  assert.ok(!calls[0].url.includes('calendar_invitees_domains'), 'free-mail domains are not used as a filter');
+});
+
+test('full transcript: falls back to include_transcript listing when the recording endpoint fails', async () => {
+  stubFetch(url => {
+    if (url.includes('include_transcript=true')) {
+      return listed([{ recording_id: 2, url: 'https://fathom.video/calls/222', transcript: SEGMENTS }]);
+    }
+    if (url.includes('/meetings?')) {
+      return listed([{ recording_id: 2, url: 'https://fathom.video/calls/222', created_at: '2026-10-05T15:00:00Z', recorded_by: { email: 'rep@smbteam.com' } }]);
+    }
+    return jsonResponse({}, 404);
+  });
+  const r = await getFullTranscriptForCall({ fathomUrl: 'https://fathom.video/calls/222', contactEmail: 'x@firm.com', repEmail: 'rep@smbteam.com', apiKey: 'k' });
+  assert.equal(r.found, true);
+  const fallback = calls.find(c => c.url.includes('include_transcript=true')).url;
+  assert.match(fallback, /created_before=/);
+});
+
+test('full transcript: a linked URL that is not found is never swapped for another call', async () => {
+  stubFetch(url => {
+    if (url.includes('/meetings?')) return listed([{ recording_id: 1, url: 'https://fathom.video/calls/111', created_at: '2026-10-06T00:00:00Z', calendar_invitees: [{ email: 'odm@jcplawfirm.com' }] }]);
+    return jsonResponse({ transcript: SEGMENTS });
+  });
+  const r = await getFullTranscriptForCall({ fathomUrl: 'https://fathom.video/share/MISSING', contactEmail: 'odm@jcplawfirm.com', repEmail: 'rep@smbteam.com', apiKey: 'k' });
+  assert.equal(r.found, false);
+  assert.equal(r.reason, 'recording_not_found');
+  assert.ok(!calls.some(c => c.url.includes('/recordings/')));
+});
+
+test('full transcript: with no URL, uses the prospect\'s most recent call', async () => {
+  stubFetch(url => {
+    if (url.includes('/meetings?')) {
+      return listed([
+        { recording_id: 1, created_at: '2026-10-01T00:00:00Z', calendar_invitees: [{ email: 'odm@jcplawfirm.com' }] },
+        { recording_id: 3, created_at: '2026-10-05T00:00:00Z', calendar_invitees: [{ email: 'ODM@jcplawfirm.com' }] },
+        { recording_id: 4, created_at: '2026-10-09T00:00:00Z', calendar_invitees: [{ email: 'someone@else.com' }] },
+      ]);
+    }
+    if (url.endsWith('/recordings/3/transcript')) return jsonResponse({ transcript: SEGMENTS });
+    return jsonResponse({}, 404);
+  });
+  const r = await getFullTranscriptForCall({ fathomUrl: '', contactEmail: 'odm@jcplawfirm.com', repEmail: '', apiKey: 'k' });
+  assert.equal(r.found, true);
+  assert.equal(r.recording_id, 3);
+  assert.equal(r.matched_by, 'invitee_email');
+});
+
+test('full transcript: missing key or inputs are reported without network calls', async () => {
+  stubFetch(() => { throw new Error('should not fetch'); });
+  assert.equal((await getFullTranscriptForCall({ fathomUrl: 'https://fathom.video/calls/1', apiKey: '' })).reason, 'missing_api_key');
+  assert.equal((await getFullTranscriptForCall({ fathomUrl: '', contactEmail: '', apiKey: 'k' })).reason, 'no_url_or_email');
+  assert.equal(calls.length, 0);
+});
+
+test('fetch-fathom-transcript CLI writes only to the out file and prints no transcript text', () => {
+  const dir = mkdtempSync(join(tmpdir(), 'fft-'));
+  const out = join(dir, 't.txt');
+  const script = fileURLToPath(new URL('../fetch-fathom-transcript.mjs', import.meta.url));
+  const r = spawnSync(process.execPath, [script, out, '', ''], { env: { ...process.env, FATHOM_API_KEY: '' }, encoding: 'utf8' });
+  assert.equal(r.status, 0);
+  assert.equal(r.stdout, 'not_found');
+  assert.equal(existsSync(out), false);
+  rmSync(dir, { recursive: true, force: true });
 });

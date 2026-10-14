@@ -24,6 +24,23 @@ jobs:
 
           echo "=== Running fetch-hubspot-fathom-notes.mjs (expects full transcript) ==="
           TRANSCRIPT=$(node scripts/fetch-hubspot-fathom-notes.mjs 227288962849 2>&1)
+          # Length only: this repo's Actions logs are public.
           echo "Transcript length: ${#TRANSCRIPT}"
-          echo "First 500 chars:"
-          echo "$TRANSCRIPT" | head -c 500
+
+      # Logs here are public (public repo): print only status, match method and length.
+      - name: Test full-transcript fetch for JCP Lawfirm (status and length only)
+        env:
+          FATHOM_API_KEY: ${{ secrets.FATHOM_API_KEY }}
+        run: |
+          OUT="$RUNNER_TEMP/diag_transcript.txt"
+          STATUS=$(node scripts/fetch-fathom-transcript.mjs "$OUT" \
+            "https://fathom.video/share/GPW1sbdsNc5N7GfyTQcy4BNpn5WHeG2U" \
+            "odm@jcplawfirm.com" "jacob.meissner@smbteam.com")
+          echo "Result: $STATUS"
+          if [ -s "$OUT" ]; then
+            echo "Bytes: $(wc -c < "$OUT")"
+            echo "Speaker lines: $(grep -c '): ' "$OUT")"
+            echo "Lines tagged [SMB Team]: $(grep -c '\[SMB Team\]' "$OUT")"
+            echo "Lines tagged [Prospect]: $(grep -c '\[Prospect\]' "$OUT")"
+            rm -f "$OUT"
+          fi

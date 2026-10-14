@@ -122,6 +122,27 @@ jobs:
             echo "Transcript injected from HubSpot internal notes (${#TRANSCRIPT} chars)"
           fi
 
+      # Full verbatim transcript of the HubSpot-linked call. Written to
+      # $RUNNER_TEMP (outside the checkout) so it is never committed — this
+      # repo and its Actions logs are public. Only status and length are logged.
+      - name: Fetch full Fathom transcript (temp file only)
+        id: full_transcript
+        env:
+          FATHOM_API_KEY: ${{ secrets.FATHOM_API_KEY }}
+          FATHOM_URL: ${{ steps.resolve_fathom.outputs.fathom_url }}
+        run: |
+          TRIGGER_FILE="triggers/audit-research/${{ steps.resolve.outputs.friendly_name }}.json"
+          OUT="$RUNNER_TEMP/fathom_full_transcript.txt"
+          CONTACT_EMAIL=$(jq -r '.contact_email // empty' "$TRIGGER_FILE" 2>/dev/null || true)
+          REP_EMAIL=$(jq -r '.sales_rep_email // empty' "$TRIGGER_FILE" 2>/dev/null || true)
+          STATUS=$(node scripts/fetch-fathom-transcript.mjs "$OUT" "$FATHOM_URL" "$CONTACT_EMAIL" "$REP_EMAIL" || true)
+          if [ "$STATUS" = "found" ] && [ -s "$OUT" ]; then
+            echo "path=$OUT" >> "$GITHUB_OUTPUT"
+            echo "Full transcript saved outside the repo ($(wc -c < "$OUT") bytes)."
+          else
+            echo "No full transcript — Pass 1 will use the summary in the trigger file."
+          fi
+
       - name: Pass 1 — Audit Research
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
@@ -132,6 +153,20 @@ jobs:
           if [ ! -f "$TRIGGER_FILE" ]; then
             echo "ERROR: Trigger file not found: $TRIGGER_FILE"
             exit 1
+          fi
+
+          FULL_TRANSCRIPT_PATH="${{ steps.full_transcript.outputs.path }}"
+          if [ -n "$FULL_TRANSCRIPT_PATH" ] && [ -s "$FULL_TRANSCRIPT_PATH" ]; then
+            TRANSCRIPT_NOTE="FULL TRANSCRIPT: the full verbatim transcript of this call is at
+            \`$FULL_TRANSCRIPT_PATH\` (outside the repo). Read all of it. It is the ground truth
+            for every fact and quote; the transcript field in the trigger file is only an AI
+            summary of a call — use it as an overview, and where the two disagree, the full
+            transcript wins. Follow the FULL TRANSCRIPT RULES in the command file. This repo is
+            public: never copy that file or long passages of it into the repo, and never print it."
+          else
+            TRANSCRIPT_NOTE="No full verbatim transcript was available for this run. The transcript
+            field in the trigger file is the only call record. If it starts with \"SOURCE: Fathom\",
+            it is an AI summary, not the client's words — say so in the research notes."
           fi
 
           claude --model claude-sonnet-5-5 --dangerously-skip-permissions -p "
@@ -148,6 +183,9 @@ jobs:
             happened or did not. outcome "absent" means a complete lookback found
             no call. If custody is "human", the transcript field includes sales-rep
             instructions that must be followed.
+
+            $TRANSCRIPT_NOTE
+
             If the URL resolves, browse it live. If not (fictional/test firm), fabricate
             realistic research data for all steps. Do not leave any section blank.
 

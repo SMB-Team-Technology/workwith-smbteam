@@ -46,6 +46,7 @@ Create `[friendly-name]/sections/` if it does not exist.
 - Only use class names that already exist in `audit_styles.css`. Never invent new ones. The executive summary section uses classes prefixed with `exec-` (e.g. `exec-summary`, `exec-block`, `exec-pillar-circle`) — these are defined in `audit_styles.css` and are valid.
 - Replace only `<!-- FILL: -->` placeholder content — do not touch anything else in any template.
 - Direct transcript quotes go in quote boxes only — never paraphrase into a quote box.
+- Take quotes from the research notes' STEP 9 fields and `Key prospect quotes` list. If the notes say quotes come from an AI summary rather than a full transcript, do not present them in quote boxes as the client's exact words — paraphrase in the body text instead, or delete the quote box.
 - Never say "you are not running ads" — only "does not appear to be running" or "not observed."
 - Omit "Who Is Doing It Better" row on any quick win card where no specific named local competitor was identified.
 - Omit "The Positive" block in any pillar section where nothing genuine can be said.
