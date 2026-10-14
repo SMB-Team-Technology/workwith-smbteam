@@ -296,10 +296,31 @@ jobs:
           # Pull the deterministic package decision, if Pass 1.5 produced one.
           decision_path = f"{friendly_name}/package_decision.json"
           lines = [f"📋 *Proposal ready for review: {firm}*", f"Prepared for: {sales_rep} · {date}", ""]
+          needs_input = False
 
           if os.path.exists(decision_path):
               with open(decision_path) as f:
                   d = json.load(f)
+              needs_input = bool(d.get('needs_seller_input'))
+          if needs_input:
+              # Call focus unknown (usually no discovery call found): don't
+              # present a package — ask the seller what the call was about.
+              lines[0] = f"❓ *Need your input before I build a package: {firm}*"
+              lines.append("I couldn't find what the discovery call was about, so I haven't picked a package.")
+              rev = d.get('revenue_effective')
+              rev_note = f"${rev:,} ({d.get('revenue_source')})" if rev else "unknown"
+              team = d.get('team_size_stated')
+              lines.append(f"*Revenue used:* {rev_note} · *Team size:* {team if team is not None else 'not stated'}")
+              opt = d.get('revenue_only_option') or {}
+              if opt.get('coaching_name'):
+                  parts = [p for p in (opt.get('marketing_name'), opt.get('coaching_name')) if p]
+                  lines.append(f"_Revenue-only option, if the call was about marketing/coaching:_ {' + '.join(parts)} — ${opt.get('total_bundled'):,}/mo")
+              lines.append("")
+              lines.append(f"{mention} — what was the call about? Reply in this thread with what to propose:")
+              lines.append("  ✏️ name the products — e.g. \"FCTO Level 1 + 1 seat of AIWP\"")
+              lines.append("  📈 or \"use the revenue-only option\" if it was a marketing/coaching call")
+              lines.append("Once the package is set, reply 🔒 *lock it in* to build the deck.")
+          elif os.path.exists(decision_path):
               if d.get('marketing_name'):
                   lines.append(f"*Marketing:* {d.get('marketing_name')} — ${d.get('marketing_price_bundled'):,}/mo")
               else:
@@ -327,11 +348,12 @@ jobs:
               lines.append("")
               lines.append("_Note: this is a consultation-only meeting — pricing sections will be stripped from the final report._")
 
-          lines.append("")
-          lines.append(f"{mention} — this is Phase 1 (research + package). Reply in this thread to move it forward:")
-          lines.append("  🔒 *lock it in* — build the full proposal deck as-is")
-          lines.append("  ❓ *ask why* — e.g. \"why Growth and not Starter?\"")
-          lines.append("  ✏️ *propose changes* — e.g. \"swap to Dominate, drop coaching\"")
+          if not needs_input:
+              lines.append("")
+              lines.append(f"{mention} — this is Phase 1 (research + package). Reply in this thread to move it forward:")
+              lines.append("  🔒 *lock it in* — build the full proposal deck as-is")
+              lines.append("  ❓ *ask why* — e.g. \"why Growth and not Starter?\"")
+              lines.append("  ✏️ *propose changes* — e.g. \"swap to Dominate, drop coaching\"")
 
           text = "\n".join(lines)
           posted = slack_api("chat.postMessage", {"channel": channel, "text": text})
