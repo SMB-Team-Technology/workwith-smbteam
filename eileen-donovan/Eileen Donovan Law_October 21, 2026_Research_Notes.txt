@@ -1,0 +1,286 @@
+SMB TEAM — GROWTH AUDIT RESEARCH NOTES
+Firm: Eileen Donovan Law (legal entity per NY DOS record: Eileen Donovan Law, P.C.; also listed as "Law Offices of Eileen Donovan, P.C." on personalfamilylawyer.com)
+Contact: Eileen Donovan, Esq. (estate planning attorney, owner; HubSpot contact 220395968832, eileen@eileendonovanlaw.com, 914-924-0724)
+URL: http://eileendonovanlaw.com (resolves to https://eileendonovanlaw.com/)
+Sales Rep: Dan Bryant (dan.bryant@smbteam.com)
+Date: October 21, 2026
+Proposal Call: 2026-10-21T21:00:00Z (Wednesday, October 21, 2026, 5:00 PM EDT; Eileen asked for 5:00-6:00 PM ET), closer Dan Bryant. This is the NEW Proposal Call that triggered run 3.
+Pipeline run: Pass 1, trigger run 3 (re-trigger). Earlier notes kept in this folder: "Eileen Donovan Law_October 9, 2026_Research_Notes.txt" (run 1) and "Eileen Donovan Law_October 13, 2026_Research_Notes.txt" (run 2). This file supersedes both.
+  What changed vs run 2: (1) a FULL VERBATIM transcript of the Oct 15 call is now available and is the ground truth for STEP 9 (run 1/2 used only the Oct 9 AI summary);
+  (2) PageSpeed re-measured Oct 15 (see STEP 1); (3) association-logo breakage re-confirmed live; (4) a few Westchester competitors added.
+  Everything else is carried forward from run 2 and marked as such.
+
+Transcript status: outcome=found, custody=machine, source=hubspot_notes (trigger field = Fathom AI summary of the Oct 15 call, https://fathom.video/share/YyFzbsqphTAU8jADMVy8sUUnNYVskrwB).
+  A full verbatim transcript (Fathom recording 193265324, 2026-10-15, ~54 min, Dan Bryant + Eileen Donovan) was also provided and read in full. It is NOT copied here (public repo).
+  The Oct 15 call was the prior Proposal Call (4:00 PM EDT). Dan described it on the call as "kind of an interim touch point" and the next call was booked for Oct 21.
+  An earlier discovery call on Oct 9 (AI summary only, in run 1/2 notes) is NOT part of this run's transcript; facts from it are labeled "carried forward from Oct 9 summary".
+
+RESEARCH TOOLING LIMITS (read first):
+  This session could fetch web pages (WebFetch, curl), run web searches, and run Lighthouse locally (headless Chrome). It could NOT render Google Search / Google Maps
+  (a plain request returns the "enablejs" JavaScript shell with no results), could NOT load the Meta Ads Library (HTTP 403), could NOT read Justia (HTTP 403), and Avvo
+  answered with a 301 redirect only (profile content not read). The Google PageSpeed API quota was exhausted in prior runs, so scores come from Lighthouse 12.8.2 run locally.
+  Items that depend on unreachable sources are marked "not observed" / "not obtained". Nothing is estimated or invented.
+  Every review figure carries a verification tag. No figure was read directly off a Google listing, so none is tagged [confirmed via Google].
+
+================================================================================
+STEP 1 — WEBSITE RESEARCH
+================================================================================
+
+Website URL confirmed live: Yes (fetched October 15, 2026; HTTP 200 at https://eileendonovanlaw.com/)
+Last redesign date or estimated age: Not determinable. Footer reads "Eileen Donovan Law © 2026" (likely auto-updated). Upload filenames carry what look like 2023-era edit stamps
+  (e.g. "e1696005959820" decodes to late Sept 2023), which suggests the current theme/build dates to roughly 2023 or earlier. Inference, not an observed redesign date.
+  Site runs on WordPress (theme "vantage" per asset paths).
+Mobile responsive: Likely yes — mobile-nav theme assets and a hamburger-style menu are present; Lighthouse mobile emulation rendered it. Not tested on a physical device.
+Homepage headline: "Personal and practical advice / Providing peace of mind" (supporting line "Because your family is worth it."; run 2 recorded the typo "worth is it" — current fetch shows "worth it", so it may have been fixed or the extractor normalised it. Do not cite the typo.)
+Browser tab title (HTML <title>): "Eileen Donovan Law – Keeping you out of court and out of conflict" (no city, no practice-area keyword).
+CTA above fold: Yes — "Schedule an Appointment" link in the header area.
+Contact form location: Dedicated /contact page; no form on the homepage.
+Live chat present: No (not detected)
+Attorney bio present: Yes — "Meet Eileen" nav link
+Video present: No (not detected on homepage)
+Blog present: Yes — /blog exists (four posts seen in run 1). Last post date: not determinable — no publication dates in the page markup (re-checked this run). Do NOT claim the blog is stale.
+Nav items (observed): What We Offer, Who We Work With, How We Work, Meet Eileen, Resources (Get Started, Blog, Free Guide to Legal Planning for Parents), Testimonials, Contact Us. An accessibility-tools widget is installed.
+Practice areas on site: Estate Planning; Children and Young Adult Protection Plans; Senior and Elder Law Planning; Probate.
+Testimonials: /testimonials page with self-posted client testimonials (no dates, no Google/third-party attribution). No Google review widget on the site.
+Association logos on homepage: NAELA, NYS Bar Association, Westchester County Bar Association, Preferred Family Lawyer, WealthCounsel.
+  CONFIRMED BROKEN again (Oct 15): NAELA loads (served from eileendonovanlaw.com, HTTP 200). The other logos (nysbar.png, Wealth-Counsel-Logo, PFL logomark and the
+  Westchester bar logo) are referenced from the host n5a074.p3cdn1.secureserver.net (17 references in the homepage HTML), which does NOT resolve in DNS
+  (getent returns nothing; curl returns no connection). eileendonovanlaw.com resolves and returns 200 in the same session, so this is a defect on the site, not a sandbox network problem.
+  A text-extraction fetch still lists the logos by name (lazy-loaded), but a real browser would show empty/broken images.
+  Possible fix any day (vendor said "working on it" on Oct 9). Eileen said on the Oct 15 call she wants to cut ties with the website vendor, so a re-check just before the call is advisable.
+NAP on site: NO address and NO phone number on the homepage (grep for 914 phone patterns, "Scarsdale", "White Plains": zero hits). /contact and /testimonials showed no NAP in run 1. Local-SEO gap and NAP-consistency risk (see STEP 5).
+Geo-targeted landing pages for surrounding cities: None evident.
+On-site content notes: Dan said on the Oct 15 screen-share that the estate planning page had about "232 words" and a title that "just says estate planning". That is the rep's live observation; not independently re-counted here. Treat as rep-reported.
+
+PageSpeed mobile score: 63 / 100 (Lighthouse 12.8.2, run locally Oct 15, 2026 21:05 UTC against https://eileendonovanlaw.com/; mobile emulation; FCP 3.8 s, LCP 8.1 s, Speed Index 5.0 s, Total Blocking Time 130 ms, CLS 0.002).
+PageSpeed desktop score: 88 / 100 (same tool; desktop preset; run 21:06 UTC; LCP 1.7 s, TBT 0 ms, CLS 0.143).
+  Earlier runs: Oct 9 = 62 mobile / 88 desktop; Oct 13 = 65 mobile / 86 desktop. Scores move a few points run to run; the pattern is stable: desktop good, mobile moderate with a slow (~8 s) Largest Contentful Paint.
+  Measured with Lighthouse, not the pagespeed.web.dev UI. Writer note: describe as a Lighthouse performance score and use the Oct 15 numbers (63 / 88).
+
+>>> SAVED: website section complete.
+
+================================================================================
+STEP 2 — GOOGLE BUSINESS PROFILE
+================================================================================
+
+GBP found: Not confirmed by this research (Google Search/Maps could not be read). Rep statement on the Oct 15 call, while screen-sharing Google: "We need to get a Google listing live. You, we, you don't have one"
+  and "number one, we need to get a Google listing live in the first place" (Dan Bryant, 00:28:47-00:31:17). Eileen answered that she has an office address and did not dispute it. The Fathom summary also says "No current Google Business Profile".
+  Treat as: rep reports no GBP exists, prospect did not contradict; NOT independently verified here. Nextdoor and other directories list "Eileen Donovan Law", which is not evidence of a GBP.
+Star rating: not obtained [UNCONFIRMED — no figure from any source; not confirmed via Google]
+Total review count: not obtained [UNCONFIRMED — no figure from any source; not confirmed via Google]
+Most recent review date: not obtained
+Primary category: not obtained (Nextdoor lists "Estate planner, Lawyer", which is Nextdoor's category, not a GBP category)
+Photos active: not obtained
+Posts active: not obtained
+Writer rule: do NOT print any review count or star rating for this firm. Do NOT make any "you have fewer reviews than X" comparison. If a GBP gap is mentioned, attribute it to the discovery conversation ("as discussed on our call") and say it should be confirmed.
+
+================================================================================
+STEP 3 — LOCAL 3-PACK SEARCHES
+================================================================================
+
+All 3-pack searches: NOT OBSERVED by this research — Google Search/Maps results are not readable from this environment. Nothing below is observed data; the keyword sets are what should be run manually if a rendering browser becomes available. No competitors are recorded as "in the pack".
+(Rep-observed on the Oct 15 call: Dan searched from White Plains 10601 and showed estate-planning results; Eileen's firm was not shown in them, and he used the screen to explain that she lacks a listing. Not a recorded 3-pack result; do not print as one.)
+
+Practice Area 1: Estate planning
+- Search 1 "estate planning attorney white plains ny": not observed — firm appears [not observed]; pack competitors [not observed]
+- Search 2 "trust attorney scarsdale ny": not observed — firm appears [not observed]; pack competitors [not observed]
+- Search 3 "wills and trusts lawyer westchester county": not observed — firm appears [not observed]; pack competitors [not observed]
+
+Practice Area 2: Probate
+- Search 1 "probate attorney white plains ny": not observed
+- Search 2 "probate lawyer westchester county ny": not observed
+- Search 3 "estate administration lawyer scarsdale ny": not observed
+
+Practice Area 3 (site-listed): Senior and Elder Law Planning
+- Search 1 "elder law attorney white plains ny": not observed
+- Search 2 "medicaid planning attorney westchester": not observed
+- Search 3 "elder law attorney scarsdale ny": not observed
+
+================================================================================
+STEP 4 — COMPETITOR REVIEW COUNTS
+================================================================================
+
+Named local (Westchester) competitors from search results and the firms' own websites. None could be read on Google. Every number below is UNCONFIRMED.
+
+- Competitor 1: Cavallo & Cavallo (New Rochelle, 1293A North Avenue, plus Bronx/Queens; estate planning/wills/trusts/probate; cavallolawyers.com) — reviews: "100+" [UNCONFIRMED — sourced from the firm's own website badge "Google 5.0 100+ Reviews" and a search-result summary; not independently confirmed via Google] — rating: 5.0 [UNCONFIRMED — same source; not confirmed via Google]
+- Competitor 2: Cohen, Soloway & Wooldridge, P.C. (925 Westchester Ave, Suite 407, White Plains; trusts & estates boutique since 2003) — reviews: not obtained [UNCONFIRMED — no figure from any source; not confirmed via Google] — rating: not obtained [UNCONFIRMED]
+- Competitor 3: Walsh & Amicucci LLP (1133 Westchester Ave, Suite S321, White Plains; wills/trusts/estate planning, elder law) — reviews: 5 [UNCONFIRMED — sourced from Lawyers.com, a directory, not Google; not independently confirmed via Google] — rating: 5.0 [UNCONFIRMED — sourced from Lawyers.com; not confirmed via Google]
+- Competitor 4 (new this run): Ettinger Law Firm (trustlaw.com; White Plains office, 140 Grand St #410; "New York's largest Elder Law Estate Planning Firm" per its own site, 12 attorneys / 25 staff claimed) — reviews: "563" [UNCONFIRMED — sourced from a Birdeye listing for the firm overall, an aggregator; not independently confirmed via Google]; a different search snippet gave "4.6 with 26 reviews" for the White Plains location [UNCONFIRMED — source unclear]. The two figures conflict; print neither. — rating: not obtained [UNCONFIRMED]
+- Other named Scarsdale-area estate firms seen in search (no review data obtained): Bertine Hufnagel (700 White Plains Road, Suite 237, Scarsdale), Williams Law Group, LLC (2 Overhill Rd #100, Scarsdale), Cerrato McGoey (serves Scarsdale/Yonkers/White Plains), Morgan Legal Group.
+
+Excluded: Leeds Law Firm, PLLC (Houston TX / Atlanta GA national footprint, not a local competitor; must not be cited). Dan's SMB Team clients David Bliven and Joe Mara are SMB Team clients (family law / also seen in estate results), not competitors to cite.
+Cavallo & Cavallo's "100+" is a self-reported badge. The Walsh & Amicucci "5" is a Lawyers.com count and says nothing about its Google count.
+Prospect's own review count was not obtained, so no comparison of the firm vs. any competitor can be asserted.
+
+================================================================================
+STEP 5 — DIRECTORY LISTINGS
+================================================================================
+
+(Carried forward from run 2 and re-surfaced by search this run. Justia returned 403, Avvo returned a 301 redirect only, Yelp not reachable; profile contents not re-read.)
+- Avvo: Profile "Eileen Cotter Donovan — Scarsdale, NY Lawyer" exists (avvo.com/attorneys/10583-ny-eileen-donovan-918740.html). Rating/review count not obtained.
+  CAUTION: A separate Avvo profile ("Eileen Donovan — Garden City, NY Personal Injury Lawyer") and a FindLaw profile for an Eileen Donovan in Rockville Centre (construction/labor) are different attorneys. Do not conflate.
+- Justia: Profile "Eileen Cotter Donovan, Lawyer in SCARSDALE, New York" exists (lawyers.justia.com/lawyer/eileen-cotter-donovan-1215943). Details not obtained.
+- FindLaw: NOT listed on the FindLaw Estate Planning > Scarsdale, NY page (20 listings checked in run 1). White Plains / Westchester pages not individually checked.
+- Yelp: not reachable; status unknown.
+- Martindale-Hubbell: profile "Eileen Donovan" exists (martindale.com/attorney/eileen-donovan-157618766/); not verified as the same person.
+- Nextdoor: Business page "Eileen Donovan Law", 2 Overhill Road, Scarsdale, NY 10583; Estate planner / Lawyer; no rating shown.
+- Westchester County Bar Association directory: "Eileen C. Donovan, Esq." listed.
+- Scarsdale Chamber / BCW directory: "Eileen Donovan Law" listing exists (details not read).
+- personalfamilylawyer.com (Personal Family Lawyer member directory): "Law Offices of Eileen Donovan, P.C." — no address/phone on page.
+- NY Dept. of State record (via opendatany.com): Eileen Donovan Law, P.C., 62 Tunstall Road, Suite 400, Scarsdale, NY 10583.
+- LinkedIn: profile for Eileen Donovan — Eileen Donovan Law (exists).
+
+NAP observations / inconsistencies:
+  - Website shows NO name/address/phone block.
+  - Directories show Scarsdale: "2 Overhill Rd Ste 400, Scarsdale" (Nextdoor) vs "62 Tunstall Road, Suite 400, Scarsdale" (NY DOS). Two street addresses, same suite number. Unverified which is current. (Williams Law Group lists 2 Overhill Rd #100, so that is a multi-tenant building.)
+  - Call facts: Eileen said she has an office address and is in Scarsdale ("Scarsdale", 00:34:18); Dan treated White Plains (about a mile away, per Eileen) as the nearby market. Earlier summary said "White Plains". Use Scarsdale as the firm's town; mention White Plains / Westchester County as the target market.
+  - Phone (914) 924-0724 is consistent across listings and matches HubSpot.
+  - Business name variants: "Eileen Donovan Law", "Eileen Donovan Law, P.C.", "Law Offices of Eileen Donovan, P.C.", "Eileen Cotter Donovan".
+Geo-targeting landing pages for surrounding cities: none on the firm's site. Competitor Cavallo & Cavallo has service-specific "Westchester ... Attorney" and borough pages (e.g. "Queens Estate Planning Attorney"); town-page claim from run 1 not re-confirmed.
+
+>>> SAVED: GBP, local SEO, and directory sections complete.
+
+================================================================================
+STEP 6 — GOOGLE ADS
+================================================================================
+
+Google Search results are not readable here; ads could not be observed for any practice area. Ads framing: the firm does not appear to be running ads for these searches (not observed); this is an opportunity gap, not a verified fact.
+On the call Eileen confirmed no paid ads yet: "I hate the tire kickers, and I haven't had them yet." (00:17:32; she means leads from paid channels). Fathom summary: "no active paid ads yet."
+
+Practice Area 1: Estate planning (Scarsdale / White Plains / Westchester)
+- Firm ads observed: not observed.
+- Named local competitors running ads: not observed by this research. Rep-observed on the call (screen-share, Oct 15, from White Plains 10601): in an "estate planning attorney" search, Dan pointed to results including "Robert Edinger" [transcript spelling; later said "Ettinger", probably Ettinger Law Firm] and his client Joe Mara, and described a large multi-location firm titled "White Plains Estate Planning Firm" as a "big spender". These are the rep's live observations, not verified here and not tied to specific ad copy. Do not print ad copy for them.
+
+Practice Area 2: Probate
+- Firm ads observed: not observed
+- Named local competitors running ads: not observed
+
+Practice Area 3: Senior / Elder law planning
+- Firm ads observed: not observed
+- Named local competitors running ads: not observed
+
+================================================================================
+STEP 7 — LOCAL SERVICE ADS
+================================================================================
+
+- Firm appears in LSA: not observed
+- Google Screened: not observed
+- LSA review count: not observed
+- Named local competitors in LSA: not observed by this research. Rep-observed on the call (unverified here): Dan said the LSA block "didn't fire" at first and then showed "Robert Edinger" and Joe Mara among others (00:32:34-00:33:04). Names only, no counts.
+
+================================================================================
+STEP 8 — META ADS
+================================================================================
+
+Meta Ads Library returned HTTP 403 again (not reachable).
+- Firm has active ads: not observed (library unreachable)
+- Named local competitor 1: Cavallo & Cavallo — not observed (library unreachable)
+- Named local competitor 2: Cohen, Soloway & Wooldridge — not observed (library unreachable)
+
+>>> SAVED: all ads sections complete (all "not observed" due to tooling limits).
+
+================================================================================
+STEP 9 — TRANSCRIPT EXTRACTION
+================================================================================
+
+Transcript source: full verbatim Fathom transcript (summary used only as overview). Call of Oct 15, 2026 (Dan Bryant + Eileen Donovan, ~54 min). Where a fact came only from the Oct 9 AI summary it is labeled "carried forward from Oct 9 summary".
+Speaker note: Only Eileen's statements are treated as the firm's facts. Dan's pitch numbers (return-on-ad-spend figures, click-share percentages, "$70 a call", "$20,000 a month", retention rates, client revenue stories) are NOT recorded as firm facts.
+Transcription notes: speech-to-text renders New Law Business Model as "NLBM"/"LVM"/"LBM", WealthCounsel as "wealth council", "Valley Cats" is a garble in Dan's line; none of these affect facts below.
+
+- Practice areas confirmed: Estate planning (wills, trusts, powers of attorney); probate / trust administration as upside ("your probates help sell plans" — Dan; Eileen did not dispute). Site also lists Children/Young Adult Protection Plans and Senior/Elder Law Planning. Eileen's note on membership: she has not launched a membership plan.
+- Current lead sources: Referrals. "…where I am at six a month or eight a month on referrals to doing some ad spend." (00:22:38). "I'm getting referrals from people from around the country." (00:50:17, about the NLBM network). Closing "…they're coming in as referrals." (00:47:00). No paid ads yet.
+- Ads ever run: No ad history stated; no platform, budget or result. She wants to start ad spend ("to doing some ad spend") but is unsure of the best route. She "hates the tire kickers" and has "not had them yet", i.e. has no experience with paid-channel leads.
+- Team size: Owner/attorney (Eileen) + "two people and a drafter" (00:10:17 "I have two, I have two people and a drafter."). One of the two is a "great client services director" who manages client flow. Total ~3 staff + Eileen. (Carried forward from Oct 9 summary: part-time "kid employees"; earlier notes said the drafter was part-time. Not restated on the Oct 15 call.) She is considering hiring a low-cost remote/admin person for phones and intake: "I can easily just hire someone, because I have a space, I can put my phones over…" (00:25:33).
+- Annual revenue (gross / case value): ~$360,000/year. Basis: Dan asked "your revenue rate per year now is $360,000, is that right?"; Eileen answered with her own math: "let's say six times five, and then there's…" (6 matters × $5k = $30k/month) and Dan rounded to $360,000. Eileen said there are "a fair number of other things going on too" (Dan's wording after her trailing "and then there's"). Not an explicit "yes" from Eileen; read as ~$360k [transcript unclear — read as approximately $30k/month from ~6 matters plus unstated other revenue]. Also carried forward from Oct 9 summary: "~$30k/month from 6 matters at ~$5k avg".
+- Annual revenue (net / take-home / collected): Not distinguished from gross. Related facts from Eileen: owner pay is ~$50k, "intentional" ("So that's intentional." 00:12:20; "it was intentional for 50."); operating expense account "now is like at 126" (thousand; "126" read as $126k [transcript unclear — read as $126,000]; Dan later said $120,000); she is "taking 12 out… for 401k" and previously funded 401ks for her kids who worked for her. Net profit not stated.
+- Fee structure: Not stated explicitly. Average plan value $5,000 (see below). On fees: "January 1, there'll be a whole different structure" (00:47:16) after a prospective client asked whether trusts are included in the fee; she planned to "check my numbers". Dan said closing "almost 100%" means fees should rise; she did not dispute. Billing model (flat vs hourly) not confirmed — do not assert flat-fee. Fixed expenses mentioned: WealthCounsel, Lawmatics, office.
+- Revenue goal: Gross revenue goal not stated as a dollar figure. Personal income target: Dan recited "10x your personal income from 50 to 500k" (00:01:44) and the Fathom summary and Oct 9 summary say the same ($400–500k net); Eileen did not object but did not repeat the number in her own words on this call. Volume steps in her own words: "I'm at $6,000. I was at $4,000. I'm at $6,000. I'd like to go to $10,000, and then I'd like to go to $16,000." (00:09:22-00:09:27) [transcript unclear — read as matters per month: 6 now, was 4, goal 10 then 16; Dan immediately converted "four more cases a month" to ~$20k/month at $5k each, which only fits matters, not dollars]. Implied by that reading: 10 matters/mo ≈ $50k/month; 16 ≈ $80k/month at $5k. She also referred to the "million dollar mark" as "not a bad idea for me" (00:23:27). If a gross revenue goal is needed: not stated; use 2x current revenue (~$720k) only as a fallback.
+- Average case value: $5,000 ("5K." 00:08:57, in answer to Dan's "Remind me of the average case, 5K?").
+- Current close rate: "shy of 100%" on referrals ("My closing rate is shy of 100%, but they're coming in as referrals." 00:46:59). That is a referral-only rate; not a rate for paid or online leads. Paid-lead close rate not stated — default to 15% for any paid-channel modelling.
+- Number of locations: 1 (office in Scarsdale; Westchester County market).
+- Spanish campaign needed: No (not mentioned)
+- Dominant buying motive: Self-managing, profitable firm that replaces her husband's income and gives her time back. From the call: "I've spent the money to get my time back and I don't have it back." (00:10:13); "And now my circumstances changed. So I want to scale and operate differently." (00:12:51-00:12:54); "…that was my business model before, and I need to switch it up." (00:13:02). Replacing her husband's income comes from Dan's recap (00:01:39) and the Oct 9 summary (husband retiring), not from Eileen's own words on this call. Closest category: (1) a firm that runs itself so she has time and income; secondary long-term interest in growing by taking over retiring peers' books ("that's 2027 for me", 00:06:13).
+- Any profitability claims made by prospect: none stated as a margin or profit figure. Eileen said of cost structure: "my wealth council, my lawmatics, all of those are fixed expenses… everything else is, you know, a profit with, you know, just adding on, you know, client meetings or supplies." (00:23:40-00:23:58) — a qualitative statement about marginal cost, not a number.
+- Any claims about case types or practice areas: "six a month or eight a month on referrals" (00:22:38). She "belongs to" New Law Business Model (NLBM) and expects a fee increase Jan 1. Dan said (as the rep) she works with clients in their 60s and 70s; Eileen did not confirm.
+- Stated call focus / product interest: Mixed, but marketing-led. Dan framed the call around three things to price: (1) Google ads starting with Local Service Ads (plus GBP creation and review-generation coaching), (2) the SMB AI platform for efficiency, (3) a website rebuild with SEO content ("probably write 10,000 words"). Coaching was raised but explicitly deferred ("we always could talk about coaching later", 00:49:38) because she already pays NLBM ~$1,000/month for coaching and fears "double paying". Eileen's own agenda for the Oct 21 call: "what the process would be, what the initial outlay would be, and what the promises and ROI would look like" (00:48:40), and "what it would cost to redo my website" (00:49:06). She also wants to compare against NLBM's new marketing offer before committing. Efficiency/ops pain is real and central in her own words ("I have two people and a drafter… I don't have it back."; remote hire + "have AI do what can be done").
+- Primary engagement: mixed
+- Products discussed on call: Full Service Marketing, AI Workforce Pro
+  (Basis: Dan named Google Local Service Ads + GBP + reviews + website content = marketing package; "our AI platform" with no tier or price named = AI Workforce Pro, tier not given. Coaching and the Dec 3–5 Marco Island workshop ticket were mentioned but NOT priced and coaching was set aside; they are not listed here. No catalog price was quoted to her. Dan said he would talk to his boss to get "the best deal"; a comped/discounted workshop ticket is under consideration.)
+- Lead-gen gap stated: yes — "I'm just trying to figure out what's the best place for me to go from where I am at six a month or eight a month on referrals to doing some ad spend." (00:22:38)
+- Existing marketing/SEO/ad vendor engagements: (a) New Law Business Model (NLBM) coaching/network membership, ~"a thousand a month" ("They're over a thousand a month, or they're about a thousand a month." 00:50:01), active; she will not part ways ("I won't part ways… My value is good there.", 00:23:02-00:23:05) but says "I want an add-on, and it's either an add-on outside of them or it's an add-on with them." (00:23:07). (b) NLBM's new exclusive Personal Family Lawyer advertising zone for Westchester County and surrounds, launched July: offered, NOT signed; she was told prices and frequency but "completely forget"; "they're building it as they're going" (00:27:31); she is weighing it ("I don't want to lose that window… is it of value?"). (c) Website vendor: she wants to leave ("I can extract myself from the person who's doing the website, I can cut my losses… she is not the service that… I want.", 00:49:06). No SEO, AEO or paid-ad vendor engagement stated.
+- Budget constraints stated: No explicit spend limit. She said NLBM "is a lot of money" ("…it's a lot of money, and LBM is a lot of money." 00:49:55 [transcript unclear — read as NLBM]); she has cash in the operating account (~$126k) and low owner pay by choice; she asked for "initial outlay" detail and does not want to double-pay for coaching. Dan said he will try to get it "as affordably as I can" because "some of this stuff is newer for you". Treat as price-sensitive and wanting ROI proof, not as a stated cap.
+
+Technology in use: Lawmatics (CRM), WealthCounsel; website on WordPress built by an outside vendor.
+
+Other facts for the writer:
+  - Next step: Proposal Call Wed Oct 21, 2026, 5:00-6:00 PM ET with Dan. Dan will confer with leadership on package/pricing and a possible free or cheap ticket to the Dec 3-5 Marco Island workshop ("I would consider coming, yeah." 00:44:15). Estate planning mastermind runs Thursday Dec 3, 2-4 PM ET (per Dan).
+  - Prospect is open to NLBM staying in place; the SMB offer is positioned as add-on for what NLBM does not do (Google Ads, AI), in Eileen's words: "The AI piece, they're not doing the Google Ads piece." (00:26:25).
+  - Planned quick wins per rep: GBP live, review ramp over ~30 days, then LSA launch around day 30; website content build. These are the rep's proposed timeline, not commitments from the prospect.
+  - Membership plan (recurring revenue): "NLBM gave me like the roadmap for it, and I just haven't implemented it." (00:47:41) — an opportunity.
+  - Intake/qualification: she has no receptionist; Client Services Director is overloaded; Eileen says "those people I don't call back" (she screens out bad-fit callers on her own).
+  - Long-term: "that's 2027 for me" — taking over retiring peers' estate-planning files (she has not taken a first step).
+  - Vacation test: not discussed.
+
+Key prospect quotes (verbatim; timestamps from the Fathom transcript):
+  1. [00:10:13] "I've spent the money to get my time back and I don't have it back." — team/time
+  2. [00:10:17] "I have two people and a drafter." — team
+  3. [00:12:54] "So I want to scale and operate differently." — goals/DBM
+  4. [00:13:02] "This is not a poor me. This is a, that was my business model before, and I need to switch it up." — profit/owner pay
+  5. [00:15:02] "So before I dive in with two feet, I want to figure out what else is available to me because it's an amazing network of attorneys, but I haven't quite finished the Kool-Aid." — NLBM objection
+  6. [00:17:32] "I hate the tire kickers, and I haven't had them yet." — paid-lead fear
+  7. [00:22:38] "I'm just trying to figure out what's the best place for me to go from where I am at six a month or eight a month on referrals to doing some ad spend." — lead sources
+  8. [00:25:33] "…I have a great client services director… I'd like for her to continue with that, and not do a lot of the other stuff that I'm dumping on her, and have the remote person do more of that, and have AI do what can be done." — intake/team
+  9. [00:28:32] "It's, you know, it's not a total mess, but it's, it's not what it needs to be." — website
+  10. [00:45:41] "…it's a concern for me, because it's their first rodeo with this." — NLBM marketing objection
+  11. [00:46:59] "I'm a good closer… My closing rate is shy of 100%, but they're coming in as referrals." — close rate
+  12. [00:48:40] "…here's the things that I would like for the next meeting is what the process would be, what the initial outlay would be, and what the promises and ROI would look like." — budget/next step
+
+>>> SAVED: transcript extraction complete.
+
+================================================================================
+STEP 10 — COMPETITIVE URGENCY SCORE
+================================================================================
+
+Score: 5 / 10 — LOW-CONFIDENCE ASSIGNMENT. Google 3-pack, ads, LSA and Meta data could not be observed, so this score rests only on what could be seen:
+  the firm's own site (no on-site NAP, no geo pages, four of five trust logos broken, mobile LCP ~8 s, no ads per the prospect, referral-only lead flow, rep reports no Google listing) versus
+  competitors' on-site marketing and large review claims. Treat it as a placeholder to be refined if live Google data becomes available.
+
+Named local competitor threats:
+  1. Cavallo & Cavallo (New Rochelle / Bronx / Queens) — site advertises "Google 5.0 100+ Reviews" [UNCONFIRMED, firm's own claim], a free "Legal Game Plan" offer, "Schedule Your Consultation" CTAs, and a dedicated "Westchester ... Attorney" page per service.
+  2. Ettinger Law Firm (White Plains, 140 Grand St) — self-described as New York's largest elder law estate planning firm (12 attorneys, 25 staff, own claim), a dedicated "White Plains Estate Planning Firm" location page, and a large aggregator review footprint [UNCONFIRMED, Birdeye]. Rep also pointed to this firm appearing in Local Service Ads on the Oct 15 screen-share (unverified here).
+  3. Cohen, Soloway & Wooldridge, P.C. (White Plains) — trusts & estates boutique since 2003 with a White Plains office; little web marketing seen, so the threat is authority and referral share rather than digital.
+
+Matching dynamic sentence (Score 4–6): "A score of 5 means competitors have meaningful advantages in one or more areas and are pulling ahead. You are not invisible yet — but the window to close the gap is narrowing. Every month without action is a month they extend their lead."
+
+>>> SAVED: final research notes.
+
+================================================================================
+PASS 2 — VERIFICATION CHECKLIST
+================================================================================
+
+[x] Every number in the notes matches observed data (PageSpeed from local Lighthouse Oct 15; call figures from the full verbatim transcript; competitor figures from firms' own sites / aggregators, all tagged UNCONFIRMED)
+[x] Competitor review counts: none verified on Google — all tagged UNCONFIRMED; the prospect's own count is unknown, so no comparison is asserted
+[x] Every review count / rating carries a verification tag
+[x] Annual revenue split recorded: gross ~$360k (rep-rounded from Eileen's 6 × $5k math); net "not distinguished from gross"; owner pay ~$50k; fee structure "not stated"
+[x] Every ad section covers all practice areas (all "not observed" because Google/Meta were unreachable; prospect says no ads yet)
+[x] No section says "you are not running ads" — only "does not appear to be running" / "not observed"
+[x] No profitability or business claim except those from the transcript; rep pitch numbers excluded
+[x] Competitors are specific named local firms only
+[x] PageSpeed scores are real measured numbers (63 mobile / 88 desktop via local Lighthouse 12.8.2)
+[x] DBM recorded (exact quotes; husband-income replacement attributed to rep recap and Oct 9 summary)
+[x] Revenue goal recorded (gross goal not stated; personal target recited by rep, volume steps flagged [transcript unclear])
+[x] Close rate recorded ("shy of 100%" referral-only; 15% default for paid leads)
+[x] Average case value recorded ($5,000)
+[x] Stated call focus recorded (mixed, marketing-led: ads/GBP/reviews + AI + website; coaching deferred)
+[x] Primary engagement / Products discussed (catalog names) / Lead-gen gap stated filled in the exact format
+[x] Existing vendor engagements recorded (NLBM coaching active; NLBM ad zone offered not signed; website vendor to be dropped)
+[x] Budget constraints recorded (none explicit; price-sensitive, wants ROI and initial outlay)
+
+Open items for the writer / rep (do not state as fact):
+  - GBP status: rep says none and prospect did not dispute; not independently verified. No review count or rating may be printed.
+  - Location: Scarsdale is the firm's town; two street addresses appear in directories (2 Overhill Rd vs 62 Tunstall Rd, both Suite 400). Confirm before printing an address.
+  - Website logos: four of five broken as of Oct 15 (host does not resolve); vendor may fix it. Re-check before printing as a current defect.
+  - Competitor review numbers are UNCONFIRMED; none may be printed as specific figures.
+  - Blog freshness is unknown (no dates). Do not claim the blog is stale.
+  - Volume goals "$10,000 then $16,000" were spoken as "$..." but only make sense as matters per month; do not print as dollar goals.
+  - The Oct 21 call is a pricing call; no price has been quoted to the prospect.
