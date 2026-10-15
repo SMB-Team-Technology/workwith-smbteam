@@ -1,0 +1,63 @@
+SECTION 11 WORKINGS — Jason Breit Law (October 15, 2026) — INTERNAL, NEVER CLIENT-FACING
+
+TRANSCRIPT-STATED NEED OVERRIDE CHECK
+1. Call-purpose override: not triggered. No discovery call transcript exists; call focus unknown (package_decision.json call_focus all null).
+2. Existing-vendor override: not triggered. No vendor stated (site shows a developer-hosted landing page and SEO-style blog titles; inference only — ask Jason).
+3. Budget-reality override: not triggered. No budget statement exists.
+4. Effective-revenue override: not triggered. No gross/net figure stated; net_revenue_stated null, not a contingency practice.
+SELLER OVERRIDE (controls the package): package_decision.json reflects a seller-set package per Slack request on 2026-10-15 — Paid Ads Essentials, no coaching, ad spend $4,500-$6,000/mo. proposal_review.json status = locked. Used as-is.
+
+OVERRIDE CONFLICTS TO KNOW (intentional per seller; flag for rep and sales-ops):
+- Essentials tier normally requires a single practice area; this firm lists multiple (estate planning, elder law, probate, kids protection, special needs, asset protection).
+- Website-rebuild rule: PageSpeed mobile 43 (below 50) means a rebuild is indicated and the package "must use Full Service (not ads-only)". The seller chose ads-only anyway. Client report positions the slow mobile site as a quick win / Phase 2 (Full Service + website work) and does not promise a website deliverable inside Paid Ads Essentials.
+- Revenue is not stated. package_decision.json uses HubSpot band "$180K - $960K" -> $570,000 (effective). Team size defaulted to 3. Neither number appears in the client report.
+- No second (coaching/non-marketing) package: seller dropped Elite Coach Plus. Default is marketing + non-marketing; confirm on call.
+
+MANDATORY PRICE LOOKUP (from package_decision.json, cross-checked to Scoping_and_Ad_Spend_Guide.md Step 5D)
+- Marketing package selected: Paid Ads Essentials
+  - Bundled price: $1,997/mo
+  - Stand-alone price: N/A (none in catalog)
+  - Savings: $0 (no savings callout shown; no strikethrough price shown)
+- Non-marketing package selected: none
+- LAW package selected: none
+- AI Avatar / Video Growth add-on: none
+- Total monthly investment: $1,997/mo
+- Total savings: $0/mo
+
+35% CAP CHECK: $1,997 fee + $6,000 aggressive ad spend = $7,997/mo. 35% of $570,000/12 ($47,500) = $16,625. Within cap. Ad spend $6,000 is within the Paid Ads Essentials $7,500 cap.
+
+AD SPEND (seller-specified range; ad_spend_conservative 4500 / ad_spend_aggressive 6000)
+Practice area basis: Estate Planning. Close rate: 15% default (not stated). Case value: $1,500-$3,000 default (not stated; website fee range $2,000-$10,000 for married-couple plans is NOT treated as average). Geo tier: Long Island/Nassau-Suffolk, no spanish campaign.
+Client-facing CPL midpoints (Estate Planning): Google Search $135 ($120-$150); Meta Retargeting $52.50 ($45-$60); Meta Cold $55 ($45-$65).
+Conservative $4,500 = Google $3,500 + Meta retargeting $1,000. Blended CPL 100.06; +20% cushion = $120.07. Leads 37.5. Cases at 15% = 5.6 (show 5-6). Revenue at $1,500 = $8,433; at $3,000 = $16,865 (show ~$8,400-$16,900). Return 1.9x-3.7x.
+Aggressive $6,000 = Google $4,000 + Meta retargeting $1,000 + Meta cold $1,000. Blended CPL $89.74, no cushion. Leads 66.9. Cases at 15% = 10.0 (show ~10). Revenue at $1,500 = $15,043; at $3,000 = $30,087 (show ~$15,000-$30,100). Return 2.5x-5.0x.
+Why this range (client-facing): to put the firm in front of Nassau/Suffolk families searching for estate planning and elder law before nearby firms capture those consultations.
+
+DBM STATEMENT (Block 1): DBM not stated (no call). Report uses a neutral formulation ("grow on their own terms" / "whatever growth means for Jason personally"). Do not read it as a stated motive. Confirm real DBM on proposal call.
+
+QUICK WINS (8)
+1. Lead Gen | Fix mobile page speed before scaling ad spend | Lighthouse mobile 43, LCP 7.4s, TBT 1,020 ms | no competitor | faster page lifts ad-click conversion
+2. Lead Gen | Launch measured Google Search campaigns for estate planning and elder law | ads not observed | Ettinger Law Firm | managed campaigns + reporting
+3. Lead Gen | Build town-specific landing pages (Long-Term) | none observed for Garden City, Huntington, Massapequa | no competitor | rank for searches outside Melville
+4. Lead Gen | Build a steady Google review habit | Davidov Law Group promotes a large review base; firm count unconfirmed (no comparison made) | Davidov | simple request after each completed plan
+5. Intake | Add a short inquiry form and after-hours capture | homepage = booking button + phone only; hours M-F 9-5 | no competitor | catch inquiries outside business hours
+6. Intake | Define follow-up for consultations that do not sign (Long-Term) | follow-up process not confirmed | no competitor
+7. Team | Document roles and handoffs from consultation to signed plan (Long-Term) | firm brand built around Jason; team size unknown | no competitor
+8. Profit | Track cost per signed client by channel | unknown acquisition cost | no competitor
+
+WHAT YOU TOLD US (Block 5) — NO TRANSCRIPT, so retitled "What We Found — and How This Plan Addresses It". Sources are Section 5-9 findings, none worded as owner statements.
+Row 1: Paid search and social advertising were not observed. Source: Section 06 Google Ads + Facebook & Instagram Ads (Ad Presence) and Section 05 Lead Generation card. Supports: Paid Ads Essentials campaign management + monthly reporting.
+Row 2: Nearby Melville/Nassau competitors promote large review totals and years of experience. Source: Section 05 competitor cards; Section 06 Local SEO competitor callout. Supports: campaigns built on the firm's credentials plus retargeting.
+Row 3: Slow mobile page (43/100) and no homepage inquiry form. Source: Section 06 Website Audit; Section 07 Website Contact Forms. Supports: monthly reporting on leads and cost per lead shows where visitors drop off.
+Next-step line: kickoff call with your Onboarding team.
+
+INTERNAL ESCALATION FLAGS (never in client report)
+- Review counts unconfirmed — verify live before the call. Firm 16+ / 4.9 (from firm's related site), Davidov 250+, Ettinger 581 (platform unstated), Singer ~50: all UNCONFIRMED; none printed in the client report.
+- Ad spend below practice-area channel minimums (Estate Planning: Google $3,500 + LSA $2,000 + Meta retargeting $1,200 = $6,700) -> paid ads team review. Conservative range is $4,500 and Meta retargeting in the model is $1,000 (< $1,200 min); LSA not modeled.
+- Essentials multi-practice-area and website-rebuild conflicts above -> sales-ops/seller confirmation.
+- Revenue and team size are HubSpot band / defaults, not confirmed; confirm on call.
+- Google Search, Maps, LSA, Meta Ads Library were not observed (tooling limits). Local pack, ads, and LSA statements in the report are "not observed", not confirmed absent.
+- Mobile Lighthouse 43/89 desktop is a single local run on Oct 13, 2026; re-run before quoting if the call slips.
+- Related properties to ask about: longisland-estateplanning.com and balaakshay25.github.io/jasonbreitlaw-lp (possible duplicate content). Other attorney bio pages for different people named Jason Breit also surface.
+- Trigger contact_email (smathurin@...) belongs to the Client Services Director, not Jason.
+- Blog freshness unknown (no post dates); not claimed stale.
