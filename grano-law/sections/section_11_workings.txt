@@ -1,0 +1,141 @@
+GRANO LAW — SECTION 11 WORKINGS (INTERNAL — NEVER SHARED WITH CLIENT)
+Prepared for: Dan Bryant | Proposal call: October 23, 2026
+
+=====================================================================
+1. TRANSCRIPT-STATED NEED OVERRIDE CHECK  (performed before using package_decision.json)
+=====================================================================
+1) Call-purpose override — NOT TRIGGERED.
+   Research notes: Primary engagement = marketing; products discussed = Elite Coach, Full Service Marketing; lead-gen gap = yes ("All I'm concerned about is just opening up the spigot again."). The call was not a Fractional CTO / AI / ops engagement. Rep committed to bring two proposals (website + ads; coaching + ads).
+
+2) Existing-vendor override — EVALUATED, DELIBERATELY NOT APPLIED. *** SELLER/REP: PLEASE CONFIRM ***
+   Fact pattern: Marc currently pays Jennifer (website, SEO, blog, Local Service Ads; ~2017/2018) and ConvertIt (Google PPC). Contract terms are NOT stated in the transcript. A literal reading of the rule ("already paying another marketing/SEO/ad vendor") would exclude Full Service Marketing.
+   Why I did not exclude it: the rule's stated rationale is that a firm which "just committed to a marketing engagement does not have a marketing gap." Marc is the opposite — he says DWI leads have dried up, is "in an assessment period," is dissatisfied with vendor responsiveness, and said "I am interested in considering the ad stuff" as a "quick fix." The rep also committed on the call to two marketing-led proposals, and the seller locked this proposal in Phase 1 (proposal_review.json status = locked) against a decision file that already contains Full Service Marketing + Elite Coach Plus.
+   Risk to flag: if leadership reads the rule literally, this report's marketing package (Full Service Marketing — Starter, Block 4 ad spend, and the marketing roadmap bullets) would need to be removed and the recommendation would collapse to Elite Coach Plus alone. Re-run Pass 2 with that instruction if so.
+   Mitigations already in the report: client-facing copy does NOT name or criticize Jennifer or ConvertIt; Block 5 does not use the vendor-criticism quote; vendors are referred to generically.
+
+3) Budget-reality override — NOT TRIGGERED. No budget constraint was stated by the prospect ("Budget constraints stated: none stated"). The rep's remark that this is "a larger outlay because you're not currently budgeting for that" is a rep statement, not a prospect constraint. Note for the call: rep-reported current ad spend is ~$3,000–$3,500/mo (unconfirmed) and vendor fees are unknown, so $8,197/mo of SMB fees plus $7,500+ of ad spend is a large step up — expect price sensitivity and be ready with the conservative scenario.
+
+4) Effective-revenue override — NOT TRIGGERED (no net/take-home figure stated; fee structure not stated). Gross run-rate used: $600K–$800K, midpoint ~$700K. The 2025 figure ($2.8M, one large PI settlement) is an anomaly and was NOT used.
+
+=====================================================================
+2. DECISION-FILE CROSS-CHECK  (package_decision.json confidence = "low")
+=====================================================================
+Corrections made against the research notes (transcript data wins):
+ - Revenue: decision file used $570,000 (HubSpot band "$180K–$960K"). Notes state $600K–$800K typical run-rate -> $700,000 used. Tier outcome is unchanged (Starter; Elite Coach Plus).
+ - Team size: decision file defaulted to 3. Notes: 5 (owner + 2 support + 2 contract attorneys). Master's Circle remains excluded because revenue is under $1M and there is no dedicated ops/marketing/intake team member.
+ - Aggressive ad spend: decision file shows $20,000. CORRECTED to $12,000 — see section 5 (35% cap breach).
+ - Coaching: call discussed "Elite Coach"; the rule table gives Elite Coach Plus at $400K–$1M. Elite Coach Plus ($3,200 bundled) kept per table — CONFIRM WITH SALES REP.
+ - is_contingency_practice = true in decision file; fee structure was not stated on the call. No net/gross adjustment applied.
+
+=====================================================================
+3. MANDATORY PRICE LOOKUP (values read from the pricing tables / decision file)
+=====================================================================
+- Marketing package selected: Full Service Marketing — Starter
+  - Bundled price (from table): $4,997/mo
+  - Stand-alone price (from table): $5,697/mo
+  - Savings: $700/mo
+- Non-marketing package selected: Elite Coach Plus
+  - Bundled price (from table): $3,200/mo
+  - Stand-alone price (from table): $3,497/mo
+  - Savings: $297/mo
+- Legal AI Workforce (LAW) package selected: none
+- AI Avatar / Video Growth add-on selected: none
+- Total monthly investment (bundled): $4,997 + $3,200 = $8,197/mo
+- Total savings: $700 + $297 = $997/mo
+- (Retail total: $5,697 + $3,497 = $9,194/mo)
+
+=====================================================================
+4. ELIGIBILITY CHECKS
+=====================================================================
+- Practice areas: criminal defense (DWI) + personal injury -> PI present, so Essentials hidden; Starter is the minimum. Multiple practice areas also rules out Essentials.
+- Revenue ~$700K: not under $500K (FCOO/FCFO allowed); not over $750K (Essentials irrelevant); under $1M (Master's Circle and bundles hidden); under $2M (Dominate/Platinum hidden).
+- Minimum MRR $2,497: satisfied.
+- 35% cap: monthly revenue ~$58,333 x 35% = ~$20,417. SMB management fees $8,197 leave a maximum of ~$12,220 for ad spend.
+- Website rebuild: NOT needed (PageSpeed mobile 80, modern responsive design, practice-area pages and bios present).
+
+=====================================================================
+5. AD SPEND — CONSERVATIVE AND AGGRESSIVE
+=====================================================================
+Scope: criminal defense / DWI (Google PPC + LSA), Santa Fe and Rio Rancho focus per Marc. Personal injury ads are NOT included in the range. If PI ads are added later, the PI hard floor ($5,500 low / $7,500 medium / $10,000 high competitiveness) applies on top and would breach the 35% cap — would need a tier/budget conversation.
+
+Conservative = channel minimums, Criminal Defense: Google PPC $5,500 + LSA $2,000 = $7,500/mo (above $3,000 absolute minimum; above Criminal Defense + High floor of $5,000).
+
+Aggressive:
+ - 20% rule: no revenue goal stated -> default 2x current revenue = $1.4M. $1.4M x 20% / 12 = $23,333. Geo tier 4 (1.0x; Santa Fe / Rio Rancho / Las Vegas NM). No Spanish campaign. Less management fee $4,997 = $18,336.
+ - Reverse math is higher still (~$29K), driven by the default goal.
+ - 35% cap binds: $20,417 - $8,197 = $12,220 max. Aggressive set at $12,000/mo. Total SMB spend at aggressive = $8,197 + $12,000 = $20,197 = ~34.6% of monthly revenue.
+ - The decision file's $20,000 would make total spend $28,197 (~48% of monthly revenue) — a cap violation even at the decision file's own $570K revenue ($16,625 cap).
+ - The 2x-revenue default also conflicts with the prospect's stated goals: "I'm not concerned about ... building a six or seven or $10 million business." The report does not frame the goal as scaling.
+ - Starter FSM ad cap is $25,000 — not a constraint.
+Final range: $7,500–$12,000/mo.
+
+=====================================================================
+6. ROI PROJECTIONS (ESTIMATES)
+=====================================================================
+Inputs: close rate 15% (not stated, default). Average case value: NOT STATED — practice-area default for Criminal Defense $3,000–$5,000 used (midpoint $4,000 for point estimates); DISCLOSED as default. Client-facing CPL, Criminal Defense: Google Search $155–$205 (mid $180); LSA $140–$180 (mid $160).
+Channel split (both scenarios): ~73% Google PPC / ~27% LSA (matches the $5,500 / $2,000 minimums). Blended CPL = $174.67.
+
+Conservative — $7,500/mo (PPC $5,500 + LSA $2,000), +20% cushion: blended CPL $209.60
+ - Leads: 7,500 / 209.60 = ~35.8
+ - Cases: 35.8 x 15% = ~5.4 -> "~5 cases"
+ - Revenue: $16,100 (at $3,000) – $26,800 (at $5,000); midpoint ~$21,500
+ - Return: ~2.1x – 3.6x; midpoint ~2.9x
+
+Aggressive — $12,000/mo (PPC ~$8,800 + LSA ~$3,200), no cushion: blended CPL $174.67
+ - Leads: 12,000 / 174.67 = ~68.7
+ - Cases: 68.7 x 15% = ~10.3 -> "~10 cases"
+ - Revenue: $30,900 – $51,500; midpoint ~$41,200
+ - Return: ~2.6x – 4.3x; midpoint ~3.4x
+
+Capacity note: ~10 cases/month in the aggressive scenario may exceed what a boutique at 60–70% capacity (35–50 active matters) wants. Client-facing disclaimer says to start conservative and scale only as capacity allows. Coach the rep to lead with the conservative number.
+
+"Why this range" sentence (client-facing, in Block 4): "To put your DWI practice in front of high-intent searches in Santa Fe and Rio Rancho — the markets you said have the most business — at a pace that keeps your caseload where you want it."
+
+=====================================================================
+7. DBM STATEMENT (Block 1)
+=====================================================================
+Owner's own words: "I just want it to be a consistent stream with quality cases." / "All I'm concerned about is just opening up the spigot again." / capacity "in the 60, 70% range ... we flex, but we don't break." Family driver (internal only): "I don't want to miss out in her life."
+DBM category: (1) a firm that runs steadily without burning him out — not grow-and-sell, not scale-and-dominate.
+Block 1: "We help boutique DWI and criminal defense attorneys get a consistent flow of quality cases so they can keep the firm they built — steady, in control and never at the cost of the time that matters most."
+
+=====================================================================
+8. QUICK WIN OPPORTUNITIES IDENTIFIED (7 used in report)
+=====================================================================
+1. Lead Gen — Extend Local Service Ads past 5 p.m. and switch on message leads with a response process. Why: ads dark after 5 p.m.; message leads off (Marc: "double-edged sword"). Competitor: Adam Oakey is the only other LSA advertiser seen in Las Vegas NM (no named-competitor "doing it better" row — his hours were not observed). Opportunity: capture evening DWI searchers in a thin field. Quick win.
+2. Lead Gen — Complete the Google Business Profile and connect the PPC campaign to it. Why: wrong cover photo, limited categories, 9–5 hours vs. website 8–5 / 24-7 line, messages off, no location extension on the PPC ad. No named competitor row. Quick win.
+3. Lead Gen — Add city + "lawyer/attorney" wording to homepage and Santa Fe / Rio Rancho DWI page titles and headlines. Competitor: Eloy I. Trujillo (Santa Fe) — title + H1 pairing (rep's code view). Quick win.
+4. Intake — Call and lead tracking from first contact to signed case, with a response routine. Why: no visibility into inquiries/answer speed/signed cases. Quick win.
+5. Team — Weekly 15-minute lead-flow review with an internal owner. Why: no one owns marketing results; accounts not reviewed regularly. Long-term play.
+6. Profit — Track cost per signed case by channel. Why: slow stretch not diagnosable without it. Quick win.
+7. Lead Gen — Dedicated Santa Fe and Rio Rancho DWI landing pages and geo-targeted campaigns. Competitor: Clark & Ruyle (Santa Fe) — dedicated Santa Fe DUI/DWI page in organic results. Long-term play.
+
+=====================================================================
+9. WHAT YOU TOLD US (Block 5) — SOURCE LINES
+=====================================================================
+Row 1 (supports Full Service Marketing — Starter): "You want a consistent stream of quality cases."
+   Transcript line (00:28:03): "I just want it to be a consistent stream with quality cases."
+   Supports: Block 2 Full Service Marketing — Starter (LSA/PPC management, DWI-focused).
+Row 2 (supports Full Service Marketing — Starter): "If you run sponsored content, you want it in Rio Rancho and Santa Fe."
+   Transcript line (00:51:00): "if I'm going to do sponsored content, I want to be like in Rio Rancho or Santa Fe because that has a lot more business."
+   Supports: Block 2 Full Service Marketing — Starter (geo-focused campaigns and pages).
+Row 3 (supports Elite Coach Plus): "You keep the firm at 60–70% capacity so it can flex for a trial."
+   Transcript line (00:28:40): "my goal is always to be kind of like in the 60, 70% range. That way, there's margin for when we do have a trial, we can ramp up and it does, we flex, but we don't break."
+   Supports: Block 2 Elite Coach Plus (capacity and operating-rhythm coaching).
+Excluded from Block 5: vendor-criticism quote (00:23:14), family quote (00:13:52), succession (son in law school), faith/background, financial specifics beyond revenue.
+Next-step line: kickoff call with your Onboarding team.
+
+=====================================================================
+10. ESCALATION FLAGS (INTERNAL ONLY)
+=====================================================================
+- Review counts unconfirmed — verify live before the call. No firm or competitor review count or rating is printed in the client report; only qualitative framing is used (all counts in the notes are tagged UNCONFIRMED).
+- Local 3-pack, Meta ad library and competitor ad activity were NOT independently observed by Pass 1; client report phrases them as "not confirmed" / rep screen-share observations. Rep screen-share used a location-spoofing tool.
+- Existing-vendor override judgment call (section 1, item 2) — needs seller/leadership confirmation.
+- Aggressive ad spend corrected from $20,000 to $12,000 because of the 35% cap (section 5).
+- Revenue is under $1M and fee structure unknown (contingency flag set in decision file) — confirm net vs. gross before the call.
+- Ad spend: conservative $7,500 / aggressive $12,000 — both under the $25,000 scoping-approval threshold. Marketing MRR $4,997 — under the $10K threshold.
+- Criminal Defense / PI metro approvals: Las Vegas NM, Santa Fe and Rio Rancho are not top-10 / top-40 metros; no approval flag.
+- Roadmap Phase 3 mentions Legal AI Workforce (AI Workforce Pro) — confirm LAW delivery has launched and has capacity before presenting it.
+- Roadmap Phase 3 mentions Bookkeeping — setup fee is non-waivable; AR/AP/Payroll add-on not mentioned (would require custom scoping).
+- Prospect said coaching "may not be a bad idea ... How much does that cost?" — interest, not commitment; his strongest interest is ads as a "quick fix."
+- Prospect is in an "assessment period"; rep told him vendors need not be fired and offered an audit if he is "really loyal" to his current vendor. Expect a "keep my vendors" counter-offer.
+- Personal injury ads not in the ad range; confirm with Marc whether PI is in scope for paid media.
