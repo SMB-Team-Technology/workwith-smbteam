@@ -1,0 +1,86 @@
+SECTION 11 WORKINGS — The Law Offices of Robert Bergman (October 16, 2026)
+INTERNAL ONLY — never appears in the client report.
+
+=====================================================================
+PACKAGE DECISION AND OVERRIDE CHECK
+=====================================================================
+package_decision.json: confidence "low", needs_seller_input false (no such flag set), revenue_source "hubspot_annual_law_firm_revenue" ("$180K - $960K" -> $570,000 midpoint-style estimate; NOT stated by the prospect). Team size defaulted to 3 (not stated).
+Selected: Fractional CTO Level 1 + AI Workforce Pro – Starter (1 seat). marketing_tier = null, coaching = null (seller override via Slack 2026-10-13: AI-focused call; prior client interested in FCTO and AIWP).
+
+Transcript-Stated Need Override check (no discovery call transcript exists — research notes state "No Fathom transcript available"):
+1. Call-purpose override: NOT verifiable from a transcript. Applied via the seller's Slack instruction that the call is AI-focused. Report leads with Legal AI Workforce (LAW); no marketing or coaching package recommended. The revenue-table default (Full Service Marketing Starter + Elite Coach Plus) was NOT used.
+2. Existing-vendor override: not triggered on evidence, but unknown. Notes flag the ~daily city-targeted blog as a possible vendor/automation program (inference only) — ask Robert. Irrelevant to the LAW recommendation since no marketing is sold.
+3. Budget-reality override: not triggered (no budget stated).
+4. Effective-revenue override: not triggered (no net figure; fee structure not stated).
+
+=====================================================================
+MANDATORY PRICE LOOKUP (confirmed against tables)
+=====================================================================
+- Marketing package selected: none
+  - Bundled: n/a | Stand-alone: n/a | Savings: n/a
+- Non-marketing package selected: none
+  - Bundled: n/a | Stand-alone: n/a | Savings: n/a
+- Legal AI Workforce (LAW) package selected: Fractional CTO Level 1 + AI Workforce Pro – Starter (1 user)
+  - Fractional CTO Level 1: bundled $3,297/mo | stand-alone $3,797/mo | savings $500/mo | setup fee $0
+  - AI Workforce Pro – Starter: $350/user/mo x 1 user = $350/mo | NO stand-alone price (do not quote one) | savings $0 | month-to-month, 1M AI credits per user
+  - Combined: bundled $3,647/mo (matches package_decision.json law_price_bundled)
+  - Note: package_decision.json law_price_retail ($3,797) is the FCTO L1 stand-alone only; AIWP has no stand-alone, so total savings = $500 (matches total_savings).
+- AI Avatar / Video Growth add-on: none
+- Total monthly investment: $3,647/mo
+- Total savings: $500/mo
+- Optional one-time (NOT included in totals, NOT in client report): Law Firm AI Foundation Sprint packaged with FCTO Level 1 = $8,403.
+
+35% cap check: $3,647/mo vs ~$47,500/mo revenue (HubSpot estimate $570K/yr) = ~7.7%. Passes. If revenue is at the bottom of the HubSpot band ($180K/yr = $15,000/mo), 3,647/15,000 = ~24%. Still under 35%.
+Minimum MRR $2,497: satisfied.
+
+=====================================================================
+ELIGIBILITY WARNINGS — CONFIRM BEFORE THE PROPOSAL CALL
+=====================================================================
+- Fractional CTO Level 1 requires $400K+ annual revenue. Revenue is UNKNOWN: HubSpot range is $180K–$960K. If actual revenue is under $400K, FCTO L1 is not eligible and the fallback is AI Workforce Pro – Starter alone ($350/user/mo).
+- LAW "Do NOT recommend if solo with no support staff (minimum 1–2 staff needed to engage with implementation)". Team size is UNKNOWN; website names no staff. Confirm Robert has at least 1–2 staff who can engage with implementation, and confirm openness to staff training / technology adoption. AIWP seat count (1) is inferred, not stated.
+- Revenue under $250K would trigger a 4-month funds check ($14,588 at $3,647/mo); under $300K triggers scoping approval.
+- LAW package: confirm with the sales rep that LAW delivery has launched and capacity is available before sending the proposal.
+
+=====================================================================
+AD SPEND / ROI (Block 4)
+=====================================================================
+No marketing/ads package is part of the recommendation -> Block 4 (Recommended Monthly Ad Spend) DELETED from section_11 and from the executive summary. Conservative/aggressive projections and why-this-range sentence: not applicable.
+
+=====================================================================
+DBM STATEMENT (Block 1)
+=====================================================================
+Dominant buying motive NOT STATED (no call). Category 1 INFERRED for framing only (time spent on the work only he can do / a practice that does not depend on his hours for repeatable tasks). The client report does not attribute a motive to Robert in his own words. Confirm on the call and revise the proposal language if different.
+Block 1: "We help established solo estate planning attorneys get AI tools and a technology leader that take repeatable work off their desk so they can spend their time on the clients and legal work only they can do."
+
+=====================================================================
+QUICK WIN OPPORTUNITIES IDENTIFIED (7)
+=====================================================================
+1. Lead Gen | Fix mobile site speed (PageSpeed mobile 34 / desktop 84; LCP 11.6 s, TBT 1,180 ms; local Lighthouse 12.8.2, single run) | slow mobile load loses phone visitors from daily blog traffic | competitor: none named | quick win
+2. Intake | Add a short contact form / low-commitment inquiry option next to the single "Schedule a Free Consultation" button | only one CTA observed | competitor: none | quick win
+3. Lead Gen | Verify the Google profile and build a steady review-request habit (counts NOT printed — UNCONFIRMED) | competitor: Law Offices of Cheri E. Michaelis (large review presence on public directories, qualitative only) | quick win
+4. Profit | Track where every inquiry comes from and what it costs | lead sources, fees, revenue all not stated | competitor: none | quick win
+5. Team | Document repeatable work and move it to AI skills/automations | site stresses attorney drafts personally; no staff named | competitor: none | long-term
+6. Intake | Follow-up sequence for inquiries that don't book right away | follow-up process not yet known | competitor: none | long-term
+7. Lead Gen | Dedicated pages/campaigns for trust administration, Heggstad petitions, special needs planning | competitor: Cross Estate Planning Law (full estate/trust/probate offering, serves San Jose) — NOT cited on card (generic) | long-term
+
+=====================================================================
+WHAT WE FOUND — and how the plan addresses it (Block 5) — NO TRANSCRIPT FALLBACK
+=====================================================================
+Block retitled "What We Found — and How This Plan Addresses It". Rows are Section 5–9 findings, never worded as owner statements.
+Row 1: "Much of the practice runs through one person." -> Source: Section 8 (Team Assessment) / Section 3 (stage assessment). Supports Block 2: Fractional CTO L1 monthly sessions + up to 2 skills deployed per month; AIWP Starter for the first seat.
+Row 2: "Inquiry handling and follow-up appear to rely on a single scheduling button and manual effort." -> Source: Section 7 (Intake) and Website Contact Forms findings. Supports Block 2: up to 1 custom automation per month under the Fractional CTO.
+Row 3: "There is limited visibility into where time and marketing effort go." -> Source: Section 9 (Profit Plan) findings. Supports Block 2: automation report on skills and automations + monthly fCTO session.
+Next step: kickoff call with your Fractional CTO. No dates.
+
+=====================================================================
+ESCALATION FLAGS (internal)
+=====================================================================
+- Review counts unconfirmed — verify live before the call. (Firm GBP 4.8 / 32 reviews from the firm's own testimonials page; directory snippet 4.9 / 28; competitor figures mostly Yelp snippets — Michaelis ~101, Tree of Life ~85, Cross ~46. NONE printed in the client report; no firm-vs-competitor review comparison made.)
+- Revenue unknown (HubSpot $180K–$960K): confirm before quoting FCTO L1 ($400K+ requirement). Revenue under $300K -> scoping approval; under $250K -> 4-month funds check.
+- LAW: confirm with sales rep that LAW delivery has launched and capacity is available; confirm Robert has 1–2 support staff and is open to staff training/technology adoption; confirm AIWP seat count.
+- No discovery call transcript: DBM, goals, team size, lead sources, fees, close rate, budget all unknown. Report contains no quotes. Jacob to collect on the 10/16 4:00 PM EDT call.
+- Google Search/Maps, Meta Ads Library, LSA, and local 3-pack results were NOT observed (tooling limits). Report frames all ad/LSA/map-pack items as "not observed", never "not running".
+- Mobile PageSpeed 34 is a single local Lighthouse run from Oct 13 — re-run before the call.
+- Trigger phone/email (4084605032, rpb@lawbob.com) differ from site NAP ((408) 247-0444, info@lawbob.com).
+- Blog cadence (~1 post/day) suggests an automated or vendor-run content program — ask who runs it (possible existing vendor).
+- Not recommended / not priced: Full Service Marketing, coaching, FCOO/FCFO, bookkeeping, AI Avatar, OmniSocial, Attorney Assistant.

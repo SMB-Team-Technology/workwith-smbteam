@@ -37,28 +37,25 @@
     ],
     "lead_gen_gap": true
   },
-  "marketing_tier": "Starter",
-  "marketing_name": "Full Service Marketing — Starter",
-  "marketing_price_bundled": 4997,
-  "marketing_price_retail": 5697,
-  "marketing_savings": 700,
-  "coaching_name": "Elite Coach",
-  "coaching_price_bundled": 2600,
-  "coaching_price_retail": 3497,
-  "coaching_savings": 897,
+  "marketing_tier": null,
+  "marketing_name": null,
+  "marketing_price_bundled": null,
+  "marketing_price_retail": null,
+  "marketing_savings": null,
+  "coaching_name": "Coach Essentials Plus",
+  "coaching_price_bundled": 2497,
+  "coaching_price_retail": 2497,
+  "coaching_savings": 0,
   "law_tier": "AI Workforce Pro – Starter",
   "law_name": "AI Workforce Pro – Starter",
   "law_price_bundled": 350,
   "law_price_retail": null,
   "law_seats": 1,
-  "total_bundled": 7947,
-  "total_savings": 1597,
-  "ad_spend_conservative": 3500,
-  "ad_spend_aggressive": 14000,
-  "ad_spend_rationale": {
-    "conservative_basis": "business law / outside general counsel / contracts",
-    "aggressive_basis": "scaled 4x off the conservative channel-minimum floor"
-  },
+  "total_bundled": 2847,
+  "total_savings": 0,
+  "ad_spend_conservative": null,
+  "ad_spend_aggressive": null,
+  "ad_spend_rationale": null,
   "selection_notes": [
     "AI-led call, but prospect stated a lead-gen need — marketing included.",
     "More than one AI product discussed on call (AI Workforce Pro – Starter, Fractional CTO Level 1) — using AI Workforce Pro – Starter; confirm with sales rep.",
@@ -67,6 +64,9 @@
     "Team size not stated in research notes — defaulting to 3. Review for coaching tier accuracy.",
     "Revenue under $750K but multiple practice areas detected: Essentials hidden (requires single practice area) — Starter tier.",
     "Revenue under $250K: Elite Coach selected, scoping approval required.",
-    "Total at conservative ad spend ($11,447/mo) is over the 35% cap ($5,250/mo on $180,000 revenue) — review with sales rep."
+    "Total at conservative ad spend ($11,447/mo) is over the 35% cap ($5,250/mo on $180,000 revenue) — review with sales rep.",
+    "Seller override: replaced package with Coach Essentials Plus at its standalone price ($2,497/mo) + AI Workforce Pro – Starter (1 seat, $350/mo) per Slack request on 2026-10-16. Marketing and ad spend removed.",
+    "Seller asked for AI Workforce Pro at standalone price, but the catalog has no standalone price for AI Workforce Pro — the $350/user/mo Starter rate is the only price and is not quoted as a discount. Starter chosen (team size 3, under 5 users); 1 seat assumed — confirm seat count/tier with sales rep.",
+    "Coach Essentials Plus is normally in the $250K–$400K band; revenue is $180K (under $250K) — scoping approval required."
   ]
 }

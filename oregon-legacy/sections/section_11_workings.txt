@@ -1,0 +1,152 @@
+SECTION 11 WORKINGS — OREGON LEGACY (INTERNAL — NOT CLIENT-FACING)
+Date: October 16, 2026 | Sales Rep: Jacob Meissner
+
+=====================================================================
+PACKAGE DECISION SOURCE AND OVERRIDE CHECK
+=====================================================================
+Source: oregon-legacy/package_decision.json (confidence "high"; needs_seller_input not set).
+Seller override is recorded in the file: Full Service Marketing — Starter was dropped per
+a Slack request on September 30, 2026; recommendation is Elite Coach alone at the flat
+stand-alone price of $3,497/mo (no bundled discount because nothing is being bundled).
+proposal_review.json status: locked.
+
+Transcript-Stated Need Override check (research notes STEP 9 + CALL-FOCUS FLAG):
+1. Call-purpose override — APPLIES. The discovery call was an operations/coaching
+   conversation (Fractional Business Officer, Coaching, SOP Builder AI tool; "build the
+   foundation first"), not marketing/lead-gen. Recommendation leads with coaching; no
+   marketing package. Matches package_decision.json (marketing_tier = null).
+2. Existing-vendor override — does not apply (no existing marketing/SEO/ad vendor stated).
+3. Budget-reality override — does not apply (no budget constraints stated). Elite Coach is
+   the table default for the $250K-$400K band; Coach Essentials / Essentials Plus not used.
+4. Effective-revenue override — does not apply (net_revenue_stated null; not a contingency
+   practice; revenue $260,000 stated directly).
+
+Why not the other products discussed/available:
+- Fractional Business Officer (FCOO) was discussed on the call, but all FCOO and FCFO
+  products are hidden under $500K revenue (stated revenue $260K). Not recommended now; it
+  appears only as a future Phase 2/3 milestone in the roadmap.
+- SOP Builder AI tool: no LAW tier selected in package_decision.json (law_tier null). Not
+  priced or promised in the client report. SELLER NOTE: if Jacob wants to add AI Workforce
+  Pro - Starter ($350/user/mo, 1-4 users) for the SOP Builder skill, confirm LAW delivery
+  has launched first (escalation flag) and re-run the decision.
+- Attorney Assistant: mentioned on the call only as a possible short-term stopgap referral
+  to a third-party vendor, not an SMB Team service. Not included. (Attorney Assistant fit,
+  if desired, must be confirmed with sales rep.)
+
+=====================================================================
+MANDATORY PRICE LOOKUP (copied from package_decision.json, cross-checked against the
+tables in audit-write.md)
+=====================================================================
+- Marketing package selected: none
+  - Bundled price: n/a | Stand-alone price: n/a | Savings: $0
+- Non-marketing package selected: Elite Coach
+  - Bundled price (from table): $3,497/mo (flat stand-alone price used — no bundle partner;
+    the $2,600/mo bundled price in the table applies only when bundled with another package)
+  - Stand-alone price (from table): $3,497/mo
+  - Savings (stand-alone minus bundled): $0/mo
+- Legal AI Workforce (LAW) package selected: none
+- AI Avatar / Video Growth add-on selected: none
+- Total monthly investment (sum of bundled/recurring prices): $3,497/mo
+- Total savings: $0/mo (no savings callout shown in the client report)
+
+35% cap check: $3,497 x 12 = $41,964 per year = 16.1% of $260,000 annual revenue. Under the
+35% cap. Above the $2,497 minimum MRR.
+
+=====================================================================
+AD SPEND / ROI
+=====================================================================
+Not applicable. No marketing/ads package is part of the recommendation, so Block 4
+(Recommended Ad Spend) is omitted from section 11 and from the Executive Summary.
+(package_decision.json lists ad_spend_conservative $3,500 / ad_spend_aggressive $14,000 as
+a leftover of the pre-override Starter bundle; they are intentionally NOT used.)
+
+=====================================================================
+DBM STATEMENT (Block 1)
+=====================================================================
+Inferred (not a direct quote) per research notes: a self-managing firm that runs without Lin
+being the single point of failure, giving her relief from owning every task and more time.
+Secondary, longer-term: team of 3-4 attorneys, expanded office, take-home income above
+$200K/yr (3-6 year goal, NOT a near-term revenue goal).
+Block 1: "We help solo estate planning and elder law attorneys get the systems, intake
+process, and team foundation of a predictable firm so they can stop being the single point
+of failure and run a firm that works without them."
+
+=====================================================================
+QUICK WIN OPPORTUNITIES (7)
+=====================================================================
+1. Lead Gen | Quick Win | Dedicated pages for each practice area (estate planning,
+   elder law, Medicaid planning, probate, guardianship) | Why: site has only Home and
+   Contact Us; five services share one homepage | Competitor: Two Spruce Law |
+   Opportunity: give Google and prospects one page per service
+2. Intake | Quick Win | Missed-call capture and same-day callback standard | Why: about a
+   dozen calls/month missed; virtual receptionist -> paralegal callback hand-off | No
+   competitor | Opportunity: written call-handling standard
+3. Team | Quick Win | SOP library and template automation | Why: ~1 hour/day editing Word
+   templates | No competitor | Opportunity: stop rebuilding documents by hand
+4. Profit | Quick Win | Monthly KPI and billing dashboard | Why: KPIs and billing are
+   12-month goals; no financial reporting described | No competitor | Opportunity: see
+   what the firm keeps
+5. Lead Gen | Long-Term Play | Review generation program | Why: very small review base vs.
+   deep competitor review bases | Competitor: Two Spruce Law (qualitative only) |
+   Opportunity: trust-building for local search and Local Service Ads
+6. Team | Long-Term Play | Hiring blueprint to use before the first hire | Why: Lin is
+   cautious about hiring; wants systems first | No competitor | Opportunity: onboard from
+   written roles and SOPs
+7. Lead Gen | Long-Term Play | Local search and directory coverage (Justia, FindLaw gaps,
+   city pages) | Why: firm name didn't surface in 9 Bend searches | Competitor: Bryant,
+   Lovlien & Jarvis | Opportunity: be found in Bend and Redmond/Sisters/Prineville/La Pine
+
+=====================================================================
+WHAT YOU TOLD US (Block 5) — SOURCES
+=====================================================================
+NOTE: The transcript is a Fathom AI summary of the discovery call (machine custody), not a
+verbatim transcript. Source lines below are the research-notes STEP 9 extraction of that
+summary; rows are paraphrased in the owner's framing and no quote boxes are used anywhere.
+
+Row 1: "Missing a dozen calls a month and an inefficient paralegal callback process."
+  Source: Research notes STEP 9 DBM paragraph ("missing a dozen calls/month") and CALL-FOCUS
+  FLAG (intake/missed-call pain a major theme); STEP 9 team size line ("a paralegal who
+  handles callbacks + an outsourced virtual receptionist service").
+  Supports: Elite Coach (weekly group coaching + practice area masterminds — a proven
+  intake and follow-up playbook to build from).
+Row 2: "About an hour a day editing Word templates."
+  Source: Research notes STEP 9 DBM paragraph ("wasting ~1 hour/day on template editing")
+  and website observation ("1 hour/day editing Word templates").
+  Supports: Elite Coach (coaching on building SOPs/systems and delegating low-value work).
+Row 3: "Build the systems, SOPs, and KPIs before hiring."
+  Source: Research notes STEP 9 "Stated call focus" ("build the foundation first,"
+  systems before hiring) and "Revenue goal" (12-month goal is systems/SOPs/KPIs/intake/
+  billing; 3-6 year goal of a self-managing team).
+  Supports: Elite Coach (growth and hiring strategy coaching, quarterly workshops).
+  Generalized per "Never include" rules: the prior-staff experiences are described only as
+  "cautious about hiring," no individual or specifics.
+
+Never-include check: no named employees, no personal/health/family matters, no partner
+disputes, no financial-distress figures. The ~$396K/year "loss" figure from the Fathom
+summary is deliberately NOT used anywhere in the client report (unverified, presented as
+an estimate in the summary, and a financial-distress-type figure).
+
+=====================================================================
+ESCALATION FLAGS (INTERNAL ONLY)
+=====================================================================
+- Revenue under $300K ($260K stated) -> scoping approval required.
+- Review counts unconfirmed — verify live before the call. All firm and competitor review
+  counts/ratings in the research notes are tagged UNCONFIRMED (aggregator-sourced, not
+  Google). The client report uses qualitative framing only; no review counts or star
+  ratings are printed.
+- PageSpeed mobile and desktop scores were NOT obtained (PageSpeed Insights API HTTP 429
+  daily quota; UI not rendered). The Website Audit section therefore contains no score
+  bullet. Re-run and add if a real score is wanted in the client report.
+- Google/LSA/Meta ad presence for the firm and competitors could not be observed with
+  available tools; client report uses "not observed / does not appear to be running"
+  language only.
+- Local 3-pack results are an organic-search proxy, not a rendered map pack; report states
+  this explicitly.
+- Public Yelp/aggregator reviews contain specific negative comments (missed deadlines,
+  unreturned calls, long wait after retainer). Report mentions only a qualitative
+  "difficulty getting calls and emails returned" reference. Be ready to address this
+  reputational risk on the call; do not quote reviews in client materials.
+- Transcript is an AI summary (not verbatim); DBM is inferred and not a direct quote.
+- Hurley Re Law Group note: the "bendattorneys" Facebook handle belongs to Hurley Re Law
+  Group, not Paul Heatherman's bendattorneys.com site.
+- Seller override applied (see top of this file): marketing package intentionally dropped.
