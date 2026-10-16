@@ -1,0 +1,126 @@
+SECTION 11 WORKINGS — Boeshaar Law (October 16, 2026)
+INTERNAL ONLY — never shared with the client.
+
+======================================================================
+PACKAGE DECISION SOURCE AND OVERRIDE CHECK
+======================================================================
+Source: boeshaar-law/package_decision.json (confidence: high; seller override recorded 2026-10-14 via Slack:
+"make this fcoo advisor + 3 seats of Ai workforce pro", clarified as intended for Bob Boeshaar; marked "Seller to confirm").
+
+Transcript-Stated Need Override check:
+1. Call-purpose override — APPLIES. The call was an AI Workforce Pro engagement (Bob 00:01:37: "this really caught my eye because
+   I'm really trying to use AI to really increase my productivity"), not a standard marketing engagement. Recommendation leads with
+   the AI category (Package One = AI Workforce Pro – Starter), then operations (FCOO Advisor). No marketing package is recommended.
+2. Existing-vendor override — APPLIES. Bob is ~5 months into an ~18-month CRISP engagement (00:07:12–00:07:47; term "I think it's 18 months").
+   Full Service Marketing (all tiers and sub-packages) excluded. Rep also said marketing "can be down the line to bring in that new hire"
+   (00:19:02). The decision file already reflects this (marketing_tier null).
+3. Budget-reality override — does not apply. No budget limit stated; pricing not discussed on the call. Debts/cash crunches noted
+   (00:47:46–00:47:52) but not a stated spending limit. Total recommendation is well under the 35% cap (see below).
+4. Effective-revenue override — does not apply. Net revenue not distinguished from gross; is_contingency_practice = false.
+   Tiered on ~$500,000 stated (00:01:30).
+
+Decision-file selection is consistent with the overrides, so it is used as-is. Departure from revenue-implied package
+(Full Service Marketing — Starter + Elite Coach Plus) is intentional: seller override + call-purpose + existing-vendor overrides.
+
+======================================================================
+MANDATORY PRICE LOOKUP (character-checked against package_decision.json and the tables in audit-write.md)
+======================================================================
+- Marketing package selected: none
+  - Bundled price: n/a
+  - Stand-alone price: n/a
+  - Savings: n/a
+- Non-marketing package selected: FCOO Advisor
+  - Bundled price (from table): $3,297/mo
+  - Stand-alone price (from table): $3,797/mo
+  - Savings (stand-alone minus bundled): $500/mo
+- Legal AI Workforce (LAW) package selected: AI Workforce Pro – Starter, 3 seats
+  - Bundled price (from table): $350/user/mo x 3 seats = $1,050/mo
+  - Stand-alone price (from table): none — no standalone price exists for AI Workforce Pro; none quoted in client report
+  - Savings: $0 (no standalone comparison)
+- AI Avatar / Video Growth add-on selected: none
+- Total monthly investment (sum of bundled/recurring prices): $4,347/mo   ($3,297 + $1,050)
+- Total savings (sum of all savings): $500/mo
+
+35% cap check: $500,000 / 12 = $41,667 monthly revenue; 35% = $14,583. Total SMB spend $4,347/mo (10.4%). Within cap.
+Eligibility: FCOO requires revenue not under $500K — Bob is at ~$500K ("on track for about $500,000"), exactly at the floor.
+Rep's 2024 notes referenced ~$470K (00:17:52, Bob: "Maybe") — confirm current-year revenue with the rep before the proposal call.
+Minimum MRR $2,497 met. AI Workforce Pro – Starter is within the 1–4 user range (3 seats); month-to-month, 1M AI credits per user,
+overages $150/mo, weekly AI Implementation Session.
+
+======================================================================
+AD SPEND / ROI
+======================================================================
+Not applicable — no marketing/ads package is part of the recommendation. Block 4 (Recommended Monthly Ad Spend) deleted from
+section_11_next_steps.html; AD_SPEND line omitted from the executive summary. Conservative/aggressive projections and the
+"why this range" sentence were intentionally not produced.
+Note: average case value not stated on the call (Bob 00:23:14: "I don't take cases under 50,000" is ambiguous — tax liability vs. fee).
+Would be a default-assumption item if marketing is proposed later.
+
+======================================================================
+BLOCK 1 DBM STATEMENT
+======================================================================
+"We help established solo tax-resolution attorneys get an operations leader and an AI workforce that take email, follow-up, and
+routine work off their desk so they can step back from the day-to-day and spend more time with their family."
+DBM source: Bob 00:47:19 ("...I can take like a week off and everything runs fine and they don't need me."), 00:47:34 (get to 30 days),
+00:49:24 ("more time for my family, less stress. I'm able to do some volunteer work."), 00:04:00 (~10-hour workweek).
+
+======================================================================
+QUICK WIN OPPORTUNITIES (8)
+======================================================================
+1. Pillar: Lead Gen — Match Google Business Profile hours to the answering service (quick win)
+   Why: GBP shows 8:30–5:00 weekdays, closed weekends (rep read live, 00:25:03) while the firm has an answering service seven days a week
+   (Bob 00:24:52–00:25:01). Competitor: Falcon Tax (closes 7:30, rep 00:26:13); other competitors show later/24-hour hours.
+   Opportunity: update hours so weekend/evening searchers see the firm as reachable.
+2. Pillar: Lead Gen — Build a steady Google review routine (quick win)
+   Why: review count appears small vs. top-ranked competitors (all counts UNCONFIRMED — not printed). Competitor: Washington Tax Services Inc
+   (ranks above firm per rep 00:27:42). Opportunity: ask every satisfied client at close of matter.
+3. Pillar: Intake — Upgrade the website contact form (quick win)
+   Why: form is footer-only, name + email only (research Step 1). Opportunity: add phone, issue type, notice/deadline fields. No competitor.
+4. Pillar: Team — Put AI on email and first drafts (quick win)
+   Why: email takes Bob 2–3 hrs/day and staff ~2 hrs (00:11:46–00:12:00). Supports AI Workforce Pro. No competitor.
+5. Pillar: Team — Define the associate attorney role before the hire (long-term)
+   Why: hire targeted for June (00:16:58); wants job description laid out ahead; hiring is the biggest delegation step. No competitor.
+6. Pillar: Profit — Build a simple rolling cash-flow view (quick win)
+   Why: "we have a lot of cash crunches" (00:47:52). Opportunity: forward look at inflows/outflows so crunches are anticipated. No competitor.
+7. Pillar: Lead Gen — Clean up directory listings (long-term)
+   Why: website phone (206) 984-3739 vs. (206) 623-0063 in directory snippets; firm-name variants; possible duplicate FindLaw listing
+   (unverified at page level — framed as "appear to be"). No competitor.
+8. Pillar: Intake — Document the sales call so someone besides Bob can run it (long-term)
+   Why: Bob takes the 15/30-minute sales call on every qualified lead (00:23:46–00:23:55). No competitor.
+
+======================================================================
+WHAT YOU TOLD US (Block 5) — 3 items, with verbatim transcript source and Block 2 support
+======================================================================
+Row 1 — "You want the business side to run without you — a week off where everything runs fine."
+  Verbatim (00:47:19): "I need to be, see myself, the business side is dependent on me. So I can take like a week off and everything runs fine and they don't need me."
+  Supports: FCOO Advisor (operations layer: roles, accountability, systems). Most central package — Team pillar is RED, ties to DBM, largest bundled price.
+Row 2 — "You came to us because you want to use AI to increase your productivity."
+  Verbatim (00:01:37): "this really caught my eye because I'm really trying to use AI to really increase my productivity."
+  Supports: AI Workforce Pro – Starter, 3 seats (weekly AI Implementation Session, workspace access).
+Row 3 — "Email takes two to three hours of your day and you are behind on client work."
+  Verbatim (00:11:46): "the email responses probably take… two to three hours a day for me." and (00:05:55): "right now I'm really behind in client work."
+  Supports: AI Workforce Pro – Starter (email/drafting use cases) and FCOO Advisor (deciding what moves off Bob's desk).
+Next step line: kickoff call with your FCOO (most central package).
+Excluded from Block 5 per "never include" rules: staff names, debts/cash-crunch detail, personal/family detail.
+
+======================================================================
+ESCALATION FLAGS (internal — never in client report)
+======================================================================
+- Review counts unconfirmed — verify live before the call. Firm counts conflicted (11 / 14 / 18) and all competitor counts (80 / 48 / 53) are
+  UNCONFIRMED web-snippet figures; the client report uses qualitative framing only and prints no review count or rating.
+- Any Legal AI Workforce (LAW) package → confirm with sales rep that LAW delivery has launched and capacity is available before including
+  in the proposal.
+- Seat count: decision file assumes 3 seats (seller override, "Seller to confirm"). Confirm seat count and who receives seats.
+- Seller override is outside the revenue-implied package; the decision file and Slack thread record it as intentional.
+- CRISP overlap: FCOO Advisor includes Elite Coach group deliverables (weekly group coaching, practice-area masterminds, quarterly workshop
+  access, annual in-person workshop), and listed in Block 2 per the fractional-package rule. Rep said coaching was not being recommended
+  because Bob already has a coach (00:18:52) via CRISP — be ready to address the overlap with the group-coaching components.
+- FCOO revenue floor: ~$500K is exactly at the minimum for fractional products; confirm revenue.
+- PageSpeed scores (mobile 47, desktop 95) come from a local Lighthouse lab run on 2026-10-14 (PSI API unavailable); printed with
+  "Lighthouse lab test" label.
+- Ads, LSA, local 3-pack, and Meta data were "not observed" (no live access); client report makes no claim about competitor ads, LSA, or
+  3-pack positions beyond what the rep observed on the call.
+- Notes flagged unclear transcript items: fee model ("Flappy" read as flat fee, confirmed by rep), new-client counts per month (read as ~5–7),
+  CRM name (Lawmatics). Used with soft language.
+- Stage assigned: Stage 3 (Solo Practitioner) — border with Stage 4; lower stage assigned per rule.
+- Traffic lights: Lead Gen AMBER, Intake AMBER, Team RED, Profit AMBER. Urgency score 4 (from research notes).
