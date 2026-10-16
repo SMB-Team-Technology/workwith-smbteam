@@ -1,0 +1,87 @@
+SECTION 11 WORKINGS — Eileen Donovan Law (October 21, 2026)  [INTERNAL — never client-facing]
+
+================================================================================
+MANDATORY PRICE LOOKUP (confirmed against audit-write.md / Scoping_and_Ad_Spend_Guide.md and package_decision.json)
+================================================================================
+- Marketing package selected: Web + SEO Essentials (Essentials tier, Web + SEO sub-package)
+  - Bundled price (from table): $1,997/mo
+  - Stand-alone price (from table): N/A (no stand-alone price listed for this sub-package)
+  - Savings: $0/mo
+- LSA Management Add-On (Scoping Guide Step 6E): $900/mo; no stand-alone price; savings $0/mo
+- Non-marketing package selected: none (Elite Coach and Starter marketing removed by seller override; see below)
+- Legal AI Workforce (LAW) package selected: AI Workforce Pro – Starter, 1 user
+  - Bundled price (from table): $350/user/mo x 1 = $350/mo
+  - Stand-alone price: none (no stand-alone price exists for either AI Workforce Pro tier; never quoted)
+  - Savings: $0/mo
+- AI Avatar / Video Growth add-on: none
+- Total monthly investment (sum of bundled prices): $1,997 + $900 + $350 = $3,247/mo  (matches package_decision.json total_bundled = 3247)
+- Total savings: $0/mo (no retail/bundled spread on any selected item; savings callout omitted from Block 3)
+- 35% cap check: $3,247 / ($360,000 / 12 = $30,000) = 10.8%. Cap = $10,500/mo. Passes before any LSA media budget.
+
+================================================================================
+OVERRIDE CHECK (TRANSCRIPT-STATED NEED OVERRIDE)
+================================================================================
+Seller override (authoritative): Dan Bryant, Slack thread, October 16, 2026 — "Web + SEO Essentials + LSA add on + AI Workforce Pro Starter (1 user)". proposal_review.json status = locked. package_decision.json already reflects it (marketing_tier Essentials / Web + SEO Essentials, addon LSA Management Add-On, law AI Workforce Pro – Starter, 1 seat, ad spend cleared).
+1. Call-purpose override: Call was mixed, marketing-led (LSA + GBP + reviews, AI platform, website rebuild/SEO content). The recommendation covers all three. Coaching was explicitly deferred on the call ("we always could talk about coaching later", 00:49:38) — not recommended.
+2. Existing-vendor override: NLBM coaching (~$1,000/mo) is ACTIVE and she will not part ways — coaching excluded to avoid "double paying". NLBM's Westchester ad-zone offer was NOT signed, and no SEO/AEO/paid-ads vendor is under contract, so a marketing recommendation is valid. Website vendor is being dropped by Eileen (supports Web + SEO).
+3. Budget-reality override: No explicit cap, but price-sensitive and wants outlay/ROI. Revenue table implied Starter + Elite Coach ($7,597/mo at default pricing; selection_notes show conservative-ad-spend total over the 35% cap). Seller override down-scoped to $3,247/mo. Documented here so sales sees the departure from the revenue table was intentional.
+4. Effective-revenue override: No net figure stated (net_revenue_stated null; not a contingency practice). Tiered on ~$360K gross.
+Eligibility departures applied by seller override (flag for sales-ops awareness):
+  - Essentials is normally hidden for multi-practice-area firms (estate planning + probate + elder law); here the practices are closely related, single location (Scarsdale), revenue under $750K.
+  - LSA Add-On is documented for coaching-only clients (Step 6E); here it is paired with Web + SEO Essentials per seller request.
+
+================================================================================
+AD SPEND / ROI (Block 4 OMITTED from client report)
+================================================================================
+Block 4 and the "Recommended Ad Spend" line in the Executive Summary are intentionally omitted: package_decision.json cleared ad_spend_conservative/aggressive/rationale because the LSA add-on is a management fee, not a media budget, and the rep must agree LSA media spend with the client separately. No dollar figure for a service budget the seller has not set is printed in the client report.
+Internal reference only (not client-facing, not approved):
+  - Estate Planning channel minimums: LSA $2,000/mo; absolute minimum for any paid ads $3,000/mo. Suggested scoping floor: $3,000/mo.
+  - Illustrative at $3,000/mo: LSA CPL range $55–$75, midpoint $65, +20% cushion = $78 -> ~38 leads. Close rate: referral close rate "shy of 100%" is NOT applicable to cold leads; default 15% -> ~5.8 cases. Avg case value $5,000 (stated) -> ~$28,800 est. revenue (~9.6x). Treat as an upper-bound estimate only; LSA lead volume at this price in Westchester is untested and the owner fears "tire kickers".
+  - Aggressive scenario: not computed — no revenue goal in dollars stated, and the Essentials tier cap is $7,500. Rep to scope.
+
+"Why this range" sentence: not applicable (Block 4 omitted).
+
+================================================================================
+DBM STATEMENT (Block 1)
+================================================================================
+Get her time back and "scale and operate differently" ("I've spent the money to get my time back and I don't have it back." 00:10:13; "So I want to scale and operate differently." 00:12:54). Category (1): a firm that runs itself so she has time and income. Secondary: taking over retiring peers' files in 2027. Husband-income replacement (rep recap/Oct 9 summary) deliberately NOT used in the client report — family matter.
+
+================================================================================
+QUICK WIN OPPORTUNITIES (8)
+================================================================================
+1. Lead Gen / Quick Win — Launch a verified Google Business Profile. Why: rep reported none live; prospect did not dispute (not independently verified). Competitor: Cavallo & Cavallo (Google review badge on own site). Opportunity: first step to map pack and LSA.
+2. Lead Gen / Quick Win — Restore credential logos and put address + phone on the homepage. Why: 4 of 5 association logos point at a host that does not resolve (re-confirmed by curl on Oct 16, 2026; 17 references); no NAP on homepage. Competitor: none.
+3. Lead Gen / Quick Win — Launch LSA for estate planning. Why: pay-per-lead first paid channel; Eileen asked for best place to start ad spend. Competitor: none (LSA competitor presence unverified).
+4. Lead Gen / Long-Term — Rebuild estate planning pages with city/practice titles and Westchester pages. Why: title tag has no city/practice area; estate planning page thin (rep-reported ~232 words). Competitor: Ettinger Law Firm (dedicated White Plains page, own site).
+5. Intake / Quick Win — Define phone coverage and first-contact process (remote hire + AI). Why: no receptionist; director overloaded. Competitor: none.
+6. Profit / Quick Win — Track cost per acquired matter from day one. Why: all clients are referrals, no baseline. Competitor: none.
+7. Profit / Long-Term — Implement the membership plan (recurring revenue). Why: NLBM roadmap exists, not implemented (00:47:41). Competitor: none.
+8. Team / Long-Term — Decide which tasks belong to people, AI, or neither. Why: owner still absorbing overflow. Competitor: none.
+
+================================================================================
+WHAT YOU TOLD US (Block 5) — sources
+================================================================================
+Row 1: Owner raised: moving from referrals to some ad spend, unsure of best place. Verbatim [00:22:38]: "I'm just trying to figure out what's the best place for me to go from where I am at six a month or eight a month on referrals to doing some ad spend." Supports: LSA Management Add-On (Block 2, package 2).
+Row 2: Owner raised: website "not a total mess" but "not what it needs to be"; wants to know cost of redoing it. Verbatim [00:28:32]: "It's, you know, it's not a total mess, but it's, it's not what it needs to be." and [00:49:06] "what it would cost to redo my website". Supports: Web + SEO Essentials (Block 2, package 1; most central by DBM/reddest pillar = Lead Gen).
+Row 3: Owner raised: team focus, remote person and AI handling more of the phones/admin. Verbatim [00:25:33]: "…I have a great client services director… I'd like for her to continue with that, and not do a lot of the other stuff that I'm dumping on her, and have the remote person do more of that, and have AI do what can be done." Supports: AI Workforce Pro – Starter (Block 2, package 3). Rewritten without naming/rating any staff role.
+Next-step line: kickoff call with the Onboarding team (most central package = Web + SEO Essentials).
+Eligibility: no named employees, personal/family/health, partner disputes, or financial-distress figures used.
+
+================================================================================
+ESCALATION FLAGS (INTERNAL)
+================================================================================
+- Review counts unconfirmed — verify live before the call. (Every competitor figure in the notes is UNCONFIRMED; none printed. Cavallo "100+" is a self-reported badge; Ettinger "563" vs "26" conflict. Prospect's own GBP count never obtained.)
+- LAW package (AI Workforce Pro – Starter): confirm with sales rep that LAW delivery has launched and capacity is available before sending the proposal.
+- Seller override departs from default eligibility (Essentials for a multi-practice-area firm; LSA add-on with a marketing package). Seller: Dan Bryant, Oct 16, 2026.
+- LSA media budget must be agreed with the client separately; none stated in the report. Suggested floor $3,000/mo (internal).
+- CONTENT SCOPE MISMATCH: Dan said on the call the site build would "probably write 10,000 words". Web + SEO Essentials includes 5,000 words initial content (5,000/yr from Year 2). Extra content is $0.22/word ($1,100 per additional 5,000 words) — confirm expectations before the call. Client report states 5,000 words.
+- Review generation: Dan discussed review-generation coaching; Done-For-You Review Generation is included only at Growth tier+ ($500/mo otherwise). Not included in this package; Essentials deliverables list does not promise it.
+- GBP status is rep-reported only (not independently verified). Client report hedges and says to confirm together.
+- NAP: two Scarsdale street addresses in directories (2 Overhill Rd Ste 400 vs 62 Tunstall Rd Ste 400). No address printed. Confirm before the call.
+- Website logos broken confirmed Oct 16, 2026 (host n5a074.p3cdn1.secureserver.net does not resolve). Re-check just before the call; vendor may fix.
+- NLBM: coaching active (~$1,000/mo); she wants to compare NLBM's new Westchester ad-zone offer before committing. Expect a competitive objection (see Sales Companion).
+- Eileen wants for Oct 21: process, initial outlay, promises and ROI. No price has been quoted to her yet. Workshop ticket (Dec 3–5, Marco Island) possible comp — not in this proposal.
+- Revenue ~$360K read from rep rounding of "6 x $5K" math; she did not explicitly confirm ("transcript unclear"). Volume goal "10 then 16" read as matters/month, not printed as a goal.
+- Under $500K revenue: FCOO/FCFO hidden. Fractional CTO requires $400K+. Roadmap phases gate those on revenue milestones.
+- Meta Ads Library, Google Search/Maps unreachable during research: 3-pack, ads, LSA competitor data all "not observed". Urgency score 5 is low-confidence.
+- Excluded: Leeds Law Firm (national), David Bliven and Joe Mara (SMB Team clients).
