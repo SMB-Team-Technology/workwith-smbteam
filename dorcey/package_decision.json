@@ -31,22 +31,22 @@
     ],
     "lead_gen_gap": true
   },
-  "marketing_tier": "Platinum",
-  "marketing_name": "Full Service Marketing — Platinum",
-  "marketing_price_bundled": 15997,
-  "marketing_price_retail": 18997,
-  "marketing_savings": 3000,
-  "coaching_name": "Elite Coach Plus",
-  "coaching_price_bundled": 3200,
-  "coaching_price_retail": 3497,
-  "coaching_savings": 297,
+  "marketing_tier": "Growth",
+  "marketing_name": "Full Service Marketing — Growth",
+  "marketing_price_bundled": 7497,
+  "marketing_price_retail": 8997,
+  "marketing_savings": 1500,
+  "coaching_name": "Master's Circle",
+  "coaching_price_bundled": 4600,
+  "coaching_price_retail": 4997,
+  "coaching_savings": 397,
   "law_tier": null,
   "law_name": null,
   "law_price_bundled": null,
   "law_price_retail": null,
   "law_seats": null,
-  "total_bundled": 19197,
-  "total_savings": 3297,
+  "total_bundled": 12097,
+  "total_savings": 1897,
   "ad_spend_conservative": 3500,
   "ad_spend_aggressive": 14000,
   "ad_spend_rationale": {
@@ -58,6 +58,8 @@
     "Revenue not in research notes — sourced from HubSpot (hubspot_annual_law_firm_revenue): \"$3,000,000+\" → $3,000,000",
     "Team size not stated in research notes — defaulting to 3. Review for coaching tier accuracy.",
     "Revenue $3M+: Platinum tier.",
-    "Revenue $1M+, team under 5: Elite Coach Plus selected (Master's Circle requires 5+ team)."
-  ]
+    "Revenue $1M+, team under 5: Elite Coach Plus selected (Master's Circle requires 5+ team).",
+    "Seller override: switched to Master's Circle + Full Service Marketing Growth per Slack request on 2026-10-16. Growth is below the $3M+ Platinum revenue band and Master's Circle normally requires a 5+ team (team size defaulted to 3) — applied as requested."
+  ],
+  "needs_seller_input": false
 }
