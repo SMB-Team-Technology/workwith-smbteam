@@ -1,0 +1,82 @@
+SECTION 11 WORKINGS — Truce Resolutions (December 1, 2026)
+INTERNAL ONLY — never appears in the client report.
+
+=====================================================================
+PACKAGE DECISION AND OVERRIDE CHECK
+=====================================================================
+package_decision.json: confidence "medium", needs_seller_input false, revenue_source "seller_override" ($200,000).
+Selected: Coach Essentials Plus ONLY (standalone). marketing_tier = null (seller override via Slack 2026-10-16: coaching only, marketing removed).
+
+Note: the decision file's selection_notes still show earlier auto-selection lines (HubSpot "$3,000,000+" -> Platinum / Elite Coach Plus). Those lines are STALE and were superseded by the seller override and by the call itself (rep math and prospect: ~$200K-$250K projected 2026). Revenue used for this report: ~$200K-$250K.
+
+Transcript-Stated Need Override check:
+1. Call-purpose override: not triggered as a category change (call was marketing/growth discovery), but the call outcome was coaching as the vehicle (written plan, structure, accountability) plus self-managed LSAs. Rep explicitly advised AGAINST Full Service Marketing / a managed LSA retainer and against a website rebuild. Full Service Marketing is therefore NOT recommended.
+2. Existing-vendor override: not triggered. No marketing/SEO/ad vendor. (Tamara is in the Allie Katz / New Law / Personal Family Lawyer program, ~$2,000/mo — a coaching/licensing program, not a marketing vendor. It is the main objection — see Sales Companion.)
+3. Budget-reality override: TRIGGERED. Stated budget $2,000-$3,000/mo INCLUDING ad spend ("It would be", 00:46:09-00:46:14); no more website spend. Revenue-table tier for ~$200K-$250K would be Essentials marketing ($3,497/mo) / Elite Coach — both exceed the stated budget. Lead with the lowest-cost package that addresses the stated need: Coach Essentials Plus ($2,497/mo standalone), which leaves ~$500/mo for self-managed LSAs. Intentional departure from the revenue table, documented here for sales.
+4. Effective-revenue override: not triggered (flat-fee estate planning, not contingency; no net figure stated).
+
+=====================================================================
+MANDATORY PRICE LOOKUP (confirmed against tables)
+=====================================================================
+- Marketing package selected: none
+  - Bundled price: n/a | Stand-alone: n/a | Savings: n/a
+- Non-marketing package selected: Coach Essentials Plus
+  - Bundled price (from table): $1,997/mo ONLY when bundled with a marketing package — not applicable here
+  - Stand-alone price (from table): $2,497/mo (Coach Essentials Plus can be sold standalone at $2,497/mo)
+  - Price charged: $2,497/mo (standalone; no bundle)
+  - Savings: $0 (no bundle discount applies — savings callout omitted from Block 3)
+- Legal AI Workforce (LAW) package selected: none
+- AI Avatar / Video Growth add-on selected: none
+- Total monthly investment: $2,497/mo
+- Total savings: $0/mo
+
+Required funds check: revenue under $250K -> confirm client has funds to cover 4 months of services (4 x $2,497 = $9,988) before proceeding.
+35% cap check: $2,497/mo vs ~$16,667-$20,833/mo revenue = ~12%-15%. Passes. Minimum MRR $2,497 satisfied exactly.
+
+=====================================================================
+AD SPEND / ROI (Block 4)
+=====================================================================
+No marketing/ads package is part of the recommendation -> Block 4 (Recommended Monthly Ad Spend) DELETED from section_11 and from the executive summary.
+Conservative / aggressive projections: not applicable.
+Reference only (not client-facing, not sold): rep suggested self-managed LSAs at roughly $500-$2,000/mo; stated budget leaves ~$500/mo after coaching; Tamara said she may be able to do more "in a couple of months."
+
+=====================================================================
+DBM STATEMENT (Block 1)
+=====================================================================
+Category 1 — a firm that runs without her doing everything. Exact words: "I can step in and out and just do the presentations and the meetings with high value clients and then offload everything else to staff." (00:07:42). Secondary: "I'm just trying to be the go-to attorney in my community." (00:06:03).
+Block 1: "We help solo estate planning attorneys building a firm in a close-knit community get a clear marketing plan and a steady stream of consultations so they can step in and out of the firm while a team handles everything else."
+
+=====================================================================
+QUICK WIN OPPORTUNITIES IDENTIFIED (8)
+=====================================================================
+1. Lead Gen | Switch GBP primary category from General Law Firm to Estate Planning | free, rep recommendation on call | competitor: none named
+2. Lead Gen | Build a Google review habit (ask at moments of gratitude, QR code in office) | review base small; counts UNCONFIRMED | competitor: none
+3. Lead Gen | Self-managed Local Service Ads, small pay-per-lead budget | Firm not observed in LSA block | competitor: Lawvex (only advertiser with a Solvang office per Tamara)
+4. Lead Gen | Mobile speed tweaks (PageSpeed mobile 48 / desktop 97, Lighthouse local run) | tweaks only, no rebuild — she does not want more website spend | competitor: none
+5. Intake | Clear "Book a consultation" call to action above the fold | none observed above fold; buttons are practice-area navigation | competitor: none
+6. Lead Gen (long-term) | Hyper-local Solvang / Santa Ynez Valley content (winery / ranch succession, Prop 19) and AI-search visibility | she wants to show up in AI search | competitor: Lawvex (workshops/webinars/community networks)
+7. Team (long-term) | Define first roles and hand-offs from part-time helper toward 3-5 person team | solo; goal 1-2 associates, paralegal, caseworker | competitor: none
+8. Profit (quick win) | Set a monthly marketing budget and track cost per new client | no tracking yet; budget $2,000-$3,000 incl. coaching | competitor: none
+
+=====================================================================
+WHAT YOU TOLD US (Block 5) — transcript sourcing
+=====================================================================
+Row 1: "I need butts in seats." (00:29:15) and "...where I really need help is figuring out a marketing strategy that will fit in my town." (00:32:00-00:32:13)
+   -> Block 2: Coach Essentials Plus written marketing plan + guidance on GBP, reviews, self-managed LSAs, local content.
+Row 2: "...it's really about marketing and getting a plan together and how to make the most of the ad dollars, the few ad dollars, you know, the small budget I do have" (00:45:54-00:46:08)
+   -> Block 2: plan prioritizes where first dollars go; self-managed pay-per-lead LSAs; budget-tracking.
+Row 3: "I can step in and out and just do the presentations and the meetings with high value clients and then offload everything else to staff." (00:07:42)
+   -> Block 2: weekly group + monthly 1:1 coaching to sequence hires, hand-offs.
+Next step: kickoff call with your Coach. No dates.
+Excluded per "never include": the honeymoon / travel timing, the Allie Katz program cost (third-party program details), prior-year tax results.
+
+=====================================================================
+ESCALATION FLAGS (internal)
+=====================================================================
+- Revenue under $300K (~$200K-$250K) -> scoping approval required.
+- Revenue under $250K -> confirm client has funds to cover 4 months of services (~$9,988) before proceeding.
+- Review counts unconfirmed — verify live before the call. (Firm GBP "7 reviews / 5.0" from rep read-out only; competitor counts not obtained. No review counts printed in client report.)
+- Main objection: Tamara already pays ~$2,000/mo for the Allie Katz / New Law program and cannot exit it without redoing her system; "to have to add on an additional coaching program when I'm already paying for a coaching program, that's the tricky part." Sales must address positioning (SMB Team plan = marketing/lead-gen plan and accountability; New Law = legal system/licensed materials).
+- Budget tension: $2,497/mo coaching consumes nearly all of the stated $2,000-$3,000/mo budget (ad spend included), leaving ~$500/mo for LSAs. Sales should confirm she is comfortable with that split.
+- Rep told her on the call the smallest coaching program is "right at twenty five hundred" per month on a 12-month agreement; exact tier name not stated on call (Coach Essentials Plus vs Elite Coach). Confirm before the proposal call that Coach Essentials Plus is what she expects.
+- Not recommended / not priced: LSA management retainer, Full Service Marketing, website rebuild.
