@@ -100,7 +100,7 @@ Copy values exactly — do not rewrite or recompute.
 - `CLOSING_QUOTE` — copy exec-closing statement as the slide 3 quote
 
 **From research notes:**
-- `STAGE_TEXT` — current stage and goal stage
+- `STAGE_TEXT` — current stage and goal stage, in the form `"Stage 4: Small Business Manager  →  Goal: Stage 6, Law Firm Owner"`. Keep the `→` and the `Stage N` numbers: the engine splits on the arrow into a two-line card and draws the 6-step staircase from the numbers.
 - `GOAL_HEADLINE` — e.g. "$1M → $1.8M revenue" (from DBM / revenue goal)
 - `GOAL_DBM` — brief DBM phrase (e.g. "Jesse takes real time off")
 - `SLIDE_2_TITLE` — "Your Growth Plan: 3 Priorities to Reach [monthly goal]"
@@ -136,7 +136,7 @@ diff <(sed -n '/LAYOUT ENGINE/,$p' "Design Files/audit_pptx_template.py") \
 python3 "[friendly-name]/[FirmName]_[Date]_Proposal.py"
 ```
 
-9. Confirm the output prints "Saved: … (3 slides)". If it also prints a `WARNING: N field(s) exceeded their character budget…` block, that means the layout engine had to truncate something you filled in — go back and shorten that field's source copy rather than shipping the truncated version.
+9. Confirm the output prints "Saved: … (3 slides)". If it also prints a `WARNING: N field(s) exceeded their character budget…` block, that means the layout engine had to truncate something you filled in — go back and shorten that field's source copy rather than shipping the truncated version. A `NOTE: N field(s) were shrunk to fit their box` block is informational: the engine measured that text against the Poppins font and dropped it a half-point at a time until it fit. That is expected for long firm names and is not an error.
 10. Verify the file exists and is not empty:
 
 ```bash
@@ -153,7 +153,7 @@ wc -c "[friendly-name]/[FirmName]_[Date]_Proposal.pptx"
 - The closing quote on Slide 3 must be vivid, specific, and in the owner's voice — not a generic tagline. If the transcript has a direct quote about what they want their life to look like, use it verbatim or near-verbatim
 - Do not add a fourth package card — maximum two packages per the template
 - Never modify `Design Files/audit_pptx_template.py` — work in the firm's copy only
-- Never modify anything below `LAYOUT ENGINE — DO NOT MODIFY BELOW THIS LINE` in the firm's copy either — this includes `FONT` and every color constant. That section is what keeps every deck on-brand and visually consistent with every other deck in the portfolio; the diff in step 7 is the check. The layout engine already auto-shrinks oversized text and hard-caps a handful of fields as a backstop (see the `WARNING:` note in step 9) and embeds the Poppins font files into the saved `.pptx` — none of that requires anything from you beyond filling in the `# FILL:` values.
+- Never modify anything below `LAYOUT ENGINE — DO NOT MODIFY BELOW THIS LINE` in the firm's copy either — this includes `FONT` and every color constant. That section is what keeps every deck on-brand and visually consistent with every other deck in the portfolio; the diff in step 7 is the check. The layout engine measures every text box against the bundled Poppins fonts and writes the largest font size that fits. It drops 0.5pt at a time, down to 75% of the design size, and only truncates at a word boundary if the text still doesn't fit. Titles, the header kicker, "/mo", the retail price and the bundle savings line are all positioned from those measurements, so long firm names never spill out of their boxes. It also hard-caps a handful of fields as a backstop (see the `WARNING:` note in step 9) and embeds the Poppins font files into the saved `.pptx` — none of that requires anything from you beyond filling in the `# FILL:` values.
 
 ---
 
