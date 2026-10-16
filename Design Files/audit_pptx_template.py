@@ -5,9 +5,9 @@ Generates a 3-slide proposal PPTX from the Growth, Profit, and Freedom Roadmap.
 Uses python-pptx. Do not modify the layout engine below the FILL section.
 Only replace the # FILL: placeholders with audit-specific content.
 
-Slide 1 — Where [Firm] Stands Today         (assessment overview)
+Slide 1 — Where [Firm] Stands Today         (what you told us, stage, key gaps)
 Slide 2 — Your Growth Plan: 3 Priorities    (action plan)
-Slide 3 — Your Investment & What's Next     (pricing + what you told us)
+Slide 3 — Your Investment & What's Next     (pricing + how this plan addresses it)
 
 Output: [friendly-name]/[FirmName]_[Date]_Proposal.pptx
 """
@@ -15,10 +15,13 @@ Output: [friendly-name]/[FirmName]_[Date]_Proposal.pptx
 from pptx import Presentation
 from pptx.util import Inches, Pt
 from pptx.dml.color import RGBColor
-from pptx.enum.text import PP_ALIGN, MSO_AUTO_SIZE
+from pptx.enum.text import PP_ALIGN, MSO_AUTO_SIZE, MSO_ANCHOR
 from pptx.oxml.ns import qn
 from lxml import etree
+from functools import lru_cache
+from PIL import ImageFont
 import os
+import re
 
 # ═══════════════════════════════════════════════════════════════════
 # FILL — Replace every placeholder. Do not delete any variable.
@@ -29,62 +32,42 @@ FIRM_NAME      = "FIRM NAME HERE"                    # FILL: full firm name
 SALES_REP      = "Sales Rep Name"                    # FILL: rep's full name
 OUTPUT_PATH    = "friendly-name/FirmName_Date_Proposal.pptx"  # FILL: output path
 
-# Optional images
-WEBSITE_SCREENSHOT_PATH = None   # Set to a local PNG path to show a screenshot; None = skip entirely
-
 # ── Slide 1 ──────────────────────────────────────────────────────
-URGENCY_SCORE = "7"                          # FILL: copy from section_05 urgency score
-
-# Pillar status — each is ("RED" | "AMBER" | "GREEN", label, one-line detail)
-PILLARS = [
-    ("RED",   "CRITICAL", "100% from referrals"),   # FILL: Lead Generation
-    ("AMBER", "AMBER",    "Leads falling through"),  # FILL: Intake
-    ("AMBER", "AMBER",    "No KPIs / bottleneck"),   # FILL: Team
-    ("AMBER", "AMBER",    "No forecasting"),          # FILL: Profit Plan
-]
-PILLAR_NAMES = ["Lead Generation", "Intake", "Team", "Profit Plan"]
-
-# Key findings — list of ("neg"|"pos", "one-sentence finding")
-# Use "neg" for problems (red ✕), "pos" for strengths (green ✓).
-# Include 3–4 total; at least one "pos" if a genuine strength exists.
-FINDINGS = [
-    ("neg", "Finding one — consequence-first, specific to this firm"),
-    ("neg", "Finding two — consequence-first, specific to this firm"),
-    ("neg", "Finding three — consequence-first, specific to this firm"),
-    ("pos", "Finding four — genuine strength of this firm"),
+# The prospect's own words — 2–3 short verbatim lines from the discovery call
+# where they describe a problem: (speaker_label, quote). speaker_label is
+# "You said" for the owner, or "<First name> said" for another attendee.
+# Only problems the prospect raised themselves; never reword. Set to [] when
+# there is no full transcript (an AI summary doesn't count) — the slide then
+# drops this panel instead of inventing quotes.
+PROSPECT_QUOTES = [
+    ("You said", "Verbatim prospect line about a problem they raised"),
+    ("You said", "Verbatim prospect line about a problem they raised"),
 ]
 
-# Competitor table — list of (name, "XXX reviews", "brief note")
-# List 3 competitors + the client row is added automatically.
-COMPETITORS = [
-    ("Competitor One",   "XXX reviews", "detail · note"),
-    ("Competitor Two",   "XXX reviews", "detail · note"),
-    ("Competitor Three", "XXX reviews", "detail · note"),
+# Key gaps — the 3 biggest gaps from the audit (Sections 5–9), each as
+# (category, one plain-language sentence <=90 chars). category is one of
+# "Lead Generation", "Intake", "Team", "Profit Plan".
+KEY_GAPS = [
+    ("Intake", "Gap one — consequence-first, specific to this firm"),
+    ("Team", "Gap two — consequence-first, specific to this firm"),
+    ("Profit Plan", "Gap three — consequence-first, specific to this firm"),
 ]
-CLIENT_REVIEWS      = "0 reviews"      # FILL: client's actual review count
-CLIENT_REVIEWS_NOTE = "← You are here"
 
-# Stage strip (right panel, Slide 1)
+# Stage — current and goal, drawn on the legacy staircase (Slide 1)
 STAGE_TEXT = "Stage 4: Small Business Manager  →  Goal: Stage 6, Law Firm Owner"  # FILL
 
 # ── Slide 2 ──────────────────────────────────────────────────────
 SLIDE_2_TITLE = "Your Growth Plan: 3 Priorities to Reach $X,XXX/Month"  # FILL
 
-SMB_MODEL_DESC = (
-    "All four pillars must work together. "
-    "Missing any one means growth stalls regardless of ad spend."
-)  # FILL: brief model description
-
-GOAL_HEADLINE = "$X → $Y revenue"       # FILL: e.g. "$1M → $1.8M revenue"
-GOAL_DBM      = "Owner takes real time off"  # FILL: DBM outcome phrase
-
-# Each priority: (line1, line2, accent_color_hex, [5 bullet strings])
+# Each priority: (line1, line2, accent_color_hex, [up to 5 bullet strings])
+# line1 + line2 are joined into the column title. The accent hex is kept for
+# compatibility but ignored — the engine always alternates navy / green / navy.
 # Titles must reflect what this firm is actually buying and its real priorities —
 # see .claude/commands/audit-pptx.md. Do not default a column to "Marketing Engine"
 # unless a marketing/ads package is actually part of this firm's recommendation.
 PRIORITIES = [
     (
-        "Priority", "One", "0091C9",
+        "Priority", "One", "003A59",
         [
             "Bullet 1 — specific action for this firm",
             "Bullet 2 — specific action for this firm",
@@ -145,17 +128,12 @@ CONSERVATIVE_RESULT = "$XX,XXX revenue · X.X× ROAS"  # FILL
 AGGRESSIVE_LABEL   = "Aggressive  (X cases/mo):"     # FILL
 AGGRESSIVE_RESULT  = "$XX,XXX revenue · X.X× ROAS"   # FILL
 
-# Panel title — must match the Block 5 heading in section_11:
-# "WHAT YOU TOLD US" when a discovery call transcript exists, or
-# "WHAT WE FOUND" when there is no transcript (Block 5 then plays back
-# research findings from Sections 5–9 instead of the owner's words).
-TOLD_US_TITLE = "WHAT YOU TOLD US"                   # FILL
-
-# What You Told Us / What We Found — exactly 3 items from section_11 Block 5:
+# "How this plan addresses it" panel — exactly 3 items from section_11 Block 5
+# (What You Told Us, or the What We Found fallback):
 # (short_label, how_the_plan_addresses_it)
 # short_label: the issue in 2–3 words (<=16 chars), e.g. "Missed calls".
 # action: condensed "how this plan addresses it" clause (<=55 chars).
-# Same rules as Block 5: traceable to the transcript (or, for WHAT WE FOUND,
+# Same rules as Block 5: traceable to the transcript (or, for What We Found,
 # to a finding in Sections 5–9), nothing sensitive, no promised
 # outcomes/dates/counts, never the phrase "pain points". Never leave this
 # empty — the build refuses to render a blank panel.
@@ -188,20 +166,14 @@ LIME_GREEN  = rgb("69CD2B")   # brand accent — small "pop" text/labels on navy
 WHITE       = rgb("FFFFFF")
 
 BG_WASH       = rgb("F4F7F9")   # full-bleed slide background
-URGENCY_CARD  = rgb("0B4C6E")   # header-docked urgency widget
-URGENCY_SUB   = rgb("9CC0D6")   # urgency widget's "Score out of 10" subtitle
+URGENCY_CARD  = rgb("0B4C6E")   # muted navy — staircase steps not yet reached
+URGENCY_SUB   = rgb("9CC0D6")   # step numbers on muted staircase steps
 
-RED         = rgb("B32D2D")
-AMBER       = rgb("B5770B")
 GREEN       = rgb("3F8F1A")
-RED_PILL_BG   = rgb("FBEEEE")
-AMBER_PILL_BG = rgb("FDF4E3")
-GREEN_PILL_BG = rgb("ECF7E4")
 
 DARK_TEXT   = rgb("1B2A38")   # near-black body/label text on white cards
-BODY_TEXT   = rgb("4A5C6B")   # neutral gray-blue for card copy (findings, ad spend note, timeline actions)
-SLATE       = rgb("7C8D9B")   # lighter captions (competitor detail, retail price, services line)
-LIGHT_BLUE  = rgb("B8CDDD")   # SMB Team Model description text (on navy)
+BODY_TEXT   = rgb("4A5C6B")   # neutral gray-blue for card copy (key gaps, ad spend note, plan rows)
+SLATE       = rgb("7C8D9B")   # lighter captions (retail price, services line)
 FOOTER_TEXT = rgb("8FB2C6")
 
 ROI_BG      = rgb("F0FAF4")
@@ -209,21 +181,17 @@ ROI_GREEN   = rgb("0B6B4A")
 ROI_HILIGHT = rgb("E2F3E9")
 
 BUNDLE_SAVINGS_TEXT = rgb("A9D68C")   # lighter green — reads as "money saved"
-GOAL_TEXT_DARK      = rgb("143306")   # goal headline, on Lime Green card
-GOAL_TEXT_DARKER    = rgb("1F470C")   # goal DBM line, on Lime Green card
+GOAL_TEXT_DARK      = rgb("143306")   # dark green text on Lime Green fills
 
-STATUS_COLOR    = {"RED": RED, "AMBER": AMBER, "GREEN": GREEN}
-STATUS_PILL_BG  = {"RED": RED_PILL_BG, "AMBER": AMBER_PILL_BG, "GREEN": GREEN_PILL_BG}
-# Priority/package accent colors cycle through the brand palette. Lime Green
-# is light, so anything filled with it uses a dark green text instead of
-# WHITE/navy — see ACCENT_TEXT_COLOR below.
-PRIORITY_LIGHT = {
-    "0091C9": rgb("ECF5FA"),   # light Ocean Blue tint
-    "69CD2B": rgb("ECF7E4"),   # light Lime Green tint
-    "003A59": rgb("EEF2F5"),   # light Deep Wood Blue tint
-}
-# Header text color to use for each accent fill — defaults to WHITE elsewhere.
-ACCENT_TEXT_COLOR = {"69CD2B": GOAL_TEXT_DARK}
+# Slide 2 priority columns always alternate navy / lime / navy, whatever hex
+# the FILL section passes — no Ocean Blue or other accents on that slide.
+# Each entry: (header fill, title text, "PRIORITY N" kicker text). Lime
+# Green is light, so its header uses dark green text instead of white.
+PRIORITY_STYLE = [
+    (NAVY,       WHITE,          LIME_GREEN),
+    (LIME_GREEN, GOAL_TEXT_DARK, GOAL_TEXT_DARK),
+    (NAVY,       WHITE,          LIME_GREEN),
+]
 
 FONT = "Poppins"
 LOGO_PATH = os.path.join(os.path.dirname(__file__), "smb_team_logo.png")
@@ -274,62 +242,118 @@ def add_rect(slide, left, top, w, h, fill=None, line=False):
     return shape
 
 
-def add_pill(slide, text, left, top, w, h, bg, text_color, size=6.5, bold=True):
-    """A small rounded-rectangle chip, optionally with centered text — used
-    for status badges (RED/AMBER/GREEN), the header's urgency-score widget,
-    and (with text=None) as a plain colored background for a vector icon
-    drawn on top by the caller."""
-    from pptx.util import Emu as E
-    shape = slide.shapes.add_shape(5, E(int(left*914400)), E(int(top*914400)),
-                                   E(int(w*914400)), E(int(h*914400)))
-    shape.line.fill.background()
-    shape.fill.solid()
-    shape.fill.fore_color.rgb = bg
-    if text:
-        add_text(slide, text, left, top, w, h, size, text_color, bold=bold, align=PP_ALIGN.CENTER)
-    return shape
+# ── Text fitting ──────────────────────────────────────────────────
+# PowerPoint's own "shrink text on overflow" (normAutofit) is only a flag:
+# python-pptx can't compute the scale, PowerPoint applies it only after a
+# human edits the box, and Google Slides / Keynote / previews ignore it. So
+# every text box is measured here instead, against the same Poppins files
+# that get embedded, and the font size actually written to the file is the
+# one that fits — every viewer then renders exactly the same thing.
+
+_INSET_X = 0.10        # python-pptx's default left/right text-box padding (in)
+_INSET_Y = 0.05        # ... and top/bottom padding (in)
+_WIDTH_SAFETY = 0.97   # small margin for renderer kerning differences
+_FIT_STEP = 0.5        # "drop one font size" = 0.5pt per step
+_SHRUNK = []           # (label, from_pt, to_pt) — reported just before saving
 
 
-def add_check(slide, left, top, size, color, weight_pt=1.75):
-    """A vector checkmark (two line segments) — used instead of a ✓ glyph so
-    it renders identically everywhere, regardless of what fonts a given
-    viewer (PowerPoint, Keynote, Google Slides, ...) has or substitutes."""
-    from pptx.enum.shapes import MSO_CONNECTOR
-    from pptx.util import Emu as E, Pt as P
-    points = [(0.22, 0.55), (0.42, 0.74), (0.80, 0.26)]
-    abs_pts = [(left + px*size, top + py*size) for px, py in points]
-    for (x1, y1), (x2, y2) in zip(abs_pts, abs_pts[1:]):
-        conn = slide.shapes.add_connector(MSO_CONNECTOR.STRAIGHT,
-                                          E(int(x1*914400)), E(int(y1*914400)),
-                                          E(int(x2*914400)), E(int(y2*914400)))
-        conn.line.color.rgb = color
-        conn.line.width = P(weight_pt)
+@lru_cache(maxsize=None)
+def _font_file(bold, italic):
+    name = "Poppins-Bold.ttf" if bold else ("Poppins-Italic.ttf" if italic else "Poppins-Regular.ttf")
+    # Measured at 1000px; widths scale linearly with point size.
+    return ImageFont.truetype(os.path.join(FONT_DIR, name), 1000)
 
 
-def add_x_mark(slide, left, top, size, color, weight_pt=1.75, inset=0.24):
-    """A vector X (two crossed line segments) — same rationale as add_check."""
-    from pptx.enum.shapes import MSO_CONNECTOR
-    from pptx.util import Emu as E, Pt as P
-    a, b = inset*size, (1-inset)*size
-    for (x1, y1), (x2, y2) in [((left+a, top+a), (left+b, top+b)),
-                                ((left+a, top+b), (left+b, top+a))]:
-        conn = slide.shapes.add_connector(MSO_CONNECTOR.STRAIGHT,
-                                          E(int(x1*914400)), E(int(y1*914400)),
-                                          E(int(x2*914400)), E(int(y2*914400)))
-        conn.line.color.rgb = color
-        conn.line.width = P(weight_pt)
+def text_width(text, size, bold=False, italic=False):
+    """Rendered width of a single line of text, in inches."""
+    return _font_file(bold, italic).getlength(text) * size / 1000 / 72
+
+
+def line_height(size, bold=False, italic=False):
+    """Single-spaced line height in inches (Poppins: ascent + descent ≈ 1.4em)."""
+    ascent, descent = _font_file(bold, italic).getmetrics()
+    return (ascent + descent) * size / 1000 / 72
+
+
+def baseline_offset(size, bold=False, italic=False):
+    """Distance from a text box's top edge to its first line's baseline."""
+    ascent, _ = _font_file(bold, italic).getmetrics()
+    return _INSET_Y + ascent * size / 1000 / 72
+
+
+def wrap_lines(text, size, max_w, bold=False, italic=False):
+    """Greedy word wrap the way PowerPoint does it. Returns the lines."""
+    lines = []
+    for para in str(text).split("\n"):
+        cur = ""
+        for word in para.split():
+            trial = f"{cur} {word}" if cur else word
+            if cur and text_width(trial, size, bold, italic) > max_w:
+                lines.append(cur)
+                cur = word
+            else:
+                cur = trial
+        lines.append(cur)
+    return lines
+
+
+def fit_text(text, w, h, size, bold=False, italic=False, max_lines=None, min_size=None):
+    """Largest size <= `size` (in _FIT_STEP steps, down to `min_size`) at which
+    `text` wraps inside a w x h box. Returns (size, lines), or (None, None)
+    when it doesn't fit even at min_size. A box is always allowed one line
+    even if it's shorter than that line — small single-line labels are
+    positioned for that on purpose; what must never happen is extra lines."""
+    if min_size is None:
+        min_size = max(6.0, round(size * 0.75 * 2) / 2)
+    max_w = (w - 2 * _INSET_X) * _WIDTH_SAFETY
+    avail_h = h - 2 * _INSET_Y
+    s = size
+    while s >= min_size - 1e-6:
+        lines = wrap_lines(text, s, max_w, bold, italic)
+        fits_h = max(1, int(avail_h / line_height(s, bold, italic) + 0.15))
+        allowed = min(fits_h, max_lines) if max_lines else fits_h
+        if len(lines) <= allowed and all(text_width(l, s, bold, italic) <= max_w for l in lines):
+            return s, lines
+        s -= _FIT_STEP
+    return None, None
+
+
+def _truncate_to_fit(text, w, h, size, bold, italic, max_lines):
+    words = str(text).split()
+    while len(words) > 1:
+        words.pop()
+        trial = " ".join(words).rstrip(" ,.;:-—–·") + "…"
+        if fit_text(trial, w, h, size, bold, italic, max_lines, min_size=size)[0]:
+            return trial
+    return words[0] if words else ""
 
 
 def add_text(slide, text, left, top, w, h, size, color, bold=False,
              align=PP_ALIGN.LEFT, italic=False, wrap=True,
-             cap_chars=None, cap_label=""):
+             cap_chars=None, cap_label="", fit=True, max_lines=None,
+             min_size=None, anchor=None):
     from pptx.util import Emu as E, Pt as P
     if cap_chars is not None:
         text = cap(text, cap_chars, label=cap_label)
+    if fit and text:
+        fitted, _ = fit_text(text, w, h, size, bold, italic, max_lines, min_size)
+        if fitted is None:
+            # Doesn't fit even at the smallest allowed size — keep the floor
+            # size and trim at a word boundary instead of spilling the box.
+            floor = min_size if min_size is not None else max(6.0, round(size * 0.75 * 2) / 2)
+            original = text
+            text = _truncate_to_fit(text, w, h, floor, bold, italic, max_lines)
+            _TRUNCATED.append((cap_label or original[:24], original))
+            fitted = floor
+        if fitted < size:
+            _SHRUNK.append((cap_label or str(text)[:32], size, fitted))
+        size = fitted
     txb = slide.shapes.add_textbox(E(int(left*914400)), E(int(top*914400)),
                                    E(int(w*914400)), E(int(h*914400)))
     tf = txb.text_frame
     tf.word_wrap = wrap
+    if anchor is not None:
+        tf.vertical_anchor = anchor
     p = tf.paragraphs[0]
     p.alignment = align
     run = p.add_run()
@@ -339,22 +363,37 @@ def add_text(slide, text, left, top, w, h, size, color, bold=False,
     run.font.color.rgb = color
     run.font.bold = bold
     run.font.italic = italic
-    # Shrink text to fit the box instead of letting it spill past it —
-    # a backstop for any content the character caps above don't cover.
-    tf.auto_size = MSO_AUTO_SIZE.TEXT_TO_FIT_SHAPE
+    # The size above is already the measured fit — turn PowerPoint's own
+    # autofit off so no viewer rescales it a second time.
+    tf.auto_size = MSO_AUTO_SIZE.NONE
     return txb
 
 
-def add_image_or_placeholder(slide, path, left, top, w, h, label=""):
-    from pptx.util import Emu as E
-    if path and os.path.isfile(path):
-        slide.shapes.add_picture(path, E(int(left*914400)), E(int(top*914400)),
-                                 E(int(w*914400)), E(int(h*914400)))
+def add_title(slide, text, w):
+    """Slide title inside the 0.92in navy header. One line at 20pt, dropping
+    a half-size at a time to 15pt; if a long firm name still doesn't fit,
+    two bottom-anchored lines from 15pt down to 12pt. Never crosses the
+    header's bottom edge at 0.92in."""
+    one_line, _ = fit_text(text, w, 0.44, 20, bold=True, max_lines=1, min_size=15)
+    if one_line:
+        add_text(slide, text, 0.32, 0.42, w, 0.44, one_line, WHITE, bold=True,
+                 fit=False, anchor=MSO_ANCHOR.MIDDLE)
     else:
-        ph = add_rect(slide, left, top, w, h, fill=rgb("D1D5DB"))
-        if label:
-            add_text(slide, label, left+0.05, top+(h/2)-0.12, w-0.1, 0.24,
-                     7, SLATE, align=PP_ALIGN.CENTER)
+        add_text(slide, text, 0.32, 0.30, w, 0.60, 15, WHITE, bold=True,
+                 max_lines=2, min_size=12, anchor=MSO_ANCHOR.BOTTOM,
+                 cap_label="slide title")
+
+
+def add_header(slide, title, title_w):
+    """Background wash, navy header, kicker and title — shared by all three
+    slides. No divider stripe under the header: the deck stays quiet so it
+    supports the rep instead of competing."""
+    add_rect(slide, 0, 0, 10, 5.625, fill=BG_WASH)
+    add_rect(slide, 0, 0, 10, 0.92, fill=NAVY)
+    add_text(slide, f"LAW FIRM GROWTH AUDIT  ·  {FIRM_NAME.upper()}",
+             0.32, 0.20, title_w, 0.18, 7.5, LIME_GREEN, bold=True,
+             max_lines=1, cap_label="header kicker")
+    add_title(slide, title, title_w)
 
 
 def add_footer(slide, page, total, logo_path):
@@ -370,101 +409,252 @@ def add_footer(slide, page, total, logo_path):
              align=PP_ALIGN.RIGHT)
 
 
-# ── Slide 1: Assessment Overview ──────────────────────────────────
+_BULLET_INDENT = 0.16   # hanging indent for bullet text (in)
+_BULLET_GAP_PT = 6      # space before each bullet after the first
+
+
+def add_bullets(slide, items, left, top, w, h, size, color, bullet_color, label=""):
+    """One text box with a real bulleted paragraph per item, sized so all
+    items fit: drops 0.5pt at a time (down to 75%) until the wrapped lines
+    plus inter-bullet spacing fit the box."""
+    from pptx.util import Emu as E, Pt as P
+    max_w = (w - 2 * _INSET_X - _BULLET_INDENT) * _WIDTH_SAFETY
+    avail_h = h - 2 * _INSET_Y
+    floor = max(6.0, round(size * 0.75 * 2) / 2)
+    s = size
+    while s > floor:
+        n_lines = sum(len(wrap_lines(t, s, max_w)) for t in items)
+        need = n_lines * line_height(s) + (len(items) - 1) * _BULLET_GAP_PT / 72
+        if need <= avail_h:
+            break
+        s -= _FIT_STEP
+    if s < size:
+        _SHRUNK.append((label, size, s))
+
+    txb = slide.shapes.add_textbox(E(int(left*914400)), E(int(top*914400)),
+                                   E(int(w*914400)), E(int(h*914400)))
+    tf = txb.text_frame
+    tf.word_wrap = True
+    tf.auto_size = MSO_AUTO_SIZE.NONE
+    hex_bullet = "%02X%02X%02X" % tuple(bullet_color)
+    for i, text in enumerate(items):
+        p = tf.paragraphs[0] if i == 0 else tf.add_paragraph()
+        if i:
+            p.space_before = P(_BULLET_GAP_PT)
+        pPr = p._p.get_or_add_pPr()
+        pPr.set("marL", str(int(_BULLET_INDENT * 914400)))
+        pPr.set("indent", str(-int(_BULLET_INDENT * 914400)))
+        for tag, attrs in [("a:buClr", None), ("a:buFont", {"typeface": "Arial"}),
+                           ("a:buChar", {"char": "•"})]:
+            el = etree.SubElement(pPr, qn(tag))
+            if tag == "a:buClr":
+                etree.SubElement(el, qn("a:srgbClr")).set("val", hex_bullet)
+            else:
+                for k, v in attrs.items():
+                    el.set(k, v)
+        run = p.add_run()
+        run.text = text
+        run.font.name = FONT
+        run.font.size = P(s)
+        run.font.color.rgb = color
+    return txb
+
+
+def parse_stage_text(text):
+    """Split STAGE_TEXT ("Stage 4: Small Business Manager → Goal: Stage 6,
+    Law Firm Owner") into (current, goal, current_n, goal_n). Any part that
+    can't be found comes back as None."""
+    parts = [p.strip() for p in re.split(r"\s*(?:→|->)\s*", str(text), maxsplit=1)]
+    current = parts[0] or None
+    goal = parts[1] if len(parts) > 1 and parts[1] else None
+    def stage_n(s):
+        m = re.search(r"Stage\s*(\d)", s or "", re.I)
+        n = int(m.group(1)) if m else None
+        return n if n and 1 <= n <= 6 else None
+    return current, goal, stage_n(current), stage_n(goal)
+
+
+# ── Slide 1: Where You Stand Today ────────────────────────────────
+
+# Legacy staircase — stage number → short name (audit-write.md "FIRM STAGE").
+STAGE_NAMES = {2: "The Lawyer", 3: "Solo Practitioner", 4: "Small Business Manager",
+               5: "Law Firm CEO", 6: "Law Firm Owner"}
+
+
+def add_rich_text(slide, paras, left, top, w, h, label="", anchor=None, min_scale=0.75):
+    """One text box holding several paragraphs, each a list of runs
+    (text, size, bold, italic, color) plus a space-before in pt. Every size
+    is scaled down together, a half-point at a time on the largest run,
+    until all wrapped lines fit the box."""
+    from pptx.util import Emu as E, Pt as P
+    max_w = (w - 2 * _INSET_X) * _WIDTH_SAFETY
+    avail_h = h - 2 * _INSET_Y
+    top_size = max(r[1] for runs, _ in paras for r in runs)
+    scale = 1.0
+    while True:
+        need = 0.0
+        for i, (runs, space) in enumerate(paras):
+            # Measure a paragraph at its largest run's style — runs in one
+            # paragraph here share a line style (label vs quote).
+            big = max(runs, key=lambda r: r[1])
+            s = big[1] * scale
+            text = "".join(r[0] for r in runs)
+            need += len(wrap_lines(text, s, max_w, big[2], big[3])) * line_height(s)
+            if i:
+                need += space * scale / 72
+        if need <= avail_h or scale <= min_scale:
+            break
+        scale = max(min_scale, (top_size * scale - _FIT_STEP) / top_size)
+    if scale < 1.0:
+        _SHRUNK.append((label, top_size, round(top_size * scale * 2) / 2))
+
+    txb = slide.shapes.add_textbox(E(int(left*914400)), E(int(top*914400)),
+                                   E(int(w*914400)), E(int(h*914400)))
+    tf = txb.text_frame
+    tf.word_wrap = True
+    tf.auto_size = MSO_AUTO_SIZE.NONE
+    if anchor is not None:
+        tf.vertical_anchor = anchor
+    for i, (runs, space) in enumerate(paras):
+        p = tf.paragraphs[0] if i == 0 else tf.add_paragraph()
+        if i and space:
+            p.space_before = P(space * scale)
+        for text, size, bold, italic, color in runs:
+            r = p.add_run()
+            r.text = text
+            r.font.name = FONT
+            r.font.size = P(round(size * scale * 2) / 2)
+            r.font.bold = bold
+            r.font.italic = italic
+            r.font.color.rgb = color
+    return txb
+
+
+def add_rule(slide, x1, y1, x2, y2, color, weight_pt=0.75):
+    """A thin straight divider line (a connector, so no fill or shadow)."""
+    from pptx.enum.shapes import MSO_CONNECTOR
+    from pptx.util import Emu as E, Pt as P
+    conn = slide.shapes.add_connector(MSO_CONNECTOR.STRAIGHT, E(int(x1*914400)),
+                                      E(int(y1*914400)), E(int(x2*914400)), E(int(y2*914400)))
+    conn.line.color.rgb = color
+    conn.line.width = P(weight_pt)
+
+
+def build_staircase_card(slide, x, y, w, h):
+    """Navy card: where the firm is today and where it needs to be, on the
+    legacy staircase (stages 2–6). Current step filled lime, goal step
+    outlined lime, steps already climbed muted green, the rest muted navy."""
+    from pptx.util import Emu as E, Pt as P
+    add_rect(slide, x, y, w, h, fill=NAVY)
+    current, goal, cur_n, goal_n = parse_stage_text(STAGE_TEXT)
+
+    def stage_label(text, n):
+        # The official staircase name for the stage number, so it always
+        # matches the audit; free text only if no stage number was given.
+        if n in STAGE_NAMES:
+            return STAGE_NAMES[n]
+        return re.sub(r"^\s*(?:Goal:\s*)?Stage\s*\d\s*[:,–—-]?\s*", "", text or "", flags=re.I)
+
+    half = (w - 0.50) / 2
+    cur_name = stage_label(current, cur_n)
+    goal_name = stage_label(goal, goal_n) if goal else ""
+    # Both stage names share one size so the two ends read as a pair.
+    name_size = min(fit_text(t, half, 0.46, 12, bold=True, max_lines=2, min_size=9)[0] or 9
+                    for t in [cur_name, goal_name] if t) if (cur_name or goal_name) else 12
+    cur_kicker = f"TODAY  ·  STAGE {cur_n}" if cur_n else "TODAY"
+    add_text(slide, cur_kicker, x+0.20, y+0.12, half, 0.18, 7.5, LIME_GREEN, bold=True,
+             fit=False)
+    add_text(slide, cur_name, x+0.20, y+0.28, half, 0.46, name_size, WHITE, bold=True,
+             max_lines=2, min_size=name_size, cap_label="STAGE_TEXT current")
+    if goal:
+        goal_kicker = f"GOAL  ·  STAGE {goal_n}" if goal_n else "GOAL"
+        add_text(slide, goal_kicker, x+0.30+half, y+0.12, half, 0.18, 7.5,
+                 LIME_GREEN, bold=True, fit=False, align=PP_ALIGN.RIGHT)
+        add_text(slide, goal_name, x+0.30+half, y+0.28, half, 0.46, name_size,
+                 WHITE, bold=True, max_lines=2, min_size=name_size, align=PP_ALIGN.RIGHT,
+                 cap_label="STAGE_TEXT goal")
+
+    if cur_n is None:
+        return
+    stages = [2, 3, 4, 5, 6]
+    gap = 0.06
+    # Same staircase size whether the card is half or full width; on a
+    # full-width card it sits to the right, under the goal label.
+    area_w = min(w - 0.40, 3.80)
+    area_x = x + w - 0.20 - area_w
+    step_w = (area_w - gap * (len(stages) - 1)) / len(stages)
+    base = y + h - 0.16
+    top_room = y + 0.86
+    unit = (base - top_room) / len(stages)
+    for i, n in enumerate(stages):
+        sx = area_x + i * (step_w + gap)
+        sh_h = unit * (i + 1)
+        bar = slide.shapes.add_shape(1, E(int(sx*914400)), E(int((base-sh_h)*914400)),
+                                     E(int(step_w*914400)), E(int(sh_h*914400)))
+        bar.fill.solid()
+        if n == cur_n:
+            bar.fill.fore_color.rgb = LIME_GREEN
+            bar.line.fill.background()
+            num_color = GOAL_TEXT_DARK
+        elif n < cur_n:
+            bar.fill.fore_color.rgb = rgb("2F6B3A")
+            bar.line.fill.background()
+            num_color = rgb("A9D68C")
+        elif n == goal_n:
+            bar.fill.fore_color.rgb = NAVY
+            bar.line.color.rgb = LIME_GREEN
+            bar.line.width = P(1.5)
+            num_color = LIME_GREEN
+        else:
+            bar.fill.fore_color.rgb = URGENCY_CARD
+            bar.line.fill.background()
+            num_color = URGENCY_SUB
+        add_text(slide, str(n), sx, base - 0.30, step_w, 0.28, 10, num_color, bold=True,
+                 align=PP_ALIGN.CENTER, fit=False)
+
 
 def build_slide1(prs):
     layout = prs.slide_layouts[6]  # blank
     slide = prs.slides.add_slide(layout)
+    add_header(slide, f"Where {FIRM_NAME} Stands Today", 9.30)
 
-    # Full-bleed background wash — every card below sits on this, not on white
-    add_rect(slide, 0, 0, 10, 5.625, fill=BG_WASH)
+    quotes = [(who or "You said", q) for who, q in PROSPECT_QUOTES[:3] if q]
 
-    # Header banner + accent stripe (mirrors slides 2 and 3)
-    add_rect(slide, 0, 0, 10, 0.92, fill=NAVY)
-    add_rect(slide, 0, 0.92, 10, 0.04, fill=LIME_GREEN)
-    add_text(slide, f"LAW FIRM GROWTH AUDIT  ·  {FIRM_NAME.upper()}",
-             0.32, 0.20, 6.00, 0.18, 7.5, LIME_GREEN, bold=True)
-    add_text(slide, f"Where {FIRM_NAME} Stands Today",
-             0.32, 0.40, 6.90, 0.40, 20, WHITE, bold=True)
+    # Left: "What you told us" — the prospect's own words, one card, one text box.
+    if quotes:
+        add_text(slide, "WHAT YOU TOLD US", 0.30, 1.08, 5.00, 0.20, 7.5, NAVY, bold=True,
+                 fit=False)
+        add_rect(slide, 0.30, 1.32, 5.00, 2.06, fill=WHITE)
+        add_rect(slide, 0.30, 1.32, 0.05, 2.06, fill=LIME_GREEN)
+        paras = []
+        for i, (who, q) in enumerate(quotes):
+            q = cap(q.strip().strip('"“”'), 130, f"PROSPECT_QUOTES[{i}]")
+            paras.append(([(f"{who.upper()}:", 7.5, True, False, GREEN)], 0 if i == 0 else 9))
+            paras.append(([(f"“{q}”", 11, False, True, NAVY)], 1))
+        add_rich_text(slide, paras, 0.50, 1.40, 4.70, 1.92, label="PROSPECT_QUOTES",
+                      anchor=MSO_ANCHOR.MIDDLE)
 
-    # Urgency widget — docked in the header, not a large block in the content area
-    add_rect(slide, 7.42, 0.18, 2.26, 0.56, fill=URGENCY_CARD)
-    add_text(slide, URGENCY_SCORE, 7.58, 0.23, 0.42, 0.42, 21, WHITE, bold=True,
-             align=PP_ALIGN.CENTER)
-    add_text(slide, "COMPETITIVE URGENCY", 8.04, 0.30, 1.55, 0.18, 7, LIME_GREEN, bold=True)
-    add_text(slide, "Score out of 10", 8.04, 0.47, 1.55, 0.18, 7, URGENCY_SUB)
+    # Right (or full width with no transcript): where they are vs. where they need to be.
+    stair_x, stair_w = (5.50, 4.20) if quotes else (0.30, 9.40)
+    add_text(slide, "WHERE YOU ARE TODAY", stair_x, 1.08, stair_w, 0.20, 7.5, NAVY,
+             bold=True, fit=False)
+    build_staircase_card(slide, stair_x, 1.32, stair_w, 2.06)
 
-    # Pillar cards — a full-width row of 4, each a white card with a colored
-    # top accent bar and a pill-shaped status badge
-    pillar_xs = [0.30, 2.68, 5.07, 7.45]
-    for i, (status, label, detail) in enumerate(PILLARS):
-        x = pillar_xs[i]
-        sc = STATUS_COLOR[status]
-        add_rect(slide, x, 1.10, 2.26, 0.96, fill=WHITE)
-        add_rect(slide, x, 1.10, 2.26, 0.04, fill=sc)
-        add_text(slide, PILLAR_NAMES[i], x+0.16, 1.26, 1.94, 0.24, 12, DARK_TEXT, bold=True)
-        add_pill(slide, label, x+0.16, 1.56, 0.64, 0.19, STATUS_PILL_BG[status], sc, size=7.5)
-        add_text(slide, detail, x+0.16, 1.82, 1.94, 0.22, 9.5, SLATE,
-                 cap_chars=40, cap_label=f"PILLARS[{i}] detail")
-
-    # Key findings label
-    add_text(slide, "KEY FINDINGS", 0.30, 2.20, 4.70, 0.18, 7.5, NAVY, bold=True)
-
-    # Finding cards — white with a colored left accent bar and a rounded icon chip.
-    # The check/X are drawn as vector line shapes, not text glyphs, so they
-    # render identically in every viewer instead of depending on font coverage.
-    finding_ys = [2.48, 3.16, 3.84, 4.52]
-    for i, (ftype, text) in enumerate(FINDINGS[:4]):
-        y = finding_ys[i]
-        dot = RED if ftype == "neg" else GREEN
-        add_rect(slide, 0.30, y, 4.72, 0.61, fill=WHITE)
-        add_rect(slide, 0.30, y, 0.04, 0.61, fill=dot)
-        add_pill(slide, None, 0.47, y+0.21, 0.18, 0.18, dot, WHITE)
-        if ftype == "neg":
-            add_x_mark(slide, 0.47, y+0.21, 0.18, WHITE)
-        else:
-            add_check(slide, 0.47, y+0.21, 0.18, WHITE)
-        add_text(slide, text, 0.75, y+0.13, 3.77, 0.41, 8.5, BODY_TEXT,
-                 cap_chars=115, cap_label=f"FINDINGS[{i}]")
-
-    # Website screenshot — only shown when a local PNG is provided
-    if WEBSITE_SCREENSHOT_PATH and os.path.isfile(WEBSITE_SCREENSHOT_PATH):
-        from pptx.util import Emu as E
-        slide.shapes.add_picture(WEBSITE_SCREENSHOT_PATH,
-                                 E(int(5.28*914400)), E(int(1.10*914400)),
-                                 E(int(4.42*914400)), E(int(1.00*914400)))
-
-    # "You are here" card
-    add_rect(slide, 5.28, 2.20, 4.42, 0.74, fill=NAVY)
-    add_rect(slide, 5.28, 2.20, 0.04, 0.74, fill=LIME_GREEN)
-    add_text(slide, "YOU ARE HERE", 5.48, 2.33, 4.02, 0.16, 7.5, LIME_GREEN, bold=True)
-    add_text(slide, STAGE_TEXT, 5.48, 2.54, 4.02, 0.34, 10, WHITE, bold=True)
-
-    # Competitor table header
-    add_text(slide, "COMPETITOR LANDSCAPE", 5.28, 3.14, 4.42, 0.18, 7.5, NAVY, bold=True)
-
-    comp_ys = [3.42, 3.86, 4.30]
-    for i, (name, reviews, detail) in enumerate(COMPETITORS[:3]):
-        y = comp_ys[i]
-        add_rect(slide, 5.28, y, 4.42, 0.39, fill=WHITE)
-        add_text(slide, name, 5.46, y, 1.78, 0.39, 8.5, DARK_TEXT,
-                 cap_chars=30, cap_label=f"COMPETITORS[{i}] name")
-        add_text(slide, reviews, 7.26, y, 1.48, 0.39, 8, GREEN,
-                 cap_chars=30, cap_label=f"COMPETITORS[{i}] reviews")
-        add_text(slide, detail, 8.78, y, 0.80, 0.39, 7, SLATE,
-                 cap_chars=34, cap_label=f"COMPETITORS[{i}] detail")
-
-    # Client row — a "you are here" highlight, not a warning, so it uses the
-    # same red accent-bar language as the RED pillar/finding cards rather than
-    # a solid warning block (which reads as an error next to the neutral rows above it).
-    add_rect(slide, 5.28, 4.74, 4.42, 0.39, fill=RED_PILL_BG)
-    add_rect(slide, 5.28, 4.74, 0.04, 0.39, fill=RED)
-    add_text(slide, FIRM_NAME, 5.46, 4.74, 1.78, 0.39, 8.5, RED, bold=True,
-             cap_chars=30, cap_label="CLIENT row firm name")
-    add_text(slide, CLIENT_REVIEWS, 7.26, 4.74, 1.48, 0.39, 8, RED, bold=True,
-             cap_chars=30, cap_label="CLIENT_REVIEWS")
-    add_text(slide, CLIENT_REVIEWS_NOTE, 8.78, 4.74, 0.80, 0.39, 7, SLATE,
-             cap_chars=34, cap_label="CLIENT_REVIEWS_NOTE")
+    # Bottom: the main gaps from the audit, grouped by category — one card,
+    # three columns separated by thin rules, no per-item boxes.
+    add_text(slide, "YOUR KEY GAPS", 0.30, 3.50, 4.00, 0.20, 7.5, NAVY, bold=True, fit=False)
+    add_rect(slide, 0.30, 3.74, 9.40, 1.36, fill=WHITE)
+    gaps = KEY_GAPS[:3]
+    col_w = 9.40 / max(1, len(gaps))
+    for i, (category, gap) in enumerate(gaps):
+        cx = 0.30 + i * col_w
+        if i:
+            add_rule(slide, cx, 3.92, cx, 4.94, rgb("D9E2E8"))
+        add_rect(slide, cx+0.24, 3.94, 0.28, 0.04, fill=LIME_GREEN if i % 2 else NAVY)
+        add_text(slide, category.upper(), cx+0.18, 4.02, col_w-0.36, 0.22, 8, NAVY,
+                 bold=True, max_lines=1, cap_label=f"KEY_GAPS[{i}] category")
+        add_text(slide, gap, cx+0.18, 4.26, col_w-0.36, 0.76, 10.5, BODY_TEXT,
+                 max_lines=3, cap_chars=90, cap_label=f"KEY_GAPS[{i}] gap")
 
     add_footer(slide, 1, 3, LOGO_PATH)
 
@@ -475,49 +665,35 @@ def build_slide2(prs):
     layout = prs.slide_layouts[6]
     slide = prs.slides.add_slide(layout)
 
-    # Background wash + header (mirrors slides 1 and 3)
-    add_rect(slide, 0, 0, 10, 5.625, fill=BG_WASH)
-    add_rect(slide, 0, 0, 10, 0.92, fill=NAVY)
-    add_rect(slide, 0, 0.92, 10, 0.04, fill=LIME_GREEN)
-    add_text(slide, f"LAW FIRM GROWTH AUDIT  ·  {FIRM_NAME.upper()}",
-             0.32, 0.20, 6.00, 0.18, 7.5, LIME_GREEN, bold=True)
-    add_text(slide, SLIDE_2_TITLE, 0.32, 0.40, 9.30, 0.40, 20, WHITE, bold=True)
+    # Background wash + header (shared with slides 1 and 3)
+    add_header(slide, SLIDE_2_TITLE, 9.30)
 
-    # Left column — model card and goal card, as two separate cards with a
-    # gap between them rather than one continuous box with an inset panel
-    add_rect(slide, 0.30, 1.10, 2.42, 2.50, fill=NAVY)
-    add_rect(slide, 0.30, 1.10, 2.42, 0.04, fill=LIME_GREEN)
-    add_text(slide, "THE SMB TEAM MODEL", 0.50, 1.28, 2.02, 0.16, 7.5, LIME_GREEN, bold=True)
-    add_text(slide, SMB_MODEL_DESC, 0.50, 1.56, 2.02, 1.90, 8.5, LIGHT_BLUE)
+    # Just the prospect's 3 priorities, full width. Each is one colored
+    # header block over one white card holding a single bulleted text box.
+    col_w, gap = 2.98, 0.23
+    for col_i, (line1, line2, _hex, bullets) in enumerate(PRIORITIES[:3]):
+        x = 0.30 + col_i * (col_w + gap)
+        ac, title_color, kicker_color = PRIORITY_STYLE[col_i % len(PRIORITY_STYLE)]
 
-    add_rect(slide, 0.30, 3.78, 2.42, 1.23, fill=LIME_GREEN)
-    add_text(slide, GOAL_HEADLINE, 0.50, 3.96, 2.02, 0.52, 12, GOAL_TEXT_DARK, bold=True)
-    add_text(slide, GOAL_DBM, 0.50, 4.52, 2.02, 0.34, 8.5, GOAL_TEXT_DARKER)
+        add_rect(slide, x, 1.10, col_w, 0.96, fill=ac)
+        add_text(slide, f"PRIORITY {col_i+1}", x+0.20, 1.20, col_w-0.40, 0.20, 8,
+                 kicker_color, bold=True, fit=False)
+        # Title keeps the FILL's own line break (line1 / line2); both lines
+        # share one size so the block reads as a single heading.
+        title_w = col_w - 0.40
+        sizes = [fit_text(t, title_w, 0.30, 14, bold=True, max_lines=1)[0] or 10.5
+                 for t in (line1, line2) if t]
+        title_size = min(sizes) if sizes else 14
+        for row, t in enumerate([t for t in (line1, line2) if t]):
+            add_text(slide, t, x+0.20, 1.40 + row*0.27, title_w, 0.30, title_size,
+                     title_color, bold=True, max_lines=1, min_size=title_size,
+                     cap_label=f"PRIORITIES[{col_i}] title")
 
-    # 3 priority columns
-    priority_xs = [2.92, 5.30, 7.68]
-    bullet_ys   = [2.04, 2.65, 3.25, 3.85, 4.46]
-
-    for col_i, (line1, line2, hex_color, bullets) in enumerate(PRIORITIES):
-        x = priority_xs[col_i]
-        ac = rgb(hex_color)
-        light = PRIORITY_LIGHT.get(hex_color, rgb("F8F8FF"))
-        header_text = ACCENT_TEXT_COLOR.get(hex_color, WHITE)
-
-        # Header
-        add_rect(slide, x, 1.10, 2.26, 0.92, fill=ac)
-        add_text(slide, f"0{col_i+1}", x+0.18, 1.20, 0.50, 0.24, 13, header_text, bold=True)
-        add_text(slide, line1, x+0.18, 1.44, 2.00, 0.24, 14, header_text, bold=True)
-        add_text(slide, line2, x+0.18, 1.68, 2.00, 0.24, 14, header_text, bold=True)
-
-        # Bullet rows
-        for row_i, bullet in enumerate(bullets[:5]):
-            y = bullet_ys[row_i]
-            bg = light if row_i % 2 == 0 else WHITE
-            add_rect(slide, x, y, 2.26, 0.56, fill=bg)
-            add_rect(slide, x+0.16, y+0.25, 0.07, 0.07, fill=ac)
-            add_text(slide, bullet, x+0.33, y+0.11, 1.76, 0.40, 8, DARK_TEXT,
-                     cap_chars=60, cap_label=f"PRIORITIES[{col_i}] bullet {row_i+1}")
+        add_rect(slide, x, 2.06, col_w, 3.00, fill=WHITE)
+        add_bullets(slide, [cap(b, 60, f"PRIORITIES[{col_i}] bullet {j+1}")
+                            for j, b in enumerate(bullets[:5])],
+                    x+0.14, 2.22, col_w-0.28, 2.74, 11, DARK_TEXT, ac,
+                    label=f"PRIORITIES[{col_i}] bullets")
 
     add_footer(slide, 2, 3, LOGO_PATH)
 
@@ -530,20 +706,14 @@ def build_slide3(prs):
     if len(WHAT_YOU_TOLD_US) != 3:
         raise SystemExit(
             f"WHAT_YOU_TOLD_US has {len(WHAT_YOU_TOLD_US)} items; Slide 3 needs exactly 3. "
-            "With no discovery call transcript, set TOLD_US_TITLE = \"WHAT WE FOUND\" and "
-            "copy the 3 research-based rows from section_11 Block 5.")
+            "With no discovery call transcript, copy the 3 research-based rows from "
+            "section_11 Block 5 (What We Found).")
 
     layout = prs.slide_layouts[6]
     slide = prs.slides.add_slide(layout)
 
     # Background wash + header (mirrors slides 1 and 2)
-    add_rect(slide, 0, 0, 10, 5.625, fill=BG_WASH)
-    add_rect(slide, 0, 0, 10, 0.92, fill=NAVY)
-    add_rect(slide, 0, 0.92, 10, 0.04, fill=LIME_GREEN)
-    add_text(slide, f"LAW FIRM GROWTH AUDIT  ·  {FIRM_NAME.upper()}",
-             0.32, 0.20, 6.00, 0.18, 7.5, LIME_GREEN, bold=True)
-    add_text(slide, "Your Investment & What Happens Next",
-             0.32, 0.40, 9.30, 0.40, 20, WHITE, bold=True)
+    add_header(slide, "Your Investment & What Happens Next", 9.30)
 
     # Package cards — white with a thin colored left accent bar
     pkg_ys = [1.10, 2.25]
@@ -552,20 +722,42 @@ def build_slide3(prs):
         ac = rgb(hex_c)
         add_rect(slide, 0.30, y, 4.42, 1.05, fill=WHITE)
         add_rect(slide, 0.30, y, 0.04, 1.05, fill=ac)
-        add_text(slide, label, 0.56, y+0.15, 3.92, 0.16, 7.5, ac, bold=True)
-        add_text(slide, price, 0.56, y+0.36, 1.90, 0.44, 30, NAVY, bold=True)
-        add_text(slide, "/mo", 2.10, y+0.58, 0.40, 0.20, 10, SLATE)
-        add_text(slide, retail, 3.20, y+0.58, 1.10, 0.20, 10, SLATE, align=PP_ALIGN.RIGHT)
-        add_text(slide, services, 0.56, y+0.85, 3.92, 0.18, 8.5, SLATE,
+        add_text(slide, label, 0.56, y+0.12, 3.96, 0.20, 7.5, ac, bold=True,
+                 max_lines=1, cap_label=f"PACKAGES[{i}] label")
+        # Price, "/mo" and retail price share one baseline; "/mo" follows the
+        # price's measured width so it never collides or wraps.
+        price_top = y + 0.27
+        price_size, _ = fit_text(price, 2.60, 0.58, 30, bold=True, max_lines=1)
+        price_size = price_size or 22
+        add_text(slide, price, 0.56, price_top, 2.60, 0.58, price_size, NAVY,
+                 bold=True, fit=False)
+        baseline = price_top + baseline_offset(price_size, bold=True)
+        mo_x = 0.56 + _INSET_X + text_width(price, price_size, bold=True) + 0.04 - _INSET_X
+        add_text(slide, "/mo", mo_x, baseline - baseline_offset(10), 0.50, 0.24, 10,
+                 SLATE, wrap=False, fit=False)
+        retail_x = mo_x + 2 * _INSET_X + text_width("/mo", 10) + 0.06
+        add_text(slide, retail, retail_x, baseline - baseline_offset(10),
+                 4.62 - retail_x, 0.24, 10, SLATE, align=PP_ALIGN.RIGHT,
+                 max_lines=1, cap_label=f"PACKAGES[{i}] retail")
+        add_text(slide, services, 0.56, y+0.80, 3.96, 0.22, 8.5, SLATE, max_lines=1,
                  cap_chars=61, cap_label=f"PACKAGES[{i}] services")
 
     # Bundle total — same 0.10in gap used between the two package cards above
     add_rect(slide, 0.30, 3.40, 4.42, 0.72, fill=NAVY)
     add_rect(slide, 0.30, 3.40, 0.04, 0.72, fill=LIME_GREEN)
-    add_text(slide, "BUNDLE TOTAL", 0.56, 3.55, 1.70, 0.16, 7.5, LIME_GREEN, bold=True)
-    add_text(slide, BUNDLE_TOTAL, 0.56, 3.75, 2.20, 0.30, 17, WHITE, bold=True)
-    add_text(slide, BUNDLE_SAVINGS, 2.90, 3.82, 1.60, 0.20, 8.5, BUNDLE_SAVINGS_TEXT,
-             align=PP_ALIGN.RIGHT)
+    add_text(slide, "BUNDLE TOTAL", 0.56, 3.50, 1.70, 0.18, 7.5, LIME_GREEN, bold=True,
+             fit=False)
+    total_size, _ = fit_text(BUNDLE_TOTAL, 2.40, 0.40, 17, bold=True, max_lines=1)
+    total_size = total_size or 13
+    add_text(slide, BUNDLE_TOTAL, 0.56, 3.66, 2.40, 0.40, total_size, WHITE, bold=True,
+             fit=False)
+    # Savings line sits to the right of the measured total, on its baseline,
+    # and shrinks to fit the space left inside the card.
+    total_baseline = 3.66 + baseline_offset(total_size, bold=True)
+    savings_x = 0.56 + text_width(BUNDLE_TOTAL, total_size, bold=True) + 0.20
+    add_text(slide, BUNDLE_SAVINGS, savings_x, total_baseline - baseline_offset(8.5),
+             4.62 - savings_x, 0.22, 8.5, BUNDLE_SAVINGS_TEXT, align=PP_ALIGN.RIGHT,
+             max_lines=1, cap_label="BUNDLE_SAVINGS")
 
     # Ad spend note + ROI-on-ad-spend card — both omitted entirely when no
     # marketing/ads package was sold. Showing a return-on-ad-spend projection
@@ -597,9 +789,9 @@ def build_slide3(prs):
         told_us_y = 1.10
         timeline_ys = [1.46, 2.06, 2.66, 3.26]
 
-    # What You Told Us — alternating light/white rows; the first dot pops in
+    # How this plan addresses it — alternating light/white rows; the first dot pops in
     # lime green, the rest in ocean blue, so the lead item stands out
-    add_text(slide, TOLD_US_TITLE,
+    add_text(slide, "HOW THIS PLAN ADDRESSES IT",
              5.00, told_us_y, 4.70, 0.18, 7.5, NAVY, bold=True)
     for i, (milestone, action) in enumerate(WHAT_YOU_TOLD_US[:3]):
         y = timeline_ys[i]
@@ -607,16 +799,19 @@ def build_slide3(prs):
         dot_color = LIME_GREEN if i == 0 else OCEAN_BLUE
         add_rect(slide, 5.00, y, 4.70, 0.29, fill=row_bg)
         add_rect(slide, 5.14, y+0.09, 0.10, 0.10, fill=dot_color)
-        add_text(slide, milestone, 5.36, y+0.055, 0.95, 0.18, 8, NAVY, bold=True,
+        add_text(slide, milestone, 5.30, y, 1.25, 0.29, 8, NAVY, bold=True,
+                 max_lines=1, anchor=MSO_ANCHOR.MIDDLE,
                  cap_chars=16, cap_label=f"WHAT_YOU_TOLD_US[{i}] label")
-        add_text(slide, action, 6.36, y+0.055, 3.20, 0.18, 8, BODY_TEXT,
+        add_text(slide, action, 6.50, y, 3.20, 0.29, 8, BODY_TEXT,
+                 max_lines=1, anchor=MSO_ANCHOR.MIDDLE,
                  cap_chars=55, cap_label=f"WHAT_YOU_TOLD_US[{i}] action")
 
     # Closing quote bar — taller, darker navy, with the same lime accent stripe
     add_rect(slide, 0, 4.66, 10, 0.61, fill=rgb("002A41"))
     add_rect(slide, 0, 4.66, 10, 0.02, fill=LIME_GREEN)
-    add_text(slide, CLOSING_QUOTE, 0.70, 4.82, 8.60, 0.34, 9.5, rgb("C2D8E6"),
-             align=PP_ALIGN.CENTER, cap_chars=200, cap_label="CLOSING_QUOTE")
+    add_text(slide, CLOSING_QUOTE, 0.70, 4.70, 8.60, 0.54, 9.5, rgb("C2D8E6"),
+             align=PP_ALIGN.CENTER, max_lines=2, anchor=MSO_ANCHOR.MIDDLE,
+             cap_chars=200, cap_label="CLOSING_QUOTE")
 
     add_footer(slide, 3, 3, LOGO_PATH)
 
@@ -753,6 +948,11 @@ build_slide3(prs)
 os.makedirs(os.path.dirname(OUTPUT_PATH), exist_ok=True) if os.path.dirname(OUTPUT_PATH) else None
 prs.save(OUTPUT_PATH)
 embed_fonts(OUTPUT_PATH, FONT_DIR)
+
+if _SHRUNK:
+    print(f"NOTE: {len(_SHRUNK)} field(s) were shrunk to fit their box:")
+    for label, before, after in _SHRUNK:
+        print(f"  - {label}: {before:g}pt → {after:g}pt")
 
 if _TRUNCATED:
     print(f"WARNING: {len(_TRUNCATED)} field(s) exceeded their character budget "
