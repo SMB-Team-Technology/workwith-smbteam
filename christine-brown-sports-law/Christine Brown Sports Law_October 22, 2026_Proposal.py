@@ -183,7 +183,7 @@ GREEN_PILL_BG = rgb("ECF7E4")
 DARK_TEXT   = rgb("1B2A38")   # near-black body/label text on white cards
 BODY_TEXT   = rgb("4A5C6B")   # neutral gray-blue for card copy (findings, ad spend note, timeline actions)
 SLATE       = rgb("7C8D9B")   # lighter captions (competitor detail, retail price, services line)
-LIGHT_BLUE  = rgb("B8CDDD")   # SMB Team Model description text (on navy)
+LIGHT_BLUE  = rgb("B8CDDD")   # secondary text on navy (stage card goal line)
 FOOTER_TEXT = rgb("8FB2C6")
 
 ROI_BG      = rgb("F0FAF4")
@@ -191,21 +191,19 @@ ROI_GREEN   = rgb("0B6B4A")
 ROI_HILIGHT = rgb("E2F3E9")
 
 BUNDLE_SAVINGS_TEXT = rgb("A9D68C")   # lighter green — reads as "money saved"
-GOAL_TEXT_DARK      = rgb("143306")   # goal headline, on Lime Green card
-GOAL_TEXT_DARKER    = rgb("1F470C")   # goal DBM line, on Lime Green card
+GOAL_TEXT_DARK      = rgb("143306")   # dark green text on Lime Green fills
 
 STATUS_COLOR    = {"RED": RED, "AMBER": AMBER, "GREEN": GREEN}
 STATUS_PILL_BG  = {"RED": RED_PILL_BG, "AMBER": AMBER_PILL_BG, "GREEN": GREEN_PILL_BG}
-# Priority/package accent colors cycle through the brand palette. Lime Green
-# is light, so anything filled with it uses a dark green text instead of
-# WHITE/navy — see ACCENT_TEXT_COLOR below.
-PRIORITY_LIGHT = {
-    "0091C9": rgb("ECF5FA"),   # light Ocean Blue tint
-    "69CD2B": rgb("ECF7E4"),   # light Lime Green tint
-    "003A59": rgb("EEF2F5"),   # light Deep Wood Blue tint
-}
-# Header text color to use for each accent fill — defaults to WHITE elsewhere.
-ACCENT_TEXT_COLOR = {"69CD2B": GOAL_TEXT_DARK}
+# Slide 2 priority columns always alternate navy / lime / navy, whatever hex
+# the FILL section passes — no Ocean Blue or other accents on that slide.
+# Each entry: (header fill, title text, "PRIORITY N" kicker text). Lime
+# Green is light, so its header uses dark green text instead of white.
+PRIORITY_STYLE = [
+    (NAVY,       WHITE,          LIME_GREEN),
+    (LIME_GREEN, GOAL_TEXT_DARK, GOAL_TEXT_DARK),
+    (NAVY,       WHITE,          LIME_GREEN),
+]
 
 FONT = "Poppins"
 LOGO_PATH = os.path.join(os.path.dirname(__file__), "smb_team_logo.png")
@@ -444,12 +442,13 @@ def add_title(slide, text, w):
                  cap_label="slide title")
 
 
-def add_header(slide, title, title_w):
-    """Background wash, navy header, lime stripe, kicker and title — shared
-    by all three slides."""
+def add_header(slide, title, title_w, stripe=True):
+    """Background wash, navy header, lime stripe (optional), kicker and
+    title — shared by all three slides."""
     add_rect(slide, 0, 0, 10, 5.625, fill=BG_WASH)
     add_rect(slide, 0, 0, 10, 0.92, fill=NAVY)
-    add_rect(slide, 0, 0.92, 10, 0.04, fill=LIME_GREEN)
+    if stripe:
+        add_rect(slide, 0, 0.92, 10, 0.04, fill=LIME_GREEN)
     add_text(slide, f"LAW FIRM GROWTH AUDIT  ·  {FIRM_NAME.upper()}",
              0.32, 0.20, min(title_w, 6.90), 0.18, 7.5, LIME_GREEN, bold=True,
              max_lines=1, cap_label="header kicker")
@@ -479,6 +478,57 @@ def add_footer(slide, page, total, logo_path):
              1.55, 5.35, 5.40, 0.20, 7, FOOTER_TEXT)
     add_text(slide, f"{page} / {total}", 8.40, 5.35, 1.30, 0.20, 7, FOOTER_TEXT,
              align=PP_ALIGN.RIGHT)
+
+
+_BULLET_INDENT = 0.16   # hanging indent for bullet text (in)
+_BULLET_GAP_PT = 6      # space before each bullet after the first
+
+
+def add_bullets(slide, items, left, top, w, h, size, color, bullet_color, label=""):
+    """One text box with a real bulleted paragraph per item, sized so all
+    items fit: drops 0.5pt at a time (down to 75%) until the wrapped lines
+    plus inter-bullet spacing fit the box."""
+    from pptx.util import Emu as E, Pt as P
+    max_w = (w - 2 * _INSET_X - _BULLET_INDENT) * _WIDTH_SAFETY
+    avail_h = h - 2 * _INSET_Y
+    floor = max(6.0, round(size * 0.75 * 2) / 2)
+    s = size
+    while s > floor:
+        n_lines = sum(len(wrap_lines(t, s, max_w)) for t in items)
+        need = n_lines * line_height(s) + (len(items) - 1) * _BULLET_GAP_PT / 72
+        if need <= avail_h:
+            break
+        s -= _FIT_STEP
+    if s < size:
+        _SHRUNK.append((label, size, s))
+
+    txb = slide.shapes.add_textbox(E(int(left*914400)), E(int(top*914400)),
+                                   E(int(w*914400)), E(int(h*914400)))
+    tf = txb.text_frame
+    tf.word_wrap = True
+    tf.auto_size = MSO_AUTO_SIZE.NONE
+    hex_bullet = "%02X%02X%02X" % tuple(bullet_color)
+    for i, text in enumerate(items):
+        p = tf.paragraphs[0] if i == 0 else tf.add_paragraph()
+        if i:
+            p.space_before = P(_BULLET_GAP_PT)
+        pPr = p._p.get_or_add_pPr()
+        pPr.set("marL", str(int(_BULLET_INDENT * 914400)))
+        pPr.set("indent", str(-int(_BULLET_INDENT * 914400)))
+        for tag, attrs in [("a:buClr", None), ("a:buFont", {"typeface": "Arial"}),
+                           ("a:buChar", {"char": "•"})]:
+            el = etree.SubElement(pPr, qn(tag))
+            if tag == "a:buClr":
+                etree.SubElement(el, qn("a:srgbClr")).set("val", hex_bullet)
+            else:
+                for k, v in attrs.items():
+                    el.set(k, v)
+        run = p.add_run()
+        run.text = text
+        run.font.name = FONT
+        run.font.size = P(s)
+        run.font.color.rgb = color
+    return txb
 
 
 # Competitor table columns: name / reviews / detail. Reviews is short
@@ -645,46 +695,36 @@ def build_slide2(prs):
     layout = prs.slide_layouts[6]
     slide = prs.slides.add_slide(layout)
 
-    # Background wash + header (mirrors slides 1 and 3)
-    add_header(slide, SLIDE_2_TITLE, 9.30)
+    # Background wash + header — no lime divider here: this slide should be
+    # as quiet as possible so it supports the rep instead of competing.
+    add_header(slide, SLIDE_2_TITLE, 9.30, stripe=False)
 
-    # Left column — model card and goal card, as two separate cards with a
-    # gap between them rather than one continuous box with an inset panel
-    add_rect(slide, 0.30, 1.10, 2.42, 2.50, fill=NAVY)
-    add_rect(slide, 0.30, 1.10, 2.42, 0.04, fill=LIME_GREEN)
-    add_text(slide, "THE SMB TEAM MODEL", 0.50, 1.28, 2.02, 0.16, 7.5, LIME_GREEN, bold=True)
-    add_text(slide, SMB_MODEL_DESC, 0.50, 1.56, 2.02, 1.90, 8.5, LIGHT_BLUE)
+    # Just the prospect's 3 priorities, full width. Each is one colored
+    # header block over one white card holding a single bulleted text box.
+    col_w, gap = 2.98, 0.23
+    for col_i, (line1, line2, _hex, bullets) in enumerate(PRIORITIES[:3]):
+        x = 0.30 + col_i * (col_w + gap)
+        ac, title_color, kicker_color = PRIORITY_STYLE[col_i % len(PRIORITY_STYLE)]
 
-    add_rect(slide, 0.30, 3.78, 2.42, 1.23, fill=LIME_GREEN)
-    add_text(slide, GOAL_HEADLINE, 0.50, 3.96, 2.02, 0.52, 12, GOAL_TEXT_DARK, bold=True)
-    add_text(slide, GOAL_DBM, 0.50, 4.50, 2.02, 0.46, 8.5, GOAL_TEXT_DARKER,
-             cap_label="GOAL_DBM")
+        add_rect(slide, x, 1.10, col_w, 0.96, fill=ac)
+        add_text(slide, f"PRIORITY {col_i+1}", x+0.20, 1.20, col_w-0.40, 0.20, 8,
+                 kicker_color, bold=True, fit=False)
+        # Title keeps the FILL's own line break (line1 / line2); both lines
+        # share one size so the block reads as a single heading.
+        title_w = col_w - 0.40
+        sizes = [fit_text(t, title_w, 0.30, 14, bold=True, max_lines=1)[0] or 10.5
+                 for t in (line1, line2) if t]
+        title_size = min(sizes) if sizes else 14
+        for row, t in enumerate([t for t in (line1, line2) if t]):
+            add_text(slide, t, x+0.20, 1.40 + row*0.27, title_w, 0.30, title_size,
+                     title_color, bold=True, max_lines=1, min_size=title_size,
+                     cap_label=f"PRIORITIES[{col_i}] title")
 
-    # 3 priority columns
-    priority_xs = [2.92, 5.30, 7.68]
-    bullet_ys   = [2.04, 2.65, 3.25, 3.85, 4.46]
-
-    for col_i, (line1, line2, hex_color, bullets) in enumerate(PRIORITIES):
-        x = priority_xs[col_i]
-        ac = rgb(hex_color)
-        light = PRIORITY_LIGHT.get(hex_color, rgb("F8F8FF"))
-        header_text = ACCENT_TEXT_COLOR.get(hex_color, WHITE)
-
-        # Header
-        add_rect(slide, x, 1.10, 2.26, 0.92, fill=ac)
-        add_text(slide, f"0{col_i+1}", x+0.18, 1.20, 0.50, 0.24, 13, header_text, bold=True)
-        add_text(slide, line1, x+0.18, 1.44, 2.00, 0.24, 14, header_text, bold=True)
-        add_text(slide, line2, x+0.18, 1.68, 2.00, 0.24, 14, header_text, bold=True)
-
-        # Bullet rows
-        for row_i, bullet in enumerate(bullets[:5]):
-            y = bullet_ys[row_i]
-            bg = light if row_i % 2 == 0 else WHITE
-            add_rect(slide, x, y, 2.26, 0.56, fill=bg)
-            add_rect(slide, x+0.16, y+0.25, 0.07, 0.07, fill=ac)
-            add_text(slide, bullet, x+0.33, y+0.02, 1.80, 0.52, 8, DARK_TEXT,
-                     anchor=MSO_ANCHOR.MIDDLE,
-                     cap_chars=60, cap_label=f"PRIORITIES[{col_i}] bullet {row_i+1}")
+        add_rect(slide, x, 2.06, col_w, 3.00, fill=WHITE)
+        add_bullets(slide, [cap(b, 60, f"PRIORITIES[{col_i}] bullet {j+1}")
+                            for j, b in enumerate(bullets[:5])],
+                    x+0.14, 2.22, col_w-0.28, 2.74, 11, DARK_TEXT, ac,
+                    label=f"PRIORITIES[{col_i}] bullets")
 
     add_footer(slide, 2, 3, LOGO_PATH)
 

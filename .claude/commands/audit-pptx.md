@@ -33,7 +33,7 @@ If any of these files does not exist, stop and tell the user to run `/audit-writ
 Assessment overview: urgency score, 4-pillar health indicators, key findings (3 negative + 1 positive), competitor review table, stage strip.
 
 **Slide 2 — Your Growth Plan: 3 Priorities to Reach [Goal]**
-Action plan: SMB model description, goal statement tied to DBM, three priority columns (themed to what this firm is actually buying and its real priorities — see below) with 5 bullets each.
+Action plan focused on the prospect: just three priority columns (themed to what this firm is actually buying and its real priorities — see below), each with up to 5 bullets in a single bulleted list. Columns are always navy / green / navy and labelled "Priority 1–3" — the engine sets this, not the FILL values. The rep's talk track: "Based on everything I've seen, there are three areas we need to focus on: X, Y and Z. Here are the key benefits of each. Next, I'll show you what it looks like to have that in place." Keep the column titles short enough to say out loud in that sentence.
 
 **Slide 3 — Your Investment & What Happens Next**
 Pricing: two package cards with bundled and retail prices, bundle total + savings, ad spend note, ROI projections, "What You Told Us" (or "What We Found") panel, closing quote.
@@ -58,15 +58,11 @@ The research notes contain the owner's **Dominant Buying Motive** in internal sh
 
 Use the client's own words from the transcript wherever possible. If they said something quotable about what they want their life to look like, that is the DBM.
 
-**Where DBM language appears in the deck — all four touchpoints must reflect it:**
+**Where DBM language appears in the deck — both touchpoints must reflect it:**
 
-1. **`GOAL_DBM`** (Slide 2 goal card, bottom of left panel) — one short phrase, 6–10 words, first-person outcome: *"Step away and trust the firm runs"*. No jargon, no metrics — pure aspiration.
+1. **`CLOSING_QUOTE`** (Slide 3 closing bar) — the most powerful DBM moment. Write it as a vivid, specific version of the outcome the owner described. Should feel like something they almost said on the call. Put it in quotation marks. No metrics, no SMB jargon — pure vision.
 
-2. **`SMB_MODEL_DESC`** (Slide 2, below the staircase) — 1–2 sentences explaining the SMB model. End with a sentence connecting the model to *this owner's* outcome: *"When all four pillars work, [Owner] can finally [DBM outcome]."*
-
-3. **`CLOSING_QUOTE`** (Slide 3 closing bar) — the most powerful DBM moment. Write it as a vivid, specific version of the outcome the owner described. Should feel like something they almost said on the call. Put it in quotation marks. No metrics, no SMB jargon — pure vision.
-
-4. **Priority column bullets (Slide 2)** — at least one bullet per column should tie the action to a life outcome, not just a business output. Instead of *"Launch Google Ads campaign"*, write *"Turn Google into a client pipeline that runs without you"*.
+2. **Priority column bullets (Slide 2)** — at least one bullet per column should tie the action to a life outcome, not just a business output. Instead of *"Launch Google Ads campaign"*, write *"Turn Google into a client pipeline that runs without you"*.
 
 **What to avoid in the deck:**
 - Do not use internal closer language ("DBM", "stage", "pain points", "closes")
@@ -101,8 +97,6 @@ Copy values exactly — do not rewrite or recompute.
 
 **From research notes:**
 - `STAGE_TEXT` — current stage and goal stage, in the form `"Stage 4: Small Business Manager  →  Goal: Stage 6, Law Firm Owner"`. Keep the `→` and the `Stage N` numbers: the engine splits on the arrow into a two-line card and draws the 6-step staircase from the numbers.
-- `GOAL_HEADLINE` — e.g. "$1M → $1.8M revenue" (from DBM / revenue goal)
-- `GOAL_DBM` — brief DBM phrase (e.g. "Jesse takes real time off")
 - `SLIDE_2_TITLE` — "Your Growth Plan: 3 Priorities to Reach [monthly goal]"
 
 **Priority column titles and bullets (Slide 2):**
@@ -123,7 +117,7 @@ Each bullet: one specific action for this firm, ≤55 chars.
 4. Set `SALES_REP` to the sales rep name
 5. Set `WEBSITE_SCREENSHOT_PATH = None` (leave as-is unless a local screenshot PNG exists)
 6. Verify no `# FILL:` placeholder text remains (the word "FILL" should not appear in any string value). If `AD_SPEND_NOTE` was deliberately set to `None` because no marketing/ads package was sold, that's expected — not a missed FILL.
-7. Before running, diff the copy's layout engine against the master template and confirm there's no output — anything below `LAYOUT ENGINE — DO NOT MODIFY BELOW THIS LINE` must be byte-for-byte identical to `Design Files/audit_pptx_template.py` (this includes `FONT`, every color constant, `ACCENT_TEXT_COLOR`, `PRIORITY_LIGHT`, and every `build_slideN`/helper function):
+7. Before running, diff the copy's layout engine against the master template and confirm there's no output — anything below `LAYOUT ENGINE — DO NOT MODIFY BELOW THIS LINE` must be byte-for-byte identical to `Design Files/audit_pptx_template.py` (this includes `FONT`, every color constant, `PRIORITY_STYLE`, and every `build_slideN`/helper function):
 
 ```bash
 diff <(sed -n '/LAYOUT ENGINE/,$p' "Design Files/audit_pptx_template.py") \
