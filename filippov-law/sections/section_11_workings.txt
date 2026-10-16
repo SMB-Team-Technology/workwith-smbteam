@@ -1,0 +1,63 @@
+SECTION 11 WORKINGS — Filippov Law (internal, never client-facing)
+
+=== OVERRIDE CHECK ===
+Source: package_decision.json (confidence: medium, seller override applied 2026-10-16 per Slack thread) + research notes STEP 9.
+1. Call-purpose override: APPLIES. Notes: "Stated call focus / product interest: AI, not marketing." primary_engagement = AI. Marketing excluded; recommendation led with AI (Legal AI Workforce) + coaching.
+2. Existing-vendor override: does not apply (no existing marketing/SEO/ad vendor stated).
+3. Budget-reality override: FLAG. Revenue is about $10K/month (about $120K annualized; HubSpot band $0-$180K). She asked "Is it monthly? Can you cancel it at any time?" but made no explicit affordability statement. The seller's explicit override (Coach Essentials Plus + AI Workforce Pro - Starter) was followed as the decision of record. The revenue table alone would not place Coach Essentials Plus here (normal band is $250K-$400K). The lowest-cost package that meets the stated need is AI Workforce Pro - Starter alone at $350/mo; sales should confirm the coaching add is intentional before the proposal call.
+4. Effective-revenue override: not applicable (no gross/net distinction; not a contingency practice).
+Departure from revenue table: yes. Table would suggest Starter marketing + Elite Coach (decision-file selection notes); seller override replaced it. Marketing and ad spend removed (Block 4 omitted).
+
+=== MANDATORY PRICE LOOKUP ===
+- Marketing package selected: none (seller override; call-purpose override)
+  - Bundled price: n/a | Stand-alone: n/a | Savings: n/a
+- Non-marketing package selected: Coach Essentials Plus
+  - Bundled price (table): $1,997/mo (applies only when bundled with another SMB package such as marketing)
+  - Stand-alone price (table): $2,497/mo
+  - Price used: $2,497/mo, stand-alone, per seller override and package_decision.json (coaching_price_bundled 2497, coaching_price_retail 2497)
+  - Savings (stand-alone minus price used): $0/mo
+- Legal AI Workforce (LAW) package selected: AI Workforce Pro - Starter, 1 user
+  - Bundled price (table): $350/user/mo x 1 seat = $350/mo (month-to-month; 1M AI credits per user; weekly AI Implementation Session)
+  - Stand-alone price: none exists in the catalog; none quoted
+  - Savings: $0/mo
+- AI Avatar / Video Growth add-on: none
+- Total monthly investment: $2,847/mo
+- Total savings: $0/mo (no savings callout shown)
+
+35% cap check: $2,847 vs 35% of about $10,000/month = $3,500 (passes). Against HubSpot ceiling $180K/yr (= $15,000/mo): $5,250 (passes). Total is about 28% of stated current monthly revenue.
+
+=== AD SPEND / ROI ===
+Not applicable. No marketing/ads package in the recommendation. Block 4 deleted from section_11_next_steps.html; ad spend row omitted from executive summary.
+
+=== DBM (Block 1) ===
+"I would like for the business to just kind of run on its own with other people where I'm not doing every type of day-in, day-out work." (00:27:33) Also: "I'm not really doing the fun legal work I would like to do, I'm just running the firm" (00:08:04); "I definitely want to be the face of the business."
+Block 1 closing statement: "We help established business-law owners get systems and AI that take the day-to-day work off their plate so they can have a firm that runs on its own with other people while they do the legal work they enjoy."
+
+=== QUICK WIN OPPORTUNITIES (8) ===
+1. Lead Gen / Quick Win — Own the "Outside General Counsel" search in Houston. Why: firm not in any of 3+ related results; field is thin (1-7 reviews). No competitor listed as doing better (each has fewer reviews than the firm's 17). Opportunity: GBP/site page focused on core service.
+2. Lead Gen / Long-Term — Build exit and succession planning pages. Why: no page exists; firm not in exit-planning results. Competitor: Strohmeyer Law PLLC (107 reviews, 4.9) [confirmed via Google].
+3. Lead Gen / Quick Win — Close the review gap. Why: 17 reviews vs 135-256. Competitor: Texas Real Estate & Business Law Firm PLLC (256, 4.8) [confirmed via Google].
+4. Intake / Quick Win — Put the inquiry form above the fold. Why: form mid-page and footer. No competitor.
+5. Intake / Long-Term — Define the path from first call to signed retainer. Why: not described on call; needed for flat-fee model. No competitor.
+6. Team / Long-Term — Turn contractors into a delegated bench. Why: contractors asking for work, "very little" to give them. No competitor.
+7. Team / Quick Win — Put AI to work on repeatable tasks. Why: building own skills "just kind of painful". Ties to AI Workforce Pro - Starter. No competitor.
+8. Profit / Long-Term — Build recurring revenue with flat-fee subscriptions. Why: lost anchor client; subscription model still being built. No competitor.
+
+=== WHAT YOU TOLD US (Block 5) ===
+1. Verbatim: "I would like for the business to just kind of run on its own with other people where I'm not doing every type of day-in, day-out work." (00:27:33). Supports: Coach Essentials Plus (weekly group coaching + monthly 1:1) for building roles, handoffs and systems.
+2. Verbatim: "I'm kind of interested in automating my work." (call focus, Step 9) and, asked whether she builds AI skills herself, "Just kind of painful." (00:37:30). Supports: AI Workforce Pro - Starter (pre-built Law Firm AI Skills, weekly AI Implementation Session).
+3. Verbatim: "I have the luxury of time right now… I want to build it out before I bring them in so that I'm able to provide them with the type of service that they deserve." (00:26:00). Supports: Coach Essentials Plus (structure to build the offer and systems first) with AI Workforce Pro - Starter.
+Next step: kickoff call with your Coach (most central package by price and DBM).
+Excluded from Block 5: financial-drop figures, lost-client details, confidentiality concern (kept for Sales Companion objections), named contractors/attorneys.
+
+=== INTERNAL ESCALATION FLAGS (never in client report) ===
+- Revenue under $300K (about $120K annualized): scoping approval required. Revenue under $250K: confirm client can cover 4 months of services ($2,847 x 4 = $11,388) before proceeding.
+- Coach Essentials Plus normally sits in the $250K-$400K band; revenue is below it. Confirm intent with sales.
+- Legal AI Workforce (LAW): confirm LAW delivery has launched and capacity is available before including in the proposal.
+- Seat count: 1 seat assumed (team size not stated; prospect is essentially solo with contractors). Confirm seat count. Fractional CTO Level 1 was also mentioned on the call with no level named; not included in this recommendation.
+- Seller asked for AI Workforce Pro at a standalone price; the catalog has no standalone price for AI Workforce Pro, so the $350/user/mo Starter rate is shown as-is with no discount framing.
+- Prospect said she wants to learn AI herself first and has not asked about marketing; lead-gen gap is real ("need new clients") but marketing was removed by seller. Revisit at Phase 2 or after the proposal call.
+- Directory review counts (Avvo, Martindale, Yelp) came from search snippets, not opened pages; not used as specific facts in the report. Yelp address discrepancy (3200 Southwest Fwy) is unconfirmed.
+- PageSpeed scores are from a local Lighthouse run (PSI API quota exceeded); disclosed in the report.
+- Google Ads, LSA and competitor Meta ads not verified (Google Search CAPTCHA). Report uses "not observed / could not be verified" wording only.
+- Proposal call: October 30, 2026, 11:00 AM Central.
