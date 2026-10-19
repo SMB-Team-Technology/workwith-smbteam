@@ -1,0 +1,190 @@
+================================================================================
+THE LAW OFFICE OF LIBBY BANKS — SECTION 11 WORKINGS (INTERNAL — NOT FOR CLIENT REPORT)
+Prepared for Pass 2, October 20, 2026. Rep: Michael Kopp.
+================================================================================
+
+FIRM NAME NOTE
+Trigger/package files use "The Law Offices of Libby Banks" (plural). Every directory
+listing found (BBB, Super Lawyers, Yelp, Facebook, firm site) uses the singular
+"The Law Office of Libby Banks". Per the research notes' STEP 5 NAP note, the
+client-facing report uses the SINGULAR form. Rep: change in the section files and
+rebuild if you prefer the plural.
+
+--------------------------------------------------------------------------------
+PACKAGE SOURCE
+--------------------------------------------------------------------------------
+package_decision.json (confidence: high; needs_seller_input: false) reflects a SELLER
+OVERRIDE logged in selection_notes (Slack request, 2026-10-19): Paid Ads Starter +
+FCFO Advisor, ad spend $11,000. The proposal review gate is status "locked". Used
+exactly as specified.
+
+--------------------------------------------------------------------------------
+TRANSCRIPT-STATED NEED OVERRIDE CHECK
+--------------------------------------------------------------------------------
+1. Call-purpose override: Does NOT apply. Call focus was standard marketing/growth
+   discovery (primary_engagement: marketing; lead_gen_gap: true). Not a coaching/ops
+   or AI engagement. A stated lead-gen gap exists (SEO "falling short", AI-search
+   visibility, "just really not sure why our marketing and our referral efforts
+   aren't increasing it more").
+2. Existing-vendor override: JUDGMENT CALL — flagged for the rep. The firm pays a
+   group of independent contractors (SEO, PPC, two social) of about $11,000/month
+   before ad spend. No contract terms or renewal dates were stated, the contractors
+   are individuals hired separately (not a recently signed agency engagement), and the
+   firm itself stated a marketing gap. The rep proposed paid-ads management on the
+   call. The seller override that selected Paid Ads Starter (ads-only, no web/SEO) was
+   made with this context and locked at the review gate, so I kept it rather than
+   removing marketing. Rep: confirm contract terms/notice periods with the existing
+   PPC contractor before the proposal call; if the firm has recently re-signed with a
+   vendor, this package should be reconsidered (FCFO Advisor alone).
+3. Budget-reality override: Does NOT apply. No budget limit stated. Package chosen is
+   the lowest-cost marketing sub-package plus FCFO, which also fits the profit concern.
+   Total new spend of $16,794/mo (12.6% of ~$1.6M 2026 run-rate revenue; 14.4% of $1.4M).
+4. Effective-revenue override: Does NOT apply. The ~$280K-$300K figure is owner take-home
+   including salaries on a flat-fee (non-contingency) practice; fee revenue is the
+   correct tiering basis. is_contingency_practice: false; net_revenue_stated: null.
+   Tiering basis: $1.4M (2025 actual, per package_decision.json). 2026 run-rate ~$1.6M.
+
+--------------------------------------------------------------------------------
+MANDATORY PRICE LOOKUP (from Scoping_and_Ad_Spend_Guide.md Step 5D and audit-write.md)
+--------------------------------------------------------------------------------
+- Marketing package selected: Paid Ads Starter
+  - Bundled price: $2,497/mo
+  - Stand-alone price: $3,497/mo
+  - Savings: $1,000/mo
+  - Ad spend cap: $20,000/mo (Paid Ads Starter)
+- Non-marketing package selected: FCFO Advisor
+  - Bundled price: $3,297/mo
+  - Stand-alone price: $3,797/mo
+  - Savings: $500/mo
+  - Eligibility: revenue minimum $400K (firm is at $1.4M); includes Elite Coach group
+    deliverables (weekly group coaching, practice area masterminds, virtual quarterly
+    workshops, one annual in-person workshop).
+- Legal AI Workforce (LAW) package: none
+- AI Avatar / Video Growth add-on: none
+- Total monthly investment (bundled): $5,794/mo
+- Total savings: $1,500/mo
+
+35% CAP CHECK: $5,794 + $11,000 ad spend = $16,794/mo. At $1.4M (monthly $116,667) =
+14.4%; at $1.6M (monthly $133,333) = 12.6%. Under the 35% cap.
+
+--------------------------------------------------------------------------------
+AD SPEND — CONSERVATIVE AND AGGRESSIVE
+--------------------------------------------------------------------------------
+Both ends = $11,000/mo (seller-specified; package_decision.json ad_spend_conservative =
+ad_spend_aggressive = 11000). Within the Paid Ads Starter cap of $20,000.
+Channel-minimum check, Estate Planning: PPC $3,500 + LSA $2,000 + Meta Retargeting $1,200 +
+Meta Lead Gen $3,500 = $10,200 minimum for all four channels. $11,000 clears it.
+Modeled mix for $11,000: Google PPC $3,800 | LSA $2,000 | Meta retargeting $1,500 |
+Meta lead gen/cold $3,700.
+(For reference: the rep modeled ~$12,000/mo on the call. The 20%-rule calculation would
+exceed the tier cap and the firm's own ~9%-of-gross marketing discipline, so the
+seller-specified $11,000 is used for both ends.)
+
+CPL midpoints, Estate Planning (client-facing ranges): Google $135 | LSA $65 |
+Meta retargeting $52.50 | Meta cold $55.
+Leads at midpoints: PPC 28.2 + LSA 30.8 + retargeting 28.6 + cold 67.3 = 154.8 leads.
+Blended CPL = $11,000 / 154.8 = $71.08.
+
+Case value: $4,500 (Libby, transcript 00:24:52) — transcript-stated, not a default.
+Close rate (lead to signed): 14%. Derived from the transcript: ~20% lead-to-consult (Emma,
+00:55:25, approximate, PPC) x ~70% consult-to-signed (00:47:09) = 14%. The 70% figure
+alone is NOT applied to raw leads (it is consult-to-signed). 14% is close to the 15%
+default.
+
+CONSERVATIVE ($11,000): blended CPL +20% cushion = $85.29 -> 129 leads -> x14% = 18.1
+cases -> x$4,500 = $81,250 -> return 7.4x.
+AGGRESSIVE ($11,000): blended CPL $71.08, no cushion -> 155 leads -> x14% = 21.7 cases
+-> x$4,500 = $97,500 -> return 8.9x.
+Client report shows: ~129 leads / ~18 cases / ~$81,000 / 7.4x and ~155 leads / ~22
+cases / ~$97,500 / 8.9x.
+
+CAUTION FOR REP: these returns are higher than typical because the firm's own stated
+numbers (flat $4,500 plan, ~70% consult close) are strong. They also assume the firm can
+absorb ~18-22 extra signed plans/month; current output is ~6/week (~26/month) from all
+sources, with September leads at 106 across all platforms (Emma, 00:56:16). Present as
+estimates only, and do not frame them as a guarantee.
+
+"WHY THIS RANGE" (client-facing): To turn high-intent Scottsdale estate planning
+searches into signed plans and put the firm's open attorney capacity to work, backed by
+a plan worth about $4,500 and a 70% consult close rate.
+
+--------------------------------------------------------------------------------
+DBM STATEMENT (Block 1)
+--------------------------------------------------------------------------------
+"We help established estate planning firm owners get a steady flow of the right clients
+and a clear view of profit so they can build a firm that runs, and can be sold or handed
+over, without them at the center."
+Source: Libby, 00:59:52 "I have been focused on trying to get us more profitable. That's a
+huge issue to being able to … sell or to be able to step away is it's got to be profitable
+without … me." Also 00:09:29 "I'm taking Fridays off consistently, which I wasn't before."
+Caveat: 00:59:25 "I enjoy what I'm doing. So I don't know that I want to completely step
+away."
+
+--------------------------------------------------------------------------------
+QUICK WIN OPPORTUNITIES (8)
+--------------------------------------------------------------------------------
+1. Lead Gen — Fill the AI-search gap with FAQ-style answer content. Why: owner believes
+   people go to AI for "who's the best estate planning attorney"; rep's tool data shows
+   no ChatGPT/Gemini presence. Competitor: none named (no AI-search data on competitors).
+2. Lead Gen — Turn on a measured paid-ads system (Google Ads, LSA, Meta) across estate
+   planning, probate and business formation. Why: PPC is capped at a modest monthly limit.
+   Competitor: none named in the report (no verified competitor ad data).
+3. Lead Gen — Build a Google review engine (request at every consult and signing). Why:
+   review volume unconfirmed; rep set a 50+ goal on the call. Competitor: Bivens &
+   Associates (directory-listed review base; counts UNCONFIRMED so no numbers printed).
+4. Intake — Automate source attribution to a signed plan. Why: "I have to dig to get to
+   it." Competitor: none.
+5. Team — Business-development KPIs for the associates. Why: no minimums/KPIs.
+   Competitor: none.
+6. Profit — Build a planned profit number and test a modest price increase. Why: owner
+   wants profit; sees room on pricing. Competitor: none.
+7. Lead Gen — Promote the in-house MythBuster seminars with Meta lead ads. Why: seminars
+   produce 1-3 plans each (~10 a year) and double as a referral-partner tool. Competitor:
+   RJP Estate Planning (listed Sept 2026 Scottsdale seminar).
+8. Intake — Recover the ~10% of consults that go quiet with a structured win-back sequence.
+   Why: roughly one in ten disappears. Competitor: none.
+
+--------------------------------------------------------------------------------
+WHAT YOU TOLD US (Block 5) — transcript lines
+--------------------------------------------------------------------------------
+Row 1 (Paid Ads Starter): "People are going to AI more for … who's the best estate planning
+  attorney?" and "I think our internet SEO marketing is falling short of what it used to be."
+  (00:15:30; 00:27:16). Supports: Paid Ads Starter (Google, LSA, Meta, AI-search visibility).
+Row 2 (Paid Ads Starter / FCFO Advisor): "I actually am just really not sure why our
+  marketing and our referral efforts aren't increasing it more than it has." (00:11:18)
+  plus "The answer is yes, but I have to dig to get to it." (00:30:45). Supports: monthly
+  reporting by channel (Paid Ads Starter) and KPI dashboard (FCFO Advisor).
+Row 3 (FCFO Advisor): "I have been focused on trying to get us more profitable. That's a
+  huge issue to being able to … sell or to be able to step away is it's got to be profitable
+  without … me." (00:59:52). Supports: FCFO Advisor.
+Next-step line: kickoff call with your Onboarding team (central package = Paid Ads Starter,
+  the first deliverable on the call's stated lead-gen gap).
+Excluded (Never include): named staff/family members, owner take-home dollars, budget-sheet
+  dollar figures beyond what is generalized in Sections 5-9.
+
+--------------------------------------------------------------------------------
+ESCALATION FLAGS (INTERNAL — never in client report)
+--------------------------------------------------------------------------------
+- Review counts unconfirmed — verify live before the call. Firm Google count (15 / ~20 /
+  43 across sources) and competitor counts (Bivens 79, Even 117, Moffatt 12) are all
+  UNCONFIRMED. No review numbers or rating were printed in the client report.
+- PageSpeed scores NOT OBTAINED (API quota exceeded; site blocks automated rendering). The
+  client report states they were not obtained; run live before the call.
+- Local 3-pack, Google Ads, LSA and Meta Ads Library checks were NOT performed (not
+  renderable here). Client report marks all as "not observed" and makes no claim either way.
+- Website not viewed. Paid Ads Starter ("ads-only with good existing website") assumes an
+  acceptable site; if a live check shows PageSpeed mobile below 50, an outdated design, or
+  missing practice pages, a Full Service package (web + SEO) would be required.
+- Existing-vendor judgment call (see Override Check 2). Confirm the PPC/SEO contractor
+  terms before the proposal call.
+- Rep-presented Ahrefs-style data (~430 visitors/mo, high bounce, no ChatGPT/Gemini,
+  August 2021 and August 2025 visibility drops) is attributed to "the third-party tool shown
+  on our call" in the report and is not independently verified.
+- Firm name: singular vs plural (see top).
+- Transcript speaker tags blur Libby/Andy; the report attributes lines to the owner/"you".
+- Team size not stated explicitly in package_decision.json (defaulted to 3); actual is 10.
+  Does not change this recommendation (FCFO is revenue-gated, not team-gated).
+- Ad spend $11,000 is under the $25K scoping-approval threshold; MRR $5,794 under $10K.
+- Estate planning in Phoenix metro: no top-metro flag applies (flags cover PI/Crim/Family).
+- Pricing view ($8,500-$10,000 couples) is the rep's recommendation, not the owner's; not
+  printed in the client report beyond "room to raise prices" in her own framing.
