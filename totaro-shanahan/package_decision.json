@@ -27,21 +27,21 @@
     "lead_gen_gap": true
   },
   "marketing_tier": "Starter",
-  "marketing_name": "Full Service Marketing — Starter",
-  "marketing_price_bundled": 4997,
-  "marketing_price_retail": 5697,
-  "marketing_savings": 700,
-  "coaching_name": "Elite Coach Plus",
-  "coaching_price_bundled": 3200,
-  "coaching_price_retail": 3497,
-  "coaching_savings": 297,
+  "marketing_name": "Paid Ads Starter",
+  "marketing_price_bundled": 2497,
+  "marketing_price_retail": 3497,
+  "marketing_savings": 1000,
+  "coaching_name": null,
+  "coaching_price_bundled": null,
+  "coaching_price_retail": null,
+  "coaching_savings": null,
   "law_tier": null,
   "law_name": null,
   "law_price_bundled": null,
   "law_price_retail": null,
   "law_seats": null,
-  "total_bundled": 8197,
-  "total_savings": 997,
+  "total_bundled": 2497,
+  "total_savings": 1000,
   "ad_spend_conservative": 4500,
   "ad_spend_aggressive": 18000,
   "ad_spend_rationale": {
@@ -52,6 +52,7 @@
     "Revenue not in research notes — sourced from HubSpot (hubspot_annual_law_firm_revenue): \"$180K - $960K\" → $570,000",
     "Team size not stated in research notes — defaulting to 3. Review for coaching tier accuracy.",
     "Revenue under $750K but multiple practice areas detected: Essentials hidden (requires single practice area) — Starter tier.",
-    "Revenue $400K–$1M: Elite Coach Plus selected."
+    "Revenue $400K–$1M: Elite Coach Plus selected.",
+    "Seller override: per Slack request on October 19, 2026 ('Paid ads starter'), replaced Full Service Marketing — Starter and Elite Coach Plus with Paid Ads Starter ($2,497/mo bundled, $3,497 retail; $20,000 ad spend cap). Coaching removed since it was not named. Total $2,497/mo bundled, $1,000 savings. Ad spend ($4,500–$18,000) is within the $20,000 cap; mobile PageSpeed 88 supports ads-only. FLAG: catalog says sub-packages should be paired with a coaching package — confirm with rep."
   ]
 }
