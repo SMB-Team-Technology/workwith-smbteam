@@ -1,0 +1,254 @@
+SMB TEAM — GROWTH AUDIT RESEARCH NOTES
+Firm: Totaro & Shanahan (legal name on site/directories: "Totaro & Shanahan, LLP"; Avvo/AI snippets also reference "M. J. Shanahan & Associates, Inc. dba Totaro & Shanahan")
+Friendly name: totaro-shanahan
+Contact: Michael R. Totaro (managing partner; the only prospect on the call). Phone (310) 804-2157, mtotaro@aol.com. HubSpot contact id 106836822672.
+  NAME NOTE: the Fathom transcript tags the prospect as "Totaro Arriaga" and the Fathom AI summary calls him "Michael Arriaga". The trigger file, website, and directories all say Michael Totaro. Use "Michael Totaro". Do not use "Arriaga" anywhere client-facing.
+URL: http://www.TotaroandShanahan.com
+Sales Rep: Jonathan Farace (jonathan.farace@smbteam.com)
+Date: October 21, 2026
+Discovery call: 2026-10-19 (Fathom recording 193993288, 47 min). Proposal call: Wednesday, October 21, 2026, 8:00 AM PT (agreed at 00:46:20-00:46:28; trigger proposal_call_date 2026-10-21T15:00:00Z).
+Pipeline run: Pass 1, trigger run 1.
+
+Transcript status: outcome=found, custody=machine, source=hubspot_notes. A full verbatim Fathom transcript was also provided and read in full (all 869 lines). The trigger-file transcript field is a Fathom AI summary. Where they disagree, the full transcript wins (see SUMMARY vs TRANSCRIPT DISCREPANCIES at the end of STEP 9).
+
+RESEARCH TOOLING NOTES (read first):
+  - No GUI browser was available. Live research was done with headless Google Chrome (Google Search with US location overrides for Los Angeles, Santa Ana/Orange County, San Diego, Pacific Palisades), WebFetch, and WebSearch. Google data was read from Google Search local results on 2026-10-19; local results shift by time and location, so a different run may show a different top 3.
+  - pagespeed.web.dev / the PageSpeed Insights API returned "Quota exceeded" on two attempts. The scores in STEP 1 are from a local Lighthouse 12.8.2 run (the same engine PageSpeed Insights uses) and are labeled as such. They are real measured numbers, not estimates, but they are not from pagespeed.web.dev.
+  - Yelp and Avvo returned HTTP 403 to direct fetch. Figures from those sites come from search-result snippets only and are tagged UNCONFIRMED.
+  - Meta Ad Library: the firm search worked (no active ads). Competitor searches were inconclusive (see STEP 8).
+
+=====================================================================
+STEP 1 — WEBSITE RESEARCH
+=====================================================================
+- Website URL confirmed live: yes (http://www.TotaroandShanahan.com; page title "Los Angeles Bankruptcy Attorneys | Totaro & Shanahan")
+- Last redesign date or estimated age: appears recent. Asset paths use "/lovable-uploads/", footer copyright year 2026, modern single-page layout with stock imagery. Exact redesign date not observed.
+- Mobile responsive: yes (viewport meta tag present: width=device-width, initial-scale=1.0; Lighthouse mobile run rendered normally)
+- Homepage headline: "Overcome Debt & Reclaim Your Financial Freedom" (H1). Eyebrow: "Struggling with debt?"
+- CTA above fold: yes — "Get Free Consultation" and "Explore Your Options"
+- Contact form location: hero/CTA area plus a "#contact" section at the bottom of the page
+- Live chat present: no (no chat widget scripts found in page source)
+- Attorney bio present: limited — "Meet Our Team" link and an /about page exist; full bios not verified
+- Video present: no (no video or iframe embeds in page source)
+- Blog present: no (no blog link in nav or page source)
+- Navigation: Home, About, Services, Our Record, Famous Bankruptcies, FAQ, Contact, Free Consultation
+- Service pages found: /services/chapter7, /services/chapter11, /services/chapter13, /services/creditor-harassment, /services/debt-settlement, /services/foreclosure
+- Chapter 7 geo pages: /services/chapter7/los-angeles, /long-beach, /glendale, /orange-county. NO San Diego page. NO Chapter 11 geo pages. NO Texas / Illinois / Colorado pages.
+- Messaging fit: the homepage is written for consumer debt relief ("Stop creditor harassment", "Affordable Fees", "Free Consultations"). Chapter 11 appears only as a services page. The firm's real revenue (Chapter 11, $20k-$50k) is not what the homepage headline sells.
+- Claims on site: "40+ Years Experience", "Thousands Families Helped", founded 1983. Not independently verified.
+- Spanish content: none observed
+- PageSpeed (local Lighthouse 12.8.2 run, NOT pagespeed.web.dev — see tooling notes):
+  - PageSpeed mobile score: 88 (FCP 1.4 s, LCP 3.7 s, TBT 120 ms, CLS 0)
+  - PageSpeed desktop score: 98 (FCP 0.4 s, LCP 1.2 s, TBT 0 ms, CLS 0)
+
+>>> SAVED: website section complete
+
+=====================================================================
+STEP 2 — GOOGLE BUSINESS PROFILE
+=====================================================================
+- GBP found: yes — "Totaro & Shanahan LLP", category "Bankruptcy attorney"
+- Star rating: 5.0 [confirmed via Google]
+- Total review count: 1 [confirmed via Google] (observed 2026-10-19 on the Google Search knowledge panel and in the local result for "bankruptcy attorney pacific palisades")
+- Most recent review date: not observed (review text not rendered in the headless capture)
+- Primary category: Bankruptcy attorney
+- Photos active: not observed. On the call the rep recommended replacing the profile photo with a professional headshot (00:17:08-00:17:57) and Michael agreed ("That's fine. They can take a picture right off the website.").
+- Posts active: not observed
+- Address on GBP: 17175 Avenida De Santa Ynez, Pacific Palisades, CA 90272 — a residence. Michael confirmed on the call: "I've worked out of my house for almost 30 years." (00:16:05). Phone (310) 804-2157. Website link goes to totaroandshanahan.com.
+- Listed hours on GBP: 9 AM-10 PM, seven days a week. Looks inaccurate or unverified; worth confirming with Michael.
+- GBP description (from the firm): "Southern California's premier bankruptcy law firm, proudly serving Los Angeles, Long Beach, Glendale, and Orange County since 1983."
+- Other review-site counts (none of these are Google):
+  - Birdeye: 5.0, 2 reviews, most recent about 7 years ago. Profile unclaimed. [UNCONFIRMED — sourced from Birdeye, not independently confirmed via Google]. Birdeye says its reviews are Google reviews, but live Google shows 1, so the Google figure (1) governs.
+  - Yelp: 5.0, 4 reviews [UNCONFIRMED — sourced from a Yelp search snippet; Yelp returned HTTP 403]
+  - Lawyers.com: 3.0, 2 reviews [UNCONFIRMED — sourced from a search snippet]
+  - Michael on the call: "as long as we've been in business, we've, you know, across the markets, we maybe have five reviews or whatever." (00:43:37). Consistent with a very thin review footprint.
+- INTERNAL ONLY: mixed third-party content about the attorneys exists on Avvo and Lawyers.com. It was not independently verified, and details are intentionally left out of this public repo. Do NOT cite or reference it in the client-facing report.
+
+=====================================================================
+STEP 3 — LOCAL 3-PACK SEARCHES
+=====================================================================
+All review counts below are read off Google Search local results [confirmed via Google], observed 2026-10-19. Firm Google listing for comparison: 5.0 (1) [confirmed via Google].
+
+Practice Area 1: Chapter 7 / consumer bankruptcy (growth target)
+- Search 1 "bankruptcy attorney los angeles" (LA): firm appears NO — pack: Wadhwani & Shanfeld 5.0 (231) [confirmed via Google], Tyson Takeuchi Law Offices 5.0 (393) [confirmed via Google], The Attorney Group 4.9 (641) [confirmed via Google]
+- Search 2 "chapter 7 bankruptcy lawyer los angeles" (LA): firm appears NO — pack: The Attorney Group 4.9 (641) [confirmed via Google], Tyson Takeuchi Law Offices 5.0 (393) [confirmed via Google], Wadhwani & Shanfeld 5.0 (231) [confirmed via Google]. Sponsored block above the pack: OakTree Law 4.8 (357), KT - Tang & Associates 4.9 (220), Law Offices of Adele Schneidereit 4.7 (47) [all confirmed via Google]
+- Search 3 "bankruptcy attorney near me" (LA): firm appears NO — pack: The Attorney Group 4.9 (641), Tyson Takeuchi Law Offices 5.0 (393), Wadhwani & Shanfeld 5.0 (231) [all confirmed via Google]
+- Search 4 "chapter 7 bankruptcy attorney orange county" (Orange County): firm appears NO — pack: Michael D. Franco 5.0 (198), Tran Bankruptcy Law 5.0 (194), $795 Bankruptcy Lawyer 4.9 (357) [all confirmed via Google]
+- Search 5 "chapter 7 bankruptcy attorney san diego" (San Diego): firm appears NO — pack: Bankruptcy Law Center 4.9 (285), Bankruptcy Law Offices of Mark L. Miller 4.7 (106), Olympus Law Corporation 4.9 (254) [all confirmed via Google]
+- Search 6 "bankruptcy attorney pacific palisades" (home market): firm appears YES, listed first with 5.0 (1) [confirmed via Google] — others: Bereliani Law Firm 4.9 (50), Law Offices of Navid Kohan 5.0 (132) [confirmed via Google]. This is a tiny-radius search. Almost no one searches this way for a bankruptcy attorney.
+
+Practice Area 2: Chapter 11 (current core practice)
+- Search 1 "chapter 11 bankruptcy attorney los angeles" (LA): firm appears NO — pack: Tyson Takeuchi Law Offices 5.0 (393), The Attorney Group 4.9 (641), Wadhwani & Shanfeld 5.0 (231) [all confirmed via Google]
+- Search 2 "chapter 11 bankruptcy lawyer los angeles" (LA): firm appears NO — pack: The Attorney Group 4.9 (641), Tyson Takeuchi Law Offices 5.0 (393), Wadhwani & Shanfeld 5.0 (231) [all confirmed via Google]
+- Search 3 "chapter 11 bankruptcy attorney orange county" (Orange County): firm appears NO — pack: Michael D. Franco 5.0 (198), $795 Bankruptcy Lawyer 4.9 (357), Tran Bankruptcy Law 5.0 (194) [all confirmed via Google]
+- Search 4 "chapter 11 bankruptcy attorney san diego" (San Diego): firm appears NO — pack: Bankruptcy Law Center 4.9 (285), Bankruptcy Law Offices of Mark L. Miller 4.7 (106), T.L. Brown Law Firm 4.8 (411) [all confirmed via Google]
+- Denver / Chicago / Dallas were not searched. The prospect floated them as later expansion markets (00:41:00).
+
+=====================================================================
+STEP 4 — COMPETITOR REVIEW COUNTS
+=====================================================================
+Prospect has 1 Google review [confirmed via Google], so every competitor below has more. No "dominating" comparison is overstated.
+- Competitor 1: The Attorney Group, Professional Law Corp (El Grupo De Abogados), 122 E 7th St, Los Angeles — reviews: 641 [confirmed via Google] — rating: 4.9 [confirmed via Google]. Listed in the LA pack on all 5 LA searches tested and first on 3 of them. Multi-location, Spanish-language brand.
+- Competitor 2: Wadhwani & Shanfeld, 714 W Olympic Blvd, Los Angeles — reviews: 231 [confirmed via Google] — rating: 5.0 [confirmed via Google]. In the LA pack on every LA search.
+- Competitor 3: OakTree Law — reviews: 357 [confirmed via Google] — rating: 4.8 [confirmed via Google]. Sponsored/LSA-style placement in LA and Orange County.
+- Also in LA packs: Tyson Takeuchi Law Offices — 393 [confirmed via Google] — 5.0 [confirmed via Google].
+  *** REFERRAL-SOURCE FLAG: Michael said on the call, "I get all their referrals on Chapter 11 cases." (00:20:18, regarding Tyson Takeuchi). Takeuchi is a referral partner, not an adversary. Pass 2 should NOT frame Takeuchi as a threat or name him as someone beating the firm. Use him, if at all, only as a neutral example of review depth.
+- Also on the call (rep's screen share, matches live Google): Law Offices of Adele Schneidereit 4.7 (47) vs OakTree Law 4.8 (357) [both confirmed via Google]. Michael's comment about OakTree's quality should not be repeated in the report.
+- Orange County: Michael D. Franco 5.0 (198); Tran Bankruptcy Law 5.0 (194); $795 Bankruptcy Lawyer 4.9 (357) [all confirmed via Google]
+- San Diego: Bankruptcy Law Center 4.9 (285); T.L. Brown Law Firm 4.8 (411); Olympus Law Corporation 4.9 (254); Bankruptcy Law Offices of Mark L. Miller 4.7 (106) [all confirmed via Google]
+
+=====================================================================
+STEP 5 — DIRECTORY LISTINGS
+=====================================================================
+- Avvo: Michael R. Totaro profile exists; the search listing places it under Santa Ana, CA (zip 92701). Page returned HTTP 403, so the details are UNCONFIRMED (search snippet only).
+- Justia: lawyers.justia.com lists Michael R. Totaro, Pacific Palisades (profile exists; details not fetched)
+- FindLaw: no listing found in search results
+- Yelp: "Totaro & Shanahan", Pacific Palisades, 5.0 (4) [UNCONFIRMED — Yelp search snippet; HTTP 403]
+- Martindale-Hubbell: firm and Michael R. Totaro profiles exist; address P.O. Box 789, Pacific Palisades, CA 90272
+- Lawyers.com: firm plus both attorneys listed; 3.0 (2) [UNCONFIRMED — snippet]
+- Birdeye: unclaimed profile; address P.O. Box 789; 5.0 (2) [UNCONFIRMED — Birdeye]
+- Yahoo Local, MapQuest: listed. MapQuest shows 17175 Avenida de Santa Ynez.
+- California State Bar profile exists (calbar.ca.gov).
+- NAP INCONSISTENCIES: (1) street address — GBP and MapQuest use 17175 Avenida De Santa Ynez (a house); Martindale, Birdeye, Justia use P.O. Box 789; Avvo appears to use a Santa Ana address. (2) Phone (310) 804-2157 is consistent where seen. Google's AI overview also surfaced (800) 541-2802 and (310) 496-1260 [unverified]. (3) Business name varies ("Totaro & Shanahan", "Totaro & Shanahan, LLP", "M. J. Shanahan & Associates, Inc."). (4) The website footer lists no street address.
+- Geo-targeting landing pages: Chapter 7 pages exist for Los Angeles, Long Beach, Glendale, Orange County. None for San Diego, none for Chapter 11 anywhere, none for TX/IL/CO. Michael's current client base is LA / Orange / San Diego counties (00:15:35), so San Diego is the biggest page gap.
+
+>>> SAVED: GBP, local SEO, and directory sections complete
+
+=====================================================================
+STEP 6 — GOOGLE ADS
+=====================================================================
+Observed 2026-10-19 via Google Search, US location overrides.
+
+Practice Area 1: Chapter 7 / consumer bankruptcy
+- Firm ads observed: not observed on any search (LA, Orange County, San Diego, Palisades). The firm does not appear to be running ads for these searches. Michael confirmed on the call that no digital ads have been run and nothing is running now ("We're not doing anything at the moment." 00:05:43).
+- Named local competitors running ads:
+  - OakTree Law — sponsored top-of-page block in LA and Orange County ("No fee unless we win" / "A+ BBB rating for over 10 years")
+  - KT - Tang & Associates — sponsored block in LA and Orange County ("Flat rate pricing", "Se habla español"); text ad on contact.bankruptcy-lawyer-now.com: "99.99% Success Rate | No Cost to Assess Your Case"
+  - Law Offices of Adele Schneidereit — sponsored block, LA/OC ("Complimentary 30-min consultation")
+  - $795 Bankruptcy Lawyer (Orange, CA) — text ad in Orange County: "$795 Lowest Fee Guaranteed. Affordable Payment Plans Available."
+  - San Diego: Bankruptcy Law Center (4.9, 285) sponsored block and lp.bankruptcyattorneys.org ad "Chapter 7 Attorney, San Diego: Free Initial Consultation"; Bankruptcy Law Offices of Mark L. Miller sponsored block ("Flat rate pricing", "Beat or match price"); San Diego Low Cost Bankruptcy Center text ad "Low Cost Chapter 7 Bankruptcy"
+
+Practice Area 2: Chapter 11
+- Firm ads observed: not observed. The firm does not appear to be running ads for these searches.
+- Named local competitors running ads: none observed for Chapter 11 in Orange County or San Diego. The only sponsored result on "chapter 11 bankruptcy attorney los angeles" was The Lane Law Firm, which is Texas-based (Houston/San Antonio/Austin/Dallas). It is not a local competitor and must not be used as one. Paid competition for Chapter 11 looks much lighter than for Chapter 7, consistent with Michael's referral-driven Chapter 11 business.
+
+=====================================================================
+STEP 7 — LOCAL SERVICE ADS
+=====================================================================
+Search: "chapter 7 bankruptcy lawyer los angeles" and "bankruptcy attorney near me" (LA location).
+- Firm appears in LSA: no (not observed)
+- Google Screened: not observed (no badge text surfaced in the headless capture; unknown for competitors too)
+- LSA review count: n/a
+- Named local competitors in the LSA-style block: OakTree Law 4.8 (357), KT - Tang & Associates 4.9 (220), Law Offices of Adele Schneidereit 4.7 (47) [all confirmed via Google]
+- Note: on the call the rep's own search showed only one firm in LA LSAs (00:31:44). Today's captures show three. The set rotates with time and location. Do not state a fixed count.
+
+=====================================================================
+STEP 8 — META ADS
+=====================================================================
+Meta Ad Library (United States, active ads, keyword search), checked 2026-10-19.
+- Firm has active ads: not observed. The search "Totaro Shanahan" returned "No ads match your search criteria". Michael also said the firm has never used Facebook or Instagram and that Facebook shows the firm as banned: "never having used Facebook, we're banned from Facebook" (00:34:36).
+- Named local competitor 1: OakTree Law — exact-phrase search returned no active ads (not observed). This can't be treated as proof that OakTree runs no Meta ads (the Ad Library searches by ad text and page name unreliably).
+- Named local competitor 2: Wadhwani & Shanfeld — exact-phrase search returned no active ads (not observed; same caveat)
+- Searches for Tyson Takeuchi, The Attorney Group, and KT Tang did not load results (inconclusive). Do not cite any competitor Meta activity in the report.
+
+>>> SAVED: all ads sections complete
+
+=====================================================================
+STEP 9 — TRANSCRIPT EXTRACTION
+=====================================================================
+Transcript source: full verbatim Fathom transcript (summary used only as overview)
+
+SPEAKER-TAG WARNING: speaker labels in the transcript are unreliable. The prospect is labeled "Totaro Arriaga [Prospect]" and many rep lines are tagged as the prospect (and vice versa). Every fact below was attributed by reading the content. Where a line could be either speaker, it is not used as a fact.
+
+- Practice areas confirmed: Chapter 11 is the core ("We handle primarily Chapter 11 cases", 00:01:18), for individuals and businesses (loan extensions, takes cases "within two days of foreclosure"). Chapter 7 is the growth target (~2/month now). Chapter 13: "We'll take the calls, but generally I turn a Chapter 13 into a Chapter 11 because I can do more." (00:02:31). Website also lists creditor harassment defense, foreclosure defense, debt settlement.
+- Current lead sources: "Usually referrals from other attorneys." (00:05:22) / "we've gotten referrals on Chapter 11 cases for 30 years now. It's just nobody does them." (00:08:42-00:08:51). 100% referral; no referral fees ("We're not allowed to." 00:13:07).
+- Ads ever run: radio only. About 30 years of radio, midnight to 5 AM on an all-news station, which produced "four or five calls every day"; then Cirrus satellite "didn't work at all" (00:23:10-00:23:15); radio stopped when it deteriorated. No digital ads ever. Nothing running now. No radio spend figure given.
+- Team size: 3 — Michael (attorney), partner Maureen Shanahan (attorney, works out of New Orleans), 1 paralegal ("My partner's attorney and then we have one paralegal." 00:13:56). Maureen is not expected to be involved in the engagement ("she's completely electronic illiterate", 00:14:20).
+- Annual revenue (gross / case value): about $600,000 this year, "but that's increasing" (00:12:32); "I think we'll probably do a little more than that" (00:12:56). Pre-COVID about $900,000, COVID low about $200,000 (00:12:17). He also said he has "about $150,000 outstanding that hasn't come in yet" (00:12:38).
+- Annual revenue (net / take-home / collected): not distinguished from gross. (He said "funds actually received" with ~$150,000 still outstanding, which implies the $600,000 may be a billed/earned figure rather than fully collected. He did not clarify. Do not state a collected figure.)
+- Fee structure: flat fee, collected up front. Chapter 11: $20,000-$50,000, "Up front" (00:04:39-00:05:09). Chapter 7: roughly $2,000, range "$1,000 if it's a senior citizen on Social Security" to "$2,800" for $100,000-$200,000 of debt (00:10:19-00:10:27). "We do them cheaper than most people."
+- Revenue goal: $1.5 million next year — "Probably at a million and a half… that would be a comfortable range." (00:24:30-00:24:34). Earlier, "back to around a million a year" -> "Yeah, or more." (00:13:23-00:13:28).
+- Chapter 7 target: 20-30 per month (00:09:16). His own math: 20 Chapter 7s ~ $40,000/month ~ $480,000/year (00:10:03, 00:24:47); the rest of $1.5M to come from Chapter 11. The summary's "$40k-$60k/month" extends his $40k-for-20-cases math to 30 cases; $60k is not a number he said.
+- Average case value: Chapter 11 $20,000-$50,000; Chapter 7 about $2,000 ($1,000-$2,800). No blended figure.
+- Current close rate: not stated — default to 15%
+- Number of locations: 1 office (his home in Pacific Palisades; Maureen works from New Orleans). Licensed in CA, CO, TX, IL; has handled cases in OH, the Virgin Islands, HI, WY. At 00:06:25 he said "we were in two locations" while talking about a past vendor call. This is ambiguous, so use 1 location.
+- Client geography: mostly Los Angeles, Orange, and San Diego counties ("mostly inside California", 00:15:25-00:15:35); out-of-state cases are mainly Chapter 11. Expansion interest: Texas, Chicago, Denver ("I think the competition is less in Chicago, Denver, and Dallas than it is here", 00:41:00); undecided whether to start there or deepen Southern California first.
+- Spanish campaign needed: no (not discussed; no indication)
+- Dominant buying motive: He said "I'm bored." (00:14:45) and gave no other reason ("No."). The bigger picture in his words: "I want to turn that around and spend more time on the legal work, and I'm also trying to expand the administrative aspect to somebody else. So that we can actually grow." (00:37:50-00:38:03), "You do what you do and I'll do what I do." (00:38:10), and "I'm getting to the point where I just don't want to learn more. I want somebody else to do it." (00:38:32). Inference: category (1), a firm that runs itself so he spends his time on legal work. The motive is shifting his workload from high-effort Chapter 11s to quick Chapter 7s (3 months, "I can do a Chapter 7 in an hour and a half", 00:13:48) while someone else owns marketing and admin. "Bored" is his literal answer; do not dress it up.
+- Any profitability claims made by prospect: He said new Chapter 7 volume carries almost no incremental cost: "we don't have any cost of sale like other businesses have" (00:27:32) / "It's just simply a service" (00:27:57) / "There's no overhead. There's no payroll." (00:28:40). A later line says "if you're generating $125,000 and it's costing you $20,000 to get there, you're still netting $100,000" (00:28:48); its speaker tag is unreliable and it may be the rep, so do not attribute it. This is his view of the incremental economics of added cases, not a firm-wide margin, and it conflicts with having a paralegal and a partner. Pass 2 must NOT print a margin, profit, or net-income figure for the firm.
+- Any claims about case types or practice areas: "we're about the only firm that'll take a case within two days of foreclosure" (00:05:29); "we have more confirmed plans than anybody in California" (00:43:56). Both are his own unverified claims. Quote and attribute if used. Never state as fact.
+- Stated call focus / product interest: standard marketing/growth discovery. The call was about lead generation (Chapter 7 volume via paid ads, plus organic Google/GBP/reviews). He also raised wanting social media and Instagram video (00:07:15, 00:35:37). AI came up briefly. He uses AI "for other things, but not for marketing" and the rep said AI adoption could come later ("if I can get the marketing up and the business up, then we can go into the other things", 00:39:34). It was not scoped or priced. Not a Fractional CTO, coaching, or ops call.
+- Primary engagement: marketing
+- Products discussed on call: Full Service Marketing
+- Lead-gen gap stated: yes — "we don't get calls for Chapter 7s… I'd really want to increase our exposure on the Chapter 7 cases." (00:01:43-00:01:50)
+- Existing marketing/SEO/ad vendor engagements: none stated. Michael had one earlier call with another provider and passed: "I have one other call, and I wasn't interested because the only thing they kept talking about was where they could place us on a Google search." (00:06:11) He did not sign with that vendor.
+- Budget constraints stated: no explicit limit. Michael has no benchmark: "I just don't have any idea… I don't have any base to go from." (00:22:31-00:22:34). He asked about "Overall cost, overall cost structure" at the start (00:00:38). Told by the rep that about $10,000/month is the likely range ("Not north of there, but somewhere around there, maybe a little bit less", 00:44:33-00:44:48), he said "I am open to it. I have things coming in that could fund that." (00:44:55-00:44:57). He also said "aside from the cost, which we'll work on later" (00:35:47). Timeline: "as soon as possible", "no later than mid-November" (00:45:19-00:45:42).
+
+Other objections/watch-outs from the call (for Pass 2):
+  - Skeptical of SEO/"where can you place us on Google" pitches; lead with leads, calls, and cases.
+  - "We were always curious why we just didn't get those calls" (00:02:51). Michael has never examined his online presence.
+  - Facebook shows the firm as banned; a new Meta setup would need troubleshooting before ads can run.
+  - Referral business is concentrated; he said "we'd be out of business, but… Or we would just scale back" if referrals stopped (00:08:42-00:09:04).
+  - Michael treats Tyson Takeuchi as a Chapter 11 referral source (see STEP 4 flag).
+
+Pitch math from the rep — NOT firm facts, do not record as the firm's figures: 20% of target revenue rule, $25,000/month marketing, "$6,000 to $10,000 a month to start", $95-$100 per LSA lead, 10% conversion, "$2,000 -> $4,000" example, "close to a thousand law firms", "10 years" of marketing data. The only budget number Michael reacted to is the ~$10,000/month range; he said he is open to it, not that it is his budget.
+
+SUMMARY vs TRANSCRIPT DISCREPANCIES:
+  1. Name: summary says "Michael Arriaga"; transcript tags him "Totaro Arriaga"; every other source says Michael Totaro. Use Totaro.
+  2. Budget: summary says "~$10,000/month, a figure Michael Arriaga confirmed he can fund." In the transcript the rep proposed ~$10,000 and Michael said "I am open to it. I have things coming in that could fund that." He did not state a budget.
+  3. Projected Chapter 7 revenue "~$40k-$60k/month": Michael said about $40,000/month for 20 cases. $60k is not his number.
+  4. Markets: summary says "Start with lowest hanging fruit (e.g., CA) before expanding to TX, IL, and CO." On the call the rep said "lowest hanging fruit in these markets where you already have a little bit of a presence" (00:42:12); Michael himself had not decided between expanding elsewhere first or deepening LA/OC/SD.
+  5. Paralegal: at 00:03:37 he said "We don't use paralegals or anything", but at 00:13:56 he said they have one paralegal. Use 3 people, 1 paralegal.
+  6. Summary lists the Chapter 11 cadence as "1-2/month" and Chapter 7 as "~2/month". Both match the transcript.
+  7. Summary says "Update Google Business Profile photo to professional headshot". Matches; the call said a photo from the website would work.
+
+Key prospect quotes (verbatim; timestamps are from the Fathom recording):
+  1. [00:01:50] Chapter 7 gap — "We seem not to get calls for those, and I'd really want to increase our exposure on the Chapter 7 cases."
+  2. [00:03:43] why — "I think we just don't have the exposure out there for chapter sevens."
+  3. [00:05:22] lead sources — "Usually referrals from other attorneys."
+  4. [00:08:42] referral dependence — "Well, no, we'd be out of business, but, you know, we've gotten referrals on Chapter 11 cases for 30 years now."
+  5. [00:09:16] goals — "we'd like to get this chapter sevens up to about 20 or 30 a month."
+  6. [00:12:17] revenue history — "our revenue went from about $900,000 a year to about $200,000 during COVID"
+  7. [00:12:32] revenue now — "I think we're now back up to about $600,000, but that's increasing."
+  8. [00:14:45] motive — "I'm bored."
+  9. [00:24:30] goal — "Probably at a million and a half… Yeah, that would be a comfortable range."
+  10. [00:37:50] DBM / delegation — "I want to turn that around and spend more time on the legal work, and I'm also trying to expand the administrative aspect to somebody else. So that we can actually grow."
+  11. [00:22:31] budget — "I just don't have any idea… I don't have any base to go from."
+  12. [00:06:11] objection / past vendor — "I wasn't interested because the only thing they kept talking about was where they could place us on a Google search."
+
+=====================================================================
+STEP 10 — COMPETITIVE URGENCY SCORE
+=====================================================================
+Score: 8
+
+Reasons: The firm has 1 Google review and appears in no local pack in LA, Orange County, or San Diego for Chapter 7 or Chapter 11 searches. Competitors in every pack hold 100-641 reviews. In LA, Orange County, and San Diego, multiple firms run sponsored/LSA-style placements and text ads for Chapter 7. The firm has no paid presence, no Meta presence, a residential GBP address, and a homepage that sells consumer debt relief while the revenue comes from Chapter 11. The one thing holding the score below 9-10 is that Chapter 11, the firm's current core, shows almost no local paid competition, and the firm's referral base is steady.
+
+Named local competitor threats (Chapter 7 growth target):
+  1. The Attorney Group, Professional Law Corp (El Grupo De Abogados) — 4.9 (641) [confirmed via Google]; in the LA pack on all 5 LA searches tested (first on 3); heavy review lead.
+  2. OakTree Law — 4.8 (357) [confirmed via Google]; sponsored top-of-page placement in both LA and Orange County for Chapter 7 searches.
+  3. Wadhwani & Shanfeld — 5.0 (231) [confirmed via Google]; in the LA pack on every LA search tested, with a 25+ year presence.
+  (San Diego if used: Bankruptcy Law Center 4.9 (285), sponsored on both San Diego Chapter 7 searches.)
+  Do NOT use Tyson Takeuchi as a threat (Chapter 11 referral source — see STEP 4 flag).
+
+Dynamic sentence: "A score of 8 means competitors are actively dominating multiple channels in your market and the gap is getting wider every month you wait. This is not a future problem — it is a right now problem."
+
+>>> SAVED: final research notes
+
+=====================================================================
+PASS 2 — VERIFICATION CHECKLIST
+=====================================================================
+[x] Every number in the notes matches actually observed data (Google data observed 2026-10-19; PageSpeed figures are from local Lighthouse, disclosed)
+[x] Every competitor review count verified live via Google; prospect (1 review) has fewer than every competitor cited
+[x] Every review count and star rating carries [confirmed via Google] or [UNCONFIRMED — sourced from ...]
+[x] Annual revenue: gross/case value recorded; net not distinguished from gross; fee structure recorded (flat fee, up front)
+[x] Ad sections cover both practice areas (Chapter 7 and Chapter 11)
+[x] No section says "you are not running ads" — "not observed" / "does not appear to be running" only (prospect did confirm no ads on the call)
+[x] No profitability claim beyond the prospect's own quotes; flagged not to print a margin
+[x] No generic competitor labels; all named local firms (the one Texas firm is explicitly excluded)
+[x] PageSpeed scores are real numbers (88 mobile / 98 desktop from local Lighthouse 12.8.2; pagespeed.web.dev quota-blocked)
+[x] DBM recorded with the client's own words
+[x] Revenue goal recorded ($1.5M next year)
+[x] Close rate recorded (not stated — default 15%)
+[x] Average case value recorded (Chapter 11 $20k-$50k; Chapter 7 about $2,000)
+[x] Stated call focus recorded (standard marketing/growth; AI mentioned and deferred)
+[x] Primary engagement / Products discussed / Lead-gen gap stated filled in with the exact format
+[x] Existing vendor engagements recorded (none; prior vendor call declined)
+[x] Budget constraints recorded (no explicit limit; open to about $10,000/month, funding "coming in")
