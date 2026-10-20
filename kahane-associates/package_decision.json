@@ -3,11 +3,11 @@
   "revenue_stated": null,
   "net_revenue_stated": null,
   "is_contingency_practice": false,
-  "revenue_effective": 570000,
-  "revenue_source": "hubspot_annual_law_firm_revenue",
-  "revenue_label": "$180K - $960K",
-  "team_size_stated": null,
-  "team_size_effective": 3,
+  "revenue_effective": 15000000,
+  "revenue_source": "seller_override",
+  "revenue_label": "$15M - $20M (seller estimate)",
+  "team_size_stated": 80,
+  "team_size_effective": 80,
   "practice_areas_detected": [
     "prospect described the firm only as \"a small to mid-size real estate firm that service the banks\" (adrian cain 00:06:37)",
     "on site: foreclosure",
@@ -22,7 +22,7 @@
   "call_focus": {
     "primary_engagement": "AI",
     "products_discussed": [
-      "Fractional CTO Level 1"
+      "Fractional CTO Level 3"
     ],
     "lead_gen_gap": false
   },
@@ -31,25 +31,26 @@
   "marketing_price_bundled": null,
   "marketing_price_retail": null,
   "marketing_savings": null,
-  "coaching_name": "Elite Coach Plus",
-  "coaching_price_bundled": 3200,
-  "coaching_price_retail": 3497,
-  "coaching_savings": 297,
-  "law_tier": "Fractional CTO Level 1",
-  "law_name": "Fractional CTO Level 1",
-  "law_price_bundled": 3297,
-  "law_price_retail": 3797,
+  "coaching_name": null,
+  "coaching_price_bundled": null,
+  "coaching_price_retail": null,
+  "coaching_savings": null,
+  "law_tier": "Fractional CTO Level 3",
+  "law_name": "Fractional CTO Level 3",
+  "law_price_bundled": 8997,
+  "law_price_retail": 9997,
   "law_seats": null,
-  "total_bundled": 6497,
-  "total_savings": 797,
+  "total_bundled": 8997,
+  "total_savings": 1000,
   "ad_spend_conservative": null,
   "ad_spend_aggressive": null,
   "ad_spend_rationale": null,
   "selection_notes": [
-    "AI-led call with no lead-gen need stated — marketing left out (call-purpose rule).",
+    "AI-led call with no lead-gen need stated \u2014 marketing left out (call-purpose rule).",
     "Fractional CTO Level 1 discussed on call: $3,297/mo bundled.",
-    "Revenue not in research notes — sourced from HubSpot (hubspot_annual_law_firm_revenue): \"$180K - $960K\" → $570,000",
-    "Team size not stated in research notes — defaulting to 3. Review for coaching tier accuracy.",
-    "Revenue $400K–$1M: Elite Coach Plus selected."
+    "Revenue not in research notes \u2014 sourced from HubSpot (hubspot_annual_law_firm_revenue): \"$180K - $960K\" \u2192 $570,000",
+    "Team size not stated in research notes \u2014 defaulting to 3. Review for coaching tier accuracy.",
+    "Revenue $400K\u2013$1M: Elite Coach Plus selected.",
+    "Seller override (Slack, 2026-10-20): revenue estimated $15-20M (low end $15M used), team size 80; swapped to Fractional CTO Level 3 ($8,997/mo bundled), coaching removed. 'AI Workforce included' interpreted as no separate AI Workforce Pro line item \u2014 total is FCTO L3 only; seller to correct if AIWP should be priced separately."
   ]
 }
