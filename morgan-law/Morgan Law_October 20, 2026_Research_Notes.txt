@@ -1,0 +1,198 @@
+RESEARCH NOTES — Morgan Law (Morgan Law Firm / David L. Morgan, Attorney at Law)
+Friendly name: morgan-law
+Date: October 20, 2026
+Sales rep: Daniel Lowe (Account Executive)
+Trigger URL: http://morganinjuryfirm.com
+Research method: live web fetch + web search only (no interactive browser available in this run). Items that need a live browser/SERP view are marked NOT OBSERVED rather than estimated.
+
+======================================================================
+STEP 1 — WEBSITE RESEARCH
+======================================================================
+- Website URL confirmed live: yes. http://morganinjuryfirm.com returns a 301 redirect to http://morganinjurylawyer.com/ (canonical site is https://www.morganinjurylawyer.com/). Note: the trigger URL is a secondary/redirect domain.
+- Last redesign date or estimated age: not directly observable. Newest blog post found is dated 4/25/2019; no copyright year in footer. Prospect on the call: "I think the last thing when then there was 2019" (00:12:13) — consistent with a site not meaningfully updated since about 2019. Platform is WordPress (robots.txt references /wp-admin/ and sitemap_index.xml).
+- Mobile responsive: not observed.
+- Homepage headline (H1): "Skillful, Compassionate Auto Injury Lawyer In Boise"
+- CTA above fold: yes — "Book My Free Consultation" button (links to contact page). Also phone (208) 999-1717 for free 24/7 consultations; secondary (208) 789-2098.
+- Contact form location: separate Contact Us page ("Contact Online" prompt); no form observed on homepage above the fold.
+- Live chat present: no (not observed)
+- Attorney bio present: yes — David L. Morgan (MBA/JD Willamette 2001, BYU BA 1995, "20+ years experience") — dedicated /david-morgan/ page
+- Video present: no (not observed on homepage)
+- Blog present: yes — latest post found "Is the Ski Resort Liable if I'm Injured on Vacation?" dated 4/25/2019 (stale, ~7 years).
+- Offices listed on site: Boise ID (950 West Bannock St, Suite 1100), Middleton ID (318 West Main St), Lehi UT (2901 Bluegrass Blvd, Suite 200)
+- Practice areas listed on site: auto accidents, car accident injuries, fatal vehicle accidents, head and spinal injuries, motorcycle accidents, personal injury, traumatic brain injuries, trucking accidents
+- Nav: Home, Attorney Profile, Practice Areas, Areas We Serve, Testimonials, Contact Us, Privacy Policy, Sitemap
+
+robots.txt check (relevant to the ChatGPT Ads blocker on the call):
+- Fetched https://www.morganinjurylawyer.com/robots.txt on 2026-10-20. Contents: "User-agent: * / Disallow: /wp-admin/ / Allow: /wp-admin/admin-ajax.php / Crawl-delay: 10 / Sitemap: https://www.morganinjurylawyer.com/sitemap_index.xml". No explicit AI-bot (GPTBot / OAI) disallow was visible to this fetch; requests with GPTBot and OAI-AdsBot user-agent strings returned HTTP 200.
+- DISCREPANCY: the prospect read an OpenAI error "The site blocks crawler access in robots.txt" (00:27:34). The public robots.txt does not show an obvious block. Possible causes (unverified): the ad landing URL was the redirecting morganinjuryfirm.com domain (a different host/robots.txt), a CDN/WAF/bot-protection layer blocking the OpenAI crawler, the Crawl-delay: 10 directive, or the file changed. Pass 2 should describe this as "OpenAI's ad verification reported the site blocks crawler access" (transcript fact) and NOT assert the exact cause as confirmed.
+
+PageSpeed (pagespeed.web.dev):
+- PageSpeed mobile score: NOT MEASURED — pagespeed.web.dev did not return results in this run, and the PageSpeed Insights API returned "Quota exceeded" for both strategies. No estimate recorded. Pass 2 must not print a PageSpeed number.
+- PageSpeed desktop score: NOT MEASURED (same reason).
+
+======================================================================
+STEP 2 — GOOGLE BUSINESS PROFILE
+======================================================================
+- GBP found: yes (Boise listing — Morgan Law Firm / David L. Morgan, Attorney at Law; also Middleton and Lehi listings exist per directories)
+- Star rating: 4.9 [UNCONFIRMED — sourced from web-search aggregation of the firm's own site ("4.9 star reviews on Google") and third-party listing, not independently confirmed via Google Maps]
+- Total review count: 71 [UNCONFIRMED — sourced from web-search aggregation, not independently confirmed via Google Maps]. Prospect's own recollection on the call: "They're only like 50, you know, or so after 25 years" (00:11:00) — treat as an unverified approximation; Rep also said "50 five-star reviews or something like that" (rep speech, not a fact).
+- Most recent review date: not observed
+- Primary category: not observed (likely Personal Injury Attorney — not confirmed)
+- Photos active: not observed
+- Posts active: not observed
+
+======================================================================
+STEP 3 — LOCAL 3-PACK SEARCHES
+======================================================================
+NOT OBSERVED — live Google Maps/local-pack results could not be viewed with the tools available in this run. No pack positions are asserted. Prospect statement on the call: "I'm not even optimized in my, my hometown here for PP, I don't even show up, I don't think on LSAs." (00:11:07) — about PPC/LSA, not the organic 3-pack.
+
+Practice Area 1: Car / auto accident (Nampa, Boise)
+- Search 1 "car accident lawyer Nampa Idaho": firm appears NOT OBSERVED. Organic results (web search, not local pack) surfaced FindLaw, Feller & Wendt, Hepworth Holzer, Litster Frost, Joe Frick Law, Andrew Injury Law, Curtis & Porter, Johnson & Lundgreen — the Morgan firm did not appear in those organic results.
+- Search 2 "personal injury attorney Boise Idaho": firm appears NOT OBSERVED (organic results surfaced Justia, Lawyers.com, Yelp, Attorneys of Idaho, Litster Frost, Hepworth Holzer, The Advocates, Bailey & Galyen).
+- Search 3 "Morgan Law Nampa Idaho personal injury attorney": firm appears yes (branded search — firm site pages, Avvo, Lawyers.com, FindLaw listings returned).
+
+Practice Area 2: Trucking / motorcycle / TBI — NOT OBSERVED (no local-pack data available).
+
+======================================================================
+STEP 4 — COMPETITOR REVIEW COUNTS
+======================================================================
+All figures below came from web-search aggregation of third-party sites and are NOT independently confirmed via Google. Aggregators disagree with each other.
+- Competitor 1: Litster Frost Injury Lawyers (Boise; serves Nampa/Treasure Valley) — reviews: 498 [UNCONFIRMED — sourced from web-search aggregation; other aggregators show 99–101 (TrustAnalytica) and 860 (Chamber of Commerce), not independently confirmed via Google] — rating: 4.7 [UNCONFIRMED — sourced from web-search aggregation, not independently confirmed via Google]
+- Competitor 2: Hepworth Holzer, LLP (Boise; handles Nampa) — reviews: 102 [UNCONFIRMED — sourced from web-search aggregation of third-party listing, not independently confirmed via Google] — rating: 5.0 [UNCONFIRMED — same source]
+- Competitor 3: Andrew Injury Law, PC (Nampa, 270 W Georgia Ave) — reviews: 76 [UNCONFIRMED — sourced from injuryadvocatesdirectory.com-type aggregator, not independently confirmed via Google] — rating: 5.0 [UNCONFIRMED — same source]
+- Also seen (Boise, may not compete in Canyon County): The Advocates — 254 reviews / 4.9 [UNCONFIRMED — web-search aggregation]; Bailey & Galyen — 126 / 4.0 [UNCONFIRMED — web-search aggregation]
+
+Because none of these are Google-confirmed, Pass 2 must not print specific review counts for the firm or any competitor.
+
+======================================================================
+STEP 5 — DIRECTORY LISTINGS
+======================================================================
+- Avvo: yes — "David L Morgan" profile (Middleton, ID); licensed 24 years (Utah) / 13 years (Idaho) per listing; 2 client reviews, 5.0 rating (as listed)
+- Justia: not directly checked
+- FindLaw: Nampa/Canyon County PI directory pages exist; firm listing not confirmed
+- Yelp: not checked
+- Lawyers.com: yes — separate listings for Boise, Middleton, and Lehi UT (Morgan Law Firm)
+- MapQuest: listings found with at least two different addresses — 211 E Main St, Lehi UT, and 3597 E Monarch Sky Ln #240, Meridian ID — differing from the website's Lehi address (2901 Bluegrass Blvd) → possible NAP inconsistency (listed as "possible", not verified as current)
+- Also: USAttorneys.com, LinkedIn, about.me, legalserviceslink.com
+- NAP consistency: possible inconsistencies noted above (multiple addresses across directories, two phone numbers (208) 999-1717 and (208) 789-2098 on site)
+- Geo-targeting landing pages: yes for Boise, Middleton, Lehi UT. No dedicated pages observed for Nampa, Meridian, or the Canyon County/Caldwell markets; none for Eastern Idaho or Twin Falls (Magic Valley) — the markets the prospect named as targets.
+
+======================================================================
+STEP 6 — GOOGLE ADS
+======================================================================
+NOT OBSERVED — live Google search result pages (paid placements) could not be viewed in this run. Per the ADS FRAMING RULE: the firm "does not appear to be running ads for this search" is NOT even asserted from research; the only statement available comes from the prospect (see STEP 9: has not advertised "probably the last five years other than the billboard," 00:02:38, and says he does not show on LSAs, 00:11:07).
+
+Practice Area 1: Car / auto accident
+- Firm ads observed: not observed
+- Named local competitors running ads: not observed
+
+Practice Area 2: Trucking / motorcycle / TBI
+- Firm ads observed: not observed
+- Named local competitors running ads: not observed
+
+======================================================================
+STEP 7 — LOCAL SERVICE ADS
+======================================================================
+- Firm appears in LSA: not observed (prospect: "I don't even show up, I don't think on LSAs" 00:11:07 — his belief, not verified)
+- Google Screened: not observed
+- LSA review count: not observed
+- Named local competitors in LSA: not observed
+
+======================================================================
+STEP 8 — META ADS
+======================================================================
+Facebook Ad Library could not be queried in this run (JavaScript-only interface).
+- Firm has active ads: not observed
+- Named local competitor 1: Litster Frost Injury Lawyers — active ads: not observed
+- Named local competitor 2: Hepworth Holzer, LLP — active ads: not observed
+
+======================================================================
+STEP 9 — TRANSCRIPT EXTRACTION
+======================================================================
+Transcript source: full verbatim Fathom transcript (summary used only as overview)
+Call: ChatGPT Ads verification meeting, 36 min, Fathom recording 194522681, 2026-10-20. Prospect: David Morgan. Rep: Daniel Lowe.
+
+- Practice areas confirmed: personal injury (auto/vehicle accident cases). Prospect: "for Auto Wheel Attorney accidents, you know, cases" (00:21:43) [transcript unclear — read as auto / 18-wheeler accident cases].
+- Current lead sources: "mostly just referrals and things" (00:02:49); "family and friends and whoever I knew was coming to me over these years, you know, past clients" (00:07:26); a freeway billboard — "the billboard doesn't do anything but brand and people who know me, you know, know that I practice and then call me" (00:02:43).
+- Ads ever run: yes. PPC and LSAs, self-managed — "I did the PPC campaigns on my own, I did the LSAs on my own" (00:17:40). "I got involved in LSAs years ago. I was probably one of the first movers in Idaho on the PPC ads, switching from phone book ads to the PPC, then to the LSAs" (00:02:54–00:03:00; "PC ads" read as PPC). Results: "I have gotten cases in the last five years off of PPC" (00:11:07). Click costs: "anywhere from about $50 to $300, you know, per click" (00:23:00). Also "thrown tens of thousands of dollars at … different marketing campaigns, especially the organic" with no results (00:18:56). No advertising in the last ~5 years besides the billboard (00:02:38). Last night (10/19) he set up a ChatGPT/OpenAI ads account — account verified, credit card entered, conversion tracking set — but ad approval was blocked: "landing page issue. The site blocks crawler access in robots.txt" (00:27:24–00:27:41).
+- Team size: not stated. He said he'd hire if volume grows: "Sure, we'll hire more … I'll hire other attorneys, whatever I need to do at this point" (00:18:26; the second part attributed to the prospect by context). Has a phone system where the first call is answered on the first ring (00:10:46).
+- Annual revenue (gross / case value): not stated
+- Annual revenue (net / take-home / collected): not stated — not distinguished from gross
+- Fee structure: contingency — "All of my contingency" (00:24:00)
+- Revenue goal: not stated in dollars. Case-volume goal: "I'd like to move that to 10 to 15 cases a month" (00:18:12); later "whatever it takes to get five to, I guess, five to 10, five to 10 extra cases a month" (00:30:41). Not stated, use 2x current revenue for revenue goal.
+- Average case value: "they can be worth $500 to $1,000 and upwards of hundreds of thousands, depending on the case … Generally speaking, you're probably $20,000 or less on a case" (00:23:44–00:23:52). [Transcript unclear whether this is settlement value or the firm's fee; recorded as a case-value range.]
+- Current close rate: not stated — default to 15%. Current volume: "We probably get two to three cases a month" (00:18:07).
+- Number of locations: Idaho (Canyon County/Treasure Valley, near Boise — "only 20 minutes from Boise") plus a Utah practice: "I have a firm and I did practice in Utah and I still do have a practice in Utah as well in the … Utah County, Salt Lake region" (00:20:44; "Lehigh" read as Lehi). Website lists three offices (Boise, Middleton, Lehi UT). Treat as 2–3.
+- Spanish campaign needed: no (not mentioned)
+- Dominant buying motive: "now that I have eight kids, you can see behind me on the wall, I've got a lot to take care of. And so I figured I might as well get moving for the next 20 years." (00:07:41–00:07:46). Also: "I just wanted to step it up a little bit and see if I could do more" (00:02:51). Inference: provide for a large family and build a firm that is not dependent on referrals for the next two decades.
+- Any profitability claims made by prospect: none stated (only: "each time I was the first mover, I did fairly well" (00:03:13), and a working threshold of ~$1,000 per case: "It was about $1,000 per case is what I was getting" (00:22:54); "as long as we convert them for $1,000 or less, we could make it happen" (00:23:19)).
+- Any claims about case types or practice areas: "Especially personal attorney, personal injury." (00:20:31, "personal attorney" read as personal injury); cases are "pretty local" (00:20:41).
+- Stated call focus / product interest: ChatGPT Ads verification call that became a marketing-strategy discussion — fix the OpenAI landing-page/crawler block, rebuild the website for AI crawlability, and run ChatGPT Ads (Boise, Eastern Idaho, Twin Falls) plus LSA/PPC in Canyon County. Standard marketing/growth discovery (not coaching/ops or AI/CTO). Rep: "I'm not the marketing agency… they put together packages based upon the information that I give them" (00:26:29). Follow-up proposal call 4:00 PM Mountain today.
+- Primary engagement: marketing
+- Products discussed on call: Full Service Marketing (website rebuild/GEO, PPC, LSA, ChatGPT Ads, social — no tiers or prices quoted; rep: "you can stair-step that… or we could just go in, you know, full board" 00:32:24–00:32:44)
+- Lead-gen gap stated: yes — "I'd like to move that to 10 to 15 cases a month." (00:18:12)
+- Existing marketing/SEO/ad vendor engagements: none signed. "I just met with another company just in my office, it was kind of more of a local company" (00:08:26) — evaluating; they pitched PPC/organic and an "AI responsive" website (00:12:33–00:12:51). No contract stated.
+- Budget constraints stated: "I don't have a firm that's as big as these other guys, and so I don't have the money to throw at organic" (00:10:22); "it's just too much, there's too much … It takes too much money." (00:17:53–00:17:58). Working cost-per-case ceiling ~$1,000. No dollar budget stated.
+
+Other facts for Pass 2:
+- Prospect prefers immediate-result channels: "The immediate results from PPC" (00:10:20); skeptical of organic SEO: "I never really got any results from it" (00:10:16). Note: tension with the proposed website rebuild — frame the rebuild as enabling ChatGPT Ads/PPC landing pages, not as organic SEO.
+- Prospect prior AI report: asked "Did you get a report from us, like an AI report…" (00:07:05) — rep says it showed the site did not show up in AI; prospect "really didn't care that much" until now.
+- Target markets named by prospect: Canyon County (LSAs/PPC around his firm), Boise (ChatGPT first-mover), Eastern Idaho (about four hours away), Twin Falls/Magic Valley.
+- Concern: how to compete with "Morgan & Morgan and all those big firms" (00:19:35).
+- Reviews: prospect knows reviews are low — "I need to work on those things" (00:11:00).
+- Location text quirk: prospect says "I'm in Central Time" at 00:29:52 — transcript error; he said Mountain Time at 00:29:45 and the meeting is 4:00 PM Mountain.
+- Rep statements NOT to attribute to client: "20 plus of our clients running ChatGPT ads" (00:08:54); "hundreds of law firms" (00:13:11); "five to seven more cases" pitch math (00:32:44).
+
+Key prospect quotes (verbatim, prospect only):
+1. (00:02:43) "the billboard doesn't do anything but brand and people who know me, you know, know that I practice and then call me." — lead sources / billboard
+2. (00:02:49) "mostly just referrals and things." — lead sources
+3. (00:03:13) "each time I was the first mover, I did fairly well." — ads history / first-mover mindset
+4. (00:07:41) "now that I have eight kids, you can see behind me on the wall, I've got a lot to take care of." — DBM
+5. (00:07:46) "I figured I might as well get moving for the next 20 years." — DBM / goals
+6. (00:10:16) "I never really got any results from it, right?" [on organic SEO] — objection to organic
+7. (00:18:07) "We probably get two to three cases a month, I would think." — current volume
+8. (00:18:12) "I'd like to move that to 10 to 15 cases a month." — goals
+9. (00:22:54) "It was about $1,000 per case is what I was getting." — budget / cost-per-case threshold
+10. (00:17:58) "It takes too much money." — budget / DIY marketing fatigue
+11. (00:11:24) "I need to show up as the number one guy, because I think I can, especially since I've been here for so long." — local visibility goal
+12. (00:27:34) "The site blocks crawler access in robots.txt." — ChatGPT ads blocker (OpenAI error message the prospect read aloud)
+
+======================================================================
+STEP 10 — COMPETITIVE URGENCY SCORE
+======================================================================
+Score: 6 (provisional — based on limited, partly unconfirmed data: ads, LSA, and local-pack positions could not be observed in this run).
+
+Named local competitor threats:
+1. Litster Frost Injury Lawyers (Boise) — aggregator-reported review volume far above the prospect's (count UNCONFIRMED); strong directory/organic visibility for Nampa/Treasure Valley injury searches; dedicated Nampa injury pages.
+2. Hepworth Holzer, LLP (Boise) — long-established Idaho injury firm (since 1974/1952 per differing sources), ranks organically for Nampa car accident searches; aggregator-reported 100+ reviews (UNCONFIRMED).
+3. Andrew Injury Law, PC (Nampa) — dedicated Nampa car/truck/motorcycle/bus accident pages; located in the prospect's target Canyon County market; aggregator-reported 5.0 rating (UNCONFIRMED).
+(Also appearing organically for Nampa searches: Feller & Wendt, Johnson & Lundgreen.)
+
+Dynamic sentence (Score 4–6): "A score of 6 means competitors have meaningful advantages in one or more areas and are pulling ahead. You are not invisible yet — but the window to close the gap is narrowing. Every month without action is a month they extend their lead."
+
+Supporting observation: the prospect says nobody in his area is on ChatGPT ads ("I don't see really anybody in my area on ChatGPT" 00:03:18; "Nobody's on ChatGPT for the Boise area, I don't think" 00:21:43) — a first-mover opening (prospect's belief, not independently verified).
+
+======================================================================
+PASS 2 — VERIFICATION CHECKLIST
+======================================================================
+[x] Every number matches observed data — figures are either observed, tagged UNCONFIRMED, or marked not measured/not observed
+[x] Competitor review counts: all tagged UNCONFIRMED; firm count (71) is lower than the competitors' aggregator figures, but none are verified — do not print specific counts or claim the firm is outranked on reviews
+[x] Every review count and star rating carries a verification-method tag
+[x] Revenue: gross and net both "not stated"; fee structure recorded (contingency)
+[~] Ad sections cover all practice areas — recorded as NOT OBSERVED (tool limitation), not fabricated
+[x] No section says "you are not running ads"
+[x] No profitability claims beyond the prospect's own statements
+[x] Competitors are specific named local firms only
+[ ] PageSpeed scores — NOT MEASURED (tool failed / API quota); no estimate recorded. Re-run in a browser if a number is required for the report
+[x] DBM recorded (exact quote)
+[x] Revenue goal flagged as not stated; case-volume goal recorded
+[x] Close rate defaulted to 15%
+[x] Average case value recorded
+[x] Stated call focus recorded (marketing)
+[x] Primary engagement / Products discussed / Lead-gen gap filled in machine-read format
+[x] Existing vendor engagements recorded (none signed; evaluating a local agency)
+[x] Budget constraints recorded
+
+Open items for Pass 2 / human follow-up:
+- PageSpeed scores, GBP live numbers, local 3-pack, Google Ads, LSA, and Meta Ads Library were not observable with the tools used; verify in a real browser before the 4:00 PM MT proposal call if they will be cited.
+- Reconcile the robots.txt discrepancy (public file shows no AI-bot block; OpenAI reported one) — possibly the redirecting morganinjuryfirm.com host or a CDN/WAF rule.
