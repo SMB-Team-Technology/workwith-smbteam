@@ -1,0 +1,99 @@
+SECTION 11 WORKINGS — Morgan Law (October 20, 2026) — INTERNAL ONLY, never client-facing
+
+======================================================================
+TRANSCRIPT-STATED NEED OVERRIDE CHECK
+======================================================================
+1. Call-purpose override: NOT triggered. Research notes: primary_engagement = marketing; call was a ChatGPT Ads verification that became a marketing-strategy discussion (website rebuild, PPC, LSA, ChatGPT Ads). Lead-gen gap stated (goal 10-15 cases/mo vs. 2-3 today).
+2. Existing-vendor override: NOT triggered. No contract signed. Prospect met a local agency (00:08:26) but is only evaluating.
+3. Budget-reality override: Budget concerns stated ("I don't have the money to throw at organic" 00:10:22; "it takes too much money" 00:17:58; ~$1,000 cost-per-case ceiling). Already applied upstream: seller override (Slack, 2026-10-20) dropped coaching and moved from Starter to Essentials at $3,797/mo with $7,500 ad spend. Package below is the lowest marketing tier and no coaching - consistent with the override. proposal_review.json status = locked.
+   Gap between revenue-table suggestion and what is recommended: revenue-implied selection (HubSpot band $180K-$960K -> $570K; PI + multiple practice areas/locations) was Starter $4,997 + Elite Coach Plus $3,200 = $8,197/mo with $10K-$20K ad spend. Recommended: Essentials $3,797/mo, no coaching, $7,500 ad spend. Seller-approved exception: Essentials is normally hidden for personal injury and for multi-location firms.
+4. Effective-revenue override: NOT triggered. Contingency practice, but no gross/net figure stated on the call (net_revenue_stated = null). Revenue $570,000 is a HubSpot estimate (band $180K-$960K), not stated by the prospect - never printed in the client report.
+
+package_decision.json: confidence = low (revenue source = HubSpot band; team size defaulted to 3). Cross-checked against notes: marketing primary engagement and Essentials selection are consistent with the seller override. No correction needed.
+
+======================================================================
+MANDATORY PRICE LOOKUP (confirmed against package_decision.json and the pricing tables)
+======================================================================
+- Marketing package selected: Full Service Marketing - Essentials
+  - Bundled price used: $3,797/mo (package_decision.json marketing_price_bundled; seller set the stand-alone price because no second package is bundled)
+  - Stand-alone price (table): $3,797/mo
+  - Savings (stand-alone minus price used): $0/mo
+  - Note: table "bundled" price is $3,497/mo; it was NOT used, per seller override (single product, no bundle).
+- Non-marketing package selected: none
+- Legal AI Workforce (LAW) package selected: none
+- AI Avatar / Video Growth add-on selected: none
+- Total monthly investment: $3,797/mo
+- Total savings: $0/mo (no savings callout in Block 3)
+
+35% cap check (on HubSpot-estimated revenue $570,000 -> $16,625/mo cap): $3,797 + $7,500 ad spend = $11,297/mo. Under cap.
+
+======================================================================
+AD SPEND AND ROI
+======================================================================
+Conservative ad spend: $7,500/mo (Essentials tier cap; seller override)
+Aggressive ad spend: $7,500/mo (Essentials tier cap; seller override)
+The uncapped calculation would be higher: practice-area channel minimums for Accident/Injury (Google PPC $6,000 + LSA $2,000 = $8,000) already exceed the cap, and the 20% rule on 2x revenue (no goal stated) is about $19K/mo before tier multiplier. Seller capped at $7,500 - see escalation flags.
+
+Channel mix modeled (Accident & Injury client-facing CPL midpoints): Google Search 50% ($3,750 at $705), LSA 30% ($2,250 at $235), Meta retargeting 20% ($1,500 at $90).
+Blended CPL (no cushion) = $237.64 -> 31.6 leads/mo. Conservative adds a 20% cushion -> $285.17 CPL -> 26.3 leads/mo.
+Close rate: 15% (default; not stated on call).
+Case value: practice-area default $5,000-$8,000, midpoint $6,500 used (default - the prospect's "$20,000 or less" (00:23:52) is ambiguous between settlement value and fee). Disclosed as an industry average in the client report.
+
+Conservative scenario: 26.3 leads x 15% = 3.95 cases/mo -> revenue at $6,500 = $25,643 -> return 3.4x on $7,500
+Aggressive scenario: 31.6 leads x 15% = 4.73 cases/mo -> revenue at $6,500 = $30,771 -> return 4.1x on $7,500
+Client report shows: 4-5 cases/mo; est. monthly revenue $25,600-$30,800; case value $5,000-$8,000.
+Implied cost per case: about $1,584 (aggressive) to $1,901 (conservative) - ABOVE the prospect's stated ~$1,000-per-case ceiling (00:22:54, 00:23:19). Flag for the rep before the proposal call.
+
+Why this range (client-facing): "To turn high-intent auto accident searches around Nampa and Boise into signed cases - while you can still be first in newer channels like ChatGPT, where you said no one local is advertising yet."
+
+======================================================================
+DBM STATEMENT (Block 1)
+======================================================================
+Exact words: "now that I have eight kids ... I've got a lot to take care of. And so I figured I might as well get moving for the next 20 years." (00:07:41-00:07:46). Inference: a firm that provides for a large family and is not dependent on referrals for the next two decades.
+Block 1: "We help established Idaho injury attorneys get a steady flow of new auto accident cases from people who have never heard of them so they can build a firm that provides for their family for the next 20 years."
+
+======================================================================
+QUICK WIN OPPORTUNITIES (8)
+======================================================================
+1. Lead Gen / Quick Win - Fix the crawler block so ChatGPT Ads can be approved. Why: OpenAI verification reported the site blocks crawler access (00:27:34). Competitor: none named. Opportunity: first-mover in Boise on ChatGPT (prospect's belief, not verified).
+2. Lead Gen / Quick Win - Launch managed Google Search + LSA in Canyon County. Why: no advertising in ~5 years besides billboard (00:02:38); does not believe he shows on LSAs (00:11:07). Competitor: Litster Frost. Opportunity: capture high-intent searches.
+3. Lead Gen / Long-Term - Market pages for Nampa, Meridian, Caldwell, Eastern Idaho, Twin Falls. Why: no pages for the markets he named. Competitor: Andrew Injury Law (Nampa pages). Opportunity: relevance + ad landing pages.
+4. Lead Gen / Quick Win - Systematic Google review requests. Why: prospect says reviews are low (00:11:00). Competitor: none (counts UNCONFIRMED - not printed). Opportunity: stronger LSA and map-pack position.
+5. Intake / Quick Win - Put contact form and click-to-call above the fold; unify phone numbers. Why: form on separate page; two numbers. Competitor: none. Opportunity: more conversions from ad clicks.
+6. Intake / Long-Term - Define intake script, follow-up sequence, after-hours coverage before volume ramps. Why: goal 10-15 cases/mo vs. 2-3 (00:18:07-00:18:12). Competitor: none.
+7. Team / Long-Term - Plan roles and first hires ahead of volume. Why: prospect will hire as volume grows (00:18:26). Competitor: none.
+8. Profit / Quick Win - Track cost per signed case by channel against the ~$1,000 ceiling. Why: prospect's threshold (00:23:19). Competitor: none.
+
+======================================================================
+WHAT YOU TOLD US (Block 5) - rows and sources
+======================================================================
+Row 1 (central package: Full Service Marketing Essentials - paid lead flow)
+  Client-facing: "You want to move to 10 to 15 cases a month."
+  Verbatim: (00:18:12) "I'd like to move that to 10 to 15 cases a month."
+  Supports: managed Google Search / LSA / retargeting ad program in Block 2.
+Row 2 (website + local presence)
+  Client-facing: "Your new business has mostly come from referrals and past clients."
+  Verbatim: (00:02:49) "mostly just referrals and things." / (00:07:26) "family and friends and whoever I knew was coming to me over these years, you know, past clients"
+  Supports: local SEO, market pages, GBP optimization in Block 2.
+Row 3 (website rebuild)
+  Client-facing: "Your ChatGPT Ads account is set up, but approval was blocked by a landing-page crawler issue."
+  Verbatim: (00:27:24-00:27:41) "landing page issue. The site blocks crawler access in robots.txt"
+  Supports: website rebuild built to be crawlable by ad platforms and AI crawlers.
+Next step line: kickoff call with your Onboarding team.
+Not used (excluded by rule): family/personal matters, budget/financial figures, named employees.
+
+======================================================================
+ESCALATION FLAGS (internal)
+======================================================================
+- Review counts unconfirmed - verify live before the call. Firm 71 stars 4.9 and all competitor counts are tagged UNCONFIRMED in the research notes; none printed in the client report.
+- PageSpeed (mobile and desktop) NOT MEASURED in Pass 1 (tool/quota failure). No score printed in the report. Run pagespeed.web.dev before the call if a number is wanted.
+- Local pack, Google Ads, LSA, and Meta Ad Library: NOT OBSERVED in Pass 1 (tool limitation). Report uses opportunity framing only; verify live.
+- Essentials tier is normally hidden for personal injury and for multi-location/multi-practice-area firms (website lists Boise, Middleton, Lehi UT). Seller-approved exception per Slack 2026-10-20. Essentials includes 1 GBP location and up to 10 imported pages - confirm scope with ops given 2-3 offices.
+- Ad spend below practice-area minimums: $7,500 is below the Accident/Injury channel minimums (Google $6,000 + LSA $2,000). Paid ads team review required.
+- Implied cost per case ($1,584-$1,901) exceeds prospect's ~$1,000 ceiling.
+- Revenue is a HubSpot estimate ($180K-$960K band -> $570K); not stated on call. Confirm actual revenue (net, contingency) before the proposal call.
+- Case value is a practice-area default ($5,000-$8,000), not a stated figure.
+- ChatGPT Ads: not a documented line item in the Essentials deliverables. The Block 2 deliverables promise crawlable site/AI-readiness and managed Google Search/LSA/retargeting only. Confirm with sales ops whether ChatGPT Ads management can be offered before promising it on the 4:00 PM MT call.
+- robots.txt discrepancy (public robots.txt shows no AI-bot block; OpenAI reported one; possible redirect domain, CDN/WAF, or Crawl-delay) - cause unconfirmed; the report does not assert a cause.
+- Roadmap Phase 3 mentions Legal AI Workforce: confirm LAW delivery has launched and capacity is available before it is discussed as a next step.
+- Revenue goal in dollars not stated (case-volume goal only).
