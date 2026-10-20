@@ -1,0 +1,175 @@
+RESEARCH NOTES — Fairchild Employment Law, P.C.
+Friendly name: fairchild-employment
+Date: October 20, 2026
+Sales rep: Dan Bryant
+Trigger URL: https://fairchildemploymentlaw.com/
+Contact: Jillian Fairchild (Owner)
+Research method: live web fetch + web search + a local Lighthouse run only (no interactive browser, no live Google Maps/SERP/Ads Library access in this run). Anything that needs a live Google SERP, Google Maps listing, or ad library view is marked NOT OBSERVED / UNCONFIRMED rather than estimated. Nothing in this file is fabricated.
+
+======================================================================
+STEP 1 — WEBSITE RESEARCH
+======================================================================
+- Website URL confirmed live: yes (HTTP 200).
+- Last redesign date or estimated age: not directly observable. Footer reads "© 2026 Fairchild Employment Law. All Rights Reserved" (links: Privacy Policy, Web Accessibility, Personal Data Request, Important Notices). Site appears actively maintained.
+- Mobile responsive: yes (responsive image sizes present in page code; not tested on a physical device).
+- Homepage headline: "San Diego's Experienced Employment Lawyers"
+- CTA above fold: yes — "Schedule a Case Evaluation" button with phone (619) 306-1454.
+- Contact form location: two instances — hero section (above fold) and page bottom.
+- Live chat present: no
+- Attorney bio present: yes — Jillian Fairchild (founder) and Morgan Ruiz (associate) have profiles.
+- Video present: no (not observed on homepage)
+- Blog present: yes (fairchildemploymentlaw.com/blog/) — latest post September 29, 2026 ("Can My Employer Reduce My Hours Because I'm Pregnant?" and "Can My Boss Force Me To Take Maternity Leave Early?"); prior posts Aug 6, 2026, Aug 4, 2026, Jan 12, 2026. Active but irregular cadence.
+- Practice areas listed on site: disability discrimination, hostile work environment, LGBT discrimination, pregnancy discrimination, racial discrimination, sexual harassment, workplace retaliation, wrongful termination
+- Testimonials: homepage and /testimonials/ show client testimonials (some attributed "Google Review"); no star rating or review-count figure displayed on either page.
+- Geo-targeting landing pages for surrounding cities: none observed on homepage (serves "San Diego" and "throughout California"). Not exhaustively crawled.
+- Spanish-language content: none detected.
+
+PageSpeed:
+- pagespeed.web.dev and the PageSpeed Insights API were not usable in this run (API returned HTTP 429 "Quota exceeded" for both strategies). As a substitute, Lighthouse (performance category) was run locally against https://fairchildemploymentlaw.com/ on 2026-10-20 from a headless Chromium on a CI runner. These are real measured values but are NOT from pagespeed.web.dev and may differ from it (different network/CPU conditions).
+- Lighthouse mobile performance score: 74 (local Lighthouse run, not pagespeed.web.dev)
+- Lighthouse desktop performance score: 84 (local Lighthouse run, not pagespeed.web.dev)
+- Pass 2 guidance: if these figures are used in the client report, label them as Lighthouse performance scores, or re-run on pagespeed.web.dev first.
+
+======================================================================
+STEP 2 — GOOGLE BUSINESS PROFILE
+======================================================================
+Google Maps / GBP was not directly reachable in this run. Items below that come from the call are attributed as such.
+- GBP found: yes per call — the rep screen-shared the listing at 00:09:31–00:10:07 and Jillian said "That's us" (00:08:36). Listing itself not independently viewed in this run.
+- Star rating: NOT OBSERVED [UNCONFIRMED — not obtained; no Google Maps access in this run]
+- Total review count: NOT OBSERVED [UNCONFIRMED — not obtained; no Google Maps access in this run]. Website testimonials page attributes several testimonials to Google reviews but gives no count. Prospect said on the call "I've been trying to work on that" re: getting more reviews (00:11:40); rep: "start getting an abundance of Google reviews" (00:11:30). Do NOT print any review count or rating as a specific figure in the report.
+- Most recent review date: not observed
+- Primary category: "Law Firm" (observed by rep on the call at 00:09:53: "You're categorized wrong as a law firm, not an employment attorney"). Should be Employment Attorney / Employment Lawyer; rep suggested secondaries: Law Firm, Lawyer, Trial Attorney (00:14:27–00:14:42).
+- Hours: listing shows open 24 hours (00:10:07); Jillian: "I don't, but I, that's the plan eventually" re: 24-hour answering service (00:10:12). No after-hours answering in place.
+- Photos active: not observed. Rep recommended a tighter-cropped headshot (00:08:52–00:09:08).
+- Posts active: not observed
+- Share of Local Voice (SOLB) as shown by the rep's report on the call (rep-run tool, not independently verified): Fairchild ~13% for "employment lawyer" during business hours vs. Ferraro (Ferraro Vega) ~76% (00:12:34–00:12:56). Rep planned a before/after rerun after the category fix.
+
+======================================================================
+STEP 3 — LOCAL 3-PACK SEARCHES
+======================================================================
+NOT OBSERVED. Live Google local-pack results cannot be retrieved from this environment, and results are location-dependent. No competitor names/counts are recorded here to avoid inventing pack composition. Practice area (single): plaintiff-side employment law, San Diego.
+- Search 1 "employment lawyer San Diego": NOT OBSERVED
+- Search 2 "wrongful termination lawyer San Diego": NOT OBSERVED
+- Search 3 "sexual harassment / pregnancy discrimination attorney San Diego": NOT OBSERVED
+Only data point available: the rep's SOLB report on the call (see STEP 2) — Fairchild ~13% vs Ferraro Vega ~76% for "employment lawyer".
+
+======================================================================
+STEP 4 — COMPETITOR REVIEW COUNTS
+======================================================================
+No Google review counts could be verified live. All figures below come from third-party aggregators (Yelp, via web search results) and are UNCONFIRMED. Pass 2 must not print them as specific figures.
+- Competitor 1: Ferraro Vega Employment Lawyers (3333 Camino del Rio S, Suite 300, San Diego) — reviews: 13 [UNCONFIRMED — sourced from Yelp, not independently confirmed via Google] — rating: 3.8 [UNCONFIRMED — sourced from Yelp, not independently confirmed via Google]. Named on the call as the 76% SOLB leader. Google review count: NOT OBSERVED.
+- Competitor 2: Pokala Law (2535 Kettner Blvd, San Diego) — reviews: 40 [UNCONFIRMED — sourced from Yelp, not independently confirmed via Google] — rating: 4.9 [UNCONFIRMED — sourced from Yelp, not independently confirmed via Google]
+- Competitor 3: Advantage Law Group (5820 Oberlin Dr, San Diego) — reviews: 40 [UNCONFIRMED — sourced from Yelp, not independently confirmed via Google] — rating: 4.9 [UNCONFIRMED — sourced from Yelp, not independently confirmed via Google]
+- Fairchild's own Google count/rating is not verified, so no claim can be made that any competitor has more or fewer reviews than the firm. Competitors 2 and 3 were not confirmed to be in the local pack; they are San Diego employment-law firms surfaced by a Yelp search.
+
+======================================================================
+STEP 5 — DIRECTORY LISTINGS
+======================================================================
+- Website NAP: 3131 Camino del Rio N., Suite 310, San Diego, CA 92108; (619) 306-1454.
+- FindLaw (firm page): fetched — same address and phone as website; page shows no client reviews ("Be the first to write a review!"); lists Jillian Fairchild and Morgan Ruiz. Consistent.
+- FindLaw (attorney page, Jillian M. Fairchild): appears in search results; not fetched.
+- Avvo (Jillian Marie Fairchild, ZIP 92108): profile exists per search results; page fetch returned HTTP 403, so rating/review data NOT OBSERVED.
+- MapQuest: lists "Fairchild Employment Law, 8880 Rio San Diego Dr, Ste 800, San Diego, CA 92108" — DIFFERENT address from website/FindLaw (3131 Camino del Rio N., Suite 310). NAP INCONSISTENCY (likely an old address). Not independently verified which is stale.
+- Wallist: listing exists (not fetched).
+- Justia, Yelp (firm's own listing), Facebook, Super Lawyers: not checked in this run.
+- Geo-targeting landing pages for surrounding cities: none observed on homepage.
+
+======================================================================
+STEP 6 — GOOGLE ADS
+======================================================================
+Practice Area 1: plaintiff-side employment law (single practice area per transcript)
+- Firm ads observed: NOT OBSERVED (live Google SERP not accessible in this run). Do not state the firm is or isn't running ads.
+- Named local competitors running ads: NOT OBSERVED.
+- Ads framing: transcript does not say whether ads have ever been run; Jillian says she has "marketing going" and "SEO going". Lead-gen is not her stated problem (see STEP 9), so ads are not a call focus.
+
+======================================================================
+STEP 7 — LOCAL SERVICE ADS
+======================================================================
+- Firm appears in LSA: NOT OBSERVED
+- Google Screened: NOT OBSERVED
+- LSA review count: NOT OBSERVED
+- Named local competitors in LSA: NOT OBSERVED
+
+======================================================================
+STEP 8 — META ADS
+======================================================================
+- Facebook Ad Library is not retrievable from this environment.
+- Firm has active ads: NOT OBSERVED
+- Named local competitor 1 (Ferraro Vega): NOT OBSERVED
+- Named local competitor 2: NOT OBSERVED
+
+======================================================================
+STEP 9 — TRANSCRIPT EXTRACTION
+======================================================================
+Transcript source: full verbatim Fathom transcript (summary used only as overview).
+Speaker-tag caveat: the diarization in this transcript is partly scrambled — many of Jillian's answers are tagged "Dan Bryant [SMB Team]" and some rep lines are tagged as Jillian. Attribution below was worked out from context (e.g., "I pay myself 185" at 00:36:54 and "I'd rather not" at 00:38:25 are Jillian's answers to the rep's questions). Where attribution is inferred, it is marked [speaker inferred from context]. Rep pitch numbers are not recorded as firm figures.
+
+- Practice areas confirmed: plaintiff-side employment law, San Diego. Jillian confirmed no personal injury and no workers' comp (00:13:50–00:13:56). She formerly did defense (00:26:57). Website lists discrimination (disability, pregnancy, race, LGBT), hostile work environment, sexual harassment, retaliation, wrongful termination.
+- Current lead sources: "I hire like a paralegal and I got an attorney working with me and I have marketing going, I have SEO going, and so I have a whole bunch of leads." (00:03:16). "I don't have a problem with leads coming in." (00:46:46, "…I don't have a problem with leads coming in. And I think the leads are actually… once I've started working on them, they're actually halfway decent."). GBP is managed by iLawyer (rep: "do you want iLawyer to make that change", Jillian: "I'll just have them do it", 00:13:31–00:13:36). Workers' comp referrals mentioned only loosely (00:14:03, "If Workers' Comp, I do" — unclear).
+- Ads ever run: not stated. (Not asked; no platform/budget/result given.)
+- Team size: owner/attorney Jillian + 1 associate attorney (website: Morgan Ruiz) + 1 paralegal + 1 virtual assistant for intake from Attorney Assistant (SMB sister company; "Harissa", based in Belize; ~3 months in). "I have an attorney and a paralegal and me." (00:45:02) [speaker inferred]. Jillian: "I think that it could help to have another attorney" (00:46:46). Husband is also an attorney but does not work in the firm (01:01:07; 01:07:56).
+- Annual revenue (gross / case value): 2025 about $1,000,000 in attorney's fees ("Yes, attorney's fees. Yeah, total." 00:03:06; of that, one big case ~"450" and ~"550" other cases, 00:04:10–00:04:15). 2026 tracking ~$500,000 ("Now I'm like down to like $500,000 in revenue", 00:03:31). Current monthly: bringing in ~$41–42K/month vs ~$55K/month expenses (00:41:11–00:41:20; expenses "50,000 or… 55 now", 00:36:33) [speaker inferred]. Note: the "$1.4 million case" line (00:40:37, "I got a $1.4 million case") is unclear on whether it is settlement value or fee [transcript unclear — do not use].
+- Annual revenue (net / take-home / collected): Owner take-home ~$8,500/month hitting her bank account (00:57:53–00:58:15). Annual gross-equivalent estimated at ~$165K (00:58:57–00:59:15; worked out on the call from $8,500 and an assumed tax rate) [transcript unclear — salary also stated as "I pay myself 185" at 00:36:54 and "I think I moved it down at the end of last year" at 00:37:10; read as ~$165K gross to owner, conservative]. Firm-level net profit not stated; firm is running ~$15K/month in deficit by her figures.
+- Fee structure: contingency. Rep: "Contingency agreement." (00:15:22); Jillian: "I sit down and figure out how to do the KPIs with a contingency thing" (00:27:00). Cases can settle fast via demand letter, otherwise "12 to 18 months" (00:05:06).
+- Revenue goal: ~$1,000,000 for next year (2027). "I think it's probably going to be more like a million… That's the goal." (00:23:36–00:23:40).
+- Average case value: ~$53,000 in attorney's fees per settled case — "looking at one, two, three, nine settlement amounts of attorney's fees here… the average of those is 53,000." (00:42:27–00:42:50). Earlier estimate "$50,000 or $60,000" (00:41:32).
+- Current close rate: not stated — default to 15%. (She said she's signed "quite a few in the past… six weeks" and has ~30 active cases, 00:44:00–00:44:26; no lead-to-signed rate given.)
+- Number of locations: 1 (San Diego; 3131 Camino del Rio N., Suite 310 per website)
+- Spanish campaign needed: no (not mentioned on the call; none on the site)
+- Dominant buying motive: firm that runs itself so she has time and peace of mind — "being able to sleep at night, being able to pay all the bills without having to worry about it." (00:34:25); "Be in my free time and be more present and not have to be stressed about it." (00:55:57–00:56:00); "To not have to be worrying about the business while I'm at home." (01:03:53). Also wants income back to prior level: "I'd like it to be 195" because "that's what I was making when I worked at the firm before I left" (00:59:43–00:59:47), "225" would be better (01:01:18); "feeling like you're worth something" (01:02:07). Wants to work 40 hours or less (currently ~50): "I would rather be 40 or maybe even a little less." (00:57:06). Daughter is 11 (00:49:01).
+- Any profitability claims made by prospect: "It doesn't seem to be making money" (01:08:40, "I just don't, it's, it doesn't seem to be making money, and I, the stress of it…"); burned through ~$350,000 of savings over ~a year ("I want to say it was like $350,000", 00:40:23; deficit "about a year", 00:37:49–00:37:51); line of credit: able to draw $130K, ~$8K balance (00:38:08–00:38:17). Monthly deficit ~$15K is derived from her $41–42K in / ~$55K out. Pitch claims by the rep (double-your-investment guarantee, 3–10x ROI, Mark Reel $25M) are NOT firm facts.
+- Any claims about case types or practice areas: "fast settlements possible": "if it doesn't settle, then it takes like 12 to 18 months" (00:05:06). Active caseload "in our list of cases, we have about 30" (00:44:26). Settlement focus: "working them up, making sure that we're doing the discovery and forcing the other side to work the way that we need to so that they're looking towards settlement and not just sitting on it." (00:44:43).
+- Stated call focus / product interest: COACHING / OPERATIONS — NOT marketing. Jillian reached out after reading the Law Firm Growth Accelerator book (listened and bought it) and attending an SMB AI presentation; she signed up for something AI-related and then wasn't sure it was "the best use of my money" and is "revisiting it to try to figure out what… the best way to go is" (00:02:06–00:02:23). Rep: "I know you're not calling about marketing, because you have leads coming in" (00:06:49). The rep framed the choice as one-on-one fractional COO vs. Elite Coach group coaching (blendable), said coaching is likely the better first fit (00:27:39), and set a proposal review for 2:00 PM PT the same day. Her need: KPIs for a contingency practice, intake that runs without her, cases worked up and settled faster, cash flow stability. The rep also gave quick GBP wins (primary category, hours, reviews) and an after-hours answering option (Smith.ai or Attorney Assistant Frontline) as a courtesy, not as the engagement. The rep invited her to the in-person workshop in Marco Island, FL, Dec 3–5.
+- Primary engagement: coaching/ops
+- Products discussed on call: Elite Coach, FCOO Advisor / Director / Partner
+  (Tier not stated. No prices quoted; rep said coaching or a dedicated COO are "similar price points" and combining them is "a little bit more", 00:31:24–00:31:32. Elite Coach Plus was not mentioned. Attorney Assistant Frontline and Smith.ai were mentioned for after-hours answering — not SMB catalog products for this purpose. AI product from the earlier webinar was not named or priced on this call.)
+- Lead-gen gap stated: no — "I don't have a problem with leads coming in." (00:46:46)
+- Existing marketing/SEO/ad vendor engagements: iLawyer (SEO/marketing; manages the Google Business Profile). Satisfaction: asked if marketing has done a good job — "Well, yeah." (00:07:05); trigger summary: "well enough, not main pain". Also Attorney Assistant (SMB sister company) VA for intake support, ~3 months, "I have the most amazing girl" (00:10:21). Contract terms not stated.
+- Budget constraints stated: line of credit $130K with ~$8K drawn — on drawing more: "I'd rather not if I don't have to… But I will if I'm planning strategically and what I'm doing makes sense." (00:38:25–00:38:32) [speaker inferred]. Savings depleted (~$350K). Running ~$15K/month deficit, owner take-home below target; marketing/bonus budget constrained by the deficit ("have enough revenue to cover our costs and then some so that we could… put money towards marketing and… bonuses and raises", 00:49:34). Worries about payroll and case costs such as mediations (00:35:39–00:35:49). No explicit dollar ceiling stated. Pass 2 should treat affordability as a real constraint when sizing any monthly recommendation.
+
+Key prospect quotes (verbatim; filler trimmed, cuts marked "…"):
+1. (00:00:46) "I'm really bad at coming up with KPIs and all that stuff, because honestly… I just don't have time." — KPIs / time
+2. (00:24:23) "There's not enough sense of urgency and… not enough… prioritizing what the good cases are or even recognizing what the good cases are." — intake
+3. (00:24:48) "I can't do everything." — owner bandwidth
+4. (00:46:46) "I don't have a problem with leads coming in." — lead sources
+5. (00:44:43) "I think it's working them up, making sure that we're doing the discovery and forcing the other side to work the way that we need to so that they're looking towards settlement and not just sitting on it." — case movement
+6. (00:36:01) "I feel like it's all falling apart." — overall state
+7. (00:34:25) "I mean, also just be able to sleep at night, being able to pay all the bills without having to worry about it." — goals / DBM
+8. (00:51:00) "I want… intake to… run more smoothly without me having to be involved in every step of the process." — intake / DBM
+9. (00:51:13) "I want to be less involved." — team / delegation
+10. (00:48:32) "…the stress is just affecting me on a daily basis so much so that… I think… affecting how I'm interacting with my daughter." — personal impact
+11. (01:08:26) "Six months from now, I'll probably make a decision about whether I should keep doing it or not." — urgency / objection risk [speaker inferred]
+12. (01:13:48) "I feel like the answer is in there. I just need to put it together, and I need help to do that." — product fit (book → coaching)
+
+======================================================================
+STEP 10 — COMPETITIVE URGENCY SCORE
+======================================================================
+Score: 6 (LOW CONFIDENCE — based on one data point from the call plus limited aggregator data, not on live SERP/ad research)
+Basis: Rep's local-visibility report on the call showed Fairchild at ~13% share of local voice vs ~76% for Ferraro Vega for "employment lawyer"; GBP primary category is wrong ("Law Firm"), hours are listed 24/7 with no after-hours answering, and review growth is still in progress. No ad data could be observed, so scoring is held at the middle of the range. Since the prospect's stated problem is operations/cash flow rather than lead volume, competitive urgency is a supporting point, not the main story.
+Named local competitor threats:
+1. Ferraro Vega Employment Lawyers (3333 Camino del Rio S., Ste 300, San Diego) — ~76% SOLB for "employment lawyer" per the rep's report on the call; Yelp 3.8 / 13 reviews [UNCONFIRMED — Yelp]. Google review count not observed.
+2. Pokala Law (2535 Kettner Blvd, San Diego) — Yelp 4.9 / 40 reviews [UNCONFIRMED — Yelp]; not confirmed in the local pack.
+3. Advantage Law Group (5820 Oberlin Dr, San Diego) — Yelp 4.9 / 40 reviews [UNCONFIRMED — Yelp]; not confirmed in the local pack.
+Dynamic sentence: "A score of 6 means competitors have meaningful advantages in one or more areas and are pulling ahead. You are not invisible yet — but the window to close the gap is narrowing. Every month without action is a month they extend their lead."
+
+======================================================================
+PASS 2 — VERIFICATION CHECKLIST
+======================================================================
+[x] Every number matches observed data or the transcript; items not observable are marked NOT OBSERVED / UNCONFIRMED (not estimated)
+[x] Competitor review counts: none verified via Google; all tagged UNCONFIRMED (Yelp); no claim made that any competitor has more reviews than the firm
+[x] Every review count/rating carries a verification-method tag (all UNCONFIRMED; firm's own Google figures not obtained)
+[x] Annual revenue split into gross/case value and take-home; fee structure (contingency) recorded
+[x] Ad sections cover the single practice area; all NOT OBSERVED
+[x] No section says "you are not running ads"
+[x] No profitability claim beyond the transcript
+[x] Competitors are specific named local firms only
+[ ] PageSpeed scores: real numbers, but from local Lighthouse (mobile 74 / desktop 84), NOT pagespeed.web.dev — flagged above
+[x] DBM recorded (exact quotes)
+[x] Revenue goal recorded ($1M for 2027)
+[x] Close rate defaulted to 15% (not stated)
+[x] Average case value recorded ($53K attorney's fees)
+[x] Stated call focus recorded — coaching/ops (Elite Coach vs FCOO), explicitly NOT marketing
+[x] Primary engagement / Products discussed (catalog names) / Lead-gen gap filled in with exact format
+[x] Existing vendors recorded (iLawyer; Attorney Assistant VA)
+[x] Budget constraints recorded
+Known gaps for the team: Google GBP review count/rating, 3-pack results, Google Ads, LSA, Meta Ads Library, and Avvo/Justia/Yelp (firm) directory data were not obtainable in this environment.
