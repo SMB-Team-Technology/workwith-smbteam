@@ -1,0 +1,177 @@
+RESEARCH NOTES — The Moloney Law Firm
+Friendly name: the-moloney
+URL: http://www.moloneylawfirm.com (301 -> https://moloneylawfirm.com/, HTTP 200)
+Sales rep: Jacob Meissner
+Audit date: October 29, 2026 (proposal call 2026-10-29 9:00 AM MT)
+Research run: 2026-10-20 (Pass 1)
+Contact: Bradley Moloney, brad@moloneylawfirm.com, +1(720)719-0851
+
+RESEARCH COVERAGE NOTE (read first — Pass 2 must honor this)
+This Pass 1 run had no interactive browser. It could fetch the firm's own site (HTML + WordPress API), run web searches, and fetch some directory pages.
+It could NOT reach: Google Maps / Google Business Profile, Google search result pages (3-pack, Ads, LSA), the Meta Ad Library, or PageSpeed Insights
+(Google's PageSpeed API returned HTTP 429 quota exceeded; the pagespeed.web.dev page did not render scores).
+Nothing below is estimated or invented. Anything not reached is marked NOT OBSERVED / NOT OBTAINED. Pass 2 must not print a figure for those items.
+Per the call, this engagement is AI-focused (see STEP 9), so the marketing-channel sections matter less than usual for this report.
+
+=====================================================================
+STEP 1 — WEBSITE RESEARCH
+=====================================================================
+- Website URL confirmed live: yes (http://www.moloneylawfirm.com -> 301 -> https://moloneylawfirm.com/ -> 200)
+- Last redesign date or estimated age: ~Jan 2025 (34 of the homepage's media uploads are in wp-content/uploads/2025/01; favicon uploaded 2025/01; firm began Dec 2024 per transcript). Built on WordPress (Elementor Pro + TheGem theme, All in One SEO 5.0.3, MonsterInsights, SiteGround caching).
+- Mobile responsive: viewport meta tag present (width=device-width, initial-scale=1.0) and responsive Elementor/TheGem theme; rendering on a phone NOT OBSERVED
+- Homepage headline: "Trusted Denver Criminal Defense Lawyer" (secondary: "Facing Criminal Charges in Denver?" / "Experienced Criminal Defense When the Stakes Are High")
+- CTA above fold: yes — "Get A Free Case Evaluation Now!" button; "Free Consultation 720.719.0850" in header nav
+- Contact form location: homepage has only a site-search form in the HTML; the case-evaluation CTA links to /contact-us (page returned HTTP 403 to automated fetch, so form placement NOT OBSERVED). Lawmatics intake script (lawmatics.com/intake.min.js, navi.min.js) and CallRail are loaded on the site.
+- Live chat present: not observed (no chat-widget scripts found; Lawmatics navi script is present and may serve forms)
+- Attorney bio present: yes — /about/ ("Bradley Moloney, Founder and Owner"; 16+ years, 12+ years in prosecution, 100+ trials, DU Sturm College of Law adjunct since 2012, NDAA jury-selection chapter author)
+- Video present: no embedded video player found in homepage HTML (no YouTube/Vimeo embeds)
+- Blog present: yes — 107 posts in WordPress API; latest posts dated 2026-09-30 ("Denver, CO Assault Attorney", "Denver, CO Domestic Violence Attorney") and 2026-09-28 ("Denver Drug Possession Attorney"); sitemap shows post sitemap updated 2026-10-19. Posts look like SEO landing content (consistent with the SEO vendor engagement).
+- Site content notes: practice-area pages for high-profile cases, DUI/traffic, domestic violence, white collar, crimes of violence/assault, juvenile, sexual assault, child abuse, drug offenses, pre-charge, post-sentence violations, appeals/post-conviction, child custody, post-conviction relief. Separate "reviews" pages by topic (DUI reviews, DV reviews, Boulder criminal defense reviews, Denver metro reviews) — suggests some geo/topic landing pages including Boulder.
+- Website copy says "our team of Denver defense attorneys" — the transcript says the firm is solo; use the transcript (solo practitioner).
+- Homepage displays a Google Review testimonial quote on page.
+- PageSpeed mobile score: NOT OBTAINED (API quota error 429; web UI did not render scores) — do not print a number
+- PageSpeed desktop score: NOT OBTAINED (same) — do not print a number
+- To close this gap: someone with a browser should run pagespeed.web.dev for https://moloneylawfirm.com/ before the report is client-facing, or Pass 2 omits PageSpeed figures.
+
+=====================================================================
+STEP 2 — GOOGLE BUSINESS PROFILE
+=====================================================================
+- GBP found: yes — a Google Business Profile is evidenced indirectly (Jacob Meissner says on the call he reviewed the "website and Google Business Profile" and that the firm "already [has] reviews going"; site shows a Google Review testimonial). The listing itself was NOT reached.
+- Star rating: 5.0 [UNCONFIRMED — sourced from Birdeye (reviews.birdeye.com), not independently confirmed via Google]
+- Total review count: 37 [UNCONFIRMED — sourced from Birdeye, not independently confirmed via Google; Birdeye aggregates reviews and may not equal the Google count]
+- Most recent review date: "a week ago" per Birdeye page (relative date, as of fetch on 2026-10-20) [UNCONFIRMED — Birdeye]
+- Primary category: NOT OBSERVED
+- Photos active: NOT OBSERVED
+- Posts active: NOT OBSERVED
+- Address/NAP seen: 600 17th St, Suite 2805D, Denver, CO 80202; phone 720.719.0850 on website (Birdeye and a Yahoo listing show the same address)
+- Note: Pass 2 must not print "37" or "5.0" as a Google figure. A qualitative statement ("already collecting reviews") is supported by the call.
+
+=====================================================================
+STEP 3 — LOCAL 3-PACK SEARCHES
+=====================================================================
+NOT OBSERVED — no access to Google search/Maps in this run. No searches were run, so no firm-appears or competitor-pack data is recorded.
+Practice areas to search when a browser is available (Denver, CO): criminal defense lawyer; DUI lawyer; domestic violence lawyer.
+(Pass 2: do not claim the firm ranks or does not rank in any 3-pack.)
+
+=====================================================================
+STEP 4 — COMPETITOR REVIEW COUNTS
+=====================================================================
+None verified via Google. The following named Denver criminal/DUI defense firms appeared in a third-party roundup search result (aggregator snippets, 2026); these are market-level references only, NOT verified as 3-pack/ad competitors for this firm:
+- Competitor 1: Colorado Legal Defense Group — reviews: 656 [UNCONFIRMED — sourced from third-party roundup/search snippet, not independently confirmed via Google] — rating: 4.9 [UNCONFIRMED — same source]
+- Competitor 2: Robinson & Henry — reviews: 591 [UNCONFIRMED — sourced from third-party roundup/search snippet (Google 4.7 cited there), not independently confirmed via Google] — rating: 4.7 [UNCONFIRMED — same source]
+- Competitor 3: Law Office of Jacob E. Martinez — reviews: 232 [UNCONFIRMED — sourced from third-party roundup/search snippet, not independently confirmed via Google] — rating: 5.0 [UNCONFIRMED — same source]
+Pass 2: do not print these as specific figures. Do not claim any competitor "dominates" on reviews until verified live.
+
+=====================================================================
+STEP 5 — DIRECTORY LISTINGS
+=====================================================================
+- Birdeye: listing found — "The Moloney Law Firm, LLC", 5.0 / 37 reviews [UNCONFIRMED aggregator figure], 600 17th St Suite 2805D, Denver, CO 80202
+- Yelp: listing exists ("THE MOLONEY LAW FIRM", 600 17th St, Denver; page last updated Aug 2026 per search snippet); page content blocked (HTTP 403), rating/count NOT OBSERVED
+- Yahoo Local: listing found (Moloney Bradley - The Moloney Law Firm), same address/phone
+- Facebook: page exists (@moloneylawfirm); contents NOT OBSERVED
+- A Greater Town: DUI & DWI attorney listing found
+- LawyerLand: profile found
+- Avvo / Justia / FindLaw: a targeted search did not surface a Moloney profile on any of the three; this is "not found in search," NOT confirmation that none exists. NOT OBSERVED directly.
+- NAP consistency: address and phone matched across the listings reached (Birdeye, Yahoo, website). Note the website header phone is 720.719.0850 while the HubSpot contact phone is +1(720)719-0851 (different line; likely direct vs. main) — not a listing inconsistency.
+- Geo-targeting landing pages: site includes Boulder-oriented and Denver-metro pages (e.g., "Criminal Defense Attorney Boulder CO Reviews", "Denver Metro Criminal Defense Lawyer Reviews", /colorado/ page); full inventory not audited.
+
+=====================================================================
+STEP 6 — GOOGLE ADS
+=====================================================================
+NOT OBSERVED — no access to Google search result pages in this run.
+Practice Area 1: Criminal defense (Denver) — Firm ads observed: not observed. Named local competitors running ads: not observed.
+Practice Area 2: DUI (Denver) — Firm ads observed: not observed. Named local competitors running ads: not observed.
+Framing: the firm does not appear in the data reached to be running Google Ads, but this was not checked. Prospect statement on the call: "I just turned on some really limited ads on Microsoft" (see STEP 9). Do not write that the firm is not running ads.
+
+=====================================================================
+STEP 7 — LOCAL SERVICE ADS
+=====================================================================
+- Firm appears in LSA: not observed
+- Google Screened: not observed
+- LSA review count: not observed
+- Named local competitors in LSA: not observed
+
+=====================================================================
+STEP 8 — META ADS
+=====================================================================
+- Firm has active ads: not observed (Meta Ad Library not reachable in this run)
+- Named local competitor 1: not observed
+- Named local competitor 2: not observed
+
+=====================================================================
+STEP 9 — TRANSCRIPT EXTRACTION
+=====================================================================
+Transcript source: full verbatim Fathom transcript (summary used only as overview). Fathom recording 194424866, call on 2026-10-20, ~53 min. Speakers: Anthony Marotta [SMB Team] (intro only), Jacob Meissner [SMB Team], Bradley Moloney [Prospect].
+Corrections to the AI summary: the summary says the webinar is Oct 25; the transcript says "the event next week, next Wednesday" (i.e., Oct 28, 2026). The summary's "Lead Intake: streamline the initial lead qualification process" overstates what Brad said — see lead-gen gap below.
+
+- Practice areas confirmed: Criminal defense (solo criminal defense practice per call summary; Jacob refers to "criminal" and DUI/assault weekend work and Brad does not correct him). Website lists DUI/traffic, domestic violence, white collar, violent crimes, juvenile, sexual assault, drug, appeals/post-conviction, and child custody. Brad did not enumerate practice areas himself.
+- Current lead sources: "organic Google has worked in referrals." / "That's basically where the vast majority of my stuff comes in from." (00:06:25–00:06:36)
+- Ads ever run: yes, limited — "I just turned on some really limited ads on Microsoft" (00:06:25). Budget and results not stated. Google/Meta ads: not stated.
+- Team size: 1 — solo practitioner, no staff. "I wanted to set up the firm such that it would just be me. So everything else could be automated." (00:03:57–00:04:05). Outsourced: Smith AI (phone answering), bookkeeper and accountant, SEO vendor; also uses Dialpad. "I'm the only one doing intakes and I'm the only one that's showing up in court and I'm the only one that's filing" (00:45:39). Firm opened Dec 2024 ("started it at the beginning of December of 2024").
+- Annual revenue (gross / case value): ~$250,000. "I put my goal as being $250,000 and I think I'm at that right now." (00:27:45). Anthony's pre-call note of ~$350,000 gross was read out by Jacob (00:27:33); Brad did not confirm it as current revenue. Brad then said next year's goal is "probably around 350" and "I'm guessing that's probably where I'll be at the end of this year" (00:28:00–00:28:13) [transcript unclear — the "where I'll be" line could refer to $350K by year-end or to the $250K figure; read conservatively as ~$250K current, possibly ~$350K annualized by year end]. Use ~$250K as current.
+- Annual revenue (net / take-home / collected): not distinguished from gross
+- Fee structure: not stated (Brad says only that he does intake, fee agreements and first retainer payments via Lawmatics: "getting fee agreements out. And, and having that first retainer payment made." (00:36:16–00:36:28)). Criminal defense; likely flat-fee/retainer but NOT stated.
+- Revenue goal: ~$350,000 for next year (2027) — "for next year make a goal of probably around 350" (00:28:00). Later: "my goal for revenue for next year probably is not a large difference from what… I will have received this year" (00:46:00). Longer-term: everything "basically set up by the very beginning of 2028… and then I would end up hoping that the revenues doubled" (00:46:26–00:46:37).
+- Average case value: not stated — no practice-area default applied in this note; Pass 2 should not print an average case value.
+- Current close rate: not stated — default to 15% if the template requires one. Brad says he screens leads personally: "I'll end up talking to a person on a phone call and making a determination of whether I want them as a client or not." (00:22:45)
+- Number of locations: 1 (600 17th St, Suite 2805D, Denver)
+- Spanish campaign needed: no (not mentioned)
+- Dominant buying motive: A firm that runs itself without staff, built so the system itself is the sellable asset: "I think that the long-term goal… would end up being a scenario where I can set up something here that is, like, I don't want to have a staff." (00:29:52–00:30:05) and "the thing that I'm building would be the actual process, the actual architecture behind the business, not the practice of law" (00:31:34). Motive types: (1) firm that runs itself + (2) build to sell. "I love working on the business more than I like working in the business." (00:32:26)
+- Any profitability claims made by prospect: "By far my biggest expense is software." (00:05:32). No profit-margin or profitability figures stated. Revenue stated only as above.
+- Any claims about case types or practice areas: none stated by the prospect
+- Stated call focus / product interest: NOT standard marketing/growth discovery. The call was framed around AI automation of a solo practice: Brad signed up for an SMB Team AI webinar, got a demo of AI Workforce Pro, and asked about Fractional CTOs. Wish list: overnight discovery download/unzip/rename/organize ("check once a day for Discovery, download it…"), closing/zipping/archiving files, and faster back-and-forth with new leads. Jacob concluded "what would probably make the most sense for you, if anything, would be AI Workforce Pro" (00:44:49) and that a CTO is "possibly" a fit but Brad "enjoy[s] to do it." Brad's reply: "the issue that I'm running into on that is I enjoy it too much." (00:45:17)
+- Primary engagement: AI
+- Products discussed on call: AI Workforce Pro, Fractional CTO Level 1 / Level 2 / Level 3
+  (AI Workforce Pro named with no tier and no price; Fractional CTO named with no level and no price — the CTO level cannot be determined from the call. Also mentioned in passing: AI avatars for marketing — not offered to Brad as a recommendation. No pricing was quoted; Brad was given a beta/demo account and told pricing would be discussed on the 29th.)
+- Lead-gen gap stated: no — "I think that I could always use more business, you know, I mean, but I'm not in a stage of hurting" (00:06:49–00:07:00); and "it's not like I have so many leads… I haven't really thought about it other than marketing for SEO stuff" (00:22:45–00:23:11). He wants automation first "so that I can make room for more business." (00:07:00)
+- Existing marketing/SEO/ad vendor engagements: "I pay for a SEO person that is on like a year contract that'll be up in I think like April, which I'm not going to renew." (00:05:06). Plans a Mac mini to take over SEO work: "I'm going to have a Mac mini that's going to do it." (00:05:50). Also limited Microsoft ads (self-run, per his statement).
+- Budget constraints stated: none stated. (Jacob asked "can you afford a CTO right now?" at 00:50:00; Brad's answer was "Yeah." at 00:50:06 but the surrounding text is garbled [transcript unclear] — do not treat as a budget commitment or constraint.)
+
+Current tech stack (prospect statements): Claude and ChatGPT ("I've got a full Claude, ChatGPT, I use Lawmatics, Clio"), Clio Vincent, Clio (documents), Lawmatics (intake, fee agreements, first retainer only), Smith AI (call answering), Dialpad, WordPress, QuickBooks Online, Make.com ("I use significantly"), Westlaw/Lexis accounts (via teaching; rarely used), Mac minis + Mac Studio planned for local-model admin automation, bookkeeper + accountant, SEO vendor.
+Pain points: Clio document storage ("Clio's problem is document storage" / "it's just not really usable"), overlapping tools and subscription pop-ups/paywalls, Lawmatics too big for a solo ("it's a lot for a solo practitioner"), discovery downloads (body-worn camera video; servers slow midday), time-consuming new-lead back-and-forth, admin load of being sole intake/court/filing person.
+Follow-ups: Jacob to send AI Workforce Pro login/beta link, calendar invite for the Oct 29 follow-up at 9 AM MT, and the book "The Law Firm Growth Accelerator." Brad to test the beta, attend the event, and send an "AI wish list" for scoping. Beta access: about 8 days, 500,000 credits. Follow-up call (proposal) Oct 29, 2026 9:00 AM MT; Brad is in Colorado (mountain time).
+
+Rep-side figures that are NOT the firm's (do not record as the firm's): Jacob's story of a client gaining "$30,000 in the first two months" from after-hours intake; a Utah firm "losing somewhere like over [a] million dollars a year" from intake issues; a flat-fee firm that "4x'd" revenue; 12 hours cut to one — all rep anecdotes about other firms/hypotheticals.
+
+Key prospect quotes (verbatim, timestamp, topic):
+1. (00:04:00–00:04:05) "…that it would just be me. So everything else could be automated." — goals/DBM (no staff)
+2. (00:03:47) "…the only firm I've ever worked for is my own… I've managed people since I was like 19, and I was just kind of over that." — team/DBM
+3. (00:06:25) "I just turned on some really limited ads on Microsoft, but organic Google has worked in referrals." — lead sources
+4. (00:06:49) "I think that I could always use more business, you know, I mean, but I'm not in a stage of hurting…" — lead-gen / objection (not lead-starved)
+5. (00:07:00) "…I need to get the automation side of stuff going more, you know, take over more of stuff so that I can make room for more business." — goals
+6. (00:10:10) "Clio's problem is document storage, and I don't think that there's any real great solution that I've seen that people have." — pain point (tech)
+7. (00:21:15) "I think that that is a lot, it's a lot for a solo practitioner." — Lawmatics fit
+8. (00:20:16) "…check once a day for Discovery, download it, put it into a… folder… and then start… unzipping… reformatting the file names and organizing it how I organize a trial file." — discovery workflow wish
+9. (00:22:20) "The back and forth with, for new leads, I think is probably… a pretty damn time-consuming process." — intake
+10. (00:31:34) "…the thing that I'm building would be the actual process, the actual architecture behind the business, not the practice of law…" — goals/DBM (sellable system)
+11. (00:45:39) "…when I'm the only one doing intakes and I'm the only one that's showing up in court and… filing… even something as simple as entries of appearance, you know, it's a lot." — team/capacity
+12. (00:45:17) "…the issue that I'm running into on that is I enjoy it too much." — objection/CTO fit (enjoys building it himself)
+
+=====================================================================
+STEP 10 — COMPETITIVE URGENCY SCORE
+=====================================================================
+Score: 5 — PROVISIONAL / LOW CONFIDENCE. Live competitor data (3-pack, ads, LSA, Meta, verified review counts) could not be gathered in this run, so this score rests on: (a) the Denver criminal/DUI defense market being crowded with firms showing hundreds of reviews in third-party roundups [UNCONFIRMED], (b) the prospect's own statement that referrals and organic Google deliver most of his work and he is "not in a stage of hurting," and (c) a two-year-old firm with a modern, content-rich site (107 blog posts, current SEO activity). Treat as mid-range until verified.
+Named competitor references (UNCONFIRMED, from third-party roundups; not verified as pack/ad competitors): Colorado Legal Defense Group, Robinson & Henry, Law Office of Jacob E. Martinez.
+Dynamic sentence (score 4–6): "A score of 5 means competitors have meaningful advantages in one or more areas and are pulling ahead. You are not invisible yet — but the window to close the gap is narrowing. Every month without action is a month they extend their lead."
+Pass 2 guidance: because this call was about AI automation (primary engagement: AI) and the prospect said lead flow is adequate, the report should lead with operations/AI and treat marketing competition lightly, with no unverified review figures, no ad-presence claims, and no PageSpeed numbers.
+
+=====================================================================
+PASS 2 — VERIFICATION CHECKLIST
+=====================================================================
+[x] Every number in the notes matches actually observed data (unobserved items marked NOT OBSERVED/NOT OBTAINED; no estimates)
+[x] Competitor review counts: none verified live — all tagged UNCONFIRMED and not used to claim dominance; prospect's own count is also UNCONFIRMED
+[x] Every review count and star rating carries a verification-method tag
+[x] Revenue: stated figure only; net not distinguished from gross; fee structure recorded as "not stated"
+[x] Ad sections cover both practice areas used (criminal defense, DUI); all "not observed"
+[x] No section says "you are not running ads"
+[x] No profitability or business claim beyond the transcript
+[x] No generic competitor labels — named firms only, flagged as unverified
+[ ] PageSpeed scores are real numbers — NOT MET: tool blocked (429); recorded as NOT OBTAINED rather than estimated. Needs a human re-run or omission in the report.
+[x] DBM recorded (exact quotes)
+[x] Revenue goal recorded
+[x] Close rate recorded (not stated — default 15%)
+[x] Average case value recorded (not stated)
+[x] Stated call focus recorded (AI automation / Fractional CTO interest — not marketing)
+[x] Primary engagement / Products discussed / Lead-gen gap filled in the required format
+[x] Existing vendor engagements recorded (SEO vendor contract to ~April 2027, not renewing)
+[x] Budget constraints recorded (none stated)
