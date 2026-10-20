@@ -1,0 +1,163 @@
+SECTION 11 WORKINGS — INTERNAL ONLY (never client-facing)
+Firm: The Woods Law Firm | Friendly name: the-woods | Rep: Dan Bryant | Date: October 20, 2026
+
+=====================================================================
+0. ITEMS TO REVIEW BEFORE THE PROPOSAL CALL (read first)
+=====================================================================
+A. PRICE DEPARTURE FROM package_decision.json — REP/SELLER MUST CONFIRM.
+   package_decision.json lists FSM Essentials at $3,497/mo "bundled" ($3,797 retail, $300 savings), but
+   there is no second package to bundle with (no coaching, no LAW). The report shows $3,797/mo (the
+   stand-alone price, $0 savings) because:
+   - Dan quoted $3,797/month on the call and the prospect repeated "$3,797" (00:53:48) — the proposal
+     matches what he was told.
+   - Precedent: single-product sales (Gaydos Law Essentials; Bonner Growth) are priced at the stand-alone
+     price with no bundling discount.
+   - Showing the higher price is the safer error — the proposal does not commit to a $300/mo discount the
+     seller may not have intended.
+   If the seller DID intend $3,497/mo, change Block 3 (row, total, add a $300 savings line), Block 2/exec
+   summary totals, and regenerate the PPTX. package_decision.json was left untouched.
+B. ESSENTIALS ELIGIBILITY OVERRIDE (seller-directed, 2026-10-15/16). Essentials is normally hidden for
+   revenue over $750K and for firms with multiple locations or practice areas. This firm: ~$2M (his figure:
+   "about 2 million in criminal only"; HubSpot $961K-$3M), 3 staffed offices, criminal + PI. Seller chose
+   Essentials deliberately (budget-driven). Escalate for approval per normal process.
+C. AD SPEND BELOW PRACTICE-AREA MINIMUMS -> PAID ADS TEAM REVIEW. Criminal Defense channel minimums are
+   Google PPC $5,500 + LSA $2,000 = $7,500. Seller range is $4,500-$6,000 (the prospect said he is
+   thinking about starting at $5,000). Above the $3,000 absolute minimum and under the $7,500 Essentials cap.
+D. REVENUE GOAL EXCEEDS PROJECTED AD REVENUE -> PAID ADS TEAM REVIEW. No stated goal; 2x current revenue
+   (~$4M/yr = ~$333K/mo) vs projected ad revenue of ~$55K-$87K/mo. The prospect's own illustration is +60
+   cases/month (~$300K/mo of case value) across Beaufort, Spartanburg, and Richland — projections here
+   (11-17 cases/mo total) are well below that. Reset expectations on the call.
+E. MONTH-TO-MONTH / NO SETUP FEE. Prospect said he will not sign a 12-month term ("I don't want to sign a one
+   year contract on something I don't know", 01:26:47) and "we really can't do that right now" on a setup
+   fee (01:28:25). Dan's pitch was a 12-month term with no setup fee. Not a client-report item, but
+   unresolved — confirm terms before sending.
+F. REFERENCE: Dan agreed to introduce Jerry Novak (Chicago suburb) by group text; the prospect wanted
+   someone closer to his market. Follow up.
+G. TWO PRIOR BAD SMB EXPERIENCES (geo-targeting over the ocean near Georgetown; late PI video shoot).
+   Prospect wants Dan on the first 2-3 calls with the marketing manager. Not promised in the report.
+H. REVIEW COUNTS: every review count/star rating in the research notes is UNCONFIRMED and conflicts across
+   sources. None are printed in the report. REVIEW COUNTS UNCONFIRMED — VERIFY LIVE BEFORE THE CALL.
+I. LIVE-OBSERVATION GAPS: no live 3-pack, GBP detail, ad copy, or Ad Library data (environment limits).
+   Report marks these "not observed" / "not reviewable in this research".
+J. SENSITIVE: the prospect shared a deeply personal loss on the call. Deliberately omitted everywhere. The
+   upcoming-child family detail was also left out of the client report (family matters).
+K. STAGE: assigned Stage 3 (borderline with Stage 4 — ads exist but results are not scalable per his own
+   tests; the lower stage applies on the border).
+L. TRADE-NAME / DBA IDEAS ("Woods Defense & DUI Lawyers", "Woods Injury Lawyers"): SC bar rules must be
+   checked before any GBP name changes. Not in the client report.
+M. SECOND DOMAIN woodslaw-firm.com surfaced in search — unverified whether duplicate/old/other business.
+   Check before the web build (mentioned as a blind spot in Section 6, hedged).
+
+=====================================================================
+1. TRANSCRIPT-STATED NEED OVERRIDE CHECK
+=====================================================================
+1. Call-purpose: standard marketing/growth discovery; stated lead-gen gap ("It's lead flow", 00:10:00).
+   Coaching/ops/AI tools not pitched. Marketing is the right category. Does not trigger.
+2. Existing-vendor: a Meta/Facebook vendor was hired but has NOT launched ("I already called somebody,
+   hired somebody to do my Meta and Facebook, and we haven't launched yet", 00:10:31). This is a narrow
+   social vendor, not an active contract covering the gap SMB is being asked to fill (LSA/PPC takeover,
+   web/SEO, maps). The notes record no signed contract with another agency. Does not trigger; the
+   proposal references coordinating social remarketing with his Meta vendor and does not sell Meta
+   management as a deliverable.
+3. Budget-reality: the prospect asked for "the best value you can give me at the lowest price to get
+   started" (00:53:25) and wants dollars weighted toward ads/landing pages over management
+   (00:40:28-00:41:00). Seller already moved to the lowest full-service tier (Essentials) with no
+   coaching/LAW and set ad spend at $4,500-$6,000. This IS the lowest-cost package that still covers the
+   stated need (Paid Ads Essentials alone was tried and replaced by the seller because web/SEO/maps were
+   part of the ask). The gap vs. the revenue table (Growth at $7,497) is intentional — see item B above.
+4. Effective-revenue: revenue stated ~$2M (criminal only, gross vs net not distinguished). No net figure
+   stated; is_contingency_practice=true in the decision file is a script artifact (criminal work is
+   flat-fee/retainer per the notes). Does not trigger.
+
+Package source: package_decision.json (confidence MEDIUM — revenue from HubSpot range $961K-$3M, team size
+defaulted to 3). proposal_review.json status = locked.
+
+35% cap check: $1,980,500 / 12 = $165,042/mo x 35% = $57,764. Total at aggressive = $3,797 + $6,000 =
+$9,797. Passes comfortably.
+
+=====================================================================
+2. MANDATORY PRICE LOOKUP (verified against tables in audit-write.md)
+=====================================================================
+- Marketing package selected: Full Service Marketing Essentials
+  - Bundled price (from table): $3,497/mo
+  - Stand-alone price (from table): $3,797/mo
+  - Price used in proposal: $3,797/mo (stand-alone; single-product sale; see item A)
+  - Savings shown in client report: $0/mo (none)
+- Non-marketing package selected: none
+- Legal AI Workforce (LAW) package selected: none
+- AI Avatar / Video Growth add-on selected: none
+- Total monthly investment: $3,797/mo
+- Total savings: $0/mo
+Roadmap prices referenced (exact table values): FCOO Advisor $3,297/mo (bundled, $1M+ under-5 table row);
+FCFO Advisor $3,297/mo; AI Workforce Pro – Starter $350/user/mo.
+
+=====================================================================
+3. AD SPEND AND ROI PROJECTION (Block 4)
+=====================================================================
+Practice area: Criminal Defense (DUI / domestic violence / drugs), South Carolina. Tier 4-ish regional
+market; no geo multiplier applied (ad spend range set by seller/decision file, within the $7,500 Essentials
+cap). No Spanish campaign.
+Conservative ad spend: $4,500/mo. Aggressive: $6,000/mo (decision file; seller-specified 2026-10-15).
+From the transcript (not defaults): close rate 50% overall ("better than 50%", 00:13:18); average case
+value ~$5,000 ("$5,000 case", 00:12:49).
+Client-facing CPL (Criminal Defense): Google Search $155-$205 (mid $180); LSA $140-$180 (mid $160).
+Assumed channel split (SMB takes over LSA + PPC; Meta stays with his vendor, so no Meta spend modeled):
+- Conservative $4,500: Google PPC $2,500 (55.6%) / LSA $2,000 (44.4%)
+  Blended CPL = .556 x 180 + .444 x 160 = $171.11; x 1.20 cushion = $205.33
+  Leads = 4,500 / 205.33 = 21.9; Cases = 21.9 x 50% = 10.96 (~11); Revenue = 10.96 x $5,000 = $54,800
+  Return = 54,800 / 4,500 = 12.2x
+- Aggressive $6,000: Google PPC $3,500 (58.3%) / LSA $2,500 (41.7%), no cushion
+  Blended CPL = .583 x 180 + .417 x 160 = $171.67
+  Leads = 6,000 / 171.67 = 34.95; Cases = 17.5 (~17); Revenue = 17.5 x $5,000 = $87,300 (~$87,400 rounded)
+  Return = 87,300 / 6,000 = 14.6x (~14.5x)
+Report shows ~11 cases / ~$54,800 / ~12.2x and ~17 cases / ~$87,400 / ~14.6x. NOTE these returns are
+high versus the prospect's own history (2026 tests at $3K/$5K/$10K "made literally no difference") —
+the CPL benchmarks and 50% close rate are optimistic for a small SC market with thin search volume
+("diminishing returns"). Present as estimates only; do not promise.
+"Why this range" (client-facing): to put the firm in front of high-intent DUI, domestic violence, and drug
+charge searches in the counties where your cases close best — Spartanburg first — before competitors
+such as Dayne Phillips and The Bateman Law Firm capture those callers.
+
+=====================================================================
+4. DBM STATEMENT (Block 1)
+=====================================================================
+DBM: short-term cash flow to fund growth — "I want to be playing with house money, not my money"
+(01:07:20); "I'm just trying to get the most collection of cash I can right now" (01:08:46); "Right now
+it's about walking people in that door" (01:06:19). The AI summary's "time/profit freedom, self-managing
+firm" language is NOT in the transcript and was not attributed to him.
+Block 1: "We help busy criminal defense trial attorneys get a steady, trackable flow of DUI, domestic
+violence, and drug cases in the counties that matter most so they can play with house money instead of
+their own."
+
+=====================================================================
+5. QUICK WIN OPPORTUNITIES (8 identified; 7 used in report)
+=====================================================================
+1. Lead Gen / Quick Win — LSA account takeover + audit. Why: pay-per-call channel already running;
+   Google changed LSA budgeting this month (budgets can be spent in first 1-2 weeks, rep statement
+   00:25:48). Competitors: Jeffcoat Firm, Dayne Phillips, Bateman (named by prospect).
+2. Lead Gen / Quick Win — county-specific PPC + landing pages (DUI, DV, drugs, general criminal),
+   Spartanburg first. Why: $3,000 one-county campaign outperformed larger spreads; Spartanburg "more volume,
+   leads cost less". Competitor: Bateman (DUI-focused, Spartanburg).
+3. Intake / Quick Win — contact form above the fold + text option on landing pages. Why: form is lower-middle
+   of homepage. No competitor.
+4. Profit / Quick Win — monthly signed-case match-back; cost per signed case by county. No competitor.
+5. Lead Gen / Long-Term — map visibility beyond Greer (Spartanburg, York, Myrtle Beach) + listing cleanup
+   (two phone numbers, "Greenville Office" naming). Competitor: Dayne Phillips (~65% vs ~9% grid).
+6. Intake / Long-Term — review response speed and after-hours coverage before volume ramps. No competitor.
+7. Team / Long-Term — hand campaign management to a dedicated marketing manager. No competitor.
+8. (Not used) Launch/rebuild website with county pages — folded into card 2 and Block 2 web foundation.
+
+=====================================================================
+6. BLOCK 5 — WHAT YOU TOLD US (source lines)
+=====================================================================
+Row 1: "It's lead flow." (00:10:00) and "I need to get leads in." (00:10:09)
+   -> Block 2: LSA/PPC takeover and county-specific landing pages.
+Row 2: "My site is trash from 2019, man." (00:44:14)
+   -> Block 2: web and SEO foundation, county landing pages.
+Row 3: Rep asked for a monthly signed-case list for match-back; prospect: "That's easy for us to do. Yeah, we
+   track everything." (timestamp not recorded in the notes; logged under the call's next steps) and
+   "...to see if you can move the needle, which means I got to get all of that back" (01:29:32-01:29:46)
+   -> Block 2: monthly reporting with signed-case match-back.
+Excluded on purpose: the family/personal items, the specific $130,000 figure, the two prior bad SMB
+experiences (not recorded in client copy), contract-length objection.
+Next-step line: kickoff call with your Onboarding team (no dates).
