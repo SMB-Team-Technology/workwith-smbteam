@@ -1,0 +1,126 @@
+SECTION 11 WORKINGS — DORCEY LAW FIRM (INTERNAL — NOT CLIENT-FACING)
+Friendly name: dorcey | Sales rep: Dan Bryant | Date: October 20, 2026 | Proposal call: Oct 20, 2026, 2:15 PM EDT
+
+======================================================================
+MANDATORY PRICE LOOKUP (copied from package_decision.json, verified character-by-character against audit-write.md tables)
+======================================================================
+- Marketing package selected: Full Service Marketing — Growth
+  - Bundled price (from table): $7,497/mo
+  - Stand-alone price (from table): $8,997/mo
+  - Savings: $1,500/mo
+- Non-marketing package selected: Master's Circle
+  - Bundled price (from table): $4,600/mo
+  - Stand-alone price (from table): $4,997/mo
+  - Savings: $397/mo
+- Legal AI Workforce (LAW) package selected: none
+- AI Avatar / Video Growth add-on selected: none
+- Total monthly investment (sum of bundled prices): $12,097/mo ($7,497 + $4,600)
+- Total savings: $1,897/mo ($1,500 + $397)
+
+Matches package_decision.json (total_bundled 12097, total_savings 1897).
+
+======================================================================
+PACKAGE SELECTION AND OVERRIDE CHECKS
+======================================================================
+Source: package_decision.json (confidence "medium", seller override via Slack on 2026-10-16: Master's Circle + Full Service Marketing Growth). proposal_review.json status: locked.
+
+Transcript-Stated Need Override check:
+1. Call-purpose override: NOT triggered. Primary engagement is marketing; the prospect stated the need ("it would probably be lead generation", 00:26:10). Coaching/AI came up as rep pitch, but the seller selected Master's Circle and marketing. Marketing is the lead recommendation; Master's Circle is secondary.
+2. Existing-vendor override: NOT triggered. No marketing/SEO/ad vendor engagement stated by the prospect. Site loads Scorpion analytics and a Simpli.fi tag (observation only, not a statement). Ask on the call.
+3. Budget-reality override: NOT triggered. No budget constraint stated.
+4. Effective-revenue override: NOT applicable. No gross/net split stated; per-file fees, not contingency.
+
+Cross-check of the decision file against the research notes (confidence is "medium"):
+- The decision file's revenue ($3,000,000) came from HubSpot because the notes' revenue statement ("between eight and nine of this year", 00:15:47, flagged transcript-unclear) was not parsed. Notes say $8-9M gross; consistent with ~$300K per FTE x 28 FTEs (~$8.4M).
+- The decision file's team size (3) is a default. Notes: 28 domestic FTEs + 8 global team members, 7 attorneys. Master's Circle team requirement (5+) is met on the real figures. CONFIRM a dedicated ops/marketing/intake staff member exists (rule: none = hide Master's Circle). Firm administrator and an executive assistant were mentioned; no named intake/marketing person.
+- Revenue-table tier at $8-9M would be Platinum ($15,997/mo, $150K ad cap). The seller explicitly overrode to Growth (below the revenue band). Growth also fits the four-location GBP allowance (3-4 locations = Growth minimum, per Scoping Guide Step 9E) and the 4+ locations content factor. Kept as the seller requested; the rep should be ready to explain why Growth rather than Platinum and to discuss Platinum if Josh wants faster acceleration.
+- Master's Circle was not priced to the prospect on the call (rep described it only).
+No correction made to tiers or prices; seller override applied.
+
+35% cap check: $8.5M / 12 = ~$708K/mo. 35% = ~$248K. Total SMB spend at the top of the range = $12,097 + $14,000 = $26,097/mo (~3.7% of monthly revenue). Well under the cap.
+Escalation thresholds: Marketing MRR $7,497 (under $10K); ad spend top of range $14,000 (under $25K); revenue over $300K. None triggered.
+
+======================================================================
+AD SPEND RANGE AND ROI PROJECTION (marketing package is part of the recommendation)
+======================================================================
+Ad spend (from package_decision.json): Conservative $3,500/mo | Aggressive $14,000/mo.
+Conservative basis: Estate Planning Google PPC channel minimum $3,500 (above the $3,000 absolute minimum). Google Search only.
+Aggressive basis: decision file scales 4x from the conservative floor ($14,000), well inside the Growth cap of $50,000.
+
+NOTE ON THE 20% RULE (rep should know): applying the 20% rule to revenue goal (25-30% growth on $8-9M = ~$10.5-11.7M) gives ~$175K+/mo before the geo multiplier (Tier 4, 1.0x for Fort Myers), far above the Growth cap ($50K) and not credible for a firm whose referral partners, direct mail and workshops produce most new business and whose Google/social channel produced ~$600K this year. The decision file's $14,000 aggressive figure was kept. If Josh wants a much more aggressive digital push, that is a tier/scoping conversation (Platinum) and would also require scoping approval (ad spend over $25K).
+
+Practice area for CPL: Estate Planning (client-facing CPLs: Google Search $120-$150; midpoint $135).
+Channel mix for projection: Google Search only in both scenarios. Meta retargeting (pixel is installed) is possible upside not included in the numbers.
+Case value: $8,000 (Josh: estate-planning average file "closer to about $8,000", "$8,000 to $10,000 range typically"). Low end used. Not a default value; from the transcript.
+Close rate: the transcript close rate (70-90%) is the attorney consultation close rate and is referral-weighted (financial-advisor/CPA referrals closer to 90%; Josh said cold social-generated leads are lower). Applying 70-90% to raw paid-search leads would imply ~$580K/mo from a $14K budget, which is not credible. The 15% default lead-to-signed-case rate was used for raw digital leads. This is a deliberate departure from the transcript-first rule: documented here and should be explained if Josh asks "we close 70-90%". Answer: the 70-90% applies to consultations; the 15% applies to raw inquiries (calls, forms, including unqualified ones).
+
+Conservative scenario ($3,500):
+  Blended CPL = $135 x 1.20 cushion = $162
+  Leads = $3,500 / $162 = 21.6
+  Cases = 21.6 x 15% = 3.2 -> 3 cases (rounded down for display)
+  Revenue = 3 x $8,000 = $24,000
+  Return = $24,000 / $3,500 = 6.9x
+Aggressive scenario ($14,000):
+  Blended CPL = $135 (no cushion)
+  Leads = $14,000 / $135 = 103.7
+  Cases = 103.7 x 15% = 15.6 -> 16 cases (rounded up for display)
+  Revenue = 16 x $8,000 = $128,000
+  Return = $128,000 / $14,000 = 9.1x
+(The aggressive return is higher than the conservative one only because no 20% CPL cushion is applied there.)
+
+Why-this-range sentence (client-facing): "To turn high-intent Fort Myers estate planning and probate searches into signed cases during the months when your team has the most room for new clients."
+
+Revenue goal vs projected ad revenue: 25-30% growth is ~$2.1-2.6M/yr on an $8.5M base. Projected ad revenue is ~$0.3M-$1.5M/yr ($24K-$128K per month x 12). Goal exceeds projected ad revenue -> paid ads team review flag (below).
+
+======================================================================
+DBM FOR BLOCK 1
+======================================================================
+DBM was not stated outright; inferred as scale and local dominance (type 3) built on higher output per FTE, from Josh's own words: "our model and philosophy is we don't want anybody in our town to hire another law firm without at least considering us first." (00:10:04) and "I like going for 25, 30% growth if I can, but I want to do it without adding any more FTEs." (00:22:00). No time/family/exit quote exists.
+Block 1 statement: "We help multi-office estate planning firms get a measurable, year-round flow of new clients so they can grow 25-30% without adding FTEs and become the firm nobody in town hires without at least considering first."
+Ask Josh on the call what 25-30% growth would let him do personally.
+
+======================================================================
+QUICK WIN OPPORTUNITIES (8 identified; all appear in section_11_next_steps.html)
+======================================================================
+1. Lead Gen — Connect every inquiry to its source. Why: Josh "there's no way to ever identify exactly where those people come from" (00:19:51). Competitor: none named. Quick Win.
+2. Lead Gen — Capture off-season Google search demand. Why: Google/social ~$600K this year; team underused ~7 months (00:23:21). Competitor: none named (ad activity not observed). Quick Win.
+3. Lead Gen — Build a steady Google review stream across all four offices. Why: firm review figures conflict across sources, testimonials page undated with no review feed. Competitor: The Dellutri Law Group, P.A. (appears to have a sizeable review footprint across directories; UNCONFIRMED, no figures printed). Quick Win.
+4. Lead Gen — Make every office's listing consistent. Why: three firm-name variants, a second phone number in one directory snippet, Marco Island/LaBelle not on directories, Sarasota not on website. Competitor: none named. Quick Win.
+5. Intake — Give online leads their own follow-up and tracking. Why: cold social leads close lower than referrals (00:26:13 context); attorneys close consultations. Competitor: none named. Quick Win.
+6. Team — Put off-season capacity to work with outreach to ~10,000 past estate-plan clients and probate/trust administration. Why: probate/trust administration ~$1-1.2M today, expected to grow; capacity "Yes, all of above" (00:25:51). Competitor: none named. Long-Term Play.
+7. Profit — Measure cost per signed client for every channel. Why: direct mail, workshops and sponsorships cannot be compared with Google/social without source data. Competitor: none named. Quick Win.
+8. Lead Gen — Refresh the blog, add real estate/title and office-city pages, and tighten mobile speed. Why: latest blog post seen Nov 3, 2025; real estate/title not on homepage; Lighthouse mobile 72, TBT ~1,640 ms. Competitor: none named. Long-Term Play.
+"Who Is Doing It Better" rows omitted on all cards except #3: no other specific named competitor with observed evidence.
+
+======================================================================
+WHAT YOU TOLD US (BLOCK 5) — SOURCE LINES
+======================================================================
+Row 1: Lead generation is the priority.
+  Verbatim: "it would probably be lead generation." (Josh Dorcey, 00:26:10)
+  Supports: Full Service Marketing Growth (managed Google Ads, local SEO/GBP, social ads, reviews).
+Row 2: 25-30% growth in 2027 without adding FTEs; more revenue per FTE.
+  Verbatim: "I like going for 25, 30% growth if I can, but I want to do it without adding any more FTEs." (00:22:00) and "I'd like to get us up to the $350,000 to $400,000 per FTE." (00:22:26)
+  Supports: Master's Circle (weekly coaching, practice area masterminds, quarterly workshops) plus the marketing demand.
+Row 3: Staffed for the January-May peak; has room for more leads, intakes, consults and casework now.
+  Verbatim: "we have to staff for our high peak season, even though seven months out of the year, I don't need all the staff members I have." (00:23:21) and "Yes, all of above." (00:25:51)
+  Supports: Full Service Marketing Growth (campaign focus on slower months, local content).
+No named employees, no personal/health/family items, no partner disputes, no financial-distress figures in Block 5 (the Casey Williams prior-experience comment is deliberately excluded). Rows are paraphrased in the owner's framing; no verbatim quotes used in Block 5.
+Next-step line: kickoff call with your Onboarding team (most central package: Full Service Marketing Growth).
+
+======================================================================
+ESCALATION FLAGS (INTERNAL ONLY)
+======================================================================
+- Review counts unconfirmed — verify live before the call. No Google review counts or ratings were verified (Google Search/Maps could not be rendered in Pass 1). Firm Google count conflicts across sources (16 at 4.2 vs ~123 at 4.6); competitor counts are search snippets. None printed in the client report; competitor review language is qualitative only.
+- Revenue conflict: HubSpot says $3M+; transcript says $8-9M (transcript-unclear). package_decision.json used HubSpot ($3M) and defaulted team size to 3 (actual 28 domestic FTEs + 8 global). Seller override (Master's Circle + Growth) kept. Revenue table would say Platinum. Confirm revenue and tier with Dan before the call.
+- Master's Circle eligibility: confirm a dedicated ops/marketing/intake team member exists (rule). Master's Circle was not priced to the prospect on the call. Josh does not want an estate-planning-only peer group (00:28:33): confirm the cohort mix before promising it.
+- Prior-experience objection: a colleague tried SMB Team early on and "wasn't overly happy with the services" (00:10:42); Josh said "I don't hold you to that" (00:30:48). Handle with care. Keep coaching secondary to the lead-gen audit. Not mentioned in the client report.
+- Paid ads team review: revenue goal (25-30% growth) exceeds projected ad revenue. Also the 20% rule would exceed the Growth cap; see note above.
+- Close-rate departure: used the 15% default, not the transcript's 70-90%, for raw paid leads (see ROI section).
+- Ad presence/LSA/Meta/3-pack were not observed in Pass 1; the client report says "not captured/not observed" and makes no claim that ads are or are not running. Ask on the call: is the ~$600K from Google/social paid or organic, who the current vendor is (Scorpion?), the budget range, and what 25-30% growth would let him do personally.
+- Urgency score 5 is low-confidence (no 3-pack, ads, LSA, Meta or verified review data). Per the Pass 1 writer caution, the range sentence was softened: it does not say competitors are "pulling ahead" and makes no review-count claim.
+- Stage assigned: Stage 4 (Small Business Manager) — border call with Stage 5; lower stage assigned per rules (owner's ability to step away, leadership structure beyond administrator/partners, and intake team were not established on the call).
+- Traffic lights (all Amber): lead gen has strong offline systems but digital is small and unmeasured; intake close rates are strong but online-lead handling is unmeasured; team is sized for peak with idle off-season capacity; profit has no stated margin data (revenue per FTE tracked).
+- Phase 3 roadmap mentions Legal AI Workforce (LAW) and Fractional CFO in general terms with no prices: confirm with sales rep that LAW delivery has launched and capacity is available before it is discussed as a roadmap item.
+- Contact spelling: trigger says "Josh Dorsey"; transcript, website and directories say "Dorcey". Report uses "Dorcey".
+- Phone mismatch across directories and the Sarasota office missing from the website are in the client report as findings (Local SEO section).
+- Real estate/title company and the 4th office (Sarasota) were stated by Josh; the website lists only 3 offices and omits real estate.
