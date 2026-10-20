@@ -40,7 +40,7 @@
   "law_price_bundled": 8997,
   "law_price_retail": 9997,
   "law_seats": null,
-  "total_bundled": 8997,
+  "total_bundled": 10594,
   "total_savings": 1000,
   "ad_spend_conservative": null,
   "ad_spend_aggressive": null,
@@ -53,6 +53,11 @@
     "Revenue $400K\u2013$1M: Elite Coach Plus selected.",
     "Seller override (Slack, 2026-10-20): revenue estimated $15-20M (low end $15M used), team size 80; swapped to Fractional CTO Level 3 ($8,997/mo bundled), coaching removed. 'AI Workforce included' interpreted as no separate AI Workforce Pro line item \u2014 total is FCTO L3 only; seller to correct if AIWP should be priced separately.",
     "Seller override (Slack, 2026-10-20): 'Remove foundation sprint.' The Law Firm AI Foundation Sprint was never a separate line item \u2014 it is included at $0 with Fractional CTO Level 3 \u2014 so no price fields changed (FCTO L3 stays $8,997/mo bundled, total_bundled 8997). Do not present the Foundation Sprint as a deliverable or call it out in the proposal; seller to confirm if a different tier without the sprint (Level 2) is wanted instead.",
-    "Seller override (Slack, 2026-10-20): 'Keep the sprint included if it isn't extra.' Law Firm AI Foundation Sprint is included at $0 with Fractional CTO Level 3 (per audit-write.md catalog), so it is NOT extra \u2014 keep it in the proposal as an included deliverable at kickoff. Supersedes the prior 'remove foundation sprint' note. No price fields changed (FCTO L3 $8,997/mo bundled, total_bundled 8997, total_savings 1000)."
-  ]
+    "Seller override (Slack, 2026-10-20): 'Keep the sprint included if it isn't extra.' Law Firm AI Foundation Sprint is included at $0 with Fractional CTO Level 3 (per audit-write.md catalog), so it is NOT extra \u2014 keep it in the proposal as an included deliverable at kickoff. Supersedes the prior 'remove foundation sprint' note. No price fields changed (FCTO L3 $8,997/mo bundled, total_bundled 8997, total_savings 1000).",
+    "Seller override (Slack, 2026-10-20): 'Also include AI workforce, put 5 users package price' \u2014 added AI Workforce Pro (base) as a separate line item alongside Fractional CTO Level 3: $1,597/mo for 5 users (ai_workforce_pro_* fields; law_* fields remain FCTO L3). Supersedes the earlier 'AI Workforce included, no separate line item' interpretation. Present the 5-user package price only, not all 80 seats; seller will mention in conversation that more users can be added at $120/mo per employee over 5. No standalone price exists for AI Workforce Pro, so total_savings is unchanged ($1,000). total_bundled = $8,997 + $1,597 = $10,594/mo."
+  ],
+  "ai_workforce_pro_name": "AI Workforce Pro",
+  "ai_workforce_pro_price_bundled": 1597,
+  "ai_workforce_pro_price_retail": null,
+  "ai_workforce_pro_seats": 5
 }
