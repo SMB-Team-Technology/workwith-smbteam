@@ -1,0 +1,69 @@
+SECTION 11 WORKINGS — Fairchild Employment Law, P.C. (INTERNAL — never client-facing)
+Date: October 20, 2026 | Rep: Dan Bryant
+
+======================================================================
+PACKAGE DECISION AND OVERRIDE CHECK
+======================================================================
+Source: fairchild-employment/package_decision.json (confidence: low; seller override logged 2026-10-20; proposal_review.json status: locked).
+
+Transcript-Stated Need Override check:
+1. Call-purpose override — APPLIES. Call was coaching/ops (Elite Coach vs FCOO), not marketing. Rep: "I know you're not calling about marketing, because you have leads coming in" (00:06:49). Prospect: "I don't have a problem with leads coming in." (00:46:46). Marketing excluded; lead with coaching/ops.
+2. Existing-vendor override — APPLIES. Firm is working with iLawyer for SEO/marketing and GBP management; satisfaction "Well, yeah." (00:07:05). Full Service Marketing (all tiers / sub-packages) excluded.
+3. Budget-reality override — CONSIDERED, FLAGGED FOR REP. Transcript shows real financial strain (monthly expenses running ahead of revenue per the prospect's own figures, savings drawn down, "I'd rather not [draw more on the line of credit] if I don't have to… But I will if I'm planning strategically and what I'm doing makes sense." 00:38:25–00:38:32). No explicit dollar ceiling was stated. The seller deliberately locked Elite Coach + FCOO Advisor ($5,694/mo bundled) via Slack on 2026-10-20 after the call (seller override recorded in package_decision.json and git history), so that package was kept. Lower-cost alternatives that still address the stated need, for the rep to have ready if affordability pushes back: Elite Coach Plus $3,200/mo (revenue-table pick for $400K–$1M) or Elite Coach at the lower tiers. Gap documented intentionally: the revenue table's default for this band is Elite Coach Plus ($3,200/mo); the seller-selected package is $2,494/mo higher.
+4. Effective-revenue override — N/A for tiering. Contingency practice; prospect gave gross fees (~$1.0M in 2025, tracking ~$500K in 2026) and owner take-home (~$8,500/mo); no firm-level net figure. Decision file revenue_effective $570,000 (HubSpot range) used; stated 2026 run-rate ~$500K also sits in the $400K–$1M band, so tier is unchanged. Note: revenue is at the $500K floor for FCOO products ("FCOO and FCFO products removed below $500K") — confirm 2026 revenue is not below $500K before the proposal.
+
+35% cap check: current monthly revenue ~$41–42K (prospect figure, speaker inferred) x 35% = ~$14.6K cap. SMB spend $5,694/mo = ~13.7% of monthly revenue. Under cap.
+
+======================================================================
+MANDATORY PRICE LOOKUP
+======================================================================
+- Marketing package selected: none (overrides 1 and 2)
+- Non-marketing package selected: Elite Coach + FCOO Advisor
+  - Bundled price (from table): $5,694/mo
+  - Stand-alone price (from table): $7,294/mo (Elite Coach $3,497 + FCOO Advisor $3,797)
+  - Savings: $1,600/mo
+- LAW package selected: none
+- AI Avatar / Video Growth add-on: none
+- Total monthly investment: $5,694/mo
+- Total savings: $1,600/mo
+- Ad spend: not applicable (no marketing/ads package). Block 4 omitted from section 11 and AD_SPEND omitted from the executive summary.
+- "Why this range" sentence: not applicable (no ads package).
+
+======================================================================
+DBM STATEMENT (Block 1)
+======================================================================
+We help plaintiff-side employment law firm owners get an operating system for the firm — KPIs, intake that runs smoothly, and a team that moves cases forward — so they can sleep at night, pay every bill without worry, and be present in their free time.
+Source: "being able to sleep at night, being able to pay all the bills without having to worry about it." (00:34:25); "Be in my free time and be more present and not have to be stressed about it." (00:55:57–00:56:00).
+
+======================================================================
+QUICK WIN OPPORTUNITIES (8)
+======================================================================
+1. Pillar: Lead Gen | Fix GBP primary category (Law Firm -> Employment Attorney) | Why: category signal for "employment lawyer" searches; rep SOLB report ~13% vs ~76% | Competitor: Ferraro Vega (~76% SOLB per rep report on call) | Opportunity: change category, add secondaries.
+2. Pillar: Lead Gen | Clean up outdated MapQuest address (8880 Rio San Diego Dr) vs website/FindLaw (3131 Camino del Rio N., Ste 310) | Why: NAP inconsistency | Competitor: none | Opportunity: align listing.
+3. Pillar: Lead Gen | Build Google review volume | Why: reviews drive local rank/trust; prospect "I've been trying to work on that" (00:11:40) | Competitor: none named (competitor Google counts not confirmed) | Opportunity: steady review-request cadence.
+4. Pillar: Intake | After-hours answering coverage | Why: listing shows 24 hours, no after-hours answering (00:10:12) | Competitor: none | Opportunity: live answer outside business hours.
+5. Pillar: Intake | Case-prioritization scorecard at intake | Why: "not enough sense of urgency… not enough… prioritizing what the good cases are" (00:24:23) | Competitor: none | Opportunity: score cases at intake.
+6. Pillar: Profit | Weekly KPI scorecard for a contingency practice | Why: "I'm really bad at coming up with KPIs…" (00:00:46) | Competitor: none | Opportunity: a handful of weekly numbers.
+7. Pillar: Team | Weekly case-movement rhythm | Why: case movement depends on owner (00:44:43) | Competitor: none | Opportunity: standing weekly case review.
+8. Pillar: Profit | Settlement-timing cash-flow forecast | Why: fixed costs vs lumpy settlement income (00:35:39–00:35:49, 00:49:34) | Competitor: none | Opportunity: forecast expected settlements vs costs.
+
+======================================================================
+WHAT YOU TOLD US (Block 5) — SOURCES
+======================================================================
+Row 1: KPIs. Verbatim: "I'm really bad at coming up with KPIs and all that stuff, because honestly… I just don't have time." (00:00:46). Supports: FCOO Advisor (operating systems / KPIs) + weekly coaching.
+Row 2: Intake. Verbatim: "I want… intake to… run more smoothly without me having to be involved in every step of the process." (00:51:00). Supports: FCOO Advisor (intake process and team structure).
+Row 3: Needs help putting it together. Verbatim: "I feel like the answer is in there. I just need to put it together, and I need help to do that." (01:13:48). Supports: Elite Coach group deliverables (weekly group coaching, practice area masterminds, quarterly workshops, annual in-person workshop).
+Excluded per rules: personal/family items, financial-distress figures, any named employee.
+Next-step line: kickoff call with your FCOO.
+
+======================================================================
+ESCALATION FLAGS (INTERNAL ONLY)
+======================================================================
+- Review counts unconfirmed — verify live before the call. No Google review count or rating for Fairchild or any competitor was confirmed; all competitor figures in the notes are Yelp-sourced (UNCONFIRMED). Client report uses qualitative framing only.
+- Affordability: prospect is running a monthly deficit and has drawn down savings; seller-locked package is $5,694/mo. Have Elite Coach Plus ($3,200/mo) ready as the lower-cost fallback. Prospect stated "Six months from now, I'll probably make a decision about whether I should keep doing it or not." (01:08:26, speaker inferred) — churn/objection risk.
+- Revenue floor: 2026 run-rate is ~$500K, at the FCOO minimum ($500K). Confirm before sending proposal.
+- Team size defaulted to 3 in package_decision.json; actual team is owner + 1 associate attorney + 1 paralegal + 1 virtual intake assistant (4 including the owner).
+- LAW appears only as a Phase 2 roadmap item (not sold). If discussed on the call, confirm LAW delivery has launched and capacity is available. Prospect signed up for an AI-related product after a webinar and is "revisiting" it (00:02:06–00:02:23) — product not named; clarify what she bought before positioning LAW.
+- PageSpeed: scores in the report are from a local Lighthouse run (mobile 74 / desktop 84), not pagespeed.web.dev; re-run on pagespeed.web.dev if the rep wants official figures.
+- The after-hours answering vendors mentioned on the call (Smith.ai, Attorney Assistant Frontline) are not part of this recommendation.
+- Live SERP / local pack / Ads / LSA / Meta data were not observable; report frames these as "not observed".
