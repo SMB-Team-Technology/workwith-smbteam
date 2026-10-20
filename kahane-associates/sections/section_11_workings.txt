@@ -1,0 +1,89 @@
+SECTION 11 WORKINGS — KAHANE & ASSOCIATES, P.A. (INTERNAL — NOT CLIENT-FACING)
+Friendly name: kahane-associates | Sales rep: Randy Gold | Date: October 28, 2026
+
+======================================================================
+PACKAGE SELECTION (copied from package_decision.json, verified against audit-write.md tables)
+======================================================================
+Marketing package: NONE
+Coaching / non-marketing package: NONE
+
+Legal AI Workforce (LAW) package 1: Fractional CTO Level 3
+  Bundled price: $8,997/mo
+  Stand-alone price: $9,997/mo
+  Savings: $1,000/mo
+  Setup fee: $0. Law Firm AI Foundation Sprint included at $0 (seller override 2026-10-20: keep sprint included since it is not extra)
+  Requirement check: $3M+ annual revenue — met (seller estimate $15-20M, $15M used)
+
+Legal AI Workforce (LAW) package 2: AI Workforce Pro (5 users)
+  Bundled price: $1,597/mo
+  Stand-alone price: none exists (never quote one)
+  Savings: $0
+  Terms: yearly contract; 10M usage credits + 10M bonus credits (20M total); weekly AI Implementation Session
+  Seller override 2026-10-20: present the 5-user package price only, not all 80 seats. Seller will mention in conversation that additional users can be added at $120/mo per employee over 5. That per-employee price is intentionally NOT printed in the client report.
+
+AI Avatar / Video Growth add-on: NONE
+
+Total monthly investment (sum of bundled prices): $10,594/mo ($8,997 + $1,597)
+Total savings: $1,000/mo
+Ad spend: NOT APPLICABLE — no marketing/ads package in the recommendation. Block 4 deleted from section 11. No ad spend line in the Executive Summary.
+
+35% cap check: $15,000,000 / 12 = $1,250,000/mo. 35% = $437,500. Total SMB spend $10,594/mo = about 0.85%. Well under the cap.
+
+======================================================================
+TRANSCRIPT-STATED NEED OVERRIDE CHECK
+======================================================================
+1. Call-purpose override: TRIGGERED. Research notes: "This was NOT a marketing/lead-gen call. It was an AI automation / Fractional CTO discovery call." Lead-gen gap: "Yeah, that's not, from the IT standpoint, no." (00:09:00). The recommendation therefore leads with the LAW category. package_decision.json already reflects this (marketing_tier null, call_focus.primary_engagement = AI). No departure from the decision file.
+2. Existing-vendor override: not triggered. No existing marketing/SEO/ad vendor stated.
+3. Budget-reality override: not triggered. No budget constraints stated.
+4. Effective-revenue override: not applicable. No gross/net split stated; not a contingency practice.
+
+Decision file confidence is "low" because revenue is not confirmed. Cross-check against research notes: revenue is an IT Director guess ("maybe 15 to 20 million", 00:06:46) plus seller override to $15-20M. FCTO Level 3 ($3M+) is justified under any plausible figure in that range. Seller override (Slack, 2026-10-20) selected Level 3 and 5-user AI Workforce Pro. Using the decision file as-is.
+
+DBM FOR BLOCK 1
+No owner-level DBM was stated (owner Robert Kahane was not on the call). Closest inference from the IT Director's own words (00:07:19): scale the firm without scaling headcount and remove single points of failure — category (1), a firm that runs itself and depends less on manual labor.
+Block 1 statement: "We help default servicing law firms that serve banks and lenders get their routine notice, reporting and billing work automated with AI so they can grow without growing headcount or depending on any single person."
+
+======================================================================
+QUICK WIN OPPORTUNITIES (8 identified; all appear in section_11_next_steps.html)
+======================================================================
+1. Lead Gen — Fix mobile site speed. Why: Lighthouse mobile 36/100, desktop 94/100. Competitor: none named. Quick Win.
+2. Lead Gen — Make directory addresses consistent. Why: website says Sunrise (1619 NW 136th Ave, Ste D-220); Avvo/Justia/FindLaw/Yelp/Yellow Pages/BBB say 8201 Peters Rd, Plantation. Competitor: none named. Quick Win.
+3. Intake — Automate Notice Mailbox routing. Why: human traffic controller routes court notices; role grows with volume (00:07:19). Competitor: none named. Quick Win.
+4. Intake — Turn unstructured Word reports into importable structured data. Why: reports not in an importable format for the firm's workflow (00:25:16). Competitor: none named. Quick Win.
+5. Profit — Automate the fees-and-costs report. Why: one near full-time role, no cover for absence (00:28:46). Accounting offered to beta test (00:19:15). Competitor: none named. Quick Win.
+6. Profit — Automate final-billing reconciliation. Why: unbilled billable tasks, attorney time entries and hearings must be reconciled. Competitor: none named. Long-Term Play.
+7. Team — Give the AI initiative a roadmap and an owner. Why: AI "has fallen on IT"; partners keep asking without details (00:01:30, 00:01:42). Competitor: none named. Long-Term Play.
+8. Intake — Browser automation for external sites without APIs. Why: click buttons, populate forms, file cases on sites with no API. Competitor: none named. Long-Term Play.
+"Who Is Doing It Better" rows omitted on all cards: no specific named competitor with verified evidence of doing it better.
+
+======================================================================
+WHAT YOU TOLD US (BLOCK 5) — SOURCE LINES
+======================================================================
+Row 1: Notice routing does not scale; the routing role has to grow with volume.
+  Verbatim: "Right now, it's not scaling. So, for example, the Notice Mailbox, being that we have a human traffic controller and they're routing things, as that grows, that position, the FTE. We need it to complete that task would have to grow." (Adrian Cain 00:07:19)
+  Supports: Fractional CTO Level 3 — custom automations (up to 3 per month), weekly fCTO sessions.
+Row 2: Fees-and-costs reporting depends on one person and is hard to cover.
+  Verbatim: "fees and costs is something that you have maybe one user do almost full-time, and for you to have a replacement for that user when they take a day off is just almost impossible." (Alfredo, Accounting 00:28:46)
+  Supports: Fractional CTO Level 3 — custom automations, automation report, training videos.
+Row 3: AI use at the firm today is minimal.
+  Verbatim: "it's probably minimal. Some of the attorneys may be using it to kind of to review, spell check" (Adrian Cain 00:08:19)
+  Supports: AI Workforce Pro (5 users) — access to AI Workforce Pro and the weekly AI Implementation Session; plus Foundation Sprint readiness assessment under Fractional CTO Level 3.
+No named employees, no personal/health/family items, no partner disputes, no financial-distress figures in Block 5. Rows are paraphrased in the client's framing; no verbatim quotes used in Block 5.
+Next-step line: kickoff call with the Fractional CTO team (most central package).
+
+======================================================================
+ESCALATION FLAGS (INTERNAL ONLY)
+======================================================================
+- LAW package (Fractional CTO Level 3 + AI Workforce Pro): confirm with sales rep that LAW delivery has launched and capacity is available before including in the proposal.
+- Review counts unconfirmed — verify live before the call. No Google review counts or ratings were verified (GBP and competitor listings not reachable); none printed in the client report. Yellow Pages / Indeed / Glassdoor / Avvo snippet figures also UNCONFIRMED and not printed.
+- Revenue is low confidence: IT Director guessed "15 to 20 million" and does not know; seller override $15-20M. Confirm with Robert Kahane.
+- Team size ~80 employees / 12 attorneys is rep-sourced from pre-call notes (not confirmed by prospect). Client report says "roughly 80 people, about 12 attorneys".
+- Decision-maker is Robert Kahane (partner/owner), not on the discovery call. Owner-level DBM unknown — confirm on the proposal call. Expect management to be brought in ("managing partners, head of departments", 00:03:52). IT flagged management may think AI is a "genie in the bottle" — set expectations.
+- Security: PII (SSNs) in the case system. AI must have no access to PII or specific tables. Address in the proposal call; client report references this only at a high level.
+- AI Workforce Pro seats: 80 employees vs 5-user package priced. Seller to explain $120/mo per employee over 5 verbally.
+- Foundation Sprint: seller overrides conflicted (remove, then keep). Latest: keep, included at $0 with FCTO Level 3. Shown in client report as included deliverable.
+- Proposal call date: transcript garbled ("the 20th" / AI summary "October 27th"); trigger date October 28, 2026 used.
+- No marketing / ad spend / LSA recommendations were made. Client report Section 6 states "not observed" for all ad channels and makes no claim that ads are or are not running.
+- Competitors named (Storey Law Group, Lender Legal PLLC, Gilbert Garcia Group) are creditor-side peers with no verified channel data. Homeowner-side foreclosure-defense firms are excluded as competitors.
+- Stage assigned: Stage 4 (Small Business Manager) — border call between 4 and 5, lower stage assigned per rules.
+- Traffic lights (all Amber): lead gen is relationship-driven with unverified flow; intake is manual routing with a dedicated role; team has key-person dependencies; profit not discussed on call.
