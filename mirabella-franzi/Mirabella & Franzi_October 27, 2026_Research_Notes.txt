@@ -1,0 +1,187 @@
+RESEARCH NOTES — Mirabella & Franzi
+Friendly name: mirabella-franzi
+Date: October 27, 2026 (proposal call date; discovery call was October 20, 2026)
+Sales rep: Nick Holderman (call opened by Tony Salvatori, who handed off at 00:00:27)
+Trigger URL: https://mirabellafranzi.com/
+Contact: Rosanna Franzi (partner; decision driver). Other partner: David Mirabella.
+Research method: live HTTP fetch of the firm site + local Lighthouse run + web search/fetch of directories. No interactive browser, no live Google Maps / SERP / Ads Library access in this run. Anything that needs a live Google SERP, Google Maps listing, or ad library view is marked NOT OBSERVED / UNCONFIRMED rather than estimated. Nothing in this file is fabricated.
+
+======================================================================
+STEP 1 — WEBSITE RESEARCH
+======================================================================
+- Website URL confirmed live: yes (HTTP 200, https://mirabellafranzi.com/).
+- Last redesign date or estimated age: prospect said it was redone "Within a year." (00:15:45) [prospect statement, line was tagged oddly in the transcript but the answer is hers]. Site data: WordPress page 334 (homepage) created 2025-08-06, last modified 2025-09-04; footer reads "© 2025 Mirabella & Franzi LLPC"; uploads folder 2025/09. So roughly 14 months old by the site's own dates. Built on WordPress with the U-Design theme, Elementor, and Slider Revolution. The rep called it "pretty basic, pretty outdated" (00:15:32) — that is the rep's opinion, not a measured fact.
+- Mobile responsive: yes (viewport meta tag present; responsive Elementor/Slider Revolution build; not tested on a physical device).
+- Homepage headline: slider headlines — "Dedicated to Helping Our Clients Navigate some of Life's Biggest Moments and Challenges" / "Empowering your Business to Start, Grow, and Succeed" / "Guiding Your Real Estate Deals with Confidence and Care" / "Protecting What Matters Preserving Your Legacy". Page title: "Mirabella & Franzi – Dedicated Legal Support for Life's Most Important Moments".
+- CTA above fold: yes, but phone-only — header bar reads "For Free Consultation Call (516) 280-7700". No button or form above the fold on the homepage.
+- Contact form location: separate /contact-us/ page only (WPForms: Name, Phone, Email, Subject, Message). No form on homepage, estate-planning page, or personal-injury page.
+- Live chat present: no (no chat widget scripts found).
+- Attorney bio present: yes — /david-mirabella/ and /rosanna-franzi/ pages exist.
+- Video present: no (no video or YouTube/Vimeo embeds found).
+- Blog present: no. /blog/ returns 404; the WordPress posts API returns only the default "Hello world!" post dated 2025-07-30. No articles.
+- Practice areas listed on site: Real Estate, Banking, Personal Injury Litigation, Estate Planning, Business & Corporate Law (landlord/tenant mentioned on homepage).
+- Estate Planning page (/estate-planning/): one short page, ~4 bullets (Last Will & Testament Preparation, Trust Planning, Powers of Attorney & Health Care Proxies, Probate & Estate Administration). No FAQs, no pricing, no process content, no city-specific content.
+- Personal Injury page: lists auto accidents, defective products, slip/trip/fall, premises, dog bite, assault, wrongful death, no-fault; claims "multiple verdicts and settlements exceeding $1 million" (site claim, not verified).
+- Geo-targeting landing pages for surrounding cities: none observed (not exhaustively crawled; no city pages appear in the site's link structure).
+- Structured data: no LegalService/Attorney schema observed in homepage source (one "Attorney" text match only).
+- Spanish-language content: none detected.
+- Site phone: (516) 280-7700, fax (516) 280-7701. (The (516) 286-1897 in the CRM is Rosanna's direct number, not the site number.)
+
+PageSpeed:
+- pagespeed.web.dev and the PageSpeed Insights API were not usable in this run (API returned HTTP 429 "Quota exceeded"). As a substitute, Lighthouse (performance category) was run locally against https://mirabellafranzi.com/ on 2026-10-20 from headless Chrome on a CI runner. These are real measured values but are NOT from pagespeed.web.dev and may differ from it (different network/CPU conditions).
+- Lighthouse mobile performance score: 65 (local Lighthouse run, not pagespeed.web.dev)
+- Lighthouse desktop performance score: 89 (local Lighthouse run, not pagespeed.web.dev)
+- Pass 2 guidance: if these figures are used in the client report, label them as Lighthouse performance scores, or re-run on pagespeed.web.dev first.
+
+======================================================================
+STEP 2 — GOOGLE BUSINESS PROFILE
+======================================================================
+Google Maps / GBP was not directly reachable in this run.
+- GBP found: yes per call — the rep was viewing the listing during the call and confirmed the address with the prospect: "400 Garden City Plaza, Suite 405" — "Yes, it is." (00:15:15–00:15:21). Listing itself not independently viewed in this run.
+- Star rating: 5.0 [UNCONFIRMED — sourced from the ReachAttorneys directory page (labelled "Google Reviews" there) and a web-search summary, not independently confirmed via Google]
+- Total review count: NOT OBSERVED [UNCONFIRMED — not obtained; no Google Maps access in this run]. Do NOT print any review count or rating as a specific figure in the report.
+- Most recent review date: not observed
+- Primary category: not observed
+- Photos active: not observed
+- Posts active: not observed
+
+======================================================================
+STEP 3 — LOCAL 3-PACK SEARCHES
+======================================================================
+NOT OBSERVED. Live Google local-pack results cannot be retrieved from this environment, and results are location-dependent. No pack composition is recorded here to avoid inventing it.
+Practice Area 1: Estate planning (primary marketing focus per call)
+- Search 1 "estate planning attorney Garden City NY": NOT OBSERVED
+- Search 2 "wills and trusts lawyer Garden City NY": NOT OBSERVED
+- Search 3 "probate lawyer Garden City NY": NOT OBSERVED
+Practice Area 2: Personal injury (secondary focus per call; rep advised against leading with it)
+- Search 1 "personal injury lawyer Garden City NY": NOT OBSERVED
+- Search 2 "car accident lawyer Nassau County": NOT OBSERVED
+- Search 3 "motor vehicle accident attorney Garden City NY": NOT OBSERVED
+Real estate is the firm's core practice but not a marketing target on this call, so it was not searched.
+
+======================================================================
+STEP 4 — COMPETITOR REVIEW COUNTS
+======================================================================
+No Google review counts could be verified live. All figures below come from directory/aggregator snippets and are UNCONFIRMED. Pass 2 must not print them as specific figures. The prospect could not name estate-planning competitors on the call ("in the probate world, we don't do that much of it to really ascertain who our competitors are", 00:11:39), so these firms were identified by web search of Garden City estate-planning firms, not by the prospect.
+- Competitor 1: Davidov Law Group (1122 Franklin Ave, Suite 102, Garden City, NY 11530) — reviews: 12 [UNCONFIRMED — sourced from Yelp (search-result title), not independently confirmed via Google]; separately "over 250" to "more than 330" five-star Google reviews claimed in different directory/web snippets [UNCONFIRMED — sourced from third-party snippets that disagree with each other, not independently confirmed via Google] — rating: NOT OBSERVED [UNCONFIRMED — no Google rating obtained]
+- Competitor 2: Schwartz, Fang & Keating, P.C. (serves Garden City / Nassau County; Syosset office) — reviews: 74 [UNCONFIRMED — sourced from a directory snippet (lawyers.com-style listing), not independently confirmed via Google] — rating: 5.0 [UNCONFIRMED — same directory source, not independently confirmed via Google]
+- Competitor 3: Cara Law (300 Garden City Plaza, Suite 136, Garden City, NY 11530; estate planning, elder law, probate, Medicaid planning) — reviews: NOT OBSERVED [UNCONFIRMED — none obtained] — rating: NOT OBSERVED [UNCONFIRMED — none obtained]
+- Other estate-planning firms surfaced in Garden City search (not profiled): D'Angelo Law Associates, Law Office of Angela Siegel, Kobrick Law, Ellen Durst Law Offices.
+- Mirabella & Franzi's own Google count is not verified, so no claim can be made that any competitor has more or fewer reviews than the firm. Competitors were not confirmed to be in any local pack.
+
+======================================================================
+STEP 5 — DIRECTORY LISTINGS
+======================================================================
+- Website NAP: Mirabella & Franzi, 400 Garden City Plaza, Suite 405, Garden City, NY 11530; (516) 280-7700; fax (516) 280-7701. Footer entity "Mirabella & Franzi LLPC".
+- ReachAttorneys: fetched — same address and phone; listed as "Mirabella & Franzi, PLLC" (entity suffix differs from site footer "LLPC"); shows 5.0 rating labelled Google Reviews (no count).
+- Avvo (Rosanna A. Franzi): profile exists; per search snippet she is listed as practicing real estate and personal injury (not estate planning), licensed ~15 years, Avvo rating 6.4, and employer shown as "Mirabella Law Group PLLC" at the same Suite 405 address and (516) 280-7700 — firm NAME INCONSISTENCY (old/alternate firm name). Page itself not fetched.
+- Justia (David P. Mirabella, Rosanna A. Franzi): profiles exist per search results; page fetch returned HTTP 403, so details NOT OBSERVED.
+- Chamber of Commerce directory listing: exists per search results; page fetch returned HTTP 403, details NOT OBSERVED.
+- Other listings seen in search: opengovus (NY attorney registry), justgreatlawyers.com, lawyer.com ("Mirabella Law Group PLLC" — old firm name), allusinjurylawyers.com.
+- Old-domain observation: mirabellalawgroup.com (a search result titled "Garden City Law Firm" with a /contact-garden-city-attorneys.php page) now redirects to an unrelated pool-repair site and serves gambling-spam page titles; the contact page returns 404. The firm's legacy name "Mirabella Law Group PLLC" suggests this may have been a prior firm domain, but ownership is NOT confirmed. Related to the prospect's stated domain-name fiasco only by possibility — do NOT assert it as the firm's domain in the report.
+- Yelp (firm's own listing), FindLaw, Facebook, Super Lawyers: not checked in this run.
+- Geo-targeting landing pages for surrounding cities: none observed.
+
+======================================================================
+STEP 6 — GOOGLE ADS
+======================================================================
+Practice Area 1: Estate planning
+- Firm ads observed: NOT OBSERVED (live Google SERP not accessible in this run). Prospect confirmed on the call that the firm has never advertised, which is a transcript fact: "Zero, nothing." (00:04:54).
+- Named local competitors running ads: NOT OBSERVED.
+Practice Area 2: Personal injury
+- Firm ads observed: NOT OBSERVED. (Same prospect confirmation of no advertising applies.)
+- Named local competitors running ads: NOT OBSERVED.
+
+======================================================================
+STEP 7 — LOCAL SERVICE ADS
+======================================================================
+- Firm appears in LSA: NOT OBSERVED
+- Google Screened: NOT OBSERVED
+- LSA review count: NOT OBSERVED
+- Named local competitors in LSA: NOT OBSERVED
+
+======================================================================
+STEP 8 — META ADS
+======================================================================
+- Facebook Ad Library is not retrievable from this environment.
+- Firm has active ads: NOT OBSERVED (prospect: never advertised)
+- Named local competitor 1 (Davidov Law Group): NOT OBSERVED
+- Named local competitor 2 (Schwartz, Fang & Keating): NOT OBSERVED
+
+======================================================================
+STEP 9 — TRANSCRIPT EXTRACTION
+======================================================================
+Transcript source: full verbatim Fathom transcript (summary used only as overview).
+Speaker-tag caveat: Rosanna is untagged ("Zoom user") throughout, and a few of her short answers are tagged to the rep (e.g. "We actually just had it redone" at 00:15:35, "I haven't quite yet" at 00:19:59). Attribution below was worked out from context. Rep pitch numbers ($4k–$6k/mo ad spend, ~$3,500–$5,500/mo agency fees, "56 new cases", "$150 million ad spend", "700 firms") are NOT firm figures and are not recorded as such. The call was ~40 minutes; Fathom summary and full transcript agree except where noted below.
+Correction to the AI summary: the summary says revenue "plateaued after a post-COVID decline." In the transcript Rosanna says revenue "bounces right at" ~$1M and "The past several years have been slightly over that number"; what disappeared is the COVID-era refinance volume (00:07:25). Do not state that firm revenue declined.
+
+- Practice areas confirmed: real estate (core by volume; "we do a significant amount of real estate", 00:05:39), estate planning / probate (small, referral-only), and personal injury / motor vehicle accident ("a smaller portion of our practice", 00:05:39). Website also lists banking and business/corporate law. Marketing focus: estate planning first; PI later (rep advised building into PI; prospect did not object).
+- Current lead sources: "Strictly, word of mouth referral." (00:05:02). Estate/probate business comes "by way of referrals from other kinds of transactions, but we don't solicit that business." (00:10:12). Has been that way since the firm started (00:05:08).
+- Ads ever run: no — "Zero, nothing." (00:04:54); "No, we have not." (00:05:13) when asked if they ever did any marketing or advertising. No ongoing SEO: "No, we are not." (00:16:38).
+- Team size: 2 partners (Rosanna Franzi and David Mirabella), 1 associate attorney, 6 support staff. Rosanna later says "there are three attorneys in my office" (00:34:05). Staff can do initial inputting on probate work with attorney review.
+- Annual revenue (gross / case value): about $1,000,000 — "yeah, that's about, yes. … bounces right at that number. The past several years have been slightly over that number." (00:06:47–00:06:52). Revenue mix: rep proposed ~90% real estate and 10–15% PI/estate planning and the prospect answered "Yes." (00:06:25–00:06:32) [rep-proposed split, prospect agreed — treat as approximate].
+- Annual revenue (net / take-home / collected): not distinguished from gross (prospect only stated one number).
+- Fee structure: not stated overall. Real estate: "the legal fees on those transactions much smaller" (00:05:39). Estate/probate: "A simple will probate is about 4,500." (00:13:52). PI: not stated (contingency typical but not said).
+- Revenue goal: "increasing revenue by at least 25%. So another … 200 and 250,000 at least" (00:12:46–00:12:51) → about $1.25M. [transcript unclear on "200 and 250,000" — read as $250,000, consistent with the rep's later "1.25" which she confirmed at 00:27:25.] Prospect confirmed she and David have not set specific targets: "We have not." (00:13:17).
+- Average case value: ~$4,500 for a simple will probate (00:13:52); standard example is "dad dies, leaves, three kids with a will, split equally amongst the three kids" (00:14:03). Estate planning drafting fee not separately stated. PI: no figure; described as "profitability-wise tends to be pretty large" (00:05:39).
+- Current close rate: not stated — default to 15%.
+- Number of locations: 1 (400 Garden City Plaza, Suite 405, Garden City, NY).
+- Spanish campaign needed: no (not mentioned).
+- Dominant buying motive: no personal motive stated; she was asked directly (retire earlier, fund college, etc.) and answered "Nothing in particular, just the fact that, why not? I mean, why wouldn't we grow?" (00:19:29–00:19:35). Closest to option (3) scale and dominate / become a leader: "definitely don't want to retire. I'm only 43. So I'd like to become a leader in the industry" (00:33:11–00:33:16), plus growing probate "as large as we've grown the real estate side" (00:33:29) and predictable growth: "predictably hire people and … expand office space" (rep phrasing, prospect: "Exactly. So like we can … consider the next step." 00:32:55). Pace matters to her: "slower growth would be more important to me" (00:35:22). In the report use "become a leader in the industry" and sustainable growth, not a lifestyle motive.
+- Any profitability claims made by prospect: "the PI practice is a smaller portion of our practice, although profitability-wise tends to be pretty large, whereas by volume, we do a significant amount of real estate, but the legal fees on those transactions much smaller." (00:05:39); "the amount of volume … we have to do to yield the same profitability is 500 plus percent." (00:05:57–00:06:00) [partly garbled by transcription; read as real estate needs ~500% more volume for the same profit — use with care]; "it could yield a significant increase in the firm and profitability" (00:10:27); "There wouldn't be a significant … jump in profitability" if nothing changes (00:36:43).
+- Any claims about case types or practice areas: "we also handle some motor vehicle accident, like personal injury, um, aspects that, um, we can use that as well to grow." (00:02:32); "probate work tends to go hand in hand with the real estate transactional work that we do." (00:33:16); "I can tell you all of our competitors in the industry and the real estate sector." (00:11:34).
+- Stated call focus / product interest: standard marketing/growth discovery. Prospect found SMB Team online and wants options for advertising/marketing to grow estate planning and PI. Interested in AI-search visibility: "I know people are starting to advertise on AI just simply from my use, so I wanted to consider some options." (00:03:00). Firm is also "starting to incorporate some AI into the business by way of Westlaw" (00:04:34) — no AI-services engagement was discussed. The rep pitched a one-roof package (website rebuild, SEO/AEO, Google/Facebook ads) and promised a custom plan. Rosanna asked for pricing of "all of it" (00:26:20).
+- Primary engagement: marketing
+- Products discussed on call: Full Service Marketing
+- Lead-gen gap stated: yes — "I feel like we are in a position where we could expand revenue by tapping into areas that we're not focusing on." (00:09:38)
+- Existing marketing/SEO/ad vendor engagements: none stated. (A past IT company managed the website; see objection below. They currently have an IT provider she wants to consult.)
+- Budget constraints stated: yes — "four to six seems a bit high. … I was thinking more like two to four" per month in ad spend (00:22:23–00:22:34); "what we'd be willing to invest would be dependent upon a return" (00:20:37); said 10% of the extra $250K ($25K) "if it was a guaranteed yield" (00:20:12–00:20:26); not opposed to more if cases come: "I'm not entirely opposed if we did a four and we got, you know, three or four cases that month" (00:22:35). Gap vs rep recommendation of $4k–$6k/mo ad spend plus agency fee (~$3,500–$5,500/mo per rep, garbled in transcript as "35 to 5, 5,500" [transcript unclear — read as $3,500–$5,500/mo]; this is the rep's range, not the firm's).
+- Other objections / decision notes: (1) Website control — "we had previously had a IT company managing our website. Didn't go over well, because they wouldn't give us back our domain name." (00:27:35); "I don't think either myself or Dave would want to go down that road again of handing over our IP address" (00:28:00). She is open to a redesign, wants to speak to her IT provider (00:29:34, 00:31:07) and insists they keep control: "Like we both have control on that." (00:31:12). Rep answered: WordPress, firm gets login and ownership transfers back simply. (2) David: "he's a little bit more old school than I am" (00:11:02); "He's kind of just a go with the flow. So if I tell him I'm going forward, he'll go forward." (00:39:06). (3) Capacity: "we could very easily pick up four files a month" (00:34:26); wants gradual growth. (4) Timing: wants to start by January 1 — "January tends to be a slow month for real estate, so it would be a good time to take on a larger caseload." (00:31:37–00:32:00). (5) "We're fully booked" this week (00:38:09).
+- Next steps: Nick to build a custom plan (website, SEO/AEO, ads, projected results, pricing) and send a calendar invite; proposal call Tuesday October 27, 2026 at 12:00 PM ET (confirmed 00:38:29–00:38:49); Rosanna to speak with her IT provider and review with David.
+
+Key prospect quotes (all Rosanna Franzi; Fathom call of Oct 20, 2026):
+1. (00:05:02) lead sources — "Strictly, word of mouth referral."
+2. (00:04:54) ads — "Zero, nothing."
+3. (00:05:39) practice mix / profit — "the PI practice is a smaller portion of our practice, although profitability-wise tends to be pretty large, whereas by volume, we do a significant amount of real estate, but the legal fees on those transactions are much smaller."
+4. (00:07:25) refinance market — "there was a significant portion of the practice that grew exponentially during COVID, which doesn't exist anymore because the interest rates are too high."
+5. (00:10:12) estate planning is unsolicited — "We just do it by way of referrals from other kinds of transactions, but we don't solicit that business."
+6. (00:12:46) goal — "increasing revenue by at least 25%."
+7. (00:19:29) why growth — "Nothing in particular, just the fact that, why not? … why wouldn't we grow?"
+8. (00:33:11) DBM / vision — "definitely don't want to retire. I'm only 43. So I'd like to become a leader in the industry"
+9. (00:20:37) budget / ROI — "what we'd be willing to invest would be dependent upon a return."
+10. (00:22:23) budget gap — "four to six seems a bit high. … I was thinking more like two to four"
+11. (00:27:35) objection — "we had previously had a IT company managing our website. Didn't go over well, because they wouldn't give us back our domain name. It was just a fiasco."
+12. (00:35:16) pace — "you don't want to jump too big because you don't want to ruin the reputation that we've established thus far. So a slower growth would be more important to me"
+13. (00:36:41) status quo — "It'll probably stay around the same. There wouldn't be a significant … jump in profitability."
+14. (00:31:14) tech comfort — "We're not super tech savvy, which is why we're kind of in the place that we're currently in."
+
+======================================================================
+STEP 10 — COMPETITIVE URGENCY SCORE
+======================================================================
+Score: 6 of 10. Basis: this score is inferred, not measured — no live SERP, local pack, LSA or ad-library data was available. It rests on (a) the firm doing zero advertising and no SEO by its own account, (b) a thin site (one short estate planning page, no blog or articles, no form above the fold, mobile Lighthouse 65), and (c) an estate planning field in Garden City where several firms are actively listed and some appear well-reviewed (counts unconfirmed). Re-score in Pass 2 only if live data is added.
+Named competitor threats (all UNCONFIRMED on review data):
+1. Davidov Law Group (Garden City) — estate planning/elder law specialist; directory snippets claim hundreds of five-star Google reviews (figures conflict, unconfirmed).
+2. Schwartz, Fang & Keating, P.C. (Garden City / Nassau County) — trusts and estates firm with a 5.0 / 74-review directory listing (unconfirmed) and peer-recognized attorneys.
+3. Cara Law (300 Garden City Plaza) — estate planning, elder law, probate and Medicaid planning in the same building complex as the firm; review data not obtained.
+Dynamic sentence: "A score of 6 means competitors have meaningful advantages in one or more areas and are pulling ahead. You are not invisible yet — but the window to close the gap is narrowing. Every month without action is a month they extend their lead."
+
+======================================================================
+PASS 2 — VERIFICATION CHECKLIST
+======================================================================
+[x] Every number in the notes matches actually observed data (site facts and Lighthouse observed; everything else attributed or tagged)
+[x] No competitor is cited as "dominating" with a verified review count; all competitor figures tagged UNCONFIRMED
+[x] Every review count and star rating carries a verification-method tag
+[x] Revenue: prospect stated one figure only — recorded as "not distinguished from gross"; fee structure recorded
+[x] Every ad section covers both marketing-focus practice areas (estate planning, PI)
+[x] No section says "you are not running ads" — ad sections say NOT OBSERVED; the "never advertised" fact is attributed to the prospect's own statement
+[x] No profitability claim appears unless from the transcript (quoted above)
+[x] No generic competitor labels — named local firms only
+[x] PageSpeed scores are real measured Lighthouse numbers, clearly labelled as local Lighthouse, not pagespeed.web.dev
+[x] DBM recorded (no personal motive stated; closest = become a leader in the industry; quotes above)
+[x] Revenue goal recorded (+25% ≈ $250K → ~$1.25M)
+[x] Close rate recorded (not stated — default 15%)
+[x] Average case value recorded (~$4,500 simple will probate)
+[x] Stated call focus recorded (standard marketing/growth discovery, AEO interest)
+[x] Primary engagement / Products discussed / Lead-gen gap fields filled in the exact machine-read format
+[x] Existing marketing vendor engagements recorded (none stated)
+[x] Budget constraints recorded (prefers $2–4K/mo ad spend, contingent on ROI)
