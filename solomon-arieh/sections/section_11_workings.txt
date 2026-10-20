@@ -1,0 +1,113 @@
+SECTION 11 WORKINGS — SOLOMON | ARIEH (INTERNAL — NOT CLIENT-FACING)
+Sales rep: Jonathan Farace | Date: October 26, 2026
+
+======================================================================
+TRANSCRIPT-STATED NEED OVERRIDE — DEPARTURE FROM package_decision.json
+======================================================================
+package_decision.json (confidence: "low") selected: Elite Coach Plus ($3,200 bundled / $3,497 retail)
++ AI Workforce Pro – Starter, 1 seat ($350/mo). Total $3,550/mo. No marketing.
+I did NOT use that selection as-is. Corrections:
+
+1. Call-purpose override (APPLIED): The call was explicitly a Fractional CTO / AI implementation
+   conversation. Keesling stated "I am not in need for something different. My life is good." —
+   no coaching need and no lead-gen gap was stated. Elite Coach Plus was selected purely from the
+   revenue table using a HubSpot revenue band ($180K–$960K -> $570K) and a defaulted team size of 3.
+   Both inputs are contradicted by the transcript, and nothing on the call supports coaching.
+   Coaching removed. No marketing package recommended (consistent with the decision file).
+2. Existing-vendor override: not triggered (no marketing/SEO/ad vendor stated).
+3. Budget-reality override: not triggered (none stated; "That's no problem" to rep's range).
+4. Effective-revenue override: not triggered (no net/gross split for Tulsa; gross ~ $3M hourly).
+   Transcript revenue (Tulsa ~ $3M, "it's probably close to three") supersedes the HubSpot
+   band of $570K, which is stale/inaccurate.
+5. LAW tier correction: Decision file assumed 1 seat (AI Workforce Pro – Starter) because team size was
+   not found. Transcript: Tulsa = 5 attorneys + ~5 support = ~10 full-time. Keesling wants an
+   implementation LED by a fractional CTO (rep: "we call it a fractional CTO"; first 12 months of FCTO
+   involvement, then lighter support; he asked what SMB provides post-implementation, incl. on-site
+   fractional person). Per LAW rules, FCTO is preferred when owner lacks bandwidth.
+   - Level 1 ($400K+) eligible but under-scoped: his wish list is ~24 agent ideas; rep's quoted range
+     started around $4,000/mo.
+   - Level 2 ($1M+) selected: fits the stated scale, 2 monthly sessions / up to 4 skills / up to 2
+     custom automations, and falls inside the rep-quoted range ("under $10,000 a month for sure").
+   - Level 3 ($3M+) NOT selected: revenue is "close to three" (unverified, not clearly >= $3M).
+   Confirm the tier with the rep / Eli Gill before the proposal call.
+
+35% cap check: monthly revenue ~ $3M / 12 = $250,000; 35% cap = $87,500. Recommended $4,997 = ~2.0%. PASS.
+
+======================================================================
+MANDATORY PRICE LOOKUP (character-checked against tables)
+======================================================================
+- Marketing package selected: none
+  - Bundled price (from table): n/a
+  - Stand-alone price (from table): n/a
+  - Savings: n/a
+- Non-marketing package selected: none (Elite Coach Plus removed — see override above)
+  - Bundled price (from table): n/a
+  - Stand-alone price (from table): n/a
+  - Savings: n/a
+- Legal AI Workforce (LAW) package selected: Fractional CTO Level 2
+  - Bundled price (from table): $4,997/mo
+  - Stand-alone price (from table): $5,797/mo
+  - Savings (stand-alone minus bundled): $800/mo
+  - Setup fee: $0
+- AI Avatar / Video Growth add-on selected: none
+- Total monthly investment (sum of bundled/recurring prices): $4,997/mo
+- Total savings (sum of all savings): $800/mo
+
+Optional (not included in report): Law Firm AI Foundation Sprint packaged with Fractional CTO Level 2 = $5,003 one-time
+(standalone $19,997). Rep may raise on the call; not priced into the client report.
+
+======================================================================
+AD SPEND / ROI
+======================================================================
+No marketing/ads package in the recommendation -> Block 4 (Recommended Ad Spend) DELETED from section 11.
+Conservative ad spend: n/a | Aggressive ad spend: n/a | "Why this range": n/a
+Executive Summary omits the Recommended Ad Spend row.
+
+======================================================================
+DBM (Block 1)
+======================================================================
+Be the early mover / "tip of the spear, not the handle" and get time back (overhead oversight 20 -> 5 hrs/week).
+"to the extent that I can leave behind something better and do well for myself in the process, I'm willing to do that."
+Money is explicitly not the driver ("I have more than I can spend").
+Block 1: "We help established Tulsa litigation and corporate-counsel firms get safe, working AI workflows so they can lead
+the market from the front and cut owner oversight from 20 hours a week to five."
+
+======================================================================
+QUICK WIN OPPORTUNITIES (8)
+======================================================================
+1. [Team] Daily KPI & executive-summary automation — why: ~20 hrs/week oversight; opportunity: automated daily KPI digest. Competitor: none. Quick win.
+2. [Intake] Email triage & prioritization workflow — why: ~300 emails/day handled manually by one person; opportunity: AI-assisted triage. Competitor: none. Quick win.
+3. [Profit] Automate financial reporting workflows — why: outsourced statements/reconciliations are a recurring vendor cost; opportunity: evaluate which pieces automate. Competitor: none. Long-term.
+4. [Profit] Client-level margin monitoring — why: wanted but not in place; opportunity: automated margin reporting. Competitor: none. Long-term.
+5. [Team] Governed AI-use policy — why: AI is effectively banned ("it gets you fired day one"); opportunity: safe-use framework + training. Competitor: none. Quick win.
+6. [Lead Gen] Fix directory address mismatch and remove indexed /reviews-test/ page — why: Suite 2300 vs 3100; leftover test page. Competitor: none. Quick win.
+7. [Lead Gen] Steady Google review-request habit — why: apparent review gap vs Tulsa peers (UNCONFIRMED); competitor: New View Estate Planning, PLLC. Long-term.
+8. [Intake] Surface the contact form on the homepage — why: form only on /contact; opportunity: shorter path. Competitor: none. Quick win.
+
+======================================================================
+WHAT YOU TOLD US (Block 5) — SOURCES
+======================================================================
+Row 1: "Take overhead oversight from 20 hours a week to five."
+  Verbatim (00:26:42): "if I can take overhead oversight from 20 hours a week to five hours a week because I can use efficiencies to AI, hell yes, I'm going to do that."
+  Supports Block 2: monthly 1:1 sessions + custom automations (daily KPI monitoring / executive summaries).
+Row 2: "Stay ahead on AI, but supplement — not replace — human judgment."
+  Verbatim (00:04:56): "And if we're not ahead of the game, we're going to be behind the game."
+  Verbatim (00:05:11): "Let's use this to supplement but not supplant."
+  Supports Block 2: fCTO-led guided rollout, skills deployed from the library, training videos.
+Row 3: "Move email triage and financial reporting onto workflows."
+  Verbatim (00:09:17): "I pay our accounting firm $6,800 a month, I think, for our financial statements, reconciliations."
+  Wish list (Step 9): email triage/prioritization (~300 emails/day), financial statements & reconciliations.
+  Supports Block 2: custom automations + skills deployed each month, automation report.
+Excluded as sensitive: staff salary ($60K role), staff-reduction remarks, Geneva firm figures, vendor dollar figures, pricing objections.
+
+======================================================================
+ESCALATION FLAGS (INTERNAL)
+======================================================================
+- Review counts unconfirmed — verify live before the call (all firm and competitor counts/ratings tagged UNCONFIRMED; client report uses qualitative language only).
+- LAW package: confirm with sales rep that LAW delivery has launched and capacity is available before including in the proposal.
+- Confirm Fractional CTO tier (L2 chosen; L1 and L3 considered) with rep / Eli Gill; confirm whether Tulsa revenue is >= $3M if L3 is a possibility.
+- Seat count/users for any AI Workforce Pro add-on not confirmed (decision file assumed 1 seat; actual ~10 staff).
+- Keesling's evaluation criteria: wants to talk to five similarly sized law firms; vendor longevity/financial security; post-implementation value. Prepare references; do NOT promise them in the client report.
+- Decision timeline: plan/decisions by January 1; proposal call Oct 26 10-11 AM Central with Eli Gill.
+- Scope: Tulsa only (separate Geneva firm is not part of this engagement).
+- Competitive section and ad sections are all "not observed" (SERPs/Ad Library not renderable); urgency score 4 is provisional, low evidence.
