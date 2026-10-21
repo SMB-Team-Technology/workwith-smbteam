@@ -1,0 +1,78 @@
+SECTION 11 WORKINGS — Harold Rosbottom — October 28, 2026
+INTERNAL ONLY — never shared with client.
+
+=== PRICE LOOKUP (copied from package_decision.json; cross-checked against Scoping_and_Ad_Spend_Guide.md Starter tier table) ===
+- Marketing package selected: Paid Ads Starter (stand-alone, no coaching, no other products)
+  - Bundled price (decision file): $3,497/mo  (catalog bundled rate would be $2,497/mo; seller removed it)
+  - Stand-alone price (from table): $3,497/mo
+  - Savings (stand-alone minus billed): $0/mo
+- Non-marketing package selected: none
+- Legal AI Workforce (LAW): none
+- AI Avatar / Video Growth add-on: none
+- Total monthly investment: $3,497/mo
+- Total savings: $0/mo  (no savings callout and no strikethrough in client report)
+- Ad spend cap for Paid Ads Starter: $20,000/mo
+
+=== OVERRIDE CHECK (Transcript-Stated Need Override) ===
+1. Call-purpose: Call was about ChatGPT ads plus possible Meta/PPC for a Dallas PI firm; Harold wants paid-ads-only. Primary engagement = marketing, lead-gen gap stated. Paid ads package leads the recommendation. No departure.
+2. Existing-vendor: none stated. No departure.
+3. Budget-reality: Harold said "as cheap as possible" (00:11:04) and "we probably would start at a budget. And if we have good success, then add to the budget." (00:14:38). No hard cap. Seller already locked the lowest-cost marketing package that fits the stated need (Paid Ads Starter stand-alone at $3,497/mo). Recommended ad spend floor ($10,000) comes from the PI hard floor (High-competitiveness Dallas market) in package_decision.json. SALES NOTE: Harold may expect a much smaller starting ad budget (rep mentioned a $750/mo ChatGPT minimum). Expect budget pushback on the $10,000 low end.
+4. Effective-revenue: revenue not stated on call; package_decision uses HubSpot "$3,000,000+". No net/gross split. Revenue is NOT printed anywhere in the client report.
+Decision-file confidence is "medium" (revenue sourced from HubSpot, team size defaulted to 3). Seller override is locked (proposal_review.json status: locked), so the package is used as-is.
+
+=== DEPARTURES FROM CATALOG GUIDANCE (flag for sales) ===
+- Website rebuild trigger hit: PageSpeed mobile 43 (<50). Catalog rule says a rebuild requires Full Service rather than ads-only, and ads-only sub-packages are normally paired with coaching. Seller locked Paid Ads Starter stand-alone and Harold explicitly asked for a package without web/SEO. Used as locked. Mobile speed is shown in the report as a finding and a Long-Term Play opportunity only, not as a deliverable.
+- ChatGPT ads: rep said ChatGPT ad management is only offered inside larger paid packages and he must confirm internally whether stand-alone management is possible. Client report mentions ChatGPT ads only as a measured test "where available" and does not promise it as a fixed deliverable. CONFIRM before the call.
+- Paid Ads Starter deliverables are not itemised in the pricing guide. Deliverables in Block 2 are limited to the channels the catalog describes (Google PPC, LSA, Meta/social ads) plus optimisation. Verify against the current catalog.
+
+=== ESCALATION FLAGS (internal) ===
+- FIRM IDENTITY UNCONFIRMED: trigger URL is the site of "The Law Firm of Aaron A. Herbert, P.C." (Dallas). "Harold Rosbottom" does not appear on that site; link is circumstantial (email domain texaslegaladvice.com redirects to injuryattorneyoftexas.com). All website, GBP, PageSpeed, competitor-comparison data in the report is from that site. The report is written in second person ("your website", "your Google profile") and does NOT print the Herbert firm name or attorney names. Daniel Lowe must confirm this is Harold's firm before the report goes to the client.
+- Review counts unconfirmed — verify live before the call. Third-party directory figures (Avvo, FindLaw, Experience.com) are UNCONFIRMED snippets and were left out of the report entirely. Only Google figures tagged [confirmed via Google] appear. Google review counts are as displayed by Google ("~2,000" is a rounded display).
+- Research geolocation bias: research runner geolocated to Des Moines-Ames, IA; local pack/ad observations are indicative. Report wording says "in the searches we ran".
+- Personal Injury in a top-40 metro (Dallas) → approval required.
+- Ad spend range $10,000-$20,000: at/under the $25,000 scoping threshold; marketing MRR $3,497 under $10K threshold.
+- Revenue figure comes from HubSpot, not the call; confirm.
+- Legal AI Workforce / AI Workforce Pro and FCOO/FCFO/Bookkeeping are named only as later roadmap phases (Phase 2-3), not recommended now. Before presenting Phase 3, confirm LAW delivery has launched.
+- No AI Avatar, OmniSocial, Attorney Assistant or AR/AP add-on included.
+
+=== AD SPEND AND ROI ===
+Ad spend (from package_decision.json): Conservative $10,000/mo, Aggressive $20,000/mo (Paid Ads Starter cap).
+Conservative basis: car accident Google PPC channel minimum ($10,000) and the Dallas PI High-competitiveness hard floor ($10,000).
+Aggressive basis: 4x the floor would be $40,000; capped at the $20,000 Paid Ads Starter cap. (No revenue goal stated on the call; reverse-math not possible without case value/revenue goal.)
+Channel mix assumed for ROI (our assumption): 80% Google Search, 20% Meta cold. ChatGPT ads excluded from the math (no CPL data exists; rep called performance data thin).
+CPL midpoints (Accident & Injury): Google Search $705 (630-780), Meta Cold $170 (150-190).
+Blended CPL = $432.67 (spend-weighted). Conservative adds 20% cushion = $519.20. Aggressive = $432.67.
+Close rate: 15% (default; not stated on call).
+Average case value: $5,000-$8,000 (Accident/Injury practice-area default; NOT stated on call; the rep's "$10,000 net per case" was a hypothetical). Disclosed in the report as an industry default.
+
+Conservative ($10,000/mo): leads 19.3, cases 2.89 (2-3), revenue $14,445-$23,112 (shown $14,000-$23,000), return 1.4x-2.3x.
+Aggressive ($20,000/mo): leads 46.2, cases 6.93 (6-7), revenue $34,668-$55,469 (shown $35,000-$55,000), return 1.7x-2.8x.
+Why-this-range sentence (client-facing): "To put your firm in front of high-intent Dallas injury searches, starting where Rad Law Firm and others are already advertising, and to scale up only as the results earn it."
+
+=== DBM ===
+No personal motive stated on the call (low-confidence inference only). Anchor used throughout: a cost-disciplined operator adding paid channels to an organic-led firm without overpaying ("start at a budget ... if we have good success, then add to the budget"). Closest category: (3) scale. Never presented as a stated personal goal.
+Block 1 DBM statement: "We help Dallas personal injury firms get a measured, expert-managed paid advertising program so they can add new case sources without overpaying and scale only what proves itself."
+
+=== TRAFFIC LIGHTS ===
+Lead Generation: AMBER (organic/website-led system works; past AdWords/LSA; no paid channels observed today)
+Intake: AMBER (not discussed on the call; judged only from public website touchpoints; low confidence)
+Team: AMBER (team size/structure not stated; low confidence)
+Profit: AMBER (Harold knows organic lead costs; paid cost per case unknown)
+Stage: Stage 4 Small Business Manager (one scalable lead-gen system, an organic website engine; multi-attorney website; not a border call with Stage 3).
+Urgency: 6 (from research notes).
+
+=== QUICK WIN OPPORTUNITIES (8) ===
+1. Lead Gen — Launch Google search ads on high-intent Dallas injury searches. Why: none observed for the firm; Rad Law Firm advertising on car accident searches. Competitor: Rad Law Firm.
+2. Lead Gen — Pilot ChatGPT ads as a measured test (Harold's stated interest). No competitor.
+3. Lead Gen — Add Facebook/Instagram retargeting and video. Competitor info limited (Hernandez, Medina & Baggett 1 active ad, not confirmed local → no "Who" row).
+4. Lead Gen (Long-Term) — Close the review gap. 255 vs Thompson Law ~2,000. Competitor: Thompson Law.
+5. Lead Gen (Long-Term) — Fix mobile page speed (43/100). No competitor.
+6. Intake — Check speed-to-lead before scaling ad spend. No competitor.
+7. Profit — Track cost per signed case by channel. No competitor.
+8. Team (Long-Term) — Name one owner for the paid ads weekly review. No competitor.
+
+=== WHAT YOU TOLD US (Block 5) ===
+1. Verbatim: "We don't understand or have any knowledge about the cost or how the system works, so we're looking for an expert to do that for us, and that's why I contacted you." (00:01:24) → supports Paid Ads Starter: SMB Team manages the Google, LSA and Meta campaigns.
+2. Verbatim: "we also recognize that we have to set a budget and try it to kind of see what the results are" (00:11:41) and "we probably would start at a budget. And if we have good success, then add to the budget." (00:14:38) → supports Block 4 low-to-high ad spend range.
+3. Verbatim: "we're interested in running AI-generated ads, or I think you guys have an ad that says that you do that for people on ChatGPT, and we're quite interested in that." (00:01:08) → supports paid program including a ChatGPT test where available, alongside Meta/PPC (00:13:12-00:13:15).
+Quotes are from the full verbatim Fathom transcript (notes STEP 9). Quote boxes used in the report: website (00:04:13) and profit (00:12:09). No intake or team quote exists, so those boxes were deleted.
