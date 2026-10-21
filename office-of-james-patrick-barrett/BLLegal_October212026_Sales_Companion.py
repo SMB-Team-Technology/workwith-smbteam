@@ -55,8 +55,7 @@ WHITE = HexColor("#FFFFFF")
 RED_WARNING = HexColor("#CC0000")
 RED_ACCENT = HexColor("#C0392B")
 
-# FILL: Output path — use format [FirmName]_[MMDDYYYY]_Sales_Companion.pdf
-OUTPUT_PATH = "office-of-james-patrick-barrett/OfficeofJamesPatrickBarrett_October212026_Sales_Companion.pdf"
+OUTPUT_PATH = "office-of-james-patrick-barrett/BLLegal_October212026_Sales_Companion.pdf"
 
 
 def add_page_elements(canvas, doc):
@@ -168,9 +167,7 @@ def quote_block(text):
 # ══════════════════════════════════════════════════════════
 story = []
 
-# FILL: Firm's full legal name
-story.append(Paragraph("Office of James Patrick Barrett", S["title"]))
-# FILL: Sales Companion  |  [Month Day, Year]  |  Rep: [Rep Name]
+story.append(Paragraph("BL Legal (Brooks LeBoeuf Trial Attorneys)", S["title"]))
 story.append(Paragraph("Sales Companion  |  October 21, 2026  |  Rep: Jonathan Farace", S["subtitle"]))
 story.append(thin_rule())
 
@@ -183,12 +180,11 @@ snap = [
      Paragraph("<b>Stage</b>", S["snap_label"]),
      Paragraph("<b>Close Rate</b>", S["snap_label"]),
      Paragraph("<b>Location</b>", S["snap_label"])],
-    # FILL: All six snapshot values from Pass 1 research and transcript
-    [Paragraph("Not confirmed (contact: C. Register)", S["snap_value"]),
-     Paragraph("$3M+ (HubSpot, unverified)", S["snap_value"]),
-     Paragraph("7 attorneys listed", S["snap_value"]),
-     Paragraph("4 (web only)", S["snap_value"]),
-     Paragraph("Not stated (15% default)", S["snap_value"]),
+    [Paragraph("Catherine Register, COO", S["snap_value"]),
+     Paragraph("~$10M (2026)", S["snap_value"]),
+     Paragraph("7 attorneys", S["snap_value"]),
+     Paragraph("Stage 4", S["snap_value"]),
+     Paragraph("~40% referred", S["snap_value"]),
      Paragraph("Tallahassee, FL", S["snap_value"])],
 ]
 t1 = Table(snap, colWidths=[1.15*inch, 1.2*inch, 0.8*inch, 0.7*inch, 0.7*inch, 1.15*inch])
@@ -202,74 +198,61 @@ story.append(t1)
 story.append(Spacer(1, 4))
 
 # ── Dominant Buying Motive ──
-# FILL: "Dominant Buying Motive: [DBM KEYWORD IN CAPS]" — e.g. FREEDOM, SECURITY, LEGACY
-story.append(Paragraph("Dominant Buying Motive: UNKNOWN (NO CALL YET)", S["section"]))
-# FILL: One sentence summarizing what the owner wants — plain language, connects to DBM
-story.append(Paragraph("No transcript exists. Ask what growth should let the owner do, then use their exact words.", S["subsection"]))
+story.append(Paragraph("Dominant Buying Motive: MARKET LEADERSHIP", S["section"]))
+story.append(Paragraph("She wants BL Legal to run as the digital pioneer of Tallahassee and to show the shareholders a fast, provable return in signed cases.", S["subsection"]))
 
-# FILL: 2-4 direct quotes from the transcript that reveal the DBM
-# Use quote_block() for each. Separate with Spacer(1, 1).
-story.append(b("<b>No prospect quotes available.</b> The report uses public-web findings only and contains no quotes."))
+story.append(quote_block("They've brought me here to build their marketing strategy from the ground up."))
+story.append(Spacer(1, 1))
+story.append(quote_block("There's a real room for us to run as like the digital pioneers of this market."))
+story.append(Spacer(1, 1))
+story.append(quote_block("It has to come down to cases signed. And I cannot work with vendors who are like, traffic is up, and impressions are great."))
 story.append(Spacer(1, 2))
 
-# FILL: "What she/he wants:" — 3-5 dark bullets (use bd())
-# Each bullet: bold lead phrase + one short sentence. One idea per bullet.
-story.append(Paragraph("<b>What the firm likely wants (to confirm):</b>", S["subsection"]))
-story.append(bd("<b>Predictable cases.</b> A steady flow of high-value injury cases beyond referrals."))
-story.append(bd("<b>Visibility.</b> To be first in Tallahassee for car, truck, nursing home and malpractice searches."))
-story.append(bd("<b>Conversion.</b> Web visitors who reach out should sign, not wait or leave."))
-story.append(bd("<b>Freedom to grow.</b> Growth that does not depend on any one person (inferred, ask)."))
+story.append(Paragraph("<b>What she wants:</b>", S["subsection"]))
+story.append(bd("<b>Digital leadership.</b> She sees an open lane while rivals lean on TV and billboards."))
+story.append(bd("<b>SEO first.</b> Long-term SEO and her whole Google footprint come first, then paid ads, then YouTube."))
+story.append(bd("<b>Proof in signed cases.</b> She wants attribution beyond \"how did you hear about us?\""))
+story.append(bd("<b>One strong partner.</b> She fears \"jack of all trades, master of none\" and wants LSA and GBP as core."))
 
 story.append(Spacer(1, 2))
 
-# FILL: "What is stopping her/him:" — 3-5 gray bullets (use b())
-# Each bullet: bold lead phrase + one short sentence. One idea per bullet.
-story.append(Paragraph("<b>What is in the way:</b>", S["subsection"]))
-story.append(b("<b>Mobile speed.</b> Lighthouse mobile 33/100, LCP 21.3 s; desktop 94/100."))
-story.append(b("<b>Slow reply promise.</b> The form says an attorney reaches out in 24 to 48 hours."))
-story.append(b("<b>Messy listings.</b> Firm name varies across directories; FindLaw shows Criminal Law."))
-story.append(b("<b>Unseen channels.</b> Google, LSA, Meta, map pack and reviews not observed (tooling limits)."))
-story.append(b("<b>Unknown numbers.</b> Revenue, close rate, case value and budget not yet stated."))
+story.append(Paragraph("<b>What is stopping her:</b>", S["subsection"]))
+story.append(b("<b>Referral-only growth.</b> Almost all cases are referred, and some growth came from lateral hires."))
+story.append(b("<b>No marketing team yet.</b> She is building the function from scratch."))
+story.append(b("<b>Weak current efforts.</b> The SEO vendor underperforms. One attorney runs ads."))
+story.append(b("<b>Budget not final.</b> About $1M to work with. Shareholders review Nov 7."))
+story.append(b("<b>Slow intake.</b> Signing takes a week or two. She calls intake \"suboptimal.\""))
 
 story.append(thin_rule())
 
 # ── Why This Marketing Package ──
 story.append(Paragraph("Why This Marketing Package", S["section"]))
 
-# FILL: "What it does for her/him:" — 2-3 dark bullets (use bd())
-# Transformation statements. What the package makes possible. Not deliverables.
 story.append(Paragraph("<b>What it does for her:</b>", S["subsection"]))
-story.append(bd("Turns a 35-year reputation into one system covering site, local SEO and ads."))
-story.append(bd("Puts the firm in front of high-intent injury searches across Google, LSA and Meta."))
-story.append(bd("Gives one accountable team and one report from first click to signed case."))
+story.append(bd("One team owns the whole path from search to signed case."))
+story.append(bd("The long-game SEO and Google footprint start now, ahead of her mid-November goal."))
+story.append(bd("A fast mobile site and review system sit under every ad dollar she approves."))
 
-# FILL: "[Package Name]  |  $[bundled price]/mo bundled"
-story.append(Paragraph("<b>Full Service Marketing, Platinum  |  $18,997/mo stand-alone</b>", S["subsection"]))
-# FILL: 3-4 gray bullets (use b()) — scoping rationale. One fact per bullet.
-story.append(b("Seller locked Platinum only at stand-alone price (Slack, 10/21/26)."))
-story.append(b("Revenue floor $3M+ (HubSpot, unverified) meets the Platinum tier minimum."))
-story.append(b("Mobile score under 50 means a rebuild, which requires Full Service."))
-story.append(b("Four case types and a $150K ad cap leave room to scale spend."))
+story.append(Paragraph("<b>Full Service Marketing, Platinum  |  $18,997/mo stand-alone (seller override)</b>", S["subsection"]))
+story.append(b("Revenue is about $10M (HubSpot says $3M+), above the $3M Platinum floor."))
+story.append(b("Mobile speed is 36/100, so a rebuild is needed. That requires Full Service."))
+story.append(b("Five case types need deep content. Platinum has 30K words at launch."))
+story.append(b("Seller locked Platinum only, stand-alone price. Bundle price $15,997 not used."))
 
 story.append(thin_rule())
 
-# ── Why This Coaching Package ──
+# ── No coaching package ──
 story.append(Paragraph("Why No Coaching Package, and Confirm Before the Call", S["section"]))
 
-# FILL: "What it does for her/him:" — 2-3 dark bullets (use bd())
-# Transformation statements. What the package makes possible. Not deliverables.
 story.append(Paragraph("<b>Why the plan is marketing only:</b>", S["subsection"]))
-story.append(bd("The decision file paired Elite Coach Plus; the seller removed it."))
-story.append(bd("No call has shown a coaching or operations need yet."))
-story.append(bd("FCOO and FCFO are in the roadmap for later phases."))
+story.append(bd("The seller removed coaching and all other products from this proposal."))
+story.append(bd("She is \"exclusively focused on marketing and intake,\" with no intake partner wanted."))
 
-# FILL: "[Package Name]  |  $[bundled price]/mo bundled"
 story.append(Paragraph("<b>Confirm before the call</b>", S["subsection"]))
-# FILL: 3-4 gray bullets (use b()) — scoping rationale. One fact per bullet.
-story.append(b("<b>Identity mismatch.</b> The trigger name is James Patrick Barrett, but bllegal.com is Brooks LeBoeuf (Tallahassee). Confirm the prospect."))
-story.append(b("<b>Review counts.</b> All competitor counts are unconfirmed; none are in the report. Check Google live."))
-story.append(b("<b>Existing vendor.</b> Ask who runs the site and any marketing today."))
-story.append(b("<b>Approvals.</b> Aggressive spend over $25K needs scoping approval."))
+story.append(b("<b>Review counts unconfirmed.</b> Verify live before the call."))
+story.append(b("<b>Existing vendor.</b> Get the SEO contract end date and her \"committed partnerships.\""))
+story.append(b("<b>Insider info.</b> She was COO at Fasig Brooks. Never quote its numbers."))
+story.append(b("<b>Approvals.</b> MRR over $10K and ad spend over $25K need scoping approval."))
 
 
 # ══════════════════════════════════════════════════════════
@@ -277,69 +260,56 @@ story.append(b("<b>Approvals.</b> Aggressive spend over $25K needs scoping appro
 # ══════════════════════════════════════════════════════════
 story.append(PageBreak())
 
-# FILL: "[Firm Short Name] — Sales Companion (continued)"
-story.append(Paragraph("Office of James Patrick Barrett — Sales Companion (continued)", S["title"]))
+story.append(Paragraph("BL Legal — Sales Companion (continued)", S["title"]))
 story.append(thin_rule())
 
 # ── Why This Ad Spend ──
 story.append(Paragraph("Why This Ad Spend", S["section"]))
 
-# FILL: "What it does for her/him:" — 2 dark bullets (use bd())
 story.append(Paragraph("<b>What it does for her:</b>", S["subsection"]))
-story.append(bd("Captures prospects who are searching for an injury lawyer in Tallahassee today."))
-story.append(bd("Shows which channels earn signed cases, so spend can shift toward what works."))
+story.append(bd("Reaches people searching for a Tallahassee injury lawyer right now, beyond the referral network."))
+story.append(bd("Fits inside the $1M she described, with room to grow as results show."))
 
-# FILL: Ad spend range — conservative (channel minimums) to aggressive (20% rule)
 story.append(Paragraph("<b>Recommended Ad Spend Range:</b>", S["subsection"]))
-story.append(b("<b>Conservative:</b> $7,500/mo — minimum viable spend across Google and Meta retargeting."))
-story.append(b("<b>Aggressive:</b> $30,000/mo — adds LSA and Meta cold traffic to scale volume."))
+story.append(b("<b>Conservative:</b> $9,200/mo — minimum viable spend on Google, LSA and Meta retargeting."))
+story.append(b("<b>Aggressive:</b> $30,000/mo — most that fits her budget. Needs scoping approval."))
 
-# FILL: ROI projection bullets for BOTH levels — all labeled as estimates
-# Use data from Scoping Guide: CPL benchmarks, close rate, avg case value
 story.append(Paragraph("<b>Estimated Return on Investment:</b>", S["subsection"]))
-story.append(b("<b>Conservative:</b> ~1.5 cases x $6.5K = ~$10K/mo vs. $7.5K spend = ~1.3x (estimate)."))
-story.append(b("<b>Aggressive:</b> ~9 cases x $6.5K = ~$58.5K/mo vs. $30K spend = ~2.0x (estimate)."))
-story.append(Paragraph("<i>All figures are estimates. Not guaranteed. Uses a 15% close rate and the $5K–$8K injury default case value (midpoint $6.5K), not the firm's own numbers.</i>", S["disclaimer"]))
+story.append(b("<b>Conservative:</b> 2.2 cases x $35K = $77K/mo vs. $9.2K spend = 8.4x return."))
+story.append(b("<b>Aggressive:</b> 9.1 cases x $35K = $318K/mo vs. $30K spend = 10.6x return."))
+story.append(Paragraph("<i>All figures are estimates. Not guaranteed. Uses a 15% close rate, not her 40% referral rate. The $35K fee is her number, skewed by a few big cases.</i>", S["disclaimer"]))
 
-# FILL: How both numbers were calculated — from Scoping Guide Steps 3-4
 story.append(Paragraph("<b>How the range was calculated:</b>", S["subsection"]))
-story.append(b("<b>Conservative:</b> Injury minimums: Google $6,000 + Meta retargeting $1,200 = $7,200, raised to the $7,500 PI floor."))
-story.append(b("<b>Aggressive:</b> Set at $30,000 by the pipeline. A 20% rule on the $3M floor with a 2x goal would give about $81K; held lower as revenue is unverified."))
-story.append(b("Total at aggressive: $48,997/mo = 19.6% of the $3M floor ($250K/mo). Under the 35% cap."))
+story.append(b("<b>Conservative:</b> Injury minimums: PPC $6,000 + LSA $2,000 + Meta $1,200 = $9,200. The file said $7,500, which is below this sum."))
+story.append(b("<b>Aggressive:</b> $14.5M goal x 20% ÷ 12 = $241,667, capped at $150K. That is far above her budget, so $30,000 stays."))
+story.append(b("Total spend at aggressive: $48,997/mo = 5.9% of revenue. Under the 35% cap."))
 
 story.append(thin_rule())
 
 # ── If She Pushes Back ──
-# FILL: 2-4 objections anticipated from the transcript
-# Each: red question (objection_q style) + gray response (objection_a style)
-# Responses use specific data from the audit — competitor numbers, transcript quotes, etc.
 story.append(Paragraph("If She Pushes Back", S["section"]))
 
-story.append(Paragraph('"$18,997 a month with no bundle discount is a lot."', S["objection_q"]))
-story.append(Paragraph("It covers the rebuild, local SEO and three ad channels in one team. A coaching or ops bundle can be added later, and ad spend flexes from $7,500.", S["objection_a"]))
+story.append(Paragraph('"I\'m meeting Scorpion, Rankings and others. Why you?"', S["objection_q"]))
+story.append(Paragraph("Show the Houston PI client's SEMrush chart she called significant growth. Offer signed-case reports she can check against her own accounts.", S["objection_a"]))
 
-story.append(Paragraph('"Our website is fine; it looks great."', S["objection_q"]))
-story.append(Paragraph("On desktop it is 94/100, but on mobile it is 33/100 with a 21-second load. Injury searches skew mobile.", S["objection_a"]))
+story.append(Paragraph('"That fee is a big slice of my budget."', S["objection_q"]))
+story.append(Paragraph("$18,997/mo is about $228K a year, under a quarter of the $1M she described. Ad spend starts at $9,200 and grows only as results prove out.", S["objection_a"]))
 
-story.append(Paragraph('"We do not want to look like TV and billboard lawyers."', S["objection_q"]))
-story.append(Paragraph("Their own site says not to pick a lawyer from a TV ad. Search and retargeting reach people already looking, with trust-first video and results.", S["objection_a"]))
+story.append(Paragraph('"I\'ve seen it done as jack of all trades, master of none."', S["objection_q"]))
+story.append(Paragraph("LSA, GBP, SEO, Google and Meta are core deliverables under one team, not add-ons. Ask which channel she wants to test first.", S["objection_a"]))
 
 story.append(thin_rule())
 
 # ── Investment At A Glance ──
-# FILL: All pricing from the scoping calculation
 story.append(Paragraph("Investment At A Glance", S["section"]))
 
 price_data = [
-    # FILL: Marketing package name and bundled price
     [Paragraph("<b>Full Service Marketing, Platinum</b>", S["price_main"]),
      Paragraph("$18,997/mo", S["price_main"])],
-    # FILL: One-line description and stand-alone price with strikethrough
-    [Paragraph("Site rebuild, local SEO, Google Ads, LSA and Meta.", S["price_detail"]),
-     Paragraph("Stand-alone price, no bundle discount", S["price_detail"])],
-    # FILL: Recommended ad spend range (conservative to aggressive)
+    [Paragraph("Site rebuild, SEO, GBP, reviews, Google Ads, LSA and Meta.", S["price_detail"]),
+     Paragraph("Stand-alone, no bundle discount", S["price_detail"])],
     [Paragraph("<b>Recommended Ad Spend</b>", S["price_main"]),
-     Paragraph("$7,500–$30,000/mo", S["price_main"])],
+     Paragraph("$9,200–$30,000/mo", S["price_main"])],
     [Paragraph("Goes to Google, LSA, and Meta — not to SMB Team.", S["price_detail"]),
      Paragraph("", S["price_detail"])],
 ]
@@ -354,9 +324,8 @@ pt.setStyle(TableStyle([
     ("LINEBELOW", (0,3), (-1,3), 0.5, RULE_GRAY),
 ]))
 story.append(pt)
-# FILL: Total line — bundled total + ad spend range | savings | % of revenue at aggressive level
 story.append(Paragraph(
-    "Total: $18,997/mo + $7,500–$30,000 ad spend  |  No bundle discount (seller override)  |  10.6%–19.6% of $3M floor revenue (under 35% cap)",
+    "Total: $18,997/mo + $9,200–$30,000 ad spend  |  No bundle discount (seller override)  |  3.4%–5.9% of $10M revenue (under 35% cap)",
     S["savings"]))
 
 # ── Build ──

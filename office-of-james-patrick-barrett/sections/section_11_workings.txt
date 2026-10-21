@@ -1,70 +1,109 @@
-SECTION 11 WORKINGS — Office of James Patrick Barrett — October 21, 2026
-INTERNAL ONLY — never shared with the client
+SECTION 11 WORKINGS — BL Legal (October 21, 2026) — INTERNAL, NEVER CLIENT-FACING
+Sales rep: Jonathan Farace | Prospect decision-maker: COO (decides alone, presents to shareholders Nov 7)
 
-=== OVERRIDE CHECK (Transcript-Stated Need Override) ===
-No discovery call transcript exists. Call purpose, existing-vendor engagements, budget constraints and net revenue are all "not stated" in the research notes.
-1. Call-purpose override: not triggered (call focus unknown; nothing stated that contradicts marketing).
-2. Existing-vendor override: not triggered (none stated; research notes say whether a vendor exists is unknown — ask on the call).
-3. Budget-reality override: not triggered (none stated).
-4. Effective-revenue override: not triggered (no net figure stated; is_contingency_practice true but net_revenue_stated null).
-Departure from package_decision.json: SELLER OVERRIDE only. Decision file (confidence "medium") originally selected Full Service Marketing — Platinum + Elite Coach Plus. Per Slack request on 2026-10-21 (proposal_review.json status "locked"), Elite Coach Plus was removed and Platinum is quoted at STAND-ALONE pricing ($18,997/mo, no bundle discount). Block 3 therefore shows one price and no savings callout.
+================================================================================
+1. TRANSCRIPT-STATED NEED OVERRIDE CHECK
+================================================================================
+Source: research notes STEP 9 + package_decision.json (confidence "medium"; revenue from HubSpot "$3,000,000+", team size defaulted to 3).
 
-=== MANDATORY PRICE LOOKUP ===
+1) Call-purpose override — NOT triggered. Primary engagement = marketing; lead-gen gap stated ("get our conversion marketing dialed in", 00:06:35; "increase everyone's awareness of them like outside of their referral network", 00:11:34). Full Service Marketing is what was discussed.
+2) Existing-vendor override — CONSIDERED, NOT APPLIED (judgment call, flag for rep). The notes record an SEO vendor "in place, I think, since 2024" that she is "not inclined to stay with" (00:22:50), with a meeting with them planned the day after the call, plus in-house Google Ads by one attorney. This is not a recent signing and she is replacing the vendor, not adding to it; she is also interviewing other vendors (SMB was the first meeting). A marketing gap is explicitly stated. She also says the firm has "already committed to some partnerships" out of the 2027 budget (00:26:36) with no details. Verify on the proposal call that no marketing/SEO/ad contract is locked that would make Full Service Marketing redundant.
+3) Budget-reality override — NOT triggered. Stated 2027 budget about $1.5M, "about a million to work with" after commitments (00:26:22-00:26:36), not yet approved (shareholder retreat Nov 7). Platinum at $18,997/mo = $227,964/yr; plus ad spend $9,200-$30,000/mo ($110,400-$360,000/yr) = about $338K-$588K/yr, inside the ~$1M she described. She said the budget is below a 20%-of-revenue benchmark, not that she cannot afford this scope.
+4) Effective-revenue override — NOT triggered. No net/take-home figure stated; about $10M read as firm fee revenue (the rep asked "that's fees to the firm, though, right?" 00:17:58; her answer was not captured). Revenue effective for tiering = at least $3M either way (HubSpot $3M+, call ~$10M) so Platinum holds either way.
+
+Seller override (package_decision.json selection_notes, Slack 2026-10-21): "Full Service Marketing — Platinum only, standalone (retail) pricing $18,997/mo, no coaching or other products." Applied as written. No coaching/FCOO/LAW/Avatar in the recommendation. Roadmap phases mention future products by name only, with no prices.
+Confidence "medium" cross-check: tier (Platinum) confirmed against the notes ($10M revenue, $3M+ floor met). Team size default of 3 is irrelevant (no coaching package). 35% cap: $10M/12 x 35% = $291,667/mo; $18,997 + $30,000 = $48,997/mo — passes (also passes on the $3M HubSpot floor: $87,500/mo).
+
+================================================================================
+2. MANDATORY PRICE LOOKUP (verified against Marketing tier table + Scoping Guide)
+================================================================================
 - Marketing package selected: Full Service Marketing — Platinum
-  - Bundled price (from table): $15,997/mo (NOT used — seller override to stand-alone)
+  - Bundled price (from table): $15,997/mo (NOT USED — seller override requires standalone pricing)
   - Stand-alone price (from table): $18,997/mo (USED)
-  - Savings quoted to client: $0
-- Non-marketing package selected: none (seller override)
+  - Savings (stand-alone minus bundled shown to client): $0/mo (no bundle discount shown; no "You save" callout)
+- Non-marketing package selected: none
 - Legal AI Workforce (LAW) package selected: none
 - AI Avatar / Video Growth add-on selected: none
-- Total monthly investment (client-facing): $18,997/mo
-- Total savings (client-facing): $0
+- Total monthly investment: $18,997/mo
+- Total savings: $0/mo
+Ad spend cap for Platinum tier: $150,000/mo (both scenarios under cap).
 
-Eligibility checks: revenue $3,000,000+ (HubSpot floor, unverified) meets Platinum floor of $3M. Platinum hides Essentials/Starter etc. Personal Injury: Essentials hidden, n/a. 35% cap: $3M / 12 x 35% = $87,500/mo minimum cap; $18,997 + $30,000 ad spend = $48,997 — within cap even on the revenue floor.
-Platinum ad spend cap: $150,000/mo — not exceeded.
+================================================================================
+3. AD SPEND — CONSERVATIVE AND AGGRESSIVE
+================================================================================
+CORRECTION to package_decision.json (confidence "medium" cross-check): decision file lists $7,500 conservative / $30,000 aggressive. $7,500 is only the PI-Medium hard floor and is below the sum of channel minimums for the channels in Platinum Full Service Marketing, so it was raised to $9,200. Aggressive $30,000 from the decision file is KEPT. package_decision.json was not edited.
 
-=== AD SPEND AND ROI (marketing package is part of the recommendation) ===
-Practice-area basis: Accident/Injury (General). Revenue goal: not stated (2x current revenue rule needs an unknown current revenue; HubSpot floor $3M used only as a sanity check). Close rate: not stated -> default 15%. Average case value: not stated -> practice-area default $5,000–$8,000, midpoint $6,500 used. DISCLOSED in the client-facing disclaimer. Website case results ($2.0M–$5.8M) are headline settlements, not averages, and were not used.
-CPL midpoints (client-facing table, Accident & Injury): Google Search $705 | LSA $235 | Meta Retargeting $90 | Meta Cold $170.
+Conservative = sum of channel minimums, Accident/Injury (General) row: Google PPC $6,000 + LSA $2,000 + Meta Retargeting $1,200 = $9,200/mo. Clears PI-Medium floor ($7,500) and the "all 3 primary channels typically $8,000" benchmark. Competitiveness read as Medium (Tallahassee is a mid-size market; top competitors have large review bases; no Tier 1-2 market).
+  Channel mix: Google 65.2% / LSA 21.7% / Meta retargeting 13.0%
+  CPL midpoints (Accident & Injury): Google $705, LSA $235, Meta retargeting $90
+  Blended CPL = $522.6; +20% cushion = $627.1
+  Leads = 9,200 / 627.1 = 14.7
+  Close rate = 15% (default). Prospect's ~40% is a referral-lead rate and is NOT used (she said it "certainly is not a testament to a strong intake process", 00:14:14).
+  Cases = 2.2 per month (shown as ~2)
+  Average case value = $35,000 (prospect: "They're saying 35K", 00:18:59, with her caveat that the average is lifted by a small number of large cases). NOT a default; disclosed in client report as firm-reported.
+  Revenue = 2.2 x $35,000 = ~$77,000/mo
+  Return = $77,017 / $9,200 = ~8.4x
 
-Conservative ad spend: $7,500/mo (from package_decision.json; = PI medium-competitiveness hard floor $7,500; channel minimums Google $6,000 + Meta retargeting $1,200 = $7,200, floored to $7,500).
-  Allocation: Google Search $6,300 (84%), Meta Retargeting $1,200 (16%).
-  Blended CPL (spend-weighted midpoints) = $606.60; +20% cushion = $727.92.
-  Leads = 7,500 / 727.92 = 10.3. Cases (15%) = 1.55 (~1–2). Revenue = 1.55 x $6,500 = ~$10,000. Return = ~1.3x.
-Aggressive ad spend: $30,000/mo (from package_decision.json).
-  Allocation: Google Search $18,000 (60%), LSA $6,000 (20%), Meta Retargeting $1,500 (5%), Meta Cold $4,500 (15%).
-  Blended CPL (no cushion) = $500.00.
-  Leads = 30,000 / 500 = 60. Cases (15%) = 9. Revenue = 9 x $6,500 = $58,500. Return = ~1.95x (shown as ~2.0x).
-Note for sales: a strict 20%-rule calc on the $3M floor with a 2x goal ($6M x 20% / 12 x 1.0 Tier 4 geo - $18,997 fee) would give roughly $81,000/mo. The $30,000 figure from package_decision.json was kept because revenue is only an unverified HubSpot floor with no call; revisit once revenue and goal are known.
-Why-this-range sentence (client-facing): "To put the firm in front of high-intent Tallahassee car, truck and injury searches and turn them into signed cases before competitors like Shapiro Law Firm and The Pelham Law Firm reach those prospects first."
+Aggressive = $30,000/mo (decision file). The 20%-rule/reverse-math output is far higher and would hit the $150,000 Platinum cap: $14.5M 3-year goal (rep-read, not prospect-confirmed) x 20% / 12 = $241,667/mo x 1.0 (Tier 4 market) - $18,997 = ~$222,670/mo; reverse math ($14.5M/12 / $35K = 34.5 cases / 15% = 230 leads x ~$496 CPL) = ~$114K/mo. Both exceed the roughly $64K/mo that fits inside her stated ~$1M annual budget after the management fee ($83,333/mo total - $18,997), and she said the budget is a starting point to be increased "as we know what works" (00:27:22). $30,000 was therefore kept as the aggressive figure so the range stays inside her budget and matches what the seller reviewed. FLAG: paid-ads team review (revenue goal exceeds projected ad revenue at this spend).
+  Channel mix: Google $18,000 (60%) / LSA $6,000 (20%) / Meta $6,000 (20%: $3,000 retargeting at $90 + $3,000 cold at $170)
+  Blended CPL (no cushion) = $496.0
+  Leads = 30,000 / 496.0 = 60.5
+  Cases = 60.5 x 15% = 9.1 per month (shown as ~9)
+  Revenue = 9.07 x $35,000 = ~$317,500/mo
+  Return = $317,540 / $30,000 = ~10.6x
 
-=== DBM STATEMENT (Block 1) ===
-No DBM was stated (no call). Inferred per the DBM rule: a firm that grows predictably without depending on any one person's calendar. Marked as inference; no quotes used anywhere in the report.
+Why-this-range sentence (client-facing, in Block 4): puts the firm in front of high-intent Tallahassee injury searches and turns them into signed cases before Fasig Brooks and Scott & Wallace capture them. Draws from the competitor gap in Section 5/6 and the practice area; no CPL, tier, or cap language.
 
-=== QUICK WIN OPPORTUNITIES (8) ===
-1. Lead Gen — Fix mobile site speed (Lighthouse mobile 33/100, LCP 21.3 s). Why: injury searches skew mobile. Competitor: none named for speed (not tested). Quick Win.
-2. Intake — Replace the "24–48 hour" form promise with a same-day response standard. Why: site's own copy sets slow expectation. No competitor. Quick Win.
-3. Lead Gen — Standardize firm name and categories across directories. Why: three different name forms plus "LeBeouf" misspelling on the site; FindLaw category mismatch. Competitor: Shapiro Law Firm (dedicated Tallahassee injury domain). Quick Win.
-4. Lead Gen — Confirm and build out Google Ads, LSA and Meta (not observed in this review). Why: unobserved, not confirmed absent. Competitor: none (competitor ad data not observed). Long-Term Play.
-5. Team — Assign an owner for marketing and intake metrics. Why: seven attorneys, ownership of growth numbers unknown. No competitor. Long-Term Play.
-6. Profit — Track cost per signed case and return on ad spend. Why: no acquisition cost known. No competitor. Quick Win.
-7. Lead Gen — Verify Google reviews and map-pack position, then launch a review program. Why: firm review count not obtained. Competitor: The Pelham Law Firm (overlapping practice areas, 30+ years). Quick Win. (No review counts printed — all UNCONFIRMED.)
-8. Intake — Add above-the-fold form / click-to-text. Why: form sits mid-page. No competitor. Long-Term Play.
+================================================================================
+4. DBM
+================================================================================
+No personal/lifestyle motive stated. Inferred DBM (scale and dominate, as a professional builder): "run as the digital pioneers of this market" (00:32:49), with fast, provable ROI for the shareholders. Block 1 formula: "We help established Florida personal injury firms get a predictable flow of high-value signed cases from digital channels so they can run as the digital pioneers of their market."
 
-=== BLOCK 5: WHAT WE FOUND (NO TRANSCRIPT FALLBACK) ===
-Heading retitled "What We Found — and How This Plan Addresses It". No row is worded as if the owner said it.
-Row 1: Mobile site scores 33/100 in a Lighthouse test. Source: Section 6 Website Audit / Section 5 Lead Generation. Supports: FSM Platinum website and SEO work.
-Row 2: Firm name and categories inconsistent across directories; map-pack and Google profile position not yet confirmed. Source: Section 6 Local SEO. Supports: FSM Platinum local SEO and Google Business Profile management.
-Row 3: Paid search, Local Service Ads and Facebook/Instagram ad activity not yet confirmed. Source: Section 6 Google Ads, LSA, Meta. Supports: FSM Platinum ads management across Google, LSA and Meta.
-Next step: kickoff call with the Onboarding team.
+Firm stage: Stage 4 (Small Business Manager). Rationale: a 7-attorney firm with an operations leader and leadership structure is past the Solo Practitioner stage; referral dependence and the lack of a scalable lead-gen system keep it from Stage 5. Not a Stage 3/4 border on team size, so the lower-stage tiebreak was not needed.
 
-=== ESCALATION FLAGS (internal) ===
-- FIRM IDENTITY MISMATCH (from research notes): trigger firm "Office of James Patrick Barrett" vs website bllegal.com, which belongs to Brooks, LeBoeuf, Foster, Gwartney, Hobbs, Fusco & Richards, P.A. (Tallahassee). All research describes the bllegal.com firm. Confirm the prospect with Jonathan before this goes to the client; if different, Pass 1 must be re-run.
-- No discovery call transcript: revenue ($3M+ is a HubSpot floor), team size, close rate, DBM, goals, budget and lead sources are unknown. Collect on the 10/21 proposal call.
-- Review counts unconfirmed — verify live before the call (all competitor and directory counts are UNCONFIRMED; none printed in the client report). Firm's own Google count was not obtained.
-- Ad spend over $25K (aggressive $30,000/mo) -> scoping approval required.
-- Personal Injury in Tallahassee: confirm top-40-metro status for approval rule (Tallahassee is not a top-40 metro to our knowledge — verify).
-- Revenue goal / ad revenue: conservative scenario returns only ~1.3x on default case values; paid ads team review recommended once real case values are known.
-- Google/LSA/Meta/3-pack checks not run (tooling limits) — rerun with a live browser before the call.
-- Platinum quoted at stand-alone pricing per seller override (no bundle discount); the roadmap deliberately omits dollar figures for later-phase products.
-- Urgency score 5 is low-confidence (no ads/3-pack/review observation, unresolved identity question).
+Traffic lights: Lead Gen RED (cases "solely" from referrals; in-house ads/SEO/billboards uncoordinated and underperforming); Intake AMBER (delegated process exists, ~40% on referred leads, but slow signing and answering-service after hours); Team AMBER (leadership exists, marketing function being built from scratch, reporting reliability uncertain); Profit AMBER (revenue growing, margins and marketing ROI not visible). Urgency score 6.
+
+================================================================================
+5. QUICK WIN OPPORTUNITIES (8 in client report)
+================================================================================
+1. Lead Gen / Quick Win — Fix mobile site speed. Why: mobile Lighthouse 36/100 (LCP 11.5s, TBT 2,410ms) vs desktop 94. Competitor: none. Opportunity: mobile-first rebuild included in Platinum.
+2. Lead Gen / Quick Win — Strengthen map pack position and Google reviews. Why: third in the rep's live search behind Fasig Brooks and Scott & Wallace; prospect wants help systemizing reviews (00:49:53). Competitor: Fasig Brooks (top map position, much larger review base; no figure printed). Opportunity: GBP management, directory cleanup, done-for-you review generation.
+3. Lead Gen / Quick Win — Put strategic paid search and Local Service Ads behind highest-value case types. Why: in-house Google Ads by one attorney, no sophisticated strategy (00:23:21); she wants a partner strong in LSA/GBP (00:35:25). Competitor: none. Opportunity: Google Ads + LSA management by practice area.
+4. Lead Gen / Long-Term — Build SEO and AI-search content foundation by case type. Why: top-performing page attracts "the worst leads" (00:22:36); SEO is her #1 priority and a long game (00:06:19). Competitor: Scott & Wallace (ahead in map pack). Opportunity: 30,000-word launch content plan, 48,000 words/yr, backlinks.
+5. Intake / Quick Win — Set a same-day response standard for digital leads. Why: site promises 24-48 hour reply; signing takes a week or two (00:14:49). Competitor: none. Opportunity: internal standard, no SMB product required.
+6. Intake / Long-Term — Build a digital-lead intake playbook, incl. after-hours screening. Why: answering service only (00:48:00); 40% rate is referral-based. Competitor: none. Opportunity: follow-up cadence + after-hours. (No Attorney Assistant recommended; fit not established — if rep wants it, "confirm qualification with sales rep" flag applies.)
+7. Team / Quick Win — Name one internal owner for the marketing-to-intake handoff. Why: marketing function is being built from scratch (00:02:34). Competitor: none. Opportunity: single accountable owner + weekly review of signed cases by source.
+8. Profit / Long-Term — Track cost per signed case by case type. Why: $35K average lifted by few large cases (00:19:07); attribution beyond "how did you hear about us" (00:38:53). Competitor: none. Opportunity: reporting by case type for the shareholder review.
+
+================================================================================
+6. WHAT YOU TOLD US (Block 5) — verbatim sources
+================================================================================
+Row 1 (central package: Full Service Marketing — Platinum; reddest pillar = Lead Gen)
+  Item: highest priority is starting a long-term SEO investment and owning the entire Google footprint.
+  Verbatim: [00:06:19] "my highest priority right now is … starting our SEO investment, given that that's such a long game." and [00:28:01] "our entire Google footprint"
+  Supports Block 2: website rebuild, 30,000-word launch content / 48,000 words per year, local SEO and Google Business Profile, backlinks, review generation.
+Row 2
+  Item: wants more people to know the firm beyond its referral network.
+  Verbatim: [00:11:34] "increase everyone's awareness of them like outside of their referral network."
+  Supports Block 2: Google Ads and Local Service Ads management across every practice area; Meta retargeting and lead generation.
+Row 3
+  Item: judges any partner on cases signed, not traffic or impressions.
+  Verbatim: [00:38:15] "it has to come down to cases signed. And I cannot work with vendors who are like, traffic is up, and impressions are great."
+  Supports Block 2: ongoing reporting and campaign optimization across all channels.
+Next-step line: kickoff call with your Onboarding team.
+Excluded on purpose: named employees, the former-employer insider figures (budget %, TV spend, SEO history), lateral fee-split percentages, the $1.5M/$1M budget figures, and the shareholder-retreat details.
+
+================================================================================
+7. ESCALATION FLAGS (INTERNAL ONLY)
+================================================================================
+- Review counts unconfirmed — verify live before the call. No Google review figure for BL Legal or any competitor was read off a Google listing; BL's 316 is a rep statement; competitor counts come from web-search snippets. None printed in the client report (qualitative framing only). Map pack position (third behind Fasig Brooks and Scott & Wallace) is from the rep's live search on the call — re-check live.
+- Marketing MRR over $10K ($18,997/mo) → scoping approval required.
+- Ad spend over $25K (aggressive $30,000/mo) → scoping approval required.
+- Revenue goal exceeds projected ad revenue at the aggressive spend → paid ads team review.
+- Ad spend correction: conservative raised from decision-file $7,500 to $9,200 (channel-minimum sum). Confirm with paid ads team.
+- Existing-vendor check: confirm no signed SEO/marketing contract or "committed partnerships" overlap Full Service Marketing.
+- Revenue: ~$10M is the prospect's figure; her answer on fees vs. gross settlements was not captured. Revenue goals ($14.5M in 3 years, $25M in 10) were read out by the rep, not stated by her.
+- Insider information: the prospect was COO at Fasig Brooks for almost four years. None of her inside figures appear in the client report. Do not volunteer Fasig Brooks' internal numbers on the call.
+- Package: seller override locked Platinum standalone; no bundle discount shown. Not offered: coaching, FCOO, LAW, AI Avatar, OmniSocial, Attorney Assistant.
+- Timeline: decision made by one person; shareholder retreat Nov 7; she wants provider choices locked by the last week of October and as much deployed as possible by mid-November.
+- Competing vendors being evaluated: Rankings, Scorpion, others. Her criteria: signed-case attribution, honest reporting, a very involved client relationship.
