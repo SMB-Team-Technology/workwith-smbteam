@@ -1,0 +1,38 @@
+{
+  "confidence": "medium",
+  "needs_seller_input": false,
+  "revenue_stated": 250000,
+  "net_revenue_stated": null,
+  "is_contingency_practice": false,
+  "revenue_effective": 250000,
+  "revenue_source": "research_notes_transcript",
+  "team_size_stated": 1,
+  "team_size_effective": 1,
+  "practice_areas_detected": [
+    "criminal defense"
+  ],
+  "marketing_tier": null,
+  "marketing_name": null,
+  "marketing_price_bundled": null,
+  "marketing_price_retail": null,
+  "marketing_savings": null,
+  "coaching_name": null,
+  "coaching_price_bundled": null,
+  "coaching_price_retail": null,
+  "coaching_savings": null,
+  "law_tier": "AI Workforce Pro – Starter",
+  "law_name": "AI Workforce Pro – Starter",
+  "law_price_bundled": 350,
+  "law_price_retail": null,
+  "law_seats": 1,
+  "law_savings": 0,
+  "total_bundled": 350,
+  "total_savings": 0,
+  "ad_spend_conservative": null,
+  "ad_spend_aggressive": null,
+  "selection_notes": [
+    "package_decision.json was missing (select-package.mjs skips generation when the audit trigger carries an explicit package override); created at seller request.",
+    "Seller override: package set to AI Workforce Pro only per Slack request on October 21, 2026 — marketing, coaching, and Fractional CTO excluded; ad-spend fields nulled.",
+    "Tier used: AI Workforce Pro – Starter ($350/user/mo, 1–4 users) with 1 seat, because the firm is a solo practitioner (team size 1, no staff per research notes). Base AI Workforce Pro ($1,597/mo) requires 5+ users. No standalone price exists for AI Workforce Pro, so retail/savings are null/0."
+  ]
+}
