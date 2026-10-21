@@ -1,0 +1,140 @@
+<!-- ⚠️ NO CSS IN THIS FILE. No <style> blocks. No inline styles. No style="" attributes.
+     All styling comes from audit_styles.css only. Use only existing class names.
+     If you find yourself writing CSS — stop and delete it. -->
+<!-- ============================================================
+     SECTION 05 — YOUR GROWTH HEALTH ASSESSMENT
+     
+     INSTRUCTIONS FOR COWORK:
+     - For each traffic circle: use class "red", "amber", or "green" based on your rating
+     - For each sc-findings list: write 2-3 specific bullet points for this firm only
+     - For sc-dbm: one italic sentence connecting this pillar to income, freedom, or DBM
+     - For urgency score: replace the number, set left% = (score/10)*100 on the marker
+     - For urgency sentence: use the correct dynamic sentence based on score range
+     - For competitor cards: write 2-3 named competitors with specific threat reasons
+     - Do not add inline styles. Do not change class names.
+     ============================================================ -->
+
+<div class="section-header" id="growth-health">
+  <div class="section-header-inner">
+    <h2>Your Growth Health Assessment</h2>
+    <div class="subtext">Law Office of Matthew K. Tannenbaum</div>
+  </div>
+</div>
+
+<div class="content-wrap">
+
+  <div class="legend">
+    <div class="legend-item">
+      <div class="legend-dot red"></div>
+      <div class="legend-label">Red <span>— Critical Priority</span></div>
+    </div>
+    <div class="legend-item">
+      <div class="legend-dot amber"></div>
+      <div class="legend-label">Amber <span>— In Progress</span></div>
+    </div>
+    <div class="legend-item">
+      <div class="legend-dot green"></div>
+      <div class="legend-label">Green <span>— On Track</span></div>
+    </div>
+  </div>
+
+  <div class="scorecard-label">Pillar Health Scorecard</div>
+
+  <div class="scorecard-grid">
+
+    <!-- LEAD GENERATION CARD -->
+    <div class="sc-card">
+      <div class="sc-card-header"><h3>Lead Generation</h3></div>
+      <div class="sc-card-body">
+        <div class="traffic-circle green"></div>
+        <ul class="sc-findings">
+          <li>The owner reports the marketing is working and that he is not short of leads</li>
+          <li>The firm's review profile looks strong next to the named local competitors reviewed</li>
+          <li>Lead flow appears to depend on one working channel, so adding depth over time protects it against seasonal slow stretches</li>
+        </ul>
+        <div class="sc-dbm">Steady lead flow is what lets you stay selective about the cases you take instead of chasing volume.</div>
+      </div>
+    </div>
+
+    <!-- INTAKE CARD -->
+    <div class="sc-card">
+      <div class="sc-card-header"><h3>Intake</h3></div>
+      <div class="sc-card-body">
+        <div class="traffic-circle amber"></div>
+        <ul class="sc-findings">
+          <li>An answering service screens calls so most unwanted matters never reach the owner</li>
+          <li>The website offers a free consultation, but the handling of qualified leads after the first screen was not discussed and appears to rest with the owner</li>
+          <li>With no team described beyond the answering service, tenant-side inquiries are turned away rather than converted</li>
+        </ul>
+        <div class="sc-dbm">Every call handled well without you is time you do not have to spend at your desk.</div>
+      </div>
+    </div>
+
+    <!-- SELF-MANAGING TEAM CARD -->
+    <div class="sc-card">
+      <div class="sc-card-header"><h3>Self-Managing Team</h3></div>
+      <div class="sc-card-body">
+        <div class="traffic-circle red"></div>
+        <ul class="sc-findings">
+          <li>Solo practice with no described team, so drafting, research and case work all land on the owner</li>
+          <li>The owner worked almost every Saturday until this year and has said there is not the manpower to take on more work</li>
+          <li>AI is already taking on drafting, which is the first step toward a practice that carries more of the workload on its own</li>
+        </ul>
+        <div class="sc-dbm">A practice that carries the workload is what turns your Saturdays back into your own time.</div>
+      </div>
+    </div>
+
+    <!-- PROFIT CARD -->
+    <div class="sc-card">
+      <div class="sc-card-header"><h3>Profit</h3></div>
+      <div class="sc-card-body">
+        <div class="traffic-circle amber"></div>
+        <ul class="sc-findings">
+          <li>The firm is positioned as high service at a premium, not high volume, which supports strong revenue per matter</li>
+          <li>Revenue, margins and profit targets were not discussed, so the numbers behind the model are not yet visible in this review</li>
+          <li>Capacity, not demand, is the ceiling on revenue today, so freeing owner hours is the most direct lever on profit</li>
+        </ul>
+        <div class="sc-dbm">The goal is a boutique practice where profit is planned and the owner is not the bottleneck.</div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- COMPETITIVE URGENCY SCORE -->
+  <div class="urgency-card" id="urgency-score">
+    <div class="urgency-label">Competitive Urgency Score</div>
+
+    <div class="urgency-score">3</div>
+    <div class="urgency-outof">out of 10</div>
+
+    <div class="urgency-sentence">A score of 3 means no single competitor is dominating your market yet — but that will not last forever. The firms that win markets do so by moving first. Getting your systems in place now means you set the standard before someone else does.</div>
+
+    <div style="margin-bottom:10px;">
+      <div class="urgency-bar"><div class="urgency-marker" style="left:30%;"></div></div>
+      <div class="urgency-scale">
+        <span>1–3 = Low Urgency</span>
+        <span>4–6 = Moderate</span>
+        <span>7–10 = High Urgency</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="competitors-label">Your Top Competitive Threats</div>
+
+  <div class="competitor-card">
+    <div class="competitor-name">Gregory T. Levy, PC</div>
+    <div class="competitor-threat">A Garden City real estate firm with a strong directory rating signal and a review profile worth watching. It is the closest local competitor for real estate transaction searches in the same town.</div>
+  </div>
+
+  <div class="competitor-card">
+    <div class="competitor-name">Weidenbaum &amp; Harari</div>
+    <div class="competitor-threat">A Long Island landlord-tenant firm with a sizable review profile for this practice area. It is the closest peer on visibility in the landlord-tenant space.</div>
+  </div>
+
+  <div class="competitor-card">
+    <div class="competitor-name">The Price Law Firm</div>
+    <div class="competitor-threat">Publishes Nassau County and Long Island landlord-tenant content. It focuses on the tenant side, so it is an indirect competitor, but it competes for the same local searches.</div>
+  </div>
+
+</div>
+<div class="back-to-top"><a href="#toc">↑ Back to Top</a></div>
