@@ -1,0 +1,480 @@
+================================================================================
+MASON LAW (Mason Law and Planning Group) — GROWTH AUDIT RESEARCH NOTES
+================================================================================
+Firm: Mason Law (Mason Law and Planning Group, LLC / P.C. — both forms appear in directories)
+Friendly name: mason-law
+URL: http://MLAPG.com (301 to https://mlapg.com — confirmed live, HTTP 200)
+Sales Rep: Dan Bryant
+Date: October 23, 2026 (proposal call). Discovery call held October 21, 2026.
+Contact: Paul Mason (Founder/Owner) — paul@mlapg.com — 719-290-5218
+Also on call: Sydney (Director of Marketing)
+Offices: Monument (HQ) 16055 Old Forest Point, Suite 301, Monument, CO 80132 — (719) 428-4495
+         Castle Rock (satellite) 333 Perry Street, Suite 309, Castle Rock, CO 80104 — (303) 656-2148 (per Google)
+HubSpot deal: 65825635744
+
+RESEARCH METHOD / LIMITS (read this first)
+- No interactive browser was available. Google results and the Meta Ad Library were
+  rendered with headless Chrome on 2026-10-21 (location set via Google's "near="
+  parameter, not a physical device in the market). Local pack / LSA results can vary
+  by searcher location and time. All Google review counts and ratings below were read
+  from those live Google renders and are tagged [confirmed via Google].
+- pagespeed.web.dev / the PageSpeed API returned HTTP 429 (daily quota exhausted).
+  PageSpeed scores below are from a local Lighthouse 12.8.2 run (the same engine PSI
+  uses) — see STEP 1 for caveats.
+- Yelp and Justia could not be read (bot walls). Flagged in STEP 5.
+- Earlier web-search snippets quoted conflicting review counts for the firm (562 vs
+  598) and for competitors (e.g., Goines Law 125 vs 167; Hancock 15 vs 227). Those were
+  third-party aggregator figures that disagree with each other and with live Google.
+  They are DISCARDED; only live-Google figures are used below.
+
+================================================================================
+STEP 1 — WEBSITE RESEARCH
+================================================================================
+Website URL confirmed live: Yes (http://MLAPG.com -> https://mlapg.com, 200).
+Last redesign date or estimated age: Not date-stamped. WordPress + Elementor 4.3.4
+  (Hello Elementor child theme), Site Kit by Google, GTM + GA4 tags present;
+  footer "© Copyright 2026 | Mason Law and Planning Group". Actively maintained.
+Mobile responsive: Yes (viewport meta tag present, Elementor responsive build).
+  Performance on mobile is poor — see PageSpeed below.
+Homepage headline: "Estate Planning Attorneys Serving Colorado"
+  (page title: "Estate Planning Attorney Colorado | Wills, Trusts & Probate")
+CTA above fold: Yes — "Schedule A Consultation" button in hero; phone 719-428-4495
+  linked (tel:) in header/footer.
+Contact form location: Lower on homepage, under "Contact Mason Law to Start Your
+  Estate Plan" (name, phone, email, message). Not in the hero.
+Live chat present: No (no chat widget in page source).
+Attorney bio present: Yes — "Meet Our Attorneys" navigation and /about-mason-law/ page.
+Video present: No video observed on homepage (the only iframe is a Google Map embed).
+Blog present: Yes — "Legal News" section; latest post observed dated October 20, 2026
+  ("Using a Trust to Control the Timing of an Inheritance"). Posts are also surfacing
+  as Google Business Profile updates (see STEP 2).
+Other site observations:
+- Practice areas listed on site: Estate Planning, Trusts, Wills, Probate, Business
+  Formation, Asset Protection, Succession Planning, Charitable Giving.
+- Dedicated location pages exist: /monument-estate-planning-attorney,
+  /castle-rock-estate-planning/, /colorado-springs/ (Colorado Springs page lists
+  "Monument & Surrounding Areas"), with will / trust / probate service pages per area.
+- Four free dinner seminars listed: Oct 28, 2026 (Woodmoor); Nov 5, 2026 (Cañon City);
+  Nov 10, 2026 (Monument office); Dec 3, 2026 (Colorado Springs).
+- Business hours (Mon–Fri 8:30 AM–5:00 PM, weekends closed) are displayed on the site.
+  (Relevant to rep's call recommendation to remove hours from the website before
+  changing GBP hours — transcript 00:37.)
+- No review counts or testimonials displayed on the pages fetched.
+- Woodland Park location page: not observed (lease signed per transcript).
+
+PageSpeed mobile score: 26 (Lighthouse run 1) and 31 (run 2) — report as 26–31.
+  Run 1: LCP 48.7 s, TBT 2,600 ms, CLS 0.053. Run 2: FCP 14.4 s, LCP 39.5 s, TBT 1,210 ms.
+  Source: local Lighthouse 12.8.2, mobile emulation (Moto G Power, slow 4G throttling),
+  headless Chrome on a CI runner — NOT pagespeed.web.dev (API 429). A CI runner can be
+  slower than Google's lab, so treat the absolute LCP as pessimistic; the "poor" rating
+  is consistent across both runs. LCP element is a large Elementor container.
+PageSpeed desktop score: 79 (Lighthouse run, LCP 3.1 s, TBT 100 ms, CLS 0.039).
+  Same source/caveat. RECOMMEND re-running pagespeed.web.dev manually before quoting
+  specific numbers to the client.
+
+>> SAVED: website section complete.
+
+================================================================================
+STEP 2 — GOOGLE BUSINESS PROFILE
+================================================================================
+GBP found: Yes — two profiles.
+Profile A (Monument, main): "Mason Law and Planning Group"
+- Star rating: 5.0 [confirmed via Google]
+- Total review count: 855 [confirmed via Google] (the same 855 shows on the Local
+  Services Ads listing)
+- Most recent review date: not captured (reviews panel did not render dates).
+- Primary category: Estate planning attorney (exact, as shown on Google). Per the rep on
+  the call (00:16:42), secondary categories include "law firm attorney" and "legal
+  services"; the rep recommended adding Probate attorney and Elder law attorney.
+- Photos active: Yes (photo and exterior views present).
+- Posts active: Yes — GBP updates observed "2 hours ago", "2 days ago", "5 days ago" on
+  trust / personal-representative / inheritance topics (mirroring the blog).
+- Address / phone / hours: 16055 Old Forest Point Ste 301, Monument, CO 80132;
+  (719) 428-4495; Mon–Fri 8:30 AM–5 PM, Sat–Sun closed. "Located in: Jackson Creek
+  Commerce Center". Website link: https://mlapg.com/monument-estate-planning-attorney
+- Google listing tags seen on results: "Flat rate pricing", "Local business",
+  "14+ years in business".
+Profile B (Castle Rock satellite): "Mason Law and Planning Group"
+- Star rating: 5.0 [confirmed via Google]
+- Total review count: 98 on the local pack listing / 97 on the LSA listing
+  [confirmed via Google] (one-review difference between two Google surfaces rendered
+  minutes apart; use "about 100" if quoting).
+- Address / phone: 333 Perry St #309, Castle Rock, CO 80104; (303) 656-2148;
+  open to 5 PM.
+Review quote seen in pack: "Mason Law helped my wife and I with our estate planning,
+  wills and trust."
+
+================================================================================
+STEP 3 — LOCAL 3-PACK SEARCHES
+================================================================================
+Run 2026-10-21, desktop headless render, location set per query. Every count below
+carries [confirmed via Google] (read from the live Google results page).
+
+Practice Area 1: Estate planning
+- Search 1 "estate planning attorney monument co": firm appears YES (#1) — pack:
+  Mason Law and Planning Group (855, 5.0), The Vinton Law Firm, P.C. (39, 4.7), The Law
+  Office of Kevin R. Hancock (303, 4.9) [confirmed via Google]
+- Search 2 "estate planning attorney colorado springs": firm appears NO — pack: Wiley
+  Reynolds PLLC (60, 5.0), The Law Office of Kevin R. Hancock (303, 4.9), Law Office of
+  Bridget Rachel Grace (117, 4.9) [confirmed via Google]
+- Search 3 "estate planning attorney castle rock co": firm appears YES (#2, Castle Rock
+  profile) — pack: The Law Offices of Shannon J. Marino (67, 5.0), Mason Law and
+  Planning Group (98, 5.0), Walters Law LLC (67, 5.0) [confirmed via Google]
+
+Practice Area 2: Trusts
+- Search 1 "living trust attorney monument co": firm appears YES (#1) — pack: Mason Law
+  and Planning Group (855, 5.0), The Vinton Law Firm, P.C. (39, 4.7), The Law Office of
+  Kevin R. Hancock (303, 4.9) [confirmed via Google]
+- Search 2 "living trust attorney colorado springs": firm appears NO — pack: Law Office
+  of Bridget Rachel Grace (117, 4.9), The Law Office of Kevin R. Hancock (303, 4.9),
+  Wiley Reynolds PLLC (60, 5.0) [confirmed via Google]
+- Search 3 "trust attorney castle rock co": firm appears YES (#2) — pack: The Law
+  Offices of Shannon J. Marino (67, 5.0), Mason Law and Planning Group (98, 5.0),
+  Walters Law LLC (67, 5.0) [confirmed via Google]
+
+Practice Area 3: Wills
+- Search 1 "wills attorney monument co": firm appears YES (#1) — pack: Mason Law and
+  Planning Group (855, 5.0), The Vinton Law Firm, P.C. (39, 4.7), The Law Office of
+  Karen Monk, LLC (3, 5.0) [confirmed via Google]
+- Search 2 "wills attorney colorado springs": firm appears NO — pack: Wiley Reynolds
+  PLLC (60, 5.0), Wm. Andrew Wills II, P.C. (7, 5.0), The Law Office of Kevin R. Hancock
+  (303, 4.9) [confirmed via Google]
+- Search 3 "wills lawyer castle rock co": firm appears NO — pack: The Law Offices of
+  Shannon J. Marino (67, 5.0), Walters Law LLC (67, 5.0), Gubbels Law Office, P.C.
+  (62, 4.9) [confirmed via Google]
+
+Practice Area 4: Probate
+- Search 1 "probate attorney monument co": firm appears YES (#1) — pack: Mason Law and
+  Planning Group (855, 5.0), The Vinton Law Firm, P.C. (39, 4.7), The Law Office of
+  Karen Monk, LLC (3, 5.0) [confirmed via Google]
+- Search 2 "probate attorney colorado springs": firm appears NO — pack: Law Office of
+  Bridget Rachel Grace (117, 4.9), The Law Office of Kevin R. Hancock (303, 4.9), Wiley
+  Reynolds PLLC (60, 5.0) [confirmed via Google]
+- Search 3 "probate lawyer castle rock co": firm appears NO — pack: The Law Offices of
+  Shannon J. Marino (67, 5.0), Gubbels Law Office, P.C. (62, 4.9), Walters Law LLC
+  (67, 5.0) [confirmed via Google]
+
+Pattern: the firm owns the Monument pack (4 of 4) and is in the Castle Rock pack for
+  estate planning and trust searches only (2 of 4 tested; the Castle Rock profile has
+  ~98 reviews). It does not appear in the Colorado Springs pack in any of the 4
+  searches tested (0 of 4) even though its 855 reviews exceed every Colorado Springs
+  pack competitor (60–303) — i.e., the gap is location/proximity (no Colorado Springs-
+  address profile), not review volume.
+
+================================================================================
+STEP 4 — COMPETITOR REVIEW COUNTS
+================================================================================
+All figures read live from Google (local pack / LSA listings) on 2026-10-21.
+- Competitor 1: The Law Office of Kevin R. Hancock — reviews: 303 [confirmed via Google]
+  — rating: 4.9 [confirmed via Google]. In the Colorado Springs and Monument packs and in
+  every LSA block observed. (Avvo shows only 15 reviews — different platform.)
+- Competitor 2: Drexler Law — reviews: 151 [confirmed via Google] — rating: 4.5
+  [confirmed via Google]. In every LSA block observed.
+- Competitor 3: Hammond Law Group PC — reviews: 162 [confirmed via Google] — rating: 4.8
+  [confirmed via Google]. In LSA blocks (Monument, Colorado Springs).
+Other named local competitors observed:
+- The Harris Law Firm (Castle Rock) — 496 [confirmed via Google], 4.4 [confirmed via
+  Google]; #1 LSA slot for Castle Rock estate planning / wills; "Open 24 hours".
+- Wiley Reynolds PLLC (Colorado Springs) — 60 [confirmed via Google], 5.0 [confirmed via
+  Google]; in the Colorado Springs pack in all 4 searches; "Open 24 hours".
+- Robinson & Henry, P.C. — 708 [confirmed via Google], 4.8 [confirmed via Google]
+  (probate LSA only; PI-led firm).
+- Peakstone Law Group, LLC — 228 [confirmed via Google], 4.9 [confirmed via Google]
+  (probate LSA; "Open 24 hours").
+- Law Office of Bridget Rachel Grace — 117, 4.9 [confirmed via Google] (Colorado Springs).
+- Evans Case — 125, 4.6; Brighter Day Law — 238, 4.7; Wetterow Law — 57, 5.0
+  [all confirmed via Google] (LSA listings).
+VERIFIED: no competitor observed has more Google reviews than the firm's Monument
+  profile (855). At the Castle Rock profile level (~98) The Harris Law Firm (496) is
+  ahead. Never cite a competitor as out-reviewing the firm at the firm level.
+
+>> SAVED: through STEP 4.
+
+================================================================================
+STEP 5 — DIRECTORY LISTINGS
+================================================================================
+- Avvo: Paul Ashley Mason profile ("also known as Mason Law and Planning Group") —
+  4.9 [UNCONFIRMED — sourced from Avvo, not independently confirmed via Google], 61
+  reviews [UNCONFIRMED — sourced from Avvo, not independently confirmed via Google];
+  Avvo Rating 6.6; licensed 15 years (CO) plus Wyoming and Kansas (2017); practice areas
+  Estate Planning, Probate, LLC; Monument and Castle Rock offices both listed.
+- FindLaw: listing exists (Monument; "Updated: 05/07/2026"). Phone 719-428-4495,
+  fax 719-422-7240, hours 8:30–5:00, one practice area listed (Estate Planning). ZERO
+  reviews ("Be the first to write a review"). Castle Rock location listed at 333 Perry St
+  Suite 309 with the Monument phone 719-428-4495 — GBP shows (303) 656-2148 for Castle
+  Rock => NAP (phone) inconsistency for the Castle Rock office.
+- Other directories seen in search results (listing existence only; pages not opened):
+  Experience.com (Paul A. Mason shown at 4.98 [UNCONFIRMED — sourced from Experience.com
+  search snippet, not independently confirmed via Google]), Attorneydir, ReachAttorneys,
+  Homendo (categorised as "Real Estate Attorney" — mismatch with firm's stated
+  no-real-estate practice), Facebook page, LinkedIn, ZoomInfo, Martindale (Castle Rock list).
+- Yelp: could not be read (blank render). Justia: Cloudflare bot challenge. NOT CHECKED —
+  manual check recommended.
+NAP summary: Monument name/address/phone/hours consistent across website, GBP, FindLaw,
+  Avvo. Castle Rock phone inconsistent (above). Firm name varies (LLC vs P.C.).
+Geo-targeting landing pages: Yes — Monument, Castle Rock, Colorado Springs area pages
+  with will / trust / probate pages per location (also confirmed by Sydney, transcript
+  00:35:19–00:35:25: GBP links go to each practice-area page; ads route to the
+  location-specific practice page).
+
+>> SAVED: GBP, local SEO, and directory sections complete.
+
+================================================================================
+STEP 6 — GOOGLE ADS
+================================================================================
+Run 2026-10-21 (single point-in-time render per search).
+
+Practice Area 1: Estate planning
+- Firm ads observed: YES. Text ad on "estate planning attorney monument co" — headline:
+  "Mason Law & Planning Group - Monument Will Lawyer Services"; description: "Mason Law
+  & Planning Group helps families in Monument create personalized estate plans. We help
+  families create wills, trusts, and long-term plans. Honest Pricing. No Hidden Fees.
+  Wills & Trusts. Probate. Types: Living Trusts, Last Will & Testament, Power of
+  Attorney." (mlapg.com). Also in LSA (STEP 7) for Monument and Castle Rock.
+- Named local competitors running ads: Local Services Ads from The Law Office of Kevin R.
+  Hancock, Drexler Law, Hammond Law Group PC, The Harris Law Firm (Castle Rock). No text
+  ads from named local estate competitors observed in this render. (Non-local sponsors
+  seen — FindLaw directory ad, Alix, Inc. — excluded.)
+Practice Area 2: Trusts
+- Firm ads observed: LSA only (top-2 position in Monument, Colorado Springs, Castle Rock
+  living-trust / trust searches). Text ad not observed in this render.
+- Named local competitors running ads: LSA — Drexler Law (#1 in Colorado Springs),
+  Hancock, Hammond Law Group PC, The Harris Law Firm.
+Practice Area 3: Wills
+- Firm ads observed: LSA only (#1 Monument; #3–#5 Castle Rock). Text ad not observed.
+- Named local competitors running ads: LSA — Hancock, Drexler Law, The Harris Law Firm,
+  Colorado Estate Matters, Ltd. (Castle Rock, 70 reviews / 4.9 [confirmed via Google]).
+Practice Area 4: Probate
+- Firm ads observed: LSA only (#1 Monument, #1–#2 Castle Rock, #2 Colorado Springs).
+- Named local competitors running ads: LSA — Drexler Law, Robinson & Henry, P.C.,
+  Hammond Law Group PC, Peakstone Law Group, LLC, Solem Woodward & McKinley, P.C.,
+  Law Office of Anna L. Burr.
+Transcript cross-check: Sydney confirmed "we run our ads at all times. It's not just our
+  open hours" (00:32:01) — consistent with what is observed. The rep observed dynamic
+  number insertion on the firm's PPC landing page.
+
+================================================================================
+STEP 7 — LOCAL SERVICE ADS
+================================================================================
+- Firm appears in LSA: YES — in every LSA block observed (10 of 10; 2 of the 12 searches
+  — Colorado Springs "estate planning" and "wills" — rendered no LSA block). Position
+  is #1–#3 in each block. Both the Monument profile (855) and Castle Rock profile (97)
+  appear in Castle Rock searches.
+- Google Screened: not observed (badge text was not present in the rendered result text;
+  can't confirm either way).
+- LSA review count: 855, 5.0 [confirmed via Google] (Monument profile); 97, 5.0 [confirmed
+  via Google] (Castle Rock profile).
+- Named local competitors in LSA: The Law Office of Kevin R. Hancock (303, 4.9), Drexler
+  Law (151, 4.5), Hammond Law Group PC (162, 4.8), The Harris Law Firm (496, 4.4),
+  Evans Case (125, 4.6), Wetterow Law (57, 5.0) [all confirmed via Google].
+
+================================================================================
+STEP 8 — META ADS
+================================================================================
+Meta Ad Library, active ads, country US, queried 2026-10-21.
+- Firm has active ads: YES — 2 active ads (exact-phrase search "Mason Law & Planning
+  Group"), both static-image dinner-seminar promotions:
+  (1) running since Oct 17, 2026 — free dinner seminar at The Old Post Office, Cañon
+      City (Eventbrite link);
+  (2) running since Oct 19, 2026 — free estate planning seminar ("Avoid probate / Protect
+      your family / Preserve your assets / Gain peace of mind").
+  Both are only days old. This matches the rep's call comment about "a couple static
+  image ads" (00:57:16). Count could miss ads published under a different Page name.
+- Named local competitor 1: The Law Office of Kevin R. Hancock — 2 active ads, both
+  started Jun 15, 2026 (~4 months running); creative/format not captured.
+- Named local competitor 2: Peakstone Law Group, LLC — 12 active ads, started late
+  Jun 2026 (~4 months); creative observed is criminal-defense, not estate planning.
+- No active Meta ads returned for Drexler Law, Hammond Law Group, Evans Case, Gubbels
+  Law Office, Wetterow Law, Wiley Reynolds, or Colorado Estate Matters (not observed;
+  not a guarantee none exist). The Harris Law Firm and Robinson & Henry show ads but
+  the creatives are family / business / PI, not estate planning.
+
+>> SAVED: all ads sections complete.
+
+================================================================================
+STEP 9 — TRANSCRIPT EXTRACTION
+================================================================================
+Transcript source: full verbatim Fathom transcript (summary used only as overview)
+Call: 2026-10-21, ~63 minutes. Attendees: Paul Mason (Founder/Owner), Sydney (Director
+  of Marketing), Dan Bryant (SMB Team). Speaker-label note: lines tagged "Paul Mason
+  [Prospect]" are Sydney, who is on Paul's Zoom login. Untagged "Paul" lines are Paul.
+  Rep statements (Dan) are NOT recorded as firm facts. Where the AI summary and the full
+  transcript differ, the transcript wins (e.g., summary calls Kim "COO"; the transcript
+  gives no title).
+
+- Practice areas confirmed: Estate planning — wills, trusts, probate and estate
+  administration. No litigation ("No" when asked, 00:17:19). No real estate work
+  (00:23:11–00:23:31). Website/Avvo also list business formation/LLC, asset protection.
+- Current lead sources: Google (GBP, LSA, PPC), social/Meta ads, seminars (website +
+  Meta ads), referrals not discussed. "our leads that we generate off of Google and ads
+  and things are my best. We close the highest" (Paul, 00:06:42). Paid initial
+  consultation screens leads: "We charge for an initial consultation, and that weeds out
+  all the crap" (00:07:01).
+- Ads ever run: YES — Google Ads PPC, Local Services Ads, and social ads, run in-house;
+  Sydney: "we run our ads at all times. It's not just our open hours" (00:32:01).
+  Budget: not stated. Past agencies: Scorpion (about a year; "couldn't tell you enough
+  bad things", then rebuilt website), then "another marketing firm"; all marketing now
+  in-house. No after-hours answering today (00:40:27 "No"); formerly used Ruby ("I used
+  Ruby forever. And then we became large enough that I just didn't need them anymore").
+- Team size: number not stated. Roles named: Paul (founder/owner); Sydney (Director of
+  Marketing, leads the in-house marketing team; "I've hired a couple of people" for
+  video); Kim (shares decisions with Paul — "Kim would be on"; title not stated in
+  transcript, AI summary says COO); client-care team that can staff satellite offices
+  ("because of my client care, I can staff", 00:06:10). Full-time recruiter: rep asked
+  "do you guys have a full-time recruiter? You do?" — Paul's spoken answer is not in the
+  transcript; AI summary says confirmed [transcript unclear — read as yes].
+- Annual revenue (gross / case value): not stated for the firm. Only firm-level figure:
+  "we turned it [Castle Rock] into a million dollar branch in 15 months" (Paul, 00:06:00).
+  (The ~$9M figure on the call was the rep describing a different firm — ignore.)
+- Annual revenue (net / take-home / collected): not distinguished from gross (no
+  figure stated).
+- Fee structure: not stated on the call; paid initial consultation (amount not stated).
+  Web signals only (not from transcript): Google listing shows "Flat rate pricing"; ad
+  copy says "Honest Pricing. No Hidden Fees."
+- Revenue goal: not stated as a firm revenue goal; current revenue not stated so the
+  "2x current revenue" default can't be computed — FLAG for Pass 2 (do not invent a
+  figure). Expansion math Paul gave: "10 locations that generate five clients a month is
+  50 clients a month off of just those locations. It'll generate half a million a year.
+  I mean, half a million a month." [self-corrected on the call — read as $500,000/month;
+  $/client not stated, implies ~$10,000 per client].
+- Average case value: not stated directly; implied ~$10,000 per client from his own
+  math above ($500k/month ÷ 50 clients) — treat as implied only. Client profile: "my
+  market is probably closer… $2 to $10 million make up 90% of my clients" (00:10:50)
+  — client estate size, not revenue.
+- Current close rate: no percentage stated — "a close ratio that's extremely high"
+  (00:07:10) on Google/ads leads. Default-15% rule would CONTRADICT his claim; Pass 2
+  should not print any numeric close rate (use his words or omit).
+- Number of locations: 2 operating (Monument HQ + Castle Rock), plus a lease just signed
+  in Woodland Park and "another one I'm looking at" (00:06:14–00:06:18). Target: Paul's
+  own math uses 10 locations. (The rep's "24 more offices… or 20" at 00:54:18 was not
+  confirmed by Paul — do not use.)
+  Satellite economics (Paul): "$30,000 office in and out, it's going to cost me $3,000 a
+  month" … "one to two clients a month pays for itself" (00:05:18–00:05:38).
+  Franchise-like standardized build-outs make subleasing a poor fit (00:08:58–00:09:26).
+- Spanish campaign needed: no (not discussed).
+- Dominant buying motive: INFERENCE, closest to (1)+(3): a brand-first, process-driven
+  firm that scales across many offices without depending on Paul personally. Paul's
+  words: "I am trying to get away from it being me… I want it to be our brand" (00:16:23)
+  and "Anything that points back to me, I do not want" (01:02:55). Also wants control /
+  no vendor dependence: "I will never ever turn it over again" (00:36:18). No personal
+  "what the freedom is for" (family, travel, etc.) was stated.
+- Any profitability claims made by prospect: none stated beyond the satellite math
+  above ("one to two clients a month pays for itself"; Castle Rock "million dollar
+  branch in 15 months").
+- Any claims about case types or practice areas: "We charge for an initial consultation
+  and that weeds out all the crap" (00:07:01); "we're by far the largest in Southern
+  Colorado, if not Colorado" (00:05:54); "I could generate so many estate or probate
+  litigation on a regular basis, but I don't want to do it and I don't know how to make
+  money doing it" (00:19:16) — Colorado bar disallows referral-fee splitting without
+  participation (00:17:47).
+- Stated call focus / product interest: NOT a standard marketing/growth discovery. A
+  reconnect/relationship call with the owner and marketing director. Rep covered:
+  free read-only audits of LSA, PPC, website/SEO and social (implementation stays
+  in-house); GBP categories and 24/7 hours; 24/7 answering with booking + reminders;
+  AI implementation / fractional CTO and an AI platform (briefly; Paul pushed back on
+  ownership/lock-in); fractional recruiting; AI-avatar video; and a Master's Circle
+  coaching/mastermind pitch for Paul, Sydney and department heads (fractional COO/CFO
+  hours were described as part of that). The prospect said he does NOT want outsourced
+  marketing control but welcomes help and learning: "I welcome and want more help in all
+  of it" (00:54:40). Next step agreed: Friday Oct 23, 2026, 11:00–12:00 MT, to walk
+  through a Master's Circle plan with Dan (Kim not available that slot; follow-up
+  possible).
+- Primary engagement: coaching/ops
+- Products discussed on call: Master's Circle
+- Lead-gen gap stated: no — Paul and Sydney run marketing in-house and did not ask for
+  lead-gen help; the only growth lever Paul named is more offices ("I can only get so
+  many. It's challenging by the locations is key", 00:07:16).
+- Existing marketing/SEO/ad vendor engagements: none stated — marketing is fully
+  in-house ("we brought everything in house", 00:12:22); Scorpion and a second agency
+  were previous and ended; Ruby (answering) discontinued.
+- Budget constraints stated: none stated. (Control constraint, not budget: "I will never
+  ever turn it over again.") Consultation/decision involves Kim as well as Paul.
+Other next steps from the call (rep follow-ups): email read-only audit-access
+  instructions; email Master's Circle proposal/pricing; send Friday calendar invite;
+  Paul to run a 90-day phone-system report (abandoned / <45-sec / voicemail calls) to size
+  the after-hours gap; Paul "not 100% sure" about the Dec 3–5 workshop and asked for the
+  March date. Paul also does not want a headshot/personality-led GBP or LSA (00:16:12)
+  and would only use a branded (non-founder) avatar (01:02:35).
+
+Key prospect quotes (verbatim; timestamp = start of the line):
+1. [00:05:18] Paul — satellite offices: "I'm going to spend $30,000 office in and out,
+   it's going to cost me $3,000 a month."
+2. [00:05:38] Paul — satellite payback: "Literally, one to two clients a month pays for
+   itself."
+3. [00:06:00] Paul — Castle Rock proof: "I turned on Castle Rock and we turned it into a
+   million dollar branch in 15 months."
+4. [00:07:01] Paul — lead quality / intake: "We charge for an initial consultation, and
+   that weeds out all the crap."
+5. [00:07:18] Paul — lead ceiling and goal: "10 locations that generate five clients a
+   month is 50 clients a month off of just those locations."
+6. [00:12:16] Paul — agencies / objection: "big hat, no cattle, all of them tell me crap
+   and they just suck."
+7. [00:12:22] Paul — in-house marketing: "we brought everything in house and building
+   out a team to do what we want to do."
+8. [00:16:12] Paul — brand / DBM: "I don't want to brand myself or an attorney. I want
+   to brand us."
+9. [00:36:18] Paul — objection / control: "I'm never opposed to learning or working
+   with, but I will never ever turn it over again."
+10. [00:42:00] Paul — intake / after-hours: "I agree that we could possibly do some things
+    there that are better."
+11. [00:44:00] Paul — AI ownership: "any AI that we develop, or as much as we possibly
+    can, it's ours. I don't want to be slave to someone else's problem."
+12. [00:55:05] Paul — team development: "I would love for Sid to have people that can
+    help her and work with her on those things."
+Also usable: [00:32:01] Sydney — "we run our ads at all times. It's not just our open
+  hours." [01:02:55] Paul — "Anything that points back to me, I do not want."
+
+================================================================================
+STEP 10 — COMPETITIVE URGENCY SCORE
+================================================================================
+Score: 3 of 10.
+Reasoning: In the markets where the firm has a physical office the firm leads outright —
+  855 Google reviews (every competitor observed is below that), #1 in the Monument local
+  pack for all 4 practice areas, a top-3 LSA slot in every LSA block observed, active
+  PPC text ads, GBP posts, and new seminar ads on Meta. Competitors have meaningful
+  advantage in only one pocket — Colorado Springs map pack, where the firm does not
+  appear in any of the 4 searches tested — and in Castle Rock where review volume is
+  thinner (~98) than The Harris Law Firm (496).
+Named local competitor threats:
+1. The Law Office of Kevin R. Hancock — 303 reviews / 4.9, in the Colorado Springs and
+   Monument packs and every LSA block, plus 2 Meta ads running since Jun 15, 2026.
+2. The Harris Law Firm (Castle Rock) — 496 reviews / 4.4, #1 Castle Rock estate-planning
+   and wills LSA slot, "Open 24 hours" — outranks the firm's Castle Rock profile on
+   review volume.
+3. Wiley Reynolds PLLC (Colorado Springs) — only 60 reviews / 5.0 but in the Colorado
+   Springs pack for all 4 searches, "Open 24 hours" — the firm's best expansion target
+   shows how proximity (not reviews) is winning there.
+Dynamic sentence (Score 1–3): "A score of 3 means no single competitor is dominating
+  your market yet — but that will not last forever. The firms that win markets do so by
+  moving first. Getting your systems in place now means you set the standard before
+  someone else does."
+
+>> SAVED: final research notes file.
+
+================================================================================
+PASS 2 — VERIFICATION CHECKLIST
+================================================================================
+[x] Every number matches actually observed data (Google renders 2026-10-21; Lighthouse
+    local runs; Meta Ad Library; Avvo/FindLaw pages)
+[x] No competitor is cited as out-reviewing the firm at the 855 level; Harris (496) vs
+    the Castle Rock profile (~98) is stated explicitly
+[x] Every Google review count and rating carries a verification tag; Avvo / Experience.com
+    figures tagged UNCONFIRMED; stale aggregator figures discarded
+[x] Revenue gross/net recorded (not stated; net not distinguished); fee structure
+    recorded as not stated
+[x] Every ad section covers all 4 practice areas (estate planning, trusts, wills, probate)
+[x] No "not running ads" language — firm IS running ads (confirmed by prospect + observed)
+[x] No profitability claims except those quoted from the prospect
+[x] Only specific named local competitors used (Hancock, Harris, Wiley Reynolds, etc.)
+[x] PageSpeed scores are real numbers from Lighthouse (source and caveat noted; manual
+    pagespeed.web.dev re-run recommended)
+[x] DBM recorded (inference with exact quotes)
+[x] Revenue goal flagged as not stated (no default invented)
+[x] Close rate: no % stated; default flagged as contradicting "extremely high"
+[x] Average case value flagged as implied only
+[x] Stated call focus recorded explicitly as non-standard (relationship/coaching-led)
+[x] Primary engagement / Products discussed / Lead-gen gap filled in machine format
+[x] Existing vendor engagements recorded (none stated)
+[x] Budget constraints recorded (none stated)
+Open items for a human: PageSpeed re-run on pagespeed.web.dev; Yelp and Justia checks;
+  most recent GBP review date; Google Screened badge status; Paul's answer re: recruiter.
