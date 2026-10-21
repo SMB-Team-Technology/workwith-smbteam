@@ -1,0 +1,132 @@
+MASON LAW — SECTION 11 WORKINGS (INTERNAL — never shared with client)
+Prepared for: Dan Bryant | Audit date: October 23, 2026
+
+================================================================================
+TRANSCRIPT-STATED NEED OVERRIDE CHECK
+================================================================================
+1. Call-purpose override: APPLIES. Notes (STEP 9) record primary engagement as
+   coaching/ops, product discussed = Master's Circle, lead-gen gap stated = no.
+   package_decision.json already applied this (marketing_tier = null). Marketing
+   left out of the recommendation; consistent with the notes.
+2. Existing-vendor override: does not apply. No active marketing vendor
+   (marketing is fully in-house; Scorpion and a second agency ended; Ruby
+   answering discontinued). Marketing is excluded anyway under (1).
+3. Budget-reality override: does not apply. No budget constraint stated.
+4. Effective-revenue override: does not apply. No gross/net revenue figure stated
+   on the call.
+
+package_decision.json: confidence "medium", needs_seller_input false,
+proposal_review.json status "locked". Seller override (Slack, 2026-10-21):
+Master's Circle stand-alone, no other products. Used as-is.
+
+================================================================================
+MANDATORY PRICE LOOKUP (copied from package_decision.json and checked against
+the Non-Marketing table in audit-write.md)
+================================================================================
+- Marketing package selected: none
+  - Bundled price: n/a | Stand-alone price: n/a | Savings: n/a
+- Non-marketing package selected: Master's Circle
+  - Bundled price (from table): $4,600/mo
+  - Stand-alone price (from table): $4,997/mo
+  - Savings (stand-alone minus bundled): $397/mo
+- Legal AI Workforce (LAW) package selected: none
+- AI Avatar / Video Growth add-on selected: none
+- Total monthly investment: $4,600/mo
+- Total savings: $397/mo
+
+35% cap check: HubSpot revenue "$3,000,000+" -> $250,000/mo; 35% = $87,500/mo.
+$4,600/mo is about 1.8% of monthly revenue. Well within cap. (Revenue figure is
+from HubSpot, not stated on the call — not printed anywhere in the client report.)
+
+================================================================================
+MARKETING / ADS
+================================================================================
+No marketing/ads package in the recommendation, so:
+- No conservative or aggressive ad spend, no ROI projection, no "why this range"
+  sentence.
+- Block 4 (Recommended Monthly Ad Spend) deleted from section_11_next_steps.html.
+- Ad spend line omitted from the Executive Summary.
+
+================================================================================
+DBM STATEMENT (Block 1)
+================================================================================
+Build a brand-first firm — "I don't want to brand myself or an attorney. I want to
+brand us." (00:16:12) — that opens office after office without depending on Paul
+personally. Inferred DBM per notes (closest to "firm that runs itself" + "scale
+and dominate"); no personal "what the freedom is for" stated.
+
+================================================================================
+QUICK WIN OPPORTUNITIES (7)
+================================================================================
+1. Lead Gen / Quick Win — Put the 855 Google reviews on the website.
+   Why: strongest trust asset is absent from the pages reviewed. Competitor: none
+   named. Opportunity: review count and testimonials in the hero and location pages.
+2. Intake / Quick Win — Cover after-hours calls.
+   Why: ads run at all times, no after-hours answering (00:40:27), owner agrees things
+   could be better (00:42:00). Competitor: The Harris Law Firm ("Open 24 hours",
+   #1 Castle Rock LSA). Opportunity: use the 90-day phone report Paul is running to
+   size the gap, then decide on coverage.
+3. Lead Gen / Long-Term — Establish a Colorado Springs presence in the map pack.
+   Why: 0 of 4 CS searches. Competitor: Wiley Reynolds PLLC (60 reviews, 5.0, 4 of 4).
+   Opportunity: CS-address profile, matches the expansion plan.
+4. Lead Gen / Quick Win — Close the Castle Rock gap.
+   Why: Castle Rock profile ~98 reviews, absent from wills/probate packs, phone
+   mismatch with FindLaw. Competitor: The Harris Law Firm (496 reviews, 4.4 — compared
+   to the Castle Rock profile only, never to the 855 Monument profile).
+   Opportunity: one consistent phone number and a Castle Rock review push.
+5. Lead Gen / Quick Win — Speed up the mobile site.
+   Why: Lighthouse mobile 26–31, desktop 79. Competitor: none named.
+   Opportunity: faster pages for ad and map-pack visitors.
+6. Team / Long-Term — Build the leadership layer for a multi-office brand.
+   Why: DBM; decisions shared between Paul and one other leader. Competitor: none.
+   Opportunity: Master's Circle (this is what the package addresses).
+7. Profit / Quick Win — Build a profit view by office before the next lease.
+   Why: payback math known at the office level, firm-level view not discussed.
+   Competitor: none. Opportunity: office-by-office view of what each location
+   contributes.
+
+================================================================================
+WHAT YOU TOLD US (Block 5) — SOURCES
+================================================================================
+Row 1: "I don't want to brand myself or an attorney. I want to brand us." [00:16:12,
+  Paul]. Supports: Master's Circle weekly group coaching + quarterly workshops.
+Row 2: "10 locations that generate five clients a month is 50 clients a month off of
+  just those locations." [00:07:18, Paul]. Supports: Master's Circle practice area
+  masterminds.
+Row 3: "I'm never opposed to learning or working with, but I will never ever turn it
+  over again." [00:36:18, Paul]; also "I welcome and want more help in all of it"
+  [00:54:40]. Paraphrased in the report ("welcome help and learning, keep control of
+  marketing in-house"). Supports: Master's Circle is coaching-led; implementation
+  stays with Paul's team.
+Employee and personal items excluded per Block 5 rules (no named staff).
+Next step line: kickoff call with your Coach.
+
+================================================================================
+ESCALATION FLAGS — INTERNAL ONLY
+================================================================================
+- Master's Circle eligibility gate: rules require 5+ team members and a dedicated
+  ops, marketing or intake team member. Team size was defaulted to 3 in
+  package_decision.json (not stated on the call). The firm does have a Director of
+  Marketing, a client care team and (per summary) a recruiter, so the gate is likely
+  met, but the headcount is not confirmed. Seller override is locked; rep to confirm
+  headcount before the proposal call.
+- Revenue "$3,000,000+" comes from HubSpot, not the transcript; never printed.
+- Savings callout: Block 3 shows the $397 savings for a single package. Wording is
+  "You save $397/month" (not "by bundling", since nothing is bundled with it). Rep
+  to confirm Master's Circle stand-alone pricing is the $4,600 bundled rate.
+- PageSpeed scores are local Lighthouse 12.8.2 runs (PSI API returned 429). Re-run on
+  pagespeed.web.dev before quoting the numbers live.
+- Avvo (4.9 / 61) and Experience.com (4.98) figures are UNCONFIRMED — not used in
+  the client report. All review counts printed in the report are tagged
+  [confirmed via Google] in the notes; the FindLaw "no reviews" observation is from
+  the listing itself.
+- Open items from notes: Yelp and Justia not checked; Google Screened badge status;
+  most recent GBP review date; Paul's answer on the recruiter.
+- Not recommended but discussed on the call (not included, flag only): 24/7 answering,
+  AI/fractional CTO platform (Paul pushed back on ownership/lock-in), AI-avatar video
+  (would need Alexis approval; Paul would only use a branded non-founder avatar),
+  fractional recruiting. Phase 3 mentions AI Workforce Pro only as a future step.
+- Block 2 deliverables follow the Master's Circle list used in prior audits (weekly
+  group coaching, practice area masterminds, virtual quarterly workshops, one annual
+  in-person workshop). Fractional COO/CFO hours that the rep described on the call
+  are NOT part of the Master's Circle price and are not listed as included.
