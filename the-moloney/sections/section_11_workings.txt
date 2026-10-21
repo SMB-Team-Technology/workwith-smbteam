@@ -1,0 +1,128 @@
+SECTION 11 WORKINGS — The Moloney Law Firm (October 29, 2026)
+INTERNAL ONLY — never shared with the client.
+
+======================================================================
+PACKAGE DECISION SOURCE AND OVERRIDE CHECK
+======================================================================
+Source: the-moloney/package_decision.json (confidence: medium; needs_seller_input: false; seller override recorded via Slack
+October 21, 2026: package set to AI Workforce Pro only — marketing, coaching, and Fractional CTO excluded; ad-spend fields nulled).
+
+Transcript-Stated Need Override check:
+1. Call-purpose override — APPLIES. The call was framed around AI automation of a solo practice: Brad signed up for the SMB Team AI
+   webinar, got an AI Workforce Pro demo/beta, and asked about Fractional CTOs (research notes STEP 9: Primary engagement: AI).
+   Jacob concluded "what would probably make the most sense for you, if anything, would be AI Workforce Pro" (00:44:49).
+   Recommendation leads with the AI category. No marketing package is recommended.
+2. Existing-vendor override — APPLIES. Brad pays an SEO vendor on a year contract ending ~April 2027 (00:05:06) and runs limited
+   self-managed Microsoft ads (00:06:25). Full Service Marketing (all tiers and sub-packages) excluded.
+3. Budget-reality override — does not apply. No budget constraint stated (00:50:00 "can you afford a CTO right now?" / "Yeah." is
+   garbled [transcript unclear] — not treated as a commitment or a constraint). Cheapest LAW tier is used by seller override anyway.
+4. Effective-revenue override — does not apply. Net not distinguished from gross; is_contingency_practice = false. Tiered on ~$250,000
+   stated (00:27:45). Brad's goal is ~$350K for 2027.
+
+Decision-file selection is consistent with the overrides and the seller override, so it is used as-is.
+Departure from the revenue-implied package (Full Service Marketing — Essentials/Starter + Elite Coach) is intentional:
+seller override + call-purpose + existing-vendor overrides.
+
+LAW eligibility note: audit-write.md says not to recommend LAW to a solo firm with no support staff. Brad is a solo (team size 1), but
+(a) the seller explicitly set this package, (b) AI Workforce Pro – Starter is the 1-user entry tier with no revenue floor, and (c) the call
+itself was an AI Workforce Pro demo. Treated as a seller-directed exception; Brad has shown openness to technology adoption
+(Claude, ChatGPT, Make.com, Mac mini plans). Fractional CTO NOT recommended (seller exclusion; Brad: "I enjoy it too much" 00:45:17).
+
+======================================================================
+MANDATORY PRICE LOOKUP (character-checked against package_decision.json and the tables in audit-write.md)
+======================================================================
+- Marketing package selected: none
+  - Bundled price: n/a
+  - Stand-alone price: n/a
+  - Savings: n/a
+- Non-marketing package selected: none (coaching/ops/FCOO/FCFO excluded by seller override; revenue ~$250K also hides FCOO/FCFO)
+  - Bundled price: n/a
+  - Stand-alone price: n/a
+  - Savings: n/a
+- Legal AI Workforce (LAW) package selected: AI Workforce Pro – Starter, 1 seat
+  - Bundled price (from table): $350/user/mo x 1 seat = $350/mo
+  - Stand-alone price (from table): none — no standalone price exists for AI Workforce Pro; none quoted in client report
+  - Savings: $0 (no standalone comparison; savings callout omitted from Block 3)
+- AI Avatar / Video Growth add-on selected: none
+- Total monthly investment (sum of bundled/recurring prices): $350/mo
+- Total savings (sum of all savings): $0
+
+35% cap check: $250,000 / 12 = $20,833 monthly revenue; 35% = $7,292. Total SMB spend $350/mo (1.7%). Within cap.
+Minimum MRR rule ($2,497/mo) — the per-seat Starter tier is below this floor by design (AI Workforce Pro – Starter is a $350/user/mo
+product per the LAW table and the seller override); flagged for sales-ops awareness.
+AI Workforce Pro – Starter terms: 1–4 users, month-to-month, 1M AI credits per user, overages $150/mo, weekly AI Implementation Session.
+
+======================================================================
+AD SPEND / ROI
+======================================================================
+Not applicable — no marketing/ads package is part of the recommendation. Block 4 (Recommended Monthly Ad Spend) deleted from
+section_11_next_steps.html; AD_SPEND line omitted from the executive summary. Conservative/aggressive projections and the
+"why this range" sentence were intentionally not produced.
+Average case value and fee structure not stated on the call; close rate not stated (default 15% would apply only if marketing were
+proposed later). No practice-area default was applied anywhere in the report.
+
+======================================================================
+BLOCK 1 DBM STATEMENT
+======================================================================
+"We help solo criminal defense attorneys get AI workflows for the daily admin and new-lead follow-up that still run through them so
+they can build a firm whose systems, not staff, run the business."
+DBM source: Brad 00:03:57–00:04:05 ("I wanted to set up the firm such that it would just be me. So everything else could be automated."),
+00:29:52–00:30:05 ("...I don't want to have a staff."), 00:31:34 ("the thing that I'm building would be the actual process, the actual
+architecture behind the business, not the practice of law"), 00:32:26 ("I love working on the business more than I like working in the business.").
+Motive types: firm that runs itself + build the system as the sellable asset.
+
+======================================================================
+QUICK WIN OPPORTUNITIES (7)
+======================================================================
+1. Team — Automate the daily discovery routine (Quick Win)
+   Why: Brad's wish list (00:20:16): check once a day for discovery, download, unzip, rename, organize like a trial file; body-worn
+   camera video and slow midday servers noted. Competitor: none. Opportunity: AI Workforce Pro skills/implementation sessions.
+2. Intake — Speed up new-lead back-and-forth (Quick Win)
+   Why: 00:22:20 — back-and-forth with new leads is time-consuming; Brad screens every lead himself (00:22:45). Competitor: none.
+3. Profit — Consolidate overlapping software (Quick Win)
+   Why: 00:05:32 software is his biggest expense; overlapping tools, subscription pop-ups/paywalls; Lawmatics "a lot for a solo" (00:21:15).
+   Competitor: none.
+4. Team — Build the documented process layer (Long-Term Play)
+   Why: DBM — build the "architecture behind the business" (00:31:34). Competitor: none.
+5. Lead Gen — Grow and refresh the Google review base (Long-Term Play)
+   Why: review counts unconfirmed (not printed); Denver defense market has firms with far larger review histories per third-party roundups
+   (UNCONFIRMED). Competitor row omitted — named firms are market-level references only, not verified pack/ad competitors.
+6. Lead Gen — Document SEO results before the vendor agreement ends (Quick Win)
+   Why: vendor contract ends ~April 2027, Brad will not renew (00:05:06). Competitor: none.
+7. Profit — Set a profit target next to the revenue goal (Long-Term Play)
+   Why: goals stated as revenue only ($250K -> ~$350K, 00:28:00); no profit figures discussed. Competitor: none.
+
+======================================================================
+WHAT YOU TOLD US (Block 5) — transcript source for each row
+======================================================================
+Row 1: Discovery routine. Verbatim (00:20:16): "…check once a day for Discovery, download it, put it into a… folder… and then start…
+       unzipping… reformatting the file names and organizing it how I organize a trial file."
+       Supports Block 2: AI Workforce Pro – Starter (managed workspace, Law Firm AI Skills, weekly AI Implementation Session).
+Row 2: New-lead back-and-forth. Verbatim (00:22:20): "The back and forth with, for new leads, I think is probably… a pretty damn
+       time-consuming process." (also 00:07:00: "I need to get the automation side of stuff going more… so that I can make room for more business.")
+       Supports Block 2: AI Workforce Pro – Starter (same workspace and weekly session).
+Row 3: Process as the asset. Verbatim (00:31:34): "…the thing that I'm building would be the actual process, the actual architecture
+       behind the business, not the practice of law…"
+       Supports Block 2: AI Workforce Pro – Starter (managed AI foundation for the firm's processes).
+Next-step line: kickoff call with your Onboarding team.
+Excluded (Never-include list / not owner-raised): none used — no named employees, personal/health/family matters, partner disputes, or
+financial-distress figures appear in Block 5.
+
+======================================================================
+INTERNAL ESCALATION FLAGS (never appear in the client report)
+======================================================================
+- Review counts unconfirmed — verify live before the call (Birdeye 5.0 / 37 and competitor counts 656 / 591 / 232 are aggregator figures,
+  none confirmed via Google; report uses qualitative framing only and prints no review count or star rating).
+- Revenue under $300K (~$250K) → scoping approval required. Revenue at the $250K line → confirm client has funds to cover 4 months of services.
+- Legal AI Workforce (LAW) package → confirm with sales rep that LAW delivery has launched and capacity is available before sending the proposal.
+- LAW eligibility: solo firm with no support staff (see note above) — proceeding on seller override.
+- PageSpeed mobile/desktop NOT OBTAINED (API 429) — no scores printed in Section 6. A human re-run of pagespeed.web.dev would close the gap.
+- Google Business Profile, 3-pack, Google Ads, LSA, and Meta Ad Library were NOT OBSERVED in Pass 1 — report frames all as "not observed";
+  nothing claims the firm ranks, does not rank, or is not advertising.
+- Website copy says "our team of Denver defense attorneys" while the firm is solo — not included in the client report; sales rep awareness only.
+- Brad's revenue is ambiguous in the transcript (~$250K current; Anthony's pre-call note said ~$350K; Brad gave ~$350K as 2027 goal). Report
+  uses ~$250K current / ~$350K goal.
+- Urgency score 5 is PROVISIONAL / LOW CONFIDENCE (no live competitor data).
+- Competitors named in Section 5 / 6 (Colorado Legal Defense Group, Robinson & Henry, Law Office of Jacob E. Martinez) come from third-party
+  roundups and are NOT verified as pack/ad competitors; wording is deliberately hedged.
+- Webinar date in the AI summary (Oct 25) is wrong; transcript says "next Wednesday" (Oct 28, 2026). Not used in the report.
