@@ -1,0 +1,140 @@
+<!-- ⚠️ NO CSS IN THIS FILE. No <style> blocks. No inline styles. No style="" attributes.
+     All styling comes from audit_styles.css only. Use only existing class names.
+     If you find yourself writing CSS — stop and delete it. -->
+<!-- ============================================================
+     SECTION 05 — YOUR GROWTH HEALTH ASSESSMENT
+
+     INSTRUCTIONS FOR COWORK:
+     - For each traffic circle: use class "red", "amber", or "green" based on your rating
+     - For each sc-findings list: write 2-3 specific bullet points for this firm only
+     - For sc-dbm: one italic sentence connecting this pillar to income, freedom, or DBM
+     - For urgency score: replace the number, set left% = (score/10)*100 on the marker
+     - For urgency sentence: use the correct dynamic sentence based on score range
+     - For competitor cards: write 2-3 named competitors with specific threat reasons
+     - Do not add inline styles. Do not change class names.
+     ============================================================ -->
+
+<div class="section-header" id="growth-health">
+  <div class="section-header-inner">
+    <h2>Your Growth Health Assessment</h2>
+    <div class="subtext">Mirabella &amp; Franzi</div>
+  </div>
+</div>
+
+<div class="content-wrap">
+
+  <div class="legend">
+    <div class="legend-item">
+      <div class="legend-dot red"></div>
+      <div class="legend-label">Red <span>— Critical Priority</span></div>
+    </div>
+    <div class="legend-item">
+      <div class="legend-dot amber"></div>
+      <div class="legend-label">Amber <span>— In Progress</span></div>
+    </div>
+    <div class="legend-item">
+      <div class="legend-dot green"></div>
+      <div class="legend-label">Green <span>— On Track</span></div>
+    </div>
+  </div>
+
+  <div class="scorecard-label">Pillar Health Scorecard</div>
+
+  <div class="scorecard-grid">
+
+    <!-- LEAD GENERATION CARD -->
+    <div class="sc-card">
+      <div class="sc-card-header"><h3>Lead Generation</h3></div>
+      <div class="sc-card-body">
+        <div class="traffic-circle red"></div>
+        <ul class="sc-findings">
+          <li>New clients come strictly from word-of-mouth referral — no advertising has ever been run</li>
+          <li>Estate planning and probate are never marketed; they arrive only from other transactions</li>
+          <li>No ongoing SEO, and the estate planning page on the website is one short page with no articles behind it</li>
+        </ul>
+        <div class="sc-dbm">You cannot become a leader in estate planning while the only way clients find that practice is by being sent there from a real estate closing.</div>
+      </div>
+    </div>
+
+    <!-- INTAKE CARD -->
+    <div class="sc-card">
+      <div class="sc-card-header"><h3>Intake</h3></div>
+      <div class="sc-card-body">
+        <div class="traffic-circle amber"></div>
+        <ul class="sc-findings">
+          <li>Intake has been built around referred clients who already trust the firm — it has never handled a stream of cold inquiries</li>
+          <li>The website offers a phone number above the fold and a contact form only on a separate page</li>
+          <li>Staff can handle initial inputting on probate files, which is a workable base to build on</li>
+        </ul>
+        <div class="sc-dbm">Predictable growth only counts if every new inquiry is answered and converted fast enough to protect the reputation you have built.</div>
+      </div>
+    </div>
+
+    <!-- SELF-MANAGING TEAM CARD -->
+    <div class="sc-card">
+      <div class="sc-card-header"><h3>Self-Managing Team</h3></div>
+      <div class="sc-card-body">
+        <div class="traffic-circle amber"></div>
+        <ul class="sc-findings">
+          <li>Three attorneys and six support staff give the firm real capacity — roughly four additional files a month would be easy to absorb</li>
+          <li>No one at the firm owns marketing or lead generation today, because it has never been part of the operation</li>
+          <li>Growth plans are paced deliberately, with hiring and office expansion to follow demand</li>
+        </ul>
+        <div class="sc-dbm">A team that can grow with the firm is already in place — it needs a steady flow of work and an owner for the systems that create it.</div>
+      </div>
+    </div>
+
+    <!-- PROFIT CARD -->
+    <div class="sc-card">
+      <div class="sc-card-header"><h3>Profit</h3></div>
+      <div class="sc-card-body">
+        <div class="traffic-circle amber"></div>
+        <ul class="sc-findings">
+          <li>Revenue has stayed at about $1 million for several years, with the COVID-era refinance volume gone</li>
+          <li>Real estate fees per file are much smaller, so profit depends on high volume</li>
+          <li>No specific revenue or profit targets have been set against the 25% growth goal</li>
+        </ul>
+        <div class="sc-dbm">Shifting the mix toward higher-fee estate and probate work is how growth can add profit without adding proportionally more volume.</div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- COMPETITIVE URGENCY SCORE -->
+  <div class="urgency-card" id="urgency-score">
+    <div class="urgency-label">Competitive Urgency Score</div>
+
+    <div class="urgency-score">6</div>
+    <div class="urgency-outof">out of 10</div>
+
+    <div class="urgency-sentence">A score of 6 means competitors have meaningful advantages in one or more areas and are pulling ahead. You are not invisible yet — but the window to close the gap is narrowing. Every month without action is a month they extend their lead.</div>
+
+    <div style="margin-bottom:10px;">
+      <div class="urgency-bar"><div class="urgency-marker" style="left:60%;"></div></div>
+      <div class="urgency-scale">
+        <span>1–3 = Low Urgency</span>
+        <span>4–6 = Moderate</span>
+        <span>7–10 = High Urgency</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="competitors-label">Your Top Competitive Threats</div>
+
+  <div class="competitor-card">
+    <div class="competitor-name">Davidov Law Group</div>
+    <div class="competitor-threat">A Garden City estate planning and elder law specialist at 1122 Franklin Avenue, with directory listings that emphasize five-star client reviews. They are positioned as the specialist for the exact searches Mirabella &amp; Franzi wants to win.</div>
+  </div>
+
+  <div class="competitor-card">
+    <div class="competitor-name">Schwartz, Fang &amp; Keating, P.C.</div>
+    <div class="competitor-threat">A trusts and estates firm serving Garden City and Nassau County with peer-recognized attorneys and an established directory presence. Their trusts-and-estates focus gives them credibility on the work Mirabella &amp; Franzi has not yet marketed.</div>
+  </div>
+
+  <div class="competitor-card">
+    <div class="competitor-name">Cara Law</div>
+    <div class="competitor-threat">Located at 300 Garden City Plaza, the same office complex as Mirabella &amp; Franzi, and presenting estate planning, elder law, probate and Medicaid planning as a full estate practice. Local searchers see a broader estate offering from a firm a few steps away.</div>
+  </div>
+
+</div>
+<div class="back-to-top"><a href="#toc">↑ Back to Top</a></div>

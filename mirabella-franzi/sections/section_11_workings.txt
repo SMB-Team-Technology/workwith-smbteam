@@ -1,0 +1,96 @@
+SECTION 11 WORKINGS — Mirabella & Franzi (INTERNAL — never client-facing)
+Date: October 27, 2026 | Rep: Nick Holderman
+
+======================================================================
+PRICE LOOKUP (from package_decision.json, cross-checked against audit-write.md tables)
+======================================================================
+- Marketing package selected: Full Service Marketing — Essentials
+  - Bundled price: $3,797/mo (seller override; table bundled price is $3,497 but nothing is bundled)
+  - Stand-alone price (table): $3,797/mo
+  - Savings: $0/mo
+- Non-marketing package selected: none (seller removed coaching)
+  - Bundled / Stand-alone / Savings: n/a
+- Legal AI Workforce (LAW): none
+- AI Avatar / Video Growth add-on: none
+- Total monthly investment: $3,797/mo
+- Total savings: $0/mo (savings callout omitted from the report; retail strikethrough omitted because retail = bundled)
+
+======================================================================
+OVERRIDE CHECK / DEPARTURES FROM THE RULES (sales review)
+======================================================================
+- Decision file used as-is: confidence "medium"; needs_seller_input=false; call_focus.primary_engagement = marketing, lead_gen_gap = true.
+- Seller override applied (Slack, 2026-10-21): Essentials only, no coaching, standalone price $3,797, ad spend capped at the Essentials $7,500 cap. Commit history: "Seller override: Essentials at standalone $3,797/mo for mirabella-franzi".
+- ELIGIBILITY CONFLICTS ACCEPTED BY SELLER OVERRIDE (flag for sales-ops / scoping approval):
+  * Essentials is normally hidden for firms with multiple practice areas (this firm lists real estate, banking, PI, estate planning, business/corporate; marketing focus is estate planning + PI). Normally this would move to Starter.
+  * Essentials is normally hidden for PI firms; PI is the secondary marketing focus here (rep advised not leading with it). Report keeps PI as a later phase.
+  * Essentials is normally hidden above $750K revenue. Transcript revenue is ~$1.0M gross.
+- REVENUE MISMATCH: package_decision.json revenue_effective = $3,000,000 (HubSpot "$3,000,000+"), but the prospect stated ~$1,000,000 on the call (00:06:47). is_contingency_practice=true in the file, but the firm's work is mostly flat-fee real estate, and no net/gross split was stated. Report uses ~$1M (the transcript figure). The decision file's "Platinum tier" selection note and Elite Coach Plus note were superseded by the seller override.
+- Budget-reality override (check #3): prospect said $4–6K/mo ad spend is "a bit high", was thinking "two to four" (00:22:23). Essentials (lowest marketing tier) is consistent with this. HOWEVER the $7,500/mo recommended ad spend from the decision file is ABOVE both her $2–4K comfort range and the rep's $4–6K pitch. Seller should confirm the $7,500 figure before the proposal call. Existing-vendor override (#2): none, no current marketing vendor. Call-purpose override (#1): none, standard marketing call. Effective-revenue override (#4): not applicable (no net figure stated).
+- 35% cap check: $3,797 + $7,500 = $11,297/mo = $135,564/yr = ~13.6% of $1M revenue. Under cap.
+- Minimum MRR $2,497: satisfied.
+
+======================================================================
+AD SPEND / ROI (Block 4)
+======================================================================
+Decision file: conservative = $7,500, aggressive = $7,500 (both pinned at the Essentials cap). Because the two ad spend figures are equal, Block 4 (which has a single ad-spend row in the template) shows one spend figure and shows cases/revenue as a range from the two CPL scenarios (conservative CPL includes the 20% cushion, aggressive does not).
+Practice-area basis: estate planning (primary focus). PI is a later phase; no PI dollars allocated.
+Channel allocation of $7,500 (estate planning minimums: Google PPC $3,500, LSA $2,000, Meta retargeting $1,200):
+  Google Search $4,300 (57.3%) | LSA $2,000 (26.7%) | Meta retargeting $1,200 (16.0%)
+Client-facing CPL midpoints (Estate Planning): Google $135 | LSA $65 | Meta retargeting $52.50
+Blended CPL (spend-weighted midpoints) = $103.13
+Case value: $4,500 (prospect-stated, simple will probate, 00:13:52)
+Close rate: 15% (default — not stated on the call; disclose)
+CONSERVATIVE (CPL +20% = $123.76): 60.6 leads -> 9.1 cases -> $40,906/mo -> 5.5x
+AGGRESSIVE (CPL $103.13): 72.7 leads -> 10.9 cases -> $49,087/mo -> 6.5x
+Displayed in the report: 9–11 cases/mo, $40,900–$49,100/mo revenue, case value $4,500.
+CAUTION FOR REP: these projections exceed the prospect's stated capacity ("we could very easily pick up four files a month", 00:34:26) and her stated preference for slow growth (00:35:16). Be ready to scope the pace, and note she wants any spend tied to a return. Revenue goal check: +25% (~$250K/yr, ~$20.8K/mo) is well within the projected range if projections hold.
+
+"Why this range" sentence (client-facing): To put the firm in front of high-intent estate planning and probate searches in Garden City and Nassau County, so new files come from a source you control rather than only from real estate referrals.
+
+======================================================================
+DBM STATEMENT (Block 1)
+======================================================================
+No lifestyle motive stated. Closest: "definitely don't want to retire. I'm only 43. So I'd like to become a leader in the industry" (00:33:11) plus predictable, gradual growth ("a slower growth would be more important to me", 00:35:16). Block 1: "We help established Garden City law firms get a steady flow of estate planning and probate clients so they can become a leader in their industry through sustainable, controlled growth."
+
+======================================================================
+FIRM STAGE
+======================================================================
+Stage 3 (Solo Practitioner). Border case: referral-only, no scalable lead-gen system, but the firm has 3 attorneys and 6 staff. Per the stage rules, the lower stage was assigned because there is no scalable lead-gen system (Stage 4 requires one).
+
+======================================================================
+QUICK WIN OPPORTUNITIES (7)
+======================================================================
+1. [Lead Gen / Quick Win] Estate planning and probate page set + FAQ content (AI-search ready). Why: one short ~4-bullet page, no FAQs/articles. Competitor: Cara Law (full estate practice, same building). Opp: capture "estate planning attorney Garden City" and AI-answer visibility.
+2. [Lead Gen / Quick Win] Launch Google Search ads for estate planning (Garden City + Nassau). Why: never advertised. Competitor: Davidov Law Group. Opp: first predictable source of estate files.
+3. [Lead Gen / Quick Win] Directory cleanup and review-generation process. Why: inconsistent firm name (LLPC / PLLC / Mirabella Law Group PLLC), Avvo lists real estate + PI not estate planning. Competitor: none confirmed. Opp: consistent listings + review stream.
+4. [Intake / Quick Win] Request-a-consultation form and click-to-call above the fold. Why: phone-only CTA; form only on Contact page. Competitor: none.
+5. [Intake / Long-Term] Same-day response process for new estate inquiries, with staff doing first-pass intake and attorney review. Why: only referral intake today. Competitor: none.
+6. [Team / Long-Term] Capacity plan tied to inquiry volume (four-files-a-month pace first). Why: hiring/office expansion depends on predictable demand. Competitor: none.
+7. [Profit / Quick Win] Practice-area revenue and profit targets for the 25% goal plus cost-per-client tracking. Why: no targets set (00:13:17), return-based investment. Competitor: none.
+
+======================================================================
+WHAT YOU TOLD US (Block 5) — transcript sourcing
+======================================================================
+Row 1 — "Estate planning and probate come only through referrals from other work, and the firm doesn't solicit it."
+  Transcript (00:10:12, Rosanna): "We just do it by way of referrals from other kinds of transactions, but we don't solicit that business."
+  Supports Block 2: Google Ads/LSA management, SEO/AEO foundation, local SEO.
+Row 2 — "Growth should be gradual so the firm's reputation is protected."
+  Transcript (00:35:16, Rosanna): "you don't want to jump too big because you don't want to ruin the reputation that we've established thus far. So a slower growth would be more important to me"
+  Supports Block 2: estate-planning-first campaign scope; PI added later; ad spend scaled to capacity.
+Row 3 — "The firm must keep control of its website after a past IT-company experience."
+  Transcript (00:27:35, Rosanna): "we had previously had a IT company managing our website. Didn't go over well, because they wouldn't give us back our domain name. It was just a fiasco." Also 00:31:12: "Like we both have control on that."
+  Supports Block 2: WordPress website build with firm-held administrator login (per rep's answer at 00:28:00 area).
+Next step line: kickoff call with your Onboarding team.
+
+======================================================================
+ESCALATION FLAGS (internal)
+======================================================================
+- Review counts unconfirmed — verify live before the call (firm GBP count, rating, and all three competitors' counts were not obtained; none printed in the report).
+- Essentials tier is outside the normal eligibility rules (multi-practice-area, PI secondary, revenue ~$1M > $750K); applied by seller override — confirm scoping/pricing approval.
+- Recommended ad spend $7,500/mo exceeds the prospect's stated $2–4K preference — confirm before the proposal call.
+- Personal injury in a top-40 metro (Nassau/NYC area): scoping approval required before PI is added.
+- decision file revenue_effective ($3M, HubSpot) conflicts with the call ($1M) — correct HubSpot if wrong.
+- Roadmap Phase 3 names Legal AI Workforce (AI Workforce Pro): confirm with sales rep that LAW delivery has launched and capacity is available before anyone offers it. No LAW is in the proposal today.
+- Competitor ad/LSA/Meta activity was not observed (no live access) — client report words these as "not captured".
+- Domain note: mirabellalawgroup.com redirects to an unrelated spam site; ownership NOT confirmed — do not assert it as the firm's domain. Relevant to her domain-name concern.
+- Prospect wants to consult her IT provider and review with David before deciding; wants to start by January 1.
