@@ -27,61 +27,67 @@ import re
 # FILL — Replace every placeholder. Do not delete any variable.
 # ═══════════════════════════════════════════════════════════════════
 
-FIRM_NAME      = "Office of James Patrick Barrett"
+# Report metadata
+FIRM_NAME      = "BL Legal"
 SALES_REP      = "Jonathan Farace"
-OUTPUT_PATH    = "office-of-james-patrick-barrett/OfficeofJamesPatrickBarrett_October212026_Proposal.pptx"
+OUTPUT_PATH    = "office-of-james-patrick-barrett/BLLegal_October212026_Proposal.pptx"
 
-# No discovery call transcript exists, so no prospect quotes are shown.
-PROSPECT_QUOTES = []
+# ── Slide 1 ──────────────────────────────────────────────────────
+PROSPECT_QUOTES = [
+    ("You said", "Increase everyone's awareness of them like outside of their referral network."),
+    ("You said", "It certainly is not a testament to a strong intake process."),
+]
 
 KEY_GAPS = [
-    ("Lead Generation", "Phone visitors may leave: the mobile site scores 33/100 and loads in ~21 seconds"),
-    ("Intake", "The form promises a reply in 24 to 48 hours, so a faster firm can win the case"),
-    ("Profit Plan", "Cost per signed case is unknown, so ad dollars cannot yet be tied to results"),
+    ("Lead Generation", "Nearly every case is a referral, so growth stalls without a system you own"),
+    ("Intake", "A week or two to sign a client lets a faster firm win the case first"),
+    ("Profit Plan", "Spend can't yet be tied to signed cases, so budget can't follow results"),
 ]
 
 STAGE_TEXT = "Stage 4: Small Business Manager  →  Goal: Stage 6, Law Firm Owner"
 
-SLIDE_2_TITLE = "Your Growth Plan: 3 Priorities for Predictable Growth"
+# ── Slide 2 ──────────────────────────────────────────────────────
+SLIDE_2_TITLE = "Your Growth Plan: 3 Priorities to Lead Tallahassee Digitally"
 
 PRIORITIES = [
     (
         "Build the Marketing", "Engine", "003A59",
         [
             "Rebuild the site to load fast on every phone",
-            "Clean up the firm name and listings everywhere",
-            "Launch Google Ads and Local Service Ads",
+            "Own your whole Google footprint, map to reviews",
+            "Launch Google Ads and Local Service Ads by case type",
             "Add Facebook and Instagram retargeting",
-            "Turn a 35-year reputation into steady new cases",
+            "Become the digital pioneer of this market",
         ],
     ),
     (
         "Fix Intake &", "Stop Losing Cases", "69CD2B",
         [
-            "Set a same-day reply standard for web inquiries",
-            "Move the consultation form above the fold",
-            "Add a one-tap call or text option on mobile",
-            "Track each inquiry from first click to signed",
-            "Name one owner for response time",
+            "Set a same-day reply standard for new leads",
+            "Update the 24 to 48 hour promise on the form",
+            "Build a follow-up plan for digital leads",
+            "Screen after-hours calls, not just take messages",
+            "Track each lead from first click to signed case",
         ],
     ),
     (
         "Install Team &", "Profit Systems", "003A59",
         [
-            "Name an owner for marketing and intake results",
-            "Track cost per signed case by channel",
-            "Review a simple weekly growth scorecard",
+            "Name one owner for the marketing-to-intake handoff",
+            "Review signed cases by source every week",
+            "Track cost per signed case by case type",
             "Plan the next phase: operations, then finance",
-            "Direct each growth dollar using real data",
+            "Show leadership proof that every dollar works",
         ],
     ),
 ]
 
+# ── Slide 3 ──────────────────────────────────────────────────────
 PACKAGES = [
     (
         "FULL SERVICE MARKETING — PLATINUM",
         "$18,997", "stand-alone price",
-        "Website · Google Ads · LSA · Meta Ads · SEO · GBP",
+        "Website · SEO · GBP · Reviews · Google Ads · LSA · Meta Ads",
         "0091C9",
     ),
 ]
@@ -90,24 +96,23 @@ BUNDLE_TOTAL   = "$18,997 / mo"
 BUNDLE_SAVINGS = "Stand-alone pricing"
 
 AD_SPEND_NOTE = (
-    "+ Ad spend: $7,500–$30,000/mo — to turn Tallahassee injury searches into signed cases"
+    "+ Ad spend: $9,200–$30,000/mo — to turn Tallahassee injury searches into signed cases"
 )
 
-AVG_CASE_VALUE     = "$6,500 (est.)"
-CONSERVATIVE_LABEL = "Conservative  (~1–2 cases/mo):"
-CONSERVATIVE_RESULT = "~$10,000 revenue · 1.3× ROAS"
+AVG_CASE_VALUE     = "$35,000 (firm-reported)"
+CONSERVATIVE_LABEL = "Conservative  (~2 cases/mo):"
+CONSERVATIVE_RESULT = "~$77,000 revenue · 8.4× ROAS"
 AGGRESSIVE_LABEL   = "Aggressive  (~9 cases/mo):"
-AGGRESSIVE_RESULT  = "~$58,500 revenue · 2.0× ROAS"
+AGGRESSIVE_RESULT  = "~$317,000 revenue · 10.6× ROAS"
 
 WHAT_YOU_TOLD_US = [
-    ("Slow mobile site", "Rebuild focused on mobile speed and conversion"),
-    ("Local visibility", "Local SEO and Google Business Profile management"),
-    ("Unconfirmed ads", "Google, LSA and Meta managed by practice area"),
+    ("SEO first", "Rebuild, content, local SEO and reviews"),
+    ("Wider awareness", "Google, LSA and Meta managed by practice area"),
+    ("Cases signed", "Reporting reviewed with you against signed cases"),
 ]
 
 CLOSING_QUOTE = (
-    '"Thirty-five years of trust, working for us every hour of every day — '
-    'and the right cases finding us first."'
+    '"There\'s a real room for us to run as the digital pioneers of this market."'
 )
 
 # ═══════════════════════════════════════════════════════════════════
