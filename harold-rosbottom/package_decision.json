@@ -26,10 +26,10 @@
     ],
     "lead_gen_gap": true
   },
-  "marketing_tier": "Platinum",
-  "marketing_name": "Paid Ads Platinum",
-  "marketing_price_bundled": 8997,
-  "marketing_price_retail": 9997,
+  "marketing_tier": "Starter",
+  "marketing_name": "Paid Ads Starter",
+  "marketing_price_bundled": 2497,
+  "marketing_price_retail": 3497,
   "marketing_savings": 1000,
   "coaching_name": null,
   "coaching_price_bundled": null,
@@ -40,19 +40,20 @@
   "law_price_bundled": null,
   "law_price_retail": null,
   "law_seats": null,
-  "total_bundled": 8997,
+  "total_bundled": 2497,
   "total_savings": 1000,
   "ad_spend_conservative": 10000,
-  "ad_spend_aggressive": 40000,
+  "ad_spend_aggressive": 20000,
   "ad_spend_rationale": {
     "conservative_basis": "car accidents",
-    "aggressive_basis": "scaled 4x off the conservative channel-minimum floor"
+    "aggressive_basis": "capped at the $20,000 Paid Ads Starter ad spend cap (scaled 4x floor would have been $40,000)"
   },
   "selection_notes": [
-    "Revenue not in research notes — sourced from HubSpot (hubspot_annual_law_firm_revenue): \"$3,000,000+\" → $3,000,000",
-    "Team size not stated in research notes — defaulting to 3. Review for coaching tier accuracy.",
+    "Revenue not in research notes \u2014 sourced from HubSpot (hubspot_annual_law_firm_revenue): \"$3,000,000+\" \u2192 $3,000,000",
+    "Team size not stated in research notes \u2014 defaulting to 3. Review for coaching tier accuracy.",
     "Revenue $3M+: Platinum tier.",
     "Revenue $1M+, team under 5: Elite Coach Plus selected (Master's Circle requires 5+ team).",
-    "Seller override: switched to Paid Ads Platinum only (ads management, no coaching) per Slack request on 2026-10-21 (\"These guys want paid ad management only\"). Elite Coach Plus removed; ad spend range unchanged ($10,000–$40,000, under the $150,000 Platinum cap). Note: catalog guidance normally pairs ads-only sub-packages with coaching."
+    "Seller override: switched to Paid Ads Platinum only (ads management, no coaching) per Slack request on 2026-10-21 (\"These guys want paid ad management only\"). Elite Coach Plus removed; ad spend range unchanged ($10,000\u2013$40,000, under the $150,000 Platinum cap). Note: catalog guidance normally pairs ads-only sub-packages with coaching.",
+    "Seller override: switched to Paid Ads Starter stand-alone (no coaching, no other products) per Slack request on 2026-10-21 (\"change to Paid Ads Starter stand alone and lock it in\"). Priced at the bundled rate $2,497/mo (retail $3,497) consistent with the prior override. Aggressive ad spend reduced from $40,000 to $20,000 to respect the Paid Ads Starter cap; conservative stays $10,000. Lock-in was requested in the same message as the change, so status left pending for explicit confirmation."
   ]
 }
