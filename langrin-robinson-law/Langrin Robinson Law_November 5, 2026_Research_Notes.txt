@@ -1,0 +1,191 @@
+RESEARCH NOTES — Langrin Robinson Law (Langrin-Robertson Law, LLC)
+Friendly name: langrin-robinson-law
+Sales rep: Dan Bryant
+Proposal call date: November 5, 2026 (11:00 AM ET)
+Discovery call date: October 22, 2026
+Research run: October 22, 2026 (Pass 1)
+
+=====================================================================
+READ FIRST — FLAGS FOR PASS 2 (/audit-write)
+=====================================================================
+1. FIRM NAME / URL MISMATCH. The trigger file gives "Langrin Robinson Law" and https://www.langrinrobinsonlaw.com. That domain does NOT resolve (DNS ENOTFOUND). The firm's real site is https://langrinrobertsonlaw.com (HTTP 200) and the firm's public name is "Langrin-Robertson Law, LLC" (attorney: Hazel Langrin-Robertson). The transcript says "Langren/Langrin Robertson". "Robinson" in the trigger looks like a misspelling. Folder name stays langrin-robinson-law; client-facing copy should use "Langrin-Robertson Law" unless the rep says otherwise.
+2. THE CALL ATTENDEE IS NOT THE OWNER. Discovery call was with "Jacquel" (trigger: contact_name Jacqueline Gordon; she spells her name with an accent over the e) — a retired marketer/operations helper and friend of the owner. Quote: "I am not the attorney." / "I am retired." The firm owner is attorney Hazel Langrin-Robertson, who did not attend. Address the report to the firm/Hazel; do not present Jacquel's views as the owner's.
+3. THIS CALL WAS ABOUT AI, NOT MARKETING GROWTH. Call focus was the AI Workforce Pro free trial / 10/28 AI Growth Summit. See STEP 9 "Stated call focus" and "Primary engagement: AI". Revenue, close rate, case volume and intake metrics were NOT discussed.
+4. SEVERAL LIVE-VERIFICATION STEPS COULD NOT BE COMPLETED in this environment (no Google Maps/SERP/Ads/Meta Ad Library access; PageSpeed API quota exhausted; local Lighthouse blocked by site 403). These are marked NOT OBSERVED below. Nothing was estimated or fabricated. No Google review count is confirmed — all counts below are UNCONFIRMED and must not be printed as specific figures.
+5. The Fathom AI summary contains a typo: follow-up call listed as "Oct 5". The full transcript says "Thursday the 5th at 11 Eastern" (Nov 5), consistent with the trigger.
+
+=====================================================================
+STEP 1 — WEBSITE RESEARCH
+=====================================================================
+Source: live fetch of https://langrinrobertsonlaw.com/ (and /practice-area/, /client-reviews/).
+- Website URL confirmed live: yes (langrinrobertsonlaw.com, HTTP 200). Trigger URL langrinrobinsonlaw.com: no (does not resolve).
+- Last redesign date or estimated age: not stated on site. Footer shows "Copyright © 2025" and "Built by Mavixx.co". Exact redesign date unknown.
+- Mobile responsive: yes — inferred from collapsing hamburger navigation and responsive image scaling in page markup; not device-tested.
+- Homepage headline: "Langrin Robertson Law: Results Driven" with subheading "Atlanta Personal Injury Attorney"
+- CTA above fold: yes — "Free case evaluation" button; secondary "Call Us Now: +1 (678) 242-9280"; "Free Consultation 24/7" banner in header
+- Contact form location: no contact form observed above the fold (phone/CTA button in header)
+- Live chat present: no (none detected)
+- Attorney bio present: yes — Hazel Langrin-Robertson, "over 22 years of legal practice devoted to protecting the injured"; Super Lawyers and National Trial Lawyers honors cited
+- Video present: no (no embedded video on homepage)
+- Blog present: yes — most recent post observed: "Can You Still Get Compensation If You're Partially at Fault..." dated Feb 21, 2025 (about 20 months before this research)
+- Address / phone on site: 2330 Scenic Highway, Suite 383, Snellville, GA 30078; +1 (678) 242-9280
+- Client reviews page: shows 3 testimonials (Nadiya Allen — "4 months ago"; Ayaana Nash — "2 months ago"; Ragan LeGree — "4 months ago") with a "View all" link to Google. No star totals shown on the site.
+- Note: the site returns 403 to headless-browser/automated user agents (bot protection). Normal fetches succeed.
+
+PageSpeed (pagespeed.web.dev):
+- PageSpeed mobile score: NOT OBTAINED. pagespeed.web.dev UI returned no results to the fetch tool; the PageSpeed Insights API returned HTTP 429 (daily quota exhausted for the shared project); a local Lighthouse run failed with "unable to reliably load the page (Status code: 403)". No estimate recorded.
+- PageSpeed desktop score: NOT OBTAINED (same reasons). Pass 2 must NOT print a PageSpeed figure for this firm unless re-run successfully.
+
+=====================================================================
+STEP 2 — GOOGLE BUSINESS PROFILE
+=====================================================================
+Google Maps / GBP could not be opened directly. Figures below come from third-party search-result snippets.
+- GBP found: yes — website links to Google reviews; aggregator listings reference Google reviews for the firm (not directly viewed)
+- Star rating: 5.0 [UNCONFIRMED — sourced from web search snippets/aggregator directory listings, not independently confirmed via Google]
+- Total review count: conflicting aggregator figures — 22 and 41 [UNCONFIRMED — sourced from web search snippets/aggregator directory listings, two sources disagree, not independently confirmed via Google]. Do not print a specific number.
+- Most recent review date: not confirmed via Google. The firm's own reviews page labels its newest embedded review "2 months ago" (Ayaana Nash) — relative date from website embed, not verified.
+- Primary category: NOT OBSERVED
+- Photos active: NOT OBSERVED
+- Posts active: NOT OBSERVED
+
+=====================================================================
+STEP 3 — LOCAL 3-PACK SEARCHES
+=====================================================================
+NOT OBSERVED. Google local-pack/SERP results could not be loaded in this environment, so none of the required per-practice-area keyword searches were run. No pack positions or competitor-in-pack figures are recorded. Pass 2 must not claim the firm does or does not appear in the 3-pack.
+
+Practice Area 1: Personal injury (Atlanta / Snellville / Gwinnett)
+- Search 1 "Atlanta personal injury attorney": NOT OBSERVED
+- Search 2 "Snellville car accident lawyer": NOT OBSERVED
+- Search 3 "Gwinnett County truck accident lawyer": NOT OBSERVED
+
+=====================================================================
+STEP 4 — COMPETITOR REVIEW COUNTS
+=====================================================================
+None verified via Google. Aggregator/ranking-article figures only (articles of unknown freshness; counts are "N+" approximations):
+- Competitor 1: Monge & Associates Injury and Accident Attorneys (Atlanta) — reviews: 627 [UNCONFIRMED — sourced from a "best Atlanta personal injury lawyers 2026" ranking article, not independently confirmed via Google] — rating: 4.9 [UNCONFIRMED — same source]
+- Competitor 2: Georgia Injury Advocates (Snellville / Gwinnett, "25+ years") — reviews: not stated in source [UNCONFIRMED] — rating: 4.8 [UNCONFIRMED — sourced from the firm's own web page snippet, not independently confirmed via Google]
+- Competitor 3: The Millar Law Firm (Atlanta) — reviews: 350+ [UNCONFIRMED — sourced from a ranking article, not independently confirmed via Google] — rating: 4.9 [UNCONFIRMED — same source]
+Context (all UNCONFIRMED, same source): other Atlanta-area firms listed with 400–950+ Google reviews (Hasner Law 600+, Spaulding Injury Law 400+, Butler Kahn 500+, Stewart Miller Simmons 950+).
+The prospect's own count (22 or 41, UNCONFIRMED) appears far below these metro-Atlanta firms, but because no figure is Google-confirmed, Pass 2 must not print specific competitor or prospect counts.
+Other named local (Snellville/Gwinnett) competitors seen, no counts recorded: Griffin Law Firm, P.C.; Coker Accident Lawyers; Casey W. Stevens.
+
+=====================================================================
+STEP 5 — DIRECTORY LISTINGS
+=====================================================================
+- Avvo: profile exists (Hazel Anthea Langrin-Robertson, Snellville GA, personal injury). Direct fetch returned 403; rating/review count not read.
+- Justia / FindLaw: not checked (could not be reached in this environment).
+- Yelp: listing exists (yelp.com/biz/langrin-robertson-law-snellville); search snippet shows 5.0 with 1 review [Yelp snippet, not Google].
+- Attorney at Law (attorneyatlaw.com): listing exists; says "9 years in practice", licensed in Georgia, UK and Jamaica.
+- Lawful.com: listing exists, filed under "Johns Creek, GA".
+- Facebook: page "Langrin-Robertson Law,LLC" exists (Snellville, GA); activity not read.
+- Others seen in search results: Manta, esplawyers.com, localo.site, LegalRank.
+NAP / consistency observations:
+- Lawful.com lists the firm in Johns Creek; website, Avvo and Yelp say Snellville.
+- Experience claims differ: website "over 22 years" (combined legal experience) vs Attorney at Law "9 years in practice".
+- Address formats vary ("2330 Scenic Highway, Suite 383" on site vs "2330 Scenic Highway South" on Attorney at Law/Yelp).
+Geo-targeting landing pages: yes — site has city pages for Atlanta, Snellville, Lawrenceville, Loganville, Gwinnett County, plus Duluth, Dunwoody, Dacula, Fayetteville, Sandy Springs, Grayson, Stone Mountain, Johns Creek, Augusta, Lithonia, Redan, Lilburn, Peachtree Corners, Decatur, Conyers, Alpharetta, Suwanee, Norcross, Monroe.
+
+=====================================================================
+STEP 6 — GOOGLE ADS
+=====================================================================
+NOT OBSERVED. Google SERPs could not be loaded, so no ad observations were made for any practice area. Per ADS FRAMING RULE: no claim is made about whether the firm is or is not running ads. A web search for firm + ads surfaced no evidence either way. The prospect did not discuss ads on the call.
+Practice Area 1: Personal injury
+- Firm ads observed: not observed
+- Named local competitors running ads: not observed
+
+=====================================================================
+STEP 7 — LOCAL SERVICE ADS
+=====================================================================
+- Firm appears in LSA: not observed
+- Google Screened: not observed
+- LSA review count: not observed
+- Named local competitors in LSA: not observed
+
+=====================================================================
+STEP 8 — META ADS
+=====================================================================
+Facebook Ad Library could not be queried in this environment.
+- Firm has active ads: not observed
+- Named local competitor 1: not observed
+- Named local competitor 2: not observed
+
+=====================================================================
+STEP 9 — TRANSCRIPT EXTRACTION
+=====================================================================
+Transcript source: full verbatim Fathom transcript (summary used only as overview)
+Call: Fathom recording 195394549, 2026-10-22, about 35 minutes. Attendees: Dan Bryant [SMB Team] and "Jacquel" (prospect-side helper; not the owner). Firm owner Hazel did not attend.
+Transcription notes: "$3.50" per person read as $350 [transcript unclear — read as $350, matches "$1,597" / "$3.19" for 5 users]; "Air Force Pro" read as AI Workforce Pro; firm name garbled as "Langren/Langrin Robertson"; the summary's "Oct 5" follow-up is Nov 5.
+
+- Practice areas confirmed: Personal injury, Atlanta ("Atlanta Personal Injury Attorney, right?" — "Yes." 00:01:03). Separate Jamaica law firm co-owned with Hazel's mother (type not stated); Hazel also licensed in England. Website lists car, truck, motorcycle, rideshare, slip and fall, dog bite, wrongful death, negligent security.
+- Current lead sources: not stated on the call.
+- Ads ever run: not stated on the call. Prior marketing vendor at $2,000/mo (platforms/results not stated except quality problems) — see vendor line below.
+- Team size: 4 total — attorney/owner Hazel + 2 employees + Jacquel (retired helper). "So she has two, plus me, plus her." (00:29:42) — "So four total?" — "Mm-hmm." Churn role: case manager. Hazel is "leery to hire somebody full-time."
+- Annual revenue (gross / case value): not stated
+- Annual revenue (net / take-home / collected): not stated — not distinguished from gross (no revenue figure given at all)
+- Fee structure: not stated on call (website says contingency fee: "you pay nothing unless we win")
+- Revenue goal: not stated (current revenue also not stated, so the "2x current revenue" default has no base — Pass 2 should avoid revenue projections)
+- Average case value: not stated — personal injury practice-area default applies
+- Current close rate: not stated — default to 15%
+- Number of locations: 1 for this firm (Snellville, GA office per website). Separate Jamaica firm exists but was explicitly set aside: "We're going to stay focused on this one." (00:27:50)
+- Spanish campaign needed: no (not mentioned; no Spanish content on site)
+- Dominant buying motive: INFERRED — a firm that runs itself so the owner gets her time back (owner not on call; her helper spoke for her). "she works six days a week" (00:26:56) / "that's a cause for burnout." (00:27:01); "I need to know how many different things that I need to get her out of that this can replace." (00:23:49). Helper's own motive: set systems up, then hand off — "I don't want to work this." (00:31:35) and return to retirement.
+- Any profitability claims made by prospect: none stated. (Rep's remarks about doubling matters/profit multiples were pitch math, not firm figures — do not use.)
+- Any claims about case types or practice areas: none stated by prospect beyond "Atlanta Personal Injury Attorney."
+- Stated call focus / product interest: AI — the call was about AI Workforce Pro (free trial in hand, registered for the 10/28 AI Growth Summit) as an all-in-one hub for social/content scheduling, project management, email/calendar triage, intake follow-up, SOPs and role-based privacy, plus questions on staff turnover portability and multi-entity (Jamaica/UK) use. It was NOT a standard marketing/growth discovery call. Rep also mentioned in passing: SMB Team headhunting service for an A-player case manager, a fractional CTO as an optional automation-sprint bundle, being "a full-service digital agency", and the referral program — none were scoped or priced for this firm.
+- Primary engagement: AI
+- Products discussed on call: AI Workforce Pro – Starter, AI Workforce Pro (base)
+  (Priced by the rep: $350 per user per month for 1–4 users with ~1M credits/user; $1,597/month for 5 users (~$319/user) with 2M credits/user; $120/user/month for 6+ at team level. Jacquel: "if I were doing this, I would just go ahead and buy that 5, that 5-team package." Current team is 4 people. The headhunting service, fractional CTO and full-service marketing were only mentioned in passing.)
+- Lead-gen gap stated: no — "I'd like to set her up in some programs that are, you know, whatever. The staff that we wind up hiring can take over" (00:02:00). No request for more leads/cases or for marketing/ads/SEO/website help; marketing came up only as a bad past vendor and "I'm currently writing some articles for her." (00:04:01). Openness to agency help is conditional: "if there's something that I need or something that we agree we need, and I really don't want to do this, I can let you guys know what it is and you guys can do it" (00:31:35).
+- Existing marketing/SEO/ad vendor engagements: none current. Prior vendor terminated: "She was paying somebody for part of her marketing, right, for $2,000 a month. And I made her cut it off" (00:30:06). Note: website footer says "Built by Mavixx.co" — unconfirmed whether that is the terminated vendor.
+- Budget constraints stated: none stated as a limit. Affordability was raised but resolved by the helper: "So she can more than afford this." (00:30:31); and "I just want to make sure that this is something that she can afford that will, that she will see results immediately." (00:30:41). Cost-conscious about consolidation: "I need to know how many different things that I need to get her out of that this can replace." (00:23:49)
+
+Other transcript facts for Pass 2 (prospect statements):
+- Pain points: vendor quality (calls not getting through, wrong website info); case-manager turnover and hiring A-players ("I really think it's in the hiring."); admin/email overload (an hour, potentially two a day on email); no standardized SOPs; staff "not a technical kind of group... They do not know AI."; need user-level privacy/role-based access and portability when staff change.
+- Next step: solution call Thursday, Nov 5 at 11:00 AM ET with Dan. Jacquel to watch prep videos before the 10/28 event (10:00 AM ET), set up AI Workforce Pro "like I am Hazel," and has an admin/title-based email for Hazel. Jacquel is unavailable Oct 29 to Nov 4.
+- Network: Jacquel has many attorney friends and a daughter at Stetson Law ("if it works for one, guess what?"); referral program was discussed.
+
+Key prospect quotes (verbatim prospect lines; speaker is Jacquel, the owner's helper, not the attorney):
+1. (00:00:12) "So here I am helping her because she's got a lot going on that wasn't going on properly that she's spending too much money on." — why she stepped in
+2. (00:01:37) "I'm taking over her marketing and advertising until she gets – I'm going to do all that busy work for her until she gets the right staff in place." — interim ops/marketing
+3. (00:02:00) "The staff that we wind up hiring can take over, and it's already set. It's ready to go. I don't have to retrain somebody on whatever." — SOPs/handoff goal
+4. (00:04:13) "I can create a project, I can create a schedule, I can create all of that one place." — tool consolidation
+5. (00:08:38) "it sounds like she's not finding the right people that can do this, and I'm like, so why are we even bothering with folks?" — team/hiring
+6. (00:13:29) "Let's make sure we get the SOP correct instead of having to rebuild this three, four, or five different times." — SOPs
+7. (00:14:00) "Right now, yes, because she is not getting the right people, and I have to help her get the right people." — turnover (case manager role at 00:15:16)
+8. (00:26:56) "I'll tell you right now, she works six days a week." — owner workload / DBM
+9. (00:27:01) "that's a cause for burnout." — owner burnout / DBM
+10. (00:30:14) "Half the stuff they're putting out is wrong. When people call you, they're not getting through to you." — prior marketing vendor / intake
+11. (00:31:11) "If I can do some of that in her email so that she's not even having to look through email hunting and pecking for stuff, that's an hour, potentially two." — admin time / profit-of-time
+12. (00:30:31) "So she can more than afford this." — budget
+
+=====================================================================
+STEP 10 — COMPETITIVE URGENCY SCORE
+=====================================================================
+Score: 6 (PROVISIONAL — based only on unconfirmed aggregator data and observable site content; the Google, ads and 3-pack evidence the score normally rests on was NOT observed)
+Basis: Metro-Atlanta personal injury competitors are credited in ranking articles with several hundred to 950+ Google reviews versus roughly 22–41 (UNCONFIRMED) for this firm; the firm's blog has not been updated since Feb 2025 and the site has no live chat, video or above-the-fold form; the firm does have a strong geo-landing-page footprint. Ad activity (firm and competitors) unknown.
+Named local competitor threats:
+1. Monge & Associates Injury and Accident Attorneys (Atlanta) — credited with a far larger review base than the prospect (UNCONFIRMED figures).
+2. Georgia Injury Advocates (Snellville / Gwinnett) — directly names Snellville as a top-five Gwinnett city and cites 25+ years and a 4.8 rating (UNCONFIRMED).
+3. Griffin Law Firm, P.C. (Snellville) — runs dedicated Snellville injury pages and cites "Best of Gwinnett" recognition (2021, 2022); competes head-on for the same local searches.
+Dynamic sentence (score 4–6): "A score of 6 means competitors have meaningful advantages in one or more areas and are pulling ahead. You are not invisible yet — but the window to close the gap is narrowing. Every month without action is a month they extend their lead."
+Caution: this call was an AI/operations conversation. Pass 2 should keep the marketing-competition framing proportionate and must not print any specific review count, rating or PageSpeed score from this file (all UNCONFIRMED or not obtained).
+
+=====================================================================
+PASS 2 — VERIFICATION CHECKLIST
+=====================================================================
+[x] Every number in the notes matches actually observed data (or is tagged UNCONFIRMED / NOT OBSERVED)
+[x] Competitor review counts: none Google-verified; all tagged UNCONFIRMED; no competitor presented as "dominating" on a verified basis
+[x] Every review count/star rating carries a verification-method tag (all [UNCONFIRMED — sourced from ...])
+[x] Revenue: not stated by prospect (recorded as not stated; gross/net not distinguished)
+[x] Ad sections cover the single practice area (personal injury); all "not observed" — no "not running ads" claims
+[x] No profitability or business claim included that did not come from the prospect (rep pitch math excluded)
+[x] No generic competitor labels — named local firms only
+[ ] PageSpeed scores are real numbers — NOT MET: could not be obtained (API quota 429, Lighthouse blocked 403); flagged, nothing estimated
+[x] DBM recorded (inferred, with prospect quotes)
+[x] Revenue goal recorded (flagged as not stated)
+[x] Close rate recorded (not stated — default 15%)
+[x] Average case value recorded (not stated — practice-area default)
+[x] Stated call focus recorded: AI (not marketing)
+[x] Primary engagement / Products discussed / Lead-gen gap stated filled in with exact format
+[x] Existing vendor engagements recorded (none current; $2,000/mo vendor cancelled)
+[x] Budget constraints recorded (none stated as a limit)
