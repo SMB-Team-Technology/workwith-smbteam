@@ -1,0 +1,196 @@
+RESEARCH NOTES — Riggs Law Firm
+Friendly name: riggs
+Contact: Dan Riggs (owner / sole attorney)
+Sales rep: Nick Holderman
+Proposal call date: November 2, 2026 (9:00 AM PT / 11:00 AM CT, Zoom)
+Discovery call date: October 22, 2026 (about 42 minutes; Hannah Petre set it up, Nick Holderman ran it)
+Research run: October 22, 2026 (Pass 1)
+
+=====================================================================
+READ FIRST — FLAGS FOR PASS 2 (/audit-write)
+=====================================================================
+1. LIVE-VERIFICATION STEPS COULD NOT BE COMPLETED in this environment (no Google Maps / SERP / Google Ads / Meta Ad Library access). PageSpeed API returned HTTP 429 (quota exceeded) on 6 attempts, and a local Lighthouse run was blocked by a 403 from the site. These items are marked NOT OBSERVED / NOT OBTAINED below. Nothing was estimated or fabricated. Do NOT print a PageSpeed score. NO Google review count or rating is confirmed — every count below is UNCONFIRMED and must not be printed as a specific figure.
+2. THIS CALL WAS ABOUT INTAKE / FOLLOW-UP AND COACHING, NOT A MARKETING PITCH. The rep recommended the coaching program (priced at $2,500–$3,500/mo) as phase 1 and AI automation as a possible phase 2. Prospect did not ask for marketing. See STEP 9 "Stated call focus" and "Primary engagement: coaching/ops".
+3. BUDGET IS A REAL OBJECTION. Dan said he does not have a lot of money right now and that coaching "feels like a lot to invest in right now" because it is "not bringing in more business … yet." He also asked whether prices keep escalating as new "phases" are added. The proposal must be sized and framed with this in mind (clear total cost, no open-ended phases).
+4. REP MATH IS NOT THE CLIENT'S. The "10x ROI" ($2,500 coaching vs $25,000/mo lost) is the rep's pitch math. Dan's own statement was "maybe up to 20%" of potential clients lost, "as high as 10 a month", "probably 20 to 35,000". These are hedged upper-bound estimates from a prospect who said he has not really quantified it ("A little bit"). Do not present them as measured.
+5. REP'S "$15–$20 [thousand]" monthly revenue assumption (00:33:40, "if you're pulling in between 15 and 20 … 10, 15% of gross revenue") was NOT confirmed by Dan. Do not use it as the firm's revenue. Dan's own stated figures: ~20–25 filings/month at about $1,500 (Ch.7) / ~$4,500 (Ch.13).
+6. FATHOM AI SUMMARY INACCURACIES (full transcript wins): (a) the summary says Dan "left a trustee role"; in fact he was an attorney who represented bankruptcy trustees for almost two decades and turned down an offer to take over his retiring main trustee's position (~"a quarter million dollars a year"). (b) The summary lists "Practice Panther … ineffective for lead tracking"; Dan said it is great after retention but he "haven't figured out a way to use it for … the lead generation", and that it "maybe … just haven't figured it out yet" — not a verdict that the tool is ineffective. (c) The summary says SMB Team "argued" a 10x ROI; see flag 4.
+7. COMPETITOR NAME: Dan says "Fairfee Legal"; the real firm is "Fair Fee Legal Services" (attorney Seth Ballstaedt, per directory results; Dan calls him "Seth", a former colleague/friend). Use the real name in client-facing copy.
+8. SPEAKER TAGGING in the transcript is off for a few lines near 00:06:03–00:06:19 ("I get a lot of referrals", "a lot of people know me and are sending me cases") — tagged Nick but clearly Dan from context.
+9. FIRM IS NEW: Dan started the firm in April 2026 (first business he has owned). Website appears to have been built around January 2026 (favicon upload path 2026/01).
+
+=====================================================================
+STEP 1 — WEBSITE RESEARCH
+=====================================================================
+Source: live fetch of https://danriggs.com/ (HTTP 200) plus page markup, /bankruptcy-news-las-vegas/, /feed/, /llms.txt and /firm-overview/.
+- Website URL confirmed live: yes (https://danriggs.com/, HTTP 200)
+- Last redesign date or estimated age: not stated on site. WordPress (OceanWP theme, AIOSEO Pro, LiteSpeed cache, Jetpack stats). Site icon uploaded 2026/01, so the site is roughly 9–10 months old. Exact launch date not observed.
+- Mobile responsive: yes — inferred from viewport meta tag (width=device-width, initial-scale=1) and mobile menu markup; not device-tested.
+- Homepage headline: H1 "Las Vegas Bankruptcy Attorney"; subheading (H2) "For over a decade, I represented a bankruptcy trustee. Now I represent you."
+- CTA above fold: yes — "Schedule Your Free Financial Assessment Here" (scheduler link) and "Call Us at 702-605-5070".
+- Contact form location: no embedded contact form on the homepage. The only forms in the homepage markup are a site search form and login/reset forms. A "Contact Us" page exists (/contact-las-vegas-bankruptcy-attorney/) — its form was not inspected.
+- Live chat present: no (no chat widget found in markup or page render).
+- Attorney bio present: yes, but thin on the homepage (photo plus the trustee-to-debtor-attorney positioning line); a separate "Firm Overview" page exists (/firm-overview/).
+- Video present: no (no embedded video found).
+- Blog present: yes — "Latest News & Events" / Blog at /bankruptcy-news-las-vegas/. Most recent post per RSS feed: October 9, 2026; 5 posts between Oct 5 and Oct 9, 2026 (very active cadence). Dozens of topical posts (means test, foreclosure, wage garnishment, credit rebuilding, etc.).
+- Other observations: separate practice pages for Chapter 7 and Chapter 13; geo landing pages for Henderson, Summerlin and North Las Vegas bankruptcy attorney; FAQPage schema on the homepage; an /llms.txt file is published (AI-search aware); no testimonials, review badges or trust badges visible on the homepage; footer address 5545 S Mountain Vista St, Las Vegas, NV 89120, phone 702-605-5070, info@danriggs.com. The Zoom/scheduler CTA means leads self-book consults; no evidence of automated follow-up for people who do not book.
+- PageSpeed mobile score: NOT OBTAINED — pagespeed.web.dev / PageSpeed API returned HTTP 429 (quota exceeded) on 3 attempts per strategy; local Lighthouse 12.8.2 (headless Chrome, desktop and mobile user agents) was blocked with a 403 from the site. No number recorded. Do not print or estimate a score.
+- PageSpeed desktop score: NOT OBTAINED — same reason as above.
+
+=====================================================================
+STEP 2 — GOOGLE BUSINESS PROFILE
+=====================================================================
+Direct Google Maps / Business Profile access was not available in this environment.
+- GBP found: not observed (could not reach Google). Firm is listed under address 5545 S Mountain Vista St, Suite B, Las Vegas, NV 89120 in directories (see STEP 5).
+- Star rating: not observed [UNCONFIRMED — no Google listing reached; not confirmed via Google]
+- Total review count: not observed [UNCONFIRMED — no Google listing reached; not confirmed via Google]
+- Most recent review date: not observed
+- Primary category: not observed
+- Photos active: not observed
+- Posts active: not observed
+- Third-party ratings only (not Google): Avvo 5.0 with 4 reviews, Lawyers.com 5.0 with 4 reviews [UNCONFIRMED — sourced from Avvo / Lawyers.com search-result snippets, not independently confirmed via Google]. These are directory ratings and must not be presented as Google reviews.
+
+=====================================================================
+STEP 3 — LOCAL 3-PACK SEARCHES
+=====================================================================
+NOT OBSERVED — no Google SERP/Maps access. Searches that should be run when live access is available:
+Practice Area 1: Bankruptcy — Chapter 7 (about 70% of cases per Dan)
+- Search 1 "las vegas chapter 7 bankruptcy attorney": not observed
+- Search 2 "bankruptcy lawyer las vegas": not observed
+- Search 3 "bankruptcy attorney near me" (Las Vegas): not observed
+Practice Area 2: Bankruptcy — Chapter 13 (about 30% of cases)
+- Search 1 "las vegas chapter 13 bankruptcy attorney": not observed
+- Search 2 "stop foreclosure las vegas chapter 13": not observed
+- Search 3 "chapter 13 bankruptcy lawyer las vegas": not observed
+Pass 2 must NOT state whether the firm does or does not appear in the 3-pack.
+
+=====================================================================
+STEP 4 — COMPETITOR REVIEW COUNTS
+=====================================================================
+No competitor figure below was read off a Google listing. All are from search-result snippets / aggregators and are UNCONFIRMED. Do not print as specific figures in the client-facing report.
+- Competitor 1: Fair Fee Legal Services (attorney Seth Ballstaedt; 8751 W Charleston Blvd, Suite 230, Las Vegas) — reviews: 827 [UNCONFIRMED — sourced from a search-result summary of the firm's own site / aggregator, not independently confirmed via Google] — rating: 4.9 [UNCONFIRMED — same source]. Also Yelp: 142 reviews [UNCONFIRMED — Yelp snippet, not confirmed via Google]. Dan calls this firm "the Big Goliath in our city" filing about 200 cases/month.
+- Competitor 2: Peters & Associates, LLP (a.k.a. PandA Law Firm) — reviews: 148 [UNCONFIRMED — sourced from a search-result summary, not independently confirmed via Google] — rating: 4.5 [UNCONFIRMED — same source]. Birdeye shows 249 reviews, 4.4 [UNCONFIRMED — Birdeye, not confirmed via Google].
+- Competitor 3: Freedom Law Firm (George Haines; 8985 S Eastern Ave #100, Las Vegas) — reviews: Yelp 26, rating 4.7 [UNCONFIRMED — sourced from Yelp snippet, not independently confirmed via Google]; Google figures not obtained.
+- Prospect comparison: Riggs Law Firm's Google review count is unknown, so no statement about who has more reviews may be made. Firm opened April 2026, so it very likely has far fewer reviews than the established competitors, but this was not verified.
+
+=====================================================================
+STEP 5 — DIRECTORY LISTINGS
+=====================================================================
+(From search-result snippets; direct profile pages blocked with 403 for Avvo.)
+- Avvo: listed as "Daniel G Riggs", Las Vegas bankruptcy, 5.0 rating with 4 reviews, overall Avvo rating 7.7 [UNCONFIRMED — snippet only].
+- Lawyers.com / Martindale: listed at 5545 S Mountain Vista St; 5.0 with 4 reviews [UNCONFIRMED — snippet only]. Martindale attorney profile exists.
+- Justia: profile exists (Las Vegas bankruptcy; address 5545 S Mountain Vista St, Las Vegas, NV 89120; phone (702) 605-5070).
+- FindLaw: not found in search results.
+- Yelp: no Riggs Law Firm listing found in search results (search surfaced the unrelated "Riggi Law Firm", a different Las Vegas firm — be careful not to confuse them).
+- NAP consistency: address and phone (702-605-5070) match between the website, Justia and Avvo/Martindale snippets. The trigger file (HubSpot) lists a different contact phone (702-306-4396); its origin is unknown and it was not found on any listing, so it is not treated as a NAP inconsistency.
+- Geo-targeting landing pages: yes — Henderson, Summerlin and North Las Vegas bankruptcy attorney pages on the site; plus an Emergency Bankruptcy Las Vegas page.
+
+=====================================================================
+STEP 6 — GOOGLE ADS
+=====================================================================
+NOT OBSERVED — no live Google SERP access. Note: the prospect confirmed on the call that he DOES run Google Ads ("I have Google ads"; later "if we throw the Google ad spend in"). Spend and platform management (self vs agency) not stated.
+Practice Area 1: Bankruptcy — Chapter 7
+- Firm ads observed: not observed (live check not possible; prospect confirms he runs Google Ads)
+- Named local competitors running ads: Fair Fee Legal Services — per Dan: "they do spend a lot on, Google ads spend, because I get the comparison, you know, as far as how mine are converting against … the people around me" (prospect statement; ad copy not observed).
+Practice Area 2: Bankruptcy — Chapter 13
+- Firm ads observed: not observed
+- Named local competitors running ads: not observed
+Pass 2 must not describe any specific ad copy.
+
+=====================================================================
+STEP 7 — LOCAL SERVICE ADS
+=====================================================================
+- Firm appears in LSA: not observed
+- Google Screened: not observed
+- LSA review count: not observed
+- Named local competitors in LSA: not observed
+
+=====================================================================
+STEP 8 — META ADS
+=====================================================================
+Meta Ad Library not accessible in this environment.
+- Firm has active ads: not observed. Dan says he has been "building out my social media" (organic); he also pays two lead vendors per lead (see STEP 9). Whether the firm runs Meta ads was not stated.
+- Named local competitor 1: Fair Fee Legal Services — active ads: not observed in the Ad Library. Per Dan: "I think that for the most part, they just do social media ads." Fair Fee's Facebook page promotes "$0 down" bankruptcy filing (search result) — organic page content, not Ad Library data.
+- Named local competitor 2: not observed.
+
+=====================================================================
+STEP 9 — TRANSCRIPT EXTRACTION
+=====================================================================
+Transcript source: full verbatim Fathom transcript (summary used only as overview). Only Dan Riggs's statements are treated as facts; rep statements (Nick Holderman, Hannah Petre) are treated as pitch/hypotheticals unless Dan confirmed.
+
+- Practice areas confirmed: Bankruptcy, almost exclusively — "I do mostly 7s and 13s. I have a few 11s. They're not my favorite. I'd love to grow to the 7, 13s and not take the 11s on anymore." Mix: "70% sevens, 30% 13."
+- Current lead sources: Referrals from his trustee-side network ("a lot of people know me and are sending me cases"), Google Ads ("I have Google ads"), organic social media and blogging ("I've been building out my social media. I've been writing blogs, and so I'm starting to rank a little bit better"), and two paid lead vendors: one at "like a hundred bucks a lead" (attorneys who go viral on social media forward out-of-jurisdiction referrals; "I only get a handful of those a month and almost a hundred percent of them confirm or go through"), another at "$40 a lead … a handful of those a month." Split between his own marketing and referrals/vendors: "probably 50-50, actually. If we throw the Google ad spend in, yeah, I don't know if it's 50-50."
+- Ads ever run: yes — Google Ads (currently running per Dan); budget/spend not stated; result not stated beyond Dan comparing conversion against peers. Meta ads: not stated.
+- Team size: 3 people — Dan Riggs (sole attorney/owner), one paralegal, one receptionist hired the Monday before the call (Oct 19, 2026). "it is anywhere from me to my paralegal, to my receptionist." Intake is ad hoc across all three.
+- Annual revenue (gross / case value): not stated. Per-case: Chapter 7 — "I'm charging $2,000 for a seven, but I take on all the costs" (hard costs of filing fees and credit report "probably about $500"); Chapter 13 — "about $4,500" [transcript garbled "$1,300" — read as "13", i.e. Chapter 13]. Volume: "probably going to have, I don't know, 25 filings this month"; earlier "I'm already filing 20 plus cases a month."
+- Annual revenue (net / take-home / collected): not stated. Per-case net of hard costs for Chapter 7: "about $1,500 for me and my staff and other costs" (i.e., $2,000 fee less ~$500 hard costs). Overall net/profit not distinguished or stated.
+- Fee structure: flat fee (Chapter 7 $2,000, firm absorbs ~$500 of filing/credit-report costs; Chapter 13 about $4,500). Exact quote: "I'm charging $2,000 for a seven, but I take on all the costs with the seven."
+- Revenue goal: dollar goal not stated. Case-volume goal: "within the next year, really, I'd like to grow to a 50 case a month operation and then go from there." Long-term: "over time, I'd like to become the firm in this valley." If a dollar goal is needed: not stated, use 2x current revenue (consistent with ~25→50 cases/month).
+- Average case value: Chapter 7 about $1,500 (net of hard costs; $2,000 gross fee), Chapter 13 about $4,500. Blended at the stated 70/30 mix ≈ $2,400 (DERIVED: 0.7 x $1,500 + 0.3 x $4,500; not stated by Dan). Dan on the rep's suggested blended $2,500–$3,000: "It depends … So it's probably lower than that." Use ~$2,400 or lower.
+- Current close rate: not stated — default to 15%. (Dan: "We're decent at getting people in for consults" but losing those who do not sign within a day or two; no percentage given.)
+- Number of locations: 1 (Las Vegas, NV). Licensed in Utah; "I wouldn't mind one day scaling out to Southern Utah" (St. George) — "But I got to build this one up first."
+- Spanish campaign needed: no (not discussed).
+- Dominant buying motive: Scale and dominate (motive 3), driven by service and pride rather than money. Quotes: "that's really what it came down to is I missed helping people"; "over time, I'd like to become the firm in this valley"; "I don't care if I take Seth's operation down. I just want to be up there with them"; "I'm missing this opportunity right now while I'm small to simply create the right process so it just builds naturally going forward." Also left a ~$250K/yr opportunity: "I walked away from it because this is what I wanted to do. So I better make it work." Inference: wants to build the leading consumer-bankruptcy firm in Las Vegas without letting leads he already paid for fall through while the firm is small.
+- Any profitability claims made by prospect: none stated (no overall profit or margin stated). Only per-case figures above.
+- Any claims about case types or practice areas: "I'd love to grow to the 7, 13s and not take the 11s on anymore." "Once the case is filed, we're doing well … Once we, you know, get them as a client, we're doing great with it." "I do a better work than them [Fair Fee]. And I know that because I've seen their work product on a trustee side." (self-assessment, not verified.)
+- Stated call focus / product interest: Prospect said he wanted to learn "what you guys provide and what your cost is. See if it's something that makes sense for my firm." His stated problem: "our problem is essentially everything from getting a lead to getting them to essentially become a client" (intake, speed-to-lead and follow-up). Asked which SMB Team buckets fit best, Dan said "Probably in the first two buckets you identified" (lead gen and intake/sales), then said "I don't know. What were you thinking?" The rep steered to intake/sales first via a coaching program (1-on-1 Fractional Business Officer + bankruptcy peer mastermind + quarterly workshops), with AI automation as a possible phase two. This was NOT a standard marketing/growth discovery call and was not framed around AI/Fractional CTO. Dan registered for the Oct 28 AI workshop (AI Workforce Pro topic per Hannah) but AI Workforce Pro was not priced or pitched to him as a product. Coaching price quoted by rep "in the $25 to $3,500 a month range" [transcript unclear — read as $2,500–$3,500/mo; matches the Fathom summary], which spans several coaching products.
+- Primary engagement: coaching/ops
+- Products discussed on call: Elite Coach, Elite Coach Plus
+  (The rep quoted a range of "$2,500–$3,500 a month" for "our coaching programs" and did not name a tier; this range could mean Elite Coach (~$2,600) or Elite Coach Plus (~$3,200) and possibly Coach Essentials tiers. Rep also mentioned, without pricing, a fractional recruiter, fractional CFO/controller options, Attorney Assistant virtual assistants, and AI automation as phase two.)
+- Lead-gen gap stated: no — Dan did not ask for more leads or marketing; he said "I think it's a good problem that more people are inquiring than we're able to capture" and "I'm seeing these leads kind of slip through the cracks." His only lead-gen mention was a hedged "Probably in the first two buckets you identified" in response to the rep's overview, which he followed with "I don't know. What were you thinking?" before agreeing that intake/sales should come first. (Judgment call — Pass 2 / package selection may treat marketing as a secondary, not primary, need.)
+- Existing marketing/SEO/ad vendor engagements: none stated for an agency/SEO/ad-management contract. He does pay two per-lead referral vendors (about $100/lead and about $40/lead, a handful per month each) and runs Google Ads (management arrangement not stated). Quote: "I utilize this company there … they send them to you for like a hundred bucks a lead. They've been good."
+- Budget constraints stated: yes — "it kind of, I guess, depends on what the price point is, because, you know, … you kind of have my numbers in front of you. I don't have a ton of money right now, but I'm hoping to grow into that. So it's just kind of like, am I too early for this kind of thing?" And on $2,500–$3,500/mo: "I feel like it's something I need to do … that feels like a lot to invest in right now just for coaching. Like it's not bringing in more business … yet." And on pricing structure: "You don't want to invest now to go, man, this is really expensive later on."
+
+Other facts from the call (prospect statements):
+- Firm started April 2026; first business Dan has owned; ~two decades representing bankruptcy trustees; Las Vegas resident 20–30 years.
+- Fair Fee Legal Services is the big local competitor (~200 cases/month); "everybody else files, you know, between 10 and 25. There's a couple firms that have gone between the 25 and 50."
+- Tech: Practice Panther is "fully set up" and "great for managing our clients once they've retained" but not used for lead tracking or follow-up; he does not know whether he can set up automations in it. He said he is "so busy that I … struggle to find time" to build the process.
+- Lost-lead estimate (hedged): "maybe up to 20% of potential clients" / "Maybe as high as 10 a month right now" / "probably 20 to 35,000, depending on how you … you know how it shakes out." Treat as an upper-bound estimate. Note: 10 lost against ~25 filed is about 29% of 35 total, not 20% — Dan's own figures are loose.
+- Follow-up behavior: "if they don't retain that day or if they don't sign the retainer agreement, I'm almost, you know, within a day or two, like we've, we move on because we've got so many other things to do."
+- Next steps agreed: Dan attends the Oct 28 (Wednesday) AI workshop; follow-up call Monday Nov 2 at 9:00 AM PT (11 AM CT) over Zoom to review the coaching recommendation; Nick to send a calendar invite and ask Dan to accept.
+
+Key prospect quotes (verbatim; filler trimmed with …):
+1. (00:03:32) "our problem is essentially everything from getting a lead to getting them to essentially become a client." — core problem / intake
+2. (00:04:03) "I'm seeing these leads kind of slip through the cracks and we don't have the time to keep on them the way we probably should." — intake / lost leads
+3. (00:04:24) "it is anywhere from me to my paralegal, to my receptionist. … I hired a receptionist on Monday, so that's where we're at." — team / who handles intake
+4. (00:05:21) "We're decent at getting people in for consults and then … if they don't retain that day or if they don't sign the retainer agreement … within a day or two … we move on because we've got so many other things to do." — follow-up gap
+5. (00:08:29) "I'm probably losing … maybe up to 20% of potential clients." — lost revenue (hedged estimate)
+6. (00:14:12) "within the next year, really, I'd like to grow to a 50 case a month operation and then go from there." — goal
+7. (00:14:33) "over time, I'd like to become the firm in this valley." — goals / DBM
+8. (00:13:04) "that's really what it came down to is I missed helping people." — DBM / why he started the firm
+9. (00:28:33) "it's great for managing our clients once they've retained. I haven't figured out a way to use it for … the lead generation through that process." — tech (Practice Panther)
+10. (00:30:02) "I'm missing this opportunity right now while I'm small to simply create the right process so it just builds naturally going forward." — systems / DBM
+11. (00:31:01) "it kind of, I guess, depends on what the price point is … I don't have a ton of money right now, but I'm hoping to grow into that." — budget
+12. (00:33:56) "I feel like it's something I need to do … that feels like a lot to invest in right now just for coaching. Like it's not bringing in more business … yet." — budget / objection
+
+=====================================================================
+STEP 10 — COMPETITIVE URGENCY SCORE
+=====================================================================
+Score: 7 (PROVISIONAL — based on the prospect's description of the market plus unconfirmed aggregator data; no live SERP, Maps, Ads or Meta Ad Library verification was possible).
+Named local competitor threats:
+1. Fair Fee Legal Services — per Dan, ~200 cases/month, heavy Google Ads spend and social media ads; aggregator data shows a very large review base (827 on Google at 4.9 — UNCONFIRMED, do not print) and a "$0 down" payment-plan message.
+2. Peters & Associates, LLP (PandA Law Firm) — established since 2008; aggregator data shows roughly 148 Google reviews at 4.5 (UNCONFIRMED, do not print).
+3. Freedom Law Firm (George Haines) — long-running Las Vegas consumer-bankruptcy brand; Yelp 4.7 / 26 reviews (UNCONFIRMED).
+Mitigating context: Dan's website is active (frequent blog posts, geo pages, FAQ schema, llms.txt) and he says he is "starting to rank a little bit better"; the firm is only about 7 months old.
+Dynamic sentence (score 7–10): "A score of 7 means competitors are actively dominating multiple channels in your market and the gap is getting wider every month you wait. This is not a future problem — it is a right now problem."
+
+=====================================================================
+PASS 2 — VERIFICATION CHECKLIST
+=====================================================================
+[x] Every number in the notes matches observed data or is explicitly tagged NOT OBSERVED / UNCONFIRMED / DERIVED
+[x] No competitor is cited as having more reviews than the prospect — prospect's Google review count is unknown; comparisons are blocked in Pass 2
+[x] Every review count and rating carries [UNCONFIRMED — sourced from ...] or "not observed"; none are confirmed via Google
+[x] Revenue split into gross vs net where the transcript distinguished them ($2,000 Ch.7 fee vs ~$1,500 after ~$500 hard costs); annual revenue not stated; fee structure recorded (flat fee)
+[x] Ads sections cover both practice areas (Ch.7 and Ch.13); prospect confirmed running Google Ads on the call
+[x] No section says the firm is not running ads
+[x] No profitability claim beyond transcript statements
+[x] Competitors are specific named local firms only
+[ ] PageSpeed scores are real numbers — NOT MET: could not be obtained (API quota 429; Lighthouse blocked 403). Flagged; Pass 2 must not print a score.
+[x] DBM recorded (client quotes)
+[x] Revenue goal recorded (50 cases/month; dollar goal not stated, 2x default)
+[x] Close rate recorded (not stated — default 15%)
+[x] Average case value recorded ($1,500 / $4,500; blended ≈ $2,400 derived)
+[x] Stated call focus recorded: intake/follow-up gap, coaching-led pitch, not a marketing or AI-first call
+[x] "Primary engagement", "Products discussed on call", "Lead-gen gap stated" filled in the machine-read format
+[x] Existing marketing/SEO/ad vendor engagements recorded (none stated; per-lead vendors noted)
+[x] Budget constraints recorded
