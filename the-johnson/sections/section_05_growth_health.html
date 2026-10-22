@@ -1,0 +1,140 @@
+<!-- ⚠️ NO CSS IN THIS FILE. No <style> blocks. No inline styles. No style="" attributes.
+     All styling comes from audit_styles.css only. Use only existing class names.
+     If you find yourself writing CSS — stop and delete it. -->
+<!-- ============================================================
+     SECTION 05 — YOUR GROWTH HEALTH ASSESSMENT
+     
+     INSTRUCTIONS FOR COWORK:
+     - For each traffic circle: use class "red", "amber", or "green" based on your rating
+     - For each sc-findings list: write 2-3 specific bullet points for this firm only
+     - For sc-dbm: one italic sentence connecting this pillar to income, freedom, or DBM
+     - For urgency score: replace the number, set left% = (score/10)*100 on the marker
+     - For urgency sentence: use the correct dynamic sentence based on score range
+     - For competitor cards: write 2-3 named competitors with specific threat reasons
+     - Do not add inline styles. Do not change class names.
+     ============================================================ -->
+
+<div class="section-header" id="growth-health">
+  <div class="section-header-inner">
+    <h2>Your Growth Health Assessment</h2>
+    <div class="subtext">The Johnson Law Group LLC</div>
+  </div>
+</div>
+
+<div class="content-wrap">
+
+  <div class="legend">
+    <div class="legend-item">
+      <div class="legend-dot red"></div>
+      <div class="legend-label">Red <span>— Critical Priority</span></div>
+    </div>
+    <div class="legend-item">
+      <div class="legend-dot amber"></div>
+      <div class="legend-label">Amber <span>— In Progress</span></div>
+    </div>
+    <div class="legend-item">
+      <div class="legend-dot green"></div>
+      <div class="legend-label">Green <span>— On Track</span></div>
+    </div>
+  </div>
+
+  <div class="scorecard-label">Pillar Health Scorecard</div>
+
+  <div class="scorecard-grid">
+
+    <!-- LEAD GENERATION CARD -->
+    <div class="sc-card">
+      <div class="sc-card-header"><h3>Lead Generation</h3></div>
+      <div class="sc-card-body">
+        <div class="traffic-circle red"></div>
+        <ul class="sc-findings">
+          <li>New clients come almost entirely from referrals and word of mouth — about two a month, with no other consistent source</li>
+          <li>Demand runs in waves: a few very busy months followed by a few quiet ones</li>
+          <li>A past Google Ads trial through a lead vendor ran well over its intended budget and mostly produced contingency cases rather than retainer-paying clients</li>
+        </ul>
+        <div class="sc-dbm">A steady flow of retainer cases is what lets profit grow without the hours growing with it.</div>
+      </div>
+    </div>
+
+    <!-- INTAKE CARD -->
+    <div class="sc-card">
+      <div class="sc-card-header"><h3>Intake</h3></div>
+      <div class="sc-card-body">
+        <div class="traffic-circle amber"></div>
+        <ul class="sc-findings">
+          <li>Intake is handled by the attorneys themselves and works at today's low volume</li>
+          <li>There is no dedicated intake staff, so a jump in lead volume would land directly on attorney time</li>
+          <li>The website lists three different phone numbers and offers no free-consultation prompt above the fold, which makes it harder for a ready-to-hire visitor to act</li>
+        </ul>
+        <div class="sc-dbm">Intake that does not depend on an attorney picking up every call protects the time you want to keep for family.</div>
+      </div>
+    </div>
+
+    <!-- SELF-MANAGING TEAM CARD -->
+    <div class="sc-card">
+      <div class="sc-card-header"><h3>Self-Managing Team</h3></div>
+      <div class="sc-card-body">
+        <div class="traffic-circle red"></div>
+        <ul class="sc-findings">
+          <li>Three attorneys carry all of the casework, with no dedicated support staff</li>
+          <li>Decisions run through the founder, and the referral network that feeds the firm is tied to his personal connections</li>
+          <li>The next generation of attorneys wants to run the firm on its own, but there is no system yet that works without the founder's relationships</li>
+        </ul>
+        <div class="sc-dbm">A firm that runs on systems rather than on every attorney's personal hours is what makes work-life balance realistic.</div>
+      </div>
+    </div>
+
+    <!-- PROFIT CARD -->
+    <div class="sc-card">
+      <div class="sc-card-header"><h3>Profit</h3></div>
+      <div class="sc-card-body">
+        <div class="traffic-circle amber"></div>
+        <ul class="sc-findings">
+          <li>The goal is to grow toward roughly a million dollars a year, but there is no stated plan tying marketing spend to retainer revenue</li>
+          <li>Cash timing depends on when contingency matters pay out, which makes monthly revenue hard to predict</li>
+          <li>Time on lower-value matters competes with time for the larger cases the firm would rather focus on</li>
+        </ul>
+        <div class="sc-dbm">Profit that is planned, rather than discovered after the fact, is how more income comes without more hours.</div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- COMPETITIVE URGENCY SCORE -->
+  <div class="urgency-card" id="urgency-score">
+    <div class="urgency-label">Competitive Urgency Score</div>
+
+    <div class="urgency-score">6</div>
+    <div class="urgency-outof">out of 10</div>
+
+    <div class="urgency-sentence">A score of 6 means competitors have meaningful advantages in one or more areas and are pulling ahead. You are not invisible yet — but the window to close the gap is narrowing. Every month without action is a month they extend their lead.</div>
+
+    <div style="margin-bottom:10px;">
+      <div class="urgency-bar"><div class="urgency-marker" style="left:60%;"></div></div>
+      <div class="urgency-scale">
+        <span>1–3 = Low Urgency</span>
+        <span>4–6 = Moderate</span>
+        <span>7–10 = High Urgency</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="competitors-label">Your Top Competitive Threats</div>
+
+  <div class="competitor-card">
+    <div class="competitor-name">Law Office of Donald L. Bell</div>
+    <div class="competitor-threat">Based in the same Greenbelt building, with a consultation-focused website and more than 40 city-specific Chapter 13 landing pages that capture searches across Maryland — a reach the firm's single website does not have.</div>
+  </div>
+
+  <div class="competitor-card">
+    <div class="competitor-name">Middleton Legal (Sheereen E. McNair)</div>
+    <div class="competitor-threat">A free-consultation call to action, a Prince George's County page, a 28+ question FAQ, an active blog, and "Best Lawyers" recognition shown on the site build trust and search visibility for the firm's core bankruptcy searches.</div>
+  </div>
+
+  <div class="competitor-card">
+    <div class="competitor-name">The Phillips Law Offices</div>
+    <div class="competitor-threat">A dedicated "Greenbelt Bankruptcy Attorney" page appears in search results for the very terms the firm wants to win.</div>
+  </div>
+
+</div>
+<div class="back-to-top"><a href="#toc">↑ Back to Top</a></div>
