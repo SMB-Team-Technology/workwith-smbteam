@@ -1,0 +1,83 @@
+SECTION 11 WORKINGS — Riggs Law Firm (INTERNAL — NOT CLIENT-FACING)
+Prepared for: Nick Holderman | Proposal call: November 2, 2026
+
+=====================================================================
+1. PACKAGE DECISION SOURCE AND OVERRIDE CHECK
+=====================================================================
+Source: riggs/package_decision.json (confidence: "low"; revenue_effective $570,000 from HubSpot range "$180K - $960K"; revenue NOT stated by Dan on the call; team size 3).
+call_focus.primary_engagement = "coaching/ops"; lead_gen_gap = false; needs_seller_input = false.
+Seller override (Slack, 2026-10-22): Coach Essentials Plus only, priced standalone at $2,497/mo, no bundle discount, $0 savings. proposal_review.json status = "locked".
+
+Transcript-Stated Need Override checks:
+1. Call-purpose override: APPLIES. The call was about intake/follow-up and coaching, not marketing. Lead with coaching; no marketing package. Dan: "our problem is essentially everything from getting a lead to getting them to essentially become a client." He did not ask for more leads ("I think it's a good problem that more people are inquiring than we're able to capture").
+2. Existing-vendor override: Does NOT apply (no agency/SEO/ad-management contract stated; per-lead referral vendors and self-run Google Ads only). Marketing is excluded by check 1 and 3 regardless.
+3. Budget-reality override: APPLIES. Dan: "I don't have a ton of money right now, but I'm hoping to grow into that" and "that feels like a lot to invest in right now just for coaching." The revenue table ($400K-$1M) would imply Elite Coach Plus at $3,200/mo (or Elite Coach + FCOO). Intentional departure: the lowest-cost package that still addresses the stated need (intake/follow-up process, coaching) is Coach Essentials Plus at $2,497/mo standalone. Matches the seller override.
+4. Effective-revenue override: Does not apply (no net vs gross annual figure stated; net_revenue_stated null; flat-fee bankruptcy, not contingency).
+
+35% cap check: $2,497 / ($570,000/12 = $47,500) = 5.3%. At the low end of the HubSpot range ($180K = $15,000/mo) = 16.6%. Under the 35% cap either way. Meets $2,497 minimum MRR.
+
+=====================================================================
+2. MANDATORY PRICE LOOKUP
+=====================================================================
+- Marketing package selected: none
+  - Bundled price: n/a | Stand-alone price: n/a | Savings: n/a
+- Non-marketing package selected: Coach Essentials Plus
+  - Bundled price (from table): $1,997/mo (NOT applied — no second package to bundle with; seller override sets standalone pricing)
+  - Stand-alone price (from table): $2,497/mo  <-- price used in client report
+  - Savings: $0 (single standalone product, no bundle)
+- Legal AI Workforce (LAW) package selected: none
+- AI Avatar / Video Growth add-on selected: none
+- Total monthly investment: $2,497/mo
+- Total savings: $0
+
+=====================================================================
+3. INVESTMENT / AD SPEND
+=====================================================================
+Block 3: one row, Coach Essentials Plus, $2,497/mo, total $2,497/mo. No retail strikethrough and no savings callout (retail = bundled, $0 savings).
+Block 4 (ad spend / ROI): OMITTED. No marketing/ads package is part of the recommendation. No conservative/aggressive ad spend or ROI projection calculated. AD_SPEND omitted from executive summary.
+Why-this-range sentence: n/a (no ads package).
+
+=====================================================================
+4. DOMINANT BUYING MOTIVE (Block 1)
+=====================================================================
+Scale and dominate, driven by service and pride. Quotes: "I missed helping people"; "over time, I'd like to become the firm in this valley"; "I'm missing this opportunity right now while I'm small to simply create the right process so it just builds naturally going forward."
+Closing statement: We help new bankruptcy firm owners get a follow-up process that turns the leads they already have into signed clients so they can build the leading firm in their valley without letting paid leads slip away.
+
+=====================================================================
+5. QUICK WIN OPPORTUNITIES (6)
+=====================================================================
+1. Lead Gen (Quick Win) — Ask every signed client for a Google review. Why: new firm building trust in a market where people compare firms. Competitor: Fair Fee Legal Services (directory listings point to a very large review volume — qualitative only, counts UNCONFIRMED).
+2. Intake (Quick Win) — Follow up with every consult that doesn't sign right away. Why: follow-up ends within a day or two; Dan's hedged estimate of up to 20% lost. No competitor.
+3. Team (Long-Term) — Give lead follow-up a single owner. No competitor.
+4. Profit (Quick Win) — Dollar target + cost per signed case by lead source. No competitor.
+5. Lead Gen (Long-Term) — Answer competitors' "$0 down" messaging. Competitor: Fair Fee Legal Services (Facebook page promotes "$0 down"; per Dan mostly social media ads; Ad Library not observed).
+6. Intake (Long-Term) — Capture website visitors who aren't ready to book. No competitor.
+
+=====================================================================
+6. BLOCK 5 — WHAT YOU TOLD US (source lines)
+=====================================================================
+Row 1 — "our problem is essentially everything from getting a lead to getting them to essentially become a client." (00:03:32) and "I'm seeing these leads kind of slip through the cracks and we don't have the time to keep on them the way we probably should." (00:04:03). Supports: monthly 1:1 coaching call (Coach Essentials Plus).
+Row 2 — "if they don't retain that day or if they don't sign the retainer agreement … within a day or two … we move on because we've got so many other things to do." (00:05:21). Supports: 1:1 coaching call time on follow-up routine.
+Row 3 — "I'm missing this opportunity right now while I'm small to simply create the right process so it just builds naturally going forward." (00:30:02). Supports: group coaching + 1:1 calls as the foundation; 50-case goal referenced in the "addresses it" clause: "within the next year, really, I'd like to grow to a 50 case a month operation and then go from there." (00:14:12).
+Next-step line: kickoff call with your Coach.
+Excluded from Block 5: budget statements (financial), named staff, Practice Panther (could imply CRM setup).
+
+=====================================================================
+7. ROADMAP NOTES (Block 6)
+=====================================================================
+Phase 1 = Coach Essentials Plus (only item in the investment). Phase 2 = optional FCOO Advisor (not already in Phase 1). Phase 3 = optional AI Workforce Pro / financial visibility support. Phases 2 and 3 carry no prices and are labeled as scoped separately and not part of today's investment, because Dan asked whether prices keep escalating as phases are added ("You don't want to invest now to go, man, this is really expensive later on") — keep total cost clear and phases optional.
+
+=====================================================================
+8. INTERNAL ESCALATION FLAGS (never in client report)
+=====================================================================
+- Review counts unconfirmed — verify live before the call (Google rating/count for Riggs and all competitors; Avvo/Lawyers.com 5.0 (4 reviews) are unconfirmed snippets and were not printed).
+- PageSpeed mobile/desktop NOT obtained (API 429, Lighthouse 403) — no score printed; run live before the call.
+- GBP, local 3-pack, Google Ads, LSA and Meta Ad Library were not observed; report uses qualitative framing only.
+- Revenue not stated by Dan; HubSpot range $180K-$960K (confidence low). If actual revenue is under $300K, scoping approval is required; under $250K, confirm client can cover 4 months of services.
+- Budget is a stated objection; Coach Essentials Plus at $2,497 standalone is a seller-approved override of the revenue-table tier (Elite Coach Plus $3,200).
+- Roadmap Phase 3 mentions Legal AI Workforce (AI Workforce Pro) — confirm LAW delivery has launched and capacity is available before presenting.
+- Roadmap Phase 2 mentions FCOO Advisor — scope and price separately if Dan asks.
+- Rep's "10x ROI" and $15-20K monthly revenue figures were not confirmed by Dan; not used in the report.
+- Dan's lost-lead estimate (up to 20%, up to 10 a month, $20-35K) is a hedged upper bound; the report cites it only as "by your own estimate ... not a measured figure".
+- Competitor name: client-facing "Fair Fee Legal Services" (Dan says "Fairfee Legal"). Do not confuse Riggs Law Firm with unrelated "Riggi Law Firm".
+- HubSpot phone (702-306-4396) differs from website/listings (702-605-5070); origin unknown.

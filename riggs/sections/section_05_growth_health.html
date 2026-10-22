@@ -1,0 +1,140 @@
+<!-- ⚠️ NO CSS IN THIS FILE. No <style> blocks. No inline styles. No style="" attributes.
+     All styling comes from audit_styles.css only. Use only existing class names.
+     If you find yourself writing CSS — stop and delete it. -->
+<!-- ============================================================
+     SECTION 05 — YOUR GROWTH HEALTH ASSESSMENT
+     
+     INSTRUCTIONS FOR COWORK:
+     - For each traffic circle: use class "red", "amber", or "green" based on your rating
+     - For each sc-findings list: write 2-3 specific bullet points for this firm only
+     - For sc-dbm: one italic sentence connecting this pillar to income, freedom, or DBM
+     - For urgency score: replace the number, set left% = (score/10)*100 on the marker
+     - For urgency sentence: use the correct dynamic sentence based on score range
+     - For competitor cards: write 2-3 named competitors with specific threat reasons
+     - Do not add inline styles. Do not change class names.
+     ============================================================ -->
+
+<div class="section-header" id="growth-health">
+  <div class="section-header-inner">
+    <h2>Your Growth Health Assessment</h2>
+    <div class="subtext">Riggs Law Firm</div>
+  </div>
+</div>
+
+<div class="content-wrap">
+
+  <div class="legend">
+    <div class="legend-item">
+      <div class="legend-dot red"></div>
+      <div class="legend-label">Red <span>— Critical Priority</span></div>
+    </div>
+    <div class="legend-item">
+      <div class="legend-dot amber"></div>
+      <div class="legend-label">Amber <span>— In Progress</span></div>
+    </div>
+    <div class="legend-item">
+      <div class="legend-dot green"></div>
+      <div class="legend-label">Green <span>— On Track</span></div>
+    </div>
+  </div>
+
+  <div class="scorecard-label">Pillar Health Scorecard</div>
+
+  <div class="scorecard-grid">
+
+    <!-- LEAD GENERATION CARD -->
+    <div class="sc-card">
+      <div class="sc-card-header"><h3>Lead Generation</h3></div>
+      <div class="sc-card-body">
+        <div class="traffic-circle amber"></div>
+        <ul class="sc-findings">
+          <li>Inquiries come from several sources at once: trustee-side referrals, Google Ads, blogging and social media, and two paid lead vendors</li>
+          <li>The website is active, with frequent blog posts and separate pages for Chapter 7, Chapter 13 and Henderson, Summerlin and North Las Vegas</li>
+          <li>The firm is only about seven months old and competes against established firms that file far more cases each month</li>
+        </ul>
+        <div class="sc-dbm">Building the leading consumer bankruptcy firm in the valley starts with turning the lead sources Dan already has into a steady, predictable flow.</div>
+      </div>
+    </div>
+
+    <!-- INTAKE CARD -->
+    <div class="sc-card">
+      <div class="sc-card-header"><h3>Intake</h3></div>
+      <div class="sc-card-body">
+        <div class="traffic-circle red"></div>
+        <ul class="sc-findings">
+          <li>Intake is shared informally between Dan, his paralegal and a receptionist who just started, with no defined process</li>
+          <li>Follow-up stops within a day or two if a lead does not sign at the consult, and Dan sees leads slipping through the cracks</li>
+          <li>Practice Panther is not yet being used to track leads or trigger follow-up, and the website relies on a scheduler link with no sign of automated follow-up for people who do not book</li>
+        </ul>
+        <div class="sc-dbm">Every lead that slips away is a client Dan could have helped — and a step further from the 50-case-a-month firm he wants to build.</div>
+      </div>
+    </div>
+
+    <!-- SELF-MANAGING TEAM CARD -->
+    <div class="sc-card">
+      <div class="sc-card-header"><h3>Self-Managing Team</h3></div>
+      <div class="sc-card-body">
+        <div class="traffic-circle amber"></div>
+        <ul class="sc-findings">
+          <li>Dan is the sole attorney and the only person who can handle legal work, while a paralegal and a newly hired receptionist support the firm</li>
+          <li>Dan says he is so busy that he struggles to find the time to build the processes the team needs</li>
+          <li>The team is just forming, so roles, hand-offs and accountability for lead follow-up are not yet defined</li>
+        </ul>
+        <div class="sc-dbm">A team that follows a clear process lets Dan spend his time on the legal work he missed doing instead of chasing every lead himself.</div>
+      </div>
+    </div>
+
+    <!-- PROFIT CARD -->
+    <div class="sc-card">
+      <div class="sc-card-header"><h3>Profit</h3></div>
+      <div class="sc-card-body">
+        <div class="traffic-circle amber"></div>
+        <ul class="sc-findings">
+          <li>Chapter 7 is a flat fee where the firm absorbs the filing and credit-report costs, so each case needs to convert reliably to pay off</li>
+          <li>Dan is paying per lead to two vendors and running Google Ads, so lead cost matters more when leads go unconverted</li>
+          <li>The firm is new and has not yet set a dollar revenue goal, only a case-volume target of 50 a month</li>
+        </ul>
+        <div class="sc-dbm">Knowing what each signed case is worth turns growth from a hopeful goal into a plan for building the firm Dan wants.</div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- COMPETITIVE URGENCY SCORE -->
+  <div class="urgency-card" id="urgency-score">
+    <div class="urgency-label">Competitive Urgency Score</div>
+
+    <div class="urgency-score">7</div>
+    <div class="urgency-outof">out of 10</div>
+
+    <div class="urgency-sentence">A score of 7 means competitors are actively dominating multiple channels in your market and the gap is getting wider every month you wait. This is not a future problem — it is a right now problem.</div>
+
+    <div style="margin-bottom:10px;">
+      <div class="urgency-bar"><div class="urgency-marker" style="left:70%;"></div></div>
+      <div class="urgency-scale">
+        <span>1–3 = Low Urgency</span>
+        <span>4–6 = Moderate</span>
+        <span>7–10 = High Urgency</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="competitors-label">Your Top Competitive Threats</div>
+
+  <div class="competitor-card">
+    <div class="competitor-name">Fair Fee Legal Services</div>
+    <div class="competitor-threat">Dan calls this firm the big player in the valley, filing about 200 cases a month, and says they spend heavily on Google Ads and social media ads. Directory listings also point to a very large base of client reviews.</div>
+  </div>
+
+  <div class="competitor-card">
+    <div class="competitor-name">Peters &amp; Associates, LLP (PandA Law Firm)</div>
+    <div class="competitor-threat">Established since 2008 with a large base of online reviews, giving it a trust advantage with people comparing Las Vegas bankruptcy firms.</div>
+  </div>
+
+  <div class="competitor-card">
+    <div class="competitor-name">Freedom Law Firm</div>
+    <div class="competitor-threat">A long-running Las Vegas consumer bankruptcy brand with listings across the major directories, competing for the same Chapter 7 and Chapter 13 searches.</div>
+  </div>
+
+</div>
+<div class="back-to-top"><a href="#toc">↑ Back to Top</a></div>
