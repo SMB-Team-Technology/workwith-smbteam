@@ -1,0 +1,85 @@
+SECTION 11 WORKINGS — Glen Larson Law (INTERNAL — never client-facing)
+Audit date: October 29, 2026 | Sales rep: Randy Gold
+
+=====================================================================
+TRANSCRIPT-STATED NEED OVERRIDE CHECK
+=====================================================================
+1. Call-purpose override: APPLIES. Call was operations / mid-management / recruitment / AI (primary_engagement = coaching/ops; products discussed = FCOO). "I don't really want to go down marketing right now" (00:05:07). Lead with FCOO + AI; no marketing package.
+2. Existing-vendor override: APPLIES. Active SEO company and "our marketing company" (00:15:18); lawyer.com/LawyerLine for after-hours intake. Full Service Marketing (all tiers/sub-packages) excluded.
+3. Budget-reality override: does not apply. No budget constraint stated.
+4. Effective-revenue override: does not apply. Contingency practice, but no net/take-home figure stated separately (net_revenue_stated = null). Effective revenue = $3,000,000 (HubSpot "$3,000,000+"; call: 2026 YTD $2.57M, projected $3.27M).
+
+package_decision.json: confidence "medium"; needs_seller_input false; seller overrides applied in Slack thread (2026-10-23): FCOO Director replaces Elite Coach Plus / Partner ("we don't offer partner anymore"); Fractional CTO Level 1 + AI Workforce Pro added; team size set to 15 -> AI Workforce Pro (5 users $1,597 + 10 x $120 = $2,797). proposal_review.json status = locked.
+
+Departure from the revenue/team eligibility table (documented intentionally): table row "$1M+, 5+ with dedicated staff" would suggest Master's Circle (+ FCOO). Seller explicitly set FCOO Director; the call was about operations and a fractional COO, so FCOO Director standalone ($4,997) is used. Seller-directed, not a pipeline error.
+
+=====================================================================
+MANDATORY PRICE LOOKUP
+=====================================================================
+- Marketing package selected: none (call-purpose + existing-vendor overrides)
+- Non-marketing package selected: FCOO Director
+  - Bundled price (from table): $4,997/mo
+  - Stand-alone price (from table): $5,797/mo
+  - Savings: $800/mo
+- Legal AI Workforce (LAW) package selected: Fractional CTO Level 1 + AI Workforce Pro (15 seats)
+  - Fractional CTO Level 1: $3,297/mo bundled ($3,797 stand-alone)
+  - AI Workforce Pro: $1,597/mo (5 users) + 10 additional employees x $120 = $2,797/mo (no stand-alone price; never quoted in client report)
+  - Combined bundled price: $3,297 + $2,797 = $6,094/mo
+  - Combined stand-alone price: not computable (AI Workforce Pro has no stand-alone price) -> retail not shown in client report
+  - Savings counted: $0 (FCTO L1 $500 savings not counted because combined line has no retail, matching package_decision.json)
+- AI Avatar / Video Growth add-on: none
+- Total monthly investment: $4,997 + $6,094 = $11,091/mo
+- Total savings: $800/mo
+
+Cap check: total SMB spend $11,091/mo vs 35% of monthly revenue ($3M/12 = $250,000 -> cap $87,500). Well under cap (~4.4%). No ad spend.
+Eligibility: FCOO Director — revenue $3M+ and 15 staff qualify. FCTO L1 requires $400K+ — qualifies. AI Workforce Pro — no revenue floor, 15 users.
+
+=====================================================================
+AD SPEND / ROI
+=====================================================================
+Not applicable — no marketing/ads package. Block 4 deleted from section_11_next_steps.html; AD_SPEND omitted from executive summary.
+
+=====================================================================
+DBM STATEMENT (Block 1)
+=====================================================================
+"I take 10% more time than 5% less money all day long. I'm 51 years old, I need time, freedom." (00:08:14-00:08:18) + role clarity ("I need clarity on what my role is", 00:32:33).
+Block 1: We help owners of fast-growing personal injury firms get an operations team and AI-powered systems that run the firm without them so they can trade the daily grind for time, freedom and a clear role.
+
+=====================================================================
+QUICK WIN OPPORTUNITIES (9)
+=====================================================================
+1. Intake — Delegate case authorization. Why: every case waits on Glen's sign-off; "There's not a closer." Opportunity: defined signing criteria + trained closer. Competitor: none.
+2. Team — Train mid-managers to own operations. Why: "the managers themselves really haven't" had the training. Competitor: none.
+3. Intake — Connect existing tools / automated reports. Why: "bells and whistles ... not communicating." (framed as custom automation, NOT CRM setup). Competitor: none.
+4. Team — Automated "omission report" scrub of active cases. Why: Glen wants to "review all active cases where the statute of limitations has not been inputted". Competitor: none.
+5. Team — Calendar control. Why: team double-books Glen. Competitor: none.
+6. Profit — Track time, not just dollars. Why: financial metrics tracked, time not. Competitor: none.
+7. Lead Gen — Fix mobile PageSpeed (42/100). Competitor: none verified -> row omitted.
+8. Lead Gen — Build review base. Competitors: McMinn, Wayne Wright, Shamieh (qualitative only; counts UNCONFIRMED).
+9. Lead Gen — Clean up old address across directories (office moved ~3 months ago). Competitor: none.
+
+=====================================================================
+WHAT YOU TOLD US (Block 5)
+=====================================================================
+Row 1 — Operations/bottleneck -> FCOO Director (central package)
+  Transcript: "Efficiency, operations, the head not talking to the tail" (00:01:08); "the bottleneck is actually me" (00:12:49); "And then I have to make the decision, like, to authorize it." (00:18:43)
+Row 2 — Systems not connected + wants strategic AI -> Legal AI Workforce (FCTO L1 + AI Workforce Pro)
+  Transcript: "we have all these bells and whistles, but they're not communicating with each other" (00:12:21); wants automated Salesforce report emails and an "omission report" (00:28:17)
+Row 3 — Time, role clarity, 90-day plan -> FCOO Director operating rhythm / coach-style check-ins
+  Transcript: "I need time, freedom" (00:08:18); "I need clarity on what my role is" (00:32:33); "I want to implement a plan on this within the next 90 days." (00:35:50); "that regular check-in with the coach" (00:36:47)
+Next step: kickoff call with your FCOO.
+Excluded per rules: named employees, health/heart history, debt/profit-paying-debt (00:33:26), reserve dollar figure.
+
+=====================================================================
+INTERNAL ESCALATION FLAGS / REP NOTES (never in client report)
+=====================================================================
+- Review counts unconfirmed — verify live before the call. All firm and competitor review counts/ratings are UNCONFIRMED; client report uses qualitative framing only.
+- LAW package: confirm with sales rep that LAW delivery has launched and capacity is available before including in proposal.
+- AI Workforce Pro is a yearly contract (20M total credits incl. bonus; $150/mo overages). Fractional CTO Level 1: one monthly 1:1 session, up to 2 additional 1-hr sessions, up to 2 skills deployed/month, up to 1 custom automation/month.
+- Seller assumptions to confirm: FCTO Level 1 chosen (tier not specified by seller); AI Workforce Pro base tier at 15 seats.
+- FCOO Director deliverables beyond the Elite Coach group deliverables (weekly group coaching, practice area masterminds, virtual quarterly workshops, one annual in-person workshop) are not itemized in the pricing reference; client report describes the FCOO scope qualitatively with no hours/quantities. Confirm scope language with rep.
+- Attorney Assistant (AI intake agent) shown only as a Phase 2 roadmap idea (AI message-taking was acceptable to Glen; AI signing cases was not). Attorney Assistant fit — confirm qualification with sales rep.
+- Glen resists AI signing cases ("we're not, like, signing cases with robots", 00:27:32) — keep AI positioning to reporting, scrubs, drafting, message-taking.
+- Revenue goal exceeds nothing / no ad projection — n/a.
+- Research gaps: GBP, 3-pack, Google Ads, LSA, Meta Ad Library not observable; PageSpeed via local Lighthouse (not pagespeed.web.dev).
+- Template inline style attributes (urgency marker left%, spacer, staircase image) are inherited from Design Files templates unchanged, as in prior audits.
