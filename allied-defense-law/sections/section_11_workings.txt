@@ -1,0 +1,105 @@
+ALLIED DEFENSE LAW — SECTION 11 WORKINGS (INTERNAL — NEVER CLIENT-FACING)
+Sales rep: Jacob Meissner | Proposal call: November 3, 2026
+
+=====================================================================
+PACKAGE SOURCE AND OVERRIDE LOG
+=====================================================================
+Source of package: package_decision.json (confidence "low" on revenue; seller override applied 2026-10-23 per Slack; proposal_review.json status "locked").
+Locked package: Fractional CTO Level 1 + 1 seat of AI Workforce Pro – Starter. No marketing. No coaching. No FCOO/FCFO.
+
+Transcript-Stated Need Override check:
+1. Call-purpose override — TRIGGERED. The call was framed around AI automation of intake/follow-up for a solo attorney (Primary engagement: AI; lead-gen gap: no — "I'm happy with the leads that I'm getting"). Marketing excluded; recommendation led with AI/LAW products. Matches the decision file and the seller lock.
+2. Existing-vendor override — not triggered. No marketing/SEO/ads vendor stated (LegalMatch is a paid lead subscription, not a marketing engagement). Marketing is excluded anyway by (1).
+3. Budget-reality override — not triggered. No budget statement made on the call. See flags below regarding revenue vs. the FCTO L1 revenue requirement.
+4. Effective-revenue override — not triggered. Prospect stated ~$100K year 1 / on track for ~$250K this year; gross vs net not distinguished; fee structure not stated; not a contingency practice.
+
+Package decision file extracts: marketing_* = null; coaching_* = null; law_tier = "Fractional CTO Level 1 + AI Workforce Pro – Starter (1 seat)"; law_price_bundled = 3647; law_seats = 1; total_bundled = 3647; ad_spend_* = null; confidence = low; needs_seller_input = false.
+
+=====================================================================
+MANDATORY PRICE LOOKUP (confirmed against audit-write.md tables)
+=====================================================================
+- Marketing package selected: none
+  - Bundled price: n/a
+  - Stand-alone price: n/a
+  - Savings: n/a
+- Non-marketing package selected: none
+  - Bundled price: n/a
+  - Stand-alone price: n/a
+  - Savings: n/a
+- Legal AI Workforce (LAW) package selected: Fractional CTO Level 1
+  - Bundled price (from table): $3,297/mo
+  - Stand-alone price (from table): $3,797/mo
+  - Savings (stand-alone minus bundled): $500/mo
+  - Setup fee: $0
+- Legal AI Workforce (LAW) package selected: AI Workforce Pro – Starter (1 user)
+  - Bundled price (from table): $350/user/mo x 1 user = $350/mo
+  - Stand-alone price: none (no standalone price exists — never quoted in client report)
+  - Savings: n/a
+- AI Avatar / Video Growth add-on: none
+- Total monthly investment (sum of bundled/recurring prices): $3,297 + $350 = $3,647/mo
+- Total savings: $500/mo (Fractional CTO Level 1 only)
+  NOTE: the decision file left law_price_retail/total_savings null because the two LAW items share one slot and AI Workforce Pro has no standalone price. The $500 saving on the Fractional CTO line is table-backed (retail $3,797 vs bundled $3,297), so it is shown in Block 3 on that line only. If sales prefers not to show a savings callout, delete the retail strikethrough on the FCTO row and the savings line in Block 3 and the matching PPTX fields.
+
+35% cap check: $3,647/mo vs stated ~$250K/yr revenue ($20,833/mo) = 17.5% — within cap. (At the HubSpot-range midpoint of $570K it would be 7.7%.)
+
+=====================================================================
+AD SPEND / ROI
+=====================================================================
+Not applicable — no marketing/ads package is part of this recommendation. Block 4 removed from section_11_next_steps.html; AD_SPEND omitted from the executive summary. No "why this range" sentence written.
+
+=====================================================================
+ESCALATION FLAGS (INTERNAL ONLY — DO NOT SHARE WITH CLIENT)
+=====================================================================
+1. FRACTIONAL CTO REVENUE REQUIREMENT: Fractional CTO Level 1 requires $400K+ annual revenue. Prospect stated ~$250K on track this year (~$100K year 1). HubSpot range "$180K - $960K" (midpoint $570K) is what produced revenue_effective = $570,000 and drove the pipeline's confidence "low". The seller lock overrides this, but sales should confirm eligibility/approval before the proposal call. Revenue under $300K also triggers the "scoping approval required" flag, and under $250K would require confirming 4 months of funds (she is at ~$250K).
+2. SOLO FIRM / LAW "DO NOT RECOMMEND" RULE: audit-write.md says not to recommend LAW to a firm that is solo with no support staff (minimum 1–2 staff to engage with implementation). Rebecca is a solo with no staff. Counterpoint: the call was explicitly about AI implementation; she wants AI instead of staff; the seller locked the package. Sales should confirm she can personally engage with the weekly implementation session / monthly fCTO sessions.
+3. LAW DELIVERY: confirm with sales rep that LAW delivery has launched and capacity is available before including in the proposal.
+4. SEAT COUNT: 1 seat of AI Workforce Pro – Starter assumed (team size not stated; seller specified 1 seat). Confirm.
+5. FEASIBILITY NOT CONFIRMED: Rebecca's #1 ask (AI pulls LegalMatch lead, adds to MyCase, reaches out right away) is unconfirmed — LegalMatch has no public API (per rep), AI Employee agent unreleased/unconfirmed, MyCase write access unconfirmed. Client-facing copy does not promise it; it only says feasibility is checked first. Rebecca's AI wish list is due in 1–2 weeks; rep to confirm feasibility after the AI Employee launch.
+6. REVIEW DATA UNCONFIRMED — verify live before the call: no Google review counts or ratings were verified for the firm or any competitor; none are printed in the client report. Review counts unconfirmed — verify live before the call.
+7. UNVERIFIED RESEARCH ITEMS: PageSpeed (API 429), site content (Cloudflare 403), GBP, local 3-pack, Google Ads, LSA, Meta Ad Library were all NOT OBSERVED. The report says so plainly and promises to confirm live. A human should re-run those steps in a browser before the call if figures are wanted. Urgency score 5 is provisional.
+8. NAP INCONSISTENCY: FindLaw shows 928-482-5438; Justia/Cornell show 602-341-5709. Name appears as "Allied Defense Law", "Allied DUI & Criminal Defense, PLLC", and "AZ DUI & Criminal Defense". Included as a quick win.
+9. IF MARKETING IS ADDED LATER: Criminal Defense / DUI in Phoenix (top-10 metro) requires approval; Essentials is hidden for Criminal Defense + High competitiveness; ad spend minimums apply. Not part of this proposal.
+10. FIRM NAME / LOCATION DISCREPANCY (from research): Fathom summary says "Montoya Law … Albuquerque, NM". Wrong. Firm is Allied Defense Law, Phoenix AZ. The report uses Phoenix.
+11. Fixed language: report does not mention live chat as an SMB Team service, CRM setup, ads status as fact, or profitability by practice area. Jacob's pitch math ($500K/yr, "almost triple", other-client stories) was NOT used as the firm's data.
+
+=====================================================================
+DOMINANT BUYING MOTIVE (Block 1)
+=====================================================================
+Not stated as a personal life goal. Inferred from the call: a solo practice that runs without her being the bottleneck — more case capacity and fewer lost leads WITHOUT hiring staff or adding attorneys.
+Her words: "I think that I could take on more cases if I had, you know, assistance with some of the admin stuff." (00:23:15) and "I would prefer to have an AI because then I'm not worried about them all of a sudden up and quitting and me having to like retrain and like do all of that." (00:25:45)
+Block 1 statement: "We help solo DUI and criminal defense attorneys get every new lead answered and followed up fast so they can take on more cases without hiring staff or being the bottleneck on every call and every email."
+
+=====================================================================
+QUICK WIN OPPORTUNITIES (8) — pillar | title | why | competitor | opportunity
+=====================================================================
+1. Intake | Respond to every new lead within minutes | Leads that wait hire whoever answered; 5–10 leads/month lost by her estimate | none named | Automate first outreach for LegalMatch and web leads; her LegalMatch-to-MyCase idea scoped, feasibility confirmed first
+2. Intake | Cover the hours you are not available | Calls go to voicemail after hours; prior answering service could not integrate with Google Voice | none named (call context: live Phoenix search showed LSAs promoting 24-hour availability — not firm-specific) | Instant text/email acknowledgment of every after-hours inquiry
+3. Intake | Make the follow-up cadence run itself | Intended daily for ~5 days; in practice once or twice a week | none named | Automated multi-day follow-up sequence logged to the case system
+4. Team | Take the template and email work off your desk | Motions to withdraw backlog; morning email pile | none named | Skills/automations for template drafting and triage via the monthly fCTO work
+5. Team | Build about 20 hours a week of capacity without payroll | Estimated need ~20 hrs/week; prefers AI to hires/turnover | none named | Layer AI skills and automations over time (long-term)
+6. Profit | Know what LegalMatch costs per signed case | Monthly cost was uncertain on the call; "really good ROI" when on top of it | none named | Track subscription cost vs signed cases monthly
+7. Lead Gen | Make the firm's name and phone consistent everywhere | FindLaw 928 number vs Justia 602 number; two/three firm-name variants | none named | One-time citation cleanup across directories and site
+8. Lead Gen | Reduce reliance on one referring attorney and one directory | Two lead sources, neither owned | none named (Shah Law Firm used only as a local SEO callout in Section 06) | After capacity is fixed, add owned channels (long-term)
+"Who Is Doing It Better" rows omitted on all cards — no named local competitor with verified data for a specific card.
+
+=====================================================================
+WHAT YOU TOLD US (Block 5) — transcript sources and Block 2 mapping
+=====================================================================
+Row 1: "Follow-up speed / missed leads"
+  Verbatim lines: [00:08:37] "I'm just not able to follow up and make contact with them fast enough most of the time to where I could definitely increase my retention rate if I could… get on top of that a little bit better." and [00:09:05] "I missed the call and I call them back. They're like, oh, I just hired somebody else who just answered."
+  Block 2 support: Fractional CTO Level 1 (monthly fCTO sessions + up to 1 custom automation per month, intake first) — the central package.
+Row 2: "Prefers AI to hiring and retraining staff"
+  Verbatim line: [00:25:45] "I would prefer to have an AI because then I'm not worried about them all of a sudden up and quitting and me having to like retrain and like do all of that."
+  Block 2 support: AI Workforce Pro – Starter (1 user) + weekly AI Implementation Session.
+Row 3: "Behind on template admin; could take on more cases with admin help"
+  Verbatim lines: [00:39:49] "one thing that I'm super behind on is drafting motions to… withdraw super easy template motions" and [00:23:15] "I think that I could take on more cases if I had, you know, assistance with some of the admin stuff."
+  Block 2 support: Fractional CTO Level 1 skills deployment (up to 2 per month) and training videos.
+Next-step line: kickoff call with your Fractional CTO.
+Excluded by rule: revenue figures, LegalMatch cost uncertainty, no-show percentages (financial/sensitive or not a clean owner-framed problem), personal background (Albuquerque).
+
+=====================================================================
+ROADMAP PHASE LOGIC
+=====================================================================
+Phase 1: what is being sold now (Fractional CTO Level 1 + AI Workforce Pro – Starter), intake first.
+Phase 2: FCOO Advisor NOT used — all Fractional CFO/COO products are hidden under $500K revenue (stated ~$250K) and she does not want to add headcount. Instead: add lead generation (owned channel) once intake can absorb more leads. No tier or price named in client copy.
+Phase 3: Bookkeeping and financial visibility (Fractional CFO Advisor requires $400K+ per table; hidden under $500K by the revenue filter) once revenue approaches her ~$500K goal ("obviously I would love to double"); later LAW upgrade as needs grow. No prices named in client copy.
