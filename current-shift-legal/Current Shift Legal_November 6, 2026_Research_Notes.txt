@@ -1,0 +1,221 @@
+SMB TEAM — GROWTH AUDIT RESEARCH NOTES (PASS 1)
+Firm: Current Shift Legal (legal entity on site footer: "CurrentShift Legal P.C."; Colorado public benefit corporation / Certified B Corp per site and search results)
+Friendly name: current-shift-legal
+URL: https://currentshift.legal (resolves live, HTTP 200)
+Contact: Jacqueline "Jackie" Radebaugh (owner / managing attorney) — jacqueline@currentshift.legal — 347-741-1146
+Other call participants: Todd Hohman (client experience / exec assistant / marketing & BD), Jessa Marie Almarza (operations specialist, based in the Philippines)
+Sales rep: Nick Holderman
+Report date: November 6, 2026 (follow-up / proposal call Friday Nov 6, 2026, 12:00 PM Eastern)
+Discovery call: Fathom recording 195757709, 2026-10-23 (~55 min)
+Research run: 2026-10-23
+
+NOTE ON SOURCES / TOOL LIMITS (read before using this file)
+- This is a real, live firm. Nothing below is fabricated. Where a live source could not be reached, the field says "not observed" and Pass 2 must not state it as fact.
+- Google Search, Google Maps / Business Profile, Google Ads results, Local Services Ads, and the Meta Ad Library could not be read from the research environment (Google Maps fetch returned an empty shell; web-search tool returned no Google listing for the firm). Therefore GBP details, 3-pack results, ad observations, LSA and Meta ad observations are NOT confirmed. Any review number below comes from a third-party aggregator snippet and is tagged UNCONFIRMED.
+- PageSpeed: the pagespeed.web.dev UI did not render through the fetch tool, and the PageSpeed Insights API returned a daily-quota error on both strategies. Scores below were produced by running Lighthouse locally (headless Chrome on a CI runner) against https://currentshift.legal/. They are real measured numbers, but may differ from pagespeed.web.dev by a few points.
+- The call was about AI / automation (AI Workforce Pro, Fractional CTO), process automation of intake, scheduling, project management and financial reporting — NOT marketing or lead generation. Per the TRANSCRIPT-FIRST RULE, firm facts come from the call; only live-changing items were researched.
+- The firm just rebranded (prospect, 00:19:49: "We just rebranded"). The site's page sitemap shows every core page last modified 2026-09-28 to 2026-10-08, so the website is brand new (about 2–4 weeks old as of this research). Any earlier web footprint (GBP, directories) may be under a prior firm name and was not found.
+
+=====================================================================
+STEP 1 — WEBSITE RESEARCH (observed 2026-10-23)
+=====================================================================
+- Website URL confirmed live: yes (https://currentshift.legal/ HTTP 200)
+- Last redesign date or estimated age: WordPress, Avada theme (with child theme), built by "Bloom and Brilliance Website" (design firm credited in footer). Page sitemap lastmod dates: homepage 2026-10-08; /our-ethos/, /contact/, /privacy-policy/, /anti-oppression-client-services/ 2026-09-29; /services/ and /process/ 2026-09-30; /disclaimer/ 2026-09-28. Footer reads "2026 © CurrentShift Legal P.C." Estimated site age: about 3–4 weeks (post-rebrand launch).
+- Mobile responsive: yes (viewport meta present; toggle navigation menu in markup; Lighthouse mobile emulation rendered and scored). Not visually reviewed on a physical device.
+- Homepage headline: "Legal services for organizations building with purpose" (H1 in page HTML; subhead: "From formation to succession to ongoing counsel, we advise on ownership design, governance, capital raising, commercial and employment matters, and general counsel."). A fetch-tool summary also reported "Innovation for a Just Economy" as a headline-style text on the page; the H1 above is the one confirmed in raw HTML.
+- CTA above fold: yes — "Our Services" button (links to /services). Services page CTAs: "Schedule consultation" (Typeform link), "Book speaking engagement", "Pay invoice", newsletter signup.
+- Contact form location: separate /contact/ page. A general "Get in Touch" form (name, pronouns, email, subject dropdown — options include speaking/panel invitations, media/podcast requests, employment and hiring). Prospective clients are sent to a separate Typeform intake form ("this form is for everything else… learn about your business and determine fit"). No contact form on the homepage itself; newsletter signup in footer.
+- Live chat present: no (no chat widget detected in homepage source)
+- Attorney bio present: partial — homepage shows nine team members with headshots and titles (Managing Partner, Founding Partner, Senior Attorney, Associates, etc.); no individual bio pages observed (/about/ and /team/ return 404).
+- Video present: no on the homepage (two iframe/video-related references in source, likely social/embeds; no video content observed). YouTube, Instagram and LinkedIn profiles are linked from the contact page.
+- Blog present: no active blog. /blog/ and /news/ return 404. The post sitemap contains only legacy posts dated 2018-11-27 to 2019-01-11 (e.g., cooperative business model, press release on two Colorado cooperative / sustainable-economy practices joining forces). Most recent post date: January 2019 (legacy content).
+- Other site observations: Services pages (Build Your Organization; Transition Ownership; Raise Capital; General Counsel Services incl. fixed-fee legal health checks / employment handbooks / board governance packages; Healing Law). Mailing address only: 4845 Pearl East Circle, Suite 118 PMB 34133, Boulder, CO 80301. Phone (720) 445-6860; info@currentshift.legal. Firm is fully remote (transcript 00:01:29) so no street office. JSON-LD structured data present on homepage. No analytics/ad pixels (GA, GTM, Meta pixel, Google Ads tag) found in homepage source on a quick grep — not conclusive (may load via a plugin or consent tool). Process page (/process/) and "Our Ethos" and "Anti-Oppression Client Services" pages exist.
+
+PageSpeed (Lighthouse, run locally 2026-10-23, performance category):
+- PageSpeed mobile score: 51
+- PageSpeed desktop score: 83
+(Method: Lighthouse via npx, headless Chrome; mobile = default emulation, desktop = --preset=desktop. pagespeed.web.dev itself unavailable — see tool-limits note.)
+
+=====================================================================
+STEP 2 — GOOGLE BUSINESS PROFILE
+=====================================================================
+- GBP found: not observed (Google Maps not readable from the research environment; no listing surfaced in web search). Because the firm rebranded recently and is fully remote with a mailing-address-only Boulder PMB, a verified storefront GBP may not exist or may be under the prior name. Do NOT assert the firm has or lacks a GBP.
+- Star rating: not observed [no Google data]
+- Total review count: not observed [no Google data]
+- Most recent review date: not observed
+- Primary category: not observed
+- Photos active: not observed
+- Posts active: not observed
+Pass 2 must not print any firm review count or rating.
+
+=====================================================================
+STEP 3 — LOCAL 3-PACK SEARCHES
+=====================================================================
+NOT RUN — Google Search / Maps was not reachable, so no 3-pack was observed. Per the transcript the firm is a fully remote, referral-driven practice serving values-driven organizations (cooperatives, employee-owned businesses, B Corps, nonprofits) mostly via referral, so a classic local 3-pack is a weak channel for this firm regardless. Intended searches (not run):
+
+Practice Area 1: Cooperative / employee-ownership formation and conversion
+- Search 1 "cooperative lawyer Colorado": not observed
+- Search 2 "employee ownership attorney Boulder": not observed
+- Search 3 "worker cooperative conversion attorney Colorado": not observed
+
+Practice Area 2: Mission-driven business / B Corp / nonprofit general counsel
+- Search 1 "B Corp attorney Boulder": not observed
+- Search 2 "nonprofit lawyer Boulder CO": not observed
+- Search 3 "social enterprise attorney Colorado": not observed
+
+Practice Area 3: M&A / ownership transition (sale to employees, ESOP / EOT)
+- Search 1 "sell business to employees attorney Colorado": not observed
+- Search 2 "ESOP attorney Boulder": not observed
+- Search 3 "employee ownership trust lawyer Colorado": not observed
+
+=====================================================================
+STEP 4 — COMPETITOR REVIEW COUNTS
+=====================================================================
+Named local/regional peer firms found via web search. None were checked against Google; no review count below is confirmed. Do NOT use any of these figures in the client-facing report.
+- Competitor 1: Pote Law Firm (Colorado business law for social entrepreneurs, Public Benefit Cooperatives and Limited Cooperative Associations, B Corps — http://www.potelawfirm.com/) — reviews: not observed [no Google data] — rating: not observed [no Google data]. Most direct competitor by positioning (same cooperative / social-entrepreneur niche).
+- Competitor 2: Packard and Dierking, LLC (Boulder, CO — nonprofit and charitable organizations law, 2595 Canyon Blvd Suite 200) — reviews: 13 [UNCONFIRMED — sourced from a Lawyers.com / Avvo-network directory snippet, not independently confirmed via Google] — rating: 4.7 [UNCONFIRMED — sourced from a Lawyers.com / Avvo-network directory snippet, not independently confirmed via Google]
+- Competitor 3: Hutchinson Black and Cook (Boulder, CO — business & corporate law, https://www.hbcboulder.com/business-corporate-law) — reviews: not observed [no Google data] — rating: not observed [no Google data]. Listed in Boulder business-law search results; not evidenced as cooperative-focused.
+Note: the firm's real competitive set is a small national network of cooperative / employee-ownership / B Corp counsel; most of its work arrives by referral (70–90% per prospect), so local review-count comparisons are of limited relevance.
+
+=====================================================================
+STEP 5 — DIRECTORY LISTINGS
+=====================================================================
+- Avvo: not found / not checked (Avvo not reachable; web search surfaced no Current Shift Legal profile)
+- Justia: not found in search (Justia Boulder business-law and employment-law directory pages surfaced for other firms; no Current Shift Legal entry seen)
+- FindLaw: not checked
+- Yelp: not found in search
+- Martindale / Lawyers.com: not found in search (other Boulder nonprofit-law firms shown)
+- LinkedIn: firm linked from site contact page (also Instagram, YouTube)
+- Other: web search describes the firm as "Colorado's first Public Benefit Corporation to become a Certified B Corp" and "a certified Women Owned Business" (firm's own site/search snippet). B Corp directory listing not checked.
+- NAP inconsistencies: not assessed (no directory listings located). Note that the site shows a PMB mailing address and phone (720) 445-6860, while the HubSpot contact phone for Jackie is 347-741-1146 (a personal line, not a NAP issue). Prior-brand listings (if any) could carry different names/addresses — not investigated.
+- Geo-targeting landing pages for surrounding cities: no (services are organized by service type, not by city; no city pages seen in page sitemap).
+
+=====================================================================
+STEP 6 — GOOGLE ADS
+=====================================================================
+Google search results could not be observed from the research environment. Per the ADS FRAMING RULE, do not state that the firm is not running ads.
+
+Practice Area 1: Cooperative / employee-ownership formation and conversion (Colorado)
+- Firm ads observed: not observed
+- Named local competitors running ads: not observed
+
+Practice Area 2: Mission-driven business / B Corp / nonprofit general counsel (Boulder)
+- Firm ads observed: not observed
+- Named local competitors running ads: not observed
+
+Practice Area 3: M&A / ownership transition
+- Firm ads observed: not observed
+- Named local competitors running ads: not observed
+
+Prospect statement on ads: the call never discussed paid ads. When the rep asked "I don't know if you're doing marketing currently" (00:35:38) the prospect did not answer. Ads history: not stated.
+
+=====================================================================
+STEP 7 — LOCAL SERVICE ADS
+=====================================================================
+- Firm appears in LSA: not observed (Google search not reachable; LSA eligibility for a niche transactional/co-op practice is also uncertain)
+- Google Screened: not observed
+- LSA review count: not observed
+- Named local competitors in LSA: not observed
+
+=====================================================================
+STEP 8 — META ADS
+=====================================================================
+Meta Ad Library not reachable from the research environment.
+- Firm has active ads: not observed
+- Named local competitor 1: Pote Law Firm — not observed
+- Named local competitor 2: Packard and Dierking, LLC — not observed
+
+=====================================================================
+STEP 9 — TRANSCRIPT EXTRACTION
+=====================================================================
+Transcript source: full verbatim Fathom transcript (summary used only as overview)
+
+Transcription notes (speech-to-text errors; figures/words read from context):
+- Billing system is spoken as "Linglaw" (00:03:32) and "LeanLo" (00:30:18); Jessa also says "LeanLaw" later and the AI summary says LeanLaw. [transcript unclear — read as LeanLaw]
+- "a spell book for our legal advice or kind of legal drafting" (00:05:09) [transcript unclear — read as Spellbook, an AI legal-drafting tool]
+- "I think, Paid Cloud, kind of Teams Cloud" (00:05:35) [transcript unclear — possibly a paid Claude / team AI subscription; not confirmed]
+- Jessa is mis-transcribed once as "Desai" (00:29:00) and once as "Jason" ("Jason talked", 00:16:45–00:17:00) refers to Jacqueline's business partner Jason, a different person.
+- "small farm" (00:48:33, 00:48:42) [transcript unclear — read as small firm]
+- Revenue: "1.2" (00:36:20) in answer to "what's the revenue currently" [transcript unclear — read as $1.2 million per year; unit not spoken]
+- "I'm going to ahead and say" / "Oh, no, I was moving my notepad" etc. are crosstalk, ignored.
+
+- Practice areas confirmed: Transactional legal services for values-driven organizations, mostly employee-owned or shared-ownership models. Quote (00:19:57–00:20:14): "It's transactional legal services for values-driven organizations, and for the most part, employee-owned or shared ownership models. So cooperatives like REI, Organic Valley, that's the type… Those are not our clients, but that is the type of clients we work with." Work types per prospect (00:20:14): formation; M&A (business owners converting to cooperatives or selling to their employees); the life cycle of the business — contracts, general counsel type of work. Few nonprofits. (Site also lists Healing Law and capital raising.)
+- Current lead sources: Referral (dominant). Quote (00:16:23): "We have over 70 to 90% of our clients come through referral, so we have a regular stream or referral that is pretty decent, could increase." Also website intake form: Todd (00:23:04): "either through referral, they found us on the website". Other BD: senior attorneys speak at conferences and podcasts (Todd 00:44:00: "Travel, Podcasts"; Jacqueline 00:34:14: "a lot of business development and conferences that the more senior attorneys do"). Each attorney takes "two to three calls, business development calls a week" (00:48:25).
+- Ads ever run: not stated. Never discussed on the call (the rep asked "I don't know if you're doing marketing currently" at 00:35:38; no answer given). Do not claim the firm has or has not run ads.
+- Team size: Two owners / senior attorneys (Jacqueline Radebaugh and Jason, her business partner — "there are two owners in the firm, we don't have investors", 00:21:18). Attorney staff described as "half of us are mid-level attorneys and the other half is senior" (00:34:14); number of attorneys not stated. Staff: Todd Hohman (client experience; "initially hired to be an executive assistant" plus marketing/BD), Jessa Marie Almarza (operations specialist, accounting background, Philippines-based; handles finance, time entries, reporting; outside accounting firm also used). Website homepage shows nine team members with headshots (unverified against call; call does not give a headcount). Fully remote; "technically headquartered in Boulder, in Colorado"; Jacqueline near Dayton, Ohio (Beavercreek); Todd in Ohio.
+- Annual revenue (gross / case value): about $1.2 million [transcript unclear — "1.2" read as $1.2M]. Quote (00:36:20): "1.2, yeah, we're about just a little bit." Cut-off after "about just a little bit" — prospect may have meant slightly above/below; treat as ~$1.2M.
+- Annual revenue (net / take-home / collected): not distinguished from gross
+- Fee structure: mixed, shifting from hourly to fixed fees. Quote (00:33:21): "we're also kind of shifting a little bit from hourly to fixed fees, we're trying to understand more of that process as well." Site also advertises fixed-fee packages (legal health checks, employment handbooks, board governance packages). Time is tracked in LeanLaw and billed hourly for much work.
+- Revenue goal: not stated, use 2x current revenue (= about $2.4M). Prospect explicitly does not want growth via headcount: (00:33:45) "I don't want us to … be hiring more people … without increasing profit margin. I don't need to have 20 attorneys to grow."
+- Average case value: not stated (work is transactional, fixed-fee and hourly; no case value discussed)
+- Current close rate: not stated — default to 15% (note: prospect did not discuss close rate; Todd mentions helping "do reporting on our intake process, or our close rates", 00:25:01, so close rates are tracked internally but no figure was given)
+- Number of locations: 1 (fully remote; Boulder CO PMB mailing address as headquarters; staff in Ohio and the Philippines)
+- Spanish campaign needed: no
+- Dominant buying motive: A leaner, higher-margin firm that grows without adding headcount, with the owner's and team's time freed from admin for creative, strategic work. Quotes: (00:06:00) "so that we're not spending time on things that can be automatized and then we can use our brains for more creative stuff." (00:33:45) "I don't want us to … be hiring more people … without increasing profit margin." Also (00:26:05) "this morning I woke up with, do I need to hire an assistant?" — she would rather buy a tool than hire. Closest DBM type: (1) a firm that runs itself so the owner/team have more time (with a margin lens). Values-driven firm: (00:21:30) "it's not about extracting profit, although profit, it's good to have."
+- Any profitability claims made by prospect: "we're probably billing at about, I think we're billing at about 40% of attorneys' time, and they're always spending a lot of the rest of their time just in non-billable time" (00:34:00); "I think the average is about 40% right, Jessa, among the team." / "Yeah, around 39% to 45%." (00:34:51–00:34:56); "We have a lot of work coming in that doesn't, that's not translating necessarily into billables" (00:33:21). No profit figure or margin stated. (Rep's "increase profitability 20%" arithmetic at 00:36:04–00:36:17 is pitch math, not the firm's figure.)
+- Any claims about case types or practice areas: "we help folks with formation, with M&A, kind of when they are operating a traditional business, they want to convert into cooperatives or they want to buy another business to convert them into cooperatives, kind of seller, business owners selling to their employees, inventing the life cycle of the business contract, general counsel type of work." (00:20:14; "inventing" read as "involving" [transcript unclear]). "we get to choose the types of clients we work with" (00:21:09). Seasonality (00:18:30): "in between mid-July and Labor Day, pretty slow… in between now and Thanksgiving, super busy, and then wrapping up things in between then and mid-December." Operating "about 14, getting into 14 years, 13 years" (00:18:00).
+- Stated call focus / product interest: AI / automation of manual operations — NOT standard marketing/growth discovery. Prospect (00:03:10): "I came across you all looking for ways of connecting our systems a little bit better, maybe streamlining what we have. Our tech costs are increasing, and we're a super small team." Rep framed the call around AI (00:09:55–00:12:05): two options — (1) a SOC2-compliant AI environment with prebuilt legal workflows, and (2) a Fractional CTO program with custom-built agentic workflows owned by the firm. Prospect priorities: automate intake from form submission through engagement-letter drafting (human only on the 30-minute intake call), automate scheduling/rescheduling, automate financial dashboards (LeanLaw + QuickBooks -> Excel, Jessa), and add client-matter project management so quiet matters don't go stagnant. Rep asked for a "wish list" of the top 3–5 workflows; follow-up Fri Nov 6, 2026 at 12:00 PM Eastern with a Fractional CTO on the call. Rep quoted that custom Fractional CTO-style engagements run "$10,000 to $12,000 per month" at the high end and then said that would be "a bit of an overkill at this point" (00:49:35); the specific CTO level was NOT determined. Audit/discovery period is built into the engagement (~30–40 days).
+- Primary engagement: AI
+- Products discussed on call: AI Workforce Pro, Fractional CTO Level 1, Fractional CTO Level 2, Fractional CTO Level 3
+  (Basis: "AI environment… SOC2 compliant… prebuilt skills of workflows" = AI Workforce Pro, no tier or price given. "Fractional CTO program" named and a "$10,000 to $12,000 per month" high-end range quoted, then called overkill for this firm; no level named, so all three levels listed. Rep also mentioned marketing, intake and sales, and fractional CFO / bookkeeping in his generic company overview at 00:08:17–00:09:50, but those were not priced and the prospect did not express interest.)
+- Lead-gen gap stated: no — the prospect did not say she wants more leads or ask about marketing, ads, SEO or the website. Quote showing the opposite: (00:16:37) "[referrals are] pretty good and at this point getting out of hand a little bit." Jacqueline (00:27:28) does want Todd to have more time for "newsletters and follow ups and case studies and all the projects that we want to put out" — content/BD time, not a request for lead-gen services.
+- Existing marketing/SEO/ad vendor engagements: none stated (website is credited to design firm "Bloom and Brilliance Website" in the footer; the prospect did not mention a marketing, SEO or ad vendor on the call)
+- Budget constraints stated: Soft, not a hard limit. (00:41:00) "I am looking into budgeting for next year… assuming we have the budget and then we're pretty confident that our goals can be reached, I think that that would be a worthwhile investment." (00:41:26) "do I need to hire an assistant, but I, instead I can't have a tool that does that, well, maybe I'm compared to that budget as well." (00:48:42–00:49:05) asked for a high-level budget range: "this is not [about walking away]… I hear a big number, I'm not going to have the second call. That's not what it is. I'm really, I have no idea. So it would just be helpful for me to know." [transcript unclear — read as: a big number will not end the conversation, she just lacks a reference]. Also (00:03:24) "Our tech costs are increasing, and we're a super small team." No dollar limit stated.
+
+Additional context from the call (for Pass 2 / proposal):
+- Tech stack (prospect): LeanLaw for billing and timekeeping with QuickBooks (accounting); Trello as a rudimentary CRM / client notes and internal boards; SharePoint and Microsoft 365 / Teams; Typeform intake form on the website; Outlook calendars; Otter for call recording; Spellbook for legal drafting/research; some paid AI subscription [transcript unclear]. Legal advice given by email is not consolidated anywhere, so attorneys lose learning/training value (00:04:22–00:05:00).
+- Intake flow today: client sees site -> Typeform intake -> conflict check -> follow-up contact -> "several touch points before they see a person" (00:04:02); then 30-minute intake call; then scoping, engagement letter, onboarding, all manual (Todd 00:13:00).
+- Todd's time: "I was initially hired to be an executive assistant… I've also been asked to do more marketing and business development… all three of those things… could be a full-time job… more reactionary, less thoughtful work" (00:24:44–00:25:01). Jessa: dashboards are "semi-manual… I usually get data from those separate applications and plug in those in an Excel report" (00:30:18); Jacqueline: "she's not spending half of her time putting, updating dashboards" (00:32:27).
+- Non-billable time (Jessa, 00:44:16): "email catch-ups, conferences, some training and professional development, team huddles, internal meetings, and… a lot of admin things".
+- Attorneys feel stretched despite ~40% billable (Todd 00:42:08): "our attorneys all feel like they are stretched to their limit, which feels to me like it's in direct contrast to their only doing 40% billable work."
+- Success metric (Todd 00:42:47): billable % rises "while still… having the same amount of clients or adding more clients" = automation working.
+- Matter management: "we don't have a process at all to make sure that people are following up regularly on clients" (00:17:26); work is "transactional", deadlines "fictional or self-imposed" (00:17:41–00:17:43).
+
+Key prospect quotes (verbatim, filler trimmed; timestamps are hh:mm:ss):
+1. (00:03:24, goal/tech) "Our tech costs are increasing, and we're a super small team, and so I want to make sure I'm using the right set of tools."
+2. (00:04:02, intake) "…several touch points before they see a person. And we're trying to reduce those touch points…" (Jacqueline, 00:04:22)
+3. (00:16:23, lead sources) "We have over 70 to 90% of our clients come through referral, so we have a regular stream or referral that is pretty decent, could increase."
+4. (00:17:26, project management) "We don't have a process at all to make sure that people are following up regularly on clients and might be quiet."
+5. (00:26:20, intake goal) "I would like for the whole intake process to be automatized in a way that feels like there's a human engaged in, but that there's no human involved in intake, outside of the intake call that we offer at 30 minutes…"
+6. (00:25:01, team/Todd) "…I was initially hired to be an executive assistant… I've also been asked to do more marketing and business development, and so all three of those things, in and of themselves, I feel like could be a full-time job…" (Todd Hohman, 00:24:44–00:25:01)
+7. (00:30:18, reporting/Jessa) "I usually get data from those separate applications and plug in those in an Excel report that I did. It's kind of manual." (Jessa Almarza, 00:30:18–00:30:39)
+8. (00:33:45, profit/DBM) "I don't want us to … be hiring more people … without increasing profit margin. I don't need to have 20 attorneys to grow."
+9. (00:34:00, billable) "…we're billing at about 40% of attorneys' time, and they're always spending a lot of the rest of their time just in non-billable time."
+10. (00:42:08, team) "I get the sense that our attorneys all feel like they are stretched to their limit, which feels to me like it's in direct contrast to their only doing 40% billable work." (Todd Hohman)
+11. (00:41:26, budget/objection) "…do I need to hire an assistant, but I, instead I can't have a tool that does that, well, maybe I'm compared to that budget as well."
+12. (00:41:43, success) "I think it's just having a good sense that the goals can be accomplished."
+
+=====================================================================
+STEP 10 — COMPETITIVE URGENCY SCORE
+=====================================================================
+Score: 3 (LOW CONFIDENCE — no GBP, 3-pack, ads, LSA or Meta data could be observed, so this reflects market structure and the call, not measured competitor activity.)
+
+Reasoning: The firm is a niche, referral-driven practice (70–90% of clients via referral, per prospect) whose competitors are a small group of cooperative / social-enterprise counsel rather than high-volume local advertisers. The call was about internal automation, not competitive marketing pressure. The firm's own website is brand new (rebuilt late Sept 2026; mobile PageSpeed 51, desktop 83; no active blog; legacy posts from 2018–2019 only), so there is a visibility opportunity, but no evidence of competitors dominating paid channels.
+
+Named competitor threats (positioning only; none verified as running ads or outranking the firm):
+1. Pote Law Firm (Colorado) — publicly positions around Public Benefit Cooperatives, Limited Cooperative Associations and B Corps for social entrepreneurs; the closest niche overlap.
+2. Packard and Dierking, LLC (Boulder) — Boulder nonprofit / charitable-organization law practice with an Avvo/Lawyers.com presence [directory figures UNCONFIRMED, do not print].
+3. Hutchinson Black and Cook (Boulder) — Boulder business and corporate law firm that surfaces for business-law searches; not evidenced as cooperative-focused.
+
+Dynamic sentence (score 1–3): "A score of 3 means no single competitor is dominating your market yet — but that will not last forever. The firms that win markets do so by moving first. Getting your systems in place now means you set the standard before someone else does."
+
+=====================================================================
+PASS 2 — VERIFICATION CHECKLIST
+=====================================================================
+[x] Every number in the notes matches actually observed data (website, Lighthouse scores, sitemap dates) or the transcript; unobserved items are marked "not observed"
+[x] Every competitor review count verified live — none verified; the only competitor counts are tagged UNCONFIRMED and no competitor is described as "dominating"
+[x] Every review count / star rating carries a verification-method tag — the only figures (Packard and Dierking 4.7 / 13) are tagged [UNCONFIRMED — sourced from a Lawyers.com / Avvo-network directory snippet]; all other review fields are "not observed [no Google data]"
+[x] Annual revenue split gross vs net: transcript gives one number only ("not distinguished from gross"); fee structure recorded (mixed, shifting hourly -> fixed fee)
+[x] Every ad section covers all practice areas (Google Ads x3 areas; LSA; Meta) — all marked not observed
+[x] No section says "you are not running ads"
+[x] No profitability or business claim appears unless it came from the transcript
+[x] No generic competitor labels — only named firms (Pote Law Firm, Packard and Dierking, Hutchinson Black and Cook)
+[x] PageSpeed scores are real numbers (mobile 51, desktop 83 — local Lighthouse, tool-limit noted)
+[x] DBM recorded (quote + inference)
+[x] Revenue goal recorded (not stated, 2x = ~$2.4M)
+[x] Close rate recorded (not stated, default 15%)
+[x] Average case value recorded (not stated)
+[x] Stated call focus recorded — AI / automation, explicitly NOT marketing
+[x] "Primary engagement: AI", "Products discussed on call" (catalog names), "Lead-gen gap stated: no" filled in
+[x] Existing marketing/SEO/ad vendor engagements recorded (none stated)
+[x] Budget constraints recorded (soft; no dollar limit stated)
