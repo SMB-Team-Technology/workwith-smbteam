@@ -41,12 +41,12 @@
   "coaching_price_bundled": null,
   "coaching_price_retail": null,
   "coaching_savings": null,
-  "law_tier": "Fractional CTO Level 1 + AI Workforce Pro (5 seats)",
-  "law_name": "Fractional CTO Level 1 + AI Workforce Pro (5 seats)",
-  "law_price_bundled": 4894,
+  "law_tier": "Fractional CTO Level 1 + AI Workforce Pro (19 seats)",
+  "law_name": "Fractional CTO Level 1 + AI Workforce Pro (19 seats)",
+  "law_price_bundled": 6574,
   "law_price_retail": null,
-  "law_seats": 5,
-  "total_bundled": 4894,
+  "law_seats": 19,
+  "total_bundled": 6574,
   "total_savings": null,
   "ad_spend_conservative": null,
   "ad_spend_aggressive": null,
@@ -58,7 +58,8 @@
     "AI Workforce Pro \u2013 Starter discussed on call: 4 seats \u00d7 $350/mo = $1,400/mo.",
     "Revenue not in research notes \u2014 sourced from HubSpot (hubspot_annual_law_firm_revenue): \"$3,000,000+\" \u2192 $3,000,000",
     "Revenue $1M+, team under 5: Elite Coach Plus selected (Master's Circle requires 5+ team).",
-    "Seller override (Slack, 2026-10-26): 'Propose AIWP team (5 seats) + FCTO Level 1 package price $3,297/month'. Replaced package with Fractional CTO Level 1 ($3,297/mo) + AI Workforce Pro base for 5 seats ($1,597/mo) = $4,894/mo. The $3,297 was read as the FCTO Level 1 catalog price; no combined $3,297 price exists in the catalog. Elite Coach Plus removed (anything not named is dropped); marketing remains excluded. Both products are LAW items in the single law_* slot; law_price_retail/total_savings left null because AI Workforce Pro has no standalone price. Seller to confirm."
+    "Seller override (Slack, 2026-10-26): 'Propose AIWP team (5 seats) + FCTO Level 1 package price $3,297/month'. Replaced package with Fractional CTO Level 1 ($3,297/mo) + AI Workforce Pro base for 5 seats ($1,597/mo) = $4,894/mo. The $3,297 was read as the FCTO Level 1 catalog price; no combined $3,297 price exists in the catalog. Elite Coach Plus removed (anything not named is dropped); marketing remains excluded. Both products are LAW items in the single law_* slot; law_price_retail/total_savings left null because AI Workforce Pro has no standalone price. Seller to confirm.",
+    "Seller override (Slack, 2026-10-26): 'change the aiwp to 19 users'. AI Workforce Pro seats changed from 5 to 19: $1,597/mo (first 5) + 14 x $120/mo = $3,277/mo. Fractional CTO Level 1 unchanged at $3,297/mo. Combined $6,574/mo. Seller to confirm."
   ],
   "needs_seller_input": false
 }
