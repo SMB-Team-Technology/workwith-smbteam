@@ -35,7 +35,7 @@ OUTPUT_PATH    = "miiko-anderson/MiikoAndersonLaw_October212026_Proposal.pptx"
 # ── Slide 1 ──────────────────────────────────────────────────────
 PROSPECT_QUOTES = [
     ("You said", "I have done no marketing at all. Absolutely none. So that's just word of mouth."),
-    ("You said", "I think the biggest challenge that I'm facing right now partly is branding."),
+    ("You said", "That space in between the beats kind of does make me nervous"),
 ]
 
 KEY_GAPS = [
@@ -51,33 +51,33 @@ SLIDE_2_TITLE = "Your Growth Plan: 3 Priorities to Reach Space and Freedom"
 
 PRIORITIES = [
     (
-        "Build Your Client", "Pipeline", "003A59",
+        "Open a Second", "Client Source", "003A59",
         [
-            "Optimize Google Business Profile, build steady reviews",
-            "Turn your website into a lead source, not a referral check",
-            "Run managed ads so new clients find you in Fresno",
-            "Make the law firm the first result for your own name",
-            "A second source, so quiet months stop worrying you",
+            "Launch Local Service Ads for Fresno criminal defense",
+            "Pay only when a real prospect calls you",
+            "Review leads and cost per lead together each month",
+            "Quiet stretches stop dictating your week",
+            "Later: add a website and local search foundation",
         ],
     ),
     (
-        "Fix Intake &", "Follow-Up", "69CD2B",
+        "Coach the Firm", "You Want to Build", "69CD2B",
+        [
+            "Group coaching alongside other law firm owners",
+            "Monthly 1:1 call to work through your options",
+            "Map the order of your first associate hire",
+            "Write down intake and case steps for new hires",
+            "Build a firm that does not need you in every case",
+        ],
+    ),
+    (
+        "Steady Follow-Up &", "Clear Numbers", "003A59",
         [
             "Add one clear way to request a consult on the homepage",
-            "Follow up on every consult that does not sign right away",
+            "Follow up on consults that do not sign right away",
             "Use the Clio you already have to keep follow-up steady",
-            "Be ready for faster-moving leads from search and ads",
-            "Take the first call off your plate over time",
-        ],
-    ),
-    (
-        "Install Team &", "Profit Systems", "003A59",
-        [
-            "Write down intake and case steps for your first hire",
             "Set the revenue target that funds two associates",
-            "Put bookkeeping in place for clear monthly numbers",
-            "Hire once lead flow is steady, not before",
-            "Build a firm that does not need you in every case",
+            "Track monthly numbers so hiring is a plan, not a guess",
         ],
     ),
 ]
@@ -85,30 +85,36 @@ PRIORITIES = [
 # ── Slide 3 ──────────────────────────────────────────────────────
 PACKAGES = [
     (
-        "FULL SERVICE MARKETING — ESSENTIALS",
-        "$3,797", "stand-alone price",
-        "Website · Local search · GBP · Managed ads",
+        "COACH ESSENTIALS PLUS",
+        "$2,497", "stand-alone price",
+        "Group coaching · Monthly 1:1 coaching call",
+        "003A59",
+    ),
+    (
+        "LSA MANAGEMENT ADD-ON",
+        "$0", "$900/mo",
+        "Local Service Ads setup and management · Complimentary",
         "0091C9",
     ),
 ]
 
-BUNDLE_TOTAL   = "$3,797 / mo"
-BUNDLE_SAVINGS = "Stand-alone pricing"
+BUNDLE_TOTAL   = "$2,497 / mo"
+BUNDLE_SAVINGS = "Save $900/mo with complimentary LSA"
 
 AD_SPEND_NOTE = (
-    "+ Recommended ad spend: $3,200–$4,950/mo — to reach high-intent Fresno searchers"
+    "+ Recommended ad spend: $2,000–$2,500/mo — to reach Fresno searchers ready to call"
 )
 
 AVG_CASE_VALUE     = "$4,000 (estimate)"
-CONSERVATIVE_LABEL = "Conservative  (5–6 cases/mo):"
-CONSERVATIVE_RESULT = "$21,800 revenue · 6.8× ROAS"
-AGGRESSIVE_LABEL   = "Aggressive  (9–10 cases/mo):"
-AGGRESSIVE_RESULT  = "$36,500 revenue · 7.4× ROAS"
+CONSERVATIVE_LABEL = "Conservative  (2–3 cases/mo):"
+CONSERVATIVE_RESULT = "$10,400 revenue · 5.2× ROAS"
+AGGRESSIVE_LABEL   = "Aggressive  (3–4 cases/mo):"
+AGGRESSIVE_RESULT  = "$15,600 revenue · 6.2× ROAS"
 
 WHAT_YOU_TOLD_US = [
-    ("No marketing yet", "Managed ads and local search add a second source"),
-    ("Branding", "Site content written around your credentials and story"),
-    ("Scaling the firm", "Case volume that can fund the associates you want"),
+    ("No marketing yet", "LSA adds a second source; pay when a prospect calls"),
+    ("Needs framework", "Monthly 1:1 coaching to map options and first hires"),
+    ("Solo, lean start", "One coaching plan; LSA management fee included"),
 ]
 
 CLOSING_QUOTE = (
