@@ -1,0 +1,128 @@
+SECTION 11 WORKINGS — Scarborough Law (INTERNAL — never client-facing)
+Sales rep: Michael Kopp | Date: October 26, 2026
+
+=====================================================================
+1. PACKAGE DECISION — OVERRIDE DOCUMENTATION
+=====================================================================
+package_decision.json (locked by seller without edits) selected:
+  Full Service Marketing Starter ($4,997 bundled) + Elite Coach ($2,600 bundled) = $7,597/mo,
+  ad spend $3,500 conservative / $14,000 aggressive, confidence "medium".
+  Its own selection_notes flagged: revenue sourced from HubSpot ($0-$180K bracket, not the call),
+  team size defaulted to 3 (firm is solo), total over the 35% cap, and scoping approval required.
+
+OVERRIDE TRIGGERED: #3 BUDGET-REALITY OVERRIDE (departure from decision file is intentional).
+  Evidence from transcript (research notes STEP 9):
+  - "And then like money got tight." (00:01:15)
+  - "it's kind of a reason why the money's tight now" (00:02:25) — prior coaching program
+  - 2027 marketing budget in mind: "maybe 1500, 2,000 a month on marketing ... probably a little low" (00:15:52-00:16:00)
+  - Closing: "if it's a fit, I appreciate it. And if not, I'll keep you guys in mind" (00:31:50)
+  - Revenue ~$12K/mo (~$144K/yr annualized; HubSpot bracket $0-$180K). $7,597/mo of fees alone = ~63% of monthly revenue.
+  - Not a coaching call; he said the prior coaching program "doesn't really help you substantively." Elite Coach does not address his stated need.
+  Not triggered: #1 call-purpose (call WAS marketing/paid ads), #2 existing-vendor (none stated), #4 effective-revenue (no net figure given; net not distinguished from gross).
+
+RECOMMENDATION: Paid Ads Starter (single product). Lowest-cost package that addresses the stated need
+("I just really think I need to focus on Google Ads", 00:04:30). Full Service Marketing Starter and Elite Coach
+dropped. Paid Ads Essentials ($1,997) is not eligible: Essentials requires a single practice area (estate planning + probate = two).
+Single-product recommendation is permitted because the transcript shows one service category fits.
+
+=====================================================================
+2. MANDATORY PRICE LOOKUP (Scoping_and_Ad_Spend_Guide.md Step 5D, Starter tier)
+=====================================================================
+- Marketing package selected: Paid Ads Starter
+  - Bundled price (from table): $2,497/mo
+  - Stand-alone price (from table): $3,497/mo
+  - Savings (stand-alone minus bundled): $1,000/mo
+- Non-marketing package selected: none
+- Legal AI Workforce (LAW) package selected: none (solo firm, no support staff; revisit after first hire)
+- AI Avatar / Video Growth add-on selected: none
+- Total monthly investment (sum of bundled/recurring prices): $2,497/mo
+- Total savings: $1,000/mo
+- Ad spend (paid to platforms, not SMB Team): $3,500-$5,700/mo (see section 4)
+- Minimum MRR check: $2,497 = exactly the $2,497 floor. OK.
+
+=====================================================================
+3. INTERNAL FLAGS FOR SALES (not in client report)
+=====================================================================
+- !! PAID-ADS-ONLY IS AN UNAPPROVED EXCEPTION. Per research notes FLAG 5, Michael said on the call he must get approval and
+  would submit a scoping request for Houston. No price was quoted on the call. The $2,497 above is the catalog Paid Ads Starter
+  bundled rate; catalog says ads-only "cannot be sold standalone; must be paired with coaching." Confirm approval and price
+  BEFORE sharing the proposal. If approval requires pairing with coaching, the cheapest compliant add is Coach Essentials ($1,000/mo,
+  group only) = $3,497/mo total — but the prospect has said he was burned by a coaching program.
+- !! BUDGET GAP: stated budget ~$1,500-$2,000/mo total on marketing; recommendation is $2,497 fee + $3,500 minimum ad spend = $5,997/mo.
+  This does NOT fit his stated budget. Expect a price objection; he has not agreed to the rep's $5,000/mo hypothetical (FLAG 2).
+- !! 35% CAP EXCEEDED: cap = 35% x ~$12,000/mo = $4,200/mo (on HubSpot $180K revenue: $5,250/mo).
+  Conservative total (fee $2,497 + ad spend $3,500) = $5,997/mo = ~50% of current monthly revenue. Aggressive total = $8,197/mo.
+  At the revenue goal (~$305K/yr = ~$25.4K/mo) the cap would be ~$8,900/mo, so the aggressive scenario fits only AFTER the goal is hit.
+  Review with sales rep / paid ads team before sending.
+- Revenue under $300K -> scoping approval required. Revenue under $250K -> confirm funds to cover 4 months of services.
+- Ad spend: $3,500 conservative is above $3,000 absolute minimum. Aggressive $5,700 under $25K approval threshold.
+- Houston = Tier 1 geo market. Estate planning in top metro: no approval requirement in escalation list (only CD/FL/PI).
+- REVIEW COUNTS UNCONFIRMED — verify live before the call. No competitor count (Holmes Law 141, Heights Law Group 62, Mike Massey 17 Yelp)
+  was confirmed via Google; none printed. The firm's own Google review count/rating is unknown. No claim made that any competitor has more reviews than the firm.
+- PAGESPEED NOT OBTAINED (web UI stuck, API HTTP 429). No score printed. Re-run before the call.
+- GBP, local 3-pack, Google Ads, LSA, and Meta Ad Library were NOT OBSERVED (tools returned no data). Client report uses "not confirmed / not observed" framing throughout.
+  Verify live and consider updating the report before presenting.
+- Phone number inconsistency (832-415-9252 on site vs (832) 891-7591 in a search snippet) — verify; no number cited in the report.
+- Speaker-tag error in transcript at 00:04:13 ("20 people show up" tagged to Michael) — context only, not used.
+- Revenue source mismatch: HubSpot bracket "$0 - $180K" vs transcript ~$12K/mo (~$144K annualized). Used transcript. Transcript "unclear" on $134K vs $144K.
+- Close rate not tracked by prospect; 30% in Fathom summary is the rep's hypothetical. Default 15% used (disclosed in Block 4 disclaimer).
+- $4,500 HNW price was the rep's suggestion; prospect said ~$4,000 for basic trust plans. $4,000 used as case value (prospect-stated).
+- DBM inferred (not stated). Prospect's own words: "I'd rather have that problem than not enough ... naturally forced to delegate" (00:23:33) and "everybody makes a million dollars. It's just how fast" (00:12:00). Inference: build a high-revenue firm fast / scale.
+- Stage 3 (Solo Practitioner) assigned.
+- Debt references (00:11:41) and the rep's "paying off a lot of debt" are intentionally omitted from the client report (financial-distress rule).
+- No AI Avatar, OmniSocial, LAW, Attorney Assistant, or Bookkeeping package included -> no special approvals triggered.
+- AR/AP/Payroll add-on interest: none.
+
+=====================================================================
+4. AD SPEND CALCULATION
+=====================================================================
+Practice areas: estate planning (primary) + probate. Channel: Google PPC (his stated focus). LSA already running on his own (cap $2,000/mo).
+CONSERVATIVE = channel minimum: Estate Planning Google PPC min = $3,500 -> $3,500/mo (above $3,000 absolute minimum)
+AGGRESSIVE:
+  20% rule: revenue goal midpoint $305,000 ($280K-$330K) x 20% / 12 = $5,083/mo
+            x Houston Tier 1 multiplier 1.5 = $7,625/mo
+            - management fee $2,497 = $5,128/mo available ad spend
+  Reverse math: ($305,000 / 12 = $25,417) / $4,000 avg case = 6.35 cases/mo
+            / 15% close rate = 42.4 leads/mo
+            x blended CPL $135 (estate planning Google midpoint of $120-$150) = $5,719/mo
+  Higher of the two = $5,719 -> $5,700/mo recommended aggressive. Under Paid Ads Starter cap ($20,000).
+  (Decision file aggressive of $14,000 = 4x floor, not tied to his goal; rejected as unsupported and far outside his budget.)
+
+ROI PROJECTIONS (estimates; CPL range $120-$150 Google Search, estate planning; case value $4,000 prospect-stated; close rate 15% default, disclosed)
+  Conservative: $3,500 / ($135 x 1.20 cushion = $162) = 21.6 leads x 15% = 3.2 cases x $4,000 = $12,963 (~$13,000) -> return 3.7x
+  Aggressive:   $5,700 / $135 = 42.2 leads x 15% = 6.3 cases x $4,000 = $25,333 (~$25,300) -> return 4.4x
+  Note: ~3 cases at conservative equals his current pace (which already includes referrals); aggressive ~6 cases is the low end of his 6-8 goal.
+
+WHY THIS RANGE (client-facing sentence): "To capture high-intent Houston estate planning and probate searches on Google — the channel you told us offers the highest return on your time — and move toward the six to eight clients a month you are aiming for."
+
+=====================================================================
+5. DBM STATEMENT (Block 1)
+=====================================================================
+"We help ambitious new estate planning attorneys get a predictable flow of high-net-worth Houston clients from Google so they can build a high-revenue firm fast and grow into having more demand than one person can handle."
+
+=====================================================================
+6. QUICK WIN OPPORTUNITIES (8)
+=====================================================================
+1. Lead Gen — Rebuild Google Ads around high-intent trust/probate searches. Why: LSA zero leads 7 days; Google Ads "highest return on time." Competitor: none. Opportunity: tracked, intent-based campaign.
+2. Lead Gen — Diagnose and fix Local Service Ads. Why: $444/wk, $2,000/mo cap, leads tailed off, "I can't figure out why." Competitor: none.
+3. Lead Gen — Build Google review base. Why: reviews drive map pack/LSA ranking. Competitor: Holmes Law, PLLC (qualitative only; count unconfirmed).
+4. Lead Gen (long-term) — Special needs trust + Houston-suburb pages. Why: none exist; HNW focus. Competitor: none.
+5. Lead Gen — Align firm name/domain with estate planning (DBA). Why: ScarboroughFamilyLawyer.com reads as family law; prospect: "that's an interesting point." Competitor: none.
+6. Intake — Track every inquiry to signed plan. Why: "I haven't been tracking that." Competitor: none.
+7. Team (long-term) — Plan first hire before volume arrives. Why: solo; virtual paralegal under consideration. Competitor: none.
+8. Profit — Know what a signed client costs. Why: Wine and Wills ~$1,500 / two clients (~$750 each); no other channel measured. Competitor: none.
+
+=====================================================================
+7. WHAT YOU TOLD US (Block 5) — transcript sourcing
+=====================================================================
+Row 1: "Google Ads is the highest return on your time."
+  Transcript: (00:04:30) "I just really think I need to focus on Google Ads because that's kind of like, I think, the highest return on not spending time."
+  Supports Block 2: Paid Ads Starter — Google Ads campaign management.
+Row 2: "Your Local Service Ads started with leads, then tailed off, and you cannot tell why."
+  Transcript: (00:05:55) "when I first started, I got like two leads. It's a week, and it's just tailed off"; (00:07:35) "the previous seven days, it literally says zero leads"; (00:06:03) "I can't figure out why it's not."
+  Supports Block 2: Paid Ads Starter — LSA account management + monthly reporting.
+Row 3: "You want to reach six to eight clients a month."
+  Transcript: (00:13:09) "I'd like to get up to six, maybe even eight clients per month."
+  Supports Block 2: Paid Ads Starter — ad spend range and channel reporting.
+Next step: kickoff call with the Onboarding team (Paid Ads Starter is the central package).
+Excluded on purpose: budget/"money got tight" and debt remarks (sensitive, not a package-supporting item).
