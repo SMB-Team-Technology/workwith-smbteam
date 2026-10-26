@@ -1,0 +1,360 @@
+<!-- ⚠️ NO CSS IN THIS FILE. No <style> blocks. No inline styles. No style="" attributes.
+     All styling comes from audit_styles.css only. Use only existing class names.
+     If you find yourself writing CSS — stop and delete it. -->
+<!-- ============================================================
+     SECTION 11 — YOUR NEXT STEPS
+     
+     INSTRUCTIONS FOR COWORK:
+     
+     QUICK WIN CARDS:
+     - Minimum 6 cards across all four pillars
+     - Each card: pillar badge top-left, timeline badge top-right
+     - Pillar badge classes: badge-lead-gen, badge-intake, badge-team, badge-profit
+     - Timeline badge classes: badge-quick-win, badge-long-term
+     - "Who Is Doing It Better" row: omit entire qw-row.who div if no named competitor
+     - Do not add inline styles. Do not change class names.
+     
+     RECOMMENDATION BLOCKS (8 total):
+     - Block 1: Custom Closing Statement — formula: "We help [audience] get [external
+       desire] so they can [DBM]." Specific to this firm.
+     - Block 2: Package Recommendation — package name, why it connects to DBM,
+       deliverables list. Use Step 11 logic from system prompt.
+     - Block 3: SMB Team Monthly Investment — retail price (strikethrough) and
+       bundled price for each package, savings callout.
+     - Block 4: Recommended Ad Spend — ad spend amount, estimated case value,
+       estimated cases/month, estimated monthly revenue. All labeled as estimates.
+     - Block 5: What You Told Us — exactly 3 things the owner raised on the
+       discovery call, each paired with the part of Block 2 that addresses it,
+       plus one next-step line. Every item must trace to the transcript.
+       No transcript: retitle "What We Found" and use 3 findings from Sections 5–9.
+     - Block 6: Growth Roadmap — 3 phase cards. All identical visual formatting.
+       Phase triggers are dynamic based on this firm's trajectory.
+     - Block 7: Outcome Cards — 3 cards (More Profit, More Freedom, Better Client
+       Results), each tied to this owner's DBM.
+     - Block 8: Personal Closing — italic, empathetic, specific to this owner and DBM.
+     ============================================================ -->
+
+<!-- QUICK WINS -->
+<div class="section-header" id="next-steps">
+  <div class="section-header-inner">
+    <h2>Quick Wins for Kyle and Kyle Law</h2>
+  </div>
+</div>
+<div class="content-wrap">
+
+  <!-- QUICK WIN CARD 1 — Lead Generation example -->
+  <div class="quick-win-card">
+    <div class="qw-header">
+      <div class="qw-title">Automate Email Triage and Calendaring</div>
+      <div class="qw-badges">
+        <span class="badge badge-team">Team</span>
+        <span class="badge badge-quick-win">Quick Win</span>
+      </div>
+    </div>
+    <div class="qw-row why">
+      <div class="qw-row-label">Why It Matters</div>
+      One person is hired just to review three people's emails, and Katherine calls email "a huge one" — routine inbox work is paid time that does not move the firm forward.
+    </div>
+    <div class="qw-row opportunity">
+      <div class="qw-row-label">The Opportunity</div>
+      An AI skill and automation that sorts incoming email and places hearings on the right attorney's calendar could free that position for higher-value work and give Katherine back daily time.
+    </div>
+  </div>
+
+  <!-- QUICK WIN CARD 2 — Intake example (no competitor) -->
+  <div class="quick-win-card">
+    <div class="qw-header">
+      <div class="qw-title">Remove the Double Entry Between Onboarding and Case Opening</div>
+      <div class="qw-badges">
+        <span class="badge badge-intake">Intake</span>
+        <span class="badge badge-quick-win">Quick Win</span>
+      </div>
+    </div>
+    <div class="qw-row why">
+      <div class="qw-row-label">Why It Matters</div>
+      Katherine says the current process "requires too much double work" because information must be re-entered into the case management system before a case can be opened.
+    </div>
+    <div class="qw-row opportunity">
+      <div class="qw-row-label">The Opportunity</div>
+      Capturing onboarding information once and getting it case-ready could save staff time on every new client and keep that time from growing as the firm adds states.
+    </div>
+  </div>
+
+  <!-- QUICK WIN CARD 3 — Team example (long-term play) -->
+  <div class="quick-win-card">
+    <div class="qw-header">
+      <div class="qw-title">Put an AI Policy and Data-Access Rules in Place</div>
+      <div class="qw-badges">
+        <span class="badge badge-team">Team</span>
+        <span class="badge badge-quick-win">Quick Win</span>
+      </div>
+    </div>
+    <div class="qw-row why">
+      <div class="qw-row-label">Why It Matters</div>
+      Katherine wants an AI policy every employee signs and worries about bar rules and what client data AI should be allowed to touch — loan modification files include client banking details.
+    </div>
+    <div class="qw-row opportunity">
+      <div class="qw-row-label">The Opportunity</div>
+      Defining clear rules with your Fractional CTO lets the team use AI with confidence, instead of holding back for fear of crossing a line.
+    </div>
+  </div>
+
+  <!-- QUICK WIN CARD 4 — Profit example -->
+  <div class="quick-win-card">
+    <div class="qw-header">
+      <div class="qw-title">Track Fee-Recovery Revenue</div>
+      <div class="qw-badges">
+        <span class="badge badge-profit">Profit</span>
+        <span class="badge badge-quick-win">Quick Win</span>
+      </div>
+    </div>
+    <div class="qw-row why">
+      <div class="qw-row-label">Why It Matters</div>
+      The firm pursues fees but does not track how much revenue comes from them, and some fees are written off, so there is no clear picture of whether the effort pays off.
+    </div>
+    <div class="qw-row opportunity">
+      <div class="qw-row-label">The Opportunity</div>
+      The firm already uses dashboards for consult-to-client percentages by attorney; extending that visibility to fee data could show where collection effort is worth the time.
+    </div>
+  </div>
+
+  <!-- QUICK WIN CARD 5 -->
+  <div class="quick-win-card">
+    <div class="qw-header">
+      <div class="qw-title">Make the Website Fast and Clear Before Adding Digital Marketing</div>
+      <div class="qw-badges">
+        <span class="badge badge-lead-gen">Lead Gen</span>
+        <span class="badge badge-long-term">Long-Term Play</span>
+      </div>
+    </div>
+    <div class="qw-row why">
+      <div class="qw-row-label">Why It Matters</div>
+      A Lighthouse performance test scored the site 41/100 on mobile and 75/100 on desktop, and the homepage headline does not say what the firm does. Homeowners who get your mailer often check you online before they call.
+    </div>
+    <div class="qw-row opportunity">
+      <div class="qw-row-label">The Opportunity</div>
+      A faster, clearer site would support your direct mail today and give you a stronger base when you decide to add digital marketing or open Indiana and Ohio.
+    </div>
+  </div>
+
+  <!-- QUICK WIN CARD 6 -->
+  <div class="quick-win-card">
+    <div class="qw-header">
+      <div class="qw-title">Build the Loan Mod Analyzer</div>
+      <div class="qw-badges">
+        <span class="badge badge-intake">Intake</span>
+        <span class="badge badge-long-term">Long-Term Play</span>
+      </div>
+    </div>
+    <div class="qw-row why">
+      <div class="qw-row-label">Why It Matters</div>
+      Loan modification applications depend on complete documents and bank statements, and catching what is missing is manual work today.
+    </div>
+    <div class="qw-row opportunity">
+      <div class="qw-row-label">The Opportunity</div>
+      An analyzer that flags missing documents and drafts a summary for the client could speed up file review and keep clients informed.
+    </div>
+  </div>
+
+  <!-- Add more cards as needed. Minimum 6 total across all four pillars. -->
+
+</div>
+
+<!-- HOW SMB TEAM CAN HELP -->
+<div class="subsection-header" id="recommendation">
+  <div class="subsection-header-inner">
+    <h3>How SMB Team Can Help Kyle and Kyle Law</h3>
+  </div>
+</div>
+<div class="content-wrap">
+
+  <!-- BLOCK 1: CUSTOM CLOSING STATEMENT
+       Formula: "We help [audience description] get [external desire] so they can [DBM]."
+       Example: "We help established solo practitioners get a predictable flow of
+       high-value immigration and PI cases so they can finally step back from the
+       day-to-day and let the firm work for them." -->
+  <div class="closing-statement-block">
+    <p>We help <span class="dbm-highlight">multi-state foreclosure defense and loan modification firm owners</span> get a practical, secure AI roadmap that takes routine work off their team so they can <span class="dbm-highlight">stop running the business and focus on scaling into new states.</span></p>
+  </div>
+
+  <div style="height:24px;"></div>
+
+  <!-- BLOCK 2: DBM SUBHEADER + PACKAGE RECOMMENDATIONS
+       Subheader: 1-2 sentences summarizing what this firm is ultimately working toward.
+       Then one package-block per recommended package. -->
+  <div class="dbm-subheader">Katherine wants running the business to stop pulling her away from what she wants to focus on — scaling Kyle and Kyle Law into five additional states — and she sees AI as the way to get there, starting with quick wins.</div>
+
+  <div class="package-block">
+    <div class="package-header">
+      <div class="package-label">Recommended AI Leadership Package</div>
+      <h4>Fractional CTO Level 1</h4>
+    </div>
+    <div class="package-body">
+      <div class="package-why">Katherine asked, "what should my roadmap be?" and wants smaller wins first, but running the business leaves little time to lead an AI rollout herself. A dedicated Fractional CTO owns the roadmap, picks the quick wins, and keeps the work moving so her time goes to scaling.</div>
+      <div class="package-deliverables-label">Deliverables Include</div>
+      <ul class="package-list">
+        <li>One monthly 1:1 session with your Fractional CTO</li>
+        <li>Up to 2 additional 1-hour sessions each month, as needed</li>
+        <li>Up to 2 skills deployed from the Law Firm AI Skills library each month (you keep access to the skills)</li>
+        <li>Up to 1 custom automation each month</li>
+        <li>Training videos on skills and automations, as needed</li>
+        <li>A monthly automation report on skills and automations</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="package-block">
+    <div class="package-header">
+      <div class="package-label">Recommended AI Workforce Package</div>
+      <h4>AI Workforce Pro (15 seats)</h4>
+    </div>
+    <div class="package-body">
+      <div class="package-why">Only 5 of your 15 people use Claude today, mostly for one-off tasks, and Katherine is wary of stacking up disconnected subscriptions. Giving the whole team access to AI Workforce Pro, with a weekly implementation session, puts routine work in the hands of the people who do it so it stops flowing through the owners.</div>
+      <div class="package-deliverables-label">Deliverables Include</div>
+      <ul class="package-list">
+        <li>Access to AI Workforce Pro for 15 team members</li>
+        <li>A weekly AI Implementation Session</li>
+        <li>10M usage credits plus 10M bonus credits (20M total)</li>
+        <li>Yearly agreement</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- BLOCK 3 + 4: INVESTMENT GRID -->
+  <div class="investment-grid">
+
+    <!-- BLOCK 3: SMB TEAM MONTHLY INVESTMENT -->
+    <!-- FILL INSTRUCTIONS FOR INVESTMENT BLOCK:
+         Retail price = stand-alone price from the pricing tables in Steps 11.2 and 11.3
+         Bundled price = discounted bundled price from the same tables
+         Savings per package = retail minus bundled for EACH package
+         Total savings = sum of ALL individual package savings combined
+         Total investment = sum of ALL bundled prices
+         Example (Starter + Elite Coach): Marketing retail $5,697 bundled $4,997 = saves $700
+                  Coaching retail $3,497 bundled $2,600 = saves $897
+                  Total savings = $700 + $897 = $1,597/month
+                  Total investment = $4,997 + $2,600 = $7,597/month
+         IMPORTANT: Only use prices from the approved pricing tables. Never estimate. -->
+    <div class="investment-block">
+      <div class="investment-header"><h4>SMB Team Monthly Investment</h4></div>
+      <div class="investment-body">
+        <div class="investment-row">
+          <span class="label">Fractional CTO Level 1</span>
+          <span><span class="retail">$3,797/mo</span>&nbsp;<span class="bundled">$3,297/mo</span></span>
+        </div>
+        <div class="investment-row">
+          <span class="label">AI Workforce Pro (15 seats)</span>
+          <span><span class="bundled">$2,797/mo</span></span>
+        </div>
+        <div class="investment-total">
+          <span class="total-label">Total Monthly Investment</span>
+          <span class="total-amount">$6,094/mo</span>
+        </div>
+        <div class="investment-savings">You save $500/month by bundling</div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="package-block">
+    <div class="package-header"><h4>What You Told Us — and How This Plan Addresses It</h4></div>
+    <div class="package-body">
+      <ul class="focus-list">
+        <li><strong>You asked, "what should my roadmap be?" and where AI saves the most time.</strong> Your Fractional CTO builds that roadmap in your monthly 1:1 session, and the monthly automation report shows what has been put to work.</li>
+        <li><strong>Email is a huge one for you, with one person hired to review three people's emails.</strong> Your Level 1 package includes up to 2 skills and up to 1 custom automation each month, giving that work a clear place to start.</li>
+        <li><strong>You do not want to end up with a pile of disconnected AI subscriptions.</strong> AI Workforce Pro gives your whole team access in one place, with a weekly implementation session to keep the rollout focused.</li>
+      </ul>
+      <p><strong>Next step:</strong> Kickoff call with your Fractional CTO team.</p>
+    </div>
+  </div>
+
+  <!-- BLOCK 6: GROWTH ROADMAP
+       All 3 phase cards must use identical visual formatting.
+       Phase triggers are dynamic — based on this firm's trajectory and goals.
+       Each phase: bullet points only, max 5 bullets, italic DBM closing sentence. -->
+  <div class="package-block">
+    <div class="package-header"><h4>What Happens Next</h4></div>
+    <div class="package-body">
+      <div class="roadmap-stack">
+
+        <div class="phase-card">
+          <div class="phase-header">
+            <div class="phase-number">Phase 1</div>
+            <div class="phase-title">Foundation</div>
+            <div class="phase-trigger">Starting Now</div>
+          </div>
+          <div class="phase-body">
+            <ul class="phase-list">
+              <li>Fractional CTO Level 1 builds your AI roadmap in a monthly 1:1 session</li>
+              <li>Quick wins come first, starting with email and calendaring and the double entry at onboarding</li>
+              <li>AI Workforce Pro gives all 15 team members access, with a weekly implementation session</li>
+              <li>An AI policy and data-access rules set the guardrails before more of the team starts using AI</li>
+            </ul>
+            <div class="phase-dbm">This is how running the business starts to stop pulling you away from what you want to focus on.</div>
+          </div>
+        </div>
+
+        <div class="phase-card">
+          <div class="phase-header">
+            <div class="phase-number">Phase 2</div>
+            <div class="phase-title">Operational Scale</div>
+            <div class="phase-trigger">Once the first automations are running and expansion into Indiana is underway</div>
+          </div>
+          <div class="phase-body">
+            <ul class="phase-list">
+              <li>Add Fractional COO Advisor ($3,297/mo) to build the operating structure for a multi-state firm</li>
+              <li>Standardize the processes that work today so each new state follows the same playbook</li>
+              <li>Includes weekly group coaching sessions, practice area masterminds, virtual access to quarterly workshops, and one annual in-person workshop</li>
+            </ul>
+            <div class="phase-dbm">Each new state adds to the firm instead of adding to your workload.</div>
+          </div>
+        </div>
+
+        <div class="phase-card">
+          <div class="phase-header">
+            <div class="phase-number">Phase 3</div>
+            <div class="phase-title">Optimize</div>
+            <div class="phase-trigger">Once the firm is operating in its second new state</div>
+          </div>
+          <div class="phase-body">
+            <ul class="phase-list">
+              <li>Add Fractional CFO Advisor ($3,297/mo) for financial visibility across a multi-state firm</li>
+              <li>Set a new revenue target and track fee-recovery revenue, which is not tracked today</li>
+              <li>Move to a higher Fractional CTO level as the firm's automation needs grow with each new state</li>
+            </ul>
+            <div class="phase-dbm">You see exactly how each state performs before you decide where to go next.</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- BLOCK 7: OUTCOME CARDS -->
+  <div class="scorecard-label">Here Is What This Builds For You</div>
+  <div class="outcome-grid">
+    <div class="outcome-card">
+      <div class="outcome-title">More Profit</div>
+      <div class="outcome-text">The time saved on email, calendaring, and data entry lets the same team serve more clients, so growth into new states does not require matching growth in overhead.</div>
+    </div>
+    <div class="outcome-card">
+      <div class="outcome-title">More Freedom</div>
+      <div class="outcome-text">Routine work moves off your plate and your team's, so running the business stops pulling you away from the focus you want to give the expansion.</div>
+    </div>
+    <div class="outcome-card">
+      <div class="outcome-title">Better Client Results</div>
+      <div class="outcome-text">Fewer manual handoffs and faster document review on loan modification files can mean clients hear back sooner, from a team with more time for them.</div>
+    </div>
+  </div>
+
+  <!-- BLOCK 8: PERSONAL CLOSING
+       Empathetic, direct, specific to this owner and their DBM.
+       2-3 italic sentences written directly to them.
+       Final line is fixed — only replace Kyle and Kyle Law. -->
+  <div class="personal-closing">
+    <p>Katherine, you have built a firm with good systems, more than 500 active clients, and the instinct to ask the right question early: "what should my roadmap be?" You do not need a new vision — you need your time back to pursue the one you already have. We would be glad to start with the quick wins and build from there.</p>
+    <p class="final-line">This is not a fantasy. SMB Team can make this a reality for Kyle and Kyle Law.</p>
+  </div>
+
+</div>
+<div class="back-to-top"><a href="#toc">↑ Back to Top</a></div>

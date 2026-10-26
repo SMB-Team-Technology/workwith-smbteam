@@ -1,0 +1,66 @@
+SECTION 11 WORKINGS — Kyle and Kyle Law — INTERNAL ONLY (never client-facing)
+================================================================================
+
+OVERRIDE CHECK (Transcript-Stated Need Override)
+1. Call-purpose override: APPLIES. Research notes: "This was NOT a marketing/growth call. The call was about AI implementation." call_focus.primary_engagement = AI. Recommendation leads with AI (LAW products). No marketing package.
+2. Existing-vendor override: not triggered. Direct mail only; no SEO/ads vendor. (Marketing is excluded by override 1 and by the seller lock, not by a vendor contract.)
+3. Budget-reality override: not triggered. No budget limit stated (only a concern about stacking disconnected subscriptions).
+4. Effective-revenue override: not triggered. No net figure distinct from gross (net_revenue_stated = null, is_contingency_practice = false). Revenue basis: transcript 2026 YTD ~$2.005M, 2025 $1.916M; decision file revenue_effective $1,980,500 (HubSpot band $961K–$3M). All three consistent with the $1M+ band.
+
+DEPARTURE FROM REVENUE-TABLE DEFAULT (documented for sales):
+- A revenue-only lookup ($1M–$2M, team under 5 defaulted) would suggest Growth marketing ($7,497) + Elite Coach Plus ($3,200). NOT used. Seller override in Phase 1 Slack thread (2026-10-26, "ai only. 15 seats on ai workforce pro plus level 1 fcto") locked the package; proposal_review.json status = locked. Prospect also said "we don't need coaching" (March 2026) and ranked AI above marketing.
+- package_decision.json selection_notes line 1 ("marketing included") and the AWP-Starter/1-seat note are superseded by the seller override line. marketing_tier/coaching_* are null in the decision file; confidence = medium; needs_seller_input = false.
+- Decision-file team_size_effective = 3 is wrong (transcript: ~15 employees). Irrelevant to the locked package; noted for accuracy.
+
+MANDATORY PRICE LOOKUP (copied from package_decision.json and confirmed against the LAW table in audit-write.md)
+- Marketing package selected: none
+- Non-marketing package selected: none (Elite Coach Plus removed per seller)
+- Legal AI Workforce (LAW) package selected: Fractional CTO Level 1 + AI Workforce Pro (15 seats)
+  - Fractional CTO Level 1: bundled $3,297/mo | stand-alone $3,797/mo | savings $500/mo | setup fee $0 | revenue floor $400K (met)
+  - AI Workforce Pro (15 seats): $1,597/mo (5 users) + 10 additional employees x $120/mo = $2,797/mo | NO stand-alone price (do not quote one) | savings $0 counted
+  - Combined LAW bundled total: $3,297 + $2,797 = $6,094/mo (matches law_price_bundled 6094 / total_bundled 6094)
+- AI Avatar / Video Growth add-on: none
+- Total monthly investment (sum of bundled): $6,094/mo
+- Total savings (stand-alone minus bundled): $500/mo (FCTO L1 only)
+- 35% cap check: monthly revenue ~ $2.0M / 12 = ~$167K; 35% = ~$58K. SMB spend $6,094 (~3.6%). Pass. Minimum MRR $2,497: pass.
+
+AD SPEND / ROI
+- Not applicable. No marketing/ads package in the recommendation. Block 4 deleted from section_11_next_steps.html. ad_spend_conservative/aggressive = null. No "why this range" sentence. AD_SPEND line omitted from the executive summary.
+
+AI WORKFORCE PRO TERMS (internal; confirm in agreement)
+- Yearly contract, 10M usage credits + 10M bonus credits (20M total), $120/mo per employee over 5, overages $150/mo. Includes access + weekly AI Implementation Session. Seat count 15 per seller; transcript shows only 5 Claude Team seats today and ~15 employees — confirm seat count.
+- Optional upsell NOT included (seller locked package): Law Firm AI Foundation Sprint, $8,403 one-time when packaged with Fractional CTO Level 1.
+
+DBM STATEMENT (Block 1)
+Inferred (not directly stated): a firm that no longer pulls her away from growth. Closest quotes: "my husband and I both don't take cases anymore. So we really handle the business."; "I want this to be my focus."; "just the running the business pulls me away from it." Category: (1) firm that runs itself + (3) scale (five additional states: Indiana, Ohio next).
+Block 1 formula: We help multi-state foreclosure defense and loan modification firm owners get a practical, secure AI roadmap that takes routine work off their team so they can stop running the business and focus on scaling into new states.
+
+QUICK WIN OPPORTUNITIES (6)
+1. Team | Quick Win | Automate email triage and calendaring | Why: one person hired to review three people's emails; "Emails is a huge one for me" | Competitor: none | Opportunity: AI skill/automation for sorting email and placing hearings on the right attorney's calendar.
+2. Intake | Quick Win | Remove double entry between onboarding and case management | Why: "it requires too much double work because then we still have to put it in our case management system before the case can be opened." | Competitor: none | Opportunity: enter once. Note: MyCase integration with Claude is view-only today — scope accordingly.
+3. Team | Quick Win | Write the AI policy and set data-access rules | Why: "I need to have an AI policy that all my employees sign"; bar-rule concern; loan-mod client banking data | Competitor: none | Opportunity: fCTO sessions to define what AI can access.
+4. Profit | Quick Win | Track fee-recovery revenue | Why: "we don't actually track the amount of revenue we've gotten from them"; fees written off; she already has consult-to-client dashboards by attorney | Competitor: none | Opportunity: extend dashboards to fee data.
+5. Lead Gen | Long-Term Play | Fix website speed/clarity before adding digital marketing | Why: local Lighthouse run mobile 41 / desktop 75, LCP 25.7 s mobile; H1 "Everyone Deserves To Smile" does not name the practice | Competitor: none | Opportunity: faster, clearer site ahead of Indiana/Ohio mail.
+6. Intake | Long-Term Play | Loan Mod Analyzer | Why: wish-list item — identify missing documents/bank statements, auto-summary to clients | Competitor: none | Opportunity: faster loan-mod file review.
+"Who Is Doing It Better" rows omitted on all six: no named competitor was verified doing anything better.
+
+WHAT YOU TOLD US (Block 5) — 3 items, verbatim source, Block 2 support
+1. "what should my roadmap be?… Where do you see the most time being saved?" (00:35:36) -> Fractional CTO Level 1 (monthly 1:1 session, automation report).
+2. "Emails is a huge one for me… we have one person hired to review three people's emails" (00:26:25) -> Fractional CTO Level 1 (up to 2 skills + up to 1 custom automation per month).
+3. "how many subscriptions am I going to have? And is it going to end up being cost effective in the end?" (call, per research notes "Budget constraints stated") -> AI Workforce Pro (15 seats, one place for the team, weekly implementation session).
+Not used in Block 5 (never-include / sensitivity): the ~$60k email-hack figure; husband's decision role; daughter/family context.
+Next-step line: kickoff call with your Fractional CTO team (Eli, SMB Team CTO, is on the Oct 29 call).
+
+ROADMAP (Block 6)
+Phase 1 = FCTO L1 + AI Workforce Pro (15 seats). Phase 2 = FCOO Advisor $3,297/mo bundled (not in Phase 1). Phase 3 = FCFO Advisor $3,297/mo bundled (AI Workforce Pro already in Phase 1; Bookkeeping skipped — firm already has a billing/books person). Marketing intentionally NOT named in the roadmap (seller locked AI-only). Note: prospect said "we don't need coaching" in March 2026; FCOO/FCFO include group coaching deliverables — be ready to explain.
+
+ESCALATION FLAGS (internal — never in client report)
+- Legal AI Workforce (LAW) package: confirm with sales rep that LAW delivery has launched and capacity is available before including in proposal.
+- Review counts unconfirmed — verify live before the call. Firm 4.8 / "150+" and Rai Law 5.0 / 83 are UNCONFIRMED; none printed in the client report (qualitative framing only).
+- PageSpeed figures are from a local Lighthouse run (not pagespeed.web.dev); report describes them as a Lighthouse performance test.
+- GBP, 3-pack, Google Ads, LSA, Meta Ad Library were NOT OBSERVED (tool access). Report states "not observed", never "not running". Urgency score 3 is provisional/low-confidence; a human should re-score after a live check.
+- Directory listing for "Kyle & Kyle Law" under Athens, Georgia — unverified whether this firm; mentioned hedged in Local SEO blind spot.
+- Revenue 2024/2023 figures unclear in transcript; not printed. Only ~$1.9M (2025) and "over $2M" (2026 YTD) used.
+- Placeholder-style filler text found in homepage markup — may be hidden tab content; worded as "worth confirming".
+- Decision-maker: Katherine leads, husband gives final yes/no — he may join the Oct 29 call.
+- No AI Avatar / OmniSocial / Attorney Assistant / AR-AP-Payroll items in this proposal.

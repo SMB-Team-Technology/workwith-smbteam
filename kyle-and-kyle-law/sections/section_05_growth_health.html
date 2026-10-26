@@ -1,0 +1,140 @@
+<!-- ⚠️ NO CSS IN THIS FILE. No <style> blocks. No inline styles. No style="" attributes.
+     All styling comes from audit_styles.css only. Use only existing class names.
+     If you find yourself writing CSS — stop and delete it. -->
+<!-- ============================================================
+     SECTION 05 — YOUR GROWTH HEALTH ASSESSMENT
+     
+     INSTRUCTIONS FOR COWORK:
+     - For each traffic circle: use class "red", "amber", or "green" based on your rating
+     - For each sc-findings list: write 2-3 specific bullet points for this firm only
+     - For sc-dbm: one italic sentence connecting this pillar to income, freedom, or DBM
+     - For urgency score: replace the number, set left% = (score/10)*100 on the marker
+     - For urgency sentence: use the correct dynamic sentence based on score range
+     - For competitor cards: write 2-3 named competitors with specific threat reasons
+     - Do not add inline styles. Do not change class names.
+     ============================================================ -->
+
+<div class="section-header" id="growth-health">
+  <div class="section-header-inner">
+    <h2>Your Growth Health Assessment</h2>
+    <div class="subtext">Kyle and Kyle Law</div>
+  </div>
+</div>
+
+<div class="content-wrap">
+
+  <div class="legend">
+    <div class="legend-item">
+      <div class="legend-dot red"></div>
+      <div class="legend-label">Red <span>— Critical Priority</span></div>
+    </div>
+    <div class="legend-item">
+      <div class="legend-dot amber"></div>
+      <div class="legend-label">Amber <span>— In Progress</span></div>
+    </div>
+    <div class="legend-item">
+      <div class="legend-dot green"></div>
+      <div class="legend-label">Green <span>— On Track</span></div>
+    </div>
+  </div>
+
+  <div class="scorecard-label">Pillar Health Scorecard</div>
+
+  <div class="scorecard-grid">
+
+    <!-- LEAD GENERATION CARD -->
+    <div class="sc-card">
+      <div class="sc-card-header"><h3>Lead Generation</h3></div>
+      <div class="sc-card-body">
+        <div class="traffic-circle amber"></div>
+        <ul class="sc-findings">
+          <li>Direct mail is the only lead source, and it is working well enough that Katherine says the firm is getting clients</li>
+          <li>The firm has never done digital marketing, so there is no search, paid, or social channel behind the mail</li>
+          <li>A Lighthouse performance test of the website scored 41 on mobile and 75 on desktop, which would matter once digital marketing is added</li>
+        </ul>
+        <div class="sc-dbm">Katherine has said AI is the priority over marketing right now — lead generation is a strength to protect, not the urgent gap.</div>
+      </div>
+    </div>
+
+    <!-- INTAKE CARD -->
+    <div class="sc-card">
+      <div class="sc-card-header"><h3>Intake</h3></div>
+      <div class="sc-card-body">
+        <div class="traffic-circle amber"></div>
+        <ul class="sc-findings">
+          <li>An outsourced receptionist company answers every incoming call and sets consultations, with a same-day follow-up process for people who do not schedule</li>
+          <li>Katherine says the process is good and the firm is not losing people — a genuine strength</li>
+          <li>Onboarding still requires double entry, because information must be re-keyed into the case management system before a case can be opened</li>
+        </ul>
+        <div class="sc-dbm">Removing the re-keying between intake and case opening gives your team hours back without adding a single new lead.</div>
+      </div>
+    </div>
+
+    <!-- SELF-MANAGING TEAM CARD -->
+    <div class="sc-card">
+      <div class="sc-card-header"><h3>Self-Managing Team</h3></div>
+      <div class="sc-card-body">
+        <div class="traffic-circle amber"></div>
+        <ul class="sc-findings">
+          <li>About 15 people, but both owners handle the business side themselves — "the running the business pulls me away from it"</li>
+          <li>Email handling is manual: one person is hired to review three people's emails and move hearings onto the right attorney's calendar</li>
+          <li>Only 5 of the firm's 15 people have Claude seats, and there is no firm AI policy yet for staff to sign</li>
+        </ul>
+        <div class="sc-dbm">Until routine work runs without your oversight, the time you want for scaling into new states keeps going to running the business.</div>
+      </div>
+    </div>
+
+    <!-- PROFIT CARD -->
+    <div class="sc-card">
+      <div class="sc-card-header"><h3>Profit</h3></div>
+      <div class="sc-card-body">
+        <div class="traffic-circle amber"></div>
+        <ul class="sc-findings">
+          <li>Revenue was about $1.9 million in 2025 and is over $2 million so far in 2026, on flat monthly fees from more than 500 active clients</li>
+          <li>Katherine says the books are strong, but the firm does not track how much revenue comes from fee recovery, and some fees are written off</li>
+          <li>No profit target or revenue goal has been reset since the firm hit its original case-count goal</li>
+        </ul>
+        <div class="sc-dbm">A clear goal and visible numbers turn the five-state expansion from an ambition into a plan.</div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- COMPETITIVE URGENCY SCORE -->
+  <div class="urgency-card" id="urgency-score">
+    <div class="urgency-label">Competitive Urgency Score</div>
+
+    <div class="urgency-score">3</div>
+    <div class="urgency-outof">out of 10</div>
+
+    <div class="urgency-sentence">A score of 3 means no single competitor is dominating your market yet — but that will not last forever. The firms that win markets do so by moving first. Getting your systems in place now means you set the standard before someone else does.</div>
+
+    <div style="margin-bottom:10px;">
+      <div class="urgency-bar"><div class="urgency-marker" style="left:30%;"></div></div>
+      <div class="urgency-scale">
+        <span>1–3 = Low Urgency</span>
+        <span>4–6 = Moderate</span>
+        <span>7–10 = High Urgency</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="competitors-label">Your Top Competitive Threats</div>
+
+  <div class="competitor-card">
+    <div class="competitor-name">Belmont Law Group</div>
+    <div class="competitor-threat">A Fort Myers foreclosure defense firm that appeared in Lee County search results where Kyle and Kyle Law did not appear in the results we reviewed. Worth watching as digital marketing becomes part of your plan.</div>
+  </div>
+
+  <div class="competitor-card">
+    <div class="competitor-name">The Burton Firm</div>
+    <div class="competitor-threat">Another Fort Myers foreclosure defense firm surfacing in organic search for your home market. It competes for the same homeowners your direct mail reaches.</div>
+  </div>
+
+  <div class="competitor-card">
+    <div class="competitor-name">Rai Law LLC</div>
+    <div class="competitor-threat">A Chicago foreclosure defense firm that appeared in Illinois search results. Relevant as you grow your Illinois presence and plan the next states.</div>
+  </div>
+
+</div>
+<div class="back-to-top"><a href="#toc">↑ Back to Top</a></div>
