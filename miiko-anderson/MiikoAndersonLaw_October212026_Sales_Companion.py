@@ -228,18 +228,20 @@ story.append(b("<b>A weak website role.</b> The site only verifies referrals, an
 story.append(thin_rule())
 
 # ── Why This Marketing Package ──
-story.append(Paragraph("Why This Marketing Package", S["section"]))
+story.append(Paragraph("Why This Package", S["section"]))
 
 story.append(Paragraph("<b>What it does for her:</b>", S["subsection"]))
 story.append(bd("Gives her a second source of clients so quiet months stop making her nervous."))
-story.append(bd("Turns her website from a referral check into a way new people find her."))
-story.append(bd("Builds the case volume that can pay for the associates she wants."))
+story.append(bd("Gives her a coach to work through her options and the order of her first hires."))
+story.append(bd("Keeps the start small and simple, which fits a solo attorney with no set budget."))
 
-story.append(Paragraph("<b>Full Service Marketing Essentials  |  $3,797/mo stand-alone</b>", S["subsection"]))
-story.append(b("<b>Locked by seller:</b> Randy set Essentials only, at stand-alone price. No coaching, ops, or AI."))
-story.append(b("<b>Fits on revenue:</b> About $300K is under the $750K Essentials ceiling, with 1 location."))
-story.append(b("<b>FLAG, scope:</b> Essentials is single-practice-area. She has several, so confirm scope. Report frames criminal defense as the launch focus."))
-story.append(b("<b>FLAG, video:</b> The animated series is not in Essentials. Brand Video is a separate add-on at $4,997. Address it on the call."))
+story.append(Paragraph("<b>Coach Essentials Plus  |  $2,497/mo stand-alone</b>", S["subsection"]))
+story.append(b("<b>Locked by seller:</b> Randy swapped to this on 10/26. Group coaching plus a monthly 1:1 call."))
+story.append(b("<b>Fits on revenue:</b> About $300K sits in the $250K-$400K band for the lower-cost coaching option."))
+story.append(b("<b>FLAG, not asked for:</b> She never discussed coaching or LSAs. Pitch it as our recommendation, not her request."))
+story.append(Paragraph("<b>LSA Management Add-On  |  Complimentary ($900/mo value)</b>", S["subsection"]))
+story.append(b("<b>FLAG, fee waiver:</b> The $0 fee is Randy's call, not a catalog price. Confirm sales-ops approval."))
+story.append(b("<b>FLAG, video:</b> The animated series is not in this package. Brand Video is a separate $4,997 add-on. Address it on the call."))
 
 
 # ══════════════════════════════════════════════════════════
@@ -255,21 +257,22 @@ story.append(Paragraph("Why This Ad Spend", S["section"]))
 
 story.append(Paragraph("<b>What it does for her:</b>", S["subsection"]))
 story.append(bd("Puts her in front of Fresno people searching for a criminal defense lawyer right now."))
-story.append(bd("Builds toward the roughly 10 more cases a month she said she has room for."))
+story.append(bd("Gives her a trackable lead source she pays for only when a prospect calls."))
 
 story.append(Paragraph("<b>Recommended Ad Spend Range:</b>", S["subsection"]))
-story.append(b("<b>Conservative:</b> $3,200/mo — minimum viable spend: LSA plus Meta retargeting."))
-story.append(b("<b>Aggressive:</b> $4,950/mo — the most the 35% cap allows after the $3,797 fee."))
+story.append(b("<b>Conservative:</b> $2,000/mo — Randy's minimum, equal to the criminal defense LSA channel minimum."))
+story.append(b("<b>Aggressive:</b> $2,500/mo — FLAG: derived ceiling. Randy gave none; the $5,000 total-spend limit minus the $2,497 fee leaves ~$2,500. Confirm it."))
 
 story.append(Paragraph("<b>Estimated Return on Investment:</b>", S["subsection"]))
-story.append(b("<b>Conservative:</b> 5.4 cases x $4K = ~$21.8K/mo vs. $3.2K spend = 6.8x return."))
-story.append(b("<b>Aggressive:</b> 9.1 cases x $4K = ~$36.5K/mo vs. $4.95K spend = 7.4x return."))
+story.append(b("<b>Conservative:</b> 2.6 cases x $4K = ~$10.4K/mo vs. $2K spend = 5.2x return."))
+story.append(b("<b>Aggressive:</b> 3.9 cases x $4K = ~$15.6K/mo vs. $2.5K spend = 6.2x return."))
 story.append(Paragraph("<i>All figures are estimates. Not guaranteed. Case value ($4K) is a criminal defense default and the 25% close rate is a planning figure; neither was confirmed on the call. Warm-referral conversion will not carry over to cold paid leads.</i>", S["disclaimer"]))
 
 story.append(Paragraph("<b>How the range was calculated:</b>", S["subsection"]))
-story.append(b("<b>Conservative:</b> Criminal defense minimums: LSA $2,000 + Meta retargeting $1,200 = $3,200. Google PPC ($5,500 minimum) does not fit under the cap."))
-story.append(b("<b>Aggressive:</b> $600K target (2x current, default) x 20% ÷ 12 = $10,000. Tier 4 (1.00x) = $10,000. Minus $3,797 fee = $6,203. Reverse math is ~$7,000. Both exceed the cap, so spend is capped at $4,950."))
-story.append(b("Total at aggressive: $8,747/mo = 35.0% of $25K revenue. At the 35% cap. Paid ads team review needed (below Google PPC minimum)."))
+story.append(b("<b>Conservative:</b> $2,000 ÷ $192 per lead (LSA midpoint $160 + 20% cushion) = 10.4 leads x 25% close rate = 2.6 cases."))
+story.append(b("<b>Aggressive:</b> $2,500 ÷ $160 per lead = 15.6 leads x 25% close rate = 3.9 cases."))
+story.append(b("Total at aggressive: $4,997/mo = 20.0% of $25K revenue. Under the 35% cap. FLAG: $2,000 is under the $3,000 paid-ads minimum, so paid ads team review is needed."))
+story.append(b("LSA alone will not reach her likely $600K goal (2x current, default). Phase 2 adds web and local search."))
 
 story.append(thin_rule())
 
@@ -277,13 +280,13 @@ story.append(thin_rule())
 story.append(Paragraph("If She Pushes Back", S["section"]))
 
 story.append(Paragraph('"Is a solo attorney too small a client for this?"', S["objection_q"]))
-story.append(Paragraph("She asked this at 00:07:51. Essentials is built for a single-location firm under $750K. Her credentials (Certified Criminal Law Specialist, 13,000+ courtroom appearances) are the asset we market.", S["objection_a"]))
+story.append(Paragraph("She asked this at 00:07:51. This plan is sized for a solo firm around $300K. Her credentials (Certified Criminal Law Specialist, 13,000+ courtroom appearances) are the asset we build on.", S["objection_a"]))
 
 story.append(Paragraph('"I don\'t have an actual budget, and I don\'t want to piece it together."', S["objection_q"]))
-story.append(Paragraph("One flat $3,797/mo covers website, local search, Google Business Profile, and ad management. Ad spend is separate and can start at $3,200. Total stays inside 35% of her revenue.", S["objection_a"]))
+story.append(Paragraph("One $2,497/mo coaching plan, with the LSA management fee waived. Ad spend is separate and starts at $2,000. Total stays well inside 35% of her revenue.", S["objection_a"]))
 
 story.append(Paragraph('"I want to see the animated work reflect me before I commit."', S["objection_q"]))
-story.append(Paragraph("Be upfront: the animated series is not part of Essentials. The website content builds her brand voice first, and video can be scoped separately. Do not promise it in this proposal.", S["objection_a"]))
+story.append(Paragraph("Be upfront: the animated series is not part of this package, and coaching does not build her brand voice. Video can be scoped separately. Do not promise it in this proposal.", S["objection_a"]))
 
 story.append(thin_rule())
 
@@ -291,13 +294,17 @@ story.append(thin_rule())
 story.append(Paragraph("Investment At A Glance", S["section"]))
 
 price_data = [
-    [Paragraph("<b>Full Service Marketing Essentials</b>", S["price_main"]),
-     Paragraph("$3,797/mo", S["price_main"])],
-    [Paragraph("Website, local search, Google Business Profile, and managed ads.", S["price_detail"]),
+    [Paragraph("<b>Coach Essentials Plus</b>", S["price_main"]),
+     Paragraph("$2,497/mo", S["price_main"])],
+    [Paragraph("Group coaching plus a monthly 1:1 coaching call.", S["price_detail"]),
      Paragraph("stand-alone, no bundle discount", S["price_detail"])],
+    [Paragraph("<b>LSA Management Add-On</b>", S["price_main"]),
+     Paragraph("Complimentary", S["price_main"])],
+    [Paragraph("Seller-waived fee. Catalog price is $900/mo.", S["price_detail"]),
+     Paragraph("$900/mo value", S["price_detail"])],
     [Paragraph("<b>Recommended Ad Spend</b>", S["price_main"]),
-     Paragraph("$3,200–$4,950/mo", S["price_main"])],
-    [Paragraph("Goes to Google, LSA, and Meta — not to SMB Team.", S["price_detail"]),
+     Paragraph("$2,000–$2,500/mo", S["price_main"])],
+    [Paragraph("Goes to Google Local Services Ads — not to SMB Team.", S["price_detail"]),
      Paragraph("", S["price_detail"])],
 ]
 pt = Table(price_data, colWidths=[4.5 * inch, 1.7 * inch])
@@ -309,10 +316,11 @@ pt.setStyle(TableStyle([
     ("BOTTOMPADDING", (0,0), (-1,-1), 1),
     ("LINEBELOW", (0,1), (-1,1), 0.5, RULE_GRAY),
     ("LINEBELOW", (0,3), (-1,3), 0.5, RULE_GRAY),
+    ("LINEBELOW", (0,5), (-1,5), 0.5, RULE_GRAY),
 ]))
 story.append(pt)
 story.append(Paragraph(
-    "Total: $3,797/mo + $3,200–$4,950 ad spend  |  No bundle savings (stand-alone)  |  28.0%–35.0% of revenue (at or under 35% cap)",
+    "Total: $2,497/mo + $2,000–$2,500 ad spend  |  Savings: $900/mo (waived LSA fee)  |  18.0%–20.0% of revenue (under 35% cap)",
     S["savings"]))
 
 # ── Build ──
