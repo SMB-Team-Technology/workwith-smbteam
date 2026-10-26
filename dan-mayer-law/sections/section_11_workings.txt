@@ -1,0 +1,96 @@
+SECTION 11 WORKINGS — Dan Mayer Law (INTERNAL — never client-facing)
+Prepared for: Michael Kopp | Proposal call: October 29, 2026
+
+======================================================================
+PACKAGE DECISION SOURCE
+======================================================================
+Source: dan-mayer-law/package_decision.json (confidence: medium; call_focus.primary_engagement = AI; lead_gen_gap = false).
+Seller override recorded in the decision file (Slack, 2026-10-22): "make this fcto level 1 + 10 seats of ai workforce pro". Applied as written. Elite Coach removed by that override.
+
+TRANSCRIPT-STATED NEED OVERRIDE CHECK
+1. Call-purpose override: APPLIES. Call was AI-led (AI Workforce Pro + Fractional CTO-style automation build). Dan did not ask about marketing, ads, SEO or website. Marketing package excluded; recommendation led with LAW (Fractional CTO + AI Workforce Pro).
+2. Existing-vendor override: does not apply (no existing marketing/SEO/ad vendor stated). Marketing is excluded anyway under #1.
+3. Budget-reality override: not triggered by anything Dan said (no budget concern stated; he asked for pricing in writing). BUT see REVENUE DISCREPANCY below — the seller deliberately chose the package despite the revenue floor.
+4. Effective-revenue override: does not apply (no net vs gross figure; not a contingency practice).
+
+Marketing package: NONE. Ad spend: NONE. Block 4 (ad spend / ROI) omitted from the client report. No ROI projection computed.
+
+======================================================================
+MANDATORY PRICE LOOKUP (copied from package_decision.json, checked against LAW table in audit-write.md)
+======================================================================
+- Marketing package selected: none
+  - Bundled price: n/a | Stand-alone: n/a | Savings: n/a
+- Non-marketing package selected: none (Elite Coach removed by seller override)
+  - Bundled price: n/a | Stand-alone: n/a | Savings: n/a
+- Legal AI Workforce (LAW) packages selected:
+  - Fractional CTO Level 1
+    - Bundled price (from table): $3,297/mo
+    - Stand-alone price (from table): $3,797/mo
+    - Savings (stand-alone minus bundled): $500/mo
+    - Setup fee: $0
+  - AI Workforce Pro — 10 users
+    - Bundled price: $1,597/mo (5 users) + 5 additional users x $120/mo ($600) = $2,197/mo
+    - Stand-alone price: none exists (not quoted in client report)
+    - Savings: $0 (no stand-alone price)
+- AI Avatar / Video Growth add-on: none
+- Total monthly investment (sum of bundled/recurring prices): $3,297 + $2,197 = $5,494/mo   (matches total_bundled in decision file)
+- Total savings: $500/mo   (matches total_savings in decision file)
+
+======================================================================
+REVENUE DISCREPANCY / CAP CHECK / ESCALATIONS (flag to Michael before the call)
+======================================================================
+- Revenue sources conflict: HubSpot annual law-firm revenue = "$0 - $180K" (used by select-package.mjs as $180,000). Transcript (00:12:02): "we're not at the million-dollar mark or, you know, the $700,000 mark, but we're up there" — read as below ~$700K, approaching it. No firm figure was stated. CONFIRM REVENUE ON THE CALL.
+- Fractional CTO Level 1 requires $400K+ annual revenue. At HubSpot's $180K the firm does NOT meet the floor; at the transcript's ~$700K reading it does. Package applied per seller request.
+- Revenue under $300K (if HubSpot figure is right) -> scoping approval required. Revenue under $250K -> confirm the client can fund 4 months of services before proceeding.
+- 35% cap (management fees + LAW recurring): at $180K revenue the cap is $5,250/mo, and $5,494/mo EXCEEDS it by $244. At ~$700K revenue the cap is ~$20,417/mo and $5,494/mo is well within it. Resolved only by confirming revenue.
+- Any LAW package -> confirm with sales rep that LAW delivery has launched and capacity is available before sending the proposal.
+- AI Workforce Pro is a yearly (12-month) contract; 10 seats assumed per seller override. On the call Dan wanted one license for himself; Shane's access was undecided. CONFIRM SEAT COUNT (decision file notes 1-seat Starter pricing at $350/user/mo would be $350/mo for 1 seat, $1,400 for 4).
+- Rep quoted on the call (transcript unclear): "$37.97" read as $3,797/mo (FCTO L1 retail) and "$3.50" read as $350/mo (AI Workforce Pro Starter per user). The client report shows FCTO L1 bundled $3,297/mo (retail $3,797) and AI Workforce Pro 10 users $2,197/mo, per the seller override — Dan may notice the AI Workforce Pro figure differs from the $350 he heard.
+- Review counts unconfirmed — verify live before the call. All firm review data is Birdeye/Avvo only (UNCONFIRMED). No Google review count, rating, local-pack result, Google Ads, LSA or Meta Ad Library data could be observed. Client report uses qualitative framing only; no competitor review comparison made.
+- NAP: phone on website/directories (443) 595-6529 vs CRM/trigger (443) 955-4320 — digits transposed, one is wrong. Not printed in the client report; verify with Dan.
+- Name-collision risk: "Mayer Law Firm, LLC" (mayercontractlaw.com) appears for the same name (included in client report as a Local SEO blind spot).
+- PageSpeed scores (31 mobile / 85 desktop) are from a local Lighthouse run on 2026-10-22, not pagespeed.web.dev; client report discloses this.
+
+======================================================================
+DBM (Block 1)
+======================================================================
+Time freedom — a firm that runs more of itself (AI doing repeatable work) so Dan can focus on the legal work and get time back, without paying salaries for idle capacity.
+Source lines: 00:10:50 "my life is chaos, and there's a lot of things pulling on me in different directions." / 00:17:06-00:17:14 "the more I can push off the AI to do some of that work, then I can also then focus on the actual legal workup stuff." / 00:20:25 "It'd be that I have someone just come in and be like, bam, okay, this is working for you, let's go, right?"
+Closing statement: We help small healthcare-law firms serving mental health practices get AI staff and automations that handle follow-up, client updates, and content so they can get their time back for legal work and life without adding payroll.
+(Family detail from 00:10:50 intentionally kept out of the client report — report may be forwarded.)
+
+======================================================================
+QUICK WIN OPPORTUNITIES (7)
+======================================================================
+1. Lead Gen / Quick Win — Make listings consistent (address, entity name) and claim directory presence. Why: website shows Brooklandville address; directories show Baltimore York Rd with differing suites; 4 name variants; name collision with Mayer Law Firm, LLC. Competitor: Neil Bloom (Towson) — directory visibility only (Justia / Super Lawyers). Opportunity: one consistent firm identity.
+2. Intake / Quick Win — Automate reminders and proactive client status updates. Why: "When aggregate, that's a lot of time." (00:09:09). No competitor.
+3. Team / Long-Term — Add AI staff instead of payroll. Why: "eat what you kill" hiring stance (00:17:00); 00:17:14. No competitor.
+4. Profit / Quick Win — Put tools already paid for to work (Monday.com AI credits under-used; Claude Max, Copilot, Spellbook). No competitor. Source: Step 9 "Other facts from the call."
+5. Lead Gen / Long-Term — Turn existing blog topics into a steady content engine. Why: last blog post July 10, 2026; content paused since summer helper left (00:14:08); 00:14:04. No competitor.
+6. Intake / Long-Term — Give website visitors a clear next step. Why: only "Learn More" above fold, form on separate page, mobile PageSpeed 31/100. No competitor.
+7. Team / Quick Win — Move AI work into a secure, managed workspace. Why: 00:24:26 "a platform where I can... have stuff be worked on that, you know, I can't just put into a regular chat... for us, that's a big deal." No competitor. (No compliance guarantee made in the report.)
+
+======================================================================
+WHAT YOU TOLD US (Block 5) — sources and Block 2 support
+======================================================================
+Row 1 (supports Fractional CTO Level 1 — most central package, largest bundled price):
+  Told us: they don't have the time to figure out and set up AI themselves.
+  Verbatim: (00:11:01) "having the time to sit down and figure out AI to really delve into it, I don't have a lot of time to do that right now."
+  Block 2 support: Fractional CTO leads the rollout, monthly 1:1 session, skills deployed, custom automation, training videos.
+Row 2 (supports AI Workforce Pro — 10 users + custom automation):
+  Told us: manual reminders and follow-up add up to a lot of time.
+  Verbatim: (00:09:09) "When aggregate, that's a lot of time."
+  Block 2 support: AI Workforce Pro gives the team AI staff for repeatable tasks; fCTO builds a custom automation each month.
+Row 3 (supports AI Workforce Pro):
+  Told us: would rather push repeatable work to AI than pay salary for capacity that sits idle, so time can go to the legal work.
+  Verbatim: (00:17:14) "I really don't want to have to pay them a salary for them staying around and doing nothing" and (00:17:06) "the more I can push off the AI to do some of that work, then I can also then focus on the actual legal workup stuff."
+  Block 2 support: AI Workforce Pro seats add capacity without adding payroll.
+Next-step line: kickoff call with your Fractional CTO.
+Excluded on purpose: intake-coordinator elimination quote (00:07:23) — could read as criticism of an identifiable staff member and the report may be forwarded; family/child detail (00:10:50) — personal/family matter.
+
+======================================================================
+ROADMAP PHASES
+======================================================================
+Phase 1 Foundation: what is being bought now (Fractional CTO L1 + AI Workforce Pro, 10 users).
+Phase 2 Operational Scale: FCOO Advisor $3,297/mo (not in Phase 1). Trigger gated at $500K+ revenue and team beyond three so eligibility filter (Fractional products hidden under $500K) is respected.
+Phase 3 Optimize: FCFO Advisor $3,297/mo + Bookkeeping + AI Workforce Pro seat expansion ($120/mo per user over 5). LAW already in Phase 1. Trigger gated at $1M revenue.
