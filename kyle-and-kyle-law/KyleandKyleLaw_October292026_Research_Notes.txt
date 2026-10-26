@@ -1,0 +1,222 @@
+================================================================================
+KYLE AND KYLE LAW — GROWTH AUDIT RESEARCH NOTES
+================================================================================
+Firm: Kyle and Kyle Law (site/brand: "Kyle & Kyle Law")
+Friendly name: kyle-and-kyle-law
+URL: https://www.kyleandkylelaw.com (live; HTTP 200 to headless Chromium/Lighthouse; HTTP 403 Cloudflare challenge to plain curl/WebFetch)
+Sales Rep: Jonathan Farace (call opened by Hannah Petre, SMB Team)
+Date: October 29, 2026 (proposal call date; discovery call held October 26, 2026)
+Contact: Katherine Kyle (attorney / co-owner) — katherine@kyleandkylelaw.com — +18777466310
+Co-owner: her husband (named on website as Kevin J. Kyle) — does not attend these calls
+Home base per transcript: Fort Myers / Babcock Ranch, FL. Website lists HQ at 3592 Broadway, Ste 130 #6-103, Fort Myers, FL (via search result; not seen on page render).
+
+RESEARCH-TOOLING DISCLOSURE (read first — applies to Pass 2):
+This session had page-fetch, web-search, curl, and a local headless Chromium +
+Lighthouse run. It did NOT have a live logged-in browser, so it could NOT open
+Google Maps / Google Business Profile, Google SERPs (3-pack, Ads, LSA), or the
+Meta Ad Library (HTTP 403). pagespeed.web.dev could not be run (the web page
+needs JS; the PageSpeed API returned 429 quota exceeded). Every item below that
+depends on those surfaces is marked "NOT OBSERVED — tool access" rather than
+guessed. Nothing in this file is fabricated. Pass 2 must not turn any "NOT
+OBSERVED" line into a claim about the firm or a competitor. Numbers that came
+from search-result summaries or directories are tagged UNCONFIRMED.
+
+================================================================================
+STEP 1 — WEBSITE RESEARCH
+================================================================================
+- Website URL confirmed live: yes (rendered title: "Foreclosure Defense & Probate Attorneys Florida & Illinois | Kyle & Kyle Law")
+- Last redesign date or estimated age: not determinable. Footer shows "© 2026 Kyle & Kyle Law". Page ships legacy CSS (Font Awesome 4/5 shims, Twitter/LinkedIn share-widget styles) and unreplaced template filler text ("Nullam quis risus eget urna mollis ornare…", Lorem-ipsum-style placeholder) under the Business Litigation / Bankruptcy / Loan Modification blocks of the rendered homepage DOM. [observed in rendered DOM; may be hidden tab/accordion content — position on screen not verified]
+- Mobile responsive: viewport meta tag present (1). Not visually verified on a device.
+- Homepage headline (first H1, exact): "Everyone Deserves To Smile"
+  Supporting H2s: "You Deserve To Smile", "An Experienced Advocate On Your Side", "Helping You Find A Solution"
+  Intro copy: "Are you worried about the cost of hiring an attorney? Are you dealing with stress and anxiety over how to handle your legal issue? Are you unsure what to do next?"
+  Practice areas listed: Foreclosure Defense, Loan Modification, Probate, Foreclosure Surplus Funds (+ Business Litigation, Bankruptcy in the menu/filler blocks). "We proudly serve homeowners statewide in Florida and Illinois." "over 38 years of combined legal experience".
+- CTA above fold: phone-first. Click-to-call links found 24 times, all to 877-595-3529 (+18775953529); plus "Contact Us" (/contact-us) and "/locations". Exact button wording not verified visually.
+- Contact form location: no <form> element in rendered homepage DOM (0) — form is likely on /contact-us or loaded in a way not captured. Not verified.
+- Live chat present: not observed (no chat-widget vendor strings found in rendered DOM)
+- Attorney bio present: yes — site has individual attorney pages (e.g. /kevin-j-kyle, /about/attorneys per search results). Not opened.
+- Video present: no <video> element found on homepage; YouTube/Vimeo hits were icon CSS only. Not observed.
+- Blog present: yes — /blog linked from homepage (3 links). Last post date NOT OBSERVED (/blog returned 403 to curl).
+- Other observed: footer/phone numbers for FL regional lines — (239) 266-9946, (850) 270-7604, (813) 344-3538, (954) 228-7558, (904) 414-2236, (407) 487-8820 — shows multiple Florida city numbers; separate landing page at go.kyleandkylelaw.com ("Facing a Foreclosure Lawsuit in Florida?"). Existence of that landing subdomain does NOT establish that the firm runs ads; the prospect said she has never done digital marketing (see STEP 9).
+- Page markup includes Google Tag Manager and gtag (8 refs); no Meta pixel (fbq) found in rendered DOM.
+
+PageSpeed (LOCAL Lighthouse lab run — NOT pagespeed.web.dev; run 2026-10-26 from a GitHub Actions runner, Lighthouse via npx, performance category only, single run each):
+- PageSpeed mobile score: 41 (LCP 25.7 s, TBT 320 ms) — local Lighthouse, not pagespeed.web.dev
+- PageSpeed desktop score: 75 (LCP 9.8 s, TBT 0 ms) — local Lighthouse, not pagespeed.web.dev
+- Caveat for Pass 2: runner network/CPU differs from Google's PSI infrastructure and these are single runs. If cited in the report, describe as "a Lighthouse performance test" and do not present as the official PageSpeed Insights score. pagespeed.web.dev should be re-run by a human if the exact PSI figure is wanted.
+
+[SAVED — website section complete]
+
+================================================================================
+STEP 2 — GOOGLE BUSINESS PROFILE
+================================================================================
+- GBP found: NOT OBSERVED — tool access (Google Maps not reachable). A third-party search summary references a Google rating.
+- Star rating: 4.8 [UNCONFIRMED — sourced from a web-search result summary of the firm's own/third-party pages, not independently confirmed via Google]
+- Total review count: "150+" [UNCONFIRMED — sourced from a web-search result summary, not independently confirmed via Google]; exact count not known
+- Most recent review date: NOT OBSERVED — tool access
+- Primary category: NOT OBSERVED — tool access
+- Photos active: NOT OBSERVED — tool access
+- Posts active: NOT OBSERVED — tool access
+- Note: website also hosts a "Client Reviews" page (/recommendations) with attorney recommendations (Avvo-style); contents not read (403).
+- Pass 2: do NOT print 4.8 / 150+ as a verified Google figure.
+
+================================================================================
+STEP 3 — LOCAL 3-PACK SEARCHES
+================================================================================
+Practice Area 1: Foreclosure defense (Florida — Fort Myers / Lee County)
+- Searches 1–3 ("foreclosure defense attorney Fort Myers", "foreclosure lawyer Fort Myers FL", "Lee County foreclosure defense"): NOT OBSERVED — tool access (Google local pack not reachable). Organic web-search results only (not a 3-pack):
+  Firms surfaced for "Florida foreclosure defense attorney Fort Myers Lee County": Belmont Law Group, The Burton Firm, Your Advocates, SunCoast Law, Law Offices of Thomas M. Dryden, Morris Law Firm P.A., Richard Johnston Law. Kyle & Kyle Law did not appear in that organic result set (one search; not a ranking study).
+  Competitors in pack: NOT OBSERVED. Review counts: NOT OBSERVED.
+
+Practice Area 2: Foreclosure defense (Illinois — Chicago / Cook County)
+- Searches 1–3: NOT OBSERVED — tool access. Organic results for "Illinois foreclosure defense attorney Chicago law firm Google reviews": Rai Law LLC, Citizens Law Group, Foreclosure Defense Law Office, IL Foreclosure Lawyer (ilforeclosurelawyer.com). Kyle & Kyle Law did not appear in that result set.
+  Competitors in pack: NOT OBSERVED.
+
+Practice Area 3: Loan modification — transcript confirms loan-mod work (Loan Mod Analyzer wish-list item). Searches NOT OBSERVED — tool access.
+
+================================================================================
+STEP 4 — COMPETITOR REVIEW COUNTS
+================================================================================
+No competitor review count was verified via Google. Do NOT cite any competitor review count in the report as fact.
+- Competitor 1 (IL): Rai Law LLC (20 N Clark St, Chicago) — reviews: 83 [UNCONFIRMED — sourced from a web-search result summary, not independently confirmed via Google] — rating: 5.0 [UNCONFIRMED — same source]
+- Competitor 2 (FL / Fort Myers): Belmont Law Group (8270 College Pkwy #201, Fort Myers) — reviews: NOT OBSERVED — tool access — rating: NOT OBSERVED
+- Competitor 3 (FL / Fort Myers): The Burton Firm — reviews: NOT OBSERVED — rating: NOT OBSERVED
+- Also named in local results: Your Advocates (Fort Myers, 239-423-5979), Citizens Law Group (Chicago) — counts NOT OBSERVED.
+- Prospect-vs-competitor check: the prospect's own count is UNCONFIRMED "150+" — so it cannot be said any competitor has more reviews than the prospect. Do not claim any competitor out-reviews Kyle & Kyle.
+
+================================================================================
+STEP 5 — DIRECTORY LISTINGS
+================================================================================
+- Avvo / Justia / FindLaw / Yelp / others: not checked directly — NOT OBSERVED — tool access.
+- Observed via search: LinkedIn company page (kyleandkylelaw), Facebook page (facebook.com/kyleandkylelaw), ZoomInfo, RocketReach profiles exist. A bippermedia.com directory page lists "Kyle & Kyle Law" under Athens, Georgia (bankruptcy attorney) — possible NAP/listing inconsistency (firm is FL/IL); not verified whether it is this firm.
+- Firm age inconsistency: search summaries say "founded 2018"; Katherine said on the call "we opened in 2021". Use the transcript (2021).
+- Geo-targeting landing pages: site has /locations, /illinois, and six Florida regional phone numbers in the footer — suggests regional pages exist; not opened/verified.
+- NAP: HQ address in search summary "3592 Broadway, Ste 130 #6 - 103, Fort Myers" (suite-style address, likely a mailbox/virtual office); phone 877-595-3529. Consistency across directories NOT checked.
+
+[SAVED — GBP, local SEO, directory sections complete (with NOT OBSERVED items)]
+
+================================================================================
+STEP 6 — GOOGLE ADS
+================================================================================
+Practice Area 1: Foreclosure defense (FL, IL)
+- Firm ads observed: not observed — tool access (Google SERP not reachable). Does NOT establish the firm is not advertising. (Prospect confirmed on the call she has never done digital marketing — see STEP 9.)
+- Named local competitors running ads: NOT OBSERVED
+Practice Area 2: Loan modification
+- Firm ads observed: not observed — tool access
+- Named local competitors running ads: NOT OBSERVED
+
+================================================================================
+STEP 7 — LOCAL SERVICE ADS
+================================================================================
+- Firm appears in LSA: not observed — tool access
+- Google Screened: not observed
+- LSA review count: not observed
+- Named local competitors in LSA: not observed
+
+================================================================================
+STEP 8 — META ADS
+================================================================================
+- Firm has active ads: not observed — Meta Ad Library returned HTTP 403 to the fetch tool. (Prospect said on the call: "we don't have any of that" re social; no Meta pixel found on homepage.)
+- Named local competitor 1: not observed
+- Named local competitor 2: not observed
+
+[SAVED — all ads sections complete (not observed — tool access)]
+
+================================================================================
+STEP 9 — TRANSCRIPT EXTRACTION
+================================================================================
+Transcript source: full verbatim Fathom transcript (summary used only as overview)
+Call: Fathom recording 196478114, 2026-10-26, ~44 minutes. Prospect: Katherine Kyle. SMB Team: Jonathan Farace (rep), Hannah Petre (intro).
+
+Discrepancies between AI summary and full transcript (full transcript wins):
+- Summary: "2026 YTD $2.05M". Transcript: "this year we're at 2,005,000" [transcript unclear — read as $2,005,000; summary's $2.05M may be a rounding error. Use "just over $2 million YTD"].
+- Summary: "2024: $940k". Transcript: "0.94", then "it looks like 2023 or 1.9 as well", and rep's follow-up "pretty flat between 2024 and 25" [transcript unclear — 2024 likely ≈ $1.94M ("1.94" heard as "0.94"); do NOT print $940k or any 2024 figure; if a trend is shown, say revenue is "roughly $1.9M in 2025" and "over $2M so far in 2026"].
+- Summary: "Katherine lacks time and expertise" — transcript supports: "the running the business pulls me away from it" and "I'm not the expert".
+- Summary: "two email hacks cost the firm ~$60k" — transcript: "we were hacked twice in our emails. It almost cost us about 60 grand" (almost cost — not actual loss).
+- Summary: "expand 2 to 7 states" — transcript: "we want to go to five additional states" (Indiana and Ohio next; fifth "somewhere in the Midwest… depends on foreclosures"). Summary's "+3 Midwest" is not stated by her.
+- Summary: "Business Model: ~$6k/client lifetime value" — transcript: "I told them in the past, like maybe six grand." (hedged), with flat-rate monthly billing.
+- Summary: "Only 5 of 15 staff use Claude Team for one-off tasks" — supported. Users: Katherine, her husband, her billing/books person, and the two other attorneys.
+
+- Practice areas confirmed: foreclosure defense (confirmed: "if the fifth state… depends on foreclosures"; summary). Loan modification work referenced (Loan Mod Analyzer for client loan-mod applications). Website additionally lists probate foreclosure surplus funds, bankruptcy, business litigation — not discussed on call.
+- Current lead sources: "Mail marketing." / "Direct mail marketing" — exclusively. "everyone's coming through a phone call to our office." Intake via outsourced receptionist company: "we have a receptionist company that handles all of our incoming calls… we set consults." Same-day follow-up process for people who don't schedule.
+- Ads ever run: no digital ads. Quote: "Because I've never done digital marketing." Prospect confirmed (OK to state she has not done digital marketing). Re social: "we don't have any of that." No platform/budget/result. Prior SMB contact: she attended an SMB Team marketing webinar (video creation) and had a follow-up call about paid ads around March 2026; ads were bundled with coaching, which she declined: "we don't need coaching." Rep said ads are now offered as a standalone.
+- Team size: ~15 employees ("We have about 15"). Roles mentioned: Katherine and husband (owners; "my husband and I both don't take cases anymore. So we really handle the business"), two other attorneys, a billing/books person, one person hired to review three people's emails, a follow-up person for leads, plus outsourced receptionist company and outsourced IT company. Claude Team seats: 5 of 15.
+- Annual revenue (gross / case value): 2026 YTD ≈ $2.005M ("this year we're at 2,005,000", as of Oct 26); 2025 $1.916M ("Last year we were at 1.916"; she first guessed "$1.6 million last year, probably $2 million this year" before logging in — use the looked-up figure); 2024 [transcript unclear — see above]; 2023 "or 1.9" [transcript unclear]; firm opened 2021. Active clients: "we're 500 active clients. We're over that now."
+- Annual revenue (net / take-home / collected): not distinguished from gross. Note she said they write off fees: "we do quite a bit on going after fees, but we don't always get them and we write them off" and "we don't actually track the amount of revenue we've gotten from them".
+- Fee structure: flat-rate monthly. Quotes: "Or flat rate monthly." ; "we get paid on active cases. If they close or they're non-paying, then we don't get paid."; "not built for what we're doing in terms of flat monthly rates." Clients stay "six months… three years, you know, just depends."
+- Revenue goal: not stated, use 2x current revenue. (Quote: "We used to set more goals around… a number of cases and… we hit our goal and then we kind of never reset our actual goal." Aspirational: "Would we like to 10X our revenue? Absolutely." Expansion goal: five additional states.)
+- Average case value: "maybe six grand" per client (hedged, "I told them in the past"); billed monthly over 6 months–3 years.
+- Current close rate: not stated — default to 15%. (Quote: "we have a process… same day… I don't see a huge increase in terms of revenue… our process is good. We're not losing people.") Volume: "we're sending out at least 10 new engagement letters" [period not stated].
+- Number of locations: 1 (no office count stated; default applied). Serves 2 states (Florida and Illinois). Planning Indiana, Ohio, then a Midwest state.
+- Spanish campaign needed: no (not mentioned)
+- Dominant buying motive: Inferred (not directly stated): a firm that runs without her time being consumed — free her from running-the-business drag so she can focus on scaling to more states. Closest quotes: "my husband and I both don't take cases anymore. So we really handle the business."; "I want this to be my focus."; "the running the business pulls me away from it."; "I'd like to be at the cutting edge… I'm already behind."; "simplicity scales and fancy fails." Personal context: young daughter (age 2), family-oriented evenings. Category: (1) firm that runs itself + (3) scale (multi-state).
+- Any profitability claims made by prospect: "I compare our books to anybody. I think we have the best books… our business is running great on the financial side." Also "we have really good systems and processes." No margin/profit figure stated.
+- Any claims about case types or practice areas: "That depends on foreclosures." (choice of next state). "we get paid on active cases." No other claims.
+- Stated call focus / product interest: This was NOT a marketing/growth call. The call was about AI implementation — "I think AI is probably the priority over marketing because we are getting clients." She registered for the SMB Team law-firm AI event (Wednesday Oct 28). Goal: "what should my roadmap be?… Where do you see the most time being saved?" Wants quick wins first ("some smaller wins would be good before we're trying to build something that's going to take way longer"). Rep framed next call as an AI technology roadmap with SMB Team CTO (Eli). Ads/marketing was also raised (see lead-gen line) but she deprioritized it.
+- Primary engagement: AI
+- Products discussed on call: AI Workforce Pro
+  (Rep: Eli, CTO, "created the AI Workforce Pro tool that you're going to see a lot more of on Wednesday"; also referenced CTO-team-led AI adoption/implementation and a 30-day AI technology roadmap — no Fractional CTO level or price named; standalone ads mentioned as now available — no package/price named. No prices quoted. No tier of AI Workforce Pro named.)
+- Lead-gen gap stated: yes — "Both are priorities." (in response to rep offering standalone ads); also "Would we like to 10X our revenue? Absolutely." and re digital marketing "I want to get into it, but I also have some fear with what we're going to have to rework." NOTE for Pass 2: she explicitly ranked AI above marketing ("AI is probably the priority over marketing because we are getting clients"), said "digital marketing is going to create some complication in the business" and is not in a hurry to add leads — treat marketing as secondary/optional, not the lead recommendation.
+- Existing marketing/SEO/ad vendor engagements: direct mail only (vendor not named; "mail marketing"; she does mail merge/data in-house with AI). No SEO/ads vendor stated. Outsourced receptionist company and IT company exist (not marketing vendors). "none stated" for digital vendors.
+- Budget constraints stated: none stated. Related concern (not a budget limit): "how many subscriptions am I going to have? And is it going to end up being cost effective in the end?" — wary of stacking disconnected AI subscriptions.
+
+Other facts for Pass 2 (prospect-stated):
+- Tech stack: MyCase (case management; integration with Claude is "view only"), Claude Team (5 seats), SharePoint, MailChimp, client portal via MyCase, outsourced IT company, a cybersecurity friend advising informally.
+- Security: "we were hacked twice in our emails. It almost cost us about 60 grand." Concern about client banking data in loan-mod applications; no firm AI policy yet ("I need to have an AI policy that all my employees sign"); bar-rule fear.
+- AI wish list (her words, summarized): Clerk of Courts data pulls daily; Loan Mod Analyzer (identify missing documents / bank statements, auto-summary to clients); document-template drafting fixes (singular/plural); auto time entries on task completion; email handling (open attachments, calendar hearings on correct attorney's calendar — one person reviews three people's emails); client experience; leverage every recorded call since opening; team accountability automation; active-client and lead/reschedule process automation. Top "quick win": email + calendaring.
+- Current AI gains: "saves me about 45 minutes a day"; dashboards for consult-to-client percentages by attorney; active-case audit; PDF/mail-merge automation.
+- Next steps: Katherine sends AI wish list + top 3 priorities to Jonathan (by Oct 27); Jonathan sends calendar invite + recap email with agenda; next call Thursday Oct 29, 2:30 PM ET with Jonathan and Eli (SMB Team CTO); Katherine will try to include her husband ("He doesn't like to be on these types of things"; "I usually handle everything and then we talk about it and he says, yeah, let's do it or no, let's not do it.").
+- Decision process: Katherine leads vendor decisions; husband gives final yes/no.
+- Prior objection/history: previous SMB Team marketing contact (March 2026) ended with ads only bundled with coaching she did not want.
+
+Key prospect quotes (verbatim, Katherine Kyle):
+1. (00:02:40) "we have really good systems and processes. We're just not leveraging AI the way we could."
+2. (00:02:48) "my husband and I both don't take cases anymore. So we really handle the business." [goals/DBM]
+3. (00:06:48) "I think AI is probably the priority over marketing because we are getting clients." [priorities]
+4. (00:07:17) "I believe simplicity scales and fancy fails." [objection to digital marketing]
+5. (00:14:54) "I'm already behind." [AI urgency]
+6. (00:15:29) "the fear of what is and what isn't allowed, like bar rules… what do I give it access to versus what should I be more careful with in terms of client data?" [security/objections]
+7. (00:16:12) "just the running the business pulls me away from it." [time/team]
+8. (00:20:31) "it requires too much double work because then we still have to put it in our case management system before the case can be opened." [intake/ops]
+9. (00:22:36) "my things that I have to do every day definitely saves me about 45 minutes a day just by doing that for me." [current AI benefit]
+10. (00:26:25) "Emails is a huge one for me… we have one person hired to review three people's emails" [team/ops]
+11. (00:31:02) "we were hacked twice in our emails. It almost cost us about 60 grand" [risk]
+12. (00:35:36) "what should my roadmap be?… Where do you see the most time being saved?" [goals/ask]
+(Timestamps are the start of the quoted passage; quotes lightly trimmed of filler per the verbatim rules.)
+
+================================================================================
+STEP 10 — COMPETITIVE URGENCY SCORE
+================================================================================
+Score: 3 (LOW CONFIDENCE — provisional)
+Basis: competitive channels (Google 3-pack, Ads, LSA, Meta) could not be observed, so no score can be derived from observed competitor dominance. The firm acquires clients exclusively through direct mail, reports being "over" 500 active clients and growing revenue, and says leads are not its problem. No competitor was verified as dominating any channel. Score reflects this absence of evidence, not evidence of a quiet market. A human should re-score after a live GBP / SERP / Ad Library check.
+
+Named local competitors to watch (none verified as dominating):
+1. Belmont Law Group — Fort Myers/Lee County foreclosure defense, 25+ years (own-site claim, web search)
+2. The Burton Firm — Fort Myers foreclosure defense
+3. Rai Law LLC — Chicago foreclosure defense; shows 5.0 / 83 Google reviews [UNCONFIRMED — search summary]
+
+Matching dynamic sentence (score 1–3): "A score of 3 means no single competitor is dominating your market yet — but that will not last forever. The firms that win markets do so by moving first. Getting your systems in place now means you set the standard before someone else does."
+Pass 2 guidance: the call was about AI, not marketing — competitive-urgency content should be minimal and framed around the AI/operations opportunity (and her own plan to expand into IN/OH).
+
+[SAVED — final research notes file]
+
+================================================================================
+PASS 2 — VERIFICATION CHECKLIST
+================================================================================
+[x] Every number matches actually observed data (Lighthouse values are from the local run; everything else sourced/tagged)
+[x] No competitor is cited as out-reviewing the prospect; all competitor counts UNCONFIRMED or not observed
+[x] Every review count / star rating carries a verification-method tag (all UNCONFIRMED)
+[x] Revenue: gross vs net not distinguished (stated); fee structure recorded
+[x] Ad sections cover all practice areas; marked not observed — tool access
+[x] No "you are not running ads" claim; prospect separately confirmed she has never done digital marketing
+[x] No profitability claim beyond prospect's own quotes
+[x] Competitors named are specific local firms only
+[x] PageSpeed scores are real numbers (local Lighthouse, labeled as such — not pagespeed.web.dev)
+[x] DBM recorded (inferred, with quotes)
+[x] Revenue goal flagged not stated (use 2x)
+[x] Close rate defaulted to 15% (flagged)
+[x] Average case value recorded (~$6k, hedged)
+[x] Call focus called out explicitly as AI, not marketing
+[x] Primary engagement / products / lead-gen gap lines filled in machine-read format
+[x] Existing vendor engagements recorded
+[x] Budget constraints recorded (none stated)
