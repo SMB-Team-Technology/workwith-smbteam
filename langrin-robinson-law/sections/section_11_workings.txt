@@ -1,0 +1,103 @@
+SECTION 11 WORKINGS — Langrin-Robertson Law (INTERNAL — never client-facing)
+Prepared for: Dan Bryant | Proposal call: November 5, 2026 (11:00 AM ET)
+
+======================================================================
+FIRM NAME / ATTENDEE FLAGS (read first)
+======================================================================
+- Client-facing name used: "Langrin-Robertson Law" (public name of the firm; trigger gave "Langrin Robinson Law", which looks like a misspelling; the trigger domain langrinrobinsonlaw.com does not resolve, real site is langrinrobertsonlaw.com). Folder and file names keep the trigger spelling. CONFIRM with Dan before sending.
+- The call attendee was the owner's retired helper, not attorney Hazel Langrin-Robertson. Quotes in the report are attributed "from our discovery call" and are not presented as Hazel's words. Helper is not named in the client report.
+
+======================================================================
+PACKAGE DECISION SOURCE
+======================================================================
+Source: langrin-robinson-law/package_decision.json (confidence: low; call_focus.primary_engagement = AI; lead_gen_gap = false).
+Seller override recorded in decision file (Slack, 2026-10-26): AI Workforce Pro (5 seats, $1,597/mo) + Elite Coach Plus. Applied as written. Seller quoted Elite Coach at $3,497, which is the stand-alone price; catalog bundled price of $3,200/mo used.
+
+TRANSCRIPT-STATED NEED OVERRIDE CHECK
+1. Call-purpose override: APPLIES. Call was AI-led (AI Workforce Pro free trial / 10/28 AI Growth Summit). No request for marketing, ads, SEO, or website help. Marketing package excluded. Recommendation leads with AI Workforce Pro. Elite Coach Plus is kept because the seller added it, and because the transcript shows team/SOP/hiring needs (SOPs, case manager turnover, "it's in the hiring") that coaching addresses.
+2. Existing-vendor override: does not apply (no current vendor; a $2,000/mo vendor was cancelled). Marketing is excluded anyway under #1.
+3. Budget-reality override: not triggered. Affordability was raised and resolved on the call ("So she can more than afford this." 00:30:31), though the helper also wants results "immediately" (00:30:41).
+4. Effective-revenue override: does not apply (no net/gross figures stated; contingency practice but no revenue figure at all).
+
+Marketing package: NONE. Ad spend: NONE. Block 4 (ad spend / ROI) omitted from the client report. No ROI projection computed.
+
+======================================================================
+MANDATORY PRICE LOOKUP (copied from package_decision.json, checked against tables in audit-write.md)
+======================================================================
+- Marketing package selected: none
+  - Bundled: n/a | Stand-alone: n/a | Savings: n/a
+- Non-marketing package selected: Elite Coach Plus
+  - Bundled price (from table): $3,200/mo
+  - Stand-alone price (from table): $3,497/mo
+  - Savings (stand-alone minus bundled): $297/mo
+- Legal AI Workforce (LAW) package selected: AI Workforce Pro (5 users)
+  - Bundled price (from table): $1,597/mo (5 users) + $120/mo per employee over 5
+  - Stand-alone price: none exists (not quoted in client report)
+  - Savings: $0
+  - Terms: yearly contract; 10M usage credits + 10M bonus credits (20M total); weekly AI Implementation Session
+- AI Avatar / Video Growth add-on: none
+- Total monthly investment (sum of bundled/recurring prices): $3,200 + $1,597 = $4,797/mo (matches total_bundled)
+- Total savings: $297/mo (matches total_savings)
+
+======================================================================
+REVENUE / CAP CHECK / ESCALATIONS (flag to Dan before the call)
+======================================================================
+- Revenue NOT stated on the call. package_decision.json used the HubSpot band "$180K - $960K" (midpoint $570,000). CONFIRM REVENUE ON THE CALL.
+- Elite Coach Plus is the $400K-$1M tier. If actual revenue is $250K-$400K, the table fits Elite Coach ($2,600/mo) instead; package applied per seller request.
+- 35% cap (management fees + LAW recurring): at $180K revenue the cap is $5,250/mo, so $4,797/mo fits but is close to the cap; at $570K the cap is $16,625/mo. Well within the cap if revenue is above ~$164K.
+- Revenue under $300K (if the low end of the HubSpot band is right) -> scoping approval required. Under $250K -> confirm client can fund 4 months of services before proceeding.
+- Any LAW package -> confirm with sales rep that LAW delivery has launched and capacity is available before sending the proposal.
+- AI Workforce Pro is a yearly (12-month) contract. 5 seats priced because the team is 4 people (Hazel + 2 employees + helper) and the helper said "I would just go ahead and buy that 5, that 5-team package." Decision file notes list the Starter option at $350/user/mo (4 users = $1,400/mo); confirm seat count.
+- Rep quoted on the call (transcript unclear): "$3.50" read as $350/user/mo (Starter), "$1,597" for 5 users. On the call the rep also mentioned ~2M credits/user for the 5-user plan; the catalog lists 10M + 10M bonus (20M total) — the report uses the catalog figure.
+- Review counts unconfirmed — verify live before the call. No Google review count or rating for the firm (22 vs 41 from aggregators, conflicting) or any competitor (Monge 627, Millar 350+, etc.) is Google-confirmed; the client report uses qualitative framing only and prints no counts, ratings, or PageSpeed scores.
+- PageSpeed: NOT OBTAINED (API quota 429, local Lighthouse blocked by site 403). Report states the speed test could not be completed; re-run before the call if possible.
+- Google SERP / local pack / Google Ads / LSA / Meta Ad Library: all NOT OBSERVED. Report claims nothing about presence or absence.
+- NAP inconsistencies found: Lawful.com lists Johns Creek vs Snellville elsewhere; "22 years" (site, combined experience) vs "9 years in practice" (attorneyatlaw.com); address format variants. Included in the client report as Local SEO findings.
+- Website footer says "Built by Mavixx.co" — unconfirmed whether that is the $2,000/mo vendor that was cancelled.
+- Rep also mentioned in passing: headhunting service for an A-player case manager, fractional CTO as an automation-sprint bundle, referral program. None were scoped or priced; none are in the client report.
+
+======================================================================
+DBM (Block 1)
+======================================================================
+A firm that runs on trained people and written systems so the owner gets her time back (INFERRED; owner was not on the call and her helper spoke for her).
+Source lines: 00:26:56 "I'll tell you right now, she works six days a week." / 00:23:49 "I need to know how many different things that I need to get her out of that this can replace." / 00:02:00 "The staff that we wind up hiring can take over, and it's already set. It's ready to go."
+Closing statement: We help Atlanta-area personal injury firms get AI staff, written procedures, and a trained team so they can run a firm that does not depend on the owner's six-day week.
+("burnout" remark at 00:27:01 intentionally kept out of the client report — personal/health-adjacent and the report may be forwarded.)
+
+======================================================================
+QUICK WIN OPPORTUNITIES (7)
+======================================================================
+1. Lead Gen / Quick Win — Make listings and experience claims consistent (Johns Creek vs Snellville; 22 years vs 9 years; address variants). Competitor: none named (omit "Who Is Doing It Better").
+2. Lead Gen / Long-Term — Build Google review volume. Why: ranking articles credit metro Atlanta PI firms with far larger review bases (UNCONFIRMED figures — qualitative only). Competitor: Monge & Associates (Atlanta).
+3. Lead Gen / Long-Term — Restart the blog on a schedule. Why: last post found Feb 21, 2025; helper is "writing some articles" (00:04:01). Competitor: none.
+4. Intake / Quick Win — Get a form and video above the fold. Why: no contact form above the fold, no video. Competitor: none.
+5. Intake / Long-Term — AI-assisted email and follow-up. Why: 00:31:11 "that's an hour, potentially two." Competitor: none.
+6. Team / Quick Win — Write the SOPs once. Why: 00:13:29 "Let's make sure we get the SOP correct instead of having to rebuild this three, four, or five different times." Competitor: none.
+7. Team / Long-Term — Build a hiring plan for the case manager role. Why: 00:14:00 "she is not getting the right people"; 00:08:38. Competitor: none.
+8. Profit / Quick Win — Consolidate tools into one workspace. Why: 00:23:49; 00:04:13 "I can create a project, I can create a schedule, I can create all of that one place." Competitor: none.
+
+======================================================================
+WHAT YOU TOLD US (Block 5) — sources and Block 2 support
+======================================================================
+Row 1 (supports AI Workforce Pro — most central package):
+  Told us: wants one place for projects, schedules, email, and content instead of several tools.
+  Verbatim: (00:04:13) "I can create a project, I can create a schedule, I can create all of that one place." and (00:23:49) "I need to know how many different things that I need to get her out of that this can replace."
+  Block 2 support: AI Workforce Pro gives the team one AI workspace; weekly implementation session.
+Row 2 (supports AI Workforce Pro):
+  Told us: email and admin triage takes an hour or two a day.
+  Verbatim: (00:31:11) "If I can do some of that in her email so that she's not even having to look through email hunting and pecking for stuff, that's an hour, potentially two."
+  Block 2 support: AI staff handle email and calendar triage and follow-up.
+Row 3 (supports Elite Coach Plus):
+  Told us: wants SOPs built once so new hires can take over without being retrained.
+  Verbatim: (00:02:00) "The staff that we wind up hiring can take over, and it's already set. It's ready to go. I don't have to retrain somebody on whatever." and (00:13:29) "Let's make sure we get the SOP correct instead of having to rebuild this three, four, or five different times."
+  Block 2 support: Elite Coach Plus group coaching + 1:1 support on SOPs, hiring, and delegation.
+Next-step line: kickoff call with your Onboarding team (AI Workforce Pro).
+Excluded on purpose: owner "burnout" remark (00:27:01) and daughter/Stetson Law network detail (personal/family); criticism of vendor quality kept to a short quote in Website Audit only; any named staff.
+
+======================================================================
+ROADMAP PHASES
+======================================================================
+Phase 1 Foundation: AI Workforce Pro (5 users) + Elite Coach Plus.
+Phase 2 Operational Scale: FCOO Advisor $3,297/mo (not in Phase 1). Trigger gated at $500K+ revenue (fractional products hidden under $500K) and a team ready to grow.
+Phase 3 Optimize: FCFO Advisor $3,297/mo + Bookkeeping (no price quoted) + AI Workforce Pro seat expansion ($120/mo per user over 5). LAW already in Phase 1.
+Not in the report (Phase 4/5 not shown in a three-card roadmap): Fractional CTO upgrade; marketing tier upgrade.
