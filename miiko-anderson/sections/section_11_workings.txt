@@ -1,0 +1,105 @@
+SECTION 11 WORKINGS — Miiko Anderson Law (INTERNAL — never shared with client)
+Prepared for Pass 2, October 21, 2026 audit (run 2). Sales rep: Randy Gold.
+
+=====================================================================
+PACKAGE DECISION SOURCE
+=====================================================================
+- package_decision.json present: yes. confidence = "medium". needs_seller_input = false.
+- Package was set by the seller (Randy Gold, Slack, 2026-10-26): Full Service Marketing Essentials ONLY, at stand-alone pricing, no coaching/ops/AI. proposal_review.json status = "locked". Used exactly as locked.
+- Cross-check of the decision file against research notes (required for medium confidence): revenue ~$300K gross ($25K/mo) -> qualifies for Essentials on revenue (<$750K). Fee $3,797 is ~15% of monthly revenue. No corrections to tier or price.
+
+TRANSCRIPT-STATED NEED OVERRIDE CHECK
+1. Call-purpose: Call was booked as ChatGPT-ads verification; prospect's actual interest is branding / brand voice and an animated video series. Research notes record Primary engagement = marketing, and the seller locked a marketing package. No override applied. NOTE: no animated-video / brand-video product is part of Essentials; none is promised in the report (Brand Video is a separate add-on, $4,997 each — NOT included, NOT priced in client report; rep to address on the proposal call).
+2. Existing-vendor: none stated. No override.
+3. Budget-reality: "I don't have like an actual budget"; "I don't just necessarily want the cheapest price" — no explicit inability to pay. Essentials is already the lowest full-service marketing tier. No override.
+4. Effective-revenue: net not distinguished from gross; flat-fee criminal defense. Used ~$300K gross as stated.
+
+=====================================================================
+MANDATORY PRICE LOOKUP (checked against audit-write.md tables)
+=====================================================================
+- Marketing package selected: Full Service Marketing — Essentials
+  - Bundled price (from table): $3,497/mo (table), BUT seller/decision file prices this as a true stand-alone engagement (no bundle partner)
+  - Stand-alone price (from table): $3,797/mo
+  - Price used in client report: $3,797/mo (stand-alone); savings: $0/mo
+- Non-marketing package selected: none
+- Legal AI Workforce (LAW) package selected: none
+- AI Avatar / Video Growth add-on selected: none
+- Total monthly investment: $3,797/mo
+- Total savings: $0/mo (no retail/bundled strikethrough and no savings callout shown in Block 3)
+
+=====================================================================
+ELIGIBILITY / ESCALATION FLAGS (INTERNAL)
+=====================================================================
+- !! ESSENTIALS SCOPE CONFLICT: Essentials requires a single location AND a single practice area. Firm has 1 location but the website lists 7 practice areas (criminal defense, institutional abuse, victim representation, education rights, post-conviction relief, school investigations, violence & trafficking) and the transcript adds employment/workplace abuse and civil work. Per eligibility filter this would normally hide Essentials and move to Starter ($4,997 bundled / $5,697 stand-alone). Proceeded with Essentials ONLY because the seller explicitly locked it. Client report scopes Essentials to criminal defense as the launch practice area. Rep should confirm scope with sales-ops before sending the proposal.
+- Revenue ~$300K (at the "under $300K scoping approval" threshold) — confirm scoping approval.
+- REVIEW COUNTS UNCONFIRMED — verify live before the call. All competitor review counts/ratings (Renge, Fox, Kazarian, Hammerschmidt) are UNCONFIRMED and the Renge figure conflicts across sources (115 vs 111). NONE appear in the client report; qualitative framing only. Prospect's own Google review count/GBP not verified.
+- PageSpeed scores NOT OBTAINED (API 429). Omitted from the client report entirely. Re-run PageSpeed manually before the call if desired.
+- Local 3-pack, GBP, Google Ads, LSA, and Meta Ad Library findings were NOT OBSERVED (sandbox could not reach them). Report states "not observed / not yet benchmarked" and does not claim presence or absence.
+- Ad spend below practice-area channel minimums -> paid ads team review: Criminal Defense Google PPC minimum is $5,500/mo, which cannot be funded inside the 35% cap at ~$25K/mo revenue (headroom ~$4,953/mo after the fee). Recommended mix uses LSA + Meta retargeting only.
+- Revenue goal exceeds projected ad revenue -> paid ads team review: 2x current revenue default (~$600K/yr) would call for ~$6,203/mo (20% rule less fee) to ~$7,000/mo (reverse math) in ad spend; both exceed the 35% cap, so ad spend is capped.
+- NAP: website shows toll-free 855-644-5659; HubSpot phone is (559) 681-2133. Not verified which number directories use.
+- Prospect mentioned a separate consulting website she believes outranks the law firm site on her name — not reviewed; URL not provided.
+- Escalations not triggered: Fresno is not a top-10 metro (CD/FL/PI metro flags N/A); no LAW, AI Avatar, OmniSocial, Attorney Assistant, or AR/AP add-on in the recommendation.
+- Do not mention the prospect's daughter, health/family matters, or named staff in client copy (per Block 5 rules) — report refers only to "one assistant and contract support."
+
+=====================================================================
+AD SPEND CALCULATION
+=====================================================================
+Inputs: revenue $25,000/mo (~$300K/yr gross); practice area Criminal Defense (primary); Fresno = Tier 4 mid-size market (1.0x); no Spanish campaign; close rate 25% (per research notes guidance — warm-referral conversion will not carry over to cold paid leads; transcript close-rate was unclear); average case value NOT stated -> practice-area default Criminal Defense $3K–$5K, midpoint $4,000 (DEFAULT, disclosed in the report).
+
+35% cap: 0.35 x $25,000 = $8,750/mo total SMB spend. Less $3,797 fee = $4,953/mo ad spend headroom. Essentials ad spend cap = $7,500 (not binding).
+
+CONSERVATIVE = sum of channel minimums (Criminal Defense): LSA $2,000 + Meta Retargeting $1,200 = $3,200/mo (above the $3,000 absolute minimum). Google PPC ($5,500 min) excluded — unaffordable under the 35% cap.
+- Blended CPL (spend-weighted midpoints): LSA $160 (62.5%) + Meta Retargeting $60 (37.5%) = $122.50; +20% cushion = $147.00
+- Leads = $3,200 / $147.00 = 21.8
+- Cases = 21.8 x 25% = 5.4 (shown as 5–6)
+- Revenue = 5.44 x $4,000 = ~$21,800
+- Return = $21,800 / $3,200 = 6.8x
+
+AGGRESSIVE: 20% rule = $600,000 x 20% / 12 = $10,000 x 1.0 (Tier 4) = $10,000 - $3,797 fee = $6,203. Reverse math: ($600,000/12) / $4,000 = 12.5 cases -> /25% = 50 leads x ~$140 blended CPL = ~$7,000. Higher of the two = ~$7,000, which breaches the 35% cap -> capped at headroom: $4,950/mo (rounded down from $4,953). Mix: LSA $3,750 + Meta Retargeting $1,200.
+- Blended CPL (no cushion): 75.8% x $160 + 24.2% x $60 = $135.76
+- Leads = $4,950 / $135.76 = 36.5
+- Cases = 36.5 x 25% = 9.1 (shown as 9–10)
+- Revenue = 9.12 x $4,000 = ~$36,500
+- Return = $36,500 / $4,950 = 7.4x
+(Consistent with prospect's statement that she could add ~10 criminal defense cases a month — 00:17:10.)
+
+Recommended ad spend range shown in client report: $3,200–$4,950/mo
+
+WHY THIS RANGE (client-facing sentence): "To put your criminal defense practice in front of high-intent Fresno searchers and callers, building a steady second source of consultations so you can take on the roughly 10 more cases a month you told us you have room for."
+
+=====================================================================
+DBM STATEMENT (Block 1)
+=====================================================================
+"We help Fresno criminal defense attorneys who have built their practice on reputation and referrals get a predictable flow of higher-value clients so they can build a firm that is scaled to the level they are not needed in every case — with the space and freedom to focus on what they do best."
+Source: (00:31:42) "It should be scaled to the level that I'm not needed in every case." (00:32:01) "...so that it gives me a little bit space and freedom." (00:21:41) "Allow me to focus on other things that I'm better at."
+
+=====================================================================
+QUICK WIN OPPORTUNITIES (7)
+=====================================================================
+1. Lead Gen — Google Business Profile + steady review flow (Quick Win). Competitor: Renge, Fox (qualitative only; reviews unconfirmed). Why: local searchers compare by reviews/map listing first; GBP status unverified.
+2. Lead Gen — Own the search for your own name (Quick Win). Source: prospect said a separate consulting site outranks the firm site on her name (not verified).
+3. Lead Gen — City-specific pages for Clovis, Madera, surrounding communities (Long-Term). No competitor named.
+4. Intake — One clear path to request a consultation on the homepage (Quick Win). Observed: contact form on separate page; homepage has mailing-list signup + booking button.
+5. Intake — Consistent follow-up on consultations that do not sign (Long-Term). Source: (00:24:21) follow-up on missed consults is inconsistent.
+6. Team — Document intake/case-handling steps ahead of the first hires (Long-Term). Source: hiring plan within ~6 months; wants associates.
+7. Profit — Bookkeeping and a target revenue number for associate payroll (Quick Win). Source: "Still exploring" a bookkeeper; no revenue goal stated (00:30:25).
+
+=====================================================================
+WHAT YOU TOLD US (Block 5) — sourcing
+=====================================================================
+Row 1 — lead flow is referral-only and unpredictable.
+  Verbatim: (00:04:48) "I have done no marketing at all. Absolutely none. So that's just word of mouth." and (00:19:34) "Predictability is something consistent."
+  Supports Block 2: paid ads management + local SEO/GBP (second, search-driven source of consultations).
+Row 2 — branding / website only used to verify referrals.
+  Verbatim: (00:08:30) "I think the biggest challenge that I'm facing right now partly is branding." and (00:11:04) "I feel like it's used for somebody who's been referred to me to go and look me up to verify that I'm legit and then they call me."
+  Supports Block 2: website/SEO content written around her credentials and story. (Does NOT promise brand video / animated series.)
+Row 3 — wants a firm not dependent on her in every case, with room for more criminal defense cases.
+  Verbatim: (00:31:42) "It should be scaled to the level that I'm not needed in every case." and (00:17:10) "10 extra criminal defense, then maybe one civil."
+  Supports Block 2: lead volume to fund and justify associate hiring.
+Next step line: kickoff call with the Onboarding team.
+
+=====================================================================
+ROADMAP NOTES
+=====================================================================
+Phase 1 = Full Service Marketing Essentials. Phases 2–3 are written without dollar figures: FCOO/FCFO products are hidden under $500K revenue, so no priced ops/finance product is named; phases are milestone-based.
