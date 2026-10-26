@@ -1,0 +1,76 @@
+SECTION 11 WORKINGS — Church, Page & Gailan (October 19, 2026) — INTERNAL ONLY, never client-facing
+
+=====================================================================
+PACKAGE DECISION — OVERRIDE DOCUMENTATION
+=====================================================================
+package_decision.json (confidence "medium") was used as the package source. It already applied:
+- Call-purpose override (call_focus.primary_engagement = "AI"; lead_gen_gap = false). Research notes confirm: AI-led discovery call, marketing/SEO explicitly deprioritized ("not interested... outside the scope of what I intended for this call"). Marketing package NOT recommended -> Block 4 (ad spend / ROI) omitted entirely from section 11 and the executive summary.
+- Seller overrides (Slack, 2026-10-26): (1) AIWP team (5 seats) + FCTO Level 1; (2) AI Workforce Pro changed to 19 users. Elite Coach Plus (revenue/team default) removed — no transcript basis for coaching.
+Backstop check of the four Transcript-Stated Need overrides:
+1. Call-purpose: applies; recommendation leads with AI (fCTO + AI Workforce Pro). Already reflected in decision file.
+2. Existing-vendor: does not apply — no recently signed contract stated; current LSA/PPC vendor unspecified. Marketing excluded anyway under (1).
+3. Budget-reality: does not apply — no budget constraints stated.
+4. Effective-revenue: does not apply — no net/gross split stated. Revenue is not in the transcript; $3,000,000 working figure is HubSpot "annual law firm revenue" ($3,000,000+). Package assumes no revenue claim in client report. FCTO Level 1 floor ($400K+) satisfied by the HubSpot figure.
+Seat-count sanity check: 19 seats = 4 attorneys + 15 support staff currently (research notes Step 9). Hiring toward ~22-23 support staff — additional seats at $120/mo each would apply as the team grows. SELLER TO CONFIRM seat count.
+Fractional CTO level was NOT named on the call (notes list L1/L2/L3 per alias rule). Seller selected Level 1 — rep to confirm.
+
+35% cap check: $3,000,000 / 12 x 35% = $87,500/mo. Total SMB spend $6,574/mo — well under cap. (Revenue from HubSpot only; not confirmed on call.)
+
+=====================================================================
+MANDATORY PRICE LOOKUP
+=====================================================================
+- Marketing package selected: none
+- Non-marketing package selected: none (Elite Coach Plus removed — no transcript basis)
+- Legal AI Workforce (LAW) packages selected:
+  1) Fractional CTO Level 1
+     - Bundled price (from table): $3,297/mo
+     - Stand-alone price (from table): $3,797/mo
+     - Savings: $500/mo
+     - Setup fee: $0
+  2) AI Workforce Pro (19 users)
+     - Bundled price (from table): $1,597/mo (5 users) + 14 x $120 = $1,680 -> $3,277/mo
+     - Stand-alone price: none exists — do not quote one
+     - Savings: $0
+     - Terms: yearly contract; 10M usage credits + 10M bonus (20M total); overages $150/mo; includes weekly AI Implementation Session
+- AI Avatar / Video Growth add-on: none
+- Total monthly investment: $3,297 + $3,277 = $6,574/mo (matches package_decision.json total_bundled)
+- Total savings: $500/mo
+
+Ad spend / ROI projections: NOT APPLICABLE — no marketing/ads package in the recommendation.
+"Why this range" sentence: NOT APPLICABLE.
+
+=====================================================================
+DBM STATEMENT (Block 1)
+=====================================================================
+Category (1): a firm that runs itself on systems instead of manual effort. NOT an explicit quote — inference from the call summary: "Exploring AI to reduce manual/tedious support tasks and integrate systems." Source is a Fathom summary via HubSpot (machine), not a full transcript, so no quote boxes are used anywhere in the client report; all call content is paraphrased.
+
+=====================================================================
+QUICK WIN OPPORTUNITIES (7)
+=====================================================================
+1. Team / Quick Win — Automate medical records requests, client status updates, and scheduling with AI Workforce Pro skills. Why: named on call as automation scenarios; manual support work. Competitor: none. Opportunity: first skills deployed by the fCTO in month one.
+2. Team / Long-Term — Make Filevine automation and cross-platform integrations reliable. Why: call summary says Filevine automation process "not really very well fleshed out and working terribly well". Competitor: none. Opportunity: fCTO scopes and builds custom automations.
+3. Intake / Quick Win — 24/7 answering and Business Profile hours aligned with the 24/7 phone line. Why: GBP hours not 24/7 per call; 24/7 answering under consideration. Competitor: none.
+4. Lead Gen / Quick Win — Clean up the legacy "Church & Page" name across directories (FindLaw, Yelp, attorneyatlaw.com). Competitor: none.
+5. Profit / Quick Win — Baseline staff hours spent on manual tasks before the hiring ramp (15 -> ~22-23 support staff). Competitor: none. No profitability claim made.
+6. Lead Gen / Long-Term — Website speed and technical SEO cleanup (mobile PageSpeed 37; title/H1, cannibalization, redirects per call). Competitor: Tamaki Law (strong organic presence on car/truck/motorcycle searches; review count UNCONFIRMED so stated qualitatively). Note: prospect deprioritized marketing/SEO — keep light; SEO/website technical audit was only an option on the call.
+7. Intake / Long-Term — Move the homepage contact form higher / easier to reach alongside the above-the-fold CTA and phone number. Competitor: none.
+
+=====================================================================
+WHAT YOU TOLD US (Block 5) — sourcing (Fathom summary via HubSpot; no verbatim transcript lines available)
+=====================================================================
+Row 1: Filevine automation not working well. Source line (summary of the call): "the process they use to be able to create automation is not really very well fleshed out and working terribly well". Supports Block 2: Fractional CTO Level 1 (custom automation built monthly, monthly 1:1 sessions).
+Row 2: Reduce manual/tedious support tasks and integrate systems. Source line: "Exploring AI to reduce manual/tedious support tasks and integrate systems." Supports Block 2: AI Workforce Pro (19 users) with the Law Firm AI skills library and weekly AI Implementation Session.
+Row 3: Evaluate AI capabilities before defining automation scenarios (medical records requests, client status updates, scheduling, cross-platform integrations). Source: call-focus note in research notes Step 9 ("evaluating AI capabilities before defining automation scenarios"). Supports Block 2: Fractional CTO Level 1 (scoping sessions, skills deployed, training videos, automation report) and AI Workforce Pro trial -> rollout.
+Next step: kickoff call with your Fractional CTO. No dates.
+Excluded per never-include rules: named employees (prospect contact, SMB staff), any financial detail.
+
+=====================================================================
+ESCALATION FLAGS (internal only)
+=====================================================================
+- Legal AI Workforce (LAW) package -> confirm with sales rep that LAW delivery has launched and capacity is available before including in proposal.
+- Review counts unconfirmed — verify live before the call (firm and all three named competitors). Client report uses qualitative framing only.
+- PageSpeed figures are local Lighthouse (not pagespeed.web.dev) — verify live.
+- Google Ads, LSA, Meta, and 3-pack data were not observed — client report says so and does not claim absence.
+- Fractional CTO level and AI Workforce Pro seat count (19) to be confirmed by rep; revenue is HubSpot-sourced only.
+- Spanish-language campaign need unconfirmed (site advertises bilingual consults).
+- Marketing intentionally excluded; if the prospect later asks for marketing, re-scope separately (former SMB Team marketing client, parted 2024).
