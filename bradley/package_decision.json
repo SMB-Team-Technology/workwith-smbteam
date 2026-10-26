@@ -1,0 +1,54 @@
+{
+  "confidence": "low",
+  "revenue_stated": null,
+  "net_revenue_stated": null,
+  "is_contingency_practice": false,
+  "revenue_effective": 570000,
+  "revenue_source": "hubspot_annual_law_firm_revenue",
+  "revenue_label": "$180K - $960K",
+  "team_size_stated": null,
+  "team_size_effective": 3,
+  "practice_areas_detected": [
+    "corporate",
+    "outside general counsel for growing",
+    "corporate / outside general counsel (atlanta)"
+  ],
+  "needs_seller_input": false,
+  "revenue_only_option": null,
+  "call_focus": {
+    "primary_engagement": "AI",
+    "products_discussed": [
+      "Fractional CTO Level 3",
+      "Fractional CTO Level 2",
+      "Fractional CTO Level 1"
+    ],
+    "lead_gen_gap": false
+  },
+  "marketing_tier": null,
+  "marketing_name": null,
+  "marketing_price_bundled": null,
+  "marketing_price_retail": null,
+  "marketing_savings": null,
+  "coaching_name": "Elite Coach Plus",
+  "coaching_price_bundled": 3200,
+  "coaching_price_retail": 3497,
+  "coaching_savings": 297,
+  "law_tier": null,
+  "law_name": null,
+  "law_price_bundled": null,
+  "law_price_retail": null,
+  "law_seats": null,
+  "total_bundled": 3200,
+  "total_savings": 297,
+  "ad_spend_conservative": null,
+  "ad_spend_aggressive": null,
+  "ad_spend_rationale": null,
+  "selection_notes": [
+    "AI-led call with no lead-gen need stated — marketing left out (call-purpose rule).",
+    "More than one AI product discussed on call (Fractional CTO Level 3, Fractional CTO Level 2, Fractional CTO Level 1) — using Fractional CTO Level 3; confirm with sales rep.",
+    "Fractional CTO Level 3 discussed on call but revenue ($570,000) is under its $3,000,000 floor — not included. Confirm with sales rep.",
+    "Revenue not in research notes — sourced from HubSpot (hubspot_annual_law_firm_revenue): \"$180K - $960K\" → $570,000",
+    "Team size not stated in research notes — defaulting to 3. Review for coaching tier accuracy.",
+    "Revenue $400K–$1M: Elite Coach Plus selected."
+  ]
+}
