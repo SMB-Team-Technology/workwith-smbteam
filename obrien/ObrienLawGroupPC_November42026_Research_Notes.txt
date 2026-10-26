@@ -1,0 +1,221 @@
+================================================================================
+O'BRIEN LAW GROUP PC — GROWTH AUDIT RESEARCH NOTES
+================================================================================
+Firm: O'Brien Law Group PC (recently incorporated; formerly "Law Office of Kerry O'Brien" / website brand "Law Office Of Kerry P. O'Brien"). NOTE: the correct spelling is O'Brien (CRM/trigger say "Obrien" — a typo the rep said he would fix).
+Friendly name: obrien
+Trigger URL: http://lawofficeofkellypobrien.com — DOES NOT RESOLVE (DNS ENOTFOUND; looks like a typo "kelly"). Actual firm site found via search + contact email domain: https://www.kerryobrienlaw.com (live, HTTP 200)
+Sales Rep: Jacob Meissner
+Date: November 4, 2026 (proposal call 1:00 PM PT; discovery call held October 26, 2026)
+Contact: Kerry O'Brien (founder / sole attorney) — kerry@kerryobrienlaw.com — +15623080733 (HubSpot). Website lists 562.588.3069 / 562.684.0104 (Kerry confirmed the 562-588-3069-style GBP number is his on the call: "Yes, it is.")
+Office: 3699 Katella Ave, Los Alamitos, CA 90720 (per website). Kerry on the call: "I'm in the Seal Beach area, which is next to Huntington Beach and then Long Beach" — on the LA County / Orange County border. One location.
+
+RESEARCH-TOOLING DISCLOSURE (read first — applies to Pass 2):
+This session had page-fetch, web-search, curl, and local headless Chromium + Lighthouse. It did NOT have a live logged-in browser, so it could NOT open Google Maps / Google Business Profile, Google SERPs (3-pack, Ads, LSA), or the Meta Ad Library. pagespeed.web.dev could not be run (JS page never finished loading in the fetch tool). Every item that depends on those surfaces is marked "NOT OBSERVED — tool access" rather than guessed. The trigger URL did not resolve, but because this is a real firm with a real transcript, NO data was fabricated. Pass 2 must not turn any "NOT OBSERVED" line into a claim about the firm or a competitor. Numbers from search-result summaries or directories are tagged UNCONFIRMED.
+
+================================================================================
+STEP 1 — WEBSITE RESEARCH
+================================================================================
+- Website URL confirmed live: yes — https://www.kerryobrienlaw.com (Wix-built site; <title> "Law Office Of Kerry P. O'Brien"). The trigger URL lawofficeofkellypobrien.com does not resolve.
+- Last redesign date or estimated age: Footer shows "© 2023". Rep on call: "Your website doesn't look like it's been touched in a few years, just based off the bottom of it. There's just been no updates since 2023." Kerry: "Correct." Site still carries the old brand ("Law Office Of Kerry P. O'Brien") — Kerry: "the website still says Law Officer Kerry O'Brien" and "I do have to revamp my website and everything else to transition over."
+- Mobile responsive: viewport meta tag present (Wix responsive template). Not visually verified on a device.
+- Homepage headline (exact, via page fetch): "From Accidents to Advocacy: We're Here for You"
+- CTA above fold: yes — button reads "FREE CASE EVALUATION"; phone 562.588.3069 (click-to-call tel: link present)
+- Contact form location: footer (First Name, Last Name, Email, Message) — not above the fold
+- Live chat present: not observed (no chat-widget vendor strings in page HTML)
+- Attorney bio present: yes — Kerry P. O'Brien, "Founder, Practicing Attorney", headshot; /about page. Bio says 20+ years in personal injury and workers' compensation (transcript: 25 years practicing).
+- Video present: not observed (no <video> element in page HTML)
+- Blog present: yes — "Resources" menu has "Legal Definitions" and "Blog". Last post date NOT OBSERVED.
+- Practice areas on site: Personal Injury and Workers' Compensation (homepage). Other pages seen in search: /seal-beach, /areas-we-serve, /bus-accidents, /catastrophic-injury. Search summaries also mention estate planning/bankruptcy — NOT verified on the site; do not use.
+- Spanish content: none observed on the site.
+- Tracking: Google tag (gtag) present in HTML; no Meta pixel (fbq) found; no call-tracking vendor string found.
+
+PageSpeed (LOCAL Lighthouse lab run — NOT pagespeed.web.dev; run 2026-10-26 from a GitHub Actions runner, Lighthouse via npx, performance category only, single run each):
+- PageSpeed mobile score: 65 (LCP 7.5 s, TBT 220 ms) — local Lighthouse, not pagespeed.web.dev
+- PageSpeed desktop score: 92 (LCP 1.8 s, TBT 0 ms) — local Lighthouse, not pagespeed.web.dev
+- Caveat for Pass 2: runner network/CPU differs from Google's PSI infrastructure and these are single runs. If cited, describe as "a Lighthouse performance test" and do not present as the official PageSpeed Insights score. The mobile LCP of 7.5 s is the weak point; desktop is fine.
+
+[SAVED — website section complete]
+
+================================================================================
+STEP 2 — GOOGLE BUSINESS PROFILE
+================================================================================
+- GBP found: NOT OBSERVED — tool access (Google Maps not reachable). Known from the transcript (rep screen-shared Google live): the listing exists but is MISATTRIBUTED. Kerry: "it says it's located in Todd Song Tax Consulting. For years, I've tried to call Google and tell them, you guys got me in some CPA's office… I've got my own building… I need assistance in getting changed." Corrected once, then reverted: "One time we did, but then it went back to Todd's song, Tax Consulting." Business name on GBP is still the old "Law Office of Kerry O'Brien"; not yet changed to O'Brien Law Group PC ("I don't think we have"). Rep: the category shows "attorney" only — should be "Personal Injury Attorney"; "to the naked eye … they see tax, so they may automatically think either business attorney or tax attorney." Rep also saw a different firm, "Brian Law, PC" (commercial litigation, not PI — not Kerry's), appearing in the same search. Rep: Google's AI overview was showing Kerry's business correctly. Phone on GBP is Kerry's.
+- Star rating: 5.0 [UNCONFIRMED — sourced from a web-search result summary and lawfirmlookup.com, not independently confirmed via Google]
+- Total review count: 20 [UNCONFIRMED — sourced from a web-search result summary and lawfirmlookup.com (which does not say its rating is from Google), not independently confirmed via Google]
+- Most recent review date: February 2025 per lawfirmlookup.com [UNCONFIRMED — aggregator; not confirmed via Google]
+- Primary category: "Attorney" per rep reading the live GBP on the call (not confirmed by me). Rep's recommendation: change to "Personal Injury Attorney".
+- Photos active: NOT OBSERVED — tool access
+- Posts active: NOT OBSERVED — tool access
+- Pass 2: do NOT print 5.0 / 20 as a verified Google figure. The GBP location/name mix-up IS prospect-stated and rep-observed on the call and can be described as such.
+
+================================================================================
+STEP 3 — LOCAL 3-PACK SEARCHES
+================================================================================
+Practice Area 1: Personal injury / motor vehicle accidents (Long Beach, Los Alamitos, Seal Beach, Anaheim — and LA)
+- Searches 1–3 (e.g. "car accident lawyer Long Beach", "personal injury lawyer Los Alamitos", "car accident attorney Anaheim"): NOT OBSERVED — tool access (Google local pack not reachable). Firm appears: not observed.
+- Organic web-search results only (NOT a 3-pack) for "car accident lawyer Long Beach Los Alamitos Seal Beach CA": Pacific Attorney Group PLC, Accident Lawyers Firm, Omega Law Group PC, Nordean Law APC, Pratt Law Corporation, Law Offices of Brent W. Caldwell, RMD Law, Law Offices of Samer Habbas & Associates. Kerry's firm's own pages appeared for firm-name queries.
+- Competitors in pack: NOT OBSERVED. Review counts: see Step 4 (all UNCONFIRMED).
+- Transcript context: rep, screen-sharing Google live, said big LA firms dominate "car accident attorney LA" (Morgan & Morgan, Wilshire Law Firm, Sweet James are national/regional — NOT usable as local competitors). Kerry: "I'm not expecting to."
+
+Practice Area 2: Workers' compensation (listed on website; Kerry says it is low-value for him — see Step 9)
+- Searches 1–3: NOT OBSERVED — tool access.
+
+Practice Area 3: Premises liability / slip and fall, dog bites (Kerry: "Yeah, do all that")
+- Searches 1–3: NOT OBSERVED — tool access.
+
+================================================================================
+STEP 4 — COMPETITOR REVIEW COUNTS
+================================================================================
+No competitor review count was verified via Google. Do NOT cite any competitor review count in the report as fact. All figures below came from one web-search result summary that labelled them "Google rating" but could not be independently confirmed.
+- Competitor 1: Omega Law Group, PC (Seal Beach area) — reviews: 526 [UNCONFIRMED — sourced from a web-search result summary, not independently confirmed via Google] — rating: 4.9 [UNCONFIRMED — same source]
+- Competitor 2: Pacific Attorney Group PLC (Long Beach area) — reviews: 239 [UNCONFIRMED — same source] — rating: 5.0 [UNCONFIRMED — same source]
+- Competitor 3: Nordean Law APC (Seal Beach area) — reviews: 189 [UNCONFIRMED — same source] — rating: 5.0 [UNCONFIRMED — same source]
+- Also surfaced (all UNCONFIRMED, same source): Accident Lawyers Firm 5.0 / 215; Pratt Law Corporation 5.0 / 185; Law Offices of Brent W. Caldwell 5.0 / 124; Law Offices of Samer Habbas & Associates, PC 5.0 / 62 (Seal Beach area).
+- Prospect-vs-competitor check: the prospect's own count is UNCONFIRMED "20" — competitor counts in this list are higher than that, but neither side is verified. Pass 2 must not print specific review counts for the firm or any competitor.
+
+================================================================================
+STEP 5 — DIRECTORY LISTINGS
+================================================================================
+- Avvo: profile exists (avvo.com/attorneys/90720-ca-kerry-obrien-119084.html) — page returned 403 to fetch; contents NOT OBSERVED. Justia: Los Alamitos/Seal Beach PI directory pages surfaced in search; firm listing not opened. Yelp: listing "THE LAW OFFICE OF KERRY P O'BRIEN" at 3699 Katella Ave, Los Alamitos, "Updated August 2026 — 11 photos" (per search-result title; rating not read). FindLaw: not checked.
+- Other listings seen via search: Lawyers.com (5.0, 1 review [UNCONFIRMED aggregator]); lawfirmlookup.com listed as "O'Brien Law Group" (5.0 / 20 reviews, most recent Feb 2025 [UNCONFIRMED aggregator]); AllUsInjuryLawyers.com listed as "O'Brien Law Group" (5/5, 21 reviews [UNCONFIRMED aggregator]); Alignable; Nextdoor; hub.biz; State Bar of California profile (Licensee 216449).
+- NAP inconsistencies: (1) Business NAME is split — "Law Office of Kerry P. O'Brien" (website/Yelp/Nextdoor), "Law Offices of Kerry P. O'Brien, Inc." (website text), "O'Brien Law Group" (some aggregators), "O'Brien Law Group PC" (new legal name per Kerry). (2) ADDRESS: website/Yelp 3699 Katella Ave, Los Alamitos; hub.biz lists 4050 Katella Ave., Ste. 108 (older/other address). (3) GBP pointed at Todd Song Tax Consulting per call. (4) Phone: 562.588.3069 / 562.684.0104 on site; HubSpot has +15623080733 (likely a different/cell line).
+- Geo-targeting landing pages: yes — /seal-beach and /areas-we-serve exist per search results; search summary lists service areas: Los Angeles, Lakewood, Seal Beach, Los Alamitos, Long Beach, Huntington Beach, Cerritos, Garden Grove, Cypress, Westminster, Downey, Norwalk, Santa Ana, Anaheim [UNVERIFIED — search summary; pages not opened]. No Spanish pages observed.
+
+[SAVED — GBP, local SEO, directory sections complete (with NOT OBSERVED items)]
+
+================================================================================
+STEP 6 — GOOGLE ADS
+================================================================================
+Practice Area 1: Personal injury / MVA
+- Firm ads observed: not observed — tool access (Google SERP not reachable). This does NOT establish the firm is not advertising; the prospect separately confirmed on the call that he has not done paid ads (see Step 9).
+- Named local competitors running ads: NOT OBSERVED
+Practice Area 2: Workers' compensation
+- Firm ads observed: not observed — tool access
+- Named local competitors running ads: NOT OBSERVED
+Practice Area 3: Premises liability / dog bites
+- Firm ads observed: not observed — tool access
+- Named local competitors running ads: NOT OBSERVED
+
+================================================================================
+STEP 7 — LOCAL SERVICE ADS
+================================================================================
+- Firm appears in LSA: not observed — tool access
+- Google Screened: not observed
+- LSA review count: not observed
+- Named local competitors in LSA: not observed
+- Transcript note: rep said LSAs sit at the top of Google for PI and are pay-per-call; this is the rep's pitch, not an observation of this market.
+
+================================================================================
+STEP 8 — META ADS
+================================================================================
+- Firm has active ads: not observed — Meta Ad Library not reachable. (Kerry on the call: "I do have some social media presence, not much really at all." No Meta pixel found on the homepage.)
+- Named local competitor 1: not observed
+- Named local competitor 2: not observed
+
+[SAVED — all ads sections complete (not observed — tool access)]
+
+================================================================================
+STEP 9 — TRANSCRIPT EXTRACTION
+================================================================================
+Transcript source: full verbatim Fathom transcript (summary used only as overview)
+Call: Fathom recording 196484103, 2026-10-26, ~46 minutes. Prospect: Kerry O'Brien (tagged "kerry"). SMB Team: Jacob Meissner (rep). Earlier brief contact last week with another SMB rep ("Anthony").
+
+Discrepancies between AI summary and full transcript (full transcript wins):
+- Summary: "Google Ads: $600–$700 per click; Client Acquisition: $3,000–$6,000 per client." These were the REP's pitch figures ("minimum probably $600 to $700 per click… up to $6,000 to acquire a client"), not the firm's. Kerry's only statement: he was quoted ~$30,000/mo for ~10 clients by "some other company" a couple of weeks ago — "That's about right." Do not present the per-click or CAC figures as the firm's.
+- Summary: "Policy Limits: $15k–$30k." Transcript: California minimums used to be $15,000 ("1530") and "the minimal is $30,60" [transcript unclear — read as $30,000 per person / $60,000 per accident]. Kerry: "there's a lot of people out here in California that are either driving without insurance or still having those minimal policies."
+- Summary: "Attorney Fee ~33% → $5k–$10k gross fee." Transcript: Kerry described a one-third split of a $15,000 limit (one-third to client, one-third medical, one-third attorney) → ~$5,000 fee; fee is 33%, "up to 40 percent if I have to litigate." The "$5k–$10k" range is the summary's, not stated.
+- Summary: "Proposed Budget Allocation 70/20/5/5." The allocation was the rep's hypothetical ("I want to say maybe 70% towards Google, 20% towards Meta, 5% towards Connected TV, and then 5% towards like ChatGPT ads… those numbers probably could change"); Kerry did not agree to it. Do not present as the client's plan.
+- Summary: "projected $1.8–$2M revenue." The REP proposed it: "I'm going to assume your revenue is probably 1.8 to 2 million projected for this year?" Kerry: "Yeah… Yeah, we've done pretty well." Soft confirmation only; gross vs net not distinguished.
+- Summary: "Spanish-speaking clients." Rep proposed Spanish-language campaigns; Kerry: "Yeah, probably." (Open to it; has Spanish-speaking staff — "I do have Spanish-speaking girls in the office.")
+- Summary: "Caseload dropped from 200–300 to ~60." Transcript: "having about maybe a caseload of around 200 to 300 is, I think, awesome for us. We're now only down to about 60." (Consistent, but 200–300 is his target/prior norm, stated as a goal.)
+- Summary: "Update GBP: … add hours/reviews" and "Analyze … assess AI applicability" — rep to-dos, not facts about the firm.
+- Rep claims NOT to attribute to the client: "average case value is probably somewhere from 25 to 30" (rep guess; Kerry replied "It's a big range"); "$200,000, $300,000 a month" competitor spend; "10x his revenue / $2.6 million" (another client of SMB Team); LA being "the most expensive areas in the country."
+- Speaker-tag caveat: lines ~00:22:22 ("We've had $700,000 here, $680,000, $500,000 here, $750,000 a month ago") and ~00:20:23 ("Office manager, you know, a couple case managers, legal assistant, secretary") are tagged Jacob but are clearly Kerry's own statements by context [speaker tag unclear — read as Kerry]. The "$700,000 / $680,000 / $500,000 / $750,000" figures are read as recent settlement sizes.
+
+- Practice areas confirmed: Personal injury, primarily motor vehicle accidents ("the majority of our business are MVAs"); also premises liability/slip and falls and dog bites ("Yeah, do all that"); also workers' compensation ("I do do workers' comp. Workers' comp, there's, there's no revenue in it for attorneys… the amount of time and effort you have to put in, it's just not worth it."). Soft-tissue cases: "I'm not worried about them."
+- Current lead sources: Referrals historically — "we immediately got a lot of clients through a lot of referrals and people that I was working with." Has used pay-per-case lead services like LegalMatch ("I've tried like things. Are you familiar with Legal Match?… you click on it and you call that client… it's kind of like first come, first serve"). He also described an older informal referral channel in the past tense and said "I'm completely out of that loop." — DELIBERATELY NOT RECORDED IN DETAIL; do NOT include it in the client-facing report. No current marketing: "I do have some social media presence, not much really at all."
+- Ads ever run: no paid ads — "I haven't done paid ads. I'm really nervous by it." (OK to state he has not run paid ads; he confirmed it.) Used LegalMatch-style lead buying (no budget/result stated). He said he saw SMB Team's ads on Instagram/Facebook ("I'm seeing a lot of your guys' ads").
+- Team size: 6 — Kerry (only attorney: "It's just me as the attorney and then there's five girls") plus five staff. Roles (read as Kerry's, speaker tag unclear): office manager, a couple of case managers, legal assistant, secretary. Some are Spanish-speaking. Staff do all intake: "they know how to do the intake, they know how to screen." After-hours/weekend coverage: "I do, yeah" (has it).
+- Annual revenue (gross / case value): $1.8–$2M projected this year — rep-proposed, prospect soft-confirmed ("Yeah, we've done pretty well"). Treat as approximate; use "about $2M" conservatively as "$1.8–$2M".
+- Annual revenue (net / take-home / collected): not distinguished from gross.
+- Fee structure: contingency — "one third goes to pay the attorney"; "if you can charge anywhere from 33 percent or I go up to 40 percent if I have to litigate." Workers' comp is statutory: "Attorney fees can be only 15 or 18 percent."
+- Revenue goal: not stated as a dollar figure, use 2x current revenue. Stated goals are case-based: "at least 10 cases a month… consistently from between now and the next year" and "a caseload of around 200 to 300." Current caseload "about 60."
+- Average case value: not stated as one figure — wide range. Quotes: "we get settlements as low as $10,000" and "we've hit a million dollar policy limit this year"; recent settlements read as $500,000–$750,000 [speaker tag unclear — read as Kerry]. On low-limit cases: "even if I get policy limits, it's five" (~$5,000 fee). Rep's "25 to 30" is NOT confirmed. Pass 2: use a conservative PI blended value and flag it as assumed.
+- Current close rate: not stated — default to 15%. Kerry on intake: "I guess that's not a problem for us here. It's just, you know, we're not getting the phone calls as much as we used to." (Problem is call volume, not conversion.)
+- Number of locations: 1 (Los Alamitos / Seal Beach area). Serves LA County, Orange County, Riverside County and beyond: "I get clients from anywhere"; "location for me is not that big of an issue." No geographic exclusions: "No." (when asked about parts he wouldn't want targeted).
+- Spanish campaign needed: yes — open to it ("Yeah, probably") and has Spanish-speaking staff. Rep says Spanish-language campaigns are typically cheaper.
+- Dominant buying motive: Inferred (not directly stated): a steady, predictable flow of cases so the firm never has an empty pipeline again — security and peace of mind for a small, comfortable firm, NOT scaling to dominate. Closest quotes: "I don't want to be sitting here like in a year from now going, oh, geez, where's all the clients?"; "I'll never get as big as those guys… But, you know, I want to have a good existing caseload come in."; "we do great where we are financially." Category: (1) firm that runs steadily / peace of mind.
+- Any profitability claims made by prospect: "we do great where we are financially" and "no, we're doing very well" (re settlements). No margin or profit figure stated.
+- Any claims about case types or practice areas: "the majority of calls that come in, they're always going to be motor vehicle accidents."; "if I look at a motor vehicle accident, liability is clear, they've got coverage… I think I have a reputable firm here where I can get good results, even just on soft tissue cases."; "Workers' comp, there's no revenue in it for attorneys."
+- Stated call focus / product interest: Standard marketing / lead-generation discovery for a personal injury firm (call framed around "more predictable leads, more phone calls coming in"). Kerry is also curious how AI could help ("with the influx of AI and all these other tools out there, how that can help best market my firm"), and the rep said he will assess AI applicability, but the rep explicitly steered away from AI/CTO, coaching/ops, and finance for now ("you haven't given me any sort of signal that like… I need somebody to help with operations"; Kerry: "You just need more business"). Next call is a tailored marketing proposal.
+- Primary engagement: marketing
+- Products discussed on call: Full Service Marketing
+  (Rep described channels: PPC, LSAs, web, SEO, AEO, social (Meta), Connected TV, AI avatars, ChatGPT ads, GBP fix. Rep mentioned AI Workforce Pro, Fractional CTO, coaching, FCOO and FCFO only in the company overview and said AI "is just not as big a driver" for PI; none were priced or proposed. No SMB Team prices were quoted on the call.)
+- Lead-gen gap stated: yes — "more predictable leads, more phone calls coming in."
+- Existing marketing/SEO/ad vendor engagements: none signed stated. Kerry was quoted by another company: "I was quoted that a couple of weeks ago by some other company. That's about right." (referring to ~$30,000/month for ~10 clients; vendor not named; no contract mentioned). Past use of LegalMatch-type lead sites.
+- Budget constraints stated: no hard cap — "I can afford to pay $30,000 a month if I have to, to get my case load up. That's not a problem." But strong ROI concern: "I just want to be in a position where I know that that's going to work out" and "I don't want to break even paying $30,000… or lose money." Also nervous about paid ads in general. NOTE: the $30,000 figure derives from the rep's "let's say 10 clients a month… around $3,000 each" math; Kerry accepted it as affordable-if-needed. Present as a ceiling he said he can afford, not a commitment.
+
+Other facts for Pass 2 (prospect-stated):
+- Incorporated recently as O'Brien Law Group PC; needs to update website, GBP and other listings: "We're going to try and get away from a law office, Kerry O'Brien, and just to O'Brien Law Group."
+- 25 years practicing; solo for ~10 years; "for the last couple of years, we've been just working our existing caseload, not really having to focus on marketing too much." Caseload shrank because existing cases are settling: "now that we've been settling all those cases, our caseload is going down."
+- Timeline: "certainly by the end of the year, I want to have a goal and plan implemented so that coming into 2027, it's off and running."
+- Geographic strategy he accepted: target cheaper nearby cities (Anaheim, Buena Park) rather than LA: "if I can show up number one in Anaheim as opposed to number 50 in L.A., then, yeah, I want to do number one in Anaheim."
+- Competitive landscape (Kerry): "you have out here the Jacob and Ronnie's, Sweet James… They're everywhere. And I know all those guys personally, but I have a small firm." [name "Jacob and Ronnie's" — transcript unclear; do not use]. "Especially out here in LA and Orange County" (re PI competition).
+- Kerry also mentioned he is "exploring" ChatGPT ads: "These are things that I'm looking at exploring."
+- Next steps: Jacob sends calendar invite + recap email, fixes the CRM name to O'Brien, prepares tailored proposal; Kerry reviews SMB Team website to prepare questions. Follow-up: Wednesday, November 4, 2026, 1:00 PM PT.
+- Decision process: Kerry is the sole owner/attorney and decision-maker.
+- Do NOT include in the report: personal details (second home), the past informal referral channel, or the rep's competitor-spend guesses.
+
+Key prospect quotes (verbatim, Kerry O'Brien):
+1. (00:01:34) "now that my caseload has dwindled, you know, I don't want to be sitting here like in a year from now going, oh, geez, where's all the clients?" [goals/DBM]
+2. (00:07:41) "more predictable leads, more phone calls coming in." [lead sources/goals]
+3. (00:09:34) "they know how to do the intake, they know how to screen. I guess that's not a problem for us here." [intake]
+4. (00:09:43) "we're not getting the phone calls as much as we used to. And, you know, and I think people have kind of forgotten about us over the last couple of years." [lead sources]
+5. (00:11:45) "I haven't done paid ads. I'm really nervous by it." [ads history/objection]
+6. (00:15:49) "I can afford to pay $30,000 a month if I have to, to get my case load up. That's not a problem." [budget]
+7. (00:15:57) "I just want to be in a position where I know that that's going to work out." [budget/objection]
+8. (00:21:02) "if I'm getting at least 10 cases a month, that, you know, consistently from between now and the next year, that would be great." [goals]
+9. (00:21:11) "having about maybe a caseload of around 200 to 300 is, I think, awesome for us. We're now only down to about 60" [goals]
+10. (00:24:05) "it says it's located in Todd Song Tax Consulting." [GBP problem]
+11. (00:36:16) "if I can show up number one in Anaheim as opposed to number 50 in L.A., then, yeah, I want to do number one in Anaheim" [geo strategy]
+12. (00:37:45) "certainly by the end of the year, I want to have a goal and plan implemented so that coming into 2027, it's off and running." [timeline]
+13. (00:13:00) "I want to do things proper with a good social media presence." [goals/objection]
+(Timestamps are the start of the quoted passage; quotes trimmed of filler/false starts per the verbatim rules.)
+
+================================================================================
+STEP 10 — COMPETITIVE URGENCY SCORE
+================================================================================
+Score: 6 (LOW CONFIDENCE — provisional; competitive channels could not be observed directly)
+Basis: (a) the website is stale (© 2023, old brand) and mobile load is slow (Lighthouse mobile 65, LCP 7.5 s); (b) the GBP is attached to another business's address and carries a generic "attorney" category — rep saw this live; (c) nearby PI firms appear to have far larger review bases (UNCONFIRMED search-summary counts, e.g. 189–526 vs. the firm's ~20); (d) the firm does no digital marketing at all, so it is invisible in paid/AI-search surfaces while the market is dominated by large LA firms. Offsetting: strong word-of-mouth history, intake is handled well by staff, and the firm is highly motivated. Not scored higher because Google 3-pack/Ads/LSA positions were not observed.
+
+Named local competitors to watch (none verified as dominating):
+1. Omega Law Group, PC — Seal Beach area; large review base per search summary (4.9 / 526 [UNCONFIRMED])
+2. Pacific Attorney Group PLC — Long Beach area (5.0 / 239 [UNCONFIRMED])
+3. Nordean Law APC — Seal Beach area (5.0 / 189 [UNCONFIRMED])
+(Large LA firms named on the call — Morgan & Morgan, Wilshire Law Firm, Sweet James — are NOT local and must not be cited as local competitors.)
+
+Matching dynamic sentence (score 4–6): "A score of 6 means competitors have meaningful advantages in one or more areas and are pulling ahead. You are not invisible yet — but the window to close the gap is narrowing. Every month without action is a month they extend their lead."
+Pass 2 guidance: do not print competitor review counts or the firm's review count as specific figures (all UNCONFIRMED). Do not say the firm "is not running ads" — Kerry did confirm he has not run paid ads, so "has not run paid ads" is OK; for current live ads use "does not appear to be running".
+
+[SAVED — final research notes file]
+
+================================================================================
+PASS 2 — VERIFICATION CHECKLIST
+================================================================================
+[x] Every number matches actually observed data or is tagged (Lighthouse values are from the local run; everything else sourced/tagged)
+[x] No competitor is cited as out-reviewing the prospect as fact; all competitor counts UNCONFIRMED
+[x] Every review count / star rating carries a verification-method tag (all UNCONFIRMED)
+[x] Revenue: gross vs net not distinguished (stated); fee structure recorded (contingency 33%/40%)
+[x] Ad sections cover ALL practice areas; marked not observed — tool access
+[x] No "you are not running ads" claim; prospect separately confirmed he has not run paid ads
+[x] No profitability claim beyond the prospect's own quotes
+[x] Competitors named are specific local firms only (national/large LA firms excluded)
+[x] PageSpeed scores are real numbers (local Lighthouse, labeled as such — not pagespeed.web.dev)
+[x] DBM recorded (inferred, with quotes)
+[x] Revenue goal recorded (not stated in dollars — use 2x; case-count goals recorded)
+[x] Close rate defaulted to 15% (flagged)
+[x] Average case value recorded (wide range; conservative blended value to be assumed and flagged by Pass 2)
+[x] Call focus recorded (marketing/lead gen; AI curiosity noted but not pursued)
+[x] Primary engagement / products / lead-gen gap lines filled in machine-read format
+[x] Existing vendor engagements recorded (quote from unnamed vendor, nothing signed)
+[x] Budget constraints recorded
