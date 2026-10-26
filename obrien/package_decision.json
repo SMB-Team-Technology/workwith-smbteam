@@ -37,17 +37,17 @@
   "marketing_price_bundled": 7497,
   "marketing_price_retail": 8997,
   "marketing_savings": 1500,
-  "coaching_name": "Elite Coach Plus",
-  "coaching_price_bundled": 3200,
-  "coaching_price_retail": 3497,
-  "coaching_savings": 297,
-  "law_tier": "AI Workforce Pro – Starter",
-  "law_name": "AI Workforce Pro – Starter",
-  "law_price_bundled": 350,
+  "coaching_name": null,
+  "coaching_price_bundled": null,
+  "coaching_price_retail": null,
+  "coaching_savings": null,
+  "law_tier": null,
+  "law_name": null,
+  "law_price_bundled": null,
   "law_price_retail": null,
-  "law_seats": 1,
-  "total_bundled": 11047,
-  "total_savings": 1797,
+  "law_seats": null,
+  "total_bundled": 7497,
+  "total_savings": 1500,
   "ad_spend_conservative": 10000,
   "ad_spend_aggressive": 40000,
   "ad_spend_rationale": {
@@ -61,6 +61,7 @@
     "Contingency-fee practice with only gross revenue stated ($1,900,000) — no net/collected figure found. Using gross as fallback, but confidence downgraded: confirm actual collected revenue with sales rep before finalizing tier.",
     "Team size not stated in research notes — defaulting to 3. Review for coaching tier accuracy.",
     "Revenue $1M–$2M: Growth tier.",
-    "Revenue $1M+, team under 5: Elite Coach Plus selected (Master's Circle requires 5+ team)."
+    "Revenue $1M+, team under 5: Elite Coach Plus selected (Master's Circle requires 5+ team).",
+    "Seller override: dropped Elite Coach Plus and AI Workforce Pro – Starter per Slack request on 2026-10-26; package is Full Service Marketing — Growth only."
   ]
 }
