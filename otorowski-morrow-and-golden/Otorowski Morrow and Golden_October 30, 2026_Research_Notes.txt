@@ -1,0 +1,210 @@
+RESEARCH NOTES — Otorowski Morrow and Golden (site/directories: Otorowski & Golden, PLLC)
+Friendly name: otorowski-morrow-and-golden
+URL: https://medilaw.com (WordPress, Elementor, "relia" theme)
+Sales rep: Michael Kopp (michael.kopp@smbteam.com)
+Proposal call date: October 30, 2026 (2026-10-30T15:45:00Z; transcript: Friday follow-up at 8:45 AM PT)
+Contact: Chris Otorowski (founding attorney) — clo@medilaw.com — 2068421000
+Other call participant: Karl Brown (role not stated; "our most computer savvy guy here in the office")
+HubSpot contact ID: 2243685
+Firm addresses: 1000 2nd Ave Ste 4050, Seattle, WA 98104 (Seattle office); 298 Winslow Way West, Bainbridge Island, WA 98110 (main office, per FindLaw)
+Discovery call: October 26, 2026 (62 min, Fathom recording 196321489)
+Research run: October 27, 2026 (Pass 1)
+
+RESEARCH LIMITATIONS (READ FIRST — /audit-write must honor these)
+- TRANSCRIPT: transcript_status outcome "found", custody "machine", source "hubspot_notes". A full verbatim Fathom transcript was also read. It is ground truth; the trigger summary was used only as an overview.
+- Google web search (SERP) returned a captcha ("unusual traffic"), so Google Ads SERPs, the true local 3-pack and Local Service Ads could NOT be viewed. Local-pack checks in STEP 3 use Google Maps search result lists (a proxy — Maps rank is not identical to the 3-pack). Ads findings in STEP 6/7 are "not observed," which is NOT evidence that anyone is or is not advertising.
+- Meta Ad Library was loaded headlessly; results were thin (see STEP 8). Treat as "not observed."
+- PageSpeed: pagespeed.web.dev and its API were unavailable (API daily quota exceeded; web UI would not resolve the URL). Scores below come from a local Lighthouse run (same engine) from a datacenter network — real numbers, but not from pagespeed.web.dev.
+- Review counts: only the firm's own Google Maps listing was read directly. Competitor figures marked [confirmed via Google] were read off Google Maps result cards; anything else is UNCONFIRMED.
+
+NAME / NAP NOTE
+- The firm calls itself "Otorowski & Golden, PLLC" on its site copyright and most directories (Super Lawyers, FindLaw, Google Maps). The homepage title tag reads "Otorowski, Morrow and Golden | Bainbridge, WA". Birdeye and one Yelp listing use "Otorowski Morrow and Golden." HubSpot/trigger uses "Otorowski Morrow and Golden." Use the trigger name on the cover; do not "correct" it.
+
+===================================================================
+STEP 1 — WEBSITE RESEARCH
+===================================================================
+- Website URL confirmed live: yes (HTTP 200, served behind Cloudflare)
+- Last redesign date or estimated age: not stated on site. Footer copyright reads "2018 © Otorowski & Golden, PLLC"; homepage schema datePublished 2014-11-18; oldest blog posts in sitemap are Oct 2015. Prospect on call: site built "a long time ago" (rep asked, answer inaudible/agreed). Estimated: 2018-era theme build on a 2014 domain/site.
+- Mobile responsive: viewport meta tag present (width=device-width) and Elementor responsive breakpoints; not visually tested on a device.
+- Homepage headline: "Providing Results that Matter"
+- CTA above fold: yes — "Call us now at 206.842.1000 to schedule your free consultation" (text links to the contact page). The phone number is NOT a tap-to-call link: zero tel: links found in the homepage HTML (consistent with rep's call comment that the phone number should be hyperlinked).
+- Contact form location: not on homepage; separate Contact page (and "Contact Us" sits in the sub-header navigation rather than as a prominent top button)
+- Live chat present: no
+- Attorney bio present: yes — individual profile pages linked from homepage (site lists Christopher L. Otorowski, Michael Kolker, Craig McIvor, Kelly Ricke, Samantha Recalde)
+- Video present: no (none on homepage)
+- Blog present: yes ("News Blog"). Latest post: "5 Signs You Should Speak With a Washington Medical Malpractice Attorney" — post metadata shows published/modified 2026-10-21 but the post shows no visible date. Other posts shown: "What Is the Standard of Proof in Washington Medical Malpractice Cases?", "Washington Medical Malpractice Laws Explained: What Patients Should Know", "Medication Errors in Nursing Homes: What Families Should Know". No FAQ section found (confirmed on call: "I don't think you guys have an FAQ section").
+- Service-page breadth: homepage/services list ~20 case types (medical malpractice, birth injuries, personal injury, auto collisions, construction injuries, defective products, nursing home abuse, wrongful death, and more) — rep on call: "probably 20 different case types."
+- Geo coverage on site: footer/blog widget "Areas We Serve" lists Auburn, Bainbridge Island, Bellevue, Bellingham, Everett, Federal Way, Kent, Kitsap Peninsula, North Seattle, Olympia, Renton, Seattle, Spokane, Tacoma; plus Idaho, Oregon, Alaska, California, Colorado. Dedicated page exists for Seattle (medilaw.com/seattle/). Not confirmed whether each listed city has its own landing page.
+
+SECURITY / SEO SPAM FINDING (verified live Oct 27, 2026)
+- The homepage HTML contains injected hidden spam: an off-screen block (positioned left:-99195px) with "Best online pharmacy with fast delivery" and links to pharmacy domains (langleyrx.com, galenapharm.com), plus gambling/casino/slots links (casino, slots, Minecraft/"Juego del pico", German/French/Spanish language casino text) in the page body/footer. ~39 external links on the homepage, many unrelated to the firm.
+- Rep raised this on the call (at 00:00:27) and the prospect only said "Okay" / "All right." — the prospect did not confirm awareness.
+- Interpretation for Pass 2: this is a website hack/SEO-spam compromise that hurts trust, Google rankings and AI-search citation eligibility. Present as a finding to fix, not a certainty about cause.
+
+PAGESPEED (local Lighthouse run, Oct 27, 2026; NOT pagespeed.web.dev)
+- PageSpeed mobile score: 63 (LCP 17.8 s, TBT 90 ms)
+- PageSpeed desktop score: 84 (LCP 2.8 s, TBT 0 ms)
+
+===================================================================
+STEP 2 — GOOGLE BUSINESS PROFILE
+===================================================================
+- GBP found: yes — listed as "Otorowski & Golden PLLC", category "Lawyer"/"Abogado" (Google Maps, Spanish-language render also showed "Abogado")
+- Star rating: 1.0 [confirmed via Google]
+- Total review count: 2 [confirmed via Google]
+- Most recent review date: approx. 8 months ago (~Feb 2026) per Birdeye's mirror of the Google review feed — Elizabeth Glenn, "Great advocate for the defense!"; the other (approx. 1 year ago) — Sabrena L, "Condescending staff. Over promise and under perform." Dates are approximate and from an aggregator; the rating and count above are the Google-confirmed figures. Rep read the same "one star and only two Google reviews" off Google live on the call (00:12:41). Prospect: "I don't know" whether they have a GBP (00:12:00) and asked "How do you create a Google Business Profile?" — GBP is not being managed.
+- Primary category: Lawyer (Google shows a generic "Lawyer"; not a specific "Medical malpractice attorney" or "Personal injury attorney" category)
+- Photos active: yes, some (Maps shows a photos link) — volume not captured
+- Posts active: not observed (no owner posts seen)
+- Hours listed: Tue 8:30 AM–5 PM (weekday 8:30–5); phone shown on Google: +1 888-842-1001 (toll-free line)
+
+===================================================================
+STEP 3 — LOCAL SEARCHES (Google Maps result lists — proxy for local 3-pack; SERP blocked)
+===================================================================
+All counts below read off Google Maps result cards, Oct 27, 2026 [confirmed via Google]. Firm = Otorowski & Golden PLLC. National firms (Morgan & Morgan, Boohoff) appear in results but are excluded from any competitor claims.
+
+Practice Area 1: Medical malpractice
+- Search 1 "medical malpractice lawyer Seattle WA": firm does not appear in the top 12 results — top results: Moseley Collins Law 4.9 (2,048 reviews), Menzer Law Group 4.8 (count not readable on card), Washington Injury Law 4.9 (275 reviews)  [all confirmed via Google except Menzer count — see STEP 4]
+- Search 2 "medical malpractice attorney Seattle": firm does not appear in the top 12 — Moseley Collins Law 4.9 (2,048), Menzer Law Group 4.8 (count not readable), Herrmann Law Group 5.0 (88) [confirmed via Google]
+- Search 3 "birth injury lawyer Seattle WA": firm does not appear in the top 12 — Moseley Collins Law 4.9 (2,048), Davis Law Group 4.9 (733), Dubin Law Group 4.7 (432) [confirmed via Google]
+
+Practice Area 2: Personal injury (secondary — trucking, auto, products/medical device, dog bite per prospect)
+- Search 1 "personal injury lawyer Seattle WA": firm does not appear in the top 10 — Davis Law Group 4.9 (733), Seattle Injury Law 4.8 (318), Brumley Law Firm 4.9 (830) [confirmed via Google]
+- Search 2 "truck accident lawyer Seattle WA": firm does not appear in the top 10 — Khan Injury Law 4.9 (380), Davis Law Group 4.9 (733), Seattle Injury Law 4.8 (318) [confirmed via Google]
+- Search 3 "product liability lawyer Seattle WA": firm does not appear in the top 10 — Davis Law Group 4.9 (733), Moseley Collins Law 4.9 (2,048), Dubin Law Group 4.7 (432) [confirmed via Google]
+
+Note: results are personalized by the headless session's location and are a snapshot. The firm is absent from every list; with 1.0 / 2 reviews that is consistent with the rep's observation on the call ("largely because you guys don't have a great deal of reviews").
+Note on Davis Law Group: prospect said on the call that Davis Law Group does not handle med-mal itself ("They simply get the client and they refer it over to somebody") — it still captures med-mal search visibility. It is a legitimate named local competitor for PI and for visibility, but do not say it competes for the firm's med-mal cases.
+
+===================================================================
+STEP 4 — COMPETITOR REVIEW COUNTS
+===================================================================
+Prospect Google profile: 1.0 stars, 2 reviews [confirmed via Google]. Every competitor below has more reviews than the prospect.
+- Competitor 1: Moseley Collins Law (Seattle, 701 5th Ave) — reviews: 2,048 [confirmed via Google] — rating: 4.9 [confirmed via Google]
+- Competitor 2: Menzer Law Group (Seattle, 2800 1st Ave) — reviews: not readable on the Google card; aggregators cite "48+" Google reviews [UNCONFIRMED — sourced from web search snippet / TrustAnalytica, not independently confirmed via Google] — rating: 4.8 [confirmed via Google]
+- Competitor 3: Dubin Law Group - Personal Injury Attorneys (Seattle, 115 N 85th St) — reviews: 432 [confirmed via Google] — rating: 4.7 [confirmed via Google]
+- Additional (PI/visibility): Davis Law Group — reviews 733, rating 4.9 [confirmed via Google]; named on call by rep and prospect.
+- Note: Morgan & Morgan (1,121 reviews) appears in results but is national and must NOT be cited as a competitor.
+
+===================================================================
+STEP 5 — DIRECTORY LISTINGS
+===================================================================
+- Super Lawyers: listed — "Otorowski & Golden, PLLC", 1000 2nd Ave Ste 4050; 3 attorneys on Super Lawyers/Rising Stars lists (Craig L. McIvor, Christopher L. Otorowski, Kelly A. Ricke); phone 206-842-1000. Prospect on call: "I think it's been through super lawyers, and there's some advertising that goes along with that."
+- FindLaw: listed — "Otorowski & Golden, PLLC"; Seattle + Bainbridge Island (298 Winslow Way West, main office); phone 206-258-7567 (differs from site); practice areas Accidents & Injuries, Birth Injury, Brain Injury, Medical Malpractice, Wrongful Death, Personal Injury.
+- Yelp: two listings found — "Otorowski & Golden" and "Otorowski Morrow & Golden" (duplicate); Yelp pages returned 403 so rating/review counts could not be read.
+- Birdeye: listed as "Otorowski Morrow and Golden, PLLC", 1.0 stars, 2 reviews [UNCONFIRMED — sourced from Birdeye, not independently confirmed via Google (it mirrors the same two Google reviews)]
+- Avvo: could not be checked (HTTP 403 from Avvo). Justia: not checked (blocked/unreadable).
+- Other: Best Lawyers, Clutch, personalinjurylawyersearch.org, lawyerpages.law listings exist.
+- NAP INCONSISTENCIES: (1) Phone: website 206.842.1000 (toll-free 888.842.1001); Google Maps shows 888-842-1001; FindLaw shows 206-258-7567; Super Lawyers 206-842-1000. (2) Firm name: "Otorowski & Golden" vs "Otorowski Morrow and Golden" / "Otorowski, Morrow and Golden". (3) Duplicate Yelp listings. (4) Site title tag says "Bainbridge, WA" while Google profile lists the Seattle address.
+- Geo-targeting landing pages: Seattle page present (medilaw.com/seattle/), plus Bainbridge office page; "Areas We Serve" lists 14 cities but dedicated pages for each were not verified.
+
+===================================================================
+STEP 6 — GOOGLE ADS
+===================================================================
+Google SERP was captcha-blocked; no ad data could be collected. All entries are "not observed."
+
+Practice Area 1: Medical malpractice
+- Firm ads observed: not observed (SERP unavailable). Prospect on call: "I think we do have some paid ads. It's like through super lawyers" — uncertain; not confirmed as Google Ads.
+- Named local competitors running ads: not observed. On the call the rep's live screen showed a PPC result for a "Hospital Malpractice Lawyers" ad (advertiser not named in transcript) and AI-overview citations of Menzer Group, Moseley Collins and others — rep's screenshare, not independently verified here.
+
+Practice Area 2: Personal injury (trucking / products / auto)
+- Firm ads observed: not observed (SERP unavailable)
+- Named local competitors running ads: not observed
+
+Framing for Pass 2: the firm "does not appear to be running" Google search ads in what was observable, but this could not be checked live; ad copy should treat it as an opportunity gap and not state the firm is not advertising.
+
+===================================================================
+STEP 7 — LOCAL SERVICE ADS
+===================================================================
+- Firm appears in LSA: not observed (SERP unavailable). Rep on call: LSAs were not showing for his live search because "I have AI search on."
+- Google Screened: not observed
+- LSA review count: not applicable / not observed
+- Named local competitors in LSA: not observed
+
+===================================================================
+STEP 8 — META ADS
+===================================================================
+Meta Ad Library loaded headlessly (active ads, US), keyword searches:
+- Firm has active ads: not observed — keyword "Otorowski" returned no ads results.
+- Named local competitor 1: Moseley Collins Law — Ad Library keyword search "Moseley Collins" returned approximately 1 result (keyword match); format, count and duration not captured. Not verified as Meta advertising by the firm.
+- Named local competitor 2: Menzer Law Group — keyword search "Menzer Law" returned no results.
+Confidence is low; treat as "not observed." Prospect on call (rep suggestion): Meta/YouTube retargeting for brand awareness; none run historically per what the prospect stated (see STEP 9).
+
+===================================================================
+STEP 9 — TRANSCRIPT EXTRACTION
+===================================================================
+Transcript source: full verbatim Fathom transcript (summary used only as overview)
+Call date: October 26, 2026; participants: Michael Kopp [SMB Team]; Chris Otorowski [Prospect]; Karl Brown (untagged — firm-side, role not stated).
+Corrections vs. the trigger AI summary: (a) "~800 inquiries → 10-15 accepted" is slightly off — Chris said ~800 cases/yr are REJECTED and the firm takes 10-15 ("roughly 2%"). (b) "Request 1–2 signed cases/mo" in the summary's action items is the rep's scoping example ("Let's say it's one additional case or two"), NOT a prospect goal. (c) The summary's "broad marketing attracts low-intent leads" framing is the rep's diagnosis (he said intent is the reason for the 2%), not a prospect statement; the prospect only said most calls are "junk." (d) "I think we've got additional capacity" is the prospect's.
+
+- Practice areas confirmed: Medical malpractice (primary) — surgery cases, delayed diagnosis of cancer, failure to diagnose (e.g., ER heart attack), birth injury (~1–2 cases/yr), wrongful death; secondary/personal injury: tractor-trailer, auto accident, medical device/product liability, dog bites ("we actually took a case on a while back where it was kind of a three pit bull mauling"). Not accepted: dental malpractice, black mold, cases with minor damages. Prospect: "I would like to actually be able to dilute that a little bit in terms of having good personal injury cases" (00:16:20).
+- Current lead sources: "Some referrals. Not many, but some referrals and some word of mouth. And the rest are the result of whatever our advertising SEO is, I guess." (00:13:09–00:13:17). Intake volume: "We get five calls every day. Every day, a malpractice call. And most of them are junk." (00:13:29–00:13:37). [Note: five calls/day (~1,300/yr) is higher than the stated ~800 rejected/yr; use the 800 figure.]
+- Ads ever run: unclear/partial. "I think we do have some paid ads. It's like through super lawyers." and "I think we pay some money for ads. There." (00:03:35–00:04:01). No platform, budget or result stated. No Google Ads/Meta/LSA history stated. Prospect said they have "an SEO" but could not describe it (see vendors below).
+- Team size: not stated as a number. Roles named: Chris Otorowski (lead attorney, age 72, "doing this for 40-something years"); Karl Brown (computer-savvy firm member, role not stated); an intake coordinator who "fields every intake call" (male); other attorneys who review intake summaries ("circulated to me and other attorneys"); a general surgeon who reviews cases as an outside expert; a "new office manager" (new to this); the prior office manager "retired from us. He just does our books now." Website lists 5 attorneys/staff (Otorowski, Kolker, McIvor, Ricke, Recalde) — site-sourced, not from the call. Prospect: "I think we've got additional capacity right now."
+- Annual revenue (gross / case value): not stated
+- Annual revenue (net / take-home / collected): not distinguished from gross (no revenue stated at all)
+- Fee structure: not stated by the prospect. (Rep said "firms like yourself that works on contingency"; prospect did not confirm or correct. Prospect said "These cases are so damn expensive to pursue" — implies the firm fronts costs.)
+- Revenue goal: not stated, use 2x current revenue. Prospect did not give a case-count goal ("Not really" when asked for a capacity number at 00:23:51).
+- Average case value: not stated. Prospect on case value: "the most valuable cases from a malpractice standpoint are birth injury cases or cases involving younger [people]… 50 and younger" (00:21:45–00:22:00); birth injury cases are "significant, both in terms of work and expense, but also potential outcome is big." Average case duration: "Three years." Active load: "maybe 105 cases altogether on our list… maybe 20 cases in suit right now."
+- Current close rate: "It's roughly 2%." (00:14:43). Firm takes "Um, 10 to 15" cases/yr [speaker tag garbled in transcript — answer read as Chris's] against "800 cases a year are rejected… true for the last 20 years." Use 2% (not the 15% default).
+- Number of locations: 2 — Bainbridge Island ("kind of our main office") and Seattle ("a real office and a penthouse at 1000 2nd Avenue").
+- Spanish campaign needed: no (not mentioned)
+- Dominant buying motive: not clearly stated — INFERENCE from context (not a direct quote): a firm that attracts fewer junk inquiries and more of the high-value cases while staying visible as search shifts to AI, and a less manual practice. Closest prospect quotes: "what seems to be the drumbeat around is that SEO is no longer any good. And if you're going to get noticed, if you're going to get calls, you need to… come up when somebody uses ChatGPT." (00:05:00–00:05:16) and "I am sure that there are higher quality cases that we would like to attract." (00:16:05). Category: (1) firm that runs itself/less time sifting junk, with a visibility-fear overlay. Pass 2 should present this as an inference.
+- Any profitability claims made by prospect: none stated
+- Any claims about case types or practice areas: "we don't have a volume personal injury practice." (00:13:57); "It seems like most of our cases involve surgery of some kind." (00:18:34); "dental cases, we don't take any dental malpractice. We get calls for whatever reason that involve black mold. We don't take any of those." (00:17:56–00:18:06); "I basically can reject a case within about… 60 seconds" (00:15:52); "the damages amount is almost an immediate rule out" (00:17:24).
+- Stated call focus / product interest: The call was booked off a ChatGPT-visibility ad ("if nobody sees you in chat GPT, you're invisible" — 00:26:30; "I was solicited by your people"). Discussion covered AI/ChatGPT visibility, website/FAQ changes, paid ads (Google LSA/PPC, Meta, YouTube retargeting), reviews, and — as the prospect's own stated need — direct dictation into case-management software ("the idea of being able to enable dictation within the software… I don't want to have to transfer anything. I just want to dictate it." 00:50:00–00:51:12), which led to an AI Workforce Pro demo (rep: "In no means meant to be a replacement for case management software"). Prospect: "Oh, I'd definitely be interested in doing that" (the Growth Summit demo, 00:57:52). Rep also described fractional COO/CFO/CTO and coaching in general terms; nothing was priced and the prospect did not ask about them. NOT a standard marketing-only call.
+- Primary engagement: mixed
+- Products discussed on call: Full Service Marketing, AI Workforce Pro
+- Lead-gen gap stated: yes — "I am sure that there are higher quality cases that we would like to attract." and "what is it that your company does in terms of getting us known as an authority, for example, in medical malpractice in Seattle?"
+- Existing marketing/SEO/ad vendor engagements: unclear. "we have an SEO" and "I think it's been through super lawyers, and there's some advertising that goes along with that." The prospect said "I think I've got some homework to figure out what the hell we've got going on already… our office manager retired from us… some of this information is not visible to me." No contract, vendor name or dates stated. Rep: "whomever is, or was doing your SEO."
+- Budget constraints stated: none stated. No budget set: asked "have you guys earmarked any budget?" — "No." (00:26:10). Pricing question: "So what, how is your pricing structure?" (00:39:37); rep: pricing depends on scoping; ad spend goes directly to platforms ("We don't co-mingle funds"); coaching/fractional services are monthly fees, "None of it's hourly." Objection raised by rep (not prospect): cases take three years to settle; prospect: "Well, we're kind of stuck with that. It's the way life is." Prospect needs "probably a couple weeks" to gather marketing/spend info (00:42:21).
+
+Key prospect quotes (verbatim; timestamps from the 62-min call):
+1. (00:05:00) AI visibility / urgency: "what seems to be the drumbeat around is that SEO is no longer any good. And if you're going to get noticed, if you're going to get calls, you need to… come up when somebody uses ChatGPT."
+2. (00:13:29) Intake: "We get five calls every day. Every day, a malpractice call. And most of them are junk."
+3. (00:13:42) Intake rejection: "we reject, on the average, and this is true for the last 20 years, 800 cases a year are rejected. And we only take a handful."
+4. (00:14:43) Close rate: "It's roughly 2%."
+5. (00:15:35) Intake process: "We have an intake coordinator who fields every intake call. He listens to the client's story… types it up, puts it in FileMaker Pro, and then it's circulated to me and other attorneys."
+6. (00:15:52) Intake speed: "I basically can reject a case within about… 60 seconds."
+7. (00:16:05) Goal / lead quality: "I am sure that there are higher quality cases that we would like to attract."
+8. (00:16:20) Goal / diversification: "this is a high-risk legal specialty. And I would like to actually be able to dilute that a little bit in terms of having good personal injury cases."
+9. (00:23:54) Capacity: "I think we've got additional capacity right now."
+10. (00:03:00) Tech: "FileMaker Pro, which I wrote the program for about 20 years ago, and it still works pretty well for… names, addresses, intake, statutes of limitation, all that kind of stuff."
+11. (00:50:00) AI Workforce Pro need: "the idea of being able to enable dictation within the software… I don't want to have to transfer anything. I just want to dictate it."
+12. (00:41:22) Existing marketing / budget: "I think I've got some homework to figure out what the hell we've got going on already."
+13. (00:26:10) Budget: asked if any budget is earmarked — "No."
+14. (00:12:38) GBP: "How do you create a Google Business Profile?"
+
+===================================================================
+STEP 10 — COMPETITIVE URGENCY SCORE
+===================================================================
+Score: 8
+
+Reasons (named local competitors):
+- Moseley Collins Law — 4.9 stars / 2,048 Google reviews [confirmed via Google]; appears first in medical malpractice and birth-injury Maps results and is cited by name in AI/search overviews on the rep's live screen. Roughly 1,000x the prospect's 2 reviews.
+- Menzer Law Group — 4.8 stars [confirmed via Google]; med-mal/birth-injury/wrongful-death focused (the firm's core niche), appears in both med-mal result lists and was shown in AI-overview results on the rep's screen; review count UNCONFIRMED (aggregators ~48+).
+- Dubin Law Group — 4.7 stars / 432 Google reviews [confirmed via Google]; appears in birth-injury and product-liability results where the prospect wants to grow.
+- Davis Law Group — 4.9 stars / 733 reviews [confirmed via Google]; top of PI results, and (per prospect) captures med-mal searches and refers them out.
+Firm profile: 1.0 star / 2 reviews, absent from all six Maps lists run, no FAQ section, no tap-to-call phone, website carries injected pharmacy/gambling spam, mobile PageSpeed 63 (LCP 17.8 s). Ad activity could not be observed.
+
+Dynamic sentence (7–10): "A score of 8 means competitors are actively dominating multiple channels in your market and the gap is getting wider every month you wait. This is not a future problem — it is a right now problem."
+
+===================================================================
+PASS 2 — VERIFICATION CHECKLIST
+===================================================================
+[x] Every number in the notes matches actually observed data (PageSpeed from local Lighthouse, disclosed)
+[x] Every competitor review count verified live — prospect (2) has fewer reviews than every competitor cited
+[x] Every review count and star rating carries a verification-method tag
+[x] Annual revenue split recorded: not stated; fee structure recorded as not stated
+[x] Every ad section covers all practice areas (all "not observed" due to SERP block)
+[x] No section says "you are not running ads"
+[x] No profitability or business claim appears unless it came from the transcript
+[x] No competitor reference uses generic labels — only named local firms (Morgan & Morgan excluded as national)
+[x] PageSpeed scores are real numbers (63 mobile / 84 desktop, Lighthouse)
+[x] DBM recorded — flagged as inference with supporting quotes
+[x] Revenue goal flagged as not stated (use 2x)
+[x] Close rate recorded (stated: roughly 2%)
+[x] Average case value flagged as not stated; practice-area context recorded
+[x] Stated call focus recorded (ChatGPT visibility → mixed marketing + AI/dictation)
+[x] Primary engagement / Products discussed / Lead-gen gap filled in the exact format
+[x] Existing vendor engagements recorded (unclear; no contract details)
+[x] Budget constraints recorded (none stated; no budget earmarked)
