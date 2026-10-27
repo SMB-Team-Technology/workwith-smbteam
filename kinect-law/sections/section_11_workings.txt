@@ -1,0 +1,77 @@
+SECTION 11 WORKINGS — Kinect Law (October 27, 2026) — INTERNAL ONLY, never client-facing
+
+=====================================================================
+PRICE LOOKUP (copied from package_decision.json, verified against Scoping_and_Ad_Spend_Guide.md Step 5D, Growth Tier table: Web + SEO Growth stand-alone $5,897 / bundled $4,897)
+=====================================================================
+- Marketing package selected: Web + SEO — Growth
+  - Bundled price (from table): $4,897/mo (applies only when paired with coaching; NOT used — coaching dropped by seller)
+  - Stand-alone price (from table): $5,897/mo  <-- price quoted in report
+  - Savings (stand-alone minus bundled): $0/mo (no bundle in effect)
+- Non-marketing package selected: none (Elite Coach Plus dropped per seller Slack request 2026-10-27, "drop the coaching")
+- Legal AI Workforce (LAW) package selected: none
+- AI Avatar / Video Growth add-on selected: none
+- Total monthly investment: $5,897/mo
+- Total savings: $0/mo (savings callout omitted from report)
+
+=====================================================================
+OVERRIDE / DEPARTURE LOG
+=====================================================================
+- package_decision.json confidence = "medium": revenue not stated on call; revenue_effective $1,980,500 is the midpoint of HubSpot band "$961K - $3M"; team size defaulted to 3. Tier Growth is consistent with the band. No dollar revenue appears in the client report.
+- Seller override (locked in proposal_review.json, status "locked", Slack thread 1791831777.302219): Full Service Marketing Growth -> Web + SEO Growth, then coaching dropped. Final: Web + SEO Growth stand-alone at $5,897/mo.
+- Rulebook note: Web + SEO sub-packages are meant to be paired with a coaching package. Seller choice applied; this is an intentional departure for sales to be aware of.
+- Call-purpose override check: call was marketing/SEO/AEO discovery (GBP cleanup, location pages, Q&A/AEO content). Marketing recommendation is consistent with the call. No override triggered.
+- Existing-vendor override: none stated on call. Not triggered.
+- Budget-reality override: transcript says ~$5-6k/mo marketing budget is a "major hurdle" / "big nut", partners must align first. Web + SEO Growth at $5,897/mo sits at the top of the stated range and has no ad spend. Revenue-table tier (Full Service Growth, $7,497 bundled) would exceed the stated range; the locked seller selection already addresses the budget gap. Documented here for sales.
+- Effective-revenue override: no net/gross split stated. Not triggered.
+- 35% cap check: $5,897/mo vs. revenue band midpoint ($1,980,500/12 = ~$165K/mo) -> ~3.6%. Well under cap. Even at band floor ($961K/12 = ~$80K/mo) -> ~7.4%.
+- Block 4 (ad spend / ROI) OMITTED from section_11 and from executive summary: Web + SEO has no paid ads; no ad spend or ROI projection is part of this recommendation. Ad spend rationale/ROI not computed.
+- Savings callout OMITTED (savings = $0).
+- Staircase: Stage 3 (referral-only, no scalable lead gen system; border -> lower stage). Firm has four partners so "Solo Practitioner" is the nearest stage label, not literal.
+
+=====================================================================
+ESCALATION FLAGS (internal only)
+=====================================================================
+- Review counts unconfirmed — verify live before the call. All competitor/firm review counts and ratings in the research notes are tagged UNCONFIRMED; no specific count or rating is printed in the client report (qualitative framing only).
+- PageSpeed scores printed in the report (mobile 61 / desktop 94, mobile LCP 6.7s) come from a LOCAL Lighthouse run on 2026-10-12, not pagespeed.web.dev (API returned 429 quota exceeded on 2026-10-12 and again at write time). Re-run on pagespeed.web.dev before the call; scores can differ by a few points.
+- Google 3-pack, Google Ads, LSA and Meta Ads data were NOT observable in Pass 1. Report states these as "not observed / unconfirmed". Urgency score 5 is provisional/low confidence; re-score after a browser-capable pass.
+- Intake and Team ratings (both amber) are provisional: intake process and team structure were not detailed in the call summary. Profit rated red on stated lack of formal budget/projections and tight cash flow from slow-paying clients.
+- Transcript is a Fathom AI summary (machine, not verbatim): no quote boxes used anywhere in the report; owner's points are paraphrased.
+- Name collision: "Whitestone Legal Group" (CA debt settlement) is a different entity; none of its data used.
+- Roadmap Phase 3 mentions Legal AI Workforce (AI Workforce Pro) as a future option: if it is carried into a live proposal, confirm with sales rep that LAW delivery has launched and capacity is available.
+- Revenue not stated on call and below-$300K scoping trigger cannot be evaluated from notes; confirm revenue with prospect. Marketing MRR $5,897 < $10K trigger; no ad spend; no PI/Criminal/Family practice area.
+- Open follow-ups from call: send recap email with SMB Team book; request intro to "Ron"; partner follow-up Tuesday Oct 27 2:00 PM ET.
+
+=====================================================================
+DBM (Block 1)
+=====================================================================
+Inferred (not stated by owner): predictable, stable revenue from high-value B2B clients so the partnership can stop depending on referrals and ease tight cash flow.
+Supporting transcript line (AI summary): "The firm needs a predictable pipeline of high-value B2B clients (e.g., litigation, startups) to stabilize revenue."
+Block 1 formula: "We help established intellectual property firms get a predictable pipeline of high-value B2B clients so they can stabilize revenue and stop depending on referrals."
+
+=====================================================================
+QUICK WIN OPPORTUNITIES (8)
+=====================================================================
+1. Lead Gen — Fix the Google Business Profile (name, categories, photos). Why: GBP shows outdated "Albert Chan" name, missing service categories, no reviews/photos (call). Competitor: none named. Opportunity: first thing local search sees. Quick Win.
+2. Lead Gen — Start collecting Google reviews. Why: no reviews on GBP (call). Competitor: Sisun Law (visible directory review presence; count UNCONFIRMED, not printed). Quick Win.
+3. Lead Gen — Make the firm name and suite consistent everywhere. Why: Albert Chan / Law Offices of Albert Wai-Kit Chan PLLC / Kinect Law; Suite 604 vs 408 (research). Competitor: none. Quick Win.
+4. Lead Gen — Add "Areas We Serve" pages (Queens, Manhattan, Brooklyn, Nassau, Westchester). Why: no location content; limits visibility to Whitestone (call). Competitor: De Rose & Surico, Pollak & Slepian (appear in Queens trademark directory results). Long-Term Play.
+5. Lead Gen — Publish Q&A / AEO content for IP questions (AI Overviews, ChatGPT-style answers). Why: call discussed long-term SEO/AEO; no blog observed. Competitor: none verified. Long-Term Play.
+6. Intake — Clear consultation call to action + contact path above the fold, and fix mobile load time (61/100, LCP 6.7s). Why: "Learn More" CTA only; contact in footer. Competitor: none. Quick Win.
+7. Team — Name one partner as owner of growth/client development. Why: no marketing owner or budget; decisions need partner alignment (call). Competitor: none. Long-Term Play.
+8. Profit — Set a simple marketing budget and a target matters/revenue per matter. Why: no formal budget or projections (call). Competitor: none. Quick Win.
+
+=====================================================================
+WHAT YOU TOLD US (Block 5) — sourcing
+=====================================================================
+Source: Fathom AI summary of discovery call (HubSpot internal notes). Summary lines, not verbatim speech.
+Row 1 — "Lead generation is inconsistent and relies on word-of-mouth and referrals; the firm needs a predictable pipeline of high-value B2B clients."
+  Source line: "Kinect Law's lead generation is inconsistent, relying on word-of-mouth. The firm needs a predictable pipeline of high-value B2B clients."
+  Supports Block 2: Web + SEO Growth (local SEO, content, GBP, review generation to build search visibility).
+Row 2 — "Google Business Profile is out of date: old name, missing service categories, no reviews or photos."
+  Source line: GBP gaps confirmed on call: outdated name ("Albert Chan"), missing service categories, no reviews, no photos.
+  Supports Block 2: GBP cleanup/optimization and done-for-you review generation.
+Row 3 — "Visibility is limited to Whitestone because the website has no location-specific content; long-term SEO/AEO strategy is the focus."
+  Source line: website gap — no location-specific content, "limiting visibility to Whitestone"; call focus: long-term SEO/AEO strategy with location-specific "Areas We Serve" pages and Q&A/AEO content.
+  Supports Block 2: location/practice-area content and AEO-structured content in the 15,000-word launch allotment.
+Next step line: kickoff call with your Onboarding team.
+Not used: budget statement (~$5-6k/mo is a "big nut"; partners to align) — kept out of Block 5 to avoid partner-alignment framing; handled via package selection above. Summer-intern/family item and named staff excluded (never include).
