@@ -9,9 +9,9 @@
   "team_size_stated": 10,
   "team_size_effective": 10,
   "practice_areas_detected": [
-    "canadian immigration law — business",
+    "canadian immigration law \u2014 business",
     "corporate immigration matters (the firm's current core) and individual permanent res",
-    "business/corporate canadian immigration (work permits, lmia, global talent stream, ict/cusma — practice detail from directory text; the prospect says \"we support primarily businesses with their canadian immigration matters\" [0:03:00])",
+    "business/corporate canadian immigration (work permits, lmia, global talent stream, ict/cusma \u2014 practice detail from directory text; the prospect says \"we support primarily businesses with their canadian immigration matters\" [0:03:00])",
     "individual permanent residency (\"individuals seeking permanent residency\" [0:03:19])",
     "business/corporate canadian immigration",
     "individual permanent residency"
@@ -25,31 +25,32 @@
     ],
     "lead_gen_gap": true
   },
-  "marketing_tier": "Starter",
-  "marketing_name": "Full Service Marketing — Starter",
-  "marketing_price_bundled": 4997,
-  "marketing_price_retail": 5697,
-  "marketing_savings": 700,
-  "coaching_name": "Elite Coach Plus",
-  "coaching_price_bundled": 3200,
-  "coaching_price_retail": 3497,
-  "coaching_savings": 297,
+  "marketing_tier": "Essentials",
+  "marketing_name": "Paid Ads Essentials",
+  "marketing_price_bundled": 1997,
+  "marketing_price_retail": null,
+  "marketing_savings": 0,
+  "coaching_name": null,
+  "coaching_price_bundled": null,
+  "coaching_price_retail": null,
+  "coaching_savings": null,
   "law_tier": null,
   "law_name": null,
   "law_price_bundled": null,
   "law_price_retail": null,
   "law_seats": null,
-  "total_bundled": 8197,
-  "total_savings": 997,
+  "total_bundled": 1997,
+  "total_savings": 0,
   "ad_spend_conservative": 3500,
-  "ad_spend_aggressive": 14000,
+  "ad_spend_aggressive": 7500,
   "ad_spend_rationale": {
     "conservative_basis": "corporate immigration matters (the firm's current core) and individual permanent res",
-    "aggressive_basis": "scaled 4x off the conservative channel-minimum floor"
+    "aggressive_basis": "capped at the Paid Ads Essentials $7,500 ad spend cap (uncapped 4x floor would be $14,000)"
   },
   "selection_notes": [
-    "Revenue not in research notes — sourced from HubSpot (hubspot_annual_law_firm_revenue): \"$180K - $960K\" → $570,000",
-    "Revenue under $750K but multiple practice areas detected: Essentials hidden (requires single practice area) — Starter tier.",
-    "Revenue $400K–$1M: Elite Coach Plus selected."
+    "Revenue not in research notes \u2014 sourced from HubSpot (hubspot_annual_law_firm_revenue): \"$180K - $960K\" \u2192 $570,000",
+    "Revenue under $750K but multiple practice areas detected: Essentials hidden (requires single practice area) \u2014 Starter tier.",
+    "Revenue $400K\u2013$1M: Elite Coach Plus selected.",
+    "Seller override: replaced Full Service Marketing \u2014 Starter with Paid Ads Essentials ($1,997/mo bundled; no stand-alone price; $7,500 ad cap) and dropped Elite Coach Plus per Slack request on 2026-10-27 (seller states firm revenue is under $750K). Aggressive ad spend lowered from $14,000 to the $7,500 cap; conservative $3,500 unchanged. Note: total MRR ($1,997) is below the $2,497 minimum; ads-only normally pairs with coaching; Essentials normally requires a single practice area (firm lists corporate + individual immigration)."
   ]
 }
