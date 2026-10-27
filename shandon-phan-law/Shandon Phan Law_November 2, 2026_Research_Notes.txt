@@ -1,0 +1,258 @@
+RESEARCH NOTES — Shandon Phan Law (Shandon Phan Law Firm, PLLC; new DBA in progress: "Heartland Law" / "Heartland Legacy Law")
+Friendly name: shandon-phan-law
+Legal/site name: Shandon Phan Law Firm, PLLC (public web brand now "Shandon Phan"; site/domain heartlandlawtx.com; planned DBA "Heartland Legacy Law")
+URL: https://www.shandonphanlaw.com (live; redirects to https://heartlandlawtx.com/; WordPress + Elementor, Astra theme)
+Sales rep: Michael Kopp (michael.kopp@smbteam.com)
+Proposal call date: November 2, 2026 (2026-11-02T20:30:00Z = 2:30 PM CT)
+Contact: Shandon Phan (owner/solo attorney) — sphan@shandonphanlaw.com — 281-407-5622. Second contact on calls: Henry (MBA student, business-intelligence/tech lead; the trigger for the sibling file "shandon-phan" lists Henry Nguyen). HubSpot contact ID: 8010901
+Discovery call: October 26, 2026 (Fathom recording 196505433, 57 min). A prior call with Henry took place Friday Oct 23 (referenced, not recorded here).
+Research run: October 27, 2026 (Pass 1)
+
+RESEARCH LIMITATIONS (READ FIRST — /audit-write must honor these)
+- TRANSCRIPT: transcript_status = outcome "found", custody "machine", source "hubspot_notes". A full verbatim Fathom transcript was provided and read in full; it is the ground truth. The trigger's transcript field is only an AI summary. Where they differ, the full transcript wins (see STEP 9).
+- No interactive browser in this environment. The firm's own website was fetched live (homepage, /faqs/, /attend-workshops/, blog feed). Google Search returned only a JavaScript redirect shell; Facebook Ad Library, Justia, Yelp and Avvo returned HTTP 403. Therefore the Google Business Profile, local 3-pack, Google Ads SERPs, Local Service Ads and Meta Ad Library were NOT observed and are recorded "not observed". Nothing was fabricated; the firm is real and live.
+- PAGESPEED: NOT OBTAINED. The PageSpeed Insights API returned HTTP 429 (daily quota exceeded), and local Lighthouse 12.8.2 runs (mobile and desktop, default and browser-style user agents) all failed with ERRORED_DOCUMENT_REQUEST / HTTP 403 because the site blocks headless-Chrome requests. No estimate is given. Run pagespeed.web.dev manually before printing any speed score. /audit-write must not print a PageSpeed number.
+- All review counts and ratings below that did not come from the prospect's own Google listing are tagged UNCONFIRMED. None were read off Google. /audit-write must NOT print any UNCONFIRMED figure as a specific number.
+- The "~42 reviews / 5 stars" figure for the firm's Google profile is the REP's reading during the call (from the SMB Team AI visibility report), not read off Google here. Tagged UNCONFIRMED.
+- A third-party Yelp snippet in search results includes a critical comment about the firm. It is unverified, third-party, and must not be quoted or alluded to in the client report.
+- PRIOR REPORT FEEDBACK: the prospect said the earlier AI visibility report was "not reflective of my firm" because it compared him to national firms (see STEP 9). Any competitor comparison in the report must use specific LOCAL Houston firms of comparable size/niche (estate planning for immigrant and middle-class families), never national brands (Morgan & Morgan, Cochran, Jacoby & Meyers, etc.).
+- Call focus is MIXED: AI automation (AI Workforce Pro / Fractional CTO) AND lead generation (restart marketing). See STEP 9.
+
+=====================================================================
+STEP 1 — WEBSITE RESEARCH
+=====================================================================
+- Website URL confirmed live: yes (https://www.shandonphanlaw.com/ -> 200 at https://heartlandlawtx.com/). The transcript refers to "the same domain, shandonphanlaw.com" [0:24:10]; the rep saw "heartlandlawtexas.com" [0:25:33]. The live site is actually heartlandlawtx.com, with the shandonphanlaw.com domain redirecting to it and still used for email. The AI visibility report must be rerun against the live domain (heartlandlawtx.com) as well as shandonphanlaw.com.
+- Last redesign date or estimated age: brand-new. Prospect: "We launched our new website last week." [0:24:00] (call of Oct 26, so roughly Oct 19–23, 2026). Old site was "down for the whole year" [0:28:18]. Content still being finalized: "We still need to spend the next couple of weeks to finalize some content aspect of it." [0:24:18] and "We also haven't worked on the meta tags, you know, all the tags, SEO optimizations." [0:27:15]
+- Mobile responsive: yes — viewport meta tag present; Elementor responsive build (not tested on a physical device).
+- Homepage headline: "Protecting Everyone You Love and Everything You Own, Through Thoughtful Planning" with sub-line "Estate Planning · Elder Law · Family Asset Protection. Serving Houston, Katy, Sugar Land and Texas families everywhere."
+- CTA above fold: yes — "GET STARTED TODAY" button plus "CALL (281) 407-5622" in header; "SEE HOW IT WORKS" second button.
+- Contact form location: homepage has a "1:1 Consultation / Get Answers to Your Questions" form (name, phone, email, practice area, preferred language English / Tiếng Việt, message) lower on the page; a "Contact" page and "Book a Consultation" button also exist. Not above fold.
+- Live chat present: yes — a custom chatbot plugin ("shandon-chatbot-final3", chat.css / chat.js) is loaded on the homepage. Behavior not tested.
+- Attorney bio present: yes — /about-us/shandon-phan/ ("Meet Shandon Phan"). Homepage bio: founded the firm; formerly led communications and civic engagement for BPSOS (national nonprofit) and represented Gulf Coast families and businesses in BP oil spill litigation; hosts "Liberty & the Law" weekly on Saigon Radio 900AM.
+- Video present: not observed (no <video> or YouTube/Vimeo embeds in homepage source).
+- Blog present: yes — "Our Latest Blog" on the homepage. Most recent posts in the WordPress feed are dated Aug 22, 2025 ("What Are the Pros and Cons of Sole Proprietorships, LLCs and Corporations?", "How To Prepare Your Small Business For A Profitable Sale?", "Outside General Counsel for Small Businesses"; three posts the same morning, i.e. migrated/bulk-published). Also an older "Five 'Fast and Furious' Estate Planning Lessons from Paul Walker's Estate". Nothing newer than Aug 22, 2025.
+- FAQ: YES, already live. Homepage FAQ block plus a dedicated /faqs/ page (in nav and footer), with FAQPage schema (JSON-LD) on the homepage. NOTE: this conflicts with the call, where the rep recommended adding an FAQ section [0:29:26] and the trigger action items list "Add estate planning FAQ section." The rep appears to have viewed the older/staging content. Recommendation framing for the report: the FAQ exists and has schema; the next step is to expand it estate-planning-specific and verify indexing, not to "add" it.
+- Placeholder text left on the live site: the homepage FAQ answer for "Is the first consultation free?" reads "[Shandon to confirm: consultation fee, length, and whether it can be in person, by phone or by Zoom.]" and /faqs/ has "[Shandon to confirm: consultation fee, length and format.]". Flag to client as a quick fix.
+- Navigation and pages: About Us, Shandon Phan, nine practice pages (Estate Planning, Elder Law & Medicaid, Probate, Family Asset Protection, Special Needs, International Estate Planning, Estate Tax Planning, Prenup/Postnup, Charitable Planning), Workshops (/attend-workshops/, live; /workshops/ is a 404), 4L Protection Framework, Resources, Contact. Header banner "FREE WORKSHOPS: SIGN UP TODAY!" and homepage "Will or Trust? Get Clear Answers in One Evening" workshop promo (CTA "RESERVE MY FREE SEAT").
+- Language: site is English with a Google Translate toggle (prospect: ~95% accurate [0:31:03]); a Vietnamese-focused subdomain is planned [0:30:16]. The rep advised keeping everything on one domain with a toggle [0:30:40]. Homepage form offers Tiếng Việt as preferred language; the firm also mentions Vietnam-based assets under International Estate Planning.
+- Footer/NAP on site: 11211 Katy Freeway, Ste. 660, Houston, TX 77079; (281) 407-5622; sphan@shandonphanlaw.com; Hours Mon–Fri 9am–5pm. Site says meetings in Houston, Katy and Sugar Land and remotely across Texas. The homepage claims offices/meeting locations in Katy and Sugar Land (the footer shows one Houston address).
+- Copy on-site refers to the practice as estate planning, elder law/Medicaid, probate, asset protection, special needs, international and estate tax planning, prenup/postnup, charitable planning. Business law content exists as blog posts only; the prospect is aiming for 90% estate planning.
+
+PAGESPEED
+- PageSpeed mobile score: NOT OBTAINED (PSI API quota 429; local Lighthouse blocked with HTTP 403). Not estimated.
+- PageSpeed desktop score: NOT OBTAINED (same reason).
+
+>>> SAVED: website section complete.
+
+=====================================================================
+STEP 2 — GOOGLE BUSINESS PROFILE
+=====================================================================
+- GBP found: NOT OBSERVED by me (Google SERP/Maps not renderable here). The prospect and rep both treat a profile as existing: the rep cited the firm's Google review numbers on the call.
+- Star rating: 5.0 as read by the rep from the SMB Team AI visibility report: "You have five stars, which is great." [0:25:14] [UNCONFIRMED — rep-stated on the call from SMB Team's AI report, not read off a Google listing]
+- Total review count: about 42, per the rep: "you're about eight reviews away from getting to 50" [0:24:34] and "the difference of 42 and 50" [0:25:16] [UNCONFIRMED — rep-stated on the call from SMB Team's AI report, not read off a Google listing]. Do NOT print as a specific figure.
+- Most recent review date: not observed
+- Primary category: not observed
+- Photos active: not observed
+- Posts active: not observed
+- Other review evidence (all UNCONFIRMED, not Google):
+  - Facebook page (@phanlawfirm): shows 100% recommend, 13 reviews [UNCONFIRMED — sourced from a web-search summary of Facebook, not independently confirmed via Google]
+  - Yelp: low rating on 2 reviews in a search summary [UNCONFIRMED — sourced from a web-search summary of Yelp (Yelp returned 403), not independently confirmed via Google]. Contradicts the rep-stated Google rating; do not use.
+  - Avvo: no reviews yet per search summary [UNCONFIRMED — sourced from a web-search summary of Avvo (403)]
+  - Experience.com and the firm's legalclientassist.com profile carry client testimonials praising responsiveness and estate planning/trust work (paraphrase only; not for client-facing figures).
+- Call context: rep recommended reaching 50 Google reviews in the next 30 days, 200 over time [0:24:46–0:25:47]. Trigger action item: "Request Google reviews from clients/consults; hit 50 reviews."
+
+=====================================================================
+STEP 3 — LOCAL 3-PACK SEARCHES
+=====================================================================
+Local pack could not be observed (Google SERPs not renderable). Every search is recorded "not observed". Keyword list below is what should be run manually if a pack comparison is needed. Use Houston/Sugar Land/Katy and Vietnamese-language variants; Bellaire Blvd/Chinatown area is the firm's historical base (directory address 11205 Bellaire Blvd, Ste B-31, Houston 77072).
+
+Practice Area 1: Estate Planning (about 70% of the practice per prospect)
+- Search 1 "estate planning attorney Houston TX": firm appears not observed — competitors in pack: not observed
+- Search 2 "living trust lawyer Houston": firm appears not observed — competitors in pack: not observed
+- Search 3 "Vietnamese estate planning lawyer Houston": firm appears not observed — competitors in pack: not observed (web-search results surfaced Law Office of David Nguyen, PC and Tom Hoang Law Office for this query — see STEP 4)
+
+Practice Area 2: Elder Law / Medicaid and Asset Protection (the new site leads with these; level-four plans)
+- Search 1 "elder law attorney Houston TX": not observed
+- Search 2 "Medicaid planning lawyer Houston": not observed
+- Search 3 "asset protection attorney Houston": not observed
+
+Practice Area 3: Probate
+- Search 1 "probate lawyer Houston TX": not observed
+- Search 2 "probate attorney Sugar Land": not observed
+- Search 3 "estate administration attorney Houston": not observed
+
+Practice Area 4: Business Law (about 30% "other" bucket; business entity structuring is Level 3 of the fee ladder)
+- Search 1 "business lawyer Houston TX": not observed
+- Search 2 "small business attorney Sugar Land": not observed
+- Search 3 "business succession planning attorney Houston": not observed
+
+Practice Area 5: Immigration (one or two cases; side area)
+- Search 1 "immigration attorney Houston TX": not observed
+- Search 2 "Vietnamese immigration lawyer Houston": not observed
+- Search 3 "green card lawyer Houston": not observed
+
+=====================================================================
+STEP 4 — COMPETITOR REVIEW COUNTS
+=====================================================================
+No Google listing could be read, so every competitor figure is UNCONFIRMED and must not be printed as a specific number. They come from web-search result summaries on 2026-10-27. The firm's own Google count is only rep-stated (~42, UNCONFIRMED), so NO claim may be made that any competitor has more or fewer reviews than the prospect. All three are local Houston-area firms; none are national brands.
+
+- Competitor 1: Law Office of David Nguyen, PC (9440 Bellaire Blvd Ste 226, Houston 77036; Vietnamese-community estate planning, wills, living wills, guardianship) — reviews: 7 [UNCONFIRMED — sourced from a web-search summary, platform not identified, not independently confirmed via Google] — rating: 4.4 [UNCONFIRMED — same source]
+- Competitor 2: Tom Hoang Law Office (10613 Bellaire Blvd Ste 298, Houston 77072; bilingual Vietnamese/English; wills, trusts; 20+ years practicing per its site) — reviews: not observed [UNCONFIRMED — no review data found] — rating: not observed [UNCONFIRMED — no review data found]
+- Competitor 3: Your Legacy Legal Care (Houston, Galleria, Katy, Sugar Land and other offices; Houston Chronicle "Best Trust & Estate Law Firm" per its site) — reviews: not observed (count not shown) [UNCONFIRMED — no count found] — rating: 5.0 [UNCONFIRMED — sourced from a web-search summary of its Google rating, not independently confirmed via Google]
+- Additional named local firms seen (no counts recorded): Heights Law Group (Houston estate planning), Capstone Legal Strategies, PLLC (Houston/Katy/Sugar Land estate planning and asset protection), Stuart Green Law (Houston revocable living trusts; Google reviews in 2026 per snippet [UNCONFIRMED]), Kuo Law Firm (Houston estate planning).
+
+=====================================================================
+STEP 5 — DIRECTORY LISTINGS
+=====================================================================
+- Justia: FOUND (lawyer profile "Shandon Cuong Phan"; page returned 403; listing confirmed via search results). Describes business law, commercial litigation, real estate.
+- Avvo: FOUND via search results (Shandon Phan, Houston 77072; no reviews yet per summary [UNCONFIRMED]). Page returned 403.
+- Yelp: FOUND via search results (immigration law category, 11205 Bellaire Blvd) [page 403]. Rating tagged UNCONFIRMED above.
+- FindLaw: not observed
+- BBB: FOUND — "Shandon Phan Law Firm Pllc", Houston, not rated; business started 9/19/2013 per a search summary [UNCONFIRMED].
+- Other listings found in search results: LinkedIn company page, ZoomInfo, MapQuest, Lawyer.com, RocketReach, Facebook (@phanlawfirm), Experience.com, CelebrityPress author page, legalclientassist.com microsite ("Estate Planning & Probate Attorney Serving Texas Families").
+- NAP inconsistencies observed:
+  1. Website footer: 11211 Katy Freeway, Ste. 660, Houston, TX 77079.
+  2. Directories (MapQuest, Yelp, Justia, Lawyer.com, BBB): 11205 Bellaire Blvd, Ste B-31, Houston, TX 77072 (likely the prior office; the prospect gave up the old office and moved to a smaller one [0:17:20]). A second "Sugar Land" office was also referenced in search summaries.
+  3. Name variants: "Shandon Phan Law Firm, PLLC", "Shandon Phan Law", "Shandon Phan" (site title), "Heartland Law" (new brand), "Heartland Legacy Law" (recommended DBA).
+  4. Domains: shandonphanlaw.com, heartlandlawtx.com (live site), heartlandlawtexas.com (mentioned on call), shandonphanlaw.legalclientassist.com (legacy microsite).
+  5. Phone (281) 407-5622 is consistent on the live site and the HubSpot record; directory phone numbers not verified.
+  The address change and the planned name change mean directories/Google Business Profile will need to be rewritten consistently when the DBA is filed.
+- Geo-targeting landing pages for surrounding cities: none observed (the site names Houston, Katy and Sugar Land in copy only; no dedicated city or neighborhood pages).
+
+>>> SAVED: GBP, local SEO and directory sections complete.
+
+=====================================================================
+STEP 6 — GOOGLE ADS
+=====================================================================
+Google SERPs could not be rendered, so no ads were observed by me. Per ADS FRAMING RULE: nothing here says the firm is not running ads. On the call the prospect confirmed Google Ads have been run and are winding down (see STEP 9). Per his statement they were told to stop but "still running on the budget I already… sent them" [0:31:27–0:31:36].
+
+Practice Area 1: Estate Planning (Houston)
+- Firm ads observed: not observed (prospect-confirmed Google Ads via Converted Marketing, winding down — see STEP 9)
+- Named local competitors running ads: not observed
+
+Practice Area 2: Elder Law / Medicaid and Asset Protection (Houston)
+- Firm ads observed: not observed
+- Named local competitors running ads: not observed
+
+Practice Area 3: Probate (Houston)
+- Firm ads observed: not observed
+- Named local competitors running ads: not observed
+
+Practice Area 4: Business Law (Houston)
+- Firm ads observed: not observed
+- Named local competitors running ads: not observed
+
+Practice Area 5: Immigration (Houston)
+- Firm ads observed: not observed
+- Named local competitors running ads: not observed
+
+=====================================================================
+STEP 7 — LOCAL SERVICE ADS
+=====================================================================
+- Firm appears in LSA: not observed
+- Google Screened: not observed
+- LSA review count: not observed
+- Named local competitors in LSA: not observed
+
+=====================================================================
+STEP 8 — META ADS
+=====================================================================
+Facebook Ad Library returned HTTP 403, so it could not be searched.
+- Firm has active ads: not observed
+- Named local competitor 1: not observed
+- Named local competitor 2: not observed
+- Context from transcript: the prospect found SMB Team through a Facebook ad and lawyer groups: "I saw Facebook ad, and I also saw the name being flowed around in different lawyer groups." [0:20:38]. He signed up for an SMB Team conference "last year, or the year before" [0:21:00] but did not finish it because he was scaling down.
+
+>>> SAVED: all ads sections complete (all not observed).
+
+=====================================================================
+STEP 9 — TRANSCRIPT EXTRACTION
+=====================================================================
+Transcript source: full verbatim Fathom transcript (summary used only as overview)
+
+Speaker-tag and transcription notes:
+- Speakers: Shandon [Prospect]; Michael Kopp [SMB Team]. Henry (prospect's team) was on the call but his lines are not separately tagged; he never appears as a distinct speaker. Several of Shandon's lines are interrupted/garbled in the transcript.
+- Product/tool names are mis-transcribed: "Locust" (practice management; likely a mis-hearing of the real product name, not confirmed), "Lomatics" = Lawmatics, "Go High Level" = GoHighLevel, "Wealth Council" = Wealth Counsel, "Cloud Code" = Claude Code, "JetGPT" = ChatGPT, "EBA" = DBA, "Hotland" = Heartland, "SmithAI" = Smith.ai, "Henley" = Henry, "Lyft" in "I signed a contract with Lyft" [0:33:17] is garbled [transcript unclear]. "Converted Marketing" is how the vendor appears in the transcript; the exact company name should be confirmed.
+- Rep figures are pitch math, NOT firm facts: AI Workforce Pro $350 and ~$3,800 Fractional CTO, "60 preloaded skills", "$2,000–$2,500" management fee, "6–8 cases at $3,500 ad budget" for another firm, "900 law firms", "about eight reviews away from 50".
+- A rep line at 0:14:26 ("somebody in Houston who just got out of law school… charging $4,000 a plan") is the rep's anecdote about a third party; the prospect separately confirmed that his own Level 2 is $4,000.
+
+- Practice areas confirmed: Estate planning (about 70% of practice, goal 90%), business planning, probate, one or two guardianship cases, two or three litigation cases, one or two immigration cases. Quote: "Total, I always have about 20 to 50. 40 cases active at any given time, spanning across estate planning, business planning, probate, one or two guardianship cases, two, three litigation cases, one or two immigration cases." [0:09:56–0:10:00] [transcript unclear — "20 to 50 … 40" is garbled; read as about 40 active matters] and "right now estate planning about 70% of my practice and hopefully 90%, right?" [0:10:48]. The new website positions the firm squarely on estate planning and asset protection: "if we flag squarely on estate planning and asset protection" [0:24:29].
+- Current lead sources: "In the past, most of my clients come from referrals with some limited opportunities through Google Ads, but the conversion is not high because we don't have a strong intake process and staff who speak both languages." [0:01:28]. Weekly Vietnamese radio show (Saigon Radio 900AM, "Liberty & the Law"): "most of our clients in the past come from knowing me through my weekly radio show in Vietnamese. So they identify with my authority in estate planning, and therefore the conversion is high from those leads." [0:02:04–0:02:14]. Radio paused: "I stopped doing that for the last two years" [0:09:30] and later "I stopped for three, four years" [0:33:41] [transcript inconsistent — two years vs three to four]; clients "still come in" from it. Google Ads via a vendor producing about "five to ten leads a month, but sometimes it's just like on a $1,000 Google Ads budget" [0:31:56–0:32:00] [transcript garbled — read as 5–10 leads per month on roughly a $1,000 ad budget]. Two walk-ins in one week said they found the firm "being recommended on JetGPT [ChatGPT]" [0:28:03] — prospect claim; the rep was skeptical (site had been down) and the AI report showed zero AI citations. Do NOT state ChatGPT as a confirmed lead source.
+- Ads ever run: yes — Google Ads via Converted Marketing (also "SmithAI" live receptionist handles initial engagement through that vendor's portal [0:35:17]). Budget about $1,000/month (see above), 5–10 leads/month, results: "the conversion is not high" because of intake. Status: "I told them to stop, and I think they're still running on the budget I already… sent them. But probably by the end of this month or next month, it needs to stop so that I can have everything done by one vendor instead of too many different vendors." [0:31:27–0:31:50]. Earlier heavy advertising "a lot of previous advertising expense canceled" [0:09:06]. Rep's offer is therefore consolidation of vendors, not a first-time ads launch.
+- Team size: Three people plus outside vendors. Shandon is the only attorney ("Are you the only attorney in the firm? Correct." [0:06:38]). Henry — on-site, recently brought in, no legal experience, finishing an MBA in business intelligence, "right-hand person" for analysis and building systems [0:06:42–0:07:25]. A part-time VA based in Vietnam who handles Vietnamese-speaking leads and content generation, "potentially can be our engagement specialist" [0:07:25]. Plans to hire one or two more VAs ("maybe ideally it would be two… One on the front end and one will be on the back end" [0:36:39]), ideally English-speaking or bilingual. Previously three to four staff in a $150K office, let go. Smith.ai live receptionists via the ad vendor handle initial lead engagement.
+- Annual revenue (gross / case value): "This year, I think I'd be around 400 to 500K range, which is kind of normal or lower because we were still on our way bouncing back from the bottom" [0:08:46]; current run-rate "between $30,000 to $40,000 a month" [0:09:06]. Peak: "there was months, about two, three years ago, there was months that we would hit, you know, 60,000" [0:04:05]. Trigger summary says $400k–$500k for the year, consistent.
+- Annual revenue (net / take-home / collected): not distinguished from gross. No net, profit or take-home figure was stated.
+- Fee structure: flat-fee tiers, paid half at signing: Level 1 ("for single") $1,500 [0:13:00]; Level 2 (adds at least a revocable living trust) $4,000 [0:14:37–0:14:44]; Level 3 integrates business entity structuring (price higher, not stated); Level 4 has two or more trusts, "one revocable and one irrevocable, and sometimes three, four trusts" (price highest, not stated). Payment: first meeting — "Half, half." [0:12:24] [transcript unclear — read as 50% at signing, remainder later]. Includes a three-year review free of charge ("None of them have exercised that option so far, very few of them." [0:15:26]). Materials cost: "over $100 already, like leather binder, USB drive" [0:14:15].
+- Revenue goal: not stated, use 2x current revenue. Current $400K–$500K/yr → $800K–$1M. Implicit goals: "shift … from a personal brand" and serve the English-speaking market (see DBM); target 90% estate planning.
+- Average case value: Level 1 $1,500 and Level 2 $4,000 are the stated entry prices; Levels 3 and 4 higher, no figure. $30–40K/month implies mid-teens plans per month; prospect said "I can build out 15 plans per month, no problem" [0:37:02]. Not stated as an average; use $1,500–$4,000 as the working range.
+- Current close rate: not stated — default to 15%. Qualitative only: "when I directly engage, we have high conversion, but when we let the staff handle that, then, of course, it's lower" [0:01:50]. Do not print the 15% default as the firm's actual rate.
+- Number of locations: 1 (Houston; meets in Katy and Sugar Land per website; the prospect said he downsized to a smaller office after the expansion [0:17:20]). Transcript silent on a second office.
+- Spanish campaign needed: no (not stated by the prospect; the rep's reference to Spanish [0:00:45] is from website research). A VIETNAMESE-language campaign is needed: yes — Vietnamese clients are the current base; the VA handles Vietnamese-only leads.
+- Dominant buying motive: no single "life" statement, but the closest quotes are about escaping dependence on himself and building something that lasts: "I should spend a lot of time on growing my business and building our system instead of just doing every low-level task myself." [0:04:25]; "figure out how to build a system that can last." [0:17:06]; the new brand "so that it would have institutional branding values beyond my personal name." [0:25:58–0:26:00]; and the smaller office "gave me the freedom to really not chasing after the number of clients, the revenue" [0:17:39]. Category (1): a firm that runs itself on systems so he is no longer the bottleneck, after burnout. This is an inference; no personal-life motive (family, travel, retirement) was voiced.
+- Any profitability claims made by prospect: "at least 10 to 15 hours per plan" [0:14:15]; "Because we already charge lower than our competitors, and then we spend way more on the overhead just to serve or just to overcome the weakness of our clients." [0:38:47]; "I spent $150,000 building our office." [0:38:27]; "And lost most of my savings over that big office expansion after COVID." [0:17:00]; "we hit … 60,000" months two to three years ago working with only phone-answering staff [0:04:05]. The prospect did not state profit margins or net income.
+- Any claims about case types or practice areas: "Estate planning about 70% of my practice and hopefully 90%" [0:10:48]; intellectually interesting multi-area work is "just not very financially rewarding" [0:10:18]; most clients are "middle-class immigrant families" [0:23:41] who "used to get estate planning done for free from live insurance agents" or for "a will for $100" [0:13:06–0:13:23]; he spends "three hours just to get them over the mindset resistance" in a meeting [0:14:00]; immigrant clients "own 10, 20 properties, but none of them know what is a warranty deed" [0:37:59–0:38:04], so asset inventory is the biggest time sink; "Vietnamese clients, they're very short on patience" so he combines the vision/planning meetings and review/signing meetings [0:11:52–0:12:04]; Vietnamese-speaking paralegals are scarce and training takes "at least six months to two years" [0:05:08].
+- Stated call focus / product interest: MIXED — both AI/automation and lead generation. The prospect's stated purpose for the call was to get the AI visibility report rerun after the new site launch ("There was a report sent to me last week… I don't think this report was reflective of my firm" [0:22:18–0:22:31]); the call then covered AI Workforce Pro (DIY platform) and Fractional CTO (done-for-you workflows), and the prospect himself asked "in terms of lead generations, what package do you have?" [0:50:59–0:51:00]. The rep scoped an ads-based lead-gen service only (Google, LSA, PPC, social; "we wouldn't be doing any SEO on your website" [0:52:31]), management fee "I think that's like $2,000 to $2,500… I'll verify" [0:52:36–0:52:41]. Rep's position: priority is getting clients through the door, then simplify the tech stack ([0:32:30–0:33:08]). The rep also said he would build a proposal for everything and prioritize what is "most important to get your firm back to where it was three, four years ago without the heavy expenses" [0:54:18–0:54:30]. /audit-write should lead with intake/lead-flow, vendor consolidation and the AI-automation of asset-discovery work, and should not use a "Fractional CTO only" or "lead-gen only" story.
+- Primary engagement: mixed
+- Products discussed on call: AI Workforce Pro – Starter, Fractional CTO Level 1, Full Service Marketing
+- Product notes (pricing and context for the three catalog names above): AI Workforce Pro – Starter = $350/month self-serve, month-to-month, with pre-built skills and a free ~one-week trial via the "Law Firm AI Growth Summit" webinar [0:45:34–0:45:44, 0:50:43]. Fractional CTO Level 1 = about $3,800/month, one custom workflow per month, one-year agreement; levels 2 and 3 mentioned, rep recommended one [0:46:00–0:47:21, 0:48:42]. "Full Service Marketing" is the nearest catalog name for the ads-only lead-gen service the rep described (ad placement, landing pages, monthly reporting, with SEO explicitly excluded; ~$2,000–$2,500 management fee plus ad spend); no price or scope was agreed. Hours and rep's figures are pitch math, not firm facts.
+- Lead-gen gap stated: yes — "So I'm willing to increase the budget, but I just need to tune up my intake system and stuff to improve on the conversion, you know?" [0:32:07]. Also "So now we need to determine, okay, with the new website up, then the next spend, and the next spend would be on what?" [0:09:20]. Caveat: he frames intake conversion as a prerequisite, and he wants lead generation consolidated "by one vendor instead of too many different vendors" [0:31:36].
+- Existing marketing/SEO/ad vendor engagements: yes — "I have converted marketing handle my Google Ads." [0:31:16] (Converted Marketing; described as a Google Premium Partner with many law-firm clients; provides a lead portal; hands initial engagement to Smith.ai live receptionists [0:35:17–0:35:32]). Told to stop; running down by the end of this month or next. Contract terms not stated. He has not used Smith.ai's AI version ("I have not engaged that AI version yet" [0:35:48]) but would like an after-hours AI voice agent. Also: "Wealth Council" drafting at close to $400/month with a three-year commitment ("I owe them the entire three year" [0:33:23]); a GoHighLevel evaluation (not signed); Lawmatics cancelled about three years ago ("building out costs too complex and not friendly" [0:18:32]). He also subscribes to Knackley, Lawyer with Purpose and Trustate ("I subscribe to all the top estate planning platforms out there" [0:19:13]). Website was rebuilt in-house with Henry.
+- Budget constraints stated: no explicit spend cap. Signals: past financial strain ("I was not in a strong financial position" [0:21:14]; lost most of his savings); stopped most prior ad spending; "I'm willing to increase the budget" once intake is tuned [0:32:07]; rep framing that "budget may be thin now until you start to grow out" [0:54:18] (rep's words, not confirmed by the prospect as a limit). Existing three-year Wealth Counsel obligation.
+
+Other call facts for the report:
+- Tech stack: practice management "Locust" [transcript unclear] with automation "not yet functional" ("we haven't really… build out anything functional" [0:19:57]); drafting via Wealth Counsel, Knackley, Lawyer with Purpose, Trustate; evaluating GoHighLevel as a "one-stop engagement, sale, marketing" tool; WordPress site. Goal: "a CEO command center." Plan before SMB: Claude "Vibe Coder" training and a freelance contractor to build the GoHighLevel and "law firm OS" [0:20:11].
+- Prospect's earlier AI report feedback: "it was comparing me with my competitors who are like national law firm with thousands of attorneys" [0:22:51] and "shouldn't the report focus on the practice area… I'm not competing against the firm that focus on high net worth, clients only, right? … most of our clients are like just middle-class Americans. Middle-class immigrant families." [0:23:24–0:23:43]. Old site had Business Dispute/PI listed, which skewed it; the rep said a rerun is best after about a week or two once the new site is indexed.
+- Follow-ups agreed: "Law Firm AI Growth Summit" webinar Wednesday Oct 28, 9 AM to 2 PM his time (invite link via the rep) with a roughly one-week AI Workforce Pro trial; follow-up call Monday Nov 2 at 2:30 PM CT; rep to send recap, the pre-built skills list and resources; AI report to be regenerated around a week out. Action items (trigger): file the DBA as Heartland Legacy Law and check domain availability; evaluate Smith.ai AI voice agent for after-hours intake; request Google reviews to reach 50; estate-planning FAQ (already present, see STEP 1).
+- DBA advice: rep suggested "put your practice area in the name of the firm" [0:26:08], and the prospect agreed: "So Hotland Legacy Law. Would be better." [0:26:19–0:26:21] Rep also said the domain does not need to say "legacy" [0:55:51].
+
+Key prospect quotes (verbatim, timestamp — topic):
+1. "I should spend a lot of time on growing my business and building our system instead of just doing every low-level task myself." — 0:04:25 — goals / DBM
+2. "In the past, most of my clients come from referrals with some limited opportunities through Google Ads, but the conversion is not high because we don't have a strong intake process and staff who speak both languages." — 0:01:28 — lead sources / intake
+3. "So, when I directly engage, we have high conversion, but when we let the staff handle that, then, of course, it's lower …" — 0:01:50 — intake (cut marked)
+4. "anyone I hire, I have to invest at least six months to two years to train them." — 0:05:08 — team / hiring
+5. "It's hard because you have to give up a lot of revenue to do that, you know?" — 0:05:55 — goals / transition to English-speaking market
+6. "at least 10 to 15 hours per plan" — 0:14:15 — profit / time per plan
+7. "And lost most of my savings over that big office expansion after COVID." — 0:17:00 — profit / history
+8. "I spent $150,000 building our office." — 0:38:27 — profit / overhead
+9. "Because we already charge lower than our competitors, and then we spend way more on the overhead just to serve or just to overcome the weakness of our clients." — 0:38:47 — profit / pricing
+10. "So I'm willing to increase the budget, but I just need to tune up my intake system and stuff to improve on the conversion, you know?" — 0:32:07 — budget / lead-gen
+11. "But what I want to build is a command center, like a CEO command center, that way I can have quick access to all these things and then build out SOP training so that if we hire VAs, they would know what to do." — 0:19:13 — goals / systems
+12. "Because immigrant clients, they own taxes. … 10, 20 properties, but none of them know what is a warranty deed." — 0:37:57 — time sink / asset discovery (cut marked; "own taxes" reads as a transcription error for "own properties" [transcript unclear — read as "own properties"])
+
+>>> SAVED: transcript extraction complete.
+
+=====================================================================
+STEP 10 — COMPETITIVE URGENCY SCORE
+=====================================================================
+Score: 5 (provisional)
+Basis and caveats: Ads, local pack and the firm's Google profile were not observed, so this score rests on (a) the density of named Houston-area estate planning competitors, including Vietnamese-focused firms on Bellaire Blvd, (b) the firm's just-relaunched site (prospect: new site, meta tags and SEO work not yet done; zero analytics at the rep's check) and recently dormant radio/ad marketing, and (c) the firm's strong Vietnamese-community authority and an apparently healthy Google profile per the rep (UNCONFIRMED), which keeps it from scoring higher. The call was split between AI automation and marketing, so competitive urgency is a significant but not dominant theme.
+
+Named local competitor threats:
+1. Law Office of David Nguyen, PC — Bellaire Blvd, Vietnamese-community estate planning, directly overlaps the firm's historical client base [UNCONFIRMED rating/count; not for client-facing numbers].
+2. Tom Hoang Law Office — Bellaire Blvd, bilingual Vietnamese/English, wills and trusts, 20+ years practicing; overlaps the radio-driven Vietnamese demographic.
+3. Your Legacy Legal Care — multi-office Houston/Katy/Sugar Land estate planning and elder law firm with a Houston Chronicle award on its site; overlaps the English-speaking market the prospect wants to enter.
+
+Dynamic sentence (Score 4–6): "A score of 5 means competitors have meaningful advantages in one or more areas and are pulling ahead. You are not invisible yet — but the window to close the gap is narrowing. Every month without action is a month they extend their lead."
+
+>>> SAVED: final research notes file.
+
+=====================================================================
+PASS 2 — VERIFICATION CHECKLIST (completed)
+=====================================================================
+[x] Every number matches observed data or is labelled (reviews UNCONFIRMED; PageSpeed NOT OBTAINED rather than estimated; unobserved items marked "not observed")
+[x] Competitor review counts: none verified live; all UNCONFIRMED and none to be printed. No claim made that any competitor out-reviews the prospect (the prospect's Google count is only rep-stated)
+[x] Every review count and star rating carries a verification-method tag
+[x] Annual revenue split attempted: gross $400K–$500K; net not distinguished from gross; fee structure recorded
+[x] Every ad section covers all five practice areas (all "not observed" because SERPs and Ad Library were inaccessible; prospect-confirmed Google Ads recorded in STEP 9)
+[x] No section says the firm is not running ads
+[x] No profitability or business claim beyond transcript quotes
+[x] Competitors are specific named local firms only (Morgan & Morgan and other national brands excluded)
+[ ] PageSpeed scores are real numbers — NOT MET: PSI quota exhausted and local Lighthouse blocked by the site (403). Recorded as NOT OBTAINED, not estimated; must be run manually
+[x] DBM recorded (inference with quotes)
+[x] Revenue goal flagged as not stated (use 2x current)
+[x] Close rate: not stated, default 15%
+[x] Average case value recorded ($1,500 Level 1, $4,000 Level 2, higher levels not stated)
+[x] Stated call focus recorded explicitly as MIXED (AI automation plus lead generation)
+[x] Primary engagement / Products discussed / Lead-gen gap fields filled in the exact machine-read format
+[x] Existing marketing/SEO/ad vendor engagements recorded (Converted Marketing, winding down)
+[x] Budget constraints recorded (no explicit cap; signals listed)
