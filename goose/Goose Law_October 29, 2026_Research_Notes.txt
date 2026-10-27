@@ -1,0 +1,202 @@
+RESEARCH NOTES — Goose Law (GOOSELAW™ Immigration / GOOSELAW Professional Corporation)
+Friendly name: goose
+URL: http://gooselaw.com (real, live firm; automated fetches are blocked by a SiteGround captcha — see limitations)
+Sales rep: Daniel Lowe (daniel.lowe@smbteam.com)
+Proposal call date: October 29, 2026 (2026-10-29T16:30:00Z = 12:30 PM ET)
+Contact: Donovan Francis (founding lawyer / owner) — trigger email donovan@gooselaw.com — 647-576-7079. HubSpot contact ID: 257712283420
+Discovery call: October 27, 2026 (Fathom recording 196745819, ~41 min)
+Research run: October 27, 2026 (Pass 1)
+
+RESEARCH LIMITATIONS (READ FIRST — /audit-write must honor these)
+- TRANSCRIPT: transcript_status = outcome "found", custody "machine", source "hubspot_notes". The full verbatim Fathom transcript was provided and read in full; it is the ground truth. The trigger's transcript field is only an AI summary. Where they differ, the full transcript wins (differences are called out in STEP 9).
+- No interactive browser in this environment. The firm is real and live, so nothing below was fabricated; anything I could not observe is written "not observed" or "NOT OBTAINED".
+- WEBSITE: http://gooselaw.com, https://gooselaw.com and https://www.gooselaw.com all return HTTP 202 with a meta-refresh to /.well-known/sgcaptcha/ (SiteGround bot challenge). Homepage content, headline, CTA, form, chat, video and blog could NOT be read. book.gooselaw.com also returned no content. Facts about the site below come only from search-result and directory summaries and are labelled as such.
+- PAGESPEED: NOT OBTAINED. The PageSpeed Insights API returned HTTP 429 (daily quota exceeded) for mobile and desktop, and the site is captcha-gated against automated requests. No estimate is given. Run pagespeed.web.dev manually before printing any speed score. /audit-write must NOT print a PageSpeed number.
+- GOOGLE (Business Profile, local 3-pack, Google Ads SERPs, Local Service Ads): NOT observed. Google Maps/SERPs are not renderable here.
+- META AD LIBRARY: NOT observed (facebook.com/ads/library returned HTTP 403). The prospect confirmed on the call that he runs Meta ads (see STEP 9), but competitor ad activity is unknown.
+- REVIEW DATA: no review count or star rating below was read off Google. Every figure is tagged UNCONFIRMED. The aggregator figures for the firm CONFLICT with each other (1 review / 1.0 stars on one Birdeye fetch vs 146 / 4.6 in the Birdeye search title vs 74 Google / 4.8 on Trustindex). /audit-write must NOT print any review count or rating for the firm or its competitors as a specific number.
+- Call focus is MARKETING (paid-ad management). The prospect is a Canadian firm: revenue and case values are in CAD, ad spend currency is ambiguous (see STEP 9). /audit-write should present CAD figures as CAD and avoid unlabelled USD conversion.
+- PRODUCT/PRICING: no SMB Team price was quoted on the call. Package selection is for Pass 1.5/2.
+
+=====================================================================
+STEP 1 — WEBSITE RESEARCH
+=====================================================================
+- Website URL confirmed live: yes (domain resolves; responds with a captcha challenge to automated clients). Search results list gooselaw.com and a separate booking subdomain book.gooselaw.com.
+- Last redesign date or estimated age: not observed. Prospect says websites are cheap for him to get built: "in terms of, like, building websites and so on, we don't, you know, that stuff, I can get that done pretty cheaply." [0:23:51]
+- Mobile responsive: not observed
+- Homepage headline: not observed (captcha). Search-result description (third party): a tech-savvy firm that helps businesses bring high-skilled talent to Canada. [unverified directory text]
+- CTA above fold: not observed
+- Contact form location: not observed
+- Live chat present: not observed
+- Attorney bio present: not observed on the site; directories and search snippets describe Donovan H. Francis as founding lawyer. [unverified]
+- Video present: not observed on the site. Prospect says many of his Facebook ads are AI-generated video ads using his "clone" [0:26:00].
+- Blog present: not observed
+- Directory-sourced facts (NAP): Suite 200, 201 City Centre Dr., Mississauga, ON L5B 2T4; phone 289-872-0678; email dfrancis@gooselaw.com; described as a "virtual law firm" reachable by phone, video or WhatsApp. [unverified directory text; note the trigger lists donovan@gooselaw.com and 647-576-7079 for the contact, so the email and phone differ from the directory listing]
+- Funnel properties named by the prospect: landing page registering into WebinarJam, with a Twilio connection for texts [0:10:52–0:11:20]. These are not observed on the live site.
+
+PAGESPEED
+- PageSpeed mobile score: NOT OBTAINED (PSI API quota 429; site captcha-gated). Not estimated.
+- PageSpeed desktop score: NOT OBTAINED (same reason).
+
+>>> SAVED: website section complete (largely not observed; see limitations).
+
+=====================================================================
+STEP 2 — GOOGLE BUSINESS PROFILE
+=====================================================================
+- GBP found: not observed directly. A Google-sourced review presence is implied by aggregator listings (Trustindex "74 reviews from Google").
+- Star rating: not read off Google. Aggregator ratings only: 4.6 (Birdeye search title), 4.5 (UNSCR), 4.6 (TrustAnalytica), 4.8 (Trustindex, Google-sourced) — [UNCONFIRMED — sourced from Birdeye/UNSCR/TrustAnalytica/Trustindex search-result summaries, not independently confirmed via Google]. A direct fetch of the Birdeye page returned "1.0 star, 1 review" — [UNCONFIRMED — Birdeye fetch, conflicts with all other sources].
+- Total review count: not read off Google. Aggregator counts only: 146 (Birdeye search title), 140 (UNSCR), 100 (TrustAnalytica), 74 from Google (Trustindex) — [UNCONFIRMED — sourced from aggregators, not independently confirmed via Google]. Do NOT print any of these.
+- Most recent review date: not observed (one Birdeye fetch mentioned a review "3 months ago" [UNCONFIRMED])
+- Primary category: not observed
+- Photos active: not observed
+- Posts active: not observed
+- Other: directory pages (bestlawyers.com, ByBlacks, canadabusinessdirectory.net, Facebook page "GOOSELAW.Canada") list the firm. Facebook page exists. [unverified]
+
+=====================================================================
+STEP 3 — LOCAL 3-PACK SEARCHES
+=====================================================================
+NOT OBSERVED (Google Maps/SERPs not renderable in this environment). Searches were not run, so no "firm appears yes/no" is recorded.
+
+Practice Area 1: Business/corporate Canadian immigration (work permits, LMIA, Global Talent Stream, ICT/CUSMA — practice detail from directory text; the prospect says "we support primarily businesses with their Canadian Immigration Matters" [0:03:00])
+- Search 1 "immigration lawyer Mississauga": not observed
+- Search 2 "work permit lawyer Mississauga": not observed
+- Search 3 "LMIA lawyer Mississauga": not observed
+
+Practice Area 2: Individual permanent residency ("individuals seeking permanent residency" [0:03:19])
+- Search 1 "permanent residence lawyer Mississauga": not observed
+- Search 2 "Express Entry lawyer Mississauga": not observed
+- Search 3 "Canadian immigration lawyer": not observed
+
+=====================================================================
+STEP 4 — COMPETITOR REVIEW COUNTS
+=====================================================================
+No competitor was verified on Google. Named Mississauga-based immigration firms that appeared in web-search results for "Mississauga immigration lawyer" (ratings are from search-result summaries only):
+- Competitor 1: Jasmin Sandhu Law (Mississauga) — reviews: "34+" per the firm's own page summary [UNCONFIRMED — sourced from a search-result summary of the firm's website, not independently confirmed via Google] — rating: 5.0 [UNCONFIRMED — same source]
+- Competitor 2: The Law Office of Ronen Kurzfeld / ImmigrationWay (Mississauga) — reviews: count not obtained — rating: 4.9 [UNCONFIRMED — sourced from a search-result summary, not independently confirmed via Google]
+- Competitor 3: Kingwell Immigration Law (Mississauga page) — reviews: not obtained — rating: not obtained
+Other named Mississauga immigration firms seen in results (no ratings recorded): VisaServe Immigration Law P.C. (5800 Ambler Dr), IPJ Immigration Solutions (Dundas St W), Nanda Immigration Law, Mandall Immigration Law, VisaPath.
+Note: the firm's own aggregator-reported counts (74–146, UNCONFIRMED) are higher than the one competitor count found (34+, UNCONFIRMED). Do NOT describe any of these competitors as having more reviews than the prospect, and do not print competitor review numbers.
+
+=====================================================================
+STEP 5 — DIRECTORY LISTINGS
+=====================================================================
+(Based on search-result listings only; Avvo, Justia, FindLaw and Yelp were not fetched.)
+- Listed on: BestLawyers.com (Gooselaw Immigration), ByBlacks.com directory, Canada Business Directory, Birdeye, Trustindex, TrustAnalytica, UNSCR, Wheree, Facebook page. [unverified]
+- NAP: directory listings give 289-872-0678 and dfrancis@gooselaw.com; the trigger gives a different contact phone and email (647-576-7079, donovan@gooselaw.com). Could be a personal vs main line; not verified as a true inconsistency.
+- Geo-targeting landing pages for surrounding cities: not observed.
+
+>>> SAVED: GBP, local SEO and directory sections complete (mostly not observed).
+
+=====================================================================
+STEP 6 — GOOGLE ADS
+=====================================================================
+Practice Area 1: Business/corporate Canadian immigration
+- Firm ads observed: not observed (Google SERPs not renderable). The prospect says he previously tried Google Ads: "in the past I tried using, just doing like regular Google Ads and then, you know, somebody would call in, but those leads are usually cold." [0:15:17]. Whether Google ads are running now is unknown.
+- Named local competitors running ads: not observed
+
+Practice Area 2: Individual permanent residency
+- Firm ads observed: not observed
+- Named local competitors running ads: not observed
+
+=====================================================================
+STEP 7 — LOCAL SERVICE ADS
+=====================================================================
+- Firm appears in LSA: not observed
+- Google Screened: not observed
+- LSA review count: not observed
+- Named local competitors in LSA: not observed
+(Note: Local Service Ads for immigration law in Canada may not be offered; not verified.)
+
+=====================================================================
+STEP 8 — META ADS
+=====================================================================
+- Firm has active ads: not observed in the Ad Library (403). The prospect CONFIRMED on the call that he runs Meta ads: "the paid ads are exclusively through Meta, Facebook slash Instagram." [0:10:00] Many are AI-generated video ads: "many of my Facebook ads right now are video ads that are AI generated, right? Using my, my clone." [0:26:00]
+- Named local competitor 1: not observed
+- Named local competitor 2: not observed
+
+>>> SAVED: all ads sections complete (Google/LSA/Meta competitor data not observed).
+
+=====================================================================
+STEP 9 — TRANSCRIPT EXTRACTION
+=====================================================================
+Transcript source: full verbatim Fathom transcript (summary used only as overview)
+
+Corrections to the AI summary (full transcript wins):
+- The summary says close rates fell "from 10–15% to 1–2 clients/month". The full transcript says close rate was 10–15% of consultations and 7 clients in one month was "perhaps my best month" [0:14:51]. Recently he closes "one or two" of "maybe eight consultations in a month" [0:15:00], which is roughly 12–25%, not a collapse in close rate. The decline is in registrations, attendance and consultation volume.
+- The summary says ad spend was ~$5k CAD/month and ROAS was negative last month. Transcript: the prospect said only "we definitely don't exceed five" [0:18:59] followed by a garbled "5,000 USD, which is your minimum" [0:19:00]; the $5,000 CAD figure is the REP's clarification ("so about 5,000, Canada?" [0:19:33] and "it's only been meta, about 5,000 Canadian" [0:20:22]) which the prospect did not explicitly repeat. The "bad month" is the prospect's: "we ended up spending significantly more than we were able to get." [0:18:21]
+
+- Practice areas confirmed: Canadian immigration law — business/corporate immigration matters (the firm's current core) and individual permanent residency files (the growth focus). No other areas mentioned.
+- Current lead sources: Meta (Facebook/Instagram) paid ads to a landing page, which registers people into WebinarJam, then a monthly live webinar, then paid consultations. "the paid ads are exclusively through Meta, Facebook slash Instagram." [0:10:00]; "it registers them into Webinar Jam." [0:11:02]; "I do… organic stuff on multiple platforms" [0:10:00]. Also one corporate client: "one major client, a corporate client, from whom 80% of our revenue comes" [0:06:45]. All traffic goes through the webinar funnel, nothing bypasses it: "Yeah, because we're nurturing them" [0:15:52]; ads go "to a landing page" [0:10:52].
+- Ads ever run: Yes. Meta (Facebook/Instagram) only is currently paid; "I'm not married to Facebook" [0:10:28]. Prior Google Ads were tried and dropped: "those leads are usually cold" [0:16:17]. Budget: prospect said "we definitely don't exceed five" [0:18:59], currency unclear [transcript unclear — rep clarified ~$5,000 CAD/month, prospect did not explicitly confirm]. Result: past strong performance (a year ago he ran ads himself, "generating significant numbers of leads, but that has really dropped off over time" [0:10:19]) and a bad recent month (spent "significantly more than we were able to get" [0:18:21]). Cost per lead is "significantly lower" than now but he cannot give a figure [0:17:40–0:17:43]. Pre-recorded webinars stopped because "people start kind of figuring out that it's… a pre-recorded webinar and then they start giving us bad reviews" [0:11:34].
+- Team size: 10 people. "we have a 10-person team." [0:21:51]; two are automation engineers who are not legal staff: "Two of those people are automation… engineers… So they're not legal people." [0:21:57]. Donovan is the lead lawyer/closer. A second, licensed practitioner is being trained to take consultations but "the volume isn't high enough for somebody else to do it" [0:12:29]. Contract (remote) support places Facebook ads; someone in the Philippines creates AI ads.
+- Annual revenue (gross / case value): "just above a million Canadian" [0:08:01]; "a million Canadian in revenue annually… it's never under a million. It may go above it." [0:08:06–0:08:20]. CAD.
+- Annual revenue (net / take-home / collected): not distinguished from gross
+- Fee structure: not stated for legal work (immigration files priced per application: "applications potentially in and around $10,000 Canadian dollars each" [0:03:44]). Paid consultation of "like 230" [0:12:06] (currency not stated; summary says CAD).
+- Revenue goal: "at a minimum, I'd want to increase that fivefold." [0:08:23] — about CAD 5 million.
+- Average case value: ~CAD 10,000 per individual permanent-residency application [0:03:44]; the corporate client work is different and not priced in the call.
+- Current close rate: historical 10–15% of consultations: "I'd close anywhere between 10 to 15%." [0:14:16]. Recently "of maybe, I don't know, eight consultations in a month, I may close one or two." [0:14:59] (derived 12–25%). Use 15%.
+- Funnel numbers (prospect's own, from a peak a year ago when a since-closed PR program was available): about 500 registrations, "you don't have more than 50%… turning up" [transcript unclear — read as 50% attend], "maybe 250 showing up", "about 20 consultations", and "at one point from a single webinar, I probably closed 7" — "perhaps my best month" [0:14:51]. Note: 20 consultations from 250 attendees is about 8%, not the "20%" he said; treat the 20% as a verbal slip [transcript unclear — figures read as stated]. Attendance rate was 50–60% and "now it's at around 40%" [0:15:30]. Registrations are down.
+- Number of locations: 1 (an office in Mississauga, Ontario: "we have an office in Mississauga" [0:01:09]; operates largely virtually per directory text)
+- Spanish campaign needed: no
+- Dominant buying motive (inference, no single explicit statement): remove single-client risk and take himself out of the middle of the business so it grows without depending on him, then scale. Prospect's words: "We have one major client… 80% of our revenue comes… It's a good position, but it's also very risky." [0:06:45–0:06:54] and "that's part of the reason why I want to shift away" [0:07:00]; "I feel confident closing leads, but I shouldn't be the guy. It shouldn't be dependent on me." [0:25:34]; "I don't want all of that to be dependent on me because… I won't always have the ability to be monitoring this stuff on a day-to-day basis" [0:05:32]. Closest type: (1) a firm that runs itself, with (3) scale as the growth lever.
+- Any profitability claims made by prospect: none stated (only: "It's a good position" about the 80% client concentration, and "we have the capacity to handle more work" [0:22:11]).
+- Any claims about case types or practice areas: "We support primarily businesses with their Canadian Immigration Matters." [0:03:00]; "my area of focus has been on growing our individual accounts, individual files, where there are individuals seeking permanent residency" [0:03:19]; "we get a much higher return per application" [0:03:33]. A past PR program that drove registrations "is no longer available" [0:13:45].
+- Stated call focus / product interest: Standard marketing/growth discovery — paid advertising management and lead generation. "What I'm looking for is marketing, well, advertising support primarily." [0:05:01]. He wants an agency to take over day-to-day ad management: "If I can find an agency or someone who can just have overall responsibility for that and who can provide me with top quality leads and who can help us grow, then that's going to be something that's going to be favorable." [0:05:55]. Secondary need he raised: intake/closing so he is not the one converting every lead [0:09:22; 0:25:41]. The rep described Lead OS as the need now and Intake OS as the need next [0:28:40–0:28:49]; Intake OS was named but not priced or proposed as part of the first package. SEO: "if there's an opportunity to get some support there, absolutely, something we'd be open to" [0:23:41]; websites and landing pages he handles himself [0:23:51]. Follow-up call is to review "an initial proposal of what we would suggest for an agency partnership with us from a paid ad standpoint." [0:38:50 — rep].
+- Primary engagement: marketing
+- Products discussed on call: Full Service Marketing
+- Lead-gen gap stated: yes — "What I need, what I know I need support with is bringing in the leads, one, and actually the intake process" [0:09:22]; "What we're not doing as well as we need to do is getting leads, right? Getting super qualified leads." [0:25:23]
+- Existing marketing/SEO/ad vendor engagements: contractors, not a marketing agency. "I have contracts and remote support with things like placing Facebook ads, developing the actual ads, and so on." [0:04:19]; "I went and got Agen or something and found… somebody in the Philippines to… create ads." [0:26:22]; and "my contract team member who does that" [0:05:32]; he also referred to "My guy said that to me recently" about recent ad performance [0:18:02]. No signed agency or SEO/AEO vendor stated. He would be replacing or overseeing these contractors; he did not say whether contracts can be ended.
+- Budget constraints stated: "I've always been concerned about the cost." [0:26:55]; "how much it will cost." [0:26:57]. No explicit spend limit. He is open to higher spend if returns are there: Rep asked "if the ROAS is there… you're okay with spending more?" — prospect: "absolutely, no, I definitely understand how that works. It's not so much about how much you spend." [0:19:57–0:20:04]. A garbled mention at [0:19:00] ("5,000 USD, which is your minimum, so I may have to share") [transcript unclear — read as the prospect noting the rep's stated minimum may exceed his current spend; not a firm statement].
+- Other objections / expectations: skepticism about agencies: "I feel like an agency may not end up giving my account as much attention as it should, or as much attention as it may give some of its larger clients." [0:27:00]. He wants Canada-specific proof: "I'd also be curious to know what your success rate in Canada specifically has been like." [0:31:19] and expectations on "numbers of qualified leads" [0:31:41]. He wants speed: "I'd like to move quickly." [0:35:19]. Also asked whether SMB Team does webinar funnels [0:32:17] and whether it advertises inside Canada [0:30:07].
+- Rep statements NOT to record as the firm's figures (pitch math / rep claims): "$100 million worth of spend" [0:07:35]; clients from "$5,000 a month on ads up to a million plus" [0:07:39]; "a million Canadian is in the 750 range of Americans" [0:27:56–0:28:00, garbled]; "lots of Canadian clients" [0:29:45]; rep's suggestion that the single webinar funnel is "probably hurting you a little bit" [0:33:07] — the prospect said only "Okay" [0:33:36].
+
+Key prospect quotes (verbatim; Donovan Francis):
+1. [0:03:19] Growth focus: "my growth has been, my area of focus has been on growing our individual accounts, individual files, where there are individuals seeking permanent residency."
+2. [0:03:44] Case value: "We're talking about applications potentially in and around $10,000 Canadian dollars each."
+3. [0:05:01] What he wants: "What I'm looking for is marketing, well, advertising support primarily."
+4. [0:05:32] Hands-off: "I don't want all of that to be dependent on me because I don't, I won't always have the ability to be monitoring this stuff on a day-to-day basis"
+5. [0:06:45] Revenue concentration: "We have one major client, a corporate client, from whom 80% of our revenue comes, right? It's a good position, but it's also very risky."
+6. [0:08:23] Goal: "at a minimum, I'd want to increase that fivefold."
+7. [0:09:22] Needs: "What I know I need support with is bringing in the leads, one, and actually the intake process, the… process that's going to remove me from being the lead guy in converting these leads into paying clients."
+8. [0:15:17] Funnel decline: "There are less consultations, for sure… There are less people registering for the webinars."
+9. [0:21:57] Team: "Two of those people are automation… engineers… So much of what we do internally is already automated."
+10. [0:25:23] Lead problem: "What we're not doing as well as we need to do is getting leads, right? Getting super qualified leads."
+11. [0:25:34] Closing: "I feel confident closing leads, but I shouldn't be the guy. It shouldn't be dependent on me."
+12. [0:27:00] Objection: "I'm a little bit skeptical about agencies because… an agency may not end up giving my account as much attention as it should"
+
+>>> SAVED: transcript extraction complete.
+
+=====================================================================
+STEP 10 — COMPETITIVE URGENCY SCORE
+=====================================================================
+Score: 5 — PROVISIONAL / LOW CONFIDENCE. No competitor ad, 3-pack or LSA data could be observed, so this score is not based on observed competitor marketing; it rests on market density and the prospect's own funnel decline.
+Basis:
+- Crowded local market: many named Mississauga immigration firms appeared for a basic search (Jasmin Sandhu Law, Ronen Kurzfeld / ImmigrationWay, Kingwell Immigration Law, VisaServe Immigration Law, IPJ Immigration Solutions, Nanda Immigration Law, Mandall Immigration Law, VisaPath).
+- The prospect's own funnel is shrinking (registrations, attendance and consultations down) and is single-channel (Meta + one webinar).
+- Not observed: whether any named competitor is running Google, Meta or LSA ads.
+Named competitor threats (market presence only, not verified as ad spenders): Jasmin Sandhu Law, Ronen Kurzfeld / ImmigrationWay, VisaServe Immigration Law P.C.
+Dynamic sentence (score 4–6): "A score of 5 means competitors have meaningful advantages in one or more areas and are pulling ahead. You are not invisible yet — but the window to close the gap is narrowing. Every month without action is a month they extend their lead."
+Re-score after the manual Google, LSA and Meta Ad Library checks are run.
+
+>>> SAVED: final research notes file.
+
+=====================================================================
+PASS 2 — VERIFICATION CHECKLIST
+=====================================================================
+[x] Every number in the notes matches observed or transcript data; unobserved items are marked "not observed"/"NOT OBTAINED" (PageSpeed, GBP, 3-pack, ads).
+[x] No competitor is cited as "dominating" on review count; competitor review figures are UNCONFIRMED and flagged not to be printed.
+[x] Every review count and rating carries a verification-method tag (all UNCONFIRMED; none read off Google).
+[x] Annual revenue: only one figure stated; recorded as "not distinguished from gross"; fee structure recorded as not stated, per-file ~CAD 10,000.
+[x] Ad sections cover both practice areas.
+[x] No section says the firm is not running ads (the prospect confirmed Meta ads; Google/LSA "not observed").
+[x] No profitability or business claim appears unless it came from the transcript.
+[x] Competitors are specific named local Mississauga firms only.
+[ ] PageSpeed scores are real numbers — NOT MET: not obtainable here (API 429, captcha). Must be run manually; /audit-write must not print a PageSpeed number.
+[x] DBM recorded (inference, with the prospect's quotes).
+[x] Revenue goal recorded (5x, about CAD 5M).
+[x] Close rate recorded (stated 10–15%; use 15%).
+[x] Average case value recorded (~CAD 10,000 per individual PR file).
+[x] Stated call focus recorded (marketing / paid-ad management, with Intake OS named for later).
+[x] Primary engagement, Products discussed on call and Lead-gen gap stated filled in with the exact format.
+[x] Existing vendor engagements recorded (contractors; no agency stated).
+[x] Budget constraints recorded (cost concern; open to more spend if ROAS is there).
