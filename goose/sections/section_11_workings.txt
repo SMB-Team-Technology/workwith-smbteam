@@ -1,0 +1,118 @@
+SECTION 11 WORKINGS — Goose Law (friendly name: goose) — INTERNAL, NOT CLIENT-FACING
+Prepared: Pass 2 (audit-write), October 29, 2026 proposal date
+
+=====================================================================
+1. PACKAGE DECISION AND OVERRIDE CHECK
+=====================================================================
+Source: goose/package_decision.json (confidence "low"; revenue_effective $570,000 from HubSpot band "$180K - $960K"; no revenue in research notes beyond "just above a million Canadian").
+proposal_review.json status: "locked" — the seller locked the package in the Phase 1 Slack thread (thread 1793113321.433629).
+
+Seller overrides recorded in package_decision.json selection_notes (all dated 2026-10-27):
+  - Replaced Full Service Marketing Starter + Elite Coach Plus with Paid Ads Essentials; dropped coaching.
+  - Changed to Full Service Marketing Essentials.
+  - Set Full Service Marketing Essentials to $3,797/mo (the stand-alone retail price, $0 bundle savings).
+Final locked package: Full Service Marketing Essentials at $3,797/mo. No coaching, no LAW, no AI Avatar.
+
+Transcript-Stated Need Override check:
+  1. Call-purpose: call focus is marketing (paid-ad management), primary_engagement "marketing", lead_gen_gap true. No override. Marketing is the correct category.
+  2. Existing-vendor: contractors only (remote ad placement, an ad creator in the Philippines); no signed agency/SEO/AEO vendor. No override; marketing not excluded.
+  3. Budget-reality: "I've always been concerned about the cost" [0:26:55]; open to more spend if ROAS is there [0:19:57-0:20:04]. The lower-cost seller-chosen Essentials tier is consistent with this. Revenue-table suggestion (Starter + Elite Coach Plus) was NOT presented; the seller's lower tier is the recommendation.
+  4. Effective-revenue: no net vs gross distinction (notes: "not distinguished from gross"; not a contingency practice). No override.
+
+ELIGIBILITY WARNINGS — SALES MUST BE AWARE (seller override stands, but these are real):
+  - Full Service Marketing Essentials normally requires a SINGLE practice area and single location. Goose Law lists two (business/corporate immigration and individual permanent residency). Single location: yes.
+  - Essentials is normally hidden above $750K revenue. Stated revenue is "just above a million Canadian" (about CAD 1M; the rep said roughly USD 750K). HubSpot band tops out at $960K. If revenue is read as USD above $750K, Essentials would be hidden and Starter would apply.
+  - Seller override is documented in the decision file; confirm with sales-ops if there is any question about scoping approval.
+
+=====================================================================
+2. MANDATORY PRICE LOOKUP (copied from package_decision.json and confirmed against the approved tables)
+=====================================================================
+- Marketing package selected: Full Service Marketing Essentials
+  - Bundled price: $3,797/mo (seller-set; matches the approved stand-alone price of $3,797)
+  - Stand-alone price (from table): $3,797/mo
+  - Savings: $0/mo
+- Non-marketing package selected: none (coaching dropped by seller override)
+- Legal AI Workforce (LAW) package selected: none
+- AI Avatar / Video Growth add-on selected: none
+- Total monthly investment: $3,797/mo
+- Total savings: $0/mo (retail strikethrough and savings callout omitted from Block 3 because there is no discount)
+
+35% cap check: CAD ~1,000,000 / 12 = ~83,333/mo; 35% = ~29,167/mo. Package $3,797 + aggressive ad spend $7,500 = $11,297/mo (about 13.6%). Within cap.
+Minimum MRR $2,497: met ($3,797).
+
+=====================================================================
+3. AD SPEND RANGE (from package_decision.json) AND ROI PROJECTION
+=====================================================================
+Conservative ad spend: $3,500/mo (decision file; above the $3,000 absolute minimum and the Immigration channel minimum of $3,000 for Google PPC).
+Aggressive ad spend: $7,500/mo (Full Service Marketing Essentials cap; uncapped 4x floor would be $14,000 per the decision file; lowered to the tier cap by the seller override).
+Practice area CPL basis: Immigration. Client-facing CPL midpoints: Google Search $97.50; Meta cold $75.00; Meta retargeting $57.50. LSA excluded from the mix because availability for immigration law in Canada is unverified.
+Assumed channel mix by spend: Google search 40%, Meta cold 40%, Meta retargeting 20%.
+Blended CPL = 0.40 x 97.50 + 0.40 x 75.00 + 0.20 x 57.50 = $80.50.
+Close rate: 15% (transcript: 10-15% historically; research notes say use 15%).
+Average case value: CAD 10,000 per individual permanent-residency application [0:03:44] (from the transcript, not a default).
+
+Conservative ($3,500):
+  Blended CPL with 20% cushion = 80.50 x 1.20 = $96.60
+  Leads = 3,500 / 96.60 = 36.2
+  Cases = 36.2 x 15% = 5.4
+  Revenue = 5.4 x 10,000 = ~CAD 54,000
+  Return = ~15.5x
+Aggressive ($7,500):
+  Blended CPL (no cushion) = $80.50
+  Leads = 7,500 / 80.50 = 93.2
+  Cases = 93.2 x 15% = 14.0
+  Revenue = 14.0 x 10,000 = ~CAD 140,000
+  Return = ~18.6x
+
+CURRENCY CAVEAT (verify before the call): SMB Team package and ad-spend figures are USD tables; the prospect's case value is CAD. The prospect's ad currency was ambiguous in the transcript ("we definitely don't exceed five" [0:18:59]; $5,000 CAD was the rep's clarification). The projection above treats ad spend and case value on a like-for-like basis. If ad spend is USD and revenue is CAD, returns are somewhat lower than shown (roughly 25% at a 0.75 rate). The client report labels case value as CAD and ad spend without a currency label.
+
+Reverse-math check: goal CAD 5M / 12 = ~CAD 417K per month. 14 cases x CAD 10K = CAD 140K is well short of the fivefold goal from ads alone at the Essentials cap. FLAG: revenue goal exceeds projected ad revenue — paid ads team review. Also, the 20% rule at the goal (5M x 20% / 12 = $83K/mo) exceeds the Essentials cap by a wide margin; a tier upgrade would be the path as revenue grows (Phase 4 in the roadmap).
+
+Client-facing "why this range" sentence (Block 4): "To turn searches and social audiences looking for permanent-residency counsel into booked consultations, so growth no longer rides on a single webinar."
+
+=====================================================================
+4. DOMINANT BUYING MOTIVE (Block 1)
+=====================================================================
+DBM: remove single-client risk and take himself out of the middle of the business so it grows without depending on him, then scale (type 1 firm that runs itself, with type 3 scale as the lever).
+Transcript lines: "We have one major client... It's a good position, but it's also very risky." [0:06:45-0:06:54]; "I feel confident closing leads, but I shouldn't be the guy. It shouldn't be dependent on me." [0:25:34]; "at a minimum, I'd want to increase that fivefold." [0:08:23].
+Block 1 closing statement: "We help growing Canadian immigration firms get a steady flow of qualified individual permanent-residency clients so they can reduce their reliance on a single major client and step out of the middle of every consultation."
+
+=====================================================================
+5. QUICK WIN OPPORTUNITIES (7 identified)
+=====================================================================
+1. Lead Gen / Quick Win — Add search-intent campaigns for individual permanent residency. Why: all paid traffic runs through one Meta-to-webinar path; Google was dropped because leads felt cold. Competitor: none named (competitor ad activity not observed). Opportunity: capture people actively searching with a direct booking path.
+2. Lead Gen / Quick Win — Refresh Meta creative and audiences under managed testing. Why: registrations down, attendance ~40%. Competitor: none. Opportunity: optimize toward consultations booked, build on the AI video ads already in use.
+3. Intake / Quick Win — Add a direct consultation-booking path beside the webinar. Why: all traffic goes through the webinar; attendance ~40%. Competitor: none. Opportunity: high-intent prospects reach a consultation without waiting for the next webinar.
+4. Intake / Long-Term — Move consultation closing off the owner's calendar. Why: second practitioner in training but volume too low. Competitor: none. Opportunity: steadier lead volume gives the second practitioner enough calls, with a documented consult-to-client process.
+5. Profit / Long-Term — Diversify revenue beyond one major client. Why: most revenue from one corporate client, which owner calls risky. Competitor: none. Opportunity: build a base of many individual files at ~CAD 10,000 each.
+6. Team / Quick Win — Put ad strategy, creative and reporting under one accountable partner. Why: placement and creative are split across remote contractors; owner monitors results daily. Competitor: none. Opportunity: one team owns strategy and reporting.
+7. Profit / Quick Win — Track cost per consultation and cost per signed client. Why: cost per lead cannot be stated; a recent month overspent. Competitor: none. Opportunity: tie spend to signed files so spending more is a measured decision (owner said he is open to higher spend if ROAS is there).
+"Who Is Doing It Better" row omitted on all cards: no named local competitor was verified doing anything specific.
+
+=====================================================================
+6. WHAT YOU TOLD US (Block 5) — transcript sourcing
+=====================================================================
+Row 1 (tied to Block 2: managed ad campaigns across Google and Meta)
+  Transcript: [0:05:01] "What I'm looking for is marketing, well, advertising support primarily." and [0:05:55] "If I can find an agency or someone who can just have overall responsibility for that and who can provide me with top quality leads and who can help us grow, then that's going to be something that's going to be favorable."
+Row 2 (tied to Block 2: campaigns built around individual permanent-residency searches and audiences, plus Google and local search)
+  Transcript: [0:25:23] "What we're not doing as well as we need to do is getting leads, right? Getting super qualified leads." and [0:03:19] "my area of focus has been on growing our individual accounts, individual files, where there are individuals seeking permanent residency."
+Row 3 (tied to Block 2: monthly performance reporting and strategy calls)
+  Transcript: [0:27:00] "I'm a little bit skeptical about agencies because... an agency may not end up giving my account as much attention as it should" (paraphrased in the report; not placed in a quote box).
+Excluded as ineligible or sensitive: the 80% client concentration figure (kept to Section 9), and the intake/closing dependency [0:09:22; 0:25:34], which Block 2 does not address (Intake OS was named on the call but not priced or proposed in the first package; see Phase 2).
+Next step line: kickoff call with your Onboarding team.
+
+=====================================================================
+7. ESCALATION FLAGS (INTERNAL ONLY — never in the client report)
+=====================================================================
+- Review counts unconfirmed — verify live before the call. All firm and competitor review counts and ratings in the research notes are UNCONFIRMED and conflict with each other (1 / 1.0 on one Birdeye fetch vs 146 / 4.6 vs 74 Google / 4.8). None are printed in the report.
+- PageSpeed NOT OBTAINED (API 429 and captcha). The report says scores were not captured and prints no numbers. Run pagespeed.web.dev manually.
+- Website, GBP, local 3-pack, Google Ads, LSA and Meta Ad Library data were NOT observed. Urgency score 5 is provisional; re-score after the manual checks.
+- Essentials eligibility: two practice areas and revenue near or above the $750K Essentials ceiling. Seller override applied; confirm scoping approval.
+- Revenue goal exceeds projected ad-generated revenue — paid ads team review.
+- Ad spend currency (CAD vs USD) unresolved; confirm with Donovan.
+- Phase 2 (FCOO Advisor) and Phase 3 (FCFO Advisor, LAW AI Workforce Pro) are roadmap mentions only. If sold later: LAW requires confirming with the sales rep that LAW delivery has launched and capacity is available.
+- Intake OS was named on the call as the likely next need; it is not in the pricing tables, so no price appears anywhere in the report. Roadmap Phase 2 speaks to building a repeatable intake process through the FCOO Advisor.
+- NAP discrepancy: directory listings show 289-872-0678 / dfrancis@gooselaw.com; the contact on file shows 647-576-7079 / donovan@gooselaw.com. Not verified as a true inconsistency.
+- Local Service Ads for immigration law in Canada not verified as available.
+- Marketing MRR $3,797 under $10K, ad spend under $25K: no scoping flag. Revenue not under $300K. Immigration is not a metro-restricted practice area for the Criminal/Family/PI rules.
+- Template-supplied inline styles remain in the assembled file (urgency marker left%, staircase image, Block 3/4 grid rows); no new inline styles were added.
