@@ -11,8 +11,8 @@
   "practice_areas_detected": [
     "personal injury",
     "with the main near-term lead-gen target being motor vehicle accident cases (transcribed as \"mba cases\"",
-    "motor vehicle accident / personal injury — search 1/2/3: not observed",
-    "medical malpractice — search 1/2/3: not observed",
+    "motor vehicle accident / personal injury \u2014 search 1/2/3: not observed",
+    "medical malpractice \u2014 search 1/2/3: not observed",
     "motor vehicle accident / personal injury",
     "medical malpractice"
   ],
@@ -26,21 +26,21 @@
     "lead_gen_gap": true
   },
   "marketing_tier": "Starter",
-  "marketing_name": "Full Service Marketing — Starter",
+  "marketing_name": "Full Service Marketing \u2014 Starter",
   "marketing_price_bundled": 4997,
   "marketing_price_retail": 5697,
   "marketing_savings": 700,
-  "coaching_name": "Elite Coach Plus",
-  "coaching_price_bundled": 3200,
-  "coaching_price_retail": 3497,
-  "coaching_savings": 297,
+  "coaching_name": null,
+  "coaching_price_bundled": null,
+  "coaching_price_retail": null,
+  "coaching_savings": null,
   "law_tier": null,
   "law_name": null,
   "law_price_bundled": null,
   "law_price_retail": null,
   "law_seats": null,
-  "total_bundled": 8197,
-  "total_savings": 997,
+  "total_bundled": 4997,
+  "total_savings": 700,
   "ad_spend_conservative": 10000,
   "ad_spend_aggressive": 20000,
   "ad_spend_rationale": {
@@ -48,10 +48,11 @@
     "aggressive_basis": "capped by Starter tier's ad cap"
   },
   "selection_notes": [
-    "Revenue not in research notes — sourced from HubSpot (hubspot_annual_law_firm_revenue): \"$180K - $960K\" → $570,000",
-    "Team size not stated in research notes — defaulting to 3. Review for coaching tier accuracy.",
-    "Revenue under $750K but multiple practice areas detected: Essentials hidden (requires single practice area) — Starter tier.",
-    "Revenue $400K–$1M: Elite Coach Plus selected.",
-    "Total at conservative ad spend ($18,197/mo) is over the 35% cap ($16,625/mo on $570,000 revenue) — review with sales rep."
+    "Revenue not in research notes \u2014 sourced from HubSpot (hubspot_annual_law_firm_revenue): \"$180K - $960K\" \u2192 $570,000",
+    "Team size not stated in research notes \u2014 defaulting to 3. Review for coaching tier accuracy.",
+    "Revenue under $750K but multiple practice areas detected: Essentials hidden (requires single practice area) \u2014 Starter tier.",
+    "Revenue $400K\u2013$1M: Elite Coach Plus selected.",
+    "Total at conservative ad spend ($18,197/mo) is over the 35% cap ($16,625/mo on $570,000 revenue) \u2014 review with sales rep.",
+    "Seller override: Full Service Marketing Starter stand-alone (Elite Coach Plus removed) per Slack request on 2026-10-28. Seller also asked for a custom price written as \"$71,21.25\"/month, which is not a parseable amount; catalog Starter pricing ($4,997 bundled / $5,697 retail) left in place until the seller confirms the intended price."
   ]
 }
