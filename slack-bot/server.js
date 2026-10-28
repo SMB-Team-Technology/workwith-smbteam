@@ -31,7 +31,21 @@ async function slackPost(token, channel, text, thread_ts) {
   });
 }
 
-async function githubDispatch(pat, repo, instruction, slackChannel, slackTs, eventType = 'slack-change-request') {
+// HubSpot sometimes posts the same booking alert several times within a
+// minute (Rachel Ciccone, 10/28: three posts in 45s). Drop repeats of the same
+// text within 2 minutes. Best-effort (per container); the change-handler
+// workflow also skips firms it has already started.
+const recentBookings = new Map();
+function isRepeatBooking(text) {
+  const key = text.replace(/\s+/g, ' ').trim();
+  const now = Date.now();
+  for (const [k, t] of recentBookings) if (now - t > 120_000) recentBookings.delete(k);
+  if (recentBookings.has(key)) return true;
+  recentBookings.set(key, now);
+  return false;
+}
+
+async function githubDispatch(pat, repo, instruction, slackChannel, slackTs, eventType = 'slack-change-request', extra = {}) {
   const res = await fetch(`https://api.github.com/repos/${repo}/dispatches`, {
     method:  'POST',
     headers: {
@@ -41,7 +55,7 @@ async function githubDispatch(pat, repo, instruction, slackChannel, slackTs, eve
     },
     body: JSON.stringify({
       event_type:     eventType,
-      client_payload: { instruction, slack_channel: slackChannel, slack_thread_ts: slackTs },
+      client_payload: { instruction, slack_channel: slackChannel, slack_thread_ts: slackTs, ...extra },
     }),
   });
   if (!res.ok) {
@@ -98,10 +112,21 @@ app.post('/api/slack', express.raw({ type: '*/*' }), async (req, res) => {
     (text.includes('Closer booked a Proposal Call') || text.includes('Law Firm Proposal Review'));
 
   if (isProposalBooking) {
+    if (isRepeatBooking(text)) {
+      console.log(`Repeat of a booking alert from the last 2 minutes — ignoring`);
+      return res.status(200).json({ ok: true });
+    }
     console.log(`HubSpot proposal booking detected, dispatching audit trigger`);
     await githubDispatch(pat, repo, text, event.channel, event.ts);
     return res.status(200).json({ ok: true });
   }
+
+  // Slack sends an @mention of this bot twice: as a `message` and as an
+  // `app_mention`. Only the app_mention is dispatched (below, with its
+  // thread), so a reply like "@bot lock it in" isn't handled by two
+  // workflows at once.
+  const botUserId = payload.authorizations?.[0]?.user_id || process.env.SLACK_BOT_USER_ID;
+  const mentionsBot = !!botUserId && text.includes(`<@${botUserId}>`);
 
   // Threaded replies from humans — may be a seller responding to a Phase 1
   // proposal review request (lock it in / ask why / propose changes). We
@@ -113,6 +138,7 @@ app.post('/api/slack', express.raw({ type: '*/*' }), async (req, res) => {
   const isThreadReply =
     event.type === 'message' &&
     !event.bot_id &&
+    !mentionsBot &&
     !!event.thread_ts &&
     event.thread_ts !== event.ts;
 
@@ -131,8 +157,11 @@ app.post('/api/slack', express.raw({ type: '*/*' }), async (req, res) => {
   }
 
   // Acknowledge in-thread before dispatching so the user sees an immediate reply
-  await slackPost(token, event.channel, `Got it — making that change now. I'll reply here when it's done.`, event.ts);
-  await githubDispatch(pat, repo, text, event.channel, event.ts);
+  // An @mention inside a thread carries that thread, so the workflow knows
+  // which firm's proposal it's about instead of guessing from the text.
+  const parentThreadTs = event.thread_ts && event.thread_ts !== event.ts ? event.thread_ts : '';
+  await slackPost(token, event.channel, `Got it — on it. I'll reply here when it's done.`, event.thread_ts || event.ts);
+  await githubDispatch(pat, repo, text, event.channel, event.ts, 'slack-change-request', { parent_thread_ts: parentThreadTs });
 
   return res.status(200).json({ ok: true });
 });
