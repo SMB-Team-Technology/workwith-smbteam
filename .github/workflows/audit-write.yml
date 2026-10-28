@@ -58,6 +58,27 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
 
+      # Prices in package_decision.json may have been edited by hand or by the
+      # Slack bot before the bundle rule existed. Re-price from the catalog
+      # (scripts/lib/pricing.mjs) so Pass 2 copies correct numbers.
+      - name: Re-price the package before building
+        run: |
+          FRIENDLY_NAME="${{ steps.inputs.outputs.friendly_name }}"
+          DECISION="$FRIENDLY_NAME/package_decision.json"
+          if [ ! -f "$DECISION" ]; then
+            echo "No package_decision.json — Pass 2 builds from the trigger's package text."
+            exit 0
+          fi
+          node scripts/reprice.mjs "$FRIENDLY_NAME"
+          git add "$DECISION"
+          if ! git diff --cached --quiet; then
+            git commit -m "Re-price package before build: $FRIENDLY_NAME"
+            for attempt in 1 2 3; do
+              git push origin main && break
+              git pull --rebase origin main
+            done
+          fi
+
       - name: Run audit write
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}

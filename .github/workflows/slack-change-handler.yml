@@ -32,7 +32,47 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
 
+      # -------------------------------------------------------------------
+      # Which firm does this thread belong to? An @mention inside a firm's
+      # proposal thread is about that firm — never guess from the text.
+      # If that proposal is still awaiting the seller's review, hand the
+      # message to the review-gate workflow (lock in / changes / firm name)
+      # instead of acting here.
+      # -------------------------------------------------------------------
+      - name: Find the thread's firm
+        id: thread
+        env:
+          PARENT_THREAD_TS: ${{ github.event.client_payload.parent_thread_ts }}
+          SLACK_INSTRUCTION: ${{ github.event.client_payload.instruction }}
+          SLACK_CHANNEL: ${{ github.event.client_payload.slack_channel }}
+          GITHUB_PAT: ${{ secrets.GH_PAT }}
+        run: |
+          : > /tmp/thread_firm.txt
+          [ -n "$PARENT_THREAD_TS" ] || { echo "Not in a thread."; exit 0; }
+          for f in */proposal_review.json; do
+            [ -f "$f" ] || continue
+            if [ "$(jq -r '.slack_thread_ts // empty' "$f")" = "$PARENT_THREAD_TS" ]; then
+              FRIENDLY=$(jq -r '.friendly_name' "$f")
+              STATUS=$(jq -r '.status' "$f")
+              printf 'This message was posted in the proposal thread for %s (folder %s/, status %s).\n' \
+                "$(jq -r '.firm_name' "$f")" "$FRIENDLY" "$STATUS" > /tmp/thread_firm.txt
+              cat /tmp/thread_firm.txt
+              if [ "$STATUS" = "pending" ]; then
+                echo "Proposal is awaiting review — forwarding to the review-gate workflow."
+                jq -n --arg i "$SLACK_INSTRUCTION" --arg c "$SLACK_CHANNEL" --arg t "$PARENT_THREAD_TS" \
+                  '{event_type: "slack-proposal-response", client_payload: {instruction: $i, slack_channel: $c, slack_thread_ts: $t}}' \
+                | curl -sf -X POST "https://api.github.com/repos/${{ github.repository }}/dispatches" \
+                    -H "Authorization: Bearer $GITHUB_PAT" -H "Accept: application/vnd.github.v3+json" \
+                    -H "Content-Type: application/json" -d @-
+                echo "forwarded=true" >> "$GITHUB_OUTPUT"
+              fi
+              exit 0
+            fi
+          done
+          echo "Thread $PARENT_THREAD_TS isn't a proposal thread."
+
       - name: Handle the request
+        if: steps.thread.outputs.forwarded != 'true'
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
           HUBSPOT_TOKEN: ${{ secrets.HUBSPOT_TOKEN }}
@@ -49,7 +89,16 @@ jobs:
           claude --model claude-sonnet-5-5 --dangerously-skip-permissions -p "
             You are an AI assistant managing law firm growth audit reports for SMB Team.
             Repo is at current working directory. Read /tmp/instruction.txt for the request
-            and /tmp/today.txt for today's date.
+            and /tmp/today.txt for today's date. Read /tmp/thread_firm.txt: if it names a
+            firm, the message was posted in that firm's proposal thread and is about that
+            firm — act only on that folder.
+
+            WHICH FIRM (Types 1–3): use the thread's firm from /tmp/thread_firm.txt. If it's
+            empty, the message must name the firm and the name must match exactly one
+            folder (or one trigger file's firm_name). If no firm is identified, or more
+            than one matches, do NOT edit anything: write to /tmp/summary.txt
+            'Which firm is this for? Reply in that firm's proposal thread, or name the firm.'
+            Never pick a firm because it's the most recent or 'the only pending one'.
 
             Identify which of the four request types applies, then execute it:
 
@@ -61,7 +110,9 @@ jobs:
             2. Make the minimal, precise edit to the HTML file(s). If the firm's
                proposal_review.json has status 'pending' and the request changes the
                package, edit package_decision.json instead, using the same rules as the
-               'propose changes' path in .github/workflows/slack-proposal-response.yml.
+               'propose changes' path in .github/workflows/slack-proposal-response.yml:
+               change product names only, then run 'node scripts/reprice.mjs <folder>'
+               for prices — never type or calculate a price yourself.
             3. Commit to main with a clear message.
             4. Write 1-2 sentence summary to /tmp/summary.txt.
             Package/pricing changes: the approved catalog is the pricing tables in
@@ -74,8 +125,11 @@ jobs:
             AI Essentials → AI Workforce Pro, AI Accelerator L1/L2 → Fractional CTO Level
             1/2, AI Enterprise → Fractional CTO Level 3; 'sprint' → Law Firm AI Foundation
             Sprint; FCTO → Fractional CTO Level 1/2/3;
-            FCOO / FCFO → Advisor/Director/Partner; MC → Master's Circle; ECP → Elite Coach
-            Plus. AIWP with no tier: Starter for a team of 1–4 or unknown size (seats =
+            FCOO → Advisor/Director (FCOO Partner is retired — never offer it; 'max hours' or
+            'top tier' means Director); FCFO → Advisor/Director/Partner; MC → Master's Circle;
+            ECP → Elite Coach Plus. Bundle rule: bundled prices only when 2+ bundle-eligible
+            products are in the package (AI Workforce Pro – Starter never counts); a single
+            product is charged its stand-alone price (scripts/lib/pricing.mjs has both). AIWP with no tier: Starter for a team of 1–4 or unknown size (seats =
             stated team size, else 1), base for 5+. If the product is clear but its tier or seat count isn't, use the most
             likely tier and say which one in the summary; only stop to ask if no product
             matches at all.
@@ -102,7 +156,8 @@ jobs:
             Steps:
             1. Find triggers/audit-research/[friendly-name].json (list folder if unsure).
             2. Increment _run (set to 2 if missing, else N+1). Update _triggered_date to today.
-               Add or update 'package' field if the request specifies one.
+               Add or update 'package' field if the request specifies one. FCOO Partner is
+               retired — write FCOO Director instead and say so in the summary.
             3. CRITICAL: git add ONLY that one trigger file, commit, push.
                One file per commit — the pipeline uses git diff-tree | head -1.
                This fires the full pipeline: regenerates report + PPTX + PDF + re-sends email.
@@ -110,19 +165,48 @@ jobs:
                'Re-triggered full audit for [Firm] (~60-90 min). Email will resend when done.'
 
             --- TYPE 4: NEW AUDIT FROM SCRATCH ---
-            Triggered by: 'trigger new audit', 'run audit for', 'new proposal for', etc.
+            Triggered by: 'trigger new audit', 'run audit for', 'new proposal for', and the
+            HubSpot booking alerts ('Closer booked a Proposal Call', 'Law Firm Proposal
+            Review').
             Steps:
             1. Parse firm name, contact name, email, website, sales rep, proposal date/time.
+               If the alert has no contact name AND no email, stop: don't write a trigger;
+               write to /tmp/summary.txt 'Booking alert had no contact name or email —
+               skipped. Re-post it with the contact's email to start the proposal.'
             2. If HUBSPOT_TOKEN is set, call HubSpot to fill missing fields:
                Search contacts: POST https://api.hubapi.com/crm/v3/objects/contacts/search
                Get deals: GET .../contacts/{id}/associations/deals
                Get owner: GET .../owners/{ownerId}
+               Get the company: GET https://api.hubapi.com/crm/v4/objects/contacts/{id}/associations/companies,
+                 then GET https://api.hubapi.com/crm/v3/objects/companies/{companyId}?properties=name,domain
                (Authorization: Bearer \$HUBSPOT_TOKEN on all requests)
-            3. Build friendly name: lowercase, strip suffixes (llp llc pc pllc ltd law group
-               law firm attorneys counselors), replace non-alphanumeric with hyphens, trim.
-            4. Write triggers/audit-research/[friendly-name].json with all fields.
-            5. CRITICAL: git add ONLY that file, commit, push.
-            6. Write summary to /tmp/summary.txt.
+            3. FIRM NAME — the law firm's name, never a person's:
+               a. Use the HubSpot COMPANY record's name. The contact's free-text 'company'
+                  field and the deal name are fallbacks only.
+               b. Cross-check it against the website/email domain. If the name is a
+                  person's name (e.g. the contact's own name), or clearly doesn't match the
+                  domain (e.g. 'Office of James Patrick Barrett' for bllegal.com), use the
+                  name the domain points to and set \"firm_name_check\" in the trigger to a
+                  one-line explanation (e.g. 'HubSpot contact company says Office of James
+                  Patrick Barrett; website is bllegal.com — using BL Legal').
+               c. Store hubspot_company_id and company_domain in the trigger.
+            4. DUPLICATES — before writing, check triggers/audit-research/*.json for the same
+               firm triggered in the last 14 days (_triggered_date): same hubspot_contact_id,
+               same hubspot_company_id, or the same email/website domain (ignore gmail,
+               yahoo, outlook, hotmail, icloud, aol). If one exists, don't write a new
+               trigger; write to /tmp/summary.txt 'Already started a proposal for <firm> on
+               <date> (folder <name>/) — skipping this duplicate.' Also skip if this exact
+               booking was already handled in the last hour (git log --since='1 hour ago').
+            5. Build friendly name from the firm name: lowercase, strip suffixes (llp llc pc
+               pllc ltd law group law firm attorneys counselors), replace non-alphanumeric
+               with hyphens, trim.
+            6. Write triggers/audit-research/[friendly-name].json with all fields. If the
+               request already says which package to propose, put it in 'package' now —
+               never add it in a second commit (each commit starts a separate run).
+            7. CRITICAL: git add ONLY that file, commit, push.
+            8. Write summary to /tmp/summary.txt. If firm_name_check is set, include
+               'Firm name check: <explanation>. Reply \"firm name is …\" in the proposal
+               thread to fix.'
 
             RULES FOR ALL TYPES:
             - Always run 'git pull --rebase origin main' before git push.
@@ -132,7 +216,7 @@ jobs:
           "
 
       - name: Post success to Slack
-        if: success()
+        if: success() && steps.thread.outputs.forwarded != 'true'
         env:
           SLACK_BOT_TOKEN: ${{ secrets.SLACK_BOT_TOKEN }}
           SLACK_CHANNEL: ${{ github.event.client_payload.slack_channel }}

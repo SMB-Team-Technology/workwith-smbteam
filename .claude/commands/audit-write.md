@@ -145,6 +145,9 @@ None of these four checks are about recomputing a price in isolation — they ar
 Before any eligibility logic, check whether `[friendly-name]/package_decision.json` exists.
 
 - **If it exists:** Read it and extract `marketing_tier`, `marketing_price_bundled`, `marketing_price_retail`, `coaching_name`, `coaching_price_bundled`, `coaching_price_retail`, `total_bundled`, `ad_spend_conservative`, `ad_spend_aggressive`, `net_revenue_stated`, `is_contingency_practice`, `confidence`, `call_focus`, and the LAW fields (`law_tier`, `law_name`, `law_price_bundled`, `law_price_retail`, `law_seats`). A `null` marketing field means no marketing package is part of the recommendation. When `call_focus.primary_engagement` is set, `select-package.mjs` has already applied the call-purpose override (marketing left out on a coaching/ops- or AI-led call with no lead-gen need; AI products named on the call included as the LAW package) — still run the override check below as a backstop, but don't re-add marketing it removed unless the research notes show a lead-gen need. After applying the Transcript-Stated Need Override above:
+  - **Prices in the file are already correct — copy them, never recompute.** `*_price_bundled` is the price the client is CHARGED and `*_price_retail` is the stand-alone price. `scripts/lib/pricing.mjs` applies the bundle rule: when `pricing_mode` is `"standalone"` (fewer than 2 bundle-eligible products — AI Workforce Pro – Starter never counts), the charged price IS the stand-alone price and there are no bundle savings. If you change which products are in the package for any reason, edit only the product name fields and then run `node scripts/reprice.mjs [friendly-name]` to get the prices.
+  - **Seller always wins.** If `package_source` is `"trigger_override"` or any `selection_notes` entry starts with "Seller override", the seller chose this package in Slack. Use it as-is — the four Transcript-Stated Need overrides above do not apply to it. Note any rule it breaks in section_11_workings.txt, but build it.
+  - If `needs_revenue_confirmation` is `true`, the seller locked it in without confirming revenue. Build it, and add "Revenue unverified (draft based on <revenue_source>)" to section_11_workings.txt — never mention this in the client-facing report.
   - If `needs_seller_input` is `true`, no package was chosen (call focus unknown) and the seller never set one. Do not fall back to a revenue-based marketing + coaching package. Stop and report that the seller must set the package in the Phase 1 Slack thread first.
   - If none of the three overrides apply and `confidence` is `"high"`, use the tier names and prices exactly — do not re-run eligibility logic.
   - If none of the three overrides apply but `confidence` is `"medium"` or `"low"`, use the decision file as a starting point, cross-check the selected tiers against the research notes, and document any correction in section_11_workings.txt.
@@ -176,6 +179,8 @@ Do not rely on memory for any price. If using package_decision.json, copy the pr
 - Total monthly investment (sum of all bundled/recurring prices): $X,XXX/mo
 - Total savings (sum of all savings): $X,XXX/mo
 
+**Bundle rule:** bundled prices apply only when the package has 2 or more bundle-eligible products. AI Workforce Pro – Starter does not count toward a bundle. With fewer than 2, every product is charged its stand-alone price and savings are $0. A product with no stand-alone price (Paid Ads Essentials, Web + SEO Essentials, Coach Essentials) cannot be sold on its own — if it ends up alone, stop and report it instead of building.
+
 If any price you are about to write is not an exact match to a value in those tables, stop. Go back to the table and find the correct number. Do not round, interpolate, or estimate. Do not proceed to Step I-a until these lookups are confirmed character-by-character against the tables in this file.
 
 **STEP I-a — Write workings file**
@@ -199,7 +204,7 @@ Fill and save `[friendly-name]/sections/section_11_next_steps.html` with the com
 - All quick win cards (minimum 6 across all four pillars). Delete the "Who Is Doing It Better" row on any card where no named competitor was identified.
 - Block 1: custom closing statement (formula: "We help [audience] get [external desire] so they can [DBM].")
 - Block 2: DBM subheader + package block(s) with deliverables. Each package block must include a package-label div identifying the package type.
-- Block 3: investment rows with retail (stand-alone) and bundled prices pulled from your workings file. Total monthly investment row. Savings callout. Use ONLY the prices from the approved tables — never deviate. Each row represents one service category (e.g. "Full Service Marketing Starter", "Elite Coach Plus") — never break a category into sub-component line items or show individual pricing within a service category.
+- Block 3: investment rows with retail (stand-alone) and bundled prices pulled from your workings file. Total monthly investment row. Savings callout. **When `pricing_mode` is `"standalone"` there is no bundle: show one price per row (the stand-alone price), and delete the savings callout and any "You save … by bundling" text.** Use ONLY the prices from the approved tables — never deviate. Each row represents one service category (e.g. "Full Service Marketing Starter", "Elite Coach Plus") — never break a category into sub-component line items or show individual pricing within a service category.
 - Block 4: recommended ad spend table. **Only include this block at all if a marketing/ads package is actually part of this firm's recommendation** (i.e., a marketing tier was selected and survived the Transcript-Stated Need Override above) — if the recommendation is coaching/ops/AI-only, delete Block 4 entirely from the saved file rather than filling it with a number for a service the firm isn't buying. When it applies: **DO NOT change the HTML structure otherwise.** Replace the placeholder dollar amounts, case counts, and return multiples, and fill the "why this range" sentence (see Step I-a) with the benefit framing — why this spend pays off for this firm, not the internal CPL/tier-multiplier math. Structure: ad spend range row → case value row → spacer → "Conservative scenario" header + 3 rows (cases, revenue, return) → spacer → "Aggressive scenario" header + 3 rows → why-this-range sentence → disclaimer.
 
 Leave blocks 5–8 with their original template placeholder text for now. Save the file.
@@ -279,7 +284,22 @@ Default to Full Service Marketing at the appropriate tier unless there is a spec
 | $2M–$3M | Dominate | $10,497/mo | $100,000 |
 | $3M+ | Platinum | $15,997/mo | $150,000 |
 
-Note: the Paid-Ads-only sub-package for Starter has a lower cap of $20,000 (see the General Add-Ons / sub-package pricing in Scoping_and_Ad_Spend_Guide.md) — $25,000 applies only to the Full Service Marketing Starter bundle above.
+Note: the Paid-Ads-only sub-package for Starter has a lower cap of $20,000 — $25,000 applies only to the Full Service Marketing Starter bundle above.
+
+**Sub-packages — Paid Ads and Web + SEO** (from the Sub-Package tables in `Design Files/Scoping_and_Ad_Spend_Guide.md`; also in `scripts/lib/pricing.mjs`):
+
+| Package | Bundled | Stand-alone |
+|---|---|---|
+| Paid Ads Essentials | $1,997/mo | none — can't be sold on its own (awaiting a price from Sales) |
+| Paid Ads Starter | $2,497/mo | $3,497/mo |
+| Paid Ads Growth | $4,497/mo | $5,497/mo |
+| Paid Ads Dominate | $6,997/mo | $7,997/mo |
+| Paid Ads Platinum | $8,997/mo | $9,997/mo |
+| Web + SEO Essentials | $1,997/mo | none — can't be sold on its own |
+| Web + SEO Starter | $3,497/mo | $3,997/mo |
+| Web + SEO Growth | $4,897/mo | $5,897/mo |
+| Web + SEO Dominate | $6,997/mo | $7,997/mo |
+| Web + SEO Platinum | $9,597/mo | $11,497/mo |
 
 **Stand-alone prices (for savings calculation in Block 3):**
 Essentials $3,797 | Starter $5,697 | Growth $8,997 | Dominate $12,497 | Platinum $18,997
@@ -302,21 +322,22 @@ Non-marketing packages are the default recommendation alongside marketing. Recom
 | $400K–$1M | Any | Elite Coach Plus | $3,200/mo |
 | $400K–$1M | Growing | Elite Coach + FCOO Advisor | $5,694/mo |
 | $400K–$1M | Growing, larger ops need | Elite Coach + FCOO Director | $7,394/mo |
-| $400K–$1M | Growing, largest ops need | Elite Coach + FCOO Partner | $11,394/mo |
 | $1M+ | Under 5 | Elite Coach Plus | $3,200/mo |
 | $1M+ | Under 5 operational focus | FCOO Advisor | $3,297/mo |
 | $1M+ | Under 5, established leaders, operational focus | FCOO Director | $4,997/mo |
 | $1M+ | 5+ with dedicated staff | Master's Circle | $4,600/mo |
 | $1M+ | 5+ with dedicated staff + ops | Master's Circle + FCOO Advisor | $6,694/mo |
 | $2M+ | 5+ with dedicated staff | Master's Circle + FCOO Director | $8,394/mo |
-| $3M+ | Large team, operational focus | FCOO Partner | $8,997/mo |
-| $3M+ | Large team | Master's Circle + FCOO Partner | $12,394/mo |
+| $3M+ | Large team, operational focus | FCOO Director | $4,997/mo |
+| $3M+ | Large team | Master's Circle + FCOO Director | $8,394/mo |
+
+**FCOO Partner is retired (Oct 2026) — never recommend it or any package containing it (Elite Coach + FCOO Partner, Master's Circle + FCOO Partner). Use FCOO Director.**
 
 **Add Fractional CFO** if: owner mentions profit problems, revenue growing but not taking home more, no financial visibility, doesn't know acquisition cost. FCFO Advisor $3,297/mo bundled (min revenue $400K); FCFO Director $4,997/mo bundled (min revenue $1M); FCFO Partner $8,997/mo bundled (min revenue $3M).
 
 **Note on Coach Essentials / Coach Essentials Plus:** Coach Essentials is group coaching only and cannot be sold standalone. Coach Essentials Plus adds a monthly 1:1 coaching call and can be sold standalone at $2,497/mo. Both are lower-cost alternatives to Elite Coach in the same $250K–$400K revenue band — use them only when the transcript indicates a tighter budget (e.g. via the Budget-Reality Override), not as the default recommendation for that revenue band.
 
-**Stand-alone prices:** Coach Essentials Plus $2,497 (Coach Essentials has no stand-alone price) | Elite Coach $3,497 | Elite Coach Plus $3,497 | Master's Circle $4,997 | FCOO Advisor $3,797 | FCOO Director $5,797 | FCOO Partner $9,997 | FCFO Advisor $3,797 | FCFO Director $5,797 | FCFO Partner $9,997
+**Stand-alone prices:** Coach Essentials Plus $2,497 (Coach Essentials has no stand-alone price) | Elite Coach $3,497 | Elite Coach Plus $3,497 | Master's Circle $4,997 | FCOO Advisor $3,797 | FCOO Director $5,797 | FCFO Advisor $3,797 | FCFO Director $5,797 | FCFO Partner $9,997
 
 **Fractional packages (FCOO and FCFO) now include Elite Coach group deliverables.** When recommending any fractional package in Block 2, the deliverables list must include: weekly group coaching sessions, practice area masterminds, virtual access to quarterly workshops, and one annual in-person workshop. These are included in the fractional price — do not list them as a separate charge.
 

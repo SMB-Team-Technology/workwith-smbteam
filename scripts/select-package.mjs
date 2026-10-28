@@ -943,7 +943,9 @@ export async function selectPackage(friendlyName) {
 
   // Select packages
   const revenueMarketing = includeMarketing ? selectMarketingTier(revenueStated, effectiveRevenue, practiceAreas, text, notes) : null;
-  const revenueCoaching  = selectCoachingByRevenue(effectiveRevenue, effectiveTeam, text, notes);
+  // The revenue rule's reasoning is only shown if its pick is the one used.
+  const coachingRuleNotes = [];
+  const revenueCoaching  = selectCoachingByRevenue(effectiveRevenue, effectiveTeam, text, coachingRuleNotes);
   const revenueAdSpend   = revenueMarketing ? estimateAdSpend(practiceAreas, revenueMarketing) : null;
 
   // Coaching named on the call wins over the revenue rule. On an AI-led call
@@ -960,6 +962,7 @@ export async function selectPackage(friendlyName) {
     coaching = null;
     focusNotes.push(`AI-led call with no coaching discussed — coaching left out (revenue rule would add ${revenueCoaching.name}; add it back if the seller wants it).`);
   }
+  if (coaching === revenueCoaching || needsSellerInput) notes.push(...coachingRuleNotes);
 
   const law = selectLawTier(callFocus.products, effectiveRevenue, teamSizeStated, focusNotes);
 
@@ -1030,6 +1033,9 @@ export async function selectPackage(friendlyName) {
     team_size_effective:     effectiveTeam,
     practice_areas_detected: practiceAreas,
     hubspot_company:         company,
+    // "MISMATCH — trigger says X; website says Y" from the research notes;
+    // the Phase 1 Slack post asks the seller to confirm the firm name.
+    firm_identity_check:     readNoteField(text, 'firm identity check', { firstLineOnly: true }),
 
     package_source:          packageSource,
     package_override:        packageOverride,
