@@ -42,6 +42,7 @@ jobs:
         id: find
         env:
           SLACK_THREAD_TS: ${{ github.event.client_payload.slack_thread_ts }}
+          SELLER_MESSAGE: ${{ github.event.client_payload.instruction }}
         run: |
           MATCH=""
           for f in */proposal_review.json; do
@@ -61,8 +62,14 @@ jobs:
 
           STATUS=$(jq -r '.status' "$MATCH")
           if [ "$STATUS" != "pending" ]; then
-            echo "Matched $MATCH but status is '$STATUS' (not pending) — already handled, ignoring."
+            echo "Matched $MATCH but status is '$STATUS' (not pending) — already handled."
             echo "found=false" >> "$GITHUB_OUTPUT"
+            # Don't go silent on a request: tell the seller why nothing happened.
+            # Chit-chat ("thanks!") still gets no reply.
+            if grep -qiE 'lock|build|change|swap|update|add|remove|drop|price|email|resend|rerun|re-run|firm name|revenue' <<< "$SELLER_MESSAGE"; then
+              echo "notify_status=$STATUS" >> "$GITHUB_OUTPUT"
+              echo "notify_firm=$(jq -r '.firm_name' "$MATCH")" >> "$GITHUB_OUTPUT"
+            fi
             exit 0
           fi
 
@@ -76,6 +83,28 @@ jobs:
           echo "date=$(jq -r '.date' "$MATCH")"                       >> "$GITHUB_OUTPUT"
           echo "hubspot_contact_id=$(jq -r '.hubspot_contact_id // empty' "$MATCH")" >> "$GITHUB_OUTPUT"
           echo "suppress_pricing=$(jq -r '.suppress_pricing // "false"' "$MATCH")"   >> "$GITHUB_OUTPUT"
+
+      - name: Tell the seller this proposal is already past review
+        if: steps.find.outputs.notify_status != ''
+        env:
+          SLACK_BOT_TOKEN: ${{ secrets.SLACK_BOT_TOKEN }}
+          SLACK_CHANNEL: ${{ github.event.client_payload.slack_channel }}
+          SLACK_THREAD_TS: ${{ github.event.client_payload.slack_thread_ts }}
+          STATUS: ${{ steps.find.outputs.notify_status }}
+          FIRM_NAME: ${{ steps.find.outputs.notify_firm }}
+        run: |
+          case "$STATUS" in
+            locked) WHAT="is locked in and the deck is being built" ;;
+            built)  WHAT="has already been built" ;;
+            *)      WHAT="is marked '$STATUS'" ;;
+          esac
+          TEXT="ℹ️ The proposal for *$FIRM_NAME* $WHAT, so I didn't change anything. To change the deck, @mention me in this thread with the edit (e.g. \"@bot change the coaching to Elite Coach\"), or say \"@bot resend the email\" / \"@bot re-run\"."
+          PAYLOAD=$(jq -n --arg channel "$SLACK_CHANNEL" --arg thread "$SLACK_THREAD_TS" --arg text "$TEXT" \
+            '{channel: $channel, thread_ts: $thread, text: $text}')
+          curl -s -X POST https://slack.com/api/chat.postMessage \
+            -H "Authorization: Bearer $SLACK_BOT_TOKEN" \
+            -H "Content-Type: application/json" \
+            -d "$PAYLOAD"
 
       # -------------------------------------------------------------------
       # Self-heal: package_decision.json is produced by Pass 1.5 but was
@@ -215,7 +244,19 @@ jobs:
             below needs to tag them — do NOT write \"@$SALES_REP\" yourself, that will not
             notify anyone): $SALES_REP_MENTION
 
-            Read the seller's message and classify it into exactly one of three intents:
+            Read the seller's message and classify it into exactly one of the intents below
+            (A–E). A message can also carry facts for INTENT E alongside another intent
+            (e.g. 'revenue is about 300K, lock it in') — handle E first, then the other.
+
+            PRICES: never type, calculate or edit a price, savings figure or total
+            yourself. You choose WHICH products are in the package; then run
+            \`node scripts/reprice.mjs $FRIENDLY_NAME\`, which sets every price from the
+            catalog in scripts/lib/pricing.mjs and prints a JSON summary (products,
+            prices, total, pricing_mode, unpriced_products). Quote prices from that output.
+            Bundle rule it applies: bundled prices only when 2+ bundle-eligible products
+            are in the package (AI Workforce Pro – Starter never counts); otherwise
+            stand-alone prices and no savings. FCOO Partner is retired — never offer it;
+            use FCOO Director.
 
             AWAITING SELLER INPUT: if package_decision.json has \"needs_seller_input\": true,
             no package has been chosen yet (the call focus was unknown, usually because no
@@ -224,6 +265,16 @@ jobs:
             for a lock-in reply, do not write any trigger file or change \`$REVIEW_FILE\`;
             reply in the thread asking what to propose (e.g. 'FCTO Level 1 + 1 seat of
             AIWP', or 'use the revenue-only option').
+
+            LOCK-IN GUARD — check package_decision.json before INTENT A:
+            - \"needs_revenue_confirmation\": true → don't lock. Reply in the thread: the
+              revenue is unverified (say what it's based on: revenue_label / revenue_source)
+              and ask for the firm's actual annual revenue. Exception: the message itself
+              gives revenue (handle INTENT E first, then lock), or says 'lock anyway' /
+              'lock it in anyway' (lock, and note in the reply that revenue is unverified).
+            - non-empty \"unpriced_products\" → don't lock, even with 'anyway'. Reply that
+              those products can't be sold on their own yet (no stand-alone price until
+              Sales sets one) and ask the seller to add a product or choose another tier.
 
             --- INTENT A: LOCK IT IN ---
             Signals: 'lock it in', 'looks good', 'approved', 'go ahead', 'build it',
@@ -263,14 +314,19 @@ jobs:
             Signals: a specific requested change to the package ('swap to X tier',
             'drop coaching', 'raise/lower ad spend', 'use a different price').
             Steps:
-            1. Apply the requested change directly to \`$FRIENDLY_NAME/package_decision.json\`
-               (update the relevant tier/name/price/ad-spend fields) and append a note to its
-               selection_notes array documenting the seller's override and why, e.g.
+            1. Apply the requested change to the PRODUCT fields of
+               \`$FRIENDLY_NAME/package_decision.json\` — marketing_name, coaching_name,
+               law_name, law_seats, ad_spend_* — and append a note to its selection_notes
+               array documenting the seller's override, e.g.
                'Seller override: switched to Dominate tier per Slack request on <date>.'
-               - The approved catalog is the pricing tables in \`.claude/commands/audit-write.md\`
-                 (Marketing, Non-Marketing, Legal AI Workforce (LAW), AI Avatar, Bookkeeping,
-                 General Add-Ons, OmniSocial AI, Attorney Assistant). Look a product up there
-                 before saying it isn't in the catalog. Never invent a price.
+               Then run \`node scripts/reprice.mjs $FRIENDLY_NAME\` to set the prices.
+               - Product names: use the catalog names in scripts/lib/pricing.mjs (e.g.
+                 'Full Service Marketing — Starter', 'Paid Ads Starter', 'Web + SEO Growth',
+                 'Elite Coach Plus', 'FCOO Director', 'Elite Coach + FCOO Advisor',
+                 'Fractional CTO Level 1 + AI Workforce Pro – Starter'). Products outside
+                 that file (AI Avatar, Bookkeeping, add-ons, OmniSocial, Attorney Assistant,
+                 Foundation Sprint) are priced in \`.claude/commands/audit-write.md\` — look
+                 one up there before saying it isn't in the catalog, and never invent a price.
                - Sellers use shorthand. Resolve it before looking up:
                  AIWP (any case, e.g. 'aiwp') / AI Workforce Pro / 'AI software' → AI Workforce Pro – Starter
                  (\$350/user/mo, 1–4 users) or AI Workforce Pro (\$1,597/mo for 5 users +
@@ -278,8 +334,9 @@ jobs:
                  AI Accelerator L1/L2 → Fractional CTO Level 1/2, AI Enterprise → Fractional
                  CTO Level 3; 'sprint' / 'foundation sprint' → Law Firm AI Foundation Sprint;
                  FCTO / fractional CTO → Fractional CTO Level 1/2/3; FCOO / fractional COO →
-                 FCOO Advisor/Director/Partner; FCFO / fractional CFO → FCFO Advisor/Director/
-                 Partner; MC → Master's Circle; ECP → Elite Coach Plus.
+                 FCOO Advisor/Director (Partner is retired — 'max hours' / 'top tier' means
+                 Director); FCFO / fractional CFO → FCFO Advisor/Director/Partner;
+                 MC → Master's Circle; ECP → Elite Coach Plus.
                  AIWP with no tier: Starter if team_size_effective is 1–4 or team size
                  is unknown (seats = team_size_stated, else 1), base if 5+.
                  If the shorthand maps to one product but its tier or seat count is unclear,
@@ -289,28 +346,60 @@ jobs:
                - Whenever you set a package, also set needs_seller_input to false.
                  'Use the revenue-only option' (or 'marketing + coaching', 'the default')
                  means: copy every field in revenue_only_option to the top-level fields of
-                 the same name, then recompute total_bundled and total_savings.
+                 the same name, then run reprice.mjs.
                - 'Change this to X + Y' REPLACES the package: anything not named is removed.
-                 Set removed products' fields to null (for marketing also null the ad_spend_*
-                 fields). LAW products go in law_tier / law_name / law_price_bundled /
-                 law_price_retail (null for AI Workforce Pro) / law_seats.
-                 Recompute total_bundled and total_savings from what remains.
+                 Set removed products' name fields to null (for marketing also null
+                 marketing_tier and the ad_spend_* fields). Both AI products go in one
+                 law_name joined with ' + ', seats in law_seats. reprice.mjs recomputes
+                 everything else.
             2. git add ONLY that file, commit, push (pull --rebase first).
             3. Post an updated proposal summary as a Slack reply in the SAME thread,
                in this format, then repeat the same three options as before:
                '$SALES_REP_MENTION 📋 *Updated proposal for $FIRM_NAME*' followed by the new
-               marketing/coaching/total/ad-spend lines pulled from the updated
-               package_decision.json, then:
+               marketing/coaching/AI/total lines from the reprice.mjs output (plus ad spend
+               from package_decision.json). If pricing_mode is 'standalone', add
+               '(stand-alone pricing — fewer than 2 bundle-eligible products)'. If
+               unpriced_products is non-empty, say those products can't be sold on their own
+               yet and ask for another product or tier. Then:
                'Reply again to: 🔒 lock it in / ❓ ask why / ✏️ propose more changes'
                Use the pre-resolved mention text verbatim (it's already a real Slack
                tag or a visibly-flagged plain name) — do not substitute "@$SALES_REP".
             4. Do NOT modify \`$REVIEW_FILE\` — status stays 'pending' so the loop can
                continue until the seller locks it in.
 
+            --- INTENT D: FIX THE FIRM NAME ---
+            Signals: 'firm name is X', 'the firm is called X', 'wrong firm name', 'it's X
+            not Y'.
+            Steps:
+            1. Set \"firm_name\" to the corrected name in \`$REVIEW_FILE\` only, commit,
+               push. The lock-in step copies firm_name from that file into the build
+               trigger, so the deck uses it. Do NOT edit anything under
+               triggers/audit-research/ (any commit there starts a full re-run) and do
+               NOT rename the folder or friendly_name.
+            2. Reply in the SAME thread: 'Firm name updated to X — the deck will use it.'
+            3. Status stays 'pending'.
+
+            --- INTENT E: CONFIRM REVENUE OR TEAM SIZE ---
+            Signals: 'revenue is \$300K', 'they do about 1.2M', 'team is 15 people',
+            'headcount 7'.
+            Steps:
+            1. Revenue: run \`node scripts/reprice.mjs $FRIENDLY_NAME --revenue <annual dollars>\`
+               (e.g. --revenue 300000). Team size: set team_size_stated and
+               team_size_effective in package_decision.json, then run reprice.mjs
+               (AIWP seat counts follow team size — update law_seats if AIWP is included).
+            2. Check whether the confirmed numbers change the right tier (revenue bands and
+               team rules in .claude/commands/audit-write.md, e.g. Master's Circle needs a
+               team of 5+, Fractional CTO Level 2 needs \$1M+). If they do, say so in the
+               reply and suggest the change — don't swap products unless the seller asked.
+            3. Commit package_decision.json, then reply in the SAME thread with what was
+               recorded and the current package total.
+
             RULES FOR ALL INTENTS:
             - Always run 'git pull --rebase origin main' before any git push.
             - If push fails with 403/rejected, pull --rebase and retry up to 3 times.
-            - Never touch any other firm's files.
+            - Never touch any other firm's files. This thread belongs to $FIRM_NAME only —
+              even if the message names another firm, don't act on that firm; reply that
+              changes for another firm go in that firm's own proposal thread.
             - Never guess the seller's intent if genuinely ambiguous — in that case, ask a
               brief clarifying question as a Slack reply in the thread instead of acting,
               and leave $REVIEW_FILE untouched.

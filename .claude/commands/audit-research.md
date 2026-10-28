@@ -207,9 +207,12 @@ Extract from the discovery call transcript. Trust these values exactly as stated
 - Practice areas confirmed: [list all]
 - Current lead sources: [exact quotes if available]
 - Ads ever run: [yes/no — what platform, what budget, what result]
+- Firm identity check: [does the trigger's firm name match the firm on the website and in the transcript? Write "matches", or "MISMATCH — trigger says X; website/transcript say Y" (e.g. the trigger name is a person's name, or a different firm than the website). Machine-read: a mismatch is flagged to the seller in Slack]
 - Team size: [number and roles]
+- Team size (total headcount): [ONE whole number, e.g. 15 — machine-read by select-package.mjs, so write only the number or "not stated". Use the transcript's count of everyone at the firm (attorneys + staff); if the transcript doesn't give one, count the attorneys and staff listed on the website; otherwise "not stated". Never guess]
 - Annual revenue (gross / case value): [stated figure or range]
 - Annual revenue (net / take-home / collected): [stated figure or range — if the prospect only ever states one number, write "not distinguished from gross"]
+- Revenue (annual, best estimate): [ONE dollar figure, e.g. $300,000 — machine-read by select-package.mjs, so write only the figure or "not stated". The firm's current annual revenue as stated on the call ("north of $300K" → $300,000; "about 1.2" → $1,200,000; for contingency practices use the net/collected figure when one was stated). If the call gave no figure, write "not stated" — do not estimate from HubSpot, team size, or a revenue goal]
 - Fee structure: [contingency % / hourly / flat-fee / mixed — exact quote if available, or "not stated"]
 - Revenue goal: [stated figure — if not stated, note "not stated, use 2x current revenue"]
 - Average case value: [stated figure or practice area]
@@ -221,7 +224,7 @@ Extract from the discovery call transcript. Trust these values exactly as stated
 - Any claims about case types or practice areas: [exact quotes only]
 - Stated call focus / product interest: [what the prospect or rep said the call was actually about — e.g. "standard marketing/growth discovery," "Fractional CTO / AI automation engagement," "coaching/ops" — if the call was framed around something other than marketing/intake growth, say so explicitly, do not default to "standard"]
 - Primary engagement: [exactly one of: marketing | coaching/ops | AI | mixed — this line is machine-read by select-package.mjs, so write only the keyword. "marketing" = the call was mainly about leads/ads/SEO/website; "coaching/ops" = mainly about coaching, delegation, team, operations, or fractional COO/CFO; "AI" = mainly about AI tools or Fractional CTO; "mixed" = marketing and a non-marketing need were both central]
-- Products discussed on call: [SMB Team products the rep or prospect named or priced on the call, comma-separated, using the exact catalog names from the alias table below — or "none". Machine-read by select-package.mjs]
+- Products discussed on call: [SMB Team products the rep or prospect named or priced on the call, comma-separated, using the exact catalog names from the alias table below — or "none". Machine-read by select-package.mjs. One line only, no parentheses or explanations (put those in "Stated call focus"). Name ONE tier per product; if no tier was named, write the family name alone ("FCOO", "FCFO", "Fractional CTO") — never a list of tiers like "FCOO Advisor / Director / Partner"]
 - Lead-gen gap stated: [yes/no — machine-read. "yes" only if the prospect said they want more leads/cases or asked about marketing, ads, SEO, or their website; the mere absence of marketing is not a "yes". Follow with a short exact quote]
 - Existing marketing/SEO/ad vendor engagements: [any recently signed or currently active contract with another marketing, SEO, ad, or AEO vendor — exact quote if available, or "none stated"]
 - Budget constraints stated: [any explicit statement about affordability, spend limits, or inability to commit to a larger monthly investment — exact quote if available, or "none stated"]
@@ -236,14 +239,14 @@ Extract from the discovery call transcript. Trust these values exactly as stated
 | AI Workforce Pro – Starter | AIWP Starter, "AI software" at $350/mo or $350 per user, AI Essentials Starter |
 | AI Workforce Pro (base) | AIWP base, $1,597/mo for 5 users, AI Essentials base (old name) |
 | AI Workforce Pro | AIWP / aiwp with no tier given — the script picks Starter for 1–4 users (or unknown team size), base for 5+ |
-| Fractional CTO Level 1 / Level 2 / Level 3 | FCTO, fractional CTO, AI Accelerator L1 / L2 (old name), AI Enterprise (old name) |
+| Fractional CTO Level 1, Level 2 or Level 3 (one) | FCTO, fractional CTO, AI Accelerator L1 / L2 (old name), AI Enterprise (old name) |
 | Law Firm AI Foundation Sprint | sprint, foundation sprint, AI readiness assessment |
 | Elite Coach | Elite Coach, group coaching at ~$2,600/mo |
 | Elite Coach Plus | Elite Coach Plus, ~$3,200/mo coaching |
 | Coach Essentials / Coach Essentials Plus | Coach Essentials, Essentials coaching |
 | Master's Circle | MC, Master's Circle |
-| FCOO Advisor / Director / Partner | FCOO, fractional COO |
-| FCFO Advisor / Director / Partner | FCFO, fractional CFO |
+| FCOO Advisor or FCOO Director (one) — or FCOO if no tier was named. FCOO Partner is retired: never write it | FCOO, fractional COO |
+| FCFO Advisor, FCFO Director or FCFO Partner (one) — or FCFO if no tier was named | FCFO, fractional CFO |
 | Full Service Marketing | marketing package, ads + SEO, full service |
 
 If a price range was quoted that spans several products (e.g. "coaching ~$2,400–$3,200/mo"), list each product it could mean and say so in "Stated call focus" — do not pick one.
@@ -288,6 +291,8 @@ Before finishing, check every item. Fix anything unchecked before saving.
 - [ ] Average case value is recorded (stated or practice area default noted)
 - [ ] Stated call focus / product interest is recorded — if the call was about something other than marketing/intake growth (e.g. Fractional CTO/AI, coaching/ops), that is called out explicitly, not buried in a "note" or left implicit
 - [ ] "Primary engagement", "Products discussed on call" (catalog names only), and "Lead-gen gap stated" are each filled in with the exact format shown — select-package.mjs reads them to build the Phase 1 package
+- [ ] "Revenue (annual, best estimate)" is one dollar figure or "not stated", and "Team size (total headcount)" is one whole number or "not stated" — both machine-read
+- [ ] "Firm identity check" is filled in — a trigger name that is a person's name or a different firm than the website is marked MISMATCH
 - [ ] Existing marketing/SEO/ad vendor engagements are recorded (or "none stated")
 - [ ] Budget constraints stated by the prospect are recorded (or "none stated")
 

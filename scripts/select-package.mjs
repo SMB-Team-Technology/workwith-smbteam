@@ -9,63 +9,48 @@
  * Output: <friendly-name>/package_decision.json
  *
  * Pass 2 reads this file and uses the tier/price values directly, removing AI
- * judgment from the pricing decision.
+ * judgment from the pricing decision. Prices and the bundle rule live in
+ * scripts/lib/pricing.mjs.
  *
  * Exit codes:
- *   0 — decision written (or skipped because trigger has explicit override)
+ *   0 — decision written (or skipped because the trigger's package override
+ *       names a product the catalog doesn't know — Pass 2 uses the override text)
  *   1 — fatal error (no research notes, bad args)
  */
 
-import { readFileSync, writeFileSync, readdirSync, existsSync } from 'fs';
+import { readFileSync, writeFileSync, readdirSync, existsSync, statSync } from 'fs';
 import { join } from 'path';
+import { execFileSync } from 'child_process';
+import { pathToFileURL } from 'url';
+import { getProduct, resolveName, unretire, pricePackage, applyPricing } from './lib/pricing.mjs';
 
-// ─── Approved pricing tables ─────────────────────────────────────────────────
-// Keep in sync with Design Files/audit-write.md and SMB_Team_Audit_Agent_System_Prompt.txt
+// ─── Selection tables ────────────────────────────────────────────────────────
+// Revenue bands and ad-spend caps per marketing tier. Prices come from
+// scripts/lib/pricing.mjs. Caps match audit-write.md (Essentials $7,500,
+// Full Service Starter $25,000).
 
 const MARKETING_TIERS = [
-  { tier: 'Essentials', name: 'Full Service Marketing — Essentials', bundled: 3497,  retail: 3797,  adCap: 5_000,   minRev: 0,         maxRev: 749_999 },
-  { tier: 'Starter',    name: 'Full Service Marketing — Starter',    bundled: 4997,  retail: 5697,  adCap: 20_000,  minRev: 500_000,   maxRev: 999_999 },
-  { tier: 'Growth',     name: 'Full Service Marketing — Growth',     bundled: 7497,  retail: 8997,  adCap: 50_000,  minRev: 1_000_000, maxRev: 1_999_999 },
-  { tier: 'Dominate',   name: 'Full Service Marketing — Dominate',   bundled: 10497, retail: 12497, adCap: 100_000, minRev: 2_000_000, maxRev: 2_999_999 },
-  { tier: 'Platinum',   name: 'Full Service Marketing — Platinum',   bundled: 15997, retail: 18997, adCap: 150_000, minRev: 3_000_000, maxRev: Infinity },
-];
+  { tier: 'Essentials', adCap: 7_500,   minRev: 0,         maxRev: 749_999 },
+  { tier: 'Starter',    adCap: 25_000,  minRev: 500_000,   maxRev: 999_999 },
+  { tier: 'Growth',     adCap: 50_000,  minRev: 1_000_000, maxRev: 1_999_999 },
+  { tier: 'Dominate',   adCap: 100_000, minRev: 2_000_000, maxRev: 2_999_999 },
+  { tier: 'Platinum',   adCap: 150_000, minRev: 3_000_000, maxRev: Infinity },
+].map(t => ({ ...t, name: `Full Service Marketing — ${t.tier}` }));
 const TIER_BY_NAME = Object.fromEntries(MARKETING_TIERS.map(t => [t.tier.toLowerCase(), t]));
-
-// Coaching (non-marketing) stand-alone prices for savings calculation
-// Coach Essentials has no stand-alone price (cannot be sold standalone).
-const COACHING_RETAIL = {
-  'Coach Essentials':      null,
-  'Coach Essentials Plus': 2497,
-  'Elite Coach':           3497,
-  'Elite Coach Plus':      3497,
-  "Master's Circle":       4997,
-  'FCOO Advisor':          3797,
-  'FCOO Director':         5797,
-  'FCOO Partner':          9997,
-};
-
-// Legal AI Workforce (LAW) tiers — source of truth is the AI Services tab of
-// the 2026 SMB Team Pricing sheet; keep in sync with the LAW section of
-// .claude/commands/audit-write.md. AI Workforce Pro has no standalone price
-// and no revenue requirement (it's limited by user count).
-const LAW_TIERS = {
-  'AI Workforce Pro – Starter': { tier: 'AI Workforce Pro – Starter', perUser: 350, maxUsers: 4, retail: null, minRev: 0 },
-  'AI Workforce Pro (base)':    { tier: 'AI Workforce Pro', base: 1597, baseUsers: 5, perExtraUser: 120, retail: null, minRev: 0 },
-  'Fractional CTO Level 1':     { tier: 'Fractional CTO Level 1', bundled: 3297, retail: 3797, minRev: 400_000 },
-  'Fractional CTO Level 2':     { tier: 'Fractional CTO Level 2', bundled: 4997, retail: 5797, minRev: 1_000_000 },
-  'Fractional CTO Level 3':     { tier: 'Fractional CTO Level 3', bundled: 8997, retail: 9997, minRev: 3_000_000 },
-};
 
 // Shorthand reps use on calls → catalog name. Keep in sync with the
 // "Products discussed on call" alias table in .claude/commands/audit-research.md
 // and the change-bot prompts in .github/workflows/slack-*.yml.
 // Order matters: more specific names first, so "AI Workforce Pro – Starter"
-// is matched before plain "AI Workforce Pro".
+// is matched before plain "AI Workforce Pro", and "FCOO Director" before "FCOO".
+// A tier followed by "/" ("FCOO Advisor / Director / Partner") is a list of
+// options, not a choice, so it falls through to the generic name.
 const AIWP_UNSPECIFIED = 'AI Workforce Pro (tier not specified)';
+const NOT_A_LIST = '(?!\\s*\\/)';
 const PRODUCT_ALIASES = [
   { name: 'AI Workforce Pro – Starter', pattern: /ai workforce pro\s*[–—-]\s*starter|aiwp\s*starter|ai essentials\s*[–—-]?\s*starter/i },
   // Bare "AIWP" / "AI Workforce Pro" doesn't say which tier — resolved by team size in selectLawTier.
-  { name: 'AI Workforce Pro (base)',    pattern: /ai workforce pro\s*[–—(-]?\s*base\)?|aiwp\s*base|ai essentials\s*[–—-]?\s*base/i },
+  { name: 'AI Workforce Pro',           pattern: /ai workforce pro\s*[–—(-]?\s*base\)?|aiwp\s*base|ai essentials\s*[–—-]?\s*base/i },
   { name: AIWP_UNSPECIFIED,             pattern: /ai workforce pro|\baiwp\b/i },
   { name: 'Fractional CTO Level 3',     pattern: /(fractional cto|fcto)\s*(level|l)\s*3|ai enterprise/i },
   { name: 'Fractional CTO Level 2',     pattern: /(fractional cto|fcto)\s*(level|l)\s*2|ai accelerator\s*l2/i },
@@ -75,11 +60,21 @@ const PRODUCT_ALIASES = [
   { name: 'Coach Essentials Plus',      pattern: /coach essentials plus/i },
   { name: 'Coach Essentials',           pattern: /coach essentials(?!\s*plus)/i },
   { name: "Master's Circle",            pattern: /master'?s circle|\bmc\b/i },
+  { name: 'FCOO Advisor',               pattern: new RegExp(`(?:\\bfcoo|fractional coo)\\s*advisor${NOT_A_LIST}`, 'i') },
+  { name: 'FCOO Director',              pattern: new RegExp(`(?:\\bfcoo|fractional coo)\\s*director${NOT_A_LIST}`, 'i') },
+  { name: 'FCOO Partner',               pattern: new RegExp(`(?:\\bfcoo|fractional coo)\\s*partner${NOT_A_LIST}`, 'i') },
   { name: 'FCOO',                       pattern: /\bfcoo\b|fractional coo/i },
+  { name: 'FCFO Advisor',               pattern: new RegExp(`(?:\\bfcfo|fractional cfo)\\s*advisor${NOT_A_LIST}`, 'i') },
+  { name: 'FCFO Director',              pattern: new RegExp(`(?:\\bfcfo|fractional cfo)\\s*director${NOT_A_LIST}`, 'i') },
+  { name: 'FCFO Partner',               pattern: new RegExp(`(?:\\bfcfo|fractional cfo)\\s*partner${NOT_A_LIST}`, 'i') },
   { name: 'FCFO',                       pattern: /\bfcfo\b|fractional cfo/i },
   { name: 'Full Service Marketing',     pattern: /full service marketing/i },
 ];
-const COACHING_PRODUCTS = new Set(['Elite Coach', 'Elite Coach Plus', 'Coach Essentials', 'Coach Essentials Plus', "Master's Circle", 'FCOO', 'FCFO']);
+const COACHING_PRODUCTS = new Set([
+  'Elite Coach', 'Elite Coach Plus', 'Coach Essentials', 'Coach Essentials Plus', "Master's Circle",
+  'FCOO', 'FCOO Advisor', 'FCOO Director', 'FCOO Partner', 'FCFO', 'FCFO Advisor', 'FCFO Director', 'FCFO Partner',
+]);
+const LAW_PRODUCTS = new Set(['AI Workforce Pro – Starter', 'AI Workforce Pro', 'Fractional CTO Level 1', 'Fractional CTO Level 2', 'Fractional CTO Level 3']);
 
 // Conservative ad spend floors by practice area keyword ($/mo)
 const AD_SPEND_FLOORS = [
@@ -93,13 +88,13 @@ const AD_SPEND_FLOORS = [
   { keywords: ['bankruptcy'],                                                         floor: 4_500  },
 ];
 
-// ─── HubSpot revenue lookup ───────────────────────────────────────────────────
+// ─── HubSpot lookups ──────────────────────────────────────────────────────────
 
 /**
  * Parse a HubSpot text revenue range (e.g. "$961K - $3M", "$81K-$250K") into
  * { min, max, mid }. Returns null if unparseable.
  */
-function parseRevenueRange(text) {
+export function parseRevenueRange(text) {
   if (!text || typeof text !== 'string') return null;
   const re = /\$([0-9,]+(?:\.[0-9]+)?)\s*(K|M|B|k|m|b)?/gi;
   const amounts = [];
@@ -118,9 +113,30 @@ function parseRevenueRange(text) {
   return { min, max, mid: (min + max) / 2 };
 }
 
+async function hubspotGet(path) {
+  const HUBSPOT_TOKEN = process.env.HUBSPOT_TOKEN;
+  if (!HUBSPOT_TOKEN) return null;
+  try {
+    const res = await fetch(`https://api.hubapi.com${path}`, {
+      headers: { 'Authorization': `Bearer ${HUBSPOT_TOKEN}`, 'Content-Type': 'application/json' },
+    });
+    if (!res.ok) {
+      console.warn(`  HubSpot ${path} returned ${res.status}`);
+      return null;
+    }
+    return await res.json();
+  } catch (err) {
+    console.warn(`  HubSpot ${path} failed: ${err.message}`);
+    return null;
+  }
+}
+
 /**
  * Query HubSpot for revenue-related contact fields.
- * Returns { value, source, confidence, rawLabel } or null.
+ * Returns { value, source, confidence, rawLabel, isRange } or null.
+ * A range ("$180K - $960K") is a bracket the prospect ticked on a form, not
+ * their revenue — the midpoint is used for the draft only and is flagged
+ * for the seller to confirm (`isRange`).
  *
  * Field priority:
  *   1. annual_law_firm_revenue — e.g. "$961K - $3M"
@@ -128,48 +144,57 @@ function parseRevenueRange(text) {
  *   3. n2024_annual_revenue
  *   4. total_annual_revenue_last_year
  */
-async function fetchHubSpotRevenue(contactId) {
-  const HUBSPOT_TOKEN = process.env.HUBSPOT_TOKEN;
-  if (!HUBSPOT_TOKEN || !contactId) return null;
-
+export async function fetchHubSpotRevenue(contactId) {
+  if (!contactId) return null;
   const fields = [
     'annual_law_firm_revenue',
     'how_much_revenue_is_your_law_firm_currently_generating_per_month',
     'n2024_annual_revenue',
     'total_annual_revenue_last_year',
   ].join(',');
+  const json = await hubspotGet(`/crm/v3/objects/contacts/${contactId}?properties=${fields}`);
+  if (!json) return null;
+  const props = json.properties || {};
 
-  let res;
-  try {
-    res = await fetch(
-      `https://api.hubapi.com/crm/v3/objects/contacts/${contactId}?properties=${fields}`,
-      { headers: { 'Authorization': `Bearer ${HUBSPOT_TOKEN}`, 'Content-Type': 'application/json' } }
-    );
-  } catch (err) {
-    console.warn(`  HubSpot revenue lookup failed: ${err.message}`);
-    return null;
-  }
-  if (!res.ok) {
-    console.warn(`  HubSpot revenue lookup returned ${res.status} for contact ${contactId}`);
-    return null;
-  }
-
-  const props = (await res.json()).properties || {};
+  const pick = (range, source, rawLabel, scale = 1) => ({
+    value: range.mid * scale,
+    source,
+    confidence: range.max / range.min > 5 ? 'low' : 'medium',
+    rawLabel,
+    isRange: range.max > range.min,
+  });
 
   const annual = parseRevenueRange(props.annual_law_firm_revenue);
-  if (annual) return { value: annual.mid, source: 'hubspot_annual_law_firm_revenue', confidence: annual.max / annual.min > 5 ? 'low' : 'medium', rawLabel: props.annual_law_firm_revenue };
+  if (annual) return pick(annual, 'hubspot_annual_law_firm_revenue', props.annual_law_firm_revenue);
 
   const monthly = parseRevenueRange(props.how_much_revenue_is_your_law_firm_currently_generating_per_month);
-  if (monthly) return { value: monthly.mid * 12, source: 'hubspot_monthly_annualized', confidence: 'medium', rawLabel: `${props.how_much_revenue_is_your_law_firm_currently_generating_per_month} (×12)` };
+  if (monthly) return pick(monthly, 'hubspot_monthly_annualized', `${props.how_much_revenue_is_your_law_firm_currently_generating_per_month} (×12)`, 12);
 
   const rev2024 = parseRevenueRange(props.n2024_annual_revenue);
-  if (rev2024) return { value: rev2024.mid, source: 'hubspot_2024_annual_revenue', confidence: 'medium', rawLabel: props.n2024_annual_revenue };
+  if (rev2024) return pick(rev2024, 'hubspot_2024_annual_revenue', props.n2024_annual_revenue);
 
   const lastYear = parseRevenueRange(props.total_annual_revenue_last_year);
-  if (lastYear) return { value: lastYear.mid, source: 'hubspot_total_revenue_last_year', confidence: 'medium', rawLabel: props.total_annual_revenue_last_year };
+  if (lastYear) return pick(lastYear, 'hubspot_total_revenue_last_year', props.total_annual_revenue_last_year);
 
   console.log(`  HubSpot: no parseable revenue fields for contact ${contactId}`);
   return null;
+}
+
+/**
+ * The HubSpot company associated with a contact: { id, name, domain, employees }.
+ * Used as a team-size fallback and recorded so the Slack post can show the
+ * company record's name.
+ */
+export async function fetchHubSpotCompany(contactId) {
+  if (!contactId) return null;
+  const assoc = await hubspotGet(`/crm/v4/objects/contacts/${contactId}/associations/companies`);
+  const companyId = assoc?.results?.[0]?.toObjectId;
+  if (!companyId) return null;
+  const json = await hubspotGet(`/crm/v3/objects/companies/${companyId}?properties=name,domain,numberofemployees`);
+  if (!json) return null;
+  const p = json.properties || {};
+  const employees = parseInt(p.numberofemployees, 10);
+  return { id: String(companyId), name: p.name || null, domain: p.domain || null, employees: employees > 0 ? employees : null };
 }
 
 // ─── Parsing helpers ──────────────────────────────────────────────────────────
@@ -194,7 +219,59 @@ function isMonthlyFigure(text, matchEndIndex) {
   return /^\s*\/?\s*(mo\b|month|monthly)/i.test(text.slice(matchEndIndex, matchEndIndex + 20));
 }
 
-function parseRevenue(text) {
+// Value of a "- Label: value" line in the research notes. By default includes
+// wrapped continuation lines (indented, not starting a new "- " item); pass
+// { firstLineOnly: true } to stop at the end of the first line. Null if
+// absent or still holding the template's [placeholder].
+export function readNoteField(text, label, { firstLineOnly = false } = {}) {
+  const re = firstLineOnly
+    ? new RegExp(`^\\s*-?\\s*${label}[:\\s]+(.+)`, 'im')
+    : new RegExp(`^\\s*-?\\s*${label}[:\\s]+(.+(?:\\n(?!\\s*-\\s)(?!\\s*$)\\s+.+)*)`, 'im');
+  const m = text.match(re);
+  if (!m) return null;
+  const value = m[1].replace(/\s+/g, ' ').trim();
+  return value && !value.startsWith('[') ? value : null;
+}
+
+const NOT_STATED = /^(?:not stated|not available|unknown|n\/a|none|not given|not disclosed|number not stated)/i;
+
+/**
+ * First dollar amount in a free-text revenue value, e.g.
+ *   '"north of $300,000" (William, 00:07:15 …'        → 300000
+ *   'about $1.2 million [transcript unclear …]'        → 1200000
+ *   '"… this year I'm on track to make about 250."'    → 250000
+ *   '"1.2" (00:36:20) in answer to …'                  → 1200000
+ * Unit-less numbers are read in context: under 50 → millions, 50–999 →
+ * thousands (how people say revenue out loud). Timestamps, years and
+ * percentages are ignored. Returns null when the value says it wasn't stated.
+ */
+export function parseMoneyText(value) {
+  if (!value || NOT_STATED.test(value.replace(/^["'\s]+/, ''))) return null;
+  const cleaned = value
+    .replace(/\b\d{1,2}:\d{2}(?::\d{2})?\b/g, ' ')             // timestamps
+    .replace(/\b\d+(?:\.\d+)?\s*%/g, ' ')                      // percentages
+    .replace(/(?<!\$)\b(?:19|20)\d\d\b(?!\s*(?:k|m|million)\b)/gi, ' '); // years
+  // The number must end at a word boundary ("about 250." is fine, "250k" is a unit).
+  const re = /(\$\s*)?(\d[\d,]*(?:\.\d+)?)\s*(million|mil|mm|m|k|thousand|billion|b)?(?!\w|\.\d)/gi;
+  let m;
+  while ((m = re.exec(cleaned)) !== null) {
+    const hasDollar = !!m[1];
+    const n = parseFloat(m[2].replace(/,/g, ''));
+    if (isNaN(n) || n <= 0) continue;
+    const unit = (m[3] || '').toLowerCase();
+    if (unit === 'million' || unit === 'mil' || unit === 'mm' || unit === 'm') return n * 1_000_000;
+    if (unit === 'billion' || unit === 'b') return n * 1_000_000_000;
+    if (unit === 'k' || unit === 'thousand') return n * 1_000;
+    if (n >= 10_000) return n;
+    if (hasDollar && n >= 1_000) return n;
+    if (!hasDollar && n < 50) return n * 1_000_000;
+    if (!hasDollar && n < 1_000) return n * 1_000;
+  }
+  if (/\b(?:a|one) million\b/i.test(cleaned)) return 1_000_000;
+  return null;
+}
+
+export function parseRevenue(text) {
   // Range forms first (e.g. "Annual revenue: $1.5-2M gross", "$1.5–2M"), since a
   // bare-number pattern below would otherwise only catch the first number in the range.
   const rangePatterns = [
@@ -240,7 +317,32 @@ function parseRevenue(text) {
   return null;
 }
 
-function parsePracticeAreas(text) {
+/**
+ * Revenue from the research notes, best source first:
+ *   1. "Revenue (annual, best estimate): $NNN" — the machine-read line
+ *   2. the fixed-format patterns in parseRevenue()
+ *   3. the first amount in the "Annual revenue (gross …)" / "Revenue" line,
+ *      read as free text ("north of $300,000", "about $1.2 million")
+ * Returns { value, source } or null.
+ */
+export function parseRevenueFromNotes(text) {
+  const structured = readNoteField(text, 'revenue \\(annual, best estimate\\)', { firstLineOnly: true });
+  if (structured) {
+    const v = parseMoneyText(structured);
+    if (v != null) return { value: v, source: 'research_notes' };
+  }
+  const fixed = parseRevenue(text);
+  if (fixed != null) return { value: fixed, source: 'research_notes' };
+  // Each label swallows its "(gross / case value)"-style qualifier so the value
+  // starts at the actual text ("not stated …" must be seen as not stated).
+  for (const label of [`annual revenue(?!\\s*\\(net)${QUALIFIER}`, `current revenue${QUALIFIER}`, `revenue(?!\\s*goal)${QUALIFIER}`]) {
+    const v = parseMoneyText(readNoteField(text, label));
+    if (v != null && v >= 50_000) return { value: v, source: 'research_notes_text' };
+  }
+  return null;
+}
+
+export function parsePracticeAreas(text) {
   const areas = new Set();
   // "Practice areas confirmed: X, Y, Z"
   const confirmedMatch = text.match(/practice areas?\s+confirmed[:\s]+([^\n\r]{3,120})/i);
@@ -259,7 +361,63 @@ function parsePracticeAreas(text) {
   return [...areas].filter(Boolean);
 }
 
-function parseTeamSize(text) {
+const NUMBER_WORDS = { one: 1, two: 2, three: 3, four: 4, five: 5, six: 6, seven: 7, eight: 8, nine: 9, ten: 10, eleven: 11, twelve: 12, thirteen: 13, fourteen: 14, fifteen: 15, sixteen: 16, seventeen: 17, eighteen: 18, nineteen: 19, twenty: 20 };
+
+/**
+ * Total headcount from the "Team size:" line value, e.g.
+ *   "15 total, 2 lawyers"                    → 15
+ *   "3 — Dan (attorney/owner), Shane …"      → 3
+ *   "~18 employees" / "13-person firm"       → 18 / 13
+ *   "Solo — Andrew Ferrell"                  → 1
+ *   "Three people plus outside vendors"      → 3
+ *   "per site, 7 attorneys + 9 support staff" → 16
+ *   "not stated by the prospect … Website: 7 attorneys" → 7
+ */
+export function parseTeamSizeValue(value) {
+  if (!value) return null;
+  const v = value.replace(/^["'\s]+/, '');
+  if (/^(?:solo|sole|just me|effectively 1\b)/i.test(v)) return 1;
+
+  const sumPair = s => {
+    const m = s.match(/(\d+)\s+[a-z][\w\s-]{0,25}?\+\s*(\d+)/i);
+    return m ? parseInt(m[1], 10) + parseInt(m[2], 10) : null;
+  };
+
+  if (!NOT_STATED.test(v)) {
+    const lead = v.match(/^~?\s*(\d+)(?!\s*[:%])(?:\s*[-–]\s*\d+)?\b/);
+    if (lead) {
+      // "7 attorneys + 9 support staff" at the start → both groups
+      const pair = sumPair(v.slice(0, 60));
+      return pair ?? parseInt(lead[1], 10);
+    }
+    const word = v.match(/^(\w+)\s+(?:people|employees|staff|total|person|team members)\b/i);
+    if (word && NUMBER_WORDS[word[1].toLowerCase()]) return NUMBER_WORDS[word[1].toLowerCase()];
+    const person = v.match(/\b(\d+)[-\s]person\b/i);
+    if (person) return parseInt(person[1], 10);
+    const counted = v.match(/^(?:about|approximately|roughly|around)\s+(\d+)\b/i);
+    if (counted) return parseInt(counted[1], 10);
+  }
+
+  // Not stated by the prospect: fall back to a website count in the same line.
+  const site = v.match(/(?:per (?:the )?(?:web)?site|website(?: lists| shows)?)[,:]?\s*([^.;]{0,80})/i);
+  if (site) {
+    const pair = sumPair(site[1]);
+    if (pair) return pair;
+    const n = site[1].match(/(\d+)\s+(?:attorneys|lawyers|employees|staff|people)/i);
+    if (n) return parseInt(n[1], 10);
+  }
+  return null;
+}
+
+export function parseTeamSize(text) {
+  const structured = readNoteField(text, 'team size \\(total headcount\\)', { firstLineOnly: true });
+  if (structured) {
+    const n = parseTeamSizeValue(structured);
+    if (n != null) return n;
+  }
+  const fromLine = parseTeamSizeValue(readNoteField(text, 'team size', { firstLineOnly: true }));
+  if (fromLine != null) return fromLine;
+
   if (/team size[:\s]+(solo|sole)\s+(practitioner|attorney)/i.test(text)) return 1;
   const patterns = [
     /team size[:\s]+(\d+)\s*(employee|attorney|staff|team member|people)/i,
@@ -276,23 +434,16 @@ function parseTeamSize(text) {
   return null;
 }
 
-// Value of a "- Label: value" line in the research notes, including wrapped
-// continuation lines (indented, not starting a new "- " item). Null if absent
-// or still holding the template's [placeholder].
-function readNoteField(text, label) {
-  const re = new RegExp(`^\\s*-?\\s*${label}[:\\s]+(.+(?:\\n(?!\\s*-\\s)(?!\\s*$)\\s+.+)*)`, 'im');
-  const m = text.match(re);
-  if (!m) return null;
-  const value = m[1].replace(/\s+/g, ' ').trim();
-  return value && !value.startsWith('[') ? value : null;
-}
-
 /**
  * Read the structured call-focus fields from the research notes
  * (see STEP 9 in .claude/commands/audit-research.md). Each value is null when
  * the notes predate those fields or leave them blank.
+ *
+ * "Products discussed on call" is read from its first line only — wrapped
+ * lines are explanation ("$3,797 is also the FCOO Advisor … price"), and
+ * reading them made products appear that nobody discussed.
  */
-function parseCallFocus(text) {
+export function parseCallFocus(text) {
   const engagementRaw = readNoteField(text, 'primary engagement');
   let engagement = null;
   if (engagementRaw) {
@@ -303,16 +454,17 @@ function parseCallFocus(text) {
     else if (/^marketing/.test(e)) engagement = 'marketing';
   }
 
-  const productsRaw = readNoteField(text, 'products discussed on call');
+  const productsRaw = readNoteField(text, 'products discussed on call', { firstLineOnly: true });
   let products = null;
   if (productsRaw) {
     products = [];
     if (!/^none\b/i.test(productsRaw)) {
-      let rest = productsRaw;
+      // Parenthetical asides on the same line are explanation, not products.
+      let rest = productsRaw.replace(/\([^)]*\)/g, ' ');
       for (const { name, pattern } of PRODUCT_ALIASES) {
         const g = new RegExp(pattern.source, 'gi');
         if (g.test(rest)) {
-          products.push(name);
+          if (!products.includes(name)) products.push(name);
           rest = rest.replace(g, ' ');
         }
       }
@@ -325,44 +477,56 @@ function parseCallFocus(text) {
   return { engagement, products, productsRaw, leadGenGap };
 }
 
-function selectLawTier(products, effectiveRevenue, teamSizeStated, notes) {
+/**
+ * The AI line: at most one Fractional CTO level and one AI Workforce Pro tier.
+ * Returns { name, seats } (name may be "Fractional CTO Level 1 + AI Workforce Pro – Starter") or null.
+ */
+export function selectLawTier(products, effectiveRevenue, teamSizeStated, notes) {
   // "AIWP" alone: Starter for 1–4 users (or unknown team size), base for 5+.
-  const resolved = (products || []).map(p => {
+  const resolved = [...new Set((products || []).filter(p => LAW_PRODUCTS.has(p) || p === AIWP_UNSPECIFIED).map(p => {
     if (p !== AIWP_UNSPECIFIED) return p;
-    const tier = teamSizeStated != null && teamSizeStated >= 5 ? 'AI Workforce Pro (base)' : 'AI Workforce Pro – Starter';
+    const tier = teamSizeStated != null && teamSizeStated >= 5 ? 'AI Workforce Pro' : 'AI Workforce Pro – Starter';
     notes.push(`"AI Workforce Pro" named without a tier — using ${tier} (${teamSizeStated == null ? 'team size not stated' : `team of ${teamSizeStated}`}).`);
     return tier;
-  });
-  const named = resolved.filter(p => LAW_TIERS[p]);
-  if (!named.length) return null;
-  if (named.length > 1) notes.push(`More than one AI product discussed on call (${named.join(', ')}) — using ${named[0]}; confirm with sales rep.`);
-  const name = named[0];
-  const t = LAW_TIERS[name];
+  }))];
+  if (!resolved.length) return null;
 
-  if (effectiveRevenue < t.minRev) {
-    notes.push(`${name} discussed on call but revenue ($${effectiveRevenue.toLocaleString()}) is under its $${t.minRev.toLocaleString()} floor — not included. Confirm with sales rep.`);
-    return null;
-  }
+  const parts = [];
 
-  let bundled, seats = null;
-  if (t.perUser) {
-    seats = Math.min(Math.max(teamSizeStated ?? 1, 1), t.maxUsers);
-    bundled = t.perUser * seats;
-    notes.push(`${name} discussed on call: ${seats} seat${seats > 1 ? 's' : ''} × $${t.perUser}/mo = $${bundled.toLocaleString()}/mo` +
-      (teamSizeStated == null ? ' (team size not stated — 1 seat assumed; confirm seat count).' : '.'));
-    if (teamSizeStated != null && teamSizeStated > t.maxUsers) {
-      notes.push(`Team of ${teamSizeStated} is over Starter's ${t.maxUsers}-user limit — consider AI Workforce Pro (base).`);
+  // Fractional CTO: if several levels were named, take the highest one the firm qualifies for.
+  const fcto = resolved.filter(p => p.startsWith('Fractional CTO')).sort().reverse();
+  if (fcto.length) {
+    const eligible = fcto.filter(p => effectiveRevenue >= getProduct(p).minRev);
+    if (eligible.length) {
+      parts.push(eligible[0]);
+      if (fcto.length > 1) notes.push(`Several Fractional CTO levels discussed (${fcto.join(', ')}) — using ${eligible[0]}, the highest the firm's revenue qualifies for; confirm with sales rep.`);
+    } else {
+      const lowest = fcto[fcto.length - 1];
+      notes.push(`${lowest} discussed on call but revenue ($${effectiveRevenue.toLocaleString()}) is under its $${getProduct(lowest).minRev.toLocaleString()} floor — not included. Confirm with sales rep.`);
     }
-  } else if (t.base) {
-    seats = Math.max(teamSizeStated ?? t.baseUsers, t.baseUsers);
-    bundled = t.base + t.perExtraUser * (seats - t.baseUsers);
-    notes.push(`${name} discussed on call: $${t.base.toLocaleString()}/mo for ${t.baseUsers} users` +
-      (seats > t.baseUsers ? ` + ${seats - t.baseUsers} extra × $${t.perExtraUser} = $${bundled.toLocaleString()}/mo.` : '.'));
-  } else {
-    bundled = t.bundled;
-    notes.push(`${name} discussed on call: $${bundled.toLocaleString()}/mo bundled.`);
   }
-  return { tier: t.tier, name, bundled, retail: t.retail, seats };
+
+  const aiwp = resolved.filter(p => p.startsWith('AI Workforce Pro'));
+  let seats = null;
+  if (aiwp.length) {
+    if (aiwp.length > 1) notes.push(`Both AI Workforce Pro tiers discussed — using ${aiwp[0]}; confirm with sales rep.`);
+    const p = getProduct(aiwp[0]);
+    parts.push(p.name);
+    if (p.perUser) {
+      seats = Math.min(Math.max(teamSizeStated ?? 1, 1), p.maxUsers);
+      notes.push(`${p.name} discussed on call: ${seats} seat${seats > 1 ? 's' : ''} × $${p.perUser}/mo` +
+        (teamSizeStated == null ? ' (team size not stated — 1 seat assumed; confirm seat count).' : '.'));
+      if (teamSizeStated != null && teamSizeStated > p.maxUsers) {
+        notes.push(`Team of ${teamSizeStated} is over Starter's ${p.maxUsers}-user limit — consider AI Workforce Pro (5+ users).`);
+      }
+    } else {
+      seats = Math.max(teamSizeStated ?? p.baseUsers, p.baseUsers);
+      notes.push(`${p.name} discussed on call: $${p.base.toLocaleString()}/mo for ${p.baseUsers} users` +
+        (seats > p.baseUsers ? ` + ${seats - p.baseUsers} extra × $${p.perExtraUser}.` : '.'));
+    }
+  }
+
+  return parts.length ? { name: parts.join(' + '), seats } : null;
 }
 
 function hasDedicatedOps(text) {
@@ -457,19 +621,20 @@ function selectMarketingTier(revenue, effectiveRevenue, practiceAreas, text, not
   return tier;
 }
 
-function selectCoachingTier(revenue, effectiveRevenue, teamSize, effectiveTeam, text, notes) {
+/** Coaching by revenue and team size alone. Returns { name }. */
+function selectCoachingByRevenue(effectiveRevenue, effectiveTeam, text, notes) {
   const fcooEligible = effectiveRevenue >= 500_000;
   const masterCircleEligible = effectiveRevenue >= 1_000_000 && effectiveTeam >= 5;
   const hasOps = hasDedicatedOps(text);
 
   if (effectiveRevenue < 250_000) {
     notes.push('Revenue under $250K: Elite Coach selected, scoping approval required.');
-    return { name: 'Elite Coach', bundled: 2600, retail: COACHING_RETAIL['Elite Coach'] };
+    return { name: 'Elite Coach' };
   }
 
   if (effectiveRevenue < 400_000) {
     notes.push('Revenue $250K–$400K: Elite Coach selected.');
-    return { name: 'Elite Coach', bundled: 2600, retail: COACHING_RETAIL['Elite Coach'] };
+    return { name: 'Elite Coach' };
   }
 
   if (effectiveRevenue < 1_000_000) {
@@ -477,35 +642,71 @@ function selectCoachingTier(revenue, effectiveRevenue, teamSize, effectiveTeam, 
       notes.push('Revenue $500K–$1M with growing team and dedicated ops: Elite Coach Plus + FCOO Advisor considered. Defaulting to Elite Coach Plus — confirm with sales rep if FCOO is appropriate.');
     }
     notes.push('Revenue $400K–$1M: Elite Coach Plus selected.');
-    return { name: 'Elite Coach Plus', bundled: 3200, retail: COACHING_RETAIL['Elite Coach Plus'] };
+    return { name: 'Elite Coach Plus' };
   }
 
-  // $1M+
+  // $1M+ (FCOO Partner is retired, so $3M+ firms get the Director pairing)
   if (masterCircleEligible && hasOps) {
-    if (effectiveRevenue >= 3_000_000) {
-      notes.push(`Revenue $3M+, team ${effectiveTeam}+: Master's Circle + FCOO Partner selected.`);
-      return { name: "Master's Circle + FCOO Partner", bundled: 12394, retail: null };
-    }
     if (effectiveRevenue >= 2_000_000) {
       notes.push(`Revenue $2M+, team ${effectiveTeam}+, dedicated ops: Master's Circle + FCOO Director selected.`);
-      return { name: "Master's Circle + FCOO Director", bundled: 8394, retail: null };
+      return { name: "Master's Circle + FCOO Director" };
     }
     notes.push(`Revenue $1M+, team ${effectiveTeam}+, dedicated ops: Master's Circle selected.`);
-    return { name: "Master's Circle", bundled: 4600, retail: COACHING_RETAIL["Master's Circle"] };
+    return { name: "Master's Circle" };
   }
 
   if (masterCircleEligible && !hasOps) {
     notes.push(`Revenue $1M+, team ${effectiveTeam}+ but no dedicated ops detected: Master's Circle selected. Verify ops capacity with sales rep.`);
-    return { name: "Master's Circle", bundled: 4600, retail: COACHING_RETAIL["Master's Circle"] };
+    return { name: "Master's Circle" };
   }
 
   if (effectiveRevenue >= 1_000_000 && effectiveTeam < 5) {
     notes.push(`Revenue $1M+, team under 5: Elite Coach Plus selected (Master's Circle requires 5+ team).`);
-    return { name: 'Elite Coach Plus', bundled: 3200, retail: COACHING_RETAIL['Elite Coach Plus'] };
+    return { name: 'Elite Coach Plus' };
   }
 
   notes.push('Fallback: Elite Coach Plus selected.');
-  return { name: 'Elite Coach Plus', bundled: 3200, retail: COACHING_RETAIL['Elite Coach Plus'] };
+  return { name: 'Elite Coach Plus' };
+}
+
+/**
+ * Coaching named on the call. What was discussed wins over the revenue rule
+ * (Vanessa, Oct 2026: "Prioritize the product explicitly discussed on the call
+ * and flag it for rep confirmation"). FCOO/FCFO named without a tier: Advisor
+ * under $2M, Director at $2M+. Returns { name } or null when none was named.
+ */
+export function selectDiscussedCoaching(products, effectiveRevenue, notes) {
+  const discussed = (products || []).filter(p => COACHING_PRODUCTS.has(p));
+  if (!discussed.length) return null;
+
+  const tierFor = family => {
+    const named = discussed.find(p => p.startsWith(`${family} `));
+    if (named) {
+      const { product, retiredFrom } = unretire(getProduct(named));
+      if (retiredFrom) notes.push(`${retiredFrom} is retired — using ${product.name}.`);
+      return product.name;
+    }
+    return effectiveRevenue >= 2_000_000 ? `${family} Director` : `${family} Advisor`;
+  };
+
+  const picks = [];
+  const has = name => discussed.includes(name);
+  const hasFamily = family => discussed.some(p => p === family || p.startsWith(`${family} `));
+  const coach = ["Master's Circle", 'Elite Coach Plus', 'Elite Coach', 'Coach Essentials Plus', 'Coach Essentials'].find(has);
+  const fcoo = hasFamily('FCOO') ? tierFor('FCOO') : null;
+  const fcfo = hasFamily('FCFO') ? tierFor('FCFO') : null;
+
+  // Sales prices some coaching + FCOO pairs as one package.
+  if (coach && fcoo && getProduct(`${coach} + ${fcoo}`)) picks.push(`${coach} + ${fcoo}`);
+  else picks.push(...[coach, fcoo].filter(Boolean));
+  if (fcfo) picks.push(fcfo);
+
+  const name = picks.join(' + ');
+  for (const p of picks.flatMap(x => x.split(' + '))) {
+    const min = getProduct(p)?.minRev;
+    if (min && effectiveRevenue < min) notes.push(`${p} usually needs $${min.toLocaleString()}+ revenue (using $${effectiveRevenue.toLocaleString()}) — included because it was discussed on the call.`);
+  }
+  return { name };
 }
 
 function estimateAdSpend(practiceAreas, marketingTier) {
@@ -555,256 +756,395 @@ function estimateRevenueFromTeamSize(teamSize, notes) {
   return { estimate: 2_500_000, confidence: 'low' };
 }
 
+// ─── Research notes file ─────────────────────────────────────────────────────
+
+/**
+ * The most recent research notes file in a firm folder. A re-run can leave two
+ * (ppd-law, the-fusselman); use the one last committed, falling back to file
+ * modification time outside a git checkout.
+ */
+export function newestResearchNotes(dir) {
+  const files = readdirSync(dir).filter(f => f.endsWith('_Research_Notes.txt'));
+  if (files.length <= 1) return files[0] ?? null;
+  const when = f => {
+    try {
+      const t = execFileSync('git', ['log', '-1', '--format=%ct', '--', join(dir, f)], { encoding: 'utf8' }).trim();
+      if (t) return parseInt(t, 10) * 1000;
+    } catch { /* not a git checkout */ }
+    return statSync(join(dir, f)).mtimeMs;
+  };
+  return files.map(f => ({ f, t: when(f) })).sort((a, b) => b.t - a.t || b.f.localeCompare(a.f))[0].f;
+}
+
+// ─── Package from a trigger-file override ────────────────────────────────────
+
+/**
+ * Turn a seller's package text ("Elite Coach Plus + AI Workforce Pro – Starter")
+ * into package lines. Returns null unless every product is in the catalog —
+ * free-text overrides ("FSM Starter (opt 1) + FSM Essentials (opt 2)") are left
+ * to Pass 2, which reads the override text itself.
+ */
+export function linesFromOverride(text, teamSizeStated) {
+  const lines = { marketing: [], coaching: [], law: [] };
+  let seats = null;
+  // "AI Workforce Pro – Starter (1 user, $350/mo) only — no marketing, …":
+  // instructions after " — " / ". " and asides in parentheses aren't products.
+  // Product names contain dashes too ("Full Service Marketing — Starter"), so
+  // only cut where a dash starts an instruction.
+  const head = text
+    .split(/\s[—–-]\s+(?=(?:no|do|don't|with|without|this|use|section)\b)|\.\s|;\s/i)[0]
+    .replace(/\bonly\b/gi, ' ');
+  for (const part of head.split(/\s\+\s(?![^()]*\))/).map(s => s.trim()).filter(Boolean)) {
+    const seatMatch = part.match(/\((\d+)\s*(?:users?|seats?)\b/i);
+    const clean = part.replace(/\([^)]*\)/g, ' ').trim();
+    const resolved = resolveName(clean);
+    if (resolved.length !== 1 || !resolved[0].product) return null;
+    const { product } = unretire(resolved[0].product);
+    lines[product.category].push(product.name);
+    if (seatMatch) seats = parseInt(seatMatch[1], 10);
+  }
+  if (lines.marketing.length > 1) return null;
+  const join = arr => arr.length ? arr.join(' + ') : null;
+  return {
+    marketing: join(lines.marketing),
+    coaching: join(lines.coaching),
+    law: join(lines.law),
+    seats: seats ?? (lines.law.some(n => n.startsWith('AI Workforce Pro')) ? teamSizeStated : null),
+  };
+}
+
 // ─── Main ─────────────────────────────────────────────────────────────────────
-// Top-level async wrapper so we can await HubSpot fetch
 
-(async () => {
-const friendlyName = process.argv[2];
-if (!friendlyName) {
-  console.error('Usage: node scripts/select-package.mjs <friendly-name>');
-  process.exit(1);
-}
+export async function selectPackage(friendlyName) {
+  // Trigger-file override and HubSpot contact
+  const triggerPath = `triggers/audit-research/${friendlyName}.json`;
+  let hubspotContactId = null;
+  let packageOverride = null;
+  if (existsSync(triggerPath)) {
+    try {
+      const trigger = JSON.parse(readFileSync(triggerPath, 'utf8'));
+      if (trigger.package && trigger.package.trim()) packageOverride = trigger.package.trim();
+      hubspotContactId = trigger.hubspot_contact_id || null;
+    } catch { /* non-fatal */ }
+  }
 
-if (!existsSync(friendlyName)) {
-  console.error(`ERROR: Firm directory not found: ${friendlyName}/`);
-  process.exit(1);
-}
+  // Find research notes
+  const notesFile = newestResearchNotes(friendlyName);
+  if (!notesFile) {
+    console.error(`ERROR: No *_Research_Notes.txt found in ${friendlyName}/ — Pass 1 may not have completed.`);
+    process.exit(1);
+  }
+  const notesPath = join(friendlyName, notesFile);
+  const text = readFileSync(notesPath, 'utf8');
+  console.log(`Reading: ${notesPath}`);
 
-// If trigger file has an explicit package override, skip — PACKAGE_HINT handles it
-const triggerPath = `triggers/audit-research/${friendlyName}.json`;
-let hubspotContactId = null;
-if (existsSync(triggerPath)) {
-  try {
-    const trigger = JSON.parse(readFileSync(triggerPath, 'utf8'));
-    if (trigger.package && trigger.package.trim()) {
-      console.log(`Trigger file has explicit package override: "${trigger.package}"`);
-      console.log('Skipping deterministic selection — PACKAGE_HINT will be used in Pass 2.');
-      process.exit(0);
+  const notes = [];
+
+  // Parse signals
+  const revenueParsed   = parseRevenueFromNotes(text);
+  const revenueStated   = revenueParsed?.value ?? null;
+  const netRevenueStated = parseNetRevenue(text);
+  const practiceAreas   = parsePracticeAreas(text);
+  let teamSizeStated    = parseTeamSize(text);
+  let teamSizeSource    = teamSizeStated != null ? 'research_notes' : null;
+  const isContingencyPractice = detectContingencyPractice(practiceAreas);
+
+  console.log(`  Revenue stated:  ${revenueStated != null ? '$' + revenueStated.toLocaleString() : 'NOT STATED'}`);
+  console.log(`  Net revenue:     ${netRevenueStated != null ? '$' + netRevenueStated.toLocaleString() : 'NOT STATED'}`);
+  console.log(`  Team size:       ${teamSizeStated ?? 'NOT STATED'}`);
+  console.log(`  Practice areas:  ${practiceAreas.join(' | ') || 'none detected'}`);
+
+  const company = await fetchHubSpotCompany(hubspotContactId);
+  if (teamSizeStated == null && company?.employees) {
+    teamSizeStated = company.employees;
+    teamSizeSource = 'hubspot_company';
+    notes.push(`Team size not in research notes — using ${company.employees} employees from the HubSpot company record.`);
+  }
+
+  // Determine effective values (stated or estimated)
+  // Revenue hierarchy: research notes → HubSpot contact fields → team size estimate
+  let confidence = revenueParsed?.source === 'research_notes_text' ? 'medium' : 'high';
+  let effectiveRevenue = revenueStated;
+  let revenueSource = revenueParsed?.source ?? null;
+  let revenueLabel  = null;
+  let revenueVerified = revenueStated != null;
+  const effectiveTeam = teamSizeStated ?? 3;
+
+  // Contingency-fee practices: tier on collected/net revenue, not gross case value,
+  // when the research notes state a net/collected figure.
+  if (isContingencyPractice && netRevenueStated !== null) {
+    effectiveRevenue = netRevenueStated;
+    revenueSource = 'research_notes_net';
+    revenueVerified = true;
+    notes.push(revenueStated !== null
+      ? `Contingency-fee practice with both gross ($${revenueStated.toLocaleString()}) and net/collected ($${netRevenueStated.toLocaleString()}) revenue stated — tiering on net per contingency-revenue rule.`
+      : `Contingency-fee practice with net/collected revenue stated ($${netRevenueStated.toLocaleString()}) — tiering on net per contingency-revenue rule.`);
+  } else if (isContingencyPractice && revenueStated !== null && netRevenueStated === null) {
+    notes.push(`Contingency-fee practice with only gross revenue stated ($${revenueStated.toLocaleString()}) — no net/collected figure found. Using gross as fallback, but confidence downgraded: confirm actual collected revenue with sales rep before finalizing tier.`);
+    confidence = 'low';
+  }
+
+  if (effectiveRevenue === null) {
+    // Fallback 1: HubSpot contact revenue fields
+    const hsRevenue = await fetchHubSpotRevenue(hubspotContactId);
+    if (hsRevenue) {
+      effectiveRevenue = hsRevenue.value;
+      revenueSource    = hsRevenue.source;
+      revenueLabel     = hsRevenue.rawLabel;
+      confidence       = hsRevenue.confidence;
+      revenueVerified  = !hsRevenue.isRange;
+      notes.push(hsRevenue.isRange
+        ? `Revenue not stated on the call — HubSpot only has the range "${hsRevenue.rawLabel}". Using the midpoint ($${hsRevenue.value.toLocaleString()}) for this draft only; confirm actual revenue with the prospect before locking in.`
+        : `Revenue not in research notes — sourced from HubSpot (${hsRevenue.source}): "${hsRevenue.rawLabel}" → $${hsRevenue.value.toLocaleString()}`);
+      console.log(`  HubSpot revenue: ${hsRevenue.rawLabel} → $${hsRevenue.value.toLocaleString()} (${hsRevenue.confidence})`);
+    } else if (teamSizeStated !== null) {
+      // Fallback 2: team size estimate
+      const est = estimateRevenueFromTeamSize(teamSizeStated, notes);
+      effectiveRevenue = est.estimate;
+      revenueSource    = 'team_size_estimate';
+      confidence       = 'medium';
+    } else {
+      notes.push('Revenue and team size both unknown — using conservative defaults. Review with sales rep.');
+      effectiveRevenue = 500_000;
+      revenueSource    = 'default';
+      confidence       = 'low';
     }
-    hubspotContactId = trigger.hubspot_contact_id || null;
-  } catch { /* non-fatal */ }
-}
-
-// Find research notes
-const researchFiles = readdirSync(friendlyName).filter(f => f.endsWith('_Research_Notes.txt'));
-if (researchFiles.length === 0) {
-  console.error(`ERROR: No *_Research_Notes.txt found in ${friendlyName}/ — Pass 1 may not have completed.`);
-  process.exit(1);
-}
-const notesPath = join(friendlyName, researchFiles[0]);
-const text = readFileSync(notesPath, 'utf8');
-console.log(`Reading: ${notesPath}`);
-
-const notes = [];
-
-// Parse signals
-const revenueStated  = parseRevenue(text);
-const netRevenueStated = parseNetRevenue(text);
-const practiceAreas  = parsePracticeAreas(text);
-const teamSizeStated = parseTeamSize(text);
-const isContingencyPractice = detectContingencyPractice(practiceAreas);
-
-console.log(`  Revenue stated:  ${revenueStated != null ? '$' + revenueStated.toLocaleString() : 'NOT STATED'}`);
-console.log(`  Net revenue:     ${netRevenueStated != null ? '$' + netRevenueStated.toLocaleString() : 'NOT STATED'}`);
-console.log(`  Team size:       ${teamSizeStated ?? 'NOT STATED'}`);
-console.log(`  Practice areas:  ${practiceAreas.join(' | ') || 'none detected'}`);
-
-// Determine effective values (stated or estimated)
-// Revenue hierarchy: research notes → HubSpot contact fields → team size estimate
-let confidence = 'high';
-let effectiveRevenue = revenueStated;
-let revenueSource = revenueStated != null ? 'research_notes' : null;
-let revenueLabel  = null;
-let effectiveTeam = teamSizeStated ?? 3;
-
-// Contingency-fee practices: tier on collected/net revenue, not gross case value,
-// when the research notes state a net/collected figure.
-if (isContingencyPractice && netRevenueStated !== null) {
-  effectiveRevenue = netRevenueStated;
-  revenueSource = 'research_notes_net';
-  notes.push(revenueStated !== null
-    ? `Contingency-fee practice with both gross ($${revenueStated.toLocaleString()}) and net/collected ($${netRevenueStated.toLocaleString()}) revenue stated — tiering on net per contingency-revenue rule.`
-    : `Contingency-fee practice with net/collected revenue stated ($${netRevenueStated.toLocaleString()}) — tiering on net per contingency-revenue rule.`);
-} else if (isContingencyPractice && revenueStated !== null && netRevenueStated === null) {
-  notes.push(`Contingency-fee practice with only gross revenue stated ($${revenueStated.toLocaleString()}) — no net/collected figure found. Using gross as fallback, but confidence downgraded: confirm actual collected revenue with sales rep before finalizing tier.`);
-  confidence = 'low';
-}
-
-if (effectiveRevenue === null) {
-  // Fallback 1: HubSpot contact revenue fields
-  const hsRevenue = await fetchHubSpotRevenue(hubspotContactId);
-  if (hsRevenue) {
-    effectiveRevenue = hsRevenue.value;
-    revenueSource    = hsRevenue.source;
-    revenueLabel     = hsRevenue.rawLabel;
-    confidence       = hsRevenue.confidence;
-    notes.push(`Revenue not in research notes — sourced from HubSpot (${hsRevenue.source}): "${hsRevenue.rawLabel}" → $${hsRevenue.value.toLocaleString()}`);
-    console.log(`  HubSpot revenue: ${hsRevenue.rawLabel} → $${hsRevenue.value.toLocaleString()} (${hsRevenue.confidence})`);
-  } else if (teamSizeStated !== null) {
-    // Fallback 2: team size estimate
-    const est = estimateRevenueFromTeamSize(teamSizeStated, notes);
-    effectiveRevenue = est.estimate;
-    revenueSource    = 'team_size_estimate';
-    confidence       = 'medium';
-  } else {
-    notes.push('Revenue and team size both unknown — using conservative defaults. Review with sales rep.');
-    effectiveRevenue = 500_000;
-    revenueSource    = 'default';
-    confidence       = 'low';
   }
-}
 
-if (teamSizeStated === null) {
-  notes.push('Team size not stated in research notes — defaulting to 3. Review for coaching tier accuracy.');
-}
-
-// Call focus — what the discovery call was actually about. Applied here so the
-// seller-facing Phase 1 package already reflects it (Pass 2's call-purpose
-// override in audit-write.md stays as a backstop). Its notes go first so they
-// show in the Slack summary.
-const callFocus = parseCallFocus(text);
-const focusNotes = [];
-console.log(`  Call focus:      ${callFocus.engagement ?? 'NOT STATED'} | products: ${callFocus.products?.join(', ') || 'none'} | lead-gen gap: ${callFocus.leadGenGap ?? 'NOT STATED'}`);
-
-// Unknown call focus (usually no discovery call found): recommend nothing and
-// ask the seller what the call was about. A revenue-only marketing + coaching
-// bundle is computed below only as a reference option the seller can pick.
-const needsSellerInput = callFocus.engagement === null;
-let includeMarketing = true;
-if (needsSellerInput) {
-  focusNotes.push('Call focus unknown (no discovery call found, or Primary engagement not recorded) — no package recommended. Seller must say what the call was about before this can be locked in.');
-} else if (callFocus.engagement === 'coaching/ops' || callFocus.engagement === 'AI') {
-  if (callFocus.leadGenGap === true) {
-    focusNotes.push(`${callFocus.engagement === 'AI' ? 'AI' : 'Coaching/ops'}-led call, but prospect stated a lead-gen need — marketing included.`);
-  } else if (callFocus.leadGenGap === false) {
-    includeMarketing = false;
-    focusNotes.push(`${callFocus.engagement === 'AI' ? 'AI' : 'Coaching/ops'}-led call with no lead-gen need stated — marketing left out (call-purpose rule).`);
-  } else {
-    focusNotes.push(`${callFocus.engagement === 'AI' ? 'AI' : 'Coaching/ops'}-led call but lead-gen gap not recorded — marketing kept; confirm with sales rep whether it belongs.`);
+  if (teamSizeStated === null) {
+    notes.push('Team size not stated in research notes or HubSpot — assumed 3. Please confirm headcount.');
   }
+
+  // Call focus — what the discovery call was actually about. Applied here so the
+  // seller-facing Phase 1 package already reflects it (Pass 2's call-purpose
+  // override in audit-write.md stays as a backstop). Its notes go first so they
+  // show in the Slack summary.
+  const callFocus = parseCallFocus(text);
+  const focusNotes = [];
+  console.log(`  Call focus:      ${callFocus.engagement ?? 'NOT STATED'} | products: ${callFocus.products?.join(', ') || 'none'} | lead-gen gap: ${callFocus.leadGenGap ?? 'NOT STATED'}`);
+
+  // Unknown call focus (usually no discovery call found): recommend nothing and
+  // ask the seller what the call was about. A revenue-only marketing + coaching
+  // bundle is computed below only as a reference option the seller can pick.
+  const needsSellerInput = callFocus.engagement === null && !packageOverride;
+  let includeMarketing = true;
+  if (needsSellerInput) {
+    focusNotes.push('Call focus unknown (no discovery call found, or Primary engagement not recorded) — no package recommended. Seller must say what the call was about before this can be locked in.');
+  } else if (callFocus.engagement === 'coaching/ops' || callFocus.engagement === 'AI') {
+    if (callFocus.leadGenGap === true) {
+      focusNotes.push(`${callFocus.engagement === 'AI' ? 'AI' : 'Coaching/ops'}-led call, but prospect stated a lead-gen need — marketing included.`);
+    } else if (callFocus.leadGenGap === false) {
+      includeMarketing = false;
+      focusNotes.push(`${callFocus.engagement === 'AI' ? 'AI' : 'Coaching/ops'}-led call with no lead-gen need stated — marketing left out (call-purpose rule).`);
+    } else {
+      focusNotes.push(`${callFocus.engagement === 'AI' ? 'AI' : 'Coaching/ops'}-led call but lead-gen gap not recorded — marketing kept; confirm with sales rep whether it belongs.`);
+    }
+  }
+
+  // Select packages
+  const revenueMarketing = includeMarketing ? selectMarketingTier(revenueStated, effectiveRevenue, practiceAreas, text, notes) : null;
+  // The revenue rule's reasoning is only shown if its pick is the one used.
+  const coachingRuleNotes = [];
+  const revenueCoaching  = selectCoachingByRevenue(effectiveRevenue, effectiveTeam, text, coachingRuleNotes);
+  const revenueAdSpend   = revenueMarketing ? estimateAdSpend(practiceAreas, revenueMarketing) : null;
+
+  // Coaching named on the call wins over the revenue rule. On an AI-led call
+  // where no coaching was named, leave coaching out rather than adding the
+  // revenue default nobody asked for.
+  const discussedCoaching = selectDiscussedCoaching(callFocus.products, effectiveRevenue, focusNotes);
+  let coaching = revenueCoaching;
+  if (discussedCoaching) {
+    coaching = discussedCoaching;
+    if (discussedCoaching.name !== revenueCoaching.name) {
+      focusNotes.push(`${discussedCoaching.name} selected because it was discussed on the call (revenue rule would pick ${revenueCoaching.name}) — confirm tier with sales rep.`);
+    }
+  } else if (callFocus.engagement === 'AI') {
+    coaching = null;
+    focusNotes.push(`AI-led call with no coaching discussed — coaching left out (revenue rule would add ${revenueCoaching.name}; add it back if the seller wants it).`);
+  }
+  if (coaching === revenueCoaching || needsSellerInput) notes.push(...coachingRuleNotes);
+
+  const law = selectLawTier(callFocus.products, effectiveRevenue, teamSizeStated, focusNotes);
+
+  if (callFocus.engagement === 'AI' && !(callFocus.products || []).some(p => LAW_PRODUCTS.has(p) || p === AIWP_UNSPECIFIED)) {
+    focusNotes.push('AI-led call but no AI product in "Products discussed on call" — review whether an AI Workforce Pro / Fractional CTO tier belongs in the package.');
+  }
+
+  // Reference option for an unknown-focus package: what the revenue rules alone
+  // would pick. Not a recommendation — the seller can choose it in Slack.
+  let revenueOnlyOption = null;
+  if (needsSellerInput) {
+    const ref = pricePackage({
+      marketing: revenueMarketing ? { name: revenueMarketing.name } : null,
+      coaching: { name: revenueCoaching.name },
+    });
+    revenueOnlyOption = {
+      marketing_tier:          revenueMarketing?.tier ?? null,
+      marketing_name:          revenueMarketing?.name ?? null,
+      marketing_price_bundled: ref.lines.marketing?.charged ?? null,
+      marketing_price_retail:  ref.lines.marketing?.retail ?? null,
+      coaching_name:           revenueCoaching.name,
+      coaching_price_bundled:  ref.lines.coaching?.charged ?? null,
+      coaching_price_retail:   ref.lines.coaching?.retail ?? null,
+      ad_spend_conservative:   revenueAdSpend?.conservative ?? null,
+      ad_spend_aggressive:     revenueAdSpend?.aggressive ?? null,
+      ad_spend_rationale:      revenueAdSpend?.rationale ?? null,
+      total_bundled:           ref.total,
+    };
+  }
+
+  let marketing = needsSellerInput ? null : revenueMarketing;
+  if (needsSellerInput) coaching = null;
+  let adSpend = needsSellerInput ? null : revenueAdSpend;
+  let lawLine = law;
+
+  // A seller-set package in the trigger file replaces the selection, as long
+  // as every product in it is one the catalog can price.
+  let packageSource = 'rules';
+  if (packageOverride) {
+    const o = linesFromOverride(packageOverride, teamSizeStated);
+    if (!o) {
+      console.log(`Trigger file has a package override the catalog can't fully parse: "${packageOverride}"`);
+      console.log('Skipping deterministic selection — Pass 2 uses the override text.');
+      return null;
+    }
+    packageSource = 'trigger_override';
+    focusNotes.unshift(`Package set by the seller: "${packageOverride}".`);
+    marketing = o.marketing ? (MARKETING_TIERS.find(t => t.name === o.marketing) ?? { name: o.marketing, adCap: 20_000 }) : null;
+    adSpend = marketing ? estimateAdSpend(practiceAreas, marketing) : null;
+    coaching = o.coaching ? { name: o.coaching } : null;
+    lawLine = o.law ? { name: o.law, seats: o.seats } : null;
+  }
+
+  notes.unshift(...focusNotes);
+
+  const decision = {
+    confidence,
+    revenue_stated:          revenueStated,
+    net_revenue_stated:      netRevenueStated,
+    is_contingency_practice: isContingencyPractice,
+    revenue_effective:       effectiveRevenue,
+    revenue_source:          revenueSource,
+    revenue_label:           revenueLabel,
+    revenue_verified:        revenueVerified,
+    needs_revenue_confirmation: !revenueVerified,
+    team_size_stated:        teamSizeStated,
+    team_size_source:        teamSizeSource,
+    team_size_effective:     effectiveTeam,
+    practice_areas_detected: practiceAreas,
+    hubspot_company:         company,
+    // "MISMATCH — trigger says X; website says Y" from the research notes;
+    // the Phase 1 Slack post asks the seller to confirm the firm name.
+    firm_identity_check:     readNoteField(text, 'firm identity check', { firstLineOnly: true }),
+
+    package_source:          packageSource,
+    package_override:        packageOverride,
+    needs_seller_input:      needsSellerInput,
+    revenue_only_option:     revenueOnlyOption,
+
+    call_focus: {
+      primary_engagement:  callFocus.engagement,
+      products_discussed:  callFocus.products,
+      lead_gen_gap:        callFocus.leadGenGap,
+    },
+
+    marketing_tier:          marketing?.tier ?? null,
+    marketing_name:          marketing?.name ?? null,
+    marketing_price_bundled: null,
+    marketing_price_retail:  null,
+    marketing_savings:       null,
+
+    coaching_name:           coaching?.name ?? null,
+    coaching_price_bundled:  null,
+    coaching_price_retail:   null,
+    coaching_savings:        null,
+
+    law_tier:                null,
+    law_name:                lawLine?.name ?? null,
+    law_price_bundled:       null,
+    law_price_retail:        null,
+    law_seats:               lawLine?.seats ?? null,
+
+    total_bundled:           0,
+    total_savings:           null,
+
+    ad_spend_conservative:   adSpend?.conservative ?? null,
+    ad_spend_aggressive:     adSpend?.aggressive ?? null,
+    ad_spend_rationale:      adSpend?.rationale ?? null,
+
+    selection_notes: notes,
+  };
+
+  // Prices, bundle rule and totals (scripts/lib/pricing.mjs).
+  notes.push(...applyPricing(decision));
+  if (!revenueVerified) decision.confidence = 'low';
+
+  // 35% cap: management fees + ad spend must not exceed 35% of monthly revenue.
+  const monthlyCap = Math.round(effectiveRevenue / 12 * 0.35);
+  const spendAtFloor = decision.total_bundled + (adSpend?.conservative ?? 0);
+  if (spendAtFloor > monthlyCap) {
+    notes.push(`Total at conservative ad spend ($${spendAtFloor.toLocaleString()}/mo) is over the 35% cap ($${monthlyCap.toLocaleString()}/mo on $${effectiveRevenue.toLocaleString()} revenue) — review with sales rep.`);
+  }
+
+  return decision;
 }
 
-// Select packages
-const revenueMarketing = includeMarketing ? selectMarketingTier(revenueStated, effectiveRevenue, practiceAreas, text, notes) : null;
-const revenueCoaching  = selectCoachingTier(revenueStated, effectiveRevenue, teamSizeStated, effectiveTeam, text, notes);
-const revenueAdSpend   = revenueMarketing ? estimateAdSpend(practiceAreas, revenueMarketing) : null;
-const marketing = needsSellerInput ? null : revenueMarketing;
-const coaching  = needsSellerInput ? null : revenueCoaching;
-const adSpend   = needsSellerInput ? null : revenueAdSpend;
-const law       = selectLawTier(callFocus.products, effectiveRevenue, teamSizeStated, focusNotes);
-
-// Reference option for an unknown-focus package: what the revenue rules alone
-// would pick. Not a recommendation — the seller can choose it in Slack.
-const revenueOnlyOption = needsSellerInput ? {
-  marketing_tier:          revenueMarketing?.tier ?? null,
-  marketing_name:          revenueMarketing?.name ?? null,
-  marketing_price_bundled: revenueMarketing?.bundled ?? null,
-  marketing_price_retail:  revenueMarketing?.retail ?? null,
-  coaching_name:           revenueCoaching.name,
-  coaching_price_bundled:  revenueCoaching.bundled,
-  coaching_price_retail:   revenueCoaching.retail,
-  ad_spend_conservative:   revenueAdSpend?.conservative ?? null,
-  ad_spend_aggressive:     revenueAdSpend?.aggressive ?? null,
-  ad_spend_rationale:      revenueAdSpend?.rationale ?? null,
-  total_bundled:           (revenueMarketing?.bundled ?? 0) + revenueCoaching.bundled,
-} : null;
-
-if (callFocus.engagement === 'AI' && !(callFocus.products || []).some(p => LAW_TIERS[p] || p === AIWP_UNSPECIFIED)) {
-  focusNotes.push('AI-led call but no AI product in "Products discussed on call" — review whether an AI Workforce Pro / Fractional CTO tier belongs in the package.');
+/** Last-resort decision when selection itself crashes, so Slack never shows an empty package. */
+function fallbackDecision(err) {
+  return {
+    confidence: 'low',
+    needs_seller_input: true,
+    selection_error: err.message,
+    package_source: 'error',
+    marketing_name: null, coaching_name: null, law_name: null,
+    total_bundled: 0, total_savings: null,
+    selection_notes: [`Automatic package selection failed (${err.message}). Tell the bot which products to propose in this thread.`],
+  };
 }
 
-// Coaching discussed on the call that differs from the revenue rule: flag it,
-// don't override — the coaching rules are unchanged until Sales signs off.
-const coachingDiscussed = (callFocus.products || []).filter(p => COACHING_PRODUCTS.has(p));
-const coachingParts = revenueCoaching.name.split(' + ');
-const matchesSelected = p => coachingParts.some(part => part === p || ((p === 'FCOO' || p === 'FCFO') && part.startsWith(`${p} `)));
-if (coachingDiscussed.length && !coachingDiscussed.some(matchesSelected)) {
-  focusNotes.push(`Coaching discussed on call: ${coachingDiscussed.join(' / ')}. Rules selected ${revenueCoaching.name} — confirm with sales rep.`);
+function printSummary(decision, outputPath) {
+  const money = n => (n == null ? 'price TBD' : `$${n.toLocaleString()}/mo`);
+  console.log(`\nPackage decision → ${outputPath}`);
+  if (decision.needs_seller_input) console.log('  NEEDS SELLER INPUT');
+  if (decision.revenue_only_option) {
+    const r = decision.revenue_only_option;
+    console.log(`  Revenue-only reference: ${r.marketing_name ?? 'no marketing'} + ${r.coaching_name} — ${money(r.total_bundled)}`);
+  }
+  console.log(`  Marketing:  ${decision.marketing_name ? `${decision.marketing_name} — ${money(decision.marketing_price_bundled)}` : 'none'}`);
+  console.log(`  Coaching:   ${decision.coaching_name ? `${decision.coaching_name} — ${money(decision.coaching_price_bundled)}` : 'none'}`);
+  if (decision.law_name) console.log(`  AI:         ${decision.law_name} — ${money(decision.law_price_bundled)}`);
+  console.log(`  Total:      ${money(decision.total_bundled)} (${decision.pricing_mode ?? 'n/a'} pricing)`);
+  if (decision.ad_spend_conservative != null) console.log(`  Ad spend:   $${decision.ad_spend_conservative.toLocaleString()}–$${decision.ad_spend_aggressive.toLocaleString()}/mo`);
+  console.log(`  Confidence: ${decision.confidence}`);
+  (decision.selection_notes || []).forEach(n => console.log(`    - ${n}`));
 }
 
-notes.unshift(...focusNotes);
-
-// Calculate totals and savings
-const totalBundled = (marketing?.bundled ?? 0) + (coaching?.bundled ?? 0) + (law?.bundled ?? 0);
-const mktSavings   = marketing?.retail != null ? marketing.retail - marketing.bundled : null;
-const cchSavings   = coaching?.retail  != null ? coaching.retail  - coaching.bundled  : null;
-const lawSavings   = law?.retail      != null ? law.retail       - law.bundled       : null;
-const totalSavings = (mktSavings ?? 0) + (cchSavings ?? 0) + (lawSavings ?? 0);
-
-// 35% cap: management fees + ad spend must not exceed 35% of monthly revenue.
-const monthlyCap = Math.round(effectiveRevenue / 12 * 0.35);
-const spendAtFloor = totalBundled + (adSpend?.conservative ?? 0);
-if (spendAtFloor > monthlyCap) {
-  notes.push(`Total at conservative ad spend ($${spendAtFloor.toLocaleString()}/mo) is over the 35% cap ($${monthlyCap.toLocaleString()}/mo on $${effectiveRevenue.toLocaleString()} revenue) — review with sales rep.`);
+async function main() {
+  const friendlyName = process.argv[2];
+  if (!friendlyName) {
+    console.error('Usage: node scripts/select-package.mjs <friendly-name>');
+    process.exit(1);
+  }
+  if (!existsSync(friendlyName)) {
+    console.error(`ERROR: Firm directory not found: ${friendlyName}/`);
+    process.exit(1);
+  }
+  const outputPath = join(friendlyName, 'package_decision.json');
+  let decision;
+  try {
+    decision = await selectPackage(friendlyName);
+  } catch (err) {
+    console.error(`select-package.mjs error: ${err.stack || err.message}`);
+    decision = fallbackDecision(err);
+  }
+  if (!decision) return; // override left to Pass 2
+  writeFileSync(outputPath, JSON.stringify(decision, null, 2));
+  printSummary(decision, outputPath);
 }
 
-const decision = {
-  confidence,
-  revenue_stated:          revenueStated,
-  net_revenue_stated:      netRevenueStated,
-  is_contingency_practice: isContingencyPractice,
-  revenue_effective:       effectiveRevenue,
-  revenue_source:          revenueSource,
-  revenue_label:           revenueLabel,
-  team_size_stated:        teamSizeStated,
-  team_size_effective:     effectiveTeam,
-  practice_areas_detected: practiceAreas,
-
-  needs_seller_input:      needsSellerInput,
-  revenue_only_option:     revenueOnlyOption,
-
-  call_focus: {
-    primary_engagement:  callFocus.engagement,
-    products_discussed:  callFocus.products,
-    lead_gen_gap:        callFocus.leadGenGap,
-  },
-
-  marketing_tier:          marketing?.tier ?? null,
-  marketing_name:          marketing?.name ?? null,
-  marketing_price_bundled: marketing?.bundled ?? null,
-  marketing_price_retail:  marketing?.retail ?? null,
-  marketing_savings:       mktSavings,
-
-  coaching_name:           coaching?.name ?? null,
-  coaching_price_bundled:  coaching?.bundled ?? null,
-  coaching_price_retail:   coaching?.retail ?? null,
-  coaching_savings:        cchSavings,
-
-  law_tier:                law?.tier ?? null,
-  law_name:                law?.name ?? null,
-  law_price_bundled:       law?.bundled ?? null,
-  law_price_retail:        law?.retail ?? null,
-  law_seats:               law?.seats ?? null,
-
-  total_bundled:           totalBundled,
-  total_savings:           totalSavings > 0 ? totalSavings : null,
-
-  ad_spend_conservative:   adSpend?.conservative ?? null,
-  ad_spend_aggressive:     adSpend?.aggressive ?? null,
-  ad_spend_rationale:      adSpend?.rationale ?? null,
-
-  selection_notes: notes,
-};
-
-const outputPath = join(friendlyName, 'package_decision.json');
-writeFileSync(outputPath, JSON.stringify(decision, null, 2));
-
-console.log(`\nPackage decision → ${outputPath}`);
-if (needsSellerInput) {
-  console.log(`  NEEDS SELLER INPUT — call focus unknown, no package recommended.`);
-  console.log(`  Revenue-only reference: ${revenueOnlyOption.marketing_name ?? 'no marketing'} + ${revenueOnlyOption.coaching_name} — $${revenueOnlyOption.total_bundled.toLocaleString()}/mo`);
+if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) {
+  main().catch(err => {
+    console.error(`select-package.mjs error: ${err.message}`);
+    process.exit(0); // non-fatal — Pass 2 falls back to its own rules
+  });
 }
-console.log(`  Marketing:  ${marketing ? `${marketing.name} — $${marketing.bundled.toLocaleString()}/mo` : needsSellerInput ? 'none (awaiting seller)' : 'none (call-purpose rule)'}`);
-console.log(`  Coaching:   ${coaching ? `${coaching.name} — $${coaching.bundled.toLocaleString()}/mo` : 'none (awaiting seller)'}`);
-if (law) console.log(`  AI:         ${law.name} — $${law.bundled.toLocaleString()}/mo`);
-console.log(`  Total:      $${totalBundled.toLocaleString()}/mo`);
-if (adSpend) console.log(`  Ad spend:   $${adSpend.conservative.toLocaleString()}–$${adSpend.aggressive.toLocaleString()}/mo (conservative: ${adSpend.rationale.conservative_basis}; aggressive: ${adSpend.rationale.aggressive_basis})`);
-console.log(`  Confidence: ${confidence}`);
-if (notes.length) {
-  console.log(`  Notes:`);
-  notes.forEach(n => console.log(`    - ${n}`));
-}
-})().catch(err => {
-  console.error(`select-package.mjs error: ${err.message}`);
-  process.exit(0); // non-fatal — Pass 2 falls back to PACKAGE_HINT
-});

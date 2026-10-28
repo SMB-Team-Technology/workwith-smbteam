@@ -1,5 +1,27 @@
 # Proposal Bot: Feedback Review Notes
 
+## Oct 28, 2026: fixes for Vanessa's Oct 23 email ("Proposal Opportunities: Week of 10/19")
+
+Branches `fix/proposal-bot-pricing-and-prompts` (PR 1) and `fix/proposal-bot-slack-relay` (PR 2).
+
+| # | Issue | Fix |
+|---|---|---|
+| 1 | Bundle price kept when one product remains; AIWP Starter counted as a bundle | `scripts/lib/pricing.mjs` holds the catalog and the bundle rule. A package needs 2+ bundle-eligible products to get bundled prices; AIWP Starter doesn't count. `scripts/reprice.mjs` sets prices after every seller change, so the AI no longer does price math. Pass 2 re-prices before building. |
+| 2 | HubSpot revenue range used as revenue | Revenue written in free text on the call is now read ("north of $300,000"). A HubSpot range only or a missing figure → "Revenue unverified" in Slack, and lock-in waits for the seller ("revenue is $X" or "lock anyway"). New machine-read line in the research notes: `Revenue (annual, best estimate)`. |
+| 3 | Elite Coach Plus picked when another product was discussed | The coaching or advisory product named on the call wins (FCOO/FCFO with no tier: Advisor under $2M, Director at $2M+). AI-led calls no longer get coaching added. |
+| 4 | Team size defaults to 3 | Reads "15 total", "3 — …", "Solo — …", and website counts; then HubSpot company employees. New machine-read line `Team size (total headcount)`. Still unknown → Slack asks. |
+| 5 | Retired products offered | FCOO Partner retired in code, the Pass 2 rulebook, research notes and both Slack bots; requests resolve to FCOO Director. |
+| 6 | Wrong firm names | New proposals use the HubSpot company record and are checked against the website; mismatches are flagged in Slack. Sellers can reply "firm name is X". |
+| 7 | Edits applied to the wrong firm | An @mention in a thread now reaches one workflow, together with its thread; the change handler acts only on that thread's firm or an explicitly named one, otherwise it asks. |
+| 8 | Duplicate posts | Repeat booking alerts are dropped. Proposals for the same firm (contact, company or domain) within 14 days are skipped. A run whose trigger was changed again cancels itself. Re-runs post in the existing thread. "Products discussed" reads one line, so there are no duplicate products. |
+| 9 | Empty package | A seller's package in the trigger is written as the package. If it can't be parsed, Slack shows the seller's text. Crashes write a fallback that asks the seller. |
+
+**Open — needs Sales/Brandon:**
+- Paid Ads Essentials stand-alone price, or confirmation that it's bundle-only. Today the bot flags it alone and won't price it.
+- Any other retired products. Only FCOO Partner is marked.
+- Any other bundle exceptions besides AIWP Starter. Set `bundleEligible: false` in `scripts/lib/pricing.mjs`.
+- `Design Files/Scoping_and_Ad_Spend_Guide.md` and `SMB_Team_Audit_Agent_System_Prompt.txt` still list FCOO Partner. They're marked "never modify", so they're left for Greta to approve. Code guards against it either way.
+
 Working notes from going through Vanessa's feedback email (Sept 2026), one topic at a time. These notes are for discussion. The only code change made from them so far is the call-focus fix for the starting package (Oct 1). Last updated Oct 1, 2026.
 
 ## Context

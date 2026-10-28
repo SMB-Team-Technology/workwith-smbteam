@@ -12,6 +12,7 @@ jobs:
     timeout-minutes: 150
     permissions:
       contents: write
+      actions: write   # lets a superseded run cancel itself (see "Stop if superseded")
 
     steps:
       - name: Checkout
@@ -44,6 +45,28 @@ jobs:
           echo "suppress_pricing=$(jq -r '.suppress_pricing // "false"' "$TRIGGER_FILE")" >> "$GITHUB_OUTPUT"
           echo "package=$(jq -r '.package // empty' "$TRIGGER_FILE")" >> "$GITHUB_OUTPUT"
           echo "fathom_url=$(jq -r '.fathom_url // empty' "$TRIGGER_FILE")" >> "$GITHUB_OUTPUT"
+
+      # -----------------------------------------------------------------------
+      # A trigger is often committed twice within a minute (the booking, then
+      # the seller's package override). Each push starts this workflow, and
+      # both runs used to post a Phase 1 proposal to Slack. Checkout is the
+      # latest main, so if a newer commit already changed this trigger file,
+      # this run is stale: cancel it and let the newer run post.
+      # -----------------------------------------------------------------------
+      - name: Stop if superseded by a newer trigger commit
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          TRIGGER_FILE="${{ steps.inputs.outputs.trigger_file }}"
+          LATEST=$(git log -1 --format=%H -- "$TRIGGER_FILE")
+          if [ -n "$LATEST" ] && [ "$LATEST" != "${{ github.sha }}" ] \
+             && git merge-base --is-ancestor "${{ github.sha }}" "$LATEST"; then
+            echo "$TRIGGER_FILE was changed again in $LATEST — that run will post. Cancelling this one."
+            gh run cancel "${{ github.run_id }}" --repo "${{ github.repository }}"
+            sleep 120
+            exit 1
+          fi
+          echo "This is the latest commit for $TRIGGER_FILE — continuing."
 
       - name: Configure git
         run: |
@@ -293,56 +316,103 @@ jobs:
               with urllib.request.urlopen(req) as resp:
                   return json.loads(resp.read())
 
-          # Pull the deterministic package decision, if Pass 1.5 produced one.
-          decision_path = f"{friendly_name}/package_decision.json"
-          lines = [f"📋 *Proposal ready for review: {firm}*", f"Prepared for: {sales_rep} · {date}", ""]
-          needs_input = False
+          def money(n):
+              return f"${n:,}/mo" if isinstance(n, (int, float)) else "price TBD"
 
+          decision_path = f"{friendly_name}/package_decision.json"
+          d = {}
           if os.path.exists(decision_path):
               with open(decision_path) as f:
                   d = json.load(f)
-              needs_input = bool(d.get('needs_seller_input'))
-          if needs_input:
+
+          # A seller-set package in the trigger file that select-package.mjs
+          # couldn't turn into catalog products: show the seller's own words
+          # instead of an empty package. Pass 2 builds from this text.
+          override = ""
+          trigger_path = f"triggers/audit-research/{friendly_name}.json"
+          if os.path.exists(trigger_path):
+              with open(trigger_path) as f:
+                  override = (json.load(f).get("package") or "").strip()
+
+          needs_input = bool(d.get("needs_seller_input"))
+          unpriced = d.get("unpriced_products") or []
+          lines = [f"📋 *Proposal ready for review: {firm}*", f"Prepared for: {sales_rep} · {date}", ""]
+
+          # Things the seller must confirm, shown above the package.
+          warnings = []
+          identity = d.get("firm_identity_check") or ""
+          if identity.upper().startswith("MISMATCH"):
+              warnings.append(f"⚠️ *Firm name check* — {identity}. Reply \"firm name is …\" if this proposal should use a different name.")
+          if d.get("needs_revenue_confirmation"):
+              label = d.get("revenue_label")
+              rev = d.get("revenue_effective")
+              basis = f"HubSpot only has the range {label}" if label else "revenue wasn't stated on the call"
+              warnings.append(f"⚠️ *Revenue unverified* — {basis}. This draft uses {money(rev).replace('/mo', '')}/yr. Reply with the firm's actual annual revenue (e.g. \"revenue is $300K\") before locking in.")
+          if d and d.get("team_size_stated") is None:
+              warnings.append("⚠️ *Team size unknown* — assumed 3. Reply with the headcount if you know it.")
+          if d.get("selection_error"):
+              warnings.append(f"⚠️ Automatic package selection failed ({d['selection_error']}).")
+
+          if d and needs_input and not unpriced and not d.get("selection_error"):
               # Call focus unknown (usually no discovery call found): don't
               # present a package — ask the seller what the call was about.
               lines[0] = f"❓ *Need your input before I build a package: {firm}*"
               lines.append("I couldn't find what the discovery call was about, so I haven't picked a package.")
-              rev = d.get('revenue_effective')
+              rev = d.get("revenue_effective")
               rev_note = f"${rev:,} ({d.get('revenue_source')})" if rev else "unknown"
-              team = d.get('team_size_stated')
+              team = d.get("team_size_stated")
               lines.append(f"*Revenue used:* {rev_note} · *Team size:* {team if team is not None else 'not stated'}")
-              opt = d.get('revenue_only_option') or {}
-              if opt.get('coaching_name'):
-                  parts = [p for p in (opt.get('marketing_name'), opt.get('coaching_name')) if p]
-                  lines.append(f"_Revenue-only option, if the call was about marketing/coaching:_ {' + '.join(parts)} — ${opt.get('total_bundled'):,}/mo")
+              opt = d.get("revenue_only_option") or {}
+              if opt.get("coaching_name"):
+                  parts = [p for p in (opt.get("marketing_name"), opt.get("coaching_name")) if p]
+                  lines.append(f"_Revenue-only option, if the call was about marketing/coaching:_ {' + '.join(parts)} — {money(opt.get('total_bundled'))}")
               lines.append("")
               lines.append(f"{mention} — what was the call about? Reply in this thread with what to propose:")
               lines.append("  ✏️ name the products — e.g. \"FCTO Level 1 + 1 seat of AIWP\"")
               lines.append("  📈 or \"use the revenue-only option\" if it was a marketing/coaching call")
               lines.append("Once the package is set, reply 🔒 *lock it in* to build the deck.")
-          elif os.path.exists(decision_path):
-              if d.get('marketing_name'):
-                  lines.append(f"*Marketing:* {d.get('marketing_name')} — ${d.get('marketing_price_bundled'):,}/mo")
+          elif d and not d.get("selection_error"):
+              if warnings:
+                  lines.extend(warnings + [""])
+              if d.get("package_source") == "trigger_override":
+                  lines.append(f"_Package set by seller:_ {d.get('package_override')}")
+              if d.get("marketing_name"):
+                  lines.append(f"*Marketing:* {d.get('marketing_name')} — {money(d.get('marketing_price_bundled'))}")
               else:
                   lines.append("*Marketing:* none — call was not about lead generation")
-              if d.get('coaching_name'):
-                  lines.append(f"*Coaching:* {d.get('coaching_name')} — ${d.get('coaching_price_bundled'):,}/mo")
-              if d.get('law_name'):
-                  seats = d.get('law_seats')
-                  seat_note = f" ({seats} seat{'s' if seats != 1 else ''})" if seats else ""
-                  lines.append(f"*AI:* {d.get('law_name')}{seat_note} — ${d.get('law_price_bundled'):,}/mo")
-              lines.append(f"*Total:* ${d.get('total_bundled'):,}/mo" + (f" (saves ${d.get('total_savings'):,}/mo vs. retail)" if d.get('total_savings') else ""))
-              if d.get('ad_spend_conservative'):
+              if d.get("coaching_name"):
+                  lines.append(f"*Coaching:* {d.get('coaching_name')} — {money(d.get('coaching_price_bundled'))}")
+              if d.get("law_name"):
+                  seats = d.get("law_seats")
+                  seat_note = f" ({seats} seat{'s' if seats != 1 else ''})" if seats and "AI Workforce Pro" in d.get("law_name", "") else ""
+                  lines.append(f"*AI:* {d.get('law_name')}{seat_note} — {money(d.get('law_price_bundled'))}")
+              pricing_note = ""
+              if d.get("pricing_mode") == "standalone":
+                  pricing_note = " · stand-alone pricing (fewer than 2 bundle-eligible products)"
+              elif d.get("total_savings"):
+                  pricing_note = f" (saves ${d.get('total_savings'):,}/mo vs. stand-alone)"
+              lines.append(f"*Total:* {money(d.get('total_bundled'))}{pricing_note}")
+              if unpriced:
+                  lines.append(f"🚫 *Can't be sold on its own yet:* {', '.join(unpriced)} — add another product or pick a different tier.")
+              if d.get("ad_spend_conservative"):
                   lines.append(f"*Suggested ad spend:* ${d.get('ad_spend_conservative'):,}–${d.get('ad_spend_aggressive'):,}/mo")
               lines.append(f"*Confidence:* {d.get('confidence')}")
-              notes = d.get('selection_notes') or []
+              notes = d.get("selection_notes") or []
               if notes:
                   lines.append("")
                   lines.append("*Why this package:*")
                   for n in notes[:7]:
                       lines.append(f"  • {n}")
+          elif override:
+              lines.append(f"*Package set by seller:* {override}")
+              lines.append("_Prices for this package are set when the deck is built (Pass 2)._")
           else:
-              lines.append("_No deterministic package decision was produced — check the research notes._")
+              # Never post an empty package: ask the seller what to propose.
+              needs_input = True
+              lines[0] = f"❓ *Need your input before I build a package: {firm}*"
+              lines.extend(warnings)
+              lines.append("I couldn't pick a package automatically (see the research notes).")
+              lines.append(f"{mention} — reply in this thread with the products to propose, e.g. \"Elite Coach Plus + FCTO Level 1\". Then reply 🔒 *lock it in*.")
 
           if suppress_pricing == "true":
               lines.append("")
@@ -354,11 +424,28 @@ jobs:
               lines.append("  🔒 *lock it in* — build the full proposal deck as-is")
               lines.append("  ❓ *ask why* — e.g. \"why Growth and not Starter?\"")
               lines.append("  ✏️ *propose changes* — e.g. \"swap to Dominate, drop coaching\"")
+              lines.append("  🏷️ *fix the firm name* — e.g. \"firm name is BL Legal\"")
 
-          text = "\n".join(lines)
-          posted = slack_api("chat.postMessage", {"channel": channel, "text": text})
+          # A re-run for a firm that already has a review thread replies in that
+          # thread (and broadcasts to the channel) instead of starting a new one,
+          # so earlier replies in the thread keep working.
+          review_path = f"{friendly_name}/proposal_review.json"
+          prior = {}
+          if os.path.exists(review_path):
+              with open(review_path) as f:
+                  prior = json.load(f)
+          payload = {"channel": channel, "text": "\n".join(lines)}
+          if prior.get("slack_thread_ts") and prior.get("slack_channel"):
+              payload.update({
+                  "channel": prior["slack_channel"],
+                  "thread_ts": prior["slack_thread_ts"],
+                  "reply_broadcast": True,
+                  "text": "🔄 *Updated after re-run*\n" + payload["text"],
+              })
+          posted = slack_api("chat.postMessage", payload)
           if not posted.get("ok"):
               raise SystemExit(f"chat.postMessage failed: {posted}")
+          thread_ts = prior.get("slack_thread_ts") or posted["ts"]
 
           review_state = {
               "firm_name": firm,
@@ -369,12 +456,12 @@ jobs:
               "hubspot_contact_id": hubspot_contact_id,
               "suppress_pricing": suppress_pricing,
               "slack_channel": posted["channel"],
-              "slack_thread_ts": posted["ts"],
+              "slack_thread_ts": thread_ts,
               "status": "pending",
           }
-          with open(f"{friendly_name}/proposal_review.json", "w") as f:
+          with open(review_path, "w") as f:
               json.dump(review_state, f, indent=2)
-          print(f"Posted proposal review request to Slack (thread_ts={posted['ts']}).")
+          print(f"Posted proposal review request to Slack (thread_ts={thread_ts}).")
           PYEOF
 
       - name: Commit proposal review state
