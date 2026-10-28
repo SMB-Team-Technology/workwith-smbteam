@@ -1,0 +1,51 @@
+{
+  "confidence": "medium",
+  "revenue_stated": null,
+  "net_revenue_stated": null,
+  "is_contingency_practice": false,
+  "revenue_effective": 5000000,
+  "revenue_source": "hubspot_annual_law_firm_revenue",
+  "revenue_label": "$5MM +",
+  "team_size_stated": null,
+  "team_size_effective": 3,
+  "practice_areas_detected": [
+    "not a law firm. insurance and estate-planning-related products sold through advisors: life insurance",
+    "annuities",
+    "long-te"
+  ],
+  "needs_seller_input": false,
+  "revenue_only_option": null,
+  "call_focus": {
+    "primary_engagement": "marketing",
+    "products_discussed": [],
+    "lead_gen_gap": true
+  },
+  "marketing_tier": "Platinum",
+  "marketing_name": "Full Service Marketing — Platinum",
+  "marketing_price_bundled": 15997,
+  "marketing_price_retail": 18997,
+  "marketing_savings": 3000,
+  "coaching_name": "Elite Coach Plus",
+  "coaching_price_bundled": 3200,
+  "coaching_price_retail": 3497,
+  "coaching_savings": 297,
+  "law_tier": null,
+  "law_name": null,
+  "law_price_bundled": null,
+  "law_price_retail": null,
+  "law_seats": null,
+  "total_bundled": 19197,
+  "total_savings": 3297,
+  "ad_spend_conservative": 3000,
+  "ad_spend_aggressive": 12000,
+  "ad_spend_rationale": {
+    "conservative_basis": "no practice area matched a channel-minimum table — default floor",
+    "aggressive_basis": "scaled 4x off the conservative channel-minimum floor"
+  },
+  "selection_notes": [
+    "Revenue not in research notes — sourced from HubSpot (hubspot_annual_law_firm_revenue): \"$5MM +\" → $5,000,000",
+    "Team size not stated in research notes — defaulting to 3. Review for coaching tier accuracy.",
+    "Revenue $3M+: Platinum tier.",
+    "Revenue $1M+, team under 5: Elite Coach Plus selected (Master's Circle requires 5+ team)."
+  ]
+}
