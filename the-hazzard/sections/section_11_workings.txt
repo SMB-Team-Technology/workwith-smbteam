@@ -1,0 +1,118 @@
+SECTION 11 WORKINGS — The Hazzard Law Firm, LLC (the-hazzard) — INTERNAL, NOT CLIENT-FACING
+Prepared for: Dan Bryant | Report date: October 29, 2026
+
+=====================================================================
+1. PACKAGE DECISION + OVERRIDE CHECK
+=====================================================================
+package_decision.json: confidence "medium"; needs_seller_input false; seller override recorded (Slack, Oct 28, 2026): Full Service Marketing Starter ONLY, Elite Coach Plus removed. Git history: "Seller override: the-hazzard package changed to FSM Starter only" and "Proposal review: the-hazzard status locked".
+
+Transcript-stated need override check (all four):
+1. Call-purpose: The recording is the tail of an existing coaching call (primary_engagement "coaching/ops", lead_gen_gap false, products discussed none). On its own this would route AWAY from Full Service Marketing. DEPARTURE FROM THE RULE, MADE INTENTIONALLY: the seller explicitly chose FSM Starter after reviewing the account, and Dan referenced an existing agreement (reviewed with Gabby a month or two ago) that this recording does not name. The transcript contains no discovery of needs either way, so it neither supports nor contradicts a marketing need. I followed the seller's locked decision rather than re-adding coaching the seller removed. SALES: please confirm in HubSpot that the proposal matches the earlier agreement before the 4:00 pm Central call.
+2. Existing-vendor: none stated -> does not apply.
+3. Budget-reality: none stated -> does not apply.
+4. Effective-revenue: net revenue not stated; no gross/net split in notes -> does not apply. (is_contingency_practice true in JSON, but nothing stated on the call; revenue below is a HubSpot band, not a transcript figure.)
+
+Revenue basis: HubSpot band "$500K - $1,000,000" -> $750,000 midpoint used by pipeline. NOT stated by the prospect. Never printed in the client report.
+Tier check: Starter is correct for $500K-$1M, multiple practice areas (criminal defense, family law, PI). PI present -> Essentials hidden. Starter is the minimum tier. OK.
+
+=====================================================================
+2. MANDATORY PRICE LOOKUP (verified against tables in audit-write.md)
+=====================================================================
+- Marketing package selected: Full Service Marketing — Starter
+  - Bundled price (from table): $4,997/mo
+  - Stand-alone price (from table): $5,697/mo
+  - Savings (stand-alone minus bundled): $700/mo
+- Non-marketing package selected: none (removed by seller override)
+- Legal AI Workforce (LAW) package selected: none
+- AI Avatar / Video Growth add-on selected: none
+- Total monthly investment (sum of bundled/recurring prices): $4,997/mo
+- Total savings (sum of all savings): $700/mo
+
+=====================================================================
+3. 35% CAP CHECK AND AD SPEND (CORRECTION TO DECISION FILE)
+=====================================================================
+Assumed monthly revenue (HubSpot midpoint): $750,000 / 12 = $62,500
+35% cap on total SMB spend: $21,875/mo
+Available for ad spend after the $4,997 management fee: $16,878/mo
+
+package_decision.json ad_spend_aggressive was $20,000 -> $4,997 + $20,000 = $24,997 = 40% of $62,500. EXCEEDS the 35% cap. Corrected aggressive ad spend to $16,500 (rounded down, inside the cap).
+Conservative $7,500 -> $12,497 total = 20% of $62,500. Inside the cap. Matches PI medium floor ($7,500).
+Note: JSON labels $20,000 as the "Starter tier cap"; that is the Paid Ads Starter cap. The Full Service Starter cap is $25,000. Neither controls here — the 35% cap does.
+RISK: if actual revenue is at the low end of the band ($500K), the cap is $14,583 total -> only $9,586 available for ad spend, which would make even the aggressive figure too high. Confirm revenue with Wakisha before presenting the range.
+
+Recommended range shown to client: $7,500 – $16,500/mo.
+
+=====================================================================
+4. ROI PROJECTIONS (ESTIMATES)
+=====================================================================
+INPUTS (all defaults — nothing stated on the call):
+- Close rate: 15% (default; Dan's "doubled or tripled conversion" is a rep statement, not used)
+- Average case value: practice-area defaults, midpoints: Criminal Defense $4,000 ($3K-$5K); Family Law $4,000 ($3K-$5K); Personal Injury $6,500 ($5K-$8K)
+- Channel: Google Search CPL midpoints: Criminal Defense $180 ($155-$205); Family Law $100 ($90-$110); Personal Injury $705 ($630-$780)
+- Spend split ASSUMED equal across the three website-listed practice areas (1/3 each). This is an assumption; the call did not say which practice areas to advertise.
+- Blended CPL (equal-thirds, harmonic): $176.74. Conservative adds 20% cushion -> $212.09. Aggressive no cushion.
+
+CONSERVATIVE — $7,500/mo
+- Leads: 7,500 / 212.09 = ~35 leads
+- Cases: 35.4 x 15% = ~5.3 cases (range using CPL low/high: 4.8-6.0) -> shown as "5–6 cases"
+- Revenue: ~$22,300/mo
+- Return: ~3.0x
+
+AGGRESSIVE — $16,500/mo
+- Leads: 16,500 / 176.74 = ~93 leads
+- Cases: 93.4 x 15% = ~14.0 cases (range 12.6-15.8) -> shown as "13–16 cases"
+- Revenue: ~$58,900/mo
+- Return: ~3.6x
+
+Case value row in client report: "$3,000–$8,000 (practice-area defaults)" — disclosed as a default because the call did not state a case value.
+
+WHY THIS RANGE (client-facing): "To put the firm in front of high-intent criminal defense, family law and personal injury searches in Birmingham — the moments someone needs a lawyer now — before competitors like Revill Law Firm capture them first."
+
+=====================================================================
+5. DBM
+=====================================================================
+DBM NOT STATED and cannot be honestly inferred from an 11-minute logistics/referral clip (research notes, STEP 9). The client report uses neutral wording ("what you want this firm to make possible for you") rather than inventing a motive. "The goal is to get the money" was about the SMB Team referral bonus, not the firm. Block 1 statement is written around "grow predictably" rather than a personal DBM. SALES: get the real DBM from HubSpot notes or the call and, if useful, personalize Sections 03, 05, 10 and 11 before sending.
+
+=====================================================================
+6. FIRM STAGE / TRAFFIC LIGHTS (PROVISIONAL)
+=====================================================================
+Stage 3 assigned (lower stage on the border). Evidence: three attorneys + staff changes mentioned by the rep suggest more than a solo; no information on scalable lead-gen systems -> lower stage applies. The "Solo Practitioner" label may read oddly for a three-attorney firm — confirm stage with Wakisha.
+All four pillars AMBER: nothing about lead sources, intake, team structure or finances was discussed, so no pillar could be called red or green on evidence. Competitive Urgency Score 5 is provisional (research notes STEP 10).
+
+=====================================================================
+7. QUICK WIN OPPORTUNITIES (9)
+=====================================================================
+1. [Lead Gen / Quick Win] Speed up the mobile site — mobile PageSpeed 67 vs desktop 99; LCP 5.6 s. Competitor: none named.
+2. [Lead Gen / Quick Win] GBP review + directory clean-up (category, two phone numbers) — Yelp lists Divorce & Family Law vs site's criminal defense lead. Competitor: Revill Law Firm (promotes Google reviews on its site; counts unconfirmed).
+3. [Intake / Quick Win] Contact form above the fold + a single tracked phone number. Competitor: none named.
+4. [Lead Gen / Long-Term] Review generation program. Competitor: The Harris Firm LLC (promotes a substantial review profile; count unconfirmed).
+5. [Lead Gen / Quick Win] Meta pixel + retargeting (no pixel in homepage HTML; GTM contents not checked). Competitor: none named.
+6. [Profit / Quick Win] Call tracking + cost-per-lead / cost-per-case baseline by practice area. Competitor: none named.
+7. [Lead Gen / Long-Term] Paid search + Local Service Ads across the three practice areas. Competitor: none named (no ad data observed).
+8. [Intake / Long-Term] Measure speed-to-lead, after-hours coverage and follow-up. Competitor: none named.
+9. [Team / Long-Term] Define roles and accountability for intake, consults and sales. Competitor: none named.
+
+=====================================================================
+8. BLOCK 5 — SOURCING (FALLBACK USED, WITH REASON)
+=====================================================================
+The transcript exists but contains NO line from Wakisha about the firm's needs (10 usable lines, all about the SMB Team event, referral bonus, scheduling or the coaching call itself). The "What You Told Us" rules require every row to trace to a transcript line and forbid guessing, so I could not use it. I used the "What We Found — and How This Plan Addresses It" fallback (written for no-transcript cases; the same logic applies here). Rows are NOT worded as if the owner said them.
+Row 1: Mobile site speed (67 mobile vs 99 desktop) — source: Section 06 Website Audit / Section 05 Lead Gen card. Supported by: FSM Starter website + content edits.
+Row 2: Local search profile and review footprint unconfirmed / mixed directory signals — source: Section 06 Local SEO. Supported by: FSM Starter local SEO + GBP optimization.
+Row 3: No Meta pixel in homepage code and paid channel presence not observed — source: Section 06 Meta Ads / Google Ads. Supported by: FSM Starter paid ads (Google, LSA, Meta incl. retargeting).
+Next step: kickoff call with the Onboarding team.
+
+=====================================================================
+9. ESCALATION FLAGS (INTERNAL ONLY)
+=====================================================================
+- REVIEW COUNTS UNCONFIRMED — verify live before the call. Firm: 103 / 149 / 153 Google reviews reported by different third-party sources, rating 4.8, all [UNCONFIRMED]; Yelp 3.9 / 7 and FindLaw 5.0 / 4 [UNCONFIRMED]. Competitors Revill 236, Harris 312, Farris Riley & Pitt 506 — all [UNCONFIRMED]. None printed in the client report (qualitative framing only).
+- Ad spend below practice-area minimums -> paid ads team review. Conservative $7,500 is below the combined Google PPC channel minimums for three practice areas (criminal $5,500 + family $3,500 + accident/injury $6,000 = $15,000; PI hard floor alone is $7,500 at medium competitiveness). The ROI split across three areas is an assumption — confirm which practice areas to advertise first.
+- Revenue unconfirmed (HubSpot band only) -> verify before presenting; 35% cap depends on it (see Section 3).
+- Seller override (FSM Starter only) departs from the call-purpose override — see Section 1. Confirm against the earlier agreement in HubSpot.
+- DBM not recorded — see Section 5.
+- Existing/returning client: do not present as a cold prospect. Rep claims (conversion "doubled or tripled", staff changes) were NOT used in the report.
+- Criminal Defense / Family Law / PI top-metro approvals: Birmingham, AL is not a top-10 or top-40 metro -> not triggered.
+- Marketing MRR $4,997 (under $10K), ad spend under $25K -> no scoping-approval triggers.
+- No AI Avatar, LAW, OmniSocial, Attorney Assistant or Bookkeeping AR/AP item included.
+- Referral-program terms ($6,000 bonus, $1,500 event ticket) are SMB Team terms, not firm figures — not used.
+- Phone numbers on the site: (205) 521-7378 and 205-236-1992 (CRM record also has +1 (205) 436-1547). Not printed in the report.
+- Roadmap Phase 3 (client report) previews Legal AI Workforce, FCOO/FCFO and Bookkeeping as future steps with no prices -> confirm with sales rep that LAW delivery has launched before discussing it.
