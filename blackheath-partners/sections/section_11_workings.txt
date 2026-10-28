@@ -1,0 +1,71 @@
+SECTION 11 WORKINGS — Blackheath Partners (October 29, 2026) — INTERNAL, NOT CLIENT-FACING
+
+=== TRANSCRIPT-STATED NEED OVERRIDE CHECK ===
+1. Call-purpose: call was marketing-only (advisor-acquisition ads). Not triggered; marketing is the correct category.
+2. Existing-vendor: prospect cancelled his last marketing relationship "last Monday" (00:58:36). Two other marketers being talked to but nothing signed. Not triggered.
+3. Budget-reality: no budget constraint stated. The $25,000/mo figure was the rep's pitch math for blanketing the U.S., not the prospect's budget. Prospect wants "proof of concept first" (00:25:48); rep said a proof of concept would be "in the thousands". Not triggered.
+4. Effective-revenue: no gross/net distinction stated. Not triggered.
+
+=== PACKAGE DECISION ===
+Source: package_decision.json (confidence: medium). Seller override recorded in selection_notes: switched to Paid Ads Starter stand-alone per Slack request on October 28, 2026; Marketing Platinum and Elite Coach Plus removed.
+Revenue note: prospect stated NO revenue. package_decision.json uses HubSpot "$5MM +" (hubspot_annual_law_firm_revenue) — not corroborated by the call. No revenue figure appears anywhere in the client report.
+
+MANDATORY PRICE LOOKUP (values copied from package_decision.json and checked against Scoping_and_Ad_Spend_Guide.md Starter tier table, line ~421):
+- Marketing package selected: Paid Ads — Starter (stand-alone)
+  - Bundled price: $3,497/mo (no bundle applied — stand-alone price per seller override)
+  - Stand-alone price: $3,497/mo
+  - Savings: $0/mo
+- Non-marketing package selected: none
+- Legal AI Workforce (LAW) package selected: none
+- AI Avatar / Video Growth add-on selected: none
+- Total monthly investment: $3,497/mo
+- Total savings: $0/mo (no bundle discount; "You save" callout omitted from Block 3)
+
+=== OVERRIDE DOCUMENTATION ===
+- Scoping guide (line ~389) says ads-only sub-packages cannot be sold stand-alone and must be paired with a coaching/advisory service. Recommendation is single-product per seller override; flagged for seller. Rep also told the prospect he must get internal approval to scope ads-only and that SMB Team "normally" does not do ads-only. Approval is pending — confirm before sending.
+- Package deliverables in Block 2 are not catalog deliverables (the catalog lists none for Paid Ads Starter). They reflect scope the rep described on the call (channels, pixel, remarketing, custom/lookalike audiences, 10-15 creatives, frequency management). Confirm against the approved scope.
+- Not a law firm: no practice area matches the channel-minimum or CPL tables.
+
+=== AD SPEND ===
+Conservative: $3,000/mo (absolute minimum for any paid ads; no practice-area table applies — default floor per decision file)
+Aggressive: $12,000/mo (decision file: 4x the conservative floor; a default scaling, not a validated figure)
+Cap check: Paid Ads Starter cap is $20,000 — within cap. Total SMB spend ($3,497 + $12,000 = $15,497) is under the 35% cap against the HubSpot revenue band; revenue not confirmed on the call.
+ROI projection: NOT calculated. Case value, close rate, revenue and the CPL benchmarks in the audit-write tables are law-firm practice-area figures; none apply to recruiting wealth advisors, and the prospect gave no case value, close rate or revenue. Block 4 shows the spend range and states that a return projection will be set after the proof of concept. The 15% default close rate was not used.
+"Why this range" sentence (client-facing): "Start with a measured proof of concept aimed at high-net-worth wealth advisors, then scale spend only on the channels that bring in the right kind of advisor, not the lower-tier leads of the past."
+
+=== DBM STATEMENT (Block 1) ===
+Scale and dominate his niche, with relief from being the bottleneck. In his words: "what I'm trying to do is build up the franchises" (00:50:35); "I need my salespeople carrying me" (00:28:14); "I need… some brand awareness and ramp it up" (00:28:45). No personal-life quote was given.
+
+=== QUICK WIN OPPORTUNITIES (8) ===
+1. Lead Gen — Install the Meta pixel, Google Analytics and Tag Manager (verified absent in homepage HTML). Competitor: none.
+2. Intake — Add a contact form and book-a-call button (homepage CTA is "Learn More"; Contact page has no form). Competitor: none.
+3. Lead Gen — Build 90-day remarketing and custom/lookalike audiences from advisor lists ("I can buy any list that we need to buy", 00:26:56). Competitor: none.
+4. Lead Gen — Add a clear call to action to every video and ad (00:35:55). Competitor: none.
+5. Team — Create a repeatable first-conversation process so salespeople can take more advisor calls (00:28:14, 00:28:32). Competitor: none.
+6. Profit — Track cost per qualified advisor through a proof-of-concept test (00:25:48). Competitor: none.
+7. Lead Gen — Build a landing page for each regional office (team page only today). Competitor: none.
+8. Intake — Build a formal advisor and attorney referral path once compliance clears it (00:39:40; flat-fee openness 00:51:09). Competitor: none.
+No named competitor was identified, so every "Who Is Doing It Better" row is omitted.
+
+=== BLOCK 5 — WHAT YOU TOLD US (3 items) ===
+1. Row: last campaign brought the wrong kind of lead.
+   Verbatim: "it was a lot of like lower tiered insurance people, not financial advisors." (00:04:18)
+   Supports: Paid Ads Starter targeting aimed at financial advisors (custom and lookalike audiences, advisor-focused creative).
+2. Row: wants proof of concept first.
+   Verbatim: "I'd like to get proof of concept first." (00:25:48)
+   Supports: the recommended range starts at $3,000/mo with a measured test before scaling.
+3. Row: needs his salespeople to carry conversations and wants brand awareness.
+   Verbatim: "I need my salespeople carrying me because people come to me because they want to work with me." (00:28:14); "I need… some brand awareness and ramp it up" (00:28:45)
+   Supports: consistent advertising across Meta, LinkedIn, YouTube and Google Display with a call to action so advisors know Blackheath before the first conversation.
+Excluded on purpose: the former-business-partner comments (00:59:45, 01:00:00), the RIA purchase talks, and the paused referral revenue-share/compliance review.
+Next-step line: kickoff call with the Onboarding team.
+
+=== ESCALATION FLAGS (INTERNAL) ===
+- Review counts unconfirmed — verify live before the call (no Google listing reached; Facebook "0 Reviews" snippet unconfirmed; no review figure printed in the report).
+- Ads-only, stand-alone package: catalog requires pairing with coaching/advisory; seller override in place and rep said internal approval is needed to scope ads-only.
+- Revenue not stated by prospect; HubSpot "$5MM +" used for tiering only. Confirm.
+- Ad spend range ($3,000–$12,000) is a default, not channel-minimum-based; ROI not projected.
+- Rep also described "Omnisocial AI 360" (about 20 short videos a month) and avatar-based video ads. OmniSocial AI requires sales-ops approval (72-hour turnaround) and AI Avatar requires Alexis approval. Neither is in the proposal.
+- Roadmap Phase 3 mentions AI Workforce Pro (LAW): confirm LAW delivery has launched and capacity exists before the rep discusses it.
+- Rep committed to return a scoping answer by end of day October 29, 2026 and to text Marco Island workshop (Dec 3-5) and estate-planning mastermind info.
+- Compliance: a revenue-share referral program was paused by the prospect's legal review; do not promise referral-fee structures. Flat fee for estate-planning attorney referrals was raised by the prospect.
