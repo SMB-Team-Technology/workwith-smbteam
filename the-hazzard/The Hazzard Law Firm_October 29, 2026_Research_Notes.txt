@@ -1,0 +1,194 @@
+SMB TEAM — AUDIT RESEARCH NOTES (PASS 1)
+Firm: The Hazzard Law Firm, LLC — Birmingham, Alabama
+Friendly name: the-hazzard
+URL: https://hazzardfirm.com/ (resolves to https://www.hazzardfirm.com/)
+Sales rep: Dan Bryant
+Report date: October 29, 2026 (proposal call 2026-10-29, 21:00 UTC = 4:00 pm Central)
+Research run: 2026-10-28
+Contact: Wakisha Hazzard (founding attorney)
+
+IMPORTANT CONTEXT — READ FIRST (Pass 2):
+1. THE "TRANSCRIPT" IS NOT A DISCOVERY CALL. The trigger's transcript field is empty, and the full Fathom recording (about 11 minutes, 2026-10-28) is the tail of an existing coaching call between Michael Kruchko (SMB Team) and Wakisha Hazzard, which Dan Bryant joined for the last few minutes. There was no discovery conversation about the firm's practice, revenue, team, lead sources, goals or pain points. Almost every STEP 9 field is therefore "not stated". Do not invent any.
+2. THE PROSPECT IS AN EXISTING / RETURNING SMB TEAM CLIENT. Dan Bryant described her as a previous client who came back ("she gave us a second shot"). Wakisha: "You brought me back." She is currently in a coaching call with Michael. The audit framing should not treat her as a cold prospect.
+3. THE PROPOSAL CALL IS ABOUT AN EXISTING AGREEMENT. Dan referred to "the agreement that you and Gabby and I reviewed… a month or two ago" and an end-of-month promotion on it. The product in that agreement was NOT named on the call, so it cannot be identified from this recording. Whoever reviews the Phase 1 package should check HubSpot for what was proposed earlier.
+4. EVERYTHING DAN SAID ABOUT THE FIRM'S RESULTS IS REP STATEMENT, NOT PROSPECT FACT. Dan said she moved a staff member off consults, "doubled or tripled her conversion rate", had staff changes in intake, consults and sales, and is "having a lot of success". Wakisha did not confirm any of this. Do not print it in the client-facing report as the firm's own figures.
+5. THE $6,000 FIGURE ($3,000 at 5 days + $3,000 at 90 days) AND THE $1,500 EVENT TICKET VALUE ARE SMB TEAM'S REFERRAL-PROGRAM TERMS, not firm revenue or budget. The "$7 million" and "$5 million a year" figures are other SMB Team clients described by Dan. None of these belong to the Hazzard firm.
+6. REVIEW DATA IS UNCONFIRMED AND INCONSISTENT. Google Maps could not be read directly. Third-party sources give three different Google counts for the firm (103, 149, 153). All are tagged UNCONFIRMED below. Do not print a specific review figure for the firm or any competitor.
+7. ADS, LSA, META AND 3-PACK DATA WERE NOT OBSERVED. This environment cannot render live Google SERPs or the Meta Ad Library. "Not observed" means only that; it is not evidence that no ads are running.
+8. PRACTICE AREAS COME FROM THE WEBSITE, NOT THE CALL. Criminal defense is the website's lead area. Dan's mention of "criminal" on the call was a description of SMB Team's mastermind tracks, not a statement about her firm.
+
+=====================================================================
+STEP 1 — WEBSITE RESEARCH
+=====================================================================
+- Website URL confirmed live: yes (HTTP 200, https://www.hazzardfirm.com/)
+- Last redesign date or estimated age: not determinable. Footer shows "© Copyrights 2026". Built on a Bricks (WordPress) builder per element IDs; treated as a recently maintained site.
+- Mobile responsive: yes — viewport meta tag present, hamburger navigation observed on the fetched page; not tested on a physical device
+- Homepage headline (H1): "Birmingham Criminal Defense Lawyers"
+- Page title: "Criminal Defense Lawyer in Birmingham, AL | The Hazzard Law Firm, LLC"
+- CTA above fold: yes — "Schedule Your Consultation" with phone number
+- Contact form location: footer (fields: name, email, phone, matter description); no form observed above the fold
+- Live chat present: not detected (no chat widget scripts found in the homepage HTML)
+- Attorney bio present: yes — dedicated profile pages for Wakisha E. Hazzard (Founding Attorney), Messiah Williams-Cole, Sr. (Attorney), Phil Fikes (Associate Attorney)
+- Video present: not detected on the homepage
+- Blog present: yes — most recent post found April 25, 2025, "Inside a Capital Murder Defense: Hazzard Law Firm on A&E's Acclaimed Series" (about 18 months old)
+- Practice areas listed on site: Criminal Defense (13 sub-areas), Family Law, Personal Injury
+- Locations: one office — 505 20th St North, Suite 1125, Birmingham, AL 35203
+- Spanish-language content: none detected
+- Reviews on the site: a five-star badge and about 10 named testimonials; the site's "Read Our Reviews" and "Write review" links go to an nr4.me hosted testimonials platform, not directly to Google, and no review count is shown on the page
+- TRACKING (homepage HTML): no Meta/Facebook pixel (no fbq, no connect.facebook.net), no gtag; Google Tag Manager references present (4 matches); no Hotjar or CallRail found. Whether Meta/Google conversion tags are loaded inside GTM was not checked.
+
+PageSpeed / Lighthouse (performance category):
+- Method: pagespeed.web.dev and the PageSpeed Insights API were not usable (API returned HTTP 429, daily quota exceeded, retried by WebFetch and curl). Scores below are from real Lighthouse 12.8.2 runs on 2026-10-28 in headless Chrome from a CI runner against https://www.hazzardfirm.com/. Lab conditions differ from pagespeed.web.dev, so scores may differ by a few points.
+- PageSpeed mobile score: 67 (FCP 4.6 s, LCP 5.6 s, CLS 0.01, TBT 90 ms, Speed Index 4.6 s)
+- PageSpeed desktop score: 99 (FCP 0.7 s, LCP 0.8 s, CLS 0.03, TBT 0 ms, Speed Index 0.7 s)
+
+=====================================================================
+STEP 2 — GOOGLE BUSINESS PROFILE
+=====================================================================
+The Google Maps / Business Profile listing could not be opened directly. Nothing below is confirmed via Google.
+- GBP found: not directly observed. Search results and aggregators describe a Google listing for "The Hazzard Law Firm, LLC", 505 20th St N, Ste 1125, Birmingham, AL 35203.
+- Star rating: 4.8 [UNCONFIRMED — sourced from Birdeye and other aggregator/search-result summaries, not independently confirmed via Google]
+- Total review count: conflicting — 153 [UNCONFIRMED — sourced from the Birdeye page, which labels them Google reviews, not independently confirmed via Google]; 149 [UNCONFIRMED — sourced from the Birdeye search-result title]; 103 [UNCONFIRMED — sourced from a directory/search-result summary, not independently confirmed via Google]. Pass 2 must not print any of these.
+- Most recent review date: not confirmed. Birdeye summary said "approximately one year ago" [UNCONFIRMED — Birdeye].
+- Primary category: not observed (Yelp lists the firm under Divorce & Family Law; the site and most directories present it as criminal defense — a category/positioning mismatch worth checking on the real GBP)
+- Photos active: not observed (Yelp shows 11 photos)
+- Posts active: not observed
+
+=====================================================================
+STEP 3 — LOCAL 3-PACK SEARCHES
+=====================================================================
+NOT OBSERVED. Live Google local-pack results cannot be rendered in this environment, so no search below has a recorded firm position. The competitor names are drawn from "best of" search-result summaries, not from 3-pack observations.
+
+Practice Area 1: Criminal Defense (site's lead area)
+- Search 1 "criminal defense lawyer Birmingham AL": firm appears not observed — local firms named in search-result summaries: Revill Law Firm, Polson & Polson, Jaffe Hanle Whisonant & Knight (no 3-pack data)
+- Search 2 "criminal defense attorney Birmingham": not observed
+- Search 3 "DUI lawyer Birmingham AL": not observed
+Practice Area 2: Family Law
+- Search 1 "divorce lawyer Birmingham AL": not observed — local firms named in summaries: The Harris Firm, Summit Family Law, Reid Law Firm (no 3-pack data)
+- Search 2 "child custody lawyer Birmingham": not observed
+- Search 3 "family lawyer Birmingham AL": not observed
+Practice Area 3: Personal Injury
+- Search 1 "personal injury lawyer Birmingham AL": not observed — local firms named in summaries: Farris, Riley & Pitt; Mezrano Injury Lawyers (no 3-pack data)
+- Search 2 "car accident lawyer Birmingham": not observed
+- Search 3 "truck accident lawyer Birmingham": not observed
+
+=====================================================================
+STEP 4 — COMPETITOR REVIEW COUNTS
+=====================================================================
+None of these were read off a Google listing. All come from search-result summaries quoting Google figures.
+- Competitor 1 (criminal defense): Revill Law Firm — reviews: 236 [UNCONFIRMED — sourced from the firm's own website and search-result summaries, not independently confirmed via Google] — rating: 4.6 [UNCONFIRMED — same source]
+- Competitor 2 (family law): The Harris Firm LLC — reviews: 312 [UNCONFIRMED — sourced from a search-result summary, not independently confirmed via Google] — rating: 4.8 [UNCONFIRMED — same source]
+- Competitor 3 (personal injury): Farris, Riley & Pitt, LLP — reviews: 506 [UNCONFIRMED — sourced from a search-result summary, not independently confirmed via Google] — rating: 4.8 [UNCONFIRMED — same source]
+- Other local firms seen (UNCONFIRMED, summary-sourced): Polson & Polson 4.9 / 40; Summit Family Law 4.7 / 200+; Reid Law Firm 5.0 / 67; Mezrano Injury Lawyers about 4.8 / 463
+- Excluded as national, not local: Morgan & Morgan, Morris Bart
+- Note: every UNCONFIRMED competitor figure above is higher than every UNCONFIRMED Hazzard figure (103–153), but none of it is verified, so no "more reviews than you" claim should be printed.
+
+=====================================================================
+STEP 5 — DIRECTORY LISTINGS
+=====================================================================
+- Avvo: not confirmed for the firm in this run (Avvo Birmingham category pages exist; no firm profile read)
+- Justia: listing exists — Wakisha Hazzard, lawyers.justia.com
+- FindLaw: listing exists — "Hazzard Law Firm", criminal defense; 5.0 with 4 reviews [UNCONFIRMED — search-result summary]
+- Yelp: listing exists — "HAZZARD LAW FIRM", categorized Divorce & Family Law; 3.9 with 7 reviews [UNCONFIRMED — search-result summary]
+- Other listings seen: Yahoo Local, MapQuest, Birdeye, ProvenExpert, Attorney at Law, Lawcall, MyAttorneyList, AttorneysListed
+- Name variants: "The Hazzard Law Firm, LLC" vs "Hazzard Law Firm" vs "Hazzard, Wakisha"
+- Phone numbers seen: (205) 521-7378 (site header and CTA); 205-236-1992 (also on the site, 3 mentions, and in directory listings); +1 (205) 436-1547 (on the CRM contact record only, not found on the site)
+- NAP: address consistent across sources; the firm publishes two phone numbers, so listing consistency should be checked against which number each directory uses
+- Geo-targeting landing pages for surrounding cities: not checked
+
+=====================================================================
+STEP 6 — GOOGLE ADS
+=====================================================================
+Not observed. Live Google search ad results cannot be rendered in this environment, and this is not evidence that the firm or competitors are or are not running ads.
+Practice Area 1: Criminal Defense — firm ads observed: not observed — named local competitors running ads: not observed
+Practice Area 2: Family Law — firm ads observed: not observed — named local competitors running ads: not observed
+Practice Area 3: Personal Injury — firm ads observed: not observed — named local competitors running ads: not observed
+(Revill Law Firm's homepage has conversion-style calls to action, but that does not show it runs paid ads.)
+
+=====================================================================
+STEP 7 — LOCAL SERVICE ADS
+=====================================================================
+- Firm appears in LSA: not observed
+- Google Screened: not observed
+- LSA review count: not observed
+- Named local competitors in LSA: not observed
+
+=====================================================================
+STEP 8 — META ADS
+=====================================================================
+- Firm has active ads: not observed (Meta Ad Library is a JavaScript-rendered tool and could not be queried here). The site has no Meta pixel in its HTML, which is a separate fact.
+- Named local competitor 1: not observed
+- Named local competitor 2: not observed
+
+=====================================================================
+STEP 9 — TRANSCRIPT EXTRACTION
+=====================================================================
+Transcript source: full verbatim Fathom transcript (summary used only as overview) — the trigger's transcript field was empty. The recording is an existing-client coaching call (see Important Context #1), not a discovery call. Speakers: Michael Kruchko [SMB Team], Dan Bryant [SMB Team], Wakisha Hazzard [Prospect].
+
+- Practice areas confirmed: not stated by the prospect. Website lists Criminal Defense, Family Law, Personal Injury (website, not transcript).
+- Current lead sources: not stated
+- Ads ever run: not stated
+- Team size: not stated by the prospect. Website lists three attorneys. Dan (rep) said there was a "changing of the guard with other staff from intake and a consult and a sales perspective" and that one person was moved off consults and left — rep statement, not confirmed by the prospect.
+- Annual revenue (gross / case value): not stated
+- Annual revenue (net / take-home / collected): not stated — not distinguished from gross
+- Fee structure: not stated
+- Revenue goal: not stated, use 2x current revenue (no current revenue is known either)
+- Average case value: not stated
+- Current close rate: not stated — default to 15%. (Dan said she "doubled or tripled her conversion rate"; rep claim, no baseline figure, not confirmed by the prospect.)
+- Number of locations: 1 (not mentioned on the call; one office on the website)
+- Spanish campaign needed: no (not mentioned; no Spanish content on the site)
+- Dominant buying motive: not stated in this recording. No honest inference is possible from an 11-minute logistics and referral conversation. Closest verbatim lines are about referral money, not the firm: "Because I'm looking at the goal. The goal is to get the money." Pass 2 must not present that as her motive for the firm. Dan did describe her as "a hard worker". If a DBM is needed for the report, it must come from HubSpot notes or a human, not from this clip.
+- Any profitability claims made by prospect: none stated
+- Any claims about case types or practice areas: none stated
+- Stated call focus / product interest: This was NOT a marketing/intake growth discovery call. It was the end of an existing coaching call with Michael Kruchko (Wakisha: "I don't want to take any more of your coaching call with Michael here"). Dan joined to (1) invite her to the SMB Team event in Marco Island, December 3–5, (2) ask for referrals under the $6,000 referral bonus, and (3) schedule time to review "the agreement" and an end-of-month promotion on it. No product was named or priced.
+- Primary engagement: coaching/ops
+- Products discussed on call: none
+- Lead-gen gap stated: no — she asked about no marketing, ads, SEO, website or lead-volume topic on the call
+- Existing marketing/SEO/ad vendor engagements: none stated
+- Budget constraints stated: none stated
+
+Call logistics (for the rep, not the report): Wakisha agreed to meet Dan "tomorrow at 4pm" Central ("Can we meet sometime tomorrow at 4pm?"). She said she has court that day; the start time was garbled in the transcript ("court at 1am… finished by 4am") [transcript unclear — read as an afternoon court appearance].
+
+Key prospect quotes (all [Prospect] lines, verbatim, light filler removed):
+1. (00:00:50) "I don't wanna get rid of you, Dan. You brought me back." — returning-client relationship
+2. (00:02:00) "I told Michael, think I'm going to try to make it." — Marco Island event, Dec 3–5
+3. (00:02:24) "So I've been to one the first go-round." — prior SMB Team event attendance
+4. (00:04:53) "Yeah, I'm going to try to make that one, because I haven't made one yet." — event interest (note: conflicts with quote 3 about having attended; transcript is unclear on which is accurate)
+5. (00:07:09) "I talk to everybody, Dan, I don't have to know them." — referrals
+6. (00:07:14) "Because I'm looking at the goal. The goal is to get the money." — about the referral bonus, not firm goals
+7. (00:09:11) "I can give him some healthy competition." — referral program
+8. (00:09:14) "So, end of the month is right here, Dan." — timing of the promotion
+9. (00:10:42) "I don't want to take any more of your coaching call with Michael here" — confirms she was on a coaching call
+10. (00:10:55) "Can we meet sometime tomorrow at 4pm?" — scheduling the review of the agreement
+Only 10 usable lines exist, and none are about intake, team, profit, lead sources, goals or objections, because the call did not cover them.
+
+=====================================================================
+STEP 10 — COMPETITIVE URGENCY SCORE
+=====================================================================
+Score: 5 (PROVISIONAL, low confidence). The score rests only on UNCONFIRMED review figures from search-result summaries. No 3-pack, ads, LSA or Meta data was observed, so the competitor-marketing side of the score could not be assessed.
+Named local competitor threats:
+1. Revill Law Firm (criminal defense) — appears in "best of" listings, shows a higher reported review count (236) than any Hazzard figure [UNCONFIRMED], and has a conversion-oriented homepage.
+2. The Harris Firm LLC (family law) — reported 312 reviews at 4.8 [UNCONFIRMED], well above the firm's reported range.
+3. Farris, Riley & Pitt, LLP (personal injury) — reported 506 reviews at 4.8 [UNCONFIRMED], far above the firm's reported range.
+Dynamic sentence (score 4–6): "A score of 5 means competitors have meaningful advantages in one or more areas and are pulling ahead. You are not invisible yet — but the window to close the gap is narrowing. Every month without action is a month they extend their lead."
+
+=====================================================================
+PASS 2 — VERIFICATION CHECKLIST
+=====================================================================
+[x] Every number matches observed data (Lighthouse scores run locally; review figures all tagged UNCONFIRMED)
+[x] No competitor is cited as "dominating" on the strength of a verified review count — all counts are UNCONFIRMED and flagged as such
+[x] Every review count and star rating carries a verification-method tag
+[x] Revenue split: not stated by the prospect, recorded as such; fee structure "not stated"
+[x] Every ad section covers all three website-listed practice areas (all "not observed")
+[x] No section says the firm is not running ads
+[x] No profitability or business claim appears unless it came from the transcript; rep-only claims are labeled as rep statements
+[x] Competitors are specific named local firms only; national firms excluded
+[x] PageSpeed scores are real numbers (local Lighthouse 12.8.2: mobile 67, desktop 99)
+[ ] DBM — NOT recorded: none stated and none can be inferred from this recording. Flagged for Pass 2 / human.
+[x] Revenue goal flagged as not stated
+[x] Close rate defaulted to 15% (not stated)
+[x] Average case value flagged as not stated
+[x] Stated call focus recorded explicitly: existing coaching call, not marketing discovery
+[x] Primary engagement, Products discussed, Lead-gen gap each filled in with the exact format
+[x] Existing marketing/SEO/ad vendor engagements: none stated
+[x] Budget constraints: none stated
