@@ -33,24 +33,24 @@
     "products_discussed": [],
     "lead_gen_gap": false
   },
-  "marketing_tier": "Starter",
-  "marketing_name": "Full Service Marketing — Starter",
+  "marketing_tier": null,
+  "marketing_name": null,
   "marketing_price_bundled": 4997,
   "marketing_price_retail": 5697,
   "marketing_savings": 700,
   "coaching_name": "Elite Coach Plus",
-  "coaching_price_bundled": 3200,
+  "coaching_price_bundled": 3497,
   "coaching_price_retail": 3497,
-  "coaching_savings": 297,
-  "law_tier": null,
-  "law_name": null,
-  "law_price_bundled": null,
+  "coaching_savings": 0,
+  "law_tier": "AI Workforce Pro – Starter",
+  "law_name": "AI Workforce Pro – Starter",
+  "law_price_bundled": 350,
   "law_price_retail": null,
-  "law_seats": null,
-  "total_bundled": 8197,
-  "total_savings": 997,
-  "ad_spend_conservative": 5500,
-  "ad_spend_aggressive": 22000,
+  "law_seats": 1,
+  "total_bundled": 3847,
+  "total_savings": null,
+  "ad_spend_conservative": null,
+  "ad_spend_aggressive": null,
   "ad_spend_rationale": {
     "conservative_basis": "not confirmed by the client. website lists: domestic violence criminal defense",
     "aggressive_basis": "scaled 4x off the conservative channel-minimum floor"
@@ -58,9 +58,12 @@
   "selection_notes": [
     "Revenue not stated on the call — HubSpot only has the range \"$180K - $960K\". Using the midpoint ($570,000) for this draft only; confirm actual revenue with the prospect before locking in.",
     "Revenue under $750K but multiple practice areas detected: Essentials hidden (requires single practice area) — Starter tier.",
-    "Revenue $400K–$1M: Elite Coach Plus selected."
+    "Revenue $400K–$1M: Elite Coach Plus selected.",
+    "Seller override: Elite Coach Plus + AI Workforce Pro – Starter (1 seat), marketing removed, per Slack request on 2026-10-29.",
+    "Only one bundle-eligible product in this package — stand-alone pricing applied, no bundle savings.",
+    "AI Workforce Pro – Starter does not count toward bundle pricing."
   ],
-  "pricing_mode": "bundled",
-  "bundle_eligible_count": 2,
+  "pricing_mode": "standalone",
+  "bundle_eligible_count": 1,
   "unpriced_products": []
 }
