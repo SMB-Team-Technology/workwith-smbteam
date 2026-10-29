@@ -1,0 +1,141 @@
+SECTION 11 WORKINGS — Nuclei TM (nuclei-tm) — November 19, 2026
+INTERNAL ONLY — never shared with the client.
+
+================================================================================
+TRANSCRIPT-STATED NEED OVERRIDE CHECK
+================================================================================
+1. Call-purpose override: APPLIES. The call was about AI Workforce Pro, not
+   marketing. Recommendation leads with the Legal AI Workforce (LAW) package.
+   No marketing package added: notes state lead_gen_gap = no ("if I get more
+   clients, I don't have enough bandwidth", 00:12:11) and marketing was
+   explicitly deprioritized until operations are automated.
+2. Existing-vendor override: does not apply (no existing vendor stated).
+3. Budget-reality override: does not apply as a departure. The lowest-cost
+   package that fits the stated need is already what package_decision.json
+   selected. Past marketing quote (~$3,000/mo) was declined as not aligned with
+   financial priorities (00:06:40, 00:11:46); AI price called "really, really
+   cost effective" (00:24:14).
+4. Effective-revenue override: does not apply. Revenue not stated on the call;
+   seller confirmed $200,000 (package_decision.json revenue_source =
+   seller_confirmed, revenue_verified = true).
+
+package_decision.json: package_source = "rules", confidence = "low" (revenue was
+originally a HubSpot range; seller later confirmed $200K). Cross-checked against
+research notes: AI-led call, AI Workforce Pro – Starter discussed, no lead-gen
+need, no coaching discussed. Selection holds. No correction made.
+
+================================================================================
+MANDATORY PRICE LOOKUP (copied from package_decision.json / LAW table)
+================================================================================
+- Marketing package selected: none
+- Non-marketing package selected: none (coaching left out — AI-led call; revenue
+  rule would add Elite Coach Plus, seller did not add it back)
+- Legal AI Workforce (LAW) package selected: AI Workforce Pro – Starter
+  - Price (from table): $350/user/mo x 2 users = $700/mo
+  - Stand-alone price: none (no standalone price exists for AI Workforce Pro tiers
+    — none quoted in the client report)
+  - Savings: $0 (pricing_mode = "standalone"; AI Workforce Pro – Starter does not
+    count toward a bundle; bundle_eligible_count = 0)
+- AI Avatar / Video Growth add-on: none
+- Total monthly investment: $700/mo
+- Total savings: $0 — no savings callout shown in the report
+- Block 3 shows a single price per row (no retail strikethrough).
+- Block 4 (ad spend) is DELETED: no marketing/ads package is part of the
+  recommendation. Exec summary AD_SPEND line omitted.
+
+Product terms (from table): month-to-month contract, 1M AI credits per user,
+includes access to AI Workforce Pro and a weekly AI Implementation Session.
+
+================================================================================
+AD SPEND / ROI
+================================================================================
+Not applicable — no marketing/ads package recommended. No conservative or
+aggressive projection calculated.
+
+================================================================================
+DBM STATEMENT (Block 1)
+================================================================================
+"We help solo employment-based immigration professionals get an AI-powered
+workforce that takes over routine administrative work so they can take the
+administrative duties off their plate and step out of the day-to-day without the
+business stalling."
+Transcript basis: "somewhere I can take some of the administrative duties off of
+me" (00:08:33); "that is where I am looking for some escape" (00:13:49).
+
+================================================================================
+QUICK WIN OPPORTUNITIES (7)
+================================================================================
+1. [Profit] Connect scheduling to invoicing — why: invoices are created, attached
+   and emailed by hand (00:08:27); no competitor.
+2. [Intake] Automate document scanning/printing and booking hand-offs — why:
+   scanning and printing still manual (00:08:00); no competitor.
+3. [Team] Hand email and calendar admin to an AI assistant — why: admin duties
+   all sit with owner (00:08:33); no competitor.
+4. [Team, Long-Term] Capture how petitions get prepared so knowledge stays in the
+   business — why: retention concern (00:38:00), plans to hire two (00:38:34); no
+   competitor.
+5. [Lead Gen] Tighten website message to employment-based only, move contact form
+   above the fold — why: site lists family-based immigration the owner does not do;
+   competitor: Law Office of Joanne M. Fakhre, P.A. (EB-1 / EB-2 NIW pages).
+6. [Lead Gen, Long-Term] Visa-specific pages for the searches competitors capture —
+   competitor: Terpollari & Terpollari, LLC (EB-1/EB-2/EB-3 content, Jacksonville /
+   St. Augustine).
+7. [Lead Gen] Audience-specific LinkedIn content with AI drafting — why: owner's
+   posts "not curated for that particular audience" (00:09:38); no competitor.
+
+================================================================================
+WHAT YOU TOLD US (Block 5) — transcript sourcing
+================================================================================
+Row 1: "somewhere I can take some of the administrative duties off of me"
+  (00:08:33, Ashley Gomes) -> supported by AI Workforce Pro – Starter (access for
+  two users + weekly AI Implementation Session).
+Row 2: "if I get more clients, I don't have enough bandwidth to address those
+  clients" (00:12:11) -> supported by AI Workforce Pro – Starter; automating admin
+  first creates capacity before lead gen (Phase 2).
+Row 3: "I get to retain the data that he uses to produce the work, and that way it
+  kind of doesn't, you know, leave me handicapped when he leaves" (00:38:00) ->
+  supported by two seats so contractor's work can be linked with owner's
+  (prospect asked about two licenses, 00:37:49) and the weekly implementation
+  session.
+Next step: kickoff call with your AI implementation specialist (owner asked for an
+  implementation specialist on the call, notes "Decision path").
+
+================================================================================
+ESCALATION / INTERNAL FLAGS (never in client report)
+================================================================================
+- Total $700/mo is under the $2,497/mo minimum MRR — package_decision.json
+  flags "review with sales rep". Seller locked the package in the Phase 1 Slack
+  thread (proposal_review.json status = locked); built as-is.
+- Seat count: rep quoted a single license at $350/mo on the call (00:37:35);
+  prospect floated two licenses (00:37:49). Package is priced at 2 seats = $700/mo
+  per package_decision.json. Rep should confirm seat count with Ashley on the
+  Nov 19 call.
+- Any LAW package: confirm with sales rep that LAW delivery has launched and
+  capacity is available before sending.
+- Open item from call: rep to confirm AI Workforce Pro has no limitation for a
+  non-law-firm professional services company (00:18:23, 00:21:20).
+- Do not use the word "enterprise" / "enterprise-grade" (rep preference,
+  00:22:04–00:22:08).
+- Revenue: $200K seller-confirmed (not stated on the call). Under $250K -> confirm
+  client has funds for 4 months of services (4 x $700 = $2,800).
+- Review counts unconfirmed — verify live before the call. No review counts or
+  ratings were obtained for the firm or competitors; none appear in the report.
+- PageSpeed scores NOT OBTAINED (HTTP 429 / API quota). Report says scores were
+  not captured. Re-run at pagespeed.web.dev before the call.
+- Google Business Profile, local 3-pack, Google Ads, LSA, and Meta Ad Library
+  not obtained (no live browser). Report frames all as "not captured / not
+  confirmed either way".
+- Urgency score 4 is PROVISIONAL (low confidence) per research notes.
+- LSA eligibility: prospect is not barred in the U.S.; Google's legal LSA program
+  depends on attorney licensing. Flagged in report as "confirm eligibility".
+- Firm is a professional services company, not a law firm; report avoids
+  describing her as an attorney.
+- Package source is revenue/rules-based with low confidence on revenue only; the
+  recommendation itself rests on the stated call focus (AI).
+
+================================================================================
+TEMPLATE NOTES
+================================================================================
+- Inline style attributes remaining in index.html come only from template
+  structure (urgency marker position, urgency wrapper, Block 1 spacer). No
+  inline styles were added.
