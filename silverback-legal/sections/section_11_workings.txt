@@ -1,0 +1,115 @@
+SILVERBACK LEGAL LLP — SECTION 11 WORKINGS (INTERNAL — NOT CLIENT-FACING)
+Prepared for Pass 2, November 5, 2026 — Sales rep: Dan Bryant
+
+=====================================================================
+PACKAGE DECISION SOURCE
+=====================================================================
+Source: silverback-legal/package_decision.json (confidence: low — revenue from HubSpot range, not stated on call).
+Seller override applies: selection_notes entry "Seller override: Full Service Marketing Starter stand-alone (Elite Coach Plus removed) per Slack request on 2026-10-28". proposal_review.json status: locked.
+Seller always wins — the four Transcript-Stated Need overrides were NOT applied to this package. Built as-is.
+
+Override check (informational only, for sales):
+1. Call-purpose: call was booked as ChatGPT Ads verification/consultation + AI ranking, but primary_engagement = marketing with lead_gen_gap = true (MVA case flow stalled). Marketing fits.
+2. Existing vendor: none signed. YouTube strategist not yet engaged; one other vendor doing a site audit only. No override.
+3. Budget: no explicit limit. Prospect wants a 90-day review/out. No override.
+4. Effective revenue: no gross/net split stated. Contingency practice. Revenue basis = HubSpot range "$180K - $960K" -> $570,000 midpoint (UNVERIFIED).
+
+Seller custom-price request: seller asked for a custom monthly price (first written "$71,21.25", later "$7,121.50"). Custom prices are not supported. Catalog stand-alone Starter pricing ($5,697) used. Seller to add products or choose a different tier to reach a different total.
+
+=====================================================================
+MANDATORY PRICE LOOKUP (copied from package_decision.json; confirmed against catalog tables)
+=====================================================================
+- Marketing package selected: Full Service Marketing — Starter
+  - Bundled price (from table): $4,997/mo — NOT APPLICABLE (pricing_mode = standalone, only 1 bundle-eligible product)
+  - Stand-alone price (from table): $5,697/mo  <-- price charged
+  - Savings (stand-alone minus bundled): $0/mo (no bundle)
+- Non-marketing package selected: none
+- Legal AI Workforce (LAW) package selected: none
+- AI Avatar / Video Growth add-on selected: none
+- Total monthly investment: $5,697/mo
+- Total savings: $0/mo
+
+=====================================================================
+INVESTMENT AND CAP CHECK
+=====================================================================
+Total SMB Team monthly fees: $5,697/mo
+Revenue basis (unverified): $570,000/yr -> $47,500/mo. 35% cap = $16,625/mo.
+- Conservative: $5,697 + $10,000 ad spend = $15,697/mo — within cap.
+- Aggressive: $5,697 + $20,000 ad spend = $25,697/mo — EXCEEDS 35% cap by $9,072/mo. Flag for sales rep review before sending. Starter Full Service ad cap is $25,000, so $20,000 is within tier cap.
+Revenue gate: under $750K, multiple practice areas (PI + med mal) -> Essentials hidden, Starter is the minimum for PI. OK.
+
+=====================================================================
+AD SPEND AND ROI PROJECTIONS (Block 4 — marketing package is part of recommendation)
+=====================================================================
+Ad spend range (from package_decision.json): Conservative $10,000/mo — Aggressive $20,000/mo.
+Basis: MVA / accident-injury; NY first, FL second. Conservative = PI High-competitiveness floor / MVA Google PPC minimum ($10,000). Aggressive taken from decision file (20% rule on 2x current revenue x Tier 1 geo multiplier less management fee, held under the tier cap).
+Escalation: PI in a top-40 metro (New York) -> approval required.
+
+Inputs
+- Average case value: $1,500–$2,500 per MVA case, as the prospect stated (01:12:48–01:12:52; "bought or sold or whatever"). Midpoint $2,000 used for point estimates. Practice-area default ($5K–$10K) NOT used because the transcript stated a value. Med mal case value is "millions" but med mal is not part of the ad-funded channel mix.
+- Close rate: not stated — default 15% (disclosed).
+- Client-facing CPL midpoints, Accident & Injury: Google Search $705 ($630–$780); LSA $235 ($210–$260); Meta Retargeting $90 ($80–$100); Meta Cold $170 ($150–$190).
+- Channel mix is an assumption for projection only (no channel split in the decision file).
+
+Conservative ($10,000/mo): mix Google 60% / LSA 20% / Meta retargeting 20%
+- Blended CPL = (0.60 x 705) + (0.20 x 235) + (0.20 x 90) = $488.00; + 20% cushion = $585.60
+- Leads = 10,000 / 585.60 = ~17.1
+- Cases = 17.1 x 15% = ~2.6 cases/mo (report "~2–3")
+- Revenue = 2.56 x $2,000 = ~$5,100 (range $3,800–$6,400 at $1,500–$2,500)
+- Return = ~0.5x ad spend (range 0.4x–0.6x)
+
+Aggressive ($20,000/mo): mix Google 50% / LSA 15% / Meta retargeting 15% / Meta cold 20%
+- Blended CPL = (0.50 x 705) + (0.15 x 235) + (0.15 x 90) + (0.20 x 170) = $435.25 (no cushion)
+- Leads = 20,000 / 435.25 = ~46
+- Cases = 46 x 15% = ~6.9 cases/mo (report "~7")
+- Revenue = 6.89 x $2,000 = ~$13,800 (range $10,300–$17,200)
+- Return = ~0.7x ad spend (range 0.5x–0.9x)
+
+SALES FLAG — RETURN BELOW 1.0x: at the prospect's stated MVA case value ($1,500–$2,500) and a 15% close rate, projected first-case revenue does not cover ad spend in either scenario. This matches the prospect's own history (earlier Google program ran negative up front and paid back as cases settled). Block 4 reports the numbers honestly and frames the value as back-end/consistency. Before the call, confirm whether $1,500–$2,500 is the firm's actual fee per MVA case or the market price of a signed case ("bought or sold"), and ask the actual close rate. If the real fee value is higher, re-run Block 4.
+
+"Why this range" sentence (client-facing, in Block 4): "To restart consistent motor vehicle accident case flow in New York and Florida, the steady volume your back-end model depends on and the visible wins your partners need to see."
+
+=====================================================================
+DBM STATEMENT (Block 1)
+=====================================================================
+Exact words (00:24:20): owner wants to be done in two to three years. Combined with building a scalable national referral/co-counsel brand to compete head-to-head with Top Dog / Morgan & Morgan (grow-and-exit / scale-and-dominate). Needs quick measurable wins to keep skeptical partner lawyers on board (01:11:52).
+CLIENT-FACING HANDLING: the age and exit timeline are personal and the report may be forwarded to partners, so the report says "step back on a timeline you set" / "a firm that runs on a proven model" instead of quoting it.
+
+=====================================================================
+QUICK WIN OPPORTUNITIES (7)
+=====================================================================
+1. Lead Gen — Install and verify the Meta pixel and conversion tracking. Why: prospect unsure it is on the Silverback site (00:17:03); rep saw none (00:16:24). Competitor: none. Opportunity: retargeting and optimization on existing Meta spend.
+2. Lead Gen — Turn the service-area GBP into a verified, address-visible listing and start the review stream. Why: GBP set up as service-area business hiding address (00:59:22); rep told prospect to start reviews now (01:20:15). Competitor: none verified.
+3. Lead Gen — Relaunch a tightly controlled Google Search campaign for MVA in New York (then Florida). Why: MVA flow stalled (00:37:45); earlier campaign had irrelevant calls. Competitor: none verified (national brands only).
+4. Intake — Screening script and call tracking for MVA calls; evaluate intake support (VA / after-hours). Why: peak call volume with irrelevant calls (01:02:10); prospect interested in intake VA partners (00:28:20).
+5. Lead Gen — Build practice-area and location pages and the AI/answer-engine visibility foundation (long-term). Why: rep statement 00:58:17–00:58:48; prospect wants "ranking in AI" (00:23:28).
+6. Profit — Cost-per-signed-case scorecard by channel with a built-in 90-day review. Why: prospect wants a 90-day review (01:14:48, 01:24:53); long payback.
+7. Team — Document the playbook the team follows (long-term). Why: "we don't have a lot of doers" (00:25:03); wants a model to follow (00:24:35).
+"Who Is Doing It Better" row omitted on all cards (no named local competitor verified).
+
+=====================================================================
+WHAT YOU TOLD US (Block 5) — sources
+=====================================================================
+Row 1: Prospect wants a proven model to follow. Verbatim [00:24:35–00:24:48]: "Really what we need is the experts to come in and say, hey, we know this works. Here's a model that works. Follow this model. Do X, Y, Z. And, like, I got the grunt workers." -> Block 2: Full Service Marketing — Starter (managed by the SMB Team: GBP/local SEO, website content, Google Search, LSA, Meta).
+Row 2: Wants visibility in AI / ChatGPT. Verbatim [00:26:36]: "we can't even get to the starting line." (ChatGPT Ads account stuck) -> Block 2: website/practice-area content and local SEO foundation (incl. AI answer-engine content such as FAQ and structured data per scoping guide Step 9C/9D).
+Row 3: Wants quick wins. Verbatim [01:11:36]: "I want us to get wins, some quick wins, because the quick wins builds confidence." -> Block 2 / Phase 1: first-priority fixes (tracking, listing, MVA search relaunch).
+Next step: kickoff call with your Onboarding team.
+Not used (excluded by rule): partner-firm payment arrangements (confidentiality request 00:50:04); age, exit timeline, small talk; named staff; affiliate-network revenue; loss/profit dollar figures.
+
+=====================================================================
+ESCALATION FLAGS — INTERNAL ONLY (never in client report)
+=====================================================================
+- Review counts unconfirmed — verify live before the call. Silverback GBP rating/count and all competitor review counts were NOT obtained (Google Maps unreachable). No review figures appear in the client report.
+- PageSpeed (mobile and desktop) NOT OBTAINED (HTTP 429 + Cloudflare block). Client report says scores could not be captured. Re-run manually if a number is wanted.
+- No verified named local competitors. Competitor threat cards removed from Section 5; competitor callouts and named competitor rows removed from Sections 6 and 11. Run a manual NY/FL SERP / map pack / LSA / Meta Ad Library check to add them.
+- Urgency score 7 is PROVISIONAL (transcript-based, not live-verified). Sentence used verbatim from the 7–10 range; consider softening if live data cannot be added.
+- Revenue unverified (draft based on hubspot_annual_law_firm_revenue: "$180K - $960K"). Not mentioned in client report. Confirm revenue and team size (defaulted to 3).
+- Aggressive total ($25,697/mo) exceeds the 35% cap ($16,625/mo on $570K). Review with sales rep.
+- Return projection is below 1.0x in both scenarios (see SALES FLAG above).
+- Personal Injury in a top-40 metro (New York) -> approval required.
+- ChatGPT Ads: the rep said on the call it is "bundled in," but ChatGPT Ads management is NOT a listed deliverable in the Starter catalog entry. Not promised in the client report. Confirm before the call.
+- Prospect-requested custom price ($7,121.50/mo) not supported; catalog stand-alone price used.
+- Prospect wants a 90-day review or out; rep proposed an annual plan with six-month minimum (01:28:00). Contract term not stated in the client report.
+- Intake VA / CRM sister-company interest: not catalog items, not priced, not in the report. CRM setup is never an SMB Team deliverable.
+- Intake, team and profit pillars were not covered in depth on the call; ratings are provisional (Intake AMBER, Team AMBER, Profit AMBER).
+- No Alexis/OmniSocial/Attorney Assistant/Bookkeeping/LAW items included.
