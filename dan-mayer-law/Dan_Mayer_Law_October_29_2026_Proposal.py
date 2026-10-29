@@ -41,7 +41,7 @@ PROSPECT_QUOTES = [
 KEY_GAPS = [
     ("Team", "AI that could give you time back is not set up, and you have no time to build it"),
     ("Intake", "Manual reminders and client updates keep you tied to repeatable work"),
-    ("Profit Plan", "Growth means added payroll unless AI staff take on the repeatable work"),
+    ("Profit Plan", "Growth means added payroll unless AI takes on the repeatable work"),
 ]
 
 STAGE_TEXT = "Stage 3: Solo Practitioner  →  Goal: Stage 6, Law Firm Owner"
@@ -70,11 +70,11 @@ PRIORITIES = [
         ],
     ),
     (
-        "Add AI Staff,", "Not Payroll", "003A59",
+        "Add Capacity,", "Not Payroll", "003A59",
         [
-            "AI Workforce Pro seats for 10 users",
-            "A managed workspace for client work",
-            "Weekly implementation session with our team",
+            "Skills deployed from the AI library each month",
+            "A custom automation built every month",
+            "Training videos on skills and automations",
             "Add capacity without adding salary",
             "Grow the firm without growing your hours",
         ],
@@ -84,20 +84,14 @@ PRIORITIES = [
 PACKAGES = [
     (
         "FRACTIONAL CTO — LEVEL 1",
-        "$3,297", "$3,797/mo",
+        "$3,797", "",
         "Monthly 1:1 · AI skills · 1 custom automation a month",
         "0091C9",
     ),
-    (
-        "AI WORKFORCE PRO — 10 USERS",
-        "$2,197", "",
-        "Managed AI workspace · Weekly implementation session",
-        "003A59",
-    ),
 ]
 
-BUNDLE_TOTAL   = "$5,494 / mo"
-BUNDLE_SAVINGS = "Save $500/mo by bundling"
+BUNDLE_TOTAL   = "$3,797 / mo"
+BUNDLE_SAVINGS = "Standalone — no bundle discount"
 
 AD_SPEND_NOTE = None
 
@@ -109,8 +103,8 @@ AGGRESSIVE_RESULT  = "$XX,XXX revenue · X.X× ROAS"
 
 WHAT_YOU_TOLD_US = [
     ("AI setup time", "Your Fractional CTO leads the rollout monthly"),
-    ("Follow-up time", "AI staff and a monthly custom automation take it on"),
-    ("No idle payroll", "AI Workforce Pro seats add capacity, not salary"),
+    ("Follow-up time", "A monthly custom automation takes it on"),
+    ("No idle payroll", "Skills and automations add capacity, not salary"),
 ]
 
 CLOSING_QUOTE = (

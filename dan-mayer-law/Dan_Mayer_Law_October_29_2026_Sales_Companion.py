@@ -230,24 +230,11 @@ story.append(bd("A named person leads the AI rollout, so it leaves Dan's list.")
 story.append(bd("Reminders and client updates get automated, one build a month."))
 story.append(bd("Dan learns by watching it work, with training videos."))
 
-story.append(Paragraph("<b>Fractional CTO Level 1  |  $3,297/mo bundled</b>", S["subsection"]))
+story.append(Paragraph("<b>Fractional CTO Level 1  |  $3,797/mo</b>", S["subsection"]))
 story.append(b("Matches the AI-led call: a CTO-style service, one automation a month."))
-story.append(b("Stand-alone is $3,797/mo, so bundling saves $500/mo. Setup is $0."))
+story.append(b("Sold as a single product at its stand-alone price, so no bundle savings. Setup is $0."))
 story.append(b("Seller override. Level 1 needs $400K+; HubSpot says $0-$180K, he says under ~$700K. Confirm."))
 
-story.append(thin_rule())
-
-story.append(Paragraph("Why This AI Workforce Package", S["section"]))
-
-story.append(Paragraph("<b>What it does for him:</b>", S["subsection"]))
-story.append(bd("AI staff handle repeatable work instead of another salary."))
-story.append(bd("A weekly session keeps adoption moving without Dan driving it."))
-story.append(bd("A managed workspace gives client work a home beyond a regular chat."))
-
-story.append(Paragraph("<b>AI Workforce Pro, 10 users  |  $2,197/mo bundled</b>", S["subsection"]))
-story.append(b("$1,597/mo for 5 users plus 5 more at $120/mo each ($600)."))
-story.append(b("No stand-alone price, so no savings shown. Yearly contract."))
-story.append(b("Ten seats is the seller override; Dan wanted one license. Confirm seats."))
 
 story.append(PageBreak())
 
@@ -269,9 +256,8 @@ story.append(b("Not calculated. There is no ad spend, so there is no ROI project
 story.append(Paragraph("<i>Marketing can be revisited later if Dan asks about lead generation.</i>", S["disclaimer"]))
 
 story.append(Paragraph("<b>Cap check and approvals:</b>", S["subsection"]))
-story.append(b("<b>35% cap:</b> $5,494/mo is 36.6% of revenue at $180K (over the cap), 9.4% at $700K."))
+story.append(b("<b>35% cap:</b> $3,797/mo is 25.3% of revenue at $180K and 6.5% at $700K (under the cap)."))
 story.append(b("<b>Revenue under $300K:</b> scoping approval is needed. Under $250K, confirm 4 months of funds."))
-story.append(b("<b>LAW:</b> confirm LAW delivery has launched and capacity is open before sending."))
 story.append(b("<b>Reviews:</b> counts are unconfirmed. Verify Google live before the call."))
 
 story.append(thin_rule())
@@ -287,22 +273,15 @@ story.append(Paragraph("He already pays for Claude Max, Copilot, and Spellbook. 
 story.append(Paragraph('"Is my clients\' data safe in this?"', S["objection_q"]))
 story.append(Paragraph("He called a secure platform \"a big deal.\" Do not promise compliance. Confirm the security details with the team and send them in writing.", S["objection_a"]))
 
-story.append(Paragraph('"I heard $350, not $2,197."', S["objection_q"]))
-story.append(Paragraph("The $350 was the per-user Starter price for 1-4 users. This quote is 10 seats. Ask how many seats he needs and re-quote if it is fewer.", S["objection_a"]))
-
 story.append(thin_rule())
 
 story.append(Paragraph("Investment At A Glance", S["section"]))
 
 price_data = [
     [Paragraph("<b>Fractional CTO Level 1</b>", S["price_main"]),
-     Paragraph("$3,297/mo", S["price_main"])],
+     Paragraph("$3,797/mo", S["price_main"])],
     [Paragraph("Monthly 1:1 with the fCTO, up to 2 skills and 1 custom automation a month.", S["price_detail"]),
-     Paragraph("<strike>$3,797</strike> stand alone", S["price_detail"])],
-    [Paragraph("<b>AI Workforce Pro, 10 users</b>", S["price_main"]),
-     Paragraph("$2,197/mo", S["price_main"])],
-    [Paragraph("Managed AI workspace and a weekly implementation session.", S["price_detail"]),
-     Paragraph("No stand-alone price", S["price_detail"])],
+     Paragraph("Stand-alone price", S["price_detail"])],
     [Paragraph("<b>Recommended Ad Spend</b>", S["price_main"]),
      Paragraph("None", S["price_main"])],
     [Paragraph("No marketing or ads package is part of this recommendation.", S["price_detail"]),
@@ -317,11 +296,10 @@ pt.setStyle(TableStyle([
     ("BOTTOMPADDING", (0,0), (-1,-1), 1),
     ("LINEBELOW", (0,1), (-1,1), 0.5, RULE_GRAY),
     ("LINEBELOW", (0,3), (-1,3), 0.5, RULE_GRAY),
-    ("LINEBELOW", (0,5), (-1,5), 0.5, RULE_GRAY),
 ]))
 story.append(pt)
 story.append(Paragraph(
-    "Total: $5,494/mo  |  Save $500/mo by bundling  |  9.4% of revenue at $700K, 36.6% at $180K (35% cap)",
+    "Total: $3,797/mo  |  25.3% of revenue at $180K, 6.5% at $700K (35% cap)",
     S["savings"]))
 
 doc.build(story, onFirstPage=add_page_elements, onLaterPages=add_page_elements)
