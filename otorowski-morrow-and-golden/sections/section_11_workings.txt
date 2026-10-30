@@ -1,0 +1,159 @@
+SECTION 11 WORKINGS — Otorowski Morrow and Golden (otorowski-morrow-and-golden) — October 30, 2026
+INTERNAL ONLY — never shared with the client.
+
+================================================================================
+SELLER OVERRIDE (governs the package)
+================================================================================
+package_decision.json selection_notes: "Seller override: switched to Full Service
+Marketing — Starter only (coaching and AI Workforce Pro removed), with proposed
+marketing budget of $7,500–$12,500/mo, per Slack request on 2026-10-30."
+Seller always wins — built as-is. The four Transcript-Stated Need overrides do not
+apply to a seller-chosen package.
+
+Rules this package departs from (noted for sales, not changed):
+- Revenue table: HubSpot revenue "$3,000,000+" -> Platinum by revenue; seller chose
+  Starter. Revenue is UNVERIFIED (revenue_source = hubspot_annual_law_firm_revenue;
+  nothing stated on the call). Revenue unverified (draft based on
+  hubspot_annual_law_firm_revenue).
+- Default "marketing + non-marketing" pairing: single product per seller. Call also
+  covered AI Workforce Pro (dictation need) — removed by seller; shown only as a
+  Phase 3 roadmap item.
+- decision file still carries stale coaching_price_bundled (3200) and
+  law_price_bundled (350) fields; coaching_name and law_name are null, total_bundled
+  = 5697. Ignored — coaching and LAW are NOT part of this recommendation.
+
+Transcript context checked anyway (informational): call_focus = mixed, lead_gen_gap
+= yes; no existing-vendor contract stated; no budget stated ("No" to earmarked
+budget). Marketing is consistent with the transcript's stated lead-gen gap.
+
+================================================================================
+MANDATORY PRICE LOOKUP (copied from package_decision.json, matches pricing tables)
+================================================================================
+- Marketing package selected: Full Service Marketing — Starter
+  - Bundled price (from table): $4,997/mo (NOT charged — only 1 bundle-eligible product)
+  - Stand-alone price (from table): $5,697/mo  <- charged price
+  - Savings: $0 (pricing_mode = "standalone", bundle_eligible_count = 1)
+- Non-marketing package selected: none
+- Legal AI Workforce (LAW) package selected: none
+- AI Avatar / Video Growth add-on: none
+- Total monthly investment: $5,697/mo
+- Total savings: $0 — no savings callout and no retail strikethrough in the report
+- Block 3 shows a single price per row.
+
+35% cap check (at HubSpot $3.0M revenue = $250,000/mo): $5,697 + $12,500 = $18,197
+= 7.3% of monthly revenue. Under the 35% cap. Starter ad spend cap $25,000 — OK.
+
+================================================================================
+AD SPEND / ROI (seller-set range $7,500–$12,500)
+================================================================================
+Practice area basis: medical malpractice (primary) + personal injury (secondary).
+No medical malpractice row exists in the CPL / default case value tables, so the
+Accident & Injury rows were used (closest). DEFAULTS USED — case value was not
+stated on the call: Accident/Injury $5K–$8K (midpoint $6,500 used for revenue).
+Close rate: 2% (stated on call, 00:14:43) — not the 15% default.
+Geographic market: Seattle (Tier 2 per Common geo tiers: Seattle).
+
+Channel mix assumed (seller gave totals only):
+- Conservative $7,500 = Google Search $6,300 + Meta Retargeting $1,200
+  (Accident/Injury channel minimums: Google $6,000, Meta Retargeting $1,200)
+- Aggressive $12,500 = Google Search $8,500 + LSA $2,500 + Meta Retargeting $1,500
+
+CPL midpoints (Accident & Injury): Google $705 | LSA $235 | Meta Retargeting $90
+
+Conservative: blended CPL $336.8, +20% cushion = $404.1
+  Leads 18.6 -> cases 0.37 (x 2%) -> revenue $2,413 (x $6,500) -> return 0.32x
+  (range at $5K–$8K case value: $1,856–$2,969 = 0.25x–0.40x)
+Aggressive: blended CPL $317.6 (no cushion)
+  Leads 39.4 -> cases 0.79 (x 2%) -> revenue $5,117 (x $6,500) -> return 0.41x
+  (range at $5K–$8K case value: $3,936–$6,298 = 0.31x–0.50x)
+
+!! FLAG FOR SALES: projected monthly return is BELOW 1x in both scenarios. Driver:
+the stated 2% close rate applied to raw ad leads, plus a PI default case value that
+likely understates med-mal / birth-injury case value. Get a real average fee per
+case from Chris before this goes out, or replace the case-value default. Per the
+rules, the numbers were NOT adjusted. Case cycle is ~3 years, so monthly revenue
+is not a like-for-like comparison with spend.
+
+Client-facing "why this range" sentence (Block 4): "To put the firm in front of
+high-intent Seattle medical malpractice and injury searches before competitors such
+as Moseley Collins Law capture them, so more of the calls you receive are cases worth
+taking."
+
+================================================================================
+DBM STATEMENT (Block 1) — INFERENCE, not a direct quote
+================================================================================
+"We help established medical malpractice and serious injury firms get a steady flow
+of higher-quality cases found through Google, maps, and AI search so they can spend
+less time sifting through unwanted calls and more time on the cases worth taking."
+Basis: "I am sure that there are higher quality cases that we would like to attract."
+(00:16:05); "if you're going to get calls, you need to… come up when somebody uses
+ChatGPT." (00:05:00); "most of them are junk" (00:13:29). Category (1), firm that
+runs itself / less sifting, with a visibility-fear overlay.
+
+Stage assigned: Stage 3 (lower of 3/4 on the border — no scalable lead-gen system
+yet, owner still in the review loop).
+
+================================================================================
+QUICK WIN OPPORTUNITIES (9)
+================================================================================
+1. [Lead Gen, Quick Win] Remove hidden spam links — hidden pharmacy/casino links on
+   homepage erode trust with Google/AI/visitors; no competitor.
+2. [Lead Gen, Quick Win] Fix Google Business Profile, NAP, and start reviews —
+   1.0 stars / 2 reviews; competitor: Moseley Collins Law (4.9 / 2,048).
+3. [Intake, Quick Win] Tap-to-call phone + visible contact option on homepage —
+   zero tel: links; no competitor.
+4. [Profit, Quick Win] Inventory what is already paid for (SEO, Super Lawyers) —
+   "homework to figure out what we've got going on already" (00:41:22); no competitor.
+5. [Lead Gen, Quick Win] FAQ + "cases we take / don't take" content — no FAQ (call);
+   dental/mold/minor damages rejected (00:17:56); no competitor.
+6. [Lead Gen, Long-Term] Targeted Google Ads / LSA for wanted case types — no
+   named competitor (ad activity not observed).
+7. [Lead Gen, Long-Term] AI search visibility — competitor: Menzer Law Group
+   (appears in both med-mal lists + AI overview on call; review count UNCONFIRMED so
+   not printed).
+8. [Team, Long-Term] One owner for marketing/vendor/systems — office manager
+   transition; no competitor.
+9. [Intake, Long-Term] Dictation into intake records via AI tooling — "I just want
+   to dictate it" (00:50:00); no competitor. AI Workforce Pro NOT part of package;
+   framed as a later phase.
+
+================================================================================
+WHAT YOU TOLD US (Block 5) — 3 items, source line, and Block 2 tie
+================================================================================
+1. "what seems to be the drumbeat around is that SEO is no longer any good. And if
+   you're going to get noticed, if you're going to get calls, you need to… come up
+   when somebody uses ChatGPT." (00:05:00)
+   -> Starter: local SEO, GBP optimization, AI-ready FAQ/practice-area content.
+2. "We get five calls every day. Every day, a malpractice call. And most of them are
+   junk." (00:13:29) + "I am sure that there are higher quality cases that we would
+   like to attract." (00:16:05)
+   -> Starter: Google Ads targeted at wanted case types; website content that
+   screens case fit.
+3. "this is a high-risk legal specialty. And I would like to actually be able to
+   dilute that a little bit in terms of having good personal injury cases."
+   (00:16:20)
+   -> Starter: campaigns and website pages for trucking, auto, and product
+   liability injury cases alongside malpractice.
+Next step: kickoff call with your Onboarding team.
+Excluded as ineligible: named employees (intake coordinator, office manager, Karl
+Brown), age/personal items, books/bookkeeper details.
+
+================================================================================
+ESCALATION FLAGS (internal)
+================================================================================
+- Revenue unverified (draft based on hubspot_annual_law_firm_revenue "$3,000,000+").
+- Review counts unconfirmed — verify live before the call: Menzer Law Group review
+  count not read from Google (aggregators cite "48+", not printed); Birdeye 2 reviews
+  mirrors Google. Report prints only [confirmed via Google] figures.
+- Personal Injury in a top-40 metro (Seattle) -> approval required.
+- Ad spend below practice area minimum: Seattle PI (high competitiveness) hard floor
+  $10,000; conservative $7,500 is below it -> paid ads team review.
+- Revenue goal / projected ad revenue: projected return < 1x -> paid ads team review.
+- Ads, LSA, and Meta data could not be observed (SERP captcha, thin Ad Library) —
+  "not observed" language used throughout; verify live.
+- AI Workforce Pro (dictation need) removed by seller; mentioned only in Phase 3.
+  Before promising it: confirm LAW delivery has launched/capacity, and seat count.
+- Ad spend $7.5K–$12.5K and marketing MRR $5,697 are under the $25K / $10K
+  scoping-approval thresholds.
+- Firm name: site/directories use "Otorowski & Golden, PLLC"; cover uses the
+  trigger name per notes.
