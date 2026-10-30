@@ -1,0 +1,90 @@
+SECTION 11 WORKINGS — Sibley Law (INTERNAL — never shared with client)
+Prepared for Pass 2, November 4, 2026 audit. Sales rep: Randy Gold.
+
+=====================================================================
+PACKAGE DECISION SOURCE
+=====================================================================
+- package_decision.json present: yes. confidence = "high". needs_seller_input = false. needs_revenue_confirmation = false. proposal_review.json status = "locked".
+- package_source in file = "rules", BUT selection_notes contain a seller override (Slack, 2026-10-30): "Seller override: replaced package with Coach Essentials Plus + AI Workforce Pro – Starter (2 seats) + complimentary LSA management add-on (list $900/mo, included at no charge per seller); Full Service Marketing removed. Seller says revenue is $350,000." Treated as "seller always wins": used as-is; the four Transcript-Stated Need overrides were NOT applied to it.
+- Revenue confirmed by seller: $350,000 (revenue_source = seller_confirmed). Research notes: $350K–$375K gross, flat-fee practice, no net/gross split (override 4 not applicable).
+- Stale note in selection_notes ("Total at conservative ad spend ($12,497/mo) is over the 35% cap") refers to the removed Full Service Marketing package and no longer applies.
+- No marketing tier in the package (marketing_tier = null), so Block 4 (Recommended Monthly Ad Spend) was deleted from section_11 and the ad-spend row was omitted from the executive summary. ad_spend_conservative / ad_spend_aggressive are null in the decision file and the seller set no LSA budget (see flags).
+
+TRANSCRIPT-STATED NEED OVERRIDE CHECK (informational only — seller override governs)
+1. Call-purpose: call was whole-firm growth discovery (pipeline, processes/hiring, AI demo). Not a pure FCTO or ops engagement. Seller package covers coaching (processes/hiring), AI Workforce, and an LSA lead channel — consistent with the three strands.
+2. Existing-vendor: current vendor handles website, blogs, social; NOT running paid ads. No active paid-ads/SEO contract stated. Not triggered.
+3. Budget-reality: no budget constraint stated. Coach Essentials Plus (normally the tight-budget alternative to Elite Coach at $250K–$400K) was chosen by the seller, not by a transcript-stated budget limit. Rule noted, package built as instructed.
+4. Effective-revenue: not applicable.
+
+MANDATORY PRICE LOOKUP (copied from package_decision.json, confirmed against the tables in audit-write.md)
+- Marketing package selected: none
+  - Bundled price: n/a | Stand-alone: n/a | Savings: n/a
+- Non-marketing package selected: Coach Essentials Plus
+  - Bundled price (from table): $2,497/mo  (no bundle — only one bundle-eligible product; stand-alone price applies)
+  - Stand-alone price (from table): $2,497/mo
+  - Savings: $0/mo
+- Legal AI Workforce (LAW) package selected: AI Workforce Pro – Starter, 2 seats
+  - Price: 2 x $350/user/mo = $700/mo (no stand-alone price exists; never counts toward bundle)
+  - Savings: $0/mo
+- Add-on: LSA Management Add-On — list $900/mo, complimentary ($0) per seller
+  - Savings shown to client: $900/mo (complimentary fee only)
+- AI Avatar / Video Growth add-on: none
+- Total monthly investment: $3,197/mo  ($2,497 + $700 + $0)  — matches total_bundled in the decision file
+- Total savings shown to client: $900/mo (complimentary LSA fee only; no bundle savings — pricing_mode = "standalone")
+- 35% cap check: $3,197/mo vs. cap of $10,208/mo on $350,000 revenue (before any LSA ad spend). Under the cap. Minimum MRR $2,497 met.
+
+AD SPEND / ROI
+- No marketing/ads package in the recommendation, so no conservative/aggressive ad-spend range or ROI projection was calculated or published. Block 4 deleted.
+- The LSA add-on is a managed ad channel; the client report states "ad spend is paid directly to Google" but gives no dollar figure. REP ACTION: set an LSA budget with the paid ads team before the call if the prospect asks. Reference only: estate-planning LSA channel minimum on the guide's table is $2,000/mo; absolute minimum for any paid ads is $3,000/mo.
+- No "why this range" sentence is needed (Block 4 omitted).
+
+FIRM STAGE / TRAFFIC LIGHTS (reasoning)
+- Stage 4 (Small Business Manager): working lead source (seminars, 12–15 leads/mo), nurture flow, one new full-time hire plus two contractors and a vendor, owner still heavily involved (~50 hrs/wk). Not referral-only or solo, so not Stage 3. Not on the border for Stage 5 (no trained intake team, owner cannot unplug).
+- Lead Gen AMBER: seminars + lead magnets exist, paid ads lapsed, inconsistent results.
+- Intake AMBER: nurture flow exists, follow-up gap for attendees who don't book.
+- Team RED: owner cannot step away, processes fragmented, no org structure beneath her.
+- Profit AMBER: lean, works with a CFO, margin unknown, inconsistent revenue.
+- Urgency score 5 (PROVISIONAL per research notes — GBP, 3-pack, Ads, LSA, Meta data not obtained).
+
+DBM STATEMENT (Block 1)
+"We help estate planning attorneys who have built their firm on seminars and reputation get a steady, predictable pipeline of new clients and processes their team can follow so they can truly unplug and have the freedom to handle whatever comes up in life."
+DBM source quotes: (00:27:25) "where I can truly unplug, … I can even say a week, and know that, you know, the building's not going up in flames"; (00:29:44) "I want to have the freedom to be able to handle other emergencies that may come up in my life." Family/health detail (aging parents, funeral) deliberately kept out of all client copy.
+
+QUICK WIN OPPORTUNITIES IDENTIFIED (8 in client report)
+1. Lead Gen | Restart the Seminar Engine | Quick Win | Why: ~12–15 seminar leads/mo but unadvertised 4–5 months; events page shows passed dates | Competitor: Estate Planning & Elder Law Center of Brevard (free seminars, Eventbrite) | Opportunity: promoted calendar + online registration
+2. Lead Gen | Managed LSA Channel | Quick Win | Why: no paid channel; Dee lacks knowledge/capacity | Competitor: none (LSA data NOT OBTAINED) | Opportunity: pay-per-lead second source
+3. Intake | Follow-up sequence for seminar attendees | Quick Win | Why: biggest gap per Dee; ~8 of 12–15 book | Competitor: none | Opportunity: warm attendees -> booked consults (~$4,000–$4,250 avg fee)
+4. Team | Document core processes before January hire | Quick Win | Why: new hire <2 months, another planned | Competitor: none | Opportunity: faster ramp, less overwhelm
+5. Profit | Learn margin / set monthly target | Quick Win | Why: margin unknown, uneven months | Competitor: none | Opportunity: informed payroll/hiring decisions
+6. Lead Gen | Clean up web/directory footprint | Quick Win | Why: indexed test pages, legacy Wix, P.A./PLLC and Ste 400 inconsistencies | Competitor: none | Opportunity: one clear picture for Google/prospects
+7. Lead Gen | Prepare 2027 elder law launch | Long-Term | Why: no foundations for the new practice area | Competitor: Estate Planning & Elder Law Center of Brevard (offers both already) | Opportunity: arrive with visibility
+8. Intake | Track seminar-to-signed funnel monthly | Long-Term | Why: funnel figures are rough estimates | Competitor: none | Opportunity: find the drop-off
+
+WHAT YOU TOLD US (Block 5) — 3 items, sources, and package supported
+1. Item: needs a way to make processes more efficient so she can hire properly and retain staff. Verbatim (00:41:31): "A way to make my processes more efficient and effective because then I feel like it's going to help me to hire properly, … and retain because they're not being overwhelmed by office stuff to be done." Supports: Coach Essentials Plus (Block 2, package 1; most central — ties to the red Team pillar and the DBM).
+2. Item: lacks the knowledge/capacity to run paid ads herself. Verbatim (00:07:47): "I really don't have the knowledge and the capacity for that." (Context 00:10:02: "I thought my paid advertising was going on. And then I learned that it was not.") Supports: LSA Management Add-On (package 2).
+3. Item: asked whether AI Workforce is affordable for a small firm. Verbatim (00:50:13, as logged in research notes): "…something that a small business owner like myself would be able to afford…" Supports: AI Workforce Pro – Starter (package 3). Note: the research notes record this line as a partial quote; confirm exact wording against the Fathom transcript before the call if quoting verbatim.
+Next-step line: kickoff call with your Coach (Coach Essentials Plus is the most central package).
+Excluded from Block 5 on purpose: funeral/wedding absence, aging parents, payroll-impact worry as a distress figure, named staff.
+
+GROWTH ROADMAP NOTES
+- Phase 1 = exactly what Block 2 sells (coaching + LSA + AI Starter).
+- Phase 2 = Fractional COO + full marketing program + elder law visibility. Trigger "annual revenue passes $500,000" because FCOO/FCFO are hidden under $500K and Full Service Marketing Starter begins at $500K. No prices printed in roadmap (pricing mode would change if products are bundled later).
+- Phase 3 = AI Workforce Pro (5-user) once team reaches five AI users, optional Fractional CTO (Level 1 requires $400K+ revenue), and review of monthly numbers with her existing CFO. FCFO and Bookkeeping were intentionally NOT added: she already works with a CFO and the transcript does not show a bookkeeping need.
+
+ELIGIBILITY / ESCALATION FLAGS (INTERNAL)
+- !! LAW PACKAGE: confirm with sales rep that Legal AI Workforce delivery has launched and capacity is available before sending. AI Workforce Pro – Starter is 2 seats of a 4-person team (seller's choice; transcript discussed 4 seats — 4 x $350 = $1,400).
+- !! COMPLIMENTARY LSA FEE: $0 management fee is a seller instruction, not a catalog price ($900/mo list). Confirm sales-ops approval. Client report shows $900/mo struck through next to "Complimentary" and a $900 savings callout.
+- !! LSA AD BUDGET NOT SET: no ad spend defined by seller or decision file. Paid ads team review needed (any LSA budget below $3,000/mo is under the absolute paid-ads minimum; estate-planning LSA channel minimum is $2,000).
+- !! ESTATE PLANNING / COACHING FIT: Coach Essentials Plus used without a stated budget constraint (seller choice).
+- Revenue $350K: above the $300K scoping-approval threshold; under $500K so FCOO/FCFO hidden for now.
+- Revenue goal ($600K/yr) exceeds what LSA alone could produce -> paid ads team review; Phase 2 marketing graduation exists for this.
+- !! REVIEW COUNTS UNCONFIRMED — verify live before the call. Firm GBP "5.0 stars / 68 reviews" is UNCONFIRMED (web-search summary only) and competitor rating for Estate Planning & Elder Law Center of Brevard (5.0) is UNCONFIRMED. NONE appear in the client report; qualitative framing only ("favorable reviews").
+- PageSpeed (mobile/desktop) NOT OBTAINED (API 429, UI never completed). Client report says speed scores were not captured; no numbers printed. Human should re-run.
+- GBP details, Local 3-pack, Google Ads, LSA, and Meta Ad Library findings NOT OBTAINED. Report states "not captured" and makes no presence/absence claims. Dee's own statement (ads stopped ~4–5 months, vendor change) is attributed to her.
+- Contact name: trigger says "Debra Sibley", website says "Dedra Sibley", she introduces herself as "Dee". Client report uses "Dee" only; "Dedra"/"Debra" not printed. Verify formal first name before any formal use.
+- Entity suffix conflict (P.A. vs PLLC) and name variants — mentioned generically in client report; confirm correct legal entity name for the proposal.
+- Seminar year not shown on events page; October dates described as "passed" based on research notes.
+- Fee quote "$4,000 and $42,50" is unclear in the transcript; read as $4,250 (rep later says "4K, 4.25"). Report uses "$4,000 to $4,250".
+- Transcript-unclear quote #7 (owner dependence) and #8 (team) were NOT used as quote boxes; quote boxes use #6 (intake), #1 (team), #9 (profit).
+- Escalations not triggered: no AI Avatar, OmniSocial, Attorney Assistant, AR/AP add-on; Rockledge/Melbourne FL not a top-10/top-40 metro for estate planning flags.
