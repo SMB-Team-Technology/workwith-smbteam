@@ -1,0 +1,106 @@
+SECTION 11 WORKINGS — Thode Law Firm P.C. (INTERNAL — never shared with client)
+Prepared for Pass 2, October 30, 2026 audit. Sales rep: Michael Kopp.
+
+=====================================================================
+PACKAGE DECISION SOURCE
+=====================================================================
+- package_decision.json present: yes. confidence = "low" (revenue came from HubSpot range "$180K - $960K" -> $570,000, not from the call). needs_seller_input = false. proposal_review.json status = "locked".
+- selection_notes contain TWO seller overrides (Slack): (1) 2026-10-28 removed Elite Coach Plus; (2) 2026-10-30 switched marketing from Full Service Marketing Starter to Paid Ads Starter (ad spend unchanged). Treated as "seller always wins": package used as-is; the four Transcript-Stated Need overrides were NOT applied to it.
+- Decision file: marketing_tier = Paid Ads Starter, coaching = null, LAW = null, pricing_mode = "standalone" (only 1 bundle-eligible product), total_bundled = $3,497/mo.
+
+TRANSCRIPT-STATED NEED OVERRIDE CHECK (informational only — seller override governs)
+1. Call-purpose: call focus = marketing/intake for launching a NEW personal injury practice (primary_engagement = marketing, lead_gen_gap = true). Marketing is consistent with the call. Not triggered.
+2. Existing-vendor: Scorpion is the current family law SEO vendor ("it's okay, it's not great"). Bill fears changing vendors ("my rankings drop for six months"). The PI campaign is separate from family law SEO. This would normally argue against Full Service Marketing; the seller's switch to Paid Ads Starter (ads only, no SEO/web work) is consistent with leaving the Scorpion relationship untouched. Report copy states the PI campaign runs separately from the family law SEO.
+3. Budget-reality: no monthly cap stated. Bill will "borrow the money" / finance if the program is robust with a reasonable expected return. Not triggered, but financing + ROI condition is reflected in Block 4 and Block 5.
+4. Effective-revenue: research notes give ONE revenue figure (~$1M on track for 2026, whole firm), not distinguished from gross. Not applicable. NOTE: transcript says ~$1M while decision file used HubSpot $570K — REP: confirm revenue.
+
+MANDATORY PRICE LOOKUP (copied from package_decision.json; confirmed against the Paid Ads table in audit-write.md)
+- Marketing package selected: Paid Ads Starter
+  - Bundled price (from table): $2,497/mo — NOT applicable (standalone pricing mode, no bundle)
+  - Stand-alone price (from table): $3,497/mo  <- price charged
+  - Savings: $0/mo
+- Non-marketing package selected: none
+- Legal AI Workforce (LAW) package selected: none
+- AI Avatar / Video Growth add-on: none
+- Total monthly investment: $3,497/mo (matches total_bundled)
+- Total savings: $0/mo (savings callout deleted from client report)
+- Minimum MRR $2,497 met.
+- 35% cap check (management fee + ad spend vs monthly revenue):
+  * At $1,000,000/yr stated on call (= $83,333/mo): cap $29,167. Conservative $3,497 + $7,500 = $10,997 OK. Aggressive $3,497 + $20,000 = $23,497 OK.
+  * At $570,000/yr HubSpot revenue (= $47,500/mo): cap $16,625. Conservative OK; Aggressive $23,497 EXCEEDS cap. REP: confirm revenue before presenting the aggressive end.
+- Ad spend cap: Paid Ads Starter cap $20,000 — aggressive spend is exactly at the cap.
+
+=====================================================================
+AD SPEND / ROI (Block 4) — Accident & Injury (personal injury), Denver (Tier 2-3 market; ad spend taken from package_decision.json)
+=====================================================================
+- Conservative $7,500/mo (from decision file; equals PI Medium-competitiveness hard floor $7,500). Aggressive $20,000/mo (capped by Starter tier's ad cap).
+- Close rate: not stated for PI; default 15% used (disclosed in report).
+- Average case value: NOT stated by prospect. Rep suggested $15K-$25K pre-lit; Bill only said "Yeah, I guess." Used practice-area DEFAULT for Accident/Injury $5K-$8K -> midpoint $6,500 (disclosed in report). Bill prefers fewer, larger (truck/wrongful death) cases, so real value may be higher.
+- Client-facing CPL midpoints (Accident & Injury): Google $705 | LSA $235 | Meta retargeting $90 | Meta cold $170.
+
+CONSERVATIVE ($7,500): mix Google $4,500 / LSA $2,000 / Meta retargeting $1,000
+  - Raw blended CPL $288.40; +20% cushion = $346.10
+  - Leads = 7,500 / 346.10 = ~21.7 (~22 leads)
+  - Cases = 21.7 x 15% = ~3.25 (~3 cases)
+  - Revenue = 3.25 x $6,500 = ~$21,100
+  - Return = ~2.8x
+
+AGGRESSIVE ($20,000): mix Google $10,000 / LSA $5,000 / Meta retargeting $2,000 / Meta cold $3,000
+  - Blended CPL $265.50 (no cushion)
+  - Leads = 20,000 / 265.50 = ~75.3 (~75 leads)
+  - Cases = 75.3 x 15% = ~11.3 (~11 cases)
+  - Revenue = 11.3 x $6,500 = ~$73,400
+  - Return = ~3.7x
+
+Goal check: Bill wants ~6 cases/mo to start and $500K-$1M PI revenue in 2027 ($41.7K-$83.3K/mo). Conservative (~3 cases, ~$21K/mo) falls short of both -> "Revenue goal exceeds projected ad revenue" flag. Aggressive (~11 cases, ~$73K/mo) covers the low end of the goal and approaches the high end.
+
+Why-this-range sentence (client-facing, in Block 4): payoff framed around Denver truck accident / wrongful-death searches and named competitors capturing them first.
+
+=====================================================================
+FIRM STAGE / TRAFFIC LIGHTS (reasoning)
+=====================================================================
+- Stage 3 (Solo Practitioner): Bill is sole litigator with one confirmed paralegal; family law lead source is an outside vendor with "okay, not great" results; PI has no lead system; owner is heavily involved. Could argue Stage 4 (one lead gen system via Scorpion) — border case, assigned the lower stage per rules.
+- Lead Gen RED: the growth target (PI) has no lead source at all; family law system is a single vendor with mediocre results.
+- Intake AMBER: paralegal vets leads and a website AI chat exists (unverified), but no after-hours/weekend coverage.
+- Team RED: owner is sole litigator, cannot step away, junior family law attorney has left, no org structure.
+- Profit AMBER: ~$1M on track; no acquisition-cost or return target; margins unclear.
+- Urgency score 7 (per research notes; judgment call from limited live data — SERP/local-pack/ad checks could not be run).
+
+DBM STATEMENT (Block 1)
+"We help established family law attorneys launching a personal injury practice get a steady flow of larger, higher-value injury cases so they can make real money before they retire without working a day longer than they have to."
+DBM source quote: (00:26:09) "I'm 62, so I'm not interested in working any longer than I have to, but I've got to make some money before I retire."
+
+=====================================================================
+QUICK WIN OPPORTUNITIES IDENTIFIED (7 in client report)
+=====================================================================
+1. Lead Gen | Launch Truck Accident & Wrongful Death Search Ads | Quick Win | Why: PI has no pages or ads observed; ~6 cases/mo goal has no source | Competitor: Frank Azar | Opportunity: Google/LSA/Meta targeted at larger-case searches
+2. Intake | Close the After-Hours Gap | Quick Win | Why: paralegal covers business hours only ("she only works during working hours") | Competitor: none | Opportunity: evening/weekend coverage; Bill committed to fix
+3. Lead Gen | Fix Your Directory Listings | Quick Win | Why: 3 phone numbers, 2 addresses, 5+ business names, FindLaw wrong category | Competitor: none | Opportunity: one consistent name/address/phone
+4. Profit | Set Cost-Per-Signed-Case and Return Targets | Quick Win | Why: Bill will finance only with reasonable expected return | Competitor: none | Opportunity: target case value, max cost per signed case, monthly review
+5. Team | Decide Your First PI Support Hire Trigger | Long-Term | Why: sole litigator + one paralegal; wants to avoid associate until needed | Competitor: none | Opportunity: define volume trigger so growth doesn't add hours
+6. Lead Gen | Build a PI Web Presence and Review Base | Long-Term | Why: no PI pages; leading PI firms have very large review bases | Competitor: The Wilhite Law Firm | Opportunity: PI pages built separately from family law SEO + review plan
+7. Intake | Write PI Screening Criteria | Long-Term | Why: no written criteria for truck/wrongful-death cases described | Competitor: none | Opportunity: paralegal screens to Bill's preferred case types
+
+=====================================================================
+WHAT YOU TOLD US (Block 5) — transcript sourcing
+=====================================================================
+1. "I would just like to get some cases in the door because I'm pretty efficient." / (00:12:45) "…if I could get a half a dozen cases a month, I'd probably be really happy with that for starters." -> Block 2: Paid Ads Starter (Google search ads + LSA + Meta) with monthly reporting
+2. (00:05:20) "I prefer to have fewer, larger cases, truck accidents, the bigger… I'm not sure I want to just develop a mill right out of the gate…" -> Block 2: campaigns built around truck accident / wrongful death / serious injury searches
+3. (00:03:31) "Every time I've changed SEO companies in the past, my rankings drop for six months." -> Block 2: Paid Ads Starter runs separately from current family law SEO; nothing replaced
+Next step line: kickoff call with the Onboarding team.
+
+=====================================================================
+ESCALATION FLAGS / REP ACTIONS (INTERNAL)
+=====================================================================
+- Review counts unconfirmed — verify live before the call. All Google review counts/ratings (firm and competitors) are UNCONFIRMED aggregator figures; client report uses qualitative framing only. Prospect's own Google review count never obtained; Google reportedly shows mixed reviews with billing complaints (unverified) — handle on the call, not in the report.
+- Personal Injury in a top-40 metro (Denver) -> scoping approval required.
+- Revenue goal exceeds projected ad revenue at the conservative level -> paid ads team review.
+- Revenue unverified: transcript ~$1M vs HubSpot $570K ("$180K - $960K"); decision confidence "low". Aggressive spend breaches the 35% cap if revenue is $570K.
+- Paid Ads Starter includes no web build/SEO. PI practice has NO website pages — ads will need PI landing pages. Not promised in the client report; raise on the call (website/landing pages are outside this package).
+- Bill rejected the bicycle niche (no defendant insurance info) and wants truck/wrongful death; campaign copy built around his preference. Rep's pitch CPLs ($130-$140 niche / $250-$275 car-truck) were NOT used as facts.
+- Wants after-hours intake covered; sister VA company / answering-service recommendations are non-affiliated — not in the proposal. No live chat referenced as an SMB Team service.
+- Website AI chat agent: Bill says one exists; not detected on live site. Unverified.
+- Scorpion (family law SEO vendor) relationship untouched; ~$3,800/mo was rep's recollection from 2024, not confirmed.
+- Average case value is a default ($6,500 midpoint of $5K-$8K); close rate is default 15%; both disclosed in report.
+- No AI Avatar, OmniSocial, LAW, or bookkeeping add-ons in this package; none escalated.
+- Roadmap Phase 2 (FCOO Advisor), Phase 3 (FCFO Advisor, Bookkeeping, AI Workforce Pro – Starter) are future additions — no dollar figures shown in client report.
