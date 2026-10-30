@@ -1,0 +1,215 @@
+SMB TEAM — AUDIT RESEARCH NOTES (PASS 1)
+Firm: RHG Law — Moorestown, NJ (website NAP; see NAP note in STEP 5)
+Friendly name: rhg-law
+URL: http://rhglawfirm.com
+Sales rep: Daniel Lowe
+Report date: November 11, 2026
+Research run: 2026-10-30
+Contact: Roy Gordon (owner, attorney, MBA)
+
+IMPORTANT CONTEXT: This is a COACHING / OPERATIONS conversation, not a marketing conversation. The owner is the capacity bottleneck, not lead flow ("Way more calls than I can handle"; he is no longer doing intakes for about half of the inbound calls). The call was about hiring his first associate attorney, a planned merger with two solo practitioners, and moving from "a lawyer who works in his law firm" to a firm owner. The rep explicitly framed the offer as "wouldn't be marketing, it wouldn't be intake" — coaching only. Do not frame the report as a lead-generation gap.
+
+=====================================================================
+STEP 1 — WEBSITE RESEARCH
+=====================================================================
+- Website URL confirmed live: yes (http://rhglawfirm.com returns HTTP 200, served via Cloudflare)
+- Last redesign date or estimated age: not determinable exactly; modern WordPress/Elementor build on the Astra theme, 2024 branding evident. Blog post sitemap entries are dated Sept–Dec 2024.
+- Mobile responsive: yes (viewport meta tag present, responsive Elementor layout; not checked on a physical device)
+- Homepage headline: "INNOVATIVE LEGAL SOLUTIONS FOR INDIVIDUALS AND BUSINESSES"
+- Page title: "RHG Law - Business And Commercial Litigation Lawyer"
+- CTA above fold: yes — "Tell Us Your Story" button linking to the contact page
+- Contact form location: separate /contact/ page (not on the homepage). A dedicated landing page /contractor-issue-form/ exists for the home-improvement-contractor niche.
+- Live chat present: not detected
+- Attorney bio present: yes — /attorneys/ lists Roy Gordon (licensed PA, NJ, E.D. Pa., D.N.J.), Jeffery Brahin (Of Counsel, PA, Bucks County Bar) and Sam Dhaliwal (Of Counsel, NJ and PA). Roy's bio: "represents individuals who have become the victim of consumer fraud and unconscionable business practices."
+- Video present: none embedded on homepage
+- Blog present: yes ("Articles by RHG Law" / Blogs in nav). Latest sitemap lastmod on the blog index is 2024-12-28; individual post sitemap entries run Sept–Oct 2024. No newer post dates observed — blog appears inactive since about late 2024 (last-modified metadata, not a published-date read).
+- Pages on site (page sitemap): Home, Attorneys, About, Our Business Clients, Testimonials, Practice Areas, Contact. One landing page: Contractor Issue Form.
+- Geo-targeting landing pages for surrounding cities: none detected in the page or landing-page sitemaps
+- On-site testimonial: internal 5-star testimonial ("Matt Y"); no live Google review widget observed on the homepage
+- Content that supports the niche Roy describes: blog posts on hiring a home improvement contractor in NJ, NJ homeowner/contractor laws, 2 statutes for NJ homeowners, 3 ways companies violate the NJCFA, "my contractor is suing me" — so the consumer-fraud / contractor niche is visible on the site.
+
+PageSpeed / Lighthouse (performance category):
+- Method: pagespeed.web.dev showed only "Running analysis" and the PageSpeed Insights API returned HTTP 429 (daily quota exceeded). Scores below are from a real Lighthouse 12.8.2 run on 2026-10-30 in headless Chrome from a CI runner against https://rhglawfirm.com/. Lab conditions differ from pagespeed.web.dev, so scores may differ by a few points.
+- PageSpeed mobile score: 64 (FCP 2.8 s, LCP 5.5 s, CLS 0, TBT 440 ms, Speed Index 2.8 s)
+- PageSpeed desktop score: 98 (FCP 0.8 s, LCP 1.0 s, CLS 0, TBT 0 ms, Speed Index 0.8 s)
+
+=====================================================================
+STEP 2 — GOOGLE BUSINESS PROFILE
+=====================================================================
+Research limitation: Google Search and Google Maps could not be loaded from the research environment (the search page returned an error shell; no Business Profile data). NO review number below is [confirmed via Google]. /audit-write must NOT print any review count or star rating for this firm as a specific figure; use the prospect's own words ("somewhere around a hundred") only if a number is needed.
+
+- GBP found: very likely (Birdeye page for "RHG Law" lists Google as its review source; MapQuest, Yahoo Local and Wheree listings also exist) [UNCONFIRMED — sourced from Birdeye, not independently confirmed via Google]
+- Star rating: 5.0 [UNCONFIRMED — sourced from Birdeye, not independently confirmed via Google]
+- Total review count: 95 [UNCONFIRMED — sourced from Birdeye (page attributes all 95 to Google, 0 Birdeye-collected), not independently confirmed via Google]. Consistent with the prospect's statement on the call: "So I've got somewhere around a hundred now." (00:05:57; transcript attributes the line to the wrong speaker, content is Roy's)
+- Most recent review date: not obtained (Birdeye showed "2 months ago" for the latest review) [UNCONFIRMED]
+- Primary category: not obtained
+- Photos active: not observed
+- Posts active: not observed
+
+=====================================================================
+STEP 3 — LOCAL 3-PACK SEARCHES
+=====================================================================
+Research limitation: live Google local-pack results could not be observed from this environment. Pack membership is recorded as NOT OBSERVED. Competitor names below are South Jersey / Burlington–Camden County firms surfaced by search and aggregator pages, NOT confirmed pack members. Every review count carries an UNCONFIRMED tag.
+
+Practice Area 1: Commercial litigation / business law (Moorestown NJ)
+- Search 1 "commercial litigation attorney moorestown nj": firm appears: not observed — likely market names: DashLaw LLP (54 reviews [UNCONFIRMED — search summary, not confirmed via Google]), Posternock Apell, PC (review count not obtained)
+- Search 2 "business lawyer moorestown nj": firm appears: not observed — Super Lawyers lists Roy Gordon among Moorestown Business & Corporate attorneys (directory, not a Google pack)
+- Search 3 "business litigation attorney burlington county nj": firm appears: not observed
+
+Practice Area 2: Consumer fraud — home improvement contractor cases (plaintiff side)
+- Search 1 "consumer fraud lawyer home improvement contractor south jersey": firm appears: not observed — market names surfaced: Ratliff Jackson LLP (87 reviews blended across Google, Avvo and Trustindex [UNCONFIRMED — not a Google-only count]), Cockerill, Craig & Moore, LLC (21 reviews [UNCONFIRMED — experience.com summary, attributed there to Google]; Birdeye shows 41 for the same firm, so the figure is unreliable)
+- Search 2 "contractor fraud attorney burlington county nj": firm appears: not observed
+- Search 3 "nj consumer fraud act lawyer homeowner": firm appears: not observed
+
+=====================================================================
+STEP 4 — COMPETITOR REVIEW COUNTS
+=====================================================================
+None of these could be read directly from Google. All figures are from search summaries/aggregators and must not be printed in the client-facing report as specific figures.
+- Competitor 1: DashLaw LLP (Moorestown NJ — business and real estate) — reviews: 54 [UNCONFIRMED — sourced from search-result summary, not independently confirmed via Google] — rating: 4.5 [UNCONFIRMED — sourced from search-result summary, not independently confirmed via Google]
+- Competitor 2: Ratliff Jackson LLP (Cherry Hill NJ — litigation, consumer fraud) — reviews: 87 [UNCONFIRMED — sourced from Trustindex/lawyers.com summary; count blends Google, Avvo and Trustindex, not independently confirmed via Google] — rating: 4.8 [UNCONFIRMED — same source, blended]
+- Competitor 3: Cockerill, Craig & Moore, LLC (Woodbury NJ — contractor consumer fraud claims) — reviews: 21 [UNCONFIRMED — sourced from experience.com summary; Birdeye shows 41, conflict unresolved] — rating: 4.43 [UNCONFIRMED — sourced from experience.com, not independently confirmed via Google]
+- Comparison: RHG Law's recorded count (95, UNCONFIRMED) is higher than every competitor figure above, so no competitor can be described as out-reviewing the prospect. The prospect himself calls the reviews the reason "my phone is just... ringing off the hook" (00:06:00).
+
+=====================================================================
+STEP 5 — DIRECTORY LISTINGS
+=====================================================================
+Checked via search results (direct Avvo, Justia, FindLaw and Yelp profile pages were not retrieved — marked not confirmed):
+- Super Lawyers: Roy Gordon listed, Business & Corporate, Moorestown NJ; Rising Star (snippets say 2021–2024 in one result and 2021–2026 in another — not reconciled)
+- LinkedIn: Roy H. Gordon, Esq., MBA — Business and Litigation Attorney
+- Birdeye: RHG Law — 95 reviews (see STEP 2)
+- MapQuest, Yahoo Local, Wheree, ZoomInfo, Wanderboat: RHG Law listings exist
+- Facebook page: slug "gordonandlowman" titled "RHG Law" — suggests a legacy firm name (Gordon & Lowman). Legacy domains gordonlowman.com and royhgordonlaw.com ("Roy H. Gordon Law New Jersey Pennsylvania") also appear in search results; their current status was not checked.
+- Brahin Law (brahinlaw.com/roy-gordon) carries a Roy Gordon page — relates to the planned merger partner (Jeff).
+- Avvo / Justia / FindLaw / Yelp: not confirmed for RHG Law from this environment
+- NAP inconsistency (real): website and several directories show 123 E. Main Street, Moorestown, NJ 08057, (856) 209-3425; MapQuest shows "212 W Rte 38, Ste 700, Moorestown, NJ 08057"; Super Lawyers/search snippet also shows "212 W. NJ-38, Suite #700". The HubSpot contact phone on the trigger is (609) 553-2948, which does not match the public (856) number (likely a personal/direct line, not a listing).
+- Geo-targeting landing pages for surrounding cities: none detected
+
+=====================================================================
+STEP 6 — GOOGLE ADS
+=====================================================================
+Research limitation: Google search result pages (and any ads on them) could not be observed from this environment.
+
+Practice Area 1: Commercial litigation / business law
+- Firm ads observed: not observed (SERP not accessible; this does not mean the firm is not running ads)
+- Named local competitors running ads: not observed
+
+Practice Area 2: Consumer fraud / home improvement contractor cases
+- Firm ads observed: not observed (SERP not accessible)
+- Named local competitors running ads: not observed. Named local firms that publish contractor-fraud pages and could be bidding on these terms: Ratliff Jackson LLP, Cockerill, Craig & Moore, LLC (content observed, ad activity not observed)
+
+Prospect statement on ads: none about Google Ads. He says of lead flow: "I'm not even out trying to get cases anymore. It's just, they're all coming to me." (00:18:13–00:18:24)
+
+=====================================================================
+STEP 7 — LOCAL SERVICE ADS
+=====================================================================
+- Firm appears in LSA: not observed
+- Google Screened: not observed
+- LSA review count: not observed
+- Named local competitors in LSA: not observed
+
+=====================================================================
+STEP 8 — META ADS
+=====================================================================
+Research limitation: the Meta Ad Library returned HTTP 403 to the research environment.
+- Firm has active ads: not observed (Ad Library not accessible)
+- Named local competitor 1: Ratliff Jackson LLP — not observed
+- Named local competitor 2: Cockerill, Craig & Moore, LLC — not observed
+
+=====================================================================
+STEP 9 — TRANSCRIPT EXTRACTION
+=====================================================================
+Transcript source: full verbatim Fathom transcript (summary used only as overview). Call recorded 2026-10-30 (Fathom recording 198325996), about 37 minutes. SMB Team speakers: Anthony Marotta (intro/handoff) and Daniel Lowe. Prospect: Roy Gordon.
+
+Summary-vs-transcript differences (transcript wins):
+- The AI summary says Sam is in "Morristown, NJ". The transcript never gives Sam's location. Roy says "my office is in Morristown, New Jersey" (00:19:09), but the firm's website and every directory show Moorestown, NJ — treat "Morristown" as a transcription error or slip; use Moorestown.
+- The summary says Jeff is "Senior attorney (60s)". Roy said "I think mid or late 60s" and that he is a distant cousin (00:07:43).
+- Roy's remark about the AI price is transcribed as "$3.50 a month" (00:07:00); in context it is the $350/month AI Workforce Pro starter price [transcript unclear — read as $350].
+- Anthony's opening line refers to "the Goober reviews" (00:01:08): garbled "Google reviews". Rep lines are not prospect facts.
+
+- Practice areas confirmed: Business law and general counsel work for small and midsize companies (HR, compliance, contract review); commercial litigation, which is the bulk of the practice — mostly plaintiff-side, "a lot of homeowners in consumer fraud situations... a lot of that has to do with, like, home improvement, so contractor work" (00:04:15–00:04:24). Roy is admitted in PA and NJ. He has done little PI ("I don't really do PI", 00:08:29). No criminal.
+- Current lead sources: Google reviews and word of mouth. "I've never really had a problem getting cases, because it was, and it was all interpersonal skills at first, and then after getting the Google reviews, now... I'm not even out trying to get cases anymore. It's just, they're all coming to me." (00:18:13–00:18:24). "I know that's why my phone is just, it's ringing off the hook." (00:06:00). Also referrals from merger partner Sam: "he comes to me" (00:10:36–00:10:39); Sam is "a little bit of a rainmaker on his own".
+- Ads ever run: not stated. (No question was asked about paid ads on the call.)
+- Firm identity check: matches
+  (Note: trigger name "RHG Law" matches the website, which lists Roy Gordon, Jeffery Brahin and Sam Dhaliwal — the same Roy, "Jeff" from Doylestown PA and "Sam" described on the call. Only discrepancy is Morristown vs Moorestown, noted above.)
+- Team size: Roy Gordon (owner, sole attorney); one intern at the moment ("During the summer I'll have three or four, but right now I just have one", 00:06:12) who answers phones, does callbacks, drafts discovery and first-draft pleadings, and files; a phone answering service; "a couple per diem attorneys that... have other jobs" paid per task (00:11:18). Billing is done by Roy in QuickBooks; outside accountant for tax season.
+- Team size (total headcount): not stated
+- Annual revenue (gross / case value): not stated
+- Annual revenue (net / take-home / collected): not stated — not distinguished from gross (no figure given)
+- Revenue (annual, best estimate): not stated
+- Fee structure: not stated
+- Revenue goal: not stated. No dollar goal given. Stated goal is operational: "in the next five years or so... not be the attorney in charge of 50 to 60, 40 to 60 files... me to be handling maybe 10… 15 files at a time, and consulting the other attorneys in my firm with their cases" (00:11:45–00:12:00). Revenue is not stated, so the "2x current revenue" default cannot be computed.
+- Average case value: not stated
+- Current close rate: not stated — default to 15% (note: he is turning away about half of inbound intakes, so close rate is not the constraint)
+- Number of locations: 1 today (Moorestown NJ per website; call says "Morristown"). Post-merger: partner Jeff's office is in Doylestown, PA; Roy: "we may have to go to each other's office twice or three times a month" (00:19:12).
+- Spanish campaign needed: no
+- Dominant buying motive: Time and freedom — a firm that runs without him doing 40–60 files so he keeps his family time. Roy: "I want, obviously, more time and more money, you know?" (00:12:06); on work-life balance: "I like to hang out with my son during some of these hours. I do jujitsu two days a week during the day" (00:27:17–00:27:19) and "this is just the way I want it to be... because it's my life" (00:27:34–00:27:37). Closest category: (1) firm that runs itself so he has more time, with him as owner/consultant.
+- Any profitability claims made by prospect: none stated. (He believes he under-bills — "I'm positive that I'm not billing everything I could be or should be billing because I just forget to bill it" (00:21:34) — but gives no figures.)
+- Any claims about case types or practice areas: "I think one of the more premier firms that handles that type of case in my area" (00:04:42, about NJ consumer-fraud cases against home improvement contractors); "New Jersey's consumer fraud statute is great in many ways, but also in particular against home improvement contractors" (00:04:24); caseload 40–60 active cases of his own (00:10:00), roughly 10–15 shared cases with Jeff and 20–30 with Sam (00:09:45–00:09:53).
+- Stated call focus / product interest: Coaching / business operations — NOT marketing, intake or AI. Daniel proposed business coaching (he calls it a "Chief Business Officer" role) to build a system for hiring and onboarding an associate, SOPs, and a seamless merger: "if I was going to propose anything back to you that SMB team can do for you, wouldn't be marketing, it wouldn't be intake" (00:25:50). Roy agreed: "I absolutely think you're right" (00:26:10). No coaching tier or price was named. Daniel said bookkeeping/CFO help and more leads could come later. Separately, Roy already bought the $350/month AI software (see AI Workforce Pro – Starter below) after part of a summit, but has not yet created the AI employees; Daniel's AI advice was to connect email and play with it. A coaching proposal is the next deliverable.
+- Primary engagement: coaching/ops
+- Products discussed on call: AI Workforce Pro – Starter
+  (Note for the seller: Roy already purchased this on his own and it is not part of the proposed coaching; it appears here only because he named and priced it. Coaching was proposed but no tier or price was named, so no coaching product is listed — the seller should pick the tier. Roy also mentioned having spoken "a few times" with Attorney Assistant, which he has not signed.)
+- Lead-gen gap stated: no — "I don't think that marketing will be a problem" (00:18:26). Also "I don't think that there's a problem with not having enough cases" (00:15:03).
+- Existing marketing/SEO/ad vendor engagements: none stated (he has a phone answering service and an outside tax accountant only)
+- Budget constraints stated: none stated
+
+Other call facts worth keeping:
+- Merger: planned "within the next six months or so" with two solo practitioners he has worked with five or six years (00:07:26; 00:13:24). Jeff (Doylestown PA, barred only in PA, about 40 years in practice, "150 to 200 PI files at a time", mostly limited-tort cases, a paralegal and a receptionist; distant cousin, mid-to-late 60s, Roy sees himself as part of Jeff's retirement plan). Sam (about Roy's age, started a couple of years after him, mostly transactional, refers commercial litigation to Roy, "a little bit of a rainmaker" in the Indian business community). Expected synergies: consolidated software, insurance, marketing costs, shared support staff, technology help for Jeff.
+- Hiring: wants to hire an associate; has a law-school friend in mind and will talk with her alongside his two future partners. Fear is handing off responsibility and having to let a friend go.
+- Tools: QuickBooks and manual billing; wants the AI employee to do billing and time-keeping; has done two SMB Team summits and read Law Firm Growth Accelerator.
+- Follow-up: Wednesday, November 11, 2026, 11:30 AM Eastern (trigger proposal_call_date 16:30Z matches). Daniel to send the invite and the coaching proposal.
+
+Key prospect quotes (verbatim, trimmed only for filler):
+1. (00:04:55–00:05:00) "I've got a lot of people, especially with the Google reviews and whatnot... Way more calls than I can handle with cases that, honestly, I would be taking, but again, I'm the bottleneck right now." — lead volume / bottleneck
+2. (00:05:06–00:05:09) "I'm not even, half of them, I'm not even doing the intakes for them anymore. I'm just like, I can't, I got to catch up first." — intake
+3. (00:18:13–00:18:24) "I've never really had a problem getting cases... now I'm not even out trying to get cases anymore. It's just, they're all coming to me." — lead sources
+4. (00:11:45–00:12:00) "The goal really... in the next five years or so is to not be the attorney in charge of 50 to 60, 40 to 60 files, I guess, but to have another attorney who's handling them, me to be handling maybe 10... 15 files at a time, and consulting the other attorneys in my firm with their cases." — goals
+5. (00:12:06) "I want, obviously, more time and more money, you know?" — goals / DBM
+6. (00:13:06–00:13:20) "I've had some other attorneys that I've worked with that I've hired in the past that didn't quite work out the way I wanted it to... you lose some money on them, you lose some time. It's frustrating." — team / hiring
+7. (00:14:02) "It's kind of scary to hire another attorney when I don't know if it's going to work out and whatnot." — objection / team
+8. (00:26:21) "I am certainly more of a lawyer who works in his law firm than a business owner right now." — goals / DBM
+9. (00:27:11–00:27:19) "I also like this work life balance that I have... I like to hang out with my son during some of these hours. I do jujitsu two days a week during the day." — DBM
+10. (00:21:06–00:21:17) "I would really like to get the AI employee to do like the billing stuff for me because that takes hours every month." — profit / operations
+11. (00:21:34) "I'm positive that I'm not billing everything I could be or should be billing because I just forget to bill it." — profit
+12. (00:30:15–00:30:49) "A lot of the stuff that I saw in the summits is seems to me like it works really well for firms that specialize in certain things like, you know, immigration or DUI... My firm is not quite like that." — objection
+13. (00:34:15) "I think that that's where my gap in knowledge and understanding of what needs to happen." — coaching need
+
+=====================================================================
+STEP 10 — COMPETITIVE URGENCY SCORE
+=====================================================================
+Competitive urgency score: 3 of 10 (low confidence — local pack, Google Ads, LSA and Meta Ads could not be observed, so this is based on review volume, site content and the prospect's own account of demand).
+
+Reasoning:
+- The prospect's demand is not competitor-constrained: he is turning away roughly half of inbound intakes and says leads are not a problem.
+- RHG Law's recorded review count (95, UNCONFIRMED) is higher than every named competitor figure found (54, 87 blended, 21–41), so no competitor was found out-reviewing him.
+- Weaknesses: mobile Lighthouse 64, a blog inactive since late 2024, a NAP inconsistency (123 E. Main Street vs 212 W. Route 38), no geo landing pages.
+
+Named local competitor threats (content and listings observed; ad activity not observed):
+1. Ratliff Jackson LLP (Cherry Hill, NJ) — litigation firm with a dedicated consumer-fraud page aimed at South Jersey residents fighting predatory contractors.
+2. Cockerill, Craig & Moore, LLC (Woodbury, NJ) — publishes home-contractor consumer-fraud claims content in the same niche.
+3. DashLaw LLP (Moorestown, NJ) — business and real-estate firm on the same street as RHG Law's listed address, competing for business-law searches.
+
+Dynamic sentence (score 1–3): "A score of 3 means no single competitor is dominating your market yet — but that will not last forever. The firms that win markets do so by moving first. Getting your systems in place now means you set the standard before someone else does."
+
+=====================================================================
+PASS 2 — VERIFICATION CHECKLIST
+=====================================================================
+[x] Every number matches observed data; limitations flagged where Google was not reachable
+[x] Every competitor figure tagged UNCONFIRMED; the prospect has more recorded reviews than any competitor cited, and none is called "dominating"
+[x] Every review count and star rating carries a verification-method tag
+[x] Revenue split: not stated by the prospect (recorded as "not stated"); fee structure not stated
+[x] Ad sections cover both practice areas; all recorded as not observed
+[x] No "you are not running ads" wording
+[x] No profitability or business claim except from the transcript (none stated)
+[x] Competitors are specific named local firms
+[x] PageSpeed scores are real numbers (local Lighthouse 12.8.2: 64 mobile, 98 desktop)
+[x] DBM recorded (Roy's own words)
+[x] Revenue goal flagged as not stated
+[x] Close rate defaulted to 15% (not stated)
+[x] Average case value flagged as not stated
+[x] Stated call focus recorded — coaching/ops, explicitly not marketing
+[x] "Primary engagement", "Products discussed on call", "Lead-gen gap stated" filled in with the required format
+[x] "Revenue (annual, best estimate)" and "Team size (total headcount)" both "not stated"
+[x] "Firm identity check" filled in: matches
+[x] Existing vendor engagements recorded: none stated
+[x] Budget constraints recorded: none stated
