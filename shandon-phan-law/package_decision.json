@@ -36,34 +36,37 @@
     ],
     "lead_gen_gap": true
   },
-  "marketing_tier": "Starter",
-  "marketing_name": "Full Service Marketing — Starter",
+  "marketing_tier": null,
+  "marketing_name": null,
   "marketing_price_bundled": 4997,
   "marketing_price_retail": 5697,
   "marketing_savings": 700,
-  "coaching_name": "Elite Coach Plus",
+  "coaching_name": null,
   "coaching_price_bundled": 3200,
   "coaching_price_retail": 3497,
   "coaching_savings": 297,
   "law_tier": "AI Workforce Pro – Starter",
   "law_name": "AI Workforce Pro – Starter",
-  "law_price_bundled": 350,
+  "law_price_bundled": 700,
   "law_price_retail": null,
-  "law_seats": 1,
-  "total_bundled": 8547,
-  "total_savings": 997,
-  "ad_spend_conservative": 3500,
-  "ad_spend_aggressive": 14000,
-  "ad_spend_rationale": {
-    "conservative_basis": "estate planning (about 70% of practice",
-    "aggressive_basis": "scaled 4x off the conservative channel-minimum floor"
-  },
+  "law_seats": 2,
+  "total_bundled": 700,
+  "total_savings": null,
+  "ad_spend_conservative": null,
+  "ad_spend_aggressive": null,
+  "ad_spend_rationale": null,
   "selection_notes": [
     "More than one AI product discussed on call (AI Workforce Pro – Starter, Fractional CTO Level 1) — using AI Workforce Pro – Starter; confirm with sales rep.",
     "AI Workforce Pro – Starter discussed on call: 1 seat × $350/mo = $350/mo (team size not stated — 1 seat assumed; confirm seat count).",
     "Revenue not in research notes — sourced from HubSpot (hubspot_annual_law_firm_revenue): \"$180K - $960K\" → $570,000",
     "Team size not stated in research notes — defaulting to 3. Review for coaching tier accuracy.",
     "Revenue under $750K but multiple practice areas detected: Essentials hidden (requires single practice area) — Starter tier.",
-    "Revenue $400K–$1M: Elite Coach Plus selected."
-  ]
+    "Revenue $400K–$1M: Elite Coach Plus selected.",
+    "Seller override: removed Full Service Marketing and Elite Coach Plus, set AI Workforce Pro – Starter to 2 seats per Slack request on 2026-11-02.",
+    "AI Workforce Pro – Starter does not count toward bundle pricing.",
+    "Total $700/mo is under the $2,497/mo minimum — review with sales rep."
+  ],
+  "pricing_mode": "standalone",
+  "bundle_eligible_count": 0,
+  "unpriced_products": []
 }
