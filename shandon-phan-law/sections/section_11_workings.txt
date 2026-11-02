@@ -1,0 +1,102 @@
+SHANDON PHAN LAW — SECTION 11 WORKINGS (INTERNAL — NEVER CLIENT-FACING)
+Sales rep: Michael Kopp | Proposal call: November 2, 2026
+
+=====================================================================
+PACKAGE SOURCE AND OVERRIDE LOG
+=====================================================================
+Source of package: package_decision.json plus seller override (selection_notes: "Seller override: removed Full Service Marketing and Elite Coach Plus, set AI Workforce Pro – Starter to 2 seats per Slack request on 2026-11-02"); proposal_review.json status "locked".
+Locked package: AI Workforce Pro – Starter x 2 users. No marketing. No coaching. No FCOO/FCFO. No Fractional CTO in Block 2 (it appears only as a later roadmap step, no price quoted).
+Seller always wins: the four Transcript-Stated Need overrides do not apply to a seller-locked package. For the record, the checks would have landed in the same place:
+1. Call-purpose override — call focus was MIXED (AI + lead gen). Seller chose the AI product only.
+2. Existing-vendor override — TRIGGERED in substance: prospect has an active Google Ads vendor (Converted Marketing) being wound down by the end of this month or next. Full Service Marketing would have been excluded; consistent with the seller lock.
+3. Budget-reality override — signals only (no explicit cap). Lowest-cost package that fits the stated need = AI Workforce Pro – Starter. Consistent with the seller lock.
+4. Effective-revenue override — not triggered. Gross $400K–$500K stated for the year; net not distinguished; not a contingency practice.
+
+Package decision file extracts: marketing_tier = null; marketing_name = null; coaching_name = null; law_tier/law_name = "AI Workforce Pro – Starter"; law_price_bundled = 700; law_price_retail = null; law_seats = 2; total_bundled = 700; total_savings = null; ad_spend_* = null; pricing_mode = "standalone"; bundle_eligible_count = 0; confidence = low; needs_seller_input = false.
+Stale fields: marketing_price_bundled (4997), marketing_price_retail (5697), coaching_price_bundled (3200), coaching_price_retail (3497) are leftovers from before the seller override. marketing_name/coaching_name are null, so none of them is used.
+
+=====================================================================
+MANDATORY PRICE LOOKUP (confirmed against audit-write.md tables)
+=====================================================================
+- Marketing package selected: none
+  - Bundled price: n/a | Stand-alone price: n/a | Savings: n/a
+- Non-marketing package selected: none
+  - Bundled price: n/a | Stand-alone price: n/a | Savings: n/a
+- Legal AI Workforce (LAW) package selected: AI Workforce Pro – Starter (2 users)
+  - Price (from table): $350/user/mo x 2 users = $700/mo
+  - Stand-alone price: none (no stand-alone price exists — never quoted in the client report)
+  - Savings: $0 — pricing_mode "standalone"; AI Workforce Pro – Starter never counts toward a bundle
+- AI Avatar / Video Growth add-on: none
+- Total monthly investment: $700/mo
+- Total savings: $0/mo (Block 3 shows one price, no retail strikethrough, and no savings callout)
+
+35% cap check: $700/mo vs revenue of $400K–$500K/yr (about $33,333–$41,667/mo) = 1.7%–2.1% — well within cap.
+
+=====================================================================
+AD SPEND / ROI
+=====================================================================
+Not applicable — no marketing/ads package is part of this recommendation. Block 4 removed from section_11_next_steps.html; AD_SPEND omitted from the executive summary. No "why this range" sentence written.
+
+=====================================================================
+ESCALATION FLAGS (INTERNAL ONLY — DO NOT SHARE WITH CLIENT)
+=====================================================================
+1. BELOW MINIMUM MRR: $700/mo is under the $2,497/mo minimum MRR (flagged in selection_notes). Built as-is because the seller locked it. Confirm with Michael before the call.
+2. LAW DELIVERY: confirm with sales rep that LAW delivery has launched and capacity is available before including in the proposal.
+3. SEAT COUNT: seller set 2 seats. The prospect never stated a seat count on the call; the trigger assumed 1 seat. Block 2 says "you and one team member" and the investment row says "2 users". Confirm who the two users are.
+4. REVENUE SOURCE: the decision file used HubSpot "$180K - $960K" (midpoint $570,000) with confidence "low"; the transcript states about $400K–$500K for the year (current run-rate $30,000–$40,000 a month). AI Workforce Pro – Starter has no revenue requirement, so the package is unaffected. The Fractional CTO roadmap step in Phase 2 requires $400K+ — the prospect is at or near that floor; confirm before quoting it.
+5. NO PRICES IN THE ROADMAP: Phases 2 and 3 name no tier and no price on purpose (marketing, Fractional CTO level, bookkeeping). Any future quote has to go through the eligibility tables again — Fractional CFO/COO products are hidden under $500K revenue.
+6. FRACTIONAL CTO NOT IN THE PROPOSAL: the prospect discussed Fractional CTO Level 1 on the call (about $3,800/mo per the rep, one custom workflow per month). The seller lock removed it from Block 2. It appears only as a Phase 2 step.
+7. MARKETING NOT IN THE PROPOSAL: the prospect asked about lead generation ("in terms of lead generations, what package do you have?" [0:50:59]) and said he is willing to raise the budget once intake is tuned. The seller removed marketing; Phase 3 mentions restarting lead generation under one vendor as a future step with no tier or price. If marketing is added later: multiple practice areas hide Essentials; Estate Planning is not a top-escalation practice area, but Houston is Tier 1 for the geographic multiplier; a Vietnamese-language campaign is needed (no 1.50x/1.33x Spanish multiplier applies).
+8. REVIEW DATA UNCONFIRMED — verify live before the call: no Google review count or rating was verified for the firm or any competitor; none is printed in the client report (qualitative framing only). Review counts unconfirmed — verify live before the call. The firm's ~42 reviews / 5 stars are rep-stated from the SMB Team AI report only.
+9. PAGESPEED NOT OBTAINED: PSI returned 429 and local Lighthouse was blocked (403), so the Website Audit shows no PageSpeed number (the template's score bullet was replaced). Run pagespeed.web.dev before the call if a number is wanted.
+10. UNOBSERVED ITEMS: GBP, local 3-pack, Google Ads SERPs, LSA, Meta Ad Library were not observed (SERPs not renderable, Ad Library 403). The report says "not captured/verify" and never says the firm is not running ads. Urgency score 5 is provisional.
+11. WEBSITE CONFLICT WITH CALL: the rep recommended adding an FAQ section on the call; a FAQ page with FAQPage schema is already live. The report treats it as existing (Website Audit positive).
+12. PLACEHOLDER TEXT LIVE ON SITE: "[Shandon to confirm: consultation fee, length, and whether it can be in person, by phone or by Zoom.]" on the homepage FAQ and /faqs/. Quick win 1.
+13. NAP/NAME/DOMAIN INCONSISTENCY: footer 11211 Katy Freeway Ste 660 vs directories 11205 Bellaire Blvd Ste B-31; name variants (Shandon Phan Law Firm, PLLC / Shandon Phan Law / Shandon Phan / Heartland Law / Heartland Legacy Law); domains shandonphanlaw.com, heartlandlawtx.com, heartlandlawtexas.com, legalclientassist legacy microsite. Quick win 2.
+14. UNVERIFIED THIRD-PARTY REVIEW SNIPPET: a critical Yelp snippet exists in search results. Not verified, not quoted or alluded to in the client report.
+15. CHATGPT LEAD-SOURCE CLAIM: two walk-ins reportedly cited ChatGPT; the AI report showed zero citations. The Google Ads blind spot describes it as something the prospect told us and does not present it as a confirmed lead source.
+16. COMPETITOR SET: local Houston firms only (David Nguyen, Tom Hoang, Your Legacy Legal Care; Capstone Legal Strategies and Heights Law Group in the ad landscape). No national brands, per the prospect's feedback on the prior AI report. No competitor-vs-client review comparison is made.
+17. TRANSCRIPT-INTEGRITY NOTES: "20 to 50 … 40 cases" is garbled (read as about 40 active matters; not used). Radio pause is "two years" in one place and "three, four years" in another (report says only "paused"). Ads budget/lead count is garbled (report says "a handful of leads"). "Own taxes" in the asset-inventory quote reads as "own properties"; Block 5 paraphrases instead of quoting it.
+18. Fixed language: the report does not mention live chat as an SMB Team service, CRM setup, ads status as fact, or profitability by practice area. The rep's pitch figures ($2,000–$2,500 management fee, "6–8 cases at $3,500", "60 preloaded skills", "900 law firms") were NOT used as the firm's data.
+19. Staffing detail kept out of Block 5: named employee, VA arrangement detail, the $150,000 office build-out and the savings loss were excluded from Block 5 per the Never-include rules. The Team section mentions a "newly added right-hand person" and a "part-time VA" without names.
+
+=====================================================================
+DOMINANT BUYING MOTIVE (Block 1)
+=====================================================================
+Inferred (no personal-life motive voiced): a firm that runs on systems so he is no longer the bottleneck, with institutional value beyond his personal name. His words: "I should spend a lot of time on growing my business and building our system instead of just doing every low-level task myself." (0:04:25); "figure out how to build a system that can last." (0:17:06); "so that it would have institutional branding values beyond my personal name." (0:25:58–0:26:00).
+Block 1 statement: "We help solo estate planning attorneys serving immigrant and middle-class families get AI-powered systems that take the repeatable work off their plate so they can build a firm that lasts beyond their personal name."
+
+=====================================================================
+QUICK WIN OPPORTUNITIES (8) — pillar | title | why | competitor | opportunity
+=====================================================================
+1. Lead Gen | Replace the bracketed placeholder answers on the live site | Homepage FAQ and /faqs/ still show "[Shandon to confirm: ...]" for the consultation question | none named | Publish the real fee, length, and format so the site is ready for visitors; quick win
+2. Lead Gen | Make the firm's name, address, and domain match everywhere | Footer 11211 Katy Freeway vs directories 11205 Bellaire Blvd; four name variants; several domains | none named | One-time cleanup of directories, site, and Google profile, timed with the DBA filing; quick win
+3. Lead Gen | Put reviews on a repeatable routine | Reviews are a real asset; no routine in place | none named (no verified competitor review data) | Monthly review-request routine after each signed plan; quick win
+4. Lead Gen | Add dedicated Katy and Sugar Land pages | Site names the cities in copy only; no city pages | Your Legacy Legal Care (offices in Houston, Galleria, Katy, Sugar Land per its site) | City pages with a Vietnamese option; long-term
+5. Intake | Write the intake process so staff convert closer to your rate | "when I directly engage, we have high conversion … when we let the staff handle that … it's lower" | none named | Short script, follow-up steps, handoff rules; quick win
+6. Intake | Cover after-hours and Vietnamese-speaking leads | Few bilingual staff; AI voice agent only being evaluated | none named | Evaluate after-hours AI voice coverage in both languages; long-term
+7. Team | Write SOPs and automate the asset inventory | Training takes 6 months to 2 years; asset inventory is the largest time sink | none named | SOPs for planned VAs and AI skills for repeatable inventory work; long-term
+8. Profit | Track hours and profit by fee level and trim the tool stack | Hours not tracked by level; overlapping tools and vendors | none named | Time and profit per level; one stack; quick win
+"Who Is Doing It Better" rows omitted on all cards except #4 — no other card has a named competitor with verified data for that specific item.
+
+=====================================================================
+WHAT YOU TOLD US (Block 5) — transcript sources and Block 2 mapping
+=====================================================================
+Row 1: "Build the business, not do the low-level tasks"
+  Verbatim line: [0:04:25] "I should spend a lot of time on growing my business and building our system instead of just doing every low-level task myself."
+  Block 2 support: AI Workforce Pro – Starter (pre-built skills and the weekly AI Implementation Session) — the only package.
+Row 2: "Gathering asset information from families is the biggest time sink"
+  Verbatim line: [0:37:57] "Because immigrant clients, they own taxes. … 10, 20 properties, but none of them know what is a warranty deed." [transcript unclear — read as "own properties"]; paraphrased in the report, not quoted.
+  Block 2 support: pre-built skills plus the weekly implementation session as a place to start on repeatable work.
+Row 3: "A command center and SOPs so hired VAs know what to do"
+  Verbatim line: [0:19:13] "But what I want to build is a command center, like a CEO command center, that way I can have quick access to all these things and then build out SOP training so that if we hire VAs, they would know what to do."
+  Block 2 support: weekly AI Implementation Session and library of pre-built skills.
+Next-step line: kickoff call with your Onboarding team.
+Excluded by rule: the named employee, the VA's location and arrangement detail, the $150,000 office build-out, loss of savings, vendor contract terms, and the rep's pitch figures.
+
+=====================================================================
+ROADMAP PHASE LOGIC
+=====================================================================
+Phase 1: what is being sold now (AI Workforce Pro – Starter, 2 users).
+Phase 2: FCOO Advisor NOT used — Fractional COO/CFO products are hidden under $500K revenue (stated $400K–$500K for the year). Next step is a Fractional CTO to lead the rollout and build custom automations (the product discussed on the call). No tier or price named in client copy.
+Phase 3: restart lead generation under one vendor once intake converts closer to his own rate (his stated condition for raising the budget) plus bookkeeping/financial visibility and a Fractional CTO level that matches growth. No tier or price named in client copy.
