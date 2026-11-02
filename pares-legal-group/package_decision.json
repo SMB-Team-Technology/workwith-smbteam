@@ -1,0 +1,70 @@
+{
+  "confidence": "medium",
+  "revenue_stated": null,
+  "net_revenue_stated": null,
+  "is_contingency_practice": false,
+  "revenue_effective": 180000,
+  "revenue_source": "hubspot_annual_law_firm_revenue",
+  "revenue_label": "$0 - $180K",
+  "revenue_verified": true,
+  "needs_revenue_confirmation": false,
+  "team_size_stated": null,
+  "team_size_source": null,
+  "team_size_effective": 3,
+  "practice_areas_detected": [
+    "immigration law (primary",
+    "shifting focus to prospective clients in latin america — \"a soft landing\" for lawful u.s. immi",
+    "immigration (orlando, fl; also puerto rico per site/transcript)",
+    "trademark (mentioned on call, unclear whether active — see step 9)",
+    "immigration",
+    "trademark"
+  ],
+  "hubspot_company": null,
+  "firm_identity_check": "MISMATCH — trigger says \"Pares Legal Group\"; website says \"Pares & Asociados Abogados de Inmigración, LLC\" (LinkedIn: \"Pares Legal & Consulting Group LLC\"; Florida entity: \"Carlos Pares Immigration Law, PLLC\"). The trigger notes the HubSpot company record was unreadable and used the contact's company field. Also: HubSpot contact email (javierpares@gmail.com) does not obviously match the contact name Carlos Pares; the transcript confirms the prospect is Carlos, who is the attorney on the website. Seller should confirm the legal/brand name to use in the report.",
+  "package_source": "rules",
+  "package_override": null,
+  "needs_seller_input": false,
+  "revenue_only_option": null,
+  "call_focus": {
+    "primary_engagement": "mixed",
+    "products_discussed": [
+      "AI Workforce Pro – Starter",
+      "Full Service Marketing"
+    ],
+    "lead_gen_gap": true
+  },
+  "marketing_tier": "Starter",
+  "marketing_name": "Full Service Marketing — Starter",
+  "marketing_price_bundled": 4997,
+  "marketing_price_retail": 5697,
+  "marketing_savings": 700,
+  "coaching_name": "Elite Coach",
+  "coaching_price_bundled": 2600,
+  "coaching_price_retail": 3497,
+  "coaching_savings": 897,
+  "law_tier": "AI Workforce Pro – Starter",
+  "law_name": "AI Workforce Pro – Starter",
+  "law_price_bundled": 350,
+  "law_price_retail": null,
+  "law_seats": 1,
+  "total_bundled": 7947,
+  "total_savings": 1597,
+  "ad_spend_conservative": 3000,
+  "ad_spend_aggressive": 12000,
+  "ad_spend_rationale": {
+    "conservative_basis": "no practice area matched a channel-minimum table — default floor",
+    "aggressive_basis": "scaled 4x off the conservative channel-minimum floor"
+  },
+  "selection_notes": [
+    "AI Workforce Pro – Starter discussed on call: 1 seat × $350/mo (team size not stated — 1 seat assumed; confirm seat count).",
+    "Revenue not in research notes — sourced from HubSpot (hubspot_annual_law_firm_revenue): \"$0 - $180K\" → $180,000",
+    "Team size not stated in research notes or HubSpot — assumed 3. Please confirm headcount.",
+    "Revenue under $750K but multiple practice areas detected: Essentials hidden (requires single practice area) — Starter tier.",
+    "Revenue under $250K: Elite Coach selected, scoping approval required.",
+    "AI Workforce Pro – Starter does not count toward bundle pricing.",
+    "Total at conservative ad spend ($10,947/mo) is over the 35% cap ($5,250/mo on $180,000 revenue) — review with sales rep."
+  ],
+  "pricing_mode": "bundled",
+  "bundle_eligible_count": 2,
+  "unpriced_products": []
+}
