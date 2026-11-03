@@ -1,0 +1,85 @@
+LAW OFFICE OF JONATHAN M. WILLIAMS — SECTION 11 WORKINGS (INTERNAL — NEVER CLIENT-FACING)
+Sales rep: Cathy Tran | Proposal call: Friday, November 6, 2026, 10:00 AM ET
+
+=====================================================================
+PACKAGE SOURCE AND OVERRIDE LOG
+=====================================================================
+Source of package: package_decision.json (package_source "rules") plus seller override recorded in selection_notes: "Seller override: switched marketing to Web + SEO Starter and dropped coaching per Slack request on 2026-11-03 (Web + SEO includes no paid ad spend)." proposal_review.json status "locked".
+Locked package: Web + SEO Starter + AI Workforce Pro – Starter (1 user). No coaching. No FCOO/FCFO. No paid ads, LSA or OmniSocial. No AI Avatar.
+Seller always wins: the four Transcript-Stated Need overrides do not apply to a seller-set package. For the record, the checks would have landed in a similar place:
+1. Call-purpose override — call_focus.primary_engagement = marketing with a stated lead-gen gap ("More cases, absolutely."). Reps steered to web + SEO content and AI Workforce Pro, and advised against paid ads. Consistent with the seller package.
+2. Existing-vendor override — not triggered. Only a yearly website-hosting fee to the site builder; no marketing/SEO/ad vendor contract.
+3. Budget-reality override — signals only. Prospect: "I didn't consider a budget for it." (00:14:37). The "tight budget" framing was the reps', not the prospect's. Seller package is lower cost than the revenue-table default (Starter marketing + Elite Coach).
+4. Effective-revenue override — not triggered mechanically (net not distinguished from gross; fee structure not stated), but this is a contingency PI practice stating gross only ($80–90K). See flag 1.
+
+Package decision file extracts: marketing_tier = Web + SEO Starter; marketing_price_bundled = 3997; marketing_price_retail = 3997; marketing_savings = 0; coaching_name = null; law_tier/law_name = AI Workforce Pro – Starter; law_price_bundled = 350; law_price_retail = null; law_seats = 1; total_bundled = 4347; total_savings = null; ad_spend_* = null; pricing_mode = "standalone"; bundle_eligible_count = 1; confidence = low; needs_seller_input = false; needs_revenue_confirmation = false.
+Stale fields not used: coaching_price_bundled (2600) and coaching_price_retail (3497) are leftovers from the pre-override Elite Coach selection; coaching_name is null. The selection_notes line about "$15,447/mo at conservative ad spend" and "Elite Coach selected" is also stale.
+
+=====================================================================
+MANDATORY PRICE LOOKUP (confirmed against audit-write.md tables)
+=====================================================================
+- Marketing package selected: Web + SEO Starter
+  - Bundled price (from table): $3,497/mo
+  - Stand-alone price (from table): $3,997/mo
+  - Charged price: $3,997/mo — pricing_mode "standalone" (only one bundle-eligible product; AI Workforce Pro – Starter never counts toward a bundle), so no bundle discount applies
+  - Savings: $0/mo
+- Non-marketing package selected: none
+  - Bundled price: n/a | Stand-alone price: n/a | Savings: n/a
+- Legal AI Workforce (LAW) package selected: AI Workforce Pro – Starter (1 user)
+  - Price (from table): $350/user/mo x 1 user = $350/mo
+  - Stand-alone price: none (no stand-alone price exists — never quoted in the client report)
+  - Savings: $0/mo
+- AI Avatar / Video Growth add-on: none
+- Total monthly investment: $3,997 + $350 = $4,347/mo
+- Total savings: $0/mo (Block 3 shows one price per row, no retail strikethrough, no savings callout)
+
+35% cap check: $4,347/mo vs revenue of $85,000/yr (about $7,083/mo) = about 61% of monthly revenue. The cap is $2,479/mo. OVER THE CAP — built as-is because the seller set the package (rule broken: total SMB spend must not exceed 35% of monthly revenue). The 4-month funds check (revenue under $250K) is $17,388 ($4,347 x 4).
+
+=====================================================================
+AD SPEND / ROI
+=====================================================================
+Not applicable — no marketing/ads package that carries ad spend is part of this recommendation (Web + SEO includes no paid media). Block 4 removed from section_11_next_steps.html; AD_SPEND omitted from the executive summary. No "why this range" sentence written. Conservative and aggressive ad spend: none.
+
+=====================================================================
+DBM STATEMENT (Block 1)
+=====================================================================
+Inference (no explicit quote about life outside work): a steady, predictable flow of personal injury cases so he can stop depending on word of mouth and eventually hire help rather than doing everything alone. Supporting prospect quotes: "Ultimately, yes." (00:12:46); "I would have to have a constant flow of cases." (00:13:01); "I know that I do need to do something different than just relying upon word of mouth." (00:26:28); "I would see improvement in my bottom line." (00:32:59).
+Block 1: "We help solo personal injury attorneys in Jefferson Parish get a steady flow of new cases they can see and count on so they can stop relying on word of mouth and hire help instead of doing everything alone."
+
+=====================================================================
+QUICK WIN OPPORTUNITIES (8 identified; 7 used in the report)
+=====================================================================
+1. Lead Gen / Quick Win — Add location pages for Jefferson Parish, Gretna, Metairie, Marrero and Orleans Parish. Why: STEP 1 found no geo-targeted pages; site is the only owned asset. Competitor: Ron Austin Law (dedicated Jefferson Parish PI page, STEP 10 threat 2 — on-site fact, no review count). Opportunity: give Google a local page to show for each area.
+2. Intake / Quick Win — Put a call/consultation prompt above the fold and move the form up. Why: STEP 1 — only above-the-fold CTA is "LEARN MORE" to the About page; form is mid-page. No competitor.
+3. Profit / Quick Win — Track where every inquiry comes from. Why: prospect: "there's no way to determine how, where the cases are coming from" (00:07:37); social is untracked ("No.", 00:07:28). No competitor.
+4. Lead Gen / Quick Win — Verify and optimize the Google Business Profile and clean up directory listings. Why: GBP not observed; Lawyer.com may show Marrero (unconfirmed); AttorneyYellowPages filed under a bankruptcy category path (URL only). No competitor named (competitor GBP data not observed).
+5. Lead Gen / Long-Term — Build an ongoing content program (case-type guides, FAQs, video). Why: STEP 1 — no blog, no video; site built once ("They just made it, and that was it.", 00:22:12). No competitor (competitor content not compared).
+6. Intake / Long-Term — Re-add phone coverage once volume supports it. Why: prior answering service dropped because "the volume wasn't there to pay for that service" (00:20:41). No competitor.
+7. Team / Long-Term — Offload repeatable admin with AI now, plan the first hire as case flow steadies. Why: solo, "Is it just you?" "Yes" (00:12:22); "I would have to have a constant flow of cases." (00:13:01). No competitor.
+8. (not used) Profit / Long-Term — Set a revenue goal and marketing budget. Why: "I didn't have any expectation... as far as a goal of number" (00:08:50); "I didn't consider a budget for it." (00:14:37). Covered in Section 9 and Block 6 Phase 2 instead.
+
+=====================================================================
+WHAT YOU TOLD US (Block 5) — SOURCING LOG
+=====================================================================
+Row 1 (supports Web + SEO Starter, most central package; reddest pillar = Lead Gen): Owner raised wanting more personal injury cases. Verbatim: "More cases, absolutely." [00:02:45]; "Personal injury." as the area to grow [00:05:07]. Addressed by: Web + SEO Starter location/practice pages and Google presence.
+Row 2 (supports Web + SEO Starter): Owner raised that word of mouth has been the source and he needs something different. Verbatim: "I know that I do need to do something different than just relying upon word of mouth." [00:26:28]; "Word of mouth." [00:05:34]. Addressed by: Web + SEO Starter gives a source of new inquiries beyond referrals.
+Row 3 (supports AI Workforce Pro – Starter): Owner raised that he works alone and would need steady case flow to hire. Verbatim: "Is it just you?" — "Yes" [00:12:22]; "I would have to have a constant flow of cases." [00:13:01]. Addressed by: AI Workforce Pro – Starter takes repeatable work (email, case documentation, task scheduling, as described by the reps on the call) off his plate while case flow builds.
+Excluded per "never include" rules: bookkeeper criticism (generalized elsewhere), personal/family remark ("Just me.", 00:32:06), revenue figures.
+
+=====================================================================
+ESCALATION FLAGS (INTERNAL ONLY — DO NOT SHARE WITH CLIENT)
+=====================================================================
+1. REVENUE / TIER MISMATCH: revenue is about $85,000/yr (gross; net and fee structure not stated; contingency PI practice). Under $250K — scoping approval required and confirm funds to cover 4 months ($17,388). Web + SEO Starter is normally a $500K+ tier; built as-is on seller override. Confirm actual collected revenue with Cathy before the call (confidence "low").
+2. OVER THE 35% CAP: $4,347/mo is about 61% of monthly revenue (cap $2,479/mo). Built as-is on seller override. Expect pushback on affordability; the prospect has not stated a budget.
+3. LAW RULE BROKEN: the LAW section says do not recommend LAW to a solo firm with no support staff. Seller override applies; confirm AI Workforce Pro – Starter (1 user) with Cathy. Also confirm LAW delivery has launched and capacity is available before including it in the proposal. The prospect never stated a tier or seat count on the call ("AI Workforce Pro", tier not specified).
+4. NO PRICE DISCUSSED ON CALL: the reps said the internal marketing team would scope web + SEO and give pricing on the Nov 6 call. The Web + SEO Starter figure ($3,997/mo) comes from the pricing table via the seller override, not from a quote to the prospect.
+5. OPEN ITEM FROM CALL: SMB Team was to check for existing clients in Jefferson/Orleans Parish before Nov 6 (prospect asked whether SMB Team works with firms in his parishes).
+6. REVIEW DATA UNCONFIRMED — verify live before the call: Review counts unconfirmed — verify live before the call. No Google review count or rating was verified for the firm or any competitor (Ron Austin Law, Palazzo Law Firm, Redmann). None is printed in the client report; competitor threat cards use on-site facts (dedicated Jefferson Parish / Gretna PI pages, 25+ years in market per own description) only. The Facebook "98% recommend, 17 reviews" figure is UNCONFIRMED and was not printed.
+7. PAGESPEED METHOD: PSI API returned 429; scores (65 mobile / 97 desktop) are from a local Lighthouse run. The report labels them "Lighthouse test of the live site."
+8. UNOBSERVED ITEMS: GBP, local 3-pack (all five practice areas), Google Ads SERPs, LSA and Meta Ad Library were not reachable. The report says "could not be verified in this review" and never says the firm is not running ads. Urgency score 7 is provisional.
+9. AD STRATEGY: reps advised against PPC/LSA/social ads/lead buying at this revenue level. Section 6 ad sub-sections say so by implication (foundation first); no paid media is in the proposal and no ad-spend figures appear.
+10. PERSONAL INJURY MARKET: confirm whether the New Orleans metro counts toward the "PI in top 40 metro" escalation; likely outside the top 40, not verified.
+11. UNSUPPORTED FIGURES NOT USED: web-search snippet settlements ($975,000 and $700,000) not found on the live page — not used. The reps' "$2,500 a case" and "$100k+/year" ad-spend statements are rep opinions — not used. Prospect's own average case value ($5,000–$8,000) is used in Sections 7–9 as his estimate.
+12. DIRECTORY ISSUES (unconfirmed): Lawyer.com title shows Marrero vs Harvey (page not opened); AttorneyYellowPages "bankruptcy" category path seen in URL only. Described in the report as "appears."
+13. Fixed language: the report does not mention live chat as an SMB Team service, CRM setup, ads status as fact, or profitability by practice area. The prospect's "paying myself" answer was not used.
+14. ROADMAP: Phases 2 and 3 name no tier and no price on purpose. Fractional COO/CFO products are hidden under $500K revenue and Fractional CTO needs $400K+; any future quote must go back through the eligibility tables.
