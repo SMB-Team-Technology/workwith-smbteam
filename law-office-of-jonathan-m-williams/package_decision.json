@@ -40,12 +40,12 @@
     ],
     "lead_gen_gap": true
   },
-  "marketing_tier": "Starter",
-  "marketing_name": "Full Service Marketing — Starter",
-  "marketing_price_bundled": 4997,
-  "marketing_price_retail": 5697,
-  "marketing_savings": 700,
-  "coaching_name": "Elite Coach",
+  "marketing_tier": "Web + SEO Starter",
+  "marketing_name": "Web + SEO Starter",
+  "marketing_price_bundled": 3997,
+  "marketing_price_retail": 3997,
+  "marketing_savings": 0,
+  "coaching_name": null,
   "coaching_price_bundled": 2600,
   "coaching_price_retail": 3497,
   "coaching_savings": 897,
@@ -54,14 +54,11 @@
   "law_price_bundled": 350,
   "law_price_retail": null,
   "law_seats": 1,
-  "total_bundled": 7947,
-  "total_savings": 1597,
-  "ad_spend_conservative": 7500,
-  "ad_spend_aggressive": 25000,
-  "ad_spend_rationale": {
-    "conservative_basis": "personal injury (the priority and where most income comes from)",
-    "aggressive_basis": "capped by Starter tier's ad cap"
-  },
+  "total_bundled": 4347,
+  "total_savings": null,
+  "ad_spend_conservative": null,
+  "ad_spend_aggressive": null,
+  "ad_spend_rationale": null,
   "selection_notes": [
     "\"AI Workforce Pro\" named without a tier — using AI Workforce Pro – Starter (team of 1).",
     "AI Workforce Pro – Starter discussed on call: 1 seat × $350/mo.",
@@ -69,9 +66,11 @@
     "Revenue under $750K but multiple practice areas detected: Essentials hidden (requires single practice area) — Starter tier.",
     "Revenue under $250K: Elite Coach selected, scoping approval required.",
     "AI Workforce Pro – Starter does not count toward bundle pricing.",
-    "Total at conservative ad spend ($15,447/mo) is over the 35% cap ($2,479/mo on $85,000 revenue) — review with sales rep."
+    "Total at conservative ad spend ($15,447/mo) is over the 35% cap ($2,479/mo on $85,000 revenue) — review with sales rep.",
+    "Seller override: switched marketing to Web + SEO Starter and dropped coaching per Slack request on 2026-11-03 (Web + SEO includes no paid ad spend).",
+    "Only one bundle-eligible product in this package — stand-alone pricing applied, no bundle savings."
   ],
-  "pricing_mode": "bundled",
-  "bundle_eligible_count": 2,
+  "pricing_mode": "standalone",
+  "bundle_eligible_count": 1,
   "unpriced_products": []
 }
