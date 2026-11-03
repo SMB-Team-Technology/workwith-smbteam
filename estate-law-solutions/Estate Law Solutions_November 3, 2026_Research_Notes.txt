@@ -1,0 +1,207 @@
+SMB TEAM — AUDIT RESEARCH NOTES (PASS 1)
+Firm: Estate Law Solutions
+Friendly name: estate-law-solutions
+URL given: https://estatelawsolutions.com/
+Sales rep: Daniel Lowe
+Date: November 3, 2026
+Contact: Angela Decoteau (owner / sole attorney)
+
+RESEARCH LIMITATIONS (READ FIRST — applies to Pass 2)
+- This run had no interactive browser. Available: HTTP fetches, web search, and the Google PageSpeed API.
+- The firm's own site is NOT live (see STEP 1), so there was nothing to audit on-page.
+- Google Maps / Google Business Profile, Google SERPs (3-pack, Ads, LSA), and the Meta Ad Library could NOT be reached. Everything that needed them is recorded as "not observed". Nothing in this file was fabricated or estimated.
+- Every review count / rating below came from a third-party aggregator and is tagged UNCONFIRMED. Pass 2 must not print UNCONFIRMED figures as specific numbers in the client-facing report.
+- Web search snippets for the firm's bio (CPA since 1994, "currently earning her MBA", "licensed 5 years" on Avvo) conflict with each other and with what Angela said on the call (she has a double MBA). They are stale or unreliable and were NOT used.
+
+==================================================================
+STEP 1 — WEBSITE RESEARCH
+==================================================================
+- Website URL confirmed live: NO.
+  - https://estatelawsolutions.com/ fails TLS (certificate belongs to *.dealeron.com); http:// returns 404 with the page "This site is currently not hosted by Dealeron" (a placeholder from a car-dealer web host).
+  - www.estatelawsolutions.com resolves to the same DealerOn host.
+  - go.estatelawsolutions.com/els-baton-rouge-event (a workshop landing page that appears in search results) returns 404.
+  - Search engines still index old pages (/reviews, /meet-our-staff) but they do not load.
+  - Matches the prospect's own statement on the call (see Key prospect quotes): she has no website.
+- Last redesign date or estimated age: not observable (site down). Prospect says the website "went down in the all remake of … end of 2025".
+- Mobile responsive: not observed (site down)
+- Homepage headline: none — no live homepage
+- CTA above fold: not applicable (no live site)
+- Contact form location: not found (no live site)
+- Live chat present: no (no live site)
+- Attorney bio present: not observed on a live site
+- Video present: not observed
+- Blog present: no (no live site)
+- PageSpeed mobile score: NOT AVAILABLE — no live site to test; the PageSpeed API also returned HTTP 429 (daily quota exceeded) on both runs. No number is recorded rather than an estimate.
+- PageSpeed desktop score: NOT AVAILABLE — same reason.
+
+==================================================================
+STEP 2 — GOOGLE BUSINESS PROFILE
+==================================================================
+Google Maps / GBP could not be opened directly. Data below is from a Birdeye listing that mirrors Google reviews.
+- GBP found: not directly observed. Prospect confirms an active Google profile ("Google's been really good", "49,000 views of me, just me, on the Google").
+- Star rating: 4.9 [UNCONFIRMED — sourced from Birdeye (reviews.birdeye.com listing "Estate Law Solutions", which lists Google as its review source), not independently confirmed via Google]
+- Total review count: 169 [UNCONFIRMED — sourced from Birdeye, not independently confirmed via Google]
+- Most recent review date: "2 months ago" per the Birdeye page (relative date, roughly September 2026; exact date not available) [UNCONFIRMED]
+- Primary category: not confirmed on Google. Birdeye lists "Legal, Estate Planning Law" (Birdeye's own categories, not GBP).
+- Photos active: yes, per prospect (she uses an AI tool for GBP postings and pictures and "keep[s] that up a good bit") — not independently observed
+- Posts active: yes, per prospect (same statement) — not independently observed
+- Address on listings: 635 Highlandia Dr, Suite A, Baton Rouge, LA 70810
+
+==================================================================
+STEP 3 — LOCAL 3-PACK SEARCHES
+==================================================================
+NOT OBSERVED. Google SERPs and Maps could not be reached from this environment, so none of the required searches were run. No pack positions or pack review counts are recorded.
+
+Practice Area 1: Estate planning / trusts (Louisiana)
+- Search 1 "estate planning attorney Baton Rouge": not observed
+- Search 2 "trust attorney Baton Rouge": not observed
+- Search 3 "living trust lawyer near me": not observed
+
+Practice Area 2: Successions (Louisiana probate equivalent)
+- Search 1 "succession attorney Baton Rouge": not observed
+- Search 2 "probate lawyer Baton Rouge": not observed
+- Search 3 "Louisiana succession lawyer": not observed
+
+Recommended follow-up by a person with browser access: run the six searches above and fill in firm presence and pack competitors.
+
+==================================================================
+STEP 4 — COMPETITOR REVIEW COUNTS
+==================================================================
+Competitors were chosen from web-search results for Baton Rouge estate planning. None is confirmed to be in a Google local pack. All figures are from aggregators.
+- Competitor 1: Theus Law Offices — reviews: 154 [UNCONFIRMED — sourced from a search-result snippet citing a review aggregator (arrivala.com), platform not identified, not independently confirmed via Google] — rating: 4.9 [UNCONFIRMED — same source]
+- Competitor 2: Leger Law Group, LLC — reviews: 21 [UNCONFIRMED — sourced from a search-result snippet citing directory/aggregator pages (e.g. Yahoo Local/Nextdoor), not independently confirmed via Google] — rating: 4.8 [UNCONFIRMED — same source]
+- Competitor 3: Field Law, LLC — reviews: 21 [UNCONFIRMED — sourced from Birdeye, not independently confirmed via Google] — rating: 3.9 [UNCONFIRMED — sourced from Birdeye]
+- Comparison: on these aggregator figures the prospect (169 [UNCONFIRMED]) has more reviews than Leger Law Group and Field Law and is level with / slightly ahead of Theus Law Offices. No competitor can be described as out-reviewing the prospect or "dominating" on review count.
+
+==================================================================
+STEP 5 — DIRECTORY LISTINGS
+==================================================================
+Checked via web search and fetch only. Several directories blocked fetches (HTTP 403), so listing contents could not be read.
+- Avvo: a profile for "Angela Adele Decoteau" appears in search results (snippet: 5.0 rating, 1 review) — not opened, not verified.
+- Justia: fetch blocked (403). Justia Baton Rouge/Gonzales estate planning pages appear in search results; whether the firm is listed was not confirmed.
+- FindLaw: not checked for the firm.
+- Yelp: not checked for the firm.
+- Lawyers.com: a listing for Angela Adele Decoteau (Baton Rouge) exists per search results; fetch blocked (403), details not read.
+- BBB: a profile "Estate Law Solutions, LLC" exists (search snippet says business started 2/23/2021). Accreditation status is contradictory across search snippets (one says A+ / accredited, another says not accredited) — unresolved, do not cite.
+- Birdeye: listing exists; it is unclaimed by the owner; its "website" field points to the Facebook page, not a website.
+- Facebook: facebook.com/estatelawsolutionsLA exists. LinkedIn profile for Angela Decoteau exists. Also legal-directory.net.
+- NAP consistency: address 635 Highlandia Dr Suite A, Baton Rouge, LA 70810 is consistent across Birdeye, BBB and search results. Phone (225) 647-8502 appears in search results; the HubSpot contact phone is 225-715-1587 (likely a direct/mobile line, not necessarily an inconsistency). No NAP conflict confirmed.
+- Geo-targeting landing pages for surrounding cities: none — there is no live website.
+
+==================================================================
+STEP 6 — GOOGLE ADS
+==================================================================
+NOT OBSERVED (Google SERPs unreachable). Per the ADS FRAMING RULE, nothing here states the firm is or is not running ads; the only ad facts are what the prospect said (STEP 9).
+
+Practice Area 1: Estate planning / trusts
+- Firm ads observed: not observed (not checked live). Prospect said she ran "a little bitty Google ad … I think it was $200 a month" — current status unknown.
+- Named local competitors running ads: not observed
+
+Practice Area 2: Successions
+- Firm ads observed: not observed
+- Named local competitors running ads: not observed
+
+==================================================================
+STEP 7 — LOCAL SERVICE ADS
+==================================================================
+- Firm appears in LSA: not observed
+- Google Screened: not observed
+- LSA review count: not observed
+- Named local competitors in LSA: not observed
+
+==================================================================
+STEP 8 — META ADS
+==================================================================
+Meta Ad Library could not be queried from this environment.
+- Firm has active ads: not observed. Prospect says workshop advertising (discussed in connection with Facebook) was run in 2024–2025 and then stopped when she "erased" the workshop model; current status unknown.
+- Named local competitor 1: Theus Law Offices — not observed
+- Named local competitor 2: Leger Law Group, LLC — not observed
+
+==================================================================
+STEP 9 — TRANSCRIPT EXTRACTION
+==================================================================
+Transcript source: full verbatim Fathom transcript (summary used only as overview)
+
+Reading notes: speech-to-text garbles some words. "Lomatics" = Lawmatics (her CRM; she says "lawmatics" later). "Secessions" = successions. "GrokBot" is probably a different product name [transcript unclear]. Transcript line "I did a lot of workshops in 2025 and 2024, 2026" [transcript unclear — read as 2024 and 2025]. Fathom's AI summary says "many warm leads drop off after hearing the $600 consultation fee"; the transcript only supports that people filtered out by the receptionist team after hearing the $600 fee are not called back, so the summary is stronger than what she said.
+
+- Practice areas confirmed: Estate planning — trusts and successions (Louisiana). She also files the court proceedings for successions. She declines one-off documents: "I'm Trust and Secessions only, and if somebody just off the street wants a power of attorney package, I don't do it." (Web sources also list probate and Medicaid planning; not confirmed on the call, so not recorded as practice areas.)
+- Current lead sources: "it could be Google, could be referral, but I push everyone to call their mainline number" (00:12:10). "I looked at the metrics in Lomatics, a good bit on referrals in Google" (00:32:00). Monthly lunch-and-learns, a workshop pipeline, and an email list: "3,000 people on my email list" that only hears about events. Also Facebook: "they see me on Facebook." Referral partner relationships are "a little bit clunky."
+- Ads ever run: Yes. (1) A small Google ad: "a little bitty Google ad I put out, like, I think it was $200 a month. I mean, it's a nothing." (00:31:49) — current status not stated. (2) Paid workshop advertising/marketing: "Workshop was costing me a lot of money to advertise and market" (00:05:28). Results turned in fall 2024 and fall 2025: "spending double or triple the amount of money and getting less than a third or fourth of that result" (00:06:37). Earlier "I would have 60 people registered and 40 people show up." Platform not explicitly named for the workshop ads (Facebook discussed). She then dropped the workshop model and shifted to referrals and her Google page.
+- Firm identity check: matches (trigger "Estate Law Solutions", owner Angela Decoteau; consistent with HubSpot and web search for Estate Law Solutions, LLC, Baton Rouge). Note: the trigger URL estatelawsolutions.com is not a live site.
+- Team size: Solo attorney (Angela). She was "by myself, January 2026." Now: one new staff person, almost fully onboarded (files, client care, internal bookkeeping/bills, being trained to follow up on warm leads); an outsourced receptionist team (Lex Reception) for the mainline; a Philippines-based contractor who builds in Lawmatics ("steady Eddie for five years", now slipping); a client volunteer who covered the front desk until she got sick; looking to hire an executive assistant.
+- Team size (total headcount): not stated
+- Annual revenue (gross / case value): about $50,000 per month ("I'm right about 50,000 per month", 00:30:22) ≈ $600,000/year. She "can hit 50,000 a month if I'm working really hard" but "last month I didn't."
+- Annual revenue (net / take-home / collected): not distinguished from gross
+- Revenue (annual, best estimate): $600,000
+- Fee structure: not stated beyond a $600 consultation fee ("The consultation fee, which is $600") and a "client care program" membership (initial two-year term). She also said she "changed pricing, increased our price." Appears to be flat-fee/membership but not explicitly stated.
+- Revenue goal: $100,000 per month (≈ $1.2M/year) — "I like to get up to $100,000 a month. That's my threshold, just be by myself." (00:32:15)
+- Average case value: not stated
+- Current close rate: not stated — default to 15%
+- Number of locations: 1 (Baton Rouge office per web listings)
+- Spanish campaign needed: no
+- Dominant buying motive: A firm that runs without her doing the implementing, so she can keep protected time while scaling. Her words: "I need people that can take this vision and just take it and just run with it." (00:21:19) and "I'm looking for a team that can take what I already have the vision. … I already know what I want. I just don't have anybody to implement it properly." (00:22:22). Also: "I protect my weekends now." (00:50:41) (inferred motive type 1: a firm that runs itself so she has more time, while holding client-care excellence).
+- Any profitability claims made by prospect: none stated
+- Any claims about case types or practice areas: "I'm Trust and Secessions only" (00:14:18). Process claim (not a profitability claim): she cut drafting errors from "probably at an 80% error rate" to "almost zero errors now" using an AI chat tool (00:41:02–00:41:17).
+- Stated call focus / product interest: Booked after asking about AI automations ("I believe I was looking at automations and adding automations into your practice", 00:03:17; she wanted trust and succession drafting and intake pipelines "in a box"). The call then broadened to operations: she needs a team that implements her plans, a bookkeeper/CFO ("I have no bookkeeper"), a coach/sounding board ("I would probably toy with the idea of having a coach"), fixing intake leakage, and activating her 3,000-person email list. The rep presented the AI tool (agentic, enterprise-level privacy), fractional services (coaching, COO/CFO) and bookkeeping, all as 12-month agreements. Not a standard marketing/growth discovery. She also asked for help with client-care memberships and events. Coaching was discussed without a tier or price; bookkeeping was discussed but is not in the product alias table; FCOO was described by the rep as a concept but not offered for her specifically.
+- Primary engagement: coaching/ops
+- Products discussed on call: AI Workforce Pro, FCFO
+- Lead-gen gap stated: no — she does not ask for more leads; the rep concluded "that doesn't sound like you need any leads." She wants intake conversion fixed first: "And we crank that marketing up and tighten up that leakage. That'd be great." (00:35:03) and said earlier "I can't turn marketing on until the foundation is right." (00:08:17). Borderline — treat as conversion/nurture need, not an acquisition request.
+- Existing marketing/SEO/ad vendor engagements: none stated as active. Related vendors: Lex Reception (outsourced receptionist, active); a Philippines contractor for Lawmatics build-out (active, unreliable); an events/management company that helped with the annual "Beyond the Trust" event but "it didn't work" for the broader relationship; a prior workshop provider ("Bambiz" [transcript unclear]); an unresponsive CPA who was supposed to clean up her books three or four months ago (she said she is going through CPAs [transcript unclear]). She previously paid for an intake-training program: "I sent my people to these online programs to get trained and nothing happened."
+- Budget constraints stated: none stated. Related objections: "whatever I have to get right now, it has to make me money" (00:51:13); worry about a 12-month commitment: "what if like six months, and I'm just like, this is totally not working" (00:51:44); wants proof of delivery ("trying to filter through the people that really can deliver").
+
+Other call facts for Pass 2
+- Tools: Lawmatics CRM (seven-stage pipelines for intake, workshop leads, hired trusts, successions); Lex Reception; she uses an AI chat tool for drafting QA and planning.
+- Schedule: sees clients only Mondays; signings once a month on Thursdays; takes Fridays–Sundays off; leaves at 3–4 PM.
+- Past coaching: went from group to private coaching and "it really wasn't enough" — she needs implementation, not more advice ("Now, hire me somebody." 00:24:17).
+- Next step: proposal presentation Friday, November 6, 2026 at 8:00 AM Central, with Daniel Lowe.
+
+Key prospect quotes
+1. (00:03:17, why she booked) "I believe I was looking at automations and adding automations into your practice."
+2. (00:10:34, website) "I have no website. … So there's no website, no SEO, no, it's nothing."
+3. (00:08:24, standard) "my goal, I mean, it's going to be excellence of client care, or it's not going to happen, as far as I'm concerned."
+4. (00:18:36, lead sources / email list) "3,000 people on my email list. 3,000 that I could be marketing to, though, the slow drip. Not happening."
+5. (00:22:22, team / implementation) "I'm looking for a team that can take what I already have the vision. … I already know what I want. I just don't have anybody to implement it properly."
+6. (00:29:49, profit / books) "I have no bookkeeper. My bookkeeper left. I have nobody doing my books right now."
+7. (00:30:22, revenue) "I'm right about 50,000 per month."
+8. (00:32:15, goals) "I like to get up to $100,000 a month. That's my threshold, just be by myself."
+9. (00:32:37, intake) "the leakages … from intake … to take some of those, like, warm leads that need just a little bit more help to get across the threshold, because Lex is not really sales at all."
+10. (00:50:41, DBM) "I'm remaking me and this firm on a whole different foundation. I protect my weekends now."
+11. (00:51:13, ROI) "whatever I have to get right now, I mean, it has to make me money."
+12. (00:51:44, objection) "what if like six months, and I'm just like, this is totally not working."
+
+==================================================================
+STEP 10 — COMPETITIVE URGENCY SCORE
+==================================================================
+Score: 4 (provisional — ads, 3-pack and PageSpeed could not be observed, so the score rests on website, reviews, and directory presence only)
+
+Reasoning: The firm has no live website and no SEO, which is a real visibility gap. Its review base is strong relative to the three named competitors (see STEP 4, all UNCONFIRMED), so competitors do not have a review advantage. Ad activity for all parties is unobserved. The larger constraint on growth is intake conversion and implementation capacity, which came from the call and not from the competitive research.
+
+Named local competitor threats:
+1. Theus Law Offices — live site with dedicated Baton Rouge estate planning, trust, probate and elder law pages; claims 29 years of experience and dual board certification; roughly 154 reviews at 4.9 [UNCONFIRMED]. Strongest organic-search presence of the three.
+2. Leger Law Group, LLC — live site and listings on FindLaw, Avvo and other directories; Baton Rouge estate planning; about 21 reviews [UNCONFIRMED].
+3. Field Law, LLC — estate planning and successions center in Baton Rouge; lower review base (about 21, 3.9 [UNCONFIRMED]); a threat mainly because it has a website where the prospect has none.
+
+Dynamic sentence: "A score of 4 means competitors have meaningful advantages in one or more areas and are pulling ahead. You are not invisible yet — but the window to close the gap is narrowing. Every month without action is a month they extend their lead."
+
+==================================================================
+PASS 2 — VERIFICATION CHECKLIST
+==================================================================
+[x] Every number in the notes matches actually observed data — nothing estimated; unobtainable items marked "not observed"/"not available"
+[x] Competitor review counts: none exceeds the prospect; none presented as "dominating"; all from aggregators and tagged
+[x] Every review count and star rating carries a verification-method tag (all UNCONFIRMED)
+[x] Annual revenue: prospect gave one monthly figure; gross vs net marked "not distinguished from gross"; fee structure recorded as not explicitly stated
+[~] Ad sections: all practice areas listed, but all marked "not observed" because Google SERPs and the Meta Ad Library were unreachable
+[x] No section says "you are not running ads"
+[x] No profitability or business claim beyond the transcript
+[x] Competitors are specific named local firms only
+[ ] PageSpeed scores — NOT recorded: site not live and the PageSpeed API quota was exhausted (HTTP 429). Cannot be satisfied in this environment.
+[x] DBM recorded (prospect's own words)
+[x] Revenue goal recorded ($100,000/month)
+[x] Close rate recorded (not stated — default 15%)
+[x] Average case value recorded (not stated)
+[x] Stated call focus recorded — AI automations at booking, then coaching/ops/fractional; not standard marketing
+[x] Primary engagement, Products discussed on call, Lead-gen gap each in the exact format
+[x] Revenue (annual, best estimate) is one figure ($600,000); Team size (total headcount) is "not stated"
+[x] Firm identity check filled in
+[x] Existing vendor engagements recorded
+[x] Budget constraints recorded (none stated, with related objections)
