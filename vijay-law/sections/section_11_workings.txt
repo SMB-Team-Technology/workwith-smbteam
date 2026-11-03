@@ -1,0 +1,79 @@
+SECTION 11 WORKINGS — VIJAY LAW (INTERNAL — NOT FOR CLIENT)
+Prepared for: Dan Bryant | Date: November 3, 2026
+
+====================================================================
+PACKAGE DECISION (from package_decision.json — seller override applied)
+====================================================================
+Source: package_source "rules", then seller overrides logged in selection_notes:
+- 2026-10-29: seller set Elite Coach Plus + AI Workforce Pro - Starter (1 seat), marketing removed.
+- 2026-11-03: seller removed AI Workforce Pro - Starter (client already has it); Elite Coach Plus stand-alone.
+- Revenue confirmed by seller: $600,000 (revenue_verified true, needs_revenue_confirmation false).
+Seller always wins — the four Transcript-Stated Need overrides do not apply. No marketing package, no LAW package.
+
+Stale fields in the decision file ignored on purpose: marketing_price_bundled 4997 / marketing_price_retail 5697 (marketing_tier and marketing_name are null — marketing was removed) and law_price_bundled 350 (law_name is null — AI Workforce Pro - Starter was removed). total_bundled 3497 confirms a single-product package.
+
+MANDATORY PRICE LOOKUP
+- Marketing package selected: none
+- Non-marketing package selected: Elite Coach Plus
+  - Bundled price (table): $3,200/mo
+  - Stand-alone price (table): $3,497/mo
+  - Charged price: $3,497/mo (pricing_mode "standalone" — fewer than 2 bundle-eligible products; no bundle savings)
+  - Savings: $0
+- Legal AI Workforce (LAW) package selected: none
+- AI Avatar / Video Growth add-on: none
+- Total monthly investment: $3,497/mo
+- Total savings: $0 (no savings callout shown)
+
+35% cap check: $600,000 / 12 = $50,000/mo revenue; 35% = $17,500. SMB spend $3,497 = about 7%. Within cap. Above the $2,497 minimum MRR.
+Revenue band check: $400K-$1M, Elite Coach Plus is the table's recommendation. Team of 1 — no Master's Circle.
+
+Rules the override breaks / things to note: none. The research notes show NO transcript and the call focus is a placeholder ("marketing"), so the seller's coaching-only package is the only evidence of intent. The audit still shows lead-gen gaps in Sections 5-6; the coaching-only recommendation is the seller's call.
+
+Block 4 (ad spend / ROI): OMITTED — no marketing/ads package is part of the recommendation. Executive summary omits the ad spend line too.
+Ad spend conservative/aggressive: n/a.
+
+Why-this-range sentence: n/a (no ads package).
+
+====================================================================
+DBM STATEMENT (Block 1)
+====================================================================
+No DBM stated — no transcript. Inference only (research notes, STEP 9): a solo trial attorney with 18 years' experience who likely wants a steadier case pipeline without being the sole bottleneck. HYPOTHESIS, not a client statement. Client-facing copy is written as "a firm that grows beyond one person's hours" and never attributes it to Vijay as a quote. Confirm on the call.
+
+====================================================================
+QUICK WIN OPPORTUNITIES (7)
+====================================================================
+1. Lead Gen / Quick Win — Claim the San Jose DUI and criminal defense searches. Why: firm seen in only 1 of 3 DUI searches and not seen for "San Jose criminal defense attorney"; ranks mainly for DV/DVRO. Competitor: Ahmed & Sukaram (dedicated San Jose DUI, DV, child abuse pages). Opportunity: dedicated service-and-city pages plus paid search once reviewed live.
+2. Intake / Quick Win — Move the consultation form above the fold. Why: form is at the bottom of the homepage. No competitor.
+3. Team / Long-Term — Build a visible, structured support team. Why: site lists one attorney, no staff; nine practice areas. No competitor.
+4. Profit / Quick Win — Establish cost per signed case and a profit baseline. Why: financials not visible publicly. No competitor.
+5. Lead Gen / Long-Term — Build Google review volume. Why: Google volume appears to trail the largest competitor on third-party data (UNCONFIRMED). Competitor: Ahmed & Sukaram. Qualitative framing only.
+6. Intake / Long-Term — Set up a first-response process for court days and after hours. Why: a few reviews mention slow responsiveness; one attorney. No competitor.
+7. Lead Gen / Quick Win — Unify the firm name across directories. Why: "Vijay Law" / "Vijay Dinakar Law Firm" / "Dinakar Law Firm". No competitor.
+
+====================================================================
+WHAT WE FOUND (Block 5 — NO TRANSCRIPT FALLBACK)
+====================================================================
+Block retitled "What We Found — and How This Plan Addresses It". No row is worded as if the owner said it. Sources:
+1. Visibility concentrated in the DV restraining order niche; not seen in broader criminal defense, DUI or family law searches -> Section 05 Lead Generation findings + Section 06 Local SEO Problem One. Addressed by: Elite Coach Plus growth coaching and practice-area masterminds (a plan and accountability for where to build visibility first).
+2. One attorney shown, no staff listed, nine practice areas -> Section 05 Team findings + Section 08 Team Problems One/Two. Addressed by: coaching on delegation, roles and a self-managing structure.
+3. Revenue, margins and cost per signed case not visible -> Section 05 Profit findings + Section 09 Profit Problem One. Addressed by: coaching and accountability on tracking numbers and planning profit.
+Next step line: kickoff call with your Coach.
+
+====================================================================
+ROADMAP NOTES
+====================================================================
+Phase 1: Elite Coach Plus (what is being bought).
+Phase 2: FCOO Advisor (not in Phase 1; eligible at $600K revenue).
+Phase 3: FCFO Advisor + Bookkeeping. LAW / AI Workforce Pro left out of Phase 3 on purpose — seller note says the client already has AI Workforce Pro - Starter.
+
+====================================================================
+ESCALATION FLAGS (INTERNAL — never in client report)
+====================================================================
+- Review counts unconfirmed — verify live before the call. Every Google review count/rating (firm and competitors) is tagged UNCONFIRMED in the research notes. The client report uses qualitative framing for all of them. Only Avvo figures (4.9, 70 reviews, 96% five-star, Client's Choice 2019/2020/2022) are printed as specific numbers; they are tagged "confirmed via Avvo," not Google, and the report labels them as Avvo.
+- PageSpeed mobile/desktop UNAVAILABLE (API quota). The report says scores were not available and will be tested live — no numbers were invented.
+- Ads / LSA / Meta / Maps 3-pack not observed (no browser) — reported only as "not observed" / "to verify live," never as "not running."
+- No discovery-call transcript: revenue, DBM, current lead sources, team structure and any existing vendor contracts are all unconfirmed. Confirm whether Vijay already has a marketing/SEO vendor; the seller's coaching-only package suggests there may be one.
+- Revenue confirmed by seller at $600,000 (range in HubSpot: $180K-$960K). Not verified by the client on a call.
+- Seller note: AI Workforce Pro - Starter removed because client already has it — do not pitch it.
+- Escalations not triggered: no AI Avatar, no OmniSocial, no LAW, no Attorney Assistant, no bookkeeping add-on pricing, no ad spend.
+- Metro-approval flags (Criminal Defense / Family Law in top-10 metro): San Jose is not a top-10 metro — no flag. No marketing package sold, so the MRR/ad-spend flags do not apply.
