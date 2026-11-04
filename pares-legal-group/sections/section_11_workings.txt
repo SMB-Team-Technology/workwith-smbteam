@@ -1,0 +1,111 @@
+SECTION 11 WORKINGS — INTERNAL ONLY (never shared with client)
+Firm: Pares Legal Group | Friendly name: pares-legal-group | Sales rep: Daniel Lowe | Date: November 5, 2026
+
+=====================================================================
+ESCALATION / SELLER FLAGS (read before the call)
+=====================================================================
+1. FIRM NAME MISMATCH: trigger says "Pares Legal Group"; website says "Pares & Asociados Abogados de Inmigración, LLC"; LinkedIn "Pares Legal & Consulting Group LLC"; Florida entity "Carlos Pares Immigration Law, PLLC". Report uses the trigger name. Seller to confirm legal/brand name.
+2. COMPETITIVE URGENCY SCORE NOT ASSIGNED: Pass 1 could not reach Google Maps, PageSpeed (429), Avvo, Yelp, or the Facebook Ads Library. The notes say any number would be a guess, so the report OMITS the Competitive Urgency Score card, the "Top Competitive Threats" cards (Section 5), the exec-summary urgency number, and the TOC link to #urgency-score. No competitor was named anywhere in the client report (all candidates were unverified). Re-run research STEPS 1-8 in a live browser if a score/competitor view is wanted, then regenerate.
+3. PAGESPEED NOT OBTAINED: mobile and desktop scores are not in the report (no numbers invented).
+4. Review counts unconfirmed — verify live before the call. Competitor counts (Mubarak 258, Pachon 172, Symphorien-Saavedra 152) and ratings are tagged UNCONFIRMED; none appear in the report. Prospect's own GBP not observed.
+5. Prospect is wary of Google reviews (fake-review concern) — report does not pitch review growth.
+6. Revenue unverified by call: $180,000 comes from HubSpot range "$0 - $180K" (revenue_verified true in file). Revenue under $250K: confirm client can fund 4 months of services. Revenue under $300K: scoping approval required. Never printed in client report.
+7. Team size assumed 3 (call: "two or three people"). AI Workforce Pro – Starter seats: 1 assumed — Daniel quoted $350/seat and used 3 seats ($1,000/mo) as an example. Confirm seat count; update price if different (1-4 seats x $350).
+8. LAW package: confirm LAW delivery has launched and capacity is available before including in the proposal.
+9. Contradiction to manage on the call: prospect said "No, I don't need it" re Google SEO/Ads and "Very starter package because I don't need that." Seller chose FSM Essentials with ad spend. Client report frames Google Ads as optional and leads Essentials with landing page + e-book + Spanish paid social. Be ready to discuss whether he wants paid ads at all.
+10. Phone/NAP: website phone 407-990-7170 vs HubSpot contact phone 407-308-4990; two Orlando addresses in sources. HubSpot contact email (javierpares@gmail.com) does not match Carlos. Not in client report except general "business name and address vary" language.
+11. Fathom summary says follow-up "10:00 CT"; transcript says 10:00 AM Eastern. Confirm in calendar invite.
+
+=====================================================================
+PACKAGE DECISION — OVERRIDE LOGIC
+=====================================================================
+package_decision.json: package_source "rules", but selection_notes contain "Seller override: switched marketing to Full Service Marketing — Essentials and dropped coaching per Slack request on 2026-11-04." SELLER ALWAYS WINS — built as-is; the four Transcript-Stated Need overrides were not applied.
+Rules the seller override breaks (noted, built anyway):
+ - Essentials requires single location + single practice area. Firm has 2 offices (Orlando, Puerto Rico) and immigration (+ trademark mentioned, unclear). Normal rules would push to Starter.
+ - 35% cap: 35% x ($180,000/12 = $15,000) = $5,250/mo. Package fees $4,147 alone are under the cap, but $4,147 + $3,000 conservative ad spend = $7,147 (over cap); aggressive would be $10,647. Review with sales rep.
+ - Call said no interest in Google SEO/Ads. Marketing is a landing page/e-book starter. Block 4 is included because a marketing package is in the recommendation; ad spend framed around Meta (Instagram/Facebook), where his audience already is.
+ - Revenue under $300K -> scoping approval required.
+decision file confidence: medium; revenue verified true; coaching dropped by seller (coaching fields in file are stale, ignored). pricing_mode: standalone (only 1 bundle-eligible product; AI Workforce Pro – Starter never counts).
+
+=====================================================================
+MANDATORY PRICE LOOKUP (copied from package_decision.json, confirmed against scripts/lib/pricing.mjs and the tables)
+=====================================================================
+- Marketing package selected: Full Service Marketing Essentials
+  - Charged price: $3,797/mo (stand-alone; bundle price $3,497 does NOT apply — fewer than 2 bundle-eligible products)
+  - Stand-alone price (from table): $3,797/mo
+  - Savings: $0/mo
+- Non-marketing package selected: none (seller dropped coaching)
+- Legal AI Workforce (LAW) package selected: AI Workforce Pro – Starter (1 user)
+  - Price: $350/user/mo x 1 user = $350/mo (no stand-alone price; month-to-month; 1M AI credits per user; weekly AI Implementation Session; does not count toward bundle)
+  - Savings: $0/mo
+- AI Avatar / Video Growth add-on: none
+- Total monthly investment: $3,797 + $350 = $4,147/mo
+- Total savings: $0/mo (no bundle savings callout in the report)
+
+=====================================================================
+AD SPEND (marketing package present -> Block 4 included)
+=====================================================================
+decision-file values (ad_spend_conservative $3,000 / aggressive $12,000) came from a fallback ("no practice area matched a channel-minimum table"; aggressive = 4x floor). Immigration IS in the table and $12,000 exceeds the Essentials cap of $7,500, so these were recomputed (medium-confidence correction):
+
+CONSERVATIVE = $3,000/mo. Immigration: Google PPC min $3,000 / Meta lead gen min $3,000; absolute minimum for any paid ads $3,000. Single channel: Meta (cold) at $3,000.
+AGGRESSIVE:
+ 1. Revenue goal not stated -> 2 x $180,000 = $360,000; x 20% / 12 = $6,000/mo
+ 2. Geo multiplier: Orlando = Tier 2 (1.3x) -> $7,800
+ 3. Spanish campaign needed: x 1.33 (non-PI) -> $10,374
+ 4. Less management fee $3,797 -> $6,577 available
+ 5. Reverse math: ($360,000/12 = $30,000) / $4,500 (immigration default midpoint of $3K-$6K) = 6.67 cases -> / 15% = 44.4 leads -> x blended CPL $69.75 = $3,100. 20% rule is higher ($6,577), so it governs.
+ 6. Cap check: Essentials cap $7,500 -> OK. Presented as $6,500 (rounded down from $6,577).
+RANGE PRESENTED: $3,000 -> $6,500/mo
+
+Assumptions (all defaults, none confirmed on call — disclosed in report disclaimer): close rate 15%; immigration case value $3,000-$6,000, midpoint $4,500 used.
+CPL (client-facing table, immigration): Meta Cold $65-$85 (mid $75); Meta Retargeting $50-$65 (mid $57.50).
+ - Conservative blended CPL: $75 x 1.20 cushion = $90
+ - Aggressive blended CPL: 70% cold / 30% retargeting = $69.75 (no cushion)
+
+CONSERVATIVE SCENARIO ($3,000): leads = 3,000/90 = 33; cases = 33 x 15% = ~5; revenue = 5 x $4,500 = ~$22,500; return = 7.5x
+AGGRESSIVE SCENARIO ($6,500): leads = 6,500/69.75 = 93; cases = 93 x 15% = ~14; revenue = 14 x $4,500 = ~$63,000; return = 9.7x
+
+Why-this-range sentence (client-facing): puts the e-book and paid-consultation page in front of Spanish-speaking families weighing U.S. immigration, supporting the goal of moving from five cases toward ten without losing a relaxed pace.
+
+Escalation checks: ad spend <= $25K OK; marketing MRR <= $10K OK; immigration not on the top-10-metro approval list; ad spend at/above practice-area minimum OK. Revenue goal vs. projected ad revenue: not an issue (goal is volume 5 -> 10-20 cases; conservative projection ~5 cases).
+
+=====================================================================
+DBM STATEMENT (Block 1)
+=====================================================================
+Category (1): a firm that runs itself, with time and low stress. Transcript: "I enjoy my relaxness." / "Instead of having five, maybe I can go to 10, 20, but never sacrificing my mental health." Secondary: personal brand/authority ("I'm the product. So I'm selling myself.").
+Block 1: "We help founder-led immigration firms with a strong personal brand get a landing page that turns their visibility into paid consultations and a secure AI platform that streamlines intake so they can grow from five cases a month to ten or more without ever sacrificing their mental health."
+
+=====================================================================
+QUICK WIN OPPORTUNITIES (7)
+=====================================================================
+1. Lead Gen / Quick Win — Launch a brand landing page with your e-book. Why: TV/social attention has no owned destination; his own stated ask. No competitor.
+2. Lead Gen / Quick Win — Make business name and address consistent everywhere. Why: name varies across site, LinkedIn, Florida records; two Orlando addresses. No competitor.
+3. Lead Gen / Long-Term — Repurpose TV and social clips into Spanish-language video and ads. Why: earned media exists; no video observed on site. No competitor.
+4. Intake / Quick Win — Choose one secure AI platform before adding more tools. Why: ad hoc Claude/ChatGPT use; wants one decision. No competitor.
+5. Intake / Long-Term — Standardize onboarding for new clients. Why: paid-consult bookings need a repeatable path; volume 5 -> 10-20. No competitor.
+6. Team / Long-Term — Write down roles and handoffs for a ten-case month. Why: roles undefined, brand centered on owner. No competitor.
+7. Profit / Quick Win — Track cost per booked consultation and cost per signed case. Why: new paid-consult model; new spend coming. No competitor.
+No "Who Is Doing It Better" rows (no verified named competitor).
+
+=====================================================================
+WHAT YOU TOLD US (Block 5) — transcript sourcing
+=====================================================================
+Source: full verbatim Fathom transcript (recording 198724385, 2026-11-02).
+Row 1 (supports Full Service Marketing Essentials): owner wants a landing page + e-book, starter scope only.
+   (00:25:42) "…just a landing page with the colors of the brand or whatever, the e-book that I would like to do…"
+   (00:30:51) "Very starter package because I don't need that."
+Row 2 (supports AI Workforce Pro – Starter): owner wants to integrate AI to streamline process and make one decision on the pathway.
+   (00:01:23) "Basically, I'm just trying to integrate some AI and more streamline the process."
+   (00:11:03) "I just want to make sure that when we make the decision, or I make the decision, this is the pathway to go…"
+Row 3 (supports both): owner wants to grow volume without sacrificing mental health.
+   (00:03:14) "Instead of having five, maybe I can go to 10, 20, but never sacrificing my mental health."
+Next step line: kickoff call with your Onboarding team (most central package = Full Service Marketing Essentials, largest price).
+Excluded per rules: personal/health matters, named employees, financial-distress figures.
+
+=====================================================================
+ROADMAP LOGIC
+=====================================================================
+Phase 1: FSM Essentials + AI Workforce Pro – Starter (what is bought now).
+Phase 2: FCOO/FCFO excluded (revenue under $500K hides all fractional CFO/COO). Next need: graduate AI Workforce Pro – Starter to AI Workforce Pro (5 users, $1,597/mo) as team/caseload grows.
+Phase 3: Bookkeeping Level 1 (under $1M): $1,697/mo bundled, plus $1,500 non-waivable setup. Fractional CTO (min $400K) not offered. AI Avatar, OmniSocial AI, Attorney Assistant not recommended.
+Note: Phase 2/3 prices come from the approved tables; Phase 3 bookkeeping price is the bundled price and applies if sold with another bundle-eligible package.
