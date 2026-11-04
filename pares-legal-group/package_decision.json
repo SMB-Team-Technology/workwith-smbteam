@@ -33,12 +33,12 @@
     ],
     "lead_gen_gap": true
   },
-  "marketing_tier": "Starter",
-  "marketing_name": "Full Service Marketing — Starter",
-  "marketing_price_bundled": 4997,
-  "marketing_price_retail": 5697,
-  "marketing_savings": 700,
-  "coaching_name": "Elite Coach",
+  "marketing_tier": "Essentials",
+  "marketing_name": "Full Service Marketing — Essentials",
+  "marketing_price_bundled": 3797,
+  "marketing_price_retail": 3797,
+  "marketing_savings": 0,
+  "coaching_name": null,
   "coaching_price_bundled": 2600,
   "coaching_price_retail": 3497,
   "coaching_savings": 897,
@@ -47,8 +47,8 @@
   "law_price_bundled": 350,
   "law_price_retail": null,
   "law_seats": 1,
-  "total_bundled": 7947,
-  "total_savings": 1597,
+  "total_bundled": 4147,
+  "total_savings": null,
   "ad_spend_conservative": 3000,
   "ad_spend_aggressive": 12000,
   "ad_spend_rationale": {
@@ -62,9 +62,11 @@
     "Revenue under $750K but multiple practice areas detected: Essentials hidden (requires single practice area) — Starter tier.",
     "Revenue under $250K: Elite Coach selected, scoping approval required.",
     "AI Workforce Pro – Starter does not count toward bundle pricing.",
-    "Total at conservative ad spend ($10,947/mo) is over the 35% cap ($5,250/mo on $180,000 revenue) — review with sales rep."
+    "Total at conservative ad spend ($10,947/mo) is over the 35% cap ($5,250/mo on $180,000 revenue) — review with sales rep.",
+    "Seller override: switched marketing to Full Service Marketing — Essentials and dropped coaching per Slack request on 2026-11-04.",
+    "Only one bundle-eligible product in this package — stand-alone pricing applied, no bundle savings."
   ],
-  "pricing_mode": "bundled",
-  "bundle_eligible_count": 2,
+  "pricing_mode": "standalone",
+  "bundle_eligible_count": 1,
   "unpriced_products": []
 }
