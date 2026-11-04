@@ -42,17 +42,17 @@
   "marketing_price_bundled": null,
   "marketing_price_retail": null,
   "marketing_savings": null,
-  "coaching_name": "Elite Coach Plus",
-  "coaching_price_bundled": 3200,
-  "coaching_price_retail": 3497,
-  "coaching_savings": 297,
+  "coaching_name": "FCOO Advisor",
+  "coaching_price_bundled": 3797,
+  "coaching_price_retail": 3797,
+  "coaching_savings": 0,
   "law_tier": null,
   "law_name": null,
   "law_price_bundled": null,
   "law_price_retail": null,
   "law_seats": null,
-  "total_bundled": 3200,
-  "total_savings": 297,
+  "total_bundled": 3797,
+  "total_savings": null,
   "ad_spend_conservative": null,
   "ad_spend_aggressive": null,
   "ad_spend_rationale": null,
@@ -61,6 +61,11 @@
     "Coaching discussed on call: FCOO. Rules selected Elite Coach Plus — confirm with sales rep.",
     "Contingency-fee practice with only gross revenue stated ($900,000) — no net/collected figure found. Using gross as fallback, but confidence downgraded: confirm actual collected revenue with sales rep before finalizing tier.",
     "Team size not stated in research notes — defaulting to 3. Review for coaching tier accuracy.",
-    "Revenue $400K–$1M: Elite Coach Plus selected."
-  ]
+    "Revenue $400K–$1M: Elite Coach Plus selected.",
+    "Seller override: switched coaching to FCOO Advisor (stand-alone) per Slack request on 2026-11-04.",
+    "Only one bundle-eligible product in this package — stand-alone pricing applied, no bundle savings."
+  ],
+  "pricing_mode": "standalone",
+  "bundle_eligible_count": 1,
+  "unpriced_products": []
 }
