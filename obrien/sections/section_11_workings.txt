@@ -1,0 +1,99 @@
+SECTION 11 WORKINGS — O'Brien Law Group PC (friendly name: obrien) — INTERNAL ONLY, never client-facing
+Sales rep: Jacob Meissner | Date: November 4, 2026
+
+================================================================================
+PRICE LOOKUP (copied from obrien/package_decision.json, cross-checked to command tables)
+================================================================================
+- Marketing package selected: Full Service Marketing — Growth
+  - Bundled price (from table): $7,497/mo  (NOT applied — only one bundle-eligible product, pricing_mode = "standalone")
+  - Stand-alone price (from table): $8,997/mo  (CHARGED PRICE)
+  - Savings (stand-alone minus bundled): $0/mo (no bundle)
+- Non-marketing package selected: none
+  - Bundled price: n/a | Stand-alone price: n/a | Savings: $0
+- Legal AI Workforce (LAW) package selected: none
+- AI Avatar / Video Growth add-on selected: none
+- Total monthly investment (sum of charged prices): $8,997/mo
+- Total savings: $0/mo  -> client report shows ONE price per row; savings callout deleted.
+
+================================================================================
+OVERRIDE CHECK (Transcript-Stated Need Override + package decision file)
+================================================================================
+- Seller override: package_decision.json selection_notes begins "Seller override: dropped Elite Coach Plus and AI Workforce Pro – Starter per Slack request on 2026-10-26; package is Full Service Marketing — Growth only." Seller always wins -> built as-is. Proposal review status is "locked".
+- Call-purpose override: NOT triggered. Call framed around marketing / more predictable leads and phone calls; primary_engagement = marketing; lead_gen_gap = true.
+- Existing-vendor override: NOT triggered. Kerry was quoted ~$30K/mo by an unnamed company "a couple of weeks ago"; nothing signed.
+- Budget-reality override: NOT triggered. Kerry said he can afford $30,000/mo "if I have to"; ROI concern noted, not a stated cap.
+- Effective-revenue override: NOT applied. Contingency-fee practice, but only a gross figure ($1.8–$2M, rep-proposed, soft-confirmed) exists in the notes; no net/collected figure stated. Decision file uses $1,900,000 gross. confidence = "low".
+  -> ACTION FOR REP: confirm actual collected/net revenue before the call. If net is materially lower, re-check tier (Growth requires $1M+) and the 35% cap below.
+- Confidence "low" cross-check against notes: Growth tier matches the revenue band ($1M–$2M). Team size not stated in decision file (defaulted to 3); notes say 6 (Kerry + five staff). Not relevant to marketing tier.
+- Revenue unverified: decision file revenue_source = research_notes (not a seller-confirmed figure).
+
+================================================================================
+35% CAP CHECK
+================================================================================
+- Monthly revenue (gross $1.9M / 12): $158,333 -> 35% cap = $55,417
+- Aggressive: $8,997 + $40,000 = $48,997 (30.9% of gross monthly revenue) -> within cap
+- If net revenue is ~half of gross (~$950K), 35% cap = $27,708 and the aggressive scenario would EXCEED the cap. Confirm net revenue.
+- Ad spend cap for Growth tier: $50,000 -> $40,000 aggressive is within cap.
+
+================================================================================
+AD SPEND AND ROI (Block 4) — values from package_decision.json; ROI math below
+================================================================================
+Practice area: Accident & Injury (primarily MVA). Close rate: 15% DEFAULT (not stated; Kerry said conversion is not his problem).
+Average case value: $5,000 — ASSUMED (low end of Accident/Injury default $5K–$8K, MVA $5K–$10K; Kerry said low-limit cases yield ~$5K fee, 33%/up to 40% litigated). Disclosed as an estimate. Rep's "25 to 30" was NOT confirmed by Kerry.
+Channel mix assumed (not from the call; rep's 70/20/5/5 hypothetical was not agreed to): Google Search 60%, LSA 20%, Meta retargeting 10%, Meta cold 10%.
+CPL midpoints (Accident & Injury): Google $705 | LSA $235 | Meta retargeting $90 | Meta cold $170 -> spend-weighted blended CPL = $496.
+
+- Conservative: $10,000/mo (file basis: primarily MVA channel minimum; Google PPC MVA min = $10,000)
+  Blended CPL with 20% cushion = $595.20 -> 16.8 leads -> x15% = 2.52 cases -> x$5,000 = $12,601 revenue -> 1.26x return
+- Aggressive: $40,000/mo (file basis: scaled 4x off the conservative floor; within Growth cap $50,000)
+  Blended CPL (no cushion) = $496.00 -> 80.7 leads -> x15% = 12.1 cases -> x$5,000 = $60,484 revenue -> 1.51x return
+- Cross-check, 20% rule: goal not stated -> 2x current revenue = $3.8M; x20%/12 = $63,333/mo; Tier 1 geo (LA/Long Beach metro) x1.5 = $95,000; Spanish campaign (PI) x1.5 = $142,500; less $8,997 mgmt fee = $133,503. Reverse math: $3.8M/12 / $5,000 / 15% = 422 cases/mo required (not realistic vs. stated goal of 10+ cases/mo). Both exceed the Growth cap ($50,000) and Kerry's stated comfort level. Aggressive is therefore held at the decision file's $40,000. Flag for paid-ads team review.
+- Kerry's own goal: at least 10 cases/month -> aggressive scenario (~12 cases/mo) is the one that reaches it. Returns on first-month fee revenue are modest (1.3x–1.5x); Kerry's ROI worry ("I don't want to break even paying $30,000") is the main objection to prepare for.
+- WHY THIS RANGE (client-facing sentence used in Block 4): "To put the firm in front of high-intent car accident searches in Long Beach, Anaheim, and nearby cities, so the caseload gets back toward the 10 new cases a month Kerry is aiming for."
+
+================================================================================
+DBM STATEMENT (Block 1)
+================================================================================
+Inferred (not directly stated), category (1) firm that runs steadily / peace of mind: a steady, predictable flow of cases so the firm never has an empty pipeline again. NOT scaling to dominate.
+Supporting quotes: "I don't want to be sitting here like in a year from now going, oh, geez, where's all the clients?" (00:01:34) | "I'll never get as big as those guys… But, you know, I want to have a good existing caseload come in." | "we do great where we are financially."
+Block 1 formula: "We help established solo personal injury attorneys get a steady, predictable flow of new car accident and injury cases so they can have the peace of mind of knowing next year's caseload is already filled."
+
+================================================================================
+QUICK WIN OPPORTUNITIES (7)
+================================================================================
+1. [Lead Gen / Quick Win] Fix the Google Business Profile — listing shows a tax consulting office's address (reverted once after correction), old name "Law Office of Kerry O'Brien", category "Attorney" instead of "Personal Injury Attorney". Competitor: Omega Law Group, PC (appears to have far larger review base — UNCONFIRMED). Opportunity: correct name/address/category under O'Brien Law Group PC.
+2. [Lead Gen / Quick Win] Launch Google Search + LSA for car accident cases in Long Beach, Los Alamitos, Seal Beach, Anaheim, Buena Park. Competitor: Pacific Attorney Group PLC (appears in car accident search results for the Long Beach area; ad activity NOT observed). Opportunity: first page visibility in lower-cost nearby cities instead of Los Angeles.
+3. [Lead Gen / Quick Win] Build a steady flow of new Google reviews. Competitor: Nordean Law APC (appears to have far larger review base — UNCONFIRMED). Opportunity: Done-For-You Review Generation is included at the Growth tier.
+4. [Lead Gen / Long-Term] Rebuild/refresh the website under the new O'Brien Law Group PC brand, fix mobile load speed (Lighthouse mobile 65, LCP 7.5s). No named competitor.
+5. [Profit / Quick Win] Add call tracking + Meta pixel so cost per case and return are visible. No named competitor. Ties to Kerry's ROI concern.
+6. [Intake / Long-Term] Spanish-language outreach routed to the existing Spanish-speaking staff. No named competitor.
+7. [Team / Long-Term] Take the rebrand and marketing off Kerry's plate by giving them a dedicated owner. No named competitor.
+
+================================================================================
+WHAT YOU TOLD US (Block 5) — transcript source for each row
+================================================================================
+Row 1 — "calls aren't coming in like they used to / wants predictable leads"
+  Verbatim: (00:07:41) "more predictable leads, more phone calls coming in." and (00:09:43) "we're not getting the phone calls as much as we used to. And, you know, and I think people have kind of forgotten about us over the last couple of years."
+  Supports Block 2: Google Search, LSA and Meta ad management in Full Service Marketing — Growth.
+Row 2 — "wants to know the spend will work"
+  Verbatim: (00:15:57) "I just want to be in a position where I know that that's going to work out."
+  Supports Block 2: monthly performance reporting and strategy calls; tracking.
+Row 3 — "website, Google listing and firm name need to move to O'Brien Law Group"
+  Verbatim: "We're going to try and get away from a law office, Kerry O'Brien, and just to O'Brien Law Group." / "I do have to revamp my website and everything else to transition over." / (00:24:05) "it says it's located in Todd Song Tax Consulting."
+  Supports Block 2: Local SEO + Google Business Profile optimization; website refresh under the new name.
+Next-step line: kickoff call with your Onboarding team.
+
+================================================================================
+ESCALATION FLAGS (INTERNAL — NOT in client report)
+================================================================================
+- Review counts unconfirmed — verify live before the call. All review counts/ratings (firm: 5.0/20; competitors: Omega 526, Pacific 239, Nordean 189 etc.) are UNCONFIRMED and were NOT printed in the client report; qualitative framing used instead.
+- Ad spend over $25K (aggressive $40,000) -> scoping approval required.
+- Personal Injury in a top-40 metro (Los Angeles / Long Beach) -> approval required.
+- Revenue goal / 20% rule exceeds Growth cap -> paid-ads team review (see cross-check above).
+- Confirm net/collected revenue (contingency practice; gross only stated, soft-confirmed) — tier and 35% cap depend on it.
+- Competitive channels (3-pack, Ads, LSA, Meta Ad Library) were NOT observed (tool access). Client report frames these as "not confirmed in this audit". Verify live before the call.
+- Trigger URL (lawofficeofkellypobrien.com) did not resolve; real site is kerryobrienlaw.com. Firm name spelled O'Brien in the client report (trigger/CRM say "Obrien" — rep said he would fix).
+- Roadmap Phase 3 names Legal AI Workforce (AI Workforce Pro) -> confirm with rep that LAW delivery has launched and capacity is available before discussing. Kerry expressed AI curiosity; rep said AI is "not as big a driver" for PI.
+- Roadmap Phase 2 names FCOO Advisor; rep explicitly steered away from coaching/ops on the call — roadmap only, not in the proposal price.
+- Spanish-language campaign: Kerry open ("Yeah, probably"); would raise the 20%-rule calc x1.5 for PI.
+- Do NOT bring up: past informal referral channel, personal details, rep's competitor-spend guesses, "Jacob and Ronnie's" (unclear transcript).
