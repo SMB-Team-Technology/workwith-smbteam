@@ -1,0 +1,124 @@
+SECTION 11 WORKINGS — Duffy Law (November 4, 2026)
+INTERNAL ONLY — never shared with the client.
+
+======================================================================
+PACKAGE DECISION SOURCE AND OVERRIDE CHECK
+======================================================================
+Source: duffy-law/package_decision.json (confidence: low; seller override recorded 2026-11-04 via Slack:
+"switched coaching to FCOO Advisor (stand-alone)"; proposal locked in via proposal_review.json status "locked").
+
+Seller always wins: the four Transcript-Stated Need overrides are NOT applied to a seller-chosen package. Package is built as-is.
+For reference, the overrides would have read as follows:
+1. Call-purpose override — the call was a coaching / operations conversation (owner burnout, delegation, hiring), not marketing.
+   Decision file already left marketing out (call_focus.primary_engagement = coaching/ops, lead_gen_gap = false). Consistent with the seller pick.
+2. Existing-vendor override — no marketing/SEO/ad vendor stated (website developer only). N/A.
+3. Budget-reality override — no budget limit stated. N/A.
+4. Effective-revenue override — net revenue not distinguished from gross. is_contingency_practice = true in the decision file looks like a
+   false positive: the research notes say fee structure was NOT stated (hourly billing implied). Tiered on ~$900K stated revenue.
+
+Rules the seller pick departs from: the revenue-implied selection was Elite Coach Plus ($3,200/mo bundled; decision-file note: "confirm with
+sales rep"). Seller chose FCOO Advisor stand-alone instead. FCOO Advisor revenue floor ($500K) is met. Rep said on the call he was "leaning
+towards possibly recommending a level of either coaching or fractional COO help" — FCOO Advisor includes Elite Coach group deliverables.
+
+======================================================================
+MANDATORY PRICE LOOKUP (checked against package_decision.json and the tables in audit-write.md)
+======================================================================
+- Marketing package selected: none
+  - Bundled price: n/a
+  - Stand-alone price: n/a
+  - Savings: n/a
+- Non-marketing package selected: FCOO Advisor
+  - Bundled price (from table): $3,297/mo (NOT charged — see bundle rule below)
+  - Stand-alone price (from table): $3,797/mo (CHARGED)
+  - Savings (stand-alone minus bundled): $0/mo (no bundle)
+- Legal AI Workforce (LAW) package selected: none
+- AI Avatar / Video Growth add-on selected: none
+- Total monthly investment (sum of charged prices): $3,797/mo
+- Total savings: $0/mo
+
+Bundle rule: only one bundle-eligible product (FCOO Advisor), so pricing_mode = "standalone". The client is charged the stand-alone
+price of $3,797/mo and there is no savings callout. Block 3 shows one price per row; the savings text is deleted.
+Note for sales: adding a second bundle-eligible product later (e.g. FCFO Advisor) would re-price FCOO Advisor to $3,297/mo bundled — run
+node scripts/reprice.mjs duffy-law if the package changes.
+
+35% cap check: $900,000 / 12 = $75,000 monthly revenue; 35% = $26,250. Total SMB spend $3,797/mo (5.1%). Within cap.
+Minimum MRR $2,497 met.
+
+======================================================================
+AD SPEND / ROI
+======================================================================
+Not applicable — no marketing/ads package is part of the recommendation. Block 4 (Recommended Monthly Ad Spend) deleted from
+section_11_next_steps.html; AD_SPEND line omitted from the executive summary. No conservative/aggressive projections or "why this range"
+sentence produced. Average case value, close rate and fee structure were not stated on the call.
+
+======================================================================
+BLOCK 1 DBM STATEMENT
+======================================================================
+"We help owner-dependent law firm owners at capacity get a team with the roles, review process and hiring plan to carry the work so they
+can finally unplug for a real vacation while the firm keeps running."
+DBM source: Kristen 00:12:07 ("I haven't had a true vacation since 2016."), 00:43:21 ("I just would love to not be connected to my
+phone or my computer for a week."), 00:25:18 ("...I could take two weeks in Morocco if I wanted to go."), 00:17:09 (20 percent / 80 percent delegation).
+Category (1): a firm that runs itself so she has more time.
+
+======================================================================
+QUICK WIN OPPORTUNITIES (7)
+======================================================================
+1. Pillar: Lead Gen — Align directory categories with estate, business and tax (quick win)
+   Why: Avvo categories omit estate planning (her stated #1 area); Yelp category is Real Estate Law (research Step 5). Competitor: none named.
+   Opportunity: attract the matters she wants to grow, fewer she refers out.
+2. Pillar: Intake — Have your admin screen booked calls first (quick win)
+   Why: website-booked calls land on her (transcript; "I'm going to get them off the phone, but now I'm stuck on the phone"); admin underutilized.
+   Opportunity: admin qualifies and routes; she takes only calls that need an attorney. No competitor.
+3. Pillar: Team — Define who can finalize which work without your review (long-term)
+   Why: every work product goes through her; five items handed to her for review on call day. No competitor.
+4. Pillar: Profit — Get billing current and add a monthly profit check (quick win)
+   Why: "I'm so far behind in billing" (00:23:09); "I'm not even looking to see, am I even profitable" (not claimed profitable). No competitor.
+5. Pillar: Lead Gen — Turn the planned website revamp into a screening tool (long-term)
+   Why: generic headline, mobile PageSpeed 58 (Lighthouse), nine practice areas incl. ones she refers out; developer already planning changes.
+   No competitor.
+6. Pillar: Intake — Move client communication off your personal phone (quick win)
+   Why: "I really want people to stop using my personal phone." (00:14:01). No competitor.
+7. Pillar: Team — Write the associate role and hiring plan before you recruit (long-term)
+   Why: hiring fears (trust; training investment leaving; firm-name concern, 00:07:24). No competitor.
+Competitor "Who Is Doing It Better" rows omitted on all cards — no named competitor was confirmed doing anything better (all competitor data UNCONFIRMED).
+
+======================================================================
+WHAT YOU TOLD US (Block 5) — 3 items, with verbatim transcript source and Block 2 support
+======================================================================
+Row 1 — "You want a firm that runs without you so you can finally unplug."
+  Verbatim (00:12:07): "I haven't had a true vacation since 2016."  (00:43:21): "I just would love to not be connected to my phone or my computer for a week."
+  Supports: FCOO Advisor (operations structure). Most (and only) central package; Team pillar RED, ties to DBM.
+Row 2 — "Everything still runs through you, and you want to delegate most of the work."
+  Verbatim (00:05:30): "Yeah, I'm still very owner-dependent."  (00:17:09): "How about I do 20 percent of the work and the other 80 percent I can delegate to other competent attorneys…"
+  Supports: FCOO Advisor (roles, accountability, review and delegation structure).
+Row 3 — "You want to hire an attorney but are unsure how to trust who you are hiring."
+  Verbatim (call, hiring discussion; research notes "Hiring"): "I don't know how to trust who I'm hiring." Also (00:07:24): "Nobody wants to get hired and then be like, oh, I'm an attorney, but I see Duffy Law."
+  Supports: FCOO Advisor (define the role, hiring process and onboarding).
+Next step line: kickoff call with your FCOO.
+Excluded per "never include" rules: staff names (Kara/Cara, Stephanie, Teresa), marriage/personal-health matters, specific hiring-cost figures.
+
+======================================================================
+GROWTH ROADMAP
+======================================================================
+Phase 1 = FCOO Advisor (the recommended package). Phase 2 = Legal AI Workforce (AI Workforce Pro) — FCOO is already in Phase 1, so the next
+product is AI for repeatable drafting/review support; no dollar amount printed in the roadmap. Phase 3 = FCFO Advisor + Bookkeeping as needed,
+matched to her billing/profit visibility gap; no dollar amount printed. Marketing intentionally not named (lead_gen_gap = false; at capacity).
+
+======================================================================
+ESCALATION FLAGS (internal — never in client report)
+======================================================================
+- Review counts unconfirmed — verify live before the call. Firm count (1,162 via Birdeye) and all competitor counts are UNCONFIRMED; the
+  client report uses qualitative framing only and prints no review count or rating. Google Business Profile could not be loaded.
+- Legal AI Workforce (LAW) is named in the Phase 2 roadmap only — confirm with sales rep that LAW delivery has launched and capacity is available.
+- Revenue unverified for tiering: confidence "low", $900K stated, gross vs net not distinguished; fee model not stated. Confirm collected
+  revenue with the rep. (is_contingency_practice = true in the decision file appears to be a false positive.)
+- Seller override is outside the revenue-implied package (Elite Coach Plus); decision file and Slack thread record it as intentional.
+- Stand-alone pricing: FCOO Advisor $3,797/mo (not $3,297). If a second bundle-eligible product is added, re-price with scripts/reprice.mjs.
+- Local pack, Google Ads, LSA and Meta Ads were "not observed" (no live access); the client report makes no claim beyond that and does not say
+  the firm is not running ads.
+- PageSpeed (mobile 58, desktop 89) is from a Lighthouse 12.8.2 lab run on 2026-10-27 (PSI API returned HTTP 429); printed with a lab-test label.
+- Prospect was previously skeptical ("Did I get duped?") after earlier marketing emails — lead with credibility and her own words.
+- Rep's "profitable" and "13 years" statements came from earlier notes, not this call — not used as facts.
+- Stage assigned: Stage 3 (Solo Practitioner) — borderline with Stage 4 (has a five-person team, but owner handles intake and review personally,
+  no scalable lead-gen system); lower stage assigned per rule.
+- Traffic lights: Lead Gen AMBER, Intake RED, Team RED, Profit AMBER. Urgency score 3 (from research notes).
