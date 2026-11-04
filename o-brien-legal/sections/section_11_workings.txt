@@ -1,0 +1,145 @@
+O'BRIEN LEGAL — SECTION 11 WORKINGS (INTERNAL — NEVER CLIENT-FACING)
+Prepared for: Nick Holderman | Date: November 5, 2026
+
+================================================================================
+PACKAGE SOURCE
+================================================================================
+package_decision.json: package_source not set; selection_notes final entry =
+"Seller override: package replaced with Fractional CTO Level 1 + AI Workforce Pro
+(base/Teams tier, 5-seat minimum) per Slack request on 2026-11-04; Elite Coach Plus
+removed." -> SELLER ALWAYS WINS. Built as-is. The four Transcript-Stated Need
+overrides do not apply to a seller override; consistency check below is for sales
+visibility only.
+
+Consistency check against research notes (informational):
+- Call-purpose: AI / Fractional CTO call, explicitly not marketing -> no marketing
+  package (matches decision file, marketing = null).
+- Existing-vendor: five or six existing marketing firms -> Full Service Marketing
+  correctly excluded.
+- Budget-reality: Corey said "we don't have expendable capital" (00:28:42) and
+  "I'm not going to pay a gazillion dollars to do this" (00:27:05), and said he will
+  evaluate on cost. The seller-selected bundle ($4,894/mo) is above the lowest-cost
+  AI option (AI Workforce Pro alone, $1,597/mo). Seller override stands; flagged so
+  sales can be ready to discuss scope/price on the Nov 5 call.
+- Effective-revenue: net figure not stated; $1.6M (prospect-stated projection) used.
+  Note: Corey's "$150,000 to $200,000 a month" figure was not reconciled with the
+  $1.6M annual figure on the call.
+
+================================================================================
+MANDATORY PRICE LOOKUP (copied from package_decision.json and pricing tables)
+================================================================================
+- Marketing package selected: none
+  - Bundled price: n/a | Stand-alone: n/a | Savings: n/a
+- Non-marketing package selected: none
+  - Bundled price: n/a | Stand-alone: n/a | Savings: n/a
+- Legal AI Workforce (LAW) package selected:
+    Fractional CTO Level 1 + AI Workforce Pro (5 users)
+  - Fractional CTO Level 1
+      Bundled price (from table): $3,297/mo
+      Stand-alone price (from table): $3,797/mo
+      Savings (stand-alone minus bundled): $500/mo
+      Setup fee: $0
+  - AI Workforce Pro (5 users)
+      Bundled price (from table): $1,597/mo (5 users) + $120/mo per employee over 5
+      Stand-alone price: none — not quoted in client report
+      Savings: $0
+      Contract: yearly; 10M usage credits + 10M bonus credits (20M total);
+      overages $150/mo (not shown to client)
+  - pricing_mode: bundled; bundle_eligible_count: 2 (FCTO L1 + AI Workforce Pro;
+    neither is the Starter tier) -> bundle rule satisfied
+- AI Avatar / Video Growth add-on selected: none (AI avatars mentioned by rep at
+  00:14:18; Corey: "it's something I would look at" — no catalog product proposed;
+  any AI Avatar package would need Alexis approval)
+- Total monthly investment (sum of bundled/recurring prices): $4,894/mo
+  ($3,297 + $1,597) — matches package_decision.json total_bundled
+- Total savings: $500/mo — matches package_decision.json total_savings
+
+35% cap check: monthly revenue $1.6M / 12 = $133,333; 35% cap = $46,667/mo.
+Total SMB spend $4,894/mo (no ad spend) = about 3.7% of monthly revenue. Under cap.
+Revenue floor: FCTO Level 1 requires $400K+; firm at $1.6M qualifies. Firm is not
+solo (6 FT in office + part-time drafters + intern); openness to AI/technology
+adoption confirmed on call.
+
+================================================================================
+MARKETING / ADS (Blocks 4)
+================================================================================
+No marketing/ads package is part of the recommendation. Block 4 (Recommended Ad
+Spend) deleted from section_11_next_steps.html. Conservative / aggressive ad spend
+and ROI projections: not applicable. AD_SPEND omitted from the executive summary.
+
+================================================================================
+DBM STATEMENT (Block 1)
+================================================================================
+Scale the firm statewide (all 50 states by end of 2029) without proportional hiring
+and without personally carrying recurring chores — "one less thing that I have to
+do."
+Block 1: "We help growth-focused estate planning and elder law firm owners get
+connected systems and AI-powered follow-up so they can scale across states without
+hiring in proportion to growth — or carrying the recurring work themselves."
+
+================================================================================
+QUICK WIN OPPORTUNITIES (8)
+================================================================================
+1. Lead Gen | Know which channel produces signed clients | Why: ~$70K/mo across
+   5–6 vendors, no channel-level view | Competitor: none (no verified named
+   competitor) | Opportunity: one view tying seminars, mail, Google and Meta to
+   signed clients
+2. Intake | Text and email reminders for seminar registrants | Why: day-before
+   confirmation call only | Competitor: none | Opportunity: more registrants reach
+   the room, where close rate is ~70%
+3. Intake | Follow-up after every inbound call | Why: Answer Connect captures details
+   but "no follow-up necessarily" | Competitor: none | Opportunity: automated,
+   consistent follow-up
+4. Profit | Cost per client by channel | Why: no close rate or return tracking |
+   Competitor: none | Opportunity: place each dollar and each new state on evidence
+5. Team | Connect the ~10 disconnected systems | Why: tools do not communicate |
+   Competitor: none | Opportunity: automations moving data between systems
+6. Team | Move recurring chores to AI agents | Why: Corey records ~30 videos per
+   session, covers overflow work | Competitor: none | Opportunity: AI agents for
+   marketing, chief-of-staff and drafting/research tasks he prioritized
+7. Lead Gen | Fix mobile speed on 4obrien.com | Why: Lighthouse mobile 46 /
+   desktop 80 | Competitor: none | Opportunity: protect offline-driven traffic
+8. Lead Gen | Clean up duplicate directory listings, respond to recent reviews |
+   Why: two MapQuest entries at same address; 1- and 2-star reviews described |
+   Competitor: none verified | Opportunity: protect local-search signals
+
+================================================================================
+WHAT YOU TOLD US (Block 5) — SOURCE LINES
+================================================================================
+Row 1: "Probably 10 pieces of technology, right? None of it communicating with each
+  other" (00:05:00, Corey D. O'Brien)
+  -> Supports: Fractional CTO Level 1 (custom automation + skills deployment)
+Row 2: "it's a reminder problem. Like they just forgot because they have a lot going
+  on." (00:10:23, Corey D. O'Brien)  [framing is process, not staff negligence]
+  -> Supports: Fractional CTO Level 1 skills/automations on follow-up and reminders
+Row 3: "I need to be able to not do a lot of hiring, right?" (00:04:33) and "I believe
+  I can drive significant growth in the firm, leveraging AI in every way known to
+  mankind." (00:25:00)
+  -> Supports: AI Workforce Pro (weekly AI Implementation Session + workspace)
+Next step: kickoff call with your Fractional CTO (most central package).
+Excluded on purpose: budget statements (no expendable capital), 1-/2-star review
+detail, staff-specific items, wife/family mention.
+
+================================================================================
+ESCALATION FLAGS (INTERNAL ONLY)
+================================================================================
+- LAW package: confirm with sales rep that LAW delivery has launched and capacity is
+  available before this proposal goes out.
+- Review counts unconfirmed — verify live before the call. All competitor review
+  figures and the firm's 5.0 Google rating are UNCONFIRMED aggregator data; none
+  printed in the client report (qualitative framing used).
+- Revenue figure ($1.6M projected) is prospect-stated; the monthly marketing-revenue
+  figures Corey gave ($150–200K/mo, "$1.2 million") do not reconcile with it. Confirm
+  before quoting anything revenue-related.
+- Urgency score 4 is provisional (competitor data not observed live). The standard
+  4–6 sentence was softened ("could extend their lead") instead of asserting
+  competitors are "pulling ahead."
+- Budget: seller-selected bundle ($4,894/mo) vs. Corey's stated cost sensitivity;
+  AI Workforce Pro alone is $1,597/mo.
+- Corey prefers ChatGPT ("has worked the best"); AI Workforce Pro is positioned in
+  the catalog as a managed workspace — be ready for the platform question.
+- Open research gaps (from notes): GBP rating/count, 3-pack, Google Ads/LSA SERPs,
+  Meta Ad Library, pagespeed.web.dev re-run (scores are local Lighthouse), which
+  platform the 1-/2-star reviews posted on.
+- Seat count assumed at the 5-seat minimum; confirm number of users (5 in-office plus
+  part-time drafters/intern).
