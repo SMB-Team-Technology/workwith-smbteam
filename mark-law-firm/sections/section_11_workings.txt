@@ -1,0 +1,110 @@
+SECTION 11 WORKINGS — Mark Law Firm (INTERNAL — never client-facing)
+Sales rep: Jacob Meissner | Date: November 4, 2026
+
+======================================================================
+PACKAGE DECISION
+======================================================================
+Source: package_decision.json, package_source "rules" but selection_notes record
+"Seller override: dropped Full Service Marketing and AI Workforce Pro; Elite Coach
+stand-alone per Slack request on 2026-11-04." Seller always wins — the four
+Transcript-Stated Need overrides do not apply. Built as-is.
+
+Stale fields in package_decision.json (ignored, not used anywhere in the report):
+marketing_price_bundled 4997 / marketing_price_retail 5697 / marketing_savings 700 /
+law_price_bundled 700 are leftovers from the pre-override selection. marketing_tier,
+marketing_name, law_name are null => no marketing package and no LAW package.
+The report contains NO marketing package, NO LAW package, NO ad spend block.
+
+MANDATORY PRICE LOOKUP (checked against Stand-alone prices table and pricing.mjs):
+- Marketing package selected: none
+  - Bundled price: n/a | Stand-alone: n/a | Savings: $0
+- Non-marketing package selected: Elite Coach
+  - Bundled price (from table): $2,600/mo (NOT charged — see below)
+  - Stand-alone price (from table): $3,497/mo  <-- CHARGED PRICE
+  - Savings: $0 (pricing_mode "standalone", bundle_eligible_count 1 — no bundle)
+- Legal AI Workforce (LAW) package selected: none
+- AI Avatar / Video Growth add-on selected: none
+- Total monthly investment: $3,497/mo
+- Total savings: $0 (no savings callout in report)
+
+Block 4 (ad spend / ROI) deleted — no marketing/ads package in recommendation.
+Conservative / aggressive ad spend and ROI projections: not applicable.
+
+35% cap check: revenue_effective $250,000 (HubSpot band "$0 - $250K" top of band) =>
+cap $7,292/mo. $3,497/mo is under the cap.
+
+======================================================================
+INTERNAL FLAGS FOR JACOB (escalation / verify before the call)
+======================================================================
+- PRICE EXPECTATION GAP: on the call (00:52:24) Jacob said "Some of our smaller
+  programs start, we're like right around $2,500 a month." Elite Coach stand-alone is
+  $3,497/mo. Prospect is "always very, very cost sensitive" (00:29:21) and was turned off
+  by ~$7,000/mo years ago. Be ready to explain the $3,497 vs the "$2,500" anchor.
+  Cheaper alternative if needed: Coach Essentials Plus $2,497/mo stand-alone.
+- Revenue unverified: only HubSpot band "$0 - $250K" (revenue_effective $250,000). No
+  revenue stated on call. Under $250K => confirm client has funds for 4 months of
+  services. Under $300K => scoping approval required.
+- Review counts unconfirmed — verify live before the call. All firm and competitor review
+  counts/ratings in the research notes are UNCONFIRMED (aggregator / search summary).
+  The report uses qualitative framing only; no specific counts printed.
+- PageSpeed scores not obtained (quota exceeded). No scores printed in report. Run
+  PageSpeed manually before the call if desired.
+- Ads / LSA / Meta / local pack not directly observable with the tooling; the report frames
+  all as "not observed" / opportunity, never as confirmed absence.
+- Roadmap (Block 6) future phases mention FCOO, FCFO, bookkeeping and AI staff as later
+  steps gated on revenue reaching $500K+; revenue is under that today, so none are
+  recommended now (FCOO/FCFO hidden under $500K). No prices shown for them in the report.
+  AI Workforce Pro was dropped from this proposal by seller; it is referenced only
+  qualitatively in Phase 3 — remove if Jacob prefers.
+- Transcript-unclear items not used in report: "$3.50 a month", "$9,000, $950 a month",
+  "40-pound square foot home", "$4.75, $5.25 an hour".
+
+======================================================================
+DBM STATEMENT (Block 1)
+======================================================================
+Wants to be paid what his 41 years of trial experience is worth ("conservatively $2 to $4
+million a year", 00:16:06) and to stop doing $10-an-hour tasks himself (00:50:30–00:50:51).
+Closing statement: "We help established solo trial attorneys get a team and systems that
+handle the phones and administrative work so they can spend their time on the work
+that is worth what their experience is worth."
+
+======================================================================
+QUICK WIN OPPORTUNITIES (8)
+======================================================================
+1. Lead Gen — Clean up duplicate / mismatched business listings (NAP) and consolidate
+   the Birdeye split listings. Why: P.O. Box on site vs Hawthorne address on directories,
+   multiple name variants, two domains. Competitor: Birkhold & Maider (dedicated
+   Wanaque/Passaic pages). Quick win.
+2. Intake — Answer or capture every call (missed-call coverage). Why: "six or seven calls...
+   no message there" (00:28:09); will contest worth $50–60K (00:29:01). No competitor.
+   Quick win.
+3. Team — Hand off the $10-an-hour tasks (photocopies, envelopes, addresses). Why:
+   00:50:35. Competitor: none. Long-term (building a support structure). NOTE: card
+   uses "Long-Term Play".
+4. Profit — Put a simple revenue-to-cases plan behind the $2–4M goal. Why: "I don't know
+   how to get there" (00:10:04). No competitor. Quick win.
+5. Lead Gen — Build municipal court / DWI and probate litigation pages and fresh reviews
+   to win the work he prefers. Competitor: Jonathan Mincis (DWI/municipal) . Long-term.
+6. Intake — Build a defined intake process (who answers, what is asked, how follow-up
+   happens). No competitor. Long-term.
+7. Lead Gen — Add a Google review request habit after trial wins (Birdeye review praised
+   trial result). Competitor: Corradino & Partners (large review footprint). Quick win.
+8. Profit — Track time by task type to see where $500/hr time is being lost to
+   low-value work. No competitor. Quick win.
+
+(Report shows cards 1–6 plus 7 and 8.)
+
+======================================================================
+WHAT YOU TOLD US (Block 5) — transcript sourcing (full verbatim Fathom transcript)
+======================================================================
+Row 1 — "I don't know how to get there, though, Jacob." (00:10:04); also "conservatively
+  $2 to $4 million a year" (00:16:06). Supports: Elite Coach — growth planning, weekly
+  group coaching, practice area masterminds.
+Row 2 — "when we hang up, I have to go make photocopies, and I have to stuff a couple of
+  envelopes… $10 an hour… I shouldn't be doing that." (00:50:35). Supports: Elite Coach —
+  coaching on delegation, hiring and building a support structure.
+Row 3 — "I'm not sure what to do about, you know, intake. I don't do any marketing, none."
+  (00:28:21–00:28:26); "six or seven calls I get and there's no message there" (00:28:09).
+  Supports: Elite Coach — coaching on building a defined intake process and who owns it.
+Excluded per never-include rules: son's name / family matter, budget-distress figures.
+Next-step line: kickoff call with your Coach.
