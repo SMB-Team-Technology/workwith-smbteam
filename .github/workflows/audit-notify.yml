@@ -34,8 +34,26 @@ jobs:
           echo "test_only=$(jq -r '.test_only' "$TRIGGER_FILE")"           >> "$GITHUB_OUTPUT"
           echo "closer_email=$(jq -r '.closer_email // ""' "$TRIGGER_FILE")" >> "$GITHUB_OUTPUT"
 
-      - name: Send email with PDF + PPTX attachments
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      # Read-only: find the deck's existing HubSpot file-manager link (no upload).
+      - name: Look up the deck link in HubSpot
+        id: link
         env:
+          HUBSPOT_TOKEN: ${{ secrets.HUBSPOT_TOKEN }}
+        run: |
+          RESULT=$(node scripts/upload-proposal-to-hubspot.mjs "${{ steps.inputs.outputs.friendly_name }}" --lookup || true)
+          echo "$RESULT"
+          if [ "$(jq -r '.ok // false' <<< "$RESULT" 2>/dev/null)" = "true" ]; then
+            echo "url=$(jq -r '.url' <<< "$RESULT")" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Send email with the PPTX attached
+        env:
+          DECK_URL: ${{ steps.link.outputs.url }}
           GMAIL_USER: ${{ secrets.GMAIL_USER }}
           GMAIL_APP_PASSWORD: ${{ secrets.GMAIL_APP_PASSWORD }}
           FIRM_NAME: ${{ steps.inputs.outputs.firm_name }}
@@ -70,12 +88,11 @@ jobs:
                   sys.exit(1)
               to_addr, cc_addrs = closer_email, [eli, carolyn]
 
-          pdf_files  = glob.glob(f"{friendly_name}/*_Sales_Companion.pdf")
-          pptx_files = glob.glob(f"{friendly_name}/*_Proposal.pptx")
-          attachments = pdf_files + pptx_files
+          attachments = glob.glob(f"{friendly_name}/*_Proposal.pptx")
+          deck_url    = os.environ.get("DECK_URL", "").strip()
 
           if not attachments:
-              print(f"ERROR: No PDF or PPTX found in {friendly_name}/")
+              print(f"ERROR: No *_Proposal.pptx found in {friendly_name}/")
               sys.exit(1)
 
           msg = MIMEMultipart()
@@ -83,16 +100,15 @@ jobs:
           msg["To"]      = to_addr
           if cc_addrs:
               msg["Cc"]  = ", ".join(cc_addrs)
-          msg["Subject"] = f"Growth, Profit, and Freedom Roadmap ready for {firm_name}"
+          msg["Subject"] = f"Proposal deck ready for {firm_name}"
 
           body = "\n".join([
               f"Hi {sales_rep},",
               "",
-              f"The Growth, Profit, and Freedom Roadmap for {firm_name} is ready ahead of your proposal call.",
+              f"The proposal deck for {firm_name} is ready ahead of your proposal call.",
               "",
-              "Attached you'll find:",
-              "  - Proposal Deck (PowerPoint) — share this on screen during the call",
-              "  - Sales Companion (PDF) — your seller-only cheat sheet, not for the client",
+              *([f"Open the deck here: {deck_url}", ""] if deck_url else []),
+              "Attached: Proposal Deck (PowerPoint) — share this on screen during the call.",
               "",
               "Let the team know if you need any changes before the call.",
               "",

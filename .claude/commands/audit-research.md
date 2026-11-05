@@ -1,6 +1,6 @@
 # SMB Team — Audit Research (Pass 1)
 
-Run all browser research for a Growth, Profit, and Freedom Roadmap and save a verified research notes file. Does not generate any HTML. Run this first, then run `/audit-write` when complete.
+Run all browser research for a proposal audit and save a verified research notes file. Does not build the deck. Run this first, then run `/audit-write` when complete.
 
 ## How to invoke
 
@@ -308,7 +308,7 @@ GIT_TERMINAL_PROMPT=0 git push origin main
 git log -1 --format="%H %s"
 ```
 
-Report the commit hash. Then tell the user: **research complete — run `/audit-write` to generate the report.**
+Report the commit hash. Then tell the user: **research complete — run `/audit-write` to build the proposal deck.**
 
 
 IMPORTANT NOTE:
