@@ -1,0 +1,105 @@
+SECTION 11 WORKINGS — Cooper & Cooper, P.A. (November 9, 2026)
+INTERNAL ONLY — never shared with the client.
+
+======================================================================
+PACKAGE SOURCE AND OVERRIDE CHECK
+======================================================================
+Source: package_decision.json (confidence "low", package_source "rules", revenue seller-confirmed $2,100,000, needs_revenue_confirmation false, needs_seller_input false, pricing_mode "bundled", 2 bundle-eligible products).
+Proposal review status: locked (proposal_review.json). selection_notes include "Seller override: ad spend set to $15,000/mo" -> seller-locked package used as-is.
+
+Transcript-Stated Need Overrides:
+1. Call-purpose: NOT triggered. call_focus.primary_engagement = "mixed" (Full Service Marketing + Master's Circle both central); lead_gen_gap = true.
+2. Existing-vendor: NOT applied. Firm pays a marketing vendor $7,500/mo (month-to-month, vendor unnamed) but the call was a proposal for SMB Team to replace/transition that work; Anthony asked to move ahead "with the marketing side of it all." This is not a firm that just committed to a new engagement. Seller locked the package. SALES NOTE: the vendor relationship is active and month-to-month as of the 2026-07-17 call.
+3. Budget-reality: NOT applied. No "can't afford" statement ("I'm not hating the number"). BUT Anthony asked to start with marketing only and add Master's Circle "in like a month or two months" (00:46:26); Randy agreed marketing-only start was possible. The built package keeps both (seller-locked). Sales should be ready to discuss a phased start.
+4. Effective-revenue: NOT triggered (no net/gross split; not a contingency practice).
+
+DISCREPANCIES FOR SALES TO REVIEW (not corrected in the report):
+- TIER VS REVENUE: seller-confirmed revenue $2.1M sits at/above the $2M Dominate floor ($2M-$3M = Dominate, $10,497/mo bundled). The decision file's Growth tier was selected on the earlier $1.98M HubSpot midpoint and was not re-tiered after the seller confirmed $2.1M. Report uses Growth (seller-locked, and consistent with the Growth pricing quoted on the call). If sales wants Dominate, edit package_decision.json and run scripts/reprice.mjs, then re-run Pass 2.
+- CALL PRICING DIFFERS FROM CURRENT TABLES: on the 2026-07-17 call Randy quoted Full Service Marketing $7,397/mo + Master's Circle $4,600/mo = $11,997/mo plus a $1,850 one-time setup and $15,000 minimum ad spend. Current approved table: Growth $7,497/mo -> total $12,097/mo. The report uses table prices only; no setup fee is shown (no approved table value).
+- TRANSCRIPT AGE: the only transcript is the 2026-07-17 proposal call (~4 months before the 2026-11-09 proposal date). Current-state facts (vendor, headcount, pricing, whether they signed elsewhere) may have changed.
+- CONSERVATIVE AD SPEND: decision file's $3,500 equals the Family Law Google PPC minimum only; Full Service Growth also covers LSA and Meta (channel-minimum sum would be $3,500 + $2,000 + $1,200 = $6,700). Conservative scenario modeled as Google PPC only. -> paid ads team review (ad spend below recommended-channel minimums).
+
+======================================================================
+MANDATORY PRICE LOOKUP (copied from package_decision.json; verified against tables in audit-write.md)
+======================================================================
+- Marketing package selected: Full Service Marketing — Growth
+  - Bundled price (from table): $7,497/mo
+  - Stand-alone price (from table): $8,997/mo
+  - Savings: $1,500/mo
+- Non-marketing package selected: Master's Circle
+  - Bundled price (from table): $4,600/mo
+  - Stand-alone price (from table): $4,997/mo
+  - Savings: $397/mo
+- LAW package selected: none
+- AI Avatar / Video Growth add-on: none
+- Total monthly investment (sum of bundled): $12,097/mo
+- Total savings: $1,897/mo
+- 35% cap check: monthly revenue $2.1M / 12 = $175,000; 35% = $61,250. SMB fees $12,097 + aggressive ad spend $15,000 = $27,097 (15.5%). PASS.
+- Eligibility: Master's Circle needs $1M+ revenue (met), 5+ team (11), dedicated staff (intake team per call recap). Growth tier ad spend cap $50,000 (aggressive $15,000 within cap). Essentials hidden (multiple practice areas, revenue > $750K).
+
+======================================================================
+AD SPEND (Block 4)
+======================================================================
+Practice area: Family Law (primary); probate/guardianship secondary. Market: Fleming Island / Jacksonville area (Tier 4 mid-size). No Spanish campaign.
+Case value used: $4,000 (low end of rep-recap retainer range $4,000-$7,000; also within family law default $3K-$5K). Not confirmed by prospect — disclosed in the report disclaimer.
+Close rate used: 20% (rep-recap consult retention 20-30%, conservative reading; not prospect-confirmed). Applied to leads per the ROI rule; disclosed in the report disclaimer.
+
+Conservative: $3,500/mo (decision file; Google PPC only)
+- Family Law Google CPL midpoint $100; +20% cushion = $120 blended
+- Leads = 3,500 / 120 = 29.2 -> ~29
+- Cases = 29.2 x 20% = 5.8 -> ~6
+- Revenue = 5.8 x $4,000 = $23,333 -> ~$23,000
+- Return = 6.7x
+
+Aggressive: $15,000/mo (seller override per Slack 2026-11-05)
+- Channel mix assumed: Google 70% ($10,500, CPL $100), LSA 15% ($2,250, CPL $80), Meta 15% ($2,250, retargeting/cold midpoint $71.25); no cushion
+- Leads = 105 + 28.1 + 31.6 = 164.7 -> ~165 (blended CPL ~$91)
+- Cases = 164.7 x 20% = 32.9 -> ~33
+- Revenue = 32.9 x $4,000 = $131,763 -> ~$132,000
+- Return = 8.8x
+- NOTE: the jump from ~6 to ~33 cases reflects 4.3x spend plus the 20% cushion in the conservative case and a 20% lead-to-case rate; these are estimates labeled as such. Sales should not promise case counts.
+
+Why this range (client-facing): puts the firm in front of high-intent divorce, custody, and probate searches across Fleming Island, Orange Park, and Clay County before other local firms capture them.
+
+======================================================================
+DBM
+======================================================================
+DBM statement (Block 1): Anthony — growth as proof of success ("when I see the numbers going up... that's the stuff that drives me," 00:02:35); Charlean — stepping out of day-to-day casework to live her life ("I want to be like John Morgan's wife... kind of live like her life with her grandchildren and with her kids," 00:03:00; "Ultima" may be a transcription error, not used in the report). Closest DBM type: (1) a firm that runs itself so they have more time + (3) scale and dominate.
+Block 1 formula: "We help growing family law and probate firms get a steady flow of retained clients and a trained team to convert them so they can keep growing while stepping out of day-to-day casework."
+
+======================================================================
+QUICK WIN OPPORTUNITIES (8)
+======================================================================
+1. Lead Gen / Quick Win — Track every call and form by source (two phone numbers on site, 904-375-1606 and 904-872-5079). Why: attribution gap. Competitor: none. Opportunity: source-level tracking tied to retained clients.
+2. Lead Gen / Quick Win — Show up in AI search (Anthony/Charlean check ChatGPT visibility themselves, 00:11:06 and 00:15:00). Competitor: none named. Opportunity: AEO/FAQ content.
+3. Lead Gen / Quick Win — Clean up directory and Google listings consistency (3509 vs 3521 Ste B Hwy 17; review totals mismatch). Competitor: none. VERIFY listing data before the call (snippet-sourced).
+4. Lead Gen / Long-Term — Build probate visibility in Orange Park / Clay County. Competitors: Sermons Law, PLLC; Berg Bryant Elder Law Group, PLLC (local-pack standing NOT verified; hedged wording used).
+5. Lead Gen / Quick Win — Put a short contact form above the fold (form currently in footer). Competitor: none.
+6. Intake / Quick Win — Track consultation-to-retained by source and consult owner. Competitor: none.
+7. Intake / Long-Term — Build the non-attorney sales role (Anthony 00:33:29). Competitor: none.
+8. Team / Long-Term — Move litigation-team management off a founder's plate (Charlean manages litigation team + caseload). Competitor: none.
+9. Profit / Quick Win — Know cost per retained client by channel before scaling spend. Competitor: none.
+(Final report contains all 9 cards across all four pillars.)
+
+======================================================================
+BLOCK 5 — WHAT YOU TOLD US (source lines)
+======================================================================
+Row 1 — AI search visibility. Verbatim: Charlean 00:11:06 "we try to do our own searches to see how we're doing on AI." Supports: Block 2 Full Service Marketing — Growth (SEO / AI-answer-engine visibility).
+Row 2 — Non-attorney sales role. Verbatim: Anthony 00:33:29 "One of my biggest goals right now is the non-attorney salespeople… I just don't know how to do it because I've never seen that before." Supports: Block 2 Master's Circle (sales and intake training).
+Row 3 — Founder pulled back into casework. Verbatim: Charlean 00:33:48 "when I do the consults, nine times out of ten, people are like, I want you to be my attorney… I'm taking more of the cases… And then I'm back into the case work." Supports: Block 2 Master's Circle (sales/intake training + team structure).
+Next step line: kickoff call with your Onboarding team (Full Service Marketing is the largest bundled price). No dates.
+Excluded per Block 5 rules: named employees, family/personal matters (daughter), partner issues, financial figures.
+
+======================================================================
+ESCALATION FLAGS (internal)
+======================================================================
+- Review counts unconfirmed — verify live before the call. All firm and competitor review counts/ratings (firm 4.9 / 42 vs site "50+"; Sermons 153; Berg Bryant 57; Kenny Leigh 38; Donley 37; Renae Kenny 11; Yelp 1) are UNCONFIRMED and were NOT printed in the client report.
+- PageSpeed (mobile/desktop) NOT obtained (HTTP 429 twice) — no scores printed. Re-run before the call.
+- Google 3-pack, Google Ads, LSA, and Meta checks NOT performed (no live SERP/ad-library access). The report describes them as not captured/unverified, not as absent.
+- NAP inconsistency (3509 vs 3521 Ste B US Hwy 17; two phone numbers) is snippet-sourced — verify before the call.
+- Revenue: $2.1M seller-confirmed; Dominate-floor discrepancy noted above. Revenue figure not printed in the client report.
+- Rep-recap items (consult retention 2-3 of 10, goal 5 of 10, PPC producing most retained clients, LSA lower quality, marketing spend doubled with flat retained clients) are NOT prospect-confirmed; the report attributes the first two to "the call" and does not print the doubled-spend claim.
+- Phase 3 roadmap mentions Legal AI Workforce (AI Workforce Pro): confirm LAW delivery has launched/capacity before the proposal goes out.
+- Ad spend below recommended-channel minimums (conservative $3,500) -> paid ads team review.
+- No other escalation triggers: marketing MRR $7,497 (< $10K), ad spend < $25K, revenue > $300K, Family Law applies only to top-10 metros and Jacksonville is not one.
+- Existing vendor name unknown; rep said the vendor "also represents one of your direct competitors" (unnamed).
