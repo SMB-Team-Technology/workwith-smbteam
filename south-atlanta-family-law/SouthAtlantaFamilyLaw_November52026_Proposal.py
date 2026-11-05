@@ -28,31 +28,25 @@ import re
 # ═══════════════════════════════════════════════════════════════════
 
 # ── BUILD NOTES (internal — never shown on a slide) ──────────────
-# Marketing package: none — seller override removed marketing and coaching (Slack, Nov 5, 2026)
+# Marketing package: none — seller override removed marketing (and Elite Coach Plus); decision-file marketing/coaching price fields are stale, ignored
 # Non-marketing package(s): none (coaching removed by seller override)
-# LAW package: AI Workforce Pro (9 users) — bundled $2,077/mo ($1,597 for 5 users + 4 x $120), no stand-alone price, savings $0
-#              Fractional CTO Level 1 — bundled $3,297/mo, stand-alone $3,797/mo, savings $500/mo
+# LAW package: AI Workforce Pro (9 seats) — $1,597/mo (5 seats) + 4 x $120 = $2,077/mo, no stand-alone price
+#              + Fractional CTO Level 1 — bundled $3,297/mo, stand-alone $3,797/mo, savings $500/mo
 # Total monthly investment: $5,374/mo · total savings: $500/mo · pricing_mode: bundled (2 bundle-eligible products)
-# Ad spend: n/a — no marketing/ads package (AD_SPEND_NOTE = None; ROI card not rendered)
+# Ad spend: n/a — no marketing/ads package in the recommendation (AD_SPEND_NOTE = None, ROI card not rendered)
 # ROI conservative: n/a
 # ROI aggressive:   n/a
-# Case value: not stated on call, no family-law default — not used (no ads package)
+# Case value: not stated on the call; no ROI projection built
 # Why this range: n/a
-# DBM (inferred, not stated): grow to the revenue goal without building a whole new attorney and paralegal team, and attract clients who are willing to pay
+# Stage: current Stage 4 (Meta + Google ads running, team of ~9 with an intake person; still needs more cases and wants workflows automated) → goal Stage 6, Law Firm Owner
+# Pillar review: Lead Gen amber — slow mobile site (PageSpeed 29), ads results not tracked, wants more cases · Intake amber — after-hours answering service does not book consults, one intake person · Team amber — workflows not automated, more cases would mean another attorney/paralegal team · Profit unrated — no profit or financial-visibility finding in the notes
 # What You Told Us (slide 3 panel + slide 1 quotes):
-#   1. MyCase workflows — transcript line: "One of the biggest things that I would like to get done is to be able to do a workflow, in [MyCase], so that everything just becomes automatic." — supports: Fractional CTO Level 1 (custom automations)
-#   2. Can't build it — transcript line: "I try to take a stab at it one time, a couple of times, but I can't do it." — supports: Fractional CTO Level 1 (fCTO leads the rollout)
-#   3. Capacity to grow — transcript line: "We need to get more … cases, but then … if we get more cases, … I'd have to hire another, set up another attorney and paralegal team." — supports: AI Workforce Pro
-#   Slide 1 quotes: line 3 above (cut to start at "if we get more cases") and "they actually do not book for us, unfortunately." (after-hours intake)
-# Overrides applied: seller override (package_source trigger_override) — AI Workforce Pro (9 seats) + Fractional CTO Level 1; marketing/coaching removed. Transcript-Stated Need overrides not applied. Stale marketing_*/coaching_* price fields in package_decision.json predate the override and are ignored.
-# Escalation flags:
-#   - LAW package: confirm with sales rep that LAW delivery has launched and capacity is available
-#   - AI Workforce Pro seat count (9) comes from the seller override and the notes' ~9 MyCase licenses (Janice's count was unclear) — confirm
-#   - Revenue unverified (draft based on hubspot_annual_law_firm_revenue: "$961K - $3M" -> $1,980,500); 35% cap check: $5,374 is about 3.3% of monthly revenue
-#   - Review counts unconfirmed — verify live before the call (firm 4.6 / 107 Google and competitor Avvo figures are UNCONFIRMED; none used in the deck)
-#   - Family Law in a top-10 metro (Atlanta area) would need approval if marketing is added later; no marketing in this proposal
-#   - Google SERP / 3-pack / GBP / Ads / LSA / Meta Ad Library checks not observed (tool access) — human follow-up before the call
-#   - Rep to confirm MyCase integration limits before promising any MyCase workflow
+#   1. Workflows — transcript line: "I try to take a stab at it one time, a couple of times, but I can't do it." (re: building a MyCase workflow) — supports: Fractional CTO Level 1
+#   2. Growth capacity — transcript line: "if we get more cases, … I'd have to hire another, set up another attorney and paralegal team." — supports: AI Workforce Pro
+#   3. After-hours calls — transcript line: "they actually do not book for us, unfortunately." — supports: Fractional CTO Level 1 (AI wish list)
+# Slide 1 quotes use items 2 and 3 only; the workflow line is ambiguous out of context.
+# Overrides applied: seller override (package_source trigger / Slack request Nov 5, 2026) — AI Workforce Pro (9 seats) + Fractional CTO Level 1; Transcript-Stated Need overrides not applied. Call was AI-led (AI Workforce Pro / Fractional CTO), consistent with the choice. Note: firm told us of a lead-gen need but seller dropped marketing; website provider already runs Google Ads.
+# Escalation flags: LAW package — confirm with sales rep that LAW delivery has launched and capacity is available · Revenue not stated on call (HubSpot band $961K–$3M, used $1,980,500; Fractional CTO L1 needs $400K+) — confirm · Seat count: seller set 9 seats; transcript read as ~9 MyCase licenses plus Natha unlicensed — confirm seat count · Review counts unconfirmed — verify live before the call (none printed in deck) · Average case value not stated (no ROI built) · Google SERP/GBP/Ads/LSA/Meta Ad Library checks were NOT OBSERVED (tool access) — deck makes no claim from them
 
 # Report metadata
 FIRM_NAME      = "South Atlanta Family Law"
@@ -61,48 +55,50 @@ OUTPUT_PATH    = "south-atlanta-family-law/SouthAtlantaFamilyLaw_November52026_P
 
 # ── Slide 1 ──────────────────────────────────────────────────────
 PROSPECT_QUOTES = [
-    ("You said", "…if we get more cases, … I'd have to hire another, set up another attorney and paralegal team."),
+    ("You said", "If we get more cases, … I'd have to hire another, set up another attorney and paralegal team."),
     ("You said", "They actually do not book for us, unfortunately."),
 ]
 
 KEY_GAPS = [
-    ("Intake", "Calls after hours aren't booked, so new consultations can slip away"),
-    ("Lead Generation", "Slow mobile site (PageSpeed 29) can lose visitors before they call"),
-    ("Team", "Routine MyCase work isn't automated, so more cases mean more hires"),
+    ("Intake", "After-hours callers can't book — the answering service only answers calls"),
+    ("Lead Generation", "Mobile site scores 29 on PageSpeed, so phone visitors may leave before inquiring"),
+    ("Team", "Case workflows aren't automated, so extra cases would mean extra hires"),
 ]
 
-STAGE_TEXT = "Stage 4: Small Business Manager  →  Goal: Stage 5, Law Firm CEO"
+STAGE_TEXT = "Stage 4: Small Business Manager  →  Goal: Stage 6, Law Firm Owner"
 
 # ── Slide 2 ──────────────────────────────────────────────────────
-SLIDE_2_TITLE = "Your Growth Plan: 3 Priorities to Reach $1.5M/Year"
+SLIDE_2_TITLE = "Your Growth Plan: 3 Priorities to Reach $1.5M a Year"
 
 PRIORITIES = [
     (
-        "Put AI to Work", "in Your Firm", "003A59",
+        "Automate Your", "Daily Workflows", "003A59",
         [
-            "Give all 9 team members AI Workforce Pro access",
-            "Weekly AI Implementation Session to build team habits",
-            "Turn letter and email drafting into shared AI skills",
-            "Build capacity to take more cases without a new team",
+            "Monthly 1:1 session with your Fractional CTO",
+            "Turn your AI wish list into a build plan",
+            "Up to 1 custom automation built each month",
+            "Up to 2 skills set up from the skills library",
+            "Training videos so your team can use each one",
         ],
     ),
     (
-        "Automate Routine", "Firm Workflows", "69CD2B",
+        "Put AI to Work", "Across Your Team", "69CD2B",
         [
-            "Monthly 1:1 with your fCTO to plan AI priorities",
-            "Turn your MyCase workflow goal into a build plan",
-            "Hand the build to your fCTO, not your own evenings",
-            "Up to one custom automation built for you each month",
-            "Training videos so staff learn each new tool",
+            "AI Workforce Pro access for all 9 team seats",
+            "Draft letters and emails in one AI workspace",
+            "Weekly AI Implementation Session for your team",
+            "Talk through client-data questions with your fCTO",
+            "Give staff hours back for higher-value work",
         ],
     ),
     (
-        "Prioritize Your", "AI Wish List", "003A59",
+        "Grow Without", "Adding a Team", "003A59",
         [
-            "Rank each wish by hours saved and client impact",
-            "Put after-hours consult booking on the list",
-            "Review the monthly automation report with your fCTO",
-            "Free up time for the clients who value your work",
+            "Put after-hours intake on your AI wish list",
+            "Scope automations for faster inquiry follow-up",
+            "Automation reports show where time is saved",
+            "Take on more cases with the team you have",
+            "Room for the better-fit clients you want",
         ],
     ),
 ]
@@ -110,15 +106,15 @@ PRIORITIES = [
 # ── Slide 3 ──────────────────────────────────────────────────────
 PACKAGES = [
     (
-        "AI WORKFORCE PRO — 9 USERS",
-        "$2,077", "",
-        "9 users · 20M credits · weekly AI Implementation Session",
+        "FRACTIONAL CTO — LEVEL 1",
+        "$3,297", "$3,797/mo",
+        "Monthly 1:1 fCTO session · 2 skills · 1 custom automation",
         "0091C9",
     ),
     (
-        "FRACTIONAL CTO — LEVEL 1",
-        "$3,297", "$3,797/mo",
-        "Monthly 1:1 fCTO · up to 2 skills · 1 automation · reports",
+        "AI WORKFORCE PRO — 9 SEATS",
+        "$2,077", "9 seats",
+        "Platform access · Weekly AI Implementation Session",
         "003A59",
     ),
 ]
@@ -135,14 +131,14 @@ AGGRESSIVE_LABEL   = "Aggressive  (X cases/mo):"
 AGGRESSIVE_RESULT  = "$XX,XXX revenue · X.X× ROAS"
 
 WHAT_YOU_TOLD_US = [
-    ("MyCase workflows", "Your fCTO scopes and builds custom automations"),
-    ("Can't build it", "A dedicated fCTO leads the AI rollout with you"),
-    ("Capacity to grow", "AI Workforce Pro puts AI to work on routine tasks"),
+    ("Workflows", "Monthly fCTO sessions + 1 custom automation"),
+    ("Growth capacity", "AI Workforce Pro puts AI to work on routine tasks"),
+    ("After-hours", "Your AI wish list sets what the fCTO tackles first"),
 ]
 
 CLOSING_QUOTE = (
-    '"More cases, better-paying clients, and AI employees handling the '
-    'background work — without building a whole new team to get there."'
+    '"AI employees doing the work in the background, so more of the right '
+    'clients can come in without a whole new team to hire."'
 )
 
 # ═══════════════════════════════════════════════════════════════════
