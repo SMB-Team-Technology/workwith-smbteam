@@ -1,5 +1,12 @@
 name: Resend Audit Email
 
+# Re-uploads the current deck to HubSpot (replacing the same file, so the link
+# does not change), makes sure the contact has the link, and re-sends the
+# seller email with the .pptx attached.
+#
+# TEST MODE — when run on any branch other than main (workflow_dispatch with a
+# non-main ref): emails only carolyn.webb@smbteam.com, and skips the HubSpot
+# upload, the contact write and the Slack post.
 on:
   workflow_dispatch:
     inputs:
@@ -16,12 +23,19 @@ jobs:
     timeout-minutes: 10
     permissions:
       contents: read
+    env:
+      TEST_MODE: ${{ github.ref_name != 'main' }}
 
     steps:
       - name: Checkout
         uses: actions/checkout@v4
         with:
-          ref: main
+          fetch-depth: 0   # commit times pick the newest deck
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
 
       - name: Resolve friendly name
         id: resolve
@@ -33,11 +47,62 @@ jobs:
             echo "ERROR: Trigger file not found: $TRIGGER_FILE"
             exit 1
           fi
+          # The seller may have corrected the firm name in the review thread.
+          FIRM=$(jq -r '.firm_name // empty' "${NAME}/proposal_review.json" 2>/dev/null || true)
+          [ -n "$FIRM" ] || FIRM=$(jq -r '.firm_name' "$TRIGGER_FILE")
+          CONTACT=$(jq -r '.hubspot_contact_id // empty' "${NAME}/proposal_review.json" 2>/dev/null || true)
+          [ -n "$CONTACT" ] || CONTACT=$(jq -r '.hubspot_contact_id // empty' "$TRIGGER_FILE")
+          # Newest deck by commit time (a fresh checkout gives every file the same mtime).
+          DECK=""; BEST=0
+          for f in "${NAME}"/*_Proposal.pptx; do
+            [ -f "$f" ] || continue
+            T=$(git log -1 --format=%ct -- "$f"); T=${T:-0}
+            if [ -z "$DECK" ] || [ "$T" -gt "$BEST" ]; then DECK="$f"; BEST="$T"; fi
+          done
           echo "friendly_name=$NAME"               >> "$GITHUB_OUTPUT"
           echo "trigger_file=$TRIGGER_FILE"         >> "$GITHUB_OUTPUT"
-          echo "firm_name=$(jq -r '.firm_name'      "$TRIGGER_FILE")" >> "$GITHUB_OUTPUT"
+          echo "firm_name=$FIRM"                    >> "$GITHUB_OUTPUT"
           echo "sales_rep=$(jq -r '.sales_rep'      "$TRIGGER_FILE")" >> "$GITHUB_OUTPUT"
           echo "sales_rep_email=$(jq -r '.sales_rep_email // empty' "$TRIGGER_FILE")" >> "$GITHUB_OUTPUT"
+          echo "hubspot_contact_id=$CONTACT"        >> "$GITHUB_OUTPUT"
+          echo "deck=$DECK"                         >> "$GITHUB_OUTPUT"
+          echo "Branch: ${{ github.ref_name }} · test mode: $TEST_MODE · deck: ${DECK:-none}"
+
+      - name: Upload deck to HubSpot
+        id: upload
+        if: env.TEST_MODE != 'true' && steps.resolve.outputs.deck != ''
+        env:
+          HUBSPOT_TOKEN: ${{ secrets.HUBSPOT_TOKEN }}
+        run: |
+          RESULT=$(node scripts/upload-proposal-to-hubspot.mjs "${{ steps.resolve.outputs.friendly_name }}" \
+            --file "${{ steps.resolve.outputs.deck }}" || true)
+          echo "$RESULT"
+          OK=$(jq -r '.ok // false' <<< "$RESULT" 2>/dev/null || echo false)
+          echo "ok=$OK" >> "$GITHUB_OUTPUT"
+          if [ "$OK" = "true" ]; then
+            echo "url=$(jq -r '.url' <<< "$RESULT")" >> "$GITHUB_OUTPUT"
+          else
+            ERR=$(jq -r '.error // empty' <<< "$RESULT" 2>/dev/null | tr '\n' ' ')
+            echo "error=${ERR:-upload script returned no result}" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Write deck link to HubSpot contact
+        id: hubspot
+        if: env.TEST_MODE != 'true' && steps.upload.outputs.ok == 'true' && steps.resolve.outputs.hubspot_contact_id != ''
+        continue-on-error: true
+        env:
+          HUBSPOT_TOKEN: ${{ secrets.HUBSPOT_TOKEN }}
+          DECK_URL: ${{ steps.upload.outputs.url }}
+        run: |
+          CONTACT_ID="${{ steps.resolve.outputs.hubspot_contact_id }}"
+          BODY=$(jq -n --arg url "$DECK_URL" '{properties: {growth_profit_and_freedom_roadmap: $url}}')
+          HTTP_CODE=$(curl -s -o /dev/null -w "%{http_code}" -X PATCH \
+            "https://api.hubapi.com/crm/v3/objects/contacts/$CONTACT_ID" \
+            -H "Authorization: Bearer $HUBSPOT_TOKEN" \
+            -H "Content-Type: application/json" \
+            -d "$BODY")
+          echo "HubSpot response ($HTTP_CODE): contact $CONTACT_ID → growth_profit_and_freedom_roadmap = $DECK_URL"
+          [ "$HTTP_CODE" = "200" ] || { echo "ERROR: HubSpot returned $HTTP_CODE"; exit 1; }
 
       - name: Send email
         env:
@@ -47,9 +112,12 @@ jobs:
           FRIENDLY_NAME: ${{ steps.resolve.outputs.friendly_name }}
           SALES_REP: ${{ steps.resolve.outputs.sales_rep }}
           SALES_REP_EMAIL: ${{ steps.resolve.outputs.sales_rep_email }}
+          DECK: ${{ steps.resolve.outputs.deck }}
+          DECK_URL: ${{ steps.upload.outputs.url }}
+          UPLOAD_ATTEMPTED: ${{ steps.upload.outcome == 'success' }}
         run: |
           python3 - << 'PYEOF'
-          import smtplib, os, glob, sys
+          import smtplib, os, sys
           from email.mime.multipart import MIMEMultipart
           from email.mime.text import MIMEText
           from email.mime.application import MIMEApplication
@@ -60,44 +128,52 @@ jobs:
           friendly_name   = os.environ["FRIENDLY_NAME"]
           sales_rep       = os.environ["SALES_REP"]
           sales_rep_email = os.environ.get("SALES_REP_EMAIL", "").strip()
+          deck            = os.environ.get("DECK", "").strip()
+          deck_url        = os.environ.get("DECK_URL", "").strip()
+          upload_attempted = os.environ.get("UPLOAD_ATTEMPTED") == "true"
+          test_mode       = os.environ.get("TEST_MODE") == "true"
 
-          if not sales_rep_email:
-              print("ERROR: sales_rep_email is not set in the trigger file.")
+          if test_mode:
+              to_addr, cc_addrs = "carolyn.webb@smbteam.com", []
+              print("TEST MODE: sending only to carolyn.webb@smbteam.com")
+          else:
+              if not sales_rep_email:
+                  print("ERROR: sales_rep_email is not set in the trigger file.")
+                  sys.exit(1)
+              to_addr  = sales_rep_email
+              cc_addrs = [
+                  "eli.gill@smbteam.com",
+                  "vanessa.odonnell@smbteam.com",
+                  "chris.abouraad@smbteam.com",
+                  "justin.hernandez@smbteam.com",
+                  "carolyn.webb@smbteam.com",
+              ]
+
+          if not deck:
+              print(f"ERROR: No *_Proposal.pptx found in {friendly_name}/")
               sys.exit(1)
-
-          to_addr  = sales_rep_email
-          cc_addrs = [
-              "eli.gill@smbteam.com",
-              "vanessa.odonnell@smbteam.com",
-              "chris.abouraad@smbteam.com",
-              "justin.hernandez@smbteam.com",
-              "carolyn.webb@smbteam.com",
-          ]
-
-          pdf_files   = glob.glob(f"{friendly_name}/*_Sales_Companion.pdf")
-          pptx_files  = glob.glob(f"{friendly_name}/*_Proposal.pptx")
-          attachments = pdf_files + pptx_files
-
-          if not attachments:
-              print(f"WARNING: No PDF or PPTX found in {friendly_name}/. Sending without attachments.")
 
           msg = MIMEMultipart()
           msg["From"]    = gmail_user
           msg["To"]      = to_addr
-          msg["Cc"]      = ", ".join(cc_addrs)
-          msg["Subject"] = f"Growth, Profit, and Freedom Roadmap ready for {firm_name}"
+          if cc_addrs:
+              msg["Cc"]  = ", ".join(cc_addrs)
+          msg["Subject"] = ("[TEST] " if test_mode else "") + f"Proposal deck ready for {firm_name}"
 
-          workwith_url = f"https://workwith.smbteam.com/{friendly_name}"
+          if deck_url:
+              link_lines = [f"Open the deck here: {deck_url}", ""]
+          elif test_mode:
+              link_lines = ["(Test mode: HubSpot upload skipped, so there is no link.)", ""]
+          else:
+              link_lines = ["The HubSpot link isn't available (the upload failed) — use the attached deck.", ""]
+
           body = "\n".join([
               f"Hi {sales_rep},",
               "",
-              f"The Growth, Profit, and Freedom Roadmap for {firm_name} is ready ahead of your proposal call.",
+              f"The proposal deck for {firm_name} is ready ahead of your proposal call.",
               "",
-              f"View the full report here: {workwith_url}",
-              "",
-              "Attached you'll find:",
-              "  - Proposal Deck (PowerPoint) — share this on screen during the call",
-              "  - Sales Companion (PDF) — your seller-only cheat sheet, not for the client",
+              *link_lines,
+              "Attached: Proposal Deck (PowerPoint) — share this on screen during the call.",
               "",
               "Let the team know if you need any changes before the call.",
               "",
@@ -106,24 +182,22 @@ jobs:
           ])
           msg.attach(MIMEText(body, "plain"))
 
-          for filepath in attachments:
-              with open(filepath, "rb") as f:
-                  part = MIMEApplication(f.read(), Name=os.path.basename(filepath))
-              part["Content-Disposition"] = f'attachment; filename="{os.path.basename(filepath)}"'
-              msg.attach(part)
-              print(f"Attached: {filepath}")
+          with open(deck, "rb") as f:
+              part = MIMEApplication(f.read(), Name=os.path.basename(deck))
+          part["Content-Disposition"] = f'attachment; filename="{os.path.basename(deck)}"'
+          msg.attach(part)
+          print(f"Attached: {deck}")
 
-          all_recipients = [to_addr] + cc_addrs
           with smtplib.SMTP("smtp.gmail.com", 587) as server:
               server.starttls()
               server.login(gmail_user, gmail_password)
-              server.sendmail(gmail_user, all_recipients, msg.as_string())
+              server.sendmail(gmail_user, [to_addr] + cc_addrs, msg.as_string())
 
-          print(f"Email sent to {to_addr} (CC: {', '.join(cc_addrs)})")
+          print(f"Email sent to {to_addr}" + (f" (CC: {', '.join(cc_addrs)})" if cc_addrs else ""))
           PYEOF
 
       - name: Post result to Slack (repository_dispatch only)
-        if: github.event_name == 'repository_dispatch'
+        if: always() && github.event_name == 'repository_dispatch' && env.TEST_MODE != 'true'
         env:
           SLACK_BOT_TOKEN: ${{ secrets.SLACK_BOT_TOKEN }}
           SLACK_CHANNEL: ${{ github.event.client_payload.slack_channel }}
@@ -131,9 +205,19 @@ jobs:
           FIRM_NAME: ${{ steps.resolve.outputs.firm_name }}
           SALES_REP: ${{ steps.resolve.outputs.sales_rep }}
           SALES_REP_EMAIL: ${{ steps.resolve.outputs.sales_rep_email }}
+          UPLOAD_OK: ${{ steps.upload.outputs.ok }}
+          UPLOAD_ERROR: ${{ steps.upload.outputs.error }}
+          DECK_URL: ${{ steps.upload.outputs.url }}
+          HUBSPOT_OUTCOME: ${{ steps.hubspot.outcome }}
         run: |
           if [ "${{ job.status }}" = "success" ]; then
             TEXT="✅ Email resent for $FIRM_NAME → $SALES_REP ($SALES_REP_EMAIL)"
+            if [ "$UPLOAD_OK" = "true" ]; then
+              TEXT="$TEXT"$'\n'"$DECK_URL"
+              [ "$HUBSPOT_OUTCOME" = "failure" ] && TEXT="$TEXT"$'\n'"⚠️ The link could not be saved to the HubSpot contact — check the Actions log."
+            else
+              TEXT="$TEXT"$'\n'"⚠️ HubSpot upload failed — ${UPLOAD_ERROR:-no details}. The deck was attached to the email; no link was written to HubSpot."
+            fi
           else
             TEXT="❌ Failed to resend email for $FIRM_NAME. Check the Actions log."
           fi

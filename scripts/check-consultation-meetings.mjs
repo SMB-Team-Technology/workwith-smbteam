@@ -7,8 +7,10 @@
  * the Fathom discovery call transcript for each associated contact, and writes a
  * trigger JSON to triggers/audit-research/ so the audit-pipeline.yml workflow fires.
  *
- * Trigger files include suppress_pricing: true so the pipeline strips pricing
- * sections from the assembled report.
+ * Trigger files include suppress_pricing: true. The flag is carried through to
+ * the build trigger, but the proposal deck currently still includes its
+ * Investment slide (the old HTML pricing-strip step was retired with the
+ * website).
  *
  * Required secrets:
  *   HUBSPOT_TOKEN   — HubSpot private app token (Settings → Integrations → Private Apps)

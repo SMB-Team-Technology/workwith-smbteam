@@ -1,8 +1,6 @@
-# SMB Team — Audit Write (Pass 2)
+# SMB Team — Audit Write (Pass 2): Build the Proposal Deck
 
-Fill in all section templates, assemble the final HTML report, generate the Sales Companion PDF, and push to GitHub. Run this after `/audit-research` completes.
-
-Optionally append `--with-pptx` to also generate the 3-slide proposal PowerPoint after the HTML report is complete (calls `/audit-pptx` automatically).
+Build the 3-slide proposal PowerPoint for a firm and commit it. Run this after `/audit-research` completes. This pass used to build the "Growth, Profit & Freedom Roadmap" website and the Sales Companion PDF; both are retired. The deck is now the only output, and it is built from the same inputs the website was.
 
 ## How to invoke
 
@@ -14,65 +12,52 @@ Sales Rep: [rep's full name]
 Date: [same date used in /audit-research — Month DD, YYYY]
 ```
 
-Or with PowerPoint output:
-
-```
-/audit-write --with-pptx
-Firm Name: [Full legal name of the firm]
-Friendly Name: [same value used in /audit-research, e.g. angel-law]
-Sales Rep: [rep's full name]
-Date: [same date used in /audit-research — Month DD, YYYY]
-```
+(`--with-pptx` is still accepted for old trigger files but does nothing — the deck is always built.)
 
 ---
 
 ## BEFORE STARTING
 
-Read these two files:
-1. `[friendly-name]/[FirmName]_[Date]_Research_Notes.txt` — all data comes from here. Trust it.
-2. `Design Files/audit_styles.css` — scan class names so you never invent one.
+Read these files. They are the only inputs — no new research:
+1. `[friendly-name]/[FirmName]_[Date]_Research_Notes.txt` — all firm data comes from here: the web research, the transcript extraction (STEP 9) and the `Key prospect quotes` list. Trust it.
+2. `[friendly-name]/package_decision.json` — the package, prices, ad-spend starting points and seller overrides (see STEP 1). It may be absent (see STEP 1).
+3. `.claude/commands/audit-pptx.md` — what each slide field holds and the rules for filling it.
 
 If the research notes file does not exist, stop and tell the user to run `/audit-research` first.
 
-Create `[friendly-name]/sections/` if it does not exist.
+Do not read anything under `[friendly-name]/sections/`, `[friendly-name]/index.html`, or any earlier `*_Proposal.py` / `*_Sales_Companion.py` in the firm folder. Older firms still have those files from the retired website; a new build must come from the inputs above only.
 
-**Transcript-first principle:** The research notes contain data extracted from the transcript. Those values are ground truth. Never search for data that's already in the notes.
+**Transcript-first principle:** The research notes contain data extracted from the transcript. Those values are ground truth. Never search for data that's already in the notes. This pass never has the transcript file itself — only what the research notes captured.
 
 ---
 
 ## CRITICAL RULES — NEVER BREAK THESE
 
-- **NO CSS.** No `<style>` blocks. No inline styles. No `style=""` attributes. Ever.
-- Only use class names that already exist in `audit_styles.css`. Never invent new ones. The executive summary section uses classes prefixed with `exec-` (e.g. `exec-summary`, `exec-block`, `exec-pillar-circle`) — these are defined in `audit_styles.css` and are valid.
-- Replace only `<!-- FILL: -->` placeholder content — do not touch anything else in any template.
-- Direct transcript quotes go in quote boxes only — never paraphrase into a quote box.
-- Take quotes from the research notes' STEP 9 fields and `Key prospect quotes` list. If the notes say quotes come from an AI summary rather than a full transcript, do not present them in quote boxes as the client's exact words — paraphrase in the body text instead, or delete the quote box.
+- Direct transcript quotes (`PROSPECT_QUOTES` on slide 1) come only from the research notes' STEP 9 fields and `Key prospect quotes` list. If the notes say quotes come from an AI summary rather than a full transcript, there are no usable quotes: set `PROSPECT_QUOTES = []` and never present summary text as the client's exact words.
 - Never say "you are not running ads" — only "does not appear to be running" or "not observed."
-- Omit "Who Is Doing It Better" row on any quick win card where no specific named local competitor was identified.
-- Omit "The Positive" block in any pillar section where nothing genuine can be said.
 - Never mention live chat as an SMB Team service.
 - Never mention CRM setup as an SMB Team deliverable.
 - Never state profitability facts by practice area unless the prospect explicitly said so on the call.
-- Escalation flags are internal only — never appear in the client report.
-- **Never print a review count or star rating (firm or competitor) tagged `UNCONFIRMED` in the research notes as a specific fact.** Use qualitative framing instead (e.g., "far fewer reviews than several competitors in this market" rather than an exact number), and add "Review counts unconfirmed — verify live before the call" to the escalation flags in `section_11_workings.txt`. Only a number tagged `[confirmed via Google]` in the research notes may appear as a specific figure in the client-facing report.
+- Escalation flags are internal only — they go in the BUILD NOTES block (STEP 2), never in a slide field.
+- **Never print a review count or star rating (firm or competitor) tagged `UNCONFIRMED` in the research notes as a specific fact.** Use qualitative framing instead (e.g., "far fewer reviews than several competitors in this market" rather than an exact number), and add "Review counts unconfirmed — verify live before the call" to the escalation flags in the BUILD NOTES. Only a number tagged `[confirmed via Google]` in the research notes may appear as a specific figure in the deck.
 
 ---
 
-## FIRM STAGE — STAIRCASE IMAGE
+## FIRM STAGE
 
-Determine stage from the transcript. Assign the lower stage if on the border. In `section_03_firm_overview.html`, uncomment the correct image and delete the others.
+Determine stage from the transcript. Assign the lower stage if on the border. The current and goal stage go in `STAGE_TEXT` on slide 1 (the layout engine draws the staircase from the stage numbers).
 
-- **Stage 2 — The Lawyer:** Employed at another firm, no independent client base. → `LLS-Lawyer`
-- **Stage 3 — Solo Practitioner:** Referrals only, handles casework and intake personally, very small or no team, profit unpredictable. → `LLS-Solo-Practitioner`
-- **Stage 4 — Small Business Manager:** Has at least one scalable lead gen system, small team, still heavily involved in operations. → `LLS-Small-Business-Manager`
-- **Stage 5 — Law Firm CEO:** Multiple lead gen systems, trained intake team, leadership structure, can take time off. → `LLS-Law-Firm-CEO`
-- **Stage 6 — Law Firm Owner:** Firm runs without owner, CEO/COO in place, omnipresent marketing, profit predictable. → `LLS-Law-Firm-Owner`
+- **Stage 2 — The Lawyer:** Employed at another firm, no independent client base.
+- **Stage 3 — Solo Practitioner:** Referrals only, handles casework and intake personally, very small or no team, profit unpredictable.
+- **Stage 4 — Small Business Manager:** Has at least one scalable lead gen system, small team, still heavily involved in operations.
+- **Stage 5 — Law Firm CEO:** Multiple lead gen systems, trained intake team, leadership structure, can take time off.
+- **Stage 6 — Law Firm Owner:** Firm runs without owner, CEO/COO in place, omnipresent marketing, profit predictable.
 
 ---
 
 ## TRAFFIC LIGHT CRITERIA
 
-Assign red / amber / green for each pillar based on the transcript:
+Rate each pillar red / amber / green from the transcript and research notes. These ratings are not shown on any slide — use them to rank the pillars when choosing `KEY_GAPS` (the reddest pillars first) and the What You Told Us items:
 
 **Lead Generation** — Red: referrals only, no system, inconsistent flow. Amber: some paid ads or SEO, inconsistent results. Green: multiple reliable systems running.
 
@@ -86,48 +71,13 @@ Assign red / amber / green for each pillar based on the transcript:
 
 ## DOMINANT BUYING MOTIVE (DBM)
 
-The DBM is the personal reason behind growth — what success will allow the owner to do. Not "more money" — what the money enables. Use exact transcript words if available. If not stated, infer: most owners want (1) a firm that runs itself so they have time, (2) grow and sell, or (3) scale and dominate. Anchor every section to the DBM.
+The DBM is the personal reason behind growth — what success will allow the owner to do. Not "more money" — what the money enables. Use exact transcript words if available. If not stated, infer: most owners want (1) a firm that runs itself so they have time, (2) grow and sell, or (3) scale and dominate. Anchor every slide to the DBM.
 
 ---
 
-## SECTIONS — WORK THROUGH IN ORDER
+## STEP 1 — PACKAGE AND PRICES
 
-Complete and save each section before starting the next. The FILL: comments in each template specify exactly what content goes where. The notes below add rules beyond the templates.
-
-**STEP A — section_01_cover.html**
-Fill: firm name (twice), sales rep name, audit date. Save to `[friendly-name]/sections/section_01_cover.html`.
-
-**STEP B — section_02_toc.html**
-Fill: firm name wherever FIRM NAME HERE appears in link text. Do not change any href values. Save to `[friendly-name]/sections/section_02_toc.html`.
-
-**STEP C — section_03_firm_overview.html**
-Fill: firm name, firm summary (2–3 sentences: who they are, current stage, single most important finding — no generic language), correct staircase image, DBM connector sentence, current stage label, four current reality bullets specific to this firm, connecting sentence, overall growth stage assessment (2–3 sentences: stage description, most urgent limiting area, gap between goals and reality). Save to `[friendly-name]/sections/section_03_firm_overview.html`.
-
-**STEP D — section_04_about_smb.html**
-Static file. Copy as-is to `[friendly-name]/sections/section_04_about_smb.html`. No changes.
-
-**STEP E — section_05_growth_health.html**
-Fill: firm name, all four traffic light colors and labels, all four pillar findings (2–3 specific bullets each), all four DBM connector sentences (italic), urgency score (1–10), urgency marker left percentage (score ÷ 10 × 100), urgency sentence from the correct range, 2–3 named local competitor threat cards.
-
-Urgency sentences:
-- **1–3:** "A score of [X] means no single competitor is dominating your market yet — but that will not last forever. The firms that win markets do so by moving first. Getting your systems in place now means you set the standard before someone else does."
-- **4–6:** "A score of [X] means competitors have meaningful advantages in one or more areas and are pulling ahead. You are not invisible yet — but the window to close the gap is narrowing. Every month without action is a month they extend their lead."
-- **7–10:** "A score of [X] means competitors are actively dominating multiple channels in your market and the gap is getting wider every month you wait. This is not a future problem — it is a right now problem."
-
-Save to `[friendly-name]/sections/section_05_growth_health.html`.
-
-**STEP F — section_06_lead_generation.html**
-Fill: lead gen intro (2 sentences, specific to this firm), website section with actual PageSpeed scores (real numbers only — from research notes), local SEO section with GBP data and local pack results per practice area with actual competitor review counts, Google Ads section covering ALL practice areas, LSA section, Meta Ads section. Delete any blind spot divs that do not apply. Save to `[friendly-name]/sections/section_06_lead_generation.html`.
-
-**STEP G — section_07_08_09_intake_team_profit.html**
-Fill all three sections in order — Intake, Team, Profit. For each: intro sentence, traffic light, transcript quote (or delete if none), problem bullets, blind spot (or delete), positives (or delete if nothing genuine), gap bullets, DBM closing. End Intake with: "Fixing intake means converting more of the leads the firm is already generating — without spending another dollar on marketing." End Team with: "Until this changes, the owner cannot have more free time — no matter how much revenue grows." Save to `[friendly-name]/sections/section_07_08_09_intake_team_profit.html`.
-
-**STEP H — section_10_whats_possible.html**
-Fill: firm name (twice), bridge text connecting current reality to transformation, three transformation cards tied specifically to this owner's DBM. Save to `[friendly-name]/sections/section_10_whats_possible.html`.
-
-**STEP I — section_11_next_steps.html**
-
-This section is large and must be completed in three sub-steps to avoid API timeouts. Complete and save after each sub-step before continuing.
+Apply all package eligibility and calculation logic in this step and the tables below before filling any slide field.
 
 **TRANSCRIPT-STATED NEED OVERRIDE — APPLY THIS BEFORE ANYTHING ELSE**
 
@@ -135,8 +85,8 @@ This section is large and must be completed in three sub-steps to avoid API time
 
 1. **Call-purpose override.** If the transcript or research notes state the discovery call's actual subject was something other than standard marketing/intake growth (e.g., explicitly framed as a Fractional CTO / AI automation engagement, an operations/coaching engagement, etc.), lead the recommendation with that stated category. Do not default to Full Service Marketing just because revenue qualifies for a tier — the firm did not ask about marketing. Check the LAW package table and the non-marketing package table first; only add a marketing package if the transcript shows an actual marketing/lead-gen gap alongside the stated need.
 2. **Existing-vendor override.** If the transcript states the firm has recently signed with, or is already paying, another marketing/SEO/ad/AEO vendor (an active or recent contract), exclude Full Service Marketing — every tier and every sub-package — from the recommendation entirely. A firm that just committed to a marketing engagement does not have a marketing gap; recommending one anyway ignores the client's actual, stated situation. Recommend the package(s) that match what the transcript says the firm still needs instead (coaching, ops, AI/FCTO, etc.).
-3. **Budget-reality override.** If the transcript or notes state, or strongly imply, that the client cannot afford or is not positioned to spend at the tier the revenue table implies (budget concerns, an explicit statement of financial limits, a stated preference for a smaller engagement), do not present the revenue-implied tier. Lead with the lowest-cost package that still addresses the transcript's stated need, and document the gap between the revenue table's suggestion and what you actually recommended in section_11_workings.txt so sales can see the override was intentional.
-4. **Effective-revenue override.** If the research notes state a net/take-home/collected revenue figure distinct from a gross/case-value figure (common for contingency-fee practices — e.g. "$1.5–2M gross / ~$500k net"), tier and calculate against the **net** figure, not gross, regardless of what `revenue_effective` in `package_decision.json` says. `select-package.mjs` applies this automatically when both figures are parseable (check `net_revenue_stated` and `is_contingency_practice` in the decision file), but if the notes state a net figure the script's regex missed, apply it by hand and document the correction — including the recomputed 35%-cap check and ad-spend range — in section_11_workings.txt.
+3. **Budget-reality override.** If the transcript or notes state, or strongly imply, that the client cannot afford or is not positioned to spend at the tier the revenue table implies (budget concerns, an explicit statement of financial limits, a stated preference for a smaller engagement), do not present the revenue-implied tier. Lead with the lowest-cost package that still addresses the transcript's stated need, and document the gap between the revenue table's suggestion and what you actually recommended in the BUILD NOTES (STEP 2) so sales can see the override was intentional.
+4. **Effective-revenue override.** If the research notes state a net/take-home/collected revenue figure distinct from a gross/case-value figure (common for contingency-fee practices — e.g. "$1.5–2M gross / ~$500k net"), tier and calculate against the **net** figure, not gross, regardless of what `revenue_effective` in `package_decision.json` says. `select-package.mjs` applies this automatically when both figures are parseable (check `net_revenue_stated` and `is_contingency_practice` in the decision file), but if the notes state a net figure the script's regex missed, apply it by hand and document the correction — including the recomputed 35%-cap check and ad-spend range — in the BUILD NOTES (STEP 2).
 
 None of these four checks are about recomputing a price in isolation — they are about whether the *category* and *scale* of product being proposed matches what actually happened on the call. Do this check even when `package_decision.json` says `confidence: "high"`.
 
@@ -146,19 +96,19 @@ Before any eligibility logic, check whether `[friendly-name]/package_decision.js
 
 - **If it exists:** Read it and extract `marketing_tier`, `marketing_price_bundled`, `marketing_price_retail`, `coaching_name`, `coaching_price_bundled`, `coaching_price_retail`, `total_bundled`, `ad_spend_conservative`, `ad_spend_aggressive`, `net_revenue_stated`, `is_contingency_practice`, `confidence`, `call_focus`, and the LAW fields (`law_tier`, `law_name`, `law_price_bundled`, `law_price_retail`, `law_seats`). A `null` marketing field means no marketing package is part of the recommendation. When `call_focus.primary_engagement` is set, `select-package.mjs` has already applied the call-purpose override (marketing left out on a coaching/ops- or AI-led call with no lead-gen need; AI products named on the call included as the LAW package) — still run the override check below as a backstop, but don't re-add marketing it removed unless the research notes show a lead-gen need. After applying the Transcript-Stated Need Override above:
   - **Prices in the file are already correct — copy them, never recompute.** `*_price_bundled` is the price the client is CHARGED and `*_price_retail` is the stand-alone price. `scripts/lib/pricing.mjs` applies the bundle rule: when `pricing_mode` is `"standalone"` (fewer than 2 bundle-eligible products — AI Workforce Pro – Starter never counts), the charged price IS the stand-alone price and there are no bundle savings. If you change which products are in the package for any reason, edit only the product name fields and then run `node scripts/reprice.mjs [friendly-name]` to get the prices.
-  - **Seller always wins.** If `package_source` is `"trigger_override"` or any `selection_notes` entry starts with "Seller override", the seller chose this package in Slack. Use it as-is — the four Transcript-Stated Need overrides above do not apply to it. Note any rule it breaks in section_11_workings.txt, but build it.
-  - If `needs_revenue_confirmation` is `true`, the seller locked it in without confirming revenue. Build it, and add "Revenue unverified (draft based on <revenue_source>)" to section_11_workings.txt — never mention this in the client-facing report.
+  - **Seller always wins.** If `package_source` is `"trigger_override"` or any `selection_notes` entry starts with "Seller override", the seller chose this package in Slack. Use it as-is — the four Transcript-Stated Need overrides above do not apply to it. Note any rule it breaks in the BUILD NOTES (STEP 2), but build it.
+  - If `needs_revenue_confirmation` is `true`, the seller locked it in without confirming revenue. Build it, and add "Revenue unverified (draft based on <revenue_source>)" to the BUILD NOTES (STEP 2) — never mention this in the deck.
   - If `needs_seller_input` is `true`, no package was chosen (call focus unknown) and the seller never set one. Do not fall back to a revenue-based marketing + coaching package. Stop and report that the seller must set the package in the Phase 1 Slack thread first.
   - If none of the three overrides apply and `confidence` is `"high"`, use the tier names and prices exactly — do not re-run eligibility logic.
-  - If none of the three overrides apply but `confidence` is `"medium"` or `"low"`, use the decision file as a starting point, cross-check the selected tiers against the research notes, and document any correction in section_11_workings.txt.
-  - If any override applies, the decision file's marketing/coaching selection is not usable as-is — apply the full eligibility rules below instead (pulling in the LAW / non-marketing tables as the override directs) and document in section_11_workings.txt which override triggered the departure from the decision file.
+  - If none of the three overrides apply but `confidence` is `"medium"` or `"low"`, use the decision file as a starting point, cross-check the selected tiers against the research notes, and document any correction in the BUILD NOTES (STEP 2).
+  - If any override applies, the decision file's marketing/coaching selection is not usable as-is — apply the full eligibility rules below instead (pulling in the LAW / non-marketing tables as the override directs) and document in the BUILD NOTES (STEP 2) which override triggered the departure from the decision file.
 - **If it does not exist (interactive session or fallback):** Apply the full eligibility rules and MANDATORY PRICE LOOKUP below.
 
-Apply all package eligibility and calculation logic (below) BEFORE starting Step I-a.
+Apply all package eligibility and calculation logic (below) BEFORE starting STEP 2.
 
 If the pipeline injected a `PACKAGE INSTRUCTION` block in your system prompt, treat it as input to the override check above, not as something that bypasses it — a `PACKAGE INSTRUCTION` cannot make a marketing package correct for a firm that just told you it doesn't need one.
 
-**MANDATORY PRICE LOOKUP — COMPLETE THIS BEFORE STEP I-a**
+**MANDATORY PRICE LOOKUP — COMPLETE THIS BEFORE STEP 2**
 
 Do not rely on memory for any price. If using package_decision.json, copy the prices from that file. Otherwise, scroll to the SELECT MARKETING PACKAGE and SELECT NON-MARKETING PACKAGE tables in this command file and read the exact dollar amounts. Then write them out explicitly in this format before proceeding:
 
@@ -181,68 +131,60 @@ Do not rely on memory for any price. If using package_decision.json, copy the pr
 
 **Bundle rule:** bundled prices apply only when the package has 2 or more bundle-eligible products. AI Workforce Pro – Starter does not count toward a bundle. With fewer than 2, every product is charged its stand-alone price and savings are $0. A product with no stand-alone price (Paid Ads Essentials, Web + SEO Essentials, Coach Essentials) cannot be sold on its own — if it ends up alone, stop and report it instead of building.
 
-If any price you are about to write is not an exact match to a value in those tables, stop. Go back to the table and find the correct number. Do not round, interpolate, or estimate. Do not proceed to Step I-a until these lookups are confirmed character-by-character against the tables in this file.
+If any price you are about to write is not an exact match to a value in those tables, stop. Go back to the table and find the correct number. Do not round, interpolate, or estimate. Do not proceed to STEP 2 until these lookups are confirmed character-by-character against the tables in this file.
 
-**STEP I-a — Write workings file**
-Compute and save `[friendly-name]/sections/section_11_workings.txt` containing:
+---
+
+## STEP 2 — WORKINGS (inside the deck build)
+
+Do the calculations that used to go in the retired `section_11_workings.txt` here. Do not write a separate workings file. Instead, copy `Design Files/audit_pptx_template.py` to `[friendly-name]/[FirmName]_[Date]_Proposal.py` (see audit-pptx.md) and record the workings as a comment block directly under the `# FILL — Replace every placeholder` banner, above the first slide field:
+
+```python
+# ── BUILD NOTES (internal — never shown on a slide) ──────────────
+# Marketing package: <name> — bundled $X,XXX/mo, stand-alone $X,XXX/mo, savings $X,XXX/mo
+# Non-marketing package(s): ...
+# LAW package: ... (or "none")
+# Total monthly investment: $X,XXX/mo · total savings: $X,XXX/mo · pricing_mode: bundled|standalone
+# Ad spend: conservative $X,XXX (channels: ...), aggressive $X,XXX (20% rule / reverse math: ...)
+# ROI conservative: blended CPL $X → N leads → N cases (close rate X%) → $X revenue → X.X×
+# ROI aggressive:   blended CPL $X → N leads → N cases → $X revenue → X.X×
+# Case value: $X (source: transcript / practice-area default)
+# Why this range: <the client-facing sentence>
+# What You Told Us (slide 3 panel + slide 1 quotes):
+#   1. <label> — transcript line: "<verbatim line from the research notes>" — supports: <package>
+#   2. ...
+#   3. ...
+# Overrides applied: <which Transcript-Stated Need Override, or seller override, and why>
+# Escalation flags: <each flag that applies, or "none">
+```
+
+Contents — the same items the old workings file held:
 - Selected marketing package name, bundled price, stand-alone price, savings
 - Selected non-marketing package(s) name, bundled price, stand-alone price, savings
-- Total monthly investment (sum of bundled prices)
-- Total savings (sum of all stand-alone minus bundled)
-- Conservative ad spend amount and full ROI projection (leads, cases, revenue, return multiple) — only if a marketing/ads package is part of the recommendation
-- Aggressive ad spend amount and full ROI projection (leads, cases, revenue, return multiple) — only if a marketing/ads package is part of the recommendation
-- If a marketing/ads package is part of the recommendation: one plain-English "why this range" sentence explaining the *payoff* of spending in this range for this firm specifically — what it converts or captures (e.g. high-intent searches in their practice area, cases currently going to a competitor, their stated urgency/goal) — not a restatement of the math. Ground it in a real specific from the audit (practice area, a named competitor gap, or the DBM/goal), pulling from `ad_spend_rationale` in `package_decision.json` if present only as a hint toward which practice area or basis to reference, never to quote directly. No CPL numbers, tier caps, or other internal terminology — this sentence is client-facing.
-- DBM statement for Block 1
-- List of 6+ quick win opportunities identified (pillar, title, why, competitor if any, opportunity)
-- What You Told Us (Block 5): the 3 items selected, each with the verbatim transcript line it comes from (or, with no transcript, the Section 5–9 finding for What We Found) and the Block 2 package/deliverable it supports
+- Total monthly investment (sum of bundled prices) and total savings
+- Conservative and aggressive ad spend, each with the full ROI projection (leads, cases, revenue, return multiple) — only if a marketing/ads package is part of the recommendation. Use the AD SPEND CALCULATION and ROI PROJECTIONS rules below.
+- If a marketing/ads package is part of the recommendation: the one plain-English "why this range" sentence (rules under AD SPEND CALCULATION). It feeds `AD_SPEND_NOTE`.
+- DBM statement
+- What You Told Us: the 3 items selected (rules under WHAT YOU TOLD US below), each with the verbatim line from the research notes it comes from (or, with no transcript, the research finding for What We Found) and the package/deliverable it supports
+- Which override (if any) changed the decision file's package, any "Revenue unverified (draft based on <revenue_source>)" note, and every escalation flag that applies
 
-Save the workings file. Do not proceed until it is saved.
+These notes stay in the `.py` as the record of what went into the deck. They are comments above the layout engine, so the layout diff check is unaffected. The repo is public: keep transcript lines short, exactly as they already appear in the research notes, and never add anything from outside the research notes.
 
-**STEP I-b — Write section 11 first half**
-Fill and save `[friendly-name]/sections/section_11_next_steps.html` with the complete file structure. In this sub-step, fill ONLY:
-- Firm name (all three occurrences)
-- All quick win cards (minimum 6 across all four pillars). Delete the "Who Is Doing It Better" row on any card where no named competitor was identified.
-- Block 1: custom closing statement (formula: "We help [audience] get [external desire] so they can [DBM].")
-- Block 2: DBM subheader + package block(s) with deliverables. Each package block must include a package-label div identifying the package type.
-- Block 3: investment rows with retail (stand-alone) and bundled prices pulled from your workings file. Total monthly investment row. Savings callout. **When `pricing_mode` is `"standalone"` there is no bundle: show one price per row (the stand-alone price), and delete the savings callout and any "You save … by bundling" text.** Use ONLY the prices from the approved tables — never deviate. Each row represents one service category (e.g. "Full Service Marketing Starter", "Elite Coach Plus") — never break a category into sub-component line items or show individual pricing within a service category.
-- Block 4: recommended ad spend table. **Only include this block at all if a marketing/ads package is actually part of this firm's recommendation** (i.e., a marketing tier was selected and survived the Transcript-Stated Need Override above) — if the recommendation is coaching/ops/AI-only, delete Block 4 entirely from the saved file rather than filling it with a number for a service the firm isn't buying. When it applies: **DO NOT change the HTML structure otherwise.** Replace the placeholder dollar amounts, case counts, and return multiples, and fill the "why this range" sentence (see Step I-a) with the benefit framing — why this spend pays off for this firm, not the internal CPL/tier-multiplier math. Structure: ad spend range row → case value row → spacer → "Conservative scenario" header + 3 rows (cases, revenue, return) → spacer → "Aggressive scenario" header + 3 rows → why-this-range sentence → disclaimer.
+## STEP 3 — BUILD THE DECK
 
-Leave blocks 5–8 with their original template placeholder text for now. Save the file.
-
-**STEP I-c — Complete section 11 second half**
-Edit `[friendly-name]/sections/section_11_next_steps.html` to fill in blocks 5–8:
-- Block 5: What You Told Us. Use the WHAT YOU TOLD US rules below — 3 items from the transcript, each tied to the recommendation, plus one next-step line. With no transcript, use the What We Found fallback below — never omit Block 5. Never mention live chat. Never mention CRM setup.
-- Block 6: three phase roadmap cards. Use the GROWTH ROADMAP PHASES rules below — do not repeat what Block 2 already sold as a "new" phase addition.
-- Block 7: three outcome cards (More Profit, More Freedom, Better Client Results), each tied to this owner's DBM.
-- Block 8: personal closing paragraph (2–3 italic sentences) + final line with firm name.
-
-Save (edit) the file. Verify no FILL: placeholders remain.
-
-**STEP J — section_executive_summary.html** *(fill this last)*
-Copy `Design Files/section_executive_summary.html` to `[friendly-name]/sections/section_executive_summary.html`. Fill:
-- `FIRM_NAME`: firm name
-- `URGENCY_SCORE`: copy the number from the urgency-score element in your completed `section_05_growth_health.html`
-- Pillar circles (4 items): copy the class (`red` / `amber` / `green`) from each `sc-card` traffic light in your completed `section_05_growth_health.html`
-- `TOP_PRIORITY_1` through `TOP_PRIORITY_4`: 3–4 of the most critical firm-specific findings from sections 05–09. One sentence each. Lead with the consequence. Delete the fourth `<li>` if only 3 priorities.
-- `PACKAGE_ONE_NAME` / `BUNDLED_PRICE_ONE`: copy from your completed `section_11_next_steps.html` investment grid
-- `PACKAGE_TWO_NAME` / `BUNDLED_PRICE_TWO`: copy from investment grid; delete this row if only one package
-- `AD_SPEND`: copy "Recommended ad spend" value from investment grid; if Block 4 was omitted from section 11 (no marketing/ads package sold), omit this line here too instead of copying a number for a service that wasn't recommended
-- `TOTAL_INVESTMENT`: sum of bundled package prices only (not ad spend); copy from investment-total in section 11
-- `EXEC_CLOSING`: one sentence tied to this firm's central opportunity and owner's DBM. No placeholders.
-
-Save to `[friendly-name]/sections/section_executive_summary.html`.
+Follow `.claude/commands/audit-pptx.md` to fill every slide field from the research notes, `package_decision.json` and your STEP 2 workings, then run the script and check its output. Every price, the ad spend range and the ROI figures on slide 3 must match the BUILD NOTES exactly.
 
 ---
 
 ## PRICE INTEGRITY — CRITICAL
 
-The prices in the tables below are the ONLY approved prices. Do not estimate, round, interpolate, or use any number not listed here. Every dollar figure in the client report must come from one of the approved pricing tables below (Marketing, Non-Marketing, Legal AI Workforce, AI Avatar, Bookkeeping, General Add-Ons, OmniSocial AI, or Attorney Assistant). The example numbers in HTML template comments are illustrative only — do not use them as actual prices.
+The prices in the tables below are the ONLY approved prices. Do not estimate, round, interpolate, or use any number not listed here. Every dollar figure in the deck must come from one of the approved pricing tables below (Marketing, Non-Marketing, Legal AI Workforce, AI Avatar, Bookkeeping, General Add-Ons, OmniSocial AI, or Attorney Assistant). The example numbers in template comments are illustrative only — do not use them as actual prices.
 
 ---
 
 ## PACKAGE ELIGIBILITY AND CALCULATIONS
 
-Complete this entire section before starting Step I.
+Complete this entire section before starting STEP 2.
 
 ### ELIGIBILITY FILTERS — apply first, hide anything that fails
 
@@ -301,7 +243,7 @@ Note: the Paid-Ads-only sub-package for Starter has a lower cap of $20,000 — $
 | Web + SEO Dominate | $6,997/mo | $7,997/mo |
 | Web + SEO Platinum | $9,597/mo | $11,497/mo |
 
-**Stand-alone prices (for savings calculation in Block 3):**
+**Stand-alone prices (for the savings calculation on slide 3):**
 Essentials $3,797 | Starter $5,697 | Growth $8,997 | Dominate $12,497 | Platinum $18,997
 
 **Boundary rule:** If the firm's calculated ad spend exceeds the tier's cap, move to the higher tier. Aggressive goals alone no longer bypass the Dominate/Platinum revenue floors — a firm must meet the revenue threshold to be eligible.
@@ -339,7 +281,7 @@ Non-marketing packages are the default recommendation alongside marketing. Recom
 
 **Stand-alone prices:** Coach Essentials Plus $2,497 (Coach Essentials has no stand-alone price) | Elite Coach $3,497 | Elite Coach Plus $3,497 | Master's Circle $4,997 | FCOO Advisor $3,797 | FCOO Director $5,797 | FCFO Advisor $3,797 | FCFO Director $5,797 | FCFO Partner $9,997
 
-**Fractional packages (FCOO and FCFO) now include Elite Coach group deliverables.** When recommending any fractional package in Block 2, the deliverables list must include: weekly group coaching sessions, practice area masterminds, virtual access to quarterly workshops, and one annual in-person workshop. These are included in the fractional price — do not list them as a separate charge.
+**Fractional packages (FCOO and FCFO) now include Elite Coach group deliverables.** When recommending any fractional package, its deliverables must include weekly group coaching sessions, practice area masterminds, virtual access to quarterly workshops, and one annual in-person workshop — reflect this in that package card's services line on slide 3 (condensed to fit). These are included in the fractional price — do not list them as a separate charge.
 
 ---
 
@@ -369,7 +311,7 @@ Fractional CTO setup fee: $0 at every level.
 **AI Workforce Pro terms:**
 - AI Workforce Pro – Starter: month-to-month contract, 1M AI credits per user, overages $150/mo. Includes access to AI Workforce Pro and a weekly AI Implementation Session.
 - AI Workforce Pro: yearly contract, 10M usage credits + 10M bonus credits (20M total), $120/mo per employee over 5, overages $150/mo. Includes access to AI Workforce Pro and a weekly AI Implementation Session.
-- There is no standalone price for either AI Workforce Pro tier — do not quote one in the client report.
+- There is no standalone price for either AI Workforce Pro tier — do not quote one in the deck.
 
 **Fractional CTO deliverables (per month):**
 
@@ -455,7 +397,7 @@ Each tier includes 2 hours/month of Controller Services in addition to monthly b
 | Level 2 | Bookkeeping Level 2 | +25 hrs/mo | $1.5M–$2.9M |
 | Level 3 | Bookkeeping Level 3 | +45 hrs/mo | $3M–$3.9M |
 
-Add-on pricing is custom-scoped — never quote a dollar figure for it in the client report. Flag "AR/AP/Payroll add-on interest — requires custom scoping" in research notes instead.
+Add-on pricing is custom-scoped — never quote a dollar figure for it in the deck. Flag "AR/AP/Payroll add-on interest — requires custom scoping" in research notes instead.
 
 **When to recommend:** Firm has no bookkeeper, financials are disorganized, or the owner has no visibility into cash position. Add AR/AP/Payroll only if the firm explicitly needs help with receivables, payables, or running payroll beyond standard bookkeeping.
 
@@ -581,11 +523,11 @@ Always present ad spend as a range: **Conservative (low end) to Aggressive (high
 
 **Common geo tiers:** NYC/LA/Chicago/Houston/Dallas/Atlanta/Philly/DC = Tier 1. Miami/Boston/Phoenix/Seattle/Detroit/SF/Tampa/Minneapolis/Denver/San Diego/Orlando = Tier 2. Charlotte/Austin/Portland/Nashville/Indianapolis/Columbus/Cleveland/Raleigh = Tier 3. Most mid-size cities = Tier 4. Rural/small markets = Tier 5.
 
-**Client-facing "why this range" sentence:** once both numbers are calculated, write one sentence for Block 4 that sells the *payoff*, not the math — what this spend converts or captures for this firm specifically. Ground it in a real specific from the audit: their practice area ("to convert high-intent personal injury searches into signed cases"), a named competitor gap from section_06 ("before [Competitor] captures them first"), or their stated goal/DBM. Do not name the conservative/aggressive calculation basis (channel minimums, the 20% rule, geo-tier multipliers, CPL benchmarks) in this sentence — that level of detail stays in the Sales Companion only. This only applies when a marketing/ads package is part of the recommendation.
+**Client-facing "why this range" sentence:** once both numbers are calculated, write one sentence for `AD_SPEND_NOTE` (slide 3) that sells the *payoff*, not the math — what this spend converts or captures for this firm specifically. Ground it in a real specific from the audit: their practice area ("to convert high-intent personal injury searches into signed cases"), a named competitor gap from the research notes ("before [Competitor] captures them first"), or their stated goal/DBM. Do not name the conservative/aggressive calculation basis (channel minimums, the 20% rule, geo-tier multipliers, CPL benchmarks) in this sentence — that level of detail stays in the BUILD NOTES only. This only applies when a marketing/ads package is part of the recommendation.
 
 ---
 
-### ROI PROJECTIONS (Block 4)
+### ROI PROJECTIONS (slide 3 "Projected Return on Ad Spend" card)
 
 Calculate separately for conservative and aggressive ad spend amounts.
 
@@ -613,9 +555,9 @@ Calculate separately for conservative and aggressive ad spend amounts.
 
 ---
 
-### ESCALATION FLAGS (internal — never appear in client report)
+### ESCALATION FLAGS (internal — never appear in the deck)
 
-Note these in the research notes file for the sales team. Do not include in the audit:
+Note these in the BUILD NOTES block (STEP 2) for the sales team. Never put them in a slide field:
 - Revenue under $300K → scoping approval required
 - Marketing MRR over $10K → scoping approval required
 - Ad spend over $25K → scoping approval required
@@ -627,51 +569,49 @@ Note these in the research notes file for the sales team. Do not include in the 
 - Any AI Virtual Video Growth / AI Avatar package → Alexis approval required
 - Any Legal AI Workforce (LAW) package → confirm with sales rep that LAW delivery has launched and capacity is available before including in proposal
 - Any OmniSocial AI package → sales-ops approval required, 72-hour turnaround
-- AR/AP/Payroll Bookkeeping add-on → custom scoping required, never price in the client report
+- AR/AP/Payroll Bookkeeping add-on → custom scoping required, never price in the deck
 - Attorney Assistant fit unclear → confirm qualification with sales rep before including in proposal
 
 ---
+### WHAT YOU TOLD US (slide 3 panel "How this plan addresses it")
 
-### WHAT YOU TOLD US (Block 5)
-
-Block 5 replaces the old "First 90 Days" block for every firm, whatever is
-sold. It plays the owner's own words back to them and shows how the
-recommendation answers each one. Same structure for every package mix.
+This was Block 5 of the retired website. It now feeds `WHAT_YOU_TOLD_US` on
+slide 3, and the same transcript lines are the first source for
+`PROSPECT_QUOTES` on slide 1 (so both slides tell the same story). It plays
+the owner's own words back to them and shows how the recommendation answers
+each one. Same structure for every package mix.
 
 Content:
-- Exactly 3 rows. Each row = one thing the owner (or another attendee from
-  the firm) raised on the discovery call, in bold and in their framing,
-  followed by one sentence on how the Block 2 recommendation addresses it.
-- Pick the 3 that most directly support Block 2 — cover each package in
-  Block 2 where possible, most central package first (tie to the reddest
+- Exactly 3 items. Each item = one thing the owner (or another attendee from
+  the firm) raised on the discovery call, in their framing, plus how the
+  recommended package addresses it.
+- Pick the 3 that most directly support the recommended package — cover each
+  package where possible, most central package first (tie to the reddest
   pillar, the DBM, or the largest bundled price).
-- End with one next-step line naming the first kickoff call for the most
-  central package (e.g. "kickoff call with your Onboarding team", "...with
-  your Coach", "...with your FCOO"). No dates.
 
 Sourcing (non-negotiable):
-- Every row must come from the transcript. Record the verbatim transcript
-  line for each in `section_11_workings.txt` (Step I-a). If you cannot point
-  to a line, do not use it.
+- Every item must come from the transcript, as captured in the research
+  notes (STEP 9 fields and `Key prospect quotes`). Record the verbatim line
+  for each in the BUILD NOTES (STEP 2). If you cannot point to a line, do
+  not use it.
 - Paraphrase in the owner's framing. Quote verbatim only when the line is
   short and clearly benign. Never strengthen, exaggerate, or combine what
   they said into something they did not say.
 - Problems found only in research (website, reviews, ads) are not eligible —
-  those belong in Sections 5–9.
+  those belong in `KEY_GAPS`.
 
-No discovery call transcript (fallback — never leave Block 5 empty):
-- Retitle Block 5 "What We Found — and How This Plan Addresses It". Keep
-  the same 3-row structure and next-step line.
-- Each row = one finding already stated in Sections 5–9 (bold, plain
-  language) + one sentence on how the Block 2 recommendation addresses it.
-  Pick the 3 that most directly support Block 2, most central package first.
+No discovery call transcript (fallback — never leave the panel empty):
+- Use "What We Found" items instead. Keep the same 3-item structure.
+- Each item = one finding from the research notes (plain language) + how
+  the recommended package addresses it. Pick the 3 that most directly
+  support the recommendation, most central package first.
 - Never word a finding as if the owner said it ("you told us", "you
   mentioned", "you said"), and never guess at goals, revenue, or problems
-  the research did not show. Log the Section 5–9 source of each row in
-  section_11_workings.txt.
+  the research did not show. Log the research-notes source of each item in
+  the BUILD NOTES.
 - All "Never include" and language rules below still apply.
 
-Never include (the report is forwarded to partners and staff):
+Never include (the deck is forwarded to partners and staff):
 - Named employees, or criticism of an identifiable staff member
 - Personal, health, or family matters
 - Partner or co-owner disputes
@@ -685,165 +625,44 @@ Language rules:
   the signed agreement.
 - Never use the phrase "pain points" (or other internal closer language)
   in client-facing copy.
-- Keep each row to 1–2 sentences; do not repeat narrative already in
-  Sections 5–9 or Block 2.
 - Every "addresses it" clause must connect to something SMB Team actually
   delivers. Never mention live chat. Never mention CRM setup.
 
 ---
 
-### GROWTH ROADMAP PHASES
-
-Phases must reflect what THIS firm is actually buying and what it doesn't
-have yet — never assume every firm starts from the same Phase 1 bundle.
-
-- **Phase 1 — Foundation:** Whatever this firm is actually buying now, from
-  Block 2 (may be marketing alone, coaching alone, LAW alone, or a
-  combination — do not default to "Marketing + Coaching" if that isn't
-  what was recommended). Connect to DBM.
-- **Phase 2 — Operational Scale:** Add FCOO Advisor ($3,297/mo) only if it
-  is not already part of Phase 1. If the firm already has FCOO (or an
-  equivalent ops product), add the next thing this firm's trajectory
-  actually needs and doesn't have yet (e.g. an upgraded marketing tier,
-  LAW, or bookkeeping). Frame as graduation. Connect to DBM.
-- **Phase 3 — Optimize:** Add FCFO Advisor ($3,297/mo), Bookkeeping, and
-  Legal AI Workforce (LAW) AI Workforce Pro ($1,597/mo for 5 users, or
-  AI Workforce Pro – Starter at $350/user/mo for 1–4 users) — but only whichever
-  of these the firm doesn't already have from Phase 1 or Phase 2. Frame LAW
-  as deploying AI staff to handle repeatable tasks while the human team
-  focuses on high-value work. Connect to DBM.
-- **Phase 4 — Market Domination:** Upgrade marketing tier. Upgrade LAW to
-  a Fractional CTO level (Level 1/2/3) that matches firm growth.
-- **Phase 5 — Full SMB Ecosystem:** All services. Closing line: "The firms
-  that have the freedom you described all ended up here. And it started
-  exactly where we are starting you."
-
----
-
-## ASSEMBLY — PYTHON SCRIPT
-
-After all 10 sections are saved, run:
-
-```bash
-pip install reportlab pypdf python-pptx --break-system-packages --quiet
-```
-
-Then assemble the audit HTML via Python (avoids loading all sections back into context):
-
-```bash
-python3 - << 'PYEOF'
-import os
-
-firm_folder = "REPLACE_WITH_FRIENDLY_NAME"
-
-with open("Design Files/audit_master_assembly.html", "r") as f:
-    html = f.read()
-
-sections = [
-    ("<!-- INSERT SECTION 01 CONTENT HERE -->", "section_01_cover.html"),
-    ("<!-- INSERT EXECUTIVE SUMMARY CONTENT HERE -->", "section_executive_summary.html"),
-    ("<!-- INSERT SECTION 02 CONTENT HERE -->", "section_02_toc.html"),
-    ("<!-- INSERT SECTION 03 CONTENT HERE -->", "section_03_firm_overview.html"),
-    ("<!-- INSERT SECTION 04 CONTENT HERE -->", "section_04_about_smb.html"),
-    ("<!-- INSERT SECTION 05 CONTENT HERE -->", "section_05_growth_health.html"),
-    ("<!-- INSERT SECTION 06 CONTENT HERE -->", "section_06_lead_generation.html"),
-    ("<!-- INSERT SECTION 07-09 CONTENT HERE -->", "section_07_08_09_intake_team_profit.html"),
-    ("<!-- INSERT SECTION 10 CONTENT HERE -->", "section_10_whats_possible.html"),
-    ("<!-- INSERT SECTION 11 CONTENT HERE -->", "section_11_next_steps.html"),
-]
-
-for marker, fname in sections:
-    path = os.path.join(firm_folder, "sections", fname)
-    with open(path, "r") as f:
-        content = f.read()
-    if marker not in html:
-        print(f"WARNING: marker not found: {marker}")
-    html = html.replace(marker, content)
-
-out = os.path.join(firm_folder, "index.html")
-with open(out, "w") as f:
-    f.write(html)
-print(f"Assembled: {out} ({len(html):,} chars)")
-PYEOF
-```
-
-Then copy CSS:
-```bash
-cp "Design Files/audit_styles.css" "[friendly-name]/audit_styles.css"
-```
-
----
-
-## STEP K — SALES COMPANION PDF
-
-After the HTML audit is assembled, generate the internal Sales Companion PDF for the sales rep. This document is never shared with the client.
-
-1. Read `Design Files/sales_companion_template.py` completely.
-2. Copy it to `[friendly-name]/[FirmName]_[Date]_Sales_Companion.py`.
-3. Fill in every `# FILL:` placeholder with audit-specific content. Content comes from the research notes and transcript — no new research needed.
-4. Update the `OUTPUT_PATH` variable to: `"[friendly-name]/[FirmName]_[Date]_Sales_Companion.pdf"`
-5. Ad spend section: use the conservative and aggressive amounts calculated above.
-6. ROI section: use the projection numbers from Block 4.
-7. Objections: anticipate 2–4 objections based on the transcript. Respond with specific data from the audit.
-
-Run the filled script:
-```bash
-python3 "[friendly-name]/[FirmName]_[Date]_Sales_Companion.py"
-```
-
-Verify the output confirms exactly 2 pages. If it prints a WARNING about page count, shorten bullet text (never remove sections) and re-run.
-
-**Writing rules for the Sales Companion:**
-- Every bullet: one idea, one sentence, 8th-grade reading level, scannable.
-- Transformation bullets use `bd()` (dark). Scoping and obstacle bullets use `b()` (gray).
-- Objection responses must reference specific data — competitor review counts, revenue figures, transcript quotes.
-- All ROI projections labeled as estimates.
-
----
-
 ## FINAL CHECK
 
-Run bash grep — do not read `index.html` directly:
+Run these with bash — do not re-read the whole `.py`:
 
 ```bash
-grep -c "FILL:" "[friendly-name]/index.html" || true
-grep -cE '<style|style="' "[friendly-name]/index.html" || true
-grep -c 'href="audit_styles.css"' "[friendly-name]/index.html" || true
-grep -c "UNCONFIRMED" "[friendly-name]/index.html" || true
-wc -c "[friendly-name]/audit_styles.css"
-wc -l "[friendly-name]/index.html"
+PY=$(ls "[friendly-name]"/*_Proposal.py | head -1)
+grep -nE "[\"'][^\"']*FILL[^\"']*[\"']" "$PY" || true               # no FILL placeholder left in a string value
+grep -n "UNCONFIRMED" "$PY" | grep -vE '^[0-9]+:\s*#' || true    # no unverified figure outside the BUILD NOTES comments
+grep -c "BUILD NOTES" "$PY"                                   # workings recorded (expect 1)
+diff <(sed -n '/LAYOUT ENGINE/,$p' "Design Files/audit_pptx_template.py") <(sed -n '/LAYOUT ENGINE/,$p' "$PY")
+wc -c "[friendly-name]"/*_Proposal.pptx
 ```
 
-If the `UNCONFIRMED` count is > 0, the verification tag leaked into the client-facing file — find it and replace it with qualitative framing per the review-data rule above.
-
-If placeholder count > 0 or style count > 0, read only the specific flagged lines:
-```bash
-grep -n "FILL:" "[friendly-name]/index.html"
-grep -nE '<style|style="' "[friendly-name]/index.html"
-```
-
-Fix any issues found, then commit.
+The first two must print nothing, the diff must print nothing, and the `.pptx` must not be empty. Fix anything flagged, re-run the script, then commit.
 
 ---
 
-## COMMIT AND PUSH TO MAIN
+## COMMIT AND PUSH
+
+Commit to the branch you are on — in the pipeline that is `main` (production) or an `audit-test/**` branch (test mode). Never switch branches.
 
 ```bash
-git checkout main
-git add "[friendly-name]/"
-git commit -m "Add growth audit: [Firm Name] ([Date])"
-GIT_TERMINAL_PROMPT=0 git push origin main
+git add "[friendly-name]/"*_Proposal.py "[friendly-name]/"*_Proposal.pptx "[friendly-name]/smb_team_logo.png"
+git add "[friendly-name]/package_decision.json" 2>/dev/null || true
+git commit -m "Add proposal deck: [Firm Name] ([Date])"
+BRANCH=$(git rev-parse --abbrev-ref HEAD)
+git pull --rebase origin "$BRANCH" && GIT_TERMINAL_PROMPT=0 git push origin "HEAD:$BRANCH"
 git log -1 --format="%H %s"
 ```
 
-Always commit directly to main — never create a branch. Report the commit hash.
+Report the commit hash.
 
 ---
-
-## OPTIONAL: --with-pptx
-
-If the user invoked `/audit-write --with-pptx`, run `/audit-pptx` after the commit above completes. Pass the same Firm Name, Friendly Name, Sales Rep, and Date. The PPTX will be committed to main in a separate commit by the `/audit-pptx` skill.
-
 
 IMPORTANT NOTE:
 

@@ -416,7 +416,7 @@ jobs:
 
           if suppress_pricing == "true":
               lines.append("")
-              lines.append("_Note: this is a consultation-only meeting — pricing sections will be stripped from the final report._")
+              lines.append("_Note: consultation-only meeting — the deck still includes the Investment slide in this version._")
 
           if not needs_input:
               lines.append("")

@@ -1,8 +1,19 @@
-name: Audit Write (Pass 2 + 3, standalone)
+name: Audit Write (Pass 2 — proposal deck)
 
+# Builds the 3-slide proposal deck (the website and Sales Companion PDF are
+# retired), uploads it to the HubSpot file manager, writes that link to the
+# contact, emails the seller and replies in the Slack thread.
+#
+# TEST MODE — any run from an audit-test/** branch:
+#   - checks out and pushes only to that branch, never main
+#   - emails only carolyn.webb@smbteam.com (no CC), subject prefixed [TEST]
+#   - skips the HubSpot contact write and every Slack post
+#   - skips the HubSpot file upload too, unless the trigger has
+#     "test_upload": true — then the deck goes to the separate
+#     "AI Proposals TEST" folder (still no contact write)
 on:
   push:
-    branches: [main]
+    branches: [main, 'audit-test/**']
     paths:
       - 'triggers/audit-write/*.json'
 
@@ -12,12 +23,15 @@ jobs:
     timeout-minutes: 120
     permissions:
       contents: write
+    env:
+      BRANCH: ${{ github.ref_name }}
+      TEST_MODE: ${{ github.ref_name != 'main' }}
 
     steps:
       - name: Checkout
         uses: actions/checkout@v4
         with:
-          ref: main
+          ref: ${{ github.ref_name }}
           fetch-depth: 0
           token: ${{ secrets.GITHUB_TOKEN }}
 
@@ -29,16 +43,17 @@ jobs:
       - name: Install Claude Code CLI
         run: npm install -g @anthropic-ai/claude-code
 
-      - name: Install Python deps for PDF and PPTX generation
+      - name: Install Python deps for the deck
         # python-pptx was previously never pinned here — the audit-pptx skill's
         # `claude -p` invocation was installing it ad hoc via its own Bash tool
         # calls, which don't surface in this step's log, making the deck
         # toolchain unreviewed and uncached. Declare it explicitly instead.
-        run: pip install reportlab pypdf beautifulsoup4 python-pptx --break-system-packages --quiet
+        run: pip install python-pptx --break-system-packages --quiet
 
       - name: Find trigger file and parse inputs
         id: inputs
         run: |
+          echo "Branch: $BRANCH · test mode: $TEST_MODE"
           TRIGGER_FILE=$(git diff-tree --no-commit-id -r --name-only "${{ github.sha }}" \
             | grep '^triggers/audit-write/.*\.json$' | head -1)
           echo "trigger_file=$TRIGGER_FILE"                              >> "$GITHUB_OUTPUT"
@@ -46,12 +61,12 @@ jobs:
           echo "friendly_name=$(jq -r '.friendly_name' "$TRIGGER_FILE")" >> "$GITHUB_OUTPUT"
           echo "sales_rep=$(jq -r '.sales_rep' "$TRIGGER_FILE")"        >> "$GITHUB_OUTPUT"
           echo "date=$(jq -r '.date' "$TRIGGER_FILE")"                  >> "$GITHUB_OUTPUT"
-          echo "with_pptx=$(jq -r '.with_pptx' "$TRIGGER_FILE")"       >> "$GITHUB_OUTPUT"
           echo "sales_rep_email=$(jq -r '.sales_rep_email // empty' "$TRIGGER_FILE")"     >> "$GITHUB_OUTPUT"
           echo "hubspot_contact_id=$(jq -r '.hubspot_contact_id // empty' "$TRIGGER_FILE")" >> "$GITHUB_OUTPUT"
           echo "suppress_pricing=$(jq -r '.suppress_pricing // "false"' "$TRIGGER_FILE")"  >> "$GITHUB_OUTPUT"
           echo "slack_channel=$(jq -r '.slack_channel // empty' "$TRIGGER_FILE")"          >> "$GITHUB_OUTPUT"
           echo "slack_thread_ts=$(jq -r '.slack_thread_ts // empty' "$TRIGGER_FILE")"      >> "$GITHUB_OUTPUT"
+          echo "test_upload=$(jq -r '.test_upload // false' "$TRIGGER_FILE")"             >> "$GITHUB_OUTPUT"
 
       - name: Configure git
         run: |
@@ -66,7 +81,7 @@ jobs:
           FRIENDLY_NAME="${{ steps.inputs.outputs.friendly_name }}"
           DECISION="$FRIENDLY_NAME/package_decision.json"
           if [ ! -f "$DECISION" ]; then
-            echo "No package_decision.json — Pass 2 builds from the trigger's package text."
+            echo "No package_decision.json — Pass 2 builds from the research notes' package."
             exit 0
           fi
           node scripts/reprice.mjs "$FRIENDLY_NAME"
@@ -74,12 +89,16 @@ jobs:
           if ! git diff --cached --quiet; then
             git commit -m "Re-price package before build: $FRIENDLY_NAME"
             for attempt in 1 2 3; do
-              git push origin main && break
-              git pull --rebase origin main
+              git push origin "HEAD:$BRANCH" && break
+              git pull --rebase origin "$BRANCH"
             done
           fi
 
-      - name: Run audit write
+      - name: Record the commit before the build
+        id: start
+        run: echo "sha=$(git rev-parse HEAD)" >> "$GITHUB_OUTPUT"
+
+      - name: Build the proposal deck
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
         run: |
@@ -87,89 +106,114 @@ jobs:
           FRIENDLY_NAME="${{ steps.inputs.outputs.friendly_name }}"
           SALES_REP="${{ steps.inputs.outputs.sales_rep }}"
           DATE="${{ steps.inputs.outputs.date }}"
-          WITH_PPTX="${{ steps.inputs.outputs.with_pptx }}"
           claude --model claude-sonnet-5-5 --dangerously-skip-permissions -p "
-            You are running Pass 2 of the SMB Team Growth Audit pipeline.
+            You are running Pass 2 of the SMB Team proposal pipeline: build the proposal deck.
 
             Firm Name: $FIRM_NAME
             Friendly Name: $FRIENDLY_NAME
             Sales Rep: $SALES_REP
             Date: $DATE
 
-            Read \`.claude/commands/audit-write.md\` in full. Read the research notes file
-            and \`Design Files/audit_styles.css\`. Execute every step in order, saving each
-            section before moving to the next. Assemble the final HTML report, generate
-            the Sales Companion PDF, and commit everything to main. If with_pptx is
-            $WITH_PPTX (true), also run Pass 3. Report the commit hash when done.
+            Read \`.claude/commands/audit-write.md\` in full and execute every step in order:
+            STEP 1 (package and prices), STEP 2 (workings, recorded as the BUILD NOTES block
+            in the firm's _Proposal.py), STEP 3 (build the deck per
+            \`.claude/commands/audit-pptx.md\`), the FINAL CHECK, then commit and push to the
+            current branch ($BRANCH). Do not build a website, HTML report or Sales Companion
+            PDF, and do not read the firm's sections/ folder or index.html.
+            Report the commit hash when done.
           " | tee audit_write_output.log
 
-      - name: Verify audit write completed
+      # Completion check: this run must have produced a new or changed
+      # *_Proposal.pptx (an older deck from a previous run does not count).
+      - name: Verify the deck was built
         id: verify
         run: |
           FRIENDLY_NAME="${{ steps.inputs.outputs.friendly_name }}"
-          WITH_PPTX="${{ steps.inputs.outputs.with_pptx }}"
+          START="${{ steps.start.outputs.sha }}"
+          CHANGED=$( { git -c core.quotePath=false diff --name-only "$START" HEAD -- "$FRIENDLY_NAME/"; \
+                       git -c core.quotePath=false ls-files --others --modified --exclude-standard -- "$FRIENDLY_NAME/"; } \
+                     | grep '_Proposal\.pptx$' | sort -u || true)
+          DECK=""
+          while IFS= read -r f; do
+            [ -n "$f" ] && [ -s "$f" ] && DECK="$f"
+          done <<< "$CHANGED"
+
           MISSING=""
-
-          if [ ! -f "$FRIENDLY_NAME/index.html" ]; then
-            MISSING="${MISSING}index.html, "
+          [ -z "$DECK" ] && MISSING="proposal deck (*_Proposal.pptx)"
+          if [ -n "$DECK" ] && [ -z "$(ls "$FRIENDLY_NAME"/*_Proposal.py 2>/dev/null)" ]; then
+            MISSING="deck script (*_Proposal.py)"
           fi
-          if [ ! -d "$FRIENDLY_NAME/sections" ] || [ -z "$(ls -A "$FRIENDLY_NAME/sections" 2>/dev/null)" ]; then
-            MISSING="${MISSING}sections/, "
-          fi
-          if [ "$WITH_PPTX" = "true" ] && [ -z "$(ls "$FRIENDLY_NAME"/*_Proposal.pptx 2>/dev/null)" ]; then
-            MISSING="${MISSING}proposal PPTX, "
-          fi
-
-          MISSING="${MISSING%, }"
 
           if [ -n "$MISSING" ]; then
             echo "write_verified=false" >> "$GITHUB_OUTPUT"
-            echo "missing=$MISSING" >> "$GITHUB_OUTPUT"
+            echo "missing=$MISSING"      >> "$GITHUB_OUTPUT"
             echo "::warning::audit-write did not complete for $FRIENDLY_NAME — missing: $MISSING"
-          else
-            echo "write_verified=true" >> "$GITHUB_OUTPUT"
-            echo "missing=" >> "$GITHUB_OUTPUT"
+            exit 0
           fi
 
-      - name: Strip pricing sections (consultation meetings only)
-        if: steps.verify.outputs.write_verified == 'true' && steps.inputs.outputs.suppress_pricing == 'true'
-        run: |
-          FRIENDLY_NAME="${{ steps.inputs.outputs.friendly_name }}"
-          echo "suppress_pricing=true — stripping pricing sections from $FRIENDLY_NAME"
-          python3 scripts/strip-pricing-sections.py \
-            "$FRIENDLY_NAME/index.html" \
-            "$FRIENDLY_NAME/sections/section_executive_summary.html" \
-            "$FRIENDLY_NAME/sections/section_11_next_steps.html"
-          git add "$FRIENDLY_NAME/" || true
-          if ! git diff --cached --quiet; then
-            git commit -m "Remove pricing sections for consultation meeting audit: $FRIENDLY_NAME"
-            git push origin main
-          else
-            echo "No pricing sections found to remove (may already be clean)."
+          # Safety net: the build made the deck but did not commit it.
+          if [ -n "$(git status --porcelain -- "$FRIENDLY_NAME/")" ]; then
+            git add "$FRIENDLY_NAME/"*_Proposal.py "$FRIENDLY_NAME/"*_Proposal.pptx
+            [ -f "$FRIENDLY_NAME/smb_team_logo.png" ] && git add "$FRIENDLY_NAME/smb_team_logo.png"
+            git commit -m "Add proposal deck: ${{ steps.inputs.outputs.firm_name }} (committed by workflow)" || true
+            for attempt in 1 2 3; do
+              git push origin "HEAD:$BRANCH" && break
+              git pull --rebase origin "$BRANCH"
+            done
           fi
 
-      - name: Write audit URL back to HubSpot
-        if: steps.verify.outputs.write_verified == 'true' && steps.inputs.outputs.hubspot_contact_id != ''
+          echo "Deck: $DECK"
+          echo "write_verified=true" >> "$GITHUB_OUTPUT"
+          echo "missing="            >> "$GITHUB_OUTPUT"
+          echo "deck=$DECK"          >> "$GITHUB_OUTPUT"
+
+      # Upload to the HubSpot file manager ("AI Proposals", public but not
+      # indexable). A re-run replaces the same file, so the link never changes.
+      # Never fails the job: a failure is reported in Slack instead.
+      - name: Upload deck to HubSpot
+        id: upload
+        if: steps.verify.outputs.write_verified == 'true' && (env.TEST_MODE != 'true' || steps.inputs.outputs.test_upload == 'true')
         env:
           HUBSPOT_TOKEN: ${{ secrets.HUBSPOT_TOKEN }}
         run: |
-          CONTACT_ID="${{ steps.inputs.outputs.hubspot_contact_id }}"
           FRIENDLY_NAME="${{ steps.inputs.outputs.friendly_name }}"
-          WORKWITH_URL="https://workwith.smbteam.com/$FRIENDLY_NAME"
+          ARGS=(--file "${{ steps.verify.outputs.deck }}")
+          if [ "$TEST_MODE" = "true" ]; then ARGS+=(--folder "AI Proposals TEST"); fi
+          RESULT=$(node scripts/upload-proposal-to-hubspot.mjs "$FRIENDLY_NAME" "${ARGS[@]}" || true)
+          echo "$RESULT"
+          OK=$(jq -r '.ok // false' <<< "$RESULT" 2>/dev/null || echo false)
+          echo "ok=$OK" >> "$GITHUB_OUTPUT"
+          if [ "$OK" = "true" ]; then
+            echo "url=$(jq -r '.url' <<< "$RESULT")" >> "$GITHUB_OUTPUT"
+          else
+            ERR=$(jq -r '.error // empty' <<< "$RESULT" 2>/dev/null | tr '\n' ' ')
+            echo "error=${ERR:-upload script returned no result}" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Write deck link to HubSpot contact
+        id: hubspot
+        if: env.TEST_MODE != 'true' && steps.upload.outputs.ok == 'true' && steps.inputs.outputs.hubspot_contact_id != ''
+        continue-on-error: true
+        env:
+          HUBSPOT_TOKEN: ${{ secrets.HUBSPOT_TOKEN }}
+          DECK_URL: ${{ steps.upload.outputs.url }}
+        run: |
+          CONTACT_ID="${{ steps.inputs.outputs.hubspot_contact_id }}"
+          BODY=$(jq -n --arg url "$DECK_URL" '{properties: {growth_profit_and_freedom_roadmap: $url}}')
           RESPONSE=$(curl -s -w "\n%{http_code}" -X PATCH \
             "https://api.hubapi.com/crm/v3/objects/contacts/$CONTACT_ID" \
             -H "Authorization: Bearer $HUBSPOT_TOKEN" \
             -H "Content-Type: application/json" \
-            -d "{\"properties\": {\"growth_profit_and_freedom_roadmap\": \"$WORKWITH_URL\"}}")
+            -d "$BODY")
           HTTP_CODE=$(echo "$RESPONSE" | tail -1)
-          echo "HubSpot response ($HTTP_CODE): contact $CONTACT_ID → growth_profit_and_freedom_roadmap = $WORKWITH_URL"
+          echo "HubSpot response ($HTTP_CODE): contact $CONTACT_ID → growth_profit_and_freedom_roadmap = $DECK_URL"
           if [ "$HTTP_CODE" != "200" ]; then
             echo "ERROR: HubSpot returned $HTTP_CODE"
             exit 1
           fi
 
-      - name: Email closer with audit attachments
-        if: steps.verify.outputs.write_verified == 'true' && steps.inputs.outputs.sales_rep_email != ''
+      - name: Email closer with the deck
+        if: steps.verify.outputs.write_verified == 'true' && (steps.inputs.outputs.sales_rep_email != '' || env.TEST_MODE == 'true')
         continue-on-error: true
         env:
           GMAIL_USER: ${{ secrets.GMAIL_USER }}
@@ -178,9 +222,12 @@ jobs:
           FRIENDLY_NAME: ${{ steps.inputs.outputs.friendly_name }}
           SALES_REP: ${{ steps.inputs.outputs.sales_rep }}
           SALES_REP_EMAIL: ${{ steps.inputs.outputs.sales_rep_email }}
+          DECK: ${{ steps.verify.outputs.deck }}
+          DECK_URL: ${{ steps.upload.outputs.url }}
+          UPLOAD_ATTEMPTED: ${{ steps.upload.outcome == 'success' }}
         run: |
           python3 - << 'PYEOF'
-          import smtplib, os, glob, sys
+          import smtplib, os
           from email.mime.multipart import MIMEMultipart
           from email.mime.text import MIMEText
           from email.mime.application import MIMEApplication
@@ -188,43 +235,47 @@ jobs:
           gmail_user       = os.environ["GMAIL_USER"]
           gmail_password   = os.environ["GMAIL_APP_PASSWORD"]
           firm_name        = os.environ["FIRM_NAME"]
-          friendly_name    = os.environ["FRIENDLY_NAME"]
           sales_rep        = os.environ["SALES_REP"]
-          sales_rep_email  = os.environ["SALES_REP_EMAIL"].strip()
+          sales_rep_email  = os.environ.get("SALES_REP_EMAIL", "").strip()
+          deck             = os.environ["DECK"]
+          deck_url         = os.environ.get("DECK_URL", "").strip()
+          upload_attempted = os.environ.get("UPLOAD_ATTEMPTED") == "true"
+          test_mode        = os.environ.get("TEST_MODE") == "true"
 
-          to_addr  = sales_rep_email
-          cc_addrs = [
-              "eli.gill@smbteam.com",
-              "vanessa.odonnell@smbteam.com",
-              "chris.abouraad@smbteam.com",
-              "justin.hernandez@smbteam.com",
-              "carolyn.webb@smbteam.com",
-          ]
-
-          pdf_files   = glob.glob(f"{friendly_name}/*_Sales_Companion.pdf")
-          pptx_files  = glob.glob(f"{friendly_name}/*_Proposal.pptx")
-          attachments = pdf_files + pptx_files
-
-          if not attachments:
-              print(f"WARNING: No PDF or PPTX found in {friendly_name}/. Sending without attachments.")
+          if test_mode:
+              to_addr, cc_addrs = "carolyn.webb@smbteam.com", []
+              print("TEST MODE: sending only to carolyn.webb@smbteam.com")
+          else:
+              to_addr  = sales_rep_email
+              cc_addrs = [
+                  "eli.gill@smbteam.com",
+                  "vanessa.odonnell@smbteam.com",
+                  "chris.abouraad@smbteam.com",
+                  "justin.hernandez@smbteam.com",
+                  "carolyn.webb@smbteam.com",
+              ]
 
           msg = MIMEMultipart()
           msg["From"]    = gmail_user
           msg["To"]      = to_addr
-          msg["Cc"]      = ", ".join(cc_addrs)
-          msg["Subject"] = f"Growth, Profit, and Freedom Roadmap ready for {firm_name}"
+          if cc_addrs:
+              msg["Cc"]  = ", ".join(cc_addrs)
+          msg["Subject"] = ("[TEST] " if test_mode else "") + f"Proposal deck ready for {firm_name}"
 
-          workwith_url = f"https://workwith.smbteam.com/{friendly_name}"
+          if deck_url:
+              link_lines = [f"Open the deck here: {deck_url}", ""]
+          elif test_mode and not upload_attempted:
+              link_lines = ["(Test mode: HubSpot upload skipped, so there is no link.)", ""]
+          else:
+              link_lines = ["The HubSpot link isn't available (the upload failed) — use the attached deck.", ""]
+
           body = "\n".join([
               f"Hi {sales_rep},",
               "",
-              f"The Growth, Profit, and Freedom Roadmap for {firm_name} is ready ahead of your proposal call.",
+              f"The proposal deck for {firm_name} is ready ahead of your proposal call.",
               "",
-              f"View the full report here: {workwith_url}",
-              "",
-              "Attached you'll find:",
-              "  - Proposal Deck (PowerPoint) — share this on screen during the call",
-              "  - Sales Companion (PDF) — your seller-only cheat sheet, not for the client",
+              *link_lines,
+              "Attached: Proposal Deck (PowerPoint) — share this on screen during the call.",
               "",
               "Let the team know if you need any changes before the call.",
               "",
@@ -233,25 +284,23 @@ jobs:
           ])
           msg.attach(MIMEText(body, "plain"))
 
-          for filepath in attachments:
-              with open(filepath, "rb") as f:
-                  part = MIMEApplication(f.read(), Name=os.path.basename(filepath))
-              part["Content-Disposition"] = f'attachment; filename="{os.path.basename(filepath)}"'
-              msg.attach(part)
-              print(f"Attached: {filepath}")
+          with open(deck, "rb") as f:
+              part = MIMEApplication(f.read(), Name=os.path.basename(deck))
+          part["Content-Disposition"] = f'attachment; filename="{os.path.basename(deck)}"'
+          msg.attach(part)
+          print(f"Attached: {deck}")
 
-          all_recipients = [to_addr] + cc_addrs
           with smtplib.SMTP("smtp.gmail.com", 587) as server:
               server.starttls()
               server.login(gmail_user, gmail_password)
-              server.sendmail(gmail_user, all_recipients, msg.as_string())
+              server.sendmail(gmail_user, [to_addr] + cc_addrs, msg.as_string())
 
-          print(f"Email sent to {to_addr} (CC: {', '.join(cc_addrs)})")
+          print(f"Email sent to {to_addr}" + (f" (CC: {', '.join(cc_addrs)})" if cc_addrs else ""))
           PYEOF
 
       - name: Resolve seller mention
         id: resolve_mention
-        if: steps.inputs.outputs.slack_thread_ts != ''
+        if: always() && env.TEST_MODE != 'true' && steps.inputs.outputs.slack_thread_ts != ''
         env:
           SLACK_BOT_TOKEN: ${{ secrets.SLACK_BOT_TOKEN }}
         run: |
@@ -261,7 +310,7 @@ jobs:
           echo "mention=$MENTION" >> "$GITHUB_OUTPUT"
 
       - name: Reply in Slack thread with build result
-        if: steps.inputs.outputs.slack_thread_ts != ''
+        if: always() && env.TEST_MODE != 'true' && steps.inputs.outputs.slack_thread_ts != ''
         continue-on-error: true
         env:
           SLACK_BOT_TOKEN: ${{ secrets.SLACK_BOT_TOKEN }}
@@ -274,10 +323,15 @@ jobs:
           MENTION: ${{ steps.resolve_mention.outputs.mention }}
           WRITE_VERIFIED: ${{ steps.verify.outputs.write_verified }}
           MISSING_FILES: ${{ steps.verify.outputs.missing }}
+          UPLOAD_OK: ${{ steps.upload.outputs.ok }}
+          UPLOAD_ERROR: ${{ steps.upload.outputs.error }}
+          DECK_URL: ${{ steps.upload.outputs.url }}
+          HUBSPOT_OUTCOME: ${{ steps.hubspot.outcome }}
+          HAS_CONTACT: ${{ steps.inputs.outputs.hubspot_contact_id != '' }}
         run: |
           FRIENDLY_NAME="${{ steps.inputs.outputs.friendly_name }}"
           # Only mark the review as fully built if the write step actually produced
-          # the report — otherwise leave status alone and flag the failure instead.
+          # the deck — otherwise leave status alone and flag the failure instead.
           if [ -f "$FRIENDLY_NAME/proposal_review.json" ]; then
             if [ "$WRITE_VERIFIED" = "true" ]; then
               NEW_STATUS="built"
@@ -288,25 +342,41 @@ jobs:
               && mv /tmp/pr.json "$FRIENDLY_NAME/proposal_review.json"
             git add "$FRIENDLY_NAME/proposal_review.json"
             git diff --cached --quiet || git commit -m "Mark proposal review $NEW_STATUS for $FRIENDLY_NAME"
-            git pull --rebase origin main && git push origin main || true
+            git pull --rebase origin "$BRANCH" && git push origin "HEAD:$BRANCH" || true
           fi
 
           python3 - << 'PYEOF'
           import os, json, urllib.request
 
-          token    = os.environ["SLACK_BOT_TOKEN"]
-          channel  = os.environ["SLACK_CHANNEL"]
-          thread   = os.environ["SLACK_THREAD_TS"]
-          firm     = os.environ["FIRM_NAME"]
-          slug     = os.environ["FRIENDLY_NAME"]
+          token     = os.environ["SLACK_BOT_TOKEN"]
+          channel   = os.environ["SLACK_CHANNEL"]
+          thread    = os.environ["SLACK_THREAD_TS"]
+          firm      = os.environ["FIRM_NAME"]
+          slug      = os.environ["FRIENDLY_NAME"]
           sales_rep = os.environ["SALES_REP"]
-          mention  = os.environ.get("MENTION") or f"@{sales_rep}"
-          verified = os.environ["WRITE_VERIFIED"] == "true"
-          missing  = os.environ.get("MISSING_FILES", "").strip()
-          url      = f"https://workwith.smbteam.com/{slug}"
+          mention   = os.environ.get("MENTION") or f"@{sales_rep}"
+          verified  = os.environ.get("WRITE_VERIFIED") == "true"
+          missing   = os.environ.get("MISSING_FILES", "").strip()
+          upload_ok = os.environ.get("UPLOAD_OK") == "true"
+          upload_error = os.environ.get("UPLOAD_ERROR", "").strip()
+          url       = os.environ.get("DECK_URL", "").strip()
+          hubspot_failed = os.environ.get("HUBSPOT_OUTCOME") == "failure"
+          has_contact = os.environ.get("HAS_CONTACT") == "true"
 
-          if verified:
+          if verified and upload_ok and url:
               text = f"{mention} ✅ *Proposal ready:* {firm}\n{url}"
+              if hubspot_failed:
+                  text += ("\n⚠️ The link could not be saved to the HubSpot contact "
+                           "(growth_profit_and_freedom_roadmap) — check the Actions log.")
+              elif not has_contact:
+                  text += "\n_No HubSpot contact on this proposal, so the contact field was not updated._"
+          elif verified:
+              text = (
+                  f"{mention} ⚠️ *Proposal deck built for {firm}, but the HubSpot upload failed* — "
+                  f"{upload_error or 'no details'}.\n"
+                  "The deck is attached to the email. No link was written to HubSpot. "
+                  "Once the problem is fixed, @mention me with \"resend the email\" to upload it and resend."
+              )
           else:
               reasoning = ""
               try:
@@ -318,8 +388,8 @@ jobs:
                   pass
 
               text = (
-                  f"{mention} ⚠️ *audit-write did not complete for {firm}* — no report was generated"
-                  f" (missing: {missing or 'index.html/sections'}).\n"
+                  f"{mention} ⚠️ *audit-write did not complete for {firm}* — no deck was generated"
+                  f" (missing: {missing or 'proposal deck'}).\n"
               )
               if reasoning:
                   text += f"\n*What audit-write said:*\n>>> {reasoning}\n"
@@ -335,5 +405,5 @@ jobs:
               headers={"Authorization": f"Bearer {token}", "Content-Type": "application/json"},
           )
           urllib.request.urlopen(req)
-          print(f"Slack thread reply sent for {firm} (verified={verified}).")
+          print(f"Slack thread reply sent for {firm} (verified={verified}, upload_ok={upload_ok}).")
           PYEOF

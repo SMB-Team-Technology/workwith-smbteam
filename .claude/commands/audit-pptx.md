@@ -1,6 +1,8 @@
 # SMB Team — Audit PowerPoint (Pass 3)
 
-Generates a 3-slide proposal PowerPoint from a completed audit. Run this after `/audit-write` finishes (all section files must exist).
+Fills and generates the 3-slide proposal PowerPoint. This is STEP 3 of `/audit-write`, which does the package, price, ad spend and ROI workings first (STEP 1–2) and records them as a BUILD NOTES comment block in the firm's `_Proposal.py`. The deck replaces the retired "Growth, Profit & Freedom Roadmap" website and Sales Companion PDF, and is built from the same inputs the website was.
+
+Run it through `/audit-write`. Running `/audit-pptx` on its own is only for re-filling an existing deck whose `_Proposal.py` already has its BUILD NOTES.
 
 ## How to invoke
 
@@ -17,13 +19,13 @@ Date: [same date used in /audit-write — Month DD, YYYY]
 ## BEFORE STARTING
 
 Read the following files (all data comes from them — no new research):
-1. `[friendly-name]/sections/section_05_growth_health.html` and `section_06`–`section_07_08_09` — findings by pillar (for the key gaps)
-2. `[friendly-name]/sections/section_11_next_steps.html` — packages, prices, ROI, Block 5
-3. `[friendly-name]/sections/section_11_workings.txt` — the verbatim transcript line logged for each Block 5 row
-4. `[friendly-name]/sections/section_executive_summary.html` — top priorities, closing statement
-5. `[friendly-name]/[FirmName]_[Date]_Research_Notes.txt` — DBM, stage, goals, `Key prospect quotes`
+1. `[friendly-name]/[FirmName]_[Date]_Research_Notes.txt` — findings by pillar, competitors, stage, DBM, goals, STEP 9 transcript extraction and `Key prospect quotes`
+2. `[friendly-name]/package_decision.json` — packages and prices (as applied in `/audit-write` STEP 1)
+3. The BUILD NOTES block at the top of `[friendly-name]/[FirmName]_[Date]_Proposal.py` (written in `/audit-write` STEP 2) — prices, ad spend, ROI, the "why this range" sentence, the 3 What You Told Us items with their verbatim lines, overrides and escalation flags
 
-If any of these files does not exist, stop and tell the user to run `/audit-write` first.
+If the research notes do not exist, stop and tell the user to run `/audit-research` first. If the BUILD NOTES block is missing, do `/audit-write` STEP 1–2 first.
+
+Never read `[friendly-name]/sections/`, `[friendly-name]/index.html` or `*_Sales_Companion.*` — those are from the retired website and PDF, and older firm folders still contain them.
 
 ---
 
@@ -36,7 +38,7 @@ A recap of the discovery call, not a scorecard. Three blocks only: "What you tol
 Action plan focused on the prospect: just three priority columns (themed to what this firm is actually buying and its real priorities — see below), each with up to 5 bullets in a single bulleted list. Columns are always navy / green / navy and labelled "Priority 1–3" — the engine sets this, not the FILL values. The rep's talk track: "Based on everything I've seen, there are three areas we need to focus on: X, Y and Z. Here are the key benefits of each. Next, I'll show you what it looks like to have that in place." Keep the column titles short enough to say out loud in that sentence.
 
 **Slide 3 — Your Investment & What Happens Next**
-Pricing: two package cards with bundled and retail prices, bundle total + savings, ad spend note, ROI projections, "How this plan addresses it" panel (the Block 5 rows), closing quote.
+Pricing: two package cards with bundled and retail prices, bundle total + savings, ad spend note, ROI projections, "How this plan addresses it" panel (the What You Told Us items), closing quote.
 
 ---
 
@@ -44,7 +46,7 @@ Pricing: two package cards with bundled and retail prices, bundle total + saving
 
 The research notes contain the owner's **Dominant Buying Motive** in internal shorthand (e.g., "Jay takes real time off"). The deck is shown to the client — translate that shorthand into aspirational language the owner would say about themselves.
 
-**The rule:** The sales companion speaks *about* the client to the rep ("Jay is trapped by his phone"). The deck speaks *to* the client about their future ("The freedom to step away — and trust your firm handles it").
+**The rule:** The research notes speak *about* the client to the rep ("Jay is trapped by his phone"). The deck speaks *to* the client about their future ("The freedom to step away — and trust your firm handles it").
 
 **Translation guide:**
 
@@ -77,35 +79,35 @@ Copy values exactly — do not rewrite or recompute.
 
 **Slide 1 — `PROSPECT_QUOTES` (the prospect's own words):**
 2–3 `(speaker_label, quote)` pairs. This is the most sensitive field in the deck — it puts words in the prospect's mouth on screen in front of them.
-- Source: the verbatim transcript lines logged for Block 5 in `section_11_workings.txt` first (so slide 1 and slide 3 tell the same story), then the research notes' `Key prospect quotes` list. Never from an AI summary, the seller's notes, or our research.
+- Source: the verbatim transcript lines logged for the What You Told Us items in the BUILD NOTES first (so slide 1 and slide 3 tell the same story), then the research notes' `Key prospect quotes` list. Never from an AI summary, the seller's notes, or our research.
 - Only problems the prospect raised themselves. Do not present something we consider a problem (e.g. "no AI agents running workflows", a slow website) as their pain unless they said it. Goals, small talk, budget and objections are not eligible.
 - Copy the words exactly. You may cut words from the start or end, or replace a cut in the middle with "…", but never reword, combine lines, or strengthen what they said. Drop filler ("you know", "um") only where it is set off by commas. You may capitalize the first letter. Each quote ≤130 characters; shorter is better.
 - `speaker_label` is `"You said"` for the owner the deck is addressed to, or `"<First name> said"` for another attendee from the firm (e.g. `"Jennifer said"`).
-- Apply Block 5's "Never include" list: no named employees or criticism of staff, personal/health/family matters, partner disputes, or financial-distress figures.
+- Apply the What You Told Us "Never include" list in `audit-write.md`: no named employees or criticism of staff, personal/health/family matters, partner disputes, or financial-distress figures.
 - No full verbatim transcript (none, or only a Fathom AI summary): set `PROSPECT_QUOTES = []`. The slide then drops the panel and the staircase takes the full width — never invent or paraphrase a quote to fill it.
 
-**Slide 1 — `KEY_GAPS` (from Sections 5–9 and the executive summary):**
+**Slide 1 — `KEY_GAPS` (from the research notes):**
 - Exactly 3 `(category, gap)` pairs — the three biggest gaps the audit found, most important first. `category` is one of `"Lead Generation"`, `"Intake"`, `"Team"`, `"Profit Plan"` (the pillar the finding sits under); use each category at most once where possible.
-- `gap` is one plain-language sentence, consequence first, ≤90 characters, taken from a finding already stated in Sections 5–9 or the executive summary's top priorities. No scores, ratings or "Amber/Red" language.
+- `gap` is one plain-language sentence, consequence first, ≤90 characters, taken from a finding stated in the research notes (rank pillars with the traffic-light criteria in `audit-write.md`, reddest first). Apply the `UNCONFIRMED` review-count rule in `audit-write.md`. No scores, ratings or "Amber/Red" language.
 - These are our findings, so never word them as something the prospect said.
 
-**From section_11_next_steps.html:**
-- `PACKAGES` — package name (from package-label div), bundled price, retail/stand-alone price, deliverables summary line (condense to one line, ≤65 chars)
-- `BUNDLE_TOTAL` — copy from investment-total
-- `BUNDLE_SAVINGS` — copy savings callout text
-- `AD_SPEND_NOTE` — only fill this if Block 4 exists in section_11 (i.e., a marketing/ads package is part of the recommendation). Copy the recommended ad spend range and append a short clause distilled from Block 4's "why this range" sentence — the payoff, not the calculation basis, e.g. `"+ Recommended ad spend: $X,XXX–$XX,XXX/mo — to turn high-intent [practice area] searches into signed cases"`. Keep the full note under ~110 characters so it doesn't get truncated on the slide. If Block 4 was omitted from section_11 (no marketing/ads sold), set `AD_SPEND_NOTE = None` — do not show an ad spend note or rationale for a service this firm isn't buying. This also controls whether the "Projected Return on Ad Spend" card renders on Slide 3 (they're gated together in the layout engine) — when `AD_SPEND_NOTE` is `None`, `AVG_CASE_VALUE`/`CONSERVATIVE_*`/`AGGRESSIVE_*` are unused and can be left at their placeholder values.
-- `AVG_CASE_VALUE`, conservative/aggressive cases + revenue + ROAS — copy from Block 4 ROI table
-- `WHAT_YOU_TOLD_US` — exactly 3 items from Block 5 ("What You Told Us", or the What We Found fallback), in the same order. They appear on slide 3 under the fixed heading "How this plan addresses it". Each item is `(short_label, action)`: `short_label` names the owner's issue in 2–3 words (≤16 chars, e.g. "Missed calls"); `action` condenses that row's "how this plan addresses it" clause (≤55 chars). Never add anything that isn't in Block 5, and never add outcomes, dates, or lead/click counts. Never leave the list empty — the build stops if it doesn't have exactly 3 items.
+**From `package_decision.json` and the BUILD NOTES:**
+- `PACKAGES` — package name, bundled (charged) price and stand-alone price exactly as in the BUILD NOTES / `package_decision.json`, and a deliverables summary line for that package (condense to one line, ≤65 chars; fractional packages include the Elite Coach group deliverables — see `audit-write.md`). When `pricing_mode` is `"standalone"`, the charged price is the stand-alone price.
+- `BUNDLE_TOTAL` — the total monthly investment from the BUILD NOTES
+- `BUNDLE_SAVINGS` — "Save $X,XXX/mo by bundling" with the total savings from the BUILD NOTES (when `pricing_mode` is `"standalone"` there are no savings: set `BUNDLE_SAVINGS = ""`)
+- `AD_SPEND_NOTE` — only fill this if a marketing/ads package is part of the recommendation (the BUILD NOTES have an ad spend range). Copy the recommended ad spend range (conservative–aggressive) and append a short clause distilled from the BUILD NOTES' "why this range" sentence — the payoff, not the calculation basis, e.g. `"+ Recommended ad spend: $X,XXX–$XX,XXX/mo — to turn high-intent [practice area] searches into signed cases"`. Keep the full note under ~110 characters so it doesn't get truncated on the slide. If no marketing/ads package is part of the recommendation, set `AD_SPEND_NOTE = None` — do not show an ad spend note or rationale for a service this firm isn't buying. This also controls whether the "Projected Return on Ad Spend" card renders on Slide 3 (they're gated together in the layout engine) — when `AD_SPEND_NOTE` is `None`, `AVG_CASE_VALUE`/`CONSERVATIVE_*`/`AGGRESSIVE_*` are unused and can be left at their placeholder values.
+- `AVG_CASE_VALUE`, conservative/aggressive cases + revenue + ROAS — copy from the ROI projections in the BUILD NOTES (calculated with the ROI PROJECTIONS rules in `audit-write.md`; say "(est.)" or "(assumed)" when the case value is a practice-area default)
+- `WHAT_YOU_TOLD_US` — exactly 3 items from the BUILD NOTES' What You Told Us list (or the What We Found fallback), in the same order — selected with the WHAT YOU TOLD US rules in `audit-write.md`. They appear on slide 3 under the fixed heading "How this plan addresses it". Each item is `(short_label, action)`: `short_label` names the owner's issue in 2–3 words (≤16 chars, e.g. "Missed calls"); `action` condenses that row's "how this plan addresses it" clause (≤55 chars). Never add anything that isn't in that list, and never add outcomes, dates, or lead/click counts. Never leave the list empty — the build stops if it doesn't have exactly 3 items.
 
-**From section_executive_summary.html:**
-- `CLOSING_QUOTE` — copy exec-closing statement as the slide 3 quote
+**Closing quote:**
+- `CLOSING_QUOTE` — one sentence tied to this firm's central opportunity and the owner's DBM, written per the DBM rules above (the retired website's executive-summary closing line used the same rule). No placeholders.
 
 **From research notes:**
 - `STAGE_TEXT` — current stage and goal stage, in the form `"Stage 4: Small Business Manager  →  Goal: Stage 6, Law Firm Owner"`. Keep the `→` and both `Stage N` numbers: the engine draws the legacy staircase (stages 2–6) from the numbers and labels each end with the official stage name, so the names after the numbers are only a fallback.
 - `SLIDE_2_TITLE` — "Your Growth Plan: 3 Priorities to Reach [monthly goal]"
 
 **Priority column titles and bullets (Slide 2):**
-Derive from section_11 Block 1 / quick wins, section_06–09 findings, and — critically — what this firm is actually buying (check `package_decision.json` and the package-label divs in section_11 Block 2). Each of the 3 columns must reflect a real priority for this firm; do not default to a generic theme regardless of what was sold.
+Derive from the research notes' findings and opportunities (lead generation, intake, team, profit), the DBM, and — critically — what this firm is actually buying (`package_decision.json` and the BUILD NOTES). Each of the 3 columns must reflect a real priority for this firm; do not default to a generic theme regardless of what was sold.
 
 - A column may be themed "Build the Marketing Engine" (lead gen actions) **only if a marketing/ads package is part of this firm's recommendation.** If no marketing/ads package was sold (check `marketing_tier`/`marketing_name` in `package_decision.json`, or that a Transcript-Stated Need Override in `audit-write.md` dropped marketing), do not title any column "Marketing Engine" or imply ad spend is part of this plan — theme that column after an actual sold service or genuine next priority instead (e.g., intake, team systems, profit systems, a coaching foundation phase, or a phased "future marketing" note only if the roadmap genuinely calls for one later).
 - Intake and Team/Profit themes ("Fix Intake & Stop Losing Cases", "Install Team & Profit Systems") generally still apply regardless of package mix, since those pillars matter to every firm — but their bullets must stay firm-specific and reflect what was actually found/recommended, never generic filler.
@@ -117,7 +119,7 @@ Each bullet: one specific action for this firm, ≤55 chars.
 ## GENERATING THE PPTX
 
 1. Copy `Design Files/audit_pptx_template.py` to `[friendly-name]/[FirmName]_[Date]_Proposal.py`
-2. Fill every `# FILL:` placeholder using the extraction rules above
+2. Keep the BUILD NOTES block from `/audit-write` STEP 2 at the top, then fill every `# FILL:` placeholder using the extraction rules above and delete the trailing `# FILL…` comments
 3. Set `OUTPUT_PATH = "[friendly-name]/[FirmName]_[Date]_Proposal.pptx"`
 4. Set `SALES_REP` to the sales rep name
 5. Copy `Design Files/smb_team_logo.png` into `[friendly-name]/` so the footer logo renders
@@ -146,7 +148,7 @@ wc -c "[friendly-name]/[FirmName]_[Date]_Proposal.pptx"
 
 ## CRITICAL RULES
 
-- Copy prices exactly from section_11 — never round or estimate
+- Copy prices exactly from the BUILD NOTES / `package_decision.json` — never round or estimate
 - Bullet text: one idea, one sentence, ≤55 chars, 8th-grade reading level
 - Priority column bullets must be firm-specific — no generic language
 - The closing quote on Slide 3 must be vivid, specific, and in the owner's voice — not a generic tagline. If the transcript has a direct quote about what they want their life to look like, use it verbatim or near-verbatim
@@ -158,12 +160,13 @@ wc -c "[friendly-name]/[FirmName]_[Date]_Proposal.pptx"
 
 ## COMMIT AND PUSH
 
-After the PPTX is confirmed saved:
+`/audit-write` commits the deck (see its COMMIT AND PUSH section — always to the current branch, never a branch switch). When running `/audit-pptx` on its own:
 
 ```bash
-git add "[friendly-name]/[FirmName]_[Date]_Proposal.pptx" "[friendly-name]/[FirmName]_[Date]_Proposal.py"
-git commit -m "Add proposal PPTX: [Firm Name] ([Date])"
-GIT_TERMINAL_PROMPT=0 git push origin main
+git add "[friendly-name]/"*_Proposal.pptx "[friendly-name]/"*_Proposal.py "[friendly-name]/smb_team_logo.png"
+git commit -m "Update proposal deck: [Firm Name] ([Date])"
+BRANCH=$(git rev-parse --abbrev-ref HEAD)
+git pull --rebase origin "$BRANCH" && GIT_TERMINAL_PROMPT=0 git push origin "HEAD:$BRANCH"
 git log -1 --format="%H %s"
 ```
 
