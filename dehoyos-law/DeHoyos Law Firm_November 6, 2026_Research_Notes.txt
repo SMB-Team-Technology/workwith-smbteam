@@ -1,0 +1,188 @@
+SMB TEAM — AUDIT RESEARCH NOTES (PASS 1)
+Firm (trigger name): DeHoyos Law Firm
+Trading name on website/directories: DeHoyos Accident Attorneys (entity: DeHoyos Accident Attorneys, PLLC)
+Friendly name: dehoyos-law
+URL: http://dehoyosinjury.com (301 -> https://www.dehoyosinjury.com/, HTTP 200)
+Sales rep: Michael Kopp
+Date: November 6, 2026
+Research run: 2026-11-05
+Contact: Ryan Dehoyos (HubSpot contact 10345301, company 60586472754)
+
+DATA-QUALITY WARNING — READ FIRST
+- NO discovery-call transcript or transcript_status was present in the trigger file. There is no call record of any kind. This file does NOT assert that a discovery call did or did not happen. The trigger lists proposal_call_date 2026-11-06T20:15:00Z (a future call relative to this run).
+- Every transcript-derived field in STEP 9 is therefore "not stated". Nothing about revenue, team, close rate, goals, budget, DBM or products came from the client. Do not treat anything in STEP 9 as client-stated.
+- This is a real, live firm. No data in this file is fabricated or estimated. Where a live check could not be performed from this environment, it is marked NOT OBSERVED / COULD NOT VERIFY rather than filled in.
+- Tools available this run: HTTP fetch, web search. Not available: a live Google Maps/GBP view, Google SERP rendering (3-pack, Ads, LSA), Meta Ad Library (JavaScript app), a working PageSpeed run. All review numbers below came from search snippets / third-party aggregators and are tagged UNCONFIRMED accordingly.
+
+=====================================================================
+STEP 1 — WEBSITE RESEARCH
+=====================================================================
+- Website URL confirmed live: yes (https://www.dehoyosinjury.com/ returns 200)
+- Last redesign date or estimated age: not determinable. Footer shows placeholder "© 20XX"; a logo dated 2023 was noted. Treat as "roughly 2023 or later, unconfirmed".
+- Mobile responsive: not directly tested on a device; navigation/layout suggest responsive design (inferred from page markup only)
+- Homepage headline: "The Houston personal injury attorney you choose will impact the rest of your life."
+- CTA above fold: yes — "Book a free consultation" plus phone (832) 745-4878
+- Contact form location: footer ("Get a Free Consultation": name, phone, email, city, case description) — not above the fold
+- Live chat present: not detected on the homepage content retrieved (not conclusively checked in a live browser)
+- Attorney bio present: yes — Ryan A. DeHoyos (Super Lawyers "Rising Star" 2019; 10+ years on homepage, "17 years" per a directory snippet; "$20 million+ in settlements and verdicts" is a firm marketing claim, not verified)
+- Video present: not observed on homepage content retrieved
+- Blog present: yes — "Articles" section; recent titles include "What is a Fourth-Degree Burn?" and "Catastrophic Injury Cases in Texas". Last post date not determined.
+- Other site observations: location landing pages exist (e.g. /league-city-personal-injury-lawyer/, /league-city-wrongful-death-lawyer/, /houston-distracted-driving-accident-lawyer/). Site lists four offices: Houston (2990 Richmond Ave, Suite 400), Pearland (4205 Broadway St, Suite 219), League City (102 E Walker St, Suite 111), Victoria (1501 E Mockingbird Ln). Spanish is not indicated in navigation. Only Ryan A. DeHoyos is named as an attorney on the page retrieved.
+- PageSpeed mobile score: COULD NOT OBTAIN. The Google PageSpeed API returned HTTP 429 (daily quota exceeded) on 4 attempts (2 mobile, 2 desktop) and the pagespeed.web.dev page did not render results in a non-JS fetch. No number is recorded and none may be estimated. ACTION: re-run at pagespeed.web.dev before /audit-write; Pass 2 must not print a PageSpeed figure until then.
+- PageSpeed desktop score: COULD NOT OBTAIN (same reason as above)
+
+=====================================================================
+STEP 2 — GOOGLE BUSINESS PROFILE
+=====================================================================
+- GBP found: yes, per aggregator (lawleaderboard.com reports a "claimed Google Business Profile"); direct GBP view not available this run
+- Star rating: 5.0 [UNCONFIRMED — sourced from lawleaderboard.com and web-search snippets, not independently confirmed via Google]
+- Total review count: 341 [UNCONFIRMED — sourced from lawleaderboard.com (business profile collected Aug 9, 2026; reviews collected Aug 11, 2026), not independently confirmed via Google; likely stale by ~3 months]
+- Most recent review date: not determined
+- Primary category: not confirmed on GBP; aggregator describes "personal injury attorney" (car accidents, motorcycle, medical malpractice, wrongful death)
+- Photos active: not observed (Yelp Pearland listing shows 12 photos — Yelp, not GBP)
+- Posts active: not observed
+- Responds to reviews: aggregator says 99% of retrieved reviews have a reply [UNCONFIRMED]
+- Other review data points (all UNCONFIRMED aggregators): Birdeye League City listing "76 reviews" [UNCONFIRMED — sourced from Birdeye, not independently confirmed via Google]; trustanalytica Pearland "48 reviews" [UNCONFIRMED — sourced from trustanalytica.org, not independently confirmed via Google]
+
+=====================================================================
+STEP 3 — LOCAL 3-PACK SEARCHES
+=====================================================================
+NOT OBSERVED. A rendered Google local pack cannot be retrieved from this environment, and search-snippet text is not a 3-pack. No firm-appears yes/no or pack composition is recorded because none was seen. Practice-area labels below come from the website, not a call.
+
+Practice Area 1: Car accidents (Houston)
+- Search 1 "Houston car accident lawyer": NOT OBSERVED
+- Search 2 "car accident attorney near me Houston": NOT OBSERVED
+- Search 3 "Pearland car accident lawyer": NOT OBSERVED
+Practice Area 2: Truck accidents
+- Search 1 "Houston truck accident lawyer": NOT OBSERVED
+- Search 2 "18 wheeler accident attorney Houston": NOT OBSERVED
+- Search 3 "League City truck accident lawyer": NOT OBSERVED
+Practice Area 3: Wrongful death
+- Search 1 "Houston wrongful death lawyer": NOT OBSERVED
+- Search 2 "League City wrongful death lawyer": NOT OBSERVED
+- Search 3 "Pearland wrongful death attorney": NOT OBSERVED
+ACTION: run these in a live browser before the report prints any 3-pack claim.
+
+=====================================================================
+STEP 4 — COMPETITOR REVIEW COUNTS
+=====================================================================
+All figures are from web-search result summaries of the competitors' own sites/aggregators, NOT from Google listings. All are UNCONFIRMED. Pass 2 must not print them as specific figures.
+- Competitor 1: Joe I. Zaid & Associates (Houston) — reviews: "1,500+" [UNCONFIRMED — sourced from the firm's own site via web search, not independently confirmed via Google] — rating: not stated [UNCONFIRMED]
+- Competitor 2: Attorney Steve Lee (Houston) — reviews: 1,268 [UNCONFIRMED — sourced from web-search summary, not independently confirmed via Google] — rating: 4.8 [UNCONFIRMED — same source]
+- Competitor 3: Nguyen & Associates (Houston) — reviews: 525 [UNCONFIRMED — sourced from web-search summary, not independently confirmed via Google] — rating: 4.9 [UNCONFIRMED — same source]
+- Additional: Jim Adler & Associates — about 7,700 reviews, 4.6 [UNCONFIRMED — web-search summary]; Simmons & Fletcher — 382 reviews, 5.0 [UNCONFIRMED — firm-site claim via web search]; Baumgartner Law Firm — "130+" reviews [UNCONFIRMED — firm-site claim]
+- Comparison caution: DeHoyos (341, UNCONFIRMED) is below Zaid, Adler, Lee, Nguyen and Simmons & Fletcher and above Baumgartner, on UNCONFIRMED numbers only. Do not call any competitor "dominating" on reviews without live Google verification.
+
+=====================================================================
+STEP 5 — DIRECTORY LISTINGS
+=====================================================================
+- FindLaw: listings found for the firm and for Ryan A. DeHoyos (Houston)
+- Avvo: profile found — Ryan A. Dehoyos (Pearland, TX car accident lawyer); site badge claims Avvo 5-star (not verified)
+- Justia: not located in this run
+- Yelp: separate listings for Houston (2990 Richmond Ave; "DE HOYOS ACCIDENT ATTORNEYS") and Pearland (4205 Broadway St)
+- BBB: accredited since March 15, 2024; A+; "15 years in business" per snippet (BBB listings exist for Houston and League City)
+- Others found: Birdeye (League City), USLegal, trustanalytica (Pearland), lawleaderboard, accidentlawyerreview, thatcarhitme, allusinjurylawyers, Facebook page (DeHoyosLaw)
+- NAP inconsistencies noted:
+  * Phone on website/directories: (832) 745-4878. Phone on lawleaderboard (GBP-derived): +1-832-479-2913 — differs [UNCONFIRMED which is current]
+  * Business name varies: "DeHoyos Accident Attorneys" / "DeHoyos Accident Attorneys, PLLC" / "DE HOYOS ACCIDENT ATTORNEYS" (spacing) / trigger "DeHoyos Law Firm"
+  * Pearland listed as Avvo's location for Ryan, Houston elsewhere
+- Geo-targeting landing pages: yes, at least League City and Houston-specific topic pages exist; full coverage not audited
+
+=====================================================================
+STEP 6 — GOOGLE ADS
+=====================================================================
+NOT OBSERVED for every practice area. Google SERP ads cannot be rendered from this environment. Per the ADS FRAMING RULE this is NOT evidence that the firm is or is not running ads, and nothing in this file may be read as such.
+Practice Area 1: Car accidents
+- Firm ads observed: not observed (could not view live SERP)
+- Named local competitors running ads: not observed
+Practice Area 2: Truck accidents
+- Firm ads observed: not observed
+- Named local competitors running ads: not observed
+Practice Area 3: Wrongful death
+- Firm ads observed: not observed
+- Named local competitors running ads: not observed
+ACTION: verify in a live browser.
+
+=====================================================================
+STEP 7 — LOCAL SERVICE ADS
+=====================================================================
+- Firm appears in LSA: not observed (could not view live SERP)
+- Google Screened: not observed
+- LSA review count: not observed
+- Named local competitors in LSA: not observed
+
+=====================================================================
+STEP 8 — META ADS
+=====================================================================
+- Firm has active ads: not observed (Meta Ad Library requires JavaScript; could not be queried). Not evidence either way.
+- Named local competitor 1: not observed
+- Named local competitor 2: not observed
+- Firm has a Facebook page (facebook.com/DeHoyosLaw); activity not reviewed.
+
+=====================================================================
+STEP 9 — TRANSCRIPT EXTRACTION
+=====================================================================
+Transcript source: NONE. No transcript field, no transcript_status, no full verbatim transcript in this run. No call record exists in the trigger. This file makes no statement about whether a discovery call happened. Every line below is "not stated" unless it is explicitly marked as website-derived.
+
+- Practice areas confirmed: not confirmed by client. Website-derived (not call-confirmed): personal injury — car, truck, motorcycle, slip and fall, dog bite, pedestrian, wrongful death, plus 40+ injury types
+- Current lead sources: not stated
+- Ads ever run: not stated
+- Firm identity check: matches — same firm by domain (dehoyosinjury.com matches contact email rad@dehoyosinjury.com), attorney (Ryan A. DeHoyos) and HubSpot contact company field. Note: trigger name "DeHoyos Law Firm" differs from the trading name "DeHoyos Accident Attorneys, PLLC" on the website; HubSpot company record could not be read (missing scope) per the trigger.
+- Team size: not stated. Website names only Ryan A. DeHoyos (one staff member, "Ashley", appears in a testimonial)
+- Team size (total headcount): not stated
+- Annual revenue (gross / case value): not stated
+- Annual revenue (net / take-home / collected): not stated
+- Revenue (annual, best estimate): not stated
+- Fee structure: not stated (site markets free consultations; contingency-style "no fee unless we win" not confirmed on the site pages retrieved)
+- Revenue goal: not stated, use 2x current revenue (current revenue also not stated, so no figure can be computed)
+- Average case value: not stated (no figure; practice area is personal injury)
+- Current close rate: not stated — default to 15%
+- Number of locations: 4 per website (Houston, Pearland, League City, Victoria); not call-confirmed
+- Spanish campaign needed: not stated (Spanish not indicated on website; not confirmed either way)
+- Dominant buying motive: not stated — no client statement available; no inference made
+- Any profitability claims made by prospect: none stated
+- Any claims about case types or practice areas: none stated
+- Stated call focus / product interest: not stated — no call record. No call focus is asserted. Do NOT default this to "standard marketing/growth discovery"; confirm on the November 6 proposal call.
+- Primary engagement: marketing
+  (PLACEHOLDER ONLY — the machine-read field requires a keyword and no call exists. This is the pipeline default, NOT a finding from the client. select-package.mjs output should be treated as unconfirmed.)
+- Products discussed on call: none
+- Lead-gen gap stated: no — no call record; the prospect has stated nothing
+- Existing marketing/SEO/ad vendor engagements: none stated
+- Budget constraints stated: none stated
+
+Key prospect quotes: none — no transcript or call summary available.
+
+=====================================================================
+STEP 10 — COMPETITIVE URGENCY SCORE
+=====================================================================
+Score: 6 (PROVISIONAL — based only on UNCONFIRMED review counts and the firm's own site. No 3-pack, ads, LSA or Meta data was observed, so this score cannot be considered verified. Re-score after live checks.)
+Named local competitor threats (reasons limited to UNCONFIRMED review-volume claims; no ad activity observed):
+1. Joe I. Zaid & Associates (Houston) — claims 1,500+ Google reviews [UNCONFIRMED]
+2. Attorney Steve Lee (Houston) — 1,268 reviews, 4.8 [UNCONFIRMED]
+3. Nguyen & Associates (Houston) — 525 reviews, 4.9 [UNCONFIRMED]
+Dynamic sentence (score 4–6): "A score of 6 means competitors have meaningful advantages in one or more areas and are pulling ahead. You are not invisible yet — but the window to close the gap is narrowing. Every month without action is a month they extend their lead."
+
+=====================================================================
+PASS 2 — VERIFICATION CHECKLIST
+=====================================================================
+[x] Every number matches data actually observed in the source named; where it could not be observed it is marked as such
+[ ] Competitor review counts verified live — NOT DONE (all UNCONFIRMED)
+[x] Every review count / star rating carries a verification-method tag (all [UNCONFIRMED])
+[x] Revenue split / fee structure — transcript gave none; recorded as not stated
+[x] Ad sections cover all practice areas — each recorded as NOT OBSERVED
+[x] No section says "you are not running ads"
+[x] No profitability or business claim appears that is not from the transcript (firm marketing claims are labelled as such)
+[x] Competitors are specific named local firms only
+[ ] PageSpeed scores are real numbers — NOT DONE (quota 429); left blank on purpose, no estimate
+[x] DBM — recorded as not stated (no source; not inferred)
+[x] Revenue goal flagged not stated
+[x] Close rate defaulted to 15%
+[x] Average case value flagged not stated
+[x] Stated call focus recorded as not stated, explicitly not defaulted to "standard"
+[x] Primary engagement / Products discussed / Lead-gen gap filled in exact format (engagement is a placeholder, flagged above)
+[x] Revenue best estimate and headcount are "not stated"
+[x] Firm identity check filled in
+[x] Existing vendor engagements: none stated
+[x] Budget constraints: none stated
+
+OPEN ITEMS BEFORE /audit-write: (1) obtain PageSpeed mobile and desktop numbers; (2) live Google Maps check of firm and competitor review counts; (3) live 3-pack, Google Ads, LSA and Meta Ad Library checks; (4) confirm phone number (832-745-4878 vs 832-479-2913); (5) get discovery/proposal-call facts — none of STEP 9 is client-sourced.
