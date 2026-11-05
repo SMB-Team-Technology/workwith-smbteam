@@ -1,0 +1,94 @@
+SECTION 11 WORKINGS — O'Brien Law Group PC (friendly name: obrien) — INTERNAL ONLY, never client-facing
+Sales rep: Jacob Meissner | Audit date: November 4, 2026 | CONTROL RUN (audit-test/control-obrien)
+
+================================================================================
+TRANSCRIPT-STATED NEED OVERRIDE CHECK
+================================================================================
+1. Call-purpose: Call was standard marketing / lead-gen for a PI firm (primary_engagement = marketing). AI curiosity noted; rep steered away from AI/CTO, coaching/ops and finance. No override.
+2. Existing-vendor: No signed vendor. Kerry was quoted ~$30K/mo by an unnamed company; nothing signed. No override.
+3. Budget-reality: Kerry said he can afford $30,000/mo "if I have to" but wants proof it works and is nervous about paid ads. No hard cap stated. No override; conservative-to-aggressive range shown so he can start low.
+4. Effective-revenue: Only gross ($1.8-2M, rep-proposed, soft-confirmed) stated; no net. Decision file confidence = "low". No net figure to apply. SALES REP: confirm collected/net revenue before finalizing; if net is materially lower, re-run tiering (Growth tier floor is $1M).
+
+PACKAGE DECISION FILE: package_decision.json read.
+- Seller override present in selection_notes ("Seller override: dropped Elite Coach Plus and AI Workforce Pro - Starter per Slack request on 2026-10-26; package is Full Service Marketing - Growth only"). Seller always wins -> used as-is. The four overrides above do not apply to seller-chosen packages.
+- pricing_mode = "standalone" (only 1 bundle-eligible product) -> charged price = stand-alone price; NO bundle savings; savings callout deleted from client report.
+
+MANDATORY PRICE LOOKUP (verified against decision file and Marketing Tiers / stand-alone price tables)
+- Marketing package selected: Full Service Marketing - Growth
+  - Bundled price (table): $7,497/mo (NOT applicable - only 1 bundle-eligible product)
+  - Stand-alone price (table): $8,997/mo  <- CHARGED PRICE
+  - Savings: $0
+- Non-marketing package selected: none
+- Legal AI Workforce (LAW) package selected: none
+- AI Avatar / Video Growth add-on: none
+- Total monthly investment: $8,997/mo
+- Total savings: $0
+
+35% cap check: monthly revenue $1.9M / 12 = $158,333; 35% = $55,417. Fee $8,997 + aggressive ad spend $40,000 = $48,997 -> within cap. Ad spend cap for Growth tier = $50,000 -> $40,000 within cap.
+
+================================================================================
+AD SPEND AND ROI (from package_decision.json: conservative $10,000 / aggressive $40,000)
+================================================================================
+Practice area: Accident & Injury / MVA (Orange County + LA County border; high-competition market).
+Assumptions (ALL FLAGGED): close rate 15% default (not stated); case value $7,500 = midpoint of default MVA range $5K-$10K (Kerry did not state one value; his low-limit example was a ~$5,000 fee, and he cited settlements from $10K to $1M policy limits). Client-facing Block 4 labels these as estimates and says "industry average".
+
+Conservative - $10,000/mo, Google Search-led (MVA PPC channel minimum $10,000; also meets high-competitiveness PI hard floor $10,000)
+- Google Search CPL midpoint $705 (range $630-$780) + 20% cushion = $846
+- Leads = 10,000 / 846 = 11.8
+- Cases = 11.8 x 15% = 1.8 (about 2)
+- Revenue = 1.77 x $7,500 = about $13,300
+- Return = 1.3x
+Aggressive - $40,000/mo, illustrative mix: Google Search 60% ($24,000), LSA 20% ($8,000), Meta cold 15% ($6,000), Meta retargeting 5% ($2,000)
+- Leads: 24,000/705 = 34.0; 8,000/235 = 34.0; 6,000/170 = 35.3; 2,000/90 = 22.2 -> 125.6 leads (blended CPL about $318, no cushion)
+- Cases = 125.6 x 15% = 18.8 (about 19)
+- Revenue = 18.84 x $7,500 = about $141,300
+- Return = 3.5x
+Note: the 70/20/5/5 allocation in the AI summary was the rep's hypothetical, not agreed by Kerry; mix above is my own illustration.
+Geo/Spanish: no geo multiplier or Spanish multiplier applied in the file's aggressive figure (file basis = 4x conservative floor). Kerry is open to Spanish campaigns and wants nearby cities (Anaheim, Buena Park).
+
+"Why this range" sentence (client-facing, used in Block 4): ties to converting high-intent car accident searches in Anaheim, Long Beach, and Seal Beach into signed cases before larger firms capture them.
+
+FLAGS ABOUT THE NUMBERS (sales rep, internal):
+- Conservative scenario returns only about 1.3x on ad spend (about 2 cases/mo) and does not reach Kerry's stated goal of at least 10 cases/month; it is also below break-even once the $8,997 management fee is counted. Kerry said he does not want to "break even paying $30,000 ... or lose money" - set expectations and consider a mid-range starting point.
+- Revenue goal (2x current = $3.8M) exceeds projected ad revenue -> paid ads team review.
+
+================================================================================
+DBM STATEMENT (Block 1)
+================================================================================
+Inferred (not directly stated): a steady, predictable flow of cases so the firm never has an empty pipeline - security and peace of mind for a small, comfortable firm, not scaling to dominate. Closest quotes: "I don't want to be sitting here like in a year from now going, oh, geez, where's all the clients?"; "we do great where we are financially." Category (1): firm that runs steadily / peace of mind.
+Block 1: "We help established personal injury attorneys get a steady, predictable flow of new motor vehicle accident cases so they can stop wondering where the next clients are coming from."
+
+================================================================================
+QUICK WIN OPPORTUNITIES (9)
+================================================================================
+1. Fix Google Business Profile (Lead Gen / Quick Win) - listing attached to Todd Song Tax Consulting location (transcript, rep screen-share); name still old; category "Attorney" not "Personal Injury Attorney". Competitor: none named.
+2. Make name/address/phone consistent everywhere (Lead Gen / Quick Win) - 4 name variants; 3699 Katella Ave vs 4050 Katella Ave Ste 108; phones 562.588.3069 / 562.684.0104 / +15623080733. Competitor: none.
+3. Refresh website for O'Brien Law Group brand + mobile speed (Lead Gen / Quick Win) - (c) 2023, old brand, Lighthouse mobile 65, LCP 7.5 s, desktop 92 (local Lighthouse, not pagespeed.web.dev). Competitor: none.
+4. Rebuild review momentum (Lead Gen / Quick Win) - firm review base appears modest. Competitor: Omega Law Group, PC (qualitative only - counts UNCONFIRMED).
+5. Launch nearby-city search + LSA campaigns incl. Spanish-language (Lead Gen / Long-Term Play) - Anaheim, Buena Park, Long Beach, Seal Beach; Kerry accepted "number one in Anaheim" strategy. Competitor: none.
+6. Track every call by source (Intake / Quick Win) - no call-tracking vendor found; no Meta pixel found. Competitor: none.
+7. Speed-to-lead standard for new paid leads (Intake / Long-Term Play) - staff already good at intake; volume will rise. Competitor: none.
+8. Name an owner for pipeline reporting (Team / Long-Term Play) - no one owns lead generation. Competitor: none.
+9. Track cost per signed case by case type (Profit / Long-Term Play) - wide case-value range; no tracked channels. Competitor: none.
+
+================================================================================
+WHAT YOU TOLD US (Block 5) - sourcing
+================================================================================
+Row 1: "more predictable leads, more phone calls coming in." (00:07:41, Kerry) -> Block 2: Full Service Marketing - Growth (Google Search, LSA, Meta campaigns).
+Row 2: "I do have to revamp my website and everything else to transition over." (research notes Step 1; Kerry) and "it says it's located in Todd Song Tax Consulting." (00:24:05) -> Block 2: website/rebrand content migration and Google Business Profile optimization.
+Row 3: "I haven't done paid ads. I'm really nervous by it." (00:11:45) and "I just want to be in a position where I know that that's going to work out." (00:15:57) -> Block 2/Block 4: range of ad spend from conservative to aggressive so he can start lower and ramp.
+Next-step line: kickoff call with your Onboarding team.
+Excluded per rules: past informal referral channel, personal details (second home), rep's competitor-spend guesses, named employees.
+
+================================================================================
+ESCALATION FLAGS (INTERNAL - never in client report)
+================================================================================
+- Ad spend over $25K (aggressive $40,000) -> scoping approval required.
+- Personal Injury in a top-40 metro (Los Angeles / Long Beach area) -> approval required.
+- Revenue goal exceeds projected ad revenue -> paid ads team review.
+- Review counts unconfirmed - verify live before the call: the firm's own review count/rating (5.0 / 20) and every competitor count (Omega 526, Pacific Attorney Group 239, Nordean 189, etc.) are UNCONFIRMED search-summary / aggregator figures. Client report uses qualitative framing only and prints no review count or star rating.
+- Revenue unverified (draft based on research_notes; gross $1.8-2M rep-proposed, soft-confirmed; confidence "low"; contingency practice with no net figure) - confirm collected revenue before finalizing tier.
+- Package decision flags from select-package.mjs: team size not stated (defaulted to 3; notes show 6 incl. 5 staff); AI Workforce Pro and FCOO/FCFO were mentioned on the call only in the company overview - seller override removed them. If LAW or coaching is re-added later: confirm LAW delivery has launched and capacity available.
+- Trigger URL lawofficeofkellypobrien.com does not resolve; actual site is kerryobrienlaw.com. CRM name should read O'Brien (rep said he would fix).
+- Research tooling gaps: Google Maps/GBP, SERP (3-pack, Ads, LSA), Meta Ad Library and pagespeed.web.dev were not reachable in Pass 1. Client report makes no claims about firm or competitor ad presence/local-pack rank. PageSpeed figures are from a local Lighthouse run, labeled as such in report.
+- Roadmap Phase 2/3 mentions FCOO Advisor, FCFO Advisor, Bookkeeping and AI Workforce Pro without prices (not part of current proposal).
