@@ -1,0 +1,465 @@
+================================================================================
+GOODWIN LAW — GROWTH AUDIT RESEARCH NOTES
+================================================================================
+Firm: Goodwin Law (website: Goodwin Law, P.A.)
+Friendly name: goodwin-law
+URL: http://glpa.law (redirects to https://glpa.law/ — confirmed live, HTTP 200)
+Sales Rep: Dan Bryant
+Date: November 11, 2026 (proposal/solution call — Wed Nov 11, 2:00 PM ET)
+Discovery call recorded: November 4, 2026 (125 min, Fathom)
+Contact: Matt Goodwin (Owner/Attorney)
+Office: 9955 Tamiami Trail N, Suite 4, Naples, FL 34108
+Referral source: Brad Galbraith (SMB Team Master's Circle client)
+
+RESEARCH-ENVIRONMENT LIMITS (read before trusting any "not observed" below):
+- Google Search / Google Maps / Local Pack / LSA results could not be loaded
+  from this research environment (Google returns a JS/consent shell to
+  automated fetches). No live 3-pack, GBP, ad, or LSA observation was made.
+- Meta Ad Library requires a JS/login session and could not be queried.
+- Avvo and Lawyers.com returned HTTP 403.
+- pagespeed.web.dev / the PageSpeed API returned "quota exceeded" on three
+  attempts. Scores below come from Lighthouse 12.8.2 run locally (same engine
+  PageSpeed uses) from a datacenter machine — real numbers, but may differ a
+  few points from the pagespeed.web.dev result.
+- Where a figure came only from a web-search snippet or from the rep's screen
+  during the call, it is tagged UNCONFIRMED per the REVIEW-DATA VERIFICATION
+  RULE and must not be printed as a specific figure in the client-facing report.
+
+================================================================================
+STEP 1 — WEBSITE RESEARCH
+================================================================================
+Website URL confirmed live: Yes
+Last redesign date or estimated age: Not date-stamped. Footer "© Copyright
+  2026"; uploads folder shows assets from Nov 2023 (TitleTap migration). Prospect
+  said on the call he built the original site/logo ~11 years ago, then moved the
+  template to TitleTap (grandfathered at $175/mo). Rep identified it as a
+  Scorpion-style (TitleTap/Divi) build. Estimated design age: 10+ years of
+  lineage, platform migration ~2023.
+Mobile responsive: Yes in markup — viewport meta tag present
+  (width=device-width) and responsive Divi layout. Mobile PERFORMANCE is poor
+  (see PageSpeed below). Note viewport also sets user-scalable=0 / maximum-scale=1.
+Homepage headline (H1, exact): "Florida's Premier Law Firm Focused on Real Estate
+  Transactions, Estate Planning, and Estate Administration"
+  (a second hero line, "Helping People Navigate Significant Life Events", also
+  appears in the hero area — not an H1 in the page source)
+Homepage <title>: "Real Estate Law Firm, Title and Escrow - Naples, Collier
+  County, Lee County, FL | Goodwin Law, P.A."
+CTA above fold: Yes — "Contact Us" button with phone (239) 207-3403 shown.
+Contact form location: Not on the homepage; on dedicated /contact-us/ page and
+  reachable from header/footer (not above fold).
+Live chat present: Yes — LiveChat (livechatinc.com tracking script) present in
+  page source. (Prospect's own call: no after-hours/overflow answering solution.)
+Attorney bio present: Yes — Matthew Goodwin, Esq. (President) with photo,
+  AV Martindale-Hubbell rating and Certified Real Estate Specialist
+  designation. Team page lists 6 people (Matthew Goodwin, Alexandra Kane,
+  Tiffany Evans, M. Francesca Passeri, Patty Nichini, Beatriz Thomas).
+Video present: Yes, but not on the homepage — FAQ video library at /faq-videos/
+  (real estate, estate planning, estate administration). Podcast page also
+  present (/podcast/).
+Blog present: Yes — /blog/. Most recent posts observed dated June 2026.
+Other site structure: Practice-area pages for Real Estate, Estate Planning,
+  Estate Administration; testimonials pages; Qualia page; "Trusted Local
+  Professionals" page. JSON-LD/schema markup present on homepage (consistent
+  with the AEO vendor's schema work).
+
+On-page SEO observations (live HTML, confirmed):
+- Real estate page (/practice-areas/real-estate/): <title> "Real Estate -
+  Naples, Collier County, Lee County, FL | Goodwin Law, P.A." — no
+  "attorney/lawyer" keyword. Page has 6 H1 tags, all "Real Estate" (hero
+  slider slides, class et_pb_slide_title). Matches the rep's live finding on
+  the call ("six H1s ... slider").
+- Homepage has 1 H1 in source; homepage hero also uses a slider/carousel module.
+- Word count (visible text, approximate): homepage ~2,900; real estate page
+  ~1,500.
+- Rep's competitor comparison on call: competitor real-estate page had a
+  title of keyword + city + firm name and 814 words; rep said the firm's real
+  estate title/H1 are "both wrong" and that is "why Conrad is outranking you
+  primarily."
+
+PageSpeed (Lighthouse 12.8.2, local run, https://glpa.law/, performance category):
+- PageSpeed mobile score: 17
+- PageSpeed desktop score: 70
+  (pagespeed.web.dev itself unavailable — quota exceeded; see limits above)
+
+*** SAVED: website section complete ***
+
+================================================================================
+STEP 2 — GOOGLE BUSINESS PROFILE
+================================================================================
+GBP found: Yes (prospect manages it; rep screen-shared it on the call)
+Star rating: 5.0 [UNCONFIRMED — sourced from a web-search result snippet
+  (aggregator not identified), not independently confirmed via Google]
+Total review count: 52 [UNCONFIRMED — sourced from a web-search result snippet
+  (aggregator not identified), not independently confirmed via Google]. Prospect
+  said on the call that review capture has been a recent focus ("The Google
+  reviews we've been focused on, I know that's bringing us additional traction").
+Most recent review date: Not observed
+Primary category: Per the call, the primary category was generic "Attorney";
+  Matt switched it live to "Real Estate Attorney" and added secondaries Title
+  (company), Probate, Estate Planning, Elder Law per the rep's advice. Current
+  live state NOT verified (change was ~Nov 4, 2026; Google review lag).
+Photos active: Not observed live. Per call: cover photo is a small storefront
+  image; rep recommended a close-up headshot.
+Posts active: Not observed
+
+Related GBP — Florida Fidelity Title & Escrow (prospect's separate title
+company, W. Palm Beach area): per the call, ~3 reviews, outdated street address
+(old address, "haven't been there in four years"), no marketing.
+  Reviews: 3 [UNCONFIRMED — read off the rep's screen during the call, not
+  independently confirmed via Google]
+
+================================================================================
+STEP 3 — LOCAL 3-PACK SEARCHES
+================================================================================
+NOT INDEPENDENTLY RUN — Google results not accessible from this environment.
+Below is what was observed on the call (rep's screen: third-party geo-grid
+tool "Local Brand Manager", 13x13 mile grid, 1-mile spacing, real estate attorney
+keyword, centered near the firm's Tamiami Trail N office). These are the rep's
+observations, not live-verified in this session.
+
+Practice Area 1: Real estate
+- "real estate attorney": firm appears in 3-pack in 13% of grid points
+  (share of local voice). Competitor SoLV on same grid: Willis & Davidow 73%
+  [transcript unclear — name garbled as "Willis and Davideau"], Renee Nesbitt
+  34% [name spelled "Rene Nesbitt" in transcript]. At the rep's blue-dot
+  location the pack was Nesbitt / Willkomm / other. Review counts for the pack:
+  not observed.
+- "real estate attorney Naples" / "real estate lawyer Naples": not run.
+- "title company Naples" (title company side): per call, ranked below Cottrell,
+  Naples Title, First American (see Step 4); firm's title GBP not in pack.
+Practice Area 2: Estate planning — "trust attorney", "probate attorney",
+  "estate planning attorney": rep ran these on the call; observed "the same
+  three people over and over again" at his location; names/counts not captured
+  reliably. Not independently run.
+Practice Area 3: Probate — see above.
+Note: After-hours visibility — rep showed that GBP visibility shrinks after 5 PM
+  closing (13% during hours) and that competitors open until 6 PM+ gain share.
+  Conrad Willkomm closes ~5:30; rep said some competitors in LSAs are open
+  until 6 PM and one is open 24 hours (name garbled in transcript).
+
+================================================================================
+STEP 4 — COMPETITOR REVIEW COUNTS
+================================================================================
+(No Google listing could be read live. All numbers below are UNCONFIRMED.)
+- Competitor 1: Law Office of Conrad Willkomm, P.A. (Naples & Fort Myers) —
+  reviews: 550+ [UNCONFIRMED — sourced from web-search result snippet / firm
+  website claim of "over 550" Google reviews, not independently confirmed via
+  Google] — rating: 5.0 [UNCONFIRMED — same source]
+- Competitor 2: Willis & Davidow, LLC (851 5th Ave N, Naples) — reviews: not
+  observed on Google — rating: not observed. (Per the call, strongest geo-grid
+  share of local voice at 73% vs the firm's 13% — rep's tool, name garbled.)
+- Competitor 3: Renee Nesbitt (Naples real estate attorney) — reviews: not
+  observed — rating: not observed. (34% share of local voice on the call.)
+Estate planning/probate context (not real estate): Safe Harbor Law Firm — 270
+  reviews [UNCONFIRMED — web-search snippet]; The Siegel Law Group — 200+ [UNCONFIRMED
+  — web-search snippet]. Safe Harbor is a friend of the prospect per the call and
+  does not do real estate.
+Title-company competitors (from rep's screen on the call; all UNCONFIRMED —
+  not independently confirmed via Google): Cottrell (title) 408 reviews;
+  Lighthouse Title 42 reviews; First American Title (Naples landing page) 43
+  reviews; Naples Title 39 reviews; Florida Fidelity Title & Escrow 3 reviews.
+  Share-of-local-voice per rep: Cottrell 18%, Naples Title 69%, First American
+  45% [transcript read as stated].
+Check: the firm (52, UNCONFIRMED) is below every competitor cited as having
+  hundreds of reviews (Willkomm 550+, Cottrell 408, Safe Harbor 270, Siegel
+  200+); no competitor is cited as "dominating" with fewer reviews than the firm.
+
+================================================================================
+STEP 5 — DIRECTORY LISTINGS
+================================================================================
+- FindLaw: listed — "Goodwin Law, PA", 9955 Tamiami Trail North, STE 4, Naples,
+  FL 34108, (239) 207-3403; practice areas "Estate Law (Real Estate, Estate
+  Planning & Administration)"; no reviews posted on FindLaw; 1 attorney
+  recognized as Super Lawyers. NAP matches the website.
+- Lawyers.com: listing exists ("Goodwin Law, P.A.", Naples) — page returned 403;
+  details not read. Prospect told rep he is considering dropping Lawyers.com and
+  Avvo.
+- Avvo: HTTP 403 — not read. Prospect pays for Avvo-type listings (considering cutting).
+- Justia: Naples real estate directory page exists; firm listing not confirmed
+  from search snippet.
+- Super Lawyers / FineLaw: prospect pays ~$300–$500/mo for top spot (FineLaw
+  paired with Super Lawyers) — "I don't know if it's three or 500 a month";
+  ROI/lead volume unknown. Rep advised NOT to cut it until lead tracking is
+  obtained.
+- Martindale-Hubbell: profile for Matthew Alexander Goodwin exists.
+- Chamber of Commerce directory, LegalRank: listings exist (search snippet).
+- Yelp: not checked.
+NAP inconsistency: Florida Fidelity Title & Escrow GBP shows an old street
+  address (prospect: "800 C-Gate Drive" read from transcript, [transcript
+  unclear]) and the title company's current listed office is in West Palm
+  Beach area (7751 N Military Trl, per search snippet). Law firm NAP appears
+  consistent across FindLaw and website.
+Geo-targeting landing pages for surrounding cities: Not seen. Title tags
+  reference "Collier County, Lee County" but no dedicated Fort Myers / Marco
+  Island / Bonita Springs city pages found in the site link structure. Single
+  location (Naples).
+
+*** SAVED: GBP, local SEO, directory sections complete ***
+
+================================================================================
+STEP 6 — GOOGLE ADS
+================================================================================
+(Live SERP not accessible — ads NOT observed in this session; not a finding
+that none are running.)
+Practice Area 1: Real estate
+- Firm ads observed: not observed (live check not possible). Per the prospect
+  the current Google Ads campaign is estate-planning-targeted only.
+- Named local competitors running ads: per the rep's screen on the call,
+  several local real estate attorneys were running Local Service Ads and
+  sponsored PPC for "real estate attorney"; names are garbled in the transcript
+  ("LO, LNO, Joseph Law, and then Wilkersham") and are NOT recorded here as
+  named competitors. Rep said real-estate attorneys "are often not aggressive
+  marketers because it's such a referral type of business."
+Practice Area 2: Estate planning
+- Firm ads observed: not observed live. Confirmed on the call: the firm runs
+  Google Ads for estate planning, ~$450/mo ad spend with an outside agency
+  (see Step 9).
+- Named local competitors running ads: not observed.
+Practice Area 3: Probate — not observed.
+Framing: the firm does not appear to be running ads for real estate searches
+  (per prospect, the campaign targets estate planning only) — this is an
+  opportunity gap, not a statement of fact about every search.
+
+================================================================================
+STEP 7 — LOCAL SERVICE ADS
+================================================================================
+- Firm appears in LSA: not observed. Prospect did not mention running LSAs;
+  rep proposed testing LSA + PPC in tandem.
+- Google Screened: not observed
+- LSA review count: not observed
+- Named local competitors in LSA: rep stated on the call that three firms
+  appeared in LSAs for "real estate attorney" in Naples (names garbled in
+  transcript; review counts not captured). One firm described as open 24 hours
+  and another open until 6 PM. Not recorded as named competitors.
+
+================================================================================
+STEP 8 — META ADS
+================================================================================
+- Firm has active ads: not observed (Meta Ad Library not accessible from this
+  environment). Prospect on the call: looked into Meta/Instagram/Facebook
+  tracking "a while back" and "got overwhelmed"; no Meta ads stated.
+- Named local competitor 1: not observed
+- Named local competitor 2: not observed
+
+*** SAVED: all ads sections complete ***
+
+================================================================================
+STEP 9 — TRANSCRIPT EXTRACTION
+================================================================================
+Transcript source: full verbatim Fathom transcript (summary used only as overview)
+Transcript notes: Speaker tags are unreliable in the last ~40 minutes (several
+  of Matt's statements are tagged to Dan and vice versa, and some passages are
+  duplicated). Facts below are attributed by context. Rep-only numbers
+  (hypothetical missed-call math, "$2 million left on the table"-style pitch
+  math, ad-management price ranges) are NOT recorded as the firm's figures.
+
+- Practice areas confirmed: Real estate transactions (no litigation — "No
+  litigation."), Estate planning, Probate/estate administration. Also owns a
+  title company (Florida Fidelity Title & Escrow, W. Palm Beach area, ops run
+  from Naples; separate entity, ~1.5 FTEs, non-lawyer partner).
+- Current lead sources: Referrals/realtors and face-to-face for real estate;
+  AEO/AI-search ("we ask people, how did they find us? If they found us on a
+  search, we know that a lot of the searches are incorporating AI"); low-budget
+  Google Ads (estate planning); Google reviews/GBP; paid directories
+  (FineLaw/Super Lawyers). Quote: "between that and a really low-budget Google
+  AdWords campaign that I have where it's really got our phone ringing over the
+  last couple months. I don't know what specifically to attribute it to most. It
+  could just be that season starting here."
+- Ads ever run: Yes. Google Ads, estate-planning-targeted only, ~$450/mo ad
+  spend, ~$650/mo management fee to an outside agency ("I paid them $6.50 a
+  month" [transcript unclear — read as $650 per the Fathom summary and the
+  $450 ad budget]); a couple of campaigns; one email report a month; "it's
+  just trickling in." Cost per click varies "from $250 up to $45"
+  [transcript unclear — read as $2 to $45, per the summary]. Results/attribution
+  unclear. Meta: considered, not run per the transcript.
+- Firm identity check: matches (trigger "Goodwin Law"; website "Goodwin Law,
+  P.A.", Naples FL; owner Matt Goodwin; transcript "Goodwin Law")
+- Team size: Matt (owner/attorney); 1 attorney taking estate-planning
+  consults; receptionist/intake; other staff not enumerated on the call.
+  Website lists 6 team members. Title company: 1.5 FTEs (separate entity), Matt
+  plus a non-lawyer partner; plan to move the 1.5 FTEs into the law firm.
+- Team size (total headcount): 6
+- Annual revenue (gross / case value): not stated
+- Annual revenue (net / take-home / collected): not distinguished from gross
+  (no revenue figure given)
+- Revenue (annual, best estimate): not stated
+- Fee structure: not stated (real estate transactions; average case value
+  about $3,000)
+- Revenue goal: not stated, use 2x current revenue. Related stated target:
+  "I would have to see an extra, really not a lot, like seven to 10K a month to
+  make that switch comfortable" (to absorb the title company's 1.5 FTEs into the
+  law firm).
+- Average case value: $3,000 (real estate) — "3,000." / "Just an estimate."
+- Current close rate: well over 50% on real estate calls Matt takes himself —
+  "for a lead that calls in, my conversion rate is well over 50%, but I'm
+  getting better at it, and I'm also taking less calls." Overall/estate planning
+  close rate not stated — default 15% for non-real-estate if needed.
+- Number of locations: 1 (law firm, Naples). Title company is a separate entity
+  in W. Palm Beach area. Matt also mentioned a former Tampa office.
+- Spanish campaign needed: no (not mentioned)
+- Dominant buying motive: Inference from the call (no single "what I want my
+  life to look like" statement): a firm that runs itself and produces more
+  take-home with less of his time. Evidence: "I'm taking home as much as I
+  can"; "I'm not as hands-on as I can be or would like to be. And actually, as
+  matter of fact, I would like to be hands-off on a lot of things"; wife is an
+  ER doctor and they have two kids (10 and 15) — time/practicality constraints.
+  Motive type (1): firm that runs itself; profitability/utilization is the
+  lever.
+- Any profitability claims made by prospect: "I have a title company that
+  hasn't been profitable for about two years."; "neither one of us have taken a
+  distribution in two years"; "I could be doing better ... as far as
+  utilization rate."; reviewing salary-to-revenue ratios with fractional
+  controller.
+- Any claims about case types or practice areas: "Real estate is the most
+  competitive and requires the least amount of my time."; "Estate planning is
+  much more time-consuming for me, and I only have one attorney that is taking
+  those consultations."; "No litigation."; "I've been real methodical to grow
+  organically as opposed to aggressively in estate planning and probate."
+- Stated call focus / product interest: This was a rep-led tactical
+  teaching/audit call (GBP categories, review capture, on-page SEO, after-hours
+  AI receptionist, ads/LSA) plus an invitation to the SMB Team Marco Island
+  workshop (coaching event), and a side-by-side against How to Manage (HTM,
+  coaching). Prospect's expressed interest: more leads/conversions to fill
+  existing capacity, tracking/attribution across channels, intake coverage,
+  and hands-off marketing execution rather than DIY. He said he is "really
+  leaning towards how to manage, but something made me feel like I'd be
+  overpaying for a fire hose and I would still have to do all the work. So
+  I'd rather do more of a complimentary service." Solution call set for
+  Wed Nov 11, 2:00 PM ET. Not a Fractional CTO/AI or coaching-first call; rep
+  said the follow-up is to scope marketing, AI, or coaching.
+- Primary engagement: marketing
+- Products discussed on call: Full Service Marketing
+  (Rep quoted ad management "between $900 or $2,000 a month" on the smaller
+  end, flat retainer not a percentage of spend; LSA management ~$900/mo bundled
+  with coaching in some packages. Coaching/Master's Circle was described as
+  Brad's program, with the rep saying it is not necessarily what Matt needs;
+  AI platform and fractional recruiting mentioned generally, not priced.)
+- Lead-gen gap stated: yes — "I think that comes with having more leads and
+  conversions where I need more support… and also maxing out capacity for the
+  people on my team."
+- Existing marketing/SEO/ad vendor engagements: (1) AEO/AI-search vendor
+  signed ~3 months ago, ~$2,000/mo, month-to-month ("It's not a contract. It's
+  month to month." / "I did a three-month trial"), doing schema, FAQ content,
+  directory work, with access to the site/WordPress; (2) Google Ads agency —
+  $450/mo ad budget + ~$650/mo management; (3) TitleTap webmaster $175/mo
+  (grandfathered); (4) FineLaw/Super Lawyers ~$300–$500/mo.
+  Other vendors/tools: HTM fractional controller (engaged; considering
+  "Bookkeeping for Lawyers That Doesn't Suck"), Leap (+WealthCounsel bundle,
+  contract 1 or 3 years signed last November), Lawmatics (CRM/intake), Qualia
+  (closings, his most expensive platform), RingCentral (phones), CallRail.
+- Budget constraints stated: "I'm willing to try most things once unless it's
+  got a steep price tag and it's just a harder pill to swallow."; on past
+  attribution work: "I wasn't willing to spend thousands of dollars a month for
+  someone else to do it"; "$400 is next to nothing" is the rep's remark, not
+  the prospect's. Title company: wants a low-cost lever (reviews).
+
+Other call facts worth knowing:
+- After-hours/overflow: "do you have answering service for after hours,
+  overflow, nights and weekends?" — "No." Phone system is RingCentral (its AI
+  receptionist is ~$60/mo per number, up to 100 minutes; his plan is to start
+  with after-5 PM). He checked missed calls in RingCentral the day before:
+  "It was good." He "keeps toying with the idea" but lacks time to set it up.
+- Intake: receptionist screens; real estate calls warm-transferred to Matt when
+  available. Lawmatics + CallRail integration already exists.
+- Event: invited to SMB Team Q4 workshop, Marco Island, Dec 3–5, 2026 (JW
+  Marriott); free as a referral of Brad Galbraith; not staying onsite; owns a
+  condo nearby; Thursday/Friday conflicts; Zoom available for Friday/Saturday
+  stage sessions; may bring a law-firm-owner peer on a comp ticket.
+- Background: former web designer/sales; went to law school at 30; built his
+  own site and logo.
+- Action items stated on the call: update GBP; implement review-capture process;
+  request FineLaw/Super Lawyers lead data before cutting; email TitleTap to
+  remove slider and fix meta/H1; Matt to send Dan his AI-distilled punch list;
+  Dan to send invite and SMB info pack.
+
+Key prospect quotes (verbatim; speaker tags corrected by context where noted):
+1. (00:20:42) "between that and a really low-budget Google AdWords campaign that I
+   have where it's really got our phone ringing over the last couple months." —
+   lead sources / attribution
+2. (00:22:59) "Real estate is the most competitive and requires the least amount of
+   my time." — practice-area focus
+3. (00:23:18) "Estate planning is much more time-consuming for me, and I only have
+   one attorney that is taking those consultations." — team/capacity
+4. (00:23:29) "if I had to hire another one, I would have to have the work to
+   support it." — hiring
+5. (01:07:25) "for a lead that calls in, my conversion rate is well over 50%, but
+   I'm getting better at it, and I'm also taking less calls." — intake/close rate
+6. (01:07:45) "I'm taking home as much as I can." — profit/goals
+7. (01:08:22) "I think that comes with having more leads and conversions where I
+   need more support… and also maxing out capacity for the people on my team." —
+   lead-gen gap / capacity
+8. (01:09:00) "I have a title company that hasn't been profitable for about two
+   years." — profit
+9. (01:09:47) "I would have to see an extra, really not a lot, like seven to 10K a
+   month to make that switch comfortable." — revenue need / team
+10. (02:01:26) "I'm not as hands-on as I can be or would like to be. And actually, as
+    matter of fact, I would like to be hands-off on a lot of things, including
+    that." — DBM / marketing hands-off [speaker tagged Dan in file; Matt by context]
+11. (02:03:05) "I'm willing to try most things once unless it's got a steep price tag
+    and it's just a harder pill to swallow." — budget [speaker tagged Dan in file;
+    Matt by context]
+12. (02:03:14) "I was really leaning towards how to manage, but something made me feel like
+    I'd be overpaying for a fire hose and I would still have to do all the work.
+    So I'd rather do more of a complimentary service." — objection / competitor
+
+*** SAVED: transcript extraction complete ***
+
+================================================================================
+STEP 10 — COMPETITIVE URGENCY SCORE
+================================================================================
+Score: 5
+
+Named local competitor threats:
+1. Law Office of Conrad Willkomm, P.A. — outranks the firm organically for
+   "real estate attorney" (title tag has keyword + city + firm, "flawless" per
+   rep); claims 550+ Google reviews [UNCONFIRMED]; Naples & Fort Myers.
+2. Willis & Davidow, LLC — 73% share of local voice vs the firm's 13% on the
+   rep's geo-grid (name garbled in transcript; figure not independently verified).
+3. Renee Nesbitt — 34% share of local voice, in the 3-pack at the rep's test
+   location.
+(Title company side: Cottrell, Naples Title, First American out-rank Florida
+Fidelity Title & Escrow on reviews.)
+
+Rationale: Competitors have meaningful advantages in maps visibility, on-page
+SEO, and review volume, but the rep noted Naples real estate attorneys are
+"often not aggressive marketers," the firm already appears in AI answers
+(prospect-demonstrated on the call), and the firm has added AEO and Google Ads.
+The firm is not invisible; the window to close the gap is open.
+
+Dynamic sentence: "A score of 5 means competitors have meaningful advantages in
+one or more areas and are pulling ahead. You are not invisible yet — but the
+window to close the gap is narrowing. Every month without action is a month
+they extend their lead."
+
+*** SAVED: final research notes ***
+
+================================================================================
+PASS 2 — VERIFICATION CHECKLIST
+================================================================================
+[x] Every number matches observed data or is tagged with its source
+    (live: Lighthouse scores, H1 count, word counts, site structure; call:
+    all firm figures; UNCONFIRMED tags on all review data)
+[x] Competitor review counts — none verified live (Google unreachable); all
+    tagged UNCONFIRMED; firm does not exceed any competitor cited as dominating
+[x] Every review count/star rating carries a verification-method tag
+[x] Revenue split — no revenue stated; recorded as "not stated" / "not distinguished"
+[x] Ad sections cover all practice areas (real estate, estate planning, probate)
+[x] No "you are not running ads" statement — only "not observed" / "does not appear"
+[x] No profitability claims except those from the transcript (title company)
+[x] Competitors are specific named local firms (names garbled in transcript
+    were NOT used as named competitors)
+[x] PageSpeed scores are real numbers (local Lighthouse run; pagespeed.web.dev
+    quota exhausted — noted)
+[x] DBM recorded (inference with supporting quotes)
+[x] Revenue goal recorded (flagged: not stated, use 2x)
+[x] Close rate recorded (well over 50% real estate; default 15% otherwise)
+[x] Average case value recorded ($3,000 real estate)
+[x] Stated call focus recorded (tactical audit + workshop invite; not CTO/AI)
+[x] Primary engagement / Products discussed / Lead-gen gap — filled in format
+[x] Revenue (annual, best estimate) = not stated; Team size (total headcount) = 6
+[x] Firm identity check filled in — matches
+[x] Existing vendor engagements recorded
+[x] Budget constraints recorded
+OPEN ITEMS FOR SELLER/PASS 2: live GBP review count, 3-pack positions, LSA and
+Meta ad presence, and pagespeed.web.dev scores were not verifiable from this
+environment — do not print review counts as specific figures in the report.
