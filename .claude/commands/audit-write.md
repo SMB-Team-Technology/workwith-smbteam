@@ -150,6 +150,8 @@ Do the calculations that used to go in the retired `section_11_workings.txt` her
 # ROI aggressive:   blended CPL $X → N leads → N cases → $X revenue → X.X×
 # Case value: $X (source: transcript / practice-area default)
 # Why this range: <the client-facing sentence>
+# Stage: current Stage N (<why>) → goal Stage 6, Law Firm Owner
+# Pillar review: Lead Gen <red|amber|green> — <biggest gap> · Intake … · Team … · Profit …
 # What You Told Us (slide 3 panel + slide 1 quotes):
 #   1. <label> — transcript line: "<verbatim line from the research notes>" — supports: <package>
 #   2. ...
@@ -165,6 +167,8 @@ Contents — the same items the old workings file held:
 - Conservative and aggressive ad spend, each with the full ROI projection (leads, cases, revenue, return multiple) — only if a marketing/ads package is part of the recommendation. Use the AD SPEND CALCULATION and ROI PROJECTIONS rules below.
 - If a marketing/ads package is part of the recommendation: the one plain-English "why this range" sentence (rules under AD SPEND CALCULATION). It feeds `AD_SPEND_NOTE`.
 - DBM statement
+- Stage: current stage (FIRM STAGE rules) and goal (always Stage 6, Law Firm Owner)
+- Pillar review — replaces the website's Sections 5–9: for each of Lead Generation, Intake, Team and Profit, the traffic-light rating and the single biggest gap the research notes show, one line each. `KEY_GAPS` are chosen from these four lines.
 - What You Told Us: the 3 items selected (rules under WHAT YOU TOLD US below), each with the verbatim line from the research notes it comes from (or, with no transcript, the research finding for What We Found) and the package/deliverable it supports
 - Which override (if any) changed the decision file's package, any "Revenue unverified (draft based on <revenue_source>)" note, and every escalation flag that applies
 
