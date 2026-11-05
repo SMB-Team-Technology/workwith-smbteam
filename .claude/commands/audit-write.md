@@ -829,14 +829,13 @@ Fix any issues found, then commit.
 ## COMMIT AND PUSH TO MAIN
 
 ```bash
-git checkout main
 git add "[friendly-name]/"
 git commit -m "Add growth audit: [Firm Name] ([Date])"
-GIT_TERMINAL_PROMPT=0 git push origin main
+GIT_TERMINAL_PROMPT=0 git push origin HEAD:audit-test/control-obrien
 git log -1 --format="%H %s"
 ```
 
-Always commit directly to main — never create a branch. Report the commit hash.
+CONTROL RUN: commit to the current branch (audit-test/control-obrien) only — never push to main. Report the commit hash.
 
 ---
 

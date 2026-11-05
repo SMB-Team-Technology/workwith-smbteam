@@ -2,7 +2,7 @@ name: Audit Write (Pass 2 + 3, standalone)
 
 on:
   push:
-    branches: [main]
+    branches: ['audit-test/control-**']
     paths:
       - 'triggers/audit-write/*.json'
 
@@ -17,7 +17,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
         with:
-          ref: main
+          ref: ${{ github.ref_name }}
           fetch-depth: 0
           token: ${{ secrets.GITHUB_TOKEN }}
 
@@ -74,8 +74,8 @@ jobs:
           if ! git diff --cached --quiet; then
             git commit -m "Re-price package before build: $FRIENDLY_NAME"
             for attempt in 1 2 3; do
-              git push origin main && break
-              git pull --rebase origin main
+              git push origin HEAD:${{ github.ref_name }} && break
+              git pull --rebase origin ${{ github.ref_name }}
             done
           fi
 
@@ -99,7 +99,7 @@ jobs:
             Read \`.claude/commands/audit-write.md\` in full. Read the research notes file
             and \`Design Files/audit_styles.css\`. Execute every step in order, saving each
             section before moving to the next. Assemble the final HTML report, generate
-            the Sales Companion PDF, and commit everything to main. If with_pptx is
+            the Sales Companion PDF, and commit everything to the current branch (${{ github.ref_name }}) — CONTROL RUN, never push to main. If with_pptx is
             $WITH_PPTX (true), also run Pass 3. Report the commit hash when done.
           " | tee audit_write_output.log
 
@@ -131,209 +131,33 @@ jobs:
             echo "missing=" >> "$GITHUB_OUTPUT"
           fi
 
-      - name: Strip pricing sections (consultation meetings only)
-        if: steps.verify.outputs.write_verified == 'true' && steps.inputs.outputs.suppress_pricing == 'true'
-        run: |
-          FRIENDLY_NAME="${{ steps.inputs.outputs.friendly_name }}"
-          echo "suppress_pricing=true — stripping pricing sections from $FRIENDLY_NAME"
-          python3 scripts/strip-pricing-sections.py \
-            "$FRIENDLY_NAME/index.html" \
-            "$FRIENDLY_NAME/sections/section_executive_summary.html" \
-            "$FRIENDLY_NAME/sections/section_11_next_steps.html"
-          git add "$FRIENDLY_NAME/" || true
-          if ! git diff --cached --quiet; then
-            git commit -m "Remove pricing sections for consultation meeting audit: $FRIENDLY_NAME"
-            git push origin main
-          else
-            echo "No pricing sections found to remove (may already be clean)."
-          fi
-
-      - name: Write audit URL back to HubSpot
-        if: steps.verify.outputs.write_verified == 'true' && steps.inputs.outputs.hubspot_contact_id != ''
-        env:
-          HUBSPOT_TOKEN: ${{ secrets.HUBSPOT_TOKEN }}
-        run: |
-          CONTACT_ID="${{ steps.inputs.outputs.hubspot_contact_id }}"
-          FRIENDLY_NAME="${{ steps.inputs.outputs.friendly_name }}"
-          WORKWITH_URL="https://workwith.smbteam.com/$FRIENDLY_NAME"
-          RESPONSE=$(curl -s -w "\n%{http_code}" -X PATCH \
-            "https://api.hubapi.com/crm/v3/objects/contacts/$CONTACT_ID" \
-            -H "Authorization: Bearer $HUBSPOT_TOKEN" \
-            -H "Content-Type: application/json" \
-            -d "{\"properties\": {\"growth_profit_and_freedom_roadmap\": \"$WORKWITH_URL\"}}")
-          HTTP_CODE=$(echo "$RESPONSE" | tail -1)
-          echo "HubSpot response ($HTTP_CODE): contact $CONTACT_ID → growth_profit_and_freedom_roadmap = $WORKWITH_URL"
-          if [ "$HTTP_CODE" != "200" ]; then
-            echo "ERROR: HubSpot returned $HTTP_CODE"
-            exit 1
-          fi
-
-      - name: Email closer with audit attachments
-        if: steps.verify.outputs.write_verified == 'true' && steps.inputs.outputs.sales_rep_email != ''
+      - name: CONTROL email (Carolyn only)
+        if: steps.verify.outputs.write_verified == 'true'
         continue-on-error: true
         env:
           GMAIL_USER: ${{ secrets.GMAIL_USER }}
           GMAIL_APP_PASSWORD: ${{ secrets.GMAIL_APP_PASSWORD }}
           FIRM_NAME: ${{ steps.inputs.outputs.firm_name }}
           FRIENDLY_NAME: ${{ steps.inputs.outputs.friendly_name }}
-          SALES_REP: ${{ steps.inputs.outputs.sales_rep }}
-          SALES_REP_EMAIL: ${{ steps.inputs.outputs.sales_rep_email }}
         run: |
           python3 - << 'PYEOF'
-          import smtplib, os, glob, sys
+          import smtplib, os, glob
           from email.mime.multipart import MIMEMultipart
           from email.mime.text import MIMEText
           from email.mime.application import MIMEApplication
-
-          gmail_user       = os.environ["GMAIL_USER"]
-          gmail_password   = os.environ["GMAIL_APP_PASSWORD"]
-          firm_name        = os.environ["FIRM_NAME"]
-          friendly_name    = os.environ["FRIENDLY_NAME"]
-          sales_rep        = os.environ["SALES_REP"]
-          sales_rep_email  = os.environ["SALES_REP_EMAIL"].strip()
-
-          to_addr  = sales_rep_email
-          cc_addrs = [
-              "eli.gill@smbteam.com",
-              "vanessa.odonnell@smbteam.com",
-              "chris.abouraad@smbteam.com",
-              "justin.hernandez@smbteam.com",
-              "carolyn.webb@smbteam.com",
-          ]
-
-          pdf_files   = glob.glob(f"{friendly_name}/*_Sales_Companion.pdf")
-          pptx_files  = glob.glob(f"{friendly_name}/*_Proposal.pptx")
-          attachments = pdf_files + pptx_files
-
-          if not attachments:
-              print(f"WARNING: No PDF or PPTX found in {friendly_name}/. Sending without attachments.")
-
+          u, pw = os.environ["GMAIL_USER"], os.environ["GMAIL_APP_PASSWORD"]
+          to = "carolyn.webb@smbteam.com"
           msg = MIMEMultipart()
-          msg["From"]    = gmail_user
-          msg["To"]      = to_addr
-          msg["Cc"]      = ", ".join(cc_addrs)
-          msg["Subject"] = f"Growth, Profit, and Freedom Roadmap ready for {firm_name}"
-
-          workwith_url = f"https://workwith.smbteam.com/{friendly_name}"
-          body = "\n".join([
-              f"Hi {sales_rep},",
-              "",
-              f"The Growth, Profit, and Freedom Roadmap for {firm_name} is ready ahead of your proposal call.",
-              "",
-              f"View the full report here: {workwith_url}",
-              "",
-              "Attached you'll find:",
-              "  - Proposal Deck (PowerPoint) — share this on screen during the call",
-              "  - Sales Companion (PDF) — your seller-only cheat sheet, not for the client",
-              "",
-              "Let the team know if you need any changes before the call.",
-              "",
-              "SMB Team",
-              "",
-          ])
-          msg.attach(MIMEText(body, "plain"))
-
-          for filepath in attachments:
-              with open(filepath, "rb") as f:
-                  part = MIMEApplication(f.read(), Name=os.path.basename(filepath))
-              part["Content-Disposition"] = f'attachment; filename="{os.path.basename(filepath)}"'
+          msg["From"], msg["To"] = u, to
+          msg["Subject"] = f"[TEST — CONTROL, current main pipeline] {os.environ['FIRM_NAME']}"
+          msg.attach(MIMEText("Control run of the current (website + PDF) pipeline for the deck regression test. Not sent to anyone else.", "plain"))
+          fn = os.environ["FRIENDLY_NAME"]
+          for p in glob.glob(f"{fn}/*_Proposal.pptx") + glob.glob(f"{fn}/*_Sales_Companion.pdf"):
+              with open(p, "rb") as f:
+                  part = MIMEApplication(f.read(), Name=os.path.basename(p))
+              part["Content-Disposition"] = f'attachment; filename="{os.path.basename(p)}"'
               msg.attach(part)
-              print(f"Attached: {filepath}")
-
-          all_recipients = [to_addr] + cc_addrs
-          with smtplib.SMTP("smtp.gmail.com", 587) as server:
-              server.starttls()
-              server.login(gmail_user, gmail_password)
-              server.sendmail(gmail_user, all_recipients, msg.as_string())
-
-          print(f"Email sent to {to_addr} (CC: {', '.join(cc_addrs)})")
-          PYEOF
-
-      - name: Resolve seller mention
-        id: resolve_mention
-        if: steps.inputs.outputs.slack_thread_ts != ''
-        env:
-          SLACK_BOT_TOKEN: ${{ secrets.SLACK_BOT_TOKEN }}
-        run: |
-          MENTION=$(node scripts/resolve-slack-mention.mjs \
-            "${{ steps.inputs.outputs.sales_rep }}" \
-            "${{ steps.inputs.outputs.sales_rep_email }}")
-          echo "mention=$MENTION" >> "$GITHUB_OUTPUT"
-
-      - name: Reply in Slack thread with build result
-        if: steps.inputs.outputs.slack_thread_ts != ''
-        continue-on-error: true
-        env:
-          SLACK_BOT_TOKEN: ${{ secrets.SLACK_BOT_TOKEN }}
-          SLACK_CHANNEL: ${{ steps.inputs.outputs.slack_channel }}
-          SLACK_THREAD_TS: ${{ steps.inputs.outputs.slack_thread_ts }}
-          FIRM_NAME: ${{ steps.inputs.outputs.firm_name }}
-          FRIENDLY_NAME: ${{ steps.inputs.outputs.friendly_name }}
-          SALES_REP: ${{ steps.inputs.outputs.sales_rep }}
-          SALES_REP_EMAIL: ${{ steps.inputs.outputs.sales_rep_email }}
-          MENTION: ${{ steps.resolve_mention.outputs.mention }}
-          WRITE_VERIFIED: ${{ steps.verify.outputs.write_verified }}
-          MISSING_FILES: ${{ steps.verify.outputs.missing }}
-        run: |
-          FRIENDLY_NAME="${{ steps.inputs.outputs.friendly_name }}"
-          # Only mark the review as fully built if the write step actually produced
-          # the report — otherwise leave status alone and flag the failure instead.
-          if [ -f "$FRIENDLY_NAME/proposal_review.json" ]; then
-            if [ "$WRITE_VERIFIED" = "true" ]; then
-              NEW_STATUS="built"
-            else
-              NEW_STATUS="write_failed"
-            fi
-            jq --arg status "$NEW_STATUS" '.status = $status' "$FRIENDLY_NAME/proposal_review.json" > /tmp/pr.json \
-              && mv /tmp/pr.json "$FRIENDLY_NAME/proposal_review.json"
-            git add "$FRIENDLY_NAME/proposal_review.json"
-            git diff --cached --quiet || git commit -m "Mark proposal review $NEW_STATUS for $FRIENDLY_NAME"
-            git pull --rebase origin main && git push origin main || true
-          fi
-
-          python3 - << 'PYEOF'
-          import os, json, urllib.request
-
-          token    = os.environ["SLACK_BOT_TOKEN"]
-          channel  = os.environ["SLACK_CHANNEL"]
-          thread   = os.environ["SLACK_THREAD_TS"]
-          firm     = os.environ["FIRM_NAME"]
-          slug     = os.environ["FRIENDLY_NAME"]
-          sales_rep = os.environ["SALES_REP"]
-          mention  = os.environ.get("MENTION") or f"@{sales_rep}"
-          verified = os.environ["WRITE_VERIFIED"] == "true"
-          missing  = os.environ.get("MISSING_FILES", "").strip()
-          url      = f"https://workwith.smbteam.com/{slug}"
-
-          if verified:
-              text = f"{mention} ✅ *Proposal ready:* {firm}\n{url}"
-          else:
-              reasoning = ""
-              try:
-                  with open("audit_write_output.log", "r") as f:
-                      log = f.read().strip()
-                  if log:
-                      reasoning = log[-2000:]
-              except FileNotFoundError:
-                  pass
-
-              text = (
-                  f"{mention} ⚠️ *audit-write did not complete for {firm}* — no report was generated"
-                  f" (missing: {missing or 'index.html/sections'}).\n"
-              )
-              if reasoning:
-                  text += f"\n*What audit-write said:*\n>>> {reasoning}\n"
-              text += (
-                  f"\nThe proposal was NOT marked built — resolve the above and re-trigger"
-                  f" (e.g. push an updated change to triggers/audit-write/{slug}.json)."
-              )
-
-          body = json.dumps({"channel": channel, "thread_ts": thread, "text": text}).encode()
-          req = urllib.request.Request(
-              "https://slack.com/api/chat.postMessage",
-              data=body,
-              headers={"Authorization": f"Bearer {token}", "Content-Type": "application/json"},
-          )
-          urllib.request.urlopen(req)
-          print(f"Slack thread reply sent for {firm} (verified={verified}).")
+          with smtplib.SMTP("smtp.gmail.com", 587) as s:
+              s.starttls(); s.login(u, pw); s.sendmail(u, [to], msg.as_string())
+          print("Control email sent to", to)
           PYEOF

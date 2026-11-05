@@ -163,7 +163,7 @@ After the PPTX is confirmed saved:
 ```bash
 git add "[friendly-name]/[FirmName]_[Date]_Proposal.pptx" "[friendly-name]/[FirmName]_[Date]_Proposal.py"
 git commit -m "Add proposal PPTX: [Firm Name] ([Date])"
-GIT_TERMINAL_PROMPT=0 git push origin main
+GIT_TERMINAL_PROMPT=0 git push origin HEAD:audit-test/control-obrien
 git log -1 --format="%H %s"
 ```
 
