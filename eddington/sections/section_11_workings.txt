@@ -1,0 +1,119 @@
+EDDINGTON LAW FIRM — SECTION 11 WORKINGS (INTERNAL — NEVER CLIENT-FACING)
+Sales rep: Daniel Lowe | Proposal review: November 10, 2026 (Tuesday, 10:00 a.m. MT)
+
+=====================================================================
+PACKAGE SOURCE AND OVERRIDE LOG
+=====================================================================
+Source of package: eddington/package_decision.json (confidence "low" on revenue). proposal_review.json status "locked".
+Seller override: selection_notes ends with "Seller override: switched FCOO Advisor to FCOO Director per Slack request on 2026-11-05." Seller always wins — the FCOO Director package is used as-is. The four Transcript-Stated Need overrides below do not change it; they are recorded so sales can see they agree with it.
+Locked package: FCOO Director only. No marketing. No separate coaching package. No LAW. No add-ons.
+
+Rule the seller override breaks (noted, built anyway):
+- The eligibility table puts a firm with $1M+ revenue and a 5+ team on Master's Circle (+ FCOO) rather than standalone FCOO Director. Standalone FCOO Director is listed for "$1M+, under 5, established leaders". Eddington's stated team is about 7 and its leaders are the two founding attorneys, so it does not match that row exactly. Revenue ($1.98M) meets the Fractional COO minimum, so the package is eligible.
+
+Transcript-Stated Need Override check:
+1. Call-purpose override — TRIGGERED. Call was a Fractional COO / operations discussion, not marketing ("Primary engagement: coaching/ops", "Products discussed: FCOO", lead-gen gap: no). Lead with FCOO. No marketing package added.
+2. Existing-vendor override — TRIGGERED. Wes (00:05:18): "We just hired Studio 3 to do, rebrand, redo our website." Adam (00:20:08): marketing is paused "while our new marketing people redo our website", launching in "another month or two". Full Service Marketing (every tier and sub-package) excluded.
+3. Budget-reality override — not triggered. No budget limits stated; Adam (00:20:20): "we have the capital to market".
+4. Effective-revenue override — not triggered. No gross or net revenue figure was stated on the call (PI contingency practice, but no net figure exists to apply). Revenue used is the HubSpot range midpoint confirmed by the seller in Slack.
+
+Package decision file extracts:
+- marketing_tier / marketing_name / marketing prices: null
+- coaching_name: FCOO Director | coaching_price_bundled: 5797 | coaching_price_retail: 5797 | coaching_savings: 0
+- law_*: null
+- total_bundled: 5797 | total_savings: null
+- ad_spend_conservative / ad_spend_aggressive / ad_spend_rationale: null
+- net_revenue_stated: null | is_contingency_practice: true | confidence: low
+- pricing_mode: "standalone" (bundle_eligible_count 1) — stand-alone price charged, no bundle savings
+- needs_revenue_confirmation: false (revenue_verified true, source seller_confirmed) | needs_seller_input: false
+
+=====================================================================
+MANDATORY PRICE LOOKUP (confirmed against audit-write.md tables)
+=====================================================================
+- Marketing package selected: none
+  - Bundled price (from table): n/a
+  - Stand-alone price (from table): n/a
+  - Savings (stand-alone minus bundled): n/a
+- Non-marketing package selected: FCOO Director
+  - Bundled price (from table): $4,997/mo (not applicable — only one bundle-eligible product, so the bundle rule does not apply)
+  - Stand-alone price (from table): $5,797/mo — THIS IS THE CHARGED PRICE (matches package_decision.json: 5797)
+  - Savings (stand-alone minus bundled): $0 charged (stand-alone pricing applied)
+- Legal AI Workforce (LAW) package selected: none
+  - Bundled price: n/a
+  - Stand-alone price: n/a
+  - Savings: n/a
+- AI Avatar / Video Growth add-on selected: none
+- Total monthly investment (sum of all charged prices): $5,797/mo
+- Total savings: $0/mo (no bundle; savings callout and retail strikethrough omitted from the report)
+
+35% cap check: revenue $1,980,500/yr = $165,042/mo. 35% cap = $57,765/mo. FCOO Director at $5,797/mo = 3.5% of monthly revenue. Within cap.
+Fractional COO included deliverables (per audit-write.md): weekly group coaching sessions, practice area masterminds, virtual access to quarterly workshops, one annual in-person workshop. Listed in Block 2.
+
+=====================================================================
+AD SPEND / ROI
+=====================================================================
+Not applicable — no marketing/ads package is part of this recommendation. Block 4 removed entirely from section_11_next_steps.html. AD_SPEND line omitted from the executive summary. No "why this range" sentence written.
+
+=====================================================================
+ESCALATION FLAGS (INTERNAL ONLY — DO NOT SHARE WITH CLIENT)
+=====================================================================
+1. REVENUE UNCONFIRMED BY PROSPECT: Revenue was never stated on the call. $1,980,500 is the midpoint of the HubSpot range "$961K - $3M", confirmed by the seller in Slack. Confirm actual revenue with Adam/Wes. It matters for the Fractional COO minimum ($500K) and the 35% cap (large margin either way).
+2. REVIEW COUNTS UNCONFIRMED — verify live before the call. Review counts unconfirmed — verify live. Every Google review count and star rating for Eddington and for Bachus & Schanker, Frank Azar, Olson, and Bowman Law came from aggregator snippets. The two Eddington figures conflict (85 vs 36). None is printed in the client report; competitors are described qualitatively.
+3. PAGESPEED NOT OBTAINED: PageSpeed API returned HTTP 429 on mobile and desktop. The report says scores could not be measured and will be run live. Re-run before the call.
+4. NOT OBSERVED: Google 3-pack, Google Ads, LSA, and Meta Ad Library could not be reviewed. The report says so and makes no "not running ads" claims.
+5. WEBSITE CLAIMS TO RECONCILE: Site says "serving the injured in Colorado, California, Arizona & Texas since 1984" with offices in Denver, Steamboat Springs, San Diego, and Phoenix. On the call the firm described itself as a smaller PI firm of two attorneys. Yelp snippet says the firm started in August 2017. Report only says the site's footprint "did not match how the firm described itself" and does not repeat 1984 or the multi-state claim. Confirm with Adam.
+6. STUDIO 3 IS AN ACTIVE VENDOR: Do not pitch Full Service Marketing at this review. If marketing comes up, the opening is the relaunch (campaigns ready at launch, review growth, citation cleanup) and later phases. Do not name Studio 3 in the client report (it is not named).
+7. PRIOR FCOO — HANDLE WITH CARE: The firm fired their prior fractional COO (a friend, hired about two and a half years ago) "on Saturday" per Wes (00:28:00) and he has not handed over access (00:27:07). The "Claim Box" AI receptionist trapped callers in a transfer loop for about four months (00:09:55); the owners blame the AI receptionist, the prior COO blamed RingCentral. The report mentions only the transfer loop, names no one, and names no vendor. Expect sensitivity on this subject. Make sure account/credential handover is on the Phase 1 agenda.
+8. FCOO SCOPE VS. CTO: Rep said (00:34:05) "it would probably be more of a COO arrangement that could possibly move to more of a technical arrangement." Tech integrations are "high priority" for Wes (00:11:52). Phase 2 in the report previews a Fractional CTO / AI workforce. Any LAW package requires confirming LAW delivery has launched and capacity is available before it goes in a proposal. Not included in this proposal.
+9. CADENCE AND CONTACT: Wes has a massive trial in about four weeks (00:15:03), so Adam is the lead contact. Office manager should join check-ins (00:32:38). Weekly cadence TBD. Rep's 12-month engagement / 3-5 year plan pitch is NOT in the client report as a promise.
+10. MARKETING ESCALATIONS (not triggered because no marketing sold): PI in a top-40 metro (Denver) would need approval if marketing is added later; ad-spend and MRR thresholds not reached.
+11. FIXED LANGUAGE CHECK: No live chat offered, no CRM setup, no ads-status claims stated as fact, no profitability claims by practice area, no PageSpeed numbers, no review counts or ratings, "Stage 6" not referenced in the Team pillar findings.
+12. STAGE CALL: Assigned Stage 4 (Small Business Manager). Evidence for Stage 4: seven-person team with dedicated intake and case managers, marketing producing about 10 cases/month even while paused, owners still heavily involved in operations. Evidence against a higher stage: owners are in every case and cannot step away. A lead gen system could not be directly confirmed, which makes this close to the Stage 3 border; Stage 3 is defined by a very small or no team and referrals only, which does not describe Eddington.
+
+=====================================================================
+DOMINANT BUYING MOTIVE (Block 1)
+=====================================================================
+A firm that runs itself so the owners get time back. Adam Gleason (00:22:30–00:22:52): "a perfect world and growing, we could bring in staff and at least have the faith to know that, hey, things are going to be running smoothly … if we're both not here, … the whole place isn't going to go crumbling." Wes (00:21:46): "I work on vacation." (Personal/family details excluded from the report.)
+Block 1 statement: "We help growing personal injury firms get an accountable operator for daily operations so they can focus on growing and signing cases — and be away without the whole place crumbling."
+
+=====================================================================
+QUICK WIN OPPORTUNITIES (8) — pillar | title | why | competitor | opportunity
+=====================================================================
+1. Team | Give daily operations and tech issues one owner | Both owners touch every case and every day brings something to fix | none | Fractional COO takes the daily operation off both attorneys
+2. Intake | Test every phone path before the new site launches | Transfer loop ran roughly four months; two numbers on the site | none | Place test calls through both numbers and every routing path, and confirm a live person answers
+3. Lead Gen | Move the contact form above the fold on the new site | Form is near the footer on the current site | none | Put form and phone path in the first screen of the relaunch
+4. Lead Gen | Build a steady Google review stream | Competitors carry far larger review bases | Bachus & Schanker (qualitative — counts unconfirmed) | Ask every signed client for a Google review and track it monthly
+5. Lead Gen | Clean up directory listings | At least three Denver addresses and a non-Colorado phone across directories | none | One-time cleanup so the relaunch brand matches everywhere
+6. Team | Build hiring, onboarding, and SOPs before more people start | Another case manager starts soon; two associates planned | none | Build the onboarding path with the office manager
+7. Profit | Set a simple profit plan and spend budget | Hires, tech change, and marketing relaunch are all coming; no revenue goal stated | none | Define a target and a monthly view before spend decisions are made
+8. Intake | Write the intake and follow-up routine for the new platform | Intake staff are in training while platform is changing | none | Document first response and follow-up so new staff are not learning from the owners
+"Who Is Doing It Better" rows omitted on all cards except #4 — no verified named competitor data for the others.
+
+=====================================================================
+WHAT YOU TOLD US (Block 5) — transcript sources and Block 2 mapping
+=====================================================================
+Row 1: Focus on growth instead of daily operations
+  Verbatim line: [00:08:07] Adam Gleason: "Wes and I really want to be able to obviously focus on growing and managing our staff and signing cases as opposed to getting bogged down in the marketing and the daily operations of stuff."
+  Block 2 support: FCOO Director — dedicated Fractional COO owning daily operations (the central and only package).
+Row 2: Somebody to hand tech and staff issues to
+  Verbatim line: [00:15:43] Adam Gleason: "if Wes gets some email about something not working … instead of him having to spend an hour fixing it, or whatever, … we have somebody that we can … send that to and say, hey, can you figure this out?"
+  Block 2 support: FCOO Director — single point of ownership for operational and tech issues.
+Row 3: A formal arrangement with objective check-ins
+  Verbatim line: [00:29:09] Adam Gleason: "I think having a more formal kind of arrangement with like a company like yours would be … really objective weekly, whatever daily meetings, seeing what's being done"
+  Block 2 support: FCOO Director — structured, accountable operating rhythm plus weekly group coaching.
+Next-step line: kickoff call with your FCOO.
+Excluded by rule: prior COO situation and named employees, family/personal matters (father retiring, two-year-old, vacation work), any financial figures, vendor blame, phone-vendor dispute.
+Also sourced for Phase 1: onboarding/SOPs — Wes [00:16:09]: "I'd be interested to see about the onboarding and all of that to get that streamlined, like, especially early on." and [00:32:38] office manager "she's going to be a lot of hiring, firing, SOPs."
+
+=====================================================================
+ROADMAP PHASE LOGIC
+=====================================================================
+Phase 1: what is being sold now — FCOO Director (operations, onboarding/SOPs, accountability rhythm, included group coaching).
+Phase 2: FCOO already in Phase 1, so add the next thing the trajectory needs: Fractional CTO / AI workforce, previewed because the rep raised a possible move to a more technical arrangement and the firm is mid-switch to a new platform. No price shown in the client report. LAW delivery must be confirmed before this is proposed.
+Phase 3: Fractional CFO guidance and Bookkeeping for profit planning, once associates are in place. No prices shown in the client report.
+Marketing is not in the roadmap as a package (existing vendor mid-rebrand).
+
+=====================================================================
+EXECUTIVE SUMMARY COPY CHECKS
+=====================================================================
+URGENCY_SCORE 7 (provisional — based only on aggregator snippets; no 3-pack, ads or LSA observed). Pillar lights: Lead Gen amber, Intake amber, Team red, Profit amber. Package: FCOO Director $5,797/mo. No second package row. No ad spend row. Total $5,797/mo.
