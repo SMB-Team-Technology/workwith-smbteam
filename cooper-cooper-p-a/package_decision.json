@@ -3,11 +3,11 @@
   "revenue_stated": null,
   "net_revenue_stated": null,
   "is_contingency_practice": false,
-  "revenue_effective": 1980500,
-  "revenue_source": "hubspot_annual_law_firm_revenue",
+  "revenue_effective": 2100000,
+  "revenue_source": "seller_confirmed",
   "revenue_label": "$961K - $3M",
-  "revenue_verified": false,
-  "needs_revenue_confirmation": true,
+  "revenue_verified": true,
+  "needs_revenue_confirmation": false,
   "team_size_stated": 11,
   "team_size_source": "research_notes",
   "team_size_effective": 11,
@@ -48,14 +48,16 @@
   "total_bundled": 12097,
   "total_savings": 1897,
   "ad_spend_conservative": 3500,
-  "ad_spend_aggressive": 14000,
+  "ad_spend_aggressive": 15000,
   "ad_spend_rationale": {
     "conservative_basis": "family law (primary) and probate. rep recap: probate is growing toward a \"15 to 20%\" mix with a recently hired experienc",
-    "aggressive_basis": "scaled 4x off the conservative channel-minimum floor"
+    "aggressive_basis": "seller override: $15K ad spend per Slack request"
   },
   "selection_notes": [
     "Revenue not stated on the call — HubSpot only has the range \"$961K - $3M\". Using the midpoint ($1,980,500) for this draft only; confirm actual revenue with the prospect before locking in.",
-    "Revenue $1M–$2M: Growth tier."
+    "Revenue $1M–$2M: Growth tier.",
+    "Revenue confirmed by seller: $2,100,000.",
+    "Seller override: ad spend set to $15,000/mo (aggressive/upper figure) per Slack request on 2026-11-05."
   ],
   "pricing_mode": "bundled",
   "bundle_eligible_count": 2,
