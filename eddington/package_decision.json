@@ -1,0 +1,60 @@
+{
+  "confidence": "low",
+  "revenue_stated": null,
+  "net_revenue_stated": null,
+  "is_contingency_practice": true,
+  "revenue_effective": 1980500,
+  "revenue_source": "hubspot_annual_law_firm_revenue",
+  "revenue_label": "$961K - $3M",
+  "revenue_verified": false,
+  "needs_revenue_confirmation": true,
+  "team_size_stated": 7,
+  "team_size_source": "research_notes",
+  "team_size_effective": 7,
+  "practice_areas_detected": [
+    "personal injury (\"we're a smaller pi firm\"",
+    "wes eddington",
+    "00:04:41). specific case types were not discussed on the call"
+  ],
+  "hubspot_company": null,
+  "firm_identity_check": "matches (trigger \"Eddington Law Firm\"; website \"Eddington Law\"; call: Wes Eddington and Adam Gleason are the two attorneys)",
+  "package_source": "rules",
+  "package_override": null,
+  "needs_seller_input": false,
+  "revenue_only_option": null,
+  "call_focus": {
+    "primary_engagement": "coaching/ops",
+    "products_discussed": [
+      "FCOO"
+    ],
+    "lead_gen_gap": false
+  },
+  "marketing_tier": null,
+  "marketing_name": null,
+  "marketing_price_bundled": null,
+  "marketing_price_retail": null,
+  "marketing_savings": null,
+  "coaching_name": "FCOO Advisor",
+  "coaching_price_bundled": 3797,
+  "coaching_price_retail": 3797,
+  "coaching_savings": 0,
+  "law_tier": null,
+  "law_name": null,
+  "law_price_bundled": null,
+  "law_price_retail": null,
+  "law_seats": null,
+  "total_bundled": 3797,
+  "total_savings": null,
+  "ad_spend_conservative": null,
+  "ad_spend_aggressive": null,
+  "ad_spend_rationale": null,
+  "selection_notes": [
+    "Coaching/ops-led call with no lead-gen need stated — marketing left out (call-purpose rule).",
+    "FCOO Advisor selected because it was discussed on the call (revenue rule would pick Master's Circle) — confirm tier with sales rep.",
+    "Revenue not stated on the call — HubSpot only has the range \"$961K - $3M\". Using the midpoint ($1,980,500) for this draft only; confirm actual revenue with the prospect before locking in.",
+    "Only one bundle-eligible product in this package — stand-alone pricing applied, no bundle savings."
+  ],
+  "pricing_mode": "standalone",
+  "bundle_eligible_count": 1,
+  "unpriced_products": []
+}
