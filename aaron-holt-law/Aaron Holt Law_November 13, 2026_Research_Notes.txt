@@ -1,0 +1,212 @@
+SMB TEAM — AUDIT RESEARCH NOTES (PASS 1)
+Firm: Aaron Holt Law (trades as "Holt Law" — see Firm identity check)
+Friendly name: aaron-holt-law
+URL given: http://aaronholtlaw.com (live; direct page fetches partly blocked — see limitations)
+Sales rep: Nick Holderman
+Date: November 13, 2026 (proposal call; discovery call recorded November 6, 2026)
+Contact: Aaron Holt — founding attorney, sole attorney, owner and decision-maker; he was on the call.
+
+RESEARCH LIMITATIONS (READ FIRST — applies to Pass 2)
+- This run had no interactive browser. Available: HTTP fetches, web search, and the Google PageSpeed API.
+- aaronholtlaw.com is behind Cloudflare: a direct curl returned HTTP 403 ("Sorry, you have been blocked") and two fetches of the homepage returned HTTP 504. Only the /humble/ and /about-aaron-holt/ pages were read (via fetch summaries), plus web-search snippets of other pages. Homepage headline, CTA, chat, video and blog could NOT be observed.
+- Google Maps / Google Business Profile, Google SERPs (3-pack, Ads, LSA) and the Meta Ad Library could NOT be reached. Everything that needed them is recorded as "not observed". Nothing in this file was fabricated or estimated.
+- PageSpeed API returned HTTP 429 / "Queries per day" quota exceeded (mobile and desktop). No PageSpeed number is recorded rather than an estimate.
+- Every review count / rating below came from a web-search summary and is tagged UNCONFIRMED. Pass 2 must not print UNCONFIRMED figures as specific numbers in the client-facing report.
+- The Fathom AI summary in the trigger file disagrees with the full transcript in several places. The full transcript wins. Differences are listed at the end of STEP 9 ("Summary vs transcript").
+- Several figures in the transcript are garbled by speech-to-text (e.g. "$7,000,000" for an average case, "$2,500,000" for cost per acquisition). Each is flagged [transcript unclear] where used.
+
+==================================================================
+STEP 1 — WEBSITE RESEARCH
+==================================================================
+- Website URL confirmed live: yes (search results list aaronholtlaw.com pages; /humble/ and /about-aaron-holt/ fetched successfully). Homepage fetch failed (504) and direct curl was blocked by Cloudflare (403).
+- Last redesign date or estimated age: not determinable. On the call Aaron said Rocket Level built the website ("They did build the website, but I don't work with them anymore", 00:02:56) and that "somebody that I use … go[es] in and make[s] changes when necessary" (00:02:44).
+- Mobile responsive: not observed
+- Homepage headline: not observed. Homepage page title (from search results): "Criminal & Family Attorney in Texas - Holt Law -Call Us Now!". The /humble/ page H1 is "CRIMINAL DEFENSE ATTORNEY IN HUMBLE, TX".
+- CTA above fold: not observed on homepage. Titles use "Call Us Now!" / "Contact Us Today!".
+- Contact form location: not observed
+- Live chat present: not observed
+- Attorney bio present: yes (/about-aaron-holt/). Quote: "I will fight for you no matter what your objectives are. I will communicate with you. I will meet with you." The page does not state bar admission year, education or years practicing; no other team members are listed.
+- Video present: not observed
+- Blog present: not observed (no blog URL surfaced in search results)
+- Practice areas on the website: Criminal Defense (Domestic Violence, Sex Crimes, Drug Crimes, DUI, Murder/Homicide, Theft/Robbery/Burglary, Assault, Violent Crimes), Family Law (Divorce, Child Custody), Auto Accident. A "Special Offer" divorce free-consultation page also exists. NOTE: the call covered criminal defense only; family law and auto accident were not mentioned on the call.
+- Geo landing pages: yes — /humble/ plus pages for Houston, Jersey Village, Fort Bend, Montgomery, Galveston, Liberty and Harris County.
+- Testimonials: a /testimonials/ page exists (three client testimonials shown on the about page). No numeric Google rating is displayed on pages read.
+- Spanish content: none detected on pages read.
+- NAP on site (Humble page): 13803 Madera Run Pkwy Ste 103, Humble, TX 77346; phones 281-741-1182 and (832) 979-4003; hours Monday–Friday 9:00 AM–5:00 PM. (One search snippet showed "Suite 130" instead of "Ste 103" — minor discrepancy to check.)
+- PageSpeed mobile score: NOT OBTAINED — API quota exceeded (HTTP 429). Do not use an estimate.
+- PageSpeed desktop score: NOT OBTAINED — same reason.
+
+==================================================================
+STEP 2 — GOOGLE BUSINESS PROFILE
+==================================================================
+Google Maps / GBP could not be opened.
+- GBP found: not observed
+- Star rating: not obtained [UNCONFIRMED — no Google listing reached]
+- Total review count: not obtained [UNCONFIRMED — no Google listing reached]. On the call Nick said "it looks like you've got a solid amount of reviews" (00:14:02); that is a rep remark with no number, not a fact. The firm's website says "Check also our Google Reviews" but shows no count.
+- Most recent review date: not observed
+- Primary category: not observed
+- Photos active: not observed
+- Posts active: not observed
+- Other platforms (not Google): Avvo 4.7 with 26 reviews [UNCONFIRMED — sourced from a web-search summary of Avvo, not Google]; Yelp 5.0 with 1 review [UNCONFIRMED — web-search summary of Yelp]; Facebook page "not yet rated" with 2 reviews [UNCONFIRMED — web-search summary]. Do not present any of these as Google reviews.
+
+==================================================================
+STEP 3 — LOCAL 3-PACK SEARCHES
+==================================================================
+NOT OBSERVED (Google SERPs / Maps unreachable). No pack positions or pack review counts are recorded. The call did not include a screen share of search results.
+
+Practice Area 1: Criminal defense (Humble / Houston)
+- Search 1 "criminal defense lawyer Humble TX": not observed — competitors in pack: not observed
+- Search 2 "DUI attorney Humble TX": not observed — competitors in pack: not observed
+- Search 3 "criminal defense attorney Houston": not observed — competitors in pack: not observed
+- Prospect-stated context: "I don't really see, like, organic leads coming in. It's just very few far in between." (00:14:12)
+
+==================================================================
+STEP 4 — COMPETITOR REVIEW COUNTS
+==================================================================
+Named criminal-defense firms serving Humble / Houston that surfaced in a web search. All figures come from search-result summaries, not from Google Maps.
+- Competitor 1: Stagg and Associates, PLLC — reviews: 140 [UNCONFIRMED — web-search summary of a directory listing, not independently confirmed via Google] — rating: 4.9 [UNCONFIRMED — same source]. Serves Humble and Harris County.
+- Competitor 2: Mercer Criminal Defense — reviews: 117 [UNCONFIRMED — described as a "Google" rating in a web-search summary, not read off the Google listing] — rating: 4.9 [UNCONFIRMED — same source]. Has a dedicated Humble criminal defense page.
+- Competitor 3: Ace Law (Kevin Acevedo; personal injury and criminal defense) — reviews: 80 [UNCONFIRMED — web-search summary of a directory listing] — rating: 4.8 [UNCONFIRMED — same source].
+- Holt Law's own Google review count was not obtained, so no comparison is made. Pass 2 must not say any competitor "has more reviews" than Holt Law, and must not print these counts.
+
+==================================================================
+STEP 5 — DIRECTORY LISTINGS
+==================================================================
+- Avvo: listing exists ("Aaron Nathaniel Holt", Houston, TX 77060 per the listing title; licensed 11 years per search snippet; 4.7 / 26 reviews [UNCONFIRMED — search summary]). The Avvo page returned HTTP 403, contents not read.
+- FindLaw: listing exists ("Holt Law - a Houston, Texas (TX) Criminal Law Firm"); contents not read.
+- Yelp: listing exists ("HOLT LAW", 350 N Sam Houston Pkwy E, Houston, TX; 5.0 / 1 review [UNCONFIRMED — search summary]). This looks like a stale address from before the move to Humble.
+- Facebook: page exists (facebook.com/HoltLaw), 2 reviews, not yet rated [UNCONFIRMED — search summary].
+- Justia: not checked. LegalDirectorate lists the firm among Humble criminal defense lawyers (not opened).
+- NAP: INCONSISTENT. Website says Humble 77346 (13803 Madera Run Pkwy); Yelp shows 350 N Sam Houston Pkwy E, Houston; Avvo shows a Houston 77060 address. This matches the call: Aaron moved the office to Humble about five to six months ago and was previously in the Greenspoint area (00:22:39). Old listings likely still carry the previous address.
+- Geo-targeting landing pages for surrounding cities: yes (Humble, Houston, Jersey Village, Fort Bend, Montgomery, Galveston, Liberty, Harris County).
+
+==================================================================
+STEP 6 — GOOGLE ADS
+==================================================================
+Practice Area 1: Criminal defense (Humble / Houston)
+- Firm ads observed: not observed (Google SERPs unreachable). The prospect confirmed on the call that he runs Google ads, primarily Local Service Ads (see STEP 7 and STEP 9).
+- Named local competitors running ads: not observed. Do not describe any named firm as running ads in the deck.
+
+==================================================================
+STEP 7 — LOCAL SERVICE ADS
+==================================================================
+- Firm appears in LSA: not observed live. Prospect-confirmed on the call: "It's primarily LSA." (00:03:40), about $10,000 a month, fully spent.
+- Google Screened: not observed
+- LSA review count: not observed
+- Named local competitors in LSA: not observed
+
+==================================================================
+STEP 8 — META ADS
+==================================================================
+- Firm has active ads: not observed (Meta Ad Library not reachable in this run). On the call Aaron first said "I'm running ads on social media" (00:02:04) but then clarified "I'm not necessarily … on Facebook. I'm really, I'm on TikTok. And I'm really just getting started with it." (00:07:58–00:08:02). Meta ads are therefore not confirmed. The Facebook page exists with 2 reviews [UNCONFIRMED].
+- Named local competitor 1: not observed
+- Named local competitor 2: not observed
+
+==================================================================
+STEP 9 — TRANSCRIPT EXTRACTION
+==================================================================
+Transcript source: full verbatim Fathom transcript (summary used only as overview)
+Call: Fathom recording 200580221, November 6, 2026, about 58 minutes. Participants: Nick Holderman (SMB Team) and Aaron Holt (prospect). Proposal call: Friday, November 13, 2026 at 11:00 AM (agreed at 00:57:34; time zone not stated — the trigger lists 16:00Z).
+
+Transcript quality notes:
+- "$7,000,000" (average case, 00:34:43) and "$2,500,000" (cost per acquisition, 00:34:43) are garbled; the rep immediately repeats "$2,500" and "$7,000", so read as $7,000 and $2,500 [transcript unclear — read as $7,000 / $2,500].
+- "84 conversion, 84 leads, have converted to clients" (00:06:35) — read as 84 signed clients year to date; the rep confirms "84 line cases" and Aaron says "Correct." [transcript unclear — read as 84 signed cases].
+- "maybe half a meal" (00:23:04) about revenue in Pennsylvania [transcript unclear — probably "half a mil"; not used].
+- "$25 to $3,500 per month" (00:40:20) is a rep line; read as $2,500–$3,500 (Aaron repeats "$2,500, $3,500" at 00:43:58).
+- Speaker tags are mostly reliable here. Lines 00:13:33 and 00:13:38–00:13:41 (about agencies "took so much money from me" and "Funnel Boost") are tagged [SMB Team] but the first is Aaron's voice by context; "Funnel Boost" was offered after Aaron said "I can't remember their name right now" and his confirmation is not clear.
+
+- Practice areas confirmed: Criminal defense (the rep describes "a criminal defense lead" and "solo operator in criminal defense"; Aaron references "criminal defense" practice and the website/Humble listing is criminal defense). Family law and auto accident appear on the website only; not discussed on the call.
+- Current lead sources: Google Local Service Ads (primary): "It's primarily LSA." (00:03:40). TikTok ads, just started: "I'm really just getting started with it." (00:08:02), with poor results due to geo-targeting. Organic: "I don't really see, like, organic leads coming in. It's just very few far in between." (00:14:12). Aaron noted that in Pennsylvania "my SEO was doing so well, I never had to advertise" (00:14:27). Found SMB Team through "your ads on social media" (00:01:21). Referrals were not discussed.
+- Ads ever run: yes. Google LSA is the primary channel at "something close to like maybe $10,000" a month, and "that gets spent" (00:03:49–00:03:58). Year to date 84 signed cases, versus "closer to 100 or so" at this time last year (00:06:35–00:06:50). Pay-per-click: ran it himself in Pennsylvania ("it did well") but "my experience with pay-per-click over the last few years has not been good. … I end up just spending a bunch of money and I don't really get any leads … any good leads." (00:19:12–00:19:25). TikTok ads are new: "at first, the parameters was just for all of Houston area. … I started getting leads coming in, it was just … leads from all over Texas … only one of them ever got back to me." (00:08:33–00:08:47). TikTok budget not stated. Meta (Facebook/Instagram) ads: not confirmed (see STEP 8).
+- Firm identity check: matches. Trigger says "Aaron Holt Law"; the website, directories and Fathom summary use "Holt Law" at aaronholtlaw.com (the owner's name plus "Law"). Same firm, same owner, same Humble, TX location. Pass 2 should confirm with Nick whether the deck should read "Holt Law" or "Aaron Holt Law".
+- Team size: 1 attorney (Aaron Holt) plus 1 full-time assistant. "Yeah, I have one assistant. … Full-time." (00:09:51–00:09:56). No dedicated intake person: "I probably need more staff, honestly. Somebody that's dedicated to … working with my intakes" (00:05:06–00:05:12).
+- Team size (total headcount): 2
+- Annual revenue (gross / case value): about $400,000 projected for 2026; about $500,000 in 2025. "My revenue for the year is probably going to fall at around $400,000." (00:10:07). "Last year, I think it was closer to $500." (00:10:18). Aaron said "Yeah" to the rep's "$400 divided by 12 … 33K per month" (00:44:34, "More or less, I guess").
+- Annual revenue (net / take-home / collected): 2026 net about $130,000 so far, expected "160, 170" for the year (00:44:38–00:45:34). 2025 take-home: "I think I made close to like $250,000." (00:23:36). Aaron puts marketing inside overhead (00:46:26, "Yes").
+- Revenue (annual, best estimate): $400,000
+- Fee structure: not stated
+- Revenue goal: not stated, use 2x current revenue ($800,000). Stated goals are qualitative: "I would like to add another attorney and some more support staff over time" (00:20:30); he is "okay" staying near a quarter million a year in take-home: "I'm able to stay at a quarter of a million a year, I can do fine with that. If I can do better, great." (00:28:29–00:28:48).
+- Average case value: "my average case is something like, it has to be something like $7,000" [transcript unclear — read as $7,000] (00:34:43). Rep repeats "$2,500 cost per acquisition … $7,000" and Aaron did not dispute it.
+- Current close rate: about 22% this year, down from 30% last year. "I'm signing on about maybe 20%, 22%, something in that range." (00:05:33). "Last year, I was converting at 30%. And this year, it's down to 22%." (00:06:59–00:07:01). Note: Aaron first said "my conversion rates are great" (00:04:41), then corrected himself: "conversion is not as strong as it probably should be." (00:04:55).
+- Number of locations: 1 (Humble, TX; service areas across Greater Houston). He moved the office to Humble "about six months ago, five months ago or so" and had been in Greenspoint since January 2023 (00:22:39). He says he "purchased this building" (00:23:40).
+- Spanish campaign needed: not stated on the call; no Spanish content on the website pages read. Pass 2 should treat as no unless Nick says otherwise.
+- Dominant buying motive: work-life balance, security and getting out of doing everything himself. Closest category: (1) a firm that runs itself. Quotes: "if I'm able to scale the business, that means I just have more coverage. And I don't have to run around to different hearings … And I can work on my business. I am my business." (00:27:39–00:27:50); "just more work life balance and a little bit more security potentially." (00:28:00); "making more money just gives me opportunities to pay off debt and take care of my family a little bit better." (00:29:03). He also mentions student loans and retirement (00:28:52).
+- Any profitability claims made by prospect: "my net income is somewhere around $130,000 for the year, which is really low compared to previous years. … and $100,000 of that has gone to Google." (00:44:45–00:44:58). He later says "I'm probably going to end up around 160, 170." (00:45:34). "Hemorrhaging money" (00:36:02). No margin percentages stated. [The "$100,000 of that has gone to Google" line is ambiguous — it may mean ad spend year to date, not part of net income. Quote it as said; do not compute a percentage.]
+- Any claims about case types or practice areas: none beyond criminal defense. He says "I have a good business. I do very well for my clients. I get a lot of great results." (00:14:48–00:14:51).
+- Stated call focus / product interest: marketing/lead generation. Aaron's stated purpose: "I'm just looking for ways to market." (00:01:04) and "Effective ways to market to clients." (00:01:09). Nick pitched the four-part Growth Acceleration Model plus a coaching engagement ("$2,500 to $3,500 per month range", 00:40:20) and a separate agency/marketing service, with "coaching as a phase two" if Aaron only wants leads (00:42:32). Aaron rejected coaching for now: "That wouldn't really do much for me at this point, I don't think. If I don't have lead generation going on, what is there to coach?" (00:41:12–00:41:15). He asked for benchmarks and a "floor" on ROI. This is a standard marketing/growth discovery, not a Fractional CTO/AI or COO/CFO engagement. Marketing pricing was NOT quoted on the call.
+- Primary engagement: marketing
+- Products discussed on call: Elite Coach, Elite Coach Plus, Full Service Marketing
+  (Coaching was quoted only as a range, "$2,500 to $3,500 per month", which spans Elite Coach (~$2,600) and Elite Coach Plus (~$3,200); no tier was named, so both are listed. Aaron said he cannot afford it now and wants marketing first. The marketing/agency side was described, not priced.)
+- Lead-gen gap stated: yes — "I need my cost of acquisition to come down, and I need a steady, you know, flow of leads coming in, period." (00:43:23)
+- Existing marketing/SEO/ad vendor engagements: none stated as currently active. He runs Google and TikTok himself: "It's just me." (00:02:23). Rocket Level built the website and he no longer works with them (00:02:54). A person he uses "to go in and make changes when necessary" for the website, unnamed (00:02:44). Past agencies that did not work out: Rocket Level, Digital Cheddar, and a third he could not name ("they really ripped me off", 00:13:25); Funnel Boost was suggested by the rep for the third (unconfirmed). "I'm not getting any ROI." (00:03:12).
+- Budget constraints stated: "I can't, there's no way I can spend $2,500, $3,500 a month on coaching and with what's going on right now. It's just, it's impossible." (00:43:58–00:44:05), because of profit margin ("That is correct.", 00:44:23). Also: "I don't want to hand over, you know, 40, 50, 60, 70 grand and things aren't getting done. And I'm holding the bag and I'm back to where I started" (00:51:12–00:51:32). He currently spends about $10,000 a month on Google LSA. Total marketing budget he would commit to a new engagement: not stated.
+
+Other call facts for the deck:
+- Cost per acquisition and economics (Aaron's rough math, 00:34:43): average case about $7,000 [transcript unclear], cost per acquisition about $2,500 [transcript unclear] "this year"; the rep called that "almost three to one" and Aaron said "Something like that." The Fathom summary's "~$1,970 to ~$2,500 (+27%)" is NOT in the transcript. Aaron said "I got to look at these numbers" (00:35:43). Also note these figures do not reconcile with about $100,000 of Google spend and 84 signed cases (≈ $1,190 each) — Pass 2 should avoid blending them and should present only what the prospect said, labelled as his own rough estimate.
+- Conversion fell from 30% (2025) to 22% (2026); signed cases about 84 year to date vs about 100 at this point last year (rep estimates 15–20% lower).
+- Lead quality: "I'm getting a lot of bad leads. I'm hemorrhaging money, you know, significantly, and it's just like, I gotta do something different. I cannot continue to go with Google LSAs." (00:36:02–00:36:09).
+- Tracking gap: "I don't even have CRM, man." (00:24:32). He has case management software where intake is entered, but "it's hard to understand, like, how much I'm paying per lead, what's my cost per lead." (00:24:51–00:24:58). Agencies promised to set up a CRM and "never do it" (00:25:12).
+- Intake gap: no dedicated intake staff; "I probably need more staff." (00:05:06).
+- Background: practiced about eight years in Pennsylvania (Penn State law school) with strong SEO and no ad spend; moved back to Houston January 2023; "ever since I've been here, has been really, really tough just trying to figure out ways to keep clients coming to the door." (00:14:41). Business "has been very flat" since (00:22:19).
+- Houston is "an extremely competitive market" (Aaron, 00:52:59). The rep's remark that Houston is "one of the most competitive criminal defense markets" is the rep's.
+- Proof request: Aaron wants a data-driven plan with benchmarks, assurances on ROI and a view of the low end: "I would even like to know, okay, I'm a low end. This is what we expect. … so I can at least know what the floor is." (00:53:58–00:54:13). He said "they bring in their best case studies … I don't get anything remotely close to that." (00:52:43). The rep committed to bring average cost per lead and channel data for criminal defense clients (00:52:27) and best/worst-case data (00:54:20). Aaron did not say "ceiling"; the Fathom summary's "floors and ceilings" phrase came from the summary.
+- Follow-ups: Nick to email a recap and free playbooks and send a calendar invite for Friday, November 13 at 11:00 AM. Aaron said he may need more time with a person arriving at his office around then, so the time could shift (00:57:50–00:58:02).
+- Not discussed on the call: referrals, case types beyond criminal defense, fee model, number of attorneys beyond himself.
+
+Summary vs transcript (the full transcript wins):
+- Summary: "Net income $160k–$170k, with $100k of that spent on Google LSA ads." Transcript: net about $130k so far, expected 160–170 for the year; "$100,000 of that has gone to Google" is ambiguous.
+- Summary: "CPA rose from ~$1,970 to ~$2,500; 27% increase." Transcript: only ~$2,500 this year (garbled); no prior-year CPA or percentage increase was stated.
+- Summary: "27% drop in conversion rate (30% → 22%)." Transcript: 30% to 22% was stated; the 27% figure is the summary's own arithmetic.
+- Summary: "No CRM" / "No dedicated intake staff". Transcript: no CRM, but he has case management software; he has a full-time assistant and says he needs staff dedicated to intake.
+- Summary: "Marketing Channels: Google LSA and TikTok." Consistent; but the transcript opening has him say "ads on social media" and agree to "Google and Facebook" before clarifying he is on TikTok, not Facebook.
+- Summary: "Funnel Boost" as a past agency. Transcript: rep suggested the name; Aaron's confirmation is unclear.
+- Summary: "ROI floors and ceilings." Transcript: Aaron asked for the "floor"; "best case, worst case" was the rep's wording.
+- Summary: "the firm will only invest in marketing, not coaching." Transcript supports this: coaching only "once … I'm getting a steady flow of leads."
+
+Key prospect quotes (verbatim, prospect voice; timestamps from the transcript):
+1. (00:01:51) Goal — "I would like to have different ways of marketing rather than heavily relying on what I'm doing right now."
+2. (00:11:17) Google dependence — "I'm looking to get more aggressive in diversifying my marketing plan is because I really just don't want to continue to deal with Google, man."
+3. (00:11:43) Cost — "your cost per acquisition is going through the roof and … you're almost working to pay Google."
+4. (00:36:14) Channel risk — "It's very volatile, and they keep making these changes, and it's not sustainable, I don't think."
+5. (00:14:12) Organic — "No, I don't really see, like, organic leads coming in. It's just very few far in between."
+6. (00:24:32) Tracking — "I don't even have CRM, man." and (00:24:58) "it's hard to understand, like, how much I'm paying per lead, what's my cost per lead."
+7. (00:05:06) Intake — "I probably need more staff, honestly. Somebody that's dedicated to … working with my intakes, you know, to try to raise that conversion percentage"
+8. (00:21:52) Goals — "I'd like to have sufficient leads coming in, good leads. I'd like to have a system in place. I'd like to not have to run around as much and be focused on bringing these leads in and have somebody else taking care of these cases."
+9. (00:27:39) DBM — "if I'm able to scale the business, that means I just have more coverage. … I can work on my business. I am my business." and (00:28:00) "just more work life balance and a little bit more security potentially."
+10. (00:43:12) Coaching vs leads — "it'd be nice to get the coaching element, but that's, at this point for me personally as a solo practitioner, that's only once, you know, I'm getting a steady flow of leads."
+11. (00:43:58) Budget — "there's no way I can spend $2,500, $3,500 a month on coaching and with what's going on right now. It's just, it's impossible."
+12. (00:54:13) Risk / proof — "I would even like to know, okay, I'm a low end. … so I can at least know what the floor is." and (00:51:12) "I don't want to hand over, you know, 40, 50, 60, 70 grand and things aren't getting done."
+
+==================================================================
+STEP 10 — COMPETITIVE URGENCY SCORE
+==================================================================
+Score: 6 of 10.
+Basis (limited — no Map Pack, ads, LSA, Meta or Holt Law review data was obtainable): the firm has city landing pages for the Houston area and a Humble location page, which is a strength, but the prospect reports almost no organic lead flow, rising paid costs, and total dependence on Google LSA at about $10,000 a month. Named Humble-area criminal defense competitors show strong review profiles in directory summaries [UNCONFIRMED]. Competitor ad activity could not be verified, so the score does not rest on it.
+Named local competitor threats:
+- Stagg and Associates, PLLC — serves Humble/Harris County; 4.9 rating with 140 reviews per a directory summary [UNCONFIRMED].
+- Mercer Criminal Defense — dedicated Humble criminal defense page; 4.9 with 117 reviews per a search summary [UNCONFIRMED].
+- Ace Law — serves Humble; 4.8 with 80 reviews per a directory summary [UNCONFIRMED].
+Dynamic sentence: "A score of 6 means competitors have meaningful advantages in one or more areas and are pulling ahead. You are not invisible yet — but the window to close the gap is narrowing. Every month without action is a month they extend their lead."
+
+==================================================================
+PASS 2 — VERIFICATION CHECKLIST
+==================================================================
+[x] Every number in the notes matches observed data or the transcript; unobtained items are marked "not observed" / "NOT OBTAINED"
+[x] Competitor review counts carry UNCONFIRMED tags; none is cited as "dominating", and Holt Law's own count was not obtained so no comparison is made
+[x] Every review count and star rating carries a verification-method tag
+[x] Revenue split into gross (~$400,000) and net (~$130,000 so far; 160–170k expected), fee structure "not stated"
+[x] Ad sections cover all practice areas (one: criminal defense)
+[x] No section says "you are not running ads"; the prospect-confirmed LSA/TikTok spend is attributed to the call
+[x] No profitability or business claim appears unless it came from the transcript
+[x] Competitors named are specific local firms (no national firms)
+[ ] PageSpeed scores — NOT OBTAINED (API quota exceeded); flagged for follow-up rather than estimated
+[x] DBM recorded (client's own words)
+[x] Revenue goal recorded (not stated; qualitative goals quoted)
+[x] Close rate recorded (22% this year, 30% last year)
+[x] Average case value recorded (about $7,000, flagged as garbled)
+[x] Stated call focus recorded (marketing/lead gen; coaching pitched and deferred)
+[x] "Primary engagement", "Products discussed on call", "Lead-gen gap stated" filled in
+[x] "Revenue (annual, best estimate)" = $400,000; "Team size (total headcount)" = 2
+[x] "Firm identity check" = matches (trades as "Holt Law")
+[x] Existing vendor engagements recorded (none active; past agencies listed)
+[x] Budget constraints recorded
