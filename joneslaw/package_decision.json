@@ -35,10 +35,10 @@
   },
   "marketing_tier": "Starter",
   "marketing_name": "Full Service Marketing — Starter",
-  "marketing_price_bundled": 4997,
+  "marketing_price_bundled": 5697,
   "marketing_price_retail": 5697,
-  "marketing_savings": 700,
-  "coaching_name": "Elite Coach",
+  "marketing_savings": 0,
+  "coaching_name": null,
   "coaching_price_bundled": 2600,
   "coaching_price_retail": 3497,
   "coaching_savings": 897,
@@ -47,8 +47,8 @@
   "law_price_bundled": null,
   "law_price_retail": null,
   "law_seats": null,
-  "total_bundled": 7597,
-  "total_savings": 1597,
+  "total_bundled": 5697,
+  "total_savings": null,
   "ad_spend_conservative": 7500,
   "ad_spend_aggressive": 25000,
   "ad_spend_rationale": {
@@ -59,9 +59,11 @@
     "Revenue not in research notes — sourced from HubSpot (hubspot_annual_law_firm_revenue): \"$0 - $180K\" → $180,000",
     "Revenue under $750K but multiple practice areas detected: Essentials hidden (requires single practice area) — Starter tier.",
     "Revenue under $250K: Elite Coach selected, scoping approval required.",
-    "Total at conservative ad spend ($15,097/mo) is over the 35% cap ($5,250/mo on $180,000 revenue) — review with sales rep."
+    "Total at conservative ad spend ($15,097/mo) is over the 35% cap ($5,250/mo on $180,000 revenue) — review with sales rep.",
+    "Seller override: removed coaching (Elite Coach) per Slack request on 2026-11-06.",
+    "Only one bundle-eligible product in this package — stand-alone pricing applied, no bundle savings."
   ],
-  "pricing_mode": "bundled",
-  "bundle_eligible_count": 2,
+  "pricing_mode": "standalone",
+  "bundle_eligible_count": 1,
   "unpriced_products": []
 }
