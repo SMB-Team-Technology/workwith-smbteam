@@ -45,7 +45,7 @@ Six slides that make one argument, the way our best hand-built decks run on a ca
 
 **Slide 6 — Your Investment & What Happens Next.** Unchanged from the 3-slide deck: package cards, bundle total and savings, ad spend note, ROI projection, "How this plan addresses it" panel, closing quote.
 
-**Speaker notes.** `SELLER_NOTES = {slide_number: "…"}` carries anything the seller must know but the client must not see. The engine adds its own notes for plan cards with no target and for the rollout placeholder.
+**Speaker notes.** `SELLER_NOTES = {slide_number: "…"}` carries call prep for the seller that doesn't belong on a slide: which figures are the seller's own, what number to ask for, what to confirm before quoting a target. The engine adds its own notes for plan cards with no target and for the rollout placeholder. **Notes travel inside the .pptx** — it is attached to the seller email, uploaded to a public HubSpot link and may be forwarded to the client — so write nothing you wouldn't want the client to read: never escalation flags, approval requirements, doubts about their revenue, internal pricing or ROI caveats, or criticism of the firm or its staff. Those stay in the BUILD NOTES. Keep notes to slides 1–5.
 
 ---
 
@@ -107,7 +107,7 @@ Copy values exactly — do not rewrite or recompute.
   - `target`: per DATA RULES, or `None`.
   - `body`: two short sentences — what's happening and what it costs them (≤120 chars).
   - `source`: where it came from, short ("Discovery call, Oct 26", "Lighthouse test", "Seen live on the call", "Seller, on the call").
-- `DIAGNOSIS_FIX_LINE` ≤140 chars: one line pointing to how slide 3 answers the causes.
+- `DIAGNOSIS_FIX_LINE` ≤140 chars: one line pointing to how slide 3 answers the causes, shown after the engine's "How we fix it:" lead-in (don't type that prefix).
 
 **Slide 3 — `PLAN_KICKER`, `PLAN_TITLE`, `PLAN`, `PLAN_NOTE`:**
 - `PLAN_KICKER`: the product area ("Paid media and website", "Financial clarity"). `PLAN_TITLE`: the outcome for the KPI, ≤40 chars ("Lower What Each Lead Costs").
@@ -115,7 +115,7 @@ Copy values exactly — do not rewrite or recompute.
   - `title` ≤34 chars. `fixes`: the DIAGNOSIS number it answers.
   - `actions`: 2–4 bullets, ≤60 chars, each a deliverable of the recommended products (catalog tables in `audit-write.md` and `Design Files/Scoping_and_Ad_Spend_Guide.md` — e.g. words of content, GBP locations, review requests at that tier). Never a deliverable the package doesn't include; never live chat or CRM setup.
   - `metric`: what it moves, 1–4 words. `target`: per DATA RULES, or `None`.
-- `PLAN_NOTE`: optional "Also included: …" line (≤160 chars) for other deliverables of the package, or `None`.
+- `PLAN_NOTE`: optional line shown after the engine's own "Also included:" lead-in — don't type that prefix (≤160 chars) for other deliverables of the package, or `None`.
 - Never put a marketing action on this slide unless a marketing/ads package is part of the recommendation.
 
 **Slide 4 — `STRATEGY_TITLE`, `STRATEGY`:**

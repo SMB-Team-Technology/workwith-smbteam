@@ -163,7 +163,9 @@ STRATEGY = [
 # ── Speaker notes for the seller (never shown on a slide) ─────────
 # {slide_number: "note"}. Required on slide 1 when KPI_FOCUS kind is
 # "qualitative". The engine adds its own notes for missing targets and the
-# rollout placeholder.
+# rollout placeholder. Notes travel inside the .pptx the client may receive:
+# only call prep about slides 1–5 (what to confirm, which figures are the
+# seller's) — never escalation flags, approvals or internal pricing caveats.
 SELLER_NOTES = {
 }
 
@@ -615,6 +617,7 @@ def add_pill(slide, text, left, top, h, fill, color=WHITE, size=7.5, max_w=4.0):
 
 def add_strip(slide, lead, text, top, h=0.48, label=""):
     """White strip with an Ocean Blue edge: bold lead-in + one line of copy."""
+    text = re.sub(r"^\s*" + re.escape(lead.rstrip(":")) + r"\s*:?\s*", "", str(text), flags=re.I)
     add_rect(slide, 0.30, top, 9.40, h, fill=WHITE)
     add_rect(slide, 0.30, top, 0.05, h, fill=OCEAN_BLUE)
     add_rich_text(slide, [([(lead + " ", 9.5, True, False, NAVY),
@@ -708,7 +711,10 @@ def build_priorities(prs):
     add_text(slide, headline, x + 0.18, y + 0.64, w - 0.36, 1.40, 22, WHITE,
              bold=True, max_lines=3, min_size=14, anchor=MSO_ANCHOR.TOP,
              cap_label="KPI_FOCUS headline")
-    add_text(slide, KPI_FOCUS["detail"], x + 0.18, y + 2.08, w - 0.36, 0.74, 10.5,
+    # The detail line sits right under the headline, however many lines it took.
+    h_size, h_lines = fit_text(headline, w - 0.36, 1.40, 22, bold=True, max_lines=3, min_size=14)
+    used = (len(h_lines) * line_height(h_size, bold=True) + 2 * _INSET_Y) if h_lines else 1.40
+    add_text(slide, KPI_FOCUS["detail"], x + 0.18, y + 0.64 + used + 0.12, w - 0.36, 0.74, 10.5,
              NAVY_TEXT_SOFT, max_lines=3, min_size=8.5, cap_label="KPI_FOCUS detail")
     stats = [s for s in (KPI_FOCUS.get("stats") or [])[:2] if s and s[1]]
     if stats:

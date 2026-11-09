@@ -38,7 +38,7 @@ Do not read anything under `[friendly-name]/sections/`, `[friendly-name]/index.h
 - Never mention live chat as an SMB Team service.
 - Never mention CRM setup as an SMB Team deliverable.
 - Never state profitability facts by practice area unless the prospect explicitly said so on the call.
-- Escalation flags are internal only — they go in the BUILD NOTES block (STEP 2), never in a slide field. Anything the seller must know before the call goes in `SELLER_NOTES` (speaker notes).
+- Escalation flags are internal only — they go in the BUILD NOTES block (STEP 2), never in a slide field and never in `SELLER_NOTES`: speaker notes travel inside the .pptx the client may receive. `SELLER_NOTES` is only for call prep on slides 1–5 (see audit-pptx.md).
 - Every number on slides 1–5 was said on the call (client or seller) or measured in research, copied exactly — never invented or estimated, and every target rests on call data or is left `None` (DATA RULES in `audit-pptx.md`).
 - **Never print a review count or star rating (firm or competitor) tagged `UNCONFIRMED` in the research notes as a specific fact.** Use qualitative framing instead (e.g., "far fewer reviews than several competitors in this market" rather than an exact number), and add "Review counts unconfirmed — verify live before the call" to the escalation flags in the BUILD NOTES. Only a number tagged `[confirmed via Google]` in the research notes may appear as a specific figure in the deck.
 
