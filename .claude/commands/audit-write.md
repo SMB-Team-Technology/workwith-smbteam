@@ -1,6 +1,6 @@
 # SMB Team — Audit Write (Pass 2): Build the Proposal Deck
 
-Build the 6-slide proposal PowerPoint for a firm and commit it. Run this after `/audit-research` completes. This pass used to build the "Growth, Profit & Freedom Roadmap" website and the Sales Companion PDF; both are retired. The deck is now the only output, and it is built from the same inputs the website was.
+Build the 5-slide proposal PowerPoint for a firm and commit it. Run this after `/audit-research` completes. This pass used to build the "Growth, Profit & Freedom Roadmap" website and the Sales Companion PDF; both are retired. The deck is now the only output, and it is built from the same inputs the website was.
 
 ## How to invoke
 
@@ -38,8 +38,8 @@ Do not read anything under `[friendly-name]/sections/`, `[friendly-name]/index.h
 - Never mention live chat as an SMB Team service.
 - Never mention CRM setup as an SMB Team deliverable.
 - Never state profitability facts by practice area unless the prospect explicitly said so on the call.
-- Escalation flags are internal only — they go in the BUILD NOTES block (STEP 2), never in a slide field and never in `SELLER_NOTES`: speaker notes travel inside the .pptx the client may receive. `SELLER_NOTES` is only for call prep on slides 1–5 (see audit-pptx.md).
-- Every number on slides 1–5 was said on the call (client or seller) or measured in research, copied exactly — never invented or estimated, and every target rests on call data or is left `None` (DATA RULES in `audit-pptx.md`).
+- Escalation flags are internal only — they go in the BUILD NOTES block (STEP 2), never in a slide field and never in `SELLER_NOTES`: speaker notes travel inside the .pptx the client may receive. `SELLER_NOTES` is only for call prep on slides 1–4 (see audit-pptx.md).
+- Every number on slides 1–4 was said on the call (client or seller) or measured in research, copied exactly — never invented or estimated, and every target rests on call data or is left `None` (DATA RULES in `audit-pptx.md`).
 - **Never print a review count or star rating (firm or competitor) tagged `UNCONFIRMED` in the research notes as a specific fact.** Use qualitative framing instead (e.g., "far fewer reviews than several competitors in this market" rather than an exact number), and add "Review counts unconfirmed — verify live before the call" to the escalation flags in the BUILD NOTES. Only a number tagged `[confirmed via Google]` in the research notes may appear as a specific figure in the deck.
 
 ---
@@ -143,7 +143,7 @@ Do the calculations that used to go in the retired `section_11_workings.txt` her
 # KPI (slide 1): <label> — "<figure exactly as said>" — <client|seller>, <timestamp> (STEP 9B) — or "none usable: qualitative"
 # Diagnosis (slide 2): 1. <cause> — <evidence> — <source> · 2. … (STEP 9B)
 # Targets (slides 2–3): <metric> — <target> — basis: <call data> · or "none — seller note"
-# What You Told Us (slide 6 panel + slide 1 quotes):
+# What You Told Us (slide 1 quotes and tie lines):
 #   1. <label> — transcript line: "<verbatim line from the research notes>" — supports: <package>
 #   2. ...
 #   3. ...
@@ -160,14 +160,14 @@ Contents — the same items the old workings file held:
 - DBM statement
 - Pillar review — replaces the website's Sections 5–9: for each of Lead Generation, Intake, Team and Profit, the traffic-light rating and the single biggest gap the research notes show, one line each.
 - KPI, diagnosis and targets for slides 1–3, each with its STEP 9B source line (or research step), so every number on those slides can be traced
-- What You Told Us: the 3 items selected (rules under WHAT YOU TOLD US below), each with the verbatim line from the research notes it comes from (or, with no transcript, the research finding for What We Found) and the package/deliverable it supports
+- What You Told Us: the slide 1 quotes selected (rules under WHAT YOU TOLD US below), each with the verbatim line from the research notes it comes from and the package/deliverable it supports
 - Which override (if any) changed the decision file's package, any "Revenue unverified (draft based on <revenue_source>)" note, and every escalation flag that applies
 
 These notes stay in the `.py` as the record of what went into the deck. They are comments above the layout engine, so the layout diff check is unaffected. The repo is public: keep transcript lines short, exactly as they already appear in the research notes, and never add anything from outside the research notes.
 
 ## STEP 3 — BUILD THE DECK
 
-Follow `.claude/commands/audit-pptx.md` to fill every slide field from the research notes, `package_decision.json` and your STEP 2 workings, then run the script and check its output. Every price, the ad spend range and the ROI figures on slide 6 must match the BUILD NOTES exactly, and every number on slides 1–3 must match its STEP 9B source.
+Follow `.claude/commands/audit-pptx.md` to fill every slide field from the research notes, `package_decision.json` and your STEP 2 workings, then run the script and check its output. Every price, the ad spend range and the ROI figures on slide 5 must match the BUILD NOTES exactly, and every number on slides 1–3 must match its STEP 9B source.
 
 ---
 
@@ -238,7 +238,7 @@ Note: the Paid-Ads-only sub-package for Starter has a lower cap of $20,000 — $
 | Web + SEO Dominate | $6,997/mo | $7,997/mo |
 | Web + SEO Platinum | $9,597/mo | $11,497/mo |
 
-**Stand-alone prices (for the savings calculation on slide 6):**
+**Stand-alone prices (for the savings calculation on slide 5):**
 Essentials $3,797 | Starter $5,697 | Growth $8,997 | Dominate $12,497 | Platinum $18,997
 
 **Boundary rule:** If the firm's calculated ad spend exceeds the tier's cap, move to the higher tier. Aggressive goals alone no longer bypass the Dominate/Platinum revenue floors — a firm must meet the revenue threshold to be eligible.
@@ -276,7 +276,7 @@ Non-marketing packages are the default recommendation alongside marketing. Recom
 
 **Stand-alone prices:** Coach Essentials Plus $2,497 (Coach Essentials has no stand-alone price) | Elite Coach $3,497 | Elite Coach Plus $3,497 | Master's Circle $4,997 | FCOO Advisor $3,797 | FCOO Director $5,797 | FCFO Advisor $3,797 | FCFO Director $5,797 | FCFO Partner $9,997
 
-**Fractional packages (FCOO and FCFO) now include Elite Coach group deliverables.** When recommending any fractional package, its deliverables must include weekly group coaching sessions, practice area masterminds, virtual access to quarterly workshops, and one annual in-person workshop — reflect this in that package card's services line on slide 6 (condensed to fit) and in its slide 4 deliverables. These are included in the fractional price — do not list them as a separate charge.
+**Fractional packages (FCOO and FCFO) now include Elite Coach group deliverables.** When recommending any fractional package, its deliverables must include weekly group coaching sessions, practice area masterminds, virtual access to quarterly workshops, and one annual in-person workshop — reflect this in that package card's services line on slide 5 (condensed to fit) and in its slide 4 deliverables. These are included in the fractional price — do not list them as a separate charge.
 
 ---
 
@@ -518,11 +518,11 @@ Always present ad spend as a range: **Conservative (low end) to Aggressive (high
 
 **Common geo tiers:** NYC/LA/Chicago/Houston/Dallas/Atlanta/Philly/DC = Tier 1. Miami/Boston/Phoenix/Seattle/Detroit/SF/Tampa/Minneapolis/Denver/San Diego/Orlando = Tier 2. Charlotte/Austin/Portland/Nashville/Indianapolis/Columbus/Cleveland/Raleigh = Tier 3. Most mid-size cities = Tier 4. Rural/small markets = Tier 5.
 
-**Client-facing "why this range" sentence:** once both numbers are calculated, write one sentence for `AD_SPEND_NOTE` (slide 6) that sells the *payoff*, not the math — what this spend converts or captures for this firm specifically. Ground it in a real specific from the audit: their practice area ("to convert high-intent personal injury searches into signed cases"), a named competitor gap from the research notes ("before [Competitor] captures them first"), or their stated goal/DBM. Do not name the conservative/aggressive calculation basis (channel minimums, the 20% rule, geo-tier multipliers, CPL benchmarks) in this sentence — that level of detail stays in the BUILD NOTES only. This only applies when a marketing/ads package is part of the recommendation.
+**Client-facing "why this range" sentence:** once both numbers are calculated, write one sentence for `AD_SPEND_NOTE` (slide 5) that sells the *payoff*, not the math — what this spend converts or captures for this firm specifically. Ground it in a real specific from the audit: their practice area ("to convert high-intent personal injury searches into signed cases"), a named competitor gap from the research notes ("before [Competitor] captures them first"), or their stated goal/DBM. Do not name the conservative/aggressive calculation basis (channel minimums, the 20% rule, geo-tier multipliers, CPL benchmarks) in this sentence — that level of detail stays in the BUILD NOTES only. This only applies when a marketing/ads package is part of the recommendation.
 
 ---
 
-### ROI PROJECTIONS (slide 6 "Projected Return on Ad Spend" card)
+### ROI PROJECTIONS (slide 5 "Projected Return on Ad Spend" card)
 
 Calculate separately for conservative and aggressive ad spend amounts.
 
@@ -568,43 +568,35 @@ Note these in the BUILD NOTES block (STEP 2) for the sales team. Never put them 
 - Attorney Assistant fit unclear → confirm qualification with sales rep before including in proposal
 
 ---
-### WHAT YOU TOLD US (slide 6 panel "How this plan addresses it")
+### WHAT YOU TOLD US (slide 1 quotes)
 
-This was Block 5 of the retired website. It now feeds `WHAT_YOU_TOLD_US` on
-slide 6, and the same transcript lines are the first source for
-`PROSPECT_QUOTES` on slide 1 (so both slides tell the same story). It plays
-the owner's own words back to them and shows how the recommendation answers
-each one. Same structure for every package mix.
+This was Block 5 of the retired website. It now picks the client lines for
+`PROSPECT_QUOTES` on slide 1 — the client's own words, each with a tie line
+saying how the recommendation answers it. (The slide 6 "How this plan
+addresses it" panel is gone; slide 1 covers it.)
 
 Content:
-- Exactly 3 items. Each item = one thing the owner (or another attendee from
-  the firm) raised on the discovery call, in their framing, plus how the
+- Up to 3 items. Each item = one thing the owner (or another attendee from
+  the firm) raised on the discovery call, in their words, plus how the
   recommended package addresses it.
-- Pick the 3 that most directly support the recommended package — cover each
-  package where possible, most central package first (tie to the reddest
-  pillar, the DBM, or the largest bundled price).
+- Pick the ones that most directly support the recommended package — cover
+  each package where possible, most central package first (tie to the
+  reddest pillar, the DBM, or the largest bundled price). Don't repeat the
+  slide 1 KPI headline quote.
 
 Sourcing (non-negotiable):
 - Every item must come from the transcript, as captured in the research
-  notes (STEP 9 fields and `Key prospect quotes`). Record the verbatim line
-  for each in the BUILD NOTES (STEP 2). If you cannot point to a line, do
-  not use it.
-- Paraphrase in the owner's framing. Quote verbatim only when the line is
-  short and clearly benign. Never strengthen, exaggerate, or combine what
-  they said into something they did not say.
+  notes (STEP 9B "KPI quotes", STEP 9 fields and `Key prospect quotes`).
+  Record the verbatim line for each in the BUILD NOTES (STEP 2). If you
+  cannot point to a line, do not use it.
+- Quote rules for slide 1 are in audit-pptx.md (verbatim only; never
+  strengthen, exaggerate, or combine what they said).
 - Problems found only in research (website, reviews, ads) are not eligible —
   those belong on the diagnosis slide (slide 2).
 
-No discovery call transcript (fallback — never leave the panel empty):
-- Use "What We Found" items instead. Keep the same 3-item structure.
-- Each item = one finding from the research notes (plain language) + how
-  the recommended package addresses it. Pick the 3 that most directly
-  support the recommendation, most central package first.
-- Never word a finding as if the owner said it ("you told us", "you
-  mentioned", "you said"), and never guess at goals, revenue, or problems
-  the research did not show. Log the research-notes source of each item in
-  the BUILD NOTES.
-- All "Never include" and language rules below still apply.
+No verbatim transcript: no quotes (`PROSPECT_QUOTES = []`). Never word a
+research finding as if the owner said it ("you told us", "you mentioned",
+"you said").
 
 Never include (the deck is forwarded to partners and staff):
 - Named employees, or criticism of an identifiable staff member
@@ -615,7 +607,7 @@ If one of these is the strongest item, generalize it (e.g. "the firm
 depends on you for every decision") or pick a different one.
 
 Language rules:
-- "How this plan addresses it" framing only — never promise outcomes,
+- Tie lines say how the recommendation addresses it — never promise outcomes,
   launch dates, timelines, lead or click counts, or deliverables outside
   the signed agreement.
 - Never use the phrase "pain points" (or other internal closer language)

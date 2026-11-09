@@ -1,28 +1,29 @@
 """
 Audit PowerPoint Template — SMB Team
 ======================================
-Generates the 6-slide proposal PPTX. Uses python-pptx. Do not modify the
+Generates the 5-slide proposal PPTX. Uses python-pptx. Do not modify the
 layout engine below the FILL section. Only replace the # FILL: placeholders
 with audit-specific content (rules: .claude/commands/audit-pptx.md).
 
 The deck makes the case for the recommendation in one line of argument:
 one number from the call → what drives it → what we do about each driver →
-what we're recommending → how it rolls out → what it costs.
+what we're recommending → what it costs.
 
 Slide 1 — Your Priorities, In Your Words  (the call KPI + the client's quotes)
 Slide 2 — The Diagnosis                   (the root causes behind that KPI)
-Slide 3 — The Plan                        (actions, each tied to a diagnosed cause)
+Slide 3 — The Plan                        (actions tied to causes + what we'll measure)
 Slide 4 — The Recommended Strategy        (each product: why, and its deliverables)
-Slide 5 — Rollout Plan                    (PLACEHOLDER — fixed, no FILL values)
-Slide 6 — Your Investment                 (pricing — unchanged from the 3-slide deck)
+Slide 5 — Your Investment                 (pricing — numbers unchanged from the 3-slide deck)
+A Rollout Plan slide exists in the engine but is left out (SHOW_ROLLOUT) until
+real onboarding content is ready.
 
 Data rules (enforced by the build where it can, by audit-pptx.md everywhere):
 - Every number comes from the call (client or seller) or from a verified
   research observation, exactly as said or measured. Never invented, never
   estimated.
 - Targets are labelled "Target:" by the engine and must rest on call data.
-  With nothing to base one on, leave it None — the slide says "to be
-  confirmed" and the seller gets a speaker note.
+  With nothing to base one on, leave it None — no target line is drawn and
+  the seller gets a speaker note.
 - Seller-only guidance goes in SELLER_NOTES (speaker notes), never on a slide.
 
 Output: [friendly-name]/[FirmName]_[Date]_Proposal.pptx
@@ -62,7 +63,8 @@ OUTPUT_PATH    = "friendly-name/FirmName_Date_Proposal.pptx"  # FILL: output pat
 #             True — the engine adds the quote marks) or, with no verbatim
 #             transcript, a plain statement of the number (False).
 #   detail:   one sentence with the exact figures said on the call.
-#   baseline: the KPI's current value in 2–5 words (shown again on slide 5).
+#   baseline: the KPI's current value in 2–5 words (shown again in the
+#             "What we'll measure" row on slide 3).
 #   stats:    0–2 (label, value) supporting figures from the call. A goal
 #             the client stated is labelled "Your goal", never "Target".
 KPI_FOCUS = {
@@ -112,7 +114,7 @@ DIAGNOSIS = [
 ]
 
 # One line for the strip under the cards: how the plan answers the causes.
-DIAGNOSIS_FIX_LINE = "Slide 3 shows what we do about each one."     # FILL ≤140 chars
+DIAGNOSIS_FIX_LINE = "One line on how the plan answers these causes."     # FILL ≤140 chars
 
 # ── Slide 3 — The Plan ────────────────────────────────────────────
 PLAN_KICKER = "Product area"                 # FILL: the product area, e.g. Paid media and website
@@ -122,9 +124,10 @@ PLAN_TITLE  = "Lower What Each Case Costs"   # FILL: the outcome, ≤40 chars
 #   title:   the action, ≤34 chars ("Restructure the divorce campaign")
 #   fixes:   the DIAGNOSIS number it answers (1-based)
 #   actions: 2–4 bullets, each a deliverable of the recommended products, ≤60 chars
-#   metric:  what it moves, 1–4 words ("Cost per lead")
-#   target:  the target, based on call data, or None ("to be confirmed" +
-#            an automatic seller note)
+#   metric:  what it moves, 1–4 words ("Cost per lead") — shown, numbered to
+#            its action, in the "What we'll measure" row under the cards
+#   target:  the target, based on call data, or None (no target line is
+#            drawn; the seller gets an automatic speaker note)
 PLAN = [
     {"title": "Action one", "fixes": 1,
      "actions": ["Specific deliverable", "Specific deliverable"],
@@ -156,20 +159,19 @@ STRATEGY = [
      "why": "Why this firm needs it, tied to a diagnosed cause."},     # FILL
 ]
 
-# ── Slide 5 — Rollout Plan ────────────────────────────────────────
-# No FILL values: the engine draws a clearly marked placeholder until real
-# onboarding content exists. Never add onboarding steps or timelines here.
+# Rollout Plan: left out of the deck until real onboarding content exists
+# (no FILL values). Never add onboarding steps or timelines anywhere.
 
 # ── Speaker notes for the seller (never shown on a slide) ─────────
 # {slide_number: "note"}. Required on slide 1 when KPI_FOCUS kind is
 # "qualitative". The engine adds its own notes for missing targets and the
 # rollout placeholder. Notes travel inside the .pptx the client may receive:
-# only call prep about slides 1–5 (what to confirm, which figures are the
+# only call prep about slides 1–4 (what to confirm, which figures are the
 # seller's) — never escalation flags, approvals or internal pricing caveats.
 SELLER_NOTES = {
 }
 
-# ── Slide 6 — Your Investment (unchanged) ─────────────────────────
+# ── Slide 5 — Your Investment ─────────────────────────────────────
 # Package cards — (label, bundled_price, retail_price, services_line, accent_color_hex)
 PACKAGES = [
     (
@@ -198,15 +200,6 @@ CONSERVATIVE_LABEL = "Conservative  (X cases/mo):"   # FILL
 CONSERVATIVE_RESULT = "$XX,XXX revenue · X.X× ROAS"  # FILL
 AGGRESSIVE_LABEL   = "Aggressive  (X cases/mo):"     # FILL
 AGGRESSIVE_RESULT  = "$XX,XXX revenue · X.X× ROAS"   # FILL
-
-# "How this plan addresses it" panel — exactly 3 (short_label, action)
-# items from the BUILD NOTES' What You Told Us list (rules in audit-write.md).
-# short_label <=16 chars, action <=55 chars. Never leave this empty.
-WHAT_YOU_TOLD_US = [
-    ("Short label 1", "How the recommendation addresses it"),
-    ("Short label 2", "How the recommendation addresses it"),
-    ("Short label 3", "How the recommendation addresses it"),
-]
 
 CLOSING_QUOTE = (
     '"Closing quote tied to this firm\'s DBM — exact transcript words '
@@ -245,7 +238,11 @@ ROI_HILIGHT = rgb("E2F3E9")
 
 BUNDLE_SAVINGS_TEXT = rgb("A9D68C")   # lighter green — reads as "money saved"
 
-TOTAL_SLIDES = 6
+# The Rollout Plan slide is built but left out of the deck until real
+# onboarding content exists — flip this to True to add it back (slide 5).
+SHOW_ROLLOUT = False
+TOTAL_SLIDES = 6 if SHOW_ROLLOUT else 5
+INVESTMENT_PAGE = TOTAL_SLIDES
 
 FONT = "Poppins"
 LOGO_PATH = os.path.join(os.path.dirname(__file__), "smb_team_logo.png")
@@ -681,8 +678,6 @@ def validate_fill():
             problems.append(f"DIAGNOSIS {n} has no PLAN action — every cause needs a fix.")
     if not 1 <= len(STRATEGY) <= 3:
         problems.append(f"STRATEGY has {len(STRATEGY)} pieces; slide 4 needs 1–3.")
-    if len(WHAT_YOU_TOLD_US) != 3:
-        problems.append(f"WHAT_YOU_TOLD_US has {len(WHAT_YOU_TOLD_US)} items; slide 6 needs exactly 3.")
     for label, items in (("DIAGNOSIS", DIAGNOSIS), ("PLAN", PLAN)):
         for i, d in enumerate(items):
             t = d.get("target")
@@ -816,11 +811,9 @@ def build_plan(prs):
     gap = 0.15
     cw = (9.40 - gap * (n - 1)) / n
     y = 1.08
-    h = 3.46 if PLAN_NOTE else 4.02
-    missing_targets = []
+    h = 2.30 if PLAN_NOTE else 2.74   # leaves the measure row ~1in either way
     for i, p in enumerate(PLAN):
         cx = 0.30 + i * (cw + gap)
-        bottom = y + h
         add_rect(slide, cx, y, cw, 0.62, fill=NAVY)
         add_badge(slide, i + 1, cx + 0.14, y + 0.15, 0.32, OCEAN_BLUE)
         add_text(slide, p["title"], cx + 0.52, y + 0.03, cw - 0.60, 0.56, 11, WHITE,
@@ -830,34 +823,63 @@ def build_plan(prs):
 
         fixes = p["fixes"]
         cause = DIAGNOSIS[fixes - 1]["title"]
-        add_text(slide, f"FIXES  {fixes}  ·  {cause.upper()}", cx + 0.10, y + 0.70,
-                 cw - 0.20, 0.36, 7, CORAL, bold=True, max_lines=2, min_size=6,
+        add_text(slide, f"FIXES  {fixes}  ·  {cause.upper()}", cx + 0.10, y + 0.68,
+                 cw - 0.20, 0.34, 7, CORAL, bold=True, max_lines=2, min_size=6,
                  cap_label=f"PLAN[{i}] fixes")
-        add_text(slide, "WHAT WE DO", cx + 0.10, y + 1.08, cw - 0.20, 0.20, 7,
+        add_text(slide, "WHAT WE DO", cx + 0.10, y + 1.02, cw - 0.20, 0.20, 7,
                  OCEAN_BLUE, bold=True, fit=False)
         add_bullets(slide, [cap(a, 70, f"PLAN[{i}] action {j+1}")
                             for j, a in enumerate(p["actions"][:4])],
-                    cx + 0.08, y + 1.28, cw - 0.16, bottom - 0.78 - (y + 1.28), 9,
+                    cx + 0.08, y + 1.20, cw - 0.16, h - 1.26, 9,
                     DARK_TEXT, OCEAN_BLUE, label=f"PLAN[{i}] actions")
-        add_rule(slide, cx + 0.14, bottom - 0.72, cx + cw - 0.14, bottom - 0.72, RULE_GRAY)
-        add_text(slide, "MOVES:  " + str(p["metric"]).upper(), cx + 0.10, bottom - 0.68,
-                 cw - 0.20, 0.22, 7.5, OCEAN_BLUE, bold=True, max_lines=1, min_size=6,
-                 cap_label=f"PLAN[{i}] metric")
-        if p.get("target"):
-            add_text(slide, "Target: " + str(p["target"]), cx + 0.10, bottom - 0.46,
-                     cw - 0.20, 0.40, 8.5, GREEN, bold=True, max_lines=2, min_size=7,
-                     cap_label=f"PLAN[{i}] target")
-        else:
-            add_text(slide, "Target: to be confirmed", cx + 0.10, bottom - 0.46,
-                     cw - 0.20, 0.40, 8.5, SLATE, bold=True, max_lines=2, fit=False)
-            missing_targets.append(f"“{p['title']}” ({p['metric']})")
+
+    build_measures(slide, top=y + h + 0.06, bottom=4.62 if PLAN_NOTE else 5.12)
 
     if PLAN_NOTE:
-        add_strip(slide, "Also included:", PLAN_NOTE, 4.64, label="PLAN_NOTE")
-    if missing_targets:
-        note(3, "No target on the call to base these on — agree a number with the "
-                "client rather than quoting one: " + "; ".join(missing_targets) + ".")
+        add_strip(slide, "Also included:", PLAN_NOTE, 4.70, h=0.42, label="PLAN_NOTE")
+    missing = [f"“{p['title']}” ({p['metric']})" for p in PLAN if not p.get("target")]
+    if missing:
+        note(3, "No target on the call to base these on, so none is shown — agree a "
+                "number with the client rather than quoting one: " + "; ".join(missing) + ".")
     add_footer(slide, 3, TOTAL_SLIDES, LOGO_PATH)
+
+
+def build_measures(slide, top, bottom):
+    """"What we'll measure": the call KPI (today's value), then each plan
+    action's metric, numbered to its card, with its target when there is one.
+    No target → no target line (never "to be confirmed")."""
+    add_text(slide, "WHAT WE'LL MEASURE", 0.30, top, 4.0, 0.20, 7.5, NAVY, bold=True,
+             fit=False)
+    tiles = [(None, KPI_FOCUS["label"],
+              ("Today: " + KPI_FOCUS["baseline"]) if KPI_FOCUS.get("baseline") else "")]
+    tiles += [(i + 1, p["metric"], ("Target: " + str(p["target"])) if p.get("target") else "")
+              for i, p in enumerate(PLAN)]
+    gap = 0.12
+    ty = top + 0.22
+    th = bottom - ty
+    tw = (9.40 - gap * (len(tiles) - 1)) / len(tiles)
+    for i, (num, title, sub) in enumerate(tiles):
+        tx = 0.30 + i * (tw + gap)
+        lead = num is None
+        add_rect(slide, tx, ty, tw, th, fill=NAVY if lead else WHITE)
+        if lead:
+            add_text(slide, "THE NUMBER FROM THE CALL", tx + 0.10, ty + 0.06, tw - 0.20, 0.18,
+                     6.5, LIME_GREEN, bold=True, max_lines=1, min_size=5.5,
+                     cap_label="measure kicker")
+            title_x, title_w = tx + 0.10, tw - 0.20
+        else:
+            add_badge(slide, num, tx + 0.10, ty + 0.08, 0.24, OCEAN_BLUE)
+            title_x, title_w = tx + 0.38, tw - 0.46
+        title_y = ty + (0.22 if lead else 0.04)
+        add_text(slide, title, title_x, title_y, title_w, 0.40, 9.5,
+                 WHITE if lead else NAVY, bold=True, max_lines=2, min_size=7.5,
+                 anchor=MSO_ANCHOR.MIDDLE if not lead else None,
+                 cap_label=f"measure tile {i+1}")
+        if sub:
+            sub_y = title_y + 0.40
+            add_text(slide, sub, tx + 0.10, sub_y, tw - 0.20, max(0.22, ty + th - sub_y - 0.04),
+                     8.5, NAVY_TEXT_SOFT if lead else GREEN, bold=not lead, max_lines=2,
+                     min_size=7, cap_label=f"measure tile {i+1} sub")
 
 
 # ── Slide 4: The Recommended Strategy ─────────────────────────────
@@ -899,68 +921,34 @@ def build_strategy(prs):
     add_footer(slide, 4, TOTAL_SLIDES, LOGO_PATH)
 
 
-# ── Slide 5: Rollout Plan (placeholder) ───────────────────────────
+# ── Rollout Plan (placeholder — left out while SHOW_ROLLOUT is False) ─
 
 def build_rollout(prs):
     slide = new_slide(prs)
     add_header(slide, "Rollout Plan", 9.30, kicker="WHAT HAPPENS AFTER YOU SIGN")
 
-    add_shape(slide, MSO_SHAPE.RECTANGLE, 0.30, 1.10, 9.40, 2.20, fill=WHITE,
+    add_shape(slide, MSO_SHAPE.RECTANGLE, 0.30, 1.10, 9.40, 3.98, fill=WHITE,
               line_color=SLATE, line_pt=1.25, dash=True)
-    add_pill(slide, "Placeholder", 0.56, 1.34, 0.28, CORAL)
-    add_text(slide, "Your rollout plan is being finalized", 0.50, 1.74, 8.90, 0.46, 18,
+    add_pill(slide, "Placeholder", 0.56, 2.14, 0.28, CORAL)
+    add_text(slide, "Your rollout plan is being finalized", 0.50, 2.54, 8.90, 0.46, 18,
              NAVY, bold=True, max_lines=1, min_size=13)
     add_text(slide, "Your onboarding team will fill in what happens after you sign: "
                     "the steps, who does what, and when. Nothing on this slide is a "
                     "commitment or a timeline yet.",
-             0.50, 2.24, 8.90, 0.80, 10.5, BODY_TEXT, max_lines=3, min_size=9)
-
-    # What we'll measure — the call KPI plus each plan metric, no new numbers.
-    tiles = [(KPI_FOCUS["label"], ("Today: " + KPI_FOCUS["baseline"])
-              if KPI_FOCUS.get("baseline") else "Baseline from the call", True)]
-    seen = {str(KPI_FOCUS["label"]).strip().lower()}
-    for p in PLAN:
-        key = str(p["metric"]).strip().lower()
-        if key in seen:
-            continue
-        seen.add(key)
-        tiles.append((p["metric"], ("Target: " + str(p["target"])) if p.get("target")
-                      else "Target to be confirmed", False))
-    tiles = tiles[:4]
-    add_text(slide, "WHAT WE'LL MEASURE", 0.30, 3.46, 4.0, 0.20, 7.5, NAVY, bold=True,
-             fit=False)
-    gap = 0.15
-    tw = (9.40 - gap * (len(tiles) - 1)) / len(tiles)
-    for i, (title, sub, lead) in enumerate(tiles):
-        tx = 0.30 + i * (tw + gap)
-        add_rect(slide, tx, 3.70, tw, 1.40, fill=NAVY if lead else WHITE)
-        add_text(slide, title, tx + 0.12, 3.82, tw - 0.24, 0.50, 11,
-                 WHITE if lead else NAVY, bold=True, max_lines=2, min_size=8.5,
-                 cap_label=f"measure tile {i+1}")
-        add_text(slide, sub, tx + 0.12, 4.34, tw - 0.24, 0.66, 9,
-                 NAVY_TEXT_SOFT if lead else BODY_TEXT, max_lines=3, min_size=7.5,
-                 cap_label=f"measure tile {i+1} sub")
+             0.50, 3.04, 8.90, 0.80, 10.5, BODY_TEXT, max_lines=3, min_size=9)
 
     note(5, "PLACEHOLDER: real onboarding content isn't ready yet. Don't promise "
             "onboarding steps, dates or timelines from this slide.")
     add_footer(slide, 5, TOTAL_SLIDES, LOGO_PATH)
 
-# ── Slide 6: Your Investment (unchanged from the 3-slide deck) ───────
+# ── Last slide: Your Investment (numbers unchanged from the 3-slide deck) ──
 
 def build_investment(prs):
-    # Never render an empty panel: with no transcript, Block 5 becomes
-    # "What We Found" and this list still gets 3 research-based items.
-    if len(WHAT_YOU_TOLD_US) != 3:
-        raise SystemExit(
-            f"WHAT_YOU_TOLD_US has {len(WHAT_YOU_TOLD_US)} items; slide 6 needs exactly 3. "
-            "With no discovery call transcript, copy the 3 research-based rows from "
-            "section_11 Block 5 (What We Found).")
-
     layout = prs.slide_layouts[6]
     slide = prs.slides.add_slide(layout)
 
     # Background wash + header (shared with every slide)
-    add_header(slide, "Your Investment & What Happens Next", 9.30)
+    add_header(slide, "Your Investment", 9.30, kicker="THE INVESTMENT")
 
     # Package cards — white with a thin colored left accent bar
     pkg_ys = [1.10, 2.25]
@@ -1029,30 +1017,6 @@ def build_investment(prs):
         add_text(slide, AGGRESSIVE_LABEL, 5.22, 2.21, 1.95, 0.18, 8.5, DARK_TEXT, bold=True)
         add_text(slide, AGGRESSIVE_RESULT, 7.25, 2.21, 2.30, 0.18, 8.5, ROI_GREEN, bold=True)
 
-        told_us_y = 2.72
-        timeline_ys = [2.99, 3.37, 3.75, 4.13]
-    else:
-        # No ROI card above it — give What You Told Us the full right-column height.
-        told_us_y = 1.10
-        timeline_ys = [1.46, 2.06, 2.66, 3.26]
-
-    # How this plan addresses it — alternating light/white rows; the first dot pops in
-    # lime green, the rest in ocean blue, so the lead item stands out
-    add_text(slide, "HOW THIS PLAN ADDRESSES IT",
-             5.00, told_us_y, 4.70, 0.18, 7.5, NAVY, bold=True)
-    for i, (milestone, action) in enumerate(WHAT_YOU_TOLD_US[:3]):
-        y = timeline_ys[i]
-        row_bg = rgb("EEF2F5") if i % 2 == 0 else WHITE
-        dot_color = LIME_GREEN if i == 0 else OCEAN_BLUE
-        add_rect(slide, 5.00, y, 4.70, 0.29, fill=row_bg)
-        add_rect(slide, 5.14, y+0.09, 0.10, 0.10, fill=dot_color)
-        add_text(slide, milestone, 5.30, y, 1.25, 0.29, 8, NAVY, bold=True,
-                 max_lines=1, anchor=MSO_ANCHOR.MIDDLE,
-                 cap_chars=16, cap_label=f"WHAT_YOU_TOLD_US[{i}] label")
-        add_text(slide, action, 6.50, y, 3.20, 0.29, 8, BODY_TEXT,
-                 max_lines=1, anchor=MSO_ANCHOR.MIDDLE,
-                 cap_chars=55, cap_label=f"WHAT_YOU_TOLD_US[{i}] action")
-
     # Closing quote bar — taller, darker navy, with the same lime accent stripe
     add_rect(slide, 0, 4.66, 10, 0.61, fill=rgb("002A41"))
     add_rect(slide, 0, 4.66, 10, 0.02, fill=LIME_GREEN)
@@ -1060,7 +1024,7 @@ def build_investment(prs):
              align=PP_ALIGN.CENTER, max_lines=2, anchor=MSO_ANCHOR.MIDDLE,
              cap_chars=200, cap_label="CLOSING_QUOTE")
 
-    add_footer(slide, 6, TOTAL_SLIDES, LOGO_PATH)
+    add_footer(slide, INVESTMENT_PAGE, TOTAL_SLIDES, LOGO_PATH)
 
 # ── Font embedding ────────────────────────────────────────────────
 # python-pptx has no font-embedding API, so this patches the saved .pptx's
@@ -1193,7 +1157,8 @@ build_priorities(prs)
 build_diagnosis(prs)
 build_plan(prs)
 build_strategy(prs)
-build_rollout(prs)
+if SHOW_ROLLOUT:
+    build_rollout(prs)
 build_investment(prs)
 write_notes(prs)
 

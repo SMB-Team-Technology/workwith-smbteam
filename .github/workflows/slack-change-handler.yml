@@ -132,7 +132,7 @@ jobs:
                  tier, redo the ad spend and ROI per .claude/commands/audit-write.md and
                  update AD_SPEND_NOTE and the ROI fields (AD_SPEND_NOTE = None if no
                  marketing). Update the BUILD NOTES comment block to match.
-               Then run: python3 '<folder>/<file>_Proposal.py' (expect 'Saved: … (6
+               Then run: python3 '<folder>/<file>_Proposal.py' (expect 'Saved: … (5
                slides)'), and confirm this prints nothing:
                diff <(sed -n '/LAYOUT ENGINE/,\$p' 'Design Files/audit_pptx_template.py') <(sed -n '/LAYOUT ENGINE/,\$p' '<folder>/<file>_Proposal.py')
                (pip install python-pptx --break-system-packages --quiet if needed.)

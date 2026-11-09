@@ -348,11 +348,13 @@ Before finishing, check every item. Fix anything unchecked before saving.
 
 ## COMMIT AND CONFIRM
 
+Commit to the branch you are on — in the pipeline that is `main` (production) or an `audit-test/**` branch (test mode). Never switch branches.
+
 ```bash
-git checkout main
 git add "[friendly-name]/[FirmName]_[Date]_Research_Notes.txt"
 git commit -m "Add research notes: [Firm Name] ([Date])"
-GIT_TERMINAL_PROMPT=0 git push origin main
+BRANCH=$(git rev-parse --abbrev-ref HEAD)
+git pull --rebase origin "$BRANCH" && GIT_TERMINAL_PROMPT=0 git push origin "HEAD:$BRANCH"
 git log -1 --format="%H %s"
 ```
 

@@ -13,14 +13,14 @@ name: Audit PPTX Layout Engine Check
 # this targets exactly that generation step without blocking unrelated
 # maintenance edits to already-shipped decks.
 #
-# The deck is 6 slides (Priorities → Diagnosis → Plan → Recommended
-# Strategy → Rollout placeholder → Investment). Besides the engine diff, the
+# The deck is 5 slides (Priorities → Diagnosis → Plan → Recommended
+# Strategy → Investment). Besides the engine diff, the
 # check also makes sure:
-#   - the master template itself still builds a 6-slide deck from its own
+#   - the master template itself still builds a 5-slide deck from its own
 #     placeholder values (catches a broken edit to the template), and
 #   - each new firm copy defines every FILL variable the master defines (a
 #     copy of an older template — e.g. the retired 3-slide KEY_GAPS /
-#     PRIORITIES / STAGE_TEXT layout — fails here) and builds 6 slides.
+#     PRIORITIES / STAGE_TEXT layout — fails here) and builds 5 slides.
 
 on:
   pull_request:
@@ -49,7 +49,7 @@ jobs:
       - name: Install deck dependencies
         run: pip install python-pptx pillow --quiet
 
-      - name: Build the master template (expect 6 slides)
+      - name: Build the master template (expect 5 slides)
         shell: bash
         run: |
           set -euo pipefail
@@ -59,8 +59,8 @@ jobs:
           cp "Design Files/audit_pptx_template.py" "Design Files/smb_team_logo.png" _layout_check/
           OUT=$(cd _layout_check && python3 audit_pptx_template.py)
           echo "$OUT"
-          if ! grep -q "(6 slides)" <<< "$OUT"; then
-            echo "::error file=Design Files/audit_pptx_template.py::The master template did not build a 6-slide deck."
+          if ! grep -q "(5 slides)" <<< "$OUT"; then
+            echo "::error file=Design Files/audit_pptx_template.py::The master template did not build a 5-slide deck."
             exit 1
           fi
 
@@ -123,12 +123,12 @@ jobs:
             }
             MISSING_VARS=$(comm -23 <(fill_vars "$MASTER") <(fill_vars "$f") | tr '\n' ' ')
             if [ -n "${MISSING_VARS// /}" ]; then
-              echo "::error file=$f::Missing FILL variables: $MISSING_VARS— this copy doesn't match the current 6-slide template's FILL section."
+              echo "::error file=$f::Missing FILL variables: $MISSING_VARS— this copy doesn't match the current 5-slide template's FILL section."
               FAILED=1
               continue
             fi
 
-            # It must build the full 6-slide deck.
+            # It must build the full 5-slide deck.
             if ! OUT=$(python3 "$f" 2>&1); then
               echo "$OUT"
               echo "::error file=$f::The deck script failed to build."
@@ -136,8 +136,8 @@ jobs:
               continue
             fi
             echo "$OUT"
-            if ! grep -q "(6 slides)" <<< "$OUT"; then
-              echo "::error file=$f::Expected 'Saved: … (6 slides)'."
+            if ! grep -q "(5 slides)" <<< "$OUT"; then
+              echo "::error file=$f::Expected 'Saved: … (5 slides)'."
               FAILED=1
             fi
           done

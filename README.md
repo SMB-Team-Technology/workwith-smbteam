@@ -1,6 +1,6 @@
 # SMB Team — proposal audit pipeline
 
-Builds a 6-slide proposal deck (`<firm>/<FirmName>_<Date>_Proposal.pptx`) for each prospective client, uploads it to the HubSpot file manager, and emails it to the seller.
+Builds a 5-slide proposal deck (`<firm>/<FirmName>_<Date>_Proposal.pptx`) for each prospective client, uploads it to the HubSpot file manager, and emails it to the seller.
 
 The per-client "Growth, Profit & Freedom Roadmap" websites (`workwith.smbteam.com/<firm>`) and the Sales Companion PDF are retired: new builds no longer create `index.html`, `sections/` or a PDF. Older client folders still contain them, and GitHub Pages (`CNAME`, root `index.html`) still serves those existing pages.
 
@@ -16,6 +16,8 @@ Edits after the build go through `slack-change-handler.yml`; `resend-audit-email
 ## Test mode
 
 Pushing a `triggers/audit-write/<firm>.json` to an `audit-test/**` branch runs `audit-write.yml` in test mode: it commits only to that branch, emails only carolyn.webb@smbteam.com, and skips the HubSpot upload and contact write and all Slack posts. Add `"test_upload": true` to the trigger to also upload the deck to a separate "AI Proposals TEST" folder (no contact write). `resend-audit-email.yml` run from a non-`main` ref is test mode too.
+
+Research has a test mode too: pushing a `triggers/audit-research/<firm>.json` to an `audit-test/**` branch runs `audit-pipeline.yml` on that branch. It fetches the Fathom transcript, runs Pass 1 (including STEP 9B) and package selection, and commits only to that branch. It posts nothing to Slack, never fabricates research for a firm whose URL doesn't resolve, and writes no `proposal_review.json`. Add `"test_chain_write": true` to the trigger to have it write the `audit-write` trigger itself, standing in for the seller's lock-in, so the deck builds in test mode right after (needs the `GH_PAT` secret). A `"package"` in the trigger still sets the seller's package.
 
 ## HubSpot token scopes
 
