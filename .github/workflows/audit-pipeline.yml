@@ -4,8 +4,6 @@ name: Audit Pipeline (Pass 1 — Research + Seller Review Gate)
 #   - checks out and commits only to that branch, never main
 #   - skips every Slack post (no review thread, no failure post) and never
 #     writes proposal_review.json
-#   - tells Pass 1 the firm is real: find its site if the trigger URL doesn't
-#     resolve, never fabricate research
 #   - commits package_decision.json, and when the trigger has
 #     "test_chain_write": true, stands in for the seller's lock-in by
 #     writing triggers/audit-write/<firm>.json on the same branch, which
@@ -204,14 +202,13 @@ jobs:
             field in the trigger file is the only call record. If it starts with \"SOURCE: Fathom\",
             it is an AI summary, not the client's words — say so in the research notes."
           fi
-          if [ "$TEST_MODE" = "true" ]; then
-            URL_NOTE="TEST MODE: this is a real firm. If the URL doesn't resolve or is missing,
-            find the firm's real website by search (firm name, owner, location) and use it.
-            Never fabricate research data — mark anything you can't observe as not observed."
-          else
-            URL_NOTE="If the URL resolves, browse it live. If not (fictional/test firm), fabricate
-            realistic research data for all steps. Do not leave any section blank."
-          fi
+          # Same rule in production and test mode: never fabricate research.
+          URL_NOTE="This is a real firm. If the URL doesn't resolve or is missing, find the
+            firm's real website by search (firm name, owner, location) and use it. Never
+            fabricate research data: anything you can't find or observe is written as
+            "not found" or "not observed" and listed under "Seller should confirm on the next
+            call" in STEP 9B, so the seller can check it. Never leave a section blank — say
+            what was tried."
 
           claude --model claude-sonnet-5-5 --dangerously-skip-permissions -p "
             You are running Pass 1 of the SMB Team Growth Audit pipeline.

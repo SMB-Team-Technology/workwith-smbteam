@@ -13,7 +13,8 @@ Slide 1 — Your Priorities, In Your Words  (the call KPI + the client's quotes)
 Slide 2 — The Diagnosis                   (the root causes behind that KPI)
 Slide 3 — The Plan                        (actions tied to causes + what we'll measure)
 Slide 4 — The Recommended Strategy        (each product: why, and its deliverables)
-Slide 5 — Your Investment                 (pricing — numbers unchanged from the 3-slide deck)
+Slide 5 — Your Investment                 (what $X/mo buys, year one, ad spend, return —
+                                           every number read from package_decision.json)
 A Rollout Plan slide exists in the engine but is left out (SHOW_ROLLOUT) until
 real onboarding content is ready.
 
@@ -172,34 +173,20 @@ SELLER_NOTES = {
 }
 
 # ── Slide 5 — Your Investment ─────────────────────────────────────
-# Package cards — (label, bundled_price, retail_price, services_line, accent_color_hex)
-PACKAGES = [
-    (
-        "FULL SERVICE MARKETING — GROWTH",
-        "$X,XXX", "$X,XXX/mo",
-        "Website · Google Ads · LSA · Meta Ads · GBP optimization",
-        "0091C9",
-    ),
-    (
-        "ELITE COACH PLUS",
-        "$X,XXX", "$X,XXX/mo",
-        "Weekly group coaching · KPI scorecards · Intake framework",
-        "003A59",
-    ),
-]
+# Every number on this slide (prices, monthly and year-one totals, ad spend,
+# return) is read from package_decision.json → "investment", which
+# scripts/reprice.mjs computes in code. Never type a price or figure here.
+#
+# One deliverables line per product, keyed by the product name exactly as in
+# package_decision.json (marketing_name / coaching_name / law_name), ≤70 chars.
+PRODUCT_LINES = {
+    "Full Service Marketing — Growth": "Website · SEO · Google Ads · LSA · Meta Ads · Google profile",  # FILL
+}
 
-BUNDLE_TOTAL   = "$X,XXX / mo"                      # FILL: sum of bundled prices
-BUNDLE_SAVINGS = "Save $X,XXX/mo by bundling"        # FILL
-
-AD_SPEND_NOTE = (
-    "+ Recommended ad spend: $X,XXX–$XX,XXX/mo paid directly to Google/Meta"
-)  # FILL — set to None if no marketing/ads package is part of this firm's recommendation
-
-AVG_CASE_VALUE     = "$X,XXX"                         # FILL
-CONSERVATIVE_LABEL = "Conservative  (X cases/mo):"   # FILL
-CONSERVATIVE_RESULT = "$XX,XXX revenue · X.X× ROAS"  # FILL
-AGGRESSIVE_LABEL   = "Aggressive  (X cases/mo):"     # FILL
-AGGRESSIVE_RESULT  = "$XX,XXX revenue · X.X× ROAS"   # FILL
+# Why this ad spend, in one short payoff clause (≤90 chars), e.g. "to turn
+# high-intent divorce searches into signed cases". None when the package has
+# no paid ads (the engine then leaves the ad spend panel out).
+AD_SPEND_WHY = "to turn high-intent searches into signed cases"     # FILL
 
 CLOSING_QUOTE = (
     '"Closing quote tied to this firm\'s DBM — exact transcript words '
@@ -941,90 +928,225 @@ def build_rollout(prs):
             "onboarding steps, dates or timelines from this slide.")
     add_footer(slide, 5, TOTAL_SLIDES, LOGO_PATH)
 
-# ── Last slide: Your Investment (numbers unchanged from the 3-slide deck) ──
+# ── Last slide: Your Investment (numbers from package_decision.json) ──
+
+# Where the computed investment lives: the firm's package_decision.json,
+# next to this script. The master template has none, so it renders a sample.
+DECISION_PATH = os.path.join(os.path.dirname(os.path.abspath(__file__)), "package_decision.json")
+_SAMPLE_INVESTMENT = {
+    "products": [
+        {"name": "Full Service Marketing — Growth", "charged": 7497, "standalone": 8997},
+    ],
+    "monthly_total": 7497, "total_savings": 0, "pricing_mode": "standalone",
+    "year_one_total": 89964,
+    "ad_spend": {"conservative": 6700, "aggressive": 25000, "current_stated": None,
+                 "year_one_range": [80400, 300000], "cap": 50000, "overage": None},
+    "return": {"method": "benchmark_cpl", "share_of_case_value": None,
+               "basis": "Sample figures — the firm's package_decision.json supplies the real ones.",
+               "disclaimer": "Illustrative arithmetic — not a forecast or guarantee.",
+               "scenarios": [
+                   {"label": "Conservative", "ad_spend": 6700, "cases": 9.2, "revenue": 27600, "return_multiple": 4.1},
+                   {"label": "Aggressive", "ad_spend": 25000, "cases": 41.0, "revenue": 123000, "return_multiple": 4.9}]},
+}
+
+
+def load_investment():
+    """The computed investment block. Stops the build when it's missing,
+    so a deck never goes out with hand-typed or stale numbers."""
+    import json
+    if not os.path.isfile(DECISION_PATH):
+        if FIRM_NAME == "FIRM NAME HERE":
+            return _SAMPLE_INVESTMENT
+        raise SystemExit(f"Deck not built — {DECISION_PATH} not found. "
+                         "Run: node scripts/reprice.mjs <friendly-name>")
+    with open(DECISION_PATH) as f:
+        inv = json.load(f).get("investment")
+    if not inv or not inv.get("products"):
+        raise SystemExit("Deck not built — package_decision.json has no \"investment\" block. "
+                         "Run: node scripts/reprice.mjs <friendly-name>")
+    return inv
+
+
+def usd(n):
+    return f"${int(round(n)):,}"
+
+
+def short_usd(n):
+    """$25,000 → $25K, $1,250,000 → $1.25M (for tight table cells)."""
+    n = float(n)
+    if n >= 1_000_000:
+        return f"${n / 1_000_000:.2f}".rstrip("0").rstrip(".") + "M"
+    if n >= 10_000:
+        k = n / 1_000
+        return f"${k:.0f}K" if abs(k - round(k)) < 0.05 else f"${k:.1f}K"
+    return usd(n)
+
+
+def product_line(name):
+    base = re.sub(r"\s*\(\d+ seats?\)$", "", name)
+    line = PRODUCT_LINES.get(name) or PRODUCT_LINES.get(base)
+    if not line:
+        raise SystemExit(f'Deck not built — PRODUCT_LINES has no entry for "{base}". '
+                         "Add one deliverables line per product in package_decision.json.")
+    return line
+
+
+def build_buys_card(slide, inv, x, w, top, bottom):
+    """"What $X/mo buys": one row per product — name, deliverables, price."""
+    add_text(slide, f"WHAT {usd(inv['monthly_total'])}/MO BUYS", x, top, w, 0.20, 7.5,
+             NAVY, bold=True, fit=False)
+    card_top = top + 0.22
+    add_rect(slide, x, card_top, w, bottom - card_top, fill=WHITE)
+    add_rect(slide, x, card_top, 0.05, bottom - card_top, fill=OCEAN_BLUE)
+    rows = inv["products"]
+    rh_used = (bottom - card_top - 0.12) / max(1, len(rows))
+    y = card_top + 0.06
+    standalone_mode = inv.get("pricing_mode") == "standalone"
+    for i, p in enumerate(rows):
+        ry = y + i * rh_used
+        if i:
+            add_rule(slide, x + 0.20, ry, x + w - 0.16, ry, RULE_GRAY)
+        name_w = w - 1.85
+        add_text(slide, p["name"], x + 0.18, ry + 0.06, name_w, 0.30, 10.5, NAVY, bold=True,
+                 max_lines=1, min_size=8, cap_label=f"product {i+1} name")
+        items = [t.strip() for t in re.split(r"\s*[·•|]\s*", product_line(p["name"])) if t.strip()]
+        half_rows = (len(items) + 1) // 2
+        if len(items) >= 3 and rh_used - 0.70 >= half_rows * 0.27:
+            # Room to spare: the deliverables as a two-column list, below the
+            # price and its stand-alone note.
+            half = (len(items) + 1) // 2
+            col_w = (w - 0.36) / 2
+            box_h = rh_used - 0.70
+            size = 10 if len(rows) == 1 else 9
+            for c, chunk in enumerate([items[:half], items[half:]]):
+                if chunk:
+                    add_bullets(slide, chunk, x + 0.14 + c * col_w, ry + 0.62, col_w, box_h,
+                                size, DARK_TEXT, OCEAN_BLUE, label=f"product {i+1} deliverables")
+        else:
+            add_text(slide, " · ".join(items), x + 0.18, ry + 0.34, name_w, rh_used - 0.40,
+                     8.5, BODY_TEXT, max_lines=2, min_size=7, cap_label=f"product {i+1} line")
+        price = f"{usd(p['charged'])}/mo" if p.get("charged") is not None else "price TBD"
+        add_text(slide, price, x + w - 1.70, ry + 0.04, 1.58, 0.34, 13, NAVY, bold=True,
+                 align=PP_ALIGN.RIGHT, max_lines=1, min_size=10, cap_label=f"product {i+1} price")
+        sub = ""
+        if standalone_mode and p.get("standalone"):
+            sub = "stand-alone price"
+        elif p.get("standalone") and p.get("charged") is not None and p["standalone"] > p["charged"]:
+            sub = f"stand-alone {usd(p['standalone'])}/mo"
+        if sub:
+            add_text(slide, sub, x + w - 1.70, ry + 0.36, 1.58, 0.22, 7.5, SLATE,
+                     align=PP_ALIGN.RIGHT, max_lines=1, fit=False)
+
+
+def build_totals_block(slide, inv, x, w, top, bottom):
+    """Navy block: the monthly investment beside the year-one total."""
+    h = bottom - top
+    add_rect(slide, x, top, w, h, fill=NAVY)
+    add_rect(slide, x, top, 0.05, h, fill=LIME_GREEN)
+    cells = [("MONTHLY INVESTMENT", f"{usd(inv['monthly_total'])}/mo",
+              (f"Saves {usd(inv['total_savings'])}/mo by bundling" if inv.get("total_savings")
+               else "Stand-alone pricing (no bundle)")),
+             ("YEAR ONE", usd(inv["year_one_total"]),
+              "12 months of fees")]
+    cw = (w - 0.10) / 2
+    for i, (kicker, big, sub) in enumerate(cells):
+        cx = x + 0.10 + i * cw
+        if i:
+            add_rule(slide, cx - 0.04, top + 0.14, cx - 0.04, bottom - 0.14, NAVY_RULE)
+        add_text(slide, kicker, cx + 0.12, top + 0.10, cw - 0.24, 0.20, 7.5, LIME_GREEN,
+                 bold=True, fit=False)
+        add_text(slide, big, cx + 0.12, top + 0.28, cw - 0.24, 0.42, 20, WHITE, bold=True,
+                 max_lines=1, min_size=13, cap_label=f"total {i+1}")
+        add_text(slide, sub, cx + 0.12, top + 0.68, cw - 0.24, h - 0.74, 8, BUNDLE_SAVINGS_TEXT
+                 if i == 0 else NAVY_TEXT_SOFT, max_lines=2, min_size=6.5, cap_label=f"total {i+1} sub")
+
+
+def build_ad_spend_card(slide, ad, x, w, top, bottom):
+    h = bottom - top
+    add_rect(slide, x, top, w, h, fill=WHITE)
+    add_rect(slide, x, top, w, 0.05, fill=OCEAN_BLUE)
+    add_text(slide, "RECOMMENDED AD SPEND", x + 0.18, top + 0.12, w - 0.36, 0.20, 7.5,
+             OCEAN_BLUE, bold=True, fit=False)
+    lo, hi = ad["conservative"], ad["aggressive"]
+    rng = f"{usd(lo)}/mo" if lo == hi else f"{usd(lo)} – {usd(hi)}/mo"
+    add_text(slide, rng, x + 0.18, top + 0.32, w - 0.36, 0.46, 22, NAVY, bold=True,
+             max_lines=1, min_size=14, cap_label="ad spend range")
+    cur = ad.get("current_stated")
+    if cur:
+        line = f"Today: {usd(cur)}/mo, held at launch" + (f" · up to {usd(ad['cap'])} managed" if ad.get("cap") else "")
+    elif cur == 0:
+        line = "Today: no paid ads. Starts at the channel minimums."
+    else:
+        line = "Starts at the channel minimums for your practice area."
+    add_text(slide, line, x + 0.18, top + 0.80, w - 0.36, 0.24, 8.5, DARK_TEXT, bold=True,
+             max_lines=1, min_size=7, cap_label="ad spend today")
+    why = (AD_SPEND_WHY or "").strip()
+    y1 = ad.get("year_one_range") or [lo * 12, hi * 12]
+    tail = f"Paid directly to Google and Meta. Year one: {short_usd(y1[0])}–{short_usd(y1[1])}."
+    text = (why[0].upper() + why[1:] + ". " if why else "") + tail
+    add_text(slide, text, x + 0.18, top + 1.06, w - 0.36, h - 1.12, 8.5, BODY_TEXT,
+             max_lines=3, min_size=7, cap_chars=200, cap_label="ad spend why")
+
+
+def build_return_card(slide, ret, x, w, top, bottom):
+    h = bottom - top
+    add_rect(slide, x, top, w, h, fill=ROI_BG)
+    add_text(slide, "WHAT THAT AD SPEND BUYS", x + 0.18, top + 0.10, w - 0.36, 0.20, 7.5,
+             ROI_GREEN, bold=True, fit=False)
+    cols = [("Ad spend", 0.00, 0.95), ("Cases / mo", 0.95, 0.85), ("Revenue / mo", 1.80, 1.05),
+            ("Return", 2.85, 0.80)]
+    tx = x + 0.18
+    for label, off, cwid in cols:
+        add_text(slide, label, tx + off, top + 0.32, cwid, 0.20, 7.5, SLATE, bold=True,
+                 align=PP_ALIGN.LEFT if off == 0 else PP_ALIGN.RIGHT, fit=False)
+    for i, sc in enumerate(ret["scenarios"][:2]):
+        ry = top + 0.54 + i * 0.30
+        if i == 0:
+            add_rect(slide, x + 0.10, ry - 0.02, w - 0.20, 0.30, fill=ROI_HILIGHT)
+        vals = [f"{short_usd(sc['ad_spend'])}/mo", f"{sc['cases']:g}", usd(sc["revenue"]),
+                f"{sc['return_multiple']:g}×"]
+        for (label, off, cwid), v in zip(cols, vals):
+            add_text(slide, v, tx + off, ry, cwid, 0.26, 10, ROI_GREEN if off else DARK_TEXT,
+                     bold=True, align=PP_ALIGN.LEFT if off == 0 else PP_ALIGN.RIGHT,
+                     max_lines=1, min_size=8, anchor=MSO_ANCHOR.MIDDLE, cap_label="return cell")
+    y = top + 0.54 + min(2, len(ret["scenarios"])) * 0.30 + 0.06
+    if ret.get("share_of_case_value"):
+        add_text(slide, f"Today {ret['share_of_case_value']}% of each case's value goes to landing it.",
+                 x + 0.18, y, w - 0.36, 0.22, 8.5, DARK_TEXT, bold=True, max_lines=1, min_size=7,
+                 cap_label="share of case value")
+        y += 0.24
+    add_text(slide, f"{ret['basis']} {ret.get('disclaimer', '')}".strip(), x + 0.18, y,
+             w - 0.36, bottom - y - 0.06, 7.5, SLATE, min_size=6.5, cap_label="return basis")
+
 
 def build_investment(prs):
-    layout = prs.slide_layouts[6]
-    slide = prs.slides.add_slide(layout)
-
-    # Background wash + header (shared with every slide)
+    inv = load_investment()
+    slide = new_slide(prs)
     add_header(slide, "Your Investment", 9.30, kicker="THE INVESTMENT")
 
-    # Package cards — white with a thin colored left accent bar
-    pkg_ys = [1.10, 2.25]
-    for i, (label, price, retail, services, hex_c) in enumerate(PACKAGES[:2]):
-        y = pkg_ys[i]
-        ac = rgb(hex_c)
-        add_rect(slide, 0.30, y, 4.42, 1.05, fill=WHITE)
-        add_rect(slide, 0.30, y, 0.04, 1.05, fill=ac)
-        add_text(slide, label, 0.56, y+0.12, 3.96, 0.20, 7.5, ac, bold=True,
-                 max_lines=1, cap_label=f"PACKAGES[{i}] label")
-        # Price, "/mo" and retail price share one baseline; "/mo" follows the
-        # price's measured width so it never collides or wraps.
-        price_top = y + 0.27
-        price_size, _ = fit_text(price, 2.60, 0.58, 30, bold=True, max_lines=1)
-        price_size = price_size or 22
-        add_text(slide, price, 0.56, price_top, 2.60, 0.58, price_size, NAVY,
-                 bold=True, fit=False)
-        baseline = price_top + baseline_offset(price_size, bold=True)
-        mo_x = 0.56 + _INSET_X + text_width(price, price_size, bold=True) + 0.04 - _INSET_X
-        add_text(slide, "/mo", mo_x, baseline - baseline_offset(10), 0.50, 0.24, 10,
-                 SLATE, wrap=False, fit=False)
-        retail_x = mo_x + 2 * _INSET_X + text_width("/mo", 10) + 0.06
-        add_text(slide, retail, retail_x, baseline - baseline_offset(10),
-                 4.62 - retail_x, 0.24, 10, SLATE, align=PP_ALIGN.RIGHT,
-                 max_lines=1, cap_label=f"PACKAGES[{i}] retail")
-        add_text(slide, services, 0.56, y+0.80, 3.96, 0.22, 8.5, SLATE, max_lines=1,
-                 cap_chars=61, cap_label=f"PACKAGES[{i}] services")
+    ad, ret = inv.get("ad_spend"), inv.get("return")
+    if ad:
+        left_w = 5.00
+        build_buys_card(slide, inv, 0.30, left_w, 1.04, 3.66)
+        build_totals_block(slide, inv, 0.30, left_w, 3.76, 4.74)
+        rx, rw = 5.50, 4.20
+        if ret:
+            build_ad_spend_card(slide, ad, rx, rw, 1.04, 2.56)
+            build_return_card(slide, ret, rx, rw, 2.64, 4.74)
+        else:
+            build_ad_spend_card(slide, ad, rx, rw, 1.04, 4.74)
+    else:
+        build_buys_card(slide, inv, 0.30, 9.40, 1.04, 3.66)
+        build_totals_block(slide, inv, 0.30, 9.40, 3.76, 4.74)
 
-    # Bundle total — same 0.10in gap used between the two package cards above
-    add_rect(slide, 0.30, 3.40, 4.42, 0.72, fill=NAVY)
-    add_rect(slide, 0.30, 3.40, 0.04, 0.72, fill=LIME_GREEN)
-    add_text(slide, "BUNDLE TOTAL", 0.56, 3.50, 1.70, 0.18, 7.5, LIME_GREEN, bold=True,
-             fit=False)
-    total_size, _ = fit_text(BUNDLE_TOTAL, 2.40, 0.40, 17, bold=True, max_lines=1)
-    total_size = total_size or 13
-    add_text(slide, BUNDLE_TOTAL, 0.56, 3.66, 2.40, 0.40, total_size, WHITE, bold=True,
-             fit=False)
-    # Savings line sits to the right of the measured total, on its baseline,
-    # and shrinks to fit the space left inside the card.
-    total_baseline = 3.66 + baseline_offset(total_size, bold=True)
-    savings_x = 0.56 + text_width(BUNDLE_TOTAL, total_size, bold=True) + 0.20
-    add_text(slide, BUNDLE_SAVINGS, savings_x, total_baseline - baseline_offset(8.5),
-             4.62 - savings_x, 0.22, 8.5, BUNDLE_SAVINGS_TEXT, align=PP_ALIGN.RIGHT,
-             max_lines=1, cap_label="BUNDLE_SAVINGS")
-
-    # Ad spend note + ROI-on-ad-spend card — both omitted entirely when no
-    # marketing/ads package was sold. Showing a return-on-ad-spend projection
-    # for ad spend that isn't part of the recommendation is the same bug as
-    # the missing-rationale note, just in a second spot on this slide.
-    has_ad_spend = bool(AD_SPEND_NOTE)
-
-    if has_ad_spend:
-        add_rect(slide, 0.30, 4.22, 4.42, 0.42, fill=rgb("EEF2F5"))
-        add_text(slide, AD_SPEND_NOTE, 0.50, 4.22, 4.02, 0.42, 8, BODY_TEXT,
-                 cap_chars=120, cap_label="AD_SPEND_NOTE")
-
-        # ROI card
-        add_rect(slide, 5.00, 1.10, 4.70, 1.42, fill=ROI_BG)
-        add_text(slide, "PROJECTED RETURN ON AD SPEND",
-                 5.22, 1.26, 4.26, 0.16, 7.5, ROI_GREEN, bold=True)
-        add_text(slide, "Average case value:", 5.22, 1.58, 1.95, 0.18, 8.5, DARK_TEXT, bold=True)
-        add_text(slide, AVG_CASE_VALUE, 7.25, 1.58, 2.30, 0.18, 8.5, ROI_GREEN)
-        add_rect(slide, 5.14, 1.83, 4.42, 0.28, fill=ROI_HILIGHT)
-        add_text(slide, CONSERVATIVE_LABEL, 5.22, 1.90, 1.95, 0.18, 8.5, DARK_TEXT, bold=True)
-        add_text(slide, CONSERVATIVE_RESULT, 7.25, 1.90, 2.30, 0.18, 8.5, ROI_GREEN, bold=True)
-        add_text(slide, AGGRESSIVE_LABEL, 5.22, 2.21, 1.95, 0.18, 8.5, DARK_TEXT, bold=True)
-        add_text(slide, AGGRESSIVE_RESULT, 7.25, 2.21, 2.30, 0.18, 8.5, ROI_GREEN, bold=True)
-
-    # Closing quote bar — taller, darker navy, with the same lime accent stripe
-    add_rect(slide, 0, 4.66, 10, 0.61, fill=rgb("002A41"))
-    add_rect(slide, 0, 4.66, 10, 0.02, fill=LIME_GREEN)
-    add_text(slide, CLOSING_QUOTE, 0.70, 4.70, 8.60, 0.54, 9.5, rgb("C2D8E6"),
-             align=PP_ALIGN.CENTER, max_lines=2, anchor=MSO_ANCHOR.MIDDLE,
-             cap_chars=200, cap_label="CLOSING_QUOTE")
-
+    # Closing line — the owner's outcome, in their words.
+    add_rect(slide, 0, 4.84, 10, 0.43, fill=rgb("002A41"))
+    add_rect(slide, 0, 4.84, 10, 0.02, fill=LIME_GREEN)
+    add_text(slide, CLOSING_QUOTE, 0.70, 4.86, 8.60, 0.40, 9.5, NAVY_TEXT_SOFT,
+             align=PP_ALIGN.CENTER, max_lines=1, min_size=7.5, anchor=MSO_ANCHOR.MIDDLE,
+             cap_chars=160, cap_label="CLOSING_QUOTE")
     add_footer(slide, INVESTMENT_PAGE, TOTAL_SLIDES, LOGO_PATH)
+
 
 # ── Font embedding ────────────────────────────────────────────────
 # python-pptx has no font-embedding API, so this patches the saved .pptx's

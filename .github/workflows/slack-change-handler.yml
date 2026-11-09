@@ -126,12 +126,12 @@ jobs:
                .claude/commands/audit-pptx.md (character limits, quote rules, no
                UNCONFIRMED figures). Never edit anything below that line.
                - Package or price change: change the product name fields in
-                 package_decision.json, run 'node scripts/reprice.mjs <folder>', and copy
-                 its prices into PACKAGES / BUNDLE_TOTAL / BUNDLE_SAVINGS ('' when
-                 pricing_mode is standalone). If marketing was added, removed or changed
-                 tier, redo the ad spend and ROI per .claude/commands/audit-write.md and
-                 update AD_SPEND_NOTE and the ROI fields (AD_SPEND_NOTE = None if no
-                 marketing). Update the BUILD NOTES comment block to match.
+                 package_decision.json and run 'node scripts/reprice.mjs <folder>'. It
+                 recomputes the prices, totals, ad spend and return (the investment
+                 slide reads them straight from package_decision.json — never type
+                 them). Then update PRODUCT_LINES (one line per product) and
+                 AD_SPEND_WHY (None if no paid ads) in the deck script, and the BUILD
+                 NOTES comment block to match.
                Then run: python3 '<folder>/<file>_Proposal.py' (expect 'Saved: … (5
                slides)'), and confirm this prints nothing:
                diff <(sed -n '/LAYOUT ENGINE/,\$p' 'Design Files/audit_pptx_template.py') <(sed -n '/LAYOUT ENGINE/,\$p' '<folder>/<file>_Proposal.py')

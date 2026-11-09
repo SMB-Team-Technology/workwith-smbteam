@@ -126,12 +126,10 @@ Copy values exactly — do not rewrite or recompute.
 - `deliverables`: 3–5 catalog deliverables for that product/tier, ≤55 chars each — fractional packages include the Elite Coach group deliverables (see `audit-write.md`).
 - `why` ≤110 chars: why this firm needs it, tied to a slide 2 cause or the KPI. No promised results.
 
-**Slide 5 — from `package_decision.json` and the BUILD NOTES (unchanged rules):**
-- `PACKAGES` — package name, bundled (charged) price and stand-alone price exactly as in the BUILD NOTES / `package_decision.json`, and a deliverables summary line (≤65 chars; fractional packages include the Elite Coach group deliverables). When `pricing_mode` is `"standalone"`, the charged price is the stand-alone price: put it in the bundled-price slot and write `"stand-alone price"` in the retail slot. A product with no stand-alone price (AI Workforce Pro, AI Workforce Pro – Starter) gets `""` in the retail slot. Card order follows `package_decision.json`. Maximum two cards.
-- `BUNDLE_TOTAL` — the total monthly investment from the BUILD NOTES. `BUNDLE_SAVINGS` — "Save $X,XXX/mo by bundling" (when `pricing_mode` is `"standalone"`: `"Stand-alone price (no bundle)"`).
-- `AD_SPEND_NOTE` — only with a marketing/ads package: the conservative–aggressive range plus a short payoff clause from the "why this range" sentence, under ~110 characters. Otherwise `None` (this also hides the ROI card).
-- `AVG_CASE_VALUE`, conservative/aggressive labels and results — copy from the BUILD NOTES ROI projections; "(est.)" or "(assumed)" when the case value is a practice-area default.
-- `CLOSING_QUOTE` — one sentence tied to the owner's DBM (DBM rules above). No placeholders.
+**Slide 5 — Your Investment.** Every number on it — each product's price, the monthly and year-one totals, savings, the ad spend range and the return table — is read by the engine from `package_decision.json` → `investment`, which `scripts/reprice.mjs` computes in code (`scripts/lib/investment.mjs`). You never type a price or figure for this slide. If the build stops with "no investment block", run `node scripts/reprice.mjs [friendly-name]`. You fill only:
+- `PRODUCT_LINES` — one deliverables line per product, keyed by the product name exactly as in `package_decision.json` (`marketing_name`, `coaching_name`, `law_name`, without any "(N seats)"), ≤70 chars, items separated by " · " (the engine shows them as a list when there's room). Only catalog deliverables; fractional packages include the Elite Coach group deliverables (see `audit-write.md`). The build stops if a product has no line.
+- `AD_SPEND_WHY` — only with a paid-ads package: one short payoff clause, ≤90 chars, from the BUILD NOTES' "why this range" sentence (e.g. "to turn high-intent divorce searches into signed cases"). No calculation basis. `None` when there are no paid ads (the engine then leaves the ad spend and return panels out).
+- `CLOSING_QUOTE` — one sentence tied to the owner's DBM (DBM rules above), ≤160 chars so it fits one line. No placeholders.
 
 ---
 
@@ -142,7 +140,7 @@ Copy values exactly — do not rewrite or recompute.
 3. Set `OUTPUT_PATH = "[friendly-name]/[FirmName]_[Date]_Proposal.pptx"`
 4. Set `SALES_REP` to the sales rep name
 5. Copy `Design Files/smb_team_logo.png` into `[friendly-name]/` so the footer logo renders
-6. Verify no `# FILL:` placeholder text remains (the word "FILL" should not appear in any string value). If `AD_SPEND_NOTE` was deliberately set to `None` because no marketing/ads package was sold, that's expected — not a missed FILL.
+6. Verify no `# FILL:` placeholder text remains (the word "FILL" should not appear in any string value). If `AD_SPEND_WHY` was deliberately set to `None` because no paid-ads package was sold, that's expected — not a missed FILL.
 7. Before running, diff the copy's layout engine against the master template and confirm there's no output — anything below `LAYOUT ENGINE — DO NOT MODIFY BELOW THIS LINE` must be byte-for-byte identical to `Design Files/audit_pptx_template.py` (this includes `FONT`, every color constant, and every `build_*`/helper function):
 
 ```bash

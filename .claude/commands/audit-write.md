@@ -75,7 +75,7 @@ Apply all package eligibility and calculation logic in this step and the tables 
 1. **Call-purpose override.** If the transcript or research notes state the discovery call's actual subject was something other than standard marketing/intake growth (e.g., explicitly framed as a Fractional CTO / AI automation engagement, an operations/coaching engagement, etc.), lead the recommendation with that stated category. Do not default to Full Service Marketing just because revenue qualifies for a tier — the firm did not ask about marketing. Check the LAW package table and the non-marketing package table first; only add a marketing package if the transcript shows an actual marketing/lead-gen gap alongside the stated need.
 2. **Existing-vendor override.** If the transcript states the firm has recently signed with, or is already paying, another marketing/SEO/ad/AEO vendor (an active or recent contract), exclude Full Service Marketing — every tier and every sub-package — from the recommendation entirely. A firm that just committed to a marketing engagement does not have a marketing gap; recommending one anyway ignores the client's actual, stated situation. Recommend the package(s) that match what the transcript says the firm still needs instead (coaching, ops, AI/FCTO, etc.).
 3. **Budget-reality override.** If the transcript or notes state, or strongly imply, that the client cannot afford or is not positioned to spend at the tier the revenue table implies (budget concerns, an explicit statement of financial limits, a stated preference for a smaller engagement), do not present the revenue-implied tier. Lead with the lowest-cost package that still addresses the transcript's stated need, and document the gap between the revenue table's suggestion and what you actually recommended in the BUILD NOTES (STEP 2) so sales can see the override was intentional.
-4. **Effective-revenue override.** If the research notes state a net/take-home/collected revenue figure distinct from a gross/case-value figure (common for contingency-fee practices — e.g. "$1.5–2M gross / ~$500k net"), tier and calculate against the **net** figure, not gross, regardless of what `revenue_effective` in `package_decision.json` says. `select-package.mjs` applies this automatically when both figures are parseable (check `net_revenue_stated` and `is_contingency_practice` in the decision file), but if the notes state a net figure the script's regex missed, apply it by hand and document the correction — including the recomputed 35%-cap check and ad-spend range — in the BUILD NOTES (STEP 2).
+4. **Effective-revenue override.** If the research notes state a net/take-home/collected revenue figure distinct from a gross/case-value figure (common for contingency-fee practices — e.g. "$1.5–2M gross / ~$500k net"), tier and calculate against the **net** figure, not gross, regardless of what `revenue_effective` in `package_decision.json` says. `select-package.mjs` applies this automatically when both figures are parseable (check `net_revenue_stated` and `is_contingency_practice` in the decision file), but if the notes state a net figure the script's regex missed, run `node scripts/reprice.mjs [friendly-name] --revenue <net annual figure>` (it recomputes the ad spend range and return) and document the correction — including the 35%-cap check — in the BUILD NOTES (STEP 2).
 
 None of these four checks are about recomputing a price in isolation — they are about whether the *category* and *scale* of product being proposed matches what actually happened on the call. Do this check even when `package_decision.json` says `confidence: "high"`.
 
@@ -134,10 +134,11 @@ Do the calculations that used to go in the retired `section_11_workings.txt` her
 # Non-marketing package(s): ...
 # LAW package: ... (or "none")
 # Total monthly investment: $X,XXX/mo · total savings: $X,XXX/mo · pricing_mode: bundled|standalone
-# Ad spend: conservative $X,XXX (channels: ...), aggressive $X,XXX (20% rule / reverse math: ...)
-# ROI conservative: blended CPL $X → N leads → N cases (close rate X%) → $X revenue → X.X×
-# ROI aggressive:   blended CPL $X → N leads → N cases → $X revenue → X.X×
-# Case value: $X (source: transcript / practice-area default)
+# Year one: $X (from package_decision.json → investment.year_one_total)
+# Ad spend (copied from investment.ad_spend — computed in code, never by hand):
+#   $X,XXX–$XX,XXX/mo · low end: <conservative_basis> · high end: <aggressive_steps joined>
+# Return (copied from investment.return): <method> · <basis> · scenarios: $X → N cases → $X → X.X× …
+# Investment inputs used: <investment.inputs, with each source> · flags: <investment.flags>
 # Why this range: <the client-facing sentence>
 # Pillar review: Lead Gen <red|amber|green> — <biggest gap> · Intake … · Team … · Profit …
 # KPI (slide 1): <label> — "<figure exactly as said>" — <client|seller>, <timestamp> (STEP 9B) — or "none usable: qualitative"
@@ -155,8 +156,8 @@ Contents — the same items the old workings file held:
 - Selected marketing package name, bundled price, stand-alone price, savings
 - Selected non-marketing package(s) name, bundled price, stand-alone price, savings
 - Total monthly investment (sum of bundled prices) and total savings
-- Conservative and aggressive ad spend, each with the full ROI projection (leads, cases, revenue, return multiple) — only if a marketing/ads package is part of the recommendation. Use the AD SPEND CALCULATION and ROI PROJECTIONS rules below.
-- If a marketing/ads package is part of the recommendation: the one plain-English "why this range" sentence (rules under AD SPEND CALCULATION). It feeds `AD_SPEND_NOTE`.
+- Year-one total, ad spend range and return projection — copied from `package_decision.json` → `investment`, which `scripts/reprice.mjs` computes in code from the AD SPEND CALCULATION and ROI PROJECTIONS rules below and the research notes' investment inputs. Never recalculate, round or adjust them. If `investment` is missing, run `node scripts/reprice.mjs [friendly-name]`. Copy `investment.flags` into the escalation flags.
+- If a paid-ads package is part of the recommendation: the one plain-English "why this range" sentence (rules under AD SPEND CALCULATION). It feeds `AD_SPEND_WHY`.
 - DBM statement
 - Pillar review — replaces the website's Sections 5–9: for each of Lead Generation, Intake, Team and Profit, the traffic-light rating and the single biggest gap the research notes show, one line each.
 - KPI, diagnosis and targets for slides 1–3, each with its STEP 9B source line (or research step), so every number on those slides can be traced
@@ -167,7 +168,7 @@ These notes stay in the `.py` as the record of what went into the deck. They are
 
 ## STEP 3 — BUILD THE DECK
 
-Follow `.claude/commands/audit-pptx.md` to fill every slide field from the research notes, `package_decision.json` and your STEP 2 workings, then run the script and check its output. Every price, the ad spend range and the ROI figures on slide 5 must match the BUILD NOTES exactly, and every number on slides 1–3 must match its STEP 9B source.
+Follow `.claude/commands/audit-pptx.md` to fill every slide field from the research notes, `package_decision.json` and your STEP 2 workings, then run the script and check its output. The investment slide (slide 5) reads every price, total, ad spend and return figure from `package_decision.json` itself, and every number on slides 1–3 must match its STEP 9B source.
 
 ---
 
@@ -489,6 +490,18 @@ Attorney Assistant is a volume-priced AI intake agent (IA) product — priced pe
 
 ### AD SPEND CALCULATION — CONSERVATIVE AND AGGRESSIVE
 
+**These rules are implemented in code — `scripts/lib/investment.mjs`, run by `select-package.mjs` and `reprice.mjs` — so the same inputs always give the same numbers. Never calculate ad spend or the return by hand; copy `package_decision.json` → `investment`. Keep this section and the code in sync.** Inputs come from the research notes' "Investment inputs" lines (audit-research.md STEP 9): figures the client stated on the call win over every default below.
+
+How the code applies these rules where they are silent or conflict:
+1. **Channels costed:** Full Service and Paid Ads packages are costed on Google PPC + LSA + Meta retargeting (the Scoping guide's worked example and "3 primary channels"). Web + SEO packages have no ad spend.
+2. **Today's spend:** when the client stated what they spend now, the low end is never below it ("held at launch"). The high end is never below the low end.
+3. **Stated budget ceiling:** when the client named the most they can spend a month, the high end stops there (not below the low end).
+4. **Tier cap:** product selection is never changed here. When the goal math exceeds the package's cap, the high end stops at the cap and the seller is flagged (tier upgrade or the 10% overage fee is the seller's call). When today's spend is already above the cap, the overage is flagged.
+5. **Reverse math:** uses the client's stated cost per signed case, else their stated cost per lead, else the CPL benchmarks below — whichever is most specific to the firm.
+6. **Defaults:** case value = the low end of the practice-area default range; close rate 15%; geo Tier 4; competitiveness Medium — each flagged when used. MVA uses the Accident & Injury CPL row; "Other" practice areas have no CPL benchmark, so the return projection is left out unless a cost was stated.
+7. **Rounding:** low end to the nearest $100, high end to the nearest $500.
+8. **Year one:** 12 × the monthly fees. The pricing tables list no setup fee for marketing, coaching or fractional products, so none is added. Ad spend is shown separately.
+
 Always present ad spend as a range: **Conservative (low end) to Aggressive (high end).**
 
 **Conservative = Sum of channel minimums** for the recommended channels:
@@ -518,11 +531,13 @@ Always present ad spend as a range: **Conservative (low end) to Aggressive (high
 
 **Common geo tiers:** NYC/LA/Chicago/Houston/Dallas/Atlanta/Philly/DC = Tier 1. Miami/Boston/Phoenix/Seattle/Detroit/SF/Tampa/Minneapolis/Denver/San Diego/Orlando = Tier 2. Charlotte/Austin/Portland/Nashville/Indianapolis/Columbus/Cleveland/Raleigh = Tier 3. Most mid-size cities = Tier 4. Rural/small markets = Tier 5.
 
-**Client-facing "why this range" sentence:** once both numbers are calculated, write one sentence for `AD_SPEND_NOTE` (slide 5) that sells the *payoff*, not the math — what this spend converts or captures for this firm specifically. Ground it in a real specific from the audit: their practice area ("to convert high-intent personal injury searches into signed cases"), a named competitor gap from the research notes ("before [Competitor] captures them first"), or their stated goal/DBM. Do not name the conservative/aggressive calculation basis (channel minimums, the 20% rule, geo-tier multipliers, CPL benchmarks) in this sentence — that level of detail stays in the BUILD NOTES only. This only applies when a marketing/ads package is part of the recommendation.
+**Client-facing "why this range" sentence:** once both numbers are calculated, write one sentence for the BUILD NOTES (its payoff clause becomes `AD_SPEND_WHY` on slide 5) that sells the *payoff*, not the math — what this spend converts or captures for this firm specifically. Ground it in a real specific from the audit: their practice area ("to convert high-intent personal injury searches into signed cases"), a named competitor gap from the research notes ("before [Competitor] captures them first"), or their stated goal/DBM. Do not name the conservative/aggressive calculation basis (channel minimums, the 20% rule, geo-tier multipliers, CPL benchmarks) in this sentence — that level of detail stays in the BUILD NOTES only. This only applies when a marketing/ads package is part of the recommendation.
 
 ---
 
-### ROI PROJECTIONS (slide 5 "Projected Return on Ad Spend" card)
+### ROI PROJECTIONS (slide 5 "What that ad spend buys" table)
+
+Computed in code (see AD SPEND CALCULATION). When the client stated their cost per signed case, the projection uses it (cases = ad spend ÷ that cost, no improvement assumed) instead of the CPL benchmarks — a benchmark that contradicts the client's own number is never shown. Next best is a stated cost per lead; the benchmarks below are the fallback.
 
 Calculate separately for conservative and aggressive ad spend amounts.
 
@@ -626,11 +641,12 @@ PY=$(ls "[friendly-name]"/*_Proposal.py | head -1)
 grep -nE "[\"'][^\"']*FILL[^\"']*[\"']" "$PY" || true               # no FILL placeholder left in a string value
 grep -n "UNCONFIRMED" "$PY" | grep -vE '^[0-9]+:\s*#' || true    # no unverified figure outside the BUILD NOTES comments
 grep -c "BUILD NOTES" "$PY"                                   # workings recorded (expect 1)
+jq -e '.investment.products | length > 0' "[friendly-name]/package_decision.json"   # computed investment present (expect true)
 diff <(sed -n '/LAYOUT ENGINE/,$p' "Design Files/audit_pptx_template.py") <(sed -n '/LAYOUT ENGINE/,$p' "$PY")
 wc -c "[friendly-name]"/*_Proposal.pptx
 ```
 
-The first two must print nothing, the diff must print nothing, and the `.pptx` must not be empty. Fix anything flagged, re-run the script, then commit.
+The first two must print nothing, the diff must print nothing, the `jq` check must print `true` (if not, run `node scripts/reprice.mjs [friendly-name]` and rebuild), and the `.pptx` must not be empty. Fix anything flagged, re-run the script, then commit.
 
 ---
 

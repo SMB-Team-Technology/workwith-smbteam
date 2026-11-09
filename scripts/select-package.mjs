@@ -23,6 +23,7 @@ import { join } from 'path';
 import { execFileSync } from 'child_process';
 import { pathToFileURL } from 'url';
 import { getProduct, resolveName, unretire, pricePackage, applyPricing } from './lib/pricing.mjs';
+import { applyInvestment, computeInvestment, parseInvestmentInputs } from './lib/investment.mjs';
 
 // ─── Selection tables ────────────────────────────────────────────────────────
 // Revenue bands and ad-spend caps per marketing tier. Prices come from
@@ -75,18 +76,6 @@ const COACHING_PRODUCTS = new Set([
   'FCOO', 'FCOO Advisor', 'FCOO Director', 'FCOO Partner', 'FCFO', 'FCFO Advisor', 'FCFO Director', 'FCFO Partner',
 ]);
 const LAW_PRODUCTS = new Set(['AI Workforce Pro – Starter', 'AI Workforce Pro', 'Fractional CTO Level 1', 'Fractional CTO Level 2', 'Fractional CTO Level 3']);
-
-// Conservative ad spend floors by practice area keyword ($/mo)
-const AD_SPEND_FLOORS = [
-  { keywords: ['mva', 'motor vehicle', 'car accident', 'auto accident'],             floor: 10_000 },
-  { keywords: ['personal injury', 'accident & injury', 'wrongful death', 'truck'],   floor: 7_500  },
-  { keywords: ['criminal defense', 'criminal law', 'dui', 'dwi'],                    floor: 5_500  },
-  { keywords: ['family law', 'divorce', 'custody'],                                  floor: 3_500  },
-  { keywords: ['estate planning', 'wills', 'trusts', 'elder law', 'probate'],        floor: 3_500  },
-  { keywords: ['immigration'],                                                        floor: 3_000  },
-  { keywords: ['business law', 'business litigation', 'corporate'],                  floor: 3_500  },
-  { keywords: ['bankruptcy'],                                                         floor: 4_500  },
-];
 
 // ─── HubSpot lookups ──────────────────────────────────────────────────────────
 
@@ -709,29 +698,6 @@ export function selectDiscussedCoaching(products, effectiveRevenue, notes) {
   return { name };
 }
 
-function estimateAdSpend(practiceAreas, marketingTier) {
-  let floor = 3_000;
-  let floorBasis = 'no practice area matched a channel-minimum table — default floor';
-  for (const area of practiceAreas) {
-    for (const entry of AD_SPEND_FLOORS) {
-      if (entry.keywords.some(k => area.includes(k)) && entry.floor > floor) {
-        floor = entry.floor;
-        floorBasis = area;
-      }
-    }
-  }
-  const uncappedCeiling = floor * 4;
-  const ceiling = Math.min(marketingTier.adCap, uncappedCeiling);
-  const aggressiveBasis = ceiling < uncappedCeiling
-    ? `capped by ${marketingTier.tier} tier's ad cap`
-    : 'scaled 4x off the conservative channel-minimum floor';
-  return {
-    conservative: floor,
-    aggressive: ceiling,
-    rationale: { conservative_basis: floorBasis, aggressive_basis: aggressiveBasis },
-  };
-}
-
 // ─── Revenue estimation when not stated ──────────────────────────────────────
 
 function estimateRevenueFromTeamSize(teamSize, notes) {
@@ -946,7 +912,7 @@ export async function selectPackage(friendlyName) {
   // The revenue rule's reasoning is only shown if its pick is the one used.
   const coachingRuleNotes = [];
   const revenueCoaching  = selectCoachingByRevenue(effectiveRevenue, effectiveTeam, text, coachingRuleNotes);
-  const revenueAdSpend   = revenueMarketing ? estimateAdSpend(practiceAreas, revenueMarketing) : null;
+  const investmentInputs = parseInvestmentInputs(text);
 
   // Coaching named on the call wins over the revenue rule. On an AI-led call
   // where no coaching was named, leave coaching out rather than adding the
@@ -978,6 +944,13 @@ export async function selectPackage(friendlyName) {
       marketing: revenueMarketing ? { name: revenueMarketing.name } : null,
       coaching: { name: revenueCoaching.name },
     });
+    const refAdSpend = revenueMarketing ? computeInvestment({
+      marketing_name: revenueMarketing.name,
+      marketing_price_bundled: ref.lines.marketing?.charged ?? 0,
+      total_bundled: ref.total,
+      revenue_effective: effectiveRevenue,
+      practice_areas_detected: practiceAreas,
+    }, investmentInputs).ad_spend : null;
     revenueOnlyOption = {
       marketing_tier:          revenueMarketing?.tier ?? null,
       marketing_name:          revenueMarketing?.name ?? null,
@@ -986,16 +959,14 @@ export async function selectPackage(friendlyName) {
       coaching_name:           revenueCoaching.name,
       coaching_price_bundled:  ref.lines.coaching?.charged ?? null,
       coaching_price_retail:   ref.lines.coaching?.retail ?? null,
-      ad_spend_conservative:   revenueAdSpend?.conservative ?? null,
-      ad_spend_aggressive:     revenueAdSpend?.aggressive ?? null,
-      ad_spend_rationale:      revenueAdSpend?.rationale ?? null,
+      ad_spend_conservative:   refAdSpend?.conservative ?? null,
+      ad_spend_aggressive:     refAdSpend?.aggressive ?? null,
       total_bundled:           ref.total,
     };
   }
 
   let marketing = needsSellerInput ? null : revenueMarketing;
   if (needsSellerInput) coaching = null;
-  let adSpend = needsSellerInput ? null : revenueAdSpend;
   let lawLine = law;
 
   // A seller-set package in the trigger file replaces the selection, as long
@@ -1011,7 +982,6 @@ export async function selectPackage(friendlyName) {
     packageSource = 'trigger_override';
     focusNotes.unshift(`Package set by the seller: "${packageOverride}".`);
     marketing = o.marketing ? (MARKETING_TIERS.find(t => t.name === o.marketing) ?? { name: o.marketing, adCap: 20_000 }) : null;
-    adSpend = marketing ? estimateAdSpend(practiceAreas, marketing) : null;
     coaching = o.coaching ? { name: o.coaching } : null;
     lawLine = o.law ? { name: o.law, seats: o.seats } : null;
   }
@@ -1068,9 +1038,10 @@ export async function selectPackage(friendlyName) {
     total_bundled:           0,
     total_savings:           null,
 
-    ad_spend_conservative:   adSpend?.conservative ?? null,
-    ad_spend_aggressive:     adSpend?.aggressive ?? null,
-    ad_spend_rationale:      adSpend?.rationale ?? null,
+    // Set by applyInvestment() below (scripts/lib/investment.mjs).
+    ad_spend_conservative:   null,
+    ad_spend_aggressive:     null,
+    ad_spend_rationale:      null,
 
     selection_notes: notes,
   };
@@ -1078,6 +1049,10 @@ export async function selectPackage(friendlyName) {
   // Prices, bundle rule and totals (scripts/lib/pricing.mjs).
   notes.push(...applyPricing(decision));
   if (!revenueVerified) decision.confidence = 'low';
+
+  // Ad spend range, return projection and year-one total (deterministic).
+  const investment = applyInvestment(decision, investmentInputs);
+  const adSpend = investment.ad_spend;
 
   // 35% cap: management fees + ad spend must not exceed 35% of monthly revenue.
   const monthlyCap = Math.round(effectiveRevenue / 12 * 0.35);

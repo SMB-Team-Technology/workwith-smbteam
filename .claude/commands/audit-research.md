@@ -58,6 +58,12 @@ If no full transcript is provided and the trigger's `transcript` field is a Fath
 
 ---
 
+## NEVER FABRICATE
+
+Every firm is real. If the trigger URL doesn't resolve or is missing, find the firm's real website by search (firm name, owner, location) and record which URL you used and how you found it. Never invent or estimate research data to fill a field. When something can't be found or observed (a site, a score, a listing, an ad), write "not found" or "not observed" with what you tried, and add it to STEP 9B's "Seller should confirm on the next call" list so the seller can check it.
+
+---
+
 ## REVIEW-DATA VERIFICATION RULE
 
 Every Google review count and star rating recorded anywhere in this file (firm or competitor, in STEP 2, STEP 3, or STEP 4) must carry an explicit verification-method tag:
@@ -228,6 +234,21 @@ Extract from the discovery call transcript. Trust these values exactly as stated
 - Lead-gen gap stated: [yes/no — machine-read. "yes" only if the prospect said they want more leads/cases or asked about marketing, ads, SEO, or their website; the mere absence of marketing is not a "yes". Follow with a short exact quote]
 - Existing marketing/SEO/ad vendor engagements: [any recently signed or currently active contract with another marketing, SEO, ad, or AEO vendor — exact quote if available, or "none stated"]
 - Budget constraints stated: [any explicit statement about affordability, spend limits, or inability to commit to a larger monthly investment — exact quote if available, or "none stated"]
+
+Investment inputs — machine-read by scripts/lib/investment.mjs, which computes the deck's ad spend
+range and return in code. One value per line in the exact format shown, then a short source note
+(speaker + timestamp). Only what the CLIENT said on the call (or the seller said and the client
+confirmed); otherwise "not stated" — never an estimate or a benchmark.
+- Ad spend practice area: [exactly one of: MVA | Accident/Injury | Criminal Defense | Bankruptcy | Family Law | Estate Planning | Business Law | Immigration | Other — the practice area the paid ads would mainly target]
+- Geo market tier: [Tier 1–5 from the geo list in audit-write.md (NYC/LA/Chicago… = Tier 1; Miami/Boston/Phoenix… = Tier 2; Charlotte/Austin… = Tier 3; most mid-size cities = Tier 4; rural/small = Tier 5) — e.g. "Tier 4 (Salt Lake City metro)"]
+- Market competitiveness: [Low | Medium | High — from STEP 3–8 findings and the call, per the Scoping guide's competitiveness assessment]
+- Current monthly ad spend (stated): [one dollar figure, e.g. $25,000 — total paid ad spend a month today, excluding agency fees; "none" if they said they run no paid ads; else "not stated"]
+- Current cost per signed case (stated): [one dollar figure for paid ads — if several were given, the one covering the most spend, others in the source note; else "not stated"]
+- Current cost per lead (stated): [one dollar figure; else "not stated"]
+- Average case value (stated, one figure): [one dollar figure the client gave for their average case/fee; a range → its low end, noted as such; else "not stated"]
+- Close rate (stated): [N% — the client's stated consult-to-signed or lead-to-signed rate; else "not stated"]
+- Revenue goal (annual, one figure): [one dollar figure the client stated; else "not stated"]
+- Maximum monthly ad budget (stated): [one dollar figure the client said they can or will spend a month at most; else "not stated"]
 ```
 
 **Dominant buying motive:** Do not accept surface answers. "More money" and "more clients" are not DBMs. The real answer is what the money or growth will allow the owner to do personally — coach their kid's team, retire, take a vacation, stop missing weekends. If not clearly stated, infer from context. Most fall into: (1) firm that runs itself so they have more time, (2) grow and sell, (3) scale and dominate.
@@ -340,6 +361,8 @@ Before finishing, check every item. Fix anything unchecked before saving.
 - [ ] "Firm identity check" is filled in — a trigger name that is a person's name or a different firm than the website is marked MISMATCH
 - [ ] Existing marketing/SEO/ad vendor engagements are recorded (or "none stated")
 - [ ] Budget constraints stated by the prospect are recorded (or "none stated")
+- [ ] Every "Investment inputs" line is filled in the exact format (one figure or "not stated") — only figures the client stated, never estimates
+- [ ] Nothing in the notes was fabricated: anything not found is written as "not found"/"not observed" and listed for the seller in STEP 9B
 - [ ] STEP 9B is filled in: the headline KPI is a number actually said on the call (exact wording, speaker, timestamp) that the recommended product moves — or `KPI status: none usable` with a qualitative pain point
 - [ ] No STEP 9B figure was calculated, converted or estimated, and none is `UNCONFIRMED`
 - [ ] Every STEP 9B cause has its evidence source and a "Target basis" (call data, or `none — flag for seller`)
