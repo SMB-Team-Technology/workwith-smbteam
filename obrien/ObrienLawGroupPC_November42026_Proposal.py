@@ -46,26 +46,32 @@ import re
 # ═══════════════════════════════════════════════════════════════════
 
 # ── BUILD NOTES (internal — never shown on a slide) ──────────────
-# Marketing package: Full Service Marketing — Growth — charged $8,997/mo (stand-alone), stand-alone $8,997/mo, savings $0/mo
-# Non-marketing package(s): none (seller override on 2026-10-26 dropped Elite Coach Plus)
-# LAW package: none (seller override dropped AI Workforce Pro – Starter)
+# Marketing package: Full Service Marketing — Growth — charged $8,997/mo (stand-alone), bundled would be $7,497/mo, savings $0/mo
+# Non-marketing package(s): none (seller override — Elite Coach Plus dropped)
+# LAW package: none (seller override — AI Workforce Pro – Starter dropped)
 # Total monthly investment: $8,997/mo · total savings: $0/mo · pricing_mode: standalone (1 bundle-eligible product)
-# Ad spend: conservative $10,000 (channels: Google Search only — the MVA Google PPC minimum, per package_decision.json), aggressive $40,000 (file basis: 4x the conservative floor)
-#   35% cap check on stated gross $1.9M/yr ($158,333/mo, cap $55,417): conservative $18,997, aggressive $48,997 — within cap and within the $50,000 Growth ad-spend cap
-# ROI conservative: blended CPL $846 (Google Search midpoint $705 + 20% cushion) → 11.8 leads → 1.8 cases (close rate 15%, default) → $8,865 revenue → 0.9x
-# ROI aggressive:   blended CPL $445 (spend-weighted midpoints: Google 51% $705, LSA 10% $235, Meta retargeting 8% $90, Meta lead gen 31% $170; channel-minimum proportions, MVA) → 89.9 leads → 13.5 cases → $67,435 revenue → 1.7x
-# Case value: $5,000 (source: practice-area default, low end of the MVA/Accident-Injury range; client gave only a wide range — flagged as assumed)
-# Why this range: To win back high-intent car-accident searches in Orange County and Long Beach before the larger firms capture them.
-# Pillar review: Lead Gen red — referrals slowed, no paid ads ever run · Intake green — staff handle intake and screening, after-hours covered · Team amber — sole attorney with five staff, no gap stated · Profit amber — "we do great where we are financially", no margin figure
-# KPI (slide 1): Caseload — "about 60" — client, 00:21:00 (STEP 9B)
-# Diagnosis (slide 2): 1. No steady source of new cases — referrals slowed, never run paid ads — client, 00:09:43 / 00:11:45 · 2. Google lists the firm at a tax office — client 00:24:00, seen live by seller; generic "attorney" category, old firm name — 00:24:26 / 00:23:34 · 3. Website stopped in 2023 — footer "© 2023", client "Correct." 00:26:13; 7.5 s mobile load (local Lighthouse run, research STEP 1) · 4. Each case has to pay for itself — "around $3,000 each" seller 00:13:57, client "about right" 00:14:04; ~$5,000 fee on a minimum-limits case, client 00:14:20 (STEP 9B)
-# Targets (slides 2–3): new cases a month — at least 10 a month (your goal) — basis: client goal, 00:21:00 · causes 2, 3, 4 — none — seller note
+# Price lookup: Growth stand-alone $8,997 = decision file = guide tables; copied, not recomputed
+# Ad spend: conservative $10,000 (channel: Google Search only — MVA Google PPC min $10,000 = PI high-competitiveness floor),
+#   aggressive $40,000 (from package_decision.json; 20% rule below exceeds caps, so it is capped)
+#   20% rule: goal not stated -> 2x $1.9M = $3.8M x 20% / 12 = $63,333 x 1.5 (LA-area tier 1) x 1.5 (Spanish, PI) = $142,500 - $8,997 fee = $133,503
+#   Growth cap $50,000; 35% cap = $1.9M/12 x 35% = $55,417 -> headroom $46,420 after fee. Dominate not eligible (<$2M).
+#   $40,000 sits inside both caps ($8,997 + $40,000 = $48,997). Aggressive mix: Google 60% $24,000 / LSA 15% $6,000 / Meta lead gen 20% $8,000 / Meta retargeting 5% $2,000
+# ROI conservative: Google only, midpoint CPL $705 + 20% cushion = $846 -> 11.8 leads -> 1.8 cases (close rate 15%, default) -> $8,865 revenue -> 0.9x
+# ROI aggressive:   blended CPL $310 (midpoints $705/$235/$170/$90) -> 128.9 leads -> 19.3 cases (15%) -> $96,642 revenue -> 2.4x
+# Case value: $5,000 (assumed — low end of MVA default $5K-$10K; client said only wide range and "even if I get policy limits, it's five")
+# Why this range: to bring the injury calls back that referrals no longer send, starting in nearby cities like Anaheim
+# Pillar review: Lead Gen red — referrals slowed, never run paid ads · Intake green — staff run intake, after-hours covered · Team amber — one attorney, five staff · Profit amber — "do great where we are financially", no margin figure
+# KPI (slide 1): Caseload — "We're now only down to about 60" — client, 00:21:00 (STEP 9B); goal "at least 10 cases a month" — client, 00:21:00; "around $3,000 each" — seller 00:13:57, client "about right" 00:14:04
+# Diagnosis (slide 2): 1. No steady source of new cases — referrals slowed, never run paid ads — client, 00:09:43 / 00:11:45 · 2. Google profile at a tax office — client 00:24:00, seen live · 3. Website stopped in 2023 — research STEP 1, client "Correct." 00:26:13; mobile LCP 7.5 s local Lighthouse (not pagespeed.web.dev) · 4. Each case has to pay for itself — seller $3,000 each 00:13:57, client "I don't want to break even" 00:15:49
+# Targets (slides 2–3): new cases a month — at least 10 — basis: client goal 00:21:00 · all others — none, seller note
+# Catalog check: no call tracking / reporting deliverable exists in the catalog, so none is promised on any slide
 # What You Told Us (slide 6 panel + slide 1 quotes):
-#   1. More phone calls — transcript line: "more predictable leads, more phone calls coming in." (00:07:41) — supports: Full Service Marketing — Growth (paid media)
-#   2. Google listing — transcript line: "it says it's located in Todd Song Tax Consulting." (00:24:05) — supports: Full Service Marketing — Growth (GBP optimization, review generation)
-#   3. Showing up first — transcript line: "if I can show up number one in Anaheim as opposed to number 50 in L.A., then, yeah, I want to do number one in Anaheim" (00:36:16) — supports: Full Service Marketing — Growth (geo-targeted campaigns)
-# Overrides applied: seller override (package_source trigger_override / "Seller override" in selection_notes, 2026-10-26) — Full Service Marketing — Growth only; the four Transcript-Stated Need overrides do not apply. Contingency firm, gross $1.8–2M only (no net found): confidence "low" — tier built on gross as in the decision file.
-# Escalation flags: Revenue unverified (draft based on research_notes; rep-proposed, soft-confirmed, gross vs net not distinguished) — confirm collected revenue, a lower net could change the tier · Ad spend over $25K (aggressive $40,000) — scoping approval required · Personal Injury in top 40 metro (Los Angeles / Long Beach area) — approval required · Conservative ad spend is Google-only; the minimums for Google + LSA + Meta retargeting + Meta lead gen sum to $19,500 — paid ads team review · Conservative return is 0.9x on the assumed $5,000 case value — confirm real fee per case · Review counts unconfirmed — verify live before the call (none printed in the deck) · Call tracking and monthly reporting are not listed catalog deliverables — not promised in the deck, confirm with Sales before discussing
+#   1. Fewer calls — transcript line: "we're not getting the phone calls as much as we used to." (00:09:43) — supports: Full Service Marketing paid media
+#   2. Google profile — transcript line: "it says it's located in Todd Song Tax Consulting." (00:24:05) — supports: GBP optimization
+#   3. Proof of return — transcript line: "I just want to be in a position where I know that that's going to work out." (00:15:57) — supports: ad spend range and projected return on slide 6
+#   (slide 1 also uses the Anaheim line, 00:36:16)
+# Overrides applied: seller override per Slack 2026-10-26 (selection_notes) — Growth only; Elite Coach Plus and AI Workforce Pro – Starter dropped. Used as-is. Rule it breaks: default is marketing + a non-marketing package. Client was curious about AI (not pursued on the call). Transcript-need overrides n/a (call was marketing; no signed vendor; no budget cap; no net figure stated)
+# Escalation flags: confidence low — revenue $1.8–2M is gross, rep-proposed and soft-confirmed ("Yeah, we've done pretty well"); contingency firm, no net stated — if net is under $1M the tier would be Starter · Revenue unverified (draft based on research_notes) · Ad spend over $25K — scoping approval required · Personal injury in a top-40 metro (LA / Long Beach) — approval required · Revenue goal (10+ cases a month) exceeds conservative projection (1.8 cases) and conservative return is under 1x at the assumed case value — paid ads team review · Review counts unconfirmed — verify live before the call · Spanish campaign not priced into the range (client said "probably") — confirm · Trigger URL did not resolve; real site is kerryobrienlaw.com; firm name spelled O'Brien
 
 # Report metadata
 FIRM_NAME      = "O'Brien Law Group PC"
@@ -78,21 +84,21 @@ KPI_FOCUS = {
     "label": "Caseload",
     "headline": "We're now only down to about 60",
     "headline_is_quote": True,
-    "detail": "Down to about 60 cases. A caseload of around 200 to 300 would be \"awesome for us.\"",
-    "baseline": "About 60 open cases",
+    "detail": "You called a caseload of around 200 to 300 awesome for the firm. Today it is about 60.",
+    "baseline": "About 60 cases",
     "stats": [
         ("Your goal", "At least 10 cases a month"),
-        ("Per client, per the call", "Around $3,000 each"),
+        ("Cost per client discussed", "Around $3,000 each"),
     ],
 }
 
 PROSPECT_QUOTES = [
-    ("Phone calls", "We're not getting the phone calls as much as we used to.",
-     "Paid search, LSA and Meta campaigns aimed at new calls"),
-    ("Google listing", "It says it's located in Todd Song Tax Consulting.",
-     "GBP optimization fixes the listing, name and category"),
-    ("Local reach", "If I can show up number one in Anaheim as opposed to number 50 in L.A.",
-     "Campaigns aimed at nearby cities, starting with Anaheim"),
+    ("Fewer calls", "We're not getting the phone calls as much as we used to.",
+     "Google, LSA and Meta campaigns to bring calls back"),
+    ("Nearby cities", "I want to do number one in Anaheim",
+     "Campaigns aimed at Anaheim and nearby cities first"),
+    ("Proof of return", "I just want to be in a position where I know that that's going to work out.",
+     "Slide 6 shows the ad spend range and projected return"),
 ]
 
 # ── Slide 2 — The Diagnosis ───────────────────────────────────────
@@ -101,47 +107,53 @@ DIAGNOSIS_INTRO = "Four things keep new cases from coming in. Here's each one."
 
 DIAGNOSIS = [
     {"title": "No steady source of new cases", "metric": "", "metric_label": "",
-     "target": "10+ a month (your goal)",
-     "body": "Referrals have slowed and paid ads have never been run. Fewer calls are coming in than before.",
+     "target": "10 a month (your goal)",
+     "body": "Referrals have slowed and you haven't run paid ads. Fewer calls come in as old cases settle.",
      "source": "Discovery call, Oct 26"},
-    {"title": "Google lists you at a tax office", "metric": "", "metric_label": "",
+    {"title": "Google shows you at a tax office", "metric": "", "metric_label": "",
      "target": None,
-     "body": "The Google profile shows a tax consulting address, a generic \"attorney\" category and the old firm name.",
-     "source": "Seen live on the call, Oct 26"},
+     "body": "Your Google profile sits at a tax firm's address and says only 'attorney'. Injury clients may pass you by.",
+     "source": "Seen live on the call"},
     {"title": "The website stopped in 2023", "metric": "7.5 s", "metric_label": "mobile load, Lighthouse test",
      "target": None,
-     "body": "The footer says 2023 and the old firm name is still on it. Phones wait 7.5 s for the main content.",
-     "source": "Site review, Lighthouse test"},
-    {"title": "Each case has to pay for itself", "metric": "$3,000", "metric_label": "around, per client (seller, on call)",
+     "body": "The footer still reads 2023 and the old firm name shows. A slow mobile page can lose a caller.",
+     "source": "Lighthouse test, Oct 26"},
+    {"title": "Each case has to pay for itself", "metric": "Around $3,000", "metric_label": "per client, as discussed",
      "target": None,
-     "body": "On a minimum-limits case the fee is about $5,000. Each case has to cost well below that.",
-     "source": "Seller and client, on the call"},
+     "body": "You don't want to break even or lose money on ad spend. Each dollar should tie to a signed case.",
+     "source": "Seller, on the call"},
 ]
 
-DIAGNOSIS_FIX_LINE = "Slide 3 shows what we do about each one, using what the Growth plan includes."
+DIAGNOSIS_FIX_LINE = "Paid campaigns, a corrected Google profile and a new website bring in cases, at an agreed ad spend."
 
 # ── Slide 3 — The Plan ────────────────────────────────────────────
-PLAN_KICKER = "Paid media, Google profile and website"
-PLAN_TITLE  = "Bring New Cases Back In"
+PLAN_KICKER = "Paid media and website"
+PLAN_TITLE  = "Rebuild Your Caseload"
 
 PLAN = [
-    {"title": "Launch paid search and social", "fixes": 1,
-     "actions": ["Google Search and Local Service Ads", "Meta lead gen and retargeting campaigns",
-                 "Spanish-language campaigns"],
-     "metric": "New cases a month", "target": "At least 10 a month (your goal)"},
-    {"title": "Fix the Google Business Profile", "fixes": 2,
-     "actions": ["GBP optimization, name and category", "Done-For-You Review Generation"],
+    {"title": "Launch paid campaigns", "fixes": 1,
+     "actions": ["Google Search campaigns for injury searches",
+                 "Local Service Ads for pay-per-call leads",
+                 "Meta lead generation and retargeting"],
+     "metric": "New cases a month", "target": "10 a month (your goal)"},
+    {"title": "Fix your Google profile", "fixes": 2,
+     "actions": ["Correct the address and firm name on the profile",
+                 "Set the category to Personal Injury Attorney",
+                 "Up to 250 review requests a month from your list"],
      "metric": "Listing accuracy", "target": None},
     {"title": "Rebuild the website", "fixes": 3,
-     "actions": ["New website under the O'Brien Law Group name", "15,000 words of SEO content at launch",
-                 "12,000 more words of content each year"],
+     "actions": ["New mobile-friendly site under O'Brien Law Group",
+                 "15,000 words of SEO content at launch",
+                 "Import of up to 500 existing pages"],
      "metric": "Mobile load time", "target": None},
-    {"title": "Aim spend where cases cost less", "fixes": 4,
-     "actions": ["Campaigns aimed at nearby cities like Anaheim", "Spend split across Google, LSA and Meta"],
+    {"title": "Start in nearby cities", "fixes": 4,
+     "actions": ["Campaigns aimed at Anaheim and nearby cities first",
+                 "Channel mix set for injury and MVA cases",
+                 "Ad spend range agreed up front (see slide 6)"],
      "metric": "Cost per case", "target": None},
 ]
 
-PLAN_NOTE = "Also included: 4 premium backlinks a year, up to 500 pages of content import and 60 minutes of website edits a month."
+PLAN_NOTE = "60 minutes of website edits a month, 12,000 words of new SEO content a year and 4 premium backlinks a year."
 
 # ── Slide 4 — The Recommended Strategy ────────────────────────────
 STRATEGY_TITLE = "Two Pieces, One Strategy"
@@ -149,25 +161,28 @@ STRATEGY_TITLE = "Two Pieces, One Strategy"
 STRATEGY = [
     {"product": "Full Service Marketing — Growth", "title": "Get found",
      "channels": "Website · SEO · Google profile",
-     "deliverables": ["New website with 15,000 words of SEO content", "12,000 words of content each year after launch",
-                      "GBP optimization", "Done-For-You Review Generation", "4 premium backlinks a year"],
-     "why": "The site stopped in 2023 and Google lists the firm at a tax office."},
+     "deliverables": ["New website, 15,000 words of SEO content at launch",
+                      "12,000 words of new SEO content a year",
+                      "Google Business Profile optimization",
+                      "Done-For-You Review Generation (up to 250 a month)",
+                      "4 premium backlinks a year"],
+     "why": "Fixes the 2023 website and the Google profile that sends searchers to a tax office."},
     {"product": "Full Service Marketing — Growth", "title": "Get the call",
-     "channels": "Google · LSA · Meta",
-     "deliverables": ["Google Search campaigns", "Local Service Ads", "Meta lead gen and retargeting",
-                      "Spanish-language campaigns"],
-     "why": "The firm has never run paid ads and needs a steady flow of new cases."},
+     "channels": "Google Search · LSA · Meta ads",
+     "deliverables": ["Google Search campaigns for injury and MVA searches",
+                      "Local Service Ads (pay-per-call)",
+                      "Meta lead generation and retargeting campaigns",
+                      "Anaheim and nearby cities targeted first"],
+     "why": "Referrals have slowed and you haven't run paid ads. This is a steady source of new cases."},
 ]
 
 # ── Speaker notes for the seller (never shown on a slide) ─────────
 SELLER_NOTES = {
-    1: "Caseload is the number he gave: about 60 now, 200 to 300 would be 'awesome'. The 200-300 is his stated goal, not a past figure. "
-       "The $3,000 per client is YOUR figure; he said 'that's about right'. Confirm: how many new cases a month he signs today, what LegalMatch-type leads cost per signed case, "
-       "and the average fee on a typical MVA case (only a range was given). He said he can afford $30,000 a month if needed but wants to know it will work out - treat as a ceiling, not a commitment.",
-    2: "Causes 2-4 have no target: the call gave no number. He did not state a cost-per-case limit ('I don't want to break even paying $30,000'). Do not quote the Lighthouse score as an official PageSpeed score.",
-    6: "Charged at the stand-alone price (one bundle-eligible product, no bundle savings). Revenue is gross and rep-proposed - confirm collected revenue. "
-       "ROI uses an assumed $5,000 case value and a 15% close rate (neither stated); the conservative case is below 1x. Ad spend over $25K needs scoping approval, "
-       "and PI in this metro needs approval. Review counts are unconfirmed - verify live. Do not promise call tracking or reporting.",
+    1: "The caseload of about 60 and the goal of at least 10 cases a month are Kerry's own words. "
+       "The figure of around $3,000 per client came from the seller's math on the call, and Kerry said it was about right. "
+       "Ask how many new cases the firm signs in a month today.",
+    2: "Cause 4: around $3,000 per client is the figure discussed on the call, not a result the firm reported. "
+       "Ask what the lead services Kerry has used cost per signed case, and the average fee on a typical MVA case.",
 }
 
 # ── Slide 6 — Your Investment ─────────────────────────────────────
@@ -175,7 +190,7 @@ PACKAGES = [
     (
         "FULL SERVICE MARKETING — GROWTH",
         "$8,997", "stand-alone price",
-        "Website · SEO · Google Ads · LSA · Meta Ads · GBP profile",
+        "Website · SEO · Google Ads · LSA · Meta Ads · GBP",
         "0091C9",
     ),
 ]
@@ -184,25 +199,23 @@ BUNDLE_TOTAL   = "$8,997 / mo"
 BUNDLE_SAVINGS = "Stand-alone price (no bundle)"
 
 AD_SPEND_NOTE = (
-    "+ Recommended ad spend: $10,000–$40,000/mo paid directly to Google/Meta, "
-    "to win more car-accident calls in Orange County"
+    "+ Ad spend: $10,000–$40,000/mo paid to Google and Meta, to bring injury calls back"
 )
 
 AVG_CASE_VALUE     = "$5,000 (assumed)"
-CONSERVATIVE_LABEL = "Conservative (1.8 cases/mo):"
+CONSERVATIVE_LABEL = "Conservative  (1.8 cases/mo):"
 CONSERVATIVE_RESULT = "$8,865 revenue · 0.9× ROAS"
-AGGRESSIVE_LABEL   = "Aggressive (13.5 cases/mo):"
-AGGRESSIVE_RESULT  = "$67,435 revenue · 1.7× ROAS"
+AGGRESSIVE_LABEL   = "Aggressive  (19.3 cases/mo):"
+AGGRESSIVE_RESULT  = "$96,642 revenue · 2.4× ROAS"
 
 WHAT_YOU_TOLD_US = [
-    ("More phone calls", "Paid search, LSA and Meta campaigns"),
-    ("Google listing", "GBP optimization and review generation"),
-    ("Showing up first", "Campaigns aimed at Anaheim and nearby cities"),
+    ("Fewer calls", "Campaigns to bring the calls back"),
+    ("Google profile", "Profile fixed: address, firm name, category"),
+    ("Proof of return", "Ad spend range and projected return shown here"),
 ]
 
 CLOSING_QUOTE = (
-    '"A good caseload coming in, and 2027 off and running — instead of '
-    'wondering where all the clients are."'
+    '"A good caseload coming in, and coming into 2027, it\'s off and running."'
 )
 
 # ═══════════════════════════════════════════════════════════════════
@@ -609,6 +622,7 @@ def add_pill(slide, text, left, top, h, fill, color=WHITE, size=7.5, max_w=4.0):
 
 def add_strip(slide, lead, text, top, h=0.48, label=""):
     """White strip with an Ocean Blue edge: bold lead-in + one line of copy."""
+    text = re.sub(r"^\s*" + re.escape(lead.rstrip(":")) + r"\s*:?\s*", "", str(text), flags=re.I)
     add_rect(slide, 0.30, top, 9.40, h, fill=WHITE)
     add_rect(slide, 0.30, top, 0.05, h, fill=OCEAN_BLUE)
     add_rich_text(slide, [([(lead + " ", 9.5, True, False, NAVY),
@@ -702,7 +716,10 @@ def build_priorities(prs):
     add_text(slide, headline, x + 0.18, y + 0.64, w - 0.36, 1.40, 22, WHITE,
              bold=True, max_lines=3, min_size=14, anchor=MSO_ANCHOR.TOP,
              cap_label="KPI_FOCUS headline")
-    add_text(slide, KPI_FOCUS["detail"], x + 0.18, y + 2.08, w - 0.36, 0.74, 10.5,
+    # The detail line sits right under the headline, however many lines it took.
+    h_size, h_lines = fit_text(headline, w - 0.36, 1.40, 22, bold=True, max_lines=3, min_size=14)
+    used = (len(h_lines) * line_height(h_size, bold=True) + 2 * _INSET_Y) if h_lines else 1.40
+    add_text(slide, KPI_FOCUS["detail"], x + 0.18, y + 0.64 + used + 0.12, w - 0.36, 0.74, 10.5,
              NAVY_TEXT_SOFT, max_lines=3, min_size=8.5, cap_label="KPI_FOCUS detail")
     stats = [s for s in (KPI_FOCUS.get("stats") or [])[:2] if s and s[1]]
     if stats:
