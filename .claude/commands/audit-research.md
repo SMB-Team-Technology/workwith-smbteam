@@ -46,12 +46,12 @@ The discovery call transcript is ground truth. Before searching for any data poi
 The pipeline may hand you a full verbatim transcript file in addition to the trigger file's `transcript` field (which, when it starts with `SOURCE: Fathom`, is an AI summary). When the full transcript is provided:
 
 1. **It is the ground truth.** Read the whole file before STEP 9. Use the summary only as an overview; where they disagree, the full transcript wins.
-2. **Only the prospect's statements are facts.** Speakers tagged `[SMB Team]` are our reps. Their numbers are often hypotheticals or pitch math ("let's say $5,000 a month", "we've seen $2 million left on the table") — never record them as the firm's figures. Use a rep's number only when the prospect explicitly confirms it. Untagged speakers: work out from context who is who before trusting a figure.
+2. **Only the prospect's statements are facts.** Speakers tagged `[SMB Team]` are our reps. Their numbers are often hypotheticals or pitch math ("let's say $5,000 a month", "we've seen $2 million left on the table") — never record them as the firm's figures. Use a rep's number only when the prospect explicitly confirms it. (STEP 9B is the one exception: it may record a figure the seller stated on the call, labelled `seller`, for the deck's "discussed on the call" figures — never as the firm's own number.) Untagged speakers: work out from context who is who before trusting a figure.
 3. **Watch for transcription errors.** Speech-to-text garbles numbers and words (e.g. "$55,000" right after "$5,000", "illegible" for "eligible"). When a figure conflicts with what the speaker said just before or after, record the figure that fits the context and add `[transcript unclear — read as X]`. If you cannot tell, write `[transcript unclear]` and use the conservative reading.
 4. **Quotes are verbatim.** Copy the prospect's exact words for quote fields. You may drop filler and false starts ("um", "I mean, I —", repeated words) and mark cuts with "…", but never reword. Do not quote the rep as the client.
 5. **Use the client's own words for the DBM** whenever they said something quotable about what they want their life or firm to look like.
 6. **Record the source** at the top of STEP 9: `Transcript source: full verbatim Fathom transcript (summary used only as overview)`.
-7. **Capture the quotes Pass 2 will need.** `/audit-write` runs later without the transcript file, so it can only use what is in the research notes. At the end of STEP 9 add a `Key prospect quotes` list: 8–12 short verbatim prospect lines, each with its timestamp and a few words on the topic (intake, team, profit, lead sources, goals/DBM, budget, objections). Prefer lines about the firm's problems and goals over small talk.
+7. **Capture the quotes and numbers Pass 2 will need** (quotes here, numbers in STEP 9B). `/audit-write` runs later without the transcript file, so it can only use what is in the research notes. At the end of STEP 9 add a `Key prospect quotes` list: 8–12 short verbatim prospect lines, each with its timestamp and a few words on the topic (intake, team, profit, lead sources, goals/DBM, budget, objections). Prefer lines about the firm's problems and goals over small talk.
 8. **This repo is public.** Never copy the transcript file, or long passages of it, into the repo, research notes, or any committed file, and never print it. Short quotes in the fields STEP 9 asks for and the `Key prospect quotes` list are fine.
 
 If no full transcript is provided and the trigger's `transcript` field is a Fathom AI summary, note at the top of STEP 9 that quotes come from an AI summary, not the client's own words.
@@ -253,6 +253,51 @@ If a price range was quoted that spans several products (e.g. "coaching ~$2,400�
 
 ---
 
+## STEP 9B — KPI AND DIAGNOSIS (feeds deck slides 1–3)
+
+The deck makes its case in one line: **one number from the call → the causes behind that number → what we do about each cause → the products that do it.** `/audit-write` runs later without the transcript, so it can only build that argument from this block. Fill it right after STEP 9, from the full transcript, using the research above as evidence for the causes.
+
+**Data rules — non-negotiable:**
+- **Only numbers actually said on the call**, by the client or the seller, copied exactly as said (keep "about", "maybe", ranges). Record who said it, the timestamp and the verbatim line. A seller's number is labelled `seller` — it can be used as "the figure discussed on the call", never as the firm's own result (FULL TRANSCRIPT RULE 2 still applies to STEP 9's machine-read fields).
+- **Never compute, convert or estimate a KPI.** Do not divide spend by cases, annualize, or turn two figures into a ratio yourself. A derived figure (e.g. "that's 50%") is usable only if someone said it on the call.
+- **The numbers must support the recommendation.** Pick the KPI that the product the call points to (STEP 9 "Primary engagement" and "Products discussed on call") actually moves — not the most dramatic number in the transcript. Random figures that don't connect to a product do not go in this block.
+- Diagnosis evidence may be a call figure or a research observation from STEP 1–8 that was actually measured or seen (a PageSpeed/Lighthouse score, the site's copyright year, a GBP problem seen live on the call). Never an `UNCONFIRMED` figure, a "NOT OBSERVED" item, or a benchmark from a table.
+- **Targets only from call data**: a goal the client stated ("at least 10 cases a month"), or a benchmark the seller stated on the call. With nothing to base a target on, write `none — flag for seller`.
+- No usable KPI on the call → say so (`KPI status: none usable`), record the strongest qualitative pain point in the client's words instead, and list what the seller should ask for.
+- Only an AI summary, no verbatim transcript → figures may be recorded only when the summary clearly attributes them to the client, tagged `[AI summary — seller to confirm]`. No quotes (STEP 9 rule).
+
+**What to look for, by product focus** (look for every one; record only what was actually said):
+
+| Product focus | KPI to look for | Causes to look for |
+|---|---|---|
+| Marketing (Full Service, Paid Ads, Web + SEO, LSA) | cost per signed case or per client, cost per lead, new cases or leads a month, caseload, ad spend, share of cases from ads vs referrals | lead cost too high, too few visitors reach out (site speed, no CTA, conversion rate), dependence on one channel (ads carry every case, or referrals drying up), poor visibility (GBP problems, reviews, organic, AI search), tracking gaps (double counting, no call tracking, unknown source) |
+| Coaching (Elite Coach, Master's Circle, Coach Essentials) | owner hours a week, time off, close rate or consults-to-signed, revenue goal vs today | owner in every decision, no intake process or scripts, no KPIs or scorecard, hiring or accountability gaps |
+| FCOO | owner hours on operations, cases per staff member, turnover, capacity | no systems or SOPs, no leadership layer, owner as bottleneck |
+| FCFO / Bookkeeping | how far behind or inaccurate the books are, take-home vs revenue, margin, what not fixing it costs them (penalties, cash surprises, overpaid tax, decisions made blind) | books not reconciled, no budget or forecast, no visibility of cost per case or profit by practice area |
+| Legal AI Workforce / Fractional CTO | hours spent on admin, drafting or intake tasks, headcount they'd otherwise hire, response time | manual repetitive work, no AI tools in use, staff at capacity |
+| Attorney Assistant | missed calls, after-hours calls, response time | no after-hours coverage, slow follow-up |
+
+Record it in this format:
+
+```
+KPI AND DIAGNOSIS (STEP 9B)
+Product focus this supports: [primary engagement + the products it points to]
+Headline KPI: [name] — [exact figure as said] — said by [client | seller], [timestamp] — "[verbatim line]"
+  KPI status: [usable | none usable — qualitative pain point used]
+  Why this KPI: [one line: which product moves it and how]
+Supporting figures (0–3): [figure] — [client | seller], [timestamp] — "[verbatim line]"
+Client-stated goal for this KPI: [exact figure — "[verbatim line]" | none stated]
+KPI quotes (2–4, verbatim, client only): [timestamp] "[line]" [topic]
+Diagnosis (3–4 causes, biggest first):
+  1. [cause in plain words] — evidence: [exact figure or observation] — source: [call: speaker + timestamp | research: STEP N, how measured] — fixed by: [product + deliverable]
+     Target basis: [the call data a target rests on | none — flag for seller]
+  2. ...
+Alternate KPI (if the seller changes the package): [product → KPI and figure as said, or "none"]
+Seller should confirm on the next call: [missing or unclear numbers worth asking about, or "none"]
+```
+
+---
+
 ## STEP 10 — COMPETITIVE URGENCY SCORE
 
 Assign a score from 1 to 10 based on how aggressively local competitors are marketing compared to this firm.
@@ -295,6 +340,9 @@ Before finishing, check every item. Fix anything unchecked before saving.
 - [ ] "Firm identity check" is filled in — a trigger name that is a person's name or a different firm than the website is marked MISMATCH
 - [ ] Existing marketing/SEO/ad vendor engagements are recorded (or "none stated")
 - [ ] Budget constraints stated by the prospect are recorded (or "none stated")
+- [ ] STEP 9B is filled in: the headline KPI is a number actually said on the call (exact wording, speaker, timestamp) that the recommended product moves — or `KPI status: none usable` with a qualitative pain point
+- [ ] No STEP 9B figure was calculated, converted or estimated, and none is `UNCONFIRMED`
+- [ ] Every STEP 9B cause has its evidence source and a "Target basis" (call data, or `none — flag for seller`)
 
 ---
 
