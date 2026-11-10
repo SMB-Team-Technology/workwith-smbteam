@@ -13,8 +13,8 @@
   "team_size_effective": 5,
   "practice_areas_detected": [
     "estate planning (all trusts) — \"more than 95%",
-    "99% of my work is still planning\"",
-    "probate is \"still really small\" but sh",
+    "99% of my work is still planning\" (00:15:09)",
+    "probate is \"still really sm",
     "estate planning — intended keywords: \"estate planning attorney felton ca\", \"trust attorney santa cruz\", \"living trust lawyer santa cruz county\"",
     "probate — intended keywords: \"probate attorney santa cruz\", \"probate lawyer felton ca\", \"trust administration attorney santa cruz\"",
     "estate planning",
@@ -28,14 +28,15 @@
   ],
   "hubspot_company": null,
   "firm_identity_check": "matches (trigger \"Law Office of Michelle D Smith\"; website \"Law Office of Michelle D. Smith\", Felton CA; transcript prospect Michelle Smith, solo estate planning attorney in Felton)",
-  "package_source": "rules",
-  "package_override": null,
+  "package_source": "trigger_override",
+  "package_override": "Elite Coach",
   "needs_seller_input": false,
   "revenue_only_option": null,
   "call_focus": {
     "primary_engagement": "coaching/ops",
     "products_discussed": [
-      "AI Workforce Pro – Starter"
+      "AI Workforce Pro – Starter",
+      "Elite Coach"
     ],
     "lead_gen_gap": false
   },
@@ -50,7 +51,7 @@
   "coaching_savings": 0,
   "law_tier": null,
   "law_name": null,
-  "law_price_bundled": 1400,
+  "law_price_bundled": null,
   "law_price_retail": null,
   "law_seats": null,
   "total_bundled": 3497,
@@ -59,15 +60,34 @@
   "ad_spend_aggressive": null,
   "ad_spend_rationale": null,
   "selection_notes": [
+    "Package set by the seller: \"Elite Coach\".",
     "Coaching/ops-led call with no lead-gen need stated — marketing left out (call-purpose rule).",
     "AI Workforce Pro – Starter discussed on call: 4 seats × $350/mo.",
     "Team of 5 is over Starter's 4-user limit — consider AI Workforce Pro (5+ users).",
-    "Revenue $250K–$400K: Elite Coach selected.",
-    "Only one bundle-eligible product in this package — stand-alone pricing applied, no bundle savings.",
-    "AI Workforce Pro – Starter does not count toward bundle pricing.",
-    "Seller override: replaced package with two coaching options per Slack request on 2026-11-02 — Option 1: Elite Coach ($3,497/mo stand-alone) with free LSA management; Option 2: Coach Essentials Plus ($2,497/mo stand-alone) with free LSA management. AI Workforce Pro – Starter removed (not named). File holds Option 1; 'free LSA management' is a seller-stated perk, not a catalog item."
+    "Only one bundle-eligible product in this package — stand-alone pricing applied, no bundle savings."
   ],
   "pricing_mode": "standalone",
   "bundle_eligible_count": 1,
-  "unpriced_products": []
+  "unpriced_products": [],
+  "investment": {
+    "version": 1,
+    "products": [
+      {
+        "category": "coaching",
+        "name": "Elite Coach",
+        "charged": 3497,
+        "standalone": 3497
+      }
+    ],
+    "monthly_total": 3497,
+    "list_total": 3497,
+    "total_savings": 0,
+    "pricing_mode": "standalone",
+    "year_one_total": 41964,
+    "year_one_basis": "12 × $3,497/mo in fees. Ad spend is paid separately to Google and Meta.",
+    "ad_spend": null,
+    "return": null,
+    "inputs": {},
+    "flags": []
+  }
 }
