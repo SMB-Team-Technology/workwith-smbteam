@@ -1,48 +1,47 @@
 RESEARCH NOTES — KHK Family Law & Divorce Attorneys
 Friendly name: khk-family-law-divorce
-URL: http://khk.law
+URL: http://khk.law (resolves; trigger URL used as given)
 Sales rep: Michael Kopp
 Date: October 9, 2026
 Contact: Matthew Katz (Managing Partner) — katz@khk.law
-Transcript status: outcome=found, custody=machine, source=hubspot_notes (Fathom summary, 44 min)
+Transcript status: outcome=found, custody=machine, source=hubspot_notes (Fathom). Full verbatim Fathom transcript (recording dated 2026-10-07, 44 min) was also provided and read in full.
 
 RESEARCH LIMITATIONS (READ FIRST — /audit-write must honor these)
 This Pass 1 run had no interactive browser. Available tools: page fetch (summarized), web search, and a local headless Lighthouse run.
-- Google Maps/Search, Google Ads, Local Services Ads, the local 3-pack, and the Meta Ad Library could NOT be loaded (Google returned an empty shell; Meta connection failed).
-- Anything below marked "NOT OBSERVED" was not seen — it is NOT evidence the item does not exist.
-- No Google-confirmed review counts or ratings were obtained for the firm or for any competitor. Every review figure below is tagged UNCONFIRMED and must not be printed as a specific figure in the client-facing report.
-- PageSpeed desktop could not be run (see STEP 1). Do not print a desktop score.
+- Google Maps/Search, Google Ads, Local Services Ads, the local 3-pack, and the Meta Ad Library could NOT be loaded. Anything marked "NOT OBSERVED" was not seen — it is NOT evidence the item does not exist.
+- No Google-confirmed review counts or ratings were obtained for the firm or any competitor. Every review figure below is tagged UNCONFIRMED and must not be printed as a specific figure in the client-facing report.
+- The PageSpeed Insights API returned 429 (daily quota exceeded). Mobile score below is from a local Lighthouse run, NOT pagespeed.web.dev. Desktop could not be run. Do not print a desktop score.
 
 ======================================================================
 STEP 1 — WEBSITE RESEARCH
 ======================================================================
-- Website URL confirmed live: yes (khk.law resolves; fetched homepage, /about-us/, /about-us/testimonials/)
-- Last redesign date or estimated age: not directly observed. Footer copyright 2025. Firm formed via merger of the Kulek and Katz practices in late 2023 / early 2024 (per /about-us/); site appears built or rebuilt post-merger. A staging copy (benjamina431.sg-host.com) is indexed by Google.
-- Mobile responsive: not directly observed (no viewport test). Dual horizontal/vertical navigation menus suggest responsive design.
+- Website URL confirmed live: yes (khk.law returns HTTP 200; homepage, /about-us/, /about-us/testimonials/ fetched)
+- Last redesign date or estimated age: not directly observed. Footer reads "© 2025 KHK Family Law & Divorce Attorneys, LLC. Attorney Advertising." Firm formed by merging solo practices in late 2023 / early 2024 (per /about-us/); site appears built post-merger. A staging copy (benjamina431.sg-host.com) is indexed by Google.
+- Mobile responsive: viewport meta tag present (responsive design implemented); not tested on a device.
 - Homepage headline: "The wisdom of decades of family law experience. The strategy and business savvy of an MBA. The insight of a psychotherapist."
-- CTA above fold: yes — "Get A Free Evaluation" button (to contact page); phone (312) 702-0068 and "Se Habla Español" shown.
-- Contact form location: bottom of page (footer). Fields: first/last name, phone, email, service inquiry; SMS consent checkboxes; CAPTCHA. Also Calendly link for evaluations and a separate landing site consult.khk.law ("Divorce Lawyer").
-- Live chat present: not observed in fetched content.
-- Attorney bio present: yes — individual profile pages for all 7 attorneys.
+- CTA above fold: yes — "Get A Free Evaluation" button; phone (312) 702-0068 and "Se Habla Español" shown.
+- Contact form location: footer ("Get In Touch" section) — bottom of page, not above the fold. Also a Calendly link and a separate consult site (consult.khk.law).
+- Live chat present: no (not detected in fetched page).
+- Attorney bio present: yes — individual profile pages. Site lists 6 attorneys: Matthew A. Katz (Managing Partner), Gershon S. Kulek (Attorney Emeritus), Alexandra Brinkmeiers (Of Counsel), Moath Almasri, Vladimir Teletanski, LaKeya D. Washington. (Call: Katz counted seven attorneys.)
 - Video present: yes — "Our Videos" page (khk.law/our-videos/). Homepage video not confirmed.
-- Blog present: yes — recent posts dated October 2026 (high-net-worth divorce, tax consequences, stock options).
-- Other: English/Spanish toggle site-wide; geo landing pages exist (Bucktown, Gold Coast, Lincoln Park, Streeterville, West Loop, Evanston, Skokie, etc.); nine practice-area pages incl. LGBTQ+ divorce, gray divorce, military divorce, collaborative divorce.
+- Blog present: yes — latest post dated November 9, 2026 per page fetch (earlier fetch: October 2026 posts on high-net-worth divorce).
+- Other: English/Spanish toggle; geo landing pages for Chicago neighborhoods (Bucktown, Gold Coast, Lincoln Park, Oak Park, River North, South Loop, Streeterville, West Loop) and Evanston/Skokie, plus Cook County, DuPage and Lake County pages.
 
 PageSpeed:
-- pagespeed.web.dev UI did not finish rendering via fetch; the PageSpeed Insights API returned 429 quota exceeded on repeated attempts.
-- Substitute method: local Lighthouse (headless Chrome, mobile preset, simulated throttling) run on https://khk.law/ — NOT the pagespeed.web.dev tool itself; lab score may differ from PSI.
-- PageSpeed mobile score: 26 [Lighthouse lab run, not pagespeed.web.dev] (LCP 19.7 s, FCP 8.7 s, TBT 3,150 ms; server root-document response ~30 ms)
-- PageSpeed desktop score: NOT OBTAINED — three Lighthouse desktop attempts (including standard browser user-agent) all failed with HTTP 403 (site/WAF blocks that request profile). Do not estimate or print.
+- pagespeed.web.dev / PSI API: HTTP 429 quota exceeded — could not be used.
+- Substitute method: local Lighthouse (headless Chrome, mobile form factor, default simulated throttling) on https://khk.law/ — NOT the pagespeed.web.dev tool; lab score may differ from PSI.
+- PageSpeed mobile score: 14 [local Lighthouse lab run this pass — LCP 12.2 s, FCP 2.3 s, TBT 3,970 ms]. An earlier pass of this pipeline measured 26 the same way (LCP 19.7 s, TBT 3,150 ms). Both are very low; the exact number varies run to run. Safe wording: "scores in the 10s–20s on mobile in lab tests."
+- PageSpeed desktop score: NOT OBTAINED — desktop Lighthouse failed (Chrome interstitial / HTTP 403 on the desktop request profile in this and earlier attempts). Do not estimate or print.
 
 SAVE POINT 1 — website section complete.
 
 ======================================================================
 STEP 2 — GOOGLE BUSINESS PROFILE
 ======================================================================
-- GBP found: yes (reviews displayed on firm site are Google reviews; listing itself not opened — Google Maps would not load)
+- GBP found: yes (reviews on the firm site are Google reviews; the listing itself was not opened — Google Maps would not load)
 - Star rating: 5.0 [UNCONFIRMED — sourced from firm's own testimonials page and web-search summaries, not independently confirmed via Google]
-- Total review count: "over 70" [UNCONFIRMED — sourced from khk.law testimonials page/search summaries; a third-party aggregator (trustanalytica) lists 62, so the true figure is uncertain; not independently confirmed via Google]
-- Most recent review date: not confirmed. Firm's testimonial widget shows newest as "5 months ago" (Maritza V), then 6, 7, 8, 9 months — suggests review velocity has slowed (UNCONFIRMED — site widget, could be stale/cached).
+- Total review count: "over 70" [UNCONFIRMED — sourced from khk.law testimonials page/search summaries; third-party aggregator trustanalytica lists 62, so the true figure is uncertain; not independently confirmed via Google]
+- Most recent review date: not confirmed. Testimonials widget shows newest reviews from "6 months ago" to "1 year ago" [UNCONFIRMED — site widget, may be cached/stale]; suggests review velocity has slowed.
 - Primary category: not observed (aggregators list "Child Custody Lawyer"/"Divorce Law Firm" — unverified)
 - Photos active: not observed
 - Posts active: not observed
@@ -50,10 +49,10 @@ STEP 2 — GOOGLE BUSINESS PROFILE
 ======================================================================
 STEP 3 — LOCAL 3-PACK SEARCHES
 ======================================================================
-NOT OBSERVED for all searches. Google local results could not be loaded. No firm-appearance or pack-composition claims may be made.
+NOT OBSERVED for every search below (Google local results could not be loaded). No firm-appearance or pack-composition claims may be made.
 
 Practice Area 1: Divorce / family law
-- Search 1 "divorce lawyer Chicago": firm appears NOT OBSERVED — pack competitors NOT OBSERVED
+- Search 1 "divorce lawyer Chicago": NOT OBSERVED
 - Search 2 "family law attorney Chicago": NOT OBSERVED
 - Search 3 "divorce attorney Lincoln Park / Gold Coast / Evanston": NOT OBSERVED
 Practice Area 2: High-net-worth / contentious divorce
@@ -66,25 +65,25 @@ Practice Area 3: Child custody
 ======================================================================
 STEP 4 — COMPETITOR REVIEW COUNTS
 ======================================================================
-All figures come from web-search result summaries of firms' own sites / listing pages — none confirmed via Google. These named firms are Chicago-area family-law competitors that appear in organic results for divorce and high-net-worth divorce queries; whether they appear in the 3-pack or run ads was not observed.
-- Competitor 1: Merel Family Law — reviews: 357 in one source, 227 in another (sources conflict) [UNCONFIRMED — sourced from web-search summaries/firm-page copy, not independently confirmed via Google] — rating: 4.7 [UNCONFIRMED — same]
-- Competitor 2: Arami Law — reviews: 244 [UNCONFIRMED — sourced from firm-page copy/search summary, not confirmed via Google] — rating: 4.6 [UNCONFIRMED — same]
-- Competitor 3: STG Divorce Law — reviews: 173 [UNCONFIRMED — sourced from search summary, not confirmed via Google] — rating: not stated
-- Additional: Hurst, Kay, Allen & Stambler — 119 reviews, 5.0 [UNCONFIRMED — search summary]; Anderson Boback & Marshall — 114 reviews, 4.7 [UNCONFIRMED — search summary]
+All figures come from web-search result summaries of firms' own sites / listing pages — none confirmed via Google. These are named Chicago-area family-law firms that appear in organic results for divorce / high-net-worth divorce queries; whether they appear in the 3-pack or run ads was not observed.
+- Competitor 1: Merel Family Law — reviews: "over 300" (firm's own page copy; an earlier pass saw 357 and 227 in different sources — sources conflict) [UNCONFIRMED — sourced from firm page copy/search summaries, not independently confirmed via Google] — rating: "nearly perfect five-star" / 4.7 in an earlier source [UNCONFIRMED — same]
+- Competitor 2: Arami Law — reviews: 245 (earlier pass: 244) [UNCONFIRMED — sourced from firm-page copy/search summary, not confirmed via Google] — rating: 4.6 [UNCONFIRMED — same]
+- Competitor 3: STG Divorce Law — reviews: 173 "Google reviews" per a search summary (other aggregators show 62 on Birdeye and 231 ratings elsewhere — conflicting) [UNCONFIRMED — search summary, not confirmed via Google] — rating: 4.9 on Google per a summary, 4.8 on aggregators [UNCONFIRMED]
+- Additional (earlier pass): Hurst, Kay, Allen & Stambler — 119 reviews, 5.0 [UNCONFIRMED — search summary]; Anderson Boback & Marshall — 114 reviews, 4.7 [UNCONFIRMED — search summary]
 - NOT a threat on reviews: Katz & Stefani — 27 reviews, 4.6 [UNCONFIRMED] — fewer than KHK; never cite as outranking KHK on reviews.
-Caveat: if KHK truly has ~62–70+ reviews, it trails Merel, Arami, STG, HKAS, and ABM on count and leads only smaller firms. Confirm live before the report cites any comparison.
+Caveat: if KHK truly has ~62–70+ reviews, it trails Merel, Arami and STG on count. Confirm live before the report cites any comparison.
 
 ======================================================================
 STEP 5 — DIRECTORY LISTINGS
 ======================================================================
 - FindLaw: listed (lawyers.findlaw.com/illinois/chicago/5357921_1/); no reviews on listing.
-- Yelp: listing exists under the OLD firm name "Kulek, Hakimi, and Katz" — name inconsistency.
-- Facebook: page "Kulek, Hakimi, & Katz" (facebook.com/KHKlawfirm) — old name still in use.
-- Avvo: individual profile exists for Matthew Aaron Katz (60602); firm-level listing not checked.
-- Justia: not checked.
-- Other aggregators seen: trustanalytica (62 reviews listed), ReachAttorneys, wheree.com, dosfinds.us — all third-party; not verified.
-- NAP: phone (312) 702-0068; main office 166 W. Washington St., Suite 400, Chicago 60602; secondary 4433 W. Touhy Ave., Suite 405, Lincolnwood 60712. Name inconsistency (KHK vs. Kulek, Hakimi & Katz) across Yelp/Facebook is the main finding; full NAP audit not completed.
-- Geo-targeting landing pages: yes (Chicago neighborhoods + Evanston/Skokie). Transcript targets Cook, Lake, and DuPage counties; county-level pages for Lake/DuPage not confirmed.
+- Yelp: listing exists under the OLD firm name "KULEK, HAKIMI, & KATZ" (yelp.com/biz/kulek-hakimi-and-katz-chicago-2) — name inconsistency.
+- Facebook: page named "Kulek, Hakimi, & Katz" (facebook.com/KHKlawfirm) — old name still in use.
+- BBB: profile under "Kulek, Hakimi, & Katz". MapQuest: same old name at 166 W Washington St.
+- Avvo: individual profile exists for Matthew Aaron Katz; firm-level listing not checked. Justia: not checked.
+- Other aggregators seen: trustanalytica (62 reviews), ReachAttorneys, wheree.com, goodfirms, catalog.lawyer, lawyer.com — third-party; not verified.
+- NAP: phone (312) 702-0068; main office 166 W. Washington St., Suite 400, Chicago 60602; secondary 4433 W. Touhy Ave., Suite 405, Lincolnwood 60712 per firm site. One search summary of the old-name listings shows a different second address (2951 W Devon Ave, Chicago 60659) — a NAP inconsistency to confirm. Name inconsistency (KHK vs Kulek, Hakimi & Katz) across Yelp/Facebook/BBB/MapQuest is the main finding; full NAP audit not completed.
+- Geo-targeting landing pages: yes (Chicago neighborhoods, Evanston, Skokie, Oak Park; Cook County, DuPage County, Lake County pages listed).
 
 SAVE POINT 2 — GBP, local SEO, directory sections complete (with limitations above).
 
@@ -93,7 +92,7 @@ STEP 6 — GOOGLE ADS
 ======================================================================
 Google SERPs could not be loaded.
 Practice Area 1: Divorce / family law (Chicago)
-- Firm ads observed: not observed (not checked live) — per transcript the firm's marketing leans on LSA; whether search ads run right now is unknown.
+- Firm ads observed: not observed (not checked live) — per the call the firm runs LSA, Facebook and YouTube video ads; whether search ads run right now is unknown.
 - Named local competitors running ads: not observed
 Practice Area 2: High-net-worth divorce
 - Firm ads observed: not observed
@@ -105,7 +104,7 @@ Practice Area 3: Child custody
 ======================================================================
 STEP 7 — LOCAL SERVICE ADS
 ======================================================================
-- Firm appears in LSA: not observed (transcript indicates a focus on LSA ads — see Step 9)
+- Firm appears in LSA: not observed live. Prospect confirmed on the call that the firm runs LSA ("doing a lot of LSA ads", 00:17:23).
 - Google Screened: not observed
 - LSA review count: not observed
 - Named local competitors in LSA: not observed
@@ -113,69 +112,131 @@ STEP 7 — LOCAL SERVICE ADS
 ======================================================================
 STEP 8 — META ADS
 ======================================================================
-Meta Ad Library fetch failed (connection error).
-- Firm has active ads: not observed
+Meta Ad Library could not be loaded (earlier pass: connection error; not retried with a browser this pass).
+- Firm has active ads: not observed live. Prospect said on the call the firm runs "videos on Facebook and YouTube" (00:17:23).
 - Named local competitor 1/2: not observed
 
-SAVE POINT 3 — ads sections complete (all not observed; limitation documented).
+SAVE POINT 3 — ads sections complete (all not observed live; limitation documented).
 
 ======================================================================
-STEP 9 — TRANSCRIPT EXTRACTION (Fathom summary via HubSpot notes; machine custody)
+STEP 9 — TRANSCRIPT EXTRACTION
 ======================================================================
-- Practice areas confirmed: Family law / divorce; high-value cases (high-net-worth, contentious divorce) targeted in Cook, Lake, and DuPage counties
-- Current lead sources: Marketing "$5k–$10k/mo"; "Focus on LSA ads, not sophisticated targeting of high-value cases" (exact summary language)
-- Ads ever run: yes — LSA (Local Services Ads) emphasized; budget $5k–$10k/mo marketing spend; result ~20 signed cases/mo vs. 40/mo target
-- Team size: per site, 7 attorneys + 9 support staff (incl. in-house marketing coordinator, business manager). Transcript: Matthew Katz plans to move to CEO role; "top associate" to become 50% equity partner in 3 years.
-- Annual revenue (gross / case value): $700k (2025) → ">$2M (2026 est.)"
-- Annual revenue (net / take-home / collected): ~$300k net profit (~15%) — stated as "Profit: ~$300k (15% net)"
-- Fee structure: not stated
-- Revenue goal: $10M revenue with 20–30% net profit within 3 years
-- Average case value: not stated (strategy is to target high-value cases; no figure)
-- Current close rate: not stated — default to 15%
-- Number of locations: 2 per website (Chicago Loop; Lincolnwood); not mentioned on call
-- Spanish campaign needed: not stated on call; site already offers Spanish toggle and "Se Habla Español" — treat as no/unconfirmed
-- Dominant buying motive: Matthew Katz's mission to combat attorney burnout through his PhD research on vicarious trauma — "This growth is a vehicle for Matthew Katz's mission to combat attorney burnout"; plus stepping into a CEO role with a handover to a 50% equity partner. Category: a firm that runs itself (leadership transition) combined with scale.
-- Any profitability claims made by prospect: "Revenue is projected to grow from $700k (2025) to >$2M (2026), but net profit is only ~15% ($300k)"; "No profitability analysis by case type or individual attorney"; "P&L statements are not currently used for strategic decisions"; "No clear financial KPIs beyond basic billing expectations"
-- Any claims about case types or practice areas: "high-value cases (high-net-worth, contentious divorce) in Cook, Lake, and DuPage counties"; "fails to target high-value cases"
-- Stated call focus / product interest: Fractional CFO partnership for strategic growth and profitability (Meeting Purpose: "To explore a fractional CFO partnership"). Marketing was a second, material thread (scoping request to reverse-engineer budget for 40 signed cases/mo). NOT a standard marketing-only discovery call — finance/CFO is the lead topic, marketing is secondary but central.
+Transcript source: full verbatim Fathom transcript (summary used only as overview)
+Speaker note: "Atty Matthew Katz, M.S.W., M.B.A." = the prospect. Michael Kopp [SMB Team] = our rep. Rep figures (e.g. "15% or so", "20% conversion rate", "40 cases", "30% net / 20% marketing") are rep pitch math unless the prospect confirmed them.
+
+- Practice areas confirmed: Family law / divorce, including contentious divorce, high-net-worth divorce and child custody (00:16:21–00:16:33, 00:42:11). Previously did immigration law (00:15:14). Estate planning is referred out (00:42:39).
+- Current lead sources: "Our marketing efforts, hiring, important, well-placed hiring." (00:11:32); "We're doing all that stuff and doing a lot of LSA ads and videos on Facebook and YouTube and things like that." (00:17:23); "we're getting, you know, five, ten times as many leads from just this LSA" than from the social video work (00:18:20); on cases signed: "there's some, mainly marketing." (00:42:00). Referrals: asked whether anyone refers cases consistently — "No." (00:42:56)
+- Ads ever run: yes — LSA, Facebook and YouTube video ads through a marketing vendor they are leaving; spend "between five and ten a month" (00:19:21) [transcript unclear — read as $5,000–$10,000 a month; he first said "I'd rather not share that right now" (00:19:12)]; result "We're signing around 20" a month (00:18:56).
+- Firm identity check: matches (trigger "KHK Family Law & Divorce Attorneys" = khk.law = firm Matthew Katz runs; firm formed by merging solo practices — Katz: "since I bought the firm from my partners", 00:12:37, hence the older Kulek, Hakimi & Katz name still on Yelp/Facebook/BBB).
+- Team size: Attorneys — Katz: "There's four kind of full-time running caseloads and then there's like two that are sort of support attorneys… one's of counsel, one's a research attorney, and then there's me. So you could, I guess that's seven." (00:11:47–00:12:06). Staff named on call: a non-attorney new client specialist (intake), a marketing coordinator, a business manager, and a hire who partially owns finance. Website lists 6 attorneys + 8 staff. Plan: top associate becomes 50% equity partner in 3 years.
+- Team size (total headcount): 14
+  (website count — 6 attorneys + 8 staff; transcript gives 7 attorneys and no staff total; seller to confirm)
+- Annual revenue (gross / case value): "last year, I think, was $700,000 and this year will be well over $2 million at this rate." (00:11:21)
+- Annual revenue (net / take-home / collected): firm profit "maybe 300 grand" this year (00:12:14) — net profit of the firm, not owner take-home. The rep's "roughly 15% or so" was confirmed with "Right." (00:12:29).
+- Revenue (annual, best estimate): $2,000,000
+- Fee structure: retainer-based, paid up front, hourly-style billing against trust — "it's $5,000 for any type of contentious case… the minimum and it goes up from there based on like factors of complexity" (00:16:00–00:16:08), collected "all up front" (00:16:16); long cases mean "regular work and billing and refilling the trust" (00:16:33).
+- Revenue goal: "$10 million and, you know, with a net of 20%, 30%." in three years (00:31:00; "2029" framing by rep at 00:30:39)
+- Average case value: $5,000 minimum retainer for contentious cases, higher with complexity (00:16:00). No average fee stated. High-net-worth and custody cases "last almost for sure at least a year, if not two or three years" (00:16:33).
+- Current close rate: not stated — default to 15%. (Rep used 20% in scoping math at 00:20:05; that is pitch math, not the firm's rate.)
+- Number of locations: 2 — "Two offices." (00:11:03); plan to stay: "For now." (00:11:08)
+- Spanish campaign needed: no (not discussed on the call); site already has Spanish toggle and "Se Habla Español"
+- Dominant buying motive: "…the firm itself would be like the vehicle for that mission." (00:35:39) — to step back from day-to-day management, teach and write, and use the firm to fight attorney burnout: "I'm working on finishing my PhD and I want to mainly, you know, teach and write." (00:24:17); "So I need somebody to help do a lot of the management stuff" (00:25:02). Type (1): a firm that runs without him so he has time for his mission (PhD on vicarious trauma, teaching, CLE, a book).
+- Any profitability claims made by prospect: "maybe 300 grand" profit on "well over $2 million" (00:12:14, 00:11:21); "I don't know what last year's numbers are in terms of the percentage." (00:12:33); never broken down profitability by case type — "No." (00:14:46); high-net-worth and custody cases are more profitable: "Yeah, for sure." (00:16:32)
+- Any claims about case types or practice areas: "the targeting has been less than ideal, has been less than sophisticated." (00:17:00); marketing targets contentious, high-net-worth, custody cases; main counties "Cook, Lake, DuPage… But mainly, Cook is by far and only number one." (00:41:37–00:41:42)
+- Stated call focus / product interest: Call was framed as financial / FCFO ("Jake had mentioned that you were looking more so at the financial side of things with a potential FCFO interest" — rep, 00:08:23). Prospect also asked for a marketing proposal: "We're working on switching marketing firms right now. So… if you guys want to also put a proposal together on that front too, you could do that for us." (00:17:07). Rep proposed a Level 1 FCFO package (00:40:03) plus a marketing scope for 40 signed cases/month and a sample family-law financial roadmap (00:40:47–00:40:54). Prospect is also interviewing Law Firm Velocity for the same FCFO work (00:28:56–00:29:01).
 - Primary engagement: mixed
-- Products discussed on call: FCFO Advisor, Full Service Marketing (transcript: "Start with a Level 1 package and scale as needed" for the fractional CFO — mapping "Level 1" to the Advisor tier is an inference; tier not named by rep)
-- Lead-gen gap stated: yes — "Current marketing ($5k–$10k/mo) yields only ~20 signed cases, half the target of 40"
-- Existing marketing/SEO/ad vendor engagements: none stated (firm has an in-house marketing coordinator per website; whether an outside agency is engaged was not discussed)
-- Budget constraints stated: none stated
-- Systems: transitioning from QuickBooks to Practice Panther
-- Next steps/follow-up: Michael Kopp to prepare a sample family-law financial roadmap and a marketing scope with budget estimate for 40 signed cases/mo; follow-up meeting Friday Oct 9, 2026, 1:30 PM Central (matches proposal_call_date 2026-10-09T18:30:00Z).
+- Products discussed on call: FCFO, Full Service Marketing
+  (rep: "level one package" of FCFO — no tier name used; marketing scope across Google LSA/PPC/Map Pack, Meta retargeting, YouTube, ChatGPT ads — scope only, no price quoted)
+- Lead-gen gap stated: yes — "ideally, we would double." (00:18:56) and asked for a marketing proposal as he switches vendors.
+- Existing marketing/SEO/ad vendor engagements: current vendor with studio video production and social ads, being replaced — "We're working on switching marketing firms right now." (00:17:07); "they flew me out to the other side of the country to their studio" (00:17:48). No new vendor stated as signed. Also evaluating Law Firm Velocity (fractional CFO / accounting) as a competing provider for the finance work (00:28:56).
+- Budget constraints stated: none stated. (Reluctant to share ad spend at 00:19:12; no affordability statement.)
+
+Investment inputs
+- Ad spend practice area: Family Law
+- Geo market tier: Tier 1 (Chicago metro — Cook, Lake and DuPage counties)
+- Market competitiveness: Medium
+  (Tier 1 market, but competitor review counts seen are ~170–350 [UNCONFIRMED], not 500+, and ads/LSA were not observed live; rep also called $5–10K "fairly low in a major metropolitan area". Seller to confirm.)
+- Current monthly ad spend (stated): $5,000
+  (client, 00:19:21: "between five and ten a month" — read as thousands; low end of range recorded; unclear if it includes LSA)
+- Current cost per signed case (stated): not stated
+- Current cost per lead (stated): not stated
+- Average case value (stated, one figure): $5,000
+  (client, 00:16:00: minimum retainer on any contentious case, "goes up from there"; low end)
+- Close rate (stated): not stated
+- Revenue goal (annual, one figure): $10,000,000
+  (client, 00:31:00; three-year goal)
+- Maximum monthly ad budget (stated): not stated
+
+Key prospect quotes
+- [00:09:47] "We've been growing very fast, and I haven't had an opportunity to really buckle down and do what I've known for a while that I've needed to get done." — why finance now
+- [00:12:14] "Um, maybe 300 grand." — profit on the year (answer to "how profitable will you be at the end of this year on the two million")
+- [00:13:27] "I mean, have, like, billing expectations, but that's as sophisticated as it is right now." — staff accountability / KPIs
+- [00:14:46] "No." — never broken down profitability by case type
+- [00:17:00] "Yeah, but the targeting has been less than ideal, has been less than sophisticated." — marketing targeting
+- [00:17:07] "We're working on switching marketing firms right now." — vendor change
+- [00:18:56] "We're signing around 20, I think, ideally, we would double." — signed cases a month and goal
+- [00:22:55] "Yeah, we're not right now." — using P&Ls and books (answer to how they use them)
+- [00:23:19] "I think a business partner, like business consultant partner that like can just help me narrow in on what's working, what's not working, you know, staff wise, operationally…" — what he wants from a CFO partner
+- [00:24:17] "Because I'm working on finishing my PhD and I want to mainly, you know, teach and write." — goals / DBM
+- [00:31:00] "$10 million and, you know, with a net of 20%, 30%." — 3-year goal
+- [00:35:39] "So that's why I would keep the firm, you know, because the firm itself would be like the vehicle for that mission." — why he is growing the firm
+
+======================================================================
+STEP 9B — KPI AND DIAGNOSIS (feeds deck slides 1–3)
+======================================================================
+KPI AND DIAGNOSIS (STEP 9B)
+Product focus this supports: mixed — FCFO (Level 1 discussed) for profit visibility and case-type / attorney economics, plus a paid-ads scope (LSA / Google / Meta / YouTube) to lift signed cases from today's level
+Headline KPI: Net profit on this year's revenue — "maybe 300 grand" on "well over $2 million" — said by client, 00:12:14 / 00:11:21 — "Um, maybe 300 grand." / "this year will be well over $2 million at this rate."
+  KPI status: usable
+  Why this KPI: the FCFO engagement (profit by case type and attorney, cost and capacity planning) is what moves net profit; the 15% share was said by the rep and confirmed by the client ("Right.", 00:12:29)
+Supporting figures (0–3):
+  - Signed cases a month today — client, 00:18:56 — "We're signing around 20, I think, ideally, we would double."
+  - Ad spend a month — client, 00:19:21 — "between five and ten a month" [transcript unclear — read as thousands; seller to confirm]
+  - Revenue growth — client, 00:11:21 — "last year, I think, was $700,000 and this year will be well over $2 million at this rate."
+Client-stated goal for this KPI: "$10 million and, you know, with a net of 20%, 30%." (00:31:00, three years out)
+KPI quotes (2–4, verbatim, client only):
+  - [00:12:14] "Um, maybe 300 grand." profit
+  - [00:14:46] "No." — no profitability breakdown by case type
+  - [00:13:27] "I mean, have, like, billing expectations, but that's as sophisticated as it is right now." — staff KPIs
+  - [00:22:55] "Yeah, we're not right now." — P&Ls not used
+Client's why (verbatim, client only): [00:35:39] "So that's why I would keep the firm, you know, because the firm itself would be like the vehicle for that mission." and [00:24:17] "Because I'm working on finishing my PhD and I want to mainly, you know, teach and write." — a firm that runs without him so he can teach, write and carry his vicarious-trauma research to other lawyers
+Cost of inaction (verbatim, client only): none on the call (closest: [00:09:47] "We've been growing very fast, and I haven't had an opportunity to really buckle down and do what I've known for a while that I've needed to get done." — not a stated cost)
+Legacy Staircase discussed: no (not shown or mentioned on the call). Current stage: not placed; goal stage: not named.
+Diagnosis (3–4 causes, biggest first):
+  1. No view of profit by case type or by attorney — evidence: "No." to ever breaking down profitability by case type; "No, I don't know that yet." on what each attorney must produce — source: call, client, 00:14:46 and 00:13:25 — fixed by: FCFO — profitability by case type and by attorney, so spend and hiring go to the work that pays
+     Target basis: client goal of 20–30% net at $10M (00:31:00)
+  2. Financial reports not used for decisions, books mid-move — evidence: P&Ls "not right now"; "transitioning from QuickBooks to Practice Panther" — source: call, client, 00:22:55 and 00:13:38 — fixed by: FCFO — monthly P&L review, a clean reporting set-up in Practice Panther and an outside check on the numbers (he wants "an external auditor", 00:10:05)
+     Target basis: none — flag for seller
+  3. No staff accountability measures beyond billing — evidence: "billing expectations, but that's as sophisticated as it is right now" — source: call, client, 00:13:27 — fixed by: FCFO — a KPI scorecard per attorney and support role, labor-cost targets, hiring triggers
+     Target basis: none — flag for seller
+  4. Marketing is not targeted at the most valuable cases and falls short of the signing goal — evidence: "the targeting has been less than ideal, has been less than sophisticated"; signs "around 20", wants to double — source: call, client, 00:17:00 and 00:18:56 — fixed by: Paid ads scope — LSA / Google / Meta aimed at high-net-worth and contentious cases in Cook, Lake and DuPage, with spend tied to signed cases
+     Target basis: client goal to "double" the ~20 signed a month (00:18:56); the rep's 40-case figure was rep-stated at 00:19:36 and not set by the client
+Plan inputs:
+  - Fractional CTO / AI Workforce Pro: none stated
+  - FCOO / coaching: "a business partner, like business consultant partner that like can just help me narrow in on what's working, what's not working, you know, staff wise, operationally" (00:23:19) — not the focus of this call
+  - FCFO / bookkeeping: can't see profit by case type ("No.", 00:14:46); can't see what each attorney must bring in ("No, I don't know that yet.", 00:13:25); P&Ls not used ("Yeah, we're not right now.", 00:22:55); wants "an external auditor" even with an internal hire (00:10:05)
+Alternate KPI (if the seller changes the package): Marketing-only → signed cases a month, "We're signing around 20, I think, ideally, we would double." (client, 00:18:56)
+Seller should confirm on the next call:
+  - Exact current ad spend a month (said "between five and ten a month"; first declined to share) and whether it includes LSA and vendor fees
+  - Actual cost per lead and cost per signed case, and his real close rate (not stated)
+  - Total headcount (website lists 6 attorneys + 8 staff; he counted 7 attorneys)
+  - Whether the ~$300K is firm profit before or after owner pay, and last year's margin ("I don't know what last year's numbers are", 00:12:33)
+  - Real Google review count and rating (site says "over 70", an aggregator says 62), and the second office address (Lincolnwood vs a Devon Ave listing)
+  - Old-name listings (Yelp, Facebook, BBB, MapQuest still say Kulek, Hakimi & Katz)
+  - Whether the 40-signed-case target is his goal or only the vendor's/rep's figure (client only said "ideally, we would double")
+  - Law Firm Velocity is also bidding on the finance work — ask what he is comparing on and his decision timeline
+  - Mobile site speed is very slow in lab tests (Lighthouse 14 this pass, 26 earlier) — confirm with PageSpeed Insights before using it with the client
 
 ======================================================================
 STEP 10 — COMPETITIVE URGENCY SCORE
 ======================================================================
-Score: 6 (PROVISIONAL — based on search-result review-count data only; no live SERP/ads/LSA/Meta observation was possible)
-Competitor threats (named local firms, each UNCONFIRMED):
-1. Merel Family Law — 227–357 reviews at 4.7 (UNCONFIRMED), publishes a dedicated Chicago high-net-worth divorce page, 21 attorneys — directly in KHK's target segment.
-2. Arami Law — ~244 reviews at 4.6 (UNCONFIRMED), well above KHK's reported ~70.
-3. STG Divorce Law — ~173 reviews (UNCONFIRMED), downtown Chicago plus suburban offices; has a high-net-worth practice page.
-Supporting context from observation: mobile Lighthouse score 26 (slow site), old firm name on Yelp/Facebook, review velocity appears to have slowed (newest widget review "5 months ago", UNCONFIRMED).
-Dynamic sentence (score 4–6): "A score of 6 means competitors have meaningful advantages in one or more areas and are pulling ahead. You are not invisible yet — but the window to close the gap is narrowing. Every month without action is a month they extend their lead."
+Score: 5 — set conservatively because Google local results, ads and LSA could not be observed. Basis: a Tier 1 market where named family-law competitors show roughly 170–350 reviews [UNCONFIRMED] versus the firm's ~62–70+ [UNCONFIRMED]; the firm's mobile site is very slow (Lighthouse 14 / 26, local lab runs); an indexed staging copy of the site and old-name listings add local-SEO drag. Offsetting: strong geo-page and blog content on the firm site, and 20 signed cases a month already.
+Named local competitor threats:
+  1. Merel Family Law — "over 300" Google reviews per own page copy [UNCONFIRMED], publishes high-net-worth divorce pages for Chicago, North Shore and Park Ridge — directly targets the cases KHK wants.
+  2. Arami Law — about 245 reviews, 4.6 [UNCONFIRMED], positions on high-asset divorce for business owners in Cook County.
+  3. STG Divorce Law — about 173 reviews per one summary (conflicting aggregators) [UNCONFIRMED], offices in Chicago, Naperville, St. Charles and Park Ridge — covers the suburbs KHK wants (DuPage).
+Dynamic sentence: "A score of 5 means competitors have meaningful advantages in one or more areas and are pulling ahead. You are not invisible yet — but the window to close the gap is narrowing. Every month without action is a month they extend their lead."
 
-======================================================================
-PASS 2 — VERIFICATION CHECKLIST
-======================================================================
-[x] Every number matches observed data (mobile 26 = local Lighthouse; labeled as such)
-[~] Competitor review counts NOT verified live — all tagged UNCONFIRMED; KHK count (~70) not confirmed either, so no "dominating" claim is verified
-[x] Every review count/rating carries a verification tag
-[x] Revenue split gross vs. net recorded; fee structure "not stated"
-[~] Ad sections cover all practice areas, but all say "not observed" (tool limitation)
-[x] No "you are not running ads" statements
-[x] Profitability claims only from transcript
-[x] Competitors are specific named local firms
-[~] PageSpeed: mobile real (Lighthouse); desktop NOT OBTAINED — flagged
-[x] DBM recorded
-[x] Revenue goal recorded ($10M, 20–30% net, 3 years)
-[x] Close rate: not stated — default 15%
-[x] Average case value: not stated (noted)
-[x] Stated call focus recorded — CFO-led, not marketing-only
-[x] Primary engagement / Products / Lead-gen gap filled in exact format
-[x] Existing vendor engagements: none stated
-[x] Budget constraints: none stated
+SAVE POINT — final research notes.
 
-FOLLOW-UP NEEDED BEFORE /audit-write: a human with a real browser should confirm Google review counts/ratings (firm + competitors), 3-pack positions, Google/LSA/Meta ad presence, and PageSpeed desktop on pagespeed.web.dev.
+PASS 2 VERIFICATION CHECKLIST — reviewed: all review figures tagged; ad sections cover all three practice areas; no "not running ads" claim; no figure in STEP 9B computed; desktop PageSpeed and all live Google/ads items written as not obtained/not observed and listed for the seller.
