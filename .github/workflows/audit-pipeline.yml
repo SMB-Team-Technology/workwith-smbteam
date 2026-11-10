@@ -59,6 +59,7 @@ jobs:
           echo "package=$(jq -r '.package // empty' "$TRIGGER_FILE")" >> "$GITHUB_OUTPUT"
           echo "fathom_url=$(jq -r '.fathom_url // empty' "$TRIGGER_FILE")" >> "$GITHUB_OUTPUT"
           echo "test_chain_write=$(jq -r '.test_chain_write // false' "$TRIGGER_FILE")" >> "$GITHUB_OUTPUT"
+          echo "test_no_email=$(jq -r '.test_no_email // false' "$TRIGGER_FILE")" >> "$GITHUB_OUTPUT"
           echo "Branch: $BRANCH · test mode: $TEST_MODE"
 
       # -----------------------------------------------------------------------
@@ -522,6 +523,7 @@ jobs:
         env:
           GH_PAT: ${{ secrets.GH_PAT }}
           CHAIN: ${{ steps.inputs.outputs.test_chain_write }}
+          NO_EMAIL: ${{ steps.inputs.outputs.test_no_email }}
           FIRM_NAME: ${{ steps.inputs.outputs.firm_name }}
           FRIENDLY_NAME: ${{ steps.inputs.outputs.friendly_name }}
           SALES_REP: ${{ steps.inputs.outputs.sales_rep }}
@@ -538,8 +540,9 @@ jobs:
             mkdir -p triggers/audit-write
             jq -n --arg firm "$FIRM_NAME" --arg slug "$FRIENDLY_NAME" --arg rep "$SALES_REP" \
                   --arg date "$DATE" --arg sp "$SUPPRESS_PRICING" --arg run "${{ github.run_id }}" \
+                  --argjson noemail "$([ "$NO_EMAIL" = "true" ] && echo true || echo false)" \
               '{firm_name: $firm, friendly_name: $slug, sales_rep: $rep, date: $date,
-                with_pptx: true, suppress_pricing: $sp,
+                with_pptx: true, suppress_pricing: $sp, test_no_email: $noemail,
                 _test: ("chained from research test run " + $run)}' \
               > "triggers/audit-write/$FRIENDLY_NAME.json"
             git add "triggers/audit-write/$FRIENDLY_NAME.json"

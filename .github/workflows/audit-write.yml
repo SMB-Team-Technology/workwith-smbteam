@@ -6,7 +6,8 @@ name: Audit Write (Pass 2 — proposal deck)
 #
 # TEST MODE — any run from an audit-test/** branch:
 #   - checks out and pushes only to that branch, never main
-#   - emails only carolyn.webb@smbteam.com (no CC), subject prefixed [TEST]
+#   - emails only carolyn.webb@smbteam.com (no CC), subject prefixed [TEST] —
+#     or no email at all when the trigger has "test_no_email": true
 #   - skips the HubSpot contact write and every Slack post
 #   - skips the HubSpot file upload too, unless the trigger has
 #     "test_upload": true — then the deck goes to the separate
@@ -67,6 +68,7 @@ jobs:
           echo "slack_channel=$(jq -r '.slack_channel // empty' "$TRIGGER_FILE")"          >> "$GITHUB_OUTPUT"
           echo "slack_thread_ts=$(jq -r '.slack_thread_ts // empty' "$TRIGGER_FILE")"      >> "$GITHUB_OUTPUT"
           echo "test_upload=$(jq -r '.test_upload // false' "$TRIGGER_FILE")"             >> "$GITHUB_OUTPUT"
+          echo "test_no_email=$(jq -r '.test_no_email // false' "$TRIGGER_FILE")"         >> "$GITHUB_OUTPUT"
 
       - name: Configure git
         run: |
@@ -213,7 +215,7 @@ jobs:
           fi
 
       - name: Email closer with the deck
-        if: steps.verify.outputs.write_verified == 'true' && (steps.inputs.outputs.sales_rep_email != '' || env.TEST_MODE == 'true')
+        if: steps.verify.outputs.write_verified == 'true' && (steps.inputs.outputs.sales_rep_email != '' || env.TEST_MODE == 'true') && !(env.TEST_MODE == 'true' && steps.inputs.outputs.test_no_email == 'true')
         continue-on-error: true
         env:
           GMAIL_USER: ${{ secrets.GMAIL_USER }}
