@@ -186,8 +186,12 @@ jobs:
 
             $TRANSCRIPT_NOTE
 
-            If the URL resolves, browse it live. If not (fictional/test firm), fabricate
-            realistic research data for all steps. Do not leave any section blank.
+            This is a real firm. If the URL doesn't resolve or is missing, find the
+            firm's real website by search (firm name, owner, location) and use it. Never
+            fabricate research data: anything you can't find or observe is written as
+            'not found' or 'not observed' and listed under 'Seller should confirm on the next
+            call' in STEP 9B, so the seller can check it. Never leave a section blank — say
+            what was tried.
 
             Read \`.claude/commands/audit-research.md\` in full and execute every step in
             order. Save progress after each major section. Commit the research notes file

@@ -8,6 +8,10 @@
  * (stand-alone prices when fewer than 2 bundle-eligible products remain).
  * audit-write.yml also runs it before Pass 2 builds the deck.
  *
+ * It also recomputes `investment` (ad spend range, return projection,
+ * year-one total — scripts/lib/investment.mjs) from the package and the
+ * research notes' investment inputs, so the deck never shows stale numbers.
+ *
  * Usage:
  *   node scripts/reprice.mjs <friendly-name>                   re-price only
  *   node scripts/reprice.mjs <friendly-name> --revenue 300000  also record seller-confirmed revenue
@@ -19,6 +23,8 @@
 import { readFileSync, writeFileSync, existsSync } from 'fs';
 import { join } from 'path';
 import { applyPricing } from './lib/pricing.mjs';
+import { applyInvestment, parseInvestmentInputs } from './lib/investment.mjs';
+import { newestResearchNotes } from './select-package.mjs';
 
 const args = process.argv.slice(2);
 const friendlyName = args.find(a => !a.startsWith('--'));
@@ -60,6 +66,12 @@ if (anyProduct) {
   }
 }
 
+if (anyProduct) {
+  const notesFile = newestResearchNotes(friendlyName);
+  const inputs = notesFile ? parseInvestmentInputs(readFileSync(join(friendlyName, notesFile), 'utf8')) : {};
+  applyInvestment(decision, inputs);
+}
+
 writeFileSync(path, JSON.stringify(decision, null, 2));
 
 console.log(JSON.stringify({
@@ -71,4 +83,8 @@ console.log(JSON.stringify({
   savings: decision.total_savings,
   unpriced_products: decision.unpriced_products ?? [],
   needs_revenue_confirmation: !!decision.needs_revenue_confirmation,
+  ad_spend: decision.investment?.ad_spend
+    ? { conservative: decision.investment.ad_spend.conservative, aggressive: decision.investment.ad_spend.aggressive }
+    : null,
+  year_one_total: decision.investment?.year_one_total ?? null,
 }, null, 2));

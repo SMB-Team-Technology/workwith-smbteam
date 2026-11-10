@@ -1,6 +1,6 @@
 # SMB Team — Audit Write (Pass 2): Build the Proposal Deck
 
-Build the 3-slide proposal PowerPoint for a firm and commit it. Run this after `/audit-research` completes. This pass used to build the "Growth, Profit & Freedom Roadmap" website and the Sales Companion PDF; both are retired. The deck is now the only output, and it is built from the same inputs the website was.
+Build the 5-slide proposal PowerPoint for a firm and commit it. Run this after `/audit-research` completes. This pass used to build the "Growth, Profit & Freedom Roadmap" website and the Sales Companion PDF; both are retired. The deck is now the only output, and it is built from the same inputs the website was.
 
 ## How to invoke
 
@@ -19,7 +19,7 @@ Date: [same date used in /audit-research — Month DD, YYYY]
 ## BEFORE STARTING
 
 Read these files. They are the only inputs — no new research:
-1. `[friendly-name]/[FirmName]_[Date]_Research_Notes.txt` — all firm data comes from here: the web research, the transcript extraction (STEP 9) and the `Key prospect quotes` list. Trust it.
+1. `[friendly-name]/[FirmName]_[Date]_Research_Notes.txt` — all firm data comes from here: the web research, the transcript extraction (STEP 9), the KPI AND DIAGNOSIS block (STEP 9B — the source for every number on slides 1–3) and the `Key prospect quotes` list. Trust it. Older notes have no STEP 9B: then use only figures STEP 9 records as said on the call, and if none fits the recommendation, build slide 1 as a qualitative pain point with a seller note (audit-pptx.md DATA RULES).
 2. `[friendly-name]/package_decision.json` — the package, prices, ad-spend starting points and seller overrides (see STEP 1). It may be absent (see STEP 1).
 3. `.claude/commands/audit-pptx.md` — what each slide field holds and the rules for filling it.
 
@@ -38,26 +38,15 @@ Do not read anything under `[friendly-name]/sections/`, `[friendly-name]/index.h
 - Never mention live chat as an SMB Team service.
 - Never mention CRM setup as an SMB Team deliverable.
 - Never state profitability facts by practice area unless the prospect explicitly said so on the call.
-- Escalation flags are internal only — they go in the BUILD NOTES block (STEP 2), never in a slide field.
+- Escalation flags are internal only — they go in the BUILD NOTES block (STEP 2), never in a slide field and never in `SELLER_NOTES`. The deck's speaker notes are always empty; `SELLER_NOTES` (call prep and deal context, keyed by slide name) goes to the seller prep file the pipeline emails and posts in Slack (see audit-pptx.md).
+- Every number on the story slides (everything before the investment slide) was said on the call (client or seller) or measured in research, copied exactly — never invented or estimated, and every target rests on call data or is left `None` (DATA RULES in `audit-pptx.md`).
 - **Never print a review count or star rating (firm or competitor) tagged `UNCONFIRMED` in the research notes as a specific fact.** Use qualitative framing instead (e.g., "far fewer reviews than several competitors in this market" rather than an exact number), and add "Review counts unconfirmed — verify live before the call" to the escalation flags in the BUILD NOTES. Only a number tagged `[confirmed via Google]` in the research notes may appear as a specific figure in the deck.
-
----
-
-## FIRM STAGE
-
-Determine stage from the transcript. Assign the lower stage if on the border. The current and goal stage go in `STAGE_TEXT` on slide 1 (the layout engine draws the staircase from the stage numbers).
-
-- **Stage 2 — The Lawyer:** Employed at another firm, no independent client base.
-- **Stage 3 — Solo Practitioner:** Referrals only, handles casework and intake personally, very small or no team, profit unpredictable.
-- **Stage 4 — Small Business Manager:** Has at least one scalable lead gen system, small team, still heavily involved in operations.
-- **Stage 5 — Law Firm CEO:** Multiple lead gen systems, trained intake team, leadership structure, can take time off.
-- **Stage 6 — Law Firm Owner:** Firm runs without owner, CEO/COO in place, omnipresent marketing, profit predictable.
 
 ---
 
 ## TRAFFIC LIGHT CRITERIA
 
-Rate each pillar red / amber / green from the transcript and research notes. These ratings are not shown on any slide — use them to rank the pillars when choosing `KEY_GAPS` (the reddest pillars first) and the What You Told Us items:
+Rate each pillar red / amber / green from the transcript and research notes. These ratings are not shown on any slide — use them to rank the What You Told Us items and to sanity-check that the slide 2 diagnosis covers the reddest pillar the recommendation addresses:
 
 **Lead Generation** — Red: referrals only, no system, inconsistent flow. Amber: some paid ads or SEO, inconsistent results. Green: multiple reliable systems running.
 
@@ -86,7 +75,7 @@ Apply all package eligibility and calculation logic in this step and the tables 
 1. **Call-purpose override.** If the transcript or research notes state the discovery call's actual subject was something other than standard marketing/intake growth (e.g., explicitly framed as a Fractional CTO / AI automation engagement, an operations/coaching engagement, etc.), lead the recommendation with that stated category. Do not default to Full Service Marketing just because revenue qualifies for a tier — the firm did not ask about marketing. Check the LAW package table and the non-marketing package table first; only add a marketing package if the transcript shows an actual marketing/lead-gen gap alongside the stated need.
 2. **Existing-vendor override.** If the transcript states the firm has recently signed with, or is already paying, another marketing/SEO/ad/AEO vendor (an active or recent contract), exclude Full Service Marketing — every tier and every sub-package — from the recommendation entirely. A firm that just committed to a marketing engagement does not have a marketing gap; recommending one anyway ignores the client's actual, stated situation. Recommend the package(s) that match what the transcript says the firm still needs instead (coaching, ops, AI/FCTO, etc.).
 3. **Budget-reality override.** If the transcript or notes state, or strongly imply, that the client cannot afford or is not positioned to spend at the tier the revenue table implies (budget concerns, an explicit statement of financial limits, a stated preference for a smaller engagement), do not present the revenue-implied tier. Lead with the lowest-cost package that still addresses the transcript's stated need, and document the gap between the revenue table's suggestion and what you actually recommended in the BUILD NOTES (STEP 2) so sales can see the override was intentional.
-4. **Effective-revenue override.** If the research notes state a net/take-home/collected revenue figure distinct from a gross/case-value figure (common for contingency-fee practices — e.g. "$1.5–2M gross / ~$500k net"), tier and calculate against the **net** figure, not gross, regardless of what `revenue_effective` in `package_decision.json` says. `select-package.mjs` applies this automatically when both figures are parseable (check `net_revenue_stated` and `is_contingency_practice` in the decision file), but if the notes state a net figure the script's regex missed, apply it by hand and document the correction — including the recomputed 35%-cap check and ad-spend range — in the BUILD NOTES (STEP 2).
+4. **Effective-revenue override.** If the research notes state a net/take-home/collected revenue figure distinct from a gross/case-value figure (common for contingency-fee practices — e.g. "$1.5–2M gross / ~$500k net"), tier and calculate against the **net** figure, not gross, regardless of what `revenue_effective` in `package_decision.json` says. `select-package.mjs` applies this automatically when both figures are parseable (check `net_revenue_stated` and `is_contingency_practice` in the decision file), but if the notes state a net figure the script's regex missed, run `node scripts/reprice.mjs [friendly-name] --revenue <net annual figure>` (it recomputes the ad spend range and return) and document the correction — including the 35%-cap check — in the BUILD NOTES (STEP 2).
 
 None of these four checks are about recomputing a price in isolation — they are about whether the *category* and *scale* of product being proposed matches what actually happened on the call. Do this check even when `package_decision.json` says `confidence: "high"`.
 
@@ -145,14 +134,21 @@ Do the calculations that used to go in the retired `section_11_workings.txt` her
 # Non-marketing package(s): ...
 # LAW package: ... (or "none")
 # Total monthly investment: $X,XXX/mo · total savings: $X,XXX/mo · pricing_mode: bundled|standalone
-# Ad spend: conservative $X,XXX (channels: ...), aggressive $X,XXX (20% rule / reverse math: ...)
-# ROI conservative: blended CPL $X → N leads → N cases (close rate X%) → $X revenue → X.X×
-# ROI aggressive:   blended CPL $X → N leads → N cases → $X revenue → X.X×
-# Case value: $X (source: transcript / practice-area default)
+# Year one: $X (from package_decision.json → investment.year_one_total)
+# Ad spend (copied from investment.ad_spend — computed in code, never by hand):
+#   $X,XXX–$XX,XXX/mo · low end: <conservative_basis> · high end: <aggressive_steps joined>
+# Return (copied from investment.return): <method> · <basis> · scenarios: $X → N cases → $X → X.X× …
+# Investment inputs used: <investment.inputs, with each source> · flags: <investment.flags>
 # Why this range: <the client-facing sentence>
-# Stage: current Stage N (<why>) → goal Stage 6, Law Firm Owner
 # Pillar review: Lead Gen <red|amber|green> — <biggest gap> · Intake … · Team … · Profit …
-# What You Told Us (slide 3 panel + slide 1 quotes):
+# KPI (slide 1): <label> — "<figure exactly as said>" — <client|seller>, <timestamp> (STEP 9B) — or "none usable: qualitative"
+# Diagnosis (slide 2): 1. <cause> — <evidence> — <source> · 2. … (STEP 9B)
+# Targets (slides 2–3): <metric> — <target> — basis: <call data> · or "none — seller note"
+# Client's why / cost of inaction (slide 1): "<verbatim>" — <Full Name (client), timestamp> (STEP 9B) · or "none on the call"
+# Closing quote (slide 5): "<verbatim>" — <Full Name (client), timestamp> · or "none — no unused verbatim line"
+# Legacy Staircase slide: <included — current N / goal N, as discussed (STEP 9B) | left out — not walked through on the call>
+# Plan (slide 3): each action — <action> — tied to: "<client line or STEP 9B plan input>"
+# What You Told Us (slide 1 quotes and tie lines):
 #   1. <label> — transcript line: "<verbatim line from the research notes>" — supports: <package>
 #   2. ...
 #   3. ...
@@ -164,19 +160,19 @@ Contents — the same items the old workings file held:
 - Selected marketing package name, bundled price, stand-alone price, savings
 - Selected non-marketing package(s) name, bundled price, stand-alone price, savings
 - Total monthly investment (sum of bundled prices) and total savings
-- Conservative and aggressive ad spend, each with the full ROI projection (leads, cases, revenue, return multiple) — only if a marketing/ads package is part of the recommendation. Use the AD SPEND CALCULATION and ROI PROJECTIONS rules below.
-- If a marketing/ads package is part of the recommendation: the one plain-English "why this range" sentence (rules under AD SPEND CALCULATION). It feeds `AD_SPEND_NOTE`.
+- Year-one total, ad spend range and return projection — copied from `package_decision.json` → `investment`, which `scripts/reprice.mjs` computes in code from the AD SPEND CALCULATION and ROI PROJECTIONS rules below and the research notes' investment inputs. Never recalculate, round or adjust them. If `investment` is missing, run `node scripts/reprice.mjs [friendly-name]`. Copy `investment.flags` into the escalation flags.
+- If a paid-ads package is part of the recommendation: the one plain-English "why this range" sentence (rules under AD SPEND CALCULATION). It feeds `AD_SPEND_WHY`.
 - DBM statement
-- Stage: current stage (FIRM STAGE rules) and goal (always Stage 6, Law Firm Owner)
-- Pillar review — replaces the website's Sections 5–9: for each of Lead Generation, Intake, Team and Profit, the traffic-light rating and the single biggest gap the research notes show, one line each. `KEY_GAPS` are chosen from these four lines.
-- What You Told Us: the 3 items selected (rules under WHAT YOU TOLD US below), each with the verbatim line from the research notes it comes from (or, with no transcript, the research finding for What We Found) and the package/deliverable it supports
+- Pillar review — replaces the website's Sections 5–9: for each of Lead Generation, Intake, Team and Profit, the traffic-light rating and the single biggest gap the research notes show, one line each.
+- KPI, diagnosis and targets for slides 1–3, each with its STEP 9B source line (or research step), so every number on those slides can be traced
+- What You Told Us: the slide 1 quotes selected (rules under WHAT YOU TOLD US below), each with the verbatim line from the research notes it comes from and the package/deliverable it supports
 - Which override (if any) changed the decision file's package, any "Revenue unverified (draft based on <revenue_source>)" note, and every escalation flag that applies
 
 These notes stay in the `.py` as the record of what went into the deck. They are comments above the layout engine, so the layout diff check is unaffected. The repo is public: keep transcript lines short, exactly as they already appear in the research notes, and never add anything from outside the research notes.
 
 ## STEP 3 — BUILD THE DECK
 
-Follow `.claude/commands/audit-pptx.md` to fill every slide field from the research notes, `package_decision.json` and your STEP 2 workings, then run the script and check its output. Every price, the ad spend range and the ROI figures on slide 3 must match the BUILD NOTES exactly.
+Follow `.claude/commands/audit-pptx.md` to fill every slide field from the research notes, `package_decision.json` and your STEP 2 workings, then run the script and check its output. The investment slide (slide 5) reads every price, total, ad spend and return figure from `package_decision.json` itself, and every number on slides 1–3 must match its STEP 9B source.
 
 ---
 
@@ -247,7 +243,7 @@ Note: the Paid-Ads-only sub-package for Starter has a lower cap of $20,000 — $
 | Web + SEO Dominate | $6,997/mo | $7,997/mo |
 | Web + SEO Platinum | $9,597/mo | $11,497/mo |
 
-**Stand-alone prices (for the savings calculation on slide 3):**
+**Stand-alone prices (for the savings calculation on slide 5):**
 Essentials $3,797 | Starter $5,697 | Growth $8,997 | Dominate $12,497 | Platinum $18,997
 
 **Boundary rule:** If the firm's calculated ad spend exceeds the tier's cap, move to the higher tier. Aggressive goals alone no longer bypass the Dominate/Platinum revenue floors — a firm must meet the revenue threshold to be eligible.
@@ -285,7 +281,7 @@ Non-marketing packages are the default recommendation alongside marketing. Recom
 
 **Stand-alone prices:** Coach Essentials Plus $2,497 (Coach Essentials has no stand-alone price) | Elite Coach $3,497 | Elite Coach Plus $3,497 | Master's Circle $4,997 | FCOO Advisor $3,797 | FCOO Director $5,797 | FCFO Advisor $3,797 | FCFO Director $5,797 | FCFO Partner $9,997
 
-**Fractional packages (FCOO and FCFO) now include Elite Coach group deliverables.** When recommending any fractional package, its deliverables must include weekly group coaching sessions, practice area masterminds, virtual access to quarterly workshops, and one annual in-person workshop — reflect this in that package card's services line on slide 3 (condensed to fit). These are included in the fractional price — do not list them as a separate charge.
+**Fractional packages (FCOO and FCFO) now include Elite Coach group deliverables.** When recommending any fractional package, its deliverables must include weekly group coaching sessions, practice area masterminds, virtual access to quarterly workshops, and one annual in-person workshop — reflect this in that package card's services line on slide 5 (condensed to fit) and in its slide 4 deliverables. These are included in the fractional price — do not list them as a separate charge.
 
 ---
 
@@ -498,6 +494,18 @@ Attorney Assistant is a volume-priced AI intake agent (IA) product — priced pe
 
 ### AD SPEND CALCULATION — CONSERVATIVE AND AGGRESSIVE
 
+**These rules are implemented in code — `scripts/lib/investment.mjs`, run by `select-package.mjs` and `reprice.mjs` — so the same inputs always give the same numbers. Never calculate ad spend or the return by hand; copy `package_decision.json` → `investment`. Keep this section and the code in sync.** Inputs come from the research notes' "Investment inputs" lines (audit-research.md STEP 9): figures the client stated on the call win over every default below.
+
+How the code applies these rules where they are silent or conflict:
+1. **Channels costed:** Full Service and Paid Ads packages are costed on Google PPC + LSA + Meta retargeting (the Scoping guide's worked example and "3 primary channels"). Web + SEO packages have no ad spend.
+2. **Today's spend:** when the client stated what they spend now, the low end is never below it ("held at launch"). The high end is never below the low end.
+3. **Stated budget ceiling:** when the client named the most they can spend a month, the high end stops there (not below the low end).
+4. **Tier cap:** product selection is never changed here. When the goal math exceeds the package's cap, the high end stops at the cap and the seller is flagged (tier upgrade or the 10% overage fee is the seller's call). When today's spend is already above the cap, the overage is flagged.
+5. **Reverse math:** uses the client's stated cost per signed case, else their stated cost per lead, else the CPL benchmarks below — whichever is most specific to the firm.
+6. **Defaults:** case value = the low end of the practice-area default range; close rate 15%; geo Tier 4; competitiveness Medium — each flagged when used. MVA uses the Accident & Injury CPL row; "Other" practice areas have no CPL benchmark, so the return projection is left out unless a cost was stated.
+7. **Rounding:** low end to the nearest $100, high end to the nearest $500.
+8. **Year one:** 12 × the monthly fees. The pricing tables list no setup fee for marketing, coaching or fractional products, so none is added. Ad spend is shown separately.
+
 Always present ad spend as a range: **Conservative (low end) to Aggressive (high end).**
 
 **Conservative = Sum of channel minimums** for the recommended channels:
@@ -527,11 +535,13 @@ Always present ad spend as a range: **Conservative (low end) to Aggressive (high
 
 **Common geo tiers:** NYC/LA/Chicago/Houston/Dallas/Atlanta/Philly/DC = Tier 1. Miami/Boston/Phoenix/Seattle/Detroit/SF/Tampa/Minneapolis/Denver/San Diego/Orlando = Tier 2. Charlotte/Austin/Portland/Nashville/Indianapolis/Columbus/Cleveland/Raleigh = Tier 3. Most mid-size cities = Tier 4. Rural/small markets = Tier 5.
 
-**Client-facing "why this range" sentence:** once both numbers are calculated, write one sentence for `AD_SPEND_NOTE` (slide 3) that sells the *payoff*, not the math — what this spend converts or captures for this firm specifically. Ground it in a real specific from the audit: their practice area ("to convert high-intent personal injury searches into signed cases"), a named competitor gap from the research notes ("before [Competitor] captures them first"), or their stated goal/DBM. Do not name the conservative/aggressive calculation basis (channel minimums, the 20% rule, geo-tier multipliers, CPL benchmarks) in this sentence — that level of detail stays in the BUILD NOTES only. This only applies when a marketing/ads package is part of the recommendation.
+**Client-facing "why this range" sentence:** once both numbers are calculated, write one sentence for the BUILD NOTES (its payoff clause becomes `AD_SPEND_WHY` on slide 5) that sells the *payoff*, not the math — what this spend converts or captures for this firm specifically. Ground it in a real specific from the audit: their practice area ("to convert high-intent personal injury searches into signed cases"), a named competitor gap from the research notes ("before [Competitor] captures them first"), or their stated goal/DBM. Do not name the conservative/aggressive calculation basis (channel minimums, the 20% rule, geo-tier multipliers, CPL benchmarks) in this sentence — that level of detail stays in the BUILD NOTES only. This only applies when a marketing/ads package is part of the recommendation.
 
 ---
 
-### ROI PROJECTIONS (slide 3 "Projected Return on Ad Spend" card)
+### ROI PROJECTIONS (slide 5 "What that ad spend buys" table)
+
+Computed in code (see AD SPEND CALCULATION). When the client stated their cost per signed case, the projection uses it (cases = ad spend ÷ that cost, no improvement assumed) instead of the CPL benchmarks — a benchmark that contradicts the client's own number is never shown. Next best is a stated cost per lead; the benchmarks below are the fallback.
 
 Calculate separately for conservative and aggressive ad spend amounts.
 
@@ -577,43 +587,35 @@ Note these in the BUILD NOTES block (STEP 2) for the sales team. Never put them 
 - Attorney Assistant fit unclear → confirm qualification with sales rep before including in proposal
 
 ---
-### WHAT YOU TOLD US (slide 3 panel "How this plan addresses it")
+### WHAT YOU TOLD US (slide 1 quotes)
 
-This was Block 5 of the retired website. It now feeds `WHAT_YOU_TOLD_US` on
-slide 3, and the same transcript lines are the first source for
-`PROSPECT_QUOTES` on slide 1 (so both slides tell the same story). It plays
-the owner's own words back to them and shows how the recommendation answers
-each one. Same structure for every package mix.
+This was Block 5 of the retired website. It now picks the client lines for
+`PROSPECT_QUOTES` on slide 1 — the client's own words, each with a tie line
+saying how the recommendation answers it. (The slide 6 "How this plan
+addresses it" panel is gone; slide 1 covers it.)
 
 Content:
-- Exactly 3 items. Each item = one thing the owner (or another attendee from
-  the firm) raised on the discovery call, in their framing, plus how the
+- Up to 3 items. Each item = one thing the owner (or another attendee from
+  the firm) raised on the discovery call, in their words, plus how the
   recommended package addresses it.
-- Pick the 3 that most directly support the recommended package — cover each
-  package where possible, most central package first (tie to the reddest
-  pillar, the DBM, or the largest bundled price).
+- Pick the ones that most directly support the recommended package — cover
+  each package where possible, most central package first (tie to the
+  reddest pillar, the DBM, or the largest bundled price). Don't repeat the
+  slide 1 KPI headline quote.
 
 Sourcing (non-negotiable):
 - Every item must come from the transcript, as captured in the research
-  notes (STEP 9 fields and `Key prospect quotes`). Record the verbatim line
-  for each in the BUILD NOTES (STEP 2). If you cannot point to a line, do
-  not use it.
-- Paraphrase in the owner's framing. Quote verbatim only when the line is
-  short and clearly benign. Never strengthen, exaggerate, or combine what
-  they said into something they did not say.
+  notes (STEP 9B "KPI quotes", STEP 9 fields and `Key prospect quotes`).
+  Record the verbatim line for each in the BUILD NOTES (STEP 2). If you
+  cannot point to a line, do not use it.
+- Quote rules for slide 1 are in audit-pptx.md (verbatim only; never
+  strengthen, exaggerate, or combine what they said).
 - Problems found only in research (website, reviews, ads) are not eligible —
-  those belong in `KEY_GAPS`.
+  those belong on the diagnosis slide (slide 2).
 
-No discovery call transcript (fallback — never leave the panel empty):
-- Use "What We Found" items instead. Keep the same 3-item structure.
-- Each item = one finding from the research notes (plain language) + how
-  the recommended package addresses it. Pick the 3 that most directly
-  support the recommendation, most central package first.
-- Never word a finding as if the owner said it ("you told us", "you
-  mentioned", "you said"), and never guess at goals, revenue, or problems
-  the research did not show. Log the research-notes source of each item in
-  the BUILD NOTES.
-- All "Never include" and language rules below still apply.
+No verbatim transcript: no quotes (`PROSPECT_QUOTES = []`). Never word a
+research finding as if the owner said it ("you told us", "you mentioned",
+"you said").
 
 Never include (the deck is forwarded to partners and staff):
 - Named employees, or criticism of an identifiable staff member
@@ -624,7 +626,7 @@ If one of these is the strongest item, generalize it (e.g. "the firm
 depends on you for every decision") or pick a different one.
 
 Language rules:
-- "How this plan addresses it" framing only — never promise outcomes,
+- Tie lines say how the recommendation addresses it — never promise outcomes,
   launch dates, timelines, lead or click counts, or deliverables outside
   the signed agreement.
 - Never use the phrase "pain points" (or other internal closer language)
@@ -643,11 +645,12 @@ PY=$(ls "[friendly-name]"/*_Proposal.py | head -1)
 grep -nE "[\"'][^\"']*FILL[^\"']*[\"']" "$PY" || true               # no FILL placeholder left in a string value
 grep -n "UNCONFIRMED" "$PY" | grep -vE '^[0-9]+:\s*#' || true    # no unverified figure outside the BUILD NOTES comments
 grep -c "BUILD NOTES" "$PY"                                   # workings recorded (expect 1)
+jq -e '.investment.products | length > 0' "[friendly-name]/package_decision.json"   # computed investment present (expect true)
 diff <(sed -n '/LAYOUT ENGINE/,$p' "Design Files/audit_pptx_template.py") <(sed -n '/LAYOUT ENGINE/,$p' "$PY")
 wc -c "[friendly-name]"/*_Proposal.pptx
 ```
 
-The first two must print nothing, the diff must print nothing, and the `.pptx` must not be empty. Fix anything flagged, re-run the script, then commit.
+The first two must print nothing, the diff must print nothing, the `jq` check must print `true` (if not, run `node scripts/reprice.mjs [friendly-name]` and rebuild), and the `.pptx` must not be empty. Fix anything flagged, re-run the script, then commit.
 
 ---
 

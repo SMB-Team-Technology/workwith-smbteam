@@ -1,6 +1,6 @@
 # SMB Team — Proposal Audit (research + deck)
 
-Run the full proposal audit for a prospective client end to end: browser research, package selection and the 3-slide proposal deck, then commit it. The "Growth, Profit & Freedom Roadmap" website and the Sales Companion PDF are retired — the deck is the only output.
+Run the full proposal audit for a prospective client end to end: browser research, package selection and the 5-slide proposal deck, then commit it. The "Growth, Profit & Freedom Roadmap" website and the Sales Companion PDF are retired — the deck is the only output.
 
 ## How to invoke
 

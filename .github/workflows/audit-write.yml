@@ -1,12 +1,13 @@
 name: Audit Write (Pass 2 — proposal deck)
 
-# Builds the 3-slide proposal deck (the website and Sales Companion PDF are
+# Builds the 5-slide proposal deck (the website and Sales Companion PDF are
 # retired), uploads it to the HubSpot file manager, writes that link to the
 # contact, emails the seller and replies in the Slack thread.
 #
 # TEST MODE — any run from an audit-test/** branch:
 #   - checks out and pushes only to that branch, never main
-#   - emails only carolyn.webb@smbteam.com (no CC), subject prefixed [TEST]
+#   - emails only carolyn.webb@smbteam.com (no CC), subject prefixed [TEST] —
+#     or no email at all when the trigger has "test_no_email": true
 #   - skips the HubSpot contact write and every Slack post
 #   - skips the HubSpot file upload too, unless the trigger has
 #     "test_upload": true — then the deck goes to the separate
@@ -67,6 +68,7 @@ jobs:
           echo "slack_channel=$(jq -r '.slack_channel // empty' "$TRIGGER_FILE")"          >> "$GITHUB_OUTPUT"
           echo "slack_thread_ts=$(jq -r '.slack_thread_ts // empty' "$TRIGGER_FILE")"      >> "$GITHUB_OUTPUT"
           echo "test_upload=$(jq -r '.test_upload // false' "$TRIGGER_FILE")"             >> "$GITHUB_OUTPUT"
+          echo "test_no_email=$(jq -r '.test_no_email // false' "$TRIGGER_FILE")"         >> "$GITHUB_OUTPUT"
 
       - name: Configure git
         run: |
@@ -213,7 +215,7 @@ jobs:
           fi
 
       - name: Email closer with the deck
-        if: steps.verify.outputs.write_verified == 'true' && (steps.inputs.outputs.sales_rep_email != '' || env.TEST_MODE == 'true')
+        if: steps.verify.outputs.write_verified == 'true' && (steps.inputs.outputs.sales_rep_email != '' || env.TEST_MODE == 'true') && !(env.TEST_MODE == 'true' && steps.inputs.outputs.test_no_email == 'true')
         continue-on-error: true
         env:
           GMAIL_USER: ${{ secrets.GMAIL_USER }}
@@ -269,12 +271,36 @@ jobs:
           else:
               link_lines = ["The HubSpot link isn't available (the upload failed) — use the attached deck.", ""]
 
+          # Seller prep (what to ask, confirm, who said each quote) — kept out
+          # of the deck's speaker notes; the deck build writes it beside the deck.
+          import glob
+          prep_lines = []
+          preps = sorted(glob.glob(os.path.join(os.environ["FRIENDLY_NAME"], "*_Seller_Prep.txt")),
+                         key=os.path.getmtime)
+          if preps:
+              with open(preps[-1], encoding="utf-8") as f:
+                  prep_lines = ["", "-" * 60, f.read().strip(), "-" * 60, ""]
+
+          ad_lines = []
+          try:
+              import json
+              with open(os.path.join(os.environ["FRIENDLY_NAME"], "package_decision.json")) as f:
+                  ad = (json.load(f).get("investment") or {}).get("ad_spend") or {}
+              if ad:
+                  ad_lines = [f"Please review the ad spend on the investment slide "
+                              f"(${ad['conservative']:,}–${ad['aggressive']:,}/mo) before you send or present the deck. "
+                              "To change it, reply \"ad spend is $X–$Y\" in the Slack thread.", ""]
+          except Exception:
+              pass
+
           body = "\n".join([
               f"Hi {sales_rep},",
               "",
               f"The proposal deck for {firm_name} is ready ahead of your proposal call.",
               "",
               *link_lines,
+              *ad_lines,
+              *prep_lines,
               "Attached: Proposal Deck (PowerPoint) — share this on screen during the call.",
               "",
               "Let the team know if you need any changes before the call.",
@@ -363,15 +389,37 @@ jobs:
           hubspot_failed = os.environ.get("HUBSPOT_OUTCOME") == "failure"
           has_contact = os.environ.get("HAS_CONTACT") == "true"
 
+          ad_review = ""
+          try:
+              with open(f"{slug}/package_decision.json") as f:
+                  ad = (json.load(f).get("investment") or {}).get("ad_spend") or {}
+              if ad:
+                  who = "you set" if ad.get("seller_set") else "recommended"
+                  ad_review = (f"\n⚠️ Review the ad spend ({who}: ${ad['conservative']:,}–${ad['aggressive']:,}/mo) "
+                               "before you send or present the deck. Reply \"ad spend is $X–$Y\" to change it.")
+          except Exception:
+              pass
+
+          prep = ""
+          import glob
+          preps = sorted(glob.glob(f"{slug}/*_Seller_Prep.txt"), key=os.path.getmtime)
+          if preps:
+              with open(preps[-1], encoding="utf-8") as f:
+                  body_txt = f.read().strip()
+              if len(body_txt) > 3500:
+                  body_txt = body_txt[:3500].rsplit("\n", 1)[0] + "\n… (full prep in the email)"
+              prep = "\n\n*Seller prep* (not in the deck):\n```" + body_txt + "```"
+
           if verified and upload_ok and url:
-              text = f"{mention} ✅ *Proposal ready:* {firm}\n{url}"
+              text = f"{mention} ✅ *Proposal ready:* {firm}\n{url}" + ad_review + prep
               if hubspot_failed:
                   text += ("\n⚠️ The link could not be saved to the HubSpot contact "
                            "(growth_profit_and_freedom_roadmap) — check the Actions log.")
               elif not has_contact:
                   text += "\n_No HubSpot contact on this proposal, so the contact field was not updated._"
           elif verified:
-              text = (
+              text = (ad_review.strip() + "\n" if ad_review else "") + (prep.strip() + "\n" if prep else "")
+              text += (
                   f"{mention} ⚠️ *Proposal deck built for {firm}, but the HubSpot upload failed* — "
                   f"{upload_error or 'no details'}.\n"
                   "The deck is attached to the email. No link was written to HubSpot. "

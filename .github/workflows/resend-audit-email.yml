@@ -104,6 +104,22 @@ jobs:
           echo "HubSpot response ($HTTP_CODE): contact $CONTACT_ID → growth_profit_and_freedom_roadmap = $DECK_URL"
           [ "$HTTP_CODE" = "200" ] || { echo "ERROR: HubSpot returned $HTTP_CODE"; exit 1; }
 
+      # Seller prep isn't committed (it never goes in the deck or the repo):
+      # rebuild it from the deck script into a temp folder for the email.
+      - name: Rebuild seller prep (temp only)
+        env:
+          FRIENDLY_NAME: ${{ steps.resolve.outputs.friendly_name }}
+        run: |
+          PY=$(ls -t "$FRIENDLY_NAME"/*_Proposal.py 2>/dev/null | head -1 || true)
+          [ -n "$PY" ] || { echo "No deck script — no seller prep."; exit 0; }
+          pip install python-pptx pillow --quiet --break-system-packages 2>/dev/null || pip install python-pptx pillow --quiet || true
+          mkdir -p "$RUNNER_TEMP/prep"
+          TMP="$FRIENDLY_NAME/_seller_prep_build.py"
+          sed -E "s|^OUTPUT_PATH[[:space:]]*=.*|OUTPUT_PATH = \"$RUNNER_TEMP/prep/deck.pptx\"|" "$PY" > "$TMP"
+          python3 "$TMP" > /dev/null 2>&1 || echo "Deck script didn't run — the email goes without seller prep."
+          rm -f "$TMP"
+          ls "$RUNNER_TEMP/prep" || true
+
       - name: Send email
         env:
           GMAIL_USER: ${{ secrets.GMAIL_USER }}
@@ -167,12 +183,20 @@ jobs:
           else:
               link_lines = ["The HubSpot link isn't available (the upload failed) — use the attached deck.", ""]
 
+          import glob
+          prep_lines = []
+          preps = glob.glob(os.path.join(os.environ.get("RUNNER_TEMP", "/tmp"), "prep", "*_Seller_Prep.txt"))
+          if preps:
+              with open(preps[0], encoding="utf-8") as f:
+                  prep_lines = ["", "-" * 60, f.read().strip(), "-" * 60, ""]
+
           body = "\n".join([
               f"Hi {sales_rep},",
               "",
               f"The proposal deck for {firm_name} is ready ahead of your proposal call.",
               "",
               *link_lines,
+              *prep_lines,
               "Attached: Proposal Deck (PowerPoint) — share this on screen during the call.",
               "",
               "Let the team know if you need any changes before the call.",

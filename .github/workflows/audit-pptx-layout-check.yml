@@ -12,6 +12,15 @@ name: Audit PPTX Layout Engine Check
 # ones) — a firm's copy is a brand-new file each time /audit-pptx runs, so
 # this targets exactly that generation step without blocking unrelated
 # maintenance edits to already-shipped decks.
+#
+# The deck is 5 slides (Priorities → Diagnosis → Plan → Recommended
+# Strategy → Investment), 6 with the optional Legacy Staircase slide. Besides the engine diff, the
+# check also makes sure:
+#   - the master template itself still builds a 5-slide deck from its own
+#     placeholder values (catches a broken edit to the template), and
+#   - each new firm copy defines every FILL variable the master defines (a
+#     copy of an older template — e.g. the retired 3-slide KEY_GAPS /
+#     PRIORITIES / STAGE_TEXT layout — fails here) and builds 5 or 6 slides.
 
 on:
   pull_request:
@@ -31,6 +40,29 @@ jobs:
         with:
           ref: ${{ github.event.pull_request.head.sha }}
           fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install deck dependencies
+        run: pip install python-pptx pillow --quiet
+
+      - name: Build the master template (expect 5 slides)
+        shell: bash
+        run: |
+          set -euo pipefail
+          # The template finds fonts at ../Design Files/fonts relative to
+          # itself, so run it from a sibling folder of Design Files/.
+          mkdir -p _layout_check
+          cp "Design Files/audit_pptx_template.py" "Design Files/smb_team_logo.png" _layout_check/
+          OUT=$(cd _layout_check && python3 audit_pptx_template.py)
+          echo "$OUT"
+          if ! grep -q "(5 slides)" <<< "$OUT"; then
+            echo "::error file=Design Files/audit_pptx_template.py::The master template did not build a 5-slide deck."
+            exit 1
+          fi
 
       - name: Verify new Proposal scripts match the master layout engine
         shell: bash
@@ -80,8 +112,33 @@ jobs:
               echo "::error file=$f::Layout engine differs from Design Files/audit_pptx_template.py. Firm copies must never modify anything below '$MARKER' (font, colors, layout code) — copy the current master template fresh and only fill in the # FILL: values."
               diff -u /tmp/master_engine.txt /tmp/candidate_engine.txt || true
               FAILED=1
-            else
-              echo "OK: $f matches the master layout engine"
+              continue
+            fi
+            echo "OK: $f matches the master layout engine"
+
+            # Every FILL variable the master defines must be set in the copy.
+            fill_vars() {
+              awk -v marker="$MARKER" 'index($0, marker) { exit } { print }' "$1" \
+                | grep -oE '^[A-Z][A-Z0-9_]*[[:space:]]*=' | sed -E 's/[[:space:]]*=$//' | sort -u
+            }
+            MISSING_VARS=$(comm -23 <(fill_vars "$MASTER") <(fill_vars "$f") | tr '\n' ' ')
+            if [ -n "${MISSING_VARS// /}" ]; then
+              echo "::error file=$f::Missing FILL variables: $MISSING_VARS— this copy doesn't match the current 5-slide template's FILL section."
+              FAILED=1
+              continue
+            fi
+
+            # It must build the full deck (6 slides with the staircase).
+            if ! OUT=$(python3 "$f" 2>&1); then
+              echo "$OUT"
+              echo "::error file=$f::The deck script failed to build."
+              FAILED=1
+              continue
+            fi
+            echo "$OUT"
+            if ! grep -qE "\((5|6) slides\)" <<< "$OUT"; then
+              echo "::error file=$f::Expected 'Saved: … (5 slides)' (6 with the staircase)."
+              FAILED=1
             fi
           done
 
