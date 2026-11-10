@@ -1,0 +1,273 @@
+SMB TEAM — AUDIT RESEARCH NOTES (PASS 1)
+Firm: RCG Law Group
+Friendly name: rcg-law-group
+URL given: none ("not known" in trigger). URL used: https://www.rcglawgroup.com/ — found by web search for "RCG Law Group Ryan Gregerson family law South Jordan Utah" (owner name + city); the site lists Ryan Gregerson as Managing Partner, South Jordan HQ, and the St. George and Price offices named on the call.
+Sales rep: Nick Holderman
+Date: October 26, 2026 (the follow-up call Nick and Ryan scheduled for "Monday the 26th at 1 p.m." Mountain, 00:31:25–00:32:09). The discovery call itself was recorded October 14, 2026 (Fathom recording 192800287).
+Contact: Ryan Gregerson — Managing Partner and owner, on the call. Former business partner left about four months before the call (00:04:16).
+Trigger package: Full Service Marketing — Growth + Elite Coach (seller-set).
+Returning client: SMB Team signed this firm in "24 or … maybe early 25" (Nick, 00:00:21). Ryan did coaching with SMB Team (Elite Coach, with coach Luca Notti, then one stint in Master's Circle), moved website and Google ad management away, then left coaching too. Treat as a win-back, not a cold prospect.
+
+RESEARCH LIMITATIONS (READ FIRST — applies to Pass 2)
+- This run had no interactive browser. Available: HTTP fetches (summarised), web search, and the Google PageSpeed API.
+- Google Maps / Google Business Profile, Google SERPs (3-pack, Ads, LSA) and the Meta Ad Library could NOT be reached (the Ad Library fetch failed: "socket hang up"). Everything that needed them is "not observed". Nothing in this file was fabricated or estimated.
+- PageSpeed API returned HTTP 429 (daily quota exceeded) twice, for mobile and desktop. I have NO PageSpeed run of my own. The only PageSpeed figure is the one Nick ran live on the call (see STEP 1) and it is labelled as such.
+- Every review count and star rating below came from a web-search summary or an aggregator and is tagged UNCONFIRMED. Pass 2 must not print UNCONFIRMED figures as specific numbers in the client-facing report. Aggregator counts for different firms are not comparable with each other: do NOT say any competitor has more reviews than RCG on the strength of these figures (the one exception is Nick's own on-call observation, 00:13:00, which is also unquantified).
+- The trigger's `transcript` field is empty and carries no AI summary, so all facts come from the full verbatim transcript.
+- The trigger's fathom_url (calls/860679147) differs from the recording ID in the transcript header (192800287, dated 2026-10-14). Same firm, same people and topics throughout, so I treat it as the same engagement, but the seller should confirm that call 860679147 is not a later call whose content is missing here.
+- Speaker tags in the transcript are shifted in places. Where a line's tag disagrees with its content I say so ("speaker tag says X — read as Y"). Examples: 00:06:44 and 00:23:01 are Nick's questions tagged as Ryan; 00:06:50 ("So our sales process is pretty good") is tagged Nick but is Ryan's answer (continues at 00:06:55 "We feel very confident in it"); 00:15:58 ("Every single week") is tagged Nick but is Ryan's answer to Nick's question about how often they meet 97th Floor.
+- Speech-to-text garbles some words and numbers; each is flagged [transcript unclear] where used.
+
+==================================================================
+STEP 1 — WEBSITE RESEARCH
+==================================================================
+- Website URL confirmed live: yes (https://www.rcglawgroup.com/ fetched successfully; team, legal-staff and blog index pages also fetched).
+- Last redesign date or estimated age: not determinable. Ryan said the site is largely what SMB Team built: "They haven't changed much. I mean, there's been some slight updates from the stuff that you guys did with it, with the website, by and large." (Ryan Gregerson (client), 00:09:46–00:09:49). Footer shows "© 2026 RCG Law Group". Platform per fetch summary: WordPress.
+- Mobile responsive: yes per fetch summary (responsive layout, hamburger menu on mobile). Not tested in a browser.
+- Homepage headline: "Family Law & Divorce Attorneys in Utah" (H1 per fetch summary). The page <title> shown in web search is "Best Divorce Attorneys in Utah".
+- CTA above fold: yes — "Schedule a Consultation Today" (button linking to the consultation form). Phone (801) 893-2887 also listed.
+- Contact form location: footer (per fetch summary). Not observed above the fold.
+- Live chat present: not observed (none detected in the fetched page content; a JavaScript chat widget would not show in a text fetch).
+- Attorney bio present: yes — team page lists 10 people (9 attorneys plus Connor Cottle, COO): Ryan Gregerson (Managing Partner), Kenton Walker (Partner), Tamara Taylor (Partner), Stephen Spencer, J. Shea Owens, Jamin Seegrist, Nima Kian, Judy Imlay, Laura Fuller. Individual profile pages exist (e.g. /about/ryan-gregerson/).
+- Video present: not observed (none detected in fetched content). Nick speculated on the call that "maybe some of these videos" slow the homepage (00:10:34–00:10:46); not confirmed.
+- Blog present: yes — /blog/ with categories Child Custody, Divorce, Other Family Law, Latest Articles. Last post date: not observed (the fetch returned no post dates). Ryan says the firm is "very active in creating content" (00:08:00).
+- Offices listed on the site (4): South Jordan HQ (10619 South Jordan Gateway, Suite 100), St. George (1031 S. Bluff Street, Suite 222), Park City (4376 Forestdale Drive, Suite 205), Price (97 E 100 N, Suite C). Email contact@rcglawgroup.com. Park City was not mentioned on the call.
+- Practice areas on the website: Family Law, Divorce (several sub-types), Business Law, Estate Planning, Criminal Defense. The call was about family law only.
+- Geo landing pages: yes — at least a "South Jordan divorce attorney" landing page (Nick opened it on the call, 00:14:00–00:14:17 area); other city pages not enumerated. Nick noted the setup looked "optimized for like statewide stuff" (00:12:33).
+- Spanish content: not observed.
+- PageSpeed — my own run: NOT OBTAINED (API quota exceeded, HTTP 429, retried once). Not estimated.
+- PageSpeed — seen live on the call (Nick ran it on the homepage; Ryan confirmed he was running the mobile test): mobile score 24 out of 100 — Nick Holderman (seller), 00:10:10: "24 out of 100 is really low." Largest contentful paint "almost 23 seconds" on the homepage (seller, 00:10:23–00:10:30; "right now it's at 23 seconds", 00:14:46). Nick then ran the South Jordan divorce landing page and said "I just ran on that South Jordan Divorce Lawyers in 22" [transcript unclear — read as a score of 22]; Ryan: "Even worse." (00:15:47). Ryan: "That is terrible." (00:11:42) and "Something's definitely going on with the site, man." (00:15:48). Desktop score: not observed. Use these only as "figures discussed on the call", not as my measurement.
+
+==================================================================
+STEP 2 — GOOGLE BUSINESS PROFILE
+==================================================================
+- GBP found: not observed (Google Maps not reachable). Address on the website: 10619 South Jordan Gateway, Suite 100, South Jordan, UT 84095.
+- Star rating: 4.6 [UNCONFIRMED — sourced from a web-search summary of an aggregator (Birdeye listing titled "139 Reviews"), not independently confirmed via Google]
+- Total review count: 139 [UNCONFIRMED — same source; not confirmed via Google]
+- Most recent review date: not observed
+- Primary category: not observed (directories list the firm as Family Law Attorney)
+- Photos active: not observed
+- Posts active: not observed
+- Other platforms (not Google): Lawyers.com 4.6 across 39 reviews [UNCONFIRMED — web-search summary of Lawyers.com/Martindale-Avvo, not Google]; Yelp 1 review at 1.0 [UNCONFIRMED — web-search summary of Yelp, not Google]; Avvo — Ryan C. Gregerson rated 10.0, Client's Choice Award 2021 [UNCONFIRMED — web-search summary]. Do not present any of these as Google reviews.
+- Possible NAP mismatch to check: one search summary shows "10619 South Jordan Gateway #100, Suite 255"; the website says Suite 100.
+
+==================================================================
+STEP 3 — LOCAL 3-PACK SEARCHES
+==================================================================
+Google Maps / local pack could not be reached, so none of the searches below was run in Google. Nothing is recorded as a pack result.
+
+Practice Area 1: Family Law / Divorce (the only practice area discussed on the call)
+- Search 1 "family lawyer South Jordan": not observed in the 3-pack — competitors in pack: not observed. Live observation on the call (Nick, seller, 00:12:33–00:13:18): on the organic results for "family lawyer, South Jordan" RCG shows "three down the line" behind Carr | Woodall and Swinyard & Associates, "who have more reviews and are technically higher on the list". Review counts were not stated; this was organic, not the 3-pack.
+- Search 2 "divorce attorney South Jordan": not observed — competitors in pack: not observed
+- Search 3 "child custody lawyer South Jordan" (also "divorce lawyer St. George", "divorce lawyer Price UT" for the other offices): not observed — competitors in pack: not observed
+- Prospect context: "there are a whole bunch of like pretty decently sized family law firms in and around our immediate area, like a bunch." (Ryan Gregerson (client), 00:19:21). Names he gave (speech-to-text garbled): Carr | Woodall, Eric Swinyard, Pearson Butler, and "Marco Brown" [transcript unclear — read as Brown Family Law, "the biggest player in the state"]; "all of those were within a couple of miles of our location here" (00:19:32–00:19:44).
+
+Practice Areas 2–4 (website only, not discussed on the call): Business Law, Estate Planning, Criminal Defense — not searched (no call focus; tools could not reach the local pack).
+
+==================================================================
+STEP 4 — COMPETITOR REVIEW COUNTS
+==================================================================
+All figures from web-search summaries of aggregators; none read off a Google listing. Aggregator counts disagree with each other and are not comparable.
+- Competitor 1: Carr | Woodall (South Jordan; family law, criminal defense, trusts and estates) — reviews: 203 [UNCONFIRMED — sourced from Chamber of Commerce listing, not independently confirmed via Google]; another aggregator (TrustAnalytica) shows 449 [UNCONFIRMED — not via Google] — rating: 4.7 / 4.8 [UNCONFIRMED — same sources]
+- Competitor 2: Eric M. Swinyard & Associates (South Jordan; family law, divorce) — reviews: 105 [UNCONFIRMED — Birdeye, "The Law Offices of Eric Swinyard"]; 308 [UNCONFIRMED — TrustAnalytica] — rating: 4.8 [UNCONFIRMED — same sources]
+- Competitor 3: Pearson Butler (South Jordan office) — reviews: 278 [UNCONFIRMED — Chamber of Commerce listing]; 350 [UNCONFIRMED — another aggregator] — rating: 4.6 / 4.3 [UNCONFIRMED — same sources]
+- Also named on the call: Brown Family Law (South Jordan/Sandy/American Fork) — reviews: 41 [UNCONFIRMED — Birdeye, South Jordan location]; its own site and TrustAnalytica show roughly 1,068–1,075 across locations [UNCONFIRMED — not via Google] — rating: 4.8–4.9 [UNCONFIRMED]
+- Do NOT cite any competitor as having more reviews than RCG: RCG's own aggregator figure (139, UNCONFIRMED) is higher than Swinyard's (105) and Brown's South Jordan figure (41) on the same aggregator.
+
+==================================================================
+STEP 5 — DIRECTORY LISTINGS
+==================================================================
+- Avvo: profile for Ryan C. Gregerson found (10.0 rating, Client's Choice 2021) [UNCONFIRMED — search summary]. Firm-level Avvo listing not confirmed.
+- Justia: listed (Ryan Gregerson as owner and Managing Partner, 16+ years).
+- FindLaw: not found in search results (searched with the firm name).
+- Yelp: a listing exists with 1 review at 1.0 [UNCONFIRMED — search summary].
+- Others: Lawyers.com (two separate listings for "RCG Law Group" — IDs 159107031 and 300034541), Super Lawyers (firm and Ryan profiles), Birdeye, Martindale, Chamber of Commerce (two separate "RCG Law Group" listings, IDs 2016826754 and 2023023508; the search snippets show different phone prefixes, 385-503… and (801) 8…; the pages returned HTTP 403 so I could not read the NAP), South Valley Chamber member page, Yahoo Local, Cornell LII lawyer directory ((801) 893-2887), ProvenExpert, TrustAnalytica.
+- NAP inconsistencies: possible — duplicate listings on Lawyers.com and Chamber of Commerce, a different phone prefix on one Chamber listing, and "Suite 255" vs "Suite 100" in one summary. Not verified; seller/Pass 2 should treat as "to check", not as fact.
+- Geo-targeting landing pages for surrounding cities: yes for South Jordan (landing page Nick opened on the call); the site also has St. George, Park City and Price offices. Full list not enumerated.
+
+==================================================================
+STEP 6 — GOOGLE ADS
+==================================================================
+Google SERPs could not be reached.
+Practice Area 1: Family Law / Divorce
+- Firm ads observed: not observed in this research. The prospect confirmed on the call that Google Ads are running: "I think last month we did 25. I think 20 of it was in the Google Ads, five was in meta." (Ryan Gregerson (client), 00:08:39–00:08:43). Exact ad headline/description: not observed.
+- Named local competitors running ads: not observed (not checked; competitor ad activity was not discussed on the call).
+Practice Areas 2–4 (website only): not observed.
+
+==================================================================
+STEP 7 — LOCAL SERVICE ADS
+==================================================================
+- Firm appears in LSA: not observed. Prospect confirmed LSA spend: "our cost per retained client on local service ads and pay-per-click averages about $4,500" (Ryan Gregerson (client), 00:07:10).
+- Google Screened: not observed
+- LSA review count: not observed
+- Named local competitors in LSA: not observed
+
+==================================================================
+STEP 8 — META ADS
+==================================================================
+- Firm has active ads: not observed in the Ad Library (fetch failed). Prospect confirmed Meta ads: about $5 (thousand) of last month's $25 (thousand) spend (00:08:43) and "We've been 5,000 cost per retained client with Meta … that's been the case for about 18 months." (Ryan Gregerson (client), 00:07:47–00:07:51). Counts, formats and creative: not observed.
+- Named local competitor 1: not observed
+- Named local competitor 2: not observed
+
+==================================================================
+STEP 9 — TRANSCRIPT EXTRACTION
+==================================================================
+Transcript source: full verbatim Fathom transcript (summary used only as overview)
+Call: Fathom recording 192800287, October 14, 2026, about 32 minutes. Participants: Nick Holderman (SMB Team) and Ryan Gregerson (prospect). Follow-up: Monday, October 26, 2026 at 1 p.m. Mountain Time (Nick, 00:31:25–00:32:09); Ryan is in Cancun with family the week before.
+
+Transcript quality notes:
+- "I think last month we did 25" (00:08:39): units not said. Nick repeats "25K a month in ads, right?" (00:10:46) and Ryan carries on without correcting. Read as $25,000 [transcript unclear — read as $25,000; seller to confirm].
+- "We're going to end up at 5" (00:24:05) in reply to Nick's "the target this year was 6 million": read as $5,000,000 [transcript unclear — read as $5 million from context].
+- "coaching is $34.97 per month for the elite coach" (Nick, 00:25:27): almost certainly a garbled $3,497 [transcript unclear — seller to confirm]. Elite Coach is otherwise about $2,600/month in the catalog, so this does not reconcile; do not print a coaching price from this line.
+- Ryan's list of competitor names at 00:19:32 is garbled ("Carwood All, Eric Sweeneyard, Pearson Butler, … Marco Brown"); read as Carr | Woodall, Eric Swinyard, Pearson Butler, Brown Family Law.
+- "Cost per routine client" (00:06:48) and "routine retention" (00:06:57) read as "cost per retained client" / "retention" from context.
+- 00:17:34–00:17:44 ("What did say the money was? 95? So 95… So 452? No, that's not right either") is Ryan doing arithmetic on Nick's benchmark numbers; no figure from it is used.
+
+- Practice areas confirmed: Family law (Nick: "you guys are still primarily family law", 00:06:34; Ryan: "Our average case value for family law is $9,100", 00:07:18). Website also lists business law, estate planning and criminal defense; not discussed.
+- Current lead sources: "we're operating on a ton of referrals or just website stuff. And part of it's come from we're very active in creating content. We create a ton of content. We put a lot of content out there organically. That's been helping with organic searches, also AI searches." (Ryan Gregerson (client), 00:07:53–00:08:11). Paid: Google PPC, Local Service Ads and Meta (below). Best-performing office: "Price, oddly enough, even though it's central Utah, it's actually really small. It's actually been our best performer, which is crazy." (00:19:11–00:19:18).
+- Ads ever run: yes, and currently. Last month about $25,000: "20 of it was in the Google Ads, five was in meta", not including the agency's management fee (Ryan, 00:08:39–00:08:56). Results: "our cost per retained client on local service ads and pay-per-click averages about $4,500 cost per retained client" (00:07:10), "that's been that way the last about year" (00:07:32); Meta "5,000 cost per retained client … about 18 months" (00:07:47–00:07:51). Running in South Jordan, St. George and Price (00:19:03–00:19:08). Ryan is considering stopping paid search: "I'm going to tell them not to run any more pay-per-click or local service ads. Like, it's just not worth it." (00:20:12–00:20:17).
+- Firm identity check: matches. Trigger "RCG Law Group", website, directories and call (Ryan Gregerson, South Jordan, St. George, Price) all agree.
+- Team size: 10 attorneys-and-COO on the website team page (Ryan, 8 other attorneys incl. 2 other partners, and Connor Cottle, COO) plus 12 staff on the Legal Staff page (paralegals, 2 intake specialists, billing specialist, executive assistant, virtual assistant, and Brianne Lee, CFO and Chief Culture Officer). On the call: a COO ("bring myself and the COO there", 00:27:54–00:28:00) and "I use VAs. I got two of them, right?" (00:05:54). A business partner left about four months before the call (00:04:16–00:04:28).
+- Team size (total headcount): 22
+  (Source: website team page 10 + Legal Staff page 12; not stated on the call. Seller to confirm.)
+- Annual revenue (gross / case value): about $5 million this year: "We're going to end up at 5." (Ryan, 00:24:05) after Nick said the target had been 6 million (00:24:00).
+- Annual revenue (net / take-home / collected): not distinguished from gross
+- Revenue (annual, best estimate): $5,000,000
+- Fee structure: not stated. Average family-law case value is $9,100 (Ryan, 00:07:18); no hourly/flat/retainer detail was given.
+- Revenue goal: not stated by the client. Nick cited a prior target of $6 million for this year (00:24:00–00:24:04); Ryan's reply was that they would "end up at 5", which was not an explicit confirmation of the $6M target. Next-year goal not stated; use 2x current revenue only if Pass 2 needs a default, and flag it.
+- Average case value: $9,100 (family law) — "Our average case value for family law is $9,100." (Ryan Gregerson (client), 00:07:18)
+- Current close rate: 21% on cold leads — Nick: "Do you know your conversion rate right now on cold leads?" Ryan: "21%." (00:17:18–00:17:23; Nick's question at 00:17:18 is tagged Nick, the answer Ryan). Nick then used it as a lead-to-signed rate (105 leads × 0.21 ≈ 22 signed cases), and Ryan did not object. Ryan also said of the sales process: "We feel very confident in it. It's been very consistent on the … retention set of things." (00:06:55–00:07:00).
+- Number of locations: 4 per the website (South Jordan HQ, St. George, Park City, Price); the call named "several offices", specifically St. George and Price (00:19:03–00:19:08).
+- Spanish campaign needed: no (not mentioned on the call; no Spanish content observed on the site pages read). Seller to confirm if relevant.
+- Dominant buying motive: not clearly stated on the call. Closest inference: category (3), scale and dominate efficiently — Ryan is at about $5M, has a COO, wants dedicated strategic time and a profitable growth engine rather than a rescue: "I got so much value in getting out of the office, dedicated time to learning stuff, being with others, and then like, being able to do my quarterly planning." (Ryan Gregerson (client), 00:01:21–00:01:32) and "the best value I got was when I had Luca as my coach and I was meeting with on a monthly basis. And that's where I made the most headway" (00:23:24–00:23:45). No personal/family motive was stated on the call (he has two daughters, 10 and 6, and is taking the family to Cancun — small talk, not a stated motive). Seller should ask the "why" on the next call.
+- Any profitability claims made by prospect: "when that's the average case value and that's the cost per retained client, that's 50% and that is horrible." (Ryan Gregerson (client), 00:07:22), said about paid LSA/PPC cost vs average case value. Also: referrals, website and organic content "kept us in the range overall that we need to be for our marketing budget" (00:08:14). No margin figures.
+- Any claims about case types or practice areas: "we have a lot of competition around here, which is tough." (Ryan, 00:19:44); Price is "actually been our best performer" (00:19:15–00:19:18). No claims about case types beyond family law.
+- Stated call focus / product interest: both marketing and coaching, in that order of importance for Ryan. Marketing: he wants an opinion on Google PPC and LSA and an audit of his current setup ("What can I do to give you read-only access so you guys can take a look?", 00:22:20) because he is deciding "to make a change in agency, or do I bring somebody in-house" (00:22:00). Coaching: he misses the quarterly conferences and wants to attend the Q4 Marco Island workshop (00:26:43–00:27:00). Nick recommended Elite Coach first with a marketing audit alongside (00:26:20–00:26:34); Ryan wants them packaged: "I want to see what it is packaged together." (00:26:34) and "if I'm going to go in, I want to go all in with you guys." (00:28:27–00:28:31). Standard marketing + coaching, not a Fractional CTO/AI or COO/CFO engagement.
+- Primary engagement: mixed
+- Products discussed on call: Elite Coach, Master's Circle, Full Service Marketing
+  (Elite Coach and Master's Circle were priced by Nick at 00:25:27–00:25:32, garbled for Elite Coach — see quality notes; Master's Circle "just under $5K per month". Marketing pricing was NOT quoted: "I'm not going to shoot from the hip" (Nick, 00:25:40); package pricing to follow after scoping (00:29:20–00:29:31). Ryan said Master's Circle "I didn't love it" (00:23:04) and Nick left tier choice to him; the Elite Coach is the starting point Nick recommended (00:26:20).)
+- Lead-gen gap stated: yes — Ryan asked about marketing and wants a better paid-channel result: "what are you directing your clients to do when it comes to Google pay-per-click and local service ads? Because it's not good." (Ryan Gregerson (client), 00:06:02–00:06:17)
+- Existing marketing/SEO/ad vendor engagements: yes, active — 97th Floor manages the website and Google ads for a management fee on top of the ad spend ("they charge a management fee … That's not including their management fee", 00:08:50–00:08:56; "Do they do that stuff as well? Yep.", 00:09:01–00:09:03 — Nick's question tagged as Ryan; "we're paying these guys a lot of money", 00:09:42). He meets them weekly ("Every single week. In fact, I'm meeting with them in 45 minutes.", 00:15:58–00:16:00; "Every single week" is tagged Nick — read as Ryan). Contract length, notice period and fee: not stated. History: Scorpion → SMB Team (website and Google ads, about six good months then quality fell — "the quality went down with you guys the last six months", 00:05:06; "our quality went way down, and our results went way down", 00:05:33) → Rankings (about a year) → 97th Floor. On 97th Floor: "they're really a little bit more for companies that are a bit bigger than we are", "they have very few law firm clients", "we pay them a lot to experiment with how to do it with law firms" (00:04:30–00:04:54); "I've just not been very happy with where we're at now." (00:01:37).
+- Budget constraints stated: none stated. He did not say he cannot afford anything. He did say he is "not sure I want to fully commit to" coaching until he sees the website/ad work (Ryan, 00:28:17, answering Nick's question at 00:28:08) and would "go all in" if they move marketing. He asked what a conference-only fee would be (00:27:27–00:28:00).
+
+Investment inputs (client-stated figures only):
+- Ad spend practice area: Family Law
+- Geo market tier: Tier 3 (Salt Lake City DMA, about 1.9M per the Scoping and Ad Spend Guide; South Jordan, St. George, Price and Park City offices are in Utah)
+- Market competitiveness: Medium (multiple competitors, strong review counts per aggregators [UNCONFIRMED]; Ryan: "we have a lot of competition around here", 00:19:44; Nick: "That definitely drives price up", 00:19:49 — competitor ad/LSA activity was not verified, no 500+ review competitor was confirmed, so not High)
+- Current monthly ad spend (stated): $25,000 — Ryan Gregerson, 00:08:39–00:08:43: "last month we did 25 … 20 of it was in the Google Ads, five was in meta", excluding 97th Floor's management fee (units read as thousands, see quality notes)
+- Current cost per signed case (stated): $4,500 — Ryan, 00:07:10, "cost per retained client on local service ads and pay-per-click averages about $4,500" (covers the $20K Google spend); Meta about $5,000 (00:07:47) noted here only
+- Current cost per lead (stated): not stated (Nick's figures — LSA $80, Search $110, blended under $100, Meta $58 for family law, 00:17:05–00:18:38 — are SMB Team network averages, not the firm's)
+- Average case value (stated, one figure): $9,100 — Ryan, 00:07:18
+- Close rate (stated): 21% — Ryan, 00:17:23 (on cold leads; see note above)
+- Revenue goal (annual, one figure): not stated (Nick cited $6 million as the earlier target; Ryan said "We're going to end up at 5")
+- Maximum monthly ad budget (stated): not stated
+
+Other call facts for the deck:
+- SMB Team history and objections: quality dipped after SMB Team added offshore VAs "but there wasn't a lot of oversight at first" (Ryan, 00:05:22–00:05:33), now "ironed out" (00:05:51) — an objection to address directly in the deck's tone. Master's Circle: "a lot of the attorneys were just trying to brag about how great they were" (00:23:08–00:23:19). Coaching worked best 1:1 with Luca on a monthly cadence (00:23:24–00:23:45); "none of them were that compelling" of the five or six other coaches (00:28:31–00:28:45) — pairing/assignment matters (Nick offered it, 00:25:07).
+- Decision path: Ryan is deciding between changing agency and bringing marketing in-house; "90% likelihood it would be to you guys" if he changes agency (Ryan, 00:22:07–00:22:14). He agreed to give read-only (admin-add) access to the Google Ads account for an SMB Team audit (00:21:46: "do it").
+- Conferences: wants to attend the Q4 Marco Island workshop with his COO and on property at the hotel, and asked for a conference-only price "even if we don't do the other stuff" (00:27:27–00:28:00). Nick did not know that option existed (00:28:05).
+- Nick's on-call benchmark and ROI math (e.g. "$10,000 budget divided by 95 … 22 sign cases … 20 to 1 ROI", 00:17:45–00:18:07) is pitch math from the seller, not the firm's result — do not present as the firm's figures.
+- Nick said he starts flagging sites "whenever it's like sub 60 or 70" (00:11:44–00:11:50).
+
+Key prospect quotes (verbatim, Ryan Gregerson (client); timestamps from the transcript):
+1. (00:07:10) Cost per client — "Right now, our cost per retained client on local service ads and pay-per-click averages about $4,500 cost per retained client."
+2. (00:07:22) Profit — "when that's the average case value and that's the cost per retained client, that's 50% and that is horrible."
+3. (00:07:47) Meta — "We've been 5,000 cost per retained client with Meta." and (00:07:51) "that's been the case for about 18 months."
+4. (00:08:19) Budget pain — "when I look and isolate PPC and LSA and meta, it's freaking, I can't keep doing it."
+5. (00:20:12) Decision — "I'm going to tell them not to run any more pay-per-click or local service ads. Like, it's just not worth it."
+6. (00:04:54) Agency — "we pay them a lot to experiment with how to do it with law firms."
+7. (00:09:42) Website — "If it is, we've got huge issues, right, because we're paying these guys a lot of money to make sure that's dialed."
+8. (00:15:48) Website — "Something's definitely going on with the site, man."
+9. (00:01:21) Coaching/planning — "I got so much value in getting out of the office, dedicated time to learning stuff, being with others, and then like, being able to do my quarterly planning."
+10. (00:22:07) Intent — "if I'm going to make a change in agency, to be honest, 90% likelihood it would be to you guys."
+11. (00:28:27) Packaging — "If I'm going to go in, I want to go all in with you guys."
+12. (00:29:04) Packaging — "I wouldn't do just the website and ads with you guys. If I was going to go, it would be the coaching as well."
+
+==================================================================
+STEP 9B — KPI AND DIAGNOSIS
+==================================================================
+KPI AND DIAGNOSIS (STEP 9B)
+Product focus this supports: mixed — Full Service Marketing (Google Ads/LSA/Meta management plus website performance) with Elite Coach (seller-set trigger package "Full Service Marketing — Growth + Elite Coach").
+Headline KPI: Cost per retained client on Google PPC and LSA — about $4,500 — said by client, 00:07:10 — "our cost per retained client on local service ads and pay-per-click averages about $4,500 cost per retained client."
+  KPI status: usable
+  Why this KPI: Full Service Marketing (ad account rebuild plus a faster, higher-converting site and landing pages) directly moves cost per retained client; it is the number Ryan said is making him consider stopping paid search.
+Supporting figures (0–3):
+  - Average case value for family law $9,100 — client, 00:07:18 — "Our average case value for family law is $9,100."
+  - "that's 50%" (cost per retained client against average case value) — client, 00:07:22 — "that's 50% and that is horrible."
+  - Current ad spend about $25,000 last month ($20K Google, $5K Meta, excluding the agency fee) — client, 00:08:39 — "I think last month we did 25. I think 20 of it was in the Google Ads, five was in meta."
+Client-stated goal for this KPI: none stated
+KPI quotes (2–4, verbatim, client only):
+  - Ryan Gregerson (client), 00:07:22 — "when that's the average case value and that's the cost per retained client, that's 50% and that is horrible." [cost vs case value]
+  - Ryan Gregerson (client), 00:07:47 — "We've been 5,000 cost per retained client with Meta." [Meta, same problem]
+  - Ryan Gregerson (client), 00:08:19 — "when I look and isolate PPC and LSA and meta, it's freaking, I can't keep doing it." [paid channels]
+  - Ryan Gregerson (client), 00:15:48 — "Something's definitely going on with the site, man." [website]
+Client's why (verbatim, client only): Ryan Gregerson (client), 00:01:21 — "I got so much value in getting out of the office, dedicated time to learning stuff, being with others, and then like, being able to do my quarterly planning." — what he wants back is dedicated strategic time and planning with peers. No personal or family "why" was stated on the call.
+Cost of inaction (verbatim, client only): Ryan Gregerson (client), 00:07:22 — "that's 50% and that is horrible." and (00:20:12) "I'm going to tell them not to run any more pay-per-click or local service ads. Like, it's just not worth it." — paid search is costing about half of each average case and he is ready to switch it off. Also 00:20:04: "it's been that way with two different companies we've been with and kind of driving me bonkers."
+Legacy Staircase discussed: no
+Diagnosis (3–4 causes, biggest first):
+  1. Paid clicks land on a site that loads too slowly to convert — evidence: mobile PageSpeed 24 out of 100, homepage largest contentful paint "almost 23 seconds"; the South Jordan divorce landing page scored even worse ("in 22" [transcript unclear]); Ryan: "That is terrible." — source: call: Nick Holderman (seller) ran PageSpeed live, 00:10:10–00:10:30 and 00:15:38–00:15:47; Ryan saw it too, 00:11:42 — fixed by: Full Service Marketing — website speed fix and conversion-focused landing pages for the ads
+     Target basis: seller-stated benchmark on the call — Nick "start[s] to flag sites whenever it's like sub 60 or 70" (00:11:44–00:11:50); no client-stated target
+  2. Paid channels have cost about half of an average case for over a year across two agencies — evidence: about $4,500 per retained client on PPC/LSA for about a year (00:07:10–00:07:32), about $5,000 on Meta for about 18 months (00:07:47–00:07:51), on about $25,000 a month — source: call: Ryan Gregerson (client) — fixed by: Full Service Marketing — Google Ads/LSA/Meta audit (read-only access agreed, 00:21:46) and rebuild by a law-firm-specialist team
+     Target basis: none for cost per retained client — flag for seller. (Seller quoted network averages on the call for cost per lead — LSA $80, Search $110, Meta $58 for family law — that can be shown only as "figures discussed on the call", never as the firm's.)
+  3. The current agency is not law-firm specialised and Ryan cannot see where paid traffic goes — evidence: 97th Floor has "very few law firm clients" and "we pay them a lot to experiment with how to do it with law firms"; asked whether paid clicks go to a landing page or the site: "I believe landing page … No, I don't know." — source: call: Ryan Gregerson (client), 00:04:41–00:04:54 and 00:20:31–00:20:39 — fixed by: Full Service Marketing — law-firm-specific management with reporting by channel and landing page
+     Target basis: none — flag for seller
+  4. No dedicated planning and accountability rhythm since leaving coaching — evidence: "I've really missed going to the quarterly conferences" and the quarterly planning value (00:01:17–00:01:32); firm "going to end up at 5" million against a $6 million target the seller cited from earlier notes (00:24:00–00:24:05, target not client-confirmed) — source: call: Ryan Gregerson (client) and Nick (seller) — fixed by: Elite Coach (monthly 1:1 coach, a coach match Ryan likes, quarterly in-person workshop access)
+     Target basis: none client-stated — the $6M target was the seller's reading of past notes; flag for seller
+Plan inputs (for each non-marketing product the call points to):
+  - Fractional CTO / AI Workforce Pro: none stated
+  - FCOO / coaching: Elite Coach — what Ryan said it answers: quarterly planning and getting out of the office to learn with others (00:01:21); monthly 1:1 coaching was where he "made the most headway" (00:23:45); he does NOT want group sessions where attorneys "brag" (00:23:08); a coach he clicks with matters (00:28:31–00:28:45). He has a COO (Connor Cottle on the website) so FCOO was not raised.
+  - FCFO / bookkeeping: none stated (the website lists a CFO, Brianne Lee)
+Alternate KPI (if the seller changes the package): Elite Coach only → revenue against goal: "We're going to end up at 5" (million) vs the $6 million target the seller cited (00:24:00–00:24:05; the $6M is not client-confirmed); close rate 21% (00:17:23)
+Seller should confirm on the next call:
+  - Which Fathom call is trigger URL 860679147, and whether it differs from recording 192800287
+  - Last month's ad spend as $25,000 ($20,000 Google, $5,000 Meta) and 97th Floor's monthly management fee (not stated), plus contract term and notice period
+  - Whether the 21% is lead-to-signed or consult-to-signed, and Ryan's cost per lead (not stated)
+  - Where Google PPC traffic lands (landing page on the site or separate) — Ryan did not know; whether 97th Floor responded after the weekly meeting held right after the call
+  - PageSpeed: mobile score re-run (24/100 seen on the call), desktop score, and the South Jordan landing page score ("22"? garbled)
+  - Revenue goal for next year (the $6 million was the seller's note, not Ryan's) and gross vs net revenue; fee structure (hourly, flat, retainer)
+  - What the "in-house" option means (a hire to run marketing?) and Ryan's maximum monthly ad budget
+  - Ryan's personal "why" (time, freedom, sale, legacy) — not stated on the call
+  - Elite Coach price (the transcript line "$34.97" is garbled; Master's Circle "just under $5K") and whether a conference-only option exists (Ryan asked, 00:27:27; Nick did not know of one)
+  - Headcount (website shows 22 including COO, CFO and VAs) and the Park City office (not mentioned on the call)
+  - Live Google review count and rating for RCG and for Carr | Woodall, Swinyard & Associates, Pearson Butler and Brown Family Law — nothing here is confirmed via Google
+  - How to address the "quality went down" and VA-oversight objection from the earlier SMB Team period (Ryan, 00:05:06–00:05:51)
+
+==================================================================
+STEP 10 — COMPETITIVE URGENCY SCORE
+==================================================================
+Score: 5 of 10.
+Basis (limited — no 3-pack, ads, LSA, Meta or confirmed Google review data was obtainable): the seller saw on the call that RCG sits about third in organic results for "family lawyer, South Jordan" behind Carr | Woodall and Swinyard & Associates, which he said have more reviews; the prospect reports "a lot of competition" within a couple of miles including a firm he calls the biggest family-law player in the state; and paid costs are about half of an average case. In RCG's favour: strong organic/AI visibility from content (Ryan, 00:08:03–00:08:11), multiple offices and a best-performing small market (Price). Competitor ad activity was not verified, so the score does not rest on it.
+Named local competitor threats:
+- Carr | Woodall — South Jordan family law firm; ranked above RCG for "family lawyer, South Jordan" on the call (seller observation, 00:12:57–00:13:18); review counts UNCONFIRMED (203–449 on aggregators).
+- Eric M. Swinyard & Associates — South Jordan family law firm; ranked above RCG for the same search on the call; review counts UNCONFIRMED (105–308 on aggregators).
+- Brown Family Law — named by Ryan as "the biggest player in the state" [transcript unclear — read as Brown Family Law] (00:19:32); South Jordan office; review counts UNCONFIRMED.
+Dynamic sentence: "A score of 5 means competitors have meaningful advantages in one or more areas and are pulling ahead. You are not invisible yet — but the window to close the gap is narrowing. Every month without action is a month they extend their lead."
+
+==================================================================
+PASS 2 — VERIFICATION CHECKLIST
+==================================================================
+[x] Every number matches observed data or the transcript; unobtained items are "not observed" / "NOT OBTAINED"
+[x] Competitor review counts carry UNCONFIRMED tags; none is cited as "dominating"; RCG's own (UNCONFIRMED) count is higher than two of the competitor aggregator counts, so no "more reviews" claim is made
+[x] Every review count and star rating carries a verification-method tag
+[x] Revenue: gross about $5M, net "not distinguished from gross", fee structure "not stated"
+[x] Ad sections cover all practice areas discussed (family law only); website-only practice areas marked not searched
+[x] No section says "you are not running ads"; prospect-confirmed Google/LSA/Meta spend is attributed to the call
+[x] No profitability or business claim appears unless it came from the transcript
+[x] Competitors named are specific local firms
+[ ] PageSpeed — my own run NOT OBTAINED (API quota exceeded); the 24/100 mobile figure is the seller's live run on the call and is labelled as such; desktop not observed; listed for seller
+[x] DBM recorded (inference from the client's own words; flagged as not clearly stated)
+[x] Revenue goal recorded (not stated by client; seller's $6M noted and flagged)
+[x] Close rate recorded (21%)
+[x] Average case value recorded ($9,100)
+[x] Stated call focus recorded (marketing and coaching, packaged)
+[x] "Primary engagement" (mixed), "Products discussed on call" (catalog names), "Lead-gen gap stated" (yes) filled in
+[x] "Revenue (annual, best estimate)" = $5,000,000; "Team size (total headcount)" = 22
+[x] "Firm identity check" = matches
+[x] Existing vendor engagements recorded (97th Floor, active)
+[x] Budget constraints recorded (none stated)
+[x] Every "Investment inputs" line filled in the exact format; only client-stated figures
+[x] Nothing fabricated; "not found"/"not observed" items listed for the seller
+[x] STEP 9B "Client's why", "Cost of inaction", "Legacy Staircase discussed" filled in (verbatim client lines, or "no")
+[x] STEP 9B headline KPI is a number said on the call with speaker and timestamp
+[x] No STEP 9B figure was calculated, converted or estimated, and none is UNCONFIRMED (the "50%" was said by Ryan; the 24/100 and 23 seconds were seen live on the call)
+[x] Every STEP 9B cause has an evidence source and a Target basis
