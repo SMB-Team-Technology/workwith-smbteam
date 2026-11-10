@@ -1,15 +1,15 @@
 RESEARCH NOTES — Law Office of Michelle D Smith
 Friendly name: law-office-of-michelle-d-smith
-URL: http://www.lawofficemdsmith.com
+URL: http://www.lawofficemdsmith.com (trigger URL resolves; used as given)
 Sales rep: Dan Bryant
 Report date: November 9, 2026 (solution call Mon Nov 9, 2026, 9:30 AM Pacific)
 Discovery call: 2026-11-02 (63 min, Fathom recording 198725978)
-Research run: 2026-11-02
+Research run: 2026-11-10 (re-run; browsing results carried from the 2026-11-02 run are marked "carried forward")
 
 =====================================================================
 RESEARCH GAPS — READ FIRST (Pass 2 must honor these)
 =====================================================================
-This environment could browse the firm website and directory pages but could NOT reach Google Search / Maps / Ads surfaces, PageSpeed Insights (API daily quota exceeded, HTTP 429), Yelp (403), Avvo (403), or the Meta Ad Library (403). Nothing below was fabricated. Where data could not be observed it says so.
+This environment could fetch the firm website and some directory/search-result text but could NOT reach Google Search / Maps / Ads surfaces (Google returned an error page), PageSpeed Insights (API daily quota exceeded, re-tried 2026-11-10, still quota error), Yelp (403), Avvo (403), or the Meta Ad Library (403). Nothing below was fabricated. Where data could not be observed it says so.
 - PageSpeed mobile/desktop: NOT OBTAINED. Do not print a score in the report.
 - Firm Google star rating / review count: NOT CONFIRMED via Google. Do not print a specific figure. (FindLaw and Facebook show 0 reviews; Avvo shows "not yet reviewed". That is not a Google count.)
 - Local 3-pack, Google Ads, LSA, Meta Ads: NOT OBSERVED (surfaces not reachable). These are "not observed", never "firm is not running ads".
@@ -18,27 +18,28 @@ This environment could browse the firm website and directory pages but could NOT
 =====================================================================
 STEP 1 — WEBSITE RESEARCH
 =====================================================================
-- Website URL confirmed live: yes (fetched live 2026-11-02). Note: on the 2026-11-02 call Dan reported the site showed a Cloudflare "verify you are human" challenge. My fetch loaded normally. Possible hosting/Cloudflare bot-protection issue worth flagging to the prospect (Dan has an action item to investigate).
+- Website URL confirmed live: yes (fetched live 2026-11-02 and again 2026-11-10). On the 2026-11-02 call Dan reported the site showed a Cloudflare "verify you are human" challenge; my fetches loaded normally. Possible hosting/Cloudflare bot-protection issue worth flagging (Dan has an action item to investigate).
 - Last redesign date or estimated age: not observed (no copyright year visible in fetched content)
-- Mobile responsive: not directly tested; page content suggests responsive design (appointment link, "Virtual Available")
+- Mobile responsive: not directly tested; page content suggests responsive design ("In Person and Virtual Available", appointment link)
 - Homepage headline: "Law Office of Michelle D. Smith"
 - CTA above fold: yes — "Call (831) 264-7670" and a "Begin Your Journey" button (links to services)
-- Contact form location: no traditional contact form found; "Make an Appointment" scheduling link plus phone/email
+- Contact form location: no traditional contact form found; "Make an Appointment" button linking to a calendarhero.com scheduling page, plus phone/email
 - Live chat present: no (not observed on homepage)
 - Attorney bio present: partial — mission statement/philosophy; no detailed credentials section visible on the homepage
 - Video present: no (none detected on homepage)
-- Blog present: yes — most recent post appears to be June 2026 (post dates in fetched content looked unusual; treat as approximate)
+- Blog present: yes — nav link exists; latest visible post dates are in 2026 (appear approximate/placeholder; last post date not confirmed)
 - Practice areas listed on site: Estate Planning (wills, trusts), Living Trusts, Inheritance Guidance, Nomination of Guardian, Planning for Incapacity, Trust Administration, Probate
 - NAP on site: Law Office of Michelle D. Smith, 6265 Highway 9, Felton, CA 95018, (831) 264-7670
-- PageSpeed mobile score: NOT OBTAINED (PageSpeed web UI did not return results; PageSpeed API returned HTTP 429 quota exceeded for both mobile and desktop). Re-run when quota resets.
+- Service area stated on site: Felton, Ben Lomond, Boulder Creek, Bonny Doon, Santa Cruz County, "throughout California"
+- PageSpeed mobile score: NOT OBTAINED (PageSpeed API returned "Quota exceeded … Queries per day" on 2026-11-02 and again on 2026-11-10; web UI did not return results). Re-run when quota resets.
 - PageSpeed desktop score: NOT OBTAINED (same reason)
 
 =====================================================================
 STEP 2 — GOOGLE BUSINESS PROFILE
 =====================================================================
-- GBP found: not directly verified (Google Maps not reachable). The prospect said on the call she gets "calls from Google". A listing with hours (Mon 8-2, Tue-Thu 8-5, Fri 8-3, closed weekends) appeared in search results, source listing not confirmed.
+- GBP found: not directly verified (Google Maps / Search not reachable). The prospect said on the call she gets "calls from Google". A listing with hours (Mon 8-2, Tue-Thu 8-5, Fri 8-3, closed weekends) appeared in search results in the earlier run; source listing not confirmed.
 - Star rating: not obtained [UNCONFIRMED — Google listing not reachable; no aggregator gave a Google rating]
-- Total review count: not obtained [UNCONFIRMED — Google listing not reachable]. Other platforms: FindLaw 0 reviews ("Be the first to write a review") [UNCONFIRMED — FindLaw listing, not confirmed via Google]; Facebook "Not yet rated (0 Reviews)" [UNCONFIRMED — Facebook, not confirmed via Google]; Avvo "not yet reviewed" [UNCONFIRMED — Avvo snippet, not confirmed via Google].
+- Total review count: not obtained [UNCONFIRMED — Google listing not reachable]. Other platforms: FindLaw 0 reviews ("Be the first to write a review") [UNCONFIRMED — FindLaw listing, not confirmed via Google]; Facebook "Not yet rated (0 Reviews)" [UNCONFIRMED — Facebook, not confirmed via Google]; Avvo "not yet reviewed" [UNCONFIRMED — Avvo snippet, not confirmed via Google]; Nextdoor shows "16 Faves" (neighbor recommendations, not Google reviews).
 - Most recent review date: not obtained
 - Primary category: not obtained
 - Photos active: not obtained
@@ -52,12 +53,12 @@ Practice Area 1: Estate planning — intended keywords: "estate planning attorne
   Firm appears: not observed. Competitors in pack: not observed.
 Practice Area 2: Probate — intended keywords: "probate attorney Santa Cruz", "probate lawyer Felton CA", "trust administration attorney Santa Cruz"
   Firm appears: not observed. Competitors in pack: not observed.
-Directory-level (non-pack) observation: web search for "probate attorney Santa Cruz CA" returned Penrose Chun & Gorman LLP, Law Office of Emily J. Buchbinder, Angel L. Hess, Wade Litigation, JKZ LLP; the firm did not appear in the top results seen. This is NOT a 3-pack result.
+Web-search (non-pack) observation, 2026-11-10: a general web search for "estate planning attorney Santa Cruz CA trust lawyer" returned JKZ LLP, Copenbarger & Copenbarger LLP, Brereton Mohamed & Korte LLP, Penrose Chun & Gorman LLP, Law Office of Emily J. Buchbinder, Law Office of Christopher G. Smith, Angel Hess; the firm did not appear in the results seen. Earlier run: "probate attorney Santa Cruz CA" returned Penrose Chun & Gorman, Buchbinder, Angel L. Hess, Wade Litigation, JKZ LLP; firm not seen. These are NOT 3-pack results.
 
 =====================================================================
 STEP 4 — COMPETITOR REVIEW COUNTS
 =====================================================================
-All figures come from directory/aggregator search-result text, not Google. Do not print as specific figures.
+Carried forward from the 2026-11-02 run (not re-verified; Yelp/Google unreachable). All figures come from directory/aggregator text, not Google. Do not print as specific figures.
 - Competitor 1: Beautiful Life Estate Planning, A Professional Legal Corporation (Scotts Valley; est. 2022) — reviews: 21 [UNCONFIRMED — sourced from Yelp listing title; another directory snippet said 23; not independently confirmed via Google] — rating: 5.0 [UNCONFIRMED — sourced from Yelp/directory, not confirmed via Google]
 - Competitor 2: Penrose Chun & Gorman LLP (Santa Cruz; estate planning, trusts, probate; Steven Penrose is a Certified Specialist) — reviews: 5 [UNCONFIRMED — sourced from directory search-result snippet, not confirmed via Google] — rating: 5.0 [UNCONFIRMED — same]
 - Competitor 3: Dina C Hoffman (Santa Cruz, 740 Front St) — reviews: 9 [UNCONFIRMED — sourced from directory search-result snippet, not confirmed via Google] — rating: 5.0 [UNCONFIRMED — same]
@@ -67,11 +68,11 @@ Caution: the firm's review count on Google is unknown, so it cannot be claimed t
 STEP 5 — DIRECTORY LISTINGS
 =====================================================================
 - FindLaw: listing exists (estate planning 90%), 6265 Highway 9, Felton, CA 95018, (831) 264-7670; no reviews; profile lists free consultations, payment plans, virtual appointments. NAP matches website.
-- Avvo: profile exists (Michelle Diana Smith, Avvo rating 7.3 "Very Good", "not yet reviewed" per search snippet); direct page returned 403. Claimed status unknown.
+- Avvo: profile exists (Michelle Diana Smith, Avvo rating 7.3 "Very Good", "not yet reviewed" per search snippet); direct page returned 403 on both runs. Claimed status unknown.
 - Justia: not checked. Yelp: not reachable (403); a Yelp page for the firm was not seen in results.
-- Other listings seen in search results: Facebook page (0 reviews), Nextdoor, Yahoo Local, MapQuest (address matches), Cornell Legal Information Institute lawyer directory, Blogger profile, State Bar of California licensee page (licensed since 2004 per snippet).
+- Other listings seen in search results: Facebook page (0 reviews), Nextdoor (16 faves), Alignable, Yahoo Local, MapQuest (address matches), Cornell Legal Information Institute lawyer directory, Lawyer Legion, State Bar of California licensee page (licensed since 2004 per snippet).
 - NAP inconsistencies: none seen among website, FindLaw, MapQuest. The (408) number on file with HubSpot is the prospect's personal contact line, not a public NAP listing.
-- Geo-targeting landing pages for surrounding cities: not observed (only homepage fetched). Search snippet says the firm serves Felton, Ben Lomond, Brookdale, Boulder Creek, Bonny Doon.
+- Geo-targeting landing pages for surrounding cities: not observed (only homepage fetched). Site text names Felton, Ben Lomond, Boulder Creek, Bonny Doon.
 
 =====================================================================
 STEP 6 — GOOGLE ADS
@@ -82,7 +83,7 @@ Practice Area 1: Estate planning
 Practice Area 2: Probate
 - Firm ads observed: not observed
 - Named local competitors running ads: not observed
-(Prospect confirmed on the call: "I don't do much advertising." — no Google Ads/LSA mentioned. She was not asked directly whether she has ever run Google Ads.)
+(Prospect confirmed on the call: "I don't do much advertising." (00:17:19) — no Google Ads/LSA mentioned. She was not asked directly whether she has ever run Google Ads.)
 
 =====================================================================
 STEP 7 — LOCAL SERVICE ADS
@@ -90,15 +91,15 @@ STEP 7 — LOCAL SERVICE ADS
 - Firm appears in LSA: not observed
 - Google Screened: not observed
 - LSA review count: not observed
-- Named local competitors in LSA: not observed (searches for LSA/Google Guaranteed attorneys in Santa Cruz returned no LSA data)
+- Named local competitors in LSA: not observed (no LSA data reachable)
 
 =====================================================================
 STEP 8 — META ADS
 =====================================================================
-- Firm has active ads: not observed (Meta Ad Library returned HTTP 403)
+- Firm has active ads: not observed (Meta Ad Library returned HTTP 403 on both runs)
 - Named local competitor 1: not observed
 - Named local competitor 2: not observed
-(Firm has a Facebook page; prospect said she does "a little bit of social media, but not much".)
+(Firm has a Facebook page with 0 reviews; prospect said she does "a little bit of social media, but not much" (00:17:34).)
 
 =====================================================================
 STEP 9 — TRANSCRIPT EXTRACTION
@@ -106,41 +107,53 @@ STEP 9 — TRANSCRIPT EXTRACTION
 Transcript source: full verbatim Fathom transcript (summary used only as overview)
 Call context: Michelle attended the 10/28 workshop, bought a single-user AI Workforce Pro license (~$350/mo), and opened the call with a payment/billing issue (handled separately by the rep). She was unsure whether the call was about using AIWP or something else; Dan explained it was a Growth, Profit, Freedom Roadmap discovery.
 
-- Practice areas confirmed: Estate planning (all trusts) — "more than 95%, 99% of my work is still planning"; probate is "still really small" but she wants to grow it.
-- Current lead sources: "I get calls from Google. I get calls from my local paper. I get calls from, you know, referrals off of social media." Also legal-insurance referrals (about three quarters of plans) and word of mouth ("other than that, it's really word of mouth").
-- Ads ever run: Local newspaper ad (active, "I've started seeing returns on it") and underwriting a local community radio station (new, producing some clients). No paid digital ads (Google Ads/LSA/Meta) mentioned; whether she has ever run them was not asked. Budget not stated.
+- Practice areas confirmed: Estate planning (all trusts) — "more than 95%, 99% of my work is still planning" (00:15:09); probate is "still really small" (00:15:00) but she wants to grow it.
+- Current lead sources: "I get calls from Google. I get calls from my local paper. I get calls from, you know, referrals off of social media." (00:30:45) Also legal-insurance referrals (about three quarters of plans) and word of mouth ("other than that, it's really word of mouth", 00:17:30).
+- Ads ever run: Local newspaper ad (active, "I've started seeing returns on it", 00:38:00) and underwriting a local community radio station (new, producing some clients). No paid digital ads (Google Ads/LSA/Meta) mentioned; whether she has ever run them was not asked. Budget not stated.
 - Firm identity check: matches (trigger "Law Office of Michelle D Smith"; website "Law Office of Michelle D. Smith", Felton CA; transcript prospect Michelle Smith, solo estate planning attorney in Felton)
-- Team size: Solo attorney (Michelle); 2 part-time paralegals (one probate paralegal — "invaluable"; one estate planning paralegal at $30/hr, also her notary, does final review/prep, client contact and recording); 2 virtual assistants via services (one legal VA, one standard VA). Only the estate planning paralegal is an hourly employee; the rest are contract.
+- Team size: Solo attorney (Michelle); 2 part-time paralegals (one probate paralegal — "hands down, she is invaluable"; one estate planning paralegal at $30/hr, also her notary, does final review/prep, client contact and recording); 2 virtual assistants via services (one legal VA, one standard VA). Only the estate planning paralegal is an hourly employee; the rest are contract.
 - Team size (total headcount): 5
-- Annual revenue (gross / case value): ~$350,000 projected for 2026; previously about $200,000 ("before now, I was at like two a year in revenue"). [transcript unclear — she said "Probably closer to five, but still less than… maybe in the 350 range"; read as ~$350K, confirmed when Dan restated $350,000 and she did not correct.]
+- Annual revenue (gross / case value): ~$350,000 projected for 2026; previously about $200,000 ("before now, I was at like two a year in revenue", 00:22:30). [transcript unclear — she said "Probably closer to five, but still less than… maybe in the 350 range" (00:23:03); read as ~$350K, confirmed when Dan restated $350,000 and she did not correct.]
 - Annual revenue (net / take-home / collected): not distinguished from gross
 - Revenue (annual, best estimate): $350,000
-- Fee structure: flat-fee trust plans, earned in four milestones of 25% each (engagement, design, completed drafting, signing); varies between upfront and phased payment (California trust accounting changes). Legal-insurance plans are at a lower fee.
+- Fee structure: flat-fee trust plans, earned in four milestones of 25% each (engagement, design, completed drafting, signing) (00:33:46); varies between upfront and phased payment (California trust accounting changes). Legal-insurance plans are at a lower fee.
 - Revenue goal: not stated as a dollar figure, use 2x current revenue ($700,000). She said she would "love to do less work at a higher value" and does not think more plan volume is sustainable. Stated aim: average plan value of "3,000, 3,500".
 - Average case value: ~$2,000 overall ("Um, 2,000"); ~$1,200 legal insurance; ~$3,000 married couple (individuals pay less).
-- Volume: "probably turning like 20" new plans per month (she said her metrics "aren't always well-established or documented"); legal insurance is "probably three quarters" of them.
-- Current close rate: ~65–70% for non-insurance clients; ~98% for legal-insurance clients; "almost all of my people who call, if they schedule a consultation, they sign." (consultation-level). Lead-to-consult and show rates not tracked.
+- Volume: "probably turning like 20" new plans per month (she said her metrics "aren't always, um, well-established or documented"); legal insurance is "probably three quarters" of them.
+- Current close rate: ~65–70% for non-insurance clients; ~98% for legal-insurance clients; "almost all of my people who call, if they schedule a consultation, they sign." (consultation-level, 00:32:04). Lead-to-consult and show rates not tracked.
 - Number of locations: 1
 - Spanish campaign needed: no (not mentioned)
-- Dominant buying motive: A firm whose process is smooth enough that growth no longer means more stress and checking: "I know in order for me to grow without increasing just my stress level, I need to… stabilize my flow." and "maybe you have a nice slow or steep downhill curve and not where your business is shrinking, but where the workload can get easier." Also higher value per client: "I'd really love to do less work at a higher value." Category: (1) firm that runs itself, with time and profit freedom.
-- Any profitability claims made by prospect: On legal-insurance cases: "I would say barely, probably, barely." "sometimes it's enough to make sure that my staff pays themselves… but whether it actually puts money in my pocket or not is a whole different question." On staff: "I don't feel like all of my team feeds themselves" (estate planning paralegal and one VA). She said she has not quantified time spent checking work.
+- Dominant buying motive: A firm whose process is smooth enough that growth no longer means more stress and checking: "I know in order for me to grow without increasing just my stress level, I need to… stabilize my flow." (00:24:25) and "maybe you have a nice slow or steep downhill curve and not where your business is shrinking, but where the workload can get easier." (00:25:47). Also higher value per client: "I'd really love to do less work at a higher value." (00:17:52). Category: (1) firm that runs itself, with time and profit freedom.
+- Any profitability claims made by prospect: On legal-insurance cases: "I would say barely, probably, barely." (00:35:12) "sometimes it's enough to make sure that my staff pays themselves, right? So I can keep them working, but whether it actually puts money in my pocket or not is a whole different question." (00:35:16–00:35:23) On staff: "I don't feel like all of my team feeds themselves" (00:18:24) (estate planning paralegal and one VA). She said she has not quantified time spent checking work.
   NOTE: Dan's "$34,500/month opportunity cost" and "about a half a million a year" were the rep's pitch math/guesses; Michelle only confirmed the $2,300 subtraction. Do NOT present $34,500 as a firm figure.
-- Any claims about case types or practice areas: "Probate's still really small." "more than 95%, 99% of my work is still planning." Plans are "all trusts" ("They are."). "I do not service high net worth clients… I'm more like to meet people in that middle ground who really need the help." She wants to grow probate.
-- Stated call focus / product interest: Standard-format Growth, Profit and Freedom Roadmap discovery after the 10/28 workshop (not a Fractional CTO / AI engagement), though she already bought AIWP (single user) to cut time spent double-checking staff. Her stated needs are process/delegation/accountability, pricing confidence, and reducing reliance on low-margin legal insurance. Dan pitched Google Local Services Ads plus a coaching combo (with "elite level… or start smaller"), a client-care/recurring-revenue program (10–20% recurring), and the Carlsbad (March) workshop. No prices or tiers were quoted for coaching or ads. She said she would start smaller and wants an email outlining the next meeting before committing.
+- Any claims about case types or practice areas: "Probate's still really small." "more than 95%, 99% of my work is still planning." Plans are "all trusts" ("They are."). "I do not service high net worth clients… I'm more like to meet, you know, people in that middle ground who really need the help" (00:12:22). She wants to grow probate.
+- Stated call focus / product interest: Growth, Profit and Freedom Roadmap discovery after the 10/28 workshop (not a Fractional CTO / AI engagement), though she already bought AIWP (single user) to cut time spent double-checking staff. Her stated needs are process/delegation/accountability, pricing confidence, and reducing reliance on low-margin legal insurance; she said her lead flow is already good. Dan pitched Google Local Services Ads plus a coaching combo ("our elite level of a coaching and ads or … start smaller"), a client-care/recurring-revenue program (10–20% recurring), and the Carlsbad (March) workshop. No prices or tiers were quoted for coaching or ads. She said she would start smaller and wants an email outlining the next meeting before committing. Trigger file shows the seller set the package to Elite Coach.
 - Primary engagement: coaching/ops
-- Products discussed on call: AI Workforce Pro – Starter
+- Products discussed on call: AI Workforce Pro – Starter, Elite Coach
 - Lead-gen gap stated: no — "I have a really good flow of clients in." (She wants higher-fee clients and a smoother post-engagement process rather than more leads; she said she is "open to any of it", including advertising.)
 - Existing marketing/SEO/ad vendor engagements: none stated (local newspaper ad and radio underwriting are media buys, not an agency/SEO/ad vendor contract)
-- Budget constraints stated: no dollar limit stated. "I know I would be starting on the smaller side." "I tend to be cautious by nature." Concerned about whether staff cost is covered by value.
+- Budget constraints stated: no dollar limit stated. "I know I would be starting on the smaller side." (00:59:01) "I tend to be cautious by nature." (00:59:12) Concerned about whether staff cost is covered by value.
+
+Investment inputs (client-stated only)
+- Ad spend practice area: Estate Planning
+- Geo market tier: Tier 5 (Felton / Santa Cruz County, CA — small, more rural market per the client, "between two very affluent areas"; DMA assignment not verified, seller to confirm)
+- Market competitiveness: Low (low confidence — no ad/LSA/pack data observable; directory review counts for local competitors are small and UNCONFIRMED)
+- Current monthly ad spend (stated): not stated — only "I don't do much advertising. I'm in a local paper." (00:17:19); no dollar figure for the newspaper ad or radio underwriting
+- Current cost per signed case (stated): not stated
+- Current cost per lead (stated): not stated
+- Average case value (stated, one figure): $2,000 — Michelle, 00:15:45 ("Um, 2,000"); also ~$1,200 legal insurance (00:34:46), ~$3,000 married couple (00:34:51)
+- Close rate (stated): 65% — Michelle, 00:31:19 ("probably at 65% or 70% for non-insurance clients"; low end used; ~98% for legal insurance, 00:31:27)
+- Revenue goal (annual, one figure): not stated
+- Maximum monthly ad budget (stated): not stated
 
 Other call facts for Pass 2:
 - Stage: Dan placed her in "the abyss" (Step 4, owner-operator) on the Lawyer Legacy Staircase, heading to Step 5 (CEO). She had seen the staircase before and has followed SMB Team since early COVID.
-- Workshops: she prefers Carlsbad (March) over Marco Island (Dec 3-5): "maybe when you guys are in Carlsbad, because… it's closer, it's easier to navigate".
+- Workshops: she prefers Carlsbad (March) over Marco Island (Dec 3-5): "maybe when you guys are in Carlsbad, because… it's closer, it's easier to navigate" (00:51:01).
 - Post-engagement stall is her top intake issue: clients sign, then stall at the worksheet.
 - Payments: California trust-accounting rules recently changed how she takes upfront fees.
-- Next steps: Dan emails an outline for the Nov 9 call (opportunity cost of current operations, lead capacity if legal-insurance reliance drops, plan options for coaching + ads); Dan to analyze cost-per-lead in her market; Dan sends Audible links (Five Star Attorney, Law Firm Growth Accelerator) and his contact card; follow-up Monday Nov 9, 9:30 AM Pacific.
+- Next steps: Dan emails an outline for the Nov 9 call (opportunity cost of current operations, lead capacity if legal-insurance reliance drops, plan options for coaching + ads); Dan to analyze cost-per-lead in her market; Dan sends Audible links (Five Star Attorney, Law Firm Growth Accelerator) and his contact card; follow-up Monday Nov 9, 9:30 AM Pacific. Open items from the call: $350 AIWP billing issue; Cloudflare/human-verify issue on her site.
 
-Transcription notes: "AI Workforce Pro" was garbled as "A-Wareforce Pros"; "$3.50 a month" is $350 per month [transcript unclear — read as $350]; "X value" appears where "case value" was meant.
+Transcription notes: "AI Workforce Pro" was garbled as "A-Wareforce Pros"; "$3.50 a month" is $350 per month [transcript unclear — read as $350]; "X value" appears where "case value" was meant. A line at 00:09:25 attributed to Dan ("I have.") is Michelle's answer to "have you seen our staircase".
 
 Key prospect quotes (verbatim; timestamps from the full transcript)
 1. (00:13:13) Team / delegation: "I spend too much time double checking the work that's getting done."
@@ -151,20 +164,66 @@ Key prospect quotes (verbatim; timestamps from the full transcript)
 6. (00:35:16) Profit / team: "Right, so sometimes it's enough to make sure that my staff pays themselves, right?"
 7. (00:17:52) Goals / DBM: "I'd really love to do less work at a higher value because I don't think that going up in numbers of plans is necessarily sustainable."
 8. (00:24:25) Goals / DBM: "I know in order for me to grow without increasing just my stress level, I need to… stabilize my flow."
-9. (00:32:33) Intake: "they'll sign up, they'll be excited, then they get the worksheet, right?… there's a stall there, right?"
+9. (00:32:41) Intake: "they get the worksheet, right?… there's a stall there, right?"
 10. (00:17:19) Lead sources: "I don't do much advertising. I'm in a local paper."
 11. (00:40:34) Objection / legal insurance: "It's scary to think about giving it up because what if it just doesn't work?"
 12. (00:59:01) Budget / readiness: "I know I would be starting on the smaller side."
 
 =====================================================================
+KPI AND DIAGNOSIS (STEP 9B)
+=====================================================================
+Product focus this supports: coaching/ops — Elite Coach (seller-selected package), with AI Workforce Pro – Starter already purchased; Google LSA/ads were pitched by the seller as a combined option but the client said her lead flow is good.
+Headline KPI: Average case value — "2,000" — said by client, 00:15:45 — "Um, 2,000."
+  KPI status: usable
+  Why this KPI: coaching on pricing, offer mix and intake moves average plan value; the client's own goal for it is stated, and every cause below (insurance mix, price fear, process drag) shows up in it.
+Supporting figures (0–3):
+  - Legal-insurance average case value ~$1,200 — client, 00:34:46 — "Um, I would say average case value is like $1,200." (00:34:40)
+  - Share of plans from legal insurance — client, 00:35:38 — "Probably three quarters."
+  - Opportunity cost discussed on the call: $34,500 a month — seller, 00:56:01 — "you are missing out on $34,500 a month because you could be handling 20 cases retail and working to increase your fees" (seller pitch math; client confirmed only the $2,300 subtraction at 00:55:54; never the firm's own figure)
+Client-stated goal for this KPI: 3,000–3,500 average — "I think that my average value on my cases should be not double, but closer, you know, at least 50% more, 3,000, 3,500 as an average." (00:29:39)
+KPI quotes (2–4, verbatim, client only):
+  - 00:16:12 "I think that my pricing is low, but I think that for my local demographic… I'm definitely hitting my local people well." [pricing]
+  - 00:30:25 "I'm concerned that I would see a drop in retention." [objection to raising prices]
+  - 00:35:12 "I would say barely, probably, barely." [profit on legal-insurance cases]
+  - 00:13:13 "I spend too much time double checking the work that's getting done." [owner time]
+Client's why (verbatim, client only): 00:24:25 "I know in order for me to grow without increasing just my stress level, I need to… stabilize my flow." — and 00:25:47 "maybe you have a nice slow or steep downhill curve and not where your business is shrinking, but where the workload can get easier." (also 00:17:52 "I'd really love to do less work at a higher value")
+Cost of inaction (verbatim, client only): she did not say what happens if nothing changes. Closest client-stated risks: 00:35:23 "whether it actually puts money in my pocket or not is a whole different question." and 00:11:06 "I do think that we're going to see a drop in people looking to people to do their work as people become more comfortable with AI." Seller should ask directly (see below).
+Legacy Staircase discussed: yes — Dan asked "Have you seen this before, our staircase?" (00:09:23), explained Step 4 owner-operator, "the abyss", and Step 5 CEO (00:41:27–00:43:47). Current stage: 4 — Owner-Operator / "the abyss", placed by the rep ("I would say you're in the abyss, even though you're kind of on the front end of it", 00:41:27); the client agreed: "Yes, it all makes sense. And it's something I've been working towards." (00:44:37). Goal stage: 5 (CEO), named by the rep (00:43:06), not by the client; she agreed with the direction.
+Diagnosis (3–4 causes, biggest first):
+  1. Owner spends too much time double-checking staff work; no reporting/accountability system — evidence: "I spend too much time double checking the work that's getting done." — source: call: Michelle, 00:13:13 (hours not quantified, 00:14:29 "I have not quantified it") — fixed by: Elite Coach — documented processes, staff accountability and a weekly scorecard; AI Workforce Pro to cut the review burden
+     Target basis: none — flag for seller (hours per week never quantified)
+  2. About three quarters of plans come through legal insurance at about $1,200 each, "barely" profitable — evidence: "Probably three quarters." / "average case value is like $1,200." / "barely, probably, barely." — source: call: Michelle, 00:35:38, 00:34:40, 00:35:12 — fixed by: Elite Coach — private-pay offer and sales-conversion coaching, capacity rules for insurance cases; ads/LSA (seller-pitched) to feed higher-fee consults
+     Target basis: client-stated goal of 3,000–3,500 average (00:29:39) and willingness to limit insurance cases ("I'm definitely willing to not accept the cases", 00:40:12)
+  3. Reluctant to raise prices for fear of losing clients — evidence: "I think my pricing is low…" and "I'm concerned that I would see a drop in retention." — source: call: Michelle, 00:16:09, 00:30:25 — fixed by: Elite Coach — pricing and packaging (individual vs married, tiers), peer mastermind and workshop proof points
+     Target basis: client-stated 3,000–3,500 average (00:29:39)
+  4. Clients stall between signing and finishing (worksheet stage), so the intake-to-completion process leaks — evidence: "they get the worksheet, right?… there's a stall there, right?" — source: call: Michelle, 00:32:41 — fixed by: Elite Coach — client-journey/intake process design and follow-up scripts; optional client-care program (10–20% recurring revenue, seller-pitched)
+     Target basis: none — flag for seller (no stall rate or timing stated)
+Plan inputs:
+  - Fractional CTO / AI Workforce Pro: she bought AIWP Starter "this is why I was looking at the Workforce Pro" (00:13:13) to reduce double-checking — "making sure that my staff is taking care of the things that they're supposed to" (00:14:02). No other repetitive/manual tasks were named (staff tasks she described — final review/prep, client contact, deed recording, 00:21:18–00:21:42 — were not called slow or painful).
+  - FCOO / coaching: "And that's something, you know, as far as documenting process and making sure people… are actually going, you know, through everything the way they're supposed to." (00:44:24); "it's not so much getting numbers in the door as much as the process, right?" (00:24:45); "making sure that my process is defined enough and smooth enough" (00:32:51)
+  - FCFO / bookkeeping: "I haven't done a complete breakdown on that." (00:31:16) re: conversion by source; "My metrics aren't always, um, well-established or documented." (00:15:29); "I cannot say that I have a clear answer for you on that question." (00:35:08) re: whether insurance cases are profitable; "I haven't finished running my metric." (00:22:23)
+Alternate KPI (if the seller changes the package): Marketing / LSA → new plans a month: "I'm probably turning like 20." (00:15:21, client); no cost per lead or ad spend stated.
+Seller should confirm on the next call:
+  - Hours per week she spends double-checking staff work (never quantified)
+  - 2026 revenue (she said "maybe in the 350 range"; she had not finished running her metrics) and what she takes home
+  - Actual profit per legal-insurance case and what staff cost per plan is (she said "barely")
+  - Lead-to-consult rate and show rate, and the conversion split by source (referral / Google / newspaper / insurance)
+  - How many clients stall after signing and for how long
+  - Whether she has ever run Google Ads or LSA, and her newspaper/radio spend (no dollar figures given)
+  - A monthly budget she is comfortable with ("starting on the smaller side" — no figure)
+  - What happens if she changes nothing over the next 12 months (no cost of inaction stated)
+  - Her Google review count/rating, PageSpeed scores, and whether her site's Cloudflare "verify you are human" challenge is blocking real visitors (research could not observe these)
+  - The $350 AI Workforce Pro billing issue and her revenue goal (not stated)
+
+=====================================================================
 STEP 10 — COMPETITIVE URGENCY SCORE
 =====================================================================
 Score: 4 (LOW CONFIDENCE — based on directory/search evidence only; ad and 3-pack data were not observable).
-Basis: Competitors appear stronger on review volume and credentials in directories (the firm shows zero reviews on FindLaw and Facebook; its Google count is unknown). No competitor ad activity was observed, but the surfaces could not be checked. The prospect says her market is more rural and sits between two affluent areas.
+Basis: Competitors appear stronger on credentials and, in places, directory review volume (the firm shows zero reviews on FindLaw and Facebook; its Google count is unknown). No competitor ad activity was observed, but the surfaces could not be checked. The prospect says her market is more rural and sits between two affluent areas.
 Named local competitor threats:
 1. Beautiful Life Estate Planning (Scotts Valley, est. 2022) — 5.0 / ~21 reviews on Yelp [UNCONFIRMED — aggregator-sourced]; strong review-driven presence in directories.
 2. Penrose Chun & Gorman LLP (Santa Cruz) — top-rated estate planning/probate firm in directories; Certified Specialist attorney; strong credibility signal for both plans and probate.
-3. Law Office of Emily J. Buchbinder (Santa Cruz) — certified specialist in estate planning, trust and probate; competes directly for the probate growth she wants.
+3. Law Office of Emily J. Buchbinder (Santa Cruz) — estate planning, trust administration and probate; competes directly for the probate growth she wants.
 Dynamic sentence: "A score of 4 means competitors have meaningful advantages in one or more areas and are pulling ahead. You are not invisible yet — but the window to close the gap is narrowing. Every month without action is a month they extend their lead."
 
 =====================================================================
@@ -178,7 +237,7 @@ PASS 2 — VERIFICATION CHECKLIST
 [x] No section says the firm is not running ads
 [x] No profitability claims except the prospect's quoted ones; rep pitch math flagged
 [x] Competitors are specific named local firms
-[ ] PageSpeed scores — NOT OBTAINED (API quota 429); no estimates recorded
+[ ] PageSpeed scores — NOT OBTAINED (API quota); no estimates recorded
 [x] DBM recorded (quotes)
 [x] Revenue goal flagged as not stated (2x default)
 [x] Close rate recorded (stated)
@@ -189,3 +248,9 @@ PASS 2 — VERIFICATION CHECKLIST
 [x] Firm identity check filled in — matches
 [x] Existing vendor engagements recorded (none stated)
 [x] Budget constraints recorded
+[x] Investment inputs filled in the exact format; only client-stated figures, "not stated" otherwise
+[x] Nothing fabricated; unobserved items written as "not observed"/"NOT OBTAINED" and listed for the seller in STEP 9B
+[x] STEP 9B Client's why / Cost of inaction / Legacy Staircase filled in (cost of inaction: closest client lines only, flagged for seller)
+[x] STEP 9B headline KPI is a figure said on the call (speaker + timestamp) that the recommended product moves
+[x] No STEP 9B figure was calculated, converted or estimated; none is UNCONFIRMED (the seller's $34,500 is labelled seller and not used as the firm's figure)
+[x] Every STEP 9B cause has an evidence source and a Target basis
