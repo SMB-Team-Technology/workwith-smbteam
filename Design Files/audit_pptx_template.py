@@ -1148,11 +1148,16 @@ def _metric_tokens(text):
     return {t for t in re.findall(r"[a-z0-9]+", str(text).lower()) if t not in _METRIC_STOP}
 
 
+_METRIC_QUALIFIERS = {"retained", "signed", "new", "average", "avg", "overall", "total"}
+
+
 def same_metric(a, b):
     """True when two metric names are the same measure ("Cost per client" /
-    "Cost per retained client")."""
-    ta, tb = _metric_tokens(a), _metric_tokens(b)
-    return bool(ta and tb) and (ta <= tb or tb <= ta)
+    "Cost per retained client") — but not a narrower one ("Meta cost per
+    client" is its own metric)."""
+    ta = _metric_tokens(a) - _METRIC_QUALIFIERS
+    tb = _metric_tokens(b) - _METRIC_QUALIFIERS
+    return bool(ta) and ta == tb
 
 
 def build_measures(slide, top, bottom):
