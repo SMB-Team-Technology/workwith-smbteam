@@ -1,0 +1,226 @@
+RESEARCH NOTES — Diehl Law, LLC
+Friendly name: diehl-law
+Sales rep: Jacob Meissner (jacob.meissner@smbteam.com)
+Trigger date: September 4, 2026 (proposal_call_date 2026-09-04T14:00:00Z). The Fathom recording header says 2026-09-10 and the rep says "it's September 10th" on the call — dates disagree; filename uses the trigger date. Seller to confirm.
+Prospect contact: Tom Diehl (principal attorney)
+Package on trigger: FCOO Director (test trigger field — the call itself was a Full Service Marketing proposal review; see STEP 9)
+Live research performed: 2026-11-10 (web data below is as of that date, not as of the call)
+
+TOOLING LIMITS (read before trusting any "not observed")
+- Google Search, Google Maps and the Meta Ad Library could not be read from this environment: Google returned an "unusual traffic" CAPTCHA to headless Chrome and to fetch; Meta Ad Library returned nothing (fetch error / empty DOM). No attempt was made to bypass the CAPTCHA.
+- pagespeed.web.dev and the PageSpeed API both failed (API: HTTP 429 "Queries per day" quota exceeded, 3 retries each for mobile and desktop). Scores below come from a local Lighthouse run instead and are labelled as such.
+- Review counts below come from web-search summaries of third-party listings (the original page was not always readable). All are tagged UNCONFIRMED.
+
+==================== STEP 1 — WEBSITE ====================
+URL from trigger: https://www.diehlhubbell.com — resolves, but 301-redirects to https://www.diehllaw.com/ . URL used for research: https://www.diehllaw.com/ (found via the trigger redirect and confirmed by search: "Diehl Law, LLC", 304 E Warren St, Lebanon OH).
+- Website URL confirmed live: yes (diehllaw.com)
+- Last redesign date or estimated age: not observed (footer copyright year 2026; no redesign date on site). Site uses a Cloudinary image CDN; platform not identified.
+- Mobile responsive: yes — viewport meta tag present in page source (not checked visually on a device)
+- Homepage headline: "Relentless Advocacy For The Seriously Injured."
+- CTA above fold: yes — "Call for Your Free Consultation" with phone (513) 970-6019
+- Contact form location: buried — appears lower on the page under "GET YOUR QUESTIONS ANSWERED"
+- Live chat present: not observed (no chat widget found in the fetched page; script-loaded widgets may not show in a text fetch)
+- Attorney bio present: yes — Thomas J. Diehl has a bio page. Jack Diehl appears in the site navigation but his team-page profile was not populated when fetched.
+- Video present: not observed on the homepage
+- Blog present: yes — latest post May 27, 2026 ("Should You Accept the Insurance Company's First Settlement Offer?"). Recent cadence: May 27, May 27, May 18, Apr 23, Apr 1, Feb 10, Jan 28 2026, Oct 1 2025 — irregular, nothing posted since May 27, 2026.
+- Homepage text says "nearly 200 five-star Google reviews" (site copy, not a Google read). Tom said 212 on the call.
+- Practice areas listed on site: auto accidents (car, truck, motorcycle, pedestrian, bicycle), wrongful death, personal injury, family law/domestic relations, criminal defense. Bio text says Tom's practice is devoted to serious-injury cases from motor vehicle accidents.
+- City/geo pages: only Lebanon and Warren County references seen (blog posts and nav); no landing pages for Cincinnati, Mason, Dayton etc. observed.
+
+PageSpeed (pagespeed.web.dev FAILED — see TOOLING LIMITS). Local Lighthouse 12.8.2, headless Chrome, default simulated throttling, run 2026-11-10 against https://www.diehllaw.com/ :
+- PageSpeed mobile score: 62 (Lighthouse local run, not pagespeed.web.dev — FCP 3.0 s, LCP 3.2 s, Total Blocking Time 1,380 ms, CLS 0)
+- PageSpeed desktop score: 96 (Lighthouse local run, not pagespeed.web.dev — FCP 1.0 s, LCP 1.2 s, TBT 0 ms, CLS 0.034)
+- Seller should re-run pagespeed.web.dev; official numbers can differ by several points.
+
+==================== STEP 2 — GOOGLE BUSINESS PROFILE ====================
+Tried: Google Maps search fetch (returned only the "Google Maps" shell), Google Search (CAPTCHA), web search for the listing.
+- GBP found: not observed directly. A Facebook page exists (facebook.com/DiehlLawLLC); a Nextdoor business page and a LinkedIn company page ("Diehl & Hubbell LLC") also exist.
+- Star rating: 5.0 [UNCONFIRMED — sourced from a web-search summary of a third-party listing (source page not identified), not independently confirmed via Google]
+- Total review count: 198 [UNCONFIRMED — same third-party search summary, not confirmed via Google]. Tom said on the call: "I mean, we have 212 5-Star reviews now." (00:14:48) — client-stated, not verified on Google. Website says "nearly 200". Three figures disagree (site ~200, search summary 198, client 212); treat all as unconfirmed.
+- Most recent review date: not observed
+- Primary category: not observed
+- Photos active: not observed
+- Posts active: not observed
+
+==================== STEP 3 — LOCAL 3-PACK SEARCHES ====================
+Not observed — Google Search/Maps blocked (CAPTCHA). Nothing was recorded or estimated.
+Practice Area 1: Personal injury / auto accident (the area discussed on the call)
+- Search 1 "personal injury lawyer Lebanon Ohio": not observed
+- Search 2 "car accident lawyer Lebanon Ohio": not observed
+- Search 3 "motorcycle accident lawyer Lebanon Ohio": not observed
+Practice Area 2 (on site, not discussed on call): Family law / domestic relations — not observed
+Practice Area 3 (on site, not discussed on call): Criminal defense — not observed
+For reference, the seller ran "Lebanon, personal injury lawyer" live on the call (00:15:36–00:18:07). Seller statements only: the firm appeared in the results ("Here you are, which is great", 00:16:44 — unclear whether map pack or LSA); Google AI ranked the firm third (00:17:15); the seller thought a firm called "Ernst & Associates" ranked above it and "is showing up as a divorce lawyer". Competitor names in that stretch are garbled in the transcript ("Rickers and Rickers", "Thorson", "Tittle", "O'Connor, 1.4K") [transcript unclear — "Rickers"/"Ritker" read as Rittgers Rittgers & Nakajima; the rest unresolved]. Tom said of that firm: "quite a bit larger" (00:17:40).
+
+==================== STEP 4 — COMPETITOR REVIEW COUNTS ====================
+All values come from web-search summaries of third-party listings; none read directly from Google.
+- Competitor 1: Rittgers Rittgers & Nakajima (12 E Warren St, Lebanon OH; PI and criminal defense) — reviews: 229 [UNCONFIRMED — sourced from a third-party review listing via web search, not independently confirmed via Google] — rating: 4.9 [UNCONFIRMED — same source]. Note: 229 vs the prospect's unconfirmed 198–212 is a small, unverified gap — do not describe this firm as dominating on reviews.
+- Competitor 2: Isaacs & Isaacs Personal Injury Lawyers (Cincinnati; appears in Lebanon PI search results) — reviews: 256 [UNCONFIRMED — sourced from Birdeye, not independently confirmed via Google] — rating: 4.8 [UNCONFIRMED — sourced from Birdeye]. Lawyers.com shows 4.5 / 280 reviews (not Google).
+- Competitor 3: Harold Jarnicki & Associates (Lebanon; mainly bankruptcy/family law, also surfaces for PI) — reviews: 191 [UNCONFIRMED — one aggregator snippet; other snippets gave 200 and 253, so the figure is unreliable] — rating: 4.9 [UNCONFIRMED — sourced from the same aggregator snippets]. Weak PI competitor; do not lead with it.
+
+==================== STEP 5 — DIRECTORY LISTINGS ====================
+Checked: Avvo, FindLaw, Lawyers.com, Martindale, Yelp, Justia, Nextdoor, LinkedIn (via search; several pages returned 403 so details come from search summaries).
+- Avvo: Thomas James Diehl listed, 4.9 rating from 7 reviews [UNCONFIRMED — search summary; Avvo page returned 403] (not a Google figure)
+- FindLaw: listed as "Diehl & Hubbell, LLC", phone (513) 932-2121, website link http://www.thomasjdiehl.com (a third domain), practice area Personal Injury only, no reviews, profile appears unclaimed ("Your Profile? Update Now")
+- Lawyers.com: "Diehl Law, LLC" 4.6 from 25 reviews [UNCONFIRMED — search summary; page returned 403] (not Google)
+- Martindale-Hubbell: Tom listed, 4.5 Peer Rating [UNCONFIRMED — search summary]
+- Yelp: two listings at the same address — "Diehl Law" (diehl-and-hubbell-lebanon; PI, criminal defense, divorce) and "Diehl & Demos LLP" (diehl-and-demos-llp-lebanon). Rating not obtained.
+- Justia: a Lebanon PI directory page was returned; a Diehl entry was not confirmed.
+- NAP inconsistencies: firm name appears as Diehl Law, Diehl Law LLC, Diehl & Hubbell LLC and Diehl & Demos LLP; phone is (513) 970-6019 on the website vs (513) 932-2121 on FindLaw/Avvo/Lawyers.com/Martindale (the site number may be a call-tracking number); trigger URL diehlhubbell.com redirects to diehllaw.com while directories still point to older names/domains. Address 304 E Warren St, Lebanon OH 45036 is consistent. Older sources mention Cincinnati (30 Garfield Place) and Dayton offices; the firm's own pages list only Lebanon.
+- Geo-targeting landing pages for surrounding cities: none observed (see STEP 1).
+
+==================== STEP 6 — GOOGLE ADS ====================
+Not observed — Google Search blocked (CAPTCHA). Nothing recorded.
+Practice Area 1: Personal injury / auto accident
+- Firm ads observed: not observed (could not view the results page)
+- Named local competitors running ads: not observed from research. Seller stated on the call that the firms shown in the LSA results "are all paying to be put there" (00:16:13) and guessed a larger competitor "probably" runs PPC (00:17:43) — seller statements, unverified.
+Practice Area 2 (family law) and Practice Area 3 (criminal defense): not observed; not discussed on the call.
+
+==================== STEP 7 — LOCAL SERVICE ADS ====================
+- Firm appears in LSA: not observed. (Seller on the call: "Here you are" at 00:16:44 — unclear whether LSA or map pack.)
+- Google Screened: not observed
+- LSA review count: not observed
+- Named local competitors in LSA: not observed in research. Per the seller on the call, competitors were running LSAs (names garbled; likely Rittgers Rittgers & Nakajima) — no counts.
+
+==================== STEP 8 — META ADS ====================
+Tried: Meta Ad Library via fetch (socket error) and headless Chrome (empty page).
+- Firm has active ads: not observed (library could not be loaded — this does not mean there are none)
+- Named local competitor 1: Rittgers Rittgers & Nakajima — not observed
+- Named local competitor 2: Isaacs & Isaacs — not observed
+
+==================== STEP 9 — TRANSCRIPT EXTRACTION ====================
+Transcript source: full verbatim Fathom transcript (summary used only as overview)
+Call: seller-led review of SMB Team's marketing proposal slides/contract, with Tom comparing it to Case Connect and Perk Media. This is a follow-up to an earlier discovery call that is not in this transcript — Tom says "I'm a little confused exactly what we talked about" (00:00:30), and the seller refers to things "we talked about last". Fields that were only covered on the earlier call are "not stated" here.
+Speaker note: the line "If we can get you to 300, your marketing takes a big jump." (00:14:55) is tagged as Tom but reads as the seller's [transcript unclear — attribution doubtful]; it is not used as a client statement.
+
+- Practice areas confirmed: Personal injury (the seller calls the firm a "PI" firm and discusses "PI attorney near me"; Tom did not correct this). Tom's own site and bio focus on auto/motor-vehicle accidents; the site also lists family law and criminal defense, which were not mentioned on the call.
+- Current lead sources: Tom: "We get some of those organically." (00:04:13). Referrals are mentioned only by the seller ("your phone's really not going to be ringing other than Case Connect… and then obviously referrals", 00:09:53 — seller). Tom is evaluating buying leads from Case Connect.
+- Ads ever run: not stated. Tom confirmed he has never worked with Scorpion (00:21:00–00:21:02, "That's correct"). Case Connect and Perk Media are conversations only; nothing signed is stated.
+- Firm identity check: matches (trigger "Diehl Law, LLC"; website diehllaw.com shows "Diehl Law, LLC"; Tom Diehl on the call. Older name "Diehl & Hubbell" still appears in directories and the trigger URL domain.)
+- Team size: not stated on the call. Website lists Thomas J. Diehl (founder), Jack Diehl (role not shown), and W. Scott Russell (joined May 2025, contested domestic relations); no staff listed. A "COO" is not mentioned.
+- Team size (total headcount): 3
+- Annual revenue (gross / case value): not stated by Tom. The seller said "you're a $1.6 million revenue firm" (00:04:19) — seller figure, not confirmed by Tom; do not use as the firm's figure.
+- Annual revenue (net / take-home / collected): not distinguished from gross (no figure from Tom)
+- Revenue (annual, best estimate): not stated
+- Fee structure: not stated
+- Revenue goal: not stated, use 2x current revenue (current revenue is also not stated — seller to confirm). Seller recap of an earlier call: "you told me you wanted 10 new clients" (00:20:05, seller).
+- Average case value: Tom: "the average case is a $3,000 to $4,000 fee" (00:04:02) [transcript unclear — said while discussing Case Connect and may mean the fee on a typical lead-bought case rather than the firm's average case; read as $3,000 to $4,000 per case, conservative low end $3,000]. Seller to confirm.
+- Current close rate: not stated — default to 15%
+- Number of locations: 1 (Lebanon, OH per the website; older directory sources mention Cincinnati/Dayton — seller to confirm)
+- Spanish campaign needed: no (not mentioned)
+- Dominant buying motive: no personal motive was stated on the call. Closest inference from Tom's own words: a predictable, firm-owned way to grow rather than "buying lottery tickets" (00:03:53); he asked who owns the website (00:11:28). Personal "why" to be asked on the next call.
+- Any profitability claims made by prospect: none stated
+- Any claims about case types or practice areas: Tom: "I'm not a big fan of buying lottery tickets." (00:03:53); "We get some of those organically." (00:04:13); "the average case is a $3,000 to $4,000 fee" (00:04:02, see note above).
+- Stated call focus / product interest: standard marketing/growth proposal review — website, SEO/AEO, paid ads (Google PPC/LSA/YouTube, Meta), compared with a lead-buying service. Seller opened with "We're talking all things marketing." (00:00:37). Not a coaching/ops/AI call.
+- Primary engagement: marketing
+- Products discussed on call: Full Service Marketing
+  (Seller also offered an optional one-time AI avatar and mentioned monthly strategy calls, review-generation guidance, and intake training/scripts. A tier name was said but is garbled: "we're going to be recommending more Natsven, and we have our bigger fee" (00:02:05) [transcript unclear — tier not identifiable]. Seller said the agreement covers ad spend "up to $50,000" with "an additional 15% ad management fee" on overage (00:30:42–00:30:54). Seller to confirm the tier.)
+- Lead-gen gap stated: yes — Tom: "So you charge a fee to make the website and to do all this stuff, manage that $30,000 spend." (00:27:10); he is comparing three vendors for new cases.
+- Existing marketing/SEO/ad vendor engagements: none stated. Evaluating Case Connect (lead buying) and Perk Media; Tom: "I've talked about five companies" (00:05:36). No signed contract mentioned.
+- Budget constraints stated: none stated as a limit. Tom raised commitment risk: "…one thing I like about Case Connect is that there's no long-term commitment… I don't have to make a $75,000 gamble." (00:05:43–00:05:49).
+
+Investment inputs
+- Ad spend practice area: Accident/Injury — call says "PI"; the firm's site and bio are motor-vehicle-accident focused, so MVA is possible (call 00:02:05–00:07:09, seller; Tom did not correct)
+- Geo market tier: Tier 3 (Cincinnati DMA; Lebanon, Warren County is in that metro — seller discussed targeting Lebanon, Cincinnati, Cleveland or all of Ohio, 00:16:56–00:29:31)
+- Market competitiveness: Medium — based on research limited by blocked Google/Meta data: named local PI competitors with similar or somewhat higher review counts (all UNCONFIRMED), and the seller's live view of paid LSA competitors on the call; ads not independently observed (default flagged for seller)
+- Current monthly ad spend (stated): not stated
+- Current cost per signed case (stated): not stated
+- Current cost per lead (stated): not stated
+- Average case value (stated, one figure): $3,000 (low end of "$3,000 to $4,000", Tom 00:04:02; unclear context — see above)
+- Close rate (stated): not stated
+- Revenue goal (annual, one figure): not stated
+- Maximum monthly ad budget (stated): not stated (Tom restated the proposal — "a $30,000 ad spend, about 24 of it goes to Google, and another six goes to various social media" (00:28:47) — as his understanding of the quote, not a limit he set)
+
+Key prospect quotes
+1. 00:01:21 "Yeah, totally a gamble." — Case Connect lead buying
+2. 00:03:53 "I'm not a big fan of buying lottery tickets." — risk/lead buying
+3. 00:04:02 "…the average case is a $3,000 to $4,000 fee. I don't see that as a long-term. No, it's not worth it." — case value / unit economics (context unclear)
+4. 00:04:13 "We get some of those organically." — lead sources
+5. 00:05:43 "One thing I like about Case Connect is that there's no long-term commitment." — objection / commitment
+6. 00:10:40 "We do have an answering service." — intake
+7. 00:11:28 "Who owns that website?" — ownership / lock-in concern
+8. 00:14:48 "I mean, we have 212 5-Star reviews now." — reviews
+9. 00:21:25 "We really try to do that. I know that every firm says they try to do it and they're not doing it, and so we may fall into that…" — intake
+10. 00:22:16 "…can you send me these slides in this contract?" — buying process
+11. 00:27:19 "Basically, where is that $30,000 spend going every month?" — budget / transparency
+12. 00:31:26 "…I'm going to sit down with my group and talk to them about this over the next few days, okay?" — decision process
+
+==================== STEP 9B — KPI AND DIAGNOSIS ====================
+KPI AND DIAGNOSIS (STEP 9B)
+Product focus this supports: marketing — Full Service Marketing (new website, SEO/AEO, paid ads, review guidance, intake training)
+Headline KPI: Cost to acquire a client — "$3,000 all the way up to $4,500" — said by seller, 00:20:46 (Tom restated "You're thinking $3,000 per case", 00:20:36, and the seller confirmed) — "$3,000 per case. That's what the average cost to acquire a client is in your area." This is the figure discussed on the call, not the firm's own result.
+  KPI status: usable
+  Why this KPI: Full Service Marketing (site, SEO/AEO, paid ads, intake coaching) is what moves cost per signed client; the seller tied the range to intake speed and conversion.
+Supporting figures (0–3):
+  - Case Connect offer — client, 00:01:39–00:01:51 — "They suggested an ad budget of $15,000… And they have an administrative fee of $4,000… And they are saying that should generate eight to 10 cases."
+  - Review count — client, 00:14:48 — "we have 212 5-Star reviews now" (client-stated; Google count UNCONFIRMED in research)
+  - LSA call cost — seller, 00:21:11 — "if you're spending $600 per call through LSAs, we want to make sure every single one of those calls are being answered."
+Client-stated goal for this KPI: none stated by the client on this call. The seller recapped an earlier call: "So you told me you wanted 10 new clients." (00:20:05, seller); Tom did not dispute it and repeated Case Connect's "eight to 10 cases".
+KPI quotes (2–4, verbatim, client only):
+  00:03:53 "I'm not a big fan of buying lottery tickets." (lead buying)
+  00:04:13 "We get some of those organically." (lead sources)
+  00:21:25 "We really try to do that. I know that every firm says they try to do it and they're not doing it, and so we may fall into that…" (intake)
+  00:27:19 "Basically, where is that $30,000 spend going every month?" (budget)
+Client's why (verbatim, client only): none on the call
+Cost of inaction (verbatim, client only): none on the call
+Legacy Staircase discussed: no
+Diagnosis (3–4 causes, biggest first):
+  1. No owned, scalable lead channel — cases come from organic/referral and Tom is weighing bought leads — evidence: "We get some of those organically." — source: call: Tom, 00:04:13 — fixed by: Full Service Marketing (new site, 50,000 words of SEO/AEO launch content, Google and Meta ads, firm owns the site and ad accounts)
+     Target basis: seller-stated goal of 10 new clients ("you told me you wanted 10 new clients", seller 00:20:05) and seller-stated $3,000–$4,500 cost to acquire (00:20:46); client did not confirm either as his own number
+  2. Website doesn't convert on mobile — evidence: Lighthouse mobile 62 (LCP 3.2 s, Total Blocking Time 1,380 ms); contact form sits low on the page; last blog post May 27, 2026 — source: research: STEP 1, local Lighthouse run 2026-11-10 and page review — fixed by: new conversion-focused website and ongoing SEO content
+     Target basis: none — flag for seller (the seller said on the call the site "is set up really well", 00:15:29, so confirm before leading with it)
+  3. Reviews short of the level the seller says boosts rankings — evidence: 212 (client-stated) against the seller's "$250 to $300" threshold ("it's like $250 to $300… you see a major boost", 00:15:00 — seller) — source: call: Tom 00:14:48, seller 00:15:00 — fixed by: Google 5-star review guidance and review generation (seller targets 50 five-star reviews by year-end, 00:14:15)
+     Target basis: seller-stated benchmark on the call (250–300 reviews; 50 new five-star reviews by end of year)
+  4. Intake could waste paid leads — evidence: "we may fall into that" (Tom 00:21:28) after the seller's "$600 per call through LSAs" example; firm already has an answering service ("We do have an answering service.", Tom 00:10:40) — source: call: Tom 00:10:40, 00:21:25–00:21:28 — fixed by: intake training and scripting from SMB Team
+     Target basis: none — flag for seller
+Plan inputs (for each non-marketing product the call points to):
+  - Fractional CTO / AI Workforce Pro: none stated
+  - FCOO / coaching: none stated (seller offered intake training guides; Tom named no process pain beyond intake above)
+  - FCFO / bookkeeping: none stated
+Alternate KPI (if the seller changes the package): none
+Seller should confirm on the next call:
+  - Tom's own annual revenue (the $1.6M on the call was only the seller's figure), fee structure, close rate and average case value (what did "$3,000 to $4,000 fee" refer to?)
+  - Whether the firm runs any paid ads or LSAs today, current monthly spend, current cost per case or lead (none stated)
+  - Maximum monthly ad budget Tom is comfortable with, and how he reacts to the long-term commitment he called a "$75,000 gamble" (00:05:49)
+  - Whether 10 new clients a month is Tom's own goal, and what the goal revenue is
+  - Which tier was quoted ("Natsven" is garbled), and the $30,000 vs "up to $50,000" ad spend figures
+  - Team: headcount, who handles intake, Jack Diehl's role; whether Cincinnati and Dayton offices exist
+  - Practice areas to advertise (the site also lists family law and criminal defense; call was PI only)
+  - Tom's personal why and what happens if nothing changes (none on the call)
+  - Live Google profile: star rating and review count (212 stated by Tom vs 198 from a third-party snippet), primary category, recent reviews
+  - Re-run pagespeed.web.dev (only a local Lighthouse run was available) and the local 3-pack, Google Ads, LSA and Meta Ad Library checks that were blocked
+  - Phone number consistency: (513) 970-6019 on the site vs (513) 932-2121 in directories; duplicate Yelp listings; old names (Diehl & Hubbell, Diehl & Demos)
+  - The competitor names the seller showed on the call were garbled; confirm which firms appear above Diehl Law
+  - Date: trigger says September 4, recording says September 10
+
+==================== STEP 10 — COMPETITIVE URGENCY SCORE ====================
+Score: 5 (low confidence — Google Search, LSA and Meta data could not be observed; based on directory/third-party review counts, all UNCONFIRMED, and the seller's live view on the call)
+Named local competitor threats:
+ 1. Rittgers Rittgers & Nakajima (Lebanon; PI and criminal defense) — 229 Google reviews, 4.9 [UNCONFIRMED]; Tom called the firm he saw on the call "quite a bit larger" (00:17:40) and the seller said it was running LSAs (name garbled on the call, read as this firm)
+ 2. Isaacs & Isaacs Personal Injury Lawyers (Cincinnati) — 256 reviews, 4.8 [UNCONFIRMED — Birdeye]; large regional PI brand appearing in Lebanon-area results
+ 3. Harold Jarnicki & Associates (Lebanon; bankruptcy/family with some PI visibility) — about 191–253 reviews [UNCONFIRMED, conflicting]; secondary threat only
+Dynamic sentence: "A score of 5 means competitors have meaningful advantages in one or more areas and are pulling ahead. You are not invisible yet — but the window to close the gap is narrowing. Every month without action is a month they extend their lead."
+
+==================== PASS 2 — VERIFICATION CHECKLIST ====================
+[x] Every number matches observed data or is labelled with its source (client, seller, Lighthouse local run, UNCONFIRMED aggregator)
+[x] Competitor review counts are tagged UNCONFIRMED; none is cited as dominating (Rittgers 229 vs prospect 198–212 flagged as a small, unverified gap)
+[x] Every Google review count/rating carries a verification tag
+[x] Revenue not stated by Tom; seller's $1.6M recorded as seller-only
+[x] Ad sections cover all practice areas listed on site; all "not observed" with what was tried
+[x] No "not running ads" statement
+[x] No profitability claim without a transcript source
+[x] Competitors are specific named local firms (Isaacs & Isaacs is Cincinnati-based, listed in Lebanon results)
+[x] PageSpeed values are real measurements but from local Lighthouse, not pagespeed.web.dev (labelled)
+[x] DBM recorded as an inference with a note that no personal motive was stated
+[x] Revenue goal, close rate (default 15%), average case value recorded or flagged
+[x] Call focus recorded: marketing
+[x] Primary engagement / Products discussed / Lead-gen gap in the exact format
+[x] Revenue best estimate "not stated"; headcount "3"
+[x] Firm identity check filled in: matches
+[x] Existing vendors: none stated; budget constraints: none stated as a limit
+[x] Investment inputs in exact format
+[x] Nothing fabricated; gaps listed for the seller
+[x] Client's why / cost of inaction / Legacy Staircase filled in
+[x] Headline KPI is a number actually said on the call (seller, restated by client) and moved by the recommended product
+[x] No STEP 9B figure was computed or estimated; none is UNCONFIRMED (the 212 review count is client-stated; a Google figure is not used as a measurement)
+[x] Every cause has an evidence source and Target basis
