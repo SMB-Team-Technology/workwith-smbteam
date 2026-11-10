@@ -68,6 +68,10 @@ OUTPUT_PATH    = "friendly-name/FirmName_Date_Proposal.pptx"  # FILL: output pat
 #             "What we'll measure" row on slide 3).
 #   stats:    0–2 (label, value) supporting figures from the call. A goal
 #             the client stated is labelled "Your goal", never "Target".
+#   said_by:  who said the headline quote and when — "Full Name (client),
+#             00:07:22" — from the research notes. The client or another
+#             attendee from the firm, never the seller. Shown in the speaker
+#             notes. Required when headline_is_quote is True.
 KPI_FOCUS = {
     "kind": "kpi",                                                     # FILL
     "label": "KPI name",                                               # FILL
@@ -78,24 +82,29 @@ KPI_FOCUS = {
     "stats": [
         ("Supporting figure", "Value said on the call"),               # FILL
     ],
+    "said_by": "Full Name (client), 00:00:00",                         # FILL
 }
 
-# 0–3 more client quotes: (topic, quote, tie_line). topic: 1–3 words. quote:
-# verbatim prospect line about a problem or priority they raised (≤120
-# chars; engine adds the quote marks). tie_line: how the proposal answers it
-# (≤70 chars). Set to [] with no verbatim transcript — never invent quotes.
+# 0–3 more client quotes: (topic, quote, tie_line, said_by). topic: 1–3
+# words. quote: verbatim prospect line about a problem or priority they
+# raised (≤120 chars; engine adds the quote marks). tie_line: how the
+# proposal answers it (≤70 chars). said_by: "Full Name (client), 00:00:00".
+# Set to [] with no verbatim transcript — never invent quotes.
 PROSPECT_QUOTES = [
-    ("Topic", "Verbatim prospect line", "How the proposal answers it"),   # FILL
-    ("Topic", "Verbatim prospect line", "How the proposal answers it"),   # FILL
+    ("Topic", "Verbatim prospect line", "How the proposal answers it", "Full Name (client), 00:00:00"),   # FILL
+    ("Topic", "Verbatim prospect line", "How the proposal answers it", "Full Name (client), 00:00:00"),   # FILL
 ]
 
 # The client's why and the cost of inaction, in their own words — from the
 # research notes' STEP 9B "Client's why" / "Cost of inaction" quotes. Each is
-# (quote, speaker_label) with speaker_label "" for the owner or "<First name>"
-# for another attendee from the firm; quote ≤140 chars, verbatim (the engine
-# adds the quote marks). None when the call didn't give one — never invent it.
-CLIENT_WHY = ("Verbatim line: what they really want and why it matters to them", "")   # FILL or None
-COST_OF_INACTION = ("Verbatim line: what happens if nothing changes", "")              # FILL or None
+# (quote, speaker_label, said_by): speaker_label "" for the owner or "<First
+# name>" for another attendee from the firm; quote ≤140 chars, verbatim (the
+# engine adds the quote marks); said_by "Full Name (client), 00:00:00".
+# None when the call didn't give one — never invent it.
+CLIENT_WHY = ("Verbatim line: what they really want and why it matters to them", "",
+              "Full Name (client), 00:00:00")                                       # FILL or None
+COST_OF_INACTION = ("Verbatim line: what happens if nothing changes", "",
+                    "Full Name (client), 00:00:00")                                 # FILL or None
 
 # ── Optional slide — Lawyer Legacy Staircase (after What We Heard) ─
 # Only when the rep actually walked the client through the staircase on the
@@ -144,19 +153,23 @@ PLAN_TITLE  = "Lower What Each Case Costs"   # FILL: the outcome, ≤40 chars
 #   fixes:   the DIAGNOSIS number it answers (1-based)
 #   actions: 2–4 bullets, each a deliverable of the recommended products, ≤60 chars
 #   metric:  what it moves, 1–4 words ("Cost per lead") — shown, numbered to
-#            its action, in the "What we'll measure" row under the cards
+#            its action, in the "What we'll measure" row under the cards.
+#            Not the slide 1 KPI again (that's always the first tile).
 #   target:  the target, based on call data, or None (no target line is
 #            drawn; the seller gets an automatic speaker note)
+#   baseline: today's value of the metric, as said on the call or measured
+#            in research ("24/100"), or None. With no target and no
+#            baseline, the metric is left out of the row.
 PLAN = [
     {"title": "Action one", "fixes": 1,
      "actions": ["Specific deliverable", "Specific deliverable"],
-     "metric": "Metric", "target": None},                              # FILL
+     "metric": "Metric", "target": None, "baseline": "Value today"},   # FILL
     {"title": "Action two", "fixes": 2,
      "actions": ["Specific deliverable", "Specific deliverable"],
-     "metric": "Metric", "target": None},                              # FILL
+     "metric": "Metric", "target": None, "baseline": "Value today"},   # FILL
     {"title": "Action three", "fixes": 3,
      "actions": ["Specific deliverable", "Specific deliverable"],
-     "metric": "Metric", "target": None},                              # FILL
+     "metric": "Metric", "target": None, "baseline": "Value today"},   # FILL
 ]
 
 # Optional strip under the plan cards ("Also included: …"), or None.
@@ -207,10 +220,13 @@ PRODUCT_LINES = {
 # no paid ads (the engine then leaves the ad spend panel out).
 AD_SPEND_WHY = "to turn high-intent searches into signed cases"     # FILL
 
-CLOSING_QUOTE = (
-    '"Closing quote tied to this firm\'s DBM — exact transcript words '
-    'or a sharp synthesis of the central opportunity."'
-)  # FILL
+# The closing line on the investment slide: a verbatim client line about the
+# outcome they want — (quote, said_by), ≤160 chars, engine adds the quote
+# marks. Never reworded, never a quote already used elsewhere in the deck.
+# None when there's no other verbatim line worth closing on (the bar is left
+# off).
+CLOSING_QUOTE = ("Verbatim client line about the outcome they want",
+                 "Full Name (client), 00:00:00")                                   # FILL or None
 
 # ═══════════════════════════════════════════════════════════════════
 # LAYOUT ENGINE — DO NOT MODIFY BELOW THIS LINE
@@ -669,6 +685,102 @@ def _quote(text):
     return "“" + str(text).strip().strip('"“”') + "”"
 
 
+# ── Quotes: verbatim, attributed, never repeated ──────────────────
+
+def deck_quotes():
+    """Every client quote on the deck: (slide key, where, text, said_by)."""
+    out = []
+    if KPI_FOCUS.get("headline_is_quote"):
+        out.append(("priorities", "KPI headline", KPI_FOCUS.get("headline"), KPI_FOCUS.get("said_by")))
+    for i, q in enumerate(PROSPECT_QUOTES or []):
+        if q and len(q) >= 2 and q[1]:
+            out.append(("priorities", f"PROSPECT_QUOTES[{i}]", q[1], q[3] if len(q) > 3 else None))
+    for name, q in (("CLIENT_WHY", CLIENT_WHY), ("COST_OF_INACTION", COST_OF_INACTION)):
+        if q:
+            out.append(("priorities", name, q[0], q[2] if len(q) > 2 else None))
+    if CLOSING_QUOTE:
+        out.append(("investment", "CLOSING_QUOTE", CLOSING_QUOTE[0],
+                    CLOSING_QUOTE[1] if len(CLOSING_QUOTE) > 1 else None))
+    return out
+
+
+def _tokens(text):
+    return re.findall(r"[a-z0-9]+", str(text).lower().replace("’", "'").replace("'", ""))
+
+
+def _found_in(segment, hay, slack=3):
+    """Is `segment` in `hay` word for word, allowing up to `slack` dropped
+    filler words ("you know", "um") inside the quoted stretch?"""
+    seg = _tokens(segment)
+    if len(seg) < 3:
+        return True
+    for j, tok in enumerate(hay):
+        if tok != seg[0]:
+            continue
+        k, skipped = j + 1, 0
+        ok = True
+        for want in seg[1:]:
+            while k < len(hay) and hay[k] != want and skipped <= slack:
+                k += 1
+                skipped += 1
+            if k >= len(hay) or hay[k] != want or skipped > slack:
+                ok = False
+                break
+            k += 1
+        if ok:
+            return True
+    return False
+
+
+def _research_notes_text():
+    import glob
+    here = os.path.dirname(os.path.abspath(__file__))
+    files = sorted(glob.glob(os.path.join(here, "*_Research_Notes.txt")), key=os.path.getmtime)
+    return open(files[-1], encoding="utf-8").read() if files else None
+
+
+def check_quotes(problems):
+    if FIRM_NAME == "FIRM NAME HERE":
+        return  # the unfilled master template's placeholders
+    quotes = deck_quotes()
+    seller = [t for t in _tokens(SALES_REP) if len(t) > 2]
+    for _, where, text, said_by in quotes:
+        if not str(said_by or "").strip():
+            problems.append(f'{where}: add who said it ("Full Name (client), 00:00:00").')
+        elif (seller and all(t in _tokens(said_by) for t in seller)) or re.search(
+                r"\b(seller|smb team|rep)\b", str(said_by), re.I):
+            problems.append(f"{where}: said by the seller ({said_by}) — only the client's own words go on the deck.")
+    # No quote twice (the closing line is the usual offender).
+    for i in range(len(quotes)):
+        for j in range(i + 1, len(quotes)):
+            a, b = set(_tokens(quotes[i][2])), set(_tokens(quotes[j][2]))
+            if a and b and len(a & b) / min(len(a), len(b)) >= 0.6:
+                problems.append(f"{quotes[j][1]} repeats {quotes[i][1]} — use a different verbatim line, or None.")
+    # Verbatim: every quote (each piece between "…" cuts) must be in the
+    # research notes, which carry the transcript lines word for word.
+    notes = _research_notes_text()
+    if notes is None:
+        if FIRM_NAME != "FIRM NAME HERE":
+            print("NOTE: no research notes next to this script — verbatim quote check skipped.")
+        return
+    hay = _tokens(notes)
+    for _, where, text, _ in quotes:
+        for seg in re.split(r"…|\.\.\.", str(text)):
+            if seg.strip() and not _found_in(seg, hay):
+                problems.append(f'{where}: "{seg.strip()[:60]}" is not word for word in the research notes '
+                                "— copy the client's exact words.")
+                break
+
+
+def attribution_notes():
+    by_slide = {}
+    for key, _, text, said_by in deck_quotes():
+        t = str(text).strip().strip('"“”')
+        by_slide.setdefault(key, []).append(f"“{t[:70]}{'…' if len(t) > 70 else ''}” — {said_by}")
+    for key, lines in by_slide.items():
+        note(key, "Who said the quotes on this slide:\n" + "\n".join(lines))
+
+
 def validate_fill():
     """Stop the build on structural mistakes instead of drawing a broken
     slide. Content rules (sources, exact figures) live in audit-pptx.md."""
@@ -713,6 +825,7 @@ def validate_fill():
             t = d.get("target")
             if t and re.match(r"\s*target\s*:", str(t), re.I):
                 problems.append(f'{label}[{i}]["target"] starts with "Target:" — the engine adds it.')
+    check_quotes(problems)
     if problems:
         raise SystemExit("Deck not built — fix the values above the LAYOUT ENGINE line:\n  - " + "\n  - ".join(problems))
 
@@ -797,7 +910,8 @@ def build_priorities(prs):
     if voice:
         vy, vh, gap = y + h + 0.12, 5.12 - (y + h + 0.12), 0.20
         vw = (9.40 - gap * (len(voice) - 1)) / len(voice)
-        for i, (label, (text, who), accent) in enumerate(voice):
+        for i, (label, quote_fill, accent) in enumerate(voice):
+            text, who = quote_fill[0], (quote_fill[1] if len(quote_fill) > 1 else "")
             vx = 0.30 + i * (vw + gap)
             add_rect(slide, vx, vy, vw, vh, fill=WHITE)
             add_rect(slide, vx, vy, vw, 0.05, fill=accent)
@@ -1027,21 +1141,44 @@ def build_plan(prs):
     add_footer(slide, PAGE["plan"], TOTAL_SLIDES, LOGO_PATH)
 
 
+_METRIC_STOP = {"the", "a", "an", "per", "of", "to", "your", "each", "a", "monthly", "month", "today"}
+
+
+def _metric_tokens(text):
+    return {t for t in re.findall(r"[a-z0-9]+", str(text).lower()) if t not in _METRIC_STOP}
+
+
+def same_metric(a, b):
+    """True when two metric names are the same measure ("Cost per client" /
+    "Cost per retained client")."""
+    ta, tb = _metric_tokens(a), _metric_tokens(b)
+    return bool(ta and tb) and (ta <= tb or tb <= ta)
+
+
 def build_measures(slide, top, bottom):
-    """"What we'll measure": the call KPI (today's value), then each plan
-    action's metric, numbered to its card, with its target when there is one.
-    No target → no target line (never "to be confirmed")."""
+    """"What we'll measure": the call KPI (today's value, plus its target if
+    a plan action targets it), then each other plan metric, numbered to its
+    card, with its target — or, with no target, today's value. A metric with
+    neither, or that repeats the KPI, is left out."""
     add_text(slide, "WHAT WE'LL MEASURE", 0.30, top, 4.0, 0.20, 7.5, NAVY, bold=True,
              fit=False)
-    tiles = [(None, KPI_FOCUS["label"],
-              ("Today: " + KPI_FOCUS["baseline"]) if KPI_FOCUS.get("baseline") else "")]
-    tiles += [(i + 1, p["metric"], ("Target: " + str(p["target"])) if p.get("target") else "")
-              for i, p in enumerate(PLAN)]
+    kpi_sub = ("Today: " + KPI_FOCUS["baseline"]) if KPI_FOCUS.get("baseline") else ""
+    tiles = []
+    for i, p in enumerate(PLAN):
+        if same_metric(p["metric"], KPI_FOCUS["label"]):
+            if p.get("target"):
+                kpi_sub = (kpi_sub + "  ·  " if kpi_sub else "") + "Target: " + str(p["target"])
+            continue
+        if p.get("target"):
+            tiles.append((i + 1, p["metric"], "Target: " + str(p["target"]), True))
+        elif p.get("baseline"):
+            tiles.append((i + 1, p["metric"], "Today: " + str(p["baseline"]), False))
+    tiles = [(None, KPI_FOCUS["label"], kpi_sub, False)] + tiles
     gap = 0.12
     ty = top + 0.22
     th = bottom - ty
-    tw = (9.40 - gap * (len(tiles) - 1)) / len(tiles)
-    for i, (num, title, sub) in enumerate(tiles):
+    tw = min(2.80, (9.40 - gap * (len(tiles) - 1)) / len(tiles))
+    for i, (num, title, sub, is_target) in enumerate(tiles):
         tx = 0.30 + i * (tw + gap)
         lead = num is None
         add_rect(slide, tx, ty, tw, th, fill=NAVY if lead else WHITE)
@@ -1061,8 +1198,8 @@ def build_measures(slide, top, bottom):
         if sub:
             sub_y = title_y + 0.40
             add_text(slide, sub, tx + 0.10, sub_y, tw - 0.20, max(0.22, ty + th - sub_y - 0.04),
-                     8.5, NAVY_TEXT_SOFT if lead else GREEN, bold=not lead, max_lines=2,
-                     min_size=7, cap_label=f"measure tile {i+1} sub")
+                     8.5, NAVY_TEXT_SOFT if lead else (GREEN if is_target else DARK_TEXT),
+                     bold=not lead, max_lines=2, min_size=7, cap_label=f"measure tile {i+1} sub")
 
 
 # ── Slide 4: The Recommended Strategy ─────────────────────────────
@@ -1198,6 +1335,12 @@ def build_buys_card(slide, inv, x, w, top, bottom):
     rh_used = (bottom - card_top - 0.12) / max(1, len(rows))
     y = card_top + 0.06
     standalone_mode = inv.get("pricing_mode") == "standalone"
+    # Deliverables as a two-column list only when every row has room for it,
+    # so the rows always match.
+    def _items(p):
+        return [t.strip() for t in re.split(r"\s*[·•|]\s*", product_line(p["name"])) if t.strip()]
+    as_list = all(len(_items(p)) >= 3 and rh_used - 0.70 >= ((len(_items(p)) + 1) // 2) * 0.27
+                  for p in rows)
     for i, p in enumerate(rows):
         ry = y + i * rh_used
         if i:
@@ -1206,8 +1349,7 @@ def build_buys_card(slide, inv, x, w, top, bottom):
         add_text(slide, p["name"], x + 0.18, ry + 0.06, name_w, 0.30, 10.5, NAVY, bold=True,
                  max_lines=1, min_size=8, cap_label=f"product {i+1} name")
         items = [t.strip() for t in re.split(r"\s*[·•|]\s*", product_line(p["name"])) if t.strip()]
-        half_rows = (len(items) + 1) // 2
-        if len(items) >= 3 and rh_used - 0.70 >= half_rows * 0.27:
+        if as_list:
             # Room to spare: the deliverables as a two-column list, below the
             # price and its stand-alone note.
             half = (len(items) + 1) // 2
@@ -1330,26 +1472,30 @@ def build_investment(prs):
     add_header(slide, "Your Investment", 9.30, kicker="THE INVESTMENT")
 
     ad, ret = inv.get("ad_spend"), inv.get("return")
+    # Without a closing quote the content runs down to the footer.
+    bottom = 4.74 if CLOSING_QUOTE else 5.12
     if ad:
         left_w = 5.00
-        build_buys_card(slide, inv, 0.30, left_w, 1.04, 3.66)
-        build_totals_block(slide, inv, 0.30, left_w, 3.76, 4.74)
+        build_buys_card(slide, inv, 0.30, left_w, 1.04, bottom - 1.08)
+        build_totals_block(slide, inv, 0.30, left_w, bottom - 0.98, bottom)
         rx, rw = 5.50, 4.20
         if ret:
             build_ad_spend_card(slide, ad, rx, rw, 1.04, 2.56)
-            build_return_card(slide, ret, rx, rw, 2.64, 4.74)
+            build_return_card(slide, ret, rx, rw, 2.64, bottom)
         else:
-            build_ad_spend_card(slide, ad, rx, rw, 1.04, 4.74)
+            build_ad_spend_card(slide, ad, rx, rw, 1.04, bottom)
     else:
-        build_buys_card(slide, inv, 0.30, 9.40, 1.04, 3.66)
-        build_totals_block(slide, inv, 0.30, 9.40, 3.76, 4.74)
+        build_buys_card(slide, inv, 0.30, 9.40, 1.04, bottom - 1.08)
+        build_totals_block(slide, inv, 0.30, 9.40, bottom - 0.98, bottom)
 
-    # Closing line — the owner's outcome, in their words.
-    add_rect(slide, 0, 4.84, 10, 0.43, fill=rgb("002A41"))
-    add_rect(slide, 0, 4.84, 10, 0.02, fill=LIME_GREEN)
-    add_text(slide, CLOSING_QUOTE, 0.70, 4.86, 8.60, 0.40, 9.5, NAVY_TEXT_SOFT,
-             align=PP_ALIGN.CENTER, max_lines=1, min_size=7.5, anchor=MSO_ANCHOR.MIDDLE,
-             cap_chars=160, cap_label="CLOSING_QUOTE")
+    # Closing line — the owner's outcome, in their own verbatim words. Left
+    # off when there's no verbatim line that isn't already on the deck.
+    if CLOSING_QUOTE:
+        add_rect(slide, 0, 4.84, 10, 0.43, fill=rgb("002A41"))
+        add_rect(slide, 0, 4.84, 10, 0.02, fill=LIME_GREEN)
+        add_text(slide, _quote(CLOSING_QUOTE[0]), 0.70, 4.86, 8.60, 0.40, 9.5, NAVY_TEXT_SOFT,
+                 align=PP_ALIGN.CENTER, max_lines=1, min_size=7.5, anchor=MSO_ANCHOR.MIDDLE,
+                 cap_chars=170, cap_label="CLOSING_QUOTE")
     add_footer(slide, INVESTMENT_PAGE, TOTAL_SLIDES, LOGO_PATH)
 
 
@@ -1489,6 +1635,7 @@ build_strategy(prs)
 if SHOW_ROLLOUT:
     build_rollout(prs)
 build_investment(prs)
+attribution_notes()
 write_notes(prs)
 
 os.makedirs(os.path.dirname(OUTPUT_PATH), exist_ok=True) if os.path.dirname(OUTPUT_PATH) else None

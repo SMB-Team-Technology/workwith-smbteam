@@ -79,7 +79,7 @@ The research notes contain the owner's **Dominant Buying Motive** in internal sh
 | "stop working weekends" | "Weekends back. Nights back. A business that works for you." |
 | "be proud of the firm" | "A firm you're proud to hand off — or hand over to the next generation" |
 
-Use the client's own words from the transcript wherever possible. DBM language belongs in `CLOSING_QUOTE` (slide 5) — a vivid, specific version of the outcome the owner described, in quotation marks, no metrics, no SMB jargon — and may color the `why` lines on slide 4.
+Use the client's own words from the transcript wherever possible. DBM language may color the `why` lines on slide 4. The closing line on the investment slide (`CLOSING_QUOTE`) is a verbatim quote, never a "version" of what they said — see QUOTE RULES.
 
 **What to avoid in the deck:** internal closer language ("DBM", "stage", "pain points", "closes"); SMB Team's internal frameworks by name; urgency-pressure framing.
 
@@ -92,19 +92,25 @@ Copy values exactly — do not rewrite or recompute.
 **Slide 1 — `KPI_FOCUS`** (from STEP 9B):
 - `kind`: `"kpi"` or `"qualitative"` (see DATA RULES).
 - `label`: the KPI's name, 1–3 words ("Cost per case", "Caseload", "Books behind").
-- `headline`: a short verbatim client line about the number (≤60 chars; `headline_is_quote: True` — the engine adds the quote marks), from STEP 9B "KPI quotes". With no verbatim transcript, a plain statement of the number instead (`headline_is_quote: False`).
+- `headline`: a short verbatim client line about the number (≤60 chars; `headline_is_quote: True` — the engine adds the quote marks), from STEP 9B "KPI quotes", with `said_by` (QUOTE RULES). With no verbatim transcript, a plain statement of the number instead (`headline_is_quote: False`, no `said_by`).
 - `detail`: one sentence with the exact figures as said (≤110 chars), e.g. "$4,500 cost per retained client on a $9,100 average family law case."
 - `baseline`: the current value in 2–5 words ("About 60 open cases") — shown as "Today: …" in the slide 3 "What we'll measure" row.
 - `stats`: 0–2 `(label, value)` supporting figures from STEP 9B, ≤40 chars each. A client goal is labelled "Your goal", never "Target".
 
-**Slide 1 — `PROSPECT_QUOTES`**: 0–3 `(topic, quote, tie_line)` — the most sensitive field in the deck.
+**QUOTE RULES — every quote anywhere in the deck** (KPI headline, `PROSPECT_QUOTES`, `CLIENT_WHY`, `COST_OF_INACTION`, `CLOSING_QUOTE`):
+- **Verbatim from the transcript**, as recorded in the research notes. Allowed edits only: cut from the start or end, mark a middle cut with "…", drop comma-set filler ("you know", "um"), capitalize the first letter. Never reword, combine, condense or "tidy" a line. The build checks every quote against the research notes word for word and stops on one that isn't there.
+- **The client's words, never the seller's.** Each quote carries `said_by` — "Full Name (client), 00:07:22" (or "(firm)" for another attendee from the firm), copied from the research notes. Fathom's speaker tags can be shifted by a line: the research notes record who actually said it, by context. The build stops on a quote attributed to the seller, and lists who said every quote in the slide's speaker notes.
+- **Never the same quote twice.** Each line is used once in the deck; the build stops on a repeat or near-repeat.
+- **`CLOSING_QUOTE`**: `(quote, said_by)` — a different verbatim client line about the outcome they want (STEP 9B "Client's why" second line, the DBM quote, or `Key prospect quotes` goals), ≤160 chars. `None` when there isn't one that isn't already on the deck — the closing bar is then left off. Never write one yourself.
+
+**Slide 1 — `PROSPECT_QUOTES`**: 0–3 `(topic, quote, tie_line, said_by)` — the most sensitive field in the deck.
 - Source: STEP 9B "KPI quotes", then the What You Told Us lines in the BUILD NOTES, then `Key prospect quotes`. Never an AI summary, the seller's words, or our research. Don't repeat the headline quote.
 - Only problems or priorities the prospect raised themselves. Copy the words exactly; you may cut from the start or end or mark a middle cut with "…", drop comma-set filler, and capitalize the first letter. Never reword, combine or strengthen. ≤120 chars. Cut the name of anyone from SMB Team the client was speaking to ("…about 60, Jake" → "…about 60") — this applies to the KPI `headline` too.
 - `topic`: 1–3 words. `tie_line`: how the proposal answers it, ≤70 chars, connected to a real deliverable — no promised outcomes or dates.
 - Apply the What You Told Us "Never include" list in `audit-write.md` (no named staff, personal/health/family matters, partner disputes, financial-distress figures).
 - No verbatim transcript: `PROSPECT_QUOTES = []` — the KPI card takes the full width.
 
-**Slide 1 — `CLIENT_WHY`, `COST_OF_INACTION`** (from STEP 9B "Client's why" / "Cost of inaction"): each `(quote, speaker_label)` — `speaker_label` `""` for the owner, else the attendee's first name. Verbatim client words only, same quote rules as above, ≤140 chars; pick the single strongest line. `None` when STEP 9B says "none on the call" or there's no verbatim transcript — never invent, paraphrase or infer one. Neither is a goal number or a target.
+**Slide 1 — `CLIENT_WHY`, `COST_OF_INACTION`** (from STEP 9B "Client's why" / "Cost of inaction"): each `(quote, speaker_label, said_by)` — `speaker_label` `""` for the owner, else the attendee's first name; `said_by` per QUOTE RULES. Verbatim client words only, same quote rules as above, ≤140 chars; pick the single strongest line. `None` when STEP 9B says "none on the call" or there's no verbatim transcript — never invent, paraphrase or infer one. Neither is a goal number or a target.
 
 **Optional slide — `STAIRCASE`** (from STEP 9B "Legacy Staircase discussed"): `None` unless the rep walked the client through the staircase on the call. Then `{"current": N or None, "goal": N or None}` with stages 1–8 (1 Law Student, 2 Lawyer, 3 Solo Practitioner, 4 Small Business Manager, 5 Law Firm CEO, 6 Law Firm Owner, 7 Freedom Entrepreneur, 8 Wealth Multiplier). `current` only if the client's position was placed on the call, `goal` only if one was named — otherwise `None` (the slide still shows the staircase and the Abyss, without the marker). Never infer a stage from revenue or team size for this slide.
 
@@ -127,7 +133,8 @@ Copy values exactly — do not rewrite or recompute.
   - Delivery hasn't approved commitment language: describe what we do first, never a timeline ("in 30 days", "by month 3"), a count we haven't scoped, or a promised outcome. If STEP 9B has no plan input for a product, use its first catalog deliverable and say so in `SELLER_NOTES["plan"]`.
   - `title` ≤34 chars. `fixes`: the DIAGNOSIS number it answers.
   - `actions`: 2–4 bullets, ≤60 chars, each a deliverable of the recommended products (catalog tables in `audit-write.md` and `Design Files/Scoping_and_Ad_Spend_Guide.md` — e.g. words of content, GBP locations, review requests at that tier). Never a deliverable the package doesn't include; never live chat or CRM setup.
-  - `metric`: what it moves, 1–4 words — shown in the "What we'll measure" row, numbered to the card. `target`: per DATA RULES, or `None` (then no target line at all).
+  - `metric`: what it moves, 1–4 words — shown in the "What we'll measure" row, numbered to the card. `target`: per DATA RULES, or `None` (then no target line at all). `baseline`: today's value of that metric, exactly as said on the call or measured in research ("24/100"), or `None`.
+  - The "What we'll measure" row starts with the slide 1 KPI (today's value). A plan metric that is the KPI again isn't repeated — its target, if any, moves onto the KPI tile. Each other metric shows its target, or with no target its baseline ("Today: 24/100"); a metric with neither is left out of the row.
 - `PLAN_NOTE`: optional line shown after the engine's own "Also included:" lead-in — don't type that prefix (≤160 chars) for other deliverables of the package, or `None`.
 - Never put a marketing action on this slide unless a marketing/ads package is part of the recommendation.
 
@@ -140,7 +147,7 @@ Copy values exactly — do not rewrite or recompute.
 **Slide 5 — Your Investment.** Every number on it — each product's price, the monthly and year-one totals, savings, the ad spend range and the return table — is read by the engine from `package_decision.json` → `investment`, which `scripts/reprice.mjs` computes in code (`scripts/lib/investment.mjs`). You never type a price or figure for this slide. If the build stops with "no investment block", run `node scripts/reprice.mjs [friendly-name]`. You fill only:
 - `PRODUCT_LINES` — one deliverables line per product, keyed by the product name exactly as in `package_decision.json` (`marketing_name`, `coaching_name`, `law_name`, without any "(N seats)"), ≤70 chars, items separated by " · " (the engine shows them as a list when there's room). Only catalog deliverables; fractional packages include the Elite Coach group deliverables (see `audit-write.md`). The build stops if a product has no line.
 - `AD_SPEND_WHY` — only with a paid-ads package: one short payoff clause, ≤90 chars, from the BUILD NOTES' "why this range" sentence (e.g. "to turn high-intent divorce searches into signed cases"). No calculation basis. `None` when there are no paid ads (the engine then leaves the ad spend and return panels out).
-- `CLOSING_QUOTE` — one sentence tied to the owner's DBM (DBM rules above), ≤160 chars so it fits one line. No placeholders.
+- `CLOSING_QUOTE` — `(quote, said_by)` or `None`, per QUOTE RULES.
 
 ---
 
@@ -179,7 +186,7 @@ wc -c "[friendly-name]/[FirmName]_[Date]_Proposal.pptx"
 - Copy prices exactly from the BUILD NOTES / `package_decision.json` — never round or estimate
 - Bullet text: one idea, one sentence, 8th-grade reading level, firm-specific — no generic language
 - Every number on the story slides (everything before the investment slide) follows the DATA RULES above: said on the call or measured in research, copied exactly, never estimated
-- The closing quote on Slide 5 must be vivid, specific, and in the owner's voice — not a generic tagline. If the transcript has a direct quote about what they want their life to look like, use it verbatim or near-verbatim
+- Every quote is verbatim, the client's own, attributed in `said_by`, and used once (QUOTE RULES). The closing quote is a verbatim client line or `None` — never written or reworded
 - Do not add a third package card — maximum two packages per the template
 - Never modify `Design Files/audit_pptx_template.py` — work in the firm's copy only
 - Never modify anything below `LAYOUT ENGINE — DO NOT MODIFY BELOW THIS LINE` in the firm's copy either — this includes `FONT` and every color constant. That section is what keeps every deck on-brand and visually consistent with every other deck in the portfolio; the diff in step 7 is the check. The layout engine measures every text box against the bundled Poppins fonts and writes the largest font size that fits. It drops 0.5pt at a time, down to 75% of the design size, and only truncates at a word boundary if the text still doesn't fit. Titles, the header kicker, "/mo", the retail price and the bundle savings line are all positioned from those measurements, so long firm names never spill out of their boxes. It also hard-caps a handful of fields as a backstop (see the `WARNING:` note in step 9) and embeds the Poppins font files into the saved `.pptx` — none of that requires anything from you beyond filling in the `# FILL:` values.

@@ -144,7 +144,8 @@ Do the calculations that used to go in the retired `section_11_workings.txt` her
 # KPI (slide 1): <label> — "<figure exactly as said>" — <client|seller>, <timestamp> (STEP 9B) — or "none usable: qualitative"
 # Diagnosis (slide 2): 1. <cause> — <evidence> — <source> · 2. … (STEP 9B)
 # Targets (slides 2–3): <metric> — <target> — basis: <call data> · or "none — seller note"
-# Client's why / cost of inaction (slide 1): "<verbatim>" (STEP 9B, timestamp) · or "none on the call"
+# Client's why / cost of inaction (slide 1): "<verbatim>" — <Full Name (client), timestamp> (STEP 9B) · or "none on the call"
+# Closing quote (slide 5): "<verbatim>" — <Full Name (client), timestamp> · or "none — no unused verbatim line"
 # Legacy Staircase slide: <included — current N / goal N, as discussed (STEP 9B) | left out — not walked through on the call>
 # Plan (slide 3): each action — <action> — tied to: "<client line or STEP 9B plan input>"
 # What You Told Us (slide 1 quotes and tie lines):
