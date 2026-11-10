@@ -35,11 +35,11 @@
     ],
     "lead_gen_gap": true
   },
-  "marketing_tier": "Growth",
-  "marketing_name": "Full Service Marketing — Growth",
-  "marketing_price_bundled": 7497,
-  "marketing_price_retail": 8997,
-  "marketing_savings": 1500,
+  "marketing_tier": "Paid Ads Starter",
+  "marketing_name": "Paid Ads Starter",
+  "marketing_price_bundled": 2497,
+  "marketing_price_retail": 3497,
+  "marketing_savings": 1000,
   "coaching_name": "Elite Coach",
   "coaching_price_bundled": 2600,
   "coaching_price_retail": 3497,
@@ -49,18 +49,20 @@
   "law_price_bundled": null,
   "law_price_retail": null,
   "law_seats": null,
-  "total_bundled": 10097,
-  "total_savings": 2397,
+  "total_bundled": 5097,
+  "total_savings": 1897,
   "ad_spend_conservative": 7500,
-  "ad_spend_aggressive": 30000,
+  "ad_spend_aggressive": 20000,
   "ad_spend_rationale": {
     "conservative_basis": "all personal injury — \"we do all pi\" (00:10:48). confirmed on site and call: car",
-    "aggressive_basis": "scaled 4x off the conservative channel-minimum floor"
+    "aggressive_basis": "capped at the Paid Ads Starter ad spend cap ($20,000/mo) after seller override"
   },
   "selection_notes": [
     "Elite Coach selected because it was discussed on the call (revenue rule would pick Master's Circle) — confirm tier with sales rep.",
     "Contingency-fee practice with only gross revenue stated ($1,200,000) — no net/collected figure found. Using gross as fallback, but confidence downgraded: confirm actual collected revenue with sales rep before finalizing tier.",
-    "Revenue $1M–$2M: Growth tier."
+    "Revenue $1M–$2M: Growth tier.",
+    "Seller override: switched marketing to Paid Ads Starter (kept Elite Coach) per Slack request on 2026-11-10 (\"omnisocial content + paid ads starter + elite coach package price\"). Ad spend aggressive lowered from $30,000 to the $20,000 Paid Ads Starter cap.",
+    "OmniSocial Content NOT added: tier not specified, a single Content tier (Standard $2,297/mo or Pro $3,697/mo) is existing-client upgrade only (net-new prospects can only buy the OmniSocial AI 360 bundle), and any OmniSocial AI proposal needs sales-ops approval (72-hr turnaround), $1,850 setup fee, 12-month term. Awaiting seller clarification."
   ],
   "pricing_mode": "bundled",
   "bundle_eligible_count": 2,
