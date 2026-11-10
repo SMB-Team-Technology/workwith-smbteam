@@ -120,8 +120,8 @@ KPI_FOCUS = {
 }
 
 PROSPECT_QUOTES = [
-    ("Website", "Something's definitely going on with the site, man.",
-     "A website built for mobile speed", "Ryan Gregerson (client), 00:15:48"),
+    ("Website", "If it is, we've got huge issues, right, because we're paying these guys a lot of money to make sure that's dialed.",
+     "A website built for mobile speed", "Ryan Gregerson (client), 00:09:42"),
     ("Paid channels", "When I look and isolate PPC and LSA and meta, it's freaking, I can't keep doing it.",
      "Google, LSA and Meta managed by a law-firm team", "Ryan Gregerson (client), 00:08:19"),
 ]
