@@ -25,7 +25,7 @@
   ],
   "hubspot_company": null,
   "firm_identity_check": "matches. Trigger name \"Stein Whatley Attorneys\" and the legal name on the website/transcript \"Stein Whatley Astorino, PLLC\" are the same firm (domain steinwhatley.com; Rob Astorino Jr. is a named partner; the Chamber of Commerce listing and areas-we-serve page also use \"Stein Whatley Attorneys\"). The trigger notes another HubSpot contact at the domain lists \"Stein Whatley Astorino, PLLC\"; use the legal name \"Stein Whatley Astorino, PLLC\" on the deck if the seller prefers the formal name.",
-  "package_source": "rules",
+  "package_source": "seller_override",
   "package_override": null,
   "needs_seller_input": false,
   "revenue_only_option": null,
@@ -37,11 +37,11 @@
     ],
     "lead_gen_gap": true
   },
-  "marketing_tier": "Growth",
-  "marketing_name": "Full Service Marketing — Growth",
-  "marketing_price_bundled": 7497,
-  "marketing_price_retail": 8997,
-  "marketing_savings": 1500,
+  "marketing_tier": "Paid Ads Starter",
+  "marketing_name": "Paid Ads Starter",
+  "marketing_price_bundled": 2497,
+  "marketing_price_retail": 3497,
+  "marketing_savings": 1000,
   "coaching_name": "Elite Coach",
   "coaching_price_bundled": 2600,
   "coaching_price_retail": 3497,
@@ -51,19 +51,22 @@
   "law_price_bundled": null,
   "law_price_retail": null,
   "law_seats": null,
-  "total_bundled": 10097,
-  "total_savings": 2397,
+  "total_bundled": 5097,
+  "total_savings": 1897,
   "ad_spend_conservative": 7500,
-  "ad_spend_aggressive": 30000,
+  "ad_spend_aggressive": 20000,
   "ad_spend_rationale": {
     "conservative_basis": "personal injury",
-    "aggressive_basis": "scaled 4x off the conservative channel-minimum floor"
+    "aggressive_basis": "capped at the Paid Ads Starter ad spend cap ($20,000/mo)"
   },
   "selection_notes": [
     "Elite Coach selected because it was discussed on the call (revenue rule would pick Elite Coach Plus) — confirm tier with sales rep.",
     "Contingency-fee practice with only gross revenue stated ($1,200,000) — no net/collected figure found. Using gross as fallback, but confidence downgraded: confirm actual collected revenue with sales rep before finalizing tier.",
     "Team size not stated in research notes or HubSpot — assumed 3. Please confirm headcount.",
-    "Revenue $1M–$2M: Growth tier."
+    "Revenue $1M–$2M: Growth tier.",
+    "Seller override: switched to Paid Ads Starter + Elite Coach, plus OmniSocial AI Content, per Slack request on 2026-11-10 (Full Service Marketing — Growth removed).",
+    "Seller override add-on (not in package total, quoted separately): OmniSocial AI Content – Standard $2,297/mo + $1,850 one-time setup, 12-month minimum. Tier not specified by seller; Standard assumed (lowest Content tier). Content tiers are existing-client upgrade only — a net-new client is only sellable the OmniSocial AI 360 bundle — and every OmniSocial AI proposal needs sales-ops approval (72-hour turnaround). Flag in deck/research notes.",
+    "Ad spend aggressive figure lowered from $30,000 to $20,000 to fit the Paid Ads Starter cap."
   ],
   "pricing_mode": "bundled",
   "bundle_eligible_count": 2,
