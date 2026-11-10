@@ -271,6 +271,16 @@ jobs:
           else:
               link_lines = ["The HubSpot link isn't available (the upload failed) — use the attached deck.", ""]
 
+          # Seller prep (what to ask, confirm, who said each quote) — kept out
+          # of the deck's speaker notes; the deck build writes it beside the deck.
+          import glob
+          prep_lines = []
+          preps = sorted(glob.glob(os.path.join(os.environ["FRIENDLY_NAME"], "*_Seller_Prep.txt")),
+                         key=os.path.getmtime)
+          if preps:
+              with open(preps[-1], encoding="utf-8") as f:
+                  prep_lines = ["", "-" * 60, f.read().strip(), "-" * 60, ""]
+
           ad_lines = []
           try:
               import json
@@ -290,6 +300,7 @@ jobs:
               "",
               *link_lines,
               *ad_lines,
+              *prep_lines,
               "Attached: Proposal Deck (PowerPoint) — share this on screen during the call.",
               "",
               "Let the team know if you need any changes before the call.",
@@ -389,15 +400,25 @@ jobs:
           except Exception:
               pass
 
+          prep = ""
+          import glob
+          preps = sorted(glob.glob(f"{slug}/*_Seller_Prep.txt"), key=os.path.getmtime)
+          if preps:
+              with open(preps[-1], encoding="utf-8") as f:
+                  body_txt = f.read().strip()
+              if len(body_txt) > 3500:
+                  body_txt = body_txt[:3500].rsplit("\n", 1)[0] + "\n… (full prep in the email)"
+              prep = "\n\n*Seller prep* (not in the deck):\n```" + body_txt + "```"
+
           if verified and upload_ok and url:
-              text = f"{mention} ✅ *Proposal ready:* {firm}\n{url}" + ad_review
+              text = f"{mention} ✅ *Proposal ready:* {firm}\n{url}" + ad_review + prep
               if hubspot_failed:
                   text += ("\n⚠️ The link could not be saved to the HubSpot contact "
                            "(growth_profit_and_freedom_roadmap) — check the Actions log.")
               elif not has_contact:
                   text += "\n_No HubSpot contact on this proposal, so the contact field was not updated._"
           elif verified:
-              text = ad_review.strip() + "\n" if ad_review else ""
+              text = (ad_review.strip() + "\n" if ad_review else "") + (prep.strip() + "\n" if prep else "")
               text += (
                   f"{mention} ⚠️ *Proposal deck built for {firm}, but the HubSpot upload failed* — "
                   f"{upload_error or 'no details'}.\n"

@@ -24,8 +24,8 @@ Data rules (enforced by the build where it can, by audit-pptx.md everywhere):
   estimated.
 - Targets are labelled "Target:" by the engine and must rest on call data.
   With nothing to base one on, leave it None — no target line is drawn and
-  the seller gets a speaker note.
-- Seller-only guidance goes in SELLER_NOTES (speaker notes), never on a slide.
+  the seller prep notes it.
+- Seller-only guidance goes in SELLER_NOTES (the seller prep file), never on a slide or in the speaker notes.
 
 Output: [friendly-name]/[FirmName]_[Date]_Proposal.pptx
 """
@@ -156,7 +156,7 @@ PLAN_TITLE  = "Lower What Each Case Costs"   # FILL: the outcome, ≤40 chars
 #            its action, in the "What we'll measure" row under the cards.
 #            Not the slide 1 KPI again (that's always the first tile).
 #   target:  the target, based on call data, or None (no target line is
-#            drawn; the seller gets an automatic speaker note)
+#            drawn; the seller prep notes it automatically)
 #   baseline: today's value of the metric, as said on the call or measured
 #            in research ("24/100"), or None. With no target and no
 #            baseline, the metric is left out of the row.
@@ -194,13 +194,15 @@ STRATEGY = [
 # Rollout Plan: left out of the deck until real onboarding content exists
 # (no FILL values). Never add onboarding steps or timelines anywhere.
 
-# ── Speaker notes for the seller (never shown on a slide) ─────────
+# ── Seller prep (never in the deck) ───────────────────────────────
 # {slide: "note"} keyed by slide name: "priorities", "staircase",
-# "diagnosis", "plan", "strategy", "investment". Required on "priorities"
-# when KPI_FOCUS kind is "qualitative". The engine adds its own notes for
-# missing targets, the staircase slide and the ad spend review. Notes travel inside the .pptx the client may receive:
-# only call prep about slides 1–4 (what to confirm, which figures are the
-# seller's) — never escalation flags, approvals or internal pricing caveats.
+# "diagnosis", "plan", "strategy", "investment" — what to ask, what to
+# confirm, deal context. Required on "priorities" when KPI_FOCUS kind is
+# "qualitative". The deck's speaker notes stay EMPTY (the .pptx goes out on
+# a public link and may reach the client): these notes, the engine's own
+# notes and who said each quote go to <deck>_Seller_Prep.txt next to the
+# deck, which the pipeline sends to the seller by email and Slack and never
+# commits. Escalation flags still stay in the BUILD NOTES.
 SELLER_NOTES = {
 }
 
@@ -656,7 +658,7 @@ def new_slide(prs):
     return prs.slides.add_slide(prs.slide_layouts[6])  # blank
 
 
-# Seller-only speaker notes, collected per slide while building.
+# Seller prep notes, collected per slide while building (written to the prep file, not the deck).
 _NOTES = {}
 
 
@@ -670,15 +672,42 @@ def seller_note(key):
     return SELLER_NOTES.get(key) if isinstance(SELLER_NOTES, dict) else None
 
 
+SLIDE_TITLES = {"priorities": "Your Priorities, In Your Words", "staircase": "Lawyer Legacy Staircase",
+                "diagnosis": "The Diagnosis", "plan": "The Plan", "strategy": "The Recommended Strategy",
+                "rollout": "Rollout Plan", "investment": "Your Investment"}
+
+
+def seller_prep_path():
+    base = re.sub(r"_Proposal\.pptx$|\.pptx$", "", OUTPUT_PATH)
+    return base + "_Seller_Prep.txt"
+
+
 def write_notes(prs):
-    for key, slide in zip(SLIDE_ORDER, prs.slides):
+    """Seller prep goes to a text file beside the deck, never into the
+    .pptx: its speaker notes are left empty because the deck is shared on a
+    public link and may be forwarded to the client."""
+    for slide in prs.slides:
+        if slide.has_notes_slide:
+            slide.notes_slide.notes_text_frame.text = ""
+    sections = []
+    for key in SLIDE_ORDER:
         lines = list(_NOTES.get(key, []))
         own = seller_note(key)
         if own:
             lines.insert(0, str(own).strip())
         if lines:
-            slide.notes_slide.notes_text_frame.text = (
-                "FOR THE SELLER — not shown on the slide.\n\n" + "\n\n".join(lines))
+            sections.append(f"Slide {PAGE[key]} — {SLIDE_TITLES.get(key, key)}\n" +
+                            "\n".join("- " + l.replace("\n", "\n  ") for l in lines))
+    path = seller_prep_path()
+    if sections:
+        head = (f"SELLER PREP — {FIRM_NAME}\n"
+                "For the seller only. Not in the deck; don't forward it to the client.\n\n")
+        if os.path.dirname(path):
+            os.makedirs(os.path.dirname(path), exist_ok=True)
+        with open(path, "w", encoding="utf-8") as f:
+            f.write(head + "\n\n".join(sections) + "\n")
+    elif os.path.exists(path):
+        os.remove(path)
 
 
 def _quote(text):
@@ -1162,46 +1191,43 @@ def same_metric(a, b):
 
 def build_measures(slide, top, bottom):
     """"What we'll measure": the call KPI (today's value, plus its target if
-    a plan action targets it), then each other plan metric, numbered to its
-    card, with its target — or, with no target, today's value. A metric with
-    neither, or that repeats the KPI, is left out."""
+    a plan action targets it), then the measure for each other action,
+    labelled with that action, showing its target — or, with no target,
+    today's value. A measure with neither, or that repeats the KPI, is left
+    out; there are no numbers, so nothing is ever skipped."""
     add_text(slide, "WHAT WE'LL MEASURE", 0.30, top, 4.0, 0.20, 7.5, NAVY, bold=True,
              fit=False)
     kpi_sub = ("Today: " + KPI_FOCUS["baseline"]) if KPI_FOCUS.get("baseline") else ""
     tiles = []
-    for i, p in enumerate(PLAN):
+    for p in PLAN:
         if same_metric(p["metric"], KPI_FOCUS["label"]):
             if p.get("target"):
                 kpi_sub = (kpi_sub + "  ·  " if kpi_sub else "") + "Target: " + str(p["target"])
             continue
         if p.get("target"):
-            tiles.append((i + 1, p["metric"], "Target: " + str(p["target"]), True))
+            tiles.append((p["title"], p["metric"], "Target: " + str(p["target"]), True))
         elif p.get("baseline"):
-            tiles.append((i + 1, p["metric"], "Today: " + str(p["baseline"]), False))
+            tiles.append((p["title"], p["metric"], "Today: " + str(p["baseline"]), False))
     tiles = [(None, KPI_FOCUS["label"], kpi_sub, False)] + tiles
     gap = 0.12
     ty = top + 0.22
     th = bottom - ty
     tw = min(2.80, (9.40 - gap * (len(tiles) - 1)) / len(tiles))
-    for i, (num, title, sub, is_target) in enumerate(tiles):
+    for i, (action, title, sub, is_target) in enumerate(tiles):
         tx = 0.30 + i * (tw + gap)
-        lead = num is None
+        lead = action is None
         add_rect(slide, tx, ty, tw, th, fill=NAVY if lead else WHITE)
-        if lead:
-            add_text(slide, "THE NUMBER FROM THE CALL", tx + 0.10, ty + 0.06, tw - 0.20, 0.18,
-                     6.5, LIME_GREEN, bold=True, max_lines=1, min_size=5.5,
-                     cap_label="measure kicker")
-            title_x, title_w = tx + 0.10, tw - 0.20
-        else:
-            add_badge(slide, num, tx + 0.10, ty + 0.08, 0.24, OCEAN_BLUE)
-            title_x, title_w = tx + 0.38, tw - 0.46
-        title_y = ty + (0.22 if lead else 0.04)
-        add_text(slide, title, title_x, title_y, title_w, 0.40, 9.5,
+        if not lead:
+            add_rect(slide, tx, ty, tw, 0.04, fill=OCEAN_BLUE)
+        kicker = "THE NUMBER FROM THE CALL" if lead else str(action).upper()
+        add_text(slide, kicker, tx + 0.10, ty + 0.07, tw - 0.20, 0.18, 6.5,
+                 LIME_GREEN if lead else OCEAN_BLUE, bold=True, max_lines=1, min_size=5.5,
+                 cap_label="measure kicker")
+        add_text(slide, title, tx + 0.10, ty + 0.24, tw - 0.20, 0.38, 9.5,
                  WHITE if lead else NAVY, bold=True, max_lines=2, min_size=7.5,
-                 anchor=MSO_ANCHOR.MIDDLE if not lead else None,
                  cap_label=f"measure tile {i+1}")
         if sub:
-            sub_y = title_y + 0.40
+            sub_y = ty + 0.62
             add_text(slide, sub, tx + 0.10, sub_y, tw - 0.20, max(0.22, ty + th - sub_y - 0.04),
                      8.5, NAVY_TEXT_SOFT if lead else (GREEN if is_target else DARK_TEXT),
                      bold=not lead, max_lines=2, min_size=7, cap_label=f"measure tile {i+1} sub")
@@ -1660,6 +1686,7 @@ if _TRUNCATED:
 
 noted = [k for k in SLIDE_ORDER if _NOTES.get(k) or seller_note(k)]
 if noted:
-    print("SELLER NOTES on: " + ", ".join(f"{k} ({PAGE[k]})" for k in noted))
+    print(f"Seller prep: {seller_prep_path()} (slides: " +
+          ", ".join(f"{k} {PAGE[k]}" for k in noted) + ") — speaker notes left empty")
 
 print(f"Saved: {OUTPUT_PATH}  ({len(prs.slides)} slides)")

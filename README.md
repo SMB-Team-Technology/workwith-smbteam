@@ -12,6 +12,8 @@ The per-client "Growth, Profit & Freedom Roadmap" websites (`workwith.smbteam.co
 3. **Pass 2 — deck** (`audit-write.yml`, `.claude/commands/audit-write.md` + `audit-pptx.md`): package, price, ad spend and ROI workings, recorded as BUILD NOTES in `<firm>/<FirmName>_<Date>_Proposal.py`, which builds the `.pptx`.
 4. **Delivery** (`audit-write.yml`): `scripts/upload-proposal-to-hubspot.mjs` uploads the deck to the HubSpot file manager ("AI Proposals" folder, public but not indexable; re-runs replace the same file, so the link never changes). The link is written to the contact's `growth_profit_and_freedom_roadmap` property, posted in the Slack thread and put in the seller email, which also attaches the `.pptx`.
 
+The deck's speaker notes are always empty (the .pptx is shared on a public link). Seller prep — what to ask and confirm, deal context, who said each quote — is written by the deck build to `<firm>/*_Seller_Prep.txt` (never committed, see `.gitignore`) and sent in the seller email and the Slack "Proposal ready" reply; `resend-audit-email.yml` rebuilds it from the deck script.
+
 Edits after the build go through `slack-change-handler.yml`; `resend-audit-email.yml` re-uploads and re-sends.
 
 ## Test mode
