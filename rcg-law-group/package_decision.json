@@ -1,0 +1,189 @@
+{
+  "confidence": "high",
+  "revenue_stated": 5000000,
+  "net_revenue_stated": null,
+  "is_contingency_practice": false,
+  "revenue_effective": 5000000,
+  "revenue_source": "research_notes",
+  "revenue_label": null,
+  "revenue_verified": true,
+  "needs_revenue_confirmation": false,
+  "team_size_stated": 10,
+  "team_size_source": "research_notes",
+  "team_size_effective": 10,
+  "practice_areas_detected": [
+    "family law (primary). seller: \"you guys are still primarily family law\" (00:06:34) — client did not object. website also",
+    "family law / divorce (primary; transcript: \"you guys are still primarily family law\")",
+    "family law / divorce"
+  ],
+  "hubspot_company": null,
+  "firm_identity_check": "matches (RCG Law Group, Ryan Gregerson managing partner, South Jordan UT; same on website, directories and transcript).",
+  "package_source": "trigger_override",
+  "package_override": "Full Service Marketing — Growth + Elite Coach",
+  "needs_seller_input": false,
+  "revenue_only_option": null,
+  "call_focus": {
+    "primary_engagement": "mixed",
+    "products_discussed": [
+      "Elite Coach",
+      "Master's Circle",
+      "Full Service Marketing"
+    ],
+    "lead_gen_gap": true
+  },
+  "marketing_tier": "Growth",
+  "marketing_name": "Full Service Marketing — Growth",
+  "marketing_price_bundled": 7497,
+  "marketing_price_retail": 8997,
+  "marketing_savings": 1500,
+  "coaching_name": "Elite Coach",
+  "coaching_price_bundled": 2600,
+  "coaching_price_retail": 3497,
+  "coaching_savings": 897,
+  "law_tier": null,
+  "law_name": null,
+  "law_price_bundled": null,
+  "law_price_retail": null,
+  "law_seats": null,
+  "total_bundled": 10097,
+  "total_savings": 2397,
+  "ad_spend_conservative": 25000,
+  "ad_spend_aggressive": 50000,
+  "ad_spend_rationale": {
+    "conservative_basis": "current spend stated on the call ($25,000/mo) held at launch — above the $6,700 channel floor",
+    "aggressive_basis": "20% rule: $10,000,000 goal × 20% ÷ 12 × 1.15 geo − $7,497 fee = $184,170 → reverse math: 91.6 cases/mo × $4,500 cost per case (stated) = $412,088 → capped at the $50,000 the package manages"
+  },
+  "selection_notes": [
+    "Package set by the seller: \"Full Service Marketing — Growth + Elite Coach\".",
+    "Revenue $3M+: Platinum tier."
+  ],
+  "pricing_mode": "bundled",
+  "bundle_eligible_count": 2,
+  "unpriced_products": [],
+  "investment": {
+    "version": 1,
+    "products": [
+      {
+        "category": "marketing",
+        "name": "Full Service Marketing — Growth",
+        "charged": 7497,
+        "standalone": 8997
+      },
+      {
+        "category": "coaching",
+        "name": "Elite Coach",
+        "charged": 2600,
+        "standalone": 3497
+      }
+    ],
+    "monthly_total": 10097,
+    "list_total": 12494,
+    "total_savings": 2397,
+    "pricing_mode": "bundled",
+    "year_one_total": 121164,
+    "year_one_basis": "12 × $10,097/mo in fees. Ad spend is paid separately to Google and Meta.",
+    "ad_spend": {
+      "channels": [
+        {
+          "channel": "Google Search",
+          "minimum": 3500
+        },
+        {
+          "channel": "Local Services Ads",
+          "minimum": 2000
+        },
+        {
+          "channel": "Meta retargeting",
+          "minimum": 1200
+        }
+      ],
+      "conservative": 25000,
+      "aggressive": 50000,
+      "current_stated": 25000,
+      "cap": 50000,
+      "overage": null,
+      "conservative_basis": "current spend stated on the call ($25,000/mo) held at launch — above the $6,700 channel floor",
+      "aggressive_steps": [
+        "20% rule: $10,000,000 goal × 20% ÷ 12 × 1.15 geo − $7,497 fee = $184,170",
+        "reverse math: 91.6 cases/mo × $4,500 cost per case (stated) = $412,088",
+        "capped at the $50,000 the package manages"
+      ],
+      "year_one_range": [
+        300000,
+        600000
+      ],
+      "seller_set": false,
+      "computed": null,
+      "needs_seller_review": true
+    },
+    "return": {
+      "method": "stated_cost_per_case",
+      "basis": "At today's $4,500 cost per signed case and a $9,100 average case (said on the call), with no improvement assumed.",
+      "case_value": 9100,
+      "case_value_stated": true,
+      "cost_per_case": 4500,
+      "share_of_case_value": 49,
+      "close_rate": 0.21,
+      "blended_cpl": 83,
+      "scenarios": [
+        {
+          "label": "Conservative",
+          "ad_spend": 25000,
+          "leads": null,
+          "cases": 5.6,
+          "revenue": 50600,
+          "return_multiple": 2
+        },
+        {
+          "label": "Aggressive",
+          "ad_spend": 50000,
+          "leads": null,
+          "cases": 11.1,
+          "revenue": 101100,
+          "return_multiple": 2
+        }
+      ],
+      "disclaimer": "Illustrative arithmetic, not a forecast."
+    },
+    "inputs": {
+      "practice_area": {
+        "value": "Family Law",
+        "source": "research notes"
+      },
+      "geo_tier": {
+        "value": 3,
+        "multiplier": 1.15,
+        "source": "research notes"
+      },
+      "competitiveness": {
+        "value": "Medium",
+        "source": "research notes"
+      },
+      "spanish_campaign": false,
+      "revenue_effective": 5000000,
+      "revenue_goal": {
+        "value": 10000000,
+        "source": "not stated — 2× current revenue (audit-write.md)"
+      },
+      "case_value": {
+        "value": 9100,
+        "source": "stated on the call"
+      },
+      "close_rate": {
+        "value": 0.21,
+        "source": "stated on the call"
+      },
+      "current_ad_spend": 25000,
+      "current_cost_per_case": 4500,
+      "current_cost_per_lead": null,
+      "max_ad_budget": null,
+      "management_fee": 7497,
+      "ad_spend_cap": 50000
+    },
+    "flags": [
+      "Reverse math ($412,088) is well above the 20% rule ($184,170) — the goal may be aggressive for the budget (paid ads team review).",
+      "Goal-based ad spend ($412,088) is above the $50,000 cap for Full Service Marketing — Growth — capped. Higher spend means a tier upgrade or the 10% overage fee (seller decision).",
+      "Ad spend over $25K — scoping approval required."
+    ]
+  }
+}
