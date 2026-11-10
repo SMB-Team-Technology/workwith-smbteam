@@ -135,3 +135,12 @@ test('a seller-set ad spend range replaces the computed one and is no longer fla
   assert.equal(inv.return.scenarios[0].ad_spend, 20_000);
   assert.equal(computeInvestment(growthPlusElite, ryanInputs).ad_spend.needs_seller_review, true);
 });
+
+test('list total includes savings on lines with no stand-alone price of their own', () => {
+  const inv = computeInvestment({
+    law_name: 'AI Workforce Pro + Fractional CTO Level 1', law_seats: 9, law_price_bundled: 5374,
+    law_price_retail: null, total_bundled: 5374, total_savings: 500, pricing_mode: 'bundled',
+    revenue_effective: 1_200_000,
+  }, {});
+  assert.equal(inv.list_total, 5874);
+});

@@ -213,8 +213,10 @@ export function computeInvestment(d, inputs = {}) {
     products,
     monthly_total: monthly,
     // List (stand-alone) price of the same products — shown next to the
-    // bundle price. A product with no stand-alone price counts at its charge.
-    list_total: products.reduce((s, p) => s + (p.standalone ?? p.charged ?? 0), 0),
+    // bundle price: what's charged plus the bundle savings pricing.mjs found
+    // (covers lines with no stand-alone price of their own, e.g. a combined
+    // AI Workforce Pro + Fractional CTO line).
+    list_total: monthly + (d.total_savings || 0),
     total_savings: d.total_savings || 0,
     pricing_mode: d.pricing_mode ?? null,
     // DECISION: no setup fee is listed for Full Service Marketing, Paid Ads,
