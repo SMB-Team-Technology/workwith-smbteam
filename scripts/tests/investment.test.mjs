@@ -117,3 +117,21 @@ test('applyInvestment keeps the legacy Slack fields in step', () => {
   assert.equal(d.ad_spend_aggressive, 50_000);
   assert.equal(d.investment.ad_spend.aggressive, 50_000);
 });
+
+test('list total is the stand-alone price of the same products', () => {
+  const inv = computeInvestment(growthPlusElite, ryanInputs);
+  assert.equal(inv.list_total, 8997 + 3497);
+  assert.equal(inv.list_total - inv.monthly_total, inv.total_savings);
+});
+
+test('a seller-set ad spend range replaces the computed one and is no longer flagged for review', () => {
+  const d = { ...growthPlusElite, ad_spend_override: { conservative: 20_000, aggressive: 35_000, note: 'Slack, Nov 10' } };
+  const inv = computeInvestment(d, ryanInputs);
+  assert.equal(inv.ad_spend.conservative, 20_000);
+  assert.equal(inv.ad_spend.aggressive, 35_000);
+  assert.equal(inv.ad_spend.seller_set, true);
+  assert.equal(inv.ad_spend.needs_seller_review, false);
+  assert.deepEqual(inv.ad_spend.computed, { conservative: 25_000, aggressive: 50_000 });
+  assert.equal(inv.return.scenarios[0].ad_spend, 20_000);
+  assert.equal(computeInvestment(growthPlusElite, ryanInputs).ad_spend.needs_seller_review, true);
+});

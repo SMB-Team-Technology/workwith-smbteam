@@ -132,7 +132,7 @@ jobs:
                  them). Then update PRODUCT_LINES (one line per product) and
                  AD_SPEND_WHY (None if no paid ads) in the deck script, and the BUILD
                  NOTES comment block to match.
-               Then run: python3 '<folder>/<file>_Proposal.py' (expect 'Saved: … (5
+               Then run: python3 '<folder>/<file>_Proposal.py' (expect 'Saved: … (5 or 6
                slides)'), and confirm this prints nothing:
                diff <(sed -n '/LAYOUT ENGINE/,\$p' 'Design Files/audit_pptx_template.py') <(sed -n '/LAYOUT ENGINE/,\$p' '<folder>/<file>_Proposal.py')
                (pip install python-pptx --break-system-packages --quiet if needed.)

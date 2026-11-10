@@ -269,12 +269,25 @@ jobs:
           else:
               link_lines = ["The HubSpot link isn't available (the upload failed) — use the attached deck.", ""]
 
+          ad_lines = []
+          try:
+              import json
+              with open(os.path.join(os.environ["FRIENDLY_NAME"], "package_decision.json")) as f:
+                  ad = (json.load(f).get("investment") or {}).get("ad_spend") or {}
+              if ad:
+                  ad_lines = [f"Please review the ad spend on the investment slide "
+                              f"(${ad['conservative']:,}–${ad['aggressive']:,}/mo) before you send or present the deck. "
+                              "To change it, reply \"ad spend is $X–$Y\" in the Slack thread.", ""]
+          except Exception:
+              pass
+
           body = "\n".join([
               f"Hi {sales_rep},",
               "",
               f"The proposal deck for {firm_name} is ready ahead of your proposal call.",
               "",
               *link_lines,
+              *ad_lines,
               "Attached: Proposal Deck (PowerPoint) — share this on screen during the call.",
               "",
               "Let the team know if you need any changes before the call.",
@@ -363,15 +376,27 @@ jobs:
           hubspot_failed = os.environ.get("HUBSPOT_OUTCOME") == "failure"
           has_contact = os.environ.get("HAS_CONTACT") == "true"
 
+          ad_review = ""
+          try:
+              with open(f"{slug}/package_decision.json") as f:
+                  ad = (json.load(f).get("investment") or {}).get("ad_spend") or {}
+              if ad:
+                  who = "you set" if ad.get("seller_set") else "recommended"
+                  ad_review = (f"\n⚠️ Review the ad spend ({who}: ${ad['conservative']:,}–${ad['aggressive']:,}/mo) "
+                               "before you send or present the deck. Reply \"ad spend is $X–$Y\" to change it.")
+          except Exception:
+              pass
+
           if verified and upload_ok and url:
-              text = f"{mention} ✅ *Proposal ready:* {firm}\n{url}"
+              text = f"{mention} ✅ *Proposal ready:* {firm}\n{url}" + ad_review
               if hubspot_failed:
                   text += ("\n⚠️ The link could not be saved to the HubSpot contact "
                            "(growth_profit_and_freedom_roadmap) — check the Actions log.")
               elif not has_contact:
                   text += "\n_No HubSpot contact on this proposal, so the contact field was not updated._"
           elif verified:
-              text = (
+              text = ad_review.strip() + "\n" if ad_review else ""
+              text += (
                   f"{mention} ⚠️ *Proposal deck built for {firm}, but the HubSpot upload failed* — "
                   f"{upload_error or 'no details'}.\n"
                   "The deck is attached to the email. No link was written to HubSpot. "

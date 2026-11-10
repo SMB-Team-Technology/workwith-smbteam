@@ -347,6 +347,12 @@ jobs:
                  'Use the revenue-only option' (or 'marketing + coaching', 'the default')
                  means: copy every field in revenue_only_option to the top-level fields of
                  the same name, then run reprice.mjs.
+               - Ad spend changes ('ad spend is \$15K–\$25K', 'raise/lower ad spend'): never
+                 edit the ad_spend_* fields — reprice.mjs recomputes them. Set
+                 ad_spend_override to {\"conservative\": <low>, \"aggressive\": <high>,
+                 \"note\": \"Seller via Slack <date>\"} (one number → both ends), then run
+                 reprice.mjs; the deck and the return projection use the seller's range.
+                 'Use the recommended ad spend' removes ad_spend_override.
                - 'Change this to X + Y' REPLACES the package: anything not named is removed.
                  Set removed products' name fields to null (for marketing also null
                  marketing_tier and the ad_spend_* fields). Both AI products go in one

@@ -417,7 +417,15 @@ jobs:
               if unpriced:
                   lines.append(f"🚫 *Can't be sold on its own yet:* {', '.join(unpriced)} — add another product or pick a different tier.")
               if d.get("ad_spend_conservative"):
-                  lines.append(f"*Suggested ad spend:* ${d.get('ad_spend_conservative'):,}–${d.get('ad_spend_aggressive'):,}/mo")
+                  # Ad spend always gets an explicit seller review before the deck goes out.
+                  ad = (d.get("investment") or {}).get("ad_spend") or {}
+                  lines.append(f"⚠️ *Review the recommended ad spend before the deck goes out:* "
+                               f"${d.get('ad_spend_conservative'):,}–${d.get('ad_spend_aggressive'):,}/mo")
+                  if ad.get("conservative_basis"):
+                      lines.append(f"    _Low end:_ {ad['conservative_basis']}")
+                  if ad.get("aggressive_steps"):
+                      lines.append(f"    _High end:_ {ad['aggressive_steps'][-1]}")
+                  lines.append("    Reply \"ad spend is $X–$Y\" to change it.")
               lines.append(f"*Confidence:* {d.get('confidence')}")
               notes = d.get("selection_notes") or []
               if notes:

@@ -212,6 +212,9 @@ export function computeInvestment(d, inputs = {}) {
     version: 1,
     products,
     monthly_total: monthly,
+    // List (stand-alone) price of the same products — shown next to the
+    // bundle price. A product with no stand-alone price counts at its charge.
+    list_total: products.reduce((s, p) => s + (p.standalone ?? p.charged ?? 0), 0),
     total_savings: d.total_savings || 0,
     pricing_mode: d.pricing_mode ?? null,
     // DECISION: no setup fee is listed for Full Service Marketing, Paid Ads,
@@ -346,6 +349,19 @@ export function computeInvestment(d, inputs = {}) {
   conservative = round100(conservative);
   aggressive = Math.max(round500(aggressive), conservative);
 
+  // A range the seller set in Slack (package_decision.json → ad_spend_override)
+  // replaces the computed one; the computed range stays on record.
+  const override = d.ad_spend_override;
+  let computed = null;
+  if (override && override.conservative > 0) {
+    computed = { conservative, aggressive };
+    conservative = Math.round(override.conservative);
+    aggressive = Math.max(Math.round(override.aggressive ?? override.conservative), conservative);
+    conservativeBasis = `set by the seller${override.note ? ` (${override.note})` : ''} — computed range was ${money(computed.conservative)}–${money(computed.aggressive)}`;
+    aggressiveSteps.push(`replaced by the seller's range ${money(conservative)}–${money(aggressive)}`);
+    overage = cap != null && conservative > cap ? { above_cap: conservative - cap, fee_rate: OVERAGE_FEE } : null;
+  }
+
   if (aggressive > SCOPING_AD_SPEND) flags.push('Ad spend over $25K — scoping approval required.');
 
   investment.ad_spend = {
@@ -358,6 +374,11 @@ export function computeInvestment(d, inputs = {}) {
     conservative_basis: conservativeBasis,
     aggressive_steps: aggressiveSteps,
     year_one_range: [conservative * 12, aggressive * 12],
+    seller_set: !!computed,
+    computed: computed,
+    // Every deck's ad spend is flagged for the seller to review before it
+    // goes out (Phase 1 Slack post, deck-ready Slack reply and email).
+    needs_seller_review: !computed,
   };
 
   // ── Return on ad spend ────────────────────────────────────────────────────

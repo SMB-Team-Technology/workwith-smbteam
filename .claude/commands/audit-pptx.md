@@ -33,30 +33,32 @@ Never read `[friendly-name]/sections/`, `[friendly-name]/index.html` or `*_Sales
 
 Five slides that make one argument, the way our best hand-built decks run on a call: **one number from the call → what drives it → what we do about each driver → what we're recommending → what it costs.** The package and prices are decided in `/audit-write` STEP 1 and never change here — these slides only make the case for them. Every slide must tie back to the slide-1 KPI.
 
-**Slide 1 — Your Priorities, In Your Words.** Left: the KPI card — the one financially tangible number from the call that the recommendation moves (e.g. cost per case, caseload, months the books are behind), with the client's own line about it and up to two supporting figures. Right: up to three more client quotes, each with a bold line saying how the proposal answers it. Talk track: "Here's what I heard, and the number you told me matters most."
+**Slide 1 — Your Priorities, In Your Words.** Left: the KPI card — the one financially tangible number from the call that the recommendation moves (e.g. cost per case, caseload, months the books are behind), with the client's own line about it and up to two supporting figures. Right: up to three more client quotes, each with a bold line saying how the proposal answers it. Along the bottom, when the call gave them: **why it matters to them** (what they really want, in their words) and **if nothing changes** (the cost of inaction, in their words) — then the quote cards cap at two. Talk track: "Here's what I heard, the number you told me matters most, why it matters to you, and what happens if nothing changes."
 
-**Slide 2 — The Diagnosis.** "Why [the KPI] is where it is": 3–4 root causes, each with its evidence number (or finding), a target when call data supports one, two plain sentences and the source. Replaces the old broad "key gaps". Talk track: "Four things drive that number. Here's each one."
+**Optional — Lawyer Legacy Staircase (after slide 1).** Only when the rep actually walked the client through the staircase on the call. The original staircase graphic rebuilt as native shapes (every number and label is editable text), with the Abyss emphasized: a red line through the staircase and "more profit + more freedom" on the far side. "You Are Here!" only when the client's stage was placed on the call; "Your Goal" only when a goal stage was named. Reps delete the slide if they don't use it (its speaker note says so).
+
+**Slide 2 — The Diagnosis.** "Why [the KPI] is where it is": 3–4 root causes, each with its evidence number (or finding), a target when call data supports one, one short line and the source. A second major problem from the call gets its own block — never folded into the first. Replaces the old broad "key gaps". Talk track: "Four things drive that number. Here's each one."
 
 **Slide 3 — The Plan.** 3–4 actions built from the recommended products' deliverables. Each card names the diagnosed cause it fixes and what we do. Under the cards, a "What we'll measure" row: the slide 1 KPI with today's value, then each action's metric (numbered to its card) and its target when call data supports one. With no target, no target line is drawn. Talk track: "Here's what we do about each one, and how we'll know it's working."
 
 **Slide 4 — The Recommended Strategy.** 1–3 pieces: what we're recommending, why each was chosen for this firm (tied to slide 2), and its deliverables.
 
-**Slide 5 — Your Investment.** Package cards, bundle total and savings, ad spend note, ROI projection, closing quote — the numbers and their rules are unchanged. (The old "How this plan addresses it" panel is gone: slide 1 covers it.)
+**Slide 5 — Your Investment.** "What $X/mo buys" by product, each bundle price beside its struck-through list (stand-alone) price; the monthly investment (with list total and savings) beside the year-one total; the recommended ad spend; and what that ad spend buys. Every number comes from `package_decision.json`. The seller is asked to review the ad spend before the deck goes out (Phase 1 Slack post, deck-ready Slack reply and email).
 
 **No Rollout Plan slide for now.** The engine has one (`SHOW_ROLLOUT`), left out until real onboarding content exists. Never add onboarding steps, commitments or timelines anywhere in the deck.
 
-**Speaker notes.** `SELLER_NOTES = {slide_number: "…"}` carries call prep for the seller that doesn't belong on a slide: which figures are the seller's own, what number to ask for, what to confirm before quoting a target. The engine adds its own note for plan actions with no target. **Notes travel inside the .pptx** — it is attached to the seller email, uploaded to a public HubSpot link and may be forwarded to the client — so write nothing you wouldn't want the client to read: never escalation flags, approval requirements, doubts about their revenue, internal pricing or ROI caveats, or criticism of the firm or its staff. Those stay in the BUILD NOTES. Keep notes to slides 1–4.
+**Speaker notes.** `SELLER_NOTES = {"priorities": "…", "staircase": "…", "diagnosis": "…", "plan": "…", "strategy": "…", "investment": "…"}` — keyed by slide name (the staircase slide is optional, so numbers move) carries call prep for the seller that doesn't belong on a slide: which figures are the seller's own, what number to ask for, what to confirm before quoting a target. The engine adds its own note for plan actions with no target. **Notes travel inside the .pptx** — it is attached to the seller email, uploaded to a public HubSpot link and may be forwarded to the client — so write nothing you wouldn't want the client to read: never escalation flags, approval requirements, doubts about their revenue, internal pricing or ROI caveats, or criticism of the firm or its staff. Those stay in the BUILD NOTES. Keep notes to the story slides — not the investment slide.
 
 ---
 
-## DATA RULES — APPLY TO EVERY NUMBER ON SLIDES 1–4
+## DATA RULES — APPLY TO EVERY NUMBER ON THE STORY SLIDES
 
 - **No slide numbers in slide text** ("see slide 6", "Slide 3 shows…") — the deck's order changes; refer to the plan, the investment, etc. instead.
 
 - **Source = the research notes' STEP 9B block** ("KPI AND DIAGNOSIS"), plus STEP 1–9 for research evidence. Copy figures exactly as written there ("about 60", "$4,500", "maybe 10"). Never round, convert, combine two figures into a new one, or estimate.
 - **Only numbers said on the call** (client or seller) or measured/seen in the research. A seller's figure is presented as discussed on the call ("the cost range quoted on the call"), never as the firm's own result. Never an `UNCONFIRMED` figure (review counts, ratings), a "NOT OBSERVED" item, or a benchmark from our pricing/CPL tables.
 - **The KPI must support the recommendation.** It is the number the recommended products move. If the seller changed the package and STEP 9B's headline KPI no longer fits, use its "Alternate KPI" line; if none fits, treat it as "no usable KPI".
-- **No usable KPI** (STEP 9B says `none usable`, or nothing fits the package): `KPI_FOCUS["kind"] = "qualitative"`, headline = the pain point in the client's words, no invented number anywhere, and `SELLER_NOTES[1]` tells the seller there was no usable number and what to ask for (from STEP 9B "Seller should confirm"). The build refuses to run without that note.
+- **No usable KPI** (STEP 9B says `none usable`, or nothing fits the package): `KPI_FOCUS["kind"] = "qualitative"`, headline = the pain point in the client's words, no invented number anywhere, and `SELLER_NOTES["priorities"]` tells the seller there was no usable number and what to ask for (from STEP 9B "Seller should confirm"). The build refuses to run without that note.
 - **Targets** are always labelled "Target:" by the engine (never type the prefix) and rest on call data — STEP 9B's "Target basis" or the client's stated goal. A client goal is worded as theirs ("10 a month (your goal)"). With no basis, set `target: None`: no target line is drawn on the slide and the seller gets a speaker note. Never make one up, and never write a placeholder such as "to be confirmed". A target is a specific figure or goal someone stated ("at least 10 cases a month"); a general wish ("I don't want to break even", "lower the cost") is not a target — leave `None` and put the wish in the seller note.
 - AI-summary figures tagged `[AI summary — seller to confirm]` may be shown only with a `SELLER_NOTES` line asking the seller to confirm them before the call.
 - Record in the BUILD NOTES where each slide 1–3 number came from (STEP 9B line or research step).
@@ -102,18 +104,27 @@ Copy values exactly — do not rewrite or recompute.
 - Apply the What You Told Us "Never include" list in `audit-write.md` (no named staff, personal/health/family matters, partner disputes, financial-distress figures).
 - No verbatim transcript: `PROSPECT_QUOTES = []` — the KPI card takes the full width.
 
+**Slide 1 — `CLIENT_WHY`, `COST_OF_INACTION`** (from STEP 9B "Client's why" / "Cost of inaction"): each `(quote, speaker_label)` — `speaker_label` `""` for the owner, else the attendee's first name. Verbatim client words only, same quote rules as above, ≤140 chars; pick the single strongest line. `None` when STEP 9B says "none on the call" or there's no verbatim transcript — never invent, paraphrase or infer one. Neither is a goal number or a target.
+
+**Optional slide — `STAIRCASE`** (from STEP 9B "Legacy Staircase discussed"): `None` unless the rep walked the client through the staircase on the call. Then `{"current": N or None, "goal": N or None}` with stages 1–8 (1 Law Student, 2 Lawyer, 3 Solo Practitioner, 4 Small Business Manager, 5 Law Firm CEO, 6 Law Firm Owner, 7 Freedom Entrepreneur, 8 Wealth Multiplier). `current` only if the client's position was placed on the call, `goal` only if one was named — otherwise `None` (the slide still shows the staircase and the Abyss, without the marker). Never infer a stage from revenue or team size for this slide.
+
 **Slide 2 — `DIAGNOSIS_TITLE`, `DIAGNOSIS_INTRO`, `DIAGNOSIS`, `DIAGNOSIS_FIX_LINE`** (from STEP 9B "Diagnosis"):
 - `DIAGNOSIS_TITLE` names the KPI ("Why Each Case Costs $4,500", "Why Your Caseload Is Shrinking"), ≤40 chars. `DIAGNOSIS_INTRO`: one plain line, ≤90 chars.
-- 3–4 causes, biggest first, each specific to this firm — never generic categories like "Lead Generation".
+- 3–4 causes, biggest first, each specific to this firm — never generic categories like "Lead Generation". One problem per cause: if the call surfaced a second major problem, it gets its own cause rather than being merged into the first (fold minor symptoms into the cause they belong to instead).
   - `title` ≤32 chars, plain words. `metric`: the evidence number exactly as recorded, or `""` for a cause with no number. `metric_label` ≤40 chars.
   - `target`: per DATA RULES, or `None`.
-  - `body`: two short sentences — what's happening and what it costs them (≤120 chars).
+  - `body`: one short line — what's happening (≤80 chars).
   - `source`: where it came from, short ("Discovery call, Oct 26", "Lighthouse test", "Seen live on the call", "Seller, on the call").
 - `DIAGNOSIS_FIX_LINE` ≤140 chars: one line pointing to how slide 3 answers the causes, shown after the engine's "How we fix it:" lead-in (don't type that prefix).
 
 **Slide 3 — `PLAN_KICKER`, `PLAN_TITLE`, `PLAN`, `PLAN_NOTE`:**
 - `PLAN_KICKER`: the product area ("Paid media and website", "Financial clarity"). `PLAN_TITLE`: the outcome for the KPI, ≤40 chars ("Lower What Each Lead Costs").
 - 3–4 actions. Every diagnosed cause must be fixed by at least one action (the build checks).
+- **Each action is one layer below the product name, tied to something the client said** — not the product's brochure. Use STEP 9B "Plan inputs":
+  - **Fractional CTO / AI Workforce Pro:** the first action is an audit of how work moves through the firm today; then up to three automations, each named after a task the client named on the call ("Automate intake follow-ups", "Draft engagement letters from intake answers").
+  - **FCOO and coaching (Elite Coach, Master's Circle, Coach Essentials):** the first concrete process or leadership fix tied to the pain the client stated ("Write the intake SOP so screening doesn't need you", "Weekly leadership meeting with a scorecard").
+  - **FCFO / bookkeeping:** what gets built first, tied to what they said they can't see ("Lead-to-signed-case forecast", "Monthly P&L by practice area", "Driver model for hiring decisions").
+  - Delivery hasn't approved commitment language: describe what we do first, never a timeline ("in 30 days", "by month 3"), a count we haven't scoped, or a promised outcome. If STEP 9B has no plan input for a product, use its first catalog deliverable and say so in `SELLER_NOTES["plan"]`.
   - `title` ≤34 chars. `fixes`: the DIAGNOSIS number it answers.
   - `actions`: 2–4 bullets, ≤60 chars, each a deliverable of the recommended products (catalog tables in `audit-write.md` and `Design Files/Scoping_and_Ad_Spend_Guide.md` — e.g. words of content, GBP locations, review requests at that tier). Never a deliverable the package doesn't include; never live chat or CRM setup.
   - `metric`: what it moves, 1–4 words — shown in the "What we'll measure" row, numbered to the card. `target`: per DATA RULES, or `None` (then no target line at all).
@@ -154,7 +165,7 @@ diff <(sed -n '/LAYOUT ENGINE/,$p' "Design Files/audit_pptx_template.py") \
 python3 "[friendly-name]/[FirmName]_[Date]_Proposal.py"
 ```
 
-9. Confirm the output prints "Saved: … (5 slides)". If it prints "Deck not built — fix the values above the LAYOUT ENGINE line", fix each listed item and re-run. If it also prints a `WARNING: N field(s) exceeded their character budget…` block, that means the layout engine had to truncate something you filled in — go back and shorten that field's source copy rather than shipping the truncated version. A `NOTE: N field(s) were shrunk to fit their box` block is informational: the engine measured that text against the Poppins font and dropped it a half-point at a time until it fit. That is expected for long firm names and is not an error.
+9. Confirm the output prints "Saved: … (5 slides)" — or (6 slides) when `STAIRCASE` is set. If it prints "Deck not built — fix the values above the LAYOUT ENGINE line", fix each listed item and re-run. If it also prints a `WARNING: N field(s) exceeded their character budget…` block, that means the layout engine had to truncate something you filled in — go back and shorten that field's source copy rather than shipping the truncated version. A `NOTE: N field(s) were shrunk to fit their box` block is informational: the engine measured that text against the Poppins font and dropped it a half-point at a time until it fit. That is expected for long firm names and is not an error.
 10. Verify the file exists and is not empty:
 
 ```bash
@@ -167,7 +178,7 @@ wc -c "[friendly-name]/[FirmName]_[Date]_Proposal.pptx"
 
 - Copy prices exactly from the BUILD NOTES / `package_decision.json` — never round or estimate
 - Bullet text: one idea, one sentence, 8th-grade reading level, firm-specific — no generic language
-- Every number on slides 1–4 follows the DATA RULES above: said on the call or measured in research, copied exactly, never estimated
+- Every number on the story slides (everything before the investment slide) follows the DATA RULES above: said on the call or measured in research, copied exactly, never estimated
 - The closing quote on Slide 5 must be vivid, specific, and in the owner's voice — not a generic tagline. If the transcript has a direct quote about what they want their life to look like, use it verbatim or near-verbatim
 - Do not add a third package card — maximum two packages per the template
 - Never modify `Design Files/audit_pptx_template.py` — work in the firm's copy only

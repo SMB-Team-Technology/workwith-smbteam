@@ -38,8 +38,8 @@ Do not read anything under `[friendly-name]/sections/`, `[friendly-name]/index.h
 - Never mention live chat as an SMB Team service.
 - Never mention CRM setup as an SMB Team deliverable.
 - Never state profitability facts by practice area unless the prospect explicitly said so on the call.
-- Escalation flags are internal only — they go in the BUILD NOTES block (STEP 2), never in a slide field and never in `SELLER_NOTES`: speaker notes travel inside the .pptx the client may receive. `SELLER_NOTES` is only for call prep on slides 1–4 (see audit-pptx.md).
-- Every number on slides 1–4 was said on the call (client or seller) or measured in research, copied exactly — never invented or estimated, and every target rests on call data or is left `None` (DATA RULES in `audit-pptx.md`).
+- Escalation flags are internal only — they go in the BUILD NOTES block (STEP 2), never in a slide field and never in `SELLER_NOTES`: speaker notes travel inside the .pptx the client may receive. `SELLER_NOTES` is only for call prep on the story slides, keyed by slide name (see audit-pptx.md).
+- Every number on the story slides (everything before the investment slide) was said on the call (client or seller) or measured in research, copied exactly — never invented or estimated, and every target rests on call data or is left `None` (DATA RULES in `audit-pptx.md`).
 - **Never print a review count or star rating (firm or competitor) tagged `UNCONFIRMED` in the research notes as a specific fact.** Use qualitative framing instead (e.g., "far fewer reviews than several competitors in this market" rather than an exact number), and add "Review counts unconfirmed — verify live before the call" to the escalation flags in the BUILD NOTES. Only a number tagged `[confirmed via Google]` in the research notes may appear as a specific figure in the deck.
 
 ---
@@ -144,6 +144,9 @@ Do the calculations that used to go in the retired `section_11_workings.txt` her
 # KPI (slide 1): <label> — "<figure exactly as said>" — <client|seller>, <timestamp> (STEP 9B) — or "none usable: qualitative"
 # Diagnosis (slide 2): 1. <cause> — <evidence> — <source> · 2. … (STEP 9B)
 # Targets (slides 2–3): <metric> — <target> — basis: <call data> · or "none — seller note"
+# Client's why / cost of inaction (slide 1): "<verbatim>" (STEP 9B, timestamp) · or "none on the call"
+# Legacy Staircase slide: <included — current N / goal N, as discussed (STEP 9B) | left out — not walked through on the call>
+# Plan (slide 3): each action — <action> — tied to: "<client line or STEP 9B plan input>"
 # What You Told Us (slide 1 quotes and tie lines):
 #   1. <label> — transcript line: "<verbatim line from the research notes>" — supports: <package>
 #   2. ...

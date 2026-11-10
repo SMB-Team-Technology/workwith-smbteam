@@ -14,7 +14,7 @@ This ensures you have the latest version of all slash commands and configuration
 
 ## Purpose
 
-Each audit produces a 5-slide proposal PowerPoint for a prospective SMB Team client, built by the `/audit-write` command (Pass 2) from the research notes and `package_decision.json`, then uploaded to the HubSpot file manager and emailed to the seller.
+Each audit produces a 5-slide proposal PowerPoint (6 with the optional Legacy Staircase slide) for a prospective SMB Team client, built by the `/audit-write` command (Pass 2) from the research notes and `package_decision.json`, then uploaded to the HubSpot file manager and emailed to the seller.
 
 The "Growth, Profit & Freedom Roadmap" website (`index.html`, `sections/`) and the Sales Companion PDF are **retired**. New builds never create them. Older firm folders still contain them — do not edit or read them for a new build.
 

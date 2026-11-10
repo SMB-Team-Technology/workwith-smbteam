@@ -278,6 +278,8 @@ If a price range was quoted that spans several products (e.g. "coaching ~$2,400�
 
 The deck makes its case in one line: **one number from the call → the causes behind that number → what we do about each cause → the products that do it.** `/audit-write` runs later without the transcript, so it can only build that argument from this block. Fill it right after STEP 9, from the full transcript, using the research above as evidence for the causes.
 
+**Diagnosis: one problem per cause.** If the call surfaced a second major problem (a separate thing driving the KPI, not a symptom of the first), it gets its own numbered cause — never merge two problems into one line. Each cause is one short line.
+
 **Data rules — non-negotiable:**
 - **Only numbers actually said on the call**, by the client or the seller, copied exactly as said (keep "about", "maybe", ranges). Record who said it, the timestamp and the verbatim line. A seller's number is labelled `seller` — it can be used as "the figure discussed on the call", never as the firm's own result (FULL TRANSCRIPT RULE 2 still applies to STEP 9's machine-read fields).
 - **Never compute, convert or estimate a KPI.** Do not divide spend by cases, annualize, or turn two figures into a ratio yourself. A derived figure (e.g. "that's 50%") is usable only if someone said it on the call.
@@ -309,10 +311,17 @@ Headline KPI: [name] — [exact figure as said] — said by [client | seller], [
 Supporting figures (0–3): [figure] — [client | seller], [timestamp] — "[verbatim line]"
 Client-stated goal for this KPI: [exact figure — "[verbatim line]" | none stated]
 KPI quotes (2–4, verbatim, client only): [timestamp] "[line]" [topic]
+Client's why (verbatim, client only): [timestamp] "[line]" — what they really want and why it matters to them personally (time, family, a sale, security, legacy). The strongest one or two lines, or "none on the call"
+Cost of inaction (verbatim, client only): [timestamp] "[line]" — what they said happens if nothing changes (cases lost, money left behind, burnout, closing the firm). The strongest one or two lines, or "none on the call"
+Legacy Staircase discussed: [yes — the rep walked the client through the Lawyer Legacy Staircase | no]. If yes: current stage [1–8 as placed on the call, with the quote/timestamp, or "not placed"]; goal stage [1–8 as named on the call, or "not named"]. "Yes" only if the rep actually showed or walked through the staircase — a passing mention of "the abyss" or a stage name is "no".
 Diagnosis (3–4 causes, biggest first):
-  1. [cause in plain words] — evidence: [exact figure or observation] — source: [call: speaker + timestamp | research: STEP N, how measured] — fixed by: [product + deliverable]
+  1. [cause in one short line] — evidence: [exact figure or observation] — source: [call: speaker + timestamp | research: STEP N, how measured] — fixed by: [product + deliverable]
      Target basis: [the call data a target rests on | none — flag for seller]
   2. ...
+Plan inputs (for each non-marketing product the call points to — what the client said that the first step of that product answers; verbatim quote + timestamp; "none stated" if the call didn't say):
+  - Fractional CTO / AI Workforce Pro: the tasks the client named as repetitive, manual or slow (intake, drafting, follow-ups, billing…) — up to five, in their words, most painful first
+  - FCOO / coaching: the process or leadership pain they named (owner in every decision, no SOPs, hiring, accountability, intake process…)
+  - FCFO / bookkeeping: what they said they can't see or trust in their numbers (books behind, no monthly P&L, no forecast, no cost per case, cash surprises…)
 Alternate KPI (if the seller changes the package): [product → KPI and figure as said, or "none"]
 Seller should confirm on the next call: [missing or unclear numbers worth asking about, or "none"]
 ```
@@ -363,6 +372,7 @@ Before finishing, check every item. Fix anything unchecked before saving.
 - [ ] Budget constraints stated by the prospect are recorded (or "none stated")
 - [ ] Every "Investment inputs" line is filled in the exact format (one figure or "not stated") — only figures the client stated, never estimates
 - [ ] Nothing in the notes was fabricated: anything not found is written as "not found"/"not observed" and listed for the seller in STEP 9B
+- [ ] STEP 9B "Client's why", "Cost of inaction" and "Legacy Staircase discussed" are filled in — verbatim client lines only, or "none on the call" / "no"
 - [ ] STEP 9B is filled in: the headline KPI is a number actually said on the call (exact wording, speaker, timestamp) that the recommended product moves — or `KPI status: none usable` with a qualitative pain point
 - [ ] No STEP 9B figure was calculated, converted or estimated, and none is `UNCONFIRMED`
 - [ ] Every STEP 9B cause has its evidence source and a "Target basis" (call data, or `none — flag for seller`)
