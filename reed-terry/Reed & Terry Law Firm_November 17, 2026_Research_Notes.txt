@@ -1,0 +1,519 @@
+================================================================================
+REED & TERRY LAW FIRM — GROWTH AUDIT RESEARCH NOTES
+================================================================================
+Firm: Reed & Terry Law Firm (also styled "Reed & Terry, L.L.P.")
+Friendly name: reed-terry
+URL: https://reedterrylaw.com (trigger URL — confirmed live, HTTP 200)
+Sales Rep: Randy Gold (randy.gold@smbteam.com)
+Date: November 17, 2026 (proposal call 2026-11-17 3:00 PM CT; discovery call recorded 2026-11-11)
+Contact: Jackson R. "Jack" Reed — jack@reedterrylaw.com — (281) 491-5000
+Other firm attendee: Travis B. Terry (partner, litigation). Also on the call: "Wiin",
+  owner of the firm's outside IT/cybersecurity company (not firm staff).
+HubSpot: contact 25243610, company 17152087719
+Main office: 56 Sugar Creek Center Blvd, Ste 300, Sugar Land, TX 77478
+Research run: 2026-11-11. Tooling note: no interactive browser was available. Web pages
+  were read with curl and headless Chrome (Google results, Meta Ad Library, Lighthouse)
+  and WebSearch. Where a number came only from a search summary it is tagged below.
+
+================================================================================
+STEP 1 — WEBSITE RESEARCH
+================================================================================
+Website URL confirmed live: Yes (https://reedterrylaw.com, HTTP 200)
+Last redesign date or estimated age: Not stated on the site. Homepage structured
+  data shows datePublished 2026-02-24 and dateModified 2026-10-21; footer reads
+  "© 2026 Reed & Terry Law Firm". WordPress site on a NitroPack-style CDN; looks
+  maintained and recently rebuilt or heavily updated (2026).
+Mobile responsive: Yes — viewport meta tag present ("width=device-width,
+  initial-scale=1"); not visually inspected on a device.
+Homepage headline: "A BIG SETTLEMENT is NO ACCIDENT" (H1). Hero line above it:
+  "Over half a BILLION in verdicts and settlements." Sub-line: "WIN your injury case
+  with a Trusted and Proven Team of Board Certified Lawyers that Level the Playing
+  Field from Day One!"
+CTA above fold: Yes — phone (281) 491-5000 with "call for free case evaluation" in
+  the header, plus a "Contact Us" button in the hero.
+Contact form location: Buried — one form (first name, last name, phone, email
+  required) in a "Contact Us" section at the bottom of the homepage; a "Contact Us"
+  button in the hero links to it. No form above the fold.
+Live chat present: Yes, likely — a chat/lead widget script from theliveforce.app loads
+  on the homepage, and Google's snippet for the site map page reads "Chat with Reed &
+  Terry Law". The widget did not render in a text dump, so its behaviour (AI or live
+  agent, hours) was not observed. Seller should confirm.
+Attorney bio present: Yes — homepage lists Jackson R. Reed and Travis B. Terry (both
+  "Personal Injury Attorney") with "View Profile" links; /about-our-attorneys/ exists
+  in the site nav (page not readable from this environment, see note below).
+  Per Google/directories: Travis Terry is Board Certified in Personal Injury Trial Law
+  (Texas Board of Legal Specialization); Jackson Reed is a Fellow of the Texas Bar
+  Foundation.
+Video present: Not observed on the homepage itself. A "Client Video Testimonials"
+  page (reedterrylaw.com/video) shows in Google results.
+Blog present: Yes — homepage "From the Blog" shows posts dated October 26, 2026
+  ("Who Is Liable in a Texas Truck Accident?"), October 21, October 14 and
+  October 12, 2026 — roughly weekly cadence, most recent Oct 26, 2026.
+Other site observations (homepage): 4 physical offices listed (Sugar Land, Richmond,
+  Katy, Victoria) plus a Missouri City page; geo-targeted landing pages exist for
+  Katy, Richmond, Victoria, Missouri City, and a "Houston" page; per-case-type pages
+  in the nav (car, truck, motorcycle, drunk driving, rideshare, bike, bus, workplace,
+  construction, maritime, slip and fall, dog bite, wrongful death). Review section
+  shows 8 Google-sourced testimonials. Recent case results shown: $3,050,000,
+  $1,300,000, $862,000, $600,000, $600,000.
+  Site makes the claim "Over half a billion in verdicts and settlements" and
+  "over 60 years of combined experience" — these are the firm's own marketing claims,
+  not verified here.
+Fetch limitation: every inner page (/about-our-attorneys/, /contact/, /blog/,
+  /reviews/, /locations/*, sitemap.xml, wp-json) returned HTTP 404 to curl, WebFetch
+  and headless Chrome from this environment, though they are linked in the homepage
+  nav and Google lists them. Cause not determined (likely the host blocking this
+  network). Inner-page content was therefore not read — seller should glance at them.
+
+PAGESPEED (pagespeed.web.dev was NOT usable):
+  The PageSpeed Insights API returned HTTP 429 (quota exceeded) on four tries. The
+  scores below come from a local Lighthouse 12.8.2 run (headless Chrome, default
+  Lighthouse throttling) on 2026-11-11 21:16 UTC, URL https://reedterrylaw.com/.
+  These are real measured numbers, but they may differ a few points from
+  pagespeed.web.dev.
+- PageSpeed mobile score: 59 (LCP 4.2 s, TBT 720 ms, CLS 0)
+- PageSpeed desktop score: 96 (LCP 1.2 s, TBT 0 ms, CLS 0.009)
+
+================================================================================
+STEP 2 — GOOGLE BUSINESS PROFILE
+================================================================================
+(Read from Google search results rendered in headless Chrome, 2026-11-11.)
+GBP found: Yes — "Reed & Terry Law Firm", 56 Sugar Creek Center Blvd Ste 300, Sugar
+  Land, TX 77478, Open 24 hours. A second profile exists for the Richmond office.
+- Star rating: 4.9 [confirmed via Google] (Sugar Land listing, shown in the
+  "wrongful death lawyer sugar land tx" results)
+- Total review count: 101 [confirmed via Google] (same listing). Google's AI overview
+  for "reed and terry law firm reviews" also reads "4.9 out of 5 stars across over 100
+  Google reviews" [confirmed via Google]. (Earlier third-party search summaries gave
+  80 / 91 / 96 — [UNCONFIRMED — sourced from aggregator summaries, older snapshots];
+  not used.)
+- Richmond office profile (201 11th St, Richmond, TX 77469, (281) 501-7881):
+  5.0 [confirmed via Google], 7 reviews [confirmed via Google]; "30+ years in business".
+- Most recent review date: not observed (review dates are not shown in the results
+  snippet). Seller should confirm.
+- Primary category: "Personal injury attorney" (as shown in the Google listing)
+- Photos active: Not observed (profile photos not viewable in text rendering).
+  Yelp listing shows ~11–15 photos per search snippet.
+- Posts active: Not observed.
+- Katy and Victoria offices: no Reed & Terry profile appeared in the Katy or Victoria
+  "personal injury lawyer" results (see STEP 3); whether those two offices have GBPs
+  at all was not determined.
+NAP notes: website phone (281) 491-5000; Google's AI summary also lists +1
+  281-305-0104; Richmond GBP uses (281) 501-7881. Multiple numbers (likely call
+  tracking) — not confirmed as a problem.
+
+================================================================================
+STEP 3 — LOCAL 3-PACK SEARCHES
+================================================================================
+Searches run from a Sugar Land / Katy / Richmond / Victoria geo-context on
+2026-11-11. Pack = the "Businesses" block. All ratings and counts below are read off
+Google's own result and are [confirmed via Google].
+
+Practice Area 1: Personal injury (the firm is plaintiff-only PI)
+- Search 1 "car accident lawyer sugar land tx": firm appears NO — pack: Daspit Law
+  Firm (Sponsored, 4.8, 919 reviews), The Crash Team (5.0, 250), Amaro Law Firm
+  (5.0, 343), The Karam Law Office, PLLC (5.0, 400).
+- Search 2 "personal injury lawyer sugar land tx": firm appears NO — pack: Daspit
+  Law Firm (Sponsored, 4.8, 919), The Karam Law Office (5.0, 400), Amaro Law Firm
+  (5.0, 343), The West Law Firm (4.9, 133).
+- Search 3 "truck accident lawyer sugar land tx": firm appears NO — pack: The Karam
+  Law Office (5.0, 400), The Crash Team (5.0, 250), The West Law Firm (4.9, 133);
+  a Sponsored slot also showed Zinda Law Group (5.0, 4 reviews — a multi-state
+  firm, not cited as a local competitor).
+- Search 4 "motorcycle accident lawyer sugar land tx": firm appears NO — pack:
+  Daspit Law Firm (Sponsored, 4.8, 919), Amaro Law Firm (5.0, 343), The Karam Law
+  Office (5.0, 400), The West Law Firm (4.9, 133).
+- Search 5 "wrongful death lawyer sugar land tx": firm appears in Google's
+  AI-overview list with its GBP (Reed & Terry Law Firm, 4.9, 101 reviews) alongside
+  Amaro Law Firm (5.0, 343), The West Law Firm (4.9, 133), Lone Star Injury
+  Attorneys (4.9, 113). A map pack block was not rendered for this query, so
+  "3-pack position" is not observed.
+- Search 6 "personal injury lawyer katy tx": firm appears NO — pack: Daspit Law
+  Firm (Sponsored, 4.8, 919), Schechter, Shaffer & Harris, LLP (5.0, 283), Z&P Law
+  Group, PLLC (4.9, 336), The Stephens Law Firm (5.0, 126).
+- Search 7 "personal injury lawyer richmond tx": firm appears YES — Reed & Terry
+  Law Firm is 4th in the pack (5.0, 7 reviews) behind Daspit Law Firm (Sponsored,
+  4.8, 919), The Estes Law Firm (4.6, 44), Vendt Accident Attorneys (5.0, 18).
+- Search 8 "personal injury lawyer victoria tx": firm appears NO — pack: Carabin
+  Shaw, PC (4.9, 17), DeHoyos Accident Attorneys (5.0, 91), Cole, Cole, Easley &
+  Sciba, P.C. (4.9, 43).
+- Search 9 branded "Reed & Terry Law Firm Sugar Land": website pages rank (home,
+  locations, Houston PI page, maritime, video); Google AI overview identifies the
+  firm correctly (Jackson Reed / Travis Terry, board certified).
+Summary: not in the local pack for any non-branded Sugar Land or Katy or Victoria
+search tested; present in the Richmond pack (with 7 reviews).
+
+================================================================================
+STEP 4 — COMPETITOR REVIEW COUNTS
+================================================================================
+Prospect (for comparison): 101 Google reviews, 4.9 [confirmed via Google]
+- Competitor 1: Amaro Law Firm (322 Brooks St, Sugar Land) — reviews: 343
+  [confirmed via Google] — rating: 5.0 [confirmed via Google]
+- Competitor 2: The Karam Law Office, PLLC (1 Sugar Creek Center Blvd, Sugar Land)
+  — reviews: 400 [confirmed via Google] — rating: 5.0 [confirmed via Google]
+- Competitor 3: The Crash Team (Three Sugar Creek Center Blvd, Sugar Land) —
+  reviews: 250 [confirmed via Google] — rating: 5.0 [confirmed via Google]
+- Also: Daspit Law Firm (Houston, 440 Louisiana St; runs ads in the Sugar Land,
+  Katy and Richmond searches) — reviews: 919 [confirmed via Google] — rating: 4.8
+  [confirmed via Google]. The West Law Firm (Sugar Land): 133 [confirmed via Google],
+  4.9 [confirmed via Google] — this one is only modestly above the prospect.
+Every cited competitor has more reviews than the prospect; none is cited as having
+fewer.
+
+================================================================================
+STEP 5 — DIRECTORY LISTINGS
+================================================================================
+Source: WebSearch result summaries and Google result snippets only — the listing
+pages themselves were not opened, so every figure is
+[UNCONFIRMED — sourced from search-result summaries, not independently confirmed].
+- Avvo: Jackson Reed profile exists (avvo.com/attorneys/77478-tx-jackson-reed-57499);
+  summary says 5.0 rating. Listed in Avvo's Sugar Land PI results.
+- Justia: firm appears in Sugar Land personal injury listings.
+- FindLaw: listing exists ("Reed & Terry, LLP — Sugar Land PI Plaintiff", lawyers.findlaw.com).
+- Yelp: two listings exist ("Reed & Terry, L.L.P." and "Reed and Terry Law Firm");
+  summary says 5.0 with 2 reviews — duplicate listing is a minor NAP/cleanup item.
+- Martindale-Hubbell: listed (3.6 per summary, low-confidence).
+- Lawyers.com: listed (4.7 per summary).
+- Facebook: page "Reed & Terry, L.L.P." exists. LinkedIn: company page, "60+ followers".
+- ReachAttorneys, Living Magazine profile: present.
+NAP inconsistencies: phone numbers vary across surfaces ((281) 491-5000 website;
+  281-305-0104 in Google's overview; (281) 501-7881 Richmond GBP); firm name varies
+  ("Reed & Terry Law Firm" vs "Reed & Terry, L.L.P."). Not verified directory-by-directory.
+Geo-targeting landing pages: Yes — pages for Sugar Land, Katy, Richmond, Victoria,
+  Missouri City and Houston (URLs seen in the homepage nav and in Google results).
+
+================================================================================
+STEP 6 — GOOGLE ADS
+================================================================================
+Practice Area 1: Personal injury (all searches below; one practice area)
+- Firm ads observed: Not observed in any of the 9 searches in STEP 3 (the firm does
+  not appear to be running search ads for these terms; this is a point-in-time
+  Google snapshot, not a confirmation — the client said on the call that, apart from
+  billboards, they do no advertising).
+- Named local competitors running ads:
+  - Daspit Law Firm — "Sugar Land Accident Attorneys | No Fees, Unless We Win For You"
+    / "Our Texas Accident Injury Attorneys Will Fight To Get You Max Compensation.
+    Daspit Law Firm Has Recovered Millions Of Dollars For Injury Victims. We Can
+    Help You Too! Featured On The News." Extensions: "No Fees Unless You Win",
+    "Free Injury Consultations … 24/7", "Our Team Of 50+ Attorneys", "10K+ visits in
+    past month". Same ad family also seen for Katy and Richmond (city swapped into
+    headline) and as a Sponsored local-pack listing in Sugar Land/Houston searches.
+  - Zinda Law Group — Sponsored pack listing for "truck accident lawyer sugar land tx"
+    ("Experienced Truck Attorneys — Texas truck attorneys with 100+ years
+    experience") — a multi-state firm, listed for completeness only, not as a local
+    competitor.
+Note: Daspit has a Houston office (440 Louisiana St) and serves the Sugar Land / Katy /
+  Richmond area; it is the one named competitor seen buying search ads across all of
+  the firm's markets.
+
+================================================================================
+STEP 7 — LOCAL SERVICE ADS
+================================================================================
+Searched: "truck accident lawyer sugar land tx", "personal injury lawyer richmond tx"
+(both showed an LSA-style "Sponsored — Personal injury lawyers" block); "personal
+injury lawyer sugar land tx" and "car accident lawyer sugar land tx" showed no LSA
+block, only a text ad and the local pack.
+- Firm appears in LSA: Not observed (not among the 8 firms displayed in either block).
+- Google Screened: not observed (the badge is not shown in the text rendering).
+- LSA review count: n/a.
+- Named competitors in LSA (Houston-area firms serving Sugar Land / Richmond; ratings
+  and counts [confirmed via Google]): Angel Reyes & Associates (4.9, 818); Avrek Law
+  Firm (4.4, 661); Shamieh Law — Accident & Injury Lawyers (5.0, 795); DJC Law (4.8,
+  1.7K, i.e. about 1,700); McCormick Law Firm (4.7, 638); Moore Law Firm (5.0, 879);
+  Arnold & Itkin LLP (4.8, 142); Armstrong Lee & Baker LLP (4.9, 292); Clay Jenkins &
+  Associates (4.6, 54, Richmond block); Law Office of Andre Anziani, PLLC (4.9, 97,
+  Richmond block).
+
+================================================================================
+STEP 8 — META ADS
+================================================================================
+Meta Ad Library (facebook.com/ads/library, country US, active ads, keyword search),
+rendered in headless Chrome 2026-11-11.
+- Firm has active ads: Not observed — keyword searches for "Reed & Terry Law Firm"
+  and "Reed Terry" returned no ads from the firm (the 5 keyword hits were unrelated
+  advertisers, e.g. Merritt & Merritt Law Firm). The client said on the call they
+  don't advertise beyond billboards.
+- Named local competitor 1: Amaro Law Firm (Sugar Land office, Spanish-language
+  "Abogado Amaro" ads) — about 12 active ads; video creatives (6 sec to about 2 min);
+  start dates seen: May 22, 2025 and May 29, 2026 (the older ad has been running
+  about 18 months).
+- Named local competitor 2: Shamieh Law (Houston-area PI firm, also in the LSA blocks)
+  — about 34 results in the keyword search (some from an agency, Dominate Marketing);
+  video creatives roughly 24–39 seconds; start dates seen between Sep 17 and Nov 7,
+  2026 (continuously adding new ads).
+- Not found: Daspit Law Firm, The Karam Law Office and The Crash Team returned no
+  active Meta ads on this keyword search (not observed — may run under a different
+  page name).
+
+================================================================================
+STEP 9 — TRANSCRIPT EXTRACTION
+================================================================================
+Transcript source: full verbatim Fathom transcript (summary used only as overview).
+Speakers: Randy Gold [SMB Team]; Travis Terry [Prospect]; "jack" [Prospect] =
+Jackson Reed (trigger contact, jack@reedterrylaw.com); "Wiin" (outside IT firm owner).
+Transcription notes: "Cloud Lex"/"CloudLex" are the same system; "1.6 and 2.3" is
+$1.6M–$2.3M ("million" not spoken; matches the Fathom summary); "15 law years" read
+as 15 lawyers [transcript unclear — read as 15 lawyers]. At 00:31:37 a line tagged
+Randy Gold ("It's delivered straight to my cell phone") is the firm's own intake
+[speaker tag says Randy Gold — read as Jackson Reed].
+
+- Practice areas confirmed: Plaintiff personal injury (car wrecks, dog bites named;
+  also 18-wheeler/truck, wrongful death, etc. on the website). Litigation handled by
+  Travis Terry; pre-litigation and intake by Jackson Reed. Per Jackson Reed:
+  "optimal case level is around 225 to 250 … like 75 in litigation, 150
+  pre-litigation."
+- Current lead sources: Jackson Reed (client), 00:28:12: "we probably get 80% of our
+  cases now from past referrals, other lawyers, something of that nature. And only
+  20% from SEO or any other form of advertising, which we don't do except for some
+  billboards."
+- Ads ever run: Billboards only (per client; spend and results not stated). Before
+  2020, the strategy was Google Business Profiles — Jackson Reed 00:27:05: "we
+  opened up four locations so we could get a Google business profile and tried to
+  be in the map pack." No paid digital ads stated. SEO: Jackson Reed 00:30:26 "SEO
+  has given us nothing in the last two years."
+- Firm identity check: matches — trigger "Reed & Terry Law Firm" = website "Reed &
+  Terry Law Firm" = transcript (Jackson Reed and Travis Terry).
+- Team size: 2 lawyers (Jackson Reed, Travis Terry) and 4 staff (paralegals; the
+  intake person is also the receptionist). Jackson Reed 00:26:50: "We've got two
+  lawyers and four staff."
+- Team size (total headcount): 6
+- Annual revenue (gross / case value): $1.6M–$2.3M in any year; five-year average
+  "probably between 1.5 and 2" (million). Jackson Reed 00:26:04.
+- Annual revenue (net / take-home / collected): not distinguished from gross
+- Revenue (annual, best estimate): $1,600,000 (low end of the stated 1.6–2.3 range)
+- Fee structure: not stated on the call; the firm is plaintiff personal injury and
+  the website says "you won't face any upfront costs and will only pay us if we win
+  your case" (contingency, per website). Seller should confirm the fee percentage.
+- Revenue goal: not stated, use 2x current revenue. (The only stated goal is
+  caseload: ~100 signed cases a year to ~120, and open caseload from 185 to 225–250.)
+- Average case value: not stated (PI practice; website shows recent results of
+  $600K–$3.05M, which are marketing claims, not the firm's average).
+- Current close rate: Jackson Reed 00:31:21: "conversion is, I would say, 95%."
+  (Definition — inquiry-to-signed or consult-to-signed — not stated; he takes every
+  intake call himself, business hours and after hours.)
+- Number of locations: 4 (Sugar Land, Richmond, Katy, Victoria per website; Jackson
+  Reed says they opened four locations for Google profiles pre-COVID)
+- Spanish campaign needed: not stated on the call (no Spanish content observed on
+  the homepage). Seller should confirm.
+- Dominant buying motive: No personal "why" (family, time, exit) was stated. Closest
+  inference: type (1) — a firm that runs on fewer people without adding headcount.
+  Jackson Reed 00:29:01: "this is what can save us from hiring other employees by
+  you guys coming in here, making these tasks that are making paralegals spend all
+  their time on the telephone with clients where they could be getting other stuff
+  done." Seller should ask the personal why on the proposal call.
+- Any profitability claims made by prospect: none stated beyond revenue ($1.6M–$2.3M).
+- Any claims about case types or practice areas: Jackson Reed 00:18:32: "it's not as
+  much as client communication as it is document preparation" (contrasting a
+  plaintiff's firm with a billable defense firm). Jackson Reed 00:20:04 on clients:
+  "the one complaint we always get is, hey, no one's communicating with me."
+- Stated call focus / product interest: AI — not a marketing or growth discovery
+  call. The client's reason for contact (Travis Terry 00:00:33): "that's what, you
+  know, initiated my contact with you guys was the AI stuff, just because we're
+  looking to … figure out something here at the firm that works for us and with our
+  … case management system." Focus: AI Workforce Pro demo; integrating AI with
+  CloudLex (or replacing it); the rep to bring a 12-month AI roadmap from a
+  Fractional CTO and a virtual receptionist/assistant; pricing/usage to follow.
+  Marketing was explicitly parked ("we're testing marketing right now … we'll kind
+  of leave that as is for right now").
+- Primary engagement: AI
+- Products discussed on call: AI Workforce Pro, Fractional CTO
+- Lead-gen gap stated: yes — Jackson Reed 00:31:39: "conversion is not the issue.
+  It's getting the cases coming in." (they want ~100 to ~120 signed cases a year;
+  but a new marketing vendor just started, see below)
+- Existing marketing/SEO/ad vendor engagements: Jackson Reed 00:30:36: "we just
+  started that with a new group that we just transferred our whole deal to them that
+  started, I guess, on Monday" (AEO/SEO; "in the next four or five months" they will
+  see if it works). Also Levitate (client email/newsletter tool, "four grand a
+  year", 00:20:47) and billboards. Outside IT/cybersecurity firm (Wiin) is on the
+  client side.
+- Budget constraints stated: No limit stated for SMB Team services. Cost concerns
+  about replacing the case management software: Jackson Reed 00:16:00 on Clio
+  "they're so expensive … they don't have a model fit for our size of law firm …
+  minimum model they have is like for 15 [lawyers]"; Filevine "way too expensive"
+  (00:16:44); "Price difference is the problem" (00:13:23). He asked on the pricing
+  structure (00:41:00, "is it built on usage, like tokens?") — rep deferred to the
+  proposal call.
+
+Investment inputs (client-stated only):
+- Ad spend practice area: Accident/Injury — (the practice area the firm's ads would target; no ad plan was discussed)
+- Geo market tier: Tier 1 (Houston metro — Sugar Land / Fort Bend County)
+- Market competitiveness: High — Houston-metro PI; packs led by firms with 250–919 reviews; Daspit running search ads; several firms in LSA and Meta (STEP 3–8)
+- Current monthly ad spend (stated): not stated (client: no advertising "except for some billboards"; billboard spend not given)
+- Current cost per signed case (stated): not stated
+- Current cost per lead (stated): not stated
+- Average case value (stated, one figure): not stated
+- Close rate (stated): 95% — Jackson Reed 00:31:21 ("conversion is, I would say, 95%"; definition unclear)
+- Revenue goal (annual, one figure): not stated
+- Maximum monthly ad budget (stated): not stated
+
+Key prospect quotes:
+1. Travis Terry (firm), 00:00:33 — why they called (AI): "that's what, you know, initiated my contact with you guys was the AI stuff … we're looking to … figure out something here at the firm that works for us and with our … case management system and whatnot."
+2. Jackson Reed (client), 00:10:28 — today's workflow (call notes): "we'll talk about their treatment, what they need to do, what we're going to do, and then we have to go to our … notes section in our CRM and type all that stuff in there."
+3. Jackson Reed (client), 00:11:55 — CRM is the blocker: "the problem is, they're not integrated with anybody."
+4. Jackson Reed (client), 00:14:11 — Levitate failed: "that extender doesn't work with CloudLex because CloudLex has built a barrier to prevent all this. And CloudLex couldn't help us get around it."
+5. Jackson Reed (client), 00:15:09 — cost of the status quo: "costing us huge man hours by having to do everything manually that's totally unnecessary now."
+6. Jackson Reed (client), 00:28:12 — lead sources: "we probably get 80% of our cases now from past referrals, other lawyers … And only 20% from SEO or any other form of advertising, which we don't do except for some billboards."
+7. Jackson Reed (client), 00:28:47 — caseload gap: "right now we're at like 185, so that 20% for the last four years has remained. And that's what we're trying to make up."
+8. Jackson Reed (client), 00:29:21 — bottleneck: "if you're looking for a bottleneck, it's not with the lawyers, it's with the paralegals having to stop what they're doing and take a client call."
+9. Jackson Reed (client), 00:31:39 — intake: "conversion is not the issue. It's getting the cases coming in."
+10. Jackson Reed (client), 00:37:19 — what he wants: "We need someone to come in here, see what we've got, put together a freaking plan, say, you got to replace CloudLex? Or, hey, CloudLex could work."
+11. Jackson Reed (client), 00:40:10 — receptionist: "why do we need to hire another receptionist when that's exactly what AI is built for?"
+12. Jackson Reed (client), 00:33:28 — data risk: "I'll prepare a demand letter and have chat look at it or clod [Claude] and say, hey, make this better. So I'm actually, you know, giving up some of that information."
+
+================================================================================
+STEP 9B — KPI AND DIAGNOSIS
+================================================================================
+KPI AND DIAGNOSIS (STEP 9B)
+Product focus this supports: AI — AI Workforce Pro (AI employees for paralegal/client
+  communication, call summaries to CRM notes, virtual receptionist) led by a Fractional
+  CTO (systems audit, CloudLex keep-or-replace decision, 12-month AI roadmap).
+Headline KPI: none usable — the client gave no number for how much time the admin
+  and client-call work costs (hours, calls a day, response time).
+  KPI status: none usable — qualitative pain point used
+  Pain point (client's words): Jackson Reed, 00:29:21 — "if you're looking for a
+  bottleneck, it's not with the lawyers, it's with the paralegals having to stop what
+  they're doing and take a client call."
+  Why this KPI: the AI employees and virtual receptionist are what take client-call
+  and update work off the paralegals; the figure needed is the weekly hours on it.
+Supporting figures (0–3):
+  - Levitate (client email/newsletter tool) costs "four grand a year" — client (Jackson
+    Reed), 00:20:47 — "It's four grand a year, but it also takes our entire database
+    and sends out a monthly … email" (he said AI Workforce Pro could replace it,
+    00:20:38 "So I can get rid of Levitate if y'all have already got that in there").
+  - 2 lawyers and 4 staff (6 people) with the intake person doubling as receptionist
+    — client (Jackson Reed), 00:26:50 and 00:39:40 — "the person who does our intake
+    also is our receptionist."
+Client-stated goal for this KPI: none stated (no hours or time-saved target).
+  Related growth goal (not this KPI): ~100 signed cases a year to ~120 — Jackson Reed
+  00:30:11 / 00:30:17 — "we average signing up around 100 cases a year … we need to
+  get that to about 120."
+KPI quotes (2–4, verbatim, client only):
+  - Jackson Reed (client), 00:29:21 "if you're looking for a bottleneck, it's not with the lawyers, it's with the paralegals having to stop what they're doing and take a client call." [bottleneck]
+  - Jackson Reed (client), 00:15:09 "costing us huge man hours by having to do everything manually that's totally unnecessary now." [manual work]
+  - Jackson Reed (client), 00:35:40 "on the pre-litigation side, it's coming up with agents that can reduce paralegals' wasted time … freeing up their time to do … more important things than dealing with clients." [goal]
+  - Jackson Reed (client), 00:40:10 "why do we need to hire another receptionist when that's exactly what AI is built for?" [hiring avoided]
+Client's why (verbatim, client only): Jackson Reed (client), 00:29:01 — "this is what
+  can save us from hiring other employees by you guys coming in here, making these
+  tasks that are making paralegals spend all their time on the telephone with clients
+  where they could be getting other stuff done." — keep the firm lean and get the
+  paralegals back to legal work.
+Cost of inaction (verbatim, client only): Jackson Reed (client), 00:15:09 — "costing
+  us huge man hours by having to do everything manually that's totally unnecessary
+  now." Also Jackson Reed 00:21:35 on the disconnected tools: "that's what we're
+  looking for, is someone that can integrate our CRM with AI."
+Legacy Staircase discussed: no
+Diagnosis (3–4 causes, biggest first):
+  1. CloudLex does not connect to anything, so every call and update is typed by hand
+     and AI cannot read or write case notes — evidence: Jackson Reed 00:11:55 "the
+     problem is, they're not integrated with anybody"; 00:14:11 the Levitate
+     "extender doesn't work with CloudLex"; 00:35:01 "our CRM doesn't communicate with
+     QuickBooks"; seller (Randy Gold, 00:13:00) "I'm not seeing an open API
+     integration for CloudLex" (seller's observation, to be confirmed with the CTO
+     team) — source: call, speakers and timestamps above — fixed by: Fractional CTO
+     systems audit and CloudLex decision (API access or move to Clio / Smokeball /
+     Practice Panther / MyCase), then the integrations
+     Target basis: none — flag for seller
+  2. Paralegals and the intake/receptionist are pulled onto client calls and status
+     updates, and clients still complain they hear nothing — evidence: Jackson Reed
+     00:29:21 "the paralegals having to stop what they're doing and take a client
+     call"; 00:20:04 "the one complaint we always get is, hey, no one's communicating
+     with me"; 00:39:40 "the person who does our intake also is our receptionist" —
+     source: call — fixed by: AI Workforce Pro AI employees (automatic client
+     status and check-in emails, call summaries into CRM notes) and a virtual
+     receptionist / assistant
+     Target basis: none — flag for seller
+  3. Confidential client data is going into standard AI subscriptions — evidence:
+     Travis Terry 00:32:45 "I'm paying it for a license"; Jackson Reed 00:33:28
+     "I'll prepare a demand letter and have chat look at it or Claude … So I'm
+     actually … giving up some of that information" — source: call (the seller's
+     statement that paid licences are not enough is the seller's claim) — fixed by:
+     AI Workforce Pro (enterprise environment with BAAs, one platform)
+     Target basis: none — flag for seller
+  4. Time is lost tracking case expenses by hand and re-keying between CRM and
+     QuickBooks — evidence: Travis Terry 00:34:35 "a large amount of time for us is
+     spent … tracking expenses in every case and making sure we're recovering them";
+     Jackson Reed 00:35:11 "the first thing we need … is QuickBooks integrating with
+     our CRM so we don't have to do it twice" — source: call — fixed by: Fractional
+     CTO integration work (QuickBooks and CRM) and AI financial skills
+     Target basis: none — flag for seller
+Plan inputs (for each non-marketing product the call points to):
+  - Fractional CTO / AI Workforce Pro (tasks the client named, most painful first):
+    (1) Client call → summary email to the client and CRM notes entered automatically
+        — Jackson Reed 00:10:28–00:11:00 "automatically that email is sent to our
+        client … and then automatically going to our CRM and placing it in notes
+        without us having to do so."
+    (2) Routine client communication and status updates so paralegals stop taking
+        calls — Jackson Reed 00:35:40 "agents that can reduce paralegals' wasted
+        time"; 00:36:02 "sending out the emails."
+    (3) Automatic check-in emails to clients (currently Levitate, about every 30 days)
+        — Jackson Reed 00:19:54 "Like every 30 days it sends out an email. Hey, just
+        checking in, see how your treatments … going."
+    (4) Virtual receptionist / assistant instead of another hire — Jackson Reed
+        00:39:40 and 00:44:01 "include in that plan, a virtual assistant for
+        receptionist kind of thing" (the firm has "a brand new phone system").
+    (5) Expense tracking and recovery per case, QuickBooks integration — Travis
+        Terry 00:34:35; also demand-letter drafting help (Jackson Reed 00:33:28).
+  - FCOO / coaching: none stated.
+  - FCFO / bookkeeping: none stated — Jackson Reed 00:34:05 says their books are
+    handled ("We have our own CPAs. We have our own bookkeepers that we hire").
+Alternate KPI (if the seller changes the package): Marketing (Full Service) → signed
+  cases a year ~100 vs ~120 needed (Jackson Reed 00:30:11–00:30:17); open caseload ~185
+  vs optimal 225–250 (00:28:31–00:28:47); ~80% of cases from referrals and ~20% from
+  SEO/advertising (00:28:12). Note the client parked marketing for now because a new
+  AEO/SEO vendor started the week of the call.
+Seller should confirm on the next call:
+  - Hours per week the paralegals and the intake person spend on client calls and
+    status updates; calls a day; typical response time (the missing KPI).
+  - CloudLex: has the CTO team confirmed API access? If not, the budget for moving to
+    Clio / Smokeball / Practice Panther / MyCase (Clio and Filevine called too expensive).
+  - What a new receptionist would cost (the hire the AI assistant replaces).
+  - Fee structure (contingency percentage) and average case value / fee; the
+    revenue goal in dollars (only a caseload goal was given).
+  - What "95% conversion" measures (inquiry to signed, or consult to signed).
+  - The personal "why" for Jackson Reed and Travis Terry (time, exit, legacy).
+  - Spanish-language intake need; whether the chat widget on the site is live.
+  - GBP: most recent review date, whether the Katy and Victoria offices have profiles,
+    and which phone numbers are call-tracking.
+  - Inner website pages could not be read (404 from this environment) — a quick manual
+    look at the attorney bios, contact page and reviews page.
+  - PageSpeed scores here come from a local Lighthouse run, not pagespeed.web.dev.
+  - Budget for AI Workforce Pro and the Fractional CTO engagement (usage and cost
+    were deferred to the proposal call).
+
+================================================================================
+STEP 10 — COMPETITIVE URGENCY SCORE
+================================================================================
+Score: 7 of 10
+
+Named competitor threats:
+1. Daspit Law Firm — 919 Google reviews (4.8) [confirmed via Google]; buys search ads
+   and a Sponsored local-pack slot across Sugar Land, Katy and Richmond; the ad copy
+   leans on "No Fees Unless You Win" and "50+ Attorneys".
+2. Amaro Law Firm — 343 Google reviews (5.0) [confirmed via Google]; in the Sugar Land
+   pack for personal injury, car and motorcycle searches, and about 12 active Meta
+   video ads (Spanish-language "Abogado Amaro" creative).
+3. The Karam Law Office, PLLC — 400 Google reviews (5.0) [confirmed via Google];
+   in the Sugar Land pack for 4 of the 4 non-branded Sugar Land searches tested
+   (truck, PI, motorcycle, plus the car-accident search).
+
+Dynamic sentence (7–10):
+"A score of 7 means competitors are actively dominating multiple channels in your market and the gap is getting wider every month you wait. This is not a future problem — it is a right now problem."
+
+Context for the seller: the firm itself is not asking for marketing right now — 80% of
+cases come from referrals, a new AEO/SEO vendor just started, and the call was an AI /
+Fractional CTO discussion. The urgency score is a research finding for the deck and
+not a statement the client made.
+
+================================================================================
+VERIFICATION CHECKLIST (PASS 2) — completed
+================================================================================
+- Review counts/ratings (firm and competitors) each carry [confirmed via Google] or
+  [UNCONFIRMED — ...]; directory figures are tagged UNCONFIRMED.
+- No competitor is cited as "dominating" with fewer reviews than the prospect.
+- No section says the firm "is not running ads"; wording is "not observed" /
+  "does not appear to be running".
+- PageSpeed numbers are real Lighthouse measurements (method disclosed above).
+- No STEP 9B figure was calculated or estimated; none is UNCONFIRMED.
+- Machine-read lines (Team size (total headcount), Revenue (annual, best estimate),
+  Primary engagement, Products discussed on call, Lead-gen gap stated, Investment
+  inputs, Firm identity check) are in the specified format.
