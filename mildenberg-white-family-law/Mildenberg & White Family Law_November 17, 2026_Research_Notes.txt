@@ -1,0 +1,266 @@
+SMB TEAM — AUDIT RESEARCH NOTES (PASS 1)
+Firm: Mildenberg & White Family Law, PLLC — Philadelphia, PA area (Montgomery / Bucks / Delaware counties)
+Friendly name: mildenberg-white-family-law
+URL: http://mildenbergwhitefamilylaw.com (resolves; canonical https://mildenbergwhitefamilylaw.com/)
+Sales rep: Dan Bryant
+Report date: November 17, 2026 (proposal call 2026-11-17 12:00 PM ET)
+Research run: 2026-11-11
+Contact: David Mildenberg (co-founder / attorney); co-founder Heather White (attorney) also on the call
+Discovery call: 2026-11-11, about 177 minutes (Fathom recording 202070277)
+
+IMPORTANT CONTEXT: The firm is about one month old. Two experienced family lawyers left their prior firm and need clients quickly. The seller pitched a coaching + Google Local Service Ads package (Coach Essentials Plus with LSA management). The client said "all that sounds great" but "I don't think I could pay for it today." After the pitch the client raised three concerns: the 12-month term, the two in-person workshops required for the guarantee, and the setup fee. They also stressed owning the website, content, data and ad accounts. The seller promised to ask leadership about shorter term / virtual workshops / waiving the setup fee and set a follow-up for Tuesday 2026-11-17, 12:00 PM ET. Note: the AI summary in the trigger says "Tuesday (Nov 12)"; the call was Wednesday Nov 11, and the transcript ends with "we'll talk on 12 on Tuesday" (02:54:47), so the follow-up is Nov 17 (matches the trigger's proposal_call_date).
+
+RESEARCH LIMITATIONS (this environment): Google Search / Maps, the Facebook Ad Library and pagespeed.web.dev could not be read (Google returned a JavaScript shell; the Ad Library returned a bot challenge; the PageSpeed Insights API returned HTTP 429, quota exceeded). No review count or star rating is [confirmed via Google] anywhere in this file. Local-pack, Google Ads, LSA and Meta Ads results are NOT OBSERVED. PageSpeed scores below are from a real Lighthouse 12.8.2 run in headless Chrome on a CI runner (lab conditions; may differ by a few points from pagespeed.web.dev).
+
+=====================================================================
+STEP 1 — WEBSITE RESEARCH
+=====================================================================
+- Website URL confirmed live: yes (HTTP 200 at https://mildenbergwhitefamilylaw.com/; blog page also fetched)
+- Last redesign date or estimated age: new site. Footer reads "© 2026 Mildenberg & White Family Law, PLLC"; stylesheet files carry 2026-11-08 / 2026-11-09 version tags (updated within the last week). The client said he built it himself (platform not named): "you just built it yourself, right?" — "Yeah, for sure" to having spent a lot of time on it (David Mildenberg (client), 00:22:51–00:23:06, tag partly shifted); and the site "could potentially be turned into a WordPress if it needed to be" (00:23:20).
+- Mobile responsive: yes by markup (viewport meta present; Lighthouse mobile render completed with CLS 0). Not tested on a physical phone.
+- Homepage headline: "A new chapter. A clear path forward." (eyebrow line above it: "FAMILY LAW. HUMAN FIRST."; sub-line: "Strategic family law guidance for your family, your future, and the decisions ahead.")
+- CTA above fold: yes — "Schedule Free Consultation" button plus phone 215.326.2779 in the header
+- Contact form location: lower section of the homepage (anchor "#contact", "YOUR NEXT CHAPTER STARTS HERE": phone, online scheduling via Clio Grow, message form); "Contact" is also in the main nav
+- Live chat present: yes — a "Chat" widget is on the page (stylesheet is named for a Clio Grow chat widget)
+- Attorney bio present: yes — "Your Advocates" page plus individual pages for David Mildenberg (litigation-focused) and Heather White (certified mediator, per the site)
+- Video present: yes — hero film titled "A NEW DAY II" with a Pause control
+- Blog present: yes, but empty — the Blog page lists "Family Law Insights" categories and several "Coming soon" placeholder posts with no dates and no published articles
+- Practice areas on site: divorce (with equitable distribution and post-divorce alimony pages), property distribution, spousal support / APL, alimony, prenuptial agreements, child custody, child support, relocation, enforcement, modification, grandparents' rights, protection from abuse, family law mediation, high-net-worth families / business owners, high-conflict divorce and custody, litigation. Matches the transcript (divorce, custody, PFA).
+- NAP / location: no street address anywhere on the site. Phone 215.326.2779; email David@MildenbergWhiteFamilyLaw.com. Footer says consultations are held "at secure, confidential executive meeting spaces local to you, or entirely via Zoom … by appointment only," and the map block reads "Map preview · Service area coming soon." Service areas named: Philadelphia, Montgomery, Bucks, Delaware. Structured data on the homepage is a LegalService with phone and areaServed only (no address).
+- Geo-targeting landing pages for surrounding cities: not observed (county names appear in copy; no city or county landing pages in the navigation)
+- Title tag: "Pennsylvania Family Law Attorneys | Mildenberg & White"
+
+PageSpeed / Lighthouse (performance category):
+- Method: pagespeed.web.dev could not be used (API HTTP 429, quota exceeded). Scores are from Lighthouse 12.8.2, headless Chrome, run 2026-11-11 against https://mildenbergwhitefamilylaw.com/
+- PageSpeed mobile score: 93 (FCP 1.2 s, LCP 1.9 s, CLS 0, TBT 310 ms, Speed Index 1.8 s)
+- PageSpeed desktop score: 100 (FCP 0.4 s, LCP 0.4 s, CLS 0, TBT 0 ms, Speed Index 0.6 s)
+
+=====================================================================
+STEP 2 — GOOGLE BUSINESS PROFILE
+=====================================================================
+Research limitation: Google Maps / Search could not be loaded; web search surfaced no Business Profile or Google review figures for this firm. /audit-write must NOT print any review count or star rating for this firm.
+
+- GBP found: yes per the call (the client set one up and showed it on screen share: "I set it up. I haven't fully built it out yet." — David Mildenberg (client), 00:17:40–00:17:41); not observed from this environment
+- Star rating: not found [no verification possible — not confirmed via Google]
+- Total review count: not found [no verification possible — not confirmed via Google]. On the call the seller said "the firm you just left has 87" reviews (seller, 00:59:08) — a seller statement, not a verified figure; the prospect's own count was not stated.
+- Most recent review date: not found
+- Primary category: the seller said it is currently "law firm" and needs changing to Family Law Attorney or Divorce Lawyer (seller, 00:22:17 / 00:42:06); not confirmed from Google
+- Listing type: service-area business, no storefront/address — the client said "When you set it up, it said, I go to my customers. Correct." (David Mildenberg (client), 00:20:10–00:20:12); the seller said they will not show in the map pack until there is a dedicated suite and address (seller, 00:19:56–00:20:00)
+- Photos active: not observed
+- Posts active: not observed
+
+=====================================================================
+STEP 3 — LOCAL 3-PACK SEARCHES
+=====================================================================
+Research limitation: live Google local-pack results could not be observed. Pack membership is NOT OBSERVED for every search. Competitors below are Philadelphia-area family firms surfaced by ordinary web search, not confirmed pack members. Review counts are in STEP 4 (UNCONFIRMED) where any exist.
+
+Practice Area 1: Divorce
+- Search 1 "divorce lawyer philadelphia": firm appears: not observed — market names surfaced by web search: Graff & Associates, Cooper Family Law, Law Offices of Michael Kuldiner, Law Offices of Lauren H. Kane; pack members not confirmed
+- Search 2 "divorce attorney montgomery county pa": firm appears: not observed — surfaced: Graff & Associates, Sheryl R. Rentz, Cooper Family Law, William Kirby Law
+- Search 3 "divorce lawyer 19038": firm appears: not observed — not run live (Google unavailable)
+
+Practice Area 2: Child custody
+- Search 1 "child custody lawyer philadelphia": firm appears: not observed — surfaced: BKW Family Law, Law Offices of Lauren H. Kane, Law Offices of Michael Kuldiner, Cooper Family Law, Smith & Horwitz
+- Search 2 "child custody attorney montgomery county pa": firm appears: not observed — surfaced: Testa & Pagnanelli, William Kirby Law, Kane, Kuldiner
+- Search 3 "custody lawyer near me" (Philadelphia area): firm appears: not observed — not run live
+
+Practice Area 3: Protection from Abuse (PFA) / restraining orders (the client said they do PFA work and want immediate-need clients, 00:52:27)
+- Search 1 "protection from abuse attorney philadelphia": firm appears: not observed — surfaced: High Swartz LLP, The Martin Law Firm, Fairlie & Lippy, Ciccarelli Law Offices
+- Search 2 "pfa lawyer montgomery county pa": firm appears: not observed — surfaced: Cohen & Patel Law Firm, RGS Law, High Swartz LLP, The Martin Law Firm
+- Search 3 "restraining order lawyer philadelphia": firm appears: not observed — not run live
+
+(The firm's physical listing is a service-area business with no address, so appearing in the Maps pack is unlikely until it has an address — seller, 00:19:56–00:20:00. Not verified.)
+
+=====================================================================
+STEP 4 — COMPETITOR REVIEW COUNTS
+=====================================================================
+Not independently confirmed. The figures below came from a web-search tool summary that attributed them to Google; the underlying listing page was not opened, so they are tagged UNCONFIRMED and must not be printed as specific figures in the client-facing report.
+- Competitor 1: Law Offices of Michael Kuldiner, P.C. (Philadelphia, 1845 Walnut St) — reviews: 259 [UNCONFIRMED — sourced from a web-search summary attributing the figure to Google, listing page not opened, not independently confirmed via Google] — rating: 4.7 [UNCONFIRMED — same source]
+- Competitor 2: Cooper Family Law, LLC (Philadelphia, 1500 JFK Blvd) — reviews: 156 [UNCONFIRMED — sourced from a web-search summary attributing the figure to Google, listing page not opened, not independently confirmed via Google] — rating: 4.5 [UNCONFIRMED — same source]
+- Competitor 3: Graff & Associates (Jenkintown) — reviews: not found [UNCONFIRMED] — rating: not found. The seller said on the call that "the firm you just left has 87" reviews (seller, 00:59:08); a seller statement only, not verified. (The client's prior firm is spelled "Graf" in the transcript; web results show both attorneys' directory profiles still listed under Graff & Associates — see STEP 5.)
+- Prospect's own review count: not found (see STEP 2). Cannot say whether the prospect has more or fewer reviews than any competitor; do not describe any competitor as "dominating" on reviews in the deck.
+
+=====================================================================
+STEP 5 — DIRECTORY LISTINGS
+=====================================================================
+(from web-search results/snippets; profile pages not opened in full)
+- Avvo: David S. Mildenberg (listed Philadelphia; licensed about 19 years per snippet) and Heather Ann White (Jenkintown, 19046; licensed about 20 years; divorce, adoption, alimony, custody) both have profiles; the snippet for White shows "Graff & Associates, LLC, 123 Old York Rd, Jenkintown" and for Mildenberg "Law Offices of David S. Mildenberg" and Graff & Associates.
+- Justia: "David Mildenberg, Lawyer in Philadelphia, Pennsylvania" profile exists; Heather White not checked.
+- FindLaw: Heather A. White listed as a Jenkintown family law lawyer; David S. Mildenberg listed in Philadelphia. A separate "Mildenberg Law Firm" (Brian R. Mildenberg, a different Philadelphia firm, bankruptcy) also appears in the same searches — name confusion risk.
+- Martindale: David S. Mildenberg profile exists.
+- Avvo/Justia/FindLaw/Martindale: the new firm name and address do not appear in the snippets; both attorneys' profiles still point to the prior firm or older solo practice. The client said the same: "There are specific reviews in there that mention us" on the prior firm's Google listing (David Mildenberg (client), 00:41:05) and "it's mostly just under the prior firm for me, anyway" (00:40:09). Profile contents were not opened, so treat as "likely stale — seller to confirm."
+- Yelp, other directories: not checked live.
+- NAP inconsistencies: no address exists for the new firm (website, GBP service-area). Phone 215.326.2779 appears on the website. Prior-firm address (Jenkintown) appears on attorney directory snippets.
+- Geo-targeting landing pages for surrounding cities: none observed.
+
+=====================================================================
+STEP 6 — GOOGLE ADS
+=====================================================================
+Research limitation: Google results could not be loaded; paid results not observable.
+Practice Area 1: Divorce
+- Firm ads observed: not observed (search not viewable). On the call the client said no paid ads or SEO are running: "Nothing. We're just getting off the ground, literally." (David Mildenberg (client), 00:38:48).
+- Named local competitors running ads: not observed. On the screen share the seller pointed at paid results for "divorce attorney" and said "you'll see other guys like Graf, Albert, whatever" (seller, 02:19:25) and the client said "he's always up there" about the prior firm (David Mildenberg (client), 00:14:50, tag may be shifted) — statements only; I did not observe the ads.
+Practice Area 2: Child custody
+- Firm ads observed: not observed
+- Named local competitors running ads: not observed
+Practice Area 3: Protection from Abuse
+- Firm ads observed: not observed
+- Named local competitors running ads: not observed
+
+=====================================================================
+STEP 7 — LOCAL SERVICE ADS
+=====================================================================
+- Firm appears in LSA: not observed (the client confirmed no LSA running; the seller recommends starting with LSAs)
+- Google Screened: not observed
+- LSA review count: not found
+- Named local competitors in LSA: not observed. The seller said competitors around the firm have "22" reviews in the LSA/maps results shown on the call (seller, 00:59:29–00:59:35) — a seller statement, unverified.
+
+=====================================================================
+STEP 8 — META ADS
+=====================================================================
+- Firm has active ads: not observed — the Facebook Ad Library returned a bot-verification challenge and could not be read. Client confirmed no paid ads.
+- Named local competitor 1: not observed
+- Named local competitor 2: not observed
+
+=====================================================================
+STEP 9 — TRANSCRIPT EXTRACTION
+=====================================================================
+Transcript source: full verbatim Fathom transcript (summary used only as overview)
+
+Speaker-tag notes: Fathom tags the whole firm side as one participant, "davidmildenberg" — both partners joined from one device (seller: "David, and is this Heather?" — "It is." 00:00:33–00:00:35). So Heather White's lines also carry the davidmildenberg tag; where content does not name the speaker, quotes below say "firm". Tags are also shifted in several stretches: e.g. "I don't think I could pay for it today" (01:44:43) and "But I wasn't expecting the need to attend two-person quarterly workshops…" (02:33:04) are tagged [SMB Team] but their content is the client's; "I think a three, like quarterly is more reasonable" (02:45:00) is tagged [SMB Team] but is the client's; and in 02:40–02:50 the seller's lines carry the davidmildenberg tag and the client's carry the seller tag. Only lines whose content proves the speaker are used. Seller-side numbers (e.g. "$5,000 all in", "10% conversion", "$100 cost per lead", "3 to 10 times return", "double your investment guarantee") are the seller's pitch math and are NOT the firm's figures. Transcription errors: "$3.75" hourly = $375/hr (summary agrees); "$24.97" = $2,497 (summary agrees); "25 to $3,500" = $2,500–$3,500; "$10,000" at 00:50:21 follows "five clients a week of a retainer of $2,000" and reads as $10,000 a week; "two-person quarterly workshops" = two in-person quarterly workshops.
+
+- Practice areas confirmed: family law exclusively — "Exactly, exclusively." (David Mildenberg (client), 00:02:12); divorce and custody are the two big ones ("Family, yeah, divorce, custody, family law." 00:14:41); also support and protection from abuse ("protection from abuses, we do too, which are also like a hot topic. It's like in the moment, someone needs immediate assistance." 00:52:27–00:52:32). Wants to add wills & estates (including estate litigation) in "a year or two" via an acquisition or hire: "that's another thing I would like to see in our business plan… in a year or two and bringing on someone who has a wills and estates practice" (firm, 01:42:55–01:43:00).
+- Current lead sources: no marketing channels. Sources of the ~$20,000 first month: "some of it was some clients who came over with us. … A couple were, I think, referred, and then … some were attorney referrals, and then some were, like, county bar. Referrals." (David Mildenberg (client), 00:37:43–00:37:58). County bar referral panels: "So some of the county bars we're members of, and so we're part of their referral systems." (00:38:55–00:39:00). Plans weekly networking. The prior firm paid FindLaw about $5,000 a month for referrals (David Mildenberg (client), 00:28:31–00:28:39) — not the new firm's spend.
+- Ads ever run: no — "Nothing. We're just getting off the ground, literally." (David Mildenberg (client), 00:38:48) in answer to what they're doing to get business besides the website. No platform, budget or results (none run). Seller to confirm that this includes no paid ads/LSA ever (the call did not ask directly).
+- Firm identity check: matches (trigger "Mildenberg & White Family Law, PLLC"; website "Mildenberg & White Family Law, PLLC"; seller confirmed the name for the agreement, 02:15:35–02:15:41; HubSpot company field matches the domain, per the trigger)
+- Team size: two partners/attorneys (David Mildenberg, Heather White), no support staff. The seller said "both are attorneys, no support" (00:05:56) and the client did not correct it; the client said they might need space "for potentially support staff" later (01:17:41). Website lists the two advocates only.
+- Team size (total headcount): 2
+- Annual revenue (gross / case value): about $20,000 a month in the first month (October), no annual figure stated — "$20,000." (David Mildenberg (client), 00:25:50) and November expected "Probably around the same area" (00:38:22). The firm is about one month old (PLLC formed "about two months ago", 02:16:05).
+- Annual revenue (net / take-home / collected): not distinguished from gross
+- Revenue (annual, best estimate): $240,000
+- Fee structure: mixed — hourly at $375 with an initial retainer, moving toward a hybrid: "a hybrid approach, where pre-litigation stuff and drafting materials more of a fixed fee, and then courtroom litigation preparation-related work is hourly." (David Mildenberg (client), 00:46:22–00:46:39). PFA matters are often flat fee: "a lot of those are like flat rate" (00:52:58). Hourly: "$3.75." (00:47:41) [transcript unclear — read as $375/hour; trigger summary agrees].
+- Revenue goal: $40,000 a month as fast as possible ("we need to get pretty quickly to like a 40K area so we could also pay marketing and ad and also ourselves", David Mildenberg (client), 00:06:26) and then a million a year ("Definitely reach a million and have a couple, you know, like two attorneys under each of us.", 00:07:00)
+- Average case value: initial retainer about $2,500–$3,500 ("what we'd be looking for are the $3,500 retainers" 00:46:40; "something in that range, you know, $2,500, $3,500" 00:47:12) and about $7,500 over the life of a case ("over the life of those cases, maybe $7,500. … that may not be necessarily the collectible either", 00:46:49–00:47:01); "notorious in family law. just don't collect everything that's owed." (David Mildenberg (client), 00:47:05)
+- Current close rate: not stated — default to 15%. The client has not quantified it: "I have a pretty good closing rate." (00:50:49); of consults "maybe one or two" were lost, "mostly financial" (00:51:12–00:51:21). The 10% inbound-call-to-retained figure is the seller's conservative pitch (seller, 01:49:18), not the firm's.
+- Number of locations: 1 — no dedicated office; executive-office access now, virtual mailing address planned ("at a minimum, we're just going to get a virtual, you know, mailing address", firm, 01:17:34). Philadelphia-area zip 19038 given for the Google listing (00:14:26). Plans a dedicated suite later and "satellites" (seller, 01:20:04).
+- Spanish campaign needed: no (not mentioned)
+- Dominant buying motive: personal financial stability for the owners, then a firm they manage rather than only litigate. "I think we both need a sense of personal financial stability and hitting a baseline month over month, you know, consistently is with some predictability is really important." (David Mildenberg (client), 01:14:07) and "I want to manage the firm." (David Mildenberg (client), 00:07:47); "trying to be a little bit more hands-off as the firm grows and being more involved in the business" (00:07:07). Closest inference: (1) a firm that runs without both owners in every case, built on predictable income.
+- Any profitability claims made by prospect: none stated
+- Any claims about case types or practice areas: "Exactly, exclusively." (family law only, 00:02:12); "protection from abuses, we do too, which are also like a hot topic" (00:52:27); on flat-fee PFA: "those are a lot of flat rate, you know, and the thing with flat rates, they don't go into your IOLTA. They go into your operating account" [transcript spells "IELTA"] (firm, 00:52:58–00:53:08)
+- Stated call focus / product interest: lead generation and getting clients quickly — "we can talk about lead generation. That's more my specialty." (David Mildenberg (client), 00:05:07) — and the seller framed the offer as "more of an ads and coaching play" (seller, 00:23:51). Pitched: Coach Essentials Plus with Google Local Service Ads management (campaigns built in month one, ads live in about 3–4 weeks, then month-two ad spend), Google review training, small-group weekly call, monthly one-on-ones with a coach and a marketing manager, a "double your investment" guarantee (conditions: attend calls, attend two in-person quarterly workshops — virtual attendance is what Coach Essentials Plus includes, signed case list, quarterly KPIs, 100 five-star reviews over the year, answer calls live). Price quoted: "Investment to SMB is $24.97" [transcript unclear — read as $2,497 a month; trigger summary agrees], splittable weekly/twice monthly, plus about $2,500 a month ad spend paid directly to Google ("I would recommend $2,500"); ~$5K all in; 12-month agreement; setup fee waived if the client decides quickly; 3% fee on card payments. The seller said SMB will not touch the website for now. NOT AI / FCTO and not a website project.
+- Primary engagement: mixed
+- Products discussed on call: Coach Essentials Plus
+- Lead-gen gap stated: yes — "we need an influx of clients ASAP." (David Mildenberg (client), 00:02:00)
+- Existing marketing/SEO/ad vendor engagements: none stated — still evaluating: "It's two and then maybe neither and just doing like a freelance kind of thing." (David Mildenberg (client), 00:13:43); Scorpion was dropped ("they're not on our list anymore", 00:04:21)
+- Budget constraints stated: yes — "we're cost sensitive right now." (David Mildenberg (client), 00:13:56) and "don't have endless funds" (00:13:58, tag shifted — read as client); "I don't think I could pay for it today. But … under the $5,000 proposal, I mean, or whatever you're proposing, yeah, let's hear it." (client, 01:44:43–01:44:55, tag says SMB Team — read as client); concern about contract length and setup fee ("The setup fee, but yeah", 02:52:09); "The concerns you have, it sounds like are the ownership of assets and like contract term length" — "Yes." (02:51:55–02:52:02). No dollar ceiling was stated by the client.
+
+Investment inputs
+- Ad spend practice area: Family Law
+- Geo market tier: Tier 1 (Philadelphia metro, ~6M DMA — Philly is listed in Tier 1 in audit-write.md and the Scoping guide)
+- Market competitiveness: High — Tier 1 market with many established Philadelphia-area family firms (STEP 3 web-search names; competitor paid/pack activity not observed); the seller described the Philadelphia auctions as "fairly expensive" (seller, 01:54:10). Seller to confirm.
+- Current monthly ad spend (stated): none — "Nothing. We're just getting off the ground, literally." (David Mildenberg (client), 00:38:48)
+- Current cost per signed case (stated): not stated
+- Current cost per lead (stated): not stated (the "$100 per lead" figure is the seller's pitch, seller 01:51:51)
+- Average case value (stated, one figure): $2,500 — David Mildenberg (client), 00:47:12, "$2,500, $3,500" initial retainer (range → its low end); lifetime value "maybe $7,500" not all collectible (00:46:49)
+- Close rate (stated): not stated
+- Revenue goal (annual, one figure): $1,000,000 — David Mildenberg (client), 00:07:00, "Definitely reach a million" (near-term step: $40,000 a month, 00:06:26)
+- Maximum monthly ad budget (stated): not stated
+
+Key prospect quotes
+1. David Mildenberg (client), 00:02:00 — urgency: "We are out on our own now, and we need an influx of clients ASAP."
+2. David Mildenberg (client), 00:06:26 — goal: "we need to get pretty quickly to like a 40K area so we could also pay marketing and ad and also ourselves."
+3. David Mildenberg (client), 00:07:00 — goals: "Definitely reach a million and have a couple, you know, like two attorneys under each of us."
+4. David Mildenberg (client), 00:07:47 — DBM/role: "I want to manage the firm."
+5. David Mildenberg (client), 00:03:22 — objection/ownership: "the biggest areas that we end up talking about after Zoom calls are the level of ownership of website, content, data, track, all that stuff." [transcript unclear — "track" read as tracking]
+6. David Mildenberg (client), 00:13:56 — budget: "we're cost sensitive right now."
+7. David Mildenberg (client), 00:37:43 — lead sources: "some of it was some clients who came over with us. … some were attorney referrals, and then some were, like, county bar."
+8. David Mildenberg (client), 00:38:48 — marketing today: "Nothing. We're just getting off the ground, literally."
+9. David Mildenberg (client), 00:50:09 — capacity/goal: "It's just five clients a week of a retainer of $2,000 is $40,000 a month. … it's not that many." / 00:50:29 "There's two of us. We could each do that. Like we can each bill a hundred hours a month." [transcript drops "us" — read as shown]
+10. David Mildenberg (client), 01:14:07 — why/DBM: "I think we both need a sense of personal financial stability and hitting a baseline month over month, you know, consistently is with some predictability is really important."
+11. Mildenberg & White partner (firm), 02:06:18 — cost of inaction: "It's not sustainable. … we're not just out of law school. … student loans. Everything. We have kids." [speaker tag says SMB Team — read as client: content is the firm's own finances]
+12. David Mildenberg (client), 02:33:04 — objection: "But I wasn't expecting the need to attend two-person quarterly workshops that are many states away, you know, to qualify for the guarantee." [transcript unclear — "two-person" read as two in-person; speaker tag says SMB Team — read as client]
+
+=====================================================================
+STEP 9B — KPI AND DIAGNOSIS (feeds deck slides 1–3)
+=====================================================================
+KPI AND DIAGNOSIS (STEP 9B)
+Product focus this supports: mixed — Coach Essentials Plus with Google LSA management (ads + coaching); no website/SEO work pitched
+Headline KPI: Monthly revenue — about $20,000 in the first month, and expected to stay about the same in November — said by client, 00:25:50 — "$20,000." and 00:38:22 — "Probably around the same area, I'd say."
+  KPI status: usable
+  Why this KPI: the LSA campaign adds new retainers on top of referrals, and coaching on intake/sales converts them; this is the monthly figure the client set against his own $40,000 goal.
+Supporting figures (0–3):
+  - Retainer size about $2,500–$3,500 — client, 00:46:40 / 00:47:12 — "what we'd be looking for are the $3,500 retainers, which would be great all day long." / "$2,500, $3,500"
+  - Retainers needed a week — client, 00:50:09 — "It's just five clients a week of a retainer of $2,000 is $40,000 a month."
+  - Capacity — client, 00:50:29 — "we can each bill a hundred hours a month." (with "There's two of us. We could each do that.")
+Client-stated goal for this KPI: $40,000 a month — "we need to get pretty quickly to like a 40K area so we could also pay marketing and ad and also ourselves." (David Mildenberg (client), 00:06:26)
+KPI quotes (2–4, verbatim, client only):
+  - David Mildenberg (client), 00:06:26 "we need to get pretty quickly to like a 40K area so we could also pay marketing and ad and also ourselves." [revenue goal]
+  - David Mildenberg (client), 00:38:48 "Nothing. We're just getting off the ground, literally." [no paid marketing today]
+  - David Mildenberg (client), 00:50:09 "It's just five clients a week of a retainer of $2,000 is $40,000 a month." [new retainers needed]
+Client's why (verbatim, client only): David Mildenberg (client), 01:14:07 "I think we both need a sense of personal financial stability and hitting a baseline month over month, you know, consistently is with some predictability is really important." — and 01:14:29 "I have an eight-year-old sort of post-divorce a couple of years, and there's just a lot of, you know, financial stress and things like that in past and turmoil the past, you know, years. And so just searching for that consistency…" — and 00:07:07 "trying to be a little bit more hands-off as the firm grows and being more involved in the business."
+Cost of inaction (verbatim, client only): firm partner (client side), 02:06:18 "It's not sustainable. … we're not just out of law school. … student loans. Everything. We have kids." [tag says SMB Team — read as client; content is the firm's own finances] — and David Mildenberg (client), 02:05:30 "It's an issue." (asked what happens if they don't reach $40,000 a month)
+Legacy Staircase discussed: yes — the seller put up the growth-model slide and described "the leap" and "the abyss" ("You guys are kind of right here, so to speak. You already made this like what we call the leap", seller, 00:33:26–00:33:29; "in step four here in what we call the abyss", seller, 00:34:18). Current stage: not placed by number — the seller placed the firm at the Leap (early stage; pre-revenue to early revenue); no stage 1–8 number was said. Goal stage: not named by number — client goals were stated as "reach a million" with "two attorneys under each of us" (00:07:00); the seller's frame was getting through the abyss to a firm that runs with or without them (seller, 02:08:34).
+Diagnosis (3–4 causes, biggest first):
+  1. No paid lead source — every new matter is a carry-over client or a referral — evidence: "Nothing. We're just getting off the ground, literally." (client, 00:38:48); first-month revenue came from "clients who came over with us … attorney referrals … county bar" (client, 00:37:43–00:37:58) — source: call — fixed by: Google Local Service Ads campaign built in month one and managed from month two (ads live about 3–4 weeks after start, seller 01:46:48), included in Coach Essentials Plus + LSA management
+     Target basis: client goal "five clients a week of a retainer of $2,000 is $40,000 a month" (client, 00:50:09) and "40K area" (client, 00:06:26)
+  2. Almost no social proof and a Google profile that cannot show in the map pack yet — evidence: listing is a service-area business with no address ("I go to my customers", client, 00:20:10); site says "Map preview · Service area coming soon" (research, STEP 1, observed on the live page); prior reviews sit under the former firm ("mostly just under the prior firm for me", client, 00:40:09) — source: call + research STEP 1 — fixed by: Google review training (month one), GBP category/secondary categories/headshot clean-up, review short link; later a dedicated suite to move the profile off service-area
+     Target basis: seller benchmark stated on the call — "race to 200 Google reviews" (seller, 00:21:17) and "100 five-star Google reviews … over the next year" (seller, 02:37:02); no client-stated target
+  3. No track record converting cold internet leads — evidence: "I have a pretty good closing rate." (client, 00:50:49) on referral consults; the firm has not run paid leads; "we could have been like the fourth person that they came to" (client, 00:51:21) — source: call — fixed by: intake and sales process coaching and scripts in Coach Essentials Plus, call tracking and lead ratings from the marketing manager
+     Target basis: seller benchmark stated on the call — "converting like probably 10% of the calls coming in from inbound phone call to retained client" (seller, 01:49:18); no client-stated target
+  4. Both owners are carrying full caseloads while building the firm — evidence: "a lot of the days is consumed with just the, you know, existing clients and just working on other aspects of the business" (client, 00:39:17); "we want to both have relatively full caseloads and doing, you know, consults." (client, 00:36:35) — source: call — fixed by: weekly small-group coaching call and monthly one-on-one with a business coach (accountability and the path to hiring)
+     Target basis: client goal "two attorneys under each of us" and "trying to be a little bit more hands-off as the firm grows" (client, 00:07:00 / 00:07:07)
+Plan inputs (for each non-marketing product the call points to):
+  - Fractional CTO / AI Workforce Pro: none stated as repetitive tasks (the client praised Clio's new AI features across "intake, billing, accounting, emailing, communications, document" at 00:48:53, but named no manual task to automate)
+  - FCOO / coaching: process pain named — moving from referral closes to colder internet leads (client, 00:51:21 "we could have been like the fourth person that they came to"); wants scripts and a process for paid leads; wants to hire later ("potentially support staff to manage copy and documents", firm, 01:17:41–01:18:00); "I want to manage the firm." (client, 00:07:47)
+  - FCFO / bookkeeping: none stated (they use Clio billing/accounting)
+Alternate KPI (if the seller changes the package): none
+Seller should confirm on the next call:
+  - Revenue: the $240,000 annual figure above is $20,000 a month × 12 from a one-month-old firm and is not an annual figure the client stated; confirm actual monthly revenue for October and November and a collected-vs-billed split. Also confirm whether the client's "$20,000" is revenue collected or billed.
+  - Close rate on referral consults and on paid leads (client only said "a pretty good closing rate"); lead-to-consult and show rates (not stated).
+  - Whether the firm has ever run any paid ads or LSAs (client said "Nothing" is happening now; not asked directly whether ever).
+  - Budget ceiling: the client said they cannot pay today and are "cost sensitive"; no dollar limit was stated. Confirm the monthly amount they can commit and whether the seller's ~$2,497/mo + ~$2,500/mo ad spend works.
+  - The three open issues the client raised: 12-month term (client wants quarterly, "both parties have an out without being penalized", 02:45:15), the two in-person workshops required for the guarantee (client would attend all virtually, 02:34:50), and the setup fee. Seller said they would check with leadership and answer Tuesday 2026-11-17 at 12:00 PM ET. The trigger summary's "Tuesday Nov 12" is wrong; the call was Wednesday Nov 11.
+  - Ownership: the seller confirmed the client owns the website, Google listing and LSA profile (seller, 02:44:12–02:44:18 and 02:54:46–02:55:04); the client will check the contract wording. Seller to be ready to show the ownership clause.
+  - Google listing: current primary category, review count and rating, reviews on the prior firm's listing that name them, and the Maps address plan (virtual mailing address vs a suite; seller advised a high-income suburb, not downtown Philadelphia). No review count was read in this research.
+  - Brand: whether they will add "Divorce" to the firm name via a DBA (seller suggested, 02:18:00–02:18:12); client asked if the website must change too (02:20:15).
+  - Competitor review counts on the call ("87" for the prior firm, "22" for others — seller statements) and the UNCONFIRMED search-summary counts for Kuldiner (259) and Cooper (156) are not verified; check live on Google before using.
+  - The prior firm's name is "Graf" in the transcript; web results show Graff & Associates (Jenkintown) — confirm spelling and that this is the firm before naming it anywhere.
+  - Directory profiles (Avvo, Justia, FindLaw, Martindale) appear to still list the prior firm; the contents were not opened.
+
+=====================================================================
+STEP 10 — COMPETITIVE URGENCY SCORE
+=====================================================================
+Score: 6 — low-confidence. Live competitor marketing activity (ads, LSAs, 3-pack) could not be observed; the score reflects the market and the firm's starting point, not a measured campaign comparison. Tier 1 market with many established family firms, and the firm has no reviews or map presence yet.
+Named local competitor threats (from web search and the call; marketing activity not observed):
+  1. Graff & Associates (Jenkintown / Philadelphia) — the prior firm; the client said "he's always up there" about it (00:14:50, tag may be shifted) and the seller said it has 87 reviews (seller, 00:59:08); neither is verified
+  2. Law Offices of Michael Kuldiner, P.C. (Philadelphia) — large review base per a web-search summary (259 reviews, UNCONFIRMED), serves Philadelphia, Montgomery and Bucks
+  3. Cooper Family Law, LLC (Philadelphia) — serves five counties; 156 reviews per a web-search summary (UNCONFIRMED)
+Dynamic sentence (score 4–6): "A score of 6 means competitors have meaningful advantages in one or more areas and are pulling ahead. You are not invisible yet — but the window to close the gap is narrowing. Every month without action is a month they extend their lead."
+
+=====================================================================
+PASS 2 — VERIFICATION CHECKLIST
+=====================================================================
+[x] Every number matches observed data or a transcript line; seller-side numbers are labelled seller and kept out of the firm's figures
+[x] No competitor is described as dominating on reviews; the prospect's review count is unknown
+[x] Every review count/rating carries a tag — all are UNCONFIRMED or "not found"; none is [confirmed via Google]
+[x] Revenue split: gross and net not distinguished (stated); fee structure recorded
+[x] Ad sections cover all three practice areas (divorce, custody, PFA)
+[x] No section says "you are not running ads" — only "not observed"; the client's own statement is cited
+[x] No profitability claim beyond the transcript
+[x] Competitors are specific named local firms
+[x] PageSpeed scores are real Lighthouse numbers (93 mobile / 100 desktop), method disclosed
+[x] DBM recorded (verbatim)
+[x] Revenue goal recorded ($40,000/month; $1,000,000/year)
+[x] Close rate: not stated, default 15%
+[x] Average case value recorded ($2,500–$3,500 retainer; $7,500 lifetime)
+[x] Stated call focus recorded — marketing + coaching, not AI/FCTO
+[x] "Primary engagement" = mixed; "Products discussed on call" = Coach Essentials Plus; "Lead-gen gap stated" = yes
+[x] "Revenue (annual, best estimate)" is one figure ($240,000, flagged); "Team size (total headcount)" = 2
+[x] Firm identity check = matches
+[x] Existing vendors recorded (none stated)
+[x] Budget constraints recorded
+[x] Investment inputs filled in the exact format
+[x] Nothing fabricated; not-found items are listed for the seller
+[x] STEP 9B filled in with Client's why, Cost of inaction and Legacy Staircase discussed
+[x] No STEP 9B figure was calculated or estimated; none is UNCONFIRMED
+[x] Every STEP 9B cause has a source and a Target basis
