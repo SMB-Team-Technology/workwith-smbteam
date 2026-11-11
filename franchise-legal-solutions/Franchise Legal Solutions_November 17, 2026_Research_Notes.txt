@@ -1,0 +1,248 @@
+SMB TEAM — AUDIT RESEARCH NOTES (PASS 1)
+Firm: Franchise Legal Solutions (Scott Weber; directory listings show the legal entity as "Scott Phillip Weber, P.A.") — Clearwater, FL (Tampa Bay area)
+Friendly name: franchise-legal-solutions
+URL: http://franchiselegalsolutions.com (resolves, HTTP 200) — the trigger URL was used as given
+Sales rep: Jacob Meissner
+Report date: November 17, 2026 (proposal call Tuesday 2026-11-17, 3:30 PM ET)
+Research run: 2026-11-11
+Contact: Scott Weber (solo attorney / owner)
+Discovery call: 2026-11-11, about 52 minutes (Fathom recording 202222147)
+
+IMPORTANT CONTEXT: Solo practice, roughly $250K this year, reactivated after about a two-year break (the client sold a company, waited out a non-compete, then "took the cash and enjoyed myself"). The client is a heavy AI user who has already built AI agents in Claude and is moving to GrokBot; he describes himself as "de-scaling versus scaling." He does not want to hire staff, argue in court, or work 80-hour weeks. He is open to marketing ONLY for two narrow segments: (1) franchisee clients (people buying a franchise; flat-fee $3,000–$10,000 projects) and (2) outside / fractional chief-legal-officer work for franchise, hospitality and restaurant brands. Today 100% of work is referral-based and he has never advertised. The call went about 52 minutes; the client had a hard stop. The seller offered no price. The seller floated marketing (B2B brand awareness: LinkedIn / social, SEO / AEO, video avatars), a voice intake agent, AI Workforce Pro plus a Fractional CTO, and mentioned coaching / "360 Max" in passing ("I'm not recommending this either. I don't know quite yet what we would recommend", Jacob Meissner [SMB Team], 00:27:01–00:27:11). The AI summary in the trigger says "Proposed Solution: 360 Max"; the full transcript does not show a package proposed or priced. Follow-up: Tuesday Nov 17, 3:30 PM (client: "3.30", 00:51:28).
+
+RESEARCH LIMITATIONS (this environment): Google Search / Maps returned no readable results, the Facebook Ad Library, Avvo and Justia returned HTTP 403, and the PageSpeed Insights API returned HTTP 429 (daily quota exceeded). No review count or star rating is [confirmed via Google] anywhere in this file. Local-pack, Google Ads, LSA and Meta Ads results are NOT OBSERVED. PageSpeed scores below are from a real Lighthouse 12.8.2 run in headless Chrome on a CI runner (lab conditions; may differ by several points from pagespeed.web.dev). Directory data below comes from web-search result snippets only (pages themselves were not opened) and is flagged as such.
+
+=====================================================================
+STEP 1 — WEBSITE RESEARCH
+=====================================================================
+- Website URL confirmed live: yes (HTTP 200; Last-Modified header Tue 03 Nov 2026 — the site was edited about a week before the call; the client said "I just started to reactivate my website", Scott Weber (client), 00:24:47)
+- Last redesign date or estimated age: new / recently rebuilt. Footer reads "© 2026. All rights reserved." Page source carries a generator tag "XCL" and a stylesheet "xclaim_spw02.css"; a search result shows a preview build at xclaimagency.com/preview/spw01 (built by an outside web agency; footer links to baybizai.com). Structured data is only {"@type":"Organization","name":"SPW02"} — an internal project name, not the firm name.
+- Mobile responsive: yes by markup (viewport meta present; hamburger menu rule at max-width 939px). Mobile load is very slow (see Lighthouse below). Not tested on a physical phone.
+- Homepage headline: "Practical Franchise, Distribution and Licensing Counsel. Executive-Level Business Judgment."
+- CTA above fold: yes — "MAKE AN APPOINTMENT" button (opens a pop-up booking form; the page source references Calendly)
+- Contact form location: pop-up (#popup-098a) opened from the "Make an Appointment" button, plus a Contact page (contact.html). No form embedded in the page body.
+- Live chat present: no
+- Attorney bio present: yes — long bio and a Leadership page (Hawk Parent Holdings / Hooters of America board and CLO service, FranSharks with Kevin Harrington, Rolling Suds, HydroDog USA, NuImage Medical)
+- Video present: no
+- Blog present: no (nav has Home, About, Leadership, Industry Guides [Hospitality, Dealerships, Distribution], Services [Buying a Franchise, Franchise Advisory, Disputes, Executive Advisory], Contact, Subscribe)
+- Title tag: "Scott Weber | Counsel for Franchise, Dealership, Distribution and Licensing"
+- NAP on site: 140 Island Way, #241, Clearwater, FL 33767; phone 813.992.2108; email scott@franchiselegalsolutions.com. The site states "Mr. Weber is licensed to practice law in the State of Florida. The firm does not maintain brick & mortar offices in Florida or any other state."
+- BUG OBSERVED in page source: the email link reads mailto:cott@franchiselegalsolutions.com (missing the "S") — visitors who click the email link write to a wrong address.
+- Tracking: no Google Analytics / Tag Manager / Meta Pixel code was observed in the homepage source (page source only; a tag loaded another way would not show).
+- Who the site speaks to vs. who the call targets: the homepage copy is written for franchisors, dealers, distributors, licensors, boards and executive teams. The franchisee-facing offer ("Guidance for Franchise Buyers" / Buying a Franchise page) is one block on the homepage and one nav item; the Hospitality guide exists as a page. The two segments the client wants marketing for (franchisees; outside CLO for hospitality / restaurant brands) are not the homepage's headline audience.
+- No client reviews or testimonials were seen on the homepage.
+
+PageSpeed / Lighthouse (performance category):
+- Method: pagespeed.web.dev could not be used (API HTTP 429, quota exceeded). Scores are from Lighthouse 12.8.2, headless Chrome, run 2026-11-11 against http://franchiselegalsolutions.com (final URL https://franchiselegalsolutions.com/)
+- PageSpeed mobile score: 55 (FCP 9.9 s, LCP 25.0 s, CLS 0, TBT 140 ms, Speed Index 9.9 s)
+- PageSpeed desktop score: 64 (FCP 2.1 s, LCP 6.4 s, CLS 0.005, TBT 0 ms, Speed Index 2.1 s)
+
+=====================================================================
+STEP 2 — GOOGLE BUSINESS PROFILE
+=====================================================================
+Research limitation: Google Maps / Search could not be loaded; web search surfaced no Google Business Profile or Google review figures for this firm. /audit-write must NOT print any review count or star rating for this firm from Google.
+
+- GBP found: not observed (could not be checked; the call did not mention a Google profile) — seller should confirm
+- Star rating: not found [no verification possible — not confirmed via Google]
+- Total review count: not found [no verification possible — not confirmed via Google]
+- Most recent review date: not found
+- Primary category: not found
+- Photos active: not observed
+- Posts active: not observed
+- Reviews seen elsewhere (NOT Google): Avvo — 5.0 rating, 3 reviews [UNCONFIRMED — sourced from an Avvo search-result snippet, page not opened, not confirmed via Google]; American Top Attorneys — 5 stars, 1 review [UNCONFIRMED — sourced from a directory search-result snippet, not confirmed via Google]; Lawyers.com — no client reviews posted [UNCONFIRMED — search-result snippet]. A LinkedIn recommendation from Marc Plaisted calls him "a first rate Franchise Attorney" (search-result snippet).
+
+=====================================================================
+STEP 3 — LOCAL 3-PACK SEARCHES
+=====================================================================
+Research limitation: live Google local-pack results could not be observed. Pack membership is NOT OBSERVED for every search. The firm sells B2B / franchise-buyer advisory, and the seller and client agreed that local search is a weak channel for this audience ("traditional marketing doing LSA campaigns and PPC campaigns on Google just don't really apply to you nearly as much", Jacob Meissner [SMB Team], 00:19:25 — a seller view). Names below are Florida firms surfaced by ordinary web search, not confirmed pack members.
+
+Practice Area 1: Franchise agreement / FDD review for franchise buyers (franchisee side)
+- Search 1 "franchise attorney clearwater fl": firm appears: not observed (Google returned no readable results) — market names surfaced by web search for Clearwater / Tampa franchise lawyers: Cantrell Schuette, Conwell Business Law, Motiva Law (Lutz); pack members not confirmed
+- Search 2 "franchise agreement review attorney tampa": firm appears: not observed — surfaced: Southron Firm (FDD review blog), Cuetolaw Group, Cantrell Schuette; the firm itself did not appear in the web-search results for this query (web search, not Google local pack)
+- Search 3 "FDD review lawyer florida": firm appears: not observed — not run live (Google unavailable)
+
+Practice Area 2: Outside general counsel / fractional CLO for hospitality and restaurant brands
+- Search 1 "fractional chief legal officer florida": firm appears: not observed in Google; the firm's own site DID appear in web-search results for "hospitality restaurant franchise outside general counsel fractional chief legal officer attorney Florida" — alongside Fetterman Business Law, Brick Business Law, Adams Outside GC, Outside Chief Legal, Yoel Molina
+- Search 2 "outside general counsel restaurant florida": not run live (Google unavailable)
+- Search 3 "restaurant franchise lawyer tampa": not run live (Google unavailable)
+
+=====================================================================
+STEP 4 — COMPETITOR REVIEW COUNTS
+=====================================================================
+Not verified live — Google listings could not be read. Only aggregator figures from search snippets exist, so all are UNCONFIRMED and must not be printed as specific figures in the client-facing report. The prospect's own Google count is unknown, so no "dominating" claim is supported.
+- Competitor 1: Cantrell Schuette (Tampa, FL — employment, franchise and dealer disputes) — reviews: 85 [UNCONFIRMED — sourced from a Chamber of Commerce directory snippet, not independently confirmed via Google] — rating: 4.8 on the Chamber directory [UNCONFIRMED — sourced from the Chamber of Commerce directory snippet, not independently confirmed via Google]; a third-party aggregator snippet states 4.9 on Google [UNCONFIRMED — sourced from trustanalytica.org, not confirmed via Google]
+- Competitor 2: Conwell Business Law, LLLP (Tampa, FL — franchise guidance) — reviews: not found [no verification possible — not confirmed via Google] — rating: not found [no verification possible — not confirmed via Google]
+- Competitor 3: Motiva Law (Lutz, FL — franchise lawyer) — reviews: not found [no verification possible — not confirmed via Google] — rating: not found [no verification possible — not confirmed via Google]
+
+=====================================================================
+STEP 5 — DIRECTORY LISTINGS
+=====================================================================
+Method: web-search result snippets only (Avvo, Justia, Lawyers.com, American Top Attorneys, Lawyer Legion and D&B pages were not opened; Avvo / Justia returned HTTP 403). Yelp, FindLaw and Martindale: no listing surfaced.
+- Avvo: listing exists for "Scott Phillip Weber" (franchising; 5.0, 3 reviews [UNCONFIRMED — search snippet]). Snippet gives an address of 3709 W. McKay Avenue, Tampa, FL and "licensed for 28 years".
+- Justia: listing "Scott Phillip Weber, Lawyer in Clearwater, Florida" — page content not read.
+- Lawyers.com: "Franchise Legal Team — Tampa, FL Law Firm" listing — no client reviews posted [UNCONFIRMED — snippet]; the snippet shows 140 Island Way #241, Clearwater and (813) 992-2108.
+- American Top Attorneys: "Scott Phillip Weber, PA Franchise Legal Solutions" — 5 stars, 1 review [UNCONFIRMED — snippet].
+- Lawyer Legion and Dun & Bradstreet: listings exist (D&B shows both "Franchise Legal Solutions" and "Scott Phillip Weber, PA Franchise Legal Solutions" as separate profiles).
+- NAP inconsistencies (snippet-sourced, seller / client to confirm): Avvo lists a Tampa address (3709 W. McKay Avenue); the website, Lawyers.com and American Top Attorneys list 140 Island Way #241, Clearwater. The firm appears under at least four names (Franchise Legal Solutions; Franchise Legal Team; Scott Phillip Weber, P.A.; "Scott Weber" on the website itself). The trigger's HubSpot contact email is spwfranlaw@gmail.com while the website shows scott@franchiselegalsolutions.com (and a broken "cott@" link).
+- LinkedIn (search / profile page): Scott P. Weber, Esq., CFE — about 4,000 followers, 500+ connections; current role shown as Chief Legal Officer / outside general counsel at Big Brand Ventures Holdings; Franchise Legal Solutions is NOT listed on the LinkedIn profile page that was read. Recent public posts: a Claude training certificate (about 4 months ago) and a Kevin Harrington article / Shark Retreat promotion (about 8 months ago). A search snippet showed a different current role ("Head of Franchise Relations at Archetype Consulting Group") — conflicting, so not relied on. LinkedIn matters here because the client found SMB Team on LinkedIn ("I saw he popped up on my LinkedIn", Scott Weber (client), 00:00:56) and the target channel is LinkedIn / social.
+- Geo-targeting landing pages for surrounding cities: not observed (the site is national / industry-themed; no city pages in the nav)
+
+=====================================================================
+STEP 6 — GOOGLE ADS
+=====================================================================
+Google results could not be read (see limitations). Ad presence is NOT OBSERVED; this is not evidence either way. The client confirmed on the call that he runs no advertising: "I don't do any advertising." (Scott Weber (client), 00:12:01) and "never advertised as a lawyer" (00:12:58).
+Practice Area 1: Franchise agreement / FDD review (franchisee side)
+- Firm ads observed: not observed (Google unavailable); the client says he has never advertised
+- Named local competitors running ads: not observed
+Practice Area 2: Outside general counsel / fractional CLO (hospitality / restaurant)
+- Firm ads observed: not observed
+- Named local competitors running ads: not observed
+
+=====================================================================
+STEP 7 — LOCAL SERVICE ADS
+=====================================================================
+- Firm appears in LSA: not observed (Google unavailable)
+- Google Screened: not observed
+- LSA review count: not found
+- Named local competitors in LSA: not observed
+Note: the seller and client both said Google PPC / LSA is a poor fit for this B2B audience, so this channel is not central to the recommendation.
+
+=====================================================================
+STEP 8 — META ADS
+=====================================================================
+Method: tried https://www.facebook.com/ads/library/ search for "Franchise Legal Solutions"; the request returned HTTP 403 (bot block).
+- Firm has active ads: not observed (Ad Library not readable); the client says he has never advertised
+- Named local competitor 1: not observed
+- Named local competitor 2: not observed
+
+=====================================================================
+STEP 9 — TRANSCRIPT EXTRACTION
+=====================================================================
+Transcript source: full verbatim Fathom transcript (summary used only as overview). Only Scott Weber's statements are recorded as the firm's facts; [SMB Team] statements are labelled seller. Where the AI summary and the transcript disagree the transcript wins (see "Summary vs transcript" at the end of STEP 9).
+
+- Practice areas confirmed: franchise and distribution law, mainly for prospective franchisees (franchise agreement / franchise disclosure document review, lease and build-out economics, five-year business plans) and outside / fractional chief legal officer work for franchise, hospitality and restaurant brands. Non-litigation, transactional: "I don't go to court" (00:08:23); "I'm not running a plaintiff's firm" (00:07:37); "I don't want to bring in litigation" (00:13:33). Also occasional complex deal work by referral (e.g. a ski-resort purchase, sports-team acquisition) that he does NOT want to market for (00:21:39–00:21:46).
+- Current lead sources: "Almost 100% of the business I get is somebody that I've known in the business for years, picks up the phone and calls" (Scott Weber (client), 00:11:51); conferences and word of mouth: "I would attend conferences in my industry, and then word of mouth, advertising." (00:13:02). Newer clients: "for people who don't know me, my intake is now automated through my website where they can book a calendar meet." (00:29:16)
+- Ads ever run: no — "I don't do any advertising." (00:12:01); "never advertised as a lawyer" (00:12:58). He has "looked at developing automation for LinkedIn-type advertising" but has not run any (00:12:04). No platform, budget or result.
+- Firm identity check: matches
+  Identity note: the trigger name "Franchise Legal Solutions" matches the website domain and the client's own words ("called Franchise Legal Solutions, which is my website", 00:05:28). The website's brand and title read "Scott Weber" and directories show "Scott Phillip Weber, P.A." — a solo practice trading as Franchise Legal Solutions. Not a mismatch.
+- Team size: 1 — solo attorney, no staff. "I don't have an assistant, I'm paying a hundred grand a year or two. I don't have associates, I'm paying a couple hundred grand a year or two." (00:26:06–00:26:10, Scott Weber (client)); "I don't have rent" (00:26:15). Uses AI agents / "virtual attorneys" in place of staff (00:06:39).
+- Team size (total headcount): 1
+- Annual revenue (gross / case value): about $250,000 for this year — "I'm probably going to do a quarter million this year, which is not a lot." (00:24:36). He previously led a practice doing "upwards of six million" at a prior firm with associates and staff (00:46:30) — not this firm's figure.
+- Annual revenue (net / take-home / collected): not distinguished from gross
+- Revenue (annual, best estimate): $250,000
+- Fee structure: flat project fees / non-refundable initial fees, no retainers, not hourly. "I'm going to charge you somewhere between X and Y on the project, and I'm going to send you a bill." (00:14:17); "I don't charge retainers. I charge initial fees that are non-refundable." (00:30:10–00:30:13); franchisee engagements "$3,000 to $10,000" (00:18:06) / "a five, $10,000 engagement" (00:24:16). Initial consults are paid (half hour or hour) via PayPal (00:29:25–00:29:34). Stated hourly rate: "I bill at $9.80 an hour" (00:26:28) [transcript unclear — likely $980 an hour; he then says "I could probably bill at $1,500 an hour"] — not used.
+- Revenue goal: a range of billings, not one figure. "if I do anywhere from half a million to a million five in billings for the firm, great" (00:08:01); "if I'm anywhere from a half a million to a million in billings" (00:25:24); "if I get above a million five in billings… I'm going to need staff" (00:25:16) — $1.5M is his ceiling. "add, let's say, half a million, 750,000 in the next 12 years of additional billings" (00:13:13) [transcript unclear — read as 12 months]. The seller's restated goal "from now at 250,000 to about 1.5 million" (seller, 00:45:59) was not explicitly confirmed by the client.
+- Average case value: franchisee engagements $3,000–$10,000 (client, 00:18:06; 00:24:16). Outside-CLO retainer value: not stated.
+- Current close rate: not stated — default to 15%
+- Number of locations: 1 (Clearwater, FL; he splits the year between Florida and Colorado but all contact is remote — "almost all my communication is Zoom or Teams", 00:31:53)
+- Spanish campaign needed: no
+- Dominant buying motive: lifestyle freedom — a lean one-person firm that produces good income without 80-hour weeks, staff, court, or interfering with his ski and pickleball time and his split FL / CO life. "I don't want to be working 80-hour weeks again… Just to make a half million dollars more per year. I have no interest in that at all." (Scott Weber (client), 00:13:54–00:14:00); "we don't want our lifestyle infringed" (00:13:51); "it's going to interfere with my skiing on a powder day" (00:23:34). This is type (1): a firm that runs without him being consumed by it — and he is explicitly not buying growth for its own sake.
+- Any profitability claims made by prospect: "my overhead cost is almost nil to run a law firm" (00:25:32); "the ability to do this independently has increased the profitability of it for each hour that you're working on" (00:26:19); "I can do everything I did with 10 associates and five paralegals and, you know, 10 secretaries and administrative staff. I can do all that with AI now." (00:06:24–00:06:36); "it's not like the practice law is what pays a mortgage or anything like that for us anymore" (00:08:33).
+- Any claims about case types or practice areas: "I do more discreet work." (00:07:45); franchisee work: "cookie-cutter engagements… $3,000 to $10,000 engagements. And I can pop one out and do one while drinking my coffee at breakfast." (00:18:00–00:18:10); "a more stable cash flow model as outside chief legal officer for brands in the franchise, hospitality, and restaurant space" (00:20:00); capacity: "a quarter million to a half million dollars worth of franchisee work per year without it interfering with my lifestyle" (00:23:01) and "probably equivalent" for the outside-CLO role (00:23:12). On the CLO role the seller's "around four new additional clients then per year" got "probably yes" (seller 00:24:02, client 00:24:12) — seller's figure, client confirmed.
+- Stated call focus / product interest: NOT a standard marketing / growth discovery. The client came wanting to see "what does SMB do that could assist with what I'm doing with the law firm" and "see what the cost structure is and what you actually provide" (00:06:06, 00:09:12). Two threads: (a) targeted B2B marketing / lead generation for franchisee and hospitality outside-CLO work (LinkedIn / social brand awareness, video avatars, SEO / AEO — the seller leaned to "more social campaigns", 00:44:33), plus a voice intake agent for the new inbound calls this would create; and (b) AI — AI Workforce Pro and a Fractional CTO to build automations (the seller demoed the platform on screen). The seller floated coaching and the 360 Max package in general terms only; the client did not engage with coaching. No package was proposed or priced; pricing was described only as tailored, 12-month terms, with Fractional CTO month to month for firms under five employees [transcript unclear on the exact month-to-month rule]. The client also asked whether the SMB AI platform's "closed system" would limit his work quality, comparing it unfavorably to Thomson Reuters and Clio (00:48:27–00:48:55).
+- Primary engagement: mixed
+- Products discussed on call: Full Service Marketing, AI Workforce Pro, Fractional CTO
+- Lead-gen gap stated: yes — "Now, if I could generate more of those, which the intake, the lead gen, all of that would be applicable to, that would be attractive in there." (Scott Weber (client), 00:18:19)
+- Existing marketing/SEO/ad vendor engagements: none stated (asked about SEO / AEO: "Nothing yet." — 00:44:07; the website was built by an outside agency per the page source, but no ongoing marketing contract was mentioned)
+- Budget constraints stated: none stated. He asked an open question about spend: "what's a marketing spend to get that" (00:25:32) and "How does your pricing work?" (00:41:31); no limit was given.
+
+Investment inputs — only what the client said on the call:
+- Ad spend practice area: Business Law — franchise / transactional advice for franchisees; the seller steered away from Google PPC toward social brand campaigns (source: seller 00:15:14–00:15:27, client agreed 00:15:06)
+- Geo market tier: Tier 2 (Tampa Bay / Clearwater) — he said "heavily market within the state of Florida to start" and nationwide for franchise disclosure-document review (Scott Weber (client), 00:43:14–00:43:19)
+- Market competitiveness: Medium — several Florida franchise and outside-GC firms rank in web search (STEP 3); no live Google / ads data was observable, and the B2B audience buys on relationships rather than search
+- Current monthly ad spend (stated): none — "I don't do any advertising." (client, 00:12:01)
+- Current cost per signed case (stated): not stated
+- Current cost per lead (stated): not stated
+- Average case value (stated, one figure): $3,000 (low end of the $3,000–$10,000 range the client gave, 00:18:06)
+- Close rate (stated): not stated
+- Revenue goal (annual, one figure): $500,000 (low end of the half-million-to-$1.5M range of billings the client gave, 00:08:01 / 00:25:24; his ceiling before needing staff is $1,500,000, 00:25:16)
+- Maximum monthly ad budget (stated): not stated
+
+Summary vs transcript (the transcript wins):
+- The summary says "Target Revenue: $1M–$1.5M". On the call the client said $500K–$1.5M in billings ("half a million to a million five"; "half a million to a million"); $1.5M is the point where he'd need staff.
+- The summary says "Proposed Solution: SMB Team's 360 Max package". On the call the seller described 360 Max in general terms and said "I'm not recommending this either"; no package was proposed or priced.
+- The summary says Weber is "transitioning to GrokBot" — confirmed ("I'm doing Clawed, and I'm transitioning into GrokBot now", 00:35:39).
+- The summary's pricing line ("fractional CTO … month-to-month for firms with <5 employees") rests on a garbled seller sentence (00:42:00–00:42:15) [transcript unclear].
+
+Key prospect quotes (all Scott Weber (client)):
+1. 00:11:51 — "Almost 100% of the business I get is somebody that I've known in the business for years, picks up the phone and calls" [lead sources]
+2. 00:12:01 — "I don't do any advertising." [lead sources / ads]
+3. 00:24:36 — "I'm probably going to do a quarter million this year, which is not a lot." [revenue]
+4. 00:06:13 — "I'm de-scaling versus scaling." [goals / DBM]
+5. 00:13:54 — "I don't want to be working 80-hour weeks again… Just to make a half million dollars more per year. I have no interest in that at all." [goals / DBM; line spans 00:13:54–00:14:00]
+6. 00:18:19 — "Now, if I could generate more of those, which the intake, the lead gen, all of that would be applicable to, that would be attractive in there." [lead-gen need]
+7. 00:23:01 — "I'd probably take on probably a quarter million to a half million dollars worth of franchisee work per year without it interfering with my lifestyle." [capacity / goal]
+8. 00:25:16 — "I think if I get above a million five in billings, I'm going to need staff…" [revenue ceiling; one word dropped by the transcript]
+9. 00:33:33 — "Yeah, haven't set up right now, people can't reach me initially by phone." [intake; tag says Prospect and the content describes his own setup]
+10. 00:34:00 — "I'd be interested in a voice intake that I could direct on a line and handle that to create an agent to do that for voice-wise." [intake / AI]
+11. 00:34:10 — "I don't want to be answering the phone for someone who is not yet a client who wants to talk with me about initial consults" [intake / objection]
+12. 00:48:27 — "Your AI, because it's probably a closed system, does it limit the quality of the work I'm doing?" [AI-platform objection]
+
+=====================================================================
+STEP 9B — KPI AND DIAGNOSIS (feeds deck slides 1–3)
+=====================================================================
+KPI AND DIAGNOSIS (STEP 9B)
+Product focus this supports: mixed — Full Service Marketing (B2B social / LinkedIn, SEO / AEO, video, website) to open a non-referral lead channel for the franchisee and hospitality outside-CLO segments, plus AI Workforce Pro and a Fractional CTO to build the voice intake and automations that the new inbound volume needs.
+Headline KPI: Share of business coming from personal referrals — "Almost 100%" — said by client, 00:11:51 — "Almost 100% of the business I get is somebody that I've known in the business for years, picks up the phone and calls"
+  KPI status: usable
+  Why this KPI: Full Service Marketing builds channels other than the owner's personal network (LinkedIn / social brand awareness, SEO / AEO, video), which is the only way to move that share; the client's own growth idea depends on it.
+Supporting figures (0–3):
+  - "a quarter million" this year — client, 00:24:36 — "I'm probably going to do a quarter million this year, which is not a lot."
+  - Franchisee-work capacity of "a quarter million to a half million dollars" a year — client, 00:23:01 — "I'd probably take on probably a quarter million to a half million dollars worth of franchisee work per year without it interfering with my lifestyle."
+  - About four new outside-CLO clients a year — seller's number, client confirmed with "probably yes" (seller 00:24:02, client 00:24:12) — "On the CLO role, probably yes." [seller figure, confirmed by client]
+Client-stated goal for this KPI: add "half a million, 750,000" in additional billings — "The question is, is what you're doing something that could add, let's say, half a million, 750,000 in the next 12 years of additional billings" (00:13:13) [transcript unclear — read as 12 months]; total billings of "half a million to a million five" (00:08:01)
+KPI quotes (2–4, verbatim, client only):
+  - Scott Weber (client), 00:11:51 — "Almost 100% of the business I get is somebody that I've known in the business for years, picks up the phone and calls" [referral dependence]
+  - Scott Weber (client), 00:18:19 — "Now, if I could generate more of those, which the intake, the lead gen, all of that would be applicable to, that would be attractive in there." [wants more lead flow for franchisee work]
+  - Scott Weber (client), 00:18:55 — "it is more efficient to have somebody who's done it before, you know, provide a roadmap." [why he'd hire help for marketing]
+  - Scott Weber (client), 00:12:25 — "as I'm getting better at other automations and other things I'm doing in AI, I'm realizing I have capacity to bring in some more." [capacity now exists]
+Client's why (verbatim, client only): Scott Weber (client), 00:13:51 — "we don't want our lifestyle infringed." and 00:08:41 — "it's more of how do I use the practice of law to generate some income so I've got something to do so my wife doesn't complain that I play pickleball too much" — income and interesting work without trading away his time between Florida and Colorado.
+Cost of inaction (verbatim, client only): none on the call — he said he "hasn't had a need" to market so far (00:12:04) and would not chase growth that costs him his lifestyle.
+Legacy Staircase discussed: no
+Diagnosis (3–4 causes, biggest first):
+  1. Every client comes through his personal network — evidence: "Almost 100%" referral — source: call, Scott Weber (client), 00:11:51 — fixed by: Full Service Marketing — B2B brand-awareness campaigns on LinkedIn / social and video content aimed at franchise buyers and hospitality / restaurant brands
+     Target basis: client said he wants to "add, let's say, half a million, 750,000" in additional billings (00:13:13)
+  2. No search or AI-search presence — evidence: asked whether he does any SEO or AEO, the client said "Nothing yet." — source: call, Scott Weber (client), 00:44:07 — fixed by: SEO / AEO content in Full Service Marketing so franchise buyers and restaurant brands can find him
+     Target basis: none — flag for seller
+  3. The website is slow and written for a different audience than the segments he wants to grow — evidence: mobile Lighthouse score 55 (LCP 25.0 s) and desktop 64, measured 2026-11-11; the homepage headline targets franchisors, dealers, distributors and licensors, with franchise-buyer guidance as one block, and the email link is mistyped ("cott@…") — source: research, STEP 1, local Lighthouse 12.8.2 run and page source — fixed by: Full Service Marketing web work (fast site, franchisee and hospitality landing pages, working contact link, tracking)
+     Target basis: none — flag for seller
+  4. No way to take inbound phone inquiries once marketing turns on — evidence: "people can't reach me initially by phone" and "I don't want to be answering the phone for someone who is not yet a client" — source: call, Scott Weber (client), 00:33:33 and 00:34:10 — fixed by: Fractional CTO builds a voice intake agent on AI Workforce Pro (a dialer / SMS subscription may be needed, per the seller at 00:40:00)
+     Target basis: none — flag for seller
+Plan inputs (for each non-marketing product the call points to):
+  - Fractional CTO / AI Workforce Pro: (1) voice intake agent for marketing calls — "I'd be interested in a voice intake that I could direct on a line" (client, 00:34:00); (2) not answering unknown callers himself — "I don't want to be answering the phone for someone who is not yet a client" (client, 00:34:10); (3) building new automated "skills" for matter types he doesn't have yet — "if it doesn't have a skill based on their need, then I have to design that." (client, 00:30:54); (4) the LinkedIn marketing automation he has looked at but hasn't built (client, 00:12:04). Note: he already automates consult booking, payment and engagement letters himself (00:29:16–00:30:35), so do not pitch those as gaps.
+  - FCOO / coaching: none stated (the seller floated coaching at 00:27:01; the client did not respond to it)
+  - FCFO / bookkeeping: none stated (he mentioned paying an accountant "a few thousand dollars" this year for books, 00:25:44, with no problem raised)
+Alternate KPI (if the seller changes the package): Fractional CTO / AI Workforce Pro → no figure said; qualitative: "people can't reach me initially by phone" (client, 00:33:33). Ask for the number of inbound inquiries he expects per month.
+Seller should confirm on the next call:
+  - Revenue goal: is it $500K, $1M or $1.5M in billings, and over what period (summary says $1M–$1.5M; call says $500K–$1.5M)
+  - Whether $250K is gross billings or take-home
+  - How many franchisee engagements a month and what a typical outside-CLO monthly retainer is (no retainer figure was given)
+  - His close rate from paid consults to engagements (not stated)
+  - What marketing spend he is willing to carry ("what's a marketing spend to get that" was a question to the seller, not an answer); and whether SMB's 12-month terms fit a one-person firm
+  - Whether he wants a coaching component (the seller raised it; the client did not engage)
+  - His hourly rate: transcript says "$9.80 an hour" [transcript unclear — likely $980]
+  - Whether he has a Google Business Profile, and its rating / review count (not observable; Avvo shows 3 reviews [UNCONFIRMED])
+  - Which address and firm name he wants shown (Clearwater, Island Way #241 on the site; a Tampa address on Avvo; four name variants across directories); which email is the real one (site shows scott@franchiselegalsolutions.com; the "Make an appointment" mailto link is mistyped; HubSpot shows spwfranlaw@gmail.com)
+  - Whether he is OK moving from Claude / GrokBot to AI Workforce Pro — he asked if the closed system would "limit the quality of the work" (00:48:27) and said Thomson Reuters and Clio results were "far inferior" (00:48:41)
+  - Whether he'd allow SMB-built video avatars of himself on LinkedIn (the seller offered it at 00:15:42–00:16:00; the client did not answer directly)
+  - Whether any ads, listings or Google posts exist that the research could not see
+
+=====================================================================
+STEP 10 — COMPETITIVE URGENCY SCORE
+=====================================================================
+Score: 4 (low confidence — no live Google, ads or review data could be read; based on the web-search picture and the call)
+- The market for his franchisee work is crowded in the Tampa Bay area: Cantrell Schuette (Tampa), Conwell Business Law (Tampa) and Motiva Law (Lutz) publish franchise-lawyer pages, and Southron Firm publishes FDD-review content that surfaced in web search for franchise agreement review, while Franchise Legal Solutions did not surface for that query.
+- Outside-CLO / fractional general counsel is also contested: Fetterman Business Law, Brick Business Law and Adams Outside GC all market fractional CLO services to Florida businesses; the firm's site did appear in web search for the hospitality outside-GC query.
+- Cantrell Schuette is the strongest-looking competitor in the snippets (4.8 on a Chamber directory with 85 reviews, 4.9 per an aggregator) [UNCONFIRMED — not read from Google; do not print].
+Dynamic sentence (4–6): "A score of 4 means competitors have meaningful advantages in one or more areas and are pulling ahead. You are not invisible yet — but the window to close the gap is narrowing. Every month without action is a month they extend their lead."
+
+=====================================================================
+PASS 2 — VERIFICATION CHECKLIST (completed)
+=====================================================================
+- Review counts / ratings carry a verification tag: yes (all UNCONFIRMED or "not found"); none confirmed via Google
+- Prospect has no Google review count recorded, so no competitor is cited as "dominating" on reviews
+- No "you are not running ads" statements: ads are NOT OBSERVED; the "no advertising" statement is the client's own
+- All competitors named are specific Florida firms; none are national brands
+- PageSpeed scores are real (Lighthouse mobile 55, desktop 64), with the method disclosed
+- DBM, revenue goal (flagged), close rate (default 15%), average case value, call focus, machine-read fields, firm identity check, vendor engagements, budget constraints, investment inputs, quotes, Legacy Staircase — all recorded
+- STEP 9B figures are all said on the call (no computed, converted or UNCONFIRMED figures)
