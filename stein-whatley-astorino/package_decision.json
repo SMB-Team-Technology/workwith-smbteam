@@ -51,20 +51,150 @@
   "law_seats": null,
   "total_bundled": 5097,
   "total_savings": 1897,
-  "ad_spend_conservative": 7500,
+  "ad_spend_conservative": 13500,
   "ad_spend_aggressive": 20000,
   "ad_spend_rationale": {
-    "conservative_basis": "all personal injury — \"we do all pi\" (00:10:48). confirmed on site and call: car",
-    "aggressive_basis": "capped at the Paid Ads Starter ad spend cap ($20,000/mo) after seller override"
+    "conservative_basis": "channel minimums $10,000 + $2,000 + $1,500 = $13,500",
+    "aggressive_basis": "20% rule: $2,400,000 goal × 20% ÷ 12 × 1 geo − $2,497 fee = $37,503 → reverse math: 40 cases/mo ÷ 15% close × $343 benchmark blended CPL = $91,459 → capped at the $20,000 the package manages"
   },
   "selection_notes": [
     "Elite Coach selected because it was discussed on the call (revenue rule would pick Master's Circle) — confirm tier with sales rep.",
     "Contingency-fee practice with only gross revenue stated ($1,200,000) — no net/collected figure found. Using gross as fallback, but confidence downgraded: confirm actual collected revenue with sales rep before finalizing tier.",
     "Revenue $1M–$2M: Growth tier.",
     "Seller override: switched marketing to Paid Ads Starter (kept Elite Coach) per Slack request on 2026-11-10 (\"omnisocial content + paid ads starter + elite coach package price\"). Ad spend aggressive lowered from $30,000 to the $20,000 Paid Ads Starter cap.",
-    "OmniSocial Content NOT added: tier not specified, a single Content tier (Standard $2,297/mo or Pro $3,697/mo) is existing-client upgrade only (net-new prospects can only buy the OmniSocial AI 360 bundle), and any OmniSocial AI proposal needs sales-ops approval (72-hr turnaround), $1,850 setup fee, 12-month term. Awaiting seller clarification."
+    "OmniSocial Content NOT added: tier not specified, a single Content tier (Standard $2,297/mo or Pro $3,697/mo) is existing-client upgrade only (net-new prospects can only buy the OmniSocial AI 360 bundle), and any OmniSocial AI proposal needs sales-ops approval (72-hr turnaround), $1,850 setup fee, 12-month term. Awaiting seller clarification.",
+    "Seller re-request via Slack on 2026-11-11 (\"Propose Paid Ads Starter Package Price + OmniSocial AI 360\"): package unchanged — Paid Ads Starter stays at the bundled package price with Elite Coach. OmniSocial AI 360 NOT added: it is Content (Standard $2,297 or Pro $3,697) + an Ads tier (Starter $1,297 / Growth $1,797 / Dominate $2,497 / Platinum $3,997) minus $350/mo, the tiers were not specified, it is not in the pricing catalog, and any OmniSocial AI proposal needs sales-ops approval (72-hr), $1,850 setup fee, 12-month term. Awaiting seller direction."
   ],
   "pricing_mode": "bundled",
   "bundle_eligible_count": 2,
-  "unpriced_products": []
+  "unpriced_products": [],
+  "investment": {
+    "version": 1,
+    "products": [
+      {
+        "category": "marketing",
+        "name": "Paid Ads Starter",
+        "charged": 2497,
+        "standalone": 3497
+      },
+      {
+        "category": "coaching",
+        "name": "Elite Coach",
+        "charged": 2600,
+        "standalone": 3497
+      }
+    ],
+    "monthly_total": 5097,
+    "list_total": 6994,
+    "total_savings": 1897,
+    "pricing_mode": "bundled",
+    "year_one_total": 61164,
+    "year_one_basis": "12 × $5,097/mo in fees. Ad spend is paid separately to Google and Meta.",
+    "ad_spend": {
+      "channels": [
+        {
+          "channel": "Google Search",
+          "minimum": 10000
+        },
+        {
+          "channel": "Local Services Ads",
+          "minimum": 2000
+        },
+        {
+          "channel": "Meta retargeting",
+          "minimum": 1500
+        }
+      ],
+      "conservative": 13500,
+      "aggressive": 20000,
+      "current_stated": null,
+      "cap": 20000,
+      "overage": null,
+      "conservative_basis": "channel minimums $10,000 + $2,000 + $1,500 = $13,500",
+      "aggressive_steps": [
+        "20% rule: $2,400,000 goal × 20% ÷ 12 × 1 geo − $2,497 fee = $37,503",
+        "reverse math: 40 cases/mo ÷ 15% close × $343 benchmark blended CPL = $91,459",
+        "capped at the $20,000 the package manages"
+      ],
+      "year_one_range": [
+        162000,
+        240000
+      ],
+      "seller_set": false,
+      "computed": null,
+      "needs_seller_review": true
+    },
+    "return": {
+      "method": "benchmark_cpl",
+      "basis": "SMB Team MVA cost-per-lead benchmarks ($343 blended, +20% on the low end), 15% close rate (assumed) and a $5,000 case value (assumed default).",
+      "case_value": 5000,
+      "case_value_stated": false,
+      "cost_per_case": null,
+      "share_of_case_value": null,
+      "close_rate": 0.15,
+      "blended_cpl": 343,
+      "scenarios": [
+        {
+          "label": "Conservative",
+          "ad_spend": 13500,
+          "leads": 32.8,
+          "cases": 4.9,
+          "revenue": 24600,
+          "return_multiple": 1.8
+        },
+        {
+          "label": "Aggressive",
+          "ad_spend": 20000,
+          "leads": 58.3,
+          "cases": 8.7,
+          "revenue": 43700,
+          "return_multiple": 2.2
+        }
+      ],
+      "disclaimer": "Illustrative arithmetic, not a forecast."
+    },
+    "inputs": {
+      "practice_area": {
+        "value": "MVA",
+        "source": "inferred from practice areas"
+      },
+      "geo_tier": {
+        "value": 4,
+        "multiplier": 1,
+        "source": "default"
+      },
+      "competitiveness": {
+        "value": "Medium",
+        "source": "default"
+      },
+      "spanish_campaign": false,
+      "revenue_effective": 1200000,
+      "revenue_goal": {
+        "value": 2400000,
+        "source": "not stated — 2× current revenue (audit-write.md)"
+      },
+      "case_value": {
+        "value": 5000,
+        "source": "practice-area default (low end)"
+      },
+      "close_rate": {
+        "value": 0.15,
+        "source": "default 15%"
+      },
+      "current_ad_spend": null,
+      "current_cost_per_case": null,
+      "current_cost_per_lead": null,
+      "max_ad_budget": null,
+      "management_fee": 2497,
+      "ad_spend_cap": 20000
+    },
+    "flags": [
+      "Ad spend practice area not recorded in research — using MVA (inferred from practice areas).",
+      "Geo market tier not recorded in research — using Tier 4 (1.0×).",
+      "Market competitiveness not recorded in research — using Medium for the ad spend floor.",
+      "Reverse math ($91,459) is well above the 20% rule ($37,503) — the goal may be aggressive for the budget (paid ads team review).",
+      "Goal-based ad spend ($91,459) is above the $20,000 cap for Paid Ads Starter — capped. Higher spend means a tier upgrade or the 10% overage fee (seller decision).",
+      "Case value assumed ($5,000, low end of the MVA default) — confirm the real fee per case."
+    ]
+  }
 }
