@@ -33,27 +33,27 @@
     ],
     "lead_gen_gap": true
   },
-  "marketing_tier": "Starter",
-  "marketing_name": "Full Service Marketing — Starter",
-  "marketing_price_bundled": 5697,
-  "marketing_price_retail": 5697,
+  "marketing_tier": "Essentials",
+  "marketing_name": "Full Service Marketing — Essentials",
+  "marketing_price_bundled": 3797,
+  "marketing_price_retail": 3797,
   "marketing_savings": 0,
   "coaching_name": null,
   "coaching_price_bundled": 2600,
   "coaching_price_retail": 3497,
   "coaching_savings": 897,
-  "law_tier": "AI Workforce Pro – Starter",
-  "law_name": "AI Workforce Pro – Starter",
+  "law_tier": null,
+  "law_name": null,
   "law_price_bundled": 350,
   "law_price_retail": null,
-  "law_seats": 1,
-  "total_bundled": 6047,
+  "law_seats": null,
+  "total_bundled": 3797,
   "total_savings": null,
-  "ad_spend_conservative": 7500,
-  "ad_spend_aggressive": 25000,
+  "ad_spend_conservative": 9200,
+  "ad_spend_aggressive": 9200,
   "ad_spend_rationale": {
-    "conservative_basis": "long-term: personal injury (\"i want to do a lot of personal injury. that's what my background is.\" 00:20:58). near-term",
-    "aggressive_basis": "capped by Starter tier's ad cap"
+    "conservative_basis": "channel minimums $6,000 + $2,000 + $1,200 = $9,200",
+    "aggressive_basis": "20% rule: $360,000 goal × 20% ÷ 12 × 1 geo − $3,797 fee = $2,203 → reverse math: 6 cases/mo ÷ 15% close × $303 benchmark blended CPL = $12,123 → capped at the $7,500 the package manages"
   },
   "selection_notes": [
     "Revenue not in research notes — sourced from HubSpot (hubspot_annual_law_firm_revenue): \"$0 - $180K\" → $180,000",
@@ -63,9 +63,129 @@
     "Seller override: removed coaching (Elite Coach) per Slack request on 2026-11-06.",
     "Only one bundle-eligible product in this package — stand-alone pricing applied, no bundle savings.",
     "Seller override: added 1 seat of AI Workforce Pro – Starter (AIWP) per Slack request on 2026-11-06 (team size 1 → Starter tier).",
-    "AI Workforce Pro – Starter does not count toward bundle pricing."
+    "AI Workforce Pro – Starter does not count toward bundle pricing.",
+    "Seller override: package replaced with Full Service Marketing Essentials only (AI Workforce Pro – Starter removed) per Slack request on 2026-11-11."
   ],
   "pricing_mode": "standalone",
   "bundle_eligible_count": 1,
-  "unpriced_products": []
+  "unpriced_products": [],
+  "investment": {
+    "version": 1,
+    "products": [
+      {
+        "category": "marketing",
+        "name": "Full Service Marketing — Essentials",
+        "charged": 3797,
+        "standalone": 3797
+      }
+    ],
+    "monthly_total": 3797,
+    "list_total": 3797,
+    "total_savings": 0,
+    "pricing_mode": "standalone",
+    "year_one_total": 45564,
+    "year_one_basis": "12 × $3,797/mo in fees. Ad spend is paid separately to Google and Meta.",
+    "ad_spend": {
+      "channels": [
+        {
+          "channel": "Google Search",
+          "minimum": 6000
+        },
+        {
+          "channel": "Local Services Ads",
+          "minimum": 2000
+        },
+        {
+          "channel": "Meta retargeting",
+          "minimum": 1200
+        }
+      ],
+      "conservative": 9200,
+      "aggressive": 9200,
+      "current_stated": null,
+      "cap": 7500,
+      "overage": {
+        "above_cap": 1700,
+        "fee_rate": 0.1
+      },
+      "conservative_basis": "channel minimums $6,000 + $2,000 + $1,200 = $9,200",
+      "aggressive_steps": [
+        "20% rule: $360,000 goal × 20% ÷ 12 × 1 geo − $3,797 fee = $2,203",
+        "reverse math: 6 cases/mo ÷ 15% close × $303 benchmark blended CPL = $12,123",
+        "capped at the $7,500 the package manages"
+      ],
+      "year_one_range": [
+        110400,
+        110400
+      ],
+      "seller_set": false,
+      "computed": null,
+      "needs_seller_review": true
+    },
+    "return": {
+      "method": "benchmark_cpl",
+      "basis": "SMB Team accident/injury cost-per-lead benchmarks ($303 blended), 15% close rate (assumed) and a $5,000 case value (assumed default).",
+      "case_value": 5000,
+      "case_value_stated": false,
+      "cost_per_case": null,
+      "share_of_case_value": null,
+      "close_rate": 0.15,
+      "blended_cpl": 303,
+      "scenarios": [
+        {
+          "label": "Recommended",
+          "ad_spend": 9200,
+          "leads": 30.4,
+          "cases": 4.6,
+          "revenue": 22800,
+          "return_multiple": 2.5
+        }
+      ],
+      "disclaimer": "Illustrative arithmetic, not a forecast."
+    },
+    "inputs": {
+      "practice_area": {
+        "value": "Accident/Injury",
+        "source": "inferred from practice areas"
+      },
+      "geo_tier": {
+        "value": 4,
+        "multiplier": 1,
+        "source": "default"
+      },
+      "competitiveness": {
+        "value": "Medium",
+        "source": "default"
+      },
+      "spanish_campaign": false,
+      "revenue_effective": 180000,
+      "revenue_goal": {
+        "value": 360000,
+        "source": "not stated — 2× current revenue (audit-write.md)"
+      },
+      "case_value": {
+        "value": 5000,
+        "source": "practice-area default (low end)"
+      },
+      "close_rate": {
+        "value": 0.15,
+        "source": "default 15%"
+      },
+      "current_ad_spend": null,
+      "current_cost_per_case": null,
+      "current_cost_per_lead": null,
+      "max_ad_budget": null,
+      "management_fee": 3797,
+      "ad_spend_cap": 7500
+    },
+    "flags": [
+      "Ad spend practice area not recorded in research — using Accident/Injury (inferred from practice areas).",
+      "Geo market tier not recorded in research — using Tier 4 (1.0×).",
+      "Market competitiveness not recorded in research — using Medium for the ad spend floor.",
+      "Reverse math ($12,123) is well above the 20% rule ($2,203) — the goal may be aggressive for the budget (paid ads team review).",
+      "Goal-based ad spend ($12,123) is above the $7,500 cap for Full Service Marketing — Essentials — capped. Higher spend means a tier upgrade or the 10% overage fee (seller decision).",
+      "Current spend ($9,200) is above the $7,500 cap for Full Service Marketing — Essentials — the 10% overage fee applies above the cap.",
+      "Case value assumed ($5,000, low end of the Accident/Injury default) — confirm the real fee per case."
+    ]
+  }
 }

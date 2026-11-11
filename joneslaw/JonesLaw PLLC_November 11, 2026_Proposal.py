@@ -33,14 +33,13 @@ SALES_REP      = "Jake Riggs"
 OUTPUT_PATH    = "joneslaw/JonesLaw PLLC_November 11, 2026_Proposal.pptx"
 
 # ── BUILD NOTES (internal — never shown on a slide) ──────────────
-# Marketing package: Full Service Marketing — Starter — charged $5,697/mo, stand-alone $5,697/mo, savings $0
+# Marketing package: Full Service Marketing — Essentials — charged $3,797/mo, stand-alone $3,797/mo, savings $0
 # Non-marketing package(s): none (seller removed Elite Coach in Slack, 2026-11-06)
-# LAW package: AI Workforce Pro – Starter, 1 seat — $350/mo (no stand-alone price, never counts toward a bundle)
-# Total monthly investment: $6,047/mo · total savings: $0/mo · pricing_mode: standalone (1 bundle-eligible product)
-# Ad spend: conservative $7,500 (Google Search + LSA), aggressive $25,000 (decision file: capped by Starter ad cap; no revenue goal stated)
-# ROI assumptions: closest CPL table = Business Law (near-term focus is civil litigation); channel split by Google/LSA channel minimums 3,500/2,000 (63.6% / 36.4%); CPL midpoints $110 / $125 -> blended $115.45
-# ROI conservative: blended CPL $138.55 (+20% cushion) -> 54 leads -> 8 cases (15% default close rate) -> $40,000 revenue -> 5.3x
-# ROI aggressive:   blended CPL $115.45 -> 216 leads -> 32 cases -> $160,000 revenue -> 6.4x
+# LAW package: none (seller removed AI Workforce Pro – Starter in Slack, 2026-11-11)
+# Total monthly investment: $3,797/mo · total savings: $0/mo · pricing_mode: standalone (1 bundle-eligible product)
+# Ad spend: $9,200 (channel minimums: Google Search $6,000 + LSA $2,000 + Meta retargeting $1,200); Essentials ad cap is $7,500 — $1,700 above cap, 10% overage fee (package_decision.json investment.ad_spend)
+# ROI assumptions (package_decision.json investment.return): accident/injury benchmark blended CPL $303, 15% default close rate
+# ROI recommended: $9,200 ad spend -> 30.4 leads -> 4.6 cases -> $22,800 revenue -> 2.5x (single scenario; the second ROI row is left blank)
 # Case value: $5,000 (source: practice-area default, Business Law $3K-$7K midpoint; none stated on call)
 # Why this range: to turn high-intent Maine legal searches into signed cases as the firm opens
 # DBM: control — "I'm tired of other people making those calls and I just wanted to do it for myself for a while."
@@ -50,8 +49,8 @@ OUTPUT_PATH    = "joneslaw/JonesLaw PLLC_November 11, 2026_Proposal.pptx"
 #   1. Make the phone ring — transcript line: "I got to make the phone ring." (00:34:05) — supports: Full Service Marketing
 #   2. Control costs — transcript line: "I want to try to control costs as much as I can" (00:34:05) — supports: fee + ad spend range shown up front
 #   3. Staying lean — transcript line: "I don't want to get to be a big firm" (00:14:42) — supports: AI Workforce Pro seat
-# Overrides applied: seller override (Slack 2026-11-06): coaching removed, 1 seat AI Workforce Pro – Starter added; used as-is. Seller package skips the four need overrides. Rules it breaks: revenue under $250K, total spend over the 35% cap.
-# Escalation flags: revenue under $300K (HubSpot band $0-$180K) -> scoping approval · total spend over 35% cap ($5,250/mo) even before ad spend · ad spend range far above Blair's stated $5,000-$7,500/mo total budget; $4,000 start was only a rep idea — paid ads team review · aggressive case count (32/mo) exceeds a solo firm's capacity — paid ads team review · LAW package: confirm LAW delivery has launched and capacity exists · firm name "JonesLaw, PLLC" unconfirmed (planned firm) — confirm with Jake · LSA availability for Maine civil litigation and GBP eligibility for a home/virtual office not confirmed · no competitor review figures used in deck
+# Overrides applied: seller overrides (Slack 2026-11-06): coaching removed, 1 seat AI Workforce Pro – Starter added; (Slack 2026-11-11): package replaced with Full Service Marketing Essentials only, AI Workforce Pro removed; used as-is. Essentials normally hidden for PI / multi-practice-area firms (Maine plans civil litigation + PI + criminal) — seller requested it anyway. Seller package skips the four need overrides. Rules it breaks: revenue under $250K, total spend over the 35% cap.
+# Escalation flags: Essentials tier requested by seller although firm plans multiple practice areas incl. personal injury (Essentials normally hidden) -> sales-ops approval · ad spend $9,200 exceeds Essentials $7,500 ad cap ($1,700 overage, 10% fee) · revenue under $300K (HubSpot band $0-$180K) -> scoping approval · total spend over 35% cap ($5,250/mo) check with ad spend · ad spend range far above Blair's stated $5,000-$7,500/mo total budget; $4,000 start was only a rep idea — paid ads team review · firm name "JonesLaw, PLLC" unconfirmed (planned firm) — confirm with Jake · LSA availability for Maine civil litigation and GBP eligibility for a home/virtual office not confirmed · no competitor review figures used in deck
 
 # ── Slide 1 ──────────────────────────────────────────────────────
 PROSPECT_QUOTES = [
@@ -76,7 +75,7 @@ PRIORITIES = [
         [
             "A new website built to turn Maine searches into calls",
             "Google profile set up and verified for your firm",
-            "Initial site content written for you",
+            "Initial site content written for you (5,000 words)",
             "Pages for the practice areas you plan to take on",
             "You make the calls on which cases to lead with",
         ],
@@ -92,12 +91,12 @@ PRIORITIES = [
         ],
     ),
     (
-        "Put AI to Work", "for a Lean Firm", "003A59",
+        "Grow Visibility", "Over Time", "003A59",
         [
-            "One AI Workforce Pro seat, month to month",
-            "Weekly AI Implementation Session to guide setup",
-            "Do more as a solo, and stay the size you want",
-            "Room to add seats as you hire paralegals",
+            "Meta retargeting to bring back site visitors",
+            "Monthly site edits so the site stays current",
+            "5,000 more words of SEO content each year after launch",
+            "Stay in control of which cases you take",
         ],
     ),
 ]
@@ -105,36 +104,30 @@ PRIORITIES = [
 # ── Slide 3 ──────────────────────────────────────────────────────
 PACKAGES = [
     (
-        "FULL SERVICE MARKETING — STARTER",
-        "$5,697", "stand-alone price",
-        "Website · Google Ads · LSA · Google profile · SEO content",
+        "FULL SERVICE MARKETING — ESSENTIALS",
+        "$3,797", "stand-alone price",
+        "Website · Google Ads · LSA · Meta · Google profile · SEO",
         "0091C9",
-    ),
-    (
-        "AI WORKFORCE PRO – STARTER (1 SEAT)",
-        "$350", "",
-        "AI Workforce Pro access · Weekly AI Implementation Session",
-        "003A59",
     ),
 ]
 
-BUNDLE_TOTAL   = "$6,047 / mo"
+BUNDLE_TOTAL   = "$3,797 / mo"
 BUNDLE_SAVINGS = "Stand-alone price (no bundle)"
 
 AD_SPEND_NOTE = (
-    "+ Recommended ad spend: $7,500–$25,000/mo — to turn high-intent Maine searches into signed cases"
+    "+ Recommended ad spend: $9,200/mo — to turn high-intent Maine searches into signed cases"
 )
 
 AVG_CASE_VALUE     = "$5,000 (est.)"
-CONSERVATIVE_LABEL = "Conservative  (8 cases/mo):"
-CONSERVATIVE_RESULT = "$40,000 revenue · 5.3× ROAS"
-AGGRESSIVE_LABEL   = "Aggressive  (32 cases/mo):"
-AGGRESSIVE_RESULT  = "$160,000 revenue · 6.4× ROAS"
+CONSERVATIVE_LABEL = "Projected  (4.6 cases/mo):"
+CONSERVATIVE_RESULT = "$22,800 revenue · 2.5× ROAS"
+AGGRESSIVE_LABEL   = ""
+AGGRESSIVE_RESULT  = ""
 
 WHAT_YOU_TOLD_US = [
     ("Phone to ring", "Website, profile and ad management built for leads"),
     ("Control costs", "Clear monthly fee and ad spend range shown up front"),
-    ("Staying lean", "AI Workforce Pro seat helps a small team do more"),
+    ("Staying lean", "One clear monthly fee, no add-ons"),
 ]
 
 CLOSING_QUOTE = (
