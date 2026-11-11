@@ -1,0 +1,192 @@
+{
+  "confidence": "low",
+  "revenue_stated": 1600000,
+  "net_revenue_stated": null,
+  "is_contingency_practice": true,
+  "revenue_effective": 1600000,
+  "revenue_source": "research_notes",
+  "revenue_label": null,
+  "revenue_verified": true,
+  "needs_revenue_confirmation": false,
+  "team_size_stated": 6,
+  "team_size_source": "research_notes",
+  "team_size_effective": 6,
+  "practice_areas_detected": [
+    "plaintiff personal injury (car wrecks",
+    "dog bites named",
+    "personal injury (the firm is plaintiff-only pi)",
+    "personal injury (all searches below; one practice area)"
+  ],
+  "hubspot_company": null,
+  "firm_identity_check": "matches — trigger \"Reed & Terry Law Firm\" = website \"Reed &",
+  "package_source": "rules",
+  "package_override": null,
+  "needs_seller_input": false,
+  "revenue_only_option": null,
+  "call_focus": {
+    "primary_engagement": "AI",
+    "products_discussed": [
+      "AI Workforce Pro (tier not specified)"
+    ],
+    "lead_gen_gap": true
+  },
+  "marketing_tier": "Growth",
+  "marketing_name": "Full Service Marketing — Growth",
+  "marketing_price_bundled": 7497,
+  "marketing_price_retail": 8997,
+  "marketing_savings": 1500,
+  "coaching_name": null,
+  "coaching_price_bundled": null,
+  "coaching_price_retail": null,
+  "coaching_savings": null,
+  "law_tier": "AI Workforce Pro",
+  "law_name": "AI Workforce Pro",
+  "law_price_bundled": 1717,
+  "law_price_retail": null,
+  "law_seats": 6,
+  "total_bundled": 9214,
+  "total_savings": 1500,
+  "ad_spend_conservative": 10000,
+  "ad_spend_aggressive": 50000,
+  "ad_spend_rationale": {
+    "conservative_basis": "channel minimums $6,000 + $2,000 + $1,200 = $9,200; personal injury high-competition floor $10,000",
+    "aggressive_basis": "20% rule: $3,200,000 goal × 20% ÷ 12 × 1.5 geo − $7,497 fee = $72,503 → reverse math: 53.3 cases/mo ÷ 95% close × $303 benchmark blended CPL = $17,015 → capped at the $50,000 the package manages"
+  },
+  "selection_notes": [
+    "AI-led call, but prospect stated a lead-gen need — marketing included.",
+    "AI-led call with no coaching discussed — coaching left out (revenue rule would add Master's Circle; add it back if the seller wants it).",
+    "\"AI Workforce Pro\" named without a tier — using AI Workforce Pro (team of 6).",
+    "AI Workforce Pro discussed on call: $1,597/mo for 5 users + 1 extra × $120.",
+    "Contingency-fee practice with only gross revenue stated ($1,600,000) — no net/collected figure found. Using gross as fallback, but confidence downgraded: confirm actual collected revenue with sales rep before finalizing tier.",
+    "Revenue $1M–$2M: Growth tier."
+  ],
+  "pricing_mode": "bundled",
+  "bundle_eligible_count": 2,
+  "unpriced_products": [],
+  "investment": {
+    "version": 1,
+    "products": [
+      {
+        "category": "marketing",
+        "name": "Full Service Marketing — Growth",
+        "charged": 7497,
+        "standalone": 8997
+      },
+      {
+        "category": "law",
+        "name": "AI Workforce Pro (6 seats)",
+        "charged": 1717,
+        "standalone": null
+      }
+    ],
+    "monthly_total": 9214,
+    "list_total": 10714,
+    "total_savings": 1500,
+    "pricing_mode": "bundled",
+    "year_one_total": 110568,
+    "year_one_basis": "12 × $9,214/mo in fees. Ad spend is paid separately to Google and Meta.",
+    "ad_spend": {
+      "channels": [
+        {
+          "channel": "Google Search",
+          "minimum": 6000
+        },
+        {
+          "channel": "Local Services Ads",
+          "minimum": 2000
+        },
+        {
+          "channel": "Meta retargeting",
+          "minimum": 1200
+        }
+      ],
+      "conservative": 10000,
+      "aggressive": 50000,
+      "current_stated": null,
+      "cap": 50000,
+      "overage": null,
+      "conservative_basis": "channel minimums $6,000 + $2,000 + $1,200 = $9,200; personal injury high-competition floor $10,000",
+      "aggressive_steps": [
+        "20% rule: $3,200,000 goal × 20% ÷ 12 × 1.5 geo − $7,497 fee = $72,503",
+        "reverse math: 53.3 cases/mo ÷ 95% close × $303 benchmark blended CPL = $17,015",
+        "capped at the $50,000 the package manages"
+      ],
+      "year_one_range": [
+        120000,
+        600000
+      ],
+      "seller_set": false,
+      "computed": null,
+      "needs_seller_review": true
+    },
+    "return": {
+      "method": "benchmark_cpl",
+      "basis": "SMB Team accident/injury cost-per-lead benchmarks ($303 blended, +20% on the low end), 95% close rate (said on the call) and a $5,000 case value (assumed default).",
+      "case_value": 5000,
+      "case_value_stated": false,
+      "cost_per_case": null,
+      "share_of_case_value": null,
+      "close_rate": 0.95,
+      "blended_cpl": 303,
+      "scenarios": [
+        {
+          "label": "Conservative",
+          "ad_spend": 10000,
+          "leads": 27.5,
+          "cases": 26.1,
+          "revenue": 130600,
+          "return_multiple": 13.1
+        },
+        {
+          "label": "Aggressive",
+          "ad_spend": 50000,
+          "leads": 165,
+          "cases": 156.7,
+          "revenue": 783600,
+          "return_multiple": 15.7
+        }
+      ],
+      "disclaimer": "Illustrative arithmetic, not a forecast."
+    },
+    "inputs": {
+      "practice_area": {
+        "value": "Accident/Injury",
+        "source": "research notes"
+      },
+      "geo_tier": {
+        "value": 1,
+        "multiplier": 1.5,
+        "source": "research notes"
+      },
+      "competitiveness": {
+        "value": "High",
+        "source": "research notes"
+      },
+      "spanish_campaign": false,
+      "revenue_effective": 1600000,
+      "revenue_goal": {
+        "value": 3200000,
+        "source": "not stated — 2× current revenue (audit-write.md)"
+      },
+      "case_value": {
+        "value": 5000,
+        "source": "practice-area default (low end)"
+      },
+      "close_rate": {
+        "value": 0.95,
+        "source": "stated on the call"
+      },
+      "current_ad_spend": null,
+      "current_cost_per_case": null,
+      "current_cost_per_lead": null,
+      "max_ad_budget": null,
+      "management_fee": 7497,
+      "ad_spend_cap": 50000
+    },
+    "flags": [
+      "Goal-based ad spend ($72,503) is above the $50,000 cap for Full Service Marketing — Growth — capped. Higher spend means a tier upgrade or the 10% overage fee (seller decision).",
+      "Ad spend over $25K — scoping approval required.",
+      "Case value assumed ($5,000, low end of the Accident/Injury default) — confirm the real fee per case."
+    ]
+  }
+}
