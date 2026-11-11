@@ -66,9 +66,31 @@
     "AI Workforce Pro – Starter does not count toward bundle pricing.",
     "Seller override: switched to Web + SEO Starter, dropped Elite Coach Plus and AI Workforce Pro – Starter, per Slack request on 2026-11-05 (\"Web + SEO starter package price $3,497/mo + OmniSocial Content $2,397/mo\").",
     "OmniSocial Content NOT added: seller quoted $2,397/mo, but the catalog (audit-write.md) lists Content – Standard $2,297/mo and Content – Pro $3,697/mo; a single Content tier is existing-client upgrade only (net-new prospects can only buy the OmniSocial AI 360 bundle); and any OmniSocial AI proposal needs sales-ops approval (72-hr turnaround), $1,850 setup fee, 12-month term. Awaiting seller clarification.",
-    "Only one bundle-eligible product in this package — stand-alone pricing applied, no bundle savings."
+    "Only one bundle-eligible product in this package — stand-alone pricing applied, no bundle savings.",
+    "Seller re-request via Slack on 2026-11-11 (\"Web + SEO Starter $3,497/mo + OmniSocial Content $2,297/mo\"): package unchanged. Web + SEO Starter is $3,997/mo stand-alone ($3,497 only with 2+ bundle-eligible products); a custom price can't be set. OmniSocial Content NOT added: single Content tier is existing-client upgrade only (net-new prospects: OmniSocial AI 360 bundle only), needs sales-ops approval (72-hr), $1,850 setup fee, 12-month term. Awaiting seller direction."
   ],
   "pricing_mode": "standalone",
   "bundle_eligible_count": 1,
-  "unpriced_products": []
+  "unpriced_products": [],
+  "investment": {
+    "version": 1,
+    "products": [
+      {
+        "category": "marketing",
+        "name": "Web + SEO Starter",
+        "charged": 3997,
+        "standalone": 3997
+      }
+    ],
+    "monthly_total": 3997,
+    "list_total": 3997,
+    "total_savings": 0,
+    "pricing_mode": "standalone",
+    "year_one_total": 47964,
+    "year_one_basis": "12 × $3,997/mo in fees. Ad spend is paid separately to Google and Meta.",
+    "ad_spend": null,
+    "return": null,
+    "inputs": {},
+    "flags": []
+  }
 }
