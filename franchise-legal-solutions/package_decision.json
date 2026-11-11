@@ -1,0 +1,199 @@
+{
+  "confidence": "high",
+  "revenue_stated": 250000,
+  "net_revenue_stated": null,
+  "is_contingency_practice": false,
+  "revenue_effective": 250000,
+  "revenue_source": "research_notes",
+  "revenue_label": null,
+  "revenue_verified": true,
+  "needs_revenue_confirmation": false,
+  "team_size_stated": 1,
+  "team_size_source": "research_notes",
+  "team_size_effective": 1,
+  "practice_areas_detected": [
+    "franchise and distribution law",
+    "mainly for prospective franchisees (franchise agreement",
+    "franchise disclosure document",
+    "franchise agreement / fdd review for franchise buyers (franchisee side)",
+    "outside general counsel / fractional clo for hospitality and restaurant brands",
+    "franchise agreement / fdd review (franchisee side)",
+    "outside general counsel / fractional clo (hospitality / restaurant)"
+  ],
+  "hubspot_company": null,
+  "firm_identity_check": "matches",
+  "package_source": "rules",
+  "package_override": null,
+  "needs_seller_input": false,
+  "revenue_only_option": null,
+  "call_focus": {
+    "primary_engagement": "mixed",
+    "products_discussed": [
+      "AI Workforce Pro (tier not specified)",
+      "Full Service Marketing"
+    ],
+    "lead_gen_gap": true
+  },
+  "marketing_tier": "Starter",
+  "marketing_name": "Full Service Marketing — Starter",
+  "marketing_price_bundled": 4997,
+  "marketing_price_retail": 5697,
+  "marketing_savings": 700,
+  "coaching_name": "Elite Coach",
+  "coaching_price_bundled": 2600,
+  "coaching_price_retail": 3497,
+  "coaching_savings": 897,
+  "law_tier": "AI Workforce Pro – Starter",
+  "law_name": "AI Workforce Pro – Starter",
+  "law_price_bundled": 350,
+  "law_price_retail": null,
+  "law_seats": 1,
+  "total_bundled": 7947,
+  "total_savings": 1597,
+  "ad_spend_conservative": 6700,
+  "ad_spend_aggressive": 9500,
+  "ad_spend_rationale": {
+    "conservative_basis": "channel minimums $3,500 + $2,000 + $1,200 = $6,700",
+    "aggressive_basis": "20% rule: $500,000 goal × 20% ÷ 12 × 1.3 geo − $4,997 fee = $5,836 → reverse math: 13.9 cases/mo ÷ 15% close × $103 benchmark blended CPL = $9,550"
+  },
+  "selection_notes": [
+    "\"AI Workforce Pro\" named without a tier — using AI Workforce Pro – Starter (team of 1).",
+    "AI Workforce Pro – Starter discussed on call: 1 seat × $350/mo.",
+    "Revenue under $750K but multiple practice areas detected: Essentials hidden (requires single practice area) — Starter tier.",
+    "Revenue $250K–$400K: Elite Coach selected.",
+    "AI Workforce Pro – Starter does not count toward bundle pricing.",
+    "Total at conservative ad spend ($14,647/mo) is over the 35% cap ($7,292/mo on $250,000 revenue) — review with sales rep."
+  ],
+  "pricing_mode": "bundled",
+  "bundle_eligible_count": 2,
+  "unpriced_products": [],
+  "investment": {
+    "version": 1,
+    "products": [
+      {
+        "category": "marketing",
+        "name": "Full Service Marketing — Starter",
+        "charged": 4997,
+        "standalone": 5697
+      },
+      {
+        "category": "coaching",
+        "name": "Elite Coach",
+        "charged": 2600,
+        "standalone": 3497
+      },
+      {
+        "category": "law",
+        "name": "AI Workforce Pro – Starter (1 seat)",
+        "charged": 350,
+        "standalone": null
+      }
+    ],
+    "monthly_total": 7947,
+    "list_total": 9544,
+    "total_savings": 1597,
+    "pricing_mode": "bundled",
+    "year_one_total": 95364,
+    "year_one_basis": "12 × $7,947/mo in fees. Ad spend is paid separately to Google and Meta.",
+    "ad_spend": {
+      "channels": [
+        {
+          "channel": "Google Search",
+          "minimum": 3500
+        },
+        {
+          "channel": "Local Services Ads",
+          "minimum": 2000
+        },
+        {
+          "channel": "Meta retargeting",
+          "minimum": 1200
+        }
+      ],
+      "conservative": 6700,
+      "aggressive": 9500,
+      "current_stated": 0,
+      "cap": 25000,
+      "overage": null,
+      "conservative_basis": "channel minimums $3,500 + $2,000 + $1,200 = $6,700",
+      "aggressive_steps": [
+        "20% rule: $500,000 goal × 20% ÷ 12 × 1.3 geo − $4,997 fee = $5,836",
+        "reverse math: 13.9 cases/mo ÷ 15% close × $103 benchmark blended CPL = $9,550"
+      ],
+      "year_one_range": [
+        80400,
+        114000
+      ],
+      "seller_set": false,
+      "computed": null,
+      "needs_seller_review": true
+    },
+    "return": {
+      "method": "benchmark_cpl",
+      "basis": "SMB Team business law cost-per-lead benchmarks ($103 blended, +20% on the low end), 15% close rate (assumed) and a $3,000 average case (said on the call).",
+      "case_value": 3000,
+      "case_value_stated": true,
+      "cost_per_case": null,
+      "share_of_case_value": null,
+      "close_rate": 0.15,
+      "blended_cpl": 103,
+      "scenarios": [
+        {
+          "label": "Conservative",
+          "ad_spend": 6700,
+          "leads": 54.1,
+          "cases": 8.1,
+          "revenue": 24400,
+          "return_multiple": 3.6
+        },
+        {
+          "label": "Aggressive",
+          "ad_spend": 9500,
+          "leads": 92.1,
+          "cases": 13.8,
+          "revenue": 41400,
+          "return_multiple": 4.4
+        }
+      ],
+      "disclaimer": "Illustrative arithmetic, not a forecast."
+    },
+    "inputs": {
+      "practice_area": {
+        "value": "Business Law",
+        "source": "research notes"
+      },
+      "geo_tier": {
+        "value": 2,
+        "multiplier": 1.3,
+        "source": "research notes"
+      },
+      "competitiveness": {
+        "value": "Medium",
+        "source": "research notes"
+      },
+      "spanish_campaign": false,
+      "revenue_effective": 250000,
+      "revenue_goal": {
+        "value": 500000,
+        "source": "stated on the call"
+      },
+      "case_value": {
+        "value": 3000,
+        "source": "stated on the call"
+      },
+      "close_rate": {
+        "value": 0.15,
+        "source": "default 15%"
+      },
+      "current_ad_spend": 0,
+      "current_cost_per_case": null,
+      "current_cost_per_lead": null,
+      "max_ad_budget": null,
+      "management_fee": 4997,
+      "ad_spend_cap": 25000
+    },
+    "flags": [
+      "Reverse math ($9,550) is well above the 20% rule ($5,836) — the goal may be aggressive for the budget (paid ads team review)."
+    ]
+  }
+}
