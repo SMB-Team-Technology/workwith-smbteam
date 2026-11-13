@@ -34,155 +34,54 @@
     ],
     "lead_gen_gap": true
   },
-  "marketing_tier": "Starter",
-  "marketing_name": "Full Service Marketing — Starter",
+  "marketing_tier": null,
+  "marketing_name": null,
   "marketing_price_bundled": 4997,
   "marketing_price_retail": 5697,
   "marketing_savings": 700,
   "coaching_name": "Coach Essentials Plus",
-  "coaching_price_bundled": 1997,
+  "coaching_price_bundled": 2497,
   "coaching_price_retail": 2497,
-  "coaching_savings": 500,
+  "coaching_savings": 0,
   "law_tier": null,
   "law_name": null,
   "law_price_bundled": null,
   "law_price_retail": null,
   "law_seats": null,
-  "total_bundled": 6994,
-  "total_savings": 1200,
-  "ad_spend_conservative": 6700,
-  "ad_spend_aggressive": 20000,
-  "ad_spend_rationale": {
-    "conservative_basis": "channel minimums $3,500 + $2,000 + $1,200 = $6,700",
-    "aggressive_basis": "20% rule: $1,000,000 goal × 20% ÷ 12 × 1.5 geo − $4,997 fee = $20,003 → reverse math: 33.3 cases/mo ÷ 15% close × $83 benchmark blended CPL = $18,411"
-  },
+  "total_bundled": 2497,
+  "total_savings": null,
+  "ad_spend_conservative": null,
+  "ad_spend_aggressive": null,
+  "ad_spend_rationale": null,
   "selection_notes": [
     "Coach Essentials Plus selected because it was discussed on the call (revenue rule would pick Elite Coach) — confirm tier with sales rep.",
     "Revenue under $750K but multiple practice areas detected: Essentials hidden (requires single practice area) — Starter tier.",
-    "Total at conservative ad spend ($13,694/mo) is over the 35% cap ($7,000/mo on $240,000 revenue) — review with sales rep."
+    "Total at conservative ad spend ($13,694/mo) is over the 35% cap ($7,000/mo on $240,000 revenue) — review with sales rep.",
+    "Seller override: Coach Essentials Plus (coaching only, marketing removed) with LSA management included at no charge (normally a $900/mo coaching-only add-on, Scoping Guide Step 6E), per Slack request on 2026-11-13. Seller quoted $2,497/mo, which matches the Coach Essentials Plus stand-alone price. LSA ad spend (paid to Google) is separate and not yet scoped.",
+    "Only one bundle-eligible product in this package — stand-alone pricing applied, no bundle savings."
   ],
-  "pricing_mode": "bundled",
-  "bundle_eligible_count": 2,
+  "pricing_mode": "standalone",
+  "bundle_eligible_count": 1,
   "unpriced_products": [],
   "investment": {
     "version": 1,
     "products": [
       {
-        "category": "marketing",
-        "name": "Full Service Marketing — Starter",
-        "charged": 4997,
-        "standalone": 5697
-      },
-      {
         "category": "coaching",
         "name": "Coach Essentials Plus",
-        "charged": 1997,
+        "charged": 2497,
         "standalone": 2497
       }
     ],
-    "monthly_total": 6994,
-    "list_total": 8194,
-    "total_savings": 1200,
-    "pricing_mode": "bundled",
-    "year_one_total": 83928,
-    "year_one_basis": "12 × $6,994/mo in fees. Ad spend is paid separately to Google and Meta.",
-    "ad_spend": {
-      "channels": [
-        {
-          "channel": "Google Search",
-          "minimum": 3500
-        },
-        {
-          "channel": "Local Services Ads",
-          "minimum": 2000
-        },
-        {
-          "channel": "Meta retargeting",
-          "minimum": 1200
-        }
-      ],
-      "conservative": 6700,
-      "aggressive": 20000,
-      "current_stated": 0,
-      "cap": 25000,
-      "overage": null,
-      "conservative_basis": "channel minimums $3,500 + $2,000 + $1,200 = $6,700",
-      "aggressive_steps": [
-        "20% rule: $1,000,000 goal × 20% ÷ 12 × 1.5 geo − $4,997 fee = $20,003",
-        "reverse math: 33.3 cases/mo ÷ 15% close × $83 benchmark blended CPL = $18,411"
-      ],
-      "year_one_range": [
-        80400,
-        240000
-      ],
-      "seller_set": false,
-      "computed": null,
-      "needs_seller_review": true
-    },
-    "return": {
-      "method": "benchmark_cpl",
-      "basis": "SMB Team family law cost-per-lead benchmarks ($83 blended, +20% on the low end), 15% close rate (assumed) and a $2,500 average case (said on the call).",
-      "case_value": 2500,
-      "case_value_stated": true,
-      "cost_per_case": null,
-      "share_of_case_value": null,
-      "close_rate": 0.15,
-      "blended_cpl": 83,
-      "scenarios": [
-        {
-          "label": "Conservative",
-          "ad_spend": 6700,
-          "leads": 67.4,
-          "cases": 10.1,
-          "revenue": 25300,
-          "return_multiple": 3.8
-        },
-        {
-          "label": "Aggressive",
-          "ad_spend": 20000,
-          "leads": 241.4,
-          "cases": 36.2,
-          "revenue": 90500,
-          "return_multiple": 4.5
-        }
-      ],
-      "disclaimer": "Illustrative arithmetic, not a forecast."
-    },
-    "inputs": {
-      "practice_area": {
-        "value": "Family Law",
-        "source": "research notes"
-      },
-      "geo_tier": {
-        "value": 1,
-        "multiplier": 1.5,
-        "source": "research notes"
-      },
-      "competitiveness": {
-        "value": "High",
-        "source": "research notes"
-      },
-      "spanish_campaign": false,
-      "revenue_effective": 240000,
-      "revenue_goal": {
-        "value": 1000000,
-        "source": "stated on the call"
-      },
-      "case_value": {
-        "value": 2500,
-        "source": "stated on the call"
-      },
-      "close_rate": {
-        "value": 0.15,
-        "source": "default 15%"
-      },
-      "current_ad_spend": 0,
-      "current_cost_per_case": null,
-      "current_cost_per_lead": null,
-      "max_ad_budget": null,
-      "management_fee": 4997,
-      "ad_spend_cap": 25000
-    },
+    "monthly_total": 2497,
+    "list_total": 2497,
+    "total_savings": 0,
+    "pricing_mode": "standalone",
+    "year_one_total": 29964,
+    "year_one_basis": "12 × $2,497/mo in fees. Ad spend is paid separately to Google and Meta.",
+    "ad_spend": null,
+    "return": null,
+    "inputs": {},
     "flags": []
   }
 }
