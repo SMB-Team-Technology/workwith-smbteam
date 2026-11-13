@@ -1439,8 +1439,13 @@ def build_totals_block(slide, inv, x, w, top, bottom):
     if fees:
         # One fee: its name (the amount is the big number). Several: each
         # with its amount, so they add up on the slide.
-        sub = (setup_fee_line(fees[0]).rsplit(" $", 1)[0] + (" (waived)" if fees[0].get("waived") else "")
-               if len(fees) == 1 else " · ".join(setup_fee_line(f) for f in fees))
+        if len(fees) == 1:
+            sub = setup_fee_line(fees[0]).rsplit(" $", 1)[0] + (" (waived)" if fees[0].get("waived") else "")
+        else:
+            short = lambda f: (f["product"] if f["label"] == "Setup fee"
+                               else f["label"].replace(" setup", "").replace("Video Ads Express ", ""))
+            sub = " · ".join(f"{short(f)} {usd(f['amount'])}" + (" waived" if f.get("waived") else "")
+                             for f in fees)
         cells.append(("ONE-TIME SETUP", usd(setup_total), sub))
     cells.append(("YEAR ONE", usd(inv["year_one_total"]),
                   "12 months of fees + setup" if setup_total else "12 months of fees"))
@@ -1527,10 +1532,12 @@ def build_investment(prs):
     ad, ret = inv.get("ad_spend"), inv.get("return")
     # Without a closing quote the content runs down to the footer.
     bottom = 4.74 if CLOSING_QUOTE else 5.12
+    # Room for two-line notes under the totals when setup fees are listed.
+    th = 1.14 if inv.get("setup_fees") else 0.98
     if ad:
         left_w = 5.00
-        build_buys_card(slide, inv, 0.30, left_w, 1.04, bottom - 1.08)
-        build_totals_block(slide, inv, 0.30, left_w, bottom - 0.98, bottom)
+        build_buys_card(slide, inv, 0.30, left_w, 1.04, bottom - th - 0.10)
+        build_totals_block(slide, inv, 0.30, left_w, bottom - th, bottom)
         rx, rw = 5.50, 4.20
         if ret:
             build_ad_spend_card(slide, ad, rx, rw, 1.04, 2.56)
@@ -1538,8 +1545,8 @@ def build_investment(prs):
         else:
             build_ad_spend_card(slide, ad, rx, rw, 1.04, bottom)
     else:
-        build_buys_card(slide, inv, 0.30, 9.40, 1.04, bottom - 1.08)
-        build_totals_block(slide, inv, 0.30, 9.40, bottom - 0.98, bottom)
+        build_buys_card(slide, inv, 0.30, 9.40, 1.04, bottom - th - 0.10)
+        build_totals_block(slide, inv, 0.30, 9.40, bottom - th, bottom)
 
     # Closing line — the owner's outcome, in their own verbatim words. Left
     # off when there's no verbatim line that isn't already on the deck.
