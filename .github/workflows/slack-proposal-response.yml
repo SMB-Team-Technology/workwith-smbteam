@@ -353,6 +353,12 @@ jobs:
                  \"note\": \"Seller via Slack <date>\"} (one number → both ends), then run
                  reprice.mjs; the deck and the return projection use the seller's range.
                  'Use the recommended ad spend' removes ad_spend_override.
+               - Setup fees ('waive the AI Avatar setup', 'no setup fee for coaching'): never
+                 edit setup_fees or setup_total — reprice.mjs sets them. Add the product's
+                 exact name (as in marketing_name / coaching_name) to the setup_fee_waived
+                 list, then run reprice.mjs; the deck shows that fee as waived and leaves
+                 it out of year one. 'Charge the setup fee' removes it from the list.
+                 Bookkeeping setup fees can't be waived.
                - 'Change this to X + Y' REPLACES the package: anything not named is removed.
                  Set removed products' name fields to null (for marketing also null
                  marketing_tier and the ad_spend_* fields). Both AI products go in one
@@ -362,7 +368,8 @@ jobs:
             3. Post an updated proposal summary as a Slack reply in the SAME thread,
                in this format, then repeat the same three options as before:
                '$SALES_REP_MENTION 📋 *Updated proposal for $FIRM_NAME*' followed by the new
-               marketing/coaching/AI/total lines from the reprice.mjs output (plus ad spend
+               marketing/coaching/AI/total lines from the reprice.mjs output (plus the
+               one-time setup fees and year-one total from that output, and ad spend
                from package_decision.json). If pricing_mode is 'standalone', add
                '(stand-alone pricing — fewer than 2 bundle-eligible products)'. If
                unpriced_products is non-empty, say those products can't be sold on their own

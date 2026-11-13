@@ -612,7 +612,7 @@ function selectMarketingTier(revenue, effectiveRevenue, practiceAreas, text, not
 
 /** Coaching by revenue and team size alone. Returns { name }. */
 function selectCoachingByRevenue(effectiveRevenue, effectiveTeam, text, notes) {
-  const fcooEligible = effectiveRevenue >= 500_000;
+  const fcooEligible = effectiveRevenue >= getProduct('FCOO Advisor').minRev;  // $400K+ (2026 pricing sheet)
   const masterCircleEligible = effectiveRevenue >= 1_000_000 && effectiveTeam >= 5;
   const hasOps = hasDedicatedOps(text);
 
@@ -628,7 +628,7 @@ function selectCoachingByRevenue(effectiveRevenue, effectiveTeam, text, notes) {
 
   if (effectiveRevenue < 1_000_000) {
     if (fcooEligible && effectiveTeam >= 3 && hasOps) {
-      notes.push('Revenue $500K–$1M with growing team and dedicated ops: Elite Coach Plus + FCOO Advisor considered. Defaulting to Elite Coach Plus — confirm with sales rep if FCOO is appropriate.');
+      notes.push('Revenue $400K–$1M with growing team and dedicated ops: Elite Coach Plus + FCOO Advisor considered. Defaulting to Elite Coach Plus — confirm with sales rep if FCOO is appropriate.');
     }
     notes.push('Revenue $400K–$1M: Elite Coach Plus selected.');
     return { name: 'Elite Coach Plus' };

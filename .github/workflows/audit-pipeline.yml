@@ -415,6 +415,12 @@ jobs:
               elif d.get("total_savings"):
                   pricing_note = f" (saves ${d.get('total_savings'):,}/mo vs. stand-alone)"
               lines.append(f"*Total:* {money(d.get('total_bundled'))}{pricing_note}")
+              fees = d.get("setup_fees") or []
+              if fees:
+                  fee_txt = " · ".join(f"{f['label'] if f['label'] != 'Setup fee' else f['product'] + ' setup'} ${f['amount']:,}"
+                                       + (" (waived)" if f.get("waived") else "") for f in fees)
+                  lines.append(f"*One-time setup:* ${d.get('setup_total') or 0:,} — {fee_txt}. "
+                               "Reply \"waive the <product> setup fee\" to waive one (not bookkeeping).")
               if unpriced:
                   lines.append(f"🚫 *Can't be sold on its own yet:* {', '.join(unpriced)} — add another product or pick a different tier.")
               if d.get("ad_spend_conservative"):

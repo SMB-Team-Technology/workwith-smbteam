@@ -22,8 +22,17 @@
 
 // ─── Catalog ──────────────────────────────────────────────────────────────────
 
-const fsm = (tier, bundled, standalone) => ({ name: `Full Service Marketing — ${tier}`, category: 'marketing', tier, bundled, standalone });
-const ads = (tier, bundled, standalone) => ({ name: `Paid Ads ${tier}`, category: 'marketing', tier: `Paid Ads ${tier}`, bundled, standalone });
+// One-time setup fees (2026 pricing sheet). Charged once, shown on the
+// investment slide and counted in the year-one total. `waivable` follows the
+// sheet's rule "Set-Up Fees Can Be Waived for All Packages EXCEPT Bookkeeping";
+// a waiver is the seller's call (package_decision.json `setup_fee_waived`).
+const BOOTCAMP = { amount: 497, label: 'Video Ads Express Bootcamp', waivable: true };
+const AVATAR = { amount: 1850, label: 'AI Avatar setup', waivable: true };
+const ONBOARD = { amount: 1500, label: 'Setup fee', waivable: true };
+const adsSetup = tier => (tier === 'Essentials' ? BOOTCAMP : AVATAR);
+
+const fsm = (tier, bundled, standalone) => ({ name: `Full Service Marketing — ${tier}`, category: 'marketing', tier, bundled, standalone, setup: adsSetup(tier) });
+const ads = (tier, bundled, standalone) => ({ name: `Paid Ads ${tier}`, category: 'marketing', tier: `Paid Ads ${tier}`, bundled, standalone, setup: adsSetup(tier) });
 const web = (tier, bundled, standalone) => ({ name: `Web + SEO ${tier}`, category: 'marketing', tier: `Web + SEO ${tier}`, bundled, standalone });
 
 export const CATALOG = [
@@ -48,22 +57,22 @@ export const CATALOG = [
   // Coaching / advisory
   { name: 'Coach Essentials',      category: 'coaching', bundled: 1000, standalone: null },
   { name: 'Coach Essentials Plus', category: 'coaching', bundled: 1997, standalone: 2497 },
-  { name: 'Elite Coach',           category: 'coaching', bundled: 2600, standalone: 3497 },
-  { name: 'Elite Coach Plus',      category: 'coaching', bundled: 3200, standalone: 3497 },
-  { name: "Master's Circle",       category: 'coaching', bundled: 4600, standalone: 4997 },
-  { name: 'FCOO Advisor',          category: 'coaching', bundled: 3297, standalone: 3797, minRev: 500_000 },
-  { name: 'FCOO Director',         category: 'coaching', bundled: 4997, standalone: 5797, minRev: 1_000_000 },
+  { name: 'Elite Coach',           category: 'coaching', bundled: 2600, standalone: 3497, setup: ONBOARD },
+  { name: 'Elite Coach Plus',      category: 'coaching', bundled: 3200, standalone: 3497, setup: ONBOARD },
+  { name: "Master's Circle",       category: 'coaching', bundled: 4600, standalone: 4997, setup: ONBOARD },
+  { name: 'FCOO Advisor',          category: 'coaching', bundled: 3297, standalone: 3797, minRev: 400_000, setup: ONBOARD },
+  { name: 'FCOO Director',         category: 'coaching', bundled: 4997, standalone: 5797, minRev: 1_000_000, setup: ONBOARD },
   { name: 'FCOO Partner',          category: 'coaching', retired: true, replacement: 'FCOO Director' },
-  { name: 'FCFO Advisor',          category: 'coaching', bundled: 3297, standalone: 3797, minRev: 400_000 },
-  { name: 'FCFO Director',         category: 'coaching', bundled: 4997, standalone: 5797, minRev: 1_000_000 },
-  { name: 'FCFO Partner',          category: 'coaching', bundled: 8997, standalone: 9997, minRev: 3_000_000 },
+  { name: 'FCFO Advisor',          category: 'coaching', bundled: 3297, standalone: 3797, minRev: 500_000, setup: ONBOARD },
+  { name: 'FCFO Director',         category: 'coaching', bundled: 4997, standalone: 5797, minRev: 1_000_000, setup: ONBOARD },
+  { name: 'FCFO Partner',          category: 'coaching', bundled: 8997, standalone: 9997, minRev: 2_000_000, setup: ONBOARD },
   // Coaching packages Sales prices as a pair (audit-write.md non-marketing table).
   // `parts` = how many products they count as toward the bundle rule.
-  { name: 'Elite Coach + FCOO Advisor',      category: 'coaching', bundled: 5694, standalone: null, parts: 2, packaged: true },
-  { name: 'Elite Coach + FCOO Director',     category: 'coaching', bundled: 7394, standalone: null, parts: 2, packaged: true },
+  { name: 'Elite Coach + FCOO Advisor',      category: 'coaching', bundled: 5694, standalone: null, parts: 2, packaged: true, setup: ONBOARD },
+  { name: 'Elite Coach + FCOO Director',     category: 'coaching', bundled: 7394, standalone: null, parts: 2, packaged: true, setup: ONBOARD },
   { name: 'Elite Coach + FCOO Partner',      category: 'coaching', retired: true, replacement: 'Elite Coach + FCOO Director' },
-  { name: "Master's Circle + FCOO Advisor",  category: 'coaching', bundled: 6694, standalone: null, parts: 2, packaged: true },
-  { name: "Master's Circle + FCOO Director", category: 'coaching', bundled: 8394, standalone: null, parts: 2, packaged: true },
+  { name: "Master's Circle + FCOO Advisor",  category: 'coaching', bundled: 6694, standalone: null, parts: 2, packaged: true, setup: ONBOARD },
+  { name: "Master's Circle + FCOO Director", category: 'coaching', bundled: 8394, standalone: null, parts: 2, packaged: true, setup: ONBOARD },
   { name: "Master's Circle + FCOO Partner",  category: 'coaching', retired: true, replacement: "Master's Circle + FCOO Director" },
 
   // Legal AI Workforce. AI Workforce Pro is priced by seat and has one price
@@ -250,6 +259,17 @@ export function pricePackage(lines) {
   }
 
   const total = Object.values(out).reduce((s, l) => s + (l?.charged ?? 0), 0);
+
+  // One-time setup fees, one per catalog product (a packaged pair such as
+  // Elite Coach + FCOO Advisor is one product with one fee).
+  const setupFees = [];
+  for (const [key, r] of Object.entries(resolved)) {
+    for (const part of r?.parts ?? []) {
+      const f = part.product?.setup;
+      if (f?.amount > 0) setupFees.push({ line: key, product: part.product.name, label: f.label, amount: f.amount, waivable: f.waivable !== false });
+    }
+  }
+
   const totalSavings = Object.values(out).reduce((s, l) => s + (l?.savings ?? 0), 0);
 
   if (mode === 'standalone' && eligibleCount === 1) {
@@ -262,7 +282,7 @@ export function pricePackage(lines) {
     notes.push(`Total $${total.toLocaleString()}/mo is under the $${MIN_MRR.toLocaleString()}/mo minimum — review with sales rep.`);
   }
 
-  return { lines: out, mode, eligibleCount, total, totalSavings, unpriced, notes };
+  return { lines: out, mode, eligibleCount, total, totalSavings, setupFees, unpriced, notes };
 }
 
 /**
@@ -300,5 +320,16 @@ export function applyPricing(decision) {
   decision.total_savings = r.totalSavings > 0 ? r.totalSavings : null;
   decision.unpriced_products = r.unpriced;
   if (r.unpriced.length) decision.needs_seller_input = true;
+
+  // Setup fees. The seller can waive a waivable fee through the Slack review
+  // by listing the product in `setup_fee_waived`; the fee then stays on the
+  // slide marked waived and counts $0. Bookkeeping fees can't be waived.
+  const waived = new Set((decision.setup_fee_waived ?? []).map(n => resolveOne(n).product?.name ?? n));
+  decision.setup_fees = r.setupFees.map(f => {
+    const isWaived = f.waivable && waived.has(f.product);
+    if (!f.waivable && waived.has(f.product)) r.notes.push(`${f.label} for ${f.product} can't be waived — still charged.`);
+    return { ...f, waived: isWaived, charged: isWaived ? 0 : f.amount };
+  });
+  decision.setup_total = decision.setup_fees.reduce((s, f) => s + f.charged, 0);
   return r.notes;
 }

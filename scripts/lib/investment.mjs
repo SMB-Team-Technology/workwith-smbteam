@@ -77,7 +77,7 @@ const CHANNELS = [
 const ABSOLUTE_MIN = 3_000;
 const DEFAULT_CLOSE_RATE = 0.15;
 const CONSERVATIVE_CPL_CUSHION = 1.2;
-const OVERAGE_FEE = 0.10;                 // audit-write.md: "note 10% overage fee"
+const OVERAGE_FEE = 0.15;                 // 2026 pricing sheet: 15% management fee on ad spend above the tier cap
 const SCOPING_AD_SPEND = 25_000;          // escalation flag threshold
 
 // ─── Research-notes inputs ───────────────────────────────────────────────────
@@ -207,6 +207,8 @@ export function computeInvestment(d, inputs = {}) {
   const flags = [];          // internal — BUILD NOTES only, never on a slide
   const products = productLines(d);
   const monthly = d.total_bundled || products.reduce((s, p) => s + (p.charged || 0), 0);
+  const setupFees = (d.setup_fees ?? []).map(f => ({ product: f.product, label: f.label, amount: f.amount, charged: f.charged ?? f.amount, waived: !!f.waived }));
+  const setupTotal = setupFees.reduce((s, f) => s + f.charged, 0);
 
   const investment = {
     version: 1,
@@ -219,11 +221,13 @@ export function computeInvestment(d, inputs = {}) {
     list_total: monthly + (d.total_savings || 0),
     total_savings: d.total_savings || 0,
     pricing_mode: d.pricing_mode ?? null,
-    // DECISION: no setup fee is listed for Full Service Marketing, Paid Ads,
-    // Web + SEO, coaching or fractional products in the pricing tables
-    // (Fractional CTO is $0), so year one is 12 × the monthly fees.
-    year_one_total: monthly * 12,
-    year_one_basis: `12 × ${money(monthly)}/mo in fees. Ad spend is paid separately to Google and Meta.`,
+    // One-time setup fees from pricing.mjs (applyPricing → setup_fees). A
+    // waived fee stays listed with charged $0. Year one = 12 months of fees
+    // plus the setup fees charged.
+    setup_fees: setupFees,
+    setup_total: setupTotal,
+    year_one_total: monthly * 12 + setupTotal,
+    year_one_basis: `12 × ${money(monthly)}/mo in fees${setupTotal ? ` + ${money(setupTotal)} one-time setup` : ''}. Ad spend is paid separately to Google and Meta.`,
     ad_spend: null,
     return: null,
     inputs: {},

@@ -1302,7 +1302,10 @@ _SAMPLE_INVESTMENT = {
         {"name": "Full Service Marketing — Growth", "charged": 7497, "standalone": 8997},
     ],
     "monthly_total": 7497, "total_savings": 0, "pricing_mode": "standalone",
-    "year_one_total": 89964,
+    "setup_fees": [{"product": "Full Service Marketing — Growth", "label": "AI Avatar setup",
+                    "amount": 1850, "charged": 1850, "waived": False}],
+    "setup_total": 1850,
+    "year_one_total": 91814,
     "ad_spend": {"conservative": 6700, "aggressive": 25000, "current_stated": None,
                  "year_one_range": [80400, 300000], "cap": 50000, "overage": None},
     "return": {"method": "benchmark_cpl", "share_of_case_value": None,
@@ -1415,20 +1418,38 @@ def build_buys_card(slide, inv, x, w, top, bottom):
                      align=PP_ALIGN.RIGHT, max_lines=1, fit=False)
 
 
+def setup_fee_line(f):
+    """One setup fee for the slide: "AI Avatar setup $1,850" (or "… waived")."""
+    name = f["label"] if f["label"] != "Setup fee" else f"{f['product']} setup"
+    return f"{name} {usd(f['amount'])}" + (" waived" if f.get("waived") else "")
+
+
 def build_totals_block(slide, inv, x, w, top, bottom):
-    """Navy block: the monthly investment beside the year-one total."""
+    """Navy block: the monthly investment, any one-time setup fees, and the
+    year-one total (12 months of fees + the setup fees charged)."""
     h = bottom - top
     add_rect(slide, x, top, w, h, fill=NAVY)
     add_rect(slide, x, top, 0.05, h, fill=LIME_GREEN)
     list_total = inv.get("list_total") or inv["monthly_total"]
-    cells = [("MONTHLY INVESTMENT", f"{usd(inv['monthly_total'])}/mo",
+    fees = inv.get("setup_fees") or []
+    setup_total = inv.get("setup_total") or 0
+    cells = [("MONTHLY" if fees else "MONTHLY INVESTMENT", f"{usd(inv['monthly_total'])}/mo",
               (f"List {usd(list_total)}/mo · save {usd(inv['total_savings'])}/mo"
-               if inv.get("total_savings") else "List price (no bundle)")),
-             ("YEAR ONE", usd(inv["year_one_total"]),
-              "12 months of fees")]
-    cw = (w - 0.10) / 2
+               if inv.get("total_savings") else "List price (no bundle)"))]
+    if fees:
+        # One fee: its name (the amount is the big number). Several: each
+        # with its amount, so they add up on the slide.
+        sub = (setup_fee_line(fees[0]).rsplit(" $", 1)[0] + (" (waived)" if fees[0].get("waived") else "")
+               if len(fees) == 1 else " · ".join(setup_fee_line(f) for f in fees))
+        cells.append(("ONE-TIME SETUP", usd(setup_total), sub))
+    cells.append(("YEAR ONE", usd(inv["year_one_total"]),
+                  "12 months of fees + setup" if setup_total else "12 months of fees"))
+    # The monthly figure is the widest; with a setup cell, give it more room.
+    shares = [1] * len(cells) if len(cells) == 2 else [0.38, 0.28, 0.34]
+    widths = [(w - 0.10) * f / sum(shares) for f in shares]
     for i, (kicker, big, sub) in enumerate(cells):
-        cx = x + 0.10 + i * cw
+        cw = widths[i]
+        cx = x + 0.10 + sum(widths[:i])
         if i:
             add_rule(slide, cx - 0.04, top + 0.14, cx - 0.04, bottom - 0.14, NAVY_RULE)
         add_text(slide, kicker, cx + 0.12, top + 0.10, cw - 0.24, 0.20, 7.5, LIME_GREEN,
@@ -1436,7 +1457,8 @@ def build_totals_block(slide, inv, x, w, top, bottom):
         add_text(slide, big, cx + 0.12, top + 0.28, cw - 0.24, 0.42, 20, WHITE, bold=True,
                  max_lines=1, min_size=13, cap_label=f"total {i+1}")
         add_text(slide, sub, cx + 0.12, top + 0.68, cw - 0.24, h - 0.74, 8, BUNDLE_SAVINGS_TEXT
-                 if i == 0 else NAVY_TEXT_SOFT, max_lines=2, min_size=6.5, cap_label=f"total {i+1} sub")
+                 if i == 0 else NAVY_TEXT_SOFT, max_lines=2, min_size=6.5,
+                 cap_label=f"total {i+1} sub")
 
 
 def build_ad_spend_card(slide, ad, x, w, top, bottom):
