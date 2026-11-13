@@ -83,8 +83,18 @@
     "list_total": 8997,
     "total_savings": 0,
     "pricing_mode": "standalone",
-    "year_one_total": 107964,
-    "year_one_basis": "12 × $8,997/mo in fees. Ad spend is paid separately to Google and Meta.",
+    "setup_fees": [
+      {
+        "product": "Full Service Marketing — Growth",
+        "label": "AI Avatar setup",
+        "amount": 1850,
+        "charged": 1850,
+        "waived": false
+      }
+    ],
+    "setup_total": 1850,
+    "year_one_total": 109814,
+    "year_one_basis": "12 × $8,997/mo in fees + $1,850 one-time setup. Ad spend is paid separately to Google and Meta.",
     "ad_spend": {
       "channels": [
         {
@@ -187,5 +197,17 @@
       "Ad spend over $25K — scoping approval required.",
       "Case value assumed ($5,000, low end of the MVA default) — confirm the real fee per case."
     ]
-  }
+  },
+  "setup_fees": [
+    {
+      "line": "marketing",
+      "product": "Full Service Marketing — Growth",
+      "label": "AI Avatar setup",
+      "amount": 1850,
+      "waivable": true,
+      "waived": false,
+      "charged": 1850
+    }
+  ],
+  "setup_total": 1850
 }
