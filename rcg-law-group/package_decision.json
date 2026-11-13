@@ -87,8 +87,25 @@
     "list_total": 12494,
     "total_savings": 2397,
     "pricing_mode": "bundled",
-    "year_one_total": 121164,
-    "year_one_basis": "12 × $10,097/mo in fees. Ad spend is paid separately to Google and Meta.",
+    "setup_fees": [
+      {
+        "product": "Full Service Marketing — Growth",
+        "label": "AI Avatar setup",
+        "amount": 1850,
+        "charged": 1850,
+        "waived": false
+      },
+      {
+        "product": "Elite Coach",
+        "label": "Setup fee",
+        "amount": 1500,
+        "charged": 1500,
+        "waived": false
+      }
+    ],
+    "setup_total": 3350,
+    "year_one_total": 124514,
+    "year_one_basis": "12 × $10,097/mo in fees + $3,350 one-time setup. Ad spend is paid separately to Google and Meta.",
     "ad_spend": {
       "channels": [
         {
@@ -189,8 +206,29 @@
     },
     "flags": [
       "Reverse math ($412,088) is well above the 20% rule ($184,170) — the goal may be aggressive for the budget (paid ads team review).",
-      "Goal-based ad spend ($412,088) is above the $50,000 cap for Full Service Marketing — Growth — capped. Higher spend means a tier upgrade or the 10% overage fee (seller decision).",
+      "Goal-based ad spend ($412,088) is above the $50,000 cap for Full Service Marketing — Growth — capped. Higher spend means a tier upgrade or the 15% overage fee (seller decision).",
       "Ad spend over $25K — scoping approval required."
     ]
-  }
+  },
+  "setup_fees": [
+    {
+      "line": "marketing",
+      "product": "Full Service Marketing — Growth",
+      "label": "AI Avatar setup",
+      "amount": 1850,
+      "waivable": true,
+      "waived": false,
+      "charged": 1850
+    },
+    {
+      "line": "coaching",
+      "product": "Elite Coach",
+      "label": "Setup fee",
+      "amount": 1500,
+      "waivable": true,
+      "waived": false,
+      "charged": 1500
+    }
+  ],
+  "setup_total": 3350
 }
