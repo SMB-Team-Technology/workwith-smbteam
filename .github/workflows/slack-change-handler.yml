@@ -7,7 +7,7 @@ on:
 jobs:
   handle-change:
     runs-on: ubuntu-latest
-    timeout-minutes: 30
+    timeout-minutes: 60
     permissions:
       contents: write
 
@@ -120,11 +120,28 @@ jobs:
                .github/workflows/slack-proposal-response.yml: change product names only,
                then run 'node scripts/reprice.mjs <folder>' for prices — never type or
                calculate a price yourself. Stop there (the deck is built at lock-in).
-            3. Otherwise edit the deck: make the minimal, precise change to the values
-               above the line 'LAYOUT ENGINE — DO NOT MODIFY BELOW THIS LINE' in the
-               firm's newest *_Proposal.py, following the field rules in
+            3. Otherwise edit the deck. FIRST check whether the firm's newest
+               *_Proposal.py is on the current template — run:
+               diff <(sed -n '/LAYOUT ENGINE/,\$p' 'Design Files/audit_pptx_template.py') <(sed -n '/LAYOUT ENGINE/,\$p' '<folder>/<file>_Proposal.py')
+               3a. It prints nothing (the script is current): make the minimal,
+               precise change to the values above the line 'LAYOUT ENGINE — DO NOT
+               MODIFY BELOW THIS LINE', following the field rules in
                .claude/commands/audit-pptx.md (character limits, quote rules, no
                UNCONFIRMED figures). Never edit anything below that line.
+               3b. It prints anything (the script is OUT OF DATE — built on an older
+               template, e.g. the retired 3-slide deck): do NOT patch it, because
+               re-running it would rebuild the old layout. Rebuild the deck from the
+               current template instead: follow .claude/commands/audit-write.md
+               STEP 1–3 and its FINAL CHECK for this folder, with the requested
+               change applied. Its inputs are the research notes,
+               package_decision.json and .claude/commands/audit-pptx.md only — do
+               not read the old .py; overwrite it with a fresh copy of
+               'Design Files/audit_pptx_template.py' and fill it. Keep the same file
+               name and OUTPUT_PATH so the HubSpot link stays the same. Start the
+               BUILD NOTES with a line saying the deck was rebuilt from the current
+               template on today's date (/tmp/today.txt) because the old script was
+               out of date, plus the change requested.
+               In both cases:
                - Package or price change: change the product name fields in
                  package_decision.json and run 'node scripts/reprice.mjs <folder>'. It
                  recomputes the prices, totals, ad spend and return (the investment
@@ -132,17 +149,21 @@ jobs:
                  them). Then update PRODUCT_LINES (one line per product) and
                  AD_SPEND_WHY (None if no paid ads) in the deck script, and the BUILD
                  NOTES comment block to match.
-               Then run: python3 '<folder>/<file>_Proposal.py' (expect 'Saved: … (5 or 6
-               slides)'), and confirm this prints nothing:
-               diff <(sed -n '/LAYOUT ENGINE/,\$p' 'Design Files/audit_pptx_template.py') <(sed -n '/LAYOUT ENGINE/,\$p' '<folder>/<file>_Proposal.py')
+               Then run: python3 '<folder>/<file>_Proposal.py' and run the diff
+               above again. The run must print 'Saved: … (5 slides)' or '(6
+               slides)' and the diff must print nothing. If either fails, do NOT
+               commit or upload: write what went wrong to /tmp/summary.txt and stop.
                (pip install python-pptx --break-system-packages --quiet if needed.)
-            4. Commit the .py, the .pptx and package_decision.json (if changed) to main
-               with a clear message.
+            4. Commit the .py, the .pptx, package_decision.json (if changed) and
+               <folder>/smb_team_logo.png (if added) to main with a clear message —
+               after a 3b rebuild, say in the message that the deck was rebuilt
+               from the current template.
             5. Re-upload the deck so the HubSpot link shows the edit (same link — the
                file is replaced in place):
                node scripts/upload-proposal-to-hubspot.mjs <folder> --file '<folder>/<file>_Proposal.pptx'
                If it prints ok:false, say so in the summary with its error.
-            6. Write a 1-2 sentence summary to /tmp/summary.txt. For a deck edit, end
+            6. Write a 1-2 sentence summary to /tmp/summary.txt (after a 3b rebuild, say
+               the deck was rebuilt in the current format). For a deck edit, end
                it with: 'The HubSpot link now shows the updated deck — say \"resend the
                email\" if the rep needs the new file attached.' 
             Package/pricing changes: the approved catalog is the pricing tables in
