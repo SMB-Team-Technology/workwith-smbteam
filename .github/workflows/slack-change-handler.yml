@@ -155,9 +155,10 @@ jobs:
             AI Essentials → AI Workforce Pro, AI Accelerator L1/L2 → Fractional CTO Level
             1/2, AI Enterprise → Fractional CTO Level 3; 'sprint' → Law Firm AI Foundation
             Sprint; FCTO → Fractional CTO Level 1/2/3;
-            FCOO → Advisor/Director (FCOO Partner is retired — never offer it; 'max hours' or
-            'top tier' means Director); FCFO → Advisor/Director/Partner; MC → Master's Circle;
-            ECP → Elite Coach Plus. Bundle rule: bundled prices only when 2+ bundle-eligible
+            FCOO → Advisor/Director/Partner ('max hours' or 'top tier' means Partner);
+            FCFO → Advisor/Director/Partner; MC → Master's Circle; ECP → Elite Coach Plus;
+            bookkeeping → Bookkeeping Level 1/2/3 (Level 4 is custom-scoped); Elite 360 →
+            Elite Coach plus Full Service Marketing at the named tier. Bundle rule: bundled prices only when 2+ bundle-eligible
             products are in the package (AI Workforce Pro – Starter never counts); a single
             product is charged its stand-alone price (scripts/lib/pricing.mjs has both). AIWP with no tier: Starter for a team of 1–4 or unknown size (seats =
             stated team size, else 1), base for 5+. If the product is clear but its tier or seat count isn't, use the most
@@ -186,8 +187,7 @@ jobs:
             Steps:
             1. Find triggers/audit-research/[friendly-name].json (list folder if unsure).
             2. Increment _run (set to 2 if missing, else N+1). Update _triggered_date to today.
-               Add or update 'package' field if the request specifies one. FCOO Partner is
-               retired — write FCOO Director instead and say so in the summary.
+               Add or update 'package' field if the request specifies one.
             3. CRITICAL: git add ONLY that one trigger file, commit, push.
                One file per commit — the pipeline uses git diff-tree | head -1.
                This fires the full pipeline: re-runs research and the package review in

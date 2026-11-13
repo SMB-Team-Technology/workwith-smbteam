@@ -29,6 +29,7 @@
 const BOOTCAMP = { amount: 497, label: 'Video Ads Express Bootcamp', waivable: true };
 const AVATAR = { amount: 1850, label: 'AI Avatar setup', waivable: true };
 const ONBOARD = { amount: 1500, label: 'Setup fee', waivable: true };
+const books = amount => ({ amount, label: 'Bookkeeping setup', waivable: false });
 const adsSetup = tier => (tier === 'Essentials' ? BOOTCAMP : AVATAR);
 
 const fsm = (tier, bundled, standalone) => ({ name: `Full Service Marketing — ${tier}`, category: 'marketing', tier, bundled, standalone, setup: adsSetup(tier) });
@@ -62,18 +63,28 @@ export const CATALOG = [
   { name: "Master's Circle",       category: 'coaching', bundled: 4600, standalone: 4997, setup: ONBOARD },
   { name: 'FCOO Advisor',          category: 'coaching', bundled: 3297, standalone: 3797, minRev: 400_000, setup: ONBOARD },
   { name: 'FCOO Director',         category: 'coaching', bundled: 4997, standalone: 5797, minRev: 1_000_000, setup: ONBOARD },
-  { name: 'FCOO Partner',          category: 'coaching', retired: true, replacement: 'FCOO Director' },
+  { name: 'FCOO Partner',          category: 'coaching', bundled: 8997, standalone: 9997, minRev: 3_000_000, setup: ONBOARD },
   { name: 'FCFO Advisor',          category: 'coaching', bundled: 3297, standalone: 3797, minRev: 500_000, setup: ONBOARD },
   { name: 'FCFO Director',         category: 'coaching', bundled: 4997, standalone: 5797, minRev: 1_000_000, setup: ONBOARD },
   { name: 'FCFO Partner',          category: 'coaching', bundled: 8997, standalone: 9997, minRev: 2_000_000, setup: ONBOARD },
-  // Coaching packages Sales prices as a pair (audit-write.md non-marketing table).
+  // Bookkeeping (Core Financial Services tab). Sold on the coaching line.
+  // Setup fees can never be waived. Level 4 is custom-scoped — never priced here.
+  { name: 'Bookkeeping Level 1',   category: 'coaching', bundled: 1697, standalone: 1997, setup: books(1500) },
+  { name: 'Bookkeeping Level 2',   category: 'coaching', bundled: 2197, standalone: 2597, minRev: 1_000_000, setup: books(2000) },
+  { name: 'Bookkeeping Level 3',   category: 'coaching', bundled: 3497, standalone: 4597, minRev: 3_000_000, setup: books(2500) },
+  { name: 'Bookkeeping Level 4',   category: 'coaching', custom: true, minRev: 4_000_000 },
+  // Coaching + FCOO pairs Sales prices as one package (Core Coaching tab):
+  // Elite Coach + FCOO = $203 off the two bundled prices, Master's Circle +
+  // FCOO = $1,203 off. Every other combination on the All Services tab
+  // (Elite/Master's Circle + FCFO, FCFO + FCOO, Elite 360 = Elite Coach + Full
+  // Service Marketing) is the sum of the bundled prices.
   // `parts` = how many products they count as toward the bundle rule.
   { name: 'Elite Coach + FCOO Advisor',      category: 'coaching', bundled: 5694, standalone: null, parts: 2, packaged: true, setup: ONBOARD },
   { name: 'Elite Coach + FCOO Director',     category: 'coaching', bundled: 7394, standalone: null, parts: 2, packaged: true, setup: ONBOARD },
-  { name: 'Elite Coach + FCOO Partner',      category: 'coaching', retired: true, replacement: 'Elite Coach + FCOO Director' },
+  { name: 'Elite Coach + FCOO Partner',      category: 'coaching', bundled: 11394, standalone: null, parts: 2, packaged: true, minRev: 3_000_000, setup: ONBOARD },
   { name: "Master's Circle + FCOO Advisor",  category: 'coaching', bundled: 6694, standalone: null, parts: 2, packaged: true, setup: ONBOARD },
   { name: "Master's Circle + FCOO Director", category: 'coaching', bundled: 8394, standalone: null, parts: 2, packaged: true, setup: ONBOARD },
-  { name: "Master's Circle + FCOO Partner",  category: 'coaching', retired: true, replacement: "Master's Circle + FCOO Director" },
+  { name: "Master's Circle + FCOO Partner",  category: 'coaching', bundled: 12394, standalone: null, parts: 2, packaged: true, minRev: 3_000_000, setup: ONBOARD },
 
   // Legal AI Workforce. AI Workforce Pro is priced by seat and has one price
   // whether bundled or not (`fixed`), so it never shows savings.
@@ -120,6 +131,7 @@ const ALIASES = [
   [/^(?:fcoo|fractional coo) (advisor|director|partner)$/, m => `FCOO ${cap(m[1])}`],
   [/^(?:fcfo|fractional cfo) (advisor|director|partner)$/, m => `FCFO ${cap(m[1])}`],
   [/^ecp$/, 'Elite Coach Plus'],
+  [/^(?:bookkeeping|bk) (?:level|l) ?([1-4])$/, m => `Bookkeeping Level ${m[1]}`],
   [/^masters circle$|^mc$/, "Master's Circle"],
 ];
 const cap = s => s[0].toUpperCase() + s.slice(1);
@@ -153,7 +165,21 @@ export function resolveName(rawName) {
   if (!rawName) return [];
   const whole = resolveOne(rawName);
   if (whole.product) return [{ raw: rawName, ...whole }];
-  return rawName.split(/\s\+\s(?![^()]*\))/).map(part => ({ raw: part.trim(), ...resolveOne(part.trim()) }));
+  const parts = rawName.split(/\s\+\s(?![^()]*\))/).map(part => ({ raw: part.trim(), ...resolveOne(part.trim()) }));
+  // A coaching product and an FCOO tier written separately ("Elite Coach +
+  // FCOO Advisor + FCFO Advisor") still get the packaged pair's price.
+  for (let i = 0; i < parts.length; i++) {
+    for (let j = 0; j < parts.length; j++) {
+      if (i === j || !parts[i].product || !parts[j].product) continue;
+      const pair = getProduct(`${parts[i].product.name} + ${parts[j].product.name}`);
+      if (pair?.packaged) {
+        parts[i] = { raw: `${parts[i].raw} + ${parts[j].raw}`, product: pair, seats: null };
+        parts.splice(j, 1);
+        return parts;
+      }
+    }
+  }
+  return parts;
 }
 
 /** Follow `retired` → `replacement`. Returns { product, retiredFrom }. */
@@ -232,6 +258,12 @@ export function pricePackage(lines) {
         continue;
       }
       names.push(p.name);
+      if (p.custom) {
+        ok = false;
+        unpriced.push(p.name);
+        notes.push(`${p.name} is custom-priced — it must be scoped by Sales before it can be quoted.`);
+        continue;
+      }
       if (p.fixed) {
         const a = aiwpPrice(p, part.seats);
         charged += a.price; seats = a.seats;

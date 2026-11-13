@@ -422,7 +422,7 @@ jobs:
                   lines.append(f"*One-time setup:* ${d.get('setup_total') or 0:,} — {fee_txt}. "
                                "Reply \"waive the <product> setup fee\" to waive one (not bookkeeping).")
               if unpriced:
-                  lines.append(f"🚫 *Can't be sold on its own yet:* {', '.join(unpriced)} — add another product or pick a different tier.")
+                  lines.append(f"🚫 *Can't be priced automatically:* {', '.join(unpriced)} — no stand-alone price (add another product or pick a different tier) or custom-scoped (Sales sets the price).")
               if d.get("ad_spend_conservative"):
                   # Ad spend always gets an explicit seller review before the deck goes out.
                   ad = (d.get("investment") or {}).get("ad_spend") or {}

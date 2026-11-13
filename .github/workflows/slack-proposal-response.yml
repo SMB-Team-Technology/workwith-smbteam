@@ -255,8 +255,7 @@ jobs:
             prices, total, pricing_mode, unpriced_products). Quote prices from that output.
             Bundle rule it applies: bundled prices only when 2+ bundle-eligible products
             are in the package (AI Workforce Pro – Starter never counts); otherwise
-            stand-alone prices and no savings. FCOO Partner is retired — never offer it;
-            use FCOO Director.
+            stand-alone prices and no savings.
 
             AWAITING SELLER INPUT: if package_decision.json has \"needs_seller_input\": true,
             no package has been chosen yet (the call focus was unknown, usually because no
@@ -334,9 +333,12 @@ jobs:
                  AI Accelerator L1/L2 → Fractional CTO Level 1/2, AI Enterprise → Fractional
                  CTO Level 3; 'sprint' / 'foundation sprint' → Law Firm AI Foundation Sprint;
                  FCTO / fractional CTO → Fractional CTO Level 1/2/3; FCOO / fractional COO →
-                 FCOO Advisor/Director (Partner is retired — 'max hours' / 'top tier' means
-                 Director); FCFO / fractional CFO → FCFO Advisor/Director/Partner;
-                 MC → Master's Circle; ECP → Elite Coach Plus.
+                 FCOO Advisor/Director/Partner ('max hours' / 'top tier' means Partner);
+                 FCFO / fractional CFO → FCFO Advisor/Director/Partner;
+                 MC → Master's Circle; ECP → Elite Coach Plus; bookkeeping → Bookkeeping
+                 Level 1/2/3 on the coaching line (joined with ' + '; Level 4 is
+                 custom-scoped); Elite 360 → coaching_name Elite Coach plus marketing_name
+                 Full Service Marketing — <tier>.
                  AIWP with no tier: Starter if team_size_effective is 1–4 or team size
                  is unknown (seats = team_size_stated, else 1), base if 5+.
                  If the shorthand maps to one product but its tier or seat count is unclear,

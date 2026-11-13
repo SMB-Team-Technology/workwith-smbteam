@@ -16,7 +16,7 @@ import { mkdtempSync, mkdirSync, writeFileSync, readFileSync, rmSync } from 'nod
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { pricePackage, resolveName } from '../lib/pricing.mjs';
+import { pricePackage, resolveName, applyPricing } from '../lib/pricing.mjs';
 import {
   parseMoneyText,
   parseRevenueFromNotes,
@@ -83,11 +83,34 @@ test('Paid Ads Essentials alone has no price — flagged, not invented (Jason Br
   assert.equal(bundled.lines.marketing.charged, 1997);
 });
 
-test('FCOO Partner is retired → priced as FCOO Director (Glen Larson)', () => {
+test('FCOO Partner is sold again (2026 pricing sheet): $8,997 bundled, $3M+, and both coaching pairs', () => {
   const r = pricePackage({ coaching: { name: 'FCOO Partner' }, law: { name: 'Fractional CTO Level 1' } });
-  assert.equal(r.lines.coaching.name, 'FCOO Director');
-  assert.ok(r.notes.some(n => /FCOO Partner is retired/.test(n)));
-  assert.equal(resolveName("Master's Circle + FCOO Partner")[0].product.retired, true);
+  assert.equal(r.lines.coaching.name, 'FCOO Partner');
+  assert.equal(r.lines.coaching.charged, 8997);
+  assert.equal(pricePackage({ coaching: { name: "Master's Circle + FCOO Partner" } }).total, 12394);
+  assert.equal(pricePackage({ coaching: { name: 'Elite Coach + FCOO Partner' } }).total, 11394);
+});
+
+test('every coaching combo on the All Services tab prices to the sheet', () => {
+  const combos = [
+    ['Elite Coach + FCFO Advisor', 5897], ['Elite Coach + FCFO Director', 7597],
+    ["Master's Circle + FCFO Advisor", 7897], ["Master's Circle + FCFO Director", 9597], ["Master's Circle + FCFO Partner", 13597],
+    ['FCOO Advisor + FCFO Advisor', 6594], ['FCOO Director + FCFO Advisor', 8294], ['FCOO Partner + FCFO Partner', 17994],
+    ["Master's Circle + FCOO Advisor + FCFO Advisor", 9991], ["Master's Circle + FCOO Director + FCFO Director", 13391],
+    ["Master's Circle + FCOO Partner + FCFO Partner", 21391], ['Elite Coach + FCOO Advisor', 5694],
+  ];
+  for (const [name, price] of combos) assert.equal(pricePackage({ coaching: { name } }).total, price, name);
+  // Elite 360 = Elite Coach + Full Service Marketing at the Core tabs' bundled prices.
+  assert.equal(pricePackage({ marketing: { name: 'Full Service Marketing — Starter' }, coaching: { name: 'Elite Coach + FCOO Advisor + FCFO Advisor' } }).total, 4997 + 5694 + 3297);
+});
+
+test('bookkeeping: priced on the coaching line, setup fee never waived, Level 4 custom', () => {
+  const d = { coaching_name: 'Elite Coach + Bookkeeping Level 2', setup_fee_waived: ['Bookkeeping Level 2', 'Elite Coach'] };
+  applyPricing(d);
+  assert.equal(d.total_bundled, 2600 + 2197);
+  assert.deepEqual(d.setup_fees.map(f => [f.product, f.charged, f.waived]), [['Elite Coach', 0, true], ['Bookkeeping Level 2', 2000, false]]);
+  const l4 = pricePackage({ coaching: { name: 'Bookkeeping Level 4' }, marketing: { name: 'Full Service Marketing — Growth' } });
+  assert.deepEqual(l4.unpriced, ['Bookkeeping Level 4']);
 });
 
 test('names the AI typed by hand still resolve', () => {
@@ -161,6 +184,7 @@ test('explanation on wrapped lines is not read as products (Sweeney, Dan Mayer)'
 test('"FCOO Advisor / Director / Partner" is the generic FCOO, not Partner (Glen Larson)', () => {
   const p = parseCallFocus('- Products discussed on call: FCOO Advisor / Director / Partner\n').products;
   assert.deepEqual(p, ['FCOO']);
+  assert.deepEqual(parseCallFocus('- Products discussed on call: Elite Coach, bookkeeping\n').products, ['Elite Coach', 'Bookkeeping']);
 });
 
 test('coaching discussed on the call wins over the revenue default (KHK, Mason, Glen Larson)', () => {
@@ -169,9 +193,14 @@ test('coaching discussed on the call wins over the revenue default (KHK, Mason, 
   assert.equal(selectDiscussedCoaching(["Master's Circle"], 500_000, notes).name, "Master's Circle");
   assert.equal(selectDiscussedCoaching(['FCOO'], 2_570_000, notes).name, 'FCOO Director');
   assert.equal(selectDiscussedCoaching(['FCOO'], 800_000, notes).name, 'FCOO Advisor');
-  assert.equal(selectDiscussedCoaching(['FCOO Partner'], 3_200_000, notes).name, 'FCOO Director');
+  assert.equal(selectDiscussedCoaching(['FCOO Partner'], 3_200_000, notes).name, 'FCOO Partner');
+  assert.equal(selectDiscussedCoaching(['FCOO'], 3_200_000, notes).name, 'FCOO Partner');
+  assert.equal(selectDiscussedCoaching(['FCFO'], 1_500_000, notes).name, 'FCFO Director');
+  assert.equal(selectDiscussedCoaching(['FCFO'], 2_200_000, notes).name, 'FCFO Partner');
   assert.equal(selectDiscussedCoaching(['Elite Coach', 'FCOO Advisor'], 600_000, notes).name, 'Elite Coach + FCOO Advisor');
   assert.equal(selectDiscussedCoaching(['Fractional CTO Level 1'], 600_000, notes), null);
+  assert.equal(selectDiscussedCoaching(['Elite Coach', 'Bookkeeping'], 1_500_000, notes).name, 'Elite Coach + Bookkeeping Level 2');
+  assert.equal(selectDiscussedCoaching(['Bookkeeping Level 1'], 1_500_000, notes).name, 'Bookkeeping Level 1');
 });
 
 test('AI line: one FCTO level + one AIWP tier, no duplicates (Dan Mayer, Current Shift)', () => {
@@ -210,7 +239,7 @@ function firm(name, notes, trigger = {}) {
   writeFileSync(join(tmp, 'triggers/audit-research', `${name}.json`), JSON.stringify(trigger));
 }
 
-test('Glen Larson end to end: team of 15, FCOO Director stand-alone, no FCOO Partner', async () => {
+test('Glen Larson end to end: team of 15, generic FCOO at $2.57M → FCOO Director stand-alone', async () => {
   firm('glen', [
     '- Team size: 15 total, 2 lawyers ("Myself and one other one").',
     '- Annual revenue (gross / case value): 2026 YTD $2.57M at time of call; projected $3.27M',
@@ -226,7 +255,6 @@ test('Glen Larson end to end: team of 15, FCOO Director stand-alone, no FCOO Par
   assert.equal(d.marketing_name, null);
   assert.equal(d.pricing_mode, 'standalone');
   assert.equal(d.total_bundled, 5797);
-  assert.ok(!JSON.stringify(d).includes('FCOO Partner"'));
 });
 
 test('unknown revenue is flagged for the seller to confirm', async () => {
