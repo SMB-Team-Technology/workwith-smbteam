@@ -1,0 +1,199 @@
+{
+  "confidence": "low",
+  "revenue_stated": null,
+  "net_revenue_stated": null,
+  "is_contingency_practice": true,
+  "revenue_effective": 340000,
+  "revenue_source": "hubspot_annual_law_firm_revenue",
+  "revenue_label": "$180K-$500K",
+  "revenue_verified": false,
+  "needs_revenue_confirmation": true,
+  "team_size_stated": 10,
+  "team_size_source": "research_notes",
+  "team_size_effective": 10,
+  "practice_areas_detected": [
+    "tax resolution",
+    "irs matters and bankruptcy (chapter 7 \"bread and butter\"). \"i don't do litigation\" (00:03:23). (website",
+    "bankruptcy",
+    "on site: personal injury",
+    "irs audit defense",
+    "wage garnishment relief",
+    "offers in compromise"
+  ],
+  "hubspot_company": null,
+  "firm_identity_check": "matches (trigger \"Sterbick and Associates\"; website \"Sterbick & Associates\"; Avvo also lists \"Law Offices of John Anton Sterbick\"; transcript = John Sterbick, owner)",
+  "package_source": "rules",
+  "package_override": null,
+  "needs_seller_input": false,
+  "revenue_only_option": null,
+  "call_focus": {
+    "primary_engagement": "mixed",
+    "products_discussed": [
+      "AI Workforce Pro (tier not specified)",
+      "Full Service Marketing"
+    ],
+    "lead_gen_gap": true
+  },
+  "marketing_tier": "Starter",
+  "marketing_name": "Full Service Marketing — Starter",
+  "marketing_price_bundled": 4997,
+  "marketing_price_retail": 5697,
+  "marketing_savings": 700,
+  "coaching_name": "Elite Coach",
+  "coaching_price_bundled": 2600,
+  "coaching_price_retail": 3497,
+  "coaching_savings": 897,
+  "law_tier": "AI Workforce Pro",
+  "law_name": "AI Workforce Pro",
+  "law_price_bundled": 2197,
+  "law_price_retail": null,
+  "law_seats": 10,
+  "total_bundled": 9794,
+  "total_savings": 1597,
+  "ad_spend_conservative": 7700,
+  "ad_spend_aggressive": 22500,
+  "ad_spend_rationale": {
+    "conservative_basis": "channel minimums $4,500 + $2,000 + $1,200 = $7,700",
+    "aggressive_basis": "20% rule: $680,000 goal × 20% ÷ 12 × 1 geo − $4,997 fee = $6,336 → reverse math: 37.8 cases/mo ÷ 15% close × $89 benchmark blended CPL = $22,500"
+  },
+  "selection_notes": [
+    "\"AI Workforce Pro\" named without a tier — using AI Workforce Pro (team of 10).",
+    "AI Workforce Pro discussed on call: $1,597/mo for 5 users + 5 extra × $120.",
+    "Revenue not stated on the call — HubSpot only has the range \"$180K-$500K\". Using the midpoint ($340,000) for this draft only; confirm actual revenue with the prospect before locking in.",
+    "Revenue under $750K but multiple practice areas detected: Essentials hidden (requires single practice area) — Starter tier.",
+    "Revenue $250K–$400K: Elite Coach selected.",
+    "Total at conservative ad spend ($17,494/mo) is over the 35% cap ($9,917/mo on $340,000 revenue) — review with sales rep."
+  ],
+  "pricing_mode": "bundled",
+  "bundle_eligible_count": 3,
+  "unpriced_products": [],
+  "investment": {
+    "version": 1,
+    "products": [
+      {
+        "category": "marketing",
+        "name": "Full Service Marketing — Starter",
+        "charged": 4997,
+        "standalone": 5697
+      },
+      {
+        "category": "coaching",
+        "name": "Elite Coach",
+        "charged": 2600,
+        "standalone": 3497
+      },
+      {
+        "category": "law",
+        "name": "AI Workforce Pro (10 seats)",
+        "charged": 2197,
+        "standalone": null
+      }
+    ],
+    "monthly_total": 9794,
+    "list_total": 11391,
+    "total_savings": 1597,
+    "pricing_mode": "bundled",
+    "year_one_total": 117528,
+    "year_one_basis": "12 × $9,794/mo in fees. Ad spend is paid separately to Google and Meta.",
+    "ad_spend": {
+      "channels": [
+        {
+          "channel": "Google Search",
+          "minimum": 4500
+        },
+        {
+          "channel": "Local Services Ads",
+          "minimum": 2000
+        },
+        {
+          "channel": "Meta retargeting",
+          "minimum": 1200
+        }
+      ],
+      "conservative": 7700,
+      "aggressive": 22500,
+      "current_stated": null,
+      "cap": 25000,
+      "overage": null,
+      "conservative_basis": "channel minimums $4,500 + $2,000 + $1,200 = $7,700",
+      "aggressive_steps": [
+        "20% rule: $680,000 goal × 20% ÷ 12 × 1 geo − $4,997 fee = $6,336",
+        "reverse math: 37.8 cases/mo ÷ 15% close × $89 benchmark blended CPL = $22,500"
+      ],
+      "year_one_range": [
+        92400,
+        270000
+      ],
+      "seller_set": false,
+      "computed": null,
+      "needs_seller_review": true
+    },
+    "return": {
+      "method": "benchmark_cpl",
+      "basis": "SMB Team bankruptcy cost-per-lead benchmarks ($89 blended, +20% on the low end), 15% close rate (assumed) and a $1,500 average case (said on the call).",
+      "case_value": 1500,
+      "case_value_stated": true,
+      "cost_per_case": null,
+      "share_of_case_value": null,
+      "close_rate": 0.15,
+      "blended_cpl": 89,
+      "scenarios": [
+        {
+          "label": "Conservative",
+          "ad_spend": 7700,
+          "leads": 71.8,
+          "cases": 10.8,
+          "revenue": 16200,
+          "return_multiple": 2.1
+        },
+        {
+          "label": "Aggressive",
+          "ad_spend": 22500,
+          "leads": 251.9,
+          "cases": 37.8,
+          "revenue": 56700,
+          "return_multiple": 2.5
+        }
+      ],
+      "disclaimer": "Illustrative arithmetic, not a forecast."
+    },
+    "inputs": {
+      "practice_area": {
+        "value": "Bankruptcy",
+        "source": "research notes"
+      },
+      "geo_tier": {
+        "value": 4,
+        "multiplier": 1,
+        "source": "research notes"
+      },
+      "competitiveness": {
+        "value": "Medium",
+        "source": "research notes"
+      },
+      "spanish_campaign": false,
+      "revenue_effective": 340000,
+      "revenue_goal": {
+        "value": 680000,
+        "source": "not stated — 2× current revenue (audit-write.md)"
+      },
+      "case_value": {
+        "value": 1500,
+        "source": "stated on the call"
+      },
+      "close_rate": {
+        "value": 0.15,
+        "source": "default 15%"
+      },
+      "current_ad_spend": null,
+      "current_cost_per_case": null,
+      "current_cost_per_lead": null,
+      "max_ad_budget": null,
+      "management_fee": 4997,
+      "ad_spend_cap": 25000
+    },
+    "flags": [
+      "Reverse math ($22,500) is well above the 20% rule ($6,336) — the goal may be aggressive for the budget (paid ads team review)."
+    ]
+  }
+}
