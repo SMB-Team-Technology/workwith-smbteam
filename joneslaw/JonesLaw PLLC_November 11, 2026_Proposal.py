@@ -1,13 +1,31 @@
 """
 Audit PowerPoint Template — SMB Team
 ======================================
-Generates a 3-slide proposal PPTX from the Growth, Profit, and Freedom Roadmap.
-Uses python-pptx. Do not modify the layout engine below the FILL section.
-Only replace the # FILL: placeholders with audit-specific content.
+Generates the 5-slide proposal PPTX. Uses python-pptx. Do not modify the
+layout engine below the FILL section. Only replace the # FILL: placeholders
+with audit-specific content (rules: .claude/commands/audit-pptx.md).
 
-Slide 1 — Where [Firm] Stands Today         (what you told us, stage, key gaps)
-Slide 2 — Your Growth Plan: 3 Priorities    (action plan)
-Slide 3 — Your Investment & What's Next     (pricing + how this plan addresses it)
+The deck makes the case for the recommendation in one line of argument:
+one number from the call → what drives it → what we do about each driver →
+what we're recommending → what it costs.
+
+Slide 1 — Your Priorities, In Your Words  (the call KPI + the client's quotes)
+Slide 2 — The Diagnosis                   (the root causes behind that KPI)
+Slide 3 — The Plan                        (actions tied to causes + what we'll measure)
+Slide 4 — The Recommended Strategy        (each product: why, and its deliverables)
+Slide 5 — Your Investment                 (what $X/mo buys, year one, ad spend, return —
+                                           every number read from package_decision.json)
+A Rollout Plan slide exists in the engine but is left out (SHOW_ROLLOUT) until
+real onboarding content is ready.
+
+Data rules (enforced by the build where it can, by audit-pptx.md everywhere):
+- Every number comes from the call (client or seller) or from a verified
+  research observation, exactly as said or measured. Never invented, never
+  estimated.
+- Targets are labelled "Target:" by the engine and must rest on call data.
+  With nothing to base one on, leave it None — no target line is drawn and
+  the seller prep notes it.
+- Seller-only guidance goes in SELLER_NOTES (the seller prep file), never on a slide or in the speaker notes.
 
 Output: [friendly-name]/[FirmName]_[Date]_Proposal.pptx
 """
@@ -16,6 +34,8 @@ from pptx import Presentation
 from pptx.util import Inches, Pt
 from pptx.dml.color import RGBColor
 from pptx.enum.text import PP_ALIGN, MSO_AUTO_SIZE, MSO_ANCHOR
+from pptx.enum.shapes import MSO_SHAPE
+from pptx.enum.dml import MSO_LINE
 from pptx.oxml.ns import qn
 from lxml import etree
 from functools import lru_cache
@@ -24,115 +44,173 @@ import os
 import re
 
 # ═══════════════════════════════════════════════════════════════════
-# FILL — Replace every placeholder. Do not delete any variable.
 # ═══════════════════════════════════════════════════════════════════
+
+# ── BUILD NOTES (internal — never shown on a slide) ──────────────
+# Rebuilt 2026-11-13 from the current template (5-slide format). The Nov 11 Slack edit had patched the
+#   Nov 6 script, which still carried the retired 3-slide layout engine. Same inputs, same package.
+# Marketing package: Full Service Marketing — Essentials — charged $3,797/mo, stand-alone $3,797/mo, savings $0
+# Non-marketing package(s): none (seller removed Elite Coach in Slack, 2026-11-06)
+# LAW package: none (seller removed AI Workforce Pro – Starter in Slack, 2026-11-11)
+# Total monthly investment: $3,797/mo · total savings: $0/mo · pricing_mode: standalone (1 bundle-eligible product)
+# Year one: $45,564 (from package_decision.json → investment.year_one_total; 12 × $3,797/mo in fees, ad spend paid separately)
+# Ad spend (copied from investment.ad_spend — computed in code, never by hand):
+#   $9,200–$9,200/mo · low end: channel minimums $6,000 + $2,000 + $1,200 = $9,200 · high end: 20% rule $2,203;
+#   reverse math $12,123; capped at the $7,500 the package manages (low end already above the cap)
+# Return (copied from investment.return): benchmark_cpl · $303 blended injury CPL, 15% close (assumed), $5,000 case (assumed) ·
+#   scenarios: $9,200 → 30.4 leads → 4.6 cases → $22,800 → 2.5×
+# Investment inputs used: practice area Accident/Injury (inferred) · geo Tier 4 (default) · competitiveness Medium (default) ·
+#   revenue $180,000 (HubSpot band "$0 - $180K") · goal $360,000 (2× default) · flags: see Escalation flags
+# Why this range: Ad spend of $9,200 a month is there to reach people in Maine searching for a lawyer now.
+# Pillar review: Lead Gen red — firm not launched: no website, Google profile, reviews or ads · Intake amber — no process yet (solo, Clio planned) ·
+#   Team amber — "Just me to start", paralegals planned in year one · Profit amber — cash flow must come from hourly work first
+# KPI (slide 1): none usable: qualitative — pre-launch firm; no revenue, case value, close rate or lead figure stated. Older notes (no STEP 9B):
+#   headline "I got to make the phone ring." — Blair Jones (client), 00:34:05 (STEP 9 lead-gen gap; Key prospect quote 8)
+#   stats: "five or six personal injury cases in my first year" (00:49:19, Key quote 12) · "the beginning of January" (00:13:50)
+# Diagnosis (slide 2): 1. No website yet — "No." to having started one (00:26:10), STEP 1 · 2. No Google profile or reviews — 0 reviews,
+#   rep 00:35:32 undisputed, STEP 2 / STEP 7 · 3. PI is costly to break into — 00:46:05, 00:48:24, cash flow from hourly work 00:22:20
+# Targets (slides 2–3): none — no target figure stated on the call; seller note
+# Client's why / cost of inaction (slide 1): "I'm tired of other people making those calls and I just wanted to do it for myself for a while."
+#   — Blair Jones (client), 00:14:25 (DBM) · cost of inaction: none on the call
+# Closing quote (slide 5): "…the size that I'd like to get the firm to is like two to four attorneys and support staff." — Blair Jones (client), 00:20:30
+# Legacy Staircase slide: left out — not walked through on the call
+# Plan (slide 3): 1. Build the website — tied to: "I haven't pinpointed how I'm going to do that." (00:26:21) · 2. Google profile —
+#   tied to: rep 00:35:32 / verification in package (00:36:15) · 3. Ads — tied to: "How much am I going to need to invest to make the phone ring?" (00:34:01)
+#   and Blair's hourly-first question (00:46:23)
+# What You Told Us (slide 1 quotes and tie lines):
+#   1. Budget — "in the beginning, I want to try to control costs as much as I can" (00:34:05) — supports: Essentials, the entry tier
+#   2. Hourly work — "I am going to have to generate cash flow from hourly work along the way." (00:22:20) — supports: SEO content + ads
+# Overrides applied: Seller overrides (Slack 2026-11-06 and 2026-11-11) — package is Full Service Marketing — Essentials only; built as-is.
+#   Rules it breaks, noted for sales: Essentials requires a single practice area (three named: PI, civil litigation, criminal) — rules
+#   picked Starter; PI firms normally start at Starter. Seller wins.
+# Escalation flags: Revenue under $300K → scoping approval required · Under $250K revenue → verify funds for 4 months of services ·
+#   Ad spend $9,200 is above the $7,500 Essentials cap → 10% overage fee (seller decision) ·
+#   Ad spend alone is above Blair's "$5,000 to $7,500" comment — paid ads team review · Revenue goal exceeds projected ad revenue — paid ads team review ·
+#   Case value and close rate are defaults · Firm name not spoken on the call — confirm "JonesLaw, PLLC" · Virtual/home office — confirm GBP eligibility ·
+#   LSA availability for Maine civil litigation unconfirmed · Possible identity match (research STEP 5) — internal only, never in the deck
 
 # Report metadata
 FIRM_NAME      = "JonesLaw, PLLC"
 SALES_REP      = "Jake Riggs"
 OUTPUT_PATH    = "joneslaw/JonesLaw PLLC_November 11, 2026_Proposal.pptx"
 
-# ── BUILD NOTES (internal — never shown on a slide) ──────────────
-# Marketing package: Full Service Marketing — Essentials — charged $3,797/mo, stand-alone $3,797/mo, savings $0
-# Non-marketing package(s): none (seller removed Elite Coach in Slack, 2026-11-06)
-# LAW package: none (seller removed AI Workforce Pro – Starter in Slack, 2026-11-11)
-# Total monthly investment: $3,797/mo · total savings: $0/mo · pricing_mode: standalone (1 bundle-eligible product)
-# Ad spend: $9,200 (channel minimums: Google Search $6,000 + LSA $2,000 + Meta retargeting $1,200); Essentials ad cap is $7,500 — $1,700 above cap, 10% overage fee (package_decision.json investment.ad_spend)
-# ROI assumptions (package_decision.json investment.return): accident/injury benchmark blended CPL $303, 15% default close rate
-# ROI recommended: $9,200 ad spend -> 30.4 leads -> 4.6 cases -> $22,800 revenue -> 2.5x (single scenario; the second ROI row is left blank)
-# Case value: $5,000 (source: practice-area default, Business Law $3K-$7K midpoint; none stated on call)
-# Why this range: to turn high-intent Maine legal searches into signed cases as the firm opens
-# DBM: control — "I'm tired of other people making those calls and I just wanted to do it for myself for a while."
-# Stage: current Stage 2 (still employed elsewhere, no independent client base) -> goal Stage 6, Law Firm Owner
-# Pillar review: Lead Gen red — no website, Google profile or reviews yet (pre-launch) · Intake red — no process discussed, solo at launch · Team red — Blair only · Profit amber — no revenue baseline or runway stated
-# What You Told Us (slide 3 panel + slide 1 quotes):
-#   1. Make the phone ring — transcript line: "I got to make the phone ring." (00:34:05) — supports: Full Service Marketing
-#   2. Control costs — transcript line: "I want to try to control costs as much as I can" (00:34:05) — supports: fee + ad spend range shown up front
-#   3. Staying lean — transcript line: "I don't want to get to be a big firm" (00:14:42) — supports: AI Workforce Pro seat
-# Overrides applied: seller overrides (Slack 2026-11-06): coaching removed, 1 seat AI Workforce Pro – Starter added; (Slack 2026-11-11): package replaced with Full Service Marketing Essentials only, AI Workforce Pro removed; used as-is. Essentials normally hidden for PI / multi-practice-area firms (Maine plans civil litigation + PI + criminal) — seller requested it anyway. Seller package skips the four need overrides. Rules it breaks: revenue under $250K, total spend over the 35% cap.
-# Escalation flags: Essentials tier requested by seller although firm plans multiple practice areas incl. personal injury (Essentials normally hidden) -> sales-ops approval · ad spend $9,200 exceeds Essentials $7,500 ad cap ($1,700 overage, 10% fee) · revenue under $300K (HubSpot band $0-$180K) -> scoping approval · total spend over 35% cap ($5,250/mo) check with ad spend · ad spend range far above Blair's stated $5,000-$7,500/mo total budget; $4,000 start was only a rep idea — paid ads team review · firm name "JonesLaw, PLLC" unconfirmed (planned firm) — confirm with Jake · LSA availability for Maine civil litigation and GBP eligibility for a home/virtual office not confirmed · no competitor review figures used in deck
+# ── Slide 1 — Your Priorities, In Your Words ─────────────────────
+KPI_FOCUS = {
+    "kind": "qualitative",
+    "label": "New cases",
+    "headline": "I got to make the phone ring.",
+    "headline_is_quote": True,
+    "detail": "Opening in January, with no website or Google profile yet.",
+    "baseline": "Not launched yet",
+    "stats": [
+        ("Your goal, first year", "Five or six PI cases"),
+        ("Planned opening", "Beginning of January"),
+    ],
+    "said_by": "Blair Jones (client), 00:34:05",
+}
 
-# ── Slide 1 ──────────────────────────────────────────────────────
 PROSPECT_QUOTES = [
-    ("You said", "I'm tired of other people making the decisions about everything from how to market the firm to what kind of cases were taken."),
-    ("You said", "I want to try to control costs as much as I can, but at the same time, I got to make the phone ring."),
+    ("Budget",
+     "In the beginning, I want to try to control costs as much as I can",
+     "Essentials is our entry full-service tier: one team, one fee",
+     "Blair Jones (client), 00:34:05"),
+    ("Hourly work first",
+     "I am going to have to generate cash flow from hourly work along the way.",
+     "SEO content and ads built for your civil litigation work too",
+     "Blair Jones (client), 00:22:20"),
 ]
 
-KEY_GAPS = [
-    ("Lead Generation", "With no website, Google profile or reviews yet, new clients have nothing to find"),
-    ("Team", "Just you at launch, so every call, case and decision lands on you"),
-    ("Profit Plan", "Launch income is hard to predict, so spend needs a clear plan behind it"),
+CLIENT_WHY = ("I'm tired of other people making those calls and I just wanted to do it for myself for a while.", "",
+              "Blair Jones (client), 00:14:25")
+COST_OF_INACTION = None
+
+# ── Optional slide — Lawyer Legacy Staircase ──────────────────────
+STAIRCASE = None
+
+# ── Slide 2 — The Diagnosis ───────────────────────────────────────
+DIAGNOSIS_TITLE = "Why the Phone Isn't Ringing Yet"
+DIAGNOSIS_INTRO = "You're starting from zero. Three things stand between launch and a ringing phone."
+
+DIAGNOSIS = [
+    {"title": "No website yet", "metric": "",
+     "metric_label": "",
+     "target": None, "body": "Paid ads need a site to send clicks to, and searchers need a site to trust.",
+     "source": "Discovery call, Nov 6"},
+    {"title": "No Google profile or reviews", "metric": "0",
+     "metric_label": "Google reviews today",
+     "target": None, "body": "Local Services Ads need a verified Google profile before they can run.",
+     "source": "Discovery call, Nov 6"},
+    {"title": "PI is costly to break into", "metric": "",
+     "metric_label": "",
+     "target": None, "body": "PI cases cost money up front; hourly civil work brings cash in sooner.",
+     "source": "Discovery call, Nov 6"},
 ]
 
-STAGE_TEXT = "Stage 2: The Lawyer  →  Goal: Stage 6, Law Firm Owner"
+DIAGNOSIS_FIX_LINE = "We build the website and Google profile, then manage Google Ads, LSA and Meta, with the practice-area mix set together."
 
-# ── Slide 2 ──────────────────────────────────────────────────────
-SLIDE_2_TITLE = "Your Growth Plan: 3 Priorities to Launch Your Firm Your Way"
+# ── Slide 3 — The Plan ────────────────────────────────────────────
+PLAN_KICKER = "Website, local search and paid ads"
+PLAN_TITLE  = "Make the Phone Ring"
 
-PRIORITIES = [
-    (
-        "Launch Your", "Online Presence", "003A59",
-        [
-            "A new website built to turn Maine searches into calls",
-            "Google profile set up and verified for your firm",
-            "Initial site content written for you (5,000 words)",
-            "Pages for the practice areas you plan to take on",
-            "You make the calls on which cases to lead with",
-        ],
-    ),
-    (
-        "Make the", "Phone Ring", "69CD2B",
-        [
-            "Google Ads managed to reach people searching for help",
-            "Local Services Ads added once your profile is ready",
-            "Lead with civil litigation to build early cash flow",
-            "Add personal injury as your firm grows into it",
-            "Ongoing SEO content to build visibility over time",
-        ],
-    ),
-    (
-        "Grow Visibility", "Over Time", "003A59",
-        [
-            "Meta retargeting to bring back site visitors",
-            "Monthly site edits so the site stays current",
-            "5,000 more words of SEO content each year after launch",
-            "Stay in control of which cases you take",
-        ],
-    ),
+PLAN = [
+    {"title": "Build your website", "fixes": 1,
+     "actions": ["New law firm website, built on Astra",
+                 "5,000 words of SEO content at launch"],
+     "metric": "Website live", "target": None, "baseline": "No website yet"},
+    {"title": "Set up your Google profile", "fixes": 2,
+     "actions": ["Google Business Profile setup and verification",
+                 "Google profile optimization, 1 location"],
+     "metric": "Google reviews", "target": None, "baseline": "0"},
+    {"title": "Run ads where cases come sooner", "fixes": 3,
+     "actions": ["Google Ads management",
+                 "Local Services Ads management once eligible",
+                 "Meta retargeting ads"],
+     "metric": "Cost per lead", "target": None, "baseline": None},
 ]
 
-# ── Slide 3 ──────────────────────────────────────────────────────
-PACKAGES = [
-    (
-        "FULL SERVICE MARKETING — ESSENTIALS",
-        "$3,797", "stand-alone price",
-        "Website · Google Ads · LSA · Meta · Google profile · SEO",
-        "0091C9",
-    ),
+PLAN_NOTE = "5,000 words of new content a year from year two, and 30 minutes of site edits a month."
+
+# ── Slide 4 — The Recommended Strategy ────────────────────────────
+STRATEGY_TITLE = "One Package, Two Jobs"
+
+STRATEGY = [
+    {"product": "Full Service Marketing — Essentials", "title": "Get found",
+     "channels": "Website · SEO · Google profile",
+     "deliverables": ["New law firm website, built on Astra",
+                      "5,000 words of SEO content at launch",
+                      "Google Business Profile setup, 1 location",
+                      "30 minutes of site edits a month"],
+     "why": "You open with no website or Google profile, so the foundation comes first."},
+    {"product": "Full Service Marketing — Essentials", "title": "Get the call",
+     "channels": "Google Ads · LSA · Meta",
+     "deliverables": ["Google Ads management",
+                      "Local Services Ads management",
+                      "Meta retargeting ads"],
+     "why": "You asked how to make the phone ring; ads put you in front of people searching now."},
 ]
 
-BUNDLE_TOTAL   = "$3,797 / mo"
-BUNDLE_SAVINGS = "Stand-alone price (no bundle)"
+# ── Seller prep (never in the deck) ───────────────────────────────
+SELLER_NOTES = {
+    "priorities": "Pre-launch solo opening in January: the call gave no usable number (no revenue, case value, close rate or lead count), so this slide leads with Blair's own words. "
+                  "Ask: the typical fee on an hourly civil matter, and how many new matters a month would make the first year work. Confirm \"JonesLaw, PLLC\" is the final firm name (it was never said on the call). "
+                  "Never mention Blair's current firm or clients.",
+    "diagnosis": "The 0 reviews is from the call (no Google profile exists yet). The LSA review minimum was your statement on the call. "
+                 "Confirm LSA is available for Maine civil litigation categories before promising it, and that the planned home/virtual office can be verified for a Google profile.",
+    "plan": "No targets: none were stated on the call. Leading with hourly civil work was Blair's question and you agreed to check it with the marketing team: share what they said about a smaller, hourly-first budget.",
+    "strategy": "Package set by you in Slack on Nov 11: Full Service Marketing Essentials only (coaching and AI Workforce Pro removed). Blair is also talking to Smart Sites and Fuel Web Marketing.",
+    "investment": "Ad spend shows $9,200 a month (injury channel minimums), above the $7,500 Essentials cap (10% fee above the cap) and above Blair's \"$5,000 to $7,500 is not out of the question\" (unclear if total or ad spend). "
+                  "Your $4,000 idea was not agreed. Review the ad spend before the deck goes out. The return table uses a default $5,000 case and 15% close rate.",
+}
 
-AD_SPEND_NOTE = (
-    "+ Recommended ad spend: $9,200/mo — to turn high-intent Maine searches into signed cases"
-)
+# ── Slide 5 — Your Investment ─────────────────────────────────────
+PRODUCT_LINES = {
+    "Full Service Marketing — Essentials": "Website · SEO content · Google profile · Google Ads · LSA · Meta",
+}
 
-AVG_CASE_VALUE     = "$5,000 (est.)"
-CONSERVATIVE_LABEL = "Projected  (4.6 cases/mo):"
-CONSERVATIVE_RESULT = "$22,800 revenue · 2.5× ROAS"
-AGGRESSIVE_LABEL   = ""
-AGGRESSIVE_RESULT  = ""
+AD_SPEND_WHY = "to reach people in Maine searching for a lawyer now"
 
-WHAT_YOU_TOLD_US = [
-    ("Phone to ring", "Website, profile and ad management built for leads"),
-    ("Control costs", "Clear monthly fee and ad spend range shown up front"),
-    ("Staying lean", "One clear monthly fee, no add-ons"),
-]
-
-CLOSING_QUOTE = (
-    '"A firm where you make the calls, on your own terms, and the phone rings."'
-)
+CLOSING_QUOTE = ("That's pretty much the size that I'd like to get the firm to is like two to four attorneys and support staff.",
+                 "Blair Jones (client), 00:20:30")
 
 # ═══════════════════════════════════════════════════════════════════
 # LAYOUT ENGINE — DO NOT MODIFY BELOW THIS LINE
@@ -142,42 +220,41 @@ CLOSING_QUOTE = (
 def rgb(h): return RGBColor(int(h[0:2],16), int(h[2:4],16), int(h[4:6],16))
 
 # SMB Team brand colors (see brand book): Deep Wood Blue, Ocean Blue, Lime Green.
-# These three anchor the palette and are unchanged from the previous design —
-# what changed in this pass is how they're applied (thin accents/pills instead
-# of large solid fills) plus several supporting tones below, retuned to softer,
-# lower-saturation values matched from the reference redesign.
 NAVY        = rgb("003A59")   # Deep Wood Blue — primary brand color
-OCEAN_BLUE  = rgb("0091C9")   # brand accent — large numbers, decorative accents
+OCEAN_BLUE  = rgb("0091C9")   # brand accent — numbers, badges, kickers
 LIME_GREEN  = rgb("69CD2B")   # brand accent — small "pop" text/labels on navy
 WHITE       = rgb("FFFFFF")
 
 BG_WASH       = rgb("F4F7F9")   # full-bleed slide background
-URGENCY_CARD  = rgb("0B4C6E")   # muted navy — staircase steps not yet reached
-URGENCY_SUB   = rgb("9CC0D6")   # step numbers on muted staircase steps
-
-GREEN       = rgb("3F8F1A")
+GREEN       = rgb("3F8F1A")     # "Target:" lines and client goals
+CORAL       = rgb("C8553D")     # the problem numbers on the diagnosis slide
 
 DARK_TEXT   = rgb("1B2A38")   # near-black body/label text on white cards
-BODY_TEXT   = rgb("4A5C6B")   # neutral gray-blue for card copy (key gaps, ad spend note, plan rows)
-SLATE       = rgb("7C8D9B")   # lighter captions (retail price, services line)
+BODY_TEXT   = rgb("4A5C6B")   # neutral gray-blue for card copy
+SLATE       = rgb("7C8D9B")   # lighter captions (sources, retail price, services line)
 FOOTER_TEXT = rgb("8FB2C6")
+RULE_GRAY   = rgb("D9E2E8")
+SOFT_BLUE   = rgb("DCEAF3")   # "why we chose it" strips
+NAVY_TEXT_SOFT = rgb("C2D8E6")  # body copy on navy
+NAVY_RULE   = rgb("2F6F94")
 
 ROI_BG      = rgb("F0FAF4")
 ROI_GREEN   = rgb("0B6B4A")
 ROI_HILIGHT = rgb("E2F3E9")
 
 BUNDLE_SAVINGS_TEXT = rgb("A9D68C")   # lighter green — reads as "money saved"
-GOAL_TEXT_DARK      = rgb("143306")   # dark green text on Lime Green fills
 
-# Slide 2 priority columns always alternate navy / lime / navy, whatever hex
-# the FILL section passes — no Ocean Blue or other accents on that slide.
-# Each entry: (header fill, title text, "PRIORITY N" kicker text). Lime
-# Green is light, so its header uses dark green text instead of white.
-PRIORITY_STYLE = [
-    (NAVY,       WHITE,          LIME_GREEN),
-    (LIME_GREEN, GOAL_TEXT_DARK, GOAL_TEXT_DARK),
-    (NAVY,       WHITE,          LIME_GREEN),
-]
+# The Rollout Plan slide is built but left out of the deck until real
+# onboarding content exists — flip this to True to add it back.
+SHOW_ROLLOUT = False
+
+# Slide order. The staircase slide is optional (STAIRCASE in the FILL).
+SLIDE_ORDER = (["priorities"] + (["staircase"] if STAIRCASE else []) +
+               ["diagnosis", "plan", "strategy"] + (["rollout"] if SHOW_ROLLOUT else []) +
+               ["investment"])
+PAGE = {key: i + 1 for i, key in enumerate(SLIDE_ORDER)}
+TOTAL_SLIDES = len(SLIDE_ORDER)
+INVESTMENT_PAGE = PAGE["investment"]
 
 FONT = "Poppins"
 LOGO_PATH = os.path.join(os.path.dirname(__file__), "smb_team_logo.png")
@@ -317,7 +394,7 @@ def _truncate_to_fit(text, w, h, size, bold, italic, max_lines):
 def add_text(slide, text, left, top, w, h, size, color, bold=False,
              align=PP_ALIGN.LEFT, italic=False, wrap=True,
              cap_chars=None, cap_label="", fit=True, max_lines=None,
-             min_size=None, anchor=None):
+             min_size=None, anchor=None, strike=False):
     from pptx.util import Emu as E, Pt as P
     if cap_chars is not None:
         text = cap(text, cap_chars, label=cap_label)
@@ -349,6 +426,8 @@ def add_text(slide, text, left, top, w, h, size, color, bold=False,
     run.font.color.rgb = color
     run.font.bold = bold
     run.font.italic = italic
+    if strike:
+        run.font._rPr.set("strike", "sngStrike")
     # The size above is already the measured fit — turn PowerPoint's own
     # autofit off so no viewer rescales it a second time.
     tf.auto_size = MSO_AUTO_SIZE.NONE
@@ -370,13 +449,14 @@ def add_title(slide, text, w):
                  cap_label="slide title")
 
 
-def add_header(slide, title, title_w):
-    """Background wash, navy header, kicker and title — shared by all three
-    slides. No divider stripe under the header: the deck stays quiet so it
-    supports the rep instead of competing."""
+def add_header(slide, title, title_w, kicker="LAW FIRM GROWTH AUDIT"):
+    """Background wash, navy header, kicker and title — shared by every
+    slide. The kicker names the slide's step in the story ("THE DIAGNOSIS")
+    followed by the firm. No divider stripe under the header: the deck stays
+    quiet so it supports the rep instead of competing."""
     add_rect(slide, 0, 0, 10, 5.625, fill=BG_WASH)
     add_rect(slide, 0, 0, 10, 0.92, fill=NAVY)
-    add_text(slide, f"LAW FIRM GROWTH AUDIT  ·  {FIRM_NAME.upper()}",
+    add_text(slide, f"{kicker}  ·  {FIRM_NAME.upper()}",
              0.32, 0.20, title_w, 0.18, 7.5, LIME_GREEN, bold=True,
              max_lines=1, cap_label="header kicker")
     add_title(slide, title, title_w)
@@ -445,28 +525,6 @@ def add_bullets(slide, items, left, top, w, h, size, color, bullet_color, label=
         run.font.color.rgb = color
     return txb
 
-
-def parse_stage_text(text):
-    """Split STAGE_TEXT ("Stage 4: Small Business Manager → Goal: Stage 6,
-    Law Firm Owner") into (current, goal, current_n, goal_n). Any part that
-    can't be found comes back as None."""
-    parts = [p.strip() for p in re.split(r"\s*(?:→|->)\s*", str(text), maxsplit=1)]
-    current = parts[0] or None
-    goal = parts[1] if len(parts) > 1 and parts[1] else None
-    def stage_n(s):
-        m = re.search(r"Stage\s*(\d)", s or "", re.I)
-        n = int(m.group(1)) if m else None
-        return n if n and 1 <= n <= 6 else None
-    return current, goal, stage_n(current), stage_n(goal)
-
-
-# ── Slide 1: Where You Stand Today ────────────────────────────────
-
-# Legacy staircase — stage number → short name (audit-write.md "FIRM STAGE").
-STAGE_NAMES = {2: "The Lawyer", 3: "Solo Practitioner", 4: "Small Business Manager",
-               5: "Law Firm CEO", 6: "Law Firm Owner"}
-
-
 def add_rich_text(slide, paras, left, top, w, h, label="", anchor=None, min_scale=0.75):
     """One text box holding several paragraphs, each a list of runs
     (text, size, bold, italic, color) plus a space-before in pt. Every size
@@ -526,280 +584,932 @@ def add_rule(slide, x1, y1, x2, y2, color, weight_pt=0.75):
     conn.line.width = P(weight_pt)
 
 
-def build_staircase_card(slide, x, y, w, h):
-    """Navy card: where the firm is today and where it needs to be, on the
-    legacy staircase (stages 2–6). Current step filled lime, goal step
-    outlined lime, steps already climbed muted green, the rest muted navy."""
+def add_shape(slide, kind, left, top, w, h, fill=None, line_color=None,
+              line_pt=1.0, dash=False):
+    """Any autoshape (oval, rounded rectangle, …) with an optional solid
+    fill and optional (dashed) outline; no outline when line_color is None."""
     from pptx.util import Emu as E, Pt as P
-    add_rect(slide, x, y, w, h, fill=NAVY)
-    current, goal, cur_n, goal_n = parse_stage_text(STAGE_TEXT)
-
-    def stage_label(text, n):
-        # The official staircase name for the stage number, so it always
-        # matches the audit; free text only if no stage number was given.
-        if n in STAGE_NAMES:
-            return STAGE_NAMES[n]
-        return re.sub(r"^\s*(?:Goal:\s*)?Stage\s*\d\s*[:,–—-]?\s*", "", text or "", flags=re.I)
-
-    half = (w - 0.50) / 2
-    cur_name = stage_label(current, cur_n)
-    goal_name = stage_label(goal, goal_n) if goal else ""
-    # Both stage names share one size so the two ends read as a pair.
-    name_size = min(fit_text(t, half, 0.46, 12, bold=True, max_lines=2, min_size=9)[0] or 9
-                    for t in [cur_name, goal_name] if t) if (cur_name or goal_name) else 12
-    cur_kicker = f"TODAY  ·  STAGE {cur_n}" if cur_n else "TODAY"
-    add_text(slide, cur_kicker, x+0.20, y+0.12, half, 0.18, 7.5, LIME_GREEN, bold=True,
-             fit=False)
-    add_text(slide, cur_name, x+0.20, y+0.28, half, 0.46, name_size, WHITE, bold=True,
-             max_lines=2, min_size=name_size, cap_label="STAGE_TEXT current")
-    if goal:
-        goal_kicker = f"GOAL  ·  STAGE {goal_n}" if goal_n else "GOAL"
-        add_text(slide, goal_kicker, x+0.30+half, y+0.12, half, 0.18, 7.5,
-                 LIME_GREEN, bold=True, fit=False, align=PP_ALIGN.RIGHT)
-        add_text(slide, goal_name, x+0.30+half, y+0.28, half, 0.46, name_size,
-                 WHITE, bold=True, max_lines=2, min_size=name_size, align=PP_ALIGN.RIGHT,
-                 cap_label="STAGE_TEXT goal")
-
-    if cur_n is None:
-        return
-    stages = [2, 3, 4, 5, 6]
-    gap = 0.06
-    # Same staircase size whether the card is half or full width; on a
-    # full-width card it sits to the right, under the goal label.
-    area_w = min(w - 0.40, 3.80)
-    area_x = x + w - 0.20 - area_w
-    step_w = (area_w - gap * (len(stages) - 1)) / len(stages)
-    base = y + h - 0.16
-    top_room = y + 0.86
-    unit = (base - top_room) / len(stages)
-    for i, n in enumerate(stages):
-        sx = area_x + i * (step_w + gap)
-        sh_h = unit * (i + 1)
-        bar = slide.shapes.add_shape(1, E(int(sx*914400)), E(int((base-sh_h)*914400)),
-                                     E(int(step_w*914400)), E(int(sh_h*914400)))
-        bar.fill.solid()
-        if n == cur_n:
-            bar.fill.fore_color.rgb = LIME_GREEN
-            bar.line.fill.background()
-            num_color = GOAL_TEXT_DARK
-        elif n < cur_n:
-            bar.fill.fore_color.rgb = rgb("2F6B3A")
-            bar.line.fill.background()
-            num_color = rgb("A9D68C")
-        elif n == goal_n:
-            bar.fill.fore_color.rgb = NAVY
-            bar.line.color.rgb = LIME_GREEN
-            bar.line.width = P(1.5)
-            num_color = LIME_GREEN
-        else:
-            bar.fill.fore_color.rgb = URGENCY_CARD
-            bar.line.fill.background()
-            num_color = URGENCY_SUB
-        add_text(slide, str(n), sx, base - 0.30, step_w, 0.28, 10, num_color, bold=True,
-                 align=PP_ALIGN.CENTER, fit=False)
-
-
-def build_slide1(prs):
-    layout = prs.slide_layouts[6]  # blank
-    slide = prs.slides.add_slide(layout)
-    add_header(slide, f"Where {FIRM_NAME} Stands Today", 9.30)
-
-    quotes = [(who or "You said", q) for who, q in PROSPECT_QUOTES[:3] if q]
-
-    # Left: "What you told us" — the prospect's own words, one card, one text box.
-    if quotes:
-        add_text(slide, "WHAT YOU TOLD US", 0.30, 1.08, 5.00, 0.20, 7.5, NAVY, bold=True,
-                 fit=False)
-        add_rect(slide, 0.30, 1.32, 5.00, 2.06, fill=WHITE)
-        add_rect(slide, 0.30, 1.32, 0.05, 2.06, fill=LIME_GREEN)
-        paras = []
-        for i, (who, q) in enumerate(quotes):
-            q = cap(q.strip().strip('"“”'), 130, f"PROSPECT_QUOTES[{i}]")
-            paras.append(([(f"{who.upper()}:", 7.5, True, False, GREEN)], 0 if i == 0 else 9))
-            paras.append(([(f"“{q}”", 11, False, True, NAVY)], 1))
-        add_rich_text(slide, paras, 0.50, 1.40, 4.70, 1.92, label="PROSPECT_QUOTES",
-                      anchor=MSO_ANCHOR.MIDDLE)
-
-    # Right (or full width with no transcript): where they are vs. where they need to be.
-    stair_x, stair_w = (5.50, 4.20) if quotes else (0.30, 9.40)
-    add_text(slide, "WHERE YOU ARE TODAY", stair_x, 1.08, stair_w, 0.20, 7.5, NAVY,
-             bold=True, fit=False)
-    build_staircase_card(slide, stair_x, 1.32, stair_w, 2.06)
-
-    # Bottom: the main gaps from the audit, grouped by category — one card,
-    # three columns separated by thin rules, no per-item boxes.
-    add_text(slide, "YOUR KEY GAPS", 0.30, 3.50, 4.00, 0.20, 7.5, NAVY, bold=True, fit=False)
-    add_rect(slide, 0.30, 3.74, 9.40, 1.36, fill=WHITE)
-    gaps = KEY_GAPS[:3]
-    col_w = 9.40 / max(1, len(gaps))
-    for i, (category, gap) in enumerate(gaps):
-        cx = 0.30 + i * col_w
-        if i:
-            add_rule(slide, cx, 3.92, cx, 4.94, rgb("D9E2E8"))
-        add_rect(slide, cx+0.24, 3.94, 0.28, 0.04, fill=LIME_GREEN if i % 2 else NAVY)
-        add_text(slide, category.upper(), cx+0.18, 4.02, col_w-0.36, 0.22, 8, NAVY,
-                 bold=True, max_lines=1, cap_label=f"KEY_GAPS[{i}] category")
-        add_text(slide, gap, cx+0.18, 4.26, col_w-0.36, 0.76, 10.5, BODY_TEXT,
-                 max_lines=3, cap_chars=90, cap_label=f"KEY_GAPS[{i}] gap")
-
-    add_footer(slide, 1, 3, LOGO_PATH)
-
-
-# ── Slide 2: Growth Plan ───────────────────────────────────────────
-
-def build_slide2(prs):
-    layout = prs.slide_layouts[6]
-    slide = prs.slides.add_slide(layout)
-
-    # Background wash + header (shared with slides 1 and 3)
-    add_header(slide, SLIDE_2_TITLE, 9.30)
-
-    # Just the prospect's 3 priorities, full width. Each is one colored
-    # header block over one white card holding a single bulleted text box.
-    col_w, gap = 2.98, 0.23
-    for col_i, (line1, line2, _hex, bullets) in enumerate(PRIORITIES[:3]):
-        x = 0.30 + col_i * (col_w + gap)
-        ac, title_color, kicker_color = PRIORITY_STYLE[col_i % len(PRIORITY_STYLE)]
-
-        add_rect(slide, x, 1.10, col_w, 0.96, fill=ac)
-        add_text(slide, f"PRIORITY {col_i+1}", x+0.20, 1.20, col_w-0.40, 0.20, 8,
-                 kicker_color, bold=True, fit=False)
-        # Title keeps the FILL's own line break (line1 / line2); both lines
-        # share one size so the block reads as a single heading.
-        title_w = col_w - 0.40
-        sizes = [fit_text(t, title_w, 0.30, 14, bold=True, max_lines=1)[0] or 10.5
-                 for t in (line1, line2) if t]
-        title_size = min(sizes) if sizes else 14
-        for row, t in enumerate([t for t in (line1, line2) if t]):
-            add_text(slide, t, x+0.20, 1.40 + row*0.27, title_w, 0.30, title_size,
-                     title_color, bold=True, max_lines=1, min_size=title_size,
-                     cap_label=f"PRIORITIES[{col_i}] title")
-
-        add_rect(slide, x, 2.06, col_w, 3.00, fill=WHITE)
-        add_bullets(slide, [cap(b, 60, f"PRIORITIES[{col_i}] bullet {j+1}")
-                            for j, b in enumerate(bullets[:5])],
-                    x+0.14, 2.22, col_w-0.28, 2.74, 11, DARK_TEXT, ac,
-                    label=f"PRIORITIES[{col_i}] bullets")
-
-    add_footer(slide, 2, 3, LOGO_PATH)
-
-
-# ── Slide 3: Investment & Next Steps ──────────────────────────────
-
-def build_slide3(prs):
-    # Never render an empty panel: with no transcript, Block 5 becomes
-    # "What We Found" and this list still gets 3 research-based items.
-    if len(WHAT_YOU_TOLD_US) != 3:
-        raise SystemExit(
-            f"WHAT_YOU_TOLD_US has {len(WHAT_YOU_TOLD_US)} items; Slide 3 needs exactly 3. "
-            "With no discovery call transcript, copy the 3 research-based rows from "
-            "section_11 Block 5 (What We Found).")
-
-    layout = prs.slide_layouts[6]
-    slide = prs.slides.add_slide(layout)
-
-    # Background wash + header (mirrors slides 1 and 2)
-    add_header(slide, "Your Investment & What Happens Next", 9.30)
-
-    # Package cards — white with a thin colored left accent bar
-    pkg_ys = [1.10, 2.25]
-    for i, (label, price, retail, services, hex_c) in enumerate(PACKAGES[:2]):
-        y = pkg_ys[i]
-        ac = rgb(hex_c)
-        add_rect(slide, 0.30, y, 4.42, 1.05, fill=WHITE)
-        add_rect(slide, 0.30, y, 0.04, 1.05, fill=ac)
-        add_text(slide, label, 0.56, y+0.12, 3.96, 0.20, 7.5, ac, bold=True,
-                 max_lines=1, cap_label=f"PACKAGES[{i}] label")
-        # Price, "/mo" and retail price share one baseline; "/mo" follows the
-        # price's measured width so it never collides or wraps.
-        price_top = y + 0.27
-        price_size, _ = fit_text(price, 2.60, 0.58, 30, bold=True, max_lines=1)
-        price_size = price_size or 22
-        add_text(slide, price, 0.56, price_top, 2.60, 0.58, price_size, NAVY,
-                 bold=True, fit=False)
-        baseline = price_top + baseline_offset(price_size, bold=True)
-        mo_x = 0.56 + _INSET_X + text_width(price, price_size, bold=True) + 0.04 - _INSET_X
-        add_text(slide, "/mo", mo_x, baseline - baseline_offset(10), 0.50, 0.24, 10,
-                 SLATE, wrap=False, fit=False)
-        retail_x = mo_x + 2 * _INSET_X + text_width("/mo", 10) + 0.06
-        add_text(slide, retail, retail_x, baseline - baseline_offset(10),
-                 4.62 - retail_x, 0.24, 10, SLATE, align=PP_ALIGN.RIGHT,
-                 max_lines=1, cap_label=f"PACKAGES[{i}] retail")
-        add_text(slide, services, 0.56, y+0.80, 3.96, 0.22, 8.5, SLATE, max_lines=1,
-                 cap_chars=61, cap_label=f"PACKAGES[{i}] services")
-
-    # Bundle total — same 0.10in gap used between the two package cards above
-    add_rect(slide, 0.30, 3.40, 4.42, 0.72, fill=NAVY)
-    add_rect(slide, 0.30, 3.40, 0.04, 0.72, fill=LIME_GREEN)
-    add_text(slide, "BUNDLE TOTAL", 0.56, 3.50, 1.70, 0.18, 7.5, LIME_GREEN, bold=True,
-             fit=False)
-    total_size, _ = fit_text(BUNDLE_TOTAL, 2.40, 0.40, 17, bold=True, max_lines=1)
-    total_size = total_size or 13
-    add_text(slide, BUNDLE_TOTAL, 0.56, 3.66, 2.40, 0.40, total_size, WHITE, bold=True,
-             fit=False)
-    # Savings line sits to the right of the measured total, on its baseline,
-    # and shrinks to fit the space left inside the card.
-    total_baseline = 3.66 + baseline_offset(total_size, bold=True)
-    savings_x = 0.56 + text_width(BUNDLE_TOTAL, total_size, bold=True) + 0.20
-    add_text(slide, BUNDLE_SAVINGS, savings_x, total_baseline - baseline_offset(8.5),
-             4.62 - savings_x, 0.22, 8.5, BUNDLE_SAVINGS_TEXT, align=PP_ALIGN.RIGHT,
-             max_lines=1, cap_label="BUNDLE_SAVINGS")
-
-    # Ad spend note + ROI-on-ad-spend card — both omitted entirely when no
-    # marketing/ads package was sold. Showing a return-on-ad-spend projection
-    # for ad spend that isn't part of the recommendation is the same bug as
-    # the missing-rationale note, just in a second spot on this slide.
-    has_ad_spend = bool(AD_SPEND_NOTE)
-
-    if has_ad_spend:
-        add_rect(slide, 0.30, 4.22, 4.42, 0.42, fill=rgb("EEF2F5"))
-        add_text(slide, AD_SPEND_NOTE, 0.50, 4.22, 4.02, 0.42, 8, BODY_TEXT,
-                 cap_chars=120, cap_label="AD_SPEND_NOTE")
-
-        # ROI card
-        add_rect(slide, 5.00, 1.10, 4.70, 1.42, fill=ROI_BG)
-        add_text(slide, "PROJECTED RETURN ON AD SPEND",
-                 5.22, 1.26, 4.26, 0.16, 7.5, ROI_GREEN, bold=True)
-        add_text(slide, "Average case value:", 5.22, 1.58, 1.95, 0.18, 8.5, DARK_TEXT, bold=True)
-        add_text(slide, AVG_CASE_VALUE, 7.25, 1.58, 2.30, 0.18, 8.5, ROI_GREEN)
-        add_rect(slide, 5.14, 1.83, 4.42, 0.28, fill=ROI_HILIGHT)
-        add_text(slide, CONSERVATIVE_LABEL, 5.22, 1.90, 1.95, 0.18, 8.5, DARK_TEXT, bold=True)
-        add_text(slide, CONSERVATIVE_RESULT, 7.25, 1.90, 2.30, 0.18, 8.5, ROI_GREEN, bold=True)
-        add_text(slide, AGGRESSIVE_LABEL, 5.22, 2.21, 1.95, 0.18, 8.5, DARK_TEXT, bold=True)
-        add_text(slide, AGGRESSIVE_RESULT, 7.25, 2.21, 2.30, 0.18, 8.5, ROI_GREEN, bold=True)
-
-        told_us_y = 2.72
-        timeline_ys = [2.99, 3.37, 3.75, 4.13]
+    shp = slide.shapes.add_shape(kind, E(int(left*914400)), E(int(top*914400)),
+                                 E(int(w*914400)), E(int(h*914400)))
+    if fill is not None:
+        shp.fill.solid()
+        shp.fill.fore_color.rgb = fill
     else:
-        # No ROI card above it — give What You Told Us the full right-column height.
-        told_us_y = 1.10
-        timeline_ys = [1.46, 2.06, 2.66, 3.26]
+        shp.fill.background()
+    if line_color is not None:
+        shp.line.color.rgb = line_color
+        shp.line.width = P(line_pt)
+        if dash:
+            shp.line.dash_style = MSO_LINE.DASH
+    else:
+        shp.line.fill.background()
+    return shp
 
-    # How this plan addresses it — alternating light/white rows; the first dot pops in
-    # lime green, the rest in ocean blue, so the lead item stands out
-    add_text(slide, "HOW THIS PLAN ADDRESSES IT",
-             5.00, told_us_y, 4.70, 0.18, 7.5, NAVY, bold=True)
-    for i, (milestone, action) in enumerate(WHAT_YOU_TOLD_US[:3]):
-        y = timeline_ys[i]
-        row_bg = rgb("EEF2F5") if i % 2 == 0 else WHITE
-        dot_color = LIME_GREEN if i == 0 else OCEAN_BLUE
-        add_rect(slide, 5.00, y, 4.70, 0.29, fill=row_bg)
-        add_rect(slide, 5.14, y+0.09, 0.10, 0.10, fill=dot_color)
-        add_text(slide, milestone, 5.30, y, 1.25, 0.29, 8, NAVY, bold=True,
-                 max_lines=1, anchor=MSO_ANCHOR.MIDDLE,
-                 cap_chars=16, cap_label=f"WHAT_YOU_TOLD_US[{i}] label")
-        add_text(slide, action, 6.50, y, 3.20, 0.29, 8, BODY_TEXT,
-                 max_lines=1, anchor=MSO_ANCHOR.MIDDLE,
-                 cap_chars=55, cap_label=f"WHAT_YOU_TOLD_US[{i}] action")
 
-    # Closing quote bar — taller, darker navy, with the same lime accent stripe
-    add_rect(slide, 0, 4.66, 10, 0.61, fill=rgb("002A41"))
-    add_rect(slide, 0, 4.66, 10, 0.02, fill=LIME_GREEN)
-    add_text(slide, CLOSING_QUOTE, 0.70, 4.70, 8.60, 0.54, 9.5, rgb("C2D8E6"),
-             align=PP_ALIGN.CENTER, max_lines=2, anchor=MSO_ANCHOR.MIDDLE,
-             cap_chars=200, cap_label="CLOSING_QUOTE")
+def add_badge(slide, n, left, top, d, fill, color=WHITE):
+    """A numbered circle (diagnosis and plan cards)."""
+    add_shape(slide, MSO_SHAPE.OVAL, left, top, d, d, fill=fill)
+    add_text(slide, str(n), left - 0.05, top, d + 0.10, d, 10 if d < 0.34 else 11,
+             color, bold=True, align=PP_ALIGN.CENTER, anchor=MSO_ANCHOR.MIDDLE,
+             fit=False)
 
-    add_footer(slide, 3, 3, LOGO_PATH)
+
+def add_pill(slide, text, left, top, h, fill, color=WHITE, size=7.5, max_w=4.0):
+    """A rounded label sized to its text."""
+    text = str(text).upper()
+    w = min(max_w, text_width(text, size, bold=True) + 2 * _INSET_X + 0.30)
+    pill = add_shape(slide, MSO_SHAPE.ROUNDED_RECTANGLE, left, top, w, h, fill=fill)
+    pill.adjustments[0] = 0.5
+    add_text(slide, text, left, top, w, h, size, color, bold=True,
+             align=PP_ALIGN.CENTER, anchor=MSO_ANCHOR.MIDDLE, max_lines=1,
+             cap_label="pill")
+    return w
+
+
+def add_strip(slide, lead, text, top, h=0.48, label=""):
+    """White strip with an Ocean Blue edge: bold lead-in + one line of copy."""
+    text = re.sub(r"^\s*" + re.escape(lead.rstrip(":")) + r"\s*:?\s*", "", str(text), flags=re.I)
+    add_rect(slide, 0.30, top, 9.40, h, fill=WHITE)
+    add_rect(slide, 0.30, top, 0.05, h, fill=OCEAN_BLUE)
+    add_rich_text(slide, [([(lead + " ", 9.5, True, False, NAVY),
+                            (text, 9.5, False, False, DARK_TEXT)], 0)],
+                  0.50, top, 9.10, h, label=label, anchor=MSO_ANCHOR.MIDDLE)
+
+
+def new_slide(prs):
+    return prs.slides.add_slide(prs.slide_layouts[6])  # blank
+
+
+# Seller prep notes, collected per slide while building (written to the prep file, not the deck).
+_NOTES = {}
+
+
+def note(key, text):
+    if text:
+        _NOTES.setdefault(key, []).append(str(text).strip())
+
+
+def seller_note(key):
+    """SELLER_NOTES entry for a slide name ("priorities", "plan", …)."""
+    return SELLER_NOTES.get(key) if isinstance(SELLER_NOTES, dict) else None
+
+
+SLIDE_TITLES = {"priorities": "Your Priorities, In Your Words", "staircase": "Lawyer Legacy Staircase",
+                "diagnosis": "The Diagnosis", "plan": "The Plan", "strategy": "The Recommended Strategy",
+                "rollout": "Rollout Plan", "investment": "Your Investment"}
+
+
+def seller_prep_path():
+    base = re.sub(r"_Proposal\.pptx$|\.pptx$", "", OUTPUT_PATH)
+    return base + "_Seller_Prep.txt"
+
+
+def write_notes(prs):
+    """Seller prep goes to a text file beside the deck, never into the
+    .pptx: its speaker notes are left empty because the deck is shared on a
+    public link and may be forwarded to the client."""
+    for slide in prs.slides:
+        if slide.has_notes_slide:
+            slide.notes_slide.notes_text_frame.text = ""
+    sections = []
+    for key in SLIDE_ORDER:
+        lines = list(_NOTES.get(key, []))
+        own = seller_note(key)
+        if own:
+            lines.insert(0, str(own).strip())
+        if lines:
+            sections.append(f"Slide {PAGE[key]} — {SLIDE_TITLES.get(key, key)}\n" +
+                            "\n".join("- " + l.replace("\n", "\n  ") for l in lines))
+    path = seller_prep_path()
+    if sections:
+        head = (f"SELLER PREP — {FIRM_NAME}\n"
+                "For the seller only. Not in the deck; don't forward it to the client.\n\n")
+        if os.path.dirname(path):
+            os.makedirs(os.path.dirname(path), exist_ok=True)
+        with open(path, "w", encoding="utf-8") as f:
+            f.write(head + "\n\n".join(sections) + "\n")
+    elif os.path.exists(path):
+        os.remove(path)
+
+
+def _quote(text):
+    return "“" + str(text).strip().strip('"“”') + "”"
+
+
+# ── Quotes: verbatim, attributed, never repeated ──────────────────
+
+def deck_quotes():
+    """Every client quote on the deck: (slide key, where, text, said_by)."""
+    out = []
+    if KPI_FOCUS.get("headline_is_quote"):
+        out.append(("priorities", "KPI headline", KPI_FOCUS.get("headline"), KPI_FOCUS.get("said_by")))
+    for i, q in enumerate(PROSPECT_QUOTES or []):
+        if q and len(q) >= 2 and q[1]:
+            out.append(("priorities", f"PROSPECT_QUOTES[{i}]", q[1], q[3] if len(q) > 3 else None))
+    for name, q in (("CLIENT_WHY", CLIENT_WHY), ("COST_OF_INACTION", COST_OF_INACTION)):
+        if q:
+            out.append(("priorities", name, q[0], q[2] if len(q) > 2 else None))
+    if CLOSING_QUOTE:
+        out.append(("investment", "CLOSING_QUOTE", CLOSING_QUOTE[0],
+                    CLOSING_QUOTE[1] if len(CLOSING_QUOTE) > 1 else None))
+    return out
+
+
+def _tokens(text):
+    return re.findall(r"[a-z0-9]+", str(text).lower().replace("’", "'").replace("'", ""))
+
+
+def _found_in(segment, hay, slack=3):
+    """Is `segment` in `hay` word for word, allowing up to `slack` dropped
+    filler words ("you know", "um") inside the quoted stretch?"""
+    seg = _tokens(segment)
+    if len(seg) < 3:
+        return True
+    for j, tok in enumerate(hay):
+        if tok != seg[0]:
+            continue
+        k, skipped = j + 1, 0
+        ok = True
+        for want in seg[1:]:
+            while k < len(hay) and hay[k] != want and skipped <= slack:
+                k += 1
+                skipped += 1
+            if k >= len(hay) or hay[k] != want or skipped > slack:
+                ok = False
+                break
+            k += 1
+        if ok:
+            return True
+    return False
+
+
+def _research_notes_text():
+    import glob
+    here = os.path.dirname(os.path.abspath(__file__))
+    files = sorted(glob.glob(os.path.join(here, "*_Research_Notes.txt")), key=os.path.getmtime)
+    return open(files[-1], encoding="utf-8").read() if files else None
+
+
+def check_quotes(problems):
+    if FIRM_NAME == "FIRM NAME HERE":
+        return  # the unfilled master template's placeholders
+    quotes = deck_quotes()
+    seller = [t for t in _tokens(SALES_REP) if len(t) > 2]
+    for _, where, text, said_by in quotes:
+        if not str(said_by or "").strip():
+            problems.append(f'{where}: add who said it ("Full Name (client), 00:00:00").')
+        elif (seller and all(t in _tokens(said_by) for t in seller)) or re.search(
+                r"\b(seller|smb team|rep)\b", str(said_by), re.I):
+            problems.append(f"{where}: said by the seller ({said_by}) — only the client's own words go on the deck.")
+    # No quote twice (the closing line is the usual offender).
+    for i in range(len(quotes)):
+        for j in range(i + 1, len(quotes)):
+            a, b = set(_tokens(quotes[i][2])), set(_tokens(quotes[j][2]))
+            if a and b and len(a & b) / min(len(a), len(b)) >= 0.6:
+                problems.append(f"{quotes[j][1]} repeats {quotes[i][1]} — use a different verbatim line, or None.")
+    # Verbatim: every quote (each piece between "…" cuts) must be in the
+    # research notes, which carry the transcript lines word for word.
+    notes = _research_notes_text()
+    if notes is None:
+        if FIRM_NAME != "FIRM NAME HERE":
+            print("NOTE: no research notes next to this script — verbatim quote check skipped.")
+        return
+    hay = _tokens(notes)
+    for _, where, text, _ in quotes:
+        for seg in re.split(r"…|\.\.\.", str(text)):
+            if seg.strip() and not _found_in(seg, hay):
+                problems.append(f'{where}: "{seg.strip()[:60]}" is not word for word in the research notes '
+                                "— copy the client's exact words.")
+                break
+
+
+def attribution_notes():
+    by_slide = {}
+    for key, _, text, said_by in deck_quotes():
+        t = str(text).strip().strip('"“”')
+        by_slide.setdefault(key, []).append(f"“{t[:70]}{'…' if len(t) > 70 else ''}” — {said_by}")
+    for key, lines in by_slide.items():
+        note(key, "Who said the quotes on this slide:\n" + "\n".join(lines))
+
+
+def validate_fill():
+    """Stop the build on structural mistakes instead of drawing a broken
+    slide. Content rules (sources, exact figures) live in audit-pptx.md."""
+    problems = []
+    kind = KPI_FOCUS.get("kind")
+    if kind not in ("kpi", "qualitative"):
+        problems.append('KPI_FOCUS["kind"] must be "kpi" or "qualitative".')
+    for key in ("label", "headline", "detail"):
+        if not str(KPI_FOCUS.get(key) or "").strip():
+            problems.append(f'KPI_FOCUS["{key}"] is empty.')
+    if kind == "qualitative" and not str(seller_note("priorities") or "").strip():
+        problems.append('KPI_FOCUS is "qualitative": SELLER_NOTES["priorities"] must tell the '
+                        "seller there was no usable number on the call and what to ask for.")
+    if STAIRCASE is not None:
+        if not isinstance(STAIRCASE, dict):
+            problems.append('STAIRCASE must be None or {"current": N or None, "goal": N or None}.')
+        else:
+            for k in ("current", "goal"):
+                v = STAIRCASE.get(k)
+                if v is not None and v not in range(1, 9):
+                    problems.append(f'STAIRCASE["{k}"] must be a stage 1–8 or None.')
+    for name, val in (("CLIENT_WHY", CLIENT_WHY), ("COST_OF_INACTION", COST_OF_INACTION)):
+        if val is not None and not (isinstance(val, (tuple, list)) and val and str(val[0]).strip()):
+            problems.append(f"{name} must be None or (quote, speaker_label).")
+    if not 3 <= len(DIAGNOSIS) <= 4:
+        problems.append(f"DIAGNOSIS has {len(DIAGNOSIS)} causes; slide 2 needs 3 or 4.")
+    if not 3 <= len(PLAN) <= 4:
+        problems.append(f"PLAN has {len(PLAN)} actions; slide 3 needs 3 or 4.")
+    for i, p in enumerate(PLAN):
+        if not isinstance(p.get("fixes"), int) or not 1 <= p["fixes"] <= len(DIAGNOSIS):
+            problems.append(f'PLAN[{i}]["fixes"] must be a DIAGNOSIS number (1–{len(DIAGNOSIS)}).')
+        if not 1 <= len(p.get("actions") or []) <= 4:
+            problems.append(f'PLAN[{i}]["actions"] needs 1–4 bullets.')
+    covered = {p.get("fixes") for p in PLAN}
+    for n in range(1, len(DIAGNOSIS) + 1):
+        if n not in covered:
+            problems.append(f"DIAGNOSIS {n} has no PLAN action — every cause needs a fix.")
+    if not 1 <= len(STRATEGY) <= 3:
+        problems.append(f"STRATEGY has {len(STRATEGY)} pieces; slide 4 needs 1–3.")
+    for label, items in (("DIAGNOSIS", DIAGNOSIS), ("PLAN", PLAN)):
+        for i, d in enumerate(items):
+            t = d.get("target")
+            if t and re.match(r"\s*target\s*:", str(t), re.I):
+                problems.append(f'{label}[{i}]["target"] starts with "Target:" — the engine adds it.')
+    check_quotes(problems)
+    if problems:
+        raise SystemExit("Deck not built — fix the values above the LAYOUT ENGINE line:\n  - " + "\n  - ".join(problems))
+
+
+# ── Slide 1: Your Priorities, In Your Words ───────────────────────
+
+def build_priorities(prs):
+    slide = new_slide(prs)
+    add_header(slide, "Your Priorities, In Your Words", 9.30, kicker="WHAT WE HEARD")
+    quotes = [q for q in PROSPECT_QUOTES[:3] if q and len(q) >= 2 and q[1]]
+    voice = [(lab, v, col) for lab, v, col in
+             (("WHY IT MATTERS TO YOU", CLIENT_WHY, LIME_GREEN),
+              ("IF NOTHING CHANGES", COST_OF_INACTION, CORAL))
+             if v and str(v[0]).strip()]
+
+    # With the client's why / cost of inaction there's a bottom row for them,
+    # so the KPI card and quote cards get shorter and quotes cap at two.
+    x, y = 0.30, 1.08
+    h = 2.56 if voice else 4.00
+    if voice:
+        quotes = quotes[:2]
+    w = 4.60 if quotes else 9.40
+    compact = bool(voice)
+
+    # Left (full width with no quotes): the one number from the call.
+    add_rect(slide, x, y, w, h, fill=NAVY)
+    add_pill(slide, KPI_FOCUS["label"], x + 0.24, y + (0.18 if compact else 0.24), 0.27,
+             OCEAN_BLUE, max_w=w - 0.48)
+    headline = KPI_FOCUS["headline"]
+    if KPI_FOCUS.get("headline_is_quote"):
+        headline = _quote(headline)
+    hl_top = y + (0.52 if compact else 0.64)
+    hl_h, hl_size, hl_lines = (0.86, 19, 2) if compact else (1.40, 22, 3)
+    add_text(slide, headline, x + 0.18, hl_top, w - 0.36, hl_h, hl_size, WHITE,
+             bold=True, max_lines=hl_lines, min_size=13, anchor=MSO_ANCHOR.TOP,
+             cap_label="KPI_FOCUS headline")
+    # The detail line sits right under the headline, however many lines it took.
+    h_size, h_lines = fit_text(headline, w - 0.36, hl_h, hl_size, bold=True,
+                               max_lines=hl_lines, min_size=13)
+    used = (len(h_lines) * line_height(h_size, bold=True) + 2 * _INSET_Y) if h_lines else hl_h
+    stats = [s for s in (KPI_FOCUS.get("stats") or [])[:2] if s and s[1]]
+    rule_y = y + h - (0.98 if not compact else 0.74)
+    detail_top = hl_top + used + (0.06 if compact else 0.12)
+    add_text(slide, KPI_FOCUS["detail"], x + 0.18, detail_top, w - 0.36,
+             max(0.30, (rule_y if stats else y + h - 0.10) - detail_top - 0.04),
+             10 if compact else 10.5, NAVY_TEXT_SOFT, max_lines=3, min_size=8,
+             cap_label="KPI_FOCUS detail")
+    if stats:
+        add_rule(slide, x + 0.24, rule_y, x + w - 0.24, rule_y, NAVY_RULE)
+        col = (w - 0.36) / len(stats)
+        for i, (lab, val) in enumerate(stats):
+            sx = x + 0.18 + i * col
+            add_text(slide, str(lab).upper(), sx, rule_y + 0.08, col - 0.08, 0.22, 7.5,
+                     LIME_GREEN, bold=True, max_lines=1, cap_label=f"KPI stat {i+1} label")
+            add_text(slide, val, sx, rule_y + 0.28, col - 0.08, (y + h) - (rule_y + 0.30), 10,
+                     WHITE, max_lines=2, min_size=8, cap_label=f"KPI stat {i+1} value")
+
+    # Right: the client's other priorities, one card each.
+    if quotes:
+        qx, qw, gap = 5.08, 4.62, 0.12
+        ch = (h - gap * (len(quotes) - 1)) / len(quotes)
+        for i, q in enumerate(quotes):
+            topic, text = q[0], q[1]
+            tie = q[2] if len(q) > 2 else ""
+            cy = y + i * (ch + gap)
+            add_rect(slide, qx, cy, qw, ch, fill=WHITE)
+            add_rect(slide, qx, cy, 0.06, ch, fill=OCEAN_BLUE)
+            add_text(slide, str(topic).upper(), qx + 0.20, cy + 0.10, qw - 0.34, 0.22,
+                     7.5, OCEAN_BLUE, bold=True, max_lines=1,
+                     cap_label=f"PROSPECT_QUOTES[{i}] topic")
+            tie_h = 0.30 if tie else 0
+            add_text(slide, _quote(cap(str(text).strip().strip('"“”'), 130,
+                                       f"PROSPECT_QUOTES[{i}] quote")),
+                     qx + 0.20, cy + 0.30, qw - 0.34, ch - 0.38 - tie_h, 11, DARK_TEXT,
+                     min_size=8.5, cap_label=f"PROSPECT_QUOTES[{i}] quote")
+            if tie:
+                add_text(slide, tie, qx + 0.20, cy + ch - 0.36, qw - 0.34, 0.28, 8.5,
+                         NAVY, bold=True, max_lines=1, min_size=7.5, cap_chars=80,
+                         cap_label=f"PROSPECT_QUOTES[{i}] tie line")
+
+    # Bottom row: their why, and what happens if nothing changes — their words.
+    if voice:
+        vy, vh, gap = y + h + 0.12, 5.12 - (y + h + 0.12), 0.20
+        vw = (9.40 - gap * (len(voice) - 1)) / len(voice)
+        for i, (label, quote_fill, accent) in enumerate(voice):
+            text, who = quote_fill[0], (quote_fill[1] if len(quote_fill) > 1 else "")
+            vx = 0.30 + i * (vw + gap)
+            add_rect(slide, vx, vy, vw, vh, fill=WHITE)
+            add_rect(slide, vx, vy, vw, 0.05, fill=accent)
+            kicker = label + (f"  ·  {str(who).upper()}" if who else "")
+            add_text(slide, kicker, vx + 0.18, vy + 0.12, vw - 0.36, 0.20, 7.5,
+                     GREEN if accent == LIME_GREEN else CORAL, bold=True, max_lines=1,
+                     cap_label=f"{label} kicker")
+            add_text(slide, _quote(cap(str(text).strip().strip('"“”'), 150, label)),
+                     vx + 0.18, vy + 0.34, vw - 0.36, vh - 0.42, 12, NAVY, bold=True,
+                     italic=False, max_lines=3, min_size=9, anchor=MSO_ANCHOR.MIDDLE,
+                     cap_label=label)
+
+    if KPI_FOCUS.get("kind") == "qualitative":
+        note("priorities", "No usable number came out of the call, so this slide leads with the "
+                "client's pain point instead of a KPI.")
+    add_footer(slide, PAGE["priorities"], TOTAL_SLIDES, LOGO_PATH)
+
+
+# ── Optional: Lawyer Legacy Staircase ─────────────────────────────
+# The original SMB Team staircase graphic, rebuilt as native shapes so every
+# number and label is editable text. Colors are sampled from that graphic.
+
+STAIR_NAMES = {1: "Law Student", 2: "Lawyer", 3: "Solo Practitioner",
+               4: "Small Business Manager", 5: "Law Firm CEO", 6: "Law Firm Owner",
+               7: "Freedom Entrepreneur", 8: "Wealth Multiplier"}
+STAIR_COLORS = {1: "053C5B", 2: "125072", 3: "16658D", 4: "147DAD",
+                5: "1F95C3", 6: "3DA1A4", 7: "55AC81", 8: "6DBC4E"}
+STAIR_NAVY = rgb("053A59")
+STAIR_GREEN = rgb("71BF44")
+ABYSS_RED = rgb("ED1C24")
+LEAP_GRAY = rgb("818285")
+HERE_YELLOW = rgb("FFDB4F")
+
+
+def _line(slide, x1, y1, x2, y2, color, pt, dash=False, arrow=False):
+    from pptx.enum.shapes import MSO_CONNECTOR
+    from pptx.util import Emu as E, Pt as P
+    c = slide.shapes.add_connector(MSO_CONNECTOR.STRAIGHT, E(int(x1*914400)), E(int(y1*914400)),
+                                   E(int(x2*914400)), E(int(y2*914400)))
+    c.line.color.rgb = color
+    c.line.width = P(pt)
+    if dash:
+        c.line.dash_style = MSO_LINE.DASH
+    if arrow:
+        ln = c.line._get_or_add_ln()
+        tail = etree.SubElement(ln, qn("a:tailEnd"))
+        tail.set("type", "triangle"); tail.set("w", "med"); tail.set("len", "med")
+    return c
+
+
+def build_staircase(prs):
+    slide = new_slide(prs)
+    add_rect(slide, 0, 0, 10, 5.625, fill=WHITE)
+    add_text(slide, f"WHERE YOU ARE  ·  {FIRM_NAME.upper()}", 0.32, 0.16, 6.0, 0.18, 7.5,
+             rgb("147DAD"), bold=True, max_lines=1, cap_label="staircase kicker")
+    add_text(slide, "LAWYER LEGACY STAIRCASE", 0.30, 0.28, 9.40, 0.52, 24, STAIR_NAVY,
+             bold=True, align=PP_ALIGN.CENTER, max_lines=1, min_size=18)
+
+    cur = (STAIRCASE or {}).get("current")
+    goal = (STAIRCASE or {}).get("goal")
+    right, left0, dx = 7.05, 1.05, 0.40
+    bar_h, gap, base = 0.36, 0.05, 4.74
+    tops = {}
+    for n in range(1, 9):
+        top = base - n * bar_h - (n - 1) * gap
+        lx = left0 + (n - 1) * dx
+        tops[n] = (lx, top)
+        add_rect(slide, lx, top, right - lx, bar_h, fill=rgb(STAIR_COLORS[n]))
+        add_text(slide, STAIR_NAMES[n].upper(), lx + 0.10, top, right - lx - 0.20, bar_h,
+                 12.5, WHITE, bold=True, max_lines=1, min_size=9, anchor=MSO_ANCHOR.MIDDLE,
+                 cap_label=f"stage {n} name")
+        # Stage number: its own text box, editable like everything else.
+        add_text(slide, str(n), lx - 0.40, top - 0.02, 0.36, bar_h + 0.04, 18,
+                 rgb(STAIR_COLORS[n]) if n != 1 else STAIR_NAVY, bold=True,
+                 align=PP_ALIGN.RIGHT, fit=False, anchor=MSO_ANCHOR.MIDDLE)
+
+    # The green climb line hugging each step, with an arrow out of the top.
+    for n in range(1, 9):
+        lx, top = tops[n]
+        x = lx - 0.045
+        _line(slide, x, top + bar_h + (0.03 if n == 1 else gap / 2), x, top - gap / 2,
+              STAIR_GREEN, 2.75)
+        if n < 8:
+            nx = tops[n + 1][0] - 0.045
+            _line(slide, x, top - gap / 2, nx, top - gap / 2, STAIR_GREEN, 2.75)
+    lx8, top8 = tops[8]
+    _line(slide, lx8 - 0.045, top8 - gap / 2, lx8 + 0.55, top8 - gap / 2, STAIR_GREEN, 2.75)
+    _line(slide, lx8 + 0.55, top8 - gap / 2, lx8 + 0.55, top8 - 0.30, STAIR_GREEN, 2.75, arrow=True)
+    _line(slide, left0 - 0.30, base + 0.03, left0 - 0.045, base + 0.03, STAIR_GREEN, 2.75)
+
+    # The Leap (between 2 and 3) and the Abyss (between 4 and 5).
+    leap_y = tops[2][1] - gap / 2
+    _line(slide, 0.35, leap_y, right + 0.25, leap_y, LEAP_GRAY, 1.5)
+    add_text(slide, "THE LEAP", 0.30, leap_y - 0.24, 1.20, 0.22, 8, LEAP_GRAY, bold=True,
+             fit=False)
+    abyss_y = tops[4][1] - gap / 2
+    _line(slide, 0.30, abyss_y, 9.70, abyss_y, ABYSS_RED, 3.25, dash=True)
+    add_text(slide, "THE ABYSS", 7.42, abyss_y + 0.04, 2.30, 0.34, 15, ABYSS_RED, bold=True,
+             fit=False)
+    add_text(slide, "More revenue, but more of it runs through you.", 7.42, abyss_y + 0.36,
+             2.30, 0.44, 8.5, LEAP_GRAY, max_lines=2, min_size=7, cap_label="abyss below")
+    # The far side of the Abyss: more profit and more freedom.
+    add_shape(slide, MSO_SHAPE.UP_ARROW, 7.48, tops[7][1] + 0.05, 0.34, abyss_y - tops[7][1] - 0.14,
+              fill=STAIR_GREEN)
+    add_text(slide, "MORE PROFIT", 7.90, tops[7][1] + 0.02, 1.85, 0.34, 14, rgb("3F8F1A"),
+             bold=True, max_lines=1, min_size=10)
+    add_text(slide, "+ MORE FREEDOM", 7.90, tops[7][1] + 0.34, 1.85, 0.34, 14, rgb("3F8F1A"),
+             bold=True, max_lines=1, min_size=10)
+    add_text(slide, "The firm runs without you in every decision.", 7.90, tops[7][1] + 0.68,
+             1.85, 0.44, 8.5, STAIR_NAVY, max_lines=2, min_size=7, cap_label="abyss above")
+
+    # Time axis.
+    _line(slide, left0, base + 0.14, right, base + 0.14, LEAP_GRAY, 1)
+    add_text(slide, "TIME", left0, base + 0.16, 1.0, 0.30, 11, STAIR_NAVY, bold=True, fit=False)
+
+    # You are here / your goal — only when discussed on the call.
+    def marker(n, text, fill, color):
+        lx, top = tops[n]
+        w = text_width(text, 10, bold=True) + 0.34
+        px = right - w - 0.10
+        pill = add_shape(slide, MSO_SHAPE.ROUNDED_RECTANGLE, px, top + 0.04, w, bar_h - 0.08, fill=fill)
+        pill.adjustments[0] = 0.5
+        add_text(slide, text, px, top + 0.04, w, bar_h - 0.08, 10, color, bold=True,
+                 align=PP_ALIGN.CENTER, anchor=MSO_ANCHOR.MIDDLE, fit=False)
+        add_shape(slide, MSO_SHAPE.LEFT_ARROW, px - 0.42, top + 0.09, 0.36, bar_h - 0.18, fill=fill)
+    if cur:
+        marker(cur, "You Are Here!", HERE_YELLOW, rgb("114E6E"))
+    if goal and goal != cur:
+        marker(goal, "Your Goal", STAIR_GREEN, WHITE)
+
+    note("staircase", "Optional slide: it's here because the Legacy Staircase came up on the call. "
+         "Delete it if you won't walk through it." +
+         ("" if cur else " The client's stage wasn't placed on the call, so no 'You Are Here' marker is shown."))
+    add_footer(slide, PAGE["staircase"], TOTAL_SLIDES, LOGO_PATH)
+
+
+# ── Slide 2: The Diagnosis ────────────────────────────────────────
+
+def build_diagnosis(prs):
+    slide = new_slide(prs)
+    add_header(slide, DIAGNOSIS_TITLE, 9.30, kicker="THE DIAGNOSIS")
+
+    add_rect(slide, 0.30, 1.08, 9.40, 0.40, fill=NAVY)
+    add_text(slide, DIAGNOSIS_INTRO, 0.48, 1.08, 9.04, 0.40, 11, WHITE, bold=True,
+             max_lines=1, min_size=8.5, anchor=MSO_ANCHOR.MIDDLE, cap_label="DIAGNOSIS_INTRO")
+
+    n = len(DIAGNOSIS)
+    gap = 0.15
+    cw = (9.40 - gap * (n - 1)) / n
+    y, h = 1.60, 2.94
+    for i, d in enumerate(DIAGNOSIS):
+        cx = 0.30 + i * (cw + gap)
+        add_rect(slide, cx, y, cw, h, fill=WHITE)
+        add_badge(slide, i + 1, cx + 0.14, y + 0.15, 0.30, OCEAN_BLUE)
+        add_text(slide, d["title"], cx + 0.50, y + 0.08, cw - 0.60, 0.46, 10, NAVY,
+                 bold=True, max_lines=2, min_size=8, anchor=MSO_ANCHOR.MIDDLE,
+                 cap_label=f"DIAGNOSIS[{i}] title")
+        cy = y + 0.62
+        if d.get("metric"):
+            add_text(slide, d["metric"], cx + 0.08, cy, cw - 0.16, 0.50, 26, CORAL,
+                     bold=True, max_lines=1, min_size=14, cap_label=f"DIAGNOSIS[{i}] metric")
+            cy += 0.50
+            if d.get("metric_label"):
+                add_text(slide, d["metric_label"], cx + 0.08, cy, cw - 0.16, 0.40, 9,
+                         DARK_TEXT, bold=True, max_lines=2, min_size=7.5,
+                         cap_label=f"DIAGNOSIS[{i}] metric_label")
+                lines = len(fit_text(d["metric_label"], cw - 0.16, 0.40, 9, bold=True,
+                                     max_lines=2, min_size=7.5)[1] or [1])
+                cy += 0.06 + 0.20 * lines
+        if d.get("target"):
+            add_text(slide, "Target: " + str(d["target"]), cx + 0.08, cy, cw - 0.16, 0.24,
+                     8.5, GREEN, bold=True, max_lines=1, min_size=7,
+                     cap_label=f"DIAGNOSIS[{i}] target")
+            cy += 0.28
+        add_text(slide, d["body"], cx + 0.08, cy + 0.02, cw - 0.16, (y + h - 0.30) - (cy + 0.02),
+                 9.5, BODY_TEXT, min_size=8, cap_chars=100, cap_label=f"DIAGNOSIS[{i}] body")
+        if d.get("source"):
+            add_text(slide, "Source: " + str(d["source"]), cx + 0.08, y + h - 0.28,
+                     cw - 0.16, 0.22, 7, SLATE, max_lines=1, min_size=6,
+                     cap_label=f"DIAGNOSIS[{i}] source")
+
+    add_strip(slide, "How we fix it:", DIAGNOSIS_FIX_LINE, 4.64, label="DIAGNOSIS_FIX_LINE")
+    add_footer(slide, PAGE["diagnosis"], TOTAL_SLIDES, LOGO_PATH)
+
+
+# ── Slide 3: The Plan ─────────────────────────────────────────────
+
+def build_plan(prs):
+    slide = new_slide(prs)
+    kicker = "THE PLAN" + (f"  ·  {PLAN_KICKER.upper()}" if PLAN_KICKER else "")
+    add_header(slide, PLAN_TITLE, 9.30, kicker=kicker)
+
+    n = len(PLAN)
+    gap = 0.15
+    cw = (9.40 - gap * (n - 1)) / n
+    y = 1.08
+    h = 2.30 if PLAN_NOTE else 2.74   # leaves the measure row ~1in either way
+    for i, p in enumerate(PLAN):
+        cx = 0.30 + i * (cw + gap)
+        add_rect(slide, cx, y, cw, 0.62, fill=NAVY)
+        add_badge(slide, i + 1, cx + 0.14, y + 0.15, 0.32, OCEAN_BLUE)
+        add_text(slide, p["title"], cx + 0.52, y + 0.03, cw - 0.60, 0.56, 11, WHITE,
+                 bold=True, max_lines=2, min_size=8.5, anchor=MSO_ANCHOR.MIDDLE,
+                 cap_label=f"PLAN[{i}] title")
+        add_rect(slide, cx, y + 0.62, cw, h - 0.62, fill=WHITE)
+
+        fixes = p["fixes"]
+        cause = DIAGNOSIS[fixes - 1]["title"]
+        add_text(slide, f"FIXES  {fixes}  ·  {cause.upper()}", cx + 0.10, y + 0.68,
+                 cw - 0.20, 0.34, 7, CORAL, bold=True, max_lines=2, min_size=6,
+                 cap_label=f"PLAN[{i}] fixes")
+        add_text(slide, "WHAT WE DO", cx + 0.10, y + 1.02, cw - 0.20, 0.20, 7,
+                 OCEAN_BLUE, bold=True, fit=False)
+        add_bullets(slide, [cap(a, 70, f"PLAN[{i}] action {j+1}")
+                            for j, a in enumerate(p["actions"][:4])],
+                    cx + 0.08, y + 1.20, cw - 0.16, h - 1.26, 9,
+                    DARK_TEXT, OCEAN_BLUE, label=f"PLAN[{i}] actions")
+
+    build_measures(slide, top=y + h + 0.06, bottom=4.62 if PLAN_NOTE else 5.12)
+
+    if PLAN_NOTE:
+        add_strip(slide, "Also included:", PLAN_NOTE, 4.70, h=0.42, label="PLAN_NOTE")
+    missing = [f"“{p['title']}” ({p['metric']})" for p in PLAN if not p.get("target")]
+    if missing:
+        note("plan", "No target on the call to base these on, so none is shown — agree a "
+                "number with the client rather than quoting one: " + "; ".join(missing) + ".")
+    add_footer(slide, PAGE["plan"], TOTAL_SLIDES, LOGO_PATH)
+
+
+_METRIC_STOP = {"the", "a", "an", "per", "of", "to", "your", "each", "a", "monthly", "month", "today"}
+
+
+def _metric_tokens(text):
+    return {t for t in re.findall(r"[a-z0-9]+", str(text).lower()) if t not in _METRIC_STOP}
+
+
+_METRIC_QUALIFIERS = {"retained", "signed", "new", "average", "avg", "overall", "total"}
+
+
+def same_metric(a, b):
+    """True when two metric names are the same measure ("Cost per client" /
+    "Cost per retained client") — but not a narrower one ("Meta cost per
+    client" is its own metric)."""
+    ta = _metric_tokens(a) - _METRIC_QUALIFIERS
+    tb = _metric_tokens(b) - _METRIC_QUALIFIERS
+    return bool(ta) and ta == tb
+
+
+def build_measures(slide, top, bottom):
+    """"What we'll measure": the call KPI (today's value, plus its target if
+    a plan action targets it), then the measure for each other action,
+    labelled with that action, showing its target — or, with no target,
+    today's value. A measure with neither, or that repeats the KPI, is left
+    out; there are no numbers, so nothing is ever skipped."""
+    add_text(slide, "WHAT WE'LL MEASURE", 0.30, top, 4.0, 0.20, 7.5, NAVY, bold=True,
+             fit=False)
+    kpi_sub = ("Today: " + KPI_FOCUS["baseline"]) if KPI_FOCUS.get("baseline") else ""
+    tiles = []
+    for p in PLAN:
+        if same_metric(p["metric"], KPI_FOCUS["label"]):
+            if p.get("target"):
+                kpi_sub = (kpi_sub + "  ·  " if kpi_sub else "") + "Target: " + str(p["target"])
+            continue
+        if p.get("target"):
+            tiles.append((p["title"], p["metric"], "Target: " + str(p["target"]), True))
+        elif p.get("baseline"):
+            tiles.append((p["title"], p["metric"], "Today: " + str(p["baseline"]), False))
+    tiles = [(None, KPI_FOCUS["label"], kpi_sub, False)] + tiles
+    gap = 0.12
+    ty = top + 0.22
+    th = bottom - ty
+    tw = min(2.80, (9.40 - gap * (len(tiles) - 1)) / len(tiles))
+    for i, (action, title, sub, is_target) in enumerate(tiles):
+        tx = 0.30 + i * (tw + gap)
+        lead = action is None
+        add_rect(slide, tx, ty, tw, th, fill=NAVY if lead else WHITE)
+        if not lead:
+            add_rect(slide, tx, ty, tw, 0.04, fill=OCEAN_BLUE)
+        kicker = "THE NUMBER FROM THE CALL" if lead else str(action).upper()
+        add_text(slide, kicker, tx + 0.10, ty + 0.07, tw - 0.20, 0.18, 6.5,
+                 LIME_GREEN if lead else OCEAN_BLUE, bold=True, max_lines=1, min_size=5.5,
+                 cap_label="measure kicker")
+        add_text(slide, title, tx + 0.10, ty + 0.24, tw - 0.20, 0.38, 9.5,
+                 WHITE if lead else NAVY, bold=True, max_lines=2, min_size=7.5,
+                 cap_label=f"measure tile {i+1}")
+        if sub:
+            sub_y = ty + 0.62
+            add_text(slide, sub, tx + 0.10, sub_y, tw - 0.20, max(0.22, ty + th - sub_y - 0.04),
+                     8.5, NAVY_TEXT_SOFT if lead else (GREEN if is_target else DARK_TEXT),
+                     bold=not lead, max_lines=2, min_size=7, cap_label=f"measure tile {i+1} sub")
+
+
+# ── Slide 4: The Recommended Strategy ─────────────────────────────
+
+def build_strategy(prs):
+    slide = new_slide(prs)
+    add_header(slide, STRATEGY_TITLE, 9.30, kicker="THE RECOMMENDED STRATEGY")
+
+    n = len(STRATEGY)
+    gap = 0.25
+    cw = (9.40 - gap * (n - 1)) / n
+    y, h = 1.08, 2.80
+    for i, s in enumerate(STRATEGY):
+        cx = 0.30 + i * (cw + gap)
+        add_rect(slide, cx, y, cw, h, fill=WHITE)
+        add_rect(slide, cx, y, cw, 0.05, fill=OCEAN_BLUE)
+        add_badge(slide, i + 1, cx + 0.18, y + 0.22, 0.34, NAVY)
+        add_text(slide, str(s["title"]).upper(), cx + 0.60, y + 0.18, cw - 0.74, 0.42,
+                 12.5, NAVY, bold=True, max_lines=1, min_size=9, anchor=MSO_ANCHOR.MIDDLE,
+                 cap_label=f"STRATEGY[{i}] title")
+        add_text(slide, s["channels"], cx + 0.14, y + 0.62, cw - 0.28, 0.22, 8.5,
+                 OCEAN_BLUE, bold=True, max_lines=1, min_size=7,
+                 cap_label=f"STRATEGY[{i}] channels")
+        add_text(slide, s["product"], cx + 0.14, y + 0.84, cw - 0.28, 0.22, 8, SLATE,
+                 max_lines=1, min_size=6.5, cap_label=f"STRATEGY[{i}] product")
+        add_bullets(slide, [cap(b, 70, f"STRATEGY[{i}] deliverable {j+1}")
+                            for j, b in enumerate(s["deliverables"][:5])],
+                    cx + 0.10, y + 1.12, cw - 0.20, h - 1.22, 9.5, DARK_TEXT, OCEAN_BLUE,
+                    label=f"STRATEGY[{i}] deliverables")
+
+    add_text(slide, "WHY WE CHOSE IT", 0.30, 3.96, 4.0, 0.20, 7.5, SLATE, bold=True,
+             fit=False)
+    for i, s in enumerate(STRATEGY):
+        cx = 0.30 + i * (cw + gap)
+        add_rect(slide, cx, 4.18, cw, 0.94, fill=SOFT_BLUE)
+        add_text(slide, s["why"], cx + 0.10, 4.20, cw - 0.20, 0.90, 9.5, NAVY,
+                 min_size=7.5, anchor=MSO_ANCHOR.MIDDLE, cap_chars=160,
+                 cap_label=f"STRATEGY[{i}] why")
+    add_footer(slide, PAGE["strategy"], TOTAL_SLIDES, LOGO_PATH)
+
+
+# ── Rollout Plan (placeholder — left out while SHOW_ROLLOUT is False) ─
+
+def build_rollout(prs):
+    slide = new_slide(prs)
+    add_header(slide, "Rollout Plan", 9.30, kicker="WHAT HAPPENS AFTER YOU SIGN")
+
+    add_shape(slide, MSO_SHAPE.RECTANGLE, 0.30, 1.10, 9.40, 3.98, fill=WHITE,
+              line_color=SLATE, line_pt=1.25, dash=True)
+    add_pill(slide, "Placeholder", 0.56, 2.14, 0.28, CORAL)
+    add_text(slide, "Your rollout plan is being finalized", 0.50, 2.54, 8.90, 0.46, 18,
+             NAVY, bold=True, max_lines=1, min_size=13)
+    add_text(slide, "Your onboarding team will fill in what happens after you sign: "
+                    "the steps, who does what, and when. Nothing on this slide is a "
+                    "commitment or a timeline yet.",
+             0.50, 3.04, 8.90, 0.80, 10.5, BODY_TEXT, max_lines=3, min_size=9)
+
+    note("rollout", "PLACEHOLDER: real onboarding content isn't ready yet. Don't promise "
+            "onboarding steps, dates or timelines from this slide.")
+    add_footer(slide, PAGE["rollout"], TOTAL_SLIDES, LOGO_PATH)
+
+# ── Last slide: Your Investment (numbers from package_decision.json) ──
+
+# Where the computed investment lives: the firm's package_decision.json,
+# next to this script. The master template has none, so it renders a sample.
+DECISION_PATH = os.path.join(os.path.dirname(os.path.abspath(__file__)), "package_decision.json")
+_SAMPLE_INVESTMENT = {
+    "products": [
+        {"name": "Full Service Marketing — Growth", "charged": 7497, "standalone": 8997},
+    ],
+    "monthly_total": 7497, "total_savings": 0, "pricing_mode": "standalone",
+    "year_one_total": 89964,
+    "ad_spend": {"conservative": 6700, "aggressive": 25000, "current_stated": None,
+                 "year_one_range": [80400, 300000], "cap": 50000, "overage": None},
+    "return": {"method": "benchmark_cpl", "share_of_case_value": None,
+               "basis": "Sample figures — the firm's package_decision.json supplies the real ones.",
+               "disclaimer": "Illustrative arithmetic — not a forecast or guarantee.",
+               "scenarios": [
+                   {"label": "Conservative", "ad_spend": 6700, "cases": 9.2, "revenue": 27600, "return_multiple": 4.1},
+                   {"label": "Aggressive", "ad_spend": 25000, "cases": 41.0, "revenue": 123000, "return_multiple": 4.9}]},
+}
+
+
+def load_investment():
+    """The computed investment block. Stops the build when it's missing,
+    so a deck never goes out with hand-typed or stale numbers."""
+    import json
+    if not os.path.isfile(DECISION_PATH):
+        if FIRM_NAME == "FIRM NAME HERE":
+            return _SAMPLE_INVESTMENT
+        raise SystemExit(f"Deck not built — {DECISION_PATH} not found. "
+                         "Run: node scripts/reprice.mjs <friendly-name>")
+    with open(DECISION_PATH) as f:
+        inv = json.load(f).get("investment")
+    if not inv or not inv.get("products"):
+        raise SystemExit("Deck not built — package_decision.json has no \"investment\" block. "
+                         "Run: node scripts/reprice.mjs <friendly-name>")
+    return inv
+
+
+def usd(n):
+    return f"${int(round(n)):,}"
+
+
+def short_usd(n):
+    """$25,000 → $25K, $1,250,000 → $1.25M (for tight table cells)."""
+    n = float(n)
+    if n >= 1_000_000:
+        return f"${n / 1_000_000:.2f}".rstrip("0").rstrip(".") + "M"
+    if n >= 10_000:
+        k = n / 1_000
+        return f"${k:.0f}K" if abs(k - round(k)) < 0.05 else f"${k:.1f}K"
+    return usd(n)
+
+
+def product_line(name):
+    base = re.sub(r"\s*\(\d+ seats?\)$", "", name)
+    line = PRODUCT_LINES.get(name) or PRODUCT_LINES.get(base)
+    if not line:
+        raise SystemExit(f'Deck not built — PRODUCT_LINES has no entry for "{base}". '
+                         "Add one deliverables line per product in package_decision.json.")
+    return line
+
+
+def build_buys_card(slide, inv, x, w, top, bottom):
+    """"What $X/mo buys": one row per product — name, deliverables, price."""
+    add_text(slide, f"WHAT {usd(inv['monthly_total'])}/MO BUYS", x, top, w, 0.20, 7.5,
+             NAVY, bold=True, fit=False)
+    card_top = top + 0.22
+    add_rect(slide, x, card_top, w, bottom - card_top, fill=WHITE)
+    add_rect(slide, x, card_top, 0.05, bottom - card_top, fill=OCEAN_BLUE)
+    rows = inv["products"]
+    rh_used = (bottom - card_top - 0.12) / max(1, len(rows))
+    y = card_top + 0.06
+    standalone_mode = inv.get("pricing_mode") == "standalone"
+    # Deliverables as a two-column list only when every row has room for it,
+    # so the rows always match.
+    def _items(p):
+        return [t.strip() for t in re.split(r"\s*[·•|]\s*", product_line(p["name"])) if t.strip()]
+    as_list = all(len(_items(p)) >= 3 and rh_used - 0.70 >= ((len(_items(p)) + 1) // 2) * 0.27
+                  for p in rows)
+    for i, p in enumerate(rows):
+        ry = y + i * rh_used
+        if i:
+            add_rule(slide, x + 0.20, ry, x + w - 0.16, ry, RULE_GRAY)
+        name_w = w - 1.85
+        add_text(slide, p["name"], x + 0.18, ry + 0.06, name_w, 0.30, 10.5, NAVY, bold=True,
+                 max_lines=1, min_size=8, cap_label=f"product {i+1} name")
+        items = [t.strip() for t in re.split(r"\s*[·•|]\s*", product_line(p["name"])) if t.strip()]
+        if as_list:
+            # Room to spare: the deliverables as a two-column list, below the
+            # price and its stand-alone note.
+            half = (len(items) + 1) // 2
+            col_w = (w - 0.36) / 2
+            box_h = rh_used - 0.70
+            size = 10 if len(rows) == 1 else 9
+            for c, chunk in enumerate([items[:half], items[half:]]):
+                if chunk:
+                    add_bullets(slide, chunk, x + 0.14 + c * col_w, ry + 0.62, col_w, box_h,
+                                size, DARK_TEXT, OCEAN_BLUE, label=f"product {i+1} deliverables")
+        else:
+            add_text(slide, " · ".join(items), x + 0.18, ry + 0.34, name_w, rh_used - 0.40,
+                     8.5, BODY_TEXT, max_lines=2, min_size=7, cap_label=f"product {i+1} line")
+        price = f"{usd(p['charged'])}/mo" if p.get("charged") is not None else "price TBD"
+        add_text(slide, price, x + w - 1.70, ry + 0.04, 1.58, 0.34, 13, NAVY, bold=True,
+                 align=PP_ALIGN.RIGHT, max_lines=1, min_size=10, cap_label=f"product {i+1} price")
+        # The list (stand-alone) price sits right beside the bundle price.
+        discounted = (p.get("standalone") and p.get("charged") is not None
+                      and p["standalone"] > p["charged"])
+        if discounted:
+            pw = text_width(price, 13, bold=True) + 2 * _INSET_X
+            lw = 1.05
+            add_text(slide, usd(p["standalone"]), x + w - 0.12 - pw - lw, ry + 0.08, lw, 0.28,
+                     10, SLATE, align=PP_ALIGN.RIGHT, fit=False, strike=True)
+            sub = "list price · bundle price"
+        elif standalone_mode and p.get("standalone"):
+            sub = "list price (no bundle)"
+        else:
+            sub = ""
+        if sub:
+            add_text(slide, sub, x + w - 2.20, ry + 0.36, 2.08, 0.22, 7.5, SLATE,
+                     align=PP_ALIGN.RIGHT, max_lines=1, fit=False)
+
+
+def build_totals_block(slide, inv, x, w, top, bottom):
+    """Navy block: the monthly investment beside the year-one total."""
+    h = bottom - top
+    add_rect(slide, x, top, w, h, fill=NAVY)
+    add_rect(slide, x, top, 0.05, h, fill=LIME_GREEN)
+    list_total = inv.get("list_total") or inv["monthly_total"]
+    cells = [("MONTHLY INVESTMENT", f"{usd(inv['monthly_total'])}/mo",
+              (f"List {usd(list_total)}/mo · save {usd(inv['total_savings'])}/mo"
+               if inv.get("total_savings") else "List price (no bundle)")),
+             ("YEAR ONE", usd(inv["year_one_total"]),
+              "12 months of fees")]
+    cw = (w - 0.10) / 2
+    for i, (kicker, big, sub) in enumerate(cells):
+        cx = x + 0.10 + i * cw
+        if i:
+            add_rule(slide, cx - 0.04, top + 0.14, cx - 0.04, bottom - 0.14, NAVY_RULE)
+        add_text(slide, kicker, cx + 0.12, top + 0.10, cw - 0.24, 0.20, 7.5, LIME_GREEN,
+                 bold=True, fit=False)
+        add_text(slide, big, cx + 0.12, top + 0.28, cw - 0.24, 0.42, 20, WHITE, bold=True,
+                 max_lines=1, min_size=13, cap_label=f"total {i+1}")
+        add_text(slide, sub, cx + 0.12, top + 0.68, cw - 0.24, h - 0.74, 8, BUNDLE_SAVINGS_TEXT
+                 if i == 0 else NAVY_TEXT_SOFT, max_lines=2, min_size=6.5, cap_label=f"total {i+1} sub")
+
+
+def build_ad_spend_card(slide, ad, x, w, top, bottom):
+    h = bottom - top
+    add_rect(slide, x, top, w, h, fill=WHITE)
+    add_rect(slide, x, top, w, 0.05, fill=OCEAN_BLUE)
+    add_text(slide, "RECOMMENDED AD SPEND", x + 0.18, top + 0.12, w - 0.36, 0.20, 7.5,
+             OCEAN_BLUE, bold=True, fit=False)
+    lo, hi = ad["conservative"], ad["aggressive"]
+    rng = f"{usd(lo)}/mo" if lo == hi else f"{usd(lo)} – {usd(hi)}/mo"
+    add_text(slide, rng, x + 0.18, top + 0.32, w - 0.36, 0.46, 22, NAVY, bold=True,
+             max_lines=1, min_size=14, cap_label="ad spend range")
+    cur = ad.get("current_stated")
+    if cur:
+        line = f"Today: {usd(cur)}/mo, held at launch" + (f" · up to {usd(ad['cap'])} managed" if ad.get("cap") else "")
+    elif cur == 0:
+        line = "Today: no paid ads. Starts at the channel minimums."
+    else:
+        line = "Starts at the channel minimums for your practice area."
+    add_text(slide, line, x + 0.18, top + 0.80, w - 0.36, 0.24, 8.5, DARK_TEXT, bold=True,
+             max_lines=1, min_size=7, cap_label="ad spend today")
+    why = (AD_SPEND_WHY or "").strip()
+    y1 = ad.get("year_one_range") or [lo * 12, hi * 12]
+    tail = f"Paid directly to Google and Meta. Year one: {short_usd(y1[0])}–{short_usd(y1[1])}."
+    text = (why[0].upper() + why[1:] + ". " if why else "") + tail
+    add_text(slide, text, x + 0.18, top + 1.06, w - 0.36, h - 1.12, 8.5, BODY_TEXT,
+             max_lines=3, min_size=7, cap_chars=200, cap_label="ad spend why")
+
+
+def build_return_card(slide, ret, x, w, top, bottom):
+    h = bottom - top
+    add_rect(slide, x, top, w, h, fill=ROI_BG)
+    add_text(slide, "WHAT THAT AD SPEND BUYS", x + 0.18, top + 0.10, w - 0.36, 0.20, 7.5,
+             ROI_GREEN, bold=True, fit=False)
+    cols = [("Ad spend", 0.00, 0.95), ("Cases / mo", 0.95, 0.85), ("Revenue / mo", 1.80, 1.05),
+            ("Return", 2.85, 0.80)]
+    tx = x + 0.18
+    for label, off, cwid in cols:
+        add_text(slide, label, tx + off, top + 0.32, cwid, 0.20, 7.5, SLATE, bold=True,
+                 align=PP_ALIGN.LEFT if off == 0 else PP_ALIGN.RIGHT, fit=False)
+    for i, sc in enumerate(ret["scenarios"][:2]):
+        ry = top + 0.54 + i * 0.30
+        if i == 0:
+            add_rect(slide, x + 0.10, ry - 0.02, w - 0.20, 0.30, fill=ROI_HILIGHT)
+        vals = [f"{short_usd(sc['ad_spend'])}/mo", f"{sc['cases']:g}", usd(sc["revenue"]),
+                f"{sc['return_multiple']:g}×"]
+        for (label, off, cwid), v in zip(cols, vals):
+            add_text(slide, v, tx + off, ry, cwid, 0.26, 10, ROI_GREEN if off else DARK_TEXT,
+                     bold=True, align=PP_ALIGN.LEFT if off == 0 else PP_ALIGN.RIGHT,
+                     max_lines=1, min_size=8, anchor=MSO_ANCHOR.MIDDLE, cap_label="return cell")
+    y = top + 0.54 + min(2, len(ret["scenarios"])) * 0.30 + 0.06
+    if ret.get("share_of_case_value"):
+        add_text(slide, f"Today {ret['share_of_case_value']}% of each case's value goes to landing it.",
+                 x + 0.18, y, w - 0.36, 0.22, 8.5, DARK_TEXT, bold=True, max_lines=1, min_size=7,
+                 cap_label="share of case value")
+        y += 0.24
+    add_text(slide, f"{ret['basis']} {ret.get('disclaimer', '')}".strip(), x + 0.18, y,
+             w - 0.36, bottom - y - 0.06, 7.5, SLATE, min_size=6.5, cap_label="return basis")
+
+
+def build_investment(prs):
+    inv = load_investment()
+    slide = new_slide(prs)
+    add_header(slide, "Your Investment", 9.30, kicker="THE INVESTMENT")
+
+    ad, ret = inv.get("ad_spend"), inv.get("return")
+    # Without a closing quote the content runs down to the footer.
+    bottom = 4.74 if CLOSING_QUOTE else 5.12
+    if ad:
+        left_w = 5.00
+        build_buys_card(slide, inv, 0.30, left_w, 1.04, bottom - 1.08)
+        build_totals_block(slide, inv, 0.30, left_w, bottom - 0.98, bottom)
+        rx, rw = 5.50, 4.20
+        if ret:
+            build_ad_spend_card(slide, ad, rx, rw, 1.04, 2.56)
+            build_return_card(slide, ret, rx, rw, 2.64, bottom)
+        else:
+            build_ad_spend_card(slide, ad, rx, rw, 1.04, bottom)
+    else:
+        build_buys_card(slide, inv, 0.30, 9.40, 1.04, bottom - 1.08)
+        build_totals_block(slide, inv, 0.30, 9.40, bottom - 0.98, bottom)
+
+    # Closing line — the owner's outcome, in their own verbatim words. Left
+    # off when there's no verbatim line that isn't already on the deck.
+    if CLOSING_QUOTE:
+        add_rect(slide, 0, 4.84, 10, 0.43, fill=rgb("002A41"))
+        add_rect(slide, 0, 4.84, 10, 0.02, fill=LIME_GREEN)
+        add_text(slide, _quote(CLOSING_QUOTE[0]), 0.70, 4.86, 8.60, 0.40, 9.5, NAVY_TEXT_SOFT,
+                 align=PP_ALIGN.CENTER, max_lines=1, min_size=7.5, anchor=MSO_ANCHOR.MIDDLE,
+                 cap_chars=170, cap_label="CLOSING_QUOTE")
+    add_footer(slide, INVESTMENT_PAGE, TOTAL_SLIDES, LOGO_PATH)
 
 
 # ── Font embedding ────────────────────────────────────────────────
@@ -923,13 +1633,23 @@ def embed_fonts(pptx_path, font_dir):
 
 # ── Assemble ──────────────────────────────────────────────────────
 
+validate_fill()
+
 prs = Presentation()
 prs.slide_width  = Inches(10)
 prs.slide_height = Inches(5.625)
 
-build_slide1(prs)
-build_slide2(prs)
-build_slide3(prs)
+build_priorities(prs)
+if STAIRCASE:
+    build_staircase(prs)
+build_diagnosis(prs)
+build_plan(prs)
+build_strategy(prs)
+if SHOW_ROLLOUT:
+    build_rollout(prs)
+build_investment(prs)
+attribution_notes()
+write_notes(prs)
 
 os.makedirs(os.path.dirname(OUTPUT_PATH), exist_ok=True) if os.path.dirname(OUTPUT_PATH) else None
 prs.save(OUTPUT_PATH)
@@ -945,5 +1665,10 @@ if _TRUNCATED:
           f"and were truncated — consider shortening the source copy instead:")
     for label, original in _TRUNCATED:
         print(f"  - {label}: {original!r}")
+
+noted = [k for k in SLIDE_ORDER if _NOTES.get(k) or seller_note(k)]
+if noted:
+    print(f"Seller prep: {seller_prep_path()} (slides: " +
+          ", ".join(f"{k} {PAGE[k]}" for k in noted) + ") — speaker notes left empty")
 
 print(f"Saved: {OUTPUT_PATH}  ({len(prs.slides)} slides)")
