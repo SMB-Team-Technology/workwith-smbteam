@@ -255,8 +255,7 @@ jobs:
             prices, total, pricing_mode, unpriced_products). Quote prices from that output.
             Bundle rule it applies: bundled prices only when 2+ bundle-eligible products
             are in the package (AI Workforce Pro – Starter never counts); otherwise
-            stand-alone prices and no savings. FCOO Partner is retired — never offer it;
-            use FCOO Director.
+            stand-alone prices and no savings.
 
             AWAITING SELLER INPUT: if package_decision.json has \"needs_seller_input\": true,
             no package has been chosen yet (the call focus was unknown, usually because no
@@ -334,9 +333,12 @@ jobs:
                  AI Accelerator L1/L2 → Fractional CTO Level 1/2, AI Enterprise → Fractional
                  CTO Level 3; 'sprint' / 'foundation sprint' → Law Firm AI Foundation Sprint;
                  FCTO / fractional CTO → Fractional CTO Level 1/2/3; FCOO / fractional COO →
-                 FCOO Advisor/Director (Partner is retired — 'max hours' / 'top tier' means
-                 Director); FCFO / fractional CFO → FCFO Advisor/Director/Partner;
-                 MC → Master's Circle; ECP → Elite Coach Plus.
+                 FCOO Advisor/Director/Partner ('max hours' / 'top tier' means Partner);
+                 FCFO / fractional CFO → FCFO Advisor/Director/Partner;
+                 MC → Master's Circle; ECP → Elite Coach Plus; bookkeeping → Bookkeeping
+                 Level 1/2/3 on the coaching line (joined with ' + '; Level 4 is
+                 custom-scoped); Elite 360 → coaching_name Elite Coach plus marketing_name
+                 Full Service Marketing — <tier>.
                  AIWP with no tier: Starter if team_size_effective is 1–4 or team size
                  is unknown (seats = team_size_stated, else 1), base if 5+.
                  If the shorthand maps to one product but its tier or seat count is unclear,
@@ -353,6 +355,12 @@ jobs:
                  \"note\": \"Seller via Slack <date>\"} (one number → both ends), then run
                  reprice.mjs; the deck and the return projection use the seller's range.
                  'Use the recommended ad spend' removes ad_spend_override.
+               - Setup fees ('waive the AI Avatar setup', 'no setup fee for coaching'): never
+                 edit setup_fees or setup_total — reprice.mjs sets them. Add the product's
+                 exact name (as in marketing_name / coaching_name) to the setup_fee_waived
+                 list, then run reprice.mjs; the deck shows that fee as waived and leaves
+                 it out of year one. 'Charge the setup fee' removes it from the list.
+                 Bookkeeping setup fees can't be waived.
                - 'Change this to X + Y' REPLACES the package: anything not named is removed.
                  Set removed products' name fields to null (for marketing also null
                  marketing_tier and the ad_spend_* fields). Both AI products go in one
@@ -362,7 +370,8 @@ jobs:
             3. Post an updated proposal summary as a Slack reply in the SAME thread,
                in this format, then repeat the same three options as before:
                '$SALES_REP_MENTION 📋 *Updated proposal for $FIRM_NAME*' followed by the new
-               marketing/coaching/AI/total lines from the reprice.mjs output (plus ad spend
+               marketing/coaching/AI/total lines from the reprice.mjs output (plus the
+               one-time setup fees and year-one total from that output, and ad spend
                from package_decision.json). If pricing_mode is 'standalone', add
                '(stand-alone pricing — fewer than 2 bundle-eligible products)'. If
                unpriced_products is non-empty, say those products can't be sold on their own

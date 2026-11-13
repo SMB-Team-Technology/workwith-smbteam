@@ -266,8 +266,9 @@ confirmed); otherwise "not stated" — never an estimate or a benchmark.
 | Elite Coach Plus | Elite Coach Plus, ~$3,200/mo coaching |
 | Coach Essentials / Coach Essentials Plus | Coach Essentials, Essentials coaching |
 | Master's Circle | MC, Master's Circle |
-| FCOO Advisor or FCOO Director (one) — or FCOO if no tier was named. FCOO Partner is retired: never write it | FCOO, fractional COO |
+| FCOO Advisor, FCOO Director or FCOO Partner (one) — or FCOO if no tier was named | FCOO, fractional COO |
 | FCFO Advisor, FCFO Director or FCFO Partner (one) — or FCFO if no tier was named | FCFO, fractional CFO |
+| Bookkeeping Level 1, 2, 3 or 4 (one) — or Bookkeeping if no level was named | bookkeeping, bookkeeper, ProfitOS bookkeeping |
 | Full Service Marketing | marketing package, ads + SEO, full service |
 
 If a price range was quoted that spans several products (e.g. "coaching ~$2,400–$3,200/mo"), list each product it could mean and say so in "Stated call focus" — do not pick one.

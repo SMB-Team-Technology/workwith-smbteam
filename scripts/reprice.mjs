@@ -86,5 +86,7 @@ console.log(JSON.stringify({
   ad_spend: decision.investment?.ad_spend
     ? { conservative: decision.investment.ad_spend.conservative, aggressive: decision.investment.ad_spend.aggressive }
     : null,
+  setup_fees: (decision.setup_fees ?? []).map(f => ({ product: f.product, label: f.label, amount: f.amount, waived: f.waived })),
+  setup_total: decision.setup_total ?? 0,
   year_one_total: decision.investment?.year_one_total ?? null,
 }, null, 2));

@@ -43,7 +43,7 @@ Five slides that make one argument, the way our best hand-built decks run on a c
 
 **Slide 4 — The Recommended Strategy.** 1–3 pieces: what we're recommending, why each was chosen for this firm (tied to slide 2), and its deliverables.
 
-**Slide 5 — Your Investment.** "What $X/mo buys" by product, each bundle price beside its struck-through list (stand-alone) price; the monthly investment (with list total and savings) beside the year-one total; the recommended ad spend; and what that ad spend buys. Every number comes from `package_decision.json`. The seller is asked to review the ad spend before the deck goes out (Phase 1 Slack post, deck-ready Slack reply and email).
+**Slide 5 — Your Investment.** "What $X/mo buys" by product, each bundle price beside its struck-through list (stand-alone) price; the monthly investment (with list total and savings), the one-time setup fees (when the package has any; a seller-waived fee is shown as waived) and the year-one total (12 months of fees + setup); the recommended ad spend; and what that ad spend buys. Every number comes from `package_decision.json`. The seller is asked to review the ad spend before the deck goes out (Phase 1 Slack post, deck-ready Slack reply and email).
 
 **No Rollout Plan slide for now.** The engine has one (`SHOW_ROLLOUT`), left out until real onboarding content exists. Never add onboarding steps, commitments or timelines anywhere in the deck.
 
@@ -144,7 +144,7 @@ Copy values exactly — do not rewrite or recompute.
 - `deliverables`: 3–5 catalog deliverables for that product/tier, ≤55 chars each — fractional packages include the Elite Coach group deliverables (see `audit-write.md`).
 - `why` ≤110 chars: why this firm needs it, tied to a slide 2 cause or the KPI. No promised results.
 
-**Slide 5 — Your Investment.** Every number on it — each product's price, the monthly and year-one totals, savings, the ad spend range and the return table — is read by the engine from `package_decision.json` → `investment`, which `scripts/reprice.mjs` computes in code (`scripts/lib/investment.mjs`). You never type a price or figure for this slide. If the build stops with "no investment block", run `node scripts/reprice.mjs [friendly-name]`. You fill only:
+**Slide 5 — Your Investment.** Every number on it — each product's price, the monthly total, the one-time setup fees, the year-one total, savings, the ad spend range and the return table — is read by the engine from `package_decision.json` → `investment`, which `scripts/reprice.mjs` computes in code (`scripts/lib/investment.mjs`). You never type a price or figure for this slide. If the build stops with "no investment block", run `node scripts/reprice.mjs [friendly-name]`. You fill only:
 - `PRODUCT_LINES` — one deliverables line per product, keyed by the product name exactly as in `package_decision.json` (`marketing_name`, `coaching_name`, `law_name`, without any "(N seats)"), ≤70 chars, items separated by " · " (the engine shows them as a list when there's room). Only catalog deliverables; fractional packages include the Elite Coach group deliverables (see `audit-write.md`). The build stops if a product has no line.
 - `AD_SPEND_WHY` — only with a paid-ads package: one short payoff clause, ≤90 chars, from the BUILD NOTES' "why this range" sentence (e.g. "to turn high-intent divorce searches into signed cases"). No calculation basis. `None` when there are no paid ads (the engine then leaves the ad spend and return panels out).
 - `CLOSING_QUOTE` — `(quote, said_by)` or `None`, per QUOTE RULES.

@@ -254,7 +254,7 @@ Check the ad spend against the maximum for their marketing tier:
 
 If the calculated ad spend exceeds the tier cap, either:
 1. Recommend upgrading to the next marketing tier, OR
-2. Note that an overage fee of 10% applies on ad spend above the cap
+2. Note that a 15% ad spend management fee applies to all ad spend above the cap (2026 pricing sheet)
 
 ### Step 3I — Produce a Low-to-High Ad Spend Range
 
@@ -465,7 +465,9 @@ Every client must have at least one non-marketing package. Clients with marketin
 ### Step 6A — Apply Eligibility Filters
 
 **Revenue Filters:**
-- **Under $500K:** Remove ALL Fractional COO and Fractional CFO products and all bundles containing them
+- **Under $400K:** Remove ALL Fractional COO products and all bundles containing them (FCOO Advisor and Elite Coach + FCOO Advisor need $400K+)
+- **Under $500K:** Remove ALL Fractional CFO products (FCFO Advisor needs $500K+)
+- **Under $3M:** Remove FCOO Partner and the Elite Coach / Master's Circle + FCOO Partner pairs
 - **Under $1M:** Remove Master's Circle and all bundles containing it
 
 **Team Filters:**
@@ -481,8 +483,8 @@ Every client must have at least one non-marketing package. Clients with marketin
 | $250K–$400K | Any | Growth coaching | Elite Coach | $2,600/mo |
 | $400K–$1M | Any | Growth coaching + accountability | Elite Coach Plus | $3,200/mo |
 | $400K–$1M | Growing team | Coaching + operations help | Elite Coach + FCOO Advisor | $5,694/mo |
-| $400K–$1M | Growing team, larger ops need | Coaching + operations help | Elite Coach + FCOO Director | $7,394/mo |
-| $400K–$1M | Growing team, largest ops need | Coaching + operations help | Elite Coach + FCOO Partner | $11,394/mo |
+| $1M+ | Growing team, larger ops need | Coaching + operations help | Elite Coach + FCOO Director | $7,394/mo |
+| $3M+ | Growing team, largest ops need | Coaching + operations help | Elite Coach + FCOO Partner | $11,394/mo |
 | $1M+ | Under 5 | Coaching + strategy | Elite Coach Plus | $3,200/mo |
 | $1M+ | Under 5 | Operations + team building | FCOO Advisor (standalone) | $3,297/mo |
 | $1M+ | 5+ with dedicated staff | Community + team training | Master's Circle | $4,600/mo |
@@ -503,7 +505,9 @@ Add Fractional CFO when ANY of these signals appear in the transcript:
 - Owner doesn't know their cost per acquisition
 - Explicitly mentions wanting help with finances
 
-**FCFO pricing and revenue minimums:** Advisor $3,297/mo bundled, $3,797/mo stand-alone ($400K+); Director $4,997/mo bundled, $5,797/mo stand-alone ($1M+); Partner $8,997/mo bundled, $9,997/mo stand-alone ($3M+).
+**FCFO (ProfitOS) pricing and requirements:** Advisor $3,297/mo bundled, $3,797/mo stand-alone ($500K+, solo attorney) — financial statement advisory only; Director $4,997/mo bundled, $5,797/mo stand-alone ($1M–$2M, team up to 5) — adds a quarterly roadmap of projects and a recurring KPI dashboard; Partner $8,997/mo bundled, $9,997/mo stand-alone ($2M–$3.5M, team up to 10; larger firms need a custom agreement) — adds tax, capital and succession planning. The firm must use SMB bookkeeping or deliver complete, accurate financials by the 10th of each month.
+
+**Combinations (All Services tab):** Elite Coach + FCOO is $203 below the sum of the two bundled prices; Master's Circle + FCOO is $1,203 below. Elite Coach or Master's Circle + FCFO, FCFO + FCOO, and Elite 360 (Elite Coach + Full Service Marketing) are the sum of the bundled prices.
 
 ### Step 6D — When to Add Bookkeeping
 
@@ -515,6 +519,8 @@ Add Bookkeeping when the firm has no current bookkeeper or their financials are 
 | $1M–$2.9M | Level 2 | $2,197/mo | $2,597/mo | $2,000 (CANNOT be waived) |
 | $3M–$3.9M | Level 3 | $3,497/mo | $4,597/mo | $2,500 (CANNOT be waived) |
 | $4M+ | Level 4 | Custom | Custom | Custom |
+
+Included at every level: monthly balance sheet, P&L (month and year-to-date vs. prior year), trust reconciliation summary, bank/card/loan/trust reconciliations, month-end adjusting entries, a dedicated point of contact, and 2 hours/month of Controller Services. The setup fee covers onboarding and clean-up of the last three months; earlier clean-up or trust variance work is $100/hour.
 
 **Note:** Bookkeeping is typically a Phase 3 recommendation (growth roadmap), not Phase 1 — unless the firm's financials are in such poor shape that it's an immediate need.
 
@@ -548,7 +554,7 @@ Standalone add-on line items available from the catalog. Most are one-time or pe
 | Ongoing GBP Management (Local SEO, quarterly optimizations) | $500/mo |
 | AI Video Avatar Expansion Pack (add-on to an active AI Avatar/Virtual Video Growth package) | $1,800 for an initial batch of 10 additional short-form (<2 min) videos + avatar, $600 per additional batch of 10 |
 | At-Home Film Equipment Option (camera + microphone kit, for clients who cannot attend a workshop) | $300 |
-| Done-For-You Review Generation, Level 1 (up to 250 Google review requests sent per month; law firm must supply the list) | $500/mo — included at no charge for Growth tier and above |
+| Done-For-You Review Generation, Level 1 (up to 250 Google review requests sent per month; law firm must supply the list) | Included in Full Service Marketing Starter and above; $500/mo add-on for Web + SEO and Paid Ads Starter and above; not available on Essentials |
 
 **Coaching add-ons:**
 
@@ -752,13 +758,17 @@ During the digital presence audit, identify the top 2-3 local competitors. Evalu
 
 Each marketing tier includes different content allocations. Map the firm's needs to the right tier:
 
-| Tier | Initial Content at Launch | Annual Content After Launch | Content Import | GBP Locations | Backlinks/Year | Monthly Edits |
-|---|---|---|---|---|---|---|
-| Essentials | 5,000 words | 5,000 words (Year 2+) | Up to 10 pages | 1 | — | 30 min |
-| Starter | 10,000 words | 6,000 words | Up to 250 pages | Up to 2 | — | 30 min |
-| Growth | 15,000 words | 12,000 words | Up to 500 pages | Up to 4 | 4 premium | 60 min |
-| Dominate | 20,000 words | 24,000 words | Up to 750 pages | Up to 6 | 8 premium | 90 min |
-| Platinum | 30,000 words | 48,000 words | Up to 1,000 pages | Up to 8 | 16 premium | 240 min |
+Source: Core Marketing Services tab, 2026 SMB Team Pricing, Products & Packages sheet. Web + SEO and Full Service Marketing differ on content words; everything else is the same for both.
+
+| Tier | Initial SEO content at launch (Web + SEO / Full Service) | Ongoing SEO content per year after launch (Web + SEO / Full Service) | Year-2 bonus content | Content import | GBP locations (set-up & optimization) | Premium 30+ DR backlinks / year | Monthly website edits | Call tracking |
+|---|---|---|---|---|---|---|---|---|
+| Essentials | 10,000 / 20,000 words | Not included | +10,000 words | Up to 50 pages | 1 | — | 30 min | 2 local numbers / 150 min |
+| Starter | 20,000 / 30,000 words | 10,000 / 10,000 words | +10,000 words | Up to 250 pages | Up to 2 | 2 | 45 min | 5 local numbers / 250 min |
+| Growth | 40,000 / 50,000 words | 10,000 / 20,000 words | +10,000 words | Up to 500 pages | Up to 4 | 4 | 60 min | 5 local numbers / 500 min |
+| Dominate | 50,000 / 70,000 words | 20,000 / 20,000 words | +10,000 words | Up to 750 pages | Up to 6 | 8 | 90 min | 7 local numbers / 750 min |
+| Platinum | 70,000 / 90,000 words | 30,000 / 40,000 words | +10,000 words | Up to 1,000 pages | Up to 8 | 16 | 240 min | 15 local numbers / 2,000 min |
+
+Also by tier: Essentials gets a customized template WordPress site, Starter and up a custom WordPress build; marketing strategy reviews are monthly (Essentials) or monthly + quarterly (Starter+); intake process guidance and interactive website video chat setup are Starter+ only. Done-for-you review generation (up to 250 Google review requests a month; the firm supplies the list) is included in Full Service Marketing Starter and up, a $500/mo add-on for Web + SEO and Paid Ads Starter and up, and not available on Essentials. Every Full Service and Paid Ads package Starter and up includes an AI Avatar (via the $1,850 setup fee) and a complimentary coaching workshop ticket for non-coaching clients.
 
 ### Step 9D — Match Content Needs to Tier
 
@@ -1087,13 +1097,15 @@ Essentials additionally requires single location + single practice area (scope f
 | Dominate and Platinum removed below | 2000000 |
 | Platinum removed below | 3000000 |
 | Under this revenue — must verify 4 months of funds | 250000 |
-| FCOO and FCFO products removed below | 500000 |
+| FCOO products removed below | 400000 |
+| FCFO products removed below | 500000 |
+| FCOO Partner and its pairs removed below | 3000000 |
 | Master's Circle removed below | 1000000 |
-| FCFO Advisor minimum revenue | 400000 |
+| FCFO Advisor minimum revenue | 500000 |
 | FCFO Director minimum revenue | 1000000 |
-| FCFO Partner minimum revenue | 3000000 |
+| FCFO Partner minimum revenue | 2000000 |
 | Minimum MRR — never recommend below | 2497 |
-| Tier upgrade overage fee percentage | 10 |
+| Ad spend overage management fee percentage | 15 |
 
 ### Non-Marketing Package Monthly Fees (Bundled and Stand-Alone, USD/month)
 
@@ -1127,8 +1139,8 @@ Essentials additionally requires single location + single practice area (scope f
 | 250000 | 400000 | any | Elite Coach | 2600 |
 | 400000 | 1000000 | any | Elite Coach Plus | 3200 |
 | 400000 | 1000000 | growing | Elite Coach + FCOO Advisor | 5694 |
-| 400000 | 1000000 | growing, larger ops need | Elite Coach + FCOO Director | 7394 |
-| 400000 | 1000000 | growing, largest ops need | Elite Coach + FCOO Partner | 11394 |
+| 1000000 | — | growing, larger ops need | Elite Coach + FCOO Director | 7394 |
+| 3000000 | — | growing, largest ops need | Elite Coach + FCOO Partner | 11394 |
 | 1000000 | — | under 5 | Elite Coach Plus | 3200 |
 | 1000000 | — | under 5 | FCOO Advisor | 3297 |
 | 1000000 | — | 5+ with dedicated staff | Master's Circle | 4600 |
@@ -1146,6 +1158,17 @@ Essentials additionally requires single location + single practice area (scope f
 | Level 2 | 1000000 | 2999999 | 2197 | 2597 | 2000 |
 | Level 3 | 3000000 | 3999999 | 3497 | 4597 | 2500 |
 | Level 4 | 4000000 | — | Custom | Custom | Custom |
+
+### One-Time Setup Fees (USD, mandatory; waivable by the seller except bookkeeping)
+
+| Product | Setup Fee |
+|---|---|
+| Paid Ads Essentials, Full Service Marketing Essentials (Video Ads Express Bootcamp) | 497 |
+| Paid Ads and Full Service Marketing Starter–Platinum (AI Avatar setup) | 1850 |
+| Web + SEO (all tiers), Coach Essentials / Plus, AI Workforce Pro, Fractional CTO | 0 |
+| Elite Coach, Elite Coach Plus, Master's Circle, FCOO (all levels), FCFO (all levels) — a packaged coaching + FCOO pair carries one fee | 1500 |
+| Bookkeeping Level 1 / 2 / 3 (never waivable) | 1500 / 2000 / 2500 |
+| OmniSocial AI (any package) | 1850 |
 
 ### General Add-Ons (USD)
 
@@ -1408,7 +1431,7 @@ Essentials additionally requires single location + single practice area (scope f
 | 35% cap — max total monthly spend as percentage of monthly revenue | 35 |
 | Default close rate if not stated in transcript | 15 |
 | Blended CPL cushion percentage for conservative projections | 20 |
-| Overage fee percentage on ad spend above tier cap | 10 |
+| Overage fee percentage on ad spend above tier cap | 15 |
 | Default revenue goal multiplier if not stated | 2 |
 | Spanish modifier — MVA/PI (percentage of total ad spend added) | 50 |
 | Spanish modifier — all other practice areas (percentage added) | 33 |

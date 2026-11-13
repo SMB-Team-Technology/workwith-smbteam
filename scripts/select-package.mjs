@@ -69,11 +69,17 @@ const PRODUCT_ALIASES = [
   { name: 'FCFO Director',              pattern: new RegExp(`(?:\\bfcfo|fractional cfo)\\s*director${NOT_A_LIST}`, 'i') },
   { name: 'FCFO Partner',               pattern: new RegExp(`(?:\\bfcfo|fractional cfo)\\s*partner${NOT_A_LIST}`, 'i') },
   { name: 'FCFO',                       pattern: /\bfcfo\b|fractional cfo/i },
+  { name: 'Bookkeeping Level 1',        pattern: /bookkeeping\s*(?:level|l)\s*1/i },
+  { name: 'Bookkeeping Level 2',        pattern: /bookkeeping\s*(?:level|l)\s*2/i },
+  { name: 'Bookkeeping Level 3',        pattern: /bookkeeping\s*(?:level|l)\s*3/i },
+  { name: 'Bookkeeping Level 4',        pattern: /bookkeeping\s*(?:level|l)\s*4/i },
+  { name: 'Bookkeeping',                pattern: /bookkeeping/i },
   { name: 'Full Service Marketing',     pattern: /full service marketing/i },
 ];
 const COACHING_PRODUCTS = new Set([
   'Elite Coach', 'Elite Coach Plus', 'Coach Essentials', 'Coach Essentials Plus', "Master's Circle",
   'FCOO', 'FCOO Advisor', 'FCOO Director', 'FCOO Partner', 'FCFO', 'FCFO Advisor', 'FCFO Director', 'FCFO Partner',
+  'Bookkeeping', 'Bookkeeping Level 1', 'Bookkeeping Level 2', 'Bookkeeping Level 3', 'Bookkeeping Level 4',
 ]);
 const LAW_PRODUCTS = new Set(['AI Workforce Pro – Starter', 'AI Workforce Pro', 'Fractional CTO Level 1', 'Fractional CTO Level 2', 'Fractional CTO Level 3']);
 
@@ -612,7 +618,7 @@ function selectMarketingTier(revenue, effectiveRevenue, practiceAreas, text, not
 
 /** Coaching by revenue and team size alone. Returns { name }. */
 function selectCoachingByRevenue(effectiveRevenue, effectiveTeam, text, notes) {
-  const fcooEligible = effectiveRevenue >= 500_000;
+  const fcooEligible = effectiveRevenue >= getProduct('FCOO Advisor').minRev;  // $400K+ (2026 pricing sheet)
   const masterCircleEligible = effectiveRevenue >= 1_000_000 && effectiveTeam >= 5;
   const hasOps = hasDedicatedOps(text);
 
@@ -628,14 +634,18 @@ function selectCoachingByRevenue(effectiveRevenue, effectiveTeam, text, notes) {
 
   if (effectiveRevenue < 1_000_000) {
     if (fcooEligible && effectiveTeam >= 3 && hasOps) {
-      notes.push('Revenue $500K–$1M with growing team and dedicated ops: Elite Coach Plus + FCOO Advisor considered. Defaulting to Elite Coach Plus — confirm with sales rep if FCOO is appropriate.');
+      notes.push('Revenue $400K–$1M with growing team and dedicated ops: Elite Coach Plus + FCOO Advisor considered. Defaulting to Elite Coach Plus — confirm with sales rep if FCOO is appropriate.');
     }
     notes.push('Revenue $400K–$1M: Elite Coach Plus selected.');
     return { name: 'Elite Coach Plus' };
   }
 
-  // $1M+ (FCOO Partner is retired, so $3M+ firms get the Director pairing)
+  // $1M+
   if (masterCircleEligible && hasOps) {
+    if (effectiveRevenue >= 3_000_000) {
+      notes.push(`Revenue $3M+, team ${effectiveTeam}+, dedicated ops: Master's Circle + FCOO Partner selected.`);
+      return { name: "Master's Circle + FCOO Partner" };
+    }
     if (effectiveRevenue >= 2_000_000) {
       notes.push(`Revenue $2M+, team ${effectiveTeam}+, dedicated ops: Master's Circle + FCOO Director selected.`);
       return { name: "Master's Circle + FCOO Director" };
@@ -661,8 +671,10 @@ function selectCoachingByRevenue(effectiveRevenue, effectiveTeam, text, notes) {
 /**
  * Coaching named on the call. What was discussed wins over the revenue rule
  * (Vanessa, Oct 2026: "Prioritize the product explicitly discussed on the call
- * and flag it for rep confirmation"). FCOO/FCFO named without a tier: Advisor
- * under $2M, Director at $2M+. Returns { name } or null when none was named.
+ * and flag it for rep confirmation"). FCOO/FCFO named without a tier: FCOO
+ * Advisor under $2M, Director $2M–$3M, Partner $3M+ (its floor); FCFO by the
+ * Core Financial tab's bands — Advisor under $1M, Director $1M–$2M, Partner
+ * $2M+. Returns { name } or null when none was named.
  */
 export function selectDiscussedCoaching(products, effectiveRevenue, notes) {
   const discussed = (products || []).filter(p => COACHING_PRODUCTS.has(p));
@@ -675,7 +687,9 @@ export function selectDiscussedCoaching(products, effectiveRevenue, notes) {
       if (retiredFrom) notes.push(`${retiredFrom} is retired — using ${product.name}.`);
       return product.name;
     }
-    return effectiveRevenue >= 2_000_000 ? `${family} Director` : `${family} Advisor`;
+    const [director, partner] = family === 'FCFO' ? [1_000_000, 2_000_000] : [2_000_000, 3_000_000];
+    if (effectiveRevenue >= partner) return `${family} Partner`;
+    return effectiveRevenue >= director ? `${family} Director` : `${family} Advisor`;
   };
 
   const picks = [];
@@ -689,6 +703,12 @@ export function selectDiscussedCoaching(products, effectiveRevenue, notes) {
   if (coach && fcoo && getProduct(`${coach} + ${fcoo}`)) picks.push(`${coach} + ${fcoo}`);
   else picks.push(...[coach, fcoo].filter(Boolean));
   if (fcfo) picks.push(fcfo);
+  // Bookkeeping: the level named, else the Core Financial tab's revenue band
+  // (Level 1 under $1M, Level 2 $1M–$2.9M, Level 3 $3M–$3.9M, Level 4 $4M+).
+  if (hasFamily('Bookkeeping')) {
+    const named = discussed.find(p => p.startsWith('Bookkeeping Level'));
+    picks.push(named ?? `Bookkeeping Level ${effectiveRevenue >= 4_000_000 ? 4 : effectiveRevenue >= 3_000_000 ? 3 : effectiveRevenue >= 1_000_000 ? 2 : 1}`);
+  }
 
   const name = picks.join(' + ');
   for (const p of picks.flatMap(x => x.split(' + '))) {
