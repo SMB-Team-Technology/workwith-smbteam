@@ -1,0 +1,227 @@
+{
+  "confidence": "low",
+  "revenue_stated": null,
+  "net_revenue_stated": null,
+  "is_contingency_practice": true,
+  "revenue_effective": 340000,
+  "revenue_source": "hubspot_annual_law_firm_revenue",
+  "revenue_label": "$180K-$500K",
+  "revenue_verified": false,
+  "needs_revenue_confirmation": true,
+  "team_size_stated": null,
+  "team_size_source": null,
+  "team_size_effective": 3,
+  "practice_areas_detected": [
+    "personal injury (parent firm)",
+    "lemon law",
+    "consumer protection under the \"lemon daddy\" brand (the call's focus)",
+    "class a",
+    "lemon law / consumer protection (the call's focus)",
+    "personal injury (parent firm; the call's focus was lemon daddy, so pi was not researched further)",
+    "lemon law / consumer protection (search \"lemon law attorney los angeles\")",
+    "personal injury"
+  ],
+  "hubspot_company": null,
+  "firm_identity_check": "matches — trigger \"Drake Law Group\" matches drakelawgroup.com (footer \"© 2025 by Drake Law Group\"; page titles say \"Drake Law Firm\") and the transcript (\"Drake Law Firm\"). The trigger's note that lemondaddy.com is \"an unrelated site\" is wrong: Lemon Daddy is the firm's own Lemon Law brand (lemondaddy.com footer reads \"Copyright ©2026 - Drake Law Group\"; Rashid Alam, 00:02:13 \"our Lemon Daddy sector of the business\").",
+  "package_source": "rules",
+  "package_override": null,
+  "needs_seller_input": false,
+  "revenue_only_option": null,
+  "call_focus": {
+    "primary_engagement": "marketing",
+    "products_discussed": [],
+    "lead_gen_gap": true
+  },
+  "marketing_tier": "Starter",
+  "marketing_name": "Full Service Marketing — Starter",
+  "marketing_price_bundled": 4997,
+  "marketing_price_retail": 5697,
+  "marketing_savings": 700,
+  "coaching_name": "Elite Coach",
+  "coaching_price_bundled": 2600,
+  "coaching_price_retail": 3497,
+  "coaching_savings": 897,
+  "law_tier": null,
+  "law_name": null,
+  "law_price_bundled": null,
+  "law_price_retail": null,
+  "law_seats": null,
+  "total_bundled": 7597,
+  "total_savings": 1597,
+  "ad_spend_conservative": 50000,
+  "ad_spend_aggressive": 50000,
+  "ad_spend_rationale": {
+    "conservative_basis": "current spend stated on the call ($50,000/mo) held at launch — above the $6,200 channel floor",
+    "aggressive_basis": "20% rule: $680,000 goal × 20% ÷ 12 × 1.5 geo − $4,997 fee = $12,003 → reverse math: 5.2 cases/mo × $4,000 cost per case (stated) = $20,606 → capped at the $25,000 the package manages"
+  },
+  "selection_notes": [
+    "Revenue not stated on the call — HubSpot only has the range \"$180K-$500K\". Using the midpoint ($340,000) for this draft only; confirm actual revenue with the prospect before locking in.",
+    "Team size not stated in research notes or HubSpot — assumed 3. Please confirm headcount.",
+    "Revenue under $750K but multiple practice areas detected: Essentials hidden (requires single practice area) — Starter tier.",
+    "Revenue $250K–$400K: Elite Coach selected.",
+    "Total at conservative ad spend ($57,597/mo) is over the 35% cap ($9,917/mo on $340,000 revenue) — review with sales rep."
+  ],
+  "pricing_mode": "bundled",
+  "bundle_eligible_count": 2,
+  "unpriced_products": [],
+  "setup_fees": [
+    {
+      "line": "marketing",
+      "product": "Full Service Marketing — Starter",
+      "label": "AI Avatar setup",
+      "amount": 1850,
+      "waivable": true,
+      "waived": false,
+      "charged": 1850
+    },
+    {
+      "line": "coaching",
+      "product": "Elite Coach",
+      "label": "Setup fee",
+      "amount": 1500,
+      "waivable": true,
+      "waived": false,
+      "charged": 1500
+    }
+  ],
+  "setup_total": 3350,
+  "investment": {
+    "version": 1,
+    "products": [
+      {
+        "category": "marketing",
+        "name": "Full Service Marketing — Starter",
+        "charged": 4997,
+        "standalone": 5697
+      },
+      {
+        "category": "coaching",
+        "name": "Elite Coach",
+        "charged": 2600,
+        "standalone": 3497
+      }
+    ],
+    "monthly_total": 7597,
+    "list_total": 9194,
+    "total_savings": 1597,
+    "pricing_mode": "bundled",
+    "setup_fees": [
+      {
+        "product": "Full Service Marketing — Starter",
+        "label": "AI Avatar setup",
+        "amount": 1850,
+        "charged": 1850,
+        "waived": false
+      },
+      {
+        "product": "Elite Coach",
+        "label": "Setup fee",
+        "amount": 1500,
+        "charged": 1500,
+        "waived": false
+      }
+    ],
+    "setup_total": 3350,
+    "year_one_total": 94514,
+    "year_one_basis": "12 × $7,597/mo in fees + $3,350 one-time setup. Ad spend is paid separately to Google and Meta.",
+    "ad_spend": {
+      "channels": [
+        {
+          "channel": "Google Search",
+          "minimum": 3000
+        },
+        {
+          "channel": "Local Services Ads",
+          "minimum": 2000
+        },
+        {
+          "channel": "Meta retargeting",
+          "minimum": 1200
+        }
+      ],
+      "conservative": 50000,
+      "aggressive": 50000,
+      "current_stated": 50000,
+      "cap": 25000,
+      "overage": {
+        "above_cap": 25000,
+        "fee_rate": 0.15
+      },
+      "conservative_basis": "current spend stated on the call ($50,000/mo) held at launch — above the $6,200 channel floor",
+      "aggressive_steps": [
+        "20% rule: $680,000 goal × 20% ÷ 12 × 1.5 geo − $4,997 fee = $12,003",
+        "reverse math: 5.2 cases/mo × $4,000 cost per case (stated) = $20,606",
+        "capped at the $25,000 the package manages"
+      ],
+      "year_one_range": [
+        600000,
+        600000
+      ],
+      "seller_set": false,
+      "computed": null,
+      "needs_seller_review": true
+    },
+    "return": {
+      "method": "stated_cost_per_case",
+      "basis": "At today's $4,000 cost per signed case and a $11,000 average case (said on the call), with no improvement assumed.",
+      "case_value": 11000,
+      "case_value_stated": true,
+      "cost_per_case": 4000,
+      "share_of_case_value": 36,
+      "close_rate": 0.03,
+      "blended_cpl": null,
+      "scenarios": [
+        {
+          "label": "Recommended",
+          "ad_spend": 50000,
+          "leads": null,
+          "cases": 12.5,
+          "revenue": 137500,
+          "return_multiple": 2.8
+        }
+      ],
+      "disclaimer": "Illustrative arithmetic, not a forecast."
+    },
+    "inputs": {
+      "practice_area": {
+        "value": "Other",
+        "source": "research notes"
+      },
+      "geo_tier": {
+        "value": 1,
+        "multiplier": 1.5,
+        "source": "research notes"
+      },
+      "competitiveness": {
+        "value": "High",
+        "source": "research notes"
+      },
+      "spanish_campaign": false,
+      "revenue_effective": 340000,
+      "revenue_goal": {
+        "value": 680000,
+        "source": "not stated — 2× current revenue (audit-write.md)"
+      },
+      "case_value": {
+        "value": 11000,
+        "source": "stated on the call"
+      },
+      "close_rate": {
+        "value": 0.03,
+        "source": "stated on the call"
+      },
+      "current_ad_spend": 50000,
+      "current_cost_per_case": 4000,
+      "current_cost_per_lead": null,
+      "max_ad_budget": null,
+      "management_fee": 4997,
+      "ad_spend_cap": 25000
+    },
+    "flags": [
+      "Reverse math ($20,606) is well above the 20% rule ($12,003) — the goal may be aggressive for the budget (paid ads team review).",
+      "Goal-based ad spend ($50,000) is above the $25,000 cap for Full Service Marketing — Starter — capped. Higher spend means a tier upgrade or the 15% overage fee (seller decision).",
+      "Current spend ($50,000) is above the $25,000 cap for Full Service Marketing — Starter — the 15% overage fee applies above the cap.",
+      "Ad spend over $25K — scoping approval required."
+    ]
+  }
+}
