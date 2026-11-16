@@ -33,32 +33,34 @@
   },
   "marketing_tier": "Starter",
   "marketing_name": "Full Service Marketing — Starter",
-  "marketing_price_bundled": 4997,
+  "marketing_price_bundled": 5697,
   "marketing_price_retail": 5697,
-  "marketing_savings": 700,
-  "coaching_name": "Elite Coach Plus",
-  "coaching_price_bundled": 3200,
-  "coaching_price_retail": 3497,
-  "coaching_savings": 297,
+  "marketing_savings": 0,
+  "coaching_name": null,
+  "coaching_price_bundled": null,
+  "coaching_price_retail": null,
+  "coaching_savings": null,
   "law_tier": null,
   "law_name": null,
   "law_price_bundled": null,
   "law_price_retail": null,
   "law_seats": null,
-  "total_bundled": 8197,
-  "total_savings": 997,
+  "total_bundled": 5697,
+  "total_savings": null,
   "ad_spend_conservative": 8700,
   "ad_spend_aggressive": 20500,
   "ad_spend_rationale": {
     "conservative_basis": "channel minimums $5,500 + $2,000 + $1,200 = $8,700",
-    "aggressive_basis": "20% rule: $800,000 goal × 20% ÷ 12 × 1 geo − $4,997 fee = $8,336 → reverse math: 22.2 cases/mo ÷ 15% close × $138 benchmark blended CPL = $20,441"
+    "aggressive_basis": "20% rule: $800,000 goal × 20% ÷ 12 × 1 geo − $5,697 fee = $7,636 → reverse math: 22.2 cases/mo ÷ 15% close × $138 benchmark blended CPL = $20,441"
   },
   "selection_notes": [
     "Revenue under $750K but multiple practice areas detected: Essentials hidden (requires single practice area) — Starter tier.",
-    "Total at conservative ad spend ($13,697/mo) is over the 35% cap ($11,667/mo on $400,000 revenue) — review with sales rep."
+    "Total at conservative ad spend ($13,697/mo) is over the 35% cap ($11,667/mo on $400,000 revenue) — review with sales rep.",
+    "Budget-reality override (audit-write STEP 1): coaching dropped — client said he cannot spend $2,500–$3,500/mo on coaching (00:43:58) and coaching only comes after a steady flow of leads (00:43:12). Marketing-only, stand-alone price.",
+    "Only one bundle-eligible product in this package — stand-alone pricing applied, no bundle savings."
   ],
-  "pricing_mode": "bundled",
-  "bundle_eligible_count": 2,
+  "pricing_mode": "standalone",
+  "bundle_eligible_count": 1,
   "unpriced_products": [],
   "setup_fees": [
     {
@@ -69,38 +71,23 @@
       "waivable": true,
       "waived": false,
       "charged": 1850
-    },
-    {
-      "line": "coaching",
-      "product": "Elite Coach Plus",
-      "label": "Setup fee",
-      "amount": 1500,
-      "waivable": true,
-      "waived": false,
-      "charged": 1500
     }
   ],
-  "setup_total": 3350,
+  "setup_total": 1850,
   "investment": {
     "version": 1,
     "products": [
       {
         "category": "marketing",
         "name": "Full Service Marketing — Starter",
-        "charged": 4997,
+        "charged": 5697,
         "standalone": 5697
-      },
-      {
-        "category": "coaching",
-        "name": "Elite Coach Plus",
-        "charged": 3200,
-        "standalone": 3497
       }
     ],
-    "monthly_total": 8197,
-    "list_total": 9194,
-    "total_savings": 997,
-    "pricing_mode": "bundled",
+    "monthly_total": 5697,
+    "list_total": 5697,
+    "total_savings": 0,
+    "pricing_mode": "standalone",
     "setup_fees": [
       {
         "product": "Full Service Marketing — Starter",
@@ -108,18 +95,11 @@
         "amount": 1850,
         "charged": 1850,
         "waived": false
-      },
-      {
-        "product": "Elite Coach Plus",
-        "label": "Setup fee",
-        "amount": 1500,
-        "charged": 1500,
-        "waived": false
       }
     ],
-    "setup_total": 3350,
-    "year_one_total": 101714,
-    "year_one_basis": "12 × $8,197/mo in fees + $3,350 one-time setup. Ad spend is paid separately to Google and Meta.",
+    "setup_total": 1850,
+    "year_one_total": 70214,
+    "year_one_basis": "12 × $5,697/mo in fees + $1,850 one-time setup. Ad spend is paid separately to Google and Meta.",
     "ad_spend": {
       "channels": [
         {
@@ -142,7 +122,7 @@
       "overage": null,
       "conservative_basis": "channel minimums $5,500 + $2,000 + $1,200 = $8,700",
       "aggressive_steps": [
-        "20% rule: $800,000 goal × 20% ÷ 12 × 1 geo − $4,997 fee = $8,336",
+        "20% rule: $800,000 goal × 20% ÷ 12 × 1 geo − $5,697 fee = $7,636",
         "reverse math: 22.2 cases/mo ÷ 15% close × $138 benchmark blended CPL = $20,441"
       ],
       "year_one_range": [
@@ -214,14 +194,14 @@
       "current_cost_per_case": null,
       "current_cost_per_lead": null,
       "max_ad_budget": null,
-      "management_fee": 4997,
+      "management_fee": 5697,
       "ad_spend_cap": 25000
     },
     "flags": [
       "Ad spend practice area not recorded in research — using Criminal Defense (inferred from practice areas).",
       "Geo market tier not recorded in research — using Tier 4 (1.0×).",
       "Market competitiveness not recorded in research — using Medium for the ad spend floor.",
-      "Reverse math ($20,441) is well above the 20% rule ($8,336) — the goal may be aggressive for the budget (paid ads team review).",
+      "Reverse math ($20,441) is well above the 20% rule ($7,636) — the goal may be aggressive for the budget (paid ads team review).",
       "Case value assumed ($3,000, low end of the Criminal Defense default) — confirm the real fee per case."
     ]
   }
