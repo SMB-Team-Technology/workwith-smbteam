@@ -1,0 +1,279 @@
+SMB TEAM — AUDIT RESEARCH NOTES (Pass 1)
+Firm: Drake Law Group (Lemon Daddy practice brand)
+Friendly name: drake
+Sales rep: Michael Kopp
+Proposal call date: November 23, 2026 (discovery call: 2026-11-16)
+Contact: Rashid Alam (CFO), Yasmine Benjamin (Director of Marketing; transcript tags her "Yasmine Benjamin" and "mbenjamin"; the call refers to her as "Mary")
+Research run: 2026-11-16
+
+============================================================
+STEP 1 — WEBSITE RESEARCH
+============================================================
+URL used: https://www.drakelawgroup.com (trigger URL, resolves). Parent firm site, PI-focused.
+Lemon Law brand site: https://www.lemondaddy.com (resolves for a plain fetch; returns HTTP 403 to headless Chrome/Lighthouse). The trigger's firm_name_check called lemondaddy.com "an unrelated site" — that is WRONG: the call confirms Lemon Daddy is the firm's own Lemon Law/consumer protection brand, and the lemondaddy.com footer reads "Copyright ©2026 - Drake Law Group" with a drakelawgroup.com contact email.
+Staging site: https://staging.lemondaddy.com (named on the call; loads for a plain fetch; blocked to Lighthouse). Per Rashid, launch is "right before Thanksgiving".
+
+--- drakelawgroup.com ---
+- Website URL confirmed live: yes
+- Last redesign date or estimated age: not found — no redesign date published; footer reads "© 2025 by Drake Law Group"
+- Mobile responsive: responsive-design elements observed in page code (not tested on a device)
+- Homepage headline: "You're Safe With Drake"
+- CTA above fold: yes — contact form with text-consent options plus a "Call Us Now" button (844-513-7253)
+- Contact form location: above fold (hero) and repeated mid-page
+- Live chat present: not observed on the homepage
+- Attorney bio present: yes — team section with linked profiles (Benjamin Drake, founder, and about 10 other attorneys)
+- Video present: not observed on the homepage
+- Blog present: yes — latest visible post "Employer Responsibilities in Preventing Workplace Injuries" (no post date shown)
+- Practice areas on site: Lemon Law, Car Accident, Pedestrian, Construction, Ride Share, Motorcycle, Product Liability, Animal Attack, Wrongful Death, Slip and Fall, Premises Liability, Bus, Bicycle, Truck, Train, Catastrophic
+- Offices listed: Woodland Hills (19935 Ventura Blvd), Stockton, Fresno, San Francisco
+
+--- lemondaddy.com (live Lemon Law site, to be replaced) ---
+- Homepage headline: "Is Your Car A Lemon? Turn your sour situation into sweet results"
+- CTA above fold: "Get Your Free Evaluation Now"
+- Contact form location: bottom of the page (name, email, phone)
+- Live chat: not observed
+- Attorney bio: not observed
+- Video: yes ("Lemon Daddy: Expert Advocacy for Lemon Law Cases")
+- Blog: yes (lemondaddy.com/blog/; case studies; no post dates visible)
+- Spanish: not observed on the live site
+- Phone listed: (888) 242-9392
+
+--- staging.lemondaddy.com (new site, not yet live) ---
+- Headline: "California Lemon Law Attorneys"; CTA "Start your free case review"; multi-step case form; Spanish version at /es/ ("Hablamos español"); "Class Actions & Firm Reviews" page; "Law Magazine" blog. Phone listed (888) 644-7110. Matches what Rashid described on the call.
+
+PageSpeed (performance score, 0–100):
+METHOD NOTE: pagespeed.web.dev / the PageSpeed API returned HTTP 429 (daily quota exceeded) on 2026-11-16, so these scores come from Lighthouse run locally (same engine as PageSpeed, default mobile throttling / desktop preset, run 2026-11-16 19:4x UTC from a GitHub runner). They may differ a few points from pagespeed.web.dev.
+- drakelawgroup.com — mobile: 57 | desktop: 79 (Lighthouse local run)
+- lemondaddy.com — mobile: not observed | desktop: not observed (HTTP 403 to automated Chrome, so Lighthouse could not load it)
+- staging.lemondaddy.com — mobile: not observed | desktop: not observed (Lighthouse could not load it, ERRORED_DOCUMENT_REQUEST)
+
+Research observation (STEP 1 follow-up): public coverage (PRWeb, Black Llama agency case study) describes Lemon Daddy as Drake Law Firm's Lemon Law brand, launched with Lakers guard Austin Reaves, with creative by Black Llama. This was NOT discussed on the call. Seller should confirm whether Black Llama is still an active vendor.
+
+>>> SAVED: STEP 1 complete.
+
+============================================================
+STEP 2 — GOOGLE BUSINESS PROFILE
+============================================================
+Google Search and Google Maps could not be read from the research environment (google.com/search returned an error page; Maps is script-rendered). The firm's Google Business Profile was therefore NOT reached directly. Every figure below is from a third-party page and is UNCONFIRMED.
+- GBP found: not confirmed (could not reach Google Maps). Whether Lemon Daddy has its own separate GBP: not found.
+- Star rating: 4.7 [UNCONFIRMED — sourced from allusinjurylawyers.com directory page for "Drake Law Firm", Woodland Hills; page text references "GMB" but this was not independently confirmed via Google]
+- Total review count: 157 [UNCONFIRMED — same allusinjurylawyers.com page, not independently confirmed via Google]
+- Most recent review date: not found
+- Primary category: not found on Google; directory page lists "Personal injury attorney / Legal services" [UNCONFIRMED]
+- Photos active: not observed
+- Posts active: not observed
+Seller should confirm the live Google rating, review count and category on the next call.
+
+============================================================
+STEP 3 — LOCAL 3-PACK SEARCHES
+============================================================
+NOT OBSERVED. Google search results (including the Local 3-pack) could not be loaded from the research environment, so no 3-pack position was recorded for any search. Tried: direct Google search fetch (error page). Web-search tool results are not a substitute for a live local pack, so no "firm appears yes/no" is claimed.
+Searches that should be run live for each practice area (seller / next pass):
+Practice Area 1: Lemon Law / consumer protection (the call's focus)
+- Search 1 "lemon law attorney Woodland Hills": firm appears not observed — competitors in pack not observed
+- Search 2 "lemon law attorney Los Angeles": firm appears not observed — competitors in pack not observed
+- Search 3 "lemon law lawyer California": firm appears not observed — competitors in pack not observed
+Practice Area 2: Personal injury (parent firm; the call's focus was Lemon Daddy, so PI was not researched further)
+- Searches "personal injury lawyer Woodland Hills", "car accident lawyer Los Angeles", "personal injury attorney Los Angeles": firm appears not observed
+Directory-level evidence that IS observed (not a 3-pack): FindLaw's "Best Lemon Law Attorneys in Woodland Hills, CA" page (fetched 2026-11-16) did not list Drake Law Firm. It listed Krohn & Moss Consumer Law Center, Knight Law Group, Law Offices of Yasha Ahoubim, Beverly West Law, Easy Lemon, Law Offices of Robert M. Moss, The Lemon Law Experts and others.
+
+============================================================
+STEP 4 — COMPETITOR REVIEW COUNTS
+============================================================
+No competitor listing could be read on Google. All figures are from aggregator pages or search-result snippets, so every one is UNCONFIRMED and must not be printed as a specific figure in the client-facing report. The prospect's own Google count is also unconfirmed (157 from an aggregator), so no competitor may be described as "out-reviewing" the prospect on these numbers.
+- Competitor 1: Strategic Legal Practices (Los Angeles lemon law) — reviews: 725 [UNCONFIRMED — sourced from a web-search snippet of Google review claims, not independently confirmed via Google] — rating: not found; Yelp shows 3.9 on 264 reviews [UNCONFIRMED — sourced from Yelp via search snippet, not independently confirmed via Google]
+- Competitor 2: The Lemon Law Experts (El Segundo, Southern California) — reviews: "over 1,500 five-star Google reviews" [UNCONFIRMED — the firm's own claim as shown in a web-search snippet, not independently confirmed via Google] — rating: 5.0 as claimed [UNCONFIRMED — same source]
+- Competitor 3: Quill & Arrow (Los Angeles lemon law) — reviews: 222 [UNCONFIRMED — sourced from Yelp via search snippet, not independently confirmed via Google] — rating: 3.7 [UNCONFIRMED — Yelp via search snippet]
+Other named local firms seen (Woodland Hills, same suburb as Drake's main office), all UNCONFIRMED:
+- Mousavi Law Firm (Woodland Hills) — 5.0 rating, 41 reviews [UNCONFIRMED — sourced from a search snippet of a directory listing, not independently confirmed via Google]
+- Law Offices of Todd M. Friedman (Woodland Hills) — 4.8 rating, 57 reviews [UNCONFIRMED — Avvo via search snippet, not independently confirmed via Google]
+- Knight Law Group (Los Angeles) — FindLaw shows 5 reviews [UNCONFIRMED — FindLaw, not independently confirmed via Google]
+
+============================================================
+STEP 5 — DIRECTORY LISTINGS
+============================================================
+- Avvo: inconclusive. The Avvo search page returned a different practice-area listing (elder law) and Drake did not appear in it; this is not proof of no listing. Seller to check.
+- Justia: not observed (HTTP 403 to the research environment).
+- FindLaw: Drake Law Firm does not appear in the Woodland Hills lemon law listing (fetched 2026-11-16). A general FindLaw profile was not checked.
+- Yelp: Yelp pages returned HTTP 403, so details come from search-result titles only: two Yelp listings for the same address (19935 Ventura Blvd) — "Drake Law Firm" Woodland Hills listing showing 49 reviews / 70 photos (updated June 2025) and a second listing under "Los Angeles" showing 45 reviews / 66 photos [UNCONFIRMED — Yelp search titles]; Yahoo Local shows 3.5 with 63 reviews [UNCONFIRMED — Yahoo Local]. Two Yelp listings for one address suggests a duplicate listing to clean up. On the call Rashid said Yelp ads were stopped because it "was almost kind of hurting us" and reviews stopped showing (Rashid Alam, 00:38:35).
+- Other directories seen: allusinjurylawyers.com (listed, 4.7 / 157, UNCONFIRMED), Yahoo Local (listed), Indeed and Glassdoor employer pages exist.
+- NAP: address consistent (19935 Ventura Blvd, Woodland Hills; "3rd Floor" in some listings; Yelp lists the city as both "Woodland Hills" and "Los Angeles"). Phone numbers differ by property: drakelawgroup.com 844-513-7253; lemondaddy.com (888) 242-9392; staging.lemondaddy.com (888) 644-7110 — likely call-tracking numbers; confirm they are intentional and that the main GBP/directories use the right one.
+- Geo-targeting pages: drakelawgroup.com has location pages for its four offices (Woodland Hills, Stockton, Fresno, San Francisco) and a service-areas section. lemondaddy.com has city pages such as "Stockton lemon law attorney". The new staging site includes vehicle-specific pages per Rashid (00:49:07).
+
+>>> SAVED: STEPS 2–5 complete.
+
+============================================================
+STEP 6 — GOOGLE ADS
+============================================================
+NOT OBSERVED for every practice area. The research environment cannot load live Google results pages (so ads cannot be seen) and the Google Ads Transparency Center is script-rendered. Per the ADS FRAMING RULE this is not evidence that no ads run — and the client confirmed on the call that they do run Google ads (see STEP 9).
+Practice Area 1: Lemon Law / consumer protection (search "lemon law attorney Los Angeles")
+- Firm ads observed: not observed (could not load a live results page). Client stated Google PPC is running with a phone number to a landing page (Rashid Alam, 00:20:21).
+- Named local competitors running ads: not observed
+Practice Area 2: Personal injury
+- Firm ads observed: not observed
+- Named local competitors running ads: not observed
+Seller should check live: "lemon law attorney Los Angeles", "lemon law attorney Woodland Hills", "personal injury lawyer Los Angeles".
+
+============================================================
+STEP 7 — LOCAL SERVICE ADS
+============================================================
+- Firm appears in LSA: not observed (live Google results not reachable)
+- Google Screened: not observed
+- LSA review count: not observed
+- Named local competitors in LSA: not observed
+Context from the call (Michael Kopp, seller, 00:14:06): "Do you guys advertise via PPC or LSAs…" — the client did not say whether they run LSAs.
+
+============================================================
+STEP 8 — META ADS
+============================================================
+- Firm has active ads: not observed — the Meta Ad Library returned HTTP 403 to the research environment. The client confirmed on the call that Meta ads are running (lead forms), so this is a tooling gap, not an absence. When the seller asked if Meta is a contact form, Rashid Alam answered "Correct." (00:20:18).
+- Named local competitor 1: not observed
+- Named local competitor 2: not observed
+Public coverage notes the firm and Lemon Daddy "run high-volume social and video content" (search-result summary, not verified).
+Seller should check live in the Ad Library: "Lemon Daddy", "Drake Law Firm", "Strategic Legal Practices", "Quill & Arrow".
+
+>>> SAVED: STEPS 6–8 complete.
+
+============================================================
+STEP 9 — TRANSCRIPT EXTRACTION
+============================================================
+Transcript source: full verbatim Fathom transcript (summary used only as overview)
+Call: Fathom recording 203622674, 2026-11-16, about 52 minutes. SMB Team: Michael Kopp (seller, ran the call), Tony Salvatori (intro only). Firm: Rashid Alam (CFO), "mbenjamin" / "Yasmine Benjamin" (Director of Marketing — Rashid calls her "Mary"; Fathom labels the speaker "Yasmine Benjamin", so quotes are attributed to that label).
+Fathom speaker tags are shifted in a few places (for example 00:19:44 "No." tagged to the seller is the client's answer). Seller numbers and pitch math are not recorded as the firm's figures.
+Where the AI summary and the full transcript differ, the transcript wins: the summary's "~15/week" is one week ("last week we signed like 15 retainers"), not an average; its "3 signed cases a month to break even on direct mail" and "$80k" total are the seller's math / a sum nobody said, not firm figures.
+
+- Practice areas confirmed: Personal injury (parent firm); Lemon Law / consumer protection under the "Lemon Daddy" brand (the call's focus); class actions (vehicle class actions — "I think we have five class action lawsuits that we're working on that we haven't really marketed like that", Rashid Alam, 00:23:25); used car dealership fraud (Rashid Alam, 00:37:12)
+- Current lead sources: Referrals — "the majority of the leads right now are coming from referrals" (Rashid Alam, 00:12:33); referrals "literally like double of what Google has done this year" (Rashid Alam, 00:20:38). Paid: Google PPC (phone number to a landing page) and Meta (contact form) — "the majority this year has come from Google" among paid channels (Rashid Alam, 00:20:32). "working with some lead gen companies that have been doing well" (Rashid Alam, 00:11:20). Direct mail "30K a month on mailers" (Rashid Alam, 00:36:27, "about 25, 30"). Billboards "earlier in the year" (Rashid Alam, 00:36:48). Yelp stopped. Of last week's 15 retainers, referrals were "Two" (Rashid Alam, 00:22:06).
+- Ads ever run: yes — Meta and Google, about $50K a month combined, split 50-50 (Rashid Alam, 00:32:05 "Per month between Meta, about 50K", 00:32:29 "Combined", 00:20:04 "literally split 50-50"); direct mail about $30K a month on top (Rashid Alam, 00:36:27); billboards earlier this year; Yelp ads early this year, stopped. Result: lead-to-signed 3% to 5%, cost to acquire "relatively between four to five K"; Meta "a lot of improvement could happen there" (Rashid Alam, 00:11:26). ChatGPT ads and TikTok not yet run — the client wants to look at them (Rashid Alam, 00:11:41, 00:23:00).
+- Firm identity check: matches — trigger "Drake Law Group" matches drakelawgroup.com (footer "© 2025 by Drake Law Group"; page titles say "Drake Law Firm") and the transcript ("Drake Law Firm"). The trigger's note that lemondaddy.com is "an unrelated site" is wrong: Lemon Daddy is the firm's own Lemon Law brand (lemondaddy.com footer reads "Copyright ©2026 - Drake Law Group"; Rashid Alam, 00:02:13 "our Lemon Daddy sector of the business").
+- Team size: Rashid Alam — CFO; Yasmine Benjamin — Director of Marketing; Jennifer — heads the Lemon Law intake team (not in Colombia); intake team of virtual assistants based in Colombia, replaced in the last two months ("these guys got to go and we got to, we replaced them", Rashid Alam, 00:35:05); a pre-lit department and a litigation department (Rashid Alam, 00:18:17); an overseas QA hire is planned (Rashid Alam, 00:33:06); founding partner Benjamin Drake not on the call ("our founder", Rashid Alam, 00:47:17); "all our team, they work remotely" (Yasmine Benjamin, 00:19:17). The website lists the founder and about 10 other attorneys.
+- Team size (total headcount): not stated
+- Annual revenue (gross / case value): not stated
+- Annual revenue (net / take-home / collected): not stated (only a per-case net: "net after costs… 11, 12K", Rashid Alam, 00:18:06–00:18:17)
+- Revenue (annual, best estimate): not stated
+- Fee structure: not stated (seller said "if everything's a contingency fee…" at 00:08:44; the client did not confirm). The new staging site says the manufacturer pays attorney fees if a claim succeeds.
+- Revenue goal: not stated as a dollar figure, and no 2x default is applied. Stated goal is volume: "our goal is to really get like into that 50, maybe even 60 retainers a month" (Rashid Alam, 00:11:00); "60 retainers signed every month is our biggest thing" (Rashid Alam, 00:29:43). Also wants to raise net fee per case from about $11K (Rashid Alam, 00:29:58).
+- Average case value: about $11,000–$12,000 net per case "right now net after costs" and not including marketing cost (Rashid Alam, 00:18:06–00:18:17; "No" to the seller's question whether marketing cost is included, 00:19:44, tag shifted to seller — read as Rashid)
+- Current close rate: lead to signed case 3% to 5% (Rashid Alam, 00:24:22); consult-to-signed not stated
+- Number of locations: 4 offices on the website (Woodland Hills main office, San Francisco, Stockton, Fresno); Lemon Daddy serves the whole state — "our main office is in Woodland Hills, but we service the entire state" (Rashid Alam, 00:19:05)
+- Spanish campaign needed: not stated — the new staging site has a Spanish-language version ("There's a Spanish language side to it", Rashid Alam, 00:48:37) but Spanish-language advertising was not discussed. Seller to confirm.
+- Dominant buying motive: no personal motive was stated. Closest inference: scale the Lemon Daddy practice into a predictable 50–60 signed retainers a month and lift net fees by taking more cases into litigation — category (3) scale and dominate. Rashid Alam (00:29:43): "it's literally getting the goal of hitting our 60 cases a month signed, 60 retainers signed every month is our biggest thing." Rashid also said he is "the finance guy" and wants a 30-60-90 plan he can take to the founder (00:47:01–00:47:17).
+- Any profitability claims made by prospect: "net after costs… 11, 12K" per case (Rashid Alam, 00:18:06–00:18:17, 11–12K as said); cost to procure a client "relatively between four to five K" (Rashid Alam, 00:19:25). The seller's "40 to 50% of fees to procure" (00:19:46, speaker unclear) and "three signed retainers just to break even" on direct mail (seller, 00:38:07; Rashid replied "Sure.") are seller math and are NOT recorded as firm figures.
+- Any claims about case types or practice areas: "Lemon Law. Well, really, it's consumer protection… We have some class actions going on. But anything consumer protection falls under the Lemon Daddy umbrella." (Rashid Alam, 00:02:19–00:02:26); "we are willing to take something into litigation" (Rashid Alam, 00:18:49)
+- Stated call focus / product interest: Marketing and intake for the Lemon Daddy (Lemon Law / consumer protection) practice only: better-quality leads, an assessment of where intake loses leads, a review of the Google and Meta strategy, possibly ChatGPT and TikTok channels, AI/automation for follow-up, and a 30-60-90 roadmap. Not coaching, FCOO, FCFO or a Fractional CTO engagement. Rashid Alam (00:22:36): "a combination of procure quality leads assess the assessing intakes, the places where intake can improve… would be the top two things that we're looking for" [transcript garbled — read as "procuring quality leads" and "assessing intake"].
+- Primary engagement: marketing
+- Products discussed on call: none
+- Lead-gen gap stated: yes — "It's a procure quality leads." (Rashid Alam, 00:22:32) [transcript unclear — read as "to procure quality leads"]
+- Existing marketing/SEO/ad vendor engagements: "we're working with some lead gen companies that have been doing well" (Rashid Alam, 00:11:20), unnamed; "we have been fielding a few different like, you know, companies… But none of them have really connected like that" (Rashid Alam, 00:49:53–00:50:00) — they are comparing other vendors; direct mail data from "info data companies" (Rashid Alam, 00:39:14); intake software "Intaker" in use, with an Intaker meeting held the same day (Rashid Alam, 00:25:49–00:26:04). Research note (not from the call): Black Llama created the Lemon Daddy brand — seller to confirm whether still active.
+- Budget constraints stated: none stated
+- Financial goals stated (for the ProfitOS slides): (1) 50–60 signed retainers a month — "our goal is to really get like into that 50, maybe even 60 retainers a month" (Rashid Alam, 00:11:00). (2) Raise net fee per case — "Improving our net… fees so if right now we're around that like you know 11k let's say like getting that closer to like improving that number" (Rashid Alam, 00:29:58–00:30:00) [transcript garbled; the sentence is run-on, meaning kept]. (3) none other stated. FCFO/Bookkeeping was not recommended or discussed (Rashid is the firm's CFO; seller said at 00:05:18 "CFOs, which I know you guys have solved for now").
+
+Investment inputs (client statements only):
+- Ad spend practice area: Other — Lemon Law / consumer protection (Rashid Alam, 00:02:19)
+- Geo market tier: Tier 1 (Los Angeles — main office in Woodland Hills; the practice serves all of California)
+- Market competitiveness: High — the seller said California has "a ton of firms" doing this (Michael Kopp, seller, 00:29:33); directory pages show many established Lemon Law firms (STEP 4; review figures UNCONFIRMED)
+- Current monthly ad spend (stated): $50,000 — Meta and Google combined, split 50-50 (Rashid Alam, 00:32:05–00:32:29). Direct mail is on top at about $30K a month (Rashid Alam, 00:36:27); the client gave no combined total.
+- Current cost per signed case (stated): $4,000 — low end of "relatively between four to five K" (Rashid Alam, 00:19:25)
+- Current cost per lead (stated): not stated
+- Average case value (stated, one figure): $11,000 — low end of "11, 12K" net after costs, before marketing cost (Rashid Alam, 00:18:13–00:18:17)
+- Close rate (stated): 3% — low end of the client's "3% to 5%" lead-to-signed rate (Rashid Alam, 00:24:22)
+- Revenue goal (annual, one figure): not stated
+- Maximum monthly ad budget (stated): not stated
+
+Key prospect quotes:
+1. Rashid Alam (client), 00:10:25 — intake / lead quality: "we're getting an influx of leads, and the truth of it is, is that they're not the best… that's draining the actual human manpower on the intake team"
+2. Rashid Alam (client), 00:11:00 — goals: "last week we signed like 15 retainers and our goal is to really get like into that 50, maybe even 60 retainers a month."
+3. Rashid Alam (client), 00:17:44 — scalability worry: "We're fixing these holes, but the underlying issues are still there."
+4. Rashid Alam (client), 00:19:25 — cost per signed case: "relatively between four to five K."
+5. Rashid Alam (client), 00:24:22 — conversion: "It's like 3% to 5%."
+6. Rashid Alam (client), 00:25:02 — follow-up speed: "including the weekend, which I feel like that's where we're down… we're kind of, like, failing in that area."
+7. Yasmine Benjamin (firm), 00:31:03 — conversion: "obviously, we do want to improve our conversion rate big time."
+8. Rashid Alam (client), 00:29:43 — goals / net fees: "it's literally getting the goal of hitting our 60 cases a month signed, 60 retainers signed every month is our biggest thing."
+9. Rashid Alam (client), 00:37:19 — marketing gaps (class actions, dealer fraud): "I don't think our marketing has kind of caught up with that."
+10. Rashid Alam (client), 00:47:01 — what he needs from SMB: "what would give me the most confidence is establishing a 30-60-90 in terms of what success would look like with working with you guys."
+11. Rashid Alam (client), 00:50:00 — competing vendors: "none of them have really connected like that."
+12. Yasmine Benjamin (firm), 00:45:10 — intake priority: "That's so big for us right now." (replying to the seller on converting prospects the firm has paid for)
+
+============================================================
+STEP 9B — KPI AND DIAGNOSIS
+============================================================
+KPI AND DIAGNOSIS (STEP 9B)
+Product focus this supports: marketing — paid ads (Google and Meta strategy, plus possible YouTube / ChatGPT / TikTok) with an intake audit and AI follow-up. No product was named or priced on the call; the seller proposed a scoping request and a 30-60-90 plan.
+Headline KPI: Cost per signed case — "relatively between four to five K" — said by client, 00:19:25 — "It can, I mean, relatively between four to five K."
+  KPI status: usable
+  Why this KPI: Paid ads strategy and better lead qualification lower what each signed case costs, and intake and follow-up fixes raise how many leads become signed cases.
+Supporting figures (0–3):
+  - Lead to signed conversion "3% to 5%" — client, 00:24:22 — "It's like 3% to 5%."
+  - Paid ads about $50K a month, Meta and Google "literally split 50-50" — client, 00:32:05 and 00:20:04 — "Per month between Meta, about 50K." / "It's literally split 50-50."
+  - Signed retainers "around 25 on average over the last, like this year, year to date, by month" — client, 00:21:36 — "We're at like around 25 on average over the last, like this year, year to date, by month."
+Client-stated goal for this KPI: none stated for cost per case. Stated goal for signed cases: "50 to 60 a month" — "Well, we want to get to that 50 to 60 a month." (Rashid Alam, 00:21:33)
+KPI quotes (2–4, verbatim, client only):
+  - Rashid Alam (client), 00:19:25 "relatively between four to five K." — cost to procure a client
+  - Rashid Alam (client), 00:24:22 "It's like 3% to 5%." — lead-to-signed conversion
+  - Rashid Alam (client), 00:10:25 "we're getting an influx of leads, and the truth of it is, is that they're not the best… that's draining the actual human manpower on the intake team" — lead quality and intake
+  - Yasmine Benjamin (firm), 00:31:03 "obviously, we do want to improve our conversion rate big time." — conversion
+Client's why (verbatim, client only): Rashid Alam (client), 00:29:43 "it's literally getting the goal of hitting our 60 cases a month signed, 60 retainers signed every month is our biggest thing." — a business goal; no personal reason (time, family, a sale) was stated on the call. Also 00:47:17 on the 30-60-90 plan: "that would allow me to then present this to our founder and, you know, come up with this game plan."
+Cost of inaction (verbatim, client only): none stated explicitly. Closest lines: Rashid Alam (client), 00:17:44 "We're fixing these holes, but the underlying issues are still there." and 00:10:25 "that's draining the actual human manpower on the intake team".
+Legacy Staircase discussed: no
+Diagnosis (3–4 causes, biggest first):
+  1. Too many unqualified Lemon Law leads reach intake, so very few leads become signed cases — evidence: lead-to-signed "3% to 5%" and "we're getting an influx of leads… they're not the best" — source: call: Rashid Alam 00:24:22 and 00:10:25 — fixed by: Full Service Marketing — Google and Meta targeting by vehicle, defect and buyer profile, with lead qualification built into the ads and forms
+     Target basis: client goal of 50–60 signed retainers a month (Rashid Alam, 00:11:00, 00:29:43)
+  2. Follow-up after a form fill is slow, especially on weekends, and intake loses warm leads — evidence: "including the weekend… we're kind of, like, failing in that area"; "retargeting or like basically following up on leads that… were on the warmer side and… having a system" — source: call: Rashid Alam 00:25:02 and 00:33:48 — fixed by: intake audit (secret-shopper calls) plus AI automated text and email follow-up (seller to confirm which product carries the AI piece)
+     Target basis: none — flag for seller (no response-time figure was given on the call)
+  3. Paid spend is split evenly between two channels that do not perform evenly — evidence: Meta and Google "literally split 50-50", while "the majority this year has come from Google" among paid channels and Meta "a lot of improvement could happen there" — source: call: Rashid Alam 00:20:04, 00:20:32, 00:11:26 — fixed by: Full Service Marketing — channel and budget review, Meta rebuild, YouTube retargeting test
+     Target basis: none — flag for seller
+  4. Class action and dealer fraud work is not marketed — evidence: "I don't think our marketing has kind of caught up with that"; five class actions "that we haven't really marketed like that" — source: call: Rashid Alam 00:37:19 and 00:23:25 — fixed by: Web + SEO and paid ads for dedicated class action and dealer fraud pages (the new staging site already has these page types)
+     Target basis: none — flag for seller
+Plan inputs (non-marketing products the call points to):
+  - Fractional CTO / AI Workforce Pro: tasks the client named as manual, slow or repetitive: (1) sifting "cold… bad leads" before intake — Rashid Alam 00:10:25; (2) "the follow-up mass text to people who were qualified, but we just didn't connect" — 00:11:10; (3) "automating kind of like the reach out" after a form fill — 00:25:10; (4) "an automatic text, asking them to… provide X, Y, Z" — 00:25:30; (5) "retargeting… following up on leads… on the warmer side… and having a system" — 00:33:48. Note: the client already uses Intaker ("we actually are using Intaker right now", 00:25:49) and is "planning" more AI.
+  - FCOO / coaching: process or leadership pain named: the Colombia intake team was replaced in the last two months and "a overseas QA person" will be hired to listen to calls (Rashid Alam 00:33:06); "we want to make sure that… our intake team sounds like they know what they're talking about" (00:33:23). The call did not point to coaching or FCOO as an engagement.
+  - FCFO / bookkeeping: none stated (the firm has its own CFO).
+Alternate KPI (if the seller changes the package): intake / AI follow-up → lead-to-signed conversion "3% to 5%" (Rashid Alam, 00:24:22), plus weekend follow-up speed (no figure given).
+Seller should confirm on the next call:
+  - Live Google rating, review count and category for the firm and for Lemon Daddy (not reachable in research); Google, LSA and Meta ads, and 3-pack positions for the practice areas (not observed); whether Lemon Daddy has its own Google Business Profile.
+  - Total paid spend: $50K digital plus about $30K direct mail were stated separately; the client did not state a combined number, a Meta-versus-Google result split, or the direct-mail return (the "three retainers to break even" figure was the seller's).
+  - Current time-to-contact after a lead form (and on weekends) — Mary assessed it but no figure was given; and cost per lead, which was not stated.
+  - Annual revenue, headcount, fee structure and an annual revenue goal (none stated); the 40–50% procurement figure (speaker unclear at 00:19:46) was not confirmed by the client.
+  - Whether Spanish-language advertising is wanted (the new site has a Spanish version); and the new site's launch date, which the call gave as both "end of the week" (00:17:10) and "before Thanksgiving" (00:47:51).
+  - Whether Black Llama (brand agency, from public coverage) and the unnamed "lead gen companies" are active vendors; and whether the founder (Benjamin Drake) joins the Nov 23 call — Rashid said he wants to review the plan with him first (00:50:55–00:51:07).
+  - PageSpeed: pagespeed.web.dev was over its daily quota, so the drakelawgroup.com scores are a local Lighthouse run; lemondaddy.com and staging.lemondaddy.com could not be tested (blocked to automated browsers) — the Lemon Daddy site speed, the page the ads send people to, is unmeasured.
+  - Time zone for the Nov 23 follow-up: the Fathom action item says 10:45 ET, its summary says 10:45 AM PT, and the call said "10.45 a.m." with no zone; the trigger's proposal call time converts to 10:45 PT / 1:45 PM ET.
+
+============================================================
+STEP 10 — COMPETITIVE URGENCY SCORE
+============================================================
+Score: 6 out of 10 — a provisional score: Google 3-pack, ads and review data could not be observed live, so it rests on directory evidence, public brand coverage and the call.
+Named local competitor threats (all review figures UNCONFIRMED; none to be printed as a specific figure in the client report):
+1. Strategic Legal Practices (Los Angeles) — a large, long-established Lemon Law firm with a high review volume on aggregator pages [UNCONFIRMED], competing for the same Los Angeles and California searches.
+2. The Lemon Law Experts (El Segundo) — advertises 1,500+ five-star Google reviews on its own page [UNCONFIRMED]; far ahead on social proof if confirmed.
+3. Quill & Arrow (Los Angeles) — a modern, well-reviewed Lemon Law firm with its own Los Angeles Lemon Law page [UNCONFIRMED review data]; also Mousavi Law Firm and the Law Offices of Todd M. Friedman, both in Woodland Hills.
+Counterweight: Drake has its own distinct brand (Lemon Daddy, with a Lakers spokesperson), runs paid Google and Meta spend, and is launching a new site, so this is not a "right now" invisibility problem.
+Dynamic sentence: "A score of 6 means competitors have meaningful advantages in one or more areas and are pulling ahead. You are not invisible yet — but the window to close the gap is narrowing. Every month without action is a month they extend their lead."
+
+============================================================
+PASS 2 — VERIFICATION CHECKLIST (completed)
+============================================================
+[x] Every number matches observed data or the call (PageSpeed from local Lighthouse, method noted)
+[x] No competitor cited as dominating while ratings of the prospect are confirmed — prospect's own count is unconfirmed, so all competitor figures are UNCONFIRMED
+[x] Every review count and rating carries a verification-method tag (all UNCONFIRMED, source named)
+[x] Revenue not stated; per-case net 11–12K recorded; fee structure "not stated"
+[x] Ad sections cover both practice areas (all "not observed", with reason)
+[x] No section says the firm is not running ads — the client confirmed Meta, Google and direct mail
+[x] No profitability claim except those said by the client; seller math marked as such
+[x] Competitors are named local firms only
+[x] PageSpeed: real numbers for drakelawgroup.com (57 / 79); lemondaddy.com and staging "not observed"
+[x] DBM recorded (no personal motive; closest inference given)
+[x] Revenue goal recorded (volume goal stated; dollar figure not stated)
+[x] Close rate recorded (3%–5% lead to signed)
+[x] Average case value recorded ($11–12K net)
+[x] Call focus recorded: marketing and intake for Lemon Daddy; not coaching or AI-led
+[x] Primary engagement, Products discussed, Lead-gen gap filled in the machine-read format
+[x] Revenue best estimate "not stated"; headcount "not stated"
+[x] Firm identity check filled in ("matches", with the trigger's lemondaddy.com note corrected)
+[x] Existing vendors and budget constraints recorded
+[x] Investment inputs filled in the exact format
+[x] Nothing fabricated; gaps are in the seller list
+[x] STEP 9B why / cost of inaction / Legacy Staircase filled in
+[x] STEP 9B headline KPI is a number said on the call with speaker and timestamp
+[x] No STEP 9B figure was calculated, converted or UNCONFIRMED
+[x] Every cause has an evidence source and a target basis
