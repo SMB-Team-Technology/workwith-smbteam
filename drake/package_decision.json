@@ -51,15 +51,16 @@
   "ad_spend_conservative": 50000,
   "ad_spend_aggressive": 50000,
   "ad_spend_rationale": {
-    "conservative_basis": "current spend stated on the call ($50,000/mo) held at launch — above the $6,200 channel floor",
-    "aggressive_basis": "20% rule: $680,000 goal × 20% ÷ 12 × 1.5 geo − $4,997 fee = $12,003 → reverse math: 5.2 cases/mo × $4,000 cost per case (stated) = $20,606 → capped at the $25,000 the package manages"
+    "conservative_basis": "set by the seller (Seller via Slack 2026-11-16) — computed range was $50,000–$50,000",
+    "aggressive_basis": "20% rule: $680,000 goal × 20% ÷ 12 × 1.5 geo − $4,997 fee = $12,003 → reverse math: 5.2 cases/mo × $4,000 cost per case (stated) = $20,606 → capped at the $25,000 the package manages → replaced by the seller's range $50,000–$50,000"
   },
   "selection_notes": [
     "Revenue not stated on the call — HubSpot only has the range \"$180K-$500K\". Using the midpoint ($340,000) for this draft only; confirm actual revenue with the prospect before locking in.",
     "Team size not stated in research notes or HubSpot — assumed 3. Please confirm headcount.",
     "Revenue under $750K but multiple practice areas detected: Essentials hidden (requires single practice area) — Starter tier.",
     "Revenue $250K–$400K: Elite Coach selected.",
-    "Total at conservative ad spend ($57,597/mo) is over the 35% cap ($9,917/mo on $340,000 revenue) — review with sales rep."
+    "Total at conservative ad spend ($57,597/mo) is over the 35% cap ($9,917/mo on $340,000 revenue) — review with sales rep.",
+    "Seller override: ad spend set to $50,000/mo (current spend; $25,000 is not enough) per Slack request on 2026-11-16."
   ],
   "pricing_mode": "bundled",
   "bundle_eligible_count": 2,
@@ -147,19 +148,23 @@
         "above_cap": 25000,
         "fee_rate": 0.15
       },
-      "conservative_basis": "current spend stated on the call ($50,000/mo) held at launch — above the $6,200 channel floor",
+      "conservative_basis": "set by the seller (Seller via Slack 2026-11-16) — computed range was $50,000–$50,000",
       "aggressive_steps": [
         "20% rule: $680,000 goal × 20% ÷ 12 × 1.5 geo − $4,997 fee = $12,003",
         "reverse math: 5.2 cases/mo × $4,000 cost per case (stated) = $20,606",
-        "capped at the $25,000 the package manages"
+        "capped at the $25,000 the package manages",
+        "replaced by the seller's range $50,000–$50,000"
       ],
       "year_one_range": [
         600000,
         600000
       ],
-      "seller_set": false,
-      "computed": null,
-      "needs_seller_review": true
+      "seller_set": true,
+      "computed": {
+        "conservative": 50000,
+        "aggressive": 50000
+      },
+      "needs_seller_review": false
     },
     "return": {
       "method": "stated_cost_per_case",
@@ -223,5 +228,10 @@
       "Current spend ($50,000) is above the $25,000 cap for Full Service Marketing — Starter — the 15% overage fee applies above the cap.",
       "Ad spend over $25K — scoping approval required."
     ]
+  },
+  "ad_spend_override": {
+    "conservative": 50000,
+    "aggressive": 50000,
+    "note": "Seller via Slack 2026-11-16"
   }
 }
