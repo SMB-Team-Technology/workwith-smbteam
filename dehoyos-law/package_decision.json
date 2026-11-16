@@ -48,11 +48,11 @@
   "law_seats": null,
   "total_bundled": 19197,
   "total_savings": 3297,
-  "ad_spend_conservative": 10000,
-  "ad_spend_aggressive": 40000,
+  "ad_spend_conservative": 13500,
+  "ad_spend_aggressive": 150000,
   "ad_spend_rationale": {
-    "conservative_basis": "car accidents (houston)",
-    "aggressive_basis": "scaled 4x off the conservative channel-minimum floor"
+    "conservative_basis": "channel minimums $10,000 + $2,000 + $1,500 = $13,500",
+    "aggressive_basis": "20% rule: $6,000,000 goal × 20% ÷ 12 × 1 geo − $15,997 fee = $84,003 → reverse math: 100 cases/mo ÷ 15% close × $343 benchmark blended CPL = $228,649 → capped at the $150,000 the package manages"
   },
   "selection_notes": [
     "Revenue not in research notes — sourced from HubSpot (hubspot_annual_law_firm_revenue): \"$3,000,000+\" → $3,000,000",
@@ -62,5 +62,173 @@
   ],
   "pricing_mode": "bundled",
   "bundle_eligible_count": 2,
-  "unpriced_products": []
+  "unpriced_products": [],
+  "setup_fees": [
+    {
+      "line": "marketing",
+      "product": "Full Service Marketing — Platinum",
+      "label": "AI Avatar setup",
+      "amount": 1850,
+      "waivable": true,
+      "waived": false,
+      "charged": 1850
+    },
+    {
+      "line": "coaching",
+      "product": "Elite Coach Plus",
+      "label": "Setup fee",
+      "amount": 1500,
+      "waivable": true,
+      "waived": false,
+      "charged": 1500
+    }
+  ],
+  "setup_total": 3350,
+  "investment": {
+    "version": 1,
+    "products": [
+      {
+        "category": "marketing",
+        "name": "Full Service Marketing — Platinum",
+        "charged": 15997,
+        "standalone": 18997
+      },
+      {
+        "category": "coaching",
+        "name": "Elite Coach Plus",
+        "charged": 3200,
+        "standalone": 3497
+      }
+    ],
+    "monthly_total": 19197,
+    "list_total": 22494,
+    "total_savings": 3297,
+    "pricing_mode": "bundled",
+    "setup_fees": [
+      {
+        "product": "Full Service Marketing — Platinum",
+        "label": "AI Avatar setup",
+        "amount": 1850,
+        "charged": 1850,
+        "waived": false
+      },
+      {
+        "product": "Elite Coach Plus",
+        "label": "Setup fee",
+        "amount": 1500,
+        "charged": 1500,
+        "waived": false
+      }
+    ],
+    "setup_total": 3350,
+    "year_one_total": 233714,
+    "year_one_basis": "12 × $19,197/mo in fees + $3,350 one-time setup. Ad spend is paid separately to Google and Meta.",
+    "ad_spend": {
+      "channels": [
+        {
+          "channel": "Google Search",
+          "minimum": 10000
+        },
+        {
+          "channel": "Local Services Ads",
+          "minimum": 2000
+        },
+        {
+          "channel": "Meta retargeting",
+          "minimum": 1500
+        }
+      ],
+      "conservative": 13500,
+      "aggressive": 150000,
+      "current_stated": null,
+      "cap": 150000,
+      "overage": null,
+      "conservative_basis": "channel minimums $10,000 + $2,000 + $1,500 = $13,500",
+      "aggressive_steps": [
+        "20% rule: $6,000,000 goal × 20% ÷ 12 × 1 geo − $15,997 fee = $84,003",
+        "reverse math: 100 cases/mo ÷ 15% close × $343 benchmark blended CPL = $228,649",
+        "capped at the $150,000 the package manages"
+      ],
+      "year_one_range": [
+        162000,
+        1800000
+      ],
+      "seller_set": false,
+      "computed": null,
+      "needs_seller_review": true
+    },
+    "return": {
+      "method": "benchmark_cpl",
+      "basis": "SMB Team MVA cost-per-lead benchmarks ($343 blended, +20% on the low end), 15% close rate (assumed) and a $5,000 case value (assumed default).",
+      "case_value": 5000,
+      "case_value_stated": false,
+      "cost_per_case": null,
+      "share_of_case_value": null,
+      "close_rate": 0.15,
+      "blended_cpl": 343,
+      "scenarios": [
+        {
+          "label": "Conservative",
+          "ad_spend": 13500,
+          "leads": 32.8,
+          "cases": 4.9,
+          "revenue": 24600,
+          "return_multiple": 1.8
+        },
+        {
+          "label": "Aggressive",
+          "ad_spend": 150000,
+          "leads": 437.4,
+          "cases": 65.6,
+          "revenue": 328000,
+          "return_multiple": 2.2
+        }
+      ],
+      "disclaimer": "Illustrative arithmetic, not a forecast."
+    },
+    "inputs": {
+      "practice_area": {
+        "value": "MVA",
+        "source": "inferred from practice areas"
+      },
+      "geo_tier": {
+        "value": 4,
+        "multiplier": 1,
+        "source": "default"
+      },
+      "competitiveness": {
+        "value": "Medium",
+        "source": "default"
+      },
+      "spanish_campaign": false,
+      "revenue_effective": 3000000,
+      "revenue_goal": {
+        "value": 6000000,
+        "source": "not stated — 2× current revenue (audit-write.md)"
+      },
+      "case_value": {
+        "value": 5000,
+        "source": "practice-area default (low end)"
+      },
+      "close_rate": {
+        "value": 0.15,
+        "source": "default 15%"
+      },
+      "current_ad_spend": null,
+      "current_cost_per_case": null,
+      "current_cost_per_lead": null,
+      "max_ad_budget": null,
+      "management_fee": 15997,
+      "ad_spend_cap": 150000
+    },
+    "flags": [
+      "Ad spend practice area not recorded in research — using MVA (inferred from practice areas).",
+      "Geo market tier not recorded in research — using Tier 4 (1.0×).",
+      "Market competitiveness not recorded in research — using Medium for the ad spend floor.",
+      "Reverse math ($228,649) is well above the 20% rule ($84,003) — the goal may be aggressive for the budget (paid ads team review).",
+      "Goal-based ad spend ($228,649) is above the $150,000 cap for Full Service Marketing — Platinum — capped. Higher spend means a tier upgrade or the 15% overage fee (seller decision).",
+      "Ad spend over $25K — scoping approval required.",
+      "Case value assumed ($5,000, low end of the MVA default) — confirm the real fee per case."
+    ]
+  }
 }
