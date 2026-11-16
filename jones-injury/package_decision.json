@@ -42,28 +42,30 @@
   "coaching_price_bundled": 4600,
   "coaching_price_retail": 4997,
   "coaching_savings": 397,
-  "law_tier": null,
-  "law_name": null,
-  "law_price_bundled": null,
+  "law_tier": "OmniSocial AI 360 (Standard + Dominate)",
+  "law_name": "OmniSocial AI 360 (Standard + Dominate)",
+  "law_price_bundled": 4444,
   "law_price_retail": null,
   "law_seats": null,
-  "total_bundled": 12097,
+  "total_bundled": 16541,
   "total_savings": 1897,
-  "ad_spend_conservative": 10000,
-  "ad_spend_aggressive": 10000,
+  "ad_spend_conservative": 25000,
+  "ad_spend_aggressive": 25000,
   "ad_spend_rationale": {
     "conservative_basis": "set by the seller (Seller via Slack 2026-11-16) — computed range was $10,000–$50,000",
-    "aggressive_basis": "20% rule: $6,000,000 goal × 20% ÷ 12 × 1.5 geo − $7,497 fee = $142,503 → reverse math: 1.7 cases/mo ÷ 90% close × $303 benchmark blended CPL = $561 → capped at the $50,000 the package manages → replaced by the seller's range $10,000–$10,000"
+    "aggressive_basis": "20% rule: $6,000,000 goal × 20% ÷ 12 × 1.5 geo − $7,497 fee = $142,503 → reverse math: 1.7 cases/mo ÷ 90% close × $303 benchmark blended CPL = $561 → capped at the $50,000 the package manages → replaced by the seller's range $25,000–$25,000"
   },
   "selection_notes": [
     "Contingency-fee practice with only gross revenue stated ($2,000,000) — no net/collected figure found. Using gross as fallback, but confidence downgraded: confirm actual collected revenue with sales rep before finalizing tier.",
     "Revenue $2M–$3M: Dominate tier.",
     "Revenue $1M+, team 15+ but no dedicated ops detected: Master's Circle selected. Verify ops capacity with sales rep.",
     "Seller override: switched marketing to Full Service Marketing — Growth (with Master's Circle) per Slack request on 2026-11-16.",
-    "Seller override: ad spend set to the minimum for personal injury ($10,000/mo; the PI high-competition floor) since the firm has essentially no paid ad spend today (referral-driven), per Slack request on 2026-11-16."
+    "Seller override: ad spend set to the minimum for personal injury ($10,000/mo; the PI high-competition floor) since the firm has essentially no paid ad spend today (referral-driven), per Slack request on 2026-11-16.",
+    "Seller override: kept Full Service Marketing — Growth and added OmniSocial AI 360 per Slack request on 2026-11-16. Sized as Content – Standard $2,297 + Ads – Dominate $2,497 − $350 bundle discount = $4,444/mo (paid social/video ad spend about $21,500–$26,500 of the $25,000 starting mix; Dominate covers $10K–$25K — confirm tier against actual social/video split, Ads – Platinum is $3,997 for $25K–$50K). Content – Pro ($3,697) not used: the firm's own video and social creative is reused across channels. Setup fee $1,850. 12-month minimum term; sales-ops approval required (72-hour turnaround).",
+    "\"OmniSocial AI 360 (Standard + Dominate)\" isn't in the pricing catalog — price not checked automatically (kept $4,444/mo)."
   ],
   "pricing_mode": "bundled",
-  "bundle_eligible_count": 2,
+  "bundle_eligible_count": 3,
   "unpriced_products": [],
   "investment": {
     "version": 1,
@@ -79,10 +81,16 @@
         "name": "Master's Circle",
         "charged": 4600,
         "standalone": 4997
+      },
+      {
+        "category": "law",
+        "name": "OmniSocial AI 360 (Standard + Dominate)",
+        "charged": 4444,
+        "standalone": null
       }
     ],
-    "monthly_total": 12097,
-    "list_total": 13994,
+    "monthly_total": 16541,
+    "list_total": 18438,
     "total_savings": 1897,
     "pricing_mode": "bundled",
     "setup_fees": [
@@ -99,11 +107,18 @@
         "amount": 1500,
         "charged": 1500,
         "waived": false
+      },
+      {
+        "product": "OmniSocial AI 360 (Standard + Dominate)",
+        "label": "OmniSocial AI setup",
+        "amount": 1850,
+        "charged": 1850,
+        "waived": false
       }
     ],
-    "setup_total": 3350,
-    "year_one_total": 148514,
-    "year_one_basis": "12 × $12,097/mo in fees + $3,350 one-time setup. Ad spend is paid separately to Google and Meta.",
+    "setup_total": 5200,
+    "year_one_total": 203692,
+    "year_one_basis": "12 × $16,541/mo in fees + $5,200 one-time setup. Ad spend is paid separately to Google and Meta.",
     "ad_spend": {
       "channels": [
         {
@@ -119,8 +134,8 @@
           "minimum": 1200
         }
       ],
-      "conservative": 10000,
-      "aggressive": 10000,
+      "conservative": 25000,
+      "aggressive": 25000,
       "current_stated": null,
       "cap": 50000,
       "overage": null,
@@ -129,11 +144,11 @@
         "20% rule: $6,000,000 goal × 20% ÷ 12 × 1.5 geo − $7,497 fee = $142,503",
         "reverse math: 1.7 cases/mo ÷ 90% close × $303 benchmark blended CPL = $561",
         "capped at the $50,000 the package manages",
-        "replaced by the seller's range $10,000–$10,000"
+        "replaced by the seller's range $25,000–$25,000"
       ],
       "year_one_range": [
-        120000,
-        120000
+        300000,
+        300000
       ],
       "seller_set": true,
       "computed": {
@@ -154,10 +169,10 @@
       "scenarios": [
         {
           "label": "Recommended",
-          "ad_spend": 10000,
-          "leads": 33,
-          "cases": 29.7,
-          "revenue": 8908400,
+          "ad_spend": 25000,
+          "leads": 82.5,
+          "cases": 74.2,
+          "revenue": 22271000,
           "return_multiple": 890.8
         }
       ],
@@ -203,8 +218,8 @@
     ]
   },
   "ad_spend_override": {
-    "conservative": 10000,
-    "aggressive": 10000,
+    "conservative": 25000,
+    "aggressive": 25000,
     "note": "Seller via Slack 2026-11-16"
   },
   "setup_fees": [
@@ -225,7 +240,16 @@
       "waivable": true,
       "waived": false,
       "charged": 1500
+    },
+    {
+      "line": "law",
+      "product": "OmniSocial AI 360 (Standard + Dominate)",
+      "label": "OmniSocial AI setup",
+      "amount": 1850,
+      "waivable": true,
+      "waived": false,
+      "charged": 1850
     }
   ],
-  "setup_total": 3350
+  "setup_total": 5200
 }

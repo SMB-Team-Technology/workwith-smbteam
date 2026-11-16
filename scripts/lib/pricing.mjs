@@ -299,6 +299,8 @@ export function pricePackage(lines) {
     for (const part of r?.parts ?? []) {
       const f = part.product?.setup;
       if (f?.amount > 0) setupFees.push({ line: key, product: part.product.name, label: f.label, amount: f.amount, waivable: f.waivable !== false });
+      // OmniSocial AI isn't in the catalog (priced by hand from audit-write.md) but every package carries the $1,850 setup fee.
+      else if (!part.product && /^omnisocial/i.test(part.raw)) setupFees.push({ line: key, product: part.raw, label: 'OmniSocial AI setup', amount: 1850, waivable: true });
     }
   }
 

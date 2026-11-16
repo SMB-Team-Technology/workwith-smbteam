@@ -50,15 +50,15 @@ import re
 # ── BUILD NOTES (internal — never shown on a slide) ──────────────
 # Marketing package: Full Service Marketing — Growth — bundled $7,497/mo, stand-alone $8,997/mo, savings $1,500/mo
 # Non-marketing package(s): Master's Circle — bundled $4,600/mo, stand-alone $4,997/mo, savings $397/mo
-# LAW package: none
-# Total monthly investment: $12,097/mo · total savings: $1,897/mo · pricing_mode: bundled
-# Setup fees: FSM Growth AI Avatar setup $1,850 (not waived) · Master's Circle setup $1,500 (not waived) · total $3,350 (one-time)
-# Year one: $148,514 (12 × $12,097 + $3,350 setup)
+# LAW package: none (OmniSocial AI 360 — Content – Standard $2,297 + Ads – Dominate $2,497 − $350 bundle discount = $4,444/mo; carried on the law line of package_decision.json; no stand-alone price on file; setup $1,850)
+# Total monthly investment: $16,541/mo · total savings: $1,897/mo · pricing_mode: bundled
+# Setup fees: FSM Growth AI Avatar setup $1,850 (not waived) · Master's Circle setup $1,500 (not waived) · OmniSocial AI setup $1,850 (not waived) · total $5,200 (one-time)
+# Year one: $203,692 (12 × $16,541 + $5,200 setup)
 # Ad spend (copied from investment.ad_spend — computed in code, never by hand):
-#   $10,000–$10,000/mo (seller-set) · low end: set by the seller (Slack 2026-11-16), computed range was $10,000–$50,000 · high end: 20% rule $142,503 → reverse math $561 → capped at the $50,000 the package manages → replaced by the seller's range $10,000–$10,000
-# Return (copied from investment.return): benchmark_cpl · accident/injury CPL benchmark $303 blended, 90% close (said on the call), $300,000 average case (said on the call) · scenario: $10,000 → 33 leads → 29.7 cases → $8,908,400 → 890.8×
+#   $25,000–$25,000/mo (seller-set) · low end: set by the seller (Slack 2026-11-16), computed range was $10,000–$50,000 · high end: 20% rule $142,503 → reverse math $561 → capped at the $50,000 the package manages → replaced by the seller's range $25,000–$25,000 · seller's Houston starting mix: Meta cold lead gen $20,000 + Meta retargeting $1,500 + about $5,000 across YouTube, Performance Max and branded search; LSA profile set up with no lead expectation
+# Return (copied from investment.return): benchmark_cpl · accident/injury CPL benchmark $303 blended, 90% close (said on the call), $300,000 average case (said on the call) · scenario: $25,000 → 82.5 leads → 74.2 cases → $22,271,000 → 890.8×
 # Investment inputs used: practice area Accident/Injury (research notes) · geo tier 1 Houston (research notes) · competitiveness High (research notes) · revenue $2,000,000 (research notes, gross) · goal $6,000,000 (said on the call) · case value $300,000 (said on the call, unit unclear) · close rate 90% (said on the call) · flags: goal-based ad spend $142,503 is above the $50,000 Growth cap (capped; tier upgrade or 15% overage is the seller's call)
-# Why this range: $10,000 a month goes to add a trackable source of injury cases beyond referrals (AD_SPEND_WHY).
+# Why this range: $25,000 a month goes to build a trackable lead channel on Meta, YouTube and Google beyond referrals (AD_SPEND_WHY).
 # Pillar review: Lead Gen red — about 80% referral base, no predictable channel · Intake amber — one dedicated intake person, AI answering service but signing waits until next morning · Team red — owners ~60 hrs/week, training and correcting by hand · Profit amber — bookkeeper reports monthly, expenses too general
 # KPI (slide 1): Signed cases a month — "We're getting about 15 to 22." — client, 00:19:42 (STEP 9B)
 # Diagnosis (slide 2): 1. Cases depend on referrals — "We're probably like 80% referral base" — DaSean Jones, 00:15:36 · 2. Can't see what marketing brings in — "less than like 2,000" marketing spend, "haven't had a chance to really examine what's coming from it" — DaSean Jones, 00:22:32 / 00:15:26 · 3. No self-managing team — about 60 hrs/week, about half on work others should do — DaSean Jones, 00:33:55 / 00:34:32 (STEP 9B). STEP 9B cause 4 (profit detail, Audia Jones 00:41:19) left off: FCFO is not in the package.
@@ -70,7 +70,7 @@ import re
 # What You Told Us (slide 1 quotes and tie lines):
 #   1. Lead sources — transcript line: "I can't even think of the last case that we got off social media." (DaSean Jones, 00:23:05) — supports: Full Service Marketing — Growth
 #   2. Team — transcript line: "we spend too much time doing things that someone else should be doing." (DaSean Jones, 00:09:34) — supports: Master's Circle
-# Overrides applied: Seller override (Slack 2026-11-16) — Full Service Marketing — Growth with Master's Circle, ad spend $10,000/mo (PI high-competition floor). Built as set. The Existing-vendor override does NOT apply to a seller choice: the firm has an active website/SEO vendor ("We hired someone to redo our website… we're just doing some SEO", 00:12:14) — vendor name, cost and term not stated. Package source in the file reads "rules" but selection_notes carry the seller override.
+# Overrides applied: Seller override (Slack 2026-11-16) — Full Service Marketing — Growth with Master's Circle, ad spend $10,000/mo (PI high-competition floor); then (Slack 2026-11-16, deck edit) kept Growth, added OmniSocial AI 360 (Content – Standard + Ads – Dominate) and set ad spend to the seller's $25,000/mo Houston starting mix. Built as set. The Existing-vendor override does NOT apply to a seller choice: the firm has an active website/SEO vendor ("We hired someone to redo our website… we're just doing some SEO", 00:12:14) — vendor name, cost and term not stated. Package source in the file reads "rules" but selection_notes carry the seller override.
 # Escalation flags:
 #   - Existing website/SEO vendor engagement is active; seller chose Full Service Marketing anyway — confirm vendor overlap and contract end date before the call
 #   - Return table (890.8×) rests on a $300,000 average case ("somewhere maybe around 300", no unit said) at 90% close; it does not fit $2M revenue at 15–22 signed cases a month — review or reprice before the deck goes out
@@ -79,6 +79,8 @@ import re
 #   - Master's Circle: team ~15 but no dedicated ops lead detected — verify ops capacity (Master's Circle needs a dedicated ops, marketing or intake team member; one dedicated intake person exists)
 #   - Goal-based ad spend $142,503 is above the $50,000 Growth cap; seller set $10,000 — tier upgrade or 15% overage is the seller's call
 #   - Review counts unconfirmed — verify live before the call (none printed in the deck)
+#   - OmniSocial AI 360: sales-ops approval required, 72-hour turnaround; 12-month minimum term; tier sized by hand — Ads – Dominate covers $10K–$25K ad spend, Ads – Platinum ($25K–$50K) would make the 360 $5,944/mo; Content – Pro would add $1,400/mo. Confirm tier with sales ops
+#   - Ad spend $25,000/mo is at the scoping threshold (over $25K needs scoping approval); Alexis's guidance supports $20,000+ on cold Meta in Houston
 #   - Setup fees: none waived
 
 # Report metadata
@@ -103,7 +105,7 @@ KPI_FOCUS = {
 
 PROSPECT_QUOTES = [
     ("Lead sources", "I can't even think of the last case that we got off social media.",
-     "Full Service Marketing adds Google Ads, LSA and Meta ads", "DaSean Jones (client), 00:23:05"),
+     "Full Service Marketing and OmniSocial AI add Meta and video ads", "DaSean Jones (client), 00:23:05"),
     ("Team time", "We spend too much time doing things that someone else should be doing.",
      "Master's Circle: team training calls and 1:1 coaching", "DaSean Jones (client), 00:09:34"),
 ]
@@ -134,10 +136,10 @@ DIAGNOSIS = [
      "source": "Discovery call, DaSean Jones"},
 ]
 
-DIAGNOSIS_FIX_LINE = "Paid lead generation and call tracking answer the first two; Master's Circle answers the third."
+DIAGNOSIS_FIX_LINE = "Paid ads, social video and call tracking answer the first two; Master's Circle answers the third."
 
 # ── Slide 3 — The Plan ────────────────────────────────────────────
-PLAN_KICKER = "Marketing and coaching"
+PLAN_KICKER = "Marketing, social and coaching"
 PLAN_TITLE  = "Steadier Cases, Fewer Hours"
 
 PLAN = [
@@ -146,6 +148,10 @@ PLAN = [
                  "50,000 words of SEO content at launch",
                  "Review requests, up to 250 a month"],
      "metric": "Cost per lead", "target": None, "baseline": None},
+    {"title": "Put video and social to work", "fixes": 1,
+     "actions": ["Paid social and video ads management",
+                 "Organic video presence on your social channels"],
+     "metric": "Social leads", "target": None, "baseline": None},
     {"title": "See what marketing brings in", "fixes": 2,
      "actions": ["Call tracking: 5 local numbers, 500 minutes",
                  "Monthly and quarterly marketing strategy reviews"],
@@ -160,7 +166,7 @@ PLAN = [
 PLAN_NOTE = "One complimentary FCFO and one complimentary FCOO consultation come with Master's Circle."
 
 # ── Slide 4 — The Recommended Strategy ────────────────────────────
-STRATEGY_TITLE = "Two Pieces, One Strategy"
+STRATEGY_TITLE = "Three Pieces, One Strategy"
 
 STRATEGY = [
     {"product": "Full Service Marketing — Growth", "title": "Build demand",
@@ -175,9 +181,15 @@ STRATEGY = [
      "deliverables": ["Weekly group coaching calls",
                       "2 × 90-min 1:1 calls a month",
                       "Monthly Marketing, Intake and Operations team calls",
-                      "2 in-person tickets to each quarterly workshop",
-                      "One complimentary FCFO and FCOO consultation"],
+                      "2 in-person tickets to each quarterly workshop"],
      "why": "You train and correct by hand today; this builds a team that doesn't need you for it."},
+    {"product": "OmniSocial AI 360 (Standard + Dominate)", "title": "Win on social",
+     "channels": "Meta · YouTube · Organic video",
+     "deliverables": ["Paid social and video ads management",
+                      "Ads tier for $10K–$25K a month of ad spend",
+                      "Organic video presence on your social channels",
+                      "Your video and social creative reused across ads"],
+     "why": "Social isn't a lead source today; this puts your video and social content to work in ads."},
 ]
 
 # ── Seller prep (never in the deck) ───────────────────────────────
@@ -185,17 +197,18 @@ SELLER_NOTES = {
     "priorities": "Confirm before quoting: is 'about 15 to 22' signed cases a month (DaSean first said it for new leads, then clarified signed at 00:20:06) and how many leads come in. Ask for total leads a month, and what the 'less than 2,000' marketing spend covers. Decision maker: DaSean says Audia decides; both are invited to the follow-up at 10:00 AM CT. The client asked for a data-driven ROI, three price levels (best, mid, entry), case studies and reviews.",
     "diagnosis": "No cost-per-case, cost-per-lead or profit figure was stated, so there is no target on the marketing-visibility cause. Profit visibility (expenses 'broken down further', Audia Jones 00:41:19) is not in this package; offer the FCFO conversation and use the complimentary FCFO consultation. Confirm the website and SEO vendors, their cost and contract end dates: the firm said it is 'still early' with them.",
     "plan": "No plan metric has a call baseline or target for the first two actions, so they are left out of the 'What we'll measure' row. The owner-hours target (about 20 a week in about 24 months) is the client's own goal; DaSean said 60 hours is about right (Audia agreed).",
-    "strategy": "Master's Circle is chosen for this firm by the seller; verify ops capacity (about 15 staff, one dedicated intake person, no ops lead identified). The existing website and SEO vendor engagement is active: be ready for the overlap question.",
-    "investment": "Review before sending: the return table is computed from a $300,000 average case ('somewhere maybe around 300', no unit said on the call) at a 90% close rate and shows a very large multiple that does not fit $2M revenue at 15 to 22 signed cases a month. Confirm average fee, fee structure and collected revenue, then reprice or drop the return table. Ad spend is set at the $10,000 personal-injury minimum (seller, Slack 2026-11-16); the firm has no current ad spend. Setup fees ($1,850 AI Avatar, $1,500 Master's Circle) are not waived. Personal Injury in a top 40 metro needs approval.",
+    "strategy": "Master's Circle is chosen for this firm by the seller; verify ops capacity (about 15 staff, one dedicated intake person, no ops lead identified). The existing website and SEO vendor engagement is active: be ready for the overlap question. OmniSocial AI 360 (Content – Standard + Ads – Dominate, $4,444/mo, 12-month minimum, $1,850 setup) is added at the seller's request: it needs sales-ops approval with a 72-hour turnaround, so do not promise same-day terms. Ads – Dominate covers $10K–$25K of ad spend; if the Meta and video spend runs above $25K, Ads – Platinum applies. Houston starting mix from Alexis's guidance: $20,000 Meta cold lead gen, $1,500 Meta retargeting, about $5,000 across YouTube, Performance Max and branded search, reusing the firm's video and social creative. A Local Services Ads profile is set up with no expectation that it generates leads.",
+    "investment": "Review before sending: the return table is computed from a $300,000 average case ('somewhere maybe around 300', no unit said on the call) at a 90% close rate and shows a very large multiple that does not fit $2M revenue at 15 to 22 signed cases a month. Confirm average fee, fee structure and collected revenue, then reprice or drop the return table. Ad spend is set at $25,000 a month (seller, Slack 2026-11-16, Houston starting mix); the firm has no current ad spend, and anything above $25K needs scoping approval. Setup fees ($1,850 AI Avatar, $1,500 Master's Circle, $1,850 OmniSocial AI) are not waived. Personal Injury in a top 40 metro needs approval.",
 }
 
 # ── Slide 5 — Your Investment ─────────────────────────────────────
 PRODUCT_LINES = {
-    "Full Service Marketing — Growth": "Website · SEO · Google Ads · LSA · Meta Ads · Call tracking · Reviews",
-    "Master's Circle": "Weekly group calls · 1:1 coaching · Team training calls · Workshops",
+    "Full Service Marketing — Growth": "Website · SEO · Google, LSA and Meta ads · Call tracking",
+    "OmniSocial AI 360 (Standard + Dominate)": "Paid social and video ads · Organic video content",
+    "Master's Circle": "Weekly group calls · 1:1 coaching · Team calls · Workshops",
 }
 
-AD_SPEND_WHY = "to add a trackable source of injury cases beyond referrals"
+AD_SPEND_WHY = "to build a trackable lead channel on Meta, YouTube and Google beyond referrals"
 
 CLOSING_QUOTE = ("To really pour everything into like focusing on litigation, which is what we want to get to",
                  "Audia Jones (firm), 00:35:18")
