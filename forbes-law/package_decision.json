@@ -28,7 +28,7 @@
   "firm_identity_check": "matches — the trigger's \"Forbes Law\" matches the firm name on the website and on LawInfo/FindLaw. The trigger contact \"Steve Forbes\" matches the Founding Partner \"Steven Forbes\" on the website; no MISMATCH.",
   "package_source": "rules",
   "package_override": null,
-  "needs_seller_input": true,
+  "needs_seller_input": false,
   "revenue_only_option": {
     "marketing_tier": "Growth",
     "marketing_name": "Full Service Marketing — Growth",
@@ -46,51 +46,173 @@
     "products_discussed": [],
     "lead_gen_gap": null
   },
-  "marketing_tier": null,
-  "marketing_name": null,
-  "marketing_price_bundled": null,
-  "marketing_price_retail": null,
-  "marketing_savings": null,
-  "coaching_name": null,
-  "coaching_price_bundled": null,
-  "coaching_price_retail": null,
-  "coaching_savings": null,
+  "marketing_tier": "Growth",
+  "marketing_name": "Full Service Marketing — Growth",
+  "marketing_price_bundled": 7497,
+  "marketing_price_retail": 8997,
+  "marketing_savings": 1500,
+  "coaching_name": "Elite Coach Plus",
+  "coaching_price_bundled": 3200,
+  "coaching_price_retail": 3497,
+  "coaching_savings": 297,
   "law_tier": null,
   "law_name": null,
   "law_price_bundled": null,
   "law_price_retail": null,
   "law_seats": null,
-  "total_bundled": 0,
-  "total_savings": null,
-  "ad_spend_conservative": null,
-  "ad_spend_aggressive": null,
-  "ad_spend_rationale": null,
+  "total_bundled": 10697,
+  "total_savings": 1797,
+  "ad_spend_conservative": 6200,
+  "ad_spend_aggressive": 50000,
+  "ad_spend_rationale": {
+    "conservative_basis": "channel minimums $3,000 + $2,000 + $1,200 = $6,200",
+    "aggressive_basis": "20% rule: $3,961,000 goal × 20% ÷ 12 × 1.5 geo − $7,497 fee = $91,528 → reverse math: not possible (no case value) → capped at the $50,000 the package manages"
+  },
   "selection_notes": [
     "Call focus unknown (no discovery call found, or Primary engagement not recorded) — no package recommended. Seller must say what the call was about before this can be locked in.",
     "Revenue not stated on the call — HubSpot only has the range \"$961K - $3M\". Using the midpoint ($1,980,500) for this draft only; confirm actual revenue with the prospect before locking in.",
     "Team size not stated in research notes or HubSpot — assumed 3. Please confirm headcount.",
     "Revenue $1M–$2M: Growth tier.",
-    "Revenue $1M+, team under 5: Elite Coach Plus selected (Master's Circle requires 5+ team)."
+    "Revenue $1M+, team under 5: Elite Coach Plus selected (Master's Circle requires 5+ team).",
+    "Seller override: marketing + Elite Coach Plus per Slack request on 2026-11-16 (Growth tier chosen from revenue range $961K-$3M; Elite Coach Plus since team under 5)."
   ],
-  "pricing_mode": "standalone",
-  "bundle_eligible_count": 0,
+  "pricing_mode": "bundled",
+  "bundle_eligible_count": 2,
   "unpriced_products": [],
-  "setup_fees": [],
-  "setup_total": 0,
+  "setup_fees": [
+    {
+      "line": "marketing",
+      "product": "Full Service Marketing — Growth",
+      "label": "AI Avatar setup",
+      "amount": 1850,
+      "waivable": true,
+      "waived": false,
+      "charged": 1850
+    },
+    {
+      "line": "coaching",
+      "product": "Elite Coach Plus",
+      "label": "Setup fee",
+      "amount": 1500,
+      "waivable": true,
+      "waived": false,
+      "charged": 1500
+    }
+  ],
+  "setup_total": 3350,
   "investment": {
     "version": 1,
-    "products": [],
-    "monthly_total": 0,
-    "list_total": 0,
-    "total_savings": 0,
-    "pricing_mode": "standalone",
-    "setup_fees": [],
-    "setup_total": 0,
-    "year_one_total": 0,
-    "year_one_basis": "12 × $0/mo in fees. Ad spend is paid separately to Google and Meta.",
-    "ad_spend": null,
+    "products": [
+      {
+        "category": "marketing",
+        "name": "Full Service Marketing — Growth",
+        "charged": 7497,
+        "standalone": 8997
+      },
+      {
+        "category": "coaching",
+        "name": "Elite Coach Plus",
+        "charged": 3200,
+        "standalone": 3497
+      }
+    ],
+    "monthly_total": 10697,
+    "list_total": 12494,
+    "total_savings": 1797,
+    "pricing_mode": "bundled",
+    "setup_fees": [
+      {
+        "product": "Full Service Marketing — Growth",
+        "label": "AI Avatar setup",
+        "amount": 1850,
+        "charged": 1850,
+        "waived": false
+      },
+      {
+        "product": "Elite Coach Plus",
+        "label": "Setup fee",
+        "amount": 1500,
+        "charged": 1500,
+        "waived": false
+      }
+    ],
+    "setup_total": 3350,
+    "year_one_total": 131714,
+    "year_one_basis": "12 × $10,697/mo in fees + $3,350 one-time setup. Ad spend is paid separately to Google and Meta.",
+    "ad_spend": {
+      "channels": [
+        {
+          "channel": "Google Search",
+          "minimum": 3000
+        },
+        {
+          "channel": "Local Services Ads",
+          "minimum": 2000
+        },
+        {
+          "channel": "Meta retargeting",
+          "minimum": 1200
+        }
+      ],
+      "conservative": 6200,
+      "aggressive": 50000,
+      "current_stated": null,
+      "cap": 50000,
+      "overage": null,
+      "conservative_basis": "channel minimums $3,000 + $2,000 + $1,200 = $6,200",
+      "aggressive_steps": [
+        "20% rule: $3,961,000 goal × 20% ÷ 12 × 1.5 geo − $7,497 fee = $91,528",
+        "reverse math: not possible (no case value)",
+        "capped at the $50,000 the package manages"
+      ],
+      "year_one_range": [
+        74400,
+        600000
+      ],
+      "seller_set": false,
+      "computed": null,
+      "needs_seller_review": true
+    },
     "return": null,
-    "inputs": {},
-    "flags": []
+    "inputs": {
+      "practice_area": {
+        "value": "Other",
+        "source": "research notes"
+      },
+      "geo_tier": {
+        "value": 1,
+        "multiplier": 1.5,
+        "source": "research notes"
+      },
+      "competitiveness": {
+        "value": "Medium",
+        "source": "default"
+      },
+      "spanish_campaign": false,
+      "revenue_effective": 1980500,
+      "revenue_goal": {
+        "value": 3961000,
+        "source": "not stated — 2× current revenue (audit-write.md)"
+      },
+      "case_value": {
+        "value": null,
+        "source": "practice-area default (low end)"
+      },
+      "close_rate": {
+        "value": 0.15,
+        "source": "default 15%"
+      },
+      "current_ad_spend": null,
+      "current_cost_per_case": null,
+      "current_cost_per_lead": null,
+      "max_ad_budget": null,
+      "management_fee": 7497,
+      "ad_spend_cap": 50000
+    },
+    "flags": [
+      "Goal-based ad spend ($91,528) is above the $50,000 cap for Full Service Marketing — Growth — capped. Higher spend means a tier upgrade or the 15% overage fee (seller decision).",
+      "Ad spend over $25K — scoping approval required.",
+      "No case value (stated or default) — return projection left out."
+    ]
   }
 }
