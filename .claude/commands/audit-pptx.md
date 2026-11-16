@@ -153,7 +153,7 @@ Copy values exactly — do not rewrite or recompute.
 
 **ProfitOS slides — `PROFITOS_GOALS`, `PROFITOS_WHY`** (ignored unless the package has Fractional CFO or Bookkeeping):
 - `PROFITOS_GOALS`: up to 3 `(heading, line)` pairs — the financial goals the client named on the call that FCFO / bookkeeping answers (e.g. a view of the numbers they can trust, knowing when they can afford the next hire, clear quarterly priorities). Heading ≤28 chars, line ≤90 chars, plain words, written to the client ("You want…"). Each must trace to a line in the research notes — record that line in the BUILD NOTES. Never invent a goal. `[]` when the call gave none: the engine shows ProfitOS's three standard goals and tells the seller in the prep file.
-- `PROFITOS_WHY`: one sentence (≤160 chars) on why the recommended FCFO level fits this firm, from the call (e.g. "Your priorities call for planning several decisions, not just a review of past results."). `None` → the level's standard line.
+- `PROFITOS_WHY`: one plain sentence (≤160 chars), written to the client, on why the recommended FCFO level fits this firm, built from what they said on the call (e.g. Advisor: "You want a clear read on your numbers and where to focus first." Director: "Your priorities call for planning several decisions, not just a review of past results."). No call jargon, no "you described". `None` → the level's standard line.
 
 ---
 
