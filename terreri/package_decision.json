@@ -1,0 +1,89 @@
+{
+  "confidence": "high",
+  "revenue_stated": 800000,
+  "net_revenue_stated": null,
+  "is_contingency_practice": false,
+  "revenue_effective": 800000,
+  "revenue_source": "research_notes",
+  "revenue_label": null,
+  "revenue_verified": true,
+  "needs_revenue_confirmation": false,
+  "team_size_stated": 6,
+  "team_size_source": "research_notes",
+  "team_size_effective": 6,
+  "practice_areas_detected": [
+    "business formation & contracts (acts as in-house counsel for \"probably 160 or 200 different corporations and llcs\"",
+    "bill",
+    "on the website: real estate",
+    "business law",
+    "personal"
+  ],
+  "hubspot_company": null,
+  "firm_identity_check": "matches — trigger \"Terreri Law\" is the short form of \"The Law Offices of Herbert L. Terreri, A Professional Corporation\" (website, directories); the transcript speaker is Herbert (Bert) Terreri, the same attorney.",
+  "package_source": "rules",
+  "package_override": null,
+  "needs_seller_input": false,
+  "revenue_only_option": null,
+  "call_focus": {
+    "primary_engagement": "AI",
+    "products_discussed": [
+      "AI Workforce Pro (tier not specified)"
+    ],
+    "lead_gen_gap": false
+  },
+  "marketing_tier": null,
+  "marketing_name": null,
+  "marketing_price_bundled": null,
+  "marketing_price_retail": null,
+  "marketing_savings": null,
+  "coaching_name": null,
+  "coaching_price_bundled": null,
+  "coaching_price_retail": null,
+  "coaching_savings": null,
+  "law_tier": "AI Workforce Pro",
+  "law_name": "AI Workforce Pro",
+  "law_price_bundled": 1717,
+  "law_price_retail": null,
+  "law_seats": 6,
+  "total_bundled": 1717,
+  "total_savings": null,
+  "ad_spend_conservative": null,
+  "ad_spend_aggressive": null,
+  "ad_spend_rationale": null,
+  "selection_notes": [
+    "AI-led call with no lead-gen need stated — marketing left out (call-purpose rule).",
+    "AI-led call with no coaching discussed — coaching left out (revenue rule would add Elite Coach Plus; add it back if the seller wants it).",
+    "\"AI Workforce Pro\" named without a tier — using AI Workforce Pro (team of 6).",
+    "AI Workforce Pro discussed on call: $1,597/mo for 5 users + 1 extra × $120.",
+    "Only one bundle-eligible product in this package — stand-alone pricing applied, no bundle savings.",
+    "Total $1,717/mo is under the $2,497/mo minimum — review with sales rep."
+  ],
+  "pricing_mode": "standalone",
+  "bundle_eligible_count": 1,
+  "unpriced_products": [],
+  "setup_fees": [],
+  "setup_total": 0,
+  "investment": {
+    "version": 1,
+    "products": [
+      {
+        "category": "law",
+        "name": "AI Workforce Pro (6 seats)",
+        "charged": 1717,
+        "standalone": null
+      }
+    ],
+    "monthly_total": 1717,
+    "list_total": 1717,
+    "total_savings": 0,
+    "pricing_mode": "standalone",
+    "setup_fees": [],
+    "setup_total": 0,
+    "year_one_total": 20604,
+    "year_one_basis": "12 × $1,717/mo in fees. Ad spend is paid separately to Google and Meta.",
+    "ad_spend": null,
+    "return": null,
+    "inputs": {},
+    "flags": []
+  }
+}
