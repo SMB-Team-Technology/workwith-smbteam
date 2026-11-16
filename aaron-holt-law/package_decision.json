@@ -47,11 +47,11 @@
   "law_seats": null,
   "total_bundled": 8197,
   "total_savings": 997,
-  "ad_spend_conservative": 5500,
-  "ad_spend_aggressive": 22000,
+  "ad_spend_conservative": 8700,
+  "ad_spend_aggressive": 20500,
   "ad_spend_rationale": {
-    "conservative_basis": "criminal defense (the rep describes \"a criminal defense lead\" and \"solo operator in criminal defense\"",
-    "aggressive_basis": "scaled 4x off the conservative channel-minimum floor"
+    "conservative_basis": "channel minimums $5,500 + $2,000 + $1,200 = $8,700",
+    "aggressive_basis": "20% rule: $800,000 goal × 20% ÷ 12 × 1 geo − $4,997 fee = $8,336 → reverse math: 22.2 cases/mo ÷ 15% close × $138 benchmark blended CPL = $20,441"
   },
   "selection_notes": [
     "Revenue under $750K but multiple practice areas detected: Essentials hidden (requires single practice area) — Starter tier.",
@@ -59,5 +59,170 @@
   ],
   "pricing_mode": "bundled",
   "bundle_eligible_count": 2,
-  "unpriced_products": []
+  "unpriced_products": [],
+  "setup_fees": [
+    {
+      "line": "marketing",
+      "product": "Full Service Marketing — Starter",
+      "label": "AI Avatar setup",
+      "amount": 1850,
+      "waivable": true,
+      "waived": false,
+      "charged": 1850
+    },
+    {
+      "line": "coaching",
+      "product": "Elite Coach Plus",
+      "label": "Setup fee",
+      "amount": 1500,
+      "waivable": true,
+      "waived": false,
+      "charged": 1500
+    }
+  ],
+  "setup_total": 3350,
+  "investment": {
+    "version": 1,
+    "products": [
+      {
+        "category": "marketing",
+        "name": "Full Service Marketing — Starter",
+        "charged": 4997,
+        "standalone": 5697
+      },
+      {
+        "category": "coaching",
+        "name": "Elite Coach Plus",
+        "charged": 3200,
+        "standalone": 3497
+      }
+    ],
+    "monthly_total": 8197,
+    "list_total": 9194,
+    "total_savings": 997,
+    "pricing_mode": "bundled",
+    "setup_fees": [
+      {
+        "product": "Full Service Marketing — Starter",
+        "label": "AI Avatar setup",
+        "amount": 1850,
+        "charged": 1850,
+        "waived": false
+      },
+      {
+        "product": "Elite Coach Plus",
+        "label": "Setup fee",
+        "amount": 1500,
+        "charged": 1500,
+        "waived": false
+      }
+    ],
+    "setup_total": 3350,
+    "year_one_total": 101714,
+    "year_one_basis": "12 × $8,197/mo in fees + $3,350 one-time setup. Ad spend is paid separately to Google and Meta.",
+    "ad_spend": {
+      "channels": [
+        {
+          "channel": "Google Search",
+          "minimum": 5500
+        },
+        {
+          "channel": "Local Services Ads",
+          "minimum": 2000
+        },
+        {
+          "channel": "Meta retargeting",
+          "minimum": 1200
+        }
+      ],
+      "conservative": 8700,
+      "aggressive": 20500,
+      "current_stated": null,
+      "cap": 25000,
+      "overage": null,
+      "conservative_basis": "channel minimums $5,500 + $2,000 + $1,200 = $8,700",
+      "aggressive_steps": [
+        "20% rule: $800,000 goal × 20% ÷ 12 × 1 geo − $4,997 fee = $8,336",
+        "reverse math: 22.2 cases/mo ÷ 15% close × $138 benchmark blended CPL = $20,441"
+      ],
+      "year_one_range": [
+        104400,
+        246000
+      ],
+      "seller_set": false,
+      "computed": null,
+      "needs_seller_review": true
+    },
+    "return": {
+      "method": "benchmark_cpl",
+      "basis": "SMB Team criminal defense cost-per-lead benchmarks ($138 blended, +20% on the low end), 15% close rate (assumed) and a $3,000 case value (assumed default).",
+      "case_value": 3000,
+      "case_value_stated": false,
+      "cost_per_case": null,
+      "share_of_case_value": null,
+      "close_rate": 0.15,
+      "blended_cpl": 138,
+      "scenarios": [
+        {
+          "label": "Conservative",
+          "ad_spend": 8700,
+          "leads": 52.5,
+          "cases": 7.9,
+          "revenue": 23600,
+          "return_multiple": 2.7
+        },
+        {
+          "label": "Aggressive",
+          "ad_spend": 20500,
+          "leads": 148.6,
+          "cases": 22.3,
+          "revenue": 66900,
+          "return_multiple": 3.3
+        }
+      ],
+      "disclaimer": "Illustrative arithmetic, not a forecast."
+    },
+    "inputs": {
+      "practice_area": {
+        "value": "Criminal Defense",
+        "source": "inferred from practice areas"
+      },
+      "geo_tier": {
+        "value": 4,
+        "multiplier": 1,
+        "source": "default"
+      },
+      "competitiveness": {
+        "value": "Medium",
+        "source": "default"
+      },
+      "spanish_campaign": false,
+      "revenue_effective": 400000,
+      "revenue_goal": {
+        "value": 800000,
+        "source": "not stated — 2× current revenue (audit-write.md)"
+      },
+      "case_value": {
+        "value": 3000,
+        "source": "practice-area default (low end)"
+      },
+      "close_rate": {
+        "value": 0.15,
+        "source": "default 15%"
+      },
+      "current_ad_spend": null,
+      "current_cost_per_case": null,
+      "current_cost_per_lead": null,
+      "max_ad_budget": null,
+      "management_fee": 4997,
+      "ad_spend_cap": 25000
+    },
+    "flags": [
+      "Ad spend practice area not recorded in research — using Criminal Defense (inferred from practice areas).",
+      "Geo market tier not recorded in research — using Tier 4 (1.0×).",
+      "Market competitiveness not recorded in research — using Medium for the ad spend floor.",
+      "Reverse math ($20,441) is well above the 20% rule ($8,336) — the goal may be aggressive for the budget (paid ads team review).",
+      "Case value assumed ($3,000, low end of the Criminal Defense default) — confirm the real fee per case."
+    ]
+  }
 }
