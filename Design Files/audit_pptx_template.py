@@ -230,6 +230,24 @@ AD_SPEND_WHY = "to turn high-intent searches into signed cases"     # FILL
 CLOSING_QUOTE = ("Verbatim client line about the outcome they want",
                  "Full Name (client), 00:00:00")                                   # FILL or None
 
+# ── ProfitOS slides (added by the engine after slide 5) ───────────
+# When package_decision.json includes Fractional CFO or Bookkeeping, the
+# engine adds the ProfitOS slides (Vanessa's ProfitOS proposal deck, in her
+# wording, in the Loom order). Only two things come from this firm's call:
+#
+# The goals the client named that FCFO / bookkeeping answers: up to 3
+# (heading ≤28 chars, line ≤90 chars), in plain words, each traceable to a
+# line in the research notes (record it in the BUILD NOTES). Never invented.
+# [] when the call gave none — the engine then shows ProfitOS's standard
+# three goals and tells the seller in the prep file.
+PROFITOS_GOALS = [
+    # ("Numbers you can trust", "You want a view of your financials you can rely on each month"),  # FILL
+]
+# Why the recommended FCFO level fits this firm, one sentence ≤160 chars,
+# from the call. None → the level's standard line from the ProfitOS deck.
+PROFITOS_WHY = None                                                   # FILL or None
+# Both are ignored when the package has no FCFO or Bookkeeping.
+
 # ═══════════════════════════════════════════════════════════════════
 # LAYOUT ENGINE — DO NOT MODIFY BELOW THIS LINE
 # ═══════════════════════════════════════════════════════════════════
@@ -266,10 +284,48 @@ BUNDLE_SAVINGS_TEXT = rgb("A9D68C")   # lighter green — reads as "money saved"
 # onboarding content exists — flip this to True to add it back.
 SHOW_ROLLOUT = False
 
+# Where the computed investment lives: the firm's package_decision.json,
+# next to this script. The master template has none, so it renders a sample.
+DECISION_PATH = os.path.join(os.path.dirname(os.path.abspath(__file__)), "package_decision.json")
+
+
+def load_decision():
+    import json
+    if not os.path.isfile(DECISION_PATH):
+        return {}
+    with open(DECISION_PATH) as f:
+        return json.load(f)
+
+
+def profitos_scope():
+    """(FCFO level or None, bookkeeping level or None) from the package.
+    Read from package_decision.json, so the ProfitOS slides always match the
+    products priced on the investment slide."""
+    d = load_decision()
+    names = " + ".join(str(d.get(k) or "") for k in ("marketing_name", "coaching_name", "law_name"))
+    fcfo = re.search(r"FCFO (Advisor|Director|Partner)", names)
+    books = re.search(r"Bookkeeping Level ([1-4])", names)
+    return (fcfo.group(1) if fcfo else None, int(books.group(1)) if books else None)
+
+
+PROFITOS_LEVEL, BOOKKEEPING_LEVEL = profitos_scope()
+
+# The ProfitOS slides, in the order of Vanessa's walkthrough: the firm's
+# goals → bookkeeping vs CFO → (bookkeeping levels) → questions → analysis
+# → the plan for this firm → the recommended level → the level ladder.
+# Bookkeeping alone gets bookkeeping vs CFO and the bookkeeping levels.
+if PROFITOS_LEVEL:
+    PROFITOS_SLIDES = (["pos_goals", "pos_two_sides"] + (["pos_books"] if BOOKKEEPING_LEVEL else []) +
+                       ["pos_questions", "pos_analysis", "pos_plan", "pos_level", "pos_ladder"])
+elif BOOKKEEPING_LEVEL:
+    PROFITOS_SLIDES = ["pos_two_sides", "pos_books"]
+else:
+    PROFITOS_SLIDES = []
+
 # Slide order. The staircase slide is optional (STAIRCASE in the FILL).
 SLIDE_ORDER = (["priorities"] + (["staircase"] if STAIRCASE else []) +
                ["diagnosis", "plan", "strategy"] + (["rollout"] if SHOW_ROLLOUT else []) +
-               ["investment"])
+               ["investment"] + PROFITOS_SLIDES)
 PAGE = {key: i + 1 for i, key in enumerate(SLIDE_ORDER)}
 TOTAL_SLIDES = len(SLIDE_ORDER)
 INVESTMENT_PAGE = PAGE["investment"]
@@ -674,7 +730,11 @@ def seller_note(key):
 
 SLIDE_TITLES = {"priorities": "Your Priorities, In Your Words", "staircase": "Lawyer Legacy Staircase",
                 "diagnosis": "The Diagnosis", "plan": "The Plan", "strategy": "The Recommended Strategy",
-                "rollout": "Rollout Plan", "investment": "Your Investment"}
+                "rollout": "Rollout Plan", "investment": "Your Investment",
+                "pos_goals": "ProfitOS — Your Goals", "pos_two_sides": "ProfitOS — Reliable Numbers to Confident Action",
+                "pos_books": "ProfitOS — Bookkeeping Levels", "pos_questions": "ProfitOS — Questions You Can Answer",
+                "pos_analysis": "ProfitOS — The Analysis", "pos_plan": "ProfitOS — Your Plan",
+                "pos_level": "ProfitOS — Your Fractional CFO Level", "pos_ladder": "ProfitOS — Leadership Matched to Your Stage"}
 
 
 def seller_prep_path():
@@ -854,6 +914,16 @@ def validate_fill():
             t = d.get("target")
             if t and re.match(r"\s*target\s*:", str(t), re.I):
                 problems.append(f'{label}[{i}]["target"] starts with "Target:" — the engine adds it.')
+    if not isinstance(PROFITOS_GOALS, (list, tuple)) or len(PROFITOS_GOALS) > 3:
+        problems.append("PROFITOS_GOALS must be a list of up to 3 (heading, line) pairs.")
+    else:
+        for i, g in enumerate(PROFITOS_GOALS):
+            if not (isinstance(g, (tuple, list)) and len(g) == 2 and all(str(x).strip() for x in g)):
+                problems.append(f"PROFITOS_GOALS[{i}] must be (heading, line).")
+            elif len(str(g[0])) > 28 or len(str(g[1])) > 90:
+                problems.append(f"PROFITOS_GOALS[{i}]: heading ≤28 chars, line ≤90 chars.")
+    if PROFITOS_WHY is not None and not (str(PROFITOS_WHY).strip() and len(str(PROFITOS_WHY)) <= 160):
+        problems.append("PROFITOS_WHY must be None or one sentence of ≤160 chars.")
     check_quotes(problems)
     if problems:
         raise SystemExit("Deck not built — fix the values above the LAYOUT ENGINE line:\n  - " + "\n  - ".join(problems))
@@ -1294,9 +1364,6 @@ def build_rollout(prs):
 
 # ── Last slide: Your Investment (numbers from package_decision.json) ──
 
-# Where the computed investment lives: the firm's package_decision.json,
-# next to this script. The master template has none, so it renders a sample.
-DECISION_PATH = os.path.join(os.path.dirname(os.path.abspath(__file__)), "package_decision.json")
 _SAMPLE_INVESTMENT = {
     "products": [
         {"name": "Full Service Marketing — Growth", "charged": 7497, "standalone": 8997},
@@ -1446,11 +1513,20 @@ def build_totals_block(slide, inv, x, w, top, bottom):
                                else f["label"].replace(" setup", "").replace("Video Ads Express ", ""))
             sub = " · ".join(f"{short(f)} {usd(f['amount'])}" + (" waived" if f.get("waived") else "")
                              for f in fees)
+            if len(fees) > 2:
+                # Too many to list: group the coaching / advisory fees.
+                advisory = [f for f in fees if f["label"] == "Setup fee"]
+                rest = [f for f in fees if f["label"] != "Setup fee"]
+                parts = [f"{short(f)} {usd(f['charged'])}" for f in rest]
+                if advisory:
+                    parts.append(f"Advisory {usd(sum(f['charged'] for f in advisory))}")
+                sub = " · ".join(parts)
         cells.append(("ONE-TIME SETUP", usd(setup_total), sub))
     cells.append(("YEAR ONE", usd(inv["year_one_total"]),
                   "12 months of fees + setup" if setup_total else "12 months of fees"))
     # The monthly figure is the widest; with a setup cell, give it more room.
-    shares = [1] * len(cells) if len(cells) == 2 else [0.38, 0.28, 0.34]
+    shares = ([1] * len(cells) if len(cells) == 2 else
+              [0.32, 0.36, 0.32] if len(fees) > 2 else [0.38, 0.28, 0.34])
     widths = [(w - 0.10) * f / sum(shares) for f in shares]
     for i, (kicker, big, sub) in enumerate(cells):
         cw = widths[i]
@@ -1462,7 +1538,7 @@ def build_totals_block(slide, inv, x, w, top, bottom):
         add_text(slide, big, cx + 0.12, top + 0.28, cw - 0.24, 0.42, 20, WHITE, bold=True,
                  max_lines=1, min_size=13, cap_label=f"total {i+1}")
         add_text(slide, sub, cx + 0.12, top + 0.68, cw - 0.24, h - 0.74, 8, BUNDLE_SAVINGS_TEXT
-                 if i == 0 else NAVY_TEXT_SOFT, max_lines=2, min_size=6.5,
+                 if i == 0 else NAVY_TEXT_SOFT, max_lines=3 if len(fees) > 2 else 2, min_size=6.5,
                  cap_label=f"total {i+1} sub")
 
 
@@ -1533,7 +1609,8 @@ def build_investment(prs):
     # Without a closing quote the content runs down to the footer.
     bottom = 4.74 if CLOSING_QUOTE else 5.12
     # Room for two-line notes under the totals when setup fees are listed.
-    th = 1.14 if inv.get("setup_fees") else 0.98
+    nfees = len(inv.get("setup_fees") or [])
+    th = 0.98 if not nfees else 1.14 if nfees <= 2 else 1.24
     if ad:
         left_w = 5.00
         build_buys_card(slide, inv, 0.30, left_w, 1.04, bottom - th - 0.10)
@@ -1557,6 +1634,340 @@ def build_investment(prs):
                  align=PP_ALIGN.CENTER, max_lines=1, min_size=7.5, anchor=MSO_ANCHOR.MIDDLE,
                  cap_chars=170, cap_label="CLOSING_QUOTE")
     add_footer(slide, INVESTMENT_PAGE, TOTAL_SLIDES, LOGO_PATH)
+
+
+# ── ProfitOS slides (FCFO / Bookkeeping) ──────────────────────────
+# Wording from the ProfitOS Strategic Financial Proposal deck (Sales
+# Enablement, Nov 2026), drawn in this deck's style. Only the goals and the
+# plan slide come from the firm's call (PROFITOS_GOALS / PROFITOS_WHY);
+# the recommended levels come from package_decision.json.
+
+POS_KICKER = "PROFITOS"
+POS_DISCLAIMER = ("Examples are illustrative. Reporting formats, analyses and deliverables "
+                  "vary by firm and agreed engagement scope.")
+POS_STANDARD_GOALS = [
+    ("Financial Visibility", "Make profit drivers, spending trends and cash timing easy to see."),
+    ("Growth Decisions", "Back your next hires and investments with a clear view of their financial impact."),
+    ("Confident Leadership", "A financially stronger firm with defined priorities, measurable progress and a plan for growth."),
+]
+POS_LEVELS = {
+    "Advisor": {
+        "n": 1, "ladder": "Financial statement deep dive, review and discussion. Advisory only.",
+        "ask": "“Where should we focus?”",
+        "title": "Understand your numbers. Know where to focus.",
+        "work_head": "What Advisor is",
+        "work": "A financial statement advisory engagement: an in-depth review and discussion of "
+                "your P&L and balance sheet, with red flags surfaced.",
+        "decisions": ["Are we becoming more profitable?", "Where are we spending too much?",
+                      "Which financial issues need attention first?",
+                      "What should our financial goals be next quarter?"],
+        "quote": "“I understand what my numbers are telling me.”*",
+        "foot": "*Financial statement advisory only: no projects or between-call questions.",
+        "includes": None,
+        "focus": "Financial statement deep dive · Red flags · Quarterly priorities and financial goals",
+    },
+    "Director": {
+        "n": 2, "ladder": "Adds projects: a quarterly roadmap and recurring KPI dashboard.",
+        "ask": "“How do we move forward?”",
+        "title": "Turn financial insight into a plan for growth.",
+        "work_head": "Example of the work",
+        "work": "An illustrative quarterly roadmap, recurring KPI dashboard, and examples of cash "
+                "flow, compensation or marketing analysis.",
+        "decisions": ["Can we afford our next hire?", "How much can we safely invest in marketing?",
+                      "Will a compensation change improve profitability?",
+                      "What needs to happen this quarter to reach our goals?"],
+        "quote": "“I can make growth decisions with a financial plan behind them.”",
+        "foot": None,
+        "includes": "Includes everything in Advisor, plus quarterly projects",
+        "focus": "Quarterly roadmap · Recurring KPIs · Cash flow, compensation or marketing analysis",
+    },
+    "Partner": {
+        "n": 3, "ladder": "Adds advanced priorities such as capital, tax and succession planning.",
+        "ask": "“How do we navigate major decisions?”",
+        "title": "Make big decisions about your firm’s future.",
+        "work_head": "Example of the work",
+        "work": "An illustrative advanced planning example: capital strategy, succession scenarios, "
+                "or analysis across practice areas and locations.",
+        "decisions": ["Should we expand into another market?", "How should we fund our next stage of growth?",
+                      "Which practice areas are creating the most value?",
+                      "How do we prepare for succession or a transition?"],
+        "quote": "“I have financial leadership to navigate bigger decisions.”",
+        "foot": None,
+        "includes": "Includes everything in Advisor and Director, plus advanced planning",
+        "focus": "Capital strategy · Succession planning · Analysis across practice areas and locations",
+    },
+}
+POS_BOOKS = [(1, "Under $1M", "Core monthly bookkeeping for smaller firms."),
+             (2, "$1.0M – $2.9M", "The same core service, sized for a growing team."),
+             (3, "$3.0M – $3.9M", "The same core service, sized for added volume and complexity."),
+             (4, "$4M+", "Scoped to fit larger, more complex firms.")]
+
+
+def pos_slide(prs, key, title, sub=None, disclaimer=True):
+    slide = new_slide(prs)
+    add_header(slide, title, 9.30, kicker=POS_KICKER)
+    if sub:
+        add_text(slide, sub, 0.30, 1.00, 9.40, 0.40, 10, BODY_TEXT, max_lines=2, min_size=8,
+                 cap_label=f"{key} sub")
+    if disclaimer:
+        add_text(slide, POS_DISCLAIMER, 0.30, 5.02, 9.40, 0.20, 6.5, SLATE, max_lines=1,
+                 fit=False)
+    add_footer(slide, PAGE[key], TOTAL_SLIDES, LOGO_PATH)
+    return slide
+
+
+def build_pos_goals(prs):
+    goals = [tuple(g) for g in PROFITOS_GOALS] or POS_STANDARD_GOALS
+    if not PROFITOS_GOALS:
+        note("pos_goals", "No financial goals were recorded from the call, so this slide shows "
+                          "ProfitOS's three standard goals. Recap the firm's own goals out loud.")
+    slide = pos_slide(prs, "pos_goals", "Your goals point to a clearer path forward.",
+                      "After our conversation, these are the areas where we can help improve your "
+                      "firm's financial health." if PROFITOS_GOALS else None, disclaimer=False)
+    n = len(goals)
+    gap = 0.25
+    cw = (9.40 - gap * (n - 1)) / n
+    y, h = 1.56, 2.70
+    for i, (head, line) in enumerate(goals):
+        cx = 0.30 + i * (cw + gap)
+        add_rect(slide, cx, y, cw, h, fill=WHITE)
+        add_rect(slide, cx, y, cw, 0.05, fill=OCEAN_BLUE)
+        add_badge(slide, i + 1, cx + 0.20, y + 0.28, 0.36, NAVY)
+        add_text(slide, head, cx + 0.18, y + 0.80, cw - 0.36, 0.60, 15, NAVY, bold=True,
+                 max_lines=2, min_size=11, cap_label=f"PROFITOS_GOALS[{i}] heading")
+        add_text(slide, line, cx + 0.18, y + 1.44, cw - 0.36, h - 1.56, 10.5, BODY_TEXT,
+                 min_size=8.5, cap_label=f"PROFITOS_GOALS[{i}] line")
+    add_strip(slide, "Next:", "Your specific opportunities and priorities shape the recommended engagement.",
+              4.44, label="pos_goals strip")
+
+
+def build_pos_two_sides(prs):
+    slide = pos_slide(prs, "pos_two_sides", "From reliable numbers to confident action.",
+                      "Bookkeeping establishes visibility. Fractional CFO guidance helps you "
+                      "interpret the numbers and decide what to do next.")
+    cols = [("BOOKKEEPING  ·  THE FOUNDATION", "Know where you stand",
+             ["Accurate, timely financials", "Organized financial reporting",
+              "Visibility into cash, expenses and profit", "A trusted foundation for decision-making"],
+             "SEE CLEARLY", OCEAN_BLUE),
+            ("FRACTIONAL CFO  ·  THE LEADERSHIP", "Know where to go",
+             ["Financial statement deep dive and review", "Red flags and strategic discussion",
+              "Quarterly priorities and financial goals", "Planning and projects at higher levels"],
+             "DECIDE CONFIDENTLY", LIME_GREEN)]
+    cw, y, h = 4.45, 1.52, 3.36
+    for i, (kick, head, items, tag, accent) in enumerate(cols):
+        cx = 0.30 + i * (cw + 0.50)
+        add_rect(slide, cx, y, cw, h, fill=WHITE if i == 0 else NAVY)
+        add_rect(slide, cx, y, 0.06, h, fill=accent)
+        add_text(slide, kick, cx + 0.24, y + 0.16, cw - 0.40, 0.22, 8, OCEAN_BLUE if i == 0 else LIME_GREEN,
+                 bold=True, max_lines=1, fit=False)
+        add_text(slide, head, cx + 0.24, y + 0.40, cw - 0.40, 0.44, 18, NAVY if i == 0 else WHITE,
+                 bold=True, max_lines=1, min_size=13)
+        add_bullets(slide, items, cx + 0.20, y + 0.98, cw - 0.40, 1.80, 11,
+                    DARK_TEXT if i == 0 else NAVY_TEXT_SOFT, accent, label=f"pos_two_sides {i}")
+        add_text(slide, tag, cx + 0.24, y + h - 0.44, cw - 0.40, 0.30, 10,
+                 OCEAN_BLUE if i == 0 else LIME_GREEN, bold=True, max_lines=1, fit=False)
+    add_shape(slide, MSO_SHAPE.RIGHT_ARROW, 4.82, 3.00, 0.36, 0.40, fill=OCEAN_BLUE)
+
+
+def build_pos_books(prs):
+    slide = pos_slide(prs, "pos_books", "Bookkeeping that fits the size of your firm.",
+                      "The same core monthly service at every level. Your firm's annual revenue sets the level.")
+    gap = 0.18
+    cw = (9.40 - 3 * gap) / 4
+    y, h = 1.52, 1.86
+    for i, (lvl, rev, line) in enumerate(POS_BOOKS):
+        cx = 0.30 + i * (cw + gap)
+        mine = lvl == BOOKKEEPING_LEVEL
+        add_rect(slide, cx, y, cw, h, fill=NAVY if mine else WHITE)
+        add_rect(slide, cx, y, cw, 0.05, fill=LIME_GREEN if mine else OCEAN_BLUE)
+        add_text(slide, f"LEVEL {lvl}", cx + 0.16, y + 0.14, cw - 0.32, 0.22, 8,
+                 LIME_GREEN if mine else OCEAN_BLUE, bold=True, max_lines=1, fit=False)
+        add_text(slide, rev, cx + 0.16, y + 0.38, cw - 0.32, 0.40, 15, WHITE if mine else NAVY,
+                 bold=True, max_lines=1, min_size=11)
+        add_text(slide, "annual revenue", cx + 0.16, y + 0.76, cw - 0.32, 0.20, 8,
+                 NAVY_TEXT_SOFT if mine else SLATE, max_lines=1, fit=False)
+        add_text(slide, line, cx + 0.16, y + 1.02, cw - 0.32, 0.62, 9, NAVY_TEXT_SOFT if mine else BODY_TEXT,
+                 min_size=7.5, cap_label=f"pos_books {lvl}")
+        if mine:
+            add_pill(slide, "Recommended for you", cx + 0.16, y + h - 0.30, 0.22, LIME_GREEN, NAVY, size=6.5)
+    add_rect(slide, 0.30, 3.52, 9.40, 1.40, fill=WHITE)
+    add_rect(slide, 0.30, 3.52, 0.05, 1.40, fill=OCEAN_BLUE)
+    add_text(slide, "INCLUDED AT EVERY LEVEL", 0.50, 3.60, 6.0, 0.22, 8, OCEAN_BLUE, bold=True, fit=False)
+    items = ["Monthly balance sheet", "Monthly profit & loss (current month and year-to-date vs. prior year)",
+             "Trust account reconciliation summary", "Bank, credit card and loan reconciliations",
+             "Month-end adjusting entries", "A dedicated point of contact for bookkeeping questions"]
+    add_bullets(slide, items[:3], 0.46, 3.86, 4.60, 1.02, 9, DARK_TEXT, OCEAN_BLUE, label="pos_books included 1")
+    add_bullets(slide, items[3:], 5.06, 3.86, 4.56, 1.02, 9, DARK_TEXT, OCEAN_BLUE, label="pos_books included 2")
+
+
+def build_pos_questions(prs):
+    slide = pos_slide(prs, "pos_questions", "Questions you can answer with confidence.",
+                      "The right questions change as your firm grows. Higher levels add planning and "
+                      "projects to support the decisions behind them.")
+    cards = [("Profitability", ["Which parts of our firm create the most value?",
+                                "Why is revenue rising faster than profit?"]),
+             ("Cash flow", ["How much can we safely invest?", "Where can we improve collections?"]),
+             ("Growth decisions", ["When can we afford our next hire?", "Is marketing driving profitable growth?"]),
+             ("Long-term strategy", ["How should we finance expansion?", "How do we prepare for succession?"])]
+    gap = 0.20
+    cw = (9.40 - gap) / 2
+    ch = 1.62
+    for i, (head, qs) in enumerate(cards):
+        cx = 0.30 + (i % 2) * (cw + gap)
+        cy = 1.52 + (i // 2) * (ch + 0.18)
+        add_rect(slide, cx, cy, cw, ch, fill=WHITE)
+        add_rect(slide, cx, cy, 0.05, ch, fill=OCEAN_BLUE)
+        add_text(slide, head, cx + 0.22, cy + 0.12, cw - 0.40, 0.34, 13, NAVY, bold=True,
+                 max_lines=1, min_size=10)
+        add_bullets(slide, qs, cx + 0.18, cy + 0.52, cw - 0.36, ch - 0.62, 10.5, DARK_TEXT,
+                    OCEAN_BLUE, label=f"pos_questions {i}")
+
+
+def _mini_bars(slide, x, y, w, h, values, colors):
+    n = len(values)
+    bw = w / (n * 1.6)
+    top = max(values)
+    for i, v in enumerate(values):
+        bh = h * v / top
+        add_rect(slide, x + i * bw * 1.6, y + h - bh, bw, bh, fill=colors[i % len(colors)])
+    add_rule(slide, x - 0.04, y + h, x + w, y + h, RULE_GRAY)
+
+
+def build_pos_analysis(prs):
+    slide = pos_slide(prs, "pos_analysis", "See the analysis behind better decisions.",
+                      "Illustrative examples of the financial insight and planning available across the levels.")
+    cards = [("FINANCIAL SNAPSHOT", "Where do we stand?"),
+             ("QUARTERLY ROADMAP  ·  DIRECTOR+", "What should happen next?"),
+             ("DECISION MODEL  ·  DIRECTOR+", "What happens if we hire?")]
+    gap = 0.22
+    cw = (9.40 - 2 * gap) / 3
+    y, h = 1.52, 3.12
+    for i, (kick, q) in enumerate(cards):
+        cx = 0.30 + i * (cw + gap)
+        add_rect(slide, cx, y, cw, h, fill=WHITE)
+        add_rect(slide, cx, y, cw, 0.05, fill=OCEAN_BLUE)
+        add_text(slide, kick, cx + 0.16, y + 0.14, cw - 0.32, 0.22, 7.5, OCEAN_BLUE, bold=True,
+                 max_lines=1, min_size=6.5)
+        add_text(slide, q, cx + 0.16, y + 0.38, cw - 0.32, 0.36, 13, NAVY, bold=True,
+                 max_lines=1, min_size=10)
+        px, py, pw, ph = cx + 0.30, y + 1.00, cw - 0.60, 1.70
+        add_rect(slide, cx + 0.16, y + 0.88, cw - 0.32, 2.06, fill=BG_WASH)
+        if i == 0:      # revenue vs expenses by month
+            _mini_bars(slide, px, py + 0.10, pw, ph - 0.30, [5, 6, 5.5, 7, 6.5, 8], [OCEAN_BLUE, NAVY])
+        elif i == 1:    # Q1–Q4 roadmap: quarters across, project bars below
+            step = pw / 4.0
+            for q in range(4):
+                add_text(slide, f"Q{q+1}", px + q * step, py, step, 0.22, 8, NAVY, bold=True,
+                         align=PP_ALIGN.CENTER, fit=False)
+            add_rule(slide, px, py + 0.26, px + pw, py + 0.26, NAVY_RULE, 1.5)
+            for r, (start, span, color) in enumerate([(0, 1.6, LIME_GREEN), (1, 2.0, OCEAN_BLUE),
+                                                      (2, 1.5, NAVY), (2.6, 1.4, OCEAN_BLUE)]):
+                add_rect(slide, px + start * step + 0.04, py + 0.42 + r * 0.30,
+                         span * step - 0.08, 0.18, fill=color)
+        else:           # hire now vs later
+            _mini_bars(slide, px + 0.20, py + 0.10, pw - 0.40, ph - 0.50, [6, 7.5], [SLATE, GREEN])
+            add_text(slide, "Today", px + 0.02, py + ph - 0.36, pw / 2, 0.20, 7, SLATE,
+                     align=PP_ALIGN.CENTER, fit=False)
+            add_text(slide, "With the hire", px + pw / 2 - 0.02, py + ph - 0.36, pw / 2, 0.20, 7, GREEN,
+                     align=PP_ALIGN.CENTER, fit=False)
+    add_text(slide, "Illustrative concepts, not screenshots of actual SMB Team reporting or guaranteed deliverables.",
+             0.30, 4.70, 9.40, 0.22, 7.5, SLATE, max_lines=1, fit=False)
+
+
+def build_pos_plan(prs):
+    lvl = POS_LEVELS[PROFITOS_LEVEL]
+    if not PROFITOS_WHY:
+        note("pos_plan", "PROFITOS_WHY was not set, so 'Why this fits' uses the level's standard line. "
+                         "Say why this level fits the firm in your own words.")
+    slide = pos_slide(prs, "pos_plan", "A plan built around your priorities.",
+                      "How we matched the engagement to the questions your firm needs to answer.",
+                      disclaimer=False)
+    program = f"Fractional CFO  ·  {PROFITOS_LEVEL}" + (f"  +  Bookkeeping Level {BOOKKEEPING_LEVEL}" if BOOKKEEPING_LEVEL else "")
+    add_rect(slide, 0.30, 1.52, 9.40, 0.92, fill=NAVY)
+    add_rect(slide, 0.30, 1.52, 0.06, 0.92, fill=LIME_GREEN)
+    add_text(slide, "RECOMMENDED PROGRAM", 0.56, 1.62, 6.0, 0.22, 8, LIME_GREEN, bold=True, fit=False)
+    add_text(slide, program, 0.56, 1.86, 8.90, 0.48, 20, WHITE, bold=True, max_lines=1, min_size=13,
+             cap_label="pos_plan program")
+    rows = ([("YOUR PRIMARY GOALS", " · ".join(g[0] for g in PROFITOS_GOALS))] if PROFITOS_GOALS else []) + \
+           [("INITIAL FOCUS", lvl["focus"]), ("WHY THIS FITS", PROFITOS_WHY or lvl["ladder"])]
+    y = 2.58
+    for i, (head, text) in enumerate(rows):
+        add_rect(slide, 0.30, y, 9.40, 0.72, fill=SOFT_BLUE if head == "WHY THIS FITS" else WHITE)
+        add_rect(slide, 0.30, y, 0.05, 0.72, fill=OCEAN_BLUE)
+        add_text(slide, head, 0.52, y + 0.08, 2.20, 0.56, 8, OCEAN_BLUE, bold=True, max_lines=2,
+                 anchor=MSO_ANCHOR.MIDDLE, fit=False)
+        add_text(slide, text, 2.70, y + 0.06, 6.86, 0.60, 11, NAVY, bold=head != "WHY THIS FITS", max_lines=2,
+                 min_size=8.5, anchor=MSO_ANCHOR.MIDDLE, cap_label=f"pos_plan {head.lower()}")
+        y += 0.80
+
+
+def _level_tracker(slide, current, x, y, w):
+    gap = 0.12
+    cw = (w - 2 * gap) / 3
+    for name, d in POS_LEVELS.items():
+        cx = x + (d["n"] - 1) * (cw + gap)
+        done, mine = d["n"] < POS_LEVELS[current]["n"], name == current
+        add_rect(slide, cx, y, cw, 0.36, fill=NAVY if mine else (SOFT_BLUE if done else WHITE))
+        add_text(slide, ("✓ " if done else f"{d['n']} · ") + name, cx, y, cw, 0.36, 9,
+                 WHITE if mine else NAVY, bold=mine, align=PP_ALIGN.CENTER,
+                 anchor=MSO_ANCHOR.MIDDLE, max_lines=1, fit=False)
+
+
+def build_pos_level(prs):
+    lvl = POS_LEVELS[PROFITOS_LEVEL]
+    slide = pos_slide(prs, "pos_level", lvl["title"])
+    _level_tracker(slide, PROFITOS_LEVEL, 0.30, 1.06, 9.40)
+    y, h = 1.58, 2.36
+    add_rect(slide, 0.30, y, 4.40, h, fill=WHITE)
+    add_rect(slide, 0.30, y, 4.40, 0.05, fill=OCEAN_BLUE)
+    add_text(slide, lvl["work_head"], 0.48, y + 0.16, 4.04, 0.32, 12, NAVY, bold=True, max_lines=1, fit=False)
+    add_text(slide, lvl["work"], 0.48, y + 0.52, 4.04, h - 0.64, 10.5, BODY_TEXT, min_size=8.5,
+             cap_label="pos_level work")
+    add_rect(slide, 4.90, y, 4.80, h, fill=WHITE)
+    add_rect(slide, 4.90, y, 4.80, 0.05, fill=LIME_GREEN)
+    add_text(slide, "Decisions that become easier", 5.08, y + 0.16, 4.44, 0.32, 12, NAVY, bold=True,
+             max_lines=1, fit=False)
+    add_bullets(slide, lvl["decisions"], 5.04, y + 0.54, 4.50, h - 0.62, 10.5, DARK_TEXT, GREEN,
+                label="pos_level decisions")
+    add_rect(slide, 0.30, 4.06, 9.40, 0.62, fill=NAVY)
+    add_text(slide, lvl["quote"], 0.50, 4.06, 9.00, 0.62, 14, WHITE, bold=True, align=PP_ALIGN.CENTER,
+             anchor=MSO_ANCHOR.MIDDLE, max_lines=1, min_size=10)
+    tail = lvl["foot"] or ("✓ " + lvl["includes"])
+    add_text(slide, tail, 0.30, 4.72, 9.40, 0.24, 8, SLATE if lvl["foot"] else GREEN, bold=not lvl["foot"],
+             max_lines=1, fit=False)
+
+
+def build_pos_ladder(prs):
+    slide = pos_slide(prs, "pos_ladder", "Leadership matched to your stage of growth.",
+                      "Each level builds on the earlier one, with increasing strategic involvement and capacity "
+                      "for complexity. Every level includes everything in the one before it, then adds more.")
+    gap = 0.20
+    cw = (9.40 - 2 * gap) / 3
+    base = 4.62
+    for name, d in POS_LEVELS.items():
+        i = d["n"] - 1
+        cx = 0.30 + i * (cw + gap)
+        h = 2.30 + 0.40 * i
+        top = base - h
+        mine = name == PROFITOS_LEVEL
+        add_rect(slide, cx, top, cw, h, fill=NAVY if mine else WHITE)
+        add_rect(slide, cx, top, cw, 0.06, fill=LIME_GREEN if mine else OCEAN_BLUE)
+        add_text(slide, f"{d['n']}  ·  {name}", cx + 0.18, top + 0.16, cw - 0.36, 0.36, 15,
+                 WHITE if mine else NAVY, bold=True, max_lines=1, min_size=11)
+        add_text(slide, d["ladder"], cx + 0.18, top + 0.58, cw - 0.36, 0.80, 10,
+                 NAVY_TEXT_SOFT if mine else BODY_TEXT, min_size=8, cap_label=f"pos_ladder {name}")
+        add_text(slide, d["ask"], cx + 0.18, top + 1.42, cw - 0.36, 0.50, 10.5,
+                 LIME_GREEN if mine else OCEAN_BLUE, bold=True, max_lines=2, min_size=8.5)
+        if mine:
+            add_pill(slide, "Recommended for you", cx + 0.18, base - 0.38, 0.24, LIME_GREEN, NAVY, size=6.5)
+    add_text(slide, "Scope examples are illustrative; larger or more complex firms may require a custom agreement.",
+             0.30, 4.70, 9.40, 0.22, 7.5, SLATE, max_lines=1, fit=False)
+
+
+POS_BUILDERS = {"pos_goals": build_pos_goals, "pos_two_sides": build_pos_two_sides,
+                "pos_books": build_pos_books, "pos_questions": build_pos_questions,
+                "pos_analysis": build_pos_analysis, "pos_plan": build_pos_plan,
+                "pos_level": build_pos_level, "pos_ladder": build_pos_ladder}
 
 
 # ── Font embedding ────────────────────────────────────────────────
@@ -1695,6 +2106,8 @@ build_strategy(prs)
 if SHOW_ROLLOUT:
     build_rollout(prs)
 build_investment(prs)
+for key in PROFITOS_SLIDES:
+    POS_BUILDERS[key](prs)
 attribution_notes()
 write_notes(prs)
 
