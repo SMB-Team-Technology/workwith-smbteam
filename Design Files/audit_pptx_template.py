@@ -1,7 +1,7 @@
 """
 Audit PowerPoint Template — SMB Team
 ======================================
-Generates the 5-slide proposal PPTX. Uses python-pptx. Do not modify the
+Generates the 6-slide proposal PPTX. Uses python-pptx. Do not modify the
 layout engine below the FILL section. Only replace the # FILL: placeholders
 with audit-specific content (rules: .claude/commands/audit-pptx.md).
 
@@ -15,6 +15,7 @@ Slide 3 — The Plan                        (actions tied to causes + what we'll
 Slide 4 — The Recommended Strategy        (each product: why, and its deliverables)
 Slide 5 — Your Investment                 (what $X/mo buys, year one, ad spend, return —
                                            every number read from package_decision.json)
+Slide 6 — What Happens Next               (the Phase 1/2/3 growth roadmap — no prices)
 A Rollout Plan slide exists in the engine but is left out (SHOW_ROLLOUT) until
 real onboarding content is ready.
 
@@ -196,7 +197,7 @@ STRATEGY = [
 
 # ── Seller prep (never in the deck) ───────────────────────────────
 # {slide: "note"} keyed by slide name: "priorities", "staircase",
-# "diagnosis", "plan", "strategy", "investment" — what to ask, what to
+# "diagnosis", "plan", "strategy", "investment", "roadmap" — what to ask, what to
 # confirm, deal context. Required on "priorities" when KPI_FOCUS kind is
 # "qualitative". The deck's speaker notes stay EMPTY (the .pptx goes out on
 # a public link and may reach the client): these notes, the engine's own
@@ -230,7 +231,40 @@ AD_SPEND_WHY = "to turn high-intent searches into signed cases"     # FILL
 CLOSING_QUOTE = ("Verbatim client line about the outcome they want",
                  "Full Name (client), 00:00:00")                                   # FILL or None
 
-# ── ProfitOS slides (added by the engine after slide 5) ───────────
+# ── Slide 6 — What Happens Next (the growth roadmap) ──────────────
+# Three phases: where the firm starts (exactly the package on the investment
+# slide) and what it graduates into as it grows. Direction, not a quote: no
+# prices, no dates or timelines, no promised outcomes. Rules for choosing
+# each phase's products: audit-pptx.md "Slide 6".
+ROADMAP_TITLE = "Your Growth Roadmap"         # FILL ≤40 chars
+
+# Exactly 3 phases, each a dict:
+#   phase:    the phase name, ≤24 chars ("Foundation", "Operational Scale", "Optimize")
+#   when:     what starts it, ≤60 chars. Phase 1 is "Starting now"; phases 2
+#             and 3 name a milestone from this firm's trajectory or its own
+#             stated goal ("Once intake runs without you") — no invented numbers
+#   products: catalog product names. Phase 1 = every product in the package,
+#             exactly as in package_decision.json → investment.products (the
+#             build checks); phases 2–3 = products the firm doesn't have yet
+#   items:    2–4 bullets, ≤55 chars: what the phase puts in place
+#   unlocks:  one sentence, ≤120 chars: what it unlocks for the owner, in
+#             client-facing DBM language (no promised results)
+ROADMAP = [
+    {"phase": "Foundation", "when": "Starting now",
+     "products": ["Full Service Marketing — Growth"],
+     "items": ["What the package puts in place", "What the package puts in place"],
+     "unlocks": "What this phase unlocks for the owner, in their terms."},             # FILL
+    {"phase": "Operational Scale", "when": "Once the firm hits a milestone from the call",
+     "products": ["Fractional COO"],
+     "items": ["What gets added, and why", "What gets added, and why"],
+     "unlocks": "What this phase unlocks for the owner, in their terms."},             # FILL
+    {"phase": "Optimize", "when": "Once the firm hits the next milestone",
+     "products": ["Fractional CFO", "Bookkeeping"],
+     "items": ["What gets added, and why", "What gets added, and why"],
+     "unlocks": "What this phase unlocks for the owner, in their terms."},             # FILL
+]
+
+# ── ProfitOS slides (added by the engine after the roadmap) ───────
 # When package_decision.json includes Fractional CFO or Bookkeeping, the
 # engine adds the ProfitOS slides (Vanessa's ProfitOS proposal deck, in her
 # wording, in the Loom order). Only two things come from this firm's call:
@@ -325,7 +359,7 @@ else:
 # Slide order. The staircase slide is optional (STAIRCASE in the FILL).
 SLIDE_ORDER = (["priorities"] + (["staircase"] if STAIRCASE else []) +
                ["diagnosis", "plan", "strategy"] + (["rollout"] if SHOW_ROLLOUT else []) +
-               ["investment"] + PROFITOS_SLIDES)
+               ["investment", "roadmap"] + PROFITOS_SLIDES)
 PAGE = {key: i + 1 for i, key in enumerate(SLIDE_ORDER)}
 TOTAL_SLIDES = len(SLIDE_ORDER)
 INVESTMENT_PAGE = PAGE["investment"]
@@ -731,6 +765,7 @@ def seller_note(key):
 SLIDE_TITLES = {"priorities": "Your Priorities, In Your Words", "staircase": "Lawyer Legacy Staircase",
                 "diagnosis": "The Diagnosis", "plan": "The Plan", "strategy": "The Recommended Strategy",
                 "rollout": "Rollout Plan", "investment": "Your Investment",
+                "roadmap": "What Happens Next",
                 "pos_goals": "ProfitOS — Your Goals", "pos_two_sides": "ProfitOS — Reliable Numbers to Confident Action",
                 "pos_books": "ProfitOS — Bookkeeping Levels", "pos_questions": "ProfitOS — Questions You Can Answer",
                 "pos_analysis": "ProfitOS — The Analysis", "pos_plan": "ProfitOS — Your Plan",
@@ -870,6 +905,58 @@ def attribution_notes():
         note(key, "Who said the quotes on this slide:\n" + "\n".join(lines))
 
 
+def _base_name(name):
+    return re.sub(r"\s*\(\d+ seats?\)$", "", str(name)).strip()
+
+
+_TIMELINE = re.compile(r"\b\d+\s*(?:-|to|–)?\s*\d*\s*(?:days?|weeks?|months?|years?|quarters?)\b|"
+                       r"\b(?:day|week|month|year|quarter)\s+\d+\b|\bQ[1-4]\b", re.I)
+
+
+def check_roadmap(problems):
+    """The roadmap is direction, not a quote: 3 phases, phase 1 is exactly
+    the package being priced, later phases add what the firm doesn't have,
+    and no prices or timelines anywhere on it."""
+    if not isinstance(ROADMAP, (list, tuple)) or len(ROADMAP) != 3:
+        problems.append("ROADMAP needs exactly 3 phases.")
+        return
+    for i, p in enumerate(ROADMAP):
+        if not isinstance(p, dict):
+            problems.append(f"ROADMAP[{i}] must be a dict.")
+            return
+        for k in ("phase", "when", "unlocks"):
+            if not str(p.get(k) or "").strip():
+                problems.append(f'ROADMAP[{i}]["{k}"] is empty.')
+        if not 2 <= len(p.get("items") or []) <= 4:
+            problems.append(f'ROADMAP[{i}]["items"] needs 2–4 bullets.')
+        if not [x for x in (p.get("products") or []) if str(x).strip()]:
+            problems.append(f'ROADMAP[{i}]["products"] is empty.')
+        text = " ".join([str(p.get(k) or "") for k in ("phase", "when", "unlocks")] +
+                        [str(x) for x in (p.get("items") or [])])
+        if "$" in text:
+            problems.append(f"ROADMAP[{i}] shows a price — the roadmap never quotes one "
+                            "(phase 1 is priced on the investment slide; later phases are scoped when the firm gets there).")
+        m = _TIMELINE.search(text)
+        if m:
+            problems.append(f'ROADMAP[{i}] has a timeline ("{m.group(0)}") — phases start at a milestone, never a date.')
+    seen = set()
+    for i, p in enumerate(ROADMAP[1:], start=2):
+        names = {_base_name(x) for x in p.get("products") or []}
+        if names & seen:
+            problems.append(f"ROADMAP phase {i} repeats {', '.join(sorted(names & seen))} from an earlier phase.")
+        seen |= names
+    inv = load_decision().get("investment") or {}
+    package = {_base_name(x.get("name")) for x in inv.get("products") or [] if x.get("name")}
+    if package and FIRM_NAME != "FIRM NAME HERE":
+        phase1 = {_base_name(x) for x in ROADMAP[0].get("products") or []}
+        if phase1 != package:
+            problems.append("ROADMAP phase 1 products must be exactly the package on the investment slide "
+                            f"({', '.join(sorted(package))}); got {', '.join(sorted(phase1)) or 'none'}.")
+        later = seen & package
+        if later:
+            problems.append(f"ROADMAP phases 2–3 list {', '.join(sorted(later))}, which is already in the package.")
+
+
 def validate_fill():
     """Stop the build on structural mistakes instead of drawing a broken
     slide. Content rules (sources, exact figures) live in audit-pptx.md."""
@@ -924,6 +1011,7 @@ def validate_fill():
                 problems.append(f"PROFITOS_GOALS[{i}]: heading ≤28 chars, line ≤90 chars.")
     if PROFITOS_WHY is not None and not (str(PROFITOS_WHY).strip() and len(str(PROFITOS_WHY)) <= 160):
         problems.append("PROFITOS_WHY must be None or one sentence of ≤160 chars.")
+    check_roadmap(problems)
     check_quotes(problems)
     if problems:
         raise SystemExit("Deck not built — fix the values above the LAYOUT ENGINE line:\n  - " + "\n  - ".join(problems))
@@ -1636,6 +1724,54 @@ def build_investment(prs):
     add_footer(slide, INVESTMENT_PAGE, TOTAL_SLIDES, LOGO_PATH)
 
 
+# ── Slide 6: What Happens Next (the growth roadmap) ───────────────
+
+def build_roadmap(prs):
+    slide = new_slide(prs)
+    add_header(slide, ROADMAP_TITLE, 9.30, kicker="WHAT HAPPENS NEXT")
+
+    gap = 0.28
+    cw = (9.40 - gap * 2) / 3
+    y, h, band = 1.06, 2.90, 0.62
+    for i, p in enumerate(ROADMAP):
+        cx = 0.30 + i * (cw + gap)
+        now = i == 0
+        add_rect(slide, cx, y, cw, h, fill=WHITE)
+        add_rect(slide, cx, y, cw, band, fill=NAVY if now else SOFT_BLUE)
+        add_text(slide, f"PHASE {i + 1}", cx + 0.08, y + 0.06, cw - 0.16, 0.20, 7.5,
+                 LIME_GREEN if now else OCEAN_BLUE, bold=True, fit=False)
+        add_text(slide, str(p["phase"]).upper(), cx + 0.08, y + 0.24, cw - 0.16, 0.34, 12.5,
+                 WHITE if now else NAVY, bold=True, max_lines=1, min_size=9,
+                 anchor=MSO_ANCHOR.MIDDLE, cap_chars=30, cap_label=f"ROADMAP[{i}] phase")
+        add_text(slide, p["when"], cx + 0.08, y + band + 0.02, cw - 0.16, 0.46, 9,
+                 GREEN if now else OCEAN_BLUE, bold=True, max_lines=2, min_size=7.5,
+                 cap_chars=70, cap_label=f"ROADMAP[{i}] when")
+        add_text(slide, " + ".join(str(x) for x in p["products"]), cx + 0.08, y + band + 0.46,
+                 cw - 0.16, 0.24, 8, SLATE, max_lines=1, min_size=6.5,
+                 cap_chars=80, cap_label=f"ROADMAP[{i}] products")
+        add_rule(slide, cx + 0.16, y + band + 0.74, cx + cw - 0.16, y + band + 0.74, RULE_GRAY)
+        top = y + band + 0.82
+        add_bullets(slide, [cap(b, 65, f"ROADMAP[{i}] item {j+1}") for j, b in enumerate(p["items"][:4])],
+                    cx + 0.08, top, cw - 0.18, y + h - top - 0.08, 9.5, DARK_TEXT, OCEAN_BLUE,
+                    label=f"ROADMAP[{i}] items")
+        if i < 2:
+            add_shape(slide, MSO_SHAPE.CHEVRON, cx + cw + 0.07, y + band / 2 - 0.08, 0.14, 0.16,
+                      fill=OCEAN_BLUE)
+
+    add_text(slide, "WHAT EACH PHASE UNLOCKS FOR YOU", 0.30, 4.04, 5.0, 0.20, 7.5, SLATE,
+             bold=True, fit=False)
+    for i, p in enumerate(ROADMAP):
+        cx = 0.30 + i * (cw + gap)
+        add_rect(slide, cx, 4.26, cw, 0.86, fill=SOFT_BLUE)
+        add_text(slide, p["unlocks"], cx + 0.12, 4.28, cw - 0.24, 0.82, 9.5, NAVY, italic=True,
+                 min_size=7.5, anchor=MSO_ANCHOR.MIDDLE, cap_chars=140,
+                 cap_label=f"ROADMAP[{i}] unlocks")
+
+    note("roadmap", "Phases 2 and 3 are direction, not a quote: no prices, no dates. If the "
+            "client asks, they're scoped and priced when the firm reaches that milestone.")
+    add_footer(slide, PAGE["roadmap"], TOTAL_SLIDES, LOGO_PATH)
+
+
 # ── ProfitOS slides (FCFO / Bookkeeping) ──────────────────────────
 # Wording from the ProfitOS Strategic Financial Proposal deck (Sales
 # Enablement, Nov 2026), drawn in this deck's style. Only the goals and the
@@ -2106,6 +2242,7 @@ build_strategy(prs)
 if SHOW_ROLLOUT:
     build_rollout(prs)
 build_investment(prs)
+build_roadmap(prs)
 for key in PROFITOS_SLIDES:
     POS_BUILDERS[key](prs)
 attribution_notes()
