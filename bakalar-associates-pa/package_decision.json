@@ -33,169 +33,62 @@
     ],
     "lead_gen_gap": true
   },
-  "marketing_tier": "Growth",
-  "marketing_name": "Full Service Marketing — Growth",
-  "marketing_price_bundled": 7497,
-  "marketing_price_retail": 8997,
-  "marketing_savings": 1500,
-  "coaching_name": "Master's Circle",
-  "coaching_price_bundled": 4600,
-  "coaching_price_retail": 4997,
-  "coaching_savings": 397,
-  "law_tier": null,
-  "law_name": null,
-  "law_price_bundled": null,
+  "marketing_tier": "Web + SEO Starter",
+  "marketing_name": "Web + SEO Starter",
+  "marketing_price_bundled": 3497,
+  "marketing_price_retail": 3997,
+  "marketing_savings": 500,
+  "coaching_name": null,
+  "coaching_price_bundled": null,
+  "coaching_price_retail": null,
+  "coaching_savings": null,
+  "law_tier": "Fractional CTO Level 1 + AI Workforce Pro",
+  "law_name": "Fractional CTO Level 1 + AI Workforce Pro",
+  "law_price_bundled": 5254,
   "law_price_retail": null,
-  "law_seats": null,
-  "total_bundled": 12097,
-  "total_savings": 1897,
-  "ad_spend_conservative": 6200,
-  "ad_spend_aggressive": 50000,
-  "ad_spend_rationale": {
-    "conservative_basis": "channel minimums $3,000 + $2,000 + $1,200 = $6,200",
-    "aggressive_basis": "20% rule: $3,600,000 goal × 20% ÷ 12 × 1.3 geo − $7,497 fee = $70,503 → reverse math: not possible (no case value) → capped at the $50,000 the package manages"
-  },
+  "law_seats": 8,
+  "total_bundled": 8751,
+  "total_savings": 1000,
+  "ad_spend_conservative": null,
+  "ad_spend_aggressive": null,
+  "ad_spend_rationale": null,
   "selection_notes": [
     "Revenue $1M–$2M: Growth tier.",
-    "Revenue $1M+, team 8+ but no dedicated ops detected: Master's Circle selected. Verify ops capacity with sales rep."
+    "Revenue $1M+, team 8+ but no dedicated ops detected: Master's Circle selected. Verify ops capacity with sales rep.",
+    "Seller override: package replaced with Web + SEO Starter + Fractional CTO Level 1 + AI Workforce Pro (8 seats) per Slack request on 2026-11-17. Master's Circle and Full Service Marketing — Growth removed."
   ],
   "pricing_mode": "bundled",
-  "bundle_eligible_count": 2,
+  "bundle_eligible_count": 3,
   "unpriced_products": [],
-  "setup_fees": [
-    {
-      "line": "marketing",
-      "product": "Full Service Marketing — Growth",
-      "label": "AI Avatar setup",
-      "amount": 1850,
-      "waivable": true,
-      "waived": false,
-      "charged": 1850
-    },
-    {
-      "line": "coaching",
-      "product": "Master's Circle",
-      "label": "Setup fee",
-      "amount": 1500,
-      "waivable": true,
-      "waived": false,
-      "charged": 1500
-    }
-  ],
-  "setup_total": 3350,
+  "setup_fees": [],
+  "setup_total": 0,
   "investment": {
     "version": 1,
     "products": [
       {
         "category": "marketing",
-        "name": "Full Service Marketing — Growth",
-        "charged": 7497,
-        "standalone": 8997
+        "name": "Web + SEO Starter",
+        "charged": 3497,
+        "standalone": 3997
       },
       {
-        "category": "coaching",
-        "name": "Master's Circle",
-        "charged": 4600,
-        "standalone": 4997
+        "category": "law",
+        "name": "Fractional CTO Level 1 + AI Workforce Pro (8 seats)",
+        "charged": 5254,
+        "standalone": null
       }
     ],
-    "monthly_total": 12097,
-    "list_total": 13994,
-    "total_savings": 1897,
+    "monthly_total": 8751,
+    "list_total": 9751,
+    "total_savings": 1000,
     "pricing_mode": "bundled",
-    "setup_fees": [
-      {
-        "product": "Full Service Marketing — Growth",
-        "label": "AI Avatar setup",
-        "amount": 1850,
-        "charged": 1850,
-        "waived": false
-      },
-      {
-        "product": "Master's Circle",
-        "label": "Setup fee",
-        "amount": 1500,
-        "charged": 1500,
-        "waived": false
-      }
-    ],
-    "setup_total": 3350,
-    "year_one_total": 148514,
-    "year_one_basis": "12 × $12,097/mo in fees + $3,350 one-time setup. Ad spend is paid separately to Google and Meta.",
-    "ad_spend": {
-      "channels": [
-        {
-          "channel": "Google Search",
-          "minimum": 3000
-        },
-        {
-          "channel": "Local Services Ads",
-          "minimum": 2000
-        },
-        {
-          "channel": "Meta retargeting",
-          "minimum": 1200
-        }
-      ],
-      "conservative": 6200,
-      "aggressive": 50000,
-      "current_stated": 0,
-      "cap": 50000,
-      "overage": null,
-      "conservative_basis": "channel minimums $3,000 + $2,000 + $1,200 = $6,200",
-      "aggressive_steps": [
-        "20% rule: $3,600,000 goal × 20% ÷ 12 × 1.3 geo − $7,497 fee = $70,503",
-        "reverse math: not possible (no case value)",
-        "capped at the $50,000 the package manages"
-      ],
-      "year_one_range": [
-        74400,
-        600000
-      ],
-      "seller_set": false,
-      "computed": null,
-      "needs_seller_review": true
-    },
+    "setup_fees": [],
+    "setup_total": 0,
+    "year_one_total": 105012,
+    "year_one_basis": "12 × $8,751/mo in fees. Ad spend is paid separately to Google and Meta.",
+    "ad_spend": null,
     "return": null,
-    "inputs": {
-      "practice_area": {
-        "value": "Other",
-        "source": "research notes"
-      },
-      "geo_tier": {
-        "value": 2,
-        "multiplier": 1.3,
-        "source": "research notes"
-      },
-      "competitiveness": {
-        "value": "Medium",
-        "source": "research notes"
-      },
-      "spanish_campaign": false,
-      "revenue_effective": 1000000,
-      "revenue_goal": {
-        "value": 3600000,
-        "source": "stated on the call"
-      },
-      "case_value": {
-        "value": 1000,
-        "source": "stated on the call"
-      },
-      "close_rate": {
-        "value": 0.15,
-        "source": "default 15%"
-      },
-      "current_ad_spend": 0,
-      "current_cost_per_case": null,
-      "current_cost_per_lead": null,
-      "max_ad_budget": null,
-      "management_fee": 7497,
-      "ad_spend_cap": 50000
-    },
-    "flags": [
-      "Goal-based ad spend ($70,503) is above the $50,000 cap for Full Service Marketing — Growth — capped. Higher spend means a tier upgrade or the 15% overage fee (seller decision).",
-      "Ad spend over $25K — scoping approval required.",
-      "No cost data for Other (no stated cost per case or lead, no CPL benchmark) — return projection left out."
-    ]
+    "inputs": {},
+    "flags": []
   }
 }
