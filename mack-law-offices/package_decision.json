@@ -1,0 +1,230 @@
+{
+  "confidence": "medium",
+  "revenue_stated": null,
+  "net_revenue_stated": null,
+  "is_contingency_practice": false,
+  "revenue_effective": 180000,
+  "revenue_source": "hubspot_annual_law_firm_revenue",
+  "revenue_label": "$0 - $180K",
+  "revenue_verified": true,
+  "needs_revenue_confirmation": false,
+  "team_size_stated": null,
+  "team_size_source": null,
+  "team_size_effective": 3,
+  "practice_areas_detected": [
+    "not stated on a call. website",
+    "directories: criminal defense (primary) and dui. search snippets also mention personal inj",
+    "criminal defense — \"criminal defense lawyer wilkes-barre\", \"criminal defense attorney kingston pa\", \"criminal defense lawyer luzerne county\": firm appears: not observed — competitors in pack: not observed",
+    "dui — \"dui lawyer wilkes-barre\", \"dui attorney kingston pa\", \"dui lawyer luzerne county\": firm appears: not observed — competitors in pack: not observed",
+    "criminal defense",
+    "dui",
+    "criminal defense 70%",
+    "dui & dwi 30%",
+    "offers free 30-minute consults. profile carries a note: \"this lawyer was disciplin"
+  ],
+  "hubspot_company": null,
+  "firm_identity_check": "matches — trigger \"Mack Law Offices\" matches the website (macklawoffices.com, \"MACK LAW OFFICES\") and the Avvo/Martindale listings for Mark M. Mack at 281 Pierce St, Kingston, PA. Contact name Mark Mack matches the owner on the site. (A similarly named \"Mack, Muckler and Associates, LLP\" Birdeye listing is a different business, not used.)",
+  "package_source": "rules",
+  "package_override": null,
+  "needs_seller_input": false,
+  "revenue_only_option": null,
+  "call_focus": {
+    "primary_engagement": "mixed",
+    "products_discussed": [],
+    "lead_gen_gap": false
+  },
+  "marketing_tier": "Starter",
+  "marketing_name": "Full Service Marketing — Starter",
+  "marketing_price_bundled": 4997,
+  "marketing_price_retail": 5697,
+  "marketing_savings": 700,
+  "coaching_name": "Elite Coach",
+  "coaching_price_bundled": 2600,
+  "coaching_price_retail": 3497,
+  "coaching_savings": 897,
+  "law_tier": null,
+  "law_name": null,
+  "law_price_bundled": null,
+  "law_price_retail": null,
+  "law_seats": null,
+  "total_bundled": 7597,
+  "total_savings": 1597,
+  "ad_spend_conservative": 8700,
+  "ad_spend_aggressive": 9000,
+  "ad_spend_rationale": {
+    "conservative_basis": "channel minimums $5,500 + $2,000 + $1,200 = $8,700",
+    "aggressive_basis": "20% rule: $360,000 goal × 20% ÷ 12 × 1 geo − $4,997 fee = $1,003 → reverse math: 10 cases/mo ÷ 15% close × $138 benchmark blended CPL = $9,198"
+  },
+  "selection_notes": [
+    "Revenue not in research notes — sourced from HubSpot (hubspot_annual_law_firm_revenue): \"$0 - $180K\" → $180,000",
+    "Team size not stated in research notes or HubSpot — assumed 3. Please confirm headcount.",
+    "Revenue under $750K but multiple practice areas detected: Essentials hidden (requires single practice area) — Starter tier.",
+    "Revenue under $250K: Elite Coach selected, scoping approval required.",
+    "Total at conservative ad spend ($16,297/mo) is over the 35% cap ($5,250/mo on $180,000 revenue) — review with sales rep."
+  ],
+  "pricing_mode": "bundled",
+  "bundle_eligible_count": 2,
+  "unpriced_products": [],
+  "setup_fees": [
+    {
+      "line": "marketing",
+      "product": "Full Service Marketing — Starter",
+      "label": "AI Avatar setup",
+      "amount": 1850,
+      "waivable": true,
+      "waived": false,
+      "charged": 1850
+    },
+    {
+      "line": "coaching",
+      "product": "Elite Coach",
+      "label": "Setup fee",
+      "amount": 1500,
+      "waivable": true,
+      "waived": false,
+      "charged": 1500
+    }
+  ],
+  "setup_total": 3350,
+  "investment": {
+    "version": 1,
+    "products": [
+      {
+        "category": "marketing",
+        "name": "Full Service Marketing — Starter",
+        "charged": 4997,
+        "standalone": 5697
+      },
+      {
+        "category": "coaching",
+        "name": "Elite Coach",
+        "charged": 2600,
+        "standalone": 3497
+      }
+    ],
+    "monthly_total": 7597,
+    "list_total": 9194,
+    "total_savings": 1597,
+    "pricing_mode": "bundled",
+    "setup_fees": [
+      {
+        "product": "Full Service Marketing — Starter",
+        "label": "AI Avatar setup",
+        "amount": 1850,
+        "charged": 1850,
+        "waived": false
+      },
+      {
+        "product": "Elite Coach",
+        "label": "Setup fee",
+        "amount": 1500,
+        "charged": 1500,
+        "waived": false
+      }
+    ],
+    "setup_total": 3350,
+    "year_one_total": 94514,
+    "year_one_basis": "12 × $7,597/mo in fees + $3,350 one-time setup. Ad spend is paid separately to Google and Meta.",
+    "ad_spend": {
+      "channels": [
+        {
+          "channel": "Google Search",
+          "minimum": 5500
+        },
+        {
+          "channel": "Local Services Ads",
+          "minimum": 2000
+        },
+        {
+          "channel": "Meta retargeting",
+          "minimum": 1200
+        }
+      ],
+      "conservative": 8700,
+      "aggressive": 9000,
+      "current_stated": null,
+      "cap": 25000,
+      "overage": null,
+      "conservative_basis": "channel minimums $5,500 + $2,000 + $1,200 = $8,700",
+      "aggressive_steps": [
+        "20% rule: $360,000 goal × 20% ÷ 12 × 1 geo − $4,997 fee = $1,003",
+        "reverse math: 10 cases/mo ÷ 15% close × $138 benchmark blended CPL = $9,198"
+      ],
+      "year_one_range": [
+        104400,
+        108000
+      ],
+      "seller_set": false,
+      "computed": null,
+      "needs_seller_review": true
+    },
+    "return": {
+      "method": "benchmark_cpl",
+      "basis": "SMB Team criminal defense cost-per-lead benchmarks ($138 blended, +20% on the low end), 15% close rate (assumed) and a $3,000 case value (assumed default).",
+      "case_value": 3000,
+      "case_value_stated": false,
+      "cost_per_case": null,
+      "share_of_case_value": null,
+      "close_rate": 0.15,
+      "blended_cpl": 138,
+      "scenarios": [
+        {
+          "label": "Conservative",
+          "ad_spend": 8700,
+          "leads": 52.5,
+          "cases": 7.9,
+          "revenue": 23600,
+          "return_multiple": 2.7
+        },
+        {
+          "label": "Aggressive",
+          "ad_spend": 9000,
+          "leads": 65.2,
+          "cases": 9.8,
+          "revenue": 29400,
+          "return_multiple": 3.3
+        }
+      ],
+      "disclaimer": "Illustrative arithmetic, not a forecast."
+    },
+    "inputs": {
+      "practice_area": {
+        "value": "Criminal Defense",
+        "source": "research notes"
+      },
+      "geo_tier": {
+        "value": 4,
+        "multiplier": 1,
+        "source": "research notes"
+      },
+      "competitiveness": {
+        "value": "Medium",
+        "source": "research notes"
+      },
+      "spanish_campaign": false,
+      "revenue_effective": 180000,
+      "revenue_goal": {
+        "value": 360000,
+        "source": "not stated — 2× current revenue (audit-write.md)"
+      },
+      "case_value": {
+        "value": 3000,
+        "source": "practice-area default (low end)"
+      },
+      "close_rate": {
+        "value": 0.15,
+        "source": "default 15%"
+      },
+      "current_ad_spend": null,
+      "current_cost_per_case": null,
+      "current_cost_per_lead": null,
+      "max_ad_budget": null,
+      "management_fee": 4997,
+      "ad_spend_cap": 25000
+    },
+    "flags": [
+      "Reverse math ($9,198) is well above the 20% rule ($1,003) — the goal may be aggressive for the budget (paid ads team review).",
+      "Case value assumed ($3,000, low end of the Criminal Defense default) — confirm the real fee per case."
+    ]
+  }
+}
