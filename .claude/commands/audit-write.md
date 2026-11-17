@@ -1,6 +1,6 @@
 # SMB Team — Audit Write (Pass 2): Build the Proposal Deck
 
-Build the 5-slide proposal PowerPoint for a firm and commit it. Run this after `/audit-research` completes. This pass used to build the "Growth, Profit & Freedom Roadmap" website and the Sales Companion PDF; both are retired. The deck is now the only output, and it is built from the same inputs the website was.
+Build the 6-slide proposal PowerPoint for a firm and commit it. Run this after `/audit-research` completes. This pass used to build the "Growth, Profit & Freedom Roadmap" website and the Sales Companion PDF; both are retired. The deck is now the only output, and it is built from the same inputs the website was.
 
 ## How to invoke
 
@@ -149,6 +149,7 @@ Do the calculations that used to go in the retired `section_11_workings.txt` her
 # Closing quote (slide 5): "<verbatim>" — <Full Name (client), timestamp> · or "none — no unused verbatim line"
 # Legacy Staircase slide: <included — current N / goal N, as discussed (STEP 9B) | left out — not walked through on the call>
 # Plan (slide 3): each action — <action> — tied to: "<client line or STEP 9B plan input>"
+# Roadmap (slide 6): Phase 1 = <package products> · Phase 2 = <products> — starts: <milestone> — basis: <trajectory / client line> · Phase 3 = <products> — starts: <milestone> — basis: …
 # What You Told Us (slide 1 quotes and tie lines):
 #   1. <label> — transcript line: "<verbatim line from the research notes>" — supports: <package>
 #   2. ...
@@ -322,7 +323,7 @@ Source of truth: the Core Coaching Services and Core Financial Services tabs of 
 | FCFO Director | $4,997/mo | $5,797/mo | $1M–$2M, team up to 5 | Everything in Advisor, plus quarterly projects: a custom quarterly roadmap of deliverables (e.g. cash flow projections, compensation analysis, marketing analysis) and a recurring KPI dashboard; one-on-ones with anyone in the firm and team meetings (L10s, trainings, planning); extra sessions when the CFO judges they'll move the plan forward. |
 | FCFO Partner | $8,997/mo | $9,997/mo | $2M–$3.5M, team up to 10 (larger = custom agreement) | Everything in Advisor and Director, plus advanced planning: tax planning, capital strategy, succession planning, analysis across practice areas and locations. |
 
-**ProfitOS slides:** when the package includes any FCFO level or bookkeeping, the deck engine adds Vanessa's ProfitOS proposal slides after slide 5 on its own (audit-pptx.md). Fill `PROFITOS_GOALS` from the research notes' "Financial goals stated" line (never invent one; `[]` when none) and `PROFITOS_WHY` from why this level fits the firm.
+**ProfitOS slides:** when the package includes any FCFO level or bookkeeping, the deck engine adds Vanessa's ProfitOS proposal slides after the roadmap (slide 6) on its own (audit-pptx.md). Fill `PROFITOS_GOALS` from the research notes' "Financial goals stated" line (never invent one; `[]` when none) and `PROFITOS_WHY` from why this level fits the firm.
 
 Every FCFO level: up to 2 × 60-minute calls a month · unlimited monthly FCFO Insights Series virtual workshops · unlimited virtual tickets to the quarterly/annual workshops · 5 free SMB-OS seats. **Requirement:** the firm uses SMB bookkeeping, or its books are current and it can provide complete, accurate monthly financials (with properly allocated payroll) by the 10th of each month — otherwise recommend bookkeeping with the FCFO. Pick the level from the questions the firm needs answered (ProfitOS): "Where should we focus?" → Advisor; "How do we move forward?" (hires, marketing spend, compensation, cash flow) → Director; "How do we navigate major decisions?" (expansion, financing, succession) → Partner.
 
