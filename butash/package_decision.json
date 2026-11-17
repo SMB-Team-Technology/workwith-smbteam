@@ -1,0 +1,230 @@
+{
+  "confidence": "low",
+  "revenue_stated": 800000,
+  "net_revenue_stated": null,
+  "is_contingency_practice": true,
+  "revenue_effective": 800000,
+  "revenue_source": "research_notes",
+  "revenue_label": null,
+  "revenue_verified": true,
+  "needs_revenue_confirmation": false,
+  "team_size_stated": 4,
+  "team_size_source": "research_notes",
+  "team_size_effective": 4,
+  "practice_areas_detected": [
+    "criminal defense (dui",
+    "domestic battery",
+    "felonies)",
+    "family law",
+    "personal injury (one slip-and-fall case in inventory",
+    "tr",
+    "criminal defense / dui",
+    "personal injury"
+  ],
+  "hubspot_company": null,
+  "firm_identity_check": "matches (trigger \"Butash Law Group\" = website and call; DBA of Michael G. Butash, P.A.)",
+  "package_source": "rules",
+  "package_override": null,
+  "needs_seller_input": false,
+  "revenue_only_option": null,
+  "call_focus": {
+    "primary_engagement": "mixed",
+    "products_discussed": [
+      "Full Service Marketing"
+    ],
+    "lead_gen_gap": true
+  },
+  "marketing_tier": "Starter",
+  "marketing_name": "Full Service Marketing — Starter",
+  "marketing_price_bundled": 4997,
+  "marketing_price_retail": 5697,
+  "marketing_savings": 700,
+  "coaching_name": "Elite Coach Plus",
+  "coaching_price_bundled": 3200,
+  "coaching_price_retail": 3497,
+  "coaching_savings": 297,
+  "law_tier": null,
+  "law_name": null,
+  "law_price_bundled": null,
+  "law_price_retail": null,
+  "law_seats": null,
+  "total_bundled": 8197,
+  "total_savings": 997,
+  "ad_spend_conservative": 8700,
+  "ad_spend_aggressive": 25000,
+  "ad_spend_rationale": {
+    "conservative_basis": "channel minimums $5,500 + $2,000 + $1,200 = $8,700",
+    "aggressive_basis": "20% rule: $1,600,000 goal × 20% ÷ 12 × 1.3 geo − $4,997 fee = $29,670 → reverse math: 38.1 cases/mo ÷ 15% close × $138 benchmark blended CPL = $35,041 → capped at the $25,000 the package manages"
+  },
+  "selection_notes": [
+    "Contingency-fee practice with only gross revenue stated ($800,000) — no net/collected figure found. Using gross as fallback, but confidence downgraded: confirm actual collected revenue with sales rep before finalizing tier.",
+    "Revenue $500K–$1M: Starter tier.",
+    "Revenue $400K–$1M with growing team and dedicated ops: Elite Coach Plus + FCOO Advisor considered. Defaulting to Elite Coach Plus — confirm with sales rep if FCOO is appropriate.",
+    "Revenue $400K–$1M: Elite Coach Plus selected."
+  ],
+  "pricing_mode": "bundled",
+  "bundle_eligible_count": 2,
+  "unpriced_products": [],
+  "setup_fees": [
+    {
+      "line": "marketing",
+      "product": "Full Service Marketing — Starter",
+      "label": "AI Avatar setup",
+      "amount": 1850,
+      "waivable": true,
+      "waived": false,
+      "charged": 1850
+    },
+    {
+      "line": "coaching",
+      "product": "Elite Coach Plus",
+      "label": "Setup fee",
+      "amount": 1500,
+      "waivable": true,
+      "waived": false,
+      "charged": 1500
+    }
+  ],
+  "setup_total": 3350,
+  "investment": {
+    "version": 1,
+    "products": [
+      {
+        "category": "marketing",
+        "name": "Full Service Marketing — Starter",
+        "charged": 4997,
+        "standalone": 5697
+      },
+      {
+        "category": "coaching",
+        "name": "Elite Coach Plus",
+        "charged": 3200,
+        "standalone": 3497
+      }
+    ],
+    "monthly_total": 8197,
+    "list_total": 9194,
+    "total_savings": 997,
+    "pricing_mode": "bundled",
+    "setup_fees": [
+      {
+        "product": "Full Service Marketing — Starter",
+        "label": "AI Avatar setup",
+        "amount": 1850,
+        "charged": 1850,
+        "waived": false
+      },
+      {
+        "product": "Elite Coach Plus",
+        "label": "Setup fee",
+        "amount": 1500,
+        "charged": 1500,
+        "waived": false
+      }
+    ],
+    "setup_total": 3350,
+    "year_one_total": 101714,
+    "year_one_basis": "12 × $8,197/mo in fees + $3,350 one-time setup. Ad spend is paid separately to Google and Meta.",
+    "ad_spend": {
+      "channels": [
+        {
+          "channel": "Google Search",
+          "minimum": 5500
+        },
+        {
+          "channel": "Local Services Ads",
+          "minimum": 2000
+        },
+        {
+          "channel": "Meta retargeting",
+          "minimum": 1200
+        }
+      ],
+      "conservative": 8700,
+      "aggressive": 25000,
+      "current_stated": 0,
+      "cap": 25000,
+      "overage": null,
+      "conservative_basis": "channel minimums $5,500 + $2,000 + $1,200 = $8,700",
+      "aggressive_steps": [
+        "20% rule: $1,600,000 goal × 20% ÷ 12 × 1.3 geo − $4,997 fee = $29,670",
+        "reverse math: 38.1 cases/mo ÷ 15% close × $138 benchmark blended CPL = $35,041",
+        "capped at the $25,000 the package manages"
+      ],
+      "year_one_range": [
+        104400,
+        300000
+      ],
+      "seller_set": false,
+      "computed": null,
+      "needs_seller_review": true
+    },
+    "return": {
+      "method": "benchmark_cpl",
+      "basis": "SMB Team criminal defense cost-per-lead benchmarks ($138 blended, +20% on the low end), 15% close rate (assumed) and a $3,500 average case (said on the call).",
+      "case_value": 3500,
+      "case_value_stated": true,
+      "cost_per_case": null,
+      "share_of_case_value": null,
+      "close_rate": 0.15,
+      "blended_cpl": 138,
+      "scenarios": [
+        {
+          "label": "Conservative",
+          "ad_spend": 8700,
+          "leads": 52.5,
+          "cases": 7.9,
+          "revenue": 27600,
+          "return_multiple": 3.2
+        },
+        {
+          "label": "Aggressive",
+          "ad_spend": 25000,
+          "leads": 181.2,
+          "cases": 27.2,
+          "revenue": 95100,
+          "return_multiple": 3.8
+        }
+      ],
+      "disclaimer": "Illustrative arithmetic, not a forecast."
+    },
+    "inputs": {
+      "practice_area": {
+        "value": "Criminal Defense",
+        "source": "research notes"
+      },
+      "geo_tier": {
+        "value": 2,
+        "multiplier": 1.3,
+        "source": "research notes"
+      },
+      "competitiveness": {
+        "value": "High",
+        "source": "research notes"
+      },
+      "spanish_campaign": false,
+      "revenue_effective": 800000,
+      "revenue_goal": {
+        "value": 1600000,
+        "source": "stated on the call"
+      },
+      "case_value": {
+        "value": 3500,
+        "source": "stated on the call"
+      },
+      "close_rate": {
+        "value": 0.15,
+        "source": "default 15%"
+      },
+      "current_ad_spend": 0,
+      "current_cost_per_case": null,
+      "current_cost_per_lead": null,
+      "max_ad_budget": null,
+      "management_fee": 4997,
+      "ad_spend_cap": 25000
+    },
+    "flags": [
+      "Goal-based ad spend ($35,041) is above the $25,000 cap for Full Service Marketing — Starter — capped. Higher spend means a tier upgrade or the 15% overage fee (seller decision)."
+    ]
+  }
+}
