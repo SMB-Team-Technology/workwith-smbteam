@@ -1,6 +1,6 @@
 # SMB Team — proposal audit pipeline
 
-Builds a 6-slide proposal deck (7 with the optional Legacy Staircase slide), ending with the Phase 1/2/3 growth roadmap, (`<firm>/<FirmName>_<Date>_Proposal.pptx`) for each prospective client, uploads it to the HubSpot file manager, and emails it to the seller.
+Builds a 7-slide proposal deck (8 with the optional Legacy Staircase slide), opening with a "Growth, Profit, and Freedom Roadmap" cover and ending with the Phase 1/2/3 growth roadmap, (`<firm>/<FirmName>_<Date>_Proposal.pptx`) for each prospective client, uploads it to the HubSpot file manager, and emails it to the seller.
 
 The per-client "Growth, Profit & Freedom Roadmap" websites (`workwith.smbteam.com/<firm>`) and the Sales Companion PDF are retired: new builds no longer create `index.html`, `sections/` or a PDF. Older client folders still contain them, and GitHub Pages (`CNAME`, root `index.html`) still serves those existing pages.
 

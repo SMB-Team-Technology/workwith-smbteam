@@ -133,8 +133,8 @@ jobs:
                  AD_SPEND_WHY (None if no paid ads) and the ROADMAP (phase 1 products =
                  the new package; phases 2-3 must not repeat a package product) in the
                  deck script, and the BUILD NOTES comment block to match.
-               Then run: python3 '<folder>/<file>_Proposal.py' (expect 'Saved: … (6 or 7
-               slides)'), and confirm this prints nothing:
+               Then run: python3 '<folder>/<file>_Proposal.py' (expect 'Saved: … (7 or 8
+               slides)', more with ProfitOS), and confirm this prints nothing:
                diff <(sed -n '/LAYOUT ENGINE/,\$p' 'Design Files/audit_pptx_template.py') <(sed -n '/LAYOUT ENGINE/,\$p' '<folder>/<file>_Proposal.py')
                (pip install python-pptx --break-system-packages --quiet if needed.)
             4. Commit the .py, the .pptx and package_decision.json (if changed) to main

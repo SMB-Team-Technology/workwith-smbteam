@@ -1,7 +1,7 @@
 """
 Audit PowerPoint Template — SMB Team
 ======================================
-Generates the 6-slide proposal PPTX. Uses python-pptx. Do not modify the
+Generates the 7-slide proposal PPTX (a cover + 6 content slides). Uses python-pptx. Do not modify the
 layout engine below the FILL section. Only replace the # FILL: placeholders
 with audit-specific content (rules: .claude/commands/audit-pptx.md).
 
@@ -9,6 +9,8 @@ The deck makes the case for the recommendation in one line of argument:
 one number from the call → what drives it → what we do about each driver →
 what we're recommending → what it costs.
 
+Cover   — Growth, Profit, and Freedom Roadmap (firm name, seller and date —
+          filled in by the engine; no FILL values)
 Slide 1 — Your Priorities, In Your Words  (the call KPI + the client's quotes)
 Slide 2 — The Diagnosis                   (the root causes behind that KPI)
 Slide 3 — The Plan                        (actions tied to causes + what we'll measure)
@@ -357,7 +359,7 @@ else:
     PROFITOS_SLIDES = []
 
 # Slide order. The staircase slide is optional (STAIRCASE in the FILL).
-SLIDE_ORDER = (["priorities"] + (["staircase"] if STAIRCASE else []) +
+SLIDE_ORDER = (["cover", "priorities"] + (["staircase"] if STAIRCASE else []) +
                ["diagnosis", "plan", "strategy"] + (["rollout"] if SHOW_ROLLOUT else []) +
                ["investment", "roadmap"] + PROFITOS_SLIDES)
 PAGE = {key: i + 1 for i, key in enumerate(SLIDE_ORDER)}
@@ -762,7 +764,7 @@ def seller_note(key):
     return SELLER_NOTES.get(key) if isinstance(SELLER_NOTES, dict) else None
 
 
-SLIDE_TITLES = {"priorities": "Your Priorities, In Your Words", "staircase": "Lawyer Legacy Staircase",
+SLIDE_TITLES = {"cover": "Cover", "priorities": "Your Priorities, In Your Words", "staircase": "Lawyer Legacy Staircase",
                 "diagnosis": "The Diagnosis", "plan": "The Plan", "strategy": "The Recommended Strategy",
                 "rollout": "Rollout Plan", "investment": "Your Investment",
                 "roadmap": "What Happens Next",
@@ -1015,6 +1017,46 @@ def validate_fill():
     check_quotes(problems)
     if problems:
         raise SystemExit("Deck not built — fix the values above the LAYOUT ENGINE line:\n  - " + "\n  - ".join(problems))
+
+
+# ── Cover: Growth, Profit, and Freedom Roadmap ────────────────────
+# The name the marketing CTA uses — the cover ties the deck back to it.
+
+COVER_NAME = "Growth, Profit, and Freedom Roadmap"
+_MONTHS = ("January|February|March|April|May|June|July|August|September|"
+           "October|November|December")
+
+
+def deck_date():
+    """The audit date from the output file name ("…_November 17, 2026_Proposal.pptx"
+    or "…_November_17_2026_…"), or None when the name doesn't carry one."""
+    m = re.search(rf"({_MONTHS})[ _]+(\d{{1,2}}),?[ _]+(\d{{4}})", os.path.basename(OUTPUT_PATH))
+    return f"{m.group(1)} {int(m.group(2))}, {m.group(3)}" if m else None
+
+
+def build_cover(prs):
+    slide = new_slide(prs)
+    add_rect(slide, 0, 0, 10, 5.625, fill=NAVY)
+    add_rect(slide, 0, 5.555, 10, 0.07, fill=LIME_GREEN)
+    if LOGO_PATH and os.path.isfile(LOGO_PATH):
+        from pptx.util import Emu as E
+        from PIL import Image
+        lw, lh = Image.open(LOGO_PATH).size
+        slide.shapes.add_picture(LOGO_PATH, E(int(0.60 * 914400)), E(int(0.55 * 914400)),
+                                 E(int(1.70 * 914400)), E(int(1.70 * lh / lw * 914400)))
+    add_text(slide, "YOUR PERSONALIZED PROPOSAL", 0.60, 1.62, 8.0, 0.24, 9, LIME_GREEN,
+             bold=True, fit=False)
+    add_text(slide, COVER_NAME, 0.60, 1.90, 8.60, 1.30, 34, WHITE, bold=True,
+             max_lines=2, min_size=26)
+    add_rect(slide, 0.62, 3.30, 0.90, 0.04, fill=OCEAN_BLUE)
+    add_text(slide, FIRM_NAME, 0.60, 3.42, 8.60, 0.70, 22, NAVY_TEXT_SOFT, bold=True,
+             max_lines=2, min_size=14, anchor=MSO_ANCHOR.TOP, cap_label="cover firm name")
+    date = deck_date()
+    add_rich_text(slide, [([("Prepared by ", 9, False, False, NAVY_TEXT_SOFT),
+                            (f"{SALES_REP} | SMB Team", 9, True, False, WHITE)], 0),
+                          ([((f"{date}  ·  " if date else "") + "CONFIDENTIAL", 7.5, True, False,
+                             NAVY_TEXT_SOFT)], 2)],
+                  0.60, 4.45, 6.0, 0.60, label="cover prepared by")
 
 
 # ── Slide 1: Your Priorities, In Your Words ───────────────────────
@@ -2233,6 +2275,7 @@ prs = Presentation()
 prs.slide_width  = Inches(10)
 prs.slide_height = Inches(5.625)
 
+build_cover(prs)
 build_priorities(prs)
 if STAIRCASE:
     build_staircase(prs)

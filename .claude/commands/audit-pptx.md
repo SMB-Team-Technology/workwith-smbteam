@@ -1,6 +1,6 @@
 # SMB Team — Audit PowerPoint (Pass 3)
 
-Fills and generates the 6-slide proposal PowerPoint. This is STEP 3 of `/audit-write`, which does the package, price, ad spend and ROI workings first (STEP 1–2) and records them as a BUILD NOTES comment block in the firm's `_Proposal.py`. The deck replaces the retired "Growth, Profit & Freedom Roadmap" website and Sales Companion PDF, and is built from the same inputs the website was.
+Fills and generates the 7-slide proposal PowerPoint (a cover + 6 content slides). This is STEP 3 of `/audit-write`, which does the package, price, ad spend and ROI workings first (STEP 1–2) and records them as a BUILD NOTES comment block in the firm's `_Proposal.py`. The deck replaces the retired "Growth, Profit & Freedom Roadmap" website and Sales Companion PDF, and is built from the same inputs the website was.
 
 Run it through `/audit-write`. Running `/audit-pptx` on its own is only for re-filling an existing deck whose `_Proposal.py` already has its BUILD NOTES.
 
@@ -32,6 +32,8 @@ Never read `[friendly-name]/sections/`, `[friendly-name]/index.html` or `*_Sales
 ## WHAT THE PPTX CONTAINS
 
 Six slides that make one argument, the way our best hand-built decks run on a call: **one number from the call → what drives it → what we do about each driver → what we're recommending → what it costs → where it goes from here.** The package and prices are decided in `/audit-write` STEP 1 and never change here — these slides only make the case for them. Every slide must tie back to the slide-1 KPI.
+
+**Cover — Growth, Profit, and Freedom Roadmap.** The first slide in the file, built by the engine with nothing to fill: SMB Team logo, "Growth, Profit, and Freedom Roadmap" (the name the marketing CTA uses, so the deck ties back to it), the firm name (`FIRM_NAME`), "Prepared by" the seller (`SALES_REP`), and the audit date read from `OUTPUT_PATH` (left off if the file name has no date). Slide numbers in this file (slide 1–6) name the content slides; in the .pptx each sits one later, after the cover.
 
 **Slide 1 — Your Priorities, In Your Words.** Left: the KPI card — the one financially tangible number from the call that the recommendation moves (e.g. cost per case, caseload, months the books are behind), with the client's own line about it and up to two supporting figures. Right: up to three more client quotes, each with a bold line saying how the proposal answers it. Along the bottom, when the call gave them: **why it matters to them** (what they really want, in their words) and **if nothing changes** (the cost of inaction, in their words) — then the quote cards cap at two. Talk track: "Here's what I heard, the number you told me matters most, why it matters to you, and what happens if nothing changes."
 
@@ -194,7 +196,7 @@ diff <(sed -n '/LAYOUT ENGINE/,$p' "Design Files/audit_pptx_template.py") \
 python3 "[friendly-name]/[FirmName]_[Date]_Proposal.py"
 ```
 
-9. Confirm the output prints "Saved: … (6 slides)" — 7 when `STAIRCASE` is set, plus 8 ProfitOS slides with Fractional CFO (9 with FCFO + bookkeeping) or 2 with bookkeeping alone. If it prints "Deck not built — fix the values above the LAYOUT ENGINE line", fix each listed item and re-run. If it also prints a `WARNING: N field(s) exceeded their character budget…` block, that means the layout engine had to truncate something you filled in — go back and shorten that field's source copy rather than shipping the truncated version. A `NOTE: N field(s) were shrunk to fit their box` block is informational: the engine measured that text against the Poppins font and dropped it a half-point at a time until it fit. That is expected for long firm names and is not an error.
+9. Confirm the output prints "Saved: … (7 slides)" (the cover + 6) — 8 when `STAIRCASE` is set, plus 8 ProfitOS slides with Fractional CFO (9 with FCFO + bookkeeping) or 2 with bookkeeping alone. If it prints "Deck not built — fix the values above the LAYOUT ENGINE line", fix each listed item and re-run. If it also prints a `WARNING: N field(s) exceeded their character budget…` block, that means the layout engine had to truncate something you filled in — go back and shorten that field's source copy rather than shipping the truncated version. A `NOTE: N field(s) were shrunk to fit their box` block is informational: the engine measured that text against the Poppins font and dropped it a half-point at a time until it fit. That is expected for long firm names and is not an error.
 10. Verify the file exists and is not empty:
 
 ```bash
