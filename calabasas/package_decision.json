@@ -37,17 +37,17 @@
   "marketing_price_bundled": 4997,
   "marketing_price_retail": 5697,
   "marketing_savings": 700,
-  "coaching_name": "Elite Coach",
+  "coaching_name": null,
   "coaching_price_bundled": 2600,
   "coaching_price_retail": 3497,
   "coaching_savings": 897,
-  "law_tier": "AI Workforce Pro – Starter",
-  "law_name": "AI Workforce Pro – Starter",
-  "law_price_bundled": 1400,
+  "law_tier": "Fractional CTO Level 1 + AI Workforce Pro – Starter",
+  "law_name": "Fractional CTO Level 1 + AI Workforce Pro – Starter",
+  "law_price_bundled": 4697,
   "law_price_retail": null,
   "law_seats": 4,
-  "total_bundled": 8997,
-  "total_savings": 1597,
+  "total_bundled": 9694,
+  "total_savings": 1200,
   "ad_spend_conservative": 6700,
   "ad_spend_aggressive": 6700,
   "ad_spend_rationale": {
@@ -60,7 +60,8 @@
     "Revenue under $750K but multiple practice areas detected: Essentials hidden (requires single practice area) — Starter tier.",
     "Revenue under $250K: Elite Coach selected, scoping approval required.",
     "AI Workforce Pro – Starter does not count toward bundle pricing.",
-    "Total at conservative ad spend ($15,697/mo) is over the 35% cap ($5,250/mo on $180,000 revenue) — review with sales rep."
+    "Total at conservative ad spend ($15,697/mo) is over the 35% cap ($5,250/mo on $180,000 revenue) — review with sales rep.",
+    "Seller override: swapped Elite Coach for Fractional CTO Level 1, kept AI Workforce Pro – Starter (4 seats), per Slack request on 2026-11-17."
   ],
   "pricing_mode": "bundled",
   "bundle_eligible_count": 2,
@@ -74,18 +75,9 @@
       "waivable": true,
       "waived": false,
       "charged": 1850
-    },
-    {
-      "line": "coaching",
-      "product": "Elite Coach",
-      "label": "Setup fee",
-      "amount": 1500,
-      "waivable": true,
-      "waived": false,
-      "charged": 1500
     }
   ],
-  "setup_total": 3350,
+  "setup_total": 1850,
   "investment": {
     "version": 1,
     "products": [
@@ -96,21 +88,15 @@
         "standalone": 5697
       },
       {
-        "category": "coaching",
-        "name": "Elite Coach",
-        "charged": 2600,
-        "standalone": 3497
-      },
-      {
         "category": "law",
-        "name": "AI Workforce Pro – Starter (4 seats)",
-        "charged": 1400,
+        "name": "Fractional CTO Level 1 + AI Workforce Pro – Starter (4 seats)",
+        "charged": 4697,
         "standalone": null
       }
     ],
-    "monthly_total": 8997,
-    "list_total": 10594,
-    "total_savings": 1597,
+    "monthly_total": 9694,
+    "list_total": 10894,
+    "total_savings": 1200,
     "pricing_mode": "bundled",
     "setup_fees": [
       {
@@ -119,18 +105,11 @@
         "amount": 1850,
         "charged": 1850,
         "waived": false
-      },
-      {
-        "product": "Elite Coach",
-        "label": "Setup fee",
-        "amount": 1500,
-        "charged": 1500,
-        "waived": false
       }
     ],
-    "setup_total": 3350,
-    "year_one_total": 111314,
-    "year_one_basis": "12 × $8,997/mo in fees + $3,350 one-time setup. Ad spend is paid separately to Google and Meta.",
+    "setup_total": 1850,
+    "year_one_total": 118178,
+    "year_one_basis": "12 × $9,694/mo in fees + $1,850 one-time setup. Ad spend is paid separately to Google and Meta.",
     "ad_spend": {
       "channels": [
         {
