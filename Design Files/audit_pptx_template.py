@@ -119,7 +119,7 @@ STAIRCASE = None   # FILL: None, or {"current": 4, "goal": 6}
 
 # ── Slide 2 — The Diagnosis ───────────────────────────────────────
 DIAGNOSIS_TITLE = "Why Each Case Costs $X,XXX"   # FILL: names the KPI, ≤40 chars
-DIAGNOSIS_INTRO = "N things drive the KPI. Here's each one in plain English."  # FILL ≤90 chars
+DIAGNOSIS_INTRO = "N things drive that number."  # FILL ≤90 chars, one plain line (no "here's each one in plain English")
 
 # 3–4 root causes behind the KPI, biggest first. Each is a dict:
 #   title:        the cause in plain words, ≤32 chars ("Each lead costs too much")

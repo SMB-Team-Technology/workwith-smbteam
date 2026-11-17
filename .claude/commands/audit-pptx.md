@@ -121,7 +121,7 @@ Copy values exactly — do not rewrite or recompute.
 **Optional slide — `STAIRCASE`** (from STEP 9B "Legacy Staircase discussed"): `None` unless the rep walked the client through the staircase on the call. Then `{"current": N or None, "goal": N or None}` with stages 1–8 (1 Law Student, 2 Lawyer, 3 Solo Practitioner, 4 Small Business Manager, 5 Law Firm CEO, 6 Law Firm Owner, 7 Freedom Entrepreneur, 8 Wealth Multiplier). `current` only if the client's position was placed on the call, `goal` only if one was named — otherwise `None` (the slide still shows the staircase and the Abyss, without the marker). Never infer a stage from revenue or team size for this slide.
 
 **Slide 2 — `DIAGNOSIS_TITLE`, `DIAGNOSIS_INTRO`, `DIAGNOSIS`, `DIAGNOSIS_FIX_LINE`** (from STEP 9B "Diagnosis"):
-- `DIAGNOSIS_TITLE` names the KPI ("Why Each Case Costs $4,500", "Why Your Caseload Is Shrinking"), ≤40 chars. `DIAGNOSIS_INTRO`: one plain line, ≤90 chars.
+- `DIAGNOSIS_TITLE` names the KPI ("Why Each Case Costs $4,500", "Why Your Caseload Is Shrinking"), ≤40 chars. `DIAGNOSIS_INTRO`: one plain line, ≤90 chars (e.g. "Four things sit behind that number."). No filler such as "Here's each one in plain English."
 - 3–4 causes, biggest first, each specific to this firm — never generic categories like "Lead Generation". One problem per cause: if the call surfaced a second major problem, it gets its own cause rather than being merged into the first (fold minor symptoms into the cause they belong to instead).
   - `title` ≤32 chars, plain words. `metric`: the evidence number exactly as recorded, or `""` for a cause with no number. `metric_label` ≤40 chars.
   - `target`: per DATA RULES, or `None`.

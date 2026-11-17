@@ -124,7 +124,7 @@ STAIRCASE = None
 
 # ── Slide 2 — The Diagnosis ───────────────────────────────────────
 DIAGNOSIS_TITLE = "Why Web Cases Stay at One or Two"
-DIAGNOSIS_INTRO = "Four things sit behind that number. Here's each one in plain English."
+DIAGNOSIS_INTRO = "Four things sit behind that number."
 
 DIAGNOSIS = [
     {"title": "Invisible beyond Lake Worth", "metric": "", "metric_label": "",
