@@ -43,12 +43,12 @@
   "coaching_price_bundled": 2600,
   "coaching_price_retail": 3497,
   "coaching_savings": 897,
-  "law_tier": "AI Workforce Pro – Starter",
-  "law_name": "AI Workforce Pro – Starter",
+  "law_tier": null,
+  "law_name": null,
   "law_price_bundled": 350,
   "law_price_retail": null,
-  "law_seats": 1,
-  "total_bundled": 7947,
+  "law_seats": null,
+  "total_bundled": 7597,
   "total_savings": 1597,
   "ad_spend_conservative": 6700,
   "ad_spend_aggressive": 9500,
@@ -62,7 +62,8 @@
     "Revenue under $750K but multiple practice areas detected: Essentials hidden (requires single practice area) — Starter tier.",
     "Revenue $250K–$400K: Elite Coach selected.",
     "AI Workforce Pro – Starter does not count toward bundle pricing.",
-    "Total at conservative ad spend ($14,647/mo) is over the 35% cap ($7,292/mo on $250,000 revenue) — review with sales rep."
+    "Total at conservative ad spend ($14,647/mo) is over the 35% cap ($7,292/mo on $250,000 revenue) — review with sales rep.",
+    "Seller override: dropped AI Workforce Pro – Starter per Slack request on 2026-11-17."
   ],
   "pricing_mode": "bundled",
   "bundle_eligible_count": 2,
@@ -81,20 +82,31 @@
         "name": "Elite Coach",
         "charged": 2600,
         "standalone": 3497
-      },
-      {
-        "category": "law",
-        "name": "AI Workforce Pro – Starter (1 seat)",
-        "charged": 350,
-        "standalone": null
       }
     ],
-    "monthly_total": 7947,
-    "list_total": 9544,
+    "monthly_total": 7597,
+    "list_total": 9194,
     "total_savings": 1597,
     "pricing_mode": "bundled",
-    "year_one_total": 95364,
-    "year_one_basis": "12 × $7,947/mo in fees. Ad spend is paid separately to Google and Meta.",
+    "setup_fees": [
+      {
+        "product": "Full Service Marketing — Starter",
+        "label": "AI Avatar setup",
+        "amount": 1850,
+        "charged": 1850,
+        "waived": false
+      },
+      {
+        "product": "Elite Coach",
+        "label": "Setup fee",
+        "amount": 1500,
+        "charged": 1500,
+        "waived": false
+      }
+    ],
+    "setup_total": 3350,
+    "year_one_total": 94514,
+    "year_one_basis": "12 × $7,597/mo in fees + $3,350 one-time setup. Ad spend is paid separately to Google and Meta.",
     "ad_spend": {
       "channels": [
         {
@@ -195,5 +207,26 @@
     "flags": [
       "Reverse math ($9,550) is well above the 20% rule ($5,836) — the goal may be aggressive for the budget (paid ads team review)."
     ]
-  }
+  },
+  "setup_fees": [
+    {
+      "line": "marketing",
+      "product": "Full Service Marketing — Starter",
+      "label": "AI Avatar setup",
+      "amount": 1850,
+      "waivable": true,
+      "waived": false,
+      "charged": 1850
+    },
+    {
+      "line": "coaching",
+      "product": "Elite Coach",
+      "label": "Setup fee",
+      "amount": 1500,
+      "waivable": true,
+      "waived": false,
+      "charged": 1500
+    }
+  ],
+  "setup_total": 3350
 }
