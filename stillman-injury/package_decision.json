@@ -41,17 +41,17 @@
   "marketing_price_bundled": 4897,
   "marketing_price_retail": 5897,
   "marketing_savings": 1000,
-  "coaching_name": "Master's Circle",
-  "coaching_price_bundled": 4600,
-  "coaching_price_retail": 4997,
-  "coaching_savings": 397,
+  "coaching_name": "Elite Coach",
+  "coaching_price_bundled": 2600,
+  "coaching_price_retail": 3497,
+  "coaching_savings": 897,
   "law_tier": null,
   "law_name": null,
   "law_price_bundled": null,
   "law_price_retail": null,
   "law_seats": null,
-  "total_bundled": 9497,
-  "total_savings": 1397,
+  "total_bundled": 7497,
+  "total_savings": 1897,
   "ad_spend_conservative": null,
   "ad_spend_aggressive": null,
   "ad_spend_rationale": null,
@@ -59,7 +59,8 @@
     "Contingency-fee practice with only gross revenue stated ($1,000,000) — no net/collected figure found. Using gross as fallback, but confidence downgraded: confirm actual collected revenue with sales rep before finalizing tier.",
     "Revenue $1M–$2M: Growth tier.",
     "Revenue $1M+, team 7+ but no dedicated ops detected: Master's Circle selected. Verify ops capacity with sales rep.",
-    "Seller override: switched marketing to Web + SEO Growth per Slack request on 2026-11-17 (Master's Circle coaching unchanged)."
+    "Seller override: switched marketing to Web + SEO Growth per Slack request on 2026-11-17 (Master's Circle coaching unchanged).",
+    "Seller override: swapped Master's Circle for Elite Coach per Slack request on 2026-11-17 (Web + SEO Growth marketing unchanged)."
   ],
   "pricing_mode": "bundled",
   "bundle_eligible_count": 2,
@@ -67,7 +68,7 @@
   "setup_fees": [
     {
       "line": "coaching",
-      "product": "Master's Circle",
+      "product": "Elite Coach",
       "label": "Setup fee",
       "amount": 1500,
       "waivable": true,
@@ -87,18 +88,18 @@
       },
       {
         "category": "coaching",
-        "name": "Master's Circle",
-        "charged": 4600,
-        "standalone": 4997
+        "name": "Elite Coach",
+        "charged": 2600,
+        "standalone": 3497
       }
     ],
-    "monthly_total": 9497,
-    "list_total": 10894,
-    "total_savings": 1397,
+    "monthly_total": 7497,
+    "list_total": 9394,
+    "total_savings": 1897,
     "pricing_mode": "bundled",
     "setup_fees": [
       {
-        "product": "Master's Circle",
+        "product": "Elite Coach",
         "label": "Setup fee",
         "amount": 1500,
         "charged": 1500,
@@ -106,8 +107,8 @@
       }
     ],
     "setup_total": 1500,
-    "year_one_total": 115464,
-    "year_one_basis": "12 × $9,497/mo in fees + $1,500 one-time setup. Ad spend is paid separately to Google and Meta.",
+    "year_one_total": 91464,
+    "year_one_basis": "12 × $7,497/mo in fees + $1,500 one-time setup. Ad spend is paid separately to Google and Meta.",
     "ad_spend": null,
     "return": null,
     "inputs": {},
