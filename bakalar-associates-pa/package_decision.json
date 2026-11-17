@@ -1,0 +1,201 @@
+{
+  "confidence": "high",
+  "revenue_stated": 1000000,
+  "net_revenue_stated": null,
+  "is_contingency_practice": false,
+  "revenue_effective": 1000000,
+  "revenue_source": "research_notes",
+  "revenue_label": null,
+  "revenue_verified": true,
+  "needs_revenue_confirmation": false,
+  "team_size_stated": 8,
+  "team_size_source": "research_notes",
+  "team_size_effective": 8,
+  "practice_areas_detected": [
+    "(1) condominium and homeowners association (community association) law — \"our highest income is from condo and hoa work\"",
+    "condominium & homeowners association (community association) law",
+    "real estate closings (residential and commercial)",
+    "wills, trusts, estates and probate",
+    "community association law",
+    "real estate closings",
+    "wills, trusts, estates, probate"
+  ],
+  "hubspot_company": null,
+  "firm_identity_check": "matches. Trigger \"Bakalar & Associates, PA\"; website and call both say Bakalar & Associates, P.A. (Boca Raton, since 1992). The contact on the trigger and call (Michael Bakalar) is the non-attorney manager; Susan P. Bakalar owns 100% (Michael, 00:36:34).",
+  "package_source": "rules",
+  "package_override": null,
+  "needs_seller_input": false,
+  "revenue_only_option": null,
+  "call_focus": {
+    "primary_engagement": "mixed",
+    "products_discussed": [
+      "Full Service Marketing"
+    ],
+    "lead_gen_gap": true
+  },
+  "marketing_tier": "Growth",
+  "marketing_name": "Full Service Marketing — Growth",
+  "marketing_price_bundled": 7497,
+  "marketing_price_retail": 8997,
+  "marketing_savings": 1500,
+  "coaching_name": "Master's Circle",
+  "coaching_price_bundled": 4600,
+  "coaching_price_retail": 4997,
+  "coaching_savings": 397,
+  "law_tier": null,
+  "law_name": null,
+  "law_price_bundled": null,
+  "law_price_retail": null,
+  "law_seats": null,
+  "total_bundled": 12097,
+  "total_savings": 1897,
+  "ad_spend_conservative": 6200,
+  "ad_spend_aggressive": 50000,
+  "ad_spend_rationale": {
+    "conservative_basis": "channel minimums $3,000 + $2,000 + $1,200 = $6,200",
+    "aggressive_basis": "20% rule: $3,600,000 goal × 20% ÷ 12 × 1.3 geo − $7,497 fee = $70,503 → reverse math: not possible (no case value) → capped at the $50,000 the package manages"
+  },
+  "selection_notes": [
+    "Revenue $1M–$2M: Growth tier.",
+    "Revenue $1M+, team 8+ but no dedicated ops detected: Master's Circle selected. Verify ops capacity with sales rep."
+  ],
+  "pricing_mode": "bundled",
+  "bundle_eligible_count": 2,
+  "unpriced_products": [],
+  "setup_fees": [
+    {
+      "line": "marketing",
+      "product": "Full Service Marketing — Growth",
+      "label": "AI Avatar setup",
+      "amount": 1850,
+      "waivable": true,
+      "waived": false,
+      "charged": 1850
+    },
+    {
+      "line": "coaching",
+      "product": "Master's Circle",
+      "label": "Setup fee",
+      "amount": 1500,
+      "waivable": true,
+      "waived": false,
+      "charged": 1500
+    }
+  ],
+  "setup_total": 3350,
+  "investment": {
+    "version": 1,
+    "products": [
+      {
+        "category": "marketing",
+        "name": "Full Service Marketing — Growth",
+        "charged": 7497,
+        "standalone": 8997
+      },
+      {
+        "category": "coaching",
+        "name": "Master's Circle",
+        "charged": 4600,
+        "standalone": 4997
+      }
+    ],
+    "monthly_total": 12097,
+    "list_total": 13994,
+    "total_savings": 1897,
+    "pricing_mode": "bundled",
+    "setup_fees": [
+      {
+        "product": "Full Service Marketing — Growth",
+        "label": "AI Avatar setup",
+        "amount": 1850,
+        "charged": 1850,
+        "waived": false
+      },
+      {
+        "product": "Master's Circle",
+        "label": "Setup fee",
+        "amount": 1500,
+        "charged": 1500,
+        "waived": false
+      }
+    ],
+    "setup_total": 3350,
+    "year_one_total": 148514,
+    "year_one_basis": "12 × $12,097/mo in fees + $3,350 one-time setup. Ad spend is paid separately to Google and Meta.",
+    "ad_spend": {
+      "channels": [
+        {
+          "channel": "Google Search",
+          "minimum": 3000
+        },
+        {
+          "channel": "Local Services Ads",
+          "minimum": 2000
+        },
+        {
+          "channel": "Meta retargeting",
+          "minimum": 1200
+        }
+      ],
+      "conservative": 6200,
+      "aggressive": 50000,
+      "current_stated": 0,
+      "cap": 50000,
+      "overage": null,
+      "conservative_basis": "channel minimums $3,000 + $2,000 + $1,200 = $6,200",
+      "aggressive_steps": [
+        "20% rule: $3,600,000 goal × 20% ÷ 12 × 1.3 geo − $7,497 fee = $70,503",
+        "reverse math: not possible (no case value)",
+        "capped at the $50,000 the package manages"
+      ],
+      "year_one_range": [
+        74400,
+        600000
+      ],
+      "seller_set": false,
+      "computed": null,
+      "needs_seller_review": true
+    },
+    "return": null,
+    "inputs": {
+      "practice_area": {
+        "value": "Other",
+        "source": "research notes"
+      },
+      "geo_tier": {
+        "value": 2,
+        "multiplier": 1.3,
+        "source": "research notes"
+      },
+      "competitiveness": {
+        "value": "Medium",
+        "source": "research notes"
+      },
+      "spanish_campaign": false,
+      "revenue_effective": 1000000,
+      "revenue_goal": {
+        "value": 3600000,
+        "source": "stated on the call"
+      },
+      "case_value": {
+        "value": 1000,
+        "source": "stated on the call"
+      },
+      "close_rate": {
+        "value": 0.15,
+        "source": "default 15%"
+      },
+      "current_ad_spend": 0,
+      "current_cost_per_case": null,
+      "current_cost_per_lead": null,
+      "max_ad_budget": null,
+      "management_fee": 7497,
+      "ad_spend_cap": 50000
+    },
+    "flags": [
+      "Goal-based ad spend ($70,503) is above the $50,000 cap for Full Service Marketing — Growth — capped. Higher spend means a tier upgrade or the 15% overage fee (seller decision).",
+      "Ad spend over $25K — scoping approval required.",
+      "No cost data for Other (no stated cost per case or lead, no CPL benchmark) — return projection left out."
+    ]
+  }
+}
