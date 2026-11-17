@@ -1,0 +1,225 @@
+{
+  "confidence": "high",
+  "revenue_stated": 180000,
+  "net_revenue_stated": null,
+  "is_contingency_practice": false,
+  "revenue_effective": 180000,
+  "revenue_source": "research_notes",
+  "revenue_label": null,
+  "revenue_verified": true,
+  "needs_revenue_confirmation": false,
+  "team_size_stated": 4,
+  "team_size_source": "research_notes",
+  "team_size_effective": 4,
+  "practice_areas_detected": [
+    "estate planning",
+    "trust administration",
+    "probate",
+    "estate planning (wills, living trusts)",
+    "probate (and trust administration)",
+    "probate / trust administration"
+  ],
+  "hubspot_company": null,
+  "firm_identity_check": "matches. Trigger name \"Calabasas Law Group\" = website \"Calabasas Law Group Inc\" = transcript (rep: \"are you part of the Calabasas Law Group, or are you an independent law office?\" — Carmella: \"I'm the founding attorney. I'm the owner.\" (00:09:15–00:09:28)).",
+  "package_source": "rules",
+  "package_override": null,
+  "needs_seller_input": false,
+  "revenue_only_option": null,
+  "call_focus": {
+    "primary_engagement": "mixed",
+    "products_discussed": [
+      "AI Workforce Pro (tier not specified)"
+    ],
+    "lead_gen_gap": true
+  },
+  "marketing_tier": "Starter",
+  "marketing_name": "Full Service Marketing — Starter",
+  "marketing_price_bundled": 4997,
+  "marketing_price_retail": 5697,
+  "marketing_savings": 700,
+  "coaching_name": "Elite Coach",
+  "coaching_price_bundled": 2600,
+  "coaching_price_retail": 3497,
+  "coaching_savings": 897,
+  "law_tier": "AI Workforce Pro – Starter",
+  "law_name": "AI Workforce Pro – Starter",
+  "law_price_bundled": 1400,
+  "law_price_retail": null,
+  "law_seats": 4,
+  "total_bundled": 8997,
+  "total_savings": 1597,
+  "ad_spend_conservative": 6700,
+  "ad_spend_aggressive": 6700,
+  "ad_spend_rationale": {
+    "conservative_basis": "channel minimums $3,500 + $2,000 + $1,200 = $6,700",
+    "aggressive_basis": "20% rule: $360,000 goal × 20% ÷ 12 × 1.5 geo − $4,997 fee = $4,003 → reverse math: 6.7 cases/mo ÷ 15% close × $84 benchmark blended CPL = $3,743"
+  },
+  "selection_notes": [
+    "\"AI Workforce Pro\" named without a tier — using AI Workforce Pro – Starter (team of 4).",
+    "AI Workforce Pro – Starter discussed on call: 4 seats × $350/mo.",
+    "Revenue under $750K but multiple practice areas detected: Essentials hidden (requires single practice area) — Starter tier.",
+    "Revenue under $250K: Elite Coach selected, scoping approval required.",
+    "AI Workforce Pro – Starter does not count toward bundle pricing.",
+    "Total at conservative ad spend ($15,697/mo) is over the 35% cap ($5,250/mo on $180,000 revenue) — review with sales rep."
+  ],
+  "pricing_mode": "bundled",
+  "bundle_eligible_count": 2,
+  "unpriced_products": [],
+  "setup_fees": [
+    {
+      "line": "marketing",
+      "product": "Full Service Marketing — Starter",
+      "label": "AI Avatar setup",
+      "amount": 1850,
+      "waivable": true,
+      "waived": false,
+      "charged": 1850
+    },
+    {
+      "line": "coaching",
+      "product": "Elite Coach",
+      "label": "Setup fee",
+      "amount": 1500,
+      "waivable": true,
+      "waived": false,
+      "charged": 1500
+    }
+  ],
+  "setup_total": 3350,
+  "investment": {
+    "version": 1,
+    "products": [
+      {
+        "category": "marketing",
+        "name": "Full Service Marketing — Starter",
+        "charged": 4997,
+        "standalone": 5697
+      },
+      {
+        "category": "coaching",
+        "name": "Elite Coach",
+        "charged": 2600,
+        "standalone": 3497
+      },
+      {
+        "category": "law",
+        "name": "AI Workforce Pro – Starter (4 seats)",
+        "charged": 1400,
+        "standalone": null
+      }
+    ],
+    "monthly_total": 8997,
+    "list_total": 10594,
+    "total_savings": 1597,
+    "pricing_mode": "bundled",
+    "setup_fees": [
+      {
+        "product": "Full Service Marketing — Starter",
+        "label": "AI Avatar setup",
+        "amount": 1850,
+        "charged": 1850,
+        "waived": false
+      },
+      {
+        "product": "Elite Coach",
+        "label": "Setup fee",
+        "amount": 1500,
+        "charged": 1500,
+        "waived": false
+      }
+    ],
+    "setup_total": 3350,
+    "year_one_total": 111314,
+    "year_one_basis": "12 × $8,997/mo in fees + $3,350 one-time setup. Ad spend is paid separately to Google and Meta.",
+    "ad_spend": {
+      "channels": [
+        {
+          "channel": "Google Search",
+          "minimum": 3500
+        },
+        {
+          "channel": "Local Services Ads",
+          "minimum": 2000
+        },
+        {
+          "channel": "Meta retargeting",
+          "minimum": 1200
+        }
+      ],
+      "conservative": 6700,
+      "aggressive": 6700,
+      "current_stated": 0,
+      "cap": 25000,
+      "overage": null,
+      "conservative_basis": "channel minimums $3,500 + $2,000 + $1,200 = $6,700",
+      "aggressive_steps": [
+        "20% rule: $360,000 goal × 20% ÷ 12 × 1.5 geo − $4,997 fee = $4,003",
+        "reverse math: 6.7 cases/mo ÷ 15% close × $84 benchmark blended CPL = $3,743"
+      ],
+      "year_one_range": [
+        80400,
+        80400
+      ],
+      "seller_set": false,
+      "computed": null,
+      "needs_seller_review": true
+    },
+    "return": {
+      "method": "benchmark_cpl",
+      "basis": "SMB Team estate planning cost-per-lead benchmarks ($84 blended), 15% close rate (assumed) and a $4,500 average case (said on the call).",
+      "case_value": 4500,
+      "case_value_stated": true,
+      "cost_per_case": null,
+      "share_of_case_value": null,
+      "close_rate": 0.15,
+      "blended_cpl": 84,
+      "scenarios": [
+        {
+          "label": "Recommended",
+          "ad_spend": 6700,
+          "leads": 79.6,
+          "cases": 11.9,
+          "revenue": 53700,
+          "return_multiple": 8
+        }
+      ],
+      "disclaimer": "Illustrative arithmetic, not a forecast."
+    },
+    "inputs": {
+      "practice_area": {
+        "value": "Estate Planning",
+        "source": "research notes"
+      },
+      "geo_tier": {
+        "value": 1,
+        "multiplier": 1.5,
+        "source": "research notes"
+      },
+      "competitiveness": {
+        "value": "Medium",
+        "source": "research notes"
+      },
+      "spanish_campaign": false,
+      "revenue_effective": 180000,
+      "revenue_goal": {
+        "value": 360000,
+        "source": "not stated — 2× current revenue (audit-write.md)"
+      },
+      "case_value": {
+        "value": 4500,
+        "source": "stated on the call"
+      },
+      "close_rate": {
+        "value": 0.15,
+        "source": "default 15%"
+      },
+      "current_ad_spend": 0,
+      "current_cost_per_case": null,
+      "current_cost_per_lead": null,
+      "max_ad_budget": null,
+      "management_fee": 4997,
+      "ad_spend_cap": 25000
+    },
+    "flags": []
+  }
+}
