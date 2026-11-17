@@ -51,32 +51,41 @@ import re
 # ═══════════════════════════════════════════════════════════════════
 
 # ── BUILD NOTES (internal — never shown on a slide) ──────────────
-# Marketing package: Full Service Marketing — Starter — bundled $4,997/mo, stand-alone $5,697/mo, savings $700/mo
-# Non-marketing package(s): none (decision file coaching_* fields are stale leftovers from the swapped-out Elite Coach; coaching_name is null and total_bundled excludes them)
-# LAW package: Fractional CTO Level 1 + AI Workforce Pro – Starter (4 seats) — bundled $4,697/mo (FCTO L1 $3,297 + 4 × $350 = $1,400), stand-alone FCTO L1 $3,797 (AI Workforce Pro has none), savings $500/mo
-# Total monthly investment: $9,694/mo · total savings: $1,200/mo (list $10,894/mo) · pricing_mode: bundled (FSM Starter + Fractional CTO = 2 bundle-eligible; AI Workforce Pro – Starter doesn't count)
-# Setup fees: FSM Starter — AI Avatar setup $1,850 (not waived) · Fractional CTO $0 · AI Workforce Pro $0 · total $1,850 (one-time)
-# Year one: $118,178 (12 × $9,694 + $1,850; ad spend paid separately)
-# Ad spend (copied from investment.ad_spend — computed in code, never by hand):
-#   $6,700–$6,700/mo · low end: channel minimums $3,500 + $2,000 + $1,200 = $6,700 · high end: 20% rule $360,000 goal × 20% ÷ 12 × 1.5 geo − $4,997 fee = $4,003; reverse math 6.7 cases/mo ÷ 15% close × $84 benchmark blended CPL = $3,743 (both below the low end, so the range collapses to $6,700)
-# Return (copied from investment.return): benchmark_cpl · estate planning CPL benchmarks ($84 blended), 15% close (assumed), $4,500 average case (said on the call) · scenarios: $6,700 → 79.6 leads → 11.9 cases → $53,700 → 8×
-# Investment inputs used: practice area Estate Planning (research notes) · geo Tier 1 ×1.5 (research notes, LA DMA) · competitiveness Medium (research notes) · revenue goal $360,000 = 2× current revenue (not stated) · case value $4,500 (stated on the call) · close rate 15% (default) · current ad spend $0 (stated) · max ad budget not stated · flags: none (the decision file's investment.flags is empty); needs_seller_review is true on the ad spend
-# Why this range: to bring estate planning clients in beyond referrals
-# Pillar review: Lead Gen red — referrals only, "I don't have marketing" · Intake amber — outsourced answering service takes calls only, owner qualifies leads herself · Team amber — owner does delegable admin and billing, 4 people total · Profit amber — flat fees, margin unclear, says costs/admin eat into revenue
-# KPI (slide 1): New clients a month — "about four to five clients a month" — client, 00:20:13 (STEP 9B)
-# Diagnosis (slide 2): 1. Owner does delegable admin/billing — "a lot of tasks involved that I should be delegating" — client, 00:21:22–00:21:43 · 2. Flat-fee plans absorb unbilled time — "if you would just charge hourly, then obviously I would make way more money" / "there's time spent that maybe I'm not earning" — client, 00:17:13–00:17:22, 00:17:08 · 3. Referral-only leads, no marketing — "my majority of my leads are just referral bases" / "I don't have marketing" — client, 00:16:26, 00:17:30; research: Blogs and Webinars pages empty (STEP 1, observed Nov 17, 2026) · 4. Case system can't show marketing results — "I need to see the report. I'm not going to just pay by not seeing the results." — client, 00:23:24–00:23:38 (STEP 9B)
-# Targets (slides 2–3): none — no hours, client or lead target stated on the call; seller note
-# Client's why (slide 1): "I always talk to my own clients. You know, I'm always present because estate planning is a different type of practice." — Carmella Mesropian (client), 00:12:55–00:13:03 (STEP 9B) · Cost of inaction: none on the call (closest line is a present cost, not a stated consequence)
-# Closing quote (slide 5): "I can scale my business. I don't think that's not a possibility. I just need to put the right systems." — Carmella Mesropian (client), 00:13:19–00:13:25 (Key prospect quotes #3)
+# Marketing package: none — seller removed Full Service Marketing in the Slack review (package_source: trigger_override)
+# Non-marketing package(s): none (no coaching)
+# LAW package: Fractional CTO Level 1 + AI Workforce Pro – Starter (4 seats) — charged $5,197/mo, no stand-alone list price shown, savings $0
+#   Fractional CTO Level 1: stand-alone $3,797/mo (bundle rule: only 1 bundle-eligible product, AI Workforce Pro – Starter never counts, so no bundled $3,297)
+#   AI Workforce Pro – Starter: 4 seats x $350/user/mo = $1,400/mo (month-to-month, 1M AI credits per user)
+#   $3,797 + $1,400 = $5,197 (matches package_decision.json law_price_bundled / investment.monthly_total)
+# Total monthly investment: $5,197/mo · total savings: $0/mo · pricing_mode: standalone
+# Setup fees: none (Fractional CTO and AI Workforce Pro carry no setup fee) · total $0 (one-time)
+# Year one: $62,364 (from package_decision.json → investment.year_one_total — 12 x $5,197, no setup fees)
+# Ad spend: none — no paid-ads package in the recommendation (investment.ad_spend is null); AD_SPEND_WHY = None
+# Return: none — no ad spend, so no return table (investment.return is null)
+# Investment inputs used: none (investment.inputs is empty) · flags: none (investment.flags is empty)
+# Why this range: n/a — no paid ads
+# Pillar review: Lead Gen red — referrals only, "I don't have marketing" (not part of this package) · Intake red — Carmella qualifies leads herself, answering service only takes calls · Team amber — four people, owner still does delegable admin and billing · Profit amber — flat fees, extra client time not billed, costs not itemised
+# KPI (slide 1): Clients per month — "about four to five clients a month" — client, 00:20:13 (STEP 9B)
+# Diagnosis (slide 2): 1. Delegable admin and billing land on the owner — "a lot of tasks involved that I should be delegating" — client, 00:21:22–00:21:43 · 2. Flat-fee plans absorb unbilled extra time — "it really takes time" / "It's usually flat fees" — client, 00:17:13–00:17:22, 00:18:46 · 3. Wants AI but does not trust free tools — "they hallucinate" — client, 00:26:39, 00:29:04 · 4. Case-management system being replaced and still being coded — client, 00:21:06, 00:23:12 (STEP 9B)
+# Targets (slides 2–3): none — no hours, case, usage or client target was stated on the call; seller note asks for them
+# Client's why / cost of inaction (slide 1): "I always talk to my own clients. You know, I'm always present because estate planning is a different type of practice." — Carmella Mesropian (client), 00:12:55–00:13:03 · cost of inaction: none on the call
+# Closing quote (slide 5): "I can scale my business … I just need to put the right systems." — Carmella Mesropian (client), 00:13:19–00:13:25
 # Legacy Staircase slide: left out — not walked through on the call
-# Plan (slide 3): Audit how work moves today — tied to: "a lot of tasks that I'm involved, I should not be doing them" · Draft plan provisions faster — tied to: "a quick provision for a contract" / "a small research" (00:26:19) · Add lead sources beyond referrals — tied to: "my majority of my leads are just referral bases" · Track what marketing brings in — tied to: "I need to see the report" (00:23:24)
-# Roadmap (slide 6): Phase 1 = Full Service Marketing — Starter + Fractional CTO Level 1 + AI Workforce Pro – Starter · Phase 2 = Fractional COO — starts: when good leads justify a junior attorney — basis: client line "hire a junior attorney if I see that I am getting good leads" (00:21:43) and "I just need to put the right systems" (00:13:25) · Phase 3 = Fractional CFO — starts: once more clients and a bigger team call for planning the numbers — basis: trajectory (no call plan; she called bookkeeping/profit "not an issue", 00:43:44, so framed lightly)
+# Plan (slide 3): each action — Review how work moves today (cause 1) — tied to: "a lot of tasks involved that I should be delegating" (00:21:34) · Draft and review faster (cause 2) — tied to: "a quick provision for a contract" / "a small research" (00:26:19) · Start AI where the risk is low (cause 3) — tied to: "admin type of work … I don't think you can go wrong with that" (00:29:30) · Guide the system change (cause 4) — tied to: "I have purchased a different one" (00:21:06)
+# Roadmap (slide 6): Phase 1 = Fractional CTO Level 1 + AI Workforce Pro – Starter · Phase 2 = Fractional COO — starts: when more clients a month call for more systems — basis: "I just need to put the right systems." (00:13:25) · Phase 3 = Fractional CFO — starts: when good leads make hiring a junior attorney worth it — basis: "if I see that I am getting good leads" (00:21:43). Seller note: she called bookkeeping/profit "not an issue" (00:43:44) — Phase 3 is direction only.
 # What You Told Us (slide 1 quotes and tie lines):
-#   1. Owner time — transcript line: "a lot of tasks that I'm involved, I should not be doing them" (00:21:22) — supports: Fractional CTO Level 1 + AI Workforce Pro – Starter
-#   2. More lead sources — transcript line: "So I'd like to get more from different sources." (00:39:31–00:39:38) — supports: Full Service Marketing — Starter
-#   3. (not used — client's why takes the third slot)
-# Overrides applied: Seller override via Slack (2026-11-17): swapped Elite Coach for Fractional CTO Level 1, kept AI Workforce Pro – Starter (4 seats); marketing stays Full Service Marketing — Starter from the rules selection. Seller wins — the four Transcript-Stated Need Overrides do not apply. Rules the package breaks, built anyway: Fractional CTO Level 1 needs $400K+ (revenue $180K); Full Service Marketing Starter is normally $500K+ (picked on multiple practice areas, revenue under $750K); the client declined website/SEO on the call ("I'm not interested with those at all at this point", 00:39:52) and Full Service Marketing includes both; she asked for a price range and said she does not want to "commit as much" (00:40:48).
-# Escalation flags: Revenue under $250K ($180K) → scoping approval required, and confirm the client has funds for 4 months of services · Total SMB spend $9,694/mo fees + $6,700 ad spend = $16,394/mo vs the 35% cap of $5,250/mo on $180,000 revenue (even fees alone are over) → review with sales rep · Ad spend is a single $6,700 figure (high end collapsed to the channel minimums) → paid ads team review; needs_seller_review true · Legal AI Workforce package → confirm with the sales rep that LAW delivery has launched and capacity is available · Review counts unconfirmed — verify live before the call (none printed in the deck) · Revenue conflict on the call: $180,000 confirmed, also "$200,000", "$15,000 a month" and "$16,000 to $20,000" a month — seller to confirm which is current · Revenue goal not stated (2× current used), close rate defaulted to 15% · Estate Planning in Tier 1 market with no top-metro approval trigger (not Criminal/Family/PI) · AI Avatar setup fee $1,850 comes with Full Service Marketing Starter (no Alexis approval needed)
+#   1. Owner time — transcript line: "a lot of tasks that I'm involved, I should not be doing them." (00:21:22) — supports: Fractional CTO Level 1
+#   2. Capacity — transcript line: "once it's streamlined and more automation, then obviously I can have more capabilities." (00:39:31) — supports: AI Workforce Pro – Starter
+# Overrides applied: seller override (package_source trigger_override) — Fractional CTO Level 1 + AI Workforce Pro – Starter (4 seats) only, no marketing, no coaching, no ad spend. Built as set. Rule it breaks: Fractional CTO Level 1 needs $400K+ revenue; firm stated about $180,000–$200,000. The Transcript-Stated Need overrides do not apply to a seller override.
+# Escalation flags:
+#   - Revenue about $180K (under $300K) → scoping approval required; under $250K → confirm the client has funds to cover 4 months of services
+#   - Legal AI Workforce (LAW) package → confirm with sales rep that LAW delivery has launched and capacity is available before sending
+#   - Seller override below the Fractional CTO Level 1 revenue floor ($400K+) — built as set
+#   - 35% cap check: $5,197/mo (no ad spend) is 34.6% of $15,000/mo revenue ($180K/yr) — just under the 35% cap; 31.2% at $200K/yr. Revenue unconfirmed: client said about $200,000 and "maybe $15,000" a month, confirmed $180,000, and later $16,000–$20,000 a month
+#   - Stale selection_notes in package_decision.json (Elite Coach, Essentials, Starter tier) describe the pre-override logic; no coaching or marketing is in the package
+#   - Review counts unconfirmed — verify live before the call (all competitor counts UNCONFIRMED; none printed in the deck)
+#   - Not observed in research: Google Business Profile, 3-pack, LSA, Google/Meta ads, PageSpeed (API quota) — seller to check live
+#   - ChatGPT lead-gen / AI visibility interest (why she booked) is not in this package — customised plan still owed for the Nov 20 call; any AI Avatar, OmniSocial or marketing add-on would need its own approvals
 
 # Report metadata
 FIRM_NAME      = "Calabasas Law Group"
@@ -86,147 +95,141 @@ OUTPUT_PATH    = "calabasas/Calabasas Law Group_November 20, 2026_Proposal.pptx"
 # ── Slide 1 — Your Priorities, In Your Words ─────────────────────
 KPI_FOCUS = {
     "kind": "kpi",
-    "label": "New clients a month",
-    "headline": "On average, I have about four to five clients a month.",
+    "label": "Clients per month",
+    "headline": "On average, I have about four to five clients a month",
     "headline_is_quote": True,
-    "detail": "About four to five clients a month, with plans around $4,500.",
-    "baseline": "About four to five clients",
+    "detail": "Four to five clients a month; example plan fee $4,500.",
+    "baseline": "About four to five a month",
     "stats": [
-        ("Annual revenue", "About $200,000"),
-        ("Fee per plan", "$4,500"),
+        ("Revenue a month", "Maybe $15,000"),
+        ("Example plan fee", "$4,500"),
     ],
     "said_by": "Carmella Mesropian (client), 00:20:13",
 }
 
 PROSPECT_QUOTES = [
-    ("Owner time", "A lot of tasks that I'm involved, I should not be doing them",
-     "An fCTO and AI Workforce Pro take on the admin work", "Carmella Mesropian (client), 00:21:22"),
-    ("More lead sources", "So I'd like to get more from different sources.",
-     "Full Service Marketing adds paid lead sources", "Carmella Mesropian (client), 00:39:31"),
+    ("Owner time", "A lot of tasks that I'm involved, I should not be doing them.",
+     "Fractional CTO sets up skills and automations for admin", "Carmella Mesropian (client), 00:21:22"),
+    ("Capacity", "Once it's streamlined and more automation, then obviously I can have more capabilities.",
+     "Automations and a weekly AI session streamline the work", "Carmella Mesropian (client), 00:39:31"),
 ]
 
 CLIENT_WHY = ("I always talk to my own clients. You know, I'm always present because estate planning is a different type of practice.", "",
-              "Carmella Mesropian (client), 00:12:55")
+              "Carmella Mesropian (client), 00:12:55–00:13:03")
 COST_OF_INACTION = None
 
-# ── Optional slide — Lawyer Legacy Staircase ─────────────────────
 STAIRCASE = None
 
 # ── Slide 2 — The Diagnosis ───────────────────────────────────────
-DIAGNOSIS_TITLE = "Why It's Four to Five Clients a Month"
+DIAGNOSIS_TITLE = "What Holds Clients at Four to Five"
 DIAGNOSIS_INTRO = "Four things sit behind that number."
 
 DIAGNOSIS = [
-    {"title": "You do the admin yourself", "metric": "", "metric_label": "",
-     "target": None, "body": "Billing and other delegable tasks land on you, which caps new clients.",
+    {"title": "Delegable work lands on you", "metric": "", "metric_label": "",
+     "target": None, "body": "Admin, billing and other tasks you should delegate come through you.",
      "source": "Discovery call, Nov 17"},
-    {"title": "Flat fees absorb unbilled time", "metric": "", "metric_label": "",
-     "target": None, "body": "Each flat-fee estate plan takes time that is not billed on top.",
+    {"title": "Flat-fee plans absorb extra time", "metric": "$4,500", "metric_label": "example flat fee per plan",
+     "target": None, "body": "Each plan takes real attention, and the extra time isn't billed.",
      "source": "Discovery call, Nov 17"},
-    {"title": "Leads come from referrals only", "metric": "", "metric_label": "",
-     "target": None, "body": "No marketing today, and the site's Blogs and Webinars pages are empty.",
-     "source": "Discovery call and site check"},
-    {"title": "Marketing results can't be seen", "metric": "", "metric_label": "",
-     "target": None, "body": "Your current case system can't report on what marketing brings in.",
+    {"title": "AI wanted, but not yet trusted", "metric": "", "metric_label": "",
+     "target": None, "body": "Free AI tools hallucinate, so you don't count on them.",
+     "source": "Discovery call, Nov 17"},
+    {"title": "Your systems are in flux", "metric": "", "metric_label": "",
+     "target": None, "body": "Your case-management system is being replaced and is still being coded.",
      "source": "Discovery call, Nov 17"},
 ]
 
-DIAGNOSIS_FIX_LINE = "AI takes on the admin work, and paid marketing adds new lead sources you can track."
+DIAGNOSIS_FIX_LINE = "AI skills and automations for the work you named, and a Fractional CTO to guide the rollout and the system change."
 
 # ── Slide 3 — The Plan ────────────────────────────────────────────
-PLAN_KICKER = "AI automation and paid marketing"
-PLAN_TITLE  = "Make Room for More Clients"
+PLAN_KICKER = "AI implementation"
+PLAN_TITLE  = "Free Up Time for More Clients"
 
 PLAN = [
-    {"title": "Audit how work moves today", "fixes": 1,
-     "actions": ["Monthly 1:1 session with your fCTO",
-                 "Weekly AI Implementation Session"],
-     "metric": "Admin tasks automated", "target": None, "baseline": None},
-    {"title": "Draft plan provisions faster", "fixes": 2,
-     "actions": ["Up to 2 library skills set up each month",
+    {"title": "Review how work moves today", "fixes": 1,
+     "actions": ["Monthly 1:1 session with your Fractional CTO",
+                 "Pick the billing and admin tasks to hand off first"],
+     "metric": "Admin tasks handed off", "target": None, "baseline": None},
+    {"title": "Draft and review faster", "fixes": 2,
+     "actions": ["Deploy drafting and review skills from the library",
                  "Up to 1 custom automation a month"],
-     "metric": "Skills deployed", "target": None, "baseline": None},
-    {"title": "Add lead sources beyond referrals", "fixes": 3,
-     "actions": ["Google Ads, LSA and Meta retargeting",
-                 "Review requests, up to 250 a month"],
-     "metric": "Cost per lead", "target": None, "baseline": None},
-    {"title": "Track marketing results", "fixes": 4,
-     "actions": ["Call tracking with 5 local numbers",
-                 "Monthly and quarterly strategy reviews"],
-     "metric": "Calls tracked", "target": None, "baseline": None},
+     "metric": "Time per plan", "target": None, "baseline": None},
+    {"title": "Start AI where the risk is low", "fixes": 3,
+     "actions": ["AI Workforce Pro access for four users",
+                 "Weekly AI Implementation Session"],
+     "metric": "Weekly AI use", "target": None, "baseline": None},
+    {"title": "Guide the system change", "fixes": 4,
+     "actions": ["Up to 2 extra 1-hour fCTO sessions, as needed",
+                 "Plan how AI fits alongside your new system"],
+     "metric": "Sessions used", "target": None, "baseline": None},
 ]
 
-PLAN_NOTE = "Training videos and an automation report on every skill and automation, plus Google profile set-up."
+PLAN_NOTE = "Training videos and an automation report on the skills and automations, plus 1M AI credits per user."
 
 # ── Slide 4 — The Recommended Strategy ────────────────────────────
-STRATEGY_TITLE = "Three Pieces, One Strategy"
+STRATEGY_TITLE = "Two Pieces, One AI Strategy"
 
 STRATEGY = [
-    {"product": "Full Service Marketing — Starter", "title": "Get the call", "channels": "Paid ads · Reviews · Site content",
-     "deliverables": ["Google Ads, LSA and Meta retargeting",
-                      "30,000 words of site content at launch",
-                      "Google profile set-up and optimization",
-                      "Review requests, up to 250 a month",
-                      "Monthly and quarterly strategy reviews"],
-     "why": "Every lead is a referral today; this adds sources you can track."},
-    {"product": "Fractional CTO Level 1", "title": "Lead the rollout", "channels": "Monthly fCTO sessions · Automations",
+    {"product": "Fractional CTO Level 1", "title": "Lead the rollout",
+     "channels": "Fractional CTO · skills · automations",
      "deliverables": ["One monthly 1:1 session with your fCTO",
+                      "Up to 2 extra 1-hour sessions, as needed",
                       "Up to 2 skills deployed from the skills library",
                       "Up to 1 custom automation a month",
                       "Training videos and an automation report"],
-     "why": "You said tasks you should delegate still reach you; the fCTO leads the fix."},
-    {"product": "AI Workforce Pro – Starter", "title": "Equip the team", "channels": "4 users · Weekly implementation session",
-     "deliverables": ["AI Workforce Pro access for 4 users",
-                      "Weekly AI Implementation Session",
-                      "1M AI credits per user, month-to-month"],
-     "why": "Gives you and your staff AI help with drafting, research and admin."},
+     "why": "Billing and admin pull you in and your systems are changing; an fCTO leads the AI rollout."},
+    {"product": "AI Workforce Pro – Starter", "title": "Put AI to work",
+     "channels": "AI workspace · weekly session",
+     "deliverables": ["Access to AI Workforce Pro for four users",
+                      "1M AI credits per user",
+                      "A weekly AI Implementation Session",
+                      "Month-to-month contract"],
+     "why": "A weekly session supports your team as it starts using AI on admin and drafting."},
 ]
 
 # ── Seller prep (never in the deck) ───────────────────────────────
 SELLER_NOTES = {
-    "priorities": "Carmella came in from the SMB Team Instagram ad about ChatGPT lead generation and wants a cost range; she asked for a price range and does not want to commit as much before seeing costs. She said about $200,000 a year and about $15,000 a month, and confirmed $180,000 — confirm which is current before quoting any revenue. No client target, hours per week on admin, or personal reason for the extra time was stated; ask what the capacity is for.",
-    "diagnosis": "No targets on this slide: no hours, client or lead goals were stated. Ask for a client target and the hours a week she and her staff spend on billing and admin. The case-system cause rests on her line about needing to see reports; confirm whether CenterBase (going live in the new year) integrates before promising reporting.",
-    "plan": "She declined website and SEO work on the call (\"I'm not interested with those at all at this point\"), and Full Service Marketing includes both; be ready to explain why it is in the package. ChatGPT lead generation and the AI Visibility Report are separate from this package. Her concern is AI hallucination (\"they hallucinate\"); address it directly when walking through the automations.",
-    "strategy": "Confirm the number of AI Workforce Pro users (about four was agreed; the answering service is outside). The AI Workforce Pro tier depends on it.",
-    "investment": "Review the ad spend with the paid ads team before the deck goes out: the range is a single figure because her stated goal math came in below the channel minimums, and the return table uses benchmark cost per lead with an assumed 15% close rate. Confirm her close rate and consults a month.",
-    "roadmap": "Later phases are scoped and priced when the firm gets there. She called bookkeeping and profit \"not an issue\", so Phase 3 is light; she mentioned possibly hiring a junior attorney if good leads come in.",
+    "priorities": "KPI is 'about four to five clients a month' (client, 00:20:13). Revenue wobbles on the call: about $200,000 a year, 'maybe $15,000' a month, $180,000 on the read-back, and $16,000 to $20,000 a month at $4,500 a plan. Confirm which is current before quoting any revenue figure. She gave no client target and no personal-life reason (ask what the extra time or capacity is for) and no cost of inaction, so that box is left off.",
+    "diagnosis": "No targets on any cause: no hours a week on admin, no hours per plan, no AI usage target were stated. Ask for them. Cause 4: confirm whether AI Workforce Pro integrates with CenterBase (go-live 'starting a new year' per the client) before promising anything about it.",
+    "plan": "Plan metrics have no baseline or target from the call, so the measure row shows only the client count. Ask how many hours a week she and her staff spend on billing, admin and drafting. Skills and automation counts are the Level 1 monthly allowances.",
+    "strategy": "Confirm how many people get AI Workforce Pro licences (she and the rep agreed about four; the answering service is outside). Five or more users moves to the yearly AI Workforce Pro tier, which is a different price.",
+    "investment": "Package is Fractional CTO Level 1 plus four AI Workforce Pro – Starter seats, priced at stand-alone rates (no bundle: AI Workforce Pro – Starter does not count toward one). She said she wants a price range and does not want to commit much before seeing costs; AI Workforce Pro – Starter is month-to-month. ChatGPT lead generation, the thing she came in for, is not in this deck: it is a separate customised plan to cover on the Friday call, along with the AI Visibility Report and verification status you owe her.",
+    "roadmap": "Later phases are direction only; scope and price them when she gets there. She called bookkeeping and profit 'not an issue' (00:43:44), so do not push the Fractional CFO phase. She said she would hire a junior attorney 'if I see that I am getting good leads' (00:21:43).",
 }
 
 # ── Slide 5 — Your Investment ─────────────────────────────────────
 PRODUCT_LINES = {
-    "Full Service Marketing — Starter": "Google Ads · LSA · Meta retargeting · Site content · Reviews",
-    "Fractional CTO Level 1 + AI Workforce Pro – Starter": "Monthly fCTO sessions · AI skills and automations · 4 AI seats",
+    "Fractional CTO Level 1 + AI Workforce Pro – Starter": "fCTO sessions · AI skills · automations · 4 AI Workforce Pro seats",
 }
 
-AD_SPEND_WHY = "to bring estate planning clients in beyond referrals"
+AD_SPEND_WHY = None
 
-CLOSING_QUOTE = ("I can scale my business. I don't think that's not a possibility. I just need to put the right systems.",
-                 "Carmella Mesropian (client), 00:13:19")
+CLOSING_QUOTE = ("I can scale my business … I just need to put the right systems.",
+                 "Carmella Mesropian (client), 00:13:19–00:13:25")
 
 # ── Slide 6 — What Happens Next (the growth roadmap) ──────────────
 ROADMAP_TITLE = "Where This Goes From Here"
 
 ROADMAP = [
     {"phase": "Foundation", "when": "Starting now",
-     "products": ["Full Service Marketing — Starter",
-                  "Fractional CTO Level 1 + AI Workforce Pro – Starter"],
-     "items": ["New lead sources beyond referrals",
-               "AI help with admin, drafting and research",
-               "A guide leading the AI rollout"],
-     "unlocks": "A practice that keeps its personal touch while systems carry the admin."},
-    {"phase": "Operational Scale", "when": "Once good leads call for a junior attorney (your plan)",
+     "products": ["Fractional CTO Level 1 + AI Workforce Pro – Starter"],
+     "items": ["A Fractional CTO leads your AI rollout",
+               "AI Workforce Pro in your team's hands",
+               "Skills and automations for admin and drafting"],
+     "unlocks": "Routine admin runs in the background, so you stay present with each client."},
+    {"phase": "Operational Scale", "when": "Once more clients a month call for more systems",
      "products": ["Fractional COO"],
-     "items": ["Dedicated COO hours for systems and projects",
-               "Help building the processes a bigger team needs"],
-     "unlocks": "A team that runs the day-to-day so you stay present with every client."},
-    {"phase": "Optimize", "when": "Once a bigger team and caseload call for planning",
+     "items": ["Dedicated COO hours for strategy and projects",
+               "Systems for the work that runs through you today"],
+     "unlocks": "A firm that runs on systems, so the relationships stay yours and the process carries the rest."},
+    {"phase": "Optimize", "when": "Once good leads make hiring a junior attorney worth it",
      "products": ["Fractional CFO"],
-     "items": ["Review of your P&L and balance sheet",
+     "items": ["A clear read on your financial statements",
                "Quarterly priorities and financial goals"],
-     "unlocks": "A clear view of what each new client and hire adds to the firm."},
+     "unlocks": "You know what a new hire costs and when you can afford one, so growth is planned, not guessed."},
 ]
 
-# ── ProfitOS slides ───────────────────────────────────────────────
+# ── ProfitOS slides (added by the engine after the roadmap) ───────
 PROFITOS_GOALS = []
 PROFITOS_WHY = None
 
