@@ -36,11 +36,11 @@
     ],
     "lead_gen_gap": true
   },
-  "marketing_tier": "Growth",
-  "marketing_name": "Full Service Marketing — Growth",
-  "marketing_price_bundled": 7497,
-  "marketing_price_retail": 8997,
-  "marketing_savings": 1500,
+  "marketing_tier": "Web + SEO Growth",
+  "marketing_name": "Web + SEO Growth",
+  "marketing_price_bundled": 4897,
+  "marketing_price_retail": 5897,
+  "marketing_savings": 1000,
   "coaching_name": "Master's Circle",
   "coaching_price_bundled": 4600,
   "coaching_price_retail": 4997,
@@ -50,20 +50,67 @@
   "law_price_bundled": null,
   "law_price_retail": null,
   "law_seats": null,
-  "total_bundled": 12097,
-  "total_savings": 1897,
-  "ad_spend_conservative": 10000,
-  "ad_spend_aggressive": 40000,
-  "ad_spend_rationale": {
-    "conservative_basis": "primarily auto accidents (mvas). soft tissue cases accepted. no dog bites \"if we can avoid them\"",
-    "aggressive_basis": "scaled 4x off the conservative channel-minimum floor"
-  },
+  "total_bundled": 9497,
+  "total_savings": 1397,
+  "ad_spend_conservative": null,
+  "ad_spend_aggressive": null,
+  "ad_spend_rationale": null,
   "selection_notes": [
     "Contingency-fee practice with only gross revenue stated ($1,000,000) — no net/collected figure found. Using gross as fallback, but confidence downgraded: confirm actual collected revenue with sales rep before finalizing tier.",
     "Revenue $1M–$2M: Growth tier.",
-    "Revenue $1M+, team 7+ but no dedicated ops detected: Master's Circle selected. Verify ops capacity with sales rep."
+    "Revenue $1M+, team 7+ but no dedicated ops detected: Master's Circle selected. Verify ops capacity with sales rep.",
+    "Seller override: switched marketing to Web + SEO Growth per Slack request on 2026-11-17 (Master's Circle coaching unchanged)."
   ],
   "pricing_mode": "bundled",
   "bundle_eligible_count": 2,
-  "unpriced_products": []
+  "unpriced_products": [],
+  "setup_fees": [
+    {
+      "line": "coaching",
+      "product": "Master's Circle",
+      "label": "Setup fee",
+      "amount": 1500,
+      "waivable": true,
+      "waived": false,
+      "charged": 1500
+    }
+  ],
+  "setup_total": 1500,
+  "investment": {
+    "version": 1,
+    "products": [
+      {
+        "category": "marketing",
+        "name": "Web + SEO Growth",
+        "charged": 4897,
+        "standalone": 5897
+      },
+      {
+        "category": "coaching",
+        "name": "Master's Circle",
+        "charged": 4600,
+        "standalone": 4997
+      }
+    ],
+    "monthly_total": 9497,
+    "list_total": 10894,
+    "total_savings": 1397,
+    "pricing_mode": "bundled",
+    "setup_fees": [
+      {
+        "product": "Master's Circle",
+        "label": "Setup fee",
+        "amount": 1500,
+        "charged": 1500,
+        "waived": false
+      }
+    ],
+    "setup_total": 1500,
+    "year_one_total": 115464,
+    "year_one_basis": "12 × $9,497/mo in fees + $1,500 one-time setup. Ad spend is paid separately to Google and Meta.",
+    "ad_spend": null,
+    "return": null,
+    "inputs": {},
+    "flags": []
+  }
 }
