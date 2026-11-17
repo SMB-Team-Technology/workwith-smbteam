@@ -1,6 +1,6 @@
 # SMB Team — Audit Write (Pass 2): Build the Proposal Deck
 
-Build the 6-slide proposal PowerPoint for a firm and commit it. Run this after `/audit-research` completes. This pass used to build the "Growth, Profit & Freedom Roadmap" website and the Sales Companion PDF; both are retired. The deck is now the only output, and it is built from the same inputs the website was.
+Build the 7-slide proposal PowerPoint (a cover + 6 content slides) for a firm and commit it. Run this after `/audit-research` completes. This pass used to build the "Growth, Profit & Freedom Roadmap" website and the Sales Companion PDF; both are retired. The deck is now the only output, and it is built from the same inputs the website was.
 
 ## How to invoke
 

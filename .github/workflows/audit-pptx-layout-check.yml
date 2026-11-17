@@ -13,11 +13,11 @@ name: Audit PPTX Layout Engine Check
 # this targets exactly that generation step without blocking unrelated
 # maintenance edits to already-shipped decks.
 #
-# The deck is 6 slides (Priorities → Diagnosis → Plan → Recommended
-# Strategy → Investment → What Happens Next), 7 with the optional Legacy
+# The deck is 7 slides (Cover → Priorities → Diagnosis → Plan → Recommended
+# Strategy → Investment → What Happens Next), 8 with the optional Legacy
 # Staircase slide (ProfitOS slides come on top when FCFO/bookkeeping is sold). Besides the engine diff, the
 # check also makes sure:
-#   - the master template itself still builds a 6-slide deck from its own
+#   - the master template itself still builds a 7-slide deck from its own
 #     placeholder values (catches a broken edit to the template), and
 #   - each new firm copy defines every FILL variable the master defines (a
 #     copy of an older template — e.g. the retired 3-slide KEY_GAPS /
@@ -50,7 +50,7 @@ jobs:
       - name: Install deck dependencies
         run: pip install python-pptx pillow --quiet
 
-      - name: Build the master template (expect 6 slides)
+      - name: Build the master template (expect 7 slides)
         shell: bash
         run: |
           set -euo pipefail
@@ -60,8 +60,8 @@ jobs:
           cp "Design Files/audit_pptx_template.py" "Design Files/smb_team_logo.png" _layout_check/
           OUT=$(cd _layout_check && python3 audit_pptx_template.py)
           echo "$OUT"
-          if ! grep -q "(6 slides)" <<< "$OUT"; then
-            echo "::error file=Design Files/audit_pptx_template.py::The master template did not build a 6-slide deck."
+          if ! grep -q "(7 slides)" <<< "$OUT"; then
+            echo "::error file=Design Files/audit_pptx_template.py::The master template did not build a 7-slide deck."
             exit 1
           fi
 
@@ -129,7 +129,7 @@ jobs:
               continue
             fi
 
-            # It must build the full deck: 6 slides, 7 with the staircase, plus
+            # It must build the full deck: 7 slides, 8 with the staircase, plus
             # 2, 8 or 9 ProfitOS slides when FCFO/bookkeeping is in the package.
             if ! OUT=$(python3 "$f" 2>&1); then
               echo "$OUT"
@@ -138,8 +138,8 @@ jobs:
               continue
             fi
             echo "$OUT"
-            if ! grep -qE "\((6|7|8|9|14|15|16) slides\)" <<< "$OUT"; then
-              echo "::error file=$f::Expected 'Saved: … (6 slides)' (7 with the staircase, more with ProfitOS)."
+            if ! grep -qE "\((7|8|9|10|15|16|17) slides\)" <<< "$OUT"; then
+              echo "::error file=$f::Expected 'Saved: … (7 slides)' (8 with the staircase, more with ProfitOS)."
               FAILED=1
             fi
           done
