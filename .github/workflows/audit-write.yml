@@ -96,6 +96,16 @@ jobs:
             done
           fi
 
+      - name: Download the LeadsOS source deck
+        # Vanessa's LeadsOS marketing slides are copied into any proposal with
+        # a marketing package. The deck is a private HubSpot file (the repo is
+        # public), saved to the git-ignored .source-decks/. If this fails the
+        # deck still builds, without those slides, and the seller prep says so.
+        continue-on-error: true
+        env:
+          HUBSPOT_TOKEN: ${{ secrets.HUBSPOT_TOKEN }}
+        run: node scripts/fetch-source-deck.mjs --keyword LeadsOS --out .source-decks/LeadsOS.pptx
+
       - name: Record the commit before the build
         id: start
         run: echo "sha=$(git rev-parse HEAD)" >> "$GITHUB_OUTPUT"

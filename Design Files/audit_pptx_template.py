@@ -11,6 +11,8 @@ what we're recommending → what it costs.
 
 Cover   — Growth, Profit, and Freedom Roadmap (firm name, seller and date —
           filled in by the engine; no FILL values)
+LeadsOS — Vanessa's marketing slides, copied in when the package has marketing
+          (from .source-decks/LeadsOS.pptx; no FILL values)
 Slide 1 — Your Priorities, In Your Words  (the call KPI + the client's quotes)
 Slide 2 — The Diagnosis                   (the root causes behind that KPI)
 Slide 3 — The Plan                        (actions tied to causes + what we'll measure)
@@ -358,8 +360,67 @@ elif BOOKKEEPING_LEVEL:
 else:
     PROFITOS_SLIDES = []
 
+# ── LeadsOS marketing slides (copied from Vanessa's deck) ─────────
+# Any package with a marketing product gets the client-facing slides of
+# Vanessa's LeadsOS deck between the cover and the proposal (her deck leads
+# into "what we discovered + what we recommend"). The deck is a private file in
+# the HubSpot "Proposal Source Decks" folder — never in this public repo — that
+# scripts/fetch-source-deck.mjs downloads to .source-decks/LeadsOS.pptx before
+# a build. Her slides are copied as they are, scaled to this deck's size; her
+# speaker notes go to the seller prep, never into the deck.
+#   - Everything from her "SUPPLEMENTAL" divider on (client results that need
+#     client consent) is left out.
+#   - A slide containing a phrase in LEADSOS_HOLD is left out until it is
+#     confirmed for every client deck: delete the phrase here to add it back.
+LEADSOS_HOLD = ("37%", "$100M+")   # Vanessa to confirm (Nov 17): AI-search stat, media spend
+LEADSOS_DECK = os.environ.get("LEADSOS_DECK") or os.path.join(
+    os.path.dirname(os.path.dirname(os.path.abspath(__file__))), ".source-decks", "LeadsOS.pptx")
+
+
+def _slide_text(slide):
+    return "\n".join(sh.text_frame.text for sh in slide.shapes if sh.has_text_frame)
+
+
+def _slide_title(slide):
+    """Her slide's headline: the text set in the largest font."""
+    best, size = "", 0
+    for sh in slide.shapes:
+        if not sh.has_text_frame:
+            continue
+        for para in sh.text_frame.paragraphs:
+            for r in para.runs:
+                if r.text.strip() and r.font.size and r.font.size > size:
+                    best, size = para.text, r.font.size
+    return " ".join(best.split())[:70]
+
+
+def load_leadsos():
+    """(source Presentation or None, [(her slide number, slide, title)], [held numbers], why-left-out)."""
+    if not load_decision().get("marketing_name"):
+        return None, [], [], None
+    if not os.path.isfile(LEADSOS_DECK):
+        return None, [], [], (f"the LeadsOS source deck wasn't found at {LEADSOS_DECK} "
+                              "(the build downloads it from HubSpot: node scripts/fetch-source-deck.mjs)")
+    try:
+        src = Presentation(LEADSOS_DECK)
+    except Exception as e:  # a corrupt download must not stop the proposal
+        return None, [], [], f"the LeadsOS source deck couldn't be opened ({e})"
+    keep, held = [], []
+    for n, slide in enumerate(src.slides, 1):
+        text = _slide_text(slide)
+        if re.match(r"\s*SUPPLEMENTAL\b", text):
+            break
+        if any(h in text for h in LEADSOS_HOLD):
+            held.append(n)
+            continue
+        keep.append((n, slide, _slide_title(slide)))
+    return src, keep, held, None
+
+
+LEADSOS_SRC, LEADSOS_SLIDES, LEADSOS_HELD, LEADSOS_MISSING = load_leadsos()
+
 # Slide order. The staircase slide is optional (STAIRCASE in the FILL).
-SLIDE_ORDER = (["cover", "priorities"] + (["staircase"] if STAIRCASE else []) +
+SLIDE_ORDER = (["cover"] + [f"leadsos_{n}" for n, _, _ in LEADSOS_SLIDES] + ["priorities"] + (["staircase"] if STAIRCASE else []) +
                ["diagnosis", "plan", "strategy"] + (["rollout"] if SHOW_ROLLOUT else []) +
                ["investment", "roadmap"] + PROFITOS_SLIDES)
 PAGE = {key: i + 1 for i, key in enumerate(SLIDE_ORDER)}
@@ -777,6 +838,109 @@ SLIDE_TITLES = {"cover": "Cover", "priorities": "Your Priorities, In Your Words"
 def seller_prep_path():
     base = re.sub(r"_Proposal\.pptx$|\.pptx$", "", OUTPUT_PATH)
     return base + "_Seller_Prep.txt"
+
+
+def _source_theme_colors(src):
+    """scheme color name → hex, from the source deck's theme (her slides refer
+    to a few theme colors, which this deck's theme would otherwise recolor)."""
+    try:
+        theme = next(r.target_part for r in src.slide_masters[0].part.rels.values()
+                     if r.reltype.endswith("/theme"))
+        root = etree.fromstring(theme.blob)
+    except Exception:
+        return {}
+    ns = {"a": "http://schemas.openxmlformats.org/drawingml/2006/main"}
+    out = {}
+    for el in root.findall(".//a:clrScheme/*", ns):
+        c = el.find("a:srgbClr", ns)
+        if c is None:
+            c = el.find("a:sysClr", ns)
+            val = c.get("lastClr") if c is not None else None
+        else:
+            val = c.get("val")
+        if val:
+            out[etree.QName(el).localname] = val
+    for alias, real in (("tx1", "dk1"), ("bg1", "lt1"), ("tx2", "dk2"), ("bg2", "lt2")):
+        if real in out:
+            out[alias] = out[real]
+    return out
+
+
+# Attributes that carry a length and shrink with the slide: positions and
+# sizes (EMU), font sizes and spacing (hundredths of a point), line widths,
+# text insets and shadow offsets.
+_SCALE_ATTRS = {"off": ("x", "y"), "chOff": ("x", "y"), "ext": ("cx", "cy"), "chExt": ("cx", "cy"),
+                "rPr": ("sz", "spc", "kern"), "defRPr": ("sz", "spc", "kern"),
+                "endParaRPr": ("sz", "spc", "kern"), "ln": ("w",),
+                "bodyPr": ("lIns", "tIns", "rIns", "bIns"), "spcPts": ("val",),
+                "outerShdw": ("blurRad", "dist"), "innerShdw": ("blurRad", "dist")}
+_FOOTER_NUM = re.compile(r"(LeadsOS for Law Firms\s*·\s*\d{4})\s*·\s*\d+\s*$")
+
+
+def copy_source_slide(prs, src_slide, scale, theme):
+    """Append a copy of another deck's slide: its background, shapes and
+    pictures (links kept), scaled to this deck's size. Speaker notes are not
+    copied. Returns the new slide."""
+    import copy, io
+    dst = new_slide(prs)
+    R = "http://schemas.openxmlformats.org/officeDocument/2006/relationships"
+    rid = {}
+    for old, rel in src_slide.part.rels.items():
+        kind = rel.reltype.rsplit("/", 1)[-1]
+        if kind in ("notesSlide", "slideLayout"):
+            continue
+        if rel.is_external:
+            rid[old] = dst.part.relate_to(rel.target_ref, rel.reltype, is_external=True)
+        elif kind == "image":
+            rid[old] = dst.part.get_or_add_image_part(io.BytesIO(rel.target_part.blob))[1]
+    csld = copy.deepcopy(src_slide._element.cSld)
+    for el in csld.iter():
+        if not isinstance(el.tag, str):
+            continue
+        for a in [a for a in el.attrib if a.startswith("{%s}" % R)]:
+            if el.get(a) in rid:
+                el.set(a, rid[el.get(a)])
+            else:
+                del el.attrib[a]   # a link to something not copied (e.g. her notes)
+        name = etree.QName(el).localname
+        for a in _SCALE_ATTRS.get(name, ()):
+            v = el.get(a)
+            if v is not None and re.fullmatch(r"-?\d+", v) and not (name == "ext" and "uri" in el.attrib):
+                el.set(a, str(int(round(int(v) * scale))))
+        if name == "schemeClr" and el.get("val") in theme:
+            el.tag = "{http://schemas.openxmlformats.org/drawingml/2006/main}srgbClr"
+            el.set("val", theme[el.get("val")])
+        if name == "t" and el.text and _FOOTER_NUM.search(el.text):
+            el.text = _FOOTER_NUM.sub(r"\1", el.text)   # her page number won't match this deck
+    dst._element.replace(dst._element.cSld, csld)
+    return dst
+
+
+def build_leadsos(prs):
+    if LEADSOS_MISSING:
+        note("cover", f"The LeadsOS marketing slides were left out: {LEADSOS_MISSING}.")
+        print(f"WARNING: LeadsOS marketing slides left out — {LEADSOS_MISSING}.")
+        return
+    if not LEADSOS_SLIDES:
+        return
+    scale = prs.slide_width / LEADSOS_SRC.slide_width
+    theme = _source_theme_colors(LEADSOS_SRC)
+    for n, slide, title in LEADSOS_SLIDES:
+        copy_source_slide(prs, slide, scale, theme)
+        key = f"leadsos_{n}"
+        SLIDE_TITLES[key] = f"LeadsOS — {title}" if title else f"LeadsOS slide {n}"
+        if slide.has_notes_slide:
+            her = " ".join(slide.notes_slide.notes_text_frame.text.split())
+            if her:
+                note(key, f"Vanessa's speaker notes (her slide {n}): {her}")
+    first = f"leadsos_{LEADSOS_SLIDES[0][0]}"
+    note(first, f"Slides {PAGE[first]}–{PAGE[f'leadsos_{LEADSOS_SLIDES[-1][0]}']} are Vanessa's LeadsOS "
+                "marketing slides, copied as they are. Her client results slides are left out."
+         + (f" Held until confirmed for every client deck: her slide(s) "
+            f"{', '.join(str(h) for h in LEADSOS_HELD)} ({' / '.join(LEADSOS_HOLD)})." if LEADSOS_HELD else ""))
+    print(f"LeadsOS: {len(LEADSOS_SLIDES)} marketing slides added (her slides "
+          f"{', '.join(str(n) for n, _, _ in LEADSOS_SLIDES)})"
+          + (f"; held: {', '.join(str(h) for h in LEADSOS_HELD)}" if LEADSOS_HELD else ""))
 
 
 def write_notes(prs):
@@ -2276,6 +2440,7 @@ prs.slide_width  = Inches(10)
 prs.slide_height = Inches(5.625)
 
 build_cover(prs)
+build_leadsos(prs)
 build_priorities(prs)
 if STAIRCASE:
     build_staircase(prs)
