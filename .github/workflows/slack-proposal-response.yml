@@ -211,7 +211,7 @@ jobs:
             "${{ steps.find.outputs.sales_rep_email }}")
           echo "mention=$MENTION" >> "$GITHUB_OUTPUT"
           # Leif is tagged on any proposal that includes marketing.
-          MARKETING_MENTION=$(node scripts/resolve-marketing-mention.mjs)
+          MARKETING_MENTION=$(node scripts/resolve-slack-mention.mjs "$(jq -r .name scripts/marketing-reviewer.json)" "$(jq -r .email scripts/marketing-reviewer.json)")
           echo "marketing_mention=$MARKETING_MENTION" >> "$GITHUB_OUTPUT"
 
       - name: Handle the seller's response
