@@ -98,7 +98,7 @@ jobs:
             built)  WHAT="has already been built" ;;
             *)      WHAT="is marked '$STATUS'" ;;
           esac
-          TEXT="ℹ️ The proposal for *$FIRM_NAME* $WHAT, so I didn't change anything. To change the deck, @mention me in this thread with the edit (e.g. \"@bot change the coaching to Elite Coach\"), or say \"@bot resend the email\" / \"@bot re-run\"."
+          TEXT="ℹ️ The proposal for *$FIRM_NAME* $WHAT, so I didn't change anything. To change the deck, @mention me in this thread with the edit (e.g. \"@bot change the coaching to Managed Operations Tier 2\"), or say \"@bot resend the email\" / \"@bot re-run\"."
           PAYLOAD=$(jq -n --arg channel "$SLACK_CHANNEL" --arg thread "$SLACK_THREAD_TS" --arg text "$TEXT" \
             '{channel: $channel, thread_ts: $thread, text: $text}')
           curl -s -X POST https://slack.com/api/chat.postMessage \
@@ -321,7 +321,7 @@ jobs:
                Then run \`node scripts/reprice.mjs $FRIENDLY_NAME\` to set the prices.
                - Product names: use the catalog names in scripts/lib/pricing.mjs (e.g.
                  'Full Service Marketing — Starter', 'Paid Ads Starter', 'Web + SEO Growth',
-                 'Elite Coach Plus', 'FCOO Director', 'Elite Coach + FCOO Advisor',
+                 'Managed Operations Tier 2', 'Managed Operations Tier 1 + FCFO Advisor',
                  'Fractional CTO Level 1 + AI Workforce Pro – Starter'). Products outside
                  that file (AI Avatar, Bookkeeping, add-ons, OmniSocial, Attorney Assistant,
                  Foundation Sprint) are priced in \`.claude/commands/audit-write.md\` — look
@@ -332,13 +332,17 @@ jobs:
                  \$120/mo per employee over 5); old names AI Essentials → AI Workforce Pro,
                  AI Accelerator L1/L2 → Fractional CTO Level 1/2, AI Enterprise → Fractional
                  CTO Level 3; 'sprint' / 'foundation sprint' → Law Firm AI Foundation Sprint;
-                 FCTO / fractional CTO → Fractional CTO Level 1/2/3; FCOO / fractional COO →
-                 FCOO Advisor/Director/Partner ('max hours' / 'top tier' means Partner);
-                 FCFO / fractional CFO → FCFO Advisor/Director/Partner;
-                 MC → Master's Circle; ECP → Elite Coach Plus; bookkeeping → Bookkeeping
-                 Level 1/2/3 on the coaching line (joined with ' + '; Level 4 is
-                 custom-scoped); Elite 360 → coaching_name Elite Coach plus marketing_name
-                 Full Service Marketing — <tier>.
+                 FCTO / fractional CTO → Fractional CTO Level 1/2/3; Managed Operations /
+                 managed ops → Managed Operations Tier 1/2/3 on the coaching line ('top
+                 tier' means Tier 3). Managed Operations replaced coaching and FCOO (Nov
+                 2026): Elite Coach, ECP, Coach Essentials, FCOO Advisor → Tier 1; FCOO
+                 Director → Tier 2; FCOO Partner, MC / Master's Circle → Tier 3 — write the
+                 Managed Operations name, never the retired one. Growth Academy / MC Growth
+                 Academy → 'Growth Academy' / "Growth Academy Master's Circle" (add-ons, only
+                 with another core package; not with Managed Operations, which includes it);
+                 FCFO / fractional CFO / Managed Financials → FCFO Advisor/Director/Partner
+                 (= Level 1/2/3); bookkeeping → Bookkeeping Level 1/2/3 on the coaching line
+                 (joined with ' + '; Level 4 is custom-scoped).
                  AIWP with no tier: Starter if team_size_effective is 1–4 or team size
                  is unknown (seats = team_size_stated, else 1), base if 5+.
                  If the shorthand maps to one product but its tier or seat count is unclear,
@@ -403,8 +407,8 @@ jobs:
                team_size_effective in package_decision.json, then run reprice.mjs
                (AIWP seat counts follow team size — update law_seats if AIWP is included).
             2. Check whether the confirmed numbers change the right tier (revenue bands and
-               team rules in .claude/commands/audit-write.md, e.g. Master's Circle needs a
-               team of 5+, Fractional CTO Level 2 needs \$1M+). If they do, say so in the
+               team rules in .claude/commands/audit-write.md, e.g. Managed Operations Tier 2
+               needs \$500K+ and a team of 5+, Fractional CTO Level 2 needs \$1M+). If they do, say so in the
                reply and suggest the change — don't swap products unless the seller asked.
             3. Commit package_decision.json, then reply in the SAME thread with what was
                recorded and the current package total.

@@ -148,24 +148,24 @@ test('list total includes savings on lines with no stand-alone price of their ow
 // ─── Setup fees and overage (2026 pricing sheet) ────────────────────────────
 import { applyPricing } from '../lib/pricing.mjs';
 
-test('setup fees: AI Avatar for FSM Starter+, $1,500 for Elite Coach, both in year one', () => {
-  const d = { marketing_name: 'Full Service Marketing — Growth', coaching_name: 'Elite Coach', revenue_effective: 5_000_000 };
+test('setup fees: AI Avatar for FSM Starter+, $1,000 for FCFO Advisor, both in year one', () => {
+  const d = { marketing_name: 'Full Service Marketing — Growth', coaching_name: 'FCFO Advisor', revenue_effective: 5_000_000 };
   applyPricing(d);
   assert.deepEqual(d.setup_fees.map(f => [f.product, f.label, f.charged]), [
     ['Full Service Marketing — Growth', 'AI Avatar setup', 1850],
-    ['Elite Coach', 'Setup fee', 1500],
+    ['FCFO Advisor', 'Managed Financials setup', 1000],
   ]);
-  assert.equal(d.setup_total, 3350);
+  assert.equal(d.setup_total, 2850);
   const inv = computeInvestment(d, ryanInputs);
-  assert.equal(inv.setup_total, 3350);
-  assert.equal(inv.year_one_total, 10097 * 12 + 3350);
+  assert.equal(inv.setup_total, 2850);
+  assert.equal(inv.year_one_total, (7497 + 3497) * 12 + 2850);
 });
 
-test('setup fees: $497 bootcamp for Essentials, none for Web + SEO, AI Workforce Pro or Coach Essentials', () => {
+test('setup fees: $497 bootcamp for Essentials, none for Web + SEO, AI Workforce Pro or Managed Operations', () => {
   const ess = { marketing_name: 'Full Service Marketing — Essentials', revenue_effective: 400_000 };
   applyPricing(ess);
   assert.deepEqual(ess.setup_fees.map(f => [f.label, f.amount]), [['Video Ads Express Bootcamp', 497]]);
-  const pa = { marketing_name: 'Paid Ads Starter', coaching_name: 'Coach Essentials', law_name: 'AI Workforce Pro – Starter', law_seats: 2 };
+  const pa = { marketing_name: 'Paid Ads Starter', coaching_name: 'Managed Operations Tier 1', law_name: 'AI Workforce Pro – Starter', law_seats: 2 };
   applyPricing(pa);
   assert.deepEqual(pa.setup_fees.map(f => [f.product, f.amount]), [['Paid Ads Starter', 1850]]);
   const web = { marketing_name: 'Web + SEO Starter', law_name: 'Fractional CTO Level 1' };
@@ -174,19 +174,19 @@ test('setup fees: $497 bootcamp for Essentials, none for Web + SEO, AI Workforce
   assert.equal(computeInvestment(web, {}).year_one_total, web.total_bundled * 12);
 });
 
-test('a packaged coaching pair carries one $1,500 setup fee', () => {
-  const d = { coaching_name: 'Elite Coach + FCOO Advisor', revenue_effective: 600_000 };
+test('Managed Operations carries no setup fee (Managed Operations tab lists none)', () => {
+  const d = { coaching_name: 'Managed Operations Tier 2', revenue_effective: 600_000 };
   applyPricing(d);
-  assert.equal(d.setup_total, 1500);
+  assert.equal(d.setup_total, 0);
 });
 
 test('a seller-waived setup fee stays listed at $0 and leaves year one', () => {
-  const d = { marketing_name: 'Full Service Marketing — Growth', coaching_name: 'Elite Coach', setup_fee_waived: ['Full Service Marketing — Growth'] };
+  const d = { marketing_name: 'Full Service Marketing — Growth', coaching_name: 'FCFO Advisor', setup_fee_waived: ['Full Service Marketing — Growth'] };
   applyPricing(d);
   assert.equal(d.setup_fees[0].waived, true);
   assert.equal(d.setup_fees[0].charged, 0);
-  assert.equal(d.setup_total, 1500);
-  assert.equal(computeInvestment(d, ryanInputs).year_one_total, 10097 * 12 + 1500);
+  assert.equal(d.setup_total, 1000);
+  assert.equal(computeInvestment(d, ryanInputs).year_one_total, (7497 + 3497) * 12 + 1000);
 });
 
 test('overage above the tier cap is billed at 15%', () => {

@@ -449,7 +449,7 @@ jobs:
               lines[0] = f"❓ *Need your input before I build a package: {firm}*"
               lines.extend(warnings)
               lines.append("I couldn't pick a package automatically (see the research notes).")
-              lines.append(f"{mention} — reply in this thread with the products to propose, e.g. \"Elite Coach Plus + FCTO Level 1\". Then reply 🔒 *lock it in*.")
+              lines.append(f"{mention} — reply in this thread with the products to propose, e.g. \"Managed Operations Tier 1 + FCTO Level 1\". Then reply 🔒 *lock it in*.")
 
           if suppress_pricing == "true":
               lines.append("")
