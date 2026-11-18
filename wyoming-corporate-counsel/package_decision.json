@@ -26,7 +26,7 @@
   "firm_identity_check": "matches — trigger name, website, structured data and the contact email domain all say Wyoming Corporate Counsel, P.C. The call itself did not name the firm. Note the call and the site together raise one question for the seller: Carter said she shut the old firm down and also relocated \"the firm\" to Wyoming (see quotes), so whether this is the same legal entity under a new name or a new firm is not clear.",
   "package_source": "rules",
   "package_override": null,
-  "needs_seller_input": true,
+  "needs_seller_input": false,
   "revenue_only_option": {
     "marketing_tier": "Starter",
     "marketing_name": "Full Service Marketing — Starter",
@@ -49,16 +49,16 @@
   "marketing_price_bundled": null,
   "marketing_price_retail": null,
   "marketing_savings": null,
-  "coaching_name": null,
-  "coaching_price_bundled": null,
-  "coaching_price_retail": null,
-  "coaching_savings": null,
+  "coaching_name": "Elite Coach Plus",
+  "coaching_price_bundled": 3497,
+  "coaching_price_retail": 3497,
+  "coaching_savings": 0,
   "law_tier": null,
   "law_name": null,
   "law_price_bundled": null,
   "law_price_retail": null,
   "law_seats": null,
-  "total_bundled": 0,
+  "total_bundled": 3497,
   "total_savings": null,
   "ad_spend_conservative": null,
   "ad_spend_aggressive": null,
@@ -67,24 +67,51 @@
     "Call focus unknown (no discovery call found, or Primary engagement not recorded) — no package recommended. Seller must say what the call was about before this can be locked in.",
     "Revenue not in research notes — sourced from HubSpot (hubspot_annual_law_firm_revenue): \"$0 - $180K\" → $180,000",
     "Revenue under $750K but multiple practice areas detected: Essentials hidden (requires single practice area) — Starter tier.",
-    "Revenue under $250K: Elite Coach selected, scoping approval required."
+    "Revenue under $250K: Elite Coach selected, scoping approval required.",
+    "Seller override: Elite Coach Plus (coaching only) per Slack request on 2026-11-18. Seller also asked for 'managed operations level 1' if proposing the new services — no such product in the catalog, so not added.",
+    "Only one bundle-eligible product in this package — stand-alone pricing applied, no bundle savings."
   ],
   "pricing_mode": "standalone",
-  "bundle_eligible_count": 0,
+  "bundle_eligible_count": 1,
   "unpriced_products": [],
-  "setup_fees": [],
-  "setup_total": 0,
+  "setup_fees": [
+    {
+      "line": "coaching",
+      "product": "Elite Coach Plus",
+      "label": "Setup fee",
+      "amount": 1500,
+      "waivable": true,
+      "waived": false,
+      "charged": 1500
+    }
+  ],
+  "setup_total": 1500,
   "investment": {
     "version": 1,
-    "products": [],
-    "monthly_total": 0,
-    "list_total": 0,
+    "products": [
+      {
+        "category": "coaching",
+        "name": "Elite Coach Plus",
+        "charged": 3497,
+        "standalone": 3497
+      }
+    ],
+    "monthly_total": 3497,
+    "list_total": 3497,
     "total_savings": 0,
     "pricing_mode": "standalone",
-    "setup_fees": [],
-    "setup_total": 0,
-    "year_one_total": 0,
-    "year_one_basis": "12 × $0/mo in fees. Ad spend is paid separately to Google and Meta.",
+    "setup_fees": [
+      {
+        "product": "Elite Coach Plus",
+        "label": "Setup fee",
+        "amount": 1500,
+        "charged": 1500,
+        "waived": false
+      }
+    ],
+    "setup_total": 1500,
+    "year_one_total": 43464,
+    "year_one_basis": "12 × $3,497/mo in fees + $1,500 one-time setup. Ad spend is paid separately to Google and Meta.",
     "ad_spend": null,
     "return": null,
     "inputs": {},
