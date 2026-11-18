@@ -210,6 +210,9 @@ jobs:
             "${{ steps.find.outputs.sales_rep }}" \
             "${{ steps.find.outputs.sales_rep_email }}")
           echo "mention=$MENTION" >> "$GITHUB_OUTPUT"
+          # Leif is tagged on any proposal that includes marketing.
+          MARKETING_MENTION=$(node scripts/resolve-marketing-mention.mjs)
+          echo "marketing_mention=$MARKETING_MENTION" >> "$GITHUB_OUTPUT"
 
       - name: Handle the seller's response
         if: steps.find.outputs.found == 'true' && steps.phase1.outputs.complete == 'true'
@@ -224,6 +227,7 @@ jobs:
           SALES_REP: ${{ steps.find.outputs.sales_rep }}
           SALES_REP_EMAIL: ${{ steps.find.outputs.sales_rep_email }}
           SALES_REP_MENTION: ${{ steps.resolve_mention.outputs.mention }}
+          MARKETING_MENTION: ${{ steps.resolve_mention.outputs.marketing_mention }}
           DATE: ${{ steps.find.outputs.date }}
           HUBSPOT_CONTACT_ID: ${{ steps.find.outputs.hubspot_contact_id }}
           SUPPRESS_PRICING: ${{ steps.find.outputs.suppress_pricing }}
@@ -377,6 +381,11 @@ jobs:
                unpriced_products is non-empty, say those products can't be sold on their own
                yet and ask for another product or tier. Then:
                'Reply again to: 🔒 lock it in / ❓ ask why / ✏️ propose more changes'
+               If marketing_name in the updated package_decision.json is non-null (Full
+               Service Marketing, Paid Ads or Web + SEO), add this line just before the
+               'Reply again to' line, using the mention text verbatim:
+               '📣 $MARKETING_MENTION — this proposal includes marketing (<marketing_name>).'
+               Leave it out when the package has no marketing.
                Use the pre-resolved mention text verbatim (it's already a real Slack
                tag or a visibly-flagged plain name) — do not substitute "@$SALES_REP".
             4. Do NOT modify \`$REVIEW_FILE\` — status stays 'pending' so the loop can

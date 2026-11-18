@@ -299,6 +299,9 @@ jobs:
             "${{ steps.inputs.outputs.sales_rep }}" \
             "${{ steps.inputs.outputs.sales_rep_email }}")
           echo "mention=$MENTION" >> "$GITHUB_OUTPUT"
+          # Leif is tagged on any proposal that includes marketing.
+          MARKETING_MENTION=$(node scripts/resolve-marketing-mention.mjs)
+          echo "marketing_mention=$MARKETING_MENTION" >> "$GITHUB_OUTPUT"
 
       - name: Post proposal to Slack for seller review
         if: steps.verify_pass1.outputs.complete == 'true' && env.TEST_MODE != 'true'
@@ -311,12 +314,13 @@ jobs:
           SALES_REP: ${{ steps.inputs.outputs.sales_rep }}
           SALES_REP_EMAIL: ${{ steps.inputs.outputs.sales_rep_email }}
           MENTION: ${{ steps.resolve_mention.outputs.mention }}
+          MARKETING_MENTION: ${{ steps.resolve_mention.outputs.marketing_mention }}
           DATE: ${{ steps.inputs.outputs.date }}
           HUBSPOT_CONTACT_ID: ${{ steps.inputs.outputs.hubspot_contact_id }}
           SUPPRESS_PRICING: ${{ steps.inputs.outputs.suppress_pricing }}
         run: |
           python3 - << 'PYEOF'
-          import os, json, urllib.request, urllib.error, urllib.parse
+          import os, re, json, urllib.request, urllib.error, urllib.parse
 
           token            = os.environ["SLACK_BOT_TOKEN"]
           channel          = os.environ["SLACK_CHANNEL_ID"]
@@ -325,6 +329,7 @@ jobs:
           sales_rep        = os.environ["SALES_REP"]
           sales_rep_email  = os.environ.get("SALES_REP_EMAIL", "").strip()
           mention          = os.environ.get("MENTION") or f"@{sales_rep}"
+          marketing_mention = os.environ.get("MARKETING_MENTION", "").strip()
           date             = os.environ.get("DATE", "")
           hubspot_contact_id = os.environ.get("HUBSPOT_CONTACT_ID", "").strip()
           suppress_pricing = os.environ.get("SUPPRESS_PRICING", "false")
@@ -450,6 +455,15 @@ jobs:
               lines.extend(warnings)
               lines.append("I couldn't pick a package automatically (see the research notes).")
               lines.append(f"{mention} — reply in this thread with the products to propose, e.g. \"Elite Coach Plus + FCTO Level 1\". Then reply 🔒 *lock it in*.")
+
+          # Tag Leif when the proposed package includes marketing (FSM, Paid
+          # Ads, Web + SEO), or a seller-set package names it.
+          marketing_proposed = d.get("marketing_name") if d and not needs_input else None
+          if not marketing_proposed and (not d or d.get("selection_error")) and re.search(r"marketing|\bfsm\b|paid ads|web\s*\+\s*seo", override, re.I):
+              marketing_proposed = override
+          if marketing_proposed and marketing_mention:
+              lines.append("")
+              lines.append(f"📣 {marketing_mention} — this proposal includes marketing ({marketing_proposed}).")
 
           if suppress_pricing == "true":
               lines.append("")

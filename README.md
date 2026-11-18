@@ -16,6 +16,8 @@ The deck's speaker notes are always empty (the .pptx is shared on a public link)
 
 Edits after the build go through `slack-change-handler.yml`; `resend-audit-email.yml` re-uploads and re-sends.
 
+When a proposal includes marketing (Full Service Marketing, Paid Ads or Web + SEO), the review post, any updated-proposal reply and the "Proposal ready" reply also tag Leif. Who gets tagged is set in `scripts/marketing-reviewer.json` (`slack_id` or `email`; otherwise the name is looked up in Slack) and resolved by `scripts/resolve-marketing-mention.mjs`.
+
 ## Test mode
 
 Pushing a `triggers/audit-write/<firm>.json` to an `audit-test/**` branch runs `audit-write.yml` in test mode: it commits only to that branch, emails only carolyn.webb@smbteam.com, and skips the HubSpot upload and contact write and all Slack posts. Add `"test_no_email": true` to skip that email (a research test trigger passes it on to the chained deck build). Add `"test_upload": true` to the trigger to also upload the deck to a separate "AI Proposals TEST" folder (no contact write). `resend-audit-email.yml` run from a non-`main` ref is test mode too.
