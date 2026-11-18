@@ -421,7 +421,7 @@ jobs:
               with open(f"{slug}/package_decision.json") as f:
                   marketing_name = json.load(f).get("marketing_name")
               if marketing_name and marketing_mention:
-                  marketing_tag = f"\n📣 {marketing_mention} — this proposal includes marketing ({marketing_name})."
+                  marketing_tag = f"\n📣 {marketing_mention} — marketing proposal ready for your review."
           except Exception:
               pass
 
