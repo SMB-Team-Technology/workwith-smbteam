@@ -39,17 +39,17 @@
   "marketing_price_bundled": 4997,
   "marketing_price_retail": 5697,
   "marketing_savings": 700,
-  "coaching_name": "Elite Coach Plus",
-  "coaching_price_bundled": 3200,
+  "coaching_name": "Elite Coach",
+  "coaching_price_bundled": 2600,
   "coaching_price_retail": 3497,
-  "coaching_savings": 297,
+  "coaching_savings": 897,
   "law_tier": null,
   "law_name": null,
   "law_price_bundled": null,
   "law_price_retail": null,
   "law_seats": null,
-  "total_bundled": 8197,
-  "total_savings": 997,
+  "total_bundled": 7597,
+  "total_savings": 1597,
   "ad_spend_conservative": 8700,
   "ad_spend_aggressive": 25000,
   "ad_spend_rationale": {
@@ -60,7 +60,8 @@
     "Contingency-fee practice with only gross revenue stated ($800,000) — no net/collected figure found. Using gross as fallback, but confidence downgraded: confirm actual collected revenue with sales rep before finalizing tier.",
     "Revenue $500K–$1M: Starter tier.",
     "Revenue $400K–$1M with growing team and dedicated ops: Elite Coach Plus + FCOO Advisor considered. Defaulting to Elite Coach Plus — confirm with sales rep if FCOO is appropriate.",
-    "Revenue $400K–$1M: Elite Coach Plus selected."
+    "Revenue $400K–$1M: Elite Coach Plus selected.",
+    "Seller override: FSM Starter + Elite Coach (Elite Coach instead of Elite Coach Plus) per Slack request on 2026-11-18."
   ],
   "pricing_mode": "bundled",
   "bundle_eligible_count": 2,
@@ -77,7 +78,7 @@
     },
     {
       "line": "coaching",
-      "product": "Elite Coach Plus",
+      "product": "Elite Coach",
       "label": "Setup fee",
       "amount": 1500,
       "waivable": true,
@@ -97,14 +98,14 @@
       },
       {
         "category": "coaching",
-        "name": "Elite Coach Plus",
-        "charged": 3200,
+        "name": "Elite Coach",
+        "charged": 2600,
         "standalone": 3497
       }
     ],
-    "monthly_total": 8197,
+    "monthly_total": 7597,
     "list_total": 9194,
-    "total_savings": 997,
+    "total_savings": 1597,
     "pricing_mode": "bundled",
     "setup_fees": [
       {
@@ -115,7 +116,7 @@
         "waived": false
       },
       {
-        "product": "Elite Coach Plus",
+        "product": "Elite Coach",
         "label": "Setup fee",
         "amount": 1500,
         "charged": 1500,
@@ -123,8 +124,8 @@
       }
     ],
     "setup_total": 3350,
-    "year_one_total": 101714,
-    "year_one_basis": "12 × $8,197/mo in fees + $3,350 one-time setup. Ad spend is paid separately to Google and Meta.",
+    "year_one_total": 94514,
+    "year_one_basis": "12 × $7,597/mo in fees + $3,350 one-time setup. Ad spend is paid separately to Google and Meta.",
     "ad_spend": {
       "channels": [
         {
