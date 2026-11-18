@@ -16,7 +16,7 @@ The deck's speaker notes are always empty (the .pptx is shared on a public link)
 
 Edits after the build go through `slack-change-handler.yml`; `resend-audit-email.yml` re-uploads and re-sends.
 
-When a proposal includes marketing (Full Service Marketing, Paid Ads or Web + SEO), the review post, any updated-proposal reply and the "Proposal ready" reply also tag Leif. He is tagged the same way as the seller (`scripts/resolve-slack-mention.mjs`), using the name and email in `scripts/marketing-reviewer.json`.
+When a proposal includes marketing (Full Service Marketing, Paid Ads or Web + SEO), the "Proposal ready" reply (deck built) also tags Leif, so he can review the AI recommendations. He is tagged the same way as the seller (`scripts/resolve-slack-mention.mjs`), using the name and email in `scripts/marketing-reviewer.json`.
 
 ## Test mode
 
