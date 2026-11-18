@@ -1,0 +1,263 @@
+GEYGAN & GEYGAN, LTD. — GROWTH AUDIT RESEARCH NOTES
+Prepared for: Thomas J. Geygan, Jr. (owner / only attorney)
+Sales Rep: Jake Riggs
+Date: November 23, 2026
+URL: http://geygan.com (resolves to https://geygan.com/, HTTP 200). A second, older site also exists at https://geygan.net/ (see STEP 1).
+Friendly name: geygan-geygan
+Research run: November 18, 2026 (discovery call held November 18, 2026, about 48 minutes; proposal call set for Monday November 23, 2026, 2:00 PM ET)
+URL source: trigger file URL resolved and is live; no search needed. Firm identity confirmed on the site and directories (Geygan & Geygan, Ltd., 8050 Hosbrook Road, Suite 107, Cincinnati, OH 45236; Thomas J. Geygan, Jr.) and on the call.
+Research tool limits this session (applies to every "not observed" item below): no logged-in browser; Google Maps / Google Business Profile, Google results pages (local pack, ads, LSA) and the Meta Ad Library cannot be rendered from this environment (Google Maps fetch returned an empty shell; Meta Ad Library, Justia and similar returned HTTP 403 to direct fetches). The Google PageSpeed Insights API returned HTTP 429 (daily quota exceeded) on every attempt. Anything that depended on those is written "not observed" and listed for the seller in STEP 9B.
+
+====================================================================
+STEP 1 — WEBSITE RESEARCH
+====================================================================
+- Website URL confirmed live: Yes (https://geygan.com/ returns HTTP 200; WordPress, built with the OptimizePress page builder; "wp-sitemap.xml" returns 200)
+- Last redesign date or estimated age: geygan.com looks like a 2024 rebuild (image uploads under /wp-content/uploads/2024/09 and 2024/10; the page title tag is still the WordPress default "My WordPress"). The second site, geygan.net, is visibly older: footer reads "Copyright 2015 - Geygan & Geygan, Ltd.", with a mid-2010s design and a 2017 veteran badge. The call confirms the firm has "a few others" besides the .com and .net (below).
+- Mobile responsive: Yes, by markup (responsive viewport meta tag present on geygan.com). Not visually checked on a device.
+- Homepage headline (H1): "Get Your Immigration Status (legally and as Soon as possible)"  (geygan.com). Tagline under it: "Our office is in Cincinnati, Ohio but we do represent clients all over the world." (geygan.net headline: "Cincinnati Immigration Law Firm".)
+- CTA above fold: Yes — "Initial Consultation" button (geygan.com) leading to a 30-minute appointment booking (Zoom or in-person pages /30-min-appt-zoom/ and /30-min-appt/); geygan.net uses "Schedule a 30-minute meeting" (Calendly).
+- Contact form location: not found on the geygan.com homepage (booking buttons and a Client Portal link, Docketwise sign-in, instead of a form). No phone number was visible in the homepage content fetched.
+- Live chat present: No (no chat widget found)
+- Attorney bio present: Yes — homepage bio text: "I have been practicing immigration law since 1998" with a personal immigration story involving family.
+- Video present: not observed on geygan.com.
+- Blog present: Yes, but stale — WordPress feed on geygan.com shows the most recent post "USCIS Offices closed Thursday Jan 9." dated January 8, 2025. geygan.net has a "Recent Postings" area with no dates seen.
+- Other observations: No Google Analytics / Tag Manager / Meta pixel / call-tracking script found in the geygan.com homepage source (searched for gtag, googletagmanager, fbq, google-analytics, callrail, hotjar; only Calendly/Docketwise references found). This fits the client's own statement that ad clicks "weren't tracking real well" (STEP 9). The site markets investment (E-2), marriage / fiancé visa, family, employment and deportation-defense immigration; dedicated landing pages for E-2 and marriage / fiancé visas exist on the older site.
+
+PageSpeed Insights:
+- pagespeed.web.dev / PageSpeed API: UNAVAILABLE — HTTP 429 "Queries per day" quota exceeded on every attempt (mobile and desktop).
+- Substitute measurement (NOT pagespeed.web.dev): local Lighthouse 12.8.2 (headless Chromium, run from a CI machine on November 18, 2026) against https://geygan.com/.
+  Mobile (Lighthouse mobile emulation, simulated throttling): performance 69 — FCP 1.6 s, LCP 2.1 s, Total Blocking Time 3,810 ms, CLS 0, Speed Index 1.6 s.
+  Desktop (Lighthouse run with desktop form factor, no screen emulation, 40 ms RTT / 10 Mbps throttling, since the --preset=desktop run failed with "Chrome prevented page load with an interstitial"): performance 99 — LCP 0.8 s, TBT 0 ms.
+  These are lab runs and can differ from pagespeed.web.dev; the seller should re-run pagespeed.web.dev before quoting them.
+- PageSpeed mobile score: 69 [local Lighthouse run, not pagespeed.web.dev]
+- PageSpeed desktop score: 99 [local Lighthouse run, not pagespeed.web.dev]
+
+→ Website section complete.
+
+====================================================================
+STEP 2 — GOOGLE BUSINESS PROFILE
+====================================================================
+- GBP found: not directly observed (Google Maps cannot be rendered here). Not confirmed either way.
+- Star rating: not confirmed. Directory ratings only: Avvo 4.7 of 5 [UNCONFIRMED — sourced from Avvo (Thomas James Geygan Jr. attorney profile), not independently confirmed via Google]; Legal Rank listing 4.7 of 5 [UNCONFIRMED — sourced from Legal Rank, not independently confirmed via Google]. These are not Google ratings.
+- Total review count: not confirmed via Google. Avvo shows 64–65 client reviews [UNCONFIRMED — sourced from Avvo, not independently confirmed via Google].
+- Most recent review date: not observed (Avvo notes Client's Choice Awards in 2025, 2024, 2022, 2020, 2019 and 2017)
+- Primary category: not observed
+- Photos active: not observed
+- Posts active: not observed
+
+====================================================================
+STEP 3 — LOCAL 3-PACK SEARCHES
+====================================================================
+Not observed — Google local-pack results cannot be rendered from this environment, so the firm's own pack positions and the pack competitors' review counts were not captured. No numbers are recorded for the searches below; the seller should run them.
+Practice Area 1: Immigration (family-based, fiancé / marriage visas)
+- Search 1 "immigration lawyer Cincinnati": not observed
+- Search 2 "K-1 fiancé visa attorney Cincinnati": not observed
+- Search 3 "green card lawyer Cincinnati": not observed
+Practice Area 2: Investment / employment immigration
+- Search 1 "E-2 visa attorney Cincinnati": not observed
+- Search 2 "EB-5 investor visa lawyer Cincinnati": not observed
+- Search 3 "employment-based immigration attorney Cincinnati": not observed
+Practice Area 3: Deportation / removal defense
+- Search 1 "deportation defense lawyer Cincinnati": not observed
+- Search 2 "immigration court attorney Cincinnati": not observed
+- Search 3 "removal defense attorney Cincinnati OH": not observed
+(Organic web results for these topics, not the local pack, show the firms named in STEP 4 plus Piri Law, Anna Korneeva, Jorge Martinez, Watson Immigration Law and Shihab Immigration Firm. Geygan & Geygan did appear in organic results for firm-name searches.)
+
+====================================================================
+STEP 4 — COMPETITOR REVIEW COUNTS
+====================================================================
+No competitor's Google listing could be read directly. All figures below come from web-search summaries, aggregators or the competitor's own site, so every one is UNCONFIRMED.
+- Competitor 1: The Fleischer Law Firm LLC (810 Sycamore St, Cincinnati) — reviews: 420 [UNCONFIRMED — sourced from a web-search summary of Google reviews; Birdeye lists 493 reviews and another source 430, so the figure varies and was not independently confirmed via Google] — rating: 5.0 [UNCONFIRMED — sourced from a web-search summary / Birdeye, not independently confirmed via Google]
+- Competitor 2: Pogue Law Firm (Christopher Pogue, Cincinnati; of counsel with Fleischer per its site) — reviews: 390 [UNCONFIRMED — sourced from a web-search summary; the firm's own site claims "over 400", not independently confirmed via Google] — rating: 5.0 [UNCONFIRMED — sourced from the firm's own site badge and a web-search summary, not independently confirmed via Google]
+- Competitor 3: Law Office of Nazly Mamedova — reviews: 203 [UNCONFIRMED — sourced from a web-search summary, not independently confirmed via Google] — rating: 4.8 [UNCONFIRMED — sourced from a web-search summary, not independently confirmed via Google]
+- The firm's own Google review count was not observed (STEP 2), so no comparison between the prospect and these competitors is made here.
+
+====================================================================
+STEP 5 — DIRECTORY LISTINGS
+====================================================================
+- Avvo: Found and claimed (PRO member). Thomas James Geygan Jr.: Avvo rating 8.3 (another snippet shows 8.4), client reviews 4.7 of 5 on 64–65 reviews, practice mix Immigration 75% / General Practice 25%, licensed since 1998 (28 years), Client's Choice Awards 2025, 2024, 2022, 2020, 2019, 2017. Phone on Avvo: (513) 866-7331.
+- Justia: fetch blocked (HTTP 403); the firm's listing was not confirmed. Not observed.
+- FindLaw: A listing exists, categorized as a "Bankruptcy Law Firm" (Geygan & Geygan, Ltd., Cincinnati), i.e. it still leads with bankruptcy, not immigration. Details not reviewed.
+- Yelp: A listing exists ("Geygan & Geygan", 8050 Hosbrook Rd, Cincinnati, Immigration Law). Rating and review count not read (page not fetched).
+- Other: AILA lawyer directory (ailalawyer.com) lists Thomas J. Geygan Jr.; attorneyatlaw.com lists the firm; Legal Rank lists it (4.7).
+- NAP consistency: INCONSISTENT. The firm's website and several directories show phone 513-791-1673 (fax 513-791-1683, info@geygan.com); Avvo shows (513) 866-7331. Address 8050 Hosbrook Road, Suite 107, Cincinnati, OH 45236 matches everywhere seen. Directories also describe the firm differently (founded 1964 / father-and-son firm, bankruptcy and immigration; "more than 19 years" of immigration practice on geygan.net vs "since 1998" on Avvo and geygan.com).
+- Geo-targeting landing pages for surrounding cities: not found on geygan.com or geygan.net (pages seen are topic-based: E-2, marriage / fiancé visas, deportation / immigration court, guides). Not exhaustively crawled.
+
+→ GBP, local SEO and directory sections complete (with the limits noted above).
+
+====================================================================
+STEP 6 — GOOGLE ADS
+====================================================================
+Google results pages cannot be rendered from this environment, so no ad was observed for any search. This is "not observed", not a finding that no one is advertising.
+Practice Area 1: Immigration (family / fiancé visas)
+- Firm ads observed: not observed (searches not renderable). Per the client, he ran Google Ads in the past and stopped (STEP 9); the firm does not appear in any ad data available here.
+- Named local competitors running ads: not observed
+Practice Area 2: Investment / employment immigration (E-2, EB-5)
+- Firm ads observed: not observed
+- Named local competitors running ads: not observed
+Practice Area 3: Deportation / removal defense
+- Firm ads observed: not observed
+- Named local competitors running ads: not observed
+
+====================================================================
+STEP 7 — LOCAL SERVICE ADS
+====================================================================
+- Firm appears in LSA: not observed (Google results not renderable)
+- Google Screened: not observed
+- LSA review count: not observed
+- Named local competitors in LSA: not observed
+
+====================================================================
+STEP 8 — META ADS
+====================================================================
+Meta Ad Library returned HTTP 403 to a direct fetch; no ads could be read.
+- Firm has active ads: not observed
+- Named local competitor 1: The Fleischer Law Firm LLC — active ads: not observed
+- Named local competitor 2: Pogue Law Firm — active ads: not observed
+(Context: the client said he ordered the SMB Team book from an Instagram ad, so he is on Instagram himself as a consumer; his own firm has an X account, @GeyganGeygan.)
+
+→ All ads sections complete (all "not observed" — see the seller list in STEP 9B).
+
+====================================================================
+STEP 9 — TRANSCRIPT EXTRACTION
+====================================================================
+Transcript source: full verbatim Fathom transcript (summary used only as overview)
+Call: November 18, 2026, about 48 minutes, Jake Riggs (SMB Team) and Thomas J. Geygan, Jr. (owner). Fathom tags Thomas as [Prospect]. Where the AI summary and the transcript differ, the transcript is used. The summary labels revenue years "2023 / 2024 / 2027" and a follow-up on "Mon, Nov 25"; the transcript has "this year" (2026) at about $450,000, "next year" about the same, then +$200,000 "the year after that" (00:39:43–00:39:48), and a follow-up Monday 2:00 PM his time (the trigger shows Nov 23, 2026, 2:00 PM ET). The seller should confirm which year the $200,000 jump falls in.
+
+- Practice areas confirmed: Immigration, almost exclusively — "I've been doing this and this is immigration law, almost exclusively immigration law for about 29 years" (Thomas J. Geygan, Jr. (client), 00:08:49). Small side work: "I do a little bit of criminal. I do a little bit of civil law and setting up companies and stuff like that, but only for my immigration clients." (00:13:42–00:13:47). The firm historically also did bankruptcy and family law with his father (00:13:33). Immigration clients range "from people who've come here… seeking asylum, clothes on their back type of stuff to people who are investing a million dollars or more in the United States" (00:10:07); ideal client is a fiancé-visa client who then goes through green card, citizenship and family petitions (00:16:57–00:17:36).
+- Current lead sources: "The majority of the business is word of mouth." (Thomas J. Geygan, Jr. (client), 00:18:15); "We get referrals from the Bar Association and other attorneys, but yeah, hands down, it's the word of mouth." (00:18:22); AI search: "we typed in immigration attorney around here and you came up" (00:18:34); the 20–30 local immigration attorneys "help each other out a fair amount" (00:19:23–00:19:51).
+- Ads ever run: Yes — Google Ads, now stopped. "I quit doing Google Ads just because I didn't have the time to fool with it." (Thomas J. Geygan, Jr. (client), 00:17:53); "I was spending a fair amount of money." (00:18:01); "Something was clicking on the ads, but it wasn't tracking real well to show where I was getting the business." (00:18:06). Budget amount and results not stated.
+- Firm identity check: matches (trigger "Geygan & Geygan" = geygan.com / geygan.net "Geygan & Geygan, Ltd." and the call; owner Thomas J. Geygan, Jr.)
+- Team size: 1 attorney (Thomas, "I'm the only attorney," 00:13:18) plus one secretary, Karen, who prepares packets and answers the phones (00:22:59, 00:27:18). Wants to add "at least one and probably two" non-attorney staff, "the biggest would be like an intake clerk" plus someone answering the phone (00:40:37–00:41:22).
+- Team size (total headcount): 2
+- Annual revenue (gross / case value): about $450,000 this year — "Let's just say $450,000 for this year… it could be $450,000, it could be $550,000" (Thomas J. Geygan, Jr. (client), 00:39:26–00:39:29; "Probably $450,000," 00:39:02). Two large cases could push it higher: "I will be paid on both of them before the end of December" (00:39:05).
+- Annual revenue (net / take-home / collected): not distinguished from gross
+- Revenue (annual, best estimate): $450,000
+- Fee structure: not stated as a model. Evidence: deposits / retainers ("I charged her about three times what she wanted to pay for a deposit," Thomas J. Geygan, Jr. (client), 00:31:05) and billed time for after-hours calls ("if you call me after hours and it's not an emergency, you get billed a certain extra amount," 00:27:42), suggesting hourly / retainer. Seller to confirm.
+- Revenue goal: not stated as a goal. He gave a projection: next year about the same, then "up probably at least $200,000" (Thomas J. Geygan, Jr. (client), 00:39:43–00:39:48), "that's when the administration changes" (00:40:00). Use 2x current only if the seller sets a goal.
+- Average case value: not stated (range from asylum clients to $1 million+ investors, 00:10:07; no fee figure given)
+- Current close rate: not stated — default to 15%. "I don't know. I don't keep track of it." (Thomas J. Geygan, Jr. (client), 00:30:57). He also said "once we get them to hire us, we're pretty good" (00:17:46) and "it's very rare we lose them" (00:16:43) — that is retention, not close rate.
+- Number of locations: 1 (Cincinnati; he represents clients worldwide)
+- Spanish campaign needed: no (not discussed; his wife is from Central America, 00:43:49, which is not a firm requirement)
+- Dominant buying motive: A firm that runs without him so it can be handed to his nephews and he can walk away in about eight years. "I'm looking at a law, setting up a law firm that will run without me, because I am retiring in about eight years, and I have a couple of nephews who are getting ready to graduate from law school" (Thomas J. Geygan, Jr. (client), 00:10:55); "I would like to turn over something that they could have and run, and walk out the door, go to… the beach and say, not my problem." (00:11:16–00:11:25). Type (1): firm that runs itself, with a succession / sale-like exit.
+- Any profitability claims made by prospect: none stated beyond revenue. Closest: "I would like to have enough money where I'm not worried about money" and "there's highs and lows, and I really don't like the lows" (Thomas J. Geygan, Jr. (client), 00:19:59).
+- Any claims about case types or practice areas: "My clients range from people who've come here… seeking asylum… to people who are investing a million dollars or more" (00:10:07); "Sometimes we get more… cases where the government has already made a decision and we have to go back and change their mind. But yeah, there's plenty of work to be done." (00:21:19–00:21:29); "There are probably about 20 to 30 immigration attorneys total in this area." (00:19:23)
+- Stated call focus / product interest: NOT a marketing call. The client wants systems, policies and standards so the firm can run without him ("set up policies, standards, all of that, so they can run this business," 00:14:22), better post-signature document collection, an intake clerk / phone coverage, and AI help with document-heavy work. He said he does not want more leads until the process is in place (00:27:00). The seller discussed AI Workforce Pro, a document-tracking workflow, and the sister company Attorney Assistant (answering service / staffing in the Philippines — not in the SMB catalog). Operations / systems and AI, no marketing.
+- Primary engagement: coaching/ops
+- Products discussed on call: AI Workforce Pro
+  (Note, not machine-read: the seller described "our own AI platform… AI Workforce Pro" in the company overview (00:07:04–00:07:08) and said "we have our own solution that does all of these things" after hearing how the firm uses AI (00:25:57); no tier or price was named. Fractional CFO / bookkeeping were named only in the generic company overview (00:06:56), not offered to this client. Attorney Assistant was offered as an option for intake / phone coverage; it is a sister company, not a catalog product. No coaching or FCOO tier was named; the seller said he would "customize a solution" after talking to his team, 00:04:31 and 00:47:48.)
+- Lead-gen gap stated: no — "That's more what I want because if we get a whole lot more clients in and I don't have a high confidence level in our process and procedures, something could get lost." (Thomas J. Geygan, Jr. (client), 00:27:00, answering whether he wants top-of-funnel growth or SOPs and processes)
+- Existing marketing/SEO/ad vendor engagements: none stated. (Infusionsoft / "Keep" CRM: "almost 30 days more," being cancelled because of a price increase, 00:08:29–00:15:13. This is a CRM / email-automation tool, not a marketing vendor. The client did not name any marketing agency.)
+- Budget constraints stated: none stated. (He is dropping Keep because "I'm not using it enough to justify it," 00:15:13 — about that tool, not about SMB Team spend.)
+- Financial goals stated (for the ProfitOS slides): (1) Succession — retire in about 8 years and hand the firm to two nephews, "walk out the door" (Thomas J. Geygan, Jr. (client), 00:10:55–00:11:25). (2) Smoother cash — "I would like to have enough money where I'm not worried about money" and "I really don't like the lows" (00:19:59). (3) Hiring — "I need to add at least one and probably two" non-attorney staff (00:40:37). No bookkeeping / books / tax / forecast pain was stated; FCFO / Bookkeeping were not asked about.
+
+Investment inputs:
+- Ad spend practice area: Immigration
+  (only practice area; client stopped Google Ads and is not asking for lead gen — Thomas J. Geygan, Jr. (client), 00:17:53, 00:27:00)
+- Geo market tier: Tier 3 (Cincinnati ~1.8M DMA, per the Scoping and Ad Spend Guide geo list)
+- Market competitiveness: Medium — the client says there are "about 20 to 30 immigration attorneys total in this area" who "all pretty much know each other" (00:19:23–00:19:33); two well-reviewed local competitors (Fleischer, Pogue; counts UNCONFIRMED, STEP 4); no ad or pack data observed.
+- Current monthly ad spend (stated): none
+  (client said he quit Google Ads, 00:17:53; no current paid ads mentioned; amount spent before not stated)
+- Current cost per signed case (stated): not stated
+- Current cost per lead (stated): not stated
+- Average case value (stated, one figure): not stated
+- Close rate (stated): not stated
+  ("I don't keep track of it," Thomas J. Geygan, Jr. (client), 00:30:57)
+- Revenue goal (annual, one figure): not stated
+  (projection only — about $450,000 now, "at least $200,000" more in a later year; no goal stated)
+- Maximum monthly ad budget (stated): not stated
+
+Key prospect quotes:
+1. Thomas J. Geygan, Jr. (client), 00:10:55 — "I'm looking at a law, setting up a law firm that will run without me, because I am retiring in about eight years" — goals / DBM
+2. Thomas J. Geygan, Jr. (client), 00:11:16–00:11:25 — "I would like to turn over something that they could have and run, and walk out the door, go to… the beach and say, not my problem." — goals / DBM
+3. Thomas J. Geygan, Jr. (client), 00:14:22 — "What I would like to do is set up policies, standards, all of that, so they can run this business" — goals / systems
+4. Thomas J. Geygan, Jr. (client), 00:15:37 — "we need set procedures for doing things because I'm writing them now as we're going" — SOPs (after the switch to MyCase)
+5. Thomas J. Geygan, Jr. (client), 00:18:15 — "The majority of the business is word of mouth." — lead sources
+6. Thomas J. Geygan, Jr. (client), 00:21:53 — "when it's real crazy, it's seven days a week, 14-hour days, on and on and on." — owner hours / capacity
+7. Thomas J. Geygan, Jr. (client), 00:22:02 — "the client sent me 863 documents that I have to review, analyze, and write to immigration on before December 7th." — owner workload (through 00:22:18)
+8. Thomas J. Geygan, Jr. (client), 00:23:09 — "anything screwy and everybody's got something screwy, I have to unfortunately touch" — owner as bottleneck
+9. Thomas J. Geygan, Jr. (client), 00:27:00 — "if we get a whole lot more clients in and I don't have a high confidence level in our process and procedures, something could get lost." — intake / process, why he is not asking for leads
+10. Thomas J. Geygan, Jr. (client), 00:32:05 — "Our biggest problem is after people hire us, getting everything we need from them." — document collection
+11. Thomas J. Geygan, Jr. (client), 00:32:11 — "We've started a procedure where they get followed up with 30, 60, and 90 days, and after 90 days, they get told… your case is… being put on administrative hold." — document collection process (through 00:32:25)
+12. Thomas J. Geygan, Jr. (client), 00:41:02 — "The biggest would be like an intake clerk, somebody who can do the follow-up on the cases and then hand them off to Karen and I when everything's in place." — team / hiring
+
+====================================================================
+KPI AND DIAGNOSIS (STEP 9B)
+====================================================================
+Product focus this supports: coaching/ops, with AI Workforce Pro (AI) — operations / systems (SOPs, post-signature document follow-up, intake coverage) and AI-assisted drafting and document tracking. No marketing: the client does not want more leads yet.
+Headline KPI: Owner hours — "seven days a week, 14-hour days" — said by client, 00:21:53 — "when it's real crazy, it's seven days a week, 14-hour days, on and on and on."
+  KPI status: usable (conditional — he described it as what happens "when it's real crazy"; the seller should confirm his normal week)
+  Why this KPI: SOPs / operations support and AI Workforce Pro (document tracking, drafting) take routine work off the owner, which is what gets him off the seven-day, 14-hour weeks and moves the firm toward running without him.
+Supporting figures (0–3):
+  - "863 documents that I have to review, analyze, and write to immigration on before December 7th" — client, 00:22:02 — "the client sent me 863 documents that I have to review, analyze, and write to immigration on before December 7th."
+  - Follow-ups at "30, 60, and 90 days" then "administrative hold" — client, 00:32:11 — "We've started a procedure where they get followed up with 30, 60, and 90 days, and after 90 days, they get told… your case is… being put on administrative hold."
+  - Calls returned only "between 11 and 11.30 and between 4 and 5" — client, 00:27:36 — "I will return all calls between 11 and 11.30 and between 4 and 5."
+Client-stated goal for this KPI: none stated as a number — the stated aim is a firm that runs without him: "setting up a law firm that will run without me" (Thomas J. Geygan, Jr. (client), 00:10:55)
+KPI quotes (2–4, verbatim, client only):
+  - Thomas J. Geygan, Jr. (client), 00:21:53: "when it's real crazy, it's seven days a week, 14-hour days, on and on and on." — owner hours
+  - Thomas J. Geygan, Jr. (client), 00:23:09: "anything screwy and everybody's got something screwy, I have to unfortunately touch" — owner as bottleneck
+  - Thomas J. Geygan, Jr. (client), 00:32:05: "Our biggest problem is after people hire us, getting everything we need from them." — document collection
+  - Thomas J. Geygan, Jr. (client), 00:27:00: "if we get a whole lot more clients in and I don't have a high confidence level in our process and procedures, something could get lost." — process readiness
+Client's why (verbatim, client only): Thomas J. Geygan, Jr. (client), 00:11:16–00:11:25: "I would like to turn over something that they could have and run, and walk out the door, go to… the beach and say, not my problem." — leaving a firm his nephews can run; also 00:10:55 "a law firm that will run without me, because I am retiring in about eight years"
+Cost of inaction (verbatim, client only): Thomas J. Geygan, Jr. (client), 00:27:00: "if we get a whole lot more clients in and I don't have a high confidence level in our process and procedures, something could get lost." — growth would outrun his processes. Also 00:19:59: "there's highs and lows, and I really don't like the lows" — uneven income.
+Legacy Staircase discussed: no — the rep did not walk him through the Lawyer Legacy Staircase. The goal he named is a succession to two nephews in about eight years, but no stage was placed.
+Diagnosis (3–4 causes, biggest first):
+  1. Owner is the bottleneck on every non-routine case — evidence: "seven days a week, 14-hour days" and "anything screwy… I have to unfortunately touch" — source: call: Thomas J. Geygan, Jr. (client), 00:21:53 and 00:23:09 — fixed by: AI Workforce Pro (first-pass drafting, document review and research with a built-in human-review step) plus operations support to move routine work to staff
+     Target basis: none — flag for seller (no hours target stated)
+  2. No documented SOPs or standards while the firm changes systems — evidence: "we need set procedures for doing things because I'm writing them now as we're going" (after the switch to MyCase) and "I don't have a high confidence level in our process and procedures" — source: call: Thomas J. Geygan, Jr. (client), 00:15:37 and 00:27:00 — fixed by: operations / coaching engagement that builds SOPs for intake, follow-up and case flow (specific product and tier to be set by the seller; none named on the call)
+     Target basis: the client's stated aim — policies and standards "so they can run this business" (00:14:22); no numeric target
+  3. Post-signature document collection is manual and slow — evidence: follow-ups at 30 / 60 / 90 days, then "administrative hold"; the seller described Karen sending manual emails and checking who is missing — source: call: Thomas J. Geygan, Jr. (client), 00:32:05–00:32:25 (the seller's description, 00:37:32–00:38:28, is the proposed fix, not a client fact) — fixed by: AI Workforce Pro document-tracking and client-reminder workflow (seller: "you approve it and then it sends it," 00:38:05)
+     Target basis: none — flag for seller
+  4. No intake / phone capacity beyond the owner and one secretary — evidence: Karen answers, and "when she's not here, I do"; non-urgent calls returned only in two daily windows; plans to add "at least one and probably two" non-attorney staff, "an intake clerk" — source: call: Thomas J. Geygan, Jr. (client), 00:27:18, 00:27:36, 00:40:37, 00:41:02 — fixed by: intake clerk / answering coverage through the sister company Attorney Assistant (the seller offered to send information; not an SMB catalog product — he said "I'm comfortable with it once we have the processes in place," 00:41:56) plus the intake SOPs from cause 2
+     Target basis: client-stated hiring need ("at least one and probably two," 00:40:37); no numeric target on calls
+Plan inputs (for each non-marketing product the call points to — what the client said that the first step of that product answers; verbatim quote + timestamp; "none stated" if the call didn't say):
+  - Fractional CTO / AI Workforce Pro: (1) drafting and research — "I use it for drafting a lot of things… for research on whether or not we can do certain things in certain jurisdictions" (Thomas J. Geygan, Jr. (client), 00:25:38–00:25:43); (2) responses to requests for evidence / notices of intent to deny — "Primarily responding to what are called requests for evidence or notice of intent to deny from the government" (00:25:14); (3) reviewing very large client document sets — "863 documents that I have to review, analyze" (00:22:02); (4) chasing missing client documents — the 30 / 60 / 90-day follow-up (00:32:11); (5) packet preparation by Karen — "She takes care of the things that are pretty standardized for us as far as putting the packets together" (00:23:09, context — the client's current process). He uses Visalaw.ai today and treats it "like a brand new law clerk" that he must "review and verify everything" (00:23:50).
+  - FCOO / coaching: no SOPs and no leadership layer — "I'm writing them now as we're going" (00:15:37); owner touches everything non-standard (00:23:09); intake and follow-up not standardized — wants "how we bring the people in, how we process them, how we follow up" to be repeatable and applied to other practice areas (00:14:22).
+  - FCFO / bookkeeping: none stated.
+Alternate KPI (if the seller changes the package): AI Workforce Pro → documents to review ("863 documents… before December 7th," client, 00:22:02); FCOO → time to collect post-hire documents (30 / 60 / 90 days then hold, client, 00:32:11). No figure was said for how long collection takes.
+Seller should confirm on the next call:
+  - Close rate (he does not track it, 00:30:57), average fee by case type, and fee structure (flat / hourly / retainer)
+  - Which year the "$200,000" revenue jump falls in (AI summary says 2027; the transcript says "the year after" next year, 00:39:43) and whether $450,000 is collected revenue and what "$550,000" with the two large cases means
+  - Whether his typical week is the "seven days a week, 14-hour days" or only in crunch periods ("when it's real crazy")
+  - Number of immigration clients / new matters a month and how long post-hire document collection takes today, and how many cases are on administrative hold
+  - How much he spent on Google Ads before and for how long; whether any campaigns are still active
+  - Which other sites the firm runs (investment-visa and marriage-visa sites exist besides geygan.com and geygan.net) and who maintains them
+  - Phone number inconsistency across directories (513-791-1673 vs (513) 866-7331) and the FindLaw listing still showing "Bankruptcy"
+  - Google Business Profile: rating, review count, category, recent review date; local-pack positions and Google / Local Service / Meta ads for his practice areas (all "not observed" here)
+  - Whether he wants Attorney Assistant (intake / phone coverage) and which SMB Team tiers fit (AI Workforce Pro tier by user count — team is 2; no FCOO / coaching tier named)
+  - Re-run pagespeed.web.dev before quoting 69 mobile / 99 desktop (local Lighthouse numbers)
+  - Competitor Google review counts (all UNCONFIRMED here)
+  - The book he ordered via an Instagram ad was never received — ship physical copy to his office (seller action item)
+
+====================================================================
+STEP 10 — COMPETITIVE URGENCY SCORE
+====================================================================
+Score: 4 of 10 — low-confidence. It rests on directory / aggregator review volumes only: no local-pack, ads, LSA or Meta data could be observed here (STEPs 3 and 6–8). The client's own account is a mostly referral-driven market of "20 to 30 immigration attorneys" who "all get along" (Thomas J. Geygan, Jr. (client), 00:19:23–00:19:37), and the proposal is about systems rather than lead flow.
+Named local competitor threats:
+  1. The Fleischer Law Firm LLC — 5.0 rating, about 420–493 reviews depending on source [UNCONFIRMED — aggregator sources, not independently confirmed via Google]; offers family, fiancé-visa and business immigration with free consultations in English and Spanish.
+  2. Pogue Law Firm (Christopher Pogue) — 5.0 rating, 390 reviews, firm site claims "over 400" [UNCONFIRMED — not independently confirmed via Google]; heavy family / fiancé-visa content.
+  3. Law Office of Nazly Mamedova — 4.8 rating, 203 reviews [UNCONFIRMED — not independently confirmed via Google].
+Dynamic sentence: "A score of 4 means competitors have meaningful advantages in one or more areas and are pulling ahead. You are not invisible yet — but the window to close the gap is narrowing. Every month without action is a month they extend their lead."
+
+====================================================================
+PASS 2 — VERIFICATION CHECKLIST
+====================================================================
+- [x] Every number matches observed data or the transcript; unobserved items are marked "not observed"
+- [x] Competitor counts carry UNCONFIRMED tags; none is cited as "dominating" relative to the firm, whose own Google count was not observed
+- [x] Every review count and rating carries a verification-method tag
+- [x] Revenue: gross vs net not distinguished by the client (recorded as such); fee structure recorded as "not stated" with evidence
+- [x] Every ads section covers all practice areas (all "not observed")
+- [x] No section says "you are not running ads"
+- [x] No profitability or business claim appears unless it came from the transcript
+- [x] Competitors are specific named local firms
+- [x] PageSpeed scores are real numbers, with the method labelled (local Lighthouse; pagespeed.web.dev unavailable)
+- [x] DBM, close rate (not stated, default 15%), average case value (not stated), revenue goal (not stated) recorded
+- [x] Call focus called out as operations / AI, not marketing
+- [x] Primary engagement, Products discussed on call, Lead-gen gap stated, headcount and revenue lines in machine-read format
+- [x] Firm identity check filled in (matches)
+- [x] Existing vendor engagements and budget constraints recorded (none stated)
+- [x] All "Investment inputs" lines filled in the exact format
+- [x] Nothing fabricated; unknowns listed for the seller in STEP 9B
+- [x] Client's why, cost of inaction and Legacy Staircase filled in
+- [x] No STEP 9B figure was calculated or estimated; none is UNCONFIRMED
+- [x] Every cause has evidence, source and a Target basis
