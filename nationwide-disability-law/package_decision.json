@@ -3,11 +3,11 @@
   "revenue_stated": null,
   "net_revenue_stated": null,
   "is_contingency_practice": false,
-  "revenue_effective": 340000,
-  "revenue_source": "hubspot_annual_law_firm_revenue",
+  "revenue_effective": 750000,
+  "revenue_source": "seller_confirmed",
   "revenue_label": "$180K-$500K",
-  "revenue_verified": false,
-  "needs_revenue_confirmation": true,
+  "revenue_verified": true,
+  "needs_revenue_confirmation": false,
   "team_size_stated": null,
   "team_size_source": null,
   "team_size_effective": 3,
@@ -68,10 +68,10 @@
   "total_bundled": 7597,
   "total_savings": 1597,
   "ad_spend_conservative": 6200,
-  "ad_spend_aggressive": 6500,
+  "ad_spend_aggressive": 20000,
   "ad_spend_rationale": {
     "conservative_basis": "channel minimums $3,000 + $2,000 + $1,200 = $6,200",
-    "aggressive_basis": "20% rule: $680,000 goal × 20% ÷ 12 × 1 geo − $4,997 fee = $6,336 → reverse math: not possible (no case value)"
+    "aggressive_basis": "20% rule: $1,500,000 goal × 20% ÷ 12 × 1 geo − $4,997 fee = $20,003 → reverse math: not possible (no case value)"
   },
   "selection_notes": [
     "Call focus unknown (no discovery call found, or Primary engagement not recorded) — no package recommended. Seller must say what the call was about before this can be locked in.",
@@ -79,7 +79,8 @@
     "Team size not stated in research notes or HubSpot — assumed 3. Please confirm headcount.",
     "Revenue under $750K but multiple practice areas detected: Essentials hidden (requires single practice area) — Starter tier.",
     "Revenue $250K–$400K: Elite Coach selected.",
-    "Seller override: Elite 360 (Full Service Marketing — Starter + Elite Coach) per Slack request on 2026-11-18."
+    "Seller override: Elite 360 (Full Service Marketing — Starter + Elite Coach) per Slack request on 2026-11-18.",
+    "Revenue confirmed by seller: $750,000."
   ],
   "pricing_mode": "bundled",
   "bundle_eligible_count": 2,
@@ -160,18 +161,18 @@
         }
       ],
       "conservative": 6200,
-      "aggressive": 6500,
+      "aggressive": 20000,
       "current_stated": null,
       "cap": 25000,
       "overage": null,
       "conservative_basis": "channel minimums $3,000 + $2,000 + $1,200 = $6,200",
       "aggressive_steps": [
-        "20% rule: $680,000 goal × 20% ÷ 12 × 1 geo − $4,997 fee = $6,336",
+        "20% rule: $1,500,000 goal × 20% ÷ 12 × 1 geo − $4,997 fee = $20,003",
         "reverse math: not possible (no case value)"
       ],
       "year_one_range": [
         74400,
-        78000
+        240000
       ],
       "seller_set": false,
       "computed": null,
@@ -193,9 +194,9 @@
         "source": "default"
       },
       "spanish_campaign": false,
-      "revenue_effective": 340000,
+      "revenue_effective": 750000,
       "revenue_goal": {
-        "value": 680000,
+        "value": 1500000,
         "source": "not stated — 2× current revenue (audit-write.md)"
       },
       "case_value": {
