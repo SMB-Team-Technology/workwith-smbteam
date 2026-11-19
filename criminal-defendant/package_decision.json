@@ -1,0 +1,215 @@
+{
+  "confidence": "high",
+  "revenue_stated": 2800000,
+  "net_revenue_stated": null,
+  "is_contingency_practice": false,
+  "revenue_effective": 2800000,
+  "revenue_source": "research_notes",
+  "revenue_label": null,
+  "revenue_verified": true,
+  "needs_revenue_confirmation": false,
+  "team_size_stated": 13,
+  "team_size_source": "research_notes",
+  "team_size_effective": 13,
+  "practice_areas_detected": [
+    "criminal defense (state and federal)",
+    "dui",
+    "traffic tickets. \"criminal",
+    "and traffic tickets.\" (00:12:15)",
+    "\"i do fede",
+    "criminal defense (state)",
+    "federal criminal defense",
+    "traffic tickets"
+  ],
+  "hubspot_company": null,
+  "firm_identity_check": "MISMATCH — trigger says \"Criminal Defendant\" (the website's domain name, not the firm's name); the Google profile, Avvo, Birdeye and Trustindex say \"Albert Quirantes, Esq. Criminal DUI & Ticket Lawyers\"; the Fathom summary says \"Albert Quirantes, P.A.\"; owner is Alberto (Albert) M. Quirantes Jr. Same firm, website and owner — only the name differs.",
+  "package_source": "rules",
+  "package_override": null,
+  "needs_seller_input": false,
+  "revenue_only_option": null,
+  "call_focus": {
+    "primary_engagement": "AI",
+    "products_discussed": [
+      "AI Workforce Pro (tier not specified)"
+    ],
+    "lead_gen_gap": true
+  },
+  "marketing_tier": "Dominate",
+  "marketing_name": "Full Service Marketing — Dominate",
+  "marketing_price_bundled": 10497,
+  "marketing_price_retail": 12497,
+  "marketing_savings": 2000,
+  "coaching_name": null,
+  "coaching_price_bundled": null,
+  "coaching_price_retail": null,
+  "coaching_savings": null,
+  "law_tier": "AI Workforce Pro",
+  "law_name": "AI Workforce Pro",
+  "law_price_bundled": 2557,
+  "law_price_retail": null,
+  "law_seats": 13,
+  "total_bundled": 13054,
+  "total_savings": 2000,
+  "ad_spend_conservative": 8700,
+  "ad_spend_aggressive": 76500,
+  "ad_spend_rationale": {
+    "conservative_basis": "channel minimums $5,500 + $2,000 + $1,200 = $8,700",
+    "aggressive_basis": "20% rule: $3,000,000 goal × 20% ÷ 12 × 1.3 geo × 1.33 Spanish − $10,497 fee = $75,953 → reverse math: 83.3 cases/mo ÷ 15% close × $138 benchmark blended CPL = $76,652"
+  },
+  "selection_notes": [
+    "AI-led call, but prospect stated a lead-gen need — marketing included.",
+    "AI-led call with no coaching discussed — coaching left out (revenue rule would add Master's Circle; add it back if the seller wants it).",
+    "\"AI Workforce Pro\" named without a tier — using AI Workforce Pro (team of 13).",
+    "AI Workforce Pro discussed on call: $1,597/mo for 5 users + 8 extra × $120.",
+    "Revenue $2M–$3M: Dominate tier."
+  ],
+  "pricing_mode": "bundled",
+  "bundle_eligible_count": 2,
+  "unpriced_products": [],
+  "setup_fees": [
+    {
+      "line": "marketing",
+      "product": "Full Service Marketing — Dominate",
+      "label": "AI Avatar setup",
+      "amount": 1850,
+      "waivable": true,
+      "waived": false,
+      "charged": 1850
+    }
+  ],
+  "setup_total": 1850,
+  "investment": {
+    "version": 1,
+    "products": [
+      {
+        "category": "marketing",
+        "name": "Full Service Marketing — Dominate",
+        "charged": 10497,
+        "standalone": 12497
+      },
+      {
+        "category": "law",
+        "name": "AI Workforce Pro (13 seats)",
+        "charged": 2557,
+        "standalone": null
+      }
+    ],
+    "monthly_total": 13054,
+    "list_total": 15054,
+    "total_savings": 2000,
+    "pricing_mode": "bundled",
+    "setup_fees": [
+      {
+        "product": "Full Service Marketing — Dominate",
+        "label": "AI Avatar setup",
+        "amount": 1850,
+        "charged": 1850,
+        "waived": false
+      }
+    ],
+    "setup_total": 1850,
+    "year_one_total": 158498,
+    "year_one_basis": "12 × $13,054/mo in fees + $1,850 one-time setup. Ad spend is paid separately to Google and Meta.",
+    "ad_spend": {
+      "channels": [
+        {
+          "channel": "Google Search",
+          "minimum": 5500
+        },
+        {
+          "channel": "Local Services Ads",
+          "minimum": 2000
+        },
+        {
+          "channel": "Meta retargeting",
+          "minimum": 1200
+        }
+      ],
+      "conservative": 8700,
+      "aggressive": 76500,
+      "current_stated": null,
+      "cap": 100000,
+      "overage": null,
+      "conservative_basis": "channel minimums $5,500 + $2,000 + $1,200 = $8,700",
+      "aggressive_steps": [
+        "20% rule: $3,000,000 goal × 20% ÷ 12 × 1.3 geo × 1.33 Spanish − $10,497 fee = $75,953",
+        "reverse math: 83.3 cases/mo ÷ 15% close × $138 benchmark blended CPL = $76,652"
+      ],
+      "year_one_range": [
+        104400,
+        918000
+      ],
+      "seller_set": false,
+      "computed": null,
+      "needs_seller_review": true
+    },
+    "return": {
+      "method": "benchmark_cpl",
+      "basis": "SMB Team criminal defense cost-per-lead benchmarks ($138 blended, +20% on the low end), 15% close rate (assumed) and a $3,000 case value (assumed default).",
+      "case_value": 3000,
+      "case_value_stated": false,
+      "cost_per_case": null,
+      "share_of_case_value": null,
+      "close_rate": 0.15,
+      "blended_cpl": 138,
+      "scenarios": [
+        {
+          "label": "Conservative",
+          "ad_spend": 8700,
+          "leads": 52.5,
+          "cases": 7.9,
+          "revenue": 23600,
+          "return_multiple": 2.7
+        },
+        {
+          "label": "Aggressive",
+          "ad_spend": 76500,
+          "leads": 554.5,
+          "cases": 83.2,
+          "revenue": 249500,
+          "return_multiple": 3.3
+        }
+      ],
+      "disclaimer": "Illustrative arithmetic, not a forecast."
+    },
+    "inputs": {
+      "practice_area": {
+        "value": "Criminal Defense",
+        "source": "research notes"
+      },
+      "geo_tier": {
+        "value": 2,
+        "multiplier": 1.3,
+        "source": "research notes"
+      },
+      "competitiveness": {
+        "value": "High",
+        "source": "research notes"
+      },
+      "spanish_campaign": true,
+      "revenue_effective": 2800000,
+      "revenue_goal": {
+        "value": 3000000,
+        "source": "stated on the call"
+      },
+      "case_value": {
+        "value": 3000,
+        "source": "practice-area default (low end)"
+      },
+      "close_rate": {
+        "value": 0.15,
+        "source": "default 15%"
+      },
+      "current_ad_spend": null,
+      "current_cost_per_case": null,
+      "current_cost_per_lead": null,
+      "max_ad_budget": null,
+      "management_fee": 10497,
+      "ad_spend_cap": 100000
+    },
+    "flags": [
+      "Ad spend over $25K — scoping approval required.",
+      "Case value assumed ($3,000, low end of the Criminal Defense default) — confirm the real fee per case."
+    ]
+  }
+}
