@@ -3,11 +3,11 @@
   "revenue_stated": null,
   "net_revenue_stated": null,
   "is_contingency_practice": false,
-  "revenue_effective": 1980500,
-  "revenue_source": "hubspot_annual_law_firm_revenue",
+  "revenue_effective": 2000000,
+  "revenue_source": "seller_confirmed",
   "revenue_label": "$961K - $3M",
-  "revenue_verified": false,
-  "needs_revenue_confirmation": true,
+  "revenue_verified": true,
+  "needs_revenue_confirmation": false,
   "team_size_stated": null,
   "team_size_source": null,
   "team_size_effective": 3,
@@ -66,7 +66,7 @@
   "ad_spend_aggressive": 25000,
   "ad_spend_rationale": {
     "conservative_basis": "channel minimums $3,000 + $2,000 + $1,200 = $6,200",
-    "aggressive_basis": "20% rule: $3,961,000 goal × 20% ÷ 12 × 1.5 geo − $4,997 fee = $94,028 → reverse math: not possible (no case value) → capped at the $25,000 the package manages"
+    "aggressive_basis": "20% rule: $4,000,000 goal × 20% ÷ 12 × 1.5 geo − $4,997 fee = $95,003 → reverse math: not possible (no case value) → capped at the $25,000 the package manages"
   },
   "selection_notes": [
     "Call focus unknown (no discovery call found, or Primary engagement not recorded) — no package recommended. Seller must say what the call was about before this can be locked in.",
@@ -76,7 +76,8 @@
     "Revenue $1M+, team under 5: Elite Coach Plus selected (Master's Circle requires 5+ team).",
     "Seller override: marketing + Elite Coach Plus per Slack request on 2026-11-16 (Growth tier chosen from revenue range $961K-$3M; Elite Coach Plus since team under 5).",
     "Seller override: switched marketing to Full Service Marketing — Starter (keeping Elite Coach Plus) per Slack request on 2026-11-16.",
-    "Seller override: switched coaching to Elite Coach (from Elite Coach Plus) per Slack request on 2026-11-16."
+    "Seller override: switched coaching to Elite Coach (from Elite Coach Plus) per Slack request on 2026-11-16.",
+    "Revenue confirmed by seller: $2,000,000."
   ],
   "pricing_mode": "bundled",
   "bundle_eligible_count": 2,
@@ -163,7 +164,7 @@
       "overage": null,
       "conservative_basis": "channel minimums $3,000 + $2,000 + $1,200 = $6,200",
       "aggressive_steps": [
-        "20% rule: $3,961,000 goal × 20% ÷ 12 × 1.5 geo − $4,997 fee = $94,028",
+        "20% rule: $4,000,000 goal × 20% ÷ 12 × 1.5 geo − $4,997 fee = $95,003",
         "reverse math: not possible (no case value)",
         "capped at the $25,000 the package manages"
       ],
@@ -191,9 +192,9 @@
         "source": "default"
       },
       "spanish_campaign": false,
-      "revenue_effective": 1980500,
+      "revenue_effective": 2000000,
       "revenue_goal": {
-        "value": 3961000,
+        "value": 4000000,
         "source": "not stated — 2× current revenue (audit-write.md)"
       },
       "case_value": {
@@ -212,7 +213,7 @@
       "ad_spend_cap": 25000
     },
     "flags": [
-      "Goal-based ad spend ($94,028) is above the $25,000 cap for Full Service Marketing — Starter — capped. Higher spend means a tier upgrade or the 15% overage fee (seller decision).",
+      "Goal-based ad spend ($95,003) is above the $25,000 cap for Full Service Marketing — Starter — capped. Higher spend means a tier upgrade or the 15% overage fee (seller decision).",
       "No case value (stated or default) — return projection left out."
     ]
   }
