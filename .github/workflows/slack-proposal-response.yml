@@ -364,6 +364,19 @@ jobs:
                  \"note\": \"Seller via Slack <date>\"} (one number → both ends), then run
                  reprice.mjs; the deck and the return projection use the seller's range.
                  'Use the recommended ad spend' removes ad_spend_override.
+               - Return confirmation ('confirm the 148.5× return', 'the return is right,
+                 show it'): a return above the 20× ceiling is held off the deck
+                 (investment.return_held). Set return_confirmed to {\"multiple\":
+                 <investment.return_held.peak_multiple, exactly>, \"note\": \"Seller via
+                 Slack <date>\"}, then run reprice.mjs; the return table goes back on the
+                 deck. It only covers that multiple — if the numbers change, it's held
+                 again. 'Hide the return' removes return_confirmed.
+                 A corrected average fee or close rate ('average fee is $9K', 'close
+                 rate on new leads is 25%'): edit that line in the "Investment inputs"
+                 block of the newest *_Research_Notes.txt in the firm folder (keep the
+                 format, source note "seller via Slack <date>"), then run reprice.mjs.
+                 Commit the notes file together with package_decision.json (the one
+                 exception to "only that file" in step 2).
                - Setup fees ('waive the AI Avatar setup', 'no setup fee for coaching'): never
                  edit setup_fees or setup_total — reprice.mjs sets them. Add the product's
                  exact name (as in marketing_name / coaching_name) to the setup_fee_waived

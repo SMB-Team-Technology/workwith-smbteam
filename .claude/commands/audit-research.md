@@ -249,6 +249,7 @@ confirmed); otherwise "not stated" — never an estimate or a benchmark.
 - Current cost per lead (stated): [one dollar figure; else "not stated"]
 - Average case value (stated, one figure): [one dollar figure the client gave for their average case/fee; a range → its low end, noted as such; else "not stated"]
 - Close rate (stated): [N% — the client's stated consult-to-signed or lead-to-signed rate; else "not stated"]
+- Referral share of cases (stated): [N% — share of signed cases that come from referrals, as the client said it (e.g. "we're 80% referral" → 80%); else "not stated". At 50% or more, the code treats the stated close rate as a referral close rate and uses the 15% default for paid leads]
 - Revenue goal (annual, one figure): [one dollar figure the client stated; else "not stated"]
 - Maximum monthly ad budget (stated): [one dollar figure the client said they can or will spend a month at most; else "not stated"]
 ```

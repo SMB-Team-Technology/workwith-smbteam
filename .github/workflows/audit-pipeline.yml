@@ -371,6 +371,10 @@ jobs:
               rev = d.get("revenue_effective")
               basis = f"HubSpot only has the range {label}" if label else "revenue wasn't stated on the call"
               warnings.append(f"⚠️ *Revenue unverified* — {basis}. This draft uses {money(rev).replace('/mo', '')}/yr. Reply with the firm's actual annual revenue (e.g. \"revenue is $300K\") before locking in.")
+          # Return / close-rate alerts from investment.mjs (e.g. a return held off
+          # the deck for being above the ceiling).
+          for a in ((d or {}).get("investment") or {}).get("alerts") or []:
+              warnings.append(f"⚠️ *{a}*")
           if d and d.get("team_size_stated") is None:
               warnings.append("⚠️ *Team size unknown* — assumed 3. Reply with the headcount if you know it.")
           if d.get("selection_error"):

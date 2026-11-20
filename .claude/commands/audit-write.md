@@ -138,7 +138,7 @@ Do the calculations that used to go in the retired `section_11_workings.txt` her
 # Year one: $X (from package_decision.json → investment.year_one_total — 12 months of fees + setup fees charged)
 # Ad spend (copied from investment.ad_spend — computed in code, never by hand):
 #   $X,XXX–$XX,XXX/mo · low end: <conservative_basis> · high end: <aggressive_steps joined>
-# Return (copied from investment.return): <method> · <basis> · scenarios: $X → N cases → $X → X.X× …
+# Return (copied from investment.return): <method> · <basis> · scenarios: $X → N cases → $X → X.X× … — or "held off the deck: <peak>× above the 20× ceiling" when investment.return_held is set
 # Investment inputs used: <investment.inputs, with each source> · flags: <investment.flags>
 # Why this range: <the client-facing sentence>
 # Pillar review: Lead Gen <red|amber|green> — <biggest gap> · Intake … · Team … · Profit …
@@ -565,6 +565,8 @@ How the code applies these rules where they are silent or conflict:
 6. **Defaults:** case value = the low end of the practice-area default range; close rate 15%; geo Tier 4; competitiveness Medium — each flagged when used. MVA uses the Accident & Injury CPL row; "Other" practice areas have no CPL benchmark, so the return projection is left out unless a cost was stated.
 7. **Rounding:** low end to the nearest $100, high end to the nearest $500.
 8. **Year one:** 12 × the monthly fees + the one-time setup fees charged (`setup_total`; waived fees count $0). Ad spend is shown separately.
+9. **Referral close rate:** when 50% or more of the firm's cases come from referrals (research notes "Referral share of cases (stated)", else an "N% referral" line in the notes), the stated close rate describes warm referrals, so the return uses the 15% default instead. Flagged, and posted as a ⚠️ seller alert.
+10. **Return ceiling:** when either scenario's return is above 20×, the return table is held off the deck (`investment.return_held`, `investment.return` = null) and a ⚠️ seller alert goes at the top of the Phase 1 Slack post, the deck-ready Slack reply and the email. It goes back on the deck only when the seller confirms that exact multiple in Slack (`return_confirmed`) or corrects the inputs.
 
 Always present ad spend as a range: **Conservative (low end) to Aggressive (high end).**
 
@@ -624,6 +626,7 @@ Calculate separately for conservative and aggressive ad spend amounts.
 - Cases = Leads × Close Rate (from transcript, or default 15%)
 - Revenue = Cases × Average Case Value (from transcript, or practice area default)
 - Return = Revenue ÷ Ad Spend
+- Above 20× → held off the deck until the seller confirms it (rule 10 above). A mostly-referral firm's stated close rate is not used (rule 9).
 
 **Practice area default case values** (use only if not stated in transcript): MVA $5K–$10K | Accident/Injury $5K–$8K | Criminal Defense $3K–$5K | Family Law $3K–$5K | Estate Planning $1.5K–$3K | Immigration $3K–$6K | Bankruptcy $1.5K–$3K | Business Law $3K–$7K. Always disclose when using defaults.
 

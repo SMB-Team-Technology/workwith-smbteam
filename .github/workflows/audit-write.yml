@@ -281,6 +281,18 @@ jobs:
               with open(preps[-1], encoding="utf-8") as f:
                   prep_lines = ["", "-" * 60, f.read().strip(), "-" * 60, ""]
 
+          # Seller alerts (investment.mjs → investment.alerts): problems that changed
+          # or held back numbers on the deck. They go first, ahead of the prep.
+          alert_lines = []
+          try:
+              import json
+              with open(os.path.join(os.environ["FRIENDLY_NAME"], "package_decision.json")) as f:
+                  alerts = (json.load(f).get("investment") or {}).get("alerts") or []
+              if alerts:
+                  alert_lines = ["⚠️ BEFORE YOU SEND OR PRESENT THIS DECK:", *[f"⚠️ {a}" for a in alerts], ""]
+          except Exception:
+              pass
+
           ad_lines = []
           try:
               import json
@@ -298,6 +310,7 @@ jobs:
               "",
               f"The proposal deck for {firm_name} is ready ahead of your proposal call.",
               "",
+              *alert_lines,
               *link_lines,
               *ad_lines,
               *prep_lines,
@@ -405,6 +418,16 @@ jobs:
           except Exception:
               pass
 
+          # Seller alerts go at the top of the reply, one ⚠️ line each, so the
+          # prep's 3,500-character cut can never drop them.
+          alerts_txt = ""
+          try:
+              with open(f"{slug}/package_decision.json") as f:
+                  alerts = (json.load(f).get("investment") or {}).get("alerts") or []
+              alerts_txt = "".join(f"\n⚠️ *{a}*" for a in alerts)
+          except Exception:
+              pass
+
           prep = ""
           import glob
           preps = sorted(glob.glob(f"{slug}/*_Seller_Prep.txt"), key=os.path.getmtime)
@@ -426,14 +449,14 @@ jobs:
               pass
 
           if verified and upload_ok and url:
-              text = f"{mention} ✅ *Proposal ready:* {firm}\n{url}" + marketing_tag + ad_review + prep
+              text = f"{mention} ✅ *Proposal ready:* {firm}" + alerts_txt + f"\n{url}" + marketing_tag + ad_review + prep
               if hubspot_failed:
                   text += ("\n⚠️ The link could not be saved to the HubSpot contact "
                            "(growth_profit_and_freedom_roadmap) — check the Actions log.")
               elif not has_contact:
                   text += "\n_No HubSpot contact on this proposal, so the contact field was not updated._"
           elif verified:
-              text = (ad_review.strip() + "\n" if ad_review else "") + (prep.strip() + "\n" if prep else "")
+              text = (alerts_txt.strip() + "\n" if alerts_txt else "") + (ad_review.strip() + "\n" if ad_review else "") + (prep.strip() + "\n" if prep else "")
               text += (
                   f"{mention} ⚠️ *Proposal deck built for {firm}, but the HubSpot upload failed* — "
                   f"{upload_error or 'no details'}.\n"
