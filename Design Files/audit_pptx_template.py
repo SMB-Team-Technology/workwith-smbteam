@@ -257,7 +257,7 @@ ROADMAP = [
      "items": ["What the package puts in place", "What the package puts in place"],
      "unlocks": "What this phase unlocks for the owner, in their terms."},             # FILL
     {"phase": "Operational Scale", "when": "Once the firm hits a milestone from the call",
-     "products": ["Fractional COO"],
+     "products": ["Managed Operations"],
      "items": ["What gets added, and why", "What gets added, and why"],
      "unlocks": "What this phase unlocks for the owner, in their terms."},             # FILL
     {"phase": "Optimize", "when": "Once the firm hits the next milestone",
@@ -1830,54 +1830,54 @@ POS_STANDARD_GOALS = [
 ]
 POS_LEVELS = {
     "Advisor": {
-        "n": 1, "ladder": "Financial statement deep dive, review and discussion. Advisory only.",
+        "n": 1, "ladder": "A monthly P&L and balance sheet deep dive, red flags and quarterly priorities.",
         "ask": "“Where should we focus?”",
         "title": "Understand your numbers. Know where to focus.",
         "work_head": "What Advisor is",
-        "work": "A financial statement advisory engagement: an in-depth review and discussion of "
-                "your P&L and balance sheet, with red flags surfaced.",
+        "work": "Focused financial strategy: a monthly deep dive into your P&L and balance sheet "
+                "to see where the money goes, where profit leaks, and what to fix first.",
         "decisions": ["Are we becoming more profitable?", "Where are we spending too much?",
                       "Which financial issues need attention first?",
                       "What should our financial goals be next quarter?"],
         "quote": "“I understand what my numbers are telling me.”*",
-        "foot": "*Financial statement advisory only: no projects or between-call questions.",
+        "foot": "*Financial strategy and review: quarterly projects start at Director.",
         "includes": None,
         "focus": "Financial statement deep dive · Red flags · Quarterly priorities and financial goals",
     },
     "Director": {
-        "n": 2, "ladder": "Adds projects: a quarterly roadmap and recurring KPI dashboard.",
+        "n": 2, "ladder": "Adds done-with-you projects: a quarterly roadmap and recurring KPI dashboard.",
         "ask": "“How do we move forward?”",
         "title": "Turn financial insight into a plan for growth.",
         "work_head": "Example of the work",
-        "work": "An illustrative quarterly roadmap, recurring KPI dashboard, and examples of cash "
-                "flow, compensation or marketing analysis.",
+        "work": "An illustrative quarterly roadmap, recurring KPI dashboard, and examples of budget, "
+                "forecast, cash flow, compensation or marketing ROI analysis.",
         "decisions": ["Can we afford our next hire?", "How much can we safely invest in marketing?",
                       "Will a compensation change improve profitability?",
                       "What needs to happen this quarter to reach our goals?"],
         "quote": "“I can make growth decisions with a financial plan behind them.”",
         "foot": None,
         "includes": "Includes everything in Advisor, plus quarterly projects",
-        "focus": "Quarterly roadmap · Recurring KPIs · Cash flow, compensation or marketing analysis",
+        "focus": "Quarterly roadmap · Recurring KPIs · Budget, cash flow, compensation or marketing ROI",
     },
     "Partner": {
-        "n": 3, "ladder": "Adds advanced priorities such as capital, tax and succession planning.",
+        "n": 3, "ladder": "Adds advanced priorities such as pricing, expansion, capital and succession planning.",
         "ask": "“How do we navigate major decisions?”",
         "title": "Make big decisions about your firm’s future.",
         "work_head": "Example of the work",
-        "work": "An illustrative advanced planning example: capital strategy, succession scenarios, "
-                "or analysis across practice areas and locations.",
+        "work": "An illustrative advanced planning example: expansion modeling, capital strategy, "
+                "succession scenarios, or profitability by practice area, location or attorney.",
         "decisions": ["Should we expand into another market?", "How should we fund our next stage of growth?",
                       "Which practice areas are creating the most value?",
                       "How do we prepare for succession or a transition?"],
         "quote": "“I have financial leadership to navigate bigger decisions.”",
         "foot": None,
         "includes": "Includes everything in Advisor and Director, plus advanced planning",
-        "focus": "Capital strategy · Succession planning · Analysis across practice areas and locations",
+        "focus": "Expansion modeling · Capital strategy · Succession planning · Profitability by practice area",
     },
 }
-POS_BOOKS = [(1, "Under $1M", "Core monthly bookkeeping for smaller firms."),
-             (2, "$1.0M – $2.9M", "The same core service, sized for a growing team."),
-             (3, "$3.0M – $3.9M", "The same core service, sized for added volume and complexity."),
+POS_BOOKS = [(1, "Up to $1M", "Clean, organized books and monthly financials by the 20th."),
+             (2, "$1M – $2M", "Adds monthly trust reconciliation and financials by the 15th."),
+             (3, "$2M – $4M", "Higher volume and our fastest close: financials by the 10th."),
              (4, "$4M+", "Scoped to fit larger, more complex firms.")]
 
 
@@ -1949,7 +1949,7 @@ def build_pos_two_sides(prs):
 
 def build_pos_books(prs):
     slide = pos_slide(prs, "pos_books", "Bookkeeping that fits the size of your firm.",
-                      "The same core monthly service at every level. Your firm's annual revenue sets the level.")
+                      "Your firm's annual revenue and team size set the level.")
     gap = 0.18
     cw = (9.40 - 3 * gap) / 4
     y, h = 1.52, 1.86
@@ -1971,9 +1971,9 @@ def build_pos_books(prs):
     add_rect(slide, 0.30, 3.52, 9.40, 1.40, fill=WHITE)
     add_rect(slide, 0.30, 3.52, 0.05, 1.40, fill=OCEAN_BLUE)
     add_text(slide, "INCLUDED AT EVERY LEVEL", 0.50, 3.60, 6.0, 0.22, 8, OCEAN_BLUE, bold=True, fit=False)
-    items = ["Monthly balance sheet", "Monthly profit & loss (current month and year-to-date vs. prior year)",
-             "Trust account reconciliation summary", "Bank, credit card and loan reconciliations",
-             "Month-end adjusting entries", "A dedicated point of contact for bookkeeping questions"]
+    items = ["A reviewed P&L and balance sheet every month", "Every transaction categorized",
+             "Bank, credit card and loan accounts reconciled", "QuickBooks, banks and your legal platform connected",
+             "Books built on the SMB law firm Chart of Accounts", "A dedicated point of contact for bookkeeping questions"]
     add_bullets(slide, items[:3], 0.46, 3.86, 4.60, 1.02, 9, DARK_TEXT, OCEAN_BLUE, label="pos_books included 1")
     add_bullets(slide, items[3:], 5.06, 3.86, 4.56, 1.02, 9, DARK_TEXT, OCEAN_BLUE, label="pos_books included 2")
 

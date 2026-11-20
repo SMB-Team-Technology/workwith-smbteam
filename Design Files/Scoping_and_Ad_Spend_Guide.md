@@ -462,39 +462,21 @@ If the site needs a rebuild, the marketing package MUST include Web + SEO (Full 
 
 Every client must have at least one non-marketing package. Clients with marketing + non-marketing services churn at half the rate.
 
-### Step 6A — Apply Eligibility Filters
+**Source of truth:** prices, requirements and deliverables for Managed Operations, the Growth Academy add-ons, Fractional CFO (Managed Financials) and bookkeeping are in `.claude/commands/audit-write.md` → "SELECT NON-MARKETING PACKAGE" and "SELECT BOOKKEEPING PACKAGE", and in code in `scripts/lib/pricing.mjs`. This section is a summary only. If it ever disagrees with those files, they win.
 
-**Revenue Filters:**
-- **Under $400K:** Remove ALL Fractional COO products and all bundles containing them (FCOO Advisor and Elite Coach + FCOO Advisor need $400K+)
-- **Under $500K:** Remove ALL Fractional CFO products (FCFO Advisor needs $500K+)
-- **Under $3M:** Remove FCOO Partner and the Elite Coach / Master's Circle + FCOO Partner pairs
-- **Under $1M:** Remove Master's Circle and all bundles containing it
+### Step 6A — Managed Operations (replaces coaching and Fractional COO, Nov 2026)
 
-**Team Filters:**
-- **Fewer than 5 team members:** Remove ALL Master's Circle options
-- **No dedicated ops, marketing, or intake team member:** Remove ALL Master's Circle options
+Elite Coach, Elite Coach Plus, Coach Essentials (+ Plus), FCOO Advisor / Director / Partner, the coaching + FCOO pairs and Elite 360 are retired. Managed Operations is one packaged product in three tiers:
 
-### Step 6B — Select Based on Revenue, Team, and Needs
+| Tier | Package | Stand-Alone | Requirements |
+|---|---|---|---|
+| Managed Operations Tier 1 | $3,297/mo | $3,497/mo | $250K+ revenue |
+| Managed Operations Tier 2 | $5,497/mo | $5,997/mo | $500K+ revenue, team of 5+ |
+| Managed Operations Tier 3 | $7,497/mo | $7,997/mo | $1M+ revenue, team of 10+ |
 
-| Revenue | Team Size | Primary Need | Recommended Package | Bundled Price |
-|---|---|---|---|---|
-| $250K–$400K | Any, tight budget | Group coaching only | Coach Essentials | $1,000/mo |
-| $250K–$400K | Any, tight budget | Group coaching + 1:1 support | Coach Essentials Plus | $1,997/mo |
-| $250K–$400K | Any | Growth coaching | Elite Coach | $2,600/mo |
-| $400K–$1M | Any | Growth coaching + accountability | Elite Coach Plus | $3,200/mo |
-| $400K–$1M | Growing team | Coaching + operations help | Elite Coach + FCOO Advisor | $5,694/mo |
-| $1M+ | Growing team, larger ops need | Coaching + operations help | Elite Coach + FCOO Director | $7,394/mo |
-| $3M+ | Growing team, largest ops need | Coaching + operations help | Elite Coach + FCOO Partner | $11,394/mo |
-| $1M+ | Under 5 | Coaching + strategy | Elite Coach Plus | $3,200/mo |
-| $1M+ | Under 5 | Operations + team building | FCOO Advisor (standalone) | $3,297/mo |
-| $1M+ | 5+ with dedicated staff | Community + team training | Master's Circle | $4,600/mo |
-| $1M+ | 5+ with dedicated staff | Community + operations | Master's Circle + FCOO Advisor | $6,694/mo |
-| $1M+ | 5+ established leaders | Advanced operations | FCOO Director (standalone) | $4,997/mo |
-| $2M+ | 5+ with dedicated staff | Full support | Master's Circle + FCOO Director | $8,394/mo |
-| $3M+ | Large team | Executive-level operations | FCOO Partner | $8,997/mo |
-| $3M+ | Large established team | Full ecosystem | Master's Circle + FCOO Partner | $12,394/mo |
+Every tier includes Growth Academy (Tier 3: Master's Circle Growth Academy), quarterly planning and projects, and monthly working sessions. There is no setup fee. "Master's Circle" means the Growth Academy Master's Circle add-on, or Tier 3 when it comes up in a Managed Operations conversation.
 
-**Coach Essentials note:** Coach Essentials is group coaching only and cannot be sold standalone ($1,000/mo package price only). Coach Essentials Plus adds a monthly 1:1 coaching call and can be sold standalone at $2,497/mo. Both are lower-cost alternatives to Elite Coach in the same $250K–$400K band — recommend them only when the transcript indicates a tighter budget, not as the default for that band.
+**Growth Academy add-ons:** Growth Academy $1,497/mo, Growth Academy Master's Circle $2,497/mo. These are only sold with another core package, and they count as a service for package pricing.
 
 ### Step 6C — When to Add Fractional CFO
 
@@ -505,28 +487,26 @@ Add Fractional CFO when ANY of these signals appear in the transcript:
 - Owner doesn't know their cost per acquisition
 - Explicitly mentions wanting help with finances
 
-**FCFO (ProfitOS) pricing and requirements:** Advisor $3,297/mo bundled, $3,797/mo stand-alone ($500K+, solo attorney) — financial statement advisory only; Director $4,997/mo bundled, $5,797/mo stand-alone ($1M–$2M, team up to 5) — adds a quarterly roadmap of projects and a recurring KPI dashboard; Partner $8,997/mo bundled, $9,997/mo stand-alone ($2M–$3.5M, team up to 10; larger firms need a custom agreement) — adds tax, capital and succession planning. The firm must use SMB bookkeeping or deliver complete, accurate financials by the 10th of each month.
-
-**Combinations (All Services tab):** Elite Coach + FCOO is $203 below the sum of the two bundled prices; Master's Circle + FCOO is $1,203 below. Elite Coach or Master's Circle + FCFO, FCFO + FCOO, and Elite 360 (Elite Coach + Full Service Marketing) are the sum of the bundled prices.
+**Fractional CFO (Managed Financials Level 1 / 2 / 3, written FCFO Advisor / Director / Partner):** $3,497 / $5,497 / $9,997 package price, $3,997 / $5,997 / $10,997 stand-alone, setup $1,000 / $1,500 / $2,000 (never waivable); for $500K–$1M / $1M–$2M / $2M–$4M (above $4M is a custom agreement). The firm must use SMB bookkeeping or deliver complete, accurate financials by the 10th of each month.
 
 ### Step 6D — When to Add Bookkeeping
 
 Add Bookkeeping when the firm has no current bookkeeper or their financials are a mess:
 
-| Revenue | Bookkeeping Level | Bundled Price | Stand-Alone Price | Setup Fee |
+| Revenue / team | Bookkeeping Level | Package Price | Stand-Alone Price | Setup Fee |
 |---|---|---|---|---|
-| Under $1M | Level 1 | $1,697/mo | $1,997/mo | $1,500 (CANNOT be waived) |
-| $1M–$2.9M | Level 2 | $2,197/mo | $2,597/mo | $2,000 (CANNOT be waived) |
-| $3M–$3.9M | Level 3 | $3,497/mo | $4,597/mo | $2,500 (CANNOT be waived) |
+| Up to $1M, up to 5 employees | Level 1 | $1,997/mo | $2,997/mo | $2,000 (CANNOT be waived) |
+| $1M–$2M, team up to 10 | Level 2 | $2,997/mo | $3,997/mo | $3,500 (CANNOT be waived) |
+| $2M–$4M, team up to 20 | Level 3 | $3,997/mo | $4,997/mo | $5,000 (CANNOT be waived) |
 | $4M+ | Level 4 | Custom | Custom | Custom |
 
-Included at every level: monthly balance sheet, P&L (month and year-to-date vs. prior year), trust reconciliation summary, bank/card/loan/trust reconciliations, month-end adjusting entries, a dedicated point of contact, and 2 hours/month of Controller Services. The setup fee covers onboarding and clean-up of the last three months; earlier clean-up or trust variance work is $100/hour.
+QuickBooks Online only; Clio, MyCase, Lawmatics or Practice Panther. Level 2 and up add monthly three-way trust reconciliation and cleanup. Payroll/W-2s and AP/1099s aren't included.
 
 **Note:** Bookkeeping is typically a Phase 3 recommendation (growth roadmap), not Phase 1 — unless the firm's financials are in such poor shape that it's an immediate need.
 
-### Step 6E — LSA Add-On for Coaching-Only Clients
+### Step 6E — LSA Add-On for Non-Marketing Clients
 
-If a client is getting coaching only (no marketing package), they can add LSA management for $900/month. This gives them a basic lead generation channel while they build toward full marketing.
+If a client is getting Managed Operations or Managed Financials only (no marketing package), they can add LSA management for $900/month. This gives them a basic lead generation channel while they build toward full marketing.
 
 ### Step 6F — General Add-Ons
 
@@ -563,7 +543,7 @@ Standalone add-on line items available from the catalog. Most are one-time or pe
 | Bookkeeping Hourly Rate | $50/hr |
 | Course Bundle (8 courses) | $9,997 |
 
-**In-Person Workshop Ticket** (tiered by the client's existing package):
+**In-Person Workshop Ticket** (tiered by the client's existing package). The sheet still lists these under the retired coaching names. Managed Operations includes 1 in-person ticket to each quarterly workshop (2 at Tier 3), so check any extra-ticket price with Sales:
 
 | Client Type | Price |
 |---|---|
@@ -595,7 +575,7 @@ Maximum Recommended Spend = Monthly Revenue × 35%
 1. First, check if the client is growing — if their GOAL revenue supports the spend at 35%, note this: "Your current revenue of $X supports a maximum investment of $Y/month. However, as you grow toward your goal of $Z, this investment will represent a decreasing percentage of revenue."
 2. If still too high, reduce ad spend first (but not below practice area minimums)
 3. If still too high, consider a lower marketing tier
-4. If still too high, simplify the non-marketing recommendation (e.g., Elite Coach instead of Elite Coach + FCOO)
+4. If still too high, simplify the non-marketing recommendation (e.g., a lower Managed Operations tier, or drop the Fractional CFO)
 5. Never drop below $2,497/month total MRR
 
 ### Calculate Savings for Block 3:
@@ -615,15 +595,15 @@ Always show savings from EVERY package combined, not just one.
 | Full Service Marketing Growth | $8,997 | $7,497 | $1,500 |
 | Full Service Marketing Dominate | $12,497 | $10,497 | $2,000 |
 | Full Service Marketing Platinum | $18,997 | $15,997 | $3,000 |
-| Elite Coach | $3,497 | $2,600 | $897 |
-| Elite Coach Plus | $3,497 | $3,200 | $297 |
-| Master's Circle | $4,997 | $4,600 | $397 |
-| FCOO Advisor | $3,797 | $3,297 | $500 |
-| FCOO Director | $5,797 | $4,997 | $800 |
-| FCOO Partner | $9,997 | $8,997 | $1,000 |
-| FCFO Advisor | $3,797 | $3,297 | $500 |
-| FCFO Director | $5,797 | $4,997 | $800 |
-| FCFO Partner | $9,997 | $8,997 | $1,000 |
+| Managed Operations Tier 1 | $3,497 | $3,297 | $200 |
+| Managed Operations Tier 2 | $5,997 | $5,497 | $500 |
+| Managed Operations Tier 3 | $7,997 | $7,497 | $500 |
+| FCFO Advisor | $3,997 | $3,497 | $500 |
+| FCFO Director | $5,997 | $5,497 | $500 |
+| FCFO Partner | $10,997 | $9,997 | $1,000 |
+| Bookkeeping Level 1 | $2,997 | $1,997 | $1,000 |
+| Bookkeeping Level 2 | $3,997 | $2,997 | $1,000 |
+| Bookkeeping Level 3 | $4,997 | $3,997 | $1,000 |
 
 ---
 
@@ -873,17 +853,17 @@ If truly critical data is missing and cannot be estimated, flag it in the resear
 - Must verify client has funds to cover 4 months of services
 - If the transcript shows they're consistently generating $15K+/month, they likely qualify
 - Be conservative with ad spend recommendations — these firms have less margin for error
-- Consider coaching-only (Elite Coach at $2,600) + LSA add-on ($900) as an entry point = $3,500/mo
+- Consider Managed Operations Tier 1 ($3,497 stand-alone; approval and scoping required under $300K) + LSA add-on ($900) as an entry point
 - The goal is to get them to $500K+ so they qualify for Starter tier
 
 **Firms Over $3M Revenue:**
 - Default to Platinum marketing tier
-- Master's Circle is the default coaching recommendation (if team qualifies)
-- Consider FCOO Director or Partner level (not just Advisor)
+- Managed Operations Tier 3 is the default (team of 10+), otherwise Tier 2
+- Consider Fractional CFO Director or Partner (not just Advisor)
 - Bookkeeping is likely needed at this size
 
 **Gateway Plan Situations:**
-- If the firm has a website contract that doesn't expire for 5-12 months, recommend coaching only until 3 months before contract expiration
+- If the firm has a website contract that doesn't expire for 5-12 months, recommend Managed Operations only until 3 months before contract expiration
 - Then transition to Full Service Marketing at the appropriate tier
 - Note this timing in the growth roadmap phases
 
@@ -1097,77 +1077,60 @@ Essentials additionally requires single location + single practice area (scope f
 | Dominate and Platinum removed below | 2000000 |
 | Platinum removed below | 3000000 |
 | Under this revenue — must verify 4 months of funds | 250000 |
-| FCOO products removed below | 400000 |
+| Approval + scoping required below | 300000 |
+| Managed Operations Tier 1 minimum revenue | 250000 |
+| Managed Operations Tier 2 minimum revenue (and team 5+) | 500000 |
+| Managed Operations Tier 3 minimum revenue (and team 10+) | 1000000 |
 | FCFO products removed below | 500000 |
-| FCOO Partner and its pairs removed below | 3000000 |
-| Master's Circle removed below | 1000000 |
 | FCFO Advisor minimum revenue | 500000 |
 | FCFO Director minimum revenue | 1000000 |
 | FCFO Partner minimum revenue | 2000000 |
 | Minimum MRR — never recommend below | 2497 |
 | Ad spend overage management fee percentage | 15 |
 
-### Non-Marketing Package Monthly Fees (Bundled and Stand-Alone, USD/month)
+### Non-Marketing Package Monthly Fees (Package and Stand-Alone, USD/month)
 
-| Package | Bundled | Stand-Alone | Savings |
+| Package | Package Price | Stand-Alone | Savings |
 |---|---|---|---|
-| Coach Essentials | 1000 | — (cannot be sold standalone) | — |
-| Coach Essentials Plus | 1997 | 2497 | 500 |
-| Elite Coach | 2600 | 3497 | 897 |
-| Elite Coach Plus | 3200 | 3497 | 297 |
-| Elite Coach + FCOO Advisor | 5694 | — | — |
-| Elite Coach + FCOO Director | 7394 | — | — |
-| Elite Coach + FCOO Partner | 11394 | — | — |
-| Master's Circle | 4600 | 4997 | 397 |
-| Master's Circle + FCOO Advisor | 6694 | — | — |
-| Master's Circle + FCOO Director | 8394 | — | — |
-| Master's Circle + FCOO Partner | 12394 | — | — |
-| FCOO Advisor | 3297 | 3797 | 500 |
-| FCOO Director | 4997 | 5797 | 800 |
-| FCOO Partner | 8997 | 9997 | 1000 |
-| FCFO Advisor | 3297 | 3797 | 500 |
-| FCFO Director | 4997 | 5797 | 800 |
-| FCFO Partner | 8997 | 9997 | 1000 |
-| LSA Add-On (coaching-only clients) | 900 | — | — |
+| Managed Operations Tier 1 | 3297 | 3497 | 200 |
+| Managed Operations Tier 2 | 5497 | 5997 | 500 |
+| Managed Operations Tier 3 | 7497 | 7997 | 500 |
+| Growth Academy (add-on, only with another core package) | 1497 | — | — |
+| Growth Academy Master's Circle (add-on, only with another core package) | 2497 | — | — |
+| FCFO Advisor (Managed Financials Level 1) | 3497 | 3997 | 500 |
+| FCFO Director (Managed Financials Level 2) | 5497 | 5997 | 500 |
+| FCFO Partner (Managed Financials Level 3) | 9997 | 10997 | 1000 |
+| LSA Add-On (non-marketing clients) | 900 | — | — |
 
 ### Non-Marketing Package — Revenue and Team Eligibility (USD/year)
 
-| Revenue Low | Revenue High | Team Size | Recommended Package | Bundled Monthly |
+| Revenue Low | Revenue High | Team Size | Recommended Package | Package Monthly |
 |---|---|---|---|---|
-| 250000 | 400000 | any, tight budget | Coach Essentials | 1000 |
-| 250000 | 400000 | any, tight budget | Coach Essentials Plus | 1997 |
-| 250000 | 400000 | any | Elite Coach | 2600 |
-| 400000 | 1000000 | any | Elite Coach Plus | 3200 |
-| 400000 | 1000000 | growing | Elite Coach + FCOO Advisor | 5694 |
-| 1000000 | — | growing, larger ops need | Elite Coach + FCOO Director | 7394 |
-| 3000000 | — | growing, largest ops need | Elite Coach + FCOO Partner | 11394 |
-| 1000000 | — | under 5 | Elite Coach Plus | 3200 |
-| 1000000 | — | under 5 | FCOO Advisor | 3297 |
-| 1000000 | — | 5+ with dedicated staff | Master's Circle | 4600 |
-| 1000000 | — | 5+ with dedicated staff | Master's Circle + FCOO Advisor | 6694 |
-| 1000000 | — | 5+ established leaders | FCOO Director | 4997 |
-| 2000000 | — | 5+ with dedicated staff | Master's Circle + FCOO Director | 8394 |
-| 3000000 | — | large team | FCOO Partner | 8997 |
-| 3000000 | — | large established team | Master's Circle + FCOO Partner | 12394 |
+| 250000 | — | any | Managed Operations Tier 1 | 3297 |
+| 500000 | — | 5+ | Managed Operations Tier 2 | 5497 |
+| 1000000 | — | 10+ | Managed Operations Tier 3 | 7497 |
+| 500000 | 999999 | up to 5 | FCFO Advisor | 3497 |
+| 1000000 | 1999999 | up to 10 | FCFO Director | 5497 |
+| 2000000 | 3999999 | up to 20 | FCFO Partner | 9997 |
 
-### Bookkeeping Fees (Bundled, USD/month)
+### Bookkeeping Fees (Package, USD/month)
 
-| Level | Revenue Low | Revenue High | Bundled Monthly | Stand-Alone Monthly | Setup Fee |
+| Level | Revenue Low | Revenue High | Package Monthly | Stand-Alone Monthly | Setup Fee |
 |---|---|---|---|---|---|
-| Level 1 | 0 | 999999 | 1697 | 1997 | 1500 |
-| Level 2 | 1000000 | 2999999 | 2197 | 2597 | 2000 |
-| Level 3 | 3000000 | 3999999 | 3497 | 4597 | 2500 |
+| Level 1 | 0 | 999999 | 1997 | 2997 | 2000 |
+| Level 2 | 1000000 | 1999999 | 2997 | 3997 | 3500 |
+| Level 3 | 2000000 | 3999999 | 3997 | 4997 | 5000 |
 | Level 4 | 4000000 | — | Custom | Custom | Custom |
 
-### One-Time Setup Fees (USD, mandatory; waivable by the seller except bookkeeping)
+### One-Time Setup Fees (USD, mandatory; waivable by the seller except bookkeeping and FCFO)
 
 | Product | Setup Fee |
 |---|---|
 | Paid Ads Essentials, Full Service Marketing Essentials (Video Ads Express Bootcamp) | 497 |
 | Paid Ads and Full Service Marketing Starter–Platinum (AI Avatar setup) | 1850 |
-| Web + SEO (all tiers), Coach Essentials / Plus, AI Workforce Pro, Fractional CTO | 0 |
-| Elite Coach, Elite Coach Plus, Master's Circle, FCOO (all levels), FCFO (all levels) — a packaged coaching + FCOO pair carries one fee | 1500 |
-| Bookkeeping Level 1 / 2 / 3 (never waivable) | 1500 / 2000 / 2500 |
+| Web + SEO (all tiers), Managed Operations (all tiers), Growth Academy add-ons, AI Workforce Pro, Fractional CTO | 0 |
+| FCFO Advisor / Director / Partner (never waivable) | 1000 / 1500 / 2000 |
+| Bookkeeping Level 1 / 2 / 3 (never waivable) | 2000 / 3500 / 5000 |
 | OmniSocial AI (any package) | 1850 |
 
 ### General Add-Ons (USD)
@@ -1197,7 +1160,7 @@ Essentials additionally requires single location + single practice area (scope f
 | Done-For-You Review Generation, Level 1 | 500 | per month |
 | Bookkeeping Hourly Rate | 50 | per hour |
 | Course Bundle (8 courses) | 9997 | one-time |
-| Workshop Ticket — Elite Coach & Master's Circle clients | 697 | each |
+| Workshop Ticket — Elite Coach & Master's Circle clients (sheet not yet updated for Managed Operations — confirm with Sales) | 697 | each |
 | Workshop Ticket — FCOO & FCFO clients | 997 | each |
 | Workshop Ticket — Coach Essentials/Plus clients | 1497 | each |
 | Workshop Ticket — non-coaching clients | 1997 | each |
