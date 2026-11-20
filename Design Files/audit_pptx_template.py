@@ -372,7 +372,7 @@ else:
 #     client consent) is left out.
 #   - A slide containing a phrase in LEADSOS_HOLD is left out until it is
 #     confirmed for every client deck: delete the phrase here to add it back.
-LEADSOS_HOLD = ("37%", "$100M+")   # Vanessa to confirm (Nov 17): AI-search stat, media spend
+LEADSOS_HOLD = ()   # nothing held: Vanessa cleared the 37% and $100M+ figures (Nov 20)
 LEADSOS_DECK = os.environ.get("LEADSOS_DECK") or os.path.join(
     os.path.dirname(os.path.dirname(os.path.abspath(__file__))), ".source-decks", "LeadsOS.pptx")
 
