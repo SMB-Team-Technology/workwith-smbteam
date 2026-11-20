@@ -190,11 +190,23 @@ jobs:
               with open(preps[0], encoding="utf-8") as f:
                   prep_lines = ["", "-" * 60, f.read().strip(), "-" * 60, ""]
 
+          # Seller alerts (investment.mjs → investment.alerts) go first.
+          alert_lines = []
+          try:
+              import json
+              with open(os.path.join(friendly_name, "package_decision.json")) as f:
+                  alerts = (json.load(f).get("investment") or {}).get("alerts") or []
+              if alerts:
+                  alert_lines = ["⚠️ BEFORE YOU SEND OR PRESENT THIS DECK:", *[f"⚠️ {a}" for a in alerts], ""]
+          except Exception:
+              pass
+
           body = "\n".join([
               f"Hi {sales_rep},",
               "",
               f"The proposal deck for {firm_name} is ready ahead of your proposal call.",
               "",
+              *alert_lines,
               *link_lines,
               *prep_lines,
               "Attached: Proposal Deck (PowerPoint) — share this on screen during the call.",

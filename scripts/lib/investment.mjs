@@ -79,6 +79,14 @@ const DEFAULT_CLOSE_RATE = 0.15;
 const CONSERVATIVE_CPL_CUSHION = 1.2;
 const OVERAGE_FEE = 0.15;                 // 2026 pricing sheet: 15% management fee on ad spend above the tier cap
 const SCOPING_AD_SPEND = 25_000;          // escalation flag threshold
+// DECISION: a return above this multiple is almost always a bad input (a case
+// value read wrong, a referral close rate applied to paid leads). The return
+// table is held off the deck until the seller confirms it in Slack.
+export const RETURN_CEILING = 20;
+// DECISION: when at least this share of the firm's cases come from referrals,
+// the close rate stated on the call describes warm referrals, not paid leads,
+// so the default close rate is used for the paid-ads projection instead.
+export const MOSTLY_REFERRALS = 0.5;
 
 // ─── Research-notes inputs ───────────────────────────────────────────────────
 
@@ -114,6 +122,20 @@ function parsePercent(value) {
   if (value == null || NOT_STATED.test(value)) return null;
   const m = String(value).match(/(\d+(?:\.\d+)?)\s*%/);
   return m ? parseFloat(m[1]) / 100 : null;
+}
+
+/**
+ * Share of cases from referrals: the "Referral share of cases (stated)" line,
+ * else the first "N% referral(s)" anywhere in the notes (older notes have it
+ * only in the lead-sources line, e.g. "We're probably like 80% referral base").
+ */
+function parseReferralShare(text, value) {
+  const stated = parsePercent(value);
+  if (stated != null) return stated;
+  if (value != null) return null;   // the line exists and says "not stated"
+  const m = String(text || '').match(/(\d{1,3}(?:\.\d+)?)\s*%\s*(?:of\s+(?:our|their|the)\s+(?:cases|clients|business)\s+(?:come\s+|comes\s+)?(?:from\s+)?)?referral/i);
+  const n = m ? parseFloat(m[1]) / 100 : null;
+  return n != null && n <= 1 ? n : null;
 }
 
 function parsePracticeArea(value) {
@@ -156,6 +178,7 @@ export function parseInvestmentInputs(text) {
     currentCostPerLead: parseDollars(field(text, 'current cost per lead \\(stated\\)')),
     caseValue: parseDollars(field(text, 'average case value \\(stated, one figure\\)')),
     closeRate: parsePercent(field(text, 'close rate \\(stated\\)')),
+    referralShare: parseReferralShare(text, field(text, 'referral share of cases \\(stated\\)')),
     revenueGoal: parseDollars(field(text, 'revenue goal \\(annual, one figure\\)')),
     maxAdBudget: parseDollars(field(text, 'maximum monthly ad budget \\(stated\\)')),
   };
@@ -205,6 +228,7 @@ function weightedCpl(pa) {
  */
 export function computeInvestment(d, inputs = {}) {
   const flags = [];          // internal — BUILD NOTES only, never on a slide
+  const alerts = [];         // seller-facing ⚠️ lines, posted at the top of Slack and the email
   const products = productLines(d);
   const monthly = d.total_bundled || products.reduce((s, p) => s + (p.charged || 0), 0);
   const setupFees = (d.setup_fees ?? []).map(f => ({ product: f.product, label: f.label, amount: f.amount, charged: f.charged ?? f.amount, waived: !!f.waived }));
@@ -232,6 +256,7 @@ export function computeInvestment(d, inputs = {}) {
     return: null,
     inputs: {},
     flags,
+    alerts,
   };
 
   const mkt = d.marketing_name || '';
@@ -260,8 +285,20 @@ export function computeInvestment(d, inputs = {}) {
   const caseValueStated = inputs.caseValue != null;
   const caseValue = inputs.caseValue ?? DEFAULT_CASE_VALUE[pa]?.[0] ?? null;
   // DECISION: the default case values are ranges; the low end is used.
-  const closeStated = inputs.closeRate != null;
-  const closeRate = inputs.closeRate ?? DEFAULT_CLOSE_RATE;
+  const referralShare = inputs.referralShare ?? null;
+  const referralClose = inputs.closeRate != null && referralShare != null && referralShare >= MOSTLY_REFERRALS;
+  let closeStated = inputs.closeRate != null;
+  let closeRate = inputs.closeRate ?? DEFAULT_CLOSE_RATE;
+  let closeSource = closeStated ? 'stated on the call' : `default ${DEFAULT_CLOSE_RATE * 100}%`;
+  if (referralClose) {
+    // DECISION: a close rate on a mostly-referral flow is not a paid-lead close rate.
+    closeStated = false;
+    closeRate = DEFAULT_CLOSE_RATE;
+    closeSource = `default ${DEFAULT_CLOSE_RATE * 100}% — the ${Math.round(inputs.closeRate * 100)}% stated on the call is for a mostly-referral flow (${Math.round(referralShare * 100)}% referrals), not paid leads`;
+    const msg = `Stated close rate (${Math.round(inputs.closeRate * 100)}%) not used: ${Math.round(referralShare * 100)}% of cases are referrals, so the return uses the ${DEFAULT_CLOSE_RATE * 100}% default for paid leads.`;
+    flags.push(msg);
+    alerts.push(msg);
+  }
   const fee = d.marketing_price_bundled || 0;
   const cap = AD_CAPS[mkt.replace(/\s*\(.*\)$/, '')] ?? null;
   if (cap == null) flags.push(`No ad spend cap on file for "${mkt}" — cap not applied.`);
@@ -274,7 +311,8 @@ export function computeInvestment(d, inputs = {}) {
     revenue_effective: revenue,
     revenue_goal: { value: goal, source: goalSource },
     case_value: { value: caseValue, source: caseValueStated ? 'stated on the call' : 'practice-area default (low end)' },
-    close_rate: { value: closeRate, source: closeStated ? 'stated on the call' : 'default 15%' },
+    close_rate: { value: closeRate, source: closeSource, stated: inputs.closeRate ?? null },
+    referral_share: referralShare,
     current_ad_spend: inputs.currentAdSpend ?? null,
     current_cost_per_case: inputs.currentCostPerCase ?? null,
     current_cost_per_lead: inputs.currentCostPerLead ?? null,
@@ -436,7 +474,7 @@ export function computeInvestment(d, inputs = {}) {
   if (!caseValueStated) flags.push(`Case value assumed (${money(caseValue)}, low end of the ${pa} default) — confirm the real fee per case.`);
   if (scenarios[0].return_multiple < 1) flags.push(`Low-end return is under 1× (${scenarios[0].return_multiple}×) — review before presenting.`);
 
-  investment.return = {
+  const ret = {
     method,
     basis,
     case_value: caseValue,
@@ -448,6 +486,28 @@ export function computeInvestment(d, inputs = {}) {
     scenarios,
     disclaimer: 'Illustrative arithmetic, not a forecast.',
   };
+
+  // ── Ceiling: an implausible return never reaches the deck unconfirmed ────
+  // The seller confirms the exact multiple in Slack (package_decision.json →
+  // return_confirmed: { multiple, note }). A confirmation only covers the
+  // numbers it was given for: if the inputs change, the return is held again.
+  const peak = Math.max(...scenarios.map(s => s.return_multiple));
+  const confirmed = d.return_confirmed;
+  if (peak > RETURN_CEILING) {
+    if (confirmed && Number(confirmed.multiple) === peak) {
+      ret.seller_confirmed = true;
+      flags.push(`Return of ${peak}× is above the ${RETURN_CEILING}× ceiling — shown because the seller confirmed it${confirmed.note ? ` (${confirmed.note})` : ''}.`);
+    } else {
+      const why = `${money(caseValue)} average case${caseValueStated ? ' (stated)' : ''} × ${Math.round(closeRate * 100)}% close rate`;
+      const msg = `Return table held off the deck: it projects ${peak}× (above the ${RETURN_CEILING}× ceiling) from a ${why}. ` +
+        `Confirm the average fee and close rate, then reply "confirm the ${peak}× return" to show it, or correct the inputs.`;
+      flags.push(msg);
+      alerts.push(msg);
+      investment.return_held = { ...ret, peak_multiple: peak, ceiling: RETURN_CEILING };
+      return investment;
+    }
+  }
+  investment.return = ret;
   return investment;
 }
 

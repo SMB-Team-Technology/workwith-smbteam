@@ -98,7 +98,7 @@ test('parseInvestmentInputs reads the machine-read lines', () => {
   assert.deepEqual(parseInvestmentInputs(notes), {
     practiceArea: 'Family Law', geoTier: 4, competitiveness: 'High', spanish: false,
     currentAdSpend: 25_000, currentCostPerCase: 4_500, currentCostPerLead: null,
-    caseValue: 9_100, closeRate: 0.21, revenueGoal: null, maxAdBudget: null,
+    caseValue: 9_100, closeRate: 0.21, referralShare: null, revenueGoal: null, maxAdBudget: null,
   });
   assert.equal(parseInvestmentInputs('- Current monthly ad spend (stated): none — has never run paid ads').currentAdSpend, 0);
 });
@@ -193,4 +193,62 @@ test('overage above the tier cap is billed at 15%', () => {
   const inv = computeInvestment(growthPlusElite, { ...ryanInputs, currentAdSpend: 60_000 });
   assert.equal(inv.ad_spend.overage.fee_rate, 0.15);
   assert.ok(inv.flags.some(f => /15% overage fee/.test(f)));
+});
+
+// ─── Return ceiling and referral close rate (Jones Injury, Nov 2026: 890.8×) ──
+
+const jonesDecision = {
+  marketing_name: 'Full Service Marketing — Growth', marketing_price_bundled: 7497,
+  total_bundled: 7497, revenue_effective: 2_000_000,
+  ad_spend_override: { conservative: 25_000, aggressive: 25_000, note: 'Slack' },
+};
+const jonesInputs = {
+  practiceArea: 'Accident/Injury', geoTier: 1, competitiveness: 'High',
+  caseValue: 300_000, closeRate: 0.9, revenueGoal: 6_000_000,
+};
+
+test('a return above the ceiling is held off the deck and alerted', () => {
+  const inv = computeInvestment(jonesDecision, jonesInputs);
+  assert.equal(inv.return, null);
+  assert.ok(inv.return_held.peak_multiple > 20);
+  assert.equal(inv.return_held.ceiling, 20);
+  assert.equal(inv.alerts.length, 1);
+  assert.match(inv.alerts[0], /held off the deck/);
+  assert.ok(inv.flags.includes(inv.alerts[0]));
+});
+
+test('the seller can confirm the exact held multiple, and only that one', () => {
+  const peak = computeInvestment(jonesDecision, jonesInputs).return_held.peak_multiple;
+  const ok = computeInvestment({ ...jonesDecision, return_confirmed: { multiple: peak, note: 'Slack' } }, jonesInputs);
+  assert.equal(ok.return.seller_confirmed, true);
+  assert.equal(ok.return_held, undefined);
+  assert.equal(ok.alerts.length, 0);
+  const stale = computeInvestment({ ...jonesDecision, return_confirmed: { multiple: peak - 1 } }, jonesInputs);
+  assert.equal(stale.return, null);
+});
+
+test('a return under the ceiling is shown as before', () => {
+  const inv = computeInvestment(jonesDecision, { ...jonesInputs, caseValue: 9_000, closeRate: 0.25 });
+  assert.ok(inv.return.scenarios[0].return_multiple <= 20);
+  assert.equal(inv.return_held, undefined);
+  assert.deepEqual(inv.alerts, []);
+});
+
+test('a mostly-referral firm\'s stated close rate is replaced by the default', () => {
+  const inv = computeInvestment(jonesDecision, { ...jonesInputs, caseValue: 9_000, referralShare: 0.8 });
+  assert.equal(inv.inputs.close_rate.value, 0.15);
+  assert.equal(inv.inputs.close_rate.stated, 0.9);
+  assert.match(inv.inputs.close_rate.source, /mostly-referral/);
+  assert.match(inv.return.basis, /15% close rate \(assumed\)/);
+  assert.match(inv.alerts[0], /80% of cases are referrals/);
+  // Under half referrals: the stated rate stands.
+  const kept = computeInvestment(jonesDecision, { ...jonesInputs, caseValue: 9_000, closeRate: 0.3, referralShare: 0.4 });
+  assert.equal(kept.inputs.close_rate.value, 0.3);
+});
+
+test('referral share comes from its own line, else from the lead-sources text', () => {
+  assert.equal(parseInvestmentInputs('- Referral share of cases (stated): 70% (client, 00:12:00)').referralShare, 0.7);
+  assert.equal(parseInvestmentInputs('- Referral share of cases (stated): not stated\nWe\'re 80% referral').referralShare, null);
+  assert.equal(parseInvestmentInputs('- Current lead sources: "We\'re probably like 80% referral base."').referralShare, 0.8);
+  assert.equal(parseInvestmentInputs('about 60% of our cases come from referrals').referralShare, 0.6);
 });
