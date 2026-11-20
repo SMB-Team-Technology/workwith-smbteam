@@ -52,11 +52,11 @@ import re
 
 # ── BUILD NOTES (internal — never shown on a slide) ──────────────
 # Marketing package: Full Service Marketing — Starter — bundled $4,997/mo, stand-alone $5,697/mo, savings $700/mo
-# Non-marketing package(s): Elite Coach — bundled $2,600/mo, stand-alone $3,497/mo, savings $897/mo
+# Non-marketing package(s): Managed Operations Tier 1 — bundled $3,297/mo, stand-alone $3,497/mo, savings $200/mo
 # LAW package: none
-# Total monthly investment: $7,597/mo · total savings: $1,597/mo · pricing_mode: bundled
-# Setup fees: Full Service Marketing — Starter: AI Avatar setup $1,850 (not waived) · Elite Coach: Setup fee $1,500 (not waived) · total $3,350 (one-time)
-# Year one: $94,514 (package_decision.json → investment.year_one_total — 12 × $7,597 + $3,350 setup)
+# Total monthly investment: $8,294/mo · total savings: $900/mo · pricing_mode: bundled
+# Setup fees: Full Service Marketing — Starter: AI Avatar setup $1,850 (not waived) · Managed Operations Tier 1: no setup fee · total $1,850 (one-time)
+# Year one: $101,378 (package_decision.json → investment.year_one_total — 12 × $8,294 + $1,850 setup)
 # Ad spend (copied from investment.ad_spend — computed in code, never by hand):
 #   $6,200–$25,000/mo · low end: channel minimums $3,000 + $2,000 + $1,200 = $6,200 · high end: 20% rule: $4,000,000 goal × 20% ÷ 12 × 1.5 geo − $4,997 fee = $95,003; reverse math: not possible (no case value); capped at the $25,000 the package manages
 # Return (copied from investment.return): none — practice area "Other" has no CPL benchmark and no case value was stated, so the projection is left out
@@ -70,9 +70,9 @@ import re
 # Closing quote (slide 5): none — no verbatim client line exists
 # Legacy Staircase slide: left out — not walked through on the call
 # Plan (slide 3): Refresh the website — custom WordPress build, monthly website edits — tied to: STEP 9B plan inputs none stated, first catalog deliverables · Set up your Google profiles — GBP set-up up to 2 locations, review requests — tied to: same · Build fresh Forbes Law content — SEO content at launch, content import, premium backlinks — tied to: same
-# Roadmap (slide 6): Phase 1 = Full Service Marketing — Starter + Elite Coach · Phase 2 = Fractional COO — starts: once day-to-day operations need their own leader — basis: default (no call plan, FCOO not in the package) · Phase 3 = Fractional CFO + Bookkeeping — starts: once a clearer read on profit and cash is wanted — basis: default (no call plan)
+# Roadmap (slide 6): Phase 1 = Full Service Marketing — Starter + Managed Operations Tier 1 · Phase 2 = Managed Operations Tier 2 — starts: once managers are ready to run day-to-day operations — basis: default (no call plan; next tier, needs a team of 5+) · Phase 3 = Fractional CFO + Bookkeeping — starts: once a clearer read on profit and cash is wanted — basis: default (no call plan)
 # What You Told Us (slide 1 quotes and tie lines): none — research notes record no transcript, summary or quotes; PROSPECT_QUOTES = []
-# Overrides applied: seller override (Slack, 2026-11-16) — marketing switched to Full Service Marketing — Starter and coaching to Elite Coach; the four Transcript-Stated Need overrides do not apply. Rule broken: seller-confirmed $2,000,000 revenue maps to Dominate by the revenue table; seller chose Starter (still eligible at $500K+). 35% cap: $7,597 fees + up to $25,000 ad spend = $32,597 of $58,333 allowed monthly (35% of $166,667)
+# Overrides applied: seller override (Slack, 2026-11-16) — marketing switched to Full Service Marketing — Starter and coaching to Elite Coach, then (Slack, 2026-11-20) coaching to Managed Operations Tier 1 at $3,297 (Elite Coach is retired); the four Transcript-Stated Need overrides do not apply. Rule broken: seller-confirmed $2,000,000 revenue maps to Dominate by the revenue table; seller chose Starter (still eligible at $500K+). 35% cap: $8,294 fees + up to $25,000 ad spend = $33,294 of $58,333 allowed monthly (35% of $166,667)
 # Escalation flags: no call record — call focus unknown, package is the seller's choice; Review counts unconfirmed — verify live before the call (no review figure is in the deck); Starter covers up to 4 primaries and up to 2 GBP locations — site shows 2 offices and several practice areas, confirm scope; ad spend and fit unverified for a transactional M&A practice (practice area "Other", no CPL benchmark) — paid ads team review; ad spend range needs seller review (needs_seller_review true); Tier 1 market (Chicago); directory clean-up (FindLaw/Avvo claiming) is not a catalog deliverable — not promised in the deck; Avvo profile for Steven Hendry Forbes may or may not be the same person — not used in the deck
 
 # Report metadata
@@ -135,7 +135,7 @@ PLAN = [
      "metric": "SEO content words", "target": None, "baseline": None},
 ]
 
-PLAN_NOTE = "Elite Coach: weekly group coaching call, monthly 1:1 call with a business coach, Mastermind pod, workshop tickets."
+PLAN_NOTE = "Managed Operations Tier 1: quarterly planning, foundational systems and up to 2 working sessions a month, with Growth Academy."
 
 # ── Slide 4 — The Recommended Strategy ────────────────────────────
 STRATEGY_TITLE = "Two Pieces, One Strategy"
@@ -148,13 +148,13 @@ STRATEGY = [
                       "Google Ads and Local Services Ads management",
                       "Done-for-you review requests, up to 250 a month"],
      "why": "Answers the dated website and mismatched listings we found in research."},
-    {"product": "Elite Coach", "title": "Coaching", "channels": "Weekly group call · Monthly 1:1",
-     "deliverables": ["Weekly group coaching call",
-                      "Monthly 60-minute 1:1 call with a business coach",
-                      "Practice area Mastermind pod",
-                      "Quarterly and annual workshop tickets",
-                      "Elite Coach Portal and Facebook group"],
-     "why": "A business coach alongside the marketing work, set around your priorities."},
+    {"product": "Managed Operations Tier 1", "title": "Operations", "channels": "Quarterly planning · Working sessions",
+     "deliverables": ["Quarterly planning with your Operations Team",
+                      "Foundational systems: EOPs, scorecards, workflows",
+                      "Up to 2 working sessions a month, 60 minutes each",
+                      "Weekly Growth Academy group coaching calls",
+                      "5 SMB-OS seats and private Facebook group"],
+     "why": "A planning rhythm and core systems alongside the marketing work."},
 ]
 
 # ── Seller prep (never in the deck) ───────────────────────────────
@@ -162,15 +162,15 @@ SELLER_NOTES = {
     "priorities": "No usable number: there is no call record, so this slide uses what research observed (site footer year, directory mismatch) and has no client quotes, why or cost of inaction. Before the call, ask for a figure the package moves (cost per new client, matters a month, revenue by practice area), the owner's own words on what he wants the firm to look like, and what the call is about (marketing, coaching/ops, AI or other). Update the slide once you have them.",
     "diagnosis": "All three causes come from research, not the owner. Confirm which address is current (77 W Wacker Dr Suite 4500 or 2000 N. Leavitt) and whether he owns the FindLaw and Avvo profiles. The Skadden PDF is a public search result; raise it gently. Run pagespeed.web.dev, the Google profile and the local 3-pack by hand: none could be read, so no score, review count or ranking is claimed.",
     "plan": "No plan inputs were stated, so each action is the first catalog deliverable of the package. Claiming or cleaning FindLaw and Avvo profiles is not a catalog deliverable, so it is not promised here; confirm scope before offering it. Starter covers up to 2 Google profile locations (the site lists Chicago and Tampa) and up to 4 locations and practice areas in total, so confirm his scope.",
-    "strategy": "The package is the seller's choice from Slack, not a call finding. Confirm that paid ads and LSAs fit a transactional M&A and fractional general counsel practice before quoting them. Confirm what he wants from coaching: no coaching need was stated.",
+    "strategy": "The package is the seller's choice from Slack, not a call finding. Confirm that paid ads and LSAs fit a transactional M&A and fractional general counsel practice before quoting them. Confirm what he wants from Managed Operations: no operations need was stated.",
     "investment": "Ad spend range comes from the 20% rule on a revenue goal of two times the revenue confirmed in Slack, not from the owner: review it with him. The return table is left out because there is no case value or cost per case. Revenue was confirmed by the seller, not the prospect.",
-    "roadmap": "Phases 2 and 3 are defaults (no call plan). Later phases are scoped and priced when the firm gets there. If he asks about Fractional COO or CFO, note the interest here and use the next call to ask about team size and financial visibility.",
+    "roadmap": "Phases 2 and 3 are defaults (no call plan). Later phases are scoped and priced when the firm gets there. If he asks about Managed Operations Tier 2 (needs a team of 5+) or CFO, note the interest here and use the next call to ask about team size and financial visibility.",
 }
 
 # ── Slide 5 — Your Investment ─────────────────────────────────────
 PRODUCT_LINES = {
     "Full Service Marketing — Starter": "Website · SEO content · Google Ads · LSA · Google profiles · Reviews",
-    "Elite Coach": "Weekly group call · Monthly 1:1 · Mastermind pod · Workshop tickets",
+    "Managed Operations Tier 1": "Quarterly planning · Foundational systems · 2 working sessions a month · Growth Academy",
 }
 
 AD_SPEND_WHY = "to reach business owners searching for corporate and M&A counsel"
@@ -182,15 +182,15 @@ ROADMAP_TITLE = "Where This Goes From Here"
 
 ROADMAP = [
     {"phase": "Foundation", "when": "Starting now",
-     "products": ["Full Service Marketing — Starter", "Elite Coach"],
+     "products": ["Full Service Marketing — Starter", "Managed Operations Tier 1"],
      "items": ["A current website and Google profiles",
                "Paid search and Local Services Ads",
-               "Weekly coaching and monthly 1:1 calls"],
+               "A quarterly planning rhythm and core systems"],
      "unlocks": "A firm that shows up well online while you stay focused on your clients."},
-    {"phase": "Operational Scale", "when": "Once day-to-day operations need their own leader",
-     "products": ["Fractional COO"],
-     "items": ["Dedicated fractional COO time each month",
-               "Written processes and a regular team meeting"],
+    {"phase": "Operational Scale", "when": "Once managers are ready to run day-to-day operations",
+     "products": ["Managed Operations Tier 2"],
+     "items": ["More projects each quarter to hand off operations",
+               "Accountability systems and manager training plans"],
      "unlocks": "Step away from the firm — and it still runs."},
     {"phase": "Optimize", "when": "Once you want a clearer read on profit and cash",
      "products": ["Fractional CFO", "Bookkeeping"],
@@ -1749,54 +1749,54 @@ POS_STANDARD_GOALS = [
 ]
 POS_LEVELS = {
     "Advisor": {
-        "n": 1, "ladder": "Financial statement deep dive, review and discussion. Advisory only.",
+        "n": 1, "ladder": "A monthly P&L and balance sheet deep dive, red flags and quarterly priorities.",
         "ask": "“Where should we focus?”",
         "title": "Understand your numbers. Know where to focus.",
         "work_head": "What Advisor is",
-        "work": "A financial statement advisory engagement: an in-depth review and discussion of "
-                "your P&L and balance sheet, with red flags surfaced.",
+        "work": "Focused financial strategy: a monthly deep dive into your P&L and balance sheet "
+                "to see where the money goes, where profit leaks, and what to fix first.",
         "decisions": ["Are we becoming more profitable?", "Where are we spending too much?",
                       "Which financial issues need attention first?",
                       "What should our financial goals be next quarter?"],
         "quote": "“I understand what my numbers are telling me.”*",
-        "foot": "*Financial statement advisory only: no projects or between-call questions.",
+        "foot": "*Financial strategy and review: quarterly projects start at Director.",
         "includes": None,
         "focus": "Financial statement deep dive · Red flags · Quarterly priorities and financial goals",
     },
     "Director": {
-        "n": 2, "ladder": "Adds projects: a quarterly roadmap and recurring KPI dashboard.",
+        "n": 2, "ladder": "Adds done-with-you projects: a quarterly roadmap and recurring KPI dashboard.",
         "ask": "“How do we move forward?”",
         "title": "Turn financial insight into a plan for growth.",
         "work_head": "Example of the work",
-        "work": "An illustrative quarterly roadmap, recurring KPI dashboard, and examples of cash "
-                "flow, compensation or marketing analysis.",
+        "work": "An illustrative quarterly roadmap, recurring KPI dashboard, and examples of budget, "
+                "forecast, cash flow, compensation or marketing ROI analysis.",
         "decisions": ["Can we afford our next hire?", "How much can we safely invest in marketing?",
                       "Will a compensation change improve profitability?",
                       "What needs to happen this quarter to reach our goals?"],
         "quote": "“I can make growth decisions with a financial plan behind them.”",
         "foot": None,
         "includes": "Includes everything in Advisor, plus quarterly projects",
-        "focus": "Quarterly roadmap · Recurring KPIs · Cash flow, compensation or marketing analysis",
+        "focus": "Quarterly roadmap · Recurring KPIs · Budget, cash flow, compensation or marketing ROI",
     },
     "Partner": {
-        "n": 3, "ladder": "Adds advanced priorities such as capital, tax and succession planning.",
+        "n": 3, "ladder": "Adds advanced priorities such as pricing, expansion, capital and succession planning.",
         "ask": "“How do we navigate major decisions?”",
         "title": "Make big decisions about your firm’s future.",
         "work_head": "Example of the work",
-        "work": "An illustrative advanced planning example: capital strategy, succession scenarios, "
-                "or analysis across practice areas and locations.",
+        "work": "An illustrative advanced planning example: expansion modeling, capital strategy, "
+                "succession scenarios, or profitability by practice area, location or attorney.",
         "decisions": ["Should we expand into another market?", "How should we fund our next stage of growth?",
                       "Which practice areas are creating the most value?",
                       "How do we prepare for succession or a transition?"],
         "quote": "“I have financial leadership to navigate bigger decisions.”",
         "foot": None,
         "includes": "Includes everything in Advisor and Director, plus advanced planning",
-        "focus": "Capital strategy · Succession planning · Analysis across practice areas and locations",
+        "focus": "Expansion modeling · Capital strategy · Succession planning · Profitability by practice area",
     },
 }
-POS_BOOKS = [(1, "Under $1M", "Core monthly bookkeeping for smaller firms."),
-             (2, "$1.0M – $2.9M", "The same core service, sized for a growing team."),
-             (3, "$3.0M – $3.9M", "The same core service, sized for added volume and complexity."),
+POS_BOOKS = [(1, "Up to $1M", "Clean, organized books and monthly financials by the 20th."),
+             (2, "$1M – $2M", "Adds monthly trust reconciliation and financials by the 15th."),
+             (3, "$2M – $4M", "Higher volume and our fastest close: financials by the 10th."),
              (4, "$4M+", "Scoped to fit larger, more complex firms.")]
 
 
@@ -1868,7 +1868,7 @@ def build_pos_two_sides(prs):
 
 def build_pos_books(prs):
     slide = pos_slide(prs, "pos_books", "Bookkeeping that fits the size of your firm.",
-                      "The same core monthly service at every level. Your firm's annual revenue sets the level.")
+                      "Your firm's annual revenue and team size set the level.")
     gap = 0.18
     cw = (9.40 - 3 * gap) / 4
     y, h = 1.52, 1.86
@@ -1890,9 +1890,9 @@ def build_pos_books(prs):
     add_rect(slide, 0.30, 3.52, 9.40, 1.40, fill=WHITE)
     add_rect(slide, 0.30, 3.52, 0.05, 1.40, fill=OCEAN_BLUE)
     add_text(slide, "INCLUDED AT EVERY LEVEL", 0.50, 3.60, 6.0, 0.22, 8, OCEAN_BLUE, bold=True, fit=False)
-    items = ["Monthly balance sheet", "Monthly profit & loss (current month and year-to-date vs. prior year)",
-             "Trust account reconciliation summary", "Bank, credit card and loan reconciliations",
-             "Month-end adjusting entries", "A dedicated point of contact for bookkeeping questions"]
+    items = ["A reviewed P&L and balance sheet every month", "Every transaction categorized",
+             "Bank, credit card and loan accounts reconciled", "QuickBooks, banks and your legal platform connected",
+             "Books built on the SMB law firm Chart of Accounts", "A dedicated point of contact for bookkeeping questions"]
     add_bullets(slide, items[:3], 0.46, 3.86, 4.60, 1.02, 9, DARK_TEXT, OCEAN_BLUE, label="pos_books included 1")
     add_bullets(slide, items[3:], 5.06, 3.86, 4.56, 1.02, 9, DARK_TEXT, OCEAN_BLUE, label="pos_books included 2")
 

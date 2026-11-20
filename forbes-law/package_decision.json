@@ -51,17 +51,17 @@
   "marketing_price_bundled": 4997,
   "marketing_price_retail": 5697,
   "marketing_savings": 700,
-  "coaching_name": "Elite Coach",
-  "coaching_price_bundled": 2600,
+  "coaching_name": "Managed Operations Tier 1",
+  "coaching_price_bundled": 3297,
   "coaching_price_retail": 3497,
-  "coaching_savings": 897,
+  "coaching_savings": 200,
   "law_tier": null,
   "law_name": null,
   "law_price_bundled": null,
   "law_price_retail": null,
   "law_seats": null,
-  "total_bundled": 7597,
-  "total_savings": 1597,
+  "total_bundled": 8294,
+  "total_savings": 900,
   "ad_spend_conservative": 6200,
   "ad_spend_aggressive": 25000,
   "ad_spend_rationale": {
@@ -91,18 +91,9 @@
       "waivable": true,
       "waived": false,
       "charged": 1850
-    },
-    {
-      "line": "coaching",
-      "product": "Elite Coach",
-      "label": "Setup fee",
-      "amount": 1500,
-      "waivable": true,
-      "waived": false,
-      "charged": 1500
     }
   ],
-  "setup_total": 3350,
+  "setup_total": 1850,
   "investment": {
     "version": 1,
     "products": [
@@ -114,14 +105,14 @@
       },
       {
         "category": "coaching",
-        "name": "Elite Coach",
-        "charged": 2600,
+        "name": "Managed Operations Tier 1",
+        "charged": 3297,
         "standalone": 3497
       }
     ],
-    "monthly_total": 7597,
+    "monthly_total": 8294,
     "list_total": 9194,
-    "total_savings": 1597,
+    "total_savings": 900,
     "pricing_mode": "bundled",
     "setup_fees": [
       {
@@ -130,18 +121,11 @@
         "amount": 1850,
         "charged": 1850,
         "waived": false
-      },
-      {
-        "product": "Elite Coach",
-        "label": "Setup fee",
-        "amount": 1500,
-        "charged": 1500,
-        "waived": false
       }
     ],
-    "setup_total": 3350,
-    "year_one_total": 94514,
-    "year_one_basis": "12 × $7,597/mo in fees + $3,350 one-time setup. Ad spend is paid separately to Google and Meta.",
+    "setup_total": 1850,
+    "year_one_total": 101378,
+    "year_one_basis": "12 × $8,294/mo in fees + $1,850 one-time setup. Ad spend is paid separately to Google and Meta.",
     "ad_spend": {
       "channels": [
         {
