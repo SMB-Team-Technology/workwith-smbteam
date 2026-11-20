@@ -1618,7 +1618,7 @@ def build_strategy(prs):
         add_text(slide, s["channels"], cx + 0.14, y + 0.62, cw - 0.28, 0.22, 8.5,
                  OCEAN_BLUE, bold=True, max_lines=1, min_size=7,
                  cap_label=f"STRATEGY[{i}] channels")
-        add_text(slide, s["product"], cx + 0.14, y + 0.84, cw - 0.28, 0.22, 8, SLATE,
+        add_text(slide, client_name(s["product"]), cx + 0.14, y + 0.84, cw - 0.28, 0.22, 8, SLATE,
                  max_lines=1, min_size=6.5, cap_label=f"STRATEGY[{i}] product")
         add_bullets(slide, [cap(b, 70, f"STRATEGY[{i}] deliverable {j+1}")
                             for j, b in enumerate(s["deliverables"][:5])],
@@ -1719,6 +1719,21 @@ def product_line(name):
     return line
 
 
+# Product names as the pricing sheet lists them. The package data keeps the
+# internal FCFO Advisor / Director / Partner names (the Managed Finances
+# slides key off them); anything a client reads shows the sheet's name.
+_SHEET_NAMES = [(re.compile(r"\b(?:FCFO|Fractional CFO)\s+(Advisor|Director|Partner)\b"),
+                 lambda m: "Managed Financials Level " + {"Advisor": "1", "Director": "2", "Partner": "3"}[m.group(1)])]
+
+
+def client_name(text):
+    """A product name (or a line naming products) as the client should see it."""
+    text = str(text)
+    for pat, sub in _SHEET_NAMES:
+        text = pat.sub(sub, text)
+    return text
+
+
 def build_buys_card(slide, inv, x, w, top, bottom):
     """"What $X/mo buys": one row per product — name, deliverables, price."""
     add_text(slide, f"WHAT {usd(inv['monthly_total'])}/MO BUYS", x, top, w, 0.20, 7.5,
@@ -1741,7 +1756,7 @@ def build_buys_card(slide, inv, x, w, top, bottom):
         if i:
             add_rule(slide, x + 0.20, ry, x + w - 0.16, ry, RULE_GRAY)
         name_w = w - 1.85
-        add_text(slide, p["name"], x + 0.18, ry + 0.06, name_w, 0.30, 10.5, NAVY, bold=True,
+        add_text(slide, client_name(p["name"]), x + 0.18, ry + 0.06, name_w, 0.30, 10.5, NAVY, bold=True,
                  max_lines=1, min_size=8, cap_label=f"product {i+1} name")
         items = [t.strip() for t in re.split(r"\s*[·•|]\s*", product_line(p["name"])) if t.strip()]
         if as_list:
@@ -1781,7 +1796,7 @@ def build_buys_card(slide, inv, x, w, top, bottom):
 
 def setup_fee_line(f):
     """One setup fee for the slide: "AI Avatar setup $1,850" (or "… waived")."""
-    name = f["label"] if f["label"] != "Setup fee" else f"{f['product']} setup"
+    name = f["label"] if f["label"] != "Setup fee" else f"{client_name(f['product'])} setup"
     return f"{name} {usd(f['amount'])}" + (" waived" if f.get("waived") else "")
 
 
@@ -1803,7 +1818,7 @@ def build_totals_block(slide, inv, x, w, top, bottom):
         if len(fees) == 1:
             sub = setup_fee_line(fees[0]).rsplit(" $", 1)[0] + (" (waived)" if fees[0].get("waived") else "")
         else:
-            short = lambda f: (f["product"] if f["label"] == "Setup fee"
+            short = lambda f: (client_name(f["product"]) if f["label"] == "Setup fee"
                                else f["label"].replace(" setup", "").replace("Video Ads Express ", ""))
             sub = " · ".join(f"{short(f)} {usd(f['amount'])}" + (" waived" if f.get("waived") else "")
                              for f in fees)
@@ -1952,7 +1967,7 @@ def build_roadmap(prs):
         add_text(slide, p["when"], cx + 0.08, y + band + 0.02, cw - 0.16, 0.46, 9,
                  GREEN if now else OCEAN_BLUE, bold=True, max_lines=2, min_size=7.5,
                  cap_chars=70, cap_label=f"ROADMAP[{i}] when")
-        add_text(slide, " + ".join(str(x) for x in p["products"]), cx + 0.08, y + band + 0.46,
+        add_text(slide, client_name(" + ".join(str(x) for x in p["products"])), cx + 0.08, y + band + 0.46,
                  cw - 0.16, 0.24, 8, SLATE, max_lines=1, min_size=6.5,
                  cap_chars=80, cap_label=f"ROADMAP[{i}] products")
         add_rule(slide, cx + 0.16, y + band + 0.74, cx + cw - 0.16, y + band + 0.74, RULE_GRAY)
