@@ -24,6 +24,8 @@ import {
   parseTeamSize,
   parseCallFocus,
   selectDiscussedCoaching,
+  parseBookkeepingVolume,
+  bookkeepingLevelFor,
   selectLawTier,
   linesFromOverride,
   selectPackage,
@@ -263,6 +265,28 @@ test('coaching discussed on the call wins over the revenue default (KHK, Mason, 
 test('Managed Operations and Growth Academy are read from call notes', () => {
   assert.deepEqual(parseCallFocus('- Products discussed on call: Managed Operations Tier 2, Growth Academy\n').products, ['Managed Operations Tier 2', 'Growth Academy']);
   assert.deepEqual(parseCallFocus("- Products discussed on call: Growth Academy Master's Circle, managed financials\n").products, ["Growth Academy Master's Circle", 'FCFO']);
+});
+
+test('bookkeeping level: transaction volume decides, revenue is the fallback guide (Jaime)', () => {
+  assert.deepEqual(parseBookkeepingVolume('- Bookkeeping volume: ~180 transactions/mo; trust account: yes\n'), { transactions: 180, trust: true });
+  assert.deepEqual(parseBookkeepingVolume('- Bookkeeping volume: 1,200 transactions a month; trust account: no\n'), { transactions: 1200, trust: false });
+  assert.deepEqual(parseBookkeepingVolume('- Bookkeeping volume: not stated\n'), { transactions: null, trust: null });
+  // Volume beats revenue both ways.
+  assert.equal(bookkeepingLevelFor(3_000_000, { transactions: 90 }), 1);
+  assert.equal(bookkeepingLevelFor(600_000, { transactions: 400 }), 3);
+  assert.equal(bookkeepingLevelFor(600_000, { transactions: 700 }), 4);
+  // No volume: revenue band, flagged for the rep.
+  const notes = [];
+  assert.equal(bookkeepingLevelFor(1_500_000, {}, notes), 2);
+  assert.ok(notes.some(n => /confirm it with the sales rep/.test(n)));
+  // A trust account needs Level 2+.
+  assert.equal(bookkeepingLevelFor(600_000, { transactions: 50, trust: true }), 2);
+  // Through call selection, and a named level that doesn't fit the volume is flagged.
+  const n2 = [];
+  assert.equal(selectDiscussedCoaching(['Bookkeeping'], 2_500_000, n2, 3, { transactions: 120 }).name, 'Bookkeeping Level 2');
+  assert.equal(selectDiscussedCoaching(['Bookkeeping Level 1'], 900_000, n2, 3, { transactions: 300 }).name, 'Bookkeeping Level 1');
+  assert.ok(n2.some(n => /fits Bookkeeping Level 3/.test(n)));
+  assert.deepEqual(parseCallFocus('- Products discussed on call: bookkeeping\n- Bookkeeping volume: ~60 transactions/mo; trust account: not stated\n').bookkeeping, { transactions: 60, trust: null });
 });
 
 test('AI line: one FCTO level + one AIWP tier, no duplicates (Dan Mayer, Current Shift)', () => {

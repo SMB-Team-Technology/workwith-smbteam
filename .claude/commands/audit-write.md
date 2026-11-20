@@ -435,7 +435,9 @@ Bookkeeping pairs with any active package as a standalone recurring engagement. 
 | $2M–$4M, team up to 20 | Level 3 | $3,997/mo | $4,997/mo | $5,000 |
 | $4M+ | Level 4 | Custom | Custom | Custom |
 
-Bookkeeping goes on the coaching line (e.g. `Managed Operations Tier 1 + Bookkeeping Level 1`). The code prices it and adds its setup fee, which can never be waived. Level 4 is custom-scoped, so never quote a price for it. Pick the level by annual revenue and team size.
+Bookkeeping goes on the coaching line (e.g. `Managed Operations Tier 1 + Bookkeeping Level 1`). The code prices it and adds its setup fee, which can never be waived. Level 4 is custom-scoped, so never quote a price for it.
+
+**Picking the level: transaction volume decides, and revenue is only a guide** (Jaime, Nov 2026). Level 1 covers up to 100 transactions/mo, Level 2 up to 250 and Level 3 up to 500. Above 500 is Level 4 (custom). When the research notes' "Bookkeeping volume" line gives a transaction count, it sets the level even if revenue points elsewhere. When it doesn't, use the revenue band as the best guess at volume, and add a note in `SELLER_NOTES` for the rep to confirm volume. A firm with a trust account to reconcile needs at least Level 2, because Level 1 has no trust reconciliation. Account counts also matter: Level 1 covers 2 bank accounts, 1 credit card and 1 loan account; Levels 2–3 cover 4 bank accounts, 2 credit cards and 2 loan accounts. `select-package.mjs` applies the volume and trust rules.
 
 **Requirements (every level):** QuickBooks Online only (SMB needs firm access, not user access) · Clio, MyCase, Lawmatics or Practice Panther for case management, with full access and integration (for other legal software, check with the department) · the client provides the monthly information on time so close dates can be hit. **Level 1** also needs clean books with no cleanup and no trust reconciliation. Payroll/W-2s and AP/1099s are not included at any level.
 

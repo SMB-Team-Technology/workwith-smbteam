@@ -234,6 +234,7 @@ Extract from the discovery call transcript. Trust these values exactly as stated
 - Lead-gen gap stated: [yes/no — machine-read. "yes" only if the prospect said they want more leads/cases or asked about marketing, ads, SEO, or their website; the mere absence of marketing is not a "yes". Follow with a short exact quote]
 - Existing marketing/SEO/ad vendor engagements: [any recently signed or currently active contract with another marketing, SEO, ad, or AEO vendor — exact quote if available, or "none stated"]
 - Budget constraints stated: [any explicit statement about affordability, spend limits, or inability to commit to a larger monthly investment — exact quote if available, or "none stated"]
+- Bookkeeping volume: [monthly transaction count if stated or clearly implied, and whether the firm has a trust account to reconcile, in the form "~180 transactions/mo; trust account: yes" — machine-read by select-package.mjs, which uses it to pick the bookkeeping level. Write "not stated" for any part not said; add bank/credit card/loan account counts after it if given. Never guess a number]
 - Financial goals stated (for the ProfitOS slides): [up to 3 goals the client named about their numbers, cash, profit, hiring, financial planning, financing or succession — each a few words plus the short exact quote, speaker and timestamp — or "none stated". Pass 2 fills the ProfitOS goals slide from these only when Fractional CFO or Bookkeeping is recommended]
 
 Investment inputs — machine-read by scripts/lib/investment.mjs, which computes the deck's ad spend
