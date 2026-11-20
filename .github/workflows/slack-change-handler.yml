@@ -74,6 +74,17 @@ jobs:
           done
           echo "Thread $PARENT_THREAD_TS isn't a proposal thread."
 
+      - name: Download the LeadsOS source deck
+        if: steps.thread.outputs.forwarded != 'true'
+        # Vanessa's LeadsOS marketing slides are copied into any proposal with
+        # a marketing package. The deck is a private HubSpot file (the repo is
+        # public), saved to the git-ignored .source-decks/. If this fails the
+        # deck still builds, without those slides, and the seller prep says so.
+        continue-on-error: true
+        env:
+          HUBSPOT_TOKEN: ${{ secrets.HUBSPOT_TOKEN }}
+        run: node scripts/fetch-source-deck.mjs --keyword LeadsOS --out .source-decks/LeadsOS.pptx
+
       - name: Handle the request
         if: steps.thread.outputs.forwarded != 'true'
         env:
@@ -134,7 +145,7 @@ jobs:
                  the new package; phases 2-3 must not repeat a package product) in the
                  deck script, and the BUILD NOTES comment block to match.
                Then run: python3 '<folder>/<file>_Proposal.py' (expect 'Saved: … (7 or 8
-               slides)', more with ProfitOS), and confirm this prints nothing:
+               slides)', more with the LeadsOS marketing slides or ProfitOS), and confirm this prints nothing:
                diff <(sed -n '/LAYOUT ENGINE/,\$p' 'Design Files/audit_pptx_template.py') <(sed -n '/LAYOUT ENGINE/,\$p' '<folder>/<file>_Proposal.py')
                (pip install python-pptx --break-system-packages --quiet if needed.)
             4. Commit the .py, the .pptx and package_decision.json (if changed) to main
