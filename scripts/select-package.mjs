@@ -483,7 +483,46 @@ export function parseCallFocus(text) {
   const gapRaw = readNoteField(text, 'lead-gen gap stated');
   const leadGenGap = gapRaw == null ? null : /^yes\b/i.test(gapRaw) ? true : /^no\b/i.test(gapRaw) ? false : null;
 
-  return { engagement, products, productsRaw, leadGenGap };
+  return { engagement, products, productsRaw, leadGenGap, bookkeeping: parseBookkeepingVolume(text) };
+}
+
+/**
+ * "- Bookkeeping volume: ~180 transactions/mo; trust account: yes" →
+ * { transactions: 180, trust: true }. Either can be null when not stated.
+ */
+export function parseBookkeepingVolume(text) {
+  const raw = readNoteField(text, 'bookkeeping volume', { firstLineOnly: true });
+  if (!raw || NOT_STATED.test(raw)) return { transactions: null, trust: null };
+  const t = raw.match(/([\d,]+)\s*\+?\s*(?:transactions?|txns?)/i);
+  const trust = raw.match(/trust(?: account)?s?\s*[:\-]?\s*(yes|no)\b/i);
+  return {
+    transactions: t ? parseInt(t[1].replace(/,/g, ''), 10) : null,
+    trust: trust ? trust[1].toLowerCase() === 'yes' : null,
+  };
+}
+
+/**
+ * Bookkeeping level. Monthly transaction volume decides it (Jaime, Nov 2026);
+ * revenue is only a guide to likely volume, used when volume wasn't stated.
+ * Managed Financials tab: Level 1 up to 100 transactions/mo (no trust
+ * reconciliation), Level 2 up to 250, Level 3 up to 500, above that Level 4
+ * (custom). Revenue bands: up to $1M / $1M–$2M / $2M–$4M / $4M+.
+ */
+export function bookkeepingLevelFor(effectiveRevenue, volume = {}, notes = []) {
+  const byRevenue = effectiveRevenue >= 4_000_000 ? 4 : effectiveRevenue >= 2_000_000 ? 3 : effectiveRevenue >= 1_000_000 ? 2 : 1;
+  let level = byRevenue;
+  const tx = volume?.transactions;
+  if (tx != null) {
+    level = tx <= 100 ? 1 : tx <= 250 ? 2 : tx <= 500 ? 3 : 4;
+    notes.push(`Bookkeeping Level ${level} picked by transaction volume (~${tx}/mo)${level !== byRevenue ? ` — revenue alone would suggest Level ${byRevenue}` : ''}.`);
+  } else {
+    notes.push(`Bookkeeping Level ${level} picked by revenue — transaction volume wasn't stated; confirm it with the sales rep (Level 1 ≤100/mo, Level 2 ≤250, Level 3 ≤500).`);
+  }
+  if (level === 1 && volume?.trust === true) {
+    level = 2;
+    notes.push('Firm has a trust account to reconcile — Bookkeeping Level 2 (Level 1 does not include trust reconciliation).');
+  }
+  return level;
 }
 
 /**
@@ -681,7 +720,7 @@ function selectCoachingByRevenue(effectiveRevenue, effectiveTeam, text, notes) {
  *    Director $1M–$2M, Partner $2M+.
  * Returns { name } or null when none was named.
  */
-export function selectDiscussedCoaching(products, effectiveRevenue, notes, effectiveTeam = 3) {
+export function selectDiscussedCoaching(products, effectiveRevenue, notes, effectiveTeam = 3, bookkeepingVolume = {}) {
   const discussed = (products || []).filter(p => COACHING_PRODUCTS.has(p));
   if (!discussed.length) return null;
 
@@ -724,11 +763,17 @@ export function selectDiscussedCoaching(products, effectiveRevenue, notes, effec
     const named = discussed.find(p => p.startsWith('FCFO '));
     picks.push(named ?? (effectiveRevenue >= 2_000_000 ? 'FCFO Partner' : effectiveRevenue >= 1_000_000 ? 'FCFO Director' : 'FCFO Advisor'));
   }
-  // Bookkeeping: the level named, else the Managed Financials tab's revenue band
-  // (Level 1 up to $1M, Level 2 $1M–$2M, Level 3 $2M–$4M, Level 4 $4M+ custom).
+  // Bookkeeping: the level named on the call, else by transaction volume
+  // (revenue as a guide when volume wasn't stated).
   if (hasFamily('Bookkeeping')) {
     const named = discussed.find(p => p.startsWith('Bookkeeping Level'));
-    picks.push(named ?? `Bookkeeping Level ${effectiveRevenue >= 4_000_000 ? 4 : effectiveRevenue >= 2_000_000 ? 3 : effectiveRevenue >= 1_000_000 ? 2 : 1}`);
+    if (named) {
+      const fit = bookkeepingVolume?.transactions != null ? bookkeepingLevelFor(effectiveRevenue, bookkeepingVolume, []) : null;
+      if (fit && `Bookkeeping Level ${fit}` !== named) notes.push(`${named} was discussed, but ~${bookkeepingVolume.transactions} transactions/mo fits Bookkeeping Level ${fit} — confirm with the sales rep.`);
+      picks.push(named);
+    } else {
+      picks.push(`Bookkeeping Level ${bookkeepingLevelFor(effectiveRevenue, bookkeepingVolume, notes)}`);
+    }
   }
   if (!picks.length) return null;
 
@@ -959,7 +1004,7 @@ export async function selectPackage(friendlyName) {
   // Coaching named on the call wins over the revenue rule. On an AI-led call
   // where no coaching was named, leave coaching out rather than adding the
   // revenue default nobody asked for.
-  const discussedCoaching = selectDiscussedCoaching(callFocus.products, effectiveRevenue, focusNotes, effectiveTeam);
+  const discussedCoaching = selectDiscussedCoaching(callFocus.products, effectiveRevenue, focusNotes, effectiveTeam, callFocus.bookkeeping);
   let coaching = revenueCoaching;
   if (discussedCoaching) {
     coaching = discussedCoaching;
