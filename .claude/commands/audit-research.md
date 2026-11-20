@@ -266,7 +266,8 @@ confirmed); otherwise "not stated" — never an estimate or a benchmark.
 | Managed Operations Tier 1, Tier 2 or Tier 3 (one) — or Managed Operations if no tier was named | Managed Operations, managed ops, operations package, ~$3,297 / ~$5,497 / ~$7,497/mo |
 | Growth Academy | Growth Academy (the group coaching add-on, $1,497/mo) |
 | Growth Academy Master's Circle | Master's Circle Growth Academy, MC Growth Academy ($2,497/mo add-on) |
-| Elite Coach, Elite Coach Plus, Coach Essentials, Master's Circle (retired — write the name said; the script maps it to Managed Operations) | Elite Coach, coaching, MC, Master's Circle, Coach Essentials |
+| Master's Circle | MC, Master's Circle (not retired — the script reads it as Tier 3 in a Managed Operations conversation, otherwise as the Growth Academy Master's Circle add-on) |
+| Elite Coach, Elite Coach Plus, Coach Essentials (retired — write the name said; the script maps it to Managed Operations) | Elite Coach, coaching, Coach Essentials |
 | FCOO Advisor, FCOO Director or FCOO Partner (retired — the script maps them to Managed Operations Tier 1 / 2 / 3) — or FCOO if no tier was named | FCOO, fractional COO |
 | FCFO Advisor, FCFO Director or FCFO Partner (one) — or FCFO if no level was named | FCFO, fractional CFO, Managed Financials (Level 1 = Advisor, Level 2 = Director, Level 3 = Partner) |
 | Bookkeeping Level 1, 2, 3 or 4 (one) — or Bookkeeping if no level was named | bookkeeping, bookkeeper, ProfitOS bookkeeping |

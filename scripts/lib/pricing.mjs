@@ -14,8 +14,9 @@
  *   - `standalone: null` + no `fixed` price means the product can't be sold
  *     on its own yet (e.g. Paid Ads Essentials — awaiting a price from Sales).
  *   - `retired: true` products are never priced; they resolve to `replacement`.
- *   - `addOn: true` products (Growth Academy) have one price, only sell with
- *     another core package, and never count toward a bundle.
+ *   - `addOn: true` products (Growth Academy) have one price and only sell
+ *     with another core package. They DO count toward a bundle (Stephanie,
+ *     Nov 2026: marketing + Growth Academy gets marketing's package price).
  *
  * Field meaning in package_decision.json: `*_price_bundled` is the price the
  * client is CHARGED (bundled or stand-alone, per the rule), `*_price_retail`
@@ -31,7 +32,8 @@
 const BOOTCAMP = { amount: 497, label: 'Video Ads Express Bootcamp', waivable: true };
 const AVATAR = { amount: 1850, label: 'AI Avatar setup', waivable: true };
 const books = amount => ({ amount, label: 'Bookkeeping setup', waivable: false });
-const fcfoSetup = amount => ({ amount, label: 'Managed Financials setup', waivable: true });
+// Managed Financials setup fees can't be waived either (Jaime, Nov 2026).
+const fcfoSetup = amount => ({ amount, label: 'Managed Financials setup', waivable: false });
 const adsSetup = tier => (tier === 'Essentials' ? BOOTCAMP : AVATAR);
 
 const fsm = (tier, bundled, standalone) => ({ name: `Full Service Marketing — ${tier}`, category: 'marketing', tier, bundled, standalone, setup: adsSetup(tier) });
@@ -69,13 +71,14 @@ export const CATALOG = [
   mo(2, 5497, 5997,   500_000, 5),
   mo(3, 7497, 7997, 1_000_000, 10),
   // Growth Academy add-ons: one price, "ONLY SOLD w/OTHER CORE PACKAGES" —
-  // never on their own and never counted toward the bundle rule.
-  { name: 'Growth Academy',                  category: 'coaching', addOn: true, price: 1497, bundleEligible: false },
-  { name: "Growth Academy Master's Circle",  category: 'coaching', addOn: true, price: 2497, bundleEligible: false },
+  // never on their own, but they count as a service for the bundle rule.
+  { name: 'Growth Academy',                  category: 'coaching', addOn: true, price: 1497 },
+  { name: "Growth Academy Master's Circle",  category: 'coaching', addOn: true, price: 2497 },
 
   // Managed Financials (Managed Financials tab). Fractional CFO keeps its
   // Advisor / Director / Partner names (= the tab's Level 1 / 2 / 3; the deck's
-  // ProfitOS slides key off them). Above $4M is a custom agreement.
+  // ProfitOS slides key off them). Above $4M is a custom agreement. Setup
+  // fees can never be waived.
   { name: 'FCFO Advisor',          category: 'coaching', bundled: 3497, standalone: 3997,  minRev: 500_000,   setup: fcfoSetup(1000) },
   { name: 'FCFO Director',         category: 'coaching', bundled: 5497, standalone: 5997,  minRev: 1_000_000, setup: fcfoSetup(1500) },
   { name: 'FCFO Partner',          category: 'coaching', bundled: 9997, standalone: 10997, minRev: 2_000_000, setup: fcfoSetup(2000) },
@@ -88,8 +91,11 @@ export const CATALOG = [
 
   // Retired by Managed Operations (Nov 2026). Old decks, Slack replies and
   // research notes still name them, so they resolve to the closest tier.
+  // "Master's Circle" on its own is NOT retired — it means the Growth Academy
+  // Master's Circle add-on (or Tier 3, which includes it; Lynne, Nov 2026) —
+  // see the alias below.
   retiredTo('Coach Essentials', 1), retiredTo('Coach Essentials Plus', 1),
-  retiredTo('Elite Coach', 1), retiredTo('Elite Coach Plus', 1), retiredTo("Master's Circle", 3),
+  retiredTo('Elite Coach', 1), retiredTo('Elite Coach Plus', 1),
   retiredTo('FCOO Advisor', 1), retiredTo('FCOO Director', 2), retiredTo('FCOO Partner', 3),
   retiredTo('Elite Coach + FCOO Advisor', 1), retiredTo('Elite Coach + FCOO Director', 2), retiredTo('Elite Coach + FCOO Partner', 3),
   retiredTo("Master's Circle + FCOO Advisor", 3), retiredTo("Master's Circle + FCOO Director", 3), retiredTo("Master's Circle + FCOO Partner", 3),
@@ -143,7 +149,7 @@ const ALIASES = [
   [/^(?:fcfo|fractional cfo|managed financials|financial strategy) (?:level|l) ?([1-3])$/, m => `FCFO ${['Advisor', 'Director', 'Partner'][m[1] - 1]}`],
   [/^ecp$/, 'Elite Coach Plus'],
   [/^(?:bookkeeping|bk) (?:level|l) ?([1-4])$/, m => `Bookkeeping Level ${m[1]}`],
-  [/^masters circle$|^mc$/, "Master's Circle"],
+  [/^master'?s circle$|^mc$/, "Growth Academy Master's Circle"],
 ];
 const cap = s => s[0].toUpperCase() + s.slice(1);
 
@@ -237,16 +243,25 @@ export function pricePackage(lines) {
     resolved[key] = { line, parts: collapseManagedOps(parts, notes) };
   }
 
+  // A Growth Academy add-on the Managed Operations tier already includes is
+  // dropped (every tier includes Growth Academy; Tier 3 includes Master's
+  // Circle Growth Academy, so "Tier 3 + Master's Circle" is just Tier 3).
+  const moTier = Object.values(resolved).flatMap(r => r?.parts ?? []).find(p => p.product?.family === 'Managed Operations')?.product.moTier;
+  if (moTier) {
+    for (const r of Object.values(resolved)) {
+      if (!r) continue;
+      r.parts = r.parts.filter(p => {
+        const included = p.product?.addOn && (p.product.name === 'Growth Academy' || moTier === 3);
+        if (included) notes.push(`${p.raw} is already included in Managed Operations Tier ${moTier} — not charged separately.`);
+        return !included;
+      });
+    }
+    for (const key of Object.keys(resolved)) if (resolved[key] && !resolved[key].parts.length) resolved[key] = null;
+  }
+
   // Growth Academy add-ons only sell with another core package.
   const all = Object.values(resolved).flatMap(r => r?.parts ?? []);
   const hasCore = all.some(p => !p.product || !p.product.addOn);
-  const moTier = all.find(p => p.product?.family === 'Managed Operations')?.product.moTier;
-  for (const p of all.filter(p => p.product?.addOn)) {
-    if (!hasCore) continue;
-    if (moTier && (p.product.name === 'Growth Academy' || moTier === 3)) {
-      notes.push(`Managed Operations Tier ${moTier} already includes ${moTier === 3 ? "Master's Circle Growth Academy" : 'Growth Academy'} — ${p.product.name} is probably not needed.`);
-    }
-  }
 
   // Count bundle-eligible products.
   let eligibleCount = 0;
@@ -289,7 +304,9 @@ export function pricePackage(lines) {
         if (!hasCore) {
           ok = false;
           unpriced.push(p.name);
-          notes.push(`${p.name} is only sold with another core package (Managed Operations, Managed Financials, marketing or AI) — add one or choose Managed Operations instead.`);
+          notes.push(p.name === "Growth Academy Master's Circle"
+            ? `Master's Circle can't be sold on its own — ask the rep: Managed Operations Tier 3 (includes Master's Circle Growth Academy), or the Growth Academy Master's Circle add-on with another service.`
+            : `${p.name} is only sold with another core package (Managed Operations, Managed Financials, marketing or AI) — add one or choose Managed Operations instead.`);
           continue;
         }
         charged += p.price; retail += p.price; // one price, bundled or not
@@ -338,9 +355,6 @@ export function pricePackage(lines) {
 
   if (mode === 'standalone' && eligibleCount === 1) {
     notes.push('Only one bundle-eligible product in this package — stand-alone pricing applied, no bundle savings.');
-  }
-  if (all.some(p => p.product?.addOn) && mode === 'standalone' && hasCore) {
-    notes.push('Growth Academy is an add-on and does not count toward bundle pricing.');
   }
   if (Object.values(resolved).some(r => r?.parts.some(p => p.product?.bundleEligible === false && !p.product.addOn))) {
     notes.push('AI Workforce Pro – Starter does not count toward bundle pricing.');

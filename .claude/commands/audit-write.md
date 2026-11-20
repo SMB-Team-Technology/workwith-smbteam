@@ -263,11 +263,11 @@ Essentials $3,797 | Starter $5,697 | Growth $8,997 | Dominate $12,497 | Platinum
 | Paid Ads Essentials, Full Service Marketing Essentials | $497 Video Ads Express Bootcamp |
 | Paid Ads and Full Service Marketing Starter, Growth, Dominate, Platinum | $1,850 AI Avatar setup |
 | Web + SEO (every tier), Managed Operations (every tier), Growth Academy add-ons, AI Workforce Pro, Fractional CTO | none |
-| FCFO Advisor / Director / Partner (Managed Financials Level 1 / 2 / 3) | $1,000 / $1,500 / $2,000 |
+| FCFO Advisor / Director / Partner (Managed Financials Level 1 / 2 / 3) | $1,000 / $1,500 / $2,000, never waivable |
 | Bookkeeping Level 1 / 2 / 3 / 4 | $2,000 / $3,500 / $5,000 / custom, never waivable |
 | OmniSocial AI (every package) | $1,850 |
 
-Setup fees can be waived for every package except bookkeeping — that is the seller's call in the Slack review (`setup_fee_waived` in `package_decision.json`); a waived fee stays on the slide marked waived and is left out of year one.
+Setup fees can be waived for every package except bookkeeping and Managed Financials (FCFO) — that is the seller's call in the Slack review (`setup_fee_waived` in `package_decision.json`); a waived fee stays on the slide marked waived and is left out of year one.
 
 **Boundary rule:** If the firm's calculated ad spend exceeds the tier's cap, move to the higher tier. Aggressive goals alone no longer bypass the Dominate/Platinum revenue floors — a firm must meet the revenue threshold to be eligible.
 
@@ -281,7 +281,14 @@ Non-marketing packages are the default recommendation alongside marketing. Recom
 
 Source of truth: the Managed Operations and Managed Financials tabs of the 2026 SMB Team Pricing, Products & Packages sheet (updated Nov 2026), and the ProfitOS Strategic Financial Proposal deck (Fractional CFO and bookkeeping wording). Prices and setup fees are set in code (`scripts/lib/pricing.mjs`). Never type them.
 
-**Managed Operations replaces coaching and Fractional COO (Nov 2026).** Elite Coach, Elite Coach Plus, Master's Circle, Coach Essentials, Coach Essentials Plus, FCOO Advisor / Director / Partner, the Elite Coach / Master's Circle + FCOO pairs and Elite 360 are **retired**. Never recommend them or write them in a deck. When research notes, a transcript or a seller says one of these names, use Managed Operations. The code maps an old name to a tier on its own: FCOO Advisor, Elite Coach and Coach Essentials go to Tier 1, FCOO Director goes to Tier 2, and FCOO Partner and Master's Circle go to Tier 3. Pick the tier with the table below.
+**Managed Operations replaces coaching and Fractional COO (Nov 2026).** Elite Coach, Elite Coach Plus, Coach Essentials, Coach Essentials Plus, FCOO Advisor / Director / Partner, the Elite Coach / Master's Circle + FCOO pairs and Elite 360 are **retired**. Never recommend them or write them in a deck. When research notes, a transcript or a seller says one of these names, use Managed Operations. The code maps an old name to a tier on its own: FCOO Advisor, Elite Coach and Coach Essentials go to Tier 1, FCOO Director goes to Tier 2, and FCOO Partner goes to Tier 3. Pick the tier with the table below.
+
+**"Master's Circle" is not retired.** The term now means one of two things, so read it from context:
+- **Part of a Managed Operations conversation:** Managed Operations Tier 3, which includes Master's Circle Growth Academy.
+- **Alongside another service** (marketing, Managed Financials or AI) **without Managed Operations:** the Growth Academy Master's Circle add-on.
+- **On its own:** the add-on can't be sold alone, so the code flags it and the seller is asked: Tier 3, or the add-on with another service.
+
+When you're unsure which one was meant, say so in `SELLER_NOTES` for the rep to confirm.
 
 | Tier | Package price | Stand-alone | Requirements | Built for |
 |---|---|---|---|---|
@@ -297,18 +304,18 @@ Default to the highest tier the firm meets on both revenue and team size (this i
 - **Tier 2:** Growth Academy · expanded project support: more or larger projects each quarter that equip the team to take over operations (process redesigns, hiring plans, scorecards per role, accountability systems, manager training plans) · up to 3 × 60-minute working sessions a month (one-on-ones with anyone in the firm, or team meetings such as L10s, trainings, planning and strategy meetings, project sessions).
 - **Tier 3:** Master's Circle Growth Academy (everything in Growth Academy, plus monthly CEO Roundtables, monthly Marketing, Intake and Operations Team Roundtables, 2 in-person tickets to each quarterly workshop and the CEO's Master's Circle session at the workshop) · comprehensive project support: the most projects or complex firm-wide initiatives (org restructures, systems overhauls and rollouts, new office and practice area launch plans, leadership team development) · up to 4 × 60-minute working sessions a month (one-on-ones with anyone in the firm or team meetings).
 
-**Growth Academy add-ons** (Managed Operations tab). These are for a firm buying another core package (marketing, Managed Financials or AI) that wants the group program without Managed Operations. They are **only sold with another core package**, have one price, and never count toward the bundle rule.
+**Growth Academy add-ons** (Managed Operations tab). These are for a firm buying another core package (marketing, Managed Financials or AI) that wants the group program without Managed Operations. They are **only sold with another core package** and have one price. They **do** count as a service for the bundle rule, so marketing plus Growth Academy gets marketing's package price (e.g. Growth marketing $7,497 + Growth Academy $1,497 = $8,994/mo).
 
 | Add-on | Price |
 |---|---|
 | Growth Academy | $1,497/mo |
 | Growth Academy Master's Circle | $2,497/mo |
 
-Don't add Growth Academy to Managed Operations, because every tier already includes it, and don't add either add-on to Tier 3. Write the add-on on the coaching line, for example `Growth Academy` next to `Full Service Marketing — Growth` on the marketing line.
+Don't add Growth Academy to Managed Operations, because every tier already includes it, and don't add either add-on to Tier 3. The code drops one that's already included. Growth Academy Master's Circle can go with Tier 1 or Tier 2 as an upgrade. Write the add-on on the coaching line, for example `Growth Academy` next to `Full Service Marketing — Growth` on the marketing line.
 
 **Add Fractional CFO (Managed Financials / ProfitOS)** if: owner mentions profit problems, revenue growing but not taking home more, no financial visibility, doesn't know acquisition cost, or wants help planning hires, marketing investment, financing or succession.
 
-The Managed Financials tab calls these Level 1 / 2 / 3. They are written as FCFO Advisor / Director / Partner, because the deck's ProfitOS slides key off those names. The setup fee is one-time and can be waived (only bookkeeping fees can't).
+The Managed Financials tab calls these Level 1 / 2 / 3. They are written as FCFO Advisor / Director / Partner, because the deck's ProfitOS slides key off those names. The setup fee is one-time and can **never be waived**, the same as bookkeeping.
 
 | Level | Package price | Stand-alone | Setup | Revenue / team | What it is |
 |---|---|---|---|---|---|
@@ -322,7 +329,7 @@ Every level's setup covers a financial architecture and historical baseline audi
 
 **Requirement:** the firm uses SMB bookkeeping, or its books are current and it can provide complete, accurate monthly financials (with properly allocated payroll) by the 10th of each month. If it can't, recommend bookkeeping with the FCFO. Pick the level from the questions the firm needs answered (ProfitOS): "Where should we focus?" → Advisor; "How do we move forward?" (hires, marketing spend, compensation, cash flow) → Director; "How do we navigate major decisions?" (expansion, financing, succession) → Partner.
 
-**Combinations.** Write each product on the coaching line, joined with " + " (e.g. `Managed Operations Tier 2 + FCFO Director + Bookkeeping Level 2`). There is one Managed Operations tier per package. Each product counts toward the bundle rule (Growth Academy add-ons don't), and the code prices them from the package prices above.
+**Combinations.** Write each product on the coaching line, joined with " + " (e.g. `Managed Operations Tier 2 + FCFO Director + Bookkeeping Level 2`). There is one Managed Operations tier per package. Each product counts toward the bundle rule, including the Growth Academy add-ons, and the code prices them from the package prices above.
 
 ---
 

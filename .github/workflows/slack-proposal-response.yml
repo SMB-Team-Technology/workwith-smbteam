@@ -336,10 +336,13 @@ jobs:
                  managed ops → Managed Operations Tier 1/2/3 on the coaching line ('top
                  tier' means Tier 3). Managed Operations replaced coaching and FCOO (Nov
                  2026): Elite Coach, ECP, Coach Essentials, FCOO Advisor → Tier 1; FCOO
-                 Director → Tier 2; FCOO Partner, MC / Master's Circle → Tier 3 — write the
-                 Managed Operations name, never the retired one. Growth Academy / MC Growth
-                 Academy → 'Growth Academy' / "Growth Academy Master's Circle" (add-ons, only
-                 with another core package; not with Managed Operations, which includes it);
+                 Director → Tier 2; FCOO Partner → Tier 3 — write the Managed Operations
+                 name, never the retired one. MC / Master's Circle is NOT retired: Tier 3
+                 when it's part of a Managed Operations package, otherwise "Growth Academy
+                 Master's Circle" (ask the seller if it would be the only product). Growth
+                 Academy / MC Growth Academy → 'Growth Academy' / "Growth Academy Master's
+                 Circle" (add-ons, only with another core package, and they count toward the
+                 bundle rule; not with a Managed Operations tier that already includes it);
                  FCFO / fractional CFO / Managed Financials → FCFO Advisor/Director/Partner
                  (= Level 1/2/3); bookkeeping → Bookkeeping Level 1/2/3 on the coaching line
                  (joined with ' + '; Level 4 is custom-scoped).
@@ -364,7 +367,7 @@ jobs:
                  exact name (as in marketing_name / coaching_name) to the setup_fee_waived
                  list, then run reprice.mjs; the deck shows that fee as waived and leaves
                  it out of year one. 'Charge the setup fee' removes it from the list.
-                 Bookkeeping setup fees can't be waived.
+                 Bookkeeping and FCFO (Managed Financials) setup fees can't be waived.
                - 'Change this to X + Y' REPLACES the package: anything not named is removed.
                  Set removed products' name fields to null (for marketing also null
                  marketing_tier and the ad_spend_* fields). Both AI products go in one

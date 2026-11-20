@@ -87,11 +87,11 @@ const PRODUCT_ALIASES = [
 // (Elite Coach … FCOO) still turn up in call notes.
 const OPS_PRODUCTS = new Set([
   managedOps(1), managedOps(2), managedOps(3), 'Managed Operations',
-  'Elite Coach', 'Elite Coach Plus', 'Coach Essentials', 'Coach Essentials Plus', "Master's Circle",
+  'Elite Coach', 'Elite Coach Plus', 'Coach Essentials', 'Coach Essentials Plus',
   'FCOO', 'FCOO Advisor', 'FCOO Director', 'FCOO Partner',
 ]);
 const COACHING_PRODUCTS = new Set([
-  ...OPS_PRODUCTS, 'Growth Academy', "Growth Academy Master's Circle",
+  ...OPS_PRODUCTS, "Master's Circle", 'Growth Academy', "Growth Academy Master's Circle",
   'FCFO', 'FCFO Advisor', 'FCFO Director', 'FCFO Partner',
   'Bookkeeping', 'Bookkeeping Level 1', 'Bookkeeping Level 2', 'Bookkeeping Level 3', 'Bookkeeping Level 4',
 ]);
@@ -671,6 +671,10 @@ function selectCoachingByRevenue(effectiveRevenue, effectiveTeam, text, notes) {
  *  - Managed Operations: the tier named; else a retired FCOO tier's
  *    replacement; else (Managed Operations, Elite Coach, Master's Circle, FCOO
  *    without a tier …) the tier the revenue/team rule picks.
+ *  - "Master's Circle" (Lynne, Nov 2026: the term persists, as the add-on or
+ *    as part of a Tier 3 conversation): with Managed Operations but no tier
+ *    named → Tier 3; otherwise the Growth Academy Master's Circle add-on
+ *    (flagged for the rep; on its own it can't be sold, so pricing asks).
  *  - Growth Academy add-ons: only when no Managed Operations tier already
  *    includes them.
  *  - FCFO named without a tier: Managed Financials bands — Advisor under $1M,
@@ -692,6 +696,10 @@ export function selectDiscussedCoaching(products, effectiveRevenue, notes, effec
     const named = [3, 2, 1].find(t => has(managedOps(t)));
     const legacyTier = ['FCOO Partner', 'FCOO Director', 'FCOO Advisor'].find(has);
     if (named) moTier = named;
+    else if (has("Master's Circle")) {
+      moTier = 3;
+      notes.push("Master's Circle came up in a Managed Operations conversation — Managed Operations Tier 3 selected (includes Master's Circle Growth Academy); confirm with the sales rep.");
+    }
     else if (legacyTier) moTier = unretire(getProduct(legacyTier)).product.moTier;
     else moTier = managedOpsTierFor(effectiveRevenue, effectiveTeam);
     const legacy = ops.filter(p => !p.startsWith('Managed Operations'));
@@ -701,8 +709,12 @@ export function selectDiscussedCoaching(products, effectiveRevenue, notes, effec
     picks.push(managedOps(moTier));
   }
 
-  // Growth Academy add-ons
-  const ga = has("Growth Academy Master's Circle") ? "Growth Academy Master's Circle" : has('Growth Academy') ? 'Growth Academy' : null;
+  // Growth Academy add-ons. "Master's Circle" without Managed Operations
+  // means the Master's Circle add-on.
+  if (has("Master's Circle") && !moTier) {
+    notes.push("Master's Circle read as the Growth Academy Master's Circle add-on — confirm with the sales rep (Tier 3 includes it if they meant Managed Operations).");
+  }
+  const ga = has("Growth Academy Master's Circle") || has("Master's Circle") ? "Growth Academy Master's Circle" : has('Growth Academy') ? 'Growth Academy' : null;
   if (ga) {
     if (moTier && (ga === 'Growth Academy' || moTier === 3)) notes.push(`${ga} discussed — already included in ${managedOps(moTier)}, not added.`);
     else picks.push(ga);

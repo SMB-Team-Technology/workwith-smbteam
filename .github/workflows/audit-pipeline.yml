@@ -420,7 +420,7 @@ jobs:
                   fee_txt = " · ".join(f"{f['label'] if f['label'] != 'Setup fee' else f['product'] + ' setup'} ${f['amount']:,}"
                                        + (" (waived)" if f.get("waived") else "") for f in fees)
                   lines.append(f"*One-time setup:* ${d.get('setup_total') or 0:,} — {fee_txt}. "
-                               "Reply \"waive the <product> setup fee\" to waive one (not bookkeeping).")
+                               "Reply \"waive the <product> setup fee\" to waive one (not bookkeeping or FCFO).")
               if unpriced:
                   lines.append(f"🚫 *Can't be priced automatically:* {', '.join(unpriced)} — no stand-alone price (add another product or pick a different tier) or custom-scoped (Sales sets the price).")
               if d.get("ad_spend_conservative"):
