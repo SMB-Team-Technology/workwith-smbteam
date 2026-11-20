@@ -829,10 +829,10 @@ SLIDE_TITLES = {"cover": "Cover", "priorities": "Your Priorities, In Your Words"
                 "diagnosis": "The Diagnosis", "plan": "The Plan", "strategy": "The Recommended Strategy",
                 "rollout": "Rollout Plan", "investment": "Your Investment",
                 "roadmap": "What Happens Next",
-                "pos_goals": "ProfitOS — Your Goals", "pos_two_sides": "ProfitOS — Reliable Numbers to Confident Action",
-                "pos_books": "ProfitOS — Bookkeeping Levels", "pos_questions": "ProfitOS — Questions You Can Answer",
-                "pos_analysis": "ProfitOS — The Analysis", "pos_plan": "ProfitOS — Your Plan",
-                "pos_level": "ProfitOS — Your Fractional CFO Level", "pos_ladder": "ProfitOS — Leadership Matched to Your Stage"}
+                "pos_goals": "Managed Finances — Your Goals", "pos_two_sides": "Managed Finances — Reliable Numbers to Confident Action",
+                "pos_books": "Managed Finances — Bookkeeping Levels", "pos_questions": "Managed Finances — Questions You Can Answer",
+                "pos_analysis": "Managed Finances — The Analysis", "pos_plan": "Managed Finances — Your Plan",
+                "pos_level": "Managed Finances — Your Level", "pos_ladder": "Managed Finances — Leadership Matched to Your Stage"}
 
 
 def seller_prep_path():
@@ -1984,7 +1984,7 @@ def build_roadmap(prs):
 # plan slide come from the firm's call (PROFITOS_GOALS / PROFITOS_WHY);
 # the recommended levels come from package_decision.json.
 
-POS_KICKER = "PROFITOS"
+POS_KICKER = "MANAGED FINANCES"
 POS_DISCLAIMER = ("Examples are illustrative. Reporting formats, analyses and deliverables "
                   "vary by firm and agreed engagement scope.")
 POS_STANDARD_GOALS = [
@@ -1994,55 +1994,81 @@ POS_STANDARD_GOALS = [
 ]
 POS_LEVELS = {
     "Advisor": {
-        "n": 1, "ladder": "A monthly P&L and balance sheet deep dive, red flags and quarterly priorities.",
+        "n": 1, "label": "Level 1",
+        "ladder": "Financial statement deep dive, review and discussion. Clear, reliable numbers.",
         "ask": "“Where should we focus?”",
         "title": "Understand your numbers. Know where to focus.",
-        "work_head": "What Advisor is",
-        "work": "Focused financial strategy: a monthly deep dive into your P&L and balance sheet "
-                "to see where the money goes, where profit leaks, and what to fix first.",
+        "work_head": "What Level 1 is",
+        "work": "A financial strategy engagement built on a monthly deep dive into your P&L and "
+                "balance sheet, with red flags turned into clear priorities and goals.",
         "decisions": ["Are we becoming more profitable?", "Where are we spending too much?",
                       "Which financial issues need attention first?",
                       "What should our financial goals be next quarter?"],
         "quote": "“I understand what my numbers are telling me.”*",
-        "foot": "*Financial strategy and review: quarterly projects start at Director.",
+        "foot": "*Level 1 is a financial statement review and discussion: no quarterly projects or between-call questions.",
         "includes": None,
         "focus": "Financial statement deep dive · Red flags · Quarterly priorities and financial goals",
     },
     "Director": {
-        "n": 2, "ladder": "Adds done-with-you projects: a quarterly roadmap and recurring KPI dashboard.",
+        "n": 2, "label": "Level 2",
+        "ladder": "Adds a custom quarterly roadmap of financial projects and a KPI dashboard.",
         "ask": "“How do we move forward?”",
         "title": "Turn financial insight into a plan for growth.",
         "work_head": "Example of the work",
-        "work": "An illustrative quarterly roadmap, recurring KPI dashboard, and examples of budget, "
-                "forecast, cash flow, compensation or marketing ROI analysis.",
+        "work": "A custom quarterly roadmap of done-with-you financial projects and a recurring KPI "
+                "dashboard. Examples: budget, forecast, cash flow, compensation and marketing ROI analysis.",
         "decisions": ["Can we afford our next hire?", "How much can we safely invest in marketing?",
                       "Will a compensation change improve profitability?",
                       "What needs to happen this quarter to reach our goals?"],
         "quote": "“I can make growth decisions with a financial plan behind them.”",
         "foot": None,
-        "includes": "Includes everything in Advisor, plus quarterly projects",
-        "focus": "Quarterly roadmap · Recurring KPIs · Budget, cash flow, compensation or marketing ROI",
+        "includes": "Includes everything in Level 1, plus quarterly projects",
+        "focus": "Quarterly roadmap · KPI dashboard · Cash flow and hiring analysis",
     },
     "Partner": {
-        "n": 3, "ladder": "Adds advanced priorities such as pricing, expansion, capital and succession planning.",
+        "n": 3, "label": "Level 3",
+        "ladder": "Adds comprehensive projects for expansion, capital strategy and succession or exit planning.",
         "ask": "“How do we navigate major decisions?”",
         "title": "Make big decisions about your firm’s future.",
         "work_head": "Example of the work",
-        "work": "An illustrative advanced planning example: expansion modeling, capital strategy, "
-                "succession scenarios, or profitability by practice area, location or attorney.",
+        "work": "The most advanced done-with-you projects each quarter. Examples: pricing analysis, "
+                "profitability by practice area, location or attorney, expansion modeling, capital strategy, "
+                "multi-year financial modeling, and succession or exit planning.",
         "decisions": ["Should we expand into another market?", "How should we fund our next stage of growth?",
                       "Which practice areas are creating the most value?",
                       "How do we prepare for succession or a transition?"],
         "quote": "“I have financial leadership to navigate bigger decisions.”",
         "foot": None,
-        "includes": "Includes everything in Advisor and Director, plus advanced planning",
+        "includes": "Includes everything in Levels 1 and 2, plus advanced projects",
         "focus": "Expansion modeling · Capital strategy · Succession planning · Profitability by practice area",
     },
 }
-POS_BOOKS = [(1, "Up to $1M", "Clean, organized books and monthly financials by the 20th."),
-             (2, "$1M – $2M", "Adds monthly trust reconciliation and financials by the 15th."),
-             (3, "$2M – $4M", "Higher volume and our fastest close: financials by the 10th."),
-             (4, "$4M+", "Scoped to fit larger, more complex firms.")]
+# (level, transactions a month, what it is) — bookkeeping is placed by monthly
+# transaction volume first; revenue is a guide (Vanessa's deck, Nov 20).
+POS_BOOKS = [(1, "Up to 100", "Financials by the 20th*. Clean books and simple accounts, no trust "
+                              "accounting. Typically up to $1M in revenue."),
+             (2, "Up to 250", "Financials by the 15th*. Adds monthly three-way trust reconciliation. "
+                              "Typically $1M–$2M in revenue."),
+             (3, "Up to 500", "Financials by the 10th*, our fastest close, with trust reconciliation. "
+                              "Typically $2M–$4M in revenue."),
+             (4, "Above 500", "Firms above these limits are scoped with a custom agreement.")]
+# Her speaker notes that the seller needs (they go to the seller prep, never the deck).
+POS_SELLER_NOTES = {
+    "pos_ladder": "Levels distinguish engagement scope and complexity, not hours. Level 1 is financial "
+                  "statement review and discussion with no quarterly projects; quarterly projects begin at "
+                  "Level 2. Lead with your Finance Team rather than an individual title; if asked who is on "
+                  "it, a CFO is assigned to the account and bookkeepers and support work alongside, so not "
+                  "every call is with the CFO. Managed Finances requires SMB Bookkeeping, or books that are "
+                  "current with complete, accurate, timely financials each month by the 10th, including "
+                  "properly allocated payroll. Set-up fees apply.",
+    "pos_books": "Bookkeeping is placed by monthly transaction volume first (up to 100, 250, 500); revenue "
+                 "and team size are a secondary guide. Confirm with the department before quoting a firm "
+                 "whose volume and revenue point to different levels. Payroll/W-2 and AP/1099 work is not "
+                 "included at any level. Included cleanup: up to 2 months at Level 2 and up to 4 months at "
+                 "Level 3; Level 1 needs clean books. Prior-period cleanup is billed separately.",
+    "pos_level": "Examples are tailored and scope-confirmed; not every example applies to every engagement. "
+                 "Each level includes everything in the one before it.",
+}
 
 
 def pos_slide(prs, key, title, sub=None, disclaimer=True):
@@ -2062,7 +2088,7 @@ def build_pos_goals(prs):
     goals = [tuple(g) for g in PROFITOS_GOALS] or POS_STANDARD_GOALS
     if not PROFITOS_GOALS:
         note("pos_goals", "No financial goals were recorded from the call, so this slide shows "
-                          "ProfitOS's three standard goals. Recap the firm's own goals out loud.")
+                          "the three standard Managed Finances goals. Recap the firm's own goals out loud.")
     slide = pos_slide(prs, "pos_goals", "Your goals point to a clearer path forward.",
                       "After our conversation, these are the areas where we can help improve your "
                       "firm's financial health." if PROFITOS_GOALS else None, disclaimer=False)
@@ -2085,15 +2111,17 @@ def build_pos_goals(prs):
 
 def build_pos_two_sides(prs):
     slide = pos_slide(prs, "pos_two_sides", "From reliable numbers to confident action.",
-                      "Bookkeeping establishes visibility. Fractional CFO guidance helps you "
+                      "Bookkeeping establishes visibility. Your Finance Team helps you "
                       "interpret the numbers and decide what to do next.")
     cols = [("BOOKKEEPING  ·  THE FOUNDATION", "Know where you stand",
              ["Accurate, timely financials", "Organized financial reporting",
               "Visibility into cash, expenses and profit", "A trusted foundation for decision-making"],
              "SEE CLEARLY", OCEAN_BLUE),
-            ("FRACTIONAL CFO  ·  THE LEADERSHIP", "Know where to go",
-             ["Financial statement deep dive and review", "Red flags and strategic discussion",
-              "Quarterly priorities and financial goals", "Planning and projects at higher levels"],
+            ("MANAGED FINANCIALS  ·  THE STRATEGY", "Know where to go",
+             ["Monthly deep dive into your P&L and balance sheet",
+              "Red flags and profit leaks turned into clear priorities",
+              "A KPI dashboard and quarterly projects at higher levels",
+              "Books aligned to a proven law firm Chart of Accounts"],
              "DECIDE CONFIDENTLY", LIME_GREEN)]
     cw, y, h = 4.45, 1.52, 3.36
     for i, (kick, head, items, tag, accent) in enumerate(cols):
@@ -2113,33 +2141,38 @@ def build_pos_two_sides(prs):
 
 def build_pos_books(prs):
     slide = pos_slide(prs, "pos_books", "Bookkeeping that fits the size of your firm.",
-                      "Your firm's annual revenue and team size set the level.")
+                      "Your monthly transaction volume sets the level. Revenue and team size are a guide. "
+                      "Higher levels add trust compliance and a faster close.", disclaimer=False)
+    note("pos_books", POS_SELLER_NOTES["pos_books"])
     gap = 0.18
     cw = (9.40 - 3 * gap) / 4
-    y, h = 1.52, 1.86
+    y, h = 1.52, 2.06
     for i, (lvl, rev, line) in enumerate(POS_BOOKS):
         cx = 0.30 + i * (cw + gap)
         mine = lvl == BOOKKEEPING_LEVEL
         add_rect(slide, cx, y, cw, h, fill=NAVY if mine else WHITE)
         add_rect(slide, cx, y, cw, 0.05, fill=LIME_GREEN if mine else OCEAN_BLUE)
-        add_text(slide, f"LEVEL {lvl}", cx + 0.16, y + 0.14, cw - 0.32, 0.22, 8,
+        add_text(slide, f"LEVEL {lvl}" if lvl < 4 else "CUSTOM", cx + 0.16, y + 0.14, cw - 0.32, 0.22, 8,
                  LIME_GREEN if mine else OCEAN_BLUE, bold=True, max_lines=1, fit=False)
         add_text(slide, rev, cx + 0.16, y + 0.38, cw - 0.32, 0.40, 15, WHITE if mine else NAVY,
                  bold=True, max_lines=1, min_size=11)
-        add_text(slide, "annual revenue", cx + 0.16, y + 0.76, cw - 0.32, 0.20, 8,
+        add_text(slide, "transactions a month", cx + 0.16, y + 0.76, cw - 0.32, 0.20, 8,
                  NAVY_TEXT_SOFT if mine else SLATE, max_lines=1, fit=False)
-        add_text(slide, line, cx + 0.16, y + 1.02, cw - 0.32, 0.62, 9, NAVY_TEXT_SOFT if mine else BODY_TEXT,
-                 min_size=7.5, cap_label=f"pos_books {lvl}")
+        add_text(slide, line, cx + 0.16, y + 0.98, cw - 0.32, h - 1.02 - (0.32 if mine else 0.04), 8.5,
+                 NAVY_TEXT_SOFT if mine else BODY_TEXT, min_size=7, cap_label=f"pos_books {lvl}")
         if mine:
             add_pill(slide, "Recommended for you", cx + 0.16, y + h - 0.30, 0.22, LIME_GREEN, NAVY, size=6.5)
-    add_rect(slide, 0.30, 3.52, 9.40, 1.40, fill=WHITE)
-    add_rect(slide, 0.30, 3.52, 0.05, 1.40, fill=OCEAN_BLUE)
-    add_text(slide, "INCLUDED AT EVERY LEVEL", 0.50, 3.60, 6.0, 0.22, 8, OCEAN_BLUE, bold=True, fit=False)
-    items = ["A reviewed P&L and balance sheet every month", "Every transaction categorized",
-             "Bank, credit card and loan accounts reconciled", "QuickBooks, banks and your legal platform connected",
-             "Books built on the SMB law firm Chart of Accounts", "A dedicated point of contact for bookkeeping questions"]
-    add_bullets(slide, items[:3], 0.46, 3.86, 4.60, 1.02, 9, DARK_TEXT, OCEAN_BLUE, label="pos_books included 1")
-    add_bullets(slide, items[3:], 5.06, 3.86, 4.56, 1.02, 9, DARK_TEXT, OCEAN_BLUE, label="pos_books included 2")
+    add_rect(slide, 0.30, 3.70, 9.40, 1.22, fill=WHITE)
+    add_rect(slide, 0.30, 3.70, 0.05, 1.22, fill=OCEAN_BLUE)
+    add_text(slide, "INCLUDED AT EVERY LEVEL", 0.50, 3.78, 6.0, 0.22, 8, OCEAN_BLUE, bold=True, fit=False)
+    items = ["Done-with-you setup connecting QuickBooks Online, your banks and your legal platform",
+             "Books built on our law firm Chart of Accounts",
+             "Every transaction categorized and accounts reconciled",
+             "A reviewed P&L and balance sheet every month"]
+    add_bullets(slide, items[:2], 0.46, 4.02, 4.60, 0.86, 9, DARK_TEXT, OCEAN_BLUE, label="pos_books included 1")
+    add_bullets(slide, items[2:], 5.06, 4.02, 4.56, 0.86, 9, DARK_TEXT, OCEAN_BLUE, label="pos_books included 2")
+    add_text(slide, "*Delivery dates depend on timely receipt of your data. Firms above these limits require "
+                    "a custom agreement.", 0.30, 5.00, 9.40, 0.22, 6.5, SLATE, max_lines=1, fit=False)
 
 
 def build_pos_questions(prs):
@@ -2178,41 +2211,62 @@ def _mini_bars(slide, x, y, w, h, values, colors):
 def build_pos_analysis(prs):
     slide = pos_slide(prs, "pos_analysis", "See the analysis behind better decisions.",
                       "Illustrative examples of the financial insight and planning available across the levels.")
-    cards = [("FINANCIAL SNAPSHOT", "Where do we stand?"),
-             ("QUARTERLY ROADMAP  ·  DIRECTOR+", "What should happen next?"),
-             ("DECISION MODEL  ·  DIRECTOR+", "What happens if we hire?")]
+    cards = [("MONTHLY FINANCIAL REVIEW", "Where do we stand?", "P&L AND BALANCE SHEET  ·  THIS MONTH",
+              "Red flags surfaced for discussion"),
+             ("QUARTERLY ROADMAP  ·  LEVEL 2+", "What should happen next?", "90-DAY ROADMAP",
+              "Priorities and goals set each quarter"),
+             ("KPI DASHBOARD  ·  LEVEL 2+", "How is the firm really doing?", "FIRM HEALTH AT A GLANCE", None)]
     gap = 0.22
     cw = (9.40 - 2 * gap) / 3
     y, h = 1.52, 3.12
-    for i, (kick, q) in enumerate(cards):
+    for i, (kick, q, panel, caption) in enumerate(cards):
         cx = 0.30 + i * (cw + gap)
         add_rect(slide, cx, y, cw, h, fill=WHITE)
         add_rect(slide, cx, y, cw, 0.05, fill=OCEAN_BLUE)
         add_text(slide, kick, cx + 0.16, y + 0.14, cw - 0.32, 0.22, 7.5, OCEAN_BLUE, bold=True,
                  max_lines=1, min_size=6.5)
-        add_text(slide, q, cx + 0.16, y + 0.38, cw - 0.32, 0.36, 13, NAVY, bold=True,
-                 max_lines=1, min_size=10)
-        px, py, pw, ph = cx + 0.30, y + 1.00, cw - 0.60, 1.70
-        add_rect(slide, cx + 0.16, y + 0.88, cw - 0.32, 2.06, fill=BG_WASH)
-        if i == 0:      # revenue vs expenses by month
-            _mini_bars(slide, px, py + 0.10, pw, ph - 0.30, [5, 6, 5.5, 7, 6.5, 8], [OCEAN_BLUE, NAVY])
-        elif i == 1:    # Q1–Q4 roadmap: quarters across, project bars below
-            step = pw / 4.0
-            for q in range(4):
-                add_text(slide, f"Q{q+1}", px + q * step, py, step, 0.22, 8, NAVY, bold=True,
+        add_text(slide, q, cx + 0.16, y + 0.38, cw - 0.32, 0.36, 12, NAVY, bold=True,
+                 max_lines=1, min_size=9)
+        bx, by, bw, bh = cx + 0.16, y + 0.86, cw - 0.32, 2.12
+        add_rect(slide, bx, by, bw, bh, fill=BG_WASH)
+        add_text(slide, panel, bx + 0.10, by + 0.06, bw - 0.86, 0.20, 6.5, SLATE, bold=True, max_lines=1,
+                 min_size=5)
+        add_text(slide, "SAMPLE", bx + bw - 0.76, by + 0.06, 0.70, 0.20, 6, SLATE, bold=True,
+                 align=PP_ALIGN.RIGHT, fit=False)
+        px, py, pw = bx + 0.14, by + 0.36, bw - 0.28
+        if i == 0:      # this month's P&L lines, with a flag on one
+            for r, (label, frac, color) in enumerate([("Revenue", 0.92, OCEAN_BLUE), ("Payroll", 0.58, NAVY),
+                                                      ("Marketing", 0.30, CORAL), ("Net income", 0.22, GREEN)]):
+                ry = py + 0.08 + r * 0.32
+                add_text(slide, label, px, ry - 0.02, 0.80, 0.22, 7, DARK_TEXT, max_lines=1, fit=False)
+                add_rect(slide, px + 0.82, ry + 0.03, (pw - 0.86) * frac, 0.14, fill=color)
+        elif i == 1:    # three months across, projects below
+            step = pw / 3.0
+            for mth in range(3):
+                add_text(slide, f"Month {mth + 1}", px + mth * step, py, step, 0.22, 7.5, NAVY, bold=True,
                          align=PP_ALIGN.CENTER, fit=False)
             add_rule(slide, px, py + 0.26, px + pw, py + 0.26, NAVY_RULE, 1.5)
-            for r, (start, span, color) in enumerate([(0, 1.6, LIME_GREEN), (1, 2.0, OCEAN_BLUE),
-                                                      (2, 1.5, NAVY), (2.6, 1.4, OCEAN_BLUE)]):
-                add_rect(slide, px + start * step + 0.04, py + 0.42 + r * 0.30,
-                         span * step - 0.08, 0.18, fill=color)
-        else:           # hire now vs later
-            _mini_bars(slide, px + 0.20, py + 0.10, pw - 0.40, ph - 0.50, [6, 7.5], [SLATE, GREEN])
-            add_text(slide, "Today", px + 0.02, py + ph - 0.36, pw / 2, 0.20, 7, SLATE,
-                     align=PP_ALIGN.CENTER, fit=False)
-            add_text(slide, "With the hire", px + pw / 2 - 0.02, py + ph - 0.36, pw / 2, 0.20, 7, GREEN,
-                     align=PP_ALIGN.CENTER, fit=False)
-    add_text(slide, "Illustrative concepts, not screenshots of actual SMB Team reporting or guaranteed deliverables.",
+            for r, (start, span, color, label) in enumerate([(0, 1.0, LIME_GREEN, "Budget"),
+                                                             (0.6, 1.4, OCEAN_BLUE, "Cash flow forecast"),
+                                                             (1.6, 1.4, NAVY, "Marketing ROI analysis")]):
+                ry = py + 0.40 + r * 0.36
+                add_rect(slide, px + start * step + 0.03, ry, span * step - 0.06, 0.24, fill=color)
+                add_text(slide, label, px + start * step + 0.03, ry, span * step - 0.06, 0.24, 6.5,
+                         NAVY if color == LIME_GREEN else WHITE, bold=True, max_lines=1, min_size=4.5,
+                         anchor=MSO_ANCHOR.MIDDLE)
+        else:           # four KPI tiles
+            tw, th = (pw - 0.12) / 2, 0.70
+            for t, label in enumerate(("Revenue", "Profit", "Cash", "Collections")):
+                tx, ty = px + (t % 2) * (tw + 0.12), py + 0.04 + (t // 2) * (th + 0.12)
+                add_rect(slide, tx, ty, tw, th, fill=WHITE)
+                add_text(slide, label, tx + 0.08, ty + 0.06, tw - 0.16, 0.20, 7, SLATE, bold=True,
+                         max_lines=1, fit=False)
+                _mini_bars(slide, tx + 0.12, ty + 0.30, tw - 0.30, 0.30, [3, 4, 3.6, 5][:4],
+                           [OCEAN_BLUE] if t != 1 else [GREEN])
+        if caption:
+            add_text(slide, caption, bx + 0.10, by + bh - 0.32, bw - 0.20, 0.26, 7.5, NAVY, bold=True,
+                     max_lines=1, min_size=6.5)
+    add_text(slide, "Illustrative concepts, not screenshots of actual SMBTeam reporting or guaranteed deliverables.",
              0.30, 4.70, 9.40, 0.22, 7.5, SLATE, max_lines=1, fit=False)
 
 
@@ -2224,7 +2278,7 @@ def build_pos_plan(prs):
     slide = pos_slide(prs, "pos_plan", "A plan built around your priorities.",
                       "How we matched the engagement to the questions your firm needs to answer.",
                       disclaimer=False)
-    program = f"Fractional CFO  ·  {PROFITOS_LEVEL}" + (f"  +  Bookkeeping Level {BOOKKEEPING_LEVEL}" if BOOKKEEPING_LEVEL else "")
+    program = f"Managed Finances  ·  {lvl['label']}" + (f"  +  Bookkeeping Level {BOOKKEEPING_LEVEL}" if BOOKKEEPING_LEVEL else "")
     add_rect(slide, 0.30, 1.52, 9.40, 0.92, fill=NAVY)
     add_rect(slide, 0.30, 1.52, 0.06, 0.92, fill=LIME_GREEN)
     add_text(slide, "RECOMMENDED PROGRAM", 0.56, 1.62, 6.0, 0.22, 8, LIME_GREEN, bold=True, fit=False)
@@ -2250,7 +2304,7 @@ def _level_tracker(slide, current, x, y, w):
         cx = x + (d["n"] - 1) * (cw + gap)
         done, mine = d["n"] < POS_LEVELS[current]["n"], name == current
         add_rect(slide, cx, y, cw, 0.36, fill=NAVY if mine else (SOFT_BLUE if done else WHITE))
-        add_text(slide, ("✓ " if done else f"{d['n']} · ") + name, cx, y, cw, 0.36, 9,
+        add_text(slide, ("✓ " if done else f"{d['n']} · ") + d["label"], cx, y, cw, 0.36, 9,
                  WHITE if mine else NAVY, bold=mine, align=PP_ALIGN.CENTER,
                  anchor=MSO_ANCHOR.MIDDLE, max_lines=1, fit=False)
 
@@ -2258,6 +2312,7 @@ def _level_tracker(slide, current, x, y, w):
 def build_pos_level(prs):
     lvl = POS_LEVELS[PROFITOS_LEVEL]
     slide = pos_slide(prs, "pos_level", lvl["title"])
+    note("pos_level", POS_SELLER_NOTES["pos_level"])
     _level_tracker(slide, PROFITOS_LEVEL, 0.30, 1.06, 9.40)
     y, h = 1.58, 2.36
     add_rect(slide, 0.30, y, 4.40, h, fill=WHITE)
@@ -2281,8 +2336,9 @@ def build_pos_level(prs):
 
 def build_pos_ladder(prs):
     slide = pos_slide(prs, "pos_ladder", "Leadership matched to your stage of growth.",
-                      "Each level builds on the earlier one, with increasing strategic involvement and capacity "
-                      "for complexity. Every level includes everything in the one before it, then adds more.")
+                      "Each level includes everything in the one before it, then adds more, matched to the "
+                      "size and complexity of your firm.")
+    note("pos_ladder", POS_SELLER_NOTES["pos_ladder"])
     gap = 0.20
     cw = (9.40 - 2 * gap) / 3
     base = 4.62
@@ -2294,7 +2350,7 @@ def build_pos_ladder(prs):
         mine = name == PROFITOS_LEVEL
         add_rect(slide, cx, top, cw, h, fill=NAVY if mine else WHITE)
         add_rect(slide, cx, top, cw, 0.06, fill=LIME_GREEN if mine else OCEAN_BLUE)
-        add_text(slide, f"{d['n']}  ·  {name}", cx + 0.18, top + 0.16, cw - 0.36, 0.36, 15,
+        add_text(slide, d["label"], cx + 0.18, top + 0.16, cw - 0.36, 0.36, 15,
                  WHITE if mine else NAVY, bold=True, max_lines=1, min_size=11)
         add_text(slide, d["ladder"], cx + 0.18, top + 0.58, cw - 0.36, 0.80, 10,
                  NAVY_TEXT_SOFT if mine else BODY_TEXT, min_size=8, cap_label=f"pos_ladder {name}")
