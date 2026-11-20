@@ -829,10 +829,10 @@ SLIDE_TITLES = {"cover": "Cover", "priorities": "Your Priorities, In Your Words"
                 "diagnosis": "The Diagnosis", "plan": "The Plan", "strategy": "The Recommended Strategy",
                 "rollout": "Rollout Plan", "investment": "Your Investment",
                 "roadmap": "What Happens Next",
-                "pos_goals": "Managed Finances — Your Goals", "pos_two_sides": "Managed Finances — Reliable Numbers to Confident Action",
-                "pos_books": "Managed Finances — Bookkeeping Levels", "pos_questions": "Managed Finances — Questions You Can Answer",
-                "pos_analysis": "Managed Finances — The Analysis", "pos_plan": "Managed Finances — Your Plan",
-                "pos_level": "Managed Finances — Your Level", "pos_ladder": "Managed Finances — Leadership Matched to Your Stage"}
+                "pos_goals": "Managed Financials — Your Goals", "pos_two_sides": "Managed Financials — Reliable Numbers to Confident Action",
+                "pos_books": "Managed Financials — Bookkeeping Levels", "pos_questions": "Managed Financials — Questions You Can Answer",
+                "pos_analysis": "Managed Financials — The Analysis", "pos_plan": "Managed Financials — Your Plan",
+                "pos_level": "Managed Financials — Your Level", "pos_ladder": "Managed Financials — Leadership Matched to Your Stage"}
 
 
 def seller_prep_path():
@@ -1720,7 +1720,7 @@ def product_line(name):
 
 
 # Product names as the pricing sheet lists them. The package data keeps the
-# internal FCFO Advisor / Director / Partner names (the Managed Finances
+# internal FCFO Advisor / Director / Partner names (the Managed Financials
 # slides key off them); anything a client reads shows the sheet's name.
 _SHEET_NAMES = [(re.compile(r"\b(?:FCFO|Fractional CFO)\s+(Advisor|Director|Partner)\b"),
                  lambda m: "Managed Financials Level " + {"Advisor": "1", "Director": "2", "Partner": "3"}[m.group(1)])]
@@ -1999,7 +1999,7 @@ def build_roadmap(prs):
 # plan slide come from the firm's call (PROFITOS_GOALS / PROFITOS_WHY);
 # the recommended levels come from package_decision.json.
 
-POS_KICKER = "MANAGED FINANCES"
+POS_KICKER = "MANAGED FINANCIALS"
 POS_DISCLAIMER = ("Examples are illustrative. Reporting formats, analyses and deliverables "
                   "vary by firm and agreed engagement scope.")
 POS_STANDARD_GOALS = [
@@ -2073,7 +2073,7 @@ POS_SELLER_NOTES = {
                   "statement review and discussion with no quarterly projects; quarterly projects begin at "
                   "Level 2. Lead with your Finance Team rather than an individual title; if asked who is on "
                   "it, a CFO is assigned to the account and bookkeepers and support work alongside, so not "
-                  "every call is with the CFO. Managed Finances requires SMB Bookkeeping, or books that are "
+                  "every call is with the CFO. Managed Financials requires SMB Bookkeeping, or books that are "
                   "current with complete, accurate, timely financials each month by the 10th, including "
                   "properly allocated payroll. Set-up fees apply.",
     "pos_books": "Bookkeeping is placed by monthly transaction volume first (up to 100, 250, 500); revenue "
@@ -2103,7 +2103,7 @@ def build_pos_goals(prs):
     goals = [tuple(g) for g in PROFITOS_GOALS] or POS_STANDARD_GOALS
     if not PROFITOS_GOALS:
         note("pos_goals", "No financial goals were recorded from the call, so this slide shows "
-                          "the three standard Managed Finances goals. Recap the firm's own goals out loud.")
+                          "the three standard Managed Financials goals. Recap the firm's own goals out loud.")
     slide = pos_slide(prs, "pos_goals", "Your goals point to a clearer path forward.",
                       "After our conversation, these are the areas where we can help improve your "
                       "firm's financial health." if PROFITOS_GOALS else None, disclaimer=False)
@@ -2293,7 +2293,7 @@ def build_pos_plan(prs):
     slide = pos_slide(prs, "pos_plan", "A plan built around your priorities.",
                       "How we matched the engagement to the questions your firm needs to answer.",
                       disclaimer=False)
-    program = f"Managed Finances  ·  {lvl['label']}" + (f"  +  Bookkeeping Level {BOOKKEEPING_LEVEL}" if BOOKKEEPING_LEVEL else "")
+    program = f"Managed Financials  ·  {lvl['label']}" + (f"  +  Bookkeeping Level {BOOKKEEPING_LEVEL}" if BOOKKEEPING_LEVEL else "")
     add_rect(slide, 0.30, 1.52, 9.40, 0.92, fill=NAVY)
     add_rect(slide, 0.30, 1.52, 0.06, 0.92, fill=LIME_GREEN)
     add_text(slide, "RECOMMENDED PROGRAM", 0.56, 1.62, 6.0, 0.22, 8, LIME_GREEN, bold=True, fit=False)

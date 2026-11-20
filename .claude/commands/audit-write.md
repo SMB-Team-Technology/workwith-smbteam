@@ -315,7 +315,7 @@ Don't add Growth Academy to Managed Operations, because every tier already inclu
 
 **Add Fractional CFO (Managed Financials / ProfitOS)** if: owner mentions profit problems, revenue growing but not taking home more, no financial visibility, doesn't know acquisition cost, or wants help planning hires, marketing investment, financing or succession.
 
-The Managed Financials tab calls these Level 1 / 2 / 3. They are written as FCFO Advisor / Director / Partner in `package_decision.json`, the BUILD NOTES and Slack, because the deck's Managed Finances slides key off those names. The deck shows clients the pricing sheet's name, **Managed Financials Level 1 / 2 / 3**, on the investment, strategy and roadmap slides (the engine's `client_name()` swaps it in), so keep the FCFO name in the fill values. The setup fee is one-time and can **never be waived**, the same as bookkeeping.
+The Managed Financials tab calls these Level 1 / 2 / 3. They are written as FCFO Advisor / Director / Partner in `package_decision.json`, the BUILD NOTES and Slack, because the deck's Managed Financials slides key off those names. The deck shows clients the pricing sheet's name, **Managed Financials Level 1 / 2 / 3**, on the investment, strategy and roadmap slides (the engine's `client_name()` swaps it in), so keep the FCFO name in the fill values. The setup fee is one-time and can **never be waived**, the same as bookkeeping.
 
 | Level | Package price | Stand-alone | Setup | Revenue / team | What it is |
 |---|---|---|---|---|---|
