@@ -5,7 +5,7 @@ Contact: Chris Pozios (Christopher John Pozios), cpozios@yahoo.com, (305) 731-66
 URL: https://nationwidedisabilitylaw.com (trigger URL; resolves, site serves from www.nationwidedisabilitylaw.com)
 Proposal call: November 20, 2026, 11:00 AM ET
 HubSpot: contact 182358299775, company 46671199495
-Research run: 2026-11-17 (Pass 1, run 1)
+Research run: 2026-11-20 (Pass 1, run 2 — re-run requested in the proposal thread; supersedes run 1 of 2026-11-17)
 
 ============================================================
 CONTEXT NOTE — READ BEFORE USING THIS RESEARCH
@@ -24,6 +24,14 @@ Research tooling limits for this run (what was and was not possible):
   returned 429 quota exceeded; web UI returned "Running analysis" with no scores).
   Each is written below as "not observed" with what was tried, and listed in the
   seller-confirm list in STEP 9B.
+
+RUN 2 CHANGES (vs run 1):
+- Trigger is unchanged: still no `transcript` and no `transcript_status`. Still no call record, so STEP 9 / 9B stay "not stated".
+- Retried every blocked check. Still blocked: PageSpeed (API HTTP 429 again), Google Maps (page returns only the "Google Maps" header), Yelp listing page (HTTP 403), Google Ads / LSA / Meta Ad Library (not inspectable). These stay "not observed".
+- New: the blog is confirmed active, with a post dated today (see STEP 1).
+- New: one competitor review count found, via Birdeye only (see STEP 4); tagged UNCONFIRMED.
+- New: a Yelp listing for the firm exists (see STEP 5); its rating was not readable.
+- Seller input outside the call (NOT a call figure, not used in the machine-read lines below): package_decision.json records revenue $750,000 "seller_confirmed" (Slack reply, 2026-11-19) and a seller override to Full Service Marketing Starter + Elite Coach (Slack, 2026-11-18). A search snippet says the firm was established in 2008; that is a web snippet, not confirmed.
 
 Firm snapshot (from website and directories, not from a call):
 Nationwide Disability Law is a Social Security disability practice founded by Christopher
@@ -45,21 +53,21 @@ STEP 1 — WEBSITE RESEARCH
 - Live chat present: not observed (none detected in page source)
 - Attorney bio present: yes — Christopher Pozios profile page (/attorney-profile/); memberships: ABA, Macomb County Bar, Dade County Bar, NOSSCR. Only one attorney named on the site.
 - Video present: yes — an embedded video element is on the homepage (content not identified)
-- Blog present: yes — active. Latest posts seen: Nov 13, 2026 ("Social Security Administration Announces New Online Disability Tools…"), Nov 6, 2026 ("What Applicants Should Know if They Are Denied Benefits"), Oct 30, 2026 ("SSA Adds New Conditions to Compassionate Allowances List").
+- Blog present: yes — active, weekly cadence. Read from /blog/ on 2026-11-20. Latest posts: Nov 20, 2026 ("Social Security Disability Lawyer Explains Why AI Cannot Tell You Whether You Qualify for SSD Benefits"), Nov 13, 2026 ("Social Security Administration Announces New Online Disability Tools…"), Nov 6, 2026 ("What Applicants Should Know if They Are Denied Benefits"), Oct 30, 2026 ("SSA Adds New Conditions to Compassionate Allowances List"), Oct 23, Oct 16, Oct 9, Sep 30, Sep 11, Sep 4, 2026.
 - Practice areas listed on site: SSDI, SSI, long-term disability insurance (incl. buyout/settlement), short-term disability denial, veterans disability benefits, continuing disability reviews, benefit termination.
 - Spanish-language option: not observed (English only)
 - Site content scale: many city/state landing pages observed in search results (e.g. Hollywood, Cleveland, Norfolk, Independence, Oregon, Ohio, Michigan) — i.e. a geo-landing-page strategy exists.
 - Homepage review claims: no Google review count or rating stated on the page; ~8 client testimonials with 5-star graphics; Avvo logo displayed.
 
 PageSpeed (pagespeed.web.dev) — NOT OBTAINED:
-- PageSpeed mobile score: not observed. Tried: PageSpeed Insights API (HTTP 429, daily quota exceeded for the shared key) and the pagespeed.web.dev page (stuck on "Running analysis", no scores). No number is recorded because none was measured.
+- PageSpeed mobile score: not observed. Tried in run 1: PageSpeed Insights API (HTTP 429, quota exceeded) and the pagespeed.web.dev page (stuck on "Running analysis", no scores). Run 2: the API returned HTTP 429 again. No number is recorded because none was measured.
 - PageSpeed desktop score: not observed (same attempts).
 -> Seller/Pass 2 should rerun on a machine with browser access before any speed claim is used.
 
 ============================================================
 STEP 2 — GOOGLE BUSINESS PROFILE
 ============================================================
-- GBP found: not observed (Google Maps / Business Profile cannot be read with the tools available; a web search surfaced the firm's website, Avvo and directory pages, not the Maps listing)
+- GBP found: not observed (Google Maps / Business Profile cannot be read with the tools available. Run 2 fetched a Google Maps search URL and got only the "Google Maps" header with no listing data; web searches surfaced the firm's website, Avvo, Yelp and directory pages, not the Maps listing)
 - Star rating: not observed [no Google figure — nothing recorded]
 - Total review count: not observed [no Google figure — nothing recorded]
 - Most recent review date: not observed
@@ -92,11 +100,11 @@ Practice Area 3: Veterans disability benefits
 STEP 4 — COMPETITOR REVIEW COUNTS
 ============================================================
 Named local competitors surfaced by organic search (Mount Clemens / Traverse City / Michigan SSD). Review counts and ratings were NOT verified — Google listings were not reachable, so no numbers are recorded (nothing is cited as "dominating"):
-- Competitor 1: Gordon & Pont PC (Michigan personal injury and disability firm; appears for Mount Clemens and Traverse City) — reviews: not observed — rating: not observed
-- Competitor 2: Neumann Law Group (Traverse City, Grand Rapids, Detroit; SSD practice) — reviews: not observed — rating: not observed
+- Competitor 1: Gordon & Pont PC (Michigan personal injury and disability firm, Southfield MI; appears for Mount Clemens and Traverse City) — reviews: 185 [UNCONFIRMED — sourced from Birdeye (reviews.birdeye.com listing "Gordon & Pont - 185 Reviews") and a web-search summary, not independently confirmed via Google] — rating: 4.8 [UNCONFIRMED — sourced from a web-search summary that called it a Google rating; not read from the Google listing]
+- Competitor 2: Neumann Law Group (Traverse City, Grand Rapids, Detroit; SSD practice) — Google reviews: not observed — Google rating: not observed. Context only: Yelp shows 3.0 from 6 reviews [UNCONFIRMED — sourced from Yelp via web-search summary, not independently confirmed via Google]
 - Competitor 3: Jay Trucks & Associates (SSD applications/appeals; Traverse City page) — reviews: not observed — rating: not observed
 - Also surfaced: Levine Benjamin Law Firm (Michigan and Ohio SSD), Babut Law Offices PLLC (Mount Clemens), Social Security Disability Advisors (Mount Clemens)
-Seller/Pass 2: do not use any competitor review comparison until counts are read live from Google.
+Seller/Pass 2: do not use any competitor review comparison until counts are read live from Google. The Gordon & Pont figures above are UNCONFIRMED and must not be printed as specific figures, and no "competitor has more reviews than the firm" claim can be made because the firm's own Google count was not observed.
 
 ============================================================
 STEP 5 — DIRECTORY LISTINGS
@@ -104,7 +112,8 @@ STEP 5 — DIRECTORY LISTINGS
 - Avvo: found — "Christopher John Pozios", firm shown as "Law Offices of Christopher Pozios / Nationwide Disability Law", 40 Macomb Place Suite 203, Mount Clemens MI 48043; practice areas Social Security & Disability 90%, Adoption 10%; Super Lawyers 2020 and 2021 noted; Martindale-Hubbell Peer Review Rated (2021).
 - Justia: Michigan SSD lawyer pages exist; whether Pozios has a profile: not confirmed.
 - FindLaw: not observed (search did not return a firm listing).
-- Yelp: Mount Clemens disability-attorney search pages exist; a firm listing: not confirmed.
+- Yelp: a firm listing exists — "NATIONWIDE DISABILITY LAW", 40 Macomb Pl, Mount Clemens (yelp.com/biz/nationwide-disability-law-mount-clemens, shown as updated Feb 2026 in the search title). Page fetch returned HTTP 403, so rating and review count not observed.
+- FindLaw: run 2 found a FindLaw Mount Clemens Social Security disability directory page; whether the firm has a listing on it: not confirmed.
 - Other: Martindale-Hubbell (Mount Clemens SSD page exists; firm listing not confirmed), Cornell/LII lawyer directory (Christopher John Pozios listed), english.legal (firm listed), lawfirmswebsitedesign.com (firm listed — likely the web vendor's portfolio).
 - NAP inconsistencies observed:
   * Phone: website and web-search results show 586-463-6666 (toll-free 888-585-4555); the Avvo profile shows (586) 666-6850. The HubSpot contact phone is (305) 731-6666.
@@ -222,7 +231,8 @@ Seller should confirm on the next call:
   - Which market the firm wants to grow in (Michigan vs Florida vs nationwide), and whether the Miami contact number signals a Florida focus. Whether a Spanish-language campaign is wanted.
   - Existing web/SEO vendor: the site footer credits MileMark Media; any current contract?
   - Which phone number is the primary line (586-463-6666 vs Avvo (586) 666-6850 vs (305) 731-6666).
-  - Rerun on a browser-equipped machine: PageSpeed mobile and desktop scores; Google Business Profile rating and review count; 3-pack results for the main searches; Google Ads, LSA and Meta Ad Library for the firm and named competitors; competitor review counts (Gordon & Pont PC, Neumann Law Group, Jay Trucks & Associates).
+  - Rerun on a browser-equipped machine: PageSpeed mobile and desktop scores; Google Business Profile rating and review count; 3-pack results for the main searches; Google Ads, LSA and Meta Ad Library for the firm and named competitors; competitor Google review counts (Gordon & Pont PC — 185 seen only via Birdeye; Neumann Law Group; Jay Trucks & Associates). Run 2 could not obtain any of these either.
+  - Seller-confirmed revenue of $750,000 (Slack, 2026-11-19) and the Elite 360 override are recorded in package_decision.json, not from a call. Confirm both with Chris on the call, plus fee structure and average fee.
   - Verify the "4.9 stars / 125 reviews" figure seen in a search snippet — origin unclear, unverified.
 
 ============================================================
@@ -237,7 +247,7 @@ PASS 2 — VERIFICATION CHECKLIST (completed)
 ============================================================
 - Every number in the notes matches actually observed data: yes (PageSpeed, GBP, ads, 3-pack, competitor reviews are "not observed", not estimated)
 - Competitor review counts: none recorded; no "dominating" claim made
-- Review counts/ratings carry a tag: the Avvo 5.0/46 and the 4.9/125 snippet are tagged UNCONFIRMED; no Google figures recorded
+- Review counts/ratings carry a tag: the Avvo 5.0/46, the 4.9/125 snippet, Gordon & Pont 185/4.8 and Neumann Yelp 3.0/6 are all tagged UNCONFIRMED; no Google figures recorded
 - Revenue split gross/net: not stated; no call
 - Ad sections cover all practice areas: yes, all "not observed"
 - No section says "you are not running ads": correct
