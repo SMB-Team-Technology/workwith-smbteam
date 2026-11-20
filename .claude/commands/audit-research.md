@@ -229,8 +229,8 @@ Extract from the discovery call transcript. Trust these values exactly as stated
 - Any profitability claims made by prospect: [exact quotes only — if none stated, write "none stated"]
 - Any claims about case types or practice areas: [exact quotes only]
 - Stated call focus / product interest: [what the prospect or rep said the call was actually about — e.g. "standard marketing/growth discovery," "Fractional CTO / AI automation engagement," "coaching/ops" — if the call was framed around something other than marketing/intake growth, say so explicitly, do not default to "standard"]
-- Primary engagement: [exactly one of: marketing | coaching/ops | AI | mixed — this line is machine-read by select-package.mjs, so write only the keyword. "marketing" = the call was mainly about leads/ads/SEO/website; "coaching/ops" = mainly about coaching, delegation, team, operations, or fractional COO/CFO; "AI" = mainly about AI tools or Fractional CTO; "mixed" = marketing and a non-marketing need were both central]
-- Products discussed on call: [SMB Team products the rep or prospect named or priced on the call, comma-separated, using the exact catalog names from the alias table below — or "none". Machine-read by select-package.mjs. One line only, no parentheses or explanations (put those in "Stated call focus"). Name ONE tier per product; if no tier was named, write the family name alone ("FCOO", "FCFO", "Fractional CTO") — never a list of tiers like "FCOO Advisor / Director / Partner"]
+- Primary engagement: [exactly one of: marketing | coaching/ops | AI | mixed — this line is machine-read by select-package.mjs, so write only the keyword. "marketing" = the call was mainly about leads/ads/SEO/website; "coaching/ops" = mainly about coaching, delegation, team, operations (Managed Operations), or fractional CFO / bookkeeping; "AI" = mainly about AI tools or Fractional CTO; "mixed" = marketing and a non-marketing need were both central]
+- Products discussed on call: [SMB Team products the rep or prospect named or priced on the call, comma-separated, using the exact catalog names from the alias table below — or "none". Machine-read by select-package.mjs. One line only, no parentheses or explanations (put those in "Stated call focus"). Name ONE tier per product; if no tier was named, write the family name alone ("Managed Operations", "FCFO", "Fractional CTO") — never a list of tiers like "Managed Operations Tier 1 / 2 / 3"]
 - Lead-gen gap stated: [yes/no — machine-read. "yes" only if the prospect said they want more leads/cases or asked about marketing, ads, SEO, or their website; the mere absence of marketing is not a "yes". Follow with a short exact quote]
 - Existing marketing/SEO/ad vendor engagements: [any recently signed or currently active contract with another marketing, SEO, ad, or AEO vendor — exact quote if available, or "none stated"]
 - Budget constraints stated: [any explicit statement about affordability, spend limits, or inability to commit to a larger monthly investment — exact quote if available, or "none stated"]
@@ -263,12 +263,13 @@ confirmed); otherwise "not stated" — never an estimate or a benchmark.
 | AI Workforce Pro | AIWP / aiwp with no tier given — the script picks Starter for 1–4 users (or unknown team size), base for 5+ |
 | Fractional CTO Level 1, Level 2 or Level 3 (one) | FCTO, fractional CTO, AI Accelerator L1 / L2 (old name), AI Enterprise (old name) |
 | Law Firm AI Foundation Sprint | sprint, foundation sprint, AI readiness assessment |
-| Elite Coach | Elite Coach, group coaching at ~$2,600/mo |
-| Elite Coach Plus | Elite Coach Plus, ~$3,200/mo coaching |
-| Coach Essentials / Coach Essentials Plus | Coach Essentials, Essentials coaching |
-| Master's Circle | MC, Master's Circle |
-| FCOO Advisor, FCOO Director or FCOO Partner (one) — or FCOO if no tier was named | FCOO, fractional COO |
-| FCFO Advisor, FCFO Director or FCFO Partner (one) — or FCFO if no tier was named | FCFO, fractional CFO |
+| Managed Operations Tier 1, Tier 2 or Tier 3 (one) — or Managed Operations if no tier was named | Managed Operations, managed ops, operations package, ~$3,297 / ~$5,497 / ~$7,497/mo |
+| Growth Academy | Growth Academy (the group coaching add-on, $1,497/mo) |
+| Growth Academy Master's Circle | Master's Circle Growth Academy, MC Growth Academy ($2,497/mo add-on) |
+| Master's Circle | MC, Master's Circle (not retired — the script reads it as Tier 3 in a Managed Operations conversation, otherwise as the Growth Academy Master's Circle add-on) |
+| Elite Coach, Elite Coach Plus, Coach Essentials (retired — write the name said; the script maps it to Managed Operations) | Elite Coach, coaching, Coach Essentials |
+| FCOO Advisor, FCOO Director or FCOO Partner (retired — the script maps them to Managed Operations Tier 1 / 2 / 3) — or FCOO if no tier was named | FCOO, fractional COO |
+| FCFO Advisor, FCFO Director or FCFO Partner (one) — or FCFO if no level was named | FCFO, fractional CFO, Managed Financials (Level 1 = Advisor, Level 2 = Director, Level 3 = Partner) |
 | Bookkeeping Level 1, 2, 3 or 4 (one) — or Bookkeeping if no level was named | bookkeeping, bookkeeper, ProfitOS bookkeeping |
 | Full Service Marketing | marketing package, ads + SEO, full service |
 
@@ -296,8 +297,7 @@ The deck makes its case in one line: **one number from the call → the causes b
 | Product focus | KPI to look for | Causes to look for |
 |---|---|---|
 | Marketing (Full Service, Paid Ads, Web + SEO, LSA) | cost per signed case or per client, cost per lead, new cases or leads a month, caseload, ad spend, share of cases from ads vs referrals | lead cost too high, too few visitors reach out (site speed, no CTA, conversion rate), dependence on one channel (ads carry every case, or referrals drying up), poor visibility (GBP problems, reviews, organic, AI search), tracking gaps (double counting, no call tracking, unknown source) |
-| Coaching (Elite Coach, Master's Circle, Coach Essentials) | owner hours a week, time off, close rate or consults-to-signed, revenue goal vs today | owner in every decision, no intake process or scripts, no KPIs or scorecard, hiring or accountability gaps |
-| FCOO | owner hours on operations, cases per staff member, turnover, capacity | no systems or SOPs, no leadership layer, owner as bottleneck |
+| Managed Operations / Growth Academy | owner hours a week (on operations too), time off, close rate or consults-to-signed, revenue goal vs today, cases per staff member, turnover, capacity | owner in every decision, no systems or SOPs, no intake process or scripts, no KPIs or scorecard, no leadership layer, hiring or accountability gaps |
 | FCFO / Bookkeeping | how far behind or inaccurate the books are, take-home vs revenue, margin, what not fixing it costs them (penalties, cash surprises, overpaid tax, decisions made blind) | books not reconciled, no budget or forecast, no visibility of cost per case or profit by practice area |
 | Legal AI Workforce / Fractional CTO | hours spent on admin, drafting or intake tasks, headcount they'd otherwise hire, response time | manual repetitive work, no AI tools in use, staff at capacity |
 | Attorney Assistant | missed calls, after-hours calls, response time | no after-hours coverage, slow follow-up |
@@ -322,7 +322,7 @@ Diagnosis (3–4 causes, biggest first):
   2. ...
 Plan inputs (for each non-marketing product the call points to — what the client said that the first step of that product answers; verbatim quote + timestamp; "none stated" if the call didn't say):
   - Fractional CTO / AI Workforce Pro: the tasks the client named as repetitive, manual or slow (intake, drafting, follow-ups, billing…) — up to five, in their words, most painful first
-  - FCOO / coaching: the process or leadership pain they named (owner in every decision, no SOPs, hiring, accountability, intake process…)
+  - Managed Operations: the process or leadership pain they named (owner in every decision, no SOPs, hiring, accountability, intake process…)
   - FCFO / bookkeeping: what they said they can't see or trust in their numbers (books behind, no monthly P&L, no forecast, no cost per case, cash surprises…)
 Alternate KPI (if the seller changes the package): [product → KPI and figure as said, or "none"]
 Seller should confirm on the next call: [missing or unclear numbers worth asking about, or "none"]

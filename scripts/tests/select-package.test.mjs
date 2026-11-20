@@ -46,14 +46,14 @@ test('one product left → stand-alone price, no savings (Chase, Harold Rosbotto
     assert.equal(r.total, price, name);
     assert.equal(r.totalSavings, 0, name);
   }
-  assert.equal(pricePackage({ coaching: { name: 'Coach Essentials Plus' } }).total, 2497);
+  assert.equal(pricePackage({ coaching: { name: 'Managed Operations Tier 1' } }).total, 3497);
 });
 
 test('two products → bundled prices and savings', () => {
-  const r = pricePackage({ marketing: { name: 'Full Service Marketing — Starter' }, coaching: { name: 'Elite Coach Plus' } });
+  const r = pricePackage({ marketing: { name: 'Full Service Marketing — Starter' }, coaching: { name: 'Managed Operations Tier 1' } });
   assert.equal(r.mode, 'bundled');
-  assert.equal(r.total, 4997 + 3200);
-  assert.equal(r.totalSavings, (5697 - 4997) + (3497 - 3200));
+  assert.equal(r.total, 4997 + 3297);
+  assert.equal(r.totalSavings, (5697 - 4997) + (3497 - 3297));
 });
 
 test('AI Workforce Pro – Starter does not make a bundle (Johnson Law Group, Allied Defense)', () => {
@@ -79,36 +79,81 @@ test('Paid Ads Essentials alone has no price — flagged, not invented (Jason Br
   assert.deepEqual(r.unpriced, ['Paid Ads Essentials']);
   assert.equal(r.lines.marketing.charged, null);
   // …but it can be sold bundled
-  const bundled = pricePackage({ marketing: { name: 'Paid Ads Essentials' }, coaching: { name: 'Elite Coach' } });
+  const bundled = pricePackage({ marketing: { name: 'Paid Ads Essentials' }, coaching: { name: 'Managed Operations Tier 1' } });
   assert.equal(bundled.lines.marketing.charged, 1997);
 });
 
-test('FCOO Partner is sold again (2026 pricing sheet): $8,997 bundled, $3M+, and both coaching pairs', () => {
-  const r = pricePackage({ coaching: { name: 'FCOO Partner' }, law: { name: 'Fractional CTO Level 1' } });
-  assert.equal(r.lines.coaching.name, 'FCOO Partner');
-  assert.equal(r.lines.coaching.charged, 8997);
-  assert.equal(pricePackage({ coaching: { name: "Master's Circle + FCOO Partner" } }).total, 12394);
-  assert.equal(pricePackage({ coaching: { name: 'Elite Coach + FCOO Partner' } }).total, 11394);
+test('Managed Operations (Nov 2026 sheet): three tiers, stand-alone alone, package price with another product', () => {
+  for (const [tier, pkg, alone] of [[1, 3297, 3497], [2, 5497, 5997], [3, 7497, 7997]]) {
+    assert.equal(pricePackage({ coaching: { name: `Managed Operations Tier ${tier}` } }).total, alone);
+    const r = pricePackage({ coaching: { name: `Managed Operations — Tier ${tier}` }, law: { name: 'Fractional CTO Level 1' } });
+    assert.equal(r.lines.coaching.name, `Managed Operations Tier ${tier}`);
+    assert.equal(r.lines.coaching.charged, pkg);
+  }
+  // No setup fee on the Managed Operations tab.
+  assert.deepEqual(pricePackage({ coaching: { name: 'Managed Operations Tier 2' } }).setupFees, []);
 });
 
-test('every coaching combo on the All Services tab prices to the sheet', () => {
-  const combos = [
-    ['Elite Coach + FCFO Advisor', 5897], ['Elite Coach + FCFO Director', 7597],
-    ["Master's Circle + FCFO Advisor", 7897], ["Master's Circle + FCFO Director", 9597], ["Master's Circle + FCFO Partner", 13597],
-    ['FCOO Advisor + FCFO Advisor', 6594], ['FCOO Director + FCFO Advisor', 8294], ['FCOO Partner + FCFO Partner', 17994],
-    ["Master's Circle + FCOO Advisor + FCFO Advisor", 9991], ["Master's Circle + FCOO Director + FCFO Director", 13391],
-    ["Master's Circle + FCOO Partner + FCFO Partner", 21391], ['Elite Coach + FCOO Advisor', 5694],
-  ];
-  for (const [name, price] of combos) assert.equal(pricePackage({ coaching: { name } }).total, price, name);
-  // Elite 360 = Elite Coach + Full Service Marketing at the Core tabs' bundled prices.
-  assert.equal(pricePackage({ marketing: { name: 'Full Service Marketing — Starter' }, coaching: { name: 'Elite Coach + FCOO Advisor + FCFO Advisor' } }).total, 4997 + 5694 + 3297);
+test('retired coaching and FCOO names resolve to Managed Operations, one tier per package', () => {
+  for (const [old, tier] of [['Elite Coach', 1], ['Elite Coach Plus', 1], ['Coach Essentials', 1],
+    ['FCOO Advisor', 1], ['FCOO Director', 2], ['FCOO Partner', 3], ['Elite Coach + FCOO Director', 2], ["Master's Circle + FCOO Advisor", 3]]) {
+    const r = pricePackage({ coaching: { name: old } });
+    assert.equal(r.lines.coaching.name, `Managed Operations Tier ${tier}`, old);
+    assert.ok(r.notes.some(n => /retired/.test(n)), old);
+  }
+  const two = pricePackage({ coaching: { name: 'Elite Coach Plus + FCOO Director + FCFO Advisor' } });
+  assert.equal(two.lines.coaching.name, 'Managed Operations Tier 2 + FCFO Advisor');
+  assert.equal(two.total, 5497 + 3497);
 });
 
-test('bookkeeping: priced on the coaching line, setup fee never waived, Level 4 custom', () => {
-  const d = { coaching_name: 'Elite Coach + Bookkeeping Level 2', setup_fee_waived: ['Bookkeeping Level 2', 'Elite Coach'] };
-  applyPricing(d);
-  assert.equal(d.total_bundled, 2600 + 2197);
-  assert.deepEqual(d.setup_fees.map(f => [f.product, f.charged, f.waived]), [['Elite Coach', 0, true], ['Bookkeeping Level 2', 2000, false]]);
+test('Growth Academy add-ons: one price, only with another core package, and they count toward the bundle (Stephanie)', () => {
+  const r = pricePackage({ marketing: { name: 'Full Service Marketing — Growth' }, coaching: { name: 'Growth Academy' } });
+  assert.equal(r.mode, 'bundled');
+  assert.equal(r.lines.coaching.charged, 1497);
+  assert.equal(r.total, 7497 + 1497);
+  assert.equal(pricePackage({ law: { name: 'Fractional CTO Level 1' }, coaching: { name: "Growth Academy Master's Circle" } }).total, 3297 + 2497);
+  const alone = pricePackage({ coaching: { name: 'Growth Academy' } });
+  assert.deepEqual(alone.unpriced, ['Growth Academy']);
+  // Already in the tier → dropped, not charged twice.
+  const dup = pricePackage({ coaching: { name: 'Managed Operations Tier 1 + Growth Academy' } });
+  assert.equal(dup.lines.coaching.name, 'Managed Operations Tier 1');
+  assert.equal(dup.total, 3497);
+});
+
+test("Master's Circle means the add-on, or Tier 3 when it's part of a Managed Operations package (Lynne)", () => {
+  assert.equal(pricePackage({ marketing: { name: 'Full Service Marketing — Growth' }, coaching: { name: "Master's Circle" } }).total, 7497 + 2497);
+  const t3 = pricePackage({ coaching: { name: "Managed Operations Tier 3 + Master's Circle" } });
+  assert.equal(t3.lines.coaching.name, 'Managed Operations Tier 3');
+  assert.equal(t3.total, 7997);
+  assert.equal(pricePackage({ coaching: { name: "Managed Operations Tier 1 + MC" } }).total, 3297 + 2497);
+  // On its own it can't be sold — the rep is asked.
+  const alone = pricePackage({ coaching: { name: "Master's Circle" } });
+  assert.deepEqual(alone.unpriced, ["Growth Academy Master's Circle"]);
+  assert.ok(alone.notes.some(n => /ask the rep/.test(n)));
+});
+
+test('Managed Financials (FCFO) prices and setup fees from the Nov 2026 sheet', () => {
+  for (const [name, pkg, alone, setup] of [['FCFO Advisor', 3497, 3997, 1000], ['FCFO Director', 5497, 5997, 1500], ['FCFO Partner', 9997, 10997, 2000]]) {
+    const a = pricePackage({ coaching: { name } });
+    assert.equal(a.total, alone, name);
+    assert.deepEqual(a.setupFees.map(f => [f.amount, f.waivable]), [[setup, false]], name);
+    assert.equal(pricePackage({ coaching: { name: `Managed Operations Tier 1 + ${name}` } }).total, 3297 + pkg, name);
+  }
+  assert.equal(resolveName('FCFO Level 2')[0].product.name, 'FCFO Director');
+  assert.equal(resolveName('Managed Financials Level 3')[0].product.name, 'FCFO Partner');
+});
+
+test('bookkeeping and FCFO: priced on the coaching line, setup fees never waived (Jaime), Level 4 custom', () => {
+  const d = { coaching_name: 'FCFO Director + Bookkeeping Level 2', setup_fee_waived: ['Bookkeeping Level 2', 'FCFO Director'] };
+  const notes = applyPricing(d);
+  assert.equal(d.total_bundled, 5497 + 2997);
+  assert.deepEqual(d.setup_fees.map(f => [f.product, f.charged, f.waived]), [['FCFO Director', 1500, false], ['Bookkeeping Level 2', 3500, false]]);
+  assert.equal(notes.filter(n => /can't be waived/.test(n)).length, 2);
+  for (const [lvl, alone, setup] of [[1, 2997, 2000], [2, 3997, 3500], [3, 4997, 5000]]) {
+    const r = pricePackage({ coaching: { name: `Bookkeeping Level ${lvl}` } });
+    assert.equal(r.total, alone);
+    assert.equal(r.setupFees[0].amount, setup);
+  }
   const l4 = pricePackage({ coaching: { name: 'Bookkeeping Level 4' }, marketing: { name: 'Full Service Marketing — Growth' } });
   assert.deepEqual(l4.unpriced, ['Bookkeeping Level 4']);
 });
@@ -124,7 +169,7 @@ test('names the AI typed by hand still resolve', () => {
 });
 
 test('unknown products keep their given price and are flagged', () => {
-  const r = pricePackage({ marketing: { name: 'OmniSocial AI 360 (Content – Standard + Ads – Growth bundle)', price: 3000 }, coaching: { name: 'Elite Coach' } });
+  const r = pricePackage({ marketing: { name: 'OmniSocial AI 360 (Content – Standard + Ads – Growth bundle)', price: 3000 }, coaching: { name: 'Managed Operations Tier 1' } });
   assert.equal(r.lines.marketing.charged, 3000);
   assert.ok(r.notes.some(n => /isn't in the pricing catalog/.test(n)));
 });
@@ -190,17 +235,34 @@ test('"FCOO Advisor / Director / Partner" is the generic FCOO, not Partner (Glen
 test('coaching discussed on the call wins over the revenue default (KHK, Mason, Glen Larson)', () => {
   const notes = [];
   assert.equal(selectDiscussedCoaching(['FCFO Advisor', 'Full Service Marketing'], 700_000, notes).name, 'FCFO Advisor');
-  assert.equal(selectDiscussedCoaching(["Master's Circle"], 500_000, notes).name, "Master's Circle");
-  assert.equal(selectDiscussedCoaching(['FCOO'], 2_570_000, notes).name, 'FCOO Director');
-  assert.equal(selectDiscussedCoaching(['FCOO'], 800_000, notes).name, 'FCOO Advisor');
-  assert.equal(selectDiscussedCoaching(['FCOO Partner'], 3_200_000, notes).name, 'FCOO Partner');
-  assert.equal(selectDiscussedCoaching(['FCOO'], 3_200_000, notes).name, 'FCOO Partner');
+  assert.equal(selectDiscussedCoaching(['Managed Operations Tier 2'], 400_000, notes).name, 'Managed Operations Tier 2');
+  // Generic Managed Operations / retired names → tier by revenue and team.
+  assert.equal(selectDiscussedCoaching(['Managed Operations'], 2_570_000, notes, 15).name, 'Managed Operations Tier 3');
+  assert.equal(selectDiscussedCoaching(['FCOO'], 2_570_000, notes, 6).name, 'Managed Operations Tier 2');
+  assert.equal(selectDiscussedCoaching(['FCOO'], 800_000, notes, 3).name, 'Managed Operations Tier 1');
+  // Master's Circle: the add-on, or Tier 3 in a Managed Operations conversation.
+  assert.equal(selectDiscussedCoaching(["Master's Circle"], 500_000, notes, 3).name, "Growth Academy Master's Circle");
+  assert.equal(selectDiscussedCoaching(["Master's Circle", 'Full Service Marketing'], 500_000, notes, 3).name, "Growth Academy Master's Circle");
+  assert.equal(selectDiscussedCoaching(['Managed Operations', "Master's Circle"], 1_500_000, notes, 12).name, 'Managed Operations Tier 3');
+  assert.equal(selectDiscussedCoaching(['Managed Operations Tier 1', "Master's Circle"], 500_000, notes, 3).name, "Managed Operations Tier 1 + Growth Academy Master's Circle");
+  // A retired FCOO tier keeps its level.
+  assert.equal(selectDiscussedCoaching(['FCOO Partner'], 3_200_000, notes).name, 'Managed Operations Tier 3');
+  assert.equal(selectDiscussedCoaching(['Elite Coach', 'FCOO Director'], 600_000, notes).name, 'Managed Operations Tier 2');
   assert.equal(selectDiscussedCoaching(['FCFO'], 1_500_000, notes).name, 'FCFO Director');
   assert.equal(selectDiscussedCoaching(['FCFO'], 2_200_000, notes).name, 'FCFO Partner');
-  assert.equal(selectDiscussedCoaching(['Elite Coach', 'FCOO Advisor'], 600_000, notes).name, 'Elite Coach + FCOO Advisor');
   assert.equal(selectDiscussedCoaching(['Fractional CTO Level 1'], 600_000, notes), null);
-  assert.equal(selectDiscussedCoaching(['Elite Coach', 'Bookkeeping'], 1_500_000, notes).name, 'Elite Coach + Bookkeeping Level 2');
+  assert.equal(selectDiscussedCoaching(['Elite Coach', 'Bookkeeping'], 1_500_000, notes, 3).name, 'Managed Operations Tier 1 + Bookkeeping Level 2');
+  assert.equal(selectDiscussedCoaching(['Bookkeeping'], 2_500_000, notes).name, 'Bookkeeping Level 3');
   assert.equal(selectDiscussedCoaching(['Bookkeeping Level 1'], 1_500_000, notes).name, 'Bookkeeping Level 1');
+  // Growth Academy: added alone, dropped when the Managed Operations tier already includes it.
+  assert.equal(selectDiscussedCoaching(['Growth Academy'], 900_000, notes).name, 'Growth Academy');
+  assert.equal(selectDiscussedCoaching(['Managed Operations Tier 1', 'Growth Academy'], 900_000, notes).name, 'Managed Operations Tier 1');
+  assert.equal(selectDiscussedCoaching(['Managed Operations Tier 1', "Growth Academy Master's Circle"], 900_000, notes).name, "Managed Operations Tier 1 + Growth Academy Master's Circle");
+});
+
+test('Managed Operations and Growth Academy are read from call notes', () => {
+  assert.deepEqual(parseCallFocus('- Products discussed on call: Managed Operations Tier 2, Growth Academy\n').products, ['Managed Operations Tier 2', 'Growth Academy']);
+  assert.deepEqual(parseCallFocus("- Products discussed on call: Growth Academy Master's Circle, managed financials\n").products, ["Growth Academy Master's Circle", 'FCFO']);
 });
 
 test('AI line: one FCTO level + one AIWP tier, no duplicates (Dan Mayer, Current Shift)', () => {
@@ -214,8 +276,10 @@ test('AI line: one FCTO level + one AIWP tier, no duplicates (Dan Mayer, Current
 // ─── Seller package overrides (issue 9) ───────────────────────────────────────
 
 test('seller package text becomes package lines when every product is known', () => {
-  assert.deepEqual(linesFromOverride('Elite Coach Plus + AI Workforce Pro – Starter (1 user, team size unknown)', 3),
-    { marketing: null, coaching: 'Elite Coach Plus', law: 'AI Workforce Pro – Starter', seats: 1 });
+  assert.deepEqual(linesFromOverride('Managed Operations Tier 1 + AI Workforce Pro – Starter (1 user, team size unknown)', 3),
+    { marketing: null, coaching: 'Managed Operations Tier 1', law: 'AI Workforce Pro – Starter', seats: 1 });
+  // A retired name in an old override resolves to its replacement.
+  assert.equal(linesFromOverride('Elite Coach Plus + Fractional CTO Level 1', 3).coaching, 'Managed Operations Tier 1');
   assert.equal(linesFromOverride('AI Workforce Pro – Starter (1 user, $350/mo) only — no marketing, coaching, or Fractional CTO', 3).law, 'AI Workforce Pro – Starter');
   assert.equal(linesFromOverride('FSM Starter (opt 1) + FSM Essentials (opt 2) stand-alone, $5K ad spend', 3), null);
 });
@@ -239,7 +303,7 @@ function firm(name, notes, trigger = {}) {
   writeFileSync(join(tmp, 'triggers/audit-research', `${name}.json`), JSON.stringify(trigger));
 }
 
-test('Glen Larson end to end: team of 15, generic FCOO at $2.57M → FCOO Director stand-alone', async () => {
+test('Glen Larson end to end: team of 15, generic FCOO at $2.57M → Managed Operations Tier 3 stand-alone', async () => {
   firm('glen', [
     '- Team size: 15 total, 2 lawyers ("Myself and one other one").',
     '- Annual revenue (gross / case value): 2026 YTD $2.57M at time of call; projected $3.27M',
@@ -251,10 +315,10 @@ test('Glen Larson end to end: team of 15, generic FCOO at $2.57M → FCOO Direct
   const d = await selectPackage('glen');
   assert.equal(d.team_size_stated, 15);
   assert.equal(d.revenue_effective, 2_570_000);
-  assert.equal(d.coaching_name, 'FCOO Director');
+  assert.equal(d.coaching_name, 'Managed Operations Tier 3');
   assert.equal(d.marketing_name, null);
   assert.equal(d.pricing_mode, 'standalone');
-  assert.equal(d.total_bundled, 5797);
+  assert.equal(d.total_bundled, 7997);
 });
 
 test('unknown revenue is flagged for the seller to confirm', async () => {
@@ -268,7 +332,9 @@ test('unknown revenue is flagged for the seller to confirm', async () => {
   process.chdir(tmp);
   const d = await selectPackage('mason');
   assert.equal(d.needs_revenue_confirmation, true);
-  assert.equal(d.coaching_name, "Master's Circle");
+  // Master's Circle alone on a coaching call: the add-on can't be sold alone, so the seller is asked.
+  assert.equal(d.coaching_name, "Growth Academy Master's Circle");
+  assert.equal(d.needs_seller_input, true);
   assert.ok(d.selection_notes.some(n => /assumed 3/.test(n)));
 });
 
@@ -279,11 +345,11 @@ test('a seller override in the trigger is written as the package (PPD Law), not 
     '- Primary engagement: coaching/ops',
     '- Products discussed on call: none',
     '- Lead-gen gap stated: no',
-  ].join('\n'), { package: 'Elite Coach Plus + AI Workforce Pro – Starter (1 user, team size unknown)' });
+  ].join('\n'), { package: 'Managed Operations Tier 1 + AI Workforce Pro – Starter (1 user, team size unknown)' });
   process.chdir(tmp);
   const d = await selectPackage('ppd');
   assert.equal(d.package_source, 'trigger_override');
-  assert.equal(d.coaching_name, 'Elite Coach Plus');
+  assert.equal(d.coaching_name, 'Managed Operations Tier 1');
   assert.equal(d.law_name, 'AI Workforce Pro – Starter');
   assert.equal(d.total_bundled, 3497 + 350);
 });

@@ -14,6 +14,9 @@
  *   - `standalone: null` + no `fixed` price means the product can't be sold
  *     on its own yet (e.g. Paid Ads Essentials — awaiting a price from Sales).
  *   - `retired: true` products are never priced; they resolve to `replacement`.
+ *   - `addOn: true` products (Growth Academy) have one price and only sell
+ *     with another core package. They DO count toward a bundle (Stephanie,
+ *     Nov 2026: marketing + Growth Academy gets marketing's package price).
  *
  * Field meaning in package_decision.json: `*_price_bundled` is the price the
  * client is CHARGED (bundled or stand-alone, per the rule), `*_price_retail`
@@ -28,13 +31,17 @@
 // a waiver is the seller's call (package_decision.json `setup_fee_waived`).
 const BOOTCAMP = { amount: 497, label: 'Video Ads Express Bootcamp', waivable: true };
 const AVATAR = { amount: 1850, label: 'AI Avatar setup', waivable: true };
-const ONBOARD = { amount: 1500, label: 'Setup fee', waivable: true };
 const books = amount => ({ amount, label: 'Bookkeeping setup', waivable: false });
+// Managed Financials setup fees can't be waived either (Jaime, Nov 2026).
+const fcfoSetup = amount => ({ amount, label: 'Managed Financials setup', waivable: false });
 const adsSetup = tier => (tier === 'Essentials' ? BOOTCAMP : AVATAR);
 
 const fsm = (tier, bundled, standalone) => ({ name: `Full Service Marketing — ${tier}`, category: 'marketing', tier, bundled, standalone, setup: adsSetup(tier) });
 const ads = (tier, bundled, standalone) => ({ name: `Paid Ads ${tier}`, category: 'marketing', tier: `Paid Ads ${tier}`, bundled, standalone, setup: adsSetup(tier) });
 const web = (tier, bundled, standalone) => ({ name: `Web + SEO ${tier}`, category: 'marketing', tier: `Web + SEO ${tier}`, bundled, standalone });
+export const managedOps = tier => `Managed Operations Tier ${tier}`;
+const mo = (tier, bundled, standalone, minRev, minTeam) => ({ name: managedOps(tier), category: 'coaching', family: 'Managed Operations', moTier: tier, bundled, standalone, minRev, minTeam });
+const retiredTo = (name, tier) => ({ name, category: 'coaching', retired: true, replacement: managedOps(tier) });
 
 export const CATALOG = [
   // Marketing — Full Service
@@ -55,36 +62,43 @@ export const CATALOG = [
   web('Dominate',   6997, 7997),
   web('Platinum',   9597, 11497),
 
-  // Coaching / advisory
-  { name: 'Coach Essentials',      category: 'coaching', bundled: 1000, standalone: null },
-  { name: 'Coach Essentials Plus', category: 'coaching', bundled: 1997, standalone: 2497 },
-  { name: 'Elite Coach',           category: 'coaching', bundled: 2600, standalone: 3497, setup: ONBOARD },
-  { name: 'Elite Coach Plus',      category: 'coaching', bundled: 3200, standalone: 3497, setup: ONBOARD },
-  { name: "Master's Circle",       category: 'coaching', bundled: 4600, standalone: 4997, setup: ONBOARD },
-  { name: 'FCOO Advisor',          category: 'coaching', bundled: 3297, standalone: 3797, minRev: 400_000, setup: ONBOARD },
-  { name: 'FCOO Director',         category: 'coaching', bundled: 4997, standalone: 5797, minRev: 1_000_000, setup: ONBOARD },
-  { name: 'FCOO Partner',          category: 'coaching', bundled: 8997, standalone: 9997, minRev: 3_000_000, setup: ONBOARD },
-  { name: 'FCFO Advisor',          category: 'coaching', bundled: 3297, standalone: 3797, minRev: 500_000, setup: ONBOARD },
-  { name: 'FCFO Director',         category: 'coaching', bundled: 4997, standalone: 5797, minRev: 1_000_000, setup: ONBOARD },
-  { name: 'FCFO Partner',          category: 'coaching', bundled: 8997, standalone: 9997, minRev: 2_000_000, setup: ONBOARD },
-  // Bookkeeping (Core Financial Services tab). Sold on the coaching line.
-  // Setup fees can never be waived. Level 4 is custom-scoped — never priced here.
-  { name: 'Bookkeeping Level 1',   category: 'coaching', bundled: 1697, standalone: 1997, setup: books(1500) },
-  { name: 'Bookkeeping Level 2',   category: 'coaching', bundled: 2197, standalone: 2597, minRev: 1_000_000, setup: books(2000) },
-  { name: 'Bookkeeping Level 3',   category: 'coaching', bundled: 3497, standalone: 4597, minRev: 3_000_000, setup: books(2500) },
+  // Managed Operations (Managed Operations tab, 2026 sheet — Nov 2026 GTM).
+  // One packaged product that replaces Elite Coach, Elite Coach Plus,
+  // Master's Circle, Coach Essentials and FCOO. Every tier includes Growth
+  // Academy (Tier 3: Master's Circle Growth Academy), quarterly planning and
+  // projects, and monthly working sessions. The tab lists no setup fee.
+  mo(1, 3297, 3497,   250_000, null),
+  mo(2, 5497, 5997,   500_000, 5),
+  mo(3, 7497, 7997, 1_000_000, 10),
+  // Growth Academy add-ons: one price, "ONLY SOLD w/OTHER CORE PACKAGES" —
+  // never on their own, but they count as a service for the bundle rule.
+  { name: 'Growth Academy',                  category: 'coaching', addOn: true, price: 1497 },
+  { name: "Growth Academy Master's Circle",  category: 'coaching', addOn: true, price: 2497 },
+
+  // Managed Financials (Managed Financials tab). Fractional CFO keeps its
+  // Advisor / Director / Partner names (= the tab's Level 1 / 2 / 3; the deck's
+  // ProfitOS slides key off them). Above $4M is a custom agreement. Setup
+  // fees can never be waived.
+  { name: 'FCFO Advisor',          category: 'coaching', bundled: 3497, standalone: 3997,  minRev: 500_000,   setup: fcfoSetup(1000) },
+  { name: 'FCFO Director',         category: 'coaching', bundled: 5497, standalone: 5997,  minRev: 1_000_000, setup: fcfoSetup(1500) },
+  { name: 'FCFO Partner',          category: 'coaching', bundled: 9997, standalone: 10997, minRev: 2_000_000, setup: fcfoSetup(2000) },
+  // Bookkeeping. Sold on the coaching line. Setup fees can never be waived.
+  // Level 4 ($4M+) is custom-scoped — never priced here.
+  { name: 'Bookkeeping Level 1',   category: 'coaching', bundled: 1997, standalone: 2997, setup: books(2000) },
+  { name: 'Bookkeeping Level 2',   category: 'coaching', bundled: 2997, standalone: 3997, minRev: 1_000_000, setup: books(3500) },
+  { name: 'Bookkeeping Level 3',   category: 'coaching', bundled: 3997, standalone: 4997, minRev: 2_000_000, setup: books(5000) },
   { name: 'Bookkeeping Level 4',   category: 'coaching', custom: true, minRev: 4_000_000 },
-  // Coaching + FCOO pairs Sales prices as one package (Core Coaching tab):
-  // Elite Coach + FCOO = $203 off the two bundled prices, Master's Circle +
-  // FCOO = $1,203 off. Every other combination on the All Services tab
-  // (Elite/Master's Circle + FCFO, FCFO + FCOO, Elite 360 = Elite Coach + Full
-  // Service Marketing) is the sum of the bundled prices.
-  // `parts` = how many products they count as toward the bundle rule.
-  { name: 'Elite Coach + FCOO Advisor',      category: 'coaching', bundled: 5694, standalone: null, parts: 2, packaged: true, setup: ONBOARD },
-  { name: 'Elite Coach + FCOO Director',     category: 'coaching', bundled: 7394, standalone: null, parts: 2, packaged: true, setup: ONBOARD },
-  { name: 'Elite Coach + FCOO Partner',      category: 'coaching', bundled: 11394, standalone: null, parts: 2, packaged: true, minRev: 3_000_000, setup: ONBOARD },
-  { name: "Master's Circle + FCOO Advisor",  category: 'coaching', bundled: 6694, standalone: null, parts: 2, packaged: true, setup: ONBOARD },
-  { name: "Master's Circle + FCOO Director", category: 'coaching', bundled: 8394, standalone: null, parts: 2, packaged: true, setup: ONBOARD },
-  { name: "Master's Circle + FCOO Partner",  category: 'coaching', bundled: 12394, standalone: null, parts: 2, packaged: true, minRev: 3_000_000, setup: ONBOARD },
+
+  // Retired by Managed Operations (Nov 2026). Old decks, Slack replies and
+  // research notes still name them, so they resolve to the closest tier.
+  // "Master's Circle" on its own is NOT retired — it means the Growth Academy
+  // Master's Circle add-on (or Tier 3, which includes it; Lynne, Nov 2026) —
+  // see the alias below.
+  retiredTo('Coach Essentials', 1), retiredTo('Coach Essentials Plus', 1),
+  retiredTo('Elite Coach', 1), retiredTo('Elite Coach Plus', 1),
+  retiredTo('FCOO Advisor', 1), retiredTo('FCOO Director', 2), retiredTo('FCOO Partner', 3),
+  retiredTo('Elite Coach + FCOO Advisor', 1), retiredTo('Elite Coach + FCOO Director', 2), retiredTo('Elite Coach + FCOO Partner', 3),
+  retiredTo("Master's Circle + FCOO Advisor", 3), retiredTo("Master's Circle + FCOO Director", 3), retiredTo("Master's Circle + FCOO Partner", 3),
 
   // Legal AI Workforce. AI Workforce Pro is priced by seat and has one price
   // whether bundled or not (`fixed`), so it never shows savings.
@@ -128,11 +142,14 @@ const ALIASES = [
   [/^(?:fsm )(essentials|starter|growth|dominate|platinum)$/, m => `Full Service Marketing — ${cap(m[1])}`],
   [/^paid ads (essentials|starter|growth|dominate|platinum)$/, m => `Paid Ads ${cap(m[1])}`],
   [/^web \+ seo (essentials|starter|growth|dominate|platinum)$/, m => `Web + SEO ${cap(m[1])}`],
+  [/^(?:managed operations|managed ops|mo) (?:tier|level|t|l) ?([1-3])$/, m => managedOps(m[1])],
+  [/^(?:growth academy (?:master's circle|mc)|(?:master's circle|mc) growth academy)$/, "Growth Academy Master's Circle"],
   [/^(?:fcoo|fractional coo) (advisor|director|partner)$/, m => `FCOO ${cap(m[1])}`],
   [/^(?:fcfo|fractional cfo) (advisor|director|partner)$/, m => `FCFO ${cap(m[1])}`],
+  [/^(?:fcfo|fractional cfo|managed financials|financial strategy) (?:level|l) ?([1-3])$/, m => `FCFO ${['Advisor', 'Director', 'Partner'][m[1] - 1]}`],
   [/^ecp$/, 'Elite Coach Plus'],
   [/^(?:bookkeeping|bk) (?:level|l) ?([1-4])$/, m => `Bookkeeping Level ${m[1]}`],
-  [/^masters circle$|^mc$/, "Master's Circle"],
+  [/^master'?s circle$|^mc$/, "Growth Academy Master's Circle"],
 ];
 const cap = s => s[0].toUpperCase() + s.slice(1);
 
@@ -158,28 +175,27 @@ export function resolveOne(rawName) {
 
 /**
  * Split a package-field name into catalog products. A name that is itself a
- * catalog package (e.g. "Elite Coach + FCOO Advisor") stays whole.
+ * catalog entry stays whole.
  * Returns [{ raw, product, seats }].
  */
 export function resolveName(rawName) {
   if (!rawName) return [];
   const whole = resolveOne(rawName);
   if (whole.product) return [{ raw: rawName, ...whole }];
-  const parts = rawName.split(/\s\+\s(?![^()]*\))/).map(part => ({ raw: part.trim(), ...resolveOne(part.trim()) }));
-  // A coaching product and an FCOO tier written separately ("Elite Coach +
-  // FCOO Advisor + FCFO Advisor") still get the packaged pair's price.
-  for (let i = 0; i < parts.length; i++) {
-    for (let j = 0; j < parts.length; j++) {
-      if (i === j || !parts[i].product || !parts[j].product) continue;
-      const pair = getProduct(`${parts[i].product.name} + ${parts[j].product.name}`);
-      if (pair?.packaged) {
-        parts[i] = { raw: `${parts[i].raw} + ${parts[j].raw}`, product: pair, seats: null };
-        parts.splice(j, 1);
-        return parts;
-      }
-    }
-  }
-  return parts;
+  return rawName.split(/\s\+\s(?![^()]*\))/).map(part => ({ raw: part.trim(), ...resolveOne(part.trim()) }));
+}
+
+/**
+ * Retired coaching names map to Managed Operations, so "Elite Coach + FCOO
+ * Director" can arrive as two tiers. A package has one Managed Operations
+ * tier: keep the highest.
+ */
+function collapseManagedOps(parts, notes) {
+  const mo = parts.filter(p => p.product?.family === 'Managed Operations');
+  if (mo.length < 2) return parts;
+  const keep = mo.reduce((a, b) => (b.product.moTier > a.product.moTier ? b : a));
+  notes.push(`${mo.map(p => p.raw).join(' + ')} → one Managed Operations package: ${keep.product.name}.`);
+  return parts.filter(p => p.product?.family !== 'Managed Operations' || p === keep);
 }
 
 /** Follow `retired` → `replacement`. Returns { product, retiredFrom }. */
@@ -224,8 +240,28 @@ export function pricePackage(lines) {
       if (retiredFrom) notes.push(`${retiredFrom} is retired — using ${product.name} instead.`);
       return { ...part, product, seats: part.seats ?? line.seats ?? null };
     });
-    resolved[key] = { line, parts };
+    resolved[key] = { line, parts: collapseManagedOps(parts, notes) };
   }
+
+  // A Growth Academy add-on the Managed Operations tier already includes is
+  // dropped (every tier includes Growth Academy; Tier 3 includes Master's
+  // Circle Growth Academy, so "Tier 3 + Master's Circle" is just Tier 3).
+  const moTier = Object.values(resolved).flatMap(r => r?.parts ?? []).find(p => p.product?.family === 'Managed Operations')?.product.moTier;
+  if (moTier) {
+    for (const r of Object.values(resolved)) {
+      if (!r) continue;
+      r.parts = r.parts.filter(p => {
+        const included = p.product?.addOn && (p.product.name === 'Growth Academy' || moTier === 3);
+        if (included) notes.push(`${p.raw} is already included in Managed Operations Tier ${moTier} — not charged separately.`);
+        return !included;
+      });
+    }
+    for (const key of Object.keys(resolved)) if (resolved[key] && !resolved[key].parts.length) resolved[key] = null;
+  }
+
+  // Growth Academy add-ons only sell with another core package.
+  const all = Object.values(resolved).flatMap(r => r?.parts ?? []);
+  const hasCore = all.some(p => !p.product || !p.product.addOn);
 
   // Count bundle-eligible products.
   let eligibleCount = 0;
@@ -264,13 +300,25 @@ export function pricePackage(lines) {
         notes.push(`${p.name} is custom-priced — it must be scoped by Sales before it can be quoted.`);
         continue;
       }
+      if (p.addOn) {
+        if (!hasCore) {
+          ok = false;
+          unpriced.push(p.name);
+          notes.push(p.name === "Growth Academy Master's Circle"
+            ? `Master's Circle can't be sold on its own — ask the rep: Managed Operations Tier 3 (includes Master's Circle Growth Academy), or the Growth Academy Master's Circle add-on with another service.`
+            : `${p.name} is only sold with another core package (Managed Operations, Managed Financials, marketing or AI) — add one or choose Managed Operations instead.`);
+          continue;
+        }
+        charged += p.price; retail += p.price; // one price, bundled or not
+        continue;
+      }
       if (p.fixed) {
         const a = aiwpPrice(p, part.seats);
         charged += a.price; seats = a.seats;
         retailKnown = false; // AI Workforce Pro has no stand-alone price
         continue;
       }
-      if (mode === 'bundled' || p.packaged) {
+      if (mode === 'bundled') {
         charged += p.bundled;
         if (p.standalone != null) { retail += p.standalone; savings += p.standalone - p.bundled; } else retailKnown = false;
       } else if (p.standalone != null) {
@@ -292,8 +340,7 @@ export function pricePackage(lines) {
 
   const total = Object.values(out).reduce((s, l) => s + (l?.charged ?? 0), 0);
 
-  // One-time setup fees, one per catalog product (a packaged pair such as
-  // Elite Coach + FCOO Advisor is one product with one fee).
+  // One-time setup fees, one per catalog product.
   const setupFees = [];
   for (const [key, r] of Object.entries(resolved)) {
     for (const part of r?.parts ?? []) {
@@ -309,7 +356,7 @@ export function pricePackage(lines) {
   if (mode === 'standalone' && eligibleCount === 1) {
     notes.push('Only one bundle-eligible product in this package — stand-alone pricing applied, no bundle savings.');
   }
-  if (Object.values(resolved).some(r => r?.parts.some(p => p.product?.bundleEligible === false))) {
+  if (Object.values(resolved).some(r => r?.parts.some(p => p.product?.bundleEligible === false && !p.product.addOn))) {
     notes.push('AI Workforce Pro – Starter does not count toward bundle pricing.');
   }
   if (!unpriced.length && total > 0 && total < MIN_MRR) {

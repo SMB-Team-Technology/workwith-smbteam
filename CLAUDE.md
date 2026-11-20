@@ -40,7 +40,7 @@ Design Files/                          ← templates, read-only, never modified
 
 Each firm gets its own folder at the repo root, named with a lowercase hyphenated friendly name (e.g. `mandel-law-firm/`, `angel-law/`).
 
-**Design Files are permanent templates. Never modify them.** Claude Code reads from them and writes working copies to the firm's folder.
+**Design Files are permanent templates. Never modify them during an audit or deck build.** Claude Code reads from them and writes working copies to the firm's folder. Maintainers may update them deliberately when products, pricing or the deck design change (e.g. a new pricing sheet). Do that in its own commit, and keep the deck template's layout engine building.
 
 ## How to Run an Audit
 

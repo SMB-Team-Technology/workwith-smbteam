@@ -22,7 +22,7 @@ import { readFileSync, writeFileSync, readdirSync, existsSync, statSync } from '
 import { join } from 'path';
 import { execFileSync } from 'child_process';
 import { pathToFileURL } from 'url';
-import { getProduct, resolveName, unretire, pricePackage, applyPricing } from './lib/pricing.mjs';
+import { getProduct, resolveName, unretire, pricePackage, applyPricing, managedOps } from './lib/pricing.mjs';
 import { applyInvestment, computeInvestment, parseInvestmentInputs } from './lib/investment.mjs';
 
 // ─── Selection tables ────────────────────────────────────────────────────────
@@ -43,7 +43,7 @@ const TIER_BY_NAME = Object.fromEntries(MARKETING_TIERS.map(t => [t.tier.toLower
 // "Products discussed on call" alias table in .claude/commands/audit-research.md
 // and the change-bot prompts in .github/workflows/slack-*.yml.
 // Order matters: more specific names first, so "AI Workforce Pro – Starter"
-// is matched before plain "AI Workforce Pro", and "FCOO Director" before "FCOO".
+// is matched before plain "AI Workforce Pro", and "FCFO Director" before "FCFO".
 // A tier followed by "/" ("FCOO Advisor / Director / Partner") is a list of
 // options, not a choice, so it falls through to the generic name.
 const AIWP_UNSPECIFIED = 'AI Workforce Pro (tier not specified)';
@@ -56,6 +56,13 @@ const PRODUCT_ALIASES = [
   { name: 'Fractional CTO Level 3',     pattern: /(fractional cto|fcto)\s*(level|l)\s*3|ai enterprise/i },
   { name: 'Fractional CTO Level 2',     pattern: /(fractional cto|fcto)\s*(level|l)\s*2|ai accelerator\s*l2/i },
   { name: 'Fractional CTO Level 1',     pattern: /(fractional cto|fcto)\s*(level|l)\s*1|ai accelerator\s*l1/i },
+  { name: managedOps(1),                pattern: /managed op(?:eration)?s\s*[–—-]?\s*(?:tier|level|t|l)\s*1/i },
+  { name: managedOps(2),                pattern: /managed op(?:eration)?s\s*[–—-]?\s*(?:tier|level|t|l)\s*2/i },
+  { name: managedOps(3),                pattern: /managed op(?:eration)?s\s*[–—-]?\s*(?:tier|level|t|l)\s*3/i },
+  { name: 'Managed Operations',         pattern: /managed op(?:eration)?s/i },
+  { name: "Growth Academy Master's Circle", pattern: /growth academy\s*[–—(-]?\s*(?:master'?s circle|mc)\b|(?:master'?s circle|\bmc)\s*growth academy/i },
+  { name: 'Growth Academy',             pattern: /growth academy/i },
+  // Retired names (Nov 2026) — still said on calls; mapped to Managed Operations.
   { name: 'Elite Coach Plus',           pattern: /elite coach plus/i },
   { name: 'Elite Coach',                pattern: /elite coach(?!\s*plus)/i },
   { name: 'Coach Essentials Plus',      pattern: /coach essentials plus/i },
@@ -65,10 +72,10 @@ const PRODUCT_ALIASES = [
   { name: 'FCOO Director',              pattern: new RegExp(`(?:\\bfcoo|fractional coo)\\s*director${NOT_A_LIST}`, 'i') },
   { name: 'FCOO Partner',               pattern: new RegExp(`(?:\\bfcoo|fractional coo)\\s*partner${NOT_A_LIST}`, 'i') },
   { name: 'FCOO',                       pattern: /\bfcoo\b|fractional coo/i },
-  { name: 'FCFO Advisor',               pattern: new RegExp(`(?:\\bfcfo|fractional cfo)\\s*advisor${NOT_A_LIST}`, 'i') },
-  { name: 'FCFO Director',              pattern: new RegExp(`(?:\\bfcfo|fractional cfo)\\s*director${NOT_A_LIST}`, 'i') },
-  { name: 'FCFO Partner',               pattern: new RegExp(`(?:\\bfcfo|fractional cfo)\\s*partner${NOT_A_LIST}`, 'i') },
-  { name: 'FCFO',                       pattern: /\bfcfo\b|fractional cfo/i },
+  { name: 'FCFO Advisor',               pattern: new RegExp(`(?:\\bfcfo|fractional cfo)\\s*advisor${NOT_A_LIST}|(?:\\bfcfo|fractional cfo|managed financials)\\s*(?:level|l)\\s*1${NOT_A_LIST}`, 'i') },
+  { name: 'FCFO Director',              pattern: new RegExp(`(?:\\bfcfo|fractional cfo)\\s*director${NOT_A_LIST}|(?:\\bfcfo|fractional cfo|managed financials)\\s*(?:level|l)\\s*2${NOT_A_LIST}`, 'i') },
+  { name: 'FCFO Partner',               pattern: new RegExp(`(?:\\bfcfo|fractional cfo)\\s*partner${NOT_A_LIST}|(?:\\bfcfo|fractional cfo|managed financials)\\s*(?:level|l)\\s*3${NOT_A_LIST}`, 'i') },
+  { name: 'FCFO',                       pattern: /\bfcfo\b|fractional cfo|managed financials/i },
   { name: 'Bookkeeping Level 1',        pattern: /bookkeeping\s*(?:level|l)\s*1/i },
   { name: 'Bookkeeping Level 2',        pattern: /bookkeeping\s*(?:level|l)\s*2/i },
   { name: 'Bookkeeping Level 3',        pattern: /bookkeeping\s*(?:level|l)\s*3/i },
@@ -76,9 +83,16 @@ const PRODUCT_ALIASES = [
   { name: 'Bookkeeping',                pattern: /bookkeeping/i },
   { name: 'Full Service Marketing',     pattern: /full service marketing/i },
 ];
+// Products that become the one Managed Operations tier. The retired names
+// (Elite Coach … FCOO) still turn up in call notes.
+const OPS_PRODUCTS = new Set([
+  managedOps(1), managedOps(2), managedOps(3), 'Managed Operations',
+  'Elite Coach', 'Elite Coach Plus', 'Coach Essentials', 'Coach Essentials Plus',
+  'FCOO', 'FCOO Advisor', 'FCOO Director', 'FCOO Partner',
+]);
 const COACHING_PRODUCTS = new Set([
-  'Elite Coach', 'Elite Coach Plus', 'Coach Essentials', 'Coach Essentials Plus', "Master's Circle",
-  'FCOO', 'FCOO Advisor', 'FCOO Director', 'FCOO Partner', 'FCFO', 'FCFO Advisor', 'FCFO Director', 'FCFO Partner',
+  ...OPS_PRODUCTS, "Master's Circle", 'Growth Academy', "Growth Academy Master's Circle",
+  'FCFO', 'FCFO Advisor', 'FCFO Director', 'FCFO Partner',
   'Bookkeeping', 'Bookkeeping Level 1', 'Bookkeeping Level 2', 'Bookkeeping Level 3', 'Bookkeeping Level 4',
 ]);
 const LAW_PRODUCTS = new Set(['AI Workforce Pro – Starter', 'AI Workforce Pro', 'Fractional CTO Level 1', 'Fractional CTO Level 2', 'Fractional CTO Level 3']);
@@ -616,106 +630,114 @@ function selectMarketingTier(revenue, effectiveRevenue, practiceAreas, text, not
   return tier;
 }
 
-/** Coaching by revenue and team size alone. Returns { name }. */
+/**
+ * Managed Operations tier by the Managed Operations tab's requirements:
+ * Tier 1 $250K+, Tier 2 $500K+ and a team of 5+, Tier 3 $1M+ and a team of 10+.
+ * The highest tier the firm qualifies for.
+ */
+export function managedOpsTierFor(effectiveRevenue, effectiveTeam) {
+  const fits = t => {
+    const p = getProduct(managedOps(t));
+    return effectiveRevenue >= p.minRev && effectiveTeam >= (p.minTeam ?? 0);
+  };
+  return fits(3) ? 3 : fits(2) ? 2 : 1;
+}
+
+/** Coaching (Managed Operations) by revenue and team size alone. Returns { name }. */
 function selectCoachingByRevenue(effectiveRevenue, effectiveTeam, text, notes) {
-  const fcooEligible = effectiveRevenue >= getProduct('FCOO Advisor').minRev;  // $400K+ (2026 pricing sheet)
-  const masterCircleEligible = effectiveRevenue >= 1_000_000 && effectiveTeam >= 5;
-  const hasOps = hasDedicatedOps(text);
-
+  const tier = managedOpsTierFor(effectiveRevenue, effectiveTeam);
+  const name = managedOps(tier);
   if (effectiveRevenue < 250_000) {
-    notes.push('Revenue under $250K: Elite Coach selected, scoping approval required.');
-    return { name: 'Elite Coach' };
+    notes.push(`Revenue under $250K: ${name} selected (needs $250K+) — approval and scoping required.`);
+  } else if (effectiveRevenue < 300_000) {
+    notes.push(`Revenue under $300K: ${name} selected — approval and scoping required.`);
+  } else if (tier === 3) {
+    notes.push(`Revenue $1M+, team ${effectiveTeam}: ${name} selected.`);
+  } else if (tier === 2) {
+    notes.push(`Revenue $500K+, team ${effectiveTeam}: ${name} selected${effectiveRevenue >= 1_000_000 ? ' (Tier 3 needs a team of 10+)' : ''}.`);
+  } else {
+    notes.push(`${name} selected${effectiveRevenue >= 500_000 ? ` (team ${effectiveTeam} — Tier 2 needs 5+)` : ' (revenue under $500K)'}.`);
   }
-
-  if (effectiveRevenue < 400_000) {
-    notes.push('Revenue $250K–$400K: Elite Coach selected.');
-    return { name: 'Elite Coach' };
+  if (tier < 3 && effectiveRevenue >= 1_000_000 && hasDedicatedOps(text)) {
+    notes.push('Dedicated ops staff detected — confirm the Managed Operations tier with the sales rep.');
   }
-
-  if (effectiveRevenue < 1_000_000) {
-    if (fcooEligible && effectiveTeam >= 3 && hasOps) {
-      notes.push('Revenue $400K–$1M with growing team and dedicated ops: Elite Coach Plus + FCOO Advisor considered. Defaulting to Elite Coach Plus — confirm with sales rep if FCOO is appropriate.');
-    }
-    notes.push('Revenue $400K–$1M: Elite Coach Plus selected.');
-    return { name: 'Elite Coach Plus' };
-  }
-
-  // $1M+
-  if (masterCircleEligible && hasOps) {
-    if (effectiveRevenue >= 3_000_000) {
-      notes.push(`Revenue $3M+, team ${effectiveTeam}+, dedicated ops: Master's Circle + FCOO Partner selected.`);
-      return { name: "Master's Circle + FCOO Partner" };
-    }
-    if (effectiveRevenue >= 2_000_000) {
-      notes.push(`Revenue $2M+, team ${effectiveTeam}+, dedicated ops: Master's Circle + FCOO Director selected.`);
-      return { name: "Master's Circle + FCOO Director" };
-    }
-    notes.push(`Revenue $1M+, team ${effectiveTeam}+, dedicated ops: Master's Circle selected.`);
-    return { name: "Master's Circle" };
-  }
-
-  if (masterCircleEligible && !hasOps) {
-    notes.push(`Revenue $1M+, team ${effectiveTeam}+ but no dedicated ops detected: Master's Circle selected. Verify ops capacity with sales rep.`);
-    return { name: "Master's Circle" };
-  }
-
-  if (effectiveRevenue >= 1_000_000 && effectiveTeam < 5) {
-    notes.push(`Revenue $1M+, team under 5: Elite Coach Plus selected (Master's Circle requires 5+ team).`);
-    return { name: 'Elite Coach Plus' };
-  }
-
-  notes.push('Fallback: Elite Coach Plus selected.');
-  return { name: 'Elite Coach Plus' };
+  return { name };
 }
 
 /**
  * Coaching named on the call. What was discussed wins over the revenue rule
  * (Vanessa, Oct 2026: "Prioritize the product explicitly discussed on the call
- * and flag it for rep confirmation"). FCOO/FCFO named without a tier: FCOO
- * Advisor under $2M, Director $2M–$3M, Partner $3M+ (its floor); FCFO by the
- * Core Financial tab's bands — Advisor under $1M, Director $1M–$2M, Partner
- * $2M+. Returns { name } or null when none was named.
+ * and flag it for rep confirmation").
+ *  - Managed Operations: the tier named; else a retired FCOO tier's
+ *    replacement; else (Managed Operations, Elite Coach, Master's Circle, FCOO
+ *    without a tier …) the tier the revenue/team rule picks.
+ *  - "Master's Circle" (Lynne, Nov 2026: the term persists, as the add-on or
+ *    as part of a Tier 3 conversation): with Managed Operations but no tier
+ *    named → Tier 3; otherwise the Growth Academy Master's Circle add-on
+ *    (flagged for the rep; on its own it can't be sold, so pricing asks).
+ *  - Growth Academy add-ons: only when no Managed Operations tier already
+ *    includes them.
+ *  - FCFO named without a tier: Managed Financials bands — Advisor under $1M,
+ *    Director $1M–$2M, Partner $2M+.
+ * Returns { name } or null when none was named.
  */
-export function selectDiscussedCoaching(products, effectiveRevenue, notes) {
+export function selectDiscussedCoaching(products, effectiveRevenue, notes, effectiveTeam = 3) {
   const discussed = (products || []).filter(p => COACHING_PRODUCTS.has(p));
   if (!discussed.length) return null;
 
-  const tierFor = family => {
-    const named = discussed.find(p => p.startsWith(`${family} `));
-    if (named) {
-      const { product, retiredFrom } = unretire(getProduct(named));
-      if (retiredFrom) notes.push(`${retiredFrom} is retired — using ${product.name}.`);
-      return product.name;
-    }
-    const [director, partner] = family === 'FCFO' ? [1_000_000, 2_000_000] : [2_000_000, 3_000_000];
-    if (effectiveRevenue >= partner) return `${family} Partner`;
-    return effectiveRevenue >= director ? `${family} Director` : `${family} Advisor`;
-  };
-
-  const picks = [];
   const has = name => discussed.includes(name);
   const hasFamily = family => discussed.some(p => p === family || p.startsWith(`${family} `));
-  const coach = ["Master's Circle", 'Elite Coach Plus', 'Elite Coach', 'Coach Essentials Plus', 'Coach Essentials'].find(has);
-  const fcoo = hasFamily('FCOO') ? tierFor('FCOO') : null;
-  const fcfo = hasFamily('FCFO') ? tierFor('FCFO') : null;
+  const picks = [];
 
-  // Sales prices some coaching + FCOO pairs as one package.
-  if (coach && fcoo && getProduct(`${coach} + ${fcoo}`)) picks.push(`${coach} + ${fcoo}`);
-  else picks.push(...[coach, fcoo].filter(Boolean));
-  if (fcfo) picks.push(fcfo);
-  // Bookkeeping: the level named, else the Core Financial tab's revenue band
-  // (Level 1 under $1M, Level 2 $1M–$2.9M, Level 3 $3M–$3.9M, Level 4 $4M+).
+  // Managed Operations
+  const ops = discussed.filter(p => OPS_PRODUCTS.has(p));
+  let moTier = null;
+  if (ops.length) {
+    const named = [3, 2, 1].find(t => has(managedOps(t)));
+    const legacyTier = ['FCOO Partner', 'FCOO Director', 'FCOO Advisor'].find(has);
+    if (named) moTier = named;
+    else if (has("Master's Circle")) {
+      moTier = 3;
+      notes.push("Master's Circle came up in a Managed Operations conversation — Managed Operations Tier 3 selected (includes Master's Circle Growth Academy); confirm with the sales rep.");
+    }
+    else if (legacyTier) moTier = unretire(getProduct(legacyTier)).product.moTier;
+    else moTier = managedOpsTierFor(effectiveRevenue, effectiveTeam);
+    const legacy = ops.filter(p => !p.startsWith('Managed Operations'));
+    if (legacy.length && !named) {
+      notes.push(`${legacy.join(', ')} ${legacy.length > 1 ? 'are' : 'is'} retired — ${managedOps(moTier)} selected (Managed Operations replaces coaching and FCOO).`);
+    }
+    picks.push(managedOps(moTier));
+  }
+
+  // Growth Academy add-ons. "Master's Circle" without Managed Operations
+  // means the Master's Circle add-on.
+  if (has("Master's Circle") && !moTier) {
+    notes.push("Master's Circle read as the Growth Academy Master's Circle add-on — confirm with the sales rep (Tier 3 includes it if they meant Managed Operations).");
+  }
+  const ga = has("Growth Academy Master's Circle") || has("Master's Circle") ? "Growth Academy Master's Circle" : has('Growth Academy') ? 'Growth Academy' : null;
+  if (ga) {
+    if (moTier && (ga === 'Growth Academy' || moTier === 3)) notes.push(`${ga} discussed — already included in ${managedOps(moTier)}, not added.`);
+    else picks.push(ga);
+  }
+
+  if (hasFamily('FCFO')) {
+    const named = discussed.find(p => p.startsWith('FCFO '));
+    picks.push(named ?? (effectiveRevenue >= 2_000_000 ? 'FCFO Partner' : effectiveRevenue >= 1_000_000 ? 'FCFO Director' : 'FCFO Advisor'));
+  }
+  // Bookkeeping: the level named, else the Managed Financials tab's revenue band
+  // (Level 1 up to $1M, Level 2 $1M–$2M, Level 3 $2M–$4M, Level 4 $4M+ custom).
   if (hasFamily('Bookkeeping')) {
     const named = discussed.find(p => p.startsWith('Bookkeeping Level'));
-    picks.push(named ?? `Bookkeeping Level ${effectiveRevenue >= 4_000_000 ? 4 : effectiveRevenue >= 3_000_000 ? 3 : effectiveRevenue >= 1_000_000 ? 2 : 1}`);
+    picks.push(named ?? `Bookkeeping Level ${effectiveRevenue >= 4_000_000 ? 4 : effectiveRevenue >= 2_000_000 ? 3 : effectiveRevenue >= 1_000_000 ? 2 : 1}`);
   }
+  if (!picks.length) return null;
 
-  const name = picks.join(' + ');
-  for (const p of picks.flatMap(x => x.split(' + '))) {
-    const min = getProduct(p)?.minRev;
-    if (min && effectiveRevenue < min) notes.push(`${p} usually needs $${min.toLocaleString()}+ revenue (using $${effectiveRevenue.toLocaleString()}) — included because it was discussed on the call.`);
+  for (const p of picks) {
+    const prod = getProduct(p);
+    if (prod?.minRev && effectiveRevenue < prod.minRev) notes.push(`${p} usually needs $${prod.minRev.toLocaleString()}+ revenue (using $${effectiveRevenue.toLocaleString()}) — included because it was discussed on the call.`);
+    if (prod?.minTeam && effectiveTeam < prod.minTeam) notes.push(`${p} usually needs a team of ${prod.minTeam}+ (using ${effectiveTeam}) — included because it was discussed on the call.`);
   }
-  return { name };
+  return { name: picks.join(' + ') };
 }
 
 // ─── Revenue estimation when not stated ──────────────────────────────────────
@@ -765,7 +787,7 @@ export function newestResearchNotes(dir) {
 // ─── Package from a trigger-file override ────────────────────────────────────
 
 /**
- * Turn a seller's package text ("Elite Coach Plus + AI Workforce Pro – Starter")
+ * Turn a seller's package text ("Managed Operations Tier 1 + AI Workforce Pro – Starter")
  * into package lines. Returns null unless every product is in the catalog —
  * free-text overrides ("FSM Starter (opt 1) + FSM Essentials (opt 2)") are left
  * to Pass 2, which reads the override text itself.
@@ -937,7 +959,7 @@ export async function selectPackage(friendlyName) {
   // Coaching named on the call wins over the revenue rule. On an AI-led call
   // where no coaching was named, leave coaching out rather than adding the
   // revenue default nobody asked for.
-  const discussedCoaching = selectDiscussedCoaching(callFocus.products, effectiveRevenue, focusNotes);
+  const discussedCoaching = selectDiscussedCoaching(callFocus.products, effectiveRevenue, focusNotes, effectiveTeam);
   let coaching = revenueCoaching;
   if (discussedCoaching) {
     coaching = discussedCoaching;
