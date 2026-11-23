@@ -1,0 +1,257 @@
+SMB TEAM — AUDIT RESEARCH NOTES (Pass 1)
+Firm: Ramsay Law Firm, PLLC
+Friendly name: ramsay
+Sales rep: Tim DiDomenico (the discovery call itself was run by Dan Bryant, SMB Team — transcript tag [SMB Team])
+Proposal call date: November 23, 2026 (discovery call: 2026-11-20, about 75 minutes)
+Contact: Chuck (Charles A.) Ramsay — owner / lead trial attorney, board-certified DWI defense specialist
+Research run: 2026-11-23
+
+Seller-specified package (from the trigger file, binding for Pass 2): Web + SEO Starter only at $3,997/mo (stand-alone price). Custom plan approved by leadership; the normal package requirements are overridden. Section 11 shows exactly this one product — NO Full Service Marketing package, NO coaching package, NO ad spend section.
+
+RESEARCH LIMITS (read before trusting any section): this run had no logged-in or rendered Google Maps / Google Search / Google Ads / Facebook Ads Library access. Everything Google-side that could not be read live is marked "not observed" and listed in "Seller should confirm on the next call" in STEP 9B. Review counts below come from aggregator pages and search summaries, so every one is tagged UNCONFIRMED. The PageSpeed API (pagespeed.web.dev backend) returned HTTP 429 "Queries per day" quota exceeded on two tries, so the mobile number is from a local Lighthouse run and the desktop number could not be obtained.
+
+============================================================
+STEP 1 — WEBSITE RESEARCH
+============================================================
+URL used: http://ramsayresults.com (trigger URL; resolves, serves https://ramsayresults.com/).
+- Website URL confirmed live: yes
+- Last redesign date or estimated age: not found — no redesign date published. Footer copyright year reads 2026. The seller on the call said "I want to rebuild your site" and described "flaws that literally are just holding you back" [seller, 00:34:33–00:34:44].
+- Mobile responsive: responsive per the seller on the call ("Yes [responsive]. Is it optimized? Not in the least." [seller, 00:46:16–00:46:26]); not independently tested on a phone in this run.
+- Homepage headline: "Minneapolis DWI Lawyer | Ramsay Law Firm, PLLC" (H1 as read from the page text)
+- CTA above fold: the page text read in this run shows a phone number (651-604-0000) in the header and a "Request Consultation" button in the navigation. This CONFLICTS with the seller's mobile-simulator observation on the call: "There's literally not a phone number. There's really no way to call you. There's no contact form submission. There's nothing what we call above the fold" [seller, 00:46:06–00:46:11, describing the mobile view]. Possible explanation: the header phone/CTA appear on desktop but not in the mobile first screen. Not resolved — see STEP 9B "Seller should confirm".
+- Contact form location: not observed (a "Contact" page link is in the navigation; no form seen above the fold in the page text; the seller said there is none above the fold on mobile)
+- Live chat present: not observed (none seen in the page text). The seller recommended Intaker live chat on the call [seller, 00:45:10].
+- Attorney bio present: yes — "About Us" profiles for Charles Ramsay, Daniel Koewler and Caleb Anthony
+- Video present: yes — a "Video Vault" link in the navigation. Chuck said he has not made videos "in probably a year and a half" [Chuck Ramsay (client), 01:08:53–01:08:59].
+- Blog present: yes — "DWI Blog" in the navigation. Latest post seen: "The Machine Allows Contamination. The Supreme Court Does Not." dated Nov 21, 2026. Per the seller, ~764 blogs vs ~28 core pages, some back to 2008 [seller, 00:53:07–00:53:15].
+- Other observations: board-certification claims on the site read "Minnesota's ONLY ABA board certified DWI Law Specialist" and "The Only ABA Board Certified DUI/DWI Defense Specialist in Minnesota". Service-area pages exist for St. Paul, Anoka County, Dakota County, Ramsey County, Washington County, Maplewood, Woodbury, Eden Prairie and Roseville. The Roseville page ("DWI Attorney Roseville") reads as heavily templated — city-name insertion into identical section structure (assessed on this one page only; the seller said the same of "a number of these service area pages" [seller, 00:50:08–00:50:30]). Nav: Home, DWI (by degree), Service Areas, About Us, Testimonials, DWI Blog, Contact.
+- Office on site: 2780 E Snelling Ser Dr Suite #330, Roseville, MN 55113; phone 651-604-0000.
+
+PageSpeed (pagespeed.web.dev / PageSpeed Insights API):
+- Attempt 1 and 2 (WebFetch and curl to the PSI API, mobile and desktop): HTTP 429 "Quota exceeded for quota metric 'Queries' and limit 'Queries per day'" — no score returned.
+- Fallback: local Lighthouse 12.8.2 run from headless Chrome on 2026-11-23 16:05 UTC against https://ramsayresults.com/ (default mobile emulation and throttling).
+- PageSpeed mobile score: 74 (Lighthouse performance score from the local run — NOT a pagespeed.web.dev result; lab conditions on a CI runner can differ from PSI)
+- PageSpeed desktop score: NOT OBTAINED — the local Lighthouse desktop run failed three times with CHROME_INTERSTITIAL_ERROR, and the PSI API was over quota. No number is recorded and none should be estimated. Seller should run pagespeed.web.dev for the desktop number.
+
+============================================================
+STEP 2 — GOOGLE BUSINESS PROFILE
+============================================================
+The Google listing could not be opened in this run (no rendered Google Maps access). Fields not read from the listing are "not observed".
+- GBP found: yes per the call — the seller showed the map grid and the listing on screen [seller, 00:33:07–00:41:43]; not opened directly in this run.
+- Star rating: 4.5 [UNCONFIRMED — read from a web-search summary of an aggregator/directory page, which did not name the page; not independently confirmed via Google]. Birdeye shows 4.6 [UNCONFIRMED — sourced from Birdeye, not independently confirmed via Google].
+- Total review count: 65 [UNCONFIRMED — same unnamed aggregator/search-summary source as above, not confirmed via Google]. Birdeye shows 56 [UNCONFIRMED — sourced from Birdeye]. On the call the seller said "more than 87 Google reviews" and "do have 67 or 87 reviews? ... Maybe it's 67" [seller, 00:43:31 and 00:47:21–00:47:26]; Chuck answered "I don't know" [Chuck Ramsay (client), 00:47:25]. The firm's true Google count is unresolved; do not print a specific figure in the client-facing deck.
+- Most recent review date: not observed on Google. Birdeye's most recent review shows "4 weeks ago" [UNCONFIRMED — sourced from Birdeye].
+- Primary category: not observed
+- Photos active: not observed
+- Posts active: yes per the client — "I update the Google Business page or profile several times a week" [Chuck Ramsay (client), 01:05:08]
+- GBP hours: the seller observed that the hours on the listing did not match the firm's 24/7 answering and said they "must be old"; the speaker tags on those lines are shifted, so who said what is unclear [01:05:34–01:05:45]. Not used as evidence.
+- Review-generation constraint stated by the client: clients do not want their name on a review — "I've got clients that are bending over backwards, trying to figure out how to come up with fictitious Google accounts ... I love you, but I don't want anyone to know I ever worked with you" [Chuck Ramsay (client), 00:43:50–00:44:01].
+- Other directory review counts: Avvo 5.0 with 10 reviews and Avvo rating 9.5; Yelp 1 review (these are not Google figures; for context only).
+
+============================================================
+STEP 3 — LOCAL 3-PACK SEARCHES
+============================================================
+Practice area 1: DWI / DUI defense (Minneapolis–St. Paul metro; firm office in Roseville)
+Searches NOT run in this run: no rendered Google results were reachable (the Google results page returned only navigation text). All three searches below are "not observed" and must be confirmed by the seller.
+- Search 1 "DWI attorney Roseville MN": firm appears: not observed — competitors in pack: not observed
+- Search 2 "DWI lawyer Minneapolis": firm appears: not observed — competitors in pack: not observed
+- Search 3 "DWI attorney St. Paul": firm appears: not observed — competitors in pack: not observed
+What the call did show (seller's third-party map-grid tool, not verified in this run): firm shows on page one in 14% of the analysed area, vs Jeffrey Dean 24%, Jack Rice 20%, Gerald Miller 19% [seller, 00:33:23, 00:41:43–00:41:54, search "DWI attorney" with the seller's pin near Roseville]. These are the seller's figures from a grid tool; treat as "the figures discussed on the call", not as the firm's measured result.
+
+Practice area 2: Criminal vehicular operation / homicide (CVO/CVH), commercial (CDL) DWI — same search set not run; same limitation. No searches performed. Seller should confirm.
+
+============================================================
+STEP 4 — COMPETITOR REVIEW COUNTS
+============================================================
+Competitors are the three the seller named on the call (all local Minnesota DWI / criminal-defense firms). None of their numbers could be read off a Google listing in this run, so every figure is UNCONFIRMED and must not be printed as a specific figure in the deck.
+- Competitor 1: Jack Rice Defense (370 Selby Avenue, Suite 207, St. Paul) — reviews: "over 175 five-star reviews on Google" [UNCONFIRMED — sourced from the firm's own website marketing copy, not independently confirmed via Google] — rating: not observed on Google. Avvo 5.0 with 11 reviews (not a Google figure). Seller note: the firm's Google profile name appears keyword-stuffed [seller, 00:36:08–00:37:39].
+- Competitor 2: Gerald Miller P.A. (Minneapolis) — reviews: 226 [UNCONFIRMED — sourced from the firm's own website marketing copy ("4.9-star ... over 226 reviews"), not independently confirmed via Google] — rating: 4.9 [UNCONFIRMED — same source]
+- Competitor 3: Jeffrey Dean (10 South 5th Street, Minneapolis) — reviews: not found on Google. Experience.com shows 4.95 across 22 reviews [UNCONFIRMED — sourced from Experience.com, not independently confirmed via Google]; Avvo shows 4.3 across 6 reviews [UNCONFIRMED — sourced from Avvo, not confirmed via Google] — rating on Google: not observed
+Comparison caution: the firm's own Google count is itself unconfirmed (see STEP 2). Do not describe any competitor as having more reviews than Ramsay in the deck until the seller confirms both counts on Google.
+
+============================================================
+STEP 5 — DIRECTORY LISTINGS
+============================================================
+- Avvo: Charles Alan Ramsay, Roseville — address "2780 Snelling Ave N #330, Roseville, MN, 55113"; phone: not shown; practice mix "DUI and DWI" 85%, Appeals 10%, Criminal Defense 5%; 10 reviews, 5.0; Avvo rating 9.5; licensed in Minnesota since 1995.
+- FindLaw: Ramsay Law Firm, PLLC — "2780 Snelling Ave. #330, Roseville, MN 55113"; (651) 604-0000; no reviews listed; attorneys listed: Daniel Koewler and Charles A. Ramsay (Super Lawyers).
+- Justia: profile "Charles A. Ramsay, Lawyer in Roseville, Minnesota" exists (listed in search); the page returned HTTP 403 to the fetch tool, so its contents were not read.
+- Yelp: "RAMSAY LAW FIRM" listing exists at 2780 Snelling Ave N Ste 330; 1 review (per search summary).
+- Birdeye: 4.6 stars, 56 reviews [UNCONFIRMED — Birdeye]; address "2780 Snelling Ave. North, Ste. 330".
+- Also listed (found in search, not opened): Lawyers.com, HG.org, LawInfo, ReachAttorneys, YellowPages, Wheree, MinnLawyer.
+- NAP consistency: the street line varies by directory ("2780 E Snelling Ser Dr Suite #330" on the site; "2780 Snelling Ave N #330" on Avvo; "2780 Snelling Ave. #330" on FindLaw; "2780 Snelling Ave. North, Ste. 330" on Birdeye). Phone 651-604-0000 on the site, FindLaw and others; Avvo shows no phone. Minor variation only; no conflicting suite or ZIP seen.
+- Geo-targeting landing pages for surrounding cities: yes — city/county DWI pages listed in STEP 1, assessed as templated (see STEP 1).
+
+============================================================
+STEP 6 — GOOGLE ADS
+============================================================
+No Google results page could be rendered in this run, so ad observations are "not observed" (this does NOT mean no ads are running).
+Practice area 1: DWI / DUI defense
+- Firm ads observed: not observed. The prospect has not said they run Google search ads; the call only covered Local Services Ads (see STEP 7).
+- Named local competitors running ads: not observed in this run. The seller noted a "sponsored" result at the top of one search but did not name the advertiser [seller, 00:59:49–00:59:54].
+Practice area 2: CVO / CVH and CDL DWI
+- Firm ads observed: not observed
+- Named local competitors running ads: not observed
+The firm may be getting outbid or may simply not be bidding; the call stance is "Open to sniper PPC for high-intent terms" (STEP 9) — framed as an opportunity gap, not a statement of fact.
+
+============================================================
+STEP 7 — LOCAL SERVICE ADS
+============================================================
+- Firm appears in LSA: not observed in this run. Per the client the firm is not running LSAs: "Not service ads, no ... I don't have service ads" [Chuck Ramsay (client), 01:05:04–01:05:08]. He registered once: "I did register it, but I don't think I ever did an ad itself" [Chuck Ramsay (client), 01:05:30].
+- Google Screened: not observed
+- LSA review count: not observed
+- Named local competitors in LSA: not observed
+The seller advised against LSA for this firm: "I don't recommend LSA. It would give you a high volume of DWI calls, but those aren't going to be the cream of the crop" [seller, 01:06:41–01:06:51].
+
+============================================================
+STEP 8 — META ADS
+============================================================
+The Facebook Ads Library page failed to load in this run (connection error), so the library was not read.
+- Firm has active ads: not observed in the library by this run. On the call the seller noted "no ads found ... You have a meta, but just not running any remarketing" [seller, 01:09:54–01:10:00] and Chuck said he did Meta ads "A long time ago" [Chuck Ramsay (client), 01:10:24–01:10:29]. He also said he does "a lot on Facebook" organically [Chuck Ramsay (client), 01:09:40].
+- Named local competitor 1: not observed (Jack Rice Defense — not checked)
+- Named local competitor 2: not observed (Gerald Miller P.A. — not checked)
+
+============================================================
+STEP 9 — TRANSCRIPT EXTRACTION
+============================================================
+Transcript source: full verbatim Fathom transcript (summary used only as overview). The file opens mid-conversation (about DWI breath-test law) at 00:00:00, so any earlier small talk is not in it, and it has a gap at 00:18:02–00:19:09 while the rep added the note taker; one exchange right after the gap is unclear (see below). The trigger file's transcript_status is "found" via HubSpot notes.
+
+- Practice areas confirmed: DWI / DUI defense (primary); criminal vehicular operation (CVO) and criminal vehicular homicide (CVH); commercial driver (CDL) DWI; ignition-interlock matters; general criminal defense when needed. "Board-certified in DWI defense law" [Chuck Ramsay (client), 00:32:52].
+- Current lead sources: "We have been trying to get the name out so that when the big firms, their clients get arrested, they say, who's the go-to for this? ... Oh, it's Ramsay. And then they send them along. That's been our best source." [Chuck Ramsay (client), 00:07:14–00:07:32] and "through internet marketing, I would say SEO, we do get truck drivers and people who are charged with CVO and CVH. ... So it's a split" [Chuck Ramsay (client), 00:07:39–00:08:00]. He prefers attorney referrals: "I prefer the calls from, we'll call them the highbrow attorneys who have a rich client" [00:08:00].
+- Ads ever run: Google LSA — registered once, "I don't think I ever did an ad itself" [Chuck Ramsay (client), 01:05:30]. Meta — "A long time ago" [01:10:24]; videos paused about a year and a half. No platform, budget or result stated for any ad. Google search ads: not stated.
+- Firm identity check: matches — trigger says Ramsay Law Firm, PLLC; the website footer, directories and the call all say Ramsay Law Firm, PLLC (Roseville, MN; ramsayresults.com).
+- Team size: Chuck (founder, trial lead), one associate (fee tier $12K), one partner (handles first appearances / preliminary hearings) per the call [Chuck Ramsay (client), 00:16:06] and the summary; website lists three attorneys (Charles Ramsay, Daniel Koewler, Caleb Anthony). Two more attorneys may join ("this is likely to happen, Dan, it's not a done deal yet" [Chuck Ramsay (client), 00:17:23]): a younger attorney who "matches my energy" and a senior attorney with "my energy as well, my experience". Staff beyond attorneys: not stated; "I have a real office in Roseville with staff" [01:04:24]. 24/7 answering service in place.
+- Team size (total headcount): 3
+  (Source note: not stated on the call; 3 = attorneys listed on the website; staff count unknown. Seller should confirm.)
+- Annual revenue (gross / case value): not stated
+- Annual revenue (net / take-home / collected): not stated. Chuck said "Net means more to me than gross or percentage" [Chuck Ramsay (client), 00:26:35] but gave no figure.
+- Revenue (annual, best estimate): not stated
+- Fee structure: flat fee by case type. "So 15K is what I charge at a minimum" [Chuck Ramsay (client), 00:02:47]; associate "They're 12" [00:02:55]; CVO/CVH "we're doubling that. So we're 30K plus. Trial fees in a trust account, so 50K" [00:19:58–00:20:07]; ignition-interlock matters "we charge $4,500" [00:20:30]. 20-minute consultation, enforced; overage billed hourly [00:05:00–00:05:03].
+- Revenue goal: not stated. Chuck's stated aim is income, not revenue: "Maybe do 12 cases next year and still make the same amount." [Chuck Ramsay (client), 00:01:46]
+- Average case value: $15,000 minimum for Chuck, $12,000 for the associate, $30,000+ for CVO/CVH; he said the $4,500 interlock cases "skew it to the low end, but then the CVO, CVH, you skew it to the high end" [Chuck Ramsay (client), 00:20:39]. No single average stated.
+- Current close rate: not stated — default to 15%
+- Number of locations: 1 (Roseville office). A satellite office is being considered: Rochester (about 70 miles southeast, "Mayo Clinic, lots of doctors" [Chuck Ramsay (client), 00:58:31]), St. Paul, Minneapolis, or Stillwater.
+- Spanish campaign needed: no (not mentioned)
+- Dominant buying motive: "I want to get down to halftime." [Chuck Ramsay (client), 00:03:06] — "I really enjoy what I do, but I don't want to do it full time. And I like teaching others and I like working with great people. ... So I want to keep my hand in the mix." [00:03:32–00:03:45]. "Otherwise, half my time's in Hawaii, half my time's here in Minnesota." [00:16:16] Type 1 (a firm that runs without him so he has time), with a premium brand and fewer, higher-end cases.
+- Any profitability claims made by prospect: none stated. (He said "we win more cases than anybody" [00:43:50] — a case-results claim, not a profit claim; do not print it as fact.)
+- Any claims about case types or practice areas: "I do the very high end, and our firm generally does higher end. We are not a churn and burn firm." [Chuck Ramsay (client), 00:02:02–00:02:08]; "It's the golden age of DWI defense in Minnesota right now." [00:00:52]; wants "criminal vehicular homicide, criminal vehicular operation, commercial, people with commercial driver's licenses, people who travel and need to have a driver's license, people who have professional licenses and have the resources to hire the best." [00:06:32–00:06:56]
+- Stated call focus / product interest: the call was about marketing — the website, SEO and map visibility for DWI / CVO / CDL clients — plus a plan for Chuck to step back to half time from May. Chuck wants to look at replacing his current web/SEO vendor ("I want to look at other options" [00:24:08]). The seller offered "a proposal for taking over the web SEO or anything else" [seller, 01:13:23]. Also discussed but not priced: DBA/rebrand with DWI in the name, a satellite office, a review program, video content, Intaker live chat, pay-per-click "sniper" ads, AI (Chuck: "I'm a big, big AI guy" [00:11:40]). Managed Operations and AI were described generally in the seller's pitch; neither was proposed or priced to Chuck. Not a standard growth-and-ops discovery: the actionable ask is web/SEO.
+- Primary engagement: marketing
+- Products discussed on call: none
+  (Source note: no SMB Team product was named by tier or priced on the call; the seller offered to propose taking over web/SEO. The seller's package for this deck is Web + SEO Starter only, per the trigger file.)
+- Lead-gen gap stated: yes — "I would like to have a little buffer in monthly cases." [Chuck Ramsay (client), 00:17:16] and "something happened about two months ago and the calls from the internet fell off quickly." [00:08:24]
+- Existing marketing/SEO/ad vendor engagements: current web/SEO vendor at about $1,500/mo: "I'm only paying $1,500, right?" [Chuck Ramsay (client), 00:09:00]; "they'll do the work, but they are not proactive. They get by, they just do the minimum." [00:08:48–00:08:57]; "I got to ride him and I feel like he takes us for granted." [00:23:46]. Contract terms and term length: not stated. Per the rep's recap: about three blogs a month, a couple of business-profile posts, some backlinks and outreach [seller, 00:06:00–00:06:19].
+- Budget constraints stated: "I would be willing to pay more, but I don't want to drop $6,000 a month. I don't think we need to do that kind of investment." [Chuck Ramsay (client), 00:09:02–00:09:07]. Per the summary he is open to "more than $1.5K" if the return and proactivity are proven (summary-level, not a verbatim quote).
+- Bookkeeping volume: not stated; trust account: yes (trial fees are held in a trust account [Chuck Ramsay (client), 00:20:07]); transactions per month not stated.
+- Financial goals stated (for the ProfitOS slides): 1. Same income on fewer cases — "Maybe do 12 cases next year and still make the same amount." [Chuck Ramsay (client), 00:01:46]. No other financial goals stated. (Not used unless Fractional CFO or Bookkeeping is recommended; the seller's package is Web + SEO only.)
+
+Investment inputs (client-stated only):
+- Ad spend practice area: Criminal Defense
+  (Source: DWI/CVO/CDL defense, the practice area any paid ads would target. Not used — no ad spend section in this package.)
+- Geo market tier: Tier 2 (Minneapolis–St. Paul metro)
+- Market competitiveness: High
+  (Source: many established DWI firms with larger review counts and map coverage in the metro — STEP 4 and the seller's grid figures; "20 more right here" criminal-defense firms in some map areas [seller, 00:43:07].)
+- Current monthly ad spend (stated): not stated
+  (Source note: the $1,500/mo is the SEO/content vendor, not paid ads. Chuck has no LSA and no active Meta ads; Google search ads not stated.)
+- Current cost per signed case (stated): not stated
+- Current cost per lead (stated): not stated
+- Average case value (stated, one figure): $15,000
+  (Source: Chuck Ramsay, 00:02:47 — his minimum fee, the low end of his range; associate $12,000.)
+- Close rate (stated): not stated
+- Referral share of cases (stated): not stated
+  (Source note: "it's a split" between attorney referrals and internet SEO [Chuck Ramsay (client), 00:08:00]; no percentage given.)
+- Revenue goal (annual, one figure): not stated
+- Maximum monthly ad budget (stated): not stated
+  (Source note: he said he does not want to spend $6,000 a month on marketing [00:09:02]; that is not a stated ad budget.)
+
+Key prospect quotes:
+1. Chuck Ramsay (client), 00:01:46 — "Maybe do 12 cases next year and still make the same amount." [goals / case mix]
+2. Chuck Ramsay (client), 00:03:06 — "I want to get down to halftime." [goals / DBM]
+3. Chuck Ramsay (client), 00:03:22 — "But my people associate my name with the results." [team / brand reliance on the owner]
+4. Chuck Ramsay (client), 00:05:06–00:05:11 — "But I don't want 100 calls. I want 10 of the right calls." [intake / lead quality]
+5. Chuck Ramsay (client), 00:07:14–00:07:32 — "We have been trying to get the name out so that when the big firms, their clients get arrested, they say, who's the go-to for this? ... That's been our best source." [lead sources / referrals]
+6. Chuck Ramsay (client), 00:08:24 — "something happened about two months ago and the calls from the internet fell off quickly." [lead sources / pain]
+7. Chuck Ramsay (client), 00:08:57 — "They get by, they just do the minimum." [current vendor]
+8. Chuck Ramsay (client), 00:09:02 — "I would be willing to pay more, but I don't want to drop $6,000 a month." [budget]
+9. Chuck Ramsay (client), 00:24:08 — "I want to look at other options." [vendor change]
+10. Chuck Ramsay (client), 00:44:02 — "If you can help with that, I know that would make a world of difference." [reviews — clients' privacy concerns, said at 00:43:50–00:44:01]
+11. Chuck Ramsay (client), 00:28:10 — "I wouldn't want to enter into a situation where you guys have a conflict of interest, right?" [objection — SMB serving nearby competitors]
+12. Chuck Ramsay (client), 01:12:33 — "I thought this was just about doing a little due diligence and moving on, but you have piqued my interest." [buying signal]
+
+Transcript clean-up notes:
+- 00:19:15–00:19:31 [transcript unclear]: the seller says "80 to 110, okay" and Chuck answers "I'd like to get it, you know, 125 a month ... if I'm going to back down, then, you know, 100 is plenty ... If they come on, then, you know, I want 200." What the number measures (calls, leads or cases a month) is not stated and the audio before it is missing (gap 00:18:02–00:19:09). Not used as a KPI or target. Seller should ask.
+- The seller's line "the Seabin Firm ... Seabin Evans is our client" [00:28:54–00:29:01] is rendered "Seiben Evans" in the AI summary; the correct spelling is unconfirmed. This is a named SMB client in Minnesota; the action item is to check whether SMB may disclose it to Chuck.
+- Several short seller lines are tagged to the wrong speaker around 00:10:25–00:10:26 ("Yes.") and 01:05:34–01:05:45 (the GBP-hours exchange); neither is used.
+
+============================================================
+STEP 9B — KPI AND DIAGNOSIS (feeds deck slides 1–3)
+============================================================
+KPI AND DIAGNOSIS (STEP 9B)
+Product focus this supports: marketing (Web + SEO Starter, the seller-specified package — site rebuild/UX, service-area and blog content, local/map visibility, reviews)
+Headline KPI: Share of the local map area where the firm shows on page one — 14% — said by seller, 00:41:43 — "So your 14 is compared to Jeffrey's 24, Jack's 20% there"
+  KPI status: usable (a figure discussed on the call from the seller's third-party grid tool, not a firm result; label as "discussed on the call"). Chuck did not state the figure himself (the line at 00:41:26 about zooming out is tagged to him but reads as the seller's — speaker tag shifted, not used).
+  Why this KPI: Web + SEO work (rebuild, service-area pages, DBA/brand consistency, review program) is what moves map and organic visibility, and it ties to Chuck's complaint that internet calls fell off.
+Supporting figures (0–3):
+  - Organic traffic peaked in August and has been cut in half since — seller, 00:52:58–00:53:07 — "So traffic peaked in August, to your point. It's been cut in half since then." (third-party tool per the seller, to be checked in Analytics/Search Console)
+  - 764 blogs vs 28 core pages — seller, 00:53:07 — "You have a boatload of blogs, 764 blogs versus 28 core pages."
+  - About 50 of ~800 pages get any traffic — seller, 00:56:43–00:57:01 — "Looks like 50 of your 800 pages get any traffic whatsoever." (third-party tool; seller said to verify in Analytics/Search Console)
+Client-stated goal for this KPI: none stated. Closest: "I would like to have a little buffer in monthly cases." [Chuck Ramsay (client), 00:17:16] — no figure.
+KPI quotes (2–4, verbatim, client only):
+  - [Chuck Ramsay (client), 00:08:24] "something happened about two months ago and the calls from the internet fell off quickly." — internet calls dropped
+  - [Chuck Ramsay (client), 00:17:09–00:17:14] "things were going well up until about two, six, eight weeks ago. ... and then it dropped off, but it's picked up again." — drop and partial rebound
+  - [Chuck Ramsay (client), 00:08:48] "they'll do the work, but they are not proactive." — vendor
+  - [Chuck Ramsay (client), 00:05:06–00:05:11] "But I don't want 100 calls. I want 10 of the right calls." — quality over volume
+Client's why (verbatim, client only): [Chuck Ramsay (client), 00:03:06] "I want to get down to halftime." — and [00:03:45] "So I want to keep my hand in the mix." Half the year in Hawaii, half in Minnesota; wants to keep trying cases, drop first appearances and prelims.
+Cost of inaction (verbatim, client only): none on the call as a stated consequence. Closest, what already happened: [Chuck Ramsay (client), 00:08:24] "the calls from the internet fell off quickly." and the need for "a little buffer in monthly cases" before he steps back [00:17:16].
+Legacy Staircase discussed: no. The seller used the word "the abyss" once in passing [seller, 00:14:31]; the staircase was not shown or walked through.
+Diagnosis (3–4 causes, biggest first):
+  1. Mobile visitors have a hard time reaching the firm — the seller's mobile-simulator view showed no phone number, no form and no call to action above the fold, and the site is "Not in the least" optimized for mobile — evidence: seller observation on the call and a measured local Lighthouse mobile performance score of 74 — source: call: seller, 00:46:06–00:46:26; research: STEP 1, local Lighthouse 12.8.2 on 2026-11-23 (not a pagespeed.web.dev run) — fixed by: Web + SEO Starter — website rebuild with fast mobile pages and clear calls to action
+     Target basis: none — flag for seller
+     (Caution: the research run's desktop view of the page text DID show a header phone and a "Request Consultation" button — seller to check the live mobile screen before the deck states this as a flaw.)
+  2. Thin, duplicated service-area pages and an oversized blog drag the site — about 764 blogs vs 28 core pages, roughly 50 of 800 pages drawing any traffic, and city pages that are the same page with the city swapped — evidence: the seller's tool figures plus the templated Roseville page seen in STEP 1 — source: call: seller, 00:50:08–00:50:30 and 00:53:07, 00:56:43–00:57:01; research: STEP 1 (one page assessed) — fixed by: Web + SEO Starter — content audit (merge/refresh/redirect blogs), unique service-area pages and stronger core DWI/CVO/CDL pages
+     Target basis: none — flag for seller
+  3. Low map visibility and a small review base for a firm of this standing — 14% of the analysed area vs 24%, 20% and 19% for the three named competitors — evidence: seller grid figures; review counts unconfirmed (UNCONFIRMED figures not to be printed) — source: call: seller, 00:41:43–00:41:54; research: STEP 2 and STEP 4 (all review figures UNCONFIRMED) — fixed by: Web + SEO Starter — Google Business Profile optimization, a DBA/brand-consistency plan with DWI in the name (the seller said the DBA "costs like 26 bucks" [00:38:11–00:38:20]), and a review program that works within clients' privacy limits (Pass 2 to confirm which of these the Starter tier includes)
+     Target basis: none — flag for seller
+  4. The current SEO vendor is reactive — Chuck pays about $1,500/mo and says the vendor only acts when pushed — evidence: client statement — source: call: Chuck Ramsay (client), 00:08:48–00:09:00, 00:23:46 — fixed by: Web + SEO Starter — a proactive monthly SEO plan with reporting
+     Target basis: none — flag for seller (no stated target; Chuck said he would pay more if the work is proactive)
+Plan inputs (non-marketing products — only if the seller changes the package):
+  - Fractional CTO / AI Workforce Pro: none stated beyond "I'm a big, big AI guy" [Chuck Ramsay (client), 00:11:40]; no repetitive tasks named
+  - Managed Operations: "But my people associate my name with the results." [Chuck Ramsay (client), 00:03:22]; plans to hand first appearances and prelims to the associate and partner [00:16:06]; wants to move from his personal reputation to the firm's. Owner-hours per week: not stated.
+  - FCFO / bookkeeping: none stated
+Alternate KPI (if the seller changes the package): Managed Operations → owner time — "I want to get down to halftime." [Chuck Ramsay (client), 00:03:06] with a stated start of May [00:15:30] — no hours-per-week figure stated.
+Seller should confirm on the next call:
+  - Pass the desktop PageSpeed number (not obtained) and re-run mobile on pagespeed.web.dev (the 74 here is a local Lighthouse run)
+  - Whether the mobile site really has no phone, form or call to action above the fold (the page text read here shows a phone and a "Request Consultation" button)
+  - The firm's real Google review count and rating, and Jack Rice, Gerald Miller and Jeffrey Dean's Google counts (the seller said "67 or 87" for Ramsay; every figure in this file is UNCONFIRMED)
+  - The firm's 3-pack positions for "DWI attorney" searches in Roseville, Minneapolis and St. Paul (not observed in this run)
+  - Whether any Google search ads or Meta ads are running now (not observed; Ads Library did not load)
+  - Current annual revenue, take-home (Chuck said net matters most), team and staff headcount, close rate, and monthly case volume (24 cases YTD is the only count given)
+  - What "80 to 110" and "125 a month" refers to in the unclear exchange at 00:19:15 (calls, leads or cases a month)
+  - The terms of the current $1,500/mo SEO vendor contract (term, notice period) and what exactly it delivers
+  - Whether SMB can name its Minnesota client to Chuck (conflict concern) — the call's action item
+  - Whether the Web + SEO Starter tier includes GBP/review work, a DBA/rebrand plan and service-area content, since the cause list above leans on these
+
+============================================================
+STEP 10 — COMPETITIVE URGENCY SCORE
+============================================================
+Score: 5
+Named local competitor threats:
+1. Jack Rice Defense (St. Paul) — about 20% map coverage per the seller's grid; a keyword-stuffed Google profile name per the seller; claims over 175 five-star Google reviews on its own site [UNCONFIRMED]. Chuck said "Jack refers his big DWIs to me, by the way" [Chuck Ramsay (client), 00:37:20] and "I don't need to beat down other people. Let's build us up." [00:40:14–00:40:19], so no action against Rice is planned.
+2. Gerald Miller P.A. (Minneapolis) — about 19% map coverage per the seller's grid; claims 4.9 stars on 226 reviews on its own site [UNCONFIRMED]; city-by-city DWI pages across the metro.
+3. Jeffrey Dean (Minneapolis) — about 24% map coverage per the seller's grid (the highest of the three), with a 10 South 5th Street office in Minneapolis.
+Dynamic sentence: "A score of 5 means competitors have meaningful advantages in one or more areas and are pulling ahead. You are not invisible yet — but the window to close the gap is narrowing. Every month without action is a month they extend their lead."
+Note: Ramsay's strongest channel is attorney referrals, which these competitors do not control; the score reflects visibility only.
+
+============================================================
+PASS 2 — VERIFICATION CHECKLIST (completed)
+============================================================
+- Every number matches observed data or a labelled transcript source: yes; not-observed items are marked and listed for the seller.
+- Every review count / rating carries a tag: yes — all UNCONFIRMED (no Google listing read).
+- Competitor review counts are not cited as higher than the prospect's: no comparison made; firm's own Google count unresolved.
+- Gross/net revenue split: not stated by the prospect.
+- Ad sections cover both practice areas: yes (all "not observed").
+- No section says the firm is not running ads: correct; only "not observed" and the client's statements about LSA and Meta.
+- Profitability claims: none stated.
+- Competitors named are specific local firms: yes.
+- PageSpeed: mobile 74 (local Lighthouse, flagged); desktop not obtained, stated plainly.
+- DBM, revenue goal, close rate default, average case value, call focus, machine-read lines, headcount, vendor and budget lines, investment inputs: filled in.
+- STEP 9B: headline KPI is a figure said on the call (seller-labelled); no figure was calculated or converted; no UNCONFIRMED figure used; each cause has a source and target basis.
