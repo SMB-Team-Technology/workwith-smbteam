@@ -1,0 +1,199 @@
+{
+  "confidence": "low",
+  "revenue_stated": null,
+  "net_revenue_stated": null,
+  "is_contingency_practice": false,
+  "revenue_effective": 1980500,
+  "revenue_source": "hubspot_annual_law_firm_revenue",
+  "revenue_label": "$961K - $3M",
+  "revenue_verified": false,
+  "needs_revenue_confirmation": true,
+  "team_size_stated": 11,
+  "team_size_source": "research_notes",
+  "team_size_effective": 11,
+  "practice_areas_detected": [
+    "employment law for employees — workplace gender rights",
+    "women's rights (sexual harassment",
+    "pregnancy discrimination",
+    "pay",
+    "women's rights / workplace gender discrimination & sexual harassment (the core of the firm; katie: roughly a \"70-30 split\" women's rights vs. everything else, 00:24:55 — the other 30% was not specified)",
+    "wrongful termination / general employment law",
+    "women's rights / sexual harassment / discrimination",
+    "wrongful termination / general employment"
+  ],
+  "hubspot_company": null,
+  "firm_identity_check": "matches — trigger name \"Tuckner, Sipser, Weinstock & Sipser, LLP\" matches the website footer and the people on the call; the site brand is \"Women's Rights NY\" (womensrightsny.com).",
+  "package_source": "rules",
+  "package_override": null,
+  "needs_seller_input": false,
+  "revenue_only_option": null,
+  "call_focus": {
+    "primary_engagement": "mixed",
+    "products_discussed": [
+      "AI Workforce Pro (tier not specified)",
+      "Full Service Marketing"
+    ],
+    "lead_gen_gap": true
+  },
+  "marketing_tier": "Growth",
+  "marketing_name": "Full Service Marketing — Growth",
+  "marketing_price_bundled": 7497,
+  "marketing_price_retail": 8997,
+  "marketing_savings": 1500,
+  "coaching_name": "Managed Operations Tier 3",
+  "coaching_price_bundled": 7497,
+  "coaching_price_retail": 7997,
+  "coaching_savings": 500,
+  "law_tier": "AI Workforce Pro",
+  "law_name": "AI Workforce Pro",
+  "law_price_bundled": 2317,
+  "law_price_retail": null,
+  "law_seats": 11,
+  "total_bundled": 17311,
+  "total_savings": 2000,
+  "ad_spend_conservative": 6200,
+  "ad_spend_aggressive": 50000,
+  "ad_spend_rationale": {
+    "conservative_basis": "channel minimums $3,000 + $2,000 + $1,200 = $6,200",
+    "aggressive_basis": "20% rule: $3,961,000 goal × 20% ÷ 12 × 1.5 geo − $7,497 fee = $91,528 → reverse math: not possible (no case value) → capped at the $50,000 the package manages"
+  },
+  "selection_notes": [
+    "\"AI Workforce Pro\" named without a tier — using AI Workforce Pro (team of 11).",
+    "AI Workforce Pro discussed on call: $1,597/mo for 5 users + 6 extra × $120.",
+    "Revenue not stated on the call — HubSpot only has the range \"$961K - $3M\". Using the midpoint ($1,980,500) for this draft only; confirm actual revenue with the prospect before locking in.",
+    "Revenue $1M–$2M: Growth tier.",
+    "Revenue $1M+, team 11: Managed Operations Tier 3 selected."
+  ],
+  "pricing_mode": "bundled",
+  "bundle_eligible_count": 3,
+  "unpriced_products": [],
+  "setup_fees": [
+    {
+      "line": "marketing",
+      "product": "Full Service Marketing — Growth",
+      "label": "AI Avatar setup",
+      "amount": 1850,
+      "waivable": true,
+      "waived": false,
+      "charged": 1850
+    }
+  ],
+  "setup_total": 1850,
+  "investment": {
+    "version": 1,
+    "products": [
+      {
+        "category": "marketing",
+        "name": "Full Service Marketing — Growth",
+        "charged": 7497,
+        "standalone": 8997
+      },
+      {
+        "category": "coaching",
+        "name": "Managed Operations Tier 3",
+        "charged": 7497,
+        "standalone": 7997
+      },
+      {
+        "category": "law",
+        "name": "AI Workforce Pro (11 seats)",
+        "charged": 2317,
+        "standalone": null
+      }
+    ],
+    "monthly_total": 17311,
+    "list_total": 19311,
+    "total_savings": 2000,
+    "pricing_mode": "bundled",
+    "setup_fees": [
+      {
+        "product": "Full Service Marketing — Growth",
+        "label": "AI Avatar setup",
+        "amount": 1850,
+        "charged": 1850,
+        "waived": false
+      }
+    ],
+    "setup_total": 1850,
+    "year_one_total": 209582,
+    "year_one_basis": "12 × $17,311/mo in fees + $1,850 one-time setup. Ad spend is paid separately to Google and Meta.",
+    "ad_spend": {
+      "channels": [
+        {
+          "channel": "Google Search",
+          "minimum": 3000
+        },
+        {
+          "channel": "Local Services Ads",
+          "minimum": 2000
+        },
+        {
+          "channel": "Meta retargeting",
+          "minimum": 1200
+        }
+      ],
+      "conservative": 6200,
+      "aggressive": 50000,
+      "current_stated": null,
+      "cap": 50000,
+      "overage": null,
+      "conservative_basis": "channel minimums $3,000 + $2,000 + $1,200 = $6,200",
+      "aggressive_steps": [
+        "20% rule: $3,961,000 goal × 20% ÷ 12 × 1.5 geo − $7,497 fee = $91,528",
+        "reverse math: not possible (no case value)",
+        "capped at the $50,000 the package manages"
+      ],
+      "year_one_range": [
+        74400,
+        600000
+      ],
+      "seller_set": false,
+      "computed": null,
+      "needs_seller_review": true
+    },
+    "return": null,
+    "inputs": {
+      "practice_area": {
+        "value": "Other",
+        "source": "research notes"
+      },
+      "geo_tier": {
+        "value": 1,
+        "multiplier": 1.5,
+        "source": "research notes"
+      },
+      "competitiveness": {
+        "value": "High",
+        "source": "research notes"
+      },
+      "spanish_campaign": false,
+      "revenue_effective": 1980500,
+      "revenue_goal": {
+        "value": 3961000,
+        "source": "not stated — 2× current revenue (audit-write.md)"
+      },
+      "case_value": {
+        "value": null,
+        "source": "practice-area default (low end)"
+      },
+      "close_rate": {
+        "value": 0.15,
+        "source": "default 15%",
+        "stated": null
+      },
+      "referral_share": null,
+      "current_ad_spend": null,
+      "current_cost_per_case": null,
+      "current_cost_per_lead": null,
+      "max_ad_budget": null,
+      "management_fee": 7497,
+      "ad_spend_cap": 50000
+    },
+    "flags": [
+      "Goal-based ad spend ($91,528) is above the $50,000 cap for Full Service Marketing — Growth — capped. Higher spend means a tier upgrade or the 15% overage fee (seller decision).",
+      "Ad spend over $25K — scoping approval required.",
+      "No case value (stated or default) — return projection left out."
+    ],
+    "alerts": []
+  }
+}
