@@ -3,11 +3,11 @@
   "revenue_stated": null,
   "net_revenue_stated": null,
   "is_contingency_practice": false,
-  "revenue_effective": 1980500,
-  "revenue_source": "hubspot_annual_law_firm_revenue",
+  "revenue_effective": 1500000,
+  "revenue_source": "seller_confirmed",
   "revenue_label": "$961K - $3M",
-  "revenue_verified": false,
-  "needs_revenue_confirmation": true,
+  "revenue_verified": true,
+  "needs_revenue_confirmation": false,
   "team_size_stated": 6,
   "team_size_source": "research_notes",
   "team_size_effective": 6,
@@ -37,30 +37,185 @@
   "marketing_price_bundled": 4997,
   "marketing_price_retail": 5697,
   "marketing_savings": 700,
-  "coaching_name": "Master's Circle",
-  "coaching_price_bundled": 4600,
-  "coaching_price_retail": 4997,
-  "coaching_savings": 397,
+  "coaching_name": "Growth Academy Master's Circle",
+  "coaching_price_bundled": 2497,
+  "coaching_price_retail": 2497,
+  "coaching_savings": 0,
   "law_tier": null,
   "law_name": null,
   "law_price_bundled": null,
   "law_price_retail": null,
   "law_seats": null,
-  "total_bundled": 9597,
-  "total_savings": 1097,
-  "ad_spend_conservative": 3500,
-  "ad_spend_aggressive": 14000,
+  "total_bundled": 7494,
+  "total_savings": 700,
+  "ad_spend_conservative": 6700,
+  "ad_spend_aggressive": 25000,
   "ad_spend_rationale": {
-    "conservative_basis": "estate planning — \"trust attorney\", \"probate attorney\",",
-    "aggressive_basis": "scaled 4x off the conservative channel-minimum floor"
+    "conservative_basis": "channel minimums $3,500 + $2,000 + $1,200 = $6,700",
+    "aggressive_basis": "20% rule: $3,000,000 goal × 20% ÷ 12 × 1 geo − $4,997 fee = $45,003 → reverse math: 166.7 cases/mo ÷ 15% close × $84 benchmark blended CPL = $93,579 → capped at the $25,000 the package manages"
   },
   "selection_notes": [
     "Revenue not stated on the call — HubSpot only has the range \"$961K - $3M\". Using the midpoint ($1,980,500) for this draft only; confirm actual revenue with the prospect before locking in.",
     "Revenue $1M–$2M: Growth tier.",
     "Revenue $1M+, team 6+ but no dedicated ops detected: Master's Circle selected. Verify ops capacity with sales rep.",
-    "Seller override: switched marketing to Full Service Marketing — Starter (Master’s Circle kept) per Slack request on 2026-11-10."
+    "Seller override: switched marketing to Full Service Marketing — Starter (Master’s Circle kept) per Slack request on 2026-11-10.",
+    "Revenue confirmed by seller: $1,500,000.",
+    "Seller context (Slack, 2026-11-23): revenue stated as 1-2M (midpoint $1.5M recorded); firm can handle 10-20 more real estate transactions/month and 4-8 more estate plan clients/month. Ad spend not changed."
   ],
   "pricing_mode": "bundled",
   "bundle_eligible_count": 2,
-  "unpriced_products": []
+  "unpriced_products": [],
+  "setup_fees": [
+    {
+      "line": "marketing",
+      "product": "Full Service Marketing — Starter",
+      "label": "AI Avatar setup",
+      "amount": 1850,
+      "waivable": true,
+      "waived": false,
+      "charged": 1850
+    }
+  ],
+  "setup_total": 1850,
+  "investment": {
+    "version": 1,
+    "products": [
+      {
+        "category": "marketing",
+        "name": "Full Service Marketing — Starter",
+        "charged": 4997,
+        "standalone": 5697
+      },
+      {
+        "category": "coaching",
+        "name": "Growth Academy Master's Circle",
+        "charged": 2497,
+        "standalone": 2497
+      }
+    ],
+    "monthly_total": 7494,
+    "list_total": 8194,
+    "total_savings": 700,
+    "pricing_mode": "bundled",
+    "setup_fees": [
+      {
+        "product": "Full Service Marketing — Starter",
+        "label": "AI Avatar setup",
+        "amount": 1850,
+        "charged": 1850,
+        "waived": false
+      }
+    ],
+    "setup_total": 1850,
+    "year_one_total": 91778,
+    "year_one_basis": "12 × $7,494/mo in fees + $1,850 one-time setup. Ad spend is paid separately to Google and Meta.",
+    "ad_spend": {
+      "channels": [
+        {
+          "channel": "Google Search",
+          "minimum": 3500
+        },
+        {
+          "channel": "Local Services Ads",
+          "minimum": 2000
+        },
+        {
+          "channel": "Meta retargeting",
+          "minimum": 1200
+        }
+      ],
+      "conservative": 6700,
+      "aggressive": 25000,
+      "current_stated": null,
+      "cap": 25000,
+      "overage": null,
+      "conservative_basis": "channel minimums $3,500 + $2,000 + $1,200 = $6,700",
+      "aggressive_steps": [
+        "20% rule: $3,000,000 goal × 20% ÷ 12 × 1 geo − $4,997 fee = $45,003",
+        "reverse math: 166.7 cases/mo ÷ 15% close × $84 benchmark blended CPL = $93,579",
+        "capped at the $25,000 the package manages"
+      ],
+      "year_one_range": [
+        80400,
+        300000
+      ],
+      "seller_set": false,
+      "computed": null,
+      "needs_seller_review": true
+    },
+    "return": {
+      "method": "benchmark_cpl",
+      "basis": "SMB Team estate planning cost-per-lead benchmarks ($84 blended, +20% on the low end), 15% close rate (assumed) and a $1,500 case value (assumed default).",
+      "case_value": 1500,
+      "case_value_stated": false,
+      "cost_per_case": null,
+      "share_of_case_value": null,
+      "close_rate": 0.15,
+      "blended_cpl": 84,
+      "scenarios": [
+        {
+          "label": "Conservative",
+          "ad_spend": 6700,
+          "leads": 66.3,
+          "cases": 9.9,
+          "revenue": 14900,
+          "return_multiple": 2.2
+        },
+        {
+          "label": "Aggressive",
+          "ad_spend": 25000,
+          "leads": 296.8,
+          "cases": 44.5,
+          "revenue": 66800,
+          "return_multiple": 2.7
+        }
+      ],
+      "disclaimer": "Illustrative arithmetic, not a forecast."
+    },
+    "inputs": {
+      "practice_area": {
+        "value": "Estate Planning",
+        "source": "inferred from practice areas"
+      },
+      "geo_tier": {
+        "value": 4,
+        "multiplier": 1,
+        "source": "default"
+      },
+      "competitiveness": {
+        "value": "Medium",
+        "source": "default"
+      },
+      "spanish_campaign": false,
+      "revenue_effective": 1500000,
+      "revenue_goal": {
+        "value": 3000000,
+        "source": "not stated — 2× current revenue (audit-write.md)"
+      },
+      "case_value": {
+        "value": 1500,
+        "source": "practice-area default (low end)"
+      },
+      "close_rate": {
+        "value": 0.15,
+        "source": "default 15%",
+        "stated": null
+      },
+      "referral_share": null,
+      "current_ad_spend": null,
+      "current_cost_per_case": null,
+      "current_cost_per_lead": null,
+      "max_ad_budget": null,
+      "management_fee": 4997,
+      "ad_spend_cap": 25000
+    },
+    "flags": [
+      "Ad spend practice area not recorded in research — using Estate Planning (inferred from practice areas).",
+      "Geo market tier not recorded in research — using Tier 4 (1.0×).",
+      "Reverse math ($93,579) is well above the 20% rule ($45,003) — the goal may be aggressive for the budget (paid ads team review).",
+      "Goal-based ad spend ($93,579) is above the $25,000 cap for Full Service Marketing — Starter — capped. Higher spend means a tier upgrade or the 15% overage fee (seller decision).",
+      "Case value assumed ($1,500, low end of the Estate Planning default) — confirm the real fee per case."
+    ],
+    "alerts": []
+  }
 }
