@@ -14,7 +14,7 @@ This ensures you have the latest version of all slash commands and configuration
 
 ## Purpose
 
-Each audit produces a 7-slide proposal PowerPoint (8 with the optional Legacy Staircase slide), opening with a "Growth, Profit, and Freedom Roadmap" cover and ending with the Phase 1/2/3 growth roadmap (plus Vanessa's LeadsOS slides after the cover when marketing is recommended — downloaded from a private HubSpot file into the git-ignored `.source-decks/`, never committed), for a prospective SMB Team client, built by the `/audit-write` command (Pass 2) from the research notes and `package_decision.json`, then uploaded to the HubSpot file manager and emailed to the seller.
+Each audit produces a 7-slide proposal PowerPoint (8 with the optional Legacy Staircase slide), opening with a "Growth, Profit, and Freedom Roadmap" cover and ending with the Phase 1/2/3 growth roadmap (plus Vanessa's LeadsOS slides after the cover when marketing is recommended and the AI Workforce Pro / FCTO slides when AIWP or a Fractional CTO is — downloaded from a private HubSpot file into the git-ignored `.source-decks/`, never committed), for a prospective SMB Team client, built by the `/audit-write` command (Pass 2) from the research notes and `package_decision.json`, then uploaded to the HubSpot file manager and emailed to the seller.
 
 The "Growth, Profit & Freedom Roadmap" website (`index.html`, `sections/`) and the Sales Companion PDF are **retired**. New builds never create them. Older firm folders still contain them — do not edit or read them for a new build.
 

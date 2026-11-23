@@ -106,6 +106,16 @@ jobs:
           HUBSPOT_TOKEN: ${{ secrets.HUBSPOT_TOKEN }}
         run: node scripts/fetch-source-deck.mjs --keyword LeadsOS --out .source-decks/LeadsOS.pptx
 
+      - name: Download the AI Workforce Pro / FCTO source deck
+        # The AIWP + FCTO mini deck's slides are copied into any proposal with
+        # AI Workforce Pro or a Fractional CTO level. Private HubSpot file (newest
+        # .pptx with "Workforce" in its name), saved to the git-ignored
+        # .source-decks/. If this fails the deck still builds without them.
+        continue-on-error: true
+        env:
+          HUBSPOT_TOKEN: ${{ secrets.HUBSPOT_TOKEN }}
+        run: node scripts/fetch-source-deck.mjs --keyword Workforce --out .source-decks/AIWP.pptx
+
       - name: Record the commit before the build
         id: start
         run: echo "sha=$(git rev-parse HEAD)" >> "$GITHUB_OUTPUT"

@@ -394,33 +394,63 @@ def _slide_title(slide):
     return " ".join(best.split())[:70]
 
 
-def load_leadsos():
-    """(source Presentation or None, [(her slide number, slide, title)], [held numbers], why-left-out)."""
-    if not load_decision().get("marketing_name"):
+def _package_names():
+    d = load_decision()
+    return " + ".join(str(d.get(k) or "") for k in ("marketing_name", "coaching_name", "law_name"))
+
+
+def load_source_deck(wanted, path, label, stop, hold=()):
+    """(source Presentation or None, [(source slide number, slide, title)], [held numbers], why-left-out).
+    Copies nothing unless the package wants this deck (`wanted`). Stops at
+    the first slide whose text starts with the `stop` divider word."""
+    if not wanted:
         return None, [], [], None
-    if not os.path.isfile(LEADSOS_DECK):
-        return None, [], [], (f"the LeadsOS source deck wasn't found at {LEADSOS_DECK} "
+    if not os.path.isfile(path):
+        return None, [], [], (f"the {label} source deck wasn't found at {path} "
                               "(the build downloads it from HubSpot: node scripts/fetch-source-deck.mjs)")
     try:
-        src = Presentation(LEADSOS_DECK)
+        src = Presentation(path)
     except Exception as e:  # a corrupt download must not stop the proposal
-        return None, [], [], f"the LeadsOS source deck couldn't be opened ({e})"
+        return None, [], [], f"the {label} source deck couldn't be opened ({e})"
     keep, held = [], []
     for n, slide in enumerate(src.slides, 1):
         text = _slide_text(slide)
-        if re.match(r"\s*SUPPLEMENTAL\b", text):
+        if re.match(rf"\s*{stop}\b", text):
             break
-        if any(h in text for h in LEADSOS_HOLD):
+        if any(h in text for h in hold):
             held.append(n)
             continue
         keep.append((n, slide, _slide_title(slide)))
     return src, keep, held, None
 
 
+def load_leadsos():
+    return load_source_deck(bool(load_decision().get("marketing_name")), LEADSOS_DECK,
+                            "LeadsOS", "SUPPLEMENTAL", LEADSOS_HOLD)
+
+
 LEADSOS_SRC, LEADSOS_SLIDES, LEADSOS_HELD, LEADSOS_MISSING = load_leadsos()
 
+# ── AI Workforce Pro / Fractional CTO slides (copied from the AIWP deck) ──
+# Any package with AI Workforce Pro (either tier) or a Fractional CTO level
+# gets the client-facing slides of the "AI Workforce Pro + FCTO" mini deck
+# after the cover (after the LeadsOS slides when both apply). Same handling
+# as LeadsOS: a private file in the HubSpot "Proposal Source Decks" folder,
+# downloaded by scripts/fetch-source-deck.mjs (newest .pptx with "Workforce"
+# in its name) to .source-decks/AIWP.pptx; slides copied as they are; speaker
+# notes go to the seller prep, never into the deck.
+#   - Everything from its "APPENDIX" divider on (use-case deep dives) is left out.
+#   - A slide containing a phrase in AIWP_HOLD is left out until confirmed.
+AIWP_HOLD = ()
+AIWP_DECK = os.environ.get("AIWP_DECK") or os.path.join(
+    os.path.dirname(os.path.dirname(os.path.abspath(__file__))), ".source-decks", "AIWP.pptx")
+AIWP_SRC, AIWP_SLIDES, AIWP_HELD, AIWP_MISSING = load_source_deck(
+    bool(re.search(r"AI Workforce Pro|Fractional CTO", _package_names())),
+    AIWP_DECK, "AI Workforce Pro / FCTO", "APPENDIX", AIWP_HOLD)
+
 # Slide order. The staircase slide is optional (STAIRCASE in the FILL).
-SLIDE_ORDER = (["cover"] + [f"leadsos_{n}" for n, _, _ in LEADSOS_SLIDES] + ["priorities"] + (["staircase"] if STAIRCASE else []) +
+SLIDE_ORDER = (["cover"] + [f"leadsos_{n}" for n, _, _ in LEADSOS_SLIDES] +
+               [f"aiwp_{n}" for n, _, _ in AIWP_SLIDES] + ["priorities"] + (["staircase"] if STAIRCASE else []) +
                ["diagnosis", "plan", "strategy"] + (["rollout"] if SHOW_ROLLOUT else []) +
                ["investment", "roadmap"] + PROFITOS_SLIDES)
 PAGE = {key: i + 1 for i, key in enumerate(SLIDE_ORDER)}
@@ -916,31 +946,43 @@ def copy_source_slide(prs, src_slide, scale, theme):
     return dst
 
 
-def build_leadsos(prs):
-    if LEADSOS_MISSING:
-        note("cover", f"The LeadsOS marketing slides were left out: {LEADSOS_MISSING}.")
-        print(f"WARNING: LeadsOS marketing slides left out — {LEADSOS_MISSING}.")
+def build_source_slides(prs, src, slides, held, hold, missing, prefix, label, whose, skipped):
+    """Copy a source deck's kept slides into the deck, with seller-prep notes."""
+    if missing:
+        note("cover", f"The {label} slides were left out: {missing}.")
+        print(f"WARNING: {label} slides left out — {missing}.")
         return
-    if not LEADSOS_SLIDES:
+    if not slides:
         return
-    scale = prs.slide_width / LEADSOS_SRC.slide_width
-    theme = _source_theme_colors(LEADSOS_SRC)
-    for n, slide, title in LEADSOS_SLIDES:
+    scale = prs.slide_width / src.slide_width
+    theme = _source_theme_colors(src)
+    for n, slide, title in slides:
         copy_source_slide(prs, slide, scale, theme)
-        key = f"leadsos_{n}"
-        SLIDE_TITLES[key] = f"LeadsOS — {title}" if title else f"LeadsOS slide {n}"
+        key = f"{prefix}_{n}"
+        SLIDE_TITLES[key] = f"{label} — {title}" if title else f"{label} slide {n}"
         if slide.has_notes_slide:
-            her = " ".join(slide.notes_slide.notes_text_frame.text.split())
-            if her:
-                note(key, f"Vanessa's speaker notes (her slide {n}): {her}")
-    first = f"leadsos_{LEADSOS_SLIDES[0][0]}"
-    note(first, f"Slides {PAGE[first]}–{PAGE[f'leadsos_{LEADSOS_SLIDES[-1][0]}']} are Vanessa's LeadsOS "
-                "marketing slides, copied as they are. Her client results slides are left out."
-         + (f" Held until confirmed for every client deck: her slide(s) "
-            f"{', '.join(str(h) for h in LEADSOS_HELD)} ({' / '.join(LEADSOS_HOLD)})." if LEADSOS_HELD else ""))
-    print(f"LeadsOS: {len(LEADSOS_SLIDES)} marketing slides added (her slides "
-          f"{', '.join(str(n) for n, _, _ in LEADSOS_SLIDES)})"
-          + (f"; held: {', '.join(str(h) for h in LEADSOS_HELD)}" if LEADSOS_HELD else ""))
+            text = " ".join(slide.notes_slide.notes_text_frame.text.split())
+            if text:
+                note(key, f"{whose} speaker notes (source slide {n}): {text}")
+    first, last = f"{prefix}_{slides[0][0]}", f"{prefix}_{slides[-1][0]}"
+    note(first, f"Slides {PAGE[first]}–{PAGE[last]} are the {label} slides, copied as they are. {skipped}"
+         + (f" Held until confirmed for every client deck: source slide(s) "
+            f"{', '.join(str(h) for h in held)} ({' / '.join(hold)})." if held else ""))
+    print(f"{label}: {len(slides)} slides added (source slides "
+          f"{', '.join(str(n) for n, _, _ in slides)})"
+          + (f"; held: {', '.join(str(h) for h in held)}" if held else ""))
+
+
+def build_leadsos(prs):
+    build_source_slides(prs, LEADSOS_SRC, LEADSOS_SLIDES, LEADSOS_HELD, LEADSOS_HOLD, LEADSOS_MISSING,
+                        "leadsos", "LeadsOS marketing", "Vanessa's",
+                        "Her client results slides are left out.")
+
+
+def build_aiwp(prs):
+    build_source_slides(prs, AIWP_SRC, AIWP_SLIDES, AIWP_HELD, AIWP_HOLD, AIWP_MISSING,
+                        "aiwp", "AI Workforce Pro / FCTO", "The AIWP deck's",
+                        "Its appendix (use-case deep dives) is left out.")
 
 
 def write_notes(prs):
@@ -2512,6 +2554,7 @@ prs.slide_height = Inches(5.625)
 
 build_cover(prs)
 build_leadsos(prs)
+build_aiwp(prs)
 build_priorities(prs)
 if STAIRCASE:
     build_staircase(prs)

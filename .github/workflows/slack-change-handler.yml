@@ -85,6 +85,17 @@ jobs:
           HUBSPOT_TOKEN: ${{ secrets.HUBSPOT_TOKEN }}
         run: node scripts/fetch-source-deck.mjs --keyword LeadsOS --out .source-decks/LeadsOS.pptx
 
+      - name: Download the AI Workforce Pro / FCTO source deck
+        if: steps.thread.outputs.forwarded != 'true'
+        # The AIWP + FCTO mini deck's slides are copied into any proposal with
+        # AI Workforce Pro or a Fractional CTO level. Private HubSpot file (newest
+        # .pptx with "Workforce" in its name), saved to the git-ignored
+        # .source-decks/. If this fails the deck still builds without them.
+        continue-on-error: true
+        env:
+          HUBSPOT_TOKEN: ${{ secrets.HUBSPOT_TOKEN }}
+        run: node scripts/fetch-source-deck.mjs --keyword Workforce --out .source-decks/AIWP.pptx
+
       - name: Handle the request
         if: steps.thread.outputs.forwarded != 'true'
         env:
@@ -145,7 +156,7 @@ jobs:
                  the new package; phases 2-3 must not repeat a package product) in the
                  deck script, and the BUILD NOTES comment block to match.
                Then run: python3 '<folder>/<file>_Proposal.py' (expect 'Saved: … (7 or 8
-               slides)', more with the LeadsOS marketing slides or ProfitOS), and confirm this prints nothing:
+               slides)', more with the LeadsOS, AI Workforce Pro / FCTO or ProfitOS slides), and confirm this prints nothing:
                diff <(sed -n '/LAYOUT ENGINE/,\$p' 'Design Files/audit_pptx_template.py') <(sed -n '/LAYOUT ENGINE/,\$p' '<folder>/<file>_Proposal.py')
                (pip install python-pptx --break-system-packages --quiet if needed.)
             4. Commit the .py, the .pptx and package_decision.json (if changed) to main
