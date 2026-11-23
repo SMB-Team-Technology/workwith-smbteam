@@ -3,7 +3,7 @@
   "revenue_stated": null,
   "net_revenue_stated": null,
   "is_contingency_practice": false,
-  "revenue_effective": 1500000,
+  "revenue_effective": 1000000,
   "revenue_source": "seller_confirmed",
   "revenue_label": "$961K - $3M",
   "revenue_verified": true,
@@ -52,7 +52,7 @@
   "ad_spend_aggressive": 25000,
   "ad_spend_rationale": {
     "conservative_basis": "channel minimums $3,500 + $2,000 + $1,200 = $6,700",
-    "aggressive_basis": "20% rule: $3,000,000 goal × 20% ÷ 12 × 1 geo − $4,997 fee = $45,003 → reverse math: 166.7 cases/mo ÷ 15% close × $84 benchmark blended CPL = $93,579 → capped at the $25,000 the package manages"
+    "aggressive_basis": "20% rule: $2,000,000 goal × 20% ÷ 12 × 1 geo − $4,997 fee = $28,336 → reverse math: 111.1 cases/mo ÷ 15% close × $84 benchmark blended CPL = $62,386 → capped at the $25,000 the package manages"
   },
   "selection_notes": [
     "Revenue not stated on the call — HubSpot only has the range \"$961K - $3M\". Using the midpoint ($1,980,500) for this draft only; confirm actual revenue with the prospect before locking in.",
@@ -60,7 +60,8 @@
     "Revenue $1M+, team 6+ but no dedicated ops detected: Master's Circle selected. Verify ops capacity with sales rep.",
     "Seller override: switched marketing to Full Service Marketing — Starter (Master’s Circle kept) per Slack request on 2026-11-10.",
     "Revenue confirmed by seller: $1,500,000.",
-    "Seller context (Slack, 2026-11-23): revenue stated as 1-2M (midpoint $1.5M recorded); firm can handle 10-20 more real estate transactions/month and 4-8 more estate plan clients/month. Ad spend not changed."
+    "Seller context (Slack, 2026-11-23): revenue stated as 1-2M (midpoint $1.5M recorded); firm can handle 10-20 more real estate transactions/month and 4-8 more estate plan clients/month. Ad spend not changed.",
+    "Revenue confirmed by seller: $1,000,000."
   ],
   "pricing_mode": "bundled",
   "bundle_eligible_count": 2,
@@ -131,8 +132,8 @@
       "overage": null,
       "conservative_basis": "channel minimums $3,500 + $2,000 + $1,200 = $6,700",
       "aggressive_steps": [
-        "20% rule: $3,000,000 goal × 20% ÷ 12 × 1 geo − $4,997 fee = $45,003",
-        "reverse math: 166.7 cases/mo ÷ 15% close × $84 benchmark blended CPL = $93,579",
+        "20% rule: $2,000,000 goal × 20% ÷ 12 × 1 geo − $4,997 fee = $28,336",
+        "reverse math: 111.1 cases/mo ÷ 15% close × $84 benchmark blended CPL = $62,386",
         "capped at the $25,000 the package manages"
       ],
       "year_one_range": [
@@ -187,9 +188,9 @@
         "source": "default"
       },
       "spanish_campaign": false,
-      "revenue_effective": 1500000,
+      "revenue_effective": 1000000,
       "revenue_goal": {
-        "value": 3000000,
+        "value": 2000000,
         "source": "not stated — 2× current revenue (audit-write.md)"
       },
       "case_value": {
@@ -212,8 +213,8 @@
     "flags": [
       "Ad spend practice area not recorded in research — using Estate Planning (inferred from practice areas).",
       "Geo market tier not recorded in research — using Tier 4 (1.0×).",
-      "Reverse math ($93,579) is well above the 20% rule ($45,003) — the goal may be aggressive for the budget (paid ads team review).",
-      "Goal-based ad spend ($93,579) is above the $25,000 cap for Full Service Marketing — Starter — capped. Higher spend means a tier upgrade or the 15% overage fee (seller decision).",
+      "Reverse math ($62,386) is well above the 20% rule ($28,336) — the goal may be aggressive for the budget (paid ads team review).",
+      "Goal-based ad spend ($62,386) is above the $25,000 cap for Full Service Marketing — Starter — capped. Higher spend means a tier upgrade or the 15% overage fee (seller decision).",
       "Case value assumed ($1,500, low end of the Estate Planning default) — confirm the real fee per case."
     ],
     "alerts": []
