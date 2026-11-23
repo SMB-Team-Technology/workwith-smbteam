@@ -1,0 +1,319 @@
+TUCKNER, SIPSER, WEINSTOCK & SIPSER, LLP — GROWTH AUDIT RESEARCH NOTES
+Sales Rep: Jacob Meissner (jacob.meissner@smbteam.com)
+Contact: Katie Swadosh (kswadosh@womensrightsny.com) — does operations, finance and intake at the firm (not an owner)
+Proposal Call: November 30, 2026, 2:00 PM ET (trigger proposal_call_date 2026-11-30T19:00:00Z)
+Discovery call: November 23, 2026 (Fathom recording 206045253, 67 min; Anthony Marotta [SMB Team] opened, Jacob Meissner ran the call)
+URL: https://womensrightsny.com/ (trigger URL, live — HTTP 200). The domain is the firm's "Women's Rights NY" brand; the legal name is in the site footer.
+Research Date: November 23, 2026
+Friendly name: tuckner-sipser-weinstock-sipser
+
+============================================================
+READ FIRST — SELLER FLAGS
+============================================================
+1. EXISTING SMB TEAM CLIENT. The firm is already an SMB Team client: Katie: "we've grown the firm with SMB's help" (00:11:32); the seller said "because you're already a client" (00:17:34); Katie described "when we wanted to sign up with SMB" and having to "sell [Bill] on SMB" (01:01:53–01:02:08). Pass 2 should treat this as an upsell/expansion proposal, not a new-logo pitch.
+2. TWO PARTNERS NAMED "BILL" IN THE TRANSCRIPT. "Bill" is both the firm's other partner (William Sipser — "Jack and Bill, the other partner", 00:12:02) and an SMB Team leader the seller refers to ("Bill's going to grandfather everybody in", 00:47:16; "James was very good friends with Bill", 00:21:27). Read each use from context before quoting.
+3. AI-SUMMARY ERRORS (full transcript wins): (a) The summary says "130 in Poughkeepsie" — the call says ~120–130 reviews in the MANHATTAN office (Katie, 00:30:19); live Google shows Poughkeepsie at 32 (see STEP 2). (b) The summary says the AIWP price rises "$120 to $320 per user in early December" — the seller actually said the EXTRA users on firms ABOVE FIVE SEATS go from $120 to $320 a seat, "the Monday after [Marco Island] ... December 7th or 8th, I want to say, or maybe it's the week after" (seller, 00:47:00–00:47:16 and 00:57:24–00:57:37). Seller to confirm exact date and whether it applies to this firm's seat count. (c) The summary action item "prep findings for Dec 30" should read Nov 30 (the call was set for Monday, November 30 at 2 PM, 01:06:37–01:06:51).
+4. SENSITIVE: Jack Tuckner has a planned absence of "a couple of weeks" starting "next Wednesday" (Wednesday, November 25), so he may be out on the November 30 proposal call (Katie, 00:09:00). Seller should check who will attend. The reason was stated on the call; it is deliberately NOT recorded here — keep it out of the deck.
+5. GOOGLE ADS ARE PAUSED. Katie: "We shut them off for the month of November because Bill wanted to see…how much business we lose by turning them off for a month… It is getting turned back on December 1st." (00:41:15–00:41:54). So "firm ads not observed" in STEP 6 is confirmed by the prospect, not just an observation.
+6. NO ONE AT THE FIRM CAN SEE THE AD ACCOUNT. Katie: "We are the owners. However, none of us have access. Well, Esquire…they have access." (00:43:05–00:43:17). Esquire's monthly report "just talks about the activity" (00:44:32).
+
+============================================================
+STEP 1 — WEBSITE RESEARCH
+============================================================
+Source: live fetch + raw HTML read on November 23, 2026.
+- Website URL confirmed live: yes (HTTP 200; 0.09 s response)
+- Last redesign date or estimated age: not found (no redesign date published). Footer reads "© 2026 Tuckner, Sipser, Weinstock & Sipser, LLP"; site runs WordPress (wp-sitemap.xml present). Firm's tagline says "since 1999."
+- Mobile responsive: yes — viewport meta tag present (width=device-width, initial-scale=1). A separate mobile banner image was noted. Mobile performance is poor (see Lighthouse below).
+- Homepage headline: "DEMANDING EQUALITY & FAIR TREATMENT IN THE WORKPLACE SINCE 1999" (page title: "Wrongful Termination Lawyer, Sexual Harassment Attorney NY Pregnancy Discrimination Law Firm"; section line: "New York's Women's Rights In The Workplace Law Firm")
+- CTA above fold: yes — "FREE EVALUATION" button plus "212.766.9100 Call / Text / Email" in the header, and "HOW CAN WE HELP?"
+- Contact form location: bottom of homepage ("Schedule A Free Evaluation" section); also a /contact/ page. Not above the fold.
+- Live chat present: not observed (no chat widget found in the homepage HTML; fetch also reported none)
+- Attorney bio present: yes — 11 team members listed with individual profile pages: Jack Tuckner, William Sipser, Deborah O'Rell, Diane Mirabile Rafal, Catherine Crider, Gat Carmi, Isabelle De Leonibus, Saswat Pattanayak, Katie Swadosh, Mia Metzger, Jewel Coulter
+- Video present: yes — embedded homepage video ("We can help"), a Video Center, and ~15 practice-specific "video series" pages
+- Blog present: yes — /blog/. Latest post date visible on the blog page: July 14, 2026 (Menopausal Workers' Fairness Act coverage). The post sitemap shows pages modified as late as October 21, 2026 (modification date, not a new post date).
+- Practice-area pages: 17+ (wrongful termination, sexual harassment, pregnancy discrimination, equal pay, age, disability, race, religion, national origin, retaliation, severance review, domestic violence discrimination, FMLA/maternity leave, menopause, etc.)
+- City/geo landing pages: not found. The sitemap lists one generic landing page ("your-voice-womens-rights-in-the-workplace") and no pages for Poughkeepsie, Hudson Valley, Westchester, NJ or CT. The homepage footer mentions "Mid-Hudson valley office" only.
+- Tracking: Google Tag Manager present on the homepage; no call-tracking vendor string found in the homepage HTML (only the same 212-766-9100 number as the Google profile). What GTM loads was not inspected.
+- Offices on site: Manhattan — 535 Fifth Avenue, 4th Floor, New York, NY 10017, 212.766.9100; Mid-Hudson — 42 Catharine Street, Poughkeepsie, NY 12601, 845.201.0200. Katie on the call: both "virtual, but they're both actual places" (00:24:06).
+
+PageSpeed:
+- pagespeed.web.dev and the PageSpeed Insights API were both tried (3 attempts each strategy); the API returned HTTP 429 RESOURCE_EXHAUSTED (daily quota) every time and the web page never finished loading. No pagespeed.web.dev score was obtained.
+- Substitute: Lighthouse 12.8.2 run locally on November 23, 2026 (headless Chromium, default simulated throttling). This is a lab run, not the pagespeed.web.dev report — seller may re-run the real tool.
+- PageSpeed mobile score: 50 [Lighthouse 12.8.2 local lab run — not pagespeed.web.dev] — LCP 4.5 s, Total Blocking Time 1,100 ms, CLS 0.2, FCP 1.5 s
+- PageSpeed desktop score: 96 [Lighthouse 12.8.2 local lab run — not pagespeed.web.dev] — LCP 1.1 s, TBT 120 ms, CLS 0.025, FCP 0.4 s
+
+[SAVED: website section complete]
+
+============================================================
+STEP 2 — GOOGLE BUSINESS PROFILE
+============================================================
+Method: Google Search and Google Maps pages read live via headless Chromium on November 23, 2026. Counts below are read directly off Google's own listings.
+
+PROFILE A — Manhattan (535 5th Ave 4th floor, New York, NY 10017)
+- GBP found: yes — "Tuckner, Sipser, Weinstock & Sipser, LLP"
+- Star rating: 4.5 [confirmed via Google]
+- Total review count: 126 [confirmed via Google] (matches Katie's "120, maybe 130" at 00:30:19 and the "only 126 reviews, which I don't love" line at 00:42:06 — tagged Katie, but it may be the seller reading the count off his screen share)
+- Most recent review date: Google shows relative dates only — newest review is "a week ago" (a 1-star review, with an owner reply posted "6 days ago"); the next newest is "a month ago" (5-star). Exact calendar dates not shown.
+- Primary category: Employment attorney
+- Photos active: yes — 41 photos shown
+- Posts active: not observed (Maps limited view did not show a Posts section)
+- Owner replies to reviews: yes, consistently
+- Hours: Mon–Fri 9 AM–6 PM; phone (212) 766-9100; website womensrightsny.com
+- Notable live item: the newest review (1-star, about a week old) says the writer contacted the firm repeatedly for over a week with no response. The firm replied publicly. This is directly relevant to the intake/response-time pain (see STEP 9B).
+
+PROFILE B — Poughkeepsie (42 Catharine St, Poughkeepsie, NY 12601)
+- GBP found: yes — "Tuckner, Sipser, Weinstock & Sipser, LLP"
+- Star rating: 4.9 [confirmed via Google]
+- Total review count: 32 [confirmed via Google]
+- Most recent review date: the same "a week ago" 1-star review appears on this profile (with owner reply "6 days ago"); older reviews "2 years ago" and "a year ago". Exact dates not shown.
+- Primary category: Law firm (Google SERP also showed "Attorney" for this profile in one search)
+- Photos active: yes — 29 photos shown
+- Posts active: not observed
+- Hours: Mon–Fri 9 AM–6 PM; phone (845) 201-0200; "5+ years in business" shown
+
+PROFILE C — duplicate/individual listing
+- "Jack Tuckner, Esq." — 5.0 [confirmed via Google] (2 reviews) [confirmed via Google] — Employment attorney, 42 Catharine St, phone (212) 766-9100 (the Manhattan number on a Poughkeepsie address). Appears in Poughkeepsie results alongside the firm profile. Possible split-listing/duplicate to clean up.
+
+CALL-VS-LIVE CHECK: Katie said on the call that none of the attorneys ask for reviews and the intake team lacks settlement info to request them (00:30:19–00:31:21).
+
+============================================================
+STEP 3 — LOCAL 3-PACK SEARCHES
+============================================================
+Method: Google Search and Google Maps results read live on November 23, 2026 via headless Chromium (signed out, datacenter location). Google's classic 3-pack is often replaced by an AI Overview block in this view, so each search records both what was shown: "Maps list" = Google Maps results for the query; "SERP block" = local pack or AI Overview listing on the Google search page. Pack order can differ from a real searcher's. All ratings/counts below are [confirmed via Google].
+Note on geography: the "wrongful termination lawyer Manhattan" search reported the device location as Des Moines, IA while the query named Manhattan, so those results reflect the query text, not proximity.
+
+Practice Area 1: Women's rights / workplace gender discrimination & sexual harassment (the core of the firm; Katie: roughly a "70-30 split" women's rights vs. everything else, 00:24:55 — the other 30% was not specified)
+- Search 1 "women's rights attorney Manhattan NY": firm appears YES — 4.5 (126). Maps list: Friedman & Fingerhut PLLC 5.0 (20), Cohen & Fitch LLP 4.9 (175), Sekendiz Law Group P.C. 4.9 (116), Derek Smith Law Group PLLC 4.9 (332), then the firm (5th). SERP AI Overview lists the firm first, then Nisar Law Group P.C. 4.7 (213), Berke-Weiss Law PLLC 5.0 (111), Bantle & Levy LLP 5.0 (22), Derek Smith Law Group 4.9 (332). (The seller said on the call the firm showed "number one for Manhattan" for "Women's Rights Attorney" in his screen share — seller observation, 00:42:35.)
+- Search 2 "sexual harassment lawyer New York NY / New York City": firm appears NO. Maps list: Sekendiz Law Group 4.9 (116), Phillips & Associates 4.8 (728), Dudani Law 5.0 (158), Joseph & Norinsberg 4.9 (62) ("end of list"). SERP AI Overview: Phillips & Associates 4.8 (727), Sekendiz Law Group 4.9 (115), Mansell Law NYC 5.0 (137), Berke-Weiss Law 5.0 (111).
+- Search 3 "pregnancy discrimination lawyer NYC / New York NY": firm appears YES in the Maps list (3rd) — 4.5 (126). Maps list: Phillips & Associates 4.8 (728), Joseph & Norinsberg 4.8 (252), the firm, Dudani Law 5.0 (158), Katz Melinger PLLC 4.8 (97). The SERP AI Overview did not name the firm (named Phillips & Associates 4.8 (728), Joseph & Norinsberg 4.8 (252), Derek Smith Law Group 4.9 (332), Eisenberg & Baum LLP).
+- Search 4 "gender discrimination attorney New York": firm appears NO. SERP AI Overview: Sekendiz Law Group 4.9 (116), Derek Smith Law Group 4.9 (332), Phillips & Associates 4.8 (728).
+- Search 5 "women's rights attorney Poughkeepsie NY": firm appears YES (2nd, 4.9 (32)). Local pack: The Law Office of Lisa Pelosi 4.9 (51) (criminal justice attorney), the firm 4.9 (32), The Law Office of Kelley M. Enderley, PC 3.8 (43).
+- Search 6 "sexual harassment lawyer Poughkeepsie NY": firm appears YES (first in the AI Overview) — 4.9 (32). Also listed: Eisenberg & Baum LLP 4.4 (52). Others named without ratings.
+- Search 7 "employment discrimination attorney Poughkeepsie NY": firm appears YES (first in the AI Overview) — 4.9 (32). Also: Law Office of Laura Wong-Pan PLLC 4.7 (15), Gellen Law PLLC 4.5 (49), HKM Employment Attorneys LLP 5.0 (1, New Paltz). A sponsored result for Morgan & Morgan (national firm, 4.6 (5,040)) sat above them.
+
+Practice Area 2: Wrongful termination / general employment law
+- Search 1 "wrongful termination lawyer Manhattan NY": firm appears NO. Local pack: Phillips & Associates 4.8 (728), Granovsky & Sundaresh PLLC 4.9 (462), Derek Smith Law Group 4.9 (332). Maps list also showed Dudani Law 5.0 (158), Fitapelli & Schaffer LLP 4.4 (63), Ottinger Employment Lawyers 4.6 (80).
+- Search 2 "wrongful termination lawyer Poughkeepsie NY": firm appears YES (2nd). Local pack: Law Office of Laura Wong-Pan PLLC 4.7 (15), Tuckner, Sipser, Weinstock & Sipser, LLP 4.9 (32), Jack Tuckner, Esq. 5.0 (2) — the firm holds two of the three spots.
+- Search 3 "employment lawyer Hudson Valley NY": firm appears NO. SERP AI Overview: Law Office of Laura Wong-Pan PLLC 4.7 (15), Charny & Wheeler P.C. 4.8 (41, Rhinebeck), plus employer-side firms Keane & Beane, Drake Loeb PLLC, O'Connell & Aronowitz, Schwab & Gasparini (no ratings shown).
+- Search 4 "workplace harassment lawyer Dutchess County": firm appears YES (2nd) — 4.9 (32). Also: Law Office of Laura Wong-Pan PLLC 4.7 (15), Charny & Wheeler P.C. 4.8 (41).
+
+Google AI search: the firm is named in Google's AI Overview for the Manhattan women's rights query and for 4 of the 5 Poughkeepsie/Dutchess queries. ChatGPT, Claude and Perplexity were NOT checked — the seller committed to audit these before the next call (00:29:29).
+
+============================================================
+STEP 4 — COMPETITOR REVIEW COUNTS
+============================================================
+All [confirmed via Google] (read from Google Search/Maps listings on November 23, 2026). The firm's own counts: Manhattan 4.5 (126); Poughkeepsie 4.9 (32).
+MANHATTAN
+- Competitor 1: Phillips & Associates (45 Broadway) — reviews: 728 [confirmed via Google] — rating: 4.8 [confirmed via Google]
+- Competitor 2: Derek Smith Law Group, PLLC (450 7th Ave) — reviews: 332 [confirmed via Google] — rating: 4.9 [confirmed via Google]
+- Competitor 3: Joseph & Norinsberg (825 3rd Ave) — reviews: 252 [confirmed via Google] — rating: 4.8 [confirmed via Google]
+- Others (firm has FEWER reviews than): Granovsky & Sundaresh PLLC 462 (4.9), Nisar Law Group 213 (4.7), Cohen & Fitch LLP 175 (4.9), Dudani Law 158 (5.0), Mansell Law NYC 137 (5.0) — all [confirmed via Google]
+- Others (firm has MORE reviews than — do not cite as "dominating"): Sekendiz Law Group 116 (4.9), Berke-Weiss Law 111 (5.0), Katz Melinger 97 (4.8), Ottinger Employment Lawyers 80 (4.6), Fitapelli & Schaffer 63 (4.4), Joseph & Norinsberg's second listing 62 (4.9), Bantle & Levy 22 (5.0), Friedman & Fingerhut 20 (5.0) — all [confirmed via Google]
+- The seller quoted other counts on the call (116, 379, 378, 49) without naming them [UNCONFIRMED — seller's on-screen read during the call, firms not identified, not independently confirmed via Google]; do not use.
+POUGHKEEPSIE (the firm's 32 reviews vs.)
+- Charny & Wheeler P.C. (Rhinebeck) — 41 [confirmed via Google] — 4.8 [confirmed via Google]
+- Gellen Law PLLC (Poughkeepsie) — 49 [confirmed via Google] — 4.5 [confirmed via Google] (listed mainly for student/Title IX matters)
+- Law Office of Laura Wong-Pan PLLC (Poughkeepsie, same street address as the firm) — 15 [confirmed via Google] — 4.7 [confirmed via Google] (firm has MORE reviews)
+- Law Office of Lisa Pelosi — 51 [confirmed via Google] — 4.9 [confirmed via Google] (criminal/family)
+- Not usable as a local competitor: Morgan & Morgan (national firm; 4.6 (5,040) [confirmed via Google])
+
+============================================================
+STEP 5 — DIRECTORY LISTINGS
+============================================================
+Method: fetches of each listing page; where a site blocked the fetch (HTTP 403) that is stated. Ratings from directories are not Google ratings.
+- FindLaw (Manhattan listing): address 535 Fifth Avenue, 4th Floor, New York, NY 10017 matches; PHONE 332-249-4888 — does NOT match the website/Google number 212-766-9100 (NAP inconsistency). Website listed correctly. No reviews shown. A separate FindLaw Poughkeepsie listing exists (seen in search; not opened).
+- LawInfo (Poughkeepsie listing): 42 Catharine St, Poughkeepsie, NY 12601, 845-201-0200 — matches. Shows "2 Verified" attorneys, no star rating. A Manhattan LawInfo listing also exists (seen in search).
+- Avvo (Jack Tuckner profile): lists 42 Catharine Street, Poughkeepsie and 535 Fifth Avenue; PHONE (855) 933-2923 — does not match the website (likely a tracking number; not verified). Rating 9.9/10 "Superb", 20 reviews at 5.0 [UNCONFIRMED — sourced from Avvo, not independently confirmed via Google].
+- Justia: Jack Tuckner and William Sipser profiles exist (seen in search). Fetch blocked (HTTP 403). A search snippet showed phone (516) 588-6439 on Justia — a different number again [UNCONFIRMED — search-result snippet only; page not read].
+- Martindale-Hubbell: organization and Poughkeepsie office profiles exist (seen in search). Fetch blocked (HTTP 403). Not read.
+- Yelp: fetch blocked (HTTP 403). A search snippet suggested a listing at 5.0 with 6 reviews [UNCONFIRMED — sourced from a search-result snippet of Yelp, not independently confirmed via Google; may not be this firm's listing].
+- Lawyers.com: listing exists; 4.8 from 24 reviews [UNCONFIRMED — sourced from a search-result snippet of Lawyers.com, not independently confirmed via Google]. LegalRank: 4.5 from 112 reviews [UNCONFIRMED — sourced from LegalRank, not independently confirmed via Google]. ProvenExpert and LexBlog pages also exist.
+- NAP summary: Manhattan phone shows as 212-766-9100 (site, Google), 332-249-4888 (FindLaw), (855) 933-2923 (Avvo), (516) 588-6439 (Justia snippet). Poughkeepsie phone is consistent at 845-201-0200 where seen. Some may be call-tracking numbers; seller should confirm which are intentional.
+- Geo-targeting landing pages for surrounding cities: none found (see STEP 1).
+
+[SAVED: GBP, local SEO and directory sections complete]
+
+============================================================
+STEP 6 — GOOGLE ADS
+============================================================
+Method: the ten Google searches listed in STEP 3, read live on November 23, 2026. Ads vary by user and location; this is a signed-out snapshot.
+Practice Area 1: Women's rights / sexual harassment / discrimination
+- Firm ads observed: not observed in any of the 7 searches. Confirmed by the prospect: Google Ads were switched off for November and resume December 1 (Katie, 00:41:15–00:41:54). The firm's ads are managed by Esquire Interactive.
+- Named local competitors running ads:
+  - "sexual harassment lawyer New York City": Phillips & Associates (45 Broadway) — headline "NYC Sexual Harassment Lawyer"; copy: "Sexually harassed at work in NYC? Free, confidential case review. No fee unless we win. NYC law gives workers strong protections. Over $360M recovered for 9,500+ employees…" with sitelinks (Workplace Harassment Lawyer, Harassment Retaliation, Free Consultation) and a call button. Also Harman Green (harmangreen.com) — headline "Sexual Harassment Lawyer"; copy: "We provide you with attentive and compassionate counsel and representation" with Free Consultations / Harassment Lawyer / Gender Discrimination sitelinks (firm location not verified).
+  - Poughkeepsie searches: only a national firm (Morgan & Morgan, sponsored business listing for "employment discrimination attorney Poughkeepsie NY") — not usable as a named local competitor. No local Poughkeepsie firm ads observed.
+Practice Area 2: Wrongful termination / general employment
+- Firm ads observed: not observed in any of the 4 searches (same November pause).
+- Named local competitors running ads: none observed in these searches. (Phillips & Associates appears organically at the top of the Manhattan wrongful termination pack.)
+
+============================================================
+STEP 7 — LOCAL SERVICE ADS
+============================================================
+- Firm appears in LSA: not observed (searched "sexual harassment lawyer New York City," "wrongful termination lawyer Manhattan," "women's rights attorney Manhattan NY," and the Poughkeepsie equivalents; no Local Services Ads block appeared in any result)
+- Google Screened: not observed
+- LSA review count: not applicable (none observed)
+- Named local competitors in LSA: not observed. (Whether Google offers LSA for employment law in this market was not checked.)
+Katie confirmed Esquire's work is "pretty much" Google Ads only (00:14:31); the seller asked about PPC and LSA campaigns and the answer was PPC/Google Ads.
+
+============================================================
+STEP 8 — META ADS
+============================================================
+- Firm has active ads: not observed. The Meta Ad Library (facebook.com/ads/library) loaded only its empty shell in the headless browser — no results rendered — for the firm name, "womensrightsny", "Tuckner Sipser," and two competitors. This is a tooling failure, not evidence there are no ads. Seller should check manually.
+- Named local competitor 1: Phillips & Associates — active ads: not observed (Ad Library did not render)
+- Named local competitor 2: Derek Smith Law Group — active ads: not observed (Ad Library did not render)
+What the call says: the firm's social presence is organic videos made by Jack Tuckner; Esquire reposts them and sends "blast things on Instagram, Facebook" (Katie, 00:12:19–00:12:29). Whether any of it is boosted or paid was not stated.
+
+[SAVED: all ads sections complete]
+
+============================================================
+STEP 9 — TRANSCRIPT EXTRACTION
+============================================================
+Transcript source: full verbatim Fathom transcript (summary used only as overview)
+Speaker notes: Fathom's tags are shifted in several places (e.g., "150 to 250 are viable" at 00:08:33 and "I wear many hats" at 00:05:33 are tagged Jacob but the content shows Katie). Only Katie Swadosh [Prospect] speaks for the firm. Lines below are used only where content proves they are Katie's.
+
+- Practice areas confirmed: employment law for employees — workplace gender rights/women's rights (sexual harassment, pregnancy discrimination, pay equity, wrongful termination, domestic-violence discrimination, etc.). Katie on the mix: "Yeah, I would say we're at a 70-30 split." (00:24:55, answering whether it is mostly women's rights; the 30% was not specified). Jack Tuckner also does pre-litigation work for people in any state (00:09:17).
+- Current lead sources: organic social video — "he made a video in October… within 24 hours [it] was at 120,000 views. It had 4,000 comments." (Katie, 00:07:38–00:07:48), targeting "high-powered Black women" (00:08:00). Google Ads managed by Esquire Interactive (paused for November; resumes December 1). Organic Google/Maps (seller screen share showed the firm in the results). Referrals and other sources were not discussed. Volume: "in a normal month… anywhere from 250 to 350 leads that come in… anywhere from 150 to 250 are viable" (Katie, 00:08:19–00:08:40 [speaker tag says Jacob on the second line — read as Katie]); "we ended up with 400 of them in that week alone" (Katie, 00:08:46).
+- Ads ever run: yes — Google Ads for ~15 years through Esquire Interactive: "Jack and Bill, the other partner, they've been working with them probably 15 years or so… we hired them specifically for Google Ads" (Katie, 00:12:02–00:12:16). Platform: Google Ads (PPC); Esquire also reposts Jack's videos on Instagram and Facebook. Budget: "$3,000 a month, so $36,000 a year" agency fee (00:12:32) plus ad spend; all-in "about" $50,000 a year (00:13:12; "closer to $50,000", 00:59:30). The ad spend alone was not stated. Result: no cost-per-lead or cost-per-case data — the monthly Google report "just talks about the activity" (00:44:32). Currently paused (November).
+- Firm identity check: matches — trigger name "Tuckner, Sipser, Weinstock & Sipser, LLP" matches the website footer and the people on the call; the site brand is "Women's Rights NY" (womensrightsny.com).
+- Team size: 2 founding partners (Jack Tuckner, Bill Sipser); associates — Katie: "we have the two partners, have two, three associates, but one, this is like a very part-time, she doesn't take any of her own clients" (00:48:35); "we have a million intake staff" (00:48:47); Katie herself does "operations, finance, and intakes" (00:05:41). The seller said "four total attorneys" (seller, 00:50:44 — not the client's number). Fractional COO: Rich Carlson (Katie, 00:45:51). The website lists 11 team members.
+- Team size (total headcount): 11
+  (Source: the 11 attorneys and staff listed on womensrightsny.com; the call gave no total — Katie did not give an intake headcount.)
+- Annual revenue (gross / case value): not stated
+- Annual revenue (net / take-home / collected): not stated
+- Revenue (annual, best estimate): not stated
+  (Katie said to a partner, as an example: "if we paid them that much money, and instead of making $2 million, we made $5 million, isn't it worth the quarter of a million?" (01:04:27) — framed as an "if", so it is NOT recorded as the firm's revenue or goal [transcript unclear — read as an illustration, not a stated figure]. Seller to confirm.)
+- Fee structure: mixed. Bill Sipser: "exclusively contingency completely" (Katie, 00:35:41). Jack Tuckner: "about 10% contingency and 90% hourly with the caveat that the majority of the hourlies are straight hourly clients" (00:36:13); the contingency cases are "hybrid… like 18% contingency instead of 33. And instead of $600 an hour, it's $300 an hour." (00:37:00–00:37:07). The firm also does hourly pre-litigation consults ("give them advice for his hourly rate", 00:09:26).
+- Revenue goal: not stated, use 2x current revenue (current revenue is also not stated — see the $2M/$5M illustration above). Katie's operating goal is "monthly goals for those billable hours so we know exactly how much is coming into the firm monthly" (00:53:09).
+- Average case value: not stated (practice-area default: Other — no benchmark). One litigation case was described: "I wanted 1.5 million. This is 1.25." (Katie, 00:53:39–00:53:42) — a single case, not an average.
+- Current close rate: not stated — default to 15%
+- Number of locations: 2 (Manhattan and Poughkeepsie — "both virtual, but they're both actual places", Katie, 00:24:06)
+- Spanish campaign needed: no (not mentioned)
+- Dominant buying motive: predictability and capacity. Katie, the person speaking for the firm, wants a firm that can be budgeted and that does not run on one partner's 80-hour weeks: "I need, in order to budget appropriately and figure out where we can spend more and where we could spend less, I need to know how much the firm is going to make every month." (Katie, 00:54:08) and on the lead engine, "he just, he can't keep up with how much we've grown and keep doing that." (Katie, 00:11:40). Closest DBM = (1) a firm that runs itself so no one person is the bottleneck. NOTE: Katie is not an owner — the partners' own motive (Jack, Bill) was not heard on the call; seller should draw it out.
+- Any profitability claims made by prospect: none stated about firm profit. Related: "Jack did more paid consults in October and this month than collectively than ever in my entire tenure." (Katie, 00:09:44) — a volume claim, no dollar figure.
+- Any claims about case types or practice areas: "Jack's looking for people making that 200,000 plus a year. That's, he's looking for the very high income C-suite level clients." (Katie, 00:10:35); Out-of-state: "out of those 400 leads…325 were not from New York, New Jersey, or Connecticut, which are the three states that we're licensed in." (Katie, 00:09:33).
+- Stated call focus / product interest: NOT a standard marketing discovery. Two threads, both central: (1) marketing — replace or audit Esquire Interactive, OmniSocial AI-avatar videos organic and behind paid ads, SEO/AI-search visibility, Google review growth; (2) AI Workforce Pro (price change urgency) and Fractional CTO to take admin off associates so they can have billable-hour expectations. The seller opened with "you're looking for more predictable leads, right?" (00:05:47) and Katie said "Yes." (00:05:52). Katie's own stated goals are reviews ("something I really want to drive up", 00:33:09) and predictable monthly revenue via billable hours (00:54:08). Next step: proposal call Monday, November 30 at 2 PM.
+- Primary engagement: mixed
+- Products discussed on call: Full Service Marketing, AI Workforce Pro, Fractional CTO
+  (Detail, per the catalog table: OmniSocial AI-avatar videos with paid ads + SEO/AI-search + website work were described as part of the full-service approach: "all of our marketing engagements now is going to be a full service approach", seller, 00:23:47. AI Workforce Pro: no tier named; the seller quoted the extra-seat price change $120 → $320 for firms above five seats. Fractional CTO: described as "a step above this… all done for you", no level named, no price quoted. No marketing price or budget was quoted on the call — "I'll walk you through everything, and then costs, and then budget", seller, 01:00:33.)
+- Lead-gen gap stated: yes — "you're looking for more predictable leads, right?" / Katie: "Yes." (00:05:47–00:05:52); reviews: "that is something I really want to drive up" (Katie, 00:33:09); and the Esquire spend: "what we're getting for that dollar amount is not reasonable" (Katie, 00:13:20).
+- Existing marketing/SEO/ad vendor engagements: Esquire Interactive, ~15 years, Google Ads management plus reposting the partners' videos: "we're paying them $3,000 a month, so $36,000 a year" (Katie, 00:12:32) [the seller said "$3,600" at 00:14:34 — read as $3,000; the client's figure fits $36,000 a year]. Esquire "did just start the AI stuff" and pitched an AI-video option to Bill at extra, unquoted cost (00:13:31–00:14:03). No contract end date or term stated. Katie sent for a breakdown of Esquire's services "maybe June, maybe July" and will send it to the seller (00:59:16–00:59:44). Also planned: a legal assistant/paralegal through Get Staffed Up ($2,200/month, goal early Q1 2027, 00:51:12–00:51:29). Moving from Clio Grow to Lawmatics (00:32:07). The firm is also an existing SMB Team client (see seller flag 1).
+- Budget constraints stated: no explicit cap. Katie is pro-spend: "I don't think $36,000 or $50,000 or even $100,000 is ridiculous to spend on marketing when you're getting the value out of it." (00:16:27) and "you have to spend money to make money" (01:03:09). The constraint is partner buy-in: Bill "he's weird about money" (Katie, 00:13:55); when signing with SMB "All he could see was how much money we were going to have to spend." (Katie, 01:02:08); Jack has not wanted AI Workforce Pro "I don't think we need it" (Katie quoting him, 00:46:00).
+- Bookkeeping volume: not stated (no transaction counts or trust-account mention)
+- Financial goals stated (for the ProfitOS slides):
+  1. Predictable monthly revenue/budget — "I need to know how much the firm is going to make every month." (Katie Swadosh (client), 00:54:08)
+  2. Billable-hour expectations for associates and paralegals — "I would like all of the associates and maybe the paralegals, too, to have billable expectations every week." (Katie Swadosh (client), 00:52:08)
+  3. Bill paralegal time that is built into retainers — "It's built into all the retainers, but we're just not doing it" (Katie Swadosh (client), 00:54:31)
+  (These are not Fractional CFO/Bookkeeping requests — Pass 2 uses them only if that product is recommended.)
+
+Investment inputs
+- Ad spend practice area: Other — workplace employment discrimination / women's rights (employee-side). Source: practice areas per Katie, 00:24:55.
+- Geo market tier: Tier 1 (New York City — Manhattan office; the Poughkeepsie/Mid-Hudson office would be a smaller market). Source: geo list in audit-write.md; offices per Katie, 00:24:06.
+- Market competitiveness: High — Manhattan is a Tier 1 market with competitors at 728, 462, 332 and 252 Google reviews and paid ads running for sexual-harassment searches (STEP 3, 4, 6). Poughkeepsie is less competitive (Medium–Low). Source: STEP 3–8.
+- Current monthly ad spend (stated): not stated — Katie gave the agency fee and an all-in annual figure (about $50,000), not the ad spend alone; ads are paused for November. Source: Katie, 00:12:32, 00:13:12, 00:41:15.
+- Current cost per signed case (stated): not stated — no cost-per-case data exists ("it just talks about the activity", Katie, 00:44:32).
+- Current cost per lead (stated): not stated — same.
+- Average case value (stated, one figure): not stated
+- Close rate (stated): not stated
+- Referral share of cases (stated): not stated
+- Revenue goal (annual, one figure): not stated — see the "$2 million → $5 million" illustration (Katie, 01:04:27), which was framed as an "if" and not recorded as a goal.
+- Maximum monthly ad budget (stated): not stated
+
+Key prospect quotes (all Katie Swadosh (client), verbatim; a few filler words trimmed with "…"):
+1. 00:05:41 — "I do operations, finance, and intakes." (role)
+2. 00:08:50 — "That was absolute chaos." (400 leads in one week)
+3. 00:09:33 — "out of those 400 leads that we got in that week, 325 were not from New York, New Jersey, or Connecticut, which are the three states that we're licensed in." (lead fit)
+4. 00:11:40 — "We've grown the firm to the point where that kind of marketing, while it works, it's time consuming and he just, he can't keep up with how much we've grown and keep doing that." (lead sources / capacity)
+5. 00:12:32 — "we're paying them $3,000 a month, so $36,000 a year." (existing vendor, budget)
+6. 00:13:20 — "I just think what we're getting for that dollar amount is not reasonable." (marketing ROI)
+7. 00:16:27 — "I don't think $36,000 or $50,000 or even $100,000 is ridiculous to spend on marketing when you're getting the value out of it." (budget attitude)
+8. 00:44:00 — "none of it makes sense to me, so I just look at it real quick and see if it looks similar to the month before, and then say if it does, great, everything's fine." (no visibility of ad results)
+9. 00:52:37 — "we have one full-time attorney who has six of her own clients… but she has 40 hours or more a week just in administrative litigation work." (team / admin load)
+10. 00:54:08 — "I need, in order to budget appropriately and figure out where we can spend more and where we could spend less, I need to know how much the firm is going to make every month." (goals / DBM)
+11. 00:54:31 — "It's built into all the retainers, but we're just not doing it… that's all money. That's just revenue on the table for anyone to grab because we are not." (profit; paralegal time not billed)
+12. 01:02:08 — "All he could see was how much money we were going to have to spend." (objection — partner Bill's reaction to the SMB price when the firm first signed)
+
+============================================================
+STEP 9B — KPI AND DIAGNOSIS (feeds deck slides 1–3)
+============================================================
+KPI AND DIAGNOSIS (STEP 9B)
+Product focus this supports: mixed — Full Service Marketing (OmniSocial AI-avatar videos, paid ads, SEO/AI search, reviews) and AI Workforce Pro (+ Fractional CTO)
+Headline KPI: Annual marketing spend (agency fee plus ad spend) — "closer to $50,000" a year, of which the agency fee is $3,000 a month ($36,000 a year) — said by client, 00:59:30 (agency fee at 00:12:32; same all-in figure at 00:13:12) — "When I realized we're spending $36,000 a year, closer to $50,000 on Google Ads…"
+  KPI status: usable
+  Why this KPI: Full Service Marketing (a marketing audit of the Esquire scope, then taking over ads, SEO and AI-avatar video with cost-per-lead and cost-per-signed-case tracking) moves it — the firm pays about $50,000 a year and has no return figures to judge it by.
+Supporting figures (0–3):
+  - 250 to 350 leads in a normal month, 150 to 250 of them viable — client, 00:08:19–00:08:40 — "we have anywhere from 250 to 350 leads that come in… anywhere from 150 to 250 are viable"
+  - 325 of 400 leads in the viral week came from outside New York, New Jersey and Connecticut — client, 00:09:33 — "out of those 400 leads that we got in that week, 325 were not from New York, New Jersey, or Connecticut…"
+  - 126 Google reviews on the Manhattan profile — client, 00:30:19 ("120, maybe 130"; the "only 126 reviews" line at 00:42:06 may be the seller reading his screen); live Google read 4.5 (126) [confirmed via Google] on November 23 (STEP 2)
+Client-stated goal for this KPI: none stated — Katie did not name a return target or a spend cap; she said she would spend more "when you're getting the value out of it" (00:16:27). Seller-stated benchmark on the call: "if you give us a dollar, we're going to give you $5, $6, $10 back" (seller, 00:16:53) — seller's benchmark, not the client's goal.
+KPI quotes (2–4, verbatim, client only):
+  - Katie Swadosh (client), 00:12:32 — "we're paying them $3,000 a month, so $36,000 a year." (existing vendor cost)
+  - Katie Swadosh (client), 00:13:20 — "I just think what we're getting for that dollar amount is not reasonable." (marketing ROI)
+  - Katie Swadosh (client), 00:44:00 — "none of it makes sense to me, so I just look at it real quick and see if it looks similar to the month before, and then say if it does, great, everything's fine." (no visibility of results)
+  - Katie Swadosh (client), 00:44:32 — "Right, it just talks about the activity." (report has no cost per lead)
+Client's why (verbatim, client only): Katie Swadosh (client), 00:54:08 — "I need, in order to budget appropriately and figure out where we can spend more and where we could spend less, I need to know how much the firm is going to make every month." — wants a firm whose income she can plan around instead of waiting on settlements. Also 00:11:40 — "he just, he can't keep up with how much we've grown and keep doing that." (the lead engine can't depend on one partner's time). The partners' own "why" was not heard.
+Cost of inaction (verbatim, client only): Katie Swadosh (client), 00:54:00 — "we can't rely on the settlements because you never know what's going to happen." (a settlement expected in 2025 only settled "last Friday", 00:53:48 [speaker tag says Jacob — read as Katie finishing her story]); Katie, 00:54:36 — "that's all money. That's just revenue on the table for anyone to grab because we are not." (unbilled paralegal time); Katie, 00:11:08 — "he's been working 80 hour weeks the last couple weeks." (partner overload from making the videos).
+Legacy Staircase discussed: no. (Katie's "That pyramid? Don't even get me started on the pyramid" at 01:04:00 is a passing mention of SMB's training material, not a walkthrough of the Staircase.)
+Diagnosis (3–4 causes, biggest first):
+  1. The firm pays about $50,000 a year for marketing and cannot see what it returns — evidence: "$3,000 a month, so $36,000 a year" agency fee, "closer to $50,000" all-in; the Google report "just talks about the activity" and nobody at the firm has account access — source: call: Katie, 00:12:32, 00:59:30, 00:43:05, 00:44:32 — fixed by: Full Service Marketing — audit of Esquire's scope, SMB-run ads in an account the firm owns and can see, cost-per-lead and cost-per-signed-case reporting
+     Target basis: seller-stated benchmark on the call, "$5, $6, $10 back" per $1 (seller, 00:16:53); no client-stated target — flag for seller
+  2. Lead flow depends on one partner's viral videos, which don't fit the firm's license area and cost him 80-hour weeks — evidence: 400 leads in one week, 325 outside NY/NJ/CT; "he can't keep up with how much we've grown" — source: call: Katie, 00:08:46, 00:09:33, 00:11:08, 00:11:40 — fixed by: OmniSocial AI-avatar videos (made from a photo, no filming) on organic channels and behind paid ads geo-targeted to NY, NJ and CT
+     Target basis: none — flag for seller (no lead or case target was stated)
+  3. Too few Google reviews, and no routine way to ask for them — evidence: Manhattan 4.5 (126) against Phillips & Associates 728 and Derek Smith Law Group 332 [confirmed via Google, STEP 4]; attorneys don't tell intake when a case settles — source: research: STEP 2 and 4 (read live from Google on November 23); call: Katie, 00:30:19–00:31:21 — fixed by: Full Service Marketing — review-request process and training, Google Business Profile and AI-search (AEO) work
+     Target basis: none — flag for seller (no review target was stated; the seller offered a Google review training, 00:30:12)
+  4. Associates are buried in administrative work, so the firm cannot set billable-hour expectations or predict monthly revenue — evidence: "40 hours or more a week just in administrative litigation work" for one full-time associate; settlements arrive unpredictably ("seven settlements this month, zero in December, 14 in January, two in February") — source: call: Katie, 00:52:37, 00:53:09–00:53:27 — fixed by: AI Workforce Pro (AI employees for admin work, lead follow-up and intake), with Fractional CTO if the firm wants the automations built for it
+     Target basis: client goal — "billable expectations every week" for associates and paralegals (Katie, 00:52:08); no hour or revenue target stated
+Plan inputs (for each non-marketing product the call points to):
+  - Fractional CTO / AI Workforce Pro: tasks the client named, most painful first:
+    1. Administrative litigation work dumped on associates — "so much administrative work gets dumped on the associate attorneys because we don't have the paralegals and legal support" (Katie, 00:52:22)
+    2. Tracking settlements and asking for reviews — "none of the other attorneys ever tell me when their case is settled" (Katie, 00:30:51); "trying to get that out of him is like pulling teeth" (00:31:16)
+    3. Billing paralegal time — "It's built into all the retainers, but we're just not doing it" (Katie, 00:54:31)
+    4. Lead follow-up and intake volume — "400 of them in that week alone… absolute chaos" (Katie, 00:08:46–00:08:50); "a million intake staff" (00:48:47)
+    5. Case management tools — "Clio Grow is the worst" (Katie, 00:32:07); the firm is moving to Lawmatics
+  - Managed Operations: not a product the call points to. Closest pain: partners "set in their ways" — "I'm not going to change them, right?" (Katie, 00:52:03) and "They're set in their ways at this point." (00:52:05) — and no billable expectations for associates. None stated beyond that.
+  - FCFO / bookkeeping: none stated — no books, forecast or cost-per-case complaints; the only finance pain is unpredictable monthly income (00:54:08).
+Alternate KPI (if the seller changes the package): AI Workforce Pro → hours on admin: "she has 40 hours or more a week just in administrative litigation work" (one full-time associate, client, 00:52:37)
+Seller should confirm on the next call:
+  - Revenue, revenue goal, average case value, close rate, referral share and cost per signed case — none stated (the "$2 million → $5 million" line was an "if"; confirm whether $2M is the firm's real revenue)
+  - Ad spend alone (excluding Esquire's $3,000/month fee) and Esquire's contract term and notice period; Katie to send Esquire's service breakdown (00:59:40)
+  - Whether Google Ads actually resume December 1, and who will run them
+  - Access to the Google Ads account and last 3–6 months of reports (firm owns the account; only Esquire has access)
+  - Total headcount (11 is a website count), how many people would take AI Workforce Pro seats, and whether the per-seat price change applies at that size; exact date of the price change (the seller said December 7–8 "or maybe the week after")
+  - Whether the firm wants out-of-state leads at all (325 of 400 were outside NY/NJ/CT, but Jack "did more paid consults… than ever") and the intended target geography for ads
+  - Partner buy-in: Bill's cost sensitivity; Jack declined AI Workforce Pro before ("I don't think we need it") — who decides, and who attends the proposal call
+  - The partners' own reasons for growing (DBM) — only Katie spoke
+  - Meta ad activity (Ad Library did not load), PageSpeed on pagespeed.web.dev (API quota hit; Lighthouse lab run used: mobile 50, desktop 96), Google Business Profile posts, and ChatGPT/Claude/Perplexity visibility (seller promised the audit)
+  - Which phone numbers on FindLaw (332-249-4888), Avvo ((855) 933-2923) and Justia ((516) 588-6439) are intentional tracking numbers versus stale listings; the duplicate "Jack Tuckner, Esq." Google listing
+  - The 1-star Google review about slow response (about a week old) — whether intake response time is a known issue
+  - Marco Island attendance (Katie is not going; Jack and Bill undecided) for filming the avatar on site
+
+============================================================
+STEP 10 — COMPETITIVE URGENCY SCORE
+============================================================
+Score: 6 of 10
+Reasoning: In Manhattan, competitors hold large review leads (728, 462, 332, 252 vs. the firm's 126), run paid search for sexual-harassment terms while the firm's ads are off, and own the wrongful-termination and sexual-harassment results where the firm does not appear. The firm is not invisible: it shows up for "women's rights" in Manhattan, is named in Google's AI Overview for that query, appears for pregnancy discrimination, and leads in Poughkeepsie, where nobody is close on reviews. The firm's one big edge — viral organic video — is volatile and tied to one partner.
+Named competitor threats:
+- Phillips & Associates — 4.8 (728) [confirmed via Google]; the only competitor seen running ads for "sexual harassment lawyer New York City" ("Over $360M recovered for 9,500+ employees"); first in the Manhattan wrongful-termination pack.
+- Derek Smith Law Group, PLLC — 4.9 (332) [confirmed via Google]; appears in the Manhattan women's rights, wrongful-termination and gender-discrimination results.
+- Sekendiz Law Group P.C. — 4.9 (116) [confirmed via Google]; shows up first in the Manhattan sexual-harassment and gender-discrimination results the firm is missing. (Joseph & Norinsberg, 4.8 (252) [confirmed via Google], also outranks the firm on pregnancy discrimination.)
+Dynamic sentence: "A score of 6 means competitors have meaningful advantages in one or more areas and are pulling ahead. You are not invisible yet — but the window to close the gap is narrowing. Every month without action is a month they extend their lead."
+
+[SAVED: final research notes]
+
+============================================================
+PASS 2 — VERIFICATION CHECKLIST (completed)
+============================================================
+[x] Every number matches observed data or the transcript; unobserved items are marked "not found"/"not observed"
+[x] Competitor counts read live from Google; the firm has more reviews than any competitor listed as "firm has MORE" and fewer than the three named as dominating
+[x] Every review count and rating carries [confirmed via Google] or [UNCONFIRMED — sourced from …]
+[x] Revenue split into gross/net — neither stated; fee structure recorded
+[x] Ad sections cover both practice areas
+[x] No "you are not running ads" — the pause is stated as the prospect's own statement
+[x] No profitability claims beyond the transcript
+[x] Only named local competitors used (Morgan & Morgan flagged as national, not used)
+[x] PageSpeed values are real numbers from Lighthouse (not pagespeed.web.dev) and labelled as such
+[x] DBM recorded; revenue goal and close rate flagged as not stated
+[x] Primary engagement, products discussed (catalog names), lead-gen gap stated, revenue best estimate and headcount filled in the machine-read formats
+[x] Firm identity check: matches
+[x] Existing vendor and budget statements recorded
+[x] Investment inputs filled in (client-stated figures only)
+[x] STEP 9B filled: KPI is a figure said on the call with speaker and timestamp; none computed; none UNCONFIRMED; each cause has source and target basis
