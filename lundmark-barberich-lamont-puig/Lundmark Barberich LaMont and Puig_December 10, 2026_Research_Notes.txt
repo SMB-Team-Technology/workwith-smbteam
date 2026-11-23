@@ -1,0 +1,244 @@
+SMB TEAM — AUDIT RESEARCH NOTES (Pass 1)
+Firm: Lundmark Barberich LaMont & Puig (website brand: AZWCD; directory listings: "Lundmark, Barberich, Lamont & Puig PC")
+Friendly name: lundmark-barberich-lamont-puig
+Sales rep: Jake Riggs (the first-call lines are all tagged "Anthony Marotta [SMB Team]" in the transcript file — see TRANSCRIPT NOTES)
+Proposal call date: December 10, 2026, 9:00 AM PST / 11:00 AM CST (discovery call: 2026-11-23, about 60 minutes)
+Contact: Javier Puig — managing partner / managing attorney (jpuig@azwcdefense.com, 602-300-5392)
+Research run: 2026-11-23
+
+RESEARCH LIMITS (read before trusting any section): this run had no rendered Google Maps / Google Search / Google Ads / Facebook Ads Library access (the Google results page returned only an error/navigation page; the Ad Library returned HTTP 403 with a JavaScript challenge). Everything Google-side that could not be read live is "not observed" and is listed in "Seller should confirm on the next call" in STEP 9B. The one Google star figure found came from a web-search summary, so it is tagged UNCONFIRMED. The PageSpeed Insights API returned HTTP 429 "Queries per day" quota exceeded on every try (mobile and desktop, 5 attempts), so the scores below are from a local Lighthouse run, not pagespeed.web.dev.
+
+TRANSCRIPT NOTES
+- Transcript source: full verbatim Fathom transcript (summary used only as overview).
+- Speaker tags are unusable: every line in the transcript file is tagged "Anthony Marotta [SMB Team]", including the prospect's lines. Speakers were worked out from content: the prospect is Javier Puig (managing partner; says "I'm the managing partner", "I'm the managing attorney. I work double that"); the SMB Team seller is Jake (introduces himself, offers the CTO, the book, the proposal, the kickstart). Anthony Marotta handed off to Jake in the first three minutes (00:02:51–00:03:22) and is not the seller on this call. Every client quote below is marked "[speaker tag says Anthony Marotta [SMB Team] — read as Javier Puig (client)]" because the content proves who spoke.
+- Transcription errors: the practice management system is spoken as "Merus" (00:13:54, "Merus, M-E-R-U-S") and, garbled, as "Maris" (00:15:01, 00:45:50); the trigger and the AI summary say "Merus Case". Read as Merus Case [transcript unclear — read as Merus Case; seller confirmed it has an open API only from a quick look, not tested]. The billing software is spoken "TABS, T-A-B-S" (00:35:19). Revenue: the seller misheard "$8 million" as "$800,000" (00:37:34–00:38:49) and Javier corrected it ("No, no, that's $8 million, sorry"; "if we were making $800,000, we'd be out of business"). The AI summary's "Javier works 120 hrs/wk" is not a figure Javier said — he said "I work double that" after "50 to 60 hours a week" (00:16:32, 00:16:58); the 60–70 hours figure comes from the seller (00:19:04). Record only what he said.
+- Seller pitch figures (81% average growth, 800+ firms, "five minutes, if that" to check a draft, hours-saved math) are pitch statements and are not recorded as the firm's numbers.
+
+============================================================
+STEP 1 — WEBSITE RESEARCH
+============================================================
+URL used: https://azwcdefense.com/ (trigger URL; resolves, HTTP 200, no redirect).
+- Website URL confirmed live: yes (HTTP 200 from curl and WebFetch on 2026-11-23)
+- Last redesign date or estimated age: not found — no redesign date published. The page is built on Concrete CMS (meta generator "Concrete CMS", theme path /concrete/themes/atomik). Footer reads "Copyright 2026." A static one-page layout (hero line, four value blurbs, six attorney photos, one office block); no visible modern features. Age not determinable from the page.
+- Mobile responsive: viewport meta tag present (`width=device-width, initial-scale=1.0`); not tested on a phone or in a mobile emulator beyond the Lighthouse run below
+- Homepage headline: "A PRE-EMINENT ARIZONA WORKERS' COMPENSATION DEFENSE FIRM"
+- CTA above fold: no call-to-action button seen. A phone number (602-279-9777, tel: link) and email (info@azwcdefense.com) are in the page. This is a B2B referral-driven site; the transcript says consumer-style marketing does not fit the firm.
+- Contact form location: not found (no form on the homepage; contact is phone, email and mailing address)
+- Live chat present: no (none observed in the page HTML)
+- Attorney bio present: partial — six attorney photos and names are on the homepage (Todd Lundmark, Kirk Barberich, Lisa La Mont, Javier Puig, David Lundmark, Kevin Karges); no bio text was read on the homepage. Javier said the firm has eight attorneys (00:31:33), so the site lists fewer than the call — seller to confirm.
+- Video present: no (none observed on the homepage)
+- Blog present: not found (no blog link on the homepage; last post date not available)
+- Other observations: practice described as workers' compensation defense only — "We exclusively represent carriers, employers, third-party administrators and municipalities in all workers' compensation matters throughout the state." "Certified by the State Bar of Arizona as specialists in workers' compensation… more than 100 years of combined experience… Several of our attorneys have been selected for inclusion to SuperLawyers." Single office: 333 E Osborn Rd, Ste 150, Phoenix, AZ 85012; fax 602-279-0925. Site is branded "AZWCD", not the full firm name.
+
+PageSpeed (pagespeed.web.dev / PageSpeed Insights API):
+- Attempts: curl to the PSI API, mobile and desktop, 2026-11-23 (5 tries in total, with 15-second waits): every one returned HTTP 429 "Quota exceeded for quota metric 'Queries' and limit 'Queries per day'".
+- Fallback: local Lighthouse 12.8.2 from headless Chrome on a CI runner, 2026-11-23, against https://azwcdefense.com/ (performance category only). Mobile used the default mobile emulation and throttling; desktop used --preset=desktop.
+- PageSpeed mobile score: 62 (local Lighthouse performance score — NOT a pagespeed.web.dev result; lab conditions on a CI runner can differ from PSI)
+- PageSpeed desktop score: 83 (local Lighthouse desktop-preset performance score — NOT a pagespeed.web.dev result)
+- Seller should rerun pagespeed.web.dev for both numbers before quoting them to the client.
+
+============================================================
+STEP 2 — GOOGLE BUSINESS PROFILE
+============================================================
+The Google listing could not be opened in this run (no rendered Google Maps access). Fields not read from the listing are "not observed".
+- GBP found: not observed (not opened directly). A web-search summary refers to Google reviews for the firm, which suggests a listing exists; not confirmed.
+- Star rating: 2.4 [UNCONFIRMED — read from a web-search summary of an unnamed listing page, which did not name the source; not independently confirmed via Google]
+- Total review count: not found — the summary gave no Google review count [no figure, so no tag applies]. The same summary said one reviewer "expressed concerns" and another praised the firm's "politeness and straightforwardness" [UNCONFIRMED — same unnamed search-summary source].
+- Most recent review date: not observed
+- Primary category: not observed
+- Photos active: not observed
+- Posts active: not observed
+- Other (non-Google) review figures, for context only: Yelp "Klein Lundmark Barberich & Lamont PC" 1.0 stars, 2 reviews, profile unclaimed [UNCONFIRMED — sourced from Lawbamba, which compiles Yelp data, not independently confirmed via Google; Yelp itself returned HTTP 403]. FindLaw: no reviews posted. Avvo (R. Todd Lundmark): 0.0, no reviews, profile not claimed.
+- Nothing on the call about reviews or reputation.
+
+============================================================
+STEP 3 — LOCAL 3-PACK SEARCHES
+============================================================
+Practice area 1: workers' compensation defense (Phoenix, AZ)
+No rendered Google results were reachable (the results page returned only an error/navigation page). All three searches are "not observed" and must be run by the seller if local search matters to this proposal. The firm serves carriers, employers and TPAs, so the local pack may not reflect how it gets work (see STEP 9).
+- Search 1 "workers compensation defense attorney Phoenix": firm appears: not observed — competitors in pack: not observed
+- Search 2 "workers comp insurance defense lawyer Phoenix AZ": firm appears: not observed — competitors in pack: not observed
+- Search 3 "Arizona workers compensation defense law firm": firm appears: not observed — competitors in pack: not observed
+
+============================================================
+STEP 4 — COMPETITOR REVIEW COUNTS
+============================================================
+No competitor review count or rating was read from a Google listing in this run. Named local workers' comp defense firms found by web search (for the seller, not rated here):
+- Competitor 1: Broening Oberg Woods & Wilson, P.C. (2800 N Central Ave, Suite 1600, Phoenix) — reviews: not observed — rating: not observed. Represents insurance carriers, third-party administrators, professional employer organizations and self-insured employers in Arizona workers' comp matters (per its practice page).
+- Competitor 2: Jones, Skelton & Hochuli, P.L.C. (2901 N Central Ave, Suite 800, Phoenix; 78+ lawyers per a directory) — reviews: not observed — rating: not observed. Insurance defense generalist with a defense network listing.
+- Competitor 3: Ilene Feldmeier (attorney; firm name not confirmed) — reviews: not observed — rating: not observed. Practice focuses on representing employers and insurance clients in workers' comp in Arizona, Colorado and Idaho (per a search result; firm address not confirmed).
+None of these is cited in the deck as having more or fewer reviews than the prospect.
+
+============================================================
+STEP 5 — DIRECTORY LISTINGS
+============================================================
+- Avvo: Lundmark, Barberich, Lamont & Puig PC listed for R. Todd Lundmark at 333 E Osborn Rd Ste 150, Phoenix, AZ 85012-2326; phone not listed; 0 reviews; profile not claimed; practice "Workers Compensation (100%)"; one peer endorsement.
+- FindLaw: two firm profiles exist. Kirk A. Barberich's page (lawyers.findlaw.com/arizona/phoenix/1465596_1/) shows the OLD name "Klein, Doherty, Lundmark, Barberich & LaMont, P.C.", the OLD address 5333 North 7th Street, Suite B-112, Phoenix, AZ 85014-2840 (phone 602-279-9777), website http://www.klbllaw.com, no reviews, "listing appears incomplete". A second firm profile (1709045_1) also carries the old firm name.
+- Yelp: "Klein Lundmark Barberich & Lamont PC" at 5333 N 7th St, Phoenix — old name and old address; 1.0 stars, 2 reviews per the Lawbamba aggregator; unclaimed.
+- MapQuest: "Klein Lundmark Barberich & Lamont PC — CLOSED, 5333 N 7th St" and a second MapQuest entry "Klein Lundmark Barberich" at the same old address (search results only; pages not opened). YellowPages has "Klein Lundmark Barberich" (search result only).
+- Martindale / Lawyers.com: profiles exist for R. Todd Lundmark and Kirk A. Barberich ("Lundmark Barberich LaMont & Puig PC" per the search summary).
+- LawInfo: "Lundmark Barberich LaMont & Puig PC" listing with the 333 E Osborn Rd address (search result only).
+- Super Lawyers: several attorneys are listed (per the firm's website and search results).
+- Justia: not checked in this run.
+- NAP inconsistencies: yes — old firm name (with Klein and Doherty) and old address (5333 N 7th St) persist on FindLaw, Yelp and MapQuest, while the website and Avvo use 333 E Osborn Rd, Ste 150. Phone 602-279-9777 matches across sources. The firm name also differs between site brand (AZWCD), the Avvo name and the trigger name.
+- Geo-targeting landing pages for surrounding cities: not found (single-page site, one Phoenix office, statewide practice).
+
+============================================================
+STEP 6 — GOOGLE ADS
+============================================================
+Practice area 1: workers' compensation defense (Phoenix)
+- Firm ads observed: not observed (no rendered Google results access in this run)
+- Named local competitors running ads: not observed
+The transcript does not say whether the firm has ever run ads. Javier said consumer-style advertising does not fit a defense firm: "I don't need billboards. I don't need people out there" and that marketing "wasn't something that I wanted to talk about at all."
+
+============================================================
+STEP 7 — LOCAL SERVICE ADS
+============================================================
+- Firm appears in LSA: not observed
+- Google Screened: not observed
+- LSA review count: not observed
+- Named local competitors in LSA: not observed
+
+============================================================
+STEP 8 — META ADS
+============================================================
+- Facebook Ad Library lookup: blocked — HTTP 403 with a JavaScript challenge to non-browser requests on 2026-11-23.
+- Firm has active ads: not observed
+- Named local competitor 1: Broening Oberg Woods & Wilson — active ads: not observed
+- Named local competitor 2: Jones, Skelton & Hochuli — active ads: not observed
+
+============================================================
+STEP 9 — TRANSCRIPT EXTRACTION
+============================================================
+Transcript source: full verbatim Fathom transcript (summary used only as overview)
+
+- Practice areas confirmed: workers' compensation defense (per website: carriers, employers, TPAs, municipalities). On the call Javier said "we're a defense firm" and that "we work with all of the major insurance carriers" (00:08:21, 00:52:15).
+- Current lead sources: none stated as lead sources. Work comes from carriers/employers; Javier on the call: "we're not, we're a defense firm. And so I don't need billboards. I don't need people out there, right?" [speaker tag says Anthony Marotta [SMB Team] — read as Javier Puig (client), 00:08:21]
+- Ads ever run: not stated. Javier's statement that consumer advertising does not fit the firm is the only reference.
+- Firm identity check: matches — the website is branded "AZWCD" and lists Lundmark, Barberich, La Mont and Puig; Avvo names "Lundmark, Barberich, Lamont & Puig PC" at the same address as the website; Javier Puig (the call contact) is one of the four named partners and an attorney on the site. The trigger's HubSpot company record was unreadable, so the trigger uses the contact's company field. Older listings use the former name "Klein, Doherty, Lundmark, Barberich & LaMont" (see STEP 5).
+- Team size: 30 — eight attorneys and 22 staff (paralegals and legal assistants, one receptionist, one clerk). "I think we have 22 staff and eight attorneys. So I think we're at 30 right now." [speaker tag says Anthony Marotta [SMB Team] — read as Javier Puig (client), 00:31:33]; "one reception, one clerk staff, and then everybody else is either legal assistants or paralegals" [speaker tag says Anthony Marotta [SMB Team] — read as Javier Puig (client), 00:31:52 — this line was said by the client per the context of the preceding question; seller's reply "Correct" is at 00:31:49]
+- Team size (total headcount): 30
+- Annual revenue (gross / case value): about $6 million for 2026 — "About six, maybe a little more." [speaker tag says Anthony Marotta [SMB Team] — read as Javier Puig (client), 00:25:17] (unit confirmed later: "that's $8 million, sorry" for the 2027 figure, so "six" is millions)
+- Annual revenue (net / take-home / collected): not distinguished from gross
+- Revenue (annual, best estimate): $6,000,000
+- Fee structure: hourly billing to carriers — "mostly, but not all of it… probably about 70% is billable"; carriers audit and write down bills and "charge us like 5% just for the, the honor of processing our bills" [speaker tag says Anthony Marotta [SMB Team] — read as Javier Puig (client), 00:17:22, 00:17:55]. Hourly is inferred from the billable-hour discussion; the call did not state "hourly" in those words.
+- Revenue goal: $8 million in 2027 — "If we keep going this way, we're probably going to hit eight." [speaker tag says Anthony Marotta [SMB Team] — read as Javier Puig (client), 00:25:25]; later "No, no, that's $8 million" (00:38:01). This is the client's trajectory projection; the seller framed it as the goal ("we're trying to get to $8 million") and the client did not correct that.
+- Average case value: not stated
+- Current close rate: not stated — default 15% (not relevant: defense work comes from carriers, no consumer intake)
+- Number of locations: 1 (single Phoenix office per the website; the call never mentions another)
+- Spanish campaign needed: no (not discussed; not relevant)
+- Dominant buying motive: balance and time for himself and his team, with the firm able to grow without people burning out — "the main concern for me and for the other partners and for the, the associates is, um, you know, is to get some kind of balance and quality of life, right?" [speaker tag says Anthony Marotta [SMB Team] — read as Javier Puig (client), 00:19:12]. Closest DBM type: a firm that runs itself so the partners can hand cases off ("the partners can… fully hand off the cases to the associates and know that they are going to be able to manage them", 00:22:43).
+- Any profitability claims made by prospect: "if we were making $800,000, we'd be out of business" (said of a misheard revenue figure; only means the firm's revenue is far above that) [speaker tag says Anthony Marotta [SMB Team] — read as Javier Puig (client), 00:38:08]; "It costs me more than that per year just in salaries" (00:38:38). "We're missing billing left and right" (00:23:23). No profit, margin or take-home figure was stated.
+- Any claims about case types or practice areas: "we're a defense firm" (00:08:21); "most of the attorneys here are working 50 to 60 hours a week"; "I'm the managing attorney. I work double that" (00:16:32, 00:16:58). Attorneys draft "interrogatories, … drafting deposition questions, … post-trial legal briefs" (00:30:43).
+- Stated call focus / product interest: AI automation of document drafting, document gathering, billing reminders and judge win-loss reporting ("it's automation, right?", 00:04:30). The call was NOT about marketing or intake growth — the client said so explicitly ("that wasn't something that I wanted to talk about at all", 00:10:24). The seller added, from his own pitch, a fractional CFO "kickstart" audit of 2026 books and a managed operations (fractional CFO team plus coaching team) look at the practice; the client said "I think that's good" (00:52:14).
+- Primary engagement: AI
+- Products discussed on call: AI Workforce Pro, Fractional CTO, FCFO, Managed Operations
+- Lead-gen gap stated: no — "that wasn't something that I wanted to talk about at all" [speaker tag says Anthony Marotta [SMB Team] — read as Javier Puig (client), 00:10:24]
+- Existing marketing/SEO/ad vendor engagements: none stated. (He just engaged Merus Case as practice management software: "We just engaged Merus… we're just about to launch that, but the automation piece is something that they don't have", 00:13:54.)
+- Budget constraints stated: none stated. Javier's only constraint is process-related: "one thing I don't want to do is add more steps for everyone here to have to take to achieve this" (00:46:39).
+- Bookkeeping volume: not stated; trust account: not stated. Bookkeeping is done in-house by "our current manager" ("We do. Internal.", 00:35:30; "decent enough… what if our current… manager wins the lottery and leaves", 00:35:44–00:36:12).
+- Financial goals stated (for the ProfitOS slides):
+  1. Hiring plan backed by numbers — "One of the things that I found difficult is to justify what we need as far as attorneys and staff without some real numbers to back me up… That part I've never had." [speaker tag says Anthony Marotta [SMB Team] — read as Javier Puig (client), 00:39:42–00:39:52]
+  2. A forward view of the numbers and checks on the books — "it would be nice to independently have just something that ran… this outlook of where we are, what's coming… some checks and balances, if you will." [speaker tag says Anthony Marotta [SMB Team] — read as Javier Puig (client), 00:35:44]
+  3. Reduce dependence on one person who knows the books — "what if our current… manager wins the lottery and leaves, right? What do we do? … We don't have that." [speaker tag says Anthony Marotta [SMB Team] — read as Javier Puig (client), 00:36:12–00:36:30]
+
+Investment inputs (client-stated only):
+- Ad spend practice area: Other — workers' compensation defense; the client does not want paid consumer advertising ("I don't need billboards", 00:08:21)
+- Geo market tier: Tier 2 (Phoenix metro, ~3.5M per the Scoping guide's geo list)
+- Market competitiveness: Low — not assessed from live data (no ad or local-pack observation was possible); a B2B carrier-referral practice where paid consumer ads are not part of the model
+- Current monthly ad spend (stated): not stated
+- Current cost per signed case (stated): not stated
+- Current cost per lead (stated): not stated
+- Average case value (stated, one figure): not stated
+- Close rate (stated): not stated
+- Referral share of cases (stated): not stated
+- Revenue goal (annual, one figure): $8,000,000 (2027) — Javier Puig (client), 00:25:25 — "If we keep going this way, we're probably going to hit eight."
+- Maximum monthly ad budget (stated): not stated
+
+Key prospect quotes (each line is the client's — Javier Puig — and every one is "[speaker tag says Anthony Marotta [SMB Team] — read as Javier Puig (client)]"):
+1. 00:04:30 — why they called: "it's automation, right? We want to see if we can maybe get some of our procedures here fully, not fully, but at least a great deal of our procedures automated."
+2. 00:16:22 — attorney time on drafting: "Good grief. I, I'm assuming they're, I mean, it's, it's got to be at least half of their time."
+3. 00:16:32 / 00:16:58 — workload: "most of the attorneys here are working 50 to 60 hours a week" … "I'm the managing attorney. I work double that"
+4. 00:19:12 — goals/DBM: "the main concern for me and for the other partners and for the, the associates is, um, you know, is to get some kind of balance and quality of life, right?"
+5. 00:19:46 — cost of inaction: "there has to be a breaking point for someone, and our fear is that there will be a breaking point for one or two people. They'll exit, and then we're in real trouble here."
+6. 00:22:33 — growth/team: "the vision is, um, is to grow and to at least get two to four new associates in the next couple of years."
+7. 00:22:43 — delegation: "we want to be working a lot smarter where the partners can, um, give some of their cases. They, they can fully, um, hand off the cases to the associates and know that they are going to be able to manage them."
+8. 00:23:23 — billing leakage: "We know that we're, we're missing billing left and right."
+9. 00:27:47 — billing leakage: "we have people here that have never billed for their services."
+10. 00:25:49 / 00:25:54 — hiring urgency: "We want to add two associates in 2027." … "We need them now. I mean, we cannot continue the attorneys working at this rate."
+11. 00:39:52 — financial visibility: "What we need as far as attorneys and staff without some real numbers to back me up other than just to say, we're buried, we need someone. And they say, well, how is that going to work financially? That part I've never had."
+12. 00:40:07 — ops history: "I came into this firm eight years ago and then I took over as the managing partner… they just kind of operated here by the seat of their pants."
+
+============================================================
+STEP 9B — KPI AND DIAGNOSIS (feeds deck slides 1–3)
+============================================================
+KPI AND DIAGNOSIS (STEP 9B)
+Product focus this supports: AI (AI Workforce Pro with a Fractional CTO to build and integrate the skills); FCFO (kickstart audit of 2026 books, then forecasting) and Managed Operations as the second and third needs the seller raised
+Headline KPI: Attorney hours spent on manual drafting — "at least half of their time" — said by client, 00:16:22 — "Good grief. I, I'm assuming they're, I mean, it's, it's got to be at least half of their time." (The client calls it an assumption. Attorneys at "50 to 60 hours a week", 00:16:32.)
+  KPI status: usable
+  Why this KPI: AI Workforce Pro's drafting skills (initial letters, notices of appearance, interrogatories, briefs) and the document-gathering and billing-reminder skills move attorney time and missed billing directly.
+Supporting figures (0–3):
+  - Attorney workload: "50 to 60 hours a week" for most attorneys — client, 00:16:32 — "most of the attorneys here are working 50 to 60 hours a week"
+  - Billable share of drafting time: "about 70, 70% is, is billable" — client, 00:17:55 — "it's probably about 70, 70% is, is billable"
+  - Team and revenue today: "22 staff and eight attorneys… at 30" (00:31:33) and "About six, maybe a little more" (00:25:17) — client
+Client-stated goal for this KPI: none stated as a number. He did say the aim is balance and hand-off: "we want to be working a lot smarter where the partners can… fully, um, hand off the cases to the associates" (00:22:43).
+KPI quotes (2–4, verbatim, client only):
+  - Javier Puig (client), 00:16:22 — "Good grief. I, I'm assuming they're, I mean, it's, it's got to be at least half of their time." [speaker tag says Anthony Marotta [SMB Team] — read as Javier Puig (client)] — drafting time
+  - Javier Puig (client), 00:17:22 — "It's mostly, but not all of it. And that's part of our problem, right, is that we run into on the defense side is that we, you know, we, um, we have limitations on what they think is billable work, right?" [speaker tag says Anthony Marotta [SMB Team] — read as Javier Puig (client)] — billing
+  - Javier Puig (client), 00:23:23 — "We know that we're, we're missing billing left and right." [speaker tag says Anthony Marotta [SMB Team] — read as Javier Puig (client)] — missed billing
+  - Javier Puig (client), 00:33:16 — "if there's anything out there, then that falls to us, the attorneys, to say, hey, I still don't have records from whatever" [speaker tag says Anthony Marotta [SMB Team] — read as Javier Puig (client)] — document gathering
+Client's why (verbatim, client only): Javier Puig (client), 00:19:12 — "the main concern for me and for the other partners and for the, the associates is, um, you know, is to get some kind of balance and quality of life, right?" [speaker tag says Anthony Marotta [SMB Team] — read as Javier Puig (client)] — balance for himself and the team. Also 00:21:39: "I have to work a couple hours in the morning and a couple hours at night. I did that in Hawaii, right? So we're, it's just my reality at this point." [same tag note]
+Cost of inaction (verbatim, client only): Javier Puig (client), 00:19:46 — "there has to be a breaking point for someone, and our fear is that there will be a breaking point for one or two people. They'll exit, and then we're in real trouble here." [speaker tag says Anthony Marotta [SMB Team] — read as Javier Puig (client)] — attorney exits. Also 00:25:54: "We need them now. I mean, we cannot continue, we cannot continue the attorneys working at this rate." [same tag note]
+Legacy Staircase discussed: no. (The seller showed a "pyramid" of growth stages at 00:09:09–00:09:55 — a different framework from the Lawyer Legacy Staircase; no stage was placed.) Current stage: not placed; goal stage: not named.
+Diagnosis (3–4 causes, biggest first):
+  1. Attorneys do first-draft documents by hand — evidence: "at least half of their time" (assumption) and "most of the attorneys here are working 50 to 60 hours a week" — source: call: Javier Puig (client), 00:16:22 and 00:16:32 — fixed by: AI Workforce Pro drafting skills (initial letters to the client and employer, notice of appearance, interrogatories, deposition questions, briefs) built and connected by a Fractional CTO
+     Target basis: none — flag for seller (no hours target was stated; the seller discussed a check time on the call but it is a pitch figure)
+  2. Billable work goes unbilled and billing is inconsistent — evidence: "about 70, 70% is, is billable" and "We know that we're, we're missing billing left and right"; an internal survey about six months ago found it "was worse than we thought" — source: call: Javier Puig (client), 00:17:55, 00:23:23, 00:26:46 — fixed by: AI Workforce Pro billing skills (time and billing prompts, overdue-invoice reminders using the pre-built skill that connects to TABS)
+     Target basis: none — flag for seller
+  3. No process for collecting outstanding records, and no view of results by judge or attorney — evidence: "we don't" have a documentation-gathering process; "it falls to us, the attorneys"; "what's our win-loss rate with each one of them" — source: call: Javier Puig (client), 00:33:15–00:33:43 — fixed by: AI Workforce Pro skills that tie into Merus Case and send scheduled records requests; judge/attorney win-loss reporting
+     Target basis: none — flag for seller
+  4. No CFO or forecast, so hiring cannot be justified with numbers — evidence: "We don't. We've never gotten that sophisticated." and "justify what we need… without some real numbers" — source: call: Javier Puig (client), 00:39:05, 00:39:52 — fixed by: FCFO kickstart audit of 2026 books, then forecasting and a hiring plan tied to the $8 million goal
+     Target basis: client goal of $8 million in 2027 and two associates in 2027 (00:25:25, 00:25:49)
+Plan inputs (for each non-marketing product the call points to):
+  - Fractional CTO / AI Workforce Pro (tasks the client named, most painful first, all Javier Puig (client), each [speaker tag says Anthony Marotta [SMB Team] — read as Javier Puig (client)]): (1) "five initial letters, initial letter to the client, initial letter to the employer, notice of appearance" on every new case (00:12:28–00:13:05); (2) litigation-stage prompts to "send out these certain interrogatories, set this certain type of deposition" (00:13:21–00:13:50); (3) records requests — "we don't" have a process, it "falls to us, the attorneys" (00:33:15–00:33:43); (4) win-loss rate "per attorney" and "in front of these certain judges" (00:33:43); (5) overdue invoices — "the worst offender that hasn't paid us… emails to these top 10 people" (00:34:34). Also: drafting "post-trial legal briefs… doing research" (00:30:43).
+  - Managed Operations: the client built SOPs by hand — "they didn't have a policies and procedures handbook. They didn't have a structure… it was something that has taken me years to build up" [speaker tag says Anthony Marotta [SMB Team] — read as Javier Puig (client), 00:40:21]; needs the partners to hand off cases and attorneys not to burn out (00:22:43, 00:19:46). The seller said he would check managed-operations capacity; the client did not name a specific operations gap beyond the above.
+  - FCFO / bookkeeping: "an outlook of where we are, what's coming… some checks and balances" (00:35:44); "what if our current… manager wins the lottery and leaves" (00:36:12); no forecast or CFO (00:39:05); hiring needs "real numbers to back me up" (00:39:52) [each tagged as above]
+Alternate KPI (if the seller changes the package): FCFO — hiring cannot be justified with numbers: "without some real numbers to back me up other than just to say, we're buried, we need someone… That part I've never had." — client, 00:39:52 (no dollar figure).
+Seller should confirm on the next call:
+  - Hours: how many hours a week the attorneys spend on drafting (Javier called "half" an assumption), and what share is unbilled
+  - Missed billing: the dollar size of the gap from the internal survey ("worse than we thought", about six months ago, 00:26:46) — no figure was stated
+  - Merus Case: whether the API integration works (the seller said he was "out over my skis" and would check with the CTO, 00:14:55–00:15:22); status and launch date of the Merus rollout
+  - TABS: integration for the billing-reminder skill
+  - Revenue: confirm the 2026 figure ("about six, maybe a little more") and whether 2027's eight is the goal or the projection; confirm the number of attorneys (call said eight; the website lists six)
+  - Hiring: two associates in 2027 (00:25:49) vs "two to four new associates in the next couple of years" (00:22:33)
+  - Bookkeeping: transaction volume, trust-account reconciliation, who does the books and whether the owner sees monthly financials
+  - Carrier requirements: security and AI-use rules from carriers (00:52:15) — "some of the requirements now are just things that we are just not able to meet"
+  - Website, Google listing, reviews and local search: PageSpeed (mobile 62 / desktop 83 are local Lighthouse numbers), the Google rating (2.4 is UNCONFIRMED), ads, directory cleanup (old firm name and address on FindLaw, Yelp and MapQuest) — none discussed on the call; the client said marketing is not wanted
+  - The seller's own claim that the "price increase at the start of next year" makes ending the year signed better — the client should confirm any timing statement before it appears in the deck
+  - The CFO "kickstart" is the seller's idea; the client did not agree to it, only to "I think that's good" about the overall direction (00:52:14)
+
+============================================================
+STEP 10 — COMPETITIVE URGENCY SCORE
+============================================================
+Score: 2 — not computed from live competitor data (none was observable). The firm's work comes from carriers, employers and TPAs, not from consumer search, so competitor local-search and ad activity is not the lens for this proposal. Named Phoenix workers' comp defense firms (for context only, no marketing activity was observed): Broening Oberg Woods & Wilson, P.C. (carrier/TPA/self-insured defense); Jones, Skelton & Hochuli, P.L.C. (large insurance-defense firm). The real urgency on this call is internal: attorney burnout, missed billing and the 2027 hiring plan, not competitors.
+Dynamic sentence (score 1–3): "A score of 2 means no single competitor is dominating your market yet — but that will not last forever. The firms that win markets do so by moving first. Getting your systems in place now means you set the standard before someone else does."
+
+============================================================
+PASS 2 — VERIFICATION CHECKLIST
+============================================================
+- Every number matches observed data or the transcript: yes (derived figures flagged).
+- Every competitor review count verified live: n/a — none recorded.
+- Every review count and rating carries a verification-method tag: yes (Google 2.4 and Yelp 1.0 are UNCONFIRMED; Avvo/FindLaw statements are non-Google context).
+- Revenue split gross/net, fee structure: net not distinguished; fee structure recorded.
+- Every ad section covers all practice areas: yes (one practice area).
+- No section says "you are not running ads": yes.
+- Competitor references are named local firms only: yes.
+- PageSpeed scores are real numbers: yes, from a local Lighthouse run (labelled as such); PSI API over quota.
+- DBM, revenue goal, close rate, average case value recorded: yes (close rate and average case value "not stated").
+- Stated call focus recorded explicitly: yes (AI automation, not marketing).
+- Primary engagement, products discussed (catalog names), lead-gen gap: filled in the machine-read format.
+- Revenue (annual, best estimate) one figure; headcount one whole number: yes ($6,000,000; 30).
+- Firm identity check: matches.
+- Investment inputs: filled; client-stated only.
+- Nothing fabricated: anything not found is "not found"/"not observed" and listed in the seller list.
+- STEP 9B filled in; no figure calculated; no UNCONFIRMED figure used as evidence; every cause has a source and target basis.
