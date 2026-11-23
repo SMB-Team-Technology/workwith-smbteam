@@ -3,11 +3,11 @@
   "revenue_stated": null,
   "net_revenue_stated": null,
   "is_contingency_practice": true,
-  "revenue_effective": 340000,
-  "revenue_source": "hubspot_annual_law_firm_revenue",
+  "revenue_effective": 1900000,
+  "revenue_source": "seller_confirmed",
   "revenue_label": "$180K-$500K",
-  "revenue_verified": false,
-  "needs_revenue_confirmation": true,
+  "revenue_verified": true,
+  "needs_revenue_confirmation": false,
   "team_size_stated": null,
   "team_size_source": null,
   "team_size_effective": 3,
@@ -52,7 +52,7 @@
   "ad_spend_aggressive": 50000,
   "ad_spend_rationale": {
     "conservative_basis": "set by the seller (Seller via Slack 2026-11-16) — computed range was $50,000–$50,000",
-    "aggressive_basis": "20% rule: $680,000 goal × 20% ÷ 12 × 1.5 geo − $5,497 fee = $11,503 → reverse math: 5.2 cases/mo × $4,000 cost per case (stated) = $20,606 → replaced by the seller's range $50,000–$50,000"
+    "aggressive_basis": "20% rule: $3,800,000 goal × 20% ÷ 12 × 1.5 geo − $5,497 fee = $89,503 → reverse math: 28.8 cases/mo × $4,000 cost per case (stated) = $115,152 → capped at the $50,000 the package manages → replaced by the seller's range $50,000–$50,000"
   },
   "selection_notes": [
     "Revenue not stated on the call — HubSpot only has the range \"$180K-$500K\". Using the midpoint ($340,000) for this draft only; confirm actual revenue with the prospect before locking in.",
@@ -62,7 +62,8 @@
     "Total at conservative ad spend ($57,597/mo) is over the 35% cap ($9,917/mo on $340,000 revenue) — review with sales rep.",
     "Seller override: ad spend set to $50,000/mo (current spend; $25,000 is not enough) per Slack request on 2026-11-16.",
     "Seller override: changed to Paid Ads Growth only (dropped Elite Coach) per Slack request on 2026-11-23.",
-    "Only one bundle-eligible product in this package — stand-alone pricing applied, no bundle savings."
+    "Only one bundle-eligible product in this package — stand-alone pricing applied, no bundle savings.",
+    "Revenue confirmed by seller: $1,900,000."
   ],
   "pricing_mode": "standalone",
   "bundle_eligible_count": 1,
@@ -127,8 +128,9 @@
       "overage": null,
       "conservative_basis": "set by the seller (Seller via Slack 2026-11-16) — computed range was $50,000–$50,000",
       "aggressive_steps": [
-        "20% rule: $680,000 goal × 20% ÷ 12 × 1.5 geo − $5,497 fee = $11,503",
-        "reverse math: 5.2 cases/mo × $4,000 cost per case (stated) = $20,606",
+        "20% rule: $3,800,000 goal × 20% ÷ 12 × 1.5 geo − $5,497 fee = $89,503",
+        "reverse math: 28.8 cases/mo × $4,000 cost per case (stated) = $115,152",
+        "capped at the $50,000 the package manages",
         "replaced by the seller's range $50,000–$50,000"
       ],
       "year_one_range": [
@@ -178,9 +180,9 @@
         "source": "research notes"
       },
       "spanish_campaign": false,
-      "revenue_effective": 340000,
+      "revenue_effective": 1900000,
       "revenue_goal": {
-        "value": 680000,
+        "value": 3800000,
         "source": "not stated — 2× current revenue (audit-write.md)"
       },
       "case_value": {
@@ -201,7 +203,7 @@
       "ad_spend_cap": 50000
     },
     "flags": [
-      "Reverse math ($20,606) is well above the 20% rule ($11,503) — the goal may be aggressive for the budget (paid ads team review).",
+      "Goal-based ad spend ($115,152) is above the $50,000 cap for Paid Ads Growth — capped. Higher spend means a tier upgrade or the 15% overage fee (seller decision).",
       "Ad spend over $25K — scoping approval required."
     ],
     "alerts": []
