@@ -32,12 +32,12 @@
     "products_discussed": [],
     "lead_gen_gap": true
   },
-  "marketing_tier": "Starter",
-  "marketing_name": "Full Service Marketing — Starter",
-  "marketing_price_bundled": 4997,
-  "marketing_price_retail": 5697,
-  "marketing_savings": 700,
-  "coaching_name": "Elite Coach",
+  "marketing_tier": "Paid Ads Growth",
+  "marketing_name": "Paid Ads Growth",
+  "marketing_price_bundled": 5497,
+  "marketing_price_retail": 5497,
+  "marketing_savings": 0,
+  "coaching_name": null,
   "coaching_price_bundled": 2600,
   "coaching_price_retail": 3497,
   "coaching_savings": 897,
@@ -46,13 +46,13 @@
   "law_price_bundled": null,
   "law_price_retail": null,
   "law_seats": null,
-  "total_bundled": 7597,
-  "total_savings": 1597,
+  "total_bundled": 5497,
+  "total_savings": null,
   "ad_spend_conservative": 50000,
   "ad_spend_aggressive": 50000,
   "ad_spend_rationale": {
     "conservative_basis": "set by the seller (Seller via Slack 2026-11-16) — computed range was $50,000–$50,000",
-    "aggressive_basis": "20% rule: $680,000 goal × 20% ÷ 12 × 1.5 geo − $4,997 fee = $12,003 → reverse math: 5.2 cases/mo × $4,000 cost per case (stated) = $20,606 → capped at the $25,000 the package manages → replaced by the seller's range $50,000–$50,000"
+    "aggressive_basis": "20% rule: $680,000 goal × 20% ÷ 12 × 1.5 geo − $5,497 fee = $11,503 → reverse math: 5.2 cases/mo × $4,000 cost per case (stated) = $20,606 → replaced by the seller's range $50,000–$50,000"
   },
   "selection_notes": [
     "Revenue not stated on the call — HubSpot only has the range \"$180K-$500K\". Using the midpoint ($340,000) for this draft only; confirm actual revenue with the prospect before locking in.",
@@ -60,71 +60,51 @@
     "Revenue under $750K but multiple practice areas detected: Essentials hidden (requires single practice area) — Starter tier.",
     "Revenue $250K–$400K: Elite Coach selected.",
     "Total at conservative ad spend ($57,597/mo) is over the 35% cap ($9,917/mo on $340,000 revenue) — review with sales rep.",
-    "Seller override: ad spend set to $50,000/mo (current spend; $25,000 is not enough) per Slack request on 2026-11-16."
+    "Seller override: ad spend set to $50,000/mo (current spend; $25,000 is not enough) per Slack request on 2026-11-16.",
+    "Seller override: changed to Paid Ads Growth only (dropped Elite Coach) per Slack request on 2026-11-23.",
+    "Only one bundle-eligible product in this package — stand-alone pricing applied, no bundle savings."
   ],
-  "pricing_mode": "bundled",
-  "bundle_eligible_count": 2,
+  "pricing_mode": "standalone",
+  "bundle_eligible_count": 1,
   "unpriced_products": [],
   "setup_fees": [
     {
       "line": "marketing",
-      "product": "Full Service Marketing — Starter",
+      "product": "Paid Ads Growth",
       "label": "AI Avatar setup",
       "amount": 1850,
       "waivable": true,
       "waived": false,
       "charged": 1850
-    },
-    {
-      "line": "coaching",
-      "product": "Elite Coach",
-      "label": "Setup fee",
-      "amount": 1500,
-      "waivable": true,
-      "waived": false,
-      "charged": 1500
     }
   ],
-  "setup_total": 3350,
+  "setup_total": 1850,
   "investment": {
     "version": 1,
     "products": [
       {
         "category": "marketing",
-        "name": "Full Service Marketing — Starter",
-        "charged": 4997,
-        "standalone": 5697
-      },
-      {
-        "category": "coaching",
-        "name": "Elite Coach",
-        "charged": 2600,
-        "standalone": 3497
+        "name": "Paid Ads Growth",
+        "charged": 5497,
+        "standalone": 5497
       }
     ],
-    "monthly_total": 7597,
-    "list_total": 9194,
-    "total_savings": 1597,
-    "pricing_mode": "bundled",
+    "monthly_total": 5497,
+    "list_total": 5497,
+    "total_savings": 0,
+    "pricing_mode": "standalone",
     "setup_fees": [
       {
-        "product": "Full Service Marketing — Starter",
+        "product": "Paid Ads Growth",
         "label": "AI Avatar setup",
         "amount": 1850,
         "charged": 1850,
         "waived": false
-      },
-      {
-        "product": "Elite Coach",
-        "label": "Setup fee",
-        "amount": 1500,
-        "charged": 1500,
-        "waived": false
       }
     ],
-    "setup_total": 3350,
-    "year_one_total": 94514,
-    "year_one_basis": "12 × $7,597/mo in fees + $3,350 one-time setup. Ad spend is paid separately to Google and Meta.",
+    "setup_total": 1850,
+    "year_one_total": 67814,
+    "year_one_basis": "12 × $5,497/mo in fees + $1,850 one-time setup. Ad spend is paid separately to Google and Meta.",
     "ad_spend": {
       "channels": [
         {
@@ -143,16 +123,12 @@
       "conservative": 50000,
       "aggressive": 50000,
       "current_stated": 50000,
-      "cap": 25000,
-      "overage": {
-        "above_cap": 25000,
-        "fee_rate": 0.15
-      },
+      "cap": 50000,
+      "overage": null,
       "conservative_basis": "set by the seller (Seller via Slack 2026-11-16) — computed range was $50,000–$50,000",
       "aggressive_steps": [
-        "20% rule: $680,000 goal × 20% ÷ 12 × 1.5 geo − $4,997 fee = $12,003",
+        "20% rule: $680,000 goal × 20% ÷ 12 × 1.5 geo − $5,497 fee = $11,503",
         "reverse math: 5.2 cases/mo × $4,000 cost per case (stated) = $20,606",
-        "capped at the $25,000 the package manages",
         "replaced by the seller's range $50,000–$50,000"
       ],
       "year_one_range": [
@@ -213,21 +189,22 @@
       },
       "close_rate": {
         "value": 0.03,
-        "source": "stated on the call"
+        "source": "stated on the call",
+        "stated": 0.03
       },
+      "referral_share": null,
       "current_ad_spend": 50000,
       "current_cost_per_case": 4000,
       "current_cost_per_lead": null,
       "max_ad_budget": null,
-      "management_fee": 4997,
-      "ad_spend_cap": 25000
+      "management_fee": 5497,
+      "ad_spend_cap": 50000
     },
     "flags": [
-      "Reverse math ($20,606) is well above the 20% rule ($12,003) — the goal may be aggressive for the budget (paid ads team review).",
-      "Goal-based ad spend ($50,000) is above the $25,000 cap for Full Service Marketing — Starter — capped. Higher spend means a tier upgrade or the 15% overage fee (seller decision).",
-      "Current spend ($50,000) is above the $25,000 cap for Full Service Marketing — Starter — the 15% overage fee applies above the cap.",
+      "Reverse math ($20,606) is well above the 20% rule ($11,503) — the goal may be aggressive for the budget (paid ads team review).",
       "Ad spend over $25K — scoping approval required."
-    ]
+    ],
+    "alerts": []
   },
   "ad_spend_override": {
     "conservative": 50000,
