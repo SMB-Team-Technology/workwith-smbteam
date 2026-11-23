@@ -1,0 +1,218 @@
+ZEBAS LAW — GROWTH AUDIT RESEARCH NOTES
+Sales Rep: Dan Bryant (dan.bryant@smbteam.com)
+Contact: Joe Zebas (joe.zebas@zebaslaw.com, 623-238-2615) — HubSpot contact 27919501, company 18520914950
+Proposal Call: December 7, 2026 (trigger proposal_date 2026-12-07)
+Research Date: November 23, 2026
+Friendly name: zebas
+URL: https://zebaslaw.com (trigger website). It could NOT be loaded for research (see STEP 1). Firm identity and site details below come from search-engine listings and directory pages that point to https://www.zebaslaw.com/, found by searching "Zebas Law Joe Zebas attorney".
+
+============================================================
+READ FIRST — SELLER FLAGS
+============================================================
+1. NO CALL RECORD. The trigger file has no transcript field, no transcript_status and no Fathom summary. Nothing in this file says whether a discovery call happened. Every STEP 9 field is "not stated" and STEP 9B has no usable KPI. Pass 2 cannot build a call-driven argument from this file: the seller must supply what the call (or the proposal call) is about before a package can be locked in. select-package.mjs will see "Primary engagement: not stated" and recommend no package.
+2. SITE COULD NOT BE LOADED BY OUR TOOLS. (a) WebFetch failed on https://zebaslaw.com and https://www.zebaslaw.com/ with "certificate has expired". (b) curl -k to https://www.zebaslaw.com/ returned HTTP 403 Forbidden (automated-request block; no workaround attempted). (c) An openssl check of the certificate served on www.zebaslaw.com:443 showed subject CN=fs-findlaw.com, issuer Cloudflare Inc ECC CA-3, valid Jan 29, 2024 to Dec 31, 2024 (expired about 11 months before this run). Two independent tools reported the expired certificate, but both ran from our build environment: SELLER SHOULD OPEN https://www.zebaslaw.com in a normal browser and check for a "not secure" warning before using this in the deck.
+3. HUBSPOT COMPANY RECORD WAS UNREADABLE (missing scope), so the trigger's firm name is the contact's company field "Zebas law". See "Firm identity check" in STEP 9.
+4. PHONE/LOCATION CHECK. The contact's phone 623-238-2615 has a 623 (Phoenix West Valley, AZ) area code. The firm's published office is Hobbs, NM (575.393.1024). Listings also show a Tucson, AZ office and an older Phoenix listing (see STEP 5). Seller should confirm where Joe is based and which market the proposal should target.
+5. NOT OBSERVED (tools or access unavailable): Google Business Profile and Google Maps (direct), local 3-pack results, Google Ads results pages, Local Service Ads, Meta Ad Library, PageSpeed scores (API quota exhausted, HTTP 429). All are written as "not observed" below and listed in STEP 9B for the seller. No competitive urgency score is assigned (STEP 10).
+6. EVERY REVIEW FIGURE BELOW IS UNCONFIRMED. No Google listing could be reached, so every count and rating is tagged UNCONFIRMED and must not be printed as a specific figure in the client deck.
+
+============================================================
+STEP 1 — WEBSITE RESEARCH
+============================================================
+Source: attempted live fetch on November 23, 2026 (failed); search-listing snippets for the items marked "(search listing)".
+- Website URL confirmed live: not confirmed. Search results list https://www.zebaslaw.com/ (page title "Hobbs NM Personal Injury Attorney"), so the site exists, but our fetches failed (expired certificate error in WebFetch; HTTP 403 to curl). Whether it loads for a visitor in a browser: not observed.
+- TLS certificate: expired — observed by WebFetch ("certificate has expired") and openssl (served certificate CN=fs-findlaw.com, notAfter Dec 31, 2024). Seller to confirm in a browser (flag 2).
+- Hosting/platform: the certificate and hosting suggest a FindLaw-managed site (CN=fs-findlaw.com); not otherwise confirmed.
+- Last redesign date or estimated age: not found. The firm was founded in 2006 (about-us snippet); no site redesign date seen.
+- Mobile responsive: not observed
+- Homepage headline: not observed (page title only: "Hobbs NM Personal Injury Attorney")
+- CTA above fold: not observed
+- Contact form location: not observed
+- Live chat present: not observed
+- Attorney bio present: yes (search listing) — individual profile page https://www.zebaslaw.com/attorney/zebas-joe/ appears in search results; an associate attorney, Austin Wade, is also named in search results.
+- Video present: not observed
+- Blog present: not observed
+- Practice-area pages seen in search results: personal injury, oil field accidents, truck accidents; summaries also list wrongful death, medical malpractice and motor vehicle accidents. Page URLs seen: /personal-injury/, /personal-injury/oil-field-accidents/, /personal-injury/truck-accidents/, /about-us/, /about-the-firm/.
+- Geo landing pages for surrounding cities: not observed (only Hobbs-targeted pages seen in results).
+- Offices (search listings, not confirmed on the site): 502 West Alto Drive, Hobbs, NM 88240, 575.393.1024; Tucson, AZ — 3250 East Speedway, Tucson, AZ 85716 (from a search summary; source page not opened).
+
+PageSpeed:
+- pagespeed.web.dev could not be opened from this environment; the PageSpeed Insights API was called for mobile and desktop and returned HTTP 429 RESOURCE_EXHAUSTED (daily quota) both times.
+- PageSpeed mobile score: not observed
+- PageSpeed desktop score: not observed
+(No estimate is recorded.)
+
+============================================================
+STEP 2 — GOOGLE BUSINESS PROFILE
+============================================================
+Google Maps / Google Business Profile could not be reached directly.
+- GBP found: not observed (direct). Third-party aggregators list the firm as "Zebas Law Firm, LLC", Hobbs, NM.
+- Star rating: 4.9 [UNCONFIRMED — sourced from trustanalytica.org (a search result describing it as a Google rating), not independently confirmed via Google]
+- Total review count: 42 [UNCONFIRMED — sourced from trustanalytica.org, not independently confirmed via Google]
+- Most recent review date: not observed
+- Primary category: not observed
+- Photos active: not observed
+- Posts active: not observed
+- Social: an Instagram account @zebaslaw exists (search result); activity not checked.
+
+============================================================
+STEP 3 — LOCAL 3-PACK SEARCHES
+============================================================
+Google local pack results could not be observed from this environment (no live Google Maps / local results access). Only organic search-engine results were available. Practice areas are inferred from the firm's search listings, not from a call.
+
+Practice Area 1: Personal injury / car accidents (Hobbs, NM)
+- Search 1 "Hobbs NM personal injury lawyer car accident attorney" (organic results only, run Nov 23, 2026): firm appears in the results: not observed on page one of this search. Local firms that did appear: Stout & Stout Lawyers, Parnall Law, Glasheen, Valles & Inderman Injury Lawyers, Reyna Law Firm, FCHC Law, Law Offices of Ruben Ortiz, Tawney, Acosta & Chaparro P.C. Pack position and pack review counts: not observed.
+- Search 2: not run
+- Search 3: not run
+Practice Area 2: Wrongful death, medical malpractice, truck and oil field accidents
+- Searches 1–3: not run (no pack access; seller to confirm which practice areas matter before these are worth running).
+
+============================================================
+STEP 4 — COMPETITOR REVIEW COUNTS
+============================================================
+Named local firms from the Hobbs search above. None verified on Google.
+- Competitor 1: Stout & Stout Lawyers (3319 A North Grimes, Hobbs, NM) — reviews: 39 and 44 on two different Birdeye listings; 32 on lawyers.com [UNCONFIRMED — sourced from Birdeye and lawyers.com, not independently confirmed via Google] — rating: 5.0 on Birdeye, 4.6 on lawyers.com [UNCONFIRMED — sourced from Birdeye and lawyers.com, not independently confirmed via Google]
+- Competitor 2: Parnall Law (hurtcallbert.com; Albuquerque-based per Martindale, serves Hobbs) — reviews: not found for the Hobbs listing — rating: 4.8 [UNCONFIRMED — sourced from a search-result summary of its own Google listing, not independently confirmed via Google]
+- Competitor 3: Glasheen, Valles & Inderman Injury Lawyers (1917 N Turner, Suite 200, Hobbs, NM) — reviews: 11 for the Hobbs listing [UNCONFIRMED — sourced from medicalmalpracticelawyernearme.com, not independently confirmed via Google]; a separate listing shows 4.9 on 1,887 reviews but that is a multi-office/Odessa listing and is not comparable — rating: 5.0 (Hobbs listing) [UNCONFIRMED — same source]
+Note: the firm's own figure (4.9 on 42, UNCONFIRMED) is not lower than any competitor figure found, so none of these firms may be described as out-reviewing Zebas Law without a live Google check.
+
+============================================================
+STEP 5 — DIRECTORY LISTINGS
+============================================================
+Source: search-result pages only; listing pages were not opened.
+- Avvo: found — https://www.avvo.com/attorneys/88240-nm-joseph-zebas-416467.html (Hobbs, NM; "Car Accident Lawyer")
+- FindLaw: found — Joe Zebas profile and a firm listing for "Zebas Law Firm LLC", Hobbs, NM
+- Lawyers.com / Martindale-Hubbell: found — "Zebas Law Firm L.L.C." and "Mr. Joseph M. Zebas", Hobbs, NM
+- Yelp: found — "ZEBAS JOSEPH M ATTY", 361 E Coronado Rd, Phoenix, AZ (marked "Updated December 2025" in the title; appears to be an older/different address from the Hobbs office)
+- Justia: not found in the searches run (a Justia Hobbs personal injury page exists; the firm was not seen in its snippet)
+- Others seen: medicalmalpracticelawyernearme.com, trustanalytica.org, nears.me, TopAttorney.com (Hobbs accident and injury list)
+- NAP inconsistencies: possible — Yelp shows a Phoenix address (361 E Coronado Rd) while the firm site and FindLaw/Lawyers.com show Hobbs, NM (502 W Alto Dr, 575.393.1024). Not confirmed by opening the listings. Seller to confirm.
+- Geo-targeting landing pages for surrounding cities: not observed.
+
+============================================================
+STEP 6 — GOOGLE ADS
+============================================================
+Google results pages could not be checked for ads from this environment. Search-engine query results used here did not return ad placements.
+Practice Area 1: Personal injury / car accidents
+- Firm ads observed: not observed
+- Named local competitors running ads: not observed
+Practice Area 2: Wrongful death / medical malpractice / truck and oil field accidents
+- Firm ads observed: not observed
+- Named local competitors running ads: not observed
+(The firm "does not appear" in any ad data we could see; that is not evidence it is not advertising.)
+
+============================================================
+STEP 7 — LOCAL SERVICE ADS
+============================================================
+- Firm appears in LSA: not observed
+- Google Screened: not observed
+- LSA review count: not observed
+- Named local competitors in LSA: not observed
+
+============================================================
+STEP 8 — META ADS
+============================================================
+facebook.com/ads/library could not be searched from this environment.
+- Firm has active ads: not observed
+- Named local competitor 1: Stout & Stout Lawyers — active ads: not observed
+- Named local competitor 2: Glasheen, Valles & Inderman Injury Lawyers — active ads: not observed
+
+============================================================
+STEP 9 — TRANSCRIPT EXTRACTION
+============================================================
+Transcript source: NONE. The trigger file had no transcript field and no transcript_status, and no full verbatim transcript was provided. No AI summary is available either. Whether a discovery call took place is unknown to this research. Everything below is "not stated"; nothing is inferred from HubSpot, team size, or listings.
+
+- Practice areas confirmed: not stated (search listings show personal injury, wrongful death, medical malpractice, motor vehicle, truck and oil field accidents — not confirmed by the firm)
+- Current lead sources: not stated
+- Ads ever run: not stated
+- Firm identity check: matches — the trigger's "Zebas Law" is the same firm as the website/listings' "Zebas Law Firm, LLC" (owner Joseph "Joe" M. Zebas, founded 2006), and the contact's email domain zebaslaw.com is the firm's domain. Not verified against HubSpot (unreadable) or a call; the 623 area code on the contact's phone does not match the Hobbs, NM office (flag 4).
+- Team size: not stated (search results name Joe Zebas and associate Austin Wade; website not readable, so no full roster)
+- Team size (total headcount): not stated
+- Annual revenue (gross / case value): not stated
+- Annual revenue (net / take-home / collected): not stated
+- Revenue (annual, best estimate): not stated
+- Fee structure: not stated
+- Revenue goal: not stated, use 2x current revenue
+- Average case value: not stated
+- Current close rate: not stated — default to 15%
+- Number of locations: not stated (listings show Hobbs, NM and Tucson, AZ; unconfirmed)
+- Spanish campaign needed: not stated
+- Dominant buying motive: not stated — no call record, so none inferred
+- Any profitability claims made by prospect: none stated
+- Any claims about case types or practice areas: none stated
+- Stated call focus / product interest: not stated — no call record. It is NOT "standard marketing/growth discovery"; nothing is known about what the call was about.
+- Primary engagement: not stated
+- Products discussed on call: none
+- Lead-gen gap stated: not stated
+- Existing marketing/SEO/ad vendor engagements: none stated (the site appears to be FindLaw-hosted, which is typically a paid FindLaw marketing product, but nothing says that is an active contract — seller to ask)
+- Budget constraints stated: none stated
+- Bookkeeping volume: not stated; trust account: not stated
+- Financial goals stated (for the ProfitOS slides): none stated
+
+Investment inputs:
+- Ad spend practice area: Accident/Injury — source: firm's search listings, NOT the call; confirm before use
+- Geo market tier: Tier 5 (Hobbs, NM — small market; a Tucson office is also listed (Tier 4); primary market not confirmed)
+- Market competitiveness: Medium — default; not assessed (no ads or 3-pack data observed)
+- Current monthly ad spend (stated): not stated
+- Current cost per signed case (stated): not stated
+- Current cost per lead (stated): not stated
+- Average case value (stated, one figure): not stated
+- Close rate (stated): not stated
+- Referral share of cases (stated): not stated
+- Revenue goal (annual, one figure): not stated
+- Maximum monthly ad budget (stated): not stated
+
+Key prospect quotes: none — no transcript and no AI summary.
+
+============================================================
+KPI AND DIAGNOSIS (STEP 9B)
+============================================================
+Product focus this supports: not stated — no call record, so no product is indicated
+Headline KPI: none — no figure said on a call
+  KPI status: none usable — no qualitative pain point either (no call record)
+  Why this KPI: n/a
+Supporting figures (0–3): none
+Client-stated goal for this KPI: none stated
+KPI quotes (2–4, verbatim, client only): none on the call (no transcript)
+Client's why (verbatim, client only): none on the call
+Cost of inaction (verbatim, client only): none on the call
+Legacy Staircase discussed: no
+Diagnosis (3–4 causes, biggest first):
+  1. TENTATIVE, seller to verify first: the firm's website certificate appears to be expired — evidence: WebFetch reported "certificate has expired" for zebaslaw.com and www.zebaslaw.com, and an openssl check showed the served certificate (CN=fs-findlaw.com) expired Dec 31, 2024 — source: research, STEP 1, both tools run Nov 23, 2026 from the build environment; not confirmed in a browser — fixed by: Web + SEO / website rebuild (only if the seller confirms the warning appears for visitors)
+     Target basis: none — flag for seller
+  (No other causes are recorded: there is no call data, and ads, GBP, PageSpeed and local-pack findings were not observed.)
+Plan inputs:
+  - Fractional CTO / AI Workforce Pro: none stated
+  - Managed Operations: none stated
+  - FCFO / bookkeeping: none stated
+Alternate KPI (if the seller changes the package): none
+Seller should confirm on the next call:
+  - What the call (or the Dec 7 proposal call) is actually about, and which products were discussed or priced; whether a discovery call took place and where its notes or recording are
+  - Primary market and office(s): Hobbs, NM, Tucson, AZ, or the Phoenix area (contact has a 623 number); number of locations
+  - Team size and roles (Joe Zebas, Austin Wade, staff); who handles intake
+  - Practice-area mix (personal injury, truck, oil field, wrongful death, med mal), average case value, fee structure, close rate
+  - Current annual revenue, revenue goal, and referral share of cases
+  - Current lead sources; ads ever run, current ad spend, cost per lead / signed case; any current marketing or FindLaw contract
+  - Budget limits, and what Joe wants the firm to do for his life (DBM)
+  - Open https://www.zebaslaw.com in a browser: does it load, is there a "not secure" warning, headline, CTA, contact form, mobile view
+  - Live Google check: GBP rating and review count (UNCONFIRMED 4.9 / 42 here), primary category, last review date; 3-pack position for "Hobbs personal injury lawyer" and similar
+  - Live checks: Google Ads and LSA for Hobbs personal injury searches; Meta Ad Library for Zebas Law and Stout & Stout; PageSpeed mobile and desktop scores
+  - Whether Spanish-language marketing matters
+  - Whether the Yelp Phoenix address (361 E Coronado Rd) and the Tucson address are correct and current for the firm
+
+============================================================
+STEP 10 — COMPETITIVE URGENCY SCORE
+============================================================
+Score: not assigned. A score needs observed ad, local-pack and review data for the firm and its competitors; none could be observed (STEP 3–8), and every review figure is UNCONFIRMED.
+Named local firms that rank for Hobbs personal injury searches, to be assessed once the live checks are done: Stout & Stout Lawyers, Parnall Law, Glasheen, Valles & Inderman Injury Lawyers (also Reyna Law Firm, FCHC Law). Their position relative to Zebas Law was not observed, so no threat is asserted.
+Dynamic sentence: none — not scored.
+
+============================================================
+PASS 2 — VERIFICATION CHECKLIST (completed)
+============================================================
+- Numbers: only observed data is recorded; every review figure is tagged UNCONFIRMED; no PageSpeed numbers (not observed, not estimated).
+- No competitor is described as out-reviewing the firm.
+- No ad section says the firm is not running ads — all say "not observed".
+- Machine-read fields are in format: Primary engagement "not stated"; Products discussed on call "none"; Lead-gen gap "not stated"; Revenue "not stated"; Team size "not stated".
+- STEP 9B has no calculated, converted or estimated figure; its only cause is labelled TENTATIVE with a "Target basis".
+- Nothing was fabricated; gaps are listed for the seller.
