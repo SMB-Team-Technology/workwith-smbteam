@@ -11,6 +11,8 @@ what we're recommending → what it costs.
 
 Cover   — Growth, Profit, and Freedom Roadmap (firm name, seller and date —
           filled in by the engine; no FILL values)
+LeadsOS — Vanessa's marketing slides, copied in when the package has marketing
+          (from .source-decks/LeadsOS.pptx; no FILL values)
 Slide 1 — Your Priorities, In Your Words  (the call KPI + the client's quotes)
 Slide 2 — The Diagnosis                   (the root causes behind that KPI)
 Slide 3 — The Plan                        (actions tied to causes + what we'll measure)
@@ -46,44 +48,34 @@ from PIL import ImageFont
 import os
 import re
 
-
 # ═══════════════════════════════════════════════════════════════════
 # FILL — Replace every placeholder. Do not delete any variable.
 # ═══════════════════════════════════════════════════════════════════
 
 # ── BUILD NOTES (internal — never shown on a slide) ──────────────
 # Marketing package: Full Service Marketing — Starter — bundled $4,997/mo, stand-alone $5,697/mo, savings $700/mo
-# Non-marketing package(s): Elite Coach — bundled $2,600/mo, stand-alone $3,497/mo, savings $897/mo
+# Non-marketing package(s): Managed Operations Tier 1 — bundled $3,297/mo, stand-alone $3,497/mo, savings $200/mo
 # LAW package: none
-# Total monthly investment: $7,597/mo · total savings: $1,597/mo · pricing_mode: bundled
-# Setup fees: AI Avatar setup $1,850 (Full Service Marketing — Starter, not waived) · Setup fee $1,500 (Elite Coach, not waived) · total $3,350 (one-time)
-# Year one: $94,514 (12 × $7,597/mo in fees + $3,350 one-time setup)
+# Total monthly investment: $8,294/mo · total savings: $900/mo · pricing_mode: bundled
+# Setup fees: AI Avatar setup $1,850 (not waived) · total $1,850 (one-time)
+# Year one: $101,378 (from package_decision.json → investment.year_one_total — 12 × $8,294 + $1,850 setup)
 # Ad spend (copied from investment.ad_spend — computed in code, never by hand):
 #   $6,200–$20,000/mo · low end: channel minimums $3,000 + $2,000 + $1,200 = $6,200 · high end: 20% rule: $1,500,000 goal × 20% ÷ 12 × 1 geo − $4,997 fee = $20,003; reverse math: not possible (no case value)
-# Return (copied from investment.return): none — no case value (stated or default) for practice area "Other", so no return table
-# Investment inputs used: practice area Other (research notes) · geo tier 4 (research notes) · competitiveness Medium (default) · revenue $750,000 (seller_confirmed in Slack) · revenue goal $1,500,000 (not stated — 2× current revenue default) · close rate 15% (default) · flags: No case value (stated or default) — return projection left out.
-# Why this range: to turn searches from people denied disability benefits into signed cases
-# Pillar review: Lead Gen amber — not observed (ads, LSA, 3-pack not inspectable; nothing on call) · Intake red-unknown — not stated on a call · Team amber — one attorney named across four offices on the site · Profit unknown — not stated
-# KPI (slide 1): none usable: qualitative — plain research observation (site names one attorney; four offices in three states), no call figure (STEP 9B: none usable)
-# Diagnosis (slide 2): 1. One named attorney, four offices — site bio and footer — research STEP 1 · 2. Two phone numbers across listings — site footer 586-463-6666 vs Avvo (586) 666-6850 — research STEP 5 · 3. English-only website — no Spanish-language option seen — research STEP 1 (STEP 9B)
-# Targets (slides 2–3): none — seller note (STEP 9B: Target basis none for every cause)
+# Return (copied from investment.return): none — return projection left out (practice area "Other", no case value stated; investment.flags). Not held for the 20× ceiling.
+# Investment inputs used: practice area Other (research notes) · geo tier 4 (research notes) · competitiveness Medium (default) · revenue $750,000 (seller_confirmed) · goal $1,500,000 = 2× current revenue (not stated — default) · close rate 15% (default) · no case value, no current ad spend, no stated CPL/cost per case · flags: "No case value (stated or default) — return projection left out." · needs_seller_review: true
+# Why this range: to bring in more high-quality disability leads that turn into signed cases
+# Pillar review: Lead Gen amber/unrated — no paid ads running per seller context in package_decision.json, nothing else observed (ads, LSA, 3-pack not observable) · Intake unrated — not stated · Team unrated — one attorney named on the site, headcount not stated (3 assumed in the decision file) · Profit unrated — not stated
+# KPI (slide 1): none usable: qualitative — no call record in the research notes (STEP 9B "none usable"); headline restates the top need the seller recorded in package_decision.json selection_notes (quality leads); no figure used
+# Diagnosis (slide 2): 1. Paid ads not running — "no PPC or paid ads right now", stated by the client per seller context in package_decision.json — Seller, on the call · 2. One attorney, four offices — site names Christopher Pozios across 4 offices in 3 states — research STEP 1 (STEP 9B cause 1) · 3. Phone numbers don't match across listings — site 586-463-6666 vs Avvo (586) 666-6850 — research STEP 5 (STEP 9B cause 2)
+# Targets (slides 2–3): none — seller note (no call data to base one on)
 # Client's why / cost of inaction (slide 1): none on the call
-# Closing quote (slide 5): none — no transcript, no verbatim client line
+# Closing quote (slide 5): none — no verbatim transcript
 # Legacy Staircase slide: left out — not walked through on the call
-# Plan (slide 3): no plan inputs on file (STEP 9B: none stated for every product) — each action uses the product's first catalog deliverables, tied to the research diagnosis; see SELLER_NOTES["plan"]
-# Roadmap (slide 6): Phase 1 = Full Service Marketing — Starter + Elite Coach · Phase 2 = Fractional COO — starts: once the owner is not needed for every day-to-day operations decision — basis: default (package has no FCOO; no call plan on file) · Phase 3 = Fractional CFO + Bookkeeping — starts: once growth makes financial reporting a priority — basis: default (no call plan on file)
-# What You Told Us (slide 1 quotes and tie lines): none — no transcript, PROSPECT_QUOTES = []
-# Overrides applied: seller override — Elite 360 (Full Service Marketing — Starter + Elite Coach) per Slack request on 2026-11-18 (package_source "rules" with seller override in selection_notes); the Transcript-Stated Need overrides do not apply to a seller choice. Revenue $750,000 confirmed by seller (revenue_verified true). No rule broken by the package itself.
-# Escalation flags:
-#   - No discovery-call record: call focus, revenue source, team size (assumed 3), DBM and every call figure are not on file — seller to confirm on the Nov 20 call.
-#   - Combined cap check: 35% of monthly revenue is $21,875; fees $7,597 + high-end ad spend $20,000 = $27,597 is over it (low end $6,200 → $13,797 is within). Seller to review the ad spend range before the deck goes out.
-#   - High end of ad spend rests on a default goal (2× current revenue), not a goal the client stated; no case value, so no return table (needs_seller_review true).
-#   - Starter includes Google profile set-up for up to 2 locations; the site lists 4 offices (3–4 locations is the Growth minimum) — seller to confirm which offices matter.
-#   - Possible existing web/SEO vendor (site footer credits MileMark Media) — seller to confirm any current contract.
-#   - Local Services Ads availability for Social Security disability is unconfirmed; the ad spend channel minimums include LSA ($2,000) — no LSA is named on the deck.
-#   - Review counts unconfirmed — verify live before the call (Avvo 5.0 / 46 and a 4.9 / 125 search snippet are UNCONFIRMED, not Google figures; none used in the deck).
-#   - Setup fees ($1,850 AI Avatar setup, $1,500 Elite Coach) are not waived; waiving is the seller's call in Slack.
-#   - PageSpeed, Google Business Profile, 3-pack, ads and competitor review data were not observed in research — no speed, review or competitor claim is on the deck.
+# Plan (slide 3): Launch paid search and LSA — tied to cause 1 (no paid ads today, per seller context) · Plan the firm's growth rhythm — tied to cause 2 (one attorney across four offices; Managed Operations Tier 1 catalog deliverables, no STEP 9B plan input) · Clean up listings and reviews — tied to cause 3 (STEP 5 phone mismatch)
+# Roadmap (slide 6): Phase 1 = Full Service Marketing — Starter + Managed Operations Tier 1 · Phase 2 = Managed Operations Tier 2 — starts: first management team in place — basis: next tier of the package already bought (firm must meet Tier 2's revenue and team-size requirements first) · Phase 3 = FCFO Advisor — starts: steering toward profit goals — basis: Fractional CFO is not in Phases 1–2 (revenue-fit level for $750K); no call line, seller to confirm interest
+# What You Told Us (slide 1 quotes and tie lines): none — the research notes have no transcript and no Key prospect quotes, so PROSPECT_QUOTES = []
+# Overrides applied: seller override (package_source "trigger_override") — Full Service Marketing — Starter + Managed Operations Tier 1, used as-is; the four Transcript-Stated Need overrides do not apply to a seller override. Rule note: the research notes record MileMark Media in the site footer as a possible existing web/SEO vendor, and the seller context in package_decision.json names a current website/SEO vendor — the package's website and SEO overlap with that, seller to confirm scope. Revenue $750,000 confirmed by the seller (needs_revenue_confirmation false).
+# Escalation flags: ad spend range rests on a default revenue goal (2× revenue), not a stated one · 35% cap check: $750K ÷ 12 × 35% = $21,875/mo; fees $8,294 + low end $6,200 = $14,494 is within it, but fees $8,294 + high end $20,000 = $28,294 is above it — seller to reconcile before quoting the high end · No case value stated, so no return table (seller may supply an average case value and run reprice) · Practice area "Other" has no CPL benchmark · ad_spend.needs_seller_review true · LSA availability for Social Security disability unconfirmed (research STEP 7) · review counts unconfirmed (all UNCONFIRMED in the notes) — none printed in the deck · PageSpeed, Google profile, 3-pack, ads and competitor data were not observed — rerun live before the call · Team size assumed 3 in the decision file — confirm
 
 # Report metadata
 FIRM_NAME      = "Nationwide Disability Law"
@@ -93,11 +85,11 @@ OUTPUT_PATH    = "nationwide-disability-law/Nationwide Disability Law_November 2
 # ── Slide 1 — Your Priorities, In Your Words ─────────────────────
 KPI_FOCUS = {
     "kind": "qualitative",
-    "label": "Firm footprint",
-    "headline": "One named attorney across four offices",
+    "label": "Lead quality",
+    "headline": "Quality leads are the top need",
     "headline_is_quote": False,
-    "detail": "The website names one attorney and lists offices in Michigan, New York and Florida.",
-    "baseline": "One named attorney",
+    "detail": "The top need raised on the call is a steadier flow of quality leads.",
+    "baseline": "Not yet measured",
     "stats": [],
 }
 
@@ -106,84 +98,90 @@ PROSPECT_QUOTES = []
 CLIENT_WHY = None
 COST_OF_INACTION = None
 
+# ── Optional slide — Lawyer Legacy Staircase ─────────────────────
 STAIRCASE = None
 
 # ── Slide 2 — The Diagnosis ───────────────────────────────────────
-DIAGNOSIS_TITLE = "Why the Firm Rests on One Name"
-DIAGNOSIS_INTRO = "Three things stand out in our research."
+DIAGNOSIS_TITLE = "What Sits Behind Lead Quality"
+DIAGNOSIS_INTRO = "Three things stand out from the call and our research."
 
 DIAGNOSIS = [
-    {"title": "One attorney, four offices", "metric": "4 offices", "metric_label": "in 3 states, 1 attorney named",
-     "target": None, "body": "The site names one attorney across all four office locations.",
-     "source": "Research: website bio and footer"},
-    {"title": "Two phone numbers listed", "metric": "", "metric_label": "",
-     "target": None, "body": "Site lists 586-463-6666; Avvo lists (586) 666-6850.",
-     "source": "Research: website and Avvo"},
-    {"title": "English-only website", "metric": "", "metric_label": "",
-     "target": None, "body": "No Spanish-language option seen on the site.",
-     "source": "Research: website"},
+    {"title": "Paid ads are not running today", "metric": "", "metric_label": "",
+     "target": None, "body": "Stated on the call: no PPC or paid ads right now.",
+     "source": "Seller, on the call"},
+    {"title": "One attorney, four offices", "metric": "4 offices", "metric_label": "in 3 states, one attorney named",
+     "target": None, "body": "The site names one attorney across MI, NY and FL offices.",
+     "source": "Website research, Nov 20"},
+    {"title": "Phone numbers don't match", "metric": "", "metric_label": "",
+     "target": None, "body": "Site shows 586-463-6666; Avvo shows (586) 666-6850.",
+     "source": "Website vs Avvo listing"},
 ]
 
-DIAGNOSIS_FIX_LINE = "Marketing builds the firm's visibility; coaching builds the structure behind the one named attorney."
+DIAGNOSIS_FIX_LINE = "The plan puts paid ads, matched listings and a planning rhythm in place."
 
 # ── Slide 3 — The Plan ────────────────────────────────────────────
-PLAN_KICKER = "Marketing and coaching"
-PLAN_TITLE  = "Build the Firm Behind the Name"
+PLAN_KICKER = "Paid media, listings and planning"
+PLAN_TITLE  = "Bring In More Quality Leads"
 
 PLAN = [
-    {"title": "Build the firm behind the name", "fixes": 1,
-     "actions": ["Weekly coaching call on management and marketing",
-                 "Monthly 1:1 call with a business coach"],
-     "metric": "1:1 coach calls", "target": None, "baseline": None},
-    {"title": "Make every listing say the same", "fixes": 2,
-     "actions": ["Google profile set-up, up to 2 locations",
-                 "Monthly and quarterly marketing strategy reviews"],
+    {"title": "Launch paid search and LSA", "fixes": 1,
+     "actions": ["Google Ads, Local Services Ads and Meta retargeting",
+                 "Call tracking on up to 5 local numbers"],
+     "metric": "Cost per lead", "target": None, "baseline": None},
+    {"title": "Plan the firm's growth rhythm", "fixes": 2,
+     "actions": ["Quarterly planning with Operations Team",
+                 "Core systems and meeting rhythms"],
+     "metric": "Quarterly plans done", "target": None, "baseline": None},
+    {"title": "Clean up listings and reviews", "fixes": 3,
+     "actions": ["Google profile set up for up to 2 locations",
+                 "Done-for-you review requests, up to 250 a month"],
      "metric": "Matching listings", "target": None, "baseline": None},
-    {"title": "Make the website work harder", "fixes": 3,
-     "actions": ["Custom WordPress website build",
-                 "Google Ads and Meta retargeting management"],
-     "metric": "Website leads", "target": None, "baseline": None},
 ]
 
-PLAN_NOTE = "30,000 words of SEO content at launch · done-for-you review requests · practice area Mastermind pod"
+PLAN_NOTE = "Monthly website edits, monthly and quarterly strategy reviews, and weekly Growth Academy calls."
 
 # ── Slide 4 — The Recommended Strategy ────────────────────────────
-STRATEGY_TITLE = "Two Pieces, One Strategy"
+STRATEGY_TITLE = "Three Pieces, One Strategy"
 
 STRATEGY = [
-    {"product": "Full Service Marketing — Starter", "title": "Get found", "channels": "Website · SEO · Google Ads · Meta",
+    {"product": "Full Service Marketing — Starter", "title": "Get found", "channels": "Website · SEO · Google profile",
      "deliverables": ["Custom WordPress website build",
                       "30,000 words of SEO content at launch",
-                      "Google profile set-up, up to 2 locations",
-                      "Done-for-you review requests, up to 250 a month",
-                      "Monthly and quarterly marketing strategy reviews"],
-     "why": "One consistent site, listing and ad footprint across the firm's offices."},
-    {"product": "Elite Coach", "title": "Lead the firm", "channels": "Coaching · Mastermind · Workshops",
-     "deliverables": ["Weekly group coaching call, rotating topics",
-                      "1 × 60-minute 1:1 call a month",
-                      "Practice area Mastermind pod",
-                      "In-person ticket to each quarterly workshop",
-                      "5 free SMB-OS seats"],
-     "why": "One attorney is named across four offices; coaching adds structure around that role."},
+                      "Google profile set up for up to 2 locations",
+                      "2 premium 30+ DR backlinks a year"],
+     "why": "One attorney across four offices needs a site and listings that tell one clear story."},
+    {"product": "Full Service Marketing — Starter", "title": "Get the call", "channels": "Google Ads · LSA · Meta Ads",
+     "deliverables": ["Paid ads on Google PPC, LSA and Meta",
+                      "Call tracking, 5 local numbers",
+                      "Review requests, up to 250 a month",
+                      "Monthly and quarterly strategy reviews"],
+     "why": "Quality leads are the top need, and no paid ads are running today."},
+    {"product": "Managed Operations Tier 1", "title": "Run it", "channels": "Planning · systems · Growth Academy",
+     "deliverables": ["Quarterly planning and project support",
+                      "Core systems: EOPs, scorecards, workflows",
+                      "Up to 2 × 60-minute sessions a month",
+                      "Weekly Growth Academy coaching calls",
+                      "5 SMB-OS seats"],
+     "why": "Gives a firm built around one attorney a planning rhythm and core systems."},
 ]
 
 # ── Seller prep (never in the deck) ───────────────────────────────
 SELLER_NOTES = {
-    "priorities": "No discovery-call record was on file, so there is no client number or quote. This slide shows a plain research observation (one named attorney, four offices). Ask on the call: annual revenue and fee structure, average case value, cost per lead or per signed case, current lead sources and ad spend, team size and roles, and what they most want the firm to do for them. Once you have one number the package moves, swap it in as the KPI. Also ask what the biggest frustration is, and in their words why it matters, for the quote cards and the why / cost-of-inaction bar.",
-    "diagnosis": "All three causes come from website and directory research, not from the call. Confirm which phone number is the primary line before quoting the listing mismatch, and ask whether a Spanish-language audience matters (Naples / Miami ties) before leaning on it. No targets are shown: ask what they want to hit.",
-    "plan": "No plan inputs were on file, so each action uses the first catalog deliverables of the recommended products. Spanish-language work is not a catalog deliverable of this package; if it matters, scope it with the team. Re-tie each action to something the client says on the call.",
-    "strategy": "Starter covers Google profile set-up for up to 2 locations; the site lists four offices. Confirm which offices matter most. Ask whether any web or SEO vendor is under contract today (the site footer credits MileMark Media).",
-    "investment": "Review the ad spend range before sending. The high end rests on a default goal (twice current revenue), not a stated one, and there is no return table because no case value is on file. Ask for their average case fee and goal so the range and return can be rechecked before sending.",
-    "roadmap": "Phases 2 and 3 follow our default order (operations, then financial) because no next step was set on a call. Later phases are scoped and priced when the firm gets there; ask what they want next to reorder them.",
+    "priorities": "No usable number: the research notes have no call record, so the KPI is qualitative and there are no client quotes. The top need (quality leads) comes from the seller context in package_decision.json, not a transcript. Ask for: current lead sources, cost per lead and per signed case, average case value, close rate and revenue goal, and confirm revenue and fee structure (SSDI/SSI fees are SSA-capped).",
+    "diagnosis": "Causes 2 and 3 are website and directory research, not call evidence. Cause 1 is the client's statement as relayed by the seller. Confirm which phone line is primary and whether the 305 contact number signals a Florida focus. Targets are left off: no call data supports one.",
+    "plan": "No STEP 9B plan inputs, so the Managed Operations action uses its first catalog deliverables. Ask which market to grow first (Michigan, Florida or nationwide) and whether a Spanish-language campaign is wanted. LSA availability for Social Security disability is unconfirmed: check before promising it.",
+    "strategy": "The site footer credits MileMark Media. If a web or SEO vendor is under contract, confirm how this package's website and SEO would replace or sit alongside it before the call.",
+    "investment": "Ad spend high end rests on a default goal (2x current revenue), not a stated one, and sits above the 35% spend cap at the high end; review the range before sending. No return table: no case value is on file. If Chris gives an average case value, rerun reprice.",
+    "roadmap": "Phase 2 needs the firm to meet Managed Operations Tier 2's revenue and team-size requirements; headcount is not confirmed (only one attorney is visible online). Phase 3 (Managed Financials) was not raised on a call: read interest before leaning on it.",
 }
 
 # ── Slide 5 — Your Investment ─────────────────────────────────────
 PRODUCT_LINES = {
-    "Full Service Marketing — Starter": "Custom website · SEO content · Google Ads · Meta ads · Review requests",
-    "Elite Coach": "Weekly coaching call · Monthly 1:1 · Mastermind pod · Workshop tickets",
+    "Full Service Marketing — Starter": "Website · SEO · Google Ads · LSA · Meta Ads · Google profile",
+    "Managed Operations Tier 1": "Quarterly planning · core systems · working sessions · Growth Academy",
 }
 
-AD_SPEND_WHY = "to turn searches from people denied disability benefits into signed cases"
+AD_SPEND_WHY = "to bring in more high-quality disability leads that turn into signed cases"
 
 CLOSING_QUOTE = None
 
@@ -192,24 +190,24 @@ ROADMAP_TITLE = "Where This Goes From Here"
 
 ROADMAP = [
     {"phase": "Foundation", "when": "Starting now",
-     "products": ["Full Service Marketing — Starter", "Elite Coach"],
-     "items": ["A website, SEO and ads built around your offices",
-               "Weekly coaching and a monthly coach call",
-               "Listings and Google profiles kept consistent"],
-     "unlocks": "A firm whose reputation and structure reach beyond one name."},
-    {"phase": "Operational Scale", "when": "Once day-to-day operations need more than the owner",
-     "products": ["Fractional COO"],
-     "items": ["Dedicated Fractional COO hours each month",
-               "Process and project work led alongside you"],
-     "unlocks": "Day-to-day operations that run without needing you in every decision."},
-    {"phase": "Optimize", "when": "Once growth makes clear financials a priority",
-     "products": ["Fractional CFO", "Bookkeeping"],
-     "items": ["Fractional CFO review of the P&L and balance sheet",
-               "Monthly financial statements from bookkeeping"],
-     "unlocks": "Clear numbers behind every decision about where the firm goes next."},
+     "products": ["Full Service Marketing — Starter", "Managed Operations Tier 1"],
+     "items": ["Website, SEO and paid ads built to work together",
+               "A planning rhythm and core systems for the firm",
+               "Reviews and listings kept in step"],
+     "unlocks": "A firm that brings in the right cases and runs on a plan, not on you alone."},
+    {"phase": "Operational Scale", "when": "Once the firm has its first management team in place",
+     "products": ["Managed Operations Tier 2"],
+     "items": ["Systems for delegation and accountability",
+               "Manager training plans for the new team"],
+     "unlocks": "A team that performs without you in every meeting, so you can step back from daily decisions."},
+    {"phase": "Optimize", "when": "Once the firm is steering toward its profit goals",
+     "products": ["FCFO Advisor"],
+     "items": ["A monthly look at the P&L and balance sheet",
+               "Red flags turned into clear priorities and goals"],
+     "unlocks": "Know where profit leaks and what to do next, so profit is planned, not discovered."},
 ]
 
-# ── ProfitOS slides (added by the engine after the roadmap) ───────
+# ── ProfitOS slides ───────────────────────────────────────────────
 PROFITOS_GOALS = []
 PROFITOS_WHY = None
 
@@ -287,8 +285,67 @@ elif BOOKKEEPING_LEVEL:
 else:
     PROFITOS_SLIDES = []
 
+# ── LeadsOS marketing slides (copied from Vanessa's deck) ─────────
+# Any package with a marketing product gets the client-facing slides of
+# Vanessa's LeadsOS deck between the cover and the proposal (her deck leads
+# into "what we discovered + what we recommend"). The deck is a private file in
+# the HubSpot "Proposal Source Decks" folder — never in this public repo — that
+# scripts/fetch-source-deck.mjs downloads to .source-decks/LeadsOS.pptx before
+# a build. Her slides are copied as they are, scaled to this deck's size; her
+# speaker notes go to the seller prep, never into the deck.
+#   - Everything from her "SUPPLEMENTAL" divider on (client results that need
+#     client consent) is left out.
+#   - A slide containing a phrase in LEADSOS_HOLD is left out until it is
+#     confirmed for every client deck: delete the phrase here to add it back.
+LEADSOS_HOLD = ()   # nothing held: Vanessa cleared the 37% and $100M+ figures (Nov 20)
+LEADSOS_DECK = os.environ.get("LEADSOS_DECK") or os.path.join(
+    os.path.dirname(os.path.dirname(os.path.abspath(__file__))), ".source-decks", "LeadsOS.pptx")
+
+
+def _slide_text(slide):
+    return "\n".join(sh.text_frame.text for sh in slide.shapes if sh.has_text_frame)
+
+
+def _slide_title(slide):
+    """Her slide's headline: the text set in the largest font."""
+    best, size = "", 0
+    for sh in slide.shapes:
+        if not sh.has_text_frame:
+            continue
+        for para in sh.text_frame.paragraphs:
+            for r in para.runs:
+                if r.text.strip() and r.font.size and r.font.size > size:
+                    best, size = para.text, r.font.size
+    return " ".join(best.split())[:70]
+
+
+def load_leadsos():
+    """(source Presentation or None, [(her slide number, slide, title)], [held numbers], why-left-out)."""
+    if not load_decision().get("marketing_name"):
+        return None, [], [], None
+    if not os.path.isfile(LEADSOS_DECK):
+        return None, [], [], (f"the LeadsOS source deck wasn't found at {LEADSOS_DECK} "
+                              "(the build downloads it from HubSpot: node scripts/fetch-source-deck.mjs)")
+    try:
+        src = Presentation(LEADSOS_DECK)
+    except Exception as e:  # a corrupt download must not stop the proposal
+        return None, [], [], f"the LeadsOS source deck couldn't be opened ({e})"
+    keep, held = [], []
+    for n, slide in enumerate(src.slides, 1):
+        text = _slide_text(slide)
+        if re.match(r"\s*SUPPLEMENTAL\b", text):
+            break
+        if any(h in text for h in LEADSOS_HOLD):
+            held.append(n)
+            continue
+        keep.append((n, slide, _slide_title(slide)))
+    return src, keep, held, None
+
+
+LEADSOS_SRC, LEADSOS_SLIDES, LEADSOS_HELD, LEADSOS_MISSING = load_leadsos()
+
 # Slide order. The staircase slide is optional (STAIRCASE in the FILL).
-SLIDE_ORDER = (["cover", "priorities"] + (["staircase"] if STAIRCASE else []) +
+SLIDE_ORDER = (["cover"] + [f"leadsos_{n}" for n, _, _ in LEADSOS_SLIDES] + ["priorities"] + (["staircase"] if STAIRCASE else []) +
                ["diagnosis", "plan", "strategy"] + (["rollout"] if SHOW_ROLLOUT else []) +
                ["investment", "roadmap"] + PROFITOS_SLIDES)
 PAGE = {key: i + 1 for i, key in enumerate(SLIDE_ORDER)}
@@ -697,15 +754,118 @@ SLIDE_TITLES = {"cover": "Cover", "priorities": "Your Priorities, In Your Words"
                 "diagnosis": "The Diagnosis", "plan": "The Plan", "strategy": "The Recommended Strategy",
                 "rollout": "Rollout Plan", "investment": "Your Investment",
                 "roadmap": "What Happens Next",
-                "pos_goals": "ProfitOS — Your Goals", "pos_two_sides": "ProfitOS — Reliable Numbers to Confident Action",
-                "pos_books": "ProfitOS — Bookkeeping Levels", "pos_questions": "ProfitOS — Questions You Can Answer",
-                "pos_analysis": "ProfitOS — The Analysis", "pos_plan": "ProfitOS — Your Plan",
-                "pos_level": "ProfitOS — Your Fractional CFO Level", "pos_ladder": "ProfitOS — Leadership Matched to Your Stage"}
+                "pos_goals": "Managed Financials — Your Goals", "pos_two_sides": "Managed Financials — Reliable Numbers to Confident Action",
+                "pos_books": "Managed Financials — Bookkeeping Levels", "pos_questions": "Managed Financials — Questions You Can Answer",
+                "pos_analysis": "Managed Financials — The Analysis", "pos_plan": "Managed Financials — Your Plan",
+                "pos_level": "Managed Financials — Your Level", "pos_ladder": "Managed Financials — Leadership Matched to Your Stage"}
 
 
 def seller_prep_path():
     base = re.sub(r"_Proposal\.pptx$|\.pptx$", "", OUTPUT_PATH)
     return base + "_Seller_Prep.txt"
+
+
+def _source_theme_colors(src):
+    """scheme color name → hex, from the source deck's theme (her slides refer
+    to a few theme colors, which this deck's theme would otherwise recolor)."""
+    try:
+        theme = next(r.target_part for r in src.slide_masters[0].part.rels.values()
+                     if r.reltype.endswith("/theme"))
+        root = etree.fromstring(theme.blob)
+    except Exception:
+        return {}
+    ns = {"a": "http://schemas.openxmlformats.org/drawingml/2006/main"}
+    out = {}
+    for el in root.findall(".//a:clrScheme/*", ns):
+        c = el.find("a:srgbClr", ns)
+        if c is None:
+            c = el.find("a:sysClr", ns)
+            val = c.get("lastClr") if c is not None else None
+        else:
+            val = c.get("val")
+        if val:
+            out[etree.QName(el).localname] = val
+    for alias, real in (("tx1", "dk1"), ("bg1", "lt1"), ("tx2", "dk2"), ("bg2", "lt2")):
+        if real in out:
+            out[alias] = out[real]
+    return out
+
+
+# Attributes that carry a length and shrink with the slide: positions and
+# sizes (EMU), font sizes and spacing (hundredths of a point), line widths,
+# text insets and shadow offsets.
+_SCALE_ATTRS = {"off": ("x", "y"), "chOff": ("x", "y"), "ext": ("cx", "cy"), "chExt": ("cx", "cy"),
+                "rPr": ("sz", "spc", "kern"), "defRPr": ("sz", "spc", "kern"),
+                "endParaRPr": ("sz", "spc", "kern"), "ln": ("w",),
+                "bodyPr": ("lIns", "tIns", "rIns", "bIns"), "spcPts": ("val",),
+                "outerShdw": ("blurRad", "dist"), "innerShdw": ("blurRad", "dist")}
+_FOOTER_NUM = re.compile(r"(LeadsOS for Law Firms\s*·\s*\d{4})\s*·\s*\d+\s*$")
+
+
+def copy_source_slide(prs, src_slide, scale, theme):
+    """Append a copy of another deck's slide: its background, shapes and
+    pictures (links kept), scaled to this deck's size. Speaker notes are not
+    copied. Returns the new slide."""
+    import copy, io
+    dst = new_slide(prs)
+    R = "http://schemas.openxmlformats.org/officeDocument/2006/relationships"
+    rid = {}
+    for old, rel in src_slide.part.rels.items():
+        kind = rel.reltype.rsplit("/", 1)[-1]
+        if kind in ("notesSlide", "slideLayout"):
+            continue
+        if rel.is_external:
+            rid[old] = dst.part.relate_to(rel.target_ref, rel.reltype, is_external=True)
+        elif kind == "image":
+            rid[old] = dst.part.get_or_add_image_part(io.BytesIO(rel.target_part.blob))[1]
+    csld = copy.deepcopy(src_slide._element.cSld)
+    for el in csld.iter():
+        if not isinstance(el.tag, str):
+            continue
+        for a in [a for a in el.attrib if a.startswith("{%s}" % R)]:
+            if el.get(a) in rid:
+                el.set(a, rid[el.get(a)])
+            else:
+                del el.attrib[a]   # a link to something not copied (e.g. her notes)
+        name = etree.QName(el).localname
+        for a in _SCALE_ATTRS.get(name, ()):
+            v = el.get(a)
+            if v is not None and re.fullmatch(r"-?\d+", v) and not (name == "ext" and "uri" in el.attrib):
+                el.set(a, str(int(round(int(v) * scale))))
+        if name == "schemeClr" and el.get("val") in theme:
+            el.tag = "{http://schemas.openxmlformats.org/drawingml/2006/main}srgbClr"
+            el.set("val", theme[el.get("val")])
+        if name == "t" and el.text and _FOOTER_NUM.search(el.text):
+            el.text = _FOOTER_NUM.sub(r"\1", el.text)   # her page number won't match this deck
+    dst._element.replace(dst._element.cSld, csld)
+    return dst
+
+
+def build_leadsos(prs):
+    if LEADSOS_MISSING:
+        note("cover", f"The LeadsOS marketing slides were left out: {LEADSOS_MISSING}.")
+        print(f"WARNING: LeadsOS marketing slides left out — {LEADSOS_MISSING}.")
+        return
+    if not LEADSOS_SLIDES:
+        return
+    scale = prs.slide_width / LEADSOS_SRC.slide_width
+    theme = _source_theme_colors(LEADSOS_SRC)
+    for n, slide, title in LEADSOS_SLIDES:
+        copy_source_slide(prs, slide, scale, theme)
+        key = f"leadsos_{n}"
+        SLIDE_TITLES[key] = f"LeadsOS — {title}" if title else f"LeadsOS slide {n}"
+        if slide.has_notes_slide:
+            her = " ".join(slide.notes_slide.notes_text_frame.text.split())
+            if her:
+                note(key, f"Vanessa's speaker notes (her slide {n}): {her}")
+    first = f"leadsos_{LEADSOS_SLIDES[0][0]}"
+    note(first, f"Slides {PAGE[first]}–{PAGE[f'leadsos_{LEADSOS_SLIDES[-1][0]}']} are Vanessa's LeadsOS "
+                "marketing slides, copied as they are. Her client results slides are left out."
+         + (f" Held until confirmed for every client deck: her slide(s) "
+            f"{', '.join(str(h) for h in LEADSOS_HELD)} ({' / '.join(LEADSOS_HOLD)})." if LEADSOS_HELD else ""))
+    print(f"LeadsOS: {len(LEADSOS_SLIDES)} marketing slides added (her slides "
+          f"{', '.join(str(n) for n, _, _ in LEADSOS_SLIDES)})"
+          + (f"; held: {', '.join(str(h) for h in LEADSOS_HELD)}" if LEADSOS_HELD else ""))
 
 
 def write_notes(prs):
@@ -1383,7 +1543,7 @@ def build_strategy(prs):
         add_text(slide, s["channels"], cx + 0.14, y + 0.62, cw - 0.28, 0.22, 8.5,
                  OCEAN_BLUE, bold=True, max_lines=1, min_size=7,
                  cap_label=f"STRATEGY[{i}] channels")
-        add_text(slide, s["product"], cx + 0.14, y + 0.84, cw - 0.28, 0.22, 8, SLATE,
+        add_text(slide, client_name(s["product"]), cx + 0.14, y + 0.84, cw - 0.28, 0.22, 8, SLATE,
                  max_lines=1, min_size=6.5, cap_label=f"STRATEGY[{i}] product")
         add_bullets(slide, [cap(b, 70, f"STRATEGY[{i}] deliverable {j+1}")
                             for j, b in enumerate(s["deliverables"][:5])],
@@ -1484,6 +1644,21 @@ def product_line(name):
     return line
 
 
+# Product names as the pricing sheet lists them. The package data keeps the
+# internal FCFO Advisor / Director / Partner names (the Managed Financials
+# slides key off them); anything a client reads shows the sheet's name.
+_SHEET_NAMES = [(re.compile(r"\b(?:FCFO|Fractional CFO)\s+(Advisor|Director|Partner)\b"),
+                 lambda m: "Managed Financials Level " + {"Advisor": "1", "Director": "2", "Partner": "3"}[m.group(1)])]
+
+
+def client_name(text):
+    """A product name (or a line naming products) as the client should see it."""
+    text = str(text)
+    for pat, sub in _SHEET_NAMES:
+        text = pat.sub(sub, text)
+    return text
+
+
 def build_buys_card(slide, inv, x, w, top, bottom):
     """"What $X/mo buys": one row per product — name, deliverables, price."""
     add_text(slide, f"WHAT {usd(inv['monthly_total'])}/MO BUYS", x, top, w, 0.20, 7.5,
@@ -1506,7 +1681,7 @@ def build_buys_card(slide, inv, x, w, top, bottom):
         if i:
             add_rule(slide, x + 0.20, ry, x + w - 0.16, ry, RULE_GRAY)
         name_w = w - 1.85
-        add_text(slide, p["name"], x + 0.18, ry + 0.06, name_w, 0.30, 10.5, NAVY, bold=True,
+        add_text(slide, client_name(p["name"]), x + 0.18, ry + 0.06, name_w, 0.30, 10.5, NAVY, bold=True,
                  max_lines=1, min_size=8, cap_label=f"product {i+1} name")
         items = [t.strip() for t in re.split(r"\s*[·•|]\s*", product_line(p["name"])) if t.strip()]
         if as_list:
@@ -1546,7 +1721,7 @@ def build_buys_card(slide, inv, x, w, top, bottom):
 
 def setup_fee_line(f):
     """One setup fee for the slide: "AI Avatar setup $1,850" (or "… waived")."""
-    name = f["label"] if f["label"] != "Setup fee" else f"{f['product']} setup"
+    name = f["label"] if f["label"] != "Setup fee" else f"{client_name(f['product'])} setup"
     return f"{name} {usd(f['amount'])}" + (" waived" if f.get("waived") else "")
 
 
@@ -1568,7 +1743,7 @@ def build_totals_block(slide, inv, x, w, top, bottom):
         if len(fees) == 1:
             sub = setup_fee_line(fees[0]).rsplit(" $", 1)[0] + (" (waived)" if fees[0].get("waived") else "")
         else:
-            short = lambda f: (f["product"] if f["label"] == "Setup fee"
+            short = lambda f: (client_name(f["product"]) if f["label"] == "Setup fee"
                                else f["label"].replace(" setup", "").replace("Video Ads Express ", ""))
             sub = " · ".join(f"{short(f)} {usd(f['amount'])}" + (" waived" if f.get("waived") else "")
                              for f in fees)
@@ -1717,7 +1892,7 @@ def build_roadmap(prs):
         add_text(slide, p["when"], cx + 0.08, y + band + 0.02, cw - 0.16, 0.46, 9,
                  GREEN if now else OCEAN_BLUE, bold=True, max_lines=2, min_size=7.5,
                  cap_chars=70, cap_label=f"ROADMAP[{i}] when")
-        add_text(slide, " + ".join(str(x) for x in p["products"]), cx + 0.08, y + band + 0.46,
+        add_text(slide, client_name(" + ".join(str(x) for x in p["products"])), cx + 0.08, y + band + 0.46,
                  cw - 0.16, 0.24, 8, SLATE, max_lines=1, min_size=6.5,
                  cap_chars=80, cap_label=f"ROADMAP[{i}] products")
         add_rule(slide, cx + 0.16, y + band + 0.74, cx + cw - 0.16, y + band + 0.74, RULE_GRAY)
@@ -1749,7 +1924,7 @@ def build_roadmap(prs):
 # plan slide come from the firm's call (PROFITOS_GOALS / PROFITOS_WHY);
 # the recommended levels come from package_decision.json.
 
-POS_KICKER = "PROFITOS"
+POS_KICKER = "MANAGED FINANCIALS"
 POS_DISCLAIMER = ("Examples are illustrative. Reporting formats, analyses and deliverables "
                   "vary by firm and agreed engagement scope.")
 POS_STANDARD_GOALS = [
@@ -1759,55 +1934,81 @@ POS_STANDARD_GOALS = [
 ]
 POS_LEVELS = {
     "Advisor": {
-        "n": 1, "ladder": "Financial statement deep dive, review and discussion. Advisory only.",
+        "n": 1, "label": "Level 1",
+        "ladder": "Financial statement deep dive, review and discussion. Clear, reliable numbers.",
         "ask": "“Where should we focus?”",
         "title": "Understand your numbers. Know where to focus.",
-        "work_head": "What Advisor is",
-        "work": "A financial statement advisory engagement: an in-depth review and discussion of "
-                "your P&L and balance sheet, with red flags surfaced.",
+        "work_head": "What Level 1 is",
+        "work": "A financial strategy engagement built on a monthly deep dive into your P&L and "
+                "balance sheet, with red flags turned into clear priorities and goals.",
         "decisions": ["Are we becoming more profitable?", "Where are we spending too much?",
                       "Which financial issues need attention first?",
                       "What should our financial goals be next quarter?"],
         "quote": "“I understand what my numbers are telling me.”*",
-        "foot": "*Financial statement advisory only: no projects or between-call questions.",
+        "foot": "*Level 1 is a financial statement review and discussion: no quarterly projects or between-call questions.",
         "includes": None,
         "focus": "Financial statement deep dive · Red flags · Quarterly priorities and financial goals",
     },
     "Director": {
-        "n": 2, "ladder": "Adds projects: a quarterly roadmap and recurring KPI dashboard.",
+        "n": 2, "label": "Level 2",
+        "ladder": "Adds a custom quarterly roadmap of financial projects and a KPI dashboard.",
         "ask": "“How do we move forward?”",
         "title": "Turn financial insight into a plan for growth.",
         "work_head": "Example of the work",
-        "work": "An illustrative quarterly roadmap, recurring KPI dashboard, and examples of cash "
-                "flow, compensation or marketing analysis.",
+        "work": "A custom quarterly roadmap of done-with-you financial projects and a recurring KPI "
+                "dashboard. Examples: budget, forecast, cash flow, compensation and marketing ROI analysis.",
         "decisions": ["Can we afford our next hire?", "How much can we safely invest in marketing?",
                       "Will a compensation change improve profitability?",
                       "What needs to happen this quarter to reach our goals?"],
         "quote": "“I can make growth decisions with a financial plan behind them.”",
         "foot": None,
-        "includes": "Includes everything in Advisor, plus quarterly projects",
-        "focus": "Quarterly roadmap · Recurring KPIs · Cash flow, compensation or marketing analysis",
+        "includes": "Includes everything in Level 1, plus quarterly projects",
+        "focus": "Quarterly roadmap · KPI dashboard · Cash flow and hiring analysis",
     },
     "Partner": {
-        "n": 3, "ladder": "Adds advanced priorities such as capital, tax and succession planning.",
+        "n": 3, "label": "Level 3",
+        "ladder": "Adds comprehensive projects for expansion, capital strategy and succession or exit planning.",
         "ask": "“How do we navigate major decisions?”",
         "title": "Make big decisions about your firm’s future.",
         "work_head": "Example of the work",
-        "work": "An illustrative advanced planning example: capital strategy, succession scenarios, "
-                "or analysis across practice areas and locations.",
+        "work": "The most advanced done-with-you projects each quarter. Examples: pricing analysis, "
+                "profitability by practice area, location or attorney, expansion modeling, capital strategy, "
+                "multi-year financial modeling, and succession or exit planning.",
         "decisions": ["Should we expand into another market?", "How should we fund our next stage of growth?",
                       "Which practice areas are creating the most value?",
                       "How do we prepare for succession or a transition?"],
         "quote": "“I have financial leadership to navigate bigger decisions.”",
         "foot": None,
-        "includes": "Includes everything in Advisor and Director, plus advanced planning",
-        "focus": "Capital strategy · Succession planning · Analysis across practice areas and locations",
+        "includes": "Includes everything in Levels 1 and 2, plus advanced projects",
+        "focus": "Expansion modeling · Capital strategy · Succession planning · Profitability by practice area",
     },
 }
-POS_BOOKS = [(1, "Under $1M", "Core monthly bookkeeping for smaller firms."),
-             (2, "$1.0M – $2.9M", "The same core service, sized for a growing team."),
-             (3, "$3.0M – $3.9M", "The same core service, sized for added volume and complexity."),
-             (4, "$4M+", "Scoped to fit larger, more complex firms.")]
+# (level, transactions a month, what it is) — bookkeeping is placed by monthly
+# transaction volume first; revenue is a guide (Vanessa's deck, Nov 20).
+POS_BOOKS = [(1, "Up to 100", "Financials by the 20th*. Clean books and simple accounts, no trust "
+                              "accounting. Typically up to $1M in revenue."),
+             (2, "Up to 250", "Financials by the 15th*. Adds monthly three-way trust reconciliation. "
+                              "Typically $1M–$2M in revenue."),
+             (3, "Up to 500", "Financials by the 10th*, our fastest close, with trust reconciliation. "
+                              "Typically $2M–$4M in revenue."),
+             (4, "Above 500", "Firms above these limits are scoped with a custom agreement.")]
+# Her speaker notes that the seller needs (they go to the seller prep, never the deck).
+POS_SELLER_NOTES = {
+    "pos_ladder": "Levels distinguish engagement scope and complexity, not hours. Level 1 is financial "
+                  "statement review and discussion with no quarterly projects; quarterly projects begin at "
+                  "Level 2. Lead with your Finance Team rather than an individual title; if asked who is on "
+                  "it, a CFO is assigned to the account and bookkeepers and support work alongside, so not "
+                  "every call is with the CFO. Managed Financials requires SMB Bookkeeping, or books that are "
+                  "current with complete, accurate, timely financials each month by the 10th, including "
+                  "properly allocated payroll. Set-up fees apply.",
+    "pos_books": "Bookkeeping is placed by monthly transaction volume first (up to 100, 250, 500); revenue "
+                 "and team size are a secondary guide. Confirm with the department before quoting a firm "
+                 "whose volume and revenue point to different levels. Payroll/W-2 and AP/1099 work is not "
+                 "included at any level. Included cleanup: up to 2 months at Level 2 and up to 4 months at "
+                 "Level 3; Level 1 needs clean books. Prior-period cleanup is billed separately.",
+    "pos_level": "Examples are tailored and scope-confirmed; not every example applies to every engagement. "
+                 "Each level includes everything in the one before it.",
+}
 
 
 def pos_slide(prs, key, title, sub=None, disclaimer=True):
@@ -1827,7 +2028,7 @@ def build_pos_goals(prs):
     goals = [tuple(g) for g in PROFITOS_GOALS] or POS_STANDARD_GOALS
     if not PROFITOS_GOALS:
         note("pos_goals", "No financial goals were recorded from the call, so this slide shows "
-                          "ProfitOS's three standard goals. Recap the firm's own goals out loud.")
+                          "the three standard Managed Financials goals. Recap the firm's own goals out loud.")
     slide = pos_slide(prs, "pos_goals", "Your goals point to a clearer path forward.",
                       "After our conversation, these are the areas where we can help improve your "
                       "firm's financial health." if PROFITOS_GOALS else None, disclaimer=False)
@@ -1850,15 +2051,17 @@ def build_pos_goals(prs):
 
 def build_pos_two_sides(prs):
     slide = pos_slide(prs, "pos_two_sides", "From reliable numbers to confident action.",
-                      "Bookkeeping establishes visibility. Fractional CFO guidance helps you "
+                      "Bookkeeping establishes visibility. Your Finance Team helps you "
                       "interpret the numbers and decide what to do next.")
     cols = [("BOOKKEEPING  ·  THE FOUNDATION", "Know where you stand",
              ["Accurate, timely financials", "Organized financial reporting",
               "Visibility into cash, expenses and profit", "A trusted foundation for decision-making"],
              "SEE CLEARLY", OCEAN_BLUE),
-            ("FRACTIONAL CFO  ·  THE LEADERSHIP", "Know where to go",
-             ["Financial statement deep dive and review", "Red flags and strategic discussion",
-              "Quarterly priorities and financial goals", "Planning and projects at higher levels"],
+            ("MANAGED FINANCIALS  ·  THE STRATEGY", "Know where to go",
+             ["Monthly deep dive into your P&L and balance sheet",
+              "Red flags and profit leaks turned into clear priorities",
+              "A KPI dashboard and quarterly projects at higher levels",
+              "Books aligned to a proven law firm Chart of Accounts"],
              "DECIDE CONFIDENTLY", LIME_GREEN)]
     cw, y, h = 4.45, 1.52, 3.36
     for i, (kick, head, items, tag, accent) in enumerate(cols):
@@ -1878,33 +2081,38 @@ def build_pos_two_sides(prs):
 
 def build_pos_books(prs):
     slide = pos_slide(prs, "pos_books", "Bookkeeping that fits the size of your firm.",
-                      "The same core monthly service at every level. Your firm's annual revenue sets the level.")
+                      "Your monthly transaction volume sets the level. Revenue and team size are a guide. "
+                      "Higher levels add trust compliance and a faster close.", disclaimer=False)
+    note("pos_books", POS_SELLER_NOTES["pos_books"])
     gap = 0.18
     cw = (9.40 - 3 * gap) / 4
-    y, h = 1.52, 1.86
+    y, h = 1.52, 2.06
     for i, (lvl, rev, line) in enumerate(POS_BOOKS):
         cx = 0.30 + i * (cw + gap)
         mine = lvl == BOOKKEEPING_LEVEL
         add_rect(slide, cx, y, cw, h, fill=NAVY if mine else WHITE)
         add_rect(slide, cx, y, cw, 0.05, fill=LIME_GREEN if mine else OCEAN_BLUE)
-        add_text(slide, f"LEVEL {lvl}", cx + 0.16, y + 0.14, cw - 0.32, 0.22, 8,
+        add_text(slide, f"LEVEL {lvl}" if lvl < 4 else "CUSTOM", cx + 0.16, y + 0.14, cw - 0.32, 0.22, 8,
                  LIME_GREEN if mine else OCEAN_BLUE, bold=True, max_lines=1, fit=False)
         add_text(slide, rev, cx + 0.16, y + 0.38, cw - 0.32, 0.40, 15, WHITE if mine else NAVY,
                  bold=True, max_lines=1, min_size=11)
-        add_text(slide, "annual revenue", cx + 0.16, y + 0.76, cw - 0.32, 0.20, 8,
+        add_text(slide, "transactions a month", cx + 0.16, y + 0.76, cw - 0.32, 0.20, 8,
                  NAVY_TEXT_SOFT if mine else SLATE, max_lines=1, fit=False)
-        add_text(slide, line, cx + 0.16, y + 1.02, cw - 0.32, 0.62, 9, NAVY_TEXT_SOFT if mine else BODY_TEXT,
-                 min_size=7.5, cap_label=f"pos_books {lvl}")
+        add_text(slide, line, cx + 0.16, y + 0.98, cw - 0.32, h - 1.02 - (0.32 if mine else 0.04), 8.5,
+                 NAVY_TEXT_SOFT if mine else BODY_TEXT, min_size=7, cap_label=f"pos_books {lvl}")
         if mine:
             add_pill(slide, "Recommended for you", cx + 0.16, y + h - 0.30, 0.22, LIME_GREEN, NAVY, size=6.5)
-    add_rect(slide, 0.30, 3.52, 9.40, 1.40, fill=WHITE)
-    add_rect(slide, 0.30, 3.52, 0.05, 1.40, fill=OCEAN_BLUE)
-    add_text(slide, "INCLUDED AT EVERY LEVEL", 0.50, 3.60, 6.0, 0.22, 8, OCEAN_BLUE, bold=True, fit=False)
-    items = ["Monthly balance sheet", "Monthly profit & loss (current month and year-to-date vs. prior year)",
-             "Trust account reconciliation summary", "Bank, credit card and loan reconciliations",
-             "Month-end adjusting entries", "A dedicated point of contact for bookkeeping questions"]
-    add_bullets(slide, items[:3], 0.46, 3.86, 4.60, 1.02, 9, DARK_TEXT, OCEAN_BLUE, label="pos_books included 1")
-    add_bullets(slide, items[3:], 5.06, 3.86, 4.56, 1.02, 9, DARK_TEXT, OCEAN_BLUE, label="pos_books included 2")
+    add_rect(slide, 0.30, 3.70, 9.40, 1.22, fill=WHITE)
+    add_rect(slide, 0.30, 3.70, 0.05, 1.22, fill=OCEAN_BLUE)
+    add_text(slide, "INCLUDED AT EVERY LEVEL", 0.50, 3.78, 6.0, 0.22, 8, OCEAN_BLUE, bold=True, fit=False)
+    items = ["Done-with-you setup connecting QuickBooks Online, your banks and your legal platform",
+             "Books built on our law firm Chart of Accounts",
+             "Every transaction categorized and accounts reconciled",
+             "A reviewed P&L and balance sheet every month"]
+    add_bullets(slide, items[:2], 0.46, 4.02, 4.60, 0.86, 9, DARK_TEXT, OCEAN_BLUE, label="pos_books included 1")
+    add_bullets(slide, items[2:], 5.06, 4.02, 4.56, 0.86, 9, DARK_TEXT, OCEAN_BLUE, label="pos_books included 2")
+    add_text(slide, "*Delivery dates depend on timely receipt of your data. Firms above these limits require "
+                    "a custom agreement.", 0.30, 5.00, 9.40, 0.22, 6.5, SLATE, max_lines=1, fit=False)
 
 
 def build_pos_questions(prs):
@@ -1943,41 +2151,62 @@ def _mini_bars(slide, x, y, w, h, values, colors):
 def build_pos_analysis(prs):
     slide = pos_slide(prs, "pos_analysis", "See the analysis behind better decisions.",
                       "Illustrative examples of the financial insight and planning available across the levels.")
-    cards = [("FINANCIAL SNAPSHOT", "Where do we stand?"),
-             ("QUARTERLY ROADMAP  ·  DIRECTOR+", "What should happen next?"),
-             ("DECISION MODEL  ·  DIRECTOR+", "What happens if we hire?")]
+    cards = [("MONTHLY FINANCIAL REVIEW", "Where do we stand?", "P&L AND BALANCE SHEET  ·  THIS MONTH",
+              "Red flags surfaced for discussion"),
+             ("QUARTERLY ROADMAP  ·  LEVEL 2+", "What should happen next?", "90-DAY ROADMAP",
+              "Priorities and goals set each quarter"),
+             ("KPI DASHBOARD  ·  LEVEL 2+", "How is the firm really doing?", "FIRM HEALTH AT A GLANCE", None)]
     gap = 0.22
     cw = (9.40 - 2 * gap) / 3
     y, h = 1.52, 3.12
-    for i, (kick, q) in enumerate(cards):
+    for i, (kick, q, panel, caption) in enumerate(cards):
         cx = 0.30 + i * (cw + gap)
         add_rect(slide, cx, y, cw, h, fill=WHITE)
         add_rect(slide, cx, y, cw, 0.05, fill=OCEAN_BLUE)
         add_text(slide, kick, cx + 0.16, y + 0.14, cw - 0.32, 0.22, 7.5, OCEAN_BLUE, bold=True,
                  max_lines=1, min_size=6.5)
-        add_text(slide, q, cx + 0.16, y + 0.38, cw - 0.32, 0.36, 13, NAVY, bold=True,
-                 max_lines=1, min_size=10)
-        px, py, pw, ph = cx + 0.30, y + 1.00, cw - 0.60, 1.70
-        add_rect(slide, cx + 0.16, y + 0.88, cw - 0.32, 2.06, fill=BG_WASH)
-        if i == 0:      # revenue vs expenses by month
-            _mini_bars(slide, px, py + 0.10, pw, ph - 0.30, [5, 6, 5.5, 7, 6.5, 8], [OCEAN_BLUE, NAVY])
-        elif i == 1:    # Q1–Q4 roadmap: quarters across, project bars below
-            step = pw / 4.0
-            for q in range(4):
-                add_text(slide, f"Q{q+1}", px + q * step, py, step, 0.22, 8, NAVY, bold=True,
+        add_text(slide, q, cx + 0.16, y + 0.38, cw - 0.32, 0.36, 12, NAVY, bold=True,
+                 max_lines=1, min_size=9)
+        bx, by, bw, bh = cx + 0.16, y + 0.86, cw - 0.32, 2.12
+        add_rect(slide, bx, by, bw, bh, fill=BG_WASH)
+        add_text(slide, panel, bx + 0.10, by + 0.06, bw - 0.86, 0.20, 6.5, SLATE, bold=True, max_lines=1,
+                 min_size=5)
+        add_text(slide, "SAMPLE", bx + bw - 0.76, by + 0.06, 0.70, 0.20, 6, SLATE, bold=True,
+                 align=PP_ALIGN.RIGHT, fit=False)
+        px, py, pw = bx + 0.14, by + 0.36, bw - 0.28
+        if i == 0:      # this month's P&L lines, with a flag on one
+            for r, (label, frac, color) in enumerate([("Revenue", 0.92, OCEAN_BLUE), ("Payroll", 0.58, NAVY),
+                                                      ("Marketing", 0.30, CORAL), ("Net income", 0.22, GREEN)]):
+                ry = py + 0.08 + r * 0.32
+                add_text(slide, label, px, ry - 0.02, 0.80, 0.22, 7, DARK_TEXT, max_lines=1, fit=False)
+                add_rect(slide, px + 0.82, ry + 0.03, (pw - 0.86) * frac, 0.14, fill=color)
+        elif i == 1:    # three months across, projects below
+            step = pw / 3.0
+            for mth in range(3):
+                add_text(slide, f"Month {mth + 1}", px + mth * step, py, step, 0.22, 7.5, NAVY, bold=True,
                          align=PP_ALIGN.CENTER, fit=False)
             add_rule(slide, px, py + 0.26, px + pw, py + 0.26, NAVY_RULE, 1.5)
-            for r, (start, span, color) in enumerate([(0, 1.6, LIME_GREEN), (1, 2.0, OCEAN_BLUE),
-                                                      (2, 1.5, NAVY), (2.6, 1.4, OCEAN_BLUE)]):
-                add_rect(slide, px + start * step + 0.04, py + 0.42 + r * 0.30,
-                         span * step - 0.08, 0.18, fill=color)
-        else:           # hire now vs later
-            _mini_bars(slide, px + 0.20, py + 0.10, pw - 0.40, ph - 0.50, [6, 7.5], [SLATE, GREEN])
-            add_text(slide, "Today", px + 0.02, py + ph - 0.36, pw / 2, 0.20, 7, SLATE,
-                     align=PP_ALIGN.CENTER, fit=False)
-            add_text(slide, "With the hire", px + pw / 2 - 0.02, py + ph - 0.36, pw / 2, 0.20, 7, GREEN,
-                     align=PP_ALIGN.CENTER, fit=False)
-    add_text(slide, "Illustrative concepts, not screenshots of actual SMB Team reporting or guaranteed deliverables.",
+            for r, (start, span, color, label) in enumerate([(0, 1.0, LIME_GREEN, "Budget"),
+                                                             (0.6, 1.4, OCEAN_BLUE, "Cash flow forecast"),
+                                                             (1.6, 1.4, NAVY, "Marketing ROI analysis")]):
+                ry = py + 0.40 + r * 0.36
+                add_rect(slide, px + start * step + 0.03, ry, span * step - 0.06, 0.24, fill=color)
+                add_text(slide, label, px + start * step + 0.03, ry, span * step - 0.06, 0.24, 6.5,
+                         NAVY if color == LIME_GREEN else WHITE, bold=True, max_lines=1, min_size=4.5,
+                         anchor=MSO_ANCHOR.MIDDLE)
+        else:           # four KPI tiles
+            tw, th = (pw - 0.12) / 2, 0.70
+            for t, label in enumerate(("Revenue", "Profit", "Cash", "Collections")):
+                tx, ty = px + (t % 2) * (tw + 0.12), py + 0.04 + (t // 2) * (th + 0.12)
+                add_rect(slide, tx, ty, tw, th, fill=WHITE)
+                add_text(slide, label, tx + 0.08, ty + 0.06, tw - 0.16, 0.20, 7, SLATE, bold=True,
+                         max_lines=1, fit=False)
+                _mini_bars(slide, tx + 0.12, ty + 0.30, tw - 0.30, 0.30, [3, 4, 3.6, 5][:4],
+                           [OCEAN_BLUE] if t != 1 else [GREEN])
+        if caption:
+            add_text(slide, caption, bx + 0.10, by + bh - 0.32, bw - 0.20, 0.26, 7.5, NAVY, bold=True,
+                     max_lines=1, min_size=6.5)
+    add_text(slide, "Illustrative concepts, not screenshots of actual SMBTeam reporting or guaranteed deliverables.",
              0.30, 4.70, 9.40, 0.22, 7.5, SLATE, max_lines=1, fit=False)
 
 
@@ -1989,7 +2218,7 @@ def build_pos_plan(prs):
     slide = pos_slide(prs, "pos_plan", "A plan built around your priorities.",
                       "How we matched the engagement to the questions your firm needs to answer.",
                       disclaimer=False)
-    program = f"Fractional CFO  ·  {PROFITOS_LEVEL}" + (f"  +  Bookkeeping Level {BOOKKEEPING_LEVEL}" if BOOKKEEPING_LEVEL else "")
+    program = f"Managed Financials  ·  {lvl['label']}" + (f"  +  Bookkeeping Level {BOOKKEEPING_LEVEL}" if BOOKKEEPING_LEVEL else "")
     add_rect(slide, 0.30, 1.52, 9.40, 0.92, fill=NAVY)
     add_rect(slide, 0.30, 1.52, 0.06, 0.92, fill=LIME_GREEN)
     add_text(slide, "RECOMMENDED PROGRAM", 0.56, 1.62, 6.0, 0.22, 8, LIME_GREEN, bold=True, fit=False)
@@ -2015,7 +2244,7 @@ def _level_tracker(slide, current, x, y, w):
         cx = x + (d["n"] - 1) * (cw + gap)
         done, mine = d["n"] < POS_LEVELS[current]["n"], name == current
         add_rect(slide, cx, y, cw, 0.36, fill=NAVY if mine else (SOFT_BLUE if done else WHITE))
-        add_text(slide, ("✓ " if done else f"{d['n']} · ") + name, cx, y, cw, 0.36, 9,
+        add_text(slide, ("✓ " if done else f"{d['n']} · ") + d["label"], cx, y, cw, 0.36, 9,
                  WHITE if mine else NAVY, bold=mine, align=PP_ALIGN.CENTER,
                  anchor=MSO_ANCHOR.MIDDLE, max_lines=1, fit=False)
 
@@ -2023,6 +2252,7 @@ def _level_tracker(slide, current, x, y, w):
 def build_pos_level(prs):
     lvl = POS_LEVELS[PROFITOS_LEVEL]
     slide = pos_slide(prs, "pos_level", lvl["title"])
+    note("pos_level", POS_SELLER_NOTES["pos_level"])
     _level_tracker(slide, PROFITOS_LEVEL, 0.30, 1.06, 9.40)
     y, h = 1.58, 2.36
     add_rect(slide, 0.30, y, 4.40, h, fill=WHITE)
@@ -2046,8 +2276,9 @@ def build_pos_level(prs):
 
 def build_pos_ladder(prs):
     slide = pos_slide(prs, "pos_ladder", "Leadership matched to your stage of growth.",
-                      "Each level builds on the earlier one, with increasing strategic involvement and capacity "
-                      "for complexity. Every level includes everything in the one before it, then adds more.")
+                      "Each level includes everything in the one before it, then adds more, matched to the "
+                      "size and complexity of your firm.")
+    note("pos_ladder", POS_SELLER_NOTES["pos_ladder"])
     gap = 0.20
     cw = (9.40 - 2 * gap) / 3
     base = 4.62
@@ -2059,7 +2290,7 @@ def build_pos_ladder(prs):
         mine = name == PROFITOS_LEVEL
         add_rect(slide, cx, top, cw, h, fill=NAVY if mine else WHITE)
         add_rect(slide, cx, top, cw, 0.06, fill=LIME_GREEN if mine else OCEAN_BLUE)
-        add_text(slide, f"{d['n']}  ·  {name}", cx + 0.18, top + 0.16, cw - 0.36, 0.36, 15,
+        add_text(slide, d["label"], cx + 0.18, top + 0.16, cw - 0.36, 0.36, 15,
                  WHITE if mine else NAVY, bold=True, max_lines=1, min_size=11)
         add_text(slide, d["ladder"], cx + 0.18, top + 0.58, cw - 0.36, 0.80, 10,
                  NAVY_TEXT_SOFT if mine else BODY_TEXT, min_size=8, cap_label=f"pos_ladder {name}")
@@ -2205,6 +2436,7 @@ prs.slide_width  = Inches(10)
 prs.slide_height = Inches(5.625)
 
 build_cover(prs)
+build_leadsos(prs)
 build_priorities(prs)
 if STAIRCASE:
     build_staircase(prs)
