@@ -9,6 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 30
     permissions:
+      id-token: write
       contents: write
 
     steps:
@@ -85,11 +86,26 @@ jobs:
           HUBSPOT_TOKEN: ${{ secrets.HUBSPOT_TOKEN }}
         run: node scripts/fetch-source-deck.mjs --keyword LeadsOS --out .source-decks/LeadsOS.pptx
 
+      # Deck edits re-upload the deck to Google Drive (same file, same link).
+      # If sign-in fails the edit still runs; the upload reports the error.
+      - name: Authenticate to Google Drive
+        id: drive-auth
+        if: steps.thread.outputs.forwarded != 'true'
+        continue-on-error: true
+        uses: google-github-actions/auth@v3
+        with:
+          workload_identity_provider: ${{ vars.GOOGLE_WORKLOAD_IDENTITY_PROVIDER }}
+          service_account: drive-uploader@ai-workforce-pro.iam.gserviceaccount.com
+          token_format: access_token
+          access_token_scopes: https://www.googleapis.com/auth/drive
+          create_credentials_file: false
+
       - name: Handle the request
         if: steps.thread.outputs.forwarded != 'true'
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
           HUBSPOT_TOKEN: ${{ secrets.HUBSPOT_TOKEN }}
+          DRIVE_ACCESS_TOKEN: ${{ steps.drive-auth.outputs.access_token }}
           GITHUB_PAT: ${{ secrets.GH_PAT }}
           GITHUB_REPO: ${{ github.repository }}
           SLACK_INSTRUCTION: ${{ github.event.client_payload.instruction }}
@@ -150,13 +166,13 @@ jobs:
                (pip install python-pptx --break-system-packages --quiet if needed.)
             4. Commit the .py, the .pptx and package_decision.json (if changed) to main
                with a clear message.
-            5. Re-upload the deck so the HubSpot link shows the edit (same link — the
-               file is replaced in place):
-               node scripts/upload-proposal-to-hubspot.mjs <folder> --file '<folder>/<file>_Proposal.pptx'
+            5. Re-upload the deck so the Google Drive link shows the edit (same link —
+               the file is updated in place):
+               node scripts/upload-proposal-to-drive.mjs <folder> '<folder>/<file>_Proposal.pptx'
                If it prints ok:false, say so in the summary with its error.
             6. Write a 1-2 sentence summary to /tmp/summary.txt. For a deck edit, end
-               it with: 'The HubSpot link now shows the updated deck — say \"resend the
-               email\" if the rep needs the new file attached.' 
+               it with: 'The Google Drive link now shows the updated deck — say \"resend
+               the email\" if the rep needs the new file attached.' 
             Package/pricing changes: the approved catalog is the pricing tables in
             .claude/commands/audit-write.md (Marketing, Non-Marketing, Legal AI Workforce
             (LAW), AI Avatar, Bookkeeping, General Add-Ons, OmniSocial AI, Attorney

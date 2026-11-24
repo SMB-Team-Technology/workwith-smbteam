@@ -3,7 +3,7 @@ import assert from 'node:assert/strict';
 import { mkdtemp, writeFile, rm } from 'node:fs/promises';
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
-import { uploadProposal } from '../upload-proposal-to-drive.mjs';
+import { uploadProposal, lookupProposal } from '../upload-proposal-to-drive.mjs';
 
 for (const existing of [false, true]) {
   test(`Drive ${existing ? 'updates in place' : 'creates in the requested folder'}`, async () => {
@@ -18,6 +18,8 @@ for (const existing of [false, true]) {
       } });
       assert.equal(url, 'https://drive.google.com/file/d/deck-123/view');
       assert.equal(calls[0][0].searchParams.get('q'), "'0AB92lnIjHcNvUk9PVA' in parents and name = 'test-firm-proposal.pptx' and trashed = false");
+      assert.equal(calls[0][0].searchParams.get('corpora'), 'allDrives');
+      assert.equal(calls[0][0].searchParams.get('includeItemsFromAllDrives'), 'true');
       assert.equal(calls[1][0].searchParams.get('supportsAllDrives'), 'true');
       assert.equal(calls[1][0].pathname, `/upload/drive/v3/files${existing ? '/deck-123' : ''}`);
       assert.equal(calls[1][1].method, existing ? 'PATCH' : 'POST');
@@ -33,4 +35,17 @@ for (const existing of [false, true]) {
 
 test('Drive upload requires credentials before making any requests', async () => {
   await assert.rejects(uploadProposal({ fetchImpl: () => assert.fail('unexpected request') }), /No Google Drive access token/);
+});
+
+test('Drive lookup returns the existing link without uploading', async () => {
+  const calls = [];
+  const fetchImpl = async (url, options) => { calls.push([new URL(url), options]); return Response.json({ files: [{ id: 'deck-123' }] }); };
+  assert.equal(await lookupProposal({ firm: 'test-firm', token: 'mock', fetchImpl }), 'https://drive.google.com/file/d/deck-123/view');
+  assert.equal(calls.length, 1);
+  assert.equal(calls[0][0].pathname, '/drive/v3/files');
+  assert.equal(calls[0][1].method, undefined);
+});
+
+test('Drive lookup reports a deck that was never uploaded', async () => {
+  await assert.rejects(lookupProposal({ firm: 'test-firm', token: 'mock', fetchImpl: async () => Response.json({ files: [] }) }), /No deck named test-firm-proposal\.pptx/);
 });

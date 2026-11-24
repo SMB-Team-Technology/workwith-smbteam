@@ -10,6 +10,7 @@ jobs:
   send-email:
     runs-on: ubuntu-latest
     permissions:
+      id-token: write
       contents: read
 
     steps:
@@ -39,13 +40,26 @@ jobs:
         with:
           node-version: '20'
 
-      # Read-only: find the deck's existing HubSpot file-manager link (no upload).
-      - name: Look up the deck link in HubSpot
+      - name: Authenticate to Google Drive
+        id: drive-auth
+        continue-on-error: true
+        uses: google-github-actions/auth@v3
+        with:
+          workload_identity_provider: ${{ vars.GOOGLE_WORKLOAD_IDENTITY_PROVIDER }}
+          service_account: drive-uploader@ai-workforce-pro.iam.gserviceaccount.com
+          token_format: access_token
+          access_token_scopes: https://www.googleapis.com/auth/drive
+          create_credentials_file: false
+
+      # Read-only: find the deck's existing Google Drive link (no upload). If
+      # none is found the email still goes out, with the deck attached.
+      - name: Look up the deck link in Google Drive
         id: link
         env:
-          HUBSPOT_TOKEN: ${{ secrets.HUBSPOT_TOKEN }}
+          DRIVE_ACCESS_TOKEN: ${{ steps.drive-auth.outputs.access_token }}
+          FRIENDLY_NAME: ${{ steps.inputs.outputs.friendly_name }}
         run: |
-          RESULT=$(node scripts/upload-proposal-to-hubspot.mjs "${{ steps.inputs.outputs.friendly_name }}" --lookup || true)
+          RESULT=$(node scripts/upload-proposal-to-drive.mjs "$FRIENDLY_NAME" --lookup || true)
           echo "$RESULT"
           if [ "$(jq -r '.ok // false' <<< "$RESULT" 2>/dev/null)" = "true" ]; then
             echo "url=$(jq -r '.url' <<< "$RESULT")" >> "$GITHUB_OUTPUT"

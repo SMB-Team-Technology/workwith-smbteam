@@ -66,7 +66,6 @@ jobs:
           echo "suppress_pricing=$(jq -r '.suppress_pricing // "false"' "$TRIGGER_FILE")"  >> "$GITHUB_OUTPUT"
           echo "slack_channel=$(jq -r '.slack_channel // empty' "$TRIGGER_FILE")"          >> "$GITHUB_OUTPUT"
           echo "slack_thread_ts=$(jq -r '.slack_thread_ts // empty' "$TRIGGER_FILE")"      >> "$GITHUB_OUTPUT"
-          echo "test_upload=$(jq -r '.test_upload // false' "$TRIGGER_FILE")"             >> "$GITHUB_OUTPUT"
           echo "test_no_email=$(jq -r '.test_no_email // false' "$TRIGGER_FILE")"         >> "$GITHUB_OUTPUT"
 
       - name: Configure git
@@ -198,6 +197,11 @@ jobs:
           FRIENDLY_NAME: ${{ steps.inputs.outputs.friendly_name }}
           DECK: ${{ steps.verify.outputs.deck }}
         run: |
+          if [ -z "$DRIVE_ACCESS_TOKEN" ]; then
+            echo "ok=false" >> "$GITHUB_OUTPUT"
+            echo "error=Google Drive sign-in failed (check the GOOGLE_WORKLOAD_IDENTITY_PROVIDER variable and the drive-uploader service account; see the Authenticate to Google Drive step)" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
           RESULT=$(node scripts/upload-proposal-to-drive.mjs "$FRIENDLY_NAME" "$DECK" || true)
           echo "$RESULT"
           OK=$(jq -r '.ok // false' <<< "$RESULT" 2>/dev/null || echo false)
@@ -219,11 +223,18 @@ jobs:
           FRIENDLY_NAME: ${{ steps.inputs.outputs.friendly_name }}
         run: |
           CONTACT_ID="${{ steps.inputs.outputs.hubspot_contact_id }}"
-          BODY=$(jq -en --arg url "$DECK_URL" \
-            --slurpfile decision "$FRIENDLY_NAME/package_decision.json" \
-            'if ($decision | length) != 1 or ($decision[0] | type) != "object" then error("Expected one decision object") else
-              {properties: {growth_profit_and_freedom_roadmap: $url,
-                growth_profit_and_freedom_roadmap_json: ($decision[0] | tojson)}} end')
+          # Older firm folders have no package_decision.json: still write the link.
+          # A decision file that exists but is invalid fails the step.
+          DECISION="$FRIENDLY_NAME/package_decision.json"
+          if [ -f "$DECISION" ]; then
+            BODY=$(jq -en --arg url "$DECK_URL" --slurpfile decision "$DECISION" \
+              'if ($decision | length) != 1 or ($decision[0] | type) != "object" then error("Expected one decision object") else
+                {properties: {growth_profit_and_freedom_roadmap: $url,
+                  growth_profit_and_freedom_roadmap_json: ($decision[0] | tojson)}} end')
+          else
+            echo "::warning::No $DECISION — writing the deck link without the decision JSON"
+            BODY=$(jq -n --arg url "$DECK_URL" '{properties: {growth_profit_and_freedom_roadmap: $url}}')
+          fi
           RESPONSE=$(curl -s -w "\n%{http_code}" -X PATCH \
             "https://api.hubapi.com/crm/v3/objects/contacts/$CONTACT_ID" \
             -H "Authorization: Bearer $HUBSPOT_TOKEN" \
@@ -291,7 +302,7 @@ jobs:
           elif test_mode and not upload_attempted:
               link_lines = ["(Test mode: Google Drive upload skipped, so there is no link.)", ""]
           else:
-              link_lines = ["The HubSpot link isn't available (the upload failed) — use the attached deck.", ""]
+              link_lines = ["The Google Drive link isn't available (the upload failed) — use the attached deck.", ""]
 
           # Seller prep (what to ask, confirm, who said each quote) — kept out
           # of the deck's speaker notes; the deck build writes it beside the deck.

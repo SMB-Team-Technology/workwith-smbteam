@@ -7,7 +7,7 @@ import { spawnSync } from 'node:child_process';
 
 for (const workflow of ['audit-write', 'resend-audit-email']) {
   const source = readFileSync(new URL(`../../.github/workflows/${workflow}.yml`, import.meta.url), 'utf8');
-  const command = source.match(/          BODY=\$\(jq -en[\s\S]*? end'\)/)?.[0];
+  const command = source.match(/          DECISION="\$FRIENDLY_NAME\/package_decision\.json"\n          if \[ -f "\$DECISION" \]; then\n            BODY=[\s\S]*?\n          fi\n/)?.[0];
 
   test(`${workflow}: writes full decision as a HubSpot string property`, () => {
     assert.ok(command, 'workflow contains the JSON payload builder');
@@ -32,9 +32,12 @@ for (const workflow of ['audit-write', 'resend-audit-email']) {
         assert.notEqual(failure.status, 0, `must reject invalid decision: ${invalid}`);
       }
       rmSync(join(dir, 'package_decision.json'));
-      assert.notEqual(spawnSync('bash', ['-e', '-c', command], {
-        env: { ...process.env, FRIENDLY_NAME: dir, DECK_URL: 'https://drive.google.com/file/d/deck-123/view' },
-      }).status, 0, 'must reject missing decision file');
+      const linkOnly = spawnSync('bash', ['-e', '-c', `${command}\nprintf '%s' "$BODY"`], {
+        encoding: 'utf8', env: { ...process.env, FRIENDLY_NAME: dir, DECK_URL: 'https://drive.google.com/file/d/deck-123/view' },
+      });
+      assert.equal(linkOnly.status, 0, 'a missing decision file still writes the link');
+      assert.deepEqual(JSON.parse(linkOnly.stdout.slice(linkOnly.stdout.indexOf('{'))),
+        { properties: { growth_profit_and_freedom_roadmap: 'https://drive.google.com/file/d/deck-123/view' } });
       assert.match(source, /if: env\.TEST_MODE != 'true' && steps\.upload\.outputs\.ok == 'true'/);
     } finally {
       rmSync(dir, { recursive: true, force: true });
