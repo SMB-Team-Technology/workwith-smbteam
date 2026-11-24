@@ -1,0 +1,193 @@
+{
+  "confidence": "high",
+  "revenue_stated": 1400000,
+  "net_revenue_stated": null,
+  "is_contingency_practice": false,
+  "revenue_effective": 1400000,
+  "revenue_source": "research_notes",
+  "revenue_label": null,
+  "revenue_verified": true,
+  "needs_revenue_confirmation": false,
+  "team_size_stated": 4,
+  "team_size_source": "research_notes",
+  "team_size_effective": 4,
+  "practice_areas_detected": [
+    "securities law for startups and funds — regulation crowdfunding (form c offering documents)",
+    "regulation a offering docum",
+    "regulation crowdfunding (reg cf)",
+    "regulation a / securities offerings",
+    "fund formation / venture capital",
+    "reg cf",
+    "reg a / securities offerings"
+  ],
+  "hubspot_company": null,
+  "firm_identity_check": "matches (trigger \"Sosnow & Associates\" = website \"Sosnow & Associates PLLC\" = firm Hye Jin describes; the HubSpot company record was not readable, the contact's company field says \"S&A\"). The transcript's \"Sassnow\" is a speech-to-text spelling.",
+  "package_source": "rules",
+  "package_override": null,
+  "needs_seller_input": false,
+  "revenue_only_option": null,
+  "call_focus": {
+    "primary_engagement": "AI",
+    "products_discussed": [
+      "AI Workforce Pro (tier not specified)"
+    ],
+    "lead_gen_gap": true
+  },
+  "marketing_tier": "Growth",
+  "marketing_name": "Full Service Marketing — Growth",
+  "marketing_price_bundled": 8997,
+  "marketing_price_retail": 8997,
+  "marketing_savings": 0,
+  "coaching_name": null,
+  "coaching_price_bundled": null,
+  "coaching_price_retail": null,
+  "coaching_savings": null,
+  "law_tier": "AI Workforce Pro – Starter",
+  "law_name": "AI Workforce Pro – Starter",
+  "law_price_bundled": 1400,
+  "law_price_retail": null,
+  "law_seats": 4,
+  "total_bundled": 10397,
+  "total_savings": null,
+  "ad_spend_conservative": 6200,
+  "ad_spend_aggressive": 50000,
+  "ad_spend_rationale": {
+    "conservative_basis": "channel minimums $3,000 + $2,000 + $1,200 = $6,200",
+    "aggressive_basis": "20% rule: $2,800,000 goal × 20% ÷ 12 × 1.5 geo − $8,997 fee = $61,003 → reverse math: not possible (no case value) → capped at the $50,000 the package manages"
+  },
+  "selection_notes": [
+    "AI-led call, but prospect stated a lead-gen need — marketing included.",
+    "AI-led call with no coaching discussed — coaching left out (revenue rule would add Managed Operations Tier 1; add it back if the seller wants it).",
+    "\"AI Workforce Pro\" named without a tier — using AI Workforce Pro – Starter (team of 4).",
+    "AI Workforce Pro – Starter discussed on call: 4 seats × $350/mo.",
+    "Revenue $1M–$2M: Growth tier.",
+    "Only one bundle-eligible product in this package — stand-alone pricing applied, no bundle savings.",
+    "AI Workforce Pro – Starter does not count toward bundle pricing."
+  ],
+  "pricing_mode": "standalone",
+  "bundle_eligible_count": 1,
+  "unpriced_products": [],
+  "setup_fees": [
+    {
+      "line": "marketing",
+      "product": "Full Service Marketing — Growth",
+      "label": "AI Avatar setup",
+      "amount": 1850,
+      "waivable": true,
+      "waived": false,
+      "charged": 1850
+    }
+  ],
+  "setup_total": 1850,
+  "investment": {
+    "version": 1,
+    "products": [
+      {
+        "category": "marketing",
+        "name": "Full Service Marketing — Growth",
+        "charged": 8997,
+        "standalone": 8997
+      },
+      {
+        "category": "law",
+        "name": "AI Workforce Pro – Starter (4 seats)",
+        "charged": 1400,
+        "standalone": null
+      }
+    ],
+    "monthly_total": 10397,
+    "list_total": 10397,
+    "total_savings": 0,
+    "pricing_mode": "standalone",
+    "setup_fees": [
+      {
+        "product": "Full Service Marketing — Growth",
+        "label": "AI Avatar setup",
+        "amount": 1850,
+        "charged": 1850,
+        "waived": false
+      }
+    ],
+    "setup_total": 1850,
+    "year_one_total": 126614,
+    "year_one_basis": "12 × $10,397/mo in fees + $1,850 one-time setup. Ad spend is paid separately to Google and Meta.",
+    "ad_spend": {
+      "channels": [
+        {
+          "channel": "Google Search",
+          "minimum": 3000
+        },
+        {
+          "channel": "Local Services Ads",
+          "minimum": 2000
+        },
+        {
+          "channel": "Meta retargeting",
+          "minimum": 1200
+        }
+      ],
+      "conservative": 6200,
+      "aggressive": 50000,
+      "current_stated": 0,
+      "cap": 50000,
+      "overage": null,
+      "conservative_basis": "channel minimums $3,000 + $2,000 + $1,200 = $6,200",
+      "aggressive_steps": [
+        "20% rule: $2,800,000 goal × 20% ÷ 12 × 1.5 geo − $8,997 fee = $61,003",
+        "reverse math: not possible (no case value)",
+        "capped at the $50,000 the package manages"
+      ],
+      "year_one_range": [
+        74400,
+        600000
+      ],
+      "seller_set": false,
+      "computed": null,
+      "needs_seller_review": true
+    },
+    "return": null,
+    "inputs": {
+      "practice_area": {
+        "value": "Other",
+        "source": "research notes"
+      },
+      "geo_tier": {
+        "value": 1,
+        "multiplier": 1.5,
+        "source": "research notes"
+      },
+      "competitiveness": {
+        "value": "Medium",
+        "source": "research notes"
+      },
+      "spanish_campaign": false,
+      "revenue_effective": 1400000,
+      "revenue_goal": {
+        "value": 2800000,
+        "source": "not stated — 2× current revenue (audit-write.md)"
+      },
+      "case_value": {
+        "value": null,
+        "source": "practice-area default (low end)"
+      },
+      "close_rate": {
+        "value": 0.15,
+        "source": "default 15%",
+        "stated": null
+      },
+      "referral_share": 1,
+      "current_ad_spend": 0,
+      "current_cost_per_case": null,
+      "current_cost_per_lead": null,
+      "max_ad_budget": null,
+      "management_fee": 8997,
+      "ad_spend_cap": 50000
+    },
+    "flags": [
+      "Goal-based ad spend ($61,003) is above the $50,000 cap for Full Service Marketing — Growth — capped. Higher spend means a tier upgrade or the 15% overage fee (seller decision).",
+      "Ad spend over $25K — scoping approval required.",
+      "No case value (stated or default) — return projection left out."
+    ],
+    "alerts": []
+  }
+}
