@@ -86,16 +86,21 @@ jobs:
             echo "error=${ERR:-upload script returned no result}" >> "$GITHUB_OUTPUT"
           fi
 
-      - name: Write deck link to HubSpot contact
+      - name: Write deck link and decision JSON to HubSpot contact
         id: hubspot
         if: env.TEST_MODE != 'true' && steps.upload.outputs.ok == 'true' && steps.resolve.outputs.hubspot_contact_id != ''
         continue-on-error: true
         env:
           HUBSPOT_TOKEN: ${{ secrets.HUBSPOT_TOKEN }}
           DECK_URL: ${{ steps.upload.outputs.url }}
+          FRIENDLY_NAME: ${{ steps.resolve.outputs.friendly_name }}
         run: |
           CONTACT_ID="${{ steps.resolve.outputs.hubspot_contact_id }}"
-          BODY=$(jq -n --arg url "$DECK_URL" '{properties: {growth_profit_and_freedom_roadmap: $url}}')
+          BODY=$(jq -en --arg url "$DECK_URL" \
+            --slurpfile decision "$FRIENDLY_NAME/package_decision.json" \
+            'if ($decision | length) != 1 or ($decision[0] | type) != "object" then error("Expected one decision object") else
+              {properties: {growth_profit_and_freedom_roadmap: $url,
+                growth_profit_and_freedom_roadmap_json: ($decision[0] | tojson)}} end')
           HTTP_CODE=$(curl -s -o /dev/null -w "%{http_code}" -X PATCH \
             "https://api.hubapi.com/crm/v3/objects/contacts/$CONTACT_ID" \
             -H "Authorization: Bearer $HUBSPOT_TOKEN" \
