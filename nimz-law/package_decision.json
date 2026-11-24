@@ -1,0 +1,236 @@
+{
+  "confidence": "high",
+  "revenue_stated": 600000,
+  "net_revenue_stated": null,
+  "is_contingency_practice": false,
+  "revenue_effective": 600000,
+  "revenue_source": "research_notes",
+  "revenue_label": null,
+  "revenue_verified": true,
+  "needs_revenue_confirmation": false,
+  "team_size_stated": 4,
+  "team_size_source": "research_notes",
+  "team_size_effective": 4,
+  "practice_areas_detected": [
+    "criminal defense only — \"i primarily deal in assault and murder\" (high-end violent crime). flat-fee practice.",
+    "criminal defense — assault / murder (the call focus)",
+    "criminal defense (wichita falls)",
+    "criminal defense (denton / dfw)",
+    "on the site: dui",
+    "dwi",
+    "drug offenses",
+    "sexual offenses",
+    "domestic violence",
+    "murder",
+    "violent crimes",
+    "juvenile offenses",
+    "trial"
+  ],
+  "hubspot_company": null,
+  "firm_identity_check": "matches (trigger \"Nimz Law\"; website and directories \"Nimz Law\" / \"Nimz Law, PLLC\"; owner Dustin Nimz, Wichita Falls, TX).",
+  "package_source": "rules",
+  "package_override": null,
+  "needs_seller_input": false,
+  "revenue_only_option": null,
+  "call_focus": {
+    "primary_engagement": "marketing",
+    "products_discussed": [
+      "AI Workforce Pro (tier not specified)"
+    ],
+    "lead_gen_gap": true
+  },
+  "marketing_tier": "Starter",
+  "marketing_name": "Full Service Marketing — Starter",
+  "marketing_price_bundled": 4997,
+  "marketing_price_retail": 5697,
+  "marketing_savings": 700,
+  "coaching_name": "Managed Operations Tier 1",
+  "coaching_price_bundled": 3297,
+  "coaching_price_retail": 3497,
+  "coaching_savings": 200,
+  "law_tier": "AI Workforce Pro – Starter",
+  "law_name": "AI Workforce Pro – Starter",
+  "law_price_bundled": 1400,
+  "law_price_retail": null,
+  "law_seats": 4,
+  "total_bundled": 9694,
+  "total_savings": 900,
+  "ad_spend_conservative": 8700,
+  "ad_spend_aggressive": 25000,
+  "ad_spend_rationale": {
+    "conservative_basis": "channel minimums $5,500 + $2,000 + $1,200 = $8,700",
+    "aggressive_basis": "20% rule: $1,200,000 goal × 20% ÷ 12 × 1.5 geo − $4,997 fee = $25,003 → reverse math: 2.9 cases/mo ÷ 15% close × $138 benchmark blended CPL = $2,628 → capped at the $25,000 the package manages"
+  },
+  "selection_notes": [
+    "\"AI Workforce Pro\" named without a tier — using AI Workforce Pro – Starter (team of 4).",
+    "AI Workforce Pro – Starter discussed on call: 4 seats × $350/mo.",
+    "Revenue under $750K but multiple practice areas detected: Essentials hidden (requires single practice area) — Starter tier.",
+    "Managed Operations Tier 1 selected (team 4 — Tier 2 needs 5+).",
+    "AI Workforce Pro – Starter does not count toward bundle pricing.",
+    "Total at conservative ad spend ($18,394/mo) is over the 35% cap ($17,500/mo on $600,000 revenue) — review with sales rep."
+  ],
+  "pricing_mode": "bundled",
+  "bundle_eligible_count": 2,
+  "unpriced_products": [],
+  "setup_fees": [
+    {
+      "line": "marketing",
+      "product": "Full Service Marketing — Starter",
+      "label": "AI Avatar setup",
+      "amount": 1850,
+      "waivable": true,
+      "waived": false,
+      "charged": 1850
+    }
+  ],
+  "setup_total": 1850,
+  "investment": {
+    "version": 1,
+    "products": [
+      {
+        "category": "marketing",
+        "name": "Full Service Marketing — Starter",
+        "charged": 4997,
+        "standalone": 5697
+      },
+      {
+        "category": "coaching",
+        "name": "Managed Operations Tier 1",
+        "charged": 3297,
+        "standalone": 3497
+      },
+      {
+        "category": "law",
+        "name": "AI Workforce Pro – Starter (4 seats)",
+        "charged": 1400,
+        "standalone": null
+      }
+    ],
+    "monthly_total": 9694,
+    "list_total": 10594,
+    "total_savings": 900,
+    "pricing_mode": "bundled",
+    "setup_fees": [
+      {
+        "product": "Full Service Marketing — Starter",
+        "label": "AI Avatar setup",
+        "amount": 1850,
+        "charged": 1850,
+        "waived": false
+      }
+    ],
+    "setup_total": 1850,
+    "year_one_total": 118178,
+    "year_one_basis": "12 × $9,694/mo in fees + $1,850 one-time setup. Ad spend is paid separately to Google and Meta.",
+    "ad_spend": {
+      "channels": [
+        {
+          "channel": "Google Search",
+          "minimum": 5500
+        },
+        {
+          "channel": "Local Services Ads",
+          "minimum": 2000
+        },
+        {
+          "channel": "Meta retargeting",
+          "minimum": 1200
+        }
+      ],
+      "conservative": 8700,
+      "aggressive": 25000,
+      "current_stated": 2500,
+      "cap": 25000,
+      "overage": null,
+      "conservative_basis": "channel minimums $5,500 + $2,000 + $1,200 = $8,700",
+      "aggressive_steps": [
+        "20% rule: $1,200,000 goal × 20% ÷ 12 × 1.5 geo − $4,997 fee = $25,003",
+        "reverse math: 2.9 cases/mo ÷ 15% close × $138 benchmark blended CPL = $2,628",
+        "capped at the $25,000 the package manages"
+      ],
+      "year_one_range": [
+        104400,
+        300000
+      ],
+      "seller_set": false,
+      "computed": null,
+      "needs_seller_review": true
+    },
+    "return": null,
+    "inputs": {
+      "practice_area": {
+        "value": "Criminal Defense",
+        "source": "research notes"
+      },
+      "geo_tier": {
+        "value": 1,
+        "multiplier": 1.5,
+        "source": "research notes"
+      },
+      "competitiveness": {
+        "value": "High",
+        "source": "research notes"
+      },
+      "spanish_campaign": false,
+      "revenue_effective": 600000,
+      "revenue_goal": {
+        "value": 1200000,
+        "source": "not stated — 2× current revenue (audit-write.md)"
+      },
+      "case_value": {
+        "value": 35000,
+        "source": "stated on the call"
+      },
+      "close_rate": {
+        "value": 0.15,
+        "source": "default 15%",
+        "stated": null
+      },
+      "referral_share": null,
+      "current_ad_spend": 2500,
+      "current_cost_per_case": null,
+      "current_cost_per_lead": null,
+      "max_ad_budget": null,
+      "management_fee": 4997,
+      "ad_spend_cap": 25000
+    },
+    "flags": [
+      "Goal-based ad spend ($25,003) is above the $25,000 cap for Full Service Marketing — Starter — capped. Higher spend means a tier upgrade or the 15% overage fee (seller decision).",
+      "Return table held off the deck: it projects 38.1× (above the 20× ceiling) from a $35,000 average case (stated) × 15% close rate. Confirm the average fee and close rate, then reply \"confirm the 38.1× return\" to show it, or correct the inputs."
+    ],
+    "alerts": [
+      "Return table held off the deck: it projects 38.1× (above the 20× ceiling) from a $35,000 average case (stated) × 15% close rate. Confirm the average fee and close rate, then reply \"confirm the 38.1× return\" to show it, or correct the inputs."
+    ],
+    "return_held": {
+      "method": "benchmark_cpl",
+      "basis": "SMB Team criminal defense cost-per-lead benchmarks ($138 blended, +20% on the low end), 15% close rate (assumed) and a $35,000 average case (said on the call).",
+      "case_value": 35000,
+      "case_value_stated": true,
+      "cost_per_case": null,
+      "share_of_case_value": null,
+      "close_rate": 0.15,
+      "blended_cpl": 138,
+      "scenarios": [
+        {
+          "label": "Conservative",
+          "ad_spend": 8700,
+          "leads": 52.5,
+          "cases": 7.9,
+          "revenue": 275900,
+          "return_multiple": 31.7
+        },
+        {
+          "label": "Aggressive",
+          "ad_spend": 25000,
+          "leads": 181.2,
+          "cases": 27.2,
+          "revenue": 951300,
+          "return_multiple": 38.1
+        }
+      ],
+      "disclaimer": "Illustrative arithmetic, not a forecast.",
+      "peak_multiple": 38.1,
+      "ceiling": 20
+    }
+  }
+}
