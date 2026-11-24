@@ -1,0 +1,226 @@
+THE CHOATE LAW FIRM — GROWTH AUDIT RESEARCH NOTES
+Prepared for: Paul Choate (owner, bankruptcy attorney)
+Sales Rep: Dan Bryant (Tim DiDomenico made the intro and sat in on the first minute of the call)
+Date: December 8, 2026 (proposal call 2026-12-08 17:00 UTC per the trigger)
+URL: https://www.chapter7ok.com (trigger URL; fetched live, HTTP 200)
+Friendly name: the-choate
+Research run: November 24, 2026
+URL source: trigger file URL; resolved and is live, no search needed. Web search and the site's own pages confirm chapter7ok.com is The Choate Law Firm (Paul Choate), offices in Oklahoma City, Shawnee, Seminole and Ada, phone 405-788-0058.
+Call this research rests on: the Nov 20, 2026 discovery call (36 min, Dan Bryant, Tim DiDomenico, Paul Choate). A follow-up "solution call" was booked for Tue Nov 24, 4:30 PM CT; no transcript of that call was provided, so nothing from it is in these notes.
+
+RESEARCH TOOL LIMITS THIS SESSION (applies to every "not observed" below): no logged-in browser. Google Maps / Google Business Profile and Google results pages (local pack, ads, LSA) could not be read. The Meta Ad Library returned HTTP 403, Avvo and Justia partly 403, and the PageSpeed Insights API returned HTTP 429 (quota). Review figures came from web-search summaries and aggregator pages, none read directly off Google, so every review figure below is tagged UNCONFIRMED. Some page facts came from a web-fetch tool that summarises pages, others from the raw page source (curl).
+
+====================================================================
+STEP 1 — WEBSITE RESEARCH
+====================================================================
+- Website URL confirmed live: Yes (HTTP 200 on /, /about-us, /contact-us, /our-fees, /learn-more).
+- Last redesign date or estimated age: Squarespace site. No copyright year found in the page source and no dated content found. Age not determined.
+- Mobile responsive: viewport meta tag present (width=device-width); not visually checked on a device. Lighthouse mobile result below.
+- Homepage headline: "Oklahoma Bankruptcy Focused Law Firm". Page title: "The Choate Law Firm".
+- CTA above fold: Yes — "Call Us", "Schedule a Free Consultation" and an "Our Fees" link; phone 405-788-0058.
+- Contact form location: NOT FOUND. No <form> element on the homepage, /contact-us, /our-fees or /about-us. The site sends visitors to phone, email and a scheduling link.
+- Live chat present: No (no chat widget found in the page source).
+- Attorney bio present: Yes — Paul Choate bio (University of Oklahoma School of Law 2006, bankruptcy focus since 2009, states he has "filed for over 5000 clients in all districts in Oklahoma").
+- Video present: Not observed on the homepage.
+- Blog present: No — /blog returns 404; sitemap lists only /home, /about-us, /our-fees, /learn-more, /contact-us. No dated posts.
+- Site structure: five-page Squarespace site. No separate practice-area pages and no city landing pages for Shawnee, Seminole, Ada or Oklahoma City.
+- Offices listed on the site: Oklahoma City (7015 W Hefner Rd, Building D, STE B), Shawnee (102 E Highland St), Seminole (1423 E Wrangler Blvd), Ada (111 E 12th St). Phone 405-788-0058.
+
+PageSpeed Insights:
+- pagespeed.web.dev / PageSpeed API: UNAVAILABLE — HTTP 429 quota exceeded on two attempts; the pagespeed.web.dev page did not render results to a non-browser fetch.
+- Substitute measurement (NOT pagespeed.web.dev): local Lighthouse 12.8.2 (headless Chromium on a CI machine), run November 24, 2026 against https://www.chapter7ok.com/
+  Mobile: performance 44 — FCP 2.8 s, LCP 5.8 s, Total Blocking Time 2,420 ms, CLS 0.001, Speed Index 3.7 s.
+  Desktop: performance 92 — FCP 0.9 s, LCP 1.2 s, Total Blocking Time 180 ms, CLS 0.013, Speed Index 1.2 s.
+  Lab runs differ from pagespeed.web.dev; the seller should re-run pagespeed.web.dev before quoting these.
+- PageSpeed mobile score: 44 [local Lighthouse run, not pagespeed.web.dev]
+- PageSpeed desktop score: 92 [local Lighthouse run, not pagespeed.web.dev]
+
+====================================================================
+STEP 2 — GOOGLE BUSINESS PROFILE
+====================================================================
+- GBP found: Not read directly (Google Maps could not be fetched). Aggregator pages list a Shawnee profile for The Choate Law Firm (102 E Highland St, Shawnee, OK 74801, 405-788-0058, Mon–Fri 9–5, category shown as "Criminal Law Attorney" on trustanalytica.org).
+- Star rating: 4.9 [UNCONFIRMED — sourced from trustanalytica.org and a web-search summary, not independently confirmed via Google]
+- Total review count: 79 [UNCONFIRMED — sourced from trustanalytica.org and a web-search summary, not independently confirmed via Google]
+- A web-search summary also showed a Seminole listing at 4.2 stars [UNCONFIRMED — web-search summary, not independently confirmed via Google]. Whether the firm has separate Google listings for OKC, Seminole and Ada was not determined.
+- Most recent review date: not found (aggregator says "just posted"; no date).
+- Primary category: "Criminal Law Attorney" per trustanalytica.org [UNCONFIRMED aggregator reading; Google category not read]. If a bankruptcy firm is categorised as criminal law on Google, that is worth checking.
+- Photos active: not observed
+- Posts active: not observed
+
+====================================================================
+STEP 3 — LOCAL 3-PACK SEARCHES
+====================================================================
+Practice Area 1: Bankruptcy (Chapter 7 / Chapter 13)
+- Search 1 "bankruptcy lawyer oklahoma city": NOT OBSERVED — Google results pages could not be read from this environment. Tried: web search (returns directories, not the live pack).
+- Search 2 "chapter 7 bankruptcy attorney oklahoma city": NOT OBSERVED — same reason.
+- Search 3 "bankruptcy attorney shawnee ok": NOT OBSERVED — same reason.
+Seller should check the three packs live. Named OKC bankruptcy competitors turned up by web search are in STEP 4.
+
+====================================================================
+STEP 4 — COMPETITOR REVIEW COUNTS
+====================================================================
+Named local competitors; none read directly off Google.
+- Competitor 1: Chris Mudd & Associates, PLLC (Oklahoma City; Paul's contractor firm and the firm he says he wants to beat) — reviews: 101 [UNCONFIRMED — sourced from trustanalytica.org, not independently confirmed via Google] — rating: 4.8 [UNCONFIRMED — sourced from trustanalytica.org, not independently confirmed via Google]. Its site is bankruptcyattorneyokc.com.
+- Competitor 2: Convenient Bankruptcy (Luke Homen Law, PLLC; 10313 Greenbriar Pkwy, Oklahoma City) — reviews: 169 [UNCONFIRMED — sourced from a legalrank.co/web-search summary, not independently confirmed via Google]; its own website claims "160+ five star Google reviews" and "largest bankruptcy filing law firm in the state of Oklahoma" (self-description) — rating: 4.8 [UNCONFIRMED — same source].
+- Competitor 3: Marty Martin Bankruptcy Law (6440 Avondale Dr, Oklahoma City) — reviews: 78 to 91 depending on the source [UNCONFIRMED — sourced from web-search summaries and trustanalytica.org, not independently confirmed via Google] — rating: 4.8 [UNCONFIRMED — same sources].
+- Comparison: the firm's own 79 reviews [UNCONFIRMED] are about level with Marty Martin and below Mudd and Convenient. Do not describe any of them as dominating on reviews until the counts are confirmed on Google.
+
+====================================================================
+STEP 5 — DIRECTORY LISTINGS
+====================================================================
+- Avvo: Paul J. Choate profile found and appears claimed. Avvo rating 7.0; 5.0/5.0 from 2 client reviews. Address on Avvo: 116 N. Bell Ave., Shawnee, OK 74801. Practice mix shown: Chapter 7 Bankruptcy 90% (1,100 cases over 19 years), Bankruptcy and Debt 10%. Offices shown: Shawnee, Oklahoma City, Ada. Bio says "successfully assisted over 10,000 Oklahomans".
+- Justia: profile exists (Paul Jared Choate, Shawnee); page returned HTTP 403, details not read.
+- FindLaw: web search says a profile exists; not opened.
+- Yelp: not checked (blocked in this environment).
+- Other directories listing the firm (found by search, details not read): Lawyers.com, ReachAttorneys, AttorneyAtLaw.com, attorneyslisted.com, bankruptcylawyersin.com, trustanalytica.org, legalrank.co.
+- NAP inconsistencies seen: Shawnee office appears at 102 E Highland St (firm site, trustanalytica), 400 N. Broadway (a directory result), and 116 N. Bell Ave (Avvo). The site's map link uses ZIP 74802 for Shawnee while the directories use 74801. The bio says "30 years of experience" on one directory while the transcript says Paul is in his 20th year of practice. The firm's site lists 4 offices; the transcript mentions two (OKC and about an hour east).
+- Geo-targeting landing pages for surrounding cities: Not found (five-page site, no city pages).
+
+====================================================================
+STEP 6 — GOOGLE ADS
+====================================================================
+Practice Area 1: Bankruptcy
+- Firm ads observed: NOT OBSERVED — Google results pages could not be read from this environment; this does not show whether the firm is or is not running search ads. Per the call, Paul spends about $1,500 a month on direct mail and was "starting" Facebook ads; Google search ads were not discussed.
+- Named local competitors running ads: not observed. Per Paul, Chris Mudd & Associates spends "12 grand a month on their advertising" (platforms not stated).
+
+====================================================================
+STEP 7 — LOCAL SERVICE ADS
+====================================================================
+- Firm appears in LSA: not observed. The call notes (read out by the seller, see STEP 9) say "LSAs aren't showing properly", which suggests the firm has or had an LSA setup with visibility problems; not confirmed by Paul on the recording.
+- Google Screened: not observed
+- LSA review count: not observed
+- Named local competitors in LSA: not observed
+
+====================================================================
+STEP 8 — META ADS
+====================================================================
+- Firm has active ads: NOT OBSERVED — Meta Ad Library returned HTTP 403 to a non-browser fetch. The call notes say the firm is "starting Facebook ads" (seller read from prior-call notes).
+- Named local competitor 1: Chris Mudd & Associates — not observed
+- Named local competitor 2: Convenient Bankruptcy — not observed
+
+====================================================================
+STEP 9 — TRANSCRIPT EXTRACTION
+====================================================================
+Transcript source: full verbatim Fathom transcript (summary used only as overview)
+Notes on the transcript: the Fathom speaker tags are shifted in places (several of Paul's lines are tagged Dan Bryant, for example 00:07:46 to 00:07:50 and 00:11:55 to 00:12:00 run on from Paul). Quotes below are used only where the content proves who spoke. Dan read out notes from Tim's earlier call (00:04:15 to 00:05:35); those lines are the seller's reading, not Paul's words on this call.
+
+- Practice areas confirmed: Bankruptcy (consumer; Paul: "I like bankruptcy" 00:05:53). Site and directories list Chapter 7 and Chapter 13.
+- Current lead sources: direct mail — "I spend about $1,500 on direct mail." (Paul Choate (client), 00:29:40). Facebook ads "starting" and "LSAs aren't showing properly" are from the seller reading prior-call notes (Dan Bryant, 00:04:39 to 00:04:42), not confirmed by Paul on the recording. Paul also does about 20 appointments a day on his contract days at Mudd Law, whose ads supply those cases (00:08:54; 00:09:01).
+- Ads ever run: Direct mail yes, about $1,500 a month (Paul, 00:29:40). Facebook ads and LSAs: per prior-call notes only, status and spend not stated. Google search ads: not discussed.
+- Firm identity check: matches (trigger "The Choate Law Firm"; website and transcript: The Choate Law Firm / Paul Choate, chapter7ok.com).
+- Team size: Paul (attorney) plus one main assistant, plus a receptionist just hired (Paul, 00:29:14 "I just hired a new receptionist"; 00:10:14 "I kept my one main assistant"). Last year he had eight assistants and fired them all in January (00:09:41, 00:10:12). He also works two days a week at Mudd Law (ends about January).
+- Team size (total headcount): 3
+- Annual revenue (gross / case value): about $500,000 this year — Paul, 00:09:37 "I went from 200 to now I'm going hit 500 this year" [transcript unclear — units not spoken; read as $200K to $500K, consistent with the seller's recap of $550,000 at 00:00:21]. Separately Paul says Mudd's firm will do "1.7 this year" (00:09:25), which is not his firm's revenue.
+- Annual revenue (net / take-home / collected): not distinguished from gross
+- Revenue (annual, best estimate): $500,000
+- Fee structure: flat-fee — seller read "a very fixed case value, $1,500 per case" (Dan Bryant, 00:05:14, from prior-call notes); Paul did not restate it on this call. The firm's site has an "Our Fees" page (not read).
+- Revenue goal: $2,000,000 — Tim DiDomenico recapped "you're just looking to get to that $2 million in revenue right now at $550,000" (00:00:21) and when asked "Did I miss anything, Paul?" Paul answered "No, you're good." (00:00:50). Paul did not say the figure himself on this recording; seller to confirm.
+- Average case value: about $1,500 per case, flat fee — seller-stated from prior-call notes (Dan Bryant, 00:05:14); Paul answered "Okay. Yeah." (00:05:45) to the list but did not say the number. Seller to confirm.
+- Current close rate: 60 to 70% of consults hire him (self-reported) — Paul, 00:13:15 "I think I have a 60 to 70% closing rate" ("everything I read says that I'm wrong"). Only about 30 to 50% of those who hire him file (00:13:21), "a pretty big swing there because I don't have my numbers dialed in" (00:13:25).
+- Number of locations: Paul names two (Oklahoma City and about an hour east, 00:01:17); the website lists four (OKC, Shawnee, Seminole, Ada).
+- Spanish campaign needed: no (not mentioned on the call; site is English only as far as observed)
+- Dominant buying motive: "So I got 10 years to blow this thing up, gather all I can, build this practice." — Paul Choate (client), 00:11:48, after "I'm almost 50 and I'm going to be out of this in 10 years." (00:11:45). Type (3) scale and dominate, then exit; with a freedom thread: "right now I'm bogged down in operations. I need to move to management." (00:15:15).
+- Any profitability claims made by prospect: "I made like maybe 50 grand a year" (his old small firm with his mother-in-law running it, Paul, 00:18:09). "I've done 50,000 more than I did last year with eight people, just me and her" (Paul, 00:10:14). Profit-share dispute with Mudd: "I get part of the profit. But they control all the costs." (Paul, 00:09:16). No profit-margin figure for his own firm.
+- Any claims about case types or practice areas: "I filed 10% of all bankruptcies here last month." (Paul, 00:08:36; combined with the cases he files through Mudd). "because I'm the biggest filer in Oklahoma, I'm now the tall weed" (Paul, 00:27:05). Filing counts: "my monthly average is 50 to 70" (00:08:47, combined); September: 32 at his own firm with one assistant and 38 at Mudd's (00:29:18 to 00:29:24).
+- Stated call focus / product interest: first priority is lead volume ("making the phone ring"); second is AI to handle the basic work and make staff accountable (intake, follow-up, client communication, with attorney checks because of court and U.S. Trustee scrutiny). Also managing people and moving from operations to management. Rep said the next call would cover "marketing, lead gen, AI" and "something that's simple and easy" as a first step. Not a pure marketing call; no product or price was named. Capital is limited for 2 to 3 months until a property sale closes.
+- Primary engagement: mixed
+- Products discussed on call: none
+- Lead-gen gap stated: yes — "I think the first thing is making the phone ring, okay?" (Paul Choate, 00:26:17)
+- Existing marketing/SEO/ad vendor engagements: none stated (Mudd Law is a contract-work arrangement, not a marketing vendor)
+- Budget constraints stated: "I won't be able to immediately implement anything that's going to require a lot of capital investment for a little bit." (Paul Choate [speaker tag says Dan Bryant — read as Paul Choate], 00:32:32); "when I get that sold, I'll have capital do stuff. So it's a two or three month window until I leave them." (Paul, 00:32:23)
+- Bookkeeping volume: not stated
+- Financial goals stated (for the ProfitOS slides): none stated (Paul talked about the property sale freeing capital and the Mudd profit-share dispute, not numbers goals for his own firm)
+
+Investment inputs
+- Ad spend practice area: Bankruptcy — the call is about bankruptcy only (Paul, 00:05:53)
+- Geo market tier: Tier 4 (Oklahoma City metro, plus Shawnee/Seminole/Ada)
+- Market competitiveness: Medium — Mudd's ad spend about $12K a month (Paul, 00:29:35) and Convenient/Mudd review counts above the firm's, but those counts are UNCONFIRMED and the packs/ads were not observed
+- Current monthly ad spend (stated): $1,500 — direct mail only (Paul, 00:29:40); online ad spend not stated
+- Current cost per signed case (stated): not stated
+- Current cost per lead (stated): not stated
+- Average case value (stated, one figure): not stated — the seller read $1,500 from prior-call notes (Dan Bryant, 00:05:14) and Paul did not restate it; seller to confirm
+- Close rate (stated): 60% — Paul stated 60 to 70% (low end used), consult-to-hire (00:13:15); only 30 to 50% of hired clients file
+- Referral share of cases (stated): not stated
+- Revenue goal (annual, one figure): $2,000,000 — seller recap at 00:00:21, Paul "No, you're good" at 00:00:50; not said by Paul himself
+- Maximum monthly ad budget (stated): not stated
+
+Key prospect quotes
+- Paul Choate (client), 00:26:17 — "I think the first thing is making the phone ring, okay?" (priority: lead generation)
+- Paul Choate (client), 00:26:28 — "I've got to have the phone ringing because I have capacity. Like today I've got six appointments. I could do 15, okay?" (capacity vs bookings)
+- Paul Choate (client), 00:13:15 — "I think I have a 60 to 70% closing rate. People actually hire me after they meet with me, but then only about 30 to 50% file." (conversion and attrition)
+- Paul Choate (client), 00:14:27 — "I didn't build the systems outright. I didn't have follow-through and checkups, which is where I want to use AI." (follow-up gap)
+- Paul Choate (client), 00:15:15 — "right now I'm bogged down in operations. I need to move to management." (owner role)
+- Paul Choate (client), 00:10:12 — "I fired everybody in January… I kept my one main assistant, and I've done 50,000 more than I did last year with eight people, just me and her" (team)
+- Paul Choate (client), 00:26:47 — "I want them on the phones, talking to clients, pushing them forward, making them feel taken care of and supported, but having the tools and the resources behind them actually doing the work so I don't get in trouble with the court." (team and AI, compliance)
+- Paul Choate (client), 00:29:35 — "they spend 12 grand a month on their advertising, okay? I spend about $1,500 on direct mail. And so I'm already a third of them, roughly." (lead sources and the comparison firm)
+- Paul Choate (client), 00:11:48 — "So I got 10 years to blow this thing up, gather all I can, build this practice." (goals/DBM)
+- Paul Choate (client), 00:27:05 — "because I'm the biggest filer in Oklahoma, I'm now the tall weed" (court and U.S. Trustee scrutiny)
+- Paul Choate (client), 00:05:50 — "And I don't like being a lawyer, just FYI." (personal why)
+- Paul Choate (client) [speaker tag says Dan Bryant — read as Paul Choate], 00:32:32 — "I won't be able to immediately implement anything that's going to require a lot of capital investment for a little bit." (budget)
+
+====================================================================
+KPI AND DIAGNOSIS (STEP 9B)
+====================================================================
+Product focus this supports: mixed — marketing first (Full Service Marketing: more consults to fill capacity), then AI intake/follow-up (Legal AI Workforce / Fractional CTO) and Managed Operations. No product or price named on the call.
+Headline KPI: Booked consults vs capacity — "today I've got six appointments. I could do 15" — said by client, 00:26:32 to 00:26:34 — "I've got to have the phone ringing because I have capacity. Like today I've got six appointments. I could do 15, okay?"
+  KPI status: usable
+  Why this KPI: marketing (paid ads, LSA, website) adds consults to fill the open capacity; he named it as the first priority.
+Supporting figures (0–3):
+  - 60 to 70% of consults hire him — client, 00:13:15 — "I think I have a 60 to 70% closing rate."
+  - Only about 30 to 50% of those who hire him file — client, 00:13:21 — "People actually hire me after they meet with me, but then only about 30 to 50% file."
+  - Direct mail about $1,500 a month vs about 12 grand a month at Mudd's firm — client, 00:29:35 — "they spend 12 grand a month on their advertising, okay? I spend about $1,500 on direct mail."
+Client-stated goal for this KPI: capacity of 15 appointments a day — "I could do 15, okay?" (00:26:34). Revenue goal $2,000,000 was confirmed only through Paul's "No, you're good" to Tim's recap (00:00:21 to 00:00:50).
+KPI quotes (2–4, verbatim, client only):
+  - Paul Choate (client), 00:26:28 "I've got to have the phone ringing because I have capacity. Like today I've got six appointments. I could do 15, okay?" (capacity)
+  - Paul Choate (client), 00:13:15 "I think I have a 60 to 70% closing rate. People actually hire me after they meet with me, but then only about 30 to 50% file." (conversion)
+  - Paul Choate (client), 00:29:35 "they spend 12 grand a month on their advertising, okay? I spend about $1,500 on direct mail." (spend)
+Client's why (verbatim, client only): Paul Choate (client), 00:11:48 "So I got 10 years to blow this thing up, gather all I can, build this practice." — after "I'm almost 50 and I'm going to be out of this in 10 years." (00:11:45); also "I don't like being a lawyer" (00:05:50) and "I need to move to management." (00:15:16). Wants out of day-to-day work and to dominate Oklahoma bankruptcy first.
+Cost of inaction (verbatim, client only): none on the call. Closest is unused capacity ("Like today I've got six appointments. I could do 15", 00:26:32) and the January exit from Mudd, after which the cases Mudd's ads supplied go away (00:26:23, "I won't technically be leaving until January").
+Legacy Staircase discussed: yes — the rep showed the staircase and "the abyss" (Dan Bryant, 00:23:23). Current stage: 3 to 4, "somewhere between step three and four, solo practitioner and small business manager" (placed by Dan Bryant, 00:23:24; Paul did not comment). Goal stage: not named by Paul (rep described the CEO level, 00:23:35).
+Diagnosis (3–4 causes, biggest first):
+  1. Too few consults booked to fill capacity — evidence: 6 appointments booked vs "I could do 15" — source: call: Paul Choate, 00:26:32 to 00:26:34 — fixed by: Full Service Marketing (paid ads and LSA, website conversion)
+     Target basis: client-stated capacity, "I could do 15" (00:26:34)
+  2. Most hired clients never file; follow-up depended on one assistant — evidence: "only about 30 to 50% file" — source: call: Paul Choate, 00:13:21; follow-up detail 00:14:00 to 00:14:14 ("she just followed up with everybody… I shot up to 20 to 30 cases a month") — fixed by: AI follow-up and intake automation with attorney review (Fractional CTO / Legal AI Workforce)
+     Target basis: none — flag for seller
+  3. Owner stuck in operations with no accountability or KPI system — evidence: "right now I'm bogged down in operations. I need to move to management." and "I tried to get reports and KPIs… it became a very antagonistic relationship" — source: call: Paul Choate, 00:15:15 and 00:14:42 to 00:14:48 — fixed by: Managed Operations (KPI scorecard, accountability, hiring and process support)
+     Target basis: none — flag for seller
+  4. Website converts mobile visitors slowly and has no contact form — evidence: local Lighthouse mobile performance 44, Total Blocking Time 2,420 ms; no form on any page — source: research: STEP 1, local Lighthouse 12.8.2 run Nov 24, 2026 (not pagespeed.web.dev) and page source — fixed by: Full Service Marketing (website rebuild and conversion work)
+     Target basis: none — flag for seller (re-run pagespeed.web.dev first)
+Plan inputs:
+  - Fractional CTO / AI Workforce Pro: repetitive/manual tasks he named — follow-up with every hired client until filing ("it does all that, where I don't have to be the one sitting on their back", Paul, 00:14:31); intake ("I know AI can do a better job than me… on an intake", 00:10:55, tag as read); reports ("a system that does it for me and just gives me reports all day long", 00:14:39); "handle a lot of the basic stuff" (00:26:36). Compliance: attorney-in-the-loop because "our federal judge, she absolutely hates AI" (00:11:21).
+  - Managed Operations: "I'm in an area where there's not a lot of A players" (00:24:24); assistants not accountable ("make it to where my assistants have to be accountable", 00:26:36); clients call his cell ("every single one of them has my cell phone", 00:10:02).
+  - FCFO / bookkeeping: none stated
+Alternate KPI (if the seller changes the package): AI follow-up → share of hired clients who file, "only about 30 to 50% file" (Paul, 00:13:21)
+Seller should confirm on the next call:
+  - Current annual revenue: Paul said "going hit 500" (00:09:38, units not spoken) vs Tim's $550,000 (00:00:21); gross or net, and the firm's own revenue excluding what he earns at Mudd Law.
+  - Revenue goal of $2,000,000 and the timeline (Paul only said "No, you're good" to Tim's recap).
+  - Average case fee of $1,500 and whether it is flat fee for Chapter 7 and Chapter 13 (seller read it from notes; Paul did not restate it).
+  - Whether the firm has LSAs set up, what "not showing properly" means, and whether Facebook ads are live (both from prior-call notes).
+  - Monthly lead and consult counts, show rate and cost per signed case (all N/A on the call), and the filing rate after hiring (30 to 50% swing, "I don't have my numbers dialed in").
+  - Budget: monthly marketing amount he can commit now vs after the property sale closes (2 to 3 months), and the January start date once Mudd Law work ends.
+  - What share of cases comes from direct mail vs referrals vs Google.
+  - Google Business Profile: review count and rating off Google (79 and 4.9 are UNCONFIRMED), category, and whether OKC/Seminole/Ada have separate listings; local pack results for OKC and Shawnee searches; Google, LSA and Meta ads live.
+  - pagespeed.web.dev scores (the Lighthouse numbers above are local lab runs).
+  - Shawnee office address (three versions in directories) and which of the four offices are staffed.
+  - Court / U.S. Trustee scrutiny: how it limits advertising volume or AI use.
+
+====================================================================
+STEP 10 — COMPETITIVE URGENCY SCORE
+====================================================================
+Score: 5 (partial evidence: local pack, Google ads, LSA and Meta ads were not observable, so the score rests on review counts [UNCONFIRMED], Paul's statement about Mudd's ad spend, and directory results).
+Named local competitor threats:
+  1. Chris Mudd & Associates, PLLC — Paul says it spends "12 grand a month" on advertising and is growing (his figures, 00:29:35 and 00:09:25); about 101 reviews [UNCONFIRMED].
+  2. Convenient Bankruptcy (Luke Homen Law, PLLC) — describes itself as the largest bankruptcy filing firm in Oklahoma; about 169 reviews [UNCONFIRMED], well above the firm's 79 [UNCONFIRMED].
+  3. Marty Martin Bankruptcy Law — about 78 to 91 reviews at 4.8 [UNCONFIRMED], level with the firm; an established OKC consumer bankruptcy practice.
+Dynamic sentence: "A score of 5 means competitors have meaningful advantages in one or more areas and are pulling ahead. You are not invisible yet — but the window to close the gap is narrowing. Every month without action is a month they extend their lead."
+
+====================================================================
+PASS 2 — VERIFICATION CHECKLIST (completed)
+====================================================================
+- Every review count and rating carries an UNCONFIRMED tag; none was confirmed on Google.
+- Prospect's reviews (79) do not exceed any competitor described as ahead on reviews beyond what is tagged; only Mudd (101) and Convenient (169) are described as higher, both UNCONFIRMED.
+- No section says the firm is not running ads; ads, LSA, 3-pack and PageSpeed API gaps are written as "not observed" with what was tried.
+- PageSpeed numbers are real local Lighthouse measurements, labelled as such; pagespeed.web.dev itself was unavailable.
+- DBM, revenue goal, close rate, average case value and call focus are recorded; revenue goal and case value are flagged as seller-stated.
+- Machine-read lines (Primary engagement, Products discussed on call, Lead-gen gap stated, Revenue best estimate, Team size total headcount, Investment inputs) are in the exact format.
+- No STEP 9B figure was calculated or estimated; no UNCONFIRMED figure is used in STEP 9B.
