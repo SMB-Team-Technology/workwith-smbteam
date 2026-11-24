@@ -1,7 +1,7 @@
 name: Audit Write (Pass 2 — proposal deck)
 
 # Builds the 7-slide proposal deck (cover + 6) (the website and Sales Companion PDF are
-# retired), uploads it to the HubSpot file manager, writes that link to the
+# retired), uploads it to Google Drive, writes that link to the
 # contact, emails the seller and replies in the Slack thread.
 #
 # TEST MODE — any run from an audit-test/** branch:
@@ -9,9 +9,7 @@ name: Audit Write (Pass 2 — proposal deck)
 #   - emails only carolyn.webb@smbteam.com (no CC), subject prefixed [TEST] —
 #     or no email at all when the trigger has "test_no_email": true
 #   - skips the HubSpot contact write and every Slack post
-#   - skips the HubSpot file upload too, unless the trigger has
-#     "test_upload": true — then the deck goes to the separate
-#     "AI Proposals TEST" folder (still no contact write)
+#   - skips Google Drive authentication and uploads
 on:
   push:
     branches: [main, 'audit-test/**']
@@ -23,6 +21,7 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 120
     permissions:
+      id-token: write
       contents: write
     env:
       BRANCH: ${{ github.ref_name }}
@@ -179,19 +178,27 @@ jobs:
           echo "missing="            >> "$GITHUB_OUTPUT"
           echo "deck=$DECK"          >> "$GITHUB_OUTPUT"
 
-      # Upload to the HubSpot file manager ("AI Proposals", public but not
-      # indexable). A re-run replaces the same file, so the link never changes.
-      # Never fails the job: a failure is reported in Slack instead.
-      - name: Upload deck to HubSpot
+      - name: Authenticate to Google Drive
+        id: drive-auth
+        if: env.TEST_MODE != 'true' && steps.verify.outputs.write_verified == 'true'
+        continue-on-error: true
+        uses: google-github-actions/auth@v3
+        with:
+          workload_identity_provider: ${{ vars.GOOGLE_WORKLOAD_IDENTITY_PROVIDER }}
+          service_account: drive-uploader@ai-workforce-pro.iam.gserviceaccount.com
+          token_format: access_token
+          access_token_scopes: https://www.googleapis.com/auth/drive
+          create_credentials_file: false
+
+      - name: Upload deck to Google Drive
         id: upload
-        if: steps.verify.outputs.write_verified == 'true' && (env.TEST_MODE != 'true' || steps.inputs.outputs.test_upload == 'true')
+        if: env.TEST_MODE != 'true' && steps.verify.outputs.write_verified == 'true'
         env:
-          HUBSPOT_TOKEN: ${{ secrets.HUBSPOT_TOKEN }}
+          DRIVE_ACCESS_TOKEN: ${{ steps.drive-auth.outputs.access_token }}
+          FRIENDLY_NAME: ${{ steps.inputs.outputs.friendly_name }}
+          DECK: ${{ steps.verify.outputs.deck }}
         run: |
-          FRIENDLY_NAME="${{ steps.inputs.outputs.friendly_name }}"
-          ARGS=(--file "${{ steps.verify.outputs.deck }}")
-          if [ "$TEST_MODE" = "true" ]; then ARGS+=(--folder "AI Proposals TEST"); fi
-          RESULT=$(node scripts/upload-proposal-to-hubspot.mjs "$FRIENDLY_NAME" "${ARGS[@]}" || true)
+          RESULT=$(node scripts/upload-proposal-to-drive.mjs "$FRIENDLY_NAME" "$DECK" || true)
           echo "$RESULT"
           OK=$(jq -r '.ok // false' <<< "$RESULT" 2>/dev/null || echo false)
           echo "ok=$OK" >> "$GITHUB_OUTPUT"
@@ -202,16 +209,21 @@ jobs:
             echo "error=${ERR:-upload script returned no result}" >> "$GITHUB_OUTPUT"
           fi
 
-      - name: Write deck link to HubSpot contact
+      - name: Write deck link and decision JSON to HubSpot contact
         id: hubspot
         if: env.TEST_MODE != 'true' && steps.upload.outputs.ok == 'true' && steps.inputs.outputs.hubspot_contact_id != ''
         continue-on-error: true
         env:
           HUBSPOT_TOKEN: ${{ secrets.HUBSPOT_TOKEN }}
           DECK_URL: ${{ steps.upload.outputs.url }}
+          FRIENDLY_NAME: ${{ steps.inputs.outputs.friendly_name }}
         run: |
           CONTACT_ID="${{ steps.inputs.outputs.hubspot_contact_id }}"
-          BODY=$(jq -n --arg url "$DECK_URL" '{properties: {growth_profit_and_freedom_roadmap: $url}}')
+          BODY=$(jq -en --arg url "$DECK_URL" \
+            --slurpfile decision "$FRIENDLY_NAME/package_decision.json" \
+            'if ($decision | length) != 1 or ($decision[0] | type) != "object" then error("Expected one decision object") else
+              {properties: {growth_profit_and_freedom_roadmap: $url,
+                growth_profit_and_freedom_roadmap_json: ($decision[0] | tojson)}} end')
           RESPONSE=$(curl -s -w "\n%{http_code}" -X PATCH \
             "https://api.hubapi.com/crm/v3/objects/contacts/$CONTACT_ID" \
             -H "Authorization: Bearer $HUBSPOT_TOKEN" \
@@ -277,7 +289,7 @@ jobs:
           if deck_url:
               link_lines = [f"Open the deck here: {deck_url}", ""]
           elif test_mode and not upload_attempted:
-              link_lines = ["(Test mode: HubSpot upload skipped, so there is no link.)", ""]
+              link_lines = ["(Test mode: Google Drive upload skipped, so there is no link.)", ""]
           else:
               link_lines = ["The HubSpot link isn't available (the upload failed) — use the attached deck.", ""]
 
@@ -461,14 +473,14 @@ jobs:
           if verified and upload_ok and url:
               text = f"{mention} ✅ *Proposal ready:* {firm}" + alerts_txt + f"\n{url}" + marketing_tag + ad_review + prep
               if hubspot_failed:
-                  text += ("\n⚠️ The link could not be saved to the HubSpot contact "
+                  text += ("\n⚠️ The link and decision JSON could not be saved to the HubSpot contact "
                            "(growth_profit_and_freedom_roadmap) — check the Actions log.")
               elif not has_contact:
                   text += "\n_No HubSpot contact on this proposal, so the contact field was not updated._"
           elif verified:
               text = (alerts_txt.strip() + "\n" if alerts_txt else "") + (ad_review.strip() + "\n" if ad_review else "") + (prep.strip() + "\n" if prep else "")
               text += (
-                  f"{mention} ⚠️ *Proposal deck built for {firm}, but the HubSpot upload failed* — "
+                  f"{mention} ⚠️ *Proposal deck built for {firm}, but the Google Drive upload failed* — "
                   f"{upload_error or 'no details'}.\n"
                   "The deck is attached to the email. No link was written to HubSpot. "
                   "Once the problem is fixed, @mention me with \"resend the email\" to upload it and resend."
