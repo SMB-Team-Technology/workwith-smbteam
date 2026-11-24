@@ -1,0 +1,211 @@
+{
+  "confidence": "high",
+  "revenue_stated": 500000,
+  "net_revenue_stated": null,
+  "is_contingency_practice": false,
+  "revenue_effective": 500000,
+  "revenue_source": "research_notes",
+  "revenue_label": null,
+  "revenue_verified": true,
+  "needs_revenue_confirmation": false,
+  "team_size_stated": 3,
+  "team_size_source": "research_notes",
+  "team_size_effective": 3,
+  "practice_areas_detected": [
+    "bankruptcy (consumer",
+    "paul: \"i like bankruptcy\" 00:05:53). site and directories list chapter 7 and chapter 13.",
+    "bankruptcy (chapter 7 / chapter 13)",
+    "bankruptcy"
+  ],
+  "hubspot_company": null,
+  "firm_identity_check": "matches (trigger \"The Choate Law Firm\"; website and transcript: The Choate Law Firm / Paul Choate, chapter7ok.com).",
+  "package_source": "rules",
+  "package_override": null,
+  "needs_seller_input": false,
+  "revenue_only_option": null,
+  "call_focus": {
+    "primary_engagement": "mixed",
+    "products_discussed": [],
+    "lead_gen_gap": true
+  },
+  "marketing_tier": "Starter",
+  "marketing_name": "Full Service Marketing — Starter",
+  "marketing_price_bundled": 4997,
+  "marketing_price_retail": 5697,
+  "marketing_savings": 700,
+  "coaching_name": "Managed Operations Tier 1",
+  "coaching_price_bundled": 3297,
+  "coaching_price_retail": 3497,
+  "coaching_savings": 200,
+  "law_tier": null,
+  "law_name": null,
+  "law_price_bundled": null,
+  "law_price_retail": null,
+  "law_seats": null,
+  "total_bundled": 8294,
+  "total_savings": 900,
+  "ad_spend_conservative": 7700,
+  "ad_spend_aggressive": 25000,
+  "ad_spend_rationale": {
+    "conservative_basis": "channel minimums $4,500 + $2,000 + $1,200 = $7,700",
+    "aggressive_basis": "20% rule: $2,000,000 goal × 20% ÷ 12 × 1 geo − $4,997 fee = $28,336 → reverse math: 111.1 cases/mo ÷ 60% close × $89 benchmark blended CPL = $16,544 → capped at the $25,000 the package manages"
+  },
+  "selection_notes": [
+    "Revenue under $750K but multiple practice areas detected: Essentials hidden (requires single practice area) — Starter tier.",
+    "Managed Operations Tier 1 selected (team 3 — Tier 2 needs 5+).",
+    "Total at conservative ad spend ($15,994/mo) is over the 35% cap ($14,583/mo on $500,000 revenue) — review with sales rep."
+  ],
+  "pricing_mode": "bundled",
+  "bundle_eligible_count": 2,
+  "unpriced_products": [],
+  "setup_fees": [
+    {
+      "line": "marketing",
+      "product": "Full Service Marketing — Starter",
+      "label": "AI Avatar setup",
+      "amount": 1850,
+      "waivable": true,
+      "waived": false,
+      "charged": 1850
+    }
+  ],
+  "setup_total": 1850,
+  "investment": {
+    "version": 1,
+    "products": [
+      {
+        "category": "marketing",
+        "name": "Full Service Marketing — Starter",
+        "charged": 4997,
+        "standalone": 5697
+      },
+      {
+        "category": "coaching",
+        "name": "Managed Operations Tier 1",
+        "charged": 3297,
+        "standalone": 3497
+      }
+    ],
+    "monthly_total": 8294,
+    "list_total": 9194,
+    "total_savings": 900,
+    "pricing_mode": "bundled",
+    "setup_fees": [
+      {
+        "product": "Full Service Marketing — Starter",
+        "label": "AI Avatar setup",
+        "amount": 1850,
+        "charged": 1850,
+        "waived": false
+      }
+    ],
+    "setup_total": 1850,
+    "year_one_total": 101378,
+    "year_one_basis": "12 × $8,294/mo in fees + $1,850 one-time setup. Ad spend is paid separately to Google and Meta.",
+    "ad_spend": {
+      "channels": [
+        {
+          "channel": "Google Search",
+          "minimum": 4500
+        },
+        {
+          "channel": "Local Services Ads",
+          "minimum": 2000
+        },
+        {
+          "channel": "Meta retargeting",
+          "minimum": 1200
+        }
+      ],
+      "conservative": 7700,
+      "aggressive": 25000,
+      "current_stated": 1500,
+      "cap": 25000,
+      "overage": null,
+      "conservative_basis": "channel minimums $4,500 + $2,000 + $1,200 = $7,700",
+      "aggressive_steps": [
+        "20% rule: $2,000,000 goal × 20% ÷ 12 × 1 geo − $4,997 fee = $28,336",
+        "reverse math: 111.1 cases/mo ÷ 60% close × $89 benchmark blended CPL = $16,544",
+        "capped at the $25,000 the package manages"
+      ],
+      "year_one_range": [
+        92400,
+        300000
+      ],
+      "seller_set": false,
+      "computed": null,
+      "needs_seller_review": true
+    },
+    "return": {
+      "method": "benchmark_cpl",
+      "basis": "SMB Team bankruptcy cost-per-lead benchmarks ($89 blended, +20% on the low end), 60% close rate (said on the call) and a $1,500 case value (assumed default).",
+      "case_value": 1500,
+      "case_value_stated": false,
+      "cost_per_case": null,
+      "share_of_case_value": null,
+      "close_rate": 0.6,
+      "blended_cpl": 89,
+      "scenarios": [
+        {
+          "label": "Conservative",
+          "ad_spend": 7700,
+          "leads": 71.8,
+          "cases": 43.1,
+          "revenue": 64600,
+          "return_multiple": 8.4
+        },
+        {
+          "label": "Aggressive",
+          "ad_spend": 25000,
+          "leads": 279.8,
+          "cases": 167.9,
+          "revenue": 251900,
+          "return_multiple": 10.1
+        }
+      ],
+      "disclaimer": "Illustrative arithmetic, not a forecast."
+    },
+    "inputs": {
+      "practice_area": {
+        "value": "Bankruptcy",
+        "source": "research notes"
+      },
+      "geo_tier": {
+        "value": 4,
+        "multiplier": 1,
+        "source": "research notes"
+      },
+      "competitiveness": {
+        "value": "Medium",
+        "source": "research notes"
+      },
+      "spanish_campaign": false,
+      "revenue_effective": 500000,
+      "revenue_goal": {
+        "value": 2000000,
+        "source": "stated on the call"
+      },
+      "case_value": {
+        "value": 1500,
+        "source": "practice-area default (low end)"
+      },
+      "close_rate": {
+        "value": 0.6,
+        "source": "stated on the call",
+        "stated": 0.6
+      },
+      "referral_share": null,
+      "current_ad_spend": 1500,
+      "current_cost_per_case": null,
+      "current_cost_per_lead": null,
+      "max_ad_budget": null,
+      "management_fee": 4997,
+      "ad_spend_cap": 25000
+    },
+    "flags": [
+      "Goal-based ad spend ($28,336) is above the $25,000 cap for Full Service Marketing — Starter — capped. Higher spend means a tier upgrade or the 15% overage fee (seller decision).",
+      "Case value assumed ($1,500, low end of the Bankruptcy default) — confirm the real fee per case."
+    ],
+    "alerts": []
+  }
+}
