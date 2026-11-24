@@ -53,16 +53,16 @@ import re
 # ═══════════════════════════════════════════════════════════════════
 
 # ── BUILD NOTES (internal — never shown on a slide) ──────────────
-# Marketing package: Web + SEO Starter — bundled $3,497/mo (catalog), stand-alone $3,997/mo, charged $3,997/mo, savings $0
+# Marketing package: Full Service Marketing — Starter — charged $5,697/mo (stand-alone), stand-alone $5,697/mo, savings $0/mo (seller changed from Web + SEO Starter in Slack, Nov 24 2026)
 # Non-marketing package(s): none
 # LAW package: none
-# Total monthly investment: $3,997/mo · total savings: $0/mo · pricing_mode: standalone (1 bundle-eligible product)
-# Setup fees: none (Web + SEO has no setup fee) · total $0 (one-time)
-# Year one: $47,964 (package_decision.json -> investment.year_one_total — 12 x $3,997, no setup fees)
-# Ad spend: none — Web + SEO package, no paid ads (investment.ad_spend = null, AD_SPEND_WHY = None)
-# Return: none (investment.return = null, no ad spend)
-# Investment inputs used: none stated for ad spend / revenue · flags: none
-# Why this range: not applicable (no paid ads in this package)
+# Total monthly investment: $5,697/mo · total savings: $0/mo · pricing_mode: standalone (1 bundle-eligible product)
+# Setup fees: AI Avatar setup $1,850 (not waived) · total $1,850 (one-time)
+# Year one: $70,214 (investment.year_one_total — 12 × $5,697 + $1,850 setup)
+# Ad spend (copied from investment.ad_spend): $8,700/mo (low = high) · channel minimums $5,500 Google Search + $2,000 LSA + $1,200 Meta retargeting · revenue not stated so the 20% rule and reverse math give no higher figure · needs_seller_review
+# Return (copied from investment.return): benchmark_cpl · criminal defense CPL benchmark ($138 blended), 15% close (assumed), $15,000 case value (said on the call) · scenario: $8,700 → 63.1 leads → 9.5 cases → $141,900 → 16.3×
+# Investment inputs used: practice area Criminal Defense, geo Tier 2 (1.3), competitiveness High, case value $15,000 (stated), close rate 15% (default), revenue not stated (0) · flags: reverse math well above 20% rule (revenue unknown)
+# Why this range: to turn DWI and criminal defense searches into signed cases
 # Pillar review: Lead Gen amber — referrals are the best source, internet calls fell off and map visibility is low · Intake green/amber — 24/7 answering service, 20-min enforced consult, no gap stated · Team amber — owner's name carries the results, wants to step back to halftime · Profit amber — net matters most to him, no figures stated
 # KPI (slide 1): Map visibility — "14%" page-one share of the analysed map area vs 24%, 20%, 19% — seller (third-party grid tool), 00:41:43 (STEP 9B) · headline quote is Chuck's line at 00:08:24
 # Diagnosis (slide 2): 1. Hard to reach on mobile — seller's mobile view 00:46:06-00:46:26 + local Lighthouse mobile 74 (STEP 1) · 2. Thin pages, oversized blog — 764 blogs vs 28 core pages, ~50 of 800 pages with traffic — seller, 00:53:07, 00:56:43 · 3. Rivals cover more of the map — 24%, 20%, 19% — seller, 00:41:43 · 4. Reactive SEO today — ~$1,500/mo vendor, "not proactive" — Chuck Ramsay (client), 00:08:48-00:09:00
@@ -71,12 +71,12 @@ import re
 # Closing quote (slide 5): "Maybe do 12 cases next year and still make the same amount." — Chuck Ramsay (client), 00:01:46
 # Legacy Staircase slide: left out — not walked through on the call
 # Plan (slide 3): Rebuild the site for mobile — tied to: seller's mobile view + "Not in the least" optimized (STEP 9B cause 1) · Rework the service-area pages — tied to: 764 blogs vs 28 core pages (cause 2) · Build map visibility — tied to: 14% vs 24/20/19 (cause 3) · Run SEO every month — tied to: "they are not proactive" (cause 4)
-# Roadmap (slide 6): Phase 1 = Web + SEO Starter · Phase 2 = Managed Operations — starts: when Chuck is ready to step back to halftime — basis: "I want to get down to halftime." (00:03:06); Managed Ops described in the seller's pitch, not priced · Phase 3 = AI Workforce Pro — starts: when the team is ready to put AI to work — basis: "I'm a big, big AI guy" (00:11:40)
+# Roadmap (slide 6): Phase 1 = Full Service Marketing — Starter · Phase 2 = AI Workforce Pro — starts: when the team is ready to put AI to work — basis: "I'm a big, big AI guy" (00:11:40) · Phase 3 = FCFO Advisor — starts: when he wants a clear view of take-home — basis: net matters most to him (pillar review; no figures stated). Managed Operations removed at the seller's request (Nov 24 2026).
 # What You Told Us (slide 1 quotes and tie lines):
 #   1. Vendor — transcript line: "they'll do the work, but they are not proactive." (00:08:48) — supports: Web + SEO Starter (monthly strategy reviews)
 #   2. Lead quality — transcript line: "But I don't want 100 calls. I want 10 of the right calls." (00:05:06) — supports: Web + SEO Starter (core page content)
-# Overrides applied: seller override — package_source trigger_override: Web + SEO Starter only at $3,997/mo, leadership-approved custom plan (normal requirements overridden). package_decision.json was missing (select-package.mjs could not parse "Web + SEO Starter" because of the "+"): created by hand with the seller's product and priced by scripts/reprice.mjs.
-# Escalation flags: Revenue unverified (draft based on research notes: revenue not stated) · Review counts unconfirmed — verify live before the call · Starter tier is below the usual revenue floor if revenue is under $500K — custom plan approved by leadership · DFY review generation is NOT in Web + SEO Starter ($500/mo add-on) · Seller's mobile "no phone/CTA above the fold" claim conflicts with the desktop page text — verify live · SMB client conflict concern raised by Chuck (00:28:10)
+# Overrides applied: seller override — package_source trigger_override: Full Service Marketing — Starter only at $5,697/mo stand-alone, Managed Operations removed (seller request in the Slack proposal thread, Nov 24 2026; replaces the earlier leadership-approved Web + SEO Starter plan). package_decision.json product name changed and re-priced with scripts/reprice.mjs.
+# Escalation flags: Revenue unverified (not stated) — ad spend shown is the channel-minimum floor and the return rests on the $15,000 case value from the call · Review counts unconfirmed — verify live before the call · Starter tier is below the usual revenue floor if revenue is under $500K · Seller's mobile "no phone/CTA above the fold" claim conflicts with the desktop page text — verify live · SMB client conflict concern raised by Chuck (00:28:10) · AI Avatar setup $1,850 is part of the package
 
 # Report metadata
 FIRM_NAME      = "Ramsay Law Firm, PLLC"
@@ -129,10 +129,10 @@ DIAGNOSIS = [
      "source": "Discovery call, Nov 20"},
 ]
 
-DIAGNOSIS_FIX_LINE = "Rebuild the site, rework the pages, lift map visibility and run SEO proactively every month."
+DIAGNOSIS_FIX_LINE = "Rebuild the site, rework the pages, add ads, lift map visibility and run SEO every month."
 
 # ── Slide 3 — The Plan ────────────────────────────────────────────
-PLAN_KICKER = "Website and SEO"
+PLAN_KICKER = "Website, SEO and ads"
 PLAN_TITLE  = "Lift Your Map Visibility"
 
 PLAN = [
@@ -140,12 +140,13 @@ PLAN = [
      "actions": ["Custom WordPress website build", "Call tracking on up to 5 local numbers"],
      "metric": "Mobile speed score", "target": None, "baseline": "74"},
     {"title": "Rework service-area pages", "fixes": 2,
-     "actions": ["Import up to 250 pages", "20,000 words of SEO content at launch",
+     "actions": ["Import up to 250 pages", "30,000 words of SEO content at launch",
                  "10,000 words of SEO content a year"],
      "metric": "Pages with traffic", "target": None, "baseline": "About 50 of 800"},
     {"title": "Build your map visibility", "fixes": 3,
-     "actions": ["Google profile set-up for up to 2 locations", "2 premium 30+ DR backlinks a year"],
-     "metric": "Premium backlinks", "target": None, "baseline": None},
+     "actions": ["Google Search, LSA and Meta retargeting ads", "Google profile set-up for up to 2 locations",
+                 "2 premium 30+ DR backlinks a year"],
+     "metric": "Map share", "target": None, "baseline": "14%"},
     {"title": "Run SEO every month", "fixes": 4,
      "actions": ["Monthly and quarterly marketing strategy reviews", "45 minutes of website edits each month"],
      "metric": "Strategy reviews", "target": None, "baseline": None},
@@ -154,34 +155,42 @@ PLAN = [
 PLAN_NOTE = "Intake process guidance for the calls the site brings in."
 
 # ── Slide 4 — The Recommended Strategy ────────────────────────────
-STRATEGY_TITLE = "Your Website and SEO Strategy"
+STRATEGY_TITLE = "Your Website, SEO and Ads Strategy"
 
 STRATEGY = [
-    {"product": "Web + SEO Starter", "title": "Site and search", "channels": "Website · SEO · Google profile",
+    {"product": "Full Service Marketing — Starter", "title": "Get found",
+     "channels": "Website · SEO · Google profile",
      "deliverables": ["Custom WordPress website build",
-                      "20,000 words of SEO content at launch",
+                      "30,000 words of SEO content at launch",
                       "Content import for up to 250 pages",
                       "Google profile set-up for up to 2 locations",
                       "2 premium 30+ DR backlinks a year"],
      "why": "Fixes the site, thin pages and map gap behind your 14%, and puts a proactive plan on your SEO."},
+    {"product": "Full Service Marketing — Starter", "title": "Get the call",
+     "channels": "Google Ads · LSA · Meta retargeting",
+     "deliverables": ["Google Search, LSA and Meta retargeting campaigns",
+                      "Call tracking: 5 local numbers, 250 minutes",
+                      "Monthly and quarterly strategy reviews",
+                      "Up to 250 Google review requests a month"],
+     "why": "Puts you in front of high-intent DWI searches now, while the new site and SEO build."},
 ]
 
 # ── Seller prep (never in the deck) ───────────────────────────────
 SELLER_NOTES = {
     "priorities": "The 14% map share and the rivals' 24%, 20% and 19% are the figures from your grid tool on the call, not a firm result: present them as discussed on the call. Chuck never stated the 14% himself. Revenue, take-home (he said net matters most), headcount and monthly case volume were not stated, so ask. The unclear exchange at 00:19:15 (80 to 110, 125 a month) is not used: ask what it measures.",
     "diagnosis": "Confirm before the call: (1) the live mobile screen. Your view on the call showed no phone, form or call to action above the fold, but the desktop page text shows a header phone and a Request Consultation button. (2) The mobile 74 is a local Lighthouse run, not pagespeed.web.dev, and the desktop score was not obtained: re-run on pagespeed.web.dev. (3) The 764 blogs, 50-of-800 pages and August traffic figures come from a third-party tool: check in Analytics and Search Console. Review counts are unconfirmed for every firm, so none are printed. Ask for Chuck's real Google review count. No targets: none were stated, so ask what a good month of calls looks like.",
-    "plan": "Web + SEO Starter does not include done-for-you review generation (a $500/mo add-on) or a DBA/rebrand plan, so neither is promised here. Chuck said clients do not want their names on reviews, so ask how he wants to handle reviews. The content import covers up to 250 pages against roughly 800 today: expect to discuss which pages stay.",
-    "strategy": "Custom plan approved by leadership: Web + SEO Starter only, no ads. Chuck asked about a conflict of interest if SMB serves nearby competitors (00:28:10): have the answer ready, and check whether SMB may name its Minnesota client.",
-    "investment": "Revenue is not verified, so check it before sending. Chuck currently pays about $1,500/mo to his SEO vendor and said he would pay more but does not want to drop $6,000 a month. Ask the term and notice period on the current vendor contract. He said he is looking at other options and that the call piqued his interest.",
-    "roadmap": "Phase 2 (Managed Operations) follows his wish to step back to halftime and the seller's pitch; neither Managed Operations nor AI was priced to Chuck. Phase 3 (AI Workforce Pro) follows his AI interest. Pay-per-click ads on high-intent terms were also discussed and are not priced here.",
+    "plan": "Full Service Marketing Starter includes done-for-you review generation (up to 250 requests a month; the firm supplies the list), but no DBA/rebrand plan, so none is promised here. Chuck said clients do not want their names on reviews, so ask how he wants to handle reviews. The content import covers up to 250 pages against roughly 800 today: expect to discuss which pages stay.",
+    "strategy": "Changed at the seller's request (Nov 24): Full Service Marketing Starter only at the stand-alone price, no Managed Operations. Starter is below the usual revenue floor if revenue is under $500K. Chuck asked about a conflict of interest if SMB serves nearby competitors (00:28:10): have the answer ready, and check whether SMB may name its Minnesota client.",
+    "investment": "Revenue is not verified, so check it before sending. Chuck currently pays about $1,500/mo to his SEO vendor and said he would pay more but does not want to drop $6,000 a month. Ad spend is paid separately: the $8,700/mo shown is the channel-minimum floor, because revenue was not stated. The $1,850 AI Avatar setup is one-time. Ask the term and notice period on the current vendor contract. He said he is looking at other options and that the call piqued his interest.",
+    "roadmap": "Managed Operations was taken out of the roadmap at the seller's request. Phase 2 (AI Workforce Pro) follows his AI interest. Phase 3 (FCFO Advisor, shown to the client as Managed Financials Level 1) follows his comment that net matters most; no figures were stated, so check revenue and team size before raising it. Neither was priced to Chuck.",
 }
 
 # ── Slide 5 — Your Investment ─────────────────────────────────────
 PRODUCT_LINES = {
-    "Web + SEO Starter": "Custom website · SEO content · Google profile · Backlinks",
+    "Full Service Marketing — Starter": "Website · SEO · Google Ads · LSA · Meta retargeting · Call tracking",
 }
 
-AD_SPEND_WHY = None
+AD_SPEND_WHY = "to turn DWI and criminal defense searches into signed cases"
 
 CLOSING_QUOTE = ("Maybe do 12 cases next year and still make the same amount.",
                  "Chuck Ramsay (client), 00:01:46")
@@ -191,21 +200,21 @@ ROADMAP_TITLE = "Where This Goes From Here"
 
 ROADMAP = [
     {"phase": "Foundation", "when": "Starting now",
-     "products": ["Web + SEO Starter"],
+     "products": ["Full Service Marketing — Starter"],
      "items": ["A rebuilt site that works well on mobile",
-               "SEO content for the cases you want",
+               "Ads and SEO for the cases you want",
                "Google profile and backlinks for map visibility"],
-     "unlocks": "A website that works for you, so the right calls find the firm without more of your time."},
-    {"phase": "Operational Scale", "when": "Once you are ready to step back to halftime (your goal)",
-     "products": ["Managed Operations"],
-     "items": ["Quarterly planning with your operations team",
-               "Core systems: SOPs, scorecards and meeting rhythms"],
-     "unlocks": "A firm that runs on its own results, so you can keep your hand in the mix without doing it full time."},
+     "unlocks": "A website and ads that work for you, so the right calls find the firm without more of your time."},
     {"phase": "Optimize", "when": "Once your team is ready to put AI to work",
      "products": ["AI Workforce Pro"],
      "items": ["Access to AI Workforce Pro for your team",
                "A weekly AI Implementation Session"],
      "unlocks": "Routine work handled by AI, so your time goes to the cases you most want to try."},
+    {"phase": "Profit", "when": "Once you want a clear view of your take-home",
+     "products": ["FCFO Advisor"],
+     "items": ["A monthly deep dive into your P&L",
+               "Red flags turned into clear priorities and goals"],
+     "unlocks": "Numbers you can trust, so you know what the firm keeps as you move toward halftime."},
 ]
 
 # ── ProfitOS slides ───────────────────────────────────────────────
