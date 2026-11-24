@@ -1,0 +1,217 @@
+{
+  "confidence": "high",
+  "revenue_stated": 250000,
+  "net_revenue_stated": null,
+  "is_contingency_practice": false,
+  "revenue_effective": 250000,
+  "revenue_source": "research_notes",
+  "revenue_label": null,
+  "revenue_verified": true,
+  "needs_revenue_confirmation": false,
+  "team_size_stated": 4,
+  "team_size_source": "research_notes",
+  "team_size_effective": 4,
+  "practice_areas_detected": [
+    "family law only — divorce",
+    "custody",
+    "protective orders",
+    "temporary orders",
+    "mediation",
+    "negotiation",
+    "collaborative practice.",
+    "divorce / family law",
+    "mediation / collaborative",
+    "custody / parenting plans / protective orders",
+    "divorce / family law (and mediation)",
+    "custody / protective orders"
+  ],
+  "hubspot_company": null,
+  "firm_identity_check": "matches (trigger \"Stillwater Family Law\" = website \"Stillwater Family Law LLC\" = firm John describes on the call; HubSpot company record was not readable, the contact's company field matches).",
+  "package_source": "rules",
+  "package_override": null,
+  "needs_seller_input": false,
+  "revenue_only_option": null,
+  "call_focus": {
+    "primary_engagement": "marketing",
+    "products_discussed": [
+      "Full Service Marketing"
+    ],
+    "lead_gen_gap": true
+  },
+  "marketing_tier": "Starter",
+  "marketing_name": "Full Service Marketing — Starter",
+  "marketing_price_bundled": 4997,
+  "marketing_price_retail": 5697,
+  "marketing_savings": 700,
+  "coaching_name": "Managed Operations Tier 1",
+  "coaching_price_bundled": 3297,
+  "coaching_price_retail": 3497,
+  "coaching_savings": 200,
+  "law_tier": null,
+  "law_name": null,
+  "law_price_bundled": null,
+  "law_price_retail": null,
+  "law_seats": null,
+  "total_bundled": 8294,
+  "total_savings": 900,
+  "ad_spend_conservative": 6700,
+  "ad_spend_aggressive": 6700,
+  "ad_spend_rationale": {
+    "conservative_basis": "channel minimums $3,500 + $2,000 + $1,200 = $6,700",
+    "aggressive_basis": "20% rule: $500,000 goal × 20% ÷ 12 × 1.15 geo − $4,997 fee = $4,586 → reverse math: 13.9 cases/mo ÷ 80% close × $83 benchmark blended CPL = $1,438"
+  },
+  "selection_notes": [
+    "Revenue under $750K but multiple practice areas detected: Essentials hidden (requires single practice area) — Starter tier.",
+    "Revenue under $300K: Managed Operations Tier 1 selected — approval and scoping required.",
+    "Total at conservative ad spend ($14,994/mo) is over the 35% cap ($7,292/mo on $250,000 revenue) — review with sales rep."
+  ],
+  "pricing_mode": "bundled",
+  "bundle_eligible_count": 2,
+  "unpriced_products": [],
+  "setup_fees": [
+    {
+      "line": "marketing",
+      "product": "Full Service Marketing — Starter",
+      "label": "AI Avatar setup",
+      "amount": 1850,
+      "waivable": true,
+      "waived": false,
+      "charged": 1850
+    }
+  ],
+  "setup_total": 1850,
+  "investment": {
+    "version": 1,
+    "products": [
+      {
+        "category": "marketing",
+        "name": "Full Service Marketing — Starter",
+        "charged": 4997,
+        "standalone": 5697
+      },
+      {
+        "category": "coaching",
+        "name": "Managed Operations Tier 1",
+        "charged": 3297,
+        "standalone": 3497
+      }
+    ],
+    "monthly_total": 8294,
+    "list_total": 9194,
+    "total_savings": 900,
+    "pricing_mode": "bundled",
+    "setup_fees": [
+      {
+        "product": "Full Service Marketing — Starter",
+        "label": "AI Avatar setup",
+        "amount": 1850,
+        "charged": 1850,
+        "waived": false
+      }
+    ],
+    "setup_total": 1850,
+    "year_one_total": 101378,
+    "year_one_basis": "12 × $8,294/mo in fees + $1,850 one-time setup. Ad spend is paid separately to Google and Meta.",
+    "ad_spend": {
+      "channels": [
+        {
+          "channel": "Google Search",
+          "minimum": 3500
+        },
+        {
+          "channel": "Local Services Ads",
+          "minimum": 2000
+        },
+        {
+          "channel": "Meta retargeting",
+          "minimum": 1200
+        }
+      ],
+      "conservative": 6700,
+      "aggressive": 6700,
+      "current_stated": 800,
+      "cap": 25000,
+      "overage": null,
+      "conservative_basis": "channel minimums $3,500 + $2,000 + $1,200 = $6,700",
+      "aggressive_steps": [
+        "20% rule: $500,000 goal × 20% ÷ 12 × 1.15 geo − $4,997 fee = $4,586",
+        "reverse math: 13.9 cases/mo ÷ 80% close × $83 benchmark blended CPL = $1,438"
+      ],
+      "year_one_range": [
+        80400,
+        80400
+      ],
+      "seller_set": false,
+      "computed": null,
+      "needs_seller_review": true
+    },
+    "return": null,
+    "inputs": {
+      "practice_area": {
+        "value": "Family Law",
+        "source": "research notes"
+      },
+      "geo_tier": {
+        "value": 3,
+        "multiplier": 1.15,
+        "source": "research notes"
+      },
+      "competitiveness": {
+        "value": "Medium",
+        "source": "research notes"
+      },
+      "spanish_campaign": false,
+      "revenue_effective": 250000,
+      "revenue_goal": {
+        "value": 500000,
+        "source": "not stated — 2× current revenue (audit-write.md)"
+      },
+      "case_value": {
+        "value": 3000,
+        "source": "practice-area default (low end)"
+      },
+      "close_rate": {
+        "value": 0.8,
+        "source": "stated on the call",
+        "stated": 0.8
+      },
+      "referral_share": null,
+      "current_ad_spend": 800,
+      "current_cost_per_case": null,
+      "current_cost_per_lead": null,
+      "max_ad_budget": null,
+      "management_fee": 4997,
+      "ad_spend_cap": 25000
+    },
+    "flags": [
+      "Case value assumed ($3,000, low end of the Family Law default) — confirm the real fee per case.",
+      "Return table held off the deck: it projects 29× (above the 20× ceiling) from a $3,000 average case × 80% close rate. Confirm the average fee and close rate, then reply \"confirm the 29× return\" to show it, or correct the inputs."
+    ],
+    "alerts": [
+      "Return table held off the deck: it projects 29× (above the 20× ceiling) from a $3,000 average case × 80% close rate. Confirm the average fee and close rate, then reply \"confirm the 29× return\" to show it, or correct the inputs."
+    ],
+    "return_held": {
+      "method": "benchmark_cpl",
+      "basis": "SMB Team family law cost-per-lead benchmarks ($83 blended), 80% close rate (said on the call) and a $3,000 case value (assumed default).",
+      "case_value": 3000,
+      "case_value_stated": false,
+      "cost_per_case": null,
+      "share_of_case_value": null,
+      "close_rate": 0.8,
+      "blended_cpl": 83,
+      "scenarios": [
+        {
+          "label": "Recommended",
+          "ad_spend": 6700,
+          "leads": 80.9,
+          "cases": 64.7,
+          "revenue": 194100,
+          "return_multiple": 29
+        }
+      ],
+      "disclaimer": "Illustrative arithmetic, not a forecast.",
+      "peak_multiple": 29,
+      "ceiling": 20
+    }
+  }
+}
