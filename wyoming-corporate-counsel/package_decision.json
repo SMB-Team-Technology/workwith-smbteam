@@ -49,7 +49,7 @@
   "marketing_price_bundled": null,
   "marketing_price_retail": null,
   "marketing_savings": null,
-  "coaching_name": "Elite Coach Plus",
+  "coaching_name": "Managed Operations Tier 1",
   "coaching_price_bundled": 3497,
   "coaching_price_retail": 3497,
   "coaching_savings": 0,
@@ -69,29 +69,20 @@
     "Revenue under $750K but multiple practice areas detected: Essentials hidden (requires single practice area) — Starter tier.",
     "Revenue under $250K: Elite Coach selected, scoping approval required.",
     "Seller override: Elite Coach Plus (coaching only) per Slack request on 2026-11-18. Seller also asked for 'managed operations level 1' if proposing the new services — no such product in the catalog, so not added.",
-    "Only one bundle-eligible product in this package — stand-alone pricing applied, no bundle savings."
+    "Only one bundle-eligible product in this package — stand-alone pricing applied, no bundle savings.",
+    "Elite Coach Plus is retired — using Managed Operations Tier 1 instead."
   ],
   "pricing_mode": "standalone",
   "bundle_eligible_count": 1,
   "unpriced_products": [],
-  "setup_fees": [
-    {
-      "line": "coaching",
-      "product": "Elite Coach Plus",
-      "label": "Setup fee",
-      "amount": 1500,
-      "waivable": true,
-      "waived": false,
-      "charged": 1500
-    }
-  ],
-  "setup_total": 1500,
+  "setup_fees": [],
+  "setup_total": 0,
   "investment": {
     "version": 1,
     "products": [
       {
         "category": "coaching",
-        "name": "Elite Coach Plus",
+        "name": "Managed Operations Tier 1",
         "charged": 3497,
         "standalone": 3497
       }
@@ -100,21 +91,14 @@
     "list_total": 3497,
     "total_savings": 0,
     "pricing_mode": "standalone",
-    "setup_fees": [
-      {
-        "product": "Elite Coach Plus",
-        "label": "Setup fee",
-        "amount": 1500,
-        "charged": 1500,
-        "waived": false
-      }
-    ],
-    "setup_total": 1500,
-    "year_one_total": 43464,
-    "year_one_basis": "12 × $3,497/mo in fees + $1,500 one-time setup. Ad spend is paid separately to Google and Meta.",
+    "setup_fees": [],
+    "setup_total": 0,
+    "year_one_total": 41964,
+    "year_one_basis": "12 × $3,497/mo in fees. Ad spend is paid separately to Google and Meta.",
     "ad_spend": null,
     "return": null,
     "inputs": {},
-    "flags": []
+    "flags": [],
+    "alerts": []
   }
 }
