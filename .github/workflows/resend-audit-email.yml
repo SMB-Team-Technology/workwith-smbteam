@@ -1,12 +1,12 @@
 name: Resend Audit Email
 
-# Re-uploads the current deck to HubSpot (replacing the same file, so the link
+# Re-uploads the current deck to Google Drive (replacing the same file, so the link
 # does not change), makes sure the contact has the link, and re-sends the
 # seller email with the .pptx attached.
 #
 # TEST MODE — when run on any branch other than main (workflow_dispatch with a
-# non-main ref): emails only carolyn.webb@smbteam.com, and skips the HubSpot
-# upload, the contact write and the Slack post.
+# non-main ref): emails only carolyn.webb@smbteam.com, and skips the Google Drive
+# upload, the HubSpot contact write and the Slack post.
 on:
   workflow_dispatch:
     inputs:
@@ -22,6 +22,7 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 10
     permissions:
+      id-token: write
       contents: read
     env:
       TEST_MODE: ${{ github.ref_name != 'main' }}
@@ -68,14 +69,27 @@ jobs:
           echo "deck=$DECK"                         >> "$GITHUB_OUTPUT"
           echo "Branch: ${{ github.ref_name }} · test mode: $TEST_MODE · deck: ${DECK:-none}"
 
-      - name: Upload deck to HubSpot
+      - name: Authenticate to Google Drive
+        id: drive-auth
+        if: env.TEST_MODE != 'true' && steps.resolve.outputs.deck != ''
+        continue-on-error: true
+        uses: google-github-actions/auth@v3
+        with:
+          workload_identity_provider: ${{ vars.GOOGLE_WORKLOAD_IDENTITY_PROVIDER }}
+          service_account: drive-uploader@ai-workforce-pro.iam.gserviceaccount.com
+          token_format: access_token
+          access_token_scopes: https://www.googleapis.com/auth/drive
+          create_credentials_file: false
+
+      - name: Upload deck to Google Drive
         id: upload
         if: env.TEST_MODE != 'true' && steps.resolve.outputs.deck != ''
         env:
-          HUBSPOT_TOKEN: ${{ secrets.HUBSPOT_TOKEN }}
+          DRIVE_ACCESS_TOKEN: ${{ steps.drive-auth.outputs.access_token }}
+          FRIENDLY_NAME: ${{ steps.resolve.outputs.friendly_name }}
+          DECK: ${{ steps.resolve.outputs.deck }}
         run: |
-          RESULT=$(node scripts/upload-proposal-to-hubspot.mjs "${{ steps.resolve.outputs.friendly_name }}" \
-            --file "${{ steps.resolve.outputs.deck }}" || true)
+          RESULT=$(node scripts/upload-proposal-to-drive.mjs "$FRIENDLY_NAME" "$DECK" || true)
           echo "$RESULT"
           OK=$(jq -r '.ok // false' <<< "$RESULT" 2>/dev/null || echo false)
           echo "ok=$OK" >> "$GITHUB_OUTPUT"
@@ -184,7 +198,7 @@ jobs:
           if deck_url:
               link_lines = [f"Open the deck here: {deck_url}", ""]
           elif test_mode:
-              link_lines = ["(Test mode: HubSpot upload skipped, so there is no link.)", ""]
+              link_lines = ["(Test mode: Google Drive upload skipped, so there is no link.)", ""]
           else:
               link_lines = ["The HubSpot link isn't available (the upload failed) — use the attached deck.", ""]
 
@@ -257,7 +271,7 @@ jobs:
               TEXT="$TEXT"$'\n'"$DECK_URL"
               [ "$HUBSPOT_OUTCOME" = "failure" ] && TEXT="$TEXT"$'\n'"⚠️ The link could not be saved to the HubSpot contact — check the Actions log."
             else
-              TEXT="$TEXT"$'\n'"⚠️ HubSpot upload failed — ${UPLOAD_ERROR:-no details}. The deck was attached to the email; no link was written to HubSpot."
+              TEXT="$TEXT"$'\n'"⚠️ Google Drive upload failed — ${UPLOAD_ERROR:-no details}. The deck was attached to the email; no link was written to HubSpot."
             fi
           else
             TEXT="❌ Failed to resend email for $FIRM_NAME. Check the Actions log."
