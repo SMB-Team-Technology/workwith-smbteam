@@ -3,11 +3,11 @@
   "revenue_stated": null,
   "net_revenue_stated": null,
   "is_contingency_practice": false,
-  "revenue_effective": 340000,
-  "revenue_source": "hubspot_annual_law_firm_revenue",
+  "revenue_effective": 750000,
+  "revenue_source": "seller_confirmed",
   "revenue_label": "$180K-$500K",
-  "revenue_verified": false,
-  "needs_revenue_confirmation": true,
+  "revenue_verified": true,
+  "needs_revenue_confirmation": false,
   "team_size_stated": null,
   "team_size_source": null,
   "team_size_effective": 3,
@@ -31,9 +31,9 @@
   ],
   "hubspot_company": null,
   "firm_identity_check": "matches (trigger \"Nationwide Disability Law\" = website name and Avvo \"Nationwide Disability Law\"; contact Chris Pozios = founder/managing partner on the site)",
-  "package_source": "rules",
-  "package_override": null,
-  "needs_seller_input": true,
+  "package_source": "trigger_override",
+  "package_override": "Full Service Marketing — Starter + Managed Operations Tier 1",
+  "needs_seller_input": false,
   "revenue_only_option": {
     "marketing_tier": "Starter",
     "marketing_name": "Full Service Marketing — Starter",
@@ -51,51 +51,159 @@
     "products_discussed": [],
     "lead_gen_gap": false
   },
-  "marketing_tier": null,
-  "marketing_name": null,
-  "marketing_price_bundled": null,
-  "marketing_price_retail": null,
-  "marketing_savings": null,
-  "coaching_name": null,
-  "coaching_price_bundled": null,
-  "coaching_price_retail": null,
-  "coaching_savings": null,
+  "marketing_tier": "Starter",
+  "marketing_name": "Full Service Marketing — Starter",
+  "marketing_price_bundled": 4997,
+  "marketing_price_retail": 5697,
+  "marketing_savings": 700,
+  "coaching_name": "Managed Operations Tier 1",
+  "coaching_price_bundled": 3297,
+  "coaching_price_retail": 3497,
+  "coaching_savings": 200,
   "law_tier": null,
   "law_name": null,
   "law_price_bundled": null,
   "law_price_retail": null,
   "law_seats": null,
-  "total_bundled": 0,
-  "total_savings": null,
-  "ad_spend_conservative": null,
-  "ad_spend_aggressive": null,
-  "ad_spend_rationale": null,
+  "total_bundled": 8294,
+  "total_savings": 900,
+  "ad_spend_conservative": 6200,
+  "ad_spend_aggressive": 20000,
+  "ad_spend_rationale": {
+    "conservative_basis": "channel minimums $3,000 + $2,000 + $1,200 = $6,200",
+    "aggressive_basis": "20% rule: $1,500,000 goal × 20% ÷ 12 × 1 geo − $4,997 fee = $20,003 → reverse math: not possible (no case value)"
+  },
   "selection_notes": [
     "Call focus unknown (no discovery call found, or Primary engagement not recorded) — no package recommended. Seller must say what the call was about before this can be locked in.",
     "Revenue not stated on the call — HubSpot only has the range \"$180K-$500K\". Using the midpoint ($340,000) for this draft only; confirm actual revenue with the prospect before locking in.",
     "Team size not stated in research notes or HubSpot — assumed 3. Please confirm headcount.",
     "Revenue under $750K but multiple practice areas detected: Essentials hidden (requires single practice area) — Starter tier.",
-    "Revenue $250K–$400K: Elite Coach selected."
+    "Revenue $250K–$400K: Elite Coach selected.",
+    "Seller override: proposed Full Service Marketing — Starter + Managed Operations Tier 1 per Slack request on 2026-11-24 (discovery was a phone call; no Fathom notes or recording).",
+    "Seller context (Slack, 2026-11-24): discovery was by phone, no recording. Top need: quality leads; goal 7 figures in 2027 then 8 figures at 70% margin. 300-400 leads/mo, ~70 retained/mo, avg case ~$5,000 (range $4,500-$6,000, max $9,200), ~25% attrition, ~25% referral split fees, ~$2.7M 12-month pace (seller's math flagged as inconsistent). Own VAs at wholesale rate. Bar-licensed only in FL and MI, cases in all states. Website run by Milemark at $2,000/mo (blogging, SEO, hosting). Client stated: no PPC or paid ads right now; wants things sorted within a couple of weeks.",
+    "Revenue confirmed by seller: $750,000."
   ],
-  "pricing_mode": "standalone",
-  "bundle_eligible_count": 0,
+  "pricing_mode": "bundled",
+  "bundle_eligible_count": 2,
   "unpriced_products": [],
-  "setup_fees": [],
-  "setup_total": 0,
+  "setup_fees": [
+    {
+      "line": "marketing",
+      "product": "Full Service Marketing — Starter",
+      "label": "AI Avatar setup",
+      "amount": 1850,
+      "waivable": true,
+      "waived": false,
+      "charged": 1850
+    }
+  ],
+  "setup_total": 1850,
   "investment": {
     "version": 1,
-    "products": [],
-    "monthly_total": 0,
-    "list_total": 0,
-    "total_savings": 0,
-    "pricing_mode": "standalone",
-    "setup_fees": [],
-    "setup_total": 0,
-    "year_one_total": 0,
-    "year_one_basis": "12 × $0/mo in fees. Ad spend is paid separately to Google and Meta.",
-    "ad_spend": null,
+    "products": [
+      {
+        "category": "marketing",
+        "name": "Full Service Marketing — Starter",
+        "charged": 4997,
+        "standalone": 5697
+      },
+      {
+        "category": "coaching",
+        "name": "Managed Operations Tier 1",
+        "charged": 3297,
+        "standalone": 3497
+      }
+    ],
+    "monthly_total": 8294,
+    "list_total": 9194,
+    "total_savings": 900,
+    "pricing_mode": "bundled",
+    "setup_fees": [
+      {
+        "product": "Full Service Marketing — Starter",
+        "label": "AI Avatar setup",
+        "amount": 1850,
+        "charged": 1850,
+        "waived": false
+      }
+    ],
+    "setup_total": 1850,
+    "year_one_total": 101378,
+    "year_one_basis": "12 × $8,294/mo in fees + $1,850 one-time setup. Ad spend is paid separately to Google and Meta.",
+    "ad_spend": {
+      "channels": [
+        {
+          "channel": "Google Search",
+          "minimum": 3000
+        },
+        {
+          "channel": "Local Services Ads",
+          "minimum": 2000
+        },
+        {
+          "channel": "Meta retargeting",
+          "minimum": 1200
+        }
+      ],
+      "conservative": 6200,
+      "aggressive": 20000,
+      "current_stated": null,
+      "cap": 25000,
+      "overage": null,
+      "conservative_basis": "channel minimums $3,000 + $2,000 + $1,200 = $6,200",
+      "aggressive_steps": [
+        "20% rule: $1,500,000 goal × 20% ÷ 12 × 1 geo − $4,997 fee = $20,003",
+        "reverse math: not possible (no case value)"
+      ],
+      "year_one_range": [
+        74400,
+        240000
+      ],
+      "seller_set": false,
+      "computed": null,
+      "needs_seller_review": true
+    },
     "return": null,
-    "inputs": {},
-    "flags": []
+    "inputs": {
+      "practice_area": {
+        "value": "Other",
+        "source": "research notes"
+      },
+      "geo_tier": {
+        "value": 4,
+        "multiplier": 1,
+        "source": "research notes"
+      },
+      "competitiveness": {
+        "value": "Medium",
+        "source": "default"
+      },
+      "spanish_campaign": false,
+      "revenue_effective": 750000,
+      "revenue_goal": {
+        "value": 1500000,
+        "source": "not stated — 2× current revenue (audit-write.md)"
+      },
+      "case_value": {
+        "value": null,
+        "source": "practice-area default (low end)"
+      },
+      "close_rate": {
+        "value": 0.15,
+        "source": "default 15%",
+        "stated": null
+      },
+      "referral_share": null,
+      "current_ad_spend": null,
+      "current_cost_per_case": null,
+      "current_cost_per_lead": null,
+      "max_ad_budget": null,
+      "management_fee": 4997,
+      "ad_spend_cap": 25000
+    },
+    "flags": [
+      "No case value (stated or default) — return projection left out."
+    ],
+    "alerts": []
   }
 }
