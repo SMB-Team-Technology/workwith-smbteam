@@ -1,0 +1,227 @@
+SWAGATUSA IMMIGRATION LAW FIRM — GROWTH AUDIT RESEARCH NOTES
+Prepared for: Dhenu Maru (founder and owner, immigration attorney)
+Sales Rep: Jake Riggs
+Date: December 1, 2026 (proposal call 2026-12-01 21:00 UTC = 3:00 PM CT per the trigger)
+URL: https://www.swagatusa.com (trigger URL http://SwagatUSA.com; fetched live, HTTP 200)
+Friendly name: swagatusa-immigration
+Research run: November 25, 2026
+URL source: trigger file URL; resolves and is live, no search needed. Web search, the site and directories confirm swagatusa.com is SwagatUSA, LLC (Dhenu Maru), Chicago, IL.
+Call this research rests on: the Nov 25, 2026 discovery call (48 min, Jake Riggs and Dhenu Maru). The follow-up proposal call is set for Tue Dec 1, 2026, 3:00 PM CT. Nothing from that call is in these notes.
+
+RESEARCH TOOL LIMITS THIS SESSION (applies to every "not observed" below): no logged-in browser. Google Maps / Google Business Profile and Google results pages (local pack, ads, LSA) could not be read. The Meta Ad Library returned HTTP 403, Yelp and Justia were not readable, and the PageSpeed Insights API returned HTTP 429 (quota exceeded) on every attempt. Review figures came from web-search summaries and aggregator pages, none read directly off Google, so every review figure below is tagged UNCONFIRMED. Page facts came from raw page source (curl) and a web-fetch tool that summarises pages.
+
+====================================================================
+STEP 1 — WEBSITE RESEARCH
+====================================================================
+- Website URL confirmed live: Yes (HTTP 200 on /, /blog/, /reviews/, /contact/, /practice-areas/, /attorney-fees/, /about/our-team/).
+- Last redesign date or estimated age: WordPress site (Astra theme). Footer reads "© SwagatUSA, LLC 2011-2023." Most recent uploaded images in the page source are dated 2026/02. Original build date not determined; the footer year has not been updated since 2023.
+- Mobile responsive: viewport meta tag present (width=device-width, initial-scale=1) and a responsive menu in the source; not visually checked on a device. Lighthouse mobile result below.
+- Homepage headline: page <h1>: "Swagat USA, LLC Immigration Lawyers Chicago, Illinois Providing Legal Services to Help Immigrants Obtain the American Dream". Hero tagline: "We Find Answers For Unique Immigration Challenges". Page title: "Best Immigration Law Firm and Lawyer in Chicago | SwagatUSA".
+- CTA above fold: Yes — "Schedule A Consultation Today!" with phone 773-825-8695 in the header, plus "Call Us Now" and "Email Us Now" links.
+- Contact form location: Present on the homepage (Contact Form 7 form with SMS opt-in text) and a /contact/ page.
+- Live chat present: No chat widget found in the page source (one "crisp" string matched the source; not confirmed as a chat widget, treat as not observed).
+- Attorney bio present: Yes — Dhenu Maru's story on the homepage ("I first came to this country when I was 10 years old from India, along with my family") and a Our Team page; site and directories cite Rising Star (twice) and Super Lawyers.
+- Video present: Yes — one YouTube embed on the homepage (youtube.com/embed/gdphY5txpv8).
+- Blog present: Yes — /blog/. Latest post seen: "DHS Final Rule Reshapes the H-1B Cap: What Employers Must Know About the New Weighted Selection Process", February 23, 2026. Before that, the homepage shows posts dated April 2025 and March 2025. Roughly one post every few months.
+- Site structure: practice-area pages for Business Immigration (E-2, H-1B, L-1, TN), Family Immigration (immediate relative and family preference), Green Cards, Deportation Defense, Student Visa, Visa Assistance, Immigration Appeals; also Reviews, Media, Newsletter, Attorney Fees and Employment Opportunities pages. No city or neighborhood landing pages in the sitemap. No Spanish, Hindi or Gujarati pages seen (directories say the team speaks Spanish, Hindi/Urdu and Gujarati/Kachchhi).
+- Tracking found in the page source: Google Analytics / Google Tag Manager (gtag).
+- Office on the site: 230 W Monroe St., Suite 750, Chicago, IL 60606. Phones on the site: 312-854-7065 (footer) and 773-825-8695 (header CTA). Email leads@swagatusa.com.
+
+PageSpeed Insights:
+- pagespeed.web.dev / PageSpeed API: UNAVAILABLE — HTTP 429 "Queries per day" quota exceeded on two attempts per strategy (mobile and desktop).
+- Substitute measurement (NOT pagespeed.web.dev): local Lighthouse 12.8.2 (headless Chrome on a CI machine), run November 25, 2026 against https://www.swagatusa.com/
+  Mobile: performance 38 — FCP 4.0 s, LCP 11.5 s, Total Blocking Time 860 ms, CLS 0.002, Speed Index 9.6 s.
+  Desktop: performance 60 — FCP 1.2 s, LCP 3.1 s, Total Blocking Time 20 ms, CLS 0.243, Speed Index 3.2 s.
+  Lab runs differ from pagespeed.web.dev; the seller should re-run pagespeed.web.dev before quoting these.
+- PageSpeed mobile score: 38 [local Lighthouse run, not pagespeed.web.dev]
+- PageSpeed desktop score: 60 [local Lighthouse run, not pagespeed.web.dev]
+
+====================================================================
+STEP 2 — GOOGLE BUSINESS PROFILE
+====================================================================
+- GBP found: Not read directly (Google Maps could not be fetched). Web-search summaries describe a Google listing for SwagatUSA LLC at 230 West Monroe Street, Suite 750, Chicago, IL 60606.
+- Star rating: 4.7 [UNCONFIRMED — sourced from a web-search summary and trustanalytica.org, not independently confirmed via Google]
+- Total review count: 182 [UNCONFIRMED — sourced from a web-search summary, not independently confirmed via Google]; trustanalytica.org shows 184 [UNCONFIRMED — sourced from trustanalytica.org, not independently confirmed via Google]. The two sources disagree by 2, which fits a live count that moves; confirm on Google.
+- Most recent review date: not found.
+- Primary category: not found (Google listing not read).
+- Photos active: not observed
+- Posts active: not observed
+
+====================================================================
+STEP 3 — LOCAL 3-PACK SEARCHES
+====================================================================
+Practice Area 1: Immigration (family, employment/business, deportation defense)
+- Search 1 "immigration lawyer chicago": NOT OBSERVED — Google results pages could not be read from this environment. Tried: web search (returns directories and ranking articles, not the live pack).
+- Search 2 "green card lawyer chicago": NOT OBSERVED — same reason.
+- Search 3 "h-1b visa attorney chicago": NOT OBSERVED — same reason.
+Seller should check the three packs live. Named Chicago immigration competitors turned up by web search are in STEP 4.
+
+====================================================================
+STEP 4 — COMPETITOR REVIEW COUNTS
+====================================================================
+Named local competitors; none read directly off Google. Sources disagree, so ranges are shown.
+- Competitor 1: Aparicio Immigration Law (Chicago) — reviews: 330 per trustanalytica.org; 704 per a web-search summary [UNCONFIRMED — sourced from trustanalytica.org and a web-search summary, sources disagree, not independently confirmed via Google] — rating: 4.9 [UNCONFIRMED — same sources].
+- Competitor 2: Cipolla Law Group (Chicago) — reviews: 252 per trustanalytica.org; 285 per a web-search summary [UNCONFIRMED — sourced from trustanalytica.org and a web-search summary, not independently confirmed via Google] — rating: 4.8 [UNCONFIRMED — same sources].
+- Competitor 3: Sverdloff Law Group, P.C. (Chicago) — reviews: 117 per trustanalytica.org; 185 or 247 per web-search summaries [UNCONFIRMED — sourced from trustanalytica.org and web-search summaries, sources disagree, not independently confirmed via Google] — rating: 4.7 to 4.8 [UNCONFIRMED — same sources].
+- Also listed on trustanalytica.org's Chicago immigration top 10: Ahlgren Law 263 reviews at 4.5, Kriezelman Burton & Associates 100 at 4.2, Borjas Law Group 99 at 4.9, Milla & Associates 100 at 4.8 [all UNCONFIRMED — sourced from trustanalytica.org, not independently confirmed via Google].
+- Comparison: the firm's own 182 to 184 reviews [UNCONFIRMED] sit in the middle of this group. Aparicio and Cipolla are higher on every source seen; Sverdloff is level or lower depending on the source. Do not describe any firm as dominating on reviews until counts are confirmed on Google.
+
+====================================================================
+STEP 5 — DIRECTORY LISTINGS
+====================================================================
+- Avvo: Dhenu Maru profile found (avvo.com/attorneys/60614-il-dhenu-maru-4075281.html). Avvo rating 10.0 (Superb); 72 client reviews averaging 4.9; licensed in Illinois since 2008; 32 peer endorsements; 2022 Super Lawyer; practice mix shown 85% immigration, 15% asylum. Address on the page: 230 W Monroe, Suite 750. The profile URL carries ZIP 60614 (the old Clark St address area).
+- FindLaw: profile exists (lawyers.findlaw.com/illinois/chicago/4987428_1/). Address shown: 2551 N. Clark St. Ste 302, Chicago, IL 60614; phone (312) 854-7065; zero reviews; reads as a standard unclaimed entry; attorney name shown as "Dhenu Savla".
+- Yelp: listing found by web search ("SWAGATUSA", 18 reviews in the search snippet, address 2551 N Clark St, Chicago); the page returned HTTP 403, details not read [UNCONFIRMED snippet].
+- Justia: not opened this session.
+- Martindale: listing found by search ("SwagatUSA, LLA", Chicago); not opened.
+- Other directories listing the firm (found by search, not opened): ProvenExpert, Experience.com, Wheree, dosfinds.us, Lawyers.com page for Chicago immigration.
+- NAP inconsistencies seen: the site and Avvo use 230 W Monroe St Suite 750 (60606); FindLaw and Yelp still show the old 2551 N Clark St address (60614). The site shows two phones (312-854-7065 and 773-825-8695). FindLaw shows the attorney as "Dhenu Savla" and the firm as SwagatUSA, LLC; Martindale shows "SwagatUSA, LLA".
+- Geo-targeting landing pages for surrounding cities: Not found (no city pages in the sitemap).
+
+====================================================================
+STEP 6 — GOOGLE ADS
+====================================================================
+Practice Area 1: Immigration
+- Firm ads observed: NOT OBSERVED — Google results pages could not be read from this environment; this does not show whether the firm is or is not running search ads. Per the call, Dhenu worked with SMB Team on marketing "for a few months", mostly Google ads that "were getting very expensive" (Dhenu Maru (client), 00:08:42 and 00:08:55), then moved to social media. Current Google ads status was not discussed.
+- Named local competitors running ads: not observed. Tried: web search only.
+
+====================================================================
+STEP 7 — LOCAL SERVICE ADS
+====================================================================
+- Firm appears in LSA: not observed (results page not readable). LSAs for immigration are not discussed on the call.
+- Google Screened: not observed
+- LSA review count: not observed
+- Named local competitors in LSA: not observed
+
+====================================================================
+STEP 8 — META ADS
+====================================================================
+- Firm has active ads: NOT OBSERVED — Meta Ad Library returned HTTP 403 to a non-browser fetch. On the call Dhenu said social media works for the firm "for free" (organic) and that she did well with TikTok videos; paid social was not discussed.
+- Named local competitor 1: Aparicio Immigration Law — not observed
+- Named local competitor 2: Cipolla Law Group — not observed
+
+====================================================================
+STEP 9 — TRANSCRIPT EXTRACTION
+====================================================================
+Transcript source: full verbatim Fathom transcript (summary used only as overview)
+Notes on the transcript: the recording opens with a phone call before the Zoom. Speaker tags look right throughout (Dhenu = [Prospect], Jake = [SMB Team]). Speech-to-text errors: "Case Blink" / "CaseBlank" / "Case Link" (00:11:27, 00:11:41, 00:28:02) are one tool, read as Case Blink as the AI summary says; "four full-time parolees" at 00:20:31 is garbled and Dhenu corrected the headcount at 00:44:04; "DACA-wise" is Docketwise; "8am" owns Docketwise per Dhenu (00:28:26). Jake's numbers (800 firms, 81% growth, SOC 2, 60+ skills, 10M cases) are pitch material and are not recorded as the firm's figures. At 00:43:47 Jake read back a wrong headcount and Dhenu corrected it.
+
+- Practice areas confirmed: Immigration law (Dhenu: "for immigration cases, we use it for drafting cover letters, assembling supporting documents", 00:12:24). Website and Avvo list family, business/employment, green card, deportation defense, student visa and appeals. Case-type mix not stated on the call.
+- Current lead sources: not stated directly. "we found for our business that we could do a lot more with social media and for free." (Dhenu Maru (client), 00:09:12); "I did really well with TikTok videos, I guess." (Dhenu Maru (client), 00:09:34). Referral and other sources not discussed. Jake said "It sounds like you've gotten that really nailed down with the TikTok and the social media strategy" (00:15:21, seller's words).
+- Ads ever run: Yes, in the past — Google ads through SMB Team marketing "for a few months"; "It was just a lot of Google ads and they were getting very expensive." (Dhenu Maru (client), 00:08:55). Budget and results not stated. Stopped because social media could do "a lot more… for free" (00:09:12). Current paid ads not discussed.
+- Firm identity check: matches (trigger "SwagatUSA Immigration Law Firm"; website SwagatUSA, LLC / "Swagat USA, LLC Immigration Lawyers Chicago", Dhenu Maru, swagatusa.com). The trigger notes the HubSpot company field reads "SwagnatUSA" (a typo); the transcript does not say the firm name.
+- Team size: Dhenu Maru plus two full-time paralegals, one associate attorney and three receptionists, all virtual — "So myself, two full-time, sorry, two full-time paralegals, one associate, and three receptionists." (Dhenu Maru (client), 00:44:04); "Receptionists are all virtual, but we're planning to add a paralegal and an admin probably the next two to three months." (Dhenu Maru (client), 00:44:27). She also expects "some moving around after the holidays" (00:20:45).
+- Team size (total headcount): 7
+- Annual revenue (gross / case value): not stated
+- Annual revenue (net / take-home / collected): not stated
+- Revenue (annual, best estimate): not stated
+- Fee structure: mostly flat-fee, with hourly tracked for some cases — "We do mostly flat fees, but we do track hourlies for some cases just as a backup." (Dhenu Maru (client), 00:26:48)
+- Revenue goal: not stated, use 2x current revenue (current revenue also not stated, seller to ask)
+- Average case value: not stated
+- Current close rate: not stated — default to 15%
+- Number of locations: 1 (one Chicago office on the site and Avvo; two addresses appear in directories, see STEP 5)
+- Spanish campaign needed: no (not discussed; the site is English only as seen; directories say the team speaks Spanish, Hindi/Urdu and Gujarati/Kachchhi)
+- Dominant buying motive: no direct statement about what the firm's growth is for. Closest: "this AI thing came out of nowhere for us… we're choosing an AI platform… that we will stick with for a good while, because there's like a million and one options now." (Dhenu Maru (client), 00:10:31 to 00:10:47); and on stepping back, "I'm still working on getting there… this is laid out so that, you know, the operations are not dependent on me." (Dhenu Maru (client), 00:17:54 to 00:18:13). Inference only: type (1), a firm that runs without her; seller to ask what she wants her time back for.
+- Any profitability claims made by prospect: none stated
+- Any claims about case types or practice areas: "immigration law doesn't have one really just only one source of rules. They have, you know, administrative rules that come out, procedures that keep getting updated, and then also case law, and then also the Immigration and Nationality Act." (Dhenu Maru (client), 00:32:22 to 00:32:29)
+- Stated call focus / product interest: AI, not marketing. Call framed around AI Workforce Pro ("let me pull up what you came to chat about", Jake, 00:18:43). Dhenu wants a stable long-term AI platform to replace or sit alongside Case Blink, which she called "a little bit duplicative of some of the stuff that we already use" (00:11:51). Her three concerns: "security… ease of use and ease of training and then accuracy" (00:13:41 to 00:13:48). She asked for "the pricing options… both… with the CTO and without." (Dhenu Maru (client), 00:43:34); Jake will prepare two proposals (self-managed with weekly AI implementation training, and with Fractional CTO build-out) after checking Docketwise integration with SMB Team's CTO. No price was named on the call. She also said she already uses "a fractional CFO and a fractional COO" ("they're new", 00:17:57 to 00:18:28); the provider was not named, so those are not counted as SMB Team products here. She also currently uses the Attorney Assistant (SMB Team sister company) and has feedback that the SMB Sales Academy trainings were not automatically available to the assistant (00:15:50 to 00:17:20).
+- Primary engagement: AI
+- Products discussed on call: AI Workforce Pro, Fractional CTO
+- Lead-gen gap stated: no — "we found for our business that we could do a lot more with social media and for free." (Dhenu Maru (client), 00:09:12)
+- Existing marketing/SEO/ad vendor engagements: none stated (past SMB Team Google-ads work ended; social media done in-house). Non-marketing: a fractional CFO and a fractional COO, new, provider not named (00:17:57), and a bookkeeper (00:30:14).
+- Budget constraints stated: none stated
+- Bookkeeping volume: not stated (a bookkeeper keeps the books, "They are probably using QuickBooks", Dhenu Maru (client), 00:30:27); trust account: not stated
+- Financial goals stated (for the ProfitOS slides): none stated
+
+Tech stack (Dhenu, unless noted): practice management Docketwise ("the biggest player in immigration law", 00:28:15); legal research / AI Case Blink; Google Workspace/Gmail (00:38:16); Slack (00:28:39); RingCentral phones (00:28:51); LawPay billing (00:30:27); bookkeeper, "probably" QuickBooks (00:30:27). Client documents arrive by email "maybe I would say 50 to 60% of the time" and otherwise are uploaded to Docketwise (00:39:01 to 00:39:06). Illinois-based (00:21:52).
+
+Investment inputs
+- Ad spend practice area: Immigration — the firm's only practice area (Dhenu, 00:12:24); no paid ads are planned on the call
+- Geo market tier: Tier 1 (Chicago metro)
+- Market competitiveness: Medium — Tier 1 market with several Chicago immigration firms showing 250 or more reviews on aggregators [UNCONFIRMED], but ads, LSA and the local pack were not observed, so High is not supported
+- Current monthly ad spend (stated): not stated
+- Current cost per signed case (stated): not stated
+- Current cost per lead (stated): not stated
+- Average case value (stated, one figure): not stated
+- Close rate (stated): not stated
+- Referral share of cases (stated): not stated
+- Revenue goal (annual, one figure): not stated
+- Maximum monthly ad budget (stated): not stated
+
+Key prospect quotes
+- Dhenu Maru (client), 00:10:31 — "this AI thing came out of nowhere for us. So we're just trying to understand how it fits in with our existing tech" (AI starting point)
+- Dhenu Maru (client), 00:10:47 — "we want to make sure that when, if we're choosing an AI platform, you know, that we're using one that we will stick with for a good while, because there's like a million and one options now." (goals, platform stability)
+- Dhenu Maru (client), 00:11:51 — "I was happy with it, but it was also a little bit duplicative of some of the stuff that we already use." (current AI tool, Case Blink)
+- Dhenu Maru (client), 00:13:41 — "one big concern is security. Another big concern is ease of use and ease of training and then accuracy." (objections and concerns)
+- Dhenu Maru (client), 00:31:36 — "the hallucinations that we keep hearing about… making sure that it's keeping up with the laws that, because case law keeps changing and policies keep changing" (accuracy)
+- Dhenu Maru (client), 00:37:41 — "what I would like to do is just be able to upload all of that and have it kind of organized in the format that we would normally prepare a case" (client documents, workflow)
+- Dhenu Maru (client), 00:39:01 — "maybe I would say 50 to 60% of the time" [documents arrive by email; the rest are uploaded to Docketwise] (intake documents)
+- Dhenu Maru (client), 00:17:54 — "I'm still working on getting there." (stepping back from the business; answer to "being able to step away from the business")
+- Dhenu Maru (client), 00:18:13 — "this is laid out so that, you know, the operations are not dependent on me." (owner role, fractional COO)
+- Dhenu Maru (client), 00:20:21 — "you need to have buy-in with a lot of these changes." (team adoption; she asked to record the call to share with her team)
+- Dhenu Maru (client), 00:43:34 — "I'd love to know, like, the pricing options and kind of both, you know, with the CTO and without." (budget and next step)
+- Dhenu Maru (client), 00:44:27 — "we're planning to add a paralegal and an admin probably the next two to three months." (team and hiring)
+
+====================================================================
+KPI AND DIAGNOSIS (STEP 9B)
+====================================================================
+Product focus this supports: AI — AI Workforce Pro (self-managed with weekly AI implementation training) and Fractional CTO (custom skills and integrations build-out), offered as two proposals. No price or tier was named on the call. Docketwise integration is still to be confirmed with SMB Team's CTO (Jake, 00:45:08).
+Headline KPI: Planned hires — a paralegal and an admin in the next two to three months — "we're planning to add a paralegal and an admin probably the next two to three months" — said by client, 00:44:27 — "Receptionists are all virtual, but we're planning to add a paralegal and an admin probably the next two to three months."
+  KPI status: usable
+  Why this KPI: AI Workforce Pro skills (document organization, drafting, intake and billing workflows) and a Fractional CTO build-out take manual work off a team of seven, which is the headcount she would otherwise add.
+Supporting figures (0–3):
+  - Current team: two full-time paralegals, one associate, three virtual receptionists — client, 00:44:04 — "So myself, two full-time, sorry, two full-time paralegals, one associate, and three receptionists."
+  - Client documents arriving by email "maybe I would say 50 to 60% of the time" — client, 00:39:01 — "Or in an email, maybe I would say 50 to 60% of the time."
+Client-stated goal for this KPI: none stated (she gave the hiring plan but not a target for how much work AI should absorb)
+KPI quotes (2–4, verbatim, client only):
+  - Dhenu Maru (client), 00:12:24 to 00:12:34 "for immigration cases, we use it for drafting cover letters, assembling supporting documents. We use it to draft legal arguments, you know, document checklists." (current AI use)
+  - Dhenu Maru (client), 00:37:14 "the client will send a lot of documents, picture of their passport, maybe birth certificate, marriage certificate, divorce decree, you know, kids birth certificates, or degrees and educational, you know, certificates and all that." (manual document handling)
+  - Dhenu Maru (client), 00:31:36 "the hallucinations that we keep hearing about… because case law keeps changing and policies keep changing" (accuracy)
+Client's why (verbatim, client only): Dhenu Maru (client), 00:10:47 "we want to make sure that… we're using one that we will stick with for a good while, because there's like a million and one options now." — a stable platform choice; and 00:18:13 "the operations are not dependent on me." No personal reason (family, time, a sale) was stated on the call; seller to ask.
+Cost of inaction (verbatim, client only): none on the call. Closest is her view that Case Blink is "a little bit duplicative of some of the stuff that we already use" (00:11:51).
+Legacy Staircase discussed: no
+Diagnosis (3–4 causes, biggest first):
+  1. Client documents are sorted into case files by hand — evidence: documents come in by email "maybe… 50 to 60% of the time" and the rest are uploaded to Docketwise; she wants them "organized in the format that we would normally prepare a case, you know, by like, maybe segmenting personal documents, employer documents, educational documents" — source: call: Dhenu Maru, 00:37:14 to 00:37:41 and 00:39:01 — fixed by: AI Workforce Pro skill that pulls client attachments from Gmail and Docketwise into the matter (built by the Fractional CTO if she wants it done for her)
+     Target basis: none — flag for seller
+  2. Current AI tool overlaps the tech the firm already has, and she is unsure it is the long-term choice — evidence: "a little bit duplicative of some of the stuff that we already use" and wants a platform she will "stick with for a good while" — source: call: Dhenu Maru, 00:11:51 and 00:10:47 — fixed by: AI Workforce Pro as one platform connected to Docketwise, Google Workspace and LawPay (integration subject to CTO confirmation)
+     Target basis: none — flag for seller
+  3. Risk of false citations and out-of-date law in a field with several rule sources — evidence: "the hallucinations that we keep hearing about… case law keeps changing and policies keep changing"; "immigration law doesn't have one really just only one source of rules" — source: call: Dhenu Maru, 00:31:36 and 00:32:22 — fixed by: Second Opinion Mode (two models checked against each other), the state compliance guidance with the human-review stamp, and a scheduled rules-update skill built by the Fractional CTO
+     Target basis: none — flag for seller
+Plan inputs (for each non-marketing product the call points to):
+  - Fractional CTO / AI Workforce Pro: tasks she named — organizing client documents into the case file by category (personal, employer, educational) from Gmail and Docketwise ("I would like to do is just be able to upload all of that and have it kind of organized", Dhenu, 00:37:41); drafting cover letters and legal arguments (00:12:24); assembling supporting documents and document checklists (00:12:24 to 00:12:34); keeping up with changing administrative rules, procedures, case law and the Immigration and Nationality Act (00:32:22 to 00:32:47). Also asked about drafting quality (00:41:07).
+  - Managed Operations: none stated (she already works with a fractional COO and says "the operations are not dependent on me", 00:18:13)
+  - FCFO / bookkeeping: none stated (she uses a bookkeeper and a fractional CFO; no pain named)
+Alternate KPI (if the seller changes the package): none
+Seller should confirm on the next call:
+  - Current annual revenue, revenue goal, average fee per case, close rate and case mix (none stated on the call).
+  - Docketwise API integration (Jake to confirm with Eli); also whether Gmail attachment pull and Docketwise matter assignment work as described.
+  - Who would use the platform (seats): headcount is seven today (Dhenu, 2 paralegals, 1 associate, 3 virtual receptionists) plus a planned paralegal and admin; Dhenu mentioned "some moving around after the holidays" (00:20:45).
+  - Case Blink: cost, contract term and whether it would be replaced or kept; she said she was on a pilot "for a couple months" (00:11:44).
+  - Who provides her fractional CFO and fractional COO (SMB Team or another firm) and what they cover; she said the COO and CFO are new.
+  - What she wants her time back for, and what happens if the firm keeps its current AI tool (no personal reason or cost of inaction was stated).
+  - Past SMB Team marketing: when it ran, what she spent and why it ended ("very expensive"); whether social media is still the only lead source and whether referrals matter.
+  - Attorney Assistant: the SMB Sales Academy training access she asked about (00:15:50 to 00:17:20) is an open item for Jake.
+  - Website and Google: pagespeed.web.dev scores (Lighthouse figures above are local lab runs), Google rating and review count (182 / 4.7 are UNCONFIRMED), GBP category, local pack results for Chicago immigration searches, any Google, LSA or Meta ads, and whether FindLaw/Yelp should be updated to the Monroe St address.
+
+====================================================================
+STEP 10 — COMPETITIVE URGENCY SCORE
+====================================================================
+Score: 5 (partial evidence: local pack, Google ads, LSA and Meta ads were not observable, so the score rests on aggregator review counts [UNCONFIRMED] and directory results; the call was about AI, not marketing).
+Named local competitor threats:
+  1. Aparicio Immigration Law — 330 to 704 reviews at 4.9 depending on the source [UNCONFIRMED], well above the firm's 182 to 184 [UNCONFIRMED]; located near the Chicago Immigration Court per a web-search summary.
+  2. Cipolla Law Group — 252 to 285 reviews at 4.8 [UNCONFIRMED], above the firm.
+  3. Sverdloff Law Group, P.C. — 117 to 247 reviews at 4.7 to 4.8 [UNCONFIRMED]; Julia Sverdloff has been named an Illinois Super Lawyers Rising Star since 2013 per a web-search summary; roughly level with the firm.
+Dynamic sentence: "A score of 5 means competitors have meaningful advantages in one or more areas and are pulling ahead. You are not invisible yet — but the window to close the gap is narrowing. Every month without action is a month they extend their lead."
+
+====================================================================
+PASS 2 — VERIFICATION CHECKLIST (completed)
+====================================================================
+- Every review count and rating carries an UNCONFIRMED tag; none was confirmed on Google. Avvo (72 reviews, 4.9) is a directory figure read from the Avvo profile, not a Google figure, and is labelled as Avvo.
+- Competitor counts conflict across sources and are shown as ranges, all UNCONFIRMED; no competitor is called "dominating" on reviews.
+- No section says the firm is not running ads; ads, LSA, 3-pack and PageSpeed API gaps are written as "not observed" with what was tried.
+- PageSpeed numbers are real local Lighthouse measurements, labelled as such; pagespeed.web.dev itself was unavailable.
+- DBM is recorded as an inference with the closest quotes; revenue, revenue goal, close rate and average case value are "not stated" and flagged for the seller.
+- Machine-read lines (Primary engagement, Products discussed on call, Lead-gen gap stated, Revenue best estimate, Team size total headcount, Investment inputs) are in the exact format.
+- Fee structure is recorded as mostly flat-fee with hourly tracked as a backup.
+- No STEP 9B figure was calculated or estimated; no UNCONFIRMED figure and no seller pitch number is used in STEP 9B.
+- Nothing from the Dec 1 proposal call is included.
