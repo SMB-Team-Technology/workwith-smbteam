@@ -1,0 +1,260 @@
+CUMMING AND ASSOCIATES LAW — GROWTH AUDIT RESEARCH NOTES
+Prepared for: Bill (William R.) Cumming (founder and owner, business / litigation / estate planning attorney)
+Sales Rep: Jonathan Farace
+Date: December 4, 2026 (proposal call 2026-12-04 16:00 UTC = 8:00 AM PST / 11:00 AM ET, per the trigger and the call)
+URL: https://www.cummingandassociateslaw.com (trigger URL http://Cummingandassociateslaw.com redirects to the www host; fetched live, HTTP 200)
+Friendly name: cumming-and-associates-law
+Research run: November 25, 2026
+URL source: trigger file URL; resolves and is live, no search needed. The website, Google Maps listing, FindLaw and web search all confirm it is Cumming & Associates, APLC (A Professional Law Corporation), 3080 Bristol St, Suite 630, Costa Mesa, CA 92626.
+Call this research rests on: the Nov 25, 2026 discovery call (53 min, Jonathan Farace and Bill Cumming; Hannah Petre joined for the first two minutes). The follow-up proposal call is set for Fri Dec 4, 2026, 8:00 AM PST. Nothing from that call is in these notes.
+
+DATE NOTE: the Fathom AI summary's action items say "Dec 4 2027". The full transcript says "Friday the 4th" the week after Thanksgiving, and the trigger says December 4, 2026 (a Friday). 2027 is a typo in the summary.
+
+RESEARCH TOOL LIMITS THIS SESSION (applies to every "not observed" below): no logged-in browser and no Google account. Google results and Google Maps were read with an unauthenticated headless Chrome on a CI machine, so results can differ from what the seller sees at the firm's address (a few result pages labelled the location "Raleigh-Durham NC" even though the queries said Costa Mesa and the results were Costa Mesa / Orange County firms). The PageSpeed Insights API returned HTTP 429 (quota exceeded) on every attempt, so Lighthouse was run locally. Avvo, Martindale and Justia returned a bot-check page, Yelp returned HTTP 403, and the Meta Ad Library was searched by keyword only. Page facts came from raw page source (curl) and headless Chrome.
+
+====================================================================
+STEP 1 — WEBSITE RESEARCH
+====================================================================
+- Website URL confirmed live: Yes (HTTP 200 on /, /contact/, /our-firm/, /wills-living-trusts-estate-planning/).
+- Last redesign date or estimated age: Avada (Fusion) WordPress theme. The homepage's own page-date line reads 2023-01-05 and Google's snippet for the homepage is dated Jan 5, 2023. The homepage says "The Firm Has Served Clients For The Past 13 Years" (the firm dates itself to 2008/2009 elsewhere, so the line is stale). The footer copyright year is written by JavaScript, so it always shows the current year and is not a signal of age. Original build date not determined. The call: the owner said the site was redone with Rise Up "years ago" (00:35:21).
+- Mobile responsive: viewport meta tag present (width=device-width, initial-scale=1) and a responsive Avada layout; not visually checked on a device. The mobile Lighthouse run below shows a large layout shift (CLS 0.469) and a slow load.
+- Homepage headline: the page title is "Costa Mesa Corporate Litigation Lawyer | Cumming & Associates, APLC". The first visible text is a slider: "OUR PHILOSOPHY — We strive to serve our clients well and to exceed their expectations." (I could not confirm an <h1> tag; the slider text is the first heading text in the source.) Meta description: "Cumming & Associates, APLC, is a small law firm that delivers big results for business and corporate clients, in practice areas including transactions, litigation, real property and employment. Call 714-361-9844 for a free initial consultation."
+- CTA above fold: Yes — the header shows the phone number "(714) 432-6494" and a "contact us today" link.
+- Contact form location: buried — a Gravity Forms form ("Describe Your Legal Issue") sits at the very bottom of the homepage, under "Book A Free Consultation Today". Also a /contact/ page.
+- Live chat present: No (not observed in the page source).
+- Attorney bio present: Yes — /william-r-cumming/ and /support-staff/ pages; homepage shows an Avvo 9.5 rating badge for William Reid Cumming and three Avvo testimonials.
+- Video present: Not observed on the homepage (only a "vimeo" icon-font style in the CSS).
+- Blog present: Not linked from the navigation. The site RSS feed's most recent post is "A Guide to Common Trusts and Their Uses", Feb 18, 2021. No newer post observed.
+- Site structure: Home, Our Firm, Our People (William R. Cumming, Support Staff), Practice Areas (Corporate Transactional, Litigation & Dispute Resolution, Real Estate, Estate Planning), Contact. The estate planning page is titled "Costa Mesa Wills Lawyer | Estate Planning Attorney". No city or neighborhood landing pages for surrounding cities were found; the homepage says "We serve clients in Orange County and throughout California from our office in Costa Mesa." The website's own practice list also mentions bankruptcy and employment (via directories and the meta description); the call did not.
+- Footer vendor credit: "Digital Marketing By:" with a logo linking to rizeupmedia.com (the owner called it "Rise Up Media"; the site spells it RizeUp Media).
+- Tracking: CallRail and Google Analytics appear in the site's cookie-consent table; whether call tracking is actually switched on was not confirmed.
+- Page weight: the homepage HTML alone is about 1.35 MB.
+- NAP on the website: 3080 Bristol Street, Suite 630, Costa Mesa, CA 92626; phone (714) 432-6494 (header, footer, contact page); fax 714-202-3162; the homepage meta description and the contact page also list 714-361-9844.
+
+PageSpeed Insights:
+- pagespeed.web.dev / PageSpeed API: UNAVAILABLE — HTTP 429 "Queries per day" quota exceeded on every attempt (mobile and desktop).
+- Substitute measurement (NOT pagespeed.web.dev): local Lighthouse 12.8.2 (headless Chrome on a CI machine), run November 25, 2026 against https://www.cummingandassociateslaw.com/
+  Mobile: performance 28 — FCP 2.8 s, LCP 12.3 s, Total Blocking Time 730 ms, CLS 0.469, Speed Index 5.1 s.
+  Desktop: performance 80 — FCP 0.8 s, LCP 2.9 s, Total Blocking Time 0 ms, CLS 0.033, Speed Index 1.9 s.
+  Lab runs differ from pagespeed.web.dev; the seller should re-run pagespeed.web.dev before quoting these.
+- PageSpeed mobile score: 28 [local Lighthouse run, not pagespeed.web.dev]
+- PageSpeed desktop score: 80 [local Lighthouse run, not pagespeed.web.dev]
+
+====================================================================
+STEP 2 — GOOGLE BUSINESS PROFILE
+====================================================================
+- GBP found: Yes — Google Maps listing "Cumming & Associates, A Professional Law Corporation", 3080 Bristol St #630, Costa Mesa, CA 92626 ("Located in: CANVAS Costa Mesa"), phone (714) 432-6494, website cummingandassociateslaw.com, hours Mon–Fri 9 AM–5 PM.
+- Star rating: none displayed — the listing shows no star rating, only a "Write a review" prompt [confirmed via Google Maps listing — no rating displayed; unauthenticated headless read]. On the call the seller showed the profile on screen and said "you don't have any Google reviews" (Jonathan Farace [seller], 00:39:47), and the owner did not dispute it.
+- Total review count: none displayed (0 shown) [confirmed via Google Maps listing — no review count displayed; unauthenticated headless read]. The "People also search for" panel on the same page did show counts for other firms, so the panel was rendering.
+- Most recent review date: not applicable (no Google reviews displayed).
+- Primary category: "Legal services" (header of the Maps listing; the seller also said "it just says legal services", 00:40:16).
+- Photos active: No owner photos observed — the Photos & videos panel shows only "All" and "Street View & 360°" and an "Add photos & videos" prompt. The seller said the main image takes you "right to the office building" (00:39:18).
+- Posts active: not observed (no Updates / posts section on the listing).
+- Owner's statement on the call: "We haven't paid attention to it." (Bill Cumming (client), 00:40:57). He first joked "we intentionally leave it that way so we don't get clients" (00:40:48).
+- Reviews elsewhere (NOT Google): Avvo 5.0 with 73–76 reviews for William Reid Cumming per web-search snippets [UNCONFIRMED — sourced from Avvo/Martindale search snippets, not independently confirmed via Google; Avvo returned a bot-check]. The homepage's own Avvo badge reads 9.5.
+
+====================================================================
+STEP 3 — LOCAL 3-PACK SEARCHES
+====================================================================
+The firm does not appear in the Google local pack or the AI-Overview local listings for any of the 9 searches below. All review counts in this step were read off the Google results page [confirmed via Google]. Searches were run for Costa Mesa / Orange County; results can vary by searcher location.
+
+Practice Area 1: Estate Planning (about 10% of revenue per the owner)
+- Search 1 "estate planning attorney costa mesa": firm appears No — pack: AMO LAW: Legacy Planning (17) [confirmed via Google], AmeriEstate Legal Plan (518, 4.8) [confirmed via Google], The Singh Law Firm (230, 5.0) [confirmed via Google]. Google results also showed a Super Lawyers "Top Rated Estate Planning & Probate Lawyers in Costa Mesa" page that names William Cumming (organic, not the pack).
+- Search 2 "living trust attorney costa mesa": firm appears No — pack: Asset Protection Center (92, 5.0) [confirmed via Google], AMO LAW: Legacy Planning (17, 5.0) [confirmed via Google], AmeriEstate Legal Plan (518, 4.8) [confirmed via Google].
+- Search 3 "estate planning lawyer orange county ca": firm appears No — pack: OC Wills and Trust Attorneys (293, 4.9; Irvine) [confirmed via Google], Law Stein Anderson, LLP (171, 5.0; Irvine) [confirmed via Google], Law Office Of Kurt D. Elkins (337, 4.9; Orange) [confirmed via Google]. The Super Lawyers page naming William Cumming again appeared organically.
+
+Practice Area 2: Litigation (business litigation, about 60% of revenue per the owner)
+- Search 1 "business litigation attorney costa mesa": firm appears No in the local results, but the firm's own website appears in the organic results ("Costa Mesa Corporate Litigation Lawyer | Cumming…", dated Jan 5, 2023). Local listings: Day Bryne & McIntosh (14, 5.0) [confirmed via Google], Santon General Counsel (38, 5.0) [confirmed via Google], Helton Law Group (5, 4.2) [confirmed via Google].
+- Search 2 "commercial litigation lawyer orange county": firm appears No — local listings: Klein & Wilson LLP (60, 4.9; Newport Beach) [confirmed via Google], Brown Rudnick LLP (80, 4.9; Irvine) [confirmed via Google], Brown & Charbonneau, LLP (62, 4.8; Irvine) [confirmed via Google]. A sponsored LSA block also appeared (see Step 7).
+- Search 3 "real estate litigation attorney costa mesa": firm appears No — listings: Murphy & Evertz (no count shown), Ross, Wolcott, Teinert & Prout LLP (3, 5.0) [confirmed via Google], Sedehi Law, APC (4.9; count not captured). A further search "commercial litigation attorney costa mesa" showed the firm's website organically (Jan 5, 2023) with listings Jalali Law APC (16, 4.8) [confirmed via Google] and Santon General Counsel.
+
+Practice Area 3: Corporate / Business Transactional (about 30% of revenue per the owner)
+- Search 1 "business attorney costa mesa": firm appears No — pack: Camacho Law PC (33, 5.0; 3090 Bristol St, the same street as the firm) [confirmed via Google], MLG Attorneys at Law (279, 4.9) [confirmed via Google], Kevorkian & Madenlian LLP (78, 5.0) [confirmed via Google].
+- Search 2 "corporate transactional attorney orange county": firm appears No — listings: Latham & Watkins (5, 5.0) [confirmed via Google], Hart Kienle Pentecost (32, 4.5; Santa Ana) [confirmed via Google], Burkhalter Kessler Clement & George LLP (4.2; count not captured). Large-firm results; not the firm's competitive set.
+- Search 3 "business lawyer costa mesa ca": firm appears No — listings: Camacho Law PC (33, 5.0) [confirmed via Google], Santon General Counsel (38, 5.0) [confirmed via Google], Zaher Fallahi, Attorney At Law, CPA and Reyes & Schroeder Associates P.C. (counts not captured). Another search "corporate attorney costa mesa" showed the firm's /our-firm/ page organically (Jan 23, 2024) and no local-pack appearance.
+
+====================================================================
+STEP 4 — COMPETITOR REVIEW COUNTS
+====================================================================
+The firm has no Google rating or review count on its listing, so none of the competitors below has fewer reviews than the firm. Estate planning is the practice the owner and seller agreed is the scalable consumer-facing practice (the call, 00:33:43 and 00:40:21), so the competitors are the estate planning firms that own the Costa Mesa pack.
+- Competitor 1: AmeriEstate Legal Plan (3525 Hyland Ave #150, Costa Mesa) — reviews: 518 [confirmed via Google] — rating: 4.8 [confirmed via Google]. Appeared in the pack for 2 of the 3 estate planning searches.
+- Competitor 2: The Singh Law Firm (Newport Beach) — reviews: 230 (229 on its Maps panel) [confirmed via Google] — rating: 5.0 [confirmed via Google]. Appeared in the pack for "estate planning attorney costa mesa" and in Google Maps' "People also search for" for the firm.
+- Competitor 3: Asset Protection Center (3187 Red Hill Ave, Costa Mesa) — reviews: 92 [confirmed via Google] — rating: 5.0 [confirmed via Google]. First in the pack for "living trust attorney costa mesa".
+- Also in the Costa Mesa pack: AMO LAW: Legacy Planning (1901 Newport Blvd, Costa Mesa) — 17 reviews [confirmed via Google], 5.0 [confirmed via Google].
+- Business-law side (same street): Camacho Law PC (3090 Bristol St) — 33 reviews, 5.0 [confirmed via Google]; MLG Attorneys at Law — 279, 4.9 [confirmed via Google].
+
+====================================================================
+STEP 5 — DIRECTORY LISTINGS
+====================================================================
+- Avvo: profile exists (avvo.com/attorneys/92626-ca-william-cumming-161350.html). Page returned a bot-check, so it was not read directly. Web-search snippets show 5.0 with 73–76 reviews and "licensed 26–27 years" [UNCONFIRMED — sourced from search snippets (Avvo / Martindale), not independently confirmed via Google]. The firm's homepage shows Avvo 9.5 and three Avvo testimonials.
+- Justia: not read (bot-check page). Not found / not observed.
+- FindLaw: two profiles — William R. Cumming (lawyers.findlaw.com/california/costa-mesa/3578467_1/), "Business Litigation Lawyers in Costa Mesa", 1 review, Super Lawyers badge, phone 714-361-9844, address 3080 Bristol Street Suite 630, "Updated 11/27/2025"; and a firm profile (…/4798229_1/). The owner said they pay for FindLaw and Super Lawyers.
+- Yelp: a listing exists (yelp.com/biz/cumming-and-associates-costa-mesa-3), category Bankruptcy Law per the search title, 3080 Bristol St, (714) 432-6494, hours Mon–Fri 9–5, "established 2008". The page returned HTTP 403, so the rating and review count were not observed.
+- Martindale-Hubbell: profile and firm listing exist (martindale.com). Bot-check; snippets show 5.0 with 76 reviews [UNCONFIRMED — sourced from search snippets, not independently confirmed via Google].
+- Super Lawyers: William Cumming listed as Business Litigation, selected 2021–2026 and Rising Stars 2006–2007 per a search snippet; practice mix shown as Business Litigation 40%, Business & Corporate 40%, Estate Planning & Probate 20%. Super Lawyers' own site search returned no result for the name (page is JavaScript-driven); the firm profile page exists at profiles.superlawyers.com.
+- Lawyers.com and LawInfo: listings exist (search results). Facebook: page "Cumming & Associates, A Professional Law Corporation" exists; followers and last post date not observed (the owner said Levitate posts on the firm's Facebook, 00:33:31).
+- NAP inconsistencies: the phone is (714) 432-6494 on the website, Google Maps and Yelp but 714-361-9844 on FindLaw and in the homepage meta description; HubSpot holds 949-533-0388 for the contact (probably his direct line). The firm's category is "Legal services" on Google, "Bankruptcy Law" on Yelp and "Business Litigation" on FindLaw. The practice description on directories (bankruptcy, employment) differs from the three areas the owner described on the call.
+- Geo-targeting landing pages for surrounding cities: none found on the website (Costa Mesa and Orange County only in body text).
+
+====================================================================
+STEP 6 — GOOGLE ADS
+====================================================================
+Ran 8 Costa Mesa searches (3 estate planning, 3 litigation, 3 business-law variants). Only sponsored blocks in Local Services Ad format ("Get phone number" / "Message" / "Scan to call", rated, "Serves Costa Mesa") were captured; no standard text ads. The owner's own statement: Google Ads ran about six months through Rise Up Media at "a couple grand a month", aimed at estate planning, "not particularly helpful", and "I think we're going to cancel that November 30" (00:30:42–00:31:03). The firm does not appear to be running ads for these searches, and may be getting outbid; the campaign was due to end Nov 30.
+
+Practice Area 1: Estate Planning
+- Firm ads observed: not observed.
+- Named competitors showing sponsored (LSA-format) listings for "estate planning attorney near me", "trust attorney costa mesa" and "estate planning lawyer costa mesa ca": Lawvex, LLP (210, 4.7) [confirmed via Google]; Law Offices of W. Bailey Smith (41, 4.8) [confirmed via Google]; First Class Counsel (54, 4.7) [confirmed via Google]; Weiner Law: Trust, Probate & Litigation Lawyers APC (122, 4.9) [confirmed via Google]; Calkins Law (112, 4.9) [confirmed via Google]; Quinn & Dworakowski, LLP (102, 5.0) [confirmed via Google]; Law Office of Jonathan Alexander (21, 5.0) [confirmed via Google]. Each lists "Serves Costa Mesa"; their office locations were not checked, so they are "serving the area", not confirmed Costa Mesa-based.
+
+Practice Area 2: Litigation (business / commercial)
+- Firm ads observed: not observed.
+- Named competitors running sponsored listings for "commercial litigation lawyer orange county": Thaler Law (23, 5.0, "Serves Costa Mesa") [confirmed via Google]; Zach's Law (15, 4.7, "Serves Costa Mesa") [confirmed via Google].
+
+Practice Area 3: Corporate / business law
+- Firm ads observed: not observed.
+- Named competitors running sponsored listings for "corporate attorney costa mesa": Omni Legal Group - Patent, Trademark, And Business Law (190, 5.0) [confirmed via Google]; Shegerian & Associates (59, 4.5) [confirmed via Google].
+
+====================================================================
+STEP 7 — LOCAL SERVICE ADS
+====================================================================
+- Firm appears in LSA: No (not observed in the estate planning, litigation or business-law searches). The call: the owner answered "no" to "any LSAs" (Bill Cumming (client), 00:33:03) and said he did not know what an LSA was (00:44:09) [speaker tag says Jonathan Farace — read as Bill Cumming, because it answers the seller's "are you familiar with LSAs, by the way?"].
+- Google Screened: not observed — the Screened / Guaranteed badge did not appear in the text I could capture, so it is unknown whether any competitor holds it. A Google Screened badge needs Google's background checks; not tested.
+- LSA review count: not applicable (the firm has no LSA and no Google reviews). The seller said on the call that at least one Google review is needed to run LSAs (00:44:00).
+- Named competitors in LSA (estate planning, Costa Mesa): Lawvex, LLP (210) [confirmed via Google], Weiner Law: Trust, Probate & Litigation Lawyers APC (122) [confirmed via Google], Calkins Law (112) [confirmed via Google], Quinn & Dworakowski, LLP (102) [confirmed via Google], First Class Counsel (54) [confirmed via Google], Law Offices of W. Bailey Smith (41) [confirmed via Google]. For "estate planning attorney near me" five estate planning firms held the sponsored block.
+
+====================================================================
+STEP 8 — META ADS
+====================================================================
+- Firm has active ads: not observed. A keyword search of the Meta Ad Library for "Cumming & Associates" returned only unrelated advertisers (Cumming, GA real-estate agents and others), none from this firm. The owner said the firm's only social activity is Levitate posting to the firm's Facebook (00:33:31), not paid ads.
+- Named local competitor 1: AmeriEstate Legal Plan — active ads: none found (Ad Library: "No ads match your search criteria" for the exact phrase, active ads, US).
+- Named local competitor 2: The Singh Law Firm (Newport Beach) — active ads: about 3 found (exact phrase, active, US); two read: a video ad "Trusts Should Change With Life — Plan New Chapters" and an image/text ad "Attention Californians! Don't leave your family's future to chance…", both started running Apr 17, 2026 (about 7 months). Ad Library keyword matching is loose; the ads read carry the name The Singh Law Firm.
+
+====================================================================
+STEP 9 — TRANSCRIPT EXTRACTION
+====================================================================
+Transcript source: full verbatim Fathom transcript (summary used only as overview). Speaker tags: Bill Cumming is tagged "Cumming & Associates [Prospect]" (the only prospect voice); Jonathan Farace and Hannah Petre are [SMB Team]. Several tags are shifted by a line (e.g. at 00:29:26 and 00:31:54 the seller's questions are tagged as the prospect; at 00:44:09–00:44:11 "I don't know what an LSA is" is tagged Jonathan but is Bill, and "let me show you what an LSA is" is tagged Bill but is Jonathan). Quotes below use only lines whose content proves the speaker.
+
+- Practice areas confirmed: Litigation (business / corporate litigation, real property, trust matters; state and federal court) about 60% of revenue; corporate transactional about 30%; estate planning about 10%. "It fluctuates between corporate and estate planning." (Bill Cumming (client), 00:12:54).
+- Current lead sources: referrals for litigation and corporate; estate planning is "that one vehicle where you can pick up the phone and call somebody" (00:32:44). Quotes: "…a lot of our clients are referral-based…" (00:09:05); "it's referral-based, litigation's definitely referral-based, at least the types of clients that we work with" (00:32:30); on diversified acquisition: "Largely no, as long as referral base, yeah." (00:37:26). Paid/other: Super Lawyers and FindLaw "collectively about, I don't know, 700, 800 bucks a month" (00:30:34); Google Ads pay-per-click about "a couple grand a month" via Rise Up Media for six months; Levitate monthly email and Facebook posts.
+- Ads ever run: Yes — Google Ads (pay-per-click), "for the last six months", through Rise Up Media (the firm's website vendor; the owner of Rise Up is a friend and a client of his). Budget "a couple grand a month". Result: "After all those months, I think we got one client." (00:31:44). Aimed at estate planning. Being cancelled Nov 30. First paid-ad experience: "it was our first venture into pay-per-click" (00:31:38). No LSAs ("to answer your question, no", 00:33:03). No Meta/social ads (only Levitate organic posts).
+- Firm identity check: matches — trigger "Cumming and Associates Law"; website and Google Maps "Cumming & Associates, APLC" (A Professional Law Corporation); transcript "Cumming & Associates". Costa Mesa, CA. (The owner said he started his own practice in 2009; the website, Yelp and Super Lawyers say 2008.)
+- Team size: the owner, two full-time paralegals/assistants who bill ("they bill", 00:11:48), one part-time person, and contract help when needed. "So me, two full-time folks, part-time guy, and contract people when needed." (00:12:20). He also described a shared suite of five offices with other attorneys who fill in. The summary calls the part-time person an attorney; the transcript does not say so.
+- Team size (total headcount): 4
+- Annual revenue (gross / case value): about $1.3M for this year, "maybe 1.35"; about $1.25M last year (Bill Cumming (client), 00:13:35–00:14:23): "Last year was about 1.25. This year probably about 1.3, maybe 1.35. So, you know, it's typically a little north of 100,000 a month." Earlier "a million" around 2020 or 2021. The seller asked for "top line"; when splitting practice areas Bill said "From a gross revenue perspective, definitely litigation." (00:12:36), so the figures are top-line / gross.
+- Annual revenue (net / take-home / collected): not stated. He said "I guess I focus more on the net… if you can make 4 million bucks but you're taking home less, that doesn't really matter" (00:14:51), without a net figure.
+- Revenue (annual, best estimate): $1,300,000
+- Fee structure: not stated for the firm as a whole. Estate plan about $4,000 each (Bill confirmed "$4,000", 00:46:51, after the seller said "$3,500 to $5,000"); whether that is a flat fee was not said. Paralegals "bill" (00:11:48), so some hourly billing is implied but not stated.
+- Revenue goal: about $2,000,000, said as an illustration: "let's just say we had a revenue goal of like two million" (Bill Cumming (client), 00:16:00). Also: "it's not like, yeah, I want to hit 2.5" (00:15:02). He puts net / take-home first. The seller later said "at least $2 million in top line revenue" (00:48:48; seller, not a firm figure).
+- Average case value: estate planning about $4,000 (client, 00:46:51). Litigation and corporate: not stated.
+- Current close rate: not stated — default to 15% for paid leads.
+- Number of locations: 1 (Costa Mesa).
+- Spanish campaign needed: no (not mentioned).
+- Dominant buying motive: a firm that runs itself and can be sold. "…let's create something that I could potentially walk away from and sell in three to five years." (Bill Cumming (client), 00:26:07) and "…it will look like it's just a little more freedom and flexibility." (00:27:24). Also: "I just don't necessarily want to… be practicing at this pace for… the next 10 years and… having an opportunity to perhaps do different things." (00:17:22). His "big three" (00:18:00): a sellable business, more revenue, more self-sustaining. DBM type: (2) grow and sell, with (1) a firm that runs itself so he gets time back.
+- Any profitability claims made by prospect: "we're making halfway decent money, so there's some resources there." (Bill Cumming (client), 00:51:37). "…it goes up thankfully each year." (00:13:54). No margin or take-home figure.
+- Any claims about case types or practice areas: "we do litigation, we do corporate transactional work, and we do estate planning." (00:12:25); "it's mainly corporate litigation, business litigation, real property, trust stuff… state and federal court" (00:13:01); "my practice type is more sellable than other firms" (00:16:00).
+- Stated call focus / product interest: A mix. The owner opened with the operations problem: he wants the firm "a little more self-sustaining" and sellable in three to five years because he generates 85–90% of the revenue. The seller proposed a Fractional COO (FCOO) plus a coach as priority one, and a full-service marketing plan (website, SEO, AEO, paid ads, LSAs for estate planning, Google Business Profile) as priority two (00:48:41–00:49:18); the owner said "if it's two parts, it's two parts" (00:49:36). The seller promised a "fully holistic growth plan… marketing as well as operations" for Dec 4. Hannah's recap of the booking form says he ticked time back, marketing/lead flow, financial stability and AI (00:00:42); AI was not discussed on the call.
+- Primary engagement: mixed
+- Products discussed on call: FCOO, Full Service Marketing
+- Lead-gen gap stated: yes — "…a lot of our clients are referral-based, so I know that you guys also have kind of a marketing component and what that looks like as well." (Bill Cumming (client), 00:09:05); "on the estate planning side, it could be much more, it's a lot more opportunity" (00:33:43).
+- Existing marketing/SEO/ad vendor engagements: Rise Up Media (rizeupmedia.com) — builds and maintains the website for a monthly fee ("Canly's a little expensive" in the transcript, read as "a little expensive"; "they do some minor SEO work", 00:34:45) and ran the Google Ads campaign, being cancelled Nov 30. Levitate — monthly email blasts and Facebook posts. Super Lawyers and FindLaw — about $700–$800 a month together. Not opposed to moving away from Rise Up: "No… they're clients, but they're not, like, you know, big clients. But no, we're open to a plan." (00:50:50).
+- Budget constraints stated: "Oh, no, well, I guess it's the cost, you know, if you say, hey, it's 10 grand a month or whatever it might be, you know, we have to kind of make sure it works. You know, we're making halfway decent money, so there's some resources there." (Bill Cumming (client), 00:51:26–00:51:37). The $10,000 was his example, not a budget. "I think, you know, cost would be a function, whether I agree with your approach… does it make sense." (00:51:42).
+- Bookkeeping volume: not stated; trust account: not stated
+- Financial goals stated (for the ProfitOS slides): (1) net over top line — "I guess I focus more on the net, in that sense, you know, if you can make 4 million bucks. But if you're taking home less, that doesn't really matter." (Bill Cumming (client), 00:14:51). (2) A sellable business in 3–5 years — see DBM quote (00:26:07). (3) More revenue — "I think ultimately more revenue would be helpful at the end of the day." (00:17:52). The seller did not discuss bookkeeping or a CFO on the call.
+
+Investment inputs
+- Ad spend practice area: Estate Planning — client: the paid campaign was aimed at estate planning (00:32:30–00:32:44); seller and client both point to it as the scalable consumer practice
+- Geo market tier: Tier 1 (Costa Mesa, Orange County — inside the Los Angeles metro; seller to confirm, Orange County could be treated as Tier 2)
+- Market competitiveness: High — seven firms hold LSAs for estate planning in Costa Mesa; estate planning pack firms have 92–518 Google reviews against none for this firm (Steps 3–7)
+- Current monthly ad spend (stated): $2,000 — Bill Cumming, 00:31:03 and 00:31:53 ("a couple grand a month", Google Ads, being cancelled Nov 30); directories $700–$800 a month are separate and not included
+- Current cost per signed case (stated): not stated
+- Current cost per lead (stated): not stated
+- Average case value (stated, one figure): $4,000 — Bill Cumming, 00:46:51 (estate plan)
+- Close rate (stated): not stated
+- Referral share of cases (stated): not stated — he said litigation and corporate are "referral-based" (00:32:30) but gave no percentage
+- Revenue goal (annual, one figure): $2,000,000 — Bill Cumming, 00:16:00 ("let's just say… a revenue goal of like two million"); hedged, not a firm target
+- Maximum monthly ad budget (stated): not stated
+
+Key prospect quotes (all Bill Cumming (client)):
+1. 00:06:04 — "…have me a little more self-sustaining if I, you know, took off for a week or two weeks." (goals / DBM)
+2. 00:08:25 — "…if I died or got seriously hurt, like in the hospital, like that would be a problem." (key-person risk)
+3. 00:10:22 — "I think my work probably generates about, you know, between 85 and 90 percent of all the ink." [transcript unclear — "ink" read as "income"] (owner dependence)
+4. 00:10:57 — "And that's not healthy." (owner dependence)
+5. 00:24:41 — "You know, it could be a 10 to 12 hour day." (hours)
+6. 00:26:07 — "…let's create something that I could potentially walk away from and sell in three to five years." (goals / DBM)
+7. 00:27:24 — "…it will look like it's just a little more freedom and flexibility." (goals / DBM)
+8. 00:31:44 — "After all those months, I think we got one client." (lead sources, Google Ads result)
+9. 00:37:26 — "Largely no, as long as referral base, yeah." (one lead channel)
+10. 00:40:57 — "We haven't paid attention to it." (Google Business Profile)
+11. 00:51:26 — "…I guess it's the cost, you know, if you say, hey, it's 10 grand a month or whatever it might be, you know, we have to kind of make sure it works." (budget / objection)
+12. 00:52:14 — "And so I'm motivated." (readiness)
+
+====================================================================
+STEP 9B — KPI AND DIAGNOSIS (feeds deck slides 1–3)
+====================================================================
+KPI AND DIAGNOSIS (STEP 9B)
+Product focus this supports: mixed — Managed Operations (the call's FCOO / coach proposal; retired FCOO name maps to Managed Operations) first, and Full Service Marketing (Google Business Profile and reviews, website, SEO / AEO, LSAs for estate planning) second.
+Headline KPI: Share of the firm's revenue the owner generates — "between 85 and 90 percent" — said by client, 00:10:22 — "I think my work probably generates about, you know, between 85 and 90 percent of all the ink." [transcript unclear — "ink" read as "income"]; he also said "anywhere between, you know, 85 and 95 percent for a couple of years now" (00:10:47).
+  KPI status: usable
+  Why this KPI: Managed Operations builds the systems, delegation and leadership layer that lower the owner's share, which is what makes the firm run without him and sellable; the marketing plan adds a second client source so growth does not depend on the owner's referral network.
+Supporting figures (0–3):
+  - Google Ads result — "I think we got one client" after "the last six months" at "a couple grand a month" — client, 00:31:44 / 00:30:42 / 00:31:03 — "After all those months, I think we got one client."
+  - Owner hours — "10 to 12 hour day" — client, 00:24:41 — "You know, it could be a 10 to 12 hour day."
+  - Revenue today vs. goal — "about 1.3" and "like two million" — client, 00:13:35 / 00:16:00 — "Last year was about 1.25. This year probably about 1.3, maybe 1.35." / "let's just say we had a revenue goal of like two million".
+Client-stated goal for this KPI: lower the owner's share to roughly 50–60% — "where I might bring it in, you know, 60 percent of the income or, you know, or 50 percent." (client, 00:10:42)
+KPI quotes (2–4, verbatim, client only):
+  - Bill Cumming (client), 00:10:22 — "I think my work probably generates about, you know, between 85 and 90 percent of all the ink." [transcript unclear — read as "income"] — owner dependence
+  - Bill Cumming (client), 00:08:25 — "…if I died or got seriously hurt, like in the hospital, like that would be a problem." — key-person risk
+  - Bill Cumming (client), 00:31:44 — "After all those months, I think we got one client." — paid-ad result
+  - Bill Cumming (client), 00:37:26 — "Largely no, as long as referral base, yeah." — one lead channel
+Client's why (verbatim, client only): Bill Cumming (client), 00:26:07 — "…let's create something that I could potentially walk away from and sell in three to five years." — and Bill Cumming (client), 00:27:24 — "…it will look like it's just a little more freedom and flexibility." He wants a sellable firm and his time back; he also said he does not want to be "practicing at this pace for… the next 10 years" (00:17:22).
+Cost of inaction (verbatim, client only): Bill Cumming (client), 00:08:25 — "…if I died or got seriously hurt, like in the hospital, like that would be a problem." — and Bill Cumming (client), 00:28:07 — "…when you're getting home sometimes at 7, 8, 9 o'clock, that kind of sucks." He also said "It's just not healthy." (00:24:50)
+Legacy Staircase discussed: no — the seller reviewed the four-pillar slide (lead generation, intake, self-managing team, profits, with AI accelerating all four, 00:22:00); the Lawyer Legacy Staircase was not shown. Current stage: not placed. Goal stage: not named.
+Diagnosis (3–4 causes, biggest first):
+  1. The owner personally produces most of the firm's revenue, so the firm can't run or be sold without him — evidence: "between 85 and 90 percent" (also "85 and 95 percent for a couple of years") — source: call: Bill Cumming (client), 00:10:22 and 00:10:47 — fixed by: Managed Operations (quarterly planning, delegation systems, scorecards, leadership layer to take work off the owner)
+     Target basis: the client's own aim of "60 percent of the income or, you know, or 50 percent" (00:10:42)
+  2. Client acquisition rests on referrals; the one paid test did not work — evidence: "Largely no, as long as referral base" and "I think we got one client" after about six months — source: call: Bill Cumming (client), 00:37:26 and 00:31:44 — fixed by: Full Service Marketing (a pay-per-lead Local Service Ads program for estate planning, built on a refreshed profile and SEO / AEO)
+     Target basis: the client's own bar for ads: "if it's two or three times over we're spending, you know, we can do it" (00:32:00)
+  3. The Google Business Profile has no reviews or owner photos, so the firm is invisible in local search and can't run LSAs — evidence: the Maps listing shows no star rating or review count, category "Legal services" and no owner photos; estate planning pack firms show 92–518 Google reviews — source: research: Steps 2–4 (read live on Google Maps and Google results, Nov 25, 2026) and call: "We haven't paid attention to it." (Bill Cumming (client), 00:40:57) — fixed by: Google Business Profile cleanup and a five-star review program (Full Service Marketing)
+     Target basis: none — flag for seller
+  4. The website is slow on phones and its form is at the bottom of the page — evidence: Lighthouse mobile performance 28 (LCP 12.3 s, CLS 0.469) and desktop 80, run locally Nov 25, 2026 (not pagespeed.web.dev); contact form sits at the bottom of the homepage — source: research: Step 1, local Lighthouse 12.8.2 and page source — fixed by: website redesign / rebuild (Full Service Marketing — Web + SEO)
+     Target basis: none — flag for seller
+Plan inputs (for each non-marketing product the call points to):
+  - Fractional CTO / AI Workforce Pro: none stated (AI was only a box on the booking form; not discussed on the call).
+  - Managed Operations: "The reality is I do a lot of the work, but it would be good to be able to not do that as much." (Bill Cumming (client), 00:09:00); "…probably systems and things in place." (00:08:49); "…having outside folks like you… helps in the sense of having a more of an articulated plan and then sticking with it as well." (00:19:08). He also said "there is structure, there is systems in place" (00:19:50).
+  - FCFO / bookkeeping: none stated (the owner talked about focusing on net profit but gave no bookkeeping or reporting pain).
+Alternate KPI (if the seller changes the package): Full Service Marketing alone → "I think we got one client" from about six months of Google Ads at "a couple grand a month" (client, 00:31:44 / 00:31:03); estate plan about "$4,000" (client, 00:46:51).
+Seller should confirm on the next call:
+  - Headcount and roles: is the part-time person an attorney, and are the "five of us" the firm or the suite? (transcript says 4 in the firm)
+  - Fee structure by practice area (hourly vs. flat; is the ~$4,000 estate plan a flat fee?) and the owner's net / take-home figure
+  - How firm the $2M goal is (he said "let's just say") and the timeline; whether "ink" was "income" (85–90% vs. 85–95%)
+  - Close rate, cost per lead, and the share of cases that come from referrals (none stated)
+  - Whether the Rise Up Media Google Ads campaign actually ended Nov 30, and the monthly website fee and contract terms with Rise Up Media
+  - Google Business Profile: who owns it, whether it is verified, any posts or photos, and the real review count (the Maps read showed none)
+  - Other Google reviews (Avvo shows 73–76; Google shows none) and whether clients would leave Google reviews
+  - pagespeed.web.dev scores (the Lighthouse figures here are local lab runs); whether CallRail call tracking is switched on
+  - Phone numbers: (714) 432-6494 (website, Google) vs. 714-361-9844 (FindLaw, meta description) vs. 949-533-0388 (HubSpot)
+  - Which practice mix the firm wants to market: estate planning only, or business litigation / transactional (bankruptcy and employment appear on directories but not on the call)
+  - Budget range: the "10 grand a month" was his example, not a limit
+  - Trust account and bookkeeping volume (not discussed)
+  - Meta Ad Library was searched by keyword only; the firm's Facebook page followers and last post were not observed
+
+====================================================================
+STEP 10 — COMPETITIVE URGENCY SCORE
+====================================================================
+Score: 7 for the estate planning market the call points at (the marketable practice); the litigation and corporate work is referral-driven and less exposed.
+Named local competitor threats:
+  1. AmeriEstate Legal Plan (Costa Mesa) — 518 Google reviews at 4.8 [confirmed via Google]; first in the local pack for "estate planning attorney costa mesa" and "living trust attorney costa mesa"; the firm has no Google reviews.
+  2. The Singh Law Firm (Newport Beach) — 230 Google reviews at 5.0 [confirmed via Google]; in the Costa Mesa pack and running about 3 active Meta ads since April 2026 (a video and an image ad on trust amendments and estate planning).
+  3. Asset Protection Center (Costa Mesa) — 92 Google reviews at 5.0 [confirmed via Google]; first in the pack for "living trust attorney costa mesa". Alongside them, at least seven firms (Lawvex, Weiner Law, Calkins Law, Quinn & Dworakowski, First Class Counsel, Law Offices of W. Bailey Smith, Law Office of Jonathan Alexander) hold Local Service Ads that serve Costa Mesa.
+Dynamic sentence: "A score of 7 means competitors are actively dominating multiple channels in your market and the gap is getting wider every month you wait. This is not a future problem — it is a right now problem."
+
+====================================================================
+PASS 2 — VERIFICATION CHECKLIST (completed)
+====================================================================
+- Every Google review count and rating (firm and competitors) was read off Google Maps or the Google results page and is tagged [confirmed via Google]; Avvo / Martindale figures came from search snippets and are tagged UNCONFIRMED. The firm's own Google count is "none displayed", not a number.
+- No competitor is cited as "dominating" with fewer reviews than the firm; the firm has no Google reviews.
+- No section says the firm is not running ads; ads, LSA and Meta results are written as "not observed", "does not appear to be running" or with what was tried. Competitors named in ads are described as "serving Costa Mesa" where their office location was not checked.
+- PageSpeed numbers are real local Lighthouse measurements, labelled as such; pagespeed.web.dev itself was unavailable (HTTP 429).
+- DBM, revenue goal (hedged $2M), close rate (not stated), average case value ($4,000 estate plan) and budget statements are recorded with quotes and timestamps; gaps are listed for the seller.
+- Machine-read lines (Primary engagement, Products discussed on call, Lead-gen gap stated, Revenue best estimate, Team size total headcount, Investment inputs) are in the exact format.
+- No STEP 9B figure was calculated or estimated; no UNCONFIRMED figure and no seller pitch number is used in STEP 9B. The seller's "$2 million" and "15% of clicks" lines are not used as firm figures.
+- Nothing from the Dec 4 proposal call is included.
