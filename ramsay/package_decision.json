@@ -14,7 +14,7 @@
     "criminal defense"
   ],
   "package_source": "trigger_override",
-  "package_override": "Full Service Marketing — Starter only at $5,697/mo (stand-alone price). Seller-requested change in Slack, Nov 24 2026; Managed Operations removed.",
+  "package_override": "Web + SEO Starter + OmniSocial AI 360 (Content \u2013 Standard + Ads \u2013 Starter, $3,244/mo). Seller-requested change in Slack, Nov 25 2026; replaces Full Service Marketing \u2014 Starter.",
   "needs_seller_input": false,
   "revenue_only_option": null,
   "call_focus": {
@@ -22,28 +22,29 @@
     "products_discussed": [],
     "lead_gen_gap": true
   },
-  "marketing_tier": "Starter",
-  "marketing_name": "Full Service Marketing — Starter",
+  "marketing_tier": "Web + SEO Starter",
+  "marketing_name": "Web + SEO Starter",
   "coaching_name": null,
-  "law_name": null,
+  "law_name": "OmniSocial AI 360 Starter",
   "law_seats": null,
   "selection_notes": [
-    "Seller override: Full Service Marketing — Starter only, no Managed Operations (requested in the proposal thread, Nov 24 2026; replaces the earlier Web + SEO Starter custom plan).",
-    "Only one bundle-eligible product in this package — stand-alone pricing applied, no bundle savings."
+    "Seller override: Full Service Marketing \u2014 Starter only, no Managed Operations (requested in the proposal thread, Nov 24 2026; replaces the earlier Web + SEO Starter custom plan).",
+    "Seller override: switched to Web + SEO Starter + OmniSocial AI 360 per Slack request on 2026-11-25 (Full Service Marketing \u2014 Starter removed). 'OmniSocial 360 Starter' is not a catalog tier; sized as Content \u2013 Standard $2,297 + Ads \u2013 Starter $1,297 \u2212 $350 bundle discount = $3,244/mo (Ads \u2013 Starter covers up to $5K social ad spend; confirm the tier with the seller). $1,850 one-time OmniSocial setup. 12-month minimum term; sales-ops approval required (72-hour turnaround); $500K+ revenue requirement unverified (revenue not stated).",
+    "\"OmniSocial AI 360 Starter\" isn't in the pricing catalog \u2014 price not checked automatically (kept $3,244/mo)."
   ],
-  "marketing_price_bundled": 5697,
-  "marketing_price_retail": 5697,
-  "marketing_savings": 0,
-  "pricing_mode": "standalone",
-  "bundle_eligible_count": 1,
-  "total_bundled": 5697,
-  "total_savings": null,
+  "marketing_price_bundled": 3497,
+  "marketing_price_retail": 3997,
+  "marketing_savings": 500,
+  "pricing_mode": "bundled",
+  "bundle_eligible_count": 2,
+  "total_bundled": 6741,
+  "total_savings": 500,
   "unpriced_products": [],
   "setup_fees": [
     {
-      "line": "marketing",
-      "product": "Full Service Marketing — Starter",
-      "label": "AI Avatar setup",
+      "line": "law",
+      "product": "OmniSocial AI 360 Starter",
+      "label": "OmniSocial AI setup",
       "amount": 1850,
       "waivable": true,
       "waived": false,
@@ -56,127 +57,43 @@
     "products": [
       {
         "category": "marketing",
-        "name": "Full Service Marketing — Starter",
-        "charged": 5697,
-        "standalone": 5697
+        "name": "Web + SEO Starter",
+        "charged": 3497,
+        "standalone": 3997
+      },
+      {
+        "category": "law",
+        "name": "OmniSocial AI 360 Starter",
+        "charged": 3244,
+        "standalone": null
       }
     ],
-    "monthly_total": 5697,
-    "list_total": 5697,
-    "total_savings": 0,
-    "pricing_mode": "standalone",
+    "monthly_total": 6741,
+    "list_total": 7241,
+    "total_savings": 500,
+    "pricing_mode": "bundled",
     "setup_fees": [
       {
-        "product": "Full Service Marketing — Starter",
-        "label": "AI Avatar setup",
+        "product": "OmniSocial AI 360 Starter",
+        "label": "OmniSocial AI setup",
         "amount": 1850,
         "charged": 1850,
         "waived": false
       }
     ],
     "setup_total": 1850,
-    "year_one_total": 70214,
-    "year_one_basis": "12 × $5,697/mo in fees + $1,850 one-time setup. Ad spend is paid separately to Google and Meta.",
-    "ad_spend": {
-      "channels": [
-        {
-          "channel": "Google Search",
-          "minimum": 5500
-        },
-        {
-          "channel": "Local Services Ads",
-          "minimum": 2000
-        },
-        {
-          "channel": "Meta retargeting",
-          "minimum": 1200
-        }
-      ],
-      "conservative": 8700,
-      "aggressive": 8700,
-      "current_stated": null,
-      "cap": 25000,
-      "overage": null,
-      "conservative_basis": "channel minimums $5,500 + $2,000 + $1,200 = $8,700",
-      "aggressive_steps": [
-        "20% rule: $0 goal × 20% ÷ 12 × 1.3 geo − $5,697 fee = $-5,697",
-        "reverse math: 0 cases/mo ÷ 15% close × $138 benchmark blended CPL = $0"
-      ],
-      "year_one_range": [
-        104400,
-        104400
-      ],
-      "seller_set": false,
-      "computed": null,
-      "needs_seller_review": true
-    },
-    "return": {
-      "method": "benchmark_cpl",
-      "basis": "SMB Team criminal defense cost-per-lead benchmarks ($138 blended), 15% close rate (assumed) and a $15,000 average case (said on the call).",
-      "case_value": 15000,
-      "case_value_stated": true,
-      "cost_per_case": null,
-      "share_of_case_value": null,
-      "close_rate": 0.15,
-      "blended_cpl": 138,
-      "scenarios": [
-        {
-          "label": "Recommended",
-          "ad_spend": 8700,
-          "leads": 63.1,
-          "cases": 9.5,
-          "revenue": 141900,
-          "return_multiple": 16.3
-        }
-      ],
-      "disclaimer": "Illustrative arithmetic, not a forecast."
-    },
-    "inputs": {
-      "practice_area": {
-        "value": "Criminal Defense",
-        "source": "research notes"
-      },
-      "geo_tier": {
-        "value": 2,
-        "multiplier": 1.3,
-        "source": "research notes"
-      },
-      "competitiveness": {
-        "value": "High",
-        "source": "research notes"
-      },
-      "spanish_campaign": false,
-      "revenue_effective": 0,
-      "revenue_goal": {
-        "value": 0,
-        "source": "not stated — 2× current revenue (audit-write.md)"
-      },
-      "case_value": {
-        "value": 15000,
-        "source": "stated on the call"
-      },
-      "close_rate": {
-        "value": 0.15,
-        "source": "default 15%",
-        "stated": null
-      },
-      "referral_share": null,
-      "current_ad_spend": null,
-      "current_cost_per_case": null,
-      "current_cost_per_lead": null,
-      "max_ad_budget": null,
-      "management_fee": 5697,
-      "ad_spend_cap": 25000
-    },
-    "flags": [
-      "Reverse math ($0) is well above the 20% rule ($-5,697) — the goal may be aggressive for the budget (paid ads team review)."
-    ],
+    "year_one_total": 82742,
+    "year_one_basis": "12 \u00d7 $6,741/mo in fees + $1,850 one-time setup. Ad spend is paid separately to Google and Meta.",
+    "ad_spend": null,
+    "return": null,
+    "inputs": {},
+    "flags": [],
     "alerts": []
   },
-  "ad_spend_conservative": 8700,
-  "ad_spend_aggressive": 8700,
-  "ad_spend_rationale": {
-    "conservative_basis": "channel minimums $5,500 + $2,000 + $1,200 = $8,700",
-    "aggressive_basis": "20% rule: $0 goal × 20% ÷ 12 × 1.3 geo − $5,697 fee = $-5,697 → reverse math: 0 cases/mo ÷ 15% close × $138 benchmark blended CPL = $0"
-  }
+  "ad_spend_conservative": null,
+  "ad_spend_aggressive": null,
+  "ad_spend_rationale": null,
+  "law_price_bundled": 3244,
+  "law_price_retail": null,
+  "law_tier": "OmniSocial AI 360 Starter"
 }

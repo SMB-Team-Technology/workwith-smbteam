@@ -53,16 +53,16 @@ import re
 # ═══════════════════════════════════════════════════════════════════
 
 # ── BUILD NOTES (internal — never shown on a slide) ──────────────
-# Marketing package: Full Service Marketing — Starter — charged $5,697/mo (stand-alone), stand-alone $5,697/mo, savings $0/mo (seller changed from Web + SEO Starter in Slack, Nov 24 2026)
+# Marketing package: Web + SEO Starter — charged $3,497/mo (bundled with OmniSocial AI 360), stand-alone $3,997/mo, savings $500/mo (seller changed from Full Service Marketing — Starter in Slack, Nov 25 2026)
 # Non-marketing package(s): none
-# LAW package: none
-# Total monthly investment: $5,697/mo · total savings: $0/mo · pricing_mode: standalone (1 bundle-eligible product)
-# Setup fees: AI Avatar setup $1,850 (not waived) · total $1,850 (one-time)
-# Year one: $70,214 (investment.year_one_total — 12 × $5,697 + $1,850 setup)
-# Ad spend (copied from investment.ad_spend): $8,700/mo (low = high) · channel minimums $5,500 Google Search + $2,000 LSA + $1,200 Meta retargeting · revenue not stated so the 20% rule and reverse math give no higher figure · needs_seller_review
-# Return (copied from investment.return): benchmark_cpl · criminal defense CPL benchmark ($138 blended), 15% close (assumed), $15,000 case value (said on the call) · scenario: $8,700 → 63.1 leads → 9.5 cases → $141,900 → 16.3×
-# Investment inputs used: practice area Criminal Defense, geo Tier 2 (1.3), competitiveness High, case value $15,000 (stated), close rate 15% (default), revenue not stated (0) · flags: reverse math well above 20% rule (revenue unknown)
-# Why this range: to turn DWI and criminal defense searches into signed cases
+# AI/other line: OmniSocial AI 360 Starter — $3,244/mo = Content – Standard $2,297 + Ads – Starter $1,297 − $350 bundle discount (not a catalog tier name: "OmniSocial 360 Starter" read as Content – Standard + Ads – Starter; confirm with seller)
+# Total monthly investment: $6,741/mo · total savings: $500/mo · pricing_mode: bundled (2 bundle-eligible products)
+# Setup fees: OmniSocial AI setup $1,850 (not waived) · total $1,850 (one-time); Web + SEO has no setup fee
+# Year one: $82,742 (investment.year_one_total — 12 × $6,741/mo + $1,850 setup)
+# Ad spend: none computed (investment.ad_spend = null, AD_SPEND_WHY = None) — no Google/LSA ads in this package; OmniSocial Ads – Starter covers up to $5K/mo of social ad spend, paid separately
+# Return: none (investment.return = null, no ad spend computed)
+# Investment inputs used: none (no paid-search ad spend, revenue not stated) · flags: none
+# Why this range: not applicable (no ad spend range computed)
 # Pillar review: Lead Gen amber — referrals are the best source, internet calls fell off and map visibility is low · Intake green/amber — 24/7 answering service, 20-min enforced consult, no gap stated · Team amber — owner's name carries the results, wants to step back to halftime · Profit amber — net matters most to him, no figures stated
 # KPI (slide 1): Map visibility — "14%" page-one share of the analysed map area vs 24%, 20%, 19% — seller (third-party grid tool), 00:41:43 (STEP 9B) · headline quote is Chuck's line at 00:08:24
 # Diagnosis (slide 2): 1. Hard to reach on mobile — seller's mobile view 00:46:06-00:46:26 + local Lighthouse mobile 74 (STEP 1) · 2. Thin pages, oversized blog — 764 blogs vs 28 core pages, ~50 of 800 pages with traffic — seller, 00:53:07, 00:56:43 · 3. Rivals cover more of the map — 24%, 20%, 19% — seller, 00:41:43 · 4. Reactive SEO today — ~$1,500/mo vendor, "not proactive" — Chuck Ramsay (client), 00:08:48-00:09:00
@@ -71,12 +71,12 @@ import re
 # Closing quote (slide 5): "Maybe do 12 cases next year and still make the same amount." — Chuck Ramsay (client), 00:01:46
 # Legacy Staircase slide: left out — not walked through on the call
 # Plan (slide 3): Rebuild the site for mobile — tied to: seller's mobile view + "Not in the least" optimized (STEP 9B cause 1) · Rework the service-area pages — tied to: 764 blogs vs 28 core pages (cause 2) · Build map visibility — tied to: 14% vs 24/20/19 (cause 3) · Run SEO every month — tied to: "they are not proactive" (cause 4)
-# Roadmap (slide 6): Phase 1 = Full Service Marketing — Starter · Phase 2 = AI Workforce Pro — starts: when the team is ready to put AI to work — basis: "I'm a big, big AI guy" (00:11:40) · Phase 3 = FCFO Advisor — starts: when he wants a clear view of take-home — basis: net matters most to him (pillar review; no figures stated). Managed Operations removed at the seller's request (Nov 24 2026).
+# Roadmap (slide 6): Phase 1 = Web + SEO Starter + OmniSocial AI 360 · Phase 2 = AI Workforce Pro — starts: when the team is ready to put AI to work — basis: "I'm a big, big AI guy" (00:11:40) · Phase 3 = FCFO Advisor — starts: when he wants a clear view of take-home — basis: net matters most to him (pillar review; no figures stated). Managed Operations removed at the seller's request (Nov 24 2026).
 # What You Told Us (slide 1 quotes and tie lines):
 #   1. Vendor — transcript line: "they'll do the work, but they are not proactive." (00:08:48) — supports: Web + SEO Starter (monthly strategy reviews)
 #   2. Lead quality — transcript line: "But I don't want 100 calls. I want 10 of the right calls." (00:05:06) — supports: Web + SEO Starter (core page content)
-# Overrides applied: seller override — package_source trigger_override: Full Service Marketing — Starter only at $5,697/mo stand-alone, Managed Operations removed (seller request in the Slack proposal thread, Nov 24 2026; replaces the earlier leadership-approved Web + SEO Starter plan). package_decision.json product name changed and re-priced with scripts/reprice.mjs.
-# Escalation flags: Revenue unverified (not stated) — ad spend shown is the channel-minimum floor and the return rests on the $15,000 case value from the call · Review counts unconfirmed — verify live before the call · Starter tier is below the usual revenue floor if revenue is under $500K · Seller's mobile "no phone/CTA above the fold" claim conflicts with the desktop page text — verify live · SMB client conflict concern raised by Chuck (00:28:10) · AI Avatar setup $1,850 is part of the package
+# Overrides applied: seller override — package_source trigger_override: Web + SEO Starter + OmniSocial AI 360 (Slack proposal thread, Nov 25 2026; replaces Full Service Marketing — Starter). package_decision.json product names changed, OmniSocial priced by hand from audit-write.md ($3,244/mo) and re-priced with scripts/reprice.mjs.
+# Escalation flags: Revenue unverified (not stated) — OmniSocial AI needs $500K+ revenue (flexible if profitable) · OmniSocial AI requires sales-ops approval (72-hour turnaround) and a 12-month minimum term · OmniSocial 360 tier read as Content – Standard + Ads – Starter — confirm · Web + SEO Starter does not include DFY review generation ($500/mo add-on) · Review counts unconfirmed — verify live before the call · Seller's mobile "no phone/CTA above the fold" claim conflicts with the desktop page text — verify live · SMB client conflict concern raised by Chuck (00:28:10)
 
 # Report metadata
 FIRM_NAME      = "Ramsay Law Firm, PLLC"
@@ -129,10 +129,10 @@ DIAGNOSIS = [
      "source": "Discovery call, Nov 20"},
 ]
 
-DIAGNOSIS_FIX_LINE = "Rebuild the site, rework the pages, add ads, lift map visibility and run SEO every month."
+DIAGNOSIS_FIX_LINE = "Rebuild the site, rework the pages, lift map visibility and run SEO proactively every month."
 
 # ── Slide 3 — The Plan ────────────────────────────────────────────
-PLAN_KICKER = "Website, SEO and ads"
+PLAN_KICKER = "Website and SEO"
 PLAN_TITLE  = "Lift Your Map Visibility"
 
 PLAN = [
@@ -140,57 +140,57 @@ PLAN = [
      "actions": ["Custom WordPress website build", "Call tracking on up to 5 local numbers"],
      "metric": "Mobile speed score", "target": None, "baseline": "74"},
     {"title": "Rework service-area pages", "fixes": 2,
-     "actions": ["Import up to 250 pages", "30,000 words of SEO content at launch",
+     "actions": ["Import up to 250 pages", "20,000 words of SEO content at launch",
                  "10,000 words of SEO content a year"],
      "metric": "Pages with traffic", "target": None, "baseline": "About 50 of 800"},
     {"title": "Build your map visibility", "fixes": 3,
-     "actions": ["Google Search, LSA and Meta retargeting ads", "Google profile set-up for up to 2 locations",
-                 "2 premium 30+ DR backlinks a year"],
+     "actions": ["Google profile set-up for up to 2 locations", "2 premium 30+ DR backlinks a year"],
      "metric": "Map share", "target": None, "baseline": "14%"},
     {"title": "Run SEO every month", "fixes": 4,
      "actions": ["Monthly and quarterly marketing strategy reviews", "45 minutes of website edits each month"],
      "metric": "Strategy reviews", "target": None, "baseline": None},
 ]
 
-PLAN_NOTE = "Intake process guidance for the calls the site brings in."
+PLAN_NOTE = "Intake process guidance for the calls the site brings in, plus organic video and paid social with OmniSocial AI 360."
 
 # ── Slide 4 — The Recommended Strategy ────────────────────────────
-STRATEGY_TITLE = "Your Website, SEO and Ads Strategy"
+STRATEGY_TITLE = "Your Website, SEO and Social Strategy"
 
 STRATEGY = [
-    {"product": "Full Service Marketing — Starter", "title": "Get found",
+    {"product": "Web + SEO Starter", "title": "Site and search",
      "channels": "Website · SEO · Google profile",
      "deliverables": ["Custom WordPress website build",
-                      "30,000 words of SEO content at launch",
+                      "20,000 words of SEO content at launch",
                       "Content import for up to 250 pages",
                       "Google profile set-up for up to 2 locations",
                       "2 premium 30+ DR backlinks a year"],
      "why": "Fixes the site, thin pages and map gap behind your 14%, and puts a proactive plan on your SEO."},
-    {"product": "Full Service Marketing — Starter", "title": "Get the call",
-     "channels": "Google Ads · LSA · Meta retargeting",
-     "deliverables": ["Google Search, LSA and Meta retargeting campaigns",
-                      "Call tracking: 5 local numbers, 250 minutes",
-                      "Monthly and quarterly strategy reviews",
-                      "Up to 250 Google review requests a month"],
-     "why": "Puts you in front of high-intent DWI searches now, while the new site and SEO build."},
+    {"product": "OmniSocial AI 360 Starter", "title": "Be seen on social",
+     "channels": "Meta · Organic video · Paid social",
+     "deliverables": ["Organic video presence on your social channels",
+                      "Paid social and video ads management",
+                      "Ads tier for up to $5K a month of ad spend",
+                      "Content and ads bundled in one package"],
+     "why": "Your videos paused about a year and a half ago and Meta remarketing isn't running; this restarts both."},
 ]
 
 # ── Seller prep (never in the deck) ───────────────────────────────
 SELLER_NOTES = {
     "priorities": "The 14% map share and the rivals' 24%, 20% and 19% are the figures from your grid tool on the call, not a firm result: present them as discussed on the call. Chuck never stated the 14% himself. Revenue, take-home (he said net matters most), headcount and monthly case volume were not stated, so ask. The unclear exchange at 00:19:15 (80 to 110, 125 a month) is not used: ask what it measures.",
     "diagnosis": "Confirm before the call: (1) the live mobile screen. Your view on the call showed no phone, form or call to action above the fold, but the desktop page text shows a header phone and a Request Consultation button. (2) The mobile 74 is a local Lighthouse run, not pagespeed.web.dev, and the desktop score was not obtained: re-run on pagespeed.web.dev. (3) The 764 blogs, 50-of-800 pages and August traffic figures come from a third-party tool: check in Analytics and Search Console. Review counts are unconfirmed for every firm, so none are printed. Ask for Chuck's real Google review count. No targets: none were stated, so ask what a good month of calls looks like.",
-    "plan": "Full Service Marketing Starter includes done-for-you review generation (up to 250 requests a month; the firm supplies the list), but no DBA/rebrand plan, so none is promised here. Chuck said clients do not want their names on reviews, so ask how he wants to handle reviews. The content import covers up to 250 pages against roughly 800 today: expect to discuss which pages stay.",
-    "strategy": "Changed at the seller's request (Nov 24): Full Service Marketing Starter only at the stand-alone price, no Managed Operations. Starter is below the usual revenue floor if revenue is under $500K. Chuck asked about a conflict of interest if SMB serves nearby competitors (00:28:10): have the answer ready, and check whether SMB may name its Minnesota client.",
-    "investment": "Revenue is not verified, so check it before sending. Chuck currently pays about $1,500/mo to his SEO vendor and said he would pay more but does not want to drop $6,000 a month. Ad spend is paid separately: the $8,700/mo shown is the channel-minimum floor, because revenue was not stated. The $1,850 AI Avatar setup is one-time. Ask the term and notice period on the current vendor contract. He said he is looking at other options and that the call piqued his interest.",
+    "plan": "Web + SEO Starter does not include done-for-you review generation (it is a $500/mo add-on), so none is promised. Chuck said clients do not want their names on reviews, so ask how he wants to handle reviews. The content import covers up to 250 pages against roughly 800 today: expect to discuss which pages stay.",
+    "strategy": "Changed at the seller's request (Nov 25): Web + SEO Starter plus OmniSocial AI 360, replacing Full Service Marketing Starter. 'OmniSocial 360 Starter' is not a catalog tier name, so it is priced as Content Standard + Ads Starter less the $350 bundle discount: confirm that is the tier the seller meant. Every OmniSocial AI proposal needs sales-ops approval (72-hour turnaround) and a 12-month minimum term, and it normally needs $500K+ revenue (flexible if profitable): revenue was not stated, so check it. Chuck said his videos stopped about a year and a half ago and that Meta ads ran a long time ago: ask whether he will record video again. Chuck asked about a conflict of interest if SMB serves nearby competitors (00:28:10): have the answer ready, and check whether SMB may name its Minnesota client.",
+    "investment": "Revenue is not verified, so check it before sending. Chuck currently pays about $1,500/mo to his SEO vendor and said he would pay more but does not want to drop $6,000 a month: this package is $6,741/mo, so expect that to come up. The $3,244/mo OmniSocial AI 360 line is Content Standard $2,297 + Ads Starter $1,297 less $350, and Web + SEO Starter is bundled at $3,497 (stand-alone $3,997), saving $500 a month. The $1,850 OmniSocial setup is one-time. Ads Starter covers up to $5K a month of social ad spend, paid separately to the platforms and not included in the fee. There is no Google or LSA ad spend in this package. Ask the term and notice period on the current vendor contract. He said he is looking at other options and that the call piqued his interest.",
     "roadmap": "Managed Operations was taken out of the roadmap at the seller's request. Phase 2 (AI Workforce Pro) follows his AI interest. Phase 3 (FCFO Advisor, shown to the client as Managed Financials Level 1) follows his comment that net matters most; no figures were stated, so check revenue and team size before raising it. Neither was priced to Chuck.",
 }
 
 # ── Slide 5 — Your Investment ─────────────────────────────────────
 PRODUCT_LINES = {
-    "Full Service Marketing — Starter": "Website · SEO · Google Ads · LSA · Meta retargeting · Call tracking",
+    "Web + SEO Starter": "Custom website · SEO content · Google profile · Backlinks",
+    "OmniSocial AI 360 Starter": "Organic video content · Paid social and video ads",
 }
 
-AD_SPEND_WHY = "to turn DWI and criminal defense searches into signed cases"
+AD_SPEND_WHY = None
 
 CLOSING_QUOTE = ("Maybe do 12 cases next year and still make the same amount.",
                  "Chuck Ramsay (client), 00:01:46")
@@ -200,11 +200,11 @@ ROADMAP_TITLE = "Where This Goes From Here"
 
 ROADMAP = [
     {"phase": "Foundation", "when": "Starting now",
-     "products": ["Full Service Marketing — Starter"],
+     "products": ["Web + SEO Starter", "OmniSocial AI 360 Starter"],
      "items": ["A rebuilt site that works well on mobile",
-               "Ads and SEO for the cases you want",
-               "Google profile and backlinks for map visibility"],
-     "unlocks": "A website and ads that work for you, so the right calls find the firm without more of your time."},
+               "SEO content for the cases you want",
+               "Organic video and paid social to be seen more"],
+     "unlocks": "A website and social presence that work for you, so the right calls find the firm without more of your time."},
     {"phase": "Optimize", "when": "Once your team is ready to put AI to work",
      "products": ["AI Workforce Pro"],
      "items": ["Access to AI Workforce Pro for your team",
