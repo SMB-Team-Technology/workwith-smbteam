@@ -1,0 +1,91 @@
+{
+  "confidence": "low",
+  "revenue_stated": null,
+  "net_revenue_stated": null,
+  "is_contingency_practice": false,
+  "revenue_effective": 865500,
+  "revenue_source": "hubspot_annual_law_firm_revenue",
+  "revenue_label": "$771K-$960K",
+  "revenue_verified": false,
+  "needs_revenue_confirmation": true,
+  "team_size_stated": 7,
+  "team_size_source": "research_notes",
+  "team_size_effective": 7,
+  "practice_areas_detected": [
+    "immigration law (dhenu: \"for immigration cases",
+    "we use it for drafting cover letters",
+    "assembling supporting documents\"",
+    "immigration (family, employment/business, deportation defense)",
+    "immigration"
+  ],
+  "hubspot_company": null,
+  "firm_identity_check": "matches (trigger \"SwagatUSA Immigration Law Firm\"; website SwagatUSA, LLC / \"Swagat USA, LLC Immigration Lawyers Chicago\", Dhenu Maru, swagatusa.com). The trigger notes the HubSpot company field reads \"SwagnatUSA\" (a typo); the transcript does not say the firm name.",
+  "package_source": "rules",
+  "package_override": null,
+  "needs_seller_input": false,
+  "revenue_only_option": null,
+  "call_focus": {
+    "primary_engagement": "AI",
+    "products_discussed": [
+      "AI Workforce Pro (tier not specified)"
+    ],
+    "lead_gen_gap": false
+  },
+  "marketing_tier": null,
+  "marketing_name": null,
+  "marketing_price_bundled": null,
+  "marketing_price_retail": null,
+  "marketing_savings": null,
+  "coaching_name": null,
+  "coaching_price_bundled": null,
+  "coaching_price_retail": null,
+  "coaching_savings": null,
+  "law_tier": "AI Workforce Pro",
+  "law_name": "AI Workforce Pro",
+  "law_price_bundled": 1837,
+  "law_price_retail": null,
+  "law_seats": 7,
+  "total_bundled": 1837,
+  "total_savings": null,
+  "ad_spend_conservative": null,
+  "ad_spend_aggressive": null,
+  "ad_spend_rationale": null,
+  "selection_notes": [
+    "AI-led call with no lead-gen need stated — marketing left out (call-purpose rule).",
+    "AI-led call with no coaching discussed — coaching left out (revenue rule would add Managed Operations Tier 2; add it back if the seller wants it).",
+    "\"AI Workforce Pro\" named without a tier — using AI Workforce Pro (team of 7).",
+    "AI Workforce Pro discussed on call: $1,597/mo for 5 users + 2 extra × $120.",
+    "Revenue not stated on the call — HubSpot only has the range \"$771K-$960K\". Using the midpoint ($865,500) for this draft only; confirm actual revenue with the prospect before locking in.",
+    "Only one bundle-eligible product in this package — stand-alone pricing applied, no bundle savings.",
+    "Total $1,837/mo is under the $2,497/mo minimum — review with sales rep."
+  ],
+  "pricing_mode": "standalone",
+  "bundle_eligible_count": 1,
+  "unpriced_products": [],
+  "setup_fees": [],
+  "setup_total": 0,
+  "investment": {
+    "version": 1,
+    "products": [
+      {
+        "category": "law",
+        "name": "AI Workforce Pro (7 seats)",
+        "charged": 1837,
+        "standalone": null
+      }
+    ],
+    "monthly_total": 1837,
+    "list_total": 1837,
+    "total_savings": 0,
+    "pricing_mode": "standalone",
+    "setup_fees": [],
+    "setup_total": 0,
+    "year_one_total": 22044,
+    "year_one_basis": "12 × $1,837/mo in fees. Ad spend is paid separately to Google and Meta.",
+    "ad_spend": null,
+    "return": null,
+    "inputs": {},
+    "flags": [],
+    "alerts": []
+  }
+}
